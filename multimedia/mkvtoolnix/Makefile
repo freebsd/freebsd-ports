@@ -1,13 +1,8 @@
-# New ports collection makefile for:	mkvtoolnix
-# Date created:		Tue Feb 24 02:09:12 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTVERSION=	5.8.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -17,23 +12,27 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		lzo2.2:${PORTSDIR}/archivers/lzo2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+		expat:${PORTSDIR}/textproc/expat2 \
+		lzo2:${PORTSDIR}/archivers/lzo2 \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs \
-		curl.6:${PORTSDIR}/ftp/curl
+		boost_regex:${PORTSDIR}/devel/boost-libs \
+		curl:${PORTSDIR}/ftp/curl \
+		ebml:${PORTSDIR}/textproc/libebml \
+		matroska:${PORTSDIR}/multimedia/libmatroska
 
 USE_BZIP2=	yes
+USE_GCC=	4.6+
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_RAKE=	yes
 USE_RUBY=	yes
+RUBY_NO_RUN_DEPENDS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	ac_cv_path_PO4A=no
+CONFIGURE_ENV+=	ac_cv_path_PO4A=no ZLIB_CFLAGS=-I/usr/include ZLIB_LIBS=-lz
 CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
@@ -41,7 +40,7 @@ CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost-regex=boost_regex
 MAKE_JOBS_SAFE=	yes
 
-MANLANG=	"" ja zh_CN nl
+MANLANG=	"" ja zh_CN nl uk
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
 
 OPTIONS_DEFINE=	WXGTK

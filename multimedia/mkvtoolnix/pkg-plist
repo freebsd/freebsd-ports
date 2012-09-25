@@ -5,17 +5,56 @@ bin/mkvpropedit
 %%GUI%%bin/mmg
 %%GUI%%share/applications/mkvinfo.desktop
 %%GUI%%share/applications/mkvmergeGUI.desktop
+%%GUI%%share/icons/hicolor/16x16/apps/mkvextract.png
+%%GUI%%share/icons/hicolor/16x16/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/16x16/apps/mkvmerge.png
+%%GUI%%share/icons/hicolor/16x16/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/16x16/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/24x24/apps/mkvextract.png
+%%GUI%%share/icons/hicolor/24x24/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/24x24/apps/mkvmerge.png
+%%GUI%%share/icons/hicolor/24x24/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/24x24/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/32x32/apps/mkvextract.png
 %%GUI%%share/icons/hicolor/32x32/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/32x32/apps/mkvmerge.png
 %%GUI%%share/icons/hicolor/32x32/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/32x32/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/48x48/apps/mkvextract.png
+%%GUI%%share/icons/hicolor/48x48/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/48x48/apps/mkvmerge.png
+%%GUI%%share/icons/hicolor/48x48/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/48x48/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvextract.png
 %%GUI%%share/icons/hicolor/64x64/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvmerge.png
 %%GUI%%share/icons/hicolor/64x64/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/96x96/apps/mkvextract.png
+%%GUI%%share/icons/hicolor/96x96/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/96x96/apps/mkvmerge.png
+%%GUI%%share/icons/hicolor/96x96/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/96x96/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/128x128/apps/mkvextract.png
+%%GUI%%share/icons/hicolor/128x128/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/128x128/apps/mkvmerge.png
+%%GUI%%share/icons/hicolor/128x128/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/128x128/apps/mkvpropedit.png
+%%GUI%%share/icons/hicolor/256x256/apps/mkvextract.png
+%%GUI%%share/icons/hicolor/256x256/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/256x256/apps/mkvmerge.png
+%%GUI%%share/icons/hicolor/256x256/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/256x256/apps/mkvpropedit.png
+share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
 share/locale/es/LC_MESSAGES/mkvtoolnix.mo
+share/locale/eu/LC_MESSAGES/mkvtoolnix.mo
 share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
 share/locale/it/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 share/locale/lt/LC_MESSAGES/mkvtoolnix.mo
 share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
+share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
 share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
 share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
@@ -37,9 +76,46 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%DOCSDIR%%/guide/en/images/trackselection.gif
 %%DOCSDIR%%/guide/en/images/videotrackoptions.gif
 %%DOCSDIR%%/guide/en/mkvmerge-gui.hhc
+%%DOCSDIR%%/guide/en/mkvmerge-gui.hhk
 %%DOCSDIR%%/guide/en/mkvmerge-gui.hhp
 %%DOCSDIR%%/guide/en/mkvmerge-gui.html
-%%DOCSDIR%%/guide/en/mkvmerge-gui.hhk
+%%DOCSDIR%%/guide/es/images/addingremovingattachments.gif
+%%DOCSDIR%%/guide/es/images/addremovefiles.gif
+%%DOCSDIR%%/guide/es/images/attachmentoptions.gif
+%%DOCSDIR%%/guide/es/images/audiotrackoptions.gif
+%%DOCSDIR%%/guide/es/images/chaptereditor.gif
+%%DOCSDIR%%/guide/es/images/generaltrackoptions.gif
+%%DOCSDIR%%/guide/es/images/jobmanager.gif
+%%DOCSDIR%%/guide/es/images/movietitle.gif
+%%DOCSDIR%%/guide/es/images/muxingwindow.gif
+%%DOCSDIR%%/guide/es/images/selectmkvmergeexecutable.gif
+%%DOCSDIR%%/guide/es/images/splitting.gif
+%%DOCSDIR%%/guide/es/images/textsubtitlestrackoptions.gif
+%%DOCSDIR%%/guide/es/images/trackselection.gif
+%%DOCSDIR%%/guide/es/images/videotrackoptions.gif
+%%DOCSDIR%%/guide/es/mkvmerge-gui.hhc
+%%DOCSDIR%%/guide/es/mkvmerge-gui.hhk
+%%DOCSDIR%%/guide/es/mkvmerge-gui.hhp
+%%DOCSDIR%%/guide/es/mkvmerge-gui.html
+%%DOCSDIR%%/guide/eu/images/addingremovingattachments.gif
+%%DOCSDIR%%/guide/eu/images/addremovefiles.gif
+%%DOCSDIR%%/guide/eu/images/attachmentoptions.gif
+%%DOCSDIR%%/guide/eu/images/audiotrackoptions.gif
+%%DOCSDIR%%/guide/eu/images/chaptereditor.gif
+%%DOCSDIR%%/guide/eu/images/generaltrackoptions.gif
+%%DOCSDIR%%/guide/eu/images/headereditor.gif
+%%DOCSDIR%%/guide/eu/images/jobmanager.gif
+%%DOCSDIR%%/guide/eu/images/movietitle.gif
+%%DOCSDIR%%/guide/eu/images/muxingwindow.gif
+%%DOCSDIR%%/guide/eu/images/selectmkvmergeexecutable.gif
+%%DOCSDIR%%/guide/eu/images/splitting.gif
+%%DOCSDIR%%/guide/eu/images/textsubtitlestrackoptions.gif
+%%DOCSDIR%%/guide/eu/images/trackselection.gif
+%%DOCSDIR%%/guide/eu/images/videotrackoptions.gif
+%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhc
+%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhk
+%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhp
+%%DOCSDIR%%/guide/eu/mkvmerge-gui.html
 %%DOCSDIR%%/guide/zh_CN/images/addingremovingattachments.gif
 %%DOCSDIR%%/guide/zh_CN/images/addremovefiles.gif
 %%DOCSDIR%%/guide/zh_CN/images/attachmentoptions.gif
@@ -55,15 +131,21 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%DOCSDIR%%/guide/zh_CN/images/trackselection.gif
 %%DOCSDIR%%/guide/zh_CN/images/videotrackoptions.gif
 %%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhc
+%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhk
 %%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhp
 %%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.html
-%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhk
 @dirrmtry man/zh_CN/man1
 @dirrmtry man/zh_CN
+@dirrmtry man/uk/man1
+@dirrmtry man/uk
 @dirrmtry man/nl/man1
 @dirrmtry man/nl
 @dirrm %%DOCSDIR%%/guide/zh_CN/images
 @dirrm %%DOCSDIR%%/guide/zh_CN
+@dirrm %%DOCSDIR%%/guide/eu/images
+@dirrm %%DOCSDIR%%/guide/eu
+@dirrm %%DOCSDIR%%/guide/es/images
+@dirrm %%DOCSDIR%%/guide/es
 @dirrm %%DOCSDIR%%/guide/en/images
 @dirrm %%DOCSDIR%%/guide/en
 @dirrm %%DOCSDIR%%/guide
