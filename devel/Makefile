@@ -1237,6 +1237,7 @@
     SUBDIR += opencvs
     SUBDIR += opengrok
     SUBDIR += openocd
+    SUBDIR += openvex
     SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orbitcpp
