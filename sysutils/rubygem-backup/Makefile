@@ -16,6 +16,8 @@ COMMENT=	Perform backup operations on remote and local environment
 RUN_DEPENDS=	rubygem-open4>=1.3.0:${PORTSDIR}/devel/rubygem-open4 \
 		rubygem-thor>=0.15.4:${PORTSDIR}/devel/rubygem-thor
 
+BROKEN=		unable to resolve dependencies
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
