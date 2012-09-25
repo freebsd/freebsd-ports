@@ -40,6 +40,7 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/new32.png
 %%DATADIR%%/Bitmap/open32.png
 %%DATADIR%%/Bitmap/parcels32.png
+%%DATADIR%%/Bitmap/positions32.png
 %%DATADIR%%/Bitmap/readme.txt
 %%DATADIR%%/Bitmap/save32.png
 %%DATADIR%%/Bitmap/transparent_walls32.png
