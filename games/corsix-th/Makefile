@@ -1,23 +1,19 @@
-# New ports collection makefile for:	CorsixTH
-# Date created:				24 Nov 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	corsixth
-PORTVERSION=	0.01b
+PORTVERSION=	0.10
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	corsix-th
-DISTNAME=	CorsixTH-${DISTVERSION}-Source
+DISTNAME=	CorsixTH-${DISTVERSION}-Sourze
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source clone of Theme Hospital
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_CMAKE=	yes
