@@ -1,21 +1,16 @@
-# New ports collection makefile for:	nut
-# Date created:		Tue Apr 29 12:45:30 GMT 2003
-# Whom:			Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	nut
-PORTVERSION=	17.10
+PORTVERSION=	17.12
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
