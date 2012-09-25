@@ -13,7 +13,9 @@ MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	Speech recognition system
 
-LIB_DEPENDS=	sphinxfe.0:${PORTSDIR}/audio/sphinxbase
+LIB_DEPENDS=	sphinxbase:${PORTSDIR}/audio/sphinxbase
+
+BROKEN=		does not compile
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
