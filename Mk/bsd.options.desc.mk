@@ -91,6 +91,7 @@ GEOIP_DESC?=		GeoIP support
 GEOS_DESC?=		GEOS support
 GEOTIFF_DESC?=		GeoTIFF file format support
 GGI_DESC?=		General Graphics Interface support
+GPHOTO_DESC?=		Digital camera support via libgphoto2
 GIF_DESC?=		GIF image format support
 GLADE_DESC?=		Glade interface builder support
 GMP_DESC?=		GMP (multiple precision arithmetic) support
