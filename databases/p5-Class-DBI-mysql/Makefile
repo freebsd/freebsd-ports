@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-mysql
-# Date created:		14 August 2003
-# Whom:	      		andrew@scoop.co.nz
-#
+# Created by: andrew@scoop.co.nz
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-mysql
 PORTVERSION=	1.00
@@ -11,7 +7,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrew@scoop.co.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensions to Class::DBI for MySQL
 
 BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
