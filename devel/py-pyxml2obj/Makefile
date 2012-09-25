@@ -14,4 +14,6 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+PKG_PLIST=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
 .include <bsd.port.mk>
