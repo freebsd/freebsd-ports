@@ -1,9 +1,5 @@
-# New ports collection makefile for:	N-Queens
-# Date Created:				2 March 2005
-# Whom:					NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
-#
+# Created by: NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nqueens
 PORTVERSION=	1.0
@@ -12,7 +8,7 @@ MASTER_SITES=	http://www.arch.cs.titech.ac.jp/~kise/nq/package/
 DISTNAME=	qn24b-version${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nakaji@jp.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	N-queens benchmark
 
 WRKSRC=		${WRKDIR}/version${PORTVERSION}
