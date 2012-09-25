@@ -8,7 +8,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.18.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -111,6 +111,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|MOCQT4=`.*|MOCQT4="${LOCALBASE}/bin/moc-qt4"|' \
 		${WRKSRC}/configure
 .endif
+	# A fix for bug 52193 (fixed upstream at poppler-0.20)
+	@${REINPLACE_CMD} -e 's:poppler/poppler-config.h:poppler-config.h:' \
+		${WRKSRC}/goo/*.h ${WRKSRC}/splash/*.h
 
 post-install:
 .if defined(SLAVEPORT)
