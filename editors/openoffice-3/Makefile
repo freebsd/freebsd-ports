@@ -44,7 +44,7 @@ GNOMEVFS_DESC=	Enable GNOME Virtual File System
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava openjdk
-JAVA_VERSION=	1.5 1.6
+JAVA_VERSION=	1.5 1.6 1.7 
 
 .if !defined(WITHOUT_GCONF)
 USE_GNOME+=	gconf2
