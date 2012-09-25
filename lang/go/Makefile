@@ -1,12 +1,8 @@
-# Ports collection makefile for:  go
-# Date created:			  04 December 2010
-# Whom:				  Devon H. O'Dell <devon.odell@gmail.com>
-#
+# Created by: Devon H. O'Dell <devon.odell@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	go
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GOOGLE_CODE
