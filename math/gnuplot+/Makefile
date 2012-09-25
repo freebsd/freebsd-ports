@@ -1,5 +1,9 @@
-# Created by: NAKAJI Hiroyuki
+# New ports collection makefile for:    gnuplot
+# Date created:         May 18, 1999
+# Whom:                 NAKAJI Hiroyuki
+#
 # $FreeBSD$
+#
 
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
@@ -13,7 +17,7 @@ DISTFILES=	gnuplot-3.7.1.tar.gz \
 		gnuplot3.7.1+${PORTVERSION}.patch.tar.gz:patch
 EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A command-driven interactive function plotting program
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
