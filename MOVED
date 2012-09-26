@@ -3714,3 +3714,4 @@ www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versi
 net/fping+ipv6|net/fping|2012-09-24|IPv6 support has been merged
 textproc/aspell-without-dicten|textproc/aspell|2012-09-24|The dictionary is no longer installed with aspell
 www/jakarta-jmeter|www/jmeter|2012-09-25|Former Jakarta projects now live on their own
+www/smarty|www/smarty2|2012-09-26|Renamed to prepare for addition of Smarty 3.x to the tree
