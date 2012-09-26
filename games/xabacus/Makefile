@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xabacus
-# Date created:				3 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xabacus
-PORTVERSION=	7.6.8
-PORTREVISION=	1
+PORTVERSION=	7.7.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/
@@ -15,31 +10,37 @@ MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abacus for X Window System
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	MOTIF ESOUND
+OPTIONS_DEFAULT=	MOTIF
+
 USE_BZIP2=	yes
 USE_XORG=	xpm
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		xabacus.6
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MOTIF)
-CONFIGURE_ARGS+=	--without-motif
-.else
+.if ${PORT_OPTIONS:MMOTIF}
 USE_MOTIF=	yes
+.else
+CONFIGURE_ARGS+=	--without-motif
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--without-rplay --with-esound
 .else
-LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
+LIB_DEPENDS+=	rplay:${PORTSDIR}/audio/rplay
 CONFIGURE_ARGS+=	--with-rplay --without-esound
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
