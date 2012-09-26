@@ -15,7 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
 
 CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
-OPTIONS=	STATS "Build status and statistics support" on
+
+OPTIONS_DEFINE=	STATS EXAMPLES DOCS
+OPTIONS_DEFAULT=	STATS
+STATS_DESC=	Build status and statistics support
 
 WRKSRC=		${WRKDIR}/smstools3
 
@@ -40,7 +43,7 @@ PORTEXAMPLES=	.procmailrc .qmailrc *
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_STATS)
+.if ${PORT_OPTIONS:MSTATS}
 LIB_DEPENDS+=	mm.14:${PORTSDIR}/devel/mm
 CFLAGS+=	-I${LOCALBASE}/include
 .else
@@ -76,12 +79,12 @@ post-install:
 	fi
 	@${MKDIR} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
 	@${CHOWN} -R ${SMSD_USER}:${SMSD_GROUP} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/slideshow
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/slideshow/* ${DOCSDIR}/slideshow
 .endif
-.if !defined(NOPORTEXAMPLES)
+,if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@for file in `${FIND} ${WRKSRC}/examples -type f ! -name 'README'`; do \
 		${INSTALL_SCRIPT} $$file ${EXAMPLESDIR}/; \
