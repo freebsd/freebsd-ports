@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=		dojo
-PORTVERSION=		1.5.0
+PORTVERSION=		1.8.0
 CATEGORIES=		www
-MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
-			LOCAL/glarkin
+MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/
 DISTNAME=		dojo-release-${PORTVERSION}
 
 MAINTAINER=		glarkin@FreeBSD.org
@@ -12,11 +11,11 @@ COMMENT=		An open-source DHTML toolkit written in JavaScript
 
 NO_BUILD=		yes
 
-OPTIONS=		APACHE  "Configure for Apache-2.x" off
+OPTIONS_DEFINE=		APACHE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=		22+
 CONFDIR=		${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=		${APACHEETCDIR}/Includes
@@ -55,4 +54,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
