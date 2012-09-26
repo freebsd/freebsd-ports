@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.6.1187.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -175,7 +175,7 @@ PLIST_FILES+=	libexec/ibus-engine-mozc \
 PLIST_DIRS+=	${DATADIR_REL}/icons ${DATADIR_REL}
 
 do-build-ibus_mozc:
-	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER}
+	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER} \
 		unix/ibus/ibus.gyp:ibus_mozc
 
 do-install-ibus_mozc:
