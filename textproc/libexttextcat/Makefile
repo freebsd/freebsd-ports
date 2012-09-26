@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libexttextcat
-# Date created:		2012-01-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libexttextcat
 PORTVERSION=	3.3.1
@@ -25,24 +20,19 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	README README.libtextcat TODO
 
-OPTIONS=	COMPAT_TEXTCAT "Install libtextcat compatible files" Off
+OPTIONS_DEFINE= COMPAT_TEXTCAT DOCS
+COMPAT_TEXTCAT_DESC=	Install libtextcat compatible files
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_COMPAT_TEXTCAT)
+.if ${PORT_OPTIONS:MCOMPAT_TEXTCAT}
 PLIST_SUB+=	TEXTCAT=''
 .else
 PLIST_SUB+=	TEXTCAT='@comment '
 .endif
 
-.if defined(WITH_LM_FILES)
-PLIST_SUB+=	LM=''
-.else
-PLIST_SUB+=	LM='@comment '
-.endif
-
 post-install:
-.if defined(WITH_COMPAT_TEXTCAT)
+.if ${PORT_OPTIONS:MCOMPAT_TEXTCAT}
 	${LN} -sf libexttextcat/textcat.h ${PREFIX}/include/
 	${LN} -sf libexttextcat ${PREFIX}/include/libtextcat
 	${LN} -sf libexttextcat-1.0.a ${PREFIX}/lib/libtextcat.a
@@ -50,7 +40,7 @@ post-install:
 	${LN} -sf libexttextcat-1.0.so.0 ${PREFIX}/lib/libtextcat.so
 	${LN} -sf libexttextcat-1.0.so.0 ${PREFIX}/lib/libtextcat.so.0
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
