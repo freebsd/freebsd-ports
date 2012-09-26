@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Paranoid
-# Date created:				2010-04-27
-# Whom:					jupengfei <jupengfei@gmail.com>
-#
+# Created by: jupengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Paranoid
-PORTVERSION=	0.34
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
