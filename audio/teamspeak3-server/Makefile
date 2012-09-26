@@ -1,12 +1,8 @@
-# Ports collection Makefile for:	teamspeak3-server
-# Date created:				22 January 2003
-# Whom:					Daniel O'Connor
-#
+# Created by: Daniel O'Connor
 # $FreeBSD$
-#
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6.1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/ \
@@ -51,6 +47,8 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 
 .include <bsd.port.options.mk>
 
+OPTIONS_DEFINE=	DOCS
+
 .if ${ARCH} ==	"i386"
 TEAMSPEAK_ARCH=	x86
 .endif
@@ -79,7 +77,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ts3server_freebsd_${TEAMSPEAK_ARCH} \
 		${LIBEXECDIR}/teamspeak_server
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql serverquerydocs" ${SHAREDIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .   for DOCFILE in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${DOCFILE} ${DOCSDIR}
