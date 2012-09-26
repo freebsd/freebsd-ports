@@ -7,7 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -21,7 +21,7 @@ CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
 
 OPTIONS=	IPV6	"Enable IPV6 support"				on \
 		KCM	"Enable Kerberos Credentials Manager"		on \
-		BDB	"Enable BerkeleyDB KDC backend support"		off \
+		BDB	"Enable BerkeleyDB KDC backend support"		on \
 		SQLITE	"Enable SQLite KDC backend support"		off \
 		LDAP	"Enable OpenLDAP KDC backend support"		off \
 		PKINIT	"Enable PK-INIT support"			on \
