@@ -1,20 +1,22 @@
-# New ports collection makefile for:	nwreckdum
-# Date created:				27 May 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	nwreckdum
 PORTVERSION=	0.0.6
 PORTREVISION=	2
 CATEGORIES=	archivers games
-MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for manipulating of Quake PAK files
 
-PLIST_FILES=	bin/nwreckdum
+USE_GITHUB=	yes
+GH_ACCOUNT=	danfe
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	master
+GH_COMMIT=	22cbc47
+
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
