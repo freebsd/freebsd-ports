@@ -16,6 +16,7 @@ COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		splint.1
 
