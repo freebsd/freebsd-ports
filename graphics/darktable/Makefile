@@ -1,9 +1,5 @@
-# New ports collection makefile for:	darktable
-# Date created:				11 March 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	darktable
 PORTVERSION=	1.0.5
@@ -11,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A virtual lighttable and darkroom for photographers
+COMMENT=	Virtual lighttable and darkroom for photographers
 
 LICENSE=	GPLv3
 
@@ -34,19 +30,18 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
 
-OPTIONS=	GCONF	"Enable GConf backend"			off \
-		GPHOTO	"Enable camera support via libgphoto2"	on \
-		FLICKR	"Enable Flickr support via flickcurl"	off \
-		RAWSPEED "Compile with rawspeed backend"	on \
-		SLIDESHOW "Build OpenGL/SDL slideshow viewer"	off \
-		KWALLET	"Enable KWallet support (requires dbus-glib)" off \
-		GKEYRING "Enable GNOME Keyring support"		off \
-		NLS	"Enable Native Language Support"	on \
-		GCC46	"Build with GCC 4.6+ (better OpenMP support)" on
+OPTIONS_DEFINE=	GCONF GPHOTO FLICKR RAWSPEED SLIDESHOW KWALLET GNOMEKEYRING \
+		NLS GCC46
+
+RAWSPEED_DESC=	Compile with rawspeed backend
+SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
+GCC46_DESC=	Build with GCC 4.6+ (better OpenMP support)
+
+OPTIONS_DEFAULT=	GPHOTO RAWSPEED NLS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 CMAKE_ARGS+=	-DDONT_INSTALL_GCONF_SCHEMAS:BOOL=ON	# bogus name, no typo
 GCONF_SCHEMAS=	${PORTNAME}.schemas
@@ -55,7 +50,7 @@ CMAKE_ARGS+=	-DUSE_GCONF_BACKEND:BOOL=OFF
 PLIST_FILES+=	share/darktable/darktablerc
 .endif
 
-.if defined(WITH_GPHOTO)
+.if ${PORT_OPTIONS:MGPHOTO}
 LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
 PLIST_FILES+=	lib/darktable/plugins/lighttable/libcamera.so \
 		lib/darktable/plugins/lighttable/libcapture.so \
@@ -64,18 +59,18 @@ PLIST_FILES+=	lib/darktable/plugins/lighttable/libcamera.so \
 CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 .endif
 
-.if defined(WITH_FLICKR)
+.if ${PORT_OPTIONS:MFLICKR}
 LIB_DEPENDS+=	flickcurl:${PORTSDIR}/www/flickcurl
 PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
 .else
 CMAKE_ARGS+=	-DUSE_FLICKR:BOOL=OFF
 .endif
 
-.if !defined(WITH_RAWSPEED)
+.if ! ${PORT_OPTIONS:MRAWSPEED}
 CMAKE_ARGS+=	-DDONT_USE_RAWSPEED:BOOL=ON
 .endif
 
-.if defined(WITH_SLIDESHOW)
+.if ${PORT_OPTIONS:MSLIDESHOW}
 USE_GL=		gl
 USE_SDL=	sdl
 PLIST_FILES+=	bin/darktable-viewer
@@ -83,25 +78,25 @@ PLIST_FILES+=	bin/darktable-viewer
 CMAKE_ARGS+=	-DBUILD_SLIDESHOW:BOOL=OFF
 .endif
 
-.if defined(WITH_KWALLET)
+.if ${PORT_OPTIONS:MKWALLET}
 LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 .else
 CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=OFF
 .endif
 
-.if defined(WITH_GKEYRING)
+.if ${PORT_OPTIONS:MGNOMEKEYRING}
 LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 .else
 CMAKE_ARGS+=	-DUSE_GNOME_KEYRING:BOOL=OFF
 .endif
 
-.if defined(WITH_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 .else
 CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 .endif
 
-.if defined(WITH_GCC46)
+.if ${PORT_OPTIONS:MGCC46}
 USE_GCC=	4.6+
 # libdarktable.so has parts written in C++ (built-in rawspeed and libraw)
 # and is linked to GCC 4.6's libstdc++.  However CMake removes RPATH from
@@ -133,10 +128,10 @@ post-patch:
 		${WRKSRC}/tools/create_preferences.sh.in
 
 post-install:
-.if !defined(WITH_RAWSPEED)
+.if ! ${PORT_OPTIONS:MRAWSPEED}
 	@${REINPLACE_CMD} -e '/rawspeed/d' ${TMPPLIST}
 .endif
-.if !defined(WITH_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/LC_MESSAGES/d' ${TMPPLIST}
 .endif
 
