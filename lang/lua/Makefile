@@ -16,6 +16,8 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 MAINTAINER=	lua@FreeBSD.org
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
+LICENSE=	MIT
+
 PATCH_WRKSRC=	${WRKSRC}/src
 USE_LUA=	5.1
 LUA_COMPS=	# only define variables
