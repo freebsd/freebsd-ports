@@ -15,7 +15,6 @@ MASTER_SITES=	http://augeas.net/download/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration editing tool
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtool
