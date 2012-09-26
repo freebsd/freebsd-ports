@@ -1,4 +1,0 @@
-You need to adjust php's include_path to contain `%%DATADIR%%'!
-For example, insert
-	include_path = ".:%%DATADIR%%"
-into `%%LOCALBASE%%/etc/php.ini'.
