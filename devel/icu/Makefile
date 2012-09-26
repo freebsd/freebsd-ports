@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icu
-# Date created:				22 Jan 2001
-# Whom:					dwm
-#
+# Created by: dwm
 # $FreeBSD$
-#
 
 PORTNAME=	icu
 PORTVERSION=	4.8.1.1
@@ -23,7 +19,9 @@ LICENSE_FILE=	${WRKSRC}/../unicode-license.txt
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 GNU_CONFIGURE=		yes
-OPTIONS=	THREADS "Build thread-safe version of the library" on
+OPTIONS_DEFINE=	THREADS
+OPTIONS_DEFAULT=	THREADS
+THREADS_DESC=	Build thread-safe version of the library
 
 USE_LDCONFIG=		yes
 
@@ -68,11 +66,11 @@ PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=${ICUMINOR} ICUVER=${PORTVERSION}
 BROKEN=		Does not compile on arm
 .endif
 
-.if defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--enable-threads=no
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 # This builds thread-safe, but not the thread-using version:
 CONFIGURE_ARGS+=	--enable-weak-threads
+.else
+CONFIGURE_ARGS+=	--enable-threads=no
 .endif
 
 post-patch:
