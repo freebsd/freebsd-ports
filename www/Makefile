@@ -358,7 +358,7 @@
     SUBDIR += interchange
     SUBDIR += ismail
     SUBDIR += iwebcal
-    SUBDIR += jakarta-jmeter
+    SUBDIR += jmeter
     SUBDIR += jawstats
     SUBDIR += jdresolve
     SUBDIR += jericho-html
