@@ -13,6 +13,7 @@
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImagesResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeInstanceAttributeResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeKeyPairsResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeTags.pm
 %%SITE_PERL%%/Net/Amazon/EC2/EbsBlockDevice.pm
 %%SITE_PERL%%/Net/Amazon/EC2/EbsInstanceBlockDeviceMapping.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Error.pm
@@ -40,6 +41,7 @@
 %%SITE_PERL%%/Net/Amazon/EC2/Snapshot.pm
 %%SITE_PERL%%/Net/Amazon/EC2/SnapshotAttribute.pm
 %%SITE_PERL%%/Net/Amazon/EC2/StateReason.pm
+%%SITE_PERL%%/Net/Amazon/EC2/TagSet.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserData.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserIdGroupPair.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Volume.pm

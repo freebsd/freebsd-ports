@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-EC2
-PORTVERSION=	0.14
+PORTVERSION=	0.20
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,6 +38,7 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::DescribeImagesResponse.3 \
 		Net::Amazon::EC2::DescribeInstanceAttributeResponse.3 \
 		Net::Amazon::EC2::DescribeKeyPairsResponse.3 \
+		Net::Amazon::EC2::DescribeTags.3 \
 		Net::Amazon::EC2::EbsBlockDevice.3 \
 		Net::Amazon::EC2::EbsInstanceBlockDeviceMapping.3 \
 		Net::Amazon::EC2::Error.3 \
@@ -65,12 +66,10 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::Snapshot.3 \
 		Net::Amazon::EC2::SnapshotAttribute.3 \
 		Net::Amazon::EC2::StateReason.3 \
+		Net::Amazon::EC2::TagSet.3 \
 		Net::Amazon::EC2::UserData.3 \
 		Net::Amazon::EC2::UserIdGroupPair.3 \
 		Net::Amazon::EC2::Volume.3
-
-post-extract:
-	${RM} ${WRKSRC}/lib/Net/Amazon/._EC2.pm
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
