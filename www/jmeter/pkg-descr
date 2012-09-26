@@ -12,4 +12,7 @@ types. You can use it to make a graphical analysis of performance
 or to test your server/script/object behavior under heavy
 concurrent load.
 
-WWW:	http://jakarta.apache.org/jmeter/
+In addition to load-testing, the tool can also be used to verify
+correctness of your web-applications.
+
+WWW:	http://jmeter.apache.org/
