@@ -1,13 +1,7 @@
-# New ports collection makefile for:	libvirt-java
-# Date created:		2012-07-07
-# Whom:		Jason Helfman <jgh@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libvirt-java
-PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTVERSION=	0.4.9
 CATEGORIES=	devel java
 MASTER_SITES=	http://libvirt.org/sources/java/ \
 		ftp://libvirt.org/libvirt/java/
@@ -15,7 +9,7 @@ MASTER_SITES=	http://libvirt.org/sources/java/ \
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Java bindings for the libvirt virtualization API
 
-LICENSE=	LGPL20
+LICENSE=	MIT
 
 LIB_DEPENDS=	virt.10:${PORTSDIR}/devel/libvirt
 BUILD_DEPENDS=	jna>=3.2.7:${PORTSDIR}/devel/jna \
