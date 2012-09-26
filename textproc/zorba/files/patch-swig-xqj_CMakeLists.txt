@@ -1,0 +1,17 @@
+--- swig/xqj/CMakeLists.txt.orig	2012-06-27 11:49:12.000000000 +0200
++++ swig/xqj/CMakeLists.txt	2012-06-27 11:49:35.000000000 +0200
+@@ -12,6 +12,8 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++IF (WITH_JAVA)
++
+   INCLUDE (CMakeJavaInformation )
+   MESSAGE(STATUS "SWIG: Generating XQJ API")
+ 
+@@ -123,3 +125,5 @@
+ ELSEIF (Java_Development_FOUND)
+   MESSAGE ( STATUS "SWIG Java: Not generating XQJ API because JNI headers not found.")
+ ENDIF (Java_Development_FOUND)
++
++ENDIF (WITH_JAVA)

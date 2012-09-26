@@ -1,46 +1,47 @@
-# New ports collection Makefile for:	zorba
-# Date created:				22 February 2011
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	zorba
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	https://launchpadlibrarian.net/112668806/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A general purpose C++ XQuery processor
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
-   		tidy:${PORTSDIR}/www/tidy-lib \
-		curl.6:${PORTSDIR}/ftp/curl \
-		icudata.48:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+   		xerces-c:${PORTSDIR}/textproc/xerces-c3 \
+		icudata:${PORTSDIR}/devel/icu \
+		curl:${PORTSDIR}/ftp/curl \
+		tidy:${PORTSDIR}/www/tidy-lib
+RUN_DEPENDS=	fop:${PORTSDIR}/textproc/fop
 
-OPTIONS=	PHP    "PHP bindings" off \
-		PYTHON "Python bindings" off \
-		RUBY   "Ruby bindings" off \
-		JAVA   "Java bindings" off
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	PHP PYTHON RUBY JAVA
 
 # Both install include/xqc.h
 CONFLICTS=	xqilla-[0-9]*
 
-USE_GNOME=	libxml2
+USE_GNOME=	libxml2 libxslt
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
-CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
+CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING=-I${LOCALBASE}/include
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
+
+PLIST_SUB+=	FULLVERSION=${PORTVERSION} \
+		MIDVERSION=${PORTVERSION:R} \
+		MINVERSION=${PORTVERSION:R:R}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 USE_PHP=	tokenizer
 USE_PHP_BUILD=	yes
 WITH_SWIG=	yes
@@ -53,7 +54,7 @@ CMAKE_ARGS+=	-DWITH_PHP5:BOOL=false
 PLIST_SUB+=	WITH_PHP="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=true \
@@ -66,7 +67,7 @@ CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=false
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.if defined(WITH_RUBY)
+.if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DWITH_RUBY:BOOL=true
@@ -76,11 +77,13 @@ CMAKE_ARGS+=	-DWITH_RUBY:BOOL=false
 PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
+CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
+CATEGORIES+=	java
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DWITH_JAVA:BOOL=true \
-   		-DJAVA_LIBDIR:PATH=${JAVALIBDIR:S/${PREFIX}//}
+   		-DJAVA_LIBDIR:PATH=${JAVALIBDIR}
 PLIST_SUB+=	WITH_JAVA=""
 .else
 CMAKE_ARGS+=	-DWITH_JAVA:BOOL=false
@@ -88,7 +91,7 @@ PLIST_SUB+=	WITH_JAVA="@comment "
 .endif
 
 .if defined(WITH_SWIG)
-BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=	swig2.0:${PORTSDIR}/devel/swig20
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -97,12 +100,18 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	   ${WRKSRC}/cmake_modules/FindPHP5.cmake
+	   ${WRKSRC}/CMakeLists.txt ${WRKSRC}/cmake_modules/FindPHP5.cmake
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '481s|^|#|' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '531s|^|#|' ${WRKSRC}/CMakeLists.txt
 .endif
 
-pre-build:
-	${FIND} ${WRKSRC} -name "*.orig" -delete
+#pre-build:
+#	${FIND} ${WRKSRC} -name "*.orig" -delete
+
+post-install:
+	${LN} -sf libzorba_simplestore.so.${PORTVERSION} ${PREFIX}/lib/libzorba_simplestore.so.${PORTVERSION:R:R}
+
+test:	build
+	cd ${BUILD_WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- src/context/dynamic_context.cpp.orig	2011-09-10 17:56:15.000000000 +0200
-+++ src/context/dynamic_context.cpp	2011-09-15 09:54:19.000000000 +0200
+--- src/context/dynamic_context.cpp.orig	2012-06-13 06:56:48.000000000 +0200
++++ src/context/dynamic_context.cpp	2012-06-21 09:49:08.000000000 +0200
 @@ -18,7 +18,9 @@
  #include "common/common.h"
  #include <assert.h>
@@ -9,8 +9,8 @@
 +#endif
  #ifdef UNIX
  #include <sys/time.h>
- #endif
-@@ -192,10 +194,10 @@
+ #include <unistd.h>
+@@ -238,10 +240,10 @@
    if (gmtm.tm_isdst != 0)
      lTimeShift += 3600;
  #else
@@ -24,10 +24,10 @@
    lTimeShift = gmtm.tm_gmtoff;
  #endif
  
-@@ -207,7 +209,11 @@
-                                    gmtm.tm_mday,
-                                    gmtm.tm_hour,
-                                    gmtm.tm_min,
+@@ -253,7 +255,11 @@
+                                    static_cast<short>(gmtm.tm_mday),
+                                    static_cast<short>(gmtm.tm_hour),
+                                    static_cast<short>(gmtm.tm_min),
 +#ifdef WIN32
                                     gmtm.tm_sec + timebuffer.millitm/1000.0,
 +#else

@@ -1,0 +1,16 @@
+--- test/rbkt/modules/java/CMakeLists.txt.orig	2012-09-25 09:26:34.000000000 +0200
++++ test/rbkt/modules/java/CMakeLists.txt	2012-09-25 09:27:23.000000000 +0200
+@@ -16,6 +16,8 @@
+ # on the JVM claspath. This test scenario should be extended to include a
+ # Zorba module using the .jar, etc.
+ # We make use of the much-improved Java support added in CMake 2.8.6.
++
++IF (WITH_JAVA)
+ COMPARE_VERSION_STRINGS (${CMAKE_VERSION} "2.8.6" RESULT)
+ IF (${RESULT} GREATER -1)
+   FIND_PACKAGE (Java COMPONENTS Development)
+@@ -34,3 +36,4 @@
+ 
+   ENDIF (Java_Development_FOUND)
+ ENDIF (${RESULT} GREATER -1)
++ENDIF (WITH_JAVA)
