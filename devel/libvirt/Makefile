@@ -1,12 +1,7 @@
-# New ports collection makefile for:	libvirt
-# Date created:		2011-05-12
-# Whom:			Jason Helfman <jhelfman@experts-exchange.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libvirt
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -65,7 +60,7 @@ MAN8=		libvirtd.8
 AUTOTOOLSFILES=	aclocal.m4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.3|%%AUTOMAKE_APIVER%%|g' \
+	@${REINPLACE_CMD} -e 's|1.11.6|%%AUTOMAKE_APIVER%%|g' \
 		${WRKSRC}/aclocal.m4
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
