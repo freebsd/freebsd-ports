@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.5p3
+DISTVERSION=	1.8.6p3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -20,6 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
+LDFLAGS+= -lgcc
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \
