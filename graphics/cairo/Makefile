@@ -1,10 +1,6 @@
-# New ports collection makefile for:	cairo
-# Date created:		2004-10-06
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/cairo/Makefile,v 1.101 2010/10/29 15:40:04 kwm Exp $
-#
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.2
@@ -35,17 +31,10 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-xlib
-PLIST_SUB+=	X11="@comment "
-.else
-USE_XORG+=	xrender
-PLIST_SUB+=	X11=""
-.endif
-
-OPTIONS+=	GL "Enable OpenGL Support" Off \
-		XCB "Enable XCB (X C-language Binding) Support" On \
-		GLIB "Enable GObject Functions Feature" On
+OPTIONS_DEFINE=	OPENGL XCB GLIB X11
+OPTIONS_DEFAULT=	XCB GLIB X11
+XCB_DESC=	Enable XCB (X C-language Binding) Support
+GLIB_DESC=	Enable GObject Functions Feature
 
 .include <bsd.port.pre.mk>
 
@@ -53,8 +42,17 @@ OPTIONS+=	GL "Enable OpenGL Support" Off \
 BROKEN=		Does not compile on arm
 .endif
 
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MX11}
+USE_XORG+=	xrender
+PLIST_SUB+=	X11=""
+.else
+CONFIGURE_ARGS+=--disable-xlib
+PLIST_SUB+=	X11="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		gl
+USE_XORG+=	glproto:both
 CONFIGURE_ARGS+=	--enable-gl
 PLIST_SUB+=	GL=""
 .else
@@ -62,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-gl
 PLIST_SUB+=	GL="@comment "
 .endif
 
-.if defined(WITH_XCB)
+.if ${PORT_OPTIONS:MXCB}
 BUILD_DEPENDS+= 	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
 RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
 CONFIGURE_ARGS+=	--enable-xcb
@@ -73,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-xcb
 PLIST_SUB+=		XCB="@comment "
 .endif
 
-.if defined(WITH_GLIB)
+.if ${PORT_OPTIONS:MGLIB}
 USE_GNOME+=	glib20
 PLIST_SUB+=	GLIB=""
 .else
@@ -89,7 +87,7 @@ post-patch:
 		${WRKSRC}/src/*.pc.in
 	@${REINPLACE_CMD} -e '/@CAIRO_HAS_PNG_FUNCTIONS_TRUE@.*=/d' \
 		${WRKSRC}/Makefile.in
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 	@${REINPLACE_CMD} 's|@CAIRO_CFLAGS@|-I$$(top_srcdir)/src/glew &|' \
 		${WRKSRC}/src/Makefile.in
 .endif
