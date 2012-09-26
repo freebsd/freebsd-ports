@@ -1,13 +1,8 @@
-# New ports collection makefile for:	dovecot-pigeonhole
-# Date created:		2006-12-29
-# Whom:			Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
-#
+# Created by: Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
