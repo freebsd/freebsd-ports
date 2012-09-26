@@ -1,12 +1,7 @@
-# New ports collection makefile for:   ocsinventory-agent
-# Date created:				14 August 2007
-# Whom:					Dennis Cabooter
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-2.0/${PORTVERSION}/+download/
