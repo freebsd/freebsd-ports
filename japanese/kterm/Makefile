@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kterm
-# Date created:				18 November 1994
-# Whom:					asami
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0
@@ -50,28 +45,33 @@ MANLANG=	"" ja
 PORTDOCS=	README.kt README.wallpaper.ja dot.termcap
 .endif
 
-OPTIONS=	XAW3DLIB "with Xaw3d scrollbar" off \
-		NEXTAWLIB "with neXtaw scrollbar" off \
-		TEKTRONIXEMU "Tektronix emulation" off \
-		VGAFONT "install VGA font" off
+OPTIONS_DEFINE=	TEKTRONIXEMU VGAFONT
+OPTIONS_SINGLE=	SCROLLBAR
+OPTIONS_SINGLE_SCROLLBAR=	XAW3DLIB NEXTAWLIB
+
+XAW3DLIB_DESC= with Xaw3d scrollbar
+NEXTAWLIB_DESC= with neXtaw scrollbar
+TEKTRONIXEMU_DESC= Tektronix emulation
+VGAFONT_DESC= install VGA font
 
 NKFCMD=		${LOCALBASE}/bin/nkf
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_XAW3DLIB)
+.if ${PORT_OPTIONS:MXAW3DLIB}
 LIB_DEPENDS+=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Xaw3d
-.elif !defined(WITHOUT_NEXTAWLIB)
+.endif
+.if ${PORT_OPTIONS:MNEXTAWLIB}
 LIB_DEPENDS+=	neXtaw.6:${PORTSDIR}/x11-toolkits/neXtaw
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-neXtaw
 .endif
 
-.if !defined(WITHOUT_TEKTRONIXEMU)
+.if ${PORT_OPTIONS:MTEKTRONIXEMU}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Tektronix
 .endif
 
-.if !defined(WITHOUT_VGAFONT)
+.if ${PORT_OPTIONS:MVGAFONT}
 PLIST_SUB=	VGAFONT=""
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -95,7 +95,7 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1}.gz ${MANPREFIX}/man/ja/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} \
 		${WRKSRC}/README.kt \
