@@ -1,7 +1,4 @@
-# New ports collection makefile for:	truecrypt
-# Date created: 	9 May 2011
-# Whom:			Ryan Steinmetz
-#
+# Creater by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
 
 PORTNAME=	truecrypt
@@ -39,24 +36,24 @@ WX_VER=		2.8.12
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 PLIST_FILES=	bin/truecrypt
-.if !defined(NOPORTDOCS)
+
+OPTIONS_DEFINE=	X11 DOCS
+X11_DESC=	With GUI (depends on X)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	%%DOCSDIR%%/TrueCrypt\ User\ Guide.pdf
 PLIST_FILES+=	%%DOCSDIR%%/License.txt
 PLIST_DIRS=	%%DOCSDIR%%
 .endif
 
-OPTIONS=	X11     "With GUI (depends on X)" off
-
-.include <bsd.port.options.mk>
-
-.ifdef(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_GNOME=	gtk20
 NOGUI=
 .else
 NOGUI=		NOGUI=1
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if (!exists(${DISTDIR}/${TC_SRCFILE}))
 DISTFILE_INSTRUCTIONS=\n\
@@ -84,7 +81,7 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Main/truecrypt ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/License.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/Release/Setup\ Files/TrueCrypt\ User\ Guide.pdf ${DOCSDIR}
@@ -93,4 +90,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
