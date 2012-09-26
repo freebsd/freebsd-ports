@@ -84,7 +84,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/slideshow/* ${DOCSDIR}/slideshow
 .endif
-,if ${PORT_OPTIONS:MEXAMPLES}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@for file in `${FIND} ${WRKSRC}/examples -type f ! -name 'README'`; do \
 		${INSTALL_SCRIPT} $$file ${EXAMPLESDIR}/; \
