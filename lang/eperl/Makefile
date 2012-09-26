@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
 
+FORBIDDEN=	Vulnerable since 2001-06-21, http://portaudit.freebsd.org/73efb1b7-07ec-11e2-a391-000c29033c32.html
 DEPRECATED=	Unfixed upstream remote vulnerability and no activity since 1998
 EXPIRATION_DATE=2012-10-26
 
