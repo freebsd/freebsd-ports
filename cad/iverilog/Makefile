@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	iverilog
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
 		ftp://ftp.geda.seul.org/pub/geda/dist/
