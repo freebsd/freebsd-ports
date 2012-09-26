@@ -1,17 +1,12 @@
-# ex:ts=8
-# New ports collection makefile for:	yacas
-# Date created:			Jun 21, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	yacas
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	math
-MASTER_SITES=	http://yacas.sourceforge.net/backups/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
 LICENSE=	GPLv2
@@ -23,7 +18,8 @@ TESTS_DESC=	Run bundled self-tests after build
 
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+#USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
@@ -34,6 +30,7 @@ BROKEN=		Does not compile with GCC 4.2
 
 .if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-html-doc --with-html-dir=${DOCSDIR}
+PORTDOCS=	*
 .else
 CONFIGURE_ARGS+=	--disable-html-doc
 .endif

@@ -1,94 +1,5 @@
 bin/yacas
 bin/ytxt2tex
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter6.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter7.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapter8.html
-%%PORTDOCS%%%%DOCSDIR%%/Algochapters.html
-%%PORTDOCS%%%%DOCSDIR%%/Algomanual.html
-%%PORTDOCS%%%%DOCSDIR%%/books.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter6.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter7.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter8.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapter9.html
-%%PORTDOCS%%%%DOCSDIR%%/codingchapters.html
-%%PORTDOCS%%%%DOCSDIR%%/codingmanual.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter6.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter7.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapter8.html
-%%PORTDOCS%%%%DOCSDIR%%/essayschapters.html
-%%PORTDOCS%%%%DOCSDIR%%/essaysmanual.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapter6.html
-%%PORTDOCS%%%%DOCSDIR%%/introchapters.html
-%%PORTDOCS%%%%DOCSDIR%%/intromanual.html
-%%PORTDOCS%%%%DOCSDIR%%/manicon.html
-%%PORTDOCS%%%%DOCSDIR%%/ref.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter10.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter11.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter12.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter13.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter14.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter15.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter16.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter17.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter18.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter19.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter20.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter21.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter22.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter23.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter24.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter25.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter26.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter27.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter28.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter29.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter30.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter31.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter32.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter6.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter7.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter8.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapter9.html
-%%PORTDOCS%%%%DOCSDIR%%/refchapters.html
-%%PORTDOCS%%%%DOCSDIR%%/refmanual.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter10.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter6.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter7.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter8.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapter9.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogchapters.html
-%%PORTDOCS%%%%DOCSDIR%%/refprogmanual.html
-%%PORTDOCS%%%%DOCSDIR%%/yacaslogo.gif
 %%DATADIR%%/array.rep/code.ys
 %%DATADIR%%/array.rep/code.ys.def
 %%DATADIR%%/assoc.rep/code.ys
@@ -97,6 +8,8 @@ bin/ytxt2tex
 %%DATADIR%%/base.rep/math.ys.def
 %%DATADIR%%/c_form.rep/code.ys
 %%DATADIR%%/c_form.rep/code.ys.def
+%%DATADIR%%/calendar.rep/code.ys
+%%DATADIR%%/calendar.rep/code.ys.def
 %%DATADIR%%/complex.rep/code.ys
 %%DATADIR%%/complex.rep/code.ys.def
 %%DATADIR%%/complex.rep/om.ys
@@ -412,9 +325,9 @@ bin/ytxt2tex
 @dirrm %%DATADIR%%/controlflow.rep
 @dirrm %%DATADIR%%/constants.rep
 @dirrm %%DATADIR%%/complex.rep
+@dirrm %%DATADIR%%/calendar.rep
 @dirrm %%DATADIR%%/c_form.rep
 @dirrm %%DATADIR%%/base.rep
 @dirrm %%DATADIR%%/assoc.rep
 @dirrm %%DATADIR%%/array.rep
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
