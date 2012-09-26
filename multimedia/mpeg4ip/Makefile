@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpeg4ip
-# Date created:		Wed Jun  5 21:49:46 UTC 2002
-# Whom:	          Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
@@ -13,21 +9,20 @@ MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2 \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
-		faad.2:${PORTSDIR}/audio/faad \
-		mp3lame.0:${PORTSDIR}/audio/lame \
-		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		a52.0:${PORTSDIR}/audio/liba52 \
-		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		x264.125:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS=	faac:${PORTSDIR}/audio/faac \
+		faad:${PORTSDIR}/audio/faad \
+		mp3lame:${PORTSDIR}/audio/lame \
+		id3tag:${PORTSDIR}/audio/libid3tag \
+		a52:${PORTSDIR}/audio/liba52 \
+		mpeg2:${PORTSDIR}/multimedia/libmpeg2	\
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		x264:${PORTSDIR}/multimedia/x264
 RUN_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2
 
 USE_GNOME=	gtk20
@@ -42,12 +37,8 @@ CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static
 
-OPTIONS=	ARTS "Enable Arts Support" Off \
-		ESOUND "Enable Esound Support" Off \
-		IPV6 "Enable IPV6 Support" On \
-		NAS "Enable Nas Support" Off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" Off \
-		XVID "Enable XVID Support" On
+OPTIONS_DEFINE=	ARTS ESOUND IPV6 NAS OPTIMIZED_CFLAGS XVID DOCS
+OPTIONS_DEFAULT=	IPV6 XVID
 
 DOC_FILES=	${PORTDOCS}
 PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
@@ -92,48 +83,46 @@ MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 ## Auto detect possible extensions
 ###
 # arts
-.if exists(${LOCALBASE}/lib/libartsc.so.0)
-WITH_ARTS=	yes
+.if exists(${LOCALBASE}/lib/libartsc.so) && empty(PORT_OPTIONS:MARTS)
+PORT_OPTIONS+=	ARTS
 .endif
 # esound
-.if ${HAVE_GNOME:Mesound}!=""
-WITH_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
+PORT_OPTIONS+=	ESOUND
 .endif
 # nas
-.if exists(${LOCALBASE}/lib/libaudio.so.2)
-WITH_NAS=	yes
+.if exists(${LOCALBASE}/lib/libaudio.so) && empty(PORT_OPTIONS:MNAS)
+PORT_OPTIONS+=	NAS
 .endif
 # xvid
-.if exists(${LOCALBASE}/lib/libxvidcore.so.4)
-WITH_XVID=	yes
+.if exists(${LOCALBASE}/lib/libxvidcore.so) && empty(PORT_OPTIONS:MXVID)
+PORT_OPTIONS+=	XVID
 .endif
 
 ###
 ## Enable extensions based on user choices
 ###
 # arts
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.if ${PORT_OPTIONS:MARTS}
+LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 .endif
 # esound
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
-
-PKG_NAME_SUFFIX+=-esound
 .endif
 # nas
-.if defined(WITH_NAS)
-LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+.if ${PORT_OPTIONS:MNAS}
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 .endif
 
 # ipv6
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 # xvid
-.if !defined(WITHOUT_XVID)
-LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+.if ${PORT_OPTIONS:MXVID}
+LIB_DEPENDS+=	xvidcore:${PORTSDIR}/multimedia/xvid
 
 PLIST_SUB+=	XVID=""
 .else
@@ -193,7 +182,6 @@ post-configure:
 	@${MKDIR} ${WRKSRC}/lib/mp4v2
 	@echo '#include "mpeg4ip.h"' > ${WRKSRC}/lib/mp4v2/mp4.h
 
-
 post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/server/util/mp4encode/mp4encode \
@@ -201,7 +189,7 @@ post-install:
 	${INSTALL_DATA} \
 		${WRKSRC}/server/util/mp4encode/mp4venc_template.par \
 		${DATADIR}
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for files in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${files} ${DOCSDIR}
@@ -209,22 +197,20 @@ post-install:
 .endif
 
 .if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "mmx") && !defined(PACKAGE_BUILDING)
-WITH_MMX=yes
-.else
-WITHOUT_MMX=yes
+MMX=yes
 .endif
 
 ###
 ## Enable extensions based on arch detection
 ###
 # mmx
-.ifdef(WITHOUT_MMX)
-CONFIGURE_ARGS+=	--disable-mmx
-.else
+.if defined(MMX)
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+.else
+CONFIGURE_ARGS+=	--disable-mmx
 .endif
 # compiler optimizations
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
