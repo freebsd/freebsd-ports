@@ -37,7 +37,7 @@ RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 GCC46_DESC=	Build with GCC 4.6+ (better OpenMP support)
 
-OPTIONS_DEFAULT=	GPHOTO RAWSPEED NLS
+OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC46
 
 .include <bsd.port.pre.mk>
 
