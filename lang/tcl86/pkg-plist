@@ -848,7 +848,6 @@ lib/tcl8/8.5/msgcat-1.5.0.tm
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific-New
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Samoa
 lib/tcl%%TCL_VER%%/word.tcl
-%%DATADIR%%/man.macros
 @dirrm %%DATADIR%%
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/US
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/SystemV

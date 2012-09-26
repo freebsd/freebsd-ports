@@ -87,7 +87,7 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 CONFIGURE_ARGS+=	--disable-threads
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL86_MAN)
-
+PLIST_FILES+=	${DATADIR}/man.macros
 MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	Async.3 BackgdErr.3 Backslash.3 BoolObj.3 ByteArrObj.3 CallDel.3 \
 	Cancel.3 ChnlStack.3 Class.3 CmdCmplt.3 Concat.3 CrtChannel.3 \
