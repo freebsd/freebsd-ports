@@ -7,7 +7,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.3-${SVNREVISION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -127,7 +127,7 @@ RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
 		${PEAR_DIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEAR_DIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP \
 		${PEAR_DIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
-		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty
+		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 .endif
 
 .if defined(WITH_MYSQL)

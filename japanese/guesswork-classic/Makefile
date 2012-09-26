@@ -7,13 +7,14 @@
 
 PORTNAME=	guesswork-classic
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	japanese devel
 MASTER_SITES=	http://classic.guesswork.jp/download/files/
 
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	A PHP lightweight framework
 
-RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty
+RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 
 NO_BUILD=	yes
 USE_PHP=	yes
