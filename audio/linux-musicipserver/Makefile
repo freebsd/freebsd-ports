@@ -1,9 +1,5 @@
-# New ports collection makefile for:	musicipserver
-# Date created:		2009-03-24
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=		musicipserver
 PORTVERSION=		1.8
@@ -30,7 +26,9 @@ RUN_DEPENDS=		empty:${PORTSDIR}/net/empty \
 
 LICENSE_DISTFILES=	${DISTNAME}.tgz
 
-OPTIONS=		SPICEFLY_SKIN "Install Spicefly skin" on
+OPTIONS_DEFINE=		SPICEFLY_SKIN
+OPTIONS_DEFAULT=		SPICEFLY_SKIN
+OPTIONS_DESC=		Install Spicefly skin
 
 WRKSRC=			${WRKDIR}/MusicIP/MusicMagicMixer/
 
@@ -59,12 +57,12 @@ PLIST_SUB=		MUSICIPSERVERDBDIR=${MUSICIPSERVERDBDIR} \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SPICEFLY_SKIN) && !defined(WITHOUT_SPICEFLY_SKIN)
+.if ${PORT_OPTIONS:MSPICEFLY_SKIN}
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 DISTFILES+=		index-1.1.zip:spicefly
 .endif
 
-.if defined(WITH_SPICEFLY_SKIN) && !defined(WITHOUT_SPICEFLY_SKIN)
+.if ${PORT_OPTIONS:MSPICEFLY_SKIN}
 post-extract:
 	@cd ${WRKDIR} && ${UNZIP_CMD} -qo ${_DISTDIR}/index-1.1.zip -d ${WRKDIR}/spicefly
 .endif
@@ -76,7 +74,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/MusicMagicServer ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	@${LN} -fhs ${LOCALBASE}/libexec/mipcore ${DATADIR}/mipcore
-.if defined(WITH_SPICEFLY_SKIN) && !defined(WITHOUT_SPICEFLY_SKIN)
+.if ${PORT_OPTIONS:MSPICEFLY_SKIN}
 	@${MKDIR} ${DATADIR}/server
 	@${INSTALL_DATA} ${WRKDIR}/spicefly/index.html ${DATADIR}/server
 .else
