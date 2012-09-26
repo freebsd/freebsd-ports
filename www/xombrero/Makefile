@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xombrero
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 EXTRACT_SUFX=	.tgz
@@ -58,7 +58,7 @@ do-install:
 	${INSTALL_DATA}  ${WRKSRC}/xombreroicon${i}.png ${PREFIX}/share/icons/hicolor/${i}x${i}/apps
 .endfor
 	${MKDIR} ${DATADIR}
-.for i in style.css tld-rules
+.for i in hsts-preload style.css tld-rules
 	${INSTALL_DATA}  ${WRKSRC}/${i} ${DATADIR}
 .endfor
 	${MKDIR} ${PREFIX}/share/applications
