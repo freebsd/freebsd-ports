@@ -1789,7 +1789,7 @@
     SUBDIR += sitecopy
     SUBDIR += siteframe
     SUBDIR += skytemplate
-    SUBDIR += smarty
+    SUBDIR += smarty2
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += snownews
