@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
 
+DEPRECATED=	Unfixed upstream remote vulnerability and no activity since 1998
+EXPIRATION_DATE=2012-10-26
+
 # User-controlled variables list
 # INSTALL_ALSO_AS_SSSL
 #	install ePerl also as a Server-Side
