@@ -416,6 +416,8 @@ lib/mono/4.0/mscorlib.dll
 lib/mono/4.5/Accessibility.dll
 lib/mono/4.5/Commons.Xml.Relaxng.dll
 lib/mono/4.5/CustomMarshalers.dll
+lib/mono/4.5/EntityFramework.SqlServer.dll
+lib/mono/4.5/EntityFramework.dll
 lib/mono/4.5/I18N.CJK.dll
 lib/mono/4.5/I18N.MidEast.dll
 lib/mono/4.5/I18N.Other.dll
@@ -503,6 +505,7 @@ lib/mono/4.5/System.Web.ApplicationServices.dll
 lib/mono/4.5/System.Web.DynamicData.dll
 lib/mono/4.5/System.Web.Extensions.Design.dll
 lib/mono/4.5/System.Web.Extensions.dll
+lib/mono/4.5/System.Web.Http.SelfHost.dll
 lib/mono/4.5/System.Web.Http.dll
 lib/mono/4.5/System.Web.Mvc.dll
 lib/mono/4.5/System.Web.Razor.dll
@@ -656,6 +659,10 @@ lib/mono/gac/CustomMarshalers/2.0.0.0__b03f5f7f11d50a3a/CustomMarshalers.dll
 lib/mono/gac/CustomMarshalers/2.0.0.0__b03f5f7f11d50a3a/CustomMarshalers.dll.mdb
 lib/mono/gac/CustomMarshalers/4.0.0.0__b03f5f7f11d50a3a/CustomMarshalers.dll
 lib/mono/gac/CustomMarshalers/4.0.0.0__b03f5f7f11d50a3a/CustomMarshalers.dll.mdb
+lib/mono/gac/EntityFramework.SqlServer/6.0.0.0__b77a5c561934e089/EntityFramework.SqlServer.dll
+lib/mono/gac/EntityFramework.SqlServer/6.0.0.0__b77a5c561934e089/EntityFramework.SqlServer.dll.mdb
+lib/mono/gac/EntityFramework/6.0.0.0__b77a5c561934e089/EntityFramework.dll
+lib/mono/gac/EntityFramework/6.0.0.0__b77a5c561934e089/EntityFramework.dll.mdb
 lib/mono/gac/I18N.CJK/2.0.0.0__0738eb9f132ed756/I18N.CJK.dll
 lib/mono/gac/I18N.CJK/2.0.0.0__0738eb9f132ed756/I18N.CJK.dll.mdb
 lib/mono/gac/I18N.CJK/4.0.0.0__0738eb9f132ed756/I18N.CJK.dll
@@ -904,6 +911,8 @@ lib/mono/gac/System.Messaging/4.0.0.0__b03f5f7f11d50a3a/System.Messaging.dll
 lib/mono/gac/System.Messaging/4.0.0.0__b03f5f7f11d50a3a/System.Messaging.dll.mdb
 lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35/System.Net.Http.Formatting.dll
 lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35/System.Net.Http.Formatting.dll.mdb
+lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a/System.Net.Http.dll
+lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a/System.Net.Http.dll.mdb
 lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e/System.Net.dll
 lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e/System.Net.dll.mdb
 lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e/System.Net.dll
@@ -974,6 +983,8 @@ lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensio
 lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
 lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll
 lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
+lib/mono/gac/System.Web.Http.SelfHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.SelfHost.dll
+lib/mono/gac/System.Web.Http.SelfHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.SelfHost.dll.mdb
 lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35/System.Web.Http.dll
 lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35/System.Web.Http.dll.mdb
 lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll
@@ -1099,6 +1110,7 @@ lib/monodoc/sources/monoapi.zip
 lib/monodoc/sources/netdocs.source
 lib/monodoc/sources/netdocs.tree
 lib/monodoc/sources/netdocs.zip
+libdata/pkgconfig/aspnetwebstack.pc
 libdata/pkgconfig/cecil.pc
 libdata/pkgconfig/dotnet.pc
 libdata/pkgconfig/dotnet35.pc
@@ -1115,6 +1127,7 @@ libdata/pkgconfig/system.web.extensions.design_1.0.pc
 libdata/pkgconfig/system.web.extensions_1.0.pc
 libdata/pkgconfig/system.web.mvc.pc
 libdata/pkgconfig/system.web.mvc2.pc
+libdata/pkgconfig/system.web.mvc3.pc
 libdata/pkgconfig/wcf.pc
 share/libgc-mono/README
 share/libgc-mono/README.DGUX386
@@ -1249,6 +1262,8 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Mvc
 @dirrm lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Http.SelfHost/4.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Http.SelfHost
 @dirrm lib/mono/gac/System.Web.Http
 @dirrm lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35
@@ -1305,6 +1320,7 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Numerics
 @dirrm lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e
 @dirrm lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e
+@dirrm lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Net.Http.Formatting
 @dirrm lib/mono/gac/System.Net.Http
@@ -1502,6 +1518,10 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/I18N.CJK/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/I18N.CJK
 @dirrm lib/mono/gac/I18N
+@dirrm lib/mono/gac/EntityFramework/6.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/EntityFramework.SqlServer/6.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/EntityFramework.SqlServer
+@dirrm lib/mono/gac/EntityFramework
 @dirrm lib/mono/gac/CustomMarshalers/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/CustomMarshalers/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/CustomMarshalers
