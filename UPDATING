@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120925:
+  AFFECTS: users of www/linux-f10-flashplugin11
+  AUTHOR: eadler@FreeBSD.org
+
+  After reinstalling the port make sure to run nspluginwrapper -v -a -u
+  for each user that uses the plugin.
+
 20120924:
   AFFECTS: users of textproc/aspell
   AUTHOR: bapt@FreeBSD.org
