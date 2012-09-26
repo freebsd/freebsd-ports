@@ -1,13 +1,7 @@
-# New ports collection makefile for: virt-viewer
-# Date created:    2011-06-07
-# Whom:      Jason Helfman <jhelfman@experts-exchange.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	virt-viewer
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
