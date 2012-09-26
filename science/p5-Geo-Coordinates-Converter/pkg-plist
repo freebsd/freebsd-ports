@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Wgs72.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format/Dms.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format/Degree.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Format/Milliseconds.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Point.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Datum.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format.pm
