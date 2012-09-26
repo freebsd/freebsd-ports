@@ -42,18 +42,22 @@ sbin/visudo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
