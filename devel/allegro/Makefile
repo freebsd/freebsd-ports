@@ -1,9 +1,5 @@
-# New ports collection makefile for:	allegro
-# Date created:		23-Feb-2001
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
+# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	allegro
 DISTVERSION=	4.2.2
@@ -20,14 +16,9 @@ USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 
-OPTIONS=	ARTS "Enable Arts support" off \
-		DEBUG "Build debugging library" off \
-		DEVEL "Build development utilities" on \
-		ESOUND "Enable Esound support" off \
-		JACK "Enable JACK support" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		PROFILE "Build profiling library" off \
-		THREADS "Enable threads" on
+OPTIONS_DEFINE=	ARTS DEBUG DEVEL ESOUND JACK OPTIMIZED_CFLAGS PROFILE THREADS
+OPTIONS_DEFAULT=	DEVEL OPTIMIZED_CFLAGS THREADS
+DEVEL_DESC=	Install development utilities
 
 MAKEFILE=	makefile
 ALL_TARGET=	full-build
@@ -48,8 +39,8 @@ PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.if ${PORT_OPTIONS:MARTS}
+LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=--enable-artsdigi
 PLIST_SUB+=	ARTS=""
 .else
@@ -57,7 +48,7 @@ CONFIGURE_ARGS+=--disable-artsdigi
 PLIST_SUB+=	ARTS="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-dbglib
 PLIST_SUB+=	DEBUG=""
 .else
@@ -65,7 +56,7 @@ CONFIGURE_ARGS+=--disable-dbglib
 PLIST_SUB+=	DEBUG="@comment "
 .endif
 
-.if !defined(WITHOUT_DEVEL)
+.if ${PORT_OPTIONS:MDEVEL}
 INSTALL_TARGET=	full-install install-man install-info
 PLIST_SUB+=	DEVEL=""
 .else
@@ -73,7 +64,7 @@ INSTALL_TARGET=	mini-install install-man install-info
 PLIST_SUB+=	DEVEL="@comment "
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUNS}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esddigi
 PLIST_SUB+=	ESOUND=""
@@ -82,8 +73,8 @@ CONFIGURE_ARGS+=--disable-esddigi
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if defined(WITH_JACK)
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=--enable-jackdigi
 PLIST_SUB+=	JACK=""
 .else
@@ -91,7 +82,7 @@ CONFIGURE_ARGS+=--disable-jackdigi
 PLIST_SUB+=	JACK="@comment "
 .endif
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=--enable-proflib
 PLIST_SUB+=	PROFILE=""
 .else
@@ -99,7 +90,7 @@ CONFIGURE_ARGS+=--disable-proflib
 PLIST_SUB+=	PROFILE="@comment "
 .endif
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-pthreads
 CPPFLAGS+=	${PTHREAD_CFLAGS} -DHAVE_LIBPTHREAD
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -123,7 +114,7 @@ post-patch:
 .endif
 
 # Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		s|-ffast-math||g ; \
 		s|-fomit-frame-pointer||g ; \
@@ -133,7 +124,7 @@ post-patch:
 
 post-install:
 # Documentation.
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/*.css  ${DOCSDIR}

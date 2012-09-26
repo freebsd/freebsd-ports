@@ -18,7 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFLICTS=	pear-PHPDoc-[0-9]*
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	XML_BEAUTIFIER "XML_Beautifier support" off
+OPTIONS_DEFINE=	XML_BEAUTIFIER
+XML_BEAUTIFIER_DESC=	XML_Beautifier support
 
 CATEGORY=	PhpDocumentor
 FILES=		HTML_TreeMenu-1.1.2/TreeMenu.php \
@@ -1250,7 +1251,7 @@ SUBFILES=	phpDocumentor/Converter.inc \
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
-.if defined(WITH_XML_BEAUTIFIER)
+.if ${PORT_OPTIONS:MXML_BEAUTIFIER}
 RUN_DEPENDS+=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beautifier
 .endif
 

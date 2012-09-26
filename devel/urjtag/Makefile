@@ -23,18 +23,19 @@ CFLAGS+=	--std=c99
 
 MAN1=		jtag.1 bsdl2jtag.1
 
-OPTIONS=	\
-	USB	"Build support for USB JTAG adapters"		 On	\
-	FTDI	"Build support for FTDI-based USB JTAG adapters" On	\
-	JEDEC	"Enable experimental JEDEC flash detection"	 Off
+OPTIONS_DEFINE=	USB FTDI JEDEC NLS
+OPTIONS_DEFAULT=	USB FTDI
+USB_DESC=	Build support for USB JTAG adapters
+FTDI_DESC=	Build support for FTDI-based USB JTAG adapters
+JEDEC_DESC=	Enable experimental JEDEC flash detection
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JEDEC)
+.if ${PORT_OPTIONS:MJEDEC}
 CONFIGURE_ARGS+=	--enable-jedec
 .endif
 
-.if !defined(WITHOUT_USB)
+.if ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=	--with-libusb
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
@@ -43,16 +44,16 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
 . endif
 .endif
 
-.if !defined(WITHOUT_FTDI)
+.if ${PORT_OPTIONS:MFTDI}
 CONFIGURE_ARGS+=	--with-libftdi
-LIB_DEPENDS+=	ftdi.19:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=	ftdi:${PORTSDIR}/devel/libftdi
 .endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.6)
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
