@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="73efb1b7-07ec-11e2-a391-000c29033c32">
+    <topic>eperl -- Remote code execution</topic>
+    <affects>
+      <package>
+	<name>eperl</name>
+	<range><le>2.2.14_4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Madison reports:</p>
+	<blockquote cite="http://www.shmoo.com/mail/bugtraq/jun01/msg00286.shtml">
+	  <p>ePerl is a multipurpose Perl filter and interpreter program
+	    for Unix systems. The ePerl preprocessor contains an input
+	    validation error. The preprocessor allows foreign data to be
+	    "safely" included using the 'sinclude' directive.</p>
+	  <p>The problem occurs when a file referenced by a 'sinclude'
+	    directive contains a 'include' directive; the contents of
+	    the file referred to by the second directive will be loaded
+	    and executed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2001-0733</cvename>
+      <url>http://www.shmoo.com/mail/bugtraq/jun01/msg00286.shtml</url>
+      <bid>2912</bid>
+      <url>http://xforce.iss.net/xforce/xfdb/6743</url>
+      <url>http://osvdb.org/show/osvdb/1880</url>
+    </references>
+    <dates>
+      <discovery>2001-06-21</discovery>
+      <entry>2012-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="98690c45-0361-11e2-a391-000c29033c32">
     <topic>ImageMagick and GraphicsMagick -- DoS via specially crafted PNG file</topic>
     <affects>
