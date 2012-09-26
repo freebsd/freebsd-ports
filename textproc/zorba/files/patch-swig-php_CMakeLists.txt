@@ -1,33 +1,33 @@
---- swig/php/CMakeLists.txt.orig	2011-09-10 17:56:13.000000000 +0200
-+++ swig/php/CMakeLists.txt	2011-11-24 15:58:35.000000000 +0100
+--- swig/php/CMakeLists.txt.orig	2012-06-21 09:56:31.000000000 +0200
++++ swig/php/CMakeLists.txt	2012-06-21 09:57:39.000000000 +0200
 @@ -12,6 +12,8 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
  
 +IF (WITH_PHP5)
 +
- IF (NOT PHP5_FOUND)
-   MESSAGE (STATUS "SWIG PHP: PHP5 binding not generated because library and include file not installed.")
- ELSE (NOT PHP5_FOUND)
-@@ -40,13 +42,11 @@
+ IF (PHP5_FOUND)
+   MESSAGE (STATUS "SWIG: Generating PHP5 API")
  
+@@ -52,13 +54,11 @@
    # The following fix was added because of the changes in CMake 2.8, which have the
    # result of naming the java binding library "liblibzorba_api.so" instead of "libzorba_api.so"
--  IF (LINUX OR CYGWIN)
-+  IF (LINUX OR CYGWIN OR FREEBSD)
+   SET_TARGET_PROPERTIES( ${SWIG_MODULE_zorba_api_REAL_NAME} PROPERTIES PROJECT_LABEL "PHP" FOLDER "APIs")
+-  IF (LINUX OR CYGWIN OR APPLE)
++  IF (LINUX OR CYGWIN OR APPLE OR FREEBSD)
      SET_TARGET_PROPERTIES (${SWIG_MODULE_zorba_api_REAL_NAME} PROPERTIES PREFIX "")
--  ENDIF (LINUX OR CYGWIN)
-+  ENDIF (LINUX OR CYGWIN OR FREEBSD)
+-  ENDIF (LINUX OR CYGWIN OR APPLE)
++  ENDIF (LINUX OR CYGWIN OR APPLE OR FREEBSD)
  
    IF (NOT WIN32 OR CYGWIN)
 -    STRING (REPLACE ${CMAKE_INSTALL_PREFIX} "" PHP5_INSTALL_PATH ${PHP5_EXTENSION_DIR})
 -    SET (PHP5_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/share/php5")
-     MESSAGE (STATUS "SWIG PHP: PHP module install path: " ${PHP5_INSTALL_PATH})
  
      INSTALL (
-@@ -88,3 +88,5 @@
-   ### End PHP proxy generation
- 
- ENDIF (NOT PHP5_FOUND)
+       FILES
+@@ -89,3 +89,5 @@
+ ELSE (PHP5_FOUND)
+   MESSAGE (STATUS "SWIG: PHP5 binding not generated because library and include file are not installed.")
+ ENDIF (PHP5_FOUND)
 +
 +ENDIF (WITH_PHP5)

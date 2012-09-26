@@ -1,5 +1,5 @@
---- src/util/string_util.cpp.orig	2011-09-15 11:58:15.000000000 +0200
-+++ src/util/string_util.cpp	2011-09-15 12:23:07.000000000 +0200
+--- src/util/string_util.cpp.orig	2012-06-13 06:56:48.000000000 +0200
++++ src/util/string_util.cpp	2012-06-21 09:49:48.000000000 +0200
 @@ -92,7 +92,11 @@
  float atof( char const *s ) {
    char *end;
@@ -24,8 +24,8 @@
    check_parse_number( s, end, static_cast<long long*>( nullptr ) );
    return result;
  }
-@@ -116,7 +124,11 @@
-     );
+@@ -114,7 +122,11 @@
+ 
    char *end;
    errno = 0;
 +#ifdef WIN32
@@ -34,5 +34,5 @@
 +  unsigned long long const result = strtoull( s, &end, 10 );
 +#endif
    check_parse_number( s, end, static_cast<unsigned long long*>( nullptr ) );
-   return result;
- }
+ 
+   if ( minus && result ) {

@@ -1,11 +1,13 @@
 bin/testdriver
 bin/zorba
+bin/xqdb
 include/xqc.h
 include/zorba/annotation.h
 include/zorba/api_shared_types.h
 include/zorba/audit.h
 include/zorba/audit_scoped.h
 include/zorba/base64.h
+include/zorba/base64_stream.h
 include/zorba/collection.h
 include/zorba/collection_manager.h
 include/zorba/config.h
@@ -20,13 +22,16 @@ include/zorba/diagnostic_list.h
 include/zorba/document_manager.h
 include/zorba/dynamic_context.h
 include/zorba/empty_sequence.h
+include/zorba/external_function_parameter.h
 include/zorba/error.h
 include/zorba/external_module.h
 include/zorba/file.h
 include/zorba/function.h
 include/zorba/identtypes.h
 include/zorba/internal/diagnostic.h
+include/zorba/internal/proxy.h
 include/zorba/internal/qname.h
+include/zorba/internal/streambuf.h
 include/zorba/internal/system_diagnostic.h
 include/zorba/internal/type_traits.h
 include/zorba/internal/unique_ptr.h
@@ -53,13 +58,16 @@ include/zorba/store_consts.h
 include/zorba/store_manager.h
 include/zorba/store_manager_c.h
 include/zorba/streams.h
+include/zorba/thesaurus.h
 include/zorba/tokenizer.h
+include/zorba/transcode_stream.h
 include/zorba/typeident.h
 include/zorba/unit_tests.h
 include/zorba/uri_resolvers.h
 include/zorba/user_exception.h
 include/zorba/util/file.h
 include/zorba/util/path.h
+include/zorba/util/time.h.orig
 include/zorba/util/time.h
 include/zorba/util/timer.h
 include/zorba/util/uri.h
@@ -77,120 +85,18 @@ include/zorba/zorba_functions.h
 include/zorba/zorba_string.h
 include/zorba/zorbac.h
 lib/libzorba_simplestore.so
-lib/libzorba_simplestore.so.2.0.2
+lib/libzorba_simplestore.so.%%MINVERSION%%
+lib/libzorba_simplestore.so.%%FULLVERSION%%
+lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/libhttp-client_2.0.so
+lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/libdatetime_2.0.so
+lib/zorba/core/%%FULLVERSION%%/edu/princeton/wordnet/wordnet-en.zth
+lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%WITH_PHP%%%%PHP_EXTLIBDIR%%/zorba_api_wrapper.php
 %%WITH_PHP%%%%PHP_EXTLIBDIR%%/zorba_api.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/zorba_api.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_zorba_api.so
-%%DATADIR%%/cmake/ExternalModuleConfig.cmake.in
-%%DATADIR%%/cmake/ZorbaConfig.cmake
-%%DATADIR%%/cmake/ZorbaConfigVersion.cmake
-%%DATADIR%%/cmake/ZorbaModule.cmake
-%%DATADIR%%/cmake/ZorbaUse.cmake
-%%DATADIR%%/modules/com/functx/www/index.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/errors.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/converters/base64.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/converters/base64_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/converters/base64_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/datetime.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/datetime_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/datetime_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/fetch.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/fetch_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/fetch_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/http-client.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/http-client_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/http-client_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/introspection/sctx.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/introspection/sctx_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/introspection/sctx_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/libdatetime_2.0.so
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/libhttp-client_2.0.so
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/math.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/math_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/math_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/node-reference.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/node-reference_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/node-reference_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/node.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/node_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/node_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/project_xqdoc.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/project_xqdoc_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/project_xqdoc_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/random.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/random_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/random_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/reflection.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/reflection_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/reflection_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/schema.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/schema_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/schema_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/data-structures/unordered-map.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/data-structures/unordered-map_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/data-structures/unordered-map_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/ddl.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/ddl_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/ddl_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/dml.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/dml_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/dml_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/ddl.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/ddl_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/ddl_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/dml.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/dml_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/dml_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/documents.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/documents_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/documents_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections/ddl.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections/ddl_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections/ddl_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections/dml.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections/dml_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections/dml_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes/ddl.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes/ddl_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes/ddl_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes/dml.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes/dml_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes/dml_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints/ddl.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints/ddl_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints/ddl_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints/dml.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints/dml_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints/dml_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/string.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/string_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/string_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xml.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xml_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xml_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml/error.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml/error_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml/error_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml/index.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml/index_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml/index_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc_2.0.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc_2.xq
-%%DATADIR%%/modules/com/zorba-xquery/www/warnings.xq
-%%DATADIR%%/modules/org/expath/ns/error.xq
-%%DATADIR%%/modules/org/expath/ns/file.xq
-%%DATADIR%%/modules/org/expath/ns/file_2.0.xq
-%%DATADIR%%/modules/org/expath/ns/file_2.xq
-%%DATADIR%%/modules/org/expath/ns/http-client.xsd
-%%DATADIR%%/modules/org/expath/ns/libfile_2.0.so
-%%DATADIR%%/modules/org/w3/www/2001/xml.xsd
-%%DATADIR%%/modules/org/w3/www/2005/xpath-functions.xq
-%%DATADIR%%/modules/org/w3/www/2005/xpath-functions.xsd
-%%DATADIR%%/modules/org/w3/www/2005/xpath-functions/math.xq
-%%DATADIR%%/modules/org/w3/www/2005/xqt-errors.xq
-%%DATADIR%%/modules/org/w3/www/2010/xslt-xquery-serialization.xsd
+%%WITH_JAVA%%%%JAVASHAREDIR%%/zorba_xqj.jar
+%%WITH_JAVA%%%%JAVASHAREDIR%%/xqjapi.jar
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
@@ -226,6 +132,7 @@ lib/libzorba_simplestore.so.2.0.2
 %%PORTDOCS%%%%DOCSDIR%%/cxx/examples/execution_plans.cpp
 %%PORTDOCS%%%%DOCSDIR%%/cxx/examples/external_functions.cpp
 %%PORTDOCS%%%%DOCSDIR%%/cxx/examples/item_handler.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/jsoniq.cpp
 %%PORTDOCS%%%%DOCSDIR%%/cxx/examples/module_import_check.cpp
 %%PORTDOCS%%%%DOCSDIR%%/cxx/examples/sax2.cpp
 %%PORTDOCS%%%%DOCSDIR%%/cxx/examples/serialization.cpp
@@ -279,7 +186,12 @@ lib/libzorba_simplestore.so.2.0.2
 %%PORTDOCS%%%%DOCSDIR%%/xqdoc/requisites/templates/www.functx.com_index.html
 %%PORTDOCS%%%%DOCSDIR%%/xqdoc/requisites/templates/www.w3.org_2005_xpath-functions.html
 %%PORTDOCS%%%%DOCSDIR%%/xqdoc/requisites/templates/www.w3.org_2005_xpath-functions_math.html
+%%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/xqj/html/rtab_b.gif
+%%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/xqj/html/rtab_r.gif
+%%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/xqj/html/rtab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/html/JSONforXQuery.html
 %%PORTDOCS%%%%DOCSDIR%%/zorba/html/W3C-WD.css
+%%PORTDOCS%%%%DOCSDIR%%/zorba/html/XQueryforJSON.html
 %%PORTDOCS%%%%DOCSDIR%%/zorba/html/documentation.png
 %%PORTDOCS%%%%DOCSDIR%%/zorba/html/download.png
 %%PORTDOCS%%%%DOCSDIR%%/zorba/html/modules.png
@@ -300,46 +212,168 @@ lib/libzorba_simplestore.so.2.0.2
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_b.gif
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_l.gif
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_r.gif
-@dirrm include/zorba/internal
-@dirrm include/zorba/util
-@dirrm include/zorba
-@dirrm %%DATADIR%%/modules/org/w3/www/2010
-@dirrm %%DATADIR%%/modules/org/w3/www/2005/xpath-functions
-@dirrm %%DATADIR%%/modules/org/w3/www/2005
-@dirrm %%DATADIR%%/modules/org/w3/www/2001
-@dirrm %%DATADIR%%/modules/org/w3/www
-@dirrm %%DATADIR%%/modules/org/w3
-@dirrm %%DATADIR%%/modules/org/expath/ns
-@dirrm %%DATADIR%%/modules/org/expath
-@dirrm %%DATADIR%%/modules/org
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/xqdoc2xhtml
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/integrity_constraints
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/indexes
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static/collections
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/static
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections/w3c
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic/collections
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/dynamic
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store/data-structures
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/store
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/introspection
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules/converters
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www/modules
-@dirrm %%DATADIR%%/modules/com/zorba-xquery/www
-@dirrm %%DATADIR%%/modules/com/zorba-xquery
-@dirrm %%DATADIR%%/modules/com/functx/www
-@dirrm %%DATADIR%%/modules/com/functx
-@dirrm %%DATADIR%%/modules/com
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/cmake
-@dirrm %%DATADIR%%
-%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/html
-%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
+%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
+%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/html
+%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
 %%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/examples
 %%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/html
 %%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/html
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java
+%%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqj/html
+%%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqj
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www/index.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www/index_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www/index_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/errors.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/errors_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/errors_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/base64.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/base64_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/base64_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/json-options.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/json.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/json_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters/json_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/datetime.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/datetime_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/datetime_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/debugger/dbgp-message-handler.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/debugger/dbgp-message-handler_1.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/debugger/dbgp-message-handler_1.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/fetch.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/fetch_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/fetch_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/full-text.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/full-text.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/full-text_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/full-text_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/http-client.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/http-client_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/http-client_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/introspection/sctx.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/introspection/sctx_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/introspection/sctx_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/math.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/math_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/math_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node-position.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node-position_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node-position_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node-reference.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node-reference_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node-reference_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/node_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/project_xqdoc.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/project_xqdoc_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/project_xqdoc_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/random.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/random_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/random_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/reflection.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/reflection_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/reflection_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/schema.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/schema_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/schema_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/data-structures/unordered-map.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/data-structures/unordered-map_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/data-structures/unordered-map_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/ddl.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/ddl_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/ddl_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/dml.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/dml_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/dml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/ddl.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/ddl_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/ddl_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/dml.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/dml_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c/dml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/documents.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/documents_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/documents_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections/ddl.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections/ddl_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections/ddl_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections/dml.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections/dml_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections/dml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes/ddl.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes/ddl_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes/ddl_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes/dml.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes/dml_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes/dml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints/ddl.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints/ddl_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints/ddl_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints/dml.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints/dml_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints/dml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/string.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/string_2.1.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/string_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/uri.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/uri_1.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/uri_1.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml-options.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/error.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/error_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/error_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/index.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/index_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/index_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/schemas/complete-pul.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/schemas/pul.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/schemas/xdm.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/warnings.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/warnings_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/warnings_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/error.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/error_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/error_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/file.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/file_2.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/file_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/http-client.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/functions.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/functions_1.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/functions_1.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/errors.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/errors_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/errors_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2001/xml.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/XQueryX.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions/math.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions/math_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions/math_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xqt-errors.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xqt-errors_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xqt-errors_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2010/xslt-xquery-serialization.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml-lat1.ent.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml-special.ent.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml-symbol.ent.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml1-frameset.dtd.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml1-strict.dtd.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml1-transitional.dtd.xsd
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/xqdoc/www/1.0.xsd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba
@@ -359,3 +393,65 @@ lib/libzorba_simplestore.so.2.0.2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/c/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/c
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaModule.cmake
+share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaConfig.cmake
+share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaConfigVersion.cmake
+share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaUse.cmake
+share/cmake/Modules/zorba-%%FULLVERSION%%/ExternalModuleConfig.cmake.in
+@dirrm share/cmake/Modules/zorba-%%FULLVERSION%%
+@dirrm lib/zorba/core/%%FULLVERSION%%/org/expath/ns
+@dirrm lib/zorba/core/%%FULLVERSION%%/org/expath
+@dirrm lib/zorba/core/%%FULLVERSION%%/org
+@dirrm lib/zorba/core/%%FULLVERSION%%/edu/princeton/wordnet
+@dirrm lib/zorba/core/%%FULLVERSION%%/edu/princeton
+@dirrm lib/zorba/core/%%FULLVERSION%%/edu
+@dirrm lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www/modules
+@dirrm lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www
+@dirrm lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery
+@dirrm lib/zorba/core/%%FULLVERSION%%/com
+@dirrm lib/zorba/core/%%FULLVERSION%%
+@dirrm lib/zorba/core
+@dirrm lib/zorba
+@dirrm include/zorba/util
+@dirrm include/zorba/internal
+@dirrm include/zorba
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/xqdoc/www
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/xqdoc
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2010
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2001
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/schemas
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/data-structures
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/introspection
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/debugger
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com
+@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%
+@dirrm %%DATADIR%%/uris/core
+@dirrm %%DATADIR%%/uris
+@dirrm %%DATADIR%%
