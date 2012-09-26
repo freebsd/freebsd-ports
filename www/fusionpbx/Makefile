@@ -37,14 +37,6 @@ PDOMYSQL_DESC=	Install MySQL PDO Connector
 
 .include <bsd.port.options.mk>
 
-.for opt in ${ALL_OPTIONS}
-.if ${PORT_OPTIONS:M${opt}}
-PLIST_SUB+=	${opt}=""
-.else
-PLIST_SUB+=	${opt}="@comment "
-.endif
-.endfor
-
 .if ${PORT_OPTIONS:MPDOPGSQL}
 USE_PGSQL=	yes
 USE_PHP+=	pgsql pdo_pgsql
