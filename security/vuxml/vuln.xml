@@ -51,6 +51,102 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5bae2ab4-0820-11e2-be5f-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>22.0.1229.79</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[143439] High CVE-2012-2889: UXSS in frame handling. Credit to
+	    Sergey Glazunov.</p>
+	  <p>[143437] High CVE-2012-2886: UXSS in v8 bindings. Credit to Sergey
+	    Glazunov.</p>
+	  <p>[139814] High CVE-2012-2881: DOM tree corruption with plug-ins.
+	    Credit to Chamal de Silva.</p>
+	  <p>[135432] High CVE-2012-2876: Buffer overflow in SSE2 optimizations.
+	    Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[140803] High CVE-2012-2883: Out-of-bounds write in Skia. Credit to
+	    Atte Kettunen of OUSPG.</p>
+	  <p>[143609] High CVE-2012-2887: Use-after-free in onclick handling.
+	    Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[143656] High CVE-2012-2888: Use-after-free in SVG text references.
+	    Credit to miaubiz.</p>
+	  <p>[144899] High CVE-2012-2894: Crash in graphics context handling.
+	    Credit to Slawomir Blazek.</p>
+	  <p>[137707] Medium CVE-2012-2877: Browser crash with extensions and
+	    modal dialogs. Credit to Nir Moshe.</p>
+	  <p>[139168] Low CVE-2012-2879: DOM topology corruption. Credit to
+	    pawlkt.</p>
+	  <p>[141651] Medium CVE-2012-2884: Out-of-bounds read in Skia. Credit
+	    to Atte Kettunen of OUSPG.</p>
+	  <p>[132398] High CVE-2012-2874: Out-of-bounds write in Skia. Credit to
+	    Google Chrome Security Team (Inferno).</p>
+	  <p>[134955] [135488] [137106] [137288] [137302] [137547] [137556]
+	    [137606] [137635] [137880] [137928] [144579] [145079] [145121]
+	    [145163] [146462] Medium CVE-2012-2875: Various lower severity
+	    issues in the PDF viewer. Credit to Mateusz Jurczyk of Google
+	    Security Team, with contributions by Gynvael Coldwind of Google
+	    Security Team.</p>
+	  <p>[137852] High CVE-2012-2878: Use-after-free in plug-in handling.
+	    Credit to Fermin Serna of Google Security Team.</p>
+	  <p>[139462] Medium CVE-2012-2880: Race condition in plug-in paint
+	    buffer. Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[140647] High CVE-2012-2882: Wild pointer in OGG container
+	    handling. Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[142310] Medium CVE-2012-2885: Possible double free on exit. Credit
+	    to the Chromium development community.</p>
+	  <p>[143798] [144072] [147402] High CVE-2012-2890: Use-after-free in
+	    PDF viewer. Credit to Mateusz Jurczyk of Google Security Team, with
+	    contributions by Gynvael Coldwind of Google Security Team.</p>
+	  <p>[144051] Low CVE-2012-2891: Address leak over IPC. Credit to Lei
+	    Zhang of the Chromium development community.</p>
+	  <p>[144704] Low CVE-2012-2892: Pop-up block bypass. Credit to Google
+	    Chrome Security Team (Cris Neckar).</p>
+	  <p>[144799] High CVE-2012-2893: Double free in XSL transforms. Credit
+	    to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[145029] [145157] [146460] High CVE-2012-2895: Out-of-bounds writes
+	    in PDF viewer. Credit to Mateusz Jurczyk of Google Security Team,
+	    with contributions by Gynvael Coldwind of Google Security Team.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2889</cvename>
+      <cvename>CVE-2012-2886</cvename>
+      <cvename>CVE-2012-2881</cvename>
+      <cvename>CVE-2012-2876</cvename>
+      <cvename>CVE-2012-2883</cvename>
+      <cvename>CVE-2012-2887</cvename>
+      <cvename>CVE-2012-2888</cvename>
+      <cvename>CVE-2012-2894</cvename>
+      <cvename>CVE-2012-2877</cvename>
+      <cvename>CVE-2012-2879</cvename>
+      <cvename>CVE-2012-2884</cvename>
+      <cvename>CVE-2012-2874</cvename>
+      <cvename>CVE-2012-2875</cvename>
+      <cvename>CVE-2012-2878</cvename>
+      <cvename>CVE-2012-2880</cvename>
+      <cvename>CVE-2012-2882</cvename>
+      <cvename>CVE-2012-2885</cvename>
+      <cvename>CVE-2012-2890</cvename>
+      <cvename>CVE-2012-2891</cvename>
+      <cvename>CVE-2012-2892</cvename>
+      <cvename>CVE-2012-2893</cvename>
+      <cvename>CVE-2012-2895</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-09-25</discovery>
+      <entry>2012-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="73efb1b7-07ec-11e2-a391-000c29033c32">
     <topic>eperl -- Remote code execution</topic>
     <affects>
