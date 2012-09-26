@@ -137,6 +137,7 @@
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += showfont
+    SUBDIR += sourcecodepro-ttf
     SUBDIR += sourcesanspro-ttf
     SUBDIR += stix-fonts
     SUBDIR += suxus
