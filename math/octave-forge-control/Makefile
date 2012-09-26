@@ -1,12 +1,8 @@
-# New ports collection makefile for:	octave-forge-control
-# Date created:		8 September 2008
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-control
-PORTVERSION=	2.3.54
+PORTVERSION=	2.4.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
