@@ -66,6 +66,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_doctests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_doctests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_doctests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_sequencewidget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_sequencewidget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_sequencewidget.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_widgets.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_widgets.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests/test_widgets.pyo
@@ -97,6 +100,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/selectionwidget.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/selectionwidget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/selectionwidget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/sequencewidget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/sequencewidget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/sequencewidget.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/ubermultiselectionwidget.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/uberselectionwidget.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/uberselectionwidget.py
