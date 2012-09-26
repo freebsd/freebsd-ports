@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dovecot2
-# Date created:		2010/09/21
-# Whom:			Nagy, Attila <bra@fsn.hu>
-#
+# Created by: Nagy, Attila <bra@fsn.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot
-PORTVERSION=	2.1.8
+PORTVERSION=	2.1.10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
