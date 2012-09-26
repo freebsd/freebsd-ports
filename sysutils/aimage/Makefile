@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	aimage
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://afflib.org/downloads/
+MASTER_SITES=	http://digitalcorpora.org/downloads/
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Advanced Disk Imager
