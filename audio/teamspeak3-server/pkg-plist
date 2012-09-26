@@ -245,6 +245,7 @@ share/teamspeak/server/sql/update_16.sql
 share/teamspeak/server/sql/update_17.sql
 share/teamspeak/server/sql/update_18.sql
 share/teamspeak/server/sql/update_19.sql
+share/teamspeak/server/sql/update_20.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 @dirrm share/teamspeak/server/sql/create_mysql
