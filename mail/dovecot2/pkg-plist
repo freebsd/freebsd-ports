@@ -43,11 +43,13 @@ include/dovecot/config-parser-private.h
 include/dovecot/config-parser.h
 include/dovecot/config-request.h
 include/dovecot/config.h
+include/dovecot/connection.h
 include/dovecot/crc32.h
 include/dovecot/cydir-storage.h
 include/dovecot/cydir-sync.h
 include/dovecot/data-stack.h
 include/dovecot/db-checkpassword.h
+include/dovecot/db-dict.h
 include/dovecot/db-ldap.h
 include/dovecot/db-passwd-file.h
 include/dovecot/db-sql.h
@@ -163,6 +165,7 @@ include/dovecot/istream-rawlog.h
 include/dovecot/istream-seekable.h
 include/dovecot/istream-tee.h
 include/dovecot/istream.h
+include/dovecot/json-parser.h
 include/dovecot/lda-settings.h
 include/dovecot/lib-signals.h
 include/dovecot/lib.h
@@ -412,6 +415,9 @@ lib/dovecot/lib20_listescape_plugin.so
 lib/dovecot/lib20_replication_plugin.a
 lib/dovecot/lib20_replication_plugin.la
 lib/dovecot/lib20_replication_plugin.so
+lib/dovecot/lib20_mailbox_alias_plugin.a
+lib/dovecot/lib20_mailbox_alias_plugin.la
+lib/dovecot/lib20_mailbox_alias_plugin.so
 lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.la
 lib/dovecot/lib20_mail_log_plugin.so
