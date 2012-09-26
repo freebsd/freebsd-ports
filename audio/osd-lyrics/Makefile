@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OSD Lyrics
-# Date created:				18 Nov 2011
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	osdlyrics
 PORTVERSION=	0.4.3
@@ -32,30 +28,31 @@ USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS=	MPD	"Enable MPD support"		off \
-		XMMS2	"Enable XMMS2 support"		off \
-		AMAROK	"Enable Amarok 1.4 support"	off
+OPTIONS_DEFINE=	DOCS MPD XMMS2 AMAROK
+MPD_DESC=	Enable MPD support
+XMMS2_DESC=	Enable XMMS2 support
+AMAROK_DESC=	Enable Amarok 1.4 support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MPD)
+.if ${PORT_OPTIONS:MMPD}
 LIB_DEPENDS+=	mpd:${PORTSDIR}/audio/libmpd
 .else
 CONFIGURE_ARGS+=	--disable-mpd
 .endif
 
-.if defined(WITH_XMMS2)
+.if ${PORT_OPTIONS:MXMMS2}
 LIB_DEPENDS+=	xmmsclient:${PORTSDIR}/audio/xmms2
 .else
 CONFIGURE_ARGS+=	--disable-xmms2
 .endif
 
-.if defined(WITH_AMAROK)
+.if ${PORT_OPTIONS:MAMAROK}
 CONFIGURE_ARGS+=	--enable-amarok1
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
