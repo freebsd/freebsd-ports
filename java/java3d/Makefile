@@ -8,14 +8,15 @@
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
 PORTREVISION=	1
-CATEGORIES=	java graphics
-MASTER_SITES=	http://daemon.wizard.googlepages.com/
+CATEGORIES=	java graphics games devel
+MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 DISTNAME=	java3d-${PORTVERSION}
 
-MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Java3D Kit ${PORTVERSION}
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Provides API for creating and manipulation of 3D geometry
 
 USE_BZIP2=	yes
+FETCH_ARGS=	-Fpr
 
 USE_JAVA=	yes
 USE_GL=		gl
@@ -26,15 +27,15 @@ USE_ANT=	yes
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}
 
-.if !defined(NOPORTDOCS)
 DOCSSRC=	${WRKSRC}/j3d-core/build/freebsd/javadocs/docs-public
 PORTDOCS=	*
-.endif
+
+.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC}/vecmath && ${ANT} dist
 	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes -Dports.localbase=${LOCALBASE} jar-opt
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes docs-public
 .endif
 
@@ -49,7 +50,7 @@ do-install:
 		${JAVA_HOME}/jre/lib/${ARCH}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${DOCSSRC} && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
