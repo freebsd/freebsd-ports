@@ -5837,23 +5837,36 @@
  }
  
  inline struct dirent* os::readdir(DIR* dirp, dirent *dbuf)
---- hotspot/src/os/bsd/vm/vmError_bsd.cpp	2012-05-01 17:15:07.000000000 -0400
-+++ hotspot/src/os/bsd/vm/vmError_bsd.cpp	2012-09-26 17:05:10.000000000 -0400
-@@ -44,7 +44,7 @@
+--- hotspot/src/os/bsd/vm/vmError_bsd.cpp	2012-09-26 19:40:10.000000000 -0400
++++ hotspot/src/os/bsd/vm/vmError_bsd.cpp	2012-09-26 19:43:30.000000000 -0400
+@@ -34,6 +34,12 @@
+ #include <unistd.h>
+ #include <signal.h>
+ 
++#ifdef __FreeBSD__
++#define	GDB_LAUNCHER	"gdb /proc/%d/file %d"
++#else
++#define	GDB_LAUNCHER	"gdb /proc/%d/exe %d"
++#endif
++
+ void VMError::show_message_box(char *buf, int buflen) {
+   bool yes;
+   do {
+@@ -44,7 +50,7 @@
      jio_snprintf(p, buflen - len,
                 "\n\n"
                 "Do you want to debug the problem?\n\n"
 -               "To debug, run 'gdb /proc/%d/exe %d'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
-+               "To debug, run 'gdb /proc/%d/file %d'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
++               "To debug, run '" GDB_LAUNCHER "'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
                 "Enter 'yes' to launch gdb automatically (PATH must include gdb)\n"
                 "Otherwise, press RETURN to abort...",
                 os::current_process_id(), os::current_process_id(),
-@@ -54,7 +54,7 @@
+@@ -54,7 +60,7 @@
  
      if (yes) {
        // yes, user asked VM to launch debugger
 -      jio_snprintf(buf, buflen, "gdb /proc/%d/exe %d",
-+      jio_snprintf(buf, buflen, "gdb /proc/%d/file %d",
++      jio_snprintf(buf, buflen, GDB_LAUNCHER,
                     os::current_process_id(), os::current_process_id());
  
        os::fork_and_exec(buf);

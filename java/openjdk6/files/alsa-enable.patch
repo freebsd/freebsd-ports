@@ -23,8 +23,8 @@
  void getALSAVersion(char* buffer, int len) {
      if (!hasGottenALSAVersion) {
 +#ifdef __FreeBSD__
-+	// XXX We do not use ALSA drivers.  Just copy the library version.
-+	strcpy(ALSAVersionString, SND_LIB_VERSION_STR);
++        // XXX We do not use ALSA drivers.  Just copy the library version.
++        strcpy(ALSAVersionString, SND_LIB_VERSION_STR);
 +#else
          // get alsa version from proc interface
          FILE* file;
