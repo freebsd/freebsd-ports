@@ -26,10 +26,13 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
-OPTIONS_DEFINE=	VSFTPD_SSL PIDFILE
+OPTIONS_DEFINE=	VSFTPD_SSL PIDFILE STACKPROTECTOR
+OPTIONS_DEFAULT?=	STACKPROTECTOR
+NO_OPTIONS_SORT=yes
 
 VSFTPD_SSL_DESC=Include support for SSL
 PIDFILE_DESC=	Unofficial support for pidfile
+STACKPROTECTOR_DESC=	Build with stack-protector
 
 .include <bsd.port.pre.mk>
 
@@ -44,13 +47,17 @@ LDFLAGS+=	-L${OPENSSLLIB}
 EXTRA_PATCHES+=	${FILESDIR}/pidfile.patch
 .endif
 
-VSFTPD_OPTIMIZED=	${CFLAGS:M-O}
+VSFTPD_OPTIMIZED=	${CFLAGS:M-O*}
 .if defined(CFLAGS) && !empty(VSFTPD_OPTIMIZED)
-VSFTPD_NO_OPTIMIZED=	-e "s| -O2 ||"
+VSFTPD_NO_OPTIMIZED=	-e "s|-O2 ||"
 .endif
 
+.if ${PORT_OPTIONS:MSTACKPROTECTOR}
 # BROKEN on FreeBSD with undefined reference to `__stack_chk_fail_local'
-LDFLAGS+=	 -lssp_nonshared
+VSFTPD_LIBS=	-lssp_nonshared
+.else
+VSFTPD_NO_SSP=	-e "s|-fstack-protector --param=ssp-buffer-size=4 ||"
+.endif
 
 do-configure:
 .if !defined(WITHOUT_SSL) && ${PORT_OPTIONS:MVSFTPD_SSL}
@@ -68,11 +75,11 @@ do-configure:
 		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
 	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
 		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
-	${REINPLACE_CMD} ${VSFTPD_NO_OPTIMIZED} \
-		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
-		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
-		-e "s|$$(INSTALL) -m 755=|$${INSTALL_PROGRAM}|" \
-		-e "s|	-Wl,-s|	${LDFLAGS:S/-rpath=/-Wl,-rpath,/g}|" \
+	${REINPLACE_CMD} ${VSFTPD_NO_OPTIMIZED} ${VSFTPD_NO_SSP} \
+		-e "s|^CC 	=	gcc|CC	=	${CC}|" \
+		-e "s|^CFLAGS	=	|CFLAGS	=	${CFLAGS} |" \
+		-e "s|^LDFLAGS	=	|LDFLAGS	=	${LDFLAGS} |" \
+		-e "s|	-Wl,-s|	${VSFTPD_LIBS}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
