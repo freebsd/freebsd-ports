@@ -496,6 +496,7 @@
     SUBDIR += mpg123.el
     SUBDIR += mpg321
     SUBDIR += mpiosh
+    SUBDIR += msilbc
     SUBDIR += muine
     SUBDIR += mumble
     SUBDIR += murmur
