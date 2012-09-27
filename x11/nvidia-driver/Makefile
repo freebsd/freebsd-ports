@@ -1,9 +1,11 @@
-# New ports collection makefile for:	nvidia-driver (latest and master port)
-# Date created:				4 December 2002
-# Whom:					Stijn Hoop <stijn@win.tue.nl>
-#
+# Created by: Stijn Hoop <stijn@win.tue.nl>
 # $FreeBSD$
 #
+# Starting with version 1.0-7667, NVidia has dropped support for numerous
+# "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
+# you need to use legacy driver version and install one of corresponding
+# `x11/nvidia-driver-71', `x11/nvidia-driver-96', or `x11/nvidia-driver-173'
+# slave ports.
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	304.43
@@ -39,12 +41,6 @@ DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
 
-# Starting with version 1.0-7667, NVidia has dropped support for numerous
-# "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
-# you need to use legacy driver version and install one of corresponding
-# `x11/nvidia-driver-71', `x11/nvidia-driver-96', or `x11/nvidia-driver-173'
-# slave ports.
-#
 .if ${DISTVERSION:C/[0-9]+//g} == ".."		# major.minor.update
 NVVERSION=	${DISTVERSION:S/.//g}
 .else						# major.minor

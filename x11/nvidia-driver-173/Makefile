@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nvidia-driver, legacy version 173.14.xx
-# Date created:				26 Oct 2008
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 DISTVERSION=	173.14.35
 # Explicitly set PORTREVISION as it can be overridden by the master port
