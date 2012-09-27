@@ -25,15 +25,9 @@ do-install:
 
 # Major upgrade support
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
-PKG_WHICH_CMD=	${LOCALBASE}/sbin/pkg_which
-XARGS_CMD=	${XARGS} -0
 
 .if defined(USE_PORTMASTER)
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portmaster
-PORTUPGRADE_ARGS?=	""
-PKG_WHICH_CMD=	/usr/sbin/pkg_info -qW
-JOBS=	${SYSCTL} -n kern.smp.cpus
-XARGS_CMD=	${XARGS} -L 1 -0 -P $$(${JOBS})
 .endif
 
 upgrade-site-packages:
@@ -42,22 +36,21 @@ upgrade-site-packages:
 		${FALSE}; \
 	 fi
 
-	@for ver in `echo ${_PYTHON_ALLBRANCHES}|${SED} 's/${PYTHON_VER}//'`; do \
-		if [ -d ${PREFIX}/lib/python$$ver ]; then \
-			UPD=`${FIND} ${PREFIX}/lib/python$$ver \
-					-type f -print0 | \
-				${XARGS_CMD} ${PKG_WHICH_CMD} | \
-				${GREP} -Fv '?' | \
-				${EGREP} -v '^python2?[0-5]?-2' | \
-				${SORT} -u`; \
-			if [ "$$UPD" ]; then \
-				if [ -n ${PORTUPGRADE_ARGS} ]; then \
-					${PORTUPGRADE_CMD} ${PORTUPGRADE_ARGS} -f $$UPD; \
-				else \
-					${PORTUPGRADE_CMD} -f $$UPD; \
-				fi; \
-			fi; \
+	@GREP_ARGS="-q"; \
+	for ver in `echo ${_PYTHON_ALLBRANCHES:C/${PYTHON_VER}//}`; do \
+		GREP_ARGS="$${GREP_ARGS} -e lib/python$$ver"; \
+	done; \
+	UPD=""; \
+	for pkg in `${PKG_INFO} -Ea`; do \
+		${PKG_INFO} -L $${pkg} | ${GREP} $${GREP_ARGS} && \
+			UPD="$${UPD} $${pkg}"; \
+	done; \
+	if [ "$${UPD}" ]; then \
+		if [ -n ${PORTUPGRADE_ARGS} ]; then \
+			${PORTUPGRADE_CMD} ${PORTUPGRADE_ARGS} -f $${UPD}; \
+		else \
+			${PORTUPGRADE_CMD} -f $${UPD}; \
 		fi; \
-	 done \
+	fi; \
 
 .include <bsd.port.mk>
