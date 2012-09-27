@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	mapserver
-# Date created:				2004-05-20
-# Whom:					Douglas K. Rand <rand@meridian-enviro.com>
-#
+# Created by: Douglas K. Rand <rand@meridian-enviro.com>
 # $FreeBSD$
-#
 
 PORTNAME=		mapserver
 PORTVERSION=		6.0.3
@@ -121,6 +117,7 @@ CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
+IGNORE=			crashes or doesn't work
 EXTRA_PATCHES=		${FILESDIR}/extra-patch-mapscript-php-image.c \
 			${FILESDIR}/extra-patch-mapscript-php-php_mapscript.c \
 			${FILESDIR}/extra-patch-mapscript-php-php_mapscript_util.c
