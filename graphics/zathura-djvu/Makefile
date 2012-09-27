@@ -1,11 +1,8 @@
-# New ports collection makefile for:	zathura-djvu
-# Date created:				08 July 2012
-# Whom:					Alexander Y. Grigoryev <alexander.4mail@gmail.com>
-#
+# Created by: Alexander Y. Grigoryev <alexander.4mail@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	zathura-djvu
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	zathura
-# Date created:				29 June 2010
-# Whom:					Quentin Stievenart <acieroid@awesom.eu>
-#
+# Created by: Quentin Stievenart <acieroid@awesom.eu>
 # $FreeBSD$
-#
 
 PORTNAME=	zathura
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
@@ -51,8 +47,6 @@ post-patch:	.SILENT
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|PLUGINDIR ?= .*$$|PLUGINDIR ?= ${PREFIX}/lib/zathura|'\
 		${WRKSRC}/config.mk
-	${REINPLACE_CMD} -e 's|girara_debug("plugin.*$$||'\
-		${WRKSRC}/plugin.c
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|install-manpages$$||'\
 		${WRKSRC}/Makefile

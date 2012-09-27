@@ -8,18 +8,24 @@ include/zathura/types.h
 include/zathura/version.h
 libdata/pkgconfig/zathura.pc
 share/applications/zathura.desktop
+%%NLS%%share/locale/cs/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/de/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/es/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/es_CL/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/et/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/it/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/ta_IN/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/uk_UA/LC_MESSAGES/zathura.mo
 @dirrm include/zathura
 @dirrmtry share/applications
 @dirrmtry share/locale/es_CL/LC_MESSAGES
 @dirrmtry share/locale/es_CL
 @dirrmtry share/locale/ta_IN/LC_MESSAGES
 @dirrmtry share/locale/ta_IN
+@dirrmtry share/locale/uk_UA/LC_MESSAGES
+@dirrmtry share/locale/uk_UA
