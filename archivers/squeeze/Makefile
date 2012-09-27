@@ -1,9 +1,5 @@
-# New ports collection makefile for: squeeze
-# Date created: 07 Jun 2010
-# Whom: markand
-#
+# Created by: markand
 # $FreeBSD$
-#
 
 PORTNAME=	squeeze
 PORTVERSION=	0.2.3
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	markand@malikania.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Squeeze is a modern and advanced archive manager
 
 LICENSE=	GPLv2

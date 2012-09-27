@@ -1,9 +1,5 @@
-# New ports collection makefile for:   nsnake
-# Date created:        08 March 2011
-# Whom:                markand
-#
+# Created by: markand
 # $FreeBSD$
-#
 
 PORTNAME=	nsnake
 PORTVERSION=	1.2.1
@@ -11,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://softs.malikania.fr/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	markand@malikania.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A snake game written in C and ncurses
 
 MAN6=		nsnake.6

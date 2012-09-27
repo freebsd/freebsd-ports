@@ -1,9 +1,5 @@
-# New ports collection makefile for:	viruskiller
-# Date created:				2010-08-16
-# Whom:					markand
-#
+# Created by: markand
 # $FreeBSD$
-#
 
 PORTNAME=	viruskiller
 PORTVERSION=	1.03
@@ -12,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download/viruskiller/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	markand@malikania.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade game that relies on quick reflexes
 
 LICENSE=	GPLv2
