@@ -45,7 +45,7 @@ GNOMEVFS_DESC=	Enable GNOME Virtual File System
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava openjdk
-JAVA_VERSION=	1.5 1.6
+JAVA_VERSION=	1.5 1.6 1.7 
 
 .if !defined(WITHOUT_GCONF)
 USE_GNOME+=	gconf2
@@ -194,6 +194,7 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-apr \
 			--with-system-apr-util \
 			--with-system-coinmp \
+			--with-system-apache-commons=yes \
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
