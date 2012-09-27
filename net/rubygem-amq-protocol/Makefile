@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	amq-protocol
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	An AMQP 0.9.1 serialization library for Ruby
+COMMENT=	An AMQP serialization library for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
