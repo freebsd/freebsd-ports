@@ -1,16 +1,12 @@
-# New ports collection makefile for:	libee
-# Date created:		2011-06-20
-# Whom:			Jim Riggs <ports@christianserving.org>
-#
+# Created by: Jim Riggs <ports@christianserving.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libee
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libee.org/files/download/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	brd@FreeBSD.org
 COMMENT=	An event expression library inspired by CEE
 
 LIB_DEPENDS=	estr:${PORTSDIR}/devel/libestr

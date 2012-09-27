@@ -25,5 +25,5 @@ lib/libee.la
 lib/libee.so
 lib/libee.so.0
 libdata/pkgconfig/libee.pc
-sbin/convert
+sbin/libee-convert
 @dirrm include/libee
