@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Dancer-Plugin-Email
-# Date created:				30 Dec 2010
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-Email
-PORTVERSION=	0.1300
+PORTVERSION=	1.0000
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IRONCAMEL
@@ -30,7 +25,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Dancer::Plugin::README.3 \
-	Dancer::Plugin::Email.3
+MAN3=	Dancer::Plugin::Email.3
 
 .include <bsd.port.mk>
