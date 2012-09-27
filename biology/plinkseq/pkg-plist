@@ -1,0 +1,12 @@
+bin/behead
+bin/gcol
+bin/index
+bin/index.cgi
+bin/mongoose
+bin/pbrowse
+bin/pbrowse.cgi
+bin/pseq
+bin/tab2vcf
+lib/libplinkseq.la
+lib/libplinkseq.so
+lib/libplinkseq.so.0

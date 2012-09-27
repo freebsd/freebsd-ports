@@ -72,6 +72,8 @@
     SUBDIR += phylip
     SUBDIR += phyml
     SUBDIR += platon
+    SUBDIR += plink
+    SUBDIR += plinkseq
     SUBDIR += povchem
     SUBDIR += primer3
     SUBDIR += protomol
