@@ -38,6 +38,8 @@ PLIST_SUB+=	XDMSHELL="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|XDMCONFIGDIR/|${PREFIX}/lib/X11/xdm/|" \
 		-e "s|XDMSCRIPTDIR/|${PREFIX}/lib/X11/xdm/|" \
 			${WRKSRC}/config/xdm-config.cpp \
