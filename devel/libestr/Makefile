@@ -1,16 +1,12 @@
-# New ports collection makefile for:	libestr
-# Date created:		2011-06-20
-# Whom:			Jim Riggs <ports@christianserving.org>
-#
+# Created by: Jim Riggs <ports@christianserving.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libestr
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://libestr.adiscon.com/files/download/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	brd@FreeBSD.org
 COMMENT=	A library for some string essentials
 
 USE_LDCONFIG=	yes
