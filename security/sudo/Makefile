@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
-LDFLAGS+= -lgcc
+LDFLAGS+=	-lgcc
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \
@@ -99,6 +99,14 @@ CONFIGURE_ARGS+=--with-bsm-audit
 CONFIGURE_ARGS+=--with-opie
 .endif
 
+.include <bsd.port.pre.mk>
+
+# Temporary workaround until I can figure out why the build fails on i386.
+# You can add --stack-protector to LDFLAGS but that doesn't work with clang.
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--disable-hardening
+.endif
+
 MAN5+=		sudoers.5
 MAN8=		sudo.8 visudo.8 sudoreplay.8 sudo_plugin.8
 MLINKS=		sudo.8 sudoedit.8
@@ -126,4 +134,4 @@ post-install:
 	fi
 	${TOUCH} ${PREFIX}/etc/sudoers.d/.keep-me
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
