@@ -1,14 +1,8 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	kdebase3.1
-# Date created:				29 November 2002
-# Whom:					kde@freebsd.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
