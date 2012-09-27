@@ -72,7 +72,7 @@ do-configure:
 		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
 		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
 		-e "s|$$(INSTALL) -m 755=|$${INSTALL_PROGRAM}|" \
-		-e "s|	-Wl,-s| -Wl ${LDFLAGS:S/-rpath=/-Wl,-rpath,/g}|" \
+		-e "s|	-Wl,-s|	${LDFLAGS:S/-rpath=/-Wl,-rpath,/g}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
