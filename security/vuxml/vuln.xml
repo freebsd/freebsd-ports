@@ -4503,7 +4503,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nvidia-driver</name>
-	<range><gt>173.14.35</gt><lt>295.71</lt></range>
+	<range><gt>173.14.35_1</gt><lt>295.71</lt></range>
 	<range><gt>96.43.20_2</gt><lt>173.14.35</lt></range>
 	<range><gt>71.86.15_2</gt><lt>96.43.20_2</lt></range>
 	<range><lt>71.86.15_2</lt></range>
