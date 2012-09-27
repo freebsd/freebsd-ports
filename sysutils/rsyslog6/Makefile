@@ -1,12 +1,7 @@
-# New ports collection makefile for: rsyslog6-devel
-# Date created:     29 December 2008
-# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rsyslog
-PORTVERSION=	6.4.1
+PORTVERSION=	6.4.2
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
