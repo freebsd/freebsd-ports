@@ -147,6 +147,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_speedups.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_speedups.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_speedups.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_unary_union.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_unary_union.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_unary_union.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_validation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_validation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_validation.pyo
