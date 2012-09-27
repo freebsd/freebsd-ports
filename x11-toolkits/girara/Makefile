@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	girara
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	http://pwmt.org/projects/girara/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK2 Interface Library for Zathura PDF Viewer
 
 USE_GNOME=	glib20 gtk20
