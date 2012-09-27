@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTVERSION=	0.7.0
 CATEGORIES=	net-p2p finance
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	robbak@robbak.com
 COMMENT=	Virtual Peer-to-Peer Currency Client
 
 LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
@@ -22,7 +21,8 @@ OPTIONS=	GUI  "Build with QT3 GUI" on	\
 USE_GITHUB=     yes
 GH_ACCOUNT=     bitcoin
 GH_PROJECT=	bitcoin
-GH_COMMIT=      6e0c5e3
+GH_COMMIT=      a76c22e
+GH_TAGNAME=	v${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
