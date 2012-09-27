@@ -1,16 +1,12 @@
-# New ports collection makefile for:	librelp
-# Date created:		1 April 2008
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	librelp
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Reliable event logging protocol library
 
 USE_GNOME=	gnomehack pkgconfig
