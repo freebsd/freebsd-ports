@@ -211,8 +211,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/require "valgrind.pm";/d' ${WRKSRC}/tests/runtests.pl
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${PREFIX}/share/aclocal
 .if !defined(BUILDING_HIPHOP)
+	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${PREFIX}/share/aclocal
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/ ${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
