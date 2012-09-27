@@ -50,6 +50,8 @@ BROKEN=		does not build
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/OPENEXR_LIBRARIES/ s|)$$| $${CMAKE_THREAD_LIBS_INIT}&|' \
+		${WRKSRC}/src/nvimage/CMakeLists.txt
 .if defined(WITH_COMPRESSUI)
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/src/CMakeLists.txt
