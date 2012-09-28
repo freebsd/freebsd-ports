@@ -1,16 +1,12 @@
-# New ports collection makefile for:	devstat
-# Date created:				13 April 2008
-# Whom:					Mikolaj Golub <to.my.trociny@gmail.com>
-#
+# Created By: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	devstat
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to display device statistics
 
 PLIST_FILES=	bin/devstat
