@@ -1,4 +1,4 @@
-# Creater by: Ryan Steinmetz <rpsfa@rit.edu>
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
 
 PORTNAME=	truecrypt
