@@ -1,11 +1,8 @@
-# New ports collection makefile for:	openvpn
-# Date created:		2010-08-13
-# Whom:			Eric F Crist <ecrist@secure-computing.net>
-#
+# Created By: Eric F Crist <ecrist@secure-computing.net>
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	2.2-RC2
+DISTVERSION=	2.3_beta1
 CATEGORIES=	security net
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX=	-beta
@@ -13,42 +10,48 @@ PKGNAMESUFFIX=	-beta
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
-# ecrist will update the -beta port as soon as there are formal
-# upstream test releases derived from openvpn-devel; in the meanwhile,
-# move users to -devel.
-IGNORE=	use openvpn-devel instead for now, there are currently no formal -betas.
+LICENSE=	GPLv2
 
-CONFLICTS=	openvpn-devel-[0-9]* openvpn-2.0*
+CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]*
 
 USE_XZ=		yes
+
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
-CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include \
-		--disable-depr-random-resolv
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man
+
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 
 MAN8=		openvpn.8
 
-OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
-		PKCS11  "Use security/pkcs11-helper" off
+OPTIONS_DEFINE=	PW_SAVE PKCS11 POLARSSL
+PW_SAVE_DESC=	Interactive passwords may be read from a file
+PKCS11_DESC=	Use security/pkcs11-helper
+POLARSSL_DESC=	Build with PolarSSL instead of OpenSSL
 
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
 
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
-
-SUB_FILES=	pkg-message pkg-req
+SUB_FILES=	pkg-message
 SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .if defined(PACKAGE_BUILDING)
 WITHOUT_CHECK=	yes
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef (LOG_OPENVPN)
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
+.endif
+
+.if ${PORT_OPTIONS:MPOLARSSL}
+LIB_DEPENDS+=		polarssl:${PORTSDIR}/security/polarssl
+CONFIGURE_ARGS+=	--with-crypto-library=polarssl
+WITHOUT_CHECK=	yes
+.else
+USE_OPENSSL=	yes
 .endif
 
 pre-fetch:
@@ -63,12 +66,12 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
-.if defined(WITH_PW_SAVE)
+.if ${PORT_OPTIONS:MPW_SAVE}
 CONFIGURE_ARGS+=	--enable-password-save
 .endif
 
-.if defined(WITH_PKCS11)
-LIB_DEPENDS+=	pkcs11-helper.1:${PORTSDIR}/security/pkcs11-helper
+.if ${PORT_OPTIONS:MPKCS11}
+LIB_DEPENDS+=	pkcs11-helper:${PORTSDIR}/security/pkcs11-helper
 .else
 CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
@@ -78,39 +81,31 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 
 post-build:
-	cd ${WRKSRC}/plugin/down-root && ${MAKE}
-	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
+	cd ${WRKSRC}/src/plugins/down-root && ${MAKE}
+	cd ${WRKSRC}/src/plugins/auth-pam && ${CC} ${CPPFLAGS} -I../../../include -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
 	cd ${WRKSRC} && ${MAKE} check
 .endif
 
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
-
 post-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib/
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-down-root.so ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/src/plugins/auth-pam/.libs/openvpn-plugin-auth-pam.so ${PREFIX}/lib/
+	${LN} -s ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-down-root.so ${PREFIX}/lib/openvpn-down-root.so
+	${LN} -s ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-auth-pam.so ${PREFIX}/lib/openvpn-auth-pam.so
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
-	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL \
 	PORTS README
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}/
 .endfor
-.for dir in easy-rsa easy-rsa/1.0 easy-rsa/2.0 sample-config-files
-	${MKDIR} ${DOCSDIR}/${dir}
-	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
-.endfor
-.for dir in sample-scripts
-	${MKDIR} ${DOCSDIR}/${dir}
-	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_SCRIPT} \{\} ${DOCSDIR}/${dir} \;
+.for sample in sample-config-files sample-scripts
+	(cd ${WRKSRC}/sample/${sample} && ${COPYTREE_SHARE} \*  ${DOCSDIR}/${sample})
 .endfor
 .else
 	-@${RMDIR} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
