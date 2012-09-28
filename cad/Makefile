@@ -77,6 +77,7 @@
     SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += qucs
+    SUBDIR += repsnapper
     SUBDIR += salome
     SUBDIR += salome-geom
     SUBDIR += salome-gui
