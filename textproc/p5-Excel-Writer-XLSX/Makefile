@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Excel-Writer-XLSX
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JMCNAMARA
@@ -20,6 +20,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
 
 PERL_CONFIGURE=	yes
 
