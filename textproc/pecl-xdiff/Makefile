@@ -1,30 +1,24 @@
-# New ports collection makefile for:	pecl-xdiff
-# Date created:			19 April 2006
-# Whom:				Larry Rosenman <ler@lerctr.org>
-#
+# Created by: Larry Rosenman <ler@lerctr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xdiff
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A PECL extension to create/apply binary and text patches
+
+LICENSE=	PHP301
 
 LIB_DEPENDS=	xdiff.0:${PORTSDIR}/textproc/libxdiff
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-configure:
-	echo "#define HAVE_XDL_ALLOCATOR_PRIV 1" >>${WRKSRC}/config.h
 .include <bsd.port.mk>
