@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	meandmyshadow
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -42,7 +41,9 @@ post-install:
 		${PREFIX}/share/pixmaps/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Controls.txt ${DOCSDIR}/
+.for f in AUTHORS ChangeLog docs/*
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
