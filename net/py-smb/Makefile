@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	pysmb
-# Date created:				Jan 11, 2002
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	smb
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/ \
 		CHEESESHOP
