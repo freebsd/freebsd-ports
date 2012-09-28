@@ -56,9 +56,15 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/__init__.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/graphmod.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/graphmod.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/graphmod.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/mqsupport.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/mqsupport.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/mqsupport.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/phases.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/phases.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/phases.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/scmutil.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/scmutil.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches/scmutil.pyo
