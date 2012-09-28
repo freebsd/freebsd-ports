@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://tortois.es/~nenolod/distfiles/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Utility to helps to configure compiler and linker flags
+COMMENT=	Utility to help to configure compiler and linker flags
 
 LICENSE=	BSD
 
