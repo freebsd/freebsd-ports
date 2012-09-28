@@ -10,7 +10,7 @@ PORTNAME?=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
-PATCHLEVEL=	632
+PATCHLEVEL=	669
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -23,7 +23,7 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434 487 491 527 569 578 579 580 581 583 584 603 611 629
+BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434 487 491 527 569 578 579 580 581 583 584 603 611 629 640 650 654 655 656 657 658 659 660 670 671 672
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.3.${p}}
 .endfor
@@ -244,14 +244,20 @@ post-install:
 show-options:
 	@${MAKE} -DWITH_OPTIONS showconfig
 
+.if defined(ONT_CHECKSUM)
+checksum:
+.endif
+
 cklatest: .PHONY
 	@${ECHO} -n "Currently at: "
 	@${MAKE} -V PATCHLEVEL
-	-(ncftpls \
+	-(${SED} -i '' "s/^PATCHLEVEL=.*$$/PATCHLEVEL=	`ncftpls \
 	    ftp://ftp.vim.org/pub/vim/patches/${PORTVERSION:C/\.[0-9a-z]*$//}/ \
 		| grep "^${PORTVERSION:C/\.[0-9a-z]*$//}" \
 		| ${SED} -n -e 's/${PORTVERSION:C/[0-9]*$//}\([0-9][0-9][0-9]\)$$/\1/p' \
-		| ${TAIL} -1)
+		| ${TAIL} -1`/" Makefile)
+	@${ECHO} -n "Now at: "
+	@${MAKE} -V PATCHLEVEL
 
 find-bad-patches:
 	@cd ${DISTDIR} ; egrep -l \
@@ -259,7 +265,7 @@ find-bad-patches:
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
 
 ckp:
-	/usr/bin/time -h ${MAKE} -DPATCH_DEBUG clean patch
+	/usr/bin/time -h ${MAKE} -DPATCH_DEBUG -DONT_CHECKSUM clean patch
 
 ckmtree:
 	${MTREE_CMD} -f ${MTREE_FILE} -p ${PREFIX}
