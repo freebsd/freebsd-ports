@@ -23,9 +23,6 @@ CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-curses=ncursesw \
 			--enable-static
 
-CONFLICTS+=		ispell* ??-ispell*
-SCRIPTS=		ispell spell
-
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes
