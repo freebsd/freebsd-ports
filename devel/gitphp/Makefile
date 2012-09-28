@@ -2,6 +2,7 @@
 
 PORTNAME=	gitphp
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.gitphp.org/attachments/download/42/
 
@@ -17,6 +18,8 @@ WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
+
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdiff.so:${PORTSDIR}/textproc/pecl-xdiff
 
 do-install:
 	${MKDIR} ${WWWDIR}
