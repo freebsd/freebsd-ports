@@ -8,7 +8,7 @@
 PORTNAME=	tsmuxer
 PORTVERSION=	1.10.6
 CATEGORIES=	multimedia linux
-MASTER_SITES=	http://www.smlabs.net/tsMuxer/
+MASTER_SITES=	http://twocats.free.fr/pub/h264tobox/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	tsMuxeR_${PORTVERSION}
 
