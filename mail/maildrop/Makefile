@@ -1,9 +1,5 @@
-# New ports collection makefile for:	maildrop
-# Date created:		16 November 1998
-# Whom:			Tom Hukins <tom@eborcom.com>
-#
+# Created by: Tom Hukins <tom@eborcom.com>
 # $FreeBSD$
-#
 
 # The following compile-time options are available:
 # WITH_AUTHLIB=yes	Enable optional support for Courier Auth Library
@@ -20,12 +16,11 @@
 #			extension (http://wiki.dovecot.org/maildrop/)
 
 PORTNAME=	maildrop
-PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
 LICENSE=	GPLv3
@@ -41,6 +36,8 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-maildirquota
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFLICTS=      courier-0.65*
 
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
@@ -113,11 +110,11 @@ INSTALL_TARGET=	install-maildrop install-deliverquota install-man
 INSTALL_TARGET=	install-strip
 .endif
 
-MAN1+=	lockmail.1 mailbot.1 maildirmake.1 maildrop.1 makemime.1 \
+MAN1+=	lockmail.1 mailbot.1 maildrop-maildirmake.1 maildrop.1 makemime.1 \
 	reformail.1 reformime.1
 MAN5=	maildir.5
 MAN7=	maildirquota.7 maildropex.7 maildropfilter.7 maildropgdbm.7
-MAN8+=	deliverquota.8
+MAN8+=	maildrop-deliverquota.8
 DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
 	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*
 

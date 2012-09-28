@@ -1,8 +1,8 @@
 @comment $FreeBSD$
-bin/deliverquota
+bin/maildrop-deliverquota
 bin/lockmail
 bin/mailbot
-bin/maildirmake
+bin/maildrop-maildirmake
 bin/maildrop
 bin/makedat
 bin/makedatprog
@@ -25,13 +25,13 @@ etc/quotawarnmsg.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.html
-%%PORTDOCS%%%%DOCSDIR%%/deliverquota.html
+%%PORTDOCS%%%%DOCSDIR%%/maildrop-deliverquota.html
 %%PORTDOCS%%%%DOCSDIR%%/lockmail.html
 %%PORTDOCS%%%%DOCSDIR%%/mailbot.html
 %%PORTDOCS%%%%DOCSDIR%%/maildir.html
 %%PORTDOCS%%%%DOCSDIR%%/maildiracl.html
 %%PORTDOCS%%%%DOCSDIR%%/maildirkw.html
-%%PORTDOCS%%%%DOCSDIR%%/maildirmake.html
+%%PORTDOCS%%%%DOCSDIR%%/maildrop-maildirmake.html
 %%PORTDOCS%%%%DOCSDIR%%/maildirquota.html
 %%PORTDOCS%%%%DOCSDIR%%/maildrop.html
 %%PORTDOCS%%%%DOCSDIR%%/maildropex.html
