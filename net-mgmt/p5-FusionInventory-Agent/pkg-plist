@@ -1,5 +1,8 @@
 bin/fusioninventory-agent
 bin/fusioninventory-injector
+@unexec if cmp -s %D/etc/fusioninventory/agent.cfg.sample %D/etc/fusioninventory/agent.cfg; then rm -f %D/etc/fusioninventory/agent.cfg; fi
+etc/fusioninventory/agent.cfg.sample
+@exec if [ ! -f %D/etc/fusioninventory/agent.cfg ] ; then cp -p %D/etc/fusioninventory/agent.cfg.sample %D/etc/fusioninventory/agent.cfg; fi
 share/fusioninventory/lib/FusionInventory/Agent.pm
 share/fusioninventory/lib/FusionInventory/Agent/Config.pm
 share/fusioninventory/lib/FusionInventory/Agent/HTTP/Client.pm

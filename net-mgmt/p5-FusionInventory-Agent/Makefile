@@ -15,17 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Agent for OCS Inventory server and FusionInventory for GLPI servers
 
-OPTIONS=	CUPS "Enable CUPS" OFF \
-		HTTP "Enable HTTP daemon mode" OFF \
-		ZLIB "Enable Zlib compression" ON \
-		SSL "Enable SSL" OFF \
-		DMIDECODE "Enable dmidecode hardware information" ON \
-		PCIUTILS "Enable pciutils hardware information" ON \
-		NMAP "Enable NMAP network inventory" OFF
-
 LICENSE=	GPLv2
-
-USE_GMAKE=	yes
 
 BUILD_DEPENDS=	p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
@@ -36,7 +26,6 @@ BUILD_DEPENDS=	p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
@@ -44,9 +33,18 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-HTTP-Proxy>=0:${PORTSDIR}/www/p5-HTTP-Proxy \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
+		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture
+
+OPTIONS=	CUPS "Enable CUPS" OFF \
+		HTTP "Enable HTTP daemon mode" OFF \
+		ZLIB "Enable Zlib compression" ON \
+		SSL "Enable SSL" OFF \
+		DMIDECODE "Enable dmidecode hardware information" ON \
+		PCIUTILS "Enable pciutils hardware information" ON \
+		NMAP "Enable NMAP network inventory" OFF
 
 PERL_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN1=		fusioninventory-agent.1 \
 		fusioninventory-injector.1
@@ -124,5 +122,10 @@ post-patch-script:
 	@${ECHO_MSG} -n ">> Removing unneeded patched files..."
 	@${FIND} ${WRKSRC} -type f \( -name '*.orig' \) -delete
 	@${ECHO_MSG} " [ DONE ]"
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/fusioninventory/agent.cfg ]; then \
+		${CP} -p ${PREFIX}/etc/fusioninventory/agent.cfg.sample ${PREFIX}/etc/fusioninventory/agent.cfg ; \
+	fi
 
 .include <bsd.port.post.mk>
