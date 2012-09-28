@@ -1,18 +1,14 @@
-Fbpanel is a lightweight desktop panel that works with any
-NETWM (http://www.freedesktop.org/) compliant window manager.
-It features:
-  o taskbar      - show list of open windows
-  o pager        - thumbnailed view of the desktop(s)
-  o launchbar    - buttons to launch applications
-  o show desktop - button to iconify or shade all windows 
-  o image        - display an image
-  o clock        - show the current time and/or date
-  o system tray  - tray for XEMBED icons (aka docklets)
-  o cpu monitor
-  o network monitor
-  o memory monitor
-  o battery monitor
-  o volume control
-  o general monitor - display output of configured command in a panel
+Fbpanel is a lightweight, NETWM compliant X11 desktop panel.  It works with
+any NETWM compliant window manager (xfwm4, sawfish, openbox, metacity, etc.)
+It provides:
+
+  - Taskbar, launchbar, and pager
+  - Show desktop button (iconify or shade all windows)
+  - Image viewer and volume control
+  - Text and digital clock
+  - System tray (notification area)
+  - Menu with support for freedesktop.org application menu
+  - CPU, network, memory, and battery monitors
+  - General monitor (to display output of configured command)
 
 WWW: http://fbpanel.sourceforge.net/
