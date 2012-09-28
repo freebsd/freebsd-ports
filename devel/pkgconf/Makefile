@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pkgconf
-# Date created:		2012-07-22
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pkgconf
 PORTVERSION=	0.8.9
@@ -11,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://tortois.es/~nenolod/distfiles/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	pkg-config compatible utility which does not depend on glib
+COMMENT=	Utility to helps to configure compiler and linker flags
 
 LICENSE=	BSD
 
