@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hgview
-PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	LOGILAB
 
@@ -38,7 +37,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|share/man|man|'
 	@${REINPLACE_CMD} -e 's|path/to.*hgview.py|${PYTHON_SITELIBDIR}/hgext/hgview.py|' \
 		${WRKSRC}/README
-	@${REINPLACE_CMD} -e '/system/ s|make|${GMAKE}|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|'make'|'${GMAKE}'|' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
