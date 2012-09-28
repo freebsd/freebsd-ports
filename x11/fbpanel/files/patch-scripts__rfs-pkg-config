@@ -1,0 +1,17 @@
+--- ./scripts/rfs-pkg-config.orig	2009-06-01 22:55:28.000000000 +0800
++++ ./scripts/rfs-pkg-config	2012-09-28 22:08:50.000000000 +0800
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Tt runs pkg-config in a way that everything is searched under RFS
+ # but reported including full path. Suitable for cross-compiling
+@@ -28,7 +28,7 @@ fi
+ var=$(pkg-config --silence-errors "$@")
+ [ "$?" -ne 0 ] && exit 1
+ if [ -n "$RFS" ]; then
+-    sed -e "s/\\(^\\|[[:space:]]\\)-\(I\|L\)/\\1-\\2${RFS//\//\\/}/g" <<< "$var"
++    echo "$var" | sed -e "s/\\(^\\|[[:space:]]\\)-\(I\|L\)/\\1-\\2${RFS//\//\\/}/g"
+ else
+     echo "$var"
+ fi
