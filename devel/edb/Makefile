@@ -2,6 +2,7 @@
 
 PORTNAME=	edb
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://codef00.com/projects/
 DISTNAME=	debugger-${PORTVERSION}
@@ -29,6 +30,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 STRIP_FILES=	bin/${PORTNAME} libexec/${PORTNAME}/*.so
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505
+BROKEN=		doesn't build due to lack of memory map of ptrace
+.endif
+
 .include <bsd.port.options.mk>
 
 do-configure:
@@ -47,4 +54,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/edb.1 ${MANPREFIX}/man/man1/edb.1
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
