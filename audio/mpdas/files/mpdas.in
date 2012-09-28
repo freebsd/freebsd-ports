@@ -20,6 +20,6 @@ load_rc_config $name
 
 : ${mpdas_enable="NO"}
 
-command_args="&"
+command_args="-d"
 
 run_rc_command "$1"

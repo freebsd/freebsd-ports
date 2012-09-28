@@ -1,13 +1,9 @@
-# Ports collection makefile for:	mpdas
-# Date created:				Nov 11, 2008
-# Whom:					hrkfrd@googlemail.com
-#
+# Created by: hrkfrd@googlemail.com
 # $FreeBSD$
-#
 
 PORTNAME=	mpdas
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
