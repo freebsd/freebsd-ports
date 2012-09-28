@@ -1,17 +1,12 @@
-# New ports collection makefile for:	vtun
-# Date created:				05 Feb 2000
-# Whom:					Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by:	Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vtun
-PORTVERSION=	3.0.2
-PORTREVISION=	4
+PORTVERSION=	3.0.3
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
 LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
