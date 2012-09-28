@@ -5,8 +5,18 @@
 ###  For compatibility notes when interoperating with older OpenVPN
 ###  versions, please, see <http://openvpn.net/relnotes.html>
 ### ------------------------------------------------------------------------
-###  If you want to donate to OpenVPN: <http://openvpn.net/donate.html>
-### ------------------------------------------------------------------------
-###  NOTE THIS IS AN UNSTABLE VERSION UNDER DEVELOPMENT!
+###  NOTE THIS IS AN UNSTABLE BETA VERSION UNDER DEVELOPMENT!
 ###  It may or may not be suitable for production. Use at your own risk.
 ### ------------------------------------------------------------------------
+###
+### PLUGIN LOCATION CHANGED!  
+### The following plugin locations have changed.  There is a symlink to the
+### new file for the duration of the 2.3 release.  This will be removed in
+### OpenVPN 2.4+.
+### Old Location:
+### %%PREFIX%%/openvpn/plugins/openvpn-plugin-auth-pam.so
+### %%PREFIX%%/openvpn/plugins/openvpn-plugin-down-root.so
+###
+### New Location:
+### %%PREFIX%%/openvpn-plugin-auth-pam.so
+### %%PREFIX%%/openvpn-plugin-down-root.so
