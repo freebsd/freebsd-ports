@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gpodder
-# Date created:				20 October 2007
-# Whom:					Chess Griffin <chess@chessgriffin.com>
-#
+# Created by: Chess Griffin <chess@chessgriffin.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gpodder
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 

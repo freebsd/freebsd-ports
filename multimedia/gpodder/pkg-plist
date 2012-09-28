@@ -5,6 +5,8 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/api.py
 %%PYTHON_SITELIBDIR%%/gpodder/api.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/common.py
+%%PYTHON_SITELIBDIR%%/gpodder/common.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/config.py
 %%PYTHON_SITELIBDIR%%/gpodder/config.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/core.py
@@ -23,6 +25,8 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/feedcore.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/feedservice.py
 %%PYTHON_SITELIBDIR%%/gpodder/feedservice.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/flattr.py
+%%PYTHON_SITELIBDIR%%/gpodder/flattr.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/base.py
@@ -41,6 +45,8 @@ bin/gpodder-migrate2tres
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/preferences.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/shownotes.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/shownotes.pyc
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/sync.py
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/sync.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/welcome.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/welcome.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktopfile.py
@@ -49,6 +55,8 @@ bin/gpodder-migrate2tres
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/download.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/draw.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/draw.pyc
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/flattr.py
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/flattr.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__init__.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__init__.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/addpodcast.py
@@ -99,6 +107,8 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/schema.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/services.py
 %%PYTHON_SITELIBDIR%%/gpodder/services.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/sync.py
+%%PYTHON_SITELIBDIR%%/gpodder/sync.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/unittests.py
 %%PYTHON_SITELIBDIR%%/gpodder/unittests.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/util.py
@@ -115,16 +125,22 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/examples/gpodder_mark_played.py
 %%DATADIR%%/examples/hello_world.py
 %%DATADIR%%/extensions/flv2mp4.py
+%%DATADIR%%/extensions/gtk_statusicon.py
 %%DATADIR%%/extensions/m4a_converter.py
+%%DATADIR%%/extensions/minimize_on_start.py
 %%DATADIR%%/extensions/normalize_audio.py
 %%DATADIR%%/extensions/notification.py
 %%DATADIR%%/extensions/rename_download.py
 %%DATADIR%%/extensions/rm_ogg_cover.py
 %%DATADIR%%/extensions/rockbox_convert2mp4.py
 %%DATADIR%%/extensions/tagging.py
+%%DATADIR%%/extensions/ted_subtitles.py
 %%DATADIR%%/extensions/ubuntu_appindicator.py
 %%DATADIR%%/extensions/ubuntu_unity.py
 %%DATADIR%%/extensions/woodchuck.py
+%%DATADIR%%/images/button-flattr-grey.png
+%%DATADIR%%/images/button-flattr.png
+%%DATADIR%%/images/button-flattred.png
 %%DATADIR%%/images/podcast-0.png
 %%DATADIR%%/images/podcast-1.png
 %%DATADIR%%/images/podcast-2.png
@@ -136,6 +152,7 @@ bin/gpodder-migrate2tres
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderchannel.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderconfigeditor.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderepisodeselector.ui
+%%GTK%%%%DATADIR%%/ui/gtk/gpodderflattrsignin.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderpodcastdirectory.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderpreferences.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpoddershownotes.ui
@@ -143,14 +160,14 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/ui/web/gpodder.js
 %%DATADIR%%/ui/web/index.html
 %%DATADIR%%/ui/web/style.css
-%%GTK%%share/icons/hicolor/16x16/gpodder.png
-%%GTK%%share/icons/hicolor/22x22/gpodder.png
-%%GTK%%share/icons/hicolor/24x24/gpodder.png
-%%GTK%%share/icons/hicolor/26x26/gpodder.png
-%%GTK%%share/icons/hicolor/32x32/gpodder.png
-%%GTK%%share/icons/hicolor/40x40/gpodder.png
-%%GTK%%share/icons/hicolor/48x48/gpodder.png
-%%GTK%%share/icons/hicolor/64x64/gpodder.png
+%%GTK%%share/icons/hicolor/16x16/apps/gpodder.png
+%%GTK%%share/icons/hicolor/22x22/apps/gpodder.png
+%%GTK%%share/icons/hicolor/24x24/apps/gpodder.png
+%%GTK%%share/icons/hicolor/26x26/apps/gpodder.png
+%%GTK%%share/icons/hicolor/32x32/apps/gpodder.png
+%%GTK%%share/icons/hicolor/40x40/apps/gpodder.png
+%%GTK%%share/icons/hicolor/48x48/apps/gpodder.png
+%%GTK%%share/icons/hicolor/64x64/apps/gpodder.png
 %%GTK%%share/icons/hicolor/scalable/apps/gpodder.svg
 share/locale/ca/LC_MESSAGES/gpodder.mo
 share/locale/cs/LC_MESSAGES/gpodder.mo
@@ -162,6 +179,7 @@ share/locale/es/LC_MESSAGES/gpodder.mo
 share/locale/es_ES/LC_MESSAGES/gpodder.mo
 share/locale/es_MX/LC_MESSAGES/gpodder.mo
 share/locale/eu/LC_MESSAGES/gpodder.mo
+share/locale/fa_IR/LC_MESSAGES/gpodder.mo
 share/locale/fi/LC_MESSAGES/gpodder.mo
 share/locale/fr/LC_MESSAGES/gpodder.mo
 share/locale/gl/LC_MESSAGES/gpodder.mo
@@ -190,6 +208,26 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @dirrmtry share/locale/id_ID
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
 @dirrmtry share/locale/cs_CZ
+%%GTK%%@dirrmtry share/icons/hicolor/scalable/apps
+%%GTK%%@dirrmtry share/icons/hicolor/scalable
+%%GTK%%@dirrmtry share/icons/hicolor/64x64/apps
+%%GTK%%@dirrmtry share/icons/hicolor/64x64
+%%GTK%%@dirrmtry share/icons/hicolor/48x48/apps
+%%GTK%%@dirrmtry share/icons/hicolor/48x48
+%%GTK%%@dirrmtry share/icons/hicolor/40x40/apps
+%%GTK%%@dirrmtry share/icons/hicolor/40x40
+%%GTK%%@dirrmtry share/icons/hicolor/32x32/apps
+%%GTK%%@dirrmtry share/icons/hicolor/32x32
+%%GTK%%@dirrmtry share/icons/hicolor/26x26/apps
+%%GTK%%@dirrmtry share/icons/hicolor/26x26
+%%GTK%%@dirrmtry share/icons/hicolor/24x24/apps
+%%GTK%%@dirrmtry share/icons/hicolor/24x24
+%%GTK%%@dirrmtry share/icons/hicolor/22x22/apps
+%%GTK%%@dirrmtry share/icons/hicolor/22x22
+%%GTK%%@dirrmtry share/icons/hicolor/16x16/apps
+%%GTK%%@dirrmtry share/icons/hicolor/16x16
+%%GTK%%@dirrmtry share/icons/hicolor
+%%GTK%%@dirrmtry share/icons
 @dirrm %%DATADIR%%/ui/web
 %%GTK%%@dirrm %%DATADIR%%/ui/gtk
 @dirrm %%DATADIR%%/ui
@@ -198,10 +236,6 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 %%GTK%%@dirrmtry share/applications
-%%GTK%%@dirrmtry share/icons/hicolor
-%%GTK%%@dirrmtry share/icons/hicolor/26x26
-%%GTK%%@dirrmtry share/icons/hicolor/40x40
-%%GTK%%@dirrmtry share/icons
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/webui
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/plugins
 %%GTK%%@dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface
