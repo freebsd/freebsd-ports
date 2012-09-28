@@ -45,7 +45,7 @@ share/locale/th/LC_MESSAGES/geeqie.mo
 share/locale/tr/LC_MESSAGES/geeqie.mo
 share/locale/uk/LC_MESSAGES/geeqie.mo
 share/locale/vi/LC_MESSAGES/geeqie.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/geeqie.mo
+share/locale/zh_CN/LC_MESSAGES/geeqie.mo
 share/locale/zh_TW/LC_MESSAGES/geeqie.mo
 share/pixmaps/geeqie.png
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
