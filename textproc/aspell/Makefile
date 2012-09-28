@@ -39,7 +39,6 @@ SUB_LIST=		VERINST=${VERINST}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
-USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
