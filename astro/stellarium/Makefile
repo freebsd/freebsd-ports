@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Stellarium
-# Date created:				26 Jan 2004
-# Whom:					Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	stellarium
 PORTVERSION=	0.11.4
@@ -28,14 +24,15 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS=	MORE_STARS	"Install extra star catalogs (1.2GB)"	off
+OPTIONS_DEFINE=	MORE_STARS DOCS
+MORE_STARS_DESC=	Install extra star catalogs (1.2GB)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MORE_STARS)
-.for i in 4 5 6 7 8
+.if ${PORT_OPTIONS:MMORE_STARS}
+. for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
-.endfor
+. endfor
 DISTFILES+=	stars_4_1v0_0.cat:stars4 stars_5_2v0_0.cat:stars5 \
 		stars_6_2v0_0.cat:stars6 stars_7_2v0_0.cat:stars7 \
 		stars_8_2v0_0.cat:stars8
@@ -53,11 +50,11 @@ post-patch: .SILENT
 	cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
 
 post-install:
-.if defined(WITH_MORE_STARS)
+.if ${PORT_OPTIONS:MMORE_STARS}
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_0.cat \
 		${DATADIR}/stars/default
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
