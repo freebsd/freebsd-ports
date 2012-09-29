@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Celestia (master port)
-# Date created:				2002-05-17
-# Whom:					Trevor Johnson <trevor@FreeBSD.org>
-#
+# Created by: Trevor Johnson <trevor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
@@ -17,7 +13,7 @@ COMMENT=	Scriptable space flight simulator for X
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	libtool
@@ -70,15 +66,15 @@ IGNORE=		requires one of the <${UI_LIST}> values for CELESTIA_UI
 
 .if ${CELESTIA_UI} == "gtk" || ${CELESTIA_UI} == "gnome"
 USE_GNOME+=	gnomehack
-LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		theora.0:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	gtkglext-x11-1:${PORTSDIR}/x11-toolkits/gtkglext \
+		theora:${PORTSDIR}/multimedia/libtheora
 STARTUP_NOTIFY=	true
 PLIST_FILES+=	share/celestia/celestia-logo.png share/celestia/celestiaui.xml
 .else
 STARTUP_NOTIFY=	false
 .endif
 .if ${CELESTIA_UI} == "kde"
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	KDE=""
 .else
 PLIST_SUB+=	KDE="@comment "
