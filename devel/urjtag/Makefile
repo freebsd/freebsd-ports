@@ -1,4 +1,4 @@
-# Created by: Bruce M. Simpson
+# Created by: Bruce M. Simpson <bms@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	urjtag
@@ -10,7 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended utility to work with JTAG-aware boards
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -62,6 +64,7 @@ CONFIGURE_ARGS+=--disable-nls
 .endif
 
 post-patch:
+# Suppress svn(1) binary detection
 	@${REINPLACE_CMD} -e 's|^SVN=.*|SVN=''|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
