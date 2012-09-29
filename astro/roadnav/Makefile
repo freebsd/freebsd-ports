@@ -1,4 +1,4 @@
-# Created by: stevef
+# Created by: Steve Franks <stevefranks@ieee.org>
 # $FreeBSD$
 
 PORTNAME=	roadnav
@@ -8,7 +8,7 @@ CATEGORIES=	astro geography
 MASTER_SITES=	SF/${PORTNAME}/Roadnav/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D GPS Mapping program
+COMMENT=	3D GPS mapping program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libroadnav.a:${PORTSDIR}/astro/libroadnav
 
@@ -23,15 +23,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-pre-install:
-	${MKDIR} ${PREFIX}/share/applications
+.include <bsd.port.pre.mk>
+
+pre-su-install:
+	@${MKDIR} ${PREFIX}/share/applications
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-roadnavdocDATA||' \
+.if ! ${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-roadnavdocDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
