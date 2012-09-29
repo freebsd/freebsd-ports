@@ -1,12 +1,7 @@
-# New ports collection makefile for:	weechat-devel
-# Date created:			2010-01-06
-# Whom:				Jase Thew <freebsd@beardz.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	weechat
-PORTVERSION=	20120918
+PORTVERSION=	20120929
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -31,7 +26,7 @@ WANT_PERL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITREV=	34c9a06
+GITREV=	e095948
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
