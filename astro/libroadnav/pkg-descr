@@ -10,4 +10,6 @@ with the GNIS state and topical gazetteer data from the USGS to identify
 locations.  It has experimental support for scripting, LCDproc, importing
 OpenStreetMap data, and importing GPX waypoints and tracks.
 
+This port provides helper library for Roadnav.
+
 WWW: http://roadnav.sourceforge.net/

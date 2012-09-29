@@ -1,4 +1,4 @@
-# Created by: stevef
+# Created by: Steve Franks <stevefranks@ieee.org>
 # $FreeBSD$
 
 PORTNAME=	libroadnav
@@ -8,7 +8,7 @@ CATEGORIES=	astro geography
 MASTER_SITES=	SF/roadnav/LibRoadnav/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Helper library for Roadnav: A 3D GPS Mapping program
+COMMENT=	Helper library for Roadnav (3D GPS mapping program)
 
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
@@ -21,10 +21,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-libroadnavdocDATA||' \
-		${WRKSRC}/Makefile.in
+.if ! ${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e \
+		'/^install-data-am:/s|install-libroadnavdocDATA||' \
+			${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
