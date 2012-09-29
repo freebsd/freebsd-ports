@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-awesome_print
-# Date created:		2012-05-21
-# Whom:			Koichiro IWAO <meta+ports@vmeta.jp>
-#
+# Created by: Koichiro IWAO <meta+ports@vmeta.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	awesome_print
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
