@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sysrc
-# Date created:				28 December 2011
-# Whom:					Devin Teske <dteske@FreeBSD.org>
-#
+# Created by: Devin Teske <dteske@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sysrc
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
