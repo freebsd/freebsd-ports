@@ -1,7 +1,8 @@
+# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.5.13
+DISTVERSION=	1.5.14
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
