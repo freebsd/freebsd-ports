@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	gcc48
-# Date created:				2012-03-17
-# Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
-#
+# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.0.20120902
+PORTVERSION=	4.8.0.20120909
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -57,6 +52,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
+LANGUAGES:=	c,c++,objc,fortran
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
@@ -64,7 +60,6 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
-		--enable-languages=c,c++,objc,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -101,7 +96,7 @@ INFO+=		gcc${SUFFIX}/libquadmath	\
 .if ${PORT_OPTIONS:MJAVA}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-CONFIGURE_ARGS+=--enable-languages=c,c++,objc,fortran,java
+LANGUAGES:=	${LANGUAGES},java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
@@ -134,9 +129,10 @@ PLIST_SUB+=	JAVA=""
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
 .endif
+CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
 pre-everything::
-	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
+	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
