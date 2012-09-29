@@ -62,6 +62,7 @@
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-matroska
+    SUBDIR += freetuxtv
     SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol
