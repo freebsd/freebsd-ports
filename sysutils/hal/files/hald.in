@@ -41,12 +41,53 @@ local_force_depend()
    return 0
 }
 
+init_var_policykit()
+{
+  local USER=polkit
+  local GROUP=${USER}
+  local PREFIX=/usr/local
+
+  /usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/run/PolicyKit
+  /usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/lib/PolicyKit
+  /usr/bin/install -d -o ${USER} -m 0755 -g wheel /var/lib/PolicyKit-public
+  /bin/mkdir -p /var/lib/misc
+  /usr/bin/touch -f /var/lib/misc/PolicyKit.reload
+  /usr/sbin/chown ${USER}:${GROUP} /var/lib/misc/PolicyKit.reload
+  /bin/chmod 0664 /var/lib/misc/PolicyKit.reload
+}
+
+init_var_polkit()
+{
+  mkdir -p /var/lib/polkit-1/localauthority
+  for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d
+  do
+    mkdir -p /var/lib/polkit-1/localauthority/${i}
+  done
+  chmod 0700 /var/lib/polkit-1
+}
+
+init_var_hal()
+{
+  local USER=haldaemon
+  local GROUP=${USER}
+
+  /usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/hald
+  /usr/bin/install -d -o ${USER} -g ${GROUP} /var/cache/hald
+  /usr/bin/install -d -o ${USER} -g ${GROUP} /var/lib/hal
+  /usr/local/bin/polkit-auth --user ${USER} --grant \
+          org.freedesktop.policykit.read 1> /dev/null 2>&1
+}
+
 hald_precmd()
 {
     if ! checkyesno dbus_enable
     then
 	local_force_depend dbus || return 1
     fi
+
+    init_var_policykit
+    init_var_polkit
+    init_var_hal
 
     chmod 0755 /var/cache
 
