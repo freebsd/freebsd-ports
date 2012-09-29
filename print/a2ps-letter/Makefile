@@ -1,9 +1,5 @@
-# New ports collection makefile for:    a2ps (letter)
-# Date created:         15 July 1998
-# Whom:                 Chuck Robey (chuckr@freebsd.org)
-#
+# Created by:	Chuck Robey (chuckr@freebsd.org)
 # $FreeBSD$
-#
 
 PORTNAME=	a2ps
 PORTVERSION=	4.13b
