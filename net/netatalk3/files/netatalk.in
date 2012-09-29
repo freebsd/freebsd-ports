@@ -20,4 +20,7 @@ name=netatalk
 rcvar=netatalk_enable
 
 load_rc_config ${name}
+
+command=%%PREFIX%%/sbin/${name}
+
 run_rc_command "$1"
