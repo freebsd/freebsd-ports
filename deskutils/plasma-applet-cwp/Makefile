@@ -1,12 +1,8 @@
-# New ports collection makefile for:	plasma-applet-cwp
-# Date created:		2009-07-22
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created By: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cwp
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
