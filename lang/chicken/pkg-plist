@@ -19,7 +19,6 @@ lib/chicken/6/lolevel.import.so
 lib/chicken/6/modules.db
 lib/chicken/6/ports.import.so
 lib/chicken/6/posix.import.so
-lib/chicken/6/scheme.import.so
 lib/chicken/6/setup-api.import.so
 lib/chicken/6/setup-api.so
 lib/chicken/6/setup-download.import.so
@@ -88,8 +87,8 @@ lib/libchicken.so.6
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit tcp.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit utils.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the compiler.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/chicken.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
