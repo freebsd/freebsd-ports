@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/libXaw3d.a
 lib/libXaw3d.so
 lib/libXaw3d.so.%%XAWVER%%
