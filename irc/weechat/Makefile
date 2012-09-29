@@ -1,13 +1,8 @@
-# New ports collection makefile for:    weechat
-# Date created:                         2003-03-07
-# Whom:                                 clement
-#
+# Created by: clement
 # $FreeBSD$
-#
 
 PORTNAME=	weechat
-PORTVERSION=	0.3.8
-PORTREVISION=	3	
+PORTVERSION=	0.3.9
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -25,9 +20,10 @@ USE_CMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
-OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE ASPELL GNUTLS NLS DOCUMENTATION SASL COLOR256
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE ASPELL GNUTLS NLS DOCUMENTATION COLOR256
 OPTIONS_DEFAULT=CHARSET
 
 BACKTRACE_DESC=	Provide crash backtraces
@@ -39,7 +35,6 @@ PERL_DESC=	Perl scripting support
 PYTHON_DESC=	Python scripting support
 RUBY_DESC=	Ruby scripting support
 TCL_DESC=	Tcl scripting support
-SASL_DESC=	SASL with DH-Blowfish support
 COLOR256_DESC=	Use ncurses port for 256 color support
 
 .include <bsd.port.options.mk>
@@ -114,9 +109,8 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.0+
-CMAKE_ARGS+=	-DBSD_LUA_VER=${LUA_VER} \
-		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
+USE_LUA=	5.1+
+CMAKE_ARGS+=	-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
 		-DBSD_LUA_INCDIR=${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else
@@ -125,7 +119,6 @@ PLIST_SUB+=	LUA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
-IGNORE=		guile support currently causes a segfault on exit. Please re-run 'make config' and disable GUILE
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
@@ -144,14 +137,6 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 
 .if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
-PLIST_SUB+=	SASL=""
-.else
-CMAKE_ARGS+=	-DENABLE_GCRYPT=no
-PLIST_SUB+=	SASL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOLOR256}                                      
