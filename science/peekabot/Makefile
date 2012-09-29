@@ -1,9 +1,5 @@
-# New ports collection makefile for:	peekabot
-# Date created:		21 June 2009
-# Whom:			chris@officialunix.com
-#
+# Created By: chris@officialunix.com
 # $FreeBSD$
-#
 
 PORTNAME=	peekabot
 PORTVERSION=	0.8.6
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
 LICENSE=	BSL GPLv3
