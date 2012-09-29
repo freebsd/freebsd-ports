@@ -1,12 +1,8 @@
-# New ports collection makefile for:   devel/p5-Devel-TraceUse
-# Date created:                                20 September 2006
-# Whom:                                        Mauricio Herrera Cuadra <mauricio@arareko.net>
-#
+# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-TraceUse
-PORTVERSION=	2.06
+PORTVERSION=	2.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	This module shows the modules your program loads, recursively
 
-BUILD_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_MODBUILD=	yes
 
