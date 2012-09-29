@@ -1,18 +1,18 @@
---- cmake/FindRuby.cmake.orig	2011-11-21 17:12:47.000000000 +0000
-+++ cmake/FindRuby.cmake	2011-11-22 21:04:12.114830585 +0000
+--- cmake/FindRuby.cmake.orig	2012-07-06 10:35:11.000000000 +0000
++++ cmake/FindRuby.cmake	2012-07-07 04:50:51.807510722 +0000
 @@ -32,13 +32,12 @@
  ENDIF(RUBY_FOUND)
  
  FIND_PROGRAM(RUBY_EXECUTABLE
--  NAMES ruby1.9.2 ruby192 ruby1.9.1 ruby191 ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16 ruby
+-  NAMES ruby1.9.3 ruby193 ruby1.9.2 ruby192 ruby1.9.1 ruby191 ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16 ruby
 -  PATHS /usr/bin /usr/local/bin /usr/pkg/bin
 +  NAMES ${BSD_RUBY_CMD}
    )
  
  IF(RUBY_EXECUTABLE)
    EXECUTE_PROCESS(
--    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['rubyhdrdir'] || RbConfig::CONFIG['archdir']"
-+    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['rubyhdrdir'] || RbConfig::CONFIG['topdir']"
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::CONFIG['rubyhdrdir'] || RbConfig::CONFIG['archdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::CONFIG['rubyhdrdir'] || RbConfig::CONFIG['topdir']"
      OUTPUT_VARIABLE RUBY_ARCH_DIR
      )
  
@@ -20,23 +20,24 @@
      )
  
    EXECUTE_PROCESS(
--    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['libdir']"
-+    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::TOPDIR + '/lib'"
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::CONFIG['libdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::TOPDIR + '/lib'"
      OUTPUT_VARIABLE RUBY_POSSIBLE_LIB_PATH
      )
  
    EXECUTE_PROCESS(
--    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['rubylibdir']"
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::CONFIG['rubylibdir']"
 +    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::TOPDIR + '/lib/ruby/' + RbConfig::CONFIG['ruby_version']"
      OUTPUT_VARIABLE RUBY_RUBY_LIB_PATH
      )
  
-@@ -78,7 +77,7 @@
+@@ -71,8 +70,7 @@
      "${RUBY_INCLUDE_PATH}/${RUBY_ARCH}")
  
    FIND_LIBRARY(RUBY_LIBRARY
--    NAMES ruby-1.9.2 ruby1.9.2 ruby192 ruby-1.9.1 ruby1.9.1 ruby191 ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16 ruby
+-    NAMES ruby-1.9.3 ruby1.9.3 ruby193 ruby-1.9.2 ruby1.9.2 ruby192 ruby-1.9.1 ruby1.9.1 ruby191 ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16 ruby
+-    PATHS ${RUBY_POSSIBLE_LIB_PATH} ${RUBY_RUBY_LIB_PATH}
 +    NAMES ${BSD_RUBY_VER}
-     PATHS ${RUBY_POSSIBLE_LIB_PATH} ${RUBY_RUBY_LIB_PATH}
      )
  
+   IF(RUBY_LIBRARY AND RUBY_INCLUDE_PATH)
