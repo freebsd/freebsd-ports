@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Xaw3d
-# Date created:		18 November 1994
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	Xaw3d
 PORTVERSION=	1.5E
