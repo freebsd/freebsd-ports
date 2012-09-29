@@ -1,9 +1,5 @@
-# New ports collection makefile for:	afterstep
-# Date created:		October 29th 1996
-# Whom:			jfitz@FreeBSD.org
-#
+# Created by:	jfitz@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	afterstep
 PORTVERSION=	1.0
