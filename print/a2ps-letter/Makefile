@@ -54,13 +54,32 @@ CONFLICTS?=	a2ps-a4-4.* a2ps-letter-4.*
 .endif
 .endif
 
-.if defined(WITH_EMACS)
+OPTIONS_DEFINE=NLS I18N EMACS
+OPTIONS_DEFAULT=NLS
+NO_OPTIONS_SORT=yes
+EMACS_DESC=Enable Emacs support
+I18N_DESC=Enable I18N support
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MEMACS}
+USE_EMACS=	yes
+CONFIGURE_ARGS+=	--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
 PLIST_SUB+=	WITHEMACS=""
 .else
+CONFIGURE_ENV+=	EMACS=no
 PLIST_SUB+=	WITHEMACS="@comment "
 .endif
 
-.if defined(WITH_I18N)
+.if ${PORT_OPTIONS:MI18N}
 PLIST_SUB+=	WITHI18N=""
 
 pre-configure:
@@ -81,7 +100,7 @@ PLIST_SUB+=	WITHI18N="@comment "
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/a2ps
-.if defined(WITH_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
 		  ${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
