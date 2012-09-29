@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -37,7 +36,9 @@ CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE} \
 			--localstatedir=/var \
-			--disable-bundled-libevent
+			--disable-bundled-libevent \
+			--with-libevent-header=${LOCALBASE}/include/event2 \
+			--with-libevent-lib=${LOCALBASE}/lib/event2
 
 OPTIONS=	PAM		"Enable PAM support" off \
 		KRB5		"Enable Kerberos V UAM" off \
@@ -105,8 +106,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/configure \
-		${WRKSRC}/etc/netatalk/Makefile.in
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
