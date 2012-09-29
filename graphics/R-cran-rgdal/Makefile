@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rgdal
-DISTVERSION=	0.7-18
+DISTVERSION=	0.7-19
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -18,6 +18,6 @@ RUN_DEPENDS=	R-cran-sp>=0.9.99:${PORTSDIR}/math/R-cran-sp
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-R_POSTCMD_INSTALL_OPTIONS+=	--configure-args="--with-proj-lib=${LOCALBASE}"
+R_POSTCMD_INSTALL_OPTIONS+=	--configure-args="--with-proj-lib=${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
