@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt
@@ -23,7 +23,6 @@ CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-lite-[0-9]*
 
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 
-CFLAGS_ADD+=	-D_DONT_USE_CTYPE_INLINE_
 LDFLAGS_ADD+=	-lhz
 
 WITH_MUTT_LOCALES_FIX=	yes
