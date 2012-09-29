@@ -1,21 +1,18 @@
-# New ports collection makefile for:   	squeak
-# Date created:        			12 October 2001
-# Whom:                			roland.jesse@gmx.net
-#
+# Created by: roland.jesse@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=		squeak
 PORTVERSION=		4.4.7
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/:vmsrc \
 			http://ftp.squeak.org/${IMAGEVERSION}/:src \
+			ftp://squeak.org/4.1/:sqsrc \
 			http://squeak.610t.org/patches/:mainsrc
 DISTFILES=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:mainsrc \
 			Squeak${IMAGEVERSION}.zip:src \
-			SqueakV41.sources:vmsrc
+			${SQUEAK_SRC}.gz:sqsrc
 EXTRACT_ONLY=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 
 ##################################################
@@ -38,6 +35,7 @@ LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
 VM_VERSION=		${PORTVERSION}.${SVNVERSION}
 SVNVERSION=		2383
 IMAGEVERSION=		4.3
+SQUEAK_SRC=		SqueakV41.sources
 SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
 
 .include <bsd.port.pre.mk>
@@ -93,7 +91,7 @@ pre-configure:
 
 ##################################################
 post-install:
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV41.sources ${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/)
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${GUNZIP_CMD} ${SQUEAK_SRC}.gz && ${INSTALL_DATA} ${SQUEAK_SRC} ${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/)
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}.zip -d ${WRKDIR})
 .for f in ${IMAGES}
 	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
