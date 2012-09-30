@@ -29,8 +29,6 @@ MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
 
 .include <bsd.port.options.mk>
 
-OPTIONS_DEFINE=	DOCS
-
 .if ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "sparc64"
 MAKE_ARGS+=	HACKED_APPLY=
 .endif
