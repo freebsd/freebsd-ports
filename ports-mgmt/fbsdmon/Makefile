@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fbsdmon
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://files.roorback.net/
 
