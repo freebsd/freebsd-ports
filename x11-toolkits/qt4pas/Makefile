@@ -28,9 +28,7 @@ IGNORE=	Please update your current qt4 version to ${QT4_VER_MIN}
 .endif
 
 post-patch:
-.if ${OSVERSION} >= 1000000
 	@${REINPLACE_CMD} -e 's|-mincoming-stack-boundary=2||g' ${WRKSRC}/Qt4Pas.pro
-.endif
 
 pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
