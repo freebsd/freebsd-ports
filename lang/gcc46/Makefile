@@ -1,7 +1,8 @@
+# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4.20120831
+PORTVERSION=	4.6.4.20120928
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -52,6 +53,7 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
+LANGUAGES:=	c,c++,objc,fortran
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
@@ -59,7 +61,6 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
-		--enable-languages=c,c++,objc,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -100,7 +101,7 @@ DISTFILES+=	${ECJ_JAR}:ecj
 EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-CONFIGURE_ARGS+=--enable-languages=c,c++,objc,fortran,java
+LANGUAGES:=	${LANGUAGES},java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
@@ -137,9 +138,10 @@ post-patch::
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
 .endif
+CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
 pre-everything::
-	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
+	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
