@@ -1,0 +1,8 @@
+Lingua::EN::Words2Nums converts English text into numbers. It supports both
+ordinal and cardinal numbers, negative numbers, and very large numbers.
+
+The main subroutine, which is exported by default, is words2nums(). This
+subroutine, when fed a string, will attempt to convert it into a number. If it
+succeeds, the number will be returned. If it fails, it returns undef.
+
+WWW: http://search.cpan.org/dist/Lingua-EN-Words2Nums/
