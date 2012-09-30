@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pear-Net_DNS2
-# Date created:		          Oct 27, 2010
-# Whom:				  Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	dns net pear
 
 MAINTAINER=	wen@FreeBSD.org
