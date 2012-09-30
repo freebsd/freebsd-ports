@@ -1,19 +1,16 @@
-# New ports collection makefile for:	rubygem-guard-rspec
-# Date created:		2011-10-20
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	guard-rspec
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Guard::RSpec automatically run your specs (much like autotest)
 
-RUN_DEPENDS=	rubygem-guard>=1.1:${PORTSDIR}/sysutils/rubygem-guard
+RUN_DEPENDS=	rubygem-guard>=1.1:${PORTSDIR}/sysutils/rubygem-guard \
+		rubygem-rspec>=2.11:${PORTSDIR}/devel/rubygem-rspec
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
