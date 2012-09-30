@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-dancingparticles
-# Date created:				14 Oct 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	dancingparticles
 PORTVERSION=	0.6
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Makes particles dance with very pretty neon colors
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \

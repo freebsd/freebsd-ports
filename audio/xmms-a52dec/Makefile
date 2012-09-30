@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-a52dec
-# Date created:		24 July 2002
-# Whom:			Amar Takhar <verm@drunkmonk.net>
-#
+# Created by: Amar Takhar <verm@drunkmonk.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-a52dec
 PORTVERSION=	1.0
@@ -11,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A52 (aka AC3) decoder plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \

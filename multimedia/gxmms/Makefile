@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gxmms
-# Date created:				3 November 2004
-# Whom:					Radek Kozlowski <radek@raadradd.com>
-#
+# Created by: Radek Kozlowski <radek@raadradd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gxmms
 PORTVERSION=	0.2.1
@@ -12,8 +8,8 @@ CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple GNOME panel applet for controlling XMMS
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Simple GNOME panel applet for controlling XMMS
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-fishmatic
-# Date created:				20 Jan 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-fishmatic
 PORTVERSION=	0.0.1
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://stukach.com/hosted/
 DISTNAME=	fishmatic
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	An XMMS non-static OpenGL stereogram visualization plugin
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

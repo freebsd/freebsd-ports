@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kbear
-# Date created:			Wed May 29 18:10:01 PDT 2002
-# Whom:				Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=		kbear
@@ -14,8 +11,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}-1.src
 PATCH_SITES=		http://www.brueffer.de/distfiles/
 PATCHFILES=		${DISTNAME:S/.src/-patch/}.gz
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A graphical FTP client for KDE
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Graphical FTP client for KDE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}
 

@@ -1,16 +1,12 @@
-# New ports collection makefile for:	plugger
-# Date created:		11 Februrary 1999
-# Whom:			Jay Sachs <sachs@cs.williams.edu>
-#
+# Created by: Jay Sachs <sachs@cs.williams.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	plugger
 PORTVERSION=	5.1.5
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
 USE_XORG=	xext xt sm ice xext x11

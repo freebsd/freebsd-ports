@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/xmms-defx
-# Date created:			7 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-defx
 PORTVERSION=	0.9.9
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/defx/defx/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Multi-effects processor plug-in for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

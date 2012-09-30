@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcl8.5
-# Date created:		17 January 2007
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	tcl
 PORTVERSION=	8.5.12
@@ -13,11 +9,10 @@ MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	tcl${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT?=	Tool Command Language
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/../license.terms
 
 LATEST_LINK?=	tcl85
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  xsysstats
-# Date created:			  12 December 1994
-# Whom:				  asami
-#
+# Create by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	xsysstats
 PORTVERSION=	1.51
@@ -14,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A system information display tool
 
 GNU_CONFIGURE=	yes

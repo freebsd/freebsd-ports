@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plugger-plugins-hubbe
-# Date created:				11 February 2004
-# Whom:					John Merryweather Cooper <coop9211@uidaho.edu>
-#
+# Created by: John Merryweather Cooper <coop9211@uidaho.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
@@ -13,7 +9,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \

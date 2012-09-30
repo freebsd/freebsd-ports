@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms
-# Date created:			3 July 1999
-# Whom:				Espen Skoglund <esk@ira.uka.de>
-#
+# Created by: Espen Skoglund <esk@ira.uka.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
@@ -14,7 +10,7 @@ MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		LOCAL/beech
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	c.petrik.sosa@gmail.com
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 USE_BZIP2=	yes

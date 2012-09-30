@@ -1,7 +1,4 @@
-# New ports collection makefile for: xmms-status-plugin
-# Date created:			Sep 28, 2003
-# Whom:				Pav Lucistnik <pav@oook.cz>
-#
+# Created by: Pav Lucistnik <pav@oook.cz>
 # $FreeBSD$
 
 PORTNAME=	xmms-status-plugin
@@ -10,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.hellion.org.uk/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	XMMS control applet for GNOME 2 panel / KDE tray
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

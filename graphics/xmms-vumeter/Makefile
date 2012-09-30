@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-vumeter
-# Date created:			13 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	vumeter
 PORTVERSION=	0.9.2
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}plugin/Plugin%20for%20XMMS
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Analog VUmeter plugin for XMMS
 
 LICENSE=	GPLv2 GPLv3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/xmms-waterfall
-# Date created:			17 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	waterfall
 PORTVERSION=	0.11
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.sethoscope.net/waterfall/
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Yet another XMMS spectrum analyzer
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

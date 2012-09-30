@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scanssh
-# Date created:		09 September 2000
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	scanssh
 PORTVERSION=	2.1
@@ -11,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Scans networks for open proxies, SSH, web, and SMTP servers
 
 LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet \
