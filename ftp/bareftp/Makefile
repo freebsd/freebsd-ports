@@ -1,9 +1,5 @@
-# Ports collection makefile for:  bareftp
-# Date created:			Sat June 20, 2009
-# Whom:				Chris Petrik (chris@officialunix.com)
-#
+# Created by: Chris Petrik (chris@officialunix.com)
 # $FreeBSD$
-#
 
 PORTNAME=	bareftp
 PORTVERSION=	0.3.8
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes

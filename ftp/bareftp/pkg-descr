@@ -3,4 +3,4 @@ under the terms of the GPL license. It supports the FTP, FTPS and SSH (SFTP)
 protocols. bareFTP is written in pure C# for the Mono framework, using Gtk#
 for the user interface.
 
-WWW:	http://www.bareftp.org
+WWW: http://www.bareftp.org
