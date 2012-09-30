@@ -42,6 +42,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.yacc.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.yapp.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quote.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rank.sub.graph.1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rank.sub.graph.2.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rank.sub.graph.3.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rank.sub.graph.4.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report.valid.attributes.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.graph.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.sub.graph.pl
