@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.14 2012-04-19 06:19:58 acm Exp $
+@comment $FreeBSD: ports/lang/fpc/pkg-plist,v 1.14 2012/04/19 06:19:58 acm Exp $
 
 @unexec if cmp -s %D/etc/fpc.cfg.sample %D/etc/fpc.cfg; then rm -f %D/etc/fpc.cfg; fi
 etc/fpc.cfg.sample
