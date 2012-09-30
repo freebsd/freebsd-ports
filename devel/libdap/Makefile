@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libdap
-# Date created:				22 Feb, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libdap
-PORTVERSION=	3.11.3
+PORTVERSION=	3.11.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
@@ -18,7 +14,7 @@ COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2:${PORTSDIR}/textproc/libxml2
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-zlib=/usr

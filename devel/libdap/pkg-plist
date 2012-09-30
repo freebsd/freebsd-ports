@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dap-config
 bin/dap-config-pkgconfig
 bin/getdap
@@ -88,7 +87,7 @@ include/libdap/xdr-datatypes.h
 lib/libdap.a
 lib/libdap.la
 lib/libdap.so
-lib/libdap.so.14
+lib/libdap.so.15
 lib/libdapclient.a
 lib/libdapclient.la
 lib/libdapclient.so
