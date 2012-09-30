@@ -1,13 +1,8 @@
-# New ports collection makefile for:	fplib
-# Date created:		2011-11-12
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fplib
-PORTVERSION=	20100712
-PORTREVISION=	1
+PORTVERSION=	20120911
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -22,25 +17,18 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tag:${PORTSDIR}/audio/taglib
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+REINPLACE_ARGS=	-i ''
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 
-PLIST_FILES=	bin/lastfmfpclient \
-		lib/liblastfmfp.a \
-		lib/liblastfmfp.so \
-		lib/liblastfmfp.so.1 \
-		lib/liblastfmfp.so.1.6.0
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(ADD_DEFINITIONS\)(.*)|\1(${CFLAGS} ${CPPFLAGS})|' \
-		-e 's|\(OUTPUT_NAME lastfmfp\)_static|\1|' \
-			${WRKSRC}/fplib/CMakeLists.txt
+		-e 's|\(LINK_DIRECTORIES\)(\(.*\))|\1(\2 ${LOCALBASE}/lib)|' \
+			${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} \
-		-e 's|\(ADD_DEFINITIONS\)(.*)|\1(${CFLAGS} ${CPPFLAGS})|' \
-		-e 's|^\(LINK_DIRECTORIES\)(.*)|\1(${LOCALBASE}/lib)|' \
-		-e 's| lastfmfp_static| lastfmfp_shared|' \
-			${WRKSRC}/lastfmfpclient/CMakeLists.txt
+		-e '85 s|size|&()|' \
+			${WRKSRC}/include/fplib/FloatingAverage.h
 
 .include <bsd.port.mk>
