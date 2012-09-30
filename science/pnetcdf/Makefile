@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pnetcdf
-# Date created:		April 30 2007
-# Whom:			Chao Shin <quakelee@cn.FreeBSD.org>
-#
+# Created by: Chao Shin <quakelee@cn.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/ \
 		LOCAL/sunpoet
