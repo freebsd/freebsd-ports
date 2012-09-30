@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-listen
-# Date created:		2012-06-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	listen
 PORTVERSION=	0.5.2
