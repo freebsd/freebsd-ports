@@ -1,13 +1,9 @@
-# New ports collection makefile for:	screen
-# Date created:         25 Nov 1994
 # Whom:                 ache
-#
 # $FreeBSD$
-#
 
 PORTNAME=	screen
 PORTVERSION=	4.0.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		http://komquats.com/distfiles/ \
@@ -22,7 +18,7 @@ OPTIONS=	CJK "Treat CJK ambiguous characters as full width" OFF \
 		INFO "Build and install info documentation" ON \
 		MAN "Build and install man pages" ON \
 		NETHACK "Enable nethack-style messages" ON \
-		XTERM_256 "Enable support for 256 colour xterm" OFF \
+		XTERM_256 "Enable support for 256 colour xterm" ON \
 		HOSTINLOCKED "Print user@host in locked message" OFF \
 		SHOWENC "Show encoding on the status line" OFF
 
