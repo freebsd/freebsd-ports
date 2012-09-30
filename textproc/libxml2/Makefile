@@ -13,7 +13,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.8
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://gd.tuwien.ac.at/pub/libxml/ \
 		ftp://xmlsoft.org/libxml2/
@@ -54,11 +54,6 @@ CONFIGURE_ARGS+=	--without-schemas
 
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--without-threads
-.else
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-threads
 .endif
 
 .if defined(WITH_MEM_DEBUG)
@@ -74,10 +69,6 @@ CONFIGURE_ARGS+=	--with-thread-alloc
 .endif
 
 post-patch:
-.if !defined(WITHOUT_THREADS)
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		${WRKSRC}/xml2-config.in
-.endif
 .for d in . doc doc/devhelp doc/examples
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
 		${WRKSRC}/${d}/Makefile.in
