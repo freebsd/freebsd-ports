@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xlogmaster
-# Date created:		1 August 1998
-# Whom:			Adrian Wontroba <aw1@stade.co.uk>
-#
+# Created by: Adrian Wontroba <aw1@stade.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	xlogmaster
 PORTVERSION=	1.6.2
@@ -11,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
 USE_GNOME=	gtk12

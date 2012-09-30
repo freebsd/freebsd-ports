@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-paranormal
-# Date created:				25 Apr 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-paranormal
 PORTVERSION=	0.2.0
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/paranormal/old-paranormal-xmms/${PORTVERSION}
 DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	An adaptation of the "OpenGL Spectrum Analyzer" from XMMS
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2

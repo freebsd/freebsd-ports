@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xmms-wma
-# Date created:        26 Feb 2004
-# Whom:            Roman Bogorodskiy
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-wma
 PORTVERSION=	1.0.5
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	WMA plugin for xmms
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

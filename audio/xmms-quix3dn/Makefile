@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-quix3dn
-# Date created:        			23 December 2000
-# Whom:					alex
-#
+# Created by: alex
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-quix3dn
 PORTVERSION=	4.4.1
@@ -13,8 +9,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alex
 DISTNAME=	quix3dn-${PORTVERSION}-freebsd
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D-sound effect plugin for XMMS
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	3D-sound effect plugin for XMMS
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

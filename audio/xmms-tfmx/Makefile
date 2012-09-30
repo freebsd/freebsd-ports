@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-tfmx
-# Date created:			21 May 2000
-# Whom:				Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-tfmx
 PORTVERSION=	0.5
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	XMMS Input plugin for playing TFMX tunes
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

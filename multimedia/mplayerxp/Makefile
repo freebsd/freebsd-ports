@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mplayerxp
-# Date created:		10 August 2001
-# Whom:			Thomas E. Zander
-#			with lots of help from Vladimir Kushnir
+# Created by: Thomas E. Zander with lots of help from Vladimir Kushnir
 # $FreeBSD$
-#
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.7.2
@@ -11,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Multi-threaded branch of the well known mplayer media player
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

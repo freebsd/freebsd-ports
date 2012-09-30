@@ -1,13 +1,9 @@
-# New ports collection makefile for:	tcl84-thread
-# Date created:				17 July 2005
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Tool command language (threads support)
 
 BUILDING_TCL_THREADS=	yes

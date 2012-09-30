@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/xmms-dspectogram
-# Date created:			15 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	dspectogram
 PORTVERSION=	1.2.1
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/v/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Dual Spectogram visualization plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

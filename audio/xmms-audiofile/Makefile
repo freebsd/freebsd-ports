@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-audiofile
-# Date created:				4 Feb 2003
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-audiofile
 PORTVERSION=	0.1
@@ -11,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.68k.org/~michael/xmms/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	XMMS plugin to allow playing libaudiofile supported files
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile

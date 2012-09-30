@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-vumeter-skins
-# Date created:			13 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-vumeter-skins
 PORTVERSION=	0.9.1
@@ -16,7 +12,7 @@ DISTFILES=	X-skin.tar.bz2 \
 		vuskin.tar.bz2
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Additional skins for the XMMS Analog VUmeter plugin
 
 RUN_DEPENDS=	${SKINSDIR}/default/skin.cfg:${PORTSDIR}/graphics/xmms-vumeter

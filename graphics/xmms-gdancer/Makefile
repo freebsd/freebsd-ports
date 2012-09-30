@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-gdancer
-# Date created:			2. Jul 2001
-# Whom:				Alexander@Leidinger.net
-#
+# Created by: Alexander@Leidinger.net
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-gdancer
 PORTVERSION=	0.4.6
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.travisemslander.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	XMMS Visualization plugin, displays dancing figures
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

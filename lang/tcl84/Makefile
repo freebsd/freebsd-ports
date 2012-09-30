@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcl84
-# Date created:		19 August 1997
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.19
@@ -14,11 +10,10 @@ MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT?=	Tool Command Language
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/../license.terms
 
 LATEST_LINK?=	tcl84
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
