@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lupe
-# Date created:		4 February 1998
-# Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
-#
+# Created by: FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lupe
 PORTVERSION=	0.08c
@@ -11,7 +7,7 @@ CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
 DISTNAME=	lupe008c
 
-MAINTAINER=	kazu@jp.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time magnifying glass for X11
 
 WRKSRC=		${WRKDIR}/lupe

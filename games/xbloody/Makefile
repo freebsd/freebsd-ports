@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xbloody
-# Date created:		10 February 1998
-# Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
-#
+# Created by: FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xbloody
 PORTVERSION=	1.00
@@ -12,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	kazu@jp.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Knife on X
 
 NO_WRKSUBDIR=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mouseclock
-# Date created:		26 August 1997
-# Whom:			FURUSAWA, Kazuhisa <kazu@jp.freebsd.org>
-#
+# Created by: FURUSAWA, Kazuhisa <kazu@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mouseclock
 PORTVERSION=	1.0
@@ -12,7 +8,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 
-MAINTAINER=	kazu@jp.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the current time using the X root cursor
 
 USE_GMAKE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xloadface
-# Date created:		4 February 1998
-# Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
-#
+# Created by: FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xloadface
 PORTVERSION=	1.6.1
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 
-MAINTAINER=	kazu@jp.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network load monitor for X11
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
