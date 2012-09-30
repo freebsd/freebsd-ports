@@ -576,6 +576,7 @@
     SUBDIR += p5-Lingua-EN-Summarize
     SUBDIR += p5-Lingua-EN-Syllable
     SUBDIR += p5-Lingua-EN-Tagger
+    SUBDIR += p5-Lingua-EN-Words2Nums
     SUBDIR += p5-Lingua-Ident
     SUBDIR += p5-Lingua-Identify
     SUBDIR += p5-Lingua-Ispell
