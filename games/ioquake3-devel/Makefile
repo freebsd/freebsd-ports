@@ -1,13 +1,9 @@
-# New ports collection makefile for:	ioquake3-devel
-# Date created:				31 Aug 2009
-# Whom:					Dominic Fandrey
-#
+# Created by: Dominic Fandrey
 # $FreeBSD$
-#
 
 PORTNAME?=	ioquake3-devel
 DISTVERSION?=	1.36_SVN${SVNREVISION}
-PORTREVISION?=	1
+PORTREVISION?=	0
 MASTER_SITES?=	ftp://deponie.yamagi.org/freebsd/distfiles/ioquake3/ \
 		http://deponie.yamagi.org/freebsd/distfiles/ioquake3/
 
@@ -20,7 +16,7 @@ DISTINFO_FILE?=	${.CURDIR}/../${PORTNAME}/distinfo
 PATCHDIR?=	${WRKDIR}/freebsd-patchset/
 PKGMESSAGE?=	${.CURDIR}/../${PORTNAME}/pkg-message
 
-SVNREVISION?=	2244
+SVNREVISION?=	2318
 BINSUFFIX?=	-devel
 
 HAS_DLRENDERER?=	yes
