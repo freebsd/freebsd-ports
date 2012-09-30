@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xengine
-# Date created:		17 January 1997
-# Whom:			FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
-#
+# Created by: FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xengine
 PORTVERSION=	1.0.1
@@ -14,7 +10,7 @@ DISTFILES=	part01.gz patch1.gz
 
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
-MAINTAINER=	kazu@jp.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reciprocating engine for X
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
