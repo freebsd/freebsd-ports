@@ -1,32 +1,24 @@
-# New ports collection makefile for:	py-pyang
-# Date created:			2009-07-05
-# Whom:				Bruce Simpson
-#
+# Created by: Bruce Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	pyang
-PORTVERSION=	0.9.3
+PORTVERSION=	1.1
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validator and code generator for YANG (RFC 4741)
 
-USE_PYTHON=	2.5+
+LICENSE=	BSD
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
 MAKE_ENV+=	YANG_INSTALL=${PREFIX}
-
-MAN1=		pyang.1
-MANCOMPRESSED=	no
-
-do-patch:
-	@${REINPLACE_CMD} 's,share/man/man1,man/man1,' ${WRKSRC}/setup.py
+MAN1=		pyang.1 yang2dsdl.1
 
 # TODO: Sed YANG_INSTALL into pyang itself.
-# TODO: Add yang2html to package.
 
 post-install:
 	@${ECHO_MSG}

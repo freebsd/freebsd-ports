@@ -1,10 +1,9 @@
 bin/pyang
+bin/yang2dsdl
+bin/yang2html
 %%PYTHON_SITELIBDIR%%/pyang/__init__.py
 %%PYTHON_SITELIBDIR%%/pyang/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyang/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pyang/debug.py
-%%PYTHON_SITELIBDIR%%/pyang/debug.pyc
-%%PYTHON_SITELIBDIR%%/pyang/debug.pyo
 %%PYTHON_SITELIBDIR%%/pyang/error.py
 %%PYTHON_SITELIBDIR%%/pyang/error.pyc
 %%PYTHON_SITELIBDIR%%/pyang/error.pyo
@@ -14,36 +13,39 @@ bin/pyang
 %%PYTHON_SITELIBDIR%%/pyang/plugin.py
 %%PYTHON_SITELIBDIR%%/pyang/plugin.pyc
 %%PYTHON_SITELIBDIR%%/pyang/plugin.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/depend.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/depend.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/depend.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/ietf.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/ietf.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/ietf.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/smi.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/smi.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/smi.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/tree.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/tree.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/tree.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/uml.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/uml.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/uml.pyo
 %%PYTHON_SITELIBDIR%%/pyang/statements.py
 %%PYTHON_SITELIBDIR%%/pyang/statements.pyc
 %%PYTHON_SITELIBDIR%%/pyang/statements.pyo
 %%PYTHON_SITELIBDIR%%/pyang/syntax.py
 %%PYTHON_SITELIBDIR%%/pyang/syntax.pyc
 %%PYTHON_SITELIBDIR%%/pyang/syntax.pyo
-%%PYTHON_SITELIBDIR%%/pyang/types.py
-%%PYTHON_SITELIBDIR%%/pyang/types.pyc
-%%PYTHON_SITELIBDIR%%/pyang/types.pyo
-%%PYTHON_SITELIBDIR%%/pyang/util.py
-%%PYTHON_SITELIBDIR%%/pyang/util.pyc
-%%PYTHON_SITELIBDIR%%/pyang/util.pyo
-%%PYTHON_SITELIBDIR%%/pyang/yang_parser.py
-%%PYTHON_SITELIBDIR%%/pyang/yang_parser.pyc
-%%PYTHON_SITELIBDIR%%/pyang/yang_parser.pyo
-%%PYTHON_SITELIBDIR%%/pyang/yin_parser.py
-%%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyc
-%%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyo
-%%PYTHON_SITELIBDIR%%/pyang/plugins/__init__.py
-%%PYTHON_SITELIBDIR%%/pyang/plugins/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pyang/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pyang/plugins/smi.py
-%%PYTHON_SITELIBDIR%%/pyang/plugins/smi.pyc
-%%PYTHON_SITELIBDIR%%/pyang/plugins/smi.pyo
 %%PYTHON_SITELIBDIR%%/pyang/translators/__init__.py
 %%PYTHON_SITELIBDIR%%/pyang/translators/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyang/translators/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pyang/translators/dsdl.py
 %%PYTHON_SITELIBDIR%%/pyang/translators/dsdl.pyc
 %%PYTHON_SITELIBDIR%%/pyang/translators/dsdl.pyo
+%%PYTHON_SITELIBDIR%%/pyang/translators/schemanode.py
+%%PYTHON_SITELIBDIR%%/pyang/translators/schemanode.pyc
+%%PYTHON_SITELIBDIR%%/pyang/translators/schemanode.pyo
 %%PYTHON_SITELIBDIR%%/pyang/translators/xsd.py
 %%PYTHON_SITELIBDIR%%/pyang/translators/xsd.pyc
 %%PYTHON_SITELIBDIR%%/pyang/translators/xsd.pyo
@@ -53,12 +55,41 @@ bin/pyang
 %%PYTHON_SITELIBDIR%%/pyang/translators/yin.py
 %%PYTHON_SITELIBDIR%%/pyang/translators/yin.pyc
 %%PYTHON_SITELIBDIR%%/pyang/translators/yin.pyo
-share/yang/modules/ieee-types.yang
-share/yang/modules/inet-types.yang
+%%PYTHON_SITELIBDIR%%/pyang/types.py
+%%PYTHON_SITELIBDIR%%/pyang/types.pyc
+%%PYTHON_SITELIBDIR%%/pyang/types.pyo
+%%PYTHON_SITELIBDIR%%/pyang/util.py
+%%PYTHON_SITELIBDIR%%/pyang/util.pyc
+%%PYTHON_SITELIBDIR%%/pyang/util.pyo
+%%PYTHON_SITELIBDIR%%/pyang/xpath.py
+%%PYTHON_SITELIBDIR%%/pyang/xpath.pyc
+%%PYTHON_SITELIBDIR%%/pyang/xpath.pyo
+%%PYTHON_SITELIBDIR%%/pyang/yang_parser.py
+%%PYTHON_SITELIBDIR%%/pyang/yang_parser.pyc
+%%PYTHON_SITELIBDIR%%/pyang/yang_parser.pyo
+%%PYTHON_SITELIBDIR%%/pyang/yin_parser.py
+%%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyc
+%%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyo
+share/yang/modules/ietf-inet-types.yang
+share/yang/modules/ietf-netconf-monitoring.yang
+share/yang/modules/ietf-yang-types.yang
 share/yang/modules/yang-smi.yang
-share/yang/modules/yang-types.yang
+share/yang/schema/relaxng-lib.rng
+share/yang/schema/yin.rng
+share/yang/xslt/basename.xsl
+share/yang/xslt/dsrl2xslt.xsl
+share/yang/xslt/gen-common.xsl
+share/yang/xslt/gen-dsrl.xsl
+share/yang/xslt/gen-relaxng.xsl
+share/yang/xslt/gen-schematron.xsl
+share/yang/xslt/iso_abstract_expand.xsl
+share/yang/xslt/iso_schematron_skeleton_for_xslt1.xsl
+share/yang/xslt/iso_svrl_for_xslt1.xsl
+share/yang/xslt/svrl2text.xsl
+@dirrm share/yang/xslt
+@dirrm share/yang/schema
+@dirrm share/yang/modules
+@dirrm share/yang
 @dirrm %%PYTHON_SITELIBDIR%%/pyang/translators
 @dirrm %%PYTHON_SITELIBDIR%%/pyang/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/pyang
-@dirrm share/yang/modules
-@dirrm share/yang
