@@ -1,13 +1,9 @@
-# New ports collection makefile for:	portmaster
-# Date created:				20 February 2006
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.13.13
+PORTVERSION=	3.14
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://dougbarton.us/Downloads/
+MASTER_SITES=	https://dougbarton.us/Downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
