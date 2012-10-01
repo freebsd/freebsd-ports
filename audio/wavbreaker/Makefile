@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Tool to split and merge wav files
 
-OPTIONS=	PULSE "Pulseaudio soundserver support" OFF
+OPTIONS_DEFINE=	PULSEAUDIO NLS
 
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
@@ -26,20 +26,20 @@ INSTALLS_ICONS=	yes
 
 MAN1=		wavbreaker.1 wavinfo.1 wavmerge.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_PULSE)
-CONFIGURE_ARGS+=	--disable-pulse
-.else
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
