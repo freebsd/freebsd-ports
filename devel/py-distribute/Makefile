@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-distribute
-# Date created:		2010-05-06
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	distribute
-PORTVERSION=	0.6.27
+PORTVERSION=	0.6.28
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	A Python packages installer and Setuptools replacement
 
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}setuptools-[0-9]*
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}setuptools-[0-9]*
 
 PLIST_SUB=	PYVER=${PYTHON_VER} VERSION=${PORTVERSION} SETUPTOOLS_VER=0.6c11
 
+DIST_SUBDIR=	python
 PYDISTUTILS_NOEGGINFO=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
