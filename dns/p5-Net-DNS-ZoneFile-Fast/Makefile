@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dns/p5-Net-DNS-ZoneFile-Fast
-# Date created:				14 October 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-ZoneFile-Fast
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
