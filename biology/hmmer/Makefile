@@ -6,7 +6,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer/CURRENT/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes

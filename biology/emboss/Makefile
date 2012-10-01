@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${RELEASE}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of open source tools for genetic sequence analysis
 
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw \

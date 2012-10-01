@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	#
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	WU BLAST, a software package for sequence similarity searches
 
 # Distfiles change rapidly, but since they can only be downloaded from

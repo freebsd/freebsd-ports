@@ -10,7 +10,7 @@ MASTER_SITES=	http://bioperl.org/DIST/ \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	BioPerl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of Perl modules for bioinformatics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/lang/${PERL_PORT} \
