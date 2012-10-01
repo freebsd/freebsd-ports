@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120928:
+  AFFECTS: users of mail/maildrop
+  AUTHOR: madpilot@FreeBSD.org
+
+  With the update to 2.6.0 of mail/maildrop the following executable
+  files:
+
+  bin/deliverquota -> bin/maildrop-deliverquota
+  bin/maidirmake -> bin/maildrop-maildirmake
+
+  have been renamed to avoid colliding with files installed from
+  other ports. Man pages and html files in DOCSDIR relating to these
+  files have also been renamed accordingly.
+
 20120925:
   AFFECTS: users of www/linux-f10-flashplugin11
   AUTHOR: eadler@FreeBSD.org
