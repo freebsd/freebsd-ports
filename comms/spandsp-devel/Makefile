@@ -8,10 +8,10 @@ MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DSP library and software FAX machine
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	DSP library and software FAX machine
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}
 USE_AUTOTOOLS=	libtool autoconf
