@@ -76,7 +76,7 @@ lib/node_modules/npm/doc/cli/init.md
 lib/node_modules/npm/doc/cli/install.md
 lib/node_modules/npm/doc/cli/json.md
 lib/node_modules/npm/doc/cli/link.md
-lib/node_modules/npm/doc/cli/list.md
+lib/node_modules/npm/doc/cli/ls.md
 lib/node_modules/npm/doc/cli/npm.md
 lib/node_modules/npm/doc/cli/outdated.md
 lib/node_modules/npm/doc/cli/owner.md
@@ -171,7 +171,7 @@ lib/node_modules/npm/html/doc/init.html
 lib/node_modules/npm/html/doc/install.html
 lib/node_modules/npm/html/doc/json.html
 lib/node_modules/npm/html/doc/link.html
-lib/node_modules/npm/html/doc/list.html
+lib/node_modules/npm/html/doc/ls.html
 lib/node_modules/npm/html/doc/npm.html
 lib/node_modules/npm/html/doc/outdated.html
 lib/node_modules/npm/html/doc/owner.html
@@ -205,10 +205,10 @@ lib/node_modules/npm/html/docfoot.html
 lib/node_modules/npm/html/dochead.html
 lib/node_modules/npm/html/favicon.ico
 lib/node_modules/npm/html/index.html
-lib/node_modules/npm/html/style.css
-lib/node_modules/npm/html/webfonts/23242D_3_0.eot
-lib/node_modules/npm/html/webfonts/23242D_3_0.ttf
-lib/node_modules/npm/html/webfonts/23242D_3_0.woff
+lib/node_modules/npm/html/static/style.css
+lib/node_modules/npm/html/static/webfonts/23242D_3_0.eot
+lib/node_modules/npm/html/static/webfonts/23242D_3_0.ttf
+lib/node_modules/npm/html/static/webfonts/23242D_3_0.woff
 lib/node_modules/npm/lib/adduser.js
 lib/node_modules/npm/lib/bin.js
 lib/node_modules/npm/lib/bugs.js
@@ -279,6 +279,7 @@ lib/node_modules/npm/node_modules/.bin/clear
 lib/node_modules/npm/node_modules/.bin/imgcat
 lib/node_modules/npm/node_modules/.bin/node-gyp
 lib/node_modules/npm/node_modules/.bin/nopt
+lib/node_modules/npm/node_modules/.bin/opener
 lib/node_modules/npm/node_modules/.bin/semver
 lib/node_modules/npm/node_modules/.bin/starwars
 lib/node_modules/npm/node_modules/.bin/which
@@ -353,6 +354,10 @@ lib/node_modules/npm/node_modules/fstream/.npmignore
 lib/node_modules/npm/node_modules/fstream/.travis.yml
 lib/node_modules/npm/node_modules/fstream/LICENCE
 lib/node_modules/npm/node_modules/fstream/README.md
+lib/node_modules/npm/node_modules/fstream/examples/filter-pipe.js
+lib/node_modules/npm/node_modules/fstream/examples/pipe.js
+lib/node_modules/npm/node_modules/fstream/examples/reader.js
+lib/node_modules/npm/node_modules/fstream/examples/symlink-write.js
 lib/node_modules/npm/node_modules/fstream/fstream.js
 lib/node_modules/npm/node_modules/fstream/lib/abstract.js
 lib/node_modules/npm/node_modules/fstream/lib/collect.js
@@ -572,6 +577,7 @@ lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/underscore/c
 lib/node_modules/npm/node_modules/npm-registry-client/test/retries.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/npmconf/.npmignore
+lib/node_modules/npm/node_modules/npmconf/LICENSE
 lib/node_modules/npm/node_modules/npmconf/README.md
 lib/node_modules/npm/node_modules/npmconf/config-defs.js
 lib/node_modules/npm/node_modules/npmconf/node_modules/config-chain/.npmignore
@@ -612,6 +618,10 @@ lib/node_modules/npm/node_modules/once/README.md
 lib/node_modules/npm/node_modules/once/once.js
 lib/node_modules/npm/node_modules/once/package.json
 lib/node_modules/npm/node_modules/once/test/once.js
+lib/node_modules/npm/node_modules/opener/LICENSE.txt
+lib/node_modules/npm/node_modules/opener/README.md
+lib/node_modules/npm/node_modules/opener/opener.js
+lib/node_modules/npm/node_modules/opener/package.json
 lib/node_modules/npm/node_modules/osenv/LICENSE
 lib/node_modules/npm/node_modules/osenv/README.md
 lib/node_modules/npm/node_modules/osenv/osenv.js
@@ -916,6 +926,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/read
 @dirrm lib/node_modules/npm/node_modules/osenv/test
 @dirrm lib/node_modules/npm/node_modules/osenv
+@dirrm lib/node_modules/npm/node_modules/opener
 @dirrm lib/node_modules/npm/node_modules/once/test
 @dirrm lib/node_modules/npm/node_modules/once
 @dirrm lib/node_modules/npm/node_modules/npmlog/test
@@ -982,6 +993,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/glob/examples
 @dirrm lib/node_modules/npm/node_modules/glob
 @dirrm lib/node_modules/npm/node_modules/fstream/lib
+@dirrm lib/node_modules/npm/node_modules/fstream/examples
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/example
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore
@@ -1013,7 +1025,8 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/lib/utils/completion
 @dirrm lib/node_modules/npm/lib/utils
 @dirrm lib/node_modules/npm/lib
-@dirrm lib/node_modules/npm/html/webfonts
+@dirrm lib/node_modules/npm/html/static/webfonts
+@dirrm lib/node_modules/npm/html/static
 @dirrm lib/node_modules/npm/html/doc
 @dirrm lib/node_modules/npm/html/api
 @dirrm lib/node_modules/npm/html

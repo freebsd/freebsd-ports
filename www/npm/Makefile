@@ -1,17 +1,15 @@
-# New ports collection makefile for:	npm
-# Date created:		2011-12-18
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	npm
-PORTVERSION=	1.1.59
+PORTVERSION=	1.1.62
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
+
+LICENSE=	MIT
 
 OPTIONS_DEFINE=	NODE_DEVEL
 NODE_DEVEL_DESC=Use www/node-devel instead of www/node
@@ -24,7 +22,7 @@ MAN1=		README.1 adduser.1 bin.1 bugs.1 build.1 bundle.1 cache.1 \
 		changelog.1 coding-style.1 completion.1 config.1 dedupe.1 \
 		deprecate.1 developers.1 disputes.1 docs.1 edit.1 explore.1 \
 		faq.1 folders.1 help-search.1 help.1 index.1 init.1 install.1 \
-		json.1 link.1 list.1 npm.1 outdated.1 owner.1 pack.1 prefix.1 \
+		json.1 link.1 ls.1 npm.1 outdated.1 owner.1 pack.1 prefix.1 \
 		prune.1 publish.1 rebuild.1 registry.1 removing-npm.1 \
 		restart.1 root.1 run-script.1 scripts.1 search.1 semver.1 \
 		shrinkwrap.1 star.1 start.1 stop.1 submodule.1 tag.1 test.1 \
@@ -35,7 +33,7 @@ MAN3=		bin.3 bugs.3 commands.3 config.3 deprecate.3 docs.3 edit.3 \
 		rebuild.3 restart.3 root.3 run-script.3 search.3 shrinkwrap.3 \
 		start.3 stop.3 submodule.3 tag.3 test.3 uninstall.3 \
 		unpublish.3 update.3 version.3 view.3 whoami.3
-MANPREFIX=	${PREFIX}/lib/node_modules/npm/
+MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
 .include <bsd.port.options.mk>
 
