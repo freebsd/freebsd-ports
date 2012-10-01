@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-RCurl
-# Date created:		2011-08-28
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RCurl
-DISTVERSION=	1.91-1
-PORTREVISION=	3
+DISTVERSION=	1.95-0
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
