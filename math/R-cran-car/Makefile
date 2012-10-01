@@ -1,13 +1,8 @@
-# New ports collection makefile for:	car
-# Date created:		13 April 2009
-# Whom:			David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	car
-DISTVERSION=	2.0-12
-PORTREVISION=	2
+DISTVERSION=	2.0-14
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +11,7 @@ COMMENT=	Companion to Applied Regression for R
 
 LICENSE=	GPLv2
 
-USE_R_MOD=	yes
+USE_R_MOD=		yes
 R_MOD_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
