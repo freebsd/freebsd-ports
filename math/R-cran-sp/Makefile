@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-sp
-# Date created:		2009-01-25
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sp
-DISTVERSION=	0.9-99
-PORTREVISION=	1
+DISTVERSION=	1.0-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
