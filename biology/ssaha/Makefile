@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssaha
-# Date created:				12.Jun.2008
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	ssaha
 PORTVERSION=	3.1c
@@ -12,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.sanger.ac.uk/Software/analysis/${PORTNAME:U}/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast matching and alignment of DNA sequences
 
 NO_WRKSUBDIR=	yes

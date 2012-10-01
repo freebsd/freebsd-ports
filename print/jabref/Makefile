@@ -1,7 +1,4 @@
-# New ports collection makefile for:	jabref
-# Date created:				18 Jan 2006
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
 
 PORTNAME=	jabref
@@ -13,7 +10,7 @@ DISTNAME=	JabRef-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (BibTeX native) bibliographic reference manager
 
 USE_JAVA=	yes

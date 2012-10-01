@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	autodia
-# Date created:			Oct 6, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	autodia
 PORTVERSION=	2.03
@@ -15,7 +10,7 @@ MASTER_SITE_SUBDIR=	Tree/TEEJAY
 
 DISTNAME=	Autodia-${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic Dia XML - from Source Code and Data
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \

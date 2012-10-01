@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jalview
-# Date created:				11 Jan 2006
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	jalview
 PORTVERSION=	2.07
@@ -12,7 +8,7 @@ CATEGORIES=	biology java
 MASTER_SITES=	http://www.jalview.org/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer and editor for multiple sequence alignments
 
 USE_JAVA=	yes

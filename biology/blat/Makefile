@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	blat
-# Date created:		08 Dec 2005
-# Whom:	      		Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	blat
 PORTVERSION=	34
@@ -12,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.soe.ucsc.edu/~kent/src/
 DISTNAME=	${PORTNAME}Src${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast tool for local sequence similarity searches
 
 USE_ZIP=	yes

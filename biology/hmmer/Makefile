@@ -1,16 +1,12 @@
-# New ports collection Makefile for: hmmer
-# Date created:		June 29 1998
-# Whom:			barnhart@genetics.wustl.edu
-#
+# Created by: barnhart@genetics.wustl.edu
 # $FreeBSD$
-#
 
 PORTNAME=	hmmer
 PORTVERSION=	2.3.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer/CURRENT/
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes

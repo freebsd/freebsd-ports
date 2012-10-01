@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	belvu
-# Date created:				11 Jan 2006
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	belvu
 PORTVERSION=	2.29
@@ -14,7 +9,7 @@ DISTNAME=	${PORTNAME}.LIN_32bit_${PORTVERSION}
 EXTRACT_SUFX=	#
 EXTRACT_ONLY=	#
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for multiple sequence alignments
 
 USE_LINUX=	yes

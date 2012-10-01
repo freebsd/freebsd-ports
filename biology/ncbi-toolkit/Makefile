@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	NCBI
-# Date created:         03 April 2000
-# Whom:                 tonym
-#
+# Created by: tonym
 # $FreeBSD$
-#
 
 PORTNAME=	ncbi-toolkit
 PORTVERSION=	2009.03.01	# containing BLAST v2.2.19
@@ -14,7 +9,7 @@ MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g
 DISTNAME=	ncbi
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
 USE_MOTIF=	yes

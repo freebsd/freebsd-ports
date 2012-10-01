@@ -1,16 +1,12 @@
-# New ports collection makefile for:	primer3
-# Date created:				25 February 2002
-# Whom:					Tony Maher <tonym@biolateral.com.au>
-#
+# Created by: Tony Maher <tonym@biolateral.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	primer3
 PORTVERSION=	1.1.4
 CATEGORIES=	biology
 MASTER_SITES=	SF
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 USE_GMAKE=	yes

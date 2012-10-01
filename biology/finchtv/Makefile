@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	FinchTV
-# Date created:		10 Aug 2004
-# Whom:	      		Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	finchtv
 PORTVERSION=	1.3.1
@@ -12,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.geospiza.com/finchtv/download/programs/linux/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chromatogram trace viewer
 
 USE_LINUX?=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mol2ps
-# Date created:		23 Feb 2009
-# Whom:	      		Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	mol2ps
 PORTVERSION=	0.1e
@@ -13,7 +9,7 @@ MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pas
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read molecular structure files and generate Postscript output
 
 USE_FPC=	yes
