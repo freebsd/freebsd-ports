@@ -1,12 +1,8 @@
-# Ports collection makefile for:	pgdbf
-# Date created:				23 June 2009
-# Whom:					kirk@daycos.com
-#
+# Created by: kirk@daycos.com
 # $FreeBSD$
-#
 
 PORTNAME=	pgdbf
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
