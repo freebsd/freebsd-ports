@@ -1,7 +1,3 @@
-# New ports collection makefile for:	qbittorrent-nox11
-# Date created:				11 August 2012
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-nox11
