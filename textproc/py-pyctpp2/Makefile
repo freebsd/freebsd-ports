@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-pyctpp2
-# Date created:				2012-06-24
-# Whom:					Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pyctpp2
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
