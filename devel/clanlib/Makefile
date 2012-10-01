@@ -1,10 +1,5 @@
-# New ports collection makefile for:	clanlib
-# Date created:				10 May 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
-# $Carpetsmoker: ports/devel/clanlib/Makefile,v 1.3 2008/03/18 13:48:24 carpetsmoker Exp $
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clanlib
 PORTVERSION=	0.8.1
@@ -36,6 +31,8 @@ USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes
 USE_PKGCONFIG=	yes
+
+PLIST_SUB+=	VER=${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
