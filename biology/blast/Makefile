@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	WU BLAST
-# Date created:				27 May 2004
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	wu-blast
 PORTVERSION=	2.0
@@ -13,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	#
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WU BLAST, a software package for sequence similarity searches
 
 # Distfiles change rapidly, but since they can only be downloaded from

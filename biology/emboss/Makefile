@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emboss
-# Date created:		31 July 2000
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emboss
 PORTVERSION=	6.2.0
@@ -14,7 +10,7 @@ MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${RELEASE}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of open source tools for genetic sequence analysis
 
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw \

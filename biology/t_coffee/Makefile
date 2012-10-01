@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	t_coffee
-# Date created:		27 June 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	t_coffee
 PORTVERSION=	5.68
@@ -12,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.tcoffee.org/Packages/
 DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiple DNA or protein sequence alignment package
 
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw

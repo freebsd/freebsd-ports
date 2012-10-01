@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lagan
-# Date created:		07 Dec 2005
-# Whom:	      		Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	lagan
 PORTVERSION=	1.2
@@ -11,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://lagan.stanford.edu/lagan_web/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient tools for large-scale multiple alignments of genomic DNA
 
 LAGAN_DIR=	${PREFIX}/${PORTNAME}

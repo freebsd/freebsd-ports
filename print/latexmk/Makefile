@@ -1,17 +1,12 @@
-# ex:ts=8
-# New ports collection makefile for:	latexmk
-# Date created:				17 Dec 2004
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	latexmk
 PORTVERSION=	431
 CATEGORIES=	print
 MASTER_SITES=	http://www.phys.psu.edu/~collins/software/latexmk/
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to completely automate generating output from LaTeX documents
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

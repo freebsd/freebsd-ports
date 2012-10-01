@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection Makefile for: seaview
-# Date created:         Dec 5 1997
-# Whom:                 frankch@waru.life.nthu.edu.tw
-#
+# Created by: frankch@waru.life.nthu.edu.tw
 # $FreeBSD$
-#
 
 PORTNAME=	seaview
 PORTVERSION=	2006.02.13
@@ -14,7 +9,7 @@ MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \

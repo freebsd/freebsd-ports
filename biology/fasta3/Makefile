@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	fasta3
-# Date created:		29 January 2001
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fasta3
 PORTVERSION=	36.3.2
@@ -12,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta36/
 DISTNAME=	fasta-${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of programs for searching DNA and protein databases
 
 NO_CDROM=	May not be sold or incorporated into a commercial product

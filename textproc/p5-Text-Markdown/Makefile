@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Markdown
-# Date created:				20.Mar.2006
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Markdown
 PORTVERSION=	1.000031
@@ -12,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Markdown Perl5 module
 
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils

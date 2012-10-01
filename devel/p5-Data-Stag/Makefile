@@ -1,10 +1,5 @@
-# vim:ts=8
-# New ports collection makefile for:	p5-Data-Stag
-# Date created:				25 November 2004
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Stag
 PORTVERSION=	0.11
@@ -12,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Structured Tags datastructures
 
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String

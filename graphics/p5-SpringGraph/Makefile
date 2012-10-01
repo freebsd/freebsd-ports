@@ -1,20 +1,15 @@
-# ex:ts=8
-# New ports collection makefile for:	graphics/p5-SpringGraph
-# Date created:				25 November 2004
-# Whom:					fernan@iib.unsam.edu.ar
-#
+# Created by: fernan@iib.unsam.edu.ar
 # $FreeBSD$
-#
 
-PORTNAME=		SpringGraph
-PORTVERSION=		0.05
+PORTNAME=	SpringGraph
+PORTVERSION=	0.05
 PORTREVISION=	6
-CATEGORIES=		graphics perl5
-MASTER_SITES=		CPAN
+CATEGORIES=	graphics perl5
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	GraphViz/TEEJAY
-PKGNAMEPREFIX=		p5-
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Directed graph alternative to GraphViz
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD

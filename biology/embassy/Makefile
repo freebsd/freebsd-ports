@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	embassy
-# Date created:		1.November.2004
-# Whom:	      		Fernan Aguero <fernan@iib.unsamn.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsamn.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	embassy
 PORTVERSION=	6.2.0
@@ -13,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DIST_SUBDIR=	emboss
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of contributed EMBOSS applications
 
 LIB_DEPENDS=	nucleus.6:${PORTSDIR}/biology/emboss

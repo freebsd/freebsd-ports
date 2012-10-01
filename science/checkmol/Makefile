@@ -1,9 +1,5 @@
-# New ports collection makefile for:	checkmol
-# Date created:		23 Feb 2009
-# Whom:	      		Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	checkmol
 PORTVERSION=	0.4a
@@ -13,7 +9,7 @@ MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pas
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze molecules for the presence of functional groups
 
 USE_FPC=	yes

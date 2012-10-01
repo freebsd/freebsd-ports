@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-Catalyst-Controller-BindLex
-# Date created:				17.Oct.2006
-# Whom:					Fernan Aguero  <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero  <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Controller-BindLex
 PORTVERSION=	0.03
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NUFFIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stash your lexical goodness
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	www/p5-Catalyst-Plugin-FormBuilder
-# Date created:				14 Sep 2006
-# Whom:					Fernan Aguero
-#
+# Created by: Fernan Aguero
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-FormBuilder
@@ -12,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FormBuilder for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \

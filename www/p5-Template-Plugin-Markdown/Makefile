@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Template-Plugin-Markdown
-# Date created:				24 Apr 2006
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-Markdown
 PORTVERSION=	0.02
@@ -11,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TT plugin for Text::Markdown
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \

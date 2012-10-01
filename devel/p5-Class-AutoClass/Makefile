@@ -1,10 +1,5 @@
-# vim:ts=8
-# New ports collection makefile for:	p5-Class-AutoClass
-# Date created:				25 November 2004
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-AutoClass
 PORTVERSION=	1.01
@@ -14,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	autoclass_v${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically define simple get and set methods in an inheritance structure
 
 RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy

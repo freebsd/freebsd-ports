@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-bioperl
-# Date created:		28 July 2000
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bioperl
 PORTVERSION=	1.6.1
@@ -14,7 +10,7 @@ MASTER_SITES=	http://bioperl.org/DIST/ \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	BioPerl-${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Perl modules for bioinformatics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/lang/${PERL_PORT} \

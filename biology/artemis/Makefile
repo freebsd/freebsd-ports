@@ -1,9 +1,5 @@
-# New ports collection makefile for:	artemis
-# Date created:				10 Nov 2001
-# Whom:					camson@bilateral.com.au
-#
+# Created by: camson@bilateral.com.au
 # $FreeBSD$
-#
 
 PORTNAME=	artemis
 PORTVERSION=	9
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/ \
 		ftp://ftp.sanger.ac.uk/pub/pathogens/software/artemis/v${PORTVERSION}/
 DISTNAME=	artemis_compiled_v${PORTVERSION}
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DNA sequence viewer and annotation tool
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
