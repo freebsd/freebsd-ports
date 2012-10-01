@@ -77,6 +77,7 @@
     SUBDIR += bmp-wma
     SUBDIR += bonk
     SUBDIR += boodler
+    SUBDIR += bristol
     SUBDIR += btc
     SUBDIR += calf
     SUBDIR += cam
