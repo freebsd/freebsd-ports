@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-PadWalker
-# Date created:				22 September 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PadWalker
-PORTVERSION=	1.94
+PORTVERSION=	1.96
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROBIN
