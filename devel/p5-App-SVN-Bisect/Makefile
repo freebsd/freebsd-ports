@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-App-SVN-Bisect
-# Date created:				5 Nov 2009
-# Whom:					Rui Paulo <rpaulo@FreeBSD.org>
-#
+# Created by: Rui Paulo <rpaulo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-SVN-Bisect
 PORTVERSION=	1.1
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary search through svn revisions
 
 BUILD_DEPENDS=	p5-IO-All>0:${PORTSDIR}/devel/p5-IO-All \
