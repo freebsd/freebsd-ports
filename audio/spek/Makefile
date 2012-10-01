@@ -1,12 +1,8 @@
-# New ports collection makefile for:	spek
-# Date created:				2010-09-07
-# Whom:					Alexander Kojevnikov <alexander@kojevnikov.com>
-#
+# Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	spek
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/alexkay/${PORTNAME}/
 
