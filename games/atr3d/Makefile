@@ -16,7 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
-OPTIONS=	SOUND	"Enable sound"	ON
+OPTIONS_DEFINE=	OPENAL
+OPTIONS_DEFAULT=OPENAL
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 
@@ -27,16 +28,15 @@ USE_GL=		glut glu
 USE_XORG=	xmu xi x11
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-sound
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 USE_AUTOTOOLS=	automake autoconf
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SOUND)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=		alut
 CONFIGURE_ARGS+=	--enable-sound
 .else
@@ -60,4 +60,4 @@ post-configure:
 		's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
