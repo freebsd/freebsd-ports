@@ -1,4 +1,4 @@
-# Created By: Eric F Crist <ecrist@secure-computing.net>
+# Created by: Eric F Crist <ecrist@secure-computing.net>
 # $FreeBSD$
 
 PORTNAME=	openvpn

@@ -1,4 +1,4 @@
-# Created By: Stas Timokhin <stast@bsdportal.ru>
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
 
 PORTNAME=	cwp

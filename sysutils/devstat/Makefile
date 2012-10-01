@@ -1,4 +1,4 @@
-# Created By: Mikolaj Golub <to.my.trociny@gmail.com>
+# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	devstat

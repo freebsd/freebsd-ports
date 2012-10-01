@@ -1,4 +1,4 @@
-# Created By: chris@officialunix.com
+# Created by: chris@officialunix.com
 # $FreeBSD$
 
 PORTNAME=	peekabot
