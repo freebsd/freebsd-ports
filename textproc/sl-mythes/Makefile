@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sl-mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
-PORTVERSION=	2012.09.10
+PORTVERSION=	2012.10.01
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sl-
