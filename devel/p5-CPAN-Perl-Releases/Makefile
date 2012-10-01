@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-CPAN-Perl-Releases
-# Date created:		2012-04-07
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-Perl-Releases
-PORTVERSION=	0.70
+PORTVERSION=	0.72
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
