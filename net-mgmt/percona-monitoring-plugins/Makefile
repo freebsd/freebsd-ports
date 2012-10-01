@@ -1,4 +1,4 @@
-# Created By: Alexey V. Degtyarev <alexey@renatasystems.org>
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
 
 PORTNAME=	percona-monitoring-plugins

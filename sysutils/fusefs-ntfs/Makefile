@@ -1,4 +1,4 @@
-# Created By: Max Khon
+# Created by: Max Khon
 # $FreeBSD$
 
 PORTNAME=	ntfs

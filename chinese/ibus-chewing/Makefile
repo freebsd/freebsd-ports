@@ -1,4 +1,4 @@
-# Created By: Eric L. Chen <lihong@ieee.org>
+# Created by: Eric L. Chen <lihong@ieee.org>
 # $FreeBSD$
 
 PORTNAME=	ibus-chewing
