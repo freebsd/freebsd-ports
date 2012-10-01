@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	pgadmin3
-PORTVERSION=	1.14.2
-PORTREVISION=	1
+PORTVERSION=	1.16.0
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
+DIST_SUBDIR=	postgresql
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
+
+IGNORE_WITH_PGSQL=	82 83
 
 MAKE_JOBS_SAFE=	yes
 USE_GETTEXT=	yes
 USE_PGSQL=	yes
 USE_GMAKE=	yes
-IGNORE_WITH_PGSQL=	82 83
-DIST_SUBDIR=	postgresql
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	${PTHREAD_CFLAGS}
@@ -29,6 +29,9 @@ USE_GNOME=	libxml2 libxslt
 USE_WX=		2.8
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
+
+PLIST_FILES=	bin/pgadmin3 bin/png2c
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},' ${WRKSRC}/configure
