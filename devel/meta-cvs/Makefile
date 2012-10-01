@@ -13,7 +13,8 @@ MASTER_SITES=	http://common-lisp.net/project/meta-cvs/downloads/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
-OPTIONS=	PDFDOC	"Build PDF documentation" off
+OPTIONS_DEFINE=	PDFDOC
+PDFDOC_DESC=	Build PDF documentation
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
     		lndir:${PORTSDIR}/devel/lndir
@@ -33,9 +34,9 @@ PORTDOCS=	Meta-CVS-PAPER \
 		QUICK-GUIDE \
 		SCRIPTING
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PDFDOC) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MPDFDOC} && !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
 PORTDOCS+=	meta-cvs.pdf
 .endif
@@ -58,4 +59,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
