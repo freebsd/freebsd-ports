@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rakudo
-# Date created:    15 March 2009
-# Whom:            Aliaksandr Zahatski <zahatski@gmail.com>
-#
+# Created by: Aliaksandr Zahatski <zahatski@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rakudo
-PORTVERSION=	2012.07
+PORTVERSION=	2012.09
 PORTEPOCH=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -59,16 +55,16 @@ EXTRA_DOCS=	UsingPerl6-draft.pdf cheatsheet.txt
 PORTDOCS=	${EXTRA_DOCS}
 
 do-configure:
-	cd ${WRKSRC}/parrot-${PARROT_VERSION} \
+	cd ${WRKSRC}/parrot \
 	&& ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_PARROT_ARGS} \
 	&& ${MAKE} installable PREFIX=${PREFIX}
 
 do-build:
 
 do-install:
-	cd ${WRKSRC}/parrot-${PARROT_VERSION} \
+	cd ${WRKSRC}/parrot \
 	&& ${MAKE} install-dev PREFIX=${PREFIX} \
-	&& cd ${WRKSRC}/nqp-2012.07 \
+	&& cd ${WRKSRC}/nqp \
 	&& ${PERL} ${CONFIGURE_SCRIPT} --with-parrot=${PREFIX}/bin/parrot \
 					--prefix=${PREFIX} \
 	&& ${MAKE} install PREFIX=${PREFIX} \
