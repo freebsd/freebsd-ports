@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flare
-DISTVERSION=	016
+DISTVERSION=	017_1
 CATEGORIES=	games
-MASTER_SITES=	http://cloud.github.com/downloads/clintbellanger/flare/ \
+MASTER_SITES=	http://cloud.github.com/downloads/clintbellanger/flare-game/ \
 		http://mirror.amdmi3.ru/files/
 DISTNAME=	${PORTNAME}_linux_v${DISTVERSION}
 
@@ -17,7 +17,6 @@ COMMENT=	Free Libre Action Roleplaying Engine
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_SDL=	sdl mixer image ttf
 MAKE_JOBS_SAFE=	yes
@@ -37,9 +36,6 @@ PORTDOCS=	*
 .if ${OSVERSION} < 802502
 BROKEN=		requires log2(3) support
 .endif
-
-post-extract:
-	@${FIND} ${WRKSRC} -name '._*' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
