@@ -1,21 +1,17 @@
-# New ports collection makefile for:	vp
-# Date created:			Apr 13, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	vp
-PORTVERSION=	1.7
-PORTREVISION=	7
+PORTVERSION=	1.8
 CATEGORIES=	graphics
-MASTER_SITES=	http://bzflag.bz/~erik/files/
+MASTER_SITES=	http://elfga.com/~erik/files/
 
-MAINTAINER=	erik@bz.bzflag.bz
+MAINTAINER=	erik@elfga.com
 COMMENT=	An image viewer for X
 
 USE_SDL=	image
 GNU_CONFIGURE=	yes
+USE_XZ=		yes
 
 MAN1=		vp.1
 PLIST_FILES=	bin/vp
