@@ -1,0 +1,44 @@
+--- Makefile.in.orig	2012-09-26 15:43:37.000000000 -0500
++++ Makefile.in	2012-09-26 15:46:01.000000000 -0500
+@@ -22,7 +22,7 @@
+ RPMDIR=/usr/src/RPM
+ 
+ # Choose compiler
+-CC=@CC@
++CC?=@CC@
+ MKDIR=mkdir -p
+ 
+ SOURCE_FILES=mozplugger.c \
+@@ -161,21 +161,20 @@
+ 
+ install:
+ 	-@install -d @bindir@
+-	-@install -d $(prefix)$(libprefix)/mozilla/plugins
++	-@install -d $(root)${WEBPLUGINS_DIR}
+ 	-@install -d @mandir@/man7
+ 	-@install -d @sysconfdir@
+ 	install mozplugger-helper     @bindir@
+ 	install mozplugger-controller @bindir@
+ 	install mozplugger-linker     @bindir@
+-	for a in ${PLUGINDIRS}; do install mozplugger.so $$a ; done
+-#	cp mozplugger.so $(prefix)$(libprefix)/mozilla/plugins/
++	cp mozplugger.so $(root)${WEBPLUGINS_DIR}
+ 	install $(srcdir)/mozpluggerrc  @sysconfdir@
+ 	install $(srcdir)/mozplugger.7  @mandir@/man7/
+ 
+ uninstall:
+ 	rm -f @mandir@/man7/mozplugger.7
+ 	rm -f @sysconfdir@/mozpluggerrc
+-	for target in ${PLUGINDIRS}; do rm -f $${target}/mozplugger.so; done
++	rm -f $(root)${WEBPLUGINS_DIR}/mozplugger.so
+ 	rm -f @bindir@/mozplugger-linker
+ 	rm -f @bindir@/mozplugger-controller
+ 	rm -f @bindir@/mozplugger-helper
+@@ -183,6 +182,7 @@
+ 	-rmdir @mandir@/man7
+ 	-rmdir @mandir@
+ 	-rmdir @bindir@
++	-rmdir $(root)${WEBPLUGINS_DIR}
+ 
+ MOZ_PACKAGE=mozplugger-@PACKAGE_VERSION@
+ 

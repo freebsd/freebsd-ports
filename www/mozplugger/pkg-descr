@@ -1,14 +1,6 @@
-Moxplugger is a multimedia plugin for Unix Netscape 3.0 or later that
-handles Quicktime, MPEG, MP2, AVI, SGI-movie, Tiff, DL, IFF-anim,
-MIDI, Soundtracker, AU, WAV and Commodore 64 audio files.  MPEG audio and
-video can be streamed.
-
-There is also support for viewing word documents and spreadsheets inline
-currently.
-
-Mozplugger is a very small plugin, because plugger uses external programs
-to show/play the different formats.
-
-This is based on Plugger 4.0 as released on Feburary 2003.
+Mozplugger is a small general purpose Mozilla plugin that displays various
+types of media formats found on the Internet in your browser.  It accomplishes
+this by using external programs such as mplayer, timidity, Acrobat Reader,
+OpenOffice, and LibreOffice.
 
 WWW: http://mozplugger.mozdev.org/
