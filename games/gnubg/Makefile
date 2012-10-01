@@ -28,8 +28,8 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 
 WRKSRC=	${WRKDIR}/gnubg
 
-OPTIONS=	ESOUND	"Enable sound support" ON	\
-		NLS	"Enable gettext support" ON
+OPTIONS_DEFINE=	ESOUND NLS
+OPTIONS_DEFAULT=ESOUND NLS
 
 CONFIGURE_ARGS=	--with-board3d
 
@@ -42,15 +42,15 @@ USE_AUTOTOOLS=	libtool automake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 .else
 CONFIGURE_ENV+=	ac_cv_path_AUDIOFILE_CONFIG=no ac_cv_path_ESD_CONFIG=no
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--enable-nls
@@ -78,4 +78,4 @@ post-patch:
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
