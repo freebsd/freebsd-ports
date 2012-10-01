@@ -22,9 +22,10 @@ USE_GMAKE=	yes
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=		does not link on ${ARCH}
@@ -37,7 +38,7 @@ post-patch:
 		 s|sdl-config|${SDL_CONFIG}|'
 	@${REINPLACE_CMD} -e 's|\.\./data|${DATADIR}|' \
 		${WRKSRC}/src/common/configuration/configuration.cpp
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 	@${REINPLACE_CMD} -e 's|\(--subcall\)|\1 --enable-optimize|' \
 		${WRKSRC}/configure
 .endif
@@ -51,4 +52,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/HOWTO ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
