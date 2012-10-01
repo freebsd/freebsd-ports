@@ -1,0 +1,33 @@
+include/yaml-cpp/aliasmanager.h
+include/yaml-cpp/anchor.h
+include/yaml-cpp/binary.h
+include/yaml-cpp/contrib/anchordict.h
+include/yaml-cpp/contrib/graphbuilder.h
+include/yaml-cpp/conversion.h
+include/yaml-cpp/dll.h
+include/yaml-cpp/emitfromevents.h
+include/yaml-cpp/emitter.h
+include/yaml-cpp/emittermanip.h
+include/yaml-cpp/eventhandler.h
+include/yaml-cpp/exceptions.h
+include/yaml-cpp/iterator.h
+include/yaml-cpp/ltnode.h
+include/yaml-cpp/mark.h
+include/yaml-cpp/node.h
+include/yaml-cpp/nodeimpl.h
+include/yaml-cpp/nodereadimpl.h
+include/yaml-cpp/nodeutil.h
+include/yaml-cpp/noncopyable.h
+include/yaml-cpp/null.h
+include/yaml-cpp/ostream.h
+include/yaml-cpp/parser.h
+include/yaml-cpp/stlemitter.h
+include/yaml-cpp/stlnode.h
+include/yaml-cpp/traits.h
+include/yaml-cpp/yaml.h
+lib/libyaml-cpp.so
+lib/libyaml-cpp.so.0.3
+lib/libyaml-cpp.so.0.3.0
+libdata/pkgconfig/yaml-cpp.pc
+@dirrm include/yaml-cpp/contrib
+@dirrm include/yaml-cpp

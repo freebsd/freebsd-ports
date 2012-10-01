@@ -4150,6 +4150,7 @@
     SUBDIR += xxl
     SUBDIR += yajl
     SUBDIR += yajl-tcl
+    SUBDIR += yaml-cpp
     SUBDIR += yasm
     SUBDIR += z80-asm
     SUBDIR += z80asm
