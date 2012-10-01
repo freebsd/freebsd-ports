@@ -11,7 +11,6 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A simple block-diagram image generator
 
 LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.4:${PORTSDIR}/devel/py-funcparserlib \
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 
 UNIQUENAME=	py-${PORTNAME}
 
-USE_PYTHON=	2.4-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 MAN1=	${PORTNAME}.1
