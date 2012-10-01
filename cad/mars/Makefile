@@ -19,14 +19,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Maryland Routing Simulator
 
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
 MAKE_JOBS_UNSAFE=	yes
-
-OPTIONS=	X11 "Build with X11 support via Motif" on
-
-.include <bsd.port.pre.mk>
-
 NO_WRKSUBDIR=	yes
-.if defined(WITH_X11)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_MOTIF=	yes
 MAKEFILE=	Makefile.XMotif
 .else
@@ -56,4 +57,4 @@ do-install:
 		${MV} doc mars )
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
