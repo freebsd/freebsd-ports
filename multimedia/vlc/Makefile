@@ -27,29 +27,21 @@ OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
 		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
 		PNG PORTAUDIO PROJM PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
-		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD \
+		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
 		X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
-		VORBISALT NO_DVD
-OPTIONS_SINGLE=	VORBISALT
-OPTIONS_SINGLE_VORBISALT=	VORBIS TREMOR
+		NO_DVD
 OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
 		HTTPD LUA MAD MATROSKA MPEG2 OGG PNG QT4 REALAUDIO \
 		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
-		VCD VORBISALT VORBIS X11 X264 XCB XVIDEO
+		VCD VORBIS X11 X264 XCB XVIDEO
 ASS_DESC=	ASS/SSA subtitle rendering
 DTS_DESC=	DTS DVD audio decoder
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
 FLUID_DESC=	Fluidsynth MIDI support
-FRIBIDI_DESC=	FriBidi bidirectional unicode support
-GLX_DESC=	X11 OpenGL rendering
 GNOMEVFS_DESC=	Gnome VFS support
 GOOM_DESC=	the Goom visual effect library
-LIVEMEDIA_DESC=	Support for rstp/rtp/sdp protocols
-MATROSKA_DESC=	Matroska Container Format support
-MTP_DESC=	support for the Music Transport Protocol
 NCURSES_DESC=	ncurses (console) interface
-OGG_DESC=	Ogg audio decoder support
 PROJM_DESC=	ProjectM visualizations
 REALAUDIO_DESC=	Real Audio(R) support
 RUNROOT_DESC=	Enable running as root
@@ -58,17 +50,13 @@ SCHROED_DESC=	Schroedinger decoder
 SKINS_DESC=	winamp skins interface
 STREAM_DESC=	stream output
 TAGLIB_DESC=	ID3 tag and Ogg comment support
-THEORA_DESC=	OGG/Vorbis video codec support
-TWOLAME_DESC=	Twolame mpeg2 audio encoder support
 V4L_DESC=	Video4Linux video capture compatibility
-VORBIS_DESC=	Ogg Vorbis audio codec
 VCD_DESC=	Video CD support
 XCB_DESC=	Use X C Bindings for X11 output
 XOSD_DESC=	X11 On Screen Display support
 ZVBI_DESC=	VBI decoding support
 SERVER_ONLY_DESC=	Only build server parts
 UNSAFE_PLUGINS_DESC=	Install unsafe, unsupported plugins
-VORBISALT_DESC= Vorbis or Tremor audio support
 NO_DVD_DESC=	disable DVD specific features
 
 USE_XZ=		yes
@@ -414,7 +402,7 @@ CONFIGURE_ARGS+=--enable-optimizations
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=--enable-ogg
 .else
-WITHOUT_VORBIS=	yes
+PORT_OPTIONS:=	${PORT_OPTIONS:NVORBIS}
 CONFIGURE_ARGS+=--disable-ogg
 .endif
 
@@ -541,13 +529,14 @@ CONFIGURE_ARGS+=--enable-theora
 CONFIGURE_ARGS+=--disable-theora
 .endif
 
-.if ${PORT_OPTIONS:MTREMOR}
+# XXX Tremor support no longer builds with 2.0.3
+#.if ${PORT_OPTIONS:MTREMOR}
 # Tremor is integer based Vorbis subset, using both is redundant
-LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
-CONFIGURE_ARGS+=--enable-tremor
-.else
+#LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
+#CONFIGURE_ARGS+=--enable-tremor
+#.else
 CONFIGURE_ARGS+=--disable-tremor
-.endif
+#.endif
 
 .if ${PORT_OPTIONS:MTWOLAME}
 LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
