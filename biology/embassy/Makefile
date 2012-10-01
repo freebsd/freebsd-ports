@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DIST_SUBDIR=	emboss
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of contributed EMBOSS applications
 
 LIB_DEPENDS=	nucleus.6:${PORTSDIR}/biology/emboss

@@ -6,7 +6,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	biology
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 USE_GMAKE=	yes
