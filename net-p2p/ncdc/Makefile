@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ncdc
-# Date created:				28 November 2011
-# Whom:					Dmitriy Limonov
-#
+# Created by: Dmitriy Limonov
 # $FreeBSD$
-#
 
 PORTNAME=	ncdc
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://dev.yorhel.nl/download/
@@ -19,7 +15,8 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		gnutls:${PORTSDIR}/security/gnutls
 
-OPTIONS=	GDBM "Build ncdc-db-upgrade" off
+OPTIONS_DEFINE=	GDBM
+GDBM_DESC=	Build ncdc-db-upgrade
 
 USE_GNOME=	glib20
 USE_GMAKE=	yes
@@ -33,7 +30,7 @@ LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--enable-db-upgrade
 LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 PLIST_FILES+=	bin/ncdc-db-upgrade
