@@ -1,41 +1,146 @@
 bin/flare
 share/applications/flare.desktop
-%%DATADIR%%/mods/averguard/enemies/necromancer_apprentice.txt
-%%DATADIR%%/mods/averguard/enemies/professor_langlier.txt
-%%DATADIR%%/mods/averguard/enemies/sir_evan_maddox.txt
-%%DATADIR%%/mods/averguard/enemies/the_warden.txt
-%%DATADIR%%/mods/averguard/enemies/ukkonen.txt
-%%DATADIR%%/mods/averguard/images/enemies/necromancer.png
-%%DATADIR%%/mods/averguard/items/items.txt
-%%DATADIR%%/mods/averguard/languages/data.de.po
-%%DATADIR%%/mods/averguard/languages/data.fi.po
-%%DATADIR%%/mods/averguard/languages/data.fr.po
-%%DATADIR%%/mods/averguard/languages/data.gl.po
-%%DATADIR%%/mods/averguard/languages/data.ja.po
-%%DATADIR%%/mods/averguard/languages/data.pot
-%%DATADIR%%/mods/averguard/languages/data.ru.po
-%%DATADIR%%/mods/averguard/languages/data.uk.po
-%%DATADIR%%/mods/averguard/maps/averguard_academy.txt
-%%DATADIR%%/mods/averguard/maps/averguard_atrium.txt
-%%DATADIR%%/mods/averguard/maps/averguard_complex.txt
-%%DATADIR%%/mods/averguard/maps/averguard_prison.txt
-%%DATADIR%%/mods/averguard/maps/averguard_temple.txt
-%%DATADIR%%/mods/averguard/maps/cave1.txt
-%%DATADIR%%/mods/averguard/maps/goblin_warrens.txt
-%%DATADIR%%/mods/averguard/maps/lost_mines1.txt
-%%DATADIR%%/mods/averguard/npcs/captured_trader.txt
-%%DATADIR%%/mods/averguard/npcs/guill.txt
-%%DATADIR%%/mods/averguard/npcs/wandering_trader.txt
-%%DATADIR%%/mods/averguard/quests/averguard_keep.txt
-%%DATADIR%%/mods/averguard/quests/index.txt
+%%DATADIR%%/mods/alpha_demo/animations/grisbon.txt
+%%DATADIR%%/mods/alpha_demo/animations/necromancer.txt
+%%DATADIR%%/mods/alpha_demo/animations/scathelocke.txt
+%%DATADIR%%/mods/alpha_demo/animations/vesuvvio.txt
+%%DATADIR%%/mods/alpha_demo/enemies/grisbon.txt
+%%DATADIR%%/mods/alpha_demo/enemies/krakatoa.txt
+%%DATADIR%%/mods/alpha_demo/enemies/necromancer_apprentice.txt
+%%DATADIR%%/mods/alpha_demo/enemies/professor_langlier.txt
+%%DATADIR%%/mods/alpha_demo/enemies/rilrak.txt
+%%DATADIR%%/mods/alpha_demo/enemies/scathelocke.txt
+%%DATADIR%%/mods/alpha_demo/enemies/sir_evan_maddox.txt
+%%DATADIR%%/mods/alpha_demo/enemies/skeletal_prophet.txt
+%%DATADIR%%/mods/alpha_demo/enemies/skeletal_thundersword.txt
+%%DATADIR%%/mods/alpha_demo/enemies/the_warden.txt
+%%DATADIR%%/mods/alpha_demo/enemies/ukkonen.txt
+%%DATADIR%%/mods/alpha_demo/enemies/vesuvvio.txt
+%%DATADIR%%/mods/alpha_demo/images/enemies/grisbon.png
+%%DATADIR%%/mods/alpha_demo/images/enemies/necromancer.png
+%%DATADIR%%/mods/alpha_demo/images/enemies/scathelocke.png
+%%DATADIR%%/mods/alpha_demo/images/enemies/vesuvvio.png
+%%DATADIR%%/mods/alpha_demo/images/npcs/statue_guardian_fire.png
+%%DATADIR%%/mods/alpha_demo/images/npcs/statue_guardian_ice.png
+%%DATADIR%%/mods/alpha_demo/images/npcs/statue_guardian_wind.png
+%%DATADIR%%/mods/alpha_demo/items/items.txt
+%%DATADIR%%/mods/alpha_demo/languages/data.de.po
+%%DATADIR%%/mods/alpha_demo/languages/data.fi.po
+%%DATADIR%%/mods/alpha_demo/languages/data.fr.po
+%%DATADIR%%/mods/alpha_demo/languages/data.gl.po
+%%DATADIR%%/mods/alpha_demo/languages/data.it.po
+%%DATADIR%%/mods/alpha_demo/languages/data.ja.po
+%%DATADIR%%/mods/alpha_demo/languages/data.nl.po
+%%DATADIR%%/mods/alpha_demo/languages/data.pot
+%%DATADIR%%/mods/alpha_demo/languages/data.ru.po
+%%DATADIR%%/mods/alpha_demo/languages/data.uk.po
+%%DATADIR%%/mods/alpha_demo/maps/ancient_temple.txt
+%%DATADIR%%/mods/alpha_demo/maps/averguard_academy.txt
+%%DATADIR%%/mods/alpha_demo/maps/averguard_atrium.txt
+%%DATADIR%%/mods/alpha_demo/maps/averguard_complex.txt
+%%DATADIR%%/mods/alpha_demo/maps/averguard_prison.txt
+%%DATADIR%%/mods/alpha_demo/maps/averguard_temple.txt
+%%DATADIR%%/mods/alpha_demo/maps/brothers_lair_atrium.txt
+%%DATADIR%%/mods/alpha_demo/maps/brothers_lair_fire_hall.txt
+%%DATADIR%%/mods/alpha_demo/maps/brothers_lair_ice_hall.txt
+%%DATADIR%%/mods/alpha_demo/maps/brothers_lair_sacrifice_room.txt
+%%DATADIR%%/mods/alpha_demo/maps/brothers_lair_wind_hall.txt
+%%DATADIR%%/mods/alpha_demo/maps/cave1.txt
+%%DATADIR%%/mods/alpha_demo/maps/cave_of_living_bones1.txt
+%%DATADIR%%/mods/alpha_demo/maps/cave_of_living_bones2.txt
+%%DATADIR%%/mods/alpha_demo/maps/cave_of_living_bones3.txt
+%%DATADIR%%/mods/alpha_demo/maps/frontier_outpost.txt
+%%DATADIR%%/mods/alpha_demo/maps/frontier_plains.txt
+%%DATADIR%%/mods/alpha_demo/maps/goblin_warrens.txt
+%%DATADIR%%/mods/alpha_demo/maps/lost_mines1.txt
+%%DATADIR%%/mods/alpha_demo/maps/river_encampment.txt
+%%DATADIR%%/mods/alpha_demo/maps/spawn.txt
+%%DATADIR%%/mods/alpha_demo/maps/warp_zone.txt
+%%DATADIR%%/mods/alpha_demo/maps/ydrakka_pass.txt
+%%DATADIR%%/mods/alpha_demo/npcs/captured_trader.txt
+%%DATADIR%%/mods/alpha_demo/npcs/guill.txt
+%%DATADIR%%/mods/alpha_demo/npcs/kayl.txt
+%%DATADIR%%/mods/alpha_demo/npcs/kenrik.txt
+%%DATADIR%%/mods/alpha_demo/npcs/lorund.txt
+%%DATADIR%%/mods/alpha_demo/npcs/martigan.txt
+%%DATADIR%%/mods/alpha_demo/npcs/nerin.txt
+%%DATADIR%%/mods/alpha_demo/npcs/statue_guardian_fire.txt
+%%DATADIR%%/mods/alpha_demo/npcs/statue_guardian_ice.txt
+%%DATADIR%%/mods/alpha_demo/npcs/statue_guardian_wind.txt
+%%DATADIR%%/mods/alpha_demo/npcs/wandering_trader.txt
+%%DATADIR%%/mods/alpha_demo/quests/averguard_keep.txt
+%%DATADIR%%/mods/alpha_demo/quests/frontier.txt
+%%DATADIR%%/mods/alpha_demo/quests/index.txt
+%%DATADIR%%/mods/alpha_demo/quests/living_bones.txt
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan1.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan2.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan3.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan4.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan5.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan6.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/martigan7.ogg
+%%DATADIR%%/mods/alpha_demo/soundfx/npcs/sil.ogg
+%%DATADIR%%/mods/default/engine/combat.txt
+%%DATADIR%%/mods/default/engine/elements.txt
+%%DATADIR%%/mods/default/engine/font_colors.txt
+%%DATADIR%%/mods/default/engine/font_settings.txt
+%%DATADIR%%/mods/default/engine/gameplay.txt
+%%DATADIR%%/mods/default/engine/languages.txt
+%%DATADIR%%/mods/default/engine/misc.txt
+%%DATADIR%%/mods/default/engine/resolutions.txt
+%%DATADIR%%/mods/default/engine/tileset_config.txt
+%%DATADIR%%/mods/default/engine/tooltips.txt
+%%DATADIR%%/mods/default/fonts/LiberationSans-Regular.ttf
+%%DATADIR%%/mods/default/images/logo/icon.png
+%%DATADIR%%/mods/default/images/menus/buttons/button_default.png
+%%DATADIR%%/mods/default/images/menus/buttons/button_x.png
+%%DATADIR%%/mods/default/images/menus/buttons/checkbox_default.png
+%%DATADIR%%/mods/default/images/menus/buttons/down.png
+%%DATADIR%%/mods/default/images/menus/buttons/left.png
+%%DATADIR%%/mods/default/images/menus/buttons/listbox_default.png
+%%DATADIR%%/mods/default/images/menus/buttons/right.png
+%%DATADIR%%/mods/default/images/menus/buttons/scrollbar_default.png
+%%DATADIR%%/mods/default/images/menus/buttons/slider_default.png
+%%DATADIR%%/mods/default/images/menus/buttons/up.png
+%%DATADIR%%/mods/default/images/menus/config.png
+%%DATADIR%%/mods/default/images/menus/confirm_bg.png
+%%DATADIR%%/mods/default/images/menus/logo.png
+%%DATADIR%%/mods/default/images/menus/tab_active.png
+%%DATADIR%%/mods/default/images/menus/tab_inactive.png
+%%DATADIR%%/mods/default/languages/engine.be.po
+%%DATADIR%%/mods/default/languages/engine.de.po
+%%DATADIR%%/mods/default/languages/engine.el.po
+%%DATADIR%%/mods/default/languages/engine.es.po
+%%DATADIR%%/mods/default/languages/engine.fi.po
+%%DATADIR%%/mods/default/languages/engine.fr.po
+%%DATADIR%%/mods/default/languages/engine.gl.po
+%%DATADIR%%/mods/default/languages/engine.it.po
+%%DATADIR%%/mods/default/languages/engine.ja.po
+%%DATADIR%%/mods/default/languages/engine.nl.po
+%%DATADIR%%/mods/default/languages/engine.pot
+%%DATADIR%%/mods/default/languages/engine.ru.po
+%%DATADIR%%/mods/default/languages/engine.sk.po
+%%DATADIR%%/mods/default/languages/engine.sv.po
+%%DATADIR%%/mods/default/languages/engine.uk.po
+%%DATADIR%%/mods/default/languages/readme.txt
+%%DATADIR%%/mods/default/menus/config.txt
+%%DATADIR%%/mods/default/menus/fps.txt
+%%DATADIR%%/mods/default/menus/gameload.txt
+%%DATADIR%%/mods/default/menus/gamenew.txt
+%%DATADIR%%/mods/default/menus/menus.txt
 %%DATADIR%%/mods/fantasycore/animations/antlion.txt
 %%DATADIR%%/mods/fantasycore/animations/antlion_small.txt
 %%DATADIR%%/mods/fantasycore/animations/cursed_grave.txt
 %%DATADIR%%/mods/fantasycore/animations/goblin.txt
+%%DATADIR%%/mods/fantasycore/animations/goblin_elite.txt
+%%DATADIR%%/mods/fantasycore/animations/goblin_elite_runner.txt
 %%DATADIR%%/mods/fantasycore/animations/goblin_runner.txt
 %%DATADIR%%/mods/fantasycore/animations/hero.txt
 %%DATADIR%%/mods/fantasycore/animations/minotaur.txt
 %%DATADIR%%/mods/fantasycore/animations/skeleton.txt
+%%DATADIR%%/mods/fantasycore/animations/skeleton_archer.txt
+%%DATADIR%%/mods/fantasycore/animations/skeleton_mage.txt
+%%DATADIR%%/mods/fantasycore/animations/skeleton_weak.txt
 %%DATADIR%%/mods/fantasycore/animations/wyvern.txt
 %%DATADIR%%/mods/fantasycore/animations/wyvern_adult.txt
 %%DATADIR%%/mods/fantasycore/animations/zombie.txt
@@ -68,12 +173,24 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/enemies/zombie_brute.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie_iceclaw.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie_rotting.txt
-%%DATADIR%%/mods/fantasycore/engine/autopickup.txt
+%%DATADIR%%/mods/fantasycore/engine/combat.txt
+%%DATADIR%%/mods/fantasycore/engine/combat_text.txt
+%%DATADIR%%/mods/fantasycore/engine/effects.txt
+%%DATADIR%%/mods/fantasycore/engine/elements.txt
+%%DATADIR%%/mods/fantasycore/engine/font_colors.txt
 %%DATADIR%%/mods/fantasycore/engine/font_settings.txt
+%%DATADIR%%/mods/fantasycore/engine/gameplay.txt
 %%DATADIR%%/mods/fantasycore/engine/hero_options.txt
 %%DATADIR%%/mods/fantasycore/engine/languages.txt
+%%DATADIR%%/mods/fantasycore/engine/loot.txt
+%%DATADIR%%/mods/fantasycore/engine/misc.txt
+%%DATADIR%%/mods/fantasycore/engine/resolutions.txt
+%%DATADIR%%/mods/fantasycore/engine/stats.txt
 %%DATADIR%%/mods/fantasycore/engine/tileset_config.txt
+%%DATADIR%%/mods/fantasycore/engine/tooltips.txt
 %%DATADIR%%/mods/fantasycore/engine/xp_table.txt
+%%DATADIR%%/mods/fantasycore/fonts/LiberationSans-Bold.ttf
+%%DATADIR%%/mods/fantasycore/fonts/LiberationSans-Italic.ttf
 %%DATADIR%%/mods/fantasycore/fonts/LiberationSans-Regular.ttf
 %%DATADIR%%/mods/fantasycore/fonts/unifont-5.1.ttf
 %%DATADIR%%/mods/fantasycore/images/avatar/female/buckler.png
@@ -167,8 +284,8 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/enemies/wyvern.png
 %%DATADIR%%/mods/fantasycore/images/enemies/wyvern_adult.png
 %%DATADIR%%/mods/fantasycore/images/enemies/zombie.png
-%%DATADIR%%/mods/fantasycore/images/icons/icons32.png
-%%DATADIR%%/mods/fantasycore/images/icons/icons64.png
+%%DATADIR%%/mods/fantasycore/images/icons/icons_large.png
+%%DATADIR%%/mods/fantasycore/images/icons/icons_small.png
 %%DATADIR%%/mods/fantasycore/images/logo/icon.png
 %%DATADIR%%/mods/fantasycore/images/loot/belt.png
 %%DATADIR%%/mods/fantasycore/images/loot/book.png
@@ -201,44 +318,48 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/menus/actionbar_labels.png
 %%DATADIR%%/mods/fantasycore/images/menus/actionbar_trim.png
 %%DATADIR%%/mods/fantasycore/images/menus/attention_glow.png
-%%DATADIR%%/mods/fantasycore/images/menus/bar_enemy.png
 %%DATADIR%%/mods/fantasycore/images/menus/bar_hp.png
-%%DATADIR%%/mods/fantasycore/images/menus/bar_hp_mp.png
+%%DATADIR%%/mods/fantasycore/images/menus/bar_hp_background.png
 %%DATADIR%%/mods/fantasycore/images/menus/bar_mp.png
+%%DATADIR%%/mods/fantasycore/images/menus/bar_mp_background.png
 %%DATADIR%%/mods/fantasycore/images/menus/bar_xp.png
+%%DATADIR%%/mods/fantasycore/images/menus/bar_xp_background.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/button_default.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/button_plus.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/button_small.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/button_x.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/checkbox_default.png
-%%DATADIR%%/mods/fantasycore/images/menus/buttons/combobox_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/down.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/left.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/listbox_char.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/listbox_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/right.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/scrollbar_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/slider_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/up.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/upgrade.png
 %%DATADIR%%/mods/fantasycore/images/menus/character.png
-%%DATADIR%%/mods/fantasycore/images/menus/character_proficiency.png
 %%DATADIR%%/mods/fantasycore/images/menus/config.png
 %%DATADIR%%/mods/fantasycore/images/menus/confirm_bg.png
 %%DATADIR%%/mods/fantasycore/images/menus/dialog_box.png
 %%DATADIR%%/mods/fantasycore/images/menus/disabled.png
+%%DATADIR%%/mods/fantasycore/images/menus/enemy_bar.png
+%%DATADIR%%/mods/fantasycore/images/menus/enemy_bar_hp.png
 %%DATADIR%%/mods/fantasycore/images/menus/game_slot_select.png
 %%DATADIR%%/mods/fantasycore/images/menus/game_slots.png
 %%DATADIR%%/mods/fantasycore/images/menus/input.png
 %%DATADIR%%/mods/fantasycore/images/menus/inventory.png
 %%DATADIR%%/mods/fantasycore/images/menus/log.png
 %%DATADIR%%/mods/fantasycore/images/menus/logo.png
-%%DATADIR%%/mods/fantasycore/images/menus/menu_xp.png
 %%DATADIR%%/mods/fantasycore/images/menus/portrait_border.png
 %%DATADIR%%/mods/fantasycore/images/menus/powers.png
 %%DATADIR%%/mods/fantasycore/images/menus/powers_step.png
+%%DATADIR%%/mods/fantasycore/images/menus/powers_tree.png
 %%DATADIR%%/mods/fantasycore/images/menus/powers_unlock.png
 %%DATADIR%%/mods/fantasycore/images/menus/slot_empty.png
+%%DATADIR%%/mods/fantasycore/images/menus/stash.png
 %%DATADIR%%/mods/fantasycore/images/menus/tab_active.png
 %%DATADIR%%/mods/fantasycore/images/menus/tab_inactive.png
-%%DATADIR%%/mods/fantasycore/images/menus/upgrade.png
 %%DATADIR%%/mods/fantasycore/images/menus/vendor.png
 %%DATADIR%%/mods/fantasycore/images/npcs/clint_bellanger.png
 %%DATADIR%%/mods/fantasycore/images/npcs/guild_man1.png
@@ -296,35 +417,47 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/powers/spark_orange.png
 %%DATADIR%%/mods/fantasycore/images/powers/spark_red.png
 %%DATADIR%%/mods/fantasycore/images/powers/spear.png
+%%DATADIR%%/mods/fantasycore/images/powers/spikes.png
 %%DATADIR%%/mods/fantasycore/images/powers/stone.png
+%%DATADIR%%/mods/fantasycore/images/tilesets/noalpha/tileset_cave.png
+%%DATADIR%%/mods/fantasycore/images/tilesets/noalpha/tileset_dungeon.png
+%%DATADIR%%/mods/fantasycore/images/tilesets/noalpha/tileset_grassland.png
 %%DATADIR%%/mods/fantasycore/images/tilesets/tileset_cave.png
 %%DATADIR%%/mods/fantasycore/images/tilesets/tileset_dungeon.png
 %%DATADIR%%/mods/fantasycore/images/tilesets/tileset_grassland.png
 %%DATADIR%%/mods/fantasycore/items/items.txt
+%%DATADIR%%/mods/fantasycore/items/sets.txt
+%%DATADIR%%/mods/fantasycore/items/types.txt
 %%DATADIR%%/mods/fantasycore/languages/data.de.po
 %%DATADIR%%/mods/fantasycore/languages/data.fi.po
 %%DATADIR%%/mods/fantasycore/languages/data.fr.po
 %%DATADIR%%/mods/fantasycore/languages/data.gl.po
+%%DATADIR%%/mods/fantasycore/languages/data.it.po
 %%DATADIR%%/mods/fantasycore/languages/data.ja.po
+%%DATADIR%%/mods/fantasycore/languages/data.nl.po
 %%DATADIR%%/mods/fantasycore/languages/data.pot
 %%DATADIR%%/mods/fantasycore/languages/data.ru.po
 %%DATADIR%%/mods/fantasycore/languages/data.uk.po
-%%DATADIR%%/mods/fantasycore/languages/engine.be.po
-%%DATADIR%%/mods/fantasycore/languages/engine.de.po
-%%DATADIR%%/mods/fantasycore/languages/engine.es.po
-%%DATADIR%%/mods/fantasycore/languages/engine.fi.po
-%%DATADIR%%/mods/fantasycore/languages/engine.fr.po
-%%DATADIR%%/mods/fantasycore/languages/engine.gl.po
-%%DATADIR%%/mods/fantasycore/languages/engine.it.po
-%%DATADIR%%/mods/fantasycore/languages/engine.ja.po
-%%DATADIR%%/mods/fantasycore/languages/engine.pot
-%%DATADIR%%/mods/fantasycore/languages/engine.ru.po
-%%DATADIR%%/mods/fantasycore/languages/engine.sk.po
-%%DATADIR%%/mods/fantasycore/languages/engine.sv.po
-%%DATADIR%%/mods/fantasycore/languages/engine.uk.po
 %%DATADIR%%/mods/fantasycore/languages/readme.txt
 %%DATADIR%%/mods/fantasycore/languages/xgettext.py
-%%DATADIR%%/mods/fantasycore/menus/config.txt
+%%DATADIR%%/mods/fantasycore/menus/actionbar.txt
+%%DATADIR%%/mods/fantasycore/menus/activeeffects.txt
+%%DATADIR%%/mods/fantasycore/menus/character.txt
+%%DATADIR%%/mods/fantasycore/menus/enemy.txt
+%%DATADIR%%/mods/fantasycore/menus/fps.txt
+%%DATADIR%%/mods/fantasycore/menus/gameload.txt
+%%DATADIR%%/mods/fantasycore/menus/gamenew.txt
+%%DATADIR%%/mods/fantasycore/menus/hp.txt
+%%DATADIR%%/mods/fantasycore/menus/inventory.txt
+%%DATADIR%%/mods/fantasycore/menus/log.txt
+%%DATADIR%%/mods/fantasycore/menus/menus.txt
+%%DATADIR%%/mods/fantasycore/menus/minimap.txt
+%%DATADIR%%/mods/fantasycore/menus/mp.txt
+%%DATADIR%%/mods/fantasycore/menus/powers.txt
+%%DATADIR%%/mods/fantasycore/menus/stash.txt
+%%DATADIR%%/mods/fantasycore/menus/talker.txt
+%%DATADIR%%/mods/fantasycore/menus/vendor.txt
+%%DATADIR%%/mods/fantasycore/menus/xp.txt
 %%DATADIR%%/mods/fantasycore/music/battle_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/boss_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/cave_theme.ogg
@@ -367,6 +500,7 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/zombie_hit.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/zombie_ment.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/zombie_phys.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/environment/open_fire.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/female_die.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/female_hit.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/flying_loot.ogg
@@ -408,6 +542,7 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/soundfx/powers/shield.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/powers/shock.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/powers/shoot.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/powers/spikes.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/powers/teleport.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/powers/timestop.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/powers/warcry.ogg
@@ -431,98 +566,326 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/tilesetdefs/tileset_cave.txt
 %%DATADIR%%/mods/fantasycore/tilesetdefs/tileset_dungeon.txt
 %%DATADIR%%/mods/fantasycore/tilesetdefs/tileset_grassland.txt
-%%DATADIR%%/mods/frontier/enemies/rilrak.txt
-%%DATADIR%%/mods/frontier/languages/data.de.po
-%%DATADIR%%/mods/frontier/languages/data.fi.po
-%%DATADIR%%/mods/frontier/languages/data.fr.po
-%%DATADIR%%/mods/frontier/languages/data.gl.po
-%%DATADIR%%/mods/frontier/languages/data.ja.po
-%%DATADIR%%/mods/frontier/languages/data.pot
-%%DATADIR%%/mods/frontier/languages/data.ru.po
-%%DATADIR%%/mods/frontier/languages/data.uk.po
-%%DATADIR%%/mods/frontier/maps/ancient_temple.txt
-%%DATADIR%%/mods/frontier/maps/frontier_outpost.txt
-%%DATADIR%%/mods/frontier/maps/frontier_plains.txt
-%%DATADIR%%/mods/frontier/maps/river_encampment.txt
-%%DATADIR%%/mods/frontier/maps/spawn.txt
-%%DATADIR%%/mods/frontier/maps/ydrakka_pass.txt
-%%DATADIR%%/mods/frontier/npcs/kayl.txt
-%%DATADIR%%/mods/frontier/npcs/kenrik.txt
-%%DATADIR%%/mods/frontier/npcs/lorund.txt
-%%DATADIR%%/mods/frontier/npcs/martigan.txt
-%%DATADIR%%/mods/frontier/npcs/nerin.txt
-%%DATADIR%%/mods/frontier/quests/frontier.txt
-%%DATADIR%%/mods/frontier/quests/index.txt
-%%DATADIR%%/mods/living_bones/animations/necromancer.txt
-%%DATADIR%%/mods/living_bones/animations/skeleton_mage.txt
-%%DATADIR%%/mods/living_bones/enemies/grisbon.txt
-%%DATADIR%%/mods/living_bones/enemies/krakatoa.txt
-%%DATADIR%%/mods/living_bones/enemies/scathelocke.txt
-%%DATADIR%%/mods/living_bones/enemies/skeletal_prophet.txt
-%%DATADIR%%/mods/living_bones/enemies/skeletal_thundersword.txt
-%%DATADIR%%/mods/living_bones/enemies/vesuvvio.txt
-%%DATADIR%%/mods/living_bones/images/enemies/grisbon.png
-%%DATADIR%%/mods/living_bones/images/enemies/scathelocke.png
-%%DATADIR%%/mods/living_bones/images/enemies/vesuvvio.png
-%%DATADIR%%/mods/living_bones/images/npcs/statue_guardian_fire.png
-%%DATADIR%%/mods/living_bones/images/npcs/statue_guardian_ice.png
-%%DATADIR%%/mods/living_bones/images/npcs/statue_guardian_wind.png
-%%DATADIR%%/mods/living_bones/items/items.txt
-%%DATADIR%%/mods/living_bones/languages/data.de.po
-%%DATADIR%%/mods/living_bones/languages/data.fi.po
-%%DATADIR%%/mods/living_bones/languages/data.fr.po
-%%DATADIR%%/mods/living_bones/languages/data.gl.po
-%%DATADIR%%/mods/living_bones/languages/data.it.po
-%%DATADIR%%/mods/living_bones/languages/data.ja.po
-%%DATADIR%%/mods/living_bones/languages/data.pot
-%%DATADIR%%/mods/living_bones/languages/data.ru.po
-%%DATADIR%%/mods/living_bones/languages/data.uk.po
-%%DATADIR%%/mods/living_bones/maps/brothers_lair_atrium.txt
-%%DATADIR%%/mods/living_bones/maps/brothers_lair_fire_hall.txt
-%%DATADIR%%/mods/living_bones/maps/brothers_lair_ice_hall.txt
-%%DATADIR%%/mods/living_bones/maps/brothers_lair_sacrifice_room.txt
-%%DATADIR%%/mods/living_bones/maps/brothers_lair_wind_hall.txt
-%%DATADIR%%/mods/living_bones/maps/cave_of_living_bones1.txt
-%%DATADIR%%/mods/living_bones/maps/cave_of_living_bones2.txt
-%%DATADIR%%/mods/living_bones/maps/cave_of_living_bones3.txt
-%%DATADIR%%/mods/living_bones/npcs/statue_guardian_fire.txt
-%%DATADIR%%/mods/living_bones/npcs/statue_guardian_ice.txt
-%%DATADIR%%/mods/living_bones/npcs/statue_guardian_wind.txt
-%%DATADIR%%/mods/living_bones/quests/index.txt
-%%DATADIR%%/mods/living_bones/quests/living_bones.txt
+%%DATADIR%%/mods/minicore/animations/antlion.txt
+%%DATADIR%%/mods/minicore/animations/antlion_small.txt
+%%DATADIR%%/mods/minicore/animations/cursed_grave.txt
+%%DATADIR%%/mods/minicore/animations/goblin.txt
+%%DATADIR%%/mods/minicore/animations/goblin_elite.txt
+%%DATADIR%%/mods/minicore/animations/goblin_elite_runner.txt
+%%DATADIR%%/mods/minicore/animations/goblin_runner.txt
+%%DATADIR%%/mods/minicore/animations/hero.txt
+%%DATADIR%%/mods/minicore/animations/minotaur.txt
+%%DATADIR%%/mods/minicore/animations/skeleton.txt
+%%DATADIR%%/mods/minicore/animations/skeleton_archer.txt
+%%DATADIR%%/mods/minicore/animations/skeleton_mage.txt
+%%DATADIR%%/mods/minicore/animations/skeleton_weak.txt
+%%DATADIR%%/mods/minicore/animations/wyvern.txt
+%%DATADIR%%/mods/minicore/animations/wyvern_adult.txt
+%%DATADIR%%/mods/minicore/animations/zombie.txt
+%%DATADIR%%/mods/minicore/engine/effects.txt
+%%DATADIR%%/mods/minicore/engine/font_colors.txt
+%%DATADIR%%/mods/minicore/engine/font_settings.txt
+%%DATADIR%%/mods/minicore/engine/gameplay.txt
+%%DATADIR%%/mods/minicore/engine/hero_options.txt
+%%DATADIR%%/mods/minicore/engine/loot.txt
+%%DATADIR%%/mods/minicore/engine/resolutions.txt
+%%DATADIR%%/mods/minicore/engine/tileset_config.txt
+%%DATADIR%%/mods/minicore/engine/tooltips.txt
+%%DATADIR%%/mods/minicore/images/avatar/female/buckler.png
+%%DATADIR%%/mods/minicore/images/avatar/female/clothes.png
+%%DATADIR%%/mods/minicore/images/avatar/female/dagger.png
+%%DATADIR%%/mods/minicore/images/avatar/female/greatbow.png
+%%DATADIR%%/mods/minicore/images/avatar/female/greatstaff.png
+%%DATADIR%%/mods/minicore/images/avatar/female/greatsword.png
+%%DATADIR%%/mods/minicore/images/avatar/female/head_long.png
+%%DATADIR%%/mods/minicore/images/avatar/female/leather_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/female/longbow.png
+%%DATADIR%%/mods/minicore/images/avatar/female/longsword.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/buckler.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/clothes.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/dagger.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/greatbow.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/greatstaff.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/greatsword.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/head_long.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/leather_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/longbow.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/longsword.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/rod.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/shield.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/shortbow.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/shortsword.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/slingshot.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/staff.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/steel_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/female/preview/wand.png
+%%DATADIR%%/mods/minicore/images/avatar/female/rod.png
+%%DATADIR%%/mods/minicore/images/avatar/female/shield.png
+%%DATADIR%%/mods/minicore/images/avatar/female/shortbow.png
+%%DATADIR%%/mods/minicore/images/avatar/female/shortsword.png
+%%DATADIR%%/mods/minicore/images/avatar/female/slingshot.png
+%%DATADIR%%/mods/minicore/images/avatar/female/staff.png
+%%DATADIR%%/mods/minicore/images/avatar/female/steel_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/female/wand.png
+%%DATADIR%%/mods/minicore/images/avatar/male/buckler.png
+%%DATADIR%%/mods/minicore/images/avatar/male/clothes.png
+%%DATADIR%%/mods/minicore/images/avatar/male/dagger.png
+%%DATADIR%%/mods/minicore/images/avatar/male/greatbow.png
+%%DATADIR%%/mods/minicore/images/avatar/male/greatstaff.png
+%%DATADIR%%/mods/minicore/images/avatar/male/greatsword.png
+%%DATADIR%%/mods/minicore/images/avatar/male/head_bald.png
+%%DATADIR%%/mods/minicore/images/avatar/male/head_hood.png
+%%DATADIR%%/mods/minicore/images/avatar/male/head_short.png
+%%DATADIR%%/mods/minicore/images/avatar/male/leather_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/male/longbow.png
+%%DATADIR%%/mods/minicore/images/avatar/male/longsword.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/buckler.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/clothes.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/dagger.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/greatbow.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/greatstaff.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/greatsword.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/head_bald.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/head_hood.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/head_short.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/leather_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/longbow.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/longsword.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/rod.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/shield.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/shortbow.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/shortsword.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/slingshot.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/staff.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/steel_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/male/preview/wand.png
+%%DATADIR%%/mods/minicore/images/avatar/male/rod.png
+%%DATADIR%%/mods/minicore/images/avatar/male/shield.png
+%%DATADIR%%/mods/minicore/images/avatar/male/shortbow.png
+%%DATADIR%%/mods/minicore/images/avatar/male/shortsword.png
+%%DATADIR%%/mods/minicore/images/avatar/male/slingshot.png
+%%DATADIR%%/mods/minicore/images/avatar/male/staff.png
+%%DATADIR%%/mods/minicore/images/avatar/male/steel_armor.png
+%%DATADIR%%/mods/minicore/images/avatar/male/wand.png
+%%DATADIR%%/mods/minicore/images/enemies/antlion.png
+%%DATADIR%%/mods/minicore/images/enemies/antlion_hatchling.png
+%%DATADIR%%/mods/minicore/images/enemies/cursed_grave.png
+%%DATADIR%%/mods/minicore/images/enemies/fire_ant.png
+%%DATADIR%%/mods/minicore/images/enemies/goblin.png
+%%DATADIR%%/mods/minicore/images/enemies/goblin_elite.png
+%%DATADIR%%/mods/minicore/images/enemies/ice_ant.png
+%%DATADIR%%/mods/minicore/images/enemies/minotaur.png
+%%DATADIR%%/mods/minicore/images/enemies/skeleton.png
+%%DATADIR%%/mods/minicore/images/enemies/skeleton_archer.png
+%%DATADIR%%/mods/minicore/images/enemies/skeleton_mage.png
+%%DATADIR%%/mods/minicore/images/enemies/skeleton_weak.png
+%%DATADIR%%/mods/minicore/images/enemies/wyvern.png
+%%DATADIR%%/mods/minicore/images/enemies/wyvern_adult.png
+%%DATADIR%%/mods/minicore/images/enemies/zombie.png
+%%DATADIR%%/mods/minicore/images/icons/icons_large.png
+%%DATADIR%%/mods/minicore/images/icons/icons_small.png
+%%DATADIR%%/mods/minicore/images/loot/belt.png
+%%DATADIR%%/mods/minicore/images/loot/book.png
+%%DATADIR%%/mods/minicore/images/loot/boots.png
+%%DATADIR%%/mods/minicore/images/loot/buckler.png
+%%DATADIR%%/mods/minicore/images/loot/clothes.png
+%%DATADIR%%/mods/minicore/images/loot/coins100.png
+%%DATADIR%%/mods/minicore/images/loot/coins25.png
+%%DATADIR%%/mods/minicore/images/loot/coins5.png
+%%DATADIR%%/mods/minicore/images/loot/dagger.png
+%%DATADIR%%/mods/minicore/images/loot/gem.png
+%%DATADIR%%/mods/minicore/images/loot/greatbow.png
+%%DATADIR%%/mods/minicore/images/loot/greatstaff.png
+%%DATADIR%%/mods/minicore/images/loot/greatsword.png
+%%DATADIR%%/mods/minicore/images/loot/hp_potion.png
+%%DATADIR%%/mods/minicore/images/loot/leather_armor.png
+%%DATADIR%%/mods/minicore/images/loot/longbow.png
+%%DATADIR%%/mods/minicore/images/loot/longsword.png
+%%DATADIR%%/mods/minicore/images/loot/mp_potion.png
+%%DATADIR%%/mods/minicore/images/loot/ring.png
+%%DATADIR%%/mods/minicore/images/loot/rod.png
+%%DATADIR%%/mods/minicore/images/loot/scroll.png
+%%DATADIR%%/mods/minicore/images/loot/shield.png
+%%DATADIR%%/mods/minicore/images/loot/shortbow.png
+%%DATADIR%%/mods/minicore/images/loot/shortsword.png
+%%DATADIR%%/mods/minicore/images/loot/slingshot.png
+%%DATADIR%%/mods/minicore/images/loot/staff.png
+%%DATADIR%%/mods/minicore/images/loot/steel_armor.png
+%%DATADIR%%/mods/minicore/images/loot/wand.png
+%%DATADIR%%/mods/minicore/images/menus/actionbar_labels.png
+%%DATADIR%%/mods/minicore/images/menus/actionbar_trim.png
+%%DATADIR%%/mods/minicore/images/menus/attention_glow.png
+%%DATADIR%%/mods/minicore/images/menus/bar_hp.png
+%%DATADIR%%/mods/minicore/images/menus/bar_hp_background.png
+%%DATADIR%%/mods/minicore/images/menus/bar_mp.png
+%%DATADIR%%/mods/minicore/images/menus/bar_mp_background.png
+%%DATADIR%%/mods/minicore/images/menus/bar_xp.png
+%%DATADIR%%/mods/minicore/images/menus/bar_xp_background.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/button_default.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/button_x.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/checkbox_default.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/down.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/left.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/listbox_char.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/listbox_default.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/right.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/scrollbar_default.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/slider_default.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/up.png
+%%DATADIR%%/mods/minicore/images/menus/buttons/upgrade.png
+%%DATADIR%%/mods/minicore/images/menus/character.png
+%%DATADIR%%/mods/minicore/images/menus/config.png
+%%DATADIR%%/mods/minicore/images/menus/confirm_bg.png
+%%DATADIR%%/mods/minicore/images/menus/dialog_box.png
+%%DATADIR%%/mods/minicore/images/menus/disabled.png
+%%DATADIR%%/mods/minicore/images/menus/enemy_bar.png
+%%DATADIR%%/mods/minicore/images/menus/enemy_bar_hp.png
+%%DATADIR%%/mods/minicore/images/menus/game_slot_select.png
+%%DATADIR%%/mods/minicore/images/menus/game_slots.png
+%%DATADIR%%/mods/minicore/images/menus/input.png
+%%DATADIR%%/mods/minicore/images/menus/inventory.png
+%%DATADIR%%/mods/minicore/images/menus/log.png
+%%DATADIR%%/mods/minicore/images/menus/logo.png
+%%DATADIR%%/mods/minicore/images/menus/portrait_border.png
+%%DATADIR%%/mods/minicore/images/menus/powers.png
+%%DATADIR%%/mods/minicore/images/menus/powers_tree.png
+%%DATADIR%%/mods/minicore/images/menus/powers_unlock.png
+%%DATADIR%%/mods/minicore/images/menus/slot_empty.png
+%%DATADIR%%/mods/minicore/images/menus/stash.png
+%%DATADIR%%/mods/minicore/images/menus/tab_active.png
+%%DATADIR%%/mods/minicore/images/menus/tab_inactive.png
+%%DATADIR%%/mods/minicore/images/menus/vendor.png
+%%DATADIR%%/mods/minicore/images/npcs/clint_bellanger.png
+%%DATADIR%%/mods/minicore/images/npcs/guild_man1.png
+%%DATADIR%%/mods/minicore/images/npcs/guild_man2.png
+%%DATADIR%%/mods/minicore/images/npcs/peasant_man1.png
+%%DATADIR%%/mods/minicore/images/npcs/peasant_man2.png
+%%DATADIR%%/mods/minicore/images/npcs/peasant_woman1.png
+%%DATADIR%%/mods/minicore/images/npcs/peasant_woman2.png
+%%DATADIR%%/mods/minicore/images/npcs/wandering_trader1.png
+%%DATADIR%%/mods/minicore/images/npcs/wandering_trader2.png
+%%DATADIR%%/mods/minicore/images/portraits/female01.png
+%%DATADIR%%/mods/minicore/images/portraits/female02.png
+%%DATADIR%%/mods/minicore/images/portraits/female03.png
+%%DATADIR%%/mods/minicore/images/portraits/female04.png
+%%DATADIR%%/mods/minicore/images/portraits/female05.png
+%%DATADIR%%/mods/minicore/images/portraits/female06.png
+%%DATADIR%%/mods/minicore/images/portraits/female07.png
+%%DATADIR%%/mods/minicore/images/portraits/female08.png
+%%DATADIR%%/mods/minicore/images/portraits/female09.png
+%%DATADIR%%/mods/minicore/images/portraits/male01.png
+%%DATADIR%%/mods/minicore/images/portraits/male02.png
+%%DATADIR%%/mods/minicore/images/portraits/male03.png
+%%DATADIR%%/mods/minicore/images/portraits/male04.png
+%%DATADIR%%/mods/minicore/images/portraits/male05.png
+%%DATADIR%%/mods/minicore/images/portraits/male06.png
+%%DATADIR%%/mods/minicore/images/portraits/male07.png
+%%DATADIR%%/mods/minicore/images/portraits/male08.png
+%%DATADIR%%/mods/minicore/images/portraits/male09.png
+%%DATADIR%%/mods/minicore/images/portraits/male10.png
+%%DATADIR%%/mods/minicore/images/portraits/male11.png
+%%DATADIR%%/mods/minicore/images/portraits/male12.png
+%%DATADIR%%/mods/minicore/images/portraits/male13.png
+%%DATADIR%%/mods/minicore/images/portraits/male14.png
+%%DATADIR%%/mods/minicore/images/portraits/male15.png
+%%DATADIR%%/mods/minicore/images/portraits/male16.png
+%%DATADIR%%/mods/minicore/images/portraits/male17.png
+%%DATADIR%%/mods/minicore/images/portraits/male18.png
+%%DATADIR%%/mods/minicore/images/portraits/male19.png
+%%DATADIR%%/mods/minicore/images/portraits/male20.png
+%%DATADIR%%/mods/minicore/images/powers/arrow_stuck.png
+%%DATADIR%%/mods/minicore/images/powers/arrows.png
+%%DATADIR%%/mods/minicore/images/powers/blast.png
+%%DATADIR%%/mods/minicore/images/powers/channel.png
+%%DATADIR%%/mods/minicore/images/powers/fireball.png
+%%DATADIR%%/mods/minicore/images/powers/freeze.png
+%%DATADIR%%/mods/minicore/images/powers/heal.png
+%%DATADIR%%/mods/minicore/images/powers/icicle.png
+%%DATADIR%%/mods/minicore/images/powers/lightning.png
+%%DATADIR%%/mods/minicore/images/powers/plasmaball.png
+%%DATADIR%%/mods/minicore/images/powers/quake.png
+%%DATADIR%%/mods/minicore/images/powers/runes.png
+%%DATADIR%%/mods/minicore/images/powers/shield.png
+%%DATADIR%%/mods/minicore/images/powers/spark_blue.png
+%%DATADIR%%/mods/minicore/images/powers/spark_orange.png
+%%DATADIR%%/mods/minicore/images/powers/spark_red.png
+%%DATADIR%%/mods/minicore/images/powers/spear.png
+%%DATADIR%%/mods/minicore/images/powers/spikes.png
+%%DATADIR%%/mods/minicore/images/powers/stone.png
+%%DATADIR%%/mods/minicore/images/tilesets/noalpha/tileset_cave.png
+%%DATADIR%%/mods/minicore/images/tilesets/noalpha/tileset_dungeon.png
+%%DATADIR%%/mods/minicore/images/tilesets/noalpha/tileset_grassland.png
+%%DATADIR%%/mods/minicore/images/tilesets/tileset_cave.png
+%%DATADIR%%/mods/minicore/images/tilesets/tileset_dungeon.png
+%%DATADIR%%/mods/minicore/images/tilesets/tileset_grassland.png
+%%DATADIR%%/mods/minicore/menus/actionbar.txt
+%%DATADIR%%/mods/minicore/menus/activeeffects.txt
+%%DATADIR%%/mods/minicore/menus/character.txt
+%%DATADIR%%/mods/minicore/menus/config.txt
+%%DATADIR%%/mods/minicore/menus/enemy.txt
+%%DATADIR%%/mods/minicore/menus/gameload.txt
+%%DATADIR%%/mods/minicore/menus/gamenew.txt
+%%DATADIR%%/mods/minicore/menus/hp.txt
+%%DATADIR%%/mods/minicore/menus/inventory.txt
+%%DATADIR%%/mods/minicore/menus/log.txt
+%%DATADIR%%/mods/minicore/menus/menus.txt
+%%DATADIR%%/mods/minicore/menus/minimap.txt
+%%DATADIR%%/mods/minicore/menus/mp.txt
+%%DATADIR%%/mods/minicore/menus/powers.txt
+%%DATADIR%%/mods/minicore/menus/stash.txt
+%%DATADIR%%/mods/minicore/menus/talker.txt
+%%DATADIR%%/mods/minicore/menus/vendor.txt
+%%DATADIR%%/mods/minicore/menus/xp.txt
+%%DATADIR%%/mods/minicore/npcs/captured_trader.txt
+%%DATADIR%%/mods/minicore/npcs/guill.txt
+%%DATADIR%%/mods/minicore/npcs/kayl.txt
+%%DATADIR%%/mods/minicore/npcs/kenrik.txt
+%%DATADIR%%/mods/minicore/npcs/lorund.txt
+%%DATADIR%%/mods/minicore/npcs/martigan.txt
+%%DATADIR%%/mods/minicore/npcs/nerin.txt
+%%DATADIR%%/mods/minicore/npcs/statue_guardian_fire.txt
+%%DATADIR%%/mods/minicore/npcs/statue_guardian_ice.txt
+%%DATADIR%%/mods/minicore/npcs/statue_guardian_wind.txt
+%%DATADIR%%/mods/minicore/npcs/wandering_trader.txt
+%%DATADIR%%/mods/minicore/powers/powers.txt
+%%DATADIR%%/mods/minicore/tilesetdefs/tileset_cave.txt
+%%DATADIR%%/mods/minicore/tilesetdefs/tileset_dungeon.txt
+%%DATADIR%%/mods/minicore/tilesetdefs/tileset_grassland.txt
 %%DATADIR%%/mods/mods.txt
-%%DATADIR%%/mods/wipcore/images/avatar/male/clothes.png
 share/icons/hicolor/scalable/apps/flare.svg
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm %%DATADIR%%/mods/wipcore/images/avatar/male
-@dirrm %%DATADIR%%/mods/wipcore/images/avatar
-@dirrm %%DATADIR%%/mods/wipcore/images
-@dirrm %%DATADIR%%/mods/wipcore
-@dirrm %%DATADIR%%/mods/living_bones/quests
-@dirrm %%DATADIR%%/mods/living_bones/npcs
-@dirrm %%DATADIR%%/mods/living_bones/maps
-@dirrm %%DATADIR%%/mods/living_bones/languages
-@dirrm %%DATADIR%%/mods/living_bones/items
-@dirrm %%DATADIR%%/mods/living_bones/images/npcs
-@dirrm %%DATADIR%%/mods/living_bones/images/enemies
-@dirrm %%DATADIR%%/mods/living_bones/images
-@dirrm %%DATADIR%%/mods/living_bones/enemies
-@dirrm %%DATADIR%%/mods/living_bones/animations
-@dirrm %%DATADIR%%/mods/living_bones
-@dirrm %%DATADIR%%/mods/frontier/quests
-@dirrm %%DATADIR%%/mods/frontier/npcs
-@dirrm %%DATADIR%%/mods/frontier/maps
-@dirrm %%DATADIR%%/mods/frontier/languages
-@dirrm %%DATADIR%%/mods/frontier/enemies
-@dirrm %%DATADIR%%/mods/frontier
+@dirrm %%DATADIR%%/mods/minicore/tilesetdefs
+@dirrm %%DATADIR%%/mods/minicore/powers
+@dirrm %%DATADIR%%/mods/minicore/npcs
+@dirrm %%DATADIR%%/mods/minicore/menus
+@dirrm %%DATADIR%%/mods/minicore/images/tilesets/noalpha
+@dirrm %%DATADIR%%/mods/minicore/images/tilesets
+@dirrm %%DATADIR%%/mods/minicore/images/powers
+@dirrm %%DATADIR%%/mods/minicore/images/portraits
+@dirrm %%DATADIR%%/mods/minicore/images/npcs
+@dirrm %%DATADIR%%/mods/minicore/images/menus/buttons
+@dirrm %%DATADIR%%/mods/minicore/images/menus
+@dirrm %%DATADIR%%/mods/minicore/images/loot
+@dirrm %%DATADIR%%/mods/minicore/images/icons
+@dirrm %%DATADIR%%/mods/minicore/images/enemies
+@dirrm %%DATADIR%%/mods/minicore/images/avatar/male/preview
+@dirrm %%DATADIR%%/mods/minicore/images/avatar/male
+@dirrm %%DATADIR%%/mods/minicore/images/avatar/female/preview
+@dirrm %%DATADIR%%/mods/minicore/images/avatar/female
+@dirrm %%DATADIR%%/mods/minicore/images/avatar
+@dirrm %%DATADIR%%/mods/minicore/images
+@dirrm %%DATADIR%%/mods/minicore/engine
+@dirrm %%DATADIR%%/mods/minicore/animations
+@dirrm %%DATADIR%%/mods/minicore
 @dirrm %%DATADIR%%/mods/fantasycore/tilesetdefs
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx/steps
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx/powers
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx/npcs
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx/inventory
+@dirrm %%DATADIR%%/mods/fantasycore/soundfx/environment
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx/enemies
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx
 @dirrm %%DATADIR%%/mods/fantasycore/powers
@@ -530,6 +893,7 @@ share/icons/hicolor/scalable/apps/flare.svg
 @dirrm %%DATADIR%%/mods/fantasycore/menus
 @dirrm %%DATADIR%%/mods/fantasycore/languages
 @dirrm %%DATADIR%%/mods/fantasycore/items
+@dirrm %%DATADIR%%/mods/fantasycore/images/tilesets/noalpha
 @dirrm %%DATADIR%%/mods/fantasycore/images/tilesets
 @dirrm %%DATADIR%%/mods/fantasycore/images/powers
 @dirrm %%DATADIR%%/mods/fantasycore/images/portraits
@@ -551,15 +915,28 @@ share/icons/hicolor/scalable/apps/flare.svg
 @dirrm %%DATADIR%%/mods/fantasycore/enemies
 @dirrm %%DATADIR%%/mods/fantasycore/animations
 @dirrm %%DATADIR%%/mods/fantasycore
-@dirrm %%DATADIR%%/mods/averguard/quests
-@dirrm %%DATADIR%%/mods/averguard/npcs
-@dirrm %%DATADIR%%/mods/averguard/maps
-@dirrm %%DATADIR%%/mods/averguard/languages
-@dirrm %%DATADIR%%/mods/averguard/items
-@dirrm %%DATADIR%%/mods/averguard/images/enemies
-@dirrm %%DATADIR%%/mods/averguard/images
-@dirrm %%DATADIR%%/mods/averguard/enemies
-@dirrm %%DATADIR%%/mods/averguard
+@dirrm %%DATADIR%%/mods/default/menus
+@dirrm %%DATADIR%%/mods/default/languages
+@dirrm %%DATADIR%%/mods/default/images/menus/buttons
+@dirrm %%DATADIR%%/mods/default/images/menus
+@dirrm %%DATADIR%%/mods/default/images/logo
+@dirrm %%DATADIR%%/mods/default/images
+@dirrm %%DATADIR%%/mods/default/fonts
+@dirrm %%DATADIR%%/mods/default/engine
+@dirrm %%DATADIR%%/mods/default
+@dirrm %%DATADIR%%/mods/alpha_demo/soundfx/npcs
+@dirrm %%DATADIR%%/mods/alpha_demo/soundfx
+@dirrm %%DATADIR%%/mods/alpha_demo/quests
+@dirrm %%DATADIR%%/mods/alpha_demo/npcs
+@dirrm %%DATADIR%%/mods/alpha_demo/maps
+@dirrm %%DATADIR%%/mods/alpha_demo/languages
+@dirrm %%DATADIR%%/mods/alpha_demo/items
+@dirrm %%DATADIR%%/mods/alpha_demo/images/npcs
+@dirrm %%DATADIR%%/mods/alpha_demo/images/enemies
+@dirrm %%DATADIR%%/mods/alpha_demo/images
+@dirrm %%DATADIR%%/mods/alpha_demo/enemies
+@dirrm %%DATADIR%%/mods/alpha_demo/animations
+@dirrm %%DATADIR%%/mods/alpha_demo
 @dirrm %%DATADIR%%/mods
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
