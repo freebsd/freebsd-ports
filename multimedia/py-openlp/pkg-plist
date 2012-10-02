@@ -915,7 +915,6 @@ share/openlp/i18n/zh_CN.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_close.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_configure.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_configure_shortcuts.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_contribute.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_edit_copy.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_exit.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/resources/images/system_help_contents.png
