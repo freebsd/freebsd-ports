@@ -1,0 +1,59 @@
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	clanlib
+PORTVERSION=	1.0.0
+CATEGORIES=	devel
+MASTER_SITES=	http://www.clanlib.org/download/releases-1.0/
+DISTNAME=	ClanLib-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Cross-platform game SDK
+
+LICENSE=	ZLIB
+LICENSE_GROUPS=	FSF OSI COPYFREE
+LICENSE_NAME=	ZLIB license
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		mikmod:${PORTSDIR}/audio/libmikmod \
+		vorbis:${PORTSDIR}/audio/libvorbis
+
+LATEST_LINK=	${PORTNAME}1
+
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
+USE_XORG=	x11 xi
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
+USE_SDL=	gfx
+USE_GL=		yes
+USE_PKGCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-docs \
+		--enable-clanDisplay \
+		--enable-clanGL \
+		--enable-clanSDL \
+		--enable-clanSound \
+		--enable-clanNetwork \
+		--enable-clanGUI \
+		--enable-clanMikMod \
+		--enable-clanVorbis \
+		--enable-getaddr
+
+PLIST_SUB+=	VER=${PORTVERSION:R}
+
+post-patch:
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SDL/SDL|SDL|g'
+	@${REINPLACE_CMD} -e 's|@perl_exec@|${PERL}|g' \
+		${WRKSRC}/Documentation/Utilities/webbuilder.pl.in
+
+.include <bsd.port.mk>

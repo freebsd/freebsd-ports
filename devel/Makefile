@@ -218,6 +218,7 @@
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-sbcl
     SUBDIR += clanlib
+    SUBDIR += clanlib1
     SUBDIR += clewn
     SUBDIR += clig
     SUBDIR += clint
