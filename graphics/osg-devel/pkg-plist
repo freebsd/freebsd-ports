@@ -611,7 +611,6 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_deprecated_osgtext.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_deprecated_osgviewer.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_deprecated_osgvolume.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_deprecated_osgwidget.so
-%%ITK%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_dicom.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dot.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dw.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dxf.so
