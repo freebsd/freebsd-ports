@@ -2,48 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	clanlib
-PORTVERSION=	0.8.1
-PORTREVISION=	12
+PORTVERSION=	2.3.6
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/
+MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
 DISTNAME=	ClanLib-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Cross-platform game SDK
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LICENSE=	ZLIB
+LICENSE_GROUPS=	FSF OSI COPYFREE
+LICENSE_NAME=	ZLIB license
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		mikmod:${PORTSDIR}/audio/libmikmod \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		pcre:${PORTSDIR}/devel/pcre
 
-WRKSRC=		${WRKDIR}/ClanLib-${PORTVERSION}
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-clanJavaScript --disable-docs
 USE_GMAKE=	yes
-USE_XORG=	x11 xmu xi
+USE_GCC=	4.6+
+USE_XORG=	x11
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
-USE_SDL=	gfx
 USE_GL=		yes
 USE_PKGCONFIG=	yes
+USE_SQLITE=	yes
+MAKE_JOBS_SAFE=	yes
 
-PLIST_SUB+=	VER=${PORTVERSION:R}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-docs \
+		--enable-clanDisplay \
+		--enable-clanGL \
+		--enable-clanGL1 \
+		--enable-clanSound \
+		--enable-clanDatabase \
+		--enable-clanSqlite \
+		--enable-clanRegExp \
+		--enable-clanNetwork \
+		--enable-clanGUI \
+		--enable-clanCSSLayout \
+		--enable-clanSWRender \
+		--enable-clanMikMod \
+		--enable-clanVorbis \
+		--enable-getaddr
 
-.include <bsd.port.pre.mk>
+PLIST_SUB+=	VER=${PORTVERSION:R} \
+		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
 
 post-patch:
-	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|SDL/SDL|SDL|g'
-	@${REINPLACE_CMD} -e 's|(CLvoid)|()|' \
-		${WRKSRC}/Sources/API/GL/opengl_wrap.h
-	@${REINPLACE_CMD} -e 's|-lasound||' \
-		${WRKSRC}/Sources/Sound/Makefile.in
-	@${REINPLACE_CMD} -e 's|@perl_exec@|${PERL}|g' \
-		${WRKSRC}/Documentation/Utilities/webbuilder.pl.in
+	@${REINPLACE_CMD} -e 's|LIBS="-lsqlite3 -ldl"|LIBS="-lsqlite3"|g' \
+		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

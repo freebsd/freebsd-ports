@@ -1,14 +1,9 @@
-# New ports collection makefile for:	Super Methane Brothers
-# Date created:			22 Jan 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
-# $Carpetsmoker: ports/games/super_methane_brothers/Makefile,v 1.2 2007/08/02 13:45:02 carpetsmoker Exp $
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	super_methane_brothers
 PORTVERSION=	1.4.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/methane/Methane%20Stable/Methane%20V${PORTVERSION}
 DISTNAME=	methane-${PORTVERSION}
@@ -17,21 +12,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A port of the Amiga platform game of the same name
 
-LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \
+LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1 \
 		mikmod:${PORTSDIR}/audio/libmikmod
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 BUILD_WRKSRC=	${WRKSRC}/source/linux
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ClanLib-0.8
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/ClanLib-0.8
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|g++|${CXX}|; s|gcc|${CXX}|; \
 		 s|^\(METHANE_FLAGS =\)|\1 ${CPPFLAGS}|; \
-		 s|^\(METHANE_LIBS =\)|\1 ${LDFLAGS}|' \
+		 s|^\(METHANE_LIBS =\)|\1 ${LDFLAGS}|; \
+		 s|0.8|1.0|g' \
 		${BUILD_WRKSRC}/makefile
 
 do-install:

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	trophy
-# Date created:			2004-01-24
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	trophy
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,11 +12,12 @@ COMMENT=	A single player racing game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
+LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN6=	trophy.6
 
