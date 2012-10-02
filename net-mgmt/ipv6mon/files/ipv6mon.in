@@ -1,0 +1,18 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: ipv6mon
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: nojail shutdown
+
+. /etc/rc.subr
+
+name="ipv6mon"
+rcvar=$name
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+load_rc_config $name
+run_rc_command "$1"
