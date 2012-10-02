@@ -16,7 +16,7 @@ COMMENT=	Python-based WMS-C/TMS server
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
 		${PYTHON_PKGNAMEPREFIX}Paste>0:${PORTSDIR}/www/py-paste
 
-LICENCE=	BSD
+LICENSE=	BSD
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install

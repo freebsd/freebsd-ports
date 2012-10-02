@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-LICENCE=	MIT
+LICENSE=	MIT
 
 CONFLICTS_INSTALL=	xli-*
 

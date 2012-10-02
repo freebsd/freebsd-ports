@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tie::RefHash - use references as hash keys
 
 LICENSE_COMB=	dual
-LISENSE=	ART20 GPLv1
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 

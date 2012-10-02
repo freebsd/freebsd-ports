@@ -15,7 +15,7 @@ MASTER_SITES=	http://wmfs.info/attachments/download/45/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
 
-LICENCE=	BSD
+LICENSE=	BSD
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 

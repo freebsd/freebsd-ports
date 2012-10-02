@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/pastebinit
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	PASTEBINS
 PASTEBINS_DESC=	Install default pastebins
