@@ -15,9 +15,9 @@ MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG:S,%SUBDIR%,distfiles,} \
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Track runtime library calls in dynamically linked programs
 
-LIB_DEPENDS=	elf:${PORTSDIR}/devel/libelf
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	elf:${PORTSDIR}/devel/libelf
 
 ONLY_FOR_ARCHS=	i386
 
