@@ -14,8 +14,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A small DynDNS client
 
-OPTIONS=	OPENSSL	"Build with SSL support"	on \
-		RC_NG	"Install RC_NG script"		on
+OPTIONS_DEFINE=	OPENSSL RCNG
+OPTIONS_DEFAULT=	OPENSSL RCNG
+RCNG_DESC=	"Install RC_NG script"
 
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	COPYING COPYRIGHT README
@@ -28,22 +29,24 @@ PLIST_FILES=	sbin/${PORTNAME} \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_RC_NG)
+.if ${PORT_OPTIONS:MRCNG}
 USE_RC_SUBR=	${PORTNAME}
 .endif
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ENV+=	"USE_SOCKET_SSL=yes"
 .endif
 
+BROKEN=	segfaults upon use
+
 pre-patch:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 post-patch:
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 	@${REINPLACE_CMD} 's|use_ssl = 0|use_ssl = 1|' ${WRKSRC}/${PORTNAME}.conf
 	@${REINPLACE_CMD} -e "s|^FLAGS =|FLAGS = ${CFLAGS}|" -e "s|^SSL =|SSL = ${LDFLAGS}|" \
 	    ${WRKSRC}/Makefile
@@ -54,7 +57,7 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.conf|${ETCDIR}/${PORTNAME}.conf|' \
 	    ${WRKSRC}/globals.h
-.if defined(WITH_RC_NG)
+.if ${PORT_OPTIONS:MRCNG}
 	@${REINPLACE_CMD} 's|runasdaemon = 0|runasdaemon = 1|' ${WRKSRC}/${PORTNAME}.conf
 .endif
 
