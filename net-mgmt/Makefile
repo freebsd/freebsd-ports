@@ -98,6 +98,7 @@
     SUBDIR += ipplan
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
+    SUBDIR += ipv6mon
     SUBDIR += irrtoolset
     SUBDIR += isic
     SUBDIR += jnettop

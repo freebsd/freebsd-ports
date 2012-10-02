@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+@unexec cmp -s %D/etc/ipv6mon.conf.dist %D/etc/ipv6mon.conf && rm -f %D/etc/ipv6mon.conf || true
+etc/ipv6mon.conf.dist
+@exec if [ ! -r %D/etc/ipv6mon.conf ]; then install -m 444 %D/etc/ipv6mon.conf.dist %D/etc/ipv6mon.conf; fi
+sbin/ipv6mon
