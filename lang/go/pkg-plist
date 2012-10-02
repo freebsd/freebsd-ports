@@ -3715,9 +3715,6 @@ go/test/zerodivide.go
 @dirrm go/include/plan9/386
 @dirrm go/include/plan9
 @dirrm go/include
-@dirrm go/doc/talks/io2011
-@dirrm go/doc/talks/io2010
-@dirrm go/doc/talks
 @dirrm go/doc/progs
 @dirrm go/doc/play
 @dirrm go/doc/gopher
