@@ -1,14 +1,10 @@
-# New ports collection makefile for:	csound
-# Date created:				2000-10-11
-# Whom:					trevor
-#
+# Created by: Trevor Johnson <trevor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	csound
-PORTVERSION=	5.17.11
+PORTVERSION=	5.18.02
 CATEGORIES=	audio lang
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.18/ \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
 DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -24,7 +20,7 @@ DIST_SUBDIR=	csound
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++ \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
 OPTIONS_DEFINE=	ALSA DSSI FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO FLTK
 OPTIONS_DEFAULT=FLTK
@@ -58,7 +54,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 SCONS_ARGS+=	useALSA=1
 PLIST_SUB+=	ALSA=""
 ALSA_H=		alsa/asoundlib.h
@@ -79,7 +75,7 @@ PLIST_SUB+=	DSSI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLUIDSYNTH}
-LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	fluidsynth:${PORTSDIR}/audio/fluidsynth
 PLIST_SUB+=	FLUIDSYNTH=""
 FLUIDSYNTH_H=	fluidsynth.h
 .else
@@ -88,7 +84,7 @@ FLUIDSYNTH_H=	##fluidsynth.h##
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 SCONS_ARGS+=	useJack=1
 PLIST_SUB+=	JACK=""
 .else
@@ -97,7 +93,7 @@ PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSC}
-LIB_DEPENDS+=	lo.7:${PORTSDIR}/audio/liblo
+LIB_DEPENDS+=	lo:${PORTSDIR}/audio/liblo
 SCONS_ARGS+=	useOSC=1
 PLIST_SUB+=	OSC=""
 .else
@@ -120,7 +116,7 @@ PORTAUDIO_R=	# empty
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSEAUDIO=""
 PULSEAUDIO_H=	pulse/simple.h
 .else
@@ -129,7 +125,7 @@ PULSEAUDIO_H=	##pulse/simple.h##
 .endif
 
 .if ${PORT_OPTIONS:MFLTK}
-LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 PLIST_SUB+=	FLTK=""
 SCONS_ARGS+=	buildCsound5GUI=1 buildCSEditor=1 buildWinsound=1 useFLTK=1
 .else
@@ -191,12 +187,13 @@ post-patch:
 		${WRKSRC}/InOut/rtpa.c
 	@${REINPLACE_CMD} -e "s|linux/if.h|sys/types.h|" \
 		${WRKSRC}/OOps/remote.c
-
+	@${REINPLACE_CMD} '1658,1659d' \
+		${WRKSRC}/SConstruct
 post-install:
 	@${LN} -sf libcsound64.so.5 ${PREFIX}/lib/libcsound64.so
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${ECHO_MSG} " Installing the manual."
+	@${ECHO_MSG} " Installing manual ${PORTVERSION}. "
 	@(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${DOCSDIR})
 	@${ECHO_MSG} " Done."
 .endif
