@@ -1,5 +1,5 @@
---- content/browser/zygote_host_impl_linux.cc.orig	2012-05-09 10:01:22.000000000 +0300
-+++ content/browser/zygote_host_impl_linux.cc	2012-05-20 02:32:55.863105935 +0300
+--- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2012-05-09 10:01:22.000000000 +0300
++++ content/browser/zygote_host/zygote_host_impl_linux.cc	2012-05-20 02:32:55.863105935 +0300
 @@ -92,7 +92,7 @@
    cmd_line.AppendSwitchASCII(switches::kProcessType, switches::kZygoteProcess);
  

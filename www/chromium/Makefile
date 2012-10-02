@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	21.0.1180.89
+DISTVERSION=	22.0.1229.79
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -170,10 +170,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
 		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
 
-pre-configure:
-	@${CP} -R ${WRKSRC}/third_party/libvpx/source/config/linux \
-		${WRKSRC}/third_party/libvpx/source/config/freebsd
-
 do-configure:
 	cd ${WRKSRC} && \
 		GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} \
@@ -185,8 +181,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/chrome.pak \
 		${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png \
 		${WRKSRC}/out/${BUILDTYPE}/resources.pak \
-		${WRKSRC}/out/${BUILDTYPE}/ui_resources_standard.pak \
-		${WRKSRC}/out/${BUILDTYPE}/theme_resources_standard.pak ${DATADIR}
+		${WRKSRC}/out/${BUILDTYPE}/content_resources.pak \
+		${WRKSRC}/out/${BUILDTYPE}/ui_resources_100_percent.pak \
+		${WRKSRC}/out/${BUILDTYPE}/theme_resources_100_percent.pak ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper \
 		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
 .for f in chrome libffmpegsumo.so mksnapshot protoc

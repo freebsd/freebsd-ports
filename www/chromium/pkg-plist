@@ -2,6 +2,7 @@ bin/chrome
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome.pak
+%%DATADIR%%/content_resources.pak
 %%DATADIR%%/libffmpegsumo.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
@@ -167,17 +168,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/spinnerInactiveSelected.gif
 %%DATADIR%%/resources/inspector/Images/splitviewDimple.png
 %%DATADIR%%/resources/inspector/Images/splitviewDividerBackground.png
-%%DATADIR%%/resources/inspector/Images/statusbarBackground.png
-%%DATADIR%%/resources/inspector/Images/statusbarBackgroundChromium.png
-%%DATADIR%%/resources/inspector/Images/statusbarBottomBackground.png
-%%DATADIR%%/resources/inspector/Images/statusbarBottomBackgroundChromium.png
 %%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs.png
-%%DATADIR%%/resources/inspector/Images/statusbarButtons.png
-%%DATADIR%%/resources/inspector/Images/statusbarButtonsChromium.png
-%%DATADIR%%/resources/inspector/Images/statusbarMenuButton.png
-%%DATADIR%%/resources/inspector/Images/statusbarMenuButtonChromium.png
-%%DATADIR%%/resources/inspector/Images/statusbarMenuButtonSelected.png
-%%DATADIR%%/resources/inspector/Images/statusbarMenuButtonSelectedChromium.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerHorizontal.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerVertical.png
 %%DATADIR%%/resources/inspector/Images/successGreenDot.png
@@ -236,10 +227,10 @@ bin/chrome
 %%DATADIR%%/resources/inspector/splitView.css
 %%DATADIR%%/resources/inspector/tabbedPane.css
 %%DATADIR%%/resources/inspector/textPrompt.css
-%%DATADIR%%/resources/inspector/textViewer.css
+%%DATADIR%%/resources/inspector/textEditor.css
 %%DATADIR%%/resources/inspector/timelinePanel.css
-%%DATADIR%%/theme_resources_standard.pak
-%%DATADIR%%/ui_resources_standard.pak
+%%DATADIR%%/theme_resources_100_percent.pak
+%%DATADIR%%/ui_resources_100_percent.pak
 %%DATADIR%%/xdg-settings
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/resources/inspector/Images
