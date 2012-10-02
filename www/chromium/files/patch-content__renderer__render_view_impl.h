@@ -1,6 +1,6 @@
---- content/renderer/render_view_impl.h.orig	2012-07-18 10:01:27.000000000 +0300
-+++ content/renderer/render_view_impl.h	2012-07-25 21:21:32.000000000 +0300
-@@ -341,12 +341,12 @@
+--- content/renderer/render_view_impl.h.orig	2012-09-25 16:01:33.000000000 +0300
++++ content/renderer/render_view_impl.h	2012-09-29 17:42:16.000000000 +0300
+@@ -344,12 +344,12 @@
    void SimulateImeConfirmComposition(const string16& text,
                                       const ui::Range& replacement_range);
  
@@ -15,16 +15,16 @@
    // Starts plugin IME.
    void StartPluginIme();
  
-@@ -788,7 +788,7 @@
-   FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, UpdateTargetURLWithInvalidURL);
+@@ -799,7 +799,7 @@
    FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest,
                             GetCompositionCharacterBoundsTest);
+   FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, OnNavigationHttpPost);
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_FREEBSD)
    FRIEND_TEST_ALL_PREFIXES(RenderViewTest, MacTestCmdUp);
  #endif
    FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, SetHistoryLengthAndPrune);
-@@ -1258,7 +1258,7 @@
+@@ -1271,7 +1271,7 @@
    bool cached_has_main_frame_horizontal_scrollbar_;
    bool cached_has_main_frame_vertical_scrollbar_;
  
