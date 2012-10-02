@@ -1,12 +1,7 @@
-# New ports collection makefile for:	p5-Net-CIDR
-# Date created:				Sep 02 2001
-# Whom:					Andy Sparrow
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-CIDR
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
