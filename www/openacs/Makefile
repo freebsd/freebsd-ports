@@ -14,8 +14,7 @@ EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A modular web application platform for communities
 
-LICENCE=	GPLv2
-LICENCE_FILE=	${WRKDIR}/license.txt
+LICENSE=	GPLv2
 
 DIST_REV_ID?=	3646409
 

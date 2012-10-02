@@ -13,7 +13,7 @@ COMMENT=	Free Open Computing Language (OpenCL) implementation for CPU
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:${PORTSDIR}/devel/libatomic_ops \
 		${LOCALBASE}/include/CL/opencl.h:${PORTSDIR}/devel/opencl
 
-LICENCE=	LGPL3
+LICENSE=	LGPL3
 
 WRKSRC=		${WRKDIR}/FreeOCL-${PORTVERSION}-Source
 

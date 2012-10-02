@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A library for editing command lines as they are typed
 
-LICENCE=	GPLv3
+LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

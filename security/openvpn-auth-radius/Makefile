@@ -18,7 +18,7 @@ COMMENT=	RADIUS authentication plugin for OpenVPN
 RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.bsd

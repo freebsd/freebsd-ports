@@ -17,8 +17,7 @@ COMMENT=	Track runtime library calls in dynamically linked programs
 
 LIB_DEPENDS=	elf:${PORTSDIR}/devel/libelf
 
-LICENCE=	GPLv2
-LICENCE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386
 

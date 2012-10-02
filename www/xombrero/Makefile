@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
-LICENCE=	ISCL
+LICENSE=	ISCL
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
