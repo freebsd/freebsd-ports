@@ -1,9 +1,5 @@
-# New ports collection makefile for: p5-Thread-Suspend
-# Date created: 2007-03-18
-# Whom: Ruben van Staveren
-#
+# Created by: Ruben van Staveren
 # $FreeBSD$
-#
 
 PORTNAME=	Thread-Suspend
 PORTVERSION=	1.21
@@ -12,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Thread
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ruben@verweg.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suspend and resume operations for threads
 
 RUN_DEPENDS=	p5-threads>=1.39:${PORTSDIR}/devel/p5-threads \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Thread-Cancel
-# Date created:				2007-03-18
-# Whom:					Ruben van Staveren
-#
+# Created by: Ruben van Staveren
 # $FreeBSD$
-#
 
 PORTNAME=	Thread-Cancel
 PORTVERSION=	1.13
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ruben@verweg.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cancel (i.e., kill) threads
 
 RUN_DEPENDS=	p5-threads>=1.34:${PORTSDIR}/devel/p5-threads
