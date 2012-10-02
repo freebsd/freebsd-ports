@@ -12,6 +12,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/api/client.pyc
 %%DATADIR%%/api/server.py
 %%DATADIR%%/api/server.pyc
+%%DATADIR%%/api_data.py
+%%DATADIR%%/api_data.pyc
 %%DATADIR%%/api_results.py
 %%DATADIR%%/api_results.pyc
 %%DATADIR%%/api_server.py
@@ -50,6 +52,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/bittorrent/stream.pyc
 %%DATADIR%%/browser.py
 %%DATADIR%%/browser.pyc
+%%DATADIR%%/browser_macos.py
+%%DATADIR%%/browser_macos.pyc
 %%DATADIR%%/browser_nt.py
 %%DATADIR%%/browser_nt.pyc
 %%DATADIR%%/browser_null.py
@@ -82,6 +86,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/database/table_log.pyc
 %%DATADIR%%/database/table_speedtest.py
 %%DATADIR%%/database/table_speedtest.pyc
+%%DATADIR%%/database_xxx.py
+%%DATADIR%%/database_xxx.pyc
 %%DATADIR%%/debug/__init__.py
 %%DATADIR%%/debug/__init__.pyc
 %%DATADIR%%/debug/objgraph.py
@@ -118,6 +124,10 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/main/common.pyc
 %%DATADIR%%/main/module.py
 %%DATADIR%%/main/module.pyc
+%%DATADIR%%/main_common.py
+%%DATADIR%%/main_common.pyc
+%%DATADIR%%/main_macos.py
+%%DATADIR%%/main_macos.pyc
 %%DATADIR%%/main_win32.py
 %%DATADIR%%/main_win32.pyc
 %%DATADIR%%/marshal.py
@@ -162,8 +172,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/rendezvous/geoip_wrapper.pyc
 %%DATADIR%%/rendezvous/server.py
 %%DATADIR%%/rendezvous/server.pyc
-%%DATADIR%%/rootdir.py
-%%DATADIR%%/rootdir.pyc
+%%DATADIR%%/resmon_linux.py
+%%DATADIR%%/resmon_linux.pyc
 %%DATADIR%%/runner_api.py
 %%DATADIR%%/runner_api.pyc
 %%DATADIR%%/runner_clnt.py
@@ -200,14 +210,14 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/speedtest/wrapper.pyc
 %%DATADIR%%/state.py
 %%DATADIR%%/state.pyc
-%%DATADIR%%/system/__init__.py
-%%DATADIR%%/system/__init__.pyc
-%%DATADIR%%/system/linux.py
-%%DATADIR%%/system/linux.pyc
-%%DATADIR%%/system/unix.py
-%%DATADIR%%/system/unix.pyc
-%%DATADIR%%/system/win32.py
-%%DATADIR%%/system/win32.pyc
+%%DATADIR%%/system.py
+%%DATADIR%%/system.pyc
+%%DATADIR%%/system_posix.py
+%%DATADIR%%/system_posix.pyc
+%%DATADIR%%/system_win32.py
+%%DATADIR%%/system_win32.pyc
+%%DATADIR%%/updater/__init__.py
+%%DATADIR%%/updater/__init__.pyc
 %%DATADIR%%/updater/unix.py
 %%DATADIR%%/updater/unix.pyc
 %%DATADIR%%/updater_install.py
@@ -216,14 +226,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/updater_runner.pyc
 %%DATADIR%%/updater_utils.py
 %%DATADIR%%/updater_utils.pyc
+%%DATADIR%%/updater_verify.py
+%%DATADIR%%/updater_verify.pyc
 %%DATADIR%%/updater_win32.py
 %%DATADIR%%/updater_win32.pyc
-%%DATADIR%%/utils/__init__.py
-%%DATADIR%%/utils/__init__.pyc
+%%DATADIR%%/utils.py
+%%DATADIR%%/utils.pyc
+%%DATADIR%%/utils_api.py
+%%DATADIR%%/utils_api.pyc
 %%DATADIR%%/utils_ctl.py
 %%DATADIR%%/utils_ctl.pyc
-%%DATADIR%%/utils_module.py
-%%DATADIR%%/utils_module.pyc
 %%DATADIR%%/utils_net.py
 %%DATADIR%%/utils_net.pyc
 %%DATADIR%%/utils_path.py
@@ -234,21 +246,23 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/utils_random.pyc
 %%DATADIR%%/utils_rc.py
 %%DATADIR%%/utils_rc.pyc
+%%DATADIR%%/utils_sysdirs.py
+%%DATADIR%%/utils_sysdirs.pyc
 %%DATADIR%%/utils_version.py
 %%DATADIR%%/utils_version.pyc
 %%DATADIR%%/viewer.py
 %%DATADIR%%/viewer.pyc
 %%DATADIR%%/viewer_webkit_gtk.py
 %%DATADIR%%/viewer_webkit_gtk.pyc
-%%DATADIR%%/www/bittorrent.html
 %%DATADIR%%/www/css/jquery.jqplot.css
 %%DATADIR%%/www/css/style.css
+%%DATADIR%%/www/descr/bittorrent.html
+%%DATADIR%%/www/descr/speedtest.html
 %%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/footer.html
 %%DATADIR%%/www/header.html
 %%DATADIR%%/www/img/header-web.png
 %%DATADIR%%/www/index.html
-%%DATADIR%%/www/js/bittorrent.js
 %%DATADIR%%/www/js/contrib.js
 %%DATADIR%%/www/js/excanvas.min.js
 %%DATADIR%%/www/js/i18n.js
@@ -265,8 +279,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/www/js/jquery.qtip.min.js
 %%DATADIR%%/www/js/log.js
 %%DATADIR%%/www/js/privacy.js
+%%DATADIR%%/www/js/results.js
 %%DATADIR%%/www/js/settings.js
-%%DATADIR%%/www/js/speedtest.js
 %%DATADIR%%/www/js/state.js
 %%DATADIR%%/www/js/update.js
 %%DATADIR%%/www/js/utils.js
@@ -275,17 +289,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/www/log.html
 %%DATADIR%%/www/not_running.html
 %%DATADIR%%/www/privacy.html
+%%DATADIR%%/www/results.html
 %%DATADIR%%/www/settings.html
-%%DATADIR%%/www/speedtest.html
 %%DATADIR%%/www/update.html
 @dirrm %%DATADIR%%/www/lang
 @dirrm %%DATADIR%%/www/js
 @dirrm %%DATADIR%%/www/img
+@dirrm %%DATADIR%%/www/descr
 @dirrm %%DATADIR%%/www/css
 @dirrm %%DATADIR%%/www
-@dirrm %%DATADIR%%/utils
 @dirrm %%DATADIR%%/updater
-@dirrm %%DATADIR%%/system
 @dirrm %%DATADIR%%/speedtest
 @dirrm %%DATADIR%%/simplejson
 @dirrm %%DATADIR%%/rendezvous
