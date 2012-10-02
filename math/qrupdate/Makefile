@@ -1,15 +1,11 @@
-# New ports collection makefile for:	qrupdate
-# Date created:		4 August 2009
-# Whom:			Robert Jenssen
-#
+# Created by: Robert Jenssen
 # $FreeBSD$
-#
 
 PORTNAME=	qrupdate
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qrupdate/qrupdate/1.1
+MASTER_SITE_SUBDIR=	qrupdate/qrupdate/1.2
 
 MAINTAINER=	robertjenssen@ozemail.com.au
 COMMENT=	Fortran library for fast updates of QR and Cholesky decomposition
