@@ -39,6 +39,7 @@ OPTIONS=	SLANG		"Build with SLang library" on \
 
 post-patch:
 	${REINPLACE_CMD} -e 's/SUBDIRS = intl/SUBDIRS =/' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's/saved_CPPFLAGS="-ltermcap/saved_CPPFLAGS="/' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
