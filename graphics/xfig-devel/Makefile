@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfig
-# Date created:		4 January 1995
-# Whom:			roberto
-#
+# Created by: roberto
 # $FreeBSD$
-#
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5.a5
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION:R}-alpha/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full
 
-MAINTAINER=	lesi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drawing program for X11 (Alpha version)
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
