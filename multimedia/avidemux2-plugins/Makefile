@@ -1,13 +1,9 @@
-# New ports collection makefile for:    avidemux2
-# Date created:         16 April 2003
-# Whom:                 Anish Mistry
-#                       with help from mean
+# Created by: Anish Mistry (with help from mean)
 # $FreeBSD$
-#
 
 PORTNAME=	avidemux2
 PORTVERSION=	${AVIDEMUX2_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-plugins
 
