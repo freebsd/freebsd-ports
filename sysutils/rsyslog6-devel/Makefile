@@ -1,12 +1,7 @@
-# New ports collection makefile for: rsyslog6-devel
-# Date created:     29 December 2008
-# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rsyslog
-PORTVERSION=	6.3.12
+PORTVERSION=	6.5.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
@@ -21,7 +16,8 @@ USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
-		sysinfo:${PORTSDIR}/devel/libsysinfo
+		sysinfo:${PORTSDIR}/devel/libsysinfo \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6-devel
@@ -92,10 +88,6 @@ post-install:
 .endif
 
 .ifdef MNAME
-
-.if ${MNAME} == "snmp" && ${ARCH} == "i386" && ${OSVERSION} >= 800000
-BROKEN=		Does not link on i386: can't find symbol snmp_timeout in libnetsnmp
-.endif
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
