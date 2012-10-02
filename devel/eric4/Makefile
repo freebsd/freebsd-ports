@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/eric4
-# Date created:				21 Apr 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
