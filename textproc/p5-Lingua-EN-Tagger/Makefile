@@ -1,12 +1,8 @@
-# New ports collection makefile for:    p5-Lingua-EN-Tagger
-# Date created:				Tue Dec 30 16:56:56 CST 2003
-# Whom:	      				Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-EN-Tagger
-PORTVERSION=	0.20
+PORTVERSION=	0.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
