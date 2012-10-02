@@ -7,6 +7,7 @@
 
 PORTNAME=	xorp
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www2.xorp.org/releases/${PORTVERSION}/	\
