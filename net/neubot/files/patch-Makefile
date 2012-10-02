@@ -1,11 +1,13 @@
---- Makefile.orig	2012-02-27 14:03:46.000000000 +0100
-+++ Makefile	2012-03-03 14:50:51.000000000 +0100
-@@ -133,7 +133,7 @@
+--- Makefile.orig	2012-09-06 13:17:06.000000000 +0200
++++ Makefile	2012-10-01 21:54:58.000000000 +0200
+@@ -138,8 +138,8 @@
  # [2] http://bit.ly/ayYyAR (debian.org)
  #
  DESTDIR =
 -SYSCONFDIR = /etc
+-LOCALSTATEDIR = $(python neubot/utils_sysdirs.py LOCALSTATEDIR)
 +SYSCONFDIR = $(PREFIX)/etc
- LOCALSTATEDIR = /var/neubot
++LOCALSTATEDIR != (python neubot/utils_sysdirs.py LOCALSTATEDIR)
  PREFIX = /usr/local
  BINDIR = $(PREFIX)/bin
+ DATADIR = $(PREFIX)/share

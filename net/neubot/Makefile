@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neubot
-PORTVERSION=	0.4.12
+PORTVERSION=	0.4.14
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
@@ -38,8 +38,7 @@ PLIST_SUB+=	STATEDIR=${STATEDIR}
 PKGMESSAGE=	${WRKDIR}/pkg_message
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|;s|/var/neubot|${STATEDIR}|' \
-		${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${MAKEFILE}
 
 post-install:
 .if !defined(NOPORTDOCS)
