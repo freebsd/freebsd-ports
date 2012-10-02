@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121002:
+  AFFECTS: users of devel/clanlib
+  AUTHOR: jhale@FreeBSD.org
+
+  devel/clanlib has been updated to 2.3.6 and the legacy version has been
+  moved to devel/clanlib1 and updated to 1.0.0.  Although both versions
+  may be installed at the same time, you should update your port origins
+  first since many ports that depend on clanlib will not work with the
+  new version.
+ 
+  Update your port origins as follows:
+
+  # portmaster -o devel/clanlib1 devel/clanlib
+  or
+  # portupgrade -fo devel/clanlib1 devel/clanlib
+  or
+  # pkg set -o devel/clanlib:devel/clanlib1
+
 20120928:
   AFFECTS: users of mail/maildrop
   AUTHOR: madpilot@FreeBSD.org

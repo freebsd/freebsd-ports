@@ -1,13 +1,9 @@
-# New ports collection makefile for:    openalchemist
-# Date created:     Sat Oct 01 09:30:00 UTC 2003
-# Whom:         Ganael LAPLANCHE <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openalchemist
 PORTVERSION=	0.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -22,7 +18,7 @@ LICENSE_FILE_CCbySA=	${WRKSRC}/GRAPHICS-LICENSE
 LICENSE_PERMS_CCbySA=	${_LICENSE_PERMS_DEFAULT}
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib \
+LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1 \
 	jpeg:${PORTSDIR}/graphics/jpeg \
 	png15:${PORTSDIR}/graphics/png
 
@@ -43,7 +39,8 @@ PORTDOCS=	AUTHORS ChangeLog README TODO
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|^%|#|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -E -e 's|0.8|1.0|g' -e 's|^%|#|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -E -e 's|0.8|1.0|g' ${WRKSRC}/build/Makefile.am
 	@${REINPLACE_CMD} -E -e 's|^dist_pkgdata_DATA =.*|dist_pkgdata_DATA = data/* skins/aqua.zip skins/brushed.zip skins/vectoriel.zip|g' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -E -e 's|^#!/usr/bin/python|#!${LOCALBASE}/bin/python|g' ${WRKSRC}/openalchemist-config
 
