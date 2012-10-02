@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTVERSION=	3.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,7 +31,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=90 \
+		OSG_SHLIBVER=93 \
 		OPENTHREADS_VERSION=2.6.0 \
 		OPENTHREADS_SHLIBVER=12
 
