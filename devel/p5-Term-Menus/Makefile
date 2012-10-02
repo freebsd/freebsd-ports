@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Term-Menus
-# Date created:		2006-08-01
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Menus
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:REEDFISH
