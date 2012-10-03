@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oleo
-# Date created:		3 September 1994
-# Whom:			mr
-#
+# Created by: mr
 # $FreeBSD$
-#
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
@@ -25,12 +21,11 @@ CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 INFO=		oleo
 PORTDOCS=	AUTHORS FAQ
 
-OPTIONS=	MOTIF "Motif support" off \
-		NLS "NLS support" on
+OPTIONS_DEFINE=	MOTIF NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MOTIF)
+.if ${PORT_OPTIONS:MMOTIF}
 LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
 		Xbae:${PORTSDIR}/x11-toolkits/xbae \
 		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
@@ -41,12 +36,12 @@ USE_XORG=	xt ice sm
 CONFIGURE_ARGS+=	--without-motif
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
 .endif
 
 post-patch:
@@ -68,4 +63,4 @@ pre-build:
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
