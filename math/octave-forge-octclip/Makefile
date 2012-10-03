@@ -1,13 +1,8 @@
-# New ports collection makefile for:	octave-forge-octclip
-# Date created:		13 Janurary 2011
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-octclip
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.0.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
