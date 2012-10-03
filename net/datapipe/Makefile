@@ -1,9 +1,5 @@
-# New ports collection makefile for:	datapipe
-# Date created:		04 January 2000
-# Whom:			Daniel Baker <dbaker@FreeBSD.org> <dbaker@cuckoo.com>
-#
+# Created by: Daniel Baker <dbaker@FreeBSD.org> <dbaker@cuckoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	datapipe
 PORTVERSION=	1.0
@@ -17,16 +13,18 @@ COMMENT=	Bind a local port and connect it to a remote socket
 
 PLIST_FILES=	bin/datapipe
 
-OPTIONS=	REUSEADDR    "Reuse the listening socket address"  on \
-		NOFORK       "Do not fork and background" off
+OPTIONS_DEFINE=	REUSEADDR NOFORK
+OPTIONS_DEDFAULT=	REUSEADDA
+REUSEADDR_DESC=	Reuse the listening socket address
+NOFORK_DESC=	Do not fork and background
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_REUSEADDR)
+.if ${PORT_OPTIONS:MREUSEADDR}
 CFLAGS+=	-DDATAPIPE_REUSEADDR
 .endif
 
-.if defined(WITH_NOFORK)
+.if ${PORT_OPTIONS:MNOFORK}
 CFLAGS+=	-DDATAPIPE_NOFORK
 PKGNAMESUFFIX+=-nofork
 .endif
