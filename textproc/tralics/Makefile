@@ -1,23 +1,24 @@
 # Created by: siasia
 # $FreeBSD$
 
-PORTNAME=      tralics
-PORTVERSION=   2.13.7
-CATEGORIES=    textproc
-MASTER_SITES=  ftp://ftp-sop.inria.fr/apics/tralics-src/
-DISTNAME=      $(PORTNAME)-src-$(PORTVERSION)
+PORTNAME=	tralics
+PORTVERSION=	2.14.5
+DISTVERSIONPREFIX=	src-
+CATEGORIES=	textproc
+MASTER_SITES=	ftp://ftp-sop.inria.fr/marelle/tralics/src/
 
-MAINTAINER=    ports@FreeBSD.org
-COMMENT=       LaTeX to XML translator
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	LaTeX to XML translator
 
-NO_INSTALL_MANPAGES=yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-WRKSRC=        $(WRKDIR)/$(PORTNAME)-$(PORTVERSION)/src
-ALL_TARGET=    tralics
+MAKE_ARGS=	CC="${CXX}" CXX="${CXX}" CPPFLAGS="${CXXFLAGS}"
+ALL_TARGET=	${PORTNAME}
+MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=   bin/tralics
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/tralics $(PREFIX)/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
 
 .include <bsd.port.mk>
