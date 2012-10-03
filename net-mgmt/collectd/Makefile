@@ -1,13 +1,9 @@
-# New ports collection makefile for:	collectd
-# Date created:				Sat Sep 29 05:19:31 PDT 2007
-# Whom:					Matt Peterson <matt@peterson.org>
-#
+# Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
-#
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -239,7 +235,7 @@ PLIST_SUB+=	DISK="@comment "
 
 .if ${PORT_OPTIONS:MGCRYPT}
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
-LIB_DEPENDS+=	gcrypt8:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .endif
 
 .if ${PORT_OPTIONS:MNUTUPS}
