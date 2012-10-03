@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	knot
-PORTVERSION=	1.1.0r2
+PORTVERSION=	1.1.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://public.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
-DISTNAME=	${PORTNAME}-1.1.0-rc2
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Knot DNS is a high performance authoritative-only DNS server
