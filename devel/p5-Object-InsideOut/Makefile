@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Object-InsideOut
-# Date created:				15 January 2006
-# Whom:					Geraud Continsouzas <geraud@gcu.info>
-#
+# Created by: Geraud Continsouzas <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	3.95
+PORTVERSION=	3.96
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
