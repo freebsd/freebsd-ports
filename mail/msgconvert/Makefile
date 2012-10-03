@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msgconvert
-# Date created:				12 Jan 2003
-# Whom:					Franz Klammer <klammer@webonaut.com>
-#
+# Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#
 
 PORTNAME=	msgconvert
 PORTVERSION=	20060330

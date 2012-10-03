@@ -1,9 +1,5 @@
-# New ports collection makefile for:	png2ico
-# Date created:				23 Sep 2002
-# Whom:					Franz Klammer <klammer@webonaut.com>
-#
+# Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#
 
 PORTNAME=	png2ico
 PORTVERSION=	2002.12.08
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.winterdrache.de/freeware/png2ico/data/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	klammer@webonaut.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts PNG files to Windows icon resource files
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

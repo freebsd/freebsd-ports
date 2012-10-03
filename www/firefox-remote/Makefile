@@ -1,9 +1,5 @@
-# New ports collection makefile for:	firefox-remote
-# Date created:				13 May 2004
-# Whom:					Franz Klammer <klammer@webonaut.com>
-#
+# Created by:					Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#
 
 PORTNAME=	firefox
 PORTVERSION=	20040803
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-remote
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	klammer@webonaut.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper scripts for firefox web browser
 
 USE_BZIP2=	yes
