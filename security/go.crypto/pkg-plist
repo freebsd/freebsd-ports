@@ -1,16 +1,30 @@
 @comment $FreeBSD$
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/bcrypt.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/blowfish.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/bn256.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/cast5.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/curve25519.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/md4.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl/box.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl/secretbox.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ocsp.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp/armor.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp/elgamal.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp/errors.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp/packet.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp/s2k.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/otr.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/pbkdf2.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/poly1305.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ripemd160.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20/salsa.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/scrypt.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ssh.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/twofish.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/xtea.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/xts.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt/base64.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt/bcrypt.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt/bcrypt_test.go
@@ -18,6 +32,16 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/blowfish_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/cipher.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/const.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/bn256.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/bn256_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/constants.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/curve.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/gfp12.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/gfp2.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/gfp6.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/optate.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256/twist.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5/cast5.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5/cast5_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/const_amd64.s
@@ -33,6 +57,10 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4block.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/box/box.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/box/box_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/secretbox/secretbox.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/secretbox/secretbox_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp/ocsp.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp/ocsp_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor/armor.go
@@ -76,12 +104,34 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k/s2k_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/write.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/write_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/otr/libotr_test_helper.c
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/otr/otr.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/otr/otr_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/otr/smp.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2/pbkdf2.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2/pbkdf2_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/const_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/poly1305.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/poly1305_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/poly1305_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/sum_amd64.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/sum_ref.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160/ripemd160.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160/ripemd160_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160/ripemd160block.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa/hsalsa20.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa/salsa2020_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa/salsa208.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa/salsa20_amd64.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa/salsa20_ref.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa/salsa_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa20.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa20_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt/scrypt.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt/scrypt_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/buffer.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/buffer_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/certs.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/channel.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/cipher.go
@@ -100,7 +150,6 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/messages_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server_terminal.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/tcpip.go
@@ -115,15 +164,26 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/block.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/cipher.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/xtea_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/xts/xts.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/xts/xts_test.go
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl
 @dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_LIBDIR%%/code.google.com/p
 @dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/xts
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/otr
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/errors
@@ -132,9 +192,13 @@
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/secretbox
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/box
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
