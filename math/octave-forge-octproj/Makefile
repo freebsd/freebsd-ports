@@ -1,13 +1,8 @@
-# New ports collection makefile for:	octave-forge-octproj
-# Date created:		5 June 2010
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-octproj
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
