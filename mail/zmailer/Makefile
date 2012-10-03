@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zmailer
-# Date created:		4 January 1999
-# Whom:			Alex Perel <veers@disturbed.net>
-#
+# Created by: Alex Perel <veers@disturbed.net>
 # $FreeBSD$
-#
 
 PORTNAME=	zmailer
 PORTVERSION=	2.99.57
@@ -16,22 +12,23 @@ COMMENT=	Fully functional fast robust SMTP server and transport agent
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
 
-OPTIONS=	SSL "Enable SSL support" ON
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 900007
-EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
-.endif
-
-.if defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS=	--without-openssl
 .else
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS=	--with-openssl
+.endif
+
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
 .endif
 
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
@@ -84,4 +81,4 @@ post-install:
 	@${ECHO_CMD} 'mydomain=$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
