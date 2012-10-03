@@ -1,18 +1,14 @@
-# New Ports collection makefile for:	viewnior
-# Date created:		2012-04-20
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	viewnior
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/xsisqox/Viewnior/
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Viewnior is a fast and simple image viewer
+COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
 
@@ -30,7 +26,6 @@ MAN1=		viewnior.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	NLS
-NLS_DESC=	Native Language Support via gettext
 OPTIONS_DEFAULT=	NLS
 
 .include <bsd.port.options.mk>
@@ -45,12 +40,9 @@ PLIST_SUB+=	NLS="@comment "
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
