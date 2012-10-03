@@ -22,7 +22,7 @@ LINUX_DESC=	Install Linux binary too (linux-w_scan)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-PATCH_STRIP=	-p1
+PATCH_STRIP=	-lp1
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I"${LOCALBASE}/include"
 LDFLAGS+=	-L"${LOCALBASE}/lib\ -liconv"
