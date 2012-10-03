@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/fox16
-# Date created:		28 Jul 2005
-# Whom:			Alexander Novitsky <alecn2002@yandex.ru>
-#
+# Created by: Alexander Novitsky <alecn2002@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
@@ -36,60 +32,57 @@ MAN1=		shutterbug.1 reswrap.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	XFT	"Enable Xft support" on \
-		SHM	"Enable Shared Memory support" on \
-		CUPS	"Enable CUPS support" off \
-		DEBUG	"Build with DEBUG support" off \
-		FOX_APPLICATIONS	"Install sample applications" off \
-		OPTIMIZED_CXXFLAGS	"Enable additional optimizations" off \
-		PROFILING	"Build with PROFILING support" off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS CUPS DEBUG APPS PROFILE SHM XFT
+OPTIONS_DEFAULT=SHM XFT
+APPS_DESC=	Install sample applications
+SHM_DESC=	Shared Memory support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ##
 ## Additional Options
 ##
 #
-.if defined(WITHOUT_XFT)
-CONFIGURE_ARGS+=	--with-xft=no
-.else
+.if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS+=	--with-xft=yes
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
-.endif
-#
-.if defined(WITHOUT_SHM)
-CONFIGURE_ARGS+=	--with-xshm=no
 .else
-CONFIGURE_ARGS+=	--with-xshm=yes
+CONFIGURE_ARGS+=	--with-xft=no
 .endif
 #
-.if defined(WITH_CUPS)
+.if ${PORT_OPTIONS:MSHM}
+CONFIGURE_ARGS+=	--with-xshm=yes
+.else
+CONFIGURE_ARGS+=	--with-xshm=no
+.endif
+#
+.if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 #
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .else
 CONFIGURE_ARGS+=	--enable-release
 .endif
 #
-.if defined(WITH_FOX_APPLICATIONS)
+.if ${PORT_OPTIONS:MAPPS}
 MAN1+=		PathFinder.1 adie.1 calculator.1
 PLIST_SUB+=	APPS=""
 .else
 PLIST_SUB+=	APPS="@comment "
 .endif
 #
-.if defined(WITH_OPTIMIZED_CXXFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 # turn distribution-recommended optimization flags back on
 CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fexpensive-optimizations
-.if !defined(WITH_PROFILING)	# Incompatible with profiling flags
+.if ${PORT_OPTIONS:MPROFILE} == "" # Incompatible with profiling flags
 CXXFLAGS+=	-fomit-frame-pointer
 .endif
 .endif
 #
-.if defined(WITH_PROFILING)
+.if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
 
@@ -111,12 +104,12 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^(screenshotsdir).*$$|\1=${DOCSDIR}/html|' \
 		${WRKSRC}/doc/screenshots/Makefile.in
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS} == ""
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s/ doc//' \
 		${WRKSRC}/Makefile.in
 .endif
-.if !defined(WITH_FOX_APPLICATIONS)
+.if ${PORT_OPTIONS:MAPPS} == ""
 	@${REINPLACE_CMD} -E -e \
 		's,^(SUBDIRS.*)adie,\1,; \
 		s,^(SUBDIRS.*)pathfinder,\1,; \
@@ -124,4 +117,4 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
