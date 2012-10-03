@@ -1,18 +1,15 @@
-# New ports collection makefile for:	sqlmap
-# Date created:		2008-05-21
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlmap
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/sqlmapproject/sqlmap/downloads/ \
 		SF
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	An automatic SQL injection tool
+COMMENT=	Automatic SQL injection tool
 
 LICENSE=	GPLv2
 
@@ -23,16 +20,18 @@ SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
-OPTIONS=	MSF "Enable Metasploit Framework integration" off
+OPTIONS_DEFINE=	MSF
+MSF_DESC=	Enable Metasploit Framework integration
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MSF)
+.if  ${PORT_OPTIONS:MMSF}
 RUN_DEPENDS+=	${LOCALBASE}/bin/msfcli:${PORTSDIR}/security/metasploit
 .endif
 
 post-patch:
 	(cd ${WRKSRC} && ${RM} -rf `${FIND} . -type d -name .svn`)
+	@${RM} -f ${WRKSRC}/lib/core/settings.py.orig
 	@${GREP} -lr '/usr/bin/env python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -i "" \
 		-e "s!/usr/bin/env python!${PYTHON_CMD}!"
@@ -47,7 +46,7 @@ do-build:
 .endfor
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if  ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for F in AUTHORS ChangeLog README.html README.pdf THANKS
 	${INSTALL_DATA} ${WRKDIR}/build/doc/${F} ${DOCSDIR}/
