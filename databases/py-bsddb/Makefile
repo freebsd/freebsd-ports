@@ -20,6 +20,7 @@ COMMENT=	Python bindings to the Berkeley DB library
 USE_BDB=	yes
 USE_PYTHON?=	yes
 USE_PYDISTUTILS=yes
+USE_XZ=		yes
 PYDISTUTILS_PKGNAME=	_bsddb
 PYDISTUTILS_PKGVERSION=	0.0.0
 DIST_SUBDIR=	python
