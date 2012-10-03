@@ -1,12 +1,8 @@
-# New ports collection makefile for:	openx
-# Date created:		13 March 2008
-# Whom:			Piotr Rybicki <meritus@innervision.pl>
-#
+# Created by: Piotr Rybicki <meritus@innervision.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	openx
-PORTVERSION=	2.8.9
+PORTVERSION=	2.8.10
 CATEGORIES=	www
 MASTER_SITES=	http://download.openx.org/
 
