@@ -30,6 +30,14 @@ PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portmaster
 .endif
 
+.if defined(WITH_PKGNG)
+PKG_LIST=	${PKG_BIN} query -a '%n-%v'
+PKG_LIST_FILES=	${PKG_INFO} -l
+.else
+PKG_LIST=	${PKG_INFO} -Ea
+PKG_LIST_FILES=	${PKG_INFO} -L
+.endif
+
 upgrade-site-packages:
 	@if [ ! -x ${PORTUPGRADE_CMD} ]; then \
 		${ECHO_MSG} "Please install ports-mgmt/portupgrade."; \
@@ -41,8 +49,8 @@ upgrade-site-packages:
 		GREP_ARGS="$${GREP_ARGS} -e lib/python$$ver"; \
 	done; \
 	UPD=""; \
-	for pkg in `${PKG_INFO} -Ea`; do \
-		${PKG_INFO} -L $${pkg} | ${GREP} $${GREP_ARGS} && \
+	for pkg in `${PKG_LIST}`; do \
+		${PKG_LIST_FILES} $${pkg} | ${GREP} $${GREP_ARGS} && \
 			UPD="$${UPD} $${pkg}"; \
 	done; \
 	if [ "$${UPD}" ]; then \
