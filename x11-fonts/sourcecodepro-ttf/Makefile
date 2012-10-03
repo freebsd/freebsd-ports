@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sourcecodepro-ttf
-PORTVERSION=	1.009
+PORTVERSION=	1.010
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcecodepro.adobe
 DISTNAME=	SourceCodePro_FontsOnly-${PORTVERSION}
@@ -35,12 +35,12 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
 do-build:
-	cd ${WRKSRC}/ && ${MKFONTSCL_CMD}
-	cd ${WRKSRC}/ && ${MKFONTDIR_CMD}
+	cd ${WRKSRC}/TTF/ && ${MKFONTSCL_CMD}
+	cd ${WRKSRC}/TTF/ && ${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${FONTDIR}
-	cd ${WRKSRC}/ &&	\
+	cd ${WRKSRC}/TTF/ &&	\
 	${INSTALL_DATA} ${INSTDAT} *.ttf ${FONTDIR}
 
 post-install:
