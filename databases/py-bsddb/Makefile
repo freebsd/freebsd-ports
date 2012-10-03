@@ -1,9 +1,5 @@
-# New ports collection makefile for:    py-bsddb
-# Date created:         31 July 2003
-# Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bsddb
 PORTVERSION=	${PYTHON_PORTVERSION}
@@ -39,15 +35,9 @@ IGNORE=	bsddb package was removed from core standard library since 3.0, use data
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
 
-.if ${PYTHON_REL} < 260
-BSDDB_PATCH=	_bsddb.c
-.else
-BSDDB_PATCH=	bsddb.h
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e \
 		's,^\(#include.*\)\(db\.h.*\)$$,\1${BDB_INCLUDE_DIR}/\2,' \
-		${WRKSRC}/${BSDDB_PATCH}
+		${WRKSRC}/bsddb.h
 
 .include <bsd.port.post.mk>
