@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="ipv6mon"
-rcvar=$name
+rcvar="${name}_enable"
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 required_files="%%PREFIX%%/etc/${name}.conf"
