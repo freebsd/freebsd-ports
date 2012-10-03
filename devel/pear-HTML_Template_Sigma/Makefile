@@ -1,15 +1,11 @@
-# Ports collection makefile for:  pear-HTML_Template_Sigma
-# Date created:			  21 July 2005
-# Whom:				  Franz Klammer <klammer@webonaut.com>
-#
+# Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML_Template_Sigma
 PORTVERSION=	1.1.6
 CATEGORIES=	devel www pear
 
-MAINTAINER=	klammer@webonaut.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR template API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

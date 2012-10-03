@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtstarter
-# Date created:				15 April 2004
-# Whom:					Franz Klammer <klammer@webonaut.com>
-#
+# Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gtstarter
 PORTVERSION=	0.4.6.3
@@ -11,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
-MAINTAINER=	klammer@webonaut.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Start gnome-terminal from a list of configured profiles (incl. Applet)
 
 USE_BZIP2=	yes
