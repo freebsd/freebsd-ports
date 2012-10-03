@@ -1,28 +1,26 @@
-# New ports collection makefile for:	youtube_dl
-# Date created:		2006-08-12
-# Whom:			Pankov Pavel <pankov_p@mail.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2012.02.27
+PORTVERSION=	2012.09.27
 CATEGORIES=	www
-MASTER_SITES=	https://raw.github.com/rg3/youtube-dl/${PORTVERSION}/ \
+MASTER_SITES=	GH \
 		CRITICAL
-DISTNAME=	youtube-dl
+
 EXTRACT_SUFX=	# empty
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A program for downloading videos from YouTube.com
 
 LICENSE=	GPLv2
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-USE_PYTHON_RUN=	2.5-2.7
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
+USE_PYTHON_RUN=	2.6-2.7
+ALL_TARGET=	compile
+USE_GITHUB=	yes
+GH_ACCOUNT=	rg3
+GH_PROJECT=	youtube-dl
+GH_COMMIT=	b5de8af
 
 PLIST_FILES=	bin/youtube-dl
 
@@ -43,9 +41,6 @@ RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg-devel
 RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg
 . endif
 .endif
-
-post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
