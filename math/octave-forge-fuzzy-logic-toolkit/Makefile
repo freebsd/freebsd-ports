@@ -1,12 +1,8 @@
-# New ports collection makefile for:	octave-forge-fuzzy-logic-toolkit
-# Date created:		13 Janurary 2011
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by:	Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-fuzzy-logic-toolkit
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
