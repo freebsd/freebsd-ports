@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gnu-radius
-# Date created:		13 Jul 2001
-# Whom:			lance@evitel.net
-#
+# Created by: lance@evitel.net
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
@@ -37,13 +34,10 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 CONFIGURE_ARGS+=--with-include-path="${LOCALBASE}/include/" \
 		--with-lib-path="${LOCALBASE}/lib/"
 
-OPTIONS=	CLIENT "Enable build client" off \
-		DBM "Enable DBM support" off \
-		MYSQL "Enable MySQL support" on \
-		POSTGRESQL "Enable PostgreSQL support" off \
-		SNMP "Enable SNMP support" off \
-		EMACS "Enable emacs dotfiles install" off \
-		PAM "Enable PAM support" off
+OPTIONS_DEFINE=	CLIENT DBM MYSQL PGSQL SNMP EMACS PAM
+OPTIONS_DEFAULT=MYSQL
+CLIENT_DESC=	Build client
+EMACS_DESC=	Install Emacs dotfiles
 
 CONFIG_FILES=	access.deny client.conf clients config dictionary \
 		hints huntgroups naslist nastypes realms \
@@ -51,17 +45,17 @@ CONFIG_FILES=	access.deny client.conf clients config dictionary \
 EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 		filter.rw hints-0.96 jetstream.rw nt.rw pam.conf radius.php
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900007
 EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 CONFIGURE_ARGS+=--enable-snmp
 .endif
 
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=--enable-client
 PLIST_SUB+=	CLIENT=""
@@ -70,7 +64,7 @@ CONFIGURE_ARGS+=--without-guile
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql
 PLIST_SUB+=	MYSQL=""
@@ -78,7 +72,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-postgres
 PLIST_SUB+=	PGSQL=""
@@ -86,17 +80,17 @@ PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_MYSQL) || defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL}
 PLIST_SUB+=	MODULES=""
 .else
 PLIST_SUB+=	MODULES="@comment "
 .endif
 
-.if defined(WITH_DBM)
+.if ${PORT_OPTIONS:MDBM}
 CONFIGURE_ARGS+=--enable-dbm=ndbm
 .endif
 
-.if defined(WITH_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 USE_EMACS=	yes
 CONFIGURE_ARGS+=--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
@@ -106,15 +100,15 @@ CONFIGURE_ARGS+=--without-lispdir
 PLIST_SUB+=	EMACS="@comment "
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=--enable-pam
 .endif
 
@@ -137,4 +131,4 @@ post-install:
 	${PREFIX}/etc/raddb/${conf_file}-dist ${PREFIX}/etc/raddb/${conf_file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
