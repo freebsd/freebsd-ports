@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fox
-# Date created:		23 Feb 2000
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
@@ -21,7 +17,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	fox-1.6.* fox-1.7.*
+#CONFLICTS=	fox-1.6.* fox-1.7.*
 
 LATEST_LINK=	fox14
 
@@ -40,60 +36,57 @@ MAN1=		shutterbug.1 reswrap.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	OPTIMIZED_CXXFLAGS "Enable additional optimizations" off \
-		CUPS "Enable CUPS support" off \
-		DEBUG "Build with DEBUG support" off \
-		FOX_APPLICATIONS "Install sample applications" off \
-		PROFILING "Build with PROFILING support" off \
-		SHM "Enable Shared Memory support" on \
-		XFT "Enable Xft support" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS CUPS DEBUG APPS PROFILE SHM XFT
+OPTIONS_DEFAULT=SHM XFT
+APPS_DESC=	Install sample applications
+SHM_DESC=	Shared Memory support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ##
 ## Additional Options
 ##
 #
-.if defined(WITHOUT_XFT)
-CONFIGURE_ARGS+=	--with-xft=no
-.else
+.if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS+=	--with-xft=yes
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
-.endif
-#
-.if defined(WITHOUT_SHM)
-CONFIGURE_ARGS+=	--with-xshm=no
 .else
-CONFIGURE_ARGS+=	--with-xshm=yes
+CONFIGURE_ARGS+=	--with-xft=no
 .endif
 #
-.if defined(WITH_CUPS)
+.if ${PORT_OPTIONS:MSHM}
+CONFIGURE_ARGS+=	--with-xshm=yes
+.else
+CONFIGURE_ARGS+=	--with-xshm=no
+.endif
+#
+.if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups
 .endif
 #
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .else
 CONFIGURE_ARGS+=	--enable-release
 .endif
 #
-.if defined(WITH_FOX_APPLICATIONS)
+.if ${PORT_OPTIONS:MAPPS}
 MAN1+=		PathFinder.1 adie.1 calculator.1
 PLIST_SUB+=	APPS=""
 .else
 PLIST_SUB+=	APPS="@comment "
 .endif
 #
-.if defined(WITH_OPTIMIZED_CXXFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 # turn distribution-recommended optimization flags back on
 CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
 .endif
 #
-.if defined(WITH_PROFILING)
+.if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
 
@@ -114,12 +107,12 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^(screenshotsdir).*$$|\1=${DOCSDIR}/html|' \
 		${WRKSRC}/doc/screenshots/Makefile.in
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS} == ""
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s/ doc//' \
 		${WRKSRC}/Makefile.in
 .endif
-.if !defined(WITH_FOX_APPLICATIONS)
+.if ${PORT_OPTIONS:MAPPS} == ""
 	@${REINPLACE_CMD} -E -e \
 		's,^(SUBDIRS.*)adie,\1,; \
 		s,^(SUBDIRS.*)pathfinder,\1,; \
@@ -127,4 +120,4 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
