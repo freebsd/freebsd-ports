@@ -1,7 +1,4 @@
-# New ports collection makefile for:            lucene
-# Date created:         02 Jan 2008
-# Whom:         Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by:		Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 #
 # Please don't forget to bump the version in py-lucene if this changes!
@@ -13,7 +10,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-text search engine for Java
 
 LICENSE=	AL2

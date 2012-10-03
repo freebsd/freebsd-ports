@@ -1,9 +1,4 @@
-# New ports collection makefile for:	vnc2flv
-# Date created:		December 23 2010
-# Whom:			Jason Helfman <jhelfman@experts-exchange.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	vnc2flv
 PORTVERSION=	20100207
@@ -13,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=	source/v/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Captures a VNC desktop session and saves as a flv
 
 .if empty(PORT_OPTIONS:MX11)

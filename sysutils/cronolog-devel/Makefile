@@ -1,9 +1,4 @@
-# New ports collection makefile for:   cronolog-beta
-# Date created:        10 November 2010
-# Whom:                Jason Helfman <jhelfman@experts-exchange.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cronolog
 PORTVERSION=	1.7.0
@@ -12,7 +7,7 @@ MASTER_SITES=	http://cronolog.org/patches/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web log rotation utility that provides datestamp filenames
 
 PLIST_FILES=	sbin/cronolog \
