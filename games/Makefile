@@ -595,6 +595,7 @@
     SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe
+    SUBDIR += netwalk
     SUBDIR += neverball
     SUBDIR += newvox
     SUBDIR += nextgo
