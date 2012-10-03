@@ -14,7 +14,7 @@ COMMENT=	Bind a local port and connect it to a remote socket
 PLIST_FILES=	bin/datapipe
 
 OPTIONS_DEFINE=	REUSEADDR NOFORK
-OPTIONS_DEDFAULT=	REUSEADDA
+OPTIONS_DEFAULT=	REUSEADDR
 REUSEADDR_DESC=	Reuse the listening socket address
 NOFORK_DESC=	Do not fork and background
 
