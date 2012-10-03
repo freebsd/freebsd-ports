@@ -1,14 +1,9 @@
-# New ports collection makefile for:	midori
-# Date created:		2007-10-21
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/midori/Makefile,v 1.21 2010/04/05 21:56:26 kwm Exp $
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.7
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -22,9 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
 		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	webkitgtk-1:${PORTSDIR}/www/webkit-gtk2 \
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		notify:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -39,34 +34,35 @@ MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
-USE_GNOME=	glib20 gtk20 intltool libxml2 pkgconfig desktopfileutils
+USE_GNOME=	glib20 gtk20 intltool libxml2 desktopfileutils
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-.endif
+USE_PKGCONFIG=	build
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}" \
 	PORTVERSION="${PORTVERSION}"
 
-OPTIONS=	NLS "Enable Native Language support" on \
-		APIDOCS "Build api documentation" off \
-		UNIQUE "Enable single instance support" on
+OPTIONS_DEFINE=	APIDOCS NLS UNIQUE
+OPTIONS_DEFAULT=	NLS UNIQUE
 
-.include <bsd.port.pre.mk>
+APIDOCS_DESC=	Build API documentation
+UNIQUE_DESC=	Single instance support
+
+.include <bsd.port.options.mk>
 
 # WAF needs that
 CONFIGURE_ENV+=	CC="${CC}"
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes 
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_APIDOCS)
+.if ${PORT_OPTIONS:MAPIDOCS}
 BUILD_DEPENDS+=	gtkdoc-scan:${PORTSDIR}/textproc/gtk-doc
 CONFIGURE_ARGS+=--enable-apidocs
 PLIST_SUB+=	APIDOCS=""
@@ -75,20 +71,24 @@ CONFIGURE_ARGS+=--disable-apidocs
 PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
-.if defined(WITH_UNIQUE)
-LIB_DEPENDS+=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+.if ${PORT_OPTIONS:MUNIQUE}
+LIB_DEPENDS+=	unique-1:${PORTSDIR}/x11-toolkits/unique
 CONFIGURE_ARGS+=--enable-unique
 .else
 CONFIGURE_ARGS+=--disable-unique
 .endif
 
+pre-patch:
+# Disable HTTP Strict Transport Security (hsts)
+	@cd ${WRKSRC}/katze && ${RM} midori-hsts.vala
+
 post-install:
 	@-update-desktop-database
-.if defined(WITH_APIDOCS)
+.if ${PORT_OPTIONS:MAPIDOCS}
 	${MKDIR} ${DOCSDIR}/api/katze/html
 	${MKDIR} ${DOCSDIR}/api/midori/html
 	(cd ${WRKSRC}/_build/docs/api/katze/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/api/katze/html)
 	(cd ${WRKSRC}/_build/docs/api/midori/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/api/midori/html)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
