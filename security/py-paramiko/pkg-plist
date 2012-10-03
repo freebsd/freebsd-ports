@@ -105,6 +105,7 @@
 %%PYTHON_SITELIBDIR%%/paramiko/win_pageant.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/paramiko
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_keygen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_sftp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_simple.py
