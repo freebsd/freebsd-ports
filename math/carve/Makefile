@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	carve
-# Date created:				16 November 2011
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	carve
 PORTVERSION=	1.4.0
@@ -17,7 +13,7 @@ COMMENT=	A fast, robust constructive solid geometry library
 
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs
 
-OPTIONS=	GUI "Enable GUI" off
+OPTIONS_DEFINE=	GUI
 
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
@@ -31,7 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	glui:${PORTSDIR}/devel/glui
 PLIST_SUB+=	GUI=""
 CMAKE_ARGS+=	-DCARVE_WITH_GUI:BOOL=true
