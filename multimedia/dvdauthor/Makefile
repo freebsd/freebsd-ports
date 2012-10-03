@@ -1,69 +1,80 @@
-# New ports collection makefile for:   dvdauthor
-# Date created:        20 April 2003
-# Whom:                pb@FreeBSD.org
-#
+# Created by: pb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
-LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread \
-		fribidi.3:${PORTSDIR}/converters/fribidi \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		freetype.9:${PORTSDIR}/print/freetype2
+LICENSE=	GPLv2
 
-USE_BISON=	build
-USE_GMAKE=	yes
+LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
+		fribidi:${PORTSDIR}/converters/fribidi \
+		freetype:${PORTSDIR}/print/freetype2 \
+		png15:${PORTSDIR}/graphics/png \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-WRKSRC=		${WRKDIR}/dvdauthor
-MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
-
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libfreetype.so.9)
-WITH_FREETYPE=		yes
-.endif
-.if exists(${LOCALBASE}/lib/libiconv.so)
-WITH_ICONV=		yes
-.endif
-.if exists(${LOCALBASE}/lib/libMagickWand.so.5)
-WITH_IMAGEMAGICK=	yes
-.endif
-
-.if defined(WITH_ICONV)
+USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 USE_ICONV=	yes
-CFLAGS+=	-DICONV_CONV=yes
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	AUTHORS ChangeLog README TODO
+
+DOCSRCDIR2=	${WRKDIR}
+DOC_FILES2=	README.FreeBSD
+
+MAN1=		dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
+
+OPTIONS_DEFINE=	VIDEO-FORMAT IMAGEMAGICK
+
+OPTIONS_SINGLE=	VIDEO-FORMAT
+OPTIONS_SINGLE_VIDEO-FORMAT=	NTSC PAL
+
+VIDEO-FORMAT_DESC=	Use default video format
+NTSC_DESC=	Default video format NTSC
+PAL_DESC=	Default video format PAL
+
+SUB_FILES=	README.FreeBSD
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNTSC}
+.if ${PORT_OPTIONS:MVIDEO-FORMAT}
+CONFIGURE_ENV+=	--enable-default-video-format=NTSC
 .endif
-.if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
-.else
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
-pre-everything::
-.if !defined(WITH_ICONV)
-	@${ECHO_MSG} "You can enable Iconv support by defining WITH_ICONV."
-	@${ECHO_MSG}
+.if ${PORT_OPTIONS:MPAL}
+.if ${PORT_OPTIONS:MVIDEO-FORMAT}
+CONFIGURE_ENV+=	--enable-default-video-format=PAL
 .endif
-.if !defined(WITH_IMAGEMAGICK)
-	@${ECHO_MSG} "You can enable ImageMagick support by defining WITH_IMAGEMAGICK."
-	@${ECHO_MSG}
+.endif
+
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
+LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+pre-configure:
+.if !${PORT_OPTIONS:MIMAGEMAGICK}
+	@${REINPLACE_CMD} 's|usemagick=1|usemagick=0|g' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/dvdauthor
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dvdauthor
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/dvdauthor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
