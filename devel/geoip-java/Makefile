@@ -1,9 +1,4 @@
-# New ports collection makefile for:	geoip-java
-# Date created:		2012-07-12
-# Whom:		Jason Helfman <jgh@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	geoip
 PORTVERSION=	1.2.8
@@ -11,7 +6,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/java/
 DISTNAME=	GeoIPJava-${PORTVERSION}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java bindings for GeoIP API
 
 LICENSE=	LGPL21

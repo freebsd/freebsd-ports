@@ -1,9 +1,4 @@
-# New ports collection makefile for:	jdbc-oracle11g
-# Date created:		29 June 2012
-# Whom:			Jason Helfman <jgh@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	oracle11g
 PORTVERSION=	11.2.0.3
@@ -14,7 +9,7 @@ DISTNAME=	ojdbc5.jar
 EXTRACT_SUFX=	# none
 DIST_SUBDIR=	oracle11g
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDBC drivers for Oracle 11g
 
 USE_JAVA=	yes

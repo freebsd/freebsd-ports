@@ -1,16 +1,11 @@
-# New ports collection makefile for:	flot
-# Date created:		06 June 2012
-# Whom:			Jason Helfman <jgh@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	flot
 PORTVERSION=	0.7
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript plotting library for jQuery
 
 LICENSE=	MIT

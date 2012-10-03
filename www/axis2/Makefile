@@ -1,7 +1,3 @@
-# New ports collection makefile for:	axis2
-# Date created:				28 July 2011
-# Whom:					Jason Helfman <jhelfman@experts-exchange.com>
-#
 # $FreeBSD$
 
 PORTNAME=	axis2
@@ -12,7 +8,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
 LICENSE=	AL2
