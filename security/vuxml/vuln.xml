@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dee44ba9-08ab-11e2-a044-d0df9acfd7e5">
+    <topic>OpenX -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+        <name>openx</name>
+        <range><le>2.8.10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Secunia reports:</p>
+        <blockquote cite="http://secunia.com/advisories/50598/">
+          <p>A vulnerability has been discovered in OpenX, which can be
+             exploited by malicious people to conduct SQL injection 
+             attacks.</p>
+          <p>Input passed via the "xajaxargs" parameter to 
+             www/admin/updates-history.php (when "xajax" is set to 
+             "expandOSURow") is not properly sanitised in e.g. the 
+             "queryAuditBackupTablesByUpgradeId()" function 
+             (lib/OA/Upgrade/DB_UpgradeAuditor.php) before being used in SQL
+             queries. This can be exploited to manipulate SQL queries by 
+             injecting arbitrary SQL code.</p>
+          <p>The vulnerability is confirmed in version 2.8.9. Prior versions
+             may also be affected.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/50598/</url>
+    </references>
+    <dates>
+      <discovery>2012-09-14</discovery>
+      <entry>2012-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5bae2ab4-0820-11e2-be5f-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
