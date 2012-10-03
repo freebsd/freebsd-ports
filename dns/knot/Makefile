@@ -1,9 +1,5 @@
-# New ports collection makefile for:	knot
-# Date created:		29 February 2012
-# Whom:			Leo Vandewoestijne <freebsd@dns-lab.com>
-#
+# Created by:		Leo Vandewoestijne <freebsd@dns-lab.com>
 # $FreeBSD$
-#
 
 PORTNAME=	knot
 PORTVERSION=	1.1.0
