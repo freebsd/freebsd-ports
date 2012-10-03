@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Sub-WrapPackages
-# Date created:				14 September 2005
-# Whom:					George Hartzell <hartzell@alerce.com>
-#
+# Created by: George Hartzell <hartzell@alerce.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Sub-WrapPackages
 PORTVERSION=	2.0
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hartzell@alerce.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add pre- and post-execution wrappers
 
 RUN_DEPENDS=	p5-Hook-LexWrap>=0:${PORTSDIR}/devel/p5-Hook-LexWrap \

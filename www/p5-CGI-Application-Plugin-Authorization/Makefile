@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CGI-Application-Plugin-Authorization
-# Date created:				01 September 2008
-# Whom:					George Hartzell <hartzell@alerce.com>
-#
+# Created by: George Hartzell <hartzell@alerce.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-Authorization
 PORTVERSION=	0.07
@@ -12,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hartzell@alerce.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support for authorization of requests in CGI::Application
 
 BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \

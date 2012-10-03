@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CGI-Application-Plugin-LinkIntegrity
-# Date created:				15 September 2005
-# Whom:					George Hartzell <hartzell@alerce.com>
-#
+# Created by: George Hartzell <hartzell@alerce.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-LinkIntegrity
 PORTVERSION=	0.06
@@ -12,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hartzell@alerce.com
+MAINTAINER=	ports@FReeBSD.org
 COMMENT=	Make tamper-resistent links in CGI::Application
 
 BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
