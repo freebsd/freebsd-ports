@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+echo "Castle Vox: Starting up..."
+cd "%%DATADIR%%"
+JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" \
+-Djava.ext.dirs="%%DATADIR%%" -jar "%%DATADIR%%/VoxCore.jar" "$@"
