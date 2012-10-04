@@ -118,6 +118,7 @@
     SUBDIR += cake
     SUBDIR += caph
     SUBDIR += cardpics
+    SUBDIR += castlevox
     SUBDIR += cave9
     SUBDIR += cavezofphear
     SUBDIR += ceferino
