@@ -325,6 +325,7 @@ XALAN_DESC?=		Xalan XSLT processor support
 XCURSOR_DESC?=		Cursor themes support
 XERCES_DESC?=		Xerces XML parser support
 XFT_DESC?=		Xft font library support
+XINE_DESC?=		Multimedia support via Xine
 XINERAMA_DESC?=		X11 Xinerama extension support
 XKLAVIER_DESC?=		Keyboard layout settings
 XML_DESC?=		XML parser support
