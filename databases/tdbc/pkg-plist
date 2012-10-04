@@ -33,6 +33,5 @@ lib/tdbc%%VERSION%%/tdbcConfig.sh
 %%PGSQL%%@dirrm lib/tdbcpostgres%%VERSION%%
 
 @comment SQLITE
-%%SQLITE%%%%TCL_LIBDIR%%/tdbc/sqlite3-%%VERSION%%.tm
-%%SQLITE%%%%TCL_LIBDIR%%/tdbc/pkgIndex.tcl
-%%SQLITE%%@dirrm %%TCL_LIBDIR%%/tdbc
+%%SQLITE%%lib/tcl%%TCL_MAJ%%/%%TCL_VER%%/tdbc/sqlite3-%%VERSION%%.tm
+%%SQLITE%%@dirrm lib/tcl%%TCL_MAJ%%/%%TCL_VER%%/tdbc
