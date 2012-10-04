@@ -115,7 +115,7 @@
 %%PYTHON_SITELIBDIR%%/Crypto/PublicKey/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/PublicKey/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/PublicKey/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Crypto/PublicKey/_fastmath.so
+%%GMP%%%%PYTHON_SITELIBDIR%%/Crypto/PublicKey/_fastmath.so
 %%PYTHON_SITELIBDIR%%/Crypto/PublicKey/_slowmath.py
 %%PYTHON_SITELIBDIR%%/Crypto/PublicKey/_slowmath.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/PublicKey/_slowmath.pyo
