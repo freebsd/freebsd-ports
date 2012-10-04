@@ -1,12 +1,8 @@
-# New ports collection makefile for:	calibre
-# Date created:		10/11/2009
-# Whom:			stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.68
+PORTVERSION=	0.8.70
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -70,7 +66,7 @@ PLIST_SUB+=	USB="@comment "
 MAKE_ENV+=	WITH_USB=yes
 PLIST_SUB+=	USB=""
 .endif
-.if !defined(WITHOUT_PODOFO) || exists(${LOCALBASE}/lib/libpodofo.so)
+.if ${PORT_OPTIONS:MPODOFO} || exists(${LOCALBASE}/lib/libpodofo.so)
 LIB_DEPENDS+=	podofo:${PORTSDIR}/graphics/podofo
 MAKE_ENV+=	PODOFO_LIB_DIR="${LOCALBASE}/lib" \
 		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
