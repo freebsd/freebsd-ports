@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.doctrine-project.org/downloads/ \
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Doctrine is a PHP object relational mapper
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 PORTSCOUT=	limit:^1\.2\.
 
@@ -43,19 +43,19 @@ IGNORE_WITH_PHP=4
 USE_PHP=	pdo
 WANT_PHP_CLI=	yes
 
-.if defined(WITH_DBLIB)
+.if ${PORT_OPTIONS:MDBLIB}
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_dblib
 .endif
-.if defined (WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	pdo_mysql
 .endif
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_odbc
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql
 .endif
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	pdo_sqlite
 .endif
 
