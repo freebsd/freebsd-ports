@@ -13,6 +13,7 @@ COMMENT=	A DNS toolkit for Python
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	PYCRYPTO
 PYCRYPTO_DESC=	Enable pycrypto (part of dnssec needs it)
 
