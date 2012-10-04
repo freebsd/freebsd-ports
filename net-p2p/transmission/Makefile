@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.61
+PORTVERSION=	2.71
 CATEGORIES=	net-p2p
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -21,7 +21,7 @@ RUN_DEPENDS=	transmission-cli:${PORTSDIR}/net-p2p/transmission-cli \
 
 CONFLICTS_INSTALL=      ${PORTNAME}${PKGNAMESUFFIX}-2.6*
 
-BROKEN=		Depends on GTK 2.0 frontend; use net-p2p/transmission25 for now
+BROKEN=		Depends on GTK 3.4.0 frontend; use net-p2p/transmission25 for now
 
 NO_BUILD=	yes
 
