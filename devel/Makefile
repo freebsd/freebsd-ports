@@ -234,6 +234,7 @@
     SUBDIR += codeblocks
     SUBDIR += codeworker
     SUBDIR += colorgcc
+    SUBDIR += colormake
     SUBDIR += combat
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
