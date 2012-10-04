@@ -32,24 +32,25 @@ CFLAGS+=	-I${LOCALBASE}/include
 # Not yet implemented
 #		FFMPEG		"Enable ffmpeg support"			off \
 
-OPTIONS=	VORBIS		"Enable Ogg Vorbis support"		on  \
-		THEORA		"Enable theora support"			off \
+OPTIONS_DEFINE=	VORBIS THEORA
+OPTIONS_DEFAULT=	VORBIS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_ARGS+=--without-vorbis
 .endif
 
-.if defined(WITH_THEORA)
+.if ${PORT_OPTIONS:MTHEORA}
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=--without-theora
 .endif
 
+.include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800000
 BROKEN=		does not compile
 .endif
