@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gq
-# Date Created:				8 Jun 2000
-# Whom:					Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gq
 PORTVERSION=	1.3.4
@@ -17,8 +13,10 @@ COMMENT=	GTK-based LDAP client
 
 LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
-OPTIONS=	DND	"Enable Drag and drop support in browse mode" On \
-		CACHE	"Support the OpenLDAP experimental client cache" On
+OPTIONS_DEFINE=	DND CACHE
+OPTIONS_DEFAULT=	DND CACHE
+DND_DESC=	Enable Drag and drop support in browse mode
+CACHE_DESC=	Support the OpenLDAP experimental client cache
 
 USE_GNOME=	libglade2 gnomedocutils
 USE_OPENSSL=	yes
@@ -31,14 +29,14 @@ CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DND)
+.if ${PORT_OPTIONS:MDND}
 CONFIGURE_ARGS+=	--enable-browser-dnd
 .endif
 
-.if !defined(WITHOUT_CACHE)
+.if ${PORT_OPTIONS:MCACHE}
 CONFIGURE_ARGS+=	--enable-cache
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

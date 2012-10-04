@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rwhoisd
-# Date created:				May 9th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rwhoisd
 PORTVERSION=	1.5.9.6
@@ -19,8 +15,10 @@ COMMENT=	The Internic referral whois server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS=	IPV6 "Enable IPV6 support" On \
-		LARGEFILE "Enable largefile support (> 2Gb)" Off
+OPTIONS_DEFINE=	IPV6 LARGEFILE DOCS
+OPTIONS_DEFAULT=	IPV6
+IPV6_DESC=	Enable IPV6 support
+LARGEFILE_DESC=	Enable largefile support (> 2Gb)
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -36,13 +34,13 @@ MAN8=		rwhois_indexer.8 rwhoisd.8
 PORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
 		operations_guide.txt rfc2167.txt security.html security.txt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_LARGEFILE)
+.if ${PORT_OPTIONS:MLARGEFILE}
 CONFIGURE_ARGS+=	--enable-largefile
 .endif
 
@@ -60,11 +58,11 @@ post-install:
 	@${CHOWN} -R nobody /var/log/rwhoisd /var/run/rwhoisd
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${PREFIX}/man/man8
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
