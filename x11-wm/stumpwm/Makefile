@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stumpwm
-# Date created:				2008-02-20
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stumpwm
 PORTVERSION=	0.9.7
@@ -28,16 +24,17 @@ INFO=		${PORTNAME}
 PORTEXAMPLES=	sample-stumpwmrc.lisp
 PORTDATA=	*
 
-OPTIONS=	SBCL "Build with lang/sbcl (otherwise with lang/clisp)" on
+OPTIONS_DEFINE=	SBCL EXAMPLES
+SBCL_DESC=	Build with lang/sbcl (otherwise with lang/clisp)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SBCL) || make(makesum) || defined(FETCH_ALL)
+.if ${PORT_OPTIONS:MSBCL} || make(makesum) || defined(FETCH_ALL)
 MASTER_SITES+=	http://common-lisp.net/~abridgewater/dist/clx/:clx
 DISTFILES+=	clx-0.7.4.tgz:clx
 .endif
 
-.if defined(WITH_SBCL)
+.if ${PORT_OPTIONS:MSBCL}
 CONFIGURE_ARGS+=	--with-lisp=sbcl
 BUILD_DEPENDS+=	sbcl:${PORTSDIR}/lang/sbcl
 .else
@@ -45,14 +42,14 @@ CONFIGURE_ARGS+=	--with-lisp=clisp
 BUILD_DEPENDS+=	clisp:${PORTSDIR}/lang/clisp
 .endif
 
-.if !defined(WITH_SBCL)
+.if empty(PORT_OPTIONS:MSBCL)
 .if exists(${LOCALBASE}/bin/clisp) && \
     !exists(${LOCALBASE}/lib/clisp/full/clx.o)
 IGNORE=		requires lang/clisp built with CLX_NEW option ON
 .endif
 .endif
 
-.if defined(WITH_SBCL)
+.if ${PORT_OPTIONS:MSBCL}
 post-extract:	.SILENT
 	${LN} -sf ${WRKDIR}/clx*/*.asd ${WRKSRC}/cl-ppcre/*.asd ${WRKSRC}
 
@@ -70,7 +67,7 @@ post-patch:	.SILENT
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/stumpish ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
