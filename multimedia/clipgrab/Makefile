@@ -1,13 +1,8 @@
-# New ports collection makefile for:	clipgrab
-# Date created:		2009-12-06
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	clipgrab
-PORTVERSION=	3.1.0.2
-PORTREVISION=	1
+PORTVERSION=	3.2.0.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://clipgrab.de/download/ \
 		http://vanbittern.org/
@@ -24,14 +19,14 @@ USE_QT4=	gui xml qmake_build uic_build moc_build \
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/icon.png \
 		%%DATADIR%%/logo.png \
-		%%DATADIR%%/logo-gpl.png \
-		%%DATADIR%%/logo-qt.png \
+		%%DATADIR%%/paypal-logo.png \
+		%%DATADIR%%/paypal.png \
 		%%DATADIR%%/splash.png
 PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="Clipgrab" "Download and convert videos from YouTube and etc" \
 		"${DATADIR}/icon.png" "${PORTNAME}" \
-		"AudioVideo;Audio;Video;" false
+		"AudioVideo;" false
 
 post-patch:
 	${REINPLACE_CMD} -e 's,img/,share/${PORTNAME}/,g' \
