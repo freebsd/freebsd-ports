@@ -3874,6 +3874,7 @@
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
+    SUBDIR += rubygem-paint
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
