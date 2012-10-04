@@ -1,12 +1,8 @@
-# New ports collection makefile for:   WebDAO
-# Date created:        27 Mach 2012
-# Whom:                Zahatski Aliaksandr <zag@cpan.org>
-#
+# Created by: Zahatski Aliaksandr <zag@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WebDAO
-PORTVERSION=	2.09
+PORTVERSION=	2.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZAG
