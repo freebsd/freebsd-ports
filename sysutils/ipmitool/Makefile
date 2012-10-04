@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipmitool
-PORTVERSION=	1.8.11
-PORTREVISION=	4
+PORTVERSION=	1.8.12
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -15,7 +14,6 @@ MAINTAINER=	spolyack@collaborativefusion.com
 COMMENT=	CLI to manage IPMI systems
 
 USE_BZIP2=	yes
-DOS2UNIX=	ipmi_fwum.c
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -33,15 +31,12 @@ MAN8+=		ipmievd.8
 
 PERIODIC_DIR=	etc/periodic/daily
 
+OPTIONS_DEFINE=	FREEIPMI
+FREEIPMI_DESC=	Enable support for freeipmi
+
 .if defined(WITH_DEBUG)
 CFLAGS+=	-ggdb -Wall
 .endif
-
-.include <bsd.port.pre.mk>
-
-post-install:
-	@${MKDIR} ${PREFIX}/${PERIODIC_DIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/status-ipmi.sh ${PREFIX}/${PERIODIC_DIR}/400.status-ipmi
 
 .if exists(/usr/include/sys/ipmi.h)
 CONFIGURE_ARGS+=	--enable-intf-open
@@ -49,9 +44,13 @@ CONFIGURE_ARGS+=	--enable-intf-open
 CONFIGURE_ARGS+=	--disable-intf-open
 .endif
 
-.if defined(WITH_FREEIPMI) || \
-	(exists(${LOCALBASE}/include/freeipmi/freeipmi.h) && \
-		!defined(WITHOUT_FREEIPMI))
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
+.endif
+
+.if ${PORT_OPTIONS:MFREEIPMI}
 LIB_DEPENDS+=	freeipmi:${PORTSDIR}/sysutils/freeipmi
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -60,8 +59,8 @@ CONFIGURE_ARGS+=	--enable-intf-free
 CONFIGURE_ARGS+=	--disable-intf-free
 .endif
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
-.endif
+post-install:
+	@${MKDIR} ${PREFIX}/${PERIODIC_DIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/status-ipmi.sh ${PREFIX}/${PERIODIC_DIR}/400.status-ipmi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
