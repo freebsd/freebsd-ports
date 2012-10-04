@@ -1,12 +1,8 @@
-# New ports collection Makefile for:	zile
-# Date created:		28 September 2000
-# Whom:			jasone
-#
+# Created by: Jason Evans <jasone@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zile
-PORTVERSION=	2.4.8
+PORTVERSION=	2.4.9
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
