@@ -1,0 +1,306 @@
+#
+# These do not require additional dependencies
+#
+DEFAULT_ADDONS=	AsyncRequest \
+		Bitly \
+		Blowfish \
+		Box \
+		CGI \
+		ContinuedFraction \
+		Curses \
+		DistributedObjects \
+		Facebook \
+		Flux \
+		Fnmatch \
+		GoogleSearch \
+		HttpClient \
+		Loki \
+		MD5 \
+		NotificationCenter \
+		Obsidian \
+		Random \
+		Range \
+		Rational \
+		SGML \
+		SHA1 \
+		SecureSocket \
+		SqlDatabase \
+		Syslog \
+		SystemCall \
+		Thread \
+		Twitter \
+		User \
+		VertexDB \
+		Volcano \
+		Zlib
+
+#
+# These DO require additional dependencies
+#
+OPTIONAL_ADDONS=BigNum \
+		CFFI \
+		Clutter \
+		DBI \
+		EditLine \
+		Font \
+		GLFW \
+		Image \
+		LZO \
+		LibSndFile \
+		Libxml2 \
+		Loudmouth \
+		Memcached \
+		MySQL \
+		Ogg \
+		OpenGL \
+		PostgreSQL \
+		Python \
+		QDBM \
+		ReadLine \
+		Regex \
+		SQLite3 \
+		SampleRateConverter \
+		Socket \
+		TagLib \
+		Theora \
+		TokyoCabinet \
+		UUID \
+		Vorbis \
+		Yajl
+
+OPTIONS_DEFINE=	${OPTIONAL_ADDONS}
+
+.include <bsd.port.options.mk>
+
+#
+# BigNum
+#
+.if ${PORT_OPTIONS:MBigNum}
+LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
+.endif
+
+#
+# CFFI
+#
+.if ${PORT_OPTIONS:MCFFI}
+LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
+.endif
+
+#
+# Clutter
+#
+.if ${PORT_OPTIONS:MClutter}
+LIB_DEPENDS+=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
+.endif
+
+#
+# DBI
+#
+.if ${PORT_OPTIONS:MDBI}
+LIB_DEPENDS+=	dbi:${PORTSDIR}/databases/libdbi
+.endif
+
+#
+# EditLine
+#
+.if ${PORT_OPTIONS:MEditLine}
+LIB_DEPENDS+=	edit:${PORTSDIR}/devel/libedit
+.endif
+
+#
+# Font
+#
+.if ${PORT_OPTIONS:MFont}
+USE_GL+=	glut
+USE_XORG+=	xmu
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+.endif
+
+#
+# GLFW
+#
+.if ${PORT_OPTIONS:MGLFW}
+LIB_DEPENDS+=	glfw:${PORTSDIR}/graphics/glfw
+.endif
+
+#
+# Image
+#
+.if ${PORT_OPTIONS:MImage}
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff
+.endif
+
+#
+# LZO
+#
+.if ${PORT_OPTIONS:MLZO}
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
+.endif
+
+#
+# LibSndFile
+#
+.if ${PORT_OPTIONS:MLibSndFile}
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
+.endif
+
+#
+# Libxml2
+#
+.if ${PORT_OPTIONS:MLibxml2}
+USE_GNOME+=	libxml2
+.endif
+
+#
+# Loudmouth
+#
+.if ${PORT_OPTIONS:MLoudmouth}
+LIB_DEPENDS+=	loudmouth-1:${PORTSDIR}/net-im/loudmouth
+.endif
+
+#
+# Memcached
+#
+.if ${PORT_OPTIONS:MMemcached}
+LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
+.endif
+
+#
+# MySQL
+#
+.if ${PORT_OPTIONS:MMySQL}
+USE_MYSQL+=	client
+.endif
+
+#
+# Ogg
+#
+.if ${PORT_OPTIONS:MOgg}
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
+.endif
+
+#
+# OpenGL
+#
+.if ${PORT_OPTIONS:MOpenGL}
+USE_GL+=	glut
+USE_XORG+=	xmu
+
+.endif
+
+#
+# PostgreSQL
+#
+.if ${PORT_OPTIONS:MPostgreSQL}
+USE_PGSQL=	yes
+.endif
+
+#
+# Python
+#
+.if ${PORT_OPTIONS:MPython}
+USE_PYTHON=	yes
+.endif
+
+#
+# QDBM
+#
+.if ${PORT_OPTIONS:MQDBM}
+LIB_DEPENDS+=	qdbm:${PORTSDIR}/databases/qdbm
+.endif
+
+#
+# ReadLine
+#
+.if ${PORT_OPTIONS:MReadLine}
+LIB_DEPENDS+=	history:${PORTSDIR}/devel/readline
+.endif
+
+#
+# Regex
+#
+.if ${PORT_OPTIONS:MRegex}
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+.endif
+
+#
+# SQLite3
+#
+.if ${PORT_OPTIONS:MSQLite3}
+USE_SQLITE=	3
+SQLITE_LIB=	${LOCALBASE}/lib/libsqlite${SQLITE_VER}.so
+.endif
+
+# SampleRateConverter
+#
+.if ${PORT_OPTIONS:MSampleRateConverter}
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+.endif
+
+#
+# Socket
+#
+.if ${PORT_OPTIONS:MSocket}
+LIB_DEPENDS+=	event:${PORTSDIR}/devel/libevent
+.endif
+
+#
+# TagLib
+#
+.if ${PORT_OPTIONS:MTagLib}
+LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
+.endif
+
+#
+# Theora
+#
+.if ${PORT_OPTIONS:MTheora}
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
+.endif
+
+#
+# TokyoCabinet
+#
+.if ${PORT_OPTIONS:MTokyoCabinet}
+LIB_DEPENDS+=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
+.endif
+
+#
+# UUID
+#
+.if ${PORT_OPTIONS:MUUID}
+LIB_DEPENDS+=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+.endif
+
+#
+# Vorbis
+#
+.if ${PORT_OPTIONS:MBVorbis}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+.endif
+
+#
+# Yajl
+#
+.if ${PORT_OPTIONS:MYajl}
+LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
+.endif
+
+
+########################################
+# WE NOW DEFINE THE FULL LIST OF ADDONS
+#
+.for def in ${DEFAULT_ADDONS}
+PLIST_SUB+=	${def}=""
+.endfor
+ADDONS=		${DEFAULT_ADDONS}
+.for opt in ${ALL_OPTIONS}
+.  if defined (WITH_${opt})
+ADDONS+=	${opt}
+PLIST_SUB+=	${opt}=""
+.  else
+PLIST_SUB+=	${opt}="@comment "
+.  endif
+.endfor
