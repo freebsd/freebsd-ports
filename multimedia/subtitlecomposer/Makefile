@@ -1,9 +1,5 @@
-# New ports collection makefile for:	subtitlecomposer
-# Date created:		2008-01-08
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
+# Created by: Max Brazhnikov <makc@issp.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.4.3
@@ -24,26 +20,25 @@ INSTALLS_ICONS=	yes
 
 PORTSCOUT=	limit:^0\.4\.
 
-OPTIONS=	MPLAYER "Enable MPlayer backend (recommended)" on \
-		XINE "Enable Xine backend" off \
-		GSTREAMER "Enable GStreamer backend" off
+OPTIONS_DEFINE=	MPLAYER XINE GSTREAMER
+OPTIONS_DEFAULT=	MPLAYER
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MPLAYER)
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 .else
 CONFIGURE_ARGS+=--without-xine --without-xcb
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER+=	yes
 .else
 CONFIGURE_ARGS+=--without-gstreamer
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
