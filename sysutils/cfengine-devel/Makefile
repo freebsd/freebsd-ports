@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.4.0a2
-PORTREVISION=	2
+PORTVERSION=	3.4.0b2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -32,6 +31,8 @@ USE_GMAKE=	yes
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html \
+		--libexecdir=${PREFIX}/libexec \
+		--libdir=${PREFIX}/libexec \
 		--mandir=${PREFIX}/man \
 		--with-workdir=/var/cfengine \
 		--with-pcre=${LOCALBASE} \
