@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	alsa-plugins
-PORTVERSION=	1.0.25
+PORTVERSION=	1.0.26
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.silug.org/pub/alsa/plugins/ \
-		ftp://gd.tuwien.ac.at/opsys/linux/alsa/plugins/ \
-		http://dl.ambiweb.de/mirrors/ftp.alsa-project.org/plugins/ \
-		ftp://ftp.alsa-project.org/pub/plugins/
+MASTER_SITES=	ALSA/plugins \
+		GENTOO/distfiles
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library plugins
@@ -25,12 +23,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/alsa-lib
 
 OPTIONS_DEFINE=	ARIFF_OSS JACK FFMPEG PULSEAUDIO SAMPLERATE SPEEX
-OPTIONS_DEFAULT=ARIFF_OSS
 ARIFF_OSS_DESC=	FreeBSD-specific OSS plugin
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MARIFF_OSS}
+.if ${PORT_OPTIONS:MARIFF_OSS} || ${OSVERSION} < 800097
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 .endif
 

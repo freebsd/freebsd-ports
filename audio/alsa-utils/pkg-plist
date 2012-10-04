@@ -42,3 +42,5 @@ share/sounds/alsa/Side_Right.wav
 @dirrmtry share/alsa/speaker-test
 @dirrmtry share/alsa/init
 @dirrmtry share/alsa
+@cwd /var
+@dirrmtry lib/alsa

@@ -2,16 +2,16 @@ based on https://github.com/dankamongmen/libdank/blob/master/libdank/compat-Free
 
 --- usb_stream/pcm_usb_stream.c.orig
 +++ usb_stream/pcm_usb_stream.c
-@@ -18,7 +18,9 @@
-  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+@@ -19,7 +19,9 @@
   */
  
+ #define _GNU_SOURCE
 +#ifndef __FreeBSD__
  #include <byteswap.h>
 +#endif
- #define _GNU_SOURCE
  #include <sys/mman.h>
  #include <sys/shm.h>
+ #include <sys/ioctl.h>
 @@ -79,6 +81,69 @@ typedef struct {
  static struct user_usb_stream *uus;
  static pthread_mutex_t uus_mutex = PTHREAD_MUTEX_INITIALIZER;
