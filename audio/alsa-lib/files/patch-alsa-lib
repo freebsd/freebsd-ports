@@ -154,13 +154,23 @@
  #if __BYTE_ORDER == __LITTLE_ENDIAN
  #define __cpu_to_le32(x) (x)
  #define __cpu_to_be32(x) bswap_32(x)
---- src/async.c.orig	2009-09-09 20:34:54.000000000 +0800
-+++ src/async.c	2009-09-15 00:49:34.000000000 +0800
-@@ -51,6 +51,7 @@
+$NetBSD: patch-bk,v 1.1 2008/12/25 13:18:00 hasso Exp $
+
+--- src/async.c.orig	2008-12-25 08:18:22 +0200
++++ src/async.c	2008-12-25 08:20:39 +0200
+@@ -51,6 +51,15 @@ static LIST_HEAD(snd_async_handlers);
  
  static void snd_async_handler(int signo ATTRIBUTE_UNUSED, siginfo_t *siginfo, void *context ATTRIBUTE_UNUSED)
  {
-+#ifndef __FreeBSD__
++#if defined(__DragonFly__) || defined(__FreeBSD__)
++	/* XXX XXX XXX */
++	struct list_head *i;
++	list_for_each(i, &snd_async_handlers) {
++		snd_async_handler_t *h = list_entry(i, snd_async_handler_t, glist);
++		if (h->callback)
++			h->callback(h);
++	}
++#else
  	int fd;
  	struct list_head *i;
  	//assert(siginfo->si_code == SI_SIGIO);
@@ -174,12 +184,14 @@
  /**
 --- src/compat/hsearch_r.c.orig	2009-09-09 20:34:54.000000000 +0800
 +++ src/compat/hsearch_r.c	2009-09-15 00:22:11.000000000 +0800
-@@ -18,7 +18,9 @@
+@@ -18,7 +18,11 @@
     Boston, MA 02111-1307, USA.  */
  
  #include <errno.h>
-+#ifndef __FreeBSD__
++#ifdef __GLIBC__
  #include <malloc.h>
++#else
++#include <stdlib.h>
 +#endif
  #include <string.h>
  
@@ -448,12 +460,14 @@
  #ifndef DOC_HIDDEN
 --- src/shmarea.c.orig	2009-09-09 20:34:54.000000000 +0800
 +++ src/shmarea.c	2009-09-15 00:22:00.000000000 +0800
-@@ -19,7 +19,9 @@
+@@ -19,7 +19,11 @@
   */
    
  #include <stdio.h>
-+#ifndef __FreeBSD__
++#ifdef __GLIBC__
  #include <malloc.h>
++#else
++#include <stdlib.h>
 +#endif
  #include <string.h>
  #include <errno.h>

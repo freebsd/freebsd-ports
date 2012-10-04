@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	alsa-lib
-PORTVERSION=	1.0.25
+PORTVERSION=	1.0.26
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.silug.org/pub/alsa/lib/ \
-		ftp://gd.tuwien.ac.at/opsys/linux/alsa/lib/ \
-		http://dl.ambiweb.de/mirrors/ftp.alsa-project.org/lib/ \
-		ftp://ftp.alsa-project.org/pub/lib/
+MASTER_SITES=	ALSA/lib \
+		GENTOO/distfiles
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library
@@ -24,6 +22,7 @@ CONFIGURE_ARGS+=--disable-aload --disable-python \
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/ { s/-ldl//g; s/-lrt//g; }' \
+		-e '/-D_GNU_SOURCE/d' \
 		-e '/lt_cv_dlopen/s/-ldl//g' ${WRKSRC}/configure
 	${REINPLACE_CMD} '/LIBADD/s/-ldl//g' \
 		${WRKSRC}/modules/mixer/simple/Makefile.in

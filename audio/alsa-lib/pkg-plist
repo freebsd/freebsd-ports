@@ -72,6 +72,7 @@ share/alsa/cards/EMU10K1X.conf
 share/alsa/cards/ENS1370.conf
 share/alsa/cards/ENS1371.conf
 share/alsa/cards/ES1968.conf
+share/alsa/cards/Echo_Echo3G.conf
 share/alsa/cards/FM801.conf
 share/alsa/cards/FWSpeakers.conf
 share/alsa/cards/FireWave.conf

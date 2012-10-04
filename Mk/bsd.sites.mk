@@ -51,6 +51,17 @@ MASTER_SITE_AFTERSTEP+= \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_ALSA)
+MASTER_SITE_ALSA+= \
+	ftp://ftp.silug.org/pub/alsa/%SUBDIR%/ \
+	ftp://ftp.task.gda.pl/pub/linux/misc/alsa/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/opsys/linux/alsa/%SUBDIR%/ \
+	http://dl.ambiweb.de/mirrors/ftp.alsa-project.org/%SUBDIR%/ \
+	http://mirrors.zerg.biz/alsa/%SUBDIR%/ \
+	http://alsa.cybermirror.org/%SUBDIR%/ \
+	ftp://ftp.alsa-project.org/pub/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_APACHE)
 MASTER_SITE_APACHE+= \
 	http://www.apache.org/dist/%SUBDIR%/ \
