@@ -1,26 +1,19 @@
-# New ports collection makefile for:	jokosher
-# Date created:				13 Aug 2009
-# Whom:					Anonymous
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jokosher
 PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpadlibrarian.net/43860543/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-track non-linear audio editing
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		easy_install:${PORTSDIR}/devel/py-setuptools
-
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 USE_GNOME=	gnomehier
 USE_GSTREAMER=	gnonlin good python
