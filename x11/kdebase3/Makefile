@@ -45,9 +45,10 @@ CONFIGURE_ARGS+=--without-java			\
 		--with-xdmdir=${LOCALBASE}/lib/X11/xdm \
 		--with-ssl-dir=${OPENSSLBASE}
 
-OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
-		HAL "Use HAL backend for media:/" on \
-		HTDIG "Depend on htdig, used to build manual indices" off
+OPTIONS_DEFINE=	ARTSWRAPPER HAL HTDIG
+OPTIONS_DEFAULT=	ARTSWRAPPER HAL
+ARTSWRAPPER_DESC=	Suid wrapper for aRts, req'd for realtime prio
+HTDIG_DESC=		Use htdig to build manual indices
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
@@ -58,15 +59,15 @@ LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libusb20
 .endif
 
-.if !defined(WITHOUT_ARTSWRAPPER)
+.if ${PORT_OPTIONS:MDOCS}
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 .endif
 
-.if defined(WITH_HTDIG)
+.if ${PORT_OPTIONS:MDOCS}
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if ${PORT_OPTIONS:MHAL}
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
 		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
