@@ -10,16 +10,17 @@ sbin/cf-promises
 sbin/cf-report
 sbin/cf-runagent
 sbin/cf-serverd
-share/cfengine/CoreBase/cf_agent.cf
-share/cfengine/CoreBase/cf_execd.cf
-share/cfengine/CoreBase/cf_monitord.cf
-share/cfengine/CoreBase/cf_report.cf
-share/cfengine/CoreBase/cf_runagent.cf
-share/cfengine/CoreBase/cfengine_stdlib.cf
 share/cfengine/CoreBase/def.cf
-share/cfengine/CoreBase/failsafe.cf
-share/cfengine/CoreBase/init_msg.cf
 share/cfengine/CoreBase/promises.cf
+share/cfengine/CoreBase/controls/cf_execd.cf
+share/cfengine/CoreBase/controls/cf_report.cf
+share/cfengine/CoreBase/controls/cf_agent.cf
+share/cfengine/CoreBase/controls/cf_runagent.cf
+share/cfengine/CoreBase/controls/cf_monitord.cf
+share/cfengine/CoreBase/controls/cf_serverd.cf
+share/cfengine/CoreBase/failsafe/failsafe.cf
+share/cfengine/CoreBase/libraries/cfengine_stdlib.cf
+share/cfengine/CoreBase/services/init_msg.cf
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/examples/active_directory.cf
@@ -47,6 +48,7 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_badpromise.cf
 %%DOCSDIR%%/examples/unit_badtype.cf
 %%DOCSDIR%%/examples/unit_bsdflags.cf
+%%DOCSDIR%%/examples/unit_bundle_return_values.cf
 %%DOCSDIR%%/examples/unit_cf2_integration.cf
 %%DOCSDIR%%/examples/unit_change_detect.cf
 %%DOCSDIR%%/examples/unit_changedbefore.cf
@@ -74,6 +76,8 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_defaults3.cf
 %%DOCSDIR%%/examples/unit_definitions.cf
 %%DOCSDIR%%/examples/unit_deletelines.cf
+%%DOCSDIR%%/examples/unit_depends_on.cf
+%%DOCSDIR%%/examples/unit_depends_on2.cf
 %%DOCSDIR%%/examples/unit_disable.cf
 %%DOCSDIR%%/examples/unit_disable_and_rotate_files.cf
 %%DOCSDIR%%/examples/unit_diskfree.cf
@@ -89,6 +93,7 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_edit_replace_string.cf
 %%DOCSDIR%%/examples/unit_edit_sectioned_file.cf
 %%DOCSDIR%%/examples/unit_edit_setvar.cf
+%%DOCSDIR%%/examples/unit_edit_template.cf
 %%DOCSDIR%%/examples/unit_edit_triggerclass.cf
 %%DOCSDIR%%/examples/unit_env.cf
 %%DOCSDIR%%/examples/unit_epimenides.cf
@@ -174,6 +179,8 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_namespace1.cf
 %%DOCSDIR%%/examples/unit_namespace2.cf
 %%DOCSDIR%%/examples/unit_namespace3.cf
+%%DOCSDIR%%/examples/unit_namespace_class1.cf
+%%DOCSDIR%%/examples/unit_namespace_classes.cf
 %%DOCSDIR%%/examples/unit_namespace_var_meta.cf
 %%DOCSDIR%%/examples/unit_namespace_var_meta2.cf
 %%DOCSDIR%%/examples/unit_neighbourhood_watch.cf
@@ -283,6 +290,10 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/win_schedule.cf
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
+@dirrm share/cfengine/CoreBase/controls
+@dirrm share/cfengine/CoreBase/failsafe
+@dirrm share/cfengine/CoreBase/libraries
+@dirrm share/cfengine/CoreBase/services
 @dirrm share/cfengine/CoreBase
 @dirrm share/cfengine
 @dirrm libexec/cfengine
