@@ -1,6 +1,6 @@
---- setup.py.orig	2011-11-01 17:47:23.000000000 +0400
-+++ setup.py	2011-11-01 17:54:51.000000000 +0400
-@@ -177,6 +177,7 @@
+--- ./setup.py.orig	2012-10-03 15:57:50.000000000 +1000
++++ ./setup.py	2012-10-03 15:57:50.000000000 +1000
+@@ -136,6 +136,7 @@
                  # especially helps the DES modules.
                  self.__add_compiler_option("-O3")
                  self.__add_compiler_option("-fomit-frame-pointer")
