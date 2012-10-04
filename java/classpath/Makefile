@@ -161,7 +161,7 @@ PLIST_SUB+=		QT4="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -i.bak -e 's|@JAVA@|$${JAVACMD:-${java}}|g' \
+	@${REINPLACE_CMD} -i.bak -e 's|@JAVA@|$${JAVACMD:-java}|g' \
 	    ${WRKSRC}/tools/g*.in
 
 .if !defined(WITH_GCJ) && empty(PORT_OPTIONS:MJDK)
