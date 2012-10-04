@@ -84,6 +84,7 @@ lib/calibre/calibre/devices/mime.py
 lib/calibre/calibre/devices/misc.py
 lib/calibre/calibre/devices/mtp/books.py
 lib/calibre/calibre/devices/mtp/__init__.py
+lib/calibre/calibre/devices/mtp/defaults.py
 lib/calibre/calibre/devices/mtp/driver.py
 lib/calibre/calibre/devices/mtp/test.py
 lib/calibre/calibre/devices/mtp/base.py
@@ -627,6 +628,7 @@ lib/calibre/calibre/gui2/device_drivers/__init__.py
 lib/calibre/calibre/gui2/device_drivers/configwidget.py
 lib/calibre/calibre/gui2/device_drivers/configwidget_ui.py
 lib/calibre/calibre/gui2/device_drivers/mtp_config.py
+lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.py
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
@@ -745,6 +747,7 @@ lib/calibre/calibre/gui2/preferences/device_user_defined.py
 lib/calibre/calibre/gui2/preferences/email_ui.py
 lib/calibre/calibre/gui2/preferences/emailp.py
 lib/calibre/calibre/gui2/preferences/history.py
+lib/calibre/calibre/gui2/preferences/ignored_devices.py
 lib/calibre/calibre/gui2/preferences/keyboard.py
 lib/calibre/calibre/gui2/preferences/look_feel.py
 lib/calibre/calibre/gui2/preferences/look_feel_ui.py
@@ -792,7 +795,6 @@ lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
 lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
-lib/calibre/calibre/gui2/store/stores/beam_ebooks_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/biblio_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebooksgratuits_plugin.py
@@ -1221,16 +1223,30 @@ lib/calibre/templite/__init__.py
 share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
 share/applications/calibre-ebook-viewer.desktop
-share/mime/packages/calibre-mimetypes
+share/mime/packages/calibre-mimetypes.xml
 share/icons/hicolor/128x128/apps/calibre-viewer.png
 share/icons/hicolor/128x128/mimetypes/application-lrf.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-application-lrf.png
 share/icons/hicolor/128x128/mimetypes/text-lrs.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-text-lrs.png
+share/icons/hicolor/128x128/mimetypes/application-x-mobipocket-ebook.png
+share/icons/hicolor/128x128/mimetypes/application-x-topaz-ebook.png
+share/icons/hicolor/128x128/mimetypes/application-x-kindle-application.png
+share/icons/hicolor/128x128/mimetypes/application-x-mobi8-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobipocket-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-topaz-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-kindle-application.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobi8-ebook.png
 share/icons/hicolor/256x256/apps/calibre-gui.png
 share/gnome/apps/calibre-gui.desktop
 share/gnome/apps/calibre-lrfviewer.desktop
 share/gnome/apps/calibre-ebook-viewer.desktop
+share/mime/application/x-sony-bbeb.xml
+share/mime/application/x-topaz-ebook.xml
+share/mime/application/x-mobi8-ebook.xml
+share/mime/application/x-kindle-application.xml
+share/mime/application/x-mobipocket-subscription.xml
+share/mime/text/lrs.xml
 %%DATADIR%%/builtin_recipes.xml
 %%DATADIR%%/builtin_recipes.zip
 %%DATADIR%%/calibre-portable.bat
@@ -1336,7 +1352,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/devices/itunes.png
 %%DATADIR%%/images/devices/kindle.jpg
 %%DATADIR%%/images/devices/nook.jpg
-%%DATADIR%%/images/devices/galaxy_s3.png
+%%DATADIR%%/images/devices/tablet.png
 %%DATADIR%%/images/dialog_error.png
 %%DATADIR%%/images/dialog_information.png
 %%DATADIR%%/images/dialog_question.png
@@ -1392,6 +1408,8 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/mail.png
 %%DATADIR%%/images/merge_books.png
 %%DATADIR%%/images/metadata.png
+%%DATADIR%%/images/mimetypes/azw2.png
+%%DATADIR%%/images/mimetypes/azw3.png
 %%DATADIR%%/images/mimetypes/bmp.png
 %%DATADIR%%/images/mimetypes/computer.png
 %%DATADIR%%/images/mimetypes/dir.png
@@ -1412,6 +1430,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/mimetypes/rtf.png
 %%DATADIR%%/images/mimetypes/snb.png
 %%DATADIR%%/images/mimetypes/svg.png
+%%DATADIR%%/images/mimetypes/tpz.png
 %%DATADIR%%/images/mimetypes/txt.png
 %%DATADIR%%/images/mimetypes/unknown.png
 %%DATADIR%%/images/mimetypes/zero.png
@@ -1938,3 +1957,5 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrmtry share/gnome/apps
 @dirrmtry share/gnome
 @dirrmtry share/desktop-directories
+@dirrmtry share/mime/application
+@dirrmtry share/mime/text
