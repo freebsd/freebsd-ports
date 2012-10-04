@@ -10,16 +10,22 @@ PORTVERSION=	1.2.4
 CATEGORIES=	databases pear
 MASTER_SITES=	http://www.doctrine-project.org/downloads/ \
 		LOCAL/glarkin
-PORTSCOUT=	limit:^1\.2\.
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Doctrine is a PHP object relational mapper
 
-OPTIONS=	DBLIB "Install PHP DBO driver for DBLIB" Off \
-		MYSQL "Install PHP DBO driver for MySQL" On \
-		ODBC "Install PHP DBO driver for ODBC" Off \
-		PGSQL "Install PHP DBO driver for PostgreSQL" Off \
-		SQLITE "Install PHP DBO driver for SQLite" Off
+LICENSE=	GPLv2
+
+PORTSCOUT=	limit:^1\.2\.
+
+OPTIONS_DEFINE=	DBLIB MYSQL ODBC PGSQL SQLITE
+OPTIONS_DEFAULT=MYSQL
+
+DBLIB_DESC=	Install PHP DBO driver for DBLIB
+MYSQL_DESC=	Install PHP DBO driver for MySQL
+ODBC_DESC=	Install PHP DBO driver for ODBC
+PGSQL_DESC=	Install PHP DBO driver for PostgreSQL
+SQLITE_DESC=	Install PHP DBO driver for SQLite
 
 CHANNEL=	pear.doctrine-project.org
 MANUAL_PACKAGE_BUILD=	attempts to contact ${CHANNEL} during installation
@@ -29,9 +35,7 @@ SUB_LIST+=	CHANNEL=${CHANNEL} LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pear-install
 LATEST_LINK=	pear-Doctrine12
 
-LICENSE=	GPLv2
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
@@ -386,4 +390,4 @@ FILES=		Doctrine/Access.php \
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
