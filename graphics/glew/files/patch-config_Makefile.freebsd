@@ -1,5 +1,6 @@
---- config/Makefile.freebsd.orig	2011-04-27 18:16:34.000000000 +0200
-+++ config/Makefile.freebsd	2011-05-09 19:43:51.000000000 +0200
+$FreeBSD$
+--- config/Makefile.freebsd.orig	2012-10-04 19:47:46.000000000 +0200
++++ config/Makefile.freebsd	2012-10-04 19:49:06.000000000 +0200
 @@ -1,22 +1,22 @@
  NAME = $(GLEW_NAME)
 -CC = cc
@@ -8,7 +9,7 @@
 +CC ?= cc
 +LD ?= ld
 +LDFLAGS.EXTRA = -L${LOCALBASE}/lib
- LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
+ LDFLAGS.GL = -lXmu -lXi -lGL -lXext -lX11
  LDFLAGS.STATIC = -Wl,-Bstatic
  LDFLAGS.DYNAMIC = -Wl,-Bdynamic
 -CFLAGS.EXTRA += -I/usr/X11R6/include
