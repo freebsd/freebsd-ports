@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bitflu
-# Date created:		28 January 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bitflu
 PORTVERSION=	1.35
@@ -30,11 +26,12 @@ PLIST_SUB=	PLUGINSDIR=${PLUGINSDIR}
 
 PORTDOCS=	ChangeLog.txt README.txt README_IPv6.txt
 
-OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
+OPTIONS_DEFINE=	IPV6 EXAMPLES DOCS
+OPTIONS_DEFAULT=	IPV6
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
@@ -50,15 +47,15 @@ do-install:
 		${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${PREFIX}/${PLUGINSDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${PREFIX}/${PLUGINSDIR}/
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL} -d ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.config.example \
 		${EXAMPLESDIR}/${PORTNAME}.config
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

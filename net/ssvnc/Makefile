@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssvnc
-# Date created:				2007-04-22
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29
@@ -22,7 +18,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
 		xterm:${PORTSDIR}/x11/xterm
 
-OPTIONS=	ULTRAFTP "UltraVNC File Transfer support (Java required)"	off
+OPTIONS_DEFINE=	ULTRAFTP DOCS
+ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
 
 USE_XORG=	xi xmu xt xaw ice xpm xext sm
 USE_TK_WRAPPER=	yes
@@ -33,14 +30,14 @@ MAN1=		ssvnc-gui.1 ssvncviewer.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ULTRAFTP)
+.if ${PORT_OPTIONS:MULTRAFTP}
 USE_JAVA=	yes
 PLIST_SUB+=	ULTRAFTP=""
 .else
 PLIST_SUB+=	ULTRAFTP="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ARGS+=	DOCS=""
 .endif
 
@@ -49,7 +46,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[[:<:]]ssvnc[[:>:]]|ssvnc-gui|' ${WRKSRC}/man/man1/ssvnc.1
 	@${REINPLACE_CMD} -e 's|/usr/local/bin|${LOCALBASE}/bin|' \
 		-e 's|^CC =|CC ?=|' ${WRKSRC}/vncstorepw/Makefile
-.if !defined(WITH_ULTRAFTP)
+.if ${PORT_OPTIONS:MULTRAFTP}
 	@${REINPLACE_CMD} -e "s|sh -c 'type javac'|:|" \
 		-e "s|sh -c 'type jar'|:|" \
 		-e 's|cd $$(JSRC);|: |' \

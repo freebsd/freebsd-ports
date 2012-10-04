@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Azureus
-# Date created:				October 6, 2004
-# Whom:					Jeremy Faulkner <gldisater@gldis.ca>
-#
+# Created by: Jeremy Faulkner <gldisater@gldis.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	vuze
 PORTVERSION=	4.7.1.2
@@ -39,7 +35,9 @@ NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" on
+OPTIONS_DEFINE=	SWTDEVEL
+OPTIONS_DEFAULT=	SWTDEVEL
+SWTDEVEL_DESC=	Use SWT Development port
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -65,9 +63,9 @@ DESKTOP_ENTRIES=	"Vuze" \
 
 INSTALLS_ICONS=		yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SWTDEVEL)
+.if ${PORT_OPTIONS:MDEVEL}
 SWT=		swt-devel
 BUILD_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 RUN_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
@@ -107,4 +105,4 @@ do-install:
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

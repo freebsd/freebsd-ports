@@ -1,7 +1,3 @@
-# New ports collection makefile for:	fsplib
-# Date created:				15 Jan 2005
-# Whom:					X
-#
 # $FreeBSD$
 
 PORTNAME=	fsplib
@@ -19,11 +15,12 @@ SCONS_ARGS=	prefix=${PREFIX}
 
 PLIST_FILES=	include/fsplib.h lib/libfsplib.a
 
-OPTIONS=	SHARED "Install shared library (EXPERIMENTAL)" OFF
+OPTIONS_DEFINE=	SHARED
+SHARED_DESC=	Install shared library (EXPERIMENTAL)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 SCONS_ARGS+=	enable-shared=1
 PLIST_FILES+=	lib/libfsplib.so.0.0.0
 .endif
