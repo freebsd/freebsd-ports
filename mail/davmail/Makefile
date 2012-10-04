@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	davmail
-# Date created:				28 Oct 2010
-# Whom:					John Prather
+# Created by: John Prather
 #
 # $FreeBSD$
-#
 
 PORTNAME=	davmail
-PORTVERSION=	3.9.9
+PORTVERSION=	4.1.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -23,7 +20,7 @@ USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 ALL_TARGET=	release
-REVISION=	1976
+REVISION=	2042
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 
