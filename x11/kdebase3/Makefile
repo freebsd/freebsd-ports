@@ -59,11 +59,11 @@ LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libusb20
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MARTSWRAPPER}
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MHTDIG}
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
