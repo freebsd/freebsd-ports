@@ -1,13 +1,9 @@
-# New ports collection Makefile for:	tdbc
-# Date created:				16 March 2012
-# Whom:					Pietro Cerutti <gahr@FreeBSD.org>
-#
+# Created by: Pietro Cerutti <gahr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tdbc
 DISTVERSION=	1.0b17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://tdbc.tcl.tk/index.cgi/tarball/
 DISTFILES=	${PORTNAME:U}-${FOSSIL_HASH}.${EXTRACT_SUFX}?uuid=${FOSSIL_HASH}
@@ -15,13 +11,9 @@ DISTFILES=	${PORTNAME:U}-${FOSSIL_HASH}.${EXTRACT_SUFX}?uuid=${FOSSIL_HASH}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The common database access interface for Tcl
 
-OPTIONS=	MYSQL  "Build MySQL driver" off \
-		UODBC  "Build ODBC driver (unixODBC)" off \
-		IODBC  "Build ODBC driver (iODBC)" off \
-		PGSQL  "Build PostgreSQL driver" off \
-		SQLITE "Build SQLite driver" off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC
 
-FOSSIL_HASH=	9972d7cf7d10b55157773ba027e54713d53e4cee
+FOSSIL_HASH=	dc470dee3956a286ccdda1b7d9153950c282a2fe
 
 USE_TCL=	86
 USE_LDCONFIG=	yes
@@ -29,9 +21,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME:U}-${FOSSIL_HASH}.
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tcloo=${TCL_LIBDIR} \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX} \
 		--with-tdbc=${WRKSRC}/tdbc --enable-threads
-PLIST_SUB+=	VERSION=${DISTVERSION}
-SUB_FILES+=	pkgIndex.tcl
-SUB_LIST+=	DISTVERSION=${DISTVERSION}
+PLIST_SUB+=	VERSION=${DISTVERSION} \
+		TCL_MAJ=${TCL_VER:R} \
+		TCL_VER=${TCL_VER}
 
 MODULES=	tdbc
 
@@ -48,7 +40,7 @@ MANN=	tdbc.n \
 #
 # MySQL
 #
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 MODULES+=	tdbcmysql
 PLIST_SUB+=	MYSQL=""
 MANN+=		tdbc_mysql.n
@@ -60,19 +52,8 @@ PLIST_SUB+=	MYSQL="@comment "
 #
 # ODBC
 #
-.if defined(WITH_UODBC) && defined(WITH_IODBC)
-IGNORE=	please select either UODBC or IODBC, but not both
-.endif
-
-.if defined(WITH_UODBC) && !defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
-.endif
-
-.if defined(WITH_IODBC) && !defined(WITH_UODBC)
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
-.endif
-
-.if defined(WITH_UODBC) || defined(WITH_IODBC)
 MODULES+=	tdbcodbc
 PLIST_SUB+=	ODBC=""
 MANN+=		tdbc_odbc.n
@@ -83,11 +64,10 @@ PLIST_SUB+=	ODBC="@comment "
 #
 # PostgreSQL
 #
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	client
 MODULES+=	tdbcpostgres
 PLIST_SUB+=	PGSQL=""
-MANN+=		tdbc_postgres.n
 .else
 PLIST_SUB+=	PGSQL="@comment "
 .endif
@@ -95,7 +75,7 @@ PLIST_SUB+=	PGSQL="@comment "
 #
 # SQLite
 #
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 MODULES+=	tdbcsqlite3
 PLIST_SUB+=	SQLITE="" \
 		TCL_LIBDIR="${TCL_LIBDIR:S/${LOCALBASE}\///}"
@@ -106,6 +86,8 @@ PLIST_SUB+=	SQLITE="@comment "
 
 do-configure:
 .for module in ${MODULES}
+	@echo "================================="
+	@echo "Configuring ${module}"
 	cd ${WRKSRC}/${module} && ${SH} configure ${CONFIGURE_ARGS}
 .endfor
 
@@ -114,19 +96,22 @@ post-configure:
 
 do-build:
 .for module in ${MODULES}
+	@echo "================================="
+	@echo "Building ${module}"
 	cd ${WRKSRC}/${module} && ${MAKE} ${ALL_TARGET}
 .endfor
 
 do-install:
 .for module in ${MODULES}
+	@echo "================================="
+	@echo "Installing ${module}"
 	cd ${WRKSRC}/${module} && ${MAKE} ${INSTALL_TARGET}
 .endfor
-.if defined(WITH_SQLITE)
-	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${TCL_LIBDIR:S/${LOCALBASE}/${PREFIX}/}/tdbc
-.endif
 
 test:
 .for module in ${MODULES}
+	@echo "================================="
+	@echo "Testing ${module}"
 	cd ${WRKSRC}/${module} && ${MAKE} test
 .endfor
 
