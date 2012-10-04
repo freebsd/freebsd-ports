@@ -13,6 +13,8 @@ include/libgearman-1.0/core.h
 include/libgearman-1.0/execute.h
 include/libgearman-1.0/function.h
 include/libgearman-1.0/gearman.h
+include/libgearman-1.0/interface/status.h
+include/libgearman-1.0/interface/task.h
 include/libgearman-1.0/job.h
 include/libgearman-1.0/job_handle.h
 include/libgearman-1.0/kill.h
@@ -25,6 +27,7 @@ include/libgearman-1.0/protocol.h
 include/libgearman-1.0/result.h
 include/libgearman-1.0/return.h
 include/libgearman-1.0/signal.h
+include/libgearman-1.0/status.h
 include/libgearman-1.0/strerror.h
 include/libgearman-1.0/string.h
 include/libgearman-1.0/task.h
@@ -38,8 +41,9 @@ include/libgearman/gearman.h
 lib/libgearman.a
 lib/libgearman.la
 lib/libgearman.so
-lib/libgearman.so.6
+lib/libgearman.so.7
 libdata/pkgconfig/gearmand.pc
 sbin/gearmand
+@dirrm include/libgearman-1.0/interface
 @dirrm include/libgearman-1.0
 @dirrm include/libgearman

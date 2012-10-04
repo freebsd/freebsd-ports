@@ -1,6 +1,24 @@
---- ./configure.orig	2012-01-16 15:07:46.000000000 -0500
-+++ ./configure	2012-01-16 15:08:21.000000000 -0500
-@@ -23441,6 +23441,7 @@
+--- ./configure.orig	2012-10-03 15:37:17.000000000 -0400
++++ ./configure	2012-10-03 15:37:17.000000000 -0400
+@@ -19021,7 +19021,7 @@
+ 
+ else
+ 
+-            if test x"" == x; then :
++            if test x"" = x; then :
+ 
+ 	CURL_CFLAGS="`$CURL_CONFIG $curl_config_args --cflags`"
+ 
+@@ -19031,7 +19031,7 @@
+ 
+ fi
+ 
+-            if test x"" == x; then :
++            if test x"" = x; then :
+ 
+ 	CURL_LIBS="`$CURL_CONFIG $curl_config_args --libs`"
+ 
+@@ -19842,6 +19842,7 @@
                          | sed -e 's/"//'`
                  if test $ac_sqlite3_version != ""; then
                      SQLITE3_VERSION=$ac_sqlite3_version

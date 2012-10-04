@@ -19,6 +19,8 @@ COMMENT=	Gearman server daemon
 RUN_DEPENDS=	p5-Gearman>=1.10:${PORTSDIR}/devel/p5-Gearman \
 		p5-Danga-Socket>=1.52:${PORTSDIR}/devel/p5-Danga-Socket
 
+CONFLICTS=	gearmand-0.*
+
 PERL_CONFIGURE=	yes
 
 MAN1=	gearmand.1
