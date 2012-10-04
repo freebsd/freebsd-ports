@@ -1,2 +1,0 @@
-#!/bin/sh
-"%%JAVA%%" -classpath "%%ECJ_JAR%%" org.eclipse.jdt.internal.compiler.batch.Main "${@:--help}"

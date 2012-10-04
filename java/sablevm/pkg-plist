@@ -14,12 +14,12 @@ lib/sablevm/bin/jdb
 lib/sablevm/include/jni.h
 lib/sablevm/include/jni_system_specific.h
 lib/sablevm/jre/bin
-share/sablevm/AUTHORS
-share/sablevm/LGPL-2.1
-share/sablevm/LICENSE
-@dirrm include/sablevm
-@dirrm share/sablevm
-@dirrm lib/sablevm/jre
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/LGPL-2.1
+%%DATADIR%%/LICENSE
+@dirrm %%DATADIR%%
+@dirrmtry lib/sablevm/jre
 @dirrm lib/sablevm/include
 @dirrm lib/sablevm/bin
-@dirrm lib/sablevm
+@dirrmtry lib/sablevm
+@dirrm include/sablevm

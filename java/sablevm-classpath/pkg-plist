@@ -1,5 +1,5 @@
-include/jawt.h
-include/jawt_md.h
+include/sablevm-classpath/jawt.h
+include/sablevm-classpath/jawt_md.h
 %%WITH_ZIP%%lib/sablevm/lib/libclasspath.jar
 %%WITH_ZIP%%lib/sablevm/lib/resources.jar
 %%WITH_ZIP%%lib/sablevm/jre/lib/libclasspath.jar
@@ -29,7 +29,7 @@ lib/sablevm-classpath/libjavautil.so
 %%GTK2%%lib/sablevm-classpath/libjawtgnu-1.13.so
 %%GTK2%%lib/sablevm-classpath/libjawtgnu.la
 %%GTK2%%lib/sablevm-classpath/libjawtgnu.so
-lib/security/classpath.security
+lib/security/SableVM.security
 %%WITH_ZIP%%%%DATADIR%%/libclasspath.jar
 %%WITH_ZIP%%%%DATADIR%%/resources.jar
 %%WITHOUT_ZIP%%%%DATADIR%%/META-INF/services/javax.sound.midi.spi.MidiDeviceProvider
@@ -5607,7 +5607,8 @@ lib/security/classpath.security
 @dirrm %%DATADIR%%
 @dirrmtry lib/security
 @dirrm lib/sablevm-classpath
-%%WITH_ZIP%%@dirrm lib/sablevm/lib
-%%WITH_ZIP%%@dirrm lib/sablevm/jre/lib
-%%WITH_ZIP%%@dirrm lib/sablevm/jre
-%%WITH_ZIP%%@dirrm lib/sablevm
+%%WITH_ZIP%%@dirrmtry lib/sablevm/lib
+%%WITH_ZIP%%@dirrmtry lib/sablevm/jre/lib
+%%WITH_ZIP%%@dirrmtry lib/sablevm/jre
+%%WITH_ZIP%%@dirrmtry lib/sablevm
+@dirrm include/sablevm-classpath

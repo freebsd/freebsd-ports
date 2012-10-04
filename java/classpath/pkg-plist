@@ -2,7 +2,7 @@ bin/gappletviewer
 bin/gjavah
 bin/gjar
 bin/gjarsigner
-bin/gjdoc
+%%GJDOC%%bin/gjdoc
 bin/gkeytool
 bin/gnative2ascii
 bin/gorbd
@@ -40,6 +40,8 @@ lib/classpath/libjavanio.so.0
 lib/classpath/libjavautil.la
 lib/classpath/libjavautil.so
 lib/classpath/libjavautil.so.0
+%%GMP%%lib/classpath/libjavamath.la
+%%GMP%%lib/classpath/libjavamath.so
 %%GTK2%%lib/classpath/libjawt.so
 %%GTK2%%lib/classpath/libjawt.la
 %%QT4%%lib/classpath/libqtpeer.so
@@ -47,7 +49,7 @@ lib/classpath/libjavautil.so.0
 lib/logging.properties
 lib/security/classpath.security
 @dirrm lib/classpath
-@dirrm lib/security
+@dirrmtry lib/security
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.java2d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.jawt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
