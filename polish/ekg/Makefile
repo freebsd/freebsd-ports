@@ -27,17 +27,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	ASPELL "Build with ASPELL support" off \
-		OPENSSL "Build with OPENSSL support" on
+OPTIONS_DEFINE=	ASPELL OPENSSL
+OPTIONS_DEFAULT=	OPENSSL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=		aspell.16:${PORTSDIR}/polish/aspell
 CONFIGURE_ARGS+=	--enable-aspell
 .endif
 
-.if defined(WITHOUT_OPENSSL)
+.if empty(PORT_OPTIONS:MOPENSSL)
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
@@ -50,4 +50,4 @@ MANCOMPRESSED=	no
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/ekg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

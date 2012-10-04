@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trousers
-# Date created:				18 Sep 2007
-# Whom:					Sebastian Schuetz <sschuetz@fhm.edu>
-#
+# Created by: Sebastian Schuetz <sschuetz@fhm.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.6
@@ -41,14 +37,14 @@ CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
 		--with-tssuser=${USERS} --with-tssgroup=${GROUPS}
 
-OPTIONS=	EMULATOR	"Build for use with the tpm-emulator" off \
-		DEBUG		"Build with debugging flags" off
+OPTIONS_DEFINE=	EMULATOR DEBUG
+EMULATOR_DESC=	Build for use with the tpm-emulator
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EMULATOR)
+.if ${PORT_OPTIONS:MEMULATOR}
 PKGNAMESUFFIX+=	-no_tddl
 LIB_DEPENDS+=	tddl.1:${PORTSDIR}/emulators/tpm-emulator
 
@@ -69,8 +65,7 @@ CONFLICTS+=	tpm-emulator-0*
 PLIST_SUB+=	TDDL=""
 .endif
 
-.if defined(WITH_DEBUG)
-PKGNAMESUFFIX+=	-debug
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
@@ -97,4 +92,4 @@ add-plist-post:
 	@${ECHO_CMD} "@unexec ${RMDIR} var/run/ima 2>/dev/null || true"			>> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/ima"	>> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

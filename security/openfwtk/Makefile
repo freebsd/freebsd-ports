@@ -1,7 +1,4 @@
-# New ports collection makefile for:	openfwtk
-# Date created:				12 Oct 2007
-# Whom:					Anton Karpov <toxa@toxahost.ru>
-#
+# Created by: Anton Karpov <toxa@toxahost.ru>
 # $FreeBSD$
 
 PORTNAME=	openfwtk
@@ -16,7 +13,8 @@ COMMENT=	Application proxy toolkit which inherits the ideology of TIS fwtk
 
 LICENSE=	BSD
 
-OPTIONS=	WATCH "Install fw-watch GUI (require TCL/TK!)" off
+OPTIONS_DEFINE=	GUI
+GUI_DESC=	Install fw-watch GUI (require TCL/TK!)
 
 WRKSRC=		${WRKDIR}/fwtk
 WRKSRC_WATCH=	${WRKDIR}/fw_watch
@@ -29,7 +27,7 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_WATCH)
+.if ${PORT_OPTIONS:MGUI}
 USE_TK_WRAPPER=	yes
 PLIST_SUB+=	WATCH=""
 .else
@@ -67,7 +65,7 @@ pre-install:
 	@${MKDIR} ${ETCDIR}
 
 post-install:
-.if defined(WITH_WATCH)
+.if ${PORT_OPTIONS:MGUI}
 	@${MKDIR} ${PREFIX}/share/fw_watch
 .for data in fileselect.tcl fw_watch newsb.tcl searchbox.tcl taputils.tcl
 	${INSTALL_DATA} ${WRKSRC_WATCH}/${data} ${PREFIX}/share/fw_watch

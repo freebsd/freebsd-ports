@@ -1,7 +1,4 @@
-# New ports collection makefile for: aimsniff
-# Date created:        4 December 2004
-# Whom:                Andrew Marks (andrew@amrx.net)
-#
+# Created by: Andrew Marks <andrew@amrx.net>
 # $FreeBSD$
 
 PORTNAME=	aimsniff
@@ -20,7 +17,8 @@ RUN_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap\
 		p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple\
 		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog
 
-OPTIONS=	SUID_ROOT "Install aimsniff with set-uid bit" off
+OPTIONS_DEFINE=	SUID_ROOT DOCS
+SUID_ROOT_DESC=	Install aimsniff with set-uid bit
 
 PORTDOCS=	README table.struct rc.aimsniff
 
@@ -29,7 +27,7 @@ USE_PERL5=	yes
 
 PLIST_FILES=	bin/aimsniff
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/GDBM_File.pm)
 #IGNORE=		You need perl compiled with GDBM support
@@ -37,17 +35,17 @@ PLIST_FILES=	bin/aimsniff
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aimSniff.pl ${PREFIX}/bin/aimsniff
-.if defined(WITH_SUID_ROOT)
+.if ${PORT_OPTIONS:MSUID_ROOT}
 	${CHMOD} u+s ${PREFIX}/bin/aimsniff
 .else
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
