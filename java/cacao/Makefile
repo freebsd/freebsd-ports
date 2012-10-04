@@ -1,39 +1,40 @@
-# Created by:	Tilman Keskinoz <arved@FreeBSD.org>
+# New ports collection makefile for:		cacao
+# Date created:					2005-04-28
+# Whom:						arved
+#
 # $FreeBSD$
 
 PORTNAME=	cacao
-PORTVERSION=	1.6.0
+PORTVERSION=	0.98
+PORTREVISION=	7
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.complang.tuwien.ac.at/cacaojvm/download/cacao-${PORTVERSION}/
 
-MAINTAINER=	java@FreeBSD.org
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	JIT compiler for JAVA
-
-LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
-GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
-USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-USE_XZ=		yes
-
+GNU_CONFIGURE=	yes
 MAN1=		cacao.1
-
-CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-classpath-prefix=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
-CONFIGURE_ARGS+=	--enable-jre-layout
-CONFIGURE_ARGS+=	--with-java-runtime-library-prefix=${LOCALBASE}
-CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}"
+.include <bsd.port.pre.mk>
 
-do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/cacao/cacao ${PREFIX}/bin
-	${INSTALL_LIB} ${WRKSRC}/src/cacao/.libs/libjvm.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/classes/vm.zip ${DATADIR}
+.if ${ARCH} == amd64
+IGNORE=		unsupported architecture
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s, man,," ${WRKSRC}/Makefile.in
+
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/cacao.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
