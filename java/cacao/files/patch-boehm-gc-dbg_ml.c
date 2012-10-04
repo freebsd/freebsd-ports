@@ -1,6 +1,6 @@
---- src/mm/boehm-gc/dbg_mlc.c.orig	2012-09-03 12:10:00.000000000 -0400
-+++ src/mm/boehm-gc/dbg_mlc.c	2012-09-19 13:02:15.000000000 -0400
-@@ -466,10 +466,34 @@
+--- src/boehm-gc/dbg_mlc.c.orig	Tue May 13 16:59:49 2003
++++ src/mm/boehm-gc/dbg_mlc.c	Wed May 12 20:13:19 2004
+@@ -414,6 +414,23 @@
      GC_register_displacement((word)sizeof(oh) + offset);
  }
  
@@ -13,43 +13,46 @@
 +{
 +    Dl_info caller;
 +    if (dladdr((const void *)ad, &caller) && caller.dli_sname != NULL) {
-+        *symp = caller.dli_sname;
-+        *offp = (const char *)ad - (const char *)caller.dli_saddr;
++      *symp = caller.dli_sname;
++      *offp = (const char *)ad - (const char *)caller.dli_saddr;
 +    }
 +}
 +#else
 +#define GC_caller_func(ad, symp, offp)
 +#endif
 +
- GC_API void * GC_CALL GC_debug_malloc(size_t lb, GC_EXTRA_PARAMS)
+ # ifdef __STDC__
+     GC_PTR GC_debug_malloc(size_t lb, GC_EXTRA_PARAMS)
+ # else
+@@ -428,6 +445,13 @@
  {
-     void * result = GC_malloc(lb + DEBUG_BYTES);
- 
+     GC_PTR result = GC_malloc(lb + DEBUG_BYTES);
+     
 +#ifdef GC_ADD_CALLER
 +    if (s == NULL) {
-+        GC_caller_func_offset(ra, &s, &i);
-+        if (s == NULL)
-+            s = "unknown";
++      GC_caller_func_offset(ra, &s, &i);
++      if (s == NULL)
++        s = "unknown";
 +    }
 +#endif
      if (result == 0) {
-         GC_err_printf("GC_debug_malloc(%lu) returning NIL (",
-                       (unsigned long) lb);
-@@ -792,6 +816,13 @@
-     size_t old_sz;
-     hdr * hhdr;
- 
+         GC_err_printf1("GC_debug_malloc(%ld) returning NIL (",
+         	       (unsigned long) lb);
+@@ -789,6 +813,13 @@
+     register size_t old_sz;
+     register hdr * hhdr;
+     
 +#ifdef GC_ADD_CALLER
 +    if (s == NULL) {
-+        GC_caller_func_offset(ra, &s, &i);
-+        if (s == NULL)
-+            s = "unknown";
++      GC_caller_func_offset(ra, &s, &i);
++      if (s == NULL)
++        s = "unknown";
 +    }
 +#endif
      if (p == 0) return(GC_debug_malloc(lb, OPT_RA s, i));
-     base = GC_base(p);
      if (base == 0) {
-@@ -1098,17 +1129,21 @@
+         GC_err_printf1(
+@@ -1094,7 +1125,11 @@
  }
  
  #ifdef GC_ADD_CALLER
@@ -62,14 +65,17 @@
  #else
  # define RA
  #endif
- 
- GC_API void * GC_CALL GC_debug_malloc_replacement(size_t lb)
+@@ -1102,12 +1137,12 @@
+ GC_PTR GC_debug_malloc_replacement(lb)
+ size_t lb;
  {
 -    return GC_debug_malloc(lb, RA "unknown", 0);
 +    return GC_debug_malloc(lb, RA NULL, 0);
  }
  
- GC_API void * GC_CALL GC_debug_realloc_replacement(void *p, size_t lb)
+ GC_PTR GC_debug_realloc_replacement(p, lb)
+ GC_PTR p;
+ size_t lb;
  {
 -    return GC_debug_realloc(p, lb, RA "unknown", 0);
 +    return GC_debug_realloc(p, lb, RA NULL, 0);

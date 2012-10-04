@@ -1,4 +1,6 @@
 bin/cacao
+lib/libjvm.la
 lib/libjvm.so
-%%DATADIR%%/vm.zip
-@dirrm %%DATADIR%%
+lib/libjvm-0.98.so
+share/cacao/vm.zip
+@dirrm share/cacao
