@@ -184,6 +184,7 @@
     SUBDIR += djgame2
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
+    SUBDIR += domination
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += doom-data
