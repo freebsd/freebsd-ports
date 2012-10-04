@@ -1,7 +1,4 @@
-# New ports collection makefile for:            springframework
-# Date created:         02 Jan 2008
-# Whom:         Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	springframework
@@ -20,8 +17,8 @@ USE_JAVA=	yes
 USE_ZIP=	yes
 JAVA_VERSION=	1.5+
 
-OPTIONS=	DOCS    "Install docs & examples" on \
-		RESRCS  "Install resource files" off
+OPTIONS_DEFINE=	DOCS RESRCS
+RESRCS_DESC=	Install resource files
 
 JAR_FILES=	org.springframework.aop.jar \
 		org.springframework.asm.jar \
@@ -50,11 +47,7 @@ PLIST_FILES +=	%%JAVAJARDIR%%/${f}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_DOCS)
-NOPORTDOCS=	yes
-.endif
-
-.if defined(WITH_RESRCS)
+.if ${PORT_OPTIONS:MRESRCS}
 RESOURCE_FILES=	spring-aop-2.0.xsd \
 		spring-aop-2.5.xsd \
 		spring-aop-3.0.xsd \
@@ -96,7 +89,7 @@ PLIST_FILES +=	%%JAVASHAREDIR%%/${f}
 .endfor
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -105,13 +98,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/${f:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
 		${JAVAJARDIR}/${f}
 .endfor
-.if !defined(WITHOUT_RESRCS) || defined(WITH_RESRCS)
+.if ${PORT_OPTIONS:MRESRCS}
 .for f in ${RESOURCE_FILES}
 	@${INSTALL_DATA} `${FIND} "${WRKSRC}" -name ${f} -print` \
 		${JAVASHAREDIR}/${f}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/changelog.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
