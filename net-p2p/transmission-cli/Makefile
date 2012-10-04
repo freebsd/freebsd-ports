@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.61
+PORTVERSION=	2.71
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
