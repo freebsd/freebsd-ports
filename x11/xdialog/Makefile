@@ -10,8 +10,7 @@ PORTNAME=	xdialog
 PORTVERSION=	2.3.1
 PORTREVISION=	5
 CATEGORIES=	x11
-MASTER_SITES=	http://thgodef.nerim.net/xdialog/ \
-		http://xdialog.free.fr/
+MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
@@ -26,7 +25,9 @@ MAN1=		Xdialog.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MNLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -44,7 +45,7 @@ post-patch:
 		${WRKSRC}/doc/Xdialog.man
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/samples
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
