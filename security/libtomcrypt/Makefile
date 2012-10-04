@@ -1,9 +1,5 @@
-# Ports collection makefile for:  libtomcrypt
-# Date created:			  22 Jan 2004
-# Whom:				  Yonatan <Yonatan@Xpert.com>
-#
+# Created by: Yonatan <Yonatan@Xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
@@ -26,36 +22,32 @@ MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${PREFIX}/include
 
-OPTIONS=	DOCS "build documentation (depends on teTeX)" off \
-		LIBTOMMATH "Use LibTomMath" on \
-		TOMSFASTMATH "Use TomsFastMath" off \
-		GMP "Use GMP" off
+OPTIONS_DEFINE=	DOCS
+OPTIONS_MULTI=	MATH
+OPTIONS_MULTI_MATH=	LIBTOMMATH TOMSFASTMATH GMP
+LIBTOMMATH_DESC=	Use LibTomMath
+TOMSFASTMATH_DESC=	Use TomsFastMath
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_LIBTOMMATH) && !defined(WITH_TOMSFASTMATH) && !defined(WITH_GMP)
-IGNORE=	requires LibTomMath, TomsFastMath, or GMP (or all three)
-.endif
-
-.if !defined(WITHOUT_LIBTOMMATH)
+.if ${PORT_OPTIONS:MLIBTOMMATH}
 BUILD_DEPENDS+=	${LOCALBASE}/include/tommath.h:${PORTSDIR}/math/libtommath
 CFLAGS+=	-DLTM_DESC
 .endif
 
-.if defined(WITH_TOMSFASTMATH)
+.if ${PORT_OPTIONS:MTOMSFASTMATH}
 BUILD_DEPENDS+=	${LOCALBASE}/include/tfm.h:${PORTSDIR}/math/tomsfastmath
 CFLAGS+=	-DTFM_DESC
 .endif
 
-.if defined(WITH_GMP)
+.if ${PORT_OPTIONS:MGMP}
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/gmp
 CFLAGS+=	-DGMP_DESC
 .endif
 
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 .else
-NOPORTDOCS=	yes
 MAKE_ARGS+=	NODOCS=yes
 .endif
 
@@ -79,4 +71,4 @@ test:	build
 	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_GMP" EXTRALIBS="-L${PREFIX}/lib -lgmp" ${GMAKE} test && ${WRKSRC}/test)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

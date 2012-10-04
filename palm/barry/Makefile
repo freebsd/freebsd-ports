@@ -21,11 +21,11 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS=-I/usr/include \
 
 MAN1=		bcharge.1 bidentify.1 bs11nread.1 btool.1
 
-OPTIONS=	GUI "Build the GUI" On \
-		OPENSYNC "Build the OpenSync plugin" On \
-		DOXYGEN "Build API documentation" Off
+OPTIONS_DEFINE=	GUI OPENSYNC DOXYGEN DOCS
+OPTIONS_DEFAULT=	GUI OPENSYNC
+OPENSYNC_DESC=	Build the OpenSync plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
@@ -34,7 +34,7 @@ CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb" LIBUSB_CFLAGS="-I/usr/include"
 BROKEN=		does not configure
 .endif
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		tar.0:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=	--enable-gui
@@ -43,7 +43,7 @@ PLIST_SUB+=	GUI=""
 PLIST_SUB+=	GUI="@comment "
 .endif
 
-.if defined(WITH_OPENSYNC)
+.if ${PORT_OPTIONS:MOPENSYNC}
 LIB_DEPENDS+=		opensync.0:${PORTSDIR}/devel/libopensync022
 CONFIGURE_ARGS+=	--enable-opensync-plugin
 PLIST_SUB+=	OPENSYNC=""
@@ -51,7 +51,7 @@ PLIST_SUB+=	OPENSYNC=""
 PLIST_SUB+=	OPENSYNC="@comment "
 .endif
 
-.if defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PLIST_SUB+=	DOXYGEN=""
 .else
@@ -63,14 +63,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -Werror||' ${WRKSRC}/opensync-plugin/src/Makefile.in
 
 post-build:
-.if defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN}
 	@(cd ${WRKSRC}/src && ${LOCALBASE}/bin/doxygen)
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

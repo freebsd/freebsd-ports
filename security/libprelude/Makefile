@@ -1,6 +1,4 @@
-# New ports collection makefile for:	libprelude
-# Date created:			Sun Aug 4 19:31:17 CEST 2002
-# Whom:				Clement Laforet <sheepkiller@cultdeadsheep.org>
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
 
 PORTNAME=	libprelude
@@ -15,8 +13,7 @@ COMMENT=	Framework library for Prelude NIDS
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
-OPTIONS=	PERL "Include Perl bindings" off \
-		PYTHON "Include Python bindings" off
+OPTIONS_DEFINE=	PERL PYTHON DOCS
 
 BROKEN=		does not configure
 
@@ -32,7 +29,7 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=		yes
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
 CONFIGURE_ARGS+=	--with-perl
@@ -42,7 +39,7 @@ CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
@@ -61,7 +58,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
