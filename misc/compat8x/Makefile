@@ -26,7 +26,7 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900042
+.if ${OSVERSION} < 900000
 IGNORE=		is for FreeBSD 9.x and newer
 .endif
 
