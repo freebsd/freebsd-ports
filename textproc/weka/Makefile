@@ -1,12 +1,8 @@
-# New ports collection makefile for:	weka
-# Date created:		2007-01-20
-# Whom:			Simon Olofsson <simon@olofsson.de>
-#
+# Created by: Simon Olofsson <simon@olofsson.de>
 # $FreeBSD$
-#
 
 PORTNAME=	weka
-DISTVERSION=	3-6-7
+DISTVERSION=	3-6-8
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3-6/${PORTVERSION}
 
@@ -14,7 +10,6 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Data Mining Software in Java
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even	# Second component is even for stable versions.
 
