@@ -1,54 +1,52 @@
-# New ports collection makefile for:    sablevm
-# Date created:         		9 July 2002
-# Whom:                 		Archie Cobbs <archie@freebsd.org>
-#
+# Creaetd by:	Archie Cobbs <archie@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sablevm
 PORTVERSION=	1.13
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bkoenig@alpha-tierchen.de
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java VM created by McGill University's Sable Research Group
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		ffi:${PORTSDIR}/devel/libffi
+RUN_DEPENDS=	fastjar:${PORTSDIR}/archivers/fastjar
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
-USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
-USE_GNOME=	pkgconfig
-PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include `${PKG_CONFIG} libffi --cflags`
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 
-OPTIONS=	SVMCP "Install SableVM classpath" ON \
-		MAN "Build and install man pages" ON
+OPTIONS_DEFINE=	MAN SVMCP
+OPTIONS_DEFAULT=MAN SVMCP
+MAN_DESC=	Build and install man pages
+SVMCP_DESC=	Install SableVM classpath
 
-CONFLICTS=	classpath-*
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_SVMCP)
-RUN_DEPENDS+=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:${PORTSDIR}/java/sablevm-classpath
+.if ${PORT_OPTIONS:MMAN}
+MAN1=		java-sablevm.1 sablevm.1
 .endif
 
-.if !defined(WITHOUT_MAN)
-MAN1=		java-sablevm.1 sablevm.1
+.if ${PORT_OPTIONS:MSVMCP}
+RUN_DEPENDS+=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:${PORTSDIR}/java/sablevm-classpath
 .endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's,^subdirs=".*,,' ${WRKSRC}/configure
-.if defined(WITHOUT_MAN)
+.if empty(PORT_OPTIONS:MMAN)
 	@${REINPLACE_CMD} -e 's,^\(man_MANS = \).*,\1,' ${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
