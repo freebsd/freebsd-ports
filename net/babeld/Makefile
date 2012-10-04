@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	babeld
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
