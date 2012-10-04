@@ -6,17 +6,30 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.26
+PORTVERSION=	0.39
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/ \
-		LOCAL/glarkin
+MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
 BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		execinfo:${PORTSDIR}/devel/libexecinfo
+
+CONFLICTS=	p5-Gearman-Server-1.*
+
+.if defined(MAINTAINER_MODE) && ${MAINTAINER_MODE:Myes}
+UID_FILES=	../../UIDs
+GID_FILES=	../../GIDs
+.if !exists(${UID_FILES}) || !exists(${GID_FILES})
+.error ${UID_FILES} or ${GID_FILES} does not exist - please check
+.endif
+.endif
+
+USERS=		gearmand
+GROUPS=		gearmand
 
 FETCH_ARGS=	-pRr
 USE_PERL5_BUILD=yes
@@ -25,14 +38,22 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand
-CONFIGURE_ARGS+=--with-lib-prefix=${LOCALBASE} --with-boost=${LOCALBASE}
+SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
 
-OPTIONS=	DRIZZLE "Enable Drizzle support for persistent queue" off \
-		MEMCACHED "Enable memcached support for persistent queue" off \
-		PGSQL "Enable PostgreSQL support for persistent queue" off \
-		SQLITE "Enable SQLite support for persistent queue" on \
-		REDIS "Enable Redis support for persistent queue" off \
-		TOKYOCAB "Enable Tokyo Cabinet support for persistent queue" off
+CONFIGURE_ARGS+=--with-lib-prefix=${LOCALBASE} --with-boost=${LOCALBASE} \
+		--localstatedir=/var/db/${PORTNAME} --enable-static
+LDFLAGS+=	-lexecinfo
+
+OPTIONS_DEFINE=	DRIZZLE MEMCACHED PGSQL SQLITE MYSQL HIREDIS TOKYOCAB
+OPTIONS_DEFAULT=SQLITE
+
+DRIZZLE_DESC=	Enable Drizzle support for persistent queue
+MEMCACHED_DESC=	Enable memcached support for persistent queue
+MYSQL_DESC=	Enable MySQL support for persistent queue
+PGSQL_DESC=	Enable PostgreSQL support for persistent queue
+SQLITE_DESC=	Enable SQLite support for persistent queue
+HIREDIS_DESC=	Enable Hiredis support for persistent queue
+TOKYOCAB_DESC=	Enable Tokyo Cabinet support for persistent queue
 
 MAN1=	gearadmin.1 \
 	gearman.1
@@ -189,7 +210,7 @@ MAN3=	gearman_actions_t.3 \
 	libgearman.3
 MAN8=	gearmand.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Workaround for missing sigignore that wasn't introduced until
 # FreeBSD 8.0
@@ -197,37 +218,48 @@ MAN8=	gearmand.8
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libtest__test.cc
 .endif
 
-# This hack is required for the test programs invoked by configure,
-# in the event that libmemcached was compiled with SASL support.
-.if exists(${LOCALBASE}/lib/libsasl.so)
-LDFLAGS+=	-L${LOCALBASE}/lib -lsasl
-.elif exists(${LOCALBASE}/lib/libsasl2.a)
-LDFLAGS+=	-L${LOCALBASE}/lib -lsasl2
-.else
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.ifdef(WITH_DRIZZLE)
+.if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=		drizzle:${PORTSDIR}/databases/libdrizzle
+CONFIGURE_ARGS+=	--enable-libdrizzle
 .else
 CONFIGURE_ARGS+=	--disable-libdrizzle
 .endif
 
-.ifdef(WITH_MEMCACHED)
+.if ${PORT_OPTIONS:MMEMCACHED}
 LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
 BUILD_DEPENDS+=		memcached>=0:${PORTSDIR}/databases/memcached
-CONFIGURE_ARGS+=	--enable-libmemcached --with-memcached=${LOCALBASE}/bin
+CONFIGURE_ARGS+=	--enable-libmemcached
+# This hack is required for the test programs invoked by configure,
+# in the event that libmemcached was compiled with SASL support.
+.if exists(${LOCALBASE}/lib/libsasl.so)
+LDFLAGS+=		-L${LOCALBASE}/lib -lsasl
+CONFIGURE_ARGS+=	--with-memcached-sasl=${LOCALBASE}/bin/memcached
+.elif exists(${LOCALBASE}/lib/libsasl2.a)
+LDFLAGS+=		-L${LOCALBASE}/lib -lsasl2
+CONFIGURE_ARGS+=	--with-memcached-sasl=${LOCALBASE}/bin/memcached
+.else
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-memcached=${LOCALBASE}/bin/memcached
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-libmemcached
 .endif
 
-.ifdef(WITH_PGSQL)
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=yes
+.else
+CONFIGURE_ARGS+=	--with-mysql=no
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
+CONFIGURE_ARGS+=	--enable-libpq
 .else
 CONFIGURE_ARGS+=	--disable-libpq
 .endif
 
-.ifdef(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 BUILD_DEPENDS+=		sqlite3>=3.0.0:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
@@ -235,18 +267,22 @@ CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 CONFIGURE_ARGS+=	--without-sqlite3
 .endif
 
-.ifdef(WITH_TOKYOCAB)
+.if ${PORT_OPTIONS:MTOKYOCAB}
 LIB_DEPENDS+=		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
-CONFIGURE_ARGS+=	--with-libtokyocabinet-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-libtokyocabinet
+CONFIGURE_ENV+=		LIBTOKYOCABINET_CPPFLAGS=-I${LOCALBASE}/include \
+			LIBTOKYOCABINET_LDFLAGS=-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-libtokyocabinet
 .endif
 
-.ifdef(WITH_REDIS)
+.if ${PORT_OPTIONS:MHIREDIS}
 LIB_DEPENDS+=		hiredis:${PORTSDIR}/databases/hiredis
-CONFIGURE_ARGS+=	--with-libhiredis-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-hires
+CONFIGURE_ENV+=		LIBHIREDIS_CPPFLAGS=-I${LOCALBASE}/include/hiredis \
+			LIBHIREDIS_LDFLAGS=-L${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+=	--without-libhiredis-prefix
+CONFIGURE_ARGS+=	--disable-hires
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
