@@ -448,7 +448,7 @@ gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2
 
 pkgconfig_DETECT=		${LOCALBASE}/bin/pkgconf
 pkgconfig_BUILD_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
-#pkgconfig_RUN_DEPENDS=		pkgconf:${PORTSDIR}/devel/pkgconf
+pkgconfig_RUN_DEPENDS=		pkgconf:${PORTSDIR}/devel/pkgconf
 
 libgsf_LIB_DEPENDS=			gsf-1.114:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgsf-1.pc
