@@ -131,6 +131,8 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/find_test/test2.msg
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/find_test/write_protected_file.txt
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/foo.txt
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/lmfp/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/lmfp/foo.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/module.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/module2.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/newlines.txt
@@ -278,6 +280,7 @@ bin/pytest
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/subdir_differ_dir
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir/subdir
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/lmfp
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/find_test/sub
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/find_test
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir/subdirtwo
