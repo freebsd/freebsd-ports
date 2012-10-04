@@ -42,21 +42,21 @@ PKGNAMESUFFIX=	-gnome
 CONFLICTS=	${PORTNAME}-xfce4-[0-9]* ${PORTNAME}-[0-9]*
 WITH_GCONF=	yes
 .elif ${AWN_DESKTOP} == "xfce4"
-OPTIONS=	GCONF "Use GConf to store configuration information" off
+OPTIONS_DEFINE=	GCONF
 USE_XFCE+=	thunar
 CONFIGURE_ARGS+=	--with-desktop=xfce4
 PKGNAMESUFFIX=	-xfce4
 CONFLICTS=	${PORTNAME}-gnome-[0-9]* ${PORTNAME}-[0-9]*
 .else
 # agnostic desktop
-OPTIONS=	GCONF "Use GConf to store configuration information" off
+OPTIONS_DEFINE=	GCONF
 CONFIGURE_ARGS+=	--with-desktop=agnostic
 CONFLICTS=	${PORTNAME}-gnome-[0-9]* ${PORTNAME}-xfce4-[0-9]*
 .endif
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 GCONF_SCHEMAS=	awn.schemas awn-applets-shared.schemas
 CONFIGURE_ARGS+=	--with-gconf
