@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libobjc2
-# Date created:		7 October 2010
-# Whom:			Pete French <pete@twisted.org.uk>
-#
+# Created by: Pete French <pete@twisted.org.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	libobjc2
 PORTVERSION=	1.6
@@ -21,14 +17,16 @@ MAKE_ENV+=	LD=${LOCALBASE}/bin/ld
 MAKE_ENV+=	SHLIB_VERSION="${SHLIB_VERSION}"
 PLIST_SUB=	SHLIB=${SHLIB_VERSION}
 
-OPTIONS=	NSOBJECT_ROOT	"Root class is NSObject not Object" On \
-		LIBDISPATCH	"Build with libdispatch from ports" Off
+OPTIONS_DEFINE=	NSOBJECT_ROOT LIBDISPATCH
+OPTIONS_DEFAULT=	NSOBJECT_ROOT
+NSOBJECT_ROOT_DESC=	Root class is NSObject not Object
+LIBDISPATCH_DESC=	Build with libdispatch from ports
 
 SHLIB_VERSION?=	16
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LIBDISPATCH)
+.if ${PORT_OPTIONS:MLIBDISPATCH}
 LIB_DEPENDS+=	dispatch.0:${PORTSDIR}/devel/libdispatch
 MAKE_ARGS+=	-DWITHOUT_TOYDISPATCH
 PLIST_SUB+=	WITH_TOYDISPATCH="@comment "
@@ -36,7 +34,7 @@ PLIST_SUB+=	WITH_TOYDISPATCH="@comment "
 PLIST_SUB+=	WITH_TOYDISPATCH=""
 .endif
 
-.if !defined(WITHOUT_NSOBJECT_ROOT)
+.if ${PORT_OPTIONS:MNSOBJECT_ROOT}
 CPPFLAGS+=	-DGNUSTEP
 .endif
 
@@ -64,7 +62,7 @@ post-patch:
 	${RM} ${WRKSRC}/GNUmakefile
 
 post-install:
-.if defined(WITH_LIBDISPATCH)
+.if ${PORT_OPTIONS:MLIBDISPATCH}
 	${RM} ${PREFIX}/include/objc/toydispatch.h
 .endif
 
