@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBI
-# Date created:				October 17th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBI
 PORTVERSION=	1.622
@@ -17,7 +13,8 @@ COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-OPTIONS=	PROXY "Build DBI::Proxy" off
+OPTIONS_DEFINE=	PROXY DOCS
+PROXY_DESC=	Build DBI::Proxy
 
 CONFLICTS=	p5-DBI-1.3*
 
@@ -76,12 +73,12 @@ MAN3=		Bundle::DBI.3 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PROXY)
+.if ${PORT_OPTIONS:MPROXY}
 BUILD_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
 RUN_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changes README
 
 post-install:
