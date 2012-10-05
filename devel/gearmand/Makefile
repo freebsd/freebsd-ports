@@ -7,13 +7,15 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
-BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs \
+		libexecinfo>=0:${PORTSDIR}/devel/libexecinfo
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		execinfo:${PORTSDIR}/devel/libexecinfo
