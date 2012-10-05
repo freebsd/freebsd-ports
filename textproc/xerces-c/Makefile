@@ -1,9 +1,5 @@
-# New ports collection makefile for: xerces-c
-# Date created:        29 December 2001
-# Whom:                kiesel
-#
+# Created by:                kiesel
 # $FreeBSD$
-#
 
 PORTNAME=	xerces_c
 PORTVERSION=	1.7.0
@@ -18,6 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xerces-C++ is a validating XML parser written in a subset of C++
 
 USE_LDCONFIG=	yes
+
+DEPRECATED=	No more supported upstream, consider using xerces-c2 or xerces-c3
+EXPIRATION_DATE=	2012-11-05
 
 XERCESWRKSRC=	${WRKSRC}/src/xercesc
 CONFIGURE_WRKSRC=	${XERCESWRKSRC}
