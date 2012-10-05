@@ -25,6 +25,27 @@
 %%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.py
 %%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/__init__.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/clearnsystem_test.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/clearnsystem_test.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/clearnsystem_test.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/crule_test.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/crule_test.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/crule_test.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/cruleset_test.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/cruleset_test.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/cruleset_test.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/rule_test.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/rule_test.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/rule_test.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.pyo
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/capi.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/intro.txt
@@ -38,9 +59,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyrulemanagement.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyruleset.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/ajax-loader.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/comment.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/down.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png
@@ -49,6 +76,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/sidebar.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/capi.html
@@ -67,6 +97,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
+@dirrm %%PYTHON_SITELIBDIR%%/dynrules/test
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules/examples
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules
 @dirrm %%PYTHON_INCLUDEDIR%%/dynrules
