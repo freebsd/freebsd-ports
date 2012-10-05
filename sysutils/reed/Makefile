@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.sacredchao.net/~piman/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text pager with autoscrolling and more
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configures

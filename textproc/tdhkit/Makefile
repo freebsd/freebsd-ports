@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	tdhkit
-# Date created:			2 Mar 2010
-# Whom:				corky1951@comcast.net
-#
+# Created by: corky1951@comcast.net
 # $FreeBSD$
-#
 
 PORTNAME=	tdhkit
 PORTVERSION=	1.0
@@ -15,11 +10,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//1}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of programs for working with tabular ASCII data
 
-OPTIONS=	LIBCHRON "Install libchron" Off
+OPTIONS_DEFINE=	LIBCHRON DOCS
+LIBCHRON_DESC=	Install libchron
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LIBCHRON)
+.if ${PORT_OPTIONS:MLIBCHRON}
 PLIST_SUB+=	LIBCHRON=""
 .else
 PLIST_SUB+=	LIBCHRON="@comment "
@@ -37,7 +33,7 @@ MAN1=		dateconvert.1 \
 		xlcells.1 \
 		xlcleaner.1
 
-.if defined(WITH_LIBCHRON)
+.if ${PORT_OPTIONS:MLIBCHRON}
 MAN3=		libchron.3
 .endif
 MANCOMPRESSED=	no
@@ -48,7 +44,7 @@ do-build:
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
-.if defined(WITH_LIBCHRON)
+.if ${PORT_OPTIONS:MLIBCHRON}
 	cd ${WRKSRC}/libsrc && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} libchron
 .endif
@@ -56,7 +52,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 
-.if defined(WITH_LIBCHRON)
+.if ${PORT_OPTIONS:MLIBCHRON}
 	${INSTALL_PROGRAM} ${WRKSRC}/libchron.a ${PREFIX}/lib
 .endif
 
@@ -64,12 +60,12 @@ do-install:
 .for manpage in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man/mantdh/${manpage} ${MAN1PREFIX}/man/man1
 .endfor
-.if defined(WITH_LIBCHRON)
+.if ${PORT_OPTIONS:MLIBCHRON}
 	${INSTALL_MAN} ${WRKSRC}/man/mantdh/${MAN3} ${MAN3PREFIX}/man/man3
 .endif
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/man/html/* ${DOCSDIR}
 .endif

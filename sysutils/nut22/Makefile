@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nut
-# Date created:         08 Jan 2000
-# Whom:                 Boris Popov <bp@freebsd.org>
-#
+# Created by: Boris Popov <bp@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nut
 PORTVERSION=	2.2.2
@@ -28,14 +24,13 @@ NUT_USER?=	uucp
 NUT_GROUP?=	uucp
 STATEDIR?=	/var/db/nut
 
-OPTIONS=	SERIAL		"SERIAL support"	on \
-		USB		"USB support"	on \
-		SNMP		"SNMP support"	on \
-		NEON		"NEON XML/HTTP support"	on \
-		HAL		"HAL support"	off \
-		IPV6		"IPV6 support"  on \
-		DEVEL		"Install header files"	off \
-		CGI		"Web CGI interface"	off \
+OPTIONS_DEFINE=	SERIAL USB SNMP NEON HAL IPV6 DEVEL CGI DOCS
+OPTIONS_DEFAULT=	SERIAL USB SNMP NEON IPV6
+SERIAL_DESC=	SERIAL support
+USB_DESC=	USB support
+NEON_DESC=	NEON XML/HTTP support
+DEVEL_DESC=	Install header files
+CGI_DESC=	Web CGI interface
 
 USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
@@ -64,7 +59,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP}
 
-.if defined(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 MAN5+=		hosts.conf.5 upsset.conf.5 upsstats.html.5
 MAN8+=		upsset.cgi.8 upsstats.cgi.8 upsimage.cgi.8
@@ -82,7 +77,7 @@ CONFIGURE_ARGS+=	--without-cgi
 PLIST_SUB+=	NUT_CGI="@comment "
 .endif
 
-.if !defined(WITHOUT_SERIAL)
+.if ${PORT_OPTIONS:MSERIAL}
 CONFIGURE_ARGS+=	--with-serial
 MAN8+=		al175.8 apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
 		bestuferrups.8 bestups.8 bestfcom.8 cpsups.8 cyberpower.8 \
@@ -97,7 +92,7 @@ CONFIGURE_ARGS+=	--without-serial
 PLIST_SUB+=	NUT_SERIAL="@comment "
 .endif
 
-.if !defined(WITHOUT_USB)
+.if ${PORT_OPTIONS:MUS}
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 . else
@@ -111,7 +106,7 @@ CONFIGURE_ARGS+=	--without-usb
 PLIST_SUB+=	NUT_USB="@comment "
 .endif
 
-.if !defined(WITHOUT_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp
 MAN8+=		snmp-ups.8
@@ -121,7 +116,7 @@ CONFIGURE_ARGS+=	--without-snmp
 PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
-.if !defined(WITHOUT_NEON)
+.if ${PORT_OPTIONS:MNEON}
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=	--with-neonxml
 MAN8+=		netxml-ups.8
@@ -131,8 +126,8 @@ CONFIGURE_ARGS+=	--without-neonxml
 PLIST_SUB+=	NUT_NEON="@comment "
 .endif
 
-.if defined(WITH_HAL)
-. if defined(WITHOUT_USB)
+.if ${PORT_OPTIONS:MHAL}
+. if empty(PORT_OPTIONS:MUSB}
 BROKEN=		HAL is only usable with USB support enabled. Run 'make config' again!
 . endif
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
@@ -144,13 +139,13 @@ CONFIGURE_ARGS+=	--without-hal
 PLIST_SUB+=	NUT_HAL="@comment "
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--with-ipv6
 .else
 CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
-.if defined(WITH_DEVEL)
+.if ${PORT_OPTIONS:MDEVEL}
 CONFIGURE_ARGS+=	--with-dev
 MAN3+=		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
 		upscli_get.3 upscli_list_next.3 upscli_list_start.3 \
@@ -170,7 +165,7 @@ pre-install:
 	@${CHOWN} ${NUT_USER}:${NUT_GROUP} ${STATEDIR}
 	@${CHMOD} 0750 ${STATEDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}/cables
 	${INSTALL_DATA} ${WRKSRC}/docs/cables/*.txt ${DOCSDIR}/cables

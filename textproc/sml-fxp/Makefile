@@ -1,9 +1,5 @@
-# New ports collection makefile for:   sml-fxp
-# Date created:        16 Sep 2007
-# Whom:                Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sml-fxp
 PORTVERSION=	2.0
@@ -25,19 +21,20 @@ COMMENT=	Validating XML parser with Standard ML interface
 #  On    Off     On          build apps and stabilize with sml-nj-devel
 #  Off   On      On          apps with mlton, stabilize for sml-nj
 #  On    On      On          apps with mlton, stabilize for sml-nj-devel
-OPTIONS=	X11           "Build with X11 support"              on \
-		STABILIZATION "Stabilize the libraries for SML/NJ." on \
-		DEVEL         "Prefer the devel version of SML/NJ." on \
-		MLTON         "Build executables with mlton."       off
+OPTIONS_DEFINE=	X11 STABILIZATION DEVEL MLTON DOCS
+OPTIONS_DEFAULT=	X11 STABILIZATION DEVEL
+STABILIZATION_DESC=	Stabilize the libraries for SML/NJ.
+DEVEL_DESC=	Prefer the devel version of SML/NJ.
+MLTON_DESC=	Build executables with mlton.
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS+=	xvcg:${PORTSDIR}/graphics/vcg
 .endif
 
-.if defined(WITH_STABILIZATION) || defined(WITHOUT_MLTON)
-.if defined(WITH_DEVEL)
+.if ${PORT_OPTIONS:MSTABILITATION} || empty(PORT_OPTIONS:MMLTON)
+.if ${PORT_OPTIONS:MDEVEL}
 BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
 
 MAKE_ENV+=	SMLNJ_DEVEL=yes
@@ -49,20 +46,18 @@ MAKE_ENV+=	SMLNJ=yes
 .endif
 .endif
 
-.if defined(WITH_MLTON)
+.if ${PORT_OPTIONS:MMLTON}
 PLIST_SUB+=	SML_EXEC="@comment " SML_EXEC_DEVEL="@comment "
-.else
-.if defined(WITH_DEVEL)
+.elif ${PORT_OPTIONS:MDEVEL}
 PLIST_SUB+=	SML_EXEC="@comment " SML_EXEC_DEVEL=""
 .else
 PLIST_SUB+=	SML_EXEC="" SML_EXEC_DEVEL="@comment "
 .endif
-.endif
 
-.if defined(WITH_STABILIZATION)
+.if ${PORT_OPTIONS:MSTABILIZATION}
 MAKE_ENV+=	STABILIZE=yes
 
-.if defined(WITH_DEVEL)
+.if ${PORT_OPTIONS:MDEVEL}
 PLIST_SUB+=	STABLE="@comment " STABLE_DEVEL=""
 .else
 PLIST_SUB+=	STABLE="" STABLE_DEVEL="@comment "
@@ -72,23 +67,23 @@ PLIST_SUB+=	STABLE="" STABLE_DEVEL="@comment "
 PLIST_SUB+=	STABLE="@comment " STABLE_DEVEL="@comment "
 .endif
 
-.if defined(WITH_STABILIZATION) && defined(WITH_DEVEL)
+.if ${PORT_OPTIONS:MSTABILITATION} || !empty(PORT_OPTIONS:MDEVEL)
 RUN_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
 .endif
 
-.if defined(WITH_MLTON)
+.if ${PORT_OPTIONS:MMLTON}
 BUILD_DEPENDS+=	mlton:${PORTSDIR}/lang/mlton
 MAKE_ENV+=	MLTON_BUILD=yes
 .endif
 
-.if defined(WITHOUT_MLTON) && defined(WITHOUT_DEVEL)
+.if empty(PORT_OPTIONS:MMLTON) &&  empty(PORT_OPTIONS:MDEVEL)
 MAKE_ENV+=	NO_HEAP2EXEC=yes
 PLIST_SUB+=	SML_EXEC=""
 .else
 PLIST_SUB+=	SML_EXEC="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=install install-doc
 .endif
 
@@ -130,4 +125,4 @@ post-patch:
 		${MV} ${WRKSRC}/$$e.sml.orig ${WRKSRC}/$$e.orig.sml;	      \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
