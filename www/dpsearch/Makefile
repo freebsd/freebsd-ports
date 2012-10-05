@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dpsearch
-# Date created:         14.06.2004
-# Whom:                 Maxim Zakharov <maxime@maxime.net.ru>
-#
+# Created by: Maxim Zakharov <maxime@maxime.net.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.53
@@ -28,25 +24,22 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
-		DPSEARCH_SSL      "Enable SSL"                            on  \
-		DPSEARCH_CHINESE  "Enable chinese charsets"               off \
-		DPSEARCH_JAPANESE "Enable japanese charsets"              off \
-		DPSEARCH_MECAB    "Enable MeCab japanese analyzer"        off \
-		DPSEARCH_CHASEN   "Enable ChaSen japanese analyzer"       off \
-		DPSEARCH_APACHE   "Enable mod_dpsearch for Apache"        off \
-		DPSEARCH_IDN      "Enable Internationalized Domain Names" off \
-		DPSEARCH_ASPELL   "Enable aspell support"                 off \
-		DPSEARCH_EXTRACT  "Enable libextractor support"           off \
-		DPSEARCH_PGSQL    "Use PostgreSQL  (mutually exclusive)"  on \
-		DPSEARCH_MYSQL    "Use MySQL       (mutually exclusive)"  off \
-		DPSEARCH_SQLITE   "Use SQLite      (mutually exclusive)"  off
+OPTIONS_DEFINE=	THREADS SSL CHINESE JAPANESE MECAB CHASEN APACHE IDN ASPELL \
+		EXTRACT DOCS
+OPTIONS_DEFAULT=	THREADS SSL PGSQL
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	PGSQL MYSQL SQLITE
+CHINESE_DESC=	Enable chinese charsets
+JAPANESE_DESC=	Enable japanese charsets
+MECAB_DESC=	Enable MeCab japanese analyzer
+CHASEN_DESC=	Enable ChaSen japanese analyzer
+EXTRACT_DESC=	Enable libextractor support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ENV+=	PORTNAME="${PORTNAME}"
 
-.if !defined(WITHOUT_DPSEARCH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
@@ -54,52 +47,48 @@ CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=--disable-pthreads
 .endif
 
-.if !defined(WITHOUT_DPSEARCH_ASPELL)
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+.if ${PORT_OPTIONS:MASPELL}
+LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .else
 CONFIGURE_ARGS+=--without-aspell
 .endif
 
-.if !defined(WITHOUT_DPSEARCH_EXTRACT)
+.if ${PORT_OPTIONS:MEXTRACT}
 LIB_DEPENDS+=	extractor.3:${PORTSDIR}/textproc/libextractor
 .endif
 
-.if !defined(NO_OPENSSL) && !defined(WITHOUT_DPSEARCH_SSL)
-WITH_OPENSSL=	yes
-.endif
-
-.ifdef WITH_OPENSSL
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
-.if defined(WITH_DPSEARCH_CHASRETS)
+.if ${PORT_OPTIONS:MCHARSETS}
 CONFIGURE_ARGS+=--with-extra-charsets=all
 .endif
 
-.if defined(WITH_DPSEARCH_CHINESE)
+.if ${PORT_OPTIONS:MCHINESE}
 CONFIGURE_ARGS+=--with-extra-charsets=chinese
 .endif
 
-.if defined(WITH_DPSEARCH_JAPANESE)
+.if ${PORT_OPTIONS:MJAPANESE}
 CONFIGURE_ARGS+=--with-extra-charsets=japanese
 .endif
 
-.if defined(WITH_DPSEARCH_MECAB)
+.if ${PORT_OPTIONS:MMECAB}
 LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
 CONFIGURE_ARGS+=--enable-mecab
 .endif
 
-.if defined(WITH_DPSEARCH_CHASEN)
+.if ${PORT_OPTIONS:MCHASEN}
 LIB_DEPENDS+=	chasen.2:${PORTSDIR}/japanese/chasen
 CONFIGURE_ARGS+=--enable-chasen
 .endif
 
-.if defined(WITH_DPSEARCH_IDN)
+.if ${PORT_OPTIONS:MIDN}
 LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--enable-idn
 .endif
 
-.if defined(WITH_DPSEARCH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE=	22+
 PLIST_SUB+=	APACHE=""
 CONFIGURE_ARGS+=--enable-apache-module
@@ -107,30 +96,23 @@ CONFIGURE_ARGS+=--enable-apache-module
 PLIST_SUB+=	APACHE="@comment "
 .endif
 
-.if !defined(WITH_DPSEARCH_PGSQL) && !defined(WITH_DPSEARCH_MYSQL) && !defined(WITH_DPSEARCH_SQLITE)
-WITH_DPSEARCH_MYSQL=yes
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Choose MySQL by default."
-	@${ECHO}
-.endif
-
-.if defined(WITH_DPSEARCH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
+.endif
 
-.elif defined(WITH_DPSEARCH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+.endif
 
-.elif defined(WITH_DPSEARCH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
-
 .endif
 
 post-extract:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc_Makefile.in
 .endif
 
@@ -149,4 +131,4 @@ post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/dpsearch/' >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

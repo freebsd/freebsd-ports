@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quixote-session2
-# Date created:		15 June 2005
-# Whom:	      		Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	session2
 PORTVERSION=	0.6.1
@@ -20,25 +16,25 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.6
 
-OPTIONS=	MYSQL "MySQLdb support" on
-OPTIONS+=	POSTGRESQL "psycopg support" on
+OPTIONS_DEFINE=	MYSQL PGSQL DOCS
+OPTIONS_DEFAULT=	MYSQL PGSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg>0:${PORTSDIR}/databases/py-psycopg
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in ChangeLog default.css README.html README.txt TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

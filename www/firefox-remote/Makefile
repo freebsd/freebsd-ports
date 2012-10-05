@@ -1,4 +1,4 @@
-# Created by:					Franz Klammer <klammer@webonaut.com>
+# Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
 
 PORTNAME=	firefox
@@ -18,27 +18,28 @@ UTF8_HACK=	no
 FIREFOX_REMOTE=	${PORTNAME}${PKGNAMESUFFIX}
 THUNDERBIRD_REMOTE=	thunderbird${PKGNAMESUFFIX}
 
-OPTIONS=UTF8_LOCALE "Use UTF8 locale (read Makefile for details)" off \
-	MENU_FIREFOX "Add menu entry for firefox" off \
-	MENU_THUNDERBIRD "Add menu entry for thunderbird" off
+OPTIONS_DEFINE=	UTF8_LOCALE MENU_FIREFOX MENU_THUNDERBIRD
+UTF8_LOCALE_DESC=	Use UTF8 locale (read Makefile for details)
+MENU_FIREFOX_DESC=	Add menu entry for firefox
+MENU_THUNDERBIRD_DESC=	Add menu entry for thunderbird
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # firefox/thunderbird can't display unicode filenames with special
 # characters like umlaute in german correctly if a ISO-locale is set.
 # when enabled the remote scripts try to switch to the UTF8-locale if
 # available (e.g. de_DE.UTF8 instead of de_DE.ISO8859-xx)
-.if defined(WITH_UTF8_LOCALE)
+.if ${PORT_OPTIONS:MUTF8_LOCALE}
 UTF8_HACK=	yes
 .endif
 
-.if defined(WITH_MENU_FIREFOX)
+.if ${PORT_OPTIONS:MMENU_FIREFOX}
 PLIST_SUB+=	MENU_FIREFOX=""
 .else
 PLIST_SUB+=	MENU_FIREFOX="@comment "
 .endif
 
-.if defined(WITH_MENU_THUNDERBIRD)
+.if ${PORT_OPTIONS:MMENU_THUNDERBIRD}
 PLIST_SUB+=	MENU_THUNDERBIRD=""
 .else
 PLIST_SUB+=	MENU_THUNDERBIRD="@comment "
@@ -56,13 +57,13 @@ do-install:
 	${RM} -f ${PREFIX}/bin/${THUNDERBIRD_REMOTE}
 	${LN} -s ${PREFIX}/bin/${FIREFOX_REMOTE} \
 		${PREFIX}/bin/${THUNDERBIRD_REMOTE}
-.if defined (WITH_MENU_FIREFOX)
+.if ${PORT_OPTIONS:MMENU_FIREFOX}
 	${INSTALL_DATA} ${WRKSRC}/mozilla_firefox.desktop \
 		${LOCALBASE}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/mozilla_firefox.png \
 		${LOCALBASE}/share/pixmaps/
 .endif
-.if defined (WITH_MENU_THUNDERBIRD)
+.if ${PORT_OPTIONS:MMENU_THUNDERBIRD}
 	${INSTALL_DATA} ${WRKSRC}/mozilla_thunderbird.desktop \
 		${LOCALBASE}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/mozilla_thunderbird.png \
@@ -70,4 +71,4 @@ do-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

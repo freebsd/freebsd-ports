@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xapian-omega10
-# Date created:		05 Jul 2008
-# Whom:			Henrik Brix Andersen <brix@FreeBSD.org>
-#
+# Created by: Henrik Brix Andersen <brix@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xapian-omega10
 PORTVERSION=	1.0.23
@@ -16,7 +12,7 @@ COMMENT=	CGI search application built on Xapian
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core10
+LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core10
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -36,13 +32,14 @@ PORTDOCS=	cgiparams.html omegascript.html overview.html \
 		${MORE_PORTDOCS}
 PORTEXAMPLES=	omega.conf
 
-OPTIONS=	ICONV "Enable iconv character set conversion support" On
+OPTIONS_DEFINE=	ICONV DOCS EXAMPLES
+OPTIONS_DEFAULT=	ICONV
 
 PORTSCOUT=	limit:^1\.0\.
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--with-iconv
 .else
@@ -54,20 +51,20 @@ post-patch:
 		-e 's|^\(dist_sysconf_DATA\ =\ omega\.conf\)|#\1|' \
 		-e "s|^\(pkglibbindir\)\ =.*/bin|\1\ =\ \$$(prefix)/${WWWDIR_REL}/cgi-bin|" \
 		 ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} \
 		-e 's|^\(SUBDIRS\ =\ \.\) docs|\1|' \
 		 ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${MORE_PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
