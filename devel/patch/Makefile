@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	patch
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	patch
@@ -15,12 +14,15 @@ MASTER_SITE_SUBDIR=	patch
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	GNU patch utility
 
-USE_AUTOTOOLS=	autoconf aclocal
-CONFIGURE_ARGS=	--program-prefix=g
+LICENSE=	GPLv3
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--program-prefix=g
 USE_GMAKE=	yes
 USE_XZ=		yes
 
 MAN1=		gpatch.1
-PLIST_FILES=	bin/gpatch
+PLIST_FILES=	bin/gpatch \
+		lib/charset.alias
 
 .include <bsd.port.mk>
