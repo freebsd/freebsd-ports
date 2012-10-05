@@ -1,9 +1,5 @@
-# New ports collection makefile for: p5-News-Article
-# Date created: January 2, 1998
-# Whom: Don Croyle <croyle@gelemna.org>
-#
+# Created by: Don Croyle <croyle@gelemna.org>
 # $FreeBSD$
-#
 
 PORTNAME=	News-Article
 PORTVERSION=	1.27
@@ -23,13 +19,15 @@ PERL_CONFIGURE=	yes
 MAN3=		News::Article.3 News::AutoReply.3 News::FormArticle.3 \
 		News::FormReply.3
 
-OPTIONS=	PGP_SIGN "PGP::Sign support for header signing" on
+OPTIONS_DEFINE=	PGP_SIGN
+OPTIONS_DEFAULT=	PGP_SIGN
+PGP_SIGN_DESC=	PGP::Sign support for header signing
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PGP_SIGN)
+.if ${PORT_OPTIONS:MPGP_SIGN}
 BUILD_DEPENDS+=	p5-PGP-Sign>=0:${PORTSDIR}/security/p5-PGP-Sign
 RUN_DEPENDS+=	p5-PGP-Sign>=0:${PORTSDIR}/security/p5-PGP-Sign
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
