@@ -6,27 +6,33 @@
 #
 
 PORTNAME=	libfpx
-PORTVERSION=	1.2.0.12
-PORTREVISION=	2
+DISTVERSION=	1.3.1-1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
-
-PATCHFILES=	fpx.mega-patch.2007-11-01.bz2
-PATCH_SITES=	http://aldan.algebra.com/~mi/
+MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
+		http://www.imagemagick.org/download/delegates/	\
+		ftp://mirror.aarnet.edu.au/pub/imagemagick/delegates/	\
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/delegates/ \
+		http://servingzone.com/mirrors/ImageMagick/delegates/	\
+		http://mirror.checkdomain.de/imagemagick/delegates/	\
+		ftp://mirror.checkdomain.de/imagemagick/delegates/	\
+		http://image_magick.veidrodis.com/image_magick/delegates/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library routines for working with Flashpix images
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 
-post-patch:
-	${RM} ${WRKSRC}/ri_image/wchar.c ${WRKSRC}/fpx/fpxlib.h
-
-PLIST_FILES=lib/libfpx.so.2 lib/libfpx.so lib/libfpx.a include/fpxlib.h
+PLIST_FILES=	lib/libfpx.so.2 lib/libfpx.so lib/libfpx.a include/fpxlib.h
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_JOBS_SAFE=	yes
+
+post-patch:
+	${SED} -i '' -e '/^#include "fpxlib-config.h"/d'	\
+		${WRKSRC}/basics/filename.cpp	\
+		${WRKSRC}/oless/h/owchar.h	\
+		${WRKSRC}/ole/gen_guid.cpp	\
+		${WRKSRC}/fpxlib.h
 
 .include <bsd.port.mk>
 
