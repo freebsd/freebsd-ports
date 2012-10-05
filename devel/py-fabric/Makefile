@@ -1,28 +1,23 @@
-# New ports collection makefile for:	py-fabric
-# Date created:		2009-03-15
-# Whom:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-#
+# Created by:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	fabric
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Fabric-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	${PYDISTUTILS_PKGNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	koobs.freebsd@gmail.com
 COMMENT=	A simple pythonic remote deployment tool
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ssh>=1.7.8:${PORTSDIR}/security/py-ssh
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ssh>=1.7.14:${PORTSDIR}/security/py-ssh
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	Fabric
+PYDISTUTILS_PKGNAME=	${PORTNAME:C/f/F/}
 
 .include <bsd.port.mk>
