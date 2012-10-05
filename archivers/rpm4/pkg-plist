@@ -95,6 +95,7 @@ lib/rpm/desktop-file.prov
 lib/rpm/script.req
 lib/rpm/rpmdb_loadcvt
 lib/rpm/rpm2cpio.sh
+lib/rpm/rpm.supp
 lib/rpm/tgpg
 lib/rpm/fileattrs/desktop.attr
 lib/rpm/fileattrs/elf.attr

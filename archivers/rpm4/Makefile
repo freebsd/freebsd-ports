@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.10.0
+PORTVERSION=	4.10.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
