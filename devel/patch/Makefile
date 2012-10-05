@@ -7,6 +7,7 @@
 
 PORTNAME=	patch
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	patch
@@ -22,7 +23,6 @@ USE_GMAKE=	yes
 USE_XZ=		yes
 
 MAN1=		gpatch.1
-PLIST_FILES=	bin/gpatch \
-		lib/charset.alias
+PLIST_FILES=	bin/gpatch
 
 .include <bsd.port.mk>
