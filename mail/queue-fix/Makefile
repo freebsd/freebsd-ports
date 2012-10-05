@@ -1,9 +1,4 @@
-# New ports collection makefile for:	queue-fix
-# Date created:		2005-04-14
-# Whom:			Renato Botelho <freebsd@galle.com.br>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	queue-fix
 PORTVERSION=	1.4

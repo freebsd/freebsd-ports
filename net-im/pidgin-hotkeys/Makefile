@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pidgin-hotkeys
-# Date created:		2006-11-23
-# Whom:			garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin-hotkeys
 PORTVERSION=	0.2.4

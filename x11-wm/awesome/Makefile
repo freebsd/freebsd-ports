@@ -1,9 +1,5 @@
-# New ports collection makefile for:   awesome
-# Date created:                September 26, 2007
-# Whom:                        Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-#
+# Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	awesome
 PORTVERSION=	3.4.13

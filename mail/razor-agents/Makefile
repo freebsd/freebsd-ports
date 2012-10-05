@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razor-agents
-# Date created:				29 November 2001
-# Whom:	      				Yen-Ming Lee <leeym@leeym.com>
-#
+# Created by: Yen-Ming Lee <leeym@leeym.com>
 # $FreeBSD$
-#
 
 PORTNAME=	razor-agents
 PORTVERSION=	2.84

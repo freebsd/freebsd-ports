@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucspi-tcp
-# Date created:		12 June 1998
-# Whom:			Dom Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dom Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ucspi-tcp
 PORTVERSION=	0.88

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-ldap
-# Date created:				21 May 2000
-# Whom:					Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${LDAP_PATCH_DATE}

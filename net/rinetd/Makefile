@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rinetd
-# Date created:				23 Dec 1997
-# Whom:					alexp
-#
+# Created by: alexp
 # $FreeBSD$
-#
 
 PORTNAME=	rinetd
 PORTVERSION=	0.62

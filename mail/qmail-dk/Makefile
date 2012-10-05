@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qmail-dk
-# Date created:		2006-07-18
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dk
 PORTVERSION=	0.54

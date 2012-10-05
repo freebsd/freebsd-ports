@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ucspi-ssl-tls
-# Date created:				2006-05-26
-# Whom:					Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	4
 PORTEPOCH=	0

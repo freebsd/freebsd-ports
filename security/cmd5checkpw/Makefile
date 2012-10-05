@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cmd5checkpw
-# Date created:				8 Sep 2003
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cmd5checkpw
 PORTVERSION=	0.22

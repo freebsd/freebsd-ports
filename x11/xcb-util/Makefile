@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xcb-util
-# Date created:                October 16, 2007
-# Whom:                        Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-#
+# Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	xcb-util
 PORTVERSION=	0.3.8

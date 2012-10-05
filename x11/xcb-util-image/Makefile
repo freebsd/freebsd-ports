@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xcb-util-image
-# Date created:		2011-12-16
-# Whom:			garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xcb-util-image
 PORTVERSION=	0.3.8

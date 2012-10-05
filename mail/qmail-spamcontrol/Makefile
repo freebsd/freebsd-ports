@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qmail-spamcontrol
-# Date created:		2005-02-01
-# Whom:			Renato Botelho <renato@galle.com.br>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${SPAMCONTROL_VERSION}

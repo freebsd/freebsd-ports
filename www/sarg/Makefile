@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sarg
-# Date created:		23.02.2003
-# Whom:			mt@primats.org.ua
-#
+# Created by: mt@primats.org.ua
 # $FreeBSD$
-#
 
 PORTNAME=	sarg
 PORTVERSION=	2.3.2

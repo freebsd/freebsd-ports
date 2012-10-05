@@ -1,9 +1,5 @@
-# New ports collection makefile for:		cdiff
-# Date created:					September 20th 2000
-# Whom:						eivind
-#
+# Created by: eivind
 # $FreeBSD$
-#
 # This port is self contained in the src directory.
 #
 

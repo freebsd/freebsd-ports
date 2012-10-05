@@ -1,9 +1,5 @@
-# New ports collection makefile for: checkpassword
-# Date created:		05 August 1998
-# Whom:			sada@FreeBSD.org
-#
+# Created by: sada@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	checkpassword
 PORTVERSION=	0.90

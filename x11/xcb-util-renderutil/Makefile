@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xcb-util-renderutil
-# Date created:		2011-12-16
-# Whom:			garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xcb-util-renderutil
 PORTVERSION=	0.3.8

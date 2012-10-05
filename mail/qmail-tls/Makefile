@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-tls
-# Date created:				03 Dec 2000
-# Whom:					Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}

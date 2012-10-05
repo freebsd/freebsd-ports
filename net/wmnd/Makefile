@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmnd
-# Date created:				29 October 2001
-# Whom:					Paolo Pisati <flag@gufi.org>
-#
+# Created by: Paolo Pisati <flag@gufi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmnd
 PORTVERSION=	0.4.17
