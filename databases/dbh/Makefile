@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	dbh
-# Date created:			Aug 9, 2002
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dbh
 PORTVERSION=	4.6.2
@@ -17,9 +12,10 @@ COMMENT=	Disk Based Hashtables
 
 CONFLICTS=	dbh-[0-3]*
 
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 MAN1=		dbh.1 dbh.h.1
 MAN3=		dbh_close.3 dbh_create.3 dbh_destroy.3 dbh_erase.3 \
@@ -33,11 +29,12 @@ MAN3=		dbh_close.3 dbh_create.3 dbh_destroy.3 dbh_erase.3 \
 		dbh_settempdir.3 dbh_sweep.3 dbh_unerase.3 \
 		dbh_unprune.3 dbh_update.3 dbh_writeheader.3
 
-OPTIONS=	GTKDOC "Enable GTK html documentation" off
+OPTIONS_DEFINE=	GTKDOC EXAMPLES
+GTKDOC_DESC=	Enable GTK html documentation
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTKDOC)
+.if ${PORT_OPTIONS:MGTKDOC}
 CONFIGURE_ARGS+=	--enable-gtk-doc-html
 PLIST_SUB=	GTKDOC=""
 .else
@@ -47,12 +44,12 @@ PLIST_SUB=	GTKDOC="@comment "
 
 post-patch:
 # Needed to remove gtk-doc installation.
-.if !defined(WITH_GTKDOC)
+.if empty(PORT_OPTIONS:MGTKDOC)
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = src man\).*|\1|' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} '*.c' ${EXAMPLESDIR})
 .endif
