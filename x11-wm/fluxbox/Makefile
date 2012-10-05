@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fluxbox
-# Date created:				29 November 2001
-# Whom:					spn
-#
+# Created by: spn
 # $FreeBSD$
-#
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.3.2
@@ -29,25 +25,22 @@ MAN5=		fluxbox-apps.5 fluxbox-keys.5 fluxbox-menu.5 \
 		fluxbox-style.5
 DOCSVERSION=	20060629
 
-OPTIONS=	DOCHTML "Install html documentation" off \
-		DOCPDF "Install pdf documentation" off \
-		DEBUG "Enable debugging support" off \
-		GNOME "Enable GNOME support" off \
-		IMLIB2 "Enable imlib2 support" off \
-		XINERAMA "Enable xinerama support" off \
-		XRENDER "Enable xrender support" on \
-		NLS "Native language support" on \
-		SLIT "Enable slit feature" on \
-		REMEMBER "Enable remember feature" on \
-		TOOLBAR "Enable toolbar feature" on
+OPTIONS_DEFINE=	DOCS DOCHTML PDF DEBUG GNOME IMLIB2 XINERAMA \
+		XRENDER NLS SLIT REMEMBER TOOLBAR
+OPTIONS_DEFAULT=	XRENDER SLIT REMEMBER TOOLBAR
+DOCHTML_DESC=	Install html documentation
+XRENDER_DESC=	Enable xrender support
+SLIT_DESC=	Enable slit feature
+REMEMBER_DESC=	Enable remember feature
+TOOLBAR_DESC=	Enable toolbar feature
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_DOCHTML)
+.if ${PORT_OPTIONS:MDOCHTML}
 # http://fluxbox.org/docbook/en/tarballs/
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:html \
 			http://people.freebsd.org/~mezz/distfiles/:html
@@ -58,7 +51,7 @@ PLIST_SUB+=		DOCHTML:=""
 PLIST_SUB+=		DOCHTML:="@comment "
 .endif
 
-.if defined(WITH_DOCPDF)
+.if ${PORT_OPTIONS:MPDF}
 # http://fluxbox.org/docbook/en/pdf/
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:pdf \
 			http://people.freebsd.org/~mezz/distfiles/:pdf
@@ -68,19 +61,19 @@ PLIST_SUB+=		DOCPDF:=""
 PLIST_SUB+=		DOCPDF:="@comment "
 .endif
 
-.if !defined(WITHOUT_IMLIB2)
+.if ${PORT_OPTIONS:MIMLIB2}
 USE_EFL+=		imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
 .endif
 
-.if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
+.if ${PORT_OPTIONS:MXINERAMA} || defined(PACKAGE_BUILDING)
 USE_XORG+=		xinerama
 CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_ICONV=		yes
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib -liconv"
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -93,25 +86,25 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS:="@comment "
 .endif
 
-.if !defined(WITHOUT_REMEMBER)
+.if ${PORT_OPTIONS:MREMEMBER}
 CONFIGURE_ARGS+=	--enable-remember
 .else
 CONFIGURE_ARGS+=	--disable-remember
 .endif
 
-.if !defined(WITHOUT_SLIT)
+.if ${PORT_OPTIONS:MSLIT}
 CONFIGURE_ARGS+=	--enable-slit
 .else
 CONFIGURE_ARGS+=	--disable-slit
 .endif
 
-.if !defined(WITHOUT_TOOLBAR)
+.if ${PORT_OPTIONS:MTOOLBAR}
 CONFIGURE_ARGS+=	--enable-toolbar
 .else
 CONFIGURE_ARGS+=	--disable-toolbar
 .endif
 
-.if !defined(WITHOUT_XRENDER)
+.if ${PORT_OPTIONS:MXRENDER}
 USE_XORG+=		xrender
 CONFIGURE_ARGS+=	--enable-xrender
 .else
@@ -131,24 +124,24 @@ post-patch:
 		${WRKSRC}/util/fluxbox-generate_menu.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/util/fbsetbg
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
 		${WRKSRC}/configure
 .endif
 
 post-install:
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-.if defined(WITH_DOCPDF)
+.if ${PORT_OPTIONS:MPDF}
 	@${MKDIR} ${DOCSDIR}/pdf
 	@${INSTALL_DATA} ${DISTDIR}/fluxbook-${DOCSVERSION}.pdf \
 		${DOCSDIR}/pdf/
 .endif
-.if defined(WITH_DOCHTML)
+.if ${PORT_OPTIONS:MDOCHTML}
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKDIR}/html/*.css ${DOCSDIR}/html/
 	@${INSTALL_DATA} ${WRKDIR}/html/*.html ${DOCSDIR}/html/

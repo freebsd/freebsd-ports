@@ -1,9 +1,4 @@
-# New ports collection makefile for:   fluxcms
-# Date created:        31 December 2005
-# Whom:                beat
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fluxcms
 PORTVERSION=	1.6.0
@@ -25,7 +20,7 @@ PLIST_SUB=	INSTALLDIR=${FLUXCMSDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	INSTALLDIR=${INSTALLDIR}
 
-OPTIONS=	TIDY "Configure with tidy support" off
+OPTIONS_DEFINE=	TIDY
 
 USE_PHP=	dom xml simplexml iconv mysql xsl session pcre gd
 
@@ -36,7 +31,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TIDY)
+.if ${PORT_OPTIONS:MTIDY}
 USE_PHP+=	tidy
 .endif
 
