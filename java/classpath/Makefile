@@ -169,7 +169,7 @@ pre-configure:
 	@if [ ! -x ${JAVAC} ]; then \
 		${PRINTF} "%s\n%s\n%s\n%s\n" \
 		    '#!/bin/sh' \
-		    '"${JAVA}" -classpath "${DISTDIR}/${ECJ_JAR}" \' \
+		    '"${JAVA}" -Xmx768M -classpath "${DISTDIR}/${ECJ_JAR}" \' \
 		    '    org.eclipse.jdt.internal.compiler.batch.Main \' \
 		    '    "$${@:--help}"' > ${JAVAC}; \
 		${CHMOD} 755 ${JAVAC}; \
