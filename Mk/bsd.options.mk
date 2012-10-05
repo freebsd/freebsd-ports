@@ -21,6 +21,8 @@
 # OTPIONS_MULTI_${NAME}		- List of OPTIONS grouped as multiple-choice
 #				(for the multi named as ${NAME} as defined in 
 #				OPTIONS_MULTI)
+# WITH				Set options from the command line
+# WITHOUT			Unset options from the command line
 
 ##
 # Set all the options available for the ports, beginning with the
@@ -198,6 +200,19 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .undef opt
 
 .endif
+
+## Cmdline always win over the rest
+.for opt in ${WITH}
+.  if !empty(COMPLETE_OPTIONS_LIST:M${opt})
+PORT_OPTIONS+=	${opt}
+.  endif
+.endfor
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+
+.for opt in ${WITHOUT}
+PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.endfor
+.undef opt
 
 ## Now some compatibility
 .if empty(PORT_OPTIONS:MDOCS)
