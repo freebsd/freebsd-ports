@@ -1,40 +1,65 @@
-# New ports collection makefile for:		cacao
-# Date created:					2005-04-28
-# Whom:						arved
-#
+# Created by:	Tilman Keskinoz <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cacao
-PORTVERSION=	0.98
-PORTREVISION=	7
+PORTVERSION=	1.6.0
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.complang.tuwien.ac.at/cacaojvm/download/cacao-${PORTVERSION}/
 
-MAINTAINER=	bkoenig@alpha-tierchen.de
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	JIT compiler for JAVA
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
+RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libltdl
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_XZ=		yes
+
 MAN1=		cacao.1
-CONFIGURE_ARGS+=	--with-classpath-prefix=${LOCALBASE}
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-java-runtime-library=gnuclasspath \
+		--with-java-runtime-library-prefix=${PREFIX} \
+		--with-build-java-runtime-library-classes=${LOCALBASE}/share/classpath/glibj.zip
+CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
 
-.if ${ARCH} == amd64
-IGNORE=		unsupported architecture
+ONLY_FOR_ARCHS=	amd64 i386
+
+OPTIONS_DEFINE=	JDK
+OPTIONS_DEFAULT=JDK
+JDK_DESC=	Build with native JDK
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MJDK}
+USE_JAVA=	yes
+JAVA_BUILD=	jdk
+JAVA_VERSION=	1.5+
+.else
+.if defined(WITH_GCC)
+GCC_SUFX=	${WITH_GCC:S/.//}
+.endif
+GCC_SUFX?=	46
+BUILD_DEPENDS+=	gcj${GCC_SUFX}:${PORTSDIR}/lang/gcc${GCC_SUFX}
+EXTRA_PATCHES=	${FILESDIR}/gcj.patch
+JAR=		${LOCALBASE}/bin/gjar${GCC_SUFX}
+JAVAC=		${LOCALBASE}/bin/gcj${GCC_SUFX}
+JAVACFLAGS=	-C
+CONFIGURE_ENV+=	JAVACFLAGS="${JAVACFLAGS}"
+MAKE_ENV+=	JAVACFLAGS="${JAVACFLAGS}"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s, man,," ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+	    ${WRKSRC}/configure ${WRKSRC}/src/mm/boehm-gc/configure
 
-post-install:
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/cacao/cacao ${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/src/cacao/.libs/libjvm.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/classes/vm.zip ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/man/cacao.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
