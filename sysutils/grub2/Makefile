@@ -21,11 +21,12 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 INFO=		grub
 
-OPTIONS=	MKFONT "Build grub-mkfont (require freetype2)" off
+OPTIONS_DEFINE=	MKFONT
+MKFONT_DESC=	Build grub-mkfont (require freetype2)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MKFONT)
+.if ${PORT_OPTIONS:MMKFONT}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .else
 MKFONT=		"@comment "
@@ -36,4 +37,4 @@ PLIST_SUB+=	MKFONT=${MKFONT}
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

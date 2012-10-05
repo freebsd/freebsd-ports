@@ -23,21 +23,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-inotify
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-OPTIONS=	XINERAMA "Xinerama support" on
+OPTIONS_DEFINE=	XINERAMA
+OPTIONS_DEFAULT=	XINERAMA
 
 MAN1=		nitrogen.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_XINERAMA)
-CONFIGURE_ARGS+=--disable-xinerama
-.else
+.if ${PORT_OPTIONS:MXINERAMA}
 CONFIGURE_ARGS+=--enable-xinerama
 USE_XORG+=	xinerama
+.else
+CONFIGURE_ARGS+=--disable-xinerama
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
 		${WRKSRC}/data/icon-theme-installer
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

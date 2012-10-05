@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cronolog
-# Date created:        20 January 2000
-# Whom:                Mark Blackman <tmb_ports@maddog.u-net.com>
-#
+# Created by: Mark Blackman <tmb_ports@maddog.u-net.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2
@@ -21,14 +17,16 @@ MAN1=		cronolog.1m cronosplit.1m
 
 GNU_CONFIGURE=	yes
 
-OPTIONS=	SETUID_PATCH "Build with setuid functionality" On
+OPTIONS_DEFINE=	SETUID_PATCH
+OPTIONS_DEFAULT=	SETUID_PATCH
+SETUID_PATCH_DESC=	Build with setuid functionality
 
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-src_cronoutils.c
 PATCH_STRIP=	-p1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SETUID_PATCH)
+.if ${PORT_OPTIONS:MSETUID_PATCH}
 MASTER_SITES+=	http://cronolog.org/patches/:patches
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} cronolog-setugid-patch.txt:patches
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -40,4 +38,4 @@ post-extract:
 	@cd ${WRKSRC} && ${TOUCH} aclocal.m4 Makefile.in */Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libtranslate
-# Date created:			15 Jan 2005
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=		libtranslate
 PORTVERSION=		0.99
@@ -30,8 +26,10 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc
 MAKE_JOBS_SAFE=		yes
 
-OPTIONS=		GENERIC "generic module" on \
-			TALKFILTERS "talkfilters module" on
+OPTIONS_DEFINE=	GENERIC TALKFILTERS
+OPTIONS_DEFAULT=	GENERIC TALKFILTERS
+GENERIC_DESC=	generic module
+TALKFILTERS_DESC=	talkfilters module
 
 MAN1=			translate.1
 
@@ -39,12 +37,9 @@ post-patch::
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|'	\
 		-e 's|libsoup-2.2|libsoup-2.4|g' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GENERIC)
-CONFIGURE_ARGS+=	--disable-generic
-PLIST_SUB+=		GENERIC="@comment "
-.else
+.if ${PORT_OPTIONS:MGENERIC}
 PLIST_SUB+=		GENERIC=""
 USE_GNOME+=		libxml2
 LIB_DEPENDS+=		soup-2.4:${PORTSDIR}/devel/libsoup
@@ -57,14 +52,17 @@ post-patch::
 	${SED} s,SOUP_MESSAGE_RESPONSE_,trans_SOUP_MESSAGE_RESPONSE_,g	\
 	    ${DISTDIR}/libtranslate-0.99-libsoup24.diff \
 		| ${PATCH} -d ${WRKSRC} -p1
+.else
+CONFIGURE_ARGS+=	--disable-generic
+PLIST_SUB+=		GENERIC="@comment "
 .endif
 
-.if defined(WITHOUT_TALKFILTERS)
-CONFIGURE_ARGS+=	--disable-talkfilters
-PLIST_SUB+=		TALKFILTERS="@comment "
-.else
+.if ${PORT_OPTIONS:MTALKFILTERS}
 PLIST_SUB+=		TALKFILTERS=""
 LIB_DEPENDS+=		talkfilters:${PORTSDIR}/misc/talkfilters
+.else
+CONFIGURE_ARGS+=	--disable-talkfilters
+PLIST_SUB+=		TALKFILTERS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

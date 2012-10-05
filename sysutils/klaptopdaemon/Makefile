@@ -1,9 +1,5 @@
-# New ports collection makefile for:	klaptopdaemon
-# Date created:				July 08 2004
-# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
-#
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	klaptopdaemon
 PORTVERSION=	${KDE_VERSION}
@@ -18,7 +14,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APM monitor for KDE
 
-OPTIONS=	#no options for amd64
+OPTIONS_DEFINE_i386=	ACPI
+ACPI_DESC=	Contributed ACPI support patch
 
 USE_KDELIBS_VER=3
 
@@ -33,15 +30,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-OPTIONS=	ACPI "Contributed ACPI support patch" off
-.endif
-
-.if ${ARCH} == "amd64"
-WITH_ACPI=	yes
-.endif
-
-.if defined(WITH_ACPI)
+.if ${PORT_OPTIONS:MACPI} || ${ARCH} == "amd64"
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-acpi-support
 ONLY_FOR_ARCHS+=amd64
 .endif
