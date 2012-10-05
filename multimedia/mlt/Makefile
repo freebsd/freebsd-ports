@@ -2,6 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -11,8 +12,6 @@ COMMENT=	Multimedia framework for TV broadcasting
 LICENSE=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
-
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
 
@@ -20,9 +19,8 @@ USE_GNOME=	gnomehack libxml2
 USE_PKGCONFIG=	build
 USE_SDL=	image
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --linsys-with-jpeg
+CONFIGURE_ARGS=	--enable-gpl --enable-gpl3
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include # Frei0r detection.
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
@@ -44,9 +42,9 @@ OPTIONS_DEFINE=	DV FFMPEG FREI0R GTK2 JACK QT4 QUICKTIME \
 OPTIONS_DEFAULT=DV FFMPEG FREI0R GTK2 QT4 \
 		SAMPLERATE SOX SWFDEC VORBIS
 
-GTK2_DESC=	GTK+ 2 support (images, text rendering...)
-QT4_DESC=	QImage support (Kdenlive titles, images...)
-SOX_DESC=	SoX audio effects support
+GTK2_DESC=	Images, text rendering, etc. via GTK+ 2
+QT4_DESC=	Kdenlive titles, images, etc. via QImage
+SOX_DESC=	SoX audio effects
 
 .include <bsd.port.options.mk>
 
@@ -64,8 +62,10 @@ PLIST_SUB+=	DV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-avformat --avformat-swscale
+FFMPEG_SUFFIX=	-011
+LIB_DEPENDS+=	avformat${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+CONFIGURE_ARGS+=	--enable-avformat --avformat-swscale \
+			--avformat-suffix="${FFMPEG_SUFFIX}"
 PLIST_SUB+=	FFMPEG=""
 .else
 CONFIGURE_ARGS+=	--disable-avformat
