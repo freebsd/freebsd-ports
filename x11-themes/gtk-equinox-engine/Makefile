@@ -31,11 +31,13 @@ SUBDIRS=	"Equinox Evolution" "Equinox Evolution Dawn" \
 EXAMPLES=	"Equinox Evolution.crx" "Equinox Evolution Dawn.crx" \
 		"Equinox Evolution Dusk.crx" "Equinox Evolution Midnight.crx"
 
-OPTIONS=	ANIMATION "Enable animation support" on
+OPTIONS_DEFINE=	ANIMATION EXAMPLES DOCS
+OPTIONS_DEFAULT=	ANIMATION
+ANIMATION_DESC=	Enable animation support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ANIMATION)
+.if ${PORT_OPTIONS:MANIMATION}
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
@@ -51,13 +53,13 @@ post-install:
 	${FIND} ${DATADIR}/${i} -type d -exec ${CHMOD} 755 {} +
 	${FIND} ${DATADIR}/${i} -type f -exec ${CHMOD} ${SHAREMODE} {} +
 .endfor
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 .for i in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKDIR}/$i ${EXAMPLESDIR}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
