@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geronimo
-# Date created:		26 Apr 2007
-# Whom:			Nemo Liu <nemoliu@FreeBSD.org>
-#
+# Created by: Nemo Liu <nemoliu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geronimo
 DISTVERSION=	3.0-beta-1
@@ -22,11 +18,12 @@ NO_BUILD=	YES
 USE_RC_SUBR=	geronimo3
 SUB_FILES=	pkg-deinstall
 
-OPTIONS=	TOMCAT7 "Use Tomcat instead of default Jetty" off
+OPTIONS_DEFINE=	TOMCAT7
+TOMCAT7_DESC=	Use Tomcat instead of default Jetty
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TOMCAT7)
+.if ${PORT_OPTIONS:MTOMCAT7}
 WEBSERVER=	tomcat7
 .else
 WEBSERVER=	jetty8
@@ -90,4 +87,4 @@ post-install:
 	@${FIND} -s -d ${WRKSRC} -type d | \
 		 ${SED} -ne 's,^${WRKSRC},@dirrm ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

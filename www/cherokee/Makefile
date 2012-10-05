@@ -1,4 +1,4 @@
-# Whom: silence <oksala@videotron.ca>
+# Created by: silence <oksala@videotron.ca>
 # $FreeBSD$
 
 PORTNAME=	cherokee
@@ -81,20 +81,16 @@ MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 cherokee-admin-launc
 		cherokee-tweak.1 cherokee-worker.1 
 PORTDOCS=	*
 
-OPTIONS=	IPV6	  "IPv6 support"	on	\
-		MYSQL	  "MySQL Database"	off	\
-		LDAP	  "LDAP Support"	off	\
-		GEOIP	  "GeoIP Support (recommended)"	on	\
-		FFMPEG	  "FFMpeg Support"	off	\
-		NLS	  "NLS Support"	on	\
-		INTPCRE	  "Use Internal PCRE Library"	off	\
-		ADMIN	  "Build the Admin Interface"	on	\
-		RRDTOOL   "Usage Graphs Support"  off	\
-		UWSGI     "uWSGI Support" off
+OPTIONS_DEFINE=	IPV6 MYSQL LDAP GEOIP FFMPEG NLS INTPCRE ADMIN ADMIN RRDTOOL UWSGI DOCS
+OPTIONS_DEFAULT=	IPV6 GEOIP ADMIN
+ADMIN_DESC=	Build the Admin Interface
+INTPCRE_DESC=	Use internal PCRE library
+RRDTOOL_DESC=	Usage graphs support
+UWSGI_DESC=	uWSGI support
 
 .include <bsd.port.options.mk>
 
-.ifdef WITH_ADMIN
+.if ${PORT_OPTIONS:MADMIN}
 USE_PYTHON=	2.5+
 PLIST_SUB+=	ADMIN=""
 .else
@@ -102,15 +98,13 @@ CONFIGURE_ARGS+=--disable-admin
 PLIST_SUB+=	ADMIN="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS+=	--with-wwwuser=${CHEROKEE_USER} --with-wwwgroup=${CHEROKEE_GROUP}
 
-.ifdef WITHOUT_IPV6
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.ifdef WITH_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=yes
 PLIST_SUB+=	MYSQL=""
@@ -119,7 +113,7 @@ CONFIGURE_ARGS+=	--with-mysql=no
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.ifdef WITH_LDAP
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap=yes
 PLIST_SUB+=	LDAP=""
@@ -128,7 +122,7 @@ CONFIGURE_ARGS+=	--with-ldap=no
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.ifdef WITH_GEOIP
+.if ${PORT_OPTIONS:MGEOIP}
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	--with-geoip=yes
 PLIST_SUB+=	GEOIP=""
@@ -137,7 +131,7 @@ CONFIGURE_ARGS+=	--with-geoip=no
 PLIST_SUB+=	GEOIP="@comment "
 .endif
 
-.ifdef WITH_FFMPEG
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		avutil:${PORTSDIR}/multimedia/ffmpeg
@@ -146,24 +140,24 @@ CONFIGURE_ARGS+=	--with-ffmpeg=yes
 CONFIGURE_ARGS+=	--with-ffmpeg=no
 .endif
 
-.ifdef WITH_NLS
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.ifdef WITH_INTPCRE
+.if ${PORT_OPTIONS:MINTPCRE}
 CONFIGURE_ARGS+=	--enable-internal-pcre
 .else
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
-.ifdef WITH_RRDTOOL
+.if ${PORT_OPTIONS:MRRDTOOL}
 RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
 .endif
 
-.ifdef WITH_UWSGI
+.if ${PORT_OPTIONS:MUWSGI}
 RUN_DEPENDS+=	uwsgi:${PORTSDIR}/www/uwsgi
 .endif
 
@@ -217,11 +211,11 @@ post-install:
 	@for i in `${FIND} ${PREFIX}/etc/cherokee/ -name \*.sample`;do\
 		if [ ! -f $${i%.sample} ];then ${CP} $$i $${i%.sample};fi;done
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.ifdef WITH_ADMIN
+.if ${PORT_OPTIONS:MADMIN}
 	@cd ${DATADIR}/admin && ${FIND} . -name "*.py" |\
 	${XARGS} ${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py
 .endif
@@ -242,4 +236,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} "==============================================================="
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

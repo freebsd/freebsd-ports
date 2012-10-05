@@ -15,10 +15,12 @@ COMMENT=	FormBuilder for CGI
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	TT		"Template Toolkit support" on \
-		HTML_TEMPLATE	"HTML::Template support" off \
-		TEXT_TEMPLATE	"Text::Template support" off \
-		CGI_FAST_TEMPLATE "CGI::FastTemplate support" off
+OPTIONS_DEFINE=	TT HTML_TEMPLATE TEXT_TEMPLATE CGI_FAST_TEMPLATE
+OPTIONS_DEFAULT=	TT
+TT_DESC=	Template Toolkit support
+HTML_TEMPLATE_DESC=	HTML::Template support
+TEXT_TEMPLATE_DESC=	Text::Template support
+CGI_FAST_TEMPLATE_DESC=	CGI::FastTemplate suppor
 
 MAN3=	CGI::FormBuilder.3 \
 	CGI::FormBuilder::Template::Builtin.3 \
@@ -39,22 +41,22 @@ MAN3=	CGI::FormBuilder.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_TT)
+.if ${PORT_OPTIONS:MTT}
 RUN_DEPENDS+=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 .endif
 
-.if defined(WITH_HTML_TEMPLATE)
+.if ${PORT_OPTIONS:MHTML_TEMPLATE}
 RUN_DEPENDS+=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 .endif
 
-.if defined(WITH_TEXT_TEMPLATE)
+.if ${PORT_OPTIONS:MTEXT_TEMPLATE}
 RUN_DEPENDS+=	p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
 .endif
 
-.if defined(WITH_CGI_FAST_TEMPLATE)
+.if ${PORT_OPTIONS:MCGI_FAST_TEMPLATE}
 RUN_DEPENDS+=	p5-CGI-FastTemplate>=0:${PORTSDIR}/www/p5-CGI-FastTemplate
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
