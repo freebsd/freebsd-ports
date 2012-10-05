@@ -1,7 +1,4 @@
-# New ports collection Makefile for: rxvt
-# Date created:         5th December 1994
-# Whom:                 gpalmer@FreeBSD.org
-#
+# Created by: Gary Palmer <gpalmer@FreeBSD.org>
 # $FreeBSD$
 #
 # If possible, please consider updating the simple ports/x11-clocks/rclock
@@ -22,22 +19,24 @@ USE_PERL5_BUILD=yes
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
-OPTIONS=	256_COLOR	"Build with 256-color support" off \
-		BIG5		"Build with BIG5 support" off \
-		EUCJ		"Build with EUC Japanese support" off \
-		GB		"Build with GB support" off \
-		GREEK		"Build with greek keyboard support" off \
-		KR		"Build with EUC Korean support" off \
-		LINESPACE	"Build with linespace support" off \
-		MENUBAR		"Build with menubar support" off \
-		NEXT		"Build with NeXT scrollbar" off \
-		RXVT		"Build with rxvt scrollbar" off \
-		SJIS		"Build with Shift JIS support" off \
-		SMART		"Build with smart resize support" off \
-		TRANSPARENCY	"Build with transparency support" off \
-		XGETDEFAULT	"Build with XGetDefault() support" off \
-		XIM		"Build with XIM support" off \
-		XTERM		"Build with Xterm scrollbar" off
+OPTIONS_DEFINE=	256_COLOR BIG5 EUCJ GB GREEK KR LINESPACE MENUBAR NEXT RXVT \
+		SJIS SMART TRANSPARENCY XIM XTERM
+256_COLOR_DESC=		Build with 256-color support
+BIG5_DESC=		Build with BIG5 support
+EUCJ_DESC=		Build with EUC Japanese support
+GB_DESC=		Build with GB support
+GREEK_DESC=		Build with greek keyboard support
+KR_DESC=		Build with EUC Korean support
+LINESPACE_DESC=		Build with linespace support
+MENUBAR_DESC=		Build with menubar support
+NEXT_DESC=		Build with NeXT scrollbar
+RXVT_DESC=		Build with rxvt scrollbar
+SJIS_DESC=		Build with Shift JIS support
+SMART_DESC=		Build with smart resize support
+TRANSPARENCY_DESC=	Build with transparency support
+XGETDEFAULT_DESC=	Build with XGetDefault() support
+XIM_DESC=		Build with XIM support
+XTERM_DESC=		Build with Xterm scrollbar
 
 CONFIGURE_ARGS=	--enable-utmp --enable-lastlog \
 		--with-xpm --enable-xpm-background --enable-shared \
@@ -57,82 +56,82 @@ EXTRA_PATCHES+=	${FILESDIR}/utmp_patch-src::logging.c
 .endif
 
 # enable 256 color
-.if defined(WITH_256_COLOR)
+.if ${PORT_OPTIONS:M256_COLOR}
 CONFIGURE_ARGS+=	--enable-256-color
 .endif
 
 # enable big5 support
-.if defined(WITH_BIG5)
+.if ${PORT_OPTIONS:MBIG5}
 CONFIGURE_ARGS+=	--with-encoding=big5 --enable-languages
 .endif
 
 # enable euc japanese support
-.if defined(WITH_EUCJ)
+.if ${PORT_OPTIONS:MEUCJ}
 CONFIGURE_ARGS+=	--with-encoding=eucj --enable-languages
 .endif
 
 # enable gb support
-.if defined(WITH_GB)
+.if ${PORT_OPTIONS:MGB}
 CONFIGURE_ARGS+=	--with-encoding=gb --enable-languages
 .endif
 
 # enable greek keyboard support
-.if defined(WITH_GREEK)
+.if ${PORT_OPTIONS:MGREEK}
 CONFIGURE_ARGS+=	--enable-greek
 .endif
 
 # enable euc korean support
-.if defined(WITH_KR)
+.if ${PORT_OPTIONS:MKR}
 CONFIGURE_ARGS+=	--with-encoding=kr --enable-languages
 .endif
 
 # enable line-spacing
-.if defined(WITH_LINESPACE)
+.if ${PORT_OPTIONS:MLINESPACE}
 CONFIGURE_ARGS+=	--enable-linespace
 .endif
 
 # enable menubar
-.if defined(WITH_MENUBAR)
+.if ${PORT_OPTIONS:MMENUBAR}
 CONFIGURE_ARGS+=	--enable-menubar
 .endif
 
 # enable NeXT style scrollbar
-.if defined(WITH_NEXT)
+.if ${PORT_OPTIONS:MNEXT}
 CONFIGURE_ARGS+=	--enable-next-scroll
 .endif
 
 # enable rxvt style scrollbar
-.if defined(WITH_RXVT)
+.if ${PORT_OPTIONS:MRXVT}
 CONFIGURE_ARGS+=	--enable-rxvt-scroll
 .endif
 
 # enable shift jis support
-.if defined(WITH_SJIS)
+.if ${PORT_OPTIONS:MSJIS}
 CONFIGURE_ARGS+=	--with-encoding=sjis --enable-languages
 .endif
 
 # enable smart resize
-.if defined(WITH_SMART)
+.if ${PORT_OPTIONS:MSMART}
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
 # enable transparency support
-.if defined(WITH_TRANSPARENCY)
+.if ${PORT_OPTIONS:MTRANSPARENCY}
 CONFIGURE_ARGS+=	--enable-transparency
 .endif
 
 # make resources checking via XGetDefault()
-.if defined(WITH_XGETDEFAULT)
+.if ${PORT_OPTIONS:MXGETDEFAULT}
 CONFIGURE_ARGS+=	--enable-xgetdefault
 .endif
 
 # XIM (X Input Method) protocol support
-.if defined(WITH_XIM)
+.if ${PORT_OPTIONS:MXIM}
 CONFIGURE_ARGS+=	--enable-xim
 .endif
 
 # enable Xterm style scrollbar
-.if defined(WITH_XTERM)
+.if ${PORT_OPTIONS:MXTERM}
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif
 
