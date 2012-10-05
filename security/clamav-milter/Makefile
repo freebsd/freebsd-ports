@@ -1,9 +1,5 @@
-# New ports collection makefile for:    clamav-milter
-# Date created:         11 November 2011
-# Whom:			bz
-#
+# Created by: bz
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-milter
 

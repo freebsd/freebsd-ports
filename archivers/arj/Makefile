@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ARJ archiver
-# Date created:			9 April 2002
-# Whom:				Konstantin Reznichenko <kot@premierbank.dp.ua>
-#
+# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	arj
 PORTVERSION=	3.10.22

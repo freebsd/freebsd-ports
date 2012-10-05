@@ -1,9 +1,4 @@
-# New ports collection makefile for:	twirssi
-# Date created:		2009-11-06
-# Whom:			garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	twirssi
 PORTVERSION=	2.5.1

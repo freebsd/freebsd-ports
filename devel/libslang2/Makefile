@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libslang2
-# Date created:		2005-05-16
-# Whom:			Renato Botelho <freebsd@galle.com.br>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libslang2
 PORTVERSION=	2.2.4

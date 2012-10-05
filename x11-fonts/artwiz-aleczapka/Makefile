@@ -1,9 +1,5 @@
-# New ports collection makefile for:	artwiz-aleczapka
-# Date created:				2004-04-22
-# Whom:			Matt Lancereau <matt@rimasec.net>
-#
+# Created by: Matt Lancereau <matt@rimasec.net>
 # $FreeBSD$
-#
 
 PORTNAME=	artwiz-aleczapka-en
 PORTVERSION=	1.3

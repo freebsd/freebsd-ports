@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gshar+gunshar
-# Date created:		28 Dec 1994
-# Whom:			ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	sharutils
 PORTVERSION=	4.11.1

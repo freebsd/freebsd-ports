@@ -1,9 +1,4 @@
-# New ports collection makefile for:	compat8x
-# Date created:				30 Aug 2011
-# Whom:					garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	compat8x
 PORTVERSION=	8.3.803000.201209

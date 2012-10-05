@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysconftool
-# Date created:				17 October 2001
-# Whom:				Yarema <yds@CoolRat.org>
-#
+# Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sysconftool
 PORTVERSION=	0.16

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dansguardian
-# Date created:				April 02, 2002
-# Whom:					Freddie Cash <fjwcash@gmail.com>
-#
+# Created by: Freddie Cash <fjwcash@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.12.0.0

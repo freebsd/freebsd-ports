@@ -1,9 +1,4 @@
-# New ports collection makefile for:	slgrace
-# Date created:		2007-08-30
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	slgrace
 PORTVERSION=	0.2.2

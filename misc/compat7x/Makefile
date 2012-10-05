@@ -1,9 +1,4 @@
-# New ports collection makefile for:	compat7x
-# Date created:				18 Aug 2009
-# Whom:					garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	compat7x
 PORTVERSION=	7.3.703000.201008

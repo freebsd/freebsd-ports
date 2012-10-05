@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmrun
-# Date created:				26 September 2002
-# Whom:					Adam Weinberger <adam@vectors.cx>
-#
+# Created by: Adam Weinberger <adam@vectors.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	gmrun
 PORTVERSION=	0.9.2

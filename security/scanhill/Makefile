@@ -1,9 +1,4 @@
-# New ports collection makefile for:	scanhill
-# Date created:		2007-06-18
-# Whom:			garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	scanhill
 DISTVERSION=	0.5-p1

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pecl-newt
-# Date created:		2009-06-02
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	newt
 PORTVERSION=	1.2.6

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tnef
-# Date created:		19 September 2000
-# Whom:			Cyrus Rahman <cr@jcmax.com>
-#
+# Created by: Cyrus Rahman <cr@jcmax.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tnef
 PORTVERSION=	1.4.9

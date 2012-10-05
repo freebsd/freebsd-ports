@@ -1,9 +1,4 @@
-# New ports collection makefile for:	lua-sysctl
-# Date created:		2009-05-08
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lua-sysctl
 PORTVERSION=	0.2

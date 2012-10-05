@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clamav-devel
-# Date created:				13 June 2003
-# Whom:					Rob Evers <rob@debank.tv>
-#
+# Created by: Rob Evers <rob@debank.tv>
 # $FreeBSD$
-#
 
 PORTNAME=	clamav
 PORTVERSION=	20120917

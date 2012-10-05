@@ -1,9 +1,5 @@
-# New ports collection makefile for:	po4a
-# Date created:				08 January 2006
-# Whom:					Meno Abels <meno.abels@adviser.com>
-#
+# Created by: Meno Abels <meno.abels@adviser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	po4a
 PORTVERSION=	0.41

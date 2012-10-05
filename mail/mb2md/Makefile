@@ -1,9 +1,5 @@
-# New ports collection makefile for: mb2md
-# Date created:		20 June 2003
-# Whom:			Andy Gilligan
-#
+# Created by: Andy Gilligan
 # $FreeBSD$
-#
 
 PORTNAME=	mb2md
 PORTVERSION=	3.20

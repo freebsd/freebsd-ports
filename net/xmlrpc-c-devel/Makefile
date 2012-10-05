@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xmlrpc-c
-# Date created:			Mar 8, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlrpc-c
 PORTVERSION=	1.31.05

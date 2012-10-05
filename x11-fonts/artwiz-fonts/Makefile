@@ -1,9 +1,5 @@
-# New ports collection makefile for:	artwiz-fonts
-# Date created:				25/08/2002
-# Whom:			Dominic Marks <dominic.marks@btinternet.com>
-#
+# Created by: Dominic Marks <dominic.marks@btinternet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0

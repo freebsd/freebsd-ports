@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-contrib
-# Date created:		28 November 1998
-# Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-#
+# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-contrib
 PORTVERSION=	0.1

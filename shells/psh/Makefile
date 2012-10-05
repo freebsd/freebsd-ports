@@ -1,9 +1,5 @@
-# New ports collection makefile for:	perlsh
-# Date created:		11 Dec 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	psh
 PORTVERSION=	1.8.1

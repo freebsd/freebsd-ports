@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clamav
-# Date created:		15 July 2002
-# Whom:			markun@onohara.to
-#
+# Created by: markun@onohara.to
 # $FreeBSD$
-#
 
 PORTNAME=	clamav
 PORTVERSION=	0.97.6

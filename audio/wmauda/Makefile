@@ -1,9 +1,4 @@
-# New ports collection makefile for:	wmauda
-# Date created:		2007-10-30
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wmauda
 PORTVERSION=	0.9

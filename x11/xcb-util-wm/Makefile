@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xcb-util-wm
-# Date created:		2011-12-16
-# Whom:			garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xcb-util-wm
 PORTVERSION=	0.3.8

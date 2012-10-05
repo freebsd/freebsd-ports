@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Jed text editor
-# Date created:         22 APR 1997
-# Whom:                 eric
-#
+# Created by: eric
 # $FreeBSD$
-#
 
 PORTNAME=	jed
 PORTVERSION=	0.99.19

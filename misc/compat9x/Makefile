@@ -1,9 +1,4 @@
-# New ports collection makefile for:	compat9x
-# Date created:				10 Sep 2012
-# Whom:					garga
-#
 # $FreeBSD$
-#
 
 PORTNAME=	compat9x
 PORTVERSION=	9.0.900000.201209

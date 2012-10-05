@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail
-# Date created:		25 May 1998
-# Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}

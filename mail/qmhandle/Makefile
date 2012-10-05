@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmHandle
-# Date created:				17 August 2001
-# Whom:					petef
-#
+# Created by: petef
 # $FreeBSD$
-#
 
 PORTNAME=	qmhandle
 PORTVERSION=	1.3.2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmbiff
-# Date created:			19 Nov 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ftpmirror
-# Date created:		10 January 1999
-# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
-#
+# Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	ftpmirror
 PORTVERSION=	1.96

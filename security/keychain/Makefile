@@ -1,9 +1,5 @@
-# New ports collection makefile for:	keychain
-# Date created:		10 September 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	keychain
 PORTVERSION=	2.7.1

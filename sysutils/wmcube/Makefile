@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmcube
-# Date created:				Mon May 28 02:14:47 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	wmcube
 PORTVERSION=	0.98
