@@ -35,9 +35,6 @@ INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS+=--with-gtk=2.0
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	NLS
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
