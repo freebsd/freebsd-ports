@@ -3,7 +3,8 @@
 PORTNAME=	pkgconf
 PORTVERSION=	0.8.9
 CATEGORIES=	devel
-MASTER_SITES=	http://tortois.es/~nenolod/distfiles/
+MASTER_SITES=	http://tortois.es/~nenolod/distfiles/ \
+		http://files.etoilebsd.net/pkgconf/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
