@@ -1,22 +1,15 @@
-# New ports collection makefile for:	avifile
-# Date created: 	16 September 2000
-# Whom: 		Holger Lamm
+# Created by: Holger Lamm
 #
 # $FreeBSD$
-#
 
 PORTNAME=	win32-codecs
 DISTVERSION=	20110131
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/codecs/ \
-		http://www4.mplayerhq.hu/MPlayer/releases/codecs/ \
+MASTER_SITES=	${MASTER_SITE_MPLAYERHQ} \
 		http://ftp.lug.udel.edu/MPlayer/releases/codecs/ \
-		http://www.mplayerhq.hu/MPlayer/releases/codecs/ \
-		ftp://ftp1.mplayerhq.hu/MPlayer/releases/codecs/ \
-		ftp://ftp2.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/codecs/
+MASTER_SITE_SUBDIR=	releases/codecs
 DISTFILES=	all-${DISTVERSION}.tar.bz2 \
 		${ADDITIONAL_CODECS_DISTFILES}
 DIST_SUBDIR=	win32

@@ -1,20 +1,13 @@
-# New ports collection makefile for:	mplayer gui skins
-# Date created:				Sat Jan 12 10:59:45 BRST 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.3
 PORTREVISION=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/skins/ \
-		http://www4.mplayerhq.hu/MPlayer/skins/ \
-		http://www5.mplayerhq.hu/MPlayer/skins/ \
-		ftp://ftp.mplayerhq.hu/MPlayer/skins/ \
-		ftp://ftp4.mplayerhq.hu/MPlayer/skins/ \
-		ftp://ftp5.mplayerhq.hu/MPlayer/skins/
+MASTER_SITES=	${MASTER_SITE_MPLAYERHQ}
+MASTER_SITE_SUBDIR=	skins
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	mplayer-skins
 
