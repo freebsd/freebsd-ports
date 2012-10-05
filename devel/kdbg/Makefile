@@ -1,12 +1,8 @@
-# New ports collection makefile for:	kdbg
-# Date created:				02 November 1999
-# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
-#
+# Created by: Chris D. Faulhaber <jedgar@fxp.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kdbg
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel kde
 MASTER_SITES=	SF/${PORTNAME}/Source%20Code/${PORTVERSION}
 
