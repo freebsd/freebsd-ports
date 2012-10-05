@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.2-build2006
-PORTREVISION=	3
+DISTVERSION=	4.2-build2007
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
 
-MAINTAINER=	jkim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Sound System
 
 LICENSE=	BSD
