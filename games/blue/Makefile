@@ -11,12 +11,17 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 DISTNAME=	bluemoon-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Blue Moon card solitaire
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Blue Moon card solitaire
+
+LICENSE=	BSD
 
 USE_GMAKE=	yes
 ALL_TARGET=	bluemoon
-PLIST_FILES=	bin/blue bin/bluemoon
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/blue \
+		bin/bluemoon
 
 MAN6=		bluemoon.6
 MLINKS=		bluemoon.6 blue.6
@@ -28,6 +33,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bluemoon ${PREFIX}/bin
 	@${LN} -sf bluemoon ${PREFIX}/bin/blue
-	${INSTALL_MAN} ${WRKSRC}/bluemoon.6 ${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${MAN6:S|^|${WRKSRC}/|} ${MAN6PREFIX}/man/man6
 
 .include <bsd.port.mk>
