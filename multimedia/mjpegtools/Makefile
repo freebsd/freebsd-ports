@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mjpegtools
-# Date created:		Wed May 29 21:12:38 UTC 2002
-# Whom:	          Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mjpegtools
 PORTVERSION=	2.0.0
@@ -22,7 +18,7 @@ QUICKTIME_DESC=		Enable libQuickTime support
 
 CONFLICTS=	mplex-[0-9]*
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force

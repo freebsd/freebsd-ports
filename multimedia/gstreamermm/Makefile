@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gstreamermm
-# Date created:		2008-02-23
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamermm/Makefile,v 1.6 2009/09/26 13:42:00 marcus Exp $
 
@@ -20,7 +17,8 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GSTREAMER=	theora vorbis cdparanoia gio pango
-USE_GNOME=	pkgconfig gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
 USE_LDCONFIG=	yes

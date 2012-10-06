@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gstreamer-python
-# Date created:		Fri Apr  9 16:24:13 CEST 2004
-# Whom:			Koop Mast <kwm@rainbow-runner.nl>
-#
+# Created by: Koop Mast <kwm@rainbow-runner.nl>
 # $FreeBSD$
 #    $MCom: ports/multimedia/py-gstreamer/Makefile,v 1.20 2008/07/26 17:21:38 marcus Exp $
-#
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.22
@@ -26,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pygobject gnomehack pkgconfig
+USE_GNOME=	pygobject gnomehack
+USE_PKGCONFIG=	build
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${GST_VERSION}"
