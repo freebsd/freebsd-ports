@@ -1,0 +1,13 @@
+diff --git a/lib/puppet/provider/package/ports.rb b/lib/puppet/provider/package/ports.rb
+index c802092..1f2ed43 100755
+--- lib/puppet/provider/package/ports.rb
++++ lib/puppet/provider/package/ports.rb
+@@ -6,8 +6,6 @@ Puppet::Type.type(:package).provide :ports, :parent => :freebsd, :source => :fre
+     :portuninstall => "/usr/local/sbin/pkg_deinstall",
+     :portinfo => "/usr/sbin/pkg_info"
+ 
+-  defaultfor :operatingsystem => :freebsd
+-
+   # I hate ports
+   %w{INTERACTIVE UNAME}.each do |var|
+     ENV.delete(var) if ENV.include?(var)

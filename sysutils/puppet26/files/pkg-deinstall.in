@@ -1,0 +1,14 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+RUNDIR=%%PUPPET_RUNDIR%%
+VARDIR=%%PUPPET_VARDIR%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo "=> Deleting ${RUNDIR} if empty..."
+	rm -d ${RUNDIR}  2>/dev/null || true
+	echo "=> Deleting ${VARDIR} if empty..."
+	rm -d ${VARDIR} 2>/dev/null || true
+fi
