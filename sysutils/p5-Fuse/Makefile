@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Fuse
-# Date created:		2006-07-17
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Fuse
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DPAVLIN
@@ -22,7 +19,7 @@ BUILD_DEPENDS+=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 PORTSCOUT=	skipv:0.09_4
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 
 MAN3=		Fuse.3
 
