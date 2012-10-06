@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Xfce4-media
-# Date created:		23 October 2004
-# Whom:			Matt Lancereau <ports@FreeBSD.org>
-#
+# Created by: Matt Lancereau <ports@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.2
@@ -27,27 +23,29 @@ USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo libgui libutil panel
 USE_XORG=	x11 sm
 
-OPTIONS=	TAGLIB	"Enable metadata editing"		off \
-		DBUS	"Enable D-BUS support"			on \
-		STARTUP "Enable startup notification support"	on
+OPTIONS_DEFINE=	TAGLIB DBUS STARTUP
+OPTIONS_DEFAULT=	DBUS STARTUP
+
+TAGLIB_DESC=	metadata editing support
+STARTUP_DESC=	startup notification support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TAGLIB)
+.if ${PORT_OPTIONS:MTABLIB}
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=--with-taglib
 .else
 CONFIGURE_ARGS+=--without-taglib
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 .else
 CONFIGURE_ARGS+=--disable-dbus
 .endif
 
-.if !defined(WITHOUT_STARTUP)
+.if ${PORT_OPTIONS:MSTARTUP}
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
