@@ -1,4 +1,5 @@
 bin/geany
+include/geany/build.h
 include/geany/document.h
 include/geany/editor.h
 include/geany/encodings.h
@@ -118,6 +119,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.markdown
 %%DATADIR%%/filetypes.matlab
 %%DATADIR%%/filetypes.nsis
+%%DATADIR%%/filetypes.objectivec
 %%DATADIR%%/filetypes.pascal
 %%DATADIR%%/filetypes.perl
 %%DATADIR%%/filetypes.php
@@ -135,6 +137,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.vhdl
 %%DATADIR%%/filetypes.xml
 %%DATADIR%%/filetypes.yaml
+%%DATADIR%%/geany.glade
 %%DATADIR%%/html_entities.tags
 %%DATADIR%%/pascal.tags
 %%DATADIR%%/php.tags
@@ -168,6 +171,7 @@ share/icons/hicolor/16x16/apps/classviewer-var.png
 share/icons/hicolor/16x16/apps/geany.png
 share/icons/hicolor/48x48/apps/geany.png
 share/icons/hicolor/scalable/apps/geany.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/be/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/geany.mo
@@ -182,17 +186,22 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/fr/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/id/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/it/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/lb/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/mn/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/geany.mo
