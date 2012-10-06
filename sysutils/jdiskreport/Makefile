@@ -1,12 +1,8 @@
-# New ports collection makefile for:	jdiskreport
-# Date created:				26th May 2003
-# Whom:					jon@witchspace.com
-#
+# Created by: jon@witchspace.com
 # $FreeBSD$
-#
 
 PORTNAME=	jdiskreport
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://www.jGoodies.com/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
