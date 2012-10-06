@@ -24,11 +24,12 @@ INFO=	gzip
 DOC_FILES=	AUTHORS COPYING ChangeLog ChangeLog-2007 INSTALL NEWS README \
 		THANKS TODO
 
-OPTIONS=	RSYNCABLE	"Include --rsyncable patch"	OFF
+OPTIONS_DEFINE=	RSYNCABLE
+RSYNCABLE_DESC=	Include --rsyncable patch
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_RSYNCABLE)
+.if ${PORT_OPTIONS:MRSYNCABLE}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-gzip-rsyncable.diff
 .endif
 
