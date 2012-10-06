@@ -1,9 +1,4 @@
-# New ports collection makefile for:	fnord
-# Date created:				May 23 2005
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fnord
 PORTVERSION=	1.10
@@ -23,24 +18,26 @@ PLIST_FILES=	bin/fnord \
 
 SUB_FILES=	pkg-message fnord.inetd
 
-OPTIONS=	DAEMONTOOLS "Use DJB's daemontools" off \
-		TCPSERVER "Use DJB's tcpserver" off \
-		CGI "Enable CGI support" on \
-		DIR_LIST "Enable directory listing" on \
-		SYSTEM_SYMLINK_DEREF "Enable system symlink (needs DIR_LIST)" off \
-		OLD_STYLE_REDIRECT "Enable old style redirection" off
+OPTIONS_DEFINE=	DAEMONTOOLS TCPSERVER CGI DIR_LIST SYSTEM_SYMLINK_DEREF OLD_STYLE_REDIRECT
+OPTIONS_DEFAULT=	CGI DIR_LIST
+DAEMONTOOLS_DESC=	Use DJB's daemontools
+TCPSERVER_DESC=		Use DJB's tcpserver
+CGI_DESC=		Enable CGI support
+DIR_LIST_DESC=		Enable directory listing
+SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
+OLD_STYLE_REDIRECT_DESC= "Enable old style redirection
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DAEMONTOOLS)
+.if ${PORT_OPTIONS:MDAEMONTOOLS}
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
 .endif
 
-.if defined(WITH_TCPSERVER)
+.if ${PORT_OPTIONS:MTCPSERVER}
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 .endif
 
-.if !defined(WITHOUT_CGI)
+.if ${PORT_OPTIONS:MCGI}
 SED_SCRIPT+=	-e "s|^// \(\#define CGI\).*|\1|"
 .endif
 
@@ -55,14 +52,14 @@ SED_SCRIPT+=	-e "s|^// \(\#define CGI\).*|\1|"
 # e.g.: is foo a symlink to /etc/passwd than the client gets a href to
 # http://<vhost>/etc/passwd */
 
-.if defined(WITH_SYSTEM_SYMLINK_DEREF)
-.if defined(WITHOUT_DIR_LIST)
+.if ${PORT_OPTIONS:MSYSTEM_SYMLINK_DEREF}
+.if ${PORT_OPTIONS:MDIR_LIST}
 IGNORE=	SYSTEM_SYMLINK_DEREF has no effect if DIR_LIST is not enabled
 .endif
 SED_SCRIPT+=	-e "s|^/\* \(\#define SYSTEM_SYMLINK_DEREF\).*|\1|"
 .endif
 
-.if !defined(WITHOUT_DIR_LIST)
+.if ${PORT_OPTIONS:MDIR_LIST}
 SED_SCRIPT+=	-e "s|^/\* \(\#define DIR_LIST\).*|\1|"
 .endif
 
@@ -71,7 +68,7 @@ SED_SCRIPT+=	-e "s|^/\* \(\#define DIR_LIST\).*|\1|"
 # $REDIRECT_URI is set, fnord will issue a redirect to $REDIRECT_URI.
 # Only if those fail will a 404 error be returned. */
 
-.if defined(WITH_OLD_STYLE_REDIRECT)
+.if ${PORT_OPTIONS:MOLD_STYLE_REDIRECT}
 SED_SCRIPT+=	-e "s|^/\* \(\#define OLD_STYLE_REDIRECT\).*|\1|"
 .endif
 
@@ -91,4 +88,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

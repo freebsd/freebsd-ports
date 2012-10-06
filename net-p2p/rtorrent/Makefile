@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rtorrent
-# Date created:				Mar 03 2005
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME?=	rtorrent
 PORTVERSION?=	0.9.2
@@ -32,8 +27,9 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
-OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on \
-		IPV6 "Enable IPv6 support" on
+OPTIONS_DEFINE=	XMLRPC IPV6 DOCS
+OPTIONS_DEFAULT=	XMLRPC IPV6
+XMLRPC_DESC=	Compile with xmlrpc-c support
 
 .include <bsd.port.pre.mk>
 
@@ -41,14 +37,14 @@ OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on \
 BROKEN=		Does not configure on arm
 .endif
 
-.if !defined(WITHOUT_XMLRPC)
+.if ${PORT_OPTIONS:MXMLRPC}
 CONFIGURE_ARGS+=	--with-xmlrpc-c
 LIB_DEPENDS+=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c-devel
 .else
 CONFIGURE_ARGS+=	--with-xmlrpc-c=no
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -58,7 +54,7 @@ post-patch:
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${EXAMPLESDIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
 .endif
