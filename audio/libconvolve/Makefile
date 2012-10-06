@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libconvolve
-# Date created:		2007-04-02
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
@@ -25,5 +21,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 .include <bsd.port.mk>

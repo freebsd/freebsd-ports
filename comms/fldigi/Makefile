@@ -25,6 +25,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate\
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 MAN1=		fldigi.1
 

@@ -36,6 +36,7 @@ OPTIONS=	JACK       "Enable JACK support"       OFF \
 		SDL        "Enable SDL support"        OFF
 
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_BZIP2=	yes
 USE_XORG=	xft
 USE_QT4=	corelib gui xml moc_build uic_build rcc_build \
