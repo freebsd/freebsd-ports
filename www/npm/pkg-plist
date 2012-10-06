@@ -950,7 +950,6 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/nopt/examples
 @dirrm lib/node_modules/npm/node_modules/nopt/bin
 @dirrm lib/node_modules/npm/node_modules/nopt
-@dirrm lib/node_modules/npm/node_modules/node-uuid
 @dirrm lib/node_modules/npm/node_modules/node-gyp/lib
 @dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode/Specifications
 @dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode
