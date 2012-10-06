@@ -13,6 +13,7 @@ USE_GMAKE=	yes
 USE_CMAKE=	yes
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 WANT_GNOME=	yes
 USE_GL=		gl glu
 
