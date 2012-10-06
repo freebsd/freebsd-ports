@@ -23,6 +23,7 @@ LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 MAKE_JOBS_SAFE=	yes
+USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

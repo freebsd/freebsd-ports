@@ -1,9 +1,5 @@
-# ports collection makefile for:   fluidsynth
-# Date created:        27 Nov 2003
-# Whom:                Juha Nygard <juha.nygard1@netikka.fi>
-#
+# Created by: Juha Nygard <juha.nygard1@netikka.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	fluidsynth
 PORTVERSION=	1.1.5
@@ -20,7 +16,8 @@ OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
 OPTIONS_DEFAULT=	JACK
 
 USE_BZIP2=	yes
-USE_GNOME=	glib20 pkgconfig
+USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_CMAKE=	yes
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
