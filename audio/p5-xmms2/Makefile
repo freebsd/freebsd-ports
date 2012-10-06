@@ -1,15 +1,11 @@
-# New ports collection makefile for:	p5-xmms2
-# Date created:				05 Jul 2007
-# Whom:					Alexander Botero-Lowry <alexbl@FreeBSD.org>
-#
+# Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	audio perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Perl Bindings for XMMS2
 
 LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xmms2
-# Date created:				20 May 2005
-# Whom:				  	Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
@@ -12,7 +8,7 @@ DISTVERSIONSUFFIX=DrO_o
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
 USE_BZIP2=	yes

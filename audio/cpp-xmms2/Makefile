@@ -1,15 +1,11 @@
-# New ports collection makefile for:	cpp-xmms2
-# Date created:				06 Jul 2006
-# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTREVISION=	6
 CATEGORIES=	audio
 PKGNAMEPREFIX=	cpp-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	C++ Bindings for XMMS2
 
 LIB_DEPENDS+=	boost_signals.4:${PORTSDIR}/devel/boost-libs \
