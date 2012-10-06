@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfce4-xmms-plugin
-# Date created:				2004/05/10
-# Whom:					Zahemszky, Gábor <Gabor@Zahemszky.HU>
-#
+# Created by: Zahemszky, Gábor <Gabor@Zahemszky.HU>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.3
@@ -23,21 +19,23 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack pango pkgconfig
 USE_XFCE=	configenv libgui libutil panel
 
-OPTIONS=	XMMS		"Enable xmms support"			on \
-		BEEP		"Enable beep-media-player support" 	off \
-		AUDACIOUS	"Enable audacious support"		off
+OPTIONS_DEFINE=	XMMS BEEP AUDACIOUS
+OPTIONS_DEFAULT=	XMMS
+XMMS_DESC=	xmms support
+BEEP_DESC=	beep-media-player support
+AUDACIOUS_DESC=	audacious support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BEEP)
+.if ${PORT_OPTIONS:MBEEP}
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 .endif
 
-.if defined(WITH_XMMS)
+.if ${PORT_OPTIONS:MXMSS}
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
 
-.if defined(WITH_AUDACIOUS)
+.if ${PORT_OPTIONS:MAUDACIOUS}
 RUN_DEPENDS+=	audacious2:${PORTSDIR}/multimedia/audacious
 .endif
 
