@@ -716,6 +716,7 @@
     SUBDIR += pstack
     SUBDIR += pstree
     SUBDIR += puppet
+    SUBDIR += puppet26
     SUBDIR += puppet-lint
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
