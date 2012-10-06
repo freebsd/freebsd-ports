@@ -1,12 +1,8 @@
-# New ports collection makefile for:	redis
-# Date created:	   03 Jul 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	redis
-DISTVERSION=	2.6.0-rc7
+DISTVERSION=	2.6.0-rc8
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-devel
@@ -17,6 +13,15 @@ COMMENT=	A persistent key-value database with built-in net interface
 LICENSE=	BSD
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+
+OPTIONS_DEFINE=	TESTS
+TESTS_DESC=	Install lang/tcl for redis unit tests
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTESTS}
+USE_TCL_BUILD=	yes
+.endif
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
@@ -63,5 +68,10 @@ post-install:
 .for d in ${REDIS_LOGDIR} ${REDIS_RUNDIR} ${REDIS_DBDIR}
 	[ -d ${d} ] || ${MKDIR} ${d} && ${CHOWN} ${USERS}:${GROUPS} ${d}
 .endfor
+
+test: build
+	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl
+
+regression-test: test
 
 .include <bsd.port.mk>
