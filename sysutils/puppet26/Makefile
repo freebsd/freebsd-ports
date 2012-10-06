@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.17
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.puppetlabs.com/downloads/puppet/
+MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
@@ -22,7 +22,7 @@ CONFLICTS=	puppet-[0-9]*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppet puppetmaster
-PORTDOCS=	CHANGELOG README LICENSE COPYING
+PORTDOCS=	CHANGELOG README.md README.queueing LICENSE COPYING
 PORTEXAMPLES=	*
 PUPPET_USER:=	puppet
 PUPPET_GROUP:=	${PUPPET_USER}
