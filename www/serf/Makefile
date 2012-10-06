@@ -1,12 +1,8 @@
-# New ports collection makefile for: serf
-# Date created:		28 May 2008
-# Whom:			Craig Rodrigues <rodrigc@FreeBSD.org>
-#
+# Created by: Craig Rodrigues <rodrigc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	serf
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 MASTER_SITE_SUBDIR=	db
@@ -32,5 +28,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/design-guide.txt ${DOCSDIR}
 .endif
+
+check:
+	@cd ${WRKSRC}/ && ${MAKE} check
 
 .include <bsd.port.mk>
