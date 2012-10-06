@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	cheesetracker
-# Date created:			Jan 31, 2002
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cheesetracker
 PORTVERSION=	0.9.15.4
@@ -24,6 +19,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_SCONS=	yes
+USE_PKGCONFIG=	build
 SCONS_BUILDENV=	CXX="${CXX}" QTDIR="${QT_PREFIX}"
 
 PORTEXAMPLES=	beek-dolphinisland.it ll-globule.it reduz-maschizo.it \

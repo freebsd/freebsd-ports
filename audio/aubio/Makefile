@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--disable-complex
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

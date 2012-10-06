@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linuxsampler
-# Date created:		2007-01-24
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	linuxsampler
 PORTVERSION=	1.0.0
@@ -33,6 +29,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		linuxsampler.1
