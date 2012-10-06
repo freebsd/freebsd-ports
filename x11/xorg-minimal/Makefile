@@ -1,9 +1,4 @@
-# New ports collection makefile for: xorg-minimal
-# Date created: 19 Jun 2008
-# Whom: Eitan Adler
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xorg
 PORTVERSION=	7.5.2

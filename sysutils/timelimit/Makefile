@@ -1,9 +1,5 @@
-# New ports collection makefile for:	timelimit
-# Date created:				9 June 2001
-# Whom:					roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	timelimit
 PORTVERSION=	1.8

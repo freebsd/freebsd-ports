@@ -1,9 +1,5 @@
-# New ports collection makefile for:	html2text
-# Date created:		7 March 2003
-# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-#
+# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	html2text
 PORTVERSION=	1.3.2a

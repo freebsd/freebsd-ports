@@ -1,9 +1,5 @@
-# New ports collection makefile for:	googlog
-# Date created:		19 Jun 2007
-# Whom:			araujo
-#
+# Created by: araujo
 # $FreeBSD$
-#
 
 PORTNAME=	googlog
 PORTVERSION=	1.18

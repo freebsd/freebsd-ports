@@ -1,9 +1,4 @@
-# New ports collection makefile for:	spass
-# Date created:        			27 October 2010
-# Whom:					Eitan Adler <eadler@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	spass
 PORTVERSION=	3.0

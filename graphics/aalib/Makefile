@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aalib
-# Date created:				9 Dec 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	aalib
 PORTVERSION=	1.4.r5

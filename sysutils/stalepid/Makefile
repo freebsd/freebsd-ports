@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stalepid
-# Date created:		4 December 2003
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	stalepid
 PORTVERSION=	1.0.b1

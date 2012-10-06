@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icewm
-# Date created:		10 August 1997
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	icewm
 PORTVERSION=	1.3.7

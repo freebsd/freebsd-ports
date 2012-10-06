@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scr2png
-# Date created:				18 May 2001
-# Whom:					nik
-#
+# Created by: nik
 # $FreeBSD$
-#
 
 PORTNAME=	scr2png
 PORTVERSION=	1.2

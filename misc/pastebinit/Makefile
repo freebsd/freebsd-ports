@@ -1,9 +1,4 @@
-# New ports collection makefile for:   pastebinit
-# Date created:        Thu Feb 21 00:21:23 EST 2008
-# Whom:                comperr <comperr.extra@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pastebinit
 PORTVERSION=	1.3.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Launchy
-# Date created:				28 Jul 2008
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	launchy
 PORTVERSION=	2.5

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	nano-devel
-# Date created:				13 November 2008
-# Whom:				Eitan Adler <EitanAdlerList@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nano
 PORTVERSION=	2.3.1

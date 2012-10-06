@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moreutils-parallel
-# Date created:		2010-12-09
-# Whom:			Charlie Kester <corky1951@comcast.net>
-#
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	moreutils-parallel
 PORTVERSION=	0.44

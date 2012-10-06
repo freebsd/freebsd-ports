@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nonsense
-# Date created:		15 December 2000
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	nonsense
 PORTVERSION=	0.6

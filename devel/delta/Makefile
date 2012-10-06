@@ -1,9 +1,4 @@
-# Ports collection makefile for:	delta
-# Date created:			2012-07-09
-# Whom:				eadler
-#
 # $FreeBSD$
-#
 
 PORTNAME=	delta
 PORTVERSION=	2006.08.03

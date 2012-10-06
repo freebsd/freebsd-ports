@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Round
-# Date created:	 	04 Sep 2003
-# Whom:			Foxfair Hu <foxfair@FreeBSD.org>
-#
+# Created by: Foxfair Hu <foxfair@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Round
 PORTVERSION=	0.06

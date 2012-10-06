@@ -1,9 +1,4 @@
-# New ports collection makefile for:	hextools
-# Date created:				19 Oct 2010
-# Whom:					Eitan Adler
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hextools
 PORTVERSION=	1.1

@@ -1,9 +1,5 @@
-# ports collection makefile for:	readline
-# Date created:				10 December 2003
-# Whom:					Frank Laszlo <laszlof@vonostingroup.com>
-#
+# Created by: Frank Laszlo <laszlof@vonostingroup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	readline
 PORTVERSION=	6.2

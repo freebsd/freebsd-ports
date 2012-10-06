@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xbindkeys
-# Date created:			Dec 29, 2001
-# Whom:				ijliao
-#
+# Created by:				ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xbindkeys
 PORTVERSION=	1.8.3

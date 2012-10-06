@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ised
-# Date created:		20 Mar 2010
-# Whom:			Charlie Kester <corky1951@comcast.net>
-#
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ised
 PORTVERSION=	2.4.0

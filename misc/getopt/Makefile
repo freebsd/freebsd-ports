@@ -1,9 +1,5 @@
-# New ports collection makefile for:	getopt
-# Date created:	2003-06-05
-# Whom:		Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	getopt
 PORTVERSION=	1.1.4

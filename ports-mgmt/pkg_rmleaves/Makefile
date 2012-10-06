@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg_rmleaves
-# Date created:				26 December 2004
-# Whom:					Timothy Redaelli <drizzt@gufi.org>
-#
+# Created by: Timothy Redaelli <drizzt@gufi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_rmleaves
 PORTVERSION=	20050922
