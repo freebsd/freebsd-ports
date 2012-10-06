@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	s9fes
-PORTVERSION=	20120713
+PORTVERSION=	20121005
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.t3x.org/s9fes/
 
 MAINTAINER=	nmh@t3x.org
-COMMENT=	A portable Scheme interpreter with a Unix interface
+COMMENT=	Portable Scheme interpreter with a Unix interface
 
 LICENSE=	public
 LICENSE_NAME=	Public Domain
