@@ -1,9 +1,4 @@
-# New ports collection makefile for:	csmith
-# Date created:				2011-10-25
-# Whom:					Eitan Adler <eadler@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	csmith
 PORTVERSION=	2.1.0

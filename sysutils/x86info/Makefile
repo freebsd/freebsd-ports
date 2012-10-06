@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x86info
-# Date created:				26 Aug 2001
-# Whom:					Erik Greenwald <erik@smluc.org>
-#
+# Created by: Erik Greenwald <erik@smluc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	x86info
 PORTVERSION=	1.30

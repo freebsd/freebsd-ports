@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Benchmark-Timer
-# Date created:		2012-07-09
-# Whom:			Eitan Adler <eadler@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Benchmark-Timer
 PORTVERSION=	0.7102

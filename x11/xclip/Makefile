@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xclip
-# Date created:			Dec 18, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xclip
 PORTVERSION=	0.12

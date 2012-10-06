@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	stlfilt
-# Date created:			Mar 12, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	stlfilt
 PORTVERSION=	20080203

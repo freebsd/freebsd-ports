@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Append-TempFile
-# Date created:				February 10th, 2006
-# Whom:	      				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Append-TempFile
 PORTVERSION=	0.05

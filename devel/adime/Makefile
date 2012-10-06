@@ -1,9 +1,5 @@
-# New ports collection makefile for:	adime
-# Date Created:				20 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created By: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	adime
 PORTVERSION=	2.2.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xrdesktop
-# Date created:		2005-06-30
-# Whom:			Andrej Zverev <az@inec.ru>
-#
+# Created by: Andrej Zverev <az@inec.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xrdesktop
 PORTVERSION=	1.2

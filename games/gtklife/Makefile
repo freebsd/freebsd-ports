@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtklife
-# Date created:			07 Aug 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	gtklife
 PORTVERSION=	5.1

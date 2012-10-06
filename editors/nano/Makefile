@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nano
-# Date created:				12 June 2000
-# Whom:				Philippe Lefebvre <nemesis@balistik.net>
-#
+# Created by: Philippe Lefebvre <nemesis@balistik.net>
 # $FreeBSD$
-#
 
 PORTNAME=	nano
 PORTVERSION=	2.2.6

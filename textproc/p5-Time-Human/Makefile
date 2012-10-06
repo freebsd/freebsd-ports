@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Time-Human
-# Date created:				July 24th, 2004
-# Whom:	      				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Time-Human
 PORTVERSION=	1.03

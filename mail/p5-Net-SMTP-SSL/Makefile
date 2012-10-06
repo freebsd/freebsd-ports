@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-SMTP-SSL
-# Date created:		June 22, 2008
-# Whom:			Wesley Shields <wxs@FreeBSD.org>
-#
+# Created by: Wesley Shields <wxs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SMTP-SSL
 PORTVERSION=	1.01

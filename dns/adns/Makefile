@@ -1,9 +1,5 @@
-# New ports collection makefile for:	adns
-# Date created:			Mon Mar 3, 2000
-# Whom:				Kostya Lukin <lukin@okbmei.msk.su>
-#
+# Created by: Kostya Lukin <lukin@okbmei.msk.su>
 # $FreeBSD$
-#
 
 PORTNAME=	adns
 PORTVERSION=	1.4

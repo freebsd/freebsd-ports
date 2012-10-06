@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bogosort
-# Date created:		15 September 2000
-# Whom:			roam@orbitel.bg
-#
+# Created by: roam@orbitel.bg
 # $FreeBSD$
-#
 
 PORTNAME=	bogosort
 PORTVERSION=	0.4.2

@@ -1,10 +1,6 @@
-# New ports collection makefile for:   multi-gnome-terminal
-# Date created:		19 March 2002
-# Whom:		 	Frederic Dubuy <fdubuy@free.fr>
-#
+# Created by: Frederic Dubuy <fdubuy@free.fr>
 # $FreeBSD$
-#   $MCom: ports/x11/multi-gnome-terminal/Makefile,v 1.3 2007/08/07 03:43:51 mezz Exp $
-#
+# $MCom: ports/x11/multi-gnome-terminal/Makefile,v 1.3 2007/08/07 03:43:51 mezz Exp $
 
 PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.6.2

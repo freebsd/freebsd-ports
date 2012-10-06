@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unquote
-# Date created:		5 May 2000
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	unquote
 PORTVERSION=	1.0.b4

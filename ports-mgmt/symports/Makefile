@@ -1,9 +1,4 @@
-# New ports collection makefile for:   symports
-# Date created:        Fri Jun 05 2009
-# Whom:                Eitan Adler <EitanAdlerList@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	symports
 PORTVERSION=	1.1

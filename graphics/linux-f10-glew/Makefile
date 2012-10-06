@@ -1,9 +1,4 @@
-# New ports collection makefile for:	graphics/linux-f10-glew
-# Date created:				2010-09-19
-# Whom:					Eitan Adler <lists@eitanadler.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	glew
 PORTVERSION=	1.5.1

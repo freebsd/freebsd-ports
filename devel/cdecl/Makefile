@@ -1,9 +1,5 @@
-# Ports collection makefile for:  cdecl
-# Date created:			  Sat Sep 04, 1999
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	cdecl
 PORTVERSION=	2.5

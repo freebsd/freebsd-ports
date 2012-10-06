@@ -1,9 +1,4 @@
-# New ports collection makefile for:	dash
-# Date created:			Nov 10, 2009
-# Whom:				Eitan Adler
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dash
 PORTVERSION=	0.5.7

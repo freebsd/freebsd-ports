@@ -1,9 +1,5 @@
-# New ports collection makefile for:   smake
-# Date created:        22 February 2005
-# Whom:                Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smake
 PORTVERSION=	1.2.1
