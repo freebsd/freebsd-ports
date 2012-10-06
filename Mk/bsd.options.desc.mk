@@ -318,6 +318,7 @@ WAV_DESC?=		WAV audio format
 WAVPACK_DESC?=		WavPack lossless audio format
 WEBP_DESC?=		WebP image format
 WEBSERVER_DESC?=	Build and/or install internal web server
+WMA_DESC?=		Windows Media Audio support
 WMF_DESC?=		Windows Metafile support
 WXGTK_DESC?=		wxGTK GUI toolkit
 X11_DESC?=		X11 (graphics) support
