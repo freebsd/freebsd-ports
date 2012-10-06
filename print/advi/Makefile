@@ -1,10 +1,6 @@
-# New ports collection makefile for:	advi
-# Date created:		2006-08-13
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Whom: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $MBSDlabs$
 # $FreeBSD$
-#
 
 PORTNAME=	advi
 PORTVERSION=	1.9
@@ -37,18 +33,20 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-bytecode-program
 
-OPTIONS=	GS "Enable Ghostscript support" on
+OPTIONS_DEFINE=	GS
+OPTIONS_DEFAULT=	GS
+GS_DESC=	Enable Ghostscript support
 
 CI_DEPEND=	${LOCALBASE}/${OCAML_LIBDIR}/site-lib/camlimages/camlimages.a
 MAN1=		advi.1
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.options.mk>
-
-.if !defined(WITHOUT_GS)
+.if ${PORT_OPTIONS:MGS}
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-GS=maybe
 .else
@@ -64,17 +62,15 @@ pre-everything::
 	@${ECHO}
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E \
 		-e 's,(SUBDIRS[[:space:]]*=[[:space:]]*src[[:space:]]+tex[[:space:]]+)doc,\1,g' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-#
-# Install manpage by hand
-#
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
+# 	Install manpage by hand
 	${INSTALL_MAN} ${WRKSRC}/doc/advi.1 ${MANPREFIX}/man/man1/
 .endif
 
