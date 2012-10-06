@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pver
-# Date created:		2008-11-07
-# Whom:			Wei-Yu Chen <weiyu@alpha3.cs.nthu.edu.tw>
-#
+# Created by: Wei-Yu Chen <weiyu@alpha3.cs.nthu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	pver
 PORTVERSION=	0.16
@@ -15,8 +11,9 @@ MASTER_SITES=	http://www.csie.nctu.edu.tw/~weiyu/software/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Show packages which are different version from ports using INDEX-*.db
 
-OPTIONS=	SORT "Sort the result by the package names" Off \
-		DB185 "Use BerkeleyDB 1.85/1.86" Off
+OPTIONS_DEFINE=	SORT DB185
+SORT_DESC=	Sort the result by the package names
+DB185_DESC=	Use BerkeleyDB 1.85/1.86
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS+=	PORTSDIR=${PORTSDIR}
@@ -31,11 +28,11 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SORT)
+.if ${PORT_OPTIONS:MSORT}
 MAKE_ARGS+=	-DSORT
 .endif
 
-.if defined(WITH_DB185)
+.if ${PORT_OPTIONS:MDB185}
 MAKE_ARGS+=	-DBSD_DB
 .else
 USE_BDB=	41+
