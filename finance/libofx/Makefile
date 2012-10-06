@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libofx
-# Date created:        February 16 2003
-# Whom:                Glenn Johnson <glennpj@charter.net>
-#
+# Created by: Glenn Johnson <glennpj@charter.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libofx
 PORTVERSION=	0.9.5
@@ -31,24 +27,24 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAN1=		ofxconnect.1 \
 		ofxdump.1
 
 PORTDOCS=	*
 
-OPTIONS=	APIDOC "Install full API documentation" off
+OPTIONS_DEFINE=	APIDOC
+APIDOC_DESC=	Install full API documentation
 
 .include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog INSTALL NEWS README totest.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-.if defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MAPIDOC}
 	@(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} html ${DOCSDIR})
 .endif
 .endif
