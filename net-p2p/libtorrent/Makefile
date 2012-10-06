@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libtorrent
-# Date created:				Jan 07 2005
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME?=	libtorrent
 PORTVERSION?=	0.13.2
@@ -22,13 +17,16 @@ CONFLICTS?=	libtorrent-devel-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	KQUEUE "Use kqueue(2) support" on \
-		IPV6 "Enable IPv6 support" off
+OPTIONS_DEFINE=	KQUEUE IPV6
+OPTIONS_DEFAULT=	KQUEUE
+KQUEUE_DESC=	Use kqueue(2) support
+IPV6_DESC=	Enable IPv6 support
 
 .include <bsd.port.pre.mk>
 
@@ -44,10 +42,11 @@ CONFIGURE_ARGS+=	--disable-debug --with-openssl=${OPENSSLBASE}
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure
 
-.if !defined(WITHOUT_KQUEUE)
+.if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=	--with-kqueue
 .endif
 
+.if ${PORT_OPTIONS:MIPV6}
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif

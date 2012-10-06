@@ -1,9 +1,4 @@
-# New ports collection makefile for:	testdisk
-# Date created:				Feb 28 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	testdisk
 PORTVERSION=	6.13
@@ -27,10 +22,14 @@ MAN8=		fidentify.8 testdisk.8 photorec.8
 PLIST_FILES=	bin/fidentify bin/testdisk bin/photorec
 PORTDOCS=	*
 
-OPTIONS=	ICONV "Use iconv extensions" on \
-		NTFS3G "Use fusefs-ntfs extensions" off \
-		NTFSPROGS "Use ntfsprogs extensions" off \
-		PROGSREISERFS "Use reiserfs extensions" off
+OPTIONS_DEFINE=	ICONV PROGSREISERFS NTFS DOCS
+OPTIONS_DEFAULT=	ICONV
+OPTIONS_SINGLE=	NTFS
+OPTIONS_SINGLE_NTFS=	NTFS3G NTFSPROGS
+NTFS_DESC=		Support NTFS
+NTFS3G_DESC=		Use fusefs-ntfs extensions
+NTFSPROGS_DESC=		Use ntfsprogs extensions
+PROGSREISERFS_DESC=	Use reiserfs extensions
 #		E2FSPROGS "Use ext2fs extensions" off \
 
 .include <bsd.port.pre.mk>
@@ -39,8 +38,8 @@ OPTIONS=	ICONV "Use iconv extensions" on \
 #DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
 #.endif
 
-.if !defined(WITHOUT_ICONV)
-LIB_DEPENDS+=   iconv.3:${PORTSDIR}/converters/libiconv
+.if ${PORT_OPTIONS:MICONV}
+LIB_DEPENDS+=   iconv:${PORTSDIR}/converters/libiconv
 .else
 CONFIGURE_ARGS+=--without-iconv
 .endif
@@ -53,29 +52,26 @@ CONFIGURE_ARGS+=--without-iconv
 #CONFIGURE_ARGS+=--without-ext2fs
 #.endif
 
-.if defined(WITH_NTFS3G)
+.if ${PORT_OPTIONS:MNTFS3G}
 LIB_DEPENDS+=	ntfs-3g:${PORTSDIR}/sysutils/fusefs-ntfs
 .else
 CONFIGURE_ARGS+=--without-ntfs3g
 .endif
 
-.if defined(WITH_NTFSPROGS)
-.if defined(WITH_NTFS3G)
-IGNORE=	WITH_NTFSPROGS does not work if WITH_NTFS3G is defined
-.endif
-LIB_DEPENDS+=	ntfs.10:${PORTSDIR}/sysutils/ntfsprogs
+.if ${PORT_OPTIONS:MNTFSPROGS}
+LIB_DEPENDS+=	ntfs:${PORTSDIR}/sysutils/ntfsprogs
 .else
 CONFIGURE_ARGS+=--without-ntfs
 .endif
 
-.if defined(WITH_PROGSREISERFS)
+.if ${PORT_OPTIONS:MPROGSREISERFS}
 LIB_DEPENDS+=	reiserfs-0.3.0:${PORTSDIR}/sysutils/progsreiserfs
 .else
 CONFIGURE_ARGS+=--without-reiserfs
 .endif
 
 post-patch:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/doc\/testdisk\/html/d' ${WRKSRC}/Makefile.in
 .else
