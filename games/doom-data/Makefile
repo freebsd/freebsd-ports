@@ -1,16 +1,12 @@
-# New ports collection makefile for:	doom-data
-# Date created:				21 Sep 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
 # $FreeBSD$
-#
+# Created by:	Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	data
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/ \
-		http://distfiles.officialunix.com/
+MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/
+
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 EXTRACT_SUFX=	.bz2
 DISTFILES=	#
