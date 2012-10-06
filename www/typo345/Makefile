@@ -1,6 +1,4 @@
-# New ports collection makefile for:	www/typo3
-# Date created:				February 6th 2005
-# Whom:	      				Gerrit Beine <tux@pinguru.net>
+# Created by:		Gerrit Beine <tux@pinguru.net>
 #
 # $FreeBSD$
 #
@@ -48,7 +46,11 @@ USE_PHP+=	gd
 .endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
+.if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+.else
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MMBSTRING}
