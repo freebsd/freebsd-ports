@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=	--with-kqueue
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
-.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
