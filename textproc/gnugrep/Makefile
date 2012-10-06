@@ -26,11 +26,11 @@ MAN1=		egrep.1 \
 		grep.1
 INFO=		grep
 
-OPTIONS=	PCRE	"Compile with Perl-compatible regex support"	off
+OPTIONS_DEFINE=	PCRE
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=
@@ -39,14 +39,14 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-perl-regexp
 .endif
 
 post-patch:
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} '/install-exec-local:/s/install-exec-localcharset//' \
 		${WRKSRC}/lib/Makefile.in
 .endif
