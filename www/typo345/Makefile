@@ -1,14 +1,12 @@
-# Created by:		Gerrit Beine <tux@pinguru.net>
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	typo3
 PORTVERSION=	4.5.19
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
-MAINTAINER=	jumper99@gmx.de
+MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
