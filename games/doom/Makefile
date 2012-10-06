@@ -1,9 +1,5 @@
-# New ports collection makefile for:    games
-# Date created:         Mon Dec 14 21:03:01 MET 1998
-# Whom:                 jmz
-#
 # $FreeBSD$
-#
+# Created by:	Jean-Marc Zucconi <jmz@FreeBSD.org>
 
 PORTNAME=	doom
 PORTVERSION=	1.10
@@ -14,6 +10,8 @@ DISTNAME=	doomsrc
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	DOOM: the game and the sound server
+
+LICENSE=	GPLv1
 
 NO_CDROM=	requested by IDsoftware
 
