@@ -4,17 +4,21 @@ bin/muinshee
 lib/banshee/Backends/Banshee.GStreamer.dll
 lib/banshee/Backends/Banshee.GStreamer.dll.config
 lib/banshee/Backends/Banshee.GStreamer.dll.mdb
-%%HAS_GIO%%lib/banshee/Backends/Banshee.Gio.dll
-%%HAS_GIO%%lib/banshee/Backends/Banshee.Gio.dll.mdb
+lib/banshee/Backends/Banshee.Gio.dll
+lib/banshee/Backends/Banshee.Gio.dll.mdb
 lib/banshee/Backends/Banshee.Gnome.dll
 lib/banshee/Backends/Banshee.Gnome.dll.mdb
-lib/banshee/Backends/Banshee.Hal.dll
-lib/banshee/Backends/Banshee.Hal.dll.mdb
 lib/banshee/Backends/Banshee.NowPlaying.X11.dll
 lib/banshee/Backends/Banshee.NowPlaying.X11.dll.mdb
 lib/banshee/Backends/Banshee.Unix.dll
 lib/banshee/Backends/Banshee.Unix.dll.config
 lib/banshee/Backends/Banshee.Unix.dll.mdb
+lib/banshee/Backends/gio-sharp.dll
+lib/banshee/Backends/gio-sharp.dll.config
+lib/banshee/Backends/gio-sharp.dll.mdb
+lib/banshee/Backends/gtk-sharp-beans.dll
+lib/banshee/Backends/gtk-sharp-beans.dll.config
+lib/banshee/Backends/gtk-sharp-beans.dll.mdb
 lib/banshee/Backends/libbnpx11.a
 lib/banshee/Backends/libbnpx11.la
 lib/banshee/Backends/libbnpx11.so
@@ -39,12 +43,10 @@ lib/banshee/Banshee.exe.config
 lib/banshee/Banshee.exe.mdb
 lib/banshee/Beroe.exe
 lib/banshee/Beroe.exe.mdb
-lib/banshee/Extensions/Banshee.AmazonMp3.exe
-lib/banshee/Extensions/Banshee.AmazonMp3.exe.mdb
 lib/banshee/Extensions/Banshee.AmazonMp3.Store.dll
 lib/banshee/Extensions/Banshee.AmazonMp3.Store.dll.mdb
-lib/banshee/Extensions/Banshee.AudioCd.dll
-lib/banshee/Extensions/Banshee.AudioCd.dll.mdb
+lib/banshee/Extensions/Banshee.AmazonMp3.exe
+lib/banshee/Extensions/Banshee.AmazonMp3.exe.mdb
 lib/banshee/Extensions/Banshee.Audiobook.dll
 lib/banshee/Extensions/Banshee.Audiobook.dll.mdb
 %%OPT_BOO%%lib/banshee/Extensions/Banshee.BooScript.dll
@@ -55,14 +57,14 @@ lib/banshee/Extensions/Banshee.CoverArt.dll
 lib/banshee/Extensions/Banshee.CoverArt.dll.mdb
 lib/banshee/Extensions/Banshee.Daap.dll
 lib/banshee/Extensions/Banshee.Daap.dll.mdb
-%%OPT_IPOD%%lib/banshee/Extensions/Banshee.Dap.Ipod.dll
-%%OPT_IPOD%%lib/banshee/Extensions/Banshee.Dap.Ipod.dll.mdb
 lib/banshee/Extensions/Banshee.Dap.MassStorage.dll
 lib/banshee/Extensions/Banshee.Dap.MassStorage.dll.mdb
 %%OPT_MTP%%lib/banshee/Extensions/Banshee.Dap.Mtp.dll
 %%OPT_MTP%%lib/banshee/Extensions/Banshee.Dap.Mtp.dll.mdb
 lib/banshee/Extensions/Banshee.Dap.dll
 lib/banshee/Extensions/Banshee.Dap.dll.mdb
+lib/banshee/Extensions/Banshee.Emusic.Store.dll
+lib/banshee/Extensions/Banshee.Emusic.Store.dll.mdb
 lib/banshee/Extensions/Banshee.Emusic.dll
 lib/banshee/Extensions/Banshee.Emusic.dll.mdb
 lib/banshee/Extensions/Banshee.FileSystemQueue.dll
@@ -92,6 +94,8 @@ lib/banshee/Extensions/Banshee.NotificationArea.dll.config
 lib/banshee/Extensions/Banshee.NotificationArea.dll.mdb
 lib/banshee/Extensions/Banshee.NowPlaying.dll
 lib/banshee/Extensions/Banshee.NowPlaying.dll.mdb
+lib/banshee/Extensions/Banshee.OpticalDisc.dll
+lib/banshee/Extensions/Banshee.OpticalDisc.dll.mdb
 lib/banshee/Extensions/Banshee.PlayQueue.dll
 lib/banshee/Extensions/Banshee.PlayQueue.dll.mdb
 lib/banshee/Extensions/Banshee.PlayerMigration.dll
@@ -102,10 +106,6 @@ lib/banshee/Extensions/Banshee.Wikipedia.dll
 lib/banshee/Extensions/Banshee.Wikipedia.dll.mdb
 %%OPT_YOUTUBE%%lib/banshee/Extensions/Banshee.YouTube.dll
 %%OPT_YOUTUBE%%lib/banshee/Extensions/Banshee.YouTube.dll.mdb
-%%OPT_IPOD%%lib/banshee/Extensions/ipod-sharp-ui.dll
-%%OPT_IPOD%%lib/banshee/Extensions/ipod-sharp-ui.dll.mdb
-%%OPT_IPOD%%lib/banshee/Extensions/ipod-sharp.dll
-%%OPT_IPOD%%lib/banshee/Extensions/ipod-sharp.dll.mdb
 lib/banshee/Halie.exe
 lib/banshee/Halie.exe.mdb
 lib/banshee/Hyena.Data.Sqlite.dll
@@ -134,9 +134,6 @@ lib/banshee/MusicBrainz.dll.mdb
 lib/banshee/Nereid.exe
 lib/banshee/Nereid.exe.mdb
 lib/banshee/gconf-schema-extractor.exe
-lib/banshee/gstreamer-0.10/libgstequalizer.a
-lib/banshee/gstreamer-0.10/libgstequalizer.la
-lib/banshee/gstreamer-0.10/libgstequalizer.so
 lib/banshee/libbanshee.a
 lib/banshee/libbanshee.la
 lib/banshee/libbanshee.so
@@ -165,102 +162,117 @@ libdata/pkgconfig/banshee-webbrowser.pc
 share/applications/banshee-audiocd.desktop
 share/applications/banshee-media-player.desktop
 share/applications/banshee.desktop
-share/banshee/audio-profiles/aac-novell.xml
-share/banshee/audio-profiles/base.xml
-share/banshee/audio-profiles/flac.xml
-share/banshee/audio-profiles/mp3-lame.xml
-share/banshee/audio-profiles/mp3-xing.xml
-share/banshee/audio-profiles/vorbis.xml
-share/banshee/audio-profiles/wav.xml
-share/banshee/audio-profiles/wavpack.xml
-share/banshee/audio-profiles/wma.xml
-share/banshee/icons/hicolor/128x128/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/128x128/devices/phone-htc-g1-white.png
-share/banshee/icons/hicolor/128x128/devices/phone-nokia-n900.png
-share/banshee/icons/hicolor/16x16/actions/media-import-audio-cd.png
-share/banshee/icons/hicolor/16x16/actions/media-repeat-all.png
-share/banshee/icons/hicolor/16x16/actions/media-repeat-none.png
-share/banshee/icons/hicolor/16x16/actions/media-repeat-single.png
-share/banshee/icons/hicolor/16x16/actions/media-write-cd.png
-share/banshee/icons/hicolor/16x16/categories/amazon-mp3-source.png
-share/banshee/icons/hicolor/16x16/categories/amazon-mp3-store-source.png
-share/banshee/icons/hicolor/16x16/categories/audiobook.png
-share/banshee/icons/hicolor/16x16/categories/internet-archive.png
-share/banshee/icons/hicolor/16x16/categories/lastfm-audioscrobbler.png
-share/banshee/icons/hicolor/16x16/categories/lastfm-neighbour.png
-share/banshee/icons/hicolor/16x16/categories/lastfm-personal.png
-share/banshee/icons/hicolor/16x16/categories/lastfm-recommended.png
-share/banshee/icons/hicolor/16x16/categories/lastfm-tag.png
-share/banshee/icons/hicolor/16x16/categories/miro-guide-source.png
-share/banshee/icons/hicolor/16x16/categories/podcast.png
-share/banshee/icons/hicolor/16x16/categories/radio.png
-share/banshee/icons/hicolor/16x16/categories/source-playlist.png
-share/banshee/icons/hicolor/16x16/categories/source-smart-playlist.png
-share/banshee/icons/hicolor/16x16/categories/wikipedia.png
-share/banshee/icons/hicolor/16x16/categories/youtube.png
-share/banshee/icons/hicolor/16x16/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/16x16/devices/phone-htc-g1-white.png
-share/banshee/icons/hicolor/16x16/devices/phone-nokia-n900.png
-share/banshee/icons/hicolor/16x16/devices/phone-palm-pre.png
-share/banshee/icons/hicolor/16x16/emblems/creative-commons-by.png
-share/banshee/icons/hicolor/16x16/emblems/creative-commons-nc.png
-share/banshee/icons/hicolor/16x16/emblems/creative-commons-nd.png
-share/banshee/icons/hicolor/16x16/emblems/creative-commons-pd.png
-share/banshee/icons/hicolor/16x16/emblems/creative-commons-sa.png
-share/banshee/icons/hicolor/16x16/status/podcast-new.png
-share/banshee/icons/hicolor/22x22/actions/encode.png
-share/banshee/icons/hicolor/22x22/actions/media-import-audio-cd.png
-share/banshee/icons/hicolor/22x22/actions/media-write-cd.png
-share/banshee/icons/hicolor/22x22/categories/amazon-mp3-source.png
-share/banshee/icons/hicolor/22x22/categories/amazon-mp3-store-source.png
-share/banshee/icons/hicolor/22x22/categories/audiobook.png
-share/banshee/icons/hicolor/22x22/categories/internet-archive.png
-share/banshee/icons/hicolor/22x22/categories/lastfm-audioscrobbler.png
-share/banshee/icons/hicolor/22x22/categories/lastfm-neighbour.png
-share/banshee/icons/hicolor/22x22/categories/lastfm-personal.png
-share/banshee/icons/hicolor/22x22/categories/lastfm-recommended.png
-share/banshee/icons/hicolor/22x22/categories/lastfm-tag.png
-share/banshee/icons/hicolor/22x22/categories/miro-guide-source.png
-share/banshee/icons/hicolor/22x22/categories/podcast.png
-share/banshee/icons/hicolor/22x22/categories/radio.png
-share/banshee/icons/hicolor/22x22/categories/source-playlist.png
-share/banshee/icons/hicolor/22x22/categories/source-smart-playlist.png
-share/banshee/icons/hicolor/22x22/categories/wikipedia.png
-share/banshee/icons/hicolor/22x22/categories/youtube.png
-share/banshee/icons/hicolor/22x22/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/22x22/devices/phone-htc-g1-white.png
-share/banshee/icons/hicolor/22x22/devices/phone-nokia-n900.png
-share/banshee/icons/hicolor/22x22/devices/phone-palm-pre.png
-share/banshee/icons/hicolor/24x24/categories/miro-guide-source.png
-share/banshee/icons/hicolor/24x24/categories/youtube.png
-share/banshee/icons/hicolor/24x24/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/24x24/devices/phone-htc-g1-white.png
-share/banshee/icons/hicolor/24x24/devices/phone-nokia-n900.png
-share/banshee/icons/hicolor/24x24/devices/phone-palm-pre.png
-share/banshee/icons/hicolor/256x256/categories/audiobook.png
-share/banshee/icons/hicolor/256x256/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/256x256/devices/phone-palm-pre.png
-share/banshee/icons/hicolor/32x32/actions/media-write-cd.png
-share/banshee/icons/hicolor/32x32/categories/miro-guide-source.png
-share/banshee/icons/hicolor/32x32/categories/wikipedia.png
-share/banshee/icons/hicolor/32x32/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/32x32/devices/phone-htc-g1-white.png
-share/banshee/icons/hicolor/32x32/devices/phone-nokia-n900.png
-share/banshee/icons/hicolor/32x32/devices/phone-palm-pre.png
-share/banshee/icons/hicolor/48x48/actions/media-write-cd.png
-share/banshee/icons/hicolor/48x48/categories/audiobook.png
-share/banshee/icons/hicolor/48x48/categories/miro-guide-source.png
-share/banshee/icons/hicolor/48x48/categories/podcast.png
-share/banshee/icons/hicolor/48x48/categories/radio.png
-share/banshee/icons/hicolor/48x48/categories/wikipedia.png
-share/banshee/icons/hicolor/48x48/devices/phone-google-nexus-one.png
-share/banshee/icons/hicolor/48x48/devices/phone-htc-g1-white.png
-share/banshee/icons/hicolor/48x48/devices/phone-nokia-n900.png
-share/banshee/icons/hicolor/48x48/devices/phone-palm-pre.png
-share/banshee/icons/hicolor/scalable/categories/miro-guide-source.svg
-share/banshee/icons/hicolor/scalable/categories/radio.svg
-share/banshee/icons/hicolor/scalable/categories/wikipedia.svg
-share/banshee/icons/hicolor/scalable/devices/phone-nokia-n900.svg
+%%DATADIR%%/audio-profiles/aac-novell.xml
+%%DATADIR%%/audio-profiles/aac.xml
+%%DATADIR%%/audio-profiles/base.xml
+%%DATADIR%%/audio-profiles/flac.xml
+%%DATADIR%%/audio-profiles/mp3-lame.xml
+%%DATADIR%%/audio-profiles/mp3-xing.xml
+%%DATADIR%%/audio-profiles/vorbis.xml
+%%DATADIR%%/audio-profiles/wav.xml
+%%DATADIR%%/audio-profiles/wavpack.xml
+%%DATADIR%%/audio-profiles/wma.xml
+%%DATADIR%%/icons/hicolor/128x128/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/128x128/devices/phone-htc-g1-white.png
+%%DATADIR%%/icons/hicolor/128x128/devices/phone-nokia-n900.png
+%%DATADIR%%/icons/hicolor/128x128/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/128x128/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-import-audio-cd.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-repeat-all.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-repeat-none.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-repeat-single.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-write-cd.png
+%%DATADIR%%/icons/hicolor/16x16/categories/amazon-mp3-source.png
+%%DATADIR%%/icons/hicolor/16x16/categories/amazon-mp3-store-source.png
+%%DATADIR%%/icons/hicolor/16x16/categories/audiobook.png
+%%DATADIR%%/icons/hicolor/16x16/categories/internet-archive.png
+%%DATADIR%%/icons/hicolor/16x16/categories/lastfm-audioscrobbler.png
+%%DATADIR%%/icons/hicolor/16x16/categories/lastfm-neighbour.png
+%%DATADIR%%/icons/hicolor/16x16/categories/lastfm-personal.png
+%%DATADIR%%/icons/hicolor/16x16/categories/lastfm-recommended.png
+%%DATADIR%%/icons/hicolor/16x16/categories/lastfm-tag.png
+%%DATADIR%%/icons/hicolor/16x16/categories/miro-guide-source.png
+%%DATADIR%%/icons/hicolor/16x16/categories/podcast.png
+%%DATADIR%%/icons/hicolor/16x16/categories/radio.png
+%%DATADIR%%/icons/hicolor/16x16/categories/source-playlist.png
+%%DATADIR%%/icons/hicolor/16x16/categories/source-smart-playlist.png
+%%DATADIR%%/icons/hicolor/16x16/categories/wikipedia.png
+%%OPT_YOUTUBE%%%%DATADIR%%/icons/hicolor/16x16/categories/youtube.png
+%%DATADIR%%/icons/hicolor/16x16/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/16x16/devices/phone-htc-g1-white.png
+%%DATADIR%%/icons/hicolor/16x16/devices/phone-nokia-n900.png
+%%DATADIR%%/icons/hicolor/16x16/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/16x16/devices/phone-palm-pre.png
+%%DATADIR%%/icons/hicolor/16x16/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/creative-commons-by.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/creative-commons-nc.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/creative-commons-nd.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/creative-commons-pd.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/creative-commons-sa.png
+%%DATADIR%%/icons/hicolor/16x16/status/podcast-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/encode.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-import-audio-cd.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-write-cd.png
+%%DATADIR%%/icons/hicolor/22x22/categories/amazon-mp3-source.png
+%%DATADIR%%/icons/hicolor/22x22/categories/amazon-mp3-store-source.png
+%%DATADIR%%/icons/hicolor/22x22/categories/audiobook.png
+%%DATADIR%%/icons/hicolor/22x22/categories/internet-archive.png
+%%DATADIR%%/icons/hicolor/22x22/categories/lastfm-audioscrobbler.png
+%%DATADIR%%/icons/hicolor/22x22/categories/lastfm-neighbour.png
+%%DATADIR%%/icons/hicolor/22x22/categories/lastfm-personal.png
+%%DATADIR%%/icons/hicolor/22x22/categories/lastfm-recommended.png
+%%DATADIR%%/icons/hicolor/22x22/categories/lastfm-tag.png
+%%DATADIR%%/icons/hicolor/22x22/categories/miro-guide-source.png
+%%DATADIR%%/icons/hicolor/22x22/categories/podcast.png
+%%DATADIR%%/icons/hicolor/22x22/categories/radio.png
+%%DATADIR%%/icons/hicolor/22x22/categories/source-playlist.png
+%%DATADIR%%/icons/hicolor/22x22/categories/source-smart-playlist.png
+%%DATADIR%%/icons/hicolor/22x22/categories/wikipedia.png
+%%OPT_YOUTUBE%%%%DATADIR%%/icons/hicolor/22x22/categories/youtube.png
+%%DATADIR%%/icons/hicolor/22x22/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/22x22/devices/phone-htc-g1-white.png
+%%DATADIR%%/icons/hicolor/22x22/devices/phone-nokia-n900.png
+%%DATADIR%%/icons/hicolor/22x22/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/22x22/devices/phone-palm-pre.png
+%%DATADIR%%/icons/hicolor/22x22/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/24x24/categories/miro-guide-source.png
+%%OPT_YOUTUBE%%%%DATADIR%%/icons/hicolor/24x24/categories/youtube.png
+%%DATADIR%%/icons/hicolor/24x24/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/24x24/devices/phone-htc-g1-white.png
+%%DATADIR%%/icons/hicolor/24x24/devices/phone-nokia-n900.png
+%%DATADIR%%/icons/hicolor/24x24/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/24x24/devices/phone-palm-pre.png
+%%DATADIR%%/icons/hicolor/24x24/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/256x256/categories/audiobook.png
+%%DATADIR%%/icons/hicolor/256x256/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/256x256/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/256x256/devices/phone-palm-pre.png
+%%DATADIR%%/icons/hicolor/256x256/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/32x32/actions/media-write-cd.png
+%%DATADIR%%/icons/hicolor/32x32/categories/miro-guide-source.png
+%%DATADIR%%/icons/hicolor/32x32/categories/wikipedia.png
+%%DATADIR%%/icons/hicolor/32x32/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/32x32/devices/phone-htc-g1-white.png
+%%DATADIR%%/icons/hicolor/32x32/devices/phone-nokia-n900.png
+%%DATADIR%%/icons/hicolor/32x32/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/32x32/devices/phone-palm-pre.png
+%%DATADIR%%/icons/hicolor/32x32/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/48x48/actions/media-write-cd.png
+%%DATADIR%%/icons/hicolor/48x48/categories/audiobook.png
+%%DATADIR%%/icons/hicolor/48x48/categories/miro-guide-source.png
+%%DATADIR%%/icons/hicolor/48x48/categories/podcast.png
+%%DATADIR%%/icons/hicolor/48x48/categories/radio.png
+%%DATADIR%%/icons/hicolor/48x48/categories/wikipedia.png
+%%DATADIR%%/icons/hicolor/48x48/devices/phone-google-nexus-one.png
+%%DATADIR%%/icons/hicolor/48x48/devices/phone-htc-g1-white.png
+%%DATADIR%%/icons/hicolor/48x48/devices/phone-nokia-n900.png
+%%DATADIR%%/icons/hicolor/48x48/devices/phone-nook.png
+%%DATADIR%%/icons/hicolor/48x48/devices/phone-palm-pre.png
+%%DATADIR%%/icons/hicolor/48x48/devices/phone-xperia-arc.png
+%%DATADIR%%/icons/hicolor/scalable/categories/miro-guide-source.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/radio.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/wikipedia.svg
+%%DATADIR%%/icons/hicolor/scalable/devices/phone-nokia-n900.svg
 share/dbus-1/services/org.bansheeproject.Banshee.service
 share/dbus-1/services/org.bansheeproject.CollectionIndexer.service
 share/gnome/help/banshee/C/add-podcast.page
@@ -309,6 +321,29 @@ share/gnome/help/banshee/ca/search.page
 share/gnome/help/banshee/ca/sort.page
 share/gnome/help/banshee/ca/sync.page
 share/gnome/help/banshee/ca/ui.page
+share/gnome/help/banshee/cs/add-podcast.page
+share/gnome/help/banshee/cs/add-radio.page
+share/gnome/help/banshee/cs/advanced.page
+share/gnome/help/banshee/cs/amazon.page
+share/gnome/help/banshee/cs/emusic.page
+share/gnome/help/banshee/cs/extensions.page
+share/gnome/help/banshee/cs/import.page
+share/gnome/help/banshee/cs/index.page
+share/gnome/help/banshee/cs/introduction.page
+share/gnome/help/banshee/cs/itunes-import.page
+share/gnome/help/banshee/cs/keyboardshortcuts.page
+share/gnome/help/banshee/cs/lastfm.page
+share/gnome/help/banshee/cs/legal.xml
+share/gnome/help/banshee/cs/manage-coverart.page
+share/gnome/help/banshee/cs/manage-playlists.page
+share/gnome/help/banshee/cs/manage-tags.page
+share/gnome/help/banshee/cs/play-queue.page
+share/gnome/help/banshee/cs/play.page
+share/gnome/help/banshee/cs/rb-import.page
+share/gnome/help/banshee/cs/search.page
+share/gnome/help/banshee/cs/sort.page
+share/gnome/help/banshee/cs/sync.page
+share/gnome/help/banshee/cs/ui.page
 share/gnome/help/banshee/da/add-podcast.page
 share/gnome/help/banshee/da/add-radio.page
 share/gnome/help/banshee/da/advanced.page
@@ -378,6 +413,29 @@ share/gnome/help/banshee/el/search.page
 share/gnome/help/banshee/el/sort.page
 share/gnome/help/banshee/el/sync.page
 share/gnome/help/banshee/el/ui.page
+share/gnome/help/banshee/en_GB/add-podcast.page
+share/gnome/help/banshee/en_GB/add-radio.page
+share/gnome/help/banshee/en_GB/advanced.page
+share/gnome/help/banshee/en_GB/amazon.page
+share/gnome/help/banshee/en_GB/emusic.page
+share/gnome/help/banshee/en_GB/extensions.page
+share/gnome/help/banshee/en_GB/import.page
+share/gnome/help/banshee/en_GB/index.page
+share/gnome/help/banshee/en_GB/introduction.page
+share/gnome/help/banshee/en_GB/itunes-import.page
+share/gnome/help/banshee/en_GB/keyboardshortcuts.page
+share/gnome/help/banshee/en_GB/lastfm.page
+share/gnome/help/banshee/en_GB/legal.xml
+share/gnome/help/banshee/en_GB/manage-coverart.page
+share/gnome/help/banshee/en_GB/manage-playlists.page
+share/gnome/help/banshee/en_GB/manage-tags.page
+share/gnome/help/banshee/en_GB/play-queue.page
+share/gnome/help/banshee/en_GB/play.page
+share/gnome/help/banshee/en_GB/rb-import.page
+share/gnome/help/banshee/en_GB/search.page
+share/gnome/help/banshee/en_GB/sort.page
+share/gnome/help/banshee/en_GB/sync.page
+share/gnome/help/banshee/en_GB/ui.page
 share/gnome/help/banshee/es/add-podcast.page
 share/gnome/help/banshee/es/add-radio.page
 share/gnome/help/banshee/es/advanced.page
@@ -516,6 +574,52 @@ share/gnome/help/banshee/sl/search.page
 share/gnome/help/banshee/sl/sort.page
 share/gnome/help/banshee/sl/sync.page
 share/gnome/help/banshee/sl/ui.page
+share/gnome/help/banshee/uk/add-podcast.page
+share/gnome/help/banshee/uk/add-radio.page
+share/gnome/help/banshee/uk/advanced.page
+share/gnome/help/banshee/uk/amazon.page
+share/gnome/help/banshee/uk/emusic.page
+share/gnome/help/banshee/uk/extensions.page
+share/gnome/help/banshee/uk/import.page
+share/gnome/help/banshee/uk/index.page
+share/gnome/help/banshee/uk/introduction.page
+share/gnome/help/banshee/uk/itunes-import.page
+share/gnome/help/banshee/uk/keyboardshortcuts.page
+share/gnome/help/banshee/uk/lastfm.page
+share/gnome/help/banshee/uk/legal.xml
+share/gnome/help/banshee/uk/manage-coverart.page
+share/gnome/help/banshee/uk/manage-playlists.page
+share/gnome/help/banshee/uk/manage-tags.page
+share/gnome/help/banshee/uk/play-queue.page
+share/gnome/help/banshee/uk/play.page
+share/gnome/help/banshee/uk/rb-import.page
+share/gnome/help/banshee/uk/search.page
+share/gnome/help/banshee/uk/sort.page
+share/gnome/help/banshee/uk/sync.page
+share/gnome/help/banshee/uk/ui.page
+share/gnome/help/banshee/zh_CN/add-podcast.page
+share/gnome/help/banshee/zh_CN/add-radio.page
+share/gnome/help/banshee/zh_CN/advanced.page
+share/gnome/help/banshee/zh_CN/amazon.page
+share/gnome/help/banshee/zh_CN/emusic.page
+share/gnome/help/banshee/zh_CN/extensions.page
+share/gnome/help/banshee/zh_CN/import.page
+share/gnome/help/banshee/zh_CN/index.page
+share/gnome/help/banshee/zh_CN/introduction.page
+share/gnome/help/banshee/zh_CN/itunes-import.page
+share/gnome/help/banshee/zh_CN/keyboardshortcuts.page
+share/gnome/help/banshee/zh_CN/lastfm.page
+share/gnome/help/banshee/zh_CN/legal.xml
+share/gnome/help/banshee/zh_CN/manage-coverart.page
+share/gnome/help/banshee/zh_CN/manage-playlists.page
+share/gnome/help/banshee/zh_CN/manage-tags.page
+share/gnome/help/banshee/zh_CN/play-queue.page
+share/gnome/help/banshee/zh_CN/play.page
+share/gnome/help/banshee/zh_CN/rb-import.page
+share/gnome/help/banshee/zh_CN/search.page
+share/gnome/help/banshee/zh_CN/sort.page
+share/gnome/help/banshee/zh_CN/sync.page
+share/gnome/help/banshee/zh_CN/ui.page
 share/icons/hicolor/16x16/apps/media-player-banshee.png
 share/icons/hicolor/192x192/apps/media-player-banshee.png
 share/icons/hicolor/22x22/apps/media-player-banshee.png
@@ -555,6 +659,7 @@ share/locale/lv/LC_MESSAGES/banshee.mo
 share/locale/mk/LC_MESSAGES/banshee.mo
 share/locale/nb/LC_MESSAGES/banshee.mo
 share/locale/nl/LC_MESSAGES/banshee.mo
+share/locale/nn/LC_MESSAGES/banshee.mo
 share/locale/oc/LC_MESSAGES/banshee.mo
 share/locale/pa/LC_MESSAGES/banshee.mo
 share/locale/pl/LC_MESSAGES/banshee.mo
@@ -562,10 +667,12 @@ share/locale/pt/LC_MESSAGES/banshee.mo
 share/locale/pt_BR/LC_MESSAGES/banshee.mo
 share/locale/ro/LC_MESSAGES/banshee.mo
 share/locale/ru/LC_MESSAGES/banshee.mo
+share/locale/sk/LC_MESSAGES/banshee.mo
 share/locale/sl/LC_MESSAGES/banshee.mo
 share/locale/sr/LC_MESSAGES/banshee.mo
 share/locale/sr@latin/LC_MESSAGES/banshee.mo
 share/locale/sv/LC_MESSAGES/banshee.mo
+share/locale/te/LC_MESSAGES/banshee.mo
 share/locale/th/LC_MESSAGES/banshee.mo
 share/locale/tr/LC_MESSAGES/banshee.mo
 share/locale/uk/LC_MESSAGES/banshee.mo
@@ -574,52 +681,56 @@ share/locale/zh_CN/LC_MESSAGES/banshee.mo
 share/locale/zh_HK/LC_MESSAGES/banshee.mo
 share/locale/zh_TW/LC_MESSAGES/banshee.mo
 share/mime/packages/banshee-amz.xml
+share/mime/packages/banshee-emx.xml
+@dirrm share/gnome/help/banshee/zh_CN
+@dirrm share/gnome/help/banshee/uk
 @dirrm share/gnome/help/banshee/sl
 @dirrm share/gnome/help/banshee/ja
 @dirrm share/gnome/help/banshee/hu
 @dirrm share/gnome/help/banshee/gl
 @dirrm share/gnome/help/banshee/fr
 @dirrm share/gnome/help/banshee/es
+@dirrm share/gnome/help/banshee/en_GB
 @dirrm share/gnome/help/banshee/el
 @dirrm share/gnome/help/banshee/de
 @dirrm share/gnome/help/banshee/da
+@dirrm share/gnome/help/banshee/cs
 @dirrm share/gnome/help/banshee/ca
 @dirrm share/gnome/help/banshee/C
 @dirrm share/gnome/help/banshee
-@dirrm share/banshee/icons/hicolor/scalable/devices
-@dirrm share/banshee/icons/hicolor/scalable/categories
-@dirrm share/banshee/icons/hicolor/scalable
-@dirrm share/banshee/icons/hicolor/48x48/devices
-@dirrm share/banshee/icons/hicolor/48x48/categories
-@dirrm share/banshee/icons/hicolor/48x48/actions
-@dirrm share/banshee/icons/hicolor/48x48
-@dirrm share/banshee/icons/hicolor/32x32/devices
-@dirrm share/banshee/icons/hicolor/32x32/categories
-@dirrm share/banshee/icons/hicolor/32x32/actions
-@dirrm share/banshee/icons/hicolor/32x32
-@dirrm share/banshee/icons/hicolor/256x256/devices
-@dirrm share/banshee/icons/hicolor/256x256/categories
-@dirrm share/banshee/icons/hicolor/256x256
-@dirrm share/banshee/icons/hicolor/24x24/devices
-@dirrm share/banshee/icons/hicolor/24x24/categories
-@dirrm share/banshee/icons/hicolor/24x24
-@dirrm share/banshee/icons/hicolor/22x22/devices
-@dirrm share/banshee/icons/hicolor/22x22/categories
-@dirrm share/banshee/icons/hicolor/22x22/actions
-@dirrm share/banshee/icons/hicolor/22x22
-@dirrm share/banshee/icons/hicolor/16x16/status
-@dirrm share/banshee/icons/hicolor/16x16/emblems
-@dirrm share/banshee/icons/hicolor/16x16/devices
-@dirrm share/banshee/icons/hicolor/16x16/categories
-@dirrm share/banshee/icons/hicolor/16x16/actions
-@dirrm share/banshee/icons/hicolor/16x16
-@dirrm share/banshee/icons/hicolor/128x128/devices
-@dirrm share/banshee/icons/hicolor/128x128
-@dirrm share/banshee/icons/hicolor
-@dirrm share/banshee/icons
-@dirrm share/banshee/audio-profiles
-@dirrm share/banshee
-@dirrm lib/banshee/gstreamer-0.10
+@dirrm %%DATADIR%%/icons/hicolor/scalable/devices
+@dirrm %%DATADIR%%/icons/hicolor/scalable/categories
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/48x48/devices
+@dirrm %%DATADIR%%/icons/hicolor/48x48/categories
+@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/32x32/devices
+@dirrm %%DATADIR%%/icons/hicolor/32x32/categories
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/256x256/devices
+@dirrm %%DATADIR%%/icons/hicolor/256x256/categories
+@dirrm %%DATADIR%%/icons/hicolor/256x256
+@dirrm %%DATADIR%%/icons/hicolor/24x24/devices
+@dirrm %%DATADIR%%/icons/hicolor/24x24/categories
+@dirrm %%DATADIR%%/icons/hicolor/24x24
+@dirrm %%DATADIR%%/icons/hicolor/22x22/devices
+@dirrm %%DATADIR%%/icons/hicolor/22x22/categories
+@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/emblems
+@dirrm %%DATADIR%%/icons/hicolor/16x16/devices
+@dirrm %%DATADIR%%/icons/hicolor/16x16/categories
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor/128x128/devices
+@dirrm %%DATADIR%%/icons/hicolor/128x128
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/audio-profiles
+@dirrm %%DATADIR%%
 @dirrm lib/banshee/Extensions
 @dirrm lib/banshee/Backends
 @dirrm lib/banshee
