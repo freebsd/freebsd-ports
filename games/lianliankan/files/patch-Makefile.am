@@ -9,7 +9,7 @@
  
  llk_linuxdocdir = ${prefix}/doc/llk_linux
 -llk_linuxdoc_DATA = \
-+EXRTA_DIST = \
++EXTRA_DIST = \
  	README\
  	COPYING\
  	AUTHORS\
