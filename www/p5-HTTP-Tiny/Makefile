@@ -15,7 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A small, simple, correct HTTP/1.1 client
 
-OPTIONS=	HTTPS	"https support" on
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+OPTIONS_DEFINE=	HTTPS
+OPTIONS_DEFAULT=HTTPS
 
 PERL_CONFIGURE=	yes
 
@@ -23,7 +27,7 @@ MAN3=		HTTP::Tiny.3
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_HTTPS)
+.if ${PORT_OPTIONS:MHTTPS}
 BUILD_DEPENDS+=	p5-IO-Socket-SSL>=1.56:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.56:${PORTSDIR}/security/p5-IO-Socket-SSL \
