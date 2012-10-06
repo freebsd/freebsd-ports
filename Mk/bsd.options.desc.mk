@@ -4,7 +4,7 @@
 # - Please keep descriptions sorted alphabetically by variable name.
 #
 # - Please respect these limits or the dialog options wrap or get cutoff
-#  - OPTNAME_DESC?= must be 19 characters or less
+#  - OPTION_DESC?= must be 19 characters or less
 #  - OPTION description text must be 43 characters or less
 #
 
@@ -85,6 +85,7 @@ FREETYPE_DESC?=		TrueType font rendering
 FREI0R_DESC?=		Frei0r video plugins
 FRIBIDI_DESC?=		Bidirectional text via GNU FriBidi
 FTP_DESC?=		FTP support
+FTPS_DESC?=		FTP with SSL/TLS support
 FUSE_DESC?=		FUSE (Filesystem in Userspace)
 GCONF_DESC?=		GConf configuration backend
 GD_DESC?=		GD graphics library
@@ -124,6 +125,7 @@ H323_DESC?=		H.323 support
 HAL_DESC?=		HAL (Hardware Abstraction Layer)
 HDF5_DESC?=		HDF-5 data format
 HTTPD_DESC?=		httpd output streaming
+HTTPS_DESC?=		https protocol
 ICONS_DESC?=		Install icons theme
 ICONV_DESC?=		Encoding conversion via iconv
 ID3_DESC?=		ID3 tags
