@@ -1,9 +1,5 @@
-# New ports collection makefile for: thunar-vfs
-# Date created:		2010-11-13
-# Whom:		Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	thunar-vfs
 PORTVERSION=	1.2.0
@@ -32,16 +28,15 @@ USE_XORG=	x11
 
 CONFIGURE_ARGS=	--disable-debug
 
-OPTIONS=	NLS "Enable Native Language Support" on \
-		HAL "Enable HAL support" on \
-		DBUS "Enable D-BUS support" on \
-		STARTUP "Enable startup notification support" on \
-		GCONF "Enable GCONF support" off \
-		APIDOCS "Install api documentation" off
+OPTIONS_DEFINE=	NLS HAL DBUS STARTUP GCONF APIDOCS
+OPTIONS_DEFAULT=	NLS HAL DBUS STARTUP APIDOCS
+
+APIDOCS_DESC=	Install api documentation
+STARTUP_DESC=	Enable startup notification support
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
@@ -50,21 +45,21 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=--with-volume-manager=hal
 .else
 CONFIGURE_ARGS+=--with-volume-manager=freebsd
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 .else
 CONFIGURE_ARGS+=--disable-dbus
 .endif
 
-.if !defined(WITHOUT_STARTUP)
+.if ${PORT_OPTIONS:MSTARTUP}
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
@@ -72,14 +67,14 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 # GNOME thumbnailers
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=--enable-gnome-thumbnailers
 .else
 CONFIGURE_ARGS+=--disable-gnome-thumbnailers
 .endif
 
-.if defined(WITHOUT_APIDOCS)
+.if ${PORT_OPTIONS:MAPIDOCS}
 CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
 .else
