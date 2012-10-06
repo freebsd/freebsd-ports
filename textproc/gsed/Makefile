@@ -19,8 +19,6 @@ COMMENT=	The GNU stream editor
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 
-OPTIONS=	NLS	"NLS support"	on
-
 PATCH_SUBDIRS=	. doc lib sed
 DATADIR=	${PREFIX}/share/${PKGBASE}
 SAMP_FILES=	binary*.sed dc.sed
@@ -33,7 +31,7 @@ MAN1=		gsed.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
