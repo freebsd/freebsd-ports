@@ -1,19 +1,14 @@
-# New ports collection makefile for:    gtk-qt4-engine
-# Date created:                         07 July 2008
-# Whom:                                 Kris Moore <kris@pcbsd.org>
-#
+# Created by: Kris Moore <kris@pcbsd.org>
 # $FreeBSD$
-#
 
-PORTNAME=	gtk-qt4-engine
+PORTNAME=	gtk-qt-engine
 PORTVERSION=	1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://gtk-qt-engine.googlecode.com/files/
-DISTFILES=	gtk-qt-engine-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT/KDE themes
+COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -21,21 +16,25 @@ USE_GNOME=	gtk20
 USE_QT4=	moc_build rcc_build uic_build qmake_build
 USE_CMAKE=	yes
 USE_KDE4=	kdelibs kdeprefix automoc4
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	LIBBONOBOUI "Install libbonoboui if missing" off
+OPTIONS_DEFINE=	BONOBO
+BONOBO_DESC=	Better support for Bonobo (GNOME) framework
 
-WRKSRC=		${WRKDIR}/gtk-qt-engine
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_LIBBONOBOUI)
+.if ${PORT_OPTIONS:MBONOBO}
 USE_GNOME+=	libbonoboui
 .endif
 
 post-patch:
+.if !${PORT_OPTIONS:MBONOBO}
+	@${REINPLACE_CMD} -e '/^PKGCONFIG(libbonoboui/d' \
+		${WRKSRC}/CMakeLists.txt
+.endif
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/kcm_gtk/searchpaths.cpp
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/kcm_gtk/searchpaths.cpp \
 		${WRKSRC}/src/rcproperties.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
