@@ -1,13 +1,8 @@
-# New ports collection makefile for:	munin-master
-# Date created:				25 Januar 2004
-# Whom:					Lupe Christoph <lupe@lupe-christoph.de>
-#
+# Created by: Lupe Christoph <lupe@lupe-christoph.de>
 # $FreeBSD$
-#
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	munin-node
-# Date created:				25 Januar 2004
-# Whom:					Lupe Christoph <lupe@lupe-christoph.de>
-#
+# Created by: Lupe Christoph <lupe@lupe-christoph.de>
 # $FreeBSD$
-#
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
@@ -111,9 +107,9 @@ post-install:
 	@(cd ${WRKSRC}/build/doc && for man in ${MAN8}; do \
 		${INSTALL_MAN} -C $$man ${PREFIX}/man/man8; \
 	done)
-	@${ECHO} ${PORTVERSION} > ${PREFIX}/etc/munin/VERSION.node
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO} ${PORTVERSION} > ${PREFIX}/etc/munin/VERSION.node
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
