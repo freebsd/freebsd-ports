@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libxine
-# Date created:         14 Oct 2000
-# Whom:                 alex
-#
+# Creates by: alex
 # $FreeBSD$
-#
 
 PORTNAME=	xine
 PORTVERSION=	1.2.2
@@ -51,6 +47,7 @@ USE_GL=		gl glu
 USE_PERL5_BUILD=yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
