@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gammu
-# Date created:        12 december 2003
-# Whom:                Kirill Bezzubets <kirill@solaris.ru>
-#
+# Created by: Kirill Bezzubets <kirill@solaris.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gammu
 PORTVERSION=	1.32.0
@@ -18,7 +14,8 @@ RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
 CONFLICTS=	gammu-devel-[1-9]* gammu-python-[1-9]*
 
-OPTIONS=	BASH "Install bash completion script" off
+OPTIONS_DEFINE=	BASHCS
+BASHCS_DESC=	BASH completion script
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
@@ -29,7 +26,28 @@ USE_GNOME=	glib20
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
+	@${REINPLACE_CMD} -i '' -e 's:/etc/bash_completion.d:${PREFIX}/etc/bash_completion.d:' \
+		${WRKSRC}/contrib/CMakeLists.txt
+
+post-install:
+.for opt in -Qold -O
+	${PYTHON_CMD} ${opt} -m compileall -l ${PYTHONPREFIX_SITELIBDIR}/gammu
+.endfor
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBASHCS}
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+PLIST_FILES+=	etc/bash_completion.d/gammu
+PLIST_DIRSTRY+=	etc/bash_completion.d
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
+.endif
+
+.if ! ${PORT_OPTIONS:MDOCS}
 CMAKE_ARGS+=	-DINSTALL_DOC=OFF -DINSTALL_PHP_EXAMPLES=OFF -DINSTALL_MEDIA=OFF \
 		-DINSTALL_GNAPPLET=OFF
 .else
@@ -40,28 +58,6 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 \
 		gammu-smsd-odbc.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7 gammu-smsd-null.7 \
 		gammu-smsd-run.7 gammu-smsd-sql.7
-
 .endif
 
-post-install:
-.for opt in -Qold -O
-	${PYTHON_CMD} ${opt} -m compileall -l ${PYTHONPREFIX_SITELIBDIR}/gammu
-.endfor
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
-	@${REINPLACE_CMD} -i '' -e 's:/etc/bash_completion.d:${PREFIX}/etc/bash_completion.d:' \
-		${WRKSRC}/contrib/CMakeLists.txt
-
-.if defined(WITH_BASH)
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-PLIST_FILES+=	etc/bash_completion.d/gammu
-PLIST_DIRSTRY+=	etc/bash_completion.d
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
