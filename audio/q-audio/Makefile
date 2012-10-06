@@ -23,6 +23,8 @@ LIB_DEPENDS=	q.8:${PORTSDIR}/lang/q \
 BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so.2:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USE_PKGCONFIG=	build
+
 DATADIR=	${PREFIX}/share/q
 
 CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
