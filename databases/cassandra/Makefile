@@ -1,12 +1,8 @@
-# New ports collection makefile for:	cassandra
-# Date created:		2009-08-06
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cassandra
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
