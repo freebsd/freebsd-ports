@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.ijs.si/~lesi/waimea/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mini pager for the waimea window manager
 
+DEPRECATED=	Development ceased
+EXPIRATION_DATE=	2012-11-05
+
 USE_XORG=	x11 xext xpm ice
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

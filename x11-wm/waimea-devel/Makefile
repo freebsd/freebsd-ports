@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	danfe
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	An X11 window manager designed for maximum efficiency
 
+DEPRECATED=	Development ceased
+EXPIRATION_DATE=	2012-11-05
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 

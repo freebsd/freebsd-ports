@@ -16,6 +16,9 @@ COMMENT=	An X11 window manager designed for maximum efficiency
 
 RUN_DEPENDS=	${LOCALBASE}/bin/Esetroot:${PORTSDIR}/x11/eterm
 
+DEPRECATED=	Development ceased
+EXPIRATION_DATE=	2012-11-05
+
 USE_BZIP2=	yes
 USE_XORG=	xft
 USE_PERL5_RUN=	yes
