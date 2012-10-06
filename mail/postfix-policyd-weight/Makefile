@@ -1,13 +1,9 @@
-# New ports collection makefile for:	postfix-policyd-weight
-# Date created:				25 Apr 2005
-# Whom:					Robert Felber <robtone@ek-muc.de>
-#
+# Created by: Robert Felber <robtone@ek-muc.de>
 # $FreeBSD$
-#
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/ \
 		LOCAL/ohauer
@@ -37,8 +33,10 @@ MAN5+=	policyd-weight.conf.5
 post-patch:
 # really remove dead lists
 # SFNET bug ID: 2765629, 3400804
-	@${REINPLACE_CMD} -e '/DSBL_ORG/d' -e '/IPv6_RBL/d' -e '/IX_MANITU/ s/,$$//' \
-	${WRKSRC}/policyd-weight ${WRKSRC}/policyd-weight.conf.sample
+# rfc-ignorant: all entrieys will be marked as deprecated starting on 2012-09-30
+	@${REINPLACE_CMD} -e '/DSBL_ORG/d' -e '/IPv6_RBL/d' -e '/rfc-ignorant/d' \
+		-e '/IX_MANITU/ s/,$$//' -e '/AHBL/ s/,$$//' \
+		${WRKSRC}/policyd-weight ${WRKSRC}/policyd-weight.conf.sample
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
