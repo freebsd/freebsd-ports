@@ -1,9 +1,5 @@
-# New ports collection makefile for: gromacs
-# Date created:		August 28 2004
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	gromacs
 PORTVERSION=	4.5.5
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compute molecular dynamics
 
 USE_GNOME=	libxml2
@@ -24,13 +20,20 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --program-suffix="" --enable-shared
 
 PLIST_SUB=	BUILD=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-OPTIONS=	FFTW3	"Use FFT routines from math/fftw3"		on  \
-		FFTW2	"Use FFT routines from math/fftw"		off \
-		GSL	"Enable extra analysis using math/gsl"		on  \
-		FLOAT	"Use single instead of double precision"	off \
-		X11	"Build and install X11 programs"		on  \
-		MPICH	"Enable MPI support using net/mpich2"		off \
-		OMPI	"Enable MPI support using net/openmpi"		off
+OPTIONS_DEFINE= FFTW GSL FLOAT X11 MPI
+OPTIONS_DEFAULT= FFTW FFTW3 GSL X11
+OPTIONS_SINGLE=	FFTW MPI
+OPTIONS_SINGLE_FFTW=	FFTW2 FFTW3
+OPTIONS_SINGLE_MPI=	MPICH OMPI
+
+FFTW_DESC=	Use FFT routines
+FFTW2_DESC=	Use FFT routines from math/fftw
+FFTW3_DESC=	Use FFT routines from math/fftw3
+GSL_DESC=	Enable extra analysis using math/gsl
+FLOAT_DESC=	Use single instead of double precision
+MPI_DESC=	Enable MPI support
+MPICH_DESC=	Enable MPI support using net/mpich2
+OMPI_DESC=	Enable MPI support using net/openmpi
 
 .include <bsd.port.pre.mk>
 
@@ -38,25 +41,17 @@ OPTIONS=	FFTW3	"Use FFT routines from math/fftw3"		on  \
 CONFIGURE_ARGS+=	--disable-ia32-sse
 .endif
 
-.if !defined(WITHOUT_FFTW3) && defined(WITH_FFTW2)
-IGNORE=		cannot build with FFTW3 and FFTW2. Run 'make config' again and choose only one of them
-.endif
-
-.if defined(WITH_MPICH) && defined(WITH_OMPI)
-IGNORE=		cannot build with MPICH and OpenMPI support. Run 'make config' again and choose only one of them
-.endif
-
-.if !defined(WITHOUT_FFTW3)
+.if ${PORT_OPTIONS:MFFTW3}
 CONFIGURE_ARGS+=	--with-fft=fftw3
-. if defined(WITH_FLOAT)
+. if ${PORT_OPTIONS:MFLOAT}
 LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
 . else
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 . endif
 .else
-. if defined(WITH_FFTW2)
+. if ${PORT_OPTIONS:MFFTW2}
 CONFIGURE_ARGS+=	--with-fft=fftw2
-.  if defined(WITH_FLOAT)
+.  if ${PORT_OPTIONS:MFLOAT}
 LIB_DEPENDS+=	sfftw.2:${PORTSDIR}/math/fftw-float
 .  else
 LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
@@ -66,14 +61,14 @@ CONFIGURE_ARGS+=	--with-fft=fftpack
 . endif
 .endif
 
-.if !defined(WITHOUT_GSL)
+.if ${PORT_OPTIONS:MGSL}
 CONFIGURE_ARGS+=	--with-gsl
 LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--without-gsl
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=	x11
@@ -82,20 +77,20 @@ PLIST_SUB+=	X11="@comment "
 CONFIGURE_ARGS+=	--without-x
 .endif
 
-.if defined(WITH_FLOAT)
+.if ${PORT_OPTIONS:MFLOAT}
 PLIST_SUB+=	SUFFIX_D="" SUFFIX_DOUBLE=""
 .else
 CONFIGURE_ARGS+=	--disable-float
 PLIST_SUB+=	SUFFIX_D=_d SUFFIX_DOUBLE=_double
 .endif
 
-.if defined(WITH_MPICH) || defined(WITH_OMPI)
+.if ${PORT_OPTIONS:MMPICH} || ${PORT_OPTIONS:MOMPI}
 CONFIGURE_ARGS+=	--enable-mpi
-.if defined(WITH_MPICH)
+.if ${PORT_OPTIONS:MMPICH}
 CONFIGURE_ENV+=	MPICC=${PREFIX}/bin/mpicc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-.elif defined(WITH_OMPI)
+.elif ${PORT_OPTIONS:MOMPI}
 CONFIGURE_ENV+=	MPICC=${PREFIX}/mpi/openmpi/bin/mpicc
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
