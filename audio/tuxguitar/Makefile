@@ -36,6 +36,7 @@ USE_ANT=	yes
 USE_GECKO=	libxul19
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 JAVA_VERSION=	1.5+
 JAVA_VENDOR=	freebsd bsdjava sun
 NOCCACHE=	yes
