@@ -1,7 +1,3 @@
-# New ports collection makefile for:	sventon
-# Date created:				22 May 2012
-# Whom:					Jason Helfman <jgh@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	sventon
@@ -19,11 +15,13 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	TOMCAT6 "Enable Tomcat 6.x support"     on
+OPTIONS_SINGLE=	AS
+OPTIONS_SINGLE_AS=	TOMCAT6
+OPTIONS_DEFAULT=	TOMCAT6
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TOMCAT6)
+.if ${PORT_OPTIONS:MTOMCAT6}
 APPHOME=	${LOCALBASE}/apache-tomcat-6.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
