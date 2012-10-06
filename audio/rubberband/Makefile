@@ -32,6 +32,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 
 .include <bsd.port.mk>

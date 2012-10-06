@@ -22,6 +22,7 @@ LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
+USE_PKGCONFIG=	build
 
 MAKE_JOBS_SAFE=	yes
 
