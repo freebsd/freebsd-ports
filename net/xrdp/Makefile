@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xrdp
-PORTVERSION=	0.6.0.20110117
-PORTREVISION=	3
+PORTVERSION=	0.6.0
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/ \
-		http://key2.jp/~meta/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}cvs
+MASTER_SITES=	SF/xrdp/xrdp/${PORTVERSION}
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 DIST_SUBDIR?=	${PORTNAME}
 
 PATCH_SITES=	http://www.club.kyutech.ac.jp/~meta/patches/xrdp/0.6.0/ \
@@ -31,17 +30,18 @@ USE_RC_SUBR=	xrdp
 CONFIGURE_ARGS=	--localstatedir=/var
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-RUN_DEPENDS+=	Xvnc:${PORTSDIR}/net/vnc
 
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 
-OPTIONS_DEFINE=	DEBUG JP106
+OPTIONS_DEFINE=	DEBUG GATEWAY JP106
 OPTIONS_DEFAULT=	JP106
+GATEWAY_DESC=	Install xrdp as RDP gateway (no VNC backend)
 JP106_DESC=	Install Japanese JP106 keymap
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-xrdpdebug
 CFLAGS+=	-DXRDP_DEBUG
 .endif
 
@@ -54,6 +54,10 @@ PATCHFILES+=	patch-instfiles__Makefile.am \
 PLIST_SUB+=	JP106=""
 .else
 PLIST_SUB+=	JP106="@comment "
+.endif
+
+.if !${PORT_OPTIONS:MGATEWAY}
+RUN_DEPENDS+=	Xvnc:${PORTSDIR}/net/vnc
 .endif
 
 MAN5=		sesman.ini.5 xrdp.ini.5
