@@ -1,9 +1,5 @@
-# New ports collection makefile for:	munin-common
-# Date created:                         10 February 2010
-# Whom:                                 Sean Rees <sean@rees.us>
-#
+# Created by: Sean Rees <sean@rees.us>
 # $FreeBSD$
-#
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
@@ -23,9 +19,6 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 .include "${.CURDIR}/../munin-common/munin.mk"
-
-USERS=		${MUNIN_USER}
-GROUPS=		${MUNIN_GROUP}
 
 ALL_TARGET=	build-common-prime
 INSTALL_TARGET=	install-common
