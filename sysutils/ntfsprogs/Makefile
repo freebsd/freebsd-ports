@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ntfsprogs
-# Date created:				May 8 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 
@@ -20,7 +15,7 @@ BUILD_DEPENDS=	fusefs-libs>2.5:${PORTSDIR}/sysutils/fusefs-libs
 
 CONFLICTS_INSTALL=	fusefs-ntfs-*
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

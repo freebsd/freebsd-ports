@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gavl
-# Date created:		2004-08-29
-# Whom:			Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gavl
 PORTVERSION=	1.4.0
@@ -16,8 +12,9 @@ COMMENT=	A library for handling uncompressed video and audio data
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

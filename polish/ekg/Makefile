@@ -3,7 +3,7 @@
 
 PORTNAME=	ekg
 DISTVERSION=	1.8rc1
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://ekg.chmurka.net/
 
@@ -15,7 +15,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 CONFIGURE_ARGS+=--disable-shared \
 		--disable-static \
 		--enable-dynamic \
