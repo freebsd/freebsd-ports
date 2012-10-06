@@ -40,10 +40,11 @@ MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
 # due to site down
 #		http://mirror.apung.web.id/cherokee/1.0/\${PORTVERSION}/ \
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Extremely fast and flexible web server
 
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
