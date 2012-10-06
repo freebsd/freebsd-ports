@@ -1,9 +1,5 @@
-# New ports collection makefile for:	verve plugin for xfce4
-# Date created:				11 September 2007
-# Whom:					Martin Wilke (miwi@FreeBSD.org)
-#
+# Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	verve-plugin
 PORTVERSION=	1.0.0
@@ -29,12 +25,11 @@ USE_XFCE=	configenv panel libexo libgui libutil
 
 CONFIGURE_ARGS=	--disable-debug
 
-OPTIONS=	NLS "Enable Native Language Support" on \
-		DBUS "Enable D-BUS support" on
+OPTIONS_DEFINE=	NLS DBUS
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -43,7 +38,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	DBUS=""
