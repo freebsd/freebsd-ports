@@ -46,7 +46,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[[:<:]]ssvnc[[:>:]]|ssvnc-gui|' ${WRKSRC}/man/man1/ssvnc.1
 	@${REINPLACE_CMD} -e 's|/usr/local/bin|${LOCALBASE}/bin|' \
 		-e 's|^CC =|CC ?=|' ${WRKSRC}/vncstorepw/Makefile
-.if ${PORT_OPTIONS:MULTRAFTP}
+.if empty(PORT_OPTIONS:MULTRAFTP)
 	@${REINPLACE_CMD} -e "s|sh -c 'type javac'|:|" \
 		-e "s|sh -c 'type jar'|:|" \
 		-e 's|cd $$(JSRC);|: |' \
