@@ -2,6 +2,7 @@
 
 PORTNAME=	freetuxtv
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -29,7 +30,7 @@ USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONF=	build
+USE_PKGCONFIG=	build
 USE_ICONV=	yes
 INSTALLS_ICONS=	yes
 
