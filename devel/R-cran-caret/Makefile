@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-caret
-# Date created:		2011-08-30
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	caret
-DISTVERSION=	5.15-023
-PORTREVISION=	2
+DISTVERSION=	5.15-044
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
