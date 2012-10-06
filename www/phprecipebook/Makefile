@@ -1,9 +1,4 @@
-# New ports collection makefile for:   phprecipebook
-# Date created:        27 September 2007
-# Whom:                Guido Falsi <mad@madpilot.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	phprecipebook
 PORTVERSION=	3.01
@@ -24,16 +19,20 @@ WANT_PHP_WEB=	yes
 RECIPEDIR?=	www/phprecipebook
 SUB_FILES=	pkg-message
 
-OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PGSQL)
-USE_PHP+=	pgsql
-USE_PGSQL=	yes
-.else
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 USE_MYSQL=	yes
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pgsql
+USE_PGSQL=	yes
 .endif
 
 post-extract:
@@ -62,4 +61,4 @@ post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${RECIPEDIR}' >> ${TMPPLIST}
 	@${SED} -e 's|%%RECIPEDIR%%|${PREFIX}/${RECIPEDIR}|' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
