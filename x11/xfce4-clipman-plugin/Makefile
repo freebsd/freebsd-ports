@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfce4-clipman-plugin
-# Date created:		23 November 2003
-# Whom:			Matt Lancereau <matt@rimasec.net>
-#
+# Created by: Matt Lancereau <matt@rimasec.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.2.3
@@ -19,7 +15,8 @@ COMMENT=	Xfce 4 clipboard module for xfce4-panel
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	UNIQUE	"Enable Unique (single instance) support" on
+OPTIONS_DEFINE=	UNIQUE
+UNIQUE_DESC=	Enable Unique (single instance) support
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -33,7 +30,7 @@ INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_UNIQUE)
+.if ${PORT_OPTIONS:MUNIQUE}
 LIB_DEPENDS+=	unique-1:${PORTSDIR}/x11-toolkits/unique
 CONFIGURE_ARGS+=	--enable-unique
 .else
