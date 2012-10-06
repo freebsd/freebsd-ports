@@ -191,6 +191,7 @@ MMS_DESC?=		MMS streaming
 MMX_DESC?=		Use MMX optimized routines
 MODPERL_DESC?=		mod_perl support
 MODPLUG_DESC?=		MODPLUG decoder
+MONO_DESC?=		Mono binding/support
 MOTIF_DESC?=		Motif widget library
 MOUSE_DESC?=		Mouse support
 MP3_DESC?=		MP3 audio format
