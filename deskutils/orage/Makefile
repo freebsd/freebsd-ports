@@ -75,7 +75,7 @@ post-patch:
 		s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g ; \
 		s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|g' ${WRKSRC}/configure
 .endif
-.if ${PORT_OPTIONS:MICAL}
+.if empty(PORT_OPTIONS:MICAL)
 	@${REINPLACE_CMD} -e 's|libical-|no-&|g' ${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure

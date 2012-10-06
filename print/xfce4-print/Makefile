@@ -40,13 +40,12 @@ PLIST_SUB+=	CUPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLPR}
-CONFIGURE_ARGS+=--disable-bsdlpr
-PLIST_SUB+=	LPR="@comment "
-.else
 CONFIGURE_ARGS+=--enable-bsdlpr --with-printcap=/etc/printcap
 PLIST_SUB+=	LPR=""
+.else
+CONFIGURE_ARGS+=--disable-bsdlpr
+PLIST_SUB+=	LPR="@comment "
 .endif
-
 
 .if ${PORT_OPTIONS:MLETTER}
 CONFIGURE_ARGS+=--enable-letter

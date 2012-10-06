@@ -75,11 +75,11 @@ CONFIGURE_ARGS+=--disable-gnome-thumbnailers
 .endif
 
 .if ${PORT_OPTIONS:MAPIDOCS}
-CONFIGURE_ARGS+=--without-html-dir
-PLIST_SUB+=	APIDOCS="@comment "
-.else
 CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
 PLIST_SUB+=	APIDOCS=""
+.else
+CONFIGURE_ARGS+=--without-html-dir
+PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 post-patch:
