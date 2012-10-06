@@ -6,4 +6,3 @@ include/GL/internal/glcore.h
 libdata/pkgconfig/glproto.pc
 @dirrmtry include/GL/internal
 @dirrmtry include/GL
-@dirrmtry include/X11/extensions
