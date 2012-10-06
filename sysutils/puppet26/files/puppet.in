@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: puppet
+# REQUIRE: NETWORK
+
+#
+# Add the following lines to /etc/rc.conf to enable the puppet agent:
+#
+# puppet_enable="YES"
+
+. /etc/rc.subr
+
+name="puppet"
+rcvar=`set_rcvar`
+
+load_rc_config "$name"
+
+: ${puppet_enable="NO"}
+: ${puppet_rundir="%%PUPPET_RUNDIR%%"}
+: ${puppet_flags="--rundir=${puppet_rundir}"}
+
+command_interpreter="%%PREFIX%%/bin/ruby18"
+command="%%PREFIX%%/bin/puppet"
+command_args="agent ${puppet_flags}"
+unset puppet_flags
+
+pidfile="${puppet_rundir}/agent.pid"
+
+run_rc_command "$1"
