@@ -1,6 +1,5 @@
-GTK-QT4 Theme Engine allows GTK2 apps to use QT/KDE themes
-so that they fit in more nicely with KDE. Includes a KDE4
-system settings module for GTK theme selection.
+GTK-Qt theme engine allows GTK+ 2.x applications to use Qt4 styles
+so that they fit in more nicely with KDE desktop. The port also
+provides KDE 4 system settings module for GTK+ theme selection.
 
-Author: David Sansome <me@davidsansome.com>
-WWW: http://gtk-qt.ecs.soton.ac.uk/index.php
+WWW: http://code.google.com/p/gtk-qt-engine/
