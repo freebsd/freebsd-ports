@@ -1,10 +1,5 @@
-# New ports collection makefile for:	www/linux-f10-flashplugin11
-# Date created:				2011-10-31
-# Whom:					Naoki Tsurutani
-# Based on:                             www/linux-f10-flashplugin10
-#
+# Created by: Naoki Tsurutani
 # $FreeBSD$
-#
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.238
@@ -37,11 +32,12 @@ NPAPI_FILES=	libflashplayer.so
 
 CONFLICTS=	linux-flashplugin-9* linux-f8-flashplugin10* linux-f10-flashplugin10*
 
-OPTIONS=	GNOME "include gnome support for .desktop file" Off
+OPTIONS_DEFINE=	GNOME
+GNOME_DESC=	include gnome support for .desktop file
 
 .include <bsd.port.pre.mk>
 
-.ifndef(WITHOUT_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 INSTALLS_ICONS=	yes
 USE_GNOME=	desktopfileutils
 PLIST_SUB+=	GNOME=""
