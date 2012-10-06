@@ -21,6 +21,9 @@ DIST_SUBDIR=	perl
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
+DEPRECATED=	end of life since 2009-08-23
+EXPIRATION_DATE=	2013-01-31
+
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
