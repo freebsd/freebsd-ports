@@ -7,6 +7,7 @@
 
 PORTNAME=	empire
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
