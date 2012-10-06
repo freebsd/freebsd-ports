@@ -1,13 +1,7 @@
-# New ports collection makefile for:    POV-Ray
-# Date created:         3 Dec 1996
-# Whom:                 paulo@isr.uc.pt
-#
 # $FreeBSD$
-#
 
 PORTNAME=	povray
-DISTVERSION=	3.7.0.RC3
-PORTREVISION=	2
+DISTVERSION=	3.7.0.RC6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.povray.org/beta/source/
 DIST_SUBDIR=	${UNIQUENAME}
@@ -17,17 +11,12 @@ COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
-OPTIONS=	X11 "X Window display support" OFF \
-		PNG "PNG support" ON \
-		JPEG "JPEG support" ON \
-		TIFF "TIFF support" OFF \
-		OPENEXR "OpenEXR support" OFF \
-		STATIC "Build static binary" OFF \
-		IO "Disable I/O restrictions (security risk)" OFF \
-		EXAMPLES "Install example scenes" ON \
-		HTML "Install HTML documentation" ON
+OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
+OPTIONS_DEFAULT=	PNG JPEG EXAMPLES DOCS
+IO_DESC=	Without I/O restrictions (security risk)
+EXAMPLES_DESC=	Install example scenes
+DOCS_DESC=	Install HTML documentation
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 LATEST_LINK=	${PORTNAME}37
@@ -39,34 +28,34 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${VERSION_BASE}
 DATADIR=	${PREFIX}/share/${PORTNAME}-${VERSION_BASE}
 ETCDIR=		${PREFIX}/etc/${PORTNAME}/${VERSION_BASE}
 
-.include <bsd.port.pre.mk>
-
 INCLUDES=	-I${LOCALBASE}/include
 
 CONFIGURE_ARGS=	COMPILED_BY=${MAINTAINER} --prefix=${PREFIX} \
 		--program-transform-name='s/${PORTNAME}/${UNIQUENAME}/' \
 		--disable-optimiz
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=		X11="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=		xpm sm ice x11
 USE_SDL=		sdl
 CONFIGURE_ARGS+=	--x-include=${LOCALBASE}/include --x-libraries=${LOCALBASE}/libs
 PLIST_SUB+=		X11=""
+.else
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=		X11="@comment "
 .endif
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=--enable-static
 .endif
 
-.if defined(WITH_IO)
+.if ${PORT_OPTIONS:MIO}
 CONFIGURE_ARGS+=--disable-io-restrictions
 .endif
 
-.if defined(WITH_PNG)
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MPNG}
+.if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	png>=1.4:${PORTSDIR}/graphics/png
 .else
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
@@ -76,8 +65,8 @@ LIBS+=		-lpng
 CONFIGURE_ARGS+=--without-libpng
 .endif
 
-.if defined(WITH_JPEG)
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MJPEG}
+.if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	jpeg>=6b:${PORTSDIR}/graphics/jpeg
 .else
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
@@ -87,8 +76,8 @@ LIBS+=		-ljpeg
 CONFIGURE_ARGS+=--without-libjpeg
 .endif
 
-.if defined(WITH_TIFF)
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MTIFF}
+.if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	tiff>=4:${PORTSDIR}/graphics/tiff
 .else
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
@@ -98,8 +87,8 @@ LIBS+=		-ltiff
 CONFIGURE_ARGS+=--without-libtiff
 .endif
 
-.if defined(WITH_OPENEXR)
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MOPENEXR}
+.if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	OpenEXR>=1.6:${PORTSDIR}/graphics/OpenEXR
 .else
 LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
@@ -110,20 +99,8 @@ INCLUDES+=	-I${LOCALBASE}/include/OpenEXR
 CONFIGURE_ARGS+=--without-openexr
 .endif
 
-.if defined(WITHOUT_PNG) || defined(WITHOUT_JPEG) || defined(WITHOUT_TIFF)
+.if !${PORT_OPTIONS:MPNG} || !${PORT_OPTIONS:MJPEG} || !${PORT_OPTIONS:MTIFF}
 CONFIGURE_ARGS+=NON_REDISTRIBUTABLE_BUILD=yes
-.endif
-
-.if defined(WITHOUT_EXAMPLES)
-PLIST_SUB+=	EXAMPLES="@comment "
-.else
-PLIST_SUB+=	EXAMPLES=""
-.endif
-
-.if defined(WITHOUT_HTML)
-PLIST_SUB+=	HTML="@comment "
-.else
-PLIST_SUB+=	HTML=""
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -135,9 +112,11 @@ CONFIGURE_ARGS+=CXXFLAGS="${CXXFLAGS} ${INCLUDES}"
 MAN1=		${UNIQUENAME}.1
 
 DOC_FILES=	AUTHORS ChangeLog NEWS
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 pre-build:
-.if defined(WITH_STATIC) && defined(WITH_TIFF)
+.if ${PORT_OPTIONS:MSTATIC} && ${PORT_OPTIONS:MTIFF}
 #	graphics/tiff adds dependencies on libjpeg and libjbig
 	@${REINPLACE_CMD} -e 's,^\(LIBS = .*\)-ltiff\(.*\),\1-ltiff -ljpeg -ljbig\2,' ${WRKSRC}/unix/Makefile
 .endif
@@ -148,44 +127,22 @@ do-install:
 	@${MKDIR} ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${ETCDIR}
-	@${MKDIR} ${DATADIR}/include ${DATADIR}/ini ${DATADIR}/scripts
-	@filelist=`find ${WRKSRC}/include/ ${WRKSRC}/ini/ ${WRKSRC}/scripts/ -type f | ${SED} s,${WRKSRC}/,,`; \
-	for f in $$filelist ; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}//$$f; \
-	done
-.if !defined(WITHOUT_X11)
+.for i in include ini scripts
+	${MKDIR} ${DATADIR}/$i
+	cd ${WRKSRC}/$i && ${COPYTREE_SHARE} . ${DATADIR}/$i
+.endfor
+.if ${PORT_OPTIONS:MX11}
 	@${MKDIR} ${DATADIR}/icons
-	@filelist=`find ${WRKSRC}/icons/ -type f | ${SED} s,${WRKSRC}/icons/,,`; \
-	for f in $$filelist ; do \
-		${INSTALL_DATA} ${WRKSRC}/icons/$$f ${DATADIR}/icons/$$f; \
-	done
+	cd ${WRKSRC}/icons && ${COPYTREE_SHARE} . ${DATADIR}/icons
 .endif
-.if !defined(WITHOUT_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@dirlist=`find ${WRKSRC}/scenes/ -type d | ${SED} s,${WRKSRC}/scenes/,,`; \
-	for p in "" $$dirlist ; do \
-		${MKDIR} ${EXAMPLESDIR}/$$p; \
-	done
-	@filelist=`find ${WRKSRC}/scenes/ -type f | ${SED} s,${WRKSRC}/scenes/,,`; \
-	for f in $$filelist ; do \
-		${INSTALL_DATA} ${WRKSRC}/scenes/$$f ${EXAMPLESDIR}/$$f; \
-	done
+	cd ${WRKSRC}/scenes && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@for f in ${DOC_FILES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}/$$f; \
-	done
-.if !defined(WITHOUT_HTML)
-	@dirlist=`find ${WRKSRC}/doc/ -type d | ${SED} s,${WRKSRC}/doc/,,`; \
-	for p in "" $$dirlist ; do \
-		${MKDIR} ${DOCSDIR}/$$p; \
-	done
-	@filelist=`find ${WRKSRC}/doc/ -type f | ${SED} s,${WRKSRC}/doc/,,`; \
-	for f in $$filelist ; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$$f ${DOCSDIR}/$$f; \
-	done
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
