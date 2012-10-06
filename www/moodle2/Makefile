@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moodle
-# Date created:				30 September 2005
-# Whom:					Javier Martin Rueda <jmrueda@diatel.upm.es>
-#
+# Created by: Javier Martin Rueda <jmrueda@diatel.upm.es>
 # $FreeBSD$
-#
 
 PORTNAME=	moodle
 PORTVERSION=	2.3.2
@@ -24,31 +20,30 @@ USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
 		soap openssl simplexml spl dom json zip zlib hash
 WRKSRC=		${WRKDIR}/moodle
 
-OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
-		PGSQL   "Add support for a PostgreSQL database server" Off \
-		MSSQL   "Add support for a MS SQL Server" Off \
-		LDAP    "Add LDAP authentication functionality" Off \
-		MIMETEX "Add mimeTeX filter functionality" Off
+OPTIONS_DEFINE=	MYSQL PGSQL MSSQL LDAP MIMETEX
+OPTIONS_DEFAULT=MYSQL
+MSSQL_DESCR=	MS SQL Server support
+MIMETEX_DESCR=	mimeTeX filter functionality support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysqli
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 USE_PHP+=	mssql
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
@@ -87,4 +82,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
