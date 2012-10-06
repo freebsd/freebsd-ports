@@ -1,0 +1,10 @@
+lib/geany/xmlsnippets.a
+lib/geany/xmlsnippets.la
+lib/geany/xmlsnippets.so
+%%DOCSDIR%%/xmlsnippets/AUTHORS
+%%DOCSDIR%%/xmlsnippets/COPYING
+%%DOCSDIR%%/xmlsnippets/ChangeLog
+%%DOCSDIR%%/xmlsnippets/NEWS
+%%DOCSDIR%%/xmlsnippets/README
+@dirrm %%DOCSDIR%%/xmlsnippets
+@dirrmtry %%DOCSDIR%%

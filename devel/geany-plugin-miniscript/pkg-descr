@@ -1,0 +1,17 @@
+Geany Mini-Script filter plugin.
+This plugin is a tool to apply a script filter on:
+ - text selection
+ - current document
+ - all documents
+The filter type can be:
+ - shell script
+ - perl script
+ - python script
+ - sed commands
+ - awk script
+The output can be:
+ - selection of current document
+ - all documents
+ - new document
+
+WWW: http://plugins.geany.org/geanyminiscript.html

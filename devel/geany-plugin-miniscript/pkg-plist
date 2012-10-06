@@ -1,0 +1,10 @@
+lib/geany/geanyminiscript.a
+lib/geany/geanyminiscript.la
+lib/geany/geanyminiscript.so
+%%DOCSDIR%%/geanyminiscript/AUTHORS
+%%DOCSDIR%%/geanyminiscript/COPYING
+%%DOCSDIR%%/geanyminiscript/ChangeLog
+%%DOCSDIR%%/geanyminiscript/NEWS
+%%DOCSDIR%%/geanyminiscript/README
+@dirrm %%DOCSDIR%%/geanyminiscript
+@dirrmtry %%DOCSDIR%%

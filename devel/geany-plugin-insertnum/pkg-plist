@@ -1,0 +1,10 @@
+lib/geany/geanyinsertnum.a
+lib/geany/geanyinsertnum.la
+lib/geany/geanyinsertnum.so
+%%DOCSDIR%%/geanyinsertnum/AUTHORS
+%%DOCSDIR%%/geanyinsertnum/COPYING
+%%DOCSDIR%%/geanyinsertnum/ChangeLog
+%%DOCSDIR%%/geanyinsertnum/NEWS
+%%DOCSDIR%%/geanyinsertnum/README
+@dirrm %%DOCSDIR%%/geanyinsertnum
+@dirrmtry %%DOCSDIR%%

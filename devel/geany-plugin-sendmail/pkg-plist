@@ -1,0 +1,10 @@
+lib/geany/geanysendmail.a
+lib/geany/geanysendmail.la
+lib/geany/geanysendmail.so
+%%DOCSDIR%%/geanysendmail/AUTHORS
+%%DOCSDIR%%/geanysendmail/COPYING
+%%DOCSDIR%%/geanysendmail/ChangeLog
+%%DOCSDIR%%/geanysendmail/NEWS
+%%DOCSDIR%%/geanysendmail/README
+@dirrm %%DOCSDIR%%/geanysendmail
+@dirrmtry %%DOCSDIR%%

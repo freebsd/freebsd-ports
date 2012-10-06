@@ -1,0 +1,10 @@
+lib/geany/geniuspaste.a
+lib/geany/geniuspaste.la
+lib/geany/geniuspaste.so
+%%DOCSDIR%%/geniuspaste/AUTHORS
+%%DOCSDIR%%/geniuspaste/COPYING
+%%DOCSDIR%%/geniuspaste/ChangeLog
+%%DOCSDIR%%/geniuspaste/NEWS
+%%DOCSDIR%%/geniuspaste/README
+@dirrm %%DOCSDIR%%/geniuspaste
+@dirrmtry %%DOCSDIR%%

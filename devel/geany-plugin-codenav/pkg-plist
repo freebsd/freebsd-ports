@@ -1,0 +1,10 @@
+lib/geany/codenav.a
+lib/geany/codenav.la
+lib/geany/codenav.so
+%%DOCSDIR%%/codenav/AUTHORS
+%%DOCSDIR%%/codenav/COPYING
+%%DOCSDIR%%/codenav/ChangeLog
+%%DOCSDIR%%/codenav/NEWS
+%%DOCSDIR%%/codenav/README
+@dirrm %%DOCSDIR%%/codenav
+@dirrmtry %%DOCSDIR%%

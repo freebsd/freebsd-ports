@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121006:
+  AFFECTS: users of devel/geany-plugins
+  AUTHOR: makc@FreeBSD.org
+
+  devel/geany-plugins has been updated to 1.22 and split into numerous
+  devel/geany-plugin-* ports. geany-plugins must be deinstalled before
+  running any port upgrade utility.
+
 20121002:
   AFFECTS: users of devel/clanlib
   AUTHOR: jhale@FreeBSD.org
