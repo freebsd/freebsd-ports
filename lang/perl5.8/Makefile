@@ -25,6 +25,9 @@ PATCHFILES=	defined-or-${PERL_VERSION}.bz2
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
+DEPRECATED=	end of life since 2008-12-14
+EXPIRATION_DATE=	2013-01-31
+
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
