@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgpod
-# Date created:				Wed Jan 1 00:48:58 EST 2006
-# Whom:					Devon Ryan <dpryan@dpryan.com>
-#
+# Created by: Devon Ryan <dpryan@dpryan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libgpod
 PORTVERSION=	0.8.2
@@ -31,16 +27,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${PREFIX}/share/doc"
-
-OPTIONS=	IMOBILE	"Support Apple iPhone/iPod Touch" on \
-		PYTHON	"Enable Python bindings"	  off \
-		MONO	"Enable Mono bindings"		  off
+OPTIONS_DEFINE=	IMOBILE PYTHON MONO
+OPTIONS_DEFAULT=	IMOBILE
+IMOBILE_DESC=	Apple iPhone/iPod Touch support
 
 PORTDOCS=	ChangeLog NEWS README*
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 USE_GNOME+=	pygobject
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen \
@@ -52,7 +47,7 @@ CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_MONO)
+.if ${PORT_OPTIONS:MMONO}
 USE_GNOME+=	gtksharp20
 CONFIGURE_ARGS+=	--with-mono
 PLIST_SUB+=	MONO=""
@@ -63,7 +58,7 @@ PLIST_SUB+=	MONO="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IMOBILE) && (${OSVERSION} > 900002 || \
+.if ${PORT_OPTIONS:MIMOBILE} && (${OSVERSION} > 900002 || \
     ${OSVERSION} < 900000 && ${OSVERSION} > 800107)
 COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
 LIB_DEPENDS+=	imobiledevice.1:${PORTSDIR}/comms/libimobiledevice
@@ -82,12 +77,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/noinst_PROGRAMS =/s,^,@HAVE_HAL_TRUE@,' \
 			${WRKSRC}/tools/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
