@@ -1,7 +1,4 @@
-# New ports collection makefile for:   vcdimager
-# Date created:                                16 April 2001
-# Whom:                                        Harold Gutch <logix@foobar.franken.de>
-#
+# Created by: Harold Gutch <logix@foobar.franken.de>
 # $FreeBSD$
 
 PORTNAME=	vcdimager
@@ -24,7 +21,8 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig lthack
+USE_PKGCONFIG=	build
+USE_GNOME=	gnomehack lthack
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
