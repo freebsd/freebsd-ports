@@ -19,7 +19,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		idn:${PORTSDIR}/dns/libidn
 
-USE_GNOME=	glib20 pkgconfig
+USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE=	MYSQL
