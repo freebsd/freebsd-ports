@@ -1,0 +1,10 @@
+lib/geany/geanyprj.a
+lib/geany/geanyprj.la
+lib/geany/geanyprj.so
+%%DOCSDIR%%/geanyprj/AUTHORS
+%%DOCSDIR%%/geanyprj/COPYING
+%%DOCSDIR%%/geanyprj/ChangeLog
+%%DOCSDIR%%/geanyprj/NEWS
+%%DOCSDIR%%/geanyprj/README
+@dirrm %%DOCSDIR%%/geanyprj
+@dirrmtry %%DOCSDIR%%

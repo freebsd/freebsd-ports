@@ -1,0 +1,10 @@
+lib/geany/shiftcolumn.a
+lib/geany/shiftcolumn.la
+lib/geany/shiftcolumn.so
+%%DOCSDIR%%/shiftcolumn/AUTHORS
+%%DOCSDIR%%/shiftcolumn/COPYING
+%%DOCSDIR%%/shiftcolumn/ChangeLog
+%%DOCSDIR%%/shiftcolumn/NEWS
+%%DOCSDIR%%/shiftcolumn/README
+@dirrm %%DOCSDIR%%/shiftcolumn
+@dirrmtry %%DOCSDIR%%

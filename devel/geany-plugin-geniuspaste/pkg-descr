@@ -1,0 +1,12 @@
+This plugin allows the user to paste the code from Geany into five
+different pastebins. At the moment it supports this services:
+ - codepad.org
+ - tinypaste.com
+ - pastebin.geany.org
+ - dpaste.de
+ - sprunge.us
+GeniusPaste detects automatically the syntax of the code and paste
+it with syntax highlighting enabled. It can also display the pasted
+code opening a new browser tab.
+
+WWW: http://plugins.geany.org/geniuspaste.html

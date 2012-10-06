@@ -1,0 +1,10 @@
+lib/geany/treebrowser.a
+lib/geany/treebrowser.la
+lib/geany/treebrowser.so
+%%DOCSDIR%%/treebrowser/AUTHORS
+%%DOCSDIR%%/treebrowser/COPYING
+%%DOCSDIR%%/treebrowser/ChangeLog
+%%DOCSDIR%%/treebrowser/NEWS
+%%DOCSDIR%%/treebrowser/README
+@dirrm %%DOCSDIR%%/treebrowser
+@dirrmtry %%DOCSDIR%%

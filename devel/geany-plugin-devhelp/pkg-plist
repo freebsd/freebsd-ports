@@ -1,0 +1,17 @@
+lib/geany/devhelp.a
+lib/geany/devhelp.la
+lib/geany/devhelp.so
+%%DOCSDIR%%/devhelp/AUTHORS
+%%DOCSDIR%%/devhelp/COPYING
+%%DOCSDIR%%/devhelp/ChangeLog
+%%DOCSDIR%%/devhelp/NEWS
+%%DOCSDIR%%/devhelp/README
+%%DATADIR%%/devhelp/devhelp-plugin-48.png
+%%DATADIR%%/devhelp/devhelp-plugin.svg
+%%DATADIR%%/devhelp/devhelp.conf
+%%DATADIR%%/devhelp/geany-devhelp-plugin.png
+%%DATADIR%%/devhelp/home.html
+@dirrm %%DATADIR%%/devhelp
+@dirrmtry %%DATADIR%%
+@dirrm %%DOCSDIR%%/devhelp
+@dirrmtry %%DOCSDIR%%

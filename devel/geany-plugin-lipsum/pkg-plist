@@ -1,0 +1,10 @@
+lib/geany/geanylipsum.a
+lib/geany/geanylipsum.la
+lib/geany/geanylipsum.so
+%%DOCSDIR%%/geanylipsum/AUTHORS
+%%DOCSDIR%%/geanylipsum/COPYING
+%%DOCSDIR%%/geanylipsum/ChangeLog
+%%DOCSDIR%%/geanylipsum/NEWS
+%%DOCSDIR%%/geanylipsum/README
+@dirrm %%DOCSDIR%%/geanylipsum
+@dirrmtry %%DOCSDIR%%

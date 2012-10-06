@@ -1,0 +1,11 @@
+lib/geany/multiterm.a
+lib/geany/multiterm.la
+lib/geany/multiterm.so
+%%DOCSDIR%%/multiterm/AUTHORS
+%%DOCSDIR%%/multiterm/COPYING
+%%DOCSDIR%%/multiterm/ChangeLog
+%%DOCSDIR%%/multiterm/NEWS
+%%DOCSDIR%%/multiterm/README
+%%DOCSDIR%%/multiterm/TODO
+@dirrm %%DOCSDIR%%/multiterm
+@dirrmtry %%DOCSDIR%%

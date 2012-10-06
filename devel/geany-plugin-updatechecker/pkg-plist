@@ -1,0 +1,10 @@
+lib/geany/updatechecker.a
+lib/geany/updatechecker.la
+lib/geany/updatechecker.so
+%%DOCSDIR%%/updatechecker/AUTHORS
+%%DOCSDIR%%/updatechecker/COPYING
+%%DOCSDIR%%/updatechecker/ChangeLog
+%%DOCSDIR%%/updatechecker/NEWS
+%%DOCSDIR%%/updatechecker/README
+@dirrm %%DOCSDIR%%/updatechecker
+@dirrmtry %%DOCSDIR%%

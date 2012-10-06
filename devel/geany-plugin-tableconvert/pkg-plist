@@ -1,0 +1,10 @@
+lib/geany/tableconvert.a
+lib/geany/tableconvert.la
+lib/geany/tableconvert.so
+%%DOCSDIR%%/tableconvert/AUTHORS
+%%DOCSDIR%%/tableconvert/COPYING
+%%DOCSDIR%%/tableconvert/ChangeLog
+%%DOCSDIR%%/tableconvert/NEWS
+%%DOCSDIR%%/tableconvert/README
+@dirrm %%DOCSDIR%%/tableconvert
+@dirrmtry %%DOCSDIR%%

@@ -1,0 +1,10 @@
+lib/geany/spellcheck.a
+lib/geany/spellcheck.la
+lib/geany/spellcheck.so
+%%DOCSDIR%%/spellcheck/AUTHORS
+%%DOCSDIR%%/spellcheck/COPYING
+%%DOCSDIR%%/spellcheck/ChangeLog
+%%DOCSDIR%%/spellcheck/NEWS
+%%DOCSDIR%%/spellcheck/README
+@dirrm %%DOCSDIR%%/spellcheck
+@dirrmtry %%DOCSDIR%%
