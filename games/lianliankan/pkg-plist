@@ -1,25 +1,17 @@
 bin/llk_linux
 share/applications/lianliankan.desktop
-%%PORTDOCS%%share/doc/llk_linux/AUTHORS
-%%PORTDOCS%%share/doc/llk_linux/COPYING
-%%PORTDOCS%%share/doc/llk_linux/ChangeLog
-%%PORTDOCS%%share/doc/llk_linux/INSTALL
-%%PORTDOCS%%share/doc/llk_linux/NEWS
-%%PORTDOCS%%share/doc/llk_linux/README
-%%PORTDOCS%%share/doc/llk_linux/TODO
-share/llk_linux/Cancle.wav
-share/llk_linux/CanntLink.wav
-share/llk_linux/Classical.pak
-share/llk_linux/Click.wav
-share/llk_linux/Diamond.pak
-share/llk_linux/GameOver.wav
-share/llk_linux/Hint.wav
-share/llk_linux/Link.wav
-share/llk_linux/QQ.pak
-share/llk_linux/Shuffle.wav
-share/llk_linux/Win.wav
-share/locale/zh_CN/LC_MESSAGES/llk_linux.mo
+%%DATADIR%%/Cancle.wav
+%%DATADIR%%/CanntLink.wav
+%%DATADIR%%/Classical.pak
+%%DATADIR%%/Click.wav
+%%DATADIR%%/Diamond.pak
+%%DATADIR%%/GameOver.wav
+%%DATADIR%%/Hint.wav
+%%DATADIR%%/Link.wav
+%%DATADIR%%/QQ.pak
+%%DATADIR%%/Shuffle.wav
+%%DATADIR%%/Win.wav
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/llk_linux.mo
 share/pixmaps/llk_linux.png
-@dirrm share/llk_linux
-%%PORTDOCS%%@dirrm share/doc/llk_linux
+@dirrm %%DATADIR%%
 @dirrmtry share/applications

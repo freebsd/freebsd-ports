@@ -1,11 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=lianiankan
+Name=LianLianKan
 Name[zh_CN]=连连看
-Comment=Choose a pair of same pattern links.
+GenericName=Tile Matching Game
+Comment=Match pairs of tiles on a board
 Comment[zh_TW]=选择一对相同的牌联机
 Exec=llk_linux
-Icon=llk_linux.png
+Icon=llk_linux
 Terminal=false
 Type=Application
-Categories=GNOME;Application;Game;PuzzleGame;
+Categories=GTK;Game;LogicGame;
