@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-libwww
-# Date created:				September 30th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libwww
 PORTVERSION=	6.04
@@ -30,7 +26,7 @@ BUILD_DEPENDS=	p5-Authen-NTLM>=1.02:${PORTSDIR}/security/p5-Authen-NTLM \
 		p5-WWW-RobotRules>=6:${PORTSDIR}/www/p5-WWW-RobotRules
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	SSL	"Enable https support" off
+OPTIONS_DEFINE=	HTTPS
 
 CONFIGURE_ARGS=	--aliases
 PERL_CONFIGURE=	yes
@@ -56,7 +52,7 @@ MAN3=		LWP.3 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MHTTPS}
 BUILD_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
 RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
