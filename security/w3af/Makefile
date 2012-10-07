@@ -1,22 +1,19 @@
-# New ports collection makefile for:	w3af
-# Date created:				Wed Aug 29 21:44:33 CEST 2007
-# Whom:					Stefan Esser <se@FreeBSD.org>
-#
+# Created by: Stefan Esser <se@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	w3af
 DISTVERSION=	1.0-rc4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}%20${DISTVERSION}
-DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Web Application Attack and Audit Framework
 
-LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/py-utidy
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	tidy:${PORTSDIR}/www/py-utidy
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
@@ -24,6 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
 		nltk>0:${PORTSDIR}/textproc/nltk \
+		${PYTHON_SITELIBDIR}/numpy/__init__.py:${PORTSDIR}/math/py-numpy \
 		${PYTHON_SITELIBDIR}/pyPdf/pdf.py:${PORTSDIR}/print/py-pdf \
 		${PYTHON_SITELIBDIR}/scapy/main.py:${PORTSDIR}/net/scapy \
 		${PYTHON_SITELIBDIR}/wordnet.py:${PORTSDIR}/textproc/py-wordnet \
@@ -31,7 +29,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1PREFIX=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/plugins/discovery/oHalberd/
-MAN1=	halberd.1
+MAN1=		halberd.1
 MANCOMPRESSED=	no
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -39,11 +37,11 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 
-OPTIONS=	GUI "Support for graphical user interface" off
+OPTIONS_DEFINE=	GUI
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygraphviz/graphviz.py:${PORTSDIR}/graphics/py-graphviz \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 PLIST_SUB+=	GUI=""
@@ -62,7 +60,7 @@ do-build:
 	@${MKDIR} ${WRKDIR}/build
 	@${MKDIR} ${WRKSRC}/build/extlib
 	@${CP} ${WRKSRC}/w3af_console ${WRKDIR}/build/w3af_console.py
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@${CP} ${WRKSRC}/w3af_gui ${WRKDIR}/build/w3af_gui.py
 .endif
 .for f in core locales plugins profiles readme scripts tools
@@ -86,7 +84,7 @@ do-install:
 	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/
 	@(cd ${WRKDIR}/build && ${COPYTREE_SHARE} \* ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/)
 	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_console.sh ${PREFIX}/bin/w3af_console
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_gui.sh ${PREFIX}/bin/w3af_gui
 .endif
 
