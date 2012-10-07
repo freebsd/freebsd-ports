@@ -1,9 +1,5 @@
-# New ports collection makefile for:	w3c-validator
-# Date created:				13 September 2005
-# Whom:					Naram Qashat <cyberbotx@cyberbotx.com>
-#
+# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
 # $FreeBSD$
-#
 
 PORTNAME=	validator
 PORTVERSION=	1.3
@@ -34,11 +30,13 @@ USE_PERL5_RUN=	5.8.0+
 
 SUB_FILES=	pkg-message validator.conf.sample
 
-OPTIONS=	HTML_TIDY "Enable HTML Markup Cleaning" On
+OPTIONS_DEFINE=	HTML_TIDY
+OPTIONS_DEFAULT=HTML_TIDY
+HTML_TIDY_DESC=	Enable HTML Markup Cleaning
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_HTML_TIDY)
+.if ${PORT_OPTIONS:MHTML_TIDY}
 RUN_DEPENDS+=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
 .endif
 
