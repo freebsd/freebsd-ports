@@ -23,7 +23,7 @@ COMMENT=	Official AT&T release of KornShell 93
 
 LICENSE=	EPL
 
-OPTIONS=	STATIC	"Static linking" off
+OPTIONS_DEFINE=	STATIC
 
 FETCH_ARGS=	-Rr
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
@@ -32,12 +32,12 @@ NO_WRKSUBDIR=	yes
 
 MAN1=		ksh93.1
 
-INITVERSION=	2012-02-29
-KSHVERSION=	2012-02-29
+INITVERSION=	2012-08-01
+KSHVERSION=	2012-08-01
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 MAKE_ENV+=	LDFLAGS+=-static
 .endif
 
