@@ -15,14 +15,13 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 
-OPTIONS=	DVDNAV       	"Enable libdvdnav support"   	off \
-		DVDPLAY      	"Enable libdvdplay support"    	off \
-		CDPARANOIA   	"Enable CDDA support"         	off \
-		OCFLAGS     	"Use optimized compiler flags"	off \
-		SDL          	"Enable SDL video output"     	off \
-		TERMCAP      	"Enable termcap key support"  	off \
-		WIN32        	"Enable win32 codec set"      	on
+OPTIONS_DEFINE=	DVDNAV DVDPLAY CDPARANOIA OPTIMIZED_CFLAGS SDL TERMCAP WIN32
+DVDNAV_DESC=	Enable libdvdnav support
+DVDPLAY_DESC=	Enable libdvdplay support
+TERMCAP_DESC=	Enable termcap key support
+WIN32_DESC=	Enable win32 codec set
 
+OPTIONS_DEFAULT=	WIN32
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
@@ -63,7 +62,7 @@ CFLAGS+=	-fomit-frame-pointer
 ##
 
 # cdda support
-.if defined(WITH_CDPARANOIA)
+.if ${PORT_OPTIONS:MCDPARANOIA}
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 
 CONFIGURE_ARGS+=	--enable-cdparanoia
@@ -71,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-cdparanoia
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
-.if defined(WITH_DVDNAV) || defined(WITH_DVDPLAY)
+.if ${PORT_OPTIONS:MDVDNAV} || ${PORT_OPTIONS:MDVDPLAY}
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--enable-libdvdread
@@ -79,7 +78,7 @@ CONFIGURE_ARGS+=	--enable-libdvdread
 CONFIGURE_ARGS+=	--disable-libdvdread
 .endif
 # xine libdvdnav
-.if defined(WITH_DVDNAV)
+.if ${PORT_OPTIONS:MDVDNAV}
 LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 
 CONFIGURE_ARGS+=	--enable-libdvdnav
@@ -87,7 +86,7 @@ CONFIGURE_ARGS+=	--enable-libdvdnav
 CONFIGURE_ARGS+=	--disable-libdvdnav
 .endif
 # ogle's libdvdplay
-.if defined(WITH_DVDPLAY)
+.if ${PORT_OPTIONS:MDVDPLAY}
 LIB_DEPENDS+=	dvdplay.0:${PORTSDIR}/multimedia/libdvdplay
 
 CONFIGURE_ARGS+=	--enable-libdvdplay
@@ -95,13 +94,13 @@ CONFIGURE_ARGS+=	--enable-libdvdplay
 CONFIGURE_ARGS+=	--disable-libdvdplay
 .endif
 # compilation optimizations
-.if defined(WITH_OCFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math
 .else
 MAKE_ARGS+=	OPTFLAGS="${CFLAGS}" SHCFLAGS="${CFLAGS} -PIC"
 .endif
 # sdl
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	image sdl
 CONFIGURE_ARGS+=	--enable-sdl --enable-sdl-image
 .else
@@ -109,13 +108,13 @@ CONFIGURE_ARGS+=	--disable-sdl --disable-sdl-image
 .endif
 # termcap key support
 # mplayerxp does not clean up after itself yet
-.if defined(WITH_TERMCAP)
+.if ${PORT_OPTIONS:MTERMCAP}
 CONFIGURE_ARGS+=	--enable-termcap
 .else
 CONFIGURE_ARGS+=	--disable-termcap
 .endif
 # win32 binary dll codecs
-.if !defined(WITHOUT_WIN32)
+.if ${PORT_OPTIONS:MWIN32}
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
