@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libfishsound
-# Date created:		2010-05-28
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
@@ -23,17 +19,17 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
-OPTIONS=	DOXYGEN	"Doxygen is required for generating documents" off
+OPTIONS_DEFINE=	DOCS DOXYGEN
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS=	*
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS) || !defined(WITH_DOXYGEN)
+.if empty(PORT_OPTIONS:MDOCS) || empty(PORT_OPTIONS:MDOXYGEN)
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.in
 .endif
 
