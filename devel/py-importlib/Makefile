@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-importlib
-# Date created:		14 February 2012
-# Whom:			Alexandros Kosiaris <akosiaris+ports@gmail.com>
-#
+# Created by: Alexandros Kosiaris <akosiaris+ports@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	importlib
 PORTVERSION=	1.0.2
@@ -14,7 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	akosiaris+ports@gmail.com
 COMMENT=	Backport of importlib.import_module() from Python 2.7
 
-USE_PYTHON=	2.3-2.6
+USE_PYTHON=	2.6
 USE_PYDISTUTILS=	yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/importlib/__init__.py \
+		%%PYTHON_SITELIBDIR%%/importlib/__init__.pyc \
+		%%PYTHON_SITELIBDIR%%/importlib/__init__.pyo
+PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/importlib
 
 .include <bsd.port.mk>
