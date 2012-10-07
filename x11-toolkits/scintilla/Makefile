@@ -1,19 +1,15 @@
-# New ports collection makefile for:	scintilla
-# Date created:				27 November 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/scintilla/Makefile,v 1.3 2006/09/17 21:58:56 marcus Exp $
 
 PORTNAME=	scintilla
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	A full-featured free source code editing component for GTK+
+COMMENT=	Full-featured free source code editing component for GTK+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
