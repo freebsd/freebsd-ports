@@ -16,6 +16,7 @@ LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_GCC=	any
 USE_GMAKE=	yes
 ALL_TARGET=	x86info lsmsr
 USE_PKGCONFIG=	build
