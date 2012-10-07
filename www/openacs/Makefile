@@ -1,9 +1,5 @@
-# New ports collection makefile for:    openACS
-# Date created:         July 2005
-# Whom:                 Aldert Nooitgedagt <aldert@nooitgedagt.net>
-#
+# Created by: Aldert Nooitgedagt <aldert@nooitgedagt.net>
 # $FreeBSD$
-#
 
 PORTNAME?=	openacs
 DISTVERSION?=	5.7.0
@@ -50,10 +46,12 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 PORTDOCS=	*
 
-OPTIONS=	TCLTHREAD "Depend on tclthread" on \
-		TCLWEBTEST "Depend on tclwebteset" on
+OPTIONS_DEFINE=	DOCS TCLTHREAD TCLWEBTEST
+OPTIONS_DEFAULT=TCLTHREAD TCLWEBTEST
+TCLTHREAD_DESC=	Depend on tclthread
+TCLWEBTEST_DESC=Depend on tclwebtest
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Parse ${PORTSDIR}/UIDs and GIDs for the defaults
 USER!=	${GREP} -E '^${OPENACS_USER}:' ${PORTSDIR}/UIDs | \
@@ -82,12 +80,12 @@ SUB_LIST+=	OPENACS_USER=${OPENACS_USER} OPENACS_UID=${OPENACS_UID} \
 		SU=${SU} PGREP=${PGREP} AWK=${AWK} CP=${CP} GREP=${GREP} \
 		PW=${PW} CHOWN=${CHOWN} CHMOD=${CHMOD}
 
-.if !defined(WITHOUT_TCLTHREAD)
+.if ${PORT_OPTIONS:MTCLTHREAD}
 TCLTHREAD_VER?=	2.6.7
 RUN_DEPENDS+=	${LOCALBASE}/lib/thread${TCLTHREAD_VER}/libthread.so.1:${PORTSDIR}/devel/tclthread
 .endif
 
-.if !defined(WITHOUT_TCLWEBTEST)
+.if ${PORT_OPTIONS:MTCLWEBTEST}
 RUN_DEPENDS+=	${LOCALBASE}/bin/tclwebtest:${PORTSDIR}/www/tclwebtest
 .endif
 
@@ -128,7 +126,7 @@ do-install:
 	@ if ! [ -f ${OPENACSBASE}/etc/${PORTNAME}-config.tcl ]; then \
 		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-config.tcl ${OPENACSBASE}/etc/${PORTNAME}-config.tcl ; \
 	  fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${ECHO} "Installing docs"
 	@ ${MKDIR} ${DOCSDIR}
 .for FILE in ChangeLog readme.txt license.txt
@@ -141,4 +139,4 @@ do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
