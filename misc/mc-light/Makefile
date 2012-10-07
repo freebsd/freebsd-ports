@@ -7,7 +7,7 @@
 
 PORTNAME=	mc-light
 PORTVERSION=	4.1.40.p9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc shells
 MASTER_SITES=	http://mc.linuxinside.com/Releases/
 DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
@@ -39,7 +39,7 @@ MAN8=		mcserv.8
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSUBSHELL}
+.if ! ${PORT_OPTIONS:MSUBSHELL}
 CONFIGURE_ARGS+=--without-subshell
 .endif
 
