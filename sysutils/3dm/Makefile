@@ -1,9 +1,5 @@
-# New ports collection makefile for:    3dm2
-# Date created:         02 Sep 2002
-# Whom:                 dbaker
-#
+# Created by: Daniel Baker <dbaker@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	3dm
 PORTVERSION=	2.11.00.019
@@ -19,11 +15,14 @@ COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2
 
-OPTIONS=	SSLFIX "Install KB16625-patched binaries" On
+OPTIONS_DEFINE=	SSLFIX
+SSLFIX_DESC=	Install KB16625-patched binaries
+
+OPTIONS_DEFAULT=	SSLFIX
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSLFIX)
+.if !empty(PORT_OPTIONS:MSSLFIX)
 DISTFILES+=	kb16625_${PORTVERSION}.tar.gz
 BINPREFIX=	${WRKSRC}/kb16625
 .else
