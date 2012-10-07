@@ -23,6 +23,11 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS MYSQL PERL PGSQL PYTHON SQLITE
 OPTIONS_DEFAULT=MYSQL
+PERL_DESC=	Include Perl bindings
+PYTHON_DESC=	Include Python bindings
+MYSQL_DESC=	Use MySQL backend
+PGSQL_DESC=	Use PostgreSQL backend
+SQLITE_DESC=	Use SQLite backend
 
 .include <bsd.port.options.mk>
 
