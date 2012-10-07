@@ -19,7 +19,7 @@
 -    if not '-ldb' in LIBS:
 -        libname = [dblib]
 +    if not '-l%%DBVERSION%%' in LIBS:
-+        libname = [%%DBVERSION%%]
++        libname = ['%%DBVERSION%%']
      else:
          if debug: print("LIBS already contains '-ldb' not adding our own", "'-l"+dblib+"'")
          libname = []
