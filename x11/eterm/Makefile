@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eterm
-# Date created:        24 November 1997
-# Whom:                Murray Stokely <murray@freebsd.org>
-#
+# Created by: Murray Stokely <murray@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.6
@@ -16,7 +12,7 @@ MAINTAINER?=	olgeni@FreeBSD.org
 COMMENT?=	X11 terminal emulator based on rxvt/xterm
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
-LIB_DEPENDS=	ast.2:${PORTSDIR}/devel/libast
+LIB_DEPENDS=	ast:${PORTSDIR}/devel/libast
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -26,7 +22,9 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-multi-charset
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-OPTIONS=	MMX	"With MMX instruction set" off
+
+OPTIONS_DEFINE=	MMX
+
 USE_XORG=	x11 xt
 USE_ICONV=	yes
 USE_EFL=	imlib2
@@ -35,16 +33,16 @@ MAN1=		Eterm.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MMX) && (${ARCH} == "i386")
+.if ${PORT_OPTIONS:MMMX} && (${ARCH} == "i386")
 CONFIGURE_ARGS+=--enable-mmx
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${DOCSDIR}
