@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libquvi-scripts
-# Date created:		2011-10-06
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libquvi-scripts
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
