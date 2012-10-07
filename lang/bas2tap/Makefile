@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bas2tap
-# Date created:			2007-06-26
-# Whom:				Rene Ladan <r.c.ladan@gmail.com>
-#
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	bas2tap
 PORTVERSION=	2.5

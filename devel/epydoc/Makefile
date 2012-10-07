@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	epydoc
-# Date created:			Dec 29, 2003
-# Whom:				ijliao
-#
+# Created by:	ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	epydoc
 PORTVERSION=	3.0.1

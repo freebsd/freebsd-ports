@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chrpath
-# Date created:		2009-12-01
-# Whom:			bms
-#
+# Created by:	bms
 # $FreeBSD$
-#
 
 PORTNAME=	chrpath
 PORTVERSION=	0.13

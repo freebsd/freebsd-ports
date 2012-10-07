@@ -1,9 +1,6 @@
-# New ports collection makefile for:	nbc
-# Date created:				4 April 2007
-# Whom:					Ivan "Rambius" Ivanov <rambiusparkisanius@gmail.com>
-#					Jason Bacon <jwbacon@tds.net>
+# Created by:	Ivan "Rambius" Ivanov <rambiusparkisanius@gmail.com>
+#		Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=		nbc
 PORTVERSION=		1.2.1.r4

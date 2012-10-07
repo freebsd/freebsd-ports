@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fuse-utils
-# Date created:			2007-06-27
-# Whom:				Rene Ladan <r.c.ladan@gmail.com>
-#
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	fuse-utils
 PORTVERSION=	1.0.0

@@ -1,8 +1,5 @@
-# New ports collection makefile for:	boinc-setiathome-enhanced
-# Date created:				26 March 2006
-# Whom:					Rene Ladan <r.c.ladan@student.tue.nl>
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	6.12
