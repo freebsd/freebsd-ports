@@ -1,9 +1,5 @@
-# New ports collection makefile for:	binutils
-# Date created:		9 July 2009
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
 PORTVERSION=	2.22
@@ -23,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \
 
 CONFLICTS=	libbfd-[0-9]*
 
-OPTIONS=	NLS "Enable National Language Support" off
+OPTIONS_DEFINE=	NLS
 
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
@@ -69,7 +65,7 @@ INFO=		as \
 		configure \
 		ld
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Actual earliest version may differ slightly
 .if ${OSVERSION} >= 900044
@@ -79,7 +75,7 @@ PLIST_SUB+=	GOLD=""
 PLIST_SUB+=	GOLD="@comment "
 .endif
 
-.if defined(WITH_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -100,4 +96,4 @@ post-install:
 	@${FIND} -ds ${PREFIX}/${CONFIGURE_TARGET} -type d | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
