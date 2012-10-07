@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pecl-timezonedb
-# Date created:			  20 Oct 2006
-# Whom:				  Marcus Alves Grando <mnag@FreeBSD.org>
-#
+# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	timezonedb
-DISTVERSION=	2012.5
+DISTVERSION=	2012.6
 CATEGORIES=	misc
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
