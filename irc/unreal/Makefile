@@ -176,6 +176,9 @@ post-install:
 	@[ -f ${CONFIGDIR}/help.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/help.conf ${CONFIGDIR}
 	@[ -f ${CONFIGDIR}/spamfilter.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/spamfilter.conf ${CONFIGDIR}
 	@[ -f ${CONFIGDIR}/unrealircd.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/unrealircd.conf ${CONFIGDIR}
+	@${CHOWN} -R ${USERS}:${GROUPS} ${CONFIGDIR}
+	@${CHOWN} ${USERS}:${GROUPS} ${RUNDIR}
+	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}
 .if defined(WITH_SQLMOD)
 	@${CP} ${WRKSRC}/SQLMod/sample.conf ${CONFIGDIR}/m_sqlmod.conf
 	@${CP} ${WRKSRC}/SQLMod/Changes ${DOCSDIR}/Changes.sqlmod
