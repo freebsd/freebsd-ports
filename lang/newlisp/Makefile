@@ -1,9 +1,5 @@
-# New ports collection makefile for:	newlisp
-# Date created:		2006-09-13
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	newlisp
 PORTVERSION=	10.3.3
@@ -18,7 +14,7 @@ COMMENT=	LISP like scripting language
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
-MAN1=	newlisp.1 newlispdoc.1
+MAN1=		newlisp.1 newlispdoc.1
 
 REINPLACE_ARGS=	-i ""
 
@@ -30,11 +26,8 @@ DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 
-OPTIONS=	GMP	"Enable GMP math library support" off \
-		MYSQL	"Build with mysql support" off \
-		PGSQL	"Build with postgresql support" off \
-		SQLITE	"Build with sqlite support" off \
-		GUISERV "Install GUI server (in JAVA)" off
+OPTIONS_DEFINE=	GMP MYSQL PGSQL SQLITE GUISERV
+GUISERV_DESC=	Install GUI server (in Java)
 
 .include <bsd.port.options.mk>
 
@@ -42,7 +35,7 @@ OPTIONS=	GMP	"Enable GMP math library support" off \
 CFLAGS+=	-DNEWLISP64
 .endif
 
-.if defined(WITH_GMP)
+.if ${PORT_OPTIONS:MGMP}
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 MODULES+=	gmp
 PLIST_SUB+=	GMP=""
@@ -50,7 +43,7 @@ PLIST_SUB+=	GMP=""
 PLIST_SUB+=	GMP="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 MODULES+=	mysql
 PLIST_SUB+=	MYSQL=""
@@ -58,23 +51,23 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL)
-USE_PGSQL=yes
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PGSQL=	yes
 MODULES+=	postgres
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
-USE_SQLITE=3
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=	3
 MODULES+=	sqlite3
 PLIST_SUB+=	SQLITE=""
 .else
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
-.if defined(WITH_GUISERV)
+.if ${PORT_OPTIONS:MGUISERV}
 PLIST_SUB+=	GUISERV=""
 .else
 PLIST_SUB+=	GUISERV="@comment "
@@ -135,7 +128,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/newlisp.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/newlispdoc.1 ${PREFIX}/man/man1/
 
-.if defined(WITH_GUISERV)
+.if ${PORT_OPTIONS:MGUISERV}
 	${MKDIR} ${DATADIR}/guiserver
 	@(cd ${WRKSRC}/guiserver/ && ${COPYTREE_SHARE} \*.lsp \
 		${DATADIR}/guiserver/ \
@@ -146,7 +139,7 @@ do-install:
 		${PREFIX}/bin/newlisp-edit
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	${MKDIR} ${EXAMPLESDIR}/
 
@@ -154,12 +147,12 @@ do-install:
 
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
 
-. if defined(WITH_GUISERV)
+.if ${PORT_OPTIONS:MGUISERV}
 	${MKDIR} ${DOCSDIR}/guiserver
 	${INSTALL_DATA} ${WRKSRC}/guiserver/index.html \
 			${WRKSRC}/guiserver/guiserver.lsp.html \
 			${DOCSDIR}/guiserver/
-. endif
+.endif
 .endif
 
 .include <bsd.port.mk>
