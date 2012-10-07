@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xmlwrapp
-# Date created:			Jan 14, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.6.3
@@ -19,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	boost_iostreams.4:${PORTSDIR}/devel/boost-libs
 
-OPTIONS=	XSLT "build libxsltwrap library (requires libxslt)" off
+OPTIONS_DEFINE=	XSLT
+XSLT_DESC=	Build libxsltwrap library (requires libxslt)
 
 USE_GNOME=	gnomehack libxml2
 USE_PERL5_BUILD=yes
@@ -34,7 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XSLT)
+.if ${PORT_OPTIONS:MXSLT}
 USE_GNOME+=	libxslt
 PLIST_SUB+=	XSLT=""
 .else
@@ -47,9 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} '/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
-
 .include <bsd.port.mk>
