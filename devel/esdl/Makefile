@@ -1,9 +1,5 @@
-# New ports collection makefile for:	esdl
-# Date Created:				2 January 2003
-# Whom:				 	olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	esdl
 PORTVERSION=	1.0.1
@@ -29,19 +25,21 @@ ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SDL_TTF		"SDL_ttf support"	on \
-		SDL_IMAGE	"SDL_image support"	on
+OPTIONS_DEFINE=	SDL_TTF SDL_IMAGE
+OPTIONS_DEFAULT=SDL_TTF SDL_IMAGE
+SDL_TTF_DESC=	SDL_ttf support
+SDL_IMAGE_DESC=	SDL_image support
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SDL_TTF)
+.if ${PORT_OPTIONS:MSDL_TTF}
 USE_SDL+=	ttf
 PLIST_SUB+=	SDL_TTF=""
 .else
 PLIST_SUB+=	SDL_TTF="@comment "
 .endif
 
-.if !defined(WITHOUT_SDL_IMAGE)
+.if ${PORT_OPTIONS:MSDL_IMAGE}
 USE_SDL+=	image
 PLIST_SUB+=	SDL_IMAGE=""
 .else
@@ -53,10 +51,10 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|addons|lib|' ${WRKSRC}/Makefile
-.if !defined(WITHOUT_SDL_TTF)
+.if ${PORT_OPTIONS:MSDL_TTF}
 	@${REINPLACE_CMD} -e '/ENABLE_SDL_TTF = / s|no|yes|' ${WRKSRC}/Makefile
 .endif
-.if !defined(WITHOUT_SDL_IMAGE)
+.if ${PORT_OPTIONS:MSDL_IMAGE}
 	@${REINPLACE_CMD} -e '/ENABLE_SDL_IMAGE = / s|no|yes|' ${WRKSRC}/Makefile
 .endif
 
