@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-redis
-# Date created:		2011-11-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	redis
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
