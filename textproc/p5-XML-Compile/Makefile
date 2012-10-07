@@ -1,15 +1,10 @@
-# New ports collection makefile for:	p5-XML-Compile
-# Date created:		2006-08-29
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Compile
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MARKOV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
