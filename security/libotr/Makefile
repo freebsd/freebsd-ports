@@ -42,7 +42,7 @@ post-patch:
 	    ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 
 .if ${OSVERSION} >= 800000 && ${OSVERSION} < 1000000
-	${REINPLACE_CMD} -e 's#OTR_CHECK_CFLAGS(.*stack-protector.*#dnl &#' \
+	@${REINPLACE_CMD} -e 's#OTR_CHECK_CFLAGS(.*stack-protector.*#dnl &#' \
 	    ${WRKSRC}/configure.ac
 .endif
 
