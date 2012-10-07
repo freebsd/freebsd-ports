@@ -4,6 +4,7 @@ PORTNAME=	libotr
 PORTVERSION=	4.0.0
 # Please do not bump PORTREVISION for this port unless you have
 # confirmed via testing that it is necessary
+PORTREVISION=	1
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -34,8 +35,15 @@ MLINKS=		otr_toolkit.1 otr_parse.1 \
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#^pkgconfigdir .*#pkgconfigdir = ${PREFIX}/libdata/pkgconfig#' \
 	    ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 
-.include <bsd.port.mk>
+.if ${OSVERSION} >= 800000 && ${OSVERSION} < 1000000
+	${REINPLACE_CMD} -e 's#OTR_CHECK_CFLAGS(.*stack-protector.*#dnl &#' \
+	    ${WRKSRC}/configure.ac
+.endif
+
+.include <bsd.port.post.mk>
