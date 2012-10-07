@@ -94,10 +94,6 @@ XML_EXPAT_DESC=		Enable XML support with expat
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		does not compile on alpha 4.x
-.endif
-
 .if ${PORT_OPTIONS:MXML_EXPAT}
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
 LIB_DEPENDS=		expat.6:${PORTSDIR}/textproc/expat2
