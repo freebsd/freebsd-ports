@@ -243,6 +243,7 @@ PGSQL_DESC?=		PostgreSQL database
 PGSQL_JDBC_DESC?=	JDBC connection to PostgreSQL databases
 PHP_DESC?=		PHP binding/support
 PIXBUF_DESC?=		GDK-PixBuf library
+PLUGINS_DESC?=		Install plugins
 PNG_DESC?=		PNG image format
 PNM_DESC?=		PNM image format
 POPPLER_DESC?=		PDF and PS file
