@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	KQUEUE IPV6
 OPTIONS_DEFAULT=	KQUEUE
 KQUEUE_DESC=	Use kqueue(2) support
-IPV6_DESC=	Enable IPv6 support
 
 .include <bsd.port.pre.mk>
 
