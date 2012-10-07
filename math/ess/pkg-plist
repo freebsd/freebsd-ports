@@ -49,6 +49,8 @@
 %%EMACS_SITE_LISPDIR%%/ess-inf.elc
 %%EMACS_SITE_LISPDIR%%/ess-jags-d.el
 %%EMACS_SITE_LISPDIR%%/ess-jags-d.elc
+%%EMACS_SITE_LISPDIR%%/ess-julia.el
+%%EMACS_SITE_LISPDIR%%/ess-julia.elc
 %%EMACS_SITE_LISPDIR%%/ess-lsp-l.el
 %%EMACS_SITE_LISPDIR%%/ess-lsp-l.elc
 %%EMACS_SITE_LISPDIR%%/ess-menu.el
@@ -127,10 +129,10 @@
 %%EMACS_SITE_LISPDIR%%/mouseme.elc
 %%EMACS_SITE_LISPDIR%%/msdos.el
 %%EMACS_SITE_LISPDIR%%/msdos.elc
-%%EMACS_SITE_LISPDIR%%/noweb-font-lock-mode.el
-%%EMACS_SITE_LISPDIR%%/noweb-font-lock-mode.elc
-%%EMACS_SITE_LISPDIR%%/noweb-mode.el
-%%EMACS_SITE_LISPDIR%%/noweb-mode.elc
+%%EMACS_SITE_LISPDIR%%/ess-noweb-font-lock-mode.el
+%%EMACS_SITE_LISPDIR%%/ess-noweb-font-lock-mode.elc
+%%EMACS_SITE_LISPDIR%%/ess-noweb-mode.el
+%%EMACS_SITE_LISPDIR%%/ess-noweb-mode.elc
 @dirrm %%EMACS_LIBDIR%%/etc/ess/icons
 @dirrm %%EMACS_LIBDIR%%/etc/ess
 @dirrmtry %%EMACS_LIBDIR%%/etc
