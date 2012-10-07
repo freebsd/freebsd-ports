@@ -1,9 +1,5 @@
-# New ports collection makefile for:  tintin++ with Chinese(Big5) support.
-# Date created:			  Tue 26, 2000
-# Whom:				  Foxfair Hu <foxfair@FreeBSD.org>
-#
+# Created by: Foxfair Hu <foxfair@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	chinese
 
@@ -11,7 +7,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++
 
-WITH_BIG5=	yes
+OPTIONS_FILE_SET=	BIG5
 
 NO_LATEST_LINK=	yes
 
