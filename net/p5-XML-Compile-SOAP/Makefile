@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-Compile-SOAP
-# Date created:		2008-01-07
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	2.29
+PORTVERSION=	2.30
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
