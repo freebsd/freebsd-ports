@@ -1,9 +1,5 @@
-# New ports collection makefile for:	waimea
-# Date created:				27 May 2002
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	waimea
 PORTVERSION=	0.4.0
@@ -27,17 +23,19 @@ GNU_CONFIGURE=	yes
 
 MAN1=		waimea.1
 
-OPTIONS=	PIXMAP "Build with pixmap textures support" on \
-		DITHER "Enable ordered pseudocolor dithering" off
+OPTIONS_DEFINE= PIXMAP DITHER
+OPTIONS_DEFAULT=	PIXMAP
+PIXMAP_DESC=	Build with pixmap textures support
+DITHER_DESC=	=Enable ordered pseudocolor dithering
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PIXMAP)
+.if ${PORT_OPTIONS:MPIXMAP}
 USE_EFL+=	imlib2
 .endif
 
-.if defined(WITH_DITHER)
+.if ${PORT_OPTIONS:MDITHER}
 CONFIGURE_ARGS+=	--enable-ordered-pseudo
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

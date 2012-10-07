@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Waimea
-# Date created:				03 Mar 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	waimea
 PORTVERSION=	0.5.1
@@ -32,19 +28,18 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	PNG "Enable PNG support" On \
-		SVG "Enable SVG support" On \
-		THREAD "Enable threading support" Off
+OPTIONS_DEFINE=	PNG SVG THREADS
+OPTIONS_DEFAULT=	PNG SVG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--disable-png
 .endif
 
-.if defined(WITH_SVG)
+.if ${PORT_OPTIONS:MSVG}
 LIB_DEPENDS+=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 .else
 CONFIGURE_ARGS+=	--disable-svg
@@ -52,7 +47,7 @@ MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-.if defined(WITH_THREAD)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-thread
 .endif
 
@@ -63,4 +58,4 @@ post-extract:
 	@${LN} -fs ${AUTOMAKE_DIR}/${f} ${WRKSRC}/config/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,16 +25,17 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		bareftp.1
 
-OPTIONS=	KEYRING "Support for Gnome Keyring" on
+OPTIONS_DEFINE=	GNOMEKEYRING
+OPTIONS_DEFAULT=	GNOMEKEYRING
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_KEYRING)
-CONFIGURE_ARGS+=	--without-gnomekeyring
-.else
+.if ${PORT_OPTIONS:MGNOMEKEYRING}
 KEYRING_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keyring-sharp-1.0.pc
 BUILD_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
 RUN_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
+.else
+CONFIGURE_ARGS+=	--without-gnomekeyring
 .endif
 
 # TODO
