@@ -3,12 +3,12 @@
 
 PORTNAME=	eos-movrec
 DISTVERSION=	0.3.1_beta
-PORTREVISION=	1
-CATEGORIES=	graphics
+PORTREVISION=	2
+CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3_beta/
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Program to capture short movies with Canon DSLR camera
+COMMENT=	Capture short movies with Canon DSLR camera
 
 LICENSE=	GPLv2
 
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
