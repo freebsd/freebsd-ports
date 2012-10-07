@@ -1,12 +1,9 @@
-# New ports collection makefile for:	samba4
-# Date created:				28 Jun 2006
-# Whom:					timur@FreeBSD.org
-#
+# Created by: timur@FreeBSD.org
 # $FreeBSD$
-#
+
 PORTNAME?=		${SAMBA_PORTNAME}
 PORTVERSION?=		${SAMBA_VERSION}
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba4
@@ -15,8 +12,6 @@ DISTNAME=		${SAMBA_DISTNAME}
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
-
-BROKEN=			does not configure
 
 CONFLICTS?=		ldb-1.*
 
@@ -39,7 +34,7 @@ USE_PYTHON=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_GNOME=		pkgconfig
+USE_PKGCONFIG=		build
 USE_LDCONFIG=		${SAMBA_LIBDIR}
 USE_AUTOTOOLS=		autoconf autoheader
 # Flags
@@ -91,8 +86,10 @@ CONFIGURE_ARGS+=	--enable-external-libtdb
 LIB_DEPENDS+=		talloc.2:${PORTSDIR}/devel/talloc
 CONFIGURE_ARGS+=	--enable-external-libtalloc
 # tevent
-LIB_DEPENDS+=		tevent.0:${PORTSDIR}/devel/tevent
-CONFIGURE_ARGS+=	--enable-external-libtevent
+#LIB_DEPENDS+=		tevent.0:${PORTSDIR}/devel/tevent
+#CONFIGURE_ARGS+=	--enable-external-libtevent
+# tevent - use internal libtevent since FreeBSD's port is at
+# 0.9.15 and samba4.alpha11 claims to want exactly 0.9.8
 
 OPTIONS=	\
 		DEBUG		"With debug info" off \
