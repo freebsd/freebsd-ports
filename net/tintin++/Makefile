@@ -32,6 +32,8 @@ DOCS=		CREDITS FAQ README SCRIPTS TODO \
 PLIST_FILES=	bin/tt++
 PORTDOCS=	${DOCS:T}
 
+SLAVEDIRS=	chinese/tintin++
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBIG5}
