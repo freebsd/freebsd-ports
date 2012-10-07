@@ -7,6 +7,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.0/}/:doc \
@@ -24,7 +25,10 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
-OPTIONS=	ATLAS "Use optimized blas library" Off
+OPTIONS_DEFINE=	ATLAS SUITESPARSE
+OPTIONS_DEFAULT=	SUITESPARSE
+ATLAS_DESC=	Use optimized blas library
+SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
 USE_FORTRAN=	yes
 USE_PYTHON=	yes
@@ -53,7 +57,7 @@ FP_ARCH=	${ARCH}
 DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
 .endif
 
-.if defined(WITH_ATLAS)
+.if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=	atlas needs to be built with WITH_STATIC for numpy to function properly
@@ -63,7 +67,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
 .endif
 
-.if exists(${LOCALBASE}/lib/libumfpack.so.1)
+.if ${PORT_OPTIONS:MSUITESPARSE}
 LIB_DEPENDS+=	umfpack.1:${PORTSDIR}/math/suitesparse
 .endif
 
@@ -90,17 +94,17 @@ pre-configure:
 		${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/fenv.patch; \
  	fi
 .endif
-.ifdef WITH_ATLAS
-	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" \
-	    -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
-	    -e "s+%%ATLASLIBS%%+alapack, f77blas, cblas, atlas+" \
-		${WRKSRC}/site.cfg
+.if ${PORT_OPTIONS:MATLAS}
+	@${REINPLACE_CMD} -e "s+%%ATLASLIBS%%+alapack, f77blas, cblas, atlas+" ${WRKSRC}/site.cfg
 .else
+	@${REINPLACE_CMD} -e "s+%%ATLASLIBS%%+lapack, blas+" ${WRKSRC}/site.cfg
+.endif
+.if !${PORT_OPTIONS:MSUITESPARSE}
+	@${REINPLACE_CMD} -e "s+:%%LOCALBASE%%/include/suitesparse++" ${WRKSRC}/site.cfg
+.endif
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
-	    -e "s+%%ATLASLIBS%%+lapack, blas+" \
-		 ${WRKSRC}/site.cfg
-.endif
+		${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" ${WRKSRC}/numpy/distutils/system_info.py
 
 pre-install:
