@@ -4,10 +4,10 @@
 # cgi-bin directory; we single this URL out from
 # the normal alias parsing below.
 #
-ScriptAliasMatch ^/argus/$ "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin/arguscgi"
-ScriptAlias ^/argus/cgi-bin/$ "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin/"
+ScriptAliasMatch ^/argus/$ "%%WWWDIR%%/cgi-bin/arguscgi"
+ScriptAlias ^/argus/cgi-bin/$ "%%WWWDIR%%/cgi-bin/"
 
-<Directory "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin">
+<Directory "%%WWWDIR%%/cgi-bin">
 	options ExecCGI
 	AllowOverride none
 	allow from all
@@ -18,9 +18,9 @@ ScriptAlias ^/argus/cgi-bin/$ "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin/"
 # /img/sad.gif, /img/nospkr.gif and on top level /argus.css and 
 # optionally /argus.js.
 #
-Alias /argus/ "%%PREFIX%%/www/%%PORTNAME%%/docroot/"
+Alias /argus/ "%%WWWDIR%%/docroot/"
 
-<Directory "%%PREFIX%%/www/%%PORTNAME%%/docroot">
+<Directory "%%WWWDIR%%/docroot">
 	options none
 	AllowOverride none
 	allow from all
