@@ -35,7 +35,4 @@ CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>
