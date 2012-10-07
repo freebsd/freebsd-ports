@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-zoo
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zoo
-DISTVERSION=	1.7-7
-PORTREVISION=	3
+DISTVERSION=	1.7-8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
