@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tintin++
-# Date created:         15 Nov 1994
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	tintin++
 PORTVERSION=	2.00.8
@@ -17,9 +13,10 @@ COMMENT=	A client program to help playing MUDs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-OPTIONS=	BIG5 "Big5 support" off
+OPTIONS_DEFINE=	BIG5 DOCS
+BIG5_DESC=	Big5 support
 
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib \
@@ -37,7 +34,7 @@ PORTDOCS=	${DOCS:T}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_BIG5)
+.if ${PORT_OPTIONS:MBIG5}
 CONFIGURE_ARGS+=--enable-big5
 .endif
 
@@ -46,7 +43,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${DOCSDIR}/
 	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
