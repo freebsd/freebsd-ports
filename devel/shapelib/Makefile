@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shapelib for reading ARC Shape Files
-# Date created:				23 Apr 2001
-# Whom:					Randall Hopper <aa8vb@nc.rr.com>
-#
+# Created by: Randall Hopper <aa8vb@nc.rr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
@@ -19,18 +15,17 @@ COMMENT=	C API for reading and writing ArcView Shapefiles
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	DEBUG "Debugging" off \
-		PROJ "Cartographic Projections library" off
+OPTIONS_DEFINE=	DEBUG DOCS PROJ
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 DEBUG=		-DDEBUG -DDEBUG2 -g
 .else
 DEBUG=		# empty
 .endif
 
-.if defined(WITH_PROJ)
+.if ${PORT_OPTIONS:MPROJ}
 LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 PLIST_SUB+=	PROJ=""
 PROJ=		-DPROJ4
@@ -58,7 +53,7 @@ post-patch:
 
 post-install:
 	${LN} -s libshp.so.1 ${PREFIX}/lib/libshp.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/web/*.html ${DOCSDIR}/
 .endif
