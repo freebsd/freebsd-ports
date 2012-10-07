@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lib765
-# Date created:			2003-10-27
-# Whom:				Alexey V. Antipovsky <kemm@in-line.ru>
-#
+# Created by:	Alexey V. Antipovsky <kemm@in-line.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	lib765
 PORTVERSION=	0.4.2

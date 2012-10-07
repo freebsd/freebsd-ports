@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biosfont
-# Date created:				10 May 2006
-# Whom:					Rene Ladan <r.c.ladan@gmail.com>
-#
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	biosfont
 PORTVERSION=	1.2

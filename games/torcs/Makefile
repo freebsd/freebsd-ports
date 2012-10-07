@@ -1,9 +1,5 @@
-# New ports collection makefile for:	torcs
-# Date created:		Fri 25 avr 2003
-# Whom:			thierry@pompo.net
-#
+# Created by:	thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.3

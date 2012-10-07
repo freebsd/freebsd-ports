@@ -1,8 +1,5 @@
-# New ports collection makefile for:	boinc-astropulse
-# Date created:				8 July 2009
-# Whom:					Rene Ladan <rene@FreeBSD.org>
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01

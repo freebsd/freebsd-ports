@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biosfont-demos
-# Date created:				30 June 2006
-# Whom:					Rene Ladan <r.c.ladan@gmail.com>
-#
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	biosfont-demos
 PORTVERSION=	1.1

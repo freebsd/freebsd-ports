@@ -1,7 +1,4 @@
-# New ports collection makefile for:	log4cxx
-# Date created:		2005-01-12
-# Whom:			Thaddeus Covert <tcovert@grimmy.sahuagin.net>
-#
+# Created by:	Thaddeus Covert <tcovert@grimmy.sahuagin.net>
 # $FreeBSD$
 
 PORTNAME=	log4cxx

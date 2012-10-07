@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bf2c
-# Date created:        4 Sep 2003
-# Whom:                r.c.ladan@student.tue.nl
-#
+# Created by:	rene
 # $FreeBSD$
-#
 
 PORTNAME=	bf2c
 PORTVERSION=	1.2.5
