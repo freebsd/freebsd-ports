@@ -100,13 +100,24 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 .endif
 
 
-.if defined(USE_GCC)
+.if defined(USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
+
+. if ${USE_GCC} == any
+
+# enable the clang-is-cc workaround.  default to the last gcc imported
+# into base.
+_USE_GCC:=	4.2
+_GCC_ORLATER:=	true
+
+. else # ${USE_GCC} == any
 
 # See if we can use a later version or exclusively the one specified.
 _USE_GCC:=	${USE_GCC:S/+//}
 .if ${USE_GCC} != ${_USE_GCC}
 _GCC_ORLATER:=	true
 .endif
+
+. endif # ${USE_GCC} == any
 
 # Check if USE_GCC points to a valid version.
 .for v in ${GCCVERSIONS}
@@ -200,9 +211,17 @@ FFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 # The following is for the sakes of some ports which use this without
 # ever telling us; to be fixed.
 _GCC_BUILD_DEPENDS:=	${_GCC_PORT_DEPENDS}
+.   endif # ${_USE_GCC} != 3.4
+.  else # ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
+CC:=			gcc
+CXX:=			g++
+.   if exists(/usr/bin/gcpp)
+CPP:=			gcpp
+.   else
+CPP:=			cpp
 .   endif
-.  endif
-. endif
+.  endif # ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
+. endif # ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .endfor
 .undef V
 
@@ -217,7 +236,7 @@ USE_BINUTILS=	yes
 .  endif
 . endif
 .endif
-.endif # defined(_USE_GCC)
+.endif # defined(_USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
 
 test-gcc:
