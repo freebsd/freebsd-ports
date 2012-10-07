@@ -7,6 +7,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
@@ -21,7 +22,8 @@ COMMENT=	Scientific tools for Python
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY}	\
+		nosetests:${PORTSDIR}/devel/py-nose
 
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
@@ -29,7 +31,11 @@ OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 USE_FORTRAN=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
-OPTIONS=	ATLAS "Use optimized blas library" OFF
+
+OPTIONS_DEFINE=	ATLAS SUITESPARSE
+OPTIONS_DEFAULT=	SUITESPARSE
+ATLAS_DESC=	Use optimized blas library
+SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
@@ -37,7 +43,7 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ATLAS)
+.if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=		atlas needs to be built with WITH_STATIC for scipy to function properly
@@ -47,7 +53,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
 .endif
 
-.if exists(${LOCALBASE}/lib/libumfpack.so.1)
+.if ${PORT_OPTIONS:MSUITESPARSE}
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS+=	umfpack.1:${PORTSDIR}/math/suitesparse
 .endif
