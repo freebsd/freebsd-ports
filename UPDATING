@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121007:
+  AFFECTS: users of lang/mit-scheme
+  AUTHOR: olgeni@FreeBSD.org
+
+  The lang/mit-scheme port was converted to OptionsNG, and now uses
+  the standard PGSQL knob rather than POSTGRESQL. Be sure to check
+  your configuration before rebuilding.
+
 20121006:
   AFFECTS: users of devel/geany-plugins
   AUTHOR: makc@FreeBSD.org
