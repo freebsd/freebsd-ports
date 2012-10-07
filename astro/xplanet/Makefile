@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xplanet
-# Date created:		22 Feb 2000
-# Whom:			darius@dons.net.au
-#
+# Created by: darius@dons.net.au
 # $FreeBSD$
-#
 
 PORTNAME=	xplanet
 PORTVERSION=	1.3.0
@@ -21,61 +17,56 @@ CONFIGURE_ARGS=	--with-map-extension=jpg
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lm"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	FREETYPE "Enable Freetype support" on \
-		PANGO "Enable PANGO support" on \
-		GIF "Enable GIF support" on \
-		JPEG "Enable JPEG support" on \
-		PNG "Enable PNG support" on \
-		PNM "Enable PNM support" on \
-		TIFF "Enable TIFF support" on
+OPTIONS_DEFINE=	FREETYPE PANGO GIF JPEG PNG PNM TIFF
+OPTIONS_DEFAULT= FREETYPE PANGO GIF JPEG PNG PNM TIFF
 
 MAN1=	xplanet.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 CONFIGURE_ARGS+=	--with-freetype
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
 
-.if !defined(WITHOUT_PANGO)
+.if ${PORT_OPTIONS:MPANGO}
 CONFIGURE_ARGS+=	--with-pango
 USE_GNOME+=	pango
 .else
 CONFIGURE_ARGS+=	--without-pango
 .endif
 
-.if !defined(WITHOUT_GIF)
+.if ${PORT_OPTIONS:MGIF}
 CONFIGURE_ARGS+=	--with-gif
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 CONFIGURE_ARGS+=	--with-jpeg
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 CONFIGURE_ARGS+=	--with-png
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--without-png
 .endif
 
-.if !defined(WITHOUT_PNM)
+.if ${PORT_OPTIONS:MPNM}
 CONFIGURE_ARGS+=	--with-pnm
 LIB_DEPENDS+=	netpbm.1:${PORTSDIR}/graphics/netpbm
 .else
 CONFIGURE_ARGS+=	--without-pnm
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 CONFIGURE_ARGS+=	--with-tiff
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .else
