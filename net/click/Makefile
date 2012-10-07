@@ -1,9 +1,5 @@
-# Ports collection makefile for:	click
-# Date created:        3 Nov 2001
-# Whom:                gnn
-#
+# Created by: gnn
 # $FreeBSD$
-#
 
 # XXX: TODO: fix kernel module
 
@@ -79,27 +75,30 @@ MANN=	FTPPortMapper.n ARPFaker.n ARPPrint.n ARPQuerier.n ARPResponder.n \
 
 CONFDIR=	${PREFIX}/etc/click/conf
 
-OPTIONS=								\
-	 XML		 "Enable XML support with expat" Off		\
-	 USERCLICK	 "Build user-space Click" On			\
-	 KERNEL_MODULE	 "Build BSD kernel module (BROKEN)" Off		\
-	 ANALYSIS_ELEMS	 "Build network analysis elements" Off		\
-	 ETHERSWITCH_ELEMS "Build etherswitch elements" Off		\
-	 GRID_ELEMS	 "Build Grid elements (see FAQ)" Off		\
-	 IPSEC_ELEMS	 "Build IPSEC elements" Off			\
-	 LOCAL_ELEMS	 "Build local elements" Off			\
-	 WIFI_ELEMS	 "Build Wi-Fi elements" Off			\
-	 IPV6_ELEMS	 "Build IPv6 elements (EXPERIMENTAL)" Off	\
-	 NS_ELEMS	 "Build NS elements (EXPERIMENTAL)" Off		\
-	 RADIO_ELEMS	 "Build radio elements (EXPERIMENTAL)" Off
+OPTIONS_DEFINE=		ANALYSIS_ELEMS ETHERSWITCH_ELEMS GRID_ELEMS \
+			IPSEC_ELEMS IPV6_ELEMS KERNEL_MODULE LOCAL_ELEMS \
+			NS_ELEMS RADIO_ELEMS USERCLICK WIFI_ELEMS XML_EXPAT
+OPTIONS_DEFAULT=	USERCLICK
+ANALYSIS_ELEMS_DESC=	Build network analysis elements
+ETHERSWITCH_ELEMS_DESC=	Build etherswitch elements
+GRID_ELEMS_DESC=	Build Grid elements (see FAQ)
+IPSEC_ELEMS_DESC=	Build IPSEC elements
+IPV6_ELEMS_DESC=	Build IPv6 elements (EXPERIMENTAL)
+KERNEL_MODULE_DESC=	Build BSD kernel module (BROKEN)
+LOCAL_ELEMS_DESC=	Build local elements
+NS_ELEMS_DESC=		Build NS elements (EXPERIMENTAL)
+RADIO_ELEMS_DESC=	Build radio elements (EXPERIMENTAL)
+USERCLICK_DESC=		Build user-space Click
+WIFI_ELEMS_DESC=	Build Wi-Fi elements
+XML_EXPAT_DESC=		Enable XML support with expat
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "alpha"
 BROKEN=		does not compile on alpha 4.x
 .endif
 
-.if defined(WITH_XML)
+.if ${PORT_OPTIONS:MXML_EXPAT}
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
 LIB_DEPENDS=		expat.6:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=		XMLCLICK=""
@@ -107,13 +106,13 @@ PLIST_SUB+=		XMLCLICK=""
 PLIST_SUB+=		XMLCLICK="@comment "
 .endif
 
-.if !defined(WITH_USERCLICK)
+.if !${PORT_OPTIONS:MUSERCLICK}
 CONFIGURE_ARGS+=	--disable-userlevel
 #.else
 #MANN+=			IPFlowRawSockets.n
 .endif
 
-.if defined(WITH_KERNEL_MODULE)
+.if ${PORT_OPTIONS:MKERNEL_MODULE}
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		kernel source files required
 .endif
@@ -123,7 +122,7 @@ CONFIGURE_ARGS+=	--enable-bsdmodule				\
 CONFIGURE_ARGS+=	--disable-bsdmodule
 .endif
 
-.if defined(WITH_ANALYSIS_ELEMS)
+.if ${PORT_OPTIONS:MANALYSIS_ELEMS}
 CONFIGURE_ARGS+=	--enable-analysis
 MANN+=		AggregateFilter.n TimeSortedSched.n TimeRange.n \
 		FromTcpdump.n ToIPFlowDumps.n AggregateLast.n \
@@ -136,12 +135,12 @@ MANN+=		AggregateFilter.n TimeSortedSched.n TimeRange.n \
 		AggregatePacketCounter.n TimeFilter.n
 .endif
 
-.if defined(WITH_ETHERSWITCH_ELEMS)
+.if ${PORT_OPTIONS:METHERSWITCH_ELEMS}
 CONFIGURE_ARGS+=	--enable-etherswitch
 MANN+=			EtherSwitch.n ListenEtherSwitch.n
 .endif
 
-.if defined(WITH_GRID_ELEMS)
+.if ${PORT_OPTIONS:MGRID_ELEMS}
 CONFIGURE_ARGS+=	--enable-grid
 MANN+=		ACKResponder.n ACKResponder2.n ACKRetrySender.n \
 		ACKRetrySender2.n AiroInfo.n BottleneckMetric.n \
@@ -164,17 +163,17 @@ MANN+=		ACKResponder.n ACKResponder2.n ACKRetrySender.n \
 		YarvisMetric.n
 .endif
 
-.if defined(WITH_IPSEC_ELEMS)
+.if ${PORT_OPTIONS:MIPSEC_ELEMS}
 CONFIGURE_ARGS+=	--enable-ipsec
 MANN+=			IPsecAuthSHA1.n IPsecDES.n IPsecESPUnencap.n \
 			IPsecESPEncap.n
 .endif
 
-.if defined(WITH_LOCAL_ELEMS)
+.if ${PORT_OPTIONS:MLOCAL_ELEMS}
 CONFIGURE_ARGS+=	--enable-local
 .endif
 
-.if defined(WITH_WIFI_ELEMS)
+.if ${PORT_OPTIONS:MWIFI_ELEMS}
 CONFIGURE_ARGS+=	--enable-wifi
 MANN+=		FilterPhyErr.n AssociationResponder.n FilterFailures.n \
 		ReadAnno.n PacketStore.n AvailableRates.n \
@@ -194,11 +193,11 @@ MANN+=		FilterPhyErr.n AssociationResponder.n FilterFailures.n \
 # The following Click elements are marked experimental as of 1.5.0.
 #
 
-.if defined(WITH_IPV6_ELEMS)
+.if ${PORT_OPTIONS:MIPV6_ELEMS}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITH_NS_ELEMS)
+.if ${PORT_OPTIONS:MNS_ELEMS}
 CONFIGURE_ARGS+=	--enable-nsclick
 MANN+=			ToSimTrace.n ToSimDevice.u.n FromSimDevice.u.n \
 			EraseIPPayload.n
@@ -207,7 +206,7 @@ PLIST_SUB+=		NSCLICK=""
 PLIST_SUB+=		NSCLICK="@comment "
 .endif
 
-.if defined(WITH_RADIO_ELEMS)
+.if ${PORT_OPTIONS:MRADIO_ELEMS}
 CONFIGURE_ARGS+=	--enable-radio
 MANN+=			RadioSim.n
 .endif
@@ -229,4 +228,4 @@ post-install:
 	@${ECHO_CMD} "----------------------------------------------------"
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
