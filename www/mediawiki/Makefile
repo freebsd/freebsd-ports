@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/mediawiki
-# Date created:				February 1st 2005
-# Whom:	      				Gerrit Beine <tux@pinguru.net>
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.19.2
@@ -19,47 +15,51 @@ CONFLICTS=	mediawiki-1.1[0-8].*
 
 FETCH_ARGS=	-pr
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
-IGNORE_WITH_PHP=	4
+IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes
 
-OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
-		SQLITE "Use SQLite (instead of MySQL)" off \
-		LDAP "Use LDAP authentication" off \
-		MEMCACHED "Use memcached" off \
-		APC "Use pecl-APC(Mediawiki recommended)" on \
-		EACCEL "Use eAccelerator (instead of pecl-APC)" off \
-		IMAGICK "Use ImageMagick" off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL IMAGICK
+OPTIONS_DEFAULT=MYSQL APC
 
-.include <bsd.port.pre.mk>
+MEMCACHED_DESCR=use memcached
+APC_DESCR=	use pecl-APC(Mediawiki recommended)
+EACCEL_DESCR=	use eAccelerator (instead of pecl-APC)
+IMAGICK_DESCR=	use ImageMagick
 
-.if defined(WITH_PGSQL)
-USE_PHP+=	pgsql
-.elif defined(WITH_SQLITE)
-USE_PHP+=	sqlite
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	server
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pgsql
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_PHP+=	sqlite
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_MEMCACHED)
+.if ${PORT_OPTIONS:MMEMCACHED}
 RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
 .endif
 
-.if defined(WITH_IMAGICK)
+.if ${PORT_OPTIONS:MIMAGICK}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
 .endif
 
-.if defined(WITH_APC) || defined(WITH_EACCEL)||defined(WITH_XCACHE)
-.if defined(WITH_EACCEL)
+.if ${PORT_OPTIONS:MAPC} || ${PORTS_OPTIONS:MEACCEL} || ${PORTS_OPTIONS:MXCACHE}
+.if ${PORT_OPTIONS:MEACCEL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/www/eaccelerator
-.elif defined(WITH_XCACHE)
+.elif ${PORT_OPTIONS:MXCACHE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
@@ -78,4 +78,4 @@ post-install:
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
