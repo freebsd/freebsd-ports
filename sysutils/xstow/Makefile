@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xstow
-# Date created:		2002-12-31
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xstow
 PORTVERSION=	1.0.0

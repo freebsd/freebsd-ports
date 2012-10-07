@@ -1,9 +1,4 @@
-# New ports collection makefile for:	proggy_fonts-x11
-# Date created:				22 October 2010
-# Whom:					Raphael Kubo da Costa <kubito@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	proggy_fonts-ttf
 PORTVERSION=	1.0

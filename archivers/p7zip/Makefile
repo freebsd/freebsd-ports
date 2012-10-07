@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p7zip
-# Date created:			Sun Jul 18 15:07:26 CEST 2004
-# Whom:				Juergen Lock <nox@jelal.kn-bremen.de>
-#
+# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	p7zip
 PORTVERSION=	9.20.1

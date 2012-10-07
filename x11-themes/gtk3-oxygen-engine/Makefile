@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-oxygen-engine
-# Date created:		2010-12-14
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
+# Created by: Max Brazhnikov <makc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oxygen
 PORTVERSION=	1.0.3

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	print/latex-ltablex
-# Date created:		14 April 2011
-# Whom:			Raphael Kubo da Costa (kubito@gmail.com)
-#
 # $FreeBSD$
 
 PORTNAME=	ltablex
