@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsnmp-regex
-# Date created:				11 February 2007
-# Whom:					brock@cotcomsol.com
-#
+# Created by: brock@cotcomsol.com
 # $FreeBSD$
-#
 
 PORTNAME=	bsnmp-regex
 PORTVERSION=	0.5
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://memberwebs.com/stef/software/bsnmp-regex/
 
-MAINTAINER=	brock@cotcomsol.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bsnmpd module allowing creation of counters from log files
 
 GNU_CONFIGURE=	yes
