@@ -1,4 +1,4 @@
-# Creates by: alex
+# Created by: alex
 # $FreeBSD$
 
 PORTNAME=	xine
