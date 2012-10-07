@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	apvlv
-PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTVERSION=	0.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/naihe2010/apvlv/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	xors@imap.cc
-COMMENT=	Apvlv is a PDF/DJVU Viewer and its behaviour like Vim
+MAINTAINER=	xors@mailup.net
+COMMENT=	PDF/DJVU Viewer that behaves like Vim
 
 LICENSE=	GPLv2
 
@@ -25,19 +24,30 @@ MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DMANDIR=${MANPREFIX}/man \
 		-DDOCDIR=${DOCSDIR} \
-		-DAPVLV_WITH_UMD=OFF
+		-DAPVLV_WITH_UMD=OFF \
+		-DAPVLV_WITH_TXT=ON
 
 MAN1=		apvlv.1
 
-OPTIONS=	DJVU	"Enable DJVU support"	off
+OPTIONS_DEFINE=	DJVU WEBKIT
+
+DJVU_DESC=	Build with DjVu support
+WEBKIT_DESC=	Build with WebKit support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_DJVU)
-CMAKE_ARGS+=	-DAPVLV_WITH_DJVU=OFF
-.else
+.if ${PORT_OPTIONS:MDJVU}
 CMAKE_ARGS+=	-DAPVLV_WITH_DJVU=ON
 LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
+.else
+CMAKE_ARGS+=	-DAPVLV_WITH_DJVU=OFF
+.endif
+
+.if ${PORT_OPTIONS:MWEBKIT}
+CMAKE_ARGS+=	-DAPVLV_WITH_HTML=ON
+LIB_DEPENDS+=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+.else
+CMAKE_ARGS+=	-DAPVLV_WITH_HTML=OFF
 .endif
 
 .include <bsd.port.mk>
