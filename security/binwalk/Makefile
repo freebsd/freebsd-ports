@@ -15,7 +15,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 PLIST_FILES=	bin/binwalk \
 		etc/binwalk/magic.binarch \
 		etc/binwalk/magic.bincast \
-		etc/binwalk/magic.binwalk \
+		etc/binwalk/magic.binwalk
 PLIST_DIRS=	etc/binwalk
 
 PORTDOCS=	README
