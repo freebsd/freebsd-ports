@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gssdp
-# Date created:		2009-12-26
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gssdp
-PORTVERSION=	0.12.2
+PORTVERSION=	0.13.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
