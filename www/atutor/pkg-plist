@@ -1,3 +1,4 @@
+%%WWWDIR%%/.gitmodules
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/404.php
 %%WWWDIR%%/about.php
@@ -15,6 +16,7 @@
 %%WWWDIR%%/admin/index.php
 %%WWWDIR%%/bounce.php
 %%WWWDIR%%/browse.php
+%%WWWDIR%%/bundle.sh
 %%WWWDIR%%/confirm.php
 %%WWWDIR%%/contact_instructor.php
 %%WWWDIR%%/content.php
@@ -216,6 +218,7 @@
 %%WWWDIR%%/images/AT_Logo_1_sm.psd
 %%WWWDIR%%/images/achecker.png
 %%WWWDIR%%/images/achecker_disabled.png
+%%WWWDIR%%/images/add-course.png
 %%WWWDIR%%/images/after.gif
 %%WWWDIR%%/images/application_get.png
 %%WWWDIR%%/images/archive.gif
@@ -468,6 +471,30 @@
 %%WWWDIR%%/inbox/index.php
 %%WWWDIR%%/inbox/send_message.php
 %%WWWDIR%%/inbox/sent_messages.php
+%%WWWDIR%%/include/classes/AContent_lcl/AContent_LiveContentLink.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/AContent_lcl_importxml.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/AContent_lcl_processxml.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/ContentDAO.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/DAO.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/TreeGenerator.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/Twitauth.class.php
+%%WWWDIR%%/include/classes/AContent_lcl/Utils.php
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/index.html
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_collapse.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_disabled.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_end.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_expand.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_horizontal.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_space.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_split.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_vertline.gif
+%%WWWDIR%%/include/classes/AContent_lcl/images/tree/tree_white.gif
+%%WWWDIR%%/include/classes/AContent_lcl/ims-blti/LICENSE.txt
+%%WWWDIR%%/include/classes/AContent_lcl/ims-blti/OAuth.php
+%%WWWDIR%%/include/classes/AContent_lcl/ims-blti/OAuthBody.php
+%%WWWDIR%%/include/classes/AContent_lcl/ims-blti/TrivialOAuthDataStore.php
+%%WWWDIR%%/include/classes/AContent_lcl/ims-blti/blti.php
+%%WWWDIR%%/include/classes/AContent_lcl/ims-blti/blti_util.php
 %%WWWDIR%%/include/classes/CSVExport.class.php
 %%WWWDIR%%/include/classes/CSVImport.class.php
 %%WWWDIR%%/include/classes/ContentManager.class.php
@@ -533,6 +560,33 @@
 %%WWWDIR%%/include/html/release_date.inc.php
 %%WWWDIR%%/include/html/search.inc.php
 %%WWWDIR%%/include/index.html
+%%WWWDIR%%/include/install/config_template.php
+%%WWWDIR%%/include/install/db/atutor_convert_db_to_utf8.sql
+%%WWWDIR%%/include/install/db/atutor_language_text.sql
+%%WWWDIR%%/include/install/db/atutor_schema.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.4.1_to_1.4.2.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.4.2_to_1.4.3.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.4.3_to_1.5.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.4_to_1.4.1.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.1_to_1.5.2.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.2_to_1.5.3.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.3.1_to_1.5.3.2.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.3.2_to_1.5.3.3.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.3.3_to_1.5.4.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.3_to_1.5.3.1.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.4_to_1.5.5.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5.5_to_1.6.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.5_to_1.5.1.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.6.1_to_1.6.2.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.6.2_to_1.6.3.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.6.3_to_1.6.4.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.6.4_to_2.0.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_1.6_to_1.6.1.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_2.0.1_to_2.0.2.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_2.0.2_to_2.0.3.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_2.0.3_to_2.1.sql
+%%WWWDIR%%/include/install/db/atutor_upgrade_2.0_to_2.0.1.sql
+%%WWWDIR%%/include/install/install.inc.php
 %%WWWDIR%%/include/lib/constants.inc.php
 %%WWWDIR%%/include/lib/html_resource_parser.inc.php
 %%WWWDIR%%/include/lib/json.inc.php
@@ -545,6 +599,7 @@
 %%WWWDIR%%/include/lib/tinymce_styles.css
 %%WWWDIR%%/include/lib/upload.php
 %%WWWDIR%%/include/lib/utf8.php
+%%WWWDIR%%/include/lib/vital_funcs.inc.php
 %%WWWDIR%%/include/phpCache/ChangeLog
 %%WWWDIR%%/include/phpCache/LICENSE
 %%WWWDIR%%/include/phpCache/README
@@ -599,44 +654,19 @@
 %%WWWDIR%%/include/securimage/securimage.php
 %%WWWDIR%%/include/securimage/securimage_play.php
 %%WWWDIR%%/include/securimage/securimage_show.php
+%%WWWDIR%%/include/session_keepalive.php
 %%WWWDIR%%/include/side_menu.inc.php
 %%WWWDIR%%/include/style_popup.css
 %%WWWDIR%%/include/unit_tests/AllTests.php
 %%WWWDIR%%/include/unit_tests/ContentOutputUtilsTest.php
 %%WWWDIR%%/include/vitals.inc.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/install/db/atutor_convert_db_to_utf8.sql
-%%WWWDIR%%/install/db/atutor_language_text.sql
-%%WWWDIR%%/install/db/atutor_schema.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.4.1_to_1.4.2.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.4.2_to_1.4.3.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.4.3_to_1.5.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.4_to_1.4.1.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.1_to_1.5.2.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.2_to_1.5.3.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.3.1_to_1.5.3.2.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.3.2_to_1.5.3.3.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.3.3_to_1.5.4.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.3_to_1.5.3.1.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.4_to_1.5.5.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5.5_to_1.6.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.5_to_1.5.1.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.6.1_to_1.6.2.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.6.2_to_1.6.3.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.6.3_to_1.6.4.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.6.4_to_2.0.sql
-%%WWWDIR%%/install/db/atutor_upgrade_1.6_to_1.6.1.sql
-%%WWWDIR%%/install/db/atutor_upgrade_2.0.1_to_2.0.2.sql
-%%WWWDIR%%/install/db/atutor_upgrade_2.0.2_to_2.0.3.sql
-%%WWWDIR%%/install/db/atutor_upgrade_2.0_to_2.0.1.sql
 %%WWWDIR%%/install/images/bad.gif
 %%WWWDIR%%/install/images/feedback.gif
 %%WWWDIR%%/install/images/question.gif
 %%WWWDIR%%/install/images/warning.png
 %%WWWDIR%%/install/include/classes/TableConversion.class.php
-%%WWWDIR%%/install/include/classes/sqlutility.php
 %%WWWDIR%%/install/include/common.inc.php
-%%WWWDIR%%/install/include/config_template.php
 %%WWWDIR%%/install/include/footer.php
 %%WWWDIR%%/install/include/header.php
 %%WWWDIR%%/install/include/step1.php
@@ -646,7 +676,6 @@
 %%WWWDIR%%/install/include/step5.php
 %%WWWDIR%%/install/include/step6.php
 %%WWWDIR%%/install/include/step7.php
-%%WWWDIR%%/install/include/step8.php
 %%WWWDIR%%/install/include/upgrade_header.php
 %%WWWDIR%%/install/include/ustep1.php
 %%WWWDIR%%/install/include/ustep2.php
@@ -680,6 +709,7 @@
 %%WWWDIR%%/jscripts/ATutor_tiny_mce_plugins/swap_toolbar/img/bullet_arrow_down.png
 %%WWWDIR%%/jscripts/ATutor_tiny_mce_plugins/swap_toolbar/img/bullet_arrow_up.png
 %%WWWDIR%%/jscripts/ATutor_tiny_mce_plugins/swap_toolbar/langs/en.js
+%%WWWDIR%%/jscripts/flash_detection.js
 %%WWWDIR%%/jscripts/infusion/InfusionAll.js
 %%WWWDIR%%/jscripts/infusion/README.txt
 %%WWWDIR%%/jscripts/infusion/components/inlineEdit/css/InlineEdit.css
@@ -1212,12 +1242,17 @@
 %%WWWDIR%%/jscripts/infusion/licenses/jQuery-LICENSE.txt
 %%WWWDIR%%/jscripts/infusion/licenses/swfobject-LICENSE.txt
 %%WWWDIR%%/jscripts/infusion/licenses/swfupload-LICENSE.txt
+%%WWWDIR%%/jscripts/jQueryMobile/jquery.mobile-1.0b1.min.js
 %%WWWDIR%%/jscripts/lib/TILE.js
 %%WWWDIR%%/jscripts/lib/calendar.js
 %%WWWDIR%%/jscripts/lib/dd_question/interface.js
 %%WWWDIR%%/jscripts/lib/dd_question/jquery.js
 %%WWWDIR%%/jscripts/lib/dd_question/wz_jsgraphics.js
+%%WWWDIR%%/jscripts/lib/jquery-ui.css
+%%WWWDIR%%/jscripts/lib/jquery-ui.min.js
 %%WWWDIR%%/jscripts/lib/jquery.autoHeight.js
+%%WWWDIR%%/jscripts/lib/jquery.sessionTimeout.1.0.min.js
+%%WWWDIR%%/jscripts/mobile.js
 %%WWWDIR%%/jscripts/opensocial/activity.js
 %%WWWDIR%%/jscripts/opensocial/address.js
 %%WWWDIR%%/jscripts/opensocial/all_opensocial.php
@@ -1236,7 +1271,6 @@
 %%WWWDIR%%/jscripts/opensocial/phone.js
 %%WWWDIR%%/jscripts/opensocial/responseitem.js
 %%WWWDIR%%/jscripts/opensocial/url.js
-%%WWWDIR%%/jscripts/tiny_mce/changelog.txt
 %%WWWDIR%%/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/license.txt
 %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/editor_plugin.js
@@ -1266,6 +1300,8 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/link.htm
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autolink/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autolink/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
@@ -1273,8 +1309,6 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
@@ -1307,6 +1341,8 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/example/js/dialog.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example_dependency/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example_dependency/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
@@ -1335,30 +1371,22 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/content.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/lists/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/lists/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/media.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/flash.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/flv_player.swf
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/quicktime.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/realmedia.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/shockwave.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/trans.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/windowsmedia.gif
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/js/embed.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/js/media.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/moxieplayer.swf
 %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/css/content.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
 %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js/pastetext.js
@@ -1373,9 +1401,6 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/preview.html
 %%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
@@ -1394,6 +1419,7 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js/props.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/readme.txt
 %%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/table/cell.htm
@@ -1417,6 +1443,9 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/js/template.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/template.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/css/visualblocks.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
@@ -1447,7 +1476,16 @@
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/editor_template_src.js
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/image.htm
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/flash.gif
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/icons.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/iframe.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/pagebreak.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/quicktime.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/realmedia.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/shockwave.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/trans.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/video.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/windowsmedia.gif
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/about.js
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/anchor.js
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/charmap.js
@@ -1458,6 +1496,7 @@
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/link.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/shortcuts.htm
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/content.css
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
@@ -1467,6 +1506,9 @@
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/highcontrast/content.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/highcontrast/dialog.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/highcontrast/ui.css
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
 %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
@@ -1753,6 +1795,7 @@
 %%WWWDIR%%/mods/_core/modules/details.php
 %%WWWDIR%%/mods/_core/modules/index.php
 %%WWWDIR%%/mods/_core/modules/install_modules.php
+%%WWWDIR%%/mods/_core/modules/js/modules.js
 %%WWWDIR%%/mods/_core/modules/module.php
 %%WWWDIR%%/mods/_core/modules/module.template.php
 %%WWWDIR%%/mods/_core/modules/module.xml
@@ -1779,6 +1822,7 @@
 %%WWWDIR%%/mods/_core/themes/import.php
 %%WWWDIR%%/mods/_core/themes/index.php
 %%WWWDIR%%/mods/_core/themes/install_themes.php
+%%WWWDIR%%/mods/_core/themes/js/themes.js
 %%WWWDIR%%/mods/_core/themes/lib/theme_template.inc.php
 %%WWWDIR%%/mods/_core/themes/lib/themes.inc.php
 %%WWWDIR%%/mods/_core/themes/module.php
@@ -1862,10 +1906,6 @@
 %%WWWDIR%%/mods/_standard/basiclti/index_admin.php
 %%WWWDIR%%/mods/_standard/basiclti/index_instructor.php
 %%WWWDIR%%/mods/_standard/basiclti/launch/TrivialStore.php
-%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/LICENSE.txt
-%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/OAuth.php
-%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/blti.php
-%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/blti_util.php
 %%WWWDIR%%/mods/_standard/basiclti/launch/launch.php
 %%WWWDIR%%/mods/_standard/basiclti/launch/loadrows.php
 %%WWWDIR%%/mods/_standard/basiclti/launch/service.php
@@ -2372,6 +2412,7 @@
 %%WWWDIR%%/mods/_standard/tile_search/classes/ResultParser.class.php
 %%WWWDIR%%/mods/_standard/tile_search/import.php
 %%WWWDIR%%/mods/_standard/tile_search/index.php
+%%WWWDIR%%/mods/_standard/tile_search/misc.php
 %%WWWDIR%%/mods/_standard/tile_search/module.php
 %%WWWDIR%%/mods/_standard/tile_search/module.xml
 %%WWWDIR%%/mods/_standard/tile_search/tile.php
@@ -2396,6 +2437,7 @@
 %%WWWDIR%%/mods/_standard/vimeo/module_format_content.php
 %%WWWDIR%%/mods/index.html
 %%WWWDIR%%/move_module.php
+%%WWWDIR%%/newuser.sql
 %%WWWDIR%%/password_reminder.php
 %%WWWDIR%%/popuphelp.php
 %%WWWDIR%%/profile.php
@@ -2405,6 +2447,29 @@
 %%WWWDIR%%/sha-1factory.js
 %%WWWDIR%%/svn.php
 %%WWWDIR%%/switch_view.php
+%%WWWDIR%%/themes/atspaces/Varela_Round.woff
+%%WWWDIR%%/themes/atspaces/forms.css
+%%WWWDIR%%/themes/atspaces/ie_styles.css
+%%WWWDIR%%/themes/atspaces/images/atspaces_logo49.jpg
+%%WWWDIR%%/themes/atspaces/images/edit.gif
+%%WWWDIR%%/themes/atspaces/images/help.png
+%%WWWDIR%%/themes/atspaces/images/hidemenu.gif
+%%WWWDIR%%/themes/atspaces/images/mswitch_minus.gif
+%%WWWDIR%%/themes/atspaces/images/mswitch_plus.gif
+%%WWWDIR%%/themes/atspaces/images/next.png
+%%WWWDIR%%/themes/atspaces/images/photos_arrange.png
+%%WWWDIR%%/themes/atspaces/images/previous.png
+%%WWWDIR%%/themes/atspaces/images/profile.gif
+%%WWWDIR%%/themes/atspaces/images/resume.png
+%%WWWDIR%%/themes/atspaces/images/showmenu.gif
+%%WWWDIR%%/themes/atspaces/images/x.gif
+%%WWWDIR%%/themes/atspaces/include/footer.tmpl.php
+%%WWWDIR%%/themes/atspaces/include/header.tmpl.php
+%%WWWDIR%%/themes/atspaces/safari.css
+%%WWWDIR%%/themes/atspaces/screenshot.gif
+%%WWWDIR%%/themes/atspaces/styles.css
+%%WWWDIR%%/themes/atspaces/theme.cfg.php
+%%WWWDIR%%/themes/atspaces/theme_info.xml
 %%WWWDIR%%/themes/blumin/content.tmpl.php
 %%WWWDIR%%/themes/blumin/forms.css
 %%WWWDIR%%/themes/blumin/ie_styles.css
@@ -2458,7 +2523,60 @@
 %%WWWDIR%%/themes/blumin/styles.css
 %%WWWDIR%%/themes/blumin/theme.cfg.php
 %%WWWDIR%%/themes/blumin/theme_info.xml
+%%WWWDIR%%/themes/default/about.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/auto_enroll.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/course_categories.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/courses.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/create_course.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/default_mods.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/default_side.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/edit_course.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/enrollment.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/forum_add.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/forum_edit.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/forums.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/privileges.tmpl.php
+%%WWWDIR%%/themes/default/admin/courses/scaffolds.tmpl.php
+%%WWWDIR%%/themes/default/admin/fix_content.tmpl.php
+%%WWWDIR%%/themes/default/admin/index.tmpl.php
+%%WWWDIR%%/themes/default/admin/modules/details.tmpl.php
+%%WWWDIR%%/themes/default/admin/modules/index.tmpl.php
+%%WWWDIR%%/themes/default/admin/modules/install_modules.tmpl.php
+%%WWWDIR%%/themes/default/admin/modules/version_history.tmpl.php
+%%WWWDIR%%/themes/default/admin/my_edit.tmpl.php
+%%WWWDIR%%/themes/default/admin/patcher/index_admin.tmpl.php
+%%WWWDIR%%/themes/default/admin/patcher/myown_patches.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/add_feed.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/config_edit.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/cron_config.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/edit_feed.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/index.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/index_admin.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/language.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/language_add.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/language_edit.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/language_editor.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/language_import.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/language_translate.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/module_prefs.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/module_setup.tmpl.php
+%%WWWDIR%%/themes/default/admin/system_preferences/preview.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/admin_email.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/create.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/default_preferences.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/edit.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/index.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/instructor_requests.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/log.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/master_list.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/master_list_edit.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/password.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/password_user.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/user_enrollment.tmpl.php
+%%WWWDIR%%/themes/default/admin/users/users.tmpl.php
+%%WWWDIR%%/themes/default/confirm.tmpl.php
 %%WWWDIR%%/themes/default/confirmmessage.tmpl.php
+%%WWWDIR%%/themes/default/contact_instructor.tmpl.php
 %%WWWDIR%%/themes/default/content.tmpl.php
 %%WWWDIR%%/themes/default/directory.tmpl.php
 %%WWWDIR%%/themes/default/editor/arrange_content.tmpl.php
@@ -2479,6 +2597,8 @@
 %%WWWDIR%%/themes/default/images/back.gif
 %%WWWDIR%%/themes/default/images/continue.gif
 %%WWWDIR%%/themes/default/images/edit.gif
+%%WWWDIR%%/themes/default/images/editor/arrange_content.tmpl.php
+%%WWWDIR%%/themes/default/images/editor/edit_content_folder.tmpl.php
 %%WWWDIR%%/themes/default/images/help.png
 %%WWWDIR%%/themes/default/images/hidemenu.gif
 %%WWWDIR%%/themes/default/images/linkOpaque.gif
@@ -2532,6 +2652,8 @@
 %%WWWDIR%%/themes/default/images/user.gif
 %%WWWDIR%%/themes/default/images/visual_alternative.png
 %%WWWDIR%%/themes/default/images/x.gif
+%%WWWDIR%%/themes/default/inbox/inbox.tmpl.php
+%%WWWDIR%%/themes/default/inbox/sent_messages.tmpl.php
 %%WWWDIR%%/themes/default/include/box.tmpl.php
 %%WWWDIR%%/themes/default/include/fm_footer.tmpl.php
 %%WWWDIR%%/themes/default/include/fm_header.tmpl.php
@@ -2543,6 +2665,52 @@
 %%WWWDIR%%/themes/default/include/tm_header.tmpl.php
 %%WWWDIR%%/themes/default/index.tmpl.php
 %%WWWDIR%%/themes/default/infomessage.tmpl.php
+%%WWWDIR%%/themes/default/instructor/announcements/add_news.tmpl.php
+%%WWWDIR%%/themes/default/instructor/announcements/edit_news.tmpl.php
+%%WWWDIR%%/themes/default/instructor/announcements/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/assignments/add_assignment.tmpl.php
+%%WWWDIR%%/themes/default/instructor/assignments/index_instructor.tmpl.php
+%%WWWDIR%%/themes/default/instructor/backups/create.tmpl.php
+%%WWWDIR%%/themes/default/instructor/backups/edit.tmpl.php
+%%WWWDIR%%/themes/default/instructor/backups/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/backups/restore.tmpl.php
+%%WWWDIR%%/themes/default/instructor/backups/upload.tmpl.php
+%%WWWDIR%%/themes/default/instructor/chat/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/chat/start_transcript.tmpl.php
+%%WWWDIR%%/themes/default/instructor/content/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/content/page_student_stats.tmpl.php
+%%WWWDIR%%/themes/default/instructor/content/tracker/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/content/tracker/student_usage.tmpl.php
+%%WWWDIR%%/themes/default/instructor/course_email/course_email.tmpl.php
+%%WWWDIR%%/themes/default/instructor/course_tools/modules.tmpl.php
+%%WWWDIR%%/themes/default/instructor/course_tools/side_menu.tmpl.php
+%%WWWDIR%%/themes/default/instructor/enrolment/create_course_list.tmpl.php
+%%WWWDIR%%/themes/default/instructor/enrolment/export_course_list.tmpl.php
+%%WWWDIR%%/themes/default/instructor/enrolment/import_course_list.tmpl.php
+%%WWWDIR%%/themes/default/instructor/enrolment/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/enrolment/privileges.tmpl.php
+%%WWWDIR%%/themes/default/instructor/faq/add_question.tmpl.php
+%%WWWDIR%%/themes/default/instructor/faq/add_topic.tmpl.php
+%%WWWDIR%%/themes/default/instructor/faq/edit_question.tmpl.php
+%%WWWDIR%%/themes/default/instructor/faq/edit_topic.tmpl.php
+%%WWWDIR%%/themes/default/instructor/faq/index_instructor.tmpl.php
+%%WWWDIR%%/themes/default/instructor/forums/add_forum.tmpl.php
+%%WWWDIR%%/themes/default/instructor/forums/edit_forum.tmpl.php
+%%WWWDIR%%/themes/default/instructor/forums/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/glossary/add.tmpl.php
+%%WWWDIR%%/themes/default/instructor/glossary/edit.tmpl.php
+%%WWWDIR%%/themes/default/instructor/glossary/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/groups/create.tmpl.php
+%%WWWDIR%%/themes/default/instructor/groups/create_automatic.tmpl.php
+%%WWWDIR%%/themes/default/instructor/groups/create_manual.tmpl.php
+%%WWWDIR%%/themes/default/instructor/groups/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/polls/add.tmpl.php
+%%WWWDIR%%/themes/default/instructor/polls/edit.tmpl.php
+%%WWWDIR%%/themes/default/instructor/polls/index.tmpl.php
+%%WWWDIR%%/themes/default/instructor/reading_list/index_instructor.tmpl.php
+%%WWWDIR%%/themes/default/instructor/statistics/course_stats.tmpl.php
+%%WWWDIR%%/themes/default/instructor/statistics/tracker/my_stats.tmpl.php
+%%WWWDIR%%/themes/default/instructor/student_tools/instructor_index.tmpl.php
 %%WWWDIR%%/themes/default/login.tmpl.php
 %%WWWDIR%%/themes/default/password_change.tmpl.php
 %%WWWDIR%%/themes/default/password_reminder.tmpl.php
@@ -2563,7 +2731,9 @@
 %%WWWDIR%%/themes/default/readme.txt
 %%WWWDIR%%/themes/default/registration.tmpl.php
 %%WWWDIR%%/themes/default/rtl.css
+%%WWWDIR%%/themes/default/safari.css
 %%WWWDIR%%/themes/default/screenshot.gif
+%%WWWDIR%%/themes/default/search.tmpl.php
 %%WWWDIR%%/themes/default/social/activities.tmpl.php
 %%WWWDIR%%/themes/default/social/admin/delete_applications.tmpl.php
 %%WWWDIR%%/themes/default/social/application_settings.tmpl.php
@@ -2800,6 +2970,81 @@
 %%WWWDIR%%/themes/default16/styles.css
 %%WWWDIR%%/themes/default16/theme.cfg.php
 %%WWWDIR%%/themes/default16/theme_info.xml
+%%WWWDIR%%/themes/default20/forms.css
+%%WWWDIR%%/themes/default20/ie_styles.css
+%%WWWDIR%%/themes/default20/images/Thumbs.db
+%%WWWDIR%%/themes/default20/images/arrow_ltr.gif
+%%WWWDIR%%/themes/default20/images/arrow_rtl.gif
+%%WWWDIR%%/themes/default20/images/atutor_head.jpg
+%%WWWDIR%%/themes/default20/images/atutor_head.psd
+%%WWWDIR%%/themes/default20/images/atutor_logo.png
+%%WWWDIR%%/themes/default20/images/atutor_logo.psd
+%%WWWDIR%%/themes/default20/images/atutor_logo2.png
+%%WWWDIR%%/themes/default20/images/audio_alternative.png
+%%WWWDIR%%/themes/default20/images/back.gif
+%%WWWDIR%%/themes/default20/images/continue.gif
+%%WWWDIR%%/themes/default20/images/edit.gif
+%%WWWDIR%%/themes/default20/images/editor/arrange_content.tmpl.php
+%%WWWDIR%%/themes/default20/images/editor/edit_content_folder.tmpl.php
+%%WWWDIR%%/themes/default20/images/help.png
+%%WWWDIR%%/themes/default20/images/hidemenu.gif
+%%WWWDIR%%/themes/default20/images/linkOpaque.gif
+%%WWWDIR%%/themes/default20/images/linkTransparent.gif
+%%WWWDIR%%/themes/default20/images/mswitch_minus.gif
+%%WWWDIR%%/themes/default20/images/mswitch_plus.gif
+%%WWWDIR%%/themes/default20/images/newsitem_icon.gif
+%%WWWDIR%%/themes/default20/images/next.png
+%%WWWDIR%%/themes/default20/images/pause.png
+%%WWWDIR%%/themes/default20/images/pencil_bottom.gif
+%%WWWDIR%%/themes/default20/images/pencil_bottom_ds.gif
+%%WWWDIR%%/themes/default20/images/pencil_bottom_ds.png
+%%WWWDIR%%/themes/default20/images/pencil_top.gif
+%%WWWDIR%%/themes/default20/images/pencil_top_ds.png
+%%WWWDIR%%/themes/default20/images/pencils.gif
+%%WWWDIR%%/themes/default20/images/pencils_up.jpg
+%%WWWDIR%%/themes/default20/images/pencils_up_bottom.jpg
+%%WWWDIR%%/themes/default20/images/pencils_up_top.jpg
+%%WWWDIR%%/themes/default20/images/photos_arrange.png
+%%WWWDIR%%/themes/default20/images/previous.gif
+%%WWWDIR%%/themes/default20/images/previous.png
+%%WWWDIR%%/themes/default20/images/profile.gif
+%%WWWDIR%%/themes/default20/images/resume.png
+%%WWWDIR%%/themes/default20/images/resume2.png
+%%WWWDIR%%/themes/default20/images/rtl_tree/index.html
+%%WWWDIR%%/themes/default20/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/default20/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/default20/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/default20/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/default20/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/default20/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/default20/images/showmenu.gif
+%%WWWDIR%%/themes/default20/images/side_arrow.gif
+%%WWWDIR%%/themes/default20/images/sign_lang_alternative.png
+%%WWWDIR%%/themes/default20/images/sort.png
+%%WWWDIR%%/themes/default20/images/text_alternative.png
+%%WWWDIR%%/themes/default20/images/texture_bg.png
+%%WWWDIR%%/themes/default20/images/tl_corner.gif
+%%WWWDIR%%/themes/default20/images/top.gif
+%%WWWDIR%%/themes/default20/images/tree/index.html
+%%WWWDIR%%/themes/default20/images/tree/tree_collapse.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_disabled.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_end.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_expand.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_horizontal.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_space.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_split.gif
+%%WWWDIR%%/themes/default20/images/tree/tree_vertline.gif
+%%WWWDIR%%/themes/default20/images/up.png
+%%WWWDIR%%/themes/default20/images/user-star.gif
+%%WWWDIR%%/themes/default20/images/user.gif
+%%WWWDIR%%/themes/default20/images/visual_alternative.png
+%%WWWDIR%%/themes/default20/images/x.gif
+%%WWWDIR%%/themes/default20/print.css
+%%WWWDIR%%/themes/default20/rtl.css
+%%WWWDIR%%/themes/default20/safari.css
+%%WWWDIR%%/themes/default20/styles.css
+%%WWWDIR%%/themes/default20/theme.cfg.php
+%%WWWDIR%%/themes/default20/theme_info.xml
 %%WWWDIR%%/themes/default_classic/forms.css
 %%WWWDIR%%/themes/default_classic/ie_styles.css
 %%WWWDIR%%/themes/default_classic/images/edit.gif
@@ -2999,20 +3244,111 @@
 %%WWWDIR%%/themes/idi/theme_info.xml
 %%WWWDIR%%/themes/mobile/TeraWurflRemoteClient.php
 %%WWWDIR%%/themes/mobile/about.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/courses.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/create_course.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/default_mods.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/edit_course.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/enrollment.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/forum_add.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/forums.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/courses/scaffolds.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/index.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/modules/details.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/modules/index.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/modules/install_modules.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/modules/version_history.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/my_edit.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/patcher/index_admin.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/add_feed.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/config_edit.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/cron_config.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/edit_feed.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/index.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/index_admin.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/language.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/language_add.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/language_edit.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/language_editor.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/language_import.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/language_translate.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/module_prefs.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/module_setup.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/system_preferences/preview.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/admin_email.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/create.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/index.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/instructor_requests.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/log.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/master_list.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/user_enrollment.tmpl.php
+%%WWWDIR%%/themes/mobile/admin/users/users.tmpl.php
 %%WWWDIR%%/themes/mobile/android.css
 %%WWWDIR%%/themes/mobile/blackberry.css
+%%WWWDIR%%/themes/mobile/confirm.tmpl.php
 %%WWWDIR%%/themes/mobile/content.tmpl.php
+%%WWWDIR%%/themes/mobile/editor/edit_content_folder.tmpl.php
+%%WWWDIR%%/themes/mobile/editor/page_student_stats.tmpl.php
 %%WWWDIR%%/themes/mobile/forms.css
+%%WWWDIR%%/themes/mobile/images/arrow-up-black.png
 %%WWWDIR%%/themes/mobile/images/arrow-up.png
+%%WWWDIR%%/themes/mobile/images/backarrow.jpg
+%%WWWDIR%%/themes/mobile/images/clr.gif
+%%WWWDIR%%/themes/mobile/images/down.png
+%%WWWDIR%%/themes/mobile/images/edit.gif
+%%WWWDIR%%/themes/mobile/images/idi_background.png
+%%WWWDIR%%/themes/mobile/images/minus.png
+%%WWWDIR%%/themes/mobile/images/navbar_back_button_insetShadow_right.png
+%%WWWDIR%%/themes/mobile/images/navbar_normal_button_insetShadow-rev.png
 %%WWWDIR%%/themes/mobile/images/navbar_normal_button_insetShadow.png
+%%WWWDIR%%/themes/mobile/images/photos_arrange.gif.png
+%%WWWDIR%%/themes/mobile/images/photos_arrange.png
+%%WWWDIR%%/themes/mobile/images/plus.png
+%%WWWDIR%%/themes/mobile/images/profile.gif
+%%WWWDIR%%/themes/mobile/images/up.png
+%%WWWDIR%%/themes/mobile/images/white_listmenu_arrow.png
+%%WWWDIR%%/themes/mobile/images/x.gif
+%%WWWDIR%%/themes/mobile/inbox/inbox.tmpl.php
+%%WWWDIR%%/themes/mobile/inbox/sent_messages.tmpl.php
 %%WWWDIR%%/themes/mobile/include/TeraWurflRemoteClient.php
 %%WWWDIR%%/themes/mobile/include/footer.tmpl.php
 %%WWWDIR%%/themes/mobile/include/header.tmpl.php
 %%WWWDIR%%/themes/mobile/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/announcements/add_news.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/announcements/edit_news.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/announcements/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/assignments/index_instructor.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/backups/edit.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/backups/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/chat/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/content/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/content/page_student_stats.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/content/tracker/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/content/tracker/student_usage.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/course_email/course_email.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/enrolment/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/faq/add_question.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/faq/add_topic.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/faq/edit_question.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/faq/edit_topic.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/faq/index_instructor.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/forums/add_forum.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/forums/edit_forum.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/forums/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/glossary/add.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/polls/add.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/polls/edit.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/polls/index.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/properties/course_properties.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/statistics/course_stats.tmpl.php
+%%WWWDIR%%/themes/mobile/instructor/statistics/tracker/my_stats.tmpl.php
 %%WWWDIR%%/themes/mobile/iphone.css
 %%WWWDIR%%/themes/mobile/login.tmpl.php
+%%WWWDIR%%/themes/mobile/mobile.css
+%%WWWDIR%%/themes/mobile/moz.css
+%%WWWDIR%%/themes/mobile/password_reminder.tmpl.php
 %%WWWDIR%%/themes/mobile/print.css
 %%WWWDIR%%/themes/mobile/readme.txt
+%%WWWDIR%%/themes/mobile/registration.tmpl.php
 %%WWWDIR%%/themes/mobile/rtl.css
 %%WWWDIR%%/themes/mobile/screenshot.gif
 %%WWWDIR%%/themes/mobile/social/activities.tmpl.php
@@ -3052,6 +3388,8 @@
 %%WWWDIR%%/themes/mobile/social/sprofile.tmpl.php
 %%WWWDIR%%/themes/mobile/social/tiny_applications.tmpl.php
 %%WWWDIR%%/themes/mobile/social/tiny_sgroups.tmpl.php
+%%WWWDIR%%/themes/mobile/tablet.css
+%%WWWDIR%%/themes/mobile/tablet_others.css
 %%WWWDIR%%/themes/mobile/test.html
 %%WWWDIR%%/themes/mobile/theme.cfg.php
 %%WWWDIR%%/themes/mobile/theme_info.xml
@@ -3063,6 +3401,172 @@
 %%WWWDIR%%/themes/mobile/users/pref_wizard/initialize.tmpl.php
 %%WWWDIR%%/themes/mobile/users/preferences.tmpl.php
 %%WWWDIR%%/themes/mobile/users/profile.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/TeraWurflRemoteClient.php
+%%WWWDIR%%/themes/simplified_desktop/about.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/courses.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/create_course.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/default_mods.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/edit_course.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/enrollment.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/forum_add.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/forums.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/courses/scaffolds.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/modules/details.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/modules/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/modules/install_modules.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/modules/version_history.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/my_edit.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/patcher/index_admin.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/add_feed.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/config_edit.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/cron_config.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/edit_feed.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/index_admin.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/language.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/language_add.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/language_edit.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/language_editor.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/language_import.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/language_translate.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/module_prefs.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/module_setup.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/system_preferences/preview.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/admin_email.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/create.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/instructor_requests.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/log.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/master_list.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/user_enrollment.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/admin/users/users.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/android.css
+%%WWWDIR%%/themes/simplified_desktop/blackberry.css
+%%WWWDIR%%/themes/simplified_desktop/confirm.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/content.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/editor/edit_content_folder.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/editor/page_student_stats.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/forms.css
+%%WWWDIR%%/themes/simplified_desktop/ie_styles.css
+%%WWWDIR%%/themes/simplified_desktop/images/arrow-up-black.png
+%%WWWDIR%%/themes/simplified_desktop/images/arrow-up.png
+%%WWWDIR%%/themes/simplified_desktop/images/backarrow.jpg
+%%WWWDIR%%/themes/simplified_desktop/images/clr.gif
+%%WWWDIR%%/themes/simplified_desktop/images/down.png
+%%WWWDIR%%/themes/simplified_desktop/images/edit.gif
+%%WWWDIR%%/themes/simplified_desktop/images/idi_background.png
+%%WWWDIR%%/themes/simplified_desktop/images/minus.png
+%%WWWDIR%%/themes/simplified_desktop/images/navbar_back_button_insetShadow_right.png
+%%WWWDIR%%/themes/simplified_desktop/images/navbar_normal_button_insetShadow-rev.png
+%%WWWDIR%%/themes/simplified_desktop/images/navbar_normal_button_insetShadow.png
+%%WWWDIR%%/themes/simplified_desktop/images/photos_arrange.gif.png
+%%WWWDIR%%/themes/simplified_desktop/images/photos_arrange.png
+%%WWWDIR%%/themes/simplified_desktop/images/plus.png
+%%WWWDIR%%/themes/simplified_desktop/images/profile.gif
+%%WWWDIR%%/themes/simplified_desktop/images/up.png
+%%WWWDIR%%/themes/simplified_desktop/images/white_listmenu_arrow.png
+%%WWWDIR%%/themes/simplified_desktop/images/x.gif
+%%WWWDIR%%/themes/simplified_desktop/inbox/inbox.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/inbox/sent_messages.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/include/TeraWurflRemoteClient.php
+%%WWWDIR%%/themes/simplified_desktop/include/footer.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/include/header.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/announcements/add_news.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/announcements/edit_news.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/announcements/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/assignments/index_instructor.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/backups/edit.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/backups/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/chat/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/content/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/content/page_student_stats.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/content/tracker/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/content/tracker/student_usage.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/course_email/course_email.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/enrolment/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/faq/add_question.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/faq/add_topic.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/faq/edit_question.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/faq/edit_topic.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/faq/index_instructor.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/forums/add_forum.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/forums/edit_forum.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/forums/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/glossary/add.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/polls/add.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/polls/edit.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/polls/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/properties/course_properties.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/statistics/course_stats.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/instructor/statistics/tracker/my_stats.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/iphone.css
+%%WWWDIR%%/themes/simplified_desktop/login.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/mobile.css
+%%WWWDIR%%/themes/simplified_desktop/moz.css
+%%WWWDIR%%/themes/simplified_desktop/password_reminder.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/print.css
+%%WWWDIR%%/themes/simplified_desktop/readme.txt
+%%WWWDIR%%/themes/simplified_desktop/registration.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/rtl.css
+%%WWWDIR%%/themes/simplified_desktop/safari.css
+%%WWWDIR%%/themes/simplified_desktop/screenshot.gif
+%%WWWDIR%%/themes/simplified_desktop/social/activities.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/admin/delete_applications.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/application_settings.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/applications.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/basic_profile.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/connections.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/account_settings.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_additional.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_contact.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_education.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_personal.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_position.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_representation.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile/edit_websites.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/edit_profile.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/friend_list.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/index_public.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/individual_application.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/notifications.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/oauth/authorize.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/oauth/footer.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/oauth/header.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/profile_picture.html.php
+%%WWWDIR%%/themes/simplified_desktop/social/settings/account_settings.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/settings/application_settings.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/settings/privacy_settings.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/settings/settings_menu.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroup_create.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroup_edit.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroup_invite.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroup_list.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroup_search.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroup_view.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sgroups.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/sprofile.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/tiny_applications.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/social/tiny_sgroups.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/tablet.css
+%%WWWDIR%%/themes/simplified_desktop/test.html
+%%WWWDIR%%/themes/simplified_desktop/theme.cfg.php
+%%WWWDIR%%/themes/simplified_desktop/theme_info.xml
+%%WWWDIR%%/themes/simplified_desktop/users/browse.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/email_change.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/password_change.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/pref_wizard/index.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/pref_wizard/initialize.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/preferences.tmpl.php
+%%WWWDIR%%/themes/simplified_desktop/users/profile.tmpl.php
+%%WWWDIR%%/themes/tablet1/include/footer.tmpl.php
+%%WWWDIR%%/themes/tablet1/include/header.tmpl.php
+%%WWWDIR%%/themes/tablet1/jquery.mobile-1.0b1.css
+%%WWWDIR%%/themes/tablet1/readme.txt
+%%WWWDIR%%/themes/tablet1/theme.cfg.php
+%%WWWDIR%%/themes/tablet1/theme_info.xml
 %%WWWDIR%%/themes/themes_readme.txt
 %%WWWDIR%%/tools/index.php
 %%WWWDIR%%/tools/prog.php
@@ -3103,6 +3607,7 @@
 @dirrm %%WWWDIR%%/documentation/instructor/fr
 @dirrm %%WWWDIR%%/documentation/instructor
 @dirrm %%WWWDIR%%/documentation
+@dirrm %%WWWDIR%%/google_app
 @dirrm %%WWWDIR%%/help
 @dirrm %%WWWDIR%%/images/courses
 @dirrm %%WWWDIR%%/images/file_types
@@ -3111,6 +3616,10 @@
 @dirrm %%WWWDIR%%/images/tree
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/inbox
+@dirrm %%WWWDIR%%/include/classes/AContent_lcl/images/tree
+@dirrm %%WWWDIR%%/include/classes/AContent_lcl/images
+@dirrm %%WWWDIR%%/include/classes/AContent_lcl/ims-blti
+@dirrm %%WWWDIR%%/include/classes/AContent_lcl
 @dirrm %%WWWDIR%%/include/classes/ErrorHandler
 @dirrm %%WWWDIR%%/include/classes/Message
 @dirrm %%WWWDIR%%/include/classes/Savant2/Savant2
@@ -3126,6 +3635,8 @@
 @dirrm %%WWWDIR%%/include/html/dropdowns
 @dirrm %%WWWDIR%%/include/html/frameset
 @dirrm %%WWWDIR%%/include/html
+@dirrm %%WWWDIR%%/include/install/db
+@dirrm %%WWWDIR%%/include/install
 @dirrm %%WWWDIR%%/include/lib
 @dirrm %%WWWDIR%%/include/phpCache
 @dirrm %%WWWDIR%%/include/securimage/audio
@@ -3134,7 +3645,6 @@
 @dirrm %%WWWDIR%%/include/securimage
 @dirrm %%WWWDIR%%/include/unit_tests
 @dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/install/db
 @dirrm %%WWWDIR%%/install/images
 @dirrm %%WWWDIR%%/install/include/classes
 @dirrm %%WWWDIR%%/install/include
@@ -3201,7 +3711,6 @@
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci
-@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/high_contrast_bw
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/iphone
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust
@@ -3269,6 +3778,7 @@
 @dirrm %%WWWDIR%%/jscripts/infusion/lib
 @dirrm %%WWWDIR%%/jscripts/infusion/licenses
 @dirrm %%WWWDIR%%/jscripts/infusion
+@dirrm %%WWWDIR%%/jscripts/jQueryMobile
 @dirrm %%WWWDIR%%/jscripts/lib/dd_question
 @dirrm %%WWWDIR%%/jscripts/lib
 @dirrm %%WWWDIR%%/jscripts/opensocial
@@ -3291,12 +3801,11 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlist
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autolink
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/images
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img
@@ -3307,6 +3816,7 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example_dependency
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/langs
@@ -3320,15 +3830,13 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/layer
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/legacyoutput
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/lists
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/langs
@@ -3336,7 +3844,6 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/jscripts
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/print
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/safari
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/save
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js
@@ -3358,6 +3865,8 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css
@@ -3370,6 +3879,7 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/highcontrast
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins
@@ -3439,11 +3949,13 @@
 @dirrm %%WWWDIR%%/mods/_core/languages/classes
 @dirrm %%WWWDIR%%/mods/_core/languages
 @dirrm %%WWWDIR%%/mods/_core/modules/classes
+@dirrm %%WWWDIR%%/mods/_core/modules/js
 @dirrm %%WWWDIR%%/mods/_core/modules
 @dirrm %%WWWDIR%%/mods/_core/properties/admin
 @dirrm %%WWWDIR%%/mods/_core/properties/lib
 @dirrm %%WWWDIR%%/mods/_core/properties
 @dirrm %%WWWDIR%%/mods/_core/themes/classes
+@dirrm %%WWWDIR%%/mods/_core/themes/js
 @dirrm %%WWWDIR%%/mods/_core/themes/lib
 @dirrm %%WWWDIR%%/mods/_core/themes
 @dirrm %%WWWDIR%%/mods/_core/tool_manager
@@ -3456,7 +3968,6 @@
 @dirrm %%WWWDIR%%/mods/_standard/assignments
 @dirrm %%WWWDIR%%/mods/_standard/basiclti/images
 @dirrm %%WWWDIR%%/mods/_standard/basiclti/include
-@dirrm %%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti
 @dirrm %%WWWDIR%%/mods/_standard/basiclti/launch
 @dirrm %%WWWDIR%%/mods/_standard/basiclti/lib
 @dirrm %%WWWDIR%%/mods/_standard/basiclti/tool
@@ -3536,16 +4047,46 @@
 @dirrm %%WWWDIR%%/mods/_standard/vimeo
 @dirrm %%WWWDIR%%/mods/_standard
 @dirrm %%WWWDIR%%/mods
+@dirrm %%WWWDIR%%/themes/atspaces/images
+@dirrm %%WWWDIR%%/themes/atspaces/include
+@dirrm %%WWWDIR%%/themes/atspaces
 @dirrm %%WWWDIR%%/themes/blumin/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/blumin/images/tree
 @dirrm %%WWWDIR%%/themes/blumin/images
 @dirrm %%WWWDIR%%/themes/blumin/include
 @dirrm %%WWWDIR%%/themes/blumin
+@dirrm %%WWWDIR%%/themes/default/admin/courses
+@dirrm %%WWWDIR%%/themes/default/admin/modules
+@dirrm %%WWWDIR%%/themes/default/admin/patcher
+@dirrm %%WWWDIR%%/themes/default/admin/system_preferences
+@dirrm %%WWWDIR%%/themes/default/admin/users
+@dirrm %%WWWDIR%%/themes/default/admin
 @dirrm %%WWWDIR%%/themes/default/editor
+@dirrm %%WWWDIR%%/themes/default/images/editor
 @dirrm %%WWWDIR%%/themes/default/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/default/images/tree
 @dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default/inbox
 @dirrm %%WWWDIR%%/themes/default/include
+@dirrm %%WWWDIR%%/themes/default/instructor/announcements
+@dirrm %%WWWDIR%%/themes/default/instructor/assignments
+@dirrm %%WWWDIR%%/themes/default/instructor/backups
+@dirrm %%WWWDIR%%/themes/default/instructor/chat
+@dirrm %%WWWDIR%%/themes/default/instructor/content/tracker
+@dirrm %%WWWDIR%%/themes/default/instructor/content
+@dirrm %%WWWDIR%%/themes/default/instructor/course_email
+@dirrm %%WWWDIR%%/themes/default/instructor/course_tools
+@dirrm %%WWWDIR%%/themes/default/instructor/enrolment
+@dirrm %%WWWDIR%%/themes/default/instructor/faq
+@dirrm %%WWWDIR%%/themes/default/instructor/forums
+@dirrm %%WWWDIR%%/themes/default/instructor/glossary
+@dirrm %%WWWDIR%%/themes/default/instructor/groups
+@dirrm %%WWWDIR%%/themes/default/instructor/polls
+@dirrm %%WWWDIR%%/themes/default/instructor/reading_list
+@dirrm %%WWWDIR%%/themes/default/instructor/statistics/tracker
+@dirrm %%WWWDIR%%/themes/default/instructor/statistics
+@dirrm %%WWWDIR%%/themes/default/instructor/student_tools
+@dirrm %%WWWDIR%%/themes/default/instructor
 @dirrm %%WWWDIR%%/themes/default/photos/admin
 @dirrm %%WWWDIR%%/themes/default/photos
 @dirrm %%WWWDIR%%/themes/default/social/admin
@@ -3568,6 +4109,11 @@
 @dirrm %%WWWDIR%%/themes/default16/images
 @dirrm %%WWWDIR%%/themes/default16/include
 @dirrm %%WWWDIR%%/themes/default16
+@dirrm %%WWWDIR%%/themes/default20/images/editor
+@dirrm %%WWWDIR%%/themes/default20/images/rtl_tree
+@dirrm %%WWWDIR%%/themes/default20/images/tree
+@dirrm %%WWWDIR%%/themes/default20/images
+@dirrm %%WWWDIR%%/themes/default20
 @dirrm %%WWWDIR%%/themes/default_classic/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/default_classic/images/tree
 @dirrm %%WWWDIR%%/themes/default_classic/images
@@ -3588,8 +4134,32 @@
 @dirrm %%WWWDIR%%/themes/idi/images
 @dirrm %%WWWDIR%%/themes/idi/include
 @dirrm %%WWWDIR%%/themes/idi
+@dirrm %%WWWDIR%%/themes/mobile/admin/courses
+@dirrm %%WWWDIR%%/themes/mobile/admin/modules
+@dirrm %%WWWDIR%%/themes/mobile/admin/patcher
+@dirrm %%WWWDIR%%/themes/mobile/admin/system_preferences
+@dirrm %%WWWDIR%%/themes/mobile/admin/users
+@dirrm %%WWWDIR%%/themes/mobile/admin
+@dirrm %%WWWDIR%%/themes/mobile/editor
 @dirrm %%WWWDIR%%/themes/mobile/images
+@dirrm %%WWWDIR%%/themes/mobile/inbox
 @dirrm %%WWWDIR%%/themes/mobile/include
+@dirrm %%WWWDIR%%/themes/mobile/instructor/announcements
+@dirrm %%WWWDIR%%/themes/mobile/instructor/assignments
+@dirrm %%WWWDIR%%/themes/mobile/instructor/backups
+@dirrm %%WWWDIR%%/themes/mobile/instructor/chat
+@dirrm %%WWWDIR%%/themes/mobile/instructor/content/tracker
+@dirrm %%WWWDIR%%/themes/mobile/instructor/content
+@dirrm %%WWWDIR%%/themes/mobile/instructor/course_email
+@dirrm %%WWWDIR%%/themes/mobile/instructor/enrolment
+@dirrm %%WWWDIR%%/themes/mobile/instructor/faq
+@dirrm %%WWWDIR%%/themes/mobile/instructor/forums
+@dirrm %%WWWDIR%%/themes/mobile/instructor/glossary
+@dirrm %%WWWDIR%%/themes/mobile/instructor/polls
+@dirrm %%WWWDIR%%/themes/mobile/instructor/properties
+@dirrm %%WWWDIR%%/themes/mobile/instructor/statistics/tracker
+@dirrm %%WWWDIR%%/themes/mobile/instructor/statistics
+@dirrm %%WWWDIR%%/themes/mobile/instructor
 @dirrm %%WWWDIR%%/themes/mobile/social/admin
 @dirrm %%WWWDIR%%/themes/mobile/social/edit_profile
 @dirrm %%WWWDIR%%/themes/mobile/social/oauth
@@ -3598,6 +4168,42 @@
 @dirrm %%WWWDIR%%/themes/mobile/users/pref_wizard
 @dirrm %%WWWDIR%%/themes/mobile/users
 @dirrm %%WWWDIR%%/themes/mobile
+@dirrm %%WWWDIR%%/themes/simplified_desktop/admin/courses
+@dirrm %%WWWDIR%%/themes/simplified_desktop/admin/modules
+@dirrm %%WWWDIR%%/themes/simplified_desktop/admin/patcher
+@dirrm %%WWWDIR%%/themes/simplified_desktop/admin/system_preferences
+@dirrm %%WWWDIR%%/themes/simplified_desktop/admin/users
+@dirrm %%WWWDIR%%/themes/simplified_desktop/admin
+@dirrm %%WWWDIR%%/themes/simplified_desktop/editor
+@dirrm %%WWWDIR%%/themes/simplified_desktop/images
+@dirrm %%WWWDIR%%/themes/simplified_desktop/inbox
+@dirrm %%WWWDIR%%/themes/simplified_desktop/include
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/announcements
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/assignments
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/backups
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/chat
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/content/tracker
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/content
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/course_email
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/enrolment
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/faq
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/forums
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/glossary
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/polls
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/properties
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/statistics/tracker
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor/statistics
+@dirrm %%WWWDIR%%/themes/simplified_desktop/instructor
+@dirrm %%WWWDIR%%/themes/simplified_desktop/social/admin
+@dirrm %%WWWDIR%%/themes/simplified_desktop/social/edit_profile
+@dirrm %%WWWDIR%%/themes/simplified_desktop/social/oauth
+@dirrm %%WWWDIR%%/themes/simplified_desktop/social/settings
+@dirrm %%WWWDIR%%/themes/simplified_desktop/social
+@dirrm %%WWWDIR%%/themes/simplified_desktop/users/pref_wizard
+@dirrm %%WWWDIR%%/themes/simplified_desktop/users
+@dirrm %%WWWDIR%%/themes/simplified_desktop
+@dirrm %%WWWDIR%%/themes/tablet1/include
+@dirrm %%WWWDIR%%/themes/tablet1
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/tools
 @dirrm %%WWWDIR%%/users/pref_wizard

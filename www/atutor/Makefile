@@ -1,12 +1,8 @@
-# New ports collection makefile for:	atutor
-# Date created:		11 Feb 2008
-# Whom:			Wen heping <wenheping@gmail.com>
-#
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	atutor
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/ATutor%202
 DISTNAME=	ATutor-${PORTVERSION}
