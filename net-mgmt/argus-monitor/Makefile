@@ -1,9 +1,5 @@
-# New ports collection makefile for:	argus-monitor
-# Date created:				18 November 2006
-# Whom:					brock@cotcomsol.com
-#
+# Created by: brock@cotcomsol.com
 # $FreeBSD$
-#
 
 PORTNAME=	argus-monitor
 PORTVERSION=	20100109
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.tcp4me.com/code/argus-archive/
 DISTNAME=	argus-dev-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	brock@cotcomsol.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argus - The All Seeing System and Network Monitoring Software
 
 SUB_FILES=	pkg-message apache.conf
