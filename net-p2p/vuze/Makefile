@@ -65,7 +65,7 @@ INSTALLS_ICONS=		yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEVEL}
+.if ${PORT_OPTIONS:MSWTDEVEL}
 SWT=		swt-devel
 BUILD_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 RUN_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
