@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chromium
-# Date created:				September 30 2009
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by:	Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
