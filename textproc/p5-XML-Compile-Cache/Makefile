@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-Compile-Cache
-# Date created:		2009-01-11
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Compile-Cache
-PORTVERSION=	0.99.1
+PORTVERSION=	0.99.2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
