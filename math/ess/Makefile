@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ess
-DISTVERSION=	12.04-4
-PORTREVISION=	4
+DISTVERSION=	12.09
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
@@ -18,8 +17,6 @@ COMMENT=	R support for Emacsen
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	R:${PORTSDIR}/math/R
-
-CONFLICTS=	noweb-[0-9]*
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
