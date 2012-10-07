@@ -1,9 +1,5 @@
-# Ports collection makefile for: gnugadu2
-# Date created:		12 january 2004
-# Whom: 		smyru@heron.pl
-#
+# Created by: smyru@heron.pl
 # $FreeBSD$
-#
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
@@ -49,32 +45,41 @@ CONFIGURE_ARGS=	--disable-esdtest \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	TLEN	"Enable Tlen.pl network plugin"		off \
-		JABBER	"Enable Jabber loudmouth plugin"	off \
-		DBUS	"Enable D-Bus plugin"			off \
-		DOCKLET	"Enable fd.o docklet plugin"		on \
-		DOCKAPP	"Enable WindowMaker dockapp plugin"	off \
-		GTKSPELL	"Enable GTKSpell checker"	off \
-		XOSD	"Enable On-Screen-Display messages"	off \
-		ARTS	"Build with aRts sound server"		off \
-		ESOUND	"Build with esound sound server"	off
+OPTIONS_DEFINE=	ARTS AUTODETECT DBUS DOCKAPP DOCKLET ESOUND \
+		GTKSPELL JABBER TLEN XOSD
+OPTIONS_DEFAULT=DOCKLET
 
-.include <bsd.port.pre.mk>
+AUTODETECT_DESC=Autodetect plugins
+DOCKLET_DESC=	Enable fd.o docklet plugin
+DOCKAPP_DESC=	Enable WindowMaker dockapp plugin
+GTKSPELL_DESC=	Enable GTKSpell checker
+TLEN_DESC=	Enable Tlen.pl network plugin
+XOSD_DESC=	Enable On-Screen-Display messages
 
-.if (${HAVE_GNOME:Mesound}!="") && !defined(WITHOUT_ESOUND)
-WITH_ESOUND=	yes
+#.if ${${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
+
+.include <bsd.port.pre.mk> # can't change this untile HAVE_GNOME has been fixed
+
+.if ${PORT_OPTIONS:MAUTODETECT}
+#detect arts
+.if exists(${LOCALBASE}/lib/libartsc.so) && !${PORT_OPTIONS:MARTS}
+PORT_OPTIONS+=	ARTS
+.endif
+#detect dbus - only works with old versions
+.if exists(${LOCALBASE}/lib/libdbus-1.so)  && !${PORT_OPTIONS:MDBUS}
+PORT_OPTIONS+=	DBUS
+.endif
+#detect esound
+.if ${HAVE_GNOME:Mesound}!="" && !${PORT_OPTIONS:MESOUND}
+PORT_OPTIONS+=	ESOUND
+.endif
+#detect gtkspell
+.if exists(${LOCALBASE}/lib/libgtkspell.so) && !${PORT_OPTIONS:MGTKSPELL}
+PORT_OPTIONS+=	GTKSPELL
+.endif
 .endif
 
-# does not work with newer dbus versions
-.if exists(${LOCALBASE}/lib/libdbus-1.so) && !defined(WITHOUT_DBUS)
-WITH_DBUS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libgtkspell.so) && !defined(WITHOUT_GTKSPELL)
-WITH_GTKSPELL=	yes
-.endif
-
-.if defined(WITH_TLEN)
+.if ${PORT_OPTIONS:MTLEN}
 LIB_DEPENDS+=	tlen.1:${PORTSDIR}/polish/libtlen
 CONFIGURE_ARGS+=	--with-tlen
 PLIST_SUB+=	TLEN:=""
@@ -83,7 +88,7 @@ CONFIGURE_ARGS+=	--without-tlen
 PLIST_SUB+=	TLEN:="@comment "
 .endif
 
-.if defined(WITH_JABBER)
+.if ${PORT_OPTIONS:MJABBER}
 LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 CONFIGURE_ARGS+=	--with-jabber
 PLIST_SUB+=	JABBER:=""
@@ -92,7 +97,7 @@ CONFIGURE_ARGS+=	--without-jabber
 PLIST_SUB+=	JABBER:="@comment "
 .endif
 
-.if defined(WITHOUT_DOCKLET)
+.if !${PORT_OPTIONS:MDOCKLET}
 CONFIGURE_ARGS+=	--without-docklet-system-tray
 PLIST_SUB+=	DOCKLET:="@comment "
 .else
@@ -100,7 +105,7 @@ CONFIGURE_ARGS+=	--with-docklet-system-tray
 PLIST_SUB+=	DOCKLET:=""
 .endif
 
-.if defined(WITH_DOCKAPP)
+.if ${PORT_OPTIONS:MDOCKAPP}
 CONFIGURE_ARGS+=	--with-docklet_dockapp
 PLIST_SUB+=	DOCKAPP:=""
 .else
@@ -108,14 +113,14 @@ CONFIGURE_ARGS+=	--without-docklet_dockapp
 PLIST_SUB+=	DOCKAPP:="@comment "
 .endif
 
-.if defined(WITH_GTKSPELL)
+.if ${PORT_OPTIONS:MGTKSPELL}
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--with-gtkspell
 .else
 CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus \
 			--with-dbus-dir=${PREFIX}/share/dbus-1/services
@@ -125,7 +130,7 @@ CONFIGURE_ARGS+=	--without-dbus
 PLIST_SUB+=	DBUS:="@comment "
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 PKGNAMESUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--with-esd
@@ -135,7 +140,7 @@ CONFIGURE_ARGS+=	--without-esd
 PLIST_SUB+=	ESOUND:="@comment "
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--with-arts
 PLIST_SUB+=	ARTS:=""
@@ -144,11 +149,10 @@ CONFIGURE_ARGS+=	--without-arts
 PLIST_SUB+=	ARTS:="@comment "
 .endif
 
-.if defined(WITH_XOSD)
+.if ${PORT_OPTIONS:MXOSD}
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-xosd
-PLIST_SUB+=	XOSD:=""
-.else
+PLIST_SUB+=	XOSD:="".else
 CONFIGURE_ARGS+=	--without-xosd
 PLIST_SUB+=	XOSD:="@comment "
 .endif
