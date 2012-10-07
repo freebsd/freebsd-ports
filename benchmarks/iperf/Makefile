@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iperf
-# Date Created:				20 May 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	iperf
 PORTVERSION=	2.0.5
@@ -13,8 +9,10 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 
-OPTIONS=	IPV6	"Enable support to IPv6" on \
-		THREADS	"Enable threads support" on
+LICENSE=	BSD
+
+OPTIONS_DEFINE=	DOCS IPV6 THREADS
+OPTIONS_DEFAULT=IPV6 THREADS
 
 GNU_CONFIGURE=	yes
 
@@ -24,22 +22,24 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-.else
+.if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
+CONFIGURE_ARGS+=--enable-ipv6
+.else
+CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=--disable-threads
-.else
+.if ${PORT_OPTIONS:MTHREADS}
+CONFIGURE_ARGS+=--enable-threads
 LDFLAGS+=	${PTHREAD_LIBS}
+.else
+CONFIGURE_ARGS+=--disable-threads
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/*.gif ${WRKSRC}/doc/*.html ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} README doc/*.gif doc/*.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
