@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
