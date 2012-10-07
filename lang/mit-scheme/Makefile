@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MIT-Scheme
-# Date created:		Mar 26 1995
-# Whom:			jmacd@FreeBSD.org
-#
+# Created by: jmacd@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mit-scheme
 PORTVERSION=	9.0.1
@@ -11,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mit-scheme/stable.pkg/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${MIT_SCHEME_ARCH}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
@@ -20,11 +17,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/mit-scheme-${PORTVERSION}/src/
 
-OPTIONS=	POSTGRESQL	"Enable PostgreSQL support"	off
+OPTIONS_DEFINE=	PGSQL
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 PLIST_SUB+=	POSTGRESQL=""
 CONFIGURE_ARGS+=--with-libpq
 .else
@@ -34,7 +31,6 @@ CONFIGURE_ARGS+=--without-libpq
 
 MIT_SCHEME_ARCH=i386
 
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${MIT_SCHEME_ARCH}
 PLIST_SUB+=	MIT_SCHEME_ARCH=${MIT_SCHEME_ARCH}
 
 MAN1=	scheme.1
