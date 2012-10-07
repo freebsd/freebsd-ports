@@ -17,14 +17,14 @@ rcvar=argusd_enable
 command=%%PREFIX%%/sbin/${name}
 # pidfile=/var/run/${name}.pid
 required_files="
-	%%PREFIX%%/etc/argus-monitor/log \
-	%%PREFIX%%/etc/argus-monitor/notno \
-	%%PREFIX%%/etc/argus-monitor/config \
-	%%PREFIX%%/etc/argus-monitor/users"
+	%%ETCDIR%%/log \
+	%%ETCDIR%%/notno \
+	%%ETCDIR%%/config \
+	%%ETCDIR%%/users"
 
 stop_cmd="%%PREFIX%%/sbin/argusctl shutdown reason=\"rc.argusd stop\""
 
-start_precmd="/usr/bin/touch %%PREFIX%%/etc/argus-monitor/log"
+start_precmd="/usr/bin/touch %%ETCDIR%%/log"
 extra_commands="console hup"
 console_cmd="%%PREFIX%%/sbin/argusctl -k console"
 hup_cmd="%%PREFIX%%/sbin/argusctl -k hup"
