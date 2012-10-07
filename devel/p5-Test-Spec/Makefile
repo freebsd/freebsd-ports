@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Test-Spec
-# Date created:		2011-09-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Spec
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,10 +17,7 @@ BUILD_DEPENDS=	p5-Package-Stash>=0.23:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-Test-Deep>=0.103:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
-RUN_DEPENDS=	p5-Package-Stash>=0.23:${PORTSDIR}/devel/p5-Package-Stash \
-		p5-Test-Deep>=0.103:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap \
-		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
