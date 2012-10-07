@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tk
-# Date created:		17 January 2007
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.6.b.2
@@ -37,9 +33,10 @@ SUB_FILES=	pkgIndex.tcl
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	${SHORT_TK_VER}
 
-OPTIONS=	TK86_MAN "Install tk 8.6 function manpages" off \
-		XFT "Use Xft fonts" on \
-		DEMOS "Install demos" off
+OPTIONS_DEFINE=	DEMOS TK86_MAN XFT
+OPTIONS_DEFAULT=XFT
+TK86_MAN_DESC=	Install tk 8.6 function manpages
+DEMOS_DESC=	Install demos
 .else
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -50,11 +47,11 @@ LIB_DEPENDS=	tcl${SHORT_TK_VER}${THREADS_SUFFIX}:${PORTSDIR}/lang/tcl${SHORT_TK_
 SUB_LIST+=	THREADS_SUFFIX="${THREADS_SUFFIX}" \
 		TCLPATCHLEVEL="8.6b1"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
 
-.if !defined(WITHOUT_XFT)
+.if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS+=	--enable-xft
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
@@ -77,14 +74,14 @@ CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 
 SUB_LIST+=		TK_PROVIDE=""
 
-.if defined(WITH_DEMOS)
+.if ${PORT_OPTIONS:MDEMOS}
 INSTALL_TARGET+=	install install-demos
 PLIST_SUB+=	DEMOS=""
 .else
 PLIST_SUB+=	DEMOS="@comment "
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK86_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTK86_MAN}
 
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
@@ -401,7 +398,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
 
-.endif	#!defined(NO_INSTALL_MANPAGES) && !defined(WITH_TK86_MAN)
+.endif	#!defined(NO_INSTALL_MANPAGES) && !${PORT_OPTIONS:MTK86_MAN}
 
 .endif	# defined(BUILDING_TK_THREADS)
 
@@ -454,13 +451,13 @@ post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
-.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK86_MAN)
+.if !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK86_MAN}
 . for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
-.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK86_MAN)
+.endif # !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK86_MAN}
 
 .endif # !defined(NO_INSTALL_MANPAGES)
 
@@ -469,4 +466,4 @@ regression-test:	build
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
