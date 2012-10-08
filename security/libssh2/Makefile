@@ -1,16 +1,12 @@
-# New ports collection makefile for:	libssh2
-# Date created:		2005-04-07
-# Whom:			Alexander Leidinger <netchild@freebsd.org>
-#
+# Whom:	Alexander Leidinger <netchild@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libssh2
 PORTVERSION=	1.4.2
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,sbz,}
+		LOCAL/sbz
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A library implementing the SSH2 protocol
@@ -26,9 +22,9 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	GCRYPT TRACE ZLIB
 OPTIONS_DEFAULT=	ZLIB
 
-GCRYPT_DESC=	Use libgcrypt instead of OpenSSL
+.include <bsd.port.options.mk>
+
 TRACE_DESC=	Enable debug packet traces
-ZLIB_DESC=	Enable compression
 
 .include <bsd.port.pre.mk>
 
@@ -217,7 +213,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_version.3
 
 # allow maintainer to generate MAN3 manpages list (make extract is required before)
-x-generate-man3:
+x-generate-man3: extract
 	@(cd ${WRKSRC}/docs && ${LS} -1F *.3 | ${SORT} | ${CUT} -d '/' -f4 \
 		| ${GREP} -v template)
 
