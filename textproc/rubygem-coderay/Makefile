@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-coderay
-# Date created:		2011-08-01
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	coderay
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
