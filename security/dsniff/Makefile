@@ -1,18 +1,17 @@
-# New ports collection makefile for:	dsniff
-# Date created:		08 Jan 2000
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	dsniff
 PORTVERSION=	2.3
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
+MASTER_SITES=	http://www.monkey.org/~dugsong/${PORTNAME}/ \
+		LOCAL/sbz
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
@@ -20,9 +19,13 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10 \
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 
-OPTIONS=	X11 "Enable X11 support" on
+OPTIONS_DEFINE=	X11
 
-MAN8=		arpspoof.8 dsniff.8 macof.8 mailsnarf.8 tcpkill.8 \
+OPTIONS_DEFAULT=	X11
+
+.include <bsd.port.options.mk>
+
+MAN8=		arpspoof.8 ${PORTNAME}.8 macof.8 mailsnarf.8 tcpkill.8 \
 		tcpnice.8 urlsnarf.8 filesnarf.8 dnsspoof.8 msgsnarf.8 \
 		sshmitm.8 webmitm.8
 
@@ -41,7 +44,7 @@ LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init || ${TR
 USE_GNOME+=	glib20
 .endif
 
-.if !defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 USE_XORG=	x11 xmu
 PLIST_SUB+=	X11=''
 MAN8+=		webspy.8
