@@ -1,15 +1,12 @@
-# New ports collection Makefile for:	netbeans-devel
-# Date created:				15 August 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	7.1beta
+DISTVERSION=	7.3beta
 CATEGORIES=	java devel
-MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.1/beta/zip/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.3/beta/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${DISTVERSION}-201109252201-ml
+DISTNAME=	netbeans-${DISTVERSION}-201210011125
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -24,7 +21,7 @@ PREFIXDIR=	${PREFIX}/netbeans-${PORTVERSION}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-IGNORE=		No development version available right now. Please use java/netbeans instead.
+#IGNORE=		No development version available right now. Please use java/netbeans instead.
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
