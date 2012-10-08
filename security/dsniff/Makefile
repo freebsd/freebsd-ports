@@ -44,7 +44,7 @@ LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init || ${TR
 USE_GNOME+=	glib20
 .endif
 
-.if empty(PORT_OPTIONS:MX11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xmu
 PLIST_SUB+=	X11=''
 MAN8+=		webspy.8
