@@ -3,8 +3,7 @@
 PORTNAME=	spandsp
 DISTVERSION=	0.0.6pre21
 CATEGORIES=	comms
-MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
-		http://www.soft-switch.org/downloads/spandsp/old/
+MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
@@ -40,7 +39,7 @@ CONFIGURE_ARGS+=--disable-doc
 .endif
 
 post-install:
-.if defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} \* ${DOCSDIR} "-type d -or -mindepth 1")
