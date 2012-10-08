@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121008:
+  AFFECTS: users of mail/squirrelmail
+  AUTHOR: adamw@FreeBSD.org
+
+  The locale data, including translations and associated help files,
+  have been moved to mail/squirrelmail-translations. If you or your
+  users are using Squirrelmail in anything other than en_US, you should
+  install that port.
+
 20121007:
   AFFECTS: users of lang/mit-scheme
   AUTHOR: olgeni@FreeBSD.org
