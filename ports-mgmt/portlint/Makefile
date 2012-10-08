@@ -1,6 +1,4 @@
-# New ports collection makefile for:	portlint
-# Date created:		13 Jun 1997
-# Whom:			Jun-ichiro itojun Hagino <itojun@itojun.org>
+# Created by:			Jun-ichiro itojun Hagino <itojun@itojun.org>
 #
 # $FreeBSD$
 #
@@ -8,7 +6,7 @@
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.13.12
+PORTVERSION=	2.13.13
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none

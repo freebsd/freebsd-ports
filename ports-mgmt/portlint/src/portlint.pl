@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.252 2012/08/05 22:18:57 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.257 2012/10/08 19:52:14 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 12;
+my $micro = 13;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1762,9 +1762,8 @@ sub checkmakefile {
 			"mean NOPORTDOCS?");
 	}
 	if ($sharedocused && $whole !~ /defined\s*\(?NOPORTDOCS\)?/
-	 && $whole !~ /def\s*\(?NOPORTDOCS\)?/
-	 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
-	 	if ($docsused == 0) {
+		&& $whole !~ /def\s*\(?NOPORTDOCS\)?/) {
+		if ($docsused == 0 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
 			&perror("WARN", $file, -1, "use \".if !defined(NOPORTDOCS)\" to wrap ".
 				"installation of files into $localbase/share/doc.");
 		}
@@ -2044,7 +2043,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 			&perror("WARN", $file, $lineno, "USE_GCC=4.2+ is recommended ".
 				"over USE_GCC=4.1+ since the former is the system compiler ".
 				"for FreeBSD 7.X.");
-		} elsif ($gcc_val !~ /\+/) {
+		} elsif ($gcc_val !~ /\+/ && $gcc_val ne 'any') {
 			&perror("WARN", $file, $lineno, "Setting a specific version for ".
 				"USE_GCC should only be done as a last resort.  Unless you ".
 				"have confirmed this port does not build with later ".
@@ -2186,14 +2185,14 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 					"instead with $1=...");
 		}
 
-		if ($configure_env =~ /(CPPFLAGS)=/) {
+		if ($configure_env =~ /(\bCPPFLAGS)=/) {
 			&perror("FATAL", $file, -1, "$1 is already ".
 				"passed in CONFIGURE_ENV via bsd.port.mk.  If you need to ".
 				"override the default value, alter $1 in the Makefile ".
 				"instead with $1+=...");
 		}
 
-		if ($configure_env =~ /(LDFLAGS)=/) {
+		if ($configure_env =~ /(\bLDFLAGS)=/) {
 			&perror("FATAL", $file, -1, "$1 is already passed in ".
 				"CONFIGURE_ENV via bsd.port.mk.  If you need to ".
 				"override the default value, alter $1 in the Makefile ".
@@ -3027,25 +3026,25 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 		print "OK: pkg-plist MAN$i=$plistmanall{$i}\n" if ($verbose);
 	}
 	if ($tmp =~ /PERL_CONFIGURE=\s*/
-		&& $tmp =~ /MAN3PREFIX=\s*\${PREFIX}\/lib\/perl5\/\${PERL_VERSION}/) {
+		&& $tmp =~ /^MAN3PREFIX=\s*\${PREFIX}\/lib\/perl5\/\${PERL_VERSION}/) {
 		&perror("WARN", $file, -1, "MAN3PREFIX is ".
 			"\"\${PREFIX}/lib/perl5/\${PERL_VERSION}\" ".
 			"when PERL_CONFIGURE is set.  You do not need to specify it.");
 	}
 	foreach my $i (split(//, $manchapters)) {
-		if ($tmp =~ /MAN\U$i\E=\s*([^\n]*)\n/) {
+		if ($tmp =~ /^MAN\U$i\E=\s*([^\n]*)\n/) {
 			print "OK: Makefile MAN\U$i\E=$1\n" if ($verbose);
 		}
 	}
 	foreach my $i (split(//, $manchapters)) {
 		next if ($i eq '');
-		my @mansecs = grep(/MAN\U$i\E=\s*(.*)/, split(/\n/, $tmp));
+		my @mansecs = grep(/^MAN\U$i\E=\s*(.*)/, split(/\n/, $tmp));
 		if (scalar @mansecs > 1) {
 			&perror("FATAL", $file, -1, "duplicate MAN$i macro.  ".
 				"Only the last MAN$i macro will be processed.  Use ".
 				"MAN$i+=... instead to append man pages.");
 		}
-		if ($tmp =~ /MAN\U$i\E=\s*([^\n]*)\n/) {
+		if ($tmp =~ /^MAN\U$i\E=\s*([^\n]*)\n/) {
 			@mman = grep($_ !~ /^\s*$/, split(/\s+/, $1));
 			@pman = grep($_ !~ /^\s*$/,
 				split(/\s+/, $plistmanall{$i} // ''));
