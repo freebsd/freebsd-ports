@@ -1,26 +1,21 @@
-# New ports collection makefile for:    bug5
-# Date created:                         25 April 2011
-# Whom:					buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bug5
-PORTVERSION=	1.10
+PORTVERSION=	1.13
 CATEGORIES=	chinese converters
-MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A Big5/GBK <-> UTF-8 translating layer in terminal
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	bsdconv.7:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
 
-GITVERSION=	600e6be
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_COMMIT=	06df288
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 
