@@ -24,10 +24,10 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL IMAGICK
 OPTIONS_DEFAULT=MYSQL APC
 
-MEMCACHED_DESCR=use memcached
-APC_DESCR=	use pecl-APC(Mediawiki recommended)
-EACCEL_DESCR=	use eAccelerator (instead of pecl-APC)
-IMAGICK_DESCR=	use ImageMagick
+MEMCACHED_DESC=	use memcached
+APC_DESC=	use pecl-APC(Mediawiki recommended)
+EACCEL_DESC=	use eAccelerator (instead of pecl-APC)
+IMAGICK_DESC=	use ImageMagick
 
 .include <bsd.port.options.mk>
 
