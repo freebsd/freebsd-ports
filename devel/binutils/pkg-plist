@@ -26,6 +26,9 @@ lib/libbfd.la
 lib/libiberty.a
 lib/libopcodes.a
 lib/libopcodes.la
+%%NLS%%share/locale/bg/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/gprof.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/da/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gprof.mo
@@ -33,6 +36,7 @@ lib/libopcodes.la
 %%NLS%%share/locale/da/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/de/LC_MESSAGES/opcodes.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/es/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gas.mo
@@ -41,6 +45,7 @@ lib/libopcodes.la
 %%NLS%%share/locale/es/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/opcodes.mo
@@ -59,9 +64,9 @@ lib/libopcodes.la
 %%NLS%%share/locale/id/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/id/LC_MESSAGES/ld.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/opcodes.mo
@@ -71,7 +76,10 @@ lib/libopcodes.la
 %%NLS%%share/locale/ro/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/opcodes.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gas.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/gas.mo
@@ -100,3 +108,5 @@ lib/libopcodes.la
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ld.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
