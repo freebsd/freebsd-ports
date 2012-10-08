@@ -1,12 +1,9 @@
-# New ports collection makefile for:	Window Maker
-# Date created:				August 13, 1997
-# Whom:					Brian Handy <handy@physics.montana.edu>
-#
+# Created by: Brian Handy <handy@physics.montana.edu>
 # $FreeBSD$
 
 PORTNAME?=	windowmaker
-PORTVERSION=	0.95.2
-PORTREVISION?=	4
+PORTVERSION=	0.95.3
+PORTREVISION?=	0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
@@ -23,14 +20,12 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 .if !defined(LWR_SLAVE)
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 USE_PERL5=	yes
-
-OPTIONS=	XRANDR "xrandr support (EXPERIMENTAL)" off
+OPTIONS_DEFINE=	XRANDR
 .endif
 
 MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_XORG=	xft xinerama xmu xpm
 USE_GETTEXT=	yes
@@ -60,16 +55,29 @@ CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
 BROKEN=		does not compile on FreeBSD 7.X
 .endif
 
-.if defined(WITH_XRANDR)
+.if ${PORT_OPTIONS:MXRANDR}
 USE_XORG+=	xrandr
 CONFIGURE_ARGS+=	--enable-xrandr
 .endif
 
 CONFLICTS=	libwraster-0.*
 
-MANLANG=	"" cs ru sk
-MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
-		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
+MANLANG=	"" cs sk ru
+MAN1_EN=	geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
+		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x get-wings-flags.1 \
+		get-wraster-flags.1 get-wutil-flags.1 wdread.1 WindowMaker.1x \
+		wmagnify.1x wmgenmenu.1 wmmenugen.1 WPrefs.1x
+
+MAN8_EN=	upgrade-windowmaker-defaults.8
+
+MAN1_CS=	geticonset.1x setstyle.1x wxpaste.1x getstyle.1x wdwrite.1x \
+		wmsetbg.1x seticons.1x wmaker.1x wxcopy.1x
+
+MAN1_SK=	geticonset.1x setstyle.1x wxpaste.1x getstyle.1x wdwrite.1x \
+		wmsetbg.1x seticons.1x wmaker.1x wxcopy.1x
+
+MAN1_RU=	geticonset.1x setstyle.1x wxpaste.1x getstyle.1x wdwrite.1x \
+		wmsetbg.1x seticons.1x wmaker.1x wxcopy.1x
 
 PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 		INSTALL-WMAKER NEWS README README.definable-cursor TODO
@@ -77,7 +85,7 @@ PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
 CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
 
-pre-patch:
+post-patch:
 .for f in WINGs/wapplication.c WPrefs.app/Menu.c WPrefs.app/Paths.c \
     WindowMaker/*menu*
 	@${REINPLACE_CMD} -e "s#/usr/local#${PREFIX}#g" ${WRKSRC}/${f}

@@ -1,11 +1,8 @@
-# New ports collection makefile for:	libwraster
-# Date created:				August 17, 2009
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
+# Created by: Doug Barton <dougb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libwraster
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	libwraster from Window Maker
 
