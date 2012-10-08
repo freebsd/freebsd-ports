@@ -1,13 +1,10 @@
-# New ports collection makefile for:	nrpe
-# Date created:				1 Aug 2002
-# Whom:					Paul Dlug<paul@nerdlabs.com>
+# Created by: Paul Dlug<paul@nerdlabs.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	nrpe
 DISTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
