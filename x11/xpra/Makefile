@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpra
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.4
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -30,10 +30,10 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xext xtst xfixes xcomposite xdamage
 
-do-build:
-	( cd ${WRKSRC} ; ./do-build )
+NO_BUILD=	yes
 
 do-install:
+	( cd ${WRKSRC} ; ./do-build )
 	${INSTALL_SCRIPT}  ${WRKSRC}/install/bin/xpra                     ${PREFIX}/bin
 	${RM} -rf ${WRKSRC}/install/lib/python/xpra/win32
 	${RM} -rf ${WRKSRC}/install/lib/python/xpra/darwin
