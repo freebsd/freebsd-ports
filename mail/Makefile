@@ -696,6 +696,7 @@
     SUBDIR += squirrelmail-squirrel_logger-plugin
     SUBDIR += squirrelmail-timeout_user-plugin
     SUBDIR += squirrelmail-tmda-plugin
+    SUBDIR += squirrelmail-translations
     SUBDIR += squirrelmail-unsafe_image_rules-plugin
     SUBDIR += squirrelmail-user_special_mailboxes-plugin
     SUBDIR += squirrelmail-vlogin-plugin
