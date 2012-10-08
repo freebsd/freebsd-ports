@@ -1,21 +1,15 @@
-# New ports collection makefile for:	labyrinth
-# Date created:		2008-09-28
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	labyrinth
-PORTVERSION=	0.4.1
-PORTREVISION=	6
+PORTVERSION=	0.5
 CATEGORIES=	deskutils python
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Mind-mapping tool for GNOME
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.4.0
+RUN_DEPENDS+=	f2py:${PORTSDIR}/math/py-numpy
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	GMSGFMT=msgfmt
