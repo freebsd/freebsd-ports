@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pycogent
-# Date created:		20 June, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pycogent
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.3
 CATEGORIES=	biology python
 MASTER_SITES=	SF/${PORTNAME}/PyCogent/${PORTVERSION}
 DISTNAME=	PyCogent-${PORTVERSION}
