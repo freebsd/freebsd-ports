@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Korean hunspell dictionaries
-# Date created:		August 9, 2011
-# Whom:			Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	korean textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-dict-ko-${PORTVERSION}
@@ -21,6 +16,7 @@ BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
 USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes
+USE_XZ=			yes
 
 PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
 		%%DATADIR%%/ko_KR.dic
