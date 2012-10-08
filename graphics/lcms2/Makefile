@@ -32,7 +32,7 @@ UTILS=		linkicc psicc transicc
 .if ${PORT_OPTIONS:MJPEGICC}
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE}
-MAN1+=		jpegicc.1
+MAN1+=		jpgicc.1
 PLIST_SUB+=	JPEGICC=""
 UTILS+=		jpgicc
 .else
@@ -43,7 +43,7 @@ PLIST_SUB+=	JPEGICC="@comment "
 .if ${PORT_OPTIONS:MTIFFICC}
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
-MAN1+=		tifficc.1
+MAN1+=		tificc.1
 PLIST_SUB+=	TIFFICC=""
 UTILS+=		tificc
 .else
