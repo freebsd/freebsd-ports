@@ -2,7 +2,8 @@ bin/bsdconv
 bin/bsdconv_mktable
 include/bsdconv.h
 lib/libbsdconv.so
-lib/libbsdconv.so.7
+lib/libbsdconv.so.9
+%%DATADIR%%/from/00
 %%DATADIR%%/from/3F
 %%DATADIR%%/from/3F.so
 %%DATADIR%%/from/ANSI-CONTROL
@@ -20,7 +21,6 @@ lib/libbsdconv.so.7
 %%DATADIR%%/from/BYTE
 %%DATADIR%%/from/ESCAPE
 %%DATADIR%%/from/ESCAPE.so
-%%DATADIR%%/from/NUL
 %%DATADIR%%/from/PASS
 %%DATADIR%%/from/PASS.so
 %%DATADIR%%/from/SKIP
@@ -72,6 +72,8 @@ lib/libbsdconv.so.7
 %%DATADIR%%/inter/SPLIT.so
 %%DATADIR%%/inter/TO_ALIAS
 %%DATADIR%%/inter/TO_ALIAS.so
+%%DATADIR%%/inter/TRIM-WIDTH
+%%DATADIR%%/inter/TRIM-WIDTH.so
 %%DATADIR%%/inter/UNIX
 %%DATADIR%%/inter/UPPER
 %%DATADIR%%/inter/UPSIDEDOWN
@@ -82,12 +84,15 @@ lib/libbsdconv.so.7
 %%DATADIR%%/inter/WIDTH
 %%DATADIR%%/inter/WIDTH.so
 %%DATADIR%%/inter/WIN
+%%DATADIR%%/inter/ZH-STRINGS
+%%DATADIR%%/inter/ZH-STRINGS.so
 %%DATADIR%%/inter/ZHCN
 %%DATADIR%%/inter/ZHTW
 %%DATADIR%%/inter/ZHTW_WORDS
 %%DATADIR%%/inter/ZH_FUZZY_CN
 %%DATADIR%%/inter/ZH_FUZZY_TW
 %%DATADIR%%/inter/alias
+%%DATADIR%%/to/00
 %%DATADIR%%/to/3F
 %%DATADIR%%/to/3F.so
 %%DATADIR%%/to/ANSI-CONTROL
@@ -117,7 +122,6 @@ lib/libbsdconv.so.7
 %%DATADIR%%/to/BYTE
 %%DATADIR%%/to/CP936_TRANS
 %%DATADIR%%/to/CP950_TRANS
-%%DATADIR%%/to/NUL
 %%DATADIR%%/to/NULL
 %%DATADIR%%/to/NULL.so
 %%DATADIR%%/to/PASS
@@ -155,6 +159,7 @@ lib/libbsdconv.so.7
 %%DATADIR%%/to/_UTF-8
 %%DATADIR%%/to/_UTF-8.so
 %%DATADIR%%/to/alias
+%%EXTRA%%%%DATADIR%%/from/CCCII
 %%EXTRA%%%%DATADIR%%/from/_CNS11643
 %%EXTRA%%%%DATADIR%%/from/_CNS11643.so
 %%EXTRA%%%%DATADIR%%/from/_CP936
@@ -167,11 +172,12 @@ lib/libbsdconv.so.7
 %%EXTRA%%%%DATADIR%%/inter/UNICODE
 %%EXTRA%%%%DATADIR%%/inter/ZH_COMP
 %%EXTRA%%%%DATADIR%%/inter/ZH_DECOMP
+%%EXTRA%%%%DATADIR%%/to/CCCII
 %%EXTRA%%%%DATADIR%%/to/_CNS11643
 %%EXTRA%%%%DATADIR%%/to/_CNS11643.so
 %%EXTRA%%%%DATADIR%%/to/_GB2312
 %%EXTRA%%%%DATADIR%%/to/_UAO241
-@dirrmtry %%DATADIR%%/to
-@dirrmtry %%DATADIR%%/inter
 @dirrmtry %%DATADIR%%/from
+@dirrmtry %%DATADIR%%/inter
+@dirrmtry %%DATADIR%%/to
 @dirrmtry %%DATADIR%%

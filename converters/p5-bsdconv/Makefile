@@ -1,16 +1,11 @@
-# New ports collection makefile for:	p5-bsdconv
-# Date created:				29 May 2009
-# Whom:	      				buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.2
+PORTVERSION=	9.0
 CATEGORIES=	converters perl5
-MASTER_SITES=	https://github.com/buganini/perl-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	buganini-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Perl wrapper for bsdconv
@@ -19,9 +14,10 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
 
-GITVERSION=	0da681c
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/buganini-perl-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_PROJECT=	perl-${PORTNAME}
+GH_COMMIT=	c98a201
 
 PERL_CONFIGURE=	yes
 

@@ -1,16 +1,11 @@
-# New ports collection makefile for:	ruby-bsdconv
-# Date created:		13 Oct 2011
-# Whom:			buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.1
+PORTVERSION=	9.0
 CATEGORIES=	converters ruby
-MASTER_SITES=	https://github.com/buganini/ruby-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	buganini-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Ruby wrapper for bsdconv
@@ -22,8 +17,9 @@ LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-GITVERSION=	a3437bf
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/buganini-ruby-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_PROJECT=	ruby-${PORTNAME}
+GH_COMMIT=	7bc3d11
 
 .include <bsd.port.mk>

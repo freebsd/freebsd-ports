@@ -1,16 +1,11 @@
-# Ports collection makefile for:  php5-bsdconv
-# Date created:			  23 May 2009
-# Whom:				  buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.3
+PORTVERSION=	9.0
 CATEGORIES=	converters
-MASTER_SITES=	https://github.com/buganini/php-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	buganini-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
@@ -19,9 +14,10 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
 
-GITVERSION=	a3bad63
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/buganini-php-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_PROJECT=	php-${PORTNAME}
+GH_COMMIT=	314309f
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

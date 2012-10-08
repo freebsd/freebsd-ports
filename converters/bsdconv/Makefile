@@ -1,30 +1,26 @@
-# New ports collection makefile for:	bsdconv
-# Date created:				23 May 2009
-# Whom:					buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.5
+PORTVERSION=	9.0
 CATEGORIES=	converters
-MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	BSD licensed charset/encoding converter library
 
 LICENSE=	BSD
 
-GITVERSION=	cf1989b
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_COMMIT=	b514ea8
 
 OPTIONS_DEFINE=	EXTRA
 EXTRA_DESC=	Extra codecs (Chinese specifics)
 
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	PREFIX=${PREFIX}
 
 ALL_TARGET=	libbsdconv bsdconv_mktable meta bsdconv codecs_basic
