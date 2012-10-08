@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libaacplus
-# Date created:		2010-05-18
-# Whom:			takefu
-#
+# Created by: takefu <takefu@airport.fm>
 # $FreeBSD$
-#
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
@@ -39,11 +35,13 @@ LIBTOOLIZE_ARGS=--automake
 
 MAN1=		aacplusenc.1
 
-OPTIONS=	FFTW3	"USE_FFTW3"		on
+OPTIONS_DEFINE=	FFTW3
+OPTIONS_DEFAULT=	FFTW3
+FFTW3_DESC=	Use FFTW3
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_FFTW3)
+.if ${PORT_OPTIONS:MFFTW3}
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3\
 		fftw3f:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw3=yes \
