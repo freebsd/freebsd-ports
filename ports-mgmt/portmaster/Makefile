@@ -3,11 +3,11 @@
 PORTNAME=	portmaster
 PORTVERSION=	3.14
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://dougbarton.us/Downloads/
+#MASTER_SITES=
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
 
 OPTIONS=	BASH "Install programmable completions for Bash" off \

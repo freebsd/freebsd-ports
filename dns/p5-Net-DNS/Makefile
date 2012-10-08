@@ -1,9 +1,6 @@
-# New ports collection makefile for:	p5-Net-DNS
-# Date created:				April 5th 1997
-# Whom:					James FitzGibbon <jfitz@FreeBSD.org>
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS
 PORTVERSION=	0.68
@@ -11,7 +8,7 @@ CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build

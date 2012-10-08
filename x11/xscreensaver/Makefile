@@ -1,16 +1,13 @@
-# New ports collection makefile for:	xscreensaver
-# Date created:				10 July 1995
-# Whom:					dom@myrddin.demon.co.uk
+# Created by: dom@myrddin.demon.co.uk
 #
 # $FreeBSD$
-#
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.19
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
 BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf

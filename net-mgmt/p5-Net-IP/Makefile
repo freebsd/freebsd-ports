@@ -1,9 +1,6 @@
-# New ports collection makefile for:	p5-Net-IP
-# Date created:				30 May 2002
-# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IP
 PORTVERSION=	1.25
@@ -12,7 +9,7 @@ CATEGORIES=	net-mgmt perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv4/IPv6 addresses
 
 PERL_CONFIGURE=	yes

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libtorrent-rasterbar-15
-# Date created:				14 February 2010
-# Whom:					dougb@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.15.9
@@ -12,8 +7,8 @@ CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
 
-MAINTAINER=	dougb@FreeBSD.org
-COMMENT?=	A C++ library implementing a BitTorrent client
+MAINTAINER=	ports@FreeBSD.org
+COMMENT?=	C++ library implementing a BitTorrent client
 
 MAKE_JOBS_SAFE=	yes
 

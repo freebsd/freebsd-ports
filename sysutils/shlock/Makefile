@@ -1,9 +1,4 @@
-# New ports collection makefile for:	shlock
-# Date created:		8 July 2002
-# Whom:			dougb
-#
 # $FreeBSD$
-#
 
 PORTNAME=	shlock
 PORTVERSION=	2.5.2
@@ -14,7 +9,7 @@ DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX} \
 		inn-${PORTVERSION}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	inn-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create lock files for use in shell scripts
 
 HAS_CONFIGURE=		yes
