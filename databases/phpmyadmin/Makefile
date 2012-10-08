@@ -1,12 +1,8 @@
-# New ports collection makefile for: phpMyAdmin
-# Date created:		19 Jan 2001
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
-#
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.5.2.2
+DISTVERSION=	3.5.3
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
