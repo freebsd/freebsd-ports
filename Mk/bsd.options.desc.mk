@@ -88,6 +88,7 @@ FTP_DESC?=		FTP support
 FTPS_DESC?=		FTP with SSL/TLS support
 FUSE_DESC?=		FUSE (Filesystem in Userspace)
 GCONF_DESC?=		GConf configuration backend
+GCRYPT_DESC?=		GNU crypt library instead of OpenSSL
 GD_DESC?=		GD graphics library
 GDBM_DESC?=		GNU dbm library
 GDM_DESC?=		Install GDM login manager
