@@ -12,6 +12,7 @@ if [ ! -f $F ]; then
     echo Creating new $F
     echo "<app_info>" > $F
     echo "</app_info>" >> $F
+    chown %%BOINC_CLIENT_USER%%:%%BOINC_CLIENT_GROUP%% $F
 fi
 
 echo Adding setiathome_enhanced lines to $F
