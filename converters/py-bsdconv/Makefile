@@ -1,16 +1,11 @@
-# New ports collection makefile for:	py-bsdconv
-# Date created:				11 Oct 2009
-# Whom:					buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.5
+PORTVERSION=	9.0
 CATEGORIES=	converters python
-MASTER_SITES=	https://github.com/buganini/python-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	buganini-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Python wrapper for bsdconv
@@ -19,9 +14,11 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
 
-GITVERSION=	e203c4a
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/buganini-python-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_PROJECT=	python-${PORTNAME}
+GH_COMMIT=	2fcf39c
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
