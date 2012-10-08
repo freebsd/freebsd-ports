@@ -766,11 +766,11 @@ post-install:
 .if defined(WITH_TZDATA)
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-tzdata ${MAKE_ENV}
 .endif
-	${MKDIR} ${DATADIR}
 .if !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
 .if !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL86_MAN)
+	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 . for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
