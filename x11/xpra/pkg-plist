@@ -1,10 +1,15 @@
 bin/xpra
+etc/xpra/xorg.conf
+etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/wimpiggy/__init__.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/composite.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/composite.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/error.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/error.pyc
+%%PYTHON_SITELIBDIR%%/wimpiggy/gdk/__init__.py
+%%PYTHON_SITELIBDIR%%/wimpiggy/gdk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wimpiggy/gdk/gdk_atoms.so
 %%PYTHON_SITELIBDIR%%/wimpiggy/gobject_compat.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/gobject_compat.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/keys.py
@@ -14,6 +19,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel/__init__.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel/bindings.so
+%%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel/send_wm.py
+%%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel/send_wm.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/prop.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/prop.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/selection.py
@@ -26,12 +33,18 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/wimpiggy/wm.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/world_window.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/world_window.pyc
+%%PYTHON_SITELIBDIR%%/wimpiggy/xsettings_prop.py
+%%PYTHON_SITELIBDIR%%/wimpiggy/xsettings_prop.pyc
 %%PYTHON_SITELIBDIR%%/xpra/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/batch_delay_calculator.py
+%%PYTHON_SITELIBDIR%%/xpra/batch_delay_calculator.pyc
 %%PYTHON_SITELIBDIR%%/xpra/bencode.py
 %%PYTHON_SITELIBDIR%%/xpra/bencode.pyc
 %%PYTHON_SITELIBDIR%%/xpra/build_info.py
 %%PYTHON_SITELIBDIR%%/xpra/build_info.pyc
+%%PYTHON_SITELIBDIR%%/xpra/bytestreams.py
+%%PYTHON_SITELIBDIR%%/xpra/bytestreams.pyc
 %%PYTHON_SITELIBDIR%%/xpra/client.py
 %%PYTHON_SITELIBDIR%%/xpra/client.pyc
 %%PYTHON_SITELIBDIR%%/xpra/client_base.py
@@ -54,22 +67,29 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/gtk_view_keyboard.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keys.py
 %%PYTHON_SITELIBDIR%%/xpra/keys.pyc
+%%PYTHON_SITELIBDIR%%/xpra/maths.py
+%%PYTHON_SITELIBDIR%%/xpra/maths.pyc
 %%PYTHON_SITELIBDIR%%/xpra/nested_main.py
 %%PYTHON_SITELIBDIR%%/xpra/nested_main.pyc
+%%PYTHON_SITELIBDIR%%/xpra/pixbuf_to_rgb.py
+%%PYTHON_SITELIBDIR%%/xpra/pixbuf_to_rgb.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.pyc
-%%PYTHON_SITELIBDIR%%/xpra/platform/default_clipboard.py
-%%PYTHON_SITELIBDIR%%/xpra/platform/default_clipboard.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/gdk_clipboard.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/gdk_clipboard.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.pyc
 %%PYTHON_SITELIBDIR%%/xpra/protocol.py
 %%PYTHON_SITELIBDIR%%/xpra/protocol.pyc
 %%PYTHON_SITELIBDIR%%/xpra/proxy.py
 %%PYTHON_SITELIBDIR%%/xpra/proxy.pyc
+%%PYTHON_SITELIBDIR%%/xpra/rencode/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/rencode/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/rencode/_rencode.so
 %%PYTHON_SITELIBDIR%%/xpra/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xpra/scripts/client_launcher.py
@@ -90,6 +110,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/wait_for_x_server.so
 %%PYTHON_SITELIBDIR%%/xpra/window_backing.py
 %%PYTHON_SITELIBDIR%%/xpra/window_backing.pyc
+%%PYTHON_SITELIBDIR%%/xpra/window_source.py
+%%PYTHON_SITELIBDIR%%/xpra/window_source.pyc
 %%PYTHON_SITELIBDIR%%/xpra/x264/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/x264/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xpra/x264/codec.so
@@ -101,17 +123,18 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/xposix/gui.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xposix/test_xsettings.py
 %%PYTHON_SITELIBDIR%%/xpra/xposix/test_xsettings.pyc
-%%PYTHON_SITELIBDIR%%/xpra/xposix/xclipboard.py
-%%PYTHON_SITELIBDIR%%/xpra/xposix/xclipboard.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xposix/xroot_props.py
 %%PYTHON_SITELIBDIR%%/xpra/xposix/xroot_props.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xposix/xsettings.py
 %%PYTHON_SITELIBDIR%%/xpra/xposix/xsettings.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/platform
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/rencode
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/vpx
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/x264
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/xposix
 @dirrm %%PYTHON_SITELIBDIR%%/xpra
 @dirrm %%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel
+@dirrm %%PYTHON_SITELIBDIR%%/wimpiggy/gdk
 @dirrm %%PYTHON_SITELIBDIR%%/wimpiggy
+@dirrmtry etc/xpra
