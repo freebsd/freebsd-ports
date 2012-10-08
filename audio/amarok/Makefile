@@ -91,7 +91,7 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 .endif
 
-.if ${PORT_OPTIONS:MPOSTGRESQL}
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-postgresql
 .endif
