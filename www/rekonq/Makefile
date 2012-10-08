@@ -1,12 +1,7 @@
-# New ports collection makefile for:	rekonq
-# Date created:		2009-08-11
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rekonq
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	www kde
 MASTER_SITES=	SF/${PORTNAME}/1.0/
 
