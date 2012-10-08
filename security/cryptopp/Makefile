@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cryptopp
-# Date created:        18 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=		cryptopp
 PORTVERSION=		5.6.1
