@@ -22,8 +22,8 @@ WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS_DEFINE=	MYSQL PGSQL MSSQL LDAP MIMETEX
 OPTIONS_DEFAULT=MYSQL
-MSSQL_DESCR=	MS SQL Server support
-MIMETEX_DESCR=	mimeTeX filter functionality support
+MSSQL_DESC=	MS SQL Server support
+MIMETEX_DESC=	mimeTeX filter functionality support
 
 .include <bsd.port.options.mk>
 
