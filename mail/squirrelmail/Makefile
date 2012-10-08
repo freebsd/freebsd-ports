@@ -7,12 +7,10 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.22
+PORTREVISION=	1
 CATEGORIES=	mail www
-MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION:S/.r/-RC/}:squirrelmail \
-		SF/${PORTNAME}/locales/1.4.18-20090526:locales
-DISTNAME=	${PORTNAME}-webmail-${PORTVERSION:S/.r/-RC/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:squirrelmail \
-		all_locales-1.4.18-20090526${EXTRACT_SUFX}:locales
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
+DISTNAME=	${PORTNAME}-webmail-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -96,9 +94,6 @@ do-build:
 	${RM} -f doc/plugins/squirrelspell/index.php ; \
 	${RM} -rf plugins/squirrelspell/doc
 	@${ECHO} "left_refresh=300" >> ${WRKSRC}/data/default_pref
-	@${CP} -r ${WRKSRC}/../locale ${WRKSRC}
-	@${CP} -r ${WRKSRC}/../images ${WRKSRC}
-	@${CP} -r ${WRKSRC}/../help ${WRKSRC}
 	@${MV} ${WRKSRC}/config/config_local.php ${WRKSRC}/config/config_local.php.sample
 
 pre-install:
