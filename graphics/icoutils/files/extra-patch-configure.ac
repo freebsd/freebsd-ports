@@ -1,0 +1,13 @@
+--- configure.ac.orig	2012-10-08 13:47:35.000000000 +0400
++++ configure.ac	2012-10-08 13:47:59.000000000 +0400
+@@ -69,9 +69,5 @@ AC_CONFIG_FILES([Makefile
+ 		 po/Makefile.in
+ 		 lib/Makefile
+ 		 common/Makefile
+-		 icotool/Makefile
+-		 wrestool/Makefile
+-		 extresso/Makefile])
+-AC_CONFIG_FILES([extresso/extresso], [chmod +x extresso/extresso])
+-AC_CONFIG_FILES([extresso/genresscript], [chmod +x extresso/genresscript])
++		 icotool/Makefile)
+ AC_OUTPUT
