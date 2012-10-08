@@ -24,7 +24,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ARGS=	--with-wx-version=${USE_WX}
+CONFIGURE_ARGS=	--with-wx-version=${USE_WX}\
+		--without-sphinx-build
 USE_GNOME=	libxml2 libxslt
 USE_WX=		2.8
 WX_COMPS=	wx contrib
