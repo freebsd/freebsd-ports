@@ -101,6 +101,7 @@ include/WINGs/WINGs.h
 include/WINGs/WINGsP.h
 include/WINGs/WUtil.h
 include/wraster.h
+include/WMaker.h
 lib/libWINGs.a
 lib/libWINGs.la
 lib/libWINGs.so
@@ -113,6 +114,10 @@ lib/libwraster.a
 lib/libwraster.la
 lib/libwraster.so
 lib/libwraster.so.4
+lib/libWMaker.so.1
+lib/libWMaker.so
+lib/libWMaker.la
+lib/libWMaker.a
 libdata/pkgconfig/WINGs.pc
 libdata/pkgconfig/wrlib.pc
 share/WINGs/Images.tiff
@@ -331,6 +336,7 @@ share/locale/no/LC_MESSAGES/WindowMaker.mo
 share/locale/pl/LC_MESSAGES/WindowMaker.mo
 share/locale/pt/LC_MESSAGES/WPrefs.mo
 share/locale/pt/LC_MESSAGES/WindowMaker.mo
+share/locale/pt/LC_MESSAGES/wmgenmenu.mo
 share/locale/ro/LC_MESSAGES/WindowMaker.mo
 share/locale/ru/LC_MESSAGES/WPrefs.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
