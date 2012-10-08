@@ -38,6 +38,12 @@ MLINKS=	ntfsmount.8 mount_ntfs-fuse.8
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNOMEVFS2}
+WANT_GNOME=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
