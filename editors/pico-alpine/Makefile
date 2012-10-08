@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pico-alpine
-# Date created:				December 21, 2007
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pico-alpine
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-# Created by: Doug Barton <dougb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libwraster

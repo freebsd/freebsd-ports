@@ -1,18 +1,13 @@
-# New ports collection makefile for:	pine-pgp-filters
-# Date created:				22 January 2003
-# Whom:					dougb
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pine-pgp-filters
 PORTVERSION=	1.8
 CATEGORIES=	mail security
-MASTER_SITES=	http://dougbarton.us/PGP/ppf/
+#MASTER_SITES=
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple /bin/sh-based filters to use GnuPG with Alpine
 
 PLIST_FILES=	bin/ppf_mime bin/ppf_mime_decrypt \

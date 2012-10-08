@@ -1,7 +1,3 @@
-# New ports collection makefile for:	hawk
-# Date created:				06 February 2012
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	hawk
@@ -10,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iphawk/iphawk/Hawk%20${PORTVERSION}/
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Track uptime and DNS status for machines on your networks
 
 RUN_DEPENDS=	p5-Net-Netmask>0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	alpine
-# Date created:				December 21, 2007
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME?=	alpine
 PORTVERSION=	2.00
@@ -12,7 +7,7 @@ CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/
 DIST_SUBDIR=	alpine-${PORTVERSION}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Mail and news client descended from Pine
 
 OPTIONS+=	THREADS "Compile with thread support" on \

@@ -1,8 +1,3 @@
-# New ports collection makefile for:	libtorrent-rasterbar-15-python
-# Date created:		Mon Apr 29 01:53:20 UTC 2010
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
-#
 # $FreeBSD$
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

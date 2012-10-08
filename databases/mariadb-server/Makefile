@@ -1,7 +1,3 @@
-# New ports collection makefile for:	mariadb-server
-# Date created:				30 May 2011
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	mariadb

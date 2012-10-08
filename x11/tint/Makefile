@@ -1,9 +1,4 @@
-# New ports collection makefile for:	tint
-# Date created:				21 July 2008
-# Whom:					dougb@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tint2
 PORTVERSION=	0.11
@@ -11,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 
 MAKE_JOBS_SAFE=	yes

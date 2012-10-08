@@ -1,11 +1,5 @@
 # $FreeBSD$
 
-# I stay very aware of developments with BIND in general, and with
-# BIND 9 in particular. I frequently delay updating this port from
-# a known-stable version due to concerns about stability of a newer
-# version. If you are concerned about using the most recent ISC
-# release you can generally build it cleanly from the source - Doug
-
 PORTNAME=	bind99
 PORTVERSION=	9.9.1.3
 CATEGORIES=	dns net ipv6
@@ -15,7 +9,7 @@ DISTNAME=	bind-${ISCVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like

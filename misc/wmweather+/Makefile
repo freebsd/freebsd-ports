@@ -1,6 +1,4 @@
-# New ports collection makefile for:	wmweather+-2.4
-# Date created:				11 April 2003
-# Whom:				Harald Wille <harald.wille@students.jku.at>
+# Created by: Harald Wille <harald.wille@students.jku.at>
 #
 # $FreeBSD$
 
@@ -11,7 +9,7 @@ CATEGORIES=		misc windowmaker geography
 MASTER_SITES=		SF/wmweatherplus/wmweather%2B/
 DISTNAME=		wmweather%2B-${PORTVERSION}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

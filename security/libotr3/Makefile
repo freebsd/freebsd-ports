@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	The portable OTR Messaging Library and toolkit
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Portable OTR Messaging Library and toolkit
 
 BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \

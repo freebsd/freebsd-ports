@@ -1,9 +1,6 @@
-# New ports collection makefile for:	libassuan
-# Date created:		2004-04-19
-# Whom:			Michael Nottebrock <lofi@freebsd.org>
+# Created by: Michael Nottebrock <lofi@freebsd.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	libassuan
 PORTVERSION=	2.0.2
@@ -13,7 +10,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
 LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth \

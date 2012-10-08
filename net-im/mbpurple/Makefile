@@ -1,7 +1,3 @@
-# New ports collection makefile for:	mbpurple
-# Date created:				30 June 2010
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	mbpurple
@@ -10,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrate Twitter with Pidgin (AKA microblog-purple)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \

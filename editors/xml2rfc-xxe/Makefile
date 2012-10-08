@@ -1,6 +1,4 @@
-# New ports collection makefile for:	xml2rfc-xxe
-# Date created:				9 December 2005
-# Whom:					Bill Fenner
+# Created by: Bill Fenner
 #
 # $FreeBSD$
 
@@ -10,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	${XXE_VERSION}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xml2rfc configuration for XMLMind XML editor
 
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe

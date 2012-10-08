@@ -1,6 +1,6 @@
-diff -ur /home/dougb-f/alpine-2.00/alpine/Makefile.am ./alpine/Makefile.am
---- /home/dougb-f/alpine-2.00/alpine/Makefile.am	2008-06-03 08:54:15.000000000 -0700
-+++ ./alpine/Makefile.am	2011-05-22 14:43:01.000000000 -0700
+diff -ur alpine/Makefile.am alpine/Makefile.am
+--- alpine/Makefile.am	2008-06-03 08:54:15.000000000 -0700
++++ alpine/Makefile.am	2011-05-22 14:43:01.000000000 -0700
 @@ -19,7 +19,7 @@
  alpine_SOURCES = addrbook.c adrbkcmd.c after.c alpine.c arg.c busy.c colorconf.c \
  	confscroll.c context.c dispfilt.c flagmaint.c folder.c help.c imap.c \
@@ -10,9 +10,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/Makefile.am ./alpine/Makefile.am
  	roleconf.c send.c setup.c signal.c status.c takeaddr.c titlebar.c smime.c
  
  alpine_LDADD = $(LDADD) $(INTLLIBS)
-diff -ur /home/dougb-f/alpine-2.00/alpine/Makefile.in ./alpine/Makefile.in
---- /home/dougb-f/alpine-2.00/alpine/Makefile.in	2008-06-03 08:54:15.000000000 -0700
-+++ ./alpine/Makefile.in	2011-05-22 14:43:14.000000000 -0700
+diff -ur alpine/Makefile.in alpine/Makefile.in
+--- alpine/Makefile.in	2008-06-03 08:54:15.000000000 -0700
++++ alpine/Makefile.in	2011-05-22 14:43:14.000000000 -0700
 @@ -68,7 +68,7 @@
  	help.$(OBJEXT) imap.$(OBJEXT) init.$(OBJEXT) kblock.$(OBJEXT) \
  	keymenu.$(OBJEXT) ldapconf.$(OBJEXT) listsel.$(OBJEXT) \
@@ -39,9 +39,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/Makefile.in ./alpine/Makefile.in
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pattern.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pipe.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/print.Po@am__quote@
-diff -ur /home/dougb-f/alpine-2.00/alpine/alpine.c ./alpine/alpine.c
---- /home/dougb-f/alpine-2.00/alpine/alpine.c	2008-06-03 15:31:05.000000000 -0700
-+++ ./alpine/alpine.c	2011-05-22 14:42:15.000000000 -0700
+diff -ur alpine/alpine.c alpine/alpine.c
+--- alpine/alpine.c	2008-06-03 15:31:05.000000000 -0700
++++ alpine/alpine.c	2011-05-22 14:42:15.000000000 -0700
 @@ -49,7 +49,6 @@
  #include "init.h"
  #include "remote.h"
@@ -58,9 +58,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/alpine.c ./alpine/alpine.c
  	ClearScreen();
      }
      
-diff -ur /home/dougb-f/alpine-2.00/alpine/mailview.c ./alpine/mailview.c
---- /home/dougb-f/alpine-2.00/alpine/mailview.c	2008-08-01 17:32:26.000000000 -0700
-+++ ./alpine/mailview.c	2011-05-22 14:42:15.000000000 -0700
+diff -ur alpine/mailview.c alpine/mailview.c
+--- alpine/mailview.c	2008-08-01 17:32:26.000000000 -0700
++++ alpine/mailview.c	2011-05-22 14:42:15.000000000 -0700
 @@ -177,7 +177,6 @@
  int	    url_local_nntp(char *);
  int	    url_local_news(char *);
@@ -92,9 +92,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/mailview.c ./alpine/mailview.c
  /*
   * Format editorial comment referencing screen offering
   * List-* header supplied commands
-diff -ur /home/dougb-f/alpine-2.00/alpine/makefile.wnt ./alpine/makefile.wnt
---- /home/dougb-f/alpine-2.00/alpine/makefile.wnt	2007-10-24 14:58:00.000000000 -0700
-+++ ./alpine/makefile.wnt	2011-05-22 14:42:15.000000000 -0700
+diff -ur alpine/makefile.wnt alpine/makefile.wnt
+--- alpine/makefile.wnt	2007-10-24 14:58:00.000000000 -0700
++++ alpine/makefile.wnt	2011-05-22 14:42:15.000000000 -0700
 @@ -44,13 +44,13 @@
  	addrbook.h adrbkcmd.h after.h alpine.h arg.h busy.h colorconf.h confscroll.h \
  	conftype.h context.h dispfilt.h flagmaint.h folder.h headers.h help.h imap.h \
@@ -111,9 +111,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/makefile.wnt ./alpine/makefile.wnt
  	print.obj radio.obj remote.obj reply.obj roleconf.obj \
  	send.obj setup.obj signal.obj status.obj takeaddr.obj titlebar.obj
  
-diff -ur /home/dougb-f/alpine-2.00/alpine/send.c ./alpine/send.c
---- /home/dougb-f/alpine-2.00/alpine/send.c	2008-06-30 15:03:35.000000000 -0700
-+++ ./alpine/send.c	2011-05-22 14:42:15.000000000 -0700
+diff -ur alpine/send.c alpine/send.c
+--- alpine/send.c	2008-06-30 15:03:35.000000000 -0700
++++ alpine/send.c	2011-05-22 14:42:15.000000000 -0700
 @@ -70,8 +70,6 @@
      PARAMETER         *parameter;
  } BODY_PARTICULARS_S;
@@ -187,9 +187,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/send.c ./alpine/send.c
      Set up fields for passing to pico.  Assumes first text part is
      intended to be passed along for editing, and is in the form of
      of a storage object brought into existence sometime before pico_send().
-diff -ur /home/dougb-f/alpine-2.00/alpine/send.h ./alpine/send.h
---- /home/dougb-f/alpine-2.00/alpine/send.h	2007-08-16 15:25:10.000000000 -0700
-+++ ./alpine/send.h	2011-05-22 14:42:15.000000000 -0700
+diff -ur alpine/send.h alpine/send.h
+--- alpine/send.h	2007-08-16 15:25:10.000000000 -0700
++++ alpine/send.h	2011-05-22 14:42:15.000000000 -0700
 @@ -41,7 +41,6 @@
  void	    pine_send(ENVELOPE *, BODY **, char *, ACTION_S *, char *, REPLY_S *,
  		      REDRAFT_POS_S *, char *, PINEFIELD *, int);
@@ -198,9 +198,9 @@ diff -ur /home/dougb-f/alpine-2.00/alpine/send.h ./alpine/send.h
  void        create_message_body(BODY **, PATMT *, int);
  char	   *pine_send_status(int, char *, char *, size_t, int *);
  int	    confirm_daemon_send(void);
-diff -ur /home/dougb-f/alpine-2.00/pith/filter.c ./pith/filter.c
---- /home/dougb-f/alpine-2.00/pith/filter.c	2008-08-21 16:50:47.000000000 -0700
-+++ ./pith/filter.c	2011-05-22 14:42:15.000000000 -0700
+diff -ur pith/filter.c pith/filter.c
+--- pith/filter.c	2008-08-21 16:50:47.000000000 -0700
++++ pith/filter.c	2011-05-22 14:42:15.000000000 -0700
 @@ -7510,8 +7510,6 @@
  		      HD(f)->bitbucket = 0;
  		    else if(!strucmp(s, "running"))
@@ -210,9 +210,9 @@ diff -ur /home/dougb-f/alpine-2.00/pith/filter.c ./pith/filter.c
  #ifdef	_WINDOWS
  		    else if(!strucmp(s, "os_windows"))
  		      HD(f)->bitbucket = 0;
-diff -ur /home/dougb-f/alpine-2.00/pith/pine.hlp ./pith/pine.hlp
---- /home/dougb-f/alpine-2.00/pith/pine.hlp	2008-08-22 17:07:05.000000000 -0700
-+++ ./pith/pine.hlp	2011-05-22 14:42:15.000000000 -0700
+diff -ur pith/pine.hlp pith/pine.hlp
+--- pith/pine.hlp	2008-08-22 17:07:05.000000000 -0700
++++ pith/pine.hlp	2011-05-22 14:42:15.000000000 -0700
 @@ -1204,21 +1204,7 @@
  We hope you will explore Alpine's many capabilities. From the MAIN MENU,
  select Setup/Config to see many of the options available to you. Also note
@@ -279,9 +279,9 @@ diff -ur /home/dougb-f/alpine-2.00/pith/pine.hlp ./pith/pine.hlp
  </BODY>
  </HTML>
  
-diff -ur /home/dougb-f/alpine-2.00/pith/send.c ./pith/send.c
---- /home/dougb-f/alpine-2.00/pith/send.c	2008-08-06 11:25:58.000000000 -0700
-+++ ./pith/send.c	2011-05-22 14:42:15.000000000 -0700
+diff -ur pith/send.c pith/send.c
+--- pith/send.c	2008-08-06 11:25:58.000000000 -0700
++++ pith/send.c	2011-05-22 14:42:15.000000000 -0700
 @@ -209,13 +209,6 @@
  
  
@@ -345,9 +345,9 @@ diff -ur /home/dougb-f/alpine-2.00/pith/send.c ./pith/send.c
  /*----------------------------------------------------------------------
       Call the mailer, SMTP, sendmail or whatever
       
-diff -ur /home/dougb-f/alpine-2.00/pith/send.h ./pith/send.h
---- /home/dougb-f/alpine-2.00/pith/send.h	2008-06-30 15:03:35.000000000 -0700
-+++ ./pith/send.h	2011-05-22 14:42:15.000000000 -0700
+diff -ur pith/send.h pith/send.h
+--- pith/send.h	2008-06-30 15:03:35.000000000 -0700
++++ pith/send.h	2011-05-22 14:42:15.000000000 -0700
 @@ -224,8 +224,6 @@
  void	    pine_free_env(METAENV **);
  int	    check_addresses(METAENV *);
@@ -357,9 +357,9 @@ diff -ur /home/dougb-f/alpine-2.00/pith/send.h ./pith/send.h
  int         call_mailer(METAENV *, BODY *, char **, int, void (*)(char *, int),
  			void (*)(PIPE_S *, int, void *));
  int         write_postponed(METAENV *, BODY *);
-diff -ur /home/dougb-f/alpine-2.00/pith/state.h ./pith/state.h
---- /home/dougb-f/alpine-2.00/pith/state.h	2008-06-03 08:54:15.000000000 -0700
-+++ ./pith/state.h	2011-05-22 14:42:15.000000000 -0700
+diff -ur pith/state.h pith/state.h
+--- pith/state.h	2008-06-03 08:54:15.000000000 -0700
++++ pith/state.h	2011-05-22 14:42:15.000000000 -0700
 @@ -187,7 +187,6 @@
      unsigned	 force_prefer_plain:1;
      unsigned	 force_no_prefer_plain:1;
@@ -368,9 +368,9 @@ diff -ur /home/dougb-f/alpine-2.00/pith/state.h ./pith/state.h
      unsigned     painted_body_on_startup:1;
      unsigned     painted_footer_on_startup:1;
      unsigned     open_readonly_on_startup:1;
-diff -ur /home/dougb-f/alpine-2.00/po/POTFILES.in ./po/POTFILES.in
---- /home/dougb-f/alpine-2.00/po/POTFILES.in	2008-06-03 12:27:23.000000000 -0700
-+++ ./po/POTFILES.in	2011-05-22 14:42:15.000000000 -0700
+diff -ur po/POTFILES.in po/POTFILES.in
+--- po/POTFILES.in	2008-06-03 12:27:23.000000000 -0700
++++ po/POTFILES.in	2011-05-22 14:42:15.000000000 -0700
 @@ -50,7 +50,6 @@
  alpine/context.c
  alpine/pine-use.c

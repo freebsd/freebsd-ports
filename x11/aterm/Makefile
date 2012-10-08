@@ -1,9 +1,6 @@
-# New ports collection makefile for:   aterm
-# Date created:		17 January 1999
-# Whom:			Jim Mock <jim@FreeBSD.org>
+# Created by: Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
@@ -11,8 +8,8 @@ PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	A color vt102 terminal emulator with transparency support
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Color vt102 terminal emulator with transparency support
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

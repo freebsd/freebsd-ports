@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libbind
-# Date created:				9 August 2009
-# Whom:					dougb
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libbind
 PORTVERSION=	6.0
@@ -14,7 +9,7 @@ MASTER_SITE_SUBDIR=	libbind/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard C resolver library
 
 MAKE_JOBS_UNSAFE=	yes

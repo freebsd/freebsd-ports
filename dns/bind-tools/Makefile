@@ -1,13 +1,8 @@
-# New ports collection makefile for:	BIND Tools
-# Date created:				1 April 2010
-# Whom:					dougb
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bind-tools
 
-COMMENT=	The command line tools from BIND: dig, host, and nslookup
+COMMENT=	Command line tools from BIND: dig, host, and nslookup
 
 CONFIGURE_ARGS+=	--disable-shared
 

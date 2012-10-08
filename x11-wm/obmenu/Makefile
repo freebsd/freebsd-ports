@@ -1,9 +1,4 @@
-# New ports collection makefile for:	obmenu
-# Date created:				2007-12-18
-# Whom:					dougb
-#
 # $FreeBSD$
-#
 
 PORTNAME=	obmenu
 PORTVERSION=	1.0
@@ -11,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 
 USE_GNOME=		pygtk2

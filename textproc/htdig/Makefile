@@ -1,9 +1,6 @@
-# New ports collection makefile for:   htdig
-# Date created:        18 August 1998
-# Whom:                Bill Fumerola <billf@chc-chimes.com>
+# Created by: Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
@@ -13,8 +10,8 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/3.2.0b6
 DISTNAME=	htdig-3.2.0b6
 
-MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	A www indexing and searching system
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	WWW indexing and searching system
 
 MAKE_JOBS_SAFE=	yes
 

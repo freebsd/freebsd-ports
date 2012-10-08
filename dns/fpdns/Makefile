@@ -1,6 +1,4 @@
-# New ports collection makefile for:	fpdns
-# Date Created:				July 2 2004
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 #
 # $FreeBSD$
 
@@ -10,7 +8,7 @@ CATEGORIES=	dns net perl5
 MASTER_SITES=	https://github.com/kirei/fpdns/tarball/${GITVERSION}/
 DISTNAME=	kirei-fpdns-${GITVERSION}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FPDNS - Fingerprinting DNS servers
 
 FETCH_ARGS=	-Fpr

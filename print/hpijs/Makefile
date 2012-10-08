@@ -1,9 +1,4 @@
-# New ports collection makefile for:	hpijs
-# Date created:		1 May 2002
-# Whom:			ports@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hpijs
 PORTVERSION=	2.1.4
@@ -11,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	SF/hpinkjet/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg

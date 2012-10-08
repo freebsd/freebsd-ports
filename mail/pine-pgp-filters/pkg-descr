@@ -5,5 +5,3 @@ for inline messages, I added pseudo-filters to verify or decrypt messages
 that were sent using MIME encoding.
 
 See the INSTALL file for instructions on how to configure these filters.
-
-WWW: http://dougbarton.us/PGP/ppf/

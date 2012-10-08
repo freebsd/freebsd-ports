@@ -1,22 +1,16 @@
-# New ports collection makefile for: sirc
-# Date created:			4 May 1998
-# Whom:				Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	sirc
 PORTVERSION=	2.211
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
-		http://dougbarton.us/Downloads/sirc/ \
-		http://www.iagora.com/~espel/sirc/scripts/:s \
-		http://dougbarton.us/Downloads/sirc/scripts/:s
+#MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
+#		http://www.iagora.com/~espel/sirc/scripts/:s \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	sirc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small (150k), fast, perl-based IRC client
 
 USE_PERL5=	yes
