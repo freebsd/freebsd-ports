@@ -1,18 +1,17 @@
-# New Ports collection makefile for:	xgalaga++
-# Date created:		2012-04-20
-# Whom:			nemysis@gmx.ch
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xgalaga++
 PORTVERSION=	0.8.3
 CATEGORIES=	games
-MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/ \
+		http://packages.nimblex.net/slacky/games/xgalaga++/0.8.2/src/:icons
+DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A classic single screen vertical shoot em up
+COMMENT=	Classic single screen vertical shoot em up
 
 LICENSE=	GPLv2
 
@@ -21,13 +20,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 USE_XORG=	x11 xpm
-MAN6=		xgalaga++.6x
+MAN6=		xgalaga++.6
 
 SUB_FILES=	pkg-install
 
-PLIST_FILES=	bin/xgalaga++
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
+
+DESKTOP_ENTRIES="XGalaga++" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
 .include <bsd.port.options.mk>
 
@@ -37,14 +40,14 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
-	${CHOWN} :games ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${MAN6}x ${MAN6PREFIX}/man/man6/${MAN6}
+	${CHGRP} games ${PREFIX}/bin/${PORTNAME}
 	${CHMOD} g+s  ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
