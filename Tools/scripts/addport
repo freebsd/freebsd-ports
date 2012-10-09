@@ -58,7 +58,7 @@ sub lastcomment();
 
 my %opts;
 
-getopts('ac:d:fh:il:L:M:mns:tu:y', \%opts);
+getopts('ac:d:fh:il:L:mns:tu:y', \%opts);
 
 my $autofill_l = $opts{'l'};
 my $autofill_L = $opts{'L'};
@@ -71,7 +71,6 @@ $h = $opts{'h'} if ($opts{'h'} ne "");
 my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
 my $more_testing = $opts{'t'};
-my $moduleshost = $opts{'M'};
 my $interactive = $opts{'i'};
 my $nomkdir = $opts{'m'};
 my $addlchk = $opts{'a'};
@@ -110,9 +109,6 @@ my $tmp; my $pkgcommentlen; my $comment; my $maintainer;
 my $tmp2; my $offset; my $commitfile = "";
 my $moved = "";
 $tmp = $tmp2 = $offset = 0;
-
-chomp(my $myhost = lc(hostname()));
-$moduleshost = $myhost if ($moduleshost eq "");
 
 # Check the editor.
 my $edit = "/usr/bin/vi";
@@ -504,8 +500,8 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-c commitfile] [-h host] [-l PR number] [-s distdir] [-u user]
-	   [-abfimnt] -d directory
+	$0 [-c commitfile] [-h host] [-l PR number | -L PR number]
+	   [-s distdir] [-u user] [-afimnty] -d directory
 
 	Where "directory" contains the comma-delimited list
 	of root directories of new ports that you wish to
