@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121009:
+  AFFECTS: users of multimedia/vdpau-video
+  AUTHOR: madpilot@FreeBSD.org
+
+  vdpau-video has been renamed upstream to libva-vdpau-driver. The
+  port has been changed accordingly.
+
+  Please update the port origins as follows:
+
+  # portmaster -o multimedia/vdpau-video multimedia/libva-vdpau-driver
+  or
+  # portupgrade -fo multimedia/vdpau-video multimedia/libva-vdpau-driver
+  or
+  # pkg set -o multimedia/vdpau-video:multimedia/libva-vdpau-driver
+
 20121008:
   AFFECTS: users of mail/squirrelmail
   AUTHOR: adamw@FreeBSD.org
