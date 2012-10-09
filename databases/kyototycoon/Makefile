@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kyototycoon
-# Date created:		2011-10-04
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kyototycoon
 PORTVERSION=	0.9.56
@@ -14,7 +10,11 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A handy cache/storage server
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	kyotocabinet:${PORTSDIR}/databases/kyotocabinet
+
+OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS=	--enable-profile --enable-uyield
 GNU_CONFIGURE=	yes
@@ -32,8 +32,10 @@ MAN1=		ktremotemgr.1 \
 		ktutilserv.1 \
 		ktutiltest.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
 .endif
 
@@ -41,7 +43,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${FIND} ${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
 	${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
