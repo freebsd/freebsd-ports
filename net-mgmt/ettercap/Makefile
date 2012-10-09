@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ettercap
-# Date created:        19 February 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ettercap
 PORTVERSION=	0.7.4.1
@@ -18,11 +14,11 @@ COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
-OPTIONS=	GTK	"Build with GTK2+ GUI" on \
-		ICONV	"Build with support for UTF-8" on \
-		PCRE	"Build with PCRE regexps in filters" on \
-		PLUGINS	"Build with ettercap plugins" on \
-		SSL	"Build with support for SSH1 and SSL decryption" on
+# GTK -> GTK2, ICONV -> UTF8
+OPTIONS_DEFINE=	DOCS GTK2 PCRE PLUGINS SSL UTF8
+OPTIONS_DEFAULT=GTK2 PCRE PLUGINS SSL UTF8
+PCRE_DESC=	Use PCRE in filters
+SSL_DESC=	SSH1 and SSL decryption support
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	LIBS="${LDFLAGS}"
@@ -36,49 +32,49 @@ USE_BISON=	build
 WANT_GNOME=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN5=		etter.conf.5
-MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/threads
+MAN5=		etter.conf.5
+MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GTK)
-USE_GNOME=	atk glib20 gtk20 pango
+.if ${PORT_OPTIONS:MGTK2}
 PKGNAMESUFFIX+=	-gtk2
 CONFIGURE_ARGS+=--enable-gtk
+USE_GNOME=	atk glib20 gtk20 pango
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif
 
-.if !defined(WITHOUT_ICONV)
-USE_ICONV=	yes
+.if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
+USE_ICONV=	yes
 .endif
 
-.if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-libpcre=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-libpcre
 .endif
 
-.if !defined(WITHOUT_PLUGINS)
-MAN8+=		ettercap_plugins.8
-DOCS+=		doc/plugins
+.if ${PORT_OPTIONS:MPLUGINS}
 CONFIGURE_ARGS+=--enable-plugins
+DOCS+=		doc/plugins
+MAN8+=		ettercap_plugins.8
 PLIST_SUB+=	PLUGINS=""
 .else
 CONFIGURE_ARGS+=--disable-plugins
 PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=--without-openssl
 .endif
@@ -109,7 +105,7 @@ post-install:
 .if !exists(${PREFIX}/etc/etter.conf)
 	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${PREFIX}/etc/etter.conf
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
