@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-httpauth
-# Date created:		2012-04-16
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	httpauth
-PORTVERSION=	0.1
+PORTVERSION=	0.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
