@@ -1,5 +1,5 @@
---- Makefile	2011-07-05 14:29:12.000000000 -0400
-+++ Makefile	2011-07-07 19:17:02.000000000 -0400
+--- Makefile
++++ Makefile
 @@ -236,6 +236,18 @@
  
  clean: clobber
@@ -19,8 +19,8 @@
  #
  # Dev builds
  #
---- corba/make/common/Defs-bsd.gmk	2011-07-07 19:16:00.000000000 -0400
-+++ corba/make/common/Defs-bsd.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/Defs-bsd.gmk
++++ corba/make/common/Defs-bsd.gmk
 @@ -40,18 +40,12 @@
  # Get shared JDK settings
  include $(BUILDDIR)/common/shared/Defs.gmk
@@ -142,8 +142,8 @@
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
  override THREADS_FLAG            = native
---- corba/make/common/Defs-linux.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/Defs-linux.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/Defs-linux.gmk
++++ corba/make/common/Defs-linux.gmk
 @@ -290,7 +290,7 @@
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
@@ -153,8 +153,8 @@
  ifeq ($(ARCH), amd64)
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
  else
---- corba/make/common/Defs.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/Defs.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/Defs.gmk
++++ corba/make/common/Defs.gmk
 @@ -53,6 +53,24 @@
  
  _OUTPUTDIR=$(TOPDIR)/build/$(PLATFORM)-$(ARCH)
@@ -190,8 +190,8 @@
  endif # PROGRAM
  
  LDLIBS_COMMON += $(EXTRA_LIBS)
---- corba/make/common/Mapfile-vers.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/Mapfile-vers.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/Mapfile-vers.gmk
++++ corba/make/common/Mapfile-vers.gmk
 @@ -77,7 +77,7 @@
  endif # PLATFORM
  
@@ -201,8 +201,8 @@
  
  ifeq ($(VARIANT), OPT)
    # OPT build MUST have a mapfile?
---- corba/make/common/shared/Compiler-gcc.gmk	2012-05-01 17:14:04.000000000 -0400
-+++ corba/make/common/shared/Compiler-gcc.gmk	2012-09-11 18:17:45.000000000 -0400
+--- corba/make/common/shared/Compiler-gcc.gmk
++++ corba/make/common/shared/Compiler-gcc.gmk
 @@ -100,6 +100,24 @@
  
  endif
@@ -228,8 +228,8 @@
  ifeq ($(PLATFORM), solaris)
  
    # Settings specific to Solaris
---- corba/make/common/shared/Compiler.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/shared/Compiler.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/shared/Compiler.gmk
++++ corba/make/common/shared/Compiler.gmk
 @@ -42,6 +42,11 @@
    override CC_VERSION = gcc
  endif
@@ -242,8 +242,8 @@
  # Get the compiler specific settings
  include $(BUILDDIR)/common/shared/Compiler-$(CC_VERSION).gmk
  
---- corba/make/common/shared/Defs-bsd.gmk	2011-07-07 19:16:00.000000000 -0400
-+++ corba/make/common/shared/Defs-bsd.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/shared/Defs-bsd.gmk
++++ corba/make/common/shared/Defs-bsd.gmk
 @@ -54,7 +54,7 @@
  endef
  
@@ -262,8 +262,8 @@
  endif
  
  # _BOOTDIR1: First choice for a Bootstrap JDK, previous released JDK.
---- corba/make/common/shared/Defs-java.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/shared/Defs-java.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/shared/Defs-java.gmk
++++ corba/make/common/shared/Defs-java.gmk
 @@ -38,7 +38,7 @@
    #   Suspect this may not be needed anymore.
    JAVA_MEM_FLAGS   += -Xms$(MAX_VM_MEMORY)m -XX:-Inline
@@ -273,8 +273,8 @@
  endif
  
  # 
---- corba/make/common/shared/Defs-utils.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/shared/Defs-utils.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/shared/Defs-utils.gmk
++++ corba/make/common/shared/Defs-utils.gmk
 @@ -53,6 +53,13 @@
    UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
  endif
@@ -322,8 +322,8 @@
 +    TAR        = $(UTILS_USR_BIN_PATH)tar
 +  endif
 +endif
---- corba/make/common/shared/Platform.gmk	2011-07-05 14:29:22.000000000 -0400
-+++ corba/make/common/shared/Platform.gmk	2011-07-07 19:17:02.000000000 -0400
+--- corba/make/common/shared/Platform.gmk
++++ corba/make/common/shared/Platform.gmk
 @@ -261,6 +261,76 @@
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | sed -e 's@\ \ *@ @g' | cut -d' ' -f2)
  endif
@@ -401,7 +401,7 @@
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -375,7 +445,14 @@
+@@ -408,7 +478,14 @@
  #    build machines and adjustments will be made to prevent excessing
  #    system swapping during the build.
  #    If we don't know, assume 512. Subtract 128 from MB for VM MAX.
@@ -417,7 +417,7 @@
  ifneq ($(MB_OF_MEMORY),)
    LOW_MEMORY_MACHINE := $(shell \
      if [ $(MB_OF_MEMORY) -le 512 ] ; then \
-@@ -387,7 +464,7 @@
+@@ -420,7 +497,7 @@
      if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
        expr $(MB_OF_MEMORY) '-' 128 ; \
      else \
@@ -426,8 +426,8 @@
      fi)
    MIN_VM_MEMORY := $(shell \
      if [ $(MAX_VM_MEMORY) -le 128 ] ; then \
---- hotspot/agent/make/Makefile	2011-07-05 14:30:51.000000000 -0400
-+++ hotspot/agent/make/Makefile	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/make/Makefile
++++ hotspot/agent/make/Makefile
 @@ -52,6 +52,9 @@
  sun.jvm.hotspot.compiler \
  sun.jvm.hotspot.debugger \
@@ -468,8 +468,8 @@
  sun/jvm/hotspot/runtime/ia64/*.java \
  sun/jvm/hotspot/runtime/linux/*.java \
  sun/jvm/hotspot/runtime/linux_amd64/*.java \
---- hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/BsdDebuggerLocal.c
++++ hotspot/agent/src/os/bsd/BsdDebuggerLocal.c
 @@ -22,6 +22,7 @@
   *
   */
@@ -609,8 +609,8 @@
  
  #endif /* amd64 */
  
---- hotspot/agent/src/os/bsd/Makefile	2012-05-01 17:15:02.000000000 -0400
-+++ hotspot/agent/src/os/bsd/Makefile	2012-09-18 17:50:06.000000000 -0400
+--- hotspot/agent/src/os/bsd/Makefile
++++ hotspot/agent/src/os/bsd/Makefile
 @@ -22,8 +22,8 @@
  #  
  #
@@ -686,8 +686,8 @@
 +	rm -f test.o
 +	-rmdir $(ARCH)
  
---- hotspot/agent/src/os/bsd/elfmacros.h	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/elfmacros.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/elfmacros.h
++++ hotspot/agent/src/os/bsd/elfmacros.h
 @@ -25,16 +25,19 @@
  #ifndef _ELFMACROS_H_
  #define _ELFMACROS_H_
@@ -723,8 +723,8 @@
  
  #endif
  
---- hotspot/agent/src/os/bsd/libproc.h	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/libproc.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/libproc.h
++++ hotspot/agent/src/os/bsd/libproc.h
 @@ -27,7 +27,8 @@
  
  #include <unistd.h>
@@ -785,8 +785,8 @@
  
  // get number of shared objects
  int get_num_libs(struct ps_prochandle* ph);
---- hotspot/agent/src/os/bsd/libproc_impl.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/libproc_impl.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/libproc_impl.c
++++ hotspot/agent/src/os/bsd/libproc_impl.c
 @@ -174,10 +174,13 @@
        return NULL;
     }
@@ -929,8 +929,8 @@
 +  print_debug("ps_pcontinue not implemented\n");
    return PS_OK;
  }
---- hotspot/agent/src/os/bsd/libproc_impl.h	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/libproc_impl.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/libproc_impl.h
++++ hotspot/agent/src/os/bsd/libproc_impl.h
 @@ -47,7 +47,7 @@
  typedef struct thread_info {
     lwpid_t                  lwp_id;
@@ -984,8 +984,8 @@
  
  // a test for ELF signature without using libelf
  bool is_elf_file(int fd);
---- hotspot/agent/src/os/bsd/mapfile	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/mapfile	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/mapfile
++++ hotspot/agent/src/os/bsd/mapfile
 @@ -43,13 +43,17 @@
  		# proc_service.h functions - to be used by libthread_db
  		ps_getpid;
@@ -1007,8 +1007,8 @@
  
                  # used by attach test program
                  init_libproc;
---- hotspot/agent/src/os/bsd/proc_service.h	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/proc_service.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/proc_service.h
++++ hotspot/agent/src/os/bsd/proc_service.h	1969-12-31 19:00:00.000000000 -0500
 @@ -1,76 +0,0 @@
 -/*
 - * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
@@ -1086,8 +1086,8 @@
 -ps_err_e ps_get_thread_area();
 -
 -#endif /* _PROC_SERVICE_H_ */
---- hotspot/agent/src/os/bsd/ps_core.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/ps_core.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/ps_core.c
++++ hotspot/agent/src/os/bsd/ps_core.c
 @@ -142,6 +142,7 @@
  
     map->next = ph->core->class_share_maps;
@@ -1409,8 +1409,8 @@
  
     struct ps_prochandle* ph = (struct ps_prochandle*) calloc(1, sizeof(struct ps_prochandle));
     if (ph == NULL) {
---- hotspot/agent/src/os/bsd/ps_proc.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/ps_proc.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/ps_proc.c
++++ hotspot/agent/src/os/bsd/ps_proc.c
 @@ -22,20 +22,22 @@
   *
   */
@@ -1982,8 +1982,8 @@
 -  }
    return ph;
  }
---- hotspot/agent/src/os/bsd/salibelf.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/salibelf.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/salibelf.c
++++ hotspot/agent/src/os/bsd/salibelf.c
 @@ -25,6 +25,7 @@
  #include "salibelf.h"
  #include <stdlib.h>
@@ -1992,8 +1992,8 @@
  
  extern void print_debug(const char*,...);
  
---- hotspot/agent/src/os/bsd/symtab.c	2012-01-12 17:22:08.000000000 -0500
-+++ hotspot/agent/src/os/bsd/symtab.c	2012-01-12 16:54:45.000000000 -0500
+--- hotspot/agent/src/os/bsd/symtab.c
++++ hotspot/agent/src/os/bsd/symtab.c
 @@ -23,10 +23,11 @@
   */
  
@@ -2538,8 +2538,8 @@
    }
    return NULL;
  }
---- hotspot/agent/src/os/bsd/symtab.h	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/symtab.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/symtab.h
++++ hotspot/agent/src/os/bsd/symtab.h
 @@ -32,7 +32,7 @@
  struct symtab;
  
@@ -2549,8 +2549,8 @@
  
  // destroy the symbol table
  void destroy_symtab(struct symtab* symtab);
---- hotspot/agent/src/os/bsd/test.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/test.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/test.c
++++ hotspot/agent/src/os/bsd/test.c
 @@ -44,7 +44,7 @@
        }
  
@@ -2560,8 +2560,8 @@
          return 1;
        }
     }
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	2011-07-05 14:30:52.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java
 @@ -28,6 +28,7 @@
  import java.net.*;
  import java.rmi.*;
@@ -2631,8 +2631,8 @@
      /** Convenience routine which should be called by per-platform
        debugger setup. Should not be called when startupMode is
        REMOTE_MODE. */
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java	2011-07-05 14:30:53.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java
 @@ -29,6 +29,7 @@
  import java.rmi.*;
  import sun.jvm.hotspot.*;
@@ -2704,8 +2704,8 @@
      /** Convenience routine which should be called by per-platform
        debugger setup. Should not be called when startupMode is
        REMOTE_MODE. */
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java
 @@ -30,10 +30,8 @@
  import sun.jvm.hotspot.debugger.cdbg.*;
  import sun.jvm.hotspot.debugger.x86.*;
@@ -2731,8 +2731,8 @@
      } else {
         throw new DebuggerException(cpu + " is not yet supported");
      }
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java
 @@ -26,9 +26,7 @@
  
  import sun.jvm.hotspot.debugger.*;
@@ -2754,8 +2754,8 @@
        } else {
           throw new RuntimeException("cpu " + cpu + " is not yet supported");
        }
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/ConnectorImpl.java	2011-07-05 14:30:54.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/ConnectorImpl.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/ConnectorImpl.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/ConnectorImpl.java
 @@ -217,7 +217,7 @@
      }
  
@@ -2765,8 +2765,8 @@
              // link "saproc" - SA native library on SunOS and Linux?
              sm.checkLink("saproc");
          } else if (os.startsWith("Windows")) {
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/SAPIDAttachingConnector.java	2011-07-05 14:30:54.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/SAPIDAttachingConnector.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/SAPIDAttachingConnector.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/jdi/SAPIDAttachingConnector.java
 @@ -66,7 +66,7 @@
              try {
                  // Whether the caller can perform link against SA native library?
@@ -2776,8 +2776,8 @@
                      // Whether the caller can read /proc/<pid> file?
                      sm.checkRead("/proc/" + pid);
                  }
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	2011-07-05 14:30:55.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java
 @@ -37,6 +37,8 @@
  import sun.jvm.hotspot.runtime.linux_ia64.LinuxIA64JavaThreadPDAccess;
  import sun.jvm.hotspot.runtime.linux_amd64.LinuxAMD64JavaThreadPDAccess;
@@ -2801,8 +2801,8 @@
          }
  
          if (access == null) {
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd/BsdSignals.java	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd/BsdSignals.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd/BsdSignals.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd/BsdSignals.java
 @@ -28,37 +28,36 @@
    private static String[] signalNames = {
      "",           /* No signal 0 */
@@ -2863,8 +2863,8 @@
    };
  
    public static String getSignalName(int sigNum) {
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_x86/BsdSignals.java	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_x86/BsdSignals.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_x86/BsdSignals.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_x86/BsdSignals.java
 @@ -28,37 +28,36 @@
    private static String[] signalNames = {
      "",           /* No signal 0 */
@@ -2925,8 +2925,8 @@
    };
  
    public static String getSignalName(int sigNum) {
---- hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	2011-07-05 14:30:55.000000000 -0400
-+++ hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java
 @@ -37,6 +37,14 @@
        return "solaris";
      } else if (os.equals("Linux")) {
@@ -2942,8 +2942,8 @@
      } else if (os.startsWith("Windows")) {
        return "win32";
      } else {
---- hotspot/make/Makefile	2011-07-05 14:30:56.000000000 -0400
-+++ hotspot/make/Makefile	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/Makefile
++++ hotspot/make/Makefile
 @@ -321,28 +321,28 @@
  ifneq ($(OSNAME),windows)
    ifeq ($(ZERO_BUILD), true)
@@ -2983,8 +2983,8 @@
  	$(install-file)
    endif
  endif
---- hotspot/make/bsd/Makefile	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/Makefile	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/Makefile
++++ hotspot/make/bsd/Makefile
 @@ -39,11 +39,11 @@
  # One can set ALT_BOOTDIR or BOOTDIR to point to a jdk that runs on
  # an architecture that differs from the target architecture, as long
@@ -3017,14 +3017,14 @@
  # Solaris 2.5.1, 2.6).
  # Disable this check by setting DISABLE_HOTSPOT_OS_VERSION_CHECK=ok.
  
--SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 2.7%
-+#SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 2.7%
+-SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3%
++#SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3%
 +DISABLE_HOTSPOT_OS_VERSION_CHECK = ok
  OS_VERSION := $(shell uname -r)
  EMPTY_IF_NOT_SUPPORTED = $(filter $(SUPPORTED_OS_VERSION),$(OS_VERSION))
  
---- hotspot/make/bsd/makefiles/adlc.make	2012-05-01 17:15:06.000000000 -0400
-+++ hotspot/make/bsd/makefiles/adlc.make	2012-09-17 19:50:44.000000000 -0400
+--- hotspot/make/bsd/makefiles/adlc.make
++++ hotspot/make/bsd/makefiles/adlc.make
 @@ -60,7 +60,8 @@
  
  # CFLAGS_WARN holds compiler options to suppress/enable warnings.
@@ -3035,8 +3035,8 @@
  CFLAGS += $(CFLAGS_WARN)
  
  OBJECTNAMES = \
---- hotspot/make/bsd/makefiles/buildtree.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/buildtree.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/buildtree.make
++++ hotspot/make/bsd/makefiles/buildtree.make
 @@ -303,10 +303,11 @@
  	[ -n "$$JAVA_HOME" ] && { echo ": \$${JAVA_HOME:=$${JAVA_HOME}}"; }; \
  	{ \
@@ -3050,8 +3050,8 @@
  	) > $@
  
  env.csh: env.sh
---- hotspot/make/bsd/makefiles/cscope.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/cscope.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/cscope.make
++++ hotspot/make/bsd/makefiles/cscope.make
 @@ -71,7 +71,7 @@
  # OS-specific files for other systems are excluded by default.  Use CS_OS=yes
  # to include platform-specific files for other platforms.
@@ -3061,8 +3061,8 @@
  CS_PRUNE_OS	= $(patsubst %,-o -name '*%*',$(filter-out ${OS},${CS_OS}))
  endif
  
---- hotspot/make/bsd/makefiles/defs.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/defs.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/defs.make
++++ hotspot/make/bsd/makefiles/defs.make
 @@ -72,8 +72,8 @@
    HS_ARCH            = sparc
  endif
@@ -3169,8 +3169,8 @@
  EXPORT_LIST += $(ADD_SA_BINARIES/$(HS_ARCH))
 -
 -
---- hotspot/make/bsd/makefiles/gcc.make	2012-05-01 17:15:06.000000000 -0400
-+++ hotspot/make/bsd/makefiles/gcc.make	2012-09-18 11:31:25.000000000 -0400
+--- hotspot/make/bsd/makefiles/gcc.make
++++ hotspot/make/bsd/makefiles/gcc.make
 @@ -22,20 +22,24 @@
  #  
  #
@@ -3303,8 +3303,8 @@
  
  #------------------------------------------------------------------------
  # Debug flags
---- hotspot/make/bsd/makefiles/jsig.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/jsig.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/jsig.make
++++ hotspot/make/bsd/makefiles/jsig.make
 @@ -25,11 +25,16 @@
  # Rules to build signal interposition library, used by vm.make
  
@@ -3344,8 +3344,8 @@
  	$(QUIETLY) [ -f $(LIBJSIG_G) ] || { ln -s $@ $(LIBJSIG_G); }
  
  install_jsig: $(LIBJSIG)
---- hotspot/make/bsd/makefiles/launcher.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/launcher.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/launcher.make
++++ hotspot/make/bsd/makefiles/launcher.make
 @@ -50,7 +50,7 @@
    LIBS_LAUNCHER             += $(STATIC_STDCXX) $(LIBS)
  else
@@ -3355,8 +3355,8 @@
    LIBS_LAUNCHER             += -l$(JVM) $(LIBS)
  endif
  
---- hotspot/make/bsd/makefiles/sa.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/sa.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/sa.make
++++ hotspot/make/bsd/makefiles/sa.make
 @@ -45,8 +45,8 @@
  
  # gnumake 3.78.1 does not accept the *s that
@@ -3368,8 +3368,8 @@
  
  AGENT_FILES1_LIST := $(GENERATED)/agent1.classes.list
  AGENT_FILES2_LIST := $(GENERATED)/agent2.classes.list
---- hotspot/make/bsd/makefiles/saproc.make	2012-01-12 17:22:09.000000000 -0500
-+++ hotspot/make/bsd/makefiles/saproc.make	2012-01-12 16:55:29.000000000 -0500
+--- hotspot/make/bsd/makefiles/saproc.make
++++ hotspot/make/bsd/makefiles/saproc.make
 @@ -25,23 +25,33 @@
  # Rules to build serviceability agent library, used by vm.make
  
@@ -3436,8 +3436,8 @@
  	$(QUIETLY) [ -f $(LIBSAPROC_G) ] || { ln -s $@ $(LIBSAPROC_G); }
  
  install_saproc: $(BUILDLIBSAPROC)
---- hotspot/make/bsd/makefiles/vm.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/vm.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/makefiles/vm.make
++++ hotspot/make/bsd/makefiles/vm.make
 @@ -91,6 +91,10 @@
    ${JRE_VERSION}     \
    ${VM_DISTRO}
@@ -3555,24 +3555,24 @@
  	}
  
  DEST_JVM = $(JDK_LIBDIR)/$(VM_SUBDIR)/$(LIBJVM)
---- hotspot/make/bsd/platform_amd64	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/platform_amd64	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/platform_amd64
++++ hotspot/make/bsd/platform_amd64
 @@ -12,4 +12,4 @@
  
  compiler = gcc
  
 -sysdefs = -DBSD -D_GNU_SOURCE -DAMD64
 +sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DAMD64
---- hotspot/make/bsd/platform_i486	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/platform_i486	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/bsd/platform_i486
++++ hotspot/make/bsd/platform_i486
 @@ -12,4 +12,4 @@
  
  compiler = gcc
  
 -sysdefs = -DBSD -D_GNU_SOURCE -DIA32
 +sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DIA32
---- hotspot/make/defs.make	2011-07-05 14:30:56.000000000 -0400
-+++ hotspot/make/defs.make	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/defs.make
++++ hotspot/make/defs.make
 @@ -118,13 +118,23 @@
  # Windows should have OS predefined
  ifeq ($(OS),)
@@ -3599,8 +3599,8 @@
    else
      OSNAME=solaris
    endif
---- hotspot/make/sa.files	2011-07-05 14:30:56.000000000 -0400
-+++ hotspot/make/sa.files	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/make/sa.files
++++ hotspot/make/sa.files
 @@ -50,6 +50,9 @@
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/compiler/*.java \
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/*.java \
@@ -3621,8 +3621,8 @@
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/ia64/*.java \
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/linux/*.java \
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/runtime/linux_amd64/*.java \
---- hotspot/src/cpu/x86/vm/bytes_x86.hpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/bytes_x86.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/bytes_x86.hpp
++++ hotspot/src/cpu/x86/vm/bytes_x86.hpp
 @@ -81,6 +81,9 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "bytes_windows_x86.inline.hpp"
@@ -3633,8 +3633,8 @@
  
  
  #endif // CPU_X86_VM_BYTES_X86_HPP
---- hotspot/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp
++++ hotspot/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp
 @@ -481,8 +481,8 @@
    // Fetch the exception from TLS and clear out exception related thread state
    __ get_thread(rsi);
@@ -3646,8 +3646,8 @@
  
    __ bind(_unwind_handler_entry);
    __ verify_not_null_oop(rax);
---- hotspot/src/cpu/x86/vm/copy_x86.hpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/copy_x86.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/copy_x86.hpp
++++ hotspot/src/cpu/x86/vm/copy_x86.hpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "copy_windows_x86.inline.hpp"
@@ -3658,8 +3658,8 @@
  
  
  static void pd_fill_to_words(HeapWord* tohw, size_t count, juint value) {
---- hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp
++++ hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp
 @@ -45,6 +45,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -3688,8 +3688,8 @@
      // index is positive and so should have correct value if this code were
      // used on 64bits
      imulptr(index, reg2);
---- hotspot/src/cpu/x86/vm/interp_masm_x86_64.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/interp_masm_x86_64.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/interp_masm_x86_64.cpp
++++ hotspot/src/cpu/x86/vm/interp_masm_x86_64.cpp
 @@ -45,6 +45,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -3700,8 +3700,8 @@
  
  
  // Implementation of InterpreterMacroAssembler
---- hotspot/src/cpu/x86/vm/jni_x86.h	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/jni_x86.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/jni_x86.h
++++ hotspot/src/cpu/x86/vm/jni_x86.h
 @@ -26,7 +26,7 @@
  #ifndef _JAVASOFT_JNI_MD_H_
  #define _JAVASOFT_JNI_MD_H_
@@ -3711,8 +3711,8 @@
    #define JNIEXPORT
    #define JNIIMPORT
    #define JNICALL
---- hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp
++++ hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp
 @@ -47,6 +47,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -3723,8 +3723,8 @@
  #ifdef COMPILER2
  #include "opto/runtime.hpp"
  #endif
---- hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
++++ hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
 @@ -47,6 +47,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -3735,8 +3735,8 @@
  #ifdef COMPILER2
  #include "opto/runtime.hpp"
  #endif
---- hotspot/src/cpu/x86/vm/stubRoutines_x86_32.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/stubRoutines_x86_32.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/stubRoutines_x86_32.cpp
++++ hotspot/src/cpu/x86/vm/stubRoutines_x86_32.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -3747,8 +3747,8 @@
  
  // Implementation of the platform-specific part of StubRoutines - for
  // a description of how to extend it, see the stubRoutines.hpp file.
---- hotspot/src/cpu/x86/vm/stubRoutines_x86_64.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/stubRoutines_x86_64.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/stubRoutines_x86_64.cpp
++++ hotspot/src/cpu/x86/vm/stubRoutines_x86_64.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -3759,8 +3759,8 @@
  
  // Implementation of the platform-specific part of StubRoutines - for
  // a description of how to extend it, see the stubRoutines.hpp file.
---- hotspot/src/cpu/x86/vm/vm_version_x86.cpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/x86/vm/vm_version_x86.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/x86/vm/vm_version_x86.cpp
++++ hotspot/src/cpu/x86/vm/vm_version_x86.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -3771,8 +3771,8 @@
  
  
  int VM_Version::_cpu;
---- hotspot/src/cpu/zero/vm/bytes_zero.hpp	2011-07-05 14:30:57.000000000 -0400
-+++ hotspot/src/cpu/zero/vm/bytes_zero.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/zero/vm/bytes_zero.hpp
++++ hotspot/src/cpu/zero/vm/bytes_zero.hpp
 @@ -168,6 +168,9 @@
  #ifdef TARGET_OS_ARCH_linux_zero
  # include "bytes_linux_zero.inline.hpp"
@@ -3783,8 +3783,8 @@
  
  #endif // VM_LITTLE_ENDIAN
  
---- hotspot/src/cpu/zero/vm/interp_masm_zero.cpp	2011-07-05 14:30:58.000000000 -0400
-+++ hotspot/src/cpu/zero/vm/interp_masm_zero.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/zero/vm/interp_masm_zero.cpp
++++ hotspot/src/cpu/zero/vm/interp_masm_zero.cpp
 @@ -40,5 +40,8 @@
  #ifdef TARGET_OS_FAMILY_linux
  # include "thread_linux.inline.hpp"
@@ -3794,8 +3794,8 @@
 +#endif
  
  // This file is intentionally empty
---- hotspot/src/cpu/zero/vm/stubGenerator_zero.cpp	2011-07-05 14:30:58.000000000 -0400
-+++ hotspot/src/cpu/zero/vm/stubGenerator_zero.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/zero/vm/stubGenerator_zero.cpp
++++ hotspot/src/cpu/zero/vm/stubGenerator_zero.cpp
 @@ -43,6 +43,9 @@
  #ifdef TARGET_OS_FAMILY_linux
  # include "thread_linux.inline.hpp"
@@ -3806,8 +3806,8 @@
  #ifdef COMPILER2
  #include "opto/runtime.hpp"
  #endif
---- hotspot/src/cpu/zero/vm/stubRoutines_zero.cpp	2011-07-05 14:30:58.000000000 -0400
-+++ hotspot/src/cpu/zero/vm/stubRoutines_zero.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/zero/vm/stubRoutines_zero.cpp
++++ hotspot/src/cpu/zero/vm/stubRoutines_zero.cpp
 @@ -30,6 +30,9 @@
  #ifdef TARGET_OS_FAMILY_linux
  # include "thread_linux.inline.hpp"
@@ -3818,8 +3818,8 @@
  
  #ifdef IA32
  address StubRoutines::x86::_call_stub_compiled_return = NULL;
---- hotspot/src/cpu/zero/vm/vm_version_zero.cpp	2011-07-05 14:30:58.000000000 -0400
-+++ hotspot/src/cpu/zero/vm/vm_version_zero.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/cpu/zero/vm/vm_version_zero.cpp
++++ hotspot/src/cpu/zero/vm/vm_version_zero.cpp
 @@ -32,5 +32,8 @@
  #ifdef TARGET_OS_FAMILY_linux
  # include "os_linux.inline.hpp"
@@ -3829,8 +3829,8 @@
 +#endif
  
  // This file is intentionally empty
---- hotspot/src/os/bsd/vm/attachListener_bsd.cpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/attachListener_bsd.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/attachListener_bsd.cpp
++++ hotspot/src/os/bsd/vm/attachListener_bsd.cpp
 @@ -170,53 +170,41 @@
  // Initialization - create a listener socket and bind it to a file
  
@@ -3954,8 +3954,8 @@
    if (ret == 0) {
      // simple check to avoid starting the attach mechanism when
      // a bogus user creates the file
---- hotspot/src/os/bsd/vm/jsig.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/jsig.c	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/jsig.c
++++ hotspot/src/os/bsd/vm/jsig.c
 @@ -143,7 +143,8 @@
  }
  
@@ -3966,8 +3966,8 @@
   }
  
  static int call_os_sigaction(int sig, const struct sigaction  *act,
---- hotspot/src/os/bsd/vm/jvm_bsd.cpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/jvm_bsd.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/jvm_bsd.cpp
++++ hotspot/src/os/bsd/vm/jvm_bsd.cpp
 @@ -146,38 +146,31 @@
    "ILL",        SIGILL,         /* Illegal instruction (ANSI).  */
    "TRAP",       SIGTRAP,        /* Trace trap (POSIX).  */
@@ -4017,8 +4017,8 @@
    };
  
  JVM_ENTRY_NO_ENV(jint, JVM_FindSignal(const char *name))
---- hotspot/src/os/bsd/vm/jvm_bsd.h	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/jvm_bsd.h	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/jvm_bsd.h
++++ hotspot/src/os/bsd/vm/jvm_bsd.h
 @@ -54,7 +54,11 @@
  #define AGENT_ONATTACH_SYMBOLS  {"Agent_OnAttach"}
  
@@ -4052,8 +4052,8 @@
  #endif /* JVM_MD_H */
  
  // Reconciliation History
---- hotspot/src/os/bsd/vm/osThread_bsd.cpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/osThread_bsd.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/osThread_bsd.cpp
++++ hotspot/src/os/bsd/vm/osThread_bsd.cpp
 @@ -43,8 +43,12 @@
  
  void OSThread::pd_initialize() {
@@ -4068,8 +4068,8 @@
    _siginfo = NULL;
    _ucontext = NULL;
    _expanding_stack = 0;
---- hotspot/src/os/bsd/vm/osThread_bsd.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/osThread_bsd.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/osThread_bsd.hpp
++++ hotspot/src/os/bsd/vm/osThread_bsd.hpp
 @@ -39,6 +39,7 @@
  
   private:
@@ -4130,8 +4130,8 @@
    pthread_t pthread_id() const {
      return _pthread_id;
    }
---- hotspot/src/os/bsd/vm/os_bsd.cpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/os_bsd.cpp
++++ hotspot/src/os/bsd/vm/os_bsd.cpp
 @@ -88,7 +88,6 @@
  # include <sys/mman.h>
  # include <sys/stat.h>
@@ -5661,8 +5661,8 @@
  
      // execve failed
      _exit(-1);
---- hotspot/src/os/bsd/vm/os_bsd.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/os_bsd.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/os_bsd.hpp
++++ hotspot/src/os/bsd/vm/os_bsd.hpp
 @@ -30,6 +30,12 @@
  /* pthread_getattr_np comes with BsdThreads-0.9-7 on RedHat 7.1 */
  typedef int (*pthread_getattr_func_type) (pthread_t, pthread_attr_t *);
@@ -5801,8 +5801,8 @@
  
    // Stack repair handling
  
---- hotspot/src/os/bsd/vm/os_bsd.inline.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os/bsd/vm/os_bsd.inline.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/bsd/vm/os_bsd.inline.hpp
++++ hotspot/src/os/bsd/vm/os_bsd.inline.hpp
 @@ -86,7 +86,15 @@
  
  inline bool os::allocate_stack_guard_pages() {
@@ -5837,8 +5837,8 @@
  }
  
  inline struct dirent* os::readdir(DIR* dirp, dirent *dbuf)
---- hotspot/src/os/bsd/vm/vmError_bsd.cpp	2012-09-26 19:40:10.000000000 -0400
-+++ hotspot/src/os/bsd/vm/vmError_bsd.cpp	2012-09-26 19:43:30.000000000 -0400
+--- hotspot/src/os/bsd/vm/vmError_bsd.cpp
++++ hotspot/src/os/bsd/vm/vmError_bsd.cpp
 @@ -34,6 +34,12 @@
  #include <unistd.h>
  #include <signal.h>
@@ -5870,8 +5870,8 @@
                     os::current_process_id(), os::current_process_id());
  
        os::fork_and_exec(buf);
---- hotspot/src/os/posix/launcher/java_md.c	2012-05-01 17:15:07.000000000 -0400
-+++ hotspot/src/os/posix/launcher/java_md.c	2012-09-26 17:49:02.000000000 -0400
+--- hotspot/src/os/posix/launcher/java_md.c
++++ hotspot/src/os/posix/launcher/java_md.c
 @@ -41,14 +41,21 @@
  #include "version_comp.h"
  #endif
@@ -6067,16 +6067,16 @@
      pthread_t tid;
      pthread_attr_t attr;
      pthread_attr_init(&attr);
---- hotspot/src/os/posix/launcher/launcher.script	2011-07-05 14:30:58.000000000 -0400
-+++ hotspot/src/os/posix/launcher/launcher.script	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os/posix/launcher/launcher.script
++++ hotspot/src/os/posix/launcher/launcher.script
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  # Copyright (c) 2010, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
---- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s	2012-05-01 17:15:08.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s	2012-09-18 13:13:53.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s
++++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s
 @@ -21,6 +21,17 @@
  # questions.
  # 
@@ -6317,8 +6317,8 @@
          movl     4(%esp), %eax   # src
          fildll    (%eax)
          movl     8(%esp), %eax   # dest
---- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s
++++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s
 @@ -21,6 +21,14 @@
  # questions.
  #
@@ -6466,8 +6466,8 @@
          cmpq     %rdi,%rsi
          leaq     -8(%rdi,%rdx,8),%rax # from + count*8 - 8
          jbe      acl_CopyRight
---- hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp
 @@ -25,7 +25,33 @@
  #ifndef OS_CPU_BSD_X86_VM_BYTES_BSD_X86_INLINE_HPP
  #define OS_CPU_BSD_X86_VM_BYTES_BSD_X86_INLINE_HPP
@@ -6502,8 +6502,8 @@
  
  // Efficient swapping of data bytes from Java byte
  // ordering to native byte ordering and vice versa.
---- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
 @@ -25,9 +25,10 @@
  #ifndef OS_CPU_BSD_X86_VM_GLOBALS_BSD_X86_HPP
  #define OS_CPU_BSD_X86_VM_GLOBALS_BSD_X86_HPP
@@ -6531,8 +6531,8 @@
  // Only used on 64 bit Windows platforms
  define_pd_global(bool, UseVectoredExceptions,    false);
  
---- hotspot/src/os_cpu/bsd_x86/vm/orderAccess_bsd_x86.inline.hpp	2012-05-01 17:15:08.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/orderAccess_bsd_x86.inline.hpp	2012-09-18 18:21:03.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/orderAccess_bsd_x86.inline.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/orderAccess_bsd_x86.inline.hpp
 @@ -93,7 +93,7 @@
  
  inline void     OrderAccess::store_fence(jbyte*  p, jbyte  v) {
@@ -6551,8 +6551,8 @@
                      : "0" (v), "r" (p)
                      : "memory");
  }
---- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	2012-05-01 17:15:08.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	2012-09-18 14:48:04.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp
++++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp
 @@ -78,25 +78,209 @@
  # include <sys/wait.h>
  # include <pwd.h>
@@ -7182,8 +7182,8 @@
  #endif // AMD64
  
    st->cr();
---- hotspot/src/os_cpu/bsd_x86/vm/threadLS_bsd_x86.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/threadLS_bsd_x86.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/threadLS_bsd_x86.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/threadLS_bsd_x86.hpp
 @@ -30,8 +30,10 @@
  #ifndef AMD64
    // map stack pointer to thread pointer - see notes in threadLS_bsd_x86.cpp
@@ -7195,8 +7195,8 @@
    static Thread* _sp_map[1UL << (SP_BITLENGTH - PAGE_SHIFT)];
  #endif // !AMD64
  
---- hotspot/src/os_cpu/bsd_x86/vm/vmStructs_bsd_x86.hpp	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/src/os_cpu/bsd_x86/vm/vmStructs_bsd_x86.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/os_cpu/bsd_x86/vm/vmStructs_bsd_x86.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/vmStructs_bsd_x86.hpp
 @@ -29,6 +29,7 @@
  // constants required by the Serviceability Agent. This file is
  // referenced by vmStructs.cpp.
@@ -7223,8 +7223,8 @@
  
  
  #define VM_TYPES_OS_CPU(declare_type, declare_toplevel_type, declare_oop_type, declare_integer_type, declare_unsigned_integer_type, declare_c1_toplevel_type, declare_c2_type, declare_c2_toplevel_type, last_entry) \
---- hotspot/src/share/vm/adlc/adlc.hpp	2011-07-05 14:31:00.000000000 -0400
-+++ hotspot/src/share/vm/adlc/adlc.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/adlc/adlc.hpp
++++ hotspot/src/share/vm/adlc/adlc.hpp
 @@ -72,9 +72,9 @@
  #endif
  #endif // _WIN32
@@ -7237,8 +7237,8 @@
  
  // Macros
  #define uint32 unsigned int
---- hotspot/src/share/vm/c1/c1_globals.hpp	2011-07-05 14:31:00.000000000 -0400
-+++ hotspot/src/share/vm/c1/c1_globals.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/c1/c1_globals.hpp
++++ hotspot/src/share/vm/c1/c1_globals.hpp
 @@ -41,6 +41,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "c1_globals_windows.hpp"
@@ -7249,8 +7249,8 @@
  
  //
  // Defines all global flags used by the client compiler.
---- hotspot/src/share/vm/classfile/classLoader.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/classfile/classLoader.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/classfile/classLoader.cpp
++++ hotspot/src/share/vm/classfile/classLoader.cpp
 @@ -68,6 +68,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7261,8 +7261,8 @@
  
  
  // Entry points in zip.dll for loading zip/jar file entries
---- hotspot/src/share/vm/classfile/javaClasses.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/classfile/javaClasses.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/classfile/javaClasses.cpp
++++ hotspot/src/share/vm/classfile/javaClasses.cpp
 @@ -55,6 +55,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7282,8 +7282,8 @@
      }
    }
  
---- hotspot/src/share/vm/code/stubs.hpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/code/stubs.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/code/stubs.hpp
++++ hotspot/src/share/vm/code/stubs.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7294,8 +7294,8 @@
  
  // The classes in this file provide a simple framework for the
  // management of little pieces of machine code - or stubs -
---- hotspot/src/share/vm/compiler/disassembler.hpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/compiler/disassembler.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/compiler/disassembler.hpp
++++ hotspot/src/share/vm/compiler/disassembler.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7306,8 +7306,8 @@
  
  class decode_env;
  
---- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp
++++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7318,8 +7318,8 @@
  elapsedTimer CMSAdaptiveSizePolicy::_concurrent_timer;
  elapsedTimer CMSAdaptiveSizePolicy::_STW_timer;
  
---- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp
++++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp
 @@ -50,6 +50,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7330,8 +7330,8 @@
  
  //
  // ConcurrentMarkSweepPolicy methods
---- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp
++++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp
 @@ -36,6 +36,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7342,8 +7342,8 @@
  
  class ConcurrentMarkSweepGeneration;
  class CMSCollector;
---- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/freeBlockDictionary.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/freeBlockDictionary.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/freeBlockDictionary.cpp
++++ hotspot/src/share/vm/gc_implementation/concurrentMarkSweep/freeBlockDictionary.cpp
 @@ -33,6 +33,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7354,8 +7354,8 @@
  
  #ifndef PRODUCT
  Mutex* FreeBlockDictionary::par_lock() const {
---- hotspot/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp
++++ hotspot/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp
 @@ -39,6 +39,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7366,8 +7366,8 @@
  
  bool DirtyCardQueue::apply_closure(CardTableEntryClosure* cl,
                                     bool consume,
---- hotspot/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp	2011-07-05 14:31:01.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp
++++ hotspot/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7378,8 +7378,8 @@
  
  G1SATBCardTableModRefBS::G1SATBCardTableModRefBS(MemRegion whole_heap,
                                                   int max_covered_regions) :
---- hotspot/src/share/vm/gc_implementation/g1/ptrQueue.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/g1/ptrQueue.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/g1/ptrQueue.cpp
++++ hotspot/src/share/vm/gc_implementation/g1/ptrQueue.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7390,8 +7390,8 @@
  
  PtrQueue::PtrQueue(PtrQueueSet* qset, bool perm, bool active) :
    _qset(qset), _buf(NULL), _index(0), _active(active),
---- hotspot/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp
++++ hotspot/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp
 @@ -38,6 +38,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7402,8 +7402,8 @@
  
  bool
  ParMarkBitMap::initialize(MemRegion covered_region)
---- hotspot/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp
++++ hotspot/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7414,8 +7414,8 @@
  
  // PSVirtualSpace
  
---- hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
++++ hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7426,8 +7426,8 @@
  
  
  MutableNUMASpace::MutableNUMASpace(size_t alignment) : MutableSpace(alignment) {
---- hotspot/src/share/vm/gc_interface/collectedHeap.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/gc_interface/collectedHeap.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_interface/collectedHeap.cpp
++++ hotspot/src/share/vm/gc_interface/collectedHeap.cpp
 @@ -39,6 +39,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7438,8 +7438,8 @@
  
  
  #ifdef ASSERT
---- hotspot/src/share/vm/gc_interface/collectedHeap.inline.hpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/gc_interface/collectedHeap.inline.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/gc_interface/collectedHeap.inline.hpp
++++ hotspot/src/share/vm/gc_interface/collectedHeap.inline.hpp
 @@ -43,6 +43,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7450,8 +7450,8 @@
  
  // Inline allocation implementations.
  
---- hotspot/src/share/vm/interpreter/abstractInterpreter.hpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/interpreter/abstractInterpreter.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/interpreter/abstractInterpreter.hpp
++++ hotspot/src/share/vm/interpreter/abstractInterpreter.hpp
 @@ -50,6 +50,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7462,8 +7462,8 @@
  
  // This file contains the platform-independent parts
  // of the abstract interpreter and the abstract interpreter generator.
---- hotspot/src/share/vm/interpreter/bytecodeInterpreter.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/interpreter/bytecodeInterpreter.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/interpreter/bytecodeInterpreter.cpp
++++ hotspot/src/share/vm/interpreter/bytecodeInterpreter.cpp
 @@ -59,6 +59,12 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "orderAccess_windows_x86.inline.hpp"
@@ -7477,8 +7477,8 @@
  
  
  // no precompiled headers
---- hotspot/src/share/vm/interpreter/bytecodeTracer.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/interpreter/bytecodeTracer.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/interpreter/bytecodeTracer.cpp
++++ hotspot/src/share/vm/interpreter/bytecodeTracer.cpp
 @@ -92,7 +92,7 @@
        // the incoming method.  We could lose a line of trace output.
        // This is acceptable in a debug-only feature.
@@ -7497,8 +7497,8 @@
      if (Verbose) {
        st->print("%8d  %4d  " INTPTR_FORMAT " " INTPTR_FORMAT " %s",
             BytecodeCounter::counter_value(), bci, tos, tos2, Bytecodes::name(code));
---- hotspot/src/share/vm/interpreter/interpreterRuntime.hpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/interpreter/interpreterRuntime.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/interpreter/interpreterRuntime.hpp
++++ hotspot/src/share/vm/interpreter/interpreterRuntime.hpp
 @@ -41,6 +41,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7509,8 +7509,8 @@
  
  // The InterpreterRuntime is called by the interpreter for everything
  // that cannot/should not be dealt with in assembly and needs C support.
---- hotspot/src/share/vm/interpreter/linkResolver.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/interpreter/linkResolver.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/interpreter/linkResolver.cpp
++++ hotspot/src/share/vm/interpreter/linkResolver.cpp
 @@ -52,6 +52,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7521,8 +7521,8 @@
  
  //------------------------------------------------------------------------------------------------------------------------
  // Implementation of FieldAccessInfo
---- hotspot/src/share/vm/memory/allocation.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/memory/allocation.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/memory/allocation.cpp
++++ hotspot/src/share/vm/memory/allocation.cpp
 @@ -39,6 +39,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7533,8 +7533,8 @@
  
  void* CHeapObj::operator new(size_t size){
    return (void *) AllocateHeap(size, "CHeapObj-new");
---- hotspot/src/share/vm/memory/collectorPolicy.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/memory/collectorPolicy.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/memory/collectorPolicy.cpp
++++ hotspot/src/share/vm/memory/collectorPolicy.cpp
 @@ -47,6 +47,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7545,8 +7545,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.hpp"
  #include "gc_implementation/concurrentMarkSweep/cmsGCAdaptivePolicyCounters.hpp"
---- hotspot/src/share/vm/memory/defNewGeneration.cpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/memory/defNewGeneration.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/memory/defNewGeneration.cpp
++++ hotspot/src/share/vm/memory/defNewGeneration.cpp
 @@ -48,6 +48,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7557,8 +7557,8 @@
  
  //
  // DefNewGeneration functions.
---- hotspot/src/share/vm/memory/gcLocker.hpp	2011-07-05 14:31:02.000000000 -0400
-+++ hotspot/src/share/vm/memory/gcLocker.hpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/memory/gcLocker.hpp
++++ hotspot/src/share/vm/memory/gcLocker.hpp
 @@ -41,6 +41,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -7570,8 +7570,8 @@
  
  // The direct lock/unlock calls do not force a collection if an unlock
  // decrements the count to zero. Avoid calling these if at all possible.
---- hotspot/src/share/vm/memory/genMarkSweep.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/memory/genMarkSweep.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/memory/genMarkSweep.cpp
++++ hotspot/src/share/vm/memory/genMarkSweep.cpp
 @@ -55,6 +55,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7582,8 +7582,8 @@
  
  void GenMarkSweep::invoke_at_safepoint(int level, ReferenceProcessor* rp,
    bool clear_all_softrefs) {
---- hotspot/src/share/vm/memory/resourceArea.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/memory/resourceArea.cpp	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/src/share/vm/memory/resourceArea.cpp
++++ hotspot/src/share/vm/memory/resourceArea.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7594,8 +7594,8 @@
  
  //------------------------------ResourceMark-----------------------------------
  debug_only(int ResourceArea::_warned;)      // to suppress multiple warnings
---- hotspot/src/share/vm/memory/resourceArea.hpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/memory/resourceArea.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/memory/resourceArea.hpp
++++ hotspot/src/share/vm/memory/resourceArea.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7606,8 +7606,8 @@
  
  // The resource area holds temporary data structures in the VM.
  // The actual allocation areas are thread local. Typical usage:
---- hotspot/src/share/vm/memory/space.hpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/memory/space.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/memory/space.hpp
++++ hotspot/src/share/vm/memory/space.hpp
 @@ -44,6 +44,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7618,8 +7618,8 @@
  
  // A space is an abstraction for the "storage units" backing
  // up the generation abstraction. It includes specific
---- hotspot/src/share/vm/memory/threadLocalAllocBuffer.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/memory/threadLocalAllocBuffer.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/memory/threadLocalAllocBuffer.cpp
++++ hotspot/src/share/vm/memory/threadLocalAllocBuffer.cpp
 @@ -38,6 +38,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7630,8 +7630,8 @@
  
  // Thread-Local Edens support
  
---- hotspot/src/share/vm/memory/universe.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/memory/universe.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/memory/universe.cpp
++++ hotspot/src/share/vm/memory/universe.cpp
 @@ -89,6 +89,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7642,8 +7642,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.hpp"
  #include "gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.hpp"
---- hotspot/src/share/vm/oops/constantPoolKlass.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/oops/constantPoolKlass.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/oops/constantPoolKlass.cpp
++++ hotspot/src/share/vm/oops/constantPoolKlass.cpp
 @@ -44,6 +44,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7654,8 +7654,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/parNew/parOopClosures.inline.hpp"
  #include "gc_implementation/parallelScavenge/psPromotionManager.inline.hpp"
---- hotspot/src/share/vm/oops/instanceKlass.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/oops/instanceKlass.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/oops/instanceKlass.cpp
++++ hotspot/src/share/vm/oops/instanceKlass.cpp
 @@ -59,6 +59,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7666,8 +7666,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/g1/g1CollectedHeap.inline.hpp"
  #include "gc_implementation/g1/g1OopClosures.inline.hpp"
---- hotspot/src/share/vm/oops/markOop.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/oops/markOop.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/oops/markOop.cpp
++++ hotspot/src/share/vm/oops/markOop.cpp
 @@ -33,6 +33,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7678,8 +7678,8 @@
  
  
  void markOopDesc::print_on(outputStream* st) const {
---- hotspot/src/share/vm/oops/oop.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/oops/oop.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/oops/oop.cpp
++++ hotspot/src/share/vm/oops/oop.cpp
 @@ -36,6 +36,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7690,8 +7690,8 @@
  
  bool always_do_update_barrier = false;
  
---- hotspot/src/share/vm/oops/oopsHierarchy.cpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/oops/oopsHierarchy.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/oops/oopsHierarchy.cpp
++++ hotspot/src/share/vm/oops/oopsHierarchy.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7702,8 +7702,8 @@
  
  #ifdef CHECK_UNHANDLED_OOPS
  
---- hotspot/src/share/vm/opto/c2_globals.hpp	2011-07-05 14:31:03.000000000 -0400
-+++ hotspot/src/share/vm/opto/c2_globals.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/opto/c2_globals.hpp
++++ hotspot/src/share/vm/opto/c2_globals.hpp
 @@ -41,6 +41,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "c2_globals_windows.hpp"
@@ -7714,8 +7714,8 @@
  
  //
  // Defines all globals flags used by the server compiler.
---- hotspot/src/share/vm/prims/forte.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/forte.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/forte.cpp
++++ hotspot/src/share/vm/prims/forte.cpp
 @@ -639,6 +639,11 @@
  // Method to let libcollector know about a dynamically loaded function.
  // Because it is weakly bound, the calls become NOP's when the library
@@ -7736,8 +7736,8 @@
  #endif // !_WINDOWS
  
  } // end extern "C"
---- hotspot/src/share/vm/prims/jni.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/jni.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/jni.cpp
++++ hotspot/src/share/vm/prims/jni.cpp
 @@ -88,6 +88,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -7749,8 +7749,8 @@
  
  static jint CurrentVersion = JNI_VERSION_1_6;
  
---- hotspot/src/share/vm/prims/jvm.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/jvm.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/jvm.cpp
++++ hotspot/src/share/vm/prims/jvm.cpp
 @@ -72,6 +72,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "jvm_windows.h"
@@ -7761,8 +7761,8 @@
  
  #include <errno.h>
  
---- hotspot/src/share/vm/prims/jvm.h	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/jvm.h	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/jvm.h
++++ hotspot/src/share/vm/prims/jvm.h
 @@ -36,6 +36,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "jvm_windows.h"
@@ -7773,8 +7773,8 @@
  
  #ifndef _JAVASOFT_JVM_H_
  #define _JAVASOFT_JVM_H_
---- hotspot/src/share/vm/prims/jvmtiEnv.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/jvmtiEnv.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/jvmtiEnv.cpp
++++ hotspot/src/share/vm/prims/jvmtiEnv.cpp
 @@ -68,6 +68,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7785,8 +7785,8 @@
  
  
  
---- hotspot/src/share/vm/prims/jvmtiImpl.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/jvmtiImpl.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/jvmtiImpl.cpp
++++ hotspot/src/share/vm/prims/jvmtiImpl.cpp
 @@ -51,6 +51,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7797,8 +7797,8 @@
  
  //
  // class JvmtiAgentThread
---- hotspot/src/share/vm/prims/nativeLookup.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/prims/nativeLookup.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/prims/nativeLookup.cpp
++++ hotspot/src/share/vm/prims/nativeLookup.cpp
 @@ -49,6 +49,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7809,8 +7809,8 @@
  
  
  static void mangle_name_on(outputStream* st, symbolOop name, int begin, int end) {
---- hotspot/src/share/vm/runtime/arguments.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/arguments.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/arguments.cpp
++++ hotspot/src/share/vm/runtime/arguments.cpp
 @@ -55,6 +55,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7821,8 +7821,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.hpp"
  #endif
---- hotspot/src/share/vm/runtime/atomic.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/atomic.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/atomic.cpp
++++ hotspot/src/share/vm/runtime/atomic.cpp
 @@ -33,6 +33,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -7846,8 +7846,8 @@
  
  jbyte Atomic::cmpxchg(jbyte exchange_value, volatile jbyte* dest, jbyte compare_value) {
    assert(sizeof(jbyte) == 1, "assumption.");
---- hotspot/src/share/vm/runtime/fprofiler.hpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/fprofiler.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/fprofiler.hpp
++++ hotspot/src/share/vm/runtime/fprofiler.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7858,8 +7858,8 @@
  
  // a simple flat profiler for Java
  
---- hotspot/src/share/vm/runtime/globals.hpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/globals.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/globals.hpp
++++ hotspot/src/share/vm/runtime/globals.hpp
 @@ -44,6 +44,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "globals_windows.hpp"
@@ -7903,8 +7903,8 @@
  #endif
  #ifdef SHARK
  #ifdef TARGET_ARCH_zero
---- hotspot/src/share/vm/runtime/handles.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/handles.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/handles.cpp
++++ hotspot/src/share/vm/runtime/handles.cpp
 @@ -38,6 +38,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -7916,8 +7916,8 @@
  
  #ifdef ASSERT
  oop* HandleArea::allocate_handle(oop obj) {
---- hotspot/src/share/vm/runtime/handles.inline.hpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/handles.inline.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/handles.inline.hpp
++++ hotspot/src/share/vm/runtime/handles.inline.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7928,8 +7928,8 @@
  
  // these inline functions are in a separate file to break an include cycle
  // between Thread and Handle
---- hotspot/src/share/vm/runtime/interfaceSupport.hpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/interfaceSupport.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/interfaceSupport.hpp
++++ hotspot/src/share/vm/runtime/interfaceSupport.hpp
 @@ -44,6 +44,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7950,8 +7950,8 @@
  
  };
  
---- hotspot/src/share/vm/runtime/java.cpp	2011-07-05 14:31:04.000000000 -0400
-+++ hotspot/src/share/vm/runtime/java.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/java.cpp
++++ hotspot/src/share/vm/runtime/java.cpp
 @@ -79,6 +79,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7962,8 +7962,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp"
  #include "gc_implementation/parallelScavenge/psScavenge.hpp"
---- hotspot/src/share/vm/runtime/javaCalls.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/javaCalls.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/javaCalls.cpp
++++ hotspot/src/share/vm/runtime/javaCalls.cpp
 @@ -48,6 +48,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7974,8 +7974,8 @@
  
  // -----------------------------------------------------
  // Implementation of JavaCallWrapper
---- hotspot/src/share/vm/runtime/javaCalls.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/javaCalls.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/javaCalls.hpp
++++ hotspot/src/share/vm/runtime/javaCalls.hpp
 @@ -48,6 +48,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -7986,8 +7986,8 @@
  
  // A JavaCallWrapper is constructed before each JavaCall and destructed after the call.
  // Its purpose is to allocate/deallocate a new handle block and to save/restore the last
---- hotspot/src/share/vm/runtime/javaFrameAnchor.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/javaFrameAnchor.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/javaFrameAnchor.hpp
++++ hotspot/src/share/vm/runtime/javaFrameAnchor.hpp
 @@ -44,6 +44,12 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "orderAccess_windows_x86.inline.hpp"
@@ -8001,8 +8001,8 @@
  //
  // An object for encapsulating the machine/os dependent part of a JavaThread frame state
  //
---- hotspot/src/share/vm/runtime/jniHandles.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/jniHandles.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/jniHandles.cpp
++++ hotspot/src/share/vm/runtime/jniHandles.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8013,8 +8013,8 @@
  
  
  JNIHandleBlock* JNIHandles::_global_handles       = NULL;
---- hotspot/src/share/vm/runtime/memprofiler.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/memprofiler.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/memprofiler.cpp
++++ hotspot/src/share/vm/runtime/memprofiler.cpp
 @@ -46,6 +46,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8025,8 +8025,8 @@
  
  #ifndef PRODUCT
  
---- hotspot/src/share/vm/runtime/mutex.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/mutex.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/mutex.cpp
++++ hotspot/src/share/vm/runtime/mutex.cpp
 @@ -39,6 +39,10 @@
  # include "mutex_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8038,8 +8038,8 @@
  
  // o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o
  //
---- hotspot/src/share/vm/runtime/mutexLocker.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/mutexLocker.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/mutexLocker.cpp
++++ hotspot/src/share/vm/runtime/mutexLocker.cpp
 @@ -36,6 +36,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8050,8 +8050,8 @@
  
  // Mutexes used in the VM (see comment in mutexLocker.hpp):
  //
---- hotspot/src/share/vm/runtime/mutexLocker.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/mutexLocker.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/mutexLocker.hpp
++++ hotspot/src/share/vm/runtime/mutexLocker.hpp
 @@ -36,6 +36,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8062,8 +8062,8 @@
  
  // Mutexes used in the VM.
  
---- hotspot/src/share/vm/runtime/objectMonitor.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/objectMonitor.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/objectMonitor.cpp
++++ hotspot/src/share/vm/runtime/objectMonitor.cpp
 @@ -50,6 +50,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8075,8 +8075,8 @@
  
  #if defined(__GNUC__) && !defined(IA64)
    // Need to inhibit inlining for older versions of GCC to avoid build-time failures
---- hotspot/src/share/vm/runtime/os.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/os.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/os.cpp
++++ hotspot/src/share/vm/runtime/os.cpp
 @@ -60,6 +60,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8100,8 +8100,8 @@
  
    // If daylight savings time is in effect,
    // we are 1 hour East of our time zone
---- hotspot/src/share/vm/runtime/os.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/os.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/os.hpp
++++ hotspot/src/share/vm/runtime/os.hpp
 @@ -30,6 +30,9 @@
  #include "runtime/extendedPC.hpp"
  #include "runtime/handles.hpp"
@@ -8135,8 +8135,8 @@
  
  
    // debugging support (mostly used by debug.cpp but also fatal error handler)
---- hotspot/src/share/vm/runtime/osThread.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/osThread.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/osThread.hpp
++++ hotspot/src/share/vm/runtime/osThread.hpp
 @@ -109,6 +109,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "osThread_windows.hpp"
@@ -8147,8 +8147,8 @@
  
  };
  
---- hotspot/src/share/vm/runtime/safepoint.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/safepoint.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/safepoint.cpp
++++ hotspot/src/share/vm/runtime/safepoint.cpp
 @@ -70,6 +70,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8159,8 +8159,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp"
  #include "gc_implementation/shared/concurrentGCThread.hpp"
---- hotspot/src/share/vm/runtime/synchronizer.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/synchronizer.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/synchronizer.cpp
++++ hotspot/src/share/vm/runtime/synchronizer.cpp
 @@ -51,6 +51,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8172,8 +8172,8 @@
  
  #if defined(__GNUC__) && !defined(IA64)
    // Need to inhibit inlining for older versions of GCC to avoid build-time failures
---- hotspot/src/share/vm/runtime/task.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/task.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/task.cpp
++++ hotspot/src/share/vm/runtime/task.cpp
 @@ -39,6 +39,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8185,8 +8185,8 @@
  
  int PeriodicTask::_num_tasks = 0;
  PeriodicTask* PeriodicTask::_tasks[PeriodicTask::max_tasks];
---- hotspot/src/share/vm/runtime/thread.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/thread.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/thread.cpp
++++ hotspot/src/share/vm/runtime/thread.cpp
 @@ -88,6 +88,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8198,8 +8198,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.hpp"
  #include "gc_implementation/g1/concurrentMarkThread.inline.hpp"
---- hotspot/src/share/vm/runtime/thread.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/thread.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/thread.hpp
++++ hotspot/src/share/vm/runtime/thread.hpp
 @@ -1598,6 +1598,12 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "thread_windows_x86.hpp"
@@ -8213,8 +8213,8 @@
  
  
   public:
---- hotspot/src/share/vm/runtime/threadLocalStorage.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/threadLocalStorage.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/threadLocalStorage.cpp
++++ hotspot/src/share/vm/runtime/threadLocalStorage.cpp
 @@ -36,6 +36,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8226,8 +8226,8 @@
  
  // static member initialization
  int ThreadLocalStorage::_thread_index = -1;
---- hotspot/src/share/vm/runtime/threadLocalStorage.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/threadLocalStorage.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/threadLocalStorage.hpp
++++ hotspot/src/share/vm/runtime/threadLocalStorage.hpp
 @@ -62,6 +62,12 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "threadLS_windows_x86.hpp"
@@ -8241,8 +8241,8 @@
  
  
   public:
---- hotspot/src/share/vm/runtime/timer.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/timer.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/timer.cpp
++++ hotspot/src/share/vm/runtime/timer.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8253,8 +8253,8 @@
  
  
  void elapsedTimer::add(elapsedTimer t) {
---- hotspot/src/share/vm/runtime/virtualspace.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/virtualspace.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/virtualspace.cpp
++++ hotspot/src/share/vm/runtime/virtualspace.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8265,8 +8265,8 @@
  
  
  // ReservedSpace
---- hotspot/src/share/vm/runtime/vmStructs.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/vmStructs.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/vmStructs.cpp
++++ hotspot/src/share/vm/runtime/vmStructs.cpp
 @@ -118,6 +118,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8290,8 +8290,8 @@
  #ifndef SERIALGC
  #include "gc_implementation/concurrentMarkSweep/cmsPermGen.hpp"
  #include "gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.hpp"
---- hotspot/src/share/vm/runtime/vmThread.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/vmThread.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/vmThread.cpp
++++ hotspot/src/share/vm/runtime/vmThread.cpp
 @@ -46,6 +46,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8302,8 +8302,8 @@
  
  HS_DTRACE_PROBE_DECL3(hotspot, vmops__request, char *, uintptr_t, int);
  HS_DTRACE_PROBE_DECL3(hotspot, vmops__begin, char *, uintptr_t, int);
---- hotspot/src/share/vm/runtime/vmThread.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/vmThread.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/vmThread.hpp
++++ hotspot/src/share/vm/runtime/vmThread.hpp
 @@ -36,6 +36,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8314,8 +8314,8 @@
  
  //
  // Prioritized queue of VM operations.
---- hotspot/src/share/vm/runtime/vm_operations.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/vm_operations.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/vm_operations.cpp
++++ hotspot/src/share/vm/runtime/vm_operations.cpp
 @@ -43,6 +43,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8326,8 +8326,8 @@
  
  #define VM_OP_NAME_INITIALIZE(name) #name,
  
---- hotspot/src/share/vm/runtime/vm_version.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/runtime/vm_version.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/runtime/vm_version.cpp
++++ hotspot/src/share/vm/runtime/vm_version.cpp
 @@ -160,7 +160,8 @@
  
  #define OS       LINUX_ONLY("linux")             \
@@ -8338,8 +8338,8 @@
  
  #ifdef ZERO
  #define CPU      ZERO_LIBARCH
---- hotspot/src/share/vm/utilities/accessFlags.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/accessFlags.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/accessFlags.cpp
++++ hotspot/src/share/vm/utilities/accessFlags.cpp
 @@ -34,6 +34,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8350,8 +8350,8 @@
  
  
  void AccessFlags::atomic_set_bits(jint bits) {
---- hotspot/src/share/vm/utilities/array.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/array.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/array.cpp
++++ hotspot/src/share/vm/utilities/array.cpp
 @@ -34,6 +34,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8362,8 +8362,8 @@
  
  
  #ifdef ASSERT
---- hotspot/src/share/vm/utilities/bitMap.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/bitMap.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/bitMap.cpp
++++ hotspot/src/share/vm/utilities/bitMap.cpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8374,8 +8374,8 @@
  
  
  BitMap::BitMap(bm_word_t* map, idx_t size_in_bits) :
---- hotspot/src/share/vm/utilities/debug.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/debug.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/debug.cpp
++++ hotspot/src/share/vm/utilities/debug.cpp
 @@ -62,6 +62,10 @@
  # include "os_windows.inline.hpp"
  # include "thread_windows.inline.hpp"
@@ -8387,8 +8387,8 @@
  
  #ifndef ASSERT
  #  ifdef _DEBUG
---- hotspot/src/share/vm/utilities/elfFile.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/elfFile.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/elfFile.hpp
++++ hotspot/src/share/vm/utilities/elfFile.hpp
 @@ -41,7 +41,9 @@
  typedef Elf64_Shdr      Elf_Shdr;
  typedef Elf64_Sym       Elf_Sym;
@@ -8410,8 +8410,8 @@
  
  #include "globalDefinitions.hpp"
  #include "memory/allocation.hpp"
---- hotspot/src/share/vm/utilities/events.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/events.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/events.cpp
++++ hotspot/src/share/vm/utilities/events.cpp
 @@ -38,6 +38,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8422,8 +8422,8 @@
  
  
  #ifndef PRODUCT
---- hotspot/src/share/vm/utilities/exceptions.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/exceptions.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/exceptions.cpp
++++ hotspot/src/share/vm/utilities/exceptions.cpp
 @@ -42,6 +42,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8434,8 +8434,8 @@
  
  
  // Implementation of ThreadShadow
---- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp
++++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp
 @@ -76,13 +76,26 @@
  # include <sys/procfs.h>
  # endif
@@ -8503,8 +8503,8 @@
  inline int g_isnan(float  f) { return isnanf(f); }
  inline int g_isnan(double f) { return isnan(f); }
  #else
---- hotspot/src/share/vm/utilities/growableArray.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/growableArray.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/growableArray.cpp
++++ hotspot/src/share/vm/utilities/growableArray.cpp
 @@ -34,6 +34,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8515,8 +8515,8 @@
  #ifdef ASSERT
  void GenericGrowableArray::set_nesting() {
    if (on_stack()) {
---- hotspot/src/share/vm/utilities/hashtable.hpp	2012-05-01 17:15:14.000000000 -0400
-+++ hotspot/src/share/vm/utilities/hashtable.hpp	2012-09-18 12:01:50.000000000 -0400
+--- hotspot/src/share/vm/utilities/hashtable.hpp
++++ hotspot/src/share/vm/utilities/hashtable.hpp
 @@ -283,7 +283,7 @@
    }
  
@@ -8526,8 +8526,8 @@
    }
  };
  
---- hotspot/src/share/vm/utilities/histogram.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/histogram.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/histogram.hpp
++++ hotspot/src/share/vm/utilities/histogram.hpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8538,8 +8538,8 @@
  
  // This class provides a framework for collecting various statistics.
  // The current implementation is oriented towards counting invocations
---- hotspot/src/share/vm/utilities/macros.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/macros.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/macros.hpp
++++ hotspot/src/share/vm/utilities/macros.hpp
 @@ -161,6 +161,14 @@
  #define NOT_WINDOWS(code) code
  #endif
@@ -8555,8 +8555,8 @@
  #if defined(IA32) || defined(AMD64)
  #define X86
  #define X86_ONLY(code) code
---- hotspot/src/share/vm/utilities/ostream.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/ostream.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/ostream.cpp
++++ hotspot/src/share/vm/utilities/ostream.cpp
 @@ -39,6 +39,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "os_windows.inline.hpp"
@@ -8576,8 +8576,8 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <netinet/in.h>
---- hotspot/src/share/vm/utilities/preserveException.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/preserveException.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/preserveException.hpp
++++ hotspot/src/share/vm/utilities/preserveException.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8588,8 +8588,8 @@
  
  // This file provides more support for exception handling; see also exceptions.hpp
  class PreserveExceptionMark {
---- hotspot/src/share/vm/utilities/taskqueue.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/taskqueue.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/taskqueue.cpp
++++ hotspot/src/share/vm/utilities/taskqueue.cpp
 @@ -37,6 +37,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8600,8 +8600,8 @@
  
  #ifdef TRACESPINNING
  uint ParallelTaskTerminator::_total_yields = 0;
---- hotspot/src/share/vm/utilities/taskqueue.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/taskqueue.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/taskqueue.hpp
++++ hotspot/src/share/vm/utilities/taskqueue.hpp
 @@ -47,6 +47,12 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "orderAccess_windows_x86.inline.hpp"
@@ -8615,8 +8615,8 @@
  
  // Simple TaskQueue stats that are collected by default in debug builds.
  
---- hotspot/src/share/vm/utilities/vmError.cpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/vmError.cpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/vmError.cpp
++++ hotspot/src/share/vm/utilities/vmError.cpp
 @@ -44,13 +44,18 @@
    "JAVA_HOME", "JRE_HOME", "JAVA_TOOL_OPTIONS", "_JAVA_OPTIONS", "CLASSPATH",
    "JAVA_COMPILER", "PATH", "USERNAME",
@@ -8646,8 +8646,8 @@
        out.print_raw   ("/bin/sh -c ");
  #elif defined(SOLARIS)
        out.print_raw   ("/usr/bin/sh -c ");
---- hotspot/src/share/vm/utilities/workgroup.hpp	2011-07-05 14:31:05.000000000 -0400
-+++ hotspot/src/share/vm/utilities/workgroup.hpp	2011-07-07 19:17:03.000000000 -0400
+--- hotspot/src/share/vm/utilities/workgroup.hpp
++++ hotspot/src/share/vm/utilities/workgroup.hpp
 @@ -35,6 +35,9 @@
  #ifdef TARGET_OS_FAMILY_windows
  # include "thread_windows.inline.hpp"
@@ -8658,8 +8658,8 @@
  
  // Forward declarations of classes defined here
  
---- jdk/make/com/sun/java/pack/Makefile	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/com/sun/java/pack/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/java/pack/Makefile
++++ jdk/make/com/sun/java/pack/Makefile
 @@ -61,6 +61,7 @@
  
  
@@ -8691,8 +8691,8 @@
    OTHER_LDLIBS  += $(LIBCXX)
  # setup the list of libraries to link in...
  ifeq ($(PLATFORM), linux)
---- jdk/make/com/sun/security/auth/module/Makefile	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/com/sun/security/auth/module/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/security/auth/module/Makefile
++++ jdk/make/com/sun/security/auth/module/Makefile
 @@ -70,7 +70,7 @@
    include FILES_c_solaris.gmk
  endif # solaris
@@ -8702,8 +8702,8 @@
    LIBRARY = jaas_unix
    include FILES_export_unix.gmk
    include FILES_c_unix.gmk
---- jdk/make/com/sun/tools/attach/Exportedfiles.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/com/sun/tools/attach/Exportedfiles.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/tools/attach/Exportedfiles.gmk
++++ jdk/make/com/sun/tools/attach/Exportedfiles.gmk
 @@ -43,5 +43,7 @@
  	sun/tools/attach/LinuxVirtualMachine.java
  endif
@@ -8714,8 +8714,8 @@
 +FILES_export = \
 +	sun/tools/attach/BsdVirtualMachine.java
 +endif
---- jdk/make/com/sun/tools/attach/FILES_c.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/com/sun/tools/attach/FILES_c.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/tools/attach/FILES_c.gmk
++++ jdk/make/com/sun/tools/attach/FILES_c.gmk
 @@ -39,4 +39,7 @@
  	LinuxVirtualMachine.c
  endif
@@ -8725,8 +8725,8 @@
 +FILES_c = \
 +	BsdVirtualMachine.c
 +endif
---- jdk/make/com/sun/tools/attach/FILES_java.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/com/sun/tools/attach/FILES_java.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/tools/attach/FILES_java.gmk
++++ jdk/make/com/sun/tools/attach/FILES_java.gmk
 @@ -43,6 +43,11 @@
  	sun/tools/attach/LinuxAttachProvider.java
  endif
@@ -8739,8 +8739,8 @@
  #
  # Files that need to be copied
  #
---- jdk/make/com/sun/tools/attach/Makefile	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/com/sun/tools/attach/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/tools/attach/Makefile
++++ jdk/make/com/sun/tools/attach/Makefile
 @@ -36,6 +36,9 @@
  ifeq ($(PLATFORM), linux)
  FILES_m = mapfile-linux
@@ -8751,8 +8751,8 @@
  include $(BUILDDIR)/common/Mapfile-vers.gmk
  
  #
---- jdk/make/com/sun/tools/attach/mapfile-bsd	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/make/com/sun/tools/attach/mapfile-bsd	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/com/sun/tools/attach/mapfile-bsd
++++ jdk/make/com/sun/tools/attach/mapfile-bsd
 @@ -30,14 +30,12 @@
  	    Java_sun_tools_attach_BsdVirtualMachine_checkPermissions;
  	    Java_sun_tools_attach_BsdVirtualMachine_close;
@@ -8769,8 +8769,8 @@
  	local:
  		*;
  };
---- jdk/make/common/Defs-bsd.gmk	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/make/common/Defs-bsd.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/Defs-bsd.gmk
++++ jdk/make/common/Defs-bsd.gmk
 @@ -43,12 +43,6 @@
  # Get shared JDK settings
  include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
@@ -8921,8 +8921,8 @@
  #
  # Japanese manpages
  #
---- jdk/make/common/Defs-linux.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/Defs-linux.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/Defs-linux.gmk
++++ jdk/make/common/Defs-linux.gmk
 @@ -318,7 +318,7 @@
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
@@ -8932,8 +8932,8 @@
  ifeq ($(ARCH), amd64)
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
  else
---- jdk/make/common/Defs.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/Defs.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/Defs.gmk
++++ jdk/make/common/Defs.gmk
 @@ -117,6 +117,24 @@
  _OUTPUTDIR=$(JDK_TOPDIR)/build/$(PLATFORM)-$(ARCH)
  endif
@@ -8978,8 +8978,8 @@
  endif # PROGRAM
  
  LDLIBS_COMMON += $(EXTRA_LIBS)
---- jdk/make/common/Program.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/Program.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/Program.gmk
++++ jdk/make/common/Program.gmk
 @@ -67,11 +67,27 @@
  # Create a dependency on libjli (Java Launcher Infrastructure)
  #
@@ -9040,8 +9040,8 @@
  
  OTHER_CPPFLAGS += -DPROGNAME='"$(PROGRAM)"'
  VERSION_DEFINES += -DFULL_VERSION='"$(FULL_VERSION)"'
---- jdk/make/common/Release.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/Release.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/Release.gmk
++++ jdk/make/common/Release.gmk
 @@ -145,14 +145,13 @@
  	tnameserv.1     \
  	unpack200.1
@@ -9110,8 +9110,8 @@
  	       | ($(CD) $(JDK_IMAGE_DIR)/src && $(TAR) xf -); \
  	  fi; \
  	done
---- jdk/make/common/shared/Compiler-gcc.gmk	2012-05-01 17:17:59.000000000 -0400
-+++ jdk/make/common/shared/Compiler-gcc.gmk	2012-09-11 18:26:48.000000000 -0400
+--- jdk/make/common/shared/Compiler-gcc.gmk
++++ jdk/make/common/shared/Compiler-gcc.gmk
 @@ -99,6 +99,24 @@
  
  endif
@@ -9137,8 +9137,8 @@
  ifeq ($(PLATFORM), solaris)
  
    # Settings specific to Solaris
---- jdk/make/common/shared/Compiler.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Compiler.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Compiler.gmk
++++ jdk/make/common/shared/Compiler.gmk
 @@ -37,8 +37,8 @@
    override CC_VERSION = sun
  endif
@@ -9150,8 +9150,8 @@
    override CC_VERSION = gcc
  endif
  
---- jdk/make/common/shared/Defs-bsd.gmk	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/make/common/shared/Defs-bsd.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Defs-bsd.gmk
++++ jdk/make/common/shared/Defs-bsd.gmk
 @@ -70,7 +70,7 @@
  endef
  
@@ -9190,8 +9190,8 @@
  # Import JDK images allow for partial builds, components not built are
  #    imported (or copied from) these import areas when needed.
  
---- jdk/make/common/shared/Defs-java.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Defs-java.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Defs-java.gmk
++++ jdk/make/common/shared/Defs-java.gmk
 @@ -42,7 +42,7 @@
    #   Suspect this may not be needed anymore.
    JAVA_MEM_FLAGS   += -Xms$(MAX_VM_MEMORY)m -XX:-Inline
@@ -9201,8 +9201,8 @@
  endif
  
  # 
---- jdk/make/common/shared/Defs-utils.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Defs-utils.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Defs-utils.gmk
++++ jdk/make/common/shared/Defs-utils.gmk
 @@ -80,6 +80,13 @@
    endif
  endif
@@ -9250,8 +9250,8 @@
 +    TAR        = $(UTILS_USR_BIN_PATH)tar
 +  endif
 +endif
---- jdk/make/common/shared/Defs.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Defs.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Defs.gmk
++++ jdk/make/common/shared/Defs.gmk
 @@ -143,7 +143,7 @@
          echo older; \
        else \
@@ -9261,8 +9261,8 @@
            echo older; \
          else \
            echo newer; \
---- jdk/make/common/shared/Platform.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Platform.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Platform.gmk
++++ jdk/make/common/shared/Platform.gmk
 @@ -264,6 +264,76 @@
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | sed -e 's@\ \ *@ @g' | cut -d' ' -f2)
  endif
@@ -9340,7 +9340,7 @@
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -380,6 +450,13 @@
+@@ -413,6 +483,13 @@
  #    system swapping during the build.
  #    If we don't know, assume 512. Subtract 128 from MB for VM MAX.
  #    Don't set VM max over 1024-128=896.
@@ -9354,7 +9354,7 @@
  ifneq ($(MB_OF_MEMORY),)
    LOW_MEMORY_MACHINE := $(shell \
      if [ $(MB_OF_MEMORY) -le 512 ] ; then \
-@@ -391,7 +468,7 @@
+@@ -424,7 +501,7 @@
      if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
        expr $(MB_OF_MEMORY) '-' 128 ; \
      else \
@@ -9363,7 +9363,7 @@
      fi)
    MIN_VM_MEMORY := $(shell \
      if [ $(MAX_VM_MEMORY) -le 128 ] ; then \
-@@ -443,6 +520,15 @@
+@@ -476,6 +553,15 @@
    ARCH_VM_SUBDIR=jre/lib/$(LIBARCH)
  endif
  
@@ -9379,8 +9379,8 @@
  # If blanks in the username, use the first 4 words and pack them together
  _USER1:=$(subst ', ,$(_USER))
  _USER2:=$(subst ", ,$(_USER1))
---- jdk/make/common/shared/Sanity-Settings.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Sanity-Settings.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Sanity-Settings.gmk
++++ jdk/make/common/shared/Sanity-Settings.gmk
 @@ -242,6 +242,7 @@
    ALL_SETTINGS+=$(call addAltSetting,FREETYPE_HEADERS_PATH)
    ALL_SETTINGS+=$(call addAltSetting,FREETYPE_LIB_PATH)
@@ -9389,8 +9389,8 @@
  ALL_SETTINGS+=$(call addOptionalSetting,PLUG_LIBRARY_NAMES)
  
  ifdef OPENJDK
---- jdk/make/common/shared/Sanity.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/common/shared/Sanity.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/common/shared/Sanity.gmk
++++ jdk/make/common/shared/Sanity.gmk
 @@ -90,6 +90,11 @@
      $(EGREP) "\#define" | $(NAWK) '{print $$3}')
  endif
@@ -9403,8 +9403,8 @@
  # Get the version numbers of what we are using
  _MAKE_VER  :=$(shell $(MAKE) --version 2>&1 | $(HEAD) -n 1)
  _ZIP_VER   :=$(shell $(ZIPEXE) -help 2>&1 | $(HEAD) -n 4 | $(EGREP) '^Zip')
---- jdk/make/java/Makefile	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/java/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/Makefile
++++ jdk/make/java/Makefile
 @@ -49,7 +49,7 @@
    endif
  endif # PLATFORM
@@ -9414,8 +9414,8 @@
    SUBDIRS += jexec
  endif # PLATFORM
  
---- jdk/make/java/hpi/hpi_common.gmk	2011-07-05 14:35:27.000000000 -0400
-+++ jdk/make/java/hpi/hpi_common.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/hpi/hpi_common.gmk
++++ jdk/make/java/hpi/hpi_common.gmk
 @@ -86,5 +86,9 @@
  # Things that must be linked in.
  #
@@ -9426,8 +9426,8 @@
  OTHER_LDLIBS += $(LIBSOCKET) -lnsl $(LIBM) -ldl
  endif
 +endif
---- jdk/make/java/hpi/native/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/hpi/native/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/hpi/native/Makefile
++++ jdk/make/java/hpi/native/Makefile
 @@ -72,11 +72,18 @@
  ifeq ($(MOOT_PRIORITIES),true)
  OTHER_CPPFLAGS += -DMOOT_PRIORITIES
@@ -9447,8 +9447,8 @@
  ifeq ($(HAVE_GETHRVTIME),true)
  OTHER_CPPFLAGS += -DHAVE_GETHRVTIME
  endif
---- jdk/make/java/instrument/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/instrument/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/instrument/Makefile
++++ jdk/make/java/instrument/Makefile
 @@ -102,6 +102,21 @@
    # equivalent of strcasecmp is stricmp on Windows
    CPPFLAGS_COMMON += -Dstrcasecmp=stricmp
@@ -9479,8 +9479,8 @@
  
  #
  # Library to compile.
---- jdk/make/java/java/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/java/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/java/Makefile
++++ jdk/make/java/java/Makefile
 @@ -167,8 +167,10 @@
  # Is the altzone extern documented in ctime(3C) available?
  #
@@ -9507,8 +9507,8 @@
  
  #
  # Rules.
---- jdk/make/java/java/genlocales.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/java/genlocales.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/java/genlocales.gmk
++++ jdk/make/java/java/genlocales.gmk
 @@ -76,11 +76,16 @@
  $(LocaleDataMetaInfo_Dest):$(LocaleDataMetaInfo_Src) $(LOCALEGEN_SH)
  	@$(RM) $@.tmp.euro $@.tmp.noneuro;
@@ -9531,8 +9531,8 @@
  		$@.tmp.noneuro $< $@
  	@$(RM) $@.tmp.euro $@.tmp.noneuro;
  	
---- jdk/make/java/java/localegen.sh	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/java/localegen.sh	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/java/localegen.sh
++++ jdk/make/java/java/localegen.sh
 @@ -29,7 +29,7 @@
  # This script is to generate the supported locale list string and replace the
  # LocaleDataMetaInfo-XLocales.java in <ws>/src/share/classes/sun/util
@@ -9563,8 +9563,8 @@
  done
  
  sed_script=$sed_script"$INPUT_FILE > $OUTPUT_FILE"
---- jdk/make/java/java_hprof_demo/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/java_hprof_demo/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/java_hprof_demo/Makefile
++++ jdk/make/java/java_hprof_demo/Makefile
 @@ -83,8 +83,10 @@
  ifeq ($(PLATFORM), windows)
    OTHER_LDLIBS += wsock32.lib winmm.lib
@@ -9576,8 +9576,8 @@
  
  #
  # Tell library.gmk to copy the txt file first
---- jdk/make/java/jli/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/jli/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/jli/Makefile
++++ jdk/make/java/jli/Makefile
 @@ -44,8 +44,10 @@
  
  include $(BUILDDIR)/common/Defs.gmk
@@ -9653,8 +9653,8 @@
 +endif
 +
  
---- jdk/make/java/management/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/management/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/management/Makefile
++++ jdk/make/java/management/Makefile
 @@ -85,6 +85,11 @@
  OTHER_INCLUDES += \
    -I$(SHARE_SRC)/native/sun/management 
@@ -9667,8 +9667,8 @@
  ifeq ($(PLATFORM),windows)
    OTHER_LDLIBS += $(JVMLIB)
  endif
---- jdk/make/java/net/FILES_c.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/net/FILES_c.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/net/FILES_c.gmk
++++ jdk/make/java/net/FILES_c.gmk
 @@ -43,6 +43,10 @@
      FILES_c += linux_close.c
  endif
@@ -9680,8 +9680,8 @@
  ifeq ($(PLATFORM), windows)
      FILES_c += TwoStacksPlainSocketImpl.c
      FILES_c += DualStackPlainSocketImpl.c
---- jdk/make/java/net/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/net/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/net/Makefile
++++ jdk/make/java/net/Makefile
 @@ -92,6 +92,12 @@
  
  include $(BUILDDIR)/common/Library.gmk
@@ -9703,8 +9703,8 @@
  
  CLASSES.export += java.lang.Integer java.io.FileDescriptor java.net.InetAddressImplFactory java.net.Inet4AddressImpl java.net.Inet6AddressImpl
  
---- jdk/make/java/nio/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/nio/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/nio/Makefile
++++ jdk/make/java/nio/Makefile
 @@ -104,6 +104,28 @@
  	sun/nio/ch/NativeThread.java
  endif # PLATFORM = linux
@@ -9766,8 +9766,8 @@
  include $(BUILDDIR)/common/Mapfile-vers.gmk
  include $(BUILDDIR)/common/Library.gmk
  
---- jdk/make/java/npt/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/npt/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/npt/Makefile
++++ jdk/make/java/npt/Makefile
 @@ -70,6 +70,18 @@
    OTHER_LCF += -export:nptInitialize -export:nptTerminate
  endif
@@ -9787,8 +9787,8 @@
  #
  # Add to ambient vpath so we pick up the library files
  #
---- jdk/make/java/redist/FILES.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/redist/FILES.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/redist/FILES.gmk
++++ jdk/make/java/redist/FILES.gmk
 @@ -38,6 +38,14 @@
  	$(LIBDIR)/fonts/LucidaSansDemiBold.ttf       	\
  
@@ -9804,8 +9804,8 @@
  
  # The oblique versions of the font are derived from the base versions
  # and since 2D can do this derivation on the fly at run time there is no
---- jdk/make/java/redist/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/redist/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/redist/Makefile
++++ jdk/make/java/redist/Makefile
 @@ -311,7 +311,7 @@
  $(FONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.fonts.dir
  	$(install-file)
@@ -9824,8 +9824,8 @@
  endif # !OPENJDK
  
  # Import internal files (ones that are stashed in this source tree)
---- jdk/make/java/security/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/security/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/security/Makefile
++++ jdk/make/java/security/Makefile
 @@ -51,7 +51,15 @@
    ifneq ($(ARCH_DATA_MODEL), 64)
      PROPS_SRC   = $(TOPDIR)/src/share/lib/security/java.security-windows
@@ -9842,8 +9842,8 @@
  endif # PLATFORM
  
  
---- jdk/make/java/zip/FILES_c.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/zip/FILES_c.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/zip/FILES_c.gmk
++++ jdk/make/java/zip/FILES_c.gmk
 @@ -30,6 +30,10 @@
  	Inflater.c \
  	ZipFile.c \
@@ -9863,8 +9863,8 @@
 -	zip_util.c
 +	inffast.c
 +endif
---- jdk/make/java/zip/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/java/zip/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/java/zip/Makefile
++++ jdk/make/java/zip/Makefile
 @@ -72,16 +72,24 @@
  CPPFLAGS += -UDEBUG 
  endif
@@ -9891,8 +9891,8 @@
  OTHER_LDLIBS = $(JVMLIB)
 +endif
 +
---- jdk/make/javax/sound/FILES_c.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/javax/sound/FILES_c.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/javax/sound/FILES_c.gmk
++++ jdk/make/javax/sound/FILES_c.gmk
 @@ -34,6 +34,8 @@
  
  FILES_linux = 
@@ -9902,8 +9902,8 @@
  FILES_windows = \
  	PLATFORM_API_WinOS_MidiIn.c \
  	PLATFORM_API_WinOS_MidiOut.c \
---- jdk/make/javax/sound/SoundDefs.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/javax/sound/SoundDefs.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/javax/sound/SoundDefs.gmk
++++ jdk/make/javax/sound/SoundDefs.gmk
 @@ -40,6 +40,10 @@
    CPPFLAGS += -DX_PLATFORM=X_LINUX
  endif # PLATFORM linux
@@ -9915,8 +9915,8 @@
  ifeq ($(PLATFORM), solaris)
    CPPFLAGS += -DX_PLATFORM=X_SOLARIS
  
---- jdk/make/javax/sound/jsoundalsa/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/javax/sound/jsoundalsa/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/javax/sound/jsoundalsa/Makefile
++++ jdk/make/javax/sound/jsoundalsa/Makefile
 @@ -65,6 +65,15 @@
  	$(MIDIFILES_export) \
  	$(PORTFILES_export)
@@ -9941,8 +9941,8 @@
  
  #
  # Add to the ambient VPATH.
---- jdk/make/jpda/back/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/jpda/back/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/jpda/back/Makefile
++++ jdk/make/jpda/back/Makefile
 @@ -49,8 +49,10 @@
                   -I$(GENNATIVESRCDIR)/jdwp
  
@@ -9954,8 +9954,8 @@
  
  #
  # This turns off all assert() checking in the optimized library
---- jdk/make/sun/awt/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/sun/awt/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/awt/Makefile
++++ jdk/make/sun/awt/Makefile
 @@ -129,6 +129,14 @@
  OTHER_LDLIBS = $(JVMLIB) $(LIBM) -ldl
  endif
@@ -10025,8 +10025,8 @@
  LDFLAGS += -L$(MOTIF_LIB) -L$(OPENWIN_LIB)
  endif
  
---- jdk/make/sun/awt/mawt.gmk	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/sun/awt/mawt.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/awt/mawt.gmk
++++ jdk/make/sun/awt/mawt.gmk
 @@ -174,7 +174,7 @@
  OTHER_LDLIBS = $(LIBXM) -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
  endif
@@ -10083,8 +10083,8 @@
  
  LDFLAGS += -L$(LIBDIR)/$(LIBARCH)/$(TSOBJDIR) \
  	   $(AWT_RUNPATH)
---- jdk/make/sun/font/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/font/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/font/Makefile
++++ jdk/make/sun/font/Makefile
 @@ -177,6 +177,15 @@
  # Libraries to link, and other C flags.
  #
@@ -10109,8 +10109,8 @@
  
  endif # PLATFORM
  
---- jdk/make/sun/image/generic/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/image/generic/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/image/generic/Makefile
++++ jdk/make/sun/image/generic/Makefile
 @@ -69,5 +69,9 @@
              -I$(PLATFORM_SRC)/native/$(PKGDIR)/medialib 
  
@@ -10122,8 +10122,8 @@
 +endif
 +
  
---- jdk/make/sun/jawt/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/jawt/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/jawt/Makefile
++++ jdk/make/sun/jawt/Makefile
 @@ -98,9 +98,7 @@
  #
  # Other extra flags needed for compiling.
@@ -10153,8 +10153,8 @@
  OTHER_LDLIBS = -L$(LIBDIR)/$(LIBARCH) -lawt -L$(LIBDIR)/$(LIBARCH)/xawt -lmawt
  endif # PLATFORM
  
---- jdk/make/sun/security/jgss/wrapper/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/security/jgss/wrapper/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/security/jgss/wrapper/Makefile
++++ jdk/make/sun/security/jgss/wrapper/Makefile
 @@ -71,6 +71,10 @@
  #
  # Libraries to link
@@ -10167,9 +10167,9 @@
 +ifeq ($(PLATFORM), bsd)
 +  OTHER_LDLIBS = $(JVMLIB)
 +endif
---- jdk/make/sun/security/pkcs11/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/security/pkcs11/Makefile	2011-07-07 19:17:03.000000000 -0400
-@@ -155,7 +155,7 @@
+--- jdk/make/sun/security/pkcs11/Makefile
++++ jdk/make/sun/security/pkcs11/Makefile
+@@ -156,7 +156,7 @@
  #
  # Libraries to link
  #
@@ -10178,8 +10178,8 @@
    OTHER_LDLIBS = $(JVMLIB)
  else
    OTHER_LDLIBS = -ldl $(JVMLIB)
---- jdk/make/sun/security/smartcardio/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/security/smartcardio/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/security/smartcardio/Makefile
++++ jdk/make/sun/security/smartcardio/Makefile
 @@ -75,6 +75,10 @@
  ifeq ($(PLATFORM), windows)
    OTHER_LDLIBS = $(JVMLIB) winscard.lib
@@ -10192,8 +10192,8 @@
 +  endif
    OTHER_CFLAGS = -D__sun_jdk
  endif
---- jdk/make/sun/splashscreen/FILES_c.gmk	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/splashscreen/FILES_c.gmk	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/splashscreen/FILES_c.gmk
++++ jdk/make/sun/splashscreen/FILES_c.gmk
 @@ -49,20 +49,6 @@
  	dgif_lib.c \
  	gif_err.c \
@@ -10236,8 +10236,8 @@
 +	zcrc32.c \
 +	zutil.c
 +endif
---- jdk/make/sun/splashscreen/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/splashscreen/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/splashscreen/Makefile
++++ jdk/make/sun/splashscreen/Makefile
 @@ -61,10 +61,26 @@
  
  CFLAGS += -DSPLASHSCREEN
@@ -10285,8 +10285,8 @@
  ifeq ($(PLATFORM), linux)
    ifeq ($(ARCH_DATA_MODEL), 64)
      # 64-bit gcc has problems compiling MMX instructions.
---- jdk/make/sun/xawt/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/sun/xawt/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/sun/xawt/Makefile
++++ jdk/make/sun/xawt/Makefile
 @@ -53,6 +53,11 @@
  dummy := $(shell $(MKDIR) -p $(LIB_LOCATION))
  endif
@@ -10350,8 +10350,8 @@
  ifeq ($(MILESTONE), internal)
    CPPFLAGS += -DINTERNAL_BUILD
  endif
---- jdk/make/tools/freetypecheck/Makefile	2011-07-05 14:35:29.000000000 -0400
-+++ jdk/make/tools/freetypecheck/Makefile	2011-07-07 19:17:03.000000000 -0400
+--- jdk/make/tools/freetypecheck/Makefile
++++ jdk/make/tools/freetypecheck/Makefile
 @@ -60,8 +60,12 @@
    #add runtime lib search path to ensure test will be runnable
    ifeq ($(PLATFORM), solaris)
@@ -10367,8 +10367,8 @@
    endif
  endif
  
---- jdk/src/share/back/commonRef.c	2011-07-05 14:35:30.000000000 -0400
-+++ jdk/src/share/back/commonRef.c	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/back/commonRef.c
++++ jdk/src/share/back/commonRef.c
 @@ -23,6 +23,10 @@
   * questions.
   */
@@ -10380,8 +10380,8 @@
  #include "util.h"
  #include "commonRef.h"
  
---- jdk/src/share/bin/java.c	2011-07-05 14:35:31.000000000 -0400
-+++ jdk/src/share/bin/java.c	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/bin/java.c
++++ jdk/src/share/bin/java.c
 @@ -104,6 +104,11 @@
  static char *launchername;
  jboolean _launcher_debug = JNI_FALSE;
@@ -10576,8 +10576,8 @@
  static void
  FreeKnownVMs()
  {
---- jdk/src/share/bin/java.h	2011-07-05 14:35:31.000000000 -0400
-+++ jdk/src/share/bin/java.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/bin/java.h
++++ jdk/src/share/bin/java.h
 @@ -91,11 +91,17 @@
  void PrintMachineDependentOptions();
  
@@ -10598,8 +10598,8 @@
  
  /* sun.java.launcher.* platform properties. */
  void SetJavaLauncherPlatformProps(void);
---- jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java	2011-07-05 14:35:32.000000000 -0400
-+++ jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
++++ jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
 @@ -477,6 +477,10 @@
                  String[] dirs = new String[] {
                      userHome + sep + ".themes",
@@ -10611,8 +10611,8 @@
                      "/usr/share/themes",
                      "/usr/gnome/share/themes",  // Debian/Redhat/Solaris
                      "/opt/gnome2/share/themes"  // SuSE
---- jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java	2011-07-05 14:35:33.000000000 -0400
-+++ jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java
++++ jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java
 @@ -78,6 +78,9 @@
       */
      public long            timeStamp ;
@@ -10623,8 +10623,8 @@
  
  
      /**
---- jdk/src/share/classes/java/awt/Font.java	2011-07-05 14:35:37.000000000 -0400
-+++ jdk/src/share/classes/java/awt/Font.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/java/awt/Font.java
++++ jdk/src/share/classes/java/awt/Font.java
 @@ -449,18 +449,19 @@
       */
      private AttributeValues getAttributeValues() {
@@ -10651,8 +10651,8 @@
          }
  
          return values;
---- jdk/src/share/classes/java/awt/GraphicsEnvironment.java	2011-07-05 14:35:37.000000000 -0400
-+++ jdk/src/share/classes/java/awt/GraphicsEnvironment.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/java/awt/GraphicsEnvironment.java
++++ jdk/src/share/classes/java/awt/GraphicsEnvironment.java
 @@ -148,7 +148,12 @@
                          } else {
                              String osName = System.getProperty("os.name");
@@ -10667,9 +10667,9 @@
                                                  (System.getenv("DISPLAY") == null));
                          }
                      } else if (nm.equals("true")) {
---- jdk/src/share/classes/java/util/TimeZone.java	2011-07-05 14:35:42.000000000 -0400
-+++ jdk/src/share/classes/java/util/TimeZone.java	2011-07-07 19:17:03.000000000 -0400
-@@ -776,15 +776,13 @@
+--- jdk/src/share/classes/java/util/TimeZone.java
++++ jdk/src/share/classes/java/util/TimeZone.java
+@@ -833,15 +833,13 @@
          }
          int gmtOffset =  (hours * 60 + num) * 60 * 1000;
  
@@ -10686,8 +10686,8 @@
          }
          return zi;
      }
---- jdk/src/share/classes/sun/awt/FontConfiguration.java	2011-07-05 14:35:50.000000000 -0400
-+++ jdk/src/share/classes/sun/awt/FontConfiguration.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/awt/FontConfiguration.java
++++ jdk/src/share/classes/sun/awt/FontConfiguration.java
 @@ -1073,7 +1073,7 @@
       */
      HashMap<String, Boolean> existsMap;
@@ -10706,8 +10706,8 @@
                      errors++;
                  }
              }
---- jdk/src/share/classes/sun/font/TrueTypeFont.java	2011-07-05 14:35:51.000000000 -0400
-+++ jdk/src/share/classes/sun/font/TrueTypeFont.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/font/TrueTypeFont.java
++++ jdk/src/share/classes/sun/font/TrueTypeFont.java
 @@ -160,6 +160,13 @@
      private boolean supportsJA;
      private boolean supportsCJK;
@@ -10818,8 +10818,8 @@
              } else {
                  return name;
              }
---- jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java	2011-07-05 14:35:52.000000000 -0400
-+++ jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java
++++ jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java
 @@ -76,7 +76,7 @@
  public abstract class SunGraphicsEnvironment extends GraphicsEnvironment
      implements FontSupport, DisplayChangedListener {
@@ -10857,8 +10857,8 @@
                      registerFontDir(jreFontDirName);
                  }
                  registerFontsInDir(jreFontDirName, true, Font2D.JRE_RANK,
---- jdk/src/share/classes/sun/nio/ch/KqueueSelectorProvider.java	2011-07-07 19:17:03.000000000 -0400
-+++ jdk/src/share/classes/sun/nio/ch/KqueueSelectorProvider.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/nio/ch/KqueueSelectorProvider.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/sun/nio/ch/KqueueSelectorProvider.java
 @@ -0,0 +1,17 @@
 +package sun.nio.ch;
 +
@@ -10877,8 +10877,8 @@
 +	return InheritedChannel.getChannel();
 +    }
 +}
---- jdk/src/share/classes/sun/print/PSPrinterJob.java	2011-07-05 14:35:57.000000000 -0400
-+++ jdk/src/share/classes/sun/print/PSPrinterJob.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/print/PSPrinterJob.java
++++ jdk/src/share/classes/sun/print/PSPrinterJob.java
 @@ -1531,7 +1531,9 @@
              pFlags |= NOSHEET;
              ncomps+=1;
@@ -10890,8 +10890,8 @@
              execCmd = new String[ncomps];
              execCmd[n++] = "/usr/bin/lpr";
              if ((pFlags & PRINTER) != 0) {
---- jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	2011-07-05 14:35:58.000000000 -0400
-+++ jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java
++++ jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java
 @@ -49,8 +49,12 @@
              AccessController.doPrivileged(new PrivilegedAction<Boolean>() {
                      public Boolean run() {
@@ -10907,8 +10907,8 @@
                                  return new Boolean(System.getProperty
                                      (USE_NATIVE_PROP));
                              }
---- jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	2011-07-05 14:35:58.000000000 -0400
-+++ jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java
++++ jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java
 @@ -82,7 +82,11 @@
                              String osname = System.getProperty("os.name");
                              if (osname.startsWith("SunOS")) {
@@ -10922,8 +10922,8 @@
                                  gssLib = "libgssapi.so";
                              }
                          }
---- jdk/src/share/classes/sun/security/krb5/Config.java	2011-07-05 14:35:58.000000000 -0400
-+++ jdk/src/share/classes/sun/security/krb5/Config.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/security/krb5/Config.java
++++ jdk/src/share/classes/sun/security/krb5/Config.java
 @@ -711,7 +711,11 @@
                      }
                  } else if (osname.startsWith("SunOS")) {
@@ -10937,9 +10937,9 @@
                      name =  "/etc/krb5.conf";
                  }
              }
---- jdk/src/share/classes/sun/security/krb5/internal/ccache/FileCredentialsCache.java	2011-07-05 14:35:58.000000000 -0400
-+++ jdk/src/share/classes/sun/security/krb5/internal/ccache/FileCredentialsCache.java	2011-07-07 19:17:03.000000000 -0400
-@@ -383,8 +383,12 @@
+--- jdk/src/share/classes/sun/security/krb5/internal/ccache/FileCredentialsCache.java
++++ jdk/src/share/classes/sun/security/krb5/internal/ccache/FileCredentialsCache.java
+@@ -386,8 +386,12 @@
              String uidStr = null;
              long uid = 0;
  
@@ -10954,15 +10954,15 @@
                  try {
                      Class<?> c = Class.forName
                          ("com.sun.security.auth.module.UnixSystem");
---- jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	2011-07-05 14:36:01.000000000 -0400
-+++ jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider
++++ jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider
 @@ -30,3 +30,4 @@
  #[solaris]sun.tools.attach.SolarisAttachProvider
  #[windows]sun.tools.attach.WindowsAttachProvider
  #[linux]sun.tools.attach.LinuxAttachProvider
 +#[bsd]sun.tools.attach.BsdAttachProvider
---- jdk/src/share/classes/sun/tools/jar/Main.java	2011-07-05 14:36:01.000000000 -0400
-+++ jdk/src/share/classes/sun/tools/jar/Main.java	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/tools/jar/Main.java
++++ jdk/src/share/classes/sun/tools/jar/Main.java
 @@ -48,6 +48,7 @@
      String zname = "";
      String[] files;
@@ -11010,8 +11010,8 @@
                  if (!d.exists() && !d.mkdirs() || !d.isDirectory()) {
                      throw new IOException(formatMsg(
                          "error.create.dir", d.getPath()));
---- jdk/src/share/classes/sun/tools/jar/resources/jar.properties	2011-07-05 14:36:01.000000000 -0400
-+++ jdk/src/share/classes/sun/tools/jar/resources/jar.properties	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/classes/sun/tools/jar/resources/jar.properties
++++ jdk/src/share/classes/sun/tools/jar/resources/jar.properties
 @@ -44,6 +44,8 @@
          {0} : could not create directory
  error.incorrect.length=\
@@ -11021,8 +11021,8 @@
  out.added.manifest=\
          added manifest
  out.update.manifest=\
---- jdk/src/share/hpi/include/hpi_impl.h	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/hpi/include/hpi_impl.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/hpi/include/hpi_impl.h
++++ jdk/src/share/hpi/include/hpi_impl.h
 @@ -138,7 +138,11 @@
  int sysBind(int fd, struct sockaddr *him, int len);
  int sysAccept(int fd, struct sockaddr *him, int *len);
@@ -11036,8 +11036,8 @@
  ssize_t sysSendTo(int fd, char *buf, int len, int flags, struct sockaddr *to,
                int tolen);
  ssize_t sysRecvFrom(int fd, char *buf, int nbytes, int flags,
---- jdk/src/share/native/com/sun/java/util/jar/pack/defines.h	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/com/sun/java/util/jar/pack/defines.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/com/sun/java/util/jar/pack/defines.h
++++ jdk/src/share/native/com/sun/java/util/jar/pack/defines.h
 @@ -32,6 +32,10 @@
  #include <unistd.h>
  #endif
@@ -11063,8 +11063,8 @@
  #ifdef _MSC_VER
  typedef LONGLONG        jlong;
  typedef DWORDLONG       julong;
---- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp
++++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp
 @@ -33,9 +33,14 @@
  #include <limits.h>
  #include <time.h>
@@ -11102,8 +11102,8 @@
            true));
  }
  
---- jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c
++++ jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c
 @@ -33,7 +33,11 @@
  
  #include <jni.h>
@@ -11116,8 +11116,8 @@
  #include "SoundDefs.h"
  #include "DirectAudio.h"
  #include "Utilities.h"
---- jdk/src/share/native/com/sun/media/sound/SoundDefs.h	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/com/sun/media/sound/SoundDefs.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/com/sun/media/sound/SoundDefs.h
++++ jdk/src/share/native/com/sun/media/sound/SoundDefs.h
 @@ -31,6 +31,7 @@
  #define X_WINDOWS       1
  #define X_SOLARIS       2
@@ -11145,8 +11145,8 @@
 +
 +
  #endif  // __SOUNDDEFS_INCLUDED__
---- jdk/src/share/native/common/check_code.c	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/common/check_code.c	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/common/check_code.c
++++ jdk/src/share/native/common/check_code.c
 @@ -1069,7 +1069,7 @@
   * Make sure that branches don't go into the middle of nowhere.
   */
@@ -11208,8 +11208,8 @@
              /* There can't be more than 64K labels because of the limit
               * on per-method byte code length.
               */
---- jdk/src/share/native/java/io/io_util.h	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/java/io/io_util.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/java/io/io_util.h
++++ jdk/src/share/native/java/io/io_util.h
 @@ -29,7 +29,15 @@
  extern jfieldID IO_fd_fdID;
  extern jfieldID IO_handle_fdID;
@@ -11227,8 +11227,8 @@
  #define O_SYNC  (0x0800)
  #define O_DSYNC (0x2000)
  #endif
---- jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h
++++ jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h
 @@ -25,6 +25,10 @@
   * questions.
   */
@@ -11254,8 +11254,8 @@
  
  /*
   * ANSI/POSIX
---- jdk/src/share/native/java/lang/fdlibm/include/jfdlibm.h	2011-07-05 14:36:05.000000000 -0400
-+++ jdk/src/share/native/java/lang/fdlibm/include/jfdlibm.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/java/lang/fdlibm/include/jfdlibm.h
++++ jdk/src/share/native/java/lang/fdlibm/include/jfdlibm.h
 @@ -61,7 +61,7 @@
  #define log1p   jlog1p
  #define expm1   jexpm1
@@ -11265,8 +11265,8 @@
  #define __ieee754_sqrt          __j__ieee754_sqrt
  #define __ieee754_acos          __j__ieee754_acos
  #define __ieee754_acosh         __j__ieee754_acosh
---- jdk/src/share/native/java/util/zip/Inflater.c	2011-07-05 14:36:06.000000000 -0400
-+++ jdk/src/share/native/java/util/zip/Inflater.c	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/java/util/zip/Inflater.c
++++ jdk/src/share/native/java/util/zip/Inflater.c
 @@ -65,6 +65,10 @@
  	return jlong_zero;
      } else {
@@ -11289,8 +11289,8 @@
  }
  
  JNIEXPORT void JNICALL
---- jdk/src/share/native/java/util/zip/zlib-1.1.3/zconf.h	2011-07-05 14:36:06.000000000 -0400
-+++ jdk/src/share/native/java/util/zip/zlib-1.1.3/zconf.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/java/util/zip/zlib-1.1.3/zconf.h
++++ jdk/src/share/native/java/util/zip/zlib-1.1.3/zconf.h
 @@ -42,44 +42,49 @@
  /* for _LP64 */
  #include <sys/types.h>
@@ -11374,8 +11374,8 @@
  #endif
  
  #if (defined(_WIN32) || defined(__WIN32__)) && !defined(WIN32)
---- jdk/src/share/native/sun/awt/debug/debug_util.h	2011-07-05 14:36:06.000000000 -0400
-+++ jdk/src/share/native/sun/awt/debug/debug_util.h	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/sun/awt/debug/debug_util.h
++++ jdk/src/share/native/sun/awt/debug/debug_util.h
 @@ -50,7 +50,9 @@
  #include <stdio.h>
  #include <string.h>
@@ -11386,8 +11386,8 @@
  #include <limits.h>
  
  /* keep these after the other headers */
---- jdk/src/share/native/sun/awt/image/BufImgSurfaceData.c	2011-07-05 14:36:06.000000000 -0400
-+++ jdk/src/share/native/sun/awt/image/BufImgSurfaceData.c	2011-07-07 19:17:03.000000000 -0400
+--- jdk/src/share/native/sun/awt/image/BufImgSurfaceData.c
++++ jdk/src/share/native/sun/awt/image/BufImgSurfaceData.c
 @@ -24,7 +24,11 @@
   */
  
@@ -11400,8 +11400,8 @@
  
  #include "sun_awt_image_BufImgSurfaceData.h"
  
---- jdk/src/share/native/sun/awt/image/DataBufferNative.c	2011-07-05 14:36:06.000000000 -0400
-+++ jdk/src/share/native/sun/awt/image/DataBufferNative.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/image/DataBufferNative.c
++++ jdk/src/share/native/sun/awt/image/DataBufferNative.c
 @@ -23,7 +23,11 @@
   * questions.
   */
@@ -11414,8 +11414,8 @@
  
  #include "SurfaceData.h"
  #include "sun_awt_image_DataBufferNative.h"
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c
 @@ -86,7 +86,7 @@
  #endif /* MLIB_USE_FTOI_CLAMPING */
  
@@ -11455,8 +11455,8 @@
  
  #endif /* _NO_LONGLONG */
  
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -11496,8 +11496,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -11537,8 +11537,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -11578,8 +11578,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c
 @@ -95,7 +95,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -11619,8 +11619,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -11660,8 +11660,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -11701,8 +11701,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c
 @@ -95,7 +95,7 @@
      dst = dp[0];
      if (ld_offset + size < 32) {
@@ -11922,8 +11922,8 @@
    }
  
  #else  /* _LONGLONG */
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c
 @@ -168,7 +168,7 @@
  }
  
@@ -12204,8 +12204,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c
 @@ -88,7 +88,7 @@
  } d64_2_f32;
  
@@ -12357,8 +12357,8 @@
  
    ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
    ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
---- jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c
 @@ -30,7 +30,7 @@
  typedef union {
    mlib_d64 db;
@@ -12368,8 +12368,8 @@
      mlib_s32 int1, int0;
  #else
      mlib_s32 int0, int1;
---- jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c
 @@ -275,11 +275,11 @@
        for (i = 0; j <= (b_size - 4); j += 4, i++) {
          src0 = src1;
@@ -12468,8 +12468,8 @@
          s0 = s1;
          dp += SIZE;
          sp += SIZE;
---- jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c
 @@ -120,7 +120,7 @@
    }                                                               \
  }
@@ -13702,8 +13702,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- jdk/src/share/native/sun/awt/medialib/mlib_image.h	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_image.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_image.h
++++ jdk/src/share/native/sun/awt/medialib/mlib_image.h
 @@ -27,6 +27,11 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
@@ -13716,8 +13716,8 @@
  #include <mlib_types.h>
  #include <mlib_status.h>
  #include <mlib_sys.h>
---- jdk/src/share/native/sun/awt/medialib/mlib_sys.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_sys.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_sys.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_sys.c
 @@ -26,9 +26,15 @@
  
  #include <stdlib.h>
@@ -13748,8 +13748,8 @@
    return (void *) memalign(8, size);
  #endif /* _MSC_VER */
  }
---- jdk/src/share/native/sun/awt/medialib/mlib_types.h	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/awt/medialib/mlib_types.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/awt/medialib/mlib_types.h
++++ jdk/src/share/native/sun/awt/medialib/mlib_types.h
 @@ -59,7 +59,10 @@
  
  #if defined(__SUNPRO_C) || defined(__SUNPRO_CC) || defined(__GNUC__)
@@ -13762,8 +13762,8 @@
  #include <stdint.h>                     /* for uintptr_t */
  #include <malloc.h>                     /* for ptrdiff_t */
  #else
---- jdk/src/share/native/sun/font/AccelGlyphCache.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/font/AccelGlyphCache.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/font/AccelGlyphCache.c
++++ jdk/src/share/native/sun/font/AccelGlyphCache.c
 @@ -23,7 +23,11 @@
   * questions.
   */
@@ -13776,8 +13776,8 @@
  #include "jni.h"
  #include "AccelGlyphCache.h"
  #include "Trace.h"
---- jdk/src/share/native/sun/font/DrawGlyphList.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/font/DrawGlyphList.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/font/DrawGlyphList.c
++++ jdk/src/share/native/sun/font/DrawGlyphList.c
 @@ -26,7 +26,11 @@
  #include "jlong.h"
  #include "math.h"
@@ -13790,8 +13790,8 @@
  #include "sunfontids.h"
  #include "fontscalerdefs.h"
  #include "glyphblitting.h"
---- jdk/src/share/native/sun/font/sunFont.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/font/sunFont.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/font/sunFont.c
++++ jdk/src/share/native/sun/font/sunFont.c
 @@ -24,7 +24,9 @@
   */
  
@@ -13802,8 +13802,8 @@
  #include "string.h"
  #include "gdefs.h"
  #include "jlong.h"
---- jdk/src/share/native/sun/java2d/SurfaceData.c	2011-07-05 14:36:07.000000000 -0400
-+++ jdk/src/share/native/sun/java2d/SurfaceData.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/java2d/SurfaceData.c
++++ jdk/src/share/native/sun/java2d/SurfaceData.c
 @@ -28,7 +28,11 @@
  #include "jni_util.h"
  #include "Disposer.h"
@@ -13816,8 +13816,8 @@
  #include "string.h"
  
  /**
---- jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h	2011-07-05 14:36:08.000000000 -0400
-+++ jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h
++++ jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h
 @@ -26,6 +26,9 @@
  #ifndef OGLFuncs_h_Included
  #define OGLFuncs_h_Included
@@ -13828,8 +13828,8 @@
  #include "jni.h"
  #include "J2D_GL/gl.h"
  #include "J2D_GL/glext.h"
---- jdk/src/share/native/sun/java2d/opengl/OGLRenderQueue.c	2011-07-05 14:36:08.000000000 -0400
-+++ jdk/src/share/native/sun/java2d/opengl/OGLRenderQueue.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/java2d/opengl/OGLRenderQueue.c
++++ jdk/src/share/native/sun/java2d/opengl/OGLRenderQueue.c
 @@ -25,7 +25,11 @@
  
  #ifndef HEADLESS
@@ -13842,8 +13842,8 @@
  
  #include "sun_java2d_pipe_BufferedOpCodes.h"
  
---- jdk/src/share/native/sun/java2d/opengl/OGLTextRenderer.c	2011-07-05 14:36:08.000000000 -0400
-+++ jdk/src/share/native/sun/java2d/opengl/OGLTextRenderer.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/native/sun/java2d/opengl/OGLTextRenderer.c
++++ jdk/src/share/native/sun/java2d/opengl/OGLTextRenderer.c
 @@ -25,7 +25,11 @@
  
  #ifndef HEADLESS
@@ -13856,8 +13856,8 @@
  #include <math.h>
  #include <jlong.h>
  
---- jdk/src/share/transport/socket/socketTransport.c	2011-07-05 14:36:09.000000000 -0400
-+++ jdk/src/share/transport/socket/socketTransport.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/share/transport/socket/socketTransport.c
++++ jdk/src/share/transport/socket/socketTransport.c
 @@ -65,6 +65,9 @@
  #define HEADER_SIZE     11
  #define MAX_DATA_SIZE 1000
@@ -13945,8 +13945,8 @@
              return res;
          } else if (res == 0) {
              break; /* eof, return nbytes which is less than len */
---- jdk/src/solaris/back/exec_md.c	2011-07-05 14:36:09.000000000 -0400
-+++ jdk/src/solaris/back/exec_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/back/exec_md.c
++++ jdk/src/solaris/back/exec_md.c
 @@ -30,7 +30,7 @@
  #include "sys.h"
  #include "util.h"
@@ -13956,8 +13956,8 @@
    /* Linux */
    #define FORK() fork()
  #else
---- jdk/src/solaris/back/linker_md.c	2011-07-05 14:36:09.000000000 -0400
-+++ jdk/src/solaris/back/linker_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/back/linker_md.c
++++ jdk/src/solaris/back/linker_md.c
 @@ -48,6 +48,12 @@
  #include "threads_md.h"
  #endif
@@ -13983,8 +13983,8 @@
      }
  }
  
---- jdk/src/solaris/back/util_md.h	2011-07-05 14:36:09.000000000 -0400
-+++ jdk/src/solaris/back/util_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/back/util_md.h
++++ jdk/src/solaris/back/util_md.h
 @@ -29,7 +29,7 @@
  #include <stddef.h>
  
@@ -14011,8 +14011,8 @@
  
  #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
  #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
---- jdk/src/solaris/bin/java_md.c	2012-05-01 17:18:34.000000000 -0400
-+++ jdk/src/solaris/bin/java_md.c	2012-09-26 17:43:09.000000000 -0400
+--- jdk/src/solaris/bin/java_md.c
++++ jdk/src/solaris/bin/java_md.c
 @@ -24,6 +24,7 @@
   */
  
@@ -14251,8 +14251,8 @@
  /* Coarse estimation of number of digits assuming the worst case is a 64-bit pid. */
  #define MAX_PID_STR_SZ   20
  
---- jdk/src/solaris/bin/java_md.h	2011-07-05 14:36:09.000000000 -0400
-+++ jdk/src/solaris/bin/java_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/bin/java_md.h
++++ jdk/src/solaris/bin/java_md.h
 @@ -58,10 +58,14 @@
  #include <sys/time.h>
  #define CounterGet()              (gethrtime()/1000)
@@ -14269,8 +14269,8 @@
  
  /*
   * Function prototypes.
---- jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java	2011-07-05 14:36:09.000000000 -0400
-+++ jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java
++++ jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java
 @@ -403,7 +403,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
@@ -14289,8 +14289,8 @@
              fontConfigDirs.add(jreLibDirName+File.separator+"oblique-fonts");
          }
          fontdirs = (String[])fontConfigDirs.toArray(new String[0]);
---- jdk/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java
++++ jdk/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java
 @@ -47,6 +47,10 @@
      public static SelectorProvider create() {
          String osname = AccessController.doPrivileged(
@@ -14302,8 +14302,8 @@
          if ("SunOS".equals(osname)) {
              return new sun.nio.ch.DevPollSelectorProvider();
          }
---- jdk/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java	2011-07-07 19:17:04.000000000 -0400
-+++ jdk/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java
 @@ -0,0 +1,231 @@
 +/*
 + * Scratched by davidxu@freebsd.org
@@ -14536,8 +14536,8 @@
 +    private static native short getKeventFlags(long address, int index);
 +    private static native int getKeventIdent(long address, int index);
 +}
---- jdk/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	2011-07-07 19:17:04.000000000 -0400
-+++ jdk/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java
 @@ -0,0 +1,205 @@
 +/*
 + * scratched by davidxu@freebsd.org
@@ -14744,8 +14744,8 @@
 +    }
 +
 +}
---- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java
++++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java
 @@ -119,7 +119,11 @@
      }
  
@@ -14759,8 +14759,8 @@
      }
  
      static final int UNINITIALIZED = -1;
---- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
++++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
 @@ -38,9 +38,6 @@
   */
  public class BsdVirtualMachine extends HotSpotVirtualMachine {
@@ -14864,8 +14864,8 @@
 -        isBsdThreads = isBsdThreads();
      }
  }
---- jdk/src/solaris/demo/jvmti/hprof/hprof_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/demo/jvmti/hprof/hprof_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/demo/jvmti/hprof/hprof_md.c
++++ jdk/src/solaris/demo/jvmti/hprof/hprof_md.c
 @@ -33,7 +33,7 @@
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -14911,8 +14911,8 @@
      addr = (void*)&Agent_OnLoad;
  #else
      /* Just using &Agent_OnLoad will get the first external symbol with
---- jdk/src/solaris/hpi/include/interrupt.h	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/include/interrupt.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/include/interrupt.h
++++ jdk/src/solaris/hpi/include/interrupt.h
 @@ -75,7 +75,7 @@
   *      N_INTERRUPTS  - The number of interrupt channels.  These
   *                      are numbered from 0 to (N_INTERRUPTS - 1).
@@ -14933,8 +14933,8 @@
  #ifdef SA_SIGINFO
  /* Thread implementation dependent interrupt dispatcher. */
  void intrDispatchMD(int sig, siginfo_t *info, void *uc);
---- jdk/src/solaris/hpi/include/largefile.h	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/include/largefile.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/include/largefile.h
++++ jdk/src/solaris/hpi/include/largefile.h
 @@ -34,6 +34,10 @@
  #include "largefile_linux.h"
  #endif
@@ -14946,8 +14946,8 @@
  /*
   * Prototypes for wrappers that we define.  These wrapper functions
   * are low-level I/O routines that will use 64 bit versions if
---- jdk/src/solaris/hpi/include/largefile_bsd.h	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/src/solaris/hpi/include/largefile_bsd.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/include/largefile_bsd.h
++++ jdk/src/solaris/hpi/include/largefile_bsd.h
 @@ -23,14 +23,28 @@
   * questions.
   */
@@ -14984,8 +14984,8 @@
 +#define                pwrite64        pwrite
 +
 +#endif /* _JAVASOFT_BSD_LARGEFILE_SUPPORT_H_ */
---- jdk/src/solaris/hpi/native_threads/include/threads_md.h	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/native_threads/include/threads_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/native_threads/include/threads_md.h
++++ jdk/src/solaris/hpi/native_threads/include/threads_md.h
 @@ -36,6 +36,8 @@
  #define N_TRACED_REGS 12
  #elif i386
@@ -15032,8 +15032,8 @@
  
  #ifdef __linux__
  extern thread_key_t intrJmpbufkey;
---- jdk/src/solaris/hpi/native_threads/src/condvar_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/native_threads/src/condvar_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/native_threads/src/condvar_md.c
++++ jdk/src/solaris/hpi/native_threads/src/condvar_md.c
 @@ -58,7 +58,7 @@
  {
      int err;
@@ -15043,8 +15043,8 @@
      err = pthread_cond_destroy((cond_t *) &condvar->cond);
  #else
      err = cond_destroy((cond_t *) condvar);
---- jdk/src/solaris/hpi/native_threads/src/monitor_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/native_threads/src/monitor_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/native_threads/src/monitor_md.c
++++ jdk/src/solaris/hpi/native_threads/src/monitor_md.c
 @@ -147,7 +147,7 @@
          mid->monitor_owner = self;
          mid->entry_count = 1;
@@ -15054,8 +15054,8 @@
          if (mid->monitor_owner == self) {
              mid->entry_count++;
              return SYS_OK;
---- jdk/src/solaris/hpi/native_threads/src/sys_api_td.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/native_threads/src/sys_api_td.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/native_threads/src/sys_api_td.c
++++ jdk/src/solaris/hpi/native_threads/src/sys_api_td.c
 @@ -39,6 +39,10 @@
  #include <sys/ioctl.h>
  #endif
@@ -15078,8 +15078,8 @@
  #ifdef NO_INTERRUPTIBLE_IO
  #undef CLOSEIO
  #else
---- jdk/src/solaris/hpi/native_threads/src/threads_bsd.c	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/src/solaris/hpi/native_threads/src/threads_bsd.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
++++ jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
 @@ -23,79 +23,44 @@
   * questions.
   */
@@ -15955,8 +15955,8 @@
 -
 -    print_lwps();
  }
---- jdk/src/solaris/hpi/native_threads/src/threads_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/native_threads/src/threads_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/native_threads/src/threads_md.c
++++ jdk/src/solaris/hpi/native_threads/src/threads_md.c
 @@ -54,6 +54,10 @@
  #error That can NOT possibly be right.
  #endif
@@ -16038,8 +16038,8 @@
  
          info.isMP = (cpus < 0) ? 1 : (cpus > 1);
          info.name = "native threads";
---- jdk/src/solaris/hpi/src/linker_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/src/linker_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/src/linker_md.c
++++ jdk/src/solaris/hpi/src/linker_md.c
 @@ -44,11 +44,19 @@
  #include "threads_md.h"
  #endif
@@ -16106,8 +16106,8 @@
  #endif
      /*
       * This is a bit of bulletproofing to catch the commonly occurring
---- jdk/src/solaris/hpi/src/memory_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/src/memory_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/src/memory_md.c
++++ jdk/src/solaris/hpi/src/memory_md.c
 @@ -50,12 +50,24 @@
  #include <stdlib.h>
  #include <stdio.h>      /* For perror() */
@@ -16197,8 +16197,8 @@
      ret = committedAddr;
  #else
      ret = requestedAddr;
---- jdk/src/solaris/hpi/src/system_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/hpi/src/system_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/hpi/src/system_md.c
++++ jdk/src/solaris/hpi/src/system_md.c
 @@ -41,6 +41,7 @@
  #include <dlfcn.h>
  
@@ -16252,8 +16252,8 @@
      fd = open64_w(path, oflag, mode);
      if (delete != 0) {
          unlink(path);
---- jdk/src/solaris/instrument/EncodingSupport_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/instrument/EncodingSupport_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/instrument/EncodingSupport_md.c
++++ jdk/src/solaris/instrument/EncodingSupport_md.c
 @@ -28,7 +28,10 @@
  #include <string.h>
  #include <ctype.h>
@@ -16283,8 +16283,8 @@
  
      /* Open conversion descriptors */
      iconvToPlatform   = iconv_open(codeset, "UTF-8");
---- jdk/src/solaris/javavm/export/jvm_md.h	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/javavm/export/jvm_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/javavm/export/jvm_md.h
++++ jdk/src/solaris/javavm/export/jvm_md.h
 @@ -39,7 +39,14 @@
  #define JNI_ONUNLOAD_SYMBOLS {"JNI_OnUnload"}
  
@@ -16309,8 +16309,8 @@
  
  /* Signals */
  
---- jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c
++++ jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c
 @@ -32,10 +32,16 @@
  
  #include <sys/types.h>
@@ -16532,8 +16532,8 @@
  }
  
  JNIEXPORT jlong JNICALL
---- jdk/src/solaris/native/java/io/UnixFileSystem_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/io/UnixFileSystem_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/io/UnixFileSystem_md.c
++++ jdk/src/solaris/native/java/io/UnixFileSystem_md.c
 @@ -41,6 +41,11 @@
  #include "java_io_FileSystem.h"
  #include "java_io_UnixFileSystem.h"
@@ -16580,7 +16580,7 @@
  
  /* -- Path operations -- */
  
-@@ -483,7 +490,7 @@
+@@ -485,7 +492,7 @@
  #endif
  
          /* Preserve access time */
@@ -16589,8 +16589,8 @@
          struct stat sb;
  
          if (stat(path, &sb) == 0) {
---- jdk/src/solaris/native/java/io/canonicalize_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/io/canonicalize_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/io/canonicalize_md.c
++++ jdk/src/solaris/native/java/io/canonicalize_md.c
 @@ -33,7 +33,9 @@
  #include <sys/stat.h>
  #include <errno.h>
@@ -16601,8 +16601,8 @@
  
  
  /* Note: The comments in this file use the terminology
---- jdk/src/solaris/native/java/io/io_util_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/io/io_util_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/io/io_util_md.c
++++ jdk/src/solaris/native/java/io/io_util_md.c
 @@ -36,7 +36,7 @@
      WITH_PLATFORM_STRING(env, path, ps) {
          FD fd;
@@ -16612,8 +16612,8 @@
          /* Remove trailing slashes, since the kernel won't */
          char *p = (char *)ps + strlen(ps) - 1;
          while ((p > ps) && (*p == '/'))
---- jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c
++++ jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c
 @@ -28,6 +28,11 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -16654,8 +16654,8 @@
              jbyteArray var, val;
              const char * valBeg = varEnd + 1;
              jsize varLength = varEnd - environ[i];
---- jdk/src/solaris/native/java/lang/UNIXProcess_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/lang/UNIXProcess_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/lang/UNIXProcess_md.c
++++ jdk/src/solaris/native/java/lang/UNIXProcess_md.c
 @@ -40,7 +40,11 @@
  #include <stdlib.h>
  #include <sys/types.h>
@@ -16858,8 +16858,8 @@
          /* Close the parent sides of the pipe.
             Give the child sides of the pipes the right fileno's.
             Closing pipe fds here is redundant, since closeDescriptors()
---- jdk/src/solaris/native/java/lang/java_props_md.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/lang/java_props_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/lang/java_props_md.c
++++ jdk/src/solaris/native/java/lang/java_props_md.c
 @@ -23,7 +23,7 @@
   * questions.
   */
@@ -16993,8 +16993,8 @@
  
      return &sprops;
  }
---- jdk/src/solaris/native/java/net/Inet4AddressImpl.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/net/Inet4AddressImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/Inet4AddressImpl.c
++++ jdk/src/solaris/native/java/net/Inet4AddressImpl.c
 @@ -35,17 +35,293 @@
  #include <stdlib.h>
  #include <ctype.h>
@@ -17351,8 +17351,8 @@
  #define SET_NONBLOCKING(fd) {           \
          int flags = fcntl(fd, F_GETFL); \
          flags |= O_NONBLOCK;            \
---- jdk/src/solaris/native/java/net/Inet6AddressImpl.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/net/Inet6AddressImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/Inet6AddressImpl.c
++++ jdk/src/solaris/native/java/net/Inet6AddressImpl.c
 @@ -32,6 +32,9 @@
  #include <strings.h>
  #include <stdlib.h>
@@ -17402,8 +17402,8 @@
      }
      return (*env)->NewStringUTF(env, hostname);
  }
---- jdk/src/solaris/native/java/net/NetworkInterface.c	2011-07-05 14:36:10.000000000 -0400
-+++ jdk/src/solaris/native/java/net/NetworkInterface.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/NetworkInterface.c
++++ jdk/src/solaris/native/java/net/NetworkInterface.c
 @@ -23,13 +23,13 @@
   * questions.
   */
@@ -17680,8 +17680,8 @@
      memset((char *) &if2, 0, sizeof(if2));
      strcpy(if2.ifr_name, name_utf);
  
---- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c
++++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c
 @@ -23,12 +23,12 @@
   * questions.
   */
@@ -17850,8 +17850,8 @@
                  }
              }
          }
---- jdk/src/solaris/native/java/net/PlainSocketImpl.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/PlainSocketImpl.c
++++ jdk/src/solaris/native/java/net/PlainSocketImpl.c
 @@ -253,7 +253,12 @@
                                             jboolean stream) {
      jobject fdObj, ssObj;
@@ -17937,8 +17937,8 @@
          } else if (errno == ECONNREFUSED) {
              NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "ConnectException",
                             "Connection refused");
---- jdk/src/solaris/native/java/net/bsd_close.c	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/src/solaris/native/java/net/bsd_close.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/bsd_close.c
++++ jdk/src/solaris/native/java/net/bsd_close.c
 @@ -57,7 +57,7 @@
  /*
   * Signal to unblock thread
@@ -17948,8 +17948,8 @@
  
  /*
   * The fd table and the number of file descriptors
---- jdk/src/solaris/native/java/net/net_util_md.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/net/net_util_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/net_util_md.c
++++ jdk/src/solaris/native/java/net/net_util_md.c
 @@ -34,6 +34,15 @@
  #include <stdlib.h>
  #include <dlfcn.h>
@@ -17966,7 +17966,7 @@
  #ifdef __solaris__
  #include <sys/sockio.h>
  #include <stropts.h>
-@@ -219,6 +228,14 @@
+@@ -220,6 +229,14 @@
      return (*env)->GetFieldID(env, cls, "fd", "I");
  }
  
@@ -17981,7 +17981,7 @@
  jint  IPv6_supported()
  {
  #ifndef AF_INET6
-@@ -229,7 +246,7 @@
+@@ -230,7 +247,7 @@
      int fd;
      void *ipv6_fn;
      SOCKADDR sa;
@@ -17990,7 +17990,7 @@
  
      fd = JVM_Socket(AF_INET6, SOCK_STREAM, 0) ;
      if (fd < 0) {
-@@ -355,6 +372,7 @@
+@@ -356,6 +373,7 @@
      close(fd);
      return JNI_TRUE;
  }
@@ -17998,7 +17998,7 @@
  
  void
  NET_AllocSockaddr(struct sockaddr **him, int *len) {
-@@ -689,6 +707,10 @@
+@@ -710,6 +728,10 @@
          him6->sin6_family = AF_INET6;
          *len = sizeof(struct sockaddr_in6) ;
  
@@ -18009,7 +18009,7 @@
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1086,7 +1108,16 @@
+@@ -1107,7 +1129,16 @@
      }
  #endif
  
@@ -18026,7 +18026,7 @@
      if (rv < 0) {
          return rv;
      }
-@@ -1133,6 +1164,24 @@
+@@ -1154,6 +1185,24 @@
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -18051,7 +18051,7 @@
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1165,6 +1214,10 @@
+@@ -1186,6 +1235,10 @@
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -18062,7 +18062,7 @@
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1212,6 +1265,84 @@
+@@ -1233,6 +1286,84 @@
      }
  #endif
  
@@ -18147,8 +18147,8 @@
      return setsockopt(fd, level, opt, arg, len);
  }
  
---- jdk/src/solaris/native/java/net/net_util_md.h	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/net/net_util_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/net/net_util_md.h
++++ jdk/src/solaris/native/java/net/net_util_md.h
 @@ -37,7 +37,7 @@
  #endif
  
@@ -18158,8 +18158,8 @@
  extern int NET_Timeout(int s, long timeout);
  extern int NET_Read(int s, void* buf, size_t len);
  extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
---- jdk/src/solaris/native/java/nio/MappedByteBuffer.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/nio/MappedByteBuffer.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/nio/MappedByteBuffer.c
++++ jdk/src/solaris/native/java/nio/MappedByteBuffer.c
 @@ -38,7 +38,11 @@
                                          jlong address, jlong len)
  {
@@ -18184,8 +18184,8 @@
      unsigned long lAddress = address;
  
      jlong offset = lAddress % pageSize;
---- jdk/src/solaris/native/java/util/FileSystemPreferences.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/util/FileSystemPreferences.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/util/FileSystemPreferences.c
++++ jdk/src/solaris/native/java/util/FileSystemPreferences.c
 @@ -47,8 +47,11 @@
      return (jint) result;
  }
@@ -18223,8 +18223,8 @@
  
      if (rc < 0) {
          close(fd);
---- jdk/src/solaris/native/java/util/TimeZone_md.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/java/util/TimeZone_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/java/util/TimeZone_md.c
++++ jdk/src/solaris/native/java/util/TimeZone_md.c
 @@ -31,7 +31,7 @@
  #include <errno.h>
  #include <stddef.h>
@@ -18357,8 +18357,8 @@
      sprintf(buf, (const char *)"GMT%c%02d:%02d",
              sign, (int)(offset/3600), (int)((offset%3600)/60));
      return strdup(buf);
---- jdk/src/solaris/native/sun/awt/CUPSfuncs.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/CUPSfuncs.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/CUPSfuncs.c
++++ jdk/src/solaris/native/sun/awt/CUPSfuncs.c
 @@ -25,6 +25,7 @@
  
  #include <jni.h>
@@ -18381,8 +18381,8 @@
      if (handle == NULL) {
        return JNI_FALSE;
      }
---- jdk/src/solaris/native/sun/awt/VDrawingArea.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/VDrawingArea.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/VDrawingArea.c
++++ jdk/src/solaris/native/sun/awt/VDrawingArea.c
 @@ -31,7 +31,11 @@
  #endif /* !HEADLESS */
  
@@ -18395,8 +18395,8 @@
  
  #ifdef __linux__
  /* XXX: Shouldn't be necessary. */
---- jdk/src/solaris/native/sun/awt/X11Color.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/X11Color.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/X11Color.c
++++ jdk/src/solaris/native/sun/awt/X11Color.c
 @@ -33,7 +33,9 @@
  #include <math.h>
  #include <sys/time.h>
@@ -18407,8 +18407,8 @@
  #ifndef HEADLESS
  #include <X11/Xlib.h>
  #include <X11/Xatom.h>
---- jdk/src/solaris/native/sun/awt/XDrawingArea.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/XDrawingArea.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/XDrawingArea.c
++++ jdk/src/solaris/native/sun/awt/XDrawingArea.c
 @@ -30,7 +30,11 @@
  #include <Xm/XmP.h>
  
@@ -18421,8 +18421,8 @@
  
  #ifdef DEBUG
  #include <jvm.h>  /* To get jio_fprintf() */
---- jdk/src/solaris/native/sun/awt/awt_Font.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_Font.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_Font.c
++++ jdk/src/solaris/native/sun/awt/awt_Font.c
 @@ -334,7 +334,7 @@
              if (strcmp(style, "regular") == 0) {
                  altstyle = "roman";
@@ -18432,8 +18432,8 @@
              if (!strcmp(family, "lucidasans")) {
                  family = "lucida";
              }
---- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c
 @@ -40,6 +40,7 @@
  #include <jni.h>
  #include <jni_util.h>
@@ -18558,8 +18558,8 @@
      if (pLibRandR == NULL) {
          J2dRlsTraceLn(J2D_TRACE_ERROR,
                        "X11GD_InitXrandrFuncs: Could not open libXrandr.so.2");
---- jdk/src/solaris/native/sun/awt/awt_InputMethod.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_InputMethod.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_InputMethod.c
++++ jdk/src/solaris/native/sun/awt/awt_InputMethod.c
 @@ -69,7 +69,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -18799,8 +18799,8 @@
      AWT_LOCK();
      adjustStatusWindow(window);
      AWT_UNLOCK();
---- jdk/src/solaris/native/sun/awt/awt_LoadLibrary.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_LoadLibrary.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_LoadLibrary.c
++++ jdk/src/solaris/native/sun/awt/awt_LoadLibrary.c
 @@ -260,7 +260,11 @@
          }
      }
@@ -18813,8 +18813,8 @@
  
      JNU_CallStaticMethodByName(env, NULL, "java/lang/System", "load",
                                 "(Ljava/lang/String;)V",
---- jdk/src/solaris/native/sun/awt/awt_MToolkit.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_MToolkit.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_MToolkit.c
++++ jdk/src/solaris/native/sun/awt/awt_MToolkit.c
 @@ -63,8 +63,9 @@
  extern JavaVM *jvm;
  
@@ -18835,8 +18835,8 @@
                statusWindowEventHandler(xev);
  #endif
                xembed_eventHandler(&xev);
---- jdk/src/solaris/native/sun/awt/awt_Mlib.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_Mlib.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_Mlib.c
++++ jdk/src/solaris/native/sun/awt/awt_Mlib.c
 @@ -32,6 +32,7 @@
  #include <dlfcn.h>
  #include "jni.h"
@@ -18859,8 +18859,8 @@
      }
  
      if (handle == NULL) {
---- jdk/src/solaris/native/sun/awt/awt_Robot.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_Robot.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_Robot.c
++++ jdk/src/solaris/native/sun/awt/awt_Robot.c
 @@ -45,7 +45,7 @@
  #include "wsutils.h"
  #include "list.h"
@@ -18870,8 +18870,8 @@
  #include <sys/socket.h>
  #endif
  
---- jdk/src/solaris/native/sun/awt/awt_util.h	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_util.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_util.h
++++ jdk/src/solaris/native/sun/awt/awt_util.h
 @@ -187,15 +187,20 @@
  #ifdef __solaris__
  extern Widget awt_util_getXICStatusAreaWindow(Widget w);
@@ -18894,8 +18894,8 @@
  typedef struct _XmImRefRec {
    Cardinal      num_refs;       /* Number of referencing widgets. */
    Cardinal      max_refs;       /* Maximum length of refs array. */
---- jdk/src/solaris/native/sun/awt/awt_wm.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_wm.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_wm.c
++++ jdk/src/solaris/native/sun/awt/awt_wm.c
 @@ -121,12 +121,19 @@
  static Atom XA_KWM_WIN_MAXIMIZED;
  
@@ -18993,8 +18993,8 @@
          awt_wmgr = OPENLOOK_WM;
      }
      else {
---- jdk/src/solaris/native/sun/awt/awt_wm.h	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/awt_wm.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/awt_wm.h
++++ jdk/src/solaris/native/sun/awt/awt_wm.h
 @@ -45,7 +45,10 @@
      KDE2_WM,
      SAWFISH_WM,
@@ -19007,8 +19007,8 @@
  };
  
  extern void awt_wm_init(void);
---- jdk/src/solaris/native/sun/awt/extutil.h	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/extutil.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/extutil.h
++++ jdk/src/solaris/native/sun/awt/extutil.h
 @@ -58,7 +58,7 @@
   */
  /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
@@ -19024,8 +19024,8 @@
  
 -#endif /* __linux__ */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
---- jdk/src/solaris/native/sun/awt/fontpath.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/fontpath.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/fontpath.c
++++ jdk/src/solaris/native/sun/awt/fontpath.c
 @@ -23,7 +23,7 @@
   * questions.
   */
@@ -19183,8 +19183,8 @@
          if (libfontconfig == NULL) {
              return NULL;
          }
---- jdk/src/solaris/native/sun/awt/gtk2_interface.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/gtk2_interface.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/gtk2_interface.c
++++ jdk/src/solaris/native/sun/awt/gtk2_interface.c
 @@ -30,8 +30,9 @@
  #include <string.h>
  #include "gtk2_interface.h"
@@ -19196,8 +19196,8 @@
  
  #define G_TYPE_INVALID                  G_TYPE_MAKE_FUNDAMENTAL (0)
  #define G_TYPE_NONE                     G_TYPE_MAKE_FUNDAMENTAL (1)
---- jdk/src/solaris/native/sun/awt/list.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/list.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/list.c
++++ jdk/src/solaris/native/sun/awt/list.c
 @@ -66,7 +66,11 @@
    ----------------------------------------------------------------------- **/
  
@@ -19210,8 +19210,8 @@
  #include "list.h"
  
  
---- jdk/src/solaris/native/sun/awt/robot_common.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/awt/robot_common.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/awt/robot_common.c
++++ jdk/src/solaris/native/sun/awt/robot_common.c
 @@ -27,6 +27,9 @@
      #error This file should not be included in headless library
  #endif
@@ -19222,8 +19222,8 @@
  #include "robot_common.h"
  
  /*
---- jdk/src/solaris/native/sun/font/X11FontScaler.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/font/X11FontScaler.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/font/X11FontScaler.c
++++ jdk/src/solaris/native/sun/font/X11FontScaler.c
 @@ -32,7 +32,11 @@
   * into X11FontScaler_md.c, which is compiled into another library.
   */
@@ -19236,8 +19236,8 @@
  #include <ctype.h>
  #include <sys/utsname.h>
  
---- jdk/src/solaris/native/sun/font/X11TextRenderer.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/font/X11TextRenderer.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/font/X11TextRenderer.c
++++ jdk/src/solaris/native/sun/font/X11TextRenderer.c
 @@ -39,7 +39,11 @@
  #include "GraphicsPrimitiveMgr.h"
  #include "glyphblitting.h"
@@ -19250,8 +19250,8 @@
  
  
  JNIEXPORT void JNICALL AWTDrawGlyphList
---- jdk/src/solaris/native/sun/java2d/j2d_md.h	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/java2d/j2d_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/java2d/j2d_md.h
++++ jdk/src/solaris/native/sun/java2d/j2d_md.h
 @@ -28,11 +28,11 @@
  #include <sys/types.h>
  
@@ -19267,8 +19267,8 @@
  
  typedef unsigned char   jubyte;
  typedef unsigned short  jushort;
---- jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	2011-07-05 14:36:11.000000000 -0400
-+++ jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c
++++ jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c
 @@ -66,6 +66,10 @@
   *    MLIB_EDGE_SRC_PADDED
   */
@@ -19374,8 +19374,8 @@
          LOGIC(da[0], dtmp, dtmp1, |);
        }
        else {                                               /* aligned */
---- jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c
++++ jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c
 @@ -794,7 +794,7 @@
  static int initialized;
  static int usevis = JNI_TRUE;
@@ -19385,8 +19385,8 @@
  #   define ULTRA_CHIP   "sparc64"
  #else
  #   define ULTRA_CHIP   "sun4u"
---- jdk/src/solaris/native/sun/java2d/opengl/OGLFuncs_md.h	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/java2d/opengl/OGLFuncs_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/java2d/opengl/OGLFuncs_md.h
++++ jdk/src/solaris/native/sun/java2d/opengl/OGLFuncs_md.h
 @@ -27,7 +27,10 @@
  #define OGLFuncs_md_h_Included
  
@@ -19407,8 +19407,8 @@
          } \
          OGL_LIB_HANDLE = dlopen(libGLPath, RTLD_LAZY | RTLD_LOCAL); \
      } \
---- jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c
++++ jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c
 @@ -32,6 +32,7 @@
  #include "gdefs.h"
  
@@ -19426,8 +19426,8 @@
      }
      dgaAvailable = JNI_FALSE;
      if (lib != NULL) {
---- jdk/src/solaris/native/sun/jdga/dgalock.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/jdga/dgalock.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/jdga/dgalock.c
++++ jdk/src/solaris/native/sun/jdga/dgalock.c
 @@ -44,6 +44,7 @@
  #include <X11/Xlib.h>
  
@@ -19450,8 +19450,8 @@
              void *sym = dlsym(handle, "IsXineramaOn");
              IsXineramaOn = (IsXineramaOnFunc *)sym;
              if (IsXineramaOn != 0 && (*IsXineramaOn)(display)) {
---- jdk/src/solaris/native/sun/management/FileSystemImpl.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/management/FileSystemImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/management/FileSystemImpl.c
++++ jdk/src/solaris/native/sun/management/FileSystemImpl.c
 @@ -26,6 +26,10 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -19463,8 +19463,8 @@
  #include "jni.h"
  #include "jni_util.h"
  #include "sun_management_FileSystemImpl.h"
---- jdk/src/solaris/native/sun/net/dns/ResolverConfigurationImpl.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/net/dns/ResolverConfigurationImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/net/dns/ResolverConfigurationImpl.c
++++ jdk/src/solaris/native/sun/net/dns/ResolverConfigurationImpl.c
 @@ -33,7 +33,7 @@
  #include <strings.h>
  #endif
@@ -19474,8 +19474,8 @@
  #include <string.h>
  #endif
  
---- jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c
++++ jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c
 @@ -26,11 +26,12 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -19502,8 +19502,8 @@
      gconf_ver = 2;
    }
    if (gconf_ver > 0) {
---- jdk/src/solaris/native/sun/nio/ch/DatagramChannelImpl.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/DatagramChannelImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/DatagramChannelImpl.c
++++ jdk/src/solaris/native/sun/nio/ch/DatagramChannelImpl.c
 @@ -35,7 +35,7 @@
  #include <string.h>
  #include <errno.h>
@@ -19553,8 +19553,8 @@
      }
  #endif
  
---- jdk/src/solaris/native/sun/nio/ch/DatagramDispatcher.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/DatagramDispatcher.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/DatagramDispatcher.c
++++ jdk/src/solaris/native/sun/nio/ch/DatagramDispatcher.c
 @@ -72,7 +72,7 @@
      m.msg_accrightslen = 0;
  #endif
@@ -19573,8 +19573,8 @@
      m.msg_control = NULL;
      m.msg_controllen = 0;
  #endif
---- jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c
++++ jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c
 @@ -26,15 +26,21 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -19716,8 +19716,8 @@
      if (lockResult < 0) {
          JNU_ThrowIOExceptionWithLastError(env, "Release failed");
      }
---- jdk/src/solaris/native/sun/nio/ch/FileDispatcher.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/FileDispatcher.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/FileDispatcher.c
++++ jdk/src/solaris/native/sun/nio/ch/FileDispatcher.c
 @@ -32,8 +32,12 @@
  #include <sys/socket.h>
  #include <fcntl.h>
@@ -19731,8 +19731,8 @@
  
  static int preCloseFD = -1;     /* File descriptor to which we dup other fd's
                                     before closing them for real */
---- jdk/src/solaris/native/sun/nio/ch/FileKey.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/FileKey.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/FileKey.c
++++ jdk/src/solaris/native/sun/nio/ch/FileKey.c
 @@ -30,6 +30,10 @@
  #include "nio_util.h"
  #include "sun_nio_ch_FileKey.h"
@@ -19744,8 +19744,8 @@
  static jfieldID key_st_dev;    /* id for FileKey.st_dev */
  static jfieldID key_st_ino;    /* id for FileKey.st_ino */
  
---- jdk/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c	2011-07-07 19:17:04.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c
 @@ -0,0 +1,186 @@
 +/*
 + * Scratched by davidxu@freebsd.org
@@ -19933,8 +19933,8 @@
 +#ifdef __cplusplus
 +}
 +#endif
---- jdk/src/solaris/native/sun/nio/ch/Net.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/nio/ch/Net.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/nio/ch/Net.c
++++ jdk/src/solaris/native/sun/nio/ch/Net.c
 @@ -60,17 +60,33 @@
                              jboolean reuse)
  {
@@ -20105,8 +20105,8 @@
          case ECONNREFUSED:
              xn = JNU_JAVANETPKG "ConnectException";
              break;
---- jdk/src/solaris/native/sun/security/jgss/wrapper/NativeFunc.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/security/jgss/wrapper/NativeFunc.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/security/jgss/wrapper/NativeFunc.c
++++ jdk/src/solaris/native/sun/security/jgss/wrapper/NativeFunc.c
 @@ -26,7 +26,9 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -20117,8 +20117,8 @@
  #include "NativeFunc.h"
  
  /* standard GSS method names (ordering is from mapfile) */
---- jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c
++++ jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c
 @@ -28,12 +28,19 @@
  #include <string.h>
  
@@ -20161,8 +20161,8 @@
      (*env)->ReleaseStringUTFChars(env, jLibName, libName);
      dprintf2("-handle: %u (0X%X)\n", hModule, hModule);
  
---- jdk/src/solaris/native/sun/security/pkcs11/wrapper/p11_md.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/security/pkcs11/wrapper/p11_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/security/pkcs11/wrapper/p11_md.c
++++ jdk/src/solaris/native/sun/security/pkcs11/wrapper/p11_md.c
 @@ -64,7 +64,9 @@
  #include <assert.h>
  
@@ -20173,8 +20173,8 @@
  
  #include <jni.h>
  
---- jdk/src/solaris/native/sun/security/smartcardio/pcsc_md.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/security/smartcardio/pcsc_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/security/smartcardio/pcsc_md.c
++++ jdk/src/solaris/native/sun/security/smartcardio/pcsc_md.c
 @@ -29,7 +29,9 @@
  #include <assert.h>
  
@@ -20185,8 +20185,8 @@
  
  #include <winscard.h>
  
---- jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	2011-07-07 19:16:00.000000000 -0400
-+++ jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c
++++ jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c
 @@ -35,10 +35,10 @@
  #include <dirent.h>
  #include <ctype.h>
@@ -20491,8 +20491,8 @@
 +        JNU_ReleaseStringPlatformChars(env, path, _path);
 +    }
 +}
---- jdk/src/solaris/native/sun/xawt/XWindow.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/xawt/XWindow.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/xawt/XWindow.c
++++ jdk/src/solaris/native/sun/xawt/XWindow.c
 @@ -228,10 +228,10 @@
      {java_awt_event_KeyEvent_VK_DOWN, XK_Down, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_STANDARD},
  
@@ -20517,8 +20517,8 @@
      /* The following code on Linux will cause the keypad keys
       * not to echo on JTextField when the NumLock is on. The
       * keysyms will be 0, because the last parameter 2 is not defined.
---- jdk/src/solaris/native/sun/xawt/awt_Desktop.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/native/sun/xawt/awt_Desktop.c
++++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c
 @@ -24,6 +24,7 @@
   */
  
@@ -20545,8 +20545,8 @@
      if (gnome_handle == NULL) {
  #ifdef INTERNAL_BUILD
          fprintf(stderr, "can not load libgnome-2.so\n");
---- jdk/src/solaris/npt/npt_md.h	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/npt/npt_md.h	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/npt/npt_md.h
++++ jdk/src/solaris/npt/npt_md.h
 @@ -32,9 +32,10 @@
  #include <string.h>
  #include <errno.h>
@@ -20569,8 +20569,8 @@
          if ( _handle == NULL ) NPT_ERROR("Cannot open library");        \
          _sym = dlsym(_handle, "nptInitialize");                         \
          if ( _sym == NULL ) NPT_ERROR("Cannot find nptInitialize");     \
---- jdk/src/solaris/transport/socket/socket_md.c	2011-07-05 14:36:12.000000000 -0400
-+++ jdk/src/solaris/transport/socket/socket_md.c	2011-07-07 19:17:04.000000000 -0400
+--- jdk/src/solaris/transport/socket/socket_md.c
++++ jdk/src/solaris/transport/socket/socket_md.c
 @@ -36,7 +36,7 @@
  #ifdef __solaris__
  #include <thread.h>
@@ -20589,8 +20589,8 @@
  int
  dbgsysTlsAlloc() {
      pthread_key_t key;
---- langtools/src/share/classes/com/sun/tools/javah/Util.java	2011-07-05 14:36:55.000000000 -0400
-+++ langtools/src/share/classes/com/sun/tools/javah/Util.java	2011-07-07 19:17:04.000000000 -0400
+--- langtools/src/share/classes/com/sun/tools/javah/Util.java
++++ langtools/src/share/classes/com/sun/tools/javah/Util.java
 @@ -180,6 +180,14 @@
              os = "win32";
          } else if (os.indexOf("Linux") >= 0) {

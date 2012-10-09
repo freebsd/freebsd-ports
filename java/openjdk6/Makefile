@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b25
-PORTREVISION?=	4
+PORTVERSION=	b26
+PORTREVISION?=	0
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -37,7 +37,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	01_may_2012
+OPENJDK_BUILDDATE=	21_sep_2012
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA TZUPDATE
@@ -63,7 +63,7 @@ USE_MOTIF=	yes
 USE_XORG=	x11 xext xi xt xtst
 MAKE_JOBS_UNSAFE=	yes
 
-JAXP_BUILD=	144_03
+JAXP_BUILD=	144_04
 JAXPFILE=	jaxp${JAXP_BUILD}.zip
 JAXWS_BUILD=	2_1_6-2011_06_13
 JAXWSFILE=	jdk6-jaxws${JAXWS_BUILD}.zip
