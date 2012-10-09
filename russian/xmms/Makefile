@@ -8,7 +8,7 @@
 PORTNAME=	xmms
 CATEGORIES=	russian
 
-MAINTAINER=	be9-ml@be9.ru
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	RusXMMS - X Multimedia System with Russian encoding patch
 
 MASTERDIR=	${.CURDIR}/../../multimedia/xmms
