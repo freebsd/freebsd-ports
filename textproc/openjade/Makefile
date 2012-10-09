@@ -18,6 +18,7 @@ COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes

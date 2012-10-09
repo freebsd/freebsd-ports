@@ -17,6 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provide uniform access to data sources for the GNOME environment
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GNOME=	gnomehack gnomeprefix gnomehier libgda
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

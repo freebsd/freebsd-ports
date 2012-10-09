@@ -19,6 +19,7 @@ COMMENT=	GNU binutils for Atmel AVR 8-bit RISC cross-development
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--target=avr

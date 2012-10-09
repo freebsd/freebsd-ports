@@ -23,6 +23,7 @@ LATEST_LINK=	${PORTNAME}20${PKGNAMESUFFIX}
 
 USE_BISON=	build
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal libtool

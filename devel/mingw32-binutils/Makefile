@@ -21,6 +21,7 @@ COMMENT=	GNU Binutils for Windows cross-development
 BINUTILVERSION=	2.22
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \

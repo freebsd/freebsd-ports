@@ -19,6 +19,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+USE_GCC=	any
 USE_XORG=	x11
 USE_GNOME=	gnomehack
 USE_SDL=	sdl

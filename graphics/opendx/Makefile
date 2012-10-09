@@ -22,6 +22,7 @@ LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick	\
 
 USE_XORG=	xinerama xext xpm xmu sm ice 
 USE_BISON=	build
+USE_GCC=	any
 USE_GL=		yes
 USE_MOTIF=	yes
 USE_AUTOTOOLS=	libtool

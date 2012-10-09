@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	General purpose C libraries used by skarnet.org software
 
+USE_GCC=	any
+
 LDFLAGS?=	-s
 STRIPFLAGS?=	-x
 

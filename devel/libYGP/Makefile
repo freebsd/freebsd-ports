@@ -19,6 +19,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

@@ -17,6 +17,7 @@ COMMENT=	C++ 3D graphics library based on the Open Inventor 2.1 API
 
 LIB_DEPENDS=	simage.27:${PORTSDIR}/graphics/simage
 
+USE_GCC=	any
 USE_OPENAL=	al
 USE_GL=		yes
 USE_XORG=	xt x11

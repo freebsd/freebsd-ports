@@ -21,6 +21,7 @@ BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	YES
+USE_GCC=	any
 USE_GMAKE=	YES
 HAS_CONFIGURE=	YES
 NO_MTREE=	YES

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
+USE_GCC=	any
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

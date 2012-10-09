@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
 OPTIONS=	UNICODE "Build with Unicode support"    on
 
+USE_GCC=	any
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
 PERL_MODBUILD=	yes

@@ -23,6 +23,7 @@ GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
 
 LATEST_LINK=	libxul19
 USE_AUTOTOOLS=	autoconf213:env
+USE_GCC=	any
 WANT_GNOME=	yes
 WANT_PERL=	yes
 ALL_TARGET=	default

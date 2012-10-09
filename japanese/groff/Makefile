@@ -30,6 +30,7 @@ RUN_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 TMAC_DATE=	20030521
 TMAC_DISTNAME=	tmac-${TMAC_DATE}_2
 
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes

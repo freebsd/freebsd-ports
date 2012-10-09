@@ -22,6 +22,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	osg-devel-[0-9]*
 
+USE_GCC=	any
 USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_GL=		gl glu

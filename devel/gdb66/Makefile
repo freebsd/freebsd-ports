@@ -27,6 +27,7 @@ OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 CONFLICTS?=	gdb-[7-9]*
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

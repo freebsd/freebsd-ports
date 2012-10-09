@@ -21,6 +21,7 @@ COMMENT=	Play most popular animation formats and show pictures
 
 NO_CDROM=	redistributed without fee
 
+USE_GCC=	any
 USE_IMAKE=	yes
 USE_XORG=	xext xt sm ice xext x11
 MAN1=		xanim.1

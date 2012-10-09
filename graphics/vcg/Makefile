@@ -18,6 +18,7 @@ COMMENT=	A Visualization Tool for compiler graphs
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
+USE_GCC=	any
 USE_XORG=	x11 xext
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 

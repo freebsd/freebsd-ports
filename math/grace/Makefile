@@ -31,6 +31,7 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib		\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml
 
 USE_MOTIF=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \

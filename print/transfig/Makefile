@@ -20,6 +20,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_SAFE=	yes
 
+USE_GCC=	any
 USE_GHOSTSCRIPT_RUN=	yes
 USE_IMAKE=	yes
 USE_XORG=	xpm

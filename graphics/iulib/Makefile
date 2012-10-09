@@ -23,6 +23,7 @@ OPTIONS=	SDL "Enable SDL for graphical debugging" off \
 		VIDIO "Enable Video Input/Output (using ffmpeg)" off
 
 MAKE_JOBS_SAFE=	yes
+USE_GCC=	any
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool aclocal automake autoconf
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal

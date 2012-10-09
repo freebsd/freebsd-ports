@@ -35,6 +35,7 @@ RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_CDRTOOLS=	yes
+USE_GCC=	any
 USE_GNOME=	libidl
 USE_BZIP2=	yes
 USE_PYTHON=	yes

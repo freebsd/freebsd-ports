@@ -21,6 +21,7 @@ RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 CONFLICTS=	libopensync-0.22*
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-Wno-dev
 USE_GNOME=	glib20 libxml2

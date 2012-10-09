@@ -18,6 +18,7 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier
 GNU_CONFIGURE=	yes

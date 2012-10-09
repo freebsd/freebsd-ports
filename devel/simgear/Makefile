@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		osg:${PORTSDIR}/graphics/osg
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_OPENAL=	al alut
 USE_GL=		gl glu glut

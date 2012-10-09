@@ -27,6 +27,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper
 
+USE_GCC=	any
 USE_IMAKE=	yes
 USE_XORG=	xext x11 xt
 .if !defined(NOMAN)

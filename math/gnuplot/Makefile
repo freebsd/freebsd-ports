@@ -33,6 +33,8 @@ OPTIONS=	X11		"Enable X11 support"		on \
 		WX		"Enable WX support"		on \
 		CAIRO		"Enable CAIRO support"		on
 
+USE_GCC=	any
+
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
 

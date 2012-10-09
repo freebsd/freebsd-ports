@@ -23,6 +23,7 @@ DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GNOME=	gnomehack
 USE_SQLITE=	3
 USE_GMAKE=	yes

@@ -24,6 +24,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 NO_WRKSUBDIR=	yes
 
+USE_GCC=	any
 USE_XORG=	x11 xext
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure

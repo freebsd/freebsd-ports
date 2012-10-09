@@ -24,6 +24,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GMAKE=	yes

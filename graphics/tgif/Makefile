@@ -22,6 +22,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 OPTIONS=	NLS "Enable native language support" on \
 		A4SIZE "Set default paper size to A4" off
 
+USE_GCC=	any
 USE_IMAKE=	yes
 PORTDOCS=	HISTORY README
 USE_XORG=	x11 xext xt sm ice

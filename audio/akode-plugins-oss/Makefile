@@ -27,6 +27,7 @@ PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
 USE_LDCONFIG=	yes
