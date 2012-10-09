@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kyotocabinet
-# Date created:		22 April 2010
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.76
@@ -15,6 +11,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A straightforward implementation of DBM
 
 LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
@@ -56,12 +54,12 @@ BROKEN=		Does not link on powerpc
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${FIND} ${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
 	${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
