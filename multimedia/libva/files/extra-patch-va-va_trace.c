@@ -1,6 +1,6 @@
---- va/va_trace.c~
-+++ va/va_trace.c
-@@ -140,6 +140,17 @@ VAStatus vaUnlockSurface(VADisplay dpy,
+--- va/va_trace.c.orig	2012-10-04 15:30:51.000000000 +0200
++++ va/va_trace.c	2012-10-09 23:12:35.888197737 +0200
+@@ -137,6 +137,18 @@
                           VASurfaceID surface
                           );
  
@@ -15,6 +15,7 @@
 +	}
 +	return (len);
 +}
- 
- void va_TraceInit(VADisplay dpy)
- {
++
+ #define FILE_NAME_SUFFIX(env_value)                      \
+ do {                                                    \
+     int tmp = strnlen(env_value, sizeof(env_value));    \

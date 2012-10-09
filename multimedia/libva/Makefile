@@ -1,23 +1,18 @@
-# New ports collection makefile for:	libva
-# Date created:				5 Jan 2011
-# Whom:					Anonymous
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libva
-PORTVERSION=	1.0.14
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VAAPI wrapper and dummy driver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 
 USE_BZIP2=	yes
 USE_XORG=	pciaccess xext xfixes
@@ -33,7 +28,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # prevent types conflict: videodev2.h vs. drm.h
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DEBUG STRIP
+
+.include <bsd.port.options.mk>
 
 # add strnlen(3) from head/lib/libc/string/strnlen.c
 .if ${OSVERSION} < 800067
@@ -44,27 +41,31 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-va-va_trace.c
 BROKEN=		glXCreateContext fails during configure
 .endif
 
-.if !defined(WITH_DEBUG)
-CFLAGS+=	-DNDEBUG
-.else
+.if ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-D_DEBUG
+.else
+CFLAGS+=	-DNDEBUG
 .endif
 
-.if defined(STRIP) && ${STRIP} != ""
+.if {PORT_OPTIONS:MSTRIP}
 INSTALL_TARGET=	install-strip
 .endif
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
 		-e 's|$${libdir}/\(pkgconfig\)|$${prefix}/libdata/\1|' \
+		-e 's/\(LIBVA_LT_CURRENT\)=libva_lt_current/\1=1/' \
+		-e 's/\(LIBVA_LT_REV\)=libva_lt_revision/\1=3300/' \
+		-e 's/\(LIBVA_LT_AGE\)=libva_lt_age/\1=0/' \
 		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} 's/va\(info\)/\1/' \
+	${REINPLACE_CMD} -e 's/va\(info\)/\1/g' -e 's/info\.c/vainfo\.c/' \
 		${WRKSRC}/test/vainfo/Makefile.am
+	${REINPLACE_CMD} '/^export VA_HEADER_/d' \
+		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
 
 post-configure:	.SILENT
 	${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/' \
-		${WRKSRC}/i965_drv_video/Makefile \
 		${WRKSRC}/test/putsurface/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
