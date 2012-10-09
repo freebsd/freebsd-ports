@@ -1,12 +1,7 @@
-# New ports collection makefile for:	gbrainy
-# Date created:		29 April 2010
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gbrainy
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
