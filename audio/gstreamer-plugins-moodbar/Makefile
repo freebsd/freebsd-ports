@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gstreamer-plugins-moodbar
-# Date created:			Sat Mar 24 17:20:02 YEKT 2007
-# Whom:				Alexandr Bechikov <goo@t72.ru>
-#
+# Created by: Alexandr Bechikov <goo@t72.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gstreamer-plugins-moodbar
 PORTVERSION=	0.1.2
@@ -25,39 +21,35 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-OPTIONS=	MP3 "mp3 files support" on \
-		OGG "ogg files support" on \
-		FLAC "flac files support" off \
-		MP4 "mp4 files support" off \
-		MUSEPACK "musepack files support" off \
-		WMA "wma files support" off
+OPTIONS_DEFINE=	MP3 OGG FLAC MP4 MUSEPACK WMA
+OPTIONS_DEFAULT= MP3 OGG
 
 CONFIGURE_ARGS+=	--with-plugindir=${PREFIX}/lib/gstreamer-${GST_VERSION}
 PLIST_SUB+=	VERSION="${GST_VERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MP3)
+.if ${PORT_OPTIONS:MMP3}
 USE_GSTREAMER+=	mp3
 .endif
 
-.if defined(WITH_OGG)
+.if ${PORT_OPTIONS:MOGG}
 USE_GSTREAMER+=	vorbis ogg
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 USE_GSTREAMER+=	flac
 .endif
 
-.if defined(WITH_MP4)
+.if ${PORT_OPTIONS:MMP4}
 USE_GSTREAMER+=	faad bad
 .endif
 
-.if defined(WITH_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 USE_GSTREAMER+=	musepack
 .endif
 
-.if defined(WITH_WMA)
+.if ${PORT_OPTIONS:MWMA}
 USE_GSTREAMER+=	ffmpeg
 .endif
 
