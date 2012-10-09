@@ -137,6 +137,7 @@
     SUBDIR += netrexx
     SUBDIR += netty
     SUBDIR += openjdk6
+    SUBDIR += openjdk6-jre
     SUBDIR += openjdk7
     SUBDIR += phpeclipse
     SUBDIR += poseidon
