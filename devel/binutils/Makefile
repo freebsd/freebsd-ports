@@ -3,7 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -68,7 +68,7 @@ INFO=		as \
 .include <bsd.port.options.mk>
 
 # Actual earliest version may differ slightly
-.if ${OSVERSION} >= 900044
+.if ${ARCH} != ia64 && ${OSVERSION} >= 900044
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 PLIST_SUB+=	GOLD=""
 .else
