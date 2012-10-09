@@ -64,6 +64,7 @@
     SUBDIR += balazar
     SUBDIR += balazarbrothers
     SUBDIR += banihstypos
+    SUBDIR += barbie_seahorse_adventures
     SUBDIR += barrage
     SUBDIR += bass
     SUBDIR += bastet
