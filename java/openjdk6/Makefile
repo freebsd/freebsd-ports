@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b25
-PORTREVISION=	3
+PORTREVISION?=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -26,7 +26,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
+COMMENT?=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 
@@ -39,17 +39,21 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 OPENJDK_BUILDDATE=	01_may_2012
 
-.include <bsd.port.options.mk>
-
-OPTIONS_DEFINE=	DEBUG FASTDEBUG ICEDTEA IPV6 POLICY SOUND TEST TZUPDATE
+OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA TZUPDATE
-DEBUG_DESC=	Enable legacy debugging support
-FASTDEBUG_DESC=	Include fastdebug build
 ICEDTEA_DESC=	Apply additional patches from IcedTea
 POLICY_DESC=	Install the Unlimited Strength Policy Files
 SOUND_DESC=	Enable sound support
-TEST_DESC=	Add support for running regression test
 TZUPDATE_DESC=	Update the time zone data
+
+.if !defined(BUILD_JRE)
+OPTIONS_DEFINE+=DEBUG FASTDEBUG TEST
+DEBUG_DESC=	Enable legacy debugging support
+FASTDEBUG_DESC=	Include fastdebug build
+TEST_DESC=	Add support for running regression test
+.endif
+
+.include <bsd.port.options.mk>
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -255,9 +259,15 @@ post-patch:
 post-build:
 .if ${PORT_OPTIONS:MTZUPDATE}
 	@# Update time zones
+.if defined(BUILD_JRE)
+	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
+	@${LN} -s -f ${LOCALBASE}/share/java/zi \
+		${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib
+.else
 	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 		${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
+.endif
 .endif
 .if ${PORT_OPTIONS:MTEST}
 	@${ECHO_MSG} ""
@@ -282,12 +292,46 @@ test: build-depends build
 .endif
 
 do-install:
+.if defined(BUILD_JRE)
+	@${MKDIR} ${PREFIX}/openjdk6-jre/
+	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image && \
+		${COPYTREE_SHARE} . ${PREFIX}/openjdk6-jre
+	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/openjdk6-jre/bin/* \
+		${PREFIX}/openjdk6-jre/lib/${ARCH}/jexec
+	@${CHMOD} ${BINMODE} ${PREFIX}/openjdk6-jre/bin/* \
+		${PREFIX}/openjdk6-jre/lib/${ARCH}/jexec
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-jre/bin/java" >> ${TMPPLIST}
+	@${FIND} -s ${PREFIX}/openjdk6-jre -not -type d | \
+		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO} "@exec mkdir ${PREFIX}/openjdk6-jre/lib/applet" >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/openjdk6-jre -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm '${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE'" >> ${TMPPLIST}
+.else
 	@${MKDIR} ${PREFIX}/openjdk6/
-	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
+	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
+		${COPYTREE_SHARE} . ${PREFIX}/openjdk6
 	@${INSTALL_DATA} ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/compilefontconfig.jar ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/javazic.jar ${PREFIX}/openjdk6/jre/lib/
+	@for dir in `${FIND} ${PREFIX}/openjdk6 -name bin -type d`; do \
+		${CHOWN} -h -R ${BINOWN}:${BINGRP} $$dir; \
+		${FIND} $$dir -type f -exec ${CHMOD} ${BINMODE} "{}" \; ; \
+	done
+	@${CHOWN} ${BINOWN}:${BINGRP} \
+		${PREFIX}/openjdk6/jre/lib/${ARCH}/jexec
+	@${CHMOD} ${BINMODE} \
+		${PREFIX}/openjdk6/jre/lib/${ARCH}/jexec
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@${MKDIR} ${PREFIX}/openjdk6-fastdebug/
-	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}-fastdebug/j2sdk-image/ ${PREFIX}/openjdk6-fastdebug/
+	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
+		${COPYTREE_SHARE} . ${PREFIX}/openjdk6-fastdebug
+	@for dir in `${FIND} ${PREFIX}/openjdk6-fastdebug -name bin -type d`; do \
+		${CHOWN} -h -R ${BINOWN}:${BINGRP} $$dir; \
+		${FIND} $$dir -type f -exec ${CHMOD} ${BINMODE} "{}" \; ; \
+	done
+	@${CHOWN} ${BINOWN}:${BINGRP} \
+		${PREFIX}/openjdk6-fastdebug/jre/lib/${ARCH}/jexec
+	@${CHMOD} ${BINMODE} \
+		${PREFIX}/openjdk6-fastdebug/jre/lib/${ARCH}/jexec
 .endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${PREFIX}/openjdk6 -not -type d | \
@@ -305,10 +349,15 @@ do-install:
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm '${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6'" >> ${TMPPLIST}
 .endif
+.endif
 
 post-install:
 	@# Register the VM
+.if defined(BUILD_JRE)
+	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"
+.else
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6/bin/java # OpenJDK6"
+.endif
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"
 .endif
