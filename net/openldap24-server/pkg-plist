@@ -86,7 +86,7 @@ etc/openldap/DB_CONFIG.example
 %%SMBPWD%%libexec/openldap/smbk5pwd.so
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0
 libexec/slapd
-@dirrmtry libexec/openldap
+%%MODULES%%@dirrmtry libexec/openldap
 sbin/slapacl
 sbin/slapadd
 sbin/slapauth
