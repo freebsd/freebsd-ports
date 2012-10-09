@@ -1,4 +1,4 @@
-# Whom:	Alexander Leidinger <netchild@freebsd.org>
+# Created by: Alexander Leidinger <netchild@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	libssh2
