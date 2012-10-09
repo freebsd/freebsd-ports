@@ -1,11 +1,8 @@
-# New ports collection makefile for:	cego
-# Date created:				Jun 12, 2010
-# Whom:					Kurt Jaeger <fbsd-ports@opsec.eu>
-#
+# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.13.9
+PORTVERSION=	2.14.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
