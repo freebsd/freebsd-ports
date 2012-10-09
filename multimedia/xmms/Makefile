@@ -41,10 +41,10 @@ VISUALIZATION_PLUGINS=	blur_scope sanalyzer
 
 OPTIONS_DEFINE=	IPV6 MIKMOD SIMD SPEC VFILEINFO VORBIS RUSXMMS_PATCHES
 OPTIONS_DEFAULT=	IPV6 MIKMOD SIMD VORBIS
+OPTIONS_EXCLUDE_amd64=	SIMD
 SPEC_DESC=	Visualization opengl_spectrum
 VFILEINFO_DESC=	Enable Extended Vorbis Fileinfo
 RUSXMMS_PATCHES_DESC=	Custom IDv3 patches
-
 
 .include <bsd.port.pre.mk>
 
@@ -60,8 +60,8 @@ DISTFILES+=	RusXMMS2-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	SF/rusxmms/rusxmms2/csa41%20%28${PORTVERSION}%29:enc
 MASTER_SITE_SUBDIR+=	rusxmms/:enc
 
-LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc
-LIB_DEPENDS+=	rcd.1:${PORTSDIR}/devel/librcd
+LIB_DEPENDS+=	rcc:${PORTSDIR}/devel/librcc
+LIB_DEPENDS+=	rcd:${PORTSDIR}/devel/librcd
 .endif
 
 .if ${PORT_OPTIONS:MVFILEINFO}
@@ -69,7 +69,7 @@ CFLAGS+=	-DALL_VORBIS_TAGS
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
 INPUT_PLUGINS+=	mikmod
 PLIST_SUB+=	MIKMODPLUGIN:=""
 .else
@@ -78,7 +78,7 @@ PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
 .else
@@ -93,10 +93,6 @@ PLIST_SUB+=	ESDPLUGIN:=""
 .else
 CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
-.endif
-
-.if ${ARCH} != "i386"
-${UNIQUENAME}_UNSET+=	SIMD
 .endif
 
 .if ${PORT_OPTIONS:MSIMD}
