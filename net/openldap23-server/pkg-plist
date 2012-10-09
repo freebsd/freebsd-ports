@@ -56,7 +56,7 @@ etc/openldap/DB_CONFIG.example
 %%BACK_SQL%%libexec/openldap/back_sql.so
 libexec/slapd
 %%SLURPD%%libexec/slurpd
-@dirrmtry libexec/openldap
+%%MODULES%%@dirrmtry libexec/openldap
 sbin/slapacl
 sbin/slapadd
 sbin/slapauth
