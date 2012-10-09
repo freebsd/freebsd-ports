@@ -287,6 +287,7 @@ SSE_DESC?=		Use SSE optimized routines
 SSH_DESC?=		SSH protocol
 SSL_DESC?=		SSL protocol
 STATIC_DESC?=		Build static executables/libraries
+STRIP_DESC?=		Strip binaries before installation
 SVG_DESC?=		SVG vector image format
 SVGALIB_DESC?=		SVGA graphics
 SVN_DESC?=		Subversion support
