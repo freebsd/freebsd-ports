@@ -1229,6 +1229,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxTimeFormat.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxTimeFormat.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxTimeFormat.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/tools/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/tools/__init__.pyo
