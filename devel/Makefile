@@ -4006,6 +4006,7 @@
     SUBDIR += safe-iop
     SUBDIR += safestr
     SUBDIR += sbt
+    SUBDIR += scala-ide
     SUBDIR += scalatest
     SUBDIR += scandoc
     SUBDIR += scons
