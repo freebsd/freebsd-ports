@@ -22,6 +22,7 @@ OPTIONS=	MYSQL	"Enable MySQL support"		off \
 
 CONFLICTS=	flow-tools-ng-[0-9]*
 
+USE_GCC=	any
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir="${PREFIX}"

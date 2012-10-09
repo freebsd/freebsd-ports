@@ -15,6 +15,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/../license.terms
 
 LATEST_LINK?=	tk86
+USE_GCC=	any
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix

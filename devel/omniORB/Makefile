@@ -13,6 +13,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A robust high performance CORBA ORB for C++ and Python
 
 PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
+USE_GCC=	any
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes

@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
 
+USE_GCC=	any
 USE_IMAKE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src

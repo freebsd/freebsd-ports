@@ -17,6 +17,7 @@ COMMENT=	3D collision detection and rigid body dynamics library
 
 USE_GL=		gl glu glut
 USE_XORG=	x11
+USE_GCC=	any
 MAKE_JOBS_SAFE=	yes
 
 USE_CMAKE=	yes

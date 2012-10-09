@@ -30,6 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_RC_SUBR=	asterisk

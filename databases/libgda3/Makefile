@@ -26,6 +26,7 @@ LIBGDA3_SLAVE?=	no
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
+USE_GCC=	any
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack

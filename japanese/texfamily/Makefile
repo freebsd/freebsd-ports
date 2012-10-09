@@ -36,6 +36,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \

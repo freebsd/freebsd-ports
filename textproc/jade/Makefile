@@ -25,6 +25,7 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 CONFLICTS=	sp-1.*
 
 USE_AUTOTOOLS=	libtool
+USE_GCC=	any
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

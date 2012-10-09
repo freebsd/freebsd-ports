@@ -13,6 +13,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		osp.5:${PORTSDIR}/textproc/opensp
 
+USE_GCC=	any
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool

@@ -21,6 +21,7 @@ CONFLICTS=	bmp-scrobbler-[0-9]* \
 		xmms-scrobbler-[0-9]*
 
 USE_BZIP2=	yes
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

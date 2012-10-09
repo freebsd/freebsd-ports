@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_BISON=	build

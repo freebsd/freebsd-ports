@@ -17,6 +17,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--enable-gmp
 CFLAGS+=	-I${LOCALBASE}/include

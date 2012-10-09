@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	EXPR2
 OPTIONS_DEFAULT=	EXPR2
 EXPR2_DESC=	Build skkdic-expr2 (needs glib-2.x)
 
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

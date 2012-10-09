@@ -23,6 +23,7 @@ BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
 MAKE_JOBS_SAFE=	yes
 
+USE_GCC=	any
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

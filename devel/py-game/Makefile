@@ -19,6 +19,7 @@ LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY}
 
 USE_SDL=	ttf image mixer sdl
+USE_GCC=	any
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

@@ -17,6 +17,7 @@ MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 USE_BZIP2=		yes
+USE_GCC=		any
 USE_GMAKE=		yes
 MAKE_JOBS_SAFE=		yes
 

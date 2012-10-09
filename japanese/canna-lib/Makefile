@@ -18,6 +18,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, library part
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_IMAKE=	yes
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=yes

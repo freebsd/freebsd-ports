@@ -21,6 +21,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

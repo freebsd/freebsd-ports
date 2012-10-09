@@ -16,6 +16,7 @@ COMMENT=	A user-space HID access library written in C
 
 MAN1=		libhid-detach-device.1
 MANCOMPRESSED=	no
+USE_GCC=	any
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes

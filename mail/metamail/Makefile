@@ -21,6 +21,8 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
 X11_DESC=	X11 hebrew font support
 
+USE_GCC=	any
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		getfilename.1 mailto-hebrew.1 mailto.1 metamail.1 \

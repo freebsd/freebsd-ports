@@ -62,6 +62,7 @@ WITH_TRANSPORT=	local esmtp dsn
 
 USE_AUTOTOOLS=	libtool aclocal
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_FAM=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

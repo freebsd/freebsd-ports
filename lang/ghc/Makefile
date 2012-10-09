@@ -27,6 +27,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.*
 
 USE_BZIP2=	yes
+USE_GCC=	any
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_PERL5_BUILD=	yes

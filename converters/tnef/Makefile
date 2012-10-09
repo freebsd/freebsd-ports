@@ -11,6 +11,7 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 
 OPTIONS_DEFINE=	DOCS
 
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

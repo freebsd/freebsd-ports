@@ -37,6 +37,7 @@ OPTIONS=	EXTCOLORS "Enable 256-color support (only for ncursesw)" off
 
 CONFIGURE_ENV=	gnat_exists="no"
 
+USE_GCC=	any
 USE_LDCONFIG=	yes
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec

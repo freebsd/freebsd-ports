@@ -16,6 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
 
 GNU_CONFIGURE=	YES
+USE_GCC=	any
 USE_GMAKE=	YES
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}

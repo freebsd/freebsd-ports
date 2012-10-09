@@ -21,6 +21,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xi
+USE_GCC=	any
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 

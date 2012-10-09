@@ -17,6 +17,7 @@ COMMENT=	Library of optimized inner loops
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_GCC=	any
 USE_GNOME=	pkgconfig gnomehack ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

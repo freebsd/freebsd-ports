@@ -19,6 +19,7 @@ COMMENT=	Perl interface to libev, a high performance full-featured event loop
 RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
+USE_GCC=	any
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="YES"
 

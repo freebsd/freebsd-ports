@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
+USE_GCC=	any
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
 USE_LDCONFIG=	yes

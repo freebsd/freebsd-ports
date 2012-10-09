@@ -25,6 +25,7 @@ LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick \
 		ggi.2:${PORTSDIR}/graphics/libggi
 
 USE_BISON=	build
+USE_GCC=	any
 USE_ICONV=	yes
 USE_TK=		84+
 USE_LDCONFIG=	yes

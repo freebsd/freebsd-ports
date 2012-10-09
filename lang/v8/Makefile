@@ -16,6 +16,7 @@ COMMENT=	Google\'s open source JavaScript engine
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_PYTHON=	2.7+
 USE_XZ=		yes
