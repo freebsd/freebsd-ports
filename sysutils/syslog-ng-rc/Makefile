@@ -7,18 +7,18 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-rc
-MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/3.3/3.3.6.90/
-DISTFILES=	$(PORTNAME)-3.3.6.90-20120906-v3.3.6.90.tar.gz
+MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/3.3/3.3.6.91/
+DISTFILES=	$(PORTNAME)-3.3.6.91-20121008-v3.3.6.91.tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.6.90
+WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.6.91
 
 OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		PORTS_SSL "Build with OpenSSL support (from ports)" on \
