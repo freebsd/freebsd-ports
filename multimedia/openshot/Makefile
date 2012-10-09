@@ -1,19 +1,13 @@
-# ex:ts=8
-# Ports collection makefile for:	openshot
-# Date created:		2011-02-05
-# Whom:			Charlie Kester <corky1951@comcast.net>
-#
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	openshot
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 
 MAINTAINER=	rodrigo@bebik.net
-COMMENT=	A non-linear video editor
+COMMENT=	Non-linear video editor
 
 LICENSE=	GPLv3
 
@@ -35,7 +29,6 @@ INSTALLS_OMF=	yes
 
 MAN1=		${PORTNAME}.1 \
 		${PORTNAME}-render.1
-MANCOMPRESSED=	no
 FETCH_ARGS=	-pRr
 
 post-patch:
