@@ -1,18 +1,15 @@
-# New ports collection makefile for:	kpdftool
-# Date created:				04 May 2006
-# Whom:					Yuan, Jue <yuanjue@yuanjue.net>
+# Created by: Yuan, Jue <yuanjue@yuanjue.net>
 # $FreeBSD$
-#
 
 PORTNAME=	kpdftool
 PORTVERSION=	0.23.1
-PORTREVISION=	1
-CATEGORIES=	print kde
+PORTREVISION=	2
+CATEGORIES=	print
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTFILES=	33194-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tool to ease your PDF related work
+MAINTAINER=	makc@FreeBSD.org
+COMMENT=	Simple utility to manipulate PS and PDF files
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
@@ -22,7 +19,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"KPDFTool" "${COMMENT}" "kpdftool" \
-			"kpdftool" "" false
+			"kpdftool" "Application;Qt;Utility;" false
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
