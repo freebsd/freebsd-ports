@@ -93,6 +93,7 @@
     SUBDIR += bomberclone
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
+    SUBDIR += bombherman
     SUBDIR += bomns
     SUBDIR += boswars
     SUBDIR += braincurses
