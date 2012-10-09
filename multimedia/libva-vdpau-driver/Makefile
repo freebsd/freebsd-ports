@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
 MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	A VDPAU-based backend for VAAPI
+COMMENT=	VDPAU-based backend for VAAPI
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
