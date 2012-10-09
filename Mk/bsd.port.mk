@@ -1657,20 +1657,15 @@ BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
 .endif
 .if defined(USE_PKGCONFIG)
-.if ${USE_PKGCONFIG:L} == yes
-USE_PKGCONFIG=	build
-.endif
-.if ${USE_PKGCONFIG:L} == run
-RUN_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
-.endif
-.if ${USE_PKGCONFIG:L} == build
+.if ${USE_PKGCONFIG:L} == yes || ${USE_PKGCONFIG:L} == build
 BUILD_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
 CONFIGURE_ENV+=	PKG_CONFIG=pkgconf
-.endif
-.if ${USE_PKGCONFIG:L} == both
+.elif ${USE_PKGCONFIG:L} == both
 RUN_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
 BUILD_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
 CONFIGURE_ENV+=	PKG_CONFIG=pkgconf
+.elif ${USE_PKGCONFIG:L} == run
+RUN_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
 .endif
 .endif
 
@@ -4814,7 +4809,7 @@ makesum: check-checksum-algorithms
 					$$alg_executable $$file >> ${DISTINFO_FILE}; \
 				fi; \
 			done; \
-			${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${DISTINFO_FILE}; \
+			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}; \
 		done \
 	)
 	@for file in ${_IGNOREFILES}; do \
