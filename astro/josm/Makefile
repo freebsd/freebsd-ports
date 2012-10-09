@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	5485
+PORTVERSION=	5531
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://mirror.amdmi3.ru/distfiles/:josm \
@@ -25,6 +25,8 @@ JAVA_VERSION=	1.5+
 
 JOSM_MEMORY_LIMIT?=1024
 
+NO_BUILD=	yes
+
 SUB_FILES=	josm.sh
 SUB_LIST=	JARNAME=${DISTNAME} JOSM_MEMORY_LIMIT=${JOSM_MEMORY_LIMIT}
 
@@ -33,30 +35,9 @@ WEBKITIMG_SRC=	${WEBKITIMG}.cpp
 
 PLIST_FILES=	bin/josm ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 
-OPTIONS=	WEBKIT_IMAGE "Build webkit-image (needed for Yahoo imagery)" off
-
-.include <bsd.port.options.mk>
-
 pre-everything::
 	@${ECHO_CMD} "You can change limit of memory available to josm by defining"
 	@${ECHO_CMD} "JOSM_MEMORY_LIMIT variable in /etc/make.conf. Default is 1024 (MB)."
-
-.if defined(WITH_WEBKIT_IMAGE)
-PLIST_FILES+=	bin/webkit-image
-
-USE_QT4=	corelib gui webkit moc_build
-
-do-build:
-	cd ${WRKSRC} && \
-		${MOC} ${DISTDIR}/${WEBKITIMG_SRC} > ${WEBKITIMG}.h && \
-		${CXX} ${CFLAGS} ${PTHREAD_LIBS} -I. -I${QT_INCDIR} -L${QT_LIBDIR} \
-		${DISTDIR}/${WEBKITIMG_SRC} -o ${WEBKITIMG} -lQtCore -lQtWebKit \
-		-lQtGui
-.else
-# setting NO_BUILD here won't work
-do-build:
-	@${DO_NADA}
-.endif
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}/
