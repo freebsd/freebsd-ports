@@ -1,13 +1,8 @@
-# New ports collection makefile for:	psi
-# Date created:		Wed May  1 20:27:23 NZST 2002
-# Whom:			jonc@chen.org.nz
-#
+# Created by: Jonathan Chen <jonc@chen.org.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	psi
-PORTVERSION=	0.14
-PORTREVISION=	3
+PORTVERSION=	0.15
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
@@ -19,19 +14,20 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 		qca-gnupg>=2.0.0.b3:${PORTSDIR}/security/qca-gnupg
 
 HAS_CONFIGURE=	yes
+QT_NONSTANDARD=	yes
 USE_BZIP2=	yes
-USE_QT4=	corelib dbus gui iconengines imageformats qt3support \
-		inputmethods network script svg xml \
+USE_PKGCONFIG=	build
+USE_QT4=	gui network xml imageformats_run \
 		qmake_build moc_build rcc_build uic_build
+USE_XORG=	xscrnsaver
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
-		--disable-growl --disable-bundled-qca \
-		--verbose
+		--disable-growl --verbose
+CONFIGURE_ENV=	QMAKEFLAGS='${QMAKEFLAGS}'
+MAKE_JOBS_SAFE=	yes
 
-MAKE_JOBS_UNSAFE=	yes
-
-OPTIONS_DEFINE=	ASPELL ENCHANT
-OPTIONS_DEFAULT=	ASPELL
+OPTIONS_DEFINE=	ASPELL ENCHANT DBUS
+OPTIONS_DEFAULT=	ASPELL DBUS
 
 ASPELL_DESC=	Use aspell for spell checking
 ENCHANT_DESC=	Use Enchant for spell checking
@@ -44,6 +40,12 @@ PLIST_SUB+=	DEBUG=""
 .else
 CONFIGURE_ARGS+=	--release  --no-separate-debug-info
 PLIST_SUB+=	DEBUG="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDBUS}
+USE_QT4+=	dbus
+.else
+CONFIGURE_ARGS+=	--disable-qdbus
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
