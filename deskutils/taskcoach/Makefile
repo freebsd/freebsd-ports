@@ -1,18 +1,13 @@
-# New ports collection makefile for:	taskcoach
-# Date created:		4 March 2011
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	taskcoach
-PORTVERSION=	1.3.18
+PORTVERSION=	1.3.19
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release-${PORTVERSION}
 DISTNAME=	TaskCoach-${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A friendly task manager
+COMMENT=	Friendly task manager
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
