@@ -43,4 +43,3 @@ lib/libldap_r.so
 @comment share/openldap/ucdata/num.dat
 @comment @dirrm share/openldap/ucdata
 @comment @dirrm share/openldap
-@dirrmtry libexec/openldap
