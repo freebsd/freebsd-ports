@@ -7,7 +7,7 @@
 
 PORTNAME=	libtextcat
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://software.wise-guys.nl/download/
 
@@ -17,13 +17,17 @@ COMMENT=	Language guessing by N-Gram-Based Text Categorization
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	libexttextcat*
-
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	LICENSE README TODO
+
+.include <bsd.port.pre.mk>
+
+.if exists($(PREFIX)/lib/libtextcat.a)
+CONFLICTS_INSTALL=	libexttextcat*
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/textcat.h ${PREFIX}/include/
@@ -44,4 +48,4 @@ regression-test:
 	../src/testtextcat conf.txt < $$t ;	\
 	done)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
