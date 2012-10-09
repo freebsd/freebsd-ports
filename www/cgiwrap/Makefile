@@ -1,9 +1,5 @@
-# New ports collection makefile for:    cgiwrap
-# Date created:         30 July 1998
-# Whom:                 Brent J. Nordquist <bjn@visi.com>
-#
+# Created by: Brent J. Nordquist <bjn@visi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cgiwrap
 PORTVERSION=	4.1
@@ -16,16 +12,22 @@ COMMENT=	Securely execute Web CGI scripts
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	CGI_OWNER "Check CGI file owner" on \
-		CGI_GROUP "Check CGI file group" on \
-		CGI_SETUID "Check CGI file setuid permissions" on \
-		CGI_SETGID "Check CGI file setgid permissions" on \
-		CGI_GROUP_WRITABLE "Check CGI g+w file permissions" on \
-		CGI_WORLD_WRITABLE "Check CGI o+w file permissions" on \
-		USE_REDIRECT_URL "Use REDIRECT_URL to build SCRIPT_NAME" off \
-		USE_SCRIPT_URL "Use SCRIPT_URL to build SCRIPT_NAME" off \
-		NPH "Enable nph binaries" off \
-		DEBUG "Enable cgiwrapd binaries" off
+OPTIONS_DEFINE=	CGI_OWNER CGI_GROUP CGI_SETUID CGI_SETGID \
+		CGI_GROUP_WRITABLE CGI_WORLD_WRITABLE DEBUG \
+		DOCS NPH USE_REDIRECT_URL USE_SCRIPT_URL
+OPTIONS_DEFAULT=CGI_OWNER CGI_GROUP CGI_SETUID CGI_SETGID \
+		CGI_GROUP_WRITABLE CGI_WORLD_WRITABLE
+
+CGI_OWNER_DESC=	Check CGI file owner
+CGI_GROUP_DESC=	Check CGI file group
+CGI_SETUID_DESC=Check CGI file setuid permissions
+CGI_SETGID_DESC=Check CGI file setgid permissions
+CGI_GROUP_WRITABLE_DESC=Check CGI g+w file permissions
+CGI_WORLD_WRITABLE_DESC=Check CGI o+w file permissions
+USE_REDIRECT_URL_DESC=Use REDIRECT_URL to build SCRIPT_NAME
+USE_SCRIPT_URL_DESC=Use SCRIPT_URL to build SCRIPT_NAME
+NPH_DESC=	Enable nph binaries
+DEBUG_DESC=	Enable cgiwrapd binaries
 
 ##
 # INSTALL_DIR
@@ -65,7 +67,7 @@ CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 		--with-check-shell \
 		--with-wall
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ##
 # LOG_FILE
@@ -78,46 +80,46 @@ CONFIGURE_ARGS+=	--with-logging-file=${LOG_FILE}
 .else
 CONFIGURE_ARGS+=	--without-logging-file
 .endif
-.if !defined(WITH_CGI_OWNER)
+.if empty(PORT_OPTIONS:MCGI_OWNER)
 CONFIGURE_ARGS+=	--without-check-owner
 .endif
-.if !defined(WITH_CGI_GROUP)
+.if empty(PORT_OPTIONS:MCGI_GROUP)
 CONFIGURE_ARGS+=	--without-check-group
 .endif
-.if !defined(WITH_CGI_SETUID)
+.if empty(PORT_OPTIONS:MCGI_SETUID)
 CONFIGURE_ARGS+=	--without-check-setuid
 .endif
-.if !defined(WITH_CGI_SETGID)
+.if empty(PORT_OPTIONS:MCGI_SETGID)
 CONFIGURE_ARGS+=	--without-check-setgid
 .endif
-.if !defined(WITH_CGI_GROUP_WRITABLE)
+.if empty(PORT_OPTIONS:MCGI_GROUP_WRITABLE)
 CONFIGURE_ARGS+=	--without-check-group-writable
 .endif
-.if !defined(WITH_CGI_WORLD_WRITABLE)
+.if empty(PORT_OPTIONS:MCGI_WORLD_WRITABLE)
 CONFIGURE_ARGS+=	--without-check-world-writable
 .endif
-.if defined(WITH_USE_REDIRECT_URL)
+.if ${PORT_OPTIONS:MUSE_REDIRECT_URL}
 CONFIGURE_ARGS+=	--with-use-redirect-url
 .endif
-.if defined(WITH_USE_SCRIPT_URL)
+.if ${PORT_OPTIONS:MUSE_SCRIPT_URL}
 CONFIGURE_ARGS+=	--with-use-script-url
 .endif
 
-.if !defined(WITH_NPH)
+.if empty(PORT_OPTIONS:MNPH)
 PLIST_SUB+=		NPHFLAG="@comment "
 CONFIGURE_ARGS+=	--without-nph
 .else
 PLIST_SUB+=		NPHFLAG=
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 PLIST_SUB+=		DEBUGFLAG=
 CONFIGURE_ARGS+=	--with-cgiwrapd
 .else
 PLIST_SUB+=		DEBUGFLAG="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	accesscontrol.html afs.html changes.html \
 		chroot.html comments.html download.html faq.html \
 		index.html install.html intro.html maillist.html \
@@ -131,15 +133,15 @@ pre-install:
 post-install:
 	@${STRIP_CMD} ${INSTALL_DIR}/cgiwrap
 	@${CHMOD} 4550 ${INSTALL_DIR}/cgiwrap
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 	@${STRIP_CMD} ${INSTALL_DIR}/cgiwrapd
 	@${CHMOD} 4550 ${INSTALL_DIR}/cgiwrapd
-.if defined(WITH_NPH)
+.if ${PORT_OPTIONS:MNPH}
 	@${STRIP_CMD} ${INSTALL_DIR}/nph-cgiwrapd
 	@${CHMOD} 4550 ${INSTALL_DIR}/nph-cgiwrapd
 .endif
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/htdocs/${f} ${DOCSDIR}
@@ -151,4 +153,4 @@ post-install:
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
