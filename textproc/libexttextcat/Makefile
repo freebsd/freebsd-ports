@@ -2,6 +2,7 @@
 
 PORTNAME=	libexttextcat
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dev-www.libreoffice.org/src/libexttextcat/
 
@@ -9,8 +10,6 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Language guessing by N-Gram-Based Text Categorization
 
 LICENSE=	BSD
-
-CONFLICTS_INSTALL=	libtextcat*
 
 USE_XZ=	yes
 GNU_CONFIGURE=	yes
@@ -20,15 +19,21 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	README README.libtextcat TODO
 
-OPTIONS_DEFINE= COMPAT_TEXTCAT DOCS
+OPTIONS_DEFINE=	COMPAT_TEXTCAT DOCS
 COMPAT_TEXTCAT_DESC=	Install libtextcat compatible files
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPAT_TEXTCAT}
+.if exists(${PREFIX}/lib/libtextcat.a)
+CONFLICTS_INSTALL=	libtextcat*
+.endif
 PLIST_SUB+=	TEXTCAT=''
+PLIST_SUB+=	EXEEXT=''
 .else
 PLIST_SUB+=	TEXTCAT='@comment '
+PLIST_SUB+=	EXEEXT='x'
+MAKE_ARGS=	EXEEXT=x
 .endif
 
 post-install:
