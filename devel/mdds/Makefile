@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mdds
-# Date created:		2011-07-22
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by:	Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mdds
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
