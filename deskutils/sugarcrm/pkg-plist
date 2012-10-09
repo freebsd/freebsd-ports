@@ -470,6 +470,7 @@
 %%WWWDIR%%/examples/SoapTestPortal2.php
 %%WWWDIR%%/export.php
 %%WWWDIR%%/files.md5
+%%WWWDIR%%/get_url.php
 %%WWWDIR%%/ical_server.php
 %%WWWDIR%%/image.php
 %%WWWDIR%%/include/Dashlets/Dashlet.php
@@ -490,12 +491,14 @@
 %%WWWDIR%%/include/EditView/EditView.php
 %%WWWDIR%%/include/EditView/EditView.tpl
 %%WWWDIR%%/include/EditView/EditView2.php
+%%WWWDIR%%/include/EditView/Panels.js
 %%WWWDIR%%/include/EditView/PopupQuickCreate.php
 %%WWWDIR%%/include/EditView/QuickCreate.php
 %%WWWDIR%%/include/EditView/QuickCreate.tpl
 %%WWWDIR%%/include/EditView/SubpanelQuickCreate.php
 %%WWWDIR%%/include/EditView/SubpanelQuickEdit.php
 %%WWWDIR%%/include/EditView/SugarVCR.php
+%%WWWDIR%%/include/EditView/SugarVCR.tpl
 %%WWWDIR%%/include/EditView/footer.tpl
 %%WWWDIR%%/include/EditView/header.tpl
 %%WWWDIR%%/include/GroupedTabs/GroupedTabStructure.php
@@ -990,6 +993,8 @@
 %%WWWDIR%%/include/SugarFields/Fields/Multienum/ListView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Multienum/SearchView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Multienum/SugarFieldMultienum.php
+%%WWWDIR%%/include/SugarFields/Fields/Multienum/WirelessDetailView.tpl
+%%WWWDIR%%/include/SugarFields/Fields/Multienum/WirelessEditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Parent/DetailView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Parent/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Parent/SearchView.tpl
@@ -1217,8 +1222,8 @@
 %%WWWDIR%%/include/connectors/sources/ext/rest/rest.php
 %%WWWDIR%%/include/connectors/sources/ext/soap/soap.php
 %%WWWDIR%%/include/connectors/sources/loc/xml.php
-%%WWWDIR%%/include/connectors/utils/ConnectorHtmlHelperFactory.php
 %%WWWDIR%%/include/connectors/utils/ConnectorHtmlHelper.php
+%%WWWDIR%%/include/connectors/utils/ConnectorHtmlHelperFactory.php
 %%WWWDIR%%/include/connectors/utils/ConnectorUtils.php
 %%WWWDIR%%/include/contextMenus/contextMenu.php
 %%WWWDIR%%/include/contextMenus/menuDefs/sugarAccount.php
@@ -1284,6 +1289,7 @@
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldid.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldimage.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldint.php
+%%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldlong.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldlongtext.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldmultienum.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldname.php
@@ -1370,6 +1376,10 @@
 %%WWWDIR%%/include/images/sugarcrm_copyright_logo.jpg
 %%WWWDIR%%/include/images/sugarcrm_login.png
 %%WWWDIR%%/include/images/sugarsales_myarea.png
+%%WWWDIR%%/include/images/tour/FirstFrame.png
+%%WWWDIR%%/include/images/tour/arrow.png
+%%WWWDIR%%/include/images/tour/arrow_ie.png
+%%WWWDIR%%/include/images/tour/profile_link.png
 %%WWWDIR%%/include/images/university.png
 %%WWWDIR%%/include/images/university2.png
 %%WWWDIR%%/include/javascript/ajaxUI.js
@@ -1381,8 +1391,10 @@
 %%WWWDIR%%/include/javascript/include.js
 %%WWWDIR%%/include/javascript/iscroll.js
 %%WWWDIR%%/include/javascript/javascript.php
+%%WWWDIR%%/include/javascript/jquery/bootstrap.min.js
 %%WWWDIR%%/include/javascript/jquery/jquery-min.js
 %%WWWDIR%%/include/javascript/jquery/jquery-ui-min.js
+%%WWWDIR%%/include/javascript/jquery/jquery.effects.custombounce.js
 %%WWWDIR%%/include/javascript/jquery/jquery.elementReady.js
 %%WWWDIR%%/include/javascript/jquery/jquery.highLight.js
 %%WWWDIR%%/include/javascript/jquery/jquery.hotkeys.js
@@ -1390,6 +1402,7 @@
 %%WWWDIR%%/include/javascript/jquery/jquery.hoverscroll.js
 %%WWWDIR%%/include/javascript/jquery/jquery.js
 %%WWWDIR%%/include/javascript/jquery/jquery.json-2.3.js
+%%WWWDIR%%/include/javascript/jquery/jquery.popoverext.js
 %%WWWDIR%%/include/javascript/jquery/jquery.showLoading.js
 %%WWWDIR%%/include/javascript/jquery/jquery.sugarMenu.js
 %%WWWDIR%%/include/javascript/jquery/jquery.superfish.js
@@ -1778,6 +1791,7 @@
 %%WWWDIR%%/include/javascript/tiny_mce/utils/form_utils.js
 %%WWWDIR%%/include/javascript/tiny_mce/utils/mctabs.js
 %%WWWDIR%%/include/javascript/tiny_mce/utils/validate.js
+%%WWWDIR%%/include/javascript/tour.js
 %%WWWDIR%%/include/javascript/yui/LICENSE.txt
 %%WWWDIR%%/include/javascript/yui/README
 %%WWWDIR%%/include/javascript/yui/build/animation/animation-min.js
@@ -3152,12 +3166,15 @@
 %%WWWDIR%%/include/pclzip/pclzip.lib.php
 %%WWWDIR%%/include/pclzip/readme.txt
 %%WWWDIR%%/include/php-sql-parser.php
+%%WWWDIR%%/include/phpmailer/LICENSE
 %%WWWDIR%%/include/phpmailer/README
 %%WWWDIR%%/include/phpmailer/class.phpmailer.php
 %%WWWDIR%%/include/phpmailer/class.smtp.php
+%%WWWDIR%%/include/phpmailer/extras/htmlfilter.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-ar.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-br.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-ca.php
+%%WWWDIR%%/include/phpmailer/language/phpmailer.lang-ch.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-cz.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-de.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-dk.php
@@ -3177,7 +3194,8 @@
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-ru.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-se.php
 %%WWWDIR%%/include/phpmailer/language/phpmailer.lang-tr.php
-%%WWWDIR%%/include/phpmailer/license.txt
+%%WWWDIR%%/include/phpmailer/language/phpmailer.lang-zh.php
+%%WWWDIR%%/include/phpmailer/language/phpmailer.lang-zh_cn.php
 %%WWWDIR%%/include/reCaptcha/LICENSE
 %%WWWDIR%%/include/reCaptcha/README
 %%WWWDIR%%/include/reCaptcha/recaptchalib.php
@@ -3362,6 +3380,7 @@
 %%WWWDIR%%/jssource/jsmin.php
 %%WWWDIR%%/jssource/minify.php
 %%WWWDIR%%/jssource/minify_utils.php
+%%WWWDIR%%/jssource/src_files/include/EditView/Panels.js
 %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
 %%WWWDIR%%/jssource/src_files/include/MySugar/javascript/MySugar.js
 %%WWWDIR%%/jssource/src_files/include/SubPanel/SubPanelTiles.js
@@ -3403,6 +3422,7 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/sugar_yui_overrides.js
 %%WWWDIR%%/jssource/src_files/include/javascript/sugarwidgets/SugarYUILoader.js
 %%WWWDIR%%/jssource/src_files/include/javascript/sugarwidgets/SugarYUIWidgets.js
+%%WWWDIR%%/jssource/src_files/include/javascript/tour.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/assets/dpSyntaxHighlighter.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/assets/syntax.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/anim/anim-base-min.js
@@ -4197,6 +4217,7 @@
 %%WWWDIR%%/jssource/src_files/modules/EAPM/EAPMEdit.js
 %%WWWDIR%%/jssource/src_files/modules/EmailTemplates/EmailTemplate.js
 %%WWWDIR%%/jssource/src_files/modules/Home/about.js
+%%WWWDIR%%/jssource/src_files/modules/Home/tour.js
 %%WWWDIR%%/jssource/src_files/modules/InboundEmail/InboundEmail.js
 %%WWWDIR%%/jssource/src_files/modules/Leads/Lead.js
 %%WWWDIR%%/jssource/src_files/modules/Meetings/duration_dependency.js
@@ -5303,9 +5324,13 @@
 %%WWWDIR%%/modules/Home/quicksearchQuery.php
 %%WWWDIR%%/modules/Home/sitemap.php
 %%WWWDIR%%/modules/Home/sitemap.tpl
+%%WWWDIR%%/modules/Home/tour.css
+%%WWWDIR%%/modules/Home/tour.js
+%%WWWDIR%%/modules/Home/tour.tpl
 %%WWWDIR%%/modules/Home/views/view.additionaldetailsretrieve.php
 %%WWWDIR%%/modules/Home/views/view.list.php
 %%WWWDIR%%/modules/Home/views/view.modulelistmenu.php
+%%WWWDIR%%/modules/Home/views/view.tour.php
 %%WWWDIR%%/modules/Import/CsvAutoDetect.php
 %%WWWDIR%%/modules/Import/Forms.php
 %%WWWDIR%%/modules/Import/ImportCacheFiles.php
@@ -5763,10 +5788,13 @@
 %%WWWDIR%%/modules/Project/metadata/subpanels/ForEmails.php
 %%WWWDIR%%/modules/Project/metadata/subpanels/default.php
 %%WWWDIR%%/modules/Project/tpls/QuickCreate.tpl
+%%WWWDIR%%/modules/Project/tpls/QuickEditFooter.tpl
+%%WWWDIR%%/modules/Project/tpls/QuickEditHeader.tpl
 %%WWWDIR%%/modules/Project/vardefs.php
 %%WWWDIR%%/modules/Project/views/view.detail.php
 %%WWWDIR%%/modules/Project/views/view.edit.php
 %%WWWDIR%%/modules/Project/views/view.list.php
+%%WWWDIR%%/modules/Project/views/view.quickedit.php
 %%WWWDIR%%/modules/Project/views/view.templatesdetail.php
 %%WWWDIR%%/modules/Project/views/view.templatesedit.php
 %%WWWDIR%%/modules/ProjectTask/Dashlets/MyProjectTaskDashlet/MyProjectTaskDashlet.data.php
@@ -6083,10 +6111,10 @@
 %%WWWDIR%%/modules/Users/Forms.php
 %%WWWDIR%%/modules/Users/GeneratePassword.php
 %%WWWDIR%%/modules/Users/ListRoles.php
+%%WWWDIR%%/modules/Users/LoggedOut.php
+%%WWWDIR%%/modules/Users/LoggedOut.tpl
 %%WWWDIR%%/modules/Users/Login.php
 %%WWWDIR%%/modules/Users/Logout.php
-%%WWWDIR%%/modules/Users/LoggedOut.tpl
-%%WWWDIR%%/modules/Users/LoggedOut.php
 %%WWWDIR%%/modules/Users/Menu.php
 %%WWWDIR%%/modules/Users/PasswordRequirementBox.css
 %%WWWDIR%%/modules/Users/PasswordRequirementBox.js
@@ -6099,6 +6127,7 @@
 %%WWWDIR%%/modules/Users/SaveTimezone.php
 %%WWWDIR%%/modules/Users/SetTimezone.php
 %%WWWDIR%%/modules/Users/SetTimezone.tpl
+%%WWWDIR%%/modules/Users/UpdateTourStatus.php
 %%WWWDIR%%/modules/Users/User.js
 %%WWWDIR%%/modules/Users/User.php
 %%WWWDIR%%/modules/Users/UserEditView.js
@@ -6849,11 +6878,17 @@
 %%WWWDIR%%/themes/Sugar5/tpls/_welcome.tpl
 %%WWWDIR%%/themes/Sugar5/tpls/footer.tpl
 %%WWWDIR%%/themes/Sugar5/tpls/header.tpl
+%%WWWDIR%%/themes/default/css/bootstrap.css
 %%WWWDIR%%/themes/default/css/chart.css
 %%WWWDIR%%/themes/default/css/deprecated.css
 %%WWWDIR%%/themes/default/css/print.css
 %%WWWDIR%%/themes/default/css/style.css
 %%WWWDIR%%/themes/default/css/wizard.css
+%%WWWDIR%%/themes/default/font/fontawesome-webfont.eot
+%%WWWDIR%%/themes/default/font/fontawesome-webfont.svg
+%%WWWDIR%%/themes/default/font/fontawesome-webfont.svgz
+%%WWWDIR%%/themes/default/font/fontawesome-webfont.ttf
+%%WWWDIR%%/themes/default/font/fontawesome-webfont.woff
 %%WWWDIR%%/themes/default/images/Accounts.gif
 %%WWWDIR%%/themes/default/images/ActivitiesReports.gif
 %%WWWDIR%%/themes/default/images/Administration.gif
@@ -7444,6 +7479,46 @@
 %%WWWDIR%%/themes/default/images/yellow_camp.gif
 %%WWWDIR%%/themes/default/images/yes.gif
 %%WWWDIR%%/themes/default/js/style.js
+%%WWWDIR%%/themes/default/less/accordion.less
+%%WWWDIR%%/themes/default/less/alerts.less
+%%WWWDIR%%/themes/default/less/bootstrap-mobile.less
+%%WWWDIR%%/themes/default/less/bootstrap.less
+%%WWWDIR%%/themes/default/less/breadcrumbs.less
+%%WWWDIR%%/themes/default/less/button-groups.less
+%%WWWDIR%%/themes/default/less/buttons.less
+%%WWWDIR%%/themes/default/less/carousel.less
+%%WWWDIR%%/themes/default/less/chosen.less
+%%WWWDIR%%/themes/default/less/close.less
+%%WWWDIR%%/themes/default/less/code.less
+%%WWWDIR%%/themes/default/less/component-animations.less
+%%WWWDIR%%/themes/default/less/dropdowns.less
+%%WWWDIR%%/themes/default/less/font-awesome.less
+%%WWWDIR%%/themes/default/less/forms.less
+%%WWWDIR%%/themes/default/less/grid.less
+%%WWWDIR%%/themes/default/less/hero-unit.less
+%%WWWDIR%%/themes/default/less/labels.less
+%%WWWDIR%%/themes/default/less/layouts.less
+%%WWWDIR%%/themes/default/less/mixins.less
+%%WWWDIR%%/themes/default/less/modals.less
+%%WWWDIR%%/themes/default/less/navbar.less
+%%WWWDIR%%/themes/default/less/navs.less
+%%WWWDIR%%/themes/default/less/pager.less
+%%WWWDIR%%/themes/default/less/pagination.less
+%%WWWDIR%%/themes/default/less/popovers.less
+%%WWWDIR%%/themes/default/less/progress-bars.less
+%%WWWDIR%%/themes/default/less/reset.less
+%%WWWDIR%%/themes/default/less/responsive.less
+%%WWWDIR%%/themes/default/less/scaffolding.less
+%%WWWDIR%%/themes/default/less/sprites.less
+%%WWWDIR%%/themes/default/less/sugar.less
+%%WWWDIR%%/themes/default/less/sugarmobile.less
+%%WWWDIR%%/themes/default/less/tables.less
+%%WWWDIR%%/themes/default/less/thumbnails.less
+%%WWWDIR%%/themes/default/less/tooltip.less
+%%WWWDIR%%/themes/default/less/type.less
+%%WWWDIR%%/themes/default/less/utilities.less
+%%WWWDIR%%/themes/default/less/variables.less
+%%WWWDIR%%/themes/default/less/wells.less
 %%WWWDIR%%/upload/index.html
 %%WWWDIR%%/vCard.php
 %%WWWDIR%%/vcal_server.php
@@ -7692,6 +7767,7 @@
 @dirrm %%WWWDIR%%/include/fonts
 @dirrm %%WWWDIR%%/include/generic/SugarWidgets
 @dirrm %%WWWDIR%%/include/generic
+@dirrm %%WWWDIR%%/include/images/tour
 @dirrm %%WWWDIR%%/include/images
 @dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images
 @dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets/default
@@ -8090,6 +8166,7 @@
 @dirrm %%WWWDIR%%/include/language
 @dirrm %%WWWDIR%%/include/nusoap
 @dirrm %%WWWDIR%%/include/pclzip
+@dirrm %%WWWDIR%%/include/phpmailer/extras
 @dirrm %%WWWDIR%%/include/phpmailer/language
 @dirrm %%WWWDIR%%/include/phpmailer
 @dirrm %%WWWDIR%%/include/reCaptcha
@@ -8121,6 +8198,7 @@
 @dirrm %%WWWDIR%%/install/language
 @dirrm %%WWWDIR%%/install/seed_data
 @dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/jssource/src_files/include/EditView
 @dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier/Printer
 @dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier
 @dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone
@@ -8656,9 +8734,11 @@
 @dirrm %%WWWDIR%%/themes/Sugar5/tpls
 @dirrm %%WWWDIR%%/themes/Sugar5
 @dirrm %%WWWDIR%%/themes/default/css
+@dirrm %%WWWDIR%%/themes/default/font
 @dirrm %%WWWDIR%%/themes/default/images/SugarLogic
 @dirrm %%WWWDIR%%/themes/default/images
 @dirrm %%WWWDIR%%/themes/default/js
+@dirrm %%WWWDIR%%/themes/default/less
 @dirrm %%WWWDIR%%/themes/default
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/upload

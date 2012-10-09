@@ -1,11 +1,8 @@
-# New ports collection makefile for:	deskutils/sugarcrm
-# Date created:				March 25 2005
-# Whom:	      				Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	6.5.2
+PORTVERSION=	6.5.5
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/1%20-%20SugarCRM%206.5.0/SugarCommunityEdition-6.5.0
