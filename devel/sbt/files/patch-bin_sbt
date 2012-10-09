@@ -1,0 +1,25 @@
+--- bin/sbt.orig	2012-09-18 09:35:52.000000000 +0200
++++ bin/sbt	2012-09-18 09:37:14.000000000 +0200
+@@ -1,11 +1,11 @@
+ #!/usr/bin/env bash
+ 
+-. $(dirname $0)/sbt-launch-lib.bash
++. %%PREFIX%%/share/sbt/sbt-launch-lib.bash
+ 
+ 
+ declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
+ declare -r sbt_opts_file=".sbtopts"
+-declare -r etc_sbt_opts_file="/etc/sbt/sbtopts"
++declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbt/sbtopts"
+ 
+ usage() {
+  cat <<EOM
+@@ -39,7 +39,7 @@
+   SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
+   .sbtopts           if this file exists in the current directory, it is
+                      prepended to the runner args
+-  /etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
++  %%PREFIX%%/etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
+   -Dkey=val          pass -Dkey=val directly to the java runtime
+   -J-X               pass option -X directly to the java runtime 
+                      (-J is stripped)
