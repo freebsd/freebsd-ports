@@ -1,13 +1,11 @@
-
-$FreeBSD$
-
---- po/LINGUAS.orig
-+++ po/LINGUAS
-@@ -1,12 +1,12 @@
+--- po/LINGUAS.bak	2012-10-09 15:03:53.000000000 +0000
++++ po/LINGUAS	2012-10-09 15:05:12.000000000 +0000
+@@ -1,13 +1,13 @@
 -ca
 -de
 -es
 -fr
+-hu
 -it
 -ja
 -nb
@@ -19,6 +17,7 @@ $FreeBSD$
 +de \
 +es \
 +fr \
++hu \
 +it \
 +ja \
 +nb \
