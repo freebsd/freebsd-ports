@@ -7,6 +7,7 @@
 %%SITE_PERL%%/PocketIO/Pool.pm
 %%SITE_PERL%%/PocketIO/Pool/Redis.pm
 %%SITE_PERL%%/PocketIO/Resource.pm
+%%SITE_PERL%%/PocketIO/Room.pm
 %%SITE_PERL%%/PocketIO/Socket.pm
 %%SITE_PERL%%/PocketIO/Sockets.pm
 %%SITE_PERL%%/PocketIO/Test.pm
