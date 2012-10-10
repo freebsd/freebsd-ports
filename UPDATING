@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20121010:
-  AFFECTS: users of CURRENT
+  AFFECTS: users of CURRENT (OSVERSION >= 1000017)
   AUTHOR: bapt@FreeBSD.org
 
   The ports tree is now using pkgng as the default package manager
