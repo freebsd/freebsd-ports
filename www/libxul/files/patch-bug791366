@@ -1,0 +1,124 @@
+diff --git xpcom/base/nsMemoryReporterManager.cpp xpcom/base/nsMemoryReporterManager.cpp
+index a9aff58..674e757 100644
+--- xpcom/base/nsMemoryReporterManager.cpp
++++ xpcom/base/nsMemoryReporterManager.cpp
+@@ -64,7 +64,7 @@ extern void jemalloc_stats(jemalloc_stat
+ #  endif  // XP_LINUX
+ #endif  // MOZ_MEMORY
+ 
+-#if defined(XP_LINUX) || defined(XP_MACOSX)
++#ifdef XP_UNIX
+ 
+ #include <sys/time.h>
+ #include <sys/resource.h>
+@@ -122,6 +122,78 @@ static PRInt64 GetResident()
+     return GetProcSelfStatmField(1);
+ }
+ 
++#elif defined(__DragonFly__) || defined(__FreeBSD__) \
++    || defined(__NetBSD__) || defined(__OpenBSD__)
++
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#if defined(__DragonFly__) || defined(__FreeBSD__)
++#include <sys/user.h>
++#endif
++
++#include <unistd.h>
++
++#if defined(__NetBSD__)
++#undef KERN_PROC
++#define KERN_PROC KERN_PROC2
++#define KINFO_PROC struct kinfo_proc2
++#else
++#define KINFO_PROC struct kinfo_proc
++#endif
++
++#if defined(__DragonFly__)
++#define KP_SIZE(kp) (kp.kp_vm_map_size)
++#define KP_RSS(kp) (kp.kp_vm_rssize * getpagesize())
++#elif defined(__FreeBSD__)
++#define KP_SIZE(kp) (kp.ki_size)
++#define KP_RSS(kp) (kp.ki_rssize * getpagesize())
++#elif defined(__NetBSD__)
++#define KP_SIZE(kp) (kp.p_vm_msize * getpagesize())
++#define KP_RSS(kp) (kp.p_vm_rssize * getpagesize())
++#elif defined(__OpenBSD__)
++#define KP_SIZE(kp) ((kp.p_vm_dsize + kp.p_vm_ssize                     \
++                      + kp.p_vm_tsize) * getpagesize())
++#define KP_RSS(kp) (kp.p_vm_rssize * getpagesize())
++#endif
++
++static nsresult GetKinfoProcSelf(KINFO_PROC *proc)
++{
++    int mib[] = {
++        CTL_KERN,
++        KERN_PROC,
++        KERN_PROC_PID,
++        getpid(),
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++        sizeof(KINFO_PROC),
++        1,
++#endif
++    };
++    u_int miblen = sizeof(mib) / sizeof(mib[0]);
++    size_t size = sizeof(KINFO_PROC);
++    if (sysctl(mib, miblen, proc, &size, NULL, 0))
++        return NS_ERROR_FAILURE;
++
++    return NS_OK;
++}
++
++static PRInt64 GetVsize()
++{
++    KINFO_PROC proc;
++    if (NS_SUCCEEDED(GetKinfoProcSelf(&proc)))
++        return KP_SIZE(proc);
++
++    return -1;
++}
++
++static PRInt64 GetResident()
++{
++    KINFO_PROC proc;
++    if (NS_SUCCEEDED(GetKinfoProcSelf(&proc)))
++        return KP_RSS(proc);
++
++    return -1;
++}
++
+ #elif defined(XP_MACOSX)
+ 
+ #include <mach/mach_init.h>
+@@ -224,7 +297,7 @@ static PRInt64 GetResident()
+ 
+ #endif
+ 
+-#if defined(XP_LINUX) || defined(XP_MACOSX) || defined(XP_WIN)
++#if defined(XP_UNIX) || defined(XP_WIN)
+ NS_MEMORY_REPORTER_IMPLEMENT(Vsize,
+     "vsize",
+     KIND_OTHER,
+@@ -239,7 +312,7 @@ NS_MEMORY_REPORTER_IMPLEMENT(Vsize,
+     "measure of the memory resources used by the process.")
+ #endif
+ 
+-#if defined(XP_LINUX) || defined(XP_MACOSX)
++#if defined(XP_UNIX)
+ NS_MEMORY_REPORTER_IMPLEMENT(PageFaultsSoft,
+     "page-faults-soft",
+     KIND_OTHER,
+@@ -457,11 +530,11 @@ nsMemoryReporterManager::Init()
+     REGISTER(HeapUnallocated);
+     REGISTER(Resident);
+ 
+-#if defined(XP_LINUX) || defined(XP_MACOSX) || defined(XP_WIN)
++#if defined(XP_UNIX) || defined(XP_WIN)
+     REGISTER(Vsize);
+ #endif
+ 
+-#if defined(XP_LINUX) || defined(XP_MACOSX)
++#if defined(XP_UNIX)
+     REGISTER(PageFaultsSoft);
+     REGISTER(PageFaultsHard);
+ #endif

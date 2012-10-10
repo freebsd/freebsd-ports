@@ -1,9 +1,9 @@
 --- mozilla/toolkit/xre/nsAppRunner.cpp~
 +++ mozilla/toolkit/xre/nsAppRunner.cpp
-@@ -3819,7 +3819,7 @@ XREMain::XRE_main(int argc, char* argv[]
+@@ -3833,7 +3833,7 @@ XREMain::XRE_main(int argc, char* argv[]
    ScopedLogging log;
  
- #if defined(MOZ_WIDGET_GTK2)
+ #if defined(MOZ_WIDGET_GTK)
 -#ifdef MOZ_MEMORY
 +#if defined(MOZ_MEMORY) || defined(__FreeBSD__) || defined(__NetBSD__)
    // Disable the slice allocator, since jemalloc already uses similar layout

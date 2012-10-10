@@ -4,9 +4,9 @@
  #if defined(XP_UNIX)
  #  include <unistd.h>           // for valloc on *BSD
  #endif //if defined(XP_UNIX)
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__)
 +#  include <malloc_np.h>        // for malloc_usable_size
-+#endif
++#endif // if defined(__FreeBSD__)
  
  #if defined(XP_WIN) || (defined(XP_OS2) && defined(__declspec))
  #  define MOZALLOC_EXPORT __declspec(dllexport)

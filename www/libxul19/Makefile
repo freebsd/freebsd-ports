@@ -16,6 +16,9 @@ DISTNAME=	firefox-3.6.28.source
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
+BUILD_DEPENDS=	nspr>=4.8.6:${PORTSDIR}/devel/nspr \
+		nss>=3.13.6_1:${PORTSDIR}/security/nss
+
 WRKSRC=		${WRKDIR}/mozilla-1.9.2
 CONFLICTS=	mozilla-[0-9]* libxul-[0-9][0-9].*
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
@@ -23,7 +26,6 @@ GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
 
 LATEST_LINK=	libxul19
 USE_AUTOTOOLS=	autoconf213:env
-USE_GCC=	any
 WANT_GNOME=	yes
 WANT_PERL=	yes
 ALL_TARGET=	default
@@ -52,7 +54,7 @@ JAVA_DESC?=	JAVA xpcom
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
-OPTIONS_DEFINE:=${OPTIONS_DEFINE:NLIBPROXY}
+OPTIONS_DEFINE:=${OPTIONS_DEFINE:NLIBPROXY:NGIO}
 OPTIONS_SINGLE:=${OPTIONS_SINGLE:NTOOLKIT}
 
 .include <bsd.port.pre.mk>

@@ -123,7 +123,7 @@ if test "$echo_libdir" = "yes"; then
 fi
 
 if test "$echo_cflags" = "yes"; then
-    echo -I$includedir
+    echo -I$includedir -I$includedir/nss
 fi
 
 if test "$echo_libs" = "yes"; then

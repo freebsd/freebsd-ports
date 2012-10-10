@@ -1,0 +1,107 @@
+commit c269a16
+Author: Jeff Muizelaar <jmuizelaar@mozilla.com>
+Date:   Fri Sep 14 15:54:55 2012 -0400
+
+    Bug 791305. Use libjpeg's color conversion code instead of our own. r=joe,r=khuey
+    
+    libjpeg-turbo supports converting directly to a format compatible with cairo's
+    FORMAT_RGB24. Use that instead of our own handcoded function. This also gives
+    us SSE2 and NEON version of this function.
+    
+    --HG--
+    extra : rebase_source : 18f48925f023a33ec2a097d4f4e5cc2ab40be1e9
+---
+ configure.in                     |   6 +-
+ image/decoders/nsJPEGDecoder.cpp | 311 ++-------------------------------------
+ 2 files changed, 20 insertions(+), 297 deletions(-)
+
+diff --git image/decoders/nsJPEGDecoder.cpp image/decoders/nsJPEGDecoder.cpp
+index c1fb515..1d2a259 100644
+--- image/decoders/nsJPEGDecoder.cpp
++++ image/decoders/nsJPEGDecoder.cpp
+@@ -22,6 +22,13 @@
+ extern "C" {
+ #include "iccjpeg.h"
+ 
++#ifdef JCS_EXTENSIONS
++#if defined(IS_BIG_ENDIAN)
++#define MOZ_JCS_EXT_NATIVE_ENDIAN_XRGB JCS_EXT_XRGB
++#else
++#define MOZ_JCS_EXT_NATIVE_ENDIAN_XRGB JCS_EXT_BGRX
++#endif
++#else
+ /* Colorspace conversion (copied from jpegint.h) */
+ struct jpeg_color_deconverter {
+   JMETHOD(void, start_pass, (j_decompress_ptr cinfo));
+@@ -34,6 +41,7 @@ METHODDEF(void)
+ ycc_rgb_convert_argb (j_decompress_ptr cinfo,
+                  JSAMPIMAGE input_buf, JDIMENSION input_row,
+                  JSAMPARRAY output_buf, int num_rows);
++#endif
+ }
+ 
+ static void cmyk_convert_rgb(JSAMPROW row, JDIMENSION width);
+@@ -329,7 +340,18 @@ nsJPEGDecoder::WriteInternal(const char *aBuffer, PRUint32 aCount)
+       case JCS_GRAYSCALE:
+       case JCS_RGB:
+       case JCS_YCbCr:
++#ifdef JCS_EXTENSIONS
++        // if we're not color managing we can decode directly to
++        // MOZ_JCS_EXT_NATIVE_ENDIAN_XRGB
++        if (mCMSMode != eCMSMode_All) {
++            mInfo.out_color_space = MOZ_JCS_EXT_NATIVE_ENDIAN_XRGB;
++            mInfo.out_color_components = 4;
++        } else {
++            mInfo.out_color_space = JCS_RGB;
++        }
++#else
+         mInfo.out_color_space = JCS_RGB;
++#endif
+         break;
+       case JCS_CMYK:
+       case JCS_YCCK:
+@@ -397,6 +419,7 @@ nsJPEGDecoder::WriteInternal(const char *aBuffer, PRUint32 aCount)
+       return; /* I/O suspension */
+     }
+ 
++#ifndef JCS_EXTENSIONS
+     /* Force to use our YCbCr to Packed RGB converter when possible */
+     if (!mTransform && (mCMSMode != eCMSMode_All) &&
+         mInfo.jpeg_color_space == JCS_YCbCr && mInfo.out_color_space == JCS_RGB) {
+@@ -404,6 +427,7 @@ nsJPEGDecoder::WriteInternal(const char *aBuffer, PRUint32 aCount)
+       mInfo.out_color_components = 4; /* Packed ARGB pixels are always 4 bytes...*/
+       mInfo.cconvert->color_convert = ycc_rgb_convert_argb;
+     }
++#endif
+ 
+     /* If this is a progressive JPEG ... */
+     mState = mInfo.buffered_image ? JPEG_DECOMPRESS_PROGRESSIVE : JPEG_DECOMPRESS_SEQUENTIAL;
+@@ -542,7 +566,11 @@ nsJPEGDecoder::OutputScanlines(bool* suspend)
+       PRUint32 *imageRow = ((PRUint32*)mImageData) +
+                            (mInfo.output_scanline * mInfo.output_width);
+ 
++#ifdef JCS_EXTENSIONS
++      if (mInfo.out_color_space == MOZ_JCS_EXT_NATIVE_ENDIAN_XRGB) {
++#else
+       if (mInfo.cconvert->color_convert == ycc_rgb_convert_argb) {
++#endif
+         /* Special case: scanline will be directly converted into packed ARGB */
+         if (jpeg_read_scanlines(&mInfo, (JSAMPARRAY)&imageRow, 1) != 1) {
+           *suspend = true; /* suspend */
+@@ -858,6 +887,7 @@ term_source (j_decompress_ptr jd)
+ } // namespace mozilla
+ 
+ 
++#ifndef JCS_EXTENSIONS
+ /**************** YCbCr -> Cairo's RGB24/ARGB32 conversion: most common case **************/
+ 
+ /*
+@@ -1130,7 +1160,8 @@ ycc_rgb_convert_argb (j_decompress_ptr cinfo,
+     }
+   }
+ }
++#endif
+ 
+ 
+ /**************** Inverted CMYK -> RGB conversion **************/
+ /*

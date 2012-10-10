@@ -79,8 +79,8 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 _GECKO_ALL=	libxul libxul19
 
-libxul_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
-libxul19_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
+libxul_PLIST=		libxul>=10
+libxul19_PLIST=		libxul<2
 
 .for gecko in ${_GECKO_ALL}
 ${gecko}_PORTSDIR?=	www
@@ -179,7 +179,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 10+ 15+ 10 15+
+#                         Available values: yes 10+ 16+ 10 16+
 #                         NOTE:
 #                         default value 10 is used in case of USE_FIREFOX=yes
 #
@@ -190,9 +190,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 12+ 12
+#                         Available values: yes 13+ 13
 #                         NOTE:
-#                         default value 12 is used in case of USE_SEAMONKEY=yes
+#                         default value 13 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -201,7 +201,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 10+ 15+ 10 15
+#                         Available values: yes 10+ 16+ 10 16
 #                         NOTE:
 #                         default value 10 is used in case of USE_THUNDERBIRD=yes
 #
@@ -221,11 +221,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	10
-_FIREFOX_VERSIONS=			10 15
-_FIREFOX_RANGE_VERSIONS=	10+ 15+
+_FIREFOX_VERSIONS=			10 16
+_FIREFOX_RANGE_VERSIONS=	10+ 16+
 
 # For specifying [10, ..]+
-_FIREFOX_15P=	15 ${_FIREFOX_10P}
+_FIREFOX_16P=	16 ${_FIREFOX_10P}
 _FIREFOX_10P=	10
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-15_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+16_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -294,12 +294,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	12
-_SEAMONKEY_VERSIONS=		12
-_SEAMONKEY_RANGE_VERSIONS=	12+
+_SEAMONKEY_DEFAULT_VERSION=	13
+_SEAMONKEY_VERSIONS=		13
+_SEAMONKEY_RANGE_VERSIONS=	13+
 
-# For specifying [12, ..]+
-_SEAMONKEY_12P=	12
+# For specifying [13, ..]+
+_SEAMONKEY_13P=	13
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -341,7 +341,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-12_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+13_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -364,11 +364,11 @@ _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
 _THUNDERBIRD_DEFAULT_VERSION=	10
-_THUNDERBIRD_VERSIONS=			10 15
-_THUNDERBIRD_RANGE_VERSIONS=	10+ 15+
+_THUNDERBIRD_VERSIONS=			10 16
+_THUNDERBIRD_RANGE_VERSIONS=	10+ 16+
 
 # For specifying [10, ..]+
-_THUNDERBIRD_15P=	15 ${_THUNDERBIRD_10P}
+_THUNDERBIRD_16P=	16 ${_THUNDERBIRD_10P}
 _THUNDERBIRD_10P=	10
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
@@ -414,7 +414,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 
 # Dependence lines for different Thunderbird versions
 10_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird-esr
-15_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+16_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 # Add dependencies
 .if defined(USE_THUNDERBIRD)
@@ -519,7 +519,6 @@ FAKEDIR?=	${WRKDIR}/fake
 PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
-MASTER_DIR?=	${.CURDIR}/../../www/seamonkey
 
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 
@@ -528,9 +527,8 @@ MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin lib
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
-MASTER_MOZDIR?=	${PORTSDIR}/www/seamonkey
-PKGINSTALL_INC?=	${MASTER_MOZDIR}/pkg-install.in
-PKGDEINSTALL_INC?=	${MASTER_MOZDIR}/pkg-deinstall.in
+PKGINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-install.in
+PKGDEINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-deinstall.in
 
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude */macbuild/*			\
@@ -546,6 +544,25 @@ MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
+
+.if ${OSVERSION} > 800072
+LDFLAGS+=		-Wl,-z,origin -Wl,-rpath,\\\$$\$$ORIGIN
+.else
+LDFLAGS+=		-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
+.endif
+
+.if ${MOZILLA_VER:R:R} >= 16 || exists(${.CURDIR}/files/patch-bug788955)
+.if ${OSVERSION} > 1000011
+# use jemalloc 3.0.0 API in libc
+MOZ_EXPORT+=	MOZ_JEMALLOC=1
+.elif ${OSVERSION} > 800004
+MOZ_OPTIONS+=	--enable-jemalloc
+MOZ_EXPORT+=	MOZ_JEMALLOC=1
+.elif ${OSVERSION} > 700101
+# has _pthread_mutex_init_calloc_cb but firefox crashes when jemalloc
+# configured without --enable-debug
+.endif
+.endif
 
 # Standard depends
 _ALL_DEPENDS=	cairo dbm event ffi hunspell jpeg nspr nss png sqlite vpx zip
@@ -567,6 +584,8 @@ ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
 hunspell_LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
 hunspell_MOZ_OPTIONS=	--enable-system-hunspell
 
+# XXX: depends on pkgng package flavor support
+#jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/libjpeg-turbo
 jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 jpeg_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libjpeg
@@ -578,8 +597,6 @@ nss_LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
 nss_EXTRACT_AFTER_ARGS=	--exclude mozilla*/security/coreconf \
 						--exclude mozilla*/security/nss
-nss_CPPFLAGS+=		-I${LOCALBASE}/include/nss -I${LOCALBASE}/include/nss/nss
-nss_LDFLAGS+=		-L${LOCALBASE}/lib/nss -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 
 png_LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
@@ -590,7 +607,7 @@ sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 
 vpx_LIB_DEPENDS=	vpx:${PORTSDIR}/multimedia/libvpx
 vpx_MOZ_OPTIONS=	--with-system-libvpx
-#vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
+vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
 
 zip_BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
 zip_RUN_DEPENDS=		${zip_BUILD_DEPENDS}
@@ -606,8 +623,6 @@ LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
 EXTRACT_AFTER_ARGS+=	${${dep}_EXTRACT_AFTER_ARGS}
-CPPFLAGS+=	${${dep}_CPPFLAGS}
-LDFLAGS+=	${${dep}_LDFLAGS}
 .endif
 .endfor
 
@@ -617,7 +632,6 @@ MOZ_TOOLKIT?=	cairo-gtk2
 MOZ_OPTIONS+=	--disable-tests 	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
-		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--with-pthreads
 # Configure options for install
 .if !defined(MOZ_EXTENSIONS)
@@ -690,7 +704,7 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${PORT_OPTIONS:MGIO}
+.if ${PORT_OPTIONS:MGIO} && ! ${PORT_OPTIONS:MQT4}
 MOZ_OPTIONS+=	--enable-gio
 .else
 MOZ_OPTIONS+=	--disable-gio
@@ -818,6 +832,18 @@ gecko-post-patch:
 		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
 			${MOZSRC}/build/unix/mozilla-config.in
 .endif
+.if ${USE_MOZILLA:M-nspr}
+	@${ECHO_MSG} "===>  Applying NSPR patches"
+	@for i in ${.CURDIR}/../../devel/nspr/files/patch-*; do \
+		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/nsprpub/build < $$i; \
+	done
+.endif
+.if ${USE_MOZILLA:M-nss}
+	@${ECHO_MSG} "===>  Applying NSS patches"
+	@for i in ${.CURDIR}/../../security/nss/files/patch-*; do \
+		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/security/nss < $$i; \
+	done
+.endif
 .for subdir in "" nsprpub js/src
 	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
 	for f in \
@@ -863,9 +889,19 @@ gecko-post-patch:
 			${MOZSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
-		${MOZSRC}/xpcom/*/SpecialSystemDirectory.cpp
+		${MOZSRC}/xpcom/io/SpecialSystemDirectory.cpp
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g' \
+		${MOZSRC}/xpcom/build/nsXPCOMPrivate.h
+	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
+		-e 's|mozilla/plugins|browser_plugins|g' \
+		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
+		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
 	@${GREP} -lr 'PR_LoadLibrary.*\.so\.[0-9]' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -Ee '/PR_LoadLibrary/s/(\.so)\.[0-9]+/\1/'
+.if ${MOZILLA} != "kompozer"
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${MOZSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp
+.endif
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:

@@ -25,12 +25,11 @@ CERTDIR?=	share/certs
 PLIST_SUB+=	CERTDIR=${CERTDIR}
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# !!!  These versions are indented to track security/nss and     !!!
-# !!!  www/apache13-modssl.  Please DO NOT submit patches for    !!!
-# !!!  new versions until they have been committed there first.  !!!
+# !!!  These versions are indented to track security/nss.        !!!
+# !!!  Please DO NOT submit patches for new version until it has !!!
+# !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 VERSION_NSS=	3.13.6
-VERSION_APACHE=	1.3.41
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/mozilla/security/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxul
-DISTVERSION=	10.0.7
+DISTVERSION=	10.0.8
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	firefox/releases/${DISTVERSION}esr/source
@@ -16,7 +16,7 @@ MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
-		nss>=3.13.1:${PORTSDIR}/security/nss \
+		nss>=3.13.6_1:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.7.1:${PORTSDIR}/databases/sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
@@ -48,6 +48,8 @@ MOZILLA_PLIST_DIRS=	bin include lib share/idl
 PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
+
+OPTIONS_DEFAULT=GIO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>

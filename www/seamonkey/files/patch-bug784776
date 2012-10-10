@@ -1,20 +1,3 @@
---- mozilla/content/media/MediaEngineDefault.cpp~
-+++ mozilla/content/media/MediaEngineDefault.cpp
-@@ -232,12 +232,12 @@ nsresult
- MediaEngineDefaultAudioSource::Start(SourceMediaStream* aStream, TrackID aID)
- {
-   if (mState != kAllocated) {
--    return NULL;
-+    return 0;
-   }
- 
-   mTimer = do_CreateInstance(NS_TIMER_CONTRACTID);
-   if (!mTimer) {
--    return NULL;
-+    return 0;
-   }
- 
-   mSource = aStream;
 --- mozilla/gfx/layers/opengl/ImageLayerOGL.cpp~
 +++ mozilla/gfx/layers/opengl/ImageLayerOGL.cpp
 @@ -936,7 +936,7 @@ ShadowImageLayerOGL::CleanupResources()

@@ -1,2 +1,4 @@
-SHA256 (seamonkey-2.12.1.source.tar.bz2) = 7c816fba65ccd0f4233409eee05cc534c77fcbdf46f49e9ba17d382a77278e62
-SIZE (seamonkey-2.12.1.source.tar.bz2) = 106859727
+SHA256 (seamonkey-2.13.source.tar.bz2) = d48016bc7dfeebc882189475704bd050c4a4fddd421fc42b321749b33b13d0b1
+SIZE (seamonkey-2.13.source.tar.bz2) = 112149304
+SHA256 (enigmail-1.4.5.tar.gz) = fa59491fba21de9414a003933349074a8ec1833a1d64cac9f0a9f7020ed6c020
+SIZE (enigmail-1.4.5.tar.gz) = 1269207

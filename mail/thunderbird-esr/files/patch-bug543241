@@ -1,5 +1,16 @@
 --- ./mozilla/xpcom/threads/nsThreadManager.cpp.orig	2011-08-25 02:37:45.000000000 +0200
 +++ ./mozilla/xpcom/threads/nsThreadManager.cpp	2011-08-28 17:14:14.000000000 +0200
+@@ -12,6 +12,10 @@
+ #include "nsAutoPtr.h"
+ #include "nsCycleCollectorUtils.h"
+ 
++#if defined(__FreeBSD__)
++#include <osreldate.h>
++#endif
++
+ using namespace mozilla;
+ 
+ #ifdef XP_WIN
 @@ -89,6 +89,11 @@
  nsresult
  nsThreadManager::Init()

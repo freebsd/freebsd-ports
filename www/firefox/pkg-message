@@ -1,9 +1,9 @@
 ======================================================================
 
-smb:// issues (GNOMEVFS2 option):
+smb:// issues (Gvfs/GIO or GNOMEVFS2 option):
 Network group, machine, and share browsing does not work correctly.
 
-sftp:// (GNOMEVFS2 option):
+sftp:// (Gvfs/GIO or GNOMEVFS2 option):
 Only sftp access using public key authentication works.  To easily
 setup public key authentication to "remote_host":
 
