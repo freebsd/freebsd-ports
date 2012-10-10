@@ -1,29 +1,28 @@
-# New ports collection makefile for:	nagvis
-# Date created:				5 October 2010
-# Whom:					Andrew 'derfi' Sidorov
-#
+# Created by: Andrew 'derfi' Sidorov <derfi@vei.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	nagvis
-PORTVERSION=	1.5.9
+PORTVERSION=	1.7.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/NagVis%201.5
+MASTER_SITE_SUBDIR=${PORTNAME}/NagVis%201.7
 
 MAINTAINER=	derfi@vei.ru
 COMMENT=	NagVis is a visualization addon for Nagios
 
 LICENSE=	GPLv2
 
-OPTIONS=	MKLIVESTATUS 	"depend on mk-livestatus broker (preferred)" on \
- 		NDO2DB 		"depend on ndo2db broker" off \
-		GRAPHVIZ	"graphviz is needed for automaps" off
+OPTIONS_DEFINE=	GRAPHVIZ
+OPTIONS_SINGLE=	BROKER
+OPTIONS_SINGLE_BROKER=	MKLIVESTATUS NDO2DB
+OPTIONS_DEFAULT=	MKLIVESTATUS
+MKLIVESTATUS_DESC=	Depend on mk-livestatus broker (preferred)
+NDO2DB_DESC=	Depend on ndo2db broker
+GRAPHVIZ_DESC=	Graphviz is needed for automaps
 
 NO_BUILD=	yes
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=5
 
 .include <bsd.port.options.mk>
 
@@ -36,22 +35,17 @@ SUB_LIST+=	WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP} \
 		DIRMODE=${DIRMODE} FILEMODE=${FILEMODE}
 SUB_FILES+=	pkg-install pkg-deinstall
 
-.if defined(WITH_NDO2DB)
+.if ${PORT_OPTIONS:MNDO2DB}
 USE_PHP+=	mysql
 RUN_DEPENDS+=	ndo2db-3x:${PORTSDIR}/net-mgmt/ndoutils
 .endif
 
-.if defined(WITH_MKLIVESTATUS)
+.if ${PORT_OPTIONS:MMKLIVESTATUS}
 RUN_DEPENDS+=	mk-livestatus>=0:${PORTSDIR}/net-mgmt/mk-livestatus
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-.endif
-
-check-sanity:
-.if !defined(WITH_NDO2DB) && !defined(WITH_MKLIVESTATUS)
-IGNORE=	please choose at least one nagios broker module
 .endif
 
 post-extract:
