@@ -166,6 +166,7 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js/props.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/readme.txt
 %%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/table/cell.htm
@@ -189,6 +190,9 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/js/template.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/template.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/css/visualblocks.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
@@ -302,6 +306,8 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualblocks
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/css
