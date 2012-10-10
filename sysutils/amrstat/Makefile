@@ -1,9 +1,5 @@
-# Ports collection makefile for:  amrstat
-# Date created:                   2006-04-11
-# Whom:                           "Bjoern A. Zeeb" <bzeeb+freebsd+ports@zabbadoz.net>
-#
+# Created by:	Bjoern A. Zeeb <bzeeb+freebsd+ports@zabbadoz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	amrstat
 PORTVERSION=	20070216
@@ -39,7 +35,8 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amrstat ${PREFIX}/sbin
-	${INSTALL_SCRIPT} -d ${PREFIX}/etc/periodic/daily
-	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
+	${MKDIR} ${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} \
+	    ${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.mk>
