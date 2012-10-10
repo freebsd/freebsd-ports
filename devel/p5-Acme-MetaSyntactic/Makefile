@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Acme-MetaSyntactic
-# Date created:				27 April 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Acme-MetaSyntactic
-PORTVERSION=	1.006
+PORTVERSION=	1.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
