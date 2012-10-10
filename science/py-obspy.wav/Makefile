@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.wav
-# Date created:				March 21, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.wav
 PORTVERSION=	0.5.1

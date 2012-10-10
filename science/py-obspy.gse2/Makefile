@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.gse2
-# Date created:				Jan 26, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.gse2
 PORTVERSION=	0.7.0

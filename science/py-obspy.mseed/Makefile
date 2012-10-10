@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.mseed
-# Date created:				Jan 26, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.mseed
 PORTVERSION=	0.7.0
