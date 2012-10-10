@@ -5,7 +5,8 @@ PORTNAME=	truecrypt
 PORTVERSION=	7.1a
 CATEGORIES=	security
 MASTER_SITES=	SF/wxwindows/${WX_VER}/:wxwidgets \
-		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa
+		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa \
+		http://mirrors.rit.edu/zi/pkcs-11/v2-20/:rsa
 DISTFILES=	${TC_SRCFILE}:tc \
 		wxWidgets-${WX_VER}.tar.gz:wxwidgets \
 		pkcs11.h:rsa \
