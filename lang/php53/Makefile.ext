@@ -191,14 +191,14 @@ CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 OPTIONS_DEFINE=	MYSQLND
 OPTIONS_DEFAULT=	MYSQLND
 
-MYSQLND_DESC=	Use MySQL Native Driver"   
+MYSQLND_DESC=	Use MySQL Native Driver
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
 OPTIONS_DEFINE=	MYSQLND
 OPTIONS_DEFAULT=	MYSQLND
 
-MYSQLND_DESC=	Use MySQL Native Driver"   
+MYSQLND_DESC=	Use MySQL Native Driver
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
