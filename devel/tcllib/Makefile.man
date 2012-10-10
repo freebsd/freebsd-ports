@@ -303,7 +303,6 @@ MANN=		S3.n \
 		traverse.n \
 		treeql.n \
 		trim.n \
-		try.n \
 		uevent.n \
 		uevent_onidle.n \
 		unicode.n \
