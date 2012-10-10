@@ -1,18 +1,17 @@
-# New ports collection makefile for:	p5-Data-Dumper
-# Date created:	   23 March 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Dumper
-PORTVERSION=	2.131
+PORTVERSION=	2.136
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stringified perl data structures, suitable for both printing and eval
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
