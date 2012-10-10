@@ -1,19 +1,16 @@
-# New ports collection makefile for:	enlightenment
-# Date created:			10 June 1997
-# Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	e16
-PORTVERSION=	1.0.10.002
+PORTVERSION=	1.0.11
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-#BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+OPTIONS_DEFINE=	ESOUND
+OPTIONS_DEFAULT=ESOUND
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
@@ -25,13 +22,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
 		--disable-rpath --enable-mans SHELL=/bin/sh
 
-.if !defined(WITHOUT_ESOUND)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME=	esound
 .else
 CONFIGURE_ARGS+=--disable-sound
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -39,7 +38,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAN1=		e16.1
 CONFIGURE_ARGS+=--enable-docs=yes
 .else
