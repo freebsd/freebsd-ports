@@ -1,13 +1,8 @@
-# New ports collection makefile for:	py-obspy.xseed
-# Date created:				June 29, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.xseed
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Dataless SEED, RESP, and XML-SEED read and write support for ObsPy
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy-core>=0.4.6:${PORTSDIR}/science/py-obspy-core
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy-core>=0.4.6:${PORTSDIR}/science/py-obspy-core
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy-core>=0:${PORTSDIR}/science/py-obspy-core
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy-core>=0:${PORTSDIR}/science/py-obspy-core
 
 USE_ZIP=		yes
 USE_PYTHON=		yes
