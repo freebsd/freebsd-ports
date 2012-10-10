@@ -13,6 +13,11 @@ All ports committers are allowed to commit to this file.
 20121010:
 AUTHOR: bapt@FreeBSD.org
 
+  * IPV6 option is now activated by default for the whole ports tree
+
+20121010:
+AUTHOR: bapt@FreeBSD.org
+
   * The ports tree is now using pkgng as the default package manager
     for HEAD.  This only affects users of CURRENT -- users of other
     branches need not take any action.
