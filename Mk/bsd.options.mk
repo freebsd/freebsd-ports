@@ -48,6 +48,9 @@ PORT_OPTIONS+=	NLS
 PORT_OPTIONS+=	EXAMPLES
 .endif
 
+# Activate IPV6 by default
+PORT_OPTIONS+=	IPV6
+
 # Exclude per arch options
 .for opt in ${OPTIONS_EXCLUDE_${ARCH}}
 OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
