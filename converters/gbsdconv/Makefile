@@ -4,7 +4,7 @@
 PORTNAME=	gbsdconv
 PORTVERSION=	1.0
 CATEGORIES=	converters python
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GH_COMMIT}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	GUI for bsdconv

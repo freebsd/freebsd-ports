@@ -4,7 +4,7 @@
 PORTNAME=	bsdconv
 PORTVERSION=	9.0
 CATEGORIES=	converters
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GH_COMMIT}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	BSD licensed charset/encoding converter library

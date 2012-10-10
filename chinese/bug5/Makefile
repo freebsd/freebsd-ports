@@ -4,7 +4,7 @@
 PORTNAME=	bug5
 PORTVERSION=	1.13
 CATEGORIES=	chinese converters
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GH_COMMIT}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A Big5/GBK <-> UTF-8 translating layer in terminal
