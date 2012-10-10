@@ -32,6 +32,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/bin/registervm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
@@ -226,31 +227,31 @@ COPYFILES=	\
 
 post-extract:
 	@for d in ${COPYDIRS}; do \
-		${MKDIR} `echo ${WRKDIR}/$$d | ${SED} 's/linux/bsd/g;'`; \
-		cd ${WRKDIR}/$$d; \
+		${MKDIR} `echo ${WRKSRC}/$$d | ${SED} 's/linux/bsd/g;'`; \
+		cd ${WRKSRC}/$$d; \
 		for f in *; do \
 			if [ -f $$f ]; then \
-				t=`echo ${WRKDIR}/$$d/$$f | ${SED} 's/linux/bsd/g; s/Linux/Bsd/g'`; \
+				t=`echo ${WRKSRC}/$$d/$$f | ${SED} 's/linux/bsd/g; s/Linux/Bsd/g'`; \
 				${SED} 's/linux/bsd/g; s/Linux/Bsd/g; s/LINUX/BSD/g' < $$f > $$t; \
 			fi; \
 		done; \
 	done
 	@for f in ${COPYFILES}; do \
 		t=`echo $$f | ${SED} 's/linux/bsd/g; s/Linux/Bsd/g'`; \
-		${SED} 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIR}/$$f > ${WRKDIR}/$$t; \
+		${SED} 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKSRC}/$$f > ${WRKSRC}/$$t; \
 	done
 	@${SED} 's/solaris/bsd/g; s/Solaris/Bsd/g' \
-		< ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
-		> ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
+		< ${WRKSRC}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
+		> ${WRKSRC}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
 	@${SED} "s|/usr/local|${LOCALBASE}|" < ${FILESDIR}/fontconfig.properties \
-		> ${WRKDIR}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
+		> ${WRKSRC}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|" < ${FILESDIR}/Makefile.test \
-		> ${WRKDIR}/jdk/test/Makefile
-	@${FIND} ${WRKDIR}/jdk/test -type f -name \*.sh -exec ${SED} -i "" -e s/Linux/FreeBSD/g {} \;
+		> ${WRKSRC}/jdk/test/Makefile
+	@${FIND} ${WRKSRC}/jdk/test -type f -name \*.sh -exec ${SED} -i "" -e s/Linux/FreeBSD/g {} \;
 
 post-patch:
 	@${REINPLACE_CMD} "s|/lib:/usr/lib|/lib:/usr/lib:${LOCALBASE}/lib|" \
-		${WRKDIR}/hotspot/src/os/bsd/vm/os_bsd.cpp
+		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
 .if ${PORT_OPTIONS:MPOLICY}
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
