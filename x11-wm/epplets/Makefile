@@ -1,13 +1,8 @@
-# New ports collection makefile for:   epplets
-# Date created:        18 October 1999
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	epplets
-PORTVERSION=	0.13
-PORTREVISION=	3
+PORTVERSION=	0.14
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 

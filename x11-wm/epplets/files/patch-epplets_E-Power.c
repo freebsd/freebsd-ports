@@ -1,5 +1,5 @@
---- epplets/E-Power.c.orig	2006-04-16 00:32:43.000000000 +0200
-+++ epplets/E-Power.c	2008-03-10 17:12:55.000000000 +0100
+--- epplets/E-Power.c.orig	2011-11-26 11:38:40.000000000 +0100
++++ epplets/E-Power.c	2012-10-10 15:01:17.000000000 +0200
 @@ -1,9 +1,22 @@
 +/*-
 + * Copyright 2008, Pietro Cerutti <gahr@FreeBSD.org> (FreeBSD adaptation)
@@ -23,7 +23,7 @@
  /* Modified by Attila ZIMLER <hijaszu@hlfslinux.hu>, 2003/11/16
     Added ACPI power management support.
  */
-@@ -11,6 +24,19 @@
+@@ -11,6 +24,20 @@
  /* Length of explain strings in /proc/acpi/battery/BAT0 data files */
  #define DATA_EXPLAIN_STR_LEN	25
  
@@ -31,6 +31,7 @@
 +#define MODE_NONE 0x0
 +#define MODE_APM  0x1
 +#define MODE_ACPI 0x2
++#define MODE_SYS  0x3
 +static unsigned mode = MODE_NONE;
 +
 +#ifdef __FreeBSD__
@@ -43,59 +44,68 @@
  int                 prev_bat_val = 110;
  int                 bat_val = 0;
  int                 time_val = 0;
-@@ -31,17 +57,39 @@
+@@ -33,14 +60,37 @@
  static void
  cb_timer(void *data)
  {
--   struct stat         st;
- 
 +#ifdef linux
-+   struct stat         st;
+    struct stat         st;
+ 
     if ((stat("/proc/apm", &st) > -1) && S_ISREG(st.st_mode))
 -      cb_timer_apm(data);
-+      mode = MODE_APM;
-    else if ((stat("/proc/acpi", &st) > -1) && S_ISDIR(st.st_mode))
-+      mode = MODE_ACPI;
-+#elif defined(__FreeBSD__)
++       mode = MODE_APM;
+    else if ((stat("/proc/acpi/battery", &st) > -1) && S_ISDIR(st.st_mode))
+-      cb_timer_acpi(data);
++       mode = MODE_ACPI;
+    else if ((stat("/sys/class/power_supply", &st) > -1) && S_ISDIR(st.st_mode))
+-      cb_timer_sys(data);
++       mode = MODE_SYS;
++   else
++       mode = MODE_NONE;
++#elif defined (__FreeBSD__)
 +   /*
-+    * Try ACPI first, if does not work, revert to APM
++    * Try ACPI first, if it doesn't work, revert to APM
 +    */
-+   if(acpi_fd != -1 || ((acpi_fd = open(ACPI_DEV, O_RDONLY)) != -1))
-+      mode = MODE_ACPI;
-+   else if(apm_fd != -1 || ((apm_fd = open(APM_DEV, O_RDONLY)) != -1))
-+      mode = MODE_APM;
++   if (acpi_fd != 1 || ((acpi_fd = open(ACPI_DEV, O_RDONLY)) != -1))
++       mode = MODE_ACPI;
++   else if (apm_fd != 1 || (apm_fd = open(APM_DEV, O_RDONLY)) != -1)
++       mode = MODE_APM;
++   else
++       mode = MODE_NONE;
 +#else
 +   mode = MODE_NONE;
 +#endif
 +
-+
-+   if(mode & MODE_APM)
-+      cb_timer_apm(data);
-+   else if(mode & MODE_ACPI)
-       cb_timer_acpi(data);
++   if (mode & MODE_APM)
++       cb_timer_apm(data);
++   else if (mode & MODE_ACPI)
++       cb_timer_acpi(data);
++   else if (mode & MODE_SYS)
++       tb_timer_sys(data);
  }
  
  static void
- cb_timer_acpi(void *data)
- {
-+   char current_status[256];
-+   int  bat_val = 0;
-+
-+#ifdef linux
-    /* We don't have any data from the remaining percentage, and time directly,
-     * so we have to calculate and measure them.
-     * (Measure the time and calculate the percentage.)
-@@ -57,9 +105,6 @@
+@@ -61,9 +111,8 @@
     int                 bat_level = 0;
     int                 bat_drain = 1;
  
 -   int                 bat_val = 0;
 -
--   char                current_status[256];
+    char                current_status[256];
++
     char               *line = 0;
     size_t              lsize = 0;
     int                 discharging = 0;
-@@ -203,27 +248,74 @@
+@@ -77,6 +126,8 @@
+ 
+    int                 hours, minutes;
+ 
++#ifdef linux
++
+    /* Read some information on first run. */
+    dirp = opendir("/proc/acpi/battery");
+    if (dirp)
+@@ -207,27 +258,74 @@
     else
        snprintf(current_status, sizeof(current_status), "Full");
  
@@ -176,7 +186,7 @@
  	int                 apm_flags, ac_stat, bat_stat, bat_flags;
  	int                 i, hours, minutes, up, up2;
  	char               *s_ptr;
-@@ -296,14 +388,57 @@
+@@ -300,14 +398,57 @@
  	     else
  		s_ptr += sprintf(s_ptr, "%i:%02i", hours, minutes);
  	  }
@@ -187,7 +197,7 @@
 +   int c;
 +   if(ioctl(apm_fd, APMIO_GETINFO, &apm) == -1)
 +      return;
- 
++
 +   /*
 +    * Get percent
 +    */
@@ -221,7 +231,7 @@
 +      snprintf(&s[c], sizeof(s) - c, "%d:%2d",
 +            apm.ai_batt_time / 3600, apm.ai_batt_time / 60 % 60);
 +#endif
-+
+ 
 +   /* Display current status */
 +	Epplet_change_label(label, s);
  	sprintf(s, "E-Power-Bat-%i.png", ((bat_val + 5) / 10) * 10);
@@ -237,7 +247,7 @@
     data = NULL;
  }
  
-@@ -351,7 +486,14 @@
+@@ -530,7 +671,14 @@
  static void
  cb_suspend(void *data)
  {
@@ -252,7 +262,7 @@
     return;
     data = NULL;
  }
-@@ -359,7 +501,14 @@
+@@ -538,7 +686,14 @@
  static void
  cb_sleep(void *data)
  {
