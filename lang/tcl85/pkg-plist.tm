@@ -7,5 +7,4 @@ lib/tcl8/8.5/tcltest-2.3.4.tm
 @dirrmtry lib/tcl8/8.4/platform
 @dirrmtry lib/tcl8/8.4
 @dirrmtry lib/tcl8/8.5
-@dirrmtry lib/tcl8/8.6
 @dirrmtry lib/tcl8
