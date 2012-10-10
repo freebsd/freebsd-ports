@@ -7,6 +7,7 @@
 
 PORTNAME=	tcllib
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 
@@ -42,6 +43,14 @@ post-patch:
 	${AWK} 'NR > 1 { print h } { h = $$0 } END { ORS = ""; print h }' \
 	   ${WRKSRC}/modules/doctools/tests/text/04 > ${WRKSRC}/modules/doctools/tests/text/04.new
 	${MV} ${WRKSRC}/modules/doctools/tests/text/04.new ${WRKSRC}/modules/doctools/tests/text/04
+
+	# try(n) is part of Tcl core since 8.6
+.if ${TCL_VER:S/.//} < 86
+	MANN+=		try.n
+.else
+	${MV} ${WRKSRC}/modules/try/try.man ${WRKSRC}/modules/try/try.man.noinstall
+.endif
+
 
 RUNTEST=	${SETENV} LANG=C DISPLAY= ${MAKE} -C ${WRKSRC} test
 MYID	!=	${ID} -u
