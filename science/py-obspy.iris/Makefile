@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.iris
-# Date created:				Dec 13, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.iris
 PORTVERSION=	0.7.0

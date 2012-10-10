@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy-core
-# Date created:				March 16, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy-core
 PORTVERSION=	0.7.1

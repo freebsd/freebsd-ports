@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.imaging
-# Date created:				June 29, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.imaging
 PORTVERSION=	0.7.0

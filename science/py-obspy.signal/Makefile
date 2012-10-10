@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.signal
-# Date created:				Jan 26, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.signal
 PORTVERSION=	0.7.0

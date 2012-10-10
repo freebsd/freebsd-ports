@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-obspy.db
-# Date created:				Dec 9, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	obspy.db
 PORTVERSION=	0.7.0
