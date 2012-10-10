@@ -1,5 +1,5 @@
---- epplets/net.c.orig	2006-04-16 00:32:43.000000000 +0200
-+++ epplets/net.c	2008-03-10 21:26:47.000000000 +0100
+--- epplets/net.c.orig	2012-09-30 11:38:35.000000000 +0200
++++ epplets/net.c	2012-10-10 14:56:21.000000000 +0200
 @@ -1,5 +1,6 @@
  /*
   * Copyright (C) 1999-2000, Michael Jennings
@@ -9,7 +9,7 @@
   * of this software and associated documentation files (the "Software"), to
 @@ -38,6 +39,14 @@
  #ifdef linux
- # include <linux/version.h>
+ #include <linux/version.h>
  #endif
 +#ifdef __FreeBSD__
 +# include <sys/types.h>
@@ -71,7 +71,7 @@
  #elif defined(__sun__)
     return ((char **)NULL);
  #else
-@@ -107,8 +158,11 @@
+@@ -107,6 +158,10 @@
     FILE               *fp;
     char                buff[256], *colon =
        NULL, dev[64], in_str[64], out_str[64];
@@ -80,11 +80,9 @@
 +   int mib[6], ifno_mib[5], row, nof_ifaces;
 +   size_t len;
  #endif
--
-    if (device == NULL)
-      {
- 	return (EFAULT);
-@@ -173,6 +227,43 @@
+ 
+    if (!device)
+@@ -173,6 +228,43 @@
       }
     fclose(fp);
     return ((match) ? (0) : (ENODEV));
@@ -127,4 +125,4 @@
 +
  #else
     /* Unsupported platform. */
-    if (in_bytes != NULL)
+    if (in_bytes)

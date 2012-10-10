@@ -204,7 +204,6 @@ share/e16/epplet_data/Emix/Emix.AUTHORS
 share/e16/epplet_data/Emix/Emix.COPYING
 share/e16/epplet_data/Emix/Emix.README
 share/e16/epplet_data/Emix/Emix.TODO
-@dirrmtry share/e16/epplet_icons
 @dirrm share/e16/epplet_data/Emix/ABOUT
 @dirrm share/e16/epplet_data/Emix
 @dirrm share/e16/epplet_data/E-Wireless/ABOUT
