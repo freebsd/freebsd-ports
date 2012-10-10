@@ -546,10 +546,11 @@ MASTER_SITE_GET_E+= \
 #            
 .if defined(USE_GITHUB)
 MASTER_SITE_GITHUB+= https://nodeload.github.com/%SUBDIR%
+.if !defined(MASTER_SITES) || !${MASTER_SITES:MGH}
 MASTER_SITES+=	GH
+.endif
 GH_PROJECT?=	${PORTNAME}
 GH_TAGNAME?=	${DISTVERSION}
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 .endif
 .endif
 
