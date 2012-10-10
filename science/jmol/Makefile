@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jmol
-# Date created:			May 11, 2008
-# Whom:				Wen heping <wenheping@gmail.com>
-#
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jmol
 PORTVERSION=	12.2.23
@@ -15,7 +11,7 @@ DISTFILES=	Jmol-${PORTVERSION}-full.tar.gz:source1 \
 		selfSignedCertificate.store:source2
 EXTRACT_ONLY=	Jmol-${PORTVERSION}-full.tar.gz
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Open-Source Java Viewer for Chemical Structures in 3D
 
 USE_JAVA=	yes
