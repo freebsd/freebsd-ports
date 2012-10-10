@@ -1,7 +1,4 @@
-# New ports collection makefile for:  sa-utils
-# Date created:    3 January 2010
-# Whom:            Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
 # $FreeBSD$
 #
 # Port is self-contained in the files directory.
@@ -19,7 +16,7 @@ COMMENT=	SpamAssassin nightly periodic maintenance
 RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 OPTIONS_DEFINE=	SACOMPILE
-SACOMPILE_DESC=	"Enable sa-compile support"
+SACOMPILE_DESC=	Enable sa-compile support
 
 NO_BUILD=	yes
 SUB_FILES=	sa-utils
