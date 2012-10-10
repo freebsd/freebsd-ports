@@ -16,12 +16,18 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/geovis.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/graphics.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/graphics.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkGLExtVTKRenderWindow.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkGLExtVTKRenderWindow.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkGLExtVTKRenderWindowInteractor.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkGLExtVTKRenderWindowInteractor.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkVTKRenderWindow.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkVTKRenderWindow.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkVTKRenderWindowInteractor.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/GtkVTKRenderWindowInteractor.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/gtk/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/chemistry.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/chemistry.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/hybrid.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/hybrid.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/imaging.py
@@ -419,6 +425,7 @@
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/README
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/vtk/vtk.tcl
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkbase/vtkbase.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkcharts/vtkcharts.tcl
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkcommon/vtkcommon.tcl
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkfiltering/vtkfiltering.tcl
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkgeovis/vtkgeovis.tcl
@@ -508,7 +515,6 @@ include/vtk-%%VER2%%/alglib/reflections.h
 include/vtk-%%VER2%%/alglib/rotations.h
 include/vtk-%%VER2%%/alglib/svd.h
 include/vtk-%%VER2%%/internal/stdio_core.h
-include/vtk-%%VER2%%/metaIOConfig.h
 include/vtk-%%VER2%%/mrmpi/cmapreduce.h
 include/vtk-%%VER2%%/mrmpi/error.h
 include/vtk-%%VER2%%/mrmpi/hash.h
@@ -642,7 +648,6 @@ include/vtk-%%VER2%%/vtkBiQuadraticTriangle.h
 include/vtk-%%VER2%%/vtkBitArray.h
 include/vtk-%%VER2%%/vtkBitArrayIterator.h
 include/vtk-%%VER2%%/vtkBivariateLinearTableThreshold.h
-include/vtk-%%VER2%%/vtkBivariateStatisticsAlgorithm.h
 include/vtk-%%VER2%%/vtkBlankStructuredGrid.h
 include/vtk-%%VER2%%/vtkBlankStructuredGridWithImage.h
 include/vtk-%%VER2%%/vtkBlockIdScalars.h
@@ -1581,7 +1586,6 @@ include/vtk-%%VER2%%/vtkOpenGLGPUVolumeRayCastMapper.h
 include/vtk-%%VER2%%/vtkOpenGLGlyph3DMapper.h
 include/vtk-%%VER2%%/vtkOpenGLHAVSVolumeMapper.h
 include/vtk-%%VER2%%/vtkOpenGLHardwareSupport.h
-include/vtk-%%VER2%%/vtkOpenGLImageActor.h
 include/vtk-%%VER2%%/vtkOpenGLImageMapper.h
 include/vtk-%%VER2%%/vtkOpenGLLight.h
 include/vtk-%%VER2%%/vtkOpenGLLightingPainter.h
@@ -2230,7 +2234,6 @@ include/vtk-%%VER2%%/vtkUnicodeString.h
 include/vtk-%%VER2%%/vtkUnicodeStringArray.h
 include/vtk-%%VER2%%/vtkUniformGrid.h
 include/vtk-%%VER2%%/vtkUniformVariables.h
-include/vtk-%%VER2%%/vtkUnivariateStatisticsAlgorithm.h
 include/vtk-%%VER2%%/vtkUnsignedCharArray.h
 include/vtk-%%VER2%%/vtkUnsignedIntArray.h
 include/vtk-%%VER2%%/vtkUnsignedLongArray.h
@@ -2408,6 +2411,150 @@ include/vtk-%%VER2%%/vtkXMLWriter.h
 include/vtk-%%VER2%%/vtkXMLWriterC.h
 %%X11%%include/vtk-%%VER2%%/vtkXOpenGLRenderWindow.h
 %%X11%%include/vtk-%%VER2%%/vtkXRenderWindowInteractor.h
+include/vtk-%%VER2%%/LSDyna/LSDynaExport.h
+include/vtk-%%VER2%%/LSDyna/LSDynaFamily.h
+include/vtk-%%VER2%%/LSDyna/LSDynaMetaData.h
+include/vtk-%%VER2%%/vtkAbstractImageInterpolator.h
+include/vtk-%%VER2%%/vtkArrayDataReader.h
+include/vtk-%%VER2%%/vtkArrayDataWriter.h
+include/vtk-%%VER2%%/vtkAtom.h
+include/vtk-%%VER2%%/vtkAxisExtended.h
+include/vtk-%%VER2%%/vtkAxisFollower.h
+include/vtk-%%VER2%%/vtkBSplineTransform.h
+include/vtk-%%VER2%%/vtkBond.h
+include/vtk-%%VER2%%/vtkBooleanOperationPolyDataFilter.h
+include/vtk-%%VER2%%/vtkBrokenLineWidget.h
+include/vtk-%%VER2%%/vtkCellCentersPointPlacer.h
+include/vtk-%%VER2%%/vtkCellTreeLocator.h
+include/vtk-%%VER2%%/vtkCenterOfMass.h
+include/vtk-%%VER2%%/vtkChartMatrix.h
+include/vtk-%%VER2%%/vtkCirclePackFrontChainLayoutStrategy.h
+include/vtk-%%VER2%%/vtkCirclePackLayout.h
+include/vtk-%%VER2%%/vtkCirclePackLayoutStrategy.h
+include/vtk-%%VER2%%/vtkCirclePackToPolyData.h
+include/vtk-%%VER2%%/vtkColorMaterialHelper_vs.h
+include/vtk-%%VER2%%/vtkContextKeyEvent.h
+include/vtk-%%VER2%%/vtkConvexHull2D.h
+include/vtk-%%VER2%%/vtkDepthPeeling_fs.h
+include/vtk-%%VER2%%/vtkDistancePolyDataFilter.h
+include/vtk-%%VER2%%/vtkFixedSizeHandleRepresentation3D.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_AdditiveCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_AdditiveFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_AdditiveNoCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_CompositeBinaryMaskFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_CompositeCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_CompositeFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_CompositeMaskFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_CompositeNoCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_FourComponentsFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_HeaderFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPBinaryMaskFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPFourDependentCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPFourDependentFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPFourDependentNoCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MIPNoCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPBinaryMaskFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPFourDependentCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPFourDependentFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPFourDependentNoCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_MinIPNoCroppingFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_NoShadeFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_OneComponentFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_ParallelProjectionFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_PerspectiveProjectionFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_ScaleBiasFS.h
+include/vtk-%%VER2%%/vtkGPUVolumeRayCastMapper_ShadeFS.h
+include/vtk-%%VER2%%/vtkGaussianBlurPassShader_fs.h
+include/vtk-%%VER2%%/vtkGraphAnnotationLayersFilter.h
+include/vtk-%%VER2%%/vtkGraphWeightEuclideanDistanceFilter.h
+include/vtk-%%VER2%%/vtkGraphWeightFilter.h
+include/vtk-%%VER2%%/vtkImageBSplineCoefficients.h
+include/vtk-%%VER2%%/vtkImageBSplineInternals.h
+include/vtk-%%VER2%%/vtkImageBSplineInterpolator.h
+include/vtk-%%VER2%%/vtkImageCroppingRegionsWidget.h
+include/vtk-%%VER2%%/vtkImageDataToPointSet.h
+include/vtk-%%VER2%%/vtkImageHistogram.h
+include/vtk-%%VER2%%/vtkImageHistogramStatistics.h
+include/vtk-%%VER2%%/vtkImageInterpolator.h
+include/vtk-%%VER2%%/vtkImageInterpolatorInternals.h
+include/vtk-%%VER2%%/vtkImageMapper3D.h
+include/vtk-%%VER2%%/vtkImageProperty.h
+include/vtk-%%VER2%%/vtkImageResize.h
+include/vtk-%%VER2%%/vtkImageResliceMapper.h
+include/vtk-%%VER2%%/vtkImageResliceToColors.h
+include/vtk-%%VER2%%/vtkImageSincInterpolator.h
+include/vtk-%%VER2%%/vtkImageSlabReslice.h
+include/vtk-%%VER2%%/vtkImageSlice.h
+include/vtk-%%VER2%%/vtkImageSliceCollection.h
+include/vtk-%%VER2%%/vtkImageSliceMapper.h
+include/vtk-%%VER2%%/vtkImageStack.h
+include/vtk-%%VER2%%/vtkImageThresholdConnectivity.h
+include/vtk-%%VER2%%/vtkImageToStructuredGrid.h
+include/vtk-%%VER2%%/vtkImplicitPolyDataDistance.h
+include/vtk-%%VER2%%/vtkIntersectionPolyDataFilter.h
+include/vtk-%%VER2%%/vtkKCoreDecomposition.h
+include/vtk-%%VER2%%/vtkKCoreLayout.h
+include/vtk-%%VER2%%/vtkLSDynaPart.h
+include/vtk-%%VER2%%/vtkLSDynaPartCollection.h
+include/vtk-%%VER2%%/vtkLSDynaSummaryParser.h
+include/vtk-%%VER2%%/vtkLightingHelper_s.h
+include/vtk-%%VER2%%/vtkLighting_s.h
+include/vtk-%%VER2%%/vtkLineIntegralConvolution2D_fs.h
+include/vtk-%%VER2%%/vtkLineIntegralConvolution2D_fs1.h
+include/vtk-%%VER2%%/vtkLineIntegralConvolution2D_fs2.h
+include/vtk-%%VER2%%/vtkLinearSelector.h
+include/vtk-%%VER2%%/vtkMarchingCubesTriangleCases.h
+include/vtk-%%VER2%%/vtkMarchingSquaresLineCases.h
+include/vtk-%%VER2%%/vtkMathConfigure.h
+include/vtk-%%VER2%%/vtkMathUtilities.h
+include/vtk-%%VER2%%/vtkMolecule.h
+include/vtk-%%VER2%%/vtkNetCDFCAMReader.h
+include/vtk-%%VER2%%/vtkOpenGLImageSliceMapper.h
+include/vtk-%%VER2%%/vtkOpenGLPropertyDefaultMain_fs.h
+include/vtk-%%VER2%%/vtkOpenGLPropertyDefaultMain_vs.h
+include/vtk-%%VER2%%/vtkOpenGLPropertyDefaultPropFunc_fs.h
+include/vtk-%%VER2%%/vtkOpenGLPropertyDefaultPropFunc_vs.h
+include/vtk-%%VER2%%/vtkOpenGLRenderer_PeelingFS.h
+include/vtk-%%VER2%%/vtkPLSDynaReader.h
+include/vtk-%%VER2%%/vtkPMaskPoints.h
+include/vtk-%%VER2%%/vtkPYoungsMaterialInterface.h
+include/vtk-%%VER2%%/vtkPiecewisePointHandleItem.h
+include/vtk-%%VER2%%/vtkPolarAxesActor.h
+include/vtk-%%VER2%%/vtkPolyPlane.h
+include/vtk-%%VER2%%/vtkProjectedAAHexahedraMapper_FS.h
+include/vtk-%%VER2%%/vtkProjectedAAHexahedraMapper_GS.h
+include/vtk-%%VER2%%/vtkProjectedAAHexahedraMapper_VS.h
+include/vtk-%%VER2%%/vtkQtDebugLeaksModel.h
+include/vtk-%%VER2%%/vtkQtDebugLeaksView.h
+include/vtk-%%VER2%%/vtkQuadRotationalExtrusionFilter.h
+include/vtk-%%VER2%%/vtkRectilinearGridToPointSet.h
+include/vtk-%%VER2%%/vtkResliceCursor.h
+include/vtk-%%VER2%%/vtkResliceCursorActor.h
+include/vtk-%%VER2%%/vtkResliceCursorLineRepresentation.h
+include/vtk-%%VER2%%/vtkResliceCursorPicker.h
+include/vtk-%%VER2%%/vtkResliceCursorPolyDataAlgorithm.h
+include/vtk-%%VER2%%/vtkResliceCursorRepresentation.h
+include/vtk-%%VER2%%/vtkResliceCursorThickLineRepresentation.h
+include/vtk-%%VER2%%/vtkResliceCursorWidget.h
+include/vtk-%%VER2%%/vtkResliceImageViewer.h
+include/vtk-%%VER2%%/vtkResliceImageViewerMeasurements.h
+include/vtk-%%VER2%%/vtkScatterPlotMatrix.h
+include/vtk-%%VER2%%/vtkShaderDeviceAdapter2.h
+include/vtk-%%VER2%%/vtkShadowMapPassShader_fs.h
+include/vtk-%%VER2%%/vtkShadowMapPassShader_vs.h
+include/vtk-%%VER2%%/vtkSimplePointsWriter.h
+include/vtk-%%VER2%%/vtkSobelGradientMagnitudePassShader1_fs.h
+include/vtk-%%VER2%%/vtkSobelGradientMagnitudePassShader2_fs.h
+include/vtk-%%VER2%%/vtkStructuredGridLIC2D_fs.h
+include/vtk-%%VER2%%/vtkSurfaceLICPainter_fs1.h
+include/vtk-%%VER2%%/vtkSurfaceLICPainter_fs2.h
+include/vtk-%%VER2%%/vtkSurfaceLICPainter_vs1.h
+include/vtk-%%VER2%%/vtkTreeIterator.h
+include/vtk-%%VER2%%/vtkTuple.h
 include/vtk-%%VER2%%/vtkXYPlotActor.h
 include/vtk-%%VER2%%/vtkXYPlotWidget.h
 include/vtk-%%VER2%%/vtkXYZMolReader.h
@@ -2416,7 +2563,9 @@ include/vtk-%%VER2%%/vtkZLibDataCompressor.h
 include/vtk-%%VER2%%/vtk_expat.h
 include/vtk-%%VER2%%/vtk_freetype.h
 include/vtk-%%VER2%%/vtk_gl2ps.h
+include/vtk-%%VER2%%/vtk_hdf5.h
 include/vtk-%%VER2%%/vtk_jpeg.h
+include/vtk-%%VER2%%/vtk_libproj4.h
 include/vtk-%%VER2%%/vtk_libxml2.h
 include/vtk-%%VER2%%/vtk_oggtheora.h
 include/vtk-%%VER2%%/vtk_png.h
@@ -2432,6 +2581,7 @@ include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftadvanc.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftbbox.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftbdf.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftbitmap.h
+include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftbzip2.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftcache.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftchapters.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/ftcid.h
@@ -2477,7 +2627,6 @@ include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/ftstream.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/fttrace.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/ftvalid.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/internal.h
-include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/pcftypes.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/psaux.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/pshints.h
 include/vtk-%%VER2%%/vtkfreetype/include/freetype/internal/sfnt.h
@@ -2509,6 +2658,7 @@ include/vtk-%%VER2%%/vtkhdf5/H5CSprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Cpkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Cprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Cpublic.h
+include/vtk-%%VER2%%/vtkhdf5/H5DSpublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5Dpkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Dprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Dpublic.h
@@ -2553,9 +2703,12 @@ include/vtk-%%VER2%%/vtkhdf5/H5HLpkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5HLprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5HLpublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5HPprivate.h
+include/vtk-%%VER2%%/vtkhdf5/H5IMpublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5Ipkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Iprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Ipublic.h
+include/vtk-%%VER2%%/vtkhdf5/H5LTparse.h
+include/vtk-%%VER2%%/vtkhdf5/H5LTpublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5Lpkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Lprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Lpublic.h
@@ -2568,6 +2721,7 @@ include/vtk-%%VER2%%/vtkhdf5/H5Opkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Oprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Opublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5Oshared.h
+include/vtk-%%VER2%%/vtkhdf5/H5PTpublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5Ppkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Pprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Ppublic.h
@@ -2583,6 +2737,7 @@ include/vtk-%%VER2%%/vtkhdf5/H5STprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Spkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Sprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Spublic.h
+include/vtk-%%VER2%%/vtkhdf5/H5TBpublic.h
 include/vtk-%%VER2%%/vtkhdf5/H5TSprivate.h
 include/vtk-%%VER2%%/vtkhdf5/H5Tpkg.h
 include/vtk-%%VER2%%/vtkhdf5/H5Tprivate.h
@@ -2599,6 +2754,8 @@ include/vtk-%%VER2%%/vtkhdf5/H5pubconf.h
 include/vtk-%%VER2%%/vtkhdf5/H5public.h
 include/vtk-%%VER2%%/vtkhdf5/H5version.h
 include/vtk-%%VER2%%/vtkhdf5/hdf5.h
+include/vtk-%%VER2%%/vtkhdf5/hdf5_hl.h
+include/vtk-%%VER2%%/vtkhdf5/vtk_libhdf5_hl_mangle.h
 include/vtk-%%VER2%%/vtkhdf5/vtk_libhdf5_mangle.h
 include/vtk-%%VER2%%/vtklibproj4/lib_proj.h
 include/vtk-%%VER2%%/vtklibproj4/proj_config.h
@@ -2659,9 +2816,11 @@ include/vtk-%%VER2%%/vtkmetaio/metaContour.h
 include/vtk-%%VER2%%/vtkmetaio/metaDTITube.h
 include/vtk-%%VER2%%/vtkmetaio/metaEllipse.h
 include/vtk-%%VER2%%/vtkmetaio/metaEvent.h
+include/vtk-%%VER2%%/vtkmetaio/metaFEMObject.h
 include/vtk-%%VER2%%/vtkmetaio/metaForm.h
 include/vtk-%%VER2%%/vtkmetaio/metaGaussian.h
 include/vtk-%%VER2%%/vtkmetaio/metaGroup.h
+include/vtk-%%VER2%%/vtkmetaio/metaIOConfig.h
 include/vtk-%%VER2%%/vtkmetaio/metaITKUtils.h
 include/vtk-%%VER2%%/vtkmetaio/metaImage.h
 include/vtk-%%VER2%%/vtkmetaio/metaImageTypes.h
@@ -2679,11 +2838,24 @@ include/vtk-%%VER2%%/vtkmetaio/metaTubeGraph.h
 include/vtk-%%VER2%%/vtkmetaio/metaTypes.h
 include/vtk-%%VER2%%/vtkmetaio/metaUtils.h
 include/vtk-%%VER2%%/vtkmetaio/metaVesselTube.h
+include/vtk-%%VER2%%/vtknetcdf/include/fbits.h
+include/vtk-%%VER2%%/vtknetcdf/include/nc.h
+include/vtk-%%VER2%%/vtknetcdf/include/nc3dispatch.h
+include/vtk-%%VER2%%/vtknetcdf/include/nc_logging.h
+include/vtk-%%VER2%%/vtknetcdf/include/nc_tests.h
+include/vtk-%%VER2%%/vtknetcdf/include/nc_url.h
+include/vtk-%%VER2%%/vtknetcdf/include/ncdimscale.h
+include/vtk-%%VER2%%/vtknetcdf/include/ncdispatch.h
+include/vtk-%%VER2%%/vtknetcdf/include/ncio.h
+include/vtk-%%VER2%%/vtknetcdf/include/nclist.h
+include/vtk-%%VER2%%/vtknetcdf/include/netcdf.h
+include/vtk-%%VER2%%/vtknetcdf/include/netcdf_f.h
+include/vtk-%%VER2%%/vtknetcdf/include/netcdf_par.h
+include/vtk-%%VER2%%/vtknetcdf/include/utf8proc.h
+include/vtk-%%VER2%%/vtknetcdf/include/vtk_netcdf_mangle.h
 include/vtk-%%VER2%%/vtknetcdf/ncconfig.h
-include/vtk-%%VER2%%/vtknetcdf/netcdf.h
-include/vtk-%%VER2%%/vtknetcdf/netcdf3.h
+include/vtk-%%VER2%%/vtknetcdf/ncvalues.h
 include/vtk-%%VER2%%/vtknetcdf/netcdfcpp.h
-include/vtk-%%VER2%%/vtknetcdf/vtk_netcdf_mangle.h
 include/vtk-%%VER2%%/vtksqlite/vtk_sqlite3.h
 include/vtk-%%VER2%%/vtkstd/algorithm
 include/vtk-%%VER2%%/vtkstd/deque
@@ -2788,19 +2960,14 @@ lib/vtk-%%VER2%%/doxygen/paper-clip.gif
 lib/vtk-%%VER2%%/doxygen/pic.gif
 lib/vtk-%%VER2%%/doxygen/vtk-logo.gif
 lib/vtk-%%VER2%%/hints
-%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER1%%
-%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER2%%
-%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER3%%
-%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so
-%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.1.8.5
-%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so
-%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so.%%VER1%%
-%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so.%%VER2%%
-%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so.%%VER3%%
 %%SHARED%%lib/vtk-%%VER2%%/libCosmo.so
 %%SHARED%%lib/vtk-%%VER2%%/libCosmo.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libCosmo.so.%%VER2%%
 %%SHARED%%lib/vtk-%%VER2%%/libCosmo.so.%%VER3%%
+%%SHARED%%lib/vtk-%%VER2%%/libLSDyna.so
+%%SHARED%%lib/vtk-%%VER2%%/libLSDyna.so.%%VER1%%
+%%SHARED%%lib/vtk-%%VER2%%/libLSDyna.so.%%VER2%%
+%%SHARED%%lib/vtk-%%VER2%%/libLSDyna.so.%%VER3%%
 %%SHARED%%lib/vtk-%%VER2%%/libMapReduceMPI.so
 %%SHARED%%lib/vtk-%%VER2%%/libMapReduceMPI.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libMapReduceMPI.so.%%VER2%%
@@ -2861,6 +3028,10 @@ lib/vtk-%%VER2%%/hints
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF.so.%%VER2%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF.so.%%VER3%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so
+%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so.%%VER1%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so.%%VER2%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.so.%%VER3%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkParallel.so
 %%SHARED%%lib/vtk-%%VER2%%/libvtkParallel.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkParallel.so.%%VER2%%
@@ -2897,6 +3068,15 @@ lib/vtk-%%VER2%%/hints
 %%SHARED%%lib/vtk-%%VER2%%/libvtkftgl.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkftgl.so.%%VER2%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkftgl.so.%%VER3%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER1%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER2%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER3%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.1.8.5
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.%%VER2%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.%%VER3%%
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.1.8.5
 %%SHARED%%lib/vtk-%%VER2%%/libvtklibxml2.so
 %%SHARED%%lib/vtk-%%VER2%%/libvtklibxml2.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtklibxml2.so.%%VER2%%
@@ -2987,6 +3167,7 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkgeovis
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkfiltering
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkcommon
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkcharts
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkbase
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtk
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl
@@ -3005,6 +3186,7 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 @dirrm include/vtk-%%VER2%%/vtksys
 @dirrm include/vtk-%%VER2%%/vtkstd
 @dirrm include/vtk-%%VER2%%/vtksqlite
+@dirrm include/vtk-%%VER2%%/vtknetcdf/include
 @dirrm include/vtk-%%VER2%%/vtknetcdf
 @dirrm include/vtk-%%VER2%%/vtkmetaio
 @dirrm include/vtk-%%VER2%%/vtklibxml2/libxml
@@ -3020,6 +3202,7 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 @dirrm include/vtk-%%VER2%%/internal
 @dirrm include/vtk-%%VER2%%/alglib
 @dirrm include/vtk-%%VER2%%/VPIC
+@dirrm include/vtk-%%VER2%%/LSDyna
 @dirrm include/vtk-%%VER2%%/Cosmo
 %%STATIC%%@dirrm include/vtk-%%VER2%%/vtkzlib
 %%STATIC%%@dirrm include/vtk-%%VER2%%/vtkjpeg
