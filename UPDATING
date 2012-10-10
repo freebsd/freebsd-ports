@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121010:
+  AFFECTS: users of CURRENT
+  AUTHOR: bapt@FreeBSD.org
+
+  The ports tree is now using pkgng as the default package manager
+  for HEAD.  This only affects users of CURRENT -- users of other
+  branches need not take any action.
+
+  To keep pkg_install as the default package manager, use the new
+  WITHOUT_PKGNG knob in make.conf
+
+  To make the switch:
+
+  1/ Set WITHOUT_PKGNG=yes in make.conf and upgrade all your ports to
+  the latest available versions using your favourite tools.
+
+  2/ Install ports-mgmt/pkg
+
+  3/ Remove WITHOUT_PKGNG from make.conf and run
+
+ # pkg2ng
+
 20121009:
   AFFECTS: users of multimedia/vdpau-video
   AUTHOR: madpilot@FreeBSD.org

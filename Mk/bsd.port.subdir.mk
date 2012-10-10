@@ -77,6 +77,14 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 
+.if ${OSVERSION} >= 1000017
+.if !defined(WITHOUT_PKGNG)
+WITH_PKGNG=	yes
+.else
+.undef	WITH_PKGNG
+.endif
+.endif
+
 .if !defined(_OSRELEASE)
 _OSRELEASE!=			uname -r
 .endif
