@@ -1,15 +1,12 @@
-# New ports collection makefile for:    hunspell
-# Date created:         24.07.2004
-# Whom:                 janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Improved spell-checker for Hungarian and other languages
@@ -17,14 +14,13 @@ COMMENT=	Improved spell-checker for Hungarian and other languages
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-CONFIGURE_ARGS=	--disable-nls --with-readline --with-ui \
-		--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--disable-nls --with-libiconv-prefix=${LOCALBASE} --with-readline --with-ui
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomehack
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-USE_ICONV=	yes
 
 MANLANG=	"" hu
 MAN1_EN=	hunspell.1 hunzip.1 hzip.1
@@ -35,9 +31,5 @@ MAN4_HU=	hunspell.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
-
-pre-build:
-	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
-		${WRKSRC}/configure ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
