@@ -1534,6 +1534,9 @@ check-makefile::
 _POSTMKINCLUDED=	yes
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
+.if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
+WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+.endif
 .if defined(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}
 .else
