@@ -26,6 +26,8 @@
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/Platinum.pm
 %%SITE_PERL%%/Finance/Quote/SEB.pm
+%%SITE_PERL%%/Finance/Quote/SIXfunds.pm
+%%SITE_PERL%%/Finance/Quote/SIXshares.pm
 %%SITE_PERL%%/Finance/Quote/StockHouseCanada.pm
 %%SITE_PERL%%/Finance/Quote/TSP.pm
 %%SITE_PERL%%/Finance/Quote/TSX.pm

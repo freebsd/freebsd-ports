@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.17
-PORTREVISION=	2
+PORTVERSION=	1.18
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,11 +16,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
