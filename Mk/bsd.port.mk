@@ -1217,6 +1217,9 @@ WITH_PKGNG=	yes
 .endif
 .endif
 
+# Only define tools here (for transition period with between pkg tools)
+.include "${PORTSDIR}/Mk/bsd.commands.mk"
+
 MASTERDIR?=	${.CURDIR}
 
 .if ${MASTERDIR} != ${.CURDIR}
