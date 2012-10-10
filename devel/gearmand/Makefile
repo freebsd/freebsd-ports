@@ -44,7 +44,8 @@ SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
 
 CONFIGURE_ARGS+=--with-lib-prefix=${LOCALBASE} --with-boost=${LOCALBASE} \
 		--localstatedir=/var/db/${PORTNAME} --enable-static
-LDFLAGS+=	-lexecinfo
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 OPTIONS_DEFINE=	DRIZZLE MEMCACHED PGSQL SQLITE MYSQL HIREDIS TOKYOCAB
 OPTIONS_DEFAULT=SQLITE
@@ -216,8 +217,8 @@ MAN8=	gearmand.8
 
 # Workaround for missing sigignore that wasn't introduced until
 # FreeBSD 8.0
-.if ${OSVERSION} < 800500
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libtest__test.cc
+.if ${OSVERSION} < 800041
+BROKEN=	Does not compile without POSIX spawn() support
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
