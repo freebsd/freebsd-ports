@@ -1,4 +1,4 @@
-# Whom: David O'Brien (obrien@NUXI.com)
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
 
 PORTNAME=	pchar
