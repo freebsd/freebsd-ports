@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
 		http://www.codeigniter.org.tw/download_files/
