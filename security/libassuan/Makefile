@@ -1,5 +1,4 @@
 # Created by: Michael Nottebrock <lofi@freebsd.org>
-#
 # $FreeBSD$
 
 PORTNAME=	libassuan
@@ -10,7 +9,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
 LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth \
