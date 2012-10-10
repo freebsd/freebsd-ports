@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	5.8.0
-PORTREVISION=	3
+PORTVERSION=	5.10.0
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -32,16 +31,16 @@ SUB_FILES=	vtk.3
 USE_CMAKE=	yes
 USE_XORG=	xt
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
+CXXFLAGS+=	-DUSE_INTERP_ERRORLINE
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SHARED		"Build shared libraries" On \
-		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
-		GL2PS           "Install support conversion OpenGL to PostScript" On \
-		OSMESA		"Use Mesa for off-screen rendering" Off \
-		QT		"Enable Qt gui support" On \
-		WRAP_JAVA	"Enable Java wrapping" Off \
-		WRAP_PYTHON	"Enable Python wrapping" On \
-		WRAP_TCLTK	"Enable Tcl/Tk wrapping" On
+OPTIONS_DEFINE=	SHARED VTKMPEG2 GL2PS OSMESA QT4 JAVA PYTHON TCLTK
+OPTIONS_DEFAULT=SHARED GL2PS QT4 PYTHON TCLTK
+
+SHARED_DESC=	Build shared libraries
+VTKMPEG2_DESC=	Patented MPEG2 encoder module
+GL2PS_DESC=	OpenGL to PostScript conversion module
+OSMESA_DESC=	Use Mesa for off-screen rendering
 
 PLIST_SUB+=	VER1="${PORTVERSION}" \
 		VER2="${PORTVERSION:R}" \
@@ -61,11 +60,12 @@ CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DVTK_DATA_ROOT:PATH=${EXAMPLESDIR}/VTKData \
 		-DOPENGL_INCLUDE_DIR:PATH=${LOCALBASE}/include \
 		-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGL.so \
-		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGLU.so
+		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGLU.so \
+		-DCMAKE_BUILD_TYPE=CMAKE_CXX_FLAGS_RELWITHDEBINFO
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DVTK_USE_SYSTEM_EXPAT:BOOL=ON \
 		-DVTK_USE_SYSTEM_JPEG:BOOL=ON \
@@ -85,7 +85,7 @@ PLIST_SUB+=	SHARED="@comment " \
 		STATIC=""
 .endif
 
-.if defined(WITH_VTKMPEG2)
+.if ${PORT_OPTIONS:MVTKMPEG2}
 LIB_DEPENDS+=	vtkMPEG2Encode:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
@@ -96,7 +96,7 @@ CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 PLIST_SUB+=	MPEG="@comment "
 .endif
 
-.if defined(WITH_GL2PS)
+.if ${PORT_OPTIONS:MGL2PS}
 LIB_DEPENDS+=	gl2ps:${PORTSDIR}/print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
@@ -104,7 +104,7 @@ PLIST_SUB+=	GL2PS=""
 PLIST_SUB+=	GL2PS="@comment "
 .endif
 
-.if defined(WITH_OSMESA)
+.if ${PORT_OPTIONS:MOSMESA}
 LIB_DEPENDS+=	OSMesa32:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
@@ -119,7 +119,7 @@ CMAKE_ARGS+=	-DVTK_USE_X:BOOL=ON
 PLIST_SUB+=	X11=""
 .endif
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4=	corelib designer gui opengl qmake_build uic_build \
 		moc_build rcc_build
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=ON \
@@ -134,8 +134,8 @@ CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=OFF
 PLIST_SUB+=	QT="@comment "
 .endif
 
-.if defined(WITH_WRAP_PYTHON)
-.if !defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MPYTHON}
+.if ${PORT_OPTIONS:MSHARED} == ""
 IGNORE=		python wrapping requires shared libraries.\
 		Run make config again and enable the SHARED option
 .endif
@@ -150,7 +150,7 @@ CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=OFF
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_WRAP_TCLTK)
+.if ${PORT_OPTIONS:MTCLTK}
 CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=ON
 PLIST_SUB+=	TCLTK=""
 .else
@@ -159,7 +159,7 @@ PLIST_SUB+=	TCLTK="@comment "
 .endif
 
 # Used by both tcl/tk and python
-.if defined(WITH_WRAP_TCLTK) || defined(WITH_WRAP_PYTHON)
+.if ${PORT_OPTIONS:MTCLTK} || ${PORT_OPTIONS:MPYTHON}
 USE_TCL=	84+
 USE_TK=		84+
 CMAKE_ARGS+=	-DVTK_USE_TK:BOOL=ON \
@@ -171,8 +171,8 @@ PLIST_SUB+=	WRAP_PYTHON_OR_TCLTK="" \
 PLIST_SUB+=	WRAP_PYTHON_OR_TCLTK="@comment "
 .endif
 
-.if defined(WITH_WRAP_JAVA)
-.if !defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MJAVA}
+.if ${PORT_OPTIONS:MSHARED} == ""
 IGNORE=		java wrapping requires shared libraries.\
 		Run make config again and enable the SHARED option
 .endif
@@ -194,7 +194,7 @@ PLIST_SUB+=	JAVA="@comment "
 .endif
 
 # Wrapping
-.if defined(WITH_WRAP_PYTHON) || defined(WITH_WRAP_TCLTK) || defined(WITH_WRAP_JAVA)
+.if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MTCLTK} || ${PORT_OPTIONS:MJAVA}
 PLIST_SUB+=	WRAPPING=""
 .else
 PLIST_SUB+=	WRAPPING="@comment "
@@ -206,24 +206,24 @@ post-patch:
 #	${REINPLACE_CMD} -e '222s|)|) \&\& !defined(__FreeBSD__)|' \
 #	    ${WRKSRC}/Utilities/kwsys/SharedForward.h.in
 	${REINPLACE_CMD} -e '25,30d' ${WRKSRC}/Wrapping/Python/setup.py.in
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|g' \
 	    ${WRKSRC}/IO/vtkPNGReader.cxx
 .endif
 
 post-configure:
-.if defined(WITH_WRAP_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 	${REINPLACE_CMD} -e 's|-ljawt$$||' \
 	    ${CONFIGURE_WRKSRC}/Wrapping/Java/CMakeFiles/VTKJavaExecutable.dir/link.txt
 .endif
 
 pre-install:
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
 .endif
 	${MKDIR} ${MANPREFIX}/man/man3
 	${INSTALL_MAN} ${WRKDIR}/vtk.3 ${MANPREFIX}/man/man3
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
@@ -234,7 +234,7 @@ LIBDIR=		${PREFIX}/lib/vtk-${PORTVERSION:R}/
 post-install:
 # Ports system wants us to conform to lib.so.x format, but VTK5
 # only installs lib.so.x.y and lib.so.x.y.z.
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 	@for lib in ${LIBS_TOFIX}; do \
 		${CP} ${LIBDIR}/lib$$lib.so ${LIBDIR}/lib$$lib.so.${PORTVERSION}; \
 	done
@@ -244,7 +244,7 @@ post-install:
 		 ${LN} -sf $$lib.${PORTVERSION:R} $$lib.${PORTVERSION:R:R}; \
 		 ${LN} -sf $$lib.${PORTVERSION:R:R} $$lib; \
 	done
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT4}
 	@for lib in ${LIBDIR}/libQVTK*.so; do \
 	    ${RM} -f $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
@@ -252,7 +252,7 @@ post-install:
 	done
 .endif
 .endif
-.if defined(WITH_VTKMPEG2)
+.if ${PORT_OPTIONS:MVTKMPEG2}
 	@${ECHO_CMD}
 	@${ECHO_CMD} "This port uses the patented MPEG2 encoder."
 	@${ECHO_CMD}
