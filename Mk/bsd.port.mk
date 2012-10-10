@@ -1209,6 +1209,14 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 
+.if ${OSVERSION} >= 1000017
+.if !defined(WITHOUT_PKGNG)
+WITH_PKGNG=	yes
+.else
+.undef	WITH_PKGNG
+.endif
+.endif
+
 MASTERDIR?=	${.CURDIR}
 
 .if ${MASTERDIR} != ${.CURDIR}

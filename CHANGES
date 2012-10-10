@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20121010:
+AUTHOR: bapt@FreeBSD.org
+
+  * The ports tree is now using pkgng as the default package manager
+    for HEAD.  This only affects users of CURRENT -- users of other
+    branches need not take any action.
+
+    To keep pkg_install as the default package manager, use the new
+    WITHOUT_PKGNG knob in make.conf
+
 20120830:
 AUTHOR: beat@FreeBSD.org
 
