@@ -27,6 +27,7 @@
     SUBDIR += cce
     SUBDIR += cconv
     SUBDIR += celvis
+    SUBDIR += chiconv
     SUBDIR += cless
     SUBDIR += cmexfonts
     SUBDIR += cnprint
