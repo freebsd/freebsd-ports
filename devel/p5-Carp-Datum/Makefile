@@ -14,12 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Debugging And Tracing Ultimate Module
 
-BUILD_DEPENDS=	${PM_BASE}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
-		${PM_BASE}/Getargs/Long.pm:${PORTSDIR}/devel/p5-Getargs-Long
+BUILD_DEPENDS=	p5-Log-Agent>=0:${PORTSDIR}/devel/p5-Log-Agent \
+		p5-Getargs-Long>=0:${PORTSDIR}/devel/p5-Getargs-Long
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-PM_BASE=	${SITE_PERL}
 
 MAN1=		datum_strip.1
 MAN3=		Carp::Datum::Assert.3 \

@@ -15,27 +15,24 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Tool to generate HTML photo albums with XML support
 
 RUN_DEPENDS=	\
-	${PBASE}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-	${PBASE}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-	${PBASE}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-	${PBASE}/${PERL_ARCH}/Text/Unaccent.pm:${PORTSDIR}/textproc/p5-Text-Unaccent \
-	${PBASE}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${PBASE}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean \
-	${PBASE}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-	${PBASE}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-	${PBASE}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
-	${PBASE}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-	${PBASE}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-	${PBASE}/XML/Grove.pm:${PORTSDIR}/textproc/p5-XML-Grove \
-	${PBASE}/XML/Handler/YAWriter.pm:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
-	${PBASE}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml
+	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+	convert:${PORTSDIR}/graphics/ImageMagick \
+	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
+	p5-Text-Iconv>=0:${PORTSDIR}/textproc/p5-Text-Unaccent \
+	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+	p5-HTML-Clean>0:${PORTSDIR}/www/p5-HTML-Clean \
+	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info \
+	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+	p5-URI>=0:${PORTSDIR}/net/p5-URI \
+	p5-XML-Grove>=0:${PORTSDIR}/textproc/p5-XML-Grove \
+	p5-XML-Handler-YAWriter>=0:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
+	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-
-# perlbase
-PBASE=	${SITE_PERL}
 
 # additional scripts
 BINS_SCRIPTS=	tools/bins_txt2xml
@@ -84,8 +81,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-install.sh
 
 # localization support
 .if defined(WITH_I18N)
-RUN_DEPENDS+=	\
-	${PBASE}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 .endif
 
 pre-everything::

@@ -15,14 +15,12 @@ DISTNAME=	wiki${PORTVERSION:S|.|_|g}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	FreeStyle Wiki (perl based wiki clone)
 
-RUN_DEPENDS=	${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
+RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
 USE_ZIP=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
-
-JCODE=	${SITE_PERL}/Jcode.pm
 
 post-extract:
 	${SED} -e 's|__DATADIR__|${DATADIR}|' ${FILESDIR}/setup.sh \

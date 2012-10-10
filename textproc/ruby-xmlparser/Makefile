@@ -15,20 +15,18 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to access James Clark XML Parser ToolKit ("expat")
 
-BUILD_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
-		${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 # to utilize encoding maps included in p5-XML-Parser
 
 USE_PERL5=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-PERL_ARCHLIB=	${SITE_PERL}/${PERL_ARCH}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS=	--with-perl-enc-map=${PERL_ARCHLIB}/XML/Parser/Encodings
+CONFIGURE_ARGS=	--with-perl-enc-map=${SITE_PERL}/${PERL_ARCH}/XML/Parser/Encodings
 INSTALL_TARGET=	site-install
 
 post-extract:

@@ -14,14 +14,14 @@ MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Controls system configuration
 
-BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \
- 	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
- 	p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable/Process.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod \
-	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
+BUILD_DEPENDS=	p5-Config-Objective>=0:${PORTSDIR}/devel/p5-Config-Objective \
+ 	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
+ 	p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+	Unix-Mknod>=0:${PORTSDIR}/sysutils/p5-Unix-Mknod \
+	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+	p5-version>=0:${PORTSDIR}/devel/p5-version \
+	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
