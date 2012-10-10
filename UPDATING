@@ -14,9 +14,9 @@ you update your ports collection, before attempting any port upgrades.
 
   Please update the port origins as follows:
 
-  # portmaster -o multimedia/vdpau-video multimedia/libva-vdpau-driver
+  # portmaster -o multimedia/libva-vdpau-driver multimedia/vdpau-video
   or
-  # portupgrade -fo multimedia/vdpau-video multimedia/libva-vdpau-driver
+  # portupgrade -fo multimedia/libva-vdpau-driver multimedia/vdpau-video
   or
   # pkg set -o multimedia/vdpau-video:multimedia/libva-vdpau-driver
 
