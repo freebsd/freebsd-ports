@@ -25,28 +25,35 @@ CONFLICTS=	ezmlm-0.*
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	MYSQL "Build MySQL extensions" off \
-		PGSQL "Build PostgreSQL extensions" off \
-		SQLITE "Build SQLite3 extensions" off
+OPTIONS_DEFINE=		DB DOCS
+OPTIONS_SINGLE=		DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+DB_DESC=		Enable database extension support
+MYSQL_DESC=		Build the MySQL extension
+PGSQL_DESC=		Build the PostgreSQL extension
+SQLITE_DESC=		Build the SQLite3 extension
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ALL_TARGET=	it
 
-# If WITH_MYSQL is defined, build with MySQL extensions
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 ALL_TARGET+=	mysql
 PLIST_SUB+=	MYSQL="" PGSQL="@comment " SQLITE="@comment "
-.elif defined(WITH_PGSQL)
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 ALL_TARGET+=	pgsql
 PLIST_SUB+=	MYSQL="@comment " PGSQL="" SQLITE="@comment "
-.elif defined(WITH_SQLITE)
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lsqlite3
@@ -100,10 +107,10 @@ post-install:
 .for file in ${CONFIG}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/ezmlm/${file}.sample
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
