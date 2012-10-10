@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encyclopedia  "Mypaedia" (EPWING V1 format)
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
+		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 IS_INTERACTIVE= YES
 RESTRICTED=	"The original dictionary is not free"
@@ -55,7 +55,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-
-JCODE=	${SITE_PERL}/Jcode.pm
 
 .include <bsd.port.mk>

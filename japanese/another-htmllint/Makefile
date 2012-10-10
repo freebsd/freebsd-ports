@@ -14,7 +14,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Another HTML-lint (all messages are written in Japanese)
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
+		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 USE_PERL5=	YES
 USE_ZIP=	YES
@@ -50,7 +50,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-JCODE=	${SITE_PERL}/Jcode.pm
 
 .include <bsd.port.mk>

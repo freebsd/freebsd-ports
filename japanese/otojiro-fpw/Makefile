@@ -21,7 +21,7 @@ EXPIRATION_DATE=	2012-10-20
 
 EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
-		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
+		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 MANUAL_PACKAGE_BUILD=Needs data from CDROM
 RESTRICTED=	"The original dictionary is not free"
@@ -34,8 +34,6 @@ SRCFILE?=	otojiro.txt
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
 .include <bsd.port.pre.mk>
-
-JCODE=	${SITE_PERL}/Jcode.pm
 
 DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
 .if exists(${DICT_ARCHIVE})

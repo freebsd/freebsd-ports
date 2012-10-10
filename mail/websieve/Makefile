@@ -34,19 +34,17 @@ CYRUS_IMAPD_24_DESC=	With Cyrus IMAPd version 2.4.x
 
 .include <bsd.port.options.mk>
 
-CYRUS_IMAP_PM=	${SITE_PERL}/${PERL_ARCH}/Cyrus/IMAP/Admin.pm
-
 .if ${PORT_OPTIONS:MCYRUS_IMAPD_24}
-RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd24
+RUN_DEPENDS+=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd24
 FUNCLIB_PL=	funclib.cyrus
 .elif ${PORT_OPTIONS:MCYRUS_IMAPD_23}
-RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd23
+RUN_DEPENDS+=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd23
 FUNCLIB_PL=	funclib.cyrus
 .elif ${PORT_OPTIONS:MCYRUS_IMAPD_22}
-RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd22
+RUN_DEPENDS+=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd22
 FUNCLIB_PL=	funclib.cyrus
 .elif ${PORT_OPTIONS:MCYRUS_IMAPD_21}
-RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd2
+RUN_DEPENDS+=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd2
 FUNCLIB_PL=	funclib.cyrus
 .else
 RUN_DEPENDS+=	p5-IMAP-Admin>=0:${PORTSDIR}/mail/p5-IMAP-Admin \
