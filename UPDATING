@@ -6,6 +6,28 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20121010:
+  AFFECTS: users of mail/enigmail*
+  AUTHOR: gecko@FreeBSD.org
+
+  Enigmail has been integrated into the Thunderbird / SeaMonkey build and
+  is available as option ENIGMAIL (enabled by default)
+
+  Before upgrading Thunderbird or SeaMonkey delete all installed enigmail
+  ports by running e.g.
+
+  # pkg_delete -f seamonkey-enigmail-1.4.3 thunderbird-esr-enigmail-1.4.3 \
+    thunderbird-enigmail-1.4.3
+
+20121010:
+  AFFECTS: users of www/firefox and www/seamonkey
+  AUTHOR: gecko@FreeBSD.org
+
+  When using Firefox or SeaMonkey compiled with ALSA option ON it may
+  crash on assert in cubeb_refill_stream as described in ports/170473.
+  To fix either set media.use_cubeb -> false in about:config or rebuild
+  audio/alsa-plugins with ARIFF_OSS option disabled (default).
+
+20121010:
   AFFECTS: users of CURRENT (OSVERSION >= 1000017)
   AUTHOR: bapt@FreeBSD.org
 

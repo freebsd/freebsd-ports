@@ -456,7 +456,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread.h,v 1.1 2012/03/06 12:34:0
 
 --- ipc/chromium/src/base/platform_thread.h.orig	2011-12-20 23:28:19.000000000 +0000
 +++ ipc/chromium/src/base/platform_thread.h
-@@ -22,9 +22,11 @@ typedef void* PlatformThreadHandle;  // HANDLE
+@@ -22,9 +22,12 @@ typedef void* PlatformThreadHandle;  // HANDLE
  #elif defined(OS_POSIX)
  #include <pthread.h>
  typedef pthread_t PlatformThreadHandle;
@@ -465,6 +465,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread.h,v 1.1 2012/03/06 12:34:0
  #include <unistd.h>
  typedef pid_t PlatformThreadId;
 +#elif defined(OS_BSD)
++#include <sys/types.h>
 +typedef lwpid_t PlatformThreadId;
  #elif defined(OS_MACOSX)
  #include <mach/mach.h>
@@ -978,57 +979,6 @@ $NetBSD: patch-ipc_chromium_src_base_sys__info__posix.cc,v 1.2 2011/11/27 13:09:
  #else
    long pages = sysconf(_SC_PHYS_PAGES);
    long page_size = sysconf(_SC_PAGE_SIZE);
-$NetBSD: patch-ipc_chromium_src_base_third__party_nspr_prcpucfg.h,v 1.2 2012/03/06 12:34:09 ryoon Exp $
-
---- ipc/chromium/src/base/third_party/nspr/prcpucfg.h.orig	2011-12-20 23:28:19.000000000 +0000
-+++ ipc/chromium/src/base/third_party/nspr/prcpucfg.h
-@@ -34,7 +34,7 @@
- #include "base/third_party/nspr/prcpucfg_win.h"
- #elif defined(__APPLE__)
- #include "base/third_party/nspr/prcpucfg_mac.h"
--#elif defined(__linux__) || defined(ANDROID)
-+#elif defined(__linux__) || defined(ANDROID) || defined(__NetBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
- #include "base/third_party/nspr/prcpucfg_linux.h"
- #elif defined(__OpenBSD__)
- #include "base/third_party/nspr/prcpucfg_openbsd.h"
-$NetBSD: patch-ipc_chromium_src_base_third__party_nspr_prtime.cc,v 1.1 2012/03/06 12:34:09 ryoon Exp $
-
---- ipc/chromium/src/base/third_party/nspr/prtime.cc.orig	2011-12-20 23:28:19.000000000 +0000
-+++ ipc/chromium/src/base/third_party/nspr/prtime.cc
-@@ -212,7 +212,7 @@ PR_ImplodeTime(const PRExplodedTime *exp
-     LL_ADD(retVal, retVal, temp);
- 
-     return retVal;
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_DRAGONFLY)
-     struct tm exp_tm = {0};
-     exp_tm.tm_sec  = exploded->tm_sec;
-     exp_tm.tm_min  = exploded->tm_min;
-@@ -245,6 +245,24 @@ PR_ImplodeTime(const PRExplodedTime *exp
-     result *= kSecondsToMicroseconds;
-     result += exploded->tm_usec;
-     return result;
-+#elif defined(OS_FREEBSD) || defined(OS_NETBSD)
-+    struct tm exp_tm = {0};
-+    exp_tm.tm_sec  = exploded->tm_sec;
-+    exp_tm.tm_min  = exploded->tm_min;
-+    exp_tm.tm_hour = exploded->tm_hour;
-+    exp_tm.tm_mday = exploded->tm_mday;
-+    exp_tm.tm_mon  = exploded->tm_month;
-+    exp_tm.tm_year = exploded->tm_year - 1900;
-+
-+    // time_t is 64bit
-+    time_t absolute_time = timegm(&exp_tm);
-+
-+    PRTime result = static_cast<PRTime>(absolute_time);
-+    result -= exploded->tm_params.tp_gmt_offset +
-+              exploded->tm_params.tp_dst_offset;
-+    result *= kSecondsToMicroseconds;
-+    result += exploded->tm_usec;
-+    return result;
- #else
- #error No PR_ImplodeTime implemented on your platform.
- #endif
 diff --git ipc/chromium/src/base/time_posix.cc ipc/chromium/src/base/time_posix.cc
 index abf2a56..48791f6 100644
 --- ipc/chromium/src/base/time_posix.cc

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	10.0.7
+DISTVERSION=	10.0.8
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -17,7 +17,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
-		nss>=3.13.1:${PORTSDIR}/security/nss \
+		nss>=3.13.6_1:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.7.1:${PORTSDIR}/databases/sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
@@ -48,6 +48,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-official-branding
 
 OPTIONS_DEFINE=	PGO
+OPTIONS_DEFAULT=GIO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>

@@ -51,6 +51,114 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e5a9afd-12d3-11e2-b47d-c8600054b392">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>16.0,1</lt></range>
+	<range><lt>10.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>10.0.8,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.13</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>10.0.8</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>16.0</lt></range>
+	<range><lt>10.0.8</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p> MFSA 2012-74 Miscellaneous memory safety hazards (rv:16.0/
+	    rv:10.0.8)</p>
+	  <p>MFSA 2012-75 select element persistance allows for attacks</p>
+	  <p>MFSA 2012-76 Continued access to initial origin after setting
+	    document.domain</p>
+	  <p>MFSA 2012-77 Some DOMWindowUtils methods bypass security checks</p>
+	  <p>MFSA 2012-78 Reader Mode pages have chrome privileges</p>
+	  <p>MFSA 2012-79 DOS and crash with full screen and history navigation</p>
+	  <p>MFSA 2012-80 Crash with invalid cast when using instanceof
+	    operator</p>
+	  <p>MFSA 2012-81 GetProperty function can bypass security checks</p>
+	  <p>MFSA 2012-82 top object and location property accessible by
+	    plugins</p>
+	  <p>MFSA 2012-83 Chrome Object Wrapper (COW) does not disallow acces
+	    to privileged functions or properties</p>
+	  <p>MFSA 2012-84 Spoofing and script injection through location.hash</p>
+	  <p>MFSA 2012-85 Use-after-free, buffer overflow, and out of bounds
+	    read issues found using Address Sanitizer</p>
+	  <p>MFSA 2012-86 Heap memory corruption issues found using Address
+	    Sanitizer</p>
+	  <p>MFSA 2012-87 Use-after-free in the IME State Manager</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-3982</cvename>
+	<cvename>CVE-2012-3983</cvename>
+	<cvename>CVE-2012-3984</cvename>
+	<cvename>CVE-2012-3985</cvename>
+	<cvename>CVE-2012-3986</cvename>
+	<cvename>CVE-2012-3987</cvename>
+	<cvename>CVE-2012-3988</cvename>
+	<cvename>CVE-2012-3989</cvename>
+	<cvename>CVE-2012-3990</cvename>
+	<cvename>CVE-2012-3991</cvename>
+	<cvename>CVE-2012-3992</cvename>
+	<cvename>CVE-2012-3993</cvename>
+	<cvename>CVE-2012-3994</cvename>
+	<cvename>CVE-2012-3995</cvename>
+	<cvename>CVE-2012-4179</cvename>
+	<cvename>CVE-2012-4180</cvename>
+	<cvename>CVE-2012-4181</cvename>
+	<cvename>CVE-2012-4182</cvename>
+	<cvename>CVE-2012-4183</cvename>
+	<cvename>CVE-2012-4184</cvename>
+	<cvename>CVE-2012-4186</cvename>
+	<cvename>CVE-2012-4187</cvename>
+	<cvename>CVE-2012-4188</cvename>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-74.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-75.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-76.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-77.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-78.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-79.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-80.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-81.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-82.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-83.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-84.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-85.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-86.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-87.html</url>
+    </references>
+    <dates>
+      <discovery>2012-10-09</discovery>
+      <entry>2012-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57a700f9-12c0-11e2-9f86-001d923933b6">
     <topic>dns/bind9* -- crash on deliberately constructed combination of records</topic>
     <affects>

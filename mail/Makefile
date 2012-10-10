@@ -114,10 +114,6 @@
     SUBDIR += emh
     SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
-    SUBDIR += enigmail
-    SUBDIR += enigmail-seamonkey
-    SUBDIR += enigmail-thunderbird
-    SUBDIR += enigmail-thunderbird-esr
     SUBDIR += enma
     SUBDIR += eps
     SUBDIR += epstools

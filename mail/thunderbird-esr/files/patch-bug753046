@@ -451,7 +451,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread.h,v 1.1 2012/03/06 12:34:0
 
 --- mozilla/ipc/chromium/src/base/platform_thread.h.orig	2011-12-20 23:28:19.000000000 +0000
 +++ mozilla/ipc/chromium/src/base/platform_thread.h
-@@ -22,9 +22,11 @@ typedef void* PlatformThreadHandle;  // HANDLE
+@@ -22,9 +22,12 @@ typedef void* PlatformThreadHandle;  // HANDLE
  #elif defined(OS_POSIX)
  #include <pthread.h>
  typedef pthread_t PlatformThreadHandle;
@@ -460,6 +460,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread.h,v 1.1 2012/03/06 12:34:0
  #include <unistd.h>
  typedef pid_t PlatformThreadId;
 +#elif defined(OS_BSD)
++#include <sys/types.h>
 +typedef lwpid_t PlatformThreadId;
  #elif defined(OS_MACOSX)
  #include <mach/mach.h>

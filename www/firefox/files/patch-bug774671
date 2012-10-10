@@ -1,6 +1,31 @@
---- js/src/jsprvtd.h.orig	2012-08-25 00:55:40.000000000 +0200
-+++ js/src/jsprvtd.h	2012-09-06 15:20:48.000000000 +0200
-@@ -149,9 +149,9 @@
+commit 7e9eda2
+Author: Rafael Ávila de Espíndola <respindola@mozilla.com>
+Date:   Tue Jul 17 12:54:41 2012 -0400
+
+    Bug 774671 - Fix mismatched declarations. r=luke.
+---
+ js/src/jsproxy.h | 2 +-
+ js/src/jsprvtd.h | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git js/src/jsproxy.h js/src/jsproxy.h
+index ec26e3a..aa0e782 100644
+--- js/src/jsproxy.h
++++ js/src/jsproxy.h
+@@ -13,7 +13,7 @@
+ 
+ namespace js {
+ 
+-class Wrapper;
++class JS_FRIEND_API(Wrapper);
+ 
+ /*
+  * A proxy is a JSObject that implements generic behavior by providing custom
+diff --git js/src/jsprvtd.h js/src/jsprvtd.h
+index 19b5aef..93e1216 100644
+--- js/src/jsprvtd.h
++++ js/src/jsprvtd.h
+@@ -146,9 +146,9 @@ struct TreeContext;
  class UpvarCookie;
  
  class Proxy;
