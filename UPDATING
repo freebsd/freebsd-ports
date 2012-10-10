@@ -23,9 +23,9 @@ you update your ports collection, before attempting any port upgrades.
 
   2/ Install ports-mgmt/pkg
 
-  3/ Remove WITHOUT_PKGNG from make.conf and run
+  3/ Remove WITHOUT_PKGNG from make.conf and run:
 
- # pkg2ng
+      # pkg2ng
 
 20121009:
   AFFECTS: users of multimedia/vdpau-video
