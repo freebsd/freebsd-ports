@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  pchar
-# Date created:			  Wed Nov 03, 1999
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Whom: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	pchar
 PORTVERSION=	1.5
@@ -13,7 +8,7 @@ MASTER_SITES=	http://www.kitchenlab.org/www/bmah/Software/pchar/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bmah
 
-MAINTAINER=	bmah@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sandia Internet path characterization tool
 
 GNU_CONFIGURE=	yes
