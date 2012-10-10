@@ -28,7 +28,7 @@ OPTIONS=	TOOLS_ONLY "Do not install window manager, only tools" off
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TOOLS_ONLY)
+.if ${PORT_OPTIONS:MTOOLS_ONLY}
 PKGNAMESUFFIX=	-tools
 COMMENT+=	(tools only)
 MAKE_ARGS=	SUBDIRS="doc lib util" bin_PROGRAMS=bsetroot
@@ -43,7 +43,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/_XUTIL_H_/_X11&/' ${WRKSRC}/lib/Util.hh
 
 post-install:
-.if defined(WITH_TOOLS_ONLY)
+.if ${PORT_OPTIONS:MTOOLS_ONLY}
 	@${REINPLACE_CMD} -E '/[^s]\/blackbox|bstyleconvert|lib|include/d' \
 		${TMPPLIST}
 	${INSTALL_MAN} ${MAN1:S#^#${WRKSRC}/doc/#} ${MANPREFIX}/man/man1
