@@ -115,6 +115,8 @@ ECHO_CMD?=	echo				# Shell builtin
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=	${ECHO_CMD}
 
+.elif !defined(_PKGTOOLSDEFINED)
+_PKGTOOLDEFINED=	yes
 .if defined(WITH_PKGNG)
 PKG_BIN?=		${LOCALBASE}/sbin/pkg
 PKG_CMD?=		${PKG_BIN} register
