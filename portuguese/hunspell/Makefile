@@ -1,17 +1,13 @@
-# New ports collection makefile for:	hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
-PORTVERSION=	20120711
+PORTVERSION=	20121006
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/ \
 		http://www.broffice.org/files/:BR
 DISTFILES=	hunspell-pt_PT-${PORTVERSION}.tar.gz \
-		pt_BR-2011-05-27AOC.zip:BR
+		pt_BR-2012-06-09AOC.zip:BR
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
