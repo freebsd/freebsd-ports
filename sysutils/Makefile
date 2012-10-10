@@ -1029,6 +1029,7 @@
     SUBDIR += xcdroast
     SUBDIR += xcpustate
     SUBDIR += xdu
+    SUBDIR += xe-guest-utilities
     SUBDIR += xen-tools
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin
