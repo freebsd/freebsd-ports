@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phalcon
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/c${PORTNAME}/tarball/${GITVERSION}/
 DISTNAME=	${PORTNAME}-c${PORTNAME}-${GITVERSION}
@@ -14,9 +14,12 @@ DISTNAME=	${PORTNAME}-c${PORTNAME}-${GITVERSION}
 MAINTAINER=	linpct@gmail.com
 COMMENT=	Phalcon PHP Framework written in C-language
 
-GITVERSION=	97d8732
+BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/pdo/php_pdo_driver.h:${PORTSDIR}/databases/php5-pdo
+RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pdo/php_pdo_driver.h:${PORTSDIR}/databases/php5-pdo
+
+GITVERSION=	b22910a
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-c${PORTNAME}-${GITVERSION}/release/
+WRKSRC=		${WRKDIR}/${PORTNAME}-c${PORTNAME}-${GITVERSION}/build/
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-phalcon --prefix=${PREFIX} --with-php-config=${LOCALBASE}/bin/php-config
