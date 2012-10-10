@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tinymce
-# Date created:				26 Mar 2007
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tinymce
-PORTVERSION=	3.4.9
+PORTVERSION=	3.5.7
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 		LOCAL/sunpoet
