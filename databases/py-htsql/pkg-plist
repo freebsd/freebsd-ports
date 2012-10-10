@@ -250,6 +250,12 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/cors/wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/cors/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/cors/wsgi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf/wsgi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf/wsgi.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django/__init__.pyo
@@ -336,6 +342,8 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/locate.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/cm-htsql-mode.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/cm-htsql-mode.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/htsql_125x50.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/htsql_88x31.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/shell.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/shell.js
@@ -422,6 +430,7 @@ bin/htsql-ctl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/inet
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/hello
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/cors
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/autolimit
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak
