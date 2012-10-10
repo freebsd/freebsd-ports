@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
 
 OPTIONS_DEFINE=	EMACS
 
-EMACS_DESC=	"Compile pure-mode.el with Emacs"
+EMACS_DESC=	Compile pure-mode.el with Emacs
 
 .include <bsd.port.options.mk>
 
