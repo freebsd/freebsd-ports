@@ -1,20 +1,19 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
-#
 # $FreeBSD$
 
 PORTNAME=	fpdns
 PORTVERSION=	0.9.3.20120719
 CATEGORIES=	dns net perl5
-MASTER_SITES=	https://github.com/kirei/fpdns/tarball/${GITVERSION}/
-DISTNAME=	kirei-fpdns-${GITVERSION}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FPDNS - Fingerprinting DNS servers
 
-FETCH_ARGS=	-Fpr
-GITVERSION=	9eb38df
-
 RUN_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kirei
+GH_COMMIT=	9eb38df
 
 PERL_CONFIGURE=	yes
 
