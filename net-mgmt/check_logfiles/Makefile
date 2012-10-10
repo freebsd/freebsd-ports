@@ -1,9 +1,4 @@
-# New ports collection makefile for:    check_logfile
-# Date created:         11 Mar 2011
-# Whom:                 flo@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	check_logfiles
 PORTVERSION=	3.4.3.1
