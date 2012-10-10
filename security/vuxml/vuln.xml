@@ -51,6 +51,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57a700f9-12c0-11e2-9f86-001d923933b6">
+    <topic>dns/bind9* -- crash on deliberately constructed combination of records</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.1.4</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<range><lt>9.8.3.4</lt></range>
+      </package>
+      <package>
+	<name>bind97</name>
+	<range><lt>9.7.6.4</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<range><lt>9.6.3.1.ESV.R7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-00801/">
+	  <p>A deliberately constructed combination of records could cause named
+	     to hang while populating the additional section of a response.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-5166</cvename>
+    </references>
+    <dates>
+      <discovery>2012-09-26</discovery>
+      <entry>2012-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6161b65-1187-11e2-afe3-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
