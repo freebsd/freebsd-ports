@@ -17,16 +17,18 @@ COMMENT=	Take snapshots from Subversion activity
 BUILD_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify
 RUN_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify
 
-OPTIONS=	CONFIG "Enable YAML syntax for post-commit hook" Off
+OPTIONS_DEFINE=	CONFIG
+CONFIG_DESC=	Enable YAML syntax for post-commit hook
 
 PERL_MODBUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CONFIG)
+.if ${PORT_OPTIONS:MCONFIG}
 BUILD_DEPENDS+=	p5-SVN-Notify-Config>=0:${PORTSDIR}/devel/p5-SVN-Notify-Config
+RUN_DEPENDS+=	p5-SVN-Notify-Config>=0:${PORTSDIR}/devel/p5-SVN-Notify-Config
 .endif
 
 MAN3=		SVN::Notify::Snapshot.3 SVN::Notify::Snapshot::ConfigData.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
