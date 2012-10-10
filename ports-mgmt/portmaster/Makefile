@@ -3,55 +3,60 @@
 PORTNAME=	portmaster
 PORTVERSION=	3.14
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.c-s.li/ports/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
 
-OPTIONS=	BASH "Install programmable completions for Bash" off \
-		ZSH "Install programmable completions for zsh" off
+LICENSE=	BSD
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	portmaster
+GH_COMMIT=	31009f6
+GH_TAGNAME=	${GH_COMMIT}
+
+OPTIONS_DEFINE=	BASH ZSH
+BASH_DESC=	Install programmable completions for Bash
+ZSH_DESC=	Install programmable completions for zsh
 
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
 MAN8=		portmaster.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
 PLIST_FILES+=	etc/bash_completion.d/portmaster.sh
 PLIST_DIRSTRY+=	etc/bash_completion.d
 .endif
 
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 PLIST_FILES+=	share/zsh/site-functions/_portmaster
 PLIST_DIRSTRY+=	share/zsh/site-functions share/zsh
 .endif
 
 verify: checksum
-	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 do-build:
-.for file in portmaster.sh portmaster.rc.sample
-	${SED} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/${file}.in \
-	    > ${WRKDIR}/${file}
+.for file in portmaster files/portmaster.rc.sample
+	${SED} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/${file} \
+	  > ${WRKDIR}/${file:T}
 .endfor
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/portmaster.sh ${PREFIX}/sbin/portmaster
+	${INSTALL_SCRIPT} ${WRKDIR}/portmaster ${PREFIX}/sbin/portmaster
 	${INSTALL_DATA} ${WRKDIR}/portmaster.rc.sample ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/portmaster.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/files/portmaster.8 ${MAN8PREFIX}/man/man8
 
 post-install:
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
 	${MKDIR} ${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/bash-completions \
+	${INSTALL_DATA} ${WRKSRC}/files/bash-completions \
 		${PREFIX}/etc/bash_completion.d/portmaster.sh
 .endif
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/zsh-completions \
+	${INSTALL_DATA} ${WRKSRC}/files/zsh-completions \
 		${PREFIX}/share/zsh/site-functions/_portmaster
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
