@@ -1,8 +1,6 @@
 lib/openvpn/plugins/openvpn-plugin-auth-pam.so
-lib/openvpn-plugin-auth-pam.so
 lib/openvpn/plugins/openvpn-plugin-auth-pam.la
 lib/openvpn/plugins/openvpn-plugin-down-root.so
-lib/openvpn-plugin-down-root.so
 lib/openvpn/plugins/openvpn-plugin-down-root.la
 lib/openvpn-auth-pam.so
 lib/openvpn-down-root.so
@@ -41,7 +39,6 @@ sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-stop
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/ucn.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/openvpn
 @dirrmtry %%PORTDOCS%%%%DOCSDIR%%/sample
 @dirrmtry %%PORTDOCS%%%%DOCSDIR%%/sample-config-files
 @dirrmtry %%PORTDOCS%%%%DOCSDIR%%/sample-scripts

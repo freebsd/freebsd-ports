@@ -6,6 +6,7 @@ DISTVERSION=	2.3_beta1
 CATEGORIES=	security net
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX=	-beta
+PORTREVISION=	1
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
@@ -90,10 +91,9 @@ post-build:
 
 post-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-down-root.so ${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/src/plugins/auth-pam/.libs/openvpn-plugin-auth-pam.so ${PREFIX}/lib/
-	${LN} -s ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-down-root.so ${PREFIX}/lib/openvpn-down-root.so
-	${LN} -s ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-auth-pam.so ${PREFIX}/lib/openvpn-auth-pam.so
+	${LN} -s ${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so ${PREFIX}/lib/openvpn-down-root.so
+	${LN} -s ${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so ${PREFIX}/lib/openvpn-auth-pam.so
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL \
