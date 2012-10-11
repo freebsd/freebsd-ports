@@ -25,6 +25,7 @@ lib/kst2/plugins/libkst2_dataobject_statistics.so
 lib/kst2/plugins/libkst2_dataobject_syncbin.so
 lib/kst2/plugins/libkst2_datasource_ascii.so
 %%FITS%%lib/kst2/plugins/libkst2_datasource_fitsimage.so
+%%MATLAB%%lib/kst2/plugins/libkst2_datasource_matlab.so
 %%NETCDF%%lib/kst2/plugins/libkst2_datasource_netcdf.so
 lib/kst2/plugins/libkst2_datasource_qimagesource.so
 lib/kst2/plugins/libkst2_datasource_sampledatasource.so
