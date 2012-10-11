@@ -29,8 +29,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-tty-tickets \
 		--with-env-editor \
 		--with-logincap \
-		--with-long-otp-prompt \
-		--with-pam
+		--with-long-otp-prompt
 
 OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
 		AUDIT OPIE NLS
@@ -41,7 +40,7 @@ DISABLE_ROOT_SUDO_DESC=	Do not allow root to run sudo
 DISABLE_AUTH_DESC=	Do not require authentication by default
 NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 AUDIT_DESC=	Enable BSM audit support
-OPIE_DESC=	Enable one-time passwords
+OPIE_DESC=	Enable one-time passwords (no PAM support)
 
 LOGFAC?=	local2
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
@@ -86,19 +85,21 @@ CONFIGURE_ARGS+=--disable-root-sudo
 .endif
 
 .if ${PORT_OPTIONS:MDISABLE_AUTH}
-CONFIGURE_ARGS+=--disable-authentication
+CONFIGURE_ARGS+=	--disable-authentication
 .endif
 
 .if ${PORT_OPTIONS:MNOARGS_SHELL}
-CONFIGURE_ARGS+=--enable-noargs-shell
+CONFIGURE_ARGS+=	--enable-noargs-shell
 .endif
 
 .if ${PORT_OPTIONS:MAUDIT}
-CONFIGURE_ARGS+=--with-bsm-audit
+CONFIGURE_ARGS+=	--with-bsm-audit
 .endif
 
 .if ${PORT_OPTIONS:MOPIE}
-CONFIGURE_ARGS+=--with-opie
+CONFIGURE_ARGS+=	--with-opie
+.else
+CONFIGURE_ARGS+=	--with-pam
 .endif
 
 MAN5+=		sudoers.5
