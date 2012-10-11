@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-PDF-API3
-# Date created:			26 April, 2009
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	PDF-API3
 PORTVERSION=	3.001
@@ -11,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Next Generation of Text::PDF::API2
 
 PERL_CONFIGURE=	yes
