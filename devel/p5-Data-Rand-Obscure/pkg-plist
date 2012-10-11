@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Data/Rand/Obscure.pm
+%%SITE_PERL%%/Data/Rand/Obscure/Generator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rand/Obscure/.packlist
+@dirrm %%SITE_PERL%%/Data/Rand/Obscure
+@dirrmtry %%SITE_PERL%%/Data/Rand
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rand/Obscure
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rand
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
