@@ -15,8 +15,10 @@ LIB_DEPENDS=	gmime-2.0:${PORTSDIR}/mail/gmime2
 
 CONFLICTS=	dbmail-3.*
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE SIEVE LDAP
+OPTIONS_DEFINE=	SIEVE LDAP
 OPTIONS_DEFAULT=MYSQL
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=MYSQL PGSQL SQLITE
 SIEVE_DESC=	Support for Sieve mail sorting language
 
 LATEST_LINK=	dbmail22
@@ -46,7 +48,7 @@ MAN8=		dbmail-export.8 dbmail-imapd.8 dbmail-lmtpd.8 \
 SUB_FILES=	pkg-message
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 PLIST_SUB+=	PORTDOCS="@comment "
 .else
 PLIST_SUB+=	PORTDOCS=""
@@ -97,10 +99,6 @@ PLIST_SUB+=	LDAP=""
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if empty(${PORT_OPTIONS:MMYSQL}) && empty(${PORT_OPTIONS:MPGSQL}) && empty(${PORT_OPTIONS:MSQLITE})
-IGNORE="requires at least one database backend selected. Run 'make config'"
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
 	@${FIND} ${WRKSRC} -name *.orig -type f -delete
@@ -128,7 +126,7 @@ post-install:
 	  ${MKDIR} ${DATADIR}/$$f ; \
 	  ${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${DATADIR}/$$f; \
 	done
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
