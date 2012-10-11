@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Meta Object Protocol for Perl 5
 
-IGNORE=		distribution has been merged with devel/p5-Moose
+DEPRECATED=	distribution has been merged with devel/p5-Moose
+EXPIRATION_DATE=	2012-10-25
 
 BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
