@@ -1,3 +1,4 @@
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mikutter
@@ -26,6 +27,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 USE_RUBY=	yes
+RUBY_VER=	1.9
 NO_BUILD=	yes
 
 CONFLICTS=	mikutter-0.0.3.*
@@ -50,8 +52,8 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.8
-BROKEN=	does not build
+.if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
+IGNORE=	requires RUBY_DEFAULT_VER=${RUBY_VER}
 .endif
 
 .if ${PORT_OPTIONS:MHTTPCLIENT}
