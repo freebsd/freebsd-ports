@@ -1,0 +1,4 @@
+checkbashisms is a perl script that checks for commonly used
+bash features that are not supported by POSIX shells.
+
+WWW: http://sourceforge.net/projects/checkbaskisms
