@@ -1,13 +1,7 @@
-# vim:ts=8 sw=8 noet
-# Ports collection Makefile for:	py-pandas
-# Date created:				2012-08-16
-# Whom:					John W. O'Brien
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pandas
-DISTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
