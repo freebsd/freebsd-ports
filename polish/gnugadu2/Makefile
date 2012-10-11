@@ -152,7 +152,8 @@ PLIST_SUB+=	ARTS:="@comment "
 .if ${PORT_OPTIONS:MXOSD}
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-xosd
-PLIST_SUB+=	XOSD:="".else
+PLIST_SUB+=	XOSD:=""
+.else
 CONFIGURE_ARGS+=	--without-xosd
 PLIST_SUB+=	XOSD:="@comment "
 .endif
