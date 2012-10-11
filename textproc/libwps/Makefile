@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libwps
-# Date created:		2008-04-16
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libwps
 PORTVERSION=	0.2.7
@@ -18,7 +14,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOXYGEN
 
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,7 +26,7 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .else
 CONFIGURE_ARGS+=--without-docs
