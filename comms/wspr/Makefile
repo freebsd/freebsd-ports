@@ -15,7 +15,7 @@ DISTNAME=	wspr-r${SVN_REV}
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal for HF ham radio communication package
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter/ \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
