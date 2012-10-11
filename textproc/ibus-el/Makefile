@@ -1,13 +1,8 @@
-# New ports collection makefile for:   ibus-el
-# Date created:        4 July 2010
-# Whom:                Hajimu UMEMOTO <ume@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ibus-el
-PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTVERSION=	0.3.2
+#PORTREVISION=	0
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www11.atwiki.jp/s-irie/pub/emacs/ibus/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
