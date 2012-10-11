@@ -5,13 +5,4 @@ privileges to users and log root activity.  The basic philosophy is to
 give as few privileges as possible but still allow people to get their
 work done.
 
-MAILING LISTS:
-
-Please send bugs, problems, comments, etc to sudo-bugs@courtesan.com
-There is a mailing list that receives announcements whenever a new
-version of sudo is released.  You can subscribe to it by sending a
-message to "majordomo@courtesan.com" that includes the line
-"subscribe sudo-announce".  There is also a list for people working
-on sudo.  The command to add yourself is "subscribe sudo-workers".
-
 WWW: http://www.courtesan.com/sudo/
