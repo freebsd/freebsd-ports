@@ -1,33 +1,28 @@
-# New ports collection makefile for:	BASIC256
-# Date created:                Aug 17 2011
-# Whom:                        Fernando Apesteguia <fernando.apesteguia@gmail.com>
-#
+# Created by: Fernando Apesteguia <fernando.apesteguia@gmail.com>
 # $FreeBSD$
 
-PORTNAME=		basic256
-PORTVERSION=		0.9.6.69a
-CATEGORIES=		lang
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kidbasic/basic256
-DISTNAME=		${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=		.tgz
+PORTNAME=	basic256
+PORTVERSION=	0.9.9.1
+CATEGORIES=	lang
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	kidbasic/${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		fernando.apesteguia@gmail.com
-COMMENT=		An easy to use BASIC language and IDE for education
+MAINTAINER=	fernando.apesteguia@gmail.com
+COMMENT=	Easy to use BASIC language and IDE for education
 
-BUILD_DEPENDS=		espeak:${PORTSDIR}/audio/espeak
-BUILD_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS+=		qmake-qt4:${PORTSDIR}/devel/qmake4
+BUILD_DEPENDS=	espeak:${PORTSDIR}/audio/espeak \
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		flex:${PORTSDIR}/textproc/flex
 
-WRKSRC=			${WRKDIR}
+WRKSRC=		${WRKDIR}
 
-USE_SDL=		sdl mixer
-
-USE_QT4=		corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
-
-USE_DOS2UNIX=		yes
-
-HAS_CONFIGURE=		yes
+USE_BISON=	build
+USE_SDL=	sdl mixer
+USE_QT4=	corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
+USE_DOS2UNIX=	yes
+HAS_CONFIGURE=	yes
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
