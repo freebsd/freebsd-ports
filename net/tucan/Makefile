@@ -16,7 +16,7 @@ MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Tucan Manager aids file-sharing with 1-click hosters
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pilconvert.py:${PORTSDIR}/graphics/py-imaging \
-		${LOCALBASE}/bin/cntraining:${PORTSDIR}/graphics/tesseract/
+		${LOCALBASE}/bin/cntraining:${PORTSDIR}/graphics/tesseract
 
 NO_BUILD=	yes
 USE_GNOME=	pygtk2 librsvg2
