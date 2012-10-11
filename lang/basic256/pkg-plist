@@ -1,10 +1,13 @@
 bin/BASIC256
 share/basic256/Examples/15puzzle.kbs
+share/basic256/Examples/15puzzle_new.kbs
 share/basic256/Examples/BASICtest1.kbs
 share/basic256/Examples/arrays.kbs
 share/basic256/Examples/ballaccel.kbs
+share/basic256/Examples/ballaccel_2.kbs
 share/basic256/Examples/ballanim.kbs
 share/basic256/Examples/basic256_icon.kbs
+share/basic256/Examples/basic256_icon_V1.kbs
 share/basic256/Examples/card_suites.kbs
 share/basic256/Examples/cards_deal5.kbs
 share/basic256/Examples/checkerboard.kbs
@@ -13,8 +16,11 @@ share/basic256/Examples/collision3.kbs
 share/basic256/Examples/databasefoo.kbs
 share/basic256/Examples/db_quote.kbs
 share/basic256/Examples/dice/dice.kbs
+share/basic256/Examples/dice/dice_2.kbs
 share/basic256/Examples/dice/dicewood.wav
 share/basic256/Examples/errortrapping.kbs
+share/basic256/Examples/function_factorial.kbs
+share/basic256/Examples/function_randint.kbs
 share/basic256/Examples/hangman.kbs
 share/basic256/Examples/hello.kbs
 share/basic256/Examples/imgload/animatedhelp.kbs
@@ -60,6 +66,8 @@ share/basic256/Examples/sqrt.kbs
 share/basic256/Examples/stamp.kbs
 share/basic256/Examples/stamp_flower.kbs
 share/basic256/Examples/story.kbs
+share/basic256/Examples/subroutine_global.kbs
+share/basic256/Examples/subroutine_squares.kbs
 share/basic256/Examples/testing/2darraytest.kbs
 share/basic256/Examples/testing/2dstrarraytest.kbs
 share/basic256/Examples/testing/KalRGB.kbs
@@ -132,12 +140,6 @@ share/basic256/help/fr/sin.jpg
 share/basic256/help/fr/stamp.png
 share/basic256/help/fr/style.css
 share/basic256/help/fr/tan.jpg
-share/basic256/help/ru/cir.png
-share/basic256/help/ru/color.png
-share/basic256/help/ru/fonttext.png
-share/basic256/help/ru/poly.png
-share/basic256/help/ru/radians.png
-share/basic256/help/ru/stamp.png
 share/basic256/help/ru/style.css
 @dirrm share/basic256/help/ru
 @dirrm share/basic256/help/fr
