@@ -378,6 +378,7 @@ DISTFILES+=	${AUTH_PATCH}:smtp_auth
 .if defined(WITH_MAILDIRQUOTA_PATCH) && !defined(BARRIER_MAILDIRQUOTA_PATCH)
 PATCH_SITES+=	http://www.alexdupre.com/qmail/:quota
 PATCHFILES+=	qmail-maildir++.patch:quota
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-maildir++
 .endif
 
 .if defined(WITH_BLOCKEXEC_PATCH) && !defined(BARRIER_BLOCKEXEC_PATCH)

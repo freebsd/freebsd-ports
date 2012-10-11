@@ -1,0 +1,11 @@
+--- qmail-local.c.orig	2012-10-11 10:22:24.000000000 -0300
++++ qmail-local.c	2012-10-11 10:23:24.000000000 -0300
+@@ -109,7 +109,7 @@
+    s += fmt_strn(s,host,sizeof(host));
+    s += fmt_strn(s,",S=",sizeof(",S="));
+    if (fstat(0,&st) == -1) if (errno == error_noent) break;
+-   s += fmt_ulong(s,st.st_size); *s++ = 0;
++   s += fmt_ulong(s,st.st_size+rpline.len+dtline.len); *s++ = 0;
+    if (stat(fntmptph,&st) == -1) if (errno == error_noent) break;
+    /* really should never get to this point */
+    if (loop == 2) _exit(1);
