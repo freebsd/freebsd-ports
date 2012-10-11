@@ -847,6 +847,7 @@
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += slune
+    SUBDIR += smashbattle
     SUBDIR += smiley
     SUBDIR += sokoban
     SUBDIR += sol
