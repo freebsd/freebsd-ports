@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbmail
-# Date created:				07/26/2003
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.18
@@ -11,19 +7,17 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
 MAINTAINER=	ahicks@p-o.co.uk
-COMMENT=	An SQL database-based mail system (POP3 and IMAP)
+COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS=	gmime-2.0:${PORTSDIR}/mail/gmime2
 
-CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.* dbmail-3.*
+CONFLICTS=	dbmail-3.*
 
-OPTIONS=	MYSQL		"Build with MySQL support" on \
-		POSTGRESQL	"Build with PostgreSQL support"	off \
-		SQLITE		"Build with SQLite support" off \
-		SIEVE		"Build w. support for Sieve mail sorting language" off \
-		LDAP		"Build with support for LDAP authentication" off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE SIEVE LDAP
+OPTIONS_DEFAULT=MYSQL
+SIEVE_DESC=	Support for Sieve mail sorting language
 
 LATEST_LINK=	dbmail22
 USE_AUTOTOOLS=	libtool
@@ -49,7 +43,6 @@ MAN5=		dbmail.conf.5
 MAN8=		dbmail-export.8 dbmail-imapd.8 dbmail-lmtpd.8 \
 		dbmail-pop3d.8 dbmail-sievecmd.8 dbmail-timsieved.8 \
 		dbmail-users.8 dbmail-util.8
-MANCOMPRESSED=	no
 SUB_FILES=	pkg-message
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
@@ -59,9 +52,9 @@ PLIST_SUB+=	PORTDOCS="@comment "
 PLIST_SUB+=	PORTDOCS=""
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=--with-mysql
 USE_MYSQL=	yes
 DATABASE+=	mysql
@@ -70,7 +63,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=--with-pgsql
 USE_PGSQL=	yes
 DATABASE+=	postgresql
@@ -79,7 +72,7 @@ PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=--with-sqlite
 USE_SQLITE=	yes
 DATABASE+=	sqlite
@@ -88,15 +81,15 @@ PLIST_SUB+=	SQLITE=""
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
-.if defined(WITH_SIEVE)
+.if ${PORT_OPTIONS:MSIEVE}
 CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}/include
-LIB_DEPENDS+=	sieve.1:${PORTSDIR}/mail/libsieve
+LIB_DEPENDS+=	sieve:${PORTSDIR}/mail/libsieve
 PLIST_SUB+=	SIEVE=""
 .else
 PLIST_SUB+=	SIEVE="@comment "
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=--with-auth-ldap=${LOCALBASE}/include
 USE_OPENLDAP=	yes
 PLIST_SUB+=	LDAP=""
@@ -104,7 +97,7 @@ PLIST_SUB+=	LDAP=""
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITHOUT_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_SQLITE)
+.if empty(${PORT_OPTIONS:MMYSQL}) && empty(${PORT_OPTIONS:MPGSQL}) && empty(${PORT_OPTIONS:MSQLITE})
 IGNORE="requires at least one database backend selected. Run 'make config'"
 .endif
 
@@ -141,4 +134,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
