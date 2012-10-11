@@ -1,18 +1,14 @@
-# New Ports collection makefile for:	SDLScavenger
-# Date created:		2012-04-21
-# Whom:			nemysis@gmx.ch
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_scavenger
 PORTVERSION=	145.1.2010.11.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/sdlscavenger/
 DISTNAME=	sdlscav-145.1_2010_11_5
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A Lode Runner like game
+COMMENT=	Lode Runner like game
 
 LICENSE=	GPLv2
 
@@ -22,14 +18,16 @@ USE_ZIP=	yes
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+ALL_TARGET=
 
 PLIST_FILES=	bin/sdlscavenger \
-		share/pixmaps/${PORTNAME}.png
+		share/pixmaps/sdlscavenger.png
 
 PORTDATA=	*
 PORTDOCS=	CREDITS DOC NEW_FEATURES README STRATEGY
 
-ALL_TARGET=
+DESKTOP_ENTRIES="SDL Scavenger" "${COMMENT}" "sdlscavenger" \
+		"sdlscavenger" "Game;ArcadeGame;" ${FALSE}
 
 .include <bsd.port.options.mk>
 
@@ -38,22 +36,14 @@ post-patch:
 			${WRKSRC}/names.h
 
 do-install:
-# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/sdlscav ${PREFIX}/bin/sdlscavenger
-
-# Data
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/data/scav.png ${PREFIX}/share/pixmaps/sdlscavenger.png
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/scav.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
