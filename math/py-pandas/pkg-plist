@@ -386,6 +386,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/frame2.pickle
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/series.pickle
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/series_daterange0.pickle
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_converter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_converter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_converter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_cursor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_cursor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_cursor.pyo
@@ -437,6 +440,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/decorators.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/decorators.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/decorators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/testing_flymake.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/testing_flymake.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/testing_flymake.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/misc.pyo
