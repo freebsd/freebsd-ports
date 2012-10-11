@@ -46,7 +46,7 @@ post-patch:
 
 	# try(n) is part of Tcl core since 8.6
 .if ${TCL_VER:S/.//} < 86
-	MANN+=		try.n
+MANN+=		try.n
 .else
 	${MV} ${WRKSRC}/modules/try/try.man ${WRKSRC}/modules/try/try.man.noinstall
 .endif
