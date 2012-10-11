@@ -1,17 +1,17 @@
---- ./cmake/src/kst/CMakeLists.txt.orig	2011-09-12 15:34:28.000000000 +0000
-+++ ./cmake/src/kst/CMakeLists.txt	2011-10-15 00:36:57.039906521 +0000
-@@ -37,9 +37,7 @@
+--- ./cmake/src/kst/CMakeLists.txt.orig	2012-08-05 15:16:15.233405189 +0000
++++ ./cmake/src/kst/CMakeLists.txt	2012-08-05 15:17:39.675406925 +0000
+@@ -38,9 +38,7 @@
  if(UNIX AND NOT APPLE)
  	set(man ${CMAKE_BINARY_DIR}/${kst_binary_name}.1)
  	configure_file(${kst_dir}/src/kst/kst.1.txt ${man})
 -	install(CODE "execute_process(COMMAND gzip ${man})")
--	set_source_files_properties(${man}.gz PROPERTIES GENERATED TRUE) 
+-	set_source_files_properties(${man}.gz PROPERTIES GENERATED TRUE)
 -	install(FILES ${man}.gz DESTINATION share/man/man1)
 +	install(FILES ${man} DESTINATION man/man1)
- 	
+ 
  	set(k ${kst_dir}/src/kst)
  #	install(FILES ${k}/kstplugin.desktop
-@@ -49,8 +47,7 @@
+@@ -50,8 +48,7 @@
  #	              ${k}/kstfilter.desktop
  #	              ${k}/kstextension.desktop
  #	                                 DESTINATION share/servicetypes/kst)

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	kst
-# Date created:			Fri Apr 30 17:28:56 CEST 2004
-# Whom:				Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kst
-DISTVERSION=	2.0.5
-PORTREVISION=	1
+DISTVERSION=	2.0.6
 CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 
@@ -29,9 +25,10 @@ CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}
 MAN1=		kst2.1
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
-OPTIONS_DEFINE=	FITS NETCDF
+OPTIONS_DEFINE=	FITS MATLAB NETCDF
 
 FITS_DESC=	Support for data in FITS format
+MATLAB_DESC=	Support for data in MATLAB format
 NETCDF_DESC=	Support for data in NetCDF format
 
 .include <bsd.port.options.mk>
@@ -41,6 +38,13 @@ LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
 PLIST_SUB+=	FITS=""
 .else
 PLIST_SUB+=	FITS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMATLAB}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatio.a:${PORTSDIR}/math/matio
+PLIST_SUB+=	MATLAB=""
+.else
+PLIST_SUB+=	MATLAB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNETCDF}
@@ -57,6 +61,10 @@ post-patch:
 pre-configure:
 .if !${PORT_OPTIONS:MFITS}
 	${REINPLACE_CMD} -e '/find_package(CFITSIO)/d' \
+		${CMAKE_SOURCE_PATH}/CMakeLists.txt
+.endif
+.if !${PORT_OPTIONS:MMATLAB}
+	${REINPLACE_CMD} -e '/find_package(Matio)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
 .endif
 .if !${PORT_OPTIONS:MNETCDF}
