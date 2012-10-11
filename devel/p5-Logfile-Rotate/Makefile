@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Logfile-Rotate
-# Date created:		2006-08-01
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Logfile-Rotate
 PORTVERSION=	1.04
