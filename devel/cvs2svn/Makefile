@@ -3,9 +3,14 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49237/ \
 		LOCAL/ohauer
+
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	ohauer
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-r5401.diff.bz2
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
