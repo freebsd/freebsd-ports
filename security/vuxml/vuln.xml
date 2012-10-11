@@ -83,33 +83,33 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
-	<range><gt>11.0,1</gt><lt>16.0,1</lt></range>
-	<range><lt>10.0.7,1</lt></range>
+	<range><gt>11.0,1</gt><lt>16.0.1,1</lt></range>
+	<range><lt>10.0.9,1</lt></range>
       </package>
       <package>
 	<name>linux-firefox</name>
-	<range><lt>10.0.8,1</lt></range>
+	<range><lt>10.0.9,1</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey</name>
-	<range><lt>2.13</lt></range>
+	<range><lt>2.13.1</lt></range>
       </package>
       <package>
 	<name>linux-thunderbird</name>
-	<range><lt>10.0.8</lt></range>
+	<range><lt>10.0.9</lt></range>
       </package>
       <package>
 	<name>seamonkey</name>
-	<range><lt>2.13</lt></range>
+	<range><lt>2.13.1</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
-	<range><gt>11.0</gt><lt>16.0</lt></range>
-	<range><lt>10.0.8</lt></range>
+	<range><gt>11.0</gt><lt>16.0.1</lt></range>
+	<range><lt>10.0.9</lt></range>
       </package>
       <package>
 	<name>libxul</name>
-	<range><gt>1.9.2.*</gt><lt>10.0.8</lt></range>
+	<range><gt>1.9.2.*</gt><lt>10.0.9</lt></range>
       </package>
     </affects>
     <description>
@@ -137,6 +137,8 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>MFSA 2012-86 Heap memory corruption issues found using Address
 	    Sanitizer</p>
 	  <p>MFSA 2012-87 Use-after-free in the IME State Manager</p>
+	  <p>MFSA 2012-88 Miscellaneous memory safety hazards (rv:16.0.1)</p>
+	  <p>MFSA 2012-89 defaultValue security checks not applied</p>
 	</blockquote>
       </body>
     </description>
@@ -164,6 +166,10 @@ Note:  Please add new entries to the beginning of this file.
 	<cvename>CVE-2012-4186</cvename>
 	<cvename>CVE-2012-4187</cvename>
 	<cvename>CVE-2012-4188</cvename>
+	<cvename>CVE-2012-4190</cvename>
+	<cvename>CVE-2012-4191</cvename>
+	<cvename>CVE-2012-4192</cvename>
+	<cvename>CVE-2012-4193</cvename>
 	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-74.html</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-75.html</url>
@@ -179,10 +185,13 @@ Note:  Please add new entries to the beginning of this file.
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-85.html</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-86.html</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-87.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-88.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-89.html</url>
     </references>
     <dates>
       <discovery>2012-10-09</discovery>
       <entry>2012-10-10</entry>
+      <modified>2012-10-11</modified>
     </dates>
   </vuln>
 
