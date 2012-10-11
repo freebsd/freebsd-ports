@@ -1,12 +1,8 @@
-# New ports collection makefile for:   adminer
-# Date created:			11 July, 2009
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	adminer
-PORTVERSION=	3.3.4
+PORTVERSION=	3.6.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 
@@ -17,9 +13,7 @@ LICENSE=	AL2
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-USE_PHP=	mssql mysql odbc pgsql session sqlite
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+USE_PHP=	mssql mysql odbc pgsql session pdo_sqlite
 SUB_FILES=	pkg-message
 
 do-install:

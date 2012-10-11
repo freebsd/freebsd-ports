@@ -28,6 +28,7 @@
 %%WWWDIR%%/adminer/index.php
 %%WWWDIR%%/adminer/indexes.inc.php
 %%WWWDIR%%/adminer/lang/ar.inc.php
+%%WWWDIR%%/adminer/lang/bn.inc.php
 %%WWWDIR%%/adminer/lang/ca.inc.php
 %%WWWDIR%%/adminer/lang/cs.inc.php
 %%WWWDIR%%/adminer/lang/de.inc.php
@@ -37,6 +38,7 @@
 %%WWWDIR%%/adminer/lang/fa.inc.php
 %%WWWDIR%%/adminer/lang/fr.inc.php
 %%WWWDIR%%/adminer/lang/hu.inc.php
+%%WWWDIR%%/adminer/lang/id.inc.php
 %%WWWDIR%%/adminer/lang/it.inc.php
 %%WWWDIR%%/adminer/lang/ja.inc.php
 %%WWWDIR%%/adminer/lang/lt.inc.php
@@ -47,8 +49,11 @@
 %%WWWDIR%%/adminer/lang/ru.inc.php
 %%WWWDIR%%/adminer/lang/sk.inc.php
 %%WWWDIR%%/adminer/lang/sl.inc.php
+%%WWWDIR%%/adminer/lang/sr.inc.php
 %%WWWDIR%%/adminer/lang/ta.inc.php
 %%WWWDIR%%/adminer/lang/tr.inc.php
+%%WWWDIR%%/adminer/lang/uk.inc.php
+%%WWWDIR%%/adminer/lang/xx.inc.php
 %%WWWDIR%%/adminer/lang/zh-tw.inc.php
 %%WWWDIR%%/adminer/lang/zh.inc.php
 %%WWWDIR%%/adminer/plugin.php
@@ -60,6 +65,7 @@
 %%WWWDIR%%/designs/jukin/adminer.css
 %%WWWDIR%%/designs/kahi/adminer.css
 %%WWWDIR%%/designs/konya/adminer.css
+%%WWWDIR%%/designs/ng9/adminer.css
 %%WWWDIR%%/designs/paranoiq/adminer.css
 %%WWWDIR%%/designs/pilot/adminer.css
 %%WWWDIR%%/designs/pokorny/adminer.css
@@ -80,7 +86,6 @@
 %%WWWDIR%%/adminer/static/editing.js
 %%WWWDIR%%/adminer/static/favicon.ico
 %%WWWDIR%%/adminer/static/functions.js
-%%WWWDIR%%/adminer/static/loader.gif
 %%WWWDIR%%/adminer/static/plus.gif
 %%WWWDIR%%/adminer/static/up.gif
 %%WWWDIR%%/adminer/table.inc.php
@@ -100,12 +105,13 @@
 %%WWWDIR%%/editor/index.php
 %%WWWDIR%%/editor/script.inc.php
 %%WWWDIR%%/editor/static/editing.js
-%%WWWDIR%%/externals/jsmin-php/jsmin.php
+%%WWWDIR%%/externals/JsShrink/jsShrink.php
 %%WWWDIR%%/externals/jush/jush.css
 %%WWWDIR%%/externals/jush/jush.js
 %%WWWDIR%%/lang.php
 %%WWWDIR%%/readme.txt
 %%WWWDIR%%/plugins/database-hide.php
+%%WWWDIR%%/plugins/dump-date.php
 %%WWWDIR%%/plugins/dump-xml.php
 %%WWWDIR%%/plugins/dump-zip.php
 %%WWWDIR%%/plugins/edit-calendar.php
@@ -170,6 +176,7 @@
 @dirrm %%WWWDIR%%/designs/jukin
 @dirrm %%WWWDIR%%/designs/kahi
 @dirrm %%WWWDIR%%/designs/konya
+@dirrm %%WWWDIR%%/designs/ng9
 @dirrm %%WWWDIR%%/designs/paranoiq
 @dirrm %%WWWDIR%%/designs/pilot
 @dirrm %%WWWDIR%%/designs/pokorny
@@ -177,6 +184,7 @@
 @dirrm %%WWWDIR%%/editor/include
 @dirrm %%WWWDIR%%/editor/static
 @dirrm %%WWWDIR%%/editor
+@dirrm %%WWWDIR%%/externals/JsShrink
 @dirrm %%WWWDIR%%/externals/jsmin-php
 @dirrm %%WWWDIR%%/externals/jush
 @dirrm %%WWWDIR%%/externals
