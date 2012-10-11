@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	201237
+DISTVERSION=	201240
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -91,10 +91,8 @@ post-build:
 
 post-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-down-root.so ${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/src/plugins/auth-pam/.libs/openvpn-plugin-auth-pam.so ${PREFIX}/lib/
-	${LN} -s ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-down-root.so ${PREFIX}/lib/openvpn-down-root.so
-	${LN} -s ${WRKSRC}/src/plugins/down-root/.libs/openvpn-plugin-auth-pam.so ${PREFIX}/lib/openvpn-auth-pam.so
+	${LN} -s ${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so ${PREFIX}/lib/openvpn-down-root.so
+	${LN} -s ${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so ${PREFIX}/lib/openvpn-auth-pam.so
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL \
