@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vtkmpeg2encode
-# Date created:		2007-12-20
-# Whom:			Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
-#
+# Created by: Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	vtkmpeg2encode
 PORTVERSION=	${VTK_VERSION}
@@ -21,7 +17,7 @@ NO_PACKAGE=	${NO_CDROM}
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_ARGS?=	-DBUILD_SHARED_LIBS:BOOL=ON
-VTK_VERSION=	5.8.0
+VTK_VERSION=	5.10.0
 
 MAN3=		vtkmpeg2encode.3
 
