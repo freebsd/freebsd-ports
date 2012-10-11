@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-epicalc
-# Date created:				Dec 14, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	epicalc
-PORTVERSION=	2.14.1.6
-PORTREVISION=	3
+PORTVERSION=	2.15.1.0
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
