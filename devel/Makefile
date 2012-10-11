@@ -189,6 +189,7 @@
     SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
+    SUBDIR += checkbashisms
     SUBDIR += checkheaders
     SUBDIR += chrpath
     SUBDIR += cil
