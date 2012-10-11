@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Taint-Runtime
-# Date created:		2006-07-12
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Taint-Runtime
 PORTVERSION=	0.03

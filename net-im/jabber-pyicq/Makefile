@@ -1,7 +1,3 @@
-# New ports collection makefile for:	Jabber Python ICQ Transport
-# Date created:				2005-06-07
-# Whom:					Renato Botelho <freebsd@galle.com.br>
-#
 # $FreeBSD$
 
 PORTNAME=	pyicq

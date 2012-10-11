@@ -1,9 +1,4 @@
-# New ports collection makefile for:	wbl
-# Date created:		2006-07-15
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wbl
 PORTVERSION=	1.1

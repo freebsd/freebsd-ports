@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-geoip
-# Date created:		2009-06-15
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	geoip
 PORTVERSION=	1.1.2

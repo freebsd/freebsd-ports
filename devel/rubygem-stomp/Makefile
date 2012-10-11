@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-stomp
-# Date created:		2009-06-17
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	stomp
 PORTVERSION=	1.1.10

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-echoe
-# Date created:		2009-06-15
-# Whom:			Renato Botelho <garga@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	echoe
 PORTVERSION=	4.5
