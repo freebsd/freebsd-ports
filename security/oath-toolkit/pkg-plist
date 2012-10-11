@@ -1,11 +1,26 @@
 bin/oathtool
+%%PSKC%%bin/pskctool
 include/liboath/oath.h
+%%PSKC%%include/pskc/container.h
+%%PSKC%%include/pskc/enums.h
+%%PSKC%%include/pskc/errors.h
+%%PSKC%%include/pskc/exports.h
+%%PSKC%%include/pskc/global.h
+%%PSKC%%include/pskc/keypackage.h
+%%PSKC%%include/pskc/pskc.h
+%%PSKC%%include/pskc/version.h
 lib/liboath.a
 lib/liboath.la
 lib/liboath.so
 lib/liboath.so.1
+%%PSKC%%lib/libpskc.a
+%%PSKC%%lib/libpskc.la
+%%PSKC%%lib/libpskc.so
+%%PSKC%%lib/libpskc.so.0
 lib/security/pam_oath.la
 lib/security/pam_oath.so
 libdata/pkgconfig/liboath.pc
+%%PSKC%%libdata/pkgconfig/libpskc.pc
 @dirrm include/liboath
+%%PSKC%%@dirrm include/pskc
 @dirrmtry lib/security
