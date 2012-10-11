@@ -1,12 +1,8 @@
-# New ports collection makefile for:	thingylaunch
-# Date created:				1 October 2009
-# Whom:					gahr
-#
+# Created by: Pietro Cerutti <gahr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thingylaunch
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.gahr.ch/${PORTNAME}/	\
    		${MASTER_SITE_LOCAL}/gahr/ \
