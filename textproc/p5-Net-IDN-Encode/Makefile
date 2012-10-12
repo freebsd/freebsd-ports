@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-IDN-Encode
-# Date created:				10 Dec 2010
-# Whom:					Timur Bakeyev <bat@cpan.org>
-#
+# Created by: Timur Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IDN-Encode
-PORTVERSION=	1.100
+PORTVERSION=	2.003
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +16,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 
 PERL_MODBUILD=	yes
 
-MAN3=		Net::IDN::Encode.3 Net::IDN::Punycode.3 Net::IDN::Punycode::PP.3
+MAN3=		Net::IDN::Encode.3 Net::IDN::Overview.3 Net::IDN::Punycode.3 \
+		Net::IDN::Punycode::PP.3 Net::IDN::Standards.3 \
+		Net::IDN::UTS46.3 Net::IDN::UTS46::_Mapping.3
 
 .include <bsd.port.mk>
