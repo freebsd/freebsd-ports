@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/rdflib/compare.py
 %%PYTHON_SITELIBDIR%%/rdflib/compare.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/compare.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/compat.py
+%%PYTHON_SITELIBDIR%%/rdflib/compat.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/compat.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/events.py
 %%PYTHON_SITELIBDIR%%/rdflib/events.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/events.pyo
@@ -91,6 +94,9 @@
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/rdfxml.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/rdfxml.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/rdfxml.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/trig.py
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/trig.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/trig.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/trix.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/trix.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/trix.pyo
