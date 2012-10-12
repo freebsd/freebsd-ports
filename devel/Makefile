@@ -2274,6 +2274,7 @@
     SUBDIR += p5-MooseX-Types-LoadableClass
     SUBDIR += p5-MooseX-Types-Path-Class
     SUBDIR += p5-MooseX-Types-Perl
+    SUBDIR += p5-MooseX-Types-PortNumber
     SUBDIR += p5-MooseX-Types-Set-Object
     SUBDIR += p5-MooseX-Types-Signal
     SUBDIR += p5-MooseX-Types-Structured
