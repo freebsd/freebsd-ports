@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-umemcache
-# Date created:		2012-08-18
-# Whom:			Kubilay Kocak <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs.freebsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	umemcache
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +12,10 @@ COMMENT=	Memcache client written in highly optimized C++ with Python bindings
 
 LICENSE=	BSD
 
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
-USE_PYTHON=	-2.7
+USE_DOS2UNIX=		yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
+USE_ZIP=		yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/umemcache.so
 
