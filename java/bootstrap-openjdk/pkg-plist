@@ -8,6 +8,7 @@
 %%JDK_ROOT%%/bin/jar
 %%JDK_ROOT%%/bin/jarsigner
 %%JDK_ROOT%%/bin/java
+%%CLIENTVM%%%%JDK_ROOT%%/bin/java-rmi.cgi
 %%JDK_ROOT%%/bin/javac
 %%JDK_ROOT%%/bin/javadoc
 %%JDK_ROOT%%/bin/javah
