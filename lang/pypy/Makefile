@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	pypy
-# Date created:				2011/05/17
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pypy
 DISTVERSION=	1.9
@@ -23,7 +19,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		ffi:${PORTSDIR}/devel/libffi
 
 OPTIONS_DEFINE=	SANDBOX
-SANDBOX_DESC=	"Translate a sandboxed pypy"
+SANDBOX_DESC=	Translate a sandboxed pypy
 
 BUILD_WRKSRC=	${WRKDIR}
 USE_BZIP2=	yes
