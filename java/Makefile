@@ -6,6 +6,7 @@
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej
+    SUBDIR += bootstrap-openjdk
     SUBDIR += bouncycastle
     SUBDIR += cacao
     SUBDIR += castor

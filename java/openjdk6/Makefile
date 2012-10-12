@@ -99,8 +99,7 @@ NOPRECIOUSMAKEVARS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk6 \
-		${LOCALBASE}/jdk1.6.0 \
-		${LOCALBASE}/diablo-jdk1.6.0
+		${LOCALBASE}/bootstrap-openjdk
 
 # do we have valid native jdk installed?
 .for CJDK in ${BOOTSTRAP_JDKS}
@@ -111,8 +110,8 @@ BOOTSTRAPJDKDIR=	${CJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 .endif
 
 MAKE_ENV=	LANG=C LC_ALL=C \

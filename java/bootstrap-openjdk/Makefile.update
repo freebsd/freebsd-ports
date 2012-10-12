@@ -1,0 +1,83 @@
+# $FreeBSD$
+
+JDK_NAME?=	openjdk
+JDK_PORT?=	openjdk6
+JDK_ROOT?=	bootstrap-${JDK_NAME}
+TARGET_OS?=	7
+
+.if !defined(PORTSDIR)
+.if exists(${.CURDIR}/../${JDK_PORT}/Makefile)
+PORTSDIR=	${.CURDIR}/../..
+.else
+PORTSDIR=	/usr/ports
+.endif
+.endif
+
+LOCALBASE?=	/usr/local
+
+.include "${PORTSDIR}/Mk/bsd.commands.mk"
+
+JDK_EXCLUDE?=	demo man sample src.zip
+JDK_PORTDIR!=	${REALPATH} ${PORTSDIR}/java/${JDK_PORT}
+JDK_IMAGEDIR?=	${JDK_PORTDIR}/work/build/bsd-${ARCH:S/i386/i586/}/j2sdk-image
+
+GET_REVISION=	${LOCALBASE}/bin/svnversion ${JDK_PORTDIR}
+TAR?=		/usr/bin/tar
+
+ARCH!=		${UNAME} -p
+BUILD_OS!=	${UNAME} -r | ${SED} -e 's/\..*//'
+PORTREVISION!=	${GET_REVISION} 2>/dev/null || ${TRUE}
+
+DISTDIR?=	${.CURDIR}
+DISTFILE=	${JDK_PORT}-${ARCH}-r${PORTREVISION}.tar.xz
+DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+MAKEFILE=	${.CURDIR}/Makefile
+
+TAR_EXCLUDE=
+.if !empty(JDK_EXCLUDE)
+.for i in ${JDK_EXCLUDE}
+TAR_EXCLUDE+=	--exclude ${i}
+.endfor
+.endif
+
+all:
+	@${ECHO} ""
+	@${ECHO} "=============================================================="
+	@${ECHO} ""
+.if ${BUILD_OS} > ${TARGET_OS}
+	@${ECHO} "We need FreeBSD ${TARGET_OS} but you seem to have ${BUILD_OS}."
+	@${ECHO} ""
+	@${ECHO} "=============================================================="
+	@${ECHO} ""
+	@${FALSE}
+.endif
+	@${ECHO} "Building ${DISTFILE}...."
+	@${ECHO} ""
+	@${ECHO} "Started at "`${SETENV} LANG=C date -u`"."
+	@${ECHO} ""
+	@${ECHO} "=============================================================="
+	@${ECHO} ""
+.if !defined(NO_BUILD)
+	@cd "${JDK_PORTDIR}" && ${MAKE} BATCH=yes
+.endif
+	@cd "${JDK_IMAGEDIR}" && \
+	${FIND} . \! -type d | ${SORT} | \
+	${TAR} -c -f - -T - -s '|^\./|${JDK_ROOT}/|' ${TAR_EXCLUDE} | \
+	${XZ_CMD} -9 -c > "${DISTDIR}/${DISTFILE}"
+	@${SED} -i.bak \
+	    's/^DISTVERSION_${ARCH}=.*/DISTVERSION_${ARCH}=	r${PORTREVISION}/' \
+	    "${MAKEFILE}"
+	@${MAKE} -f "${MAKEFILE}" makesum DISTDIR="${DISTDIR}" \
+	    DISTINFO_FILE="${DISTINFO_FILE}"
+	@${ECHO} ""
+	@${ECHO} "=============================================================="
+	@${ECHO} ""
+	@${ECHO} "${DISTFILE} was built successfully!"
+	@${ECHO} ""
+	@${ECHO} "Finished at "`${SETENV} LANG=C date -u`"."
+	@${ECHO} ""
+	@${ECHO} "You may clean up the build directory if everything looks okay,"
+	@${ECHO} "e.g., 'rm -fr ${JDK_PORTDIR}/work'."
+	@${ECHO} ""
+	@${ECHO} "=============================================================="
+	@${ECHO} ""
