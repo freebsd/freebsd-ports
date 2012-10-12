@@ -116,7 +116,7 @@ ECHO_CMD?=	echo				# Shell builtin
 ECHO_MSG?=	${ECHO_CMD}
 
 .elif !defined(_PKGTOOLSDEFINED)
-_PKGTOOLDEFINED=	yes
+_PKGTOOLSDEFINED=	yes
 .if defined(WITH_PKGNG)
 PKG_BIN?=		${LOCALBASE}/sbin/pkg
 PKG_CMD?=		${PKG_BIN} register
