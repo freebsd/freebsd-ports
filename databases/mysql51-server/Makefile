@@ -1,12 +1,8 @@
-# New ports collection makefile for:	MySQL-server
-# Date created:				28 Jan 2006
-# Whom:					Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.65
+PORTVERSION=	5.1.66
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
