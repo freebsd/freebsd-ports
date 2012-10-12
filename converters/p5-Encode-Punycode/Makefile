@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Encode-Punycode
-# Date created:				Dec 10, 2010
-# Whom:					Timur Bakeyev <timur@FreeBSD.org>
-#
+# Created by: Timur Bakeyev <timur@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-Punycode
-PORTVERSION=	1.000
+PORTVERSION=	1.001
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
