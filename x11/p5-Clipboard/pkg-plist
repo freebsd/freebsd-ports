@@ -4,7 +4,7 @@ bin/clipedit
 bin/clipfilter
 bin/clipjoin
 %%SITE_PERL%%/Clipboard.pm
-%%SITE_PERL%%/Clipboard/Pb.pm
+%%SITE_PERL%%/Clipboard/MacPasteboard.pm
 %%SITE_PERL%%/Clipboard/Win32.pm
 %%SITE_PERL%%/Clipboard/Xclip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clipboard/.packlist

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	x11/p5-Clipboard
-# Date created:				14 October 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Clipboard
-PORTVERSION=	0.09
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KING
