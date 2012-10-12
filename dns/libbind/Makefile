@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --with-randomdev=/dev/random
 
 OPTIONS_DEFINE=	IPV6 THREADS
+OPTIONS_DEFAULT=	IPV6 THREADS
 
 .include <bsd.port.pre.mk>
 
