@@ -1,12 +1,8 @@
-# New ports collection makefile for:	roundcube
-# Date created:				Oct 21 2005
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	roundcube
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
