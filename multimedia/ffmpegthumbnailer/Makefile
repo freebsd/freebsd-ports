@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ffmpegthumbnailer
-# Date created:		Mo 18 Feb 2008 06:11:13 CET
-# Whom:			Dierk Sacher <dierk@blaxxtarz.de>
-#
+# Created by: Dierk Sacher <dierk@blaxxtarz.de>
 # $FreeBSD$
 
 PORTNAME=	ffmpegthumbnailer
@@ -15,36 +12,37 @@ COMMENT=	Lightweight video thumbnailer that can be used by file managers
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		swscale:${PORTSDIR}/multimedia/ffmpeg \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig --enable-gio
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig _glib20
+USE_PKGCONFIG=	build
+USE_GNOME=	gnomehack _glib20
 USE_LDCONFIG=	yes
-
-WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	GNOME
 
-.include <bsd.port.pre.mk>
+MAN1=		ffmpegthumbnailer.1
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
 PKGNAMESUFFIX+=	-gnome
+USE_GNOME+=	gconf2
 GCONF_SCHEMAS=	ffmpegthumbnailer.schemas
 .endif
-
-MAN1=		ffmpegthumbnailer.1
 
 post-install:
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} install-pkgconfigDATA
 .if ${PORT_OPTIONS:MGNOME}
-	${INSTALL_DATA} ${FILESDIR}/${GCONF_SCHEMAS} ${LOCALBASE}/etc/gconf/schemas
-	@${SETENV} GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` \
-		gconftool-2 --makefile-install-rule ${LOCALBASE}/etc/gconf/schemas/${GCONF_SCHEMAS} \
-		> /dev/null
+	${MKDIR} ${PREFIX}/etc/gconf/schemas
+	${INSTALL_DATA} ${FILESDIR}/${GCONF_SCHEMAS} ${PREFIX}/etc/gconf/schemas
+	@${SETENV} GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:${PREFIX}/${GCONF_CONFIG_DIRECTORY} \
+		gconftool-2 --makefile-install-rule ${PREFIX}/etc/gconf/schemas/${GCONF_SCHEMAS} \
+		> /dev/null || ${TRUE}
 .endif
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
