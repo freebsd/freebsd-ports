@@ -1,12 +1,8 @@
-# New ports collection makefile for:	www/p5-HTML-Lint
-# Date created:				27 December 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Lint
-PORTVERSION=	2.10
+PORTVERSION=	2.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PETDANCE
@@ -25,6 +21,7 @@ PERL_CONFIGURE=	yes
 MAN3=	HTML::Lint.3 \
 	HTML::Lint::Error.3 \
 	HTML::Lint::HTML4.3 \
+	HTML::Lint::Parser.3 \
 	Test::HTML::Lint.3
 
 .include <bsd.port.mk>
