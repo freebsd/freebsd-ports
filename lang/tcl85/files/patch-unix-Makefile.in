@@ -143,7 +143,7 @@
  	fi
  
 +install-tm:
-+	@for i in tcl8 tcl8/8.3 tcl8/8.4  tcl8/8.4/platform tcl8/8.5 tcl8/8.6; \
++	@for i in tcl8 tcl8/8.4 tcl8/8.4/platform tcl8/8.5; \
 +	    do \
 +	    if [ ! -d "$(LIB_INSTALL_DIR)"/$$i ] ; then \
 +		echo "Making directory $(LIB_INSTALL_DIR)/$$i"; \
