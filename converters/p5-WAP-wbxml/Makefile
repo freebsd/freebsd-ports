@@ -1,12 +1,8 @@
-# New ports collection makefile for:	converters/p5-WAP-wbxml
-# Date created:				1 Aug 2006
-# Whom:					Timur I. Bakeyev <bat@cpan.org>
-#
+# Created by: Timur I. Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WAP-wbxml
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
