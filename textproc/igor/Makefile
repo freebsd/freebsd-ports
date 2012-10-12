@@ -3,7 +3,7 @@
 PORTNAME=	igor
 PORTVERSION=	1.330
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
+MASTER_SITES=	https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
 MAINTAINER=	wblock@FreeBSD.org
 COMMENT=	FreeBSD Documentation Project sanity check script
