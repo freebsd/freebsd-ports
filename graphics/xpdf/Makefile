@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xpdf
-# Date created:         02 Feb 1996
-# Whom:                 chuckr@glue.umd.edu
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xpdf
 PORTVERSION=	3.03
