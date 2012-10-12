@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-boolean
-# Date created:				2009-02-23
-# Whom:					Timur I. Bakeyev <bat@cpan.org>
-#
+# Created by: Timur I. Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=		boolean
-PORTVERSION=		0.23
+PORTVERSION=		0.28
 CATEGORIES=		devel perl5
 MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
