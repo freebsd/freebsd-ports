@@ -1,12 +1,7 @@
-# New ports collection makefile for:	igor
-# Date created: 			2012-02-03
-# Whom:					gjb@freebsd.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	igor
-PORTVERSION=	1.309
+PORTVERSION=	1.330
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
