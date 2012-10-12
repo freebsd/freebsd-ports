@@ -555,13 +555,16 @@ LDFLAGS+=		-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 .if ${OSVERSION} > 1000011
 # use jemalloc 3.0.0 API in libc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1
-.elif ${OSVERSION} > 800004
+.elif ${OSVERSION} > 701106
 MOZ_OPTIONS+=	--enable-jemalloc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1
-.elif ${OSVERSION} > 700101
-# has _pthread_mutex_init_calloc_cb but firefox crashes when jemalloc
-# configured without --enable-debug
 .endif
+.endif
+
+.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900045) \
+  || ${OSVERSION} < 802513
+MOZ_EXPORT+=	ac_cv_thread_keyword=no \
+				je_cv_tls_model=no
 .endif
 
 # Standard depends
