@@ -1,13 +1,8 @@
-# New ports collection makefile for:	pam_google_authenticator
-# Date created:				19 May 2011
-# Whom:					Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_google_authenticator
-PORTVERSION=	20120119
-PORTREVISION=	2
+PORTVERSION=	20120831
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/dumbbell
 DISTNAME=	google-authenticator-${PORTVERSION}
