@@ -1,18 +1,14 @@
-# New ports collection makefile for:	p5-Net-IDN-Nameprep
-# Date created:				10 Dec 2010
-# Whom:					Timur Bakeyev <bat@cpan.org>
-#
+# Created by: Timur Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IDN-Nameprep
-PORTVERSION=	1.100
+PORTVERSION=	1.101
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	timur@FreeBSD.org
-COMMENT=	normalization of domain names (Nameprep, RFC 3491)
+COMMENT=	Normalization of domain names (Nameprep, RFC 3491)
 
 RUN_DEPENDS=	p5-Unicode-Stringprep>=0:${PORTSDIR}/converters/p5-Unicode-Stringprep
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
