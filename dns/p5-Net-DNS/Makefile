@@ -1,5 +1,4 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
@@ -8,7 +7,7 @@ CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build
@@ -19,8 +18,8 @@ TEST_DEPENDS=	p5-Test-Pod>0:${PORTSDIR}/devel/p5-Test-Pod \
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on \
-		IDN "Add support for IDN domain names" off
+OPTIONS_DEFINE=	IPV6 IDN DOCS
+OPTIONS_DEFAULT=	IPV6
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-online-tests --no-IPv6-tests
@@ -58,18 +57,18 @@ PORTDOCS=	Changes README TODO
 RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 RUN_DEPENDS+=	p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
-.if defined(WITH_IDN)
+.if ${PORT_OPTIONS:MIDN}
 RUN_DEPENDS+=	p5-Net-LibIDN>0:${PORTSDIR}/dns/p5-Net-LibIDN
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
