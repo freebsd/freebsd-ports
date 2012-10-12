@@ -1,6 +1,6 @@
---- dsp.c.orig	Thu Aug 22 20:51:34 2002
-+++ dsp.c	Thu Aug 22 20:54:31 2002
-@@ -22,14 +22,14 @@
+--- dsp.c.orig	2012-10-10 23:29:01.000000000 +0800
++++ dsp.c	2012-10-10 23:30:54.000000000 +0800
+@@ -22,20 +22,20 @@
   *  linux_dsp.c - Support for the Linux DSP driver from the Voxware(C) Drivers.
   */
  
@@ -18,7 +18,14 @@
  #include "main.h"
  #include "dsp.h"
  
-@@ -68,11 +68,6 @@
+ static int audio;
+ 
+-int get_dsp_device(void)
++void get_dsp_device(void)
+ {
+   uint32 j;
+ 
+@@ -68,11 +68,6 @@ int get_dsp_device(void)
      printf("Unable to get audio blocksize\n");
      exit(1);
    }
@@ -30,7 +37,15 @@
    if (!(audio_start_buffer = (uint8 *) malloc(audio_buffer_size)))
    {
      printf("Could not get audio buffer memory!\n");
-@@ -93,5 +88,5 @@
+@@ -80,7 +75,6 @@ int get_dsp_device(void)
+   }
+   audio_end_buffer = &audio_start_buffer[audio_buffer_size];
+   audio_curptr = audio_start_buffer;  
+-  return;
+ }
+ 
+ void write_dsp_device(void *buf, int size) {
+@@ -93,5 +87,5 @@ void close_dsp_device() {
      return;
  }
  
