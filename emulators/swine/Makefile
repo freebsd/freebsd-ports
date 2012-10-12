@@ -7,7 +7,7 @@ CATEGORIES=	emulators deskutils python
 MASTER_SITES=	GH
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	QT4 Graphical Wine frontend
+COMMENT=	Qt4 graphical Wine frontend
 
 LICENSE=	GPLv2
 

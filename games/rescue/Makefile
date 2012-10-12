@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME:S/r/R/}_${PORTVERSION}
 DIST_SUBDIR=	java
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Action Adventure in Space
+COMMENT=	Action adventure in space
 
 LICENSE=	GPLv2
 
