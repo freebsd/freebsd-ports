@@ -30,7 +30,7 @@
 # reload	- hot-reconfig using "-sf" option (active sessions kept)
 # forcereload	- hot-reconfig using "-st" option (active sessions killed)
 # restart	- equiv to "stop" then "start"
-# checkconfig	- checks configuration file defined in haproxy_config
+# configtest	- checks configuration file defined in haproxy_config
 #
 #######
 
@@ -51,10 +51,10 @@ load_rc_config $name
 pidfile=${haproxy_pidfile}
 required_files=${haproxy_config}
 
-# Commands: start, stop, restart, reload, checkconfig
-extra_commands="reload checkconfig"
+# Commands: start, stop, restart, reload, configtest
+extra_commands="reload configtest"
 
-checkconfig_cmd="haproxy_checkconfig"
+configtest_cmd="haproxy_checkconfig"
 reload_cmd="haproxy_reload"
 
 haproxy_reload()
