@@ -157,6 +157,7 @@
     SUBDIR += stella
     SUBDIR += stonx
     SUBDIR += svr4_base
+    SUBDIR += swine
     SUBDIR += tiemu2
     SUBDIR += tiemu3
     SUBDIR += tilem
