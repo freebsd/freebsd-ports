@@ -24,7 +24,8 @@ USE_XORG=	x11 xft
 MAN1=		bsetbg.1 bsetroot.1
 PORTDOCS=	README.bbtools README.bsetbg
 
-OPTIONS=	TOOLS_ONLY "Do not install window manager, only tools" off
+OPTIONS_DEFINE=		TOOLS_ONLY
+TOOLS_ONLY_DESC=	Do not install window manager, only tools
 
 .include <bsd.port.options.mk>
 
