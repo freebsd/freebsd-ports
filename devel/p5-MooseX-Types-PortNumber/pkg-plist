@@ -1,0 +1,7 @@
+%%SITE_PERL%%/MooseX/Types/PortNumber.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/PortNumber/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/PortNumber
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Types
+@dirrmtry %%SITE_PERL%%/MooseX
