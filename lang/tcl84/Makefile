@@ -31,7 +31,8 @@ PLIST_SUB=	TCL_VER="${TCL_VER}" SHORT_TCL_VER="${SHORT_TCL_VER}"
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS)
-OPTIONS=	TCL84_MAN "Install tcl 8.4 function manpages" off
+OPTIONS_DEFINE=	TCL84_MAN
+TCL84_MAN_DESC=	Install tcl 8.4 function manpages
 .else
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -53,7 +54,7 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 .else
 CONFIGURE_ARGS+=	--disable-threads
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTCL84_MAN}
 
 MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	Async.3 BackgdErr.3 Backslash.3 BoolObj.3 ByteArrObj.3 CallDel.3 \
@@ -661,14 +662,14 @@ post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
-.if !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL84_MAN)
+.if !defined(BUILDING_TCL_THREADS) && ${PORT_OPTIONS:MTCL84_MAN}
 . for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 
-.endif # !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL84_MAN)
+.endif # !defined(BUILDING_TCL_THREADS) && ${PORT_OPTIONS:MTCL84_MAN}
 
 .endif # !defined(NO_INSTALL_MANPAGES)
 
