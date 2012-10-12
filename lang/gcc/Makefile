@@ -1,3 +1,4 @@
+# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gcc
@@ -51,6 +52,7 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
+LANGUAGES:=	c,c++,objc,fortran
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
@@ -59,7 +61,6 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-bootstrap \
 		--disable-nls \
-		--enable-languages=c,c++,objc,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -87,9 +88,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
+# Release tarballs (as opposed to snapshots) always carry this.
+#.if ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
 INFO+=		gcc${SUFFIX}/libquadmath
-.endif
+#.endif
 
 .if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	ecj-4.5.jar
@@ -99,7 +101,7 @@ DISTFILES+=	${ECJ_JAR}:ecj
 EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-CONFIGURE_ARGS+=--enable-languages=c,c++,objc,fortran,java
+LANGUAGES:=	${LANGUAGES},java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
@@ -136,9 +138,10 @@ post-patch::
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
 .endif
+CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
 pre-everything::
-	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
+	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
