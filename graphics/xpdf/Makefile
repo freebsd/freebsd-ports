@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -24,7 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
-		--with-freetype2-includes="${LOCALBASE}/include/freetype2/" \
+		--with-freetype2-includes="${LOCALBASE}/include/" \
 		--bindir="${PREFIX}/libexec/xpdf"
 
 OPTIONS=	LIBPAPER "Enable libpaper"      off     \
@@ -65,7 +65,6 @@ PLIST_SUB+=		X11="@comment "
 .else
 CONFIGURE_ARGS+=	--with-x
 USE_MOTIF=		yes
-MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""
 .endif
 
