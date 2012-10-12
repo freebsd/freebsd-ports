@@ -791,6 +791,7 @@
     SUBDIR += railroad-rampage
     SUBDIR += redeclipse
     SUBDIR += reminiscence
+    SUBDIR += rescue
     SUBDIR += rezerwar
     SUBDIR += rfksay
     SUBDIR += rftg
