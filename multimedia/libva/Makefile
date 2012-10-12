@@ -2,6 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 

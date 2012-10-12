@@ -1,6 +1,14 @@
 --- test/v4l_h264/encode/capture.cpp.orig	2012-10-04 15:30:51.000000000 +0200
-+++ test/v4l_h264/encode/capture.cpp	2012-10-08 22:31:01.067189237 +0200
-@@ -37,7 +37,11 @@
++++ test/v4l_h264/encode/capture.cpp	2012-10-11 17:57:55.361081933 +0200
+@@ -30,6 +30,7 @@
+ */
+ 
+ #include <cstdlib> /* EXIT_FAILURE, EXIT_SUCCESS */
++#include <cstdio> /* printf */
+ #include <string>
+ #include <cstring> /* strerror() */
+ #include <cassert>
+@@ -37,7 +38,11 @@
  #include <fcntl.h> /* low-level i/o */
  #include <errno.h>
  #include <unistd.h>
@@ -12,7 +20,7 @@
  #include <sys/stat.h>
  #include <sys/mman.h>
  #include <sys/ioctl.h>
-@@ -451,10 +455,15 @@
+@@ -451,10 +456,15 @@
      }
      for (n_buffers = 0; n_buffers < 4; ++n_buffers) {
          buffers[n_buffers].length = buffer_size;
