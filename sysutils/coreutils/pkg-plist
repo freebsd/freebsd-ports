@@ -198,8 +198,6 @@ libexec/coreutils/glibstdbuf.so
 %%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sk/LC_TIME
 %%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw/LC_TIME
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru/LC_TIME
 %%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ro/LC_TIME

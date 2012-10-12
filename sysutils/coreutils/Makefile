@@ -1,13 +1,9 @@
-# New ports collection makefile for:	coreutils
-# Date created:				18 November 2003
-# Whom:					Jason Harris <jharris@widomaker.com>
-#
+# Created by: Jason Harris <jharris@widomaker.com>
 # $FreeBSD$
-#
 
 PORTNAME=	coreutils
 PORTVERSION=	8.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
