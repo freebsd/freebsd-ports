@@ -1,12 +1,8 @@
-# New ports collection makefile for:	MySQL-server
-# Date created:				28 Jan 2006
-# Whom:					Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.27
+PORTVERSION=	5.5.28
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -19,9 +15,12 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/mysql55-client
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+NO_OPTIONS_SORT=yes
 
-OPTIONS=	OPENSSL "Enable SSL support" on \
-		FASTMTX "Replace mutexes with spinlocks" off
+OPTIONS_DEFINE=	SSL FASTMTX
+OPTIONS_DEFAULT=SSL
+
+FASTMTX_DESC=	Replace mutexes with spinlocks
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
@@ -47,10 +46,10 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MSSL}
 CMAKE_ARGS+=	-DWITH_SSL=bundled
 .endif
-.if defined(WITH_FASTMTX)
+.if ${PORT_OPTIONS:MFASTMTX}
 CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 .endif
 
