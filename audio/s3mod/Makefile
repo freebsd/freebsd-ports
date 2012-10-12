@@ -1,9 +1,5 @@
-# New ports collection makefile for:    s3mod
-# Date created:         9 March 1995
-# Whom:                 ugen
-#
+# Created by: ugen
 # $FreeBSD$
-#
 
 PORTNAME=	s3mod
 PORTVERSION=	1.09
