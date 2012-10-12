@@ -17,18 +17,17 @@ MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --with-randomdev=/dev/random
 
-OPTIONS=	IPV6 "Compile with IPv6 support" on \
-		THREADS	"Compile with thread support" on
+OPTIONS_DEFINE=	IPV6 THREADS
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
