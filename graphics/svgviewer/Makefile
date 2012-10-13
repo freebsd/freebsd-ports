@@ -1,9 +1,4 @@
-# New ports collection makefile for:    svgviewer
-# Date created:         14 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	svgviewer
 PORTVERSION=	0.2.0

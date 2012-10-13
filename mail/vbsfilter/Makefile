@@ -1,9 +1,4 @@
-# New ports collection makefile for:	vbsfilter
-# Date created:				10.Mar 2001
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	vbsfilter
 PORTVERSION=	1.15

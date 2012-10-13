@@ -1,9 +1,4 @@
-# New ports collection makefile for:    xymon-client
-# Date created:         24 Jan 2008
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.10

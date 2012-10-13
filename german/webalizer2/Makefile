@@ -1,7 +1,3 @@
-# New ports collection makefile for:	webalizer2
-# Date created:		02.Jun 1998
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 CATEGORIES=	german

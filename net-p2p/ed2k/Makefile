@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ed2k hash tool
-# Date created:				Mi  9 Nov 2005 06:52:38 CET
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ed2k
 PORTVERSION=	1.4

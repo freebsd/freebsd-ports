@@ -1,9 +1,4 @@
-# New ports collection makefile for:	noattach
-# Date created:				10. Feb 2002
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	noattach
 PORTVERSION=	1.2

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    objectivelib
-# Date created:         1 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	objectivelib
 PORTVERSION=	1.0.0

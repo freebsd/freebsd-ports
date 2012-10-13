@@ -1,9 +1,4 @@
-# New ports collection makefile for:    freetar
-# Date created:         3 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	freetar
 PORTVERSION=	0.9

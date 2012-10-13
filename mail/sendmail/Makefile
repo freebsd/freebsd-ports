@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sendmail
-# Date created:				20 Apr 2000
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sendmail
 PORTVERSION=	8.14.5

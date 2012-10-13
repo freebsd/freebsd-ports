@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gorm
-# Date created:         15 Mar 2002
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gorm
 PORTVERSION=	1.2.16

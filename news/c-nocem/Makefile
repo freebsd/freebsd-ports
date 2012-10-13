@@ -1,7 +1,3 @@
-# New ports collection makefile for:	c-nocem
-# Date created:		19.May 1999
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	c-nocem

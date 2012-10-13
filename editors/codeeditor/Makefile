@@ -1,9 +1,4 @@
-# New ports collection makefile for:    codeeditor
-# Date created:         3 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	codeeditor
 PORTVERSION=	0.4.4

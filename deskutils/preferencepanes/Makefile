@@ -1,9 +1,4 @@
-# New ports collection makefile for:    preferencepanes
-# Date created:         29 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	preferencepanes
 PORTVERSION=	1.1.0

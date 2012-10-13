@@ -1,9 +1,4 @@
-# New ports collection makefile for:	spamilter
-# Date created:				21. Apr 2004
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	spamilter
 PORTVERSION=	0.60

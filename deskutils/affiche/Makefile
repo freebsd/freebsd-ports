@@ -1,9 +1,4 @@
-# New ports collection makefile for:    affiche
-# Date created:         21 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	affiche
 PORTVERSION=	0.6.0

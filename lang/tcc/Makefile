@@ -1,9 +1,4 @@
-# New ports collection makefile for:    tcc
-# Date created:         24 Jun 2008
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tcc
 PORTVERSION=	0.9.25

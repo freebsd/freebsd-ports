@@ -1,9 +1,4 @@
-# New ports collection makefile for:    helpviewer
-# Date created:         30 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	helpviewer
 PORTVERSION=	0.3

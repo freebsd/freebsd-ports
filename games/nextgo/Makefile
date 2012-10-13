@@ -1,9 +1,4 @@
-# New ports collection makefile for:    nextgo
-# Date created:         05 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nextgo
 PORTVERSION=	3.0

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    digibux
-# Date created:         16 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	digibux
 PORTVERSION=	1.0.4

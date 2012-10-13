@@ -1,7 +1,3 @@
-# New ports collection makefile for:	XChat ruby
-# Date created:		21 Jun 2008
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	ruby

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	cups-image
-# Date created:		16.May 2009
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 CATEGORIES=	print

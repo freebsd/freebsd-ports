@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mupen64-input
-# Date created:		11.Aug 2004
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 PKGNAMESUFFIX=	-input

@@ -1,7 +1,3 @@
-# Ports collection makefile for:	htmltools
-# Date created:				16 feb 2007
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	htmltools

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    objcunit
-# Date created:         21 Jan 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	objcunit
 PORTVERSION=	1.2

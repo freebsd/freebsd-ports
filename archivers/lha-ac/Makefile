@@ -1,9 +1,4 @@
-# New ports collection makefile for:    lha-autoconf
-# Date created:         24 Sep 2004
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lha
 PORTVERSION=	1.14i

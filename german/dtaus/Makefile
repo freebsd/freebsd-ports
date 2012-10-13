@@ -1,9 +1,4 @@
-# New ports collection makefile for:    dtaus
-# Date created:         12 Jan 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dtaus
 PORTVERSION=	0.9

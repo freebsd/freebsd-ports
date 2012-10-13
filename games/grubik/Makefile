@@ -1,9 +1,4 @@
-# New ports collection makefile for:    grubik
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	grubik
 PORTVERSION=	0.1

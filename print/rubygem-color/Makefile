@@ -1,7 +1,3 @@
-# Ports collection makefile for:	gem-color
-# Date created:				29 Mrz 2007
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	color

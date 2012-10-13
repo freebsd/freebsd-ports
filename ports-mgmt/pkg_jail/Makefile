@@ -1,9 +1,4 @@
-# Ports collection makefile for:  pkg_jail
-# Date created:			  4 Aug 2006
-# Whom:				  dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_jail
 PORTVERSION=	1.71

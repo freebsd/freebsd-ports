@@ -1,9 +1,4 @@
-# New ports collection makefile for:    poe
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	poe
 PORTVERSION=	0.5.1

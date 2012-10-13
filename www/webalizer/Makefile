@@ -1,9 +1,4 @@
-# New ports collection makefile for:	webalizer
-# Date created:		02.Jun 1998
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.5

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	raysfilter
-# Date created:				19.Dec 2001
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	raysfilter
 PORTVERSION=	1.14

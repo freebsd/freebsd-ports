@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gperf
-# Date created:         19.04.1999
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gperf
 PORTVERSION=	3.0.3

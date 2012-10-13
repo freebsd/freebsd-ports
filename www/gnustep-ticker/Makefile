@@ -1,9 +1,4 @@
-# New ports collection makefile for:    ticker
-# Date created:         29 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ticker
 PORTVERSION=	0.1

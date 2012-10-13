@@ -1,9 +1,4 @@
-# New ports collection makefile for:    camerakit
-# Date created:         18 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	camerakit
 PORTVERSION=	0.0.1

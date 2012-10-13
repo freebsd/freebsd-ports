@@ -1,9 +1,4 @@
-# New ports collection makefile for:    localize
-# Date created:         3 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	localize
 PORTVERSION=	0.0.1

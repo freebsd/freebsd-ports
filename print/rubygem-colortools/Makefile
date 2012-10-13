@@ -1,7 +1,3 @@
-# Ports collection makefile for:	gem-colortools
-# Date created:				09 nov 2005
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	colortools

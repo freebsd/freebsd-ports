@@ -1,9 +1,4 @@
-# New ports collection makefile for:	projectmanager
-# Date created:         28 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	projectmanager
 PORTVERSION=	0.2

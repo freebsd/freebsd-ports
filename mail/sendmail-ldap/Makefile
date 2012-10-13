@@ -1,7 +1,3 @@
-# New ports collection makefile for:	sendmail-ldap
-# Date created:		15.Jun 2001
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTREVISION=	2

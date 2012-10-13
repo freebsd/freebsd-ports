@@ -1,9 +1,4 @@
-# New ports collection makefile for:	frodo
-# Date created:		11 Dez 1997
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    polarssl
-# Date created:         10 Dec 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	polarssl
 PORTVERSION=	1.1.4

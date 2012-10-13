@@ -1,9 +1,4 @@
-# New ports collection makefile for:    expense
-# Date created:         30 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	expense
 PORTVERSION=	0.1

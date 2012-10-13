@@ -1,9 +1,4 @@
-# New ports collection makefile for:	highlighterkit
-# Date created:         28 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	highlighterkit
 PORTVERSION=	0.1

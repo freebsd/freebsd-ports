@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gnustep-examples
-# Date created:         15 Mar 2003
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gnustep-examples
 PORTVERSION=	1.3.0

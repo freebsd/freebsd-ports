@@ -1,7 +1,3 @@
-# New ports collection makefile for:	webalizer
-# Date created:		21.Nov.2002
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 CATEGORIES=	portuguese

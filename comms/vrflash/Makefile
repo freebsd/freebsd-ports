@@ -1,9 +1,4 @@
-# New ports collection makefile for:	vrflash
-# Date created:				07.Jul 2001
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	vrflash
 PORTVERSION=	0.20

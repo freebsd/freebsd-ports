@@ -1,9 +1,4 @@
-# New ports collection makefile for:	performance
-# Date created:         28 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	performance
 PORTVERSION=	0.3.2

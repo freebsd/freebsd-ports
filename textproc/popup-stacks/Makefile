@@ -1,9 +1,4 @@
-# New ports collection makefile for:    popup
-# Date created:         18 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	popup
 PORTVERSION=	1.0

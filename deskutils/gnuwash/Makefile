@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gnuwash
-# Date created:         16 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gnuwash
 PORTVERSION=	0.1

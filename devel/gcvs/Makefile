@@ -1,7 +1,3 @@
-# New ports collection makefile for:	gvcs
-# Date Created:				28 Mar 2001
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 #    $MCom: ports/devel/gcvs/Makefile,v 1.1 2006/10/07 17:10:25 ahze Exp $
 

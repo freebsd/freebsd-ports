@@ -1,9 +1,4 @@
-# New ports collection makefile for:    batmon
-# Date created:         05 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	batmon
 PORTVERSION=	0.6

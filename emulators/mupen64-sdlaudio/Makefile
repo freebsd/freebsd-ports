@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mupen64-sdlaudio
-# Date created:		12.Aug 2004
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTVERSION=	1.3
 PORTREVISION=	3

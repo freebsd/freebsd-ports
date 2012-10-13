@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pathalias
-# Date created:		03 Dec 1997
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pathalias
 PORTVERSION=	9.16

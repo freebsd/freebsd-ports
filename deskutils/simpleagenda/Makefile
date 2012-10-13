@@ -1,9 +1,4 @@
-# New ports collection makefile for:    simpleagenda
-# Date created:         16 Jan 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	simpleagenda
 PORTVERSION=	0.42

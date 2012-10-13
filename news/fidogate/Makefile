@@ -1,9 +1,4 @@
-# New ports collection makefile for:    fidogate
-# Date created:         02 Dez 1997
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fidogate
 PORTVERSION=	4.4.10

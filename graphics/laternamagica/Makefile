@@ -1,9 +1,4 @@
-# New ports collection makefile for:    laternamagica
-# Date created:         30 Nov 2008
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	laternamagica
 PORTVERSION=	0.4

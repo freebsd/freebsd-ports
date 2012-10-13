@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mupen64-glide
-# Date created:		11.Aug 2004
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTVERSION=	0.7
 PORTREVISION=	7

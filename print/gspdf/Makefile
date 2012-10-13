@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gspdf
-# Date created:         21 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gspdf
 PORTVERSION=	0.5

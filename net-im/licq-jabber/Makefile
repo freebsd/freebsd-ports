@@ -1,9 +1,4 @@
-# New ports collection makefile for:    licq-jabber
-# Date created:                         27 Nov 2010
-# Whom:                                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jabber
 PORTVERSION=	${CONSOLE_LICQ_VER}
