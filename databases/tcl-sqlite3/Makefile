@@ -1,18 +1,14 @@
-# New ports collection makefile for:	sqlite3-tea
-# Date created:		2011-03-23
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.14
+PORTVERSION=	3.7.14.1
 CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/ http://www3.sqlite.org/
 PKGNAMEPREFIX=	tcl-
-DISTNAME=	sqlite-autoconf-3071400
+DISTNAME=	sqlite-autoconf-3071401
 
-MAINTAINER=	pavelivolkov@googlemail.com
+MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
 
 LICENSE=	public
