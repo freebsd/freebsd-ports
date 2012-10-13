@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	mecab
-PORTVERSION=	0.98
+PORTVERSION=	0.994
 CATEGORIES=	japanese python textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-python/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Python bindings for MeCab
 
 BUILD_DEPENDS=	swig>=1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
