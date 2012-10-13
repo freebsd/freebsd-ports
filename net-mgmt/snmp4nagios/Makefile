@@ -22,7 +22,10 @@ GNU_CONFIGURE=	yes
 NAGIOSWWWDIR?=	www/nagios
 NAGIOSDIR?=	/var/spool/nagios
 
-OPTIONS=	RRDTOOL "Build with rrdtool support" OFF
+OPTIONS_DEFINE=	RRDTOOL
+RRDTOOL_DESC=	Build with rrdtool support
+
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--bindir=${PREFIX}/libexec/nagios \
@@ -39,7 +42,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_RRDTOOL)
+.if ${PORT_OPTIONS:MRRDTOOL}
 LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=--with-rrd
 PLIST_SUB+=	RRD=""
