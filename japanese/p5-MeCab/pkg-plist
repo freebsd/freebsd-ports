@@ -3,5 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab/MeCab.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab/MeCab.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab
-%%PORTDOCS%%%%EXAMPLESDIR%%/test.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
