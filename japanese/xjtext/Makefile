@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xjtext
-# Date created:		8 July 2000
-# Whom:			sada
-#
+# Created by: sada
 # $FreeBSD$
-#
 
 PORTNAME=	xjtext
 PORTVERSION=	1.3
@@ -15,26 +11,26 @@ DISTNAME=	XJTEXT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text viewer for Japanese vertical writings
 
-BROKEN=		does not compile
-
 USE_BISON=	build
 USE_GNOME=	imlib
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	bin/xjtext
+
 PORTDOCS=	README.txt
 PORTEXAMPLES=	FSS README YAMA Ao.png Back2.png Brown.png Royal.png Royal2.png
+PLIST_FILES=	bin/xjtext
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xjtext ${PREFIX}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
