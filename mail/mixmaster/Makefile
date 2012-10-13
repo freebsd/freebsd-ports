@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mixmaster-update.pl.gz allpingers.txt.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A cryptographically secure anonymous remailer
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
