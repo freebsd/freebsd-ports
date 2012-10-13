@@ -1,9 +1,5 @@
-# New ports collection makefile for: openssh
-# Date created:  18 Mar 1999
-# Whom:   dwcjr@inethouston.net
-#
+# Created by: dwcjr@inethouston.net
 # $FreeBSD$
-#
 
 PORTNAME=	openssh
 DISTVERSION=	5.8p2
@@ -39,19 +35,20 @@ ETCOLD=			${PREFIX}/etc
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
-OPTIONS=	PAM		"Enable pam(3) support"				on \
-		TCP_WRAPPERS	"Enable tcp_wrappers support"			on \
-		LIBEDIT		"Enable readline support to sftp(1)"		on \
-		SUID_SSH	"Enable suid SSH (Recommended off)"		off \
-		BSM		"Enable OpenBSM Auditing"			off \
-		KERBEROS	"Enable kerberos (autodetection)"		off \
-		KERB_GSSAPI	"Enable Kerberos/GSSAPI patch (req: GSSAPI)"	off \
-		OPENSSH_CHROOT	"Enable CHROOT support"				off \
-		HPN		"Enable HPN-SSH patch"				off \
-		LPK		"Enable LDAP Public Key (LPK) patch"		off \
-		X509		"Enable x509 certificate patch"			off \
-		FILECONTROL	"Enable file control patch (broken)"		off \
-		OVERWRITE_BASE	"OpenSSH overwrite base"			off
+OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT SUID_SSH BSM KERBEROS \
+			KERB_GSSAPI OPENSSH_CHROOT HPN LPK X509 FILECONTROL \
+			OVERWRITE_BASE
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS
+TCP_WRAPPERS_DESC=	Enable tcp_wrappers support
+SUID_SSH_DESC=		Enable suid SSH (Recommended off)
+BSM_DESC=		Enable OpenBSM Auditing
+KERB_GSSAPI_DESC=	Enable Kerberos/GSSAPI patch (req: GSSAPI)
+OPENSSH_CHROOT_DESC=	Enable CHROOT support
+HPN_DESC=		Enable HPN-SSH patch
+LPK_DESC=		Enable LDAP Public Key (LPK) patch
+X509_DESC=		Enable x509 certificate patch
+FILECONTROL_DESC=	Enable file control patch (broken)
+OVERWRITE_BASE_DESC=	OpenSSH overwrite base
 
 .include <bsd.port.pre.mk>
 
@@ -63,42 +60,42 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
 CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 .endif
 
-.if defined(WITH_X509) && defined(WITH_HPN)
+.if ${PORT_OPTIONS:MX509} && ${PORT_OPTIONS:MHPN}
 BROKEN=		X509 patches and HPN patches do not apply cleanly together
 .endif
 
-.if defined(WITH_X509) && defined(WITH_KERB_GSSAPI)
+.if ${PORT_OPTIONS:MX509} && ${PORT_OPTIONS:MKERB_GSSAPI}
 BROKEN=		X509 patch incompatible with KERB_GSSAPI patch
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
-WITH_OVERWRITE_BASE=	yes
+PORT_OPTIONS+=		OVERWRITE_BASE
 .endif
 
-.if !defined(WITHOUT_PAM) && exists(/usr/include/security/pam_modules.h)
+.if ${PORT_OPTIONS:MPAM} && exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-.if !defined(WITHOUT_TCP_WRAPPERS) && exists(/usr/include/tcpd.h)
+.if ${PORT_OPTIONS:MTCP_WRAPPERS} && exists(/usr/include/tcpd.h)
 CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
-.if !defined(WITHOUT_LIBEDIT)
+.if ${PORT_OPTIONS:MLIBEDIT}
 CONFIGURE_ARGS+=	--with-libedit
 .endif
 
-.if !defined(WITH_SUID_SSH)
+.if !${PORT_OPTIONS:MSUID_SSH}
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
-.if defined(WITH_BSM)
+.if ${PORT_OPTIONS:MBSM}
 CONFIGURE_ARGS+=	--with-audit=bsm
 .endif
 
-.if defined(WITH_KERBEROS)
+.if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=	--with-kerberos5
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
-.if defined(WITH_KERB_GSSAPI)
+.if ${PORT_OPTIONS:MKERB_GSSAPI}
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
 PATCHFILES+=		openssh-5.7p1-gsskex-all-20110125.patch
 PATCH_DIST_STRIP=
@@ -113,11 +110,11 @@ LDFLAGS=		# empty
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 .endif
 
-.if defined(WITH_OPENSSH_CHROOT)
+.if ${PORT_OPTIONS:MOPENSSH_CHROOT}
 CFLAGS+=		-DCHROOT
 .endif
 
-.if defined(WITH_HPN)
+.if ${PORT_OPTIONS:MHPN}
 PATCH_SITES+=		http://www.shatow.net/freebsd/
 PATCHFILES+=		${PORTNAME}-5.8p1-hpn13v11.diff.gz
 PATCH_DIST_STRIP=
@@ -126,7 +123,7 @@ PATCH_DIST_STRIP=
 # See http://code.google.com/p/openssh-lpk/wiki/Main
 # and svn repo described here:
 # http://code.google.com/p/openssh-lpk/source/checkout
-.if defined(WITH_LPK)
+.if ${PORT_OPTIONS:MLPK}
 EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.8p2.patch
 USE_OPENLDAP=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -137,7 +134,7 @@ CONFIGURE_ARGS+=	--with-ldap=yes \
 .endif
 
 # See http://www.roumenpetrov.info/openssh/
-.if defined(WITH_X509)
+.if ${PORT_OPTIONS:MX509}
 PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-7.0/
 PATCHFILES+=		${PORTNAME}-5.8p1+x509-7.0.diff.gz
 PATCH_DIST_STRIP=	-p1
@@ -148,14 +145,14 @@ PLIST_SUB+=		X509="@comment "
 .endif
 
 # See http://sftpfilecontrol.sourceforge.net/
-.if defined(WITH_FILECONTROL)
+.if ${PORT_OPTIONS:MFILECONTROL}
 # Latest sftpfilecontrol patch is against 5.4p1 which does not apply
 # cleanly against 5.8p2, but it's close.
 BROKEN=			latest upstream sftp file control public key patch is not up to date for OpenSSH 5.8p2
 EXTRA_PATCHES+=		${FILESDIR}/openssh-${DISTVERSION}.sftpfilecontrol-v1.3.patch
 .endif
 
-.if defined(WITH_OVERWRITE_BASE)
+.if ${PORT_OPTIONS:MOVERWRITE_BASE}
 WITH_OPENSSL_BASE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 EMPTYDIR=		/var/empty
@@ -199,7 +196,7 @@ post-patch:
 		${WRKSRC}/version.h
 	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
 		${WRKSRC}/version.h
-.if defined(WITH_HPN)
+.if ${PORT_OPTIONS:MHPN}
 	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
 		${WRKSRC}/version.h
 .endif
