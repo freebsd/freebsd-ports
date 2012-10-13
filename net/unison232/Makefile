@@ -1,13 +1,9 @@
-# New ports collection makefile for: unison
-# Date created:		4 October 2000
-# Whom:			Dan Pelleg <dpelleg+unison@cs.cmu.edu>
-#
+# Created by: Dan Pelleg <dpelleg+unison@cs.cmu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
@@ -17,7 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	mandree@FreeBSD.org
 # Implicit approval for port changes granted to Guido Falsi <madpilot@FreeBSD.org>
-COMMENT=	A user-level file synchronization tool
+COMMENT=	User-level file synchronization tool
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
@@ -44,12 +40,14 @@ EXTRA_DOCS=	${PORTNAME}-${PORTVERSION}-manual.html \
 MAKE_ARGS+=	UISTYLE=gtk2
 PLIST_SUB+=	TEXT=""
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
+		icotool:${PORTSDIR}/graphics/icoutils
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 CONFLICTS+=	ocaml-nox11*
 USE_GNOME=	desktopfileutils
 SUB_FILES+=	${PORTNAME}.desktop
+PLIST_FILES+=	share/pixmaps/${PORTNAME}${PKGNAMESUFFIX}.png
 .else
 MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
@@ -62,6 +60,7 @@ post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
 	${GMAKE} -C ${WRKSRC} UISTYLE=text NAME=${PORTNAME}-text
+	@cd ${WRKSRC}/win32rc && ${LOCALBASE}/bin/icotool -x U.ico
 .endif
 
 do-install:
@@ -78,6 +77,7 @@ post-install:
 	${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}/${PORTNAME}${PKGNAMESUFFIX}.desktop
 	-update-desktop-database > /dev/null
+	@${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${PREFIX}/share/pixmaps/${PORTNAME}${PKGNAMESUFFIX}.png
 .endif
 
 .include <bsd.port.mk>

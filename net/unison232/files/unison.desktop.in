@@ -7,6 +7,7 @@ Terminal=false
 StartupNotify=true
 Categories=GTK;Utility;
 Exec=unison232
+Icon=unison232.png
 Comment=Synchronize files (directories) over different disks (hosts)
 Comment[de]=Dateien oder Verzeichnisse über Festplatten oder Computer hinweg abgleichen
 Comment[ru]=Синхронизация файлов (каталогов) на нескольких дисках (компьютерах)
