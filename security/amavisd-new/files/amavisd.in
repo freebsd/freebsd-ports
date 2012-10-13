@@ -36,7 +36,7 @@ if [ ${amavisd_ram} ];then
   echo "WARNING: using ramdisk is reported to be unstable and"
   echo "thus it is highly recommended to be turned off."
   echo "========================================================"
-  df /var/amavis/tmp | grep -E '^(/dev/md|tmpfs)' > /dev/null
+  df %%AMAVISDIR%%/tmp | grep -E '^(/dev/md|tmpfs)' > /dev/null
   if [ $? -eq 1 ]; then
     mdmfs -s ${amavisd_ram} -p 750 -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
   fi
