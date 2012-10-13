@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-firebug
-# Date created:			5 July 2007
-# Whom:				Lapo Luchini <lapo@lapo.it>
-#
+# Created by: Lapo Luchini <lapo@lapo.it>
 # $FreeBSD$
-#
 
 PORTNAME=	firebug
-PORTVERSION=	1.10.3
+PORTVERSION=	1.10.4
 DISTVERSIONSUFFIX=	-fx
 PORTEPOCH=	3
 CATEGORIES=	www
