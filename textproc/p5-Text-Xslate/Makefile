@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-Text-Xslate
-# Date created:				10 June 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Whom: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Xslate
-PORTVERSION=	1.5009
+PORTVERSION=	1.5019
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
@@ -18,13 +14,14 @@ COMMENT=	High performance template engine
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-COMMON_DEPENDS=	p5-parent>=0.221:${PORTSDIR}/devel/p5-parent \
+BUILD_DEPENDS=	p5-parent>=0.221:${PORTSDIR}/devel/p5-parent \
 		p5-Mouse>=0.61:${PORTSDIR}/devel/p5-Mouse \
 		p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Data-MessagePack>=0.38:${PORTSDIR}/devel/p5-Data-MessagePack
-BUILD_DEPENDS=	${COMMON_DEPENDS}
-RUN_DEPENDS=	${COMMON_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Data-MessagePack>=0.38:${PORTSDIR}/devel/p5-Data-MessagePack \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 MAKE_JOBS_UNSAFE=	yes
@@ -59,4 +56,13 @@ MAN3=	Text::Xslate.3 \
 	Text::Xslate::Type::Raw.3 \
 	Text::Xslate::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+
+.include <bsd.port.post.mk>
