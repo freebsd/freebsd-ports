@@ -1,9 +1,4 @@
-# New ports collection makefile for:    zillion
-# Date created:         09 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zillion
 PORTVERSION=	0.1

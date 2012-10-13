@@ -1,9 +1,4 @@
-# New ports collection makefile for:    preview
-# Date created:         15 Feb 2004
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	preview
 PORTVERSION=	0.8.5

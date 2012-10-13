@@ -1,9 +1,4 @@
-# New ports collection makefile for:    imageviewer
-# Date created:         15 Mar 2003
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	imageviewer
 PORTVERSION=	0.6.3

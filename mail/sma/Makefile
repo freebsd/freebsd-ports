@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sma
-# Date created:				28. Mar 2002
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sma
 PORTVERSION=	1.4

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    prayer
-# Date created:         27 Dez 2003
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	prayer
 PORTVERSION=	1.3.5

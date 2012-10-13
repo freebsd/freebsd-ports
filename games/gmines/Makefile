@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gmines
-# Date created:         02 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gmines
 PORTVERSION=	0.2

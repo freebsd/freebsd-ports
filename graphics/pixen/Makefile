@@ -1,9 +1,4 @@
-# New ports collection makefile for:    pixen
-# Date created:         16 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pixen
 PORTVERSION=	0.1

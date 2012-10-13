@@ -1,9 +1,4 @@
-# New ports collection makefile for:    fortytwo-encore
-# Date created:         28 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	encore
 PORTVERSION=	0.3.1

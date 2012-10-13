@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gnupg-idea
-# Date created:		10 May, 2000
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.6

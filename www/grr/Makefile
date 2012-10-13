@@ -1,9 +1,4 @@
-# New ports collection makefile for:    grr
-# Date created:         05 Nov 2011
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	grr
 PORTVERSION=	1.0

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	powerdns
-# Date Created:				14.Jan 2003
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	powerdns
 PORTVERSION=	3.1

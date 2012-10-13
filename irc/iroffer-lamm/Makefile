@@ -1,9 +1,4 @@
-# New ports collection makefile for:    iroffer-lamm
-# Date created:         10 Apr 2007
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	iroffer
 PORTVERSION=	1.4.3.2

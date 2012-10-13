@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gnustep-cairo
-# Date created:		24.Oct.2005
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 CATEGORIES=	x11-toolkits
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	bsnmp-jails
-# Date created:				12 Dec 2009
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bsnmp-jails
 PORTVERSION=	0.9

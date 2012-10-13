@@ -1,9 +1,4 @@
-# New ports collection makefile for:    toolbox
-# Date created:         18 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	toolbox
 PORTVERSION=	0.8

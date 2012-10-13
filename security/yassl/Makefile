@@ -1,9 +1,4 @@
-# New ports collection makefile for:    cyassl
-# Date created:         10 Dec 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cyassl
 PORTVERSION=	1.6.0

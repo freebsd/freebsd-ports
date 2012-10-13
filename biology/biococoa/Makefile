@@ -1,9 +1,4 @@
-# New ports collection makefile for:    biococoa
-# Date created:         30 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	biococoa
 PORTVERSION=	1.6.0

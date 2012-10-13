@@ -1,9 +1,4 @@
-# New ports collection makefile for:    p5-DBD-CSV
-# Date created:				20 June 1999
-# Whom:	      				dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-CSV
 PORTVERSION=	0.36

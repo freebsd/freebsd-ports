@@ -1,9 +1,4 @@
-# New ports collection makefile for:    addresses-goodies
-# Date created:         29 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.7

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    cddb-bundle
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cddb
 PORTVERSION=	0.2

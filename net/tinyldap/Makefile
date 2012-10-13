@@ -1,9 +1,4 @@
-# New ports collection makefile for:	tinyldap
-# Date Created:				26 Feb 2004
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.${SNAPSHOT}

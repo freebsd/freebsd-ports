@@ -1,9 +1,4 @@
-# New ports collection makefile for:	wizardkit
-# Date created:         28 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wizardkit
 PORTVERSION=	0.1

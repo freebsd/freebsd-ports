@@ -1,9 +1,4 @@
-# New ports collection makefile for:    fortunate
-# Date created:         09 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fortunate
 PORTVERSION=	3.1

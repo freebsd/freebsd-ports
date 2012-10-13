@@ -1,9 +1,4 @@
-# New ports collection makefile for:    mylibrary
-# Date created:         18 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mylibrary
 PORTVERSION=	0.4.5

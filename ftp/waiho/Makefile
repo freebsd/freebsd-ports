@@ -1,9 +1,4 @@
-# New ports collection makefile for:    waiho
-# Date created:         21 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	waiho
 PORTVERSION=	0.2

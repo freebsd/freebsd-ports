@@ -1,9 +1,4 @@
-# New ports collection makefile for:    mupen64
-# Date created:         17.Sep 2004
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mupen64
 PORTVERSION=	0.5

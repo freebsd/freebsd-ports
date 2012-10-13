@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gscommander
-# Date created:         15 Mar 2003
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gscommander
 PORTVERSION=	0.1

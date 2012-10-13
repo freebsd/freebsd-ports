@@ -1,9 +1,4 @@
-# New ports collection makefile for:    matharray
-# Date created:         30 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	matharray
 PORTVERSION=	1.2

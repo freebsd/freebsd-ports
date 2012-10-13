@@ -1,7 +1,3 @@
-# Ports collection makefile for:	gem-syntax
-# Date created:				11 Sep 2005
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	syntax

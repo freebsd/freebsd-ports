@@ -1,9 +1,4 @@
-# New ports collection makefile for:	antivirus
-# Date created:				02.Jan 2004
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	antivirus
 PORTVERSION=	3.30

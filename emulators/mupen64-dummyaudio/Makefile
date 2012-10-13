@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mupen64-dummyaudio
-# Date created:		12.Aug 2004
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-dummyaudio
 

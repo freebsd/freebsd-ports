@@ -1,9 +1,4 @@
-# New ports collection makefile for:    check_multi
-# Date created:         18 Mar 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	check_multi
 PORTVERSION=	0.19

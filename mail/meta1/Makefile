@@ -1,9 +1,4 @@
-# New ports collection makefile for:	meta1
-# Date created:				19 Oct 2006
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	meta1
 PORTVERSION=	1.0.0a.11.0

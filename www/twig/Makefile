@@ -1,9 +1,4 @@
-# New ports collection makefile for:	twig
-# Date created:				12 Jun 2002
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	twig
 PORTVERSION=	2.8.3

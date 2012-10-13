@@ -1,9 +1,4 @@
-# New ports collection makefile for:    easydiff
-# Date created:         15 Mar 2003
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	easydiff
 PORTVERSION=	0.4.0

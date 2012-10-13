@@ -1,9 +1,4 @@
-# New ports collection makefile for:    tryst-examples
-# Date created:         18 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tryst
 PORTVERSION=	1.0.8

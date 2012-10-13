@@ -1,9 +1,4 @@
-# New ports collection makefile for:    fortytwo
-# Date created:         28 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fortytwo
 PORTVERSION=	0.2.0

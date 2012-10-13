@@ -1,9 +1,4 @@
-# New ports collection makefile for:    webservices
-# Date created:         25 Jan 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	webservices
 PORTVERSION=	0.5.5

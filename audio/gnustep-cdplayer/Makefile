@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gnustep-cdplayer
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cdplayer
 PORTVERSION=	0.5.1

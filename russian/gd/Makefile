@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ru-webalizer
-# Date created:		04 Jan 2008
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../../graphics/gd
 CATEGORIES=	russian

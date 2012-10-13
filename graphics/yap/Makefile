@@ -1,9 +1,4 @@
-# New ports collection makefile for:    yap
-# Date created:         30 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yap
 PORTVERSION=	0.2

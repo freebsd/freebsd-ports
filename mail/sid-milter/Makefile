@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sid-milter
-# Date created:				18. Dec 2004
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sid-milter
 PORTVERSION=	1.0.0

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    mpdcon
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mpdcon
 PORTVERSION=	1.1.99

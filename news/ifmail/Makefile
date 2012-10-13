@@ -1,9 +1,4 @@
-# New ports collection makefile for:    ifmail
-# Date created:         19 Feb 1997
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15

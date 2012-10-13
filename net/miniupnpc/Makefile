@@ -1,9 +1,4 @@
-# New ports collection makefile for:    miniupnpc
-# Date created:         31 Oct 2007
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	miniupnpc
 PORTVERSION=	1.7

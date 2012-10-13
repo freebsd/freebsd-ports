@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gmastermind
-# Date created:         28 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gmastermind
 PORTVERSION=	0.6

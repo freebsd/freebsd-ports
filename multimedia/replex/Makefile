@@ -1,9 +1,4 @@
-# New ports collection makefile for:    replex
-# Date created:         20 Jan 2004
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	replex
 PORTVERSION=	0.1.6.8

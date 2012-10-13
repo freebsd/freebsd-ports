@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gnustep-xdps
-# Date created:		29.Mar.2003
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 CATEGORIES=	x11-toolkits
 

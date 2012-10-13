@@ -1,9 +1,4 @@
-# New ports collection makefile for:    ua
-# Date created:         13 Jan 2009
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ua
 PORTVERSION=	1.0.1

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gworkspace-clipbook
-# Date created:         30 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gworkspace
 PORTVERSION=	0.8.3

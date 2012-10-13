@@ -1,7 +1,3 @@
-# New ports collection makefile for:	ldapmodule
-# Date created:				05.Jul 2000
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	ldap2

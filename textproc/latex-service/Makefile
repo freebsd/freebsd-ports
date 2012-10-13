@@ -1,9 +1,4 @@
-# New ports collection makefile for:    latex-service
-# Date created:         30 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	latex
 PORTVERSION=	0.1

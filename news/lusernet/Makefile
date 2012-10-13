@@ -1,9 +1,4 @@
-# New ports collection makefile for:    lusernet
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lusernet
 PORTVERSION=	0.4.2

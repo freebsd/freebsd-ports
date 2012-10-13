@@ -1,9 +1,4 @@
-# New ports collection makefile for: pgpin
-# Date created:         23 Mar 2001
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pgpin
 PORTVERSION=	010323

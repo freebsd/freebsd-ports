@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mupen64-rsp
-# Date created:		10.Aug 2004
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-rsp
 

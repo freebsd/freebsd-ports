@@ -1,9 +1,4 @@
-# New ports collection makefile for:    openproj
-# Date created:         15 Apr 2008
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openproj
 PORTVERSION=	1.4

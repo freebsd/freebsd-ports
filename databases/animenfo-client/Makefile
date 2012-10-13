@@ -1,9 +1,4 @@
-# New ports collection makefile for:	animenfo-client
-# Date created:		3rd August 2001
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	animenfo
 PORTVERSION=	20020819

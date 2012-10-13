@@ -1,7 +1,3 @@
-# Ports collection makefile for:	rubyfulsoup
-# Date created:				16 feb 2007
-# Whom:					dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 PORTNAME=	rubyfulsoup

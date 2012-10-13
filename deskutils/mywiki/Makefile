@@ -1,9 +1,4 @@
-# New ports collection makefile for:    mywiki
-# Date created:         16 Dec 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mywiki
 PORTVERSION=	0.9

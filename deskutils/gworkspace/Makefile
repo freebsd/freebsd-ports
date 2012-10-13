@@ -1,9 +1,4 @@
-# New ports collection makefile for:    gworkspace
-# Date created:         04 Feb 2003
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gworkspace
 PORTVERSION=	0.9.1

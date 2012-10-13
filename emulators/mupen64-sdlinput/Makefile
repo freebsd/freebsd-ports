@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mupen64-sdlinput
-# Date created:		12.Aug 2004
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTVERSION=	0.0.10
 PORTREVISION=	3

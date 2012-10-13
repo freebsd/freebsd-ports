@@ -1,9 +1,4 @@
-# New ports collection makefile for:    displaycalibrator
-# Date created:         16 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	displaycalibrator
 PORTVERSION=	0.7

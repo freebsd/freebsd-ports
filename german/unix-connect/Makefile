@@ -1,9 +1,4 @@
-# New ports collection makefile for:    unix-connect
-# Date created:         01.May 1999
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	unix-connect
 PORTVERSION=	0.95

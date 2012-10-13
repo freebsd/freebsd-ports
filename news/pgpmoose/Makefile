@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pgpmoose
-# Date created:		28 Nov 1997
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pgpmoose
 PORTVERSION=	1.19

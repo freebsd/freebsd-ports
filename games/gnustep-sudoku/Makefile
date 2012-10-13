@@ -1,9 +1,4 @@
-# New ports collection makefile for:    sudoku
-# Date created:         07 aug 2007
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sudoku
 PORTVERSION=	0.7

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	popa3d-before-sendmail
-# Date created:		13.Jan 2003
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 CATEGORIES=	mail
 

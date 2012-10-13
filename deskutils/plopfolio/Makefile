@@ -1,9 +1,4 @@
-# New ports collection makefile for:    plopfolio
-# Date created:         17 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plopfolio
 PORTVERSION=	0.1.0

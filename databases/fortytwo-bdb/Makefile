@@ -1,9 +1,4 @@
-# New ports collection makefile for:    fortytwo-bdb
-# Date created:         28 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bdb
 PORTVERSION=	0.2.1

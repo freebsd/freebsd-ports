@@ -1,7 +1,3 @@
-# New ports collection makefile for:	cups-client
-# Date created:		07.May 2009
-# Whom:			dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
 
 CATEGORIES=	print

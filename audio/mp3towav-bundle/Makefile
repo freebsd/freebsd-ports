@@ -1,9 +1,4 @@
-# New ports collection makefile for:    mp3towav-bundle
-# Date created:         30 Nov 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mp3towav
 PORTVERSION=	0.4.1
