@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.19.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -21,12 +22,13 @@ MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL IMAGICK
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
 OPTIONS_DEFAULT=MYSQL APC
 
 MEMCACHED_DESC=	use memcached
 APC_DESC=	use pecl-APC(Mediawiki recommended)
 EACCEL_DESC=	use eAccelerator (instead of pecl-APC)
+XCACHE_DESC=	use xCache (instead of pecl-APC)
 IMAGICK_DESC=	use ImageMagick
 
 .include <bsd.port.options.mk>
@@ -56,14 +58,12 @@ RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
 .endif
 
-.if ${PORT_OPTIONS:MAPC} || ${PORTS_OPTIONS:MEACCEL} || ${PORTS_OPTIONS:MXCACHE}
-.if ${PORT_OPTIONS:MEACCEL}
+.if ${PORT_OPTIONS:MAPC}
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
+.elif ${PORT_OPTIONS:MEACCEL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/www/eaccelerator
 .elif ${PORT_OPTIONS:MXCACHE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
-.else
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
-.endif
 .endif
 
 do-install:
