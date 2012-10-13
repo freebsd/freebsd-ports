@@ -83,7 +83,7 @@ SUB_LIST+=		ZEROCONF=""
 .endif
 
 .if defined (WITH_LDAP)
-CONFIGURE_ARGS+=	--with-ldap
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_OPENLDAP=		yes
 .else
