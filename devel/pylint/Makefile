@@ -1,18 +1,16 @@
-# New ports collection makefile for:	pylint
-# Date created:		28 May 2004
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	pylint
-PORTVERSION=	0.25.2
+PORTVERSION=	0.26.0
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
+
+LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
