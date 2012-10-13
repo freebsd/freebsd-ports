@@ -385,7 +385,7 @@ DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 
 .endif
 
-.if ${PORT_OPTIONS:MSMTP_AUTH_PATCH} && !defined(BARRIER_SMTP_AUTH_PATCH)
+.if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
 MASTER_SITES+=	http://tomclegg.net/qmail/:smtp_auth \
 		${MASTER_SITE_LOCAL:S/$/:smtp_auth/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:smtp_auth
@@ -395,7 +395,7 @@ MASTER_SITES+=	http://tomclegg.net/qmail/:close3
 DISTFILES+=	qmail-smtpd-auth-close3.patch:close3
 . if defined(SLAVE_TLS)
 AUTH_PATCH=	auth.patch.diff-tls
-. elif ${PORT_OPTIONS:MSPF_PATCH} && !defined(BARRIER_SPF_PATCH)
+. elif ${PORT_OPTIONS:MSPF_PATCH}
 AUTH_PATCH=	auth.patch.diff
 . endif
 
@@ -404,23 +404,23 @@ DISTFILES+=	${AUTH_PATCH}:smtp_auth
 . endif
 .endif
 
-.if ${PORT_OPTIONS:MMAILDIRQUOTA_PATCH} && !defined(BARRIER_MAILDIRQUOTA_PATCH)
+.if ${PORT_OPTIONS:MMAILDIRQUOTA_PATCH}
 PATCH_SITES+=	http://www.alexdupre.com/qmail/:quota
 PATCHFILES+=	qmail-maildir++.patch:quota
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-maildir++
 .endif
 
-.if ${PORT_OPTIONS:MBLOCKEXEC_PATCH} && !defined(BARRIER_BLOCKEXEC_PATCH)
+.if ${PORT_OPTIONS:MBLOCKEXEC_PATCH}
 PATCH_SITES+=	http://www.alexdupre.com/qmail/:blockexec
 PATCHFILES+=	qmail-block-executables.patch:blockexec
 .endif
 
-.if ${PORT_OPTIONS:MDISCBOUNCES_PATCH} && !defined(BARRIER_DISCBOUNCES_PATCH)
+.if ${PORT_OPTIONS:MDISCBOUNCES_PATCH}
 PATCH_SITES+=	http://www.alexdupre.com/qmail/:doublebounce
 PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .endif
 
-.if ${PORT_OPTIONS:MSPF_PATCH} && !defined(BARRIER_SPF_PATCH)
+.if ${PORT_OPTIONS:MSPF_PATCH}
 . if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
 .  if defined(SLAVE_SPAMCONTROL)
 SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-26
@@ -442,19 +442,18 @@ PATCHFILES+=	qmail-spf-rc5.patch:spf
 . endif
 .endif
 
-.if ${PORT_OPTIONS:MEXTTODO_PATCH} && !defined(BARRIER_EXTTODO_PATCH)
+.if ${PORT_OPTIONS:MEXTTODO_PATCH}
 PLIST_SUB+=		EXTTODO=""
 DOCFILES_WRKSRC+=	EXTTODO
 
-. if (${PORT_OPTIONS:MBIG_TODO_PATCH} && !defined(BARRIER_BIG_TODO_PATCH)) || \
-     (defined(SLAVE_SPAMCONTROL) && ${PORT_OPTIONS:MBIGTODO})
+. if !empty{PORT_OPTIONS:MBIG_TODO_PATCH) || !empty(PORT_OPTIONS:MBIGTODO)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ext_big_todo/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:ext_big_todo
 EXT_BIG_TODO_PATCH=	ext_todo-20030105+big-todo.103.patch
 DISTFILES+=	${EXT_BIG_TODO_PATCH}:ext_big_todo
 . endif
 
-. if ${PORT_OPTIONS:MSPF_PATCH} && !defined(BARRIER_SPF_PATCH)
+. if ${PORT_OPTIONS:MSPF_PATCH}
 .  if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:exttodo
@@ -478,44 +477,42 @@ PLIST_SUB+=	EXTTODO="@comment "
 .endif
 
 .if !defined(BARRIER_DNS_PATCH) \
-	|| (${PORT_OPTIONS:MQMAILQUEUE_PATCH} && !defined(BARRIER_QMAILQUEUE_PATCH)) \
-	|| (${PORT_OPTIONS:MBIG_TODO_PATCH} && !defined(BARRIER_BIG_TODO_PATCH)) \
-	|| (${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH} && !defined(BARRIER_BIG_CONCURRENCY_PATCH)) \
-	|| (${PORT_OPTIONS:MOUTGOINGIP_PATCH} && !defined(BARRIER_OUTGOINGIP_PATCH)) \
-	|| (${PORT_OPTIONS:MQMTPC_PATCH} && !defined(BARRIER_QMTPC_PATCH))
+	|| !empty(PORT_OPTIONS:MQMAILQUEUE_PATCH) \
+	|| !empty(PORT_OPTIONS:MBIG_TODO_PATCH) \
+	|| !empty(PORT_OPTIONS:MBIG_CONCURRENCY_PATCH) \
+	|| !empty(PORT_OPTIONS:MOUTGOINGIP_PATCH) \
+	|| !empty(PORT_OPTIONS:MQMTPC_PATCH)
 PATCH_SITES+=	${MASTER_SITE_QMAIL}
 .endif
 
-.if ${PORT_OPTIONS:MQMAILQUEUE_PATCH} && !defined(BARRIER_QMAILQUEUE_PATCH)
+.if ${PORT_OPTIONS:MQMAILQUEUE_PATCH}
 PATCHFILES+=	qmailqueue-patch
 .endif
-.if ${PORT_OPTIONS:MBIG_TODO_PATCH} && !defined(BARRIER_BIG_TODO_PATCH)
+.if ${PORT_OPTIONS:MBIG_TODO_PATCH}
 PATCHFILES+=	big-todo.103.patch
 .endif
-.if ${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH} &&
-    !defined(BARRIER_BIG_CONCURRENCY_PATCH)
+.if ${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH}
 PATCHFILES+=	big-concurrency.patch
 .endif
-.if ${PORT_OPTIONS:MOUTGOINGIP_PATCH} && !defined(BARRIER_OUTGOINGIP_PATCH) && \
-    ${PORT_OPTIONS:MQMTPC_PATCH} && !defined(BARRIER_QMTPC_PATCH)
+.if !empty(PORT_OPTIONS:MOUTGOINGIP_PATCH) && !empty(PORT_OPTIONS:MQMTPC_PATCH)
 PATCHFILES+=	qmail-1.03-qmtpc_outgoingip_20090630.patch:qmtpc_outgoingip
-.elif ${PORT_OPTIONS:MOUTGOINGIP_PATCH} && !defined(BARRIER_OUTGOINGIP_PATCH)
+.elif ${PORT_OPTIONS:MOUTGOINGIP_PATCH}
 PATCHFILES+=	outgoingip.patch
-.elif ${PORT_OPTIONS:MQMTPC_PATCH} && !defined(BARRIER_QMTPC_PATCH)
+.elif ${PORT_OPTIONS:MQMTPC_PATCH}
 PATCHFILES+=	qmail-1.03-qmtpc.patch
 .endif
 
-.if ${PORT_OPTIONS:MLOCALTIME_PATCH} && !defined(BARRIER_LOCALTIME_PATCH)
+.if ${PORT_OPTIONS:MLOCALTIME_PATCH}
 PATCH_SITES+=	http://www.alib.jp/files/:localtime
 PATCHFILES+=	qmail-date-localtime.patch:localtime
 .endif
 
-.if ${PORT_OPTIONS:MTARPIT_PATCH} && !defined(BARRIER_TARPIT_PATCH)
+.if ${PORT_OPTIONS:MTARPIT_PATCH}
 PATCH_SITES+=	http://www.palomine.net/qmail/:tarpit
 PATCHFILES+=	tarpit.patch:tarpit
 .endif
 
-.if ${PORT_OPTIONS:MSMTPEXTFORK} &&
+.if ${PORT_OPTIONS:MSMTPEXTFORK} && \
     ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
 . if defined(SLAVE_SPAMCONTROL)
 SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2519.patch
@@ -578,8 +575,7 @@ UCSPISRC=	${WRKDIR}/host/superscript.com/net/ucspi-ssl-0.70
 .endif
 
 # Some default values, these can be modified by make command line
-.if ${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH} &&
-    !defined(BARRIER_BIG_CONCURRENCY_PATCH)
+.if ${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH}
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 .endif
 
@@ -657,7 +653,7 @@ post-extract:
 .endif
 
 post-patch:
-.if ${PORT_OPTIONS:MSMTP_AUTH_PATCH} && !defined(BARRIER_SMTP_AUTH_PATCH)
+.if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
 	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
 . if defined(AUTH_PATCH)
 	@${PATCH} -d ${SMTP_AUTH_DIR} < ${DISTDIR}/${DIST_SUBDIR}/${AUTH_PATCH}
@@ -787,9 +783,8 @@ do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
-.if ${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH} \
-	&& !defined(BARRIER_BIG_CONCURRENCY_PATCH) \
-	&& ${PORT_OPTIONS:MBIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}
+.if !empty(PORT_OPTIONS:MBIG_CONCURRENCY_PATCH) \
+	&& defined(BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT)
 	@if [ ${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT} -gt 0 ]; then \
 		${ECHO_CMD} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
 			> ${WRKSRC}/conf-spawn ; \
