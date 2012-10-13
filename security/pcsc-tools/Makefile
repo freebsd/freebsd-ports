@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-tools
-PORTVERSION=	1.4.18
+PORTVERSION=	1.4.20
 CATEGORIES=	security
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 
@@ -20,6 +20,9 @@ RUN_DEPENDS=	p5-PCSC-Card>=0:${PORTSDIR}/devel/p5-PCSC-Card
 USE_GMAKE=	yes
 
 MAN1=		pcsc_scan.1 gscriptor.1p scriptor.1p ATR_analysis.1p
+
+post-patch:
+	${REINPLACE_CMD} -e "s,DESTDIR,PREFIX,g" ${WRKSRC}/Makefile
 
 post-install:
 .for i in ${MAN1}
