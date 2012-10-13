@@ -119,12 +119,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gettext
 
 .include <bsd.port.pre.mk>
 
-_CFLAGS=	-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS} \
-		${CFLAGS}
-_CXXFLAGS=	-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS} \
-		${CXXFLAGS}
-_LDFLAGS=	-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS} \
-		${LDFLAGS}
+_CFLAGS=	${CFLAGS}
+_CXXFLAGS=	-rpath=${_GCC_RUNTIME} ${CXXFLAGS}
+_LDFLAGS=	${LDFLAGS}
 
 CONFIGURE_ENV+=	${CUSTOM_ENV}
 MAKE_ENV+=	${CUSTOM_ENV}
