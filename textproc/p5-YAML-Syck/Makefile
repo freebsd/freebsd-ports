@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-YAML-Syck
-# Date created:				28 December 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	YAML-Syck
-PORTVERSION=	1.19
+PORTVERSION=	1.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
