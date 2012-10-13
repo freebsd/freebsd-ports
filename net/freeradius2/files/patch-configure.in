@@ -1,0 +1,39 @@
+--- ./configure.in.orig	2012-09-10 18:53:25.000000000 -0400
++++ ./configure.in	2012-09-10 18:55:15.000000000 -0400
+@@ -443,6 +443,21 @@
+ 	AC_DEFINE(WITH_UDPFROMTO, [], [define if you want udpfromto])
+ fi
+ 
++dnl extra argument: --with-perl
++WITH_PERL=yes
++AC_ARG_WITH(perl,
++	     [  --with-perl             Enable Perl support. (default=yes)],
++	     [ case "$withval" in
++	           yes)
++       ;;
++    *)
++       WITH_PERL=no
++  esac ]
++	     )
++if test "x$WITH_PERL" = "xno"; then
++       with_rlm_perl=no
++fi
++
+ dnl #############################################################
+ dnl #
+ dnl #  1. Checks for programs
+@@ -450,10 +465,14 @@
+ dnl #############################################################
+ 
+ CHECKRAD=checkrad.pl
++if test "x$WITH_PERL" = "xyes"; then
+ AC_PATH_PROG(PERL, perl, /usr/local/bin/perl)
+ if test "x$ac_cv_path_PERL" = "x"; then
+   AC_MSG_WARN(perl not found - Simultaneous-Use and checkrad.pl may not work)
+ fi
++else
++  AC_MSG_WARN(perl disabled - Simultaneous-Use and checkrad.pl may not work)
++fi
+ AC_PATH_PROG(SNMPGET, snmpget)
+ if test "x$ac_cv_path_SNMPGET" = "x"; then
+   AC_MSG_WARN(snmpget not found - Simultaneous-Use and checkrad.pl may not work)

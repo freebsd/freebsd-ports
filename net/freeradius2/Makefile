@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.12
-PORTREVISION=	2
+DISTVERSION=	2.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -44,30 +43,29 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION}
 
-OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
-		KERBEROS	"With Kerberos support" off \
-		HEIMDAL		"With Heimdal Kerberos support" off \
-		HEIMDAL_PORT	"Use Heimdal Kerberos from ports" off \
-		HEIMDAL_PATCH	"Enhanced Heimdal support (specify SPN/keytab)" off \
-		LDAP		"With LDAP database support" off \
-		MYSQL		"With MySQL database support" off \
-		PGSQL		"With PostgreSQL database support" off \
-		UNIXODBC	"With unixODBC database support" off \
-		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
-		PERL		"With Perl support" on \
-		PYTHON		"With Python support" on \
-		OCI8		"With Oracle support (currently experimental)" off \
-		RUBY		"With Ruby support (EXPERIMENTAL)" off \
-		DHCP		"With DHCP support (EXPERIMENTAL)" off \
-		EXPERIMENTAL	"Build experimental modules" off \
-		UDPFROMTO	"Compile in UDPFROMTO support" off
+OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT HEIMDAL_PATCH LDAP MYSQL \
+		PGSQL UNIXODBC FIREBIRD PERL PYTHON OCI8 RUBY DHCP \
+		EXPERIMENTAL UDPFROMTO DEVELOPER
+OPTIONS_DEFAULT=USER PERL PYTHON
+
+DHCP_DESC=		With DHCP support (EXPERIMENTAL)
+USER_DESC=		Run as user freeradius, group freeradius
+HEIMDAL_DESC=		With Heimdal Kerberos support
+HEIMDAL_PORT_DESC=	With Heimdal Kerberos from ports
+HEIMDAL_PATCH_DESC=	Enhanced Heimdal support (specify SPN/keytab)
+UNIXODBC_DESC=		With unixODBC database support
+FIREBIRD_DESC=		With Firebird database support (EXPERIMENTAL)
+OCI8_DESC=		With Oracle support (currently experimental)
+EXPERIMENTAL_DESC=	Build experimental modules
+UDPFROMTO_DESC=		Compile in UDPFROMTO support
+DEVELOPER_DESC=		Enable developer options
 
 .include <bsd.port.options.mk>
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
 
-.ifdef(WITH_USER)
+.if ${PORT_OPTIONS:MUSER}
 SUB_LIST+=	RUN_AS_USER="yes"
 .else
 SUB_LIST+=	RUN_AS_USER="no"
@@ -80,15 +78,16 @@ RADIUS_GROUP=	freeradius
 USERS=		${RADIUS_USER}
 GROUPS=		${RADIUS_GROUP}
 
-CONFIGURE_ARGS+=	--with-system-libtool --with-system-libltdl --disable-ltdl-install
+CONFIGURE_ARGS+=--with-system-libtool --with-system-libltdl \
+		--disable-ltdl-install
 
-.if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
-WITH_KERBEROS=	yes
+.if ${PORT_OPTIONS:MHEIMDAL} && empty(${PORT_OPTIONS:MKERBEROS})
+${UNIQUENAME}_SET+=	KERBEROS
 .endif
 
-.ifdef(WITH_KERBEROS)
-.ifdef(WITH_HEIMDAL)
-.ifdef(WITH_HEIMDAL_PORT)
+.if ${PORT_OPTIONS:MKERBEROS}
+.if ${PORT_OPTIONS:MHEIMDAL}
+.if ${PORT_OPTIONS:MHEIMDAL_PORT}
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5
@@ -96,7 +95,7 @@ CONFIGURE_ARGS+=--enable-heimdal-krb5
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
-.if defined (WITH_HEIMDAL) && !defined(WITH_HEIMDAL_PORT)
+.if ${PORT_OPTIONS:MHEIMDAL} && empty(${PORT_OPTIONS:MHEIMDAL_PORT})
 CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=/usr/lib
 CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=/usr/include
 CONFIGURE_ENV+=	KRB5LIBS="$$(${KRB5_CONFIG})"
@@ -111,11 +110,11 @@ PLIST_SUB+=	KRB5="@comment "
 .endif
 
 # Patch rlm_krb5.c to add Heimdal support for specifying keytab+SPN
-.ifdef(WITH_HEIMDAL_PATCH)
+.if ${PORT_OPTIONS:MHEIMDAL_PATCH}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__modules__rlm_krb5__rlm_krb5.c
 .endif
 
-.ifdef(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
 CONFIGURE_ARGS+=--with-rlm_ldap
 PLIST_SUB+=	LDAP=""
@@ -125,7 +124,7 @@ CONFIGURE_ARGS+=--without-rlm_ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.ifdef(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	YES
 CONFIGURE_ARGS+=--with-rlm_sql_mysql
 PLIST_SUB+=	MYSQL=""
@@ -135,7 +134,7 @@ CONFIGURE_ARGS+=--without-rlm_sql_mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.ifdef(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	YES
 CONFIGURE_ARGS+=--with-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL=""
@@ -145,7 +144,7 @@ CONFIGURE_ARGS+=--without-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.ifdef(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC=""
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
@@ -154,7 +153,7 @@ CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC="@comment "
 .endif
 
-.ifdef(WITH_FIREBIRD)
+.if ${PORT_OPTIONS:MFIREBIRD}
 USE_FIREBIRD=	YES
 CONFIGURE_ARGS+=--with-rlm_sql_firebird
 PLIST_SUB+=	FIREBIRD=""
@@ -164,11 +163,11 @@ PLIST_SUB+=	FIREBIRD="@comment "
 .endif
 
 # Firebird module is still experimental
-.if defined(WITH_FIREBIRD) && !defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MFIREBIRD} && empty(${PORT_OPTIONS:MEXPERIMENTAL}
 EXPM=		yes
 .endif
 
-.ifdef(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
@@ -177,7 +176,7 @@ CONFIGURE_ARGS+=--without-perl --without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
 .endif
 
-.ifdef(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=--with-rlm_python \
 		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
@@ -188,7 +187,7 @@ CONFIGURE_ARGS+=--without-rlm_python
 PLIST_SUB+=	RLMPYTHON="@comment "
 .endif
 
-.ifdef(WITH_RUBY)
+.if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
 CONFIGURE_ARGS+=--with-rlm_ruby
 PLIST_SUB+=	RLMRUBY=""
@@ -198,23 +197,23 @@ PLIST_SUB+=	RLMRUBY="@comment "
 .endif
 
 # rlm_ruby module is still experimental
-.if defined(WITH_RUBY) && !defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MRUBY} && empty(${PORT_OPTIONS:MEXPERIMENTAL})
 EXPM=		yes
 .endif
 
-.ifdef(WITH_DHCP)
+.if ${PORT_OPTIONS:MDHCP}
 CONFIGURE_ARGS+=--with-dhcp
 .else
 CONFIGURE_ARGS+=--without-dhcp
 .endif
 
 # DHCP is still experimental
-.if defined(WITH_DHCP) && !defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MDHCP} && empty(${PORT_OPTIONS:MEXPERIMENTAL})
 EXPM=		yes
 .endif
 
 # No SMB option yet; rlm_smb is still unbuildable
-.ifdef(WITH_SMB)
+.if ${PORT_OPTIONS:MSMB}
 LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--with-rlm_smb
 CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
@@ -226,12 +225,12 @@ PLIST_SUB+=	SMB="@comment "
 .endif
 
 # SMB module is still experimental
-.if defined(WITH_SMB) && !defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MSMB} && empty(${PORT_OPTIONS:MSMB})
 EXPM=		yes
 .endif
 
 # Oracle support is experimental under FreeBSD
-.ifdef(WITH_OCI8)
+.if ${PORT_OPTIONS:MOCI8}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-exec.c
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
@@ -243,21 +242,21 @@ CONFIGURE_ARGS+=--without-rlm_sql_oracle
 PLIST_SUB+=	OCI8="@comment "
 .endif
 
-.if defined(EXPM) || defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MEXPERIMENTAL} || defined(EXPM)
 CONFIGURE_ARGS+=--with-experimental-modules
 PLIST_SUB+=	EXPM=""
 .else
 PLIST_SUB+=	EXPM="@comment "
 .endif
 
-.ifdef(WITH_DEVELOPER)
+.if ${PORT_OPTIONS:MDEVELOPER}
 CONFIGURE_ARGS+=--enable-developer
 # Turn off compiler optimisations
 CFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -Ee 's:-O[0-9]?[[:space:]]*::g'
 .endif
 
 # Compile in UDPFROMTO support
-.ifdef(WITH_UDPFROMTO)
+.if ${PORT_OPTIONS:MUDPFROMTO}
 CONFIGURE_ARGS+=--with-udpfromto
 .endif
 
@@ -324,7 +323,7 @@ MAN5=		acct_users.5 clients.conf.5 dictionary.5 radiusd.conf.5 \
 		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5 checkrad.5
 MAN8=		radiusd.8 radmin.8 raddebug.8 radrelay.8 radsqlrelay.8 \
 		radwatch.8 rlm_ippool_tool.8 radconf2xml.8 radcrypt.8 \
-		radsniff.8 rlm_dbm_cat.8 rlm_dbm_parse.8
+		radsniff.8 rlm_dbm_cat.8 rlm_dbm_parser.8
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
@@ -349,13 +348,13 @@ post-patch:
 		-regex '.*/(bootstrap|Makefile)\.(orig|bak)$$' \
 		-delete
 # If we're using Heimdal from base, alter the LIBS variable
-.if defined(WITH_HEIMDAL) && !defined(WITH_HEIMDAL_PORT)
+.if ${PORT_OPTIONS:MHEIMDAL} && empty(${PORT_OPTIONS:MHEIMDAL_PORT})
 	@${REINPLACE_CMD} -e 's|LIBS|KRB5LIBS|g' ${WRKSRC}/src/modules/rlm_krb5/configure
 	@${REINPLACE_CMD} -e 's|-lkrb5|$$(${KRB5_CONFIG})|g' \
 		${WRKSRC}/src/modules/rlm_krb5/configure
 .endif
-# If DHCPis enabled, enable the DHCP dictionary
-.ifdef(WITH_DHCP)
+# If DHCP is enabled, enable the DHCP dictionary
+.if ${PORT_OPTIONS:MDHCP}
 	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
 		${WRKSRC}/share/dictionary
 # Clean up (so as not to get an unwanted file in share)
