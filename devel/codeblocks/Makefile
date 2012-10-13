@@ -1,9 +1,5 @@
-# New ports collection makefile for:	codeblocks
-# Date created:				November, 15th 2005
-# Whom:					Matthias Sund <m.sund@arcor.de>
-#
+# Created by: Matthias Sund <m.sund@arcor.de>
 # $FreeBSD$
-#
 
 PORTNAME=		codeblocks
 PORTVERSION=		10.05
@@ -12,7 +8,7 @@ CATEGORIES=		devel
 MASTER_SITES=		SF/codeblocks.berlios
 DISTNAME=		${PORTNAME}-${PORTVERSION}-1debian-src
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
