@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	295.71
-PORTREVISION=	1
+PORTVERSION=	304.51
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-settings/
@@ -40,6 +39,6 @@ post-extract:	.SILENT
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^prefix/s/=/?&/' \
-		 -e '/^mandir/s|share/||' ${WRKSRC}/utils.mk
+		 -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
 
 .include <bsd.port.mk>
