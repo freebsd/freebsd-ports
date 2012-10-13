@@ -1,13 +1,8 @@
-# New ports collection makefile for:	amavisd-new
-# Date created:				05 Jun 2002
-# Whom:					Christopher K Davis (ckd-freebsd@ckdhr.com)
-#
 # $FreeBSD$
-#
-# Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
