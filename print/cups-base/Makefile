@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cups
-# Date created:		2003-01-22
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cups
 PORTVERSION=	1.5.2
@@ -45,6 +41,7 @@ CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_CACHEDIR?=	/var/db/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 CUPS_SOCKET?=	/var/run/cups.sock
+CUPS_PDFTOPS?=	${LOCALBASE}/libexec/xpdf/pdftops
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 # file, dir ownership
@@ -155,9 +152,9 @@ USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
 PLIST_SUB+=		WITH_PDFTOPS=""
 .elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXPDF}
-BUILD_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
-RUN_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/libexec/xpdf/pdftops
+BUILD_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
+RUN_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${CUPS_PDFTOPS}
 PLIST_SUB+=		WITH_PDFTOPS=""
 .else
 PLIST_SUB+=		WITH_PDFTOPS="@comment "
