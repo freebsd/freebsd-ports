@@ -2,6 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.06
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -24,9 +25,8 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
-# XXX: lcms shared lib support is broken
-#		lcms:${PORTSDIR}/graphics/lcms
+		tiff:${PORTSDIR}/graphics/tiff \
+		lcms2:${PORTSDIR}/graphics/lcms2
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[78]-[0-9]* \
@@ -49,6 +49,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
+		--with-system-libtiff \
 		--with-ijs \
 		--with-libidn \
 		--without-jasper \
@@ -87,7 +88,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf14.1 \
 		ps2ps.1 eps2eps.1
 
-EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper libpng tiff zlib
+EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper lcms lcms2 libpng tiff zlib
 
 .include "Makefile.drivers"
 .include <bsd.port.pre.mk>
