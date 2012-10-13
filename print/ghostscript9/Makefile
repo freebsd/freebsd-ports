@@ -1,13 +1,7 @@
-# New ports collection makefile for:	ghostscript9
-# Date created:		17 May, 2011
-# Whom:			hrs
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.05
-PORTREVISION=	5
+PORTVERSION=	9.06
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -125,14 +119,14 @@ CONFIGURE_ARGS+=	--without-libpaper
 .endif
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--enable-fontconfig
 .else
 CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
 # FT_BRIDGE=1 by default
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1
 
 ALL_TARGET=	so
