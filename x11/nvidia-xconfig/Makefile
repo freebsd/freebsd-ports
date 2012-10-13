@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	295.71
+PORTVERSION=	304.51
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-xconfig/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-xconfig/
@@ -23,6 +23,8 @@ MAKE_ENV=	NV_VERBOSE= \
 		STRIP_CMD=${TRUE} \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_BIN_ARGS= \
+		INSTALL_DOC_ARGS= \
 		prefix=${PREFIX}
 
 PLIST_FILES=	bin/nvidia-xconfig
@@ -31,6 +33,6 @@ MAN1=		nvidia-xconfig.1
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^prefix/s/=/?&/' \
-		 -e '/^mandir/s|share/||' ${WRKSRC}/utils.mk
+		 -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
 
 .include <bsd.port.mk>

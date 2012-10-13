@@ -1,16 +1,16 @@
---- Makefile.orig	2010-10-13 22:56:07.000000000 +0900
-+++ Makefile	2010-10-13 22:58:01.000000000 +0900
-@@ -95,11 +95,11 @@
+--- Makefile.orig	2012-09-19 10:51:22.000000000 +0900
++++ Makefile	2012-10-13 19:09:46.000000000 +0900
+@@ -112,11 +112,11 @@
  
  NVIDIA_XCONFIG_install: $(NVIDIA_XCONFIG)
- 	$(MKDIR) $(bindir)
--	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(bindir)/$(notdir $<)
-+	$(INSTALL_PROGRAM) $< $(bindir)/$(notdir $<)
+ 	$(MKDIR) $(BINDIR)
+-	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(BINDIR)/$(notdir $<)
++	$(INSTALL_PROGRAM) $(INSTALL_BIN_ARGS) $< $(BINDIR)/$(notdir $<)
  
  MANPAGE_install: $(MANPAGE)
- 	$(MKDIR) $(mandir)
--	$(INSTALL) $(INSTALL_DOC_ARGS) $< $(mandir)/$(notdir $<)
-+	$(INSTALL_MAN) $< $(mandir)/$(notdir $<)
+ 	$(MKDIR) $(MANDIR)
+-	$(INSTALL) $(INSTALL_DOC_ARGS) $< $(MANDIR)/$(notdir $<)
++	$(INSTALL_MAN) $(INSTALL_DOC_ARGS) $< $(MANDIR)/$(notdir $<)
  
  $(NVIDIA_XCONFIG): $(OBJS)
- 	$(call quiet_cmd,LINK) -o $@ $(OBJS) $(CFLAGS) \
+ 	$(call quiet_cmd,LINK) $(CFLAGS) $(LDFLAGS) $(BIN_LDFLAGS) \
