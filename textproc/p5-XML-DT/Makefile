@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-XML-DT
-# Date created:				01 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-DT
-PORTVERSION=	0.56
+PORTVERSION=	0.62
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for down translation of XML to strings
 
-COMMON_DEPENDS=	p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML \
+BUILD_DEPENDS=	p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-libwww>=1.35:${PORTSDIR}/www/p5-libwww \
 		p5-XML-DTDParser>=2.00:${PORTSDIR}/textproc/p5-XML-DTDParser
-BUILD_DEPENDS=	${COMMON_DEPENDS}
-RUN_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
