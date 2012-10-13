@@ -27,9 +27,10 @@ RUN_DEPENDS=	daq>=1.1.1:${PORTSDIR}/net/daq \
 
 OPTIONS_DEFINE=	IPV6 MPLS GRE TARGETBASED ZLIB NORMALIZER REACT \
 		PERFPROFILE FLEXRESP3 LRGPCAP SNORTSAM SOURCEFIRE \
-		DBGSNORT
+		DBGSNORT BARNYARD PULLEDPORK
 OPTIONS_DEFAULT=IPV6 MPLS GRE ZLIB NORMALIZER REACT PERFPROFILE \
-		FLEXRESP3 SOURCEFIRE TARGETBASED
+		FLEXRESP3 SOURCEFIRE TARGETBASED PULLEDPORK \
+		BARNYARD
 
 GRE_DESC=		Enable GRE support
 TARGETBASED_DESC=	Enable targetbased support
@@ -42,6 +43,8 @@ LRGPCAP_DESC=		Enable pcaps larger than 2GB
 SNORTSAM_DESC=		Enable unofficial Snortsam patch
 SOURCEFIRE_DESC=	Enable Sourcefire-specific build options
 DBGSNORT_DESC=		Enable debugging symbols+core dumps
+BARNYARD_DESC=		Depend on Barnyard2
+PULLEDPORK_DESC=	Depend on pulledpork
 
 .include <bsd.port.options.mk>
 
@@ -140,6 +143,14 @@ USE_AUTOTOOLS+=	automake
 USE_GNOME=	pkgconfig
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=	snortsam-2.9.2.2.diff.gz:snortsam
+.endif
+
+.if ${PORT_OPTIONS:MBARNYARD}
+RUN_DEPENDS+=	barnyard2:${PORTSDIR}/security/barnyard2
+.endif
+
+.if ${PORT_OPTIONS:MPULLEDPORK}
+RUN_DEPENDS+=	pulledpork.pl:${PORTSDIR}/security/pulledpork
 .endif
 
 post-patch:
