@@ -1,6 +1,5 @@
 bin/xpad
 share/applications/xpad.desktop
-share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/apps/xpad.svg
 share/locale/af/LC_MESSAGES/xpad.mo
 share/locale/bg/LC_MESSAGES/xpad.mo

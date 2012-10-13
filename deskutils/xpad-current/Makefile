@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xpad-current
-# Date created:		14 November 2011
-# Whom:			Jason Helfman <jhelfman@experts-exchange.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xpad
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-current
