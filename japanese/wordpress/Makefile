@@ -1,12 +1,8 @@
-# New ports collection makefile for:	wordpress
-# Date created:		2011-09-20
-# Whom:			Takefu
-#
+# Created by: Takefu
 # $FreeBSD$
-#
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
@@ -17,7 +13,7 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ru-wordpress-ru-3.*
+CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ru-wordpress-3.*
 
 NO_BUILD=	yes
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
@@ -42,10 +38,12 @@ pre-install:
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${WWWDIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
