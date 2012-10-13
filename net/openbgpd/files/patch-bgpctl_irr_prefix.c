@@ -2,13 +2,13 @@ Index: bgpctl/irr_prefix.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/irr_prefix.c,v
 retrieving revision 1.1.1.5
-retrieving revision 1.1.1.7
-diff -u -p -r1.1.1.5 -r1.1.1.7
+retrieving revision 1.1.1.8
+diff -u -p -r1.1.1.5 -r1.1.1.8
 --- bgpctl/irr_prefix.c	14 Feb 2010 20:20:14 -0000	1.1.1.5
-+++ bgpctl/irr_prefix.c	12 Jun 2011 10:44:54 -0000	1.1.1.7
++++ bgpctl/irr_prefix.c	13 Oct 2012 18:22:52 -0000	1.1.1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: irr_prefix.c,v 1.15 2007/05/27 18:54:25 henning Exp $ */
-+/*	$OpenBSD: irr_prefix.c,v 1.18 2010/05/10 02:00:50 krw Exp $ */
++/*	$OpenBSD: irr_prefix.c,v 1.17 2009/09/08 16:11:36 sthen Exp $ */
  
  /*
   * Copyright (c) 2007 Henning Brauer <henning@openbsd.org>

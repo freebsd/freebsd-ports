@@ -2,10 +2,10 @@ Index: bgpctl/irr_parser.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/irr_parser.c,v
 retrieving revision 1.1.1.5
-retrieving revision 1.4
-diff -u -p -r1.1.1.5 -r1.4
+retrieving revision 1.5
+diff -u -p -r1.1.1.5 -r1.5
 --- bgpctl/irr_parser.c	14 Feb 2010 20:20:14 -0000	1.1.1.5
-+++ bgpctl/irr_parser.c	4 Feb 2010 16:22:26 -0000	1.4
++++ bgpctl/irr_parser.c	13 Oct 2012 18:35:56 -0000	1.5
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: irr_parser.c,v 1.8 2007/03/05 22:34:08 henning Exp $ */
 +/*	$OpenBSD: irr_parser.c,v 1.9 2009/09/08 15:40:25 claudio Exp $ */
@@ -29,7 +29,7 @@ diff -u -p -r1.1.1.5 -r1.4
  				    &errstr);
  				if (errstr)
  					errx(1, "peering spec \"%s\": format "
-@@ -407,7 +408,8 @@ parse_asset(char *key, char *val)
+@@ -407,11 +408,13 @@ parse_asset(char *key, char *val)
  int
  parse_route(char *key, char *val)
  {
@@ -38,4 +38,11 @@ diff -u -p -r1.1.1.5 -r1.4
 +		/* ignore everything else */
  		return (0);
  
- 	/* route is single-value, but seen trailing , in the wild */
+-	/* route is single-value, but seen trailing , in the wild */
+-	if (strlen(val) > 0 && val[strlen(val) - 1] == ',')
++	/* route is single-value, but seen trailing , and \r in the wild */
++	if (strlen(val) > 0 && (val[strlen(val) - 1] == ',' ||
++	    val[strlen(val) - 1] == '\r'))
+ 		val[strlen(val) - 1] = '\0';
+ 
+ 	return (prefixset_addmember(val));

@@ -2,12 +2,13 @@ Index: bgpd/rde_rib.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_rib.c,v
 retrieving revision 1.1.1.7
-diff -u -p -r1.1.1.7 rde_rib.c
+retrieving revision 1.8
+diff -u -p -r1.1.1.7 -r1.8
 --- bgpd/rde_rib.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/rde_rib.c	3 Jul 2011 04:45:31 -0000
++++ bgpd/rde_rib.c	13 Oct 2012 18:36:00 -0000	1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_rib.c,v 1.116 2009/06/29 14:13:48 claudio Exp $ */
-+/*	$OpenBSD: rde_rib.c,v 1.125 2010/04/07 09:44:11 claudio Exp $ */
++/*	$OpenBSD: rde_rib.c,v 1.133 2012/07/01 11:55:13 sthen Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>
@@ -122,68 +123,102 @@ diff -u -p -r1.1.1.7 rde_rib.c
  		re = RB_NEXT(rib_tree, unused, re);
  
  	/* free the previously locked rib element if empty */
-@@ -632,11 +639,11 @@ prefix_compare(const struct bgpd_addr *a
- 	int		i;
- 	u_int8_t	m;
+@@ -502,6 +509,36 @@ path_remove(struct rde_aspath *asp)
+ 	}
+ }
  
++/* remove all stale routes or if staletime is 0 remove all routes for
++   a specified AID. */
++void
++path_remove_stale(struct rde_aspath *asp, u_int8_t aid)
++{
++	struct prefix	*p, *np;
++	time_t		 staletime;
++
++	staletime = asp->peer->staletime[aid];
++	for (p = LIST_FIRST(&asp->prefix_h); p != NULL; p = np) {
++		np = LIST_NEXT(p, path_l);
++		if (p->prefix->aid != aid)
++			continue;
++
++		if (staletime && p->lastchange > staletime)
++			continue;
++
++		if (asp->pftableid) {
++			struct bgpd_addr addr;
++
++			pt_getaddr(p->prefix, &addr);
++			/* Commit is done in peer_flush() */
++			rde_send_pftable(p->aspath->pftableid, &addr,
++			    p->prefix->prefixlen, 1);
++		}
++		prefix_destroy(p);
++	}
++}
++
++
+ /* this function is only called by prefix_remove and path_remove */
+ void
+ path_destroy(struct rde_aspath *asp)
+@@ -624,48 +661,6 @@ static void		 prefix_link(struct prefix 
+ 			     struct rde_aspath *);
+ static void		 prefix_unlink(struct prefix *);
+ 
+-int
+-prefix_compare(const struct bgpd_addr *a, const struct bgpd_addr *b,
+-    int prefixlen)
+-{
+-	in_addr_t	mask, aa, ba;
+-	int		i;
+-	u_int8_t	m;
+-
 -	if (a->af != b->af)
 -		return (a->af - b->af);
-+	if (a->aid != b->aid)
-+		return (a->aid - b->aid);
- 
+-
 -	switch (a->af) {
 -	case AF_INET:
-+	switch (a->aid) {
-+	case AID_INET:
- 		if (prefixlen > 32)
- 			fatalx("prefix_cmp: bad IPv4 prefixlen");
- 		mask = htonl(prefixlen2mask(prefixlen));
-@@ -645,7 +652,7 @@ prefix_compare(const struct bgpd_addr *a
- 		if (aa != ba)
- 			return (aa - ba);
- 		return (0);
+-		if (prefixlen > 32)
+-			fatalx("prefix_cmp: bad IPv4 prefixlen");
+-		mask = htonl(prefixlen2mask(prefixlen));
+-		aa = ntohl(a->v4.s_addr & mask);
+-		ba = ntohl(b->v4.s_addr & mask);
+-		if (aa != ba)
+-			return (aa - ba);
+-		return (0);
 -	case AF_INET6:
-+	case AID_INET6:
- 		if (prefixlen > 128)
- 			fatalx("prefix_cmp: bad IPv6 prefixlen");
- 		for (i = 0; i < prefixlen / 8; i++)
-@@ -660,6 +667,24 @@ prefix_compare(const struct bgpd_addr *a
- 				    (b->v6.s6_addr[prefixlen / 8] & m));
- 		}
- 		return (0);
-+	case AID_VPN_IPv4:
-+		if (prefixlen > 32)
-+			fatalx("prefix_cmp: bad IPv4 VPN prefixlen");
-+		if (betoh64(a->vpn4.rd) > betoh64(b->vpn4.rd))
-+			return (1);
-+		if (betoh64(a->vpn4.rd) < betoh64(b->vpn4.rd))
-+			return (-1);
-+		mask = htonl(prefixlen2mask(prefixlen));
-+		aa = ntohl(a->vpn4.addr.s_addr & mask);
-+		ba = ntohl(b->vpn4.addr.s_addr & mask);
-+		if (aa != ba)
-+			return (aa - ba);
-+		if (a->vpn4.labellen > b->vpn4.labellen)
-+			return (1);
-+		if (a->vpn4.labellen < b->vpn4.labellen)
-+			return (-1);
-+		return (memcmp(a->vpn4.labelstack, b->vpn4.labelstack,
-+		    a->vpn4.labellen));
- 	default:
- 		fatalx("prefix_cmp: unknown af");
- 	}
-@@ -806,16 +831,33 @@ prefix_write(u_char *buf, int len, struc
+-		if (prefixlen > 128)
+-			fatalx("prefix_cmp: bad IPv6 prefixlen");
+-		for (i = 0; i < prefixlen / 8; i++)
+-			if (a->v6.s6_addr[i] != b->v6.s6_addr[i])
+-				return (a->v6.s6_addr[i] - b->v6.s6_addr[i]);
+-		i = prefixlen % 8;
+-		if (i) {
+-			m = 0xff00 >> i;
+-			if ((a->v6.s6_addr[prefixlen / 8] & m) !=
+-			    (b->v6.s6_addr[prefixlen / 8] & m))
+-				return ((a->v6.s6_addr[prefixlen / 8] & m) -
+-				    (b->v6.s6_addr[prefixlen / 8] & m));
+-		}
+-		return (0);
+-	default:
+-		fatalx("prefix_cmp: unknown af");
+-	}
+-	return (-1);
+-}
+-
+ /*
+  * search for specified prefix of a peer. Returns NULL if not found.
+  */
+@@ -806,16 +801,58 @@ prefix_write(u_char *buf, int len, struc
  {
  	int	totlen;
  
 -	if (prefix->af != AF_INET && prefix->af != AF_INET6)
--		return (-1);
 +	switch (prefix->aid) {
 +	case AID_INET:
 +	case AID_INET6:
 +		totlen = PREFIX_SIZE(plen);
- 
--	totlen = PREFIX_SIZE(plen);
++
 +		if (totlen > len)
 +			return (-1);
 +		*buf++ = plen;
@@ -193,8 +228,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
 +		totlen = PREFIX_SIZE(plen) + sizeof(prefix->vpn4.rd) +
 +		    prefix->vpn4.labellen;
 +		plen += (sizeof(prefix->vpn4.rd) + prefix->vpn4.labellen) * 8;
- 
--	if (totlen > len)
++
 +		if (totlen > len)
 +			return (-1);
 +		*buf++ = plen;
@@ -206,14 +240,41 @@ diff -u -p -r1.1.1.7 rde_rib.c
 +		return (totlen);
 +	default:
  		return (-1);
++	}
++}
+ 
+-	totlen = PREFIX_SIZE(plen);
++int
++prefix_writebuf(struct ibuf *buf, struct bgpd_addr *prefix, u_int8_t plen)
++{
++	int	 totlen;
++	void	*bptr;
+ 
+-	if (totlen > len)
++	switch (prefix->aid) {
++	case AID_INET:
++	case AID_INET6:
++		totlen = PREFIX_SIZE(plen);
++		break;
++	case AID_VPN_IPv4:
++		totlen = PREFIX_SIZE(plen) + sizeof(prefix->vpn4.rd) +
++		    prefix->vpn4.labellen;
++	default:
+ 		return (-1);
 -	*buf++ = plen;
 -	memcpy(buf, &prefix->ba, totlen - 1);
 -	return (totlen);
 +	}
++
++	if ((bptr = ibuf_reserve(buf, totlen)) == NULL)
++		return (-1);
++	if (prefix_write(bptr, totlen, prefix, plen) == -1)
++		return (-1);
++	return (0);
  }
  
  /*
-@@ -861,7 +903,7 @@ prefix_updateall(struct rde_aspath *asp,
+@@ -861,7 +898,7 @@ prefix_updateall(struct rde_aspath *asp,
  			 */
  			if ((p->rib->flags & F_RIB_NOFIB) == 0 &&
  			    p == p->rib->active)
@@ -222,7 +283,16 @@ diff -u -p -r1.1.1.7 rde_rib.c
  			continue;
  		}
  
-@@ -885,16 +927,12 @@ prefix_updateall(struct rde_aspath *asp,
+@@ -871,7 +908,7 @@ prefix_updateall(struct rde_aspath *asp,
+ 		 * If the prefix is the active one remove it first,
+ 		 * this has to be done because we can not detect when
+ 		 * the active prefix changes its state. In this case
+-		 * we know that this is a withdrawl and so the second
++		 * we know that this is a withdrawal and so the second
+ 		 * prefix_evaluate() will generate no update because
+ 		 * the nexthop is unreachable or ineligible.
+ 		 */
+@@ -885,16 +922,12 @@ prefix_updateall(struct rde_aspath *asp,
  void
  prefix_destroy(struct prefix *p)
  {
@@ -239,7 +309,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  	if (path_empty(asp))
  		path_destroy(asp);
  }
-@@ -907,7 +945,6 @@ prefix_network_clean(struct rde_peer *pe
+@@ -907,21 +940,16 @@ prefix_network_clean(struct rde_peer *pe
  {
  	struct rde_aspath	*asp, *xasp;
  	struct prefix		*p, *xp;
@@ -247,7 +317,9 @@ diff -u -p -r1.1.1.7 rde_rib.c
  
  	for (asp = LIST_FIRST(&peer->path_h); asp != NULL; asp = xasp) {
  		xasp = LIST_NEXT(asp, peer_l);
-@@ -916,12 +953,8 @@ prefix_network_clean(struct rde_peer *pe
+-		if ((asp->flags & F_ANN_DYNAMIC) == flags)
++		if ((asp->flags & F_ANN_DYNAMIC) != flags)
+ 			continue;
  		for (p = LIST_FIRST(&asp->prefix_h); p != NULL; p = xp) {
  			xp = LIST_NEXT(p, path_l);
  			if (reloadtime > p->lastchange) {
@@ -260,7 +332,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  			}
  		}
  		if (path_empty(asp))
-@@ -954,11 +987,11 @@ prefix_link(struct prefix *pref, struct 
+@@ -954,11 +982,11 @@ prefix_link(struct prefix *pref, struct 
  static void
  prefix_unlink(struct prefix *pref)
  {
@@ -277,7 +349,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  
  	LIST_REMOVE(pref, path_l);
  	PREFIX_COUNT(pref->aspath, -1);
-@@ -966,6 +999,8 @@ prefix_unlink(struct prefix *pref)
+@@ -966,6 +994,8 @@ prefix_unlink(struct prefix *pref)
  	pt_unref(pref->prefix);
  	if (pt_empty(pref->prefix))
  		pt_remove(pref->prefix);
@@ -286,7 +358,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  
  	/* destroy all references to other objects */
  	pref->aspath = NULL;
-@@ -973,8 +1008,8 @@ prefix_unlink(struct prefix *pref)
+@@ -973,8 +1003,8 @@ prefix_unlink(struct prefix *pref)
  	pref->rib = NULL;
  
  	/*
@@ -297,7 +369,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  	 */
  }
  
-@@ -1070,10 +1105,6 @@ nexthop_update(struct kroute_nexthop *ms
+@@ -1070,10 +1100,6 @@ nexthop_update(struct kroute_nexthop *ms
  		return;
  	}
  
@@ -308,7 +380,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  	oldstate = nh->state;
  	if (msg->valid)
  		nh->state = NEXTHOP_REACH;
-@@ -1088,21 +1119,13 @@ nexthop_update(struct kroute_nexthop *ms
+@@ -1088,21 +1114,13 @@ nexthop_update(struct kroute_nexthop *ms
  		memcpy(&nh->true_nexthop, &msg->gateway,
  		    sizeof(nh->true_nexthop));
  
@@ -337,7 +409,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  
  	if (rde_noevaluate())
  		/*
-@@ -1118,7 +1141,7 @@ nexthop_update(struct kroute_nexthop *ms
+@@ -1118,35 +1136,38 @@ nexthop_update(struct kroute_nexthop *ms
  
  void
  nexthop_modify(struct rde_aspath *asp, struct bgpd_addr *nexthop,
@@ -346,16 +418,58 @@ diff -u -p -r1.1.1.7 rde_rib.c
  {
  	struct nexthop	*nh;
  
-@@ -1138,7 +1161,7 @@ nexthop_modify(struct rde_aspath *asp, s
- 		asp->flags |= F_NEXTHOP_SELF;
+-	if (type == ACTION_SET_NEXTHOP_REJECT) {
+-		asp->flags |= F_NEXTHOP_REJECT;
++	if (type == ACTION_SET_NEXTHOP && aid != nexthop->aid)
  		return;
+-	}
+-	if (type  == ACTION_SET_NEXTHOP_BLACKHOLE) {
++
++	asp->flags &= ~F_NEXTHOP_MASK;
++	switch (type) {
++	case ACTION_SET_NEXTHOP_REJECT:
++		asp->flags |= F_NEXTHOP_REJECT;
++		break;
++	case ACTION_SET_NEXTHOP_BLACKHOLE:
+ 		asp->flags |= F_NEXTHOP_BLACKHOLE;
+-		return;
+-	}
+-	if (type == ACTION_SET_NEXTHOP_NOMODIFY) {
++		break;
++	case ACTION_SET_NEXTHOP_NOMODIFY:
+ 		asp->flags |= F_NEXTHOP_NOMODIFY;
+-		return;
+-	}
+-	if (type == ACTION_SET_NEXTHOP_SELF) {
++		break;
++	case ACTION_SET_NEXTHOP_SELF:
+ 		asp->flags |= F_NEXTHOP_SELF;
+-		return;
++		break;
++	case ACTION_SET_NEXTHOP:
++		nh = nexthop_get(nexthop);
++		if (asp->flags & F_ATTR_LINKED)
++			nexthop_unlink(asp);
++		asp->nexthop = nh;
++		if (asp->flags & F_ATTR_LINKED)
++			nexthop_link(asp);
++		break;
++	default:
++		break;
  	}
 -	if (af != nexthop->af)
-+	if (aid != nexthop->aid)
- 		return;
+-		return;
+-
+-	nh = nexthop_get(nexthop);
+-	if (asp->flags & F_ATTR_LINKED)
+-		nexthop_unlink(asp);
+-	asp->nexthop = nh;
+-	if (asp->flags & F_ATTR_LINKED)
+-		nexthop_link(asp);
+ }
  
- 	nh = nexthop_get(nexthop);
-@@ -1233,17 +1256,17 @@ nexthop_compare(struct nexthop *na, stru
+ void
+@@ -1233,17 +1254,17 @@ nexthop_compare(struct nexthop *na, stru
  	a = &na->exit_nexthop;
  	b = &nb->exit_nexthop;
  
@@ -378,7 +492,7 @@ diff -u -p -r1.1.1.7 rde_rib.c
  		return (memcmp(&a->v6, &b->v6, sizeof(struct in6_addr)));
  	default:
  		fatalx("nexthop_cmp: unknown af");
-@@ -1269,14 +1292,14 @@ nexthop_hash(struct bgpd_addr *nexthop)
+@@ -1269,14 +1290,14 @@ nexthop_hash(struct bgpd_addr *nexthop)
  {
  	u_int32_t	 h = 0;
  

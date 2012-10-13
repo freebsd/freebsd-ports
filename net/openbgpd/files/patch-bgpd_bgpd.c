@@ -2,12 +2,13 @@ Index: bgpd/bgpd.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.c,v
 retrieving revision 1.1.1.7
-diff -u -p -r1.1.1.7 bgpd.c
+retrieving revision 1.1.1.11
+diff -u -p -r1.1.1.7 -r1.1.1.11
 --- bgpd/bgpd.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/bgpd.c	3 Jul 2011 04:34:14 -0000
++++ bgpd/bgpd.c	13 Oct 2012 18:22:38 -0000	1.1.1.11
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.c,v 1.148 2009/06/07 00:30:23 claudio Exp $ */
-+/*	$OpenBSD: bgpd.c,v 1.167 2011/05/01 10:42:28 claudio Exp $ */
++/*	$OpenBSD: bgpd.c,v 1.168 2011/08/20 19:02:28 sthen Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -21,7 +22,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  #include "session.h"
  
  void		sighdlr(int);
-@@ -42,23 +42,22 @@ int		main(int, char *[]);
+@@ -42,23 +42,23 @@ int		main(int, char *[]);
  int		check_child(pid_t, const char *);
  int		send_filterset(struct imsgbuf *, struct filter_set_head *);
  int		reconfigure(char *, struct bgpd_config *, struct mrt_head *,
@@ -47,6 +48,7 @@ diff -u -p -r1.1.1.7 bgpd.c
 +volatile sig_atomic_t	 sigchld;
 +volatile sig_atomic_t	 reconfig;
 +pid_t			 reconfpid;
++int			 reconfpending;
  struct imsgbuf		*ibuf_se;
  struct imsgbuf		*ibuf_rde;
  struct rib_names	 ribnames = SIMPLEQ_HEAD_INITIALIZER(ribnames);
@@ -55,7 +57,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  
  void
  sighdlr(int sig)
-@@ -86,8 +85,8 @@ usage(void)
+@@ -86,8 +86,8 @@ usage(void)
  {
  	extern char *__progname;
  
@@ -66,7 +68,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  	exit(1);
  }
  
-@@ -101,15 +100,10 @@ int
+@@ -101,15 +101,10 @@ int
  main(int argc, char *argv[])
  {
  	struct bgpd_config	 conf;
@@ -83,13 +85,15 @@ diff -u -p -r1.1.1.7 bgpd.c
  	struct pollfd		 pfd[POLL_MAX];
  	pid_t			 io_pid = 0, rde_pid = 0, pid;
  	char			*conffile;
-@@ -125,17 +119,11 @@ main(int argc, char *argv[])
+@@ -124,18 +119,13 @@ main(int argc, char *argv[])
+ 	bgpd_process = PROC_MAIN;
  
  	log_init(1);		/* log to stderr until daemonized */
- 
+-
 -	if ((rules_l = calloc(1, sizeof(struct filter_head))) == NULL)
 -		err(1, NULL);
--
++	log_verbose(1);
+ 
  	bzero(&conf, sizeof(conf));
  	LIST_INIT(&mrt_l);
 -	TAILQ_INIT(&net_l);
@@ -102,7 +106,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  		switch (ch) {
  		case 'c':
  			conf.opts |= BGPD_OPT_FORCE_DEMOTE;
-@@ -158,12 +146,7 @@ main(int argc, char *argv[])
+@@ -158,12 +148,7 @@ main(int argc, char *argv[])
  			if (conf.opts & BGPD_OPT_VERBOSE)
  				conf.opts |= BGPD_OPT_VERBOSE2;
  			conf.opts |= BGPD_OPT_VERBOSE;
@@ -116,7 +120,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  			break;
  		default:
  			usage();
-@@ -176,24 +159,22 @@ main(int argc, char *argv[])
+@@ -176,24 +161,22 @@ main(int argc, char *argv[])
  	if (argc > 0)
  		usage();
  
@@ -151,7 +155,15 @@ diff -u -p -r1.1.1.7 bgpd.c
  
  	if (geteuid())
  		errx(1, "need root privileges");
-@@ -225,13 +206,9 @@ main(int argc, char *argv[])
+@@ -202,6 +185,7 @@ main(int argc, char *argv[])
+ 		errx(1, "unknown user %s", BGPD_USER);
+ 
+ 	log_init(debug);
++	log_verbose(conf.opts & BGPD_OPT_VERBOSE);
+ 
+ 	if (!debug)
+ 		daemon(1, 0);
+@@ -225,13 +209,9 @@ main(int argc, char *argv[])
  	session_socket_blockmode(pipe_s2r_c[0], BM_NONBLOCK);
  	session_socket_blockmode(pipe_s2r_c[1], BM_NONBLOCK);
  
@@ -167,7 +179,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  
  	setproctitle("parent");
  
-@@ -254,33 +231,12 @@ main(int argc, char *argv[])
+@@ -254,33 +234,12 @@ main(int argc, char *argv[])
  	imsg_init(ibuf_se, pipe_m2s[0]);
  	imsg_init(ibuf_rde, pipe_m2r[0]);
  	mrt_init(ibuf_rde, ibuf_se);
@@ -203,17 +215,27 @@ diff -u -p -r1.1.1.7 bgpd.c
  	while (quit == 0) {
  		bzero(pfd, sizeof(pfd));
  		pfd[PFD_PIPE_SESSION].fd = ibuf_se->fd;
-@@ -336,8 +292,7 @@ main(int argc, char *argv[])
+@@ -335,15 +294,16 @@ main(int argc, char *argv[])
+ 			u_int	error;
  
  			reconfig = 0;
- 			log_info("rereading config");
+-			log_info("rereading config");
 -			switch (reconfigure(conffile, &conf, &mrt_l, &peer_l,
 -			    rules_l)) {
 +			switch (reconfigure(conffile, &conf, &mrt_l, &peer_l)) {
  			case -1:	/* fatal error */
  				quit = 1;
  				break;
-@@ -389,13 +344,13 @@ main(int argc, char *argv[])
+ 			case 0:		/* all OK */
+ 				error = 0;
+ 				break;
++			case 2:
++				error = CTL_RES_PENDING;
++				break;
+ 			default:	/* parse error */
+ 				error = CTL_RES_PARSE_ERROR;
+ 				break;
+@@ -389,13 +349,13 @@ main(int argc, char *argv[])
  		LIST_REMOVE(m, entry);
  		free(m);
  	}
@@ -233,7 +255,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  	control_cleanup(conf.csock);
  	control_cleanup(conf.rcsock);
  	carp_demote_shutdown();
-@@ -413,6 +368,8 @@ main(int argc, char *argv[])
+@@ -413,6 +373,8 @@ main(int argc, char *argv[])
  	free(ibuf_se);
  	msgbuf_clear(&ibuf_rde->w);
  	free(ibuf_rde);
@@ -242,7 +264,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  
  	log_info("Terminating");
  	return (0);
-@@ -452,27 +409,25 @@ send_filterset(struct imsgbuf *i, struct
+@@ -452,27 +414,32 @@ send_filterset(struct imsgbuf *i, struct
  
  int
  reconfigure(char *conffile, struct bgpd_config *conf, struct mrt_head *mrt_l,
@@ -260,6 +282,13 @@ diff -u -p -r1.1.1.7 bgpd.c
 +	struct rdomain		*rd;
  
 -	if (parse_config(conffile, conf, mrt_l, peer_l, &net_l, rules_l)) {
++	if (reconfpending) {
++		log_info("previous reload still running");
++		return (2);
++	}
++	reconfpending = 2;	/* one per child */
++
++	log_info("rereading config");
 +	if (parse_config(conffile, conf, mrt_l, peer_l, &net_l, &rules_l,
 +	    &rdom_l)) {
  		log_warnx("config file %s has errors, not reloading",
@@ -276,7 +305,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  	prepare_listeners(conf);
  
  	/* start reconfiguration */
-@@ -483,12 +438,6 @@ reconfigure(char *conffile, struct bgpd_
+@@ -483,12 +450,6 @@ reconfigure(char *conffile, struct bgpd_
  	    conf, sizeof(struct bgpd_config)) == -1)
  		return (-1);
  
@@ -289,7 +318,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  	TAILQ_FOREACH(la, conf->listen_addrs, entry) {
  		if (imsg_compose(ibuf_se, IMSG_RECONF_LISTENER, 0, 0, la->fd,
  		    la, sizeof(struct listen_addr)) == -1)
-@@ -496,51 +445,104 @@ reconfigure(char *conffile, struct bgpd_
+@@ -496,51 +457,104 @@ reconfigure(char *conffile, struct bgpd_
  		la->fd = -1;
  	}
  
@@ -411,7 +440,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  	/* mrt changes can be sent out of bound */
  	mrt_reconfigure(mrt_l);
  	return (0);
-@@ -550,8 +552,8 @@ int
+@@ -550,8 +564,8 @@ int
  dispatch_imsg(struct imsgbuf *ibuf, int idx)
  {
  	struct imsg		 imsg;
@@ -422,7 +451,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  
  	if ((n = imsg_read(ibuf)) == -1)
  		return (-1);
-@@ -573,46 +575,39 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+@@ -573,46 +587,39 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
  		case IMSG_KROUTE_CHANGE:
  			if (idx != PFD_PIPE_ROUTE)
  				log_warnx("route request not from RDE");
@@ -487,7 +516,17 @@ diff -u -p -r1.1.1.7 bgpd.c
  			break;
  		case IMSG_PFTABLE_ADD:
  			if (idx != PFD_PIPE_ROUTE)
-@@ -654,18 +649,19 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+@@ -646,26 +653,28 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+ 		case IMSG_CTL_RELOAD:
+ 			if (idx != PFD_PIPE_SESSION)
+ 				log_warnx("reload request not from SE");
+-			else
++			else {
+ 				reconfig = 1;
+ 				reconfpid = imsg.hdr.pid;
++			}
+ 			break;
+ 		case IMSG_CTL_FIB_COUPLE:
  			if (idx != PFD_PIPE_SESSION)
  				log_warnx("couple request not from SE");
  			else
@@ -509,7 +548,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  			if (idx != PFD_PIPE_SESSION)
  				log_warnx("kroute request not from SE");
  			else
-@@ -692,6 +688,11 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+@@ -692,6 +701,16 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
  				carp_demote_set(msg->demote_group, msg->level);
  			}
  			break;
@@ -518,10 +557,15 @@ diff -u -p -r1.1.1.7 bgpd.c
 +			memcpy(&verbose, imsg.data, sizeof(verbose));
 +			log_verbose(verbose);
 +			break;
++		case IMSG_RECONF_DONE:
++			if (reconfpending == 0)
++				log_warnx("unexpected RECONF_DONE received");
++			reconfpending--;
++			break;
  		default:
  			break;
  		}
-@@ -707,7 +708,7 @@ send_nexthop_update(struct kroute_nextho
+@@ -707,7 +726,7 @@ send_nexthop_update(struct kroute_nextho
  {
  	char	*gw = NULL;
  
@@ -530,7 +574,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  		if (asprintf(&gw, ": via %s",
  		    log_addr(&msg->gateway)) == -1) {
  			log_warn("send_nexthop_update");
-@@ -717,7 +718,7 @@ send_nexthop_update(struct kroute_nextho
+@@ -717,7 +736,7 @@ send_nexthop_update(struct kroute_nextho
  	log_info("nexthop %s now %s%s%s", log_addr(&msg->nexthop),
  	    msg->valid ? "valid" : "invalid",
  	    msg->connected ? ": directly connected" : "",
@@ -539,7 +583,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  
  	free(gw);
  
-@@ -733,56 +734,20 @@ send_imsg_session(int type, pid_t pid, v
+@@ -733,56 +752,20 @@ send_imsg_session(int type, pid_t pid, v
  }
  
  int
@@ -600,7 +644,7 @@ diff -u -p -r1.1.1.7 bgpd.c
  }
  
  int
-@@ -810,3 +775,45 @@ bgpd_filternexthop(struct kroute *kr, st
+@@ -810,3 +793,45 @@ bgpd_filternexthop(struct kroute *kr, st
  
  	return (1);
  }

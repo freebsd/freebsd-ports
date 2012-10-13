@@ -2,10 +2,10 @@ Index: bgpd/util.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/util.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.6
-diff -u -p -r1.1.1.6 -r1.6
+retrieving revision 1.7
+diff -u -p -r1.1.1.6 -r1.7
 --- bgpd/util.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/util.c	2 Jul 2011 16:06:38 -0000	1.6
++++ bgpd/util.c	13 Oct 2012 18:36:00 -0000	1.7
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: util.c,v 1.6 2009/06/12 16:42:53 claudio Exp $ */
 +/*	$OpenBSD: util.c,v 1.11 2010/03/29 09:04:43 claudio Exp $ */
@@ -43,14 +43,14 @@ diff -u -p -r1.1.1.6 -r1.6
 +		if (inet_ntop(aid2af(addr->aid), &addr->ba, buf,
 +		    sizeof(buf)) == NULL)
 +			return ("?");
-+		return (buf);
+ 		return (buf);
 +	case AID_VPN_IPv4:
 +		if (inet_ntop(AF_INET, &addr->vpn4.addr, tbuf,
 +		    sizeof(tbuf)) == NULL)
 +			return ("?");
 +		snprintf(buf, sizeof(buf), "%s %s", log_rd(addr->vpn4.rd),
 +		   tbuf);
- 		return (buf);
++		return (buf);
 +	}
 +	return ("???");
  }
@@ -187,7 +187,142 @@ diff -u -p -r1.1.1.6 -r1.6
  	}
  	/* ensure that we have a valid C-string especially for empty as path */
  	if (size > 0)
-@@ -276,3 +376,115 @@ inet6applymask(struct in6_addr *dest, co
+@@ -235,6 +335,67 @@ aspath_strlen(void *data, u_int16_t len)
+ 	return (total_size);
+ }
+ 
++/* we need to be able to search more than one as */
++int
++aspath_match(void *data, u_int16_t len, enum as_spec type, u_int32_t as)
++{
++	u_int8_t	*seg;
++	int		 final;
++	u_int16_t	 seg_size;
++	u_int8_t	 i, seg_type, seg_len;
++
++	if (type == AS_EMPTY) {
++		if (len == 0)
++			return (1);
++		else
++			return (0);
++	}
++
++	final = 0;
++	seg = data;
++	for (; len > 0; len -= seg_size, seg += seg_size) {
++		seg_type = seg[0];
++		seg_len = seg[1];
++		seg_size = 2 + sizeof(u_int32_t) * seg_len;
++
++		final = (len == seg_size);
++
++		/* just check the first (leftmost) AS */
++		if (type == AS_PEER) {
++			if (as == aspath_extract(seg, 0))
++				return (1);
++			else
++				return (0);
++		}
++		/* just check the final (rightmost) AS */
++		if (type == AS_SOURCE) {
++			/* not yet in the final segment */
++			if (!final)
++				continue;
++
++			if (as == aspath_extract(seg, seg_len - 1))
++				return (1);
++			else
++				return (0);
++		}
++
++		/* AS_TRANSIT or AS_ALL */
++		for (i = 0; i < seg_len; i++) {
++			if (as == aspath_extract(seg, i)) {
++				/*
++				 * the source (rightmost) AS is excluded from
++				 * AS_TRANSIT matches.
++				 */
++				if (final && i == seg_len - 1 &&
++				    type == AS_TRANSIT)
++					return (0);
++				return (1);
++			}
++		}
++	}
++	return (0);
++}
++
+ /*
+  * Extract the asnum out of the as segment at the specified position.
+  * Direct access is not possible because of non-aligned reads.
+@@ -251,6 +412,66 @@ aspath_extract(const void *seg, int pos)
+ 	return (ntohl(as));
+ }
+ 
++int
++prefix_compare(const struct bgpd_addr *a, const struct bgpd_addr *b,
++    int prefixlen)
++{
++	in_addr_t	mask, aa, ba;
++	int		i;
++	u_int8_t	m;
++
++	if (a->aid != b->aid)
++		return (a->aid - b->aid);
++
++	switch (a->aid) {
++	case AID_INET:
++		if (prefixlen > 32)
++			fatalx("prefix_cmp: bad IPv4 prefixlen");
++		mask = htonl(prefixlen2mask(prefixlen));
++		aa = ntohl(a->v4.s_addr & mask);
++		ba = ntohl(b->v4.s_addr & mask);
++		if (aa != ba)
++			return (aa - ba);
++		return (0);
++	case AID_INET6:
++		if (prefixlen > 128)
++			fatalx("prefix_cmp: bad IPv6 prefixlen");
++		for (i = 0; i < prefixlen / 8; i++)
++			if (a->v6.s6_addr[i] != b->v6.s6_addr[i])
++				return (a->v6.s6_addr[i] - b->v6.s6_addr[i]);
++		i = prefixlen % 8;
++		if (i) {
++			m = 0xff00 >> i;
++			if ((a->v6.s6_addr[prefixlen / 8] & m) !=
++			    (b->v6.s6_addr[prefixlen / 8] & m))
++				return ((a->v6.s6_addr[prefixlen / 8] & m) -
++				    (b->v6.s6_addr[prefixlen / 8] & m));
++		}
++		return (0);
++	case AID_VPN_IPv4:
++		if (prefixlen > 32)
++			fatalx("prefix_cmp: bad IPv4 VPN prefixlen");
++		if (betoh64(a->vpn4.rd) > betoh64(b->vpn4.rd))
++			return (1);
++		if (betoh64(a->vpn4.rd) < betoh64(b->vpn4.rd))
++			return (-1);
++		mask = htonl(prefixlen2mask(prefixlen));
++		aa = ntohl(a->vpn4.addr.s_addr & mask);
++		ba = ntohl(b->vpn4.addr.s_addr & mask);
++		if (aa != ba)
++			return (aa - ba);
++		if (a->vpn4.labellen > b->vpn4.labellen)
++			return (1);
++		if (a->vpn4.labellen < b->vpn4.labellen)
++			return (-1);
++		return (memcmp(a->vpn4.labelstack, b->vpn4.labelstack,
++		    a->vpn4.labellen));
++	default:
++		fatalx("prefix_cmp: unknown af");
++	}
++	return (-1);
++}
++
+ in_addr_t
+ prefixlen2mask(u_int8_t prefixlen)
+ {
+@@ -276,3 +497,115 @@ inet6applymask(struct in6_addr *dest, co
  	for (i = 0; i < 16; i++)
  		dest->s6_addr[i] = src->s6_addr[i] & mask.s6_addr[i];
  }

@@ -2,13 +2,13 @@ Index: bgpd/config.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/config.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.2
-diff -u -p -r1.1.1.6 -r1.2
+retrieving revision 1.3
+diff -u -p -r1.1.1.6 -r1.3
 --- bgpd/config.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/config.c	2 Jul 2011 16:06:38 -0000	1.2
++++ bgpd/config.c	13 Oct 2012 18:36:00 -0000	1.3
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: config.c,v 1.51 2009/01/26 23:10:02 claudio Exp $ */
-+/*	$OpenBSD: config.c,v 1.56 2010/10/24 17:20:08 deraadt Exp $ */
++/*	$OpenBSD: config.c,v 1.55 2010/09/02 14:03:21 sobrado Exp $ */
  
  /*
   * Copyright (c) 2003, 2004, 2005 Henning Brauer <henning@openbsd.org>

@@ -2,13 +2,13 @@ Index: bgpd/pfkey.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/pfkey.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.1.1.8
-diff -u -p -r1.1.1.6 -r1.1.1.8
+retrieving revision 1.1.1.9
+diff -u -p -r1.1.1.6 -r1.1.1.9
 --- bgpd/pfkey.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/pfkey.c	12 Jun 2011 10:44:25 -0000	1.1.1.8
++++ bgpd/pfkey.c	13 Oct 2012 18:22:44 -0000	1.1.1.9
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: pfkey.c,v 1.37 2009/04/21 15:25:52 henning Exp $ */
-+/*	$OpenBSD: pfkey.c,v 1.41 2010/12/09 13:50:41 claudio Exp $ */
++/*	$OpenBSD: pfkey.c,v 1.40 2009/12/14 17:38:18 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>

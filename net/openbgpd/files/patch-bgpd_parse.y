@@ -2,12 +2,13 @@ Index: bgpd/parse.y
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/parse.y,v
 retrieving revision 1.1.1.8
-diff -u -p -r1.1.1.8 parse.y
+retrieving revision 1.11
+diff -u -p -r1.1.1.8 -r1.11
 --- bgpd/parse.y	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/parse.y	3 Jul 2011 04:43:32 -0000
++++ bgpd/parse.y	13 Oct 2012 18:50:07 -0000	1.11
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: parse.y,v 1.231 2009/06/06 01:10:29 claudio Exp $ */
-+/*	$OpenBSD: parse.y,v 1.250 2010/03/31 18:53:23 claudio Exp $ */
++/*	$OpenBSD: parse.y,v 1.263 2012/09/12 05:56:22 claudio Exp $ */
  
  /*
   * Copyright (c) 2002, 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -23,7 +24,17 @@ diff -u -p -r1.1.1.8 parse.y
  #include <ctype.h>
  #include <err.h>
  #include <unistd.h>
-@@ -74,10 +77,12 @@ char		*symget(const char *);
+@@ -33,6 +36,9 @@
+ #include <limits.h>
+ #include <stdarg.h>
+ #include <stdio.h>
++#if defined(__FreeBSD__)
++#include <stdlib.h>
++#endif
+ #include <string.h>
+ #include <syslog.h>
+ 
+@@ -74,10 +80,12 @@ char		*symget(const char *);
  
  static struct bgpd_config	*conf;
  static struct mrt_head		*mrtconf;
@@ -37,7 +48,7 @@ diff -u -p -r1.1.1.8 parse.y
  static struct filter_head	*filter_l;
  static struct filter_head	*peerfilter_l;
  static struct filter_head	*groupfilter_l;
-@@ -105,7 +110,7 @@ struct filter_match_l {
+@@ -105,7 +113,7 @@ struct filter_match_l {
  	struct filter_match	 m;
  	struct filter_prefix_l	*prefix_l;
  	struct filter_as_l	*as_l;
@@ -46,7 +57,7 @@ diff -u -p -r1.1.1.8 parse.y
  } fmopts;
  
  struct peer	*alloc_peer(void);
-@@ -113,8 +118,8 @@ struct peer	*new_peer(void);
+@@ -113,8 +121,8 @@ struct peer	*new_peer(void);
  struct peer	*new_group(void);
  int		 add_mrtconfig(enum mrt_type, char *, time_t, struct peer *,
  		    char *);
@@ -57,7 +68,7 @@ diff -u -p -r1.1.1.8 parse.y
  int		 get_id(struct peer *);
  int		 expand_rule(struct filter_rule *, struct filter_peers_l *,
  		    struct filter_match_l *, struct filter_set_head *);
-@@ -123,12 +128,14 @@ int		 neighbor_consistent(struct peer *)
+@@ -123,12 +131,14 @@ int		 neighbor_consistent(struct peer *)
  int		 merge_filterset(struct filter_set_head *, struct filter_set *);
  void		 copy_filterset(struct filter_set_head *,
  		    struct filter_set_head *);
@@ -75,7 +86,7 @@ diff -u -p -r1.1.1.8 parse.y
  
  typedef struct {
  	union {
-@@ -159,29 +166,33 @@ typedef struct {
+@@ -159,29 +169,33 @@ typedef struct {
  %}
  
  %token	AS ROUTERID HOLDTIME YMIN LISTEN ON FIBUPDATE RTABLE
@@ -117,7 +128,7 @@ diff -u -p -r1.1.1.8 parse.y
  %type	<v.string>		string filter_rib
  %type	<v.addr>		address
  %type	<v.prefix>		prefix addrspec
-@@ -204,6 +215,7 @@ grammar		: /* empty */
+@@ -204,6 +218,7 @@ grammar		: /* empty */
  		| grammar include '\n'
  		| grammar conf_main '\n'
  		| grammar varset '\n'
@@ -125,7 +136,7 @@ diff -u -p -r1.1.1.8 parse.y
  		| grammar neighbor '\n'
  		| grammar group '\n'
  		| grammar filterrule '\n'
-@@ -211,8 +223,12 @@ grammar		: /* empty */
+@@ -211,8 +226,12 @@ grammar		: /* empty */
  		;
  
  asnumber	: NUMBER			{
@@ -140,7 +151,7 @@ diff -u -p -r1.1.1.8 parse.y
  				YYERROR;
  			}
  		}
-@@ -274,6 +290,8 @@ yesno		:  STRING			{
+@@ -274,6 +293,8 @@ yesno		:  STRING			{
  			else if (!strcmp($1, "no"))
  				$$ = 0;
  			else {
@@ -149,7 +160,7 @@ diff -u -p -r1.1.1.8 parse.y
  				free($1);
  				YYERROR;
  			}
-@@ -318,7 +336,7 @@ conf_main	: AS as4number		{
+@@ -318,7 +339,7 @@ conf_main	: AS as4number		{
  			conf->short_as = $3;
  		}
  		| ROUTERID address		{
@@ -158,7 +169,7 @@ diff -u -p -r1.1.1.8 parse.y
  				yyerror("router-id must be an IPv4 address");
  				YYERROR;
  			}
-@@ -342,42 +360,25 @@ conf_main	: AS as4number		{
+@@ -342,42 +363,25 @@ conf_main	: AS as4number		{
  		}
  		| LISTEN ON address	{
  			struct listen_addr	*la;
@@ -209,7 +220,7 @@ diff -u -p -r1.1.1.8 parse.y
  		}
  		| ROUTECOLL yesno	{
  			if ($2 == 1)
-@@ -386,7 +387,7 @@ conf_main	: AS as4number		{
+@@ -386,7 +390,7 @@ conf_main	: AS as4number		{
  				conf->flags &= ~BGPD_FLAG_NO_EVALUATE;
  		}
  		| RDE RIB STRING {
@@ -218,7 +229,7 @@ diff -u -p -r1.1.1.8 parse.y
  				free($3);
  				YYERROR;
  			}
-@@ -395,9 +396,27 @@ conf_main	: AS as4number		{
+@@ -395,9 +399,27 @@ conf_main	: AS as4number		{
  		| RDE RIB STRING yesno EVALUATE {
  			if ($4) {
  				free($3);
@@ -247,7 +258,7 @@ diff -u -p -r1.1.1.8 parse.y
  				free($3);
  				YYERROR;
  			}
-@@ -418,59 +437,7 @@ conf_main	: AS as4number		{
+@@ -418,59 +440,7 @@ conf_main	: AS as4number		{
  			}
  			free($2);
  		}
@@ -308,7 +319,25 @@ diff -u -p -r1.1.1.8 parse.y
  		| DUMP STRING STRING optnumber		{
  			int action;
  
-@@ -575,11 +542,20 @@ conf_main	: AS as4number		{
+@@ -484,6 +454,8 @@ conf_main	: AS as4number		{
+ 				action = MRT_TABLE_DUMP;
+ 			else if (!strcmp($2, "table-mp"))
+ 				action = MRT_TABLE_DUMP_MP;
++			else if (!strcmp($2, "table-v2"))
++				action = MRT_TABLE_DUMP_V2;
+ 			else {
+ 				yyerror("unknown mrt dump type");
+ 				free($2);
+@@ -511,6 +483,8 @@ conf_main	: AS as4number		{
+ 				action = MRT_TABLE_DUMP;
+ 			else if (!strcmp($4, "table-mp"))
+ 				action = MRT_TABLE_DUMP_MP;
++			else if (!strcmp($4, "table-v2"))
++				action = MRT_TABLE_DUMP_V2;
+ 			else {
+ 				yyerror("unknown mrt dump type");
+ 				free($3);
+@@ -575,11 +549,20 @@ conf_main	: AS as4number		{
  			free($4);
  		}
  		| RTABLE NUMBER {
@@ -332,7 +361,7 @@ diff -u -p -r1.1.1.8 parse.y
  		}
  		| CONNECTRETRY NUMBER {
  			if ($2 > USHRT_MAX || $2 < 1) {
-@@ -588,6 +564,15 @@ conf_main	: AS as4number		{
+@@ -588,6 +571,15 @@ conf_main	: AS as4number		{
  			}
  			conf->connectretry = $2;
  		}
@@ -348,7 +377,7 @@ diff -u -p -r1.1.1.8 parse.y
  		;
  
  mrtdump		: DUMP STRING inout STRING optnumber	{
-@@ -620,10 +605,47 @@ mrtdump		: DUMP STRING inout STRING optn
+@@ -620,10 +612,47 @@ mrtdump		: DUMP STRING inout STRING optn
  		}
  		;
  
@@ -396,7 +425,7 @@ diff -u -p -r1.1.1.8 parse.y
  address		: STRING		{
  			u_int8_t	len;
  
-@@ -635,11 +657,11 @@ address		: STRING		{
+@@ -635,11 +664,11 @@ address		: STRING		{
  			}
  			free($1);
  
@@ -411,7 +440,7 @@ diff -u -p -r1.1.1.8 parse.y
  				YYERROR;
  			}
  		}
-@@ -653,7 +675,7 @@ prefix		: STRING '/' NUMBER	{
+@@ -653,7 +682,7 @@ prefix		: STRING '/' NUMBER	{
  				free($1);
  				YYERROR;
  			}
@@ -420,7 +449,7 @@ diff -u -p -r1.1.1.8 parse.y
  				fatal(NULL);
  			free($1);
  
-@@ -672,7 +694,7 @@ prefix		: STRING '/' NUMBER	{
+@@ -672,7 +701,7 @@ prefix		: STRING '/' NUMBER	{
  				yyerror("bad prefix %lld/%lld", $1, $3);
  				YYERROR;
  			}
@@ -429,7 +458,7 @@ diff -u -p -r1.1.1.8 parse.y
  				fatal(NULL);
  
  			if (!host(s, &$$.prefix, &$$.len)) {
-@@ -686,7 +708,7 @@ prefix		: STRING '/' NUMBER	{
+@@ -686,7 +715,7 @@ prefix		: STRING '/' NUMBER	{
  
  addrspec	: address	{
  			memcpy(&$$.prefix, &$1, sizeof(struct bgpd_addr));
@@ -438,7 +467,7 @@ diff -u -p -r1.1.1.8 parse.y
  				$$.len = 32;
  			else
  				$$.len = 128;
-@@ -705,14 +727,150 @@ optnumber	: /* empty */		{ $$ = 0; }
+@@ -705,14 +734,150 @@ optnumber	: /* empty */		{ $$ = 0; }
  		| NUMBER
  		;
  
@@ -591,7 +620,7 @@ diff -u -p -r1.1.1.8 parse.y
  			if (get_id(curpeer)) {
  				yyerror("get_id failed");
  				YYERROR;
-@@ -802,6 +960,17 @@ peeropts	: REMOTEAS as4number	{
+@@ -802,6 +967,17 @@ peeropts	: REMOTEAS as4number	{
  			}
  			free($2);
  		}
@@ -609,7 +638,7 @@ diff -u -p -r1.1.1.8 parse.y
  		| LOCALADDR address	{
  			memcpy(&curpeer->conf.local_addr, &$2,
  			    sizeof(curpeer->conf.local_addr));
-@@ -852,13 +1021,17 @@ peeropts	: REMOTEAS as4number	{
+@@ -852,13 +1028,17 @@ peeropts	: REMOTEAS as4number	{
  			curpeer->conf.min_holdtime = $3;
  		}
  		| ANNOUNCE family STRING {
@@ -632,7 +661,7 @@ diff -u -p -r1.1.1.8 parse.y
  				yyerror("unknown/unsupported SAFI \"%s\"",
  				    $3);
  				free($3);
-@@ -866,25 +1039,31 @@ peeropts	: REMOTEAS as4number	{
+@@ -866,25 +1046,31 @@ peeropts	: REMOTEAS as4number	{
  			}
  			free($3);
  
@@ -658,7 +687,7 @@ diff -u -p -r1.1.1.8 parse.y
 +			curpeer->conf.capabilities.refresh = $3;
 +		}
 +		| ANNOUNCE RESTART yesno {
-+			curpeer->conf.capabilities.restart = $3;
++			curpeer->conf.capabilities.grestart.restart = $3;
 +		}
 +		| ANNOUNCE AS4BYTE yesno {
 +			curpeer->conf.capabilities.as4byte = $3;
@@ -674,7 +703,7 @@ diff -u -p -r1.1.1.8 parse.y
  				curpeer->conf.announce_type = ANNOUNCE_NONE;
  			else if (!strcmp($2, "all"))
  				curpeer->conf.announce_type = ANNOUNCE_ALL;
-@@ -1083,7 +1262,7 @@ peeropts	: REMOTEAS as4number	{
+@@ -1083,7 +1269,7 @@ peeropts	: REMOTEAS as4number	{
  			curpeer->conf.reflector_client = 1;
  		}
  		| REFLECTOR address	{
@@ -683,7 +712,7 @@ diff -u -p -r1.1.1.8 parse.y
  				yyerror("route reflector cluster-id must be "
  				    "an IPv4 address");
  				YYERROR;
-@@ -1157,6 +1336,10 @@ family		: IPV4	{ $$ = AFI_IPv4; }
+@@ -1157,6 +1343,10 @@ family		: IPV4	{ $$ = AFI_IPv4; }
  		| IPV6	{ $$ = AFI_IPv6; }
  		;
  
@@ -694,7 +723,7 @@ diff -u -p -r1.1.1.8 parse.y
  espah		: ESP		{ $$ = 1; }
  		| AH		{ $$ = 0; }
  		;
-@@ -1336,12 +1519,12 @@ filter_prefix_l	: filter_prefix				{ $$ 
+@@ -1336,12 +1526,12 @@ filter_prefix_l	: filter_prefix				{ $$ 
  		;
  
  filter_prefix	: prefix				{
@@ -709,7 +738,7 @@ diff -u -p -r1.1.1.8 parse.y
  			if (($$ = calloc(1, sizeof(struct filter_prefix_l))) ==
  			    NULL)
  				fatal(NULL);
-@@ -1410,6 +1593,12 @@ filter_as	: as4number		{
+@@ -1410,6 +1600,12 @@ filter_as	: as4number		{
  				fatal(NULL);
  			$$->a.as = $1;
  		}
@@ -722,7 +751,7 @@ diff -u -p -r1.1.1.8 parse.y
  		;
  
  filter_match_h	: /* empty */			{
-@@ -1437,18 +1626,18 @@ filter_elm	: filter_prefix_h	{
+@@ -1437,18 +1633,18 @@ filter_elm	: filter_prefix_h	{
  			fmopts.prefix_l = $1;
  		}
  		| PREFIXLEN prefixlenop		{
@@ -744,7 +773,7 @@ diff -u -p -r1.1.1.8 parse.y
  		}
  		| filter_as_h		{
  			if (fmopts.as_l != NULL) {
-@@ -1457,32 +1646,73 @@ filter_elm	: filter_prefix_h	{
+@@ -1457,32 +1653,73 @@ filter_elm	: filter_prefix_h	{
  			}
  			fmopts.as_l = $1;
  		}
@@ -781,11 +810,11 @@ diff -u -p -r1.1.1.8 parse.y
 -			if (parsecommunity($2, &fmopts.m.community.as,
 -			    &fmopts.m.community.type) == -1) {
 +			if (parsecommunity(&fmopts.m.community, $2) == -1) {
- 				free($2);
- 				YYERROR;
- 			}
- 			free($2);
- 		}
++				free($2);
++				YYERROR;
++			}
++			free($2);
++		}
 +		| EXTCOMMUNITY STRING STRING {
 +			if (fmopts.m.ext_community.flags &
 +			    EXT_COMMUNITY_FLAG_VALID) {
@@ -797,13 +826,13 @@ diff -u -p -r1.1.1.8 parse.y
 +
 +			if (parseextcommunity(&fmopts.m.ext_community,
 +			    $2, $3) == -1) {
-+				free($2);
+ 				free($2);
 +				free($3);
-+				YYERROR;
-+			}
-+			free($2);
+ 				YYERROR;
+ 			}
+ 			free($2);
 +			free($3);
-+		}
+ 		}
  		| IPV4			{
 -			if (fmopts.af) {
 +			if (fmopts.aid) {
@@ -824,7 +853,25 @@ diff -u -p -r1.1.1.8 parse.y
  		}
  		;
  
-@@ -1782,8 +2012,7 @@ filter_set_opt	: LOCALPREF NUMBER		{
+@@ -1588,7 +1825,7 @@ filter_set_opt	: LOCALPREF NUMBER		{
+ 			}
+ 			if (($$ = calloc(1, sizeof(struct filter_set))) == NULL)
+ 				fatal(NULL);
+-			if ($2 > 0) {
++			if ($2 >= 0) {
+ 				$$->type = ACTION_SET_MED;
+ 				$$->action.metric = $2;
+ 			} else {
+@@ -1623,7 +1860,7 @@ filter_set_opt	: LOCALPREF NUMBER		{
+ 			}
+ 			if (($$ = calloc(1, sizeof(struct filter_set))) == NULL)
+ 				fatal(NULL);
+-			if ($2 > 0) {
++			if ($2 >= 0) {
+ 				$$->type = ACTION_SET_MED;
+ 				$$->action.metric = $2;
+ 			} else {
+@@ -1782,8 +2019,7 @@ filter_set_opt	: LOCALPREF NUMBER		{
  			else
  				$$->type = ACTION_SET_COMMUNITY;
  
@@ -834,7 +881,7 @@ diff -u -p -r1.1.1.8 parse.y
  				free($3);
  				free($$);
  				YYERROR;
-@@ -1796,40 +2025,62 @@ filter_set_opt	: LOCALPREF NUMBER		{
+@@ -1796,40 +2032,62 @@ filter_set_opt	: LOCALPREF NUMBER		{
  				free($$);
  				YYERROR;
  			}
@@ -917,7 +964,7 @@ diff -u -p -r1.1.1.8 parse.y
  		;
  
  %%
-@@ -1873,6 +2124,7 @@ lookup(char *s)
+@@ -1873,6 +2131,7 @@ lookup(char *s)
  		{ "allow",		ALLOW},
  		{ "announce",		ANNOUNCE},
  		{ "any",		ANY},
@@ -925,7 +972,7 @@ diff -u -p -r1.1.1.8 parse.y
  		{ "blackhole",		BLACKHOLE},
  		{ "capabilities",	CAPABILITIES},
  		{ "community",		COMMUNITY},
-@@ -1889,16 +2141,22 @@ lookup(char *s)
+@@ -1889,16 +2148,22 @@ lookup(char *s)
  		{ "enforce",		ENFORCE},
  		{ "esp",		ESP},
  		{ "evaluate",		EVALUATE},
@@ -948,7 +995,7 @@ diff -u -p -r1.1.1.8 parse.y
  		{ "ipsec",		IPSEC},
  		{ "key",		KEY},
  		{ "listen",		LISTEN},
-@@ -1906,6 +2164,8 @@ lookup(char *s)
+@@ -1906,6 +2171,8 @@ lookup(char *s)
  		{ "localpref",		LOCALPREF},
  		{ "log",		LOG},
  		{ "match",		MATCH},
@@ -957,7 +1004,7 @@ diff -u -p -r1.1.1.8 parse.y
  		{ "max-prefix",		MAXPREFIX},
  		{ "md5sig",		MD5SIG},
  		{ "med",		MED},
-@@ -1918,6 +2178,7 @@ lookup(char *s)
+@@ -1918,6 +2185,7 @@ lookup(char *s)
  		{ "nexthop",		NEXTHOP},
  		{ "no-modify",		NOMODIFY},
  		{ "on",			ON},
@@ -965,7 +1012,7 @@ diff -u -p -r1.1.1.8 parse.y
  		{ "out",		OUT},
  		{ "passive",		PASSIVE},
  		{ "password",		PASSWORD},
-@@ -1929,10 +2190,14 @@ lookup(char *s)
+@@ -1929,10 +2197,14 @@ lookup(char *s)
  		{ "prepend-self",	PREPEND_SELF},
  		{ "qualify",		QUALIFY},
  		{ "quick",		QUICK},
@@ -980,7 +1027,7 @@ diff -u -p -r1.1.1.8 parse.y
  		{ "rib",		RIB},
  		{ "route-collector",	ROUTECOLL},
  		{ "route-reflector",	REFLECTOR},
-@@ -1941,6 +2206,7 @@ lookup(char *s)
+@@ -1941,6 +2213,7 @@ lookup(char *s)
  		{ "rtlabel",		RTLABEL},
  		{ "self",		SELF},
  		{ "set",		SET},
@@ -988,7 +1035,7 @@ diff -u -p -r1.1.1.8 parse.y
  		{ "softreconfig",	SOFTRECONFIG},
  		{ "source-as",		SOURCEAS},
  		{ "spi",		SPI},
-@@ -2117,9 +2383,10 @@ top:
+@@ -2117,9 +2390,10 @@ top:
  					return (0);
  				if (next == quotec || c == ' ' || c == '\t')
  					c = next;
@@ -1001,7 +1048,7 @@ diff -u -p -r1.1.1.8 parse.y
  					lungetc(next);
  			} else if (c == quotec) {
  				*p = '\0';
-@@ -2135,6 +2402,26 @@ top:
+@@ -2135,6 +2409,26 @@ top:
  		if (yylval.v.string == NULL)
  			fatal("yylex: strdup");
  		return (STRING);
@@ -1028,7 +1075,7 @@ diff -u -p -r1.1.1.8 parse.y
  	}
  
  #define allowed_to_end_number(x) \
-@@ -2274,18 +2561,21 @@ popfile(void)
+@@ -2274,18 +2568,21 @@ popfile(void)
  int
  parse_config(char *filename, struct bgpd_config *xconf,
      struct mrt_head *xmconf, struct peer **xpeers, struct network_head *nc,
@@ -1051,7 +1098,7 @@ diff -u -p -r1.1.1.8 parse.y
  
  	if ((file = pushfile(filename, 1)) == NULL) {
  		free(conf);
-@@ -2316,13 +2606,15 @@ parse_config(char *filename, struct bgpd
+@@ -2316,13 +2613,15 @@ parse_config(char *filename, struct bgpd
  	id = 1;
  
  	/* network list is always empty in the parent */
@@ -1070,7 +1117,7 @@ diff -u -p -r1.1.1.8 parse.y
  
  	yyparse();
  	errors = file->errors;
-@@ -2344,6 +2636,9 @@ parse_config(char *filename, struct bgpd
+@@ -2344,6 +2643,9 @@ parse_config(char *filename, struct bgpd
  
  	if (errors) {
  		/* XXX more leaks in this case */
@@ -1080,7 +1127,7 @@ diff -u -p -r1.1.1.8 parse.y
  		while ((la = TAILQ_FIRST(listen_addrs)) != NULL) {
  			TAILQ_REMOVE(listen_addrs, la, entry);
  			free(la);
-@@ -2357,23 +2652,44 @@ parse_config(char *filename, struct bgpd
+@@ -2357,23 +2659,44 @@ parse_config(char *filename, struct bgpd
  
  		while ((n = TAILQ_FIRST(netconf)) != NULL) {
  			TAILQ_REMOVE(netconf, n, entry);
@@ -1125,7 +1172,7 @@ diff -u -p -r1.1.1.8 parse.y
  	} else {
  		errors += merge_config(xconf, conf, peer_l, listen_addrs);
  		errors += mrt_mergeconfig(xmconf, mrtconf);
-@@ -2505,27 +2821,27 @@ getcommunity(char *s)
+@@ -2505,27 +2828,27 @@ getcommunity(char *s)
  }
  
  int
@@ -1163,7 +1210,7 @@ diff -u -p -r1.1.1.8 parse.y
  		return (0);
  	}
  
-@@ -2537,23 +2853,176 @@ parsecommunity(char *s, int *as, int *ty
+@@ -2537,23 +2860,176 @@ parsecommunity(char *s, int *as, int *ty
  
  	if ((i = getcommunity(s)) == COMMUNITY_ERROR)
  		return (-1);
@@ -1343,7 +1390,7 @@ diff -u -p -r1.1.1.8 parse.y
  
  	if ((p = calloc(1, sizeof(struct peer))) == NULL)
  		fatal("new_peer");
-@@ -2564,11 +3033,11 @@ alloc_peer(void)
+@@ -2564,11 +3040,11 @@ alloc_peer(void)
  	p->conf.distance = 1;
  	p->conf.announce_type = ANNOUNCE_UNDEF;
  	p->conf.announce_capa = 1;
@@ -1352,13 +1399,14 @@ diff -u -p -r1.1.1.8 parse.y
 +	for (i = 0; i < AID_MAX; i++)
 +		p->conf.capabilities.mp[i] = -1;
  	p->conf.capabilities.refresh = 1;
- 	p->conf.capabilities.restart = 0;
+-	p->conf.capabilities.restart = 0;
 -	p->conf.capabilities.as4byte = 0;
++	p->conf.capabilities.grestart.restart = 1;
 +	p->conf.capabilities.as4byte = 1;
  	p->conf.local_as = conf->as;
  	p->conf.local_short_as = conf->short_as;
  	p->conf.softreconfig_in = 1;
-@@ -2592,6 +3061,9 @@ new_peer(void)
+@@ -2592,6 +3068,9 @@ new_peer(void)
  		if (strlcpy(p->conf.descr, curgroup->conf.descr,
  		    sizeof(p->conf.descr)) >= sizeof(p->conf.descr))
  			fatalx("new_peer descr strlcpy");
@@ -1368,7 +1416,7 @@ diff -u -p -r1.1.1.8 parse.y
  		p->conf.groupid = curgroup->conf.id;
  		p->conf.local_as = curgroup->conf.local_as;
  		p->conf.local_short_as = curgroup->conf.local_short_as;
-@@ -2674,39 +3146,52 @@ add_mrtconfig(enum mrt_type type, char *
+@@ -2674,39 +3153,52 @@ add_mrtconfig(enum mrt_type type, char *
  }
  
  int
@@ -1433,7 +1481,7 @@ diff -u -p -r1.1.1.8 parse.y
  }
  
  int
-@@ -2715,7 +3200,7 @@ get_id(struct peer *newpeer)
+@@ -2715,7 +3207,7 @@ get_id(struct peer *newpeer)
  	struct peer	*p;
  
  	for (p = peer_l_old; p != NULL; p = p->next)
@@ -1442,7 +1490,7 @@ diff -u -p -r1.1.1.8 parse.y
  			if (!memcmp(&p->conf.remote_addr,
  			    &newpeer->conf.remote_addr,
  			    sizeof(p->conf.remote_addr))) {
-@@ -2856,9 +3341,11 @@ str2key(char *s, char *dest, size_t max_
+@@ -2856,9 +3348,11 @@ str2key(char *s, char *dest, size_t max_
  int
  neighbor_consistent(struct peer *p)
  {
@@ -1456,7 +1504,7 @@ diff -u -p -r1.1.1.8 parse.y
  		yyerror("local-address and neighbor address "
  		    "must be of the same address family");
  		return (-1);
-@@ -2869,7 +3356,7 @@ neighbor_consistent(struct peer *p)
+@@ -2869,7 +3363,7 @@ neighbor_consistent(struct peer *p)
  	    p->conf.auth.method == AUTH_IPSEC_IKE_AH ||
  	    p->conf.auth.method == AUTH_IPSEC_MANUAL_ESP ||
  	    p->conf.auth.method == AUTH_IPSEC_MANUAL_AH) &&
@@ -1465,7 +1513,7 @@ diff -u -p -r1.1.1.8 parse.y
  		yyerror("neighbors with any form of IPsec configured "
  		    "need local-address to be specified");
  		return (-1);
-@@ -2889,10 +3376,6 @@ neighbor_consistent(struct peer *p)
+@@ -2889,18 +3383,14 @@ neighbor_consistent(struct peer *p)
  		return (-1);
  	}
  
@@ -1476,7 +1524,19 @@ diff -u -p -r1.1.1.8 parse.y
  	/* set default values if they where undefined */
  	p->conf.ebgp = (p->conf.remote_as != conf->as);
  	if (p->conf.announce_type == ANNOUNCE_UNDEF)
-@@ -2909,6 +3392,11 @@ neighbor_consistent(struct peer *p)
+-		p->conf.announce_type = p->conf.ebgp == 0 ?
+-		    ANNOUNCE_ALL : ANNOUNCE_SELF;
++		p->conf.announce_type = p->conf.ebgp ?
++		    ANNOUNCE_SELF : ANNOUNCE_ALL;
+ 	if (p->conf.enforce_as == ENFORCE_AS_UNDEF)
+-		p->conf.enforce_as = p->conf.ebgp == 0 ?
+-		    ENFORCE_AS_OFF : ENFORCE_AS_ON;
++		p->conf.enforce_as = p->conf.ebgp ?
++		    ENFORCE_AS_ON : ENFORCE_AS_OFF;
+ 
+ 	/* EBGP neighbors are not allowed in route reflector clusters */
+ 	if (p->conf.reflector_client && p->conf.ebgp) {
+@@ -2909,6 +3399,11 @@ neighbor_consistent(struct peer *p)
  		return (-1);
  	}
  
@@ -1488,7 +1548,7 @@ diff -u -p -r1.1.1.8 parse.y
  	return (0);
  }
  
-@@ -2927,6 +3415,11 @@ merge_filterset(struct filter_set_head *
+@@ -2927,6 +3422,11 @@ merge_filterset(struct filter_set_head *
  				yyerror("community is already set");
  			else if (s->type == ACTION_DEL_COMMUNITY)
  				yyerror("community will already be deleted");
@@ -1500,7 +1560,7 @@ diff -u -p -r1.1.1.8 parse.y
  			else
  				yyerror("redefining set parameter %s",
  				    filterset_name(s->type));
-@@ -2953,9 +3446,18 @@ merge_filterset(struct filter_set_head *
+@@ -2953,9 +3453,18 @@ merge_filterset(struct filter_set_head *
  					return (0);
  				}
  				break;
@@ -1521,7 +1581,7 @@ diff -u -p -r1.1.1.8 parse.y
  					TAILQ_INSERT_BEFORE(t, s, entry);
  					return (0);
  				}
-@@ -2985,22 +3487,6 @@ copy_filterset(struct filter_set_head *s
+@@ -2985,22 +3494,6 @@ copy_filterset(struct filter_set_head *s
  	}
  }
  

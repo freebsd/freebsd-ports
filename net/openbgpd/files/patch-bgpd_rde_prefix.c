@@ -2,13 +2,13 @@ Index: bgpd/rde_prefix.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_prefix.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.5
-diff -u -p -r1.1.1.6 -r1.5
+retrieving revision 1.6
+diff -u -p -r1.1.1.6 -r1.6
 --- bgpd/rde_prefix.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/rde_prefix.c	10 Apr 2010 12:16:23 -0000	1.5
++++ bgpd/rde_prefix.c	13 Oct 2012 18:36:00 -0000	1.6
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_prefix.c,v 1.29 2009/05/30 18:27:17 claudio Exp $ */
-+/*	$OpenBSD: rde_prefix.c,v 1.32 2010/03/26 15:41:04 claudio Exp $ */
++/*	$OpenBSD: rde_prefix.c,v 1.31 2010/01/13 06:02:37 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>

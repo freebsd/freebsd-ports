@@ -2,13 +2,13 @@ Index: bgpd/printconf.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.8
-diff -u -p -r1.1.1.7 -r1.8
+retrieving revision 1.9
+diff -u -p -r1.1.1.7 -r1.9
 --- bgpd/printconf.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/printconf.c	2 Jul 2011 16:06:38 -0000	1.8
++++ bgpd/printconf.c	13 Oct 2012 18:36:00 -0000	1.9
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
-+/*	$OpenBSD: printconf.c,v 1.79 2010/03/05 15:25:00 claudio Exp $	*/
++/*	$OpenBSD: printconf.c,v 1.87 2012/09/12 05:56:22 claudio Exp $	*/
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -263,8 +263,8 @@ diff -u -p -r1.1.1.7 -r1.8
  		printf("%s\tannounce capabilities no\n", c);
 +	if (p->capabilities.refresh == 0)
 +		printf("%s\tannounce refresh no\n", c);
-+	if (p->capabilities.restart == 1)
-+		printf("%s\tannounce restart yes\n", c);
++	if (p->capabilities.grestart.restart == 0)
++		printf("%s\tannounce restart no\n", c);
 +	if (p->capabilities.as4byte == 0)
 +		printf("%s\tannounce as4byte no\n", c);
  	if (p->announce_type == ANNOUNCE_SELF)
@@ -356,16 +356,34 @@ diff -u -p -r1.1.1.7 -r1.8
  
  	print_set(&r->set);
  
-@@ -547,7 +645,7 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
+@@ -513,6 +611,8 @@ mrt_type(enum mrt_type t)
+ 		return "table";
+ 	case MRT_TABLE_DUMP_MP:
+ 		return "table-mp";
++	case MRT_TABLE_DUMP_V2:
++		return "table-v2";
+ 	case MRT_ALL_IN:
+ 		return "all in";
+ 	case MRT_ALL_OUT:
+@@ -541,13 +641,12 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
+ 			printf("%s%sdump ", prep, prep2);
+ 			if (m->rib[0])
+ 				printf("rib %s ", m->rib);
++			printf("%s \"%s\"", mrt_type(m->type),
++			    MRT2MC(m)->name);
+ 			if (MRT2MC(m)->ReopenTimerInterval == 0)
+-				printf("%s %s\n", mrt_type(m->type),
+-				    MRT2MC(m)->name);
++				printf("\n");
  			else
- 				printf("%s %s %d\n", mrt_type(m->type),
- 				    MRT2MC(m)->name,
+-				printf("%s %s %d\n", mrt_type(m->type),
+-				    MRT2MC(m)->name,
 -				    MRT2MC(m)->ReopenTimerInterval);
-+				    (int)MRT2MC(m)->ReopenTimerInterval);
++				printf(" %d\n", MRT2MC(m)->ReopenTimerInterval);
  		}
  }
  
-@@ -612,26 +710,34 @@ peer_compare(const void *aa, const void 
+@@ -612,26 +711,34 @@ peer_compare(const void *aa, const void 
  void
  print_config(struct bgpd_config *conf, struct rib_names *rib_l,
      struct network_head *net_l, struct peer *peer_l,

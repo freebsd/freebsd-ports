@@ -2,13 +2,13 @@ Index: bgpctl/irrfilter.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/irrfilter.h,v
 retrieving revision 1.1.1.5
-retrieving revision 1.3
-diff -u -p -r1.1.1.5 -r1.3
+retrieving revision 1.4
+diff -u -p -r1.1.1.5 -r1.4
 --- bgpctl/irrfilter.h	14 Feb 2010 20:20:14 -0000	1.1.1.5
-+++ bgpctl/irrfilter.h	4 Feb 2010 16:22:26 -0000	1.3
++++ bgpctl/irrfilter.h	13 Oct 2012 18:35:56 -0000	1.4
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: irrfilter.h,v 1.7 2007/03/06 16:45:34 henning Exp $ */
-+/*	$OpenBSD: irrfilter.h,v 1.9 2009/09/08 16:11:36 sthen Exp $ */
++/*	$OpenBSD: irrfilter.h,v 1.8 2009/09/08 15:40:25 claudio Exp $ */
  
  /*
   * Copyright (c) 2007 Henning Brauer <henning@openbsd.org>
