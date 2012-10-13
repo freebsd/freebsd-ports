@@ -1,6 +1,13 @@
---- xjtext-main.c.orig	Sat Sep  4 22:45:16 1999
-+++ xjtext-main.c	Mon May 16 15:58:11 2005
-@@ -9,7 +9,7 @@
+--- xjtext-main.c.orig	1999-09-04 22:45:16.000000000 +0900
++++ xjtext-main.c	2012-09-11 04:23:11.000000000 +0900
+@@ -3,13 +3,13 @@
+ xJTextWindow*   XWin;
+ 
+ char            FileName[256];
+-main            (int ArgCnt,char** ArgVal)
++int main            (int ArgCnt,char** ArgVal)
+ {
+   if(ArgCnt<2){ yyin=stdin;strcpy(FileName,"stdin");}
    else
      {
        if(NULL==(yyin=fopen(ArgVal[1],"r")))
