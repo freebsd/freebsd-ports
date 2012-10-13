@@ -66,6 +66,7 @@ include/net-snmp/agent/snmp_get_statistic.h
 include/net-snmp/agent/snmp_vars.h
 include/net-snmp/agent/stash_cache.h
 include/net-snmp/agent/stash_to_next.h
+include/net-snmp/agent/struct.h
 include/net-snmp/agent/sysORTable.h
 include/net-snmp/agent/table.h
 include/net-snmp/agent/table_array.h
@@ -75,6 +76,10 @@ include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
 include/net-snmp/agent/table_tdata.h
 include/net-snmp/agent/util_funcs.h
+include/net-snmp/agent/util_funcs/header_generic.h
+include/net-snmp/agent/util_funcs/header_simple_table.h
+include/net-snmp/agent/util_funcs/MIB_STATS_CACHE_TIMEOUT.h
+@dirrmtry include/net-snmp/agent/util_funcs
 include/net-snmp/agent/var_struct.h
 include/net-snmp/agent/watcher.h
 include/net-snmp/config_api.h
