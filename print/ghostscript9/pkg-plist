@@ -1,5 +1,4 @@
 @comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.5 2012-02-12 18:10:49 hrs Exp $
-bin/dumphint
 bin/dvipdf
 bin/eps2eps
 %%GS_dmprt%%bin/ert
@@ -271,8 +270,10 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/sgray.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/srgb.icc
 %%DATADIR%%/%%GS_VERSION%%/doc/API.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/AUTHORS
 %%DATADIR%%/%%GS_VERSION%%/doc/C-style.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Changes.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/COPYING
 %%DATADIR%%/%%GS_VERSION%%/doc/Commprod.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/DLL.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Deprecated.htm
@@ -283,6 +284,8 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/doc/Devices.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Drivers.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Fonts.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/GS9_Color_Management.pdf
+%%DATADIR%%/%%GS_VERSION%%/doc/GS9_Color_Management.tex
 %%DATADIR%%/%%GS_VERSION%%/doc/Helpers.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Hershey.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/History1.htm
@@ -304,15 +307,21 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/doc/Ps-style.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Ps2epsi.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Ps2pdf.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Ps2ps2.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Psfiles.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Readme.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Release.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Source.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Unix-lpr.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Use.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/WhatIsGS.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Xfonts.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/gs.css
+%%DATADIR%%/%%GS_VERSION%%/doc/gs-vms.hlp
+%%DATADIR%%/%%GS_VERSION%%/doc/gsdoc.el
 %%DATADIR%%/%%GS_VERSION%%/doc/index.html
+%%DATADIR%%/%%GS_VERSION%%/doc/pscet_status.txt
+%%DATADIR%%/%%GS_VERSION%%/doc/thirdparty.htm
 %%DATADIR%%/%%GS_VERSION%%/examples/cjk/all_ac1.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/cjk/all_aj1.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/cjk/all_ak1.ps
@@ -335,7 +344,10 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/examples/grayalph.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/ridt91.eps
 %%DATADIR%%/%%GS_VERSION%%/examples/snowflak.ps
+%%DATADIR%%/%%GS_VERSION%%/examples/text_graph_image_cmyk_rgb.pdf
+%%DATADIR%%/%%GS_VERSION%%/examples/text_graphic_image.pdf
 %%DATADIR%%/%%GS_VERSION%%/examples/tiger.eps
+%%DATADIR%%/%%GS_VERSION%%/examples/transparency_example.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/vasarely.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/waterfal.ps
 %%DATADIR%%/%%GS_VERSION%%/Resource/Init/FAPIcidfmap
@@ -420,7 +432,6 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/lib/cid2code.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/decrypt.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/docie.ps
-%%DATADIR%%/%%GS_VERSION%%/lib/dumphint.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/font2c.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/font2pcl.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gslp.ps
