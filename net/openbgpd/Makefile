@@ -1,13 +1,8 @@
-# New ports collection makefile for:	openbgpd
-# Date created:				May 10 2005
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openbgpd
-PORTVERSION=	4.9.20110612
-PORTREVISION=	1
+PORTVERSION=	5.2.20121014
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	OpenBGPD
@@ -20,8 +15,9 @@ COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
 
 CONFLICTS=	zebra-[0-9]* quagga-[0-9]*
 
-OPTIONS=	IPV6LLPEER \
-		"Support nexthop using IPv6 link-local address"	on
+OPTIONS_DEFINE=	IPV6LLPEER
+OPTIONS_DEFAULT=IPV6LLPEER
+IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
 
 .include <bsd.port.pre.mk>
 

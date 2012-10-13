@@ -3,10 +3,10 @@ Index: openbsd-compat/openbsd-compat.h
 RCS file: openbsd-compat/openbsd-compat.h
 diff -N openbsd-compat/openbsd-compat.h
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ openbsd-compat/openbsd-compat.h	3 Jul 2011 04:46:38 -0000	1.6
-@@ -0,0 +1,87 @@
++++ openbsd-compat/openbsd-compat.h	13 Oct 2012 18:50:10 -0000	1.8
+@@ -0,0 +1,91 @@
 +/*
-+ * $hrs: openbgpd/openbsd-compat/openbsd-compat.h,v 1.6 2011/07/03 04:46:38 hrs Exp $
++ * $hrs: openbgpd/openbsd-compat/openbsd-compat.h,v 1.8 2012/10/13 18:50:10 hrs Exp $
 + */
 +
 +#ifndef _OPENBSD_COMPAT_H
@@ -16,7 +16,11 @@ diff -N openbsd-compat/openbsd-compat.h
 +
 +/* bgpctl/bgpctl.c */
 +#include <sys/endian.h>
++#include <inttypes.h>
 +#define betoh64(x)	(be64toh(x))
++#ifndef IFT_CARP
++#define	IFT_CARP	0xf8
++#endif
 +
 +/* bgpd/irrfilter.c */
 +typedef unsigned long	ulong;

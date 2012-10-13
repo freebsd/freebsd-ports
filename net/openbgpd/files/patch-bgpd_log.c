@@ -2,13 +2,13 @@ Index: bgpd/log.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/log.c,v
 retrieving revision 1.1.1.5
-retrieving revision 1.1.1.7
-diff -u -p -r1.1.1.5 -r1.1.1.7
+retrieving revision 1.1.1.8
+diff -u -p -r1.1.1.5 -r1.1.1.8
 --- bgpd/log.c	14 Feb 2010 20:19:57 -0000	1.1.1.5
-+++ bgpd/log.c	12 Jun 2011 10:44:25 -0000	1.1.1.7
++++ bgpd/log.c	13 Oct 2012 18:22:43 -0000	1.1.1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: log.c,v 1.50 2007/04/23 13:04:24 claudio Exp $ */
-+/*	$OpenBSD: log.c,v 1.54 2010/11/18 12:51:24 claudio Exp $ */
++/*	$OpenBSD: log.c,v 1.55 2011/08/20 19:02:28 sthen Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -32,15 +32,7 @@ diff -u -p -r1.1.1.5 -r1.1.1.7
  		if (asprintf(&p, "%s/%u", ip, peer->remote_masklen) == -1)
  			fatal(NULL);
  	} else {
-@@ -69,6 +71,7 @@ log_init(int n_debug)
- 	extern char	*__progname;
- 
- 	debug = n_debug;
-+	verbose = n_debug;
- 
- 	if (!debug)
- 		openlog(__progname, LOG_PID | LOG_NDELAY, LOG_DAEMON);
-@@ -77,6 +80,12 @@ log_init(int n_debug)
+@@ -77,6 +79,12 @@ log_init(int n_debug)
  }
  
  void
@@ -53,7 +45,7 @@ diff -u -p -r1.1.1.5 -r1.1.1.7
  logit(int pri, const char *fmt, ...)
  {
  	va_list	ap;
-@@ -193,7 +202,7 @@ log_debug(const char *emsg, ...)
+@@ -193,7 +201,7 @@ log_debug(const char *emsg, ...)
  {
  	va_list	 ap;
  
@@ -62,7 +54,7 @@ diff -u -p -r1.1.1.5 -r1.1.1.7
  		va_start(ap, emsg);
  		vlog(LOG_DEBUG, emsg, ap);
  		va_end(ap);
-@@ -250,7 +259,7 @@ log_statechange(struct peer *peer, enum 
+@@ -250,7 +258,7 @@ log_statechange(struct peer *peer, enum 
  
  void
  log_notification(const struct peer *peer, u_int8_t errcode, u_int8_t subcode,
@@ -71,9 +63,19 @@ diff -u -p -r1.1.1.5 -r1.1.1.7
  {
  	char		*p;
  	const char	*suberrname = NULL;
-@@ -287,23 +296,22 @@ log_notification(const struct peer *peer
+@@ -283,27 +291,31 @@ log_notification(const struct peer *peer
+ 			suberrname = suberr_cease_names[subcode];
+ 		break;
+ 	case ERR_HOLDTIMEREXPIRED:
+-	case ERR_FSM:
  		uk = 1;
  		break;
++	case ERR_FSM:
++		if (subcode >= sizeof(suberr_fsm_names)/sizeof(char *))
++			uk = 1;
++		else
++			suberrname = suberr_fsm_names[subcode];
++		break;
  	default:
 -		logit(LOG_CRIT, "%s: received notification, unknown errcode "
 -		    "%u, subcode %u", p, errcode, subcode);
@@ -103,7 +105,7 @@ diff -u -p -r1.1.1.5 -r1.1.1.7
  	}
  	free(p);
  }
-@@ -318,6 +326,9 @@ log_conn_attempt(const struct peer *peer
+@@ -318,6 +330,9 @@ log_conn_attempt(const struct peer *peer
  		b = log_sockaddr(sa);
  		logit(LOG_INFO, "connection from non-peer %s refused", b);
  	} else {

@@ -2,9 +2,10 @@ Index: bgpd/rde_update.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_update.c,v
 retrieving revision 1.1.1.7
-diff -u -p -r1.1.1.7 rde_update.c
+retrieving revision 1.8
+diff -u -p -r1.1.1.7 -r1.8
 --- bgpd/rde_update.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/rde_update.c	3 Jul 2011 04:45:50 -0000
++++ bgpd/rde_update.c	13 Oct 2012 18:36:00 -0000	1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_update.c,v 1.68 2009/06/06 01:10:29 claudio Exp $ */
 +/*	$OpenBSD: rde_update.c,v 1.77 2010/01/13 06:02:37 claudio Exp $ */
@@ -143,7 +144,7 @@ diff -u -p -r1.1.1.7 rde_update.c
  
  	/* 1. search for attr */
  	if (a != NULL && (na = RB_FIND(uptree_attr, &peer->up_attrs, a)) ==
-@@ -270,21 +291,14 @@ up_test_update(struct rde_peer *peer, st
+@@ -270,23 +291,16 @@ up_test_update(struct rde_peer *peer, st
  		/* Do not send routes back to sender */
  		return (0);
  
@@ -167,8 +168,11 @@ diff -u -p -r1.1.1.7 rde_update.c
 +	if (peer->capa.mp[addr.aid] == 0)
 +		return (-1);
  
- 	if (p->aspath->peer->conf.ebgp == 0 && peer->conf.ebgp == 0) {
+-	if (p->aspath->peer->conf.ebgp == 0 && peer->conf.ebgp == 0) {
++	if (!p->aspath->peer->conf.ebgp && !peer->conf.ebgp) {
  		/*
+ 		 * route reflector redistribution rules:
+ 		 * 1. if announce is set                -> announce
 @@ -325,13 +339,13 @@ up_test_update(struct rde_peer *peer, st
  	}
  
@@ -414,13 +418,41 @@ diff -u -p -r1.1.1.7 rde_update.c
  	 * unless the MED is originating from us or the peer is an IBGP one.
 +	 * Only exception are routers with "transparent-as yes" set.
  	 */
- 	if (a->flags & F_ATTR_MED && (peer->conf.ebgp == 0 ||
+-	if (a->flags & F_ATTR_MED && (peer->conf.ebgp == 0 ||
 -	    a->flags & F_ATTR_MED_ANNOUNCE)) {
++	if (a->flags & F_ATTR_MED && (!peer->conf.ebgp ||
 +	    a->flags & F_ATTR_MED_ANNOUNCE ||
 +	    peer->conf.flags & PEERFLAG_TRANS_AS)) {
  		tmp32 = htonl(a->med);
  		if ((r = attr_write(up_attr_buf + wlen, len, ATTR_OPTIONAL,
  		    ATTR_MED, &tmp32, 4)) == -1)
+@@ -669,7 +791,7 @@ up_generate_attr(struct rde_peer *peer, 
+ 		wlen += r; len -= r;
+ 	}
+ 
+-	if (peer->conf.ebgp == 0) {
++	if (!peer->conf.ebgp) {
+ 		/* local preference, only valid for ibgp */
+ 		tmp32 = htonl(a->lpref);
+ 		if ((r = attr_write(up_attr_buf + wlen, len, ATTR_WELL_KNOWN,
+@@ -704,7 +826,7 @@ up_generate_attr(struct rde_peer *peer, 
+ 				u_int16_t	tas;
+ 
+ 				if ((!(oa->flags & ATTR_TRANSITIVE)) &&
+-				    peer->conf.ebgp != 0) {
++				    peer->conf.ebgp) {
+ 					r = 0;
+ 					break;
+ 				}
+@@ -730,7 +852,7 @@ up_generate_attr(struct rde_peer *peer, 
+ 		case ATTR_ORIGINATOR_ID:
+ 		case ATTR_CLUSTER_LIST:
+ 			if ((!(oa->flags & ATTR_TRANSITIVE)) &&
+-			    peer->conf.ebgp != 0) {
++			    peer->conf.ebgp) {
+ 				r = 0;
+ 				break;
+ 			}
 @@ -791,7 +913,7 @@ up_generate_attr(struct rde_peer *peer, 
  
  	/* write mp attribute to different buffer */
