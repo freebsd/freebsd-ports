@@ -3,6 +3,7 @@
 
 PORTNAME=	swine
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	emulators deskutils python
 MASTER_SITES=	GH
 
@@ -16,8 +17,7 @@ RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine-devel \
 		xterm:${PORTSDIR}/x11/xterm \
 		cabextract:${PORTSDIR}/archivers/cabextract \
 		icotool:${PORTSDIR}/graphics/icoutils \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui
+		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 DATADIRLIB=	${PREFIX}/lib/${PORTNAME}
 
@@ -33,7 +33,6 @@ USE_QT4=	linguist_build
 
 PORTDOCS=	README
 
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -53,9 +52,6 @@ pre-build:
 	@${ECHO_MSG}
 	exit 1
 .endif
-
-do-build:
-	@(cd ${WRKSRC} ; ${GMAKE})
 
 do-install:
 	${MKDIR} ${DATADIRLIB}
