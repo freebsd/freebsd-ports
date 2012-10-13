@@ -1,17 +1,13 @@
-# New ports collection makefile for:	sqlite3
-# Date created:				Feb 21, 2001
-# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.14
+PORTVERSION=	3.7.14.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/ http://www3.sqlite.org/
-DISTNAME=	sqlite-autoconf-3071400
+DISTNAME=	sqlite-autoconf-3071401
 
-MAINTAINER=	pavelivolkov@googlemail.com
+MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	An SQL database engine in a C library
 
 LICENSE=	public
@@ -34,7 +30,7 @@ OPTIONS=	\
 		RTREE		"Enable R*Tree module (${RTREE_INT})"	off \
 		RAMTABLE	"Store temporary tables in RAM = ${TEMP_STORE}" off \
 		UPD_DEL_LIMIT	"ORDER BY and LIMIT on UPDATE and DELETE" off \
-		URI		"Enable use the URI filename"		off \
+		URI		"Enable use the URI filename"		on \
 		SOUNDEX		"Enables the soundex() SQL function"	off \
 		METADATA	"Enable column metadata"		on \
 		STAT3		"Help SQLite to chose a better query plan" off \
