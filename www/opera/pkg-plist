@@ -25,7 +25,6 @@ share/icons/hicolor/32x32/apps/opera-browser.png
 share/icons/hicolor/32x32/mimetypes/opera-extension.png
 share/icons/hicolor/48x48/apps/opera-browser.png
 share/icons/hicolor/48x48/mimetypes/opera-extension.png
-share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/mimetypes/opera-extension.svg
 share/mime/application/x-opera-extension.xml
 share/mime/packages/opera-extension.xml
