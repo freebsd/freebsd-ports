@@ -1,13 +1,9 @@
-# New ports collection makefile for:	wordpress
-# Date created:		2006-06-03
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#			(based on wordpress by Elvis Chiang)
-#
+# Created by:	miwi
 # $FreeBSD$
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	german www
 MASTER_SITES=	http://de.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-de_DE
@@ -21,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 CONFLICTS_INSTALL=	wordpress-3.* ja-wordpress-3.* ru-wordpress-3.*
 
 NO_BUILD=	yes
-USE_ZIP=	yes
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -31,6 +26,8 @@ SUB_LIST=	CHGRP="${CHGRP}" CHOWN="${CHOWN}" CHMOD="${CHMOD}"\
 		FIND="${FIND}" WWWGRP="${WWWGRP}" WWWOWN="${WWWOWN}"
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
+
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
@@ -44,10 +41,12 @@ pre-install:
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${WWWDIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
