@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mecab
-PORTVERSION=	0.98
+PORTVERSION=	0.994
 CATEGORIES=	japanese textproc
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
