@@ -1,6 +1,6 @@
---- library.mak.orig	2012-05-25 20:02:16.000000000 +0200
-+++ library.mak	2012-08-12 09:31:55.551526509 +0200
-@@ -74,9 +74,9 @@
+--- library.mak.orig	2012-10-13 10:22:27.000000000 +0200
++++ library.mak	2012-10-13 10:57:11.333238227 +0200
+@@ -76,9 +76,9 @@
  	$(Q)mkdir -p "$(INCINSTDIR)"
  	$$(INSTALL) -m 644 $$^ "$(INCINSTDIR)"
  
@@ -13,10 +13,10 @@
  
  uninstall-libs::
  	-$(RM) "$(SHLIBDIR)/$(SLIBNAME_WITH_MAJOR)" \
-@@ -88,7 +88,7 @@
+@@ -90,7 +90,7 @@
  
  uninstall-headers::
- 	$(RM) $(addprefix "$(INCINSTDIR)/",$(HEADERS)) $(addprefix "$(INCINSTDIR)/",$(BUILT_HEADERS))
+ 	$(RM) $(addprefix "$(INCINSTDIR)/",$(HEADERS) $(BUILT_HEADERS))
 -	$(RM) "$(LIBDIR)/pkgconfig/lib$(NAME).pc"
 +	$(RM) "$(prefix)/libdata/pkgconfig/lib$(NAME).pc"
  	-rmdir "$(INCINSTDIR)"

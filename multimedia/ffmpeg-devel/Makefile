@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2012-08-06
-PORTREVISION=	1
+DISTVERSION=	2012-10-13
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://git.videolan.org/
 PKGNAMESUFFIX=	-devel
@@ -27,7 +26,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 LATEST_LINK=	ffmpeg${PKGNAMESUFFIX}
 
-GIT_SNAPSHOT=	388243bb27f3d9b8f50d54268a784d55a7171f10
+GIT_SNAPSHOT=	79133fd0e58f3564e790eb2858b24db18182cef1
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
 FETCH_ARGS=	-pRr -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 FETCH_URL=	"http://git.videolan.org/?p=ffmpeg.git;a=snapshot;h=${GIT_SNAPSHOT};sf=tgz"
