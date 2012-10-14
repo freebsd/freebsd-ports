@@ -59,7 +59,7 @@ RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
 .endif
 
 .if ${PORT_OPTIONS:MPACKAGE_ROOT}
-.if ! ${PORT_OPTIONS:MPACKAGE_ORIGN}
+.if ! ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_root
 .else
 BROKEN=	PACKAGE_ROOT option patch is incompatable with PACKAGE_ORIGIN patch.
@@ -108,7 +108,7 @@ post-install:
 	${INSTALL} -d ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if ! ${PORT_OPTIONS:MEXAMPLES}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
