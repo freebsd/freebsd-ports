@@ -1,17 +1,13 @@
-# New ports collection makefile for:	The Sleuth Kit
-# Date created:				2003-08-12
-# Whom:					Pieter Danhieux <opr@bsdaemon.be>
-#
+# Created by: Pieter Danhieux <opr@bsdaemon.be>
 # $FreeBSD$
-#
 
 PORTNAME=	sleuthkit
-PORTVERSION=	3.2.3
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	The @stake Sleuth Kit for filesystem forensic analysis
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tools and library for filesystem forensic analysis
 
 CONFLICTS=	ja-ls-[0-9]*
 
