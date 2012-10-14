@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-pysnmp4
-# Date created:		Sat Apr  8 21:51:59 CDT 2006
-# Whom:			Martin Jackson <mhjacks@swbell.net>
-#
+# Created by: Martin Jackson <mhjacks@swbell.net>
 # $FreeBSD$
-#
 
 PORTNAME=	snmp4
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.3
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysnmp/pysnmp/${PORTVERSION}
@@ -17,10 +13,9 @@ MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP framework for Python
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.0.14:${PORTSDIR}/devel/py-asn1 \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.3:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.2:${PORTSDIR}/devel/py-asn1 \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.4.1:${PORTSDIR}/security/py-pycrypto
 
 CONFLICTS=	py??-snmp2-[0-9]*
 
