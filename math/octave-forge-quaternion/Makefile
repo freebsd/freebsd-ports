@@ -1,13 +1,8 @@
-# New ports collection makefile for:	octave-forge-quaternion
-# Date created:		3 August 2009
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-quaternion
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
