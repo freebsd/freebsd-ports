@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ef417da3-1640-11e2-999b-e0cb4e266481">
+    <topic>phpMyAdmin -- Multiple XSS due to unescaped HTML output in Trigger, Procedure and Event pages and Fetching the version information from a non-SSL site is vulnerable to a MITM attack</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>3.5</ge><lt>3.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2012-6.php">
+	  <p>When creating/modifying a trigger, event or procedure
+	   with a crafted name, it is possible to trigger an XSS.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2012-7.php">
+	  <p>To display information about the current phpMyAdmin
+	   version on the main page, a piece of JavaScript is fetched
+	   from the phpmyadmin.net website in non-SSL mode. A
+	   man-in-the-middle could modify this script on the wire to
+	   cause mischief.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5339</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2012-6.php</url>
+      <cvename>CVE-2012-5368</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2012-7.php</url>
+    </references>
+    <dates>
+      <discovery>2012-10-08</discovery>
+      <entry>2012-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09e83f7f-1326-11e2-afe3-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
