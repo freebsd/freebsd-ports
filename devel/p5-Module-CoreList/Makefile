@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Module-CoreList
-# Date created:				Aug 27 2003
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.73
+PORTVERSION=	2.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
