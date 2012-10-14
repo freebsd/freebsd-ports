@@ -1,7 +1,4 @@
-# New ports collection makefile for:	syslog-ng
-# Date created:		10 november 1006
-# Whom:			Ivan Lago <ivan.lago@ifom-ieo-campus.it>
-#
+# Created by:	Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ivan.lago@ifom-ieo-campus.it
+MAINTAINER=	ivan.lago@ifom.eu
 COMMENT=	A powerful syslogd replacement
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
