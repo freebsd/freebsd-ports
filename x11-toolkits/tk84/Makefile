@@ -1,9 +1,4 @@
-# New ports collection makefile for:	tk
-# Date created:		19 August 1997
-# Whom:			jkh
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.4.19
@@ -37,11 +32,13 @@ MANCOMPRESSED=	no
 DATADIR=	${PREFIX}/share/${PORTNAME}${TK_VER}
 SUB_FILES=	pkgIndex.tcl
 
+OPTIONS_DEFINE=	TK84_DOC
+TK84_DOC_DESC=	Install tk 8.4 function manpages
+
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	84
-
-OPTIONS=	TK84_DOC "Install tk 8.4 function manpages" off
 .else
+OPTIONS_EXCLUDE=	TK84_DOC
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
 THREADS_SUFFIX=	-threads
@@ -71,7 +68,7 @@ CONFIGURE_ENV+=		ac_cv_path_tclsh="${TCLSH}"
 SUB_LIST+=		TK_PROVIDE=""
 
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK84_DOC)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTK84_DOC}
 
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
@@ -426,13 +423,13 @@ post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
-.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_DOC)
+.if !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK84_DOC}
 .for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 .endfor
 	@cd ${WRKSRC} && ${MAKE} install-doc ${MAKE_ENV}
-.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_DOC)
+.endif # !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK84_DOC}
 
 .endif # !defined(NO_INSTALL_MANPAGES)
 
