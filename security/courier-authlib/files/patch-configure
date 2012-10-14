@@ -1,6 +1,6 @@
---- configure.orig	2009-06-27 18:09:14.000000000 +0200
-+++ configure	2009-07-02 11:24:49.000000000 +0200
-@@ -796,6 +796,10 @@
+--- configure.orig	2012-10-14 12:45:02.000000000 +0200
++++ configure	2012-10-14 12:46:15.000000000 +0200
+@@ -622,6 +622,10 @@
  am__EXEEXT_FALSE
  am__EXEEXT_TRUE
  LTLIBOBJS
@@ -11,7 +11,7 @@
  LIBOBJS
  HAVE_SGML_FALSE
  HAVE_SGML_TRUE
-@@ -825,6 +829,9 @@
+@@ -656,6 +660,9 @@
  PGSQL_LIBS
  PG_CONFIG
  authpgsqlrc
@@ -21,7 +21,7 @@
  LIBAUTHPWD
  LIBAUTHSHADOW
  SHADOWLIBS
-@@ -1688,6 +1695,7 @@
+@@ -1519,6 +1526,7 @@
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -29,16 +29,16 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -2498,7 +2506,7 @@
+@@ -2755,7 +2763,7 @@
  fi
  
  fi
 -INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
 +INSTALL_STRIP_PROGRAM="${INSTALL_PROGRAM} -s"
  
- { $as_echo "$as_me:$LINENO: checking for a thread-safe mkdir -p" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a thread-safe mkdir -p" >&5
  $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
-@@ -15118,8 +15126,12 @@
+@@ -13532,8 +13540,12 @@
  
  if test "$doauthuserdb" = "no"
  then
@@ -51,7 +51,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -16874,6 +16886,20 @@
+@@ -13991,6 +14003,20 @@
  fi
  
  
@@ -72,7 +72,7 @@
  
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
-@@ -17554,6 +17580,256 @@
+@@ -14209,6 +14235,256 @@
  
  
  
@@ -327,5 +327,14 @@
 +
 +
  # Check whether --with-authpgsqlrc was given.
- if test "${with_authpgsqlrc+set}" = set; then
+ if test "${with_authpgsqlrc+set}" = set; then :
    withval=$with_authpgsqlrc; authpgsqlrc="$withval"
+@@ -14541,7 +14817,7 @@
+ 	LIBS="$saveLIBS"
+ fi
+ 
+-if test "$doauthmysql" != "yes"
++if test "$doauthsqlite" != "yes"
+ then
+ 	SQLITE_LIBS=""
+ 	SQLITE_CFLAGS=""

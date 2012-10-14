@@ -29,23 +29,23 @@
  libcourierauth_la_DEPENDENCIES = libhmac/libhmac.la md5/libmd5.la \
  	sha1/libsha1.la numlib/libnumlib.la random128/librandom128.la \
  	rfc822/libencode.la
-@@ -235,7 +240,8 @@
+@@ -235,8 +240,9 @@
  	$(libauthmysql_la_SOURCES) $(libauthpam_la_SOURCES) \
  	$(libauthpgsql_la_SOURCES) $(libauthpipe_la_SOURCES) \
  	$(libauthpwd_la_SOURCES) $(libauthshadow_la_SOURCES) \
--	$(libauthuserdb_la_SOURCES) $(libcourierauth_la_SOURCES) \
-+	$(libauthuserdb_la_SOURCES) $(libauthvchkpw_la_SOURCES) \
-+	$(libcourierauth_la_SOURCES) \
+	$(libauthsqlite_la_SOURCES) $(libauthuserdb_la_SOURCES) \
++	$(libauthvchkpw_la_SOURCES) \
+	$(libcourierauth_la_SOURCES) \
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
  	$(libcourierauthsaslclient_la_SOURCES) \
-@@ -247,7 +253,8 @@
+@@ -247,8 +253,9 @@
  	$(libauthmysql_la_SOURCES) $(libauthpam_la_SOURCES) \
  	$(libauthpgsql_la_SOURCES) $(libauthpipe_la_SOURCES) \
  	$(libauthpwd_la_SOURCES) $(libauthshadow_la_SOURCES) \
--	$(libauthuserdb_la_SOURCES) $(libcourierauth_la_SOURCES) \
-+	$(libauthuserdb_la_SOURCES) $(libauthvchkpw_la_SOURCES) \
-+	$(libcourierauth_la_SOURCES) \
+	$(libauthsqlite_la_SOURCES) $(libauthuserdb_la_SOURCES) \
++	$(libauthvchkpw_la_SOURCES) \
+	$(libcourierauth_la_SOURCES) \
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
  	$(libcourierauthsaslclient_la_SOURCES) \
@@ -69,7 +69,7 @@
  AM_CPPFLAGS = -I liblock
  modules = @LIBAUTHUSERDB@ \
  	@LIBAUTHPAM@ @LIBAUTHPWD@ @LIBAUTHSHADOW@ \
- 	@LIBAUTHPGSQL@ @LIBAUTHLDAP@ @LIBAUTHMYSQL@ \
+ 	@LIBAUTHPGSQL@ @LIBAUTHLDAP@ @LIBAUTHMYSQL@ @LIBAUTHSQLITE@ \
 -	@LIBAUTHCUSTOM@ @LIBAUTHPIPE@
 +	@LIBAUTHCUSTOM@ @LIBAUTHVCHKPW@ @LIBAUTHPIPE@
  
@@ -124,10 +124,12 @@
  man_MANS = $(man1) $(man3) auth_sasl_ex.3
  BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
  	authdaemonrc.h packageversion.h \
-@@ -789,8 +811,8 @@
+@@ -789,10 +811,10 @@
  	  else :; fi; \
  	done; \
  	test -z "$$list2" || { \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(pkglibdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(pkglibdir)" || exit 1; \
 -	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
 -	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(pkglibdir)"; \
 +	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) -m 0444 $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
@@ -135,15 +137,17 @@
  	}
  
  uninstall-pkglibLTLIBRARIES:
-@@ -828,6 +850,8 @@
+@@ -828,8 +850,10 @@
  	$(libauthshadow_la_LINK)  $(libauthshadow_la_OBJECTS) $(libauthshadow_la_LIBADD) $(LIBS)
- libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) 
+ libauthsqlite.la: $(libauthsqlite_la_OBJECTS) $(libauthsqlite_la_DEPENDENCIES) $(EXTRA_libauthsqlite_la_DEPENDENCIES) 
+ 	$(libauthsqlite_la_LINK)  $(libauthsqlite_la_OBJECTS) $(libauthsqlite_la_LIBADD) $(LIBS)
+ libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) $(EXTRA_libauthuserdb_la_DEPENDENCIES) 
  	$(libauthuserdb_la_LINK)  $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_LIBADD) $(LIBS)
 +libauthvchkpw.la: $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_DEPENDENCIES)
 +	$(libauthvchkpw_la_LINK)  $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_LIBADD) $(LIBS)
- libcourierauth.la: $(libcourierauth_la_OBJECTS) $(libcourierauth_la_DEPENDENCIES) 
+ libcourierauth.la: $(libcourierauth_la_OBJECTS) $(libcourierauth_la_DEPENDENCIES) $(EXTRA_libcourierauth_la_DEPENDENCIES) 
  	$(libcourierauth_la_LINK) -rpath $(pkglibdir) $(libcourierauth_la_OBJECTS) $(libcourierauth_la_LIBADD) $(LIBS)
- libcourierauthcommon.la: $(libcourierauthcommon_la_OBJECTS) $(libcourierauthcommon_la_DEPENDENCIES) 
+ libcourierauthcommon.la: $(libcourierauthcommon_la_OBJECTS) $(libcourierauthcommon_la_DEPENDENCIES) $(EXTRA_libcourierauthcommon_la_DEPENDENCIES) 
 @@ -1070,6 +1094,8 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authtest.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdb.Plo@am__quote@
@@ -287,8 +291,8 @@
  # automake still a bit stupid...
  
  install-data-hook: install-authdaemonrc install-authpgsqlrc \
--	install-authldaprc install-authmysqlrc
-+	install-authldaprc install-ldapschema install-authmysqlrc
+-	install-authldaprc install-authmysqlrc install-authsqliterc
++	install-authldaprc install-ldapschema install-authmysqlrc install-authsqliterc
  	:
  
  install-exec-hook:
@@ -319,7 +323,7 @@
 @@ -1842,9 +1904,10 @@
  	for f in $(pkglib_LTLIBRARIES); do . ./$$f; rm -f $(DESTDIR)$(pkglibdir)/$$dlname.0 $(DESTDIR)$(pkglibdir)/$$dlname.0.0; ln -s $$dlname $(DESTDIR)$(pkglibdir)/$$dlname.0; done
  
- uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc
+ uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc uninstall-authsqliterc
 -	rm -f $(DESTDIR)$(pkglibexecdir)/authdaemond
 +@HAVE_BASE_TRUE@	rm -f $(DESTDIR)$(pkglibexecdir)/authdaemond
  	test "@AUTHUSERDB@" = "" && exit 0 ;\
