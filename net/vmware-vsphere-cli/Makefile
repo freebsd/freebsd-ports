@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		vmware-vsphere-cli
-PORTVERSION=		5.0.0
+PORTVERSION=		5.1.0
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -35,7 +35,7 @@ NO_PACKAGE=		Distribution requires acceptance of license agreement
 MAN3=			VMware::VIM25Runtime.3 VMware::VIM2Stub.3 VMware::VIM2Runtime.3 \
 			VMware::VICommon.3 VMware::VILib.3 VMware::VIM25Stub.3
 
-DISTREL=		422456
+DISTREL=		780721
 
 .include <bsd.port.pre.mk>
 
