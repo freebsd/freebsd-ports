@@ -1,12 +1,9 @@
-# New ports collection makefile for:	zfsnap
-# Date created:				2010-08-02
-# Whom:					Aldis Berjoza <aldis@bsdroot.lv>
-#
+# Created by: Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	zfsnap
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	zfSnap-${PORTVERSION}
@@ -25,7 +22,7 @@ do-patch:
 .for period in hourly daily weekly monthly reboot
 	@${SED} -e "s/xPERIODICx/${period}/g" -e "s#xPREFIXx#${PREFIX}/sbin#g" ${WRKSRC}/xPERIODICx_zfSnap.sh > ${WRKSRC}/${period}_zfSnap.sh
 .endfor
-.for period in daily weekly monthly
+.for period in hourly daily weekly monthly
 	@${SED} -e "s/xPERIODICx/${period}/g" -e "s#xPREFIXx#${PREFIX}/sbin#g" ${WRKSRC}/xPERIODICx_zfSnap_delete.sh > ${WRKSRC}/${period}_zfSnap_delete.sh
 .endfor
 
@@ -35,7 +32,7 @@ do-install:
 	@${MKDIR} ${PERIODICDIR}/${period}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${period}_zfSnap.sh ${PERIODICDIR}/${period}/402.zfSnap
 .endfor
-.for period in daily weekly monthly
+.for period in hourly daily weekly monthly
 	@${INSTALL_SCRIPT} ${WRKSRC}/${period}_zfSnap_delete.sh ${PERIODICDIR}/${period}/403.zfSnap_delete
 .endfor
 
