@@ -1,7 +1,4 @@
-# New ports collection makefile for:	rubygem-puppet
-# Date created:		2007-03-03
-# Whom:			Tomoyuki Sakurai <cherry@trombik.mine.nu>
-#
+# Created by:	Tomoyuki Sakurai <cherry@trombik.mine.nu>
 # $FreeBSD$
 #
 
@@ -17,6 +14,7 @@ COMMENT=	A configuration management framework written in Ruby
 RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas
 
+CONFLICTS=      puppet-2.6*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -43,23 +41,25 @@ MAN8=	filebucket.8 pi.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
 	puppet.8 puppetca.8 puppetd.8 puppetdoc.8 puppetmasterd.8 \
 	puppetqd.8 puppetrun.8 ralsh.8
 
-OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off \
-		PACKAGE_ORIGIN	"Use port origin as package name"		On \
-		PACKAGE_ROOT	"Use PACKAGEROOT insted of PACKAGESITE"		Off
+OPTIONS_DEFINE=		MONGREL PACKAGE_ORIGIN PACKAGE_ROOT
+OPTIONS_DEFAULT=	PACKAGE_ORIGIN
+MONGREL_DESC=		Run puppet server as a mongrel service
+PACKAGE_ORIGIN_DESC=	Use port origin as package name
+PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MONGREL)
+.if ${PORT_OPTIONS:MMONGREL}
 RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 .endif
 
-.if defined(WITH_PACKAGE_ORIGIN)
+.if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
 RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
 .endif
 
-.if defined(WITH_PACKAGE_ROOT)
-.if !defined(WITH_PACKAGE_ORIGIN)
+.if ${PORT_OPTIONS:MPACKAGE_ROOT}
+.if ! ${PORT_OPTIONS:MPACKAGE_ORIGN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_root
 .else
 BROKEN=	PACKAGE_ROOT option patch is incompatable with PACKAGE_ORIGIN patch.
@@ -104,11 +104,11 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
