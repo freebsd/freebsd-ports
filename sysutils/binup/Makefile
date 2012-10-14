@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://bsdupdates.com/binup/version/${PORTVERSION}/
 DISTNAME=	binup-${OPSYS}-${OSREL:C/\..*//}-${PORTVERSION}
 
-MAINTAINER=	support@bsdupdates.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSDUpdates system update tool
 
 DEPRECATED=	Upstream disappeared, doesn't work on any supported FreeBSD \
@@ -25,6 +25,9 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	libexec/binup/bspatch-static libexec/binup/pw-static sbin/binup
 PLIST_DIRS=	libexec/binup
+
+DEPRECATED=		mastersite and maintainer disappeared
+EXPIRATION_DATE=	2012-11-13
 
 .include <bsd.port.pre.mk>
 
