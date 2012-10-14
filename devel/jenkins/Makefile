@@ -1,13 +1,7 @@
-# New ports collection makefile for:	jenkins
-# Date created:		2011-03-03
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jenkins
-PORTVERSION=	1.482
-PORTREVISION=	1
+PORTVERSION=	1.485
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war/${PORTVERSION}/
 DISTNAME=	jenkins
