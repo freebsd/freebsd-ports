@@ -50,6 +50,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/bittorrent/server.pyc
 %%DATADIR%%/bittorrent/stream.py
 %%DATADIR%%/bittorrent/stream.pyc
+%%DATADIR%%/brigade.py
+%%DATADIR%%/brigade.pyc
 %%DATADIR%%/browser.py
 %%DATADIR%%/browser.pyc
 %%DATADIR%%/browser_macos.py
@@ -66,6 +68,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/config.pyc
 %%DATADIR%%/config_api.py
 %%DATADIR%%/config_api.pyc
+%%DATADIR%%/connector.py
+%%DATADIR%%/connector.pyc
 %%DATADIR%%/database/__init__.py
 %%DATADIR%%/database/__init__.pyc
 %%DATADIR%%/database/_table_utils.py
@@ -84,6 +88,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/database/table_geoloc.pyc
 %%DATADIR%%/database/table_log.py
 %%DATADIR%%/database/table_log.pyc
+%%DATADIR%%/database/table_raw.py
+%%DATADIR%%/database/table_raw.pyc
 %%DATADIR%%/database/table_speedtest.py
 %%DATADIR%%/database/table_speedtest.pyc
 %%DATADIR%%/database_xxx.py
@@ -92,12 +98,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/debug/__init__.pyc
 %%DATADIR%%/debug/objgraph.py
 %%DATADIR%%/debug/objgraph.pyc
+%%DATADIR%%/defer.py
+%%DATADIR%%/defer.pyc
 %%DATADIR%%/filesys.py
 %%DATADIR%%/filesys.pyc
 %%DATADIR%%/filesys_null.py
 %%DATADIR%%/filesys_null.pyc
 %%DATADIR%%/filesys_posix.py
 %%DATADIR%%/filesys_posix.pyc
+%%DATADIR%%/handler.py
+%%DATADIR%%/handler.pyc
 %%DATADIR%%/http/__init__.py
 %%DATADIR%%/http/__init__.pyc
 %%DATADIR%%/http/client.py
@@ -110,8 +120,14 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/http/ssi.pyc
 %%DATADIR%%/http/stream.py
 %%DATADIR%%/http/stream.pyc
+%%DATADIR%%/http_clnt.py
+%%DATADIR%%/http_clnt.pyc
 %%DATADIR%%/http_server.py
 %%DATADIR%%/http_server.pyc
+%%DATADIR%%/http_utils.py
+%%DATADIR%%/http_utils.pyc
+%%DATADIR%%/listener.py
+%%DATADIR%%/listener.pyc
 %%DATADIR%%/log.py
 %%DATADIR%%/log.pyc
 %%DATADIR%%/log_api.py
@@ -138,6 +154,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/negotiate/server.pyc
 %%DATADIR%%/negotiate/server_bittorrent.py
 %%DATADIR%%/negotiate/server_bittorrent.pyc
+%%DATADIR%%/negotiate/server_raw.py
+%%DATADIR%%/negotiate/server_raw.pyc
 %%DATADIR%%/negotiate/server_speedtest.py
 %%DATADIR%%/negotiate/server_speedtest.pyc
 %%DATADIR%%/net/CA.py
@@ -158,14 +176,26 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/notifier_browser.pyc
 %%DATADIR%%/notify.py
 %%DATADIR%%/notify.pyc
+%%DATADIR%%/pollable.py
+%%DATADIR%%/pollable.pyc
 %%DATADIR%%/poller.py
 %%DATADIR%%/poller.pyc
 %%DATADIR%%/privacy.py
 %%DATADIR%%/privacy.pyc
+%%DATADIR%%/raw.py
+%%DATADIR%%/raw.pyc
+%%DATADIR%%/raw_clnt.py
+%%DATADIR%%/raw_clnt.pyc
+%%DATADIR%%/raw_defs.py
+%%DATADIR%%/raw_defs.pyc
+%%DATADIR%%/raw_negotiate.py
+%%DATADIR%%/raw_negotiate.pyc
+%%DATADIR%%/raw_srvr.py
+%%DATADIR%%/raw_srvr.pyc
+%%DATADIR%%/raw_srvr_glue.py
+%%DATADIR%%/raw_srvr_glue.pyc
 %%DATADIR%%/rendezvous/__init__.py
 %%DATADIR%%/rendezvous/__init__.pyc
-%%DATADIR%%/rendezvous/client.py
-%%DATADIR%%/rendezvous/client.pyc
 %%DATADIR%%/rendezvous/compat.py
 %%DATADIR%%/rendezvous/compat.pyc
 %%DATADIR%%/rendezvous/geoip_wrapper.py
@@ -182,6 +212,12 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/runner_core.pyc
 %%DATADIR%%/runner_dload.py
 %%DATADIR%%/runner_dload.pyc
+%%DATADIR%%/runner_hosts.py
+%%DATADIR%%/runner_hosts.pyc
+%%DATADIR%%/runner_mlabns.py
+%%DATADIR%%/runner_mlabns.pyc
+%%DATADIR%%/runner_policy.py
+%%DATADIR%%/runner_policy.pyc
 %%DATADIR%%/runner_rendezvous.py
 %%DATADIR%%/runner_rendezvous.pyc
 %%DATADIR%%/runner_tests.py
@@ -200,6 +236,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/simplejson/ordered_dict.pyc
 %%DATADIR%%/simplejson/scanner.py
 %%DATADIR%%/simplejson/scanner.pyc
+%%DATADIR%%/six.py
+%%DATADIR%%/six.pyc
 %%DATADIR%%/speedtest/__init__.py
 %%DATADIR%%/speedtest/__init__.pyc
 %%DATADIR%%/speedtest/client.py
@@ -208,8 +246,12 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/speedtest/server.pyc
 %%DATADIR%%/speedtest/wrapper.py
 %%DATADIR%%/speedtest/wrapper.pyc
+%%DATADIR%%/sslstream.py
+%%DATADIR%%/sslstream.pyc
 %%DATADIR%%/state.py
 %%DATADIR%%/state.pyc
+%%DATADIR%%/stream.py
+%%DATADIR%%/stream.pyc
 %%DATADIR%%/system.py
 %%DATADIR%%/system.pyc
 %%DATADIR%%/system_posix.py
@@ -236,6 +278,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/utils_api.pyc
 %%DATADIR%%/utils_ctl.py
 %%DATADIR%%/utils_ctl.pyc
+%%DATADIR%%/utils_hier.py
+%%DATADIR%%/utils_hier.pyc
 %%DATADIR%%/utils_net.py
 %%DATADIR%%/utils_net.pyc
 %%DATADIR%%/utils_path.py
@@ -246,18 +290,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/utils_random.pyc
 %%DATADIR%%/utils_rc.py
 %%DATADIR%%/utils_rc.pyc
-%%DATADIR%%/utils_sysdirs.py
-%%DATADIR%%/utils_sysdirs.pyc
 %%DATADIR%%/utils_version.py
 %%DATADIR%%/utils_version.pyc
 %%DATADIR%%/viewer.py
 %%DATADIR%%/viewer.pyc
 %%DATADIR%%/viewer_webkit_gtk.py
 %%DATADIR%%/viewer_webkit_gtk.pyc
+%%DATADIR%%/web100.py
+%%DATADIR%%/web100.pyc
 %%DATADIR%%/www/css/jquery.jqplot.css
 %%DATADIR%%/www/css/style.css
-%%DATADIR%%/www/descr/bittorrent.html
-%%DATADIR%%/www/descr/speedtest.html
 %%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/footer.html
 %%DATADIR%%/www/header.html
@@ -295,7 +337,6 @@ share/icons/hicolor/scalable/apps/neubot.svg
 @dirrm %%DATADIR%%/www/lang
 @dirrm %%DATADIR%%/www/js
 @dirrm %%DATADIR%%/www/img
-@dirrm %%DATADIR%%/www/descr
 @dirrm %%DATADIR%%/www/css
 @dirrm %%DATADIR%%/www
 @dirrm %%DATADIR%%/updater
