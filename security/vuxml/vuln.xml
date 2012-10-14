@@ -203,7 +203,15 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>9.9.1.4</lt></range>
       </package>
       <package>
+	<name>bind99-base</name>
+	<range><lt>9.9.1.4</lt></range>
+      </package>
+      <package>
 	<name>bind98</name>
+	<range><lt>9.8.3.4</lt></range>
+      </package>
+      <package>
+	<name>bind98-base</name>
 	<range><lt>9.8.3.4</lt></range>
       </package>
       <package>
@@ -211,7 +219,15 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>9.7.6.4</lt></range>
       </package>
       <package>
+	<name>bind97-base</name>
+	<range><lt>9.7.6.4</lt></range>
+      </package>
+      <package>
 	<name>bind96</name>
+	<range><lt>9.6.3.1.ESV.R7.4</lt></range>
+      </package>
+      <package>
+	<name>bind96-base</name>
 	<range><lt>9.6.3.1.ESV.R7.4</lt></range>
       </package>
     </affects>
