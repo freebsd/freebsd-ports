@@ -106,7 +106,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/unsort.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/datagrid.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery-1.3.2.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery-ui-1.6rc2.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery-ui-1.6rc5.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery.gravy.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/__init__.py
@@ -196,6 +195,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/http.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/http.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/http.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/humanize.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/humanize.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/humanize.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/misc.pyo
