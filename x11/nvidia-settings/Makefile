@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_GL=		gl
-USE_XORG=	xv
+USE_XORG=	xv xext
 
 PLIST_FILES=	bin/nvidia-settings
 MANCOMPRESSED=	yes
@@ -32,7 +32,7 @@ MAKE_ENV=	NV_VERBOSE= \
 		INSTALL_MAN="${INSTALL_MAN}" \
 		prefix=${PREFIX} \
 		X_CFLAGS=-I${LOCALBASE}/include \
-		X_LDLAGS=-L${LOCALBASE}/lib
+		X_LDFLAGS=-L${LOCALBASE}/lib
 
 post-extract:	.SILENT
 	${RM} -f ${WRKSRC}/src/libXNVCtrl/libXNVCtrl.a
