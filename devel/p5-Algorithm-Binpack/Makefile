@@ -6,7 +6,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	wblock@FreeBSD.org
 COMMENT=	Efficiently pack items into bins
 
 PERL_CONFIGURE=	yes

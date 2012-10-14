@@ -111,7 +111,6 @@
     SUBDIR += bglibs
     SUBDIR += bicyclerepair
     SUBDIR += bin86
-    SUBDIR += binpack
     SUBDIR += binutils
     SUBDIR += bison
     SUBDIR += bisoncpp
@@ -1304,6 +1303,7 @@
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Accounting
     SUBDIR += p5-Algorithm-Annotate
+    SUBDIR += p5-Algorithm-Binpack
     SUBDIR += p5-Algorithm-Bucketizer
     SUBDIR += p5-Algorithm-C3
     SUBDIR += p5-Algorithm-ChooseSubsets
