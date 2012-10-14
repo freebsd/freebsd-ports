@@ -1,5 +1,5 @@
 --- configure.orig	2012-10-13 10:22:27.000000000 +0200
-+++ configure	2012-10-13 10:55:30.573237451 +0200
++++ configure	2012-10-14 22:18:46.334237396 +0200
 @@ -2041,7 +2041,7 @@
  nogas=":"
  
@@ -49,7 +49,7 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -4375,7 +4375,7 @@
+@@ -4375,10 +4375,10 @@
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."
@@ -57,7 +57,11 @@
 +    cat <<EOF > doc/examples/pc-uninstalled/${name}${build_suffix}.pc
  prefix=
  exec_prefix=
- libdir=\${pcfiledir}/../../../$name
+-libdir=\${pcfiledir}/../../../$name
++libdir=\${pcfiledir}/../../../${name}${build_suffix}
+ includedir=${includedir}
+ 
+ Name: $name
 @@ -4392,25 +4392,25 @@
  }
  
