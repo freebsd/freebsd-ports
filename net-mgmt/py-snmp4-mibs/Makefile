@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-pysnmp4-mibs
-# Date created:				Sun Apr  9 23:07:14 CDT 2006
-# Whom:			Martin Jackson <mhjacks@swbell.net>
-#
+# Created by: Martin Jackson <mhjacks@swbell.net>
 # $FreeBSD$
-#
 
 PORTNAME=	snmp4-mibs
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysnmp/pysnmp-mibs/${PORTVERSION}
@@ -17,10 +13,8 @@ MAINTAINER=	mhjacks@swbell.net
 COMMENT=	Additional python MIB files for pysnmp4 and friends
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.1:${PORTSDIR}/devel/py-asn1 \
-		${PYTHON_PKGNAMEPREFIX}snmp4>=4.2.1:${PORTSDIR}/net-mgmt/py-snmp4
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=4.2.3:${PORTSDIR}/net-mgmt/py-snmp4
 
 # Python3 ready
 USE_PYTHON=	yes

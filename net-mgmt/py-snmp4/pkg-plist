@@ -21,13 +21,13 @@ bin/libsmi2pysnmp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/manager/ntfrcv.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/manager/setgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/agent/ntforg.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/async/getgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/async/nextgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/bulkgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/getgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/nextgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/setgen.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib/nextgen.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib/setgen.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/proxy/1to3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/proxy/cmdproxy.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/twisted/agent/cmdrsp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3arch/twisted/agent/ntforg.py
@@ -40,7 +40,6 @@ bin/libsmi2pysnmp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/twisted/agent
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/twisted
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/proxy
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager/async
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/v3arch/oneliner/agent
