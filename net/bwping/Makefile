@@ -1,28 +1,22 @@
-# Ports collection makefile for:  bwping
-# Date created:			  Fri Aug 29 2008
-# Whom:				  Oleg Derevenetz (oleg@vsi.ru)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bwping
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	oleg.derevenetz@gmail.com
-COMMENT=	A tool to measure bandwidth and RTT between two hosts using ICMP
-
-PLIST_FILES=	sbin/bwping
-
-GNU_CONFIGURE=	yes
-MAN8=		bwping.8
+COMMENT=	Tool to measure bandwidth and RTT between two hosts using ICMP
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+GNU_CONFIGURE=	yes
+MAN8=		bwping.8 bwping6.8
+
+PLIST_FILES=	sbin/bwping sbin/bwping6
+
 post-install:
-	@${STRIP_CMD} ${PREFIX}/sbin/bwping
-	@${CHMOD} 4555 ${PREFIX}/sbin/bwping
+	@${CHMOD} 4555 ${PREFIX}/sbin/bwping ${PREFIX}/sbin/bwping6
 
 .include <bsd.port.mk>
