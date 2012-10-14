@@ -1,13 +1,8 @@
-# New ports collection makefile for: xiphos
-# Date created:   February 2, 2009
-# Whom:           Thomas Abthorpe <tabthorpe@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
