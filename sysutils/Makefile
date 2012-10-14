@@ -70,7 +70,6 @@
     SUBDIR += be_agent
     SUBDIR += beadm
     SUBDIR += beadm-devel
-    SUBDIR += binup
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
