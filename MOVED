@@ -1354,7 +1354,7 @@ x11/e17-module-snow|x11-wm/e17-module-snow|2010-11-07|Fix category
 x11/e17-module-uptime|x11-wm/e17-module-uptime|2010-11-07|Fix category
 x11/e17-module-weather|x11-wm/e17-module-weather|2010-11-07|Fix category
 x11/e17-module-winselector|x11-wm/e17-module-winselector|2010-11-07|Fix category
-devel/libisc||2010-11-08|Has expired: Unlikely to be used...
+devel/libisc||2010-11-08|Has expired: Unlikely to be used
 emulators/vmware-guestd3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 emulators/vmware-tools3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 misc/compat3x||2010-11-08|Has expired: "Only FreeBSD 6.4+ are supported in ports"
@@ -1730,7 +1730,7 @@ x11-toolkits/php-gtk2||2011-04-18|Has expired: has been broken for over a half y
 x11-toolkits/p5-Tcl-Tk||2011-04-18|Has expired: has been broken for 2 year
 security/newpki-client||2011-04-18|Removed
 lang/gnustep-objc|lang/gnustep-libobjc|2011-04-19|Replaced with libobjc
-graphics/netpbm-devel|graphics/netpbm|2011-04-22|updated to default
+graphics/netpbm-devel|graphics/netpbm|2011-04-22|Updated to default
 ports-mgmt/portmk||2011-04-29|Has expired: has not been kept up to date for > 6 months
 ports-mgmt/portsman||2011-04-29|Has expired: hardwires an ancient version of INDEX
 mail/kiltdown||2011-04-29|Has expired: upstream seems dead since 2001
@@ -2958,14 +2958,14 @@ devel/soup||2011-11-09|Has expired: Unmaintained, use devel/libsoup
 graphics/clutter-qt||2011-11-09|Has expired: upstream distfile disappeared, doesn't build, and doesn't seem to be developed anymore
 graphics/p5-clutter||2011-11-09|Has expired: upstream distfile disappeared, and doesn't seem to be developed anymore
 graphics/librsvg||2011-11-09|Has expired: unmaintained and not used anymore
-www/p5-Catalyst-Log-Log4perl||2011-11-09|Has expired: Use Log::Log4perl::Catalyst (devel/p5-Log-Log4perl) instead.
+www/p5-Catalyst-Log-Log4perl||2011-11-09|Has expired: Use Log::Log4perl::Catalyst (devel/p5-Log-Log4perl) instead
 lang/open-cobol-devel||2011-11-09|Has expired: No activity since 2007
 databases/py-axiom||2011-11-11|Has expired: Distfile is missing, runtime broken; use databases/py-sqlobject instead
 sysutils/duplicity-devel||2011-11-12|Much older than current version, use sysutils/duplicity instead
 security/libfwbuilder-devel||2011-11-14|libfwbuilder-devel merged into fwbuilder-devel
 russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
 devel/tortoisehg1|devel/tortoisehg2|2011-11-22|Has expired: does not work with current devel/mercurial, use tortoisehg2
-mail/zms||2011-11-22|Has expired: No longer under development, since 2009.
+mail/zms||2011-11-22|Has expired: No longer under development, since 2009
 mail/dkim-milter|mail/opendkim|2011-11-23|Has expired: switch to mail/opendkim instead
 lang/gcc45|lang/gcc46|2011-11-23|Superseded by gcc46
 japanese/pycodec-zope||2011-11-27|Has expired: Handled in Python-2.4 upwards
@@ -3014,13 +3014,13 @@ databases/fireprofile||2011-12-28|Has expired
 audio/gnowavcut||2011-12-28|Has expired: Abandonware
 mail/demime||2011-12-28|Has expired: No upstream development since 2007
 x11/wmmsg||2011-12-28|Has expired: No more public distfiles
-x11-toolkits/libgtkeditor||2011-12-28|Has expired: No longer supported upstream, not depended upon anymore.
+x11-toolkits/libgtkeditor||2011-12-28|Has expired: No longer supported upstream, not depended upon anymore
 misc/demoniac||2011-12-28|Has expired: No more upstream, no more public distfiles
 cad/gtkwave||2011-12-28|Has expired: No more public distfiles, no more upstream
 databases/clip||2011-12-28|Has expired: No upstream development for a long time
 x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
-www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2.
-www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3.
+www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2
+www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3
 sysutils/duplicity05||2012-01-01|Has expired: This version is out of date, and the 0.6.x branch is considered stable
 japanese/py-kanjilib||2012-01-01|Has expired: This port is not needed with any supported python version
 www/squid30||2012-01-01|Has expired: This version of Squid is no longer actively maintained upstream
@@ -3172,10 +3172,10 @@ www/zope3||2012-01-06|End of life is reached
 x11-drivers/xf86-input-citron||2012-01-07|Removed
 x11-drivers/xf86-input-fpit||2012-01-07|Removed
 multimedia/avifile||2012-01-08|Has expired: Broken for an extended period, superseded by other multimedia players
-devel/bonobo-conf||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore.
+devel/bonobo-conf||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore
 www/typo343||2012-01-08|Has expired: Support will end in the near future, see http://typo3.org/download/packages/ for details
-devel/gnome-crash||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore.
-x11-toolkits/gob||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore.
+devel/gnome-crash||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore
+x11-toolkits/gob||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore
 www/rubygem-htauth||2012-01-08|Has expired: broke for ~12 months
 www/instiki||2012-01-08|Has expired: has been marked ignore since 2010/09/16
 mail/msmtpqueue||2012-01-08|Has expired: These scripts now come with mail/msmtp
@@ -3187,12 +3187,12 @@ x11-themes/gtk-zenith-theme||2012-01-08|Has expired: No more public distfiles
 graphics/stl2pov|graphics/py-stl|2012-01-08|New port graphics/py-stl deprecates graphics/stl2pov
 devel/py-py_static_check|devel/py_static_check|2012-01-12|Rename for consistency
 databases/phpmyadmin211||2012-01-13|Has expired: No longer supported by the phpMyAdmin project
-www/xpi-autobrowse||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
-www/xpi-joga||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
-www/xpi-num2web||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
-www/xpi-savegenpage||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
-www/xpi-videodownloader||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
-www/xpi-xpcom-component-viewer||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
+www/xpi-autobrowse||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7
+www/xpi-joga||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7
+www/xpi-num2web||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7
+www/xpi-savegenpage||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7
+www/xpi-videodownloader||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7
+www/xpi-xpcom-component-viewer||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7
 net-im/skype20||2012-01-14|Has expired: old version without many of the newer features; please try net-im/skype instead
 sysutils/rsyslog4|sysutils/rsyslog5|2012-01-16|EOL Upstream
 sysutils/rsyslog4-dbi|sysutils/rsyslog5-dbi|2012-01-16|EOL Upstream
@@ -3207,7 +3207,7 @@ net-im/gicq||2012-01-18|Runtime is broken. Unmaintained upstream
 net-im/libicq||2012-01-18|Runtime is broken. Unmaintained upstream
 devel/luajit|lang/luajit|2012-01-19|Compilers typically live in the lang category
 devel/p5-DBIx-Class-Schema-PopulateMore||2012-01-20|Removed
-textproc/qgoogletranslator||2012-01-20|Has expired: Runtime is broken because Google close free usage of API.  Project closed.
+textproc/qgoogletranslator||2012-01-20|Has expired: Runtime is broken because Google close free usage of API.  Project closed
 www/py-rssdler||2012-01-25|Runtime is mostly broken, abandoned upstream. Use www/py-flexget instead
 ftp/proftpd-mysql|databases/proftpd-mod_sql_mysql|2012-01-26|Module now in slave port
 games/flightgear-aircrafts|games/flightgear-aircraft|2012-01-31|Renamed for better naming
@@ -3215,11 +3215,11 @@ audio/wmmixer||2012-02-01|EOL Upstream; please use audio/wmsmixer instead
 x11-wm/xfce|x11-wm/xfce4|2012-02-02|Has expired: abandoned upstream, use x11-wm/xfce4 instead
 sysutils/py-dvdvideo|sysutils/dvdvideo|2012-02-03|Renamed for better naming
 science/R-cran-survival||2012-02-03|This CRAN port has been included in math/R
-editors/openoffice.org-3-devel|editors/openoffice-3-devel|2012-02-06|Project was taken over and renamed.
+editors/openoffice.org-3-devel|editors/openoffice-3-devel|2012-02-06|Project was taken over and renamed
 www/zope-cmf||2012-02-07|Has expired: Doesn't work with modern Zope versions
 chinese/fcitx-keyboard|textproc/fcitx-keyboard|2012-02-07|Moved to more appropriate category
-textproc/hs-attoparsec-text||2012-02-13|Removed: The package is deprecated.
-devel/hs-hmake||2012-02-13|Removed: Broken, unmaintained upstream.
+textproc/hs-attoparsec-text||2012-02-13|Removed: The package is deprecated
+devel/hs-hmake||2012-02-13|Removed: Broken, unmaintained upstream
 net/yate-devel||2012-02-17|Removed, please use net/yate
 databases/p5-postgresql-plperl|databases/postgresql84-plperl|2012-02-19|Split into versioned ports
 devel/p5-Version-Requirements||2012-03-01|Removed: deprecated, use CPAN::Meta::Requirements (devel/p5-CPAN-Meta >= 2.113640) instead
@@ -3228,13 +3228,13 @@ net/ipw-firmware-kmod||2012-03-02|Removed: is already included in base system
 net/iwi-firmware||2012-03-02|Removed: is already included in base system
 net/iwi-firmware-kmod||2012-03-02|Removed: is already included in base system
 devel/dklibs||2012-03-03|Has expired: not needed for graphics/bmeps anymore, no other users
-security/blocksshd||2012-03-03|Removed: security/sshguard is more active and a better tool.
+security/blocksshd||2012-03-03|Removed: security/sshguard is more active and a better tool
 net/p5-Net-Subnets||2012-03-03|Has expired: Disappeared from CPAN
 www/mediawiki116||2012-03-04|Has expired: Unsupport Upstream
 databases/postgresql-docs|databases/postgresql84-docs|2012-03-04|Split into versioned ports
 databases/postgresql-pltcl|databases/postgresql84-pltcl|2012-03-05|Split into versioned ports
 x11-wm/scrotwm|x11-wm/spectrwm|2012-03-05|Project renamed
-databases/p5-Mysql||2012-03-07|no release in 11 years, doesn't work with mysql 4.0+, unmaintained
+databases/p5-Mysql||2012-03-07|No release in 11 years, doesn't work with mysql 4.0+, unmaintained
 audio/easytag-devel||2012-03-12|Outdated development version
 korean/unfonts-ttf||2012-03-16|Was divided into korean/unfonts-core and korean/unfonts-extra
 net/v6eval||2012-03-17|Has expired: permission to use withdrawn by authors; contact portmgr for details
@@ -3475,28 +3475,28 @@ portuguese/koffice-kde4-l10n|portuguese/calligra-l10n|2012-05-31|Unmaintained up
 russian/koffice-kde4-l10n|russian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
 ukrainian/koffice-kde4-l10n|ukrainian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
 dns/drill||2012-05-31|drill tool is a part of ldns package now
-devel/hs-binary||2012-06-03|Removed: this package became part of lang/ghc.
-devel/hs-convertible-text||2012-06-03|Removed: this package is obsolete.
-devel/hs-control-monad-attempt||2012-06-03|Removed: this package is obsolete.
-devel/hs-data-object||2012-06-03|Removed: this package is obsolete.
-devel/hs-data-object-yaml||2012-06-03|Removed: this package is obsolete.
-devel/hs-deepseq||2012-06-03|Removed: this package became part of lang/ghc.
-devel/hs-ghc-paths-docs||2012-06-03|Removed: not needed any more.
-devel/hs-haddock-docs||2012-06-03|Removed: not needed any more.
-devel/hs-mtl-docs||2012-06-03|Removed: not needed any more.
-devel/hs-pool||2012-06-03|Removed: this package is obsolete.
-devel/hs-transformers-docs||2012-06-03|Removed: not needed any more.
-print/hs-hscolour-docs||2012-06-03|Removed: not needed any more.
-textproc/hs-xhtml-docs||2012-06-03|Removed: not needed any more.
-textproc/hs-xml-enumerator||2012-06-03|Removed: this package is obsolete.
-www/hs-happstack-data||2012-06-03|Removed: this package is obsolete.
-www/hs-happstack-ixset||2012-06-03|Removed: this package is obsolete.
-www/hs-happstack-state||2012-06-03|Removed: this package is obsolete.
-www/hs-happstack-util||2012-06-03|Removed: this package is obsolete.
-www/hs-http-enumerator||2012-06-03|Removed: this package is obsolete.
+devel/hs-binary||2012-06-03|Removed: this package became part of lang/ghc
+devel/hs-convertible-text||2012-06-03|Removed: this package is obsolete
+devel/hs-control-monad-attempt||2012-06-03|Removed: this package is obsolete
+devel/hs-data-object||2012-06-03|Removed: this package is obsolete
+devel/hs-data-object-yaml||2012-06-03|Removed: this package is obsolete
+devel/hs-deepseq||2012-06-03|Removed: this package became part of lang/ghc
+devel/hs-ghc-paths-docs||2012-06-03|Removed: not needed any more
+devel/hs-haddock-docs||2012-06-03|Removed: not needed any more
+devel/hs-mtl-docs||2012-06-03|Removed: not needed any more
+devel/hs-pool||2012-06-03|Removed: this package is obsolete
+devel/hs-transformers-docs||2012-06-03|Removed: not needed any more
+print/hs-hscolour-docs||2012-06-03|Removed: not needed any more
+textproc/hs-xhtml-docs||2012-06-03|Removed: not needed any more
+textproc/hs-xml-enumerator||2012-06-03|Removed: this package is obsolete
+www/hs-happstack-data||2012-06-03|Removed: this package is obsolete
+www/hs-happstack-ixset||2012-06-03|Removed: this package is obsolete
+www/hs-happstack-state||2012-06-03|Removed: this package is obsolete
+www/hs-happstack-util||2012-06-03|Removed: this package is obsolete
+www/hs-http-enumerator||2012-06-03|Removed: this package is obsolete
 graphics/libungif|graphics/giflib|2012-06-05|Replaced by giflib
-mail/kavmilter||2012-06-06|Removed: security package unmaintained upstream.
-sysutils/linux-megacli|sysutils/megacli|2012-06-06|Removed: native version available.
+mail/kavmilter||2012-06-06|Removed: security package unmaintained upstream
+sysutils/linux-megacli|sysutils/megacli|2012-06-06|Removed: native version available
 ftp/wu-ftpd+ipv6||2012-06-07|Removed: Upstream disappeared and distfile is no longer available
 sysutils/pwgen2|sysutils/pwgen|2012-06-07|pwgen2 is a continuation of pwgen that fixes several serious bugs
 x11-toolkits/xforms-i18n||2012-06-08|Has expired: BROKEN for more than 6 months
@@ -3525,7 +3525,7 @@ audio/libtunepimp||2012-06-20|MusicBrainz RDF webservice no longer functions
 audio/libtunepimp-old||2012-06-20|MusicBrainz RDF webservice no longer functions
 sysutils/xfce4-utils||2012-06-23|No longer relevant, see UPDATING
 devel/py-sendfile|net/py-pysendfile|2012-06-24|Domain lapsed, forked
-www/joomla||2012-06-25|Unmaintained upstream, please use www/joomla25 instead.
+www/joomla||2012-06-25|Unmaintained upstream, please use www/joomla25 instead
 graphics/p5-chart|graphics/p5-Chart|2012-06-30|Move to a better place via repocopy
 textproc/libupskirt|textproc/libsoldout|2012-07-01|Move to respect upstream new name
 net-p2p/libtorrent-rasterbar-14||2012-07-01|Discontinued upstream, move to libtorrent-rasterbar-16
@@ -3549,7 +3549,7 @@ www/zope||2012-07-16|End Of Life reached
 www/zope211||2012-07-16|End Of Life reached
 archivers/zlib||2012-07-18|Removed in favor of base system zlib
 devel/app|devel/papp|2012-07-18|Project renamed upstream
-databases/redis-scripting|databases/redis-devel|2012-07-19|Removed, please use databases/redis-devel instead.
+databases/redis-scripting|databases/redis-devel|2012-07-19|Removed, please use databases/redis-devel instead
 devel/acpicatools||2012-07-22|Has expired: It's quite obsolete and is already in base system for a long time
 mail/mutt-devel|mail/mutt|2012-07-22|mail/mutt-devel is ready for primetime
 mail/mutt-devel-lite|mail/mutt-lite|2012-07-22|mail/mutt-devel is ready for primetime
@@ -3623,7 +3623,7 @@ editors/emacs.app||2012-07-29|Has expired: API no longer supported
 devel/ruby-gnustep||2012-07-29|Has expired: API no longer supported
 www/etoile-rsskit|www/rsskit|2012-08-04|Project renamed
 www/etoile-grr|www/grr|2012-08-04|Project renamed
-graphics/libglut|graphics/freeglut|2012-08-04|replace libglut with freeglut
+graphics/libglut|graphics/freeglut|2012-08-04|Replace libglut with freeglut
 x11-fm/FSViewer||2012-08-05|Broken, unmaintained, dead upstream
 games/gomoku.app|games/gomoku|2012-08-06|Project renamed
 devel/projectcenter.app|devel/projectcenter|2012-08-06|Project renamed
@@ -3646,10 +3646,10 @@ misc/gpt||2012-08-20|Has expired: was a dependency for net/globus4, which was re
 www/xxxterm|www/xombrero|2012-08-20|Project renamed
 www/cakephp2|www/cakephp21|2012-08-21|Moved to match port version
 databases/libudbc||2012-08-21|Has expired: Does not fetch and no vendor support anymore
-net/asterisk16||2012-08-22|Unsupported upstream, please use net/asterisk instead.
-net/asterisk16-addons||2012-08-22|Unsupported upstream, now part of net/asterisk.
+net/asterisk16||2012-08-22|Unsupported upstream, please use net/asterisk instead
+net/asterisk16-addons||2012-08-22|Unsupported upstream, now part of net/asterisk
 databases/edb||2012-08-26|Has expired: Deprecated by enlightenment.org team
-databases/php5-rrdtool||2012-08-26|Has expired: deprecated via upstream please use databases/pecl-rrd.
+databases/php5-rrdtool||2012-08-26|Has expired: deprecated via upstream please use databases/pecl-rrd
 graphics/evas-engine-xrender||2012-08-26|Has expired: Deprecated by enlightenment.org
 graphics/evas-loader-edb||2012-08-26|Has expired: Deprecated by enlightenment.org
 www/linux-f10-flashplugin10|www/linux-f10-flashplugin11|2012-08-26|Has expired: has vulnerabilities and is EOL
@@ -3659,7 +3659,7 @@ x11-wm/e17-module-efm_pathbar||2012-08-26|Has expired: Deprecated by enlightenme
 x11-wm/e17-module-notification||2012-08-26|Has expired: Merged into x11-wm/enlightenment
 www/py-django12||2012-08-31|Has expired: Unsupported version
 www/p5-Xango||2012-08-31|Has expired: Removed from CPAN
-lang/spidermonkey|lang/spidermonkey17|2012-09-01|Moved to allow for addition of the 1.8 development line.
+lang/spidermonkey|lang/spidermonkey17|2012-09-01|Moved to allow for addition of the 1.8 development line
 cad/gtkwave3|cad/gtkwave|2012-09-04|There is only one version of this now
 multimedia/x264-devel||2012-09-07|Has expired: x264 github development makes this port obsolete
 audio/holyshout||2012-09-07|Has expired: upstream has disappeared
@@ -3710,7 +3710,7 @@ print/pips870-cups||2012-09-22|Removed
 print/pips-spr300_310||2012-09-22|Removed
 print/pips930||2012-09-22|Removed
 print/pips770||2012-09-22|Removed
-www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versioning, yet.
+www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versioning, yet
 net/fping+ipv6|net/fping|2012-09-24|IPv6 support has been merged
 textproc/aspell-without-dicten|textproc/aspell|2012-09-24|The dictionary is no longer installed with aspell
 www/jakarta-jmeter|www/jmeter|2012-09-25|Former Jakarta projects now live on their own
@@ -3721,4 +3721,4 @@ mail/enigmail||2012-10-10|Enigmail is now an option in the thunderbird/seamonkey
 mail/enigmail-seamonkey||2012-10-10|Enigmail is now an option in the seamonkey port
 mail/enigmail-thunderbird||2012-10-10|Enigmail is now an option in the thunderbird port
 mail/enigmail-thunderbird-esr||2012-10-10|Enigmail is now an option in the thunderbird-esr port
-sysutils/binup||2012-10-14|upstream disappeared, use freebsd-update(8) instead
+sysutils/binup||2012-10-14|Upstream disappeared, use freebsd-update(8) instead
