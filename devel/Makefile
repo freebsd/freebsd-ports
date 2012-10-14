@@ -111,6 +111,7 @@
     SUBDIR += bglibs
     SUBDIR += bicyclerepair
     SUBDIR += bin86
+    SUBDIR += binpack
     SUBDIR += binutils
     SUBDIR += bison
     SUBDIR += bisoncpp

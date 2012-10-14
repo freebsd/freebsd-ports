@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/BinPack/.packlist
+%%SITE_PERL%%/Algorithm/BinPack.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/BinPack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
+@dirrmtry %%SITE_PERL%%/Algorithm
