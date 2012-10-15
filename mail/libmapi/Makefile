@@ -1,13 +1,9 @@
-# New ports collection makefile for:   libmapi
-# Date created:			1 May 2009
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmapi
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=openchange/openchange/openchange-${PORTVERSION}%20${CODENAME}/
@@ -18,17 +14,18 @@ COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
 BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel \
 		pidl:${PORTSDIR}/devel/p5-Parse-Pidl
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		ical.44:${PORTSDIR}/devel/libical \
-		tdb.1:${PORTSDIR}/databases/tdb \
-		talloc.2:${PORTSDIR}/devel/talloc
+LIB_DEPENDS=	ical:${PORTSDIR}/devel/libical \
+		tdb:${PORTSDIR}/databases/tdb \
+		tevent:${PORTSDIR}/devel/tevent \
+		talloc:${PORTSDIR}/devel/talloc
 RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel
 
 HOSTCONFIG=	${LOCALBASE}/libdata/pkgconfig/samba-hostconfig.pc
 
 CODENAME=	COCHRANE
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_SQLITE=	3
+USE_PKGCONFIG=	build
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -40,7 +37,7 @@ OPTIONS_DEFINE=	BOOST DOXYGEN
 OPTIONS_DEFAULT=	BOOST
 BOOST_DESC=	Enable libmapi++ (needs boost)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--disable-swig-perl
 CONFIGURE_ARGS+=	--disable-pymapi
@@ -68,4 +65,4 @@ post-install:
 	@${LN} -fs ${PREFIX}/lib/${i}.so.0.9 ${PREFIX}/lib/${i}.so.0
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
