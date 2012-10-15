@@ -1,7 +1,3 @@
-# New ports collection makefile for: eLectrix
-# Date created:		2011-03-10
-# Whom:		Olivier Duchateau <duchateau.olivier@gmail.com>
-#
 # $FreeBSD$
 #
 
@@ -11,31 +7,32 @@ PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTVERSION}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	An application to view PDF files
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		poppler-glib:${PORTSDIR}/graphics/poppler-glib
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 desktopfileutils intltool intlhack pkgconfig
+USE_GNOME=	gtk20 desktopfileutils intltool intlhack
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
 
-CFLAGS=	"-I${LOCALBASE}/include"
-LFLAGS=	"-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-OPTIONS=	PS "Enable PostScript support" off
+OPTIONS_DEFINE=	PS
 
-.include <bsd.port.pre.mk>
+PS_DESC=	PostScript support
 
-.if !defined(WITHOUT_PS)
-LIB_DEPENDS+=	spectre.1:${PORTSDIR}/print/libspectre
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPS}
+LIB_DEPENDS+=	spectre:${PORTSDIR}/print/libspectre
 .else
 CONFIGURE_ARGS+=	--disable-ps
 .endif
@@ -53,4 +50,4 @@ do-install:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

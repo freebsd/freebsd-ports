@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-gdata
-# Date created:		Mar. 28, 2007
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	GData Python Client Library
 
 LICENSE=	AL2
@@ -20,10 +17,14 @@ PROJECTHOST=	gdata-python-client
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
+OPTIONS_DEFINE=	GMPY M2CRYPTO PYCRYPTO
+
 # optional modules (see src/gdata/tlslite/utils/cryptomath.py)
-OPTIONS=	M2CRYPTO "Add cryptography and SSL toolkit for Python" off \
-		PYCRYPTO "Add cryptography toolkit for Python" off \
-		GMPY "Add multiprecision arithmetic for Python" off
+GMPY_DESC=	Multiprecision arithmetic
+M2CRYPTO_DESC=	Cryptography and SSL toolkit
+PYCRYPTO_DESC=	Cryptography toolkit
+
+OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
@@ -38,18 +39,18 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_atom-mock_service.py \
 		${FILESDIR}/extra-patch-src_gdata_tlslite_utils-jython_compat.py
 .endif
 
-.if defined(WITH_M2CRYPTO)
+.if ${PORT_OPTIONS:MM2CRYPTO}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.20:${PORTSDIR}/security/py-m2crypto
 .endif
-.if defined(WITH_PYCRYPTO)
+.if ${PORT_OPTIONS:MPYCRYPTO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 .endif
-.if defined(WITH_GMPY)
+.if ${PORT_OPTIONS:MGMPY}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gmpy.so:${PORTSDIR}/math/py-gmpy
 .endif
 
-.if !defined(NOPORTEXAMPLES)
 post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}/
 .endif

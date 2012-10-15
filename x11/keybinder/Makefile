@@ -1,7 +1,3 @@
-# New ports collection makefile for:	keybinder
-# Date created:				2011-02-21
-# Whom:			Olivier Duchateau <duchateau.olivier@gmail.com>
-#
 # $FreeBSD$
 #
 
@@ -11,24 +7,28 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://kaizer.se/publicfiles/${PORTNAME}/
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts
 
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 pkgconfig
+USE_GNOME=	gnomehack gtk20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 PORTEXAMPLES=	*
 
-OPTIONS=	PYTHON	"Install Python bindings"	on \
-		LUA	"Install Lua bindings"		off
+OPTIONS_DEFINE=	PYTHON LUA
+OPTIONS_DEFAULT=	PYTHON
+
+# Override LUA description
+LUA_DESC=	Lua bindings
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 USE_GNOME+=	pygtk2 pygobject
 PLIST_SUB+=	PYTHON=""
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=	5.1+
 CONFIGURE_ARGS+=	--with-lua-includes=${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
