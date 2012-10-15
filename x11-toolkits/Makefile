@@ -32,7 +32,6 @@
     SUBDIR += fpc-xforms
     SUBDIR += fxscintilla
     SUBDIR += gai
-    SUBDIR += gal
     SUBDIR += gal2
     SUBDIR += gal2-reference
     SUBDIR += gdl
