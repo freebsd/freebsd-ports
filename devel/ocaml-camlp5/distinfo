@@ -1,2 +1,4 @@
-SHA256 (ocaml-camlp5/camlp5-6.06.tgz) = 763f89ee6cde4ca063a50708c3fe252d55ea9f8037e3ae9801690411ea6180c5
-SIZE (ocaml-camlp5/camlp5-6.06.tgz) = 681614
+SHA256 (ocaml-camlp5/camlp5-6.07.tgz) = be8282958acd8af8cc7c8c1065bfee12e1dac27b5eef76f54376d795fb16b689
+SIZE (ocaml-camlp5/camlp5-6.07.tgz) = 682883
+SHA256 (ocaml-camlp5/patch-6.07-1) = a2c77cb617bf5f212bcd344b7e4e3c55cc9ae2a44af82dd86359a209184f4d57
+SIZE (ocaml-camlp5/patch-6.07-1) = 1008
