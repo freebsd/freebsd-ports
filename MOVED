@@ -3722,3 +3722,4 @@ mail/enigmail-seamonkey||2012-10-10|Enigmail is now an option in the seamonkey p
 mail/enigmail-thunderbird||2012-10-10|Enigmail is now an option in the thunderbird port
 mail/enigmail-thunderbird-esr||2012-10-10|Enigmail is now an option in the thunderbird-esr port
 sysutils/binup||2012-10-14|Upstream disappeared, use freebsd-update(8) instead
+math/guppi||2012-10-15|Not developed anymore, consider math/gnumeric instead
