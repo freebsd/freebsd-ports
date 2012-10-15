@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Padre
-# Date created:				March 8th 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Padre
 PORTVERSION=	0.62
@@ -12,7 +8,7 @@ CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Application Development and Refactoring Environment
 
 BUILD_DEPENDS=	p5-ack>=1.86:${PORTSDIR}/textproc/p5-ack \

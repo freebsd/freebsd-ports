@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-DateTimeX-Easy
-# Date created:				23 Jun 2009
-# Whom:					Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTimeX-Easy
 PORTVERSION=	0.089
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse a date/time string using the best method available
 
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \

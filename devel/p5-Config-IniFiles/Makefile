@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Config-IniFiles
-# Date created:				October 21st 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-IniFiles
 PORTVERSION=	2.77
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for reading .ini-style configuration files
 
 LICENSE=	ART10 GPLv1

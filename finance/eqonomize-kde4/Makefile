@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eqonomize
-# Date created:				6 August 2007
-# Whom:					Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	eqonomize
 PORTVERSION=	0.6
@@ -12,7 +8,7 @@ CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/Eqonomize%21/${PORTVERSION}
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal accounting software
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4

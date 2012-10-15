@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ORLite
-# Date created:				March 8th 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ORLite
 PORTVERSION=	1.97
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 extremely light weight SQLite-specific ORM
 
 BUILD_DEPENDS=	p5-DBI>=1.60.7:${PORTSDIR}/databases/p5-DBI \

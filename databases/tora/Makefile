@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tora
-# Date created:				03 January 2002
-# Whom:					anders
-#
+# Created by: anders
 # $FreeBSD$
-#
 
 PORTNAME=	tora
 PORTVERSION=	2.1.3
@@ -12,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for Oracle
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
