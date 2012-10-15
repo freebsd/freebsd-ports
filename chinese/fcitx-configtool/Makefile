@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fcitx-configtool
-# Date created:				09 Nov 2011
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fcitx-configtool
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.5.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -23,12 +19,12 @@ USE_GNOME=	intltool gnomehack
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 
-OPTIONS=	GTK2		"Enable Gtk2 Version" on \
-		GTK3		"Enable Gtk3 Version" off
+OPTIONS_DEFINE=	GTK2 GTK3
+OPTIONS_DEFAULT=GTK2
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 CMAKE_ARGS+=	-DENABLE_GTK2=ON
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK2=""
@@ -36,7 +32,7 @@ PLIST_SUB+=	GTK2=""
 PLIST_SUB+=	GTK2="@comment "
 .endif
 
-.if defined(WITH_GTK3)
+.if ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30
 PLIST_SUB+=	GTK3=""
 .else
@@ -44,7 +40,7 @@ CMAKE_ARGS+=	-DENABLE_GTK3=OFF
 PLIST_SUB+=	GTK3="@comment "
 .endif
 
-.if defined(WITHOUT_GTK2) && defined(WITHOUT_GTK3)
+.if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3}
 IGNORE=		a GUI is required
 .endif
 

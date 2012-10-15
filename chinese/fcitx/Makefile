@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Free Chinese Input Toy for X
-# Date created:				26 March 2003
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.6.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -41,6 +37,7 @@ USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
+OPTIONS_DEFAULT=GTK2
 
 GTK2_DESC=	Enable Gtk2 IM module
 GTK3_DESC=	Enable Gtk3 IM module
