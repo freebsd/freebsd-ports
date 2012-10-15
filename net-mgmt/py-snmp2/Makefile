@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-snmp2
-# Date created:		16 Aug 2006
-# Whom:			Dmitriy Kirhlarov
-#
+# Created by: Dmitriy Kirhlarov
 # $FreeBSD$
-#
 
 PORTNAME=	snmp2
 PORTVERSION=	2.0.9
@@ -14,6 +10,9 @@ DISTNAME=	pysnmp-${PORTVERSION}
 
 MAINTAINER=	dimma@higis.ru
 COMMENT=	SNMP framework for Python
+
+DEPRECATED=	Dead upstream, use net-mgmt/py-snmp4 instead
+EXPIRATION_DATE=2012-11-15
 
 CONFLICTS=	py??-snmp4-[0-9]* py??-snmp-3.*
 
