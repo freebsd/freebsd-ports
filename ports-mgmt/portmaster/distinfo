@@ -1,2 +1,4 @@
 SHA256 (portmaster-portmaster-3.14-31009f6.tar.gz) = 9029531c486d937c09974baa0174f5a59b5e54c2400ab60caabb09af3add9605
 SIZE (portmaster-portmaster-3.14-31009f6.tar.gz) = 42265
+SHA256 (patch-portmaster-pkgng.gz) = f55e9e8e2117988a5b1e58c269c109d00d1468892b6d742210c9bafca41e1d34
+SIZE (patch-portmaster-pkgng.gz) = 9937
