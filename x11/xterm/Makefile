@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	283
+PORTVERSION=	284
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
