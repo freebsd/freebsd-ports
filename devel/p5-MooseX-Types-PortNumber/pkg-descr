@@ -1,3 +1,4 @@
-Port number type for moose classes by The Internet Assigned Numbers Authority (IANA).
+Port number type for Moose classes by the Internet Assigned Numbers
+Authority (IANA).
 
 WWW:	http://search.cpan.org/dist/MooseX-Types-PortNumber/
