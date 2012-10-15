@@ -2,7 +2,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
   		http://mirror.shatow.net/freebsd/portmaster/
@@ -18,10 +18,10 @@ GH_ACCOUNT=	portmaster
 GH_COMMIT=	31009f6
 GH_TAGNAME=	${GH_COMMIT}
 
-OPTIONS_DEFINE=	BASH ZSH PKGNG
+OPTIONS_DEFINE=	BASH ZSH PKGNGPATCH
 BASH_DESC=	Install programmable completions for Bash
 ZSH_DESC=	Install programmable completions for zsh
-PKGNG_DESC=	Enable PKGNG support
+PKGNGPATCH_DESC=Enable PKGNG support
 
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
@@ -29,7 +29,7 @@ MAN8=		portmaster.8
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPKGNG}
+.if ${PORT_OPTIONS:MPKGNGPATCH}
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/portmaster/
 PATCHFILES+=	patch-portmaster-pkgng.gz
 .endif
