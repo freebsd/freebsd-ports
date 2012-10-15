@@ -18,6 +18,8 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
+BROKEN=		missing prerequisites
+
 USE_CMAKE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
