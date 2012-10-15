@@ -13,10 +13,7 @@ MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
-LICENSE_GROUPS=	FSF GPL OSI
-LICENSE_NAME=	ZLIB license
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
