@@ -37,7 +37,7 @@ PLIST_SUB+=	ULTRAFTP=""
 PLIST_SUB+=	ULTRAFTP="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 MAKE_ARGS+=	DOCS=""
 .endif
 
