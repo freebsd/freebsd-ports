@@ -67,7 +67,8 @@ CONFIGURE_ARGS=	--enable-unicode \
 		--with-mailgroup=${MAILGRP} \
 		--localstatedir=${LOCALSTATEDIR} \
 		--with-authdaemonvar=${AUTHDAEMONVAR} \
-		--cache-file=${WRKDIR}/courier-authlib.cache
+		--cache-file=${WRKDIR}/courier-authlib.cache \
+		--without-authsqlite
 
 INSTALL_TARGET=	install-strip install-configure
 
