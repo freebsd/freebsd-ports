@@ -91,7 +91,7 @@ share/gir-1.0/Fcitx-1.0.gir
 %%GTK3%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-fcitx.so
 %%GTK3%%@exec gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 %%GTK3%%@unexec gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
-%%QT4%%lib/qt4/plugins/inputmethods/qtim-fcitx.so
+%%QT4%%lib/qt4/plugins/inputmethods/libqtim-fcitx.so
 %%QT4%%@dirrmtry lib/qt4/plugins/inputmethods
 %%QT4%%@dirrmtry lib/qt4/plugins
 libdata/pkgconfig/fcitx-config.pc
