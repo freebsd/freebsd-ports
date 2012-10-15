@@ -5,9 +5,9 @@ PORTVERSION=	2.211
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME} \
-		LOCAL/bdrewery/${PORTNAME}/scripts:s \
 		http://www.iagora.com/~espel/sirc/ \
-		http://www.iagora.com/~espel/sirc/scripts/:s \
+		LOCAL/bdrewery/${PORTNAME}/scripts:s \
+		http://www.iagora.com/~espel/sirc/scripts/:s
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	sirc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
