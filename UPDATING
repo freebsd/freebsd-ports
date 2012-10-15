@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20121015:
+  AFFECTS: users of ports-mgmt/portmaster
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Portmaster now support pkgng. To use pkgng, enable the patch in the port,
+  enable pkgng in your make.conf, and convert your existing /var/db/pkg
+  database. Also see UPDATING entry 20121010 if you are on a recent CURRENT
+  and do not want to use pkg.
+
+  # make -C /usr/ports/ports-mgmt/portmaster config build deinstall install clean
+  # echo 'WITH_PKGNG=yes' >> /etc/make.conf
+  # pkg2ng
+
+20121015:
   AFFECTS: users of ports-mgmt/portupgrade
   AUTHOR: bdrewery@FreeBSD.org
 
