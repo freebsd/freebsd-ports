@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121015:
+  AFFECTS: users of ports-mgmt/portupgrade
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Portupgrade now support pkgng. To use pkgng, enable it in your make.conf,
+  and convert your databases.
+
+  # echo 'WITH_PKGNG=yes' >> /etc/make.conf
+  # pkg2ng
+  # pkgdb -fu
+
 20121010:
   AFFECTS: users of mail/enigmail*
   AUTHOR: gecko@FreeBSD.org
