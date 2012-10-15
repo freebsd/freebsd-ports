@@ -76,6 +76,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-4506</cvename>
       <mlist msgid="CAMK1S_jotna+d_X2C-+es-M28i1aUBcsNeiXxwJ63EshQ8ht6w@mail.gmail.com">https://groups.google.com/forum/#!topic/gitolite/K9SnQNhCQ-0/discussion</mlist>
     </references>
     <dates>
