@@ -148,7 +148,6 @@
     SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl
-    SUBDIR += guppi
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-executable
     SUBDIR += hs-NumInstances
