@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-puppet
-# Date created:		2007-03-03
-# Whom:			Tomoyuki Sakurai <cherry@trombik.mine.nu>
-#
+# Created by:	Tomoyuki Sakurai <cherry@trombik.mine.nu>
 # $FreeBSD$
-#
 
 PORTNAME=	puppet
 PORTVERSION=	2.6.17
@@ -17,7 +13,8 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 
-CONFLICTS=	puppet-[0-9]*
+LATEST_LINK=	puppet26
+CONFLICTS=	puppet-2.7.* puppet-3.*
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -39,21 +36,21 @@ MAN5=	puppet.conf.5
 MAN8=	filebucket.8 pi.8 puppet.8 puppetca.8 puppetd.8 \
 	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8
 
-OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off \
-		PACKAGE_ORIGIN	"Use port origin as package name"		On
+OPTIONS_DEFINE=	MONGREL PACKAGE_ORIGIN DOCS EXAMPLES
+OPTIONS_DEFAULT=	PACKAGE_ORIGIN
+MONGREL_DESC=		Run puppet server as a mongrel service
+PACKAGE_ORIGIN_DESC=	Use port origin as package name
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if defined(WITH_MONGREL)
+.if ${PORT_OPTIONS:MMONGREL}
 RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 .endif
 
-.if defined(WITH_PACKAGE_ORIGIN)
+.if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bz2.so:${PORTSDIR}/archivers/ruby-bz2
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
@@ -91,11 +88,11 @@ post-install:
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
