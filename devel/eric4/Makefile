@@ -33,6 +33,7 @@ post-install:
 	${INSTALL} -d ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/eric4.desktop ${PREFIX}/share/applications/
 	${LN} ${PYTHON_SITELIBDIR}/eric4/icons/default/eric.png ${PREFIX}/share/pixmaps/
+	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/i18n
 	-update-desktop-database
 	-update-mime-database ${PREFIX}/share/mime
 

@@ -3027,6 +3027,7 @@ share/qt4/qsci/api/python/zope-2.11.2.api
 share/qt4/qsci/api/python/zope-3.3.1.api
 share/qt4/qsci/api/ruby/Ruby-1.8.7.api
 share/qt4/qsci/api/ruby/eric4.api
+@exec /bin/mkdir -p %D/%%PYTHON_SITELIBDIR%%/eric4/i18n
 @dirrmtry share/qt4/qsci/api/ruby
 @dirrmtry share/qt4/qsci/api/python
 @dirrmtry share/applications
@@ -3034,7 +3035,7 @@ share/qt4/qsci/api/ruby/eric4.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/icons/default
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/icons
-@dirrmtry %%PYTHON_SITELIBDIR%%/eric4/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/eric4/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/ViewManager
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/VCS
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Utilities/ClassBrowsers
