@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f94befcd-1289-11e2-a25e-525400272390">
+    <topic>gitolite - path traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>gitolite</name>
+	<range><ge>3.01</ge><le>3.04</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sitaram Chamarty reports:</p>
+	<blockquote cite="https://groups.google.com/forum/#!topic/gitolite/K9SnQNhCQ-0/discussion">
+	  <p>I'm sorry to say there is a potential path traversal vulnerability in
+	  v3. Thanks to Stephane Chazelas for finding it and alerting me.</p>
+	  <p>Can it affect you? This can only affect you if you are using wild
+	  card repos, *and* at least one of your patterns allows the string
+	  "../" to match multiple times.</p>
+	  <p>How badly can it affect you? A malicious user who *also* has the
+	  ability to create arbitrary files in, say, /tmp (e.g., he has his own
+	  userid on the same box), can compromise the entire "git" user.
+	  Otherwise the worst he can do is create arbitrary repos in /tmp.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="CAMK1S_jotna+d_X2C-+es-M28i1aUBcsNeiXxwJ63EshQ8ht6w@mail.gmail.com">https://groups.google.com/forum/#!topic/gitolite/K9SnQNhCQ-0/discussion</mlist>
+    </references>
+    <dates>
+      <discovery>2012-10-09</discovery>
+      <entry>2012-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef417da3-1640-11e2-999b-e0cb4e266481">
     <topic>phpMyAdmin -- Multiple XSS due to unescaped HTML output in Trigger, Procedure and Event pages and Fetching the version information from a non-SSL site is vulnerable to a MITM attack</topic>
     <affects>
