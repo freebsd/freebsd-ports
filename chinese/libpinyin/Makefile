@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libpinyin
-# Date created:		6 Feb 2012
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libpinyin
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.91
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 

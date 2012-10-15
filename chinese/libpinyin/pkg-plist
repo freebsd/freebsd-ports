@@ -6,7 +6,6 @@ include/libpinyin-%%VER%%/chewing_key.h
 include/libpinyin-%%VER%%/novel_types.h
 include/libpinyin-%%VER%%/pinyin.h
 include/libpinyin-%%VER%%/pinyin_custom2.h
-include/libpinyin-%%VER%%/pinyin_parser2.h
 lib/libpinyin.a
 lib/libpinyin.la
 lib/libpinyin.so
