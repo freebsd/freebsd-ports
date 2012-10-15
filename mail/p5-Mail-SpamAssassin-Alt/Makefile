@@ -1,14 +1,9 @@
-# New ports collection makefile for:	p5-Mail-SpamAssassin-Alt
-# Date created:		21 March 2012
-# Whom:			Jason Helfman <jgh@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-Alt
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides optional SpamAssassin tuning
 
 CONFLICTS=	p5-Mail-SpamAssassin-[0-9]* ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]*
