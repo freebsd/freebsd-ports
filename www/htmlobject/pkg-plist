@@ -41,7 +41,6 @@
 %%SITE_PERL%%/auto/HTMLObject/Widgets/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrm %%SITE_PERL%%/auto/HTMLObject/Widgets
 @dirrm %%SITE_PERL%%/auto/HTMLObject/WMLDeck
@@ -57,7 +56,6 @@
 @dirrm %%SITE_PERL%%/auto/HTMLObject/ErrorBase
 @dirrm %%SITE_PERL%%/auto/HTMLObject/Base
 @dirrm %%SITE_PERL%%/auto/HTMLObject
-@dirrmtry %%SITE_PERL%%/auto
 @dirrm %%SITE_PERL%%/HTMLObject
 @dirrmtry %%SITE_PERL%%
 @dirrmtry lib/perl5/site_perl
