@@ -110,9 +110,9 @@ share/icons/hicolor/scalable/apps/linnya.svg
 %%DATADIR%%/uix/theme/default/linnya.css
 %%DATADIR%%/uix/theme/default/sssbg/sssbg_1.jpg
 %%DATADIR%%/uix/theme/default/sssbg/sssbg_2.jpg
-share/locale/zh_CN/LC_MESSAGES/linnya.mo
-share/locale/zh_HK/LC_MESSAGES/linnya.mo
-share/locale/zh_TW/LC_MESSAGES/linnya.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/linnya.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/linnya.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/linnya.mo
 @dirrm %%DATADIR%%/uix/theme/default/sssbg
 @dirrm %%DATADIR%%/uix/theme/default/image
 @dirrm %%DATADIR%%/uix/theme/default
