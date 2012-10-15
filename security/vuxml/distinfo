@@ -10,5 +10,5 @@ SHA256 (vuxml/xml1.dcl) = 343efa94c4e1302e85e08b2d1791d86e50aac1ecdbc3161daecac1
 SIZE (vuxml/xml1.dcl) = 7372
 SHA256 (vuxml/catalog) = 479a69cf02995603443fd1f3b5b33f97811670931f87f53be99a727d664abc66
 SIZE (vuxml/catalog) = 549
-SHA256 (vuxml/catalog.xml) = e0b47f8d0f8eddfbc717de0f5539960a5f38d2d6efaab42a0f042e196111c5f4
-SIZE (vuxml/catalog.xml) = 813
+SHA256 (vuxml/catalog.xml) = 7b2e2850f57264eeba0ccd3d1fc161b9d5ce3071ae0ec51b9da7fa956f2a6509
+SIZE (vuxml/catalog.xml) = 2150
