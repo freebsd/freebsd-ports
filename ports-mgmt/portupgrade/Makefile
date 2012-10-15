@@ -1,12 +1,8 @@
-# New ports collection makefile for:	portupgrade
-# Date created:		18 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.9.9
+PORTVERSION=	2.4.10
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
