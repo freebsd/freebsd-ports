@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	gspoof
-# Date created:			Jan 29, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gspoof
 PORTVERSION=	3.2
@@ -12,7 +9,7 @@ PORTREVISION=	14
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Gspoof-3/${PORTVERSION}
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console/GTK+ TCP/IP Packets Forger
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet

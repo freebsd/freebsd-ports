@@ -1,9 +1,6 @@
 # Ports collection makefile for:	Config-Simple
-# Date created:				8 Oct 2003
-# Whom:					mig
-#
+# Created by: mig
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Simple
 PORTVERSION=	4.59
@@ -11,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Config/SHERZODR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple configuration file class
 
 PERL_CONFIGURE=	yes

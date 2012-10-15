@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Pod-Abstract
-# Date created:				June 2nd 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Abstract
 PORTVERSION=	0.20
@@ -11,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstract document tree for Perl POD documents
 
 BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \

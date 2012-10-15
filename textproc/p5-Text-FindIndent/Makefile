@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-FindIndent
-# Date created:				March 8th 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-FindIndent
 PORTVERSION=	0.10
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SMUELLER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to heuristically determine the indent style of a file
 
 PERL_CONFIGURE=	YES

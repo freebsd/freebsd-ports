@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-pip
-# Date created:				September 21st 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pip
 PORTVERSION=	1.18
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Installation Program
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.29:${PORTSDIR}/archivers/p5-Archive-Zip \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ORLite-Migrate
-# Date created:				March 8th 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ORLite-Migrate
 PORTVERSION=	1.10
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 extremely light weight SQLite-specific schema migration
 
 BUILD_DEPENDS=	p5-File-pushd>=1.00:${PORTSDIR}/devel/p5-File-pushd \

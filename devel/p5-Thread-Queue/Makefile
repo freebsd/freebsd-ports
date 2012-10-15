@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Thread-Queue
-# Date created:				June 2nd 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Thread-Queue
 PORTVERSION=	2.12
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 thread-safe queues
 
 BUILD_DEPENDS=	p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared

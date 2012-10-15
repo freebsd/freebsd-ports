@@ -1,16 +1,12 @@
-# New ports collection makefile for:	wakeonlan
-# Date created:				30 June 2001
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-#
+# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	wakeonlan
 PORTVERSION=	0.41
 CATEGORIES=	net
 MASTER_SITES=	http://gsd.di.uminho.pt/jpo/software/wakeonlan/downloads/
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sends magic packets to WOL enabled NIC to switch on the called PC
 
 PERL_CONFIGURE=	yes

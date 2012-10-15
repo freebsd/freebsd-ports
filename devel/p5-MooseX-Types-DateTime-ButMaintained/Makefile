@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-MooseX-Types-DateTime-ButMaintained
-# Date created:				23 Jun 2009
-# Whom:					Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Types-DateTime-ButMaintained
 PORTVERSION=	0.16
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DateTime related constraints and coercions for Moose
 
 RUN_DEPENDS=	p5-DateTime>=0.43:${PORTSDIR}/devel/p5-DateTime \

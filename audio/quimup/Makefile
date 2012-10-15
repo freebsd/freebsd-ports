@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quimup
-# Date created:				2011-02-08
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	quimup
 PORTVERSION=	1.2.0
@@ -13,7 +9,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=musicpd/Quimup/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${DISTVERSION}_source
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT4 Client for MPD (the Music Player Daemon)
 
 LIB_DEPENDS=	mpdclient.2:${PORTSDIR}/audio/libmpdclient

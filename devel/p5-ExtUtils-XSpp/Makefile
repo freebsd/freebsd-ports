@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ExtUtils-XSpp
-# Date created:				August 22nd 2009
-# Whom:	      				Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-XSpp
 PORTVERSION=	0.15
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XS for C++ in Perl
 
 BUILD_DEPENDS=	p5-ExtUtils-ParseXS>=2.22.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \

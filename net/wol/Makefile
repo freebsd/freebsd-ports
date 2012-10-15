@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	wol
-# Date created:			Jan 10, 2001
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	wol
 PORTVERSION=	0.7.1
@@ -12,7 +9,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/ahh/OldFiles
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 GNU_CONFIGURE=		yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-DateTime-Format-Flexible
-# Date created:				23 Jun 2009
-# Whom:					Cezary Morga <cm@therek.net>
-#
+# Created by: Cezary Morga <cm@therek.net>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-Flexible
 PORTVERSION=	0.23
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cm@therek.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexibly parse strings and turn them into DateTime objects
 
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
