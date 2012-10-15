@@ -45,6 +45,7 @@ OPTIONS_EXCLUDE_i386=	3DNOW
 
 # Enable IPv6 support
 .if ${PORT_OPTIONS:MIPV6}
+BROKEN=		patch does not fetch
 PATCH_SITES+=	http://izb.knu.ac.kr/~bh/diffs/
 PATCHFILES+=	bmp-0.9.7-ipv6-simple.diff
 PATCH_DIST_STRIP+=	-p1
