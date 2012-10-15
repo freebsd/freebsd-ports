@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/smclone/Addon%20-%20Music/${PORTVERSION}
 DISTNAME=	SMC_Music_${PORTVERSION}_high
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Background music for Secret Maryo Chronicles
 
 RUN_DEPENDS=	smc:${PORTSDIR}/games/secretmaryochronicles
