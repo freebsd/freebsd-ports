@@ -1,18 +1,14 @@
-# New ports collection makefile for:	portupgrade
-# Date created:		18 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	portupgrade
-PORTVERSION=	20120827
-PORTREVISION=	1
+PORTVERSION=	20121014
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/pkgtools/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
@@ -26,7 +22,7 @@ CONFLICTS_INSTALL=	portupgrade-[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	pkgtools
 GH_PROJECT=	pkgtools
-GH_COMMIT=	595d51a
+GH_COMMIT=	9b00ac7
 GH_TAGNAME=	${GH_COMMIT}
 
 DIST_SUBDIR=	${PORTNAME}
