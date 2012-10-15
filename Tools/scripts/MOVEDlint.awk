@@ -82,6 +82,13 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
             missing[$2] = NR
         else
             delete resurrected[$2]
+
+#    Produces too many false positives
+#    if ($4 ~ /^[a-z].*/)
+#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4
+
+    if ($4 ~ /\.$/)
+        printf "Final character is a dot: %5d (%s)\n", NR, $4
 }
 
 END {
