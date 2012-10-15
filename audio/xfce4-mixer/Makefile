@@ -1,37 +1,54 @@
-# New ports collection makefile for:	xfce4-mixer
-# Date created:		3 July 2003
-# Whom:			James Earl <jdearl@telus.net>
-#
+# Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-mixer
-PORTVERSION=	4.8.0
-PORTREVISION=	2
+PORTVERSION=	4.10.0
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/4.8
+MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 volume mixer module for xfce4-panel
+COMMENT=	A volume control for the Xfce desktop
 
-BUILD_DEPENDS+=	gstreamer-plugins-good>=0.10.22:${PORTSDIR}/multimedia/gstreamer-plugins-good
-RUN_DEPENDS+=	gstreamer-plugins-good>=0.10.22:${PORTSDIR}/multimedia/gstreamer-plugins-good
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+	unique-1:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool intlhack libxml2 pkgconfig
-USE_XFCE=	configenv libgui libutil panel xfconf
-USE_XORG=	xproto x11 xrender xext xinerama xrandr xcursor xcomposite \
-		xdamage xfixes xi xau xdmcp
+USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack desktopfileutils
+USE_XFCE=	configenv libmenu libutil panel xfconf
+USE_PKGCONFIG=	build
+USE_GSTREAMER=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	KEYBIND
+
+KEYBIND_DESC=	Global keyboard shortcuts
+
+MAN1=	xfce4-mixer.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKEYBIND}
+LIB_DEPENDS+=	keybinder:${PORTSDIR}/x11/keybinder
+CONFIGURE_ARGS+=--enable-keybinder
+.else
+CONFIGURE_ARGS+=--disable-keybinder
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name 'Makefile.in' -type f \
+		| ${XARGS} ${REINPLACE_CMD} -e \
+		's|(pkgdatadir)/icons|(datadir)/icons| ; \
+		s|pixmaps/xfce4-mixer|pixmaps|'
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>
