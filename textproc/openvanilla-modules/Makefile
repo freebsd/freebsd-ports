@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openvanilla-modules
-# Date Created:				3 September 2005
-# Whom:					Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvanilla-modules
 PORTVERSION=	0.7.2.20070514
@@ -23,76 +19,79 @@ USE_AUTOTOOLS=	libtool:env
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
-OPTIONS=	OVIMArray		"Array Input Module"		on \
-		OVIMBig5		"Big5 Input Module"		off \
-		OVIMGeneric		"Generic Input Module"		on \
-		OVIMPOJ_Holo		"POJ-Holo Input Module"		on \
-		OVIMPhonetic		"Phonetic Input Module"		on \
-		OVIMRoman		"Roman Input Module"		off \
-		OVIMSpaceChewing	"Chewing Input Module"		on \
-		OVIMTibetan		"Tibetan Input Module"		off \
-		OVIMUnicode		"Unicode Input Module"		off
+OPTIONS_DEFINE=		OVIMArray OVIMBig5 OVIMGeneric OVIMPOJ_Holo OVIMPhonetic OVIMRoman \
+			OVIMSpaceChewing OVIMTibetan OVIMUnicode
+OPTIONS_DEFAULT=	OVIMArray OVIMGeneric OVIMPOJ_Holo OVIMPhonetic OVIMSpaceChewing
+OVIMArray_DESC=		Array Input Module
+OVIMBig5_DESC=		Big5 Input Module
+OVIMGeneric_DESC=	Generic Input Module
+OVIMPOJ_Holo_DESC=	POJ-Holo Input Module
+OVIMPhonetic_DESC=	Phonetic Input Module
+OVIMRoman_DESC=		Roman Input Module
+OVIMSpaceChewing_DESC=	Chewing Input Module
+OVIMTibetan_DESC=	Tibetan Input Module
+OVIMUnicode_DESC=	Unicode Input Module
 
 MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if (${OSVERSION} >= 800501)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Modules-SharedSource-OVCINInfo.cpp
 .endif
 
-.if !defined(WITHOUT_OVIMArray)
+.if ${PORT_OPTIONS:MOVIMArray}
 PLIST_SUB+=	OVIMArray=""
 .else
 PLIST_SUB+=	OVIMArray="@comment "
 .endif
-.if defined(WITH_OVIMBig5)
+.if ${PORT_OPTIONS:MOVIMBig5}
 PLIST_SUB+=	OVIMBig5=""
 .else
 PLIST_SUB+=	OVIMBig5="@comment "
 .endif
-#.if defined(WITH_OVIMBoshiamy)
+#.if ${PORT_OPTIONS:MOVIMBoshiamy}
 #PLIST_SUB+=	OVIMBoshiamy=""
 #.else
 #PLIST_SUB+=	OVIMBoshiamy="@comment "
 #.endif
-.if !defined(WITHOUT_OVIMGeneric)
+.if ${PORT_OPTIONS:MOVIMGeneric}
 PLIST_SUB+=	OVIMGeneric=""
 .else
 PLIST_SUB+=	OVIMGeneric="@comment "
 .endif
-.if !defined(WITHOUT_OVIMPOJ_Holo)
+.if ${PORT_OPTIONS:MOVIMPOJ_Holo}
 PLIST_SUB+=	OVIMPOJ_Holo=""
 .else
 PLIST_SUB+=	OVIMPOJ_Holo="@comment "
 .endif
-.if !defined(WITHOUT_OVIMPhonetic)
+.if ${PORT_OPTIONS:MOVIMPhonetic}
 PLIST_SUB+=	OVIMPhonetic=""
 .else
 PLIST_SUB+=	OVIMPhonetic="@comment "
 .endif
-.if defined(WITH_OVIMRoman)
+.if ${PORT_OPTIONS:MOVIMRoman}
 PLIST_SUB+=	OVIMRoman=""
 .else
 PLIST_SUB+=	OVIMRoman="@comment "
 .endif
-.if !defined(WITHOUT_OVIMSpaceChewing)
+.if ${PORT_OPTIONS:MOVIMSpaceChewing}
 PLIST_SUB+=	OVIMSpaceChewing=""
 .else
 PLIST_SUB+=	OVIMSpaceChewing="@comment "
 .endif
-.if defined(WITH_OVIMTibetan)
+.if ${PORT_OPTIONS:MOVIMTibetan}
 PLIST_SUB+=	OVIMTibetan=""
 .else
 PLIST_SUB+=	OVIMTibetan="@comment "
 .endif
-.if defined(WITH_OVIMUnicode)
+.if ${PORT_OPTIONS:MOVIMUnicode}
 PLIST_SUB+=	OVIMUnicode=""
 .else
 PLIST_SUB+=	OVIMUnicode="@comment "
 .endif
 
-#.if defined(WITH_OVIMBoshiamy)
+#.if ${PORT_OPTIONS:MOVIMBoshiamy}
 #DISTFILES+=	liu5.cin
 #NOFETCHFILES=	liu5.cin
 #EXTRACT_ONLY+=	openvanilla-${PORTVERSION}${EXTRACT_SUFX}
@@ -105,72 +104,72 @@ PLIST_SUB+=	OVIMUnicode="@comment "
 #	@${CP} ${DISTDIR}/liu5.cin ${WRKSRC}/Modules/OVIMBoshiamy
 #.endif
 
-#.if !defined(WITHOUT_OVIMSpaceChewing)
+#.if ${PORT_OPTIONS:MOVIMSpaceChewing}
 #LIB_DEPENDS+=	chewing.3:${PORTSDIR}/chinese/libchewing
 #.endif
 
 do-build:
-.if !defined(WITHOUT_OVIMArray)
+.if ${PORT_OPTIONS:MOVIMArray}
 	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if defined(WITH_OVIMBig5)
+.if ${PORT_OPTIONS:MOVIMBig5}
 	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-#.if defined(WITH_OVIMBoshiamy)
+#.if ${PORT_OPTIONS:MOVIMBoshiamy}
 #	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 #.endif
-.if !defined(WITHOUT_OVIMGeneric)
+.if ${PORT_OPTIONS:MOVIMGeneric}
 	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if !defined(WITHOUT_OVIMPOJ_Holo)
+.if ${PORT_OPTIONS:MOVIMPOJ_Holo}
 	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if !defined(WITHOUT_OVIMPhonetic)
+.if ${PORT_OPTIONS:MOVIMPhonetic}
 	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if !defined(WITHOUT_OVIMSpaceChewing)
+.if ${PORT_OPTIONS:MOVIMSpaceChewing}
 	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} data all)
 .endif
-.if defined(WITH_OVIMRoman)
+.if ${PORT_OPTIONS:MOVIMRoman}
 	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if defined(WITH_OVIMTibetan)
+.if ${PORT_OPTIONS:MOVIMTibetan}
 	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if defined(WITH_OVIMUnicode)
+.if ${PORT_OPTIONS:MOVIMUnicode}
 	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 
 do-install:
-.if !defined(WITHOUT_OVIMArray)
+.if ${PORT_OPTIONS:MOVIMArray}
 	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if defined(WITH_OVIMBig5)
+.if ${PORT_OPTIONS:MOVIMBig5}
 	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-#.if defined(WITH_OVIMBoshiamy)
+#.if ${PORT_OPTIONS:MOVIMBoshiamy}
 #	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 #.endif
-.if !defined(WITHOUT_OVIMGeneric)
+.if ${PORT_OPTIONS:MOVIMGeneric}
 	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if !defined(WITHOUT_OVIMPOJ_Holo)
+.if ${PORT_OPTIONS:MOVIMPOJ_Holo}
 	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if !defined(WITHOUT_OVIMPhonetic)
+.if ${PORT_OPTIONS:MOVIMPhonetic}
 	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if defined(WITH_OVIMRoman)
+.if ${PORT_OPTIONS:MOVIMRoman}
 	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if !defined(WITHOUT_OVIMSpaceChewing)
+.if ${PORT_OPTIONS:MOVIMSpaceChewing}
 	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if defined(WITH_OVIMTibetan)
+.if ${PORT_OPTIONS:MOVIMTibetan}
 	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if defined(WITH_OVIMUnicode)
+.if ${PORT_OPTIONS:MOVIMUnicode}
 	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
