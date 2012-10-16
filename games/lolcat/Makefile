@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lolcat
+PORTREVISION=	1
 PORTVERSION=	42.0.99
 CATEGORIES=	games
 MASTER_SITES=	RG
@@ -14,5 +15,8 @@ RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+post-install:
+	${ECHO_CMD} "bin/lolcat" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
