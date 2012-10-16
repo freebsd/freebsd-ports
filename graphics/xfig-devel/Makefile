@@ -28,21 +28,23 @@ MAN1=		xfig.1
 
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS GHOSTSCRIPT
+OPTIONS_DEFAULT=	GHOSTSCRIPT
+GHOSTSCRIPT_DESC=	Ghostscript support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install.all
 .endif
-
-OPTIONS=	GHOSTSCRIPT "Ghostscript support" on
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
 
 post-patch:
-.if defined(WITHOUT_GHOSTSCRIPT)
+.if ! ${PORT_OPTIONS:MGHOSTSCRIPT}
 	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
 	echo "NOPORTDOCS=${NOPORTDOCS}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
