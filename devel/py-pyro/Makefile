@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-pyro
-# Date created:		2008-12-30
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pyro
-PORTVERSION=	4.14
+PORTVERSION=	4.15
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,13 +20,18 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pyro4
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 320
+.include "${FILESDIR}/py3k-fix-pkg-plist.inc"
+.endif
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
