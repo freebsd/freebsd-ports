@@ -1,0 +1,30 @@
+Index: files/zsh-completions
+diff -u files/zsh-completions.orig files/zsh-completions
+--- files/zsh-completions.orig	2012-10-10 21:46:28.000000000 +0900
++++ files/zsh-completions	2012-10-16 01:37:31.000000000 +0900
+@@ -61,7 +61,11 @@
+ 
+ case "$state" in
+   pkgs)
+-    array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
++    if [ -n "$(make -V WITH_PKGNG)" ]; then
++      array=($(pkg info -aq))
++    else
++      array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
++    fi
+     _describe -t packages "installed ports" array
+     ;;
+   ports)
+@@ -71,7 +75,11 @@
+     _tags packages ports
+     while _tags; do
+       if _requested packages; then
+-        array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
++        if [ -n "$(make -V WITH_PKGNG)" ]; then
++          array=($(pkg info -aq))
++        else
++          array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
++        fi
+         _describe -t packages "installed ports" array && ret=0
+       fi
+       if _requested ports; then
