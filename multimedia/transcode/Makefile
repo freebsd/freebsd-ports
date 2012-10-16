@@ -1,4 +1,4 @@
-# Creadted by: Hendrik Scholz <hendrik@scholz.net>
+# Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
 
 PORTNAME=	transcode
