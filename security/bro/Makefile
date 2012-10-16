@@ -1,25 +1,20 @@
-# Ports collection makefile for:  bro
-# Date created:			  Sat Feb 28, 1998
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien <obrien@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bro
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro-ids.org/downloads/archive/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	System for detecting Network Intruders in real-time
+COMMENT=	System for detecting network intruders in real-time
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
-BROKEN=		missing prerequisites
-
+USE_PERL5=	yes
 USE_CMAKE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
