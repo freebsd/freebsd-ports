@@ -1,18 +1,17 @@
-# New ports collection makefile for:	devel/p5-PAR-Dist
-# Date created:				Aug 27 2003
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PAR-Dist
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create and manipulate PAR distributions
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
