@@ -270,7 +270,6 @@
     SUBDIR += octave-forge-bim
     SUBDIR += octave-forge-bioinfo
     SUBDIR += octave-forge-civil-engineering
-    SUBDIR += octave-forge-combinatorics
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
     SUBDIR += octave-forge-data-smoothing
@@ -324,7 +323,6 @@
     SUBDIR += octave-forge-outliers
     SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-pdb
-    SUBDIR += octave-forge-physicalconstants
     SUBDIR += octave-forge-plot
     SUBDIR += octave-forge-pt_br
     SUBDIR += octave-forge-quaternion
