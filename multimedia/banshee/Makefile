@@ -1,9 +1,5 @@
-# New ports collection makefile for:	banshee
-# Date created:				Jul 10 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by:	Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	banshee
 PORTVERSION=	2.6.0
@@ -26,12 +22,17 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins \
 		${LOCALBASE}/libdata/pkgconfig/notify-sharp.pc:${PORTSDIR}/devel/notify-sharp
 
-OPTIONS=	DOCS      "Install documentation"    on \
-		BOO       "Enable Boo support"       off \
-		BPMDETECT "Enable BPM detection"     on \
-		MTP       "Enable MTP support"       on \
-		APPLEDEV  "Enable Apple device DAP"  off \
-		YOUTUBE   "Enable Youtube support"   on
+# For now, remove APPLEDEV and BOO since they are broken
+OPTIONS_DEFINE=	DOCS BPMDETECT GIO MTP WEBKIT YOUTUBE
+
+APPLEDEV_DESC=	Apple device
+BOO_DESC=	Boo
+BPMDETECT_DESC=	Force dependency on soundtouch (required for BPM detection)
+GIO_DESC=	Use GIO for disk access
+WEBKIT_DESC=	Build and/or install extensions using Webkit 
+YOUTUBE_DESC=	Build and/or install the Youtube extension
+
+OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
 
 USE_XZ=		yes
 USE_GMAKE=	yes
@@ -44,7 +45,11 @@ USE_XORG=	xrandr xxf86vm
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project
+CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware
+
+.include <bsd.port.options.mk>
+
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -57,28 +62,28 @@ PLIST_SUB+=	NLS="@comment "
 # Need absolute path for build/icon-install-theme.
 INSTALL=	/usr/bin/install
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/gio-sharp-2.0.pc)
-PLIST_SUB+=		HAS_GIO=""
+.if ${PORT_OPTIONS:MGIO}
+CONFIGURE_ARGS+=--enable-gio
+LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/gtk-sharp-beans-2.0.pc:${PORTSDIR}/x11-toolkits/gtk-sharp-beans
+PLIST_SUB+=	OPT_GIO=""
 .else
-PLIST_SUB+=		HAS_GIO="@comment "
+CONFIGURE_ARGS+=--disable-gio
+PLIST_SUB+=	OPT_GIO="@comment "
 .endif
 
-.if defined(WITHOUT_DOCS) || defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-docs
-PLIST_SUB+=		OPT_DOCS="@comment "
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=--enable-docs
+PLIST_SUB+=	OPT_DOCS=""
 .else
-CONFIGURE_ARGS+=	--enable-docs
-PLIST_SUB+=		OPT_DOCS=""
+CONFIGURE_ARGS+=--disable-docs
+PLIST_SUB+=	OPT_DOCS="@comment "
 .endif
 
-.if !defined(WITHOUT_BPMDETECT)
+.if ${PORT_OPTIONS:MBPMDETECT}
 USE_GSTREAMER+=	soundtouch
 .endif
 
-.if defined(WITH_BOO)
+.if ${PORT_OPTIONS:MBOO}
 CONFIGURE_ARGS+=--enable-boo
 BUILD_DEPENDS+=	booc:${PORTSDIR}/lang/boo
 RUN_DEPENDS+=	booc:${PORTSDIR}/lang/boo
@@ -88,7 +93,7 @@ CONFIGURE_ARGS+=--disable-boo
 PLIST_SUB+=	OPT_BOO="@comment "
 .endif
 
-.if !defined(WITHOUT_APPLEDEV)
+.if ${PORT_OPTIONS:MAPPLEDEV}
 CONFIGURE_ARGS+=--enable-appledevice
 LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/libgpodsharp.pc:${PORTSDIR}/audio/libgpod
 BROKEN=		Missing dependency
@@ -98,7 +103,7 @@ CONFIGURE_ARGS+=--disable-appledevice
 PLIST_SUB+=	APPLEDEV="@comment "
 .endif
 
-.if !defined(WITHOUT_MTP)
+.if ${PORTSDIR:MMTP}
 CONFIGURE_ARGS+=--enable-mtp
 LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=	OPT_MTP=""
@@ -107,7 +112,16 @@ CONFIGURE_ARGS+=--disable-mtp
 PLIST_SUB+=	OPT_MTP="@comment "
 .endif
 
-.if !defined(WITHOUT_YOUTUBE)
+.if ${PORT_OPTIONS:MWEBKIT}
+CONFIGURE_ARGS+=--enable-webkit
+LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
+PLIST_SUB+=	OPT_WEBKIT=""
+.else
+CONFIGURE_ARGS+=--disable-webkit
+PLIST_SUB+=	OPT_WEBKIT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MYOUTUBE}
 CONFIGURE_ARGS+=--enable-youtube
 LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/gdata-sharp-youtube.pc:${PORTSDIR}/devel/google-gdata
 PLIST_SUB+=	OPT_YOUTUBE=""
@@ -116,4 +130,10 @@ CONFIGURE_ARGS+=--disable-youtube
 PLIST_SUB+=	OPT_YOUTUBE="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MWEBKIT} || ${PORT_OPTIONS:MYOUTUBE}
+PLIST_SUB+=	OPT_WEBKITORYOUTUBE=""
+.else
+PLIST_SUB+=	OPT_WEBKITORYOUTUBE="@comment "
+.endif
+
+.include <bsd.port.mk>
