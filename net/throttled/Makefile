@@ -1,19 +1,16 @@
-# Ports collection makefile for:	throttled
-# Date created:			11 Jun 2004
-# Whom:				quest <quest@mac.com>
-#
+# Created by: quest <quest@mac.com>
 # $FreeBSD$
-#
 
 PORTNAME=	throttled
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.intrarts.com/Files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	quest@mac.com
 COMMENT=	Bandwidth shaping and QoS solution
+
+LICENSE=	GPLv3
 
 USE_GMAKE=	yes
 
