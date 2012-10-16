@@ -1,12 +1,8 @@
-# New ports collection makefile for:	octave-forge
-# Date created:		5 May 2004
-# Whom:			Nakata Maho <maho@FreeBSD.org>
-#
+# Created by: Nakata Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge
-PORTVERSION=	20120814
+PORTVERSION=	20121015
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -23,7 +19,6 @@ OPTIONS=	\
 	BIM "Install package: bim" On \
 	BIOINFO "Install package: bioinfo" On \
 	CIVIL_ENGINEERING "Install package: civil-engineering" On \
-	COMBINATORICS "Install package: combinatorics" On \
 	COMMUNICATIONS "Install package: communications" On \
 	CONTROL "Install package: control" On \
 	DATA_SMOOTHING "Install package: data-smoothing" On \
@@ -77,7 +72,6 @@ OPTIONS=	\
 	OUTLIERS "Install package: outliers" On \
 	PARALLEL "Install package: parallel" On \
 	PDB "Install package: pdb" On \
-	PHYSICALCONSTANTS "Install package: physicalconstants" On \
 	PLOT "Install package: plot" On \
 	PT_BR "Install package: pt_br" On \
 	QUATERNION "Install package: quaternion" On \
@@ -125,9 +119,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/bioinfo.tar.gz:${PORTSDIR}/math/octave-forge-bioin
 .endif
 .if defined(WITH_CIVIL_ENGINEERING)
 RUN_DEPENDS+=	${TARBALLS_DIR}/civil-engineering.tar.gz:${PORTSDIR}/math/octave-forge-civil-engineering
-.endif
-.if defined(WITH_COMBINATORICS)
-RUN_DEPENDS+=	${TARBALLS_DIR}/combinatorics.tar.gz:${PORTSDIR}/math/octave-forge-combinatorics
 .endif
 .if defined(WITH_COMMUNICATIONS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forge-communications
@@ -287,9 +278,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/parallel.tar.gz:${PORTSDIR}/math/octave-forge-para
 .endif
 .if defined(WITH_PDB)
 RUN_DEPENDS+=	${TARBALLS_DIR}/pdb.tar.gz:${PORTSDIR}/math/octave-forge-pdb
-.endif
-.if defined(WITH_PHYSICALCONSTANTS)
-RUN_DEPENDS+=	${TARBALLS_DIR}/physicalconstants.tar.gz:${PORTSDIR}/math/octave-forge-physicalconstants
 .endif
 .if defined(WITH_PLOT)
 RUN_DEPENDS+=	${TARBALLS_DIR}/plot.tar.gz:${PORTSDIR}/math/octave-forge-plot
