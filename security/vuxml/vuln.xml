@@ -52,17 +52,17 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="ec34d0c2-1799-11e2-b4ab-000c29033c32">
-    <topic>Zend Framework -- Local file disclosure via XXE injection</topic>
+    <topic>Zend Framework -- Multiple vulnerabilities via XXE injection</topic>
     <affects>
       <package>
 	<name>ZendFramework</name>
-	<range><lt>1.11.12</lt></range>
+	<range><lt>1.11.13</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>K. Gudinavicius reports:</p>
-	<blockquote cite="https://www.sec-consult.com/files/20120626-0_zend_framework_xxe_injection.txt">
+	<p>The Zend Framework team reports:</p>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2012-01">
 	  <p>The XmlRpc package of Zend Framework is vulnerable to XML
 	    eXternal Entity Injection attacks (both server and client).
 	    The SimpleXMLElement class (SimpleXML PHP extension) is used
@@ -70,6 +70,13 @@ Note:  Please add new entries to the beginning of this file.
 	    specified by adding a specific DOCTYPE element to XML-RPC
 	    requests. By exploiting this vulnerability an application may be
 	    coerced to open arbitrary files and/or TCP connections.</p>
+	  <p>Additionally, the Zend_Dom, Zend_Feed, Zend_Soap, and
+	    Zend_XmlRpc components are vulnerable to XML Entity Expansion
+	    (XEE) vectors, leading to Denial of Service vectors. XEE attacks
+	    occur when the XML DOCTYPE declaration includes XML entity
+	    definitions that contain either recursive or circular references;
+	    this leads to CPU and memory consumption, making Denial of
+	    Service exploits trivial to implement.</p>
 	</blockquote>
       </body>
     </description>
@@ -77,6 +84,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2012-3363</cvename>
       <url>https://www.sec-consult.com/files/20120626-0_zend_framework_xxe_injection.txt</url>
       <url>http://framework.zend.com/security/advisory/ZF2012-01</url>
+      <url>http://framework.zend.com/security/advisory/ZF2012-02</url>
       <url>http://www.openwall.com/lists/oss-security/2012/06/26/2</url>
       <url>https://secunia.com/advisories/49665/</url>
     </references>
