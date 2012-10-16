@@ -1,11 +1,8 @@
-# New ports collection makefile for:	ripole
-# Date created:				June 21, 2005
-# Whom:					Freddie Cash <fcash@sd73.bc.ca>
-#
+# Created by: Freddie Cash <fcash@sd73.bc.ca>
 # $FreeBSD$
 
 PORTNAME=	ripole
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.pldaniels.com/ripole/
 
