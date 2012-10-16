@@ -1,9 +1,6 @@
-# New ports collection makefile for:	xgalaga
-# Date created:		27 August 1995
-# Whom:			asami
+# Created by:	asami
 #
 # $FreeBSD$
-#
 
 PORTNAME=	xgalaga
 PORTVERSION=	2.1.1.0
@@ -23,11 +20,12 @@ CONFIGURE_ARGS=	--prefix=${LOCALBASE}/lib/X11/xgalaga \
 		--mandir=${LOCALBASE}/man \
 		--exec_prefix=${LOCALBASE}/bin
 
-OPTIONS=	SOUND	"Sound support"	on
+OPTIONS_DEFINE=	SOUND
+OPTIONS_DEFAULT=	SOUND
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SOUND) || defined(NOSOUND)
+.if empty(PORT_OPTIONS:MSOUND)
 CONFIGURE_ARGS+=	--without-sound
 PLIST_SUB=	SOUND="@comment "
 .else
@@ -37,4 +35,4 @@ PLIST_SUB=	SOUND=""
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/xgalaga
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
