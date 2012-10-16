@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-jsonrpclib
-# Date created:				09. 21. 2011
-# Whom:					Attila Nagy <bra@fsn.hu>
-#
+# Created by: Attila Nagy <bra@fsn.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	jsonrpclib
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +11,19 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Implements the JSON-RPC 2.0 proposed specification in pure Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cjson.so:${PORTSDIR}/devel/py-cjson
+LICENSE=	AL2
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
+
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
+OPTIONS_DEFINE=	CJSON
+CJSON_DESC=	Use cjson instead of json or simplejson
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCJSON}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cjson>0:${PORTSDIR}/devel/py-cjson
+.endif
 
 .include <bsd.port.mk>

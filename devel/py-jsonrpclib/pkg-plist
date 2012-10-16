@@ -16,5 +16,4 @@
 %%PYTHON_SITELIBDIR%%/jsonrpclib/jsonrpc.py
 %%PYTHON_SITELIBDIR%%/jsonrpclib/jsonrpc.pyc
 %%PYTHON_SITELIBDIR%%/jsonrpclib/jsonrpc.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/jsonrpclib
-@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/jsonrpclib
