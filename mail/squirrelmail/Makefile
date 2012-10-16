@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-webmail-${PORTVERSION}
@@ -40,7 +40,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
-PORTDOCS=	*
+PORTDOCS=	* .htaccess
 
 CONFLICTS=	squirreloutlook-[0-9]*
 
@@ -82,7 +82,7 @@ post-patch:
 # Rearrange the documentation
 do-build:
 	@${MV} ${WRKSRC}/themes/README.themes ${WRKSRC}/doc/
-	@cd ${WRKSRC} ; for f in `find plugins -name "README*" -or \
+	@cd ${WRKSRC} ; for f in `${FIND} plugins -name "README*" -or \
 		-name INSTALL -or -name CHANGES -or -name HISTORY`; \
 		do \
 		${MKDIR} doc/`dirname $$f` ; \
@@ -93,26 +93,23 @@ do-build:
 	${MV} plugins/squirrelspell/doc/* doc/plugins/squirrelspell ; \
 	${RM} -f doc/plugins/squirrelspell/index.php ; \
 	${RM} -rf plugins/squirrelspell/doc
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${ECHO} "left_refresh=300" >> ${WRKSRC}/data/default_pref
 	@${MV} ${WRKSRC}/config/config_local.php ${WRKSRC}/config/config_local.php.sample
-
-pre-install:
-	@${ECHO} "Your umask should be lax while installing this. Like, 022 or something."
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${FILESDIR}/111.clean-squirrelmail ${PREFIX}/etc/periodic/daily
 	${MKDIR} ${SQUIRRELDIR}
-	@${CP} -pv ${WRKSRC}/index.php ${SQUIRRELDIR}
-	@${CP} -pv ${WRKSRC}/configure ${SQUIRRELDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.php ${SQUIRRELDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/configure ${SQUIRRELDIR}
 .for DIR in class config data functions help images include locale plugins po src themes
-	@${CP} -rpv ${WRKSRC}/${DIR} ${SQUIRRELDIR}
+	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${SQUIRRELDIR}
 .endfor
 	${CHOWN} -R ${SMUSER}:${SMGROUP} ${SQUIRRELDIR}/data
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	@${CP} -Rv ${WRKSRC}/doc/* ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} . | ${CPIO} -pdmu --quiet ${DOCSDIR}
 .endif
 
 post-install:
