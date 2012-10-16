@@ -172,7 +172,7 @@ CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if ${PORT_OPTIONS:MMJPEGTOOLS}
-LIB_DEPENDS+=	lavjpeg-2:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-2.0:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools
