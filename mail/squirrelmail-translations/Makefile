@@ -33,7 +33,7 @@ post-patch:
 do-install:
 	${MKDIR} ${SQUIRRELDIR}
 .for DIR in help images locale
-	${CP} -rp ${WRKSRC}/${DIR} ${SQUIRRELDIR}
+	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${SQUIRRELDIR}
 .endfor
 
 .include <bsd.port.mk>
