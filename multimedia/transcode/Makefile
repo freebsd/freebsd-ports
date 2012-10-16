@@ -1,9 +1,5 @@
-# New ports collection makefile for:   transcode
-# Date created: 	17 December 2001
-# Whom: 		Hendrik Scholz <hendrik@scholz.net>
-#
+# Creadted by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
@@ -14,7 +10,7 @@ MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A text-console utility for video stream processing
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
@@ -34,30 +30,17 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 	tcpvmexportd.1 tcxmlcheck.1 transcode_export.1 transcode_filter.1 \
 	transcode_import.1 tcexport.1 tcmodchain.1
 
-OPTIONS=	OPTIMIZED_CFLAGS "Build with optimizations" off \
-		X11 "Build with X11 support" off \
-		MPEG2 "Enable libmpeg2 support" off \
-		BKTR "Enable bktr support" off \
-		POSTPROC "Enable libpostproc support" off \
-		FREETYPE "Enable FreeType2 support" off \
-		LAME "Enable lame support" on \
-		XVID "Enable Xvid support" off \
-		X264 "Enable x264 support" off \
-		OGG "Enable ogg support" off \
-		VORBIS "Enable vorbis support" off \
-		THEORA "Enable theora support" off \
-		DVDREAD "Enable libdvdread support" on \
-		LIBDV "Enable libdv support" off \
-		QUICKTIME "Enable libquicktime support" off \
-		LZO "Enable LZO support" off \
-		LIBA52 "Enable a52 support (as default decoder)" off \
-		FAAC "Enable faac support" off \
-		XML "Enable libxml2 support" off \
-		MJPEG "Enable mjpegtools support" off \
-		SDL "Enable SDL support" off \
-		IMAGEMAGICK "Enable ImageMagick support" off \
-		JPEG "Enable libjpeg support" on \
-		ICONV "Enable libiconv support" on
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME XVID \
+		X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO LIBA52 \
+		FAAC XML MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV
+OPTIONS_DEFAULT=	LAME DVDREAD JPEG ICONV
+BKTR_DESC=	Bktr capture card support
+POSTPROC_DESC=	Libpostproc support
+DVDREAD_DESC=	Libdvdread support
+LZO_DESC=	LZO compression support
+LIBA52_DESC=	a52 support (as default decoder)
+XML_DESC=	Libxml2 XML support
 
 .include <bsd.port.pre.mk>
 
@@ -65,158 +48,158 @@ OPTIONS=	OPTIMIZED_CFLAGS "Build with optimizations" off \
 CONFIGURE_ENV+=	LIBAVCODEC_EXTRA_LIBS="-pthread"
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xv xaw xpm
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif
 
-.if defined(WITH_MPEG2)
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+.if ${PORT_OPTIONS:MMPEG2}
+LIB_DEPENDS+=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=	--enable-libmpeg2 --enable-libmpeg2convert
 .else
 CONFIGURE_ARGS+=	--disable-libmpeg2
 .endif
 
-.if defined(WITH_BKTR)
+.if ${PORT_OPTIONS:MBKTR}
 CONFIGURE_ARGS+=	--enable-bktr
 .endif
 
-.if !defined(WITHOUT_POSTPROC)
+.if ${PORT_OPTIONS:MPOSTPROC}
 CONFIGURE_ARGS+=	--enable-libpostproc
 .else
 CONFIGURE_ARGS+=	--disable-libpostproc
 .endif
 
-.if defined(WITH_FREETYPE)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+.if ${PORT_OPTIONS:MFREETYPE}
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--enable-freetype2
 .else
 CONFIGURE_ARGS+=	--disable-freetype2
 .endif
 
-.if !defined(WITHOUT_LAME)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+.if ${PORT_OPTIONS:MLAME}
+LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE} --enable-lame
 .else
 CONFIGURE_ARGS+=	--disable-lame
 .endif
 
-.if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+.if ${PORT_OPTIONS:MXVID}
+LIB_DEPENDS+=	xvidcore:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE} --enable-xvid
 .else
 CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
-.if defined(WITH_X264)
-LIB_DEPENDS+=	x264.125:${PORTSDIR}/multimedia/x264
+.if ${PORT_OPTIONS:MX264}
+LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
-.if defined(WITH_OGG)
+.if ${PORT_OPTIONS:MOGG}
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-ogg
 .else
 CONFIGURE_ARGS+=	--disable-ogg
 .endif
 
-.if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 .endif
 
-.if defined(WITH_THEORA)
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
+.if ${PORT_OPTIONS:MTHEORA}
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-theora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
-.if !defined(WITHOUT_DVDREAD)
-LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+.if ${PORT_OPTIONS:MDVDREAD}
+LIB_DEPENDS+=	dvdread:${PORTSDIR}/multimedia/libdvdread
 CONFIGURE_ARGS+=	--with-libdvdread-prefix=${LOCALBASE} --enable-libdvdread
 .else
 CONFIGURE_ARGS+=	--disable-libdvdread
 .endif
 
-.if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
+.if ${PORT_OPTIONS:MDV}
+LIB_DEPENDS+=	dv:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
-.if defined(WITH_QUICKTIME)
-LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
+.if ${PORT_OPTIONS:MQUICKTIME}
+LIB_DEPENDS+=	quicktime:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=	--enable-libquicktime
 .else
 CONFIGURE_ARGS+=	--disable-libquicktime
 .endif
 
-.if defined(WITH_LZO)
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
+.if ${PORT_OPTIONS:MLZO}
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 CONFIGURE_ARGS+=	--with-lzo-prefix=${LOCALBASE} --with-lzo-includes=${LOCALBASE} \
 			--enable-lzo
 .else
 CONFIGURE_ARGS+=	--disable-lzo
 .endif
 
-.if defined(WITH_LIBA52)
-LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+.if ${PORT_OPTIONS:MLIBA52}
+LIB_DEPENDS+=	a52:${PORTSDIR}/audio/liba52
 CONFIGURE_ARGS+=	--with-a52-prefix=${LOCALBASE} --enable-a52
 .else
 CONFIGURE_ARGS+=	--disable-a52
 .endif
 
-.if defined(WITH_FAAC)
-LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+.if ${PORT_OPTIONS:MFAAC}
+LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE} --enable-faac
 .else
 CONFIGURE_ARGS+=	--disable-faac
 .endif
 
-.if !defined(WITHOUT_XML) && (defined(WITH_XML) || ${HAVE_GNOME:Mlibxml2}!="")
+.if ${PORT_OPTIONS:MXML}
 USE_GNOME+=	libxml2
 CONFIGURE_ARGS+=	--enable-libxml2
 .else
 CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
-.if defined(WITH_MJPEG)
-LIB_DEPENDS+=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
+.if ${PORT_OPTIONS:MMJPEGTOOLS}
+LIB_DEPENDS+=	lavjpeg-2:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools
 .endif
 
-.if !defined(WITHOUT_SDL) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl}!="")
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 CONFIGURE_ARGS+=	--enable-sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
+LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--with-imagemagick-prefix=${LOCALBASE} --enable-imagemagick
 .else
 CONFIGURE_ARGS+=	--disable-imagemagick
 .endif
 
-.if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+.if ${PORT_OPTIONS:MJPEG}
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-libjpeg-prefix=${LOCALBASE} --enable-libjpeg
 .else
 CONFIGURE_ARGS+=	--disable-libjpeg
 .endif
 
-.if !defined(WITHOUT_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--with-iconv-prefix=${LOCALBASE} --enable-iconv
 .else
@@ -224,12 +207,12 @@ CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
 post-patch:
-.if defined(WITH_LZO) && !defined(WITHOUT_LZO)
+.if ${PORT_OPTIONS:MLZO}
 	@${REINPLACE_CMD} -e 's|%%NUV%%|nuv|' ${WRKSRC}/import/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's|%%NUV%%||' ${WRKSRC}/import/Makefile.in
 .endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
+.if !${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
 		-e 's|-O[236]|${CFLAGS}|'
 .endif
