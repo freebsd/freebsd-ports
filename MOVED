@@ -3726,3 +3726,6 @@ math/guppi||2012-10-15|Not developed anymore, consider math/gnumeric instead
 x11-toolkits/gal||2012-10-15|Developement ceased, and nothing in the ports tree uses it anymore
 math/octave-forge-physicalconstants||2012-10-15|Incorporated upstream into math/octave-forge-miscellaneous
 math/octave-forge-combinatorics||2012-10-15|Incorporated upstream into math/octave-forge-miscellaneous
+games/8kingdoms||2012-10-16|Has expired: BROKEN for more than 6 month
+games/freeorion||2012-10-16|Has expired: BROKEN for more than 6 month
+games/rigsofrods||2012-10-16|Has expired: BROKEN for more than 6 month
