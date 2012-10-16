@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.11.5
+PORTVERSION=	1.7.12.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -46,6 +46,7 @@ MAN1=		git.1 \
 		git-commit.1 \
 		git-config.1 \
 		git-count-objects.1 \
+		git-credential.1 \
 		git-credential-cache--daemon.1 \
 		git-credential-cache.1 \
 		git-credential-store.1 \
@@ -190,8 +191,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	LIBMD_SHA1=yes \
-		V=1
+MAKE_ENV+=	V=1
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
@@ -217,7 +217,7 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
-MAKE_ENV+=	NO_GETTEXT=yes
+MAKE_ARGS+=	NO_GETTEXT=yes
 .endif
 
 # This is intentionally not exposed as an option.
@@ -246,7 +246,8 @@ MAN3=		Git.3 \
 		Git::SVN::Fetcher.3 \
 		Git::SVN::Memoize::YAML.3 \
 		Git::SVN::Prompt.3 \
-		Git::SVN::Ra.3
+		Git::SVN::Ra.3 \
+		Git::SVN::Utils.3
 PLIST_SUB+=	PERLSUB=""
 .else
 MAKE_ENV+=	NO_PERL=1
