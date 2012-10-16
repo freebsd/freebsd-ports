@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Config-Objective>=0:${PORTSDIR}/devel/p5-Config-Objective \
  	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
  	p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-	Unix-Mknod>=0:${PORTSDIR}/sysutils/p5-Unix-Mknod \
+	p5-Unix-Mknod>=0:${PORTSDIR}/sysutils/p5-Unix-Mknod \
 	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 	p5-version>=0:${PORTSDIR}/devel/p5-version \
 	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
