@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Net/NSCA/Client.pm
+%%SITE_PERL%%/Net/NSCA/Client/Connection.pm
+%%SITE_PERL%%/Net/NSCA/Client/Connection/TLS.pm
+%%SITE_PERL%%/Net/NSCA/Client/DataPacket.pm
+%%SITE_PERL%%/Net/NSCA/Client/InitialPacket.pm
+%%SITE_PERL%%/Net/NSCA/Client/Library.pm
+%%SITE_PERL%%/Net/NSCA/Client/ServerConfig.pm
+%%SITE_PERL%%/Net/NSCA/Client/Troubleshooting.pod
+%%SITE_PERL%%/Net/NSCA/Client/Utils.pm
+@dirrm %%SITE_PERL%%/Net/NSCA/Client/Connection
+@dirrm %%SITE_PERL%%/Net/NSCA/Client
+@dirrmtry %%SITE_PERL%%/Net/NSCA
+@dirrmtry %%SITE_PERL%%/Net

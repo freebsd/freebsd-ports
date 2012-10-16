@@ -215,6 +215,7 @@
     SUBDIR += p5-Net-IP-Resolver
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-IPv6Addr
+    SUBDIR += p5-Net-NSCA-Client
     SUBDIR += p5-Net-Netmask
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SNMP-Util
