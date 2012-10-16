@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-mongokit
-# Date created:		2010-02-06
-# Whom:			Mirko Zinn <mail@derzinn.de>
-#
+# Created by: Mirko Zinn <mail@derzinn.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mongokit
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +12,7 @@ COMMENT=	Python ORM-like layer on top of pymongo
 
 RUN_DEPENDS=	pymongo>=2.0.1:${PORTSDIR}/databases/pymongo
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
