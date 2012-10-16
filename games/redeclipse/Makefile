@@ -16,10 +16,6 @@ COMMENT=	A single-player and multi-player first-person ego-shooter
 
 LICENSE_COMB=	multi
 LICENSE=	MIT ZLIB
-LICENSE_NAME_ZLIB=	zlib license
-LICENSE_FILE_ZLIB=	${WRKSRC}/doc/license.txt
-LICENSE_PERMS_ZLIB=	${_LICENSE_PERMS_DEFAULT}
-LICENSE_GROUPS_ZLIB=	FSF GPL OSI
 
 MANUAL_PACKAGE_BUILD=	huge
 
