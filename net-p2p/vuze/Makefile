@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vuze
-PORTVERSION=	4.7.1.2
+PORTVERSION=	4.7.2.0
 CATEGORIES=	net-p2p java
 # Moved to x-obsolete, could do with an update
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
