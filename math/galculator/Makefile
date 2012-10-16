@@ -1,20 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	galculator
-PORTVERSION=	1.3.4
-PORTREVISION=	4
+PORTVERSION=	2.0
 CATEGORIES=	math
 MASTER_SITES=	SF
 
 MAINTAINER=	naddy@FreeBSD.org
-COMMENT=	GTK2-based scientific calculator
+COMMENT=	GTK-based scientific calculator
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libglade2
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-gtk3
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		galculator.1
