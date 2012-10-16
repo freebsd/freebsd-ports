@@ -1,7 +1,4 @@
-# New ports collection makefile for:	jfbterm
-# Date created:				Feb 23 2008
-# Whom:					nrg milk <bsdports@gmail.com>
-#
+# Created by: nrg milk <bsdports@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	jfbterm
@@ -32,16 +29,18 @@ CAP_MKDB?=	/usr/bin/cap_mkdb
 TIC?=		${LOCALBASE}/bin/tic
 TERMINFO_FILE?=	${PREFIX}/share/misc/${PORTNAME}.terminfo
 
-OPTIONS=	ICONV	"encodings support"		On \
-		PNG	"splash .png support"		On \
-		TERMCAP "add entry to termcap(5) file"	On \
-		UNIFONT	"install pan-unicode font"	On
+OPTIONS_DEFINE=		ICONV PNG SETUID TERMCAP UNIFONT
+OPTIONS_DEFAULT=	ICONV PNG SETUID TERMCAP UNIFONT
+PNG_DESC=		Splash .png support
+SETUID_DESC=		Install jfbterm with setuid bit set
+TERMCAP_DESC=		Add entry to termcap(5) file
+UNIFONT_DESC=		Install pan-unicode font
 
-.if !defined(WITHOUT_SETUID)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSETUID}
 BINMODE?=	4555
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800504
 ONLY_FOR_ARCHS+=amd64
@@ -58,12 +57,12 @@ MAN1=		${PORTNAME}.1
 MAN5=		${PORTNAME}.conf.5
 .endif
 
-.if defined(WITHOUT_ICONV)
+.if !${PORT_OPTIONS:MICONV}
 MAKE_ENV+=	WITHOUT_ICONV=
 .endif
 
 .if !exists(/usr/include/iconv.h)
-. if !defined(WITHOUT_ICONV)
+. if ${PORT_OPTIONS:MICONV}
 .  if !defined(NO_SHARED)
 USE_ICONV=	yes
 .  else
@@ -74,7 +73,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/iconv.h:${PORTSDIR}/converters/libiconv
 . endif
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 . if !defined(NO_SHARED)
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 . else
@@ -84,7 +83,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
 MAKE_ENV+=	WITHOUT_PNG=
 .endif
 
-.if !defined(WITHOUT_TERMCAP)
+.if ${PORT_OPTIONS:MTERMCAP}
 TERMCAP_ADD_RECORD=	\
 	${ECHO_CMD} '\# begin of ${PORTNAME}.termcap' \
 		>>${TERMCAP_FILE}; \
@@ -107,7 +106,7 @@ TERMCAP_ADD_RECORD=	${DO_NADA}
 TERMCAP_DEL_RECORD=	${DO_NADA}
 .endif
 
-.if !defined(WITHOUT_UNIFONT)
+.if ${PORT_OPTIONS:MUNIFONT}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
 .endif
 
@@ -122,7 +121,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		-e 's|\(share\)/${PORTNAME}/\(fonts\)|\1/misc/\2|' \
 		${WRKSRC}/*.[0-9] ${WRKSRC}/*.conf.sample
-.if defined(WITHOUT_TERMCAP)
+.if !${PORT_OPTIONS:MTERMCAP}
 	${REINPLACE_CMD} '/^term/s/:.*/: xterm/' \
 		${WRKSRC}/${PORTNAME}.conf.sample
 .endif
@@ -143,10 +142,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/terminfo.${PORTNAME} ${PREFIX}/share/misc/${PORTNAME}.terminfo
 	${MKDIR} ${PREFIX}/share/misc/fonts
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.pcf.gz ${PREFIX}/share/misc/fonts
-. if !defined(WITHOUT_TERMCAP)
+. if ${PORT_OPTIONS:MTERMCAP}
 	${TERMCAP_ADD_RECORD}
 . endif
 	-${TIC} ${TERMINFO_FILE} 2>/dev/null
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
