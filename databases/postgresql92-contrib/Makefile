@@ -1,9 +1,6 @@
-# New ports collection makefile for:	postgresql-contrib
-# Date created:		June 10, 2003
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
+# Created by:			Palle Girgensohn <girgen@pingpong.net>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 CATEGORIES=	databases
@@ -25,10 +22,12 @@ BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
-CONFIGURE_ARGS+=--with-libxslt --with-libxml
+CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
-OPTIONS=	OSSP_UUID	"Enable / disable ossp-uuid support"	on
+OPTIONS_DEFINE=	OSSP_UUID
+OSSP_UUID_DESC=	Enable / disable ossp-uuid support
+OPTIONS_DEFAULT=	OSSP_UUID
 
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/extension/README
