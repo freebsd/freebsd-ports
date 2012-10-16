@@ -1,23 +1,19 @@
-# New ports collection makefile for:	svn2git
-# Date created:				2011-03-30
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	svn2git
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	devel kde
-MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/svn2git/
+MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/${PORTNAME}/
 
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Imports svn repositories into git
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
-
-LICENSES=	GPLv1 GPLv2 GPLv3
 
 USE_XZ=		yes
 USE_QT4=	corelib qmake_build
