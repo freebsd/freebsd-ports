@@ -1,15 +1,12 @@
-# New ports collection makefile for:	PostgreSQL
-# Date created:		November 13, 1998
-# Whom:			Marc G. Fournier <scrappy@FreeBSD.org>
+# Created by:	Marc G. Fournier <scrappy@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.14
 PORTREVISION?=	0
 CATEGORIES?=	databases
-MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
 PKGNAMESUFFIX?=	-server
 
@@ -75,7 +72,9 @@ SUB_FILES+=	502.pgsql
 .endif
 
 .if !defined(SLAVE_ONLY)
-OPTIONS=	NLS "Use internationalized messages" on
+OPTIONS_DEFINE+=	NLS
+NLS_DESC=	Use internationalized messages
+OPTIONS_DEFAULT+=	NLS
 .endif
 
 .if !defined(CLIENT_ONLY)
@@ -85,42 +84,51 @@ CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 
 .if !defined(SLAVE_ONLY)
 . if ${DISTVERSION:R} == 8.4
-OPTIONS+=	DTRACE "Build with DTrace probes (server only)" off
-OPTIONS+=	GSSAPI "Build with GSSAPI support" off
-INTDATE=	on
-. else
-INTDATE=	off
-. endif
+OPTIONS_DEFINE+=	DTRACE GSSAPI
+DTRACE_DESC=	Build with DTrace probes (server only)
+GSSAPI_DESC=	Build with GSSAPI support
+OPTIONS_DEFAULT+=	INTDATE
+.endif
 . if ${DISTVERSION:R} == 8.4 || ${DISTVERSION:R} == 8.3
-OPTIONS+=	XML "Build with XML data type (server)" on
-OPTIONS+=	TZDATA "Use internal timezone database (server)" on
+OPTIONS_DEFINE+=	XML TZDATA
+XML_DESC=	Build with XML data type (server)
+TZDATA_DESC=	Use internal timezone database (server)
+OPTIONS_DEFAULT+=	XML TZDATA
 . endif
 . if !empty(ICU_PATCHFILE)
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
+OPTIONS_DEFINE+=	ICU
 .endif
-OPTIONS+=	PAM "Build with PAM support (server only)" off
-OPTIONS+=	LDAP "Build with LDAP authentication support" off
-OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
-OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
-OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-OPTIONS+=	DEBUG "Builds with debugging symbols" off
+OPTIONS_DEFINE+=	PAM LDAP OPTIMIZED_CFLAGS DEBUG KRB5
+OPTIONS_SINGLE= KRB5
+OPTIONS_SINGLE_KRB5= MIT_KRB5 HEIMDAL_KRB5
+KRB5_DESC=       Build with kerberos provider support
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
-OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" ${INTDATE}
-OPTIONS+=	SSL "Build with OpenSSL support" on
+OPTIONS_DEFINE+=	INTDATE SSL
+OPTIONS_DEFAULT+=	SSL
 .endif # !SLAVE_ONLY
+
+ICU_DESC=	Use ICU for unicode collation (server)
+PAM_DESC=	Build with PAM support (server only)
+LDAP_DESC=	Build with LDAP authentication support
+MIT_KRB5_DESC=	Build with MIT's kerberos support
+HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos support
+OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
+DEBUG_DESC=	Builds with debugging symbols
+INTDATE_DESC=	Builds with 64-bit date/time type (server)
+SSL_DESC=	Build with OpenSSL support
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if !defined(SLAVE_ONLY)
-.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
+.  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~crees/postgresql-icu/:icu
@@ -135,7 +143,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .if !defined(SLAVE_ONLY)
 PATCH_DIST_STRIP=-p1
 
-.  if defined(WITH_DTRACE)
+.  if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=	-lelf
 .    if ${OSVERSION} < 900021
@@ -143,34 +151,34 @@ IGNORE=	need userland DTrace support found in FreeBSD 9.0
 .    endif
 .  endif
 
-.  if defined(WITH_PAM)
+.  if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=--with-pam
 .  endif
 
-.  if defined(WITH_LDAP)
+.  if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=--with-ldap
 USE_OPENLDAP=	yes
 .  endif
 
-.  if defined(WITH_XML)
+.  if ${PORT_OPTIONS:MXML}
 CONFIGURE_ARGS+=--with-libxml
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .  endif
 
-.  if defined(WITH_TZDATA)
+.  if ${PORT_OPTIONS:MTZDATA}
 PLIST_SUB+=	TZDATA=""
 .  else
 CONFIGURE_ARGS+=--with-system-tzdata=/usr/share/zoneinfo
 PLIST_SUB+=	TZDATA="@comment "
 .  endif
 
-.  if defined(WITHOUT_INTDATE)
-CONFIGURE_ARGS+=--disable-integer-datetimes
-.  else
+.  if ${PORT_OPTIONS:MINTDATE}
 CONFIGURE_ARGS+=--enable-integer-datetimes
+.  else
+CONFIGURE_ARGS+=--disable-integer-datetimes
 .  endif
 
-.  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))
+.  if ( defined(WITH_GETTEXT) || ${PORT_OPTIONS:MNLS} )
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
 USE_GETTEXT=	yes
@@ -179,20 +187,20 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
 .  endif
 
-.  if defined(WITH_OPTIMIZED_CFLAGS)
+.  if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -funroll-loops
 .  endif
 
-.  if defined(WITH_DEBUG)
+.  if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 INSTALL_TARGET=	install
 .  else
 INSTALL_TARGET=	install-strip
 .  endif
 
-.if defined(WITH_GSSAPI)
+.if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--with-gssapi
-.if !defined(WITH_MIT_KRB5) && !defined(WITH_HEIMDAL_KRB5)
+.if empty(PORT_OPTIONS:MMIT_KRB5) && empty(PORT_OPTIONS:MHEIMDAL_KRB5)
 # Kerberos libraries will pull the proper GSSAPI library
 # via linker dependencies, but otherwise we must specify
 # it explicitely: ld --as-needed is used for compilation,
@@ -204,7 +212,7 @@ LDFLAGS_SL+=	-lgssapi
 CONFIGURE_ARGS+=--without-gssapi
 .endif
 
-.  if defined(WITH_MIT_KRB5)
+.  if ${PORT_OPTIONS:MMIT_KRB5}
 .    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
 IGNORE=	requires that you remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/src.conf to build successfully with MIT-KRB
 .    endif
@@ -217,7 +225,7 @@ CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
 
-.  if defined(WITH_HEIMDAL_KRB5)
+.  if ${PORT_OPTIONS:MHEIMDAL_KRB5}
 # Allow defining a home built Heimdal Kerberos by setting HEIMDAL_HOME
 .    if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a) && exists(${HEIMDAL_HOME}/bin/krb5-config)
 CONFIGURE_ARGS+=--with-krb5
@@ -304,14 +312,6 @@ SUB_LIST+=	PG_GROUP=${PG_GROUP} \
 		PG_UID=${PG_UID}
 
 .if !defined(NO_BUILD)
-
-pre-configure:
-.  if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
-	@${ECHO} "MIT's and Heimdal Kerberos are mutually exclusive."
-	@${ECHO} "Please choose one or the other."
-	@exit 1
-.  endif
-
 .if !target(pre-build)
 pre-build:
 .  if defined(SERVER_ONLY)
@@ -337,7 +337,7 @@ PLIST_SUB+=	PG_USER=${PG_USER}
 
 .if !defined(NO_BUILD)
 post-patch:
-.  if defined(WITH_ICU)
+.  if ${PORT_OPTIONS:MICU}
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
 		${WRKSRC}/configure.in
