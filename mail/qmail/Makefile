@@ -144,7 +144,7 @@ PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
-PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch:tls
+PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch:tls
 .endif
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
@@ -710,7 +710,7 @@ post-patch:
 	@${REINPLACE_CMD} -E "/qhpsi *= *\"unknown\"/d; s/(\*qqx *== *'D')/qhpsi \&\& \1/g" \
 		${WRKSRC}/qmail-smtpd.c
 .elif defined(SLAVE_TLS)
-	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
+	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch > \
 		${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
