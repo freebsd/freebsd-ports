@@ -1,28 +1,20 @@
-# Ports collection makefile for:	mercurial
-# Date created:				11 July 2005
-# Whom:					Andreas Kohn
-#
+# Created by: Andreas Kohn
 # $FreeBSD$
-#
 
 PORTNAME=	mercurial
-PORTVERSION=	2.3
+PORTVERSION=	2.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A fast, lightweight source control management system
+COMMENT=	Fast, lightweight source control management system
 
 LICENSE=	GPLv2
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+
+OPTIONS_DEFINE=	NLS
 
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
@@ -60,24 +52,28 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.txt \
 		vim/patchreview.vim
 
-DOCS=	CONTRIBUTORS COPYING README
+DOCS=	CONTRIBUTORS README
 
 MAN1=	hg.1
 MAN5=	hgignore.5 hgrc.5
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e 's/%%NLS%%//' ${WRKSRC}/${PYSETUP}
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-	@${REINPLACE_CMD} -e 's/%%NLS%%/# /' ${WRKSRC}/${PYSETUP}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${DOCSDIR}; \

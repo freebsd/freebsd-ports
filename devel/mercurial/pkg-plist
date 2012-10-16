@@ -662,7 +662,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/wireproto.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/wireproto.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDATA%%%%DATADIR%%/contrib/bash_completion
 %%PORTDATA%%%%DATADIR%%/contrib/casesmash.py
