@@ -1,17 +1,15 @@
-# New ports collection makefile for:	mbox2mdir
-# Date created:		2005-10-30
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	mbox2mdir
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://sageshome.net/downloads/oss/
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A mbox to qmail's Maildir converter written in C++
+COMMENT=	Mbox to qmail's Maildir converter written in C++
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 
