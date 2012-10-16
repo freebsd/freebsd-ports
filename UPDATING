@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of ports-mgmt/portmaster
   AUTHOR: bdrewery@FreeBSD.org
 
-  Portmaster now support pkgng. To use pkgng, enable the patch in the port,
+  Portmaster now supports pkgng. To use pkgng, enable the patch in the port,
   enable pkgng in your make.conf, and convert your existing /var/db/pkg
   database. Also see UPDATING entry 20121010 if you are on a recent CURRENT
   and do not want to use pkg.
@@ -22,7 +22,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of ports-mgmt/portupgrade
   AUTHOR: bdrewery@FreeBSD.org
 
-  Portupgrade now support pkgng. To use pkgng, enable it in your make.conf,
+  Portupgrade now supports pkgng. To use pkgng, enable it in your make.conf,
   and convert your databases.
 
   # echo 'WITH_PKGNG=yes' >> /etc/make.conf
