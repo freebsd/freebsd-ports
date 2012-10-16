@@ -10,7 +10,6 @@
     SUBDIR += 44bsd-hunt
     SUBDIR += 4stattack
     SUBDIR += 54321
-    SUBDIR += 8kingdoms
     SUBDIR += BillardGL
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
@@ -272,7 +271,6 @@
     SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
-    SUBDIR += freeorion
     SUBDIR += freera
     SUBDIR += freesci
     SUBDIR += freesweep
@@ -796,7 +794,6 @@
     SUBDIR += rfksay
     SUBDIR += rftg
     SUBDIR += ri-li
-    SUBDIR += rigsofrods
     SUBDIR += robocode
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
