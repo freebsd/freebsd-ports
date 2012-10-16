@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ec34d0c2-1799-11e2-b4ab-000c29033c32">
+    <topic>Zend Framework -- Local file disclosure via XXE injection</topic>
+    <affects>
+      <package>
+	<name>ZendFramework</name>
+	<range><lt>1.11.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>K. Gudinavicius reports:</p>
+	<blockquote cite="https://www.sec-consult.com/files/20120626-0_zend_framework_xxe_injection.txt">
+	  <p>The XmlRpc package of Zend Framework is vulnerable to XML
+	    eXternal Entity Injection attacks (both server and client).
+	    The SimpleXMLElement class (SimpleXML PHP extension) is used
+	    in an insecure way to parse XML data. External entities can be
+	    specified by adding a specific DOCTYPE element to XML-RPC
+	    requests. By exploiting this vulnerability an application may be
+	    coerced to open arbitrary files and/or TCP connections.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3363</cvename>
+      <url>https://www.sec-consult.com/files/20120626-0_zend_framework_xxe_injection.txt</url>
+      <url>http://framework.zend.com/security/advisory/ZF2012-01</url>
+      <url>http://www.openwall.com/lists/oss-security/2012/06/26/2</url>
+      <url>https://secunia.com/advisories/49665/</url>
+    </references>
+    <dates>
+      <discovery>2012-06-26</discovery>
+      <entry>2012-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f94befcd-1289-11e2-a25e-525400272390">
     <topic>gitolite - path traversal vulnerability</topic>
     <affects>
