@@ -22,11 +22,11 @@ RUN_DEPENDS=	ja-p5-nkf>=0:${PORTSDIR}/japanese/p5-nkf
 PLIST=		"@comment this plist is intentionally left empty"
 
 .if defined(WITH_CHASEN)
-RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/p5-Text-ChaSen
+RUN_DEPENDS+=	ja-p5-Text-ChaSen>=0:${PORTSDIR}/japanese/p5-Text-ChaSen
 .elif defined(WITH_KAKASI)
-RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
+RUN_DEPENDS+=	ja-p5-Text-Kakasi>=0:${PORTSDIR}/japanese/p5-Text-Kakasi
 .else
-RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
+RUN_DEPENDS+=	ja-p5-MeCab>=0:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
 .include "${.CURDIR}/../../databases/namazu2/Makefile.common"
