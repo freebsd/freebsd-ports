@@ -1,21 +1,22 @@
-# New Ports collection makefile for:	SDL_Lopan
-# Date created:		2012-04-26
-# Whom:			nemysis@gmx.ch
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_lopan
 PORTVERSION=	10
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.linuxmotors.com/sdllopan/downloads/
-DISTNAME=	${PORTNAME:S/_//}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.linuxmotors.com/sdllopan/downloads/ \
+		http://www.linuxmotors.com/sdllopan/:icons
+DISTFILES=	sdllopan-${DISTVERSION}.tgz \
+		sdllopan.gif:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	sdllopan-${DISTVERSION}.tgz
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Mahjong game remake
 
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=		${WRKDIR}/sdllopan-${PORTVERSION}
 
@@ -23,32 +24,38 @@ USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/sdllopan
+ALL_TARGET=
+
+PLIST_FILES=	bin/sdllopan \
+		share/pixmaps/sdllopan.png
 
 PORTDATA=	*
 PORTDOCS=	Changelog README
 
-ALL_TARGET=
+DESKTOP_ENTRIES="SDL Lopan" "${COMMENT}" "sdllopan" \
+		"sdllopan" "Game;ArcadeGame;" ${FALSE}
+
+.include <bsd.port.options.mk>
 
 post-patch:
-# Fix data location
-	@${REINPLACE_CMD} -e 's!data/bg%d.pcx!${DATADIR}/data/bg%d.pcx!' \
-	-e 's!data/tiles%d.pcx!${DATADIR}/data/tiles%d.pcx!' \
-	-e 's!char temp\[64\];!char temp\[256\];!' \
-	${WRKSRC}/lopan.c
+	@${REINPLACE_CMD} -e 's|data/bg%d.pcx|${DATADIR}/data/bg%d.pcx|' \
+	-e 's|data/tiles%d.pcx|${DATADIR}/data/tiles%d.pcx|' \
+	-e 's|char temp\[64\];|char temp\[256\];|' \
+		${WRKSRC}/lopan.c
+
+post-build:
+	@(cd ${WRKSRC} && \
+		${LOCALBASE}/bin/giftopnm ${DISTDIR}/${DIST_SUBDIR}/sdllopan.gif | \
+		${LOCALBASE}/bin/pamscale .1 | ${LOCALBASE}/bin/pnmtopng > sdllopan.png)
 
 do-install:
-# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/lopan ${PREFIX}/bin/sdllopan
-# Data
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/sdllopan.png ${PREFIX}/share/pixmaps
 
-# Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
