@@ -3,6 +3,7 @@
 
 PORTNAME=		spidermonkey185
 PORTVERSION=		1.8.5
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	js
@@ -159,5 +160,8 @@ regression-test: build
 	@cd ${WRKSRC} && ${SETENV} TZ=PST8PDT ${PYTHON_CMD} jit-test/jit_test.py \
 	--no-progress --jitflags=,m,j,mj,mjp,am,amj,amjp,amd ./js
 .endif
+
+post-install:
+	${LN} -s libmozjs185.so.1.0 ${PREFIX}/lib/libmozjs185.so.1
 
 .include <bsd.port.post.mk>
