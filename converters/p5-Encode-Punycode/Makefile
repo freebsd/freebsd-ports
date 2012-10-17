@@ -7,7 +7,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Encode plugin for Punycode
 
 RUN_DEPENDS=	p5-Net-IDN-Encode>=0:${PORTSDIR}/textproc/p5-Net-IDN-Encode
