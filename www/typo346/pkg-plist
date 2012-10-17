@@ -4018,6 +4018,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms/Various.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Panel.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Right.js
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter/AlphanumericTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_icon.gif
@@ -8485,6 +8486,10 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func_wizards
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func/mod1
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms/Validation
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms/Filters
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms
