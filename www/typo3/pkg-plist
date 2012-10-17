@@ -4171,6 +4171,29 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms/Various.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Panel.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Right.js
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter/AlphabeticTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter/AlphanumericTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/AlphabeticTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/AlphanumericTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/BetweenTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/DateTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/DigitTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/EmailTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/EqualsTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/FileallowedtypesTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/FilemaximumsizeTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/FileminimumsizeTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/FloatTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/GreaterthanTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/Helper.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/InarrayTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/IntegerTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/IpTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/LengthTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/LessthanTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/RegexpTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/RequiredTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/UriTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_icon.gif
@@ -8686,6 +8709,11 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func_wizards
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func/mod1
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms/Validation
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms/Filters
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Left/Options/Forms
