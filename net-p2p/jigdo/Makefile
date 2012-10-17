@@ -1,9 +1,5 @@
-# ports collection makefile for:	jigdo
-# Date created:				23 July 2002
-# Whom:					Attila Nagy <bra@fsn.hu>
-#
+# Created by: Attila Nagy <bra@fsn.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
@@ -26,13 +22,15 @@ WITH_BDB_VER?=	43
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	GUI "Build the gtk2 gui" off \
-		BDB "Build with Berkeley DB support (for jigdo-file cache)" on \
-		NLS "Native Language Support" on
+OPTIONS_DEFINE=		GUI BDB NLS
+OPTIONS_DEFAULT=	BDB NLS
 
-.include <bsd.port.pre.mk>
+GUI_DESC=		Build the gtk2 gui
+BDB_DESC=		Build with Berkeley DB support (for jigdo-file cache)
 
-.if defined(WITH_GUI)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=	--with-gui
 LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		curl:${PORTSDIR}/ftp/curl
@@ -43,7 +41,7 @@ CONFIGURE_ARGS+=--without-gui
 PLIST_SUB+=	GUI="@comment "
 .endif
 
-.if !defined(WITHOUT_BDB)
+.if ${PORT_OPTIONS:MBDB}
 CONFIGURE_ENV+=	LIBS=-L${BDB_LIB_DIR}
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 CONFIGURE_ARGS+=--with-libdb=-l${BDB_LIB_CXX_NAME}
@@ -52,7 +50,7 @@ USE_BDB=	${WITH_BDB_VER}
 CONFIGURE_ARGS+=--without-libdb
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -64,4 +62,4 @@ PLIST_SUB+=	NLS="@comment "
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/jigdo-file
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
