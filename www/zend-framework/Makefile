@@ -6,100 +6,82 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.11.11
+PORTVERSION=	1.12.0
 CATEGORIES=	www
-MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ \
-		GENTOO/distfiles
-.if !defined(NOPORTDOCS)
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-manual-en${EXTRACT_SUFX}
-.endif
+MASTER_SITES=	http://packages.zendframework.com/releases/${DISTNAME}/
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
-MANUAL_PACKAGE_BUILD=	it needs an old PHP version
-
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 USE_GETTEXT=	yes
+
+LICENSE=	BSD
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	\
-		EDOJO "Install embedded Dojo" On \
-		PDOJO "Install Dojo from ports" Off \
-		MYSQL "Install MySQL PDO support" Off \
-		MYSQLI "Install MySQLi support" Off \
-		DBLIB "Install DBLIB PDO support" Off \
-		PGSQL "Install PostgreSQL PDO support" Off \
-		ODBC "Install ODBC PDO support" Off \
-		SQLITE "Install SQLite v3 PDO support" Off \
-		REQPHP "Install required PHP dependencies" On \
-		OPTPHP "Install optional PHP dependencies" Off
+OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP
+OPTIONS_DEFAULT=REQPHP
 
-.include <bsd.port.pre.mk>
+MYSQL_DESC=	Enable MySQL PDO support
+MYSQLI_DESC=	Enable MySQLi support
+DBLIB_DESC=	Enable DBLIB PDO support
+PGSQL_DESC=	Enable PostgreSQL PDO support
+ODBC_DESC=	Enable ODBC PDO support
+SQLITE_DESC=	Enable SQLite v3 PDO support
+REQPHP_DESC=	Install required PHP dependencies
+OPTPHP_DESC=	Install optional PHP dependencies
 
-# Check for mutually-exclusive options
-.if defined(WITH_EDOJO) && defined(WITH_PDOJO)
-IGNORE=		please select only one type of Dojo installation
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}-manual-en${EXTRACT_SUFX}
 .endif
 
-INSTALL_DIRS=	library extras/library
-
-.if defined(WITH_EDOJO)
-DOJO=		""
-INSTALL_DIRS+=	externals/dojo/dijit externals/dojo/dojo \
-		externals/dojo/dojox externals/dojo/util
-CONFLICTS+=	dojo-1.*
-.else
-DOJO=		"@comment "
-.endif
-PLIST_SUB+=	DOJO=${DOJO}
-
-.if defined(WITH_PDOJO)
-RUN_DEPENDS+=	dojo>=0:${PORTSDIR}/www/dojo
-.endif
+INSTALL_DIRS=	library extras/library externals/dojo/dijit \
+		externals/dojo/dojo externals/dojo/dojox \
+		externals/dojo/util
 
 # Add all of the required and/or optional PHP extension dependencies,
 # if chosen by the user.
 #
-# See http://framework.zend.com/manual/en/requirements.html for
-# a table of what PHP extensions are required for what ZF classes.
+# See http://framework.zend.com/manual/1.12/en/requirements.introduction.html
+# for a table of what PHP extensions are required for what ZF classes.
 
-.if defined(WITH_REQPHP)
+.if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	apc ctype curl dom gd hash iconv mbstring ldap mcrypt \
-		memcache pcre pdo session simplexml soap spl \
-		sqlite xml zlib
+		pcre pdo session simplexml soap \
+		sqlite3 wddx xml zlib
+RUN_DEPENDS+=	pecl-memcache>=0:${PORTSDIR}/databases/pecl-memcache \
+		pecl-memcached>=0:${PORTSDIR}/databases/pecl-memcached
 .endif
-.if defined(WITH_OPTPHP)
+.if ${PORT_OPTIONS:MOPTPHP}
 USE_PHP+=	bcmath bitset json posix
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	pdo_mysql
 .endif
 
-.if defined(WITH_MYSQLI)
+.if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
 .endif
 
-.if defined(WITH_DBLIB)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php5-pdo_dblib
+.if ${PORT_OPTIONS:MDBLIB}
+USE_PHP+=	pdo_dblib
 .endif
 
-.if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pdo_pgsql
 .endif
 
-.if defined(WITH_ODBC)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php5-pdo_odbc
+.if ${PORT_OPTIONS:MODBC}
+USE_PHP+=	pdo_odbc
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	pdo_sqlite
 .endif
 
@@ -116,7 +98,7 @@ do-install:
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} zf.sh ${PREFIX}/bin/zf
 	@cd ${WRKSRC}/bin && ${INSTALL_DATA} zf.php ${PREFIX}/bin/zf.php
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "demos tests" ${EXAMPLESDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EXAMPLESDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
@@ -140,7 +122,7 @@ fix-new-plist:
 	fi
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${DOCSDIR}
 	@${INSTALL} -d ${DOCSDIR}/manual
@@ -149,4 +131,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
