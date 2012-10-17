@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logcheck
-PORTVERSION=	1.3.14
-PORTREVISION=	1
+PORTVERSION=	1.3.15
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,13 +25,14 @@ LOGCHECK_UID=	915
 LOGCHECK_GROUP=	${LOGCHECK_USER}
 LOGCHECK_GID=	${LOGCHECK_UID}
 
-DBDIR=		/var/db/${PORTNAME}
-RUNDIR=		/var/run/${PORTNAME}
+BASEDIR?=	# None. portlint compliance
+DBDIR=		${BASEDIR}/var/db/${PORTNAME}
+RUNDIR=		${BASEDIR}/var/run/${PORTNAME}
 
 # Enable Perl dependency for logtail script
 USE_PERL5=	5.8.0+
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755
 SHAREMODE=	640
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
@@ -55,6 +55,8 @@ PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
 		extra-patch-src__logtail2
 EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
 
+.include <bsd.port.pre.mk>
+
 pre-patch:
 .for patch in ${PATCH_LIST}
 	@${SED} ${_SUB_LIST_TEMP} ${FILESDIR}/${patch}.in > ${WRKDIR}/${patch}
@@ -74,45 +76,39 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${PREFIX}/sbin
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${INSTALL} -d ${DBDIR}
-	@${INSTALL} -d ${RUNDIR}
-	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} ${DBDIR}
+	@${INSTALL} -d -o ${LOGCHECK_USER} -g ${LOGCHECK_GROUP} \
+		${DBDIR} ${RUNDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
-		${DBDIR}' >> ${TMPPLIST}
-	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} ${RUNDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
-		${RUNDIR}' >> ${TMPPLIST}
-	@${INSTALL} -d ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf \
+		${DBDIR} ${RUNDIR}' >> ${TMPPLIST}
+	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${ETCDIR}
+	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/etc/logcheck.conf \
 		${ETCDIR}/logcheck.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles \
+	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/etc/logcheck.logfiles \
 		${ETCDIR}/logcheck.logfiles.sample
 .for i in ${CONFIG_DIRS}
-	@${INSTALL} -d ${ETCDIR}/${i}
-	@${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* ${ETCDIR}/${i}
+	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${ETCDIR}/${i}
+	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/rulefiles/linux/${i}/* \
+		${ETCDIR}/${i}
 .endfor
-	@${INSTALL} -d ${DATADIR}/detectrotate
-	@${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr ${DATADIR}/detectrotate
+	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${DATADIR}/detectrotate
+	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/src/detectrotate/*.dtr \
+		${DATADIR}/detectrotate
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
+	@${INSTALL_DATA} -m 0644 ${WRKSRC}/debian/logcheck.cron.d \
 		${EXAMPLESDIR}/crontab.in
 .endif
-	${CHOWN} -R root:${LOGCHECK_GROUP} ${ETCDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R root:${LOGCHECK_GROUP} \
-		${ETCDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	${CHOWN} -R root:${LOGCHECK_GROUP} ${DATADIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R root:${LOGCHECK_GROUP} \
+	@${ECHO_CMD} '@exec ${CHGRP} -R ${LOGCHECK_GROUP} \
+		${ETCDIR:S|^${PREFIX}/|%D/|} \
 		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${INSTALL_MAN} ${WRKSRC}/docs/*.8 ${MAN8PREFIX}/man/man8
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	@${CHMOD} 644 ${DOCSDIR}/*
+	@cd ${WRKSRC} && ${INSTALL_DATA} -m 0644 ${DOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

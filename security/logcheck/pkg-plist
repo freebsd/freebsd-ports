@@ -49,6 +49,7 @@
 %%ETCDIR%%/ignore.d.server/dkim-filter
 %%ETCDIR%%/ignore.d.server/dnsmasq
 %%ETCDIR%%/ignore.d.server/dovecot
+%%ETCDIR%%/ignore.d.server/dropbear
 %%ETCDIR%%/ignore.d.server/dspam
 %%ETCDIR%%/ignore.d.server/epmd
 %%ETCDIR%%/ignore.d.server/exim4
@@ -159,6 +160,7 @@
 %%ETCDIR%%/ignore.d.workstation/kdm
 %%ETCDIR%%/ignore.d.workstation/kernel
 %%ETCDIR%%/ignore.d.workstation/laptop-mode-tools
+%%ETCDIR%%/ignore.d.workstation/libmtp-runtime
 %%ETCDIR%%/ignore.d.workstation/libpam-gnome-keyring
 %%ETCDIR%%/ignore.d.workstation/logcheck
 %%ETCDIR%%/ignore.d.workstation/login
