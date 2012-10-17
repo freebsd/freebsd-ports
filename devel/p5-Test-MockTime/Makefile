@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-MockTime
-# Date created:				1 Aug 2006
-# Whom:					Timur I. Bakeyev <bat@cpan.org>
-#
+# Created by: Timur I. Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-MockTime
 PORTVERSION=	0.12
@@ -12,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Replaces actual time with simulated time
 
 BUILD_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
