@@ -93,7 +93,7 @@ do-install:
 	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${DATADIR}/detectrotate
 	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/src/detectrotate/*.dtr \
 		${DATADIR}/detectrotate
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} -m 0644 ${WRKSRC}/debian/logcheck.cron.d \
 		${EXAMPLESDIR}/crontab.in
