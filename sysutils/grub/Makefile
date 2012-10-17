@@ -15,6 +15,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	GRand Unified Bootloader
 
 BROKEN=		does not build
+EXPIRATION_DATE=	2012-12-01
 
 USE_AUTOTOOLS=	automake autoconf
 GNU_CONFIGURE=		yes
