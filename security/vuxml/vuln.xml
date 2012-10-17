@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e11955ca-187c-11e2-be36-00215af774f0">
+    <topic>xinetd -- attackers can bypass access restrictions if tcpmux-servers service enabled</topic>
+    <affects>
+      <package>
+	<name>xinetd</name>
+	<range><lt>2.3.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Thomas Swan reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=790940">
+	  <p>xinetd allows for services to be configured with the TCPMUX
+	    or TCPMUXPLUS service types, which makes those services
+	    available on port 1, as per RFC 1078 [1], if the tcpmux-server
+	    service is enabled.  When the tcpmux-server service is enabled,
+	    xinetd would expose _all_ enabled services via the tcpmux port,
+	    instead of just the configured service(s).  This could allow
+	    a remote attacker to bypass firewall restrictions and access
+	    services via the tcpmux port.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0862</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=790940</url>
+    </references>
+    <dates>
+      <discovery>2012-02-15</discovery>
+      <entry>2012-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec34d0c2-1799-11e2-b4ab-000c29033c32">
     <topic>Zend Framework -- Multiple vulnerabilities via XXE injection</topic>
     <affects>
