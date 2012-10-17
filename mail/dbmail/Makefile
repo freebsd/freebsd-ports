@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbmail
-# Date created:				07/26/2003
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dbmail
 PORTVERSION=	3.0.2
@@ -16,22 +12,23 @@ COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto
-.endif
 LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
 		zdb:${PORTSDIR}/databases/libzdb \
 		mhash:${PORTSDIR}/security/mhash \
 		event:${PORTSDIR}/devel/libevent
 
-CONFLICTS=	dbmail-*-2.0.* dbmail-2.*
+CONFLICTS=	dbmail-2.*
 
 OPTIONS_DEFINE=	LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
-SIEVE_DESC=	"Build with support for Sieve mail sorting language"
+SIEVE_DESC=	Build with support for Sieve mail sorting language
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+		xmlto:${PORTSDIR}/textproc/xmlto
+.endif
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -46,7 +43,7 @@ CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
 PORTDOCS=	AUTHORS BUGS INSTALL THANKS UPGRADING
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAN1=		dbmail-deliver.1 dbmail.1
 MAN5=		dbmail.conf.5
 MAN8=		dbmail-export.8 dbmail-httpd.8 dbmail-imapd.8 \
@@ -62,7 +59,7 @@ PLIST_SUB+=	DBMAIL_USER="${DBMAIL_USER}" \
 		DBMAIL_GROUP="${DBMAIL_GROUP}" \
 		PIDDIR="${PIDDIR}"
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 PLIST_SUB+=	PORTDOCS="@comment "
 .else
 PLIST_SUB+=	PORTDOCS=""
@@ -91,7 +88,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-manpages
 .endif
 
@@ -108,7 +105,7 @@ post-install:
 	done
 	@${MKDIR} ${PIDDIR}
 	@${CHOWN} ${DBMAIL_USER}:${DBMAIL_GROUP} ${PIDDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} * ${DOCSDIR})
