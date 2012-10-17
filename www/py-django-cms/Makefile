@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-django-cms
-# Date created:				30 Jan 2012
-# Whom:					Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-#
+# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-cms
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +22,25 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}south>=0.7.3:${PORTSDIR}/databases/py-south 
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
+
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
+OPTIONS_MULTI=	DATABASE
+OPTIONS_DEFAULT=SQLITE
+OPTIONS_MULTI_DATABASE=MYSQL PGSQL SQLITE
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
