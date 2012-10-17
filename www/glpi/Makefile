@@ -1,12 +1,9 @@
-# New ports collection makefile for:	glpi
-# Date created:			9 February 2007
-# Whom:				Mathias Monnerville <mathias@monnerville.com>
+# Created by:	Mathias Monnerville <mathias@monnerville.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	glpi
-PORTVERSION=	0.83.4
+PORTVERSION=	0.83.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://droidng.free.fr/freebsd/ \
@@ -15,7 +12,7 @@ MASTER_SITES=	http://droidng.free.fr/freebsd/ \
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
 
-USE_PHP=	mysql mbstring pcre session xml json
+USE_PHP=	mysql mbstring pcre session xml json ctype
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -25,16 +22,16 @@ CPIOARGS=	--quiet -pdum -R
 
 GLPIDIR?=	www/${PORTNAME}
 
-OPTIONS=	LDAP "With LDAP support" off \
-		IMAP "With imap support" off
+OPTIONS_DEFINE=	LDAP IMAP
+IMAP_DESC=	IMAP support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_IMAP)
+.if ${PORT_OPTIONS:MIMAP}
 USE_PHP+=	imap
 .endif
 
@@ -53,4 +50,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
