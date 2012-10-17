@@ -1,13 +1,11 @@
-# New ports collection makefile for:   dynare
-# Date created:                Aug 17 2011
-# Whom:                        Fernando Apesteguia <fernando.apesteguia@gmail.com>
+# Created by:	Fernando Apesteguia <fernando.apesteguia@gmail.com>
 #
 # $FreeBSD$
 
 PORTNAME=	dynare
 PORTVERSION=	4.3.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.dynare.org/download/dynare-4.3/source/${DISTNAME}${EXTRACT_SUFX}/at_download/file
+MASTER_SITES=	http://www.dynare.org/release/source/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
@@ -22,22 +20,26 @@ USE_XZ=		yes
 
 INFO=		dynare
 
-OPTIONS+=	OCTAVE	"Enable compilation of MEX files for Octave"	on
-OPTIONS+=	MATLAB	"Enable compilation of MEX files for MATLAB"	off
+OPTIONS_DEFINE=	OCTAVE MATLAB
+OCTAVE_DESC=Enable compilation of MEX files for Octave
+MATLAB_DESC=	Enable compilation of MEX files for MATLAB
+OPTIONS_DEFAULT=	OCTAVE
 
-.if defined(WITHOUT_MATLAB)
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MMATLAB)
 CONFIGURE_ARGS+=	--disable-matlab
 .endif
 
-.if defined(WITHOUT_OCTAVE)
-CONFIGURE_ARGS+=	--disable-octave
-.else
+.if ${PORT_OPTIONS:MOCTAVE}
 BUILD_DEPENDS+=		octave:${PORTSDIR}/math/octave
+.else
+CONFIGURE_ARGS+=	--disable-octave
 .endif
 
 do-fetch:
 	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/download/dynare-4.3/source/${DISTNAME}${EXTRACT_SUFX}/at_download/file ;\
+		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/release/source/dynare-${PORTVERSION}.tar.xz;\
 	fi
 
 post-configure:
