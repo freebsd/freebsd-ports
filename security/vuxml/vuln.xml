@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57652765-18aa-11e2-8382-00a0d181e71d">
+    <topic>xlockmore -- local exploit</topic>
+    <affects>
+      <package>
+	<name>xlockmore</name>
+	<name>ja-xlockmore</name>
+	<range><lt>5.40_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ignatios Souvatzis of NetBSD reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2012/10/17/10">
+	  <p>localtime accesses a (in the discovered case) 64bit value, which
+	    is likely not to be valid, and returns a null pointer as an error
+	    indication. The code in dclock.c does not check for this but,
+	    depending on additional command-line options, either dereferences
+	    the pointer or passes it to strftime() unconditionally, which in
+	    turn triggers a segmentation fault, terminating the program and
+	    leaving the terminal unlocked.</p>
+	  <p>While this is unexpected, the dangerous case is where
+	    "xlockmore -mode random" calls the mode "dclock" after a while,
+	    when the user has left the terminal, not noticing that it will
+	    (eventually) be unlocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4524</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2012/10/17/10</mlist>
+    </references>
+    <dates>
+      <discovery>2012-10-17</discovery>
+      <entry>2012-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e11955ca-187c-11e2-be36-00215af774f0">
     <topic>xinetd -- attackers can bypass access restrictions if tcpmux-servers service enabled</topic>
     <affects>
