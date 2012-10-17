@@ -7,7 +7,7 @@
 
 PORTNAME=	liblqr-1
 DISTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/distfiles/
