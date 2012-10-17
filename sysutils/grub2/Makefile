@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 DISTNAME=	grub-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Multiboot boot loader
 
 CONFLICTS=	grub-0*
