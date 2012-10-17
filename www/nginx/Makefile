@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nginx
-# Date created:				11 Oct 2004
-# Whom:					osa
-#
+# Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nginx
 PORTVERSION=	1.2.4
@@ -560,8 +556,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKI
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/drizzle
-NGINX_DRIZZLE_VERSION=	0.1.2
-GIT_DRIZZLE_VERSION=	0-gb05c67f
+NGINX_DRIZZLE_VERSION=	0.1.4
+GIT_DRIZZLE_VERSION=	0-g59e12ad
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
 DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
@@ -606,8 +602,8 @@ LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_VERSION=	0.5.14
-GIT_LUA_VERSION=	0-g7b363ee
+NGINX_LUA_VERSION=	0.6.10
+GIT_LUA_VERSION=	0-g73d8dd2
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
@@ -680,8 +676,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-json-nginx-module-${GIT_RDS_J
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
-NGINX_REDIS2_VERSION=	0.08rc4
-GIT_REDIS2_VERSION=	0-g5044f16
+NGINX_REDIS2_VERSION=	0.09
+GIT_REDIS2_VERSION=	0-g279beee
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
 DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_VERSION}-${GIT_REDIS2_VERSION}.tar.gz:redis2
@@ -689,13 +685,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.2.3
-GIT_RTMP_VERSION=	0-gf7f24ba
+NGINX_RTMP_VERSION=	0.6.1
+GIT_RTMP_VERSION=	0-gf1eeb39
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_rtmp_exec_module.c
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
@@ -726,8 +721,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-NGINX_SRCACHE_VERSION=	0.14
-GIT_SRCACHE_VERSION=	0-gbee0276
+NGINX_SRCACHE_VERSION=	0.16
+GIT_SRCACHE_VERSION=	0-g9350a49
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
 DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
