@@ -755,6 +755,7 @@
     SUBDIR += py-pycryptopp
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
+    SUBDIR += py-pysha3
     SUBDIR += py-rijndael
     SUBDIR += py-rsa
     SUBDIR += py-ssh

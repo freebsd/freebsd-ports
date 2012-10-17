@@ -1,0 +1,31 @@
+# Created by: Kubilay Kocak <koobs.freebsd@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	pysha3
+PORTVERSION=	0.2.2
+CATEGORIES=	security python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	koobs.freebsd@gmail.com
+COMMENT=	SHA-3 (Keccak) for Python
+
+# Python3 ready
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_sha3.so \
+		%%PYTHON_SITELIBDIR%%/sha3.py \
+		%%PYTHON_SITELIBDIR%%/sha3.pyc \
+		%%PYTHON_SITELIBDIR%%/sha3.pyo
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 320
+.include "${FILESDIR}/py3k-fix-pkg-plist.inc"
+.endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+
+.include <bsd.port.post.mk>
