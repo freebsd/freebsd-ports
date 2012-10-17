@@ -3888,6 +3888,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/he/PasteFromWord.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Preview.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Preview.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/he/SafePaste.js
+%%WWWDIR%%/dojox/editor/plugins/nls/he/SafePaste.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Save.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Save.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/ShowBlockNodes.js
@@ -4957,8 +4959,12 @@
 %%WWWDIR%%/dojox/form/nls/fr/PasswordValidator.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/fr/Uploader.js
 %%WWWDIR%%/dojox/form/nls/fr/Uploader.js.uncompressed.js
+%%WWWDIR%%/dojox/form/nls/he/CheckedMultiSelect.js
+%%WWWDIR%%/dojox/form/nls/he/CheckedMultiSelect.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/he/PasswordValidator.js
 %%WWWDIR%%/dojox/form/nls/he/PasswordValidator.js.uncompressed.js
+%%WWWDIR%%/dojox/form/nls/he/Uploader.js
+%%WWWDIR%%/dojox/form/nls/he/Uploader.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/hr/CheckedMultiSelect.js
 %%WWWDIR%%/dojox/form/nls/hr/CheckedMultiSelect.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/hr/PasswordValidator.js
