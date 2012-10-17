@@ -1114,6 +1114,7 @@
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
     SUBDIR += tapidbus
+    SUBDIR += tayga
     SUBDIR += tcludp
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
