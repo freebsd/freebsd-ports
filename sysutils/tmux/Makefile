@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tmux
-# Date created:				28 May 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tmux
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
