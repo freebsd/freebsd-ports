@@ -1,20 +1,18 @@
-# New ports collection makefile for:   resin3
-# Whom:                                Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# Date Created:                        2003-09-29 14:17:14
+# Created by:	Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=		resin
 PORTVERSION=		3.1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
 MAINTAINER=		5u623l20@gmail.com
-COMMENT=		Resin, a Java-based Application Server, 3.x branch
+COMMENT=		Java-based Application Server, 3.x branch
 
-OPTIONS=	APACHE22	"Use Apache 2.2" off
+OPTIONS_DEFINE=	APACHE22
+APACHE22_DESC=	Use Apache 2.2
 
 .include <bsd.port.options.mk>
 
@@ -59,7 +57,7 @@ LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS="${PTHREAD_LIBS}" LIBTOOL=${LIBTOOL}
 
 # Install the Apache plugin if needed
-.if defined(WITH_APACHE22)
+.if ${PORT_OPTIONS:MAPACHE22}
 BUILD_DEPENDS+=		${APXS}:${PORTSDIR}/www/apache22
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 PLIST_SUB+=		MOD_DIR=libexec/apache22
@@ -115,7 +113,7 @@ do-install:
 	cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} \* ${APP_HOME}/webapps
 	cd ${WRKSRC}/lib  && ${COPYTREE_SHARE} \* ${APP_HOME}/lib
 
-.if defined(WITH_APACHE22)
+.if ${PORT_OPTIONS:MAPACHE22}
 	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache2/.libs/mod_caucho.so
 .endif
 	@${ECHO_MSG}
