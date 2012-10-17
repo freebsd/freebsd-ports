@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mailutils
-# Date created:				2011-07-05
-# Whom:					Attila Nagy <bra@fsn.hu>
-#
+# Created by: Attila Nagy <bra@fsn.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	mailutils
 PORTVERSION=	2.2
@@ -23,32 +19,35 @@ USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 INFO=		${PORTNAME}
 MAN1=		imap4d.1 mail.1 pop3d.1 popauth.1
 
-OPTIONS=	GDBM		"Use GNU DBM"			Off \
-		BDB		"Use Berkeley DB"		Off \
-		TOKYOCABINET	"Use Tokyo Cabinet"		Off \
-		GNUTLS		"Enable GNUTLS support"		Off \
-		MYSQL		"Enable MySQL support"		Off \
-		PGSQL		"Enable Postgres support"	Off \
-		LDAP		"Enable LDAP support"		Off \
-		PYTHON		"Enable Python support"		Off
+OPTIONS_DEFINE=		GDBM BDB TOKYOCABINET GNUTLS MYSQL PGSQL LDAP PYTHON
+OPTIONS_DEFAULT=	
+
+GDBM_DESC=		Use GNU DBM
+BDB_DESC=		Use Berkeley DB
+TOKYOCABINET_DESC=	Use Tokyo Cabinet
+GNUTLS_DESC=		Enable GNUTLS support
+MYSQL_DESC=		Enable MySQL support
+PGSQL_DESC=		Enable Postgres support
+LDAP_DESC=		Enable LDAP support
+PYTHON_DESC=		Enable Python support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=	--with-gdbm
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=		yes
 CONFIGURE_ARGS+=	--with-berkeley-db
 .else
 CONFIGURE_ARGS+=	--without-berkeley-db
 .endif
 
-.if defined(WITH_TOKYOCABINET)
+.if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet
 LIB_DEPENDS+=		tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 PLIST_SUB+=		TOKYOCABINET=""
@@ -57,35 +56,35 @@ CONFIGURE_ARGS+=	--without-tokyocabinet
 PLIST_SUB+=		TOKYOCABINET="@comment "
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgres
 .else
 CONFIGURE_ARGS+=	--without-postgres
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python --with-pythondir=${PYTHON_SITELIBDIR}
 USE_PYTHON=		2.5+
 PLIST_SUB+=		PYTHON=""
@@ -94,7 +93,7 @@ CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		PYTHON="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
