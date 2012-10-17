@@ -1,13 +1,8 @@
-# Ports collection makefile for:	SciPy
-# Date created:			Jun 8, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	scipy
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
@@ -19,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	llwang@infor.org
 COMMENT=	Scientific tools for Python
 
+LICENSE=	BSD
+
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
@@ -29,11 +26,11 @@ LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
 USE_FORTRAN=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
 OPTIONS_DEFINE=	ATLAS SUITESPARSE
-OPTIONS_DEFAULT=	SUITESPARSE
+OPTIONS_DEFAULT=SUITESPARSE
 ATLAS_DESC=	Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
@@ -44,18 +41,18 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=		atlas needs to be built with WITH_STATIC for scipy to function properly
 .endif
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
-		blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack \
+		blas:${PORTSDIR}/math/blas
 .endif
 
 .if ${PORT_OPTIONS:MSUITESPARSE}
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS+=	umfpack.1:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS+=	umfpack:${PORTSDIR}/math/suitesparse
 .endif
 
 PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
