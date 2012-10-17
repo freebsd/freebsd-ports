@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	-re
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A branch of popular quagga software pointed at stability
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-[0-9]*
 
 USE_AUTOTOOLS=		libtool autoheader
@@ -28,17 +31,20 @@ MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 INFO=		quagga
 
-OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
-		PAM		"PAM authentication for vtysh"	off \
-		OSPF_NSSA	"NSSA support (RFC1587)"	off \
-		OSPF_OPAQUE_LSA	"OSPF Opaque-LSA support (RFC2370)" off \
-		RTADV		"IPv6 Router Advertisements"	off \
-		SNMP		"SNMP support"			off \
-		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
-		DLMALLOC	"Use dlmalloc (makes bgpd much faster)" off \
-		NO_BGP_ANNOUNCE	"Turn off BGP route announcement" off
+OPTIONS_DEFINE=	ISISD PAM OSPF_NSSA OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS \
+		DLMALLOC NO_BGP_ANNOUNCE
 
-.include <bsd.port.pre.mk>
+ISISD_DESC=		Enable experimental ISIS daemon
+PAM_DESC=		PAM authentication for vtysh
+OSPF_NSSA_DESC=		NSSA support (RFC1587)
+OSPF_OPAQUE_LSA_DESC=	OSPF Opaque-LSA support (RFC2370)
+RTADV_DESC=		IPv6 Router Advertisements
+SNMP_DESC=		SNMP support
+TCPSOCKETS_DESC=	Use TCP/IP sockets for protocol daemons
+DLMALLOC_DESC=		Use dlmalloc (makes bgpd much faster)
+NO_BGP_ANNOUNCE_DESC=	Turn off BGP route announcement
+
+.include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include
 .if ${OSVERSION} >= 800000
@@ -79,7 +85,7 @@ SCRIPTS_ENV=	PREFIX=${PREFIX} PKG_PREFIX=${PREFIX} \
 		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
 
-.if defined(WITH_ISISD)
+.if ${PORT_OPTIONS:MISISD}
 CONFIGURE_ARGS+=--enable-isisd
 PLIST_SUB+=	ISISD=""
 .else
@@ -87,15 +93,15 @@ PLIST_SUB+=	ISISD="@comment "
 .endif
 MAN8+=		isisd.8
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=--with-libpam
 .endif
 
-.if defined(WITH_OSPFNSSA)
+.if ${PORT_OPTIONS:MOSPFNSSA}
 CONFIGURE_ARGS+=--enable-nssa
 .endif
 
-.if defined(WITH_OSPF_OPAQUE_LSA)
+.if ${PORT_OPTIONS:MOSPF_OPAQUE_LSA}
 CONFIGURE_ARGS+=--enable-opaque-lsa
 PLIST_SUB+=	OSPFAPI=""
 .else
@@ -103,20 +109,20 @@ CONFIGURE_ARGS+=--disable-opaque-lsa
 PLIST_SUB+=	OSPFAPI="@comment "
 .endif
 
-.if defined(WITH_RTADV)
+.if ${PORT_OPTIONS:MRTADV}
 CONFIGURE_ARGS+=--enable-rtadv
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 CONFIGURE_ARGS+=--enable-snmp
 LIB_DEPENDS+=netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-.if defined(WITH_TCPSOCKETS)
+.if ${PORT_OPTIONS:MTCPSOCKETS}
 CONFIGURE_ARGS+=--enable-tcp-zebra
 .endif
 
-.if defined(WITH_DLMALLOC)
+.if ${PORT_OPTIONS:MDLMALLOC}
 LIB_DEPENDS+=dlmalloc:${PORTSDIR}/devel/libdlmalloc
 LDFLAGS+=-ldlmalloc
 SUB_LIST=	RCLDCONFIG=ldconfig
@@ -124,7 +130,7 @@ SUB_LIST=	RCLDCONFIG=ldconfig
 SUB_LIST=	RCLDCONFIG=
 .endif
 
-.if defined(WITH_NO_BGP_ANNOUNCE)
+.if ${PORT_OPTIONS:MNO_BGP_ANNOUNCE}
 CONFIGURE_ARGS+=--disable-bgp-announce
 .endif
 
@@ -148,16 +154,6 @@ pre-everything::
 	@${ECHO} "ENABLE_VTY_GROUP  Specify group for vty socket ownership"
 	@${ECHO} "SYSCONF_DIR       Specify directory for Quagga configuration files"
 	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
-	@${ECHO}
-	@${ECHO} "The following options may be configured interactively:"
-	@${ECHO} "   WITH_PAM              PAM authentication for vtysh"
-	@${ECHO} "   WITH_OSPF_NSSA        NSSA support (RFC1587)"
-	@${ECHO} "   WITH_OSPF_OPAQUE_LSA  OSPF Opaque-LSA with OSPFAPI support (RFC2370)"
-	@${ECHO} "   WITH_RTADV            IPv6 Router Advertisements"
-	@${ECHO} "   WITH_SNMP             SNMP support"
-	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
-	@${ECHO} "   WITH_DLMALLOC         Use dlmalloc (makes bgpd much faster)"
-	@${ECHO} "   WITH_NO_BGP_ANNOUNCE  Turn off BGP route announcement"
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
@@ -181,4 +177,4 @@ post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
