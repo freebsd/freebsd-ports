@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	sem
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
 
+LICENSE=	LGPL
+
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
