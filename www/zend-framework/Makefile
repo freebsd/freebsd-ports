@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://packages.zendframework.com/releases/${DISTNAME}/
 
@@ -34,7 +35,8 @@ SQLITE_DESC=	Enable SQLite v3 PDO support
 REQPHP_DESC=	Install required PHP dependencies
 OPTPHP_DESC=	Install optional PHP dependencies
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-manual-en${EXTRACT_SUFX}
@@ -53,7 +55,12 @@ INSTALL_DIRS=	library extras/library externals/dojo/dijit \
 .if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	apc ctype curl dom gd hash iconv mbstring ldap mcrypt \
 		pcre pdo session simplexml soap \
-		sqlite3 wddx xml zlib
+		wddx xml zlib
+.if ${PHP_VER} == 52
+USE_PHP+=	sqlite
+.else
+USE_PHP+=	sqlite3
+.endif
 RUN_DEPENDS+=	pecl-memcache>=0:${PORTSDIR}/databases/pecl-memcache \
 		pecl-memcached>=0:${PORTSDIR}/databases/pecl-memcached
 .endif
@@ -131,4 +138,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
