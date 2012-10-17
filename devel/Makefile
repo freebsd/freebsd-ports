@@ -2122,6 +2122,7 @@
     SUBDIR += p5-Log-Dispatch-DBI
     SUBDIR += p5-Log-Dispatch-Dir
     SUBDIR += p5-Log-Dispatch-Email-EmailSend
+    SUBDIR += p5-Log-Dispatch-File-Rolling
     SUBDIR += p5-Log-Dispatch-File-Stamped
     SUBDIR += p5-Log-Dispatch-FileRotate
     SUBDIR += p5-Log-Dispatch-FileShared
