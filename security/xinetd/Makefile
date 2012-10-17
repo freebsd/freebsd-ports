@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.14
-PORTREVISION=	2
+PORTVERSION=	2.3.15
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.xinetd.org/
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
+
+LICENSE=	BSD
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
