@@ -16,6 +16,8 @@ MASTER_SITES=	http://www.hollo.org/frox/download/ \
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Transparent FTP proxy with caching support
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -36,42 +38,44 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-configfile=${PREFIX}/etc/frox.conf
 
-OPTIONS=	IPFILTER "Use ipfilter instead of ipfw" off \
-		PF "Build with pf(4) support" off \
-		VIRUS_SCAN "Run external virus scaner on each download" off \
-		HTTP_CACHE "Enable use of external cache" on \
-		LOCAL_CACHE "Enable use of local cache" off \
-		CCP "Ftp-proxy style command control programs" on \
-		ROOT_RUN "Allow frox running as root (not recomended)" off
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	IPFILTER PF VIRUS_SCAN HTTP_CACHE LOCAL_CACHE CCP ROOT_RUN
+OPTIONS_DEFAULT=	HTTP_CACHE CCP
 
-# Set default options
-.if !defined(WITHOUT_HTTP_CACHE)
-WITH_HTTP_CACHE=	yes
-.endif
-.if !defined(WITHOUT_CCP)
-WITH_CCP=	yes
-.endif
+IPFILTER_DESC=		Use ipfilter instead of ipfw
+PF_DESC=		Build with pf(4) support
+VIRUS_SCAN_DESC=	Run external virus scaner on each download
+HTTP_CACHE_DESC=	Enable use of external cache
+LOCAL_CACHE_DESC=	Enable use of local cache
+CCP_DESC=	 	Ftp-proxy style command control programs
+ROOT_RUN_DESC=	 	Allow frox running as root (not recomended)
 
-.if defined(WITH_IPFILTER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPFILTER}
 CONFIGURE_ARGS+=	--enable-ipfilter
 .endif
-.if defined(WITH_PF)
+
+.if ${PORT_OPTIONS:MPF}
 CPPFLAGS+=		-DPF
 .endif
-.if defined(WITH_VIRUS_SCAN)
+
+.if ${PORT_OPTIONS:MVIRUS_SCAN}
 CONFIGURE_ARGS+=	--enable-virus-scan
 .endif
-.if defined(WITH_HTTP_CACHE)
+
+.if ${PORT_OPTIONS:MHTTP_CACHE}
 CONFIGURE_ARGS+=	--enable-http-cache
 .endif
-.if defined(WITH_LOCAL_CACHE)
+
+.if ${PORT_OPTIONS:MLOCAL_CACHE}
 CONFIGURE_ARGS+=	--enable-local-cache
 .endif
-.if defined(WITH_CCP)
+
+.if ${PORT_OPTIONS:MCCP}
 CONFIGURE_ARGS+=	--enable-ccp
 .endif
-.if defined(WITH_ROOT_RUN)
+
+.if ${PORT_OPTIONS:MROOT_RUN}
 CONFIGURE_ARGS+=	--enable-run-as-root
 .endif
 
@@ -92,4 +96,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/sbin/frox; \
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
