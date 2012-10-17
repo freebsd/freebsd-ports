@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Internationalizing Domain Names in Applications (RFC 3490)
 
 RUN_DEPENDS=	p5-Net-IDN-Nameprep>=0:${PORTSDIR}/converters/p5-Net-IDN-Nameprep

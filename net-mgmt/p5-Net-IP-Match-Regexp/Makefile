@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net-mgmt/p5-Net-IP-Match-Regexp
-# Date created:				1 Aug 2006
-# Whom:					Timur I. Bakeyev <bat@cpan.org>
-#
+# Created by: Timur I. Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IP-Match-Regexp
 PORTVERSION=	1.01
@@ -12,7 +8,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Efficiently match IP addresses against IP ranges via regexp
 
 PERL_CONFIGURE=	yes
