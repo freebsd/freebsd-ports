@@ -1,17 +1,13 @@
-# New ports collection makefile for: glfw
-# Date created:		24 Jan 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	glfw
-PORTVERSION=	2.7.5
+PORTVERSION=	2.7.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A portable framework for OpenGL development
+COMMENT=	Portable framework for OpenGL development
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext xrandr
@@ -22,6 +18,8 @@ ALL_TARGET=	x11
 INSTALL_TARGET=	x11-install
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${CHMOD} ${BINMODE} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -38,11 +36,11 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/x11/libglfw.so ${PREFIX}/lib/libglfw.so.0
 	${LN} -sf ${PREFIX}/lib/libglfw.so.0 ${PREFIX}/lib/libglfw.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/Makefile.x11 ${EXAMPLESDIR}/makefile
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${EXAMPLESDIR}
