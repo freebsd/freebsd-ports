@@ -1,0 +1,32 @@
+--- src/libcore/cmath.rs.orig	2012-10-16 21:27:43.459921547 +0800
++++ src/libcore/cmath.rs	2012-10-16 21:27:59.451920798 +0800
+@@ -145,7 +145,6 @@
+     #[link_name="sqrtf"] pure fn sqrt(n: c_float) -> c_float;
+     #[link_name="tanf"] pure fn tan(n: c_float) -> c_float;
+     #[link_name="tanhf"] pure fn tanh(n: c_float) -> c_float;
+-    #[link_name="tgammaf"] pure fn tgamma(n: c_float) -> c_float;
+     #[link_name="truncf"] pure fn trunc(n: c_float) -> c_float;
+ }
+ 
+--- src/libcore/f32.rs.orig	2012-10-16 21:27:50.924920698 +0800
++++ src/libcore/f32.rs	2012-10-16 21:30:50.177658387 +0800
+@@ -7,6 +7,8 @@
+ pub use cmath::c_float::*;
+ pub use cmath::c_float_targ_consts::*;
+ 
++priv use cmath::c_double;
++
+ // These are not defined inside consts:: for consistency with
+ // the integer types
+ 
+@@ -130,6 +132,10 @@
+     pub const ln_10: f32 = 2.30258509299404568401799145468436421_f32;
+ }
+ 
++pub pure fn tgamma(n: f32) -> f32 {
++    return c_double::tgamma(n as f64) as f32;
++}
++
+ pub pure fn signbit(x: f32) -> int {
+     if is_negative(x) { return 1; } else { return 0; }
+ }

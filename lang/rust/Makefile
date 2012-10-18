@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rust
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	lang
 MASTER_SITES=	http://dl.rust-lang.org/dist/:src \
 		http://dl.rust-lang.org/stage0-snapshots/:boot
@@ -19,7 +19,7 @@ COMMENT=	A language with a focus on memory safety and concurrency
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2012-07-06-b5f5676-freebsd-x86_64-926e17746576397c10af9796d30af6a730329f71
+RUST_BOOT_SIG=	2012-10-09-cd6f24f-freebsd-x86_64-a2b5e9dddfa8f21cc8a068b77a47ba5425bfdcc6
 RUST_TARGET=	x86_64-unknown-freebsd
 
 ONLY_FOR_ARCHS=	amd64
@@ -37,6 +37,14 @@ CARGO_DESC=		Build with package manager
 OPTIONS_DEFAULT=	CARGO
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900044
+EXTRA_PATCHES+=	${FILESDIR}/log2.patch
+.endif
+
+.if ${OSVERSION} < 801000
+EXTRA_PATCHES+=	${FILESDIR}/tgammaf.patch
+.endif
 
 .if ${OSVERSION} >= 900044
 LIB_DEPENDS+=	unwind:${PORTSDIR}/devel/libunwind
@@ -68,9 +76,6 @@ post-extract:
 	${MV} rust-stage0 stage0
 
 post-patch:
-	${REINPLACE_CMD} \
-	    -e '/probe_need CFG_CURL/d' \
-	    ${WRKSRC}/configure
 	${REINPLACE_CMD} \
 	    -e 's|subprocess.call(\["curl"|subprocess.call(["fetch"|' \
 	    ${WRKSRC}/src/etc/snapshot.py
