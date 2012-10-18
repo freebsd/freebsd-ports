@@ -1,36 +1,42 @@
 #!/bin/sh
+#
+# $FreeBSD:$
+#
 
 PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
 
 user=%%BOINC_CLIENT_USER%%
 group=%%BOINC_CLIENT_GROUP%%
-home=%%BOINC_CLIENT_HOME%%
+home="%%BOINC_CLIENT_HOME%%"
 shell=/bin/sh
 
 case $2 in
-POST-INSTALL)
-    if ! pw usershow ${user} >/dev/null 2>&1; then
-	if ! pw useradd ${user} -g ${group} -c "BOINC client user" -d ${home} -s ${shell}; then
-		err=$?
-		echo "WARNING: Unable to create user ${user}.  pw returned ${err}"
-		echo "You will need to create a BOINC client user and"
-		echo "chown the BOINC client user directory."
-		exit ${err}
+PRE-INSTALL)
+	if ! pw usershow ${user} 2>/dev/null 1>&2; then
+		if ! pw useradd ${user} -g ${group} -c "BOINC client user" \
+		    -d "${home}" -s ${shell}; then
+			echo "Failed to create user \"${user}\"." >&2
+			exit 1
+		else
+			echo "User \"${user}\" created successfully:"
+		fi
 	else
-		echo "BOINC client user created."
+		echo "Using existent user \"${user}\":"
 	fi
-    else
-	echo "BOINC client user found.  Using found account."
-    fi
-    mkdir -p ${home}
-    if [ ! -e ${home}/skins -a ! -L ${home}/skins ]; then
-	ln -s %%PREFIX%%/share/boinc/skins ${home}/skins
-	chown -h ${user}:${group} ${home}/skins
-    fi
-    if [ ! -e ${home}/ca-bundle.crt -a ! -L ${home}/ca-bundle.crt ]; then
-	ln -s %%LOCALBASE%%/share/certs/ca-root-nss.crt ${home}/ca-bundle.crt
-	chown -h ${user}:${group} ${home}/ca-bundle.crt
-    fi
-    chown ${user}:${group} ${home}
-    ;;
+	pw usershow ${user}
+	mkdir -m u=rwx,go= -p "${home}"
+	if [ ! -e "${home}/skins" -a ! -L "${home}/skins" ]; then
+		ln -s "%%PREFIX%%/share/boinc/skins" "${home}/skins"
+	fi
+	if [ ! -e "${home}/ca-bundle.crt" -a ! -L "${home}/ca-bundle.crt" ]; then
+		ln -s "%%LOCALBASE%%/share/certs/ca-root-nss.crt" "${home}/ca-bundle.crt"
+	fi
+	echo "Adjusting file ownership in \"${home}\" to ${user}:${group}"
+	chown -hR ${user}:${group} "${home}"
+        ;;
+*)
+	exit 64
+	;;
 esac
+
+exit 0
