@@ -1,16 +1,12 @@
-# New ports collection makefile for:   cntlm
-# Date created:        23 July 2009
-# Whom:                Antony Mawer <ports@mawer.org>
-#
+# Created by: Antony Mawer <ports@mawer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cntlm
 PORTVERSION=	0.92.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	ports@mawer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An NTLM / NTLM Session Response / NTLMv2 authenticating HTTP proxy
 
 USE_RC_SUBR=	cntlm

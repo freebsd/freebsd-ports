@@ -1,7 +1,4 @@
-# New ports collection makefile for:	xboxproxy
-# Date created:		6 October 2005
-# Whom:			Antony Mawer <ports@mawer.org>
-#
+# Created by: Antony Mawer <ports@mawer.org>
 # $FreeBSD$
 
 PORTNAME=	xboxproxy
@@ -11,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.semicomplete.com/files/xboxproxy/
 DISTNAME=	proxy-${PORTVERSION}
 
-MAINTAINER=	ports@mawer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A proxy for the XBox system link protocol
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
