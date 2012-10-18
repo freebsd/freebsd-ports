@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	ngircd
-# Date created:        1 May CEST 2003
-# Whom:                Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ngircd
 PORTVERSION=	0.19.2
@@ -13,7 +9,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTVERSION=	${PORTVERSION:S/0.//}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 LICENSE=	GPLv2
