@@ -7,7 +7,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
