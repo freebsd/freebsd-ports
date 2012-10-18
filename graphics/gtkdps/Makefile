@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gtkdps
-# Date created:        21 April 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkdps
 PORTVERSION=	0.3.4
@@ -14,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	gtkDPS-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
 LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
