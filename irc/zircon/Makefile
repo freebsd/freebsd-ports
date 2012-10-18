@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zircon
-# Date created:		19 Aug 1995
-# Whom:			jkh / pst
-#
+# Created by: jkh / pst
 # $FreeBSD$
-#
 
 PORTNAME=	zircon
 PORTVERSION=	1.18.256
@@ -13,7 +9,7 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 interface to Internet Relay Chat
 
 LICENSE=	BSD
