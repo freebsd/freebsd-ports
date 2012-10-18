@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimageview
-# Date Created:				5 Feb 2002
-# Whom:		TATEISHI Katsuyuki <katsu@iec.hiroshima-u.ac.jp>
-#
+# Created by: TATEISHI Katsuyuki <katsu@iec.hiroshima-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27
@@ -11,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gtkmmviewer/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
