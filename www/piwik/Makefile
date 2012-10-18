@@ -1,17 +1,14 @@
-# New ports collection makefile for:   piwik
-# Date created:		31 Dec 2008
-# Whom:			Wen heping <wenheping@gmail.com>
+# Created by:	Wen heping <wenheping@gmail.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	piwik
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
 MAINTAINER=	hans@nordhaug.priv.no
-COMMENT=	A Open Source Web Analytics Software Program
+COMMENT=	An Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
 
