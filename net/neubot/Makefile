@@ -3,6 +3,7 @@
 
 PORTNAME=	neubot
 PORTVERSION=	0.4.15.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
@@ -36,6 +37,7 @@ PLIST_SUB+=	STATEDIR=${STATEDIR}
 PKGMESSAGE=	${WRKDIR}/pkg_message
 
 post-install:
+	${RM} ${DATADIR}/system_posix.py.orig
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
