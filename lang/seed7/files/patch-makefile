@@ -1,19 +1,19 @@
---- makefile.orig	2012-01-01 16:17:58.000000000 +0100
-+++ makefile	2012-02-03 11:22:53.000000000 +0100
+--- makefile.orig	2012-10-18 14:42:29.000000000 +0200
++++ makefile	2012-10-18 14:43:37.000000000 +0200
 @@ -12,14 +12,14 @@
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
  # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
  # CFLAGS = -O2 -g -x c++ -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
--CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
-+CFLAGS += -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
+-CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
++CFLAGS += -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
  # CFLAGS = -O2 -g -std=c99 -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -g -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -g -Wall
  # CFLAGS = -O2 -g -pg -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
  # CFLAGS = -O2 -funroll-loops -Wall -pg
--LDFLAGS =
-+LDFLAGS = -L%%LOCALBASE%%/lib
+-LDFLAGS = -Wl,--gc-sections
++LDFLAGS += -L%%LOCALBASE%%/lib
  # LDFLAGS = -pg
  # LDFLAGS = -pg -lc_p
  SYSTEM_LIBS = -lm
