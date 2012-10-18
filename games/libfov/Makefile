@@ -1,17 +1,16 @@
-# New ports collection makefile for:    libfov
-# Date created:         12 Jan 2006
-# Whom:                 aaron@FreeBSD.org
-#
+# Created by: aaron@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libfov
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	games devel
-MASTER_SITES=	http://libfov.googlecode.com/files/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for calculating fields of view on low resolution rasters
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
@@ -23,8 +22,11 @@ post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^AM_CFLAGS|#AM_CFLAGS|g'
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|=.*|= fov|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|#AM_CFLAGS|' \
+		${WRKSRC}/fov/Makefile.in
 
 .include <bsd.port.mk>
