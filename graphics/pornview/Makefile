@@ -1,9 +1,5 @@
-# New ports collection Makefile for: pornview
-# Date created:		24 Nov 2002
-# Whom:			Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pornview
 PORTVERSION=	0.2.0.p.1
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
