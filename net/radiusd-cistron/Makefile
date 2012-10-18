@@ -1,9 +1,5 @@
-# New ports collection makefile for:	radiusd-cistron
-# Date created:		15 Jan 1999
-# Whom:			john@nlc.net.au
-#
+# Created by: john@nlc.net.au
 # $FreeBSD$
-#
 
 PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.8
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A RADIUS-compliant remote authentication and accounting server
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
