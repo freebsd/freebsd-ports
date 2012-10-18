@@ -35,7 +35,7 @@ OPTIONS=	GCC4 "Use new msp430-gcc4 compiler" on \
 LIBCTARGET=	msp430
 LIBCVERSION=	20120224
 LTSVERSION=	20120406
-BUGS_FIXED=	# For future use
+BUGS_FIXED=	3522752
 LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PKGNAMEPREFIX}${PORTNAME}-${LIBCVERSION}-sf$${bugid}.patch ; done
 
 USE_BZIP2=	yes
