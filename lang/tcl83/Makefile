@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcl8.3
-# Date created:		19 August 1997
-# Whom:			jkh
-#
+# created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5
@@ -12,7 +8,7 @@ CATEGORIES=	lang tcl
 MASTER_SITES=	SF/${PORTNAME}/Tcl/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool Command Language
 
 PORTSCOUT=	limit:^8\.3\.
