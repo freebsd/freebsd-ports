@@ -9,7 +9,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi purpose wrapper plugin for Nagios
 
 LICENSE=	GPLv2
