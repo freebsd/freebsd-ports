@@ -1,15 +1,10 @@
-# New ports collection makefile for:	supervisor
-# Date created:		30 Dec, 2009
-# Whom:			Hizbulin Ildar <hizel@vyborg.ru>
-#
+# Created by: Hizbulin Ildar <hizel@vyborg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	supervisor
-PORTVERSION=	3.0a12
+PORTVERSION=	3.0b1
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://dist.supervisord.org/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hizel@vyborg.ru
@@ -19,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meld3>=0.6.4:${PORTSDIR}/www/py-meld3
 
 PORTDOCS=	*.txt *.rst
 
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 PIDDIR?=	/var/run/supervisor
 
