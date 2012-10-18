@@ -8,8 +8,7 @@
 PORTNAME=	dgd
 PORTVERSION=	1.4.15
 CATEGORIES=	net lang games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME}-osr|} \
-		${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME}-osr/old|}
+MASTER_SITES=	http://cloud.github.com/downloads/dworkin/${PORTNAME}/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin\'s Game Driver
