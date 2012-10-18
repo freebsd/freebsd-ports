@@ -145,5 +145,3 @@ etc/lynx.lss.sample
 %%NLS%%share/locale/uk/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lynx.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
