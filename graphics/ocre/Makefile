@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ocre
-# Date created:		11 June 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ocre
-PORTVERSION=	0.041
-PORTREVISION=	1
+PORTVERSION=	0.042
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -18,7 +13,7 @@ COMMENT=	Simple optical character recognition solution
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick \
 		gnuplot:${PORTSDIR}/math/gnuplot \
 		ispell:${PORTSDIR}/textproc/ispell

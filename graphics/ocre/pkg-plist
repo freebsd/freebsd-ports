@@ -316,6 +316,8 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodLatin/arbol-u006c.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u006cu0061.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u006cu0069.dcw
+%%DATADIR%%/decsWoodLatin/arbol-u006cu006c.dcw
+%%DATADIR%%/decsWoodLatin/arbol-u006cu006f.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u006d.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u006du0062.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u006du0069.dcw
@@ -427,6 +429,7 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodLatin/arbol-u00ec.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u00ed.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u00edu0061.dcw
+%%DATADIR%%/decsWoodLatin/arbol-u00edu006f.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u00ee.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u00ef.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u00f1.dcw
