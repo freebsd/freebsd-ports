@@ -8,21 +8,20 @@
 PORTNAME=	sdcc
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	src-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS_INSTALL=	sdcc-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GCC=	any
 USE_GMAKE=	yes
 
 OPTIONS_DEFINE= DEVLIB DOCS HC08 MCS51 PIC UCSIM Z80
@@ -36,7 +35,7 @@ Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000/3000A
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS= --disable-avr --disable-install-libbfd
+CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror
 CONFIGURE_ENV=	ARCH=""
 WRKSRC= 	${WRKDIR}/sdcc
 
