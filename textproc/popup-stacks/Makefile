@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-stacks${PKGNAMESUFFIX2}
 DISTFILES=	English-German.cstack.gz German-French.cstack.gz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stacks for use with Popup
 
 LICENSE=	GPLv2
