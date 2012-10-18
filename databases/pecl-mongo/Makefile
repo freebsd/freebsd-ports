@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pear-mongo
-# Date created:			  23 Nov, 2009
-# Whom:				  wen
-#
+# Created by: wen
 # $FreeBSD$
-#
 
 PORTNAME=	mongo
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.12
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
