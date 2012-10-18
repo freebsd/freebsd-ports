@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luajit
-DISTVERSION=	2.0.0-beta10
+DISTVERSION=	2.0.0-beta11
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
