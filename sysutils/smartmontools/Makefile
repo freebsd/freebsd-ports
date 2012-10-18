@@ -1,13 +1,8 @@
-# New ports collection makefile for:   smartmontools
-# Date created:        12 October 2003
-# Whom:                Eduard Martinescu
-#
+# Create by: Eduard Martinescu
 # $FreeBSD$
-#
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.43
-PORTREVISION=	1
+PORTVERSION=	6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
