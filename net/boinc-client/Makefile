@@ -7,6 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.0.28
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -14,7 +15,6 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
-USE_GCC=	any
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -149,6 +149,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@BUILD_GRAPHICS_API_TRUE@|#&|' ${WRKSRC}/api/Makefile.in
 .endif
 
+pre-install:
+.if ${PORT_OPTIONS:MUSER}
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MMANAGER}
 	${MKDIR} ${PREFIX}/share/boinc
@@ -175,9 +180,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/boinc
 . endif
 	${CP} -R ${WRKSRC}/api/txf ${PREFIX}/share/boinc
-.endif
-.if ${PORT_OPTIONS:MUSER}
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.post.mk>

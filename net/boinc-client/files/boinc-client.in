@@ -6,52 +6,48 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following line to /etc/rc.conf to enable the BOINC client:
+# Add the following lines to /etc/rc.conf to enable the BOINC client:
 #
-# boinc_client_enable="YES"
-#
+# boinc_client_enable (boolean)		Set to "YES" to enable boinc_client
+#					(default is "NO").
+# boinc_client_flags (string)		Additional flags for boinc_client.
 
 . /etc/rc.subr
 
-name="boinc-client"
+name="boinc_client"
 rcvar=boinc_client_enable
 
-boinc_client_user=%%BOINC_CLIENT_USER%%
-boinc_client_home=%%BOINC_CLIENT_HOME%%
-boinc_client_flags="--daemon --dir ${boinc_client_home}"
-
-active_file="/var/run/${name}.active"
-
-load_rc_config $name
+load_rc_config ${name}
 : ${boinc_client_enable="NO"}
 
+command="%%PREFIX%%/bin/boinc_client"
+pidfile="/var/run/${name}.pid"
+
+boinc_client_user=%%BOINC_CLIENT_USER%%
+command_args="--daemon --dir \"%%BOINC_CLIENT_HOME%%\""
+
 start_cmd=boinc_client_start
-stop_cmd=boinc_client_stop
+stop_postcmd=boinc_client_poststop
 
 boinc_client_start()
 {
-	if checkyesno boinc_client_enable; then
-		if [ -f ${active_file} ]; then
-			echo 1>&2 "${name} already running?"
-			return 1
-		fi
-		echo "Starting ${name}."
-		idprio 31 su - ${boinc_client_user} -c \
-		    "%%PREFIX%%/bin/boinc_client ${boinc_client_flags}"
-		touch ${active_file}
-	fi
-}
+	local pid
 
-boinc_client_stop()
-{
-	if [ ! -f ${active_file} ]; then
-		echo 1>&2 "${name} is not running."
+	pid=$(check_pidfile "${pidfile}" "${command}")
+	if [ -n "${pid}" ]; then
+		echo 1>&2 "${name} already running? (pid=${pid})."
 		return 1
 	fi
-	echo "Stopping ${name}."
-	su - ${boinc_client_user} -c \
-	    "cd ${boinc_client_home} && %%PREFIX%%/bin/boinccmd --quit"
-	rm ${active_file}
+	echo "Starting ${name}."
+	idprio 31 su - ${boinc_client_user} -c \
+	    "\"${command}\" ${boinc_client_flags} ${command_args}" || return 1
+	pgrep -U ${boinc_client_user} -n -t - '^boinc_client$' \
+	    > "${pidfile}" || return 1
+}
+
+boinc_client_poststop()
+{
+	rm -f "${pidfile}"
 }
 
 run_rc_command "$1"
