@@ -1,4 +1,2 @@
-SHA256 (LuaJIT-2.0.0-beta10.tar.gz) = 750e9317ca2c61fa17e739abc582c55c1fe69749ba65442dfd7f04ce20cf9ff6
-SIZE (LuaJIT-2.0.0-beta10.tar.gz) = 890830
-SHA256 (beta9_hotfix1.patch) = 468234a723c3a2bb7fe8caafc3aac0443473df2790b547a166babaf9b58cc671
-SIZE (beta9_hotfix1.patch) = 1823
+SHA256 (LuaJIT-2.0.0-beta11.tar.gz) = 1e9e1d657774b33f287ac08310c0de1e89ff7b8f89ee7dc31eefb86ead9814de
+SIZE (LuaJIT-2.0.0-beta11.tar.gz) = 836244

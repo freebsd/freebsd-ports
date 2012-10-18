@@ -1,5 +1,5 @@
---- src/Makefile.orig	2011-12-14 18:15:00.000000000 +0400
-+++ src/Makefile	2012-01-09 19:33:28.000000000 +0400
+--- src/Makefile.orig	2012-10-16 22:30:00.000000000 +0400
++++ src/Makefile	2012-10-18 22:06:48.000000000 +0400
 @@ -25,7 +25,7 @@
  # with "make clean", followed by "make" if you change any options.
  #
@@ -18,12 +18,13 @@
  # Use this if you want to generate a smaller binary (but it's slower):
  #CCOPT= -Os -fomit-frame-pointer
  # Note: it's no longer recommended to use -O3 with GCC 4.x.
-@@ -49,7 +49,7 @@
+@@ -48,7 +48,8 @@
  # x86/x64 only: For GCC 4.2 or higher and if you don't intend to distribute
  # the binaries to a different machine you could also use: -march=native
  #
--CCOPT_X86= -march=i686
-+CCOPT_X86=
- CCOPT_X64=
- CCOPT_ARM=
- CCOPT_PPC=
+-CCOPT_x86= -march=i686
++#CCOPT_x86= -march=i686
++CCOPT_x86=
+ CCOPT_x64=
+ CCOPT_arm=
+ CCOPT_ppc=
