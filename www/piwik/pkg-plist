@@ -149,7 +149,6 @@
 %%WWWDIR%%/core/SmartyPlugins/function.postEvent.php
 %%WWWDIR%%/core/SmartyPlugins/function.sparkline.php
 %%WWWDIR%%/core/SmartyPlugins/function.url.php
-%%WWWDIR%%/core/SmartyPlugins/modifier.escape.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.inlineHelp.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.money.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.stripeol.php
@@ -228,6 +227,9 @@
 %%WWWDIR%%/core/Updates/1.7.2-rc7.php
 %%WWWDIR%%/core/Updates/1.8.3-b1.php
 %%WWWDIR%%/core/Updates/1.8.4-b1.php
+%%WWWDIR%%/core/Updates/1.9-b9.php
+%%WWWDIR%%/core/Updates/1.9-b16.php
+%%WWWDIR%%/core/Updates/1.9-b19.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -370,6 +372,9 @@
 %%WWWDIR%%/libs/HTML/QuickForm2/Rule/NotRegex.php
 %%WWWDIR%%/libs/HTML/QuickForm2/Rule/Regex.php
 %%WWWDIR%%/libs/HTML/QuickForm2/Rule/Required.php
+%%WWWDIR%%/libs/MaxMindGeoIP/geoipcity.inc
+%%WWWDIR%%/libs/MaxMindGeoIP/geoipregionvars.php
+%%WWWDIR%%/libs/MaxMindGeoIP/geoip.inc
 %%WWWDIR%%/libs/PEAR.php
 %%WWWDIR%%/libs/PEAR/Exception.php
 %%WWWDIR%%/libs/PEAR/FixPHP5PEARWarnings.php
@@ -994,31 +999,37 @@
 %%WWWDIR%%/libs/tcpdf/unicode_data.php
 %%WWWDIR%%/libs/upgradephp/README
 %%WWWDIR%%/libs/upgradephp/upgrade.php
-%%WWWDIR%%/misc/ExamplePiwikTracker.php
 %%WWWDIR%%/misc/How to install Piwik.html
-%%WWWDIR%%/misc/api_internal_call.php
-%%WWWDIR%%/misc/api_rest_call.php
 %%WWWDIR%%/misc/cron/archive.php
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/archive.windows.ps1
-%%WWWDIR%%/misc/crossdomain.xml
-%%WWWDIR%%/misc/download-count.txt
-%%WWWDIR%%/misc/generateDoc.bat
-%%WWWDIR%%/misc/generateDoc.sh
 %%WWWDIR%%/misc/gpl-3.0.txt
-%%WWWDIR%%/misc/iframeWidget.htm
-%%WWWDIR%%/misc/iframeWidget_localhost.php
 %%WWWDIR%%/misc/log-analytics/README
 %%WWWDIR%%/misc/log-analytics/import_logs.py
-%%WWWDIR%%/misc/phpdoc-config.ini
+%%WWWDIR%%/misc/others/ExamplePiwikTracker.php
+%%WWWDIR%%/misc/others/api_internal_call.php
+%%WWWDIR%%/misc/others/api_rest_call.php
+%%WWWDIR%%/misc/others/crossdomain.xml
+%%WWWDIR%%/misc/others/db-schema-README
+%%WWWDIR%%/misc/others/db-schema.png
+%%WWWDIR%%/misc/others/db-schema.xml
+%%WWWDIR%%/misc/others/diagram_general_request.jpg
+%%WWWDIR%%/misc/others/diagram_general_request.vsd
+%%WWWDIR%%/misc/others/download-count.txt
+%%WWWDIR%%/misc/others/generateDoc.bat
+%%WWWDIR%%/misc/others/generateDoc.sh
+%%WWWDIR%%/misc/others/geoipUpdateRows.php
+%%WWWDIR%%/misc/others/iframeWidget.htm
+%%WWWDIR%%/misc/others/iframeWidget_localhost.php
+%%WWWDIR%%/misc/others/phpdoc-config.ini
+%%WWWDIR%%/misc/others/stress.sh
+%%WWWDIR%%/misc/others/svn-props-to-set-new-files.svnprops
+%%WWWDIR%%/misc/others/test_cookies_GenerateHundredsWebsitesAndVisits.php
+%%WWWDIR%%/misc/others/test_generateLotsVisitsWebsites.php
+%%WWWDIR%%/misc/others/tracker_simpleImageTracker.php
+%%WWWDIR%%/misc/others/uninstall-delete-piwik-directory.php
+%%WWWDIR%%/misc/others/widget_example_lastvisits.html
 %%WWWDIR%%/misc/proxy-hide-piwik-url/piwik.php
-%%WWWDIR%%/misc/stress.sh
-%%WWWDIR%%/misc/svn-props-to-set-new-files.svnprops
-%%WWWDIR%%/misc/test_cookies_GenerateHundredsWebsitesAndVisits.php
-%%WWWDIR%%/misc/test_generateLotsVisitsWebsites.php
-%%WWWDIR%%/misc/tracker_simpleImageTracker.php
-%%WWWDIR%%/misc/uninstall-delete-piwik-directory.php
-%%WWWDIR%%/misc/widget_example_lastvisits.html
 %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
@@ -1027,7 +1038,10 @@
 %%WWWDIR%%/plugins/API/templates/listAllAPI.tpl
 %%WWWDIR%%/plugins/Actions/API.php
 %%WWWDIR%%/plugins/Actions/Actions.php
+%%WWWDIR%%/plugins/Actions/Archiving.php
+%%WWWDIR%%/plugins/Actions/ArchivingHelper.php
 %%WWWDIR%%/plugins/Actions/Controller.php
+%%WWWDIR%%/plugins/Actions/templates/indexSiteSearch.tpl
 %%WWWDIR%%/plugins/AnonymizeIP/AnonymizeIP.php
 %%WWWDIR%%/plugins/CoreAdminHome/API.php
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
@@ -1093,6 +1107,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/menu.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/period_select.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/piwik_tag.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/popover.js
 %%WWWDIR%%/plugins/CoreHome/templates/single_report.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/sites_selection.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline.js
@@ -1284,7 +1299,6 @@
 %%WWWDIR%%/plugins/MultiSites/images/stop.png
 %%WWWDIR%%/plugins/MultiSites/images/arrow_down_green.png
 %%WWWDIR%%/plugins/MultiSites/images/arrow_up_red.png
-%%WWWDIR%%/plugins/MultiSites/templates/standalone.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/common.js
 %%WWWDIR%%/plugins/MultiSites/templates/index.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/row.tpl
@@ -1355,7 +1369,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/holmes.ge.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.search.yahoo.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/images.yandex.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/images.yandex.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/infospace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/iwon.ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ixquick.com.png
@@ -1527,7 +1541,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www3.zoek.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.gif
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/yandex.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/yandex.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/yellowmap.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/zoohoo.cz.png
 %%WWWDIR%%/plugins/Referers/templates/index.tpl
@@ -1581,9 +1595,23 @@
 %%WWWDIR%%/plugins/SitesManager/templates/DisplayJavascriptCode.tpl
 %%WWWDIR%%/plugins/SitesManager/templates/SitesManager.js
 %%WWWDIR%%/plugins/SitesManager/templates/SitesManager.tpl
+%%WWWDIR%%/plugins/Transitions/API.php
+%%WWWDIR%%/plugins/Transitions/Controller.php
+%%WWWDIR%%/plugins/Transitions/Transitions.php
+%%WWWDIR%%/plugins/Transitions/templates/transitions.css
+%%WWWDIR%%/plugins/Transitions/templates/transitions.js
+%%WWWDIR%%/plugins/Transitions/templates/transitions_icon.png
+%%WWWDIR%%/plugins/Transitions/templates/transitions.tpl
+%%WWWDIR%%/plugins/Transitions/templates/transitions_icon_hover.png
 %%WWWDIR%%/plugins/SitesManager/templates/Tracking.tpl
 %%WWWDIR%%/plugins/UserCountry/API.php
 %%WWWDIR%%/plugins/UserCountry/Controller.php
+%%WWWDIR%%/plugins/UserCountry/LocationProvider.php
+%%WWWDIR%%/plugins/UserCountry/LocationProvider/Default.php
+%%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp.php
+%%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp/Pecl.php
+%%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp/Php.php
+%%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp/ServerBased.php
 %%WWWDIR%%/plugins/UserCountry/UserCountry.php
 %%WWWDIR%%/plugins/UserCountry/flags/a1.png
 %%WWWDIR%%/plugins/UserCountry/flags/a2.png
@@ -1860,6 +1888,8 @@
 %%WWWDIR%%/plugins/UserCountry/flags/zr.png
 %%WWWDIR%%/plugins/UserCountry/flags/zw.png
 %%WWWDIR%%/plugins/UserCountry/functions.php
+%%WWWDIR%%/plugins/UserCountry/templates/admin.js
+%%WWWDIR%%/plugins/UserCountry/templates/adminIndex.tpl
 %%WWWDIR%%/plugins/UserCountry/templates/index.tpl
 %%WWWDIR%%/plugins/UserCountryMap/Controller.php
 %%WWWDIR%%/plugins/UserCountryMap/PiwikMap.swf
@@ -2086,6 +2116,7 @@
 %%WWWDIR%%/themes/default/images/plus_blue.png
 %%WWWDIR%%/themes/default/images/refresh.png
 %%WWWDIR%%/themes/default/images/row_evolution.png
+%%WWWDIR%%/themes/default/images/row_evolution_hover.png
 %%WWWDIR%%/themes/default/images/search_bg.png
 %%WWWDIR%%/themes/default/images/search_ico.png
 %%WWWDIR%%/themes/default/images/sites_selection.png
@@ -2137,9 +2168,13 @@
 @dirrm %%WWWDIR%%/plugins/UserSettings
 @dirrm %%WWWDIR%%/plugins/UserCountryMap/templates
 @dirrm %%WWWDIR%%/plugins/UserCountryMap
+@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp
+@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider
 @dirrm %%WWWDIR%%/plugins/UserCountry/templates
 @dirrm %%WWWDIR%%/plugins/UserCountry/flags
 @dirrm %%WWWDIR%%/plugins/UserCountry
+@dirrm %%WWWDIR%%/plugins/Transitions/templates
+@dirrm %%WWWDIR%%/plugins/Transitions
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates
 @dirrm %%WWWDIR%%/plugins/SitesManager
 @dirrm %%WWWDIR%%/plugins/SecurityInfo/templates
@@ -2226,12 +2261,14 @@
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome
 @dirrm %%WWWDIR%%/plugins/AnonymizeIP
+@dirrm %%WWWDIR%%/plugins/Actions/templates
 @dirrm %%WWWDIR%%/plugins/Actions
 @dirrm %%WWWDIR%%/plugins/API/templates
 @dirrm %%WWWDIR%%/plugins/API/css
 @dirrm %%WWWDIR%%/plugins/API
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
+@dirrm %%WWWDIR%%/misc/others
 @dirrm %%WWWDIR%%/misc/log-analytics
 @dirrm %%WWWDIR%%/misc/cron
 @dirrm %%WWWDIR%%/misc
@@ -2390,6 +2427,7 @@
 @dirrm %%WWWDIR%%/libs/PiwikTracker
 @dirrm %%WWWDIR%%/libs/PclZip
 @dirrm %%WWWDIR%%/libs/PEAR
+@dirrm %%WWWDIR%%/libs/MaxMindGeoIP
 @dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Rule
 @dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Renderer
 @dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Element
