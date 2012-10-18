@@ -356,6 +356,7 @@
     SUBDIR += libcddb
     SUBDIR += libcddb-doc
     SUBDIR += libconvolve
+    SUBDIR += libcoverart
     SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
     SUBDIR += libfishsound
