@@ -1,30 +1,24 @@
-# New ports collection makefile for:	aegisub
-# Date created:				2nd March 2010
-# Whom:					Leinier Cruz Salfran <salfrancl@yahoo.es>
-#
+# Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
 # $FreeBSD$
-#    $MCom: ports-stable/multimedia/aegisub/Makefile,v 0.14 2010/03/10 17:02:00 salfrancl Exp $
-#      $Id: Makefile,v 0.14 2010/03/10 17:02:00 salfrancl Exp $
-#
 
 PORTNAME=	aegisub
 PORTVERSION=	2.1.9
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ftp.aegisub.org/pub/releases/ \
-		http://ftp2.aegisub.org/pub/releases/ \
-		ftp://ftp.aegisub.org/pub/releases/ \
-		ftp://ftp2.aegisub.org/pub/releases/ \
+MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
+		ftp://ftp.aegisub.org/pub/archives/releases/srouce/ \
+		ftp://ftp2.aegisub.org/pub/archives/releases/source/ \
 		GOOGLE_CODE:ffms
+PROJECTHOST=	ffmpegsource
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FFMS_DISTFILE}:ffms
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cross-platform subtitle editor
+COMMENT=	Cross-platform subtitle editor
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	DEBUG PROFILE GCOV EFENCE ASS ALSA OPENAL PORTAUDIO PULSEAUDIO \
 		FFMPEG HUNSPELL LUA DOCS
@@ -55,7 +49,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PROJECTHOST=	ffmpegsource
 FFMS_NAME=	ffms
 FFMS_VERSION=	2.17
 FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}-src
@@ -78,7 +71,7 @@ WITH_PROFILE=	yes
 .endif
 
 .if ${PORT_OPTIONS:MEFENCE}
-LIB_DEPENDS+=	efence.0:${PORTSDIR}/devel/ElectricFence
+LIB_DEPENDS+=	efence:${PORTSDIR}/devel/ElectricFence
 CONFIGURE_ARGS+=	--enable-efence
 WITH_PROFILE=	yes
 .endif
@@ -88,13 +81,13 @@ CONFIGURE_ARGS+=	--enable-profile
 .endif
 
 .if ${PORT_OPTIONS:MASS}
-LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
+LIB_DEPENDS+=	ass:${PORTSDIR}/multimedia/libass
 .else
 CONFIGURE_ARGS+=	--without-libass
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--without-alsa
 .endif
@@ -116,13 +109,13 @@ CONFIGURE_ARGS+=	--without-portaudio
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ENV+=	FFMS_CFLAGS="${FFMS_CFLAGS}" FFMS_LIBS="${FFMS_LIBS}"
 CONFIGURE_ARGS+=	--with-provider-video=ffmpegsource \
 			--with-provider-audio=ffmpegsource
@@ -132,7 +125,7 @@ CONFIGURE_ARGS+=	--without-ffms
 .endif
 
 .if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS+=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
 .else
 CONFIGURE_ARGS+=	--without-hunspell
 .endif
