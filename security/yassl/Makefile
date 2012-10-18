@@ -5,7 +5,7 @@ PORTVERSION=	1.6.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A embedded SSL C-Library
 
 LICENSE=	GPLv2
