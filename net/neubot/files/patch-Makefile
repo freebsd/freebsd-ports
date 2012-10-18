@@ -1,0 +1,20 @@
+--- Makefile.orig	2012-10-10 23:19:06.000000000 +0200
++++ Makefile	2012-10-18 16:04:49.000000000 +0200
+@@ -143,7 +143,6 @@
+ LOCALSTATEDIR ?= $(PREFIX)/var
+ MANDIR ?= $(PREFIX)/share/man
+ SYSCONFDIR ?= $(PREFIX)/etc
+-USER ?= '_neubot'
+ 
+ _install:
+ 	find . -type f -name .DS_Store -exec rm {} \;
+@@ -191,8 +190,7 @@
+ 	$(INSTALL) -d $(DESTDIR)$(LOCALSTATEDIR)/neubot
+ 	for PATTERN in 's|@BINDIR@|$(BINDIR)|g' 's|@DATADIR@|$(DATADIR)|g' \
+ 	        's|@LOCALSTATEDIR@|$(LOCALSTATEDIR)|g' \
+-	        's|@SYSCONFDIR@|$(SYSCONFDIR)|g' \
+-	        's|@USER@|$(USER)|g'; do \
++	        's|@SYSCONFDIR@|$(SYSCONFDIR)|g'; do \
+ 	    ./scripts/sed_inplace $$PATTERN \
+ 	        $(DESTDIR)$(BINDIR)/neubot \
+ 	        $(DESTDIR)$(DATADIR)/applications/neubot.desktop \
