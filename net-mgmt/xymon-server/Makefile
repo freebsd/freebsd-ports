@@ -8,7 +8,7 @@ MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for monitoring servers and networks
 
 LICENSE=	GPLv2
