@@ -1,9 +1,4 @@
-## ports collection makefile for:	gnuradio
-# Date created:		2 January 2006
-# Whom:			db
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.2.2
@@ -62,7 +57,7 @@ CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
-AUTOTOOLSFILES=	aclocal.m4
+AUTOTOOLSFILES=	${ACLOCAL}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
