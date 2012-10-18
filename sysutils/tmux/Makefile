@@ -3,6 +3,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,6 +34,8 @@ BACKSPACE_DESC=	Build with tty/keys patch
 
 .if ${PORT_OPTIONS:MLIBEVENT2}
 LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include/event2/compat" \
+		LIBEVENT_LIBS="-L${LOCALBASE}/lib/event2 -levent"
 . if ${PORT_OPTIONS:MLIBEVENT_STATIC}
 LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
 . endif
