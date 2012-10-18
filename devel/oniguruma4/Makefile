@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oniguruma4
-# Date created:		31 January 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oniguruma
 PORTVERSION=	4.7.1
@@ -12,7 +8,7 @@ MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 DISTNAME=	onig-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 NO_LATEST_LINK=	yes
