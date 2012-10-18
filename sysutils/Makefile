@@ -726,6 +726,7 @@
     SUBDIR += py-bcfg2
     SUBDIR += py-danzfs
     SUBDIR += py-drmaa
+    SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-glances
     SUBDIR += py-iowait
