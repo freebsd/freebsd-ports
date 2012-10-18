@@ -1,12 +1,8 @@
-# New ports collection makefile for:	php-yaf
-# Date created:		13 May 2011
-# Whom:			johnpupu <johnpupu@gmail.com>
-#
+# Created by: johnpupu <johnpupu@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	yaf
-PORTVERSION=	2.1.17
+PORTVERSION=	2.1.18
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Yaf is a php framework, the difference is yaf is a PHP Extension
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config
