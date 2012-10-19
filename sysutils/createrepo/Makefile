@@ -1,7 +1,4 @@
-# New ports collection makefile for:	yum
-# Date created:		22 August 2010
-# Whom:			Anders F Bjorklund <afb@rpm5.org>
-#
+# Created by: Anders F Bjorklund <afb@rpm5.org>
 # $FreeBSD$
 
 PORTNAME=	createrepo
@@ -13,7 +10,10 @@ MAINTAINER=	afb@rpm5.org
 COMMENT=	Creates a common metadata repository
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metadata-parser \
-		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/rpm/__init__.py:${PORTSDIR}/archivers/rpm5 \
+		${PYTHON_SITELIBDIR}/urlgrabber/__init__.py:${PORTSDIR}/www/py-urlgrabber \
+		${PYTHON_SITELIBDIR}/yum/__init__.py:${PORTSDIR}/sysutils/yum
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
@@ -32,7 +32,7 @@ post-patch:
 		${WRKSRC}/bin/mergerepo \
 		${WRKSRC}/bin/modifyrepo \
 		${WRKSRC}/bin/createrepo
-	${REINPLACE_CMD} -e 's|#!/usr/bin/|#!${PYTHON_CMD}|' \
+	${REINPLACE_CMD} -e 's|#!/usr/bin/python -t|#!${PYTHON_CMD}|' \
 		${WRKSRC}/genpkgmetadata.py \
 		${WRKSRC}/dmd.py \
 		${WRKSRC}/mergerepo.py \
