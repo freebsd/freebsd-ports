@@ -1,15 +1,12 @@
-# New ports collection makefile for:	jakarta-tomcat-devel
-# Date created:		Tue Aug 12 23:26:32 CST 2003
-# Whom:			Kang Liu <liukang@bjpu.edu.cn>
+# Created by:	Kang Liu <liukang@bjpu.edu.cn>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	tomcat
-PORTVERSION=	5.5.35
-PORTREVISION=	2
+PORTVERSION=	5.5.36
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	${MASTER_SITE_APACHE} \
+	LOCAL/jgh
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
 DISTNAME=	apache-tomcat-${PORTVERSION}
 
