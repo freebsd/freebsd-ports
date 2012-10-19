@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	0.99
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Create machine readable date/time with natural parsing logic
 
 BUILD_DEPENDS=	p5-boolean>=0:${PORTSDIR}/devel/p5-boolean \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
@@ -27,6 +28,7 @@ MAN3=		DateTime::Format::Natural.3 \
 		DateTime::Format::Natural::Calc.3 \
 		DateTime::Format::Natural::Compat.3 \
 		DateTime::Format::Natural::Duration.3 \
+		DateTime::Format::Natural::Expand.3 \
 		DateTime::Format::Natural::Extract.3 \
 		DateTime::Format::Natural::Formatted.3 \
 		DateTime::Format::Natural::Helpers.3 \
@@ -36,5 +38,8 @@ MAN3=		DateTime::Format::Natural.3 \
 		DateTime::Format::Natural::Test.3 \
 		DateTime::Format::Natural::Utils.3 \
 		DateTime::Format::Natural::Wrappers.3
+
+regression-test: build
+	@cd ${WRKSRC} && ./Build test
 
 .include <bsd.port.mk>

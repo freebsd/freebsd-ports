@@ -1,7 +1,9 @@
+bin/dateparse
 %%SITE_PERL%%/DateTime/Format/Natural.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Calc.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Compat.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Duration.pm
+%%SITE_PERL%%/DateTime/Format/Natural/Expand.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Extract.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Formatted.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Helpers.pm
@@ -12,7 +14,6 @@
 %%SITE_PERL%%/DateTime/Format/Natural/Utils.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Wrappers.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Duration/Checks.pm
-bin/dateparse
 @dirrmtry %%SITE_PERL%%/DateTime/Format/Natural/Duration
 @dirrmtry %%SITE_PERL%%/DateTime/Format/Natural/Lang
 @dirrmtry %%SITE_PERL%%/DateTime/Format/Natural
