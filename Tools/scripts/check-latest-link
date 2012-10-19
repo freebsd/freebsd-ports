@@ -25,7 +25,6 @@ CATEGORIES=$(make -V SUBDIR)
 for cat in ${CATEGORIES}; do
 	cd ${PORTSDIR}/${cat}
 	dirs=$(make -V SUBDIR)
-	echo "==> ${cat}" 1>&2
 
 	make "PORTSDIR=${PORTSDIR}" "CATEGORY=${cat}" "DIRS=${dirs}" -k -j3 -f - << "EOF"
 all:	${DIRS:S/$/.portinfo/}
@@ -55,7 +54,9 @@ maint=$(awk '{print $2}' < .latest_full | sort -ui | tr '\n' ',')
   echo
   echo
   echo "Thanks,"
-  echo "Kris \"Annoying Reminder Guy II\" Kennaway"
+  echo "Erwin \"Annoying Reminder Guy III\" Lansing"
+  echo
+  echo
 
   printf "%-20s %-30s %-20s\n"  "LATEST_LINK" "PORTNAME" "MAINTAINER"
   echo "=========================================================================="
@@ -71,6 +72,8 @@ if [ "${NOMAIL}" = "0" ]; then
   for i in ${maint}; do
     mail -s "Ports with duplicate LATEST_LINKs" $i < .latest_mail
   done
+  # Copy to erwin@
+  mail -s "Ports with duplicate LATEST_LINKs" erwin@FreeBSD.org < .latest_mail
 else
   cat .latest_mail
 fi
