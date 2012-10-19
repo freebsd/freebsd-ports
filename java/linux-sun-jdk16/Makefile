@@ -1,13 +1,7 @@
-# New ports collection makefile for:	Sun Linux JDK 1.6.x
-# Date created:				3 January 2007
-# Whom:					Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${DL_JDK_VERSION:S/_/./g}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -34,7 +28,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JDK_VERSION=	1.6.0
-JDK_REVISION=	35
+JDK_REVISION=	37
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
