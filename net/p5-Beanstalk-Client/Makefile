@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Beanstalk-Client
-# Date created:		2009-11-12
-# Whom:			Vsevolod Stakhov <vsevolod@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Beanstalk-Client
 PORTVERSION=	1.06
@@ -18,6 +13,7 @@ COMMENT=	Perl API for beanstalkd, a distributed queue daemon
 BUILD_DEPENDS=	p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
 				p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 				p5-Error>=0:${PORTSDIR}/lang/p5-Error
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
