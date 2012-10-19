@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b26
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -40,8 +40,10 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 OPENJDK_BUILDDATE=	21_sep_2012
 
+EXTRA_PATCHES=	${FILESDIR}/icedtea/security/*.patch
+
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
-OPTIONS_DEFAULT=ICEDTEA TZUPDATE
+OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
 ICEDTEA_DESC=	Apply additional patches from IcedTea
 POLICY_DESC=	Install the Unlimited Strength Policy Files
 SOUND_DESC=	Enable sound support
@@ -62,7 +64,6 @@ WRKSRC=		${WRKDIR}
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	x11 xext xi xt xtst
-MAKE_JOBS_UNSAFE=	yes
 
 JAXP_BUILD=	144_04
 JAXPFILE=	jaxp${JAXP_BUILD}.zip
@@ -143,6 +144,16 @@ MAKE_ENV+=	CCC="${CXX}" GCC="${CC}"
 # XXX Turn off -Werror from HotSpot.
 MAKE_ENV+=	WARNINGS_ARE_ERRORS="${WARNINGS_ARE_ERRORS}"
 
+# XXX Turn off parallel build by default.
+.if defined(DISABLE_MAKE_JOBS) || !defined(FORCE_MAKE_JOBS)
+BUILD_JOBS_NUMBER=	1
+.elif defined(FORCE_MAKE_JOBS)
+BUILD_JOBS_NUMBER=	${MAKE_JOBS_NUMBER}
+.endif
+_MAKE_JOBS=	#
+MAKE_ENV+=	ALT_PARALLEL_COMPILE_JOBS=${BUILD_JOBS_NUMBER} \
+		HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
+
 .if ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
@@ -181,15 +192,6 @@ DISTFILES+=	${JTREGFILE}:jtreg
 EXTRACT_ONLY+=	${JTREGFILE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 USE_DISPLAY=	yes
-.endif
-
-.if !defined(DISABLE_MAKE_JOBS)
-.if defined(MAKE_JOBS_NUMBER)
-BUILD_JOBS_NUMBER=	${MAKE_JOBS_NUMBER}
-.else
-BUILD_JOBS_NUMBER=	`${SYSCTL} -n kern.smp.cpus`
-.endif
-MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 .endif
 
 COPYDIRS=	\

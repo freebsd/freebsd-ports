@@ -1,0 +1,29 @@
+# HG changeset patch
+# User andrew
+# Date 1349974205 -3600
+# Node ID 6a383aef225ab7bb99b723bbb29786e29747a4f0
+# Parent  d77bc9151c1dea1a4a396fb59d58ba7c8d77fd88
+7195194: Better data validation for Swing
+Reviewed-by: art, ahgross
+
+diff --git a/src/share/classes/javax/swing/text/DefaultFormatter.java b/src/share/classes/javax/swing/text/DefaultFormatter.java
+--- jdk/src/share/classes/javax/swing/text/DefaultFormatter.java
++++ jdk/src/share/classes/javax/swing/text/DefaultFormatter.java
+@@ -24,6 +24,8 @@
+  */
+ package javax.swing.text;
+ 
++import sun.reflect.misc.ConstructorUtil;
++
+ import java.io.Serializable;
+ import java.lang.reflect.*;
+ import java.text.ParseException;
+@@ -245,7 +247,7 @@
+             Constructor cons;
+ 
+             try {
+-                cons = vc.getConstructor(new Class[] { String.class });
++                cons = ConstructorUtil.getConstructor(vc, new Class[]{String.class});
+ 
+             } catch (NoSuchMethodException nsme) {
+                 cons = null;

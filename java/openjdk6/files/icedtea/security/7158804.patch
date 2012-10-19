@@ -1,0 +1,28 @@
+# HG changeset patch
+# User dbuck
+# Date 1342799006 25200
+# Node ID fde4cc8479824449b03abedd5357500aec92e990
+# Parent  f7493d50b47d3946902e18153bcd912e37589d00
+7158804: Improve config file parsing
+Summary: see bugdb 13784108 for details
+Reviewed-by: vikram, kamg
+
+diff --git a/src/share/vm/runtime/arguments.cpp b/src/share/vm/runtime/arguments.cpp
+--- hotspot/src/share/vm/runtime/arguments.cpp
++++ hotspot/src/share/vm/runtime/arguments.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -842,7 +842,7 @@
+   bool result         = true;
+ 
+   int c = getc(stream);
+-  while(c != EOF) {
++  while(c != EOF && pos < (int)(sizeof(token)-1)) {
+     if (in_white_space) {
+       if (in_comment) {
+         if (c == '\n') in_comment = false;

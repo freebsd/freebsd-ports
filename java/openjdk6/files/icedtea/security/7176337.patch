@@ -1,0 +1,29 @@
+# HG changeset patch
+# User asaha
+# Date 1340145914 25200
+# Node ID a148157cd348fe4c251063db7d3973a83cfcf483
+# Parent  fde4cc8479824449b03abedd5357500aec92e990
+7176337: Additional changes needed for 7158801 fix
+Reviewed-by: kvn
+
+diff --git a/src/share/vm/compiler/compilerOracle.cpp b/src/share/vm/compiler/compilerOracle.cpp
+--- hotspot/src/share/vm/compiler/compilerOracle.cpp
++++ hotspot/src/share/vm/compiler/compilerOracle.cpp
+@@ -573,7 +573,7 @@
+   char token[1024];
+   int  pos = 0;
+   int  c = getc(stream);
+-  while(c != EOF && pos < (sizeof(token)-1)) {
++  while(c != EOF && pos < (int)(sizeof(token)-1)) {
+     if (c == '\n') {
+       token[pos++] = '\0';
+       parse_from_line(token);
+@@ -594,7 +594,7 @@
+   int  pos = 0;
+   const char* sp = str;
+   int  c = *sp++;
+-  while (c != '\0' && pos < (sizeof(token)-1)) {
++  while (c != '\0' && pos < (int)(sizeof(token)-1)) {
+     if (c == '\n') {
+       token[pos++] = '\0';
+       parse_line(token);

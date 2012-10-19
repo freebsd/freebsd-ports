@@ -1,0 +1,30 @@
+# HG changeset patch
+# User kvn
+# Date 1337800285 25200
+# Node ID f7493d50b47d3946902e18153bcd912e37589d00
+# Parent  2faa3f7bad65189e69ab2f9a491743786bb8f07f
+7158801: Improve VM CompileOnly option
+Summary: Fixed buffer overflow during parsing flags -XX:CompileCommand=, -XX:CompileOnly= and command lines in .hotspot_compiler file.
+Reviewed-by: never
+
+diff --git a/src/share/vm/compiler/compilerOracle.cpp b/src/share/vm/compiler/compilerOracle.cpp
+--- hotspot/src/share/vm/compiler/compilerOracle.cpp
++++ hotspot/src/share/vm/compiler/compilerOracle.cpp
+@@ -573,7 +573,7 @@
+   char token[1024];
+   int  pos = 0;
+   int  c = getc(stream);
+-  while(c != EOF) {
++  while(c != EOF && pos < (sizeof(token)-1)) {
+     if (c == '\n') {
+       token[pos++] = '\0';
+       parse_from_line(token);
+@@ -594,7 +594,7 @@
+   int  pos = 0;
+   const char* sp = str;
+   int  c = *sp++;
+-  while (c != '\0') {
++  while (c != '\0' && pos < (sizeof(token)-1)) {
+     if (c == '\n') {
+       token[pos++] = '\0';
+       parse_line(token);

@@ -1,0 +1,28 @@
+# HG changeset patch
+# User coffeys
+# Date 1340913225 -3600
+# Node ID e7334bb16ad694bed492da52e5713c8391e79ce8
+# Parent  0fdc422fba9b63be684f1229af75f0c1f3ceec87
+7093490: adjust package access in rmiregistry
+Reviewed-by: smarks
+
+diff --git a/src/share/classes/sun/rmi/registry/RegistryImpl.java b/src/share/classes/sun/rmi/registry/RegistryImpl.java
+--- jdk/src/share/classes/sun/rmi/registry/RegistryImpl.java
++++ jdk/src/share/classes/sun/rmi/registry/RegistryImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -405,7 +405,8 @@
+          */
+         perms.add(new SocketPermission("*", "connect,accept"));
+ 
+-        perms.add(new RuntimePermission("accessClassInPackage.sun.*"));
++        perms.add(new RuntimePermission("accessClassInPackage.sun.jvmstat.*"));
++        perms.add(new RuntimePermission("accessClassInPackage.sun.jvm.hotspot.*"));
+ 
+         perms.add(new FilePermission("<<ALL FILES>>", "read"));
+ 

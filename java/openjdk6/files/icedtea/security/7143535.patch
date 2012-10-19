@@ -1,0 +1,31 @@
+# HG changeset patch
+# User sundar
+# Date 1345469787 -14400
+# Node ID 1e170e3c1b682d0f98a61a47e5049535c5bd4999
+# Parent  e7334bb16ad694bed492da52e5713c8391e79ce8
+7143535: ScriptEngine corrected permissions
+Reviewed-by: mschoene
+
+diff --git a/src/share/classes/com/sun/script/javascript/RhinoScriptEngine.java b/src/share/classes/com/sun/script/javascript/RhinoScriptEngine.java
+--- jdk/src/share/classes/com/sun/script/javascript/RhinoScriptEngine.java
++++ jdk/src/share/classes/com/sun/script/javascript/RhinoScriptEngine.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2005, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -130,7 +130,11 @@
+     public RhinoScriptEngine() {
+ 
+         if (System.getSecurityManager() != null) {
+-            accCtxt = AccessController.getContext();
++            try {
++                AccessController.checkPermission(new AllPermission());
++            } catch (AccessControlException ace) {
++                accCtxt = AccessController.getContext();
++            }
+         }
+ 
+         Context cx = enterContext();

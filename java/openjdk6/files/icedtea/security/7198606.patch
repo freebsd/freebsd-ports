@@ -1,0 +1,28 @@
+# HG changeset patch
+# User andrew
+# Date 1349974451 -3600
+# Node ID 8319efc7c840d099832e06db7a50dcfb95bfd4aa
+# Parent  a148157cd348fe4c251063db7d3973a83cfcf483
+7198606: Improve VM optimization
+Reviewed-by: roland, twisti
+
+diff --git a/src/share/vm/opto/loopTransform.cpp b/src/share/vm/opto/loopTransform.cpp
+--- hotspot/src/share/vm/opto/loopTransform.cpp
++++ hotspot/src/share/vm/opto/loopTransform.cpp
+@@ -2721,6 +2721,8 @@
+   result_mem = new (C, 1) ProjNode(call,TypeFunc::Memory);
+   _igvn.register_new_node_with_optimizer(result_mem);
+ 
++/* Disable following optimization until proper fix (add missing checks).
++
+   // If this fill is tightly coupled to an allocation and overwrites
+   // the whole body, allow it to take over the zeroing.
+   AllocateNode* alloc = AllocateNode::Ideal_allocation(base, this);
+@@ -2744,6 +2746,7 @@
+ #endif
+     }
+   }
++*/
+ 
+   // Redirect the old control and memory edges that are outside the loop.
+   Node* exit = head->loopexit()->proj_out(0);
