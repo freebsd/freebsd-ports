@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mosh
-# Date created:				10 Apr 2012
-# Whom:					Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mosh
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -22,7 +18,10 @@ RUN_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-utempter
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 INSTALL_TARGET=	install-strip
+USE_OPENSSL=	yes
+USE_PKGCONFIG=	build
 
 LATEST_LINK=	mosh-term
 
