@@ -1,0 +1,39 @@
+# HG changeset patch
+# User coffeys
+# Date 1345121690 -3600
+# Node ID b6a7a661db8a2141ebb2e79ba5739722d1be7bfd
+# Parent  a6294da5a21f609b67a0d4d216028dda9f56e689
+7189103: Executors needs to maintain state
+Reviewed-by: chegar
+
+diff --git a/src/share/classes/java/util/concurrent/Executors.java b/src/share/classes/java/util/concurrent/Executors.java
+--- jdk/src/share/classes/java/util/concurrent/Executors.java
++++ jdk/src/share/classes/java/util/concurrent/Executors.java
+@@ -530,18 +530,17 @@
+                 return AccessController.doPrivileged(
+                     new PrivilegedExceptionAction<T>() {
+                         public T run() throws Exception {
+-                            ClassLoader savedcl = null;
+                             Thread t = Thread.currentThread();
+-                            try {
+-                                ClassLoader cl = t.getContextClassLoader();
+-                                if (ccl != cl) {
+-                                    t.setContextClassLoader(ccl);
+-                                    savedcl = cl;
++                            ClassLoader cl = t.getContextClassLoader();
++                            if (ccl == cl) {
++                                return task.call();
++                            } else {
++                                t.setContextClassLoader(ccl);
++                                try {
++                                    return task.call();
++                                } finally {
++                                    t.setContextClassLoader(cl);
+                                 }
+-                                return task.call();
+-                            } finally {
+-                                if (savedcl != null)
+-                                    t.setContextClassLoader(savedcl);
+                             }
+                         }
+                     }, acc);

@@ -1,0 +1,20 @@
+# HG changeset patch
+# User weijun
+# Date 1339724916 -28800
+# Node ID 0fdc422fba9b63be684f1229af75f0c1f3ceec87
+# Parent  f09937f0b2e32aa60a2cdd23f03a7e2d45091b60
+6631398: FilePermission improved path checking
+Reviewed-by: mullan, skoivu, jdn
+
+diff --git a/src/share/classes/java/io/FilePermission.java b/src/share/classes/java/io/FilePermission.java
+--- jdk/src/share/classes/java/io/FilePermission.java
++++ jdk/src/share/classes/java/io/FilePermission.java
+@@ -399,7 +399,7 @@
+      */
+ 
+     public int hashCode() {
+-        return this.cpath.hashCode();
++        return 0;
+     }
+ 
+     /**

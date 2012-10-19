@@ -1,0 +1,75 @@
+# HG changeset patch
+# User coffeys
+# Date 1340139680 -3600
+# Node ID d04575148db287475168da344159e583f7bff02c
+# Parent  1e170e3c1b682d0f98a61a47e5049535c5bd4999
+7167656: Multiple Seeders are being created
+Reviewed-by: wetmore
+
+diff --git a/src/share/classes/sun/security/provider/SecureRandom.java b/src/share/classes/sun/security/provider/SecureRandom.java
+--- jdk/src/share/classes/sun/security/provider/SecureRandom.java
++++ jdk/src/share/classes/sun/security/provider/SecureRandom.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -56,12 +56,6 @@
+ 
+     private static final long serialVersionUID = 3581829991155417889L;
+ 
+-    /**
+-     * This static object will be seeded by SeedGenerator, and used
+-     * to seed future instances of SecureRandom
+-     */
+-    private static SecureRandom seeder;
+-
+     private static final int DIGEST_SIZE = 20;
+     private transient MessageDigest digest;
+     private byte[] state;
+@@ -173,6 +167,28 @@
+     }
+ 
+     /**
++     * This static object will be seeded by SeedGenerator, and used
++     * to seed future instances of SHA1PRNG SecureRandoms.
++     *
++     * Bloch, Effective Java Second Edition: Item 71
++     */
++    private static class SeederHolder {
++
++        private static final SecureRandom seeder;
++
++        static {
++            /*
++             * Call to SeedGenerator.generateSeed() to add additional
++             * seed material (likely from the Native implementation).
++             */
++            seeder = new SecureRandom(SeedGenerator.getSystemEntropy());
++            byte [] b = new byte[DIGEST_SIZE];
++            SeedGenerator.generateSeed(b);
++            seeder.engineSetSeed(b);
++        }
++    }
++
++    /**
+      * Generates a user-specified number of random bytes.
+      *
+      * @param bytes the array to be filled in with random bytes.
+@@ -183,13 +199,8 @@
+         byte[] output = remainder;
+ 
+         if (state == null) {
+-            if (seeder == null) {
+-                seeder = new SecureRandom(SeedGenerator.getSystemEntropy());
+-                seeder.engineSetSeed(engineGenerateSeed(DIGEST_SIZE));
+-            }
+-
+             byte[] seed = new byte[DIGEST_SIZE];
+-            seeder.engineNextBytes(seed);
++            SeederHolder.seeder.engineNextBytes(seed);
+             state = digest.digest(seed);
+         }
+ 
