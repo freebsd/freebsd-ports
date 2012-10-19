@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bind99
-PORTVERSION=	9.9.1.4
+PORTVERSION=	9.9.2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -13,7 +13,7 @@ MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.1-P4
+ISCVERSION=	9.9.2
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -173,6 +173,7 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 MAN5=	named.conf.5 rndc.conf.5
 MAN8=	ddns-confgen.8 dnssec-dsfromkey.8 dnssec-keyfromlabel.8 \
 	dnssec-keygen.8 dnssec-revoke.8 dnssec-settime.8 dnssec-signzone.8 \
+	dnssec-verify.8 \
 	genrandom.8 isc-hmac-fixup.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named-journalprint.8 named.8 nsec3hash.8 \
 	rndc-confgen.8 rndc.8
