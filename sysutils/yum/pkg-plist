@@ -137,6 +137,15 @@ etc/yum/yum-updatesd.conf.sample
 @dirrm %%PYTHON_SITELIBDIR%%/rpmUtils
 @dirrm %%PYTHON_SITELIBDIR%%/yum
 @dirrmtry etc/logrotate.d
+@dirrmtry etc/rc.d/init.d
+@dirrmtry share/locale/id_ID/LC_MESSAGES
+@dirrmtry share/locale/id_ID
+@dirrmtry share/locale/lt_LT/LC_MESSAGES
+@dirrmtry share/locale/lt_LT
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry etc/dbus-1/system.d
+@dirrmtry etc/dbus-1
 
 @unexec if cmp -s %D/etc/yum/yum.conf.sample %D/etc/yum/yum.conf; then rm -f %D/etc/yum/yum.conf; fi
 @exec if [ ! -f %D/etc/yum/yum.conf ]; then cp -p %D/%F %B/yum.conf; fi
