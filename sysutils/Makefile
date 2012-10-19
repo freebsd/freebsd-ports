@@ -1058,6 +1058,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yawho
+    SUBDIR += yum
     SUBDIR += zeitgeist
     SUBDIR += zeroer
     SUBDIR += zetaback
