@@ -1168,6 +1168,7 @@
 %%T%%/jre/lib/security/cacerts
 %%T%%/jre/lib/security/java.policy
 %%T%%/jre/lib/security/java.security
+%%T%%/jre/lib/security/javafx.policy
 %%T%%/jre/lib/security/javaws.policy
 %%T%%/jre/lib/security/local_policy.jar
 %%T%%/jre/lib/security/trusted.libraries
