@@ -12,8 +12,11 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://msn.CompuCreations.com/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jimromse@eupmt.es
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Tcl/Tk-based MSN messenger
+
+DEPRECATE=	The project no longer exists
+EXPIRATION_DATE=2012-11-19
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
