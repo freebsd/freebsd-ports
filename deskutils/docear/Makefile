@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	docear
-PORTVERSION=	1.0.0.b04
+PORTVERSION=	1.0.0.b06
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
 DISTNAME=	docear_linux
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference, Library, and PDF Management
@@ -27,7 +28,7 @@ NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
 icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-WRKSRC=		${WRKDIR}/docear-1.0.0.4_beta_build90
+WRKSRC=		${WRKDIR}/docear-1.0.0.6_beta_build123
 SUB_FILES=	docear.desktop
 
 post-patch:
