@@ -19,6 +19,9 @@ DISTNAME=	qutim-icq_${PORTVERSION}_svn136
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	ICQ protocol plugin for qutIM
 
+DEPRECATED=	It is not needed for new QutIM
+EXPIRATION_DATE=2012-11-19
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 

@@ -19,6 +19,9 @@ DISTNAME=	qutim-jabber_${PORTVERSION}_svn431
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Jabber protocol plugin for qutIM
 
+DEPRECATED=	It is not needed for new QutIM
+EXPIRATION_DATE=2012-11-19
+
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
