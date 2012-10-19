@@ -1,13 +1,8 @@
-# New ports collection makefile for:	Sun Linux JDK 1.7.x
-# Date created:				30 January 2012
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by:	Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -18,7 +13,8 @@ COMMENT=	Oracle Java 7 Development Kit for Linux
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-OPTIONS=	DEMO "Install demos and samples" off
+OPTIONS_DEFINE=	DEMO
+DEMO_DESC=	Install demos and samples
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
@@ -35,7 +31,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VERSION=		7
 JDK_INTERNAL_VERSION=	1.7.0
-JDK_UPDATE_VERSION=	7
+JDK_UPDATE_VERSION=	9
 DL_JDK_VERSION=		${JDK_INTERNAL_VERSION}_0${JDK_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
@@ -49,13 +45,15 @@ BIN_DIRS=	bin jre/bin
 IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
-.if defined(WITH_DEMO)
-#DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
-DEMO_UPDATE_VERSION=	6
-#DEMO_DISTNAME=	${DISTNAME}-demos
-DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
-#DEMO_WRKSRC=	${WRKSRC}
-DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_0${DEMO_UPDATE_VERSION}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEMO}
+DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
+#DEMO_UPDATE_VERSION=	6
+DEMO_DISTNAME=	${DISTNAME}-demos
+#DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
+DEMO_WRKSRC=	${WRKSRC}
+#DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_0${DEMO_UPDATE_VERSION}
 .if !exists(${DISTDIR}/${DEMO_DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
@@ -68,7 +66,7 @@ PLIST_SUB+=	DEMO="@comment "
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
 
-.if defined(WITH_DEMO) && ${DEMO_WRKSRC} != ${WRKSRC}
+.if ${PORT_OPTIONS:MDEMO} && ${DEMO_WRKSRC} != ${WRKSRC}
 post-extract:
 	@${MV} ${DEMO_WRKSRC}/demo ${WRKSRC}/
 	@${MV} ${DEMO_WRKSRC}/sample ${WRKSRC}/
