@@ -169,6 +169,7 @@
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-pydicom
+    SUBDIR += py-scikit-learn
     SUBDIR += py-scimath
     SUBDIR += py-scipy
     SUBDIR += py-ws2300
