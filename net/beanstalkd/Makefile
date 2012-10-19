@@ -1,12 +1,7 @@
-# New ports collection makefile for:	beanstalkd
-# Date created:							Apr 11, 2008
-# Whom:									Vsevolod Stakhov <vsevolod@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/kr/beanstalkd/
 
@@ -14,7 +9,6 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RC_SUBR=	beanstalkd
 USE_GMAKE=	yes
@@ -38,5 +32,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
+
+test: configure
+	@cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} check
+
+regression-test: test
 
 .include <bsd.port.mk>
