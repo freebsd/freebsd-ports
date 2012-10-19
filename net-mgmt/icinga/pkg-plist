@@ -1,21 +1,15 @@
-@exec chmod 775 %%ICINGADIR%% %%ICINGALOGDIR%%/archives %%ICINGADIR%%/checkresults %%ICINGADIR%%/rw
-@exec chmod g+s %%ICINGADIR%%/rw
-@exec chown %%ICINGAUSER%%:%%ICINGAGROUP%% %%ICINGADIR%% %%ICINGALOGDIR%%/archives %%ICINGADIR%%/checkresults
-@exec chown %%ICINGAUSER%%:%%WWWGRP%% %%ICINGADIR%%/rw
-@exec mkdir -p %%ICINGADIR%%/archives
-@exec mkdir -p %%ICINGADIR%%/checkresults
-@exec mkdir -p %%ICINGADIR%%/rw
-@exec mkdir -p %D/%%ICINGAWWWDIR%%/ssi
 bin/icinga
 bin/icingastats
 %%IDOUTILS%%bin/ido2db
 %%IDOUTILS%%bin/log2ido
-%%IDOUTILS%%lib/idomod.so
-%%IDOUTILS%%etc/icinga/ido2db.cfg-sample
-%%IDOUTILS%%etc/icinga/idomod.cfg-sample
+%%EMBEDDED_PERL%%bin/p1.pl
 etc/icinga/cgi.cfg-sample
 etc/icinga/cgiauth.cfg-sample
 etc/icinga/icinga.cfg-sample
+%%IDOUTILS%%etc/icinga/ido2db.cfg-sample
+%%IDOUTILS%%etc/icinga/idomod.cfg-sample
+%%IDOUTILS%%etc/icinga/modules/idoutils.cfg-sample
+%%IDOUTILS%%etc/icinga/objects/ido2db_check_proc.cfg
 etc/icinga/objects/commands.cfg-sample
 etc/icinga/objects/contacts.cfg-sample
 etc/icinga/objects/localhost.cfg-sample
@@ -25,20 +19,17 @@ etc/icinga/objects/switch.cfg-sample
 etc/icinga/objects/templates.cfg-sample
 etc/icinga/objects/timeperiods.cfg-sample
 etc/icinga/objects/windows.cfg-sample
-%%IDOUTILS%%etc/icinga/objects/ido2db_check_proc.cfg
-%%IDOUTILS%%etc/icinga/modules/idoutils.cfg-sample
 etc/icinga/resource.cfg-sample
-%%APACHE%%%%APACHEETCDIR%%/extra/icinga.conf
-%%EMBEDDED_PERL%%bin/p1.pl
+%%IDOUTILS%%lib/idomod.so
+libexec/icinga/eventhandlers/disable_active_service_checks
+libexec/icinga/eventhandlers/disable_notifications
 libexec/icinga/eventhandlers/distributed-monitoring/obsessive_svc_handler
 libexec/icinga/eventhandlers/distributed-monitoring/submit_check_result_via_nsca
+libexec/icinga/eventhandlers/enable_active_service_checks
+libexec/icinga/eventhandlers/enable_notifications
 libexec/icinga/eventhandlers/redundancy-scenario1/handle-master-host-event
 libexec/icinga/eventhandlers/redundancy-scenario1/handle-master-proc-event
 libexec/icinga/eventhandlers/submit_check_result
-libexec/icinga/eventhandlers/disable_active_service_checks
-libexec/icinga/eventhandlers/enable_active_service_checks
-libexec/icinga/eventhandlers/disable_notifications
-libexec/icinga/eventhandlers/enable_notifications
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db.cfg-sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db.cfg-sample.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db_check_proc.cfg
@@ -46,6 +37,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idomod.cfg-sample.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idoutils.cfg-sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idoutils.cfg-sample.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.7_to_1.8.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/mysql.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-0.8.3.sql
@@ -60,6 +52,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.5.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.6.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.7.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/icinga_defines.sql
@@ -75,6 +68,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.5.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.6.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.7.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_numbers.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_objects.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_recreate_icinga13_functions.sql
@@ -87,6 +81,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.6.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.7.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comment_history.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comments.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/contact_notification_methods.sql
@@ -140,74 +135,9 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/cgi-bin/showlog.cgi
 %%ICINGAWWWDIR%%/cgi-bin/status.cgi
 %%ICINGAWWWDIR%%/cgi-bin/statusmap.cgi
-%%ICINGAWWWDIR%%/cgi-bin/statuswml.cgi
-%%ICINGAWWWDIR%%/cgi-bin/statuswrl.cgi
 %%ICINGAWWWDIR%%/cgi-bin/summary.cgi
 %%ICINGAWWWDIR%%/cgi-bin/tac.cgi
 %%ICINGAWWWDIR%%/cgi-bin/trends.cgi
-%%ICINGAWWWDIR%%/contexthelp/A1.html
-%%ICINGAWWWDIR%%/contexthelp/A2.html
-%%ICINGAWWWDIR%%/contexthelp/A3.html
-%%ICINGAWWWDIR%%/contexthelp/A4.html
-%%ICINGAWWWDIR%%/contexthelp/A5.html
-%%ICINGAWWWDIR%%/contexthelp/A6.html
-%%ICINGAWWWDIR%%/contexthelp/A7.html
-%%ICINGAWWWDIR%%/contexthelp/B1.html
-%%ICINGAWWWDIR%%/contexthelp/C1.html
-%%ICINGAWWWDIR%%/contexthelp/D1.html
-%%ICINGAWWWDIR%%/contexthelp/E1.html
-%%ICINGAWWWDIR%%/contexthelp/F1.html
-%%ICINGAWWWDIR%%/contexthelp/G1.html
-%%ICINGAWWWDIR%%/contexthelp/G2.html
-%%ICINGAWWWDIR%%/contexthelp/G3.html
-%%ICINGAWWWDIR%%/contexthelp/G4.html
-%%ICINGAWWWDIR%%/contexthelp/G5.html
-%%ICINGAWWWDIR%%/contexthelp/G6.html
-%%ICINGAWWWDIR%%/contexthelp/H1.html
-%%ICINGAWWWDIR%%/contexthelp/H2.html
-%%ICINGAWWWDIR%%/contexthelp/H3.html
-%%ICINGAWWWDIR%%/contexthelp/H4.html
-%%ICINGAWWWDIR%%/contexthelp/H5.html
-%%ICINGAWWWDIR%%/contexthelp/H6.html
-%%ICINGAWWWDIR%%/contexthelp/H7.html
-%%ICINGAWWWDIR%%/contexthelp/H8.html
-%%ICINGAWWWDIR%%/contexthelp/I1.html
-%%ICINGAWWWDIR%%/contexthelp/I2.html
-%%ICINGAWWWDIR%%/contexthelp/I3.html
-%%ICINGAWWWDIR%%/contexthelp/I4.html
-%%ICINGAWWWDIR%%/contexthelp/I5.html
-%%ICINGAWWWDIR%%/contexthelp/I6.html
-%%ICINGAWWWDIR%%/contexthelp/I7.html
-%%ICINGAWWWDIR%%/contexthelp/I8.html
-%%ICINGAWWWDIR%%/contexthelp/I9.html
-%%ICINGAWWWDIR%%/contexthelp/J1.html
-%%ICINGAWWWDIR%%/contexthelp/K1.html
-%%ICINGAWWWDIR%%/contexthelp/L1.html
-%%ICINGAWWWDIR%%/contexthelp/L10.html
-%%ICINGAWWWDIR%%/contexthelp/L11.html
-%%ICINGAWWWDIR%%/contexthelp/L12.html
-%%ICINGAWWWDIR%%/contexthelp/L13.html
-%%ICINGAWWWDIR%%/contexthelp/L2.html
-%%ICINGAWWWDIR%%/contexthelp/L3.html
-%%ICINGAWWWDIR%%/contexthelp/L4.html
-%%ICINGAWWWDIR%%/contexthelp/L5.html
-%%ICINGAWWWDIR%%/contexthelp/L6.html
-%%ICINGAWWWDIR%%/contexthelp/L7.html
-%%ICINGAWWWDIR%%/contexthelp/L8.html
-%%ICINGAWWWDIR%%/contexthelp/L9.html
-%%ICINGAWWWDIR%%/contexthelp/M1.html
-%%ICINGAWWWDIR%%/contexthelp/M2.html
-%%ICINGAWWWDIR%%/contexthelp/M3.html
-%%ICINGAWWWDIR%%/contexthelp/M4.html
-%%ICINGAWWWDIR%%/contexthelp/M5.html
-%%ICINGAWWWDIR%%/contexthelp/M6.html
-%%ICINGAWWWDIR%%/contexthelp/N1.html
-%%ICINGAWWWDIR%%/contexthelp/N2.html
-%%ICINGAWWWDIR%%/contexthelp/N3.html
-%%ICINGAWWWDIR%%/contexthelp/N4.html
-%%ICINGAWWWDIR%%/contexthelp/N5.html
-%%ICINGAWWWDIR%%/contexthelp/N6.html
-%%ICINGAWWWDIR%%/contexthelp/N7.html
 %%ICINGAWWWDIR%%/docs/de/about.html
 %%ICINGAWWWDIR%%/docs/de/activechecks.html
 %%ICINGAWWWDIR%%/docs/de/adaptive.html
@@ -269,6 +199,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/de/icinga-web-pnp.html
 %%ICINGAWWWDIR%%/docs/de/icinga-web-scratch.html
 %%ICINGAWWWDIR%%/docs/de/icinga-web.html
+%%ICINGAWWWDIR%%/docs/de/icinga_packages.html
 %%ICINGAWWWDIR%%/docs/de/icingastats.html
 %%ICINGAWWWDIR%%/docs/de/index.html
 %%ICINGAWWWDIR%%/docs/de/int-mklivestatus.html
@@ -310,8 +241,9 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/de/quickstart.html
 %%ICINGAWWWDIR%%/docs/de/recurring_downtimes.html
 %%ICINGAWWWDIR%%/docs/de/redundancy.html
-%%ICINGAWWWDIR%%/docs/de/reporting_1.6.html
 %%ICINGAWWWDIR%%/docs/de/reporting.html
+%%ICINGAWWWDIR%%/docs/de/reporting_1.6.html
+%%ICINGAWWWDIR%%/docs/de/reporting_1.8.html
 %%ICINGAWWWDIR%%/docs/de/security.html
 %%ICINGAWWWDIR%%/docs/de/servicechecks.html
 %%ICINGAWWWDIR%%/docs/de/stalking.html
@@ -388,6 +320,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/en/icinga-web-pnp.html
 %%ICINGAWWWDIR%%/docs/en/icinga-web-scratch.html
 %%ICINGAWWWDIR%%/docs/en/icinga-web.html
+%%ICINGAWWWDIR%%/docs/en/icinga_packages.html
 %%ICINGAWWWDIR%%/docs/en/icingastats.html
 %%ICINGAWWWDIR%%/docs/en/index.html
 %%ICINGAWWWDIR%%/docs/en/int-mklivestatus.html
@@ -429,8 +362,9 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/en/quickstart.html
 %%ICINGAWWWDIR%%/docs/en/recurring_downtimes.html
 %%ICINGAWWWDIR%%/docs/en/redundancy.html
-%%ICINGAWWWDIR%%/docs/en/reporting_1.6.html
 %%ICINGAWWWDIR%%/docs/en/reporting.html
+%%ICINGAWWWDIR%%/docs/en/reporting_1.6.html
+%%ICINGAWWWDIR%%/docs/en/reporting_1.8.html
 %%ICINGAWWWDIR%%/docs/en/security.html
 %%ICINGAWWWDIR%%/docs/en/servicechecks.html
 %%ICINGAWWWDIR%%/docs/en/stalking.html
@@ -514,6 +448,9 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/images/flags/um_gb.png
 %%ICINGAWWWDIR%%/docs/images/freshness.png
 %%ICINGAWWWDIR%%/docs/images/host-dependencies.png
+%%ICINGAWWWDIR%%/docs/images/icinga-reporting-datasource-ido-mysql_1.8.png
+%%ICINGAWWWDIR%%/docs/images/icinga-reporting-datasource-ido_1.8.png
+%%ICINGAWWWDIR%%/docs/images/icinga-reporting-overview_1.8.png
 %%ICINGAWWWDIR%%/docs/images/icinga-reporting_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups1_1.6.png
@@ -534,17 +471,17 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_svc_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_svc_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_svc_1.6.png
-%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.7.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.7.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.6.png
-%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.7.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a_1.7.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks3.png
@@ -558,10 +495,14 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter2_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter3.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-host-obj.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-host-obj1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-host_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-host_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-host_1.8.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-hostgroup_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-hostgroup_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-hostgroup_1.8.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-log.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-log_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-log_1.6.png
@@ -571,12 +512,14 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/images/icinga-web-mainscreen1_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-mainscreen1_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-mainscreen1_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-mainscreen_1.8.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-open_problems.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.7.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.8.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-search1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-search1_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-search1_1.6.png
@@ -585,6 +528,8 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/images/icinga-web-settings_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-srv_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-srv_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-srv_1.8.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-srv_obj.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-statuscronk.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-statuscronk_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-statuscronk_1.6.png
@@ -665,21 +610,21 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/docs/images/tuning.png
 %%ICINGAWWWDIR%%/docs/images/upto.gif
 %%ICINGAWWWDIR%%/docs/index.html
+%%ICINGAWWWDIR%%/docs/js/icinga-docs.js
+%%ICINGAWWWDIR%%/docs/js/jquery-min.js
 %%ICINGAWWWDIR%%/docs/robots.txt
+%%ICINGAWWWDIR%%/docs/stylesheets/icinga-docs.css
 %%ICINGAWWWDIR%%/images/Icinga_Header_Webinterface.jpg
 %%ICINGAWWWDIR%%/images/Icinga_Header_Webinterface_Pixel.jpg
 %%ICINGAWWWDIR%%/images/Icinga_TAC_Header_Webinterface.jpg
-%%ICINGAWWWDIR%%/images/NagiosEnterprises-whitebg-112x46.png
 %%ICINGAWWWDIR%%/images/ack.gif
 %%ICINGAWWWDIR%%/images/action.gif
 %%ICINGAWWWDIR%%/images/application-monitor.png
-%%ICINGAWWWDIR%%/images/arrow-menu.png
 %%ICINGAWWWDIR%%/images/cmd_shadow.gif
 %%ICINGAWWWDIR%%/images/cmd_stop.png
 %%ICINGAWWWDIR%%/images/command.png
 %%ICINGAWWWDIR%%/images/comment.gif
-%%ICINGAWWWDIR%%/images/contexthelp1.gif
-%%ICINGAWWWDIR%%/images/contexthelp2.gif
+%%ICINGAWWWDIR%%/images/contexthelp.gif
 %%ICINGAWWWDIR%%/images/critical.png
 %%ICINGAWWWDIR%%/images/database.gif
 %%ICINGAWWWDIR%%/images/dd_arrow.gif
@@ -695,28 +640,25 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/images/export_json.png
 %%ICINGAWWWDIR%%/images/export_link.png
 %%ICINGAWWWDIR%%/images/export_xml.png
-%%ICINGAWWWDIR%%/images/extinfo.gif
 %%ICINGAWWWDIR%%/images/favicon.ico
 %%ICINGAWWWDIR%%/images/flapping.gif
-%%ICINGAWWWDIR%%/images/globe-support-150x150.png
-%%ICINGAWWWDIR%%/images/greendot.gif
 %%ICINGAWWWDIR%%/images/histogram.png
 %%ICINGAWWWDIR%%/images/history.gif
 %%ICINGAWWWDIR%%/images/hostevent.gif
 %%ICINGAWWWDIR%%/images/hourglass-arrow.png
 %%ICINGAWWWDIR%%/images/hourglass-exclamation.png
-%%ICINGAWWWDIR%%/images/icinga-logo.png
 %%ICINGAWWWDIR%%/images/icon_collapse.gif
 %%ICINGAWWWDIR%%/images/icon_expand.gif
+%%ICINGAWWWDIR%%/images/icon_first_active.gif
+%%ICINGAWWWDIR%%/images/icon_first_inactive.gif
+%%ICINGAWWWDIR%%/images/icon_last_active.gif
+%%ICINGAWWWDIR%%/images/icon_last_inactive.gif
+%%ICINGAWWWDIR%%/images/icon_next_active.gif
+%%ICINGAWWWDIR%%/images/icon_next_inactive.gif
+%%ICINGAWWWDIR%%/images/icon_previous_active.gif
+%%ICINGAWWWDIR%%/images/icon_previous_inactive.gif
 %%ICINGAWWWDIR%%/images/icon_reload.png
 %%ICINGAWWWDIR%%/images/info.png
-%%ICINGAWWWDIR%%/images/interface/bar.gif
-%%ICINGAWWWDIR%%/images/interface/menu_blank.gif
-%%ICINGAWWWDIR%%/images/interface/menu_body.gif
-%%ICINGAWWWDIR%%/images/interface/menu_less.gif
-%%ICINGAWWWDIR%%/images/interface/menu_li1.gif
-%%ICINGAWWWDIR%%/images/interface/menu_li2.gif
-%%ICINGAWWWDIR%%/images/interface/menu_more.gif
 %%ICINGAWWWDIR%%/images/left.gif
 %%ICINGAWWWDIR%%/images/logofullsize.png
 %%ICINGAWWWDIR%%/images/logos/Stats1.gif
@@ -728,34 +670,33 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/images/logos/unknown.gd2
 %%ICINGAWWWDIR%%/images/logos/unknown.gif
 %%ICINGAWWWDIR%%/images/logrotate.png
+%%ICINGAWWWDIR%%/images/menu_bar.gif
+%%ICINGAWWWDIR%%/images/menu_blank.gif
+%%ICINGAWWWDIR%%/images/menu_body.gif
+%%ICINGAWWWDIR%%/images/menu_less.gif
+%%ICINGAWWWDIR%%/images/menu_li1.gif
+%%ICINGAWWWDIR%%/images/menu_li2.gif
+%%ICINGAWWWDIR%%/images/menu_more.gif
 %%ICINGAWWWDIR%%/images/ndisabled.gif
 %%ICINGAWWWDIR%%/images/noack.gif
 %%ICINGAWWWDIR%%/images/notes.gif
 %%ICINGAWWWDIR%%/images/notify.gif
-%%ICINGAWWWDIR%%/images/orangedot.gif
 %%ICINGAWWWDIR%%/images/passiveonly.gif
 %%ICINGAWWWDIR%%/images/recovery.png
-%%ICINGAWWWDIR%%/images/redudancy.png
-%%ICINGAWWWDIR%%/images/redundancy.png
 %%ICINGAWWWDIR%%/images/restart.gif
 %%ICINGAWWWDIR%%/images/right.gif
 %%ICINGAWWWDIR%%/images/save.gif
-%%ICINGAWWWDIR%%/images/sblogo.png
 %%ICINGAWWWDIR%%/images/server.png
 %%ICINGAWWWDIR%%/images/serviceevent.gif
-%%ICINGAWWWDIR%%/images/sflogo.png
 %%ICINGAWWWDIR%%/images/splunk1.gif
 %%ICINGAWWWDIR%%/images/splunk2.gif
 %%ICINGAWWWDIR%%/images/start.gif
 %%ICINGAWWWDIR%%/images/stats.gif
-%%ICINGAWWWDIR%%/images/status.gif
-%%ICINGAWWWDIR%%/images/status2.gif
-%%ICINGAWWWDIR%%/images/status3.gif
-%%ICINGAWWWDIR%%/images/status4.gif
+%%ICINGAWWWDIR%%/images/stats2.png
+%%ICINGAWWWDIR%%/images/status_detail.gif
+%%ICINGAWWWDIR%%/images/status_map.gif
 %%ICINGAWWWDIR%%/images/stop.gif
-%%ICINGAWWWDIR%%/images/tacdisabled.jpg
 %%ICINGAWWWDIR%%/images/tacdisabled.png
-%%ICINGAWWWDIR%%/images/tacenabled.jpg
 %%ICINGAWWWDIR%%/images/tacenabled.png
 %%ICINGAWWWDIR%%/images/thermcrit.png
 %%ICINGAWWWDIR%%/images/thermok.png
@@ -767,12 +708,37 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/images/up.gif
 %%ICINGAWWWDIR%%/images/warning.png
 %%ICINGAWWWDIR%%/images/warning_triangle.gif
-%%ICINGAWWWDIR%%/images/weblogo1.png
 %%ICINGAWWWDIR%%/images/zoom1.gif
 %%ICINGAWWWDIR%%/images/zoom2.gif
 %%ICINGAWWWDIR%%/index.html
+%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.core.min.js
+%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.datepicker.min.js
+%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.mouse.min.js
+%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.slider.min.js
+%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.timepicker-addon.min.js
+%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.widget.min.js
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_flat_75_ffffff_40x100.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_65_ffffff_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_75_dadada_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_95_fef1ec_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_222222_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_2e83ff_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_454545_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_888888_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_cd0a0a_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.all.css
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.base.css
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.core.css
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.datepicker.css
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.slider.css
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.theme.css
+%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.timepicker-addon.css
 %%ICINGAWWWDIR%%/js/checkbox_functions.js
-%%ICINGAWWWDIR%%/js/jquery-1.6.2.min.js
+%%ICINGAWWWDIR%%/js/jquery-1.8.0.min.js
 %%ICINGAWWWDIR%%/js/jquery.dd.js
 %%ICINGAWWWDIR%%/js/menu.js
 %%ICINGAWWWDIR%%/js/page_refresh.js
@@ -782,7 +748,6 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/main.html
 %%ICINGAWWWDIR%%/menu.html
 %%ICINGAWWWDIR%%/robots.txt
-%%ICINGAWWWDIR%%/sidebar.html
 %%ICINGAWWWDIR%%/stylesheets/avail.css
 %%ICINGAWWWDIR%%/stylesheets/checksanity.css
 %%ICINGAWWWDIR%%/stylesheets/cmd.css
@@ -792,9 +757,7 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/stylesheets/extinfo.css
 %%ICINGAWWWDIR%%/stylesheets/histogram.css
 %%ICINGAWWWDIR%%/stylesheets/history.css
-%%ICINGAWWWDIR%%/stylesheets/interface/common.css
-%%ICINGAWWWDIR%%/stylesheets/interface/menu.css
-%%ICINGAWWWDIR%%/stylesheets/interface/search.css
+%%ICINGAWWWDIR%%/stylesheets/menu.css
 %%ICINGAWWWDIR%%/stylesheets/ministatus.css
 %%ICINGAWWWDIR%%/stylesheets/notifications.css
 %%ICINGAWWWDIR%%/stylesheets/outages.css
@@ -805,46 +768,44 @@ libexec/icinga/eventhandlers/enable_notifications
 %%ICINGAWWWDIR%%/stylesheets/tac.css
 %%ICINGAWWWDIR%%/stylesheets/tacheader.css
 %%ICINGAWWWDIR%%/stylesheets/trends.css
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/scripts
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/queries
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/pgsql/fix
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/pgsql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/oracle/upgrade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/oracle
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/mysql/upgrade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/mysql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/config
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry libexec/icinga/eventhandlers/redundancy-scenario1
-@dirrmtry libexec/icinga/eventhandlers/distributed-monitoring
-@dirrmtry libexec/icinga/eventhandlers
-@dirrmtry libexec/icinga
-@dirrmtry etc/icinga/objects
-@dirrmtry etc/icinga/modules
-@dirrmtry etc/icinga/conf.d
-@dirrmtry etc/icinga
-@dirrmtry %%ICINGAWWWDIR%%/stylesheets/interface
-@dirrmtry %%ICINGAWWWDIR%%/stylesheets
-@dirrmtry %%ICINGAWWWDIR%%/ssi
-@dirrmtry %%ICINGAWWWDIR%%/media
-@dirrmtry %%ICINGAWWWDIR%%/log
-@dirrmtry %%ICINGAWWWDIR%%/js
-@dirrmtry %%ICINGAWWWDIR%%/images/logos
-@dirrmtry %%ICINGAWWWDIR%%/images/interface
-@dirrmtry %%ICINGAWWWDIR%%/images
-@dirrmtry %%ICINGAWWWDIR%%/docs/images/flags
-@dirrmtry %%ICINGAWWWDIR%%/docs/images
-@dirrmtry %%ICINGAWWWDIR%%/docs/en
-@dirrmtry %%ICINGAWWWDIR%%/docs/de
-@dirrmtry %%ICINGAWWWDIR%%/docs
-@dirrmtry %%ICINGAWWWDIR%%/contexthelp
-@dirrmtry %%ICINGAWWWDIR%%/cgi-bin
-@dirrmtry %%ICINGAWWWDIR%%
-@dirrmtry %%ICINGADIR%%/checkresults
-@dirrmtry %%ICINGADIR%%/rw
-@dirrmtry %%ICINGADIR%%
-@dirrmtry %%ICINGALOGDIR%%/archives
-@dirrmtry %%ICINGALOGDIR%%
+@dirrm %%ICINGAWWWDIR%%/stylesheets
+@dirrm %%ICINGAWWWDIR%%/ssi
+@dirrm %%ICINGAWWWDIR%%/media
+@dirrm %%ICINGAWWWDIR%%/log
+@dirrm %%ICINGAWWWDIR%%/js
+@dirrm %%ICINGAWWWDIR%%/jquery-ui/theme/images
+@dirrm %%ICINGAWWWDIR%%/jquery-ui/theme
+@dirrm %%ICINGAWWWDIR%%/jquery-ui
+@dirrm %%ICINGAWWWDIR%%/images/logos
+@dirrm %%ICINGAWWWDIR%%/images
+@dirrm %%ICINGAWWWDIR%%/docs/stylesheets
+@dirrm %%ICINGAWWWDIR%%/docs/js
+@dirrm %%ICINGAWWWDIR%%/docs/images/flags
+@dirrm %%ICINGAWWWDIR%%/docs/images
+@dirrm %%ICINGAWWWDIR%%/docs/en
+@dirrm %%ICINGAWWWDIR%%/docs/de
+@dirrm %%ICINGAWWWDIR%%/docs
+@dirrm %%ICINGAWWWDIR%%/cgi-bin
+@dirrm %%ICINGAWWWDIR%%
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/scripts
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/fix
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+@dirrm libexec/icinga/eventhandlers/redundancy-scenario1
+@dirrm libexec/icinga/eventhandlers/distributed-monitoring
+@dirrm libexec/icinga/eventhandlers
+@dirrm libexec/icinga
+@dirrm etc/icinga/objects
+@dirrm etc/icinga/modules
+@dirrm etc/icinga/conf.d
+@dirrm etc/icinga

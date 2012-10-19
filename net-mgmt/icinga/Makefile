@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	icinga
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	Enterprise grade open source monitoring system based on nagios
+COMMENT=	Enterprise grade open source monitoring system based on Nagios
 
 LICENSE=	GPLv2
 
@@ -59,8 +59,6 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
-
-MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install install-commandmode install-config install-eventhandlers
 
