@@ -1,0 +1,20 @@
+--- po/Makefile.orig	2010-05-06 16:54:46.000000000 +0200
++++ po/Makefile	2011-06-08 17:19:11.000000000 +0200
+@@ -1,7 +1,9 @@
++localedir = share/locale
++
+ INSTALL= /usr/bin/install -c
+ INSTALL_PROGRAM= ${INSTALL}
+ INSTALL_DATA= ${INSTALL} -m 644
+-INSTALLNLSDIR=$(DESTDIR)/usr/share/locale
++INSTALLNLSDIR=$(DESTDIR)$(localedir)
+ top_srcdir = "."
+ 
+ 
+@@ -77,4 +79,4 @@
+ 	msgfmt -c $$n; \
+ 	done
+ 
+- 
+\ No newline at end of file
++ 
