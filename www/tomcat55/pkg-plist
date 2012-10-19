@@ -36,7 +36,7 @@
 %%T%%/common/i18n/tomcat-i18n-fr.jar
 %%T%%/common/i18n/tomcat-i18n-ja.jar
 %%T%%/common/lib/commons-el.jar
-%%T%%/common/lib/ecj-3.7.jar
+%%T%%/common/lib/ecj-3.7.2.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
 %%T%%/common/lib/jsp-api.jar
