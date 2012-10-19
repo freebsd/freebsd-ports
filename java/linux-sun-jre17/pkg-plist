@@ -253,6 +253,7 @@
 %%T%%/lib/security/cacerts
 %%T%%/lib/security/java.policy
 %%T%%/lib/security/java.security
+%%T%%/lib/security/javafx.policy
 %%T%%/lib/security/javaws.policy
 %%T%%/lib/security/local_policy.jar
 %%T%%/lib/security/trusted.libraries

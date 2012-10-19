@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Oracal Linux JRE 7.x
-# Date created:				1 May 2012
-# Whom:					Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jre
 PORTVERSION=	${JRE_VERSION}.${JRE_UPDATE_VERSION}
@@ -32,7 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 JRE_VERSION=		7
 JRE_INTERNAL_VERSION=	1.7.0
-JRE_UPDATE_VERSION=	7
+JRE_UPDATE_VERSION=	9
 DL_JRE_VERSION=		${JRE_INTERNAL_VERSION}_0${JRE_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
