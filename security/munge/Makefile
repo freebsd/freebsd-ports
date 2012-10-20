@@ -1,17 +1,14 @@
-# New ports collection makefile for:	munge
-# Date created:		2012-03-18
-# Whom:			Muhammad Moinur Rahman <5u623l20@gmail.com>
-#
+# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	munge
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	An authentication service for creating and validating credentials
+COMMENT=	Authentication service for creating and validating credentials
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
