@@ -1,23 +1,16 @@
-# New ports collection makefile for:	a2pdf
-# Date created:		10 May 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	a2pdf
 PORTVERSION=	1.13
-CATEGORIES=	print
-MASTER_SITES=	http://perl.jonallen.info/attachment/26/
+CATEGORIES=	print perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:JONALLEN
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to PDF converter
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
-
 LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/artistic-2_0.txt
 
 BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \
 		perltidy>=0:${PORTSDIR}/devel/perltidy \
