@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xview-clients
-# Date created:         22 November 1994
-# Whom:                 ljo (orig)
-#
+# Created by: ljo (orig)
 # $FreeBSD$
-#
 
 PORTNAME=	xview-clients
 PORTVERSION=	3.2.1.4.19c
@@ -22,7 +18,7 @@ COMMENT=	OpenLook applications and man pages
 CONFLICTS=	props-1.0
 
 PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:patch
-CONFIGURE_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:configure
+CONFIGURE_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:configure
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes
