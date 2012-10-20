@@ -17,6 +17,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -37,11 +38,29 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFLICTS=      courier-0.65*
+CONFLICTS=	courier-0.65*
 
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
+
+FIXDOCPATH=	liblock/lockmail.1 maildir/deliverquota.8.in \
+		maildir/maildir.5 maildir/maildiracl.1.in \
+		maildir/maildirkw.1 maildir/maildirmake.1.in \
+		maildir/maildirquota.7 maildrop/mailbot.1 \
+		maildrop/maildrop.1.in maildrop/maildropex.7 \
+		maildrop/maildropfilter.7.in maildrop/maildropgdbm.7 \
+		maildrop/makedat.1 maildrop/reformail.1 \
+		rfc2045/makemime.1 rfc2045/reformime.1 \
+		rfc2045/rfc2045.3 rfc822/rfc822.3
+
+MAN1+=	lockmail.1 mailbot.1 maildrop-maildirmake.1 maildrop.1 makemime.1 \
+	reformail.1 reformime.1
+MAN5=	maildir.5
+MAN7=	maildirquota.7 maildropex.7 maildropfilter.7 maildropgdbm.7
+MAN8+=	maildrop-deliverquota.8
+DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
+	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*
 
 .if defined(WITH_AUTHLIB)
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
@@ -90,6 +109,11 @@ PLIST_SUB+=	DOVECOTAUTH="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e "s/l= 72 - szbuf.Length();/l= ${MAILDROP_LOG_COLUMNS} - szbuf.Length();/" \
 		${WRKSRC}/maildrop/log.C
+.for f in ${FIXDOCPATH}
+	@${REINPLACE_CMD} -e "s|\\\%\[set \$$man\.base\.url\.for\.relative\.links\]|${DOCSDIR}|" \
+		-e "s/\(maildirmake.html\)/maildrop-\1/" \
+		-e "s/\(deliverquota.html\)/maildrop-\1/" ${WRKSRC}/${f}
+.endfor
 .if defined(WITH_AUTHLIB)
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/maildrop/Makefile.in
@@ -109,14 +133,6 @@ INSTALL_TARGET=	install-maildrop install-deliverquota install-man
 .else
 INSTALL_TARGET=	install-strip
 .endif
-
-MAN1+=	lockmail.1 mailbot.1 maildrop-maildirmake.1 maildrop.1 makemime.1 \
-	reformail.1 reformime.1
-MAN5=	maildir.5
-MAN7=	maildirquota.7 maildropex.7 maildropfilter.7 maildropgdbm.7
-MAN8+=	maildrop-deliverquota.8
-DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
-	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/maildir/quotawarnmsg \
