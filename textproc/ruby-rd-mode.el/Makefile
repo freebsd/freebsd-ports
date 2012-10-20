@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-rd-mode.el
-# Date created:		12 May 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rd-mode.el
 PORTVERSION=	0.6.31
@@ -15,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An Emacs lisp module for editing RD files
 
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../ruby-rdtool:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/ruby-rdtool:patch
 
 USE_RUBY=	yes
 
