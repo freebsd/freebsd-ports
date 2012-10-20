@@ -1,6 +1,4 @@
-# New ports collection makefile for:	postgresql-contrib
-# Date created:		June 10, 2003
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
+# Created by:	Palle Girgensohn <girgen@pingpong.net>
 #
 # $FreeBSD$
 #
@@ -22,6 +20,7 @@ BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
+CONFIGURE_ARGS+=	--with-openssl
 
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README
