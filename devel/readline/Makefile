@@ -21,7 +21,7 @@ MAN3=		readline.3 history.3
 .include <bsd.port.pre.mk>
 
 pre-configure:
-.if ${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MTERMCAP}
 	${REINPLACE_CMD} "s/SHOBJ_LDFLAGS =/SHOBJ_LDFLAGS = -ltermcap/" ${WRKSRC}/shlib/Makefile.in
 .endif
 
