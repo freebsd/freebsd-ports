@@ -112,7 +112,7 @@ post-install:
 .for dir in taskbar themes/Infadel2/taskbar
 	@${LN} -sf ${STARTUP_PIXMAP} ${DATADIR}/${dir}/start.xpm
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for f in CHANGES INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
