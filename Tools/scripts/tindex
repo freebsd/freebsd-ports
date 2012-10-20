@@ -6,7 +6,7 @@
 # that 'make fetchindex' sees it.
 #
 # When INDEX is broken, assemble the list of committers who touched files
-# on the most recent 'cvs update', and put those committers "on the hook".
+# on the most recent 'svn update', and put those committers "on the hook".
 # These committers all stay on the hook until INDEX is buildable again.
 #
 # MAINTAINER= erwin@FreeBSD.org
@@ -14,6 +14,8 @@
 
 # --------------------------------------------------------
 # Change these!
+
+SVN=/usr/local/bin/svn
 
 # Address for success/failure reports
 REPORT_ADDRESS=root@localhost
@@ -23,15 +25,11 @@ ERROR_ADDRESS=root@localhost
 
 # Where to scp the resulting indexes after build
 SCP_DEST_HOST=root@localhost
-SCP_DEST_TMP=/tmp
-SCP_DEST_DIR=/usr/local/www/ports
-SNAP_DIR=a/snap/ports
-
-# Privileged zfs command
-ZFSCMD="/usr/local/bin/sudo /sbin/zfs"
+SCP_DEST_TMP=/usr/local/www/ports/tmp
+SCP_DEST_DIR=/usr/local/www/ports/
 
 # Location of ports tree and source trees
-export BASEDIR=/local0/tmp/kris/tindex
+export BASEDIR=/a/tindex
 export PORTSDIR=${BASEDIR}/ports
 export SRCDIR7=${BASEDIR}/src.7
 export SRCDIR8=${BASEDIR}/src.8
@@ -50,19 +48,18 @@ export SSHKEY="-i /home/kris/.ssh/id_dsa-index"
 
 blame() {
   # Find out who is responsible for current version of file $1
-  ident=$(ident ${BASEDIR}/$1 2>/dev/null | grep '$FreeBSD')
-  who=$(echo $ident | awk '{print $6}')
 
-  if [ ! -z $who ]; then
-  	echo $who
-  fi
+  # Fastest way to extract is from svn info
+  who=$(${SVN} info $1 2>/dev/null | grep '^Last Changed Author' | awk '{print $4}')
+
+  echo $who
 }
 
 indexfail() {
   BRANCH=$1
 
   # Leave a cookie behind so that we know when the index is fixed
-  touch ${BASEDIR}/broken.${BRANCH}
+  touch ${PORTSDIR}/broken.${BRANCH}
 
   (
     echo "INDEX build failed with errors:";
@@ -86,9 +83,9 @@ indexfail() {
 
     # Find out which committers are on the hook
 
-    commits=$(grep Edit ${PORTSDIR}/cvsup.log | awk '{print $2}')
+    commits=$(grep ^U ${PORTSDIR}/svn.log | grep -v INDEX | awk '{print $2}')
     for i in ${commits}; do
-       blame $i >> ${PORTSDIR}/hook
+	blame $i >> ${PORTSDIR}/hook
     done
     sort -u ${PORTSDIR}/hook > ${PORTSDIR}/hook.new
     mv ${PORTSDIR}/hook.new ${PORTSDIR}/hook
@@ -97,8 +94,8 @@ indexfail() {
     tr -s '\n' ' ' < ${PORTSDIR}/hook
     echo
     echo 
-    echo "Most recent CVS update was:";
-    grep 'Edit' ${PORTSDIR}/cvsup.log | awk '{print $2}'
+    echo "Most recent SVN update was:";
+    grep -v '/work$' svn.log | grep -v '^\?'
   ) | mail -s "INDEX build failed for ${BRANCH}" ${REPORT_ADDRESS}
   exit 1
 }
@@ -108,8 +105,8 @@ checkfixed() {
 
   # If the cookie exists that means that this is the first build for which the
   # INDEX succeeded, so announce this.
-  if [ -e ${BASEDIR}/broken.${BRANCH} ]; then
-    rm -f ${BASEDIR}/broken.${BRANCH}
+  if [ -e ${PORTSDIR}/broken.${BRANCH} ]; then
+    rm -f ${PORTSDIR}/broken.${BRANCH}
     mail -s "INDEX now builds successfully on ${BRANCH}" ${REPORT_ADDRESS} < /dev/null
   fi
 }
@@ -122,37 +119,6 @@ createtmpdir() {
     fi
 }
 
-get_parent() {
-    local fs=$1
-
-    # Check whether this filesystem has a parent
-    /sbin/zfs get -H -o value origin ${fs}
-}
-
-now() {
-    date +%Y%m%d%H%M%S
-}
-
-do_portsupdate() {
-   do_destroy
-
-   now=$(now)
-   ${ZFSCMD} snapshot ${SNAP_DIR}@${now}
-   ${ZFSCMD} clone ${SNAP_DIR}@${now} ${PORTSDIR#?}
-}
-
-do_destroy() {
-    if [ -d ${PORTSDIR} ]; then
-	parent=$(get_parent ${PORTSDIR#?})
-        ${ZFSCMD} destroy ${PORTSDIR#?} || exit 1 
-	if [ ! -z "${parent}" ]; then
-            ${ZFSCMD} destroy ${parent} || exit 1 
-	fi
-    fi
-}
-    
-    
-do_run() {
 # Sanitize the environment so that the indexes aren't customized by the
 # local machine settinge
 export __MAKE_CONF=/dev/null
@@ -160,28 +126,31 @@ export PORT_DBDIR=/nonexistent
 export PKG_DBDIR=/nonexistent
 export LOCALBASE=/nonexistent
 export INDEX_PRISTINE=1
-export INDEX_JOBS=4
+export INDEX_JOBS=3
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-cd ${SRCDIR7}/sys/sys
-cvs -Rq update -PdA -r RELENG_7 param.h
+${SVN} up ${SRCDIR7}/sys/sys
 OSVERSION7=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR7}/sys/sys/param.h)
 
-cd ${SRCDIR8}/sys/sys
-cvs -Rq update -PdA -r RELENG_8 param.h
+${SVN} up ${SRCDIR8}/sys/sys
 OSVERSION8=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR8}/sys/sys/param.h)
 
-cd ${SRCDIR9}/sys/sys
-cvs -Rq update -PdA param.h
+${SVN} up ${SRCDIR9}/sys/sys
 OSVERSION9=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR9}/sys/sys/param.h)
 
-cd ${SRCDIR10}/sys/sys
-cvs -Rq update -PdA param.h
+${SVN} up ${SRCDIR10}/sys/sys
 OSVERSION10=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR10}/sys/sys/param.h)
+
 
 cd ${PORTSDIR}
 rm -f INDEX-7 INDEX-7.bz2 INDEX-8 INDEX-8.bz2 INDEX-9 INDEX-9.bz2 INDEX-10 INDEX-10.bz2
+(${SVN} up 2>1 ) > svn.log
+if grep -q ^C svn.log ; then
+  (echo "svn update failed with conflicts:";
+    grep ^C svn.log) | mail -s "Ports svn up failed" ${ERROR_ADDRESS}
+    exit 1
+fi
 
 for branch in 7.x 8.x 9.x 10.x; do
     release=$(echo $branch | sed -e 's,.x,,')
@@ -203,37 +172,5 @@ for branch in 7.x 8.x 9.x 10.x; do
     ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX-${release} ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX-${release}.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX-${release} to final dir" ${ERROR_ADDRESS}
 done
 
-}
-
-usage () {
-    echo "usage: tindex <command>"
-    exit 1
-}
-
-
-#############################
-
-if [ $# -lt 1 ]; then
-  usage
-fi
-
-cmd=$1
-shift
-
-# Unprivileged commands
-case "$cmd" in
-    run)
-        do_run
-	;;
-    portsupdate)
-        do_portsupdate
-        ;;
-    destroy)
-        do_destroy
-	;;
-    *)
-        echo "Invalid command: $cmd"
-	exit 1
-	;;
-esac
-
+# All indexes built successfully, clear the hook
+rm -f ${PORTSDIR}/hook

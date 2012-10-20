@@ -39,7 +39,7 @@
 # from a (non-root) cron job.
 #
 # If you just call it with no preparation, it will compare all port versions
-# with their INDEX entries and complain if they have gone backwards.
+# with their INDEX entries and complain if they have gone backwards. You need
 # You need an old INDEX for this, of course. An up-to-date INDEX will accomplish
 # nothing.
 #
@@ -52,7 +52,7 @@
 #  chown -R ports /var/db/chkversion
 # and enter something like
 #
-#  CVSBLAME=yes
+#  SVNBLAME=yes
 #  ALLPORTS=yes
 #  RCPT_ORIGIN=you@domain.example
 #  RCPT_VERSION=you@domain.example
@@ -60,8 +60,8 @@
 #
 # into `crontab -u ports -e', or run the script by hand if you can spare the time.
 #
-# If the environment variable CVSBLAME is set and the ports tree is checked
-# out by CVS, every entry is listed with a record of the last CVS commit.
+# If the environment variable SVNBLAME is set and the ports tree is checked
+# out by SVN, every entry is listed with a record of the last SVN commit.
 #
 
 require 5.005;
@@ -72,7 +72,7 @@ use Cwd 'abs_path';
 
 my $portsdir    = $ENV{PORTSDIR}        ? $ENV{PORTSDIR}        : '/usr/ports';
 my $versiondir  = $ENV{VERSIONDIR}      ? $ENV{VERSIONDIR}      : '/var/db/chkversion';
-my $cvsblame    = $ENV{CVSBLAME}        ? 1                     : 0;
+my $svnblame    = $ENV{SVNBLAME}        ? 1                     : 0;
 my $allports    = $ENV{ALLPORTS}        ? 1                     : 0;
 
 my $watchre     = $ENV{WATCH_REGEX}     ? $ENV{WATCH_REGEX}     : '';
@@ -88,7 +88,7 @@ my $cc_author   = $ENV{CC_AUTHOR}       ? 1                     : 0;
 my $cc_mntnr    = $ENV{CC_MAINTAINER}   ? 1                     : 0;
 
 my $make        = '/usr/bin/make';
-my $cvs         = '/usr/bin/cvs';
+my $svn         = '/usr/local/bin/svn';
 my $pkg_version =
     $ENV{PKG_VERSION} && -x $ENV{PKG_VERSION} ? $ENV{PKG_VERSION}
   : -x '/usr/local/sbin/pkg_version' ? '/usr/local/sbin/pkg_version'
@@ -138,7 +138,7 @@ sub wanted {
     return
       if !-d;
 
-    if (/^CVS$/
+    if (/^.svn$/
         || $File::Find::name =~
           m"^$portsdir/(?:Mk|Templates|Tools|distfiles|packages)$"os
         || $File::Find::name =~ m"^$portsdir/[^/]+/pkg$"os)
@@ -290,10 +290,10 @@ sub getauthors {
 sub printlog {
     my ($fh, $portdir, $r) = @_;
 
-    if ($cvsblame && -d "$portsdir/CVS") {
-        my @cvslog = readfrom $portdir,
-          $cvs, '-R', 'log', '-N', '-r' . ($r ? $r : '.'), 'Makefile';
-        foreach (@cvslog) {
+    if ($svnblame && -d "$portsdir/.svn") {
+        my @svnlog = readfrom $portdir,
+          $svn, 'log', '-r' . ($r ? $r : '.'), 'Makefile';
+        foreach (@svnlog) {
             my $in_log = /^-{28}$/ ... /^(-{28}|={77})$/;
             print $fh "   | $_\n"
               if ($in_log && $in_log != 1 && $in_log !~ /E0$/);
