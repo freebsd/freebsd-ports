@@ -1,27 +1,23 @@
-# New ports collection makefile for:	pstotext
-# Date created:		December 6, 1999
-# Whom:			Oliver Breuninger <ob@seicom.NET>
-#
+# Created by: Oliver Breuninger <ob@seicom.NET>
 # $FreeBSD$
-#
 
 PORTNAME=	pstotext
 PORTVERSION=	1.9
 PORTREVISION=	3
 CATEGORIES=	print
-MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/contrib/
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	support/ghostscript/contrib
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PostScript to Text converter
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
+COMMENT=	PostScript to Text converter
 
 USE_GHOSTSCRIPT_RUN=	yes
 
 MAN1=		pstotext.1
 PLIST_FILES=	bin/pstotext
 PORTDOCS=	copyright
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g' ${WRKSRC}/main.c
@@ -30,8 +26,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pstotext ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${MAN1PREFIX}/man/man1
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/pstotext.txt ${DOCSDIR}/copyright
 .endif
 
