@@ -1,7 +1,8 @@
+# Created by: Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_USER}/${GH_PORTNAME}/tarball/${GH_VERSION}/ \
 		NL:lapack,lapack_tmg
@@ -20,9 +21,9 @@ DIST_SUBDIR=	openblas
 FETCH_ARGS=	-pRr
 GH_USER=	xianyi
 GH_PORTNAME=	OpenBLAS
-GH_REVISION=	48f075c
+GH_REVISION=	3a26470
 GH_VERSION=	v${PORTVERSION}
-LAPACKVER=	3.4.1
+LAPACKVER=	3.4.2
 LAPACK_SRCFILE=	lapack-${LAPACKVER}.tgz
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
@@ -38,7 +39,7 @@ OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVE
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
 
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-e552452
+WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-ea9a46c
 
 .if defined(PACKAGE_BUILDING)
 DYNAMIC_ARCH_DEFAULT=	on
@@ -87,6 +88,10 @@ BROKEN =	WITH_QUAD_PRECISION is broken; please disable this option
 BUILDFLAGS+=	QUAD_PRECISION=1
 .endif
 
+.if ! ( defined(WITH_AVX) )
+BUILDFLAGS+=	NO_AVX=1
+.endif
+
 post-extract:
 	cd ${DISTDIR}/${DIST_SUBDIR} ; \
 	${CP} ${LAPACK_SRCFILE} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
@@ -127,11 +132,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
 		${WRKSRC}/test/Makefile \
 		${WRKSRC}/ctest/Makefile
-.endif
-.if ! ( defined(WITH_AVX) )
-	${REINPLACE_CMD} -e "s+CPUTYPE_SANDYBRIDGE+CPUTYPE_NEHALEM+g" \
-	 -e "s+CORE_SANDYBRIDGE+CORE_NEHALEM+g" \
-		${WRKSRC}/cpuid_x86.c
 .endif
 
 do-build:
