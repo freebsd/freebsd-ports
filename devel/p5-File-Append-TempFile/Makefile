@@ -11,9 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Append data to files using a temporary copy
 
-.if !defined(WITHOUT_TEST_POD_COVERAGE)
-BUILD_DEPENDS=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
-.endif
+TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
@@ -24,7 +22,9 @@ PORTDOCS=	Changes README
 test:		build
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
