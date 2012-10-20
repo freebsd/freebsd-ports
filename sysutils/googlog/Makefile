@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/googlog.ini ${WWWDIR}/
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
