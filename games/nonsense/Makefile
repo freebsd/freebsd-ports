@@ -13,6 +13,8 @@ NO_BUILD=	defined
 
 MAN6=		nonsense.6
 
+.include <bsd.port.options.mk>
+
 post-configure:
 		${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/nonsense
 		${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \
@@ -25,7 +27,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/*.data ${PREFIX}/share/nonsense/data
 		${INSTALL_DATA} ${WRKSRC}/*.template ${PREFIX}/share/nonsense/template
 		${INSTALL_MAN} ${WRKSRC}/${MAN6} ${PREFIX}/man/man6/
-.if	!defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		${MKDIR} ${PREFIX}/share/doc/nonsense
 		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nonsense/
 .endif
