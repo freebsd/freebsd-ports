@@ -20,12 +20,8 @@ MAN3=		readline.3 history.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-EXTRA_PATCHES+=	${FILESDIR}/support_shobj-conf.diff
-.endif
-
 pre-configure:
-.if !defined(WITHOUT_TERMCAP)
+.if ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} "s/SHOBJ_LDFLAGS =/SHOBJ_LDFLAGS = -ltermcap/" ${WRKSRC}/shlib/Makefile.in
 .endif
 
