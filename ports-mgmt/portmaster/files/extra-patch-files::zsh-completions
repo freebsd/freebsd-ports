@@ -7,7 +7,7 @@ diff -u files/zsh-completions.orig files/zsh-completions
  case "$state" in
    pkgs)
 -    array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
-+    if [ -n "$(make -V WITH_PKGNG)" ]; then
++    if [ -n "$(make -f /usr/share/mk/bsd.port.mk -V WITH_PKGNG)" ]; then
 +      array=($(pkg info -aq))
 +    else
 +      array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
@@ -20,7 +20,7 @@ diff -u files/zsh-completions.orig files/zsh-completions
      while _tags; do
        if _requested packages; then
 -        array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
-+        if [ -n "$(make -V WITH_PKGNG)" ]; then
++        if [ -n "$(make -f /usr/share/mk/bsd.port.mk -V WITH_PKGNG)" ]; then
 +          array=($(pkg info -aq))
 +        else
 +          array=("${PKG_DBDIR:-/var/db/pkg}"/*(/:t))
