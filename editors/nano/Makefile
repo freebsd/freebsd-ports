@@ -19,6 +19,8 @@ MAKE_JOBS_SAFE=	yes
 
 LICENSE=	GPLv3
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
