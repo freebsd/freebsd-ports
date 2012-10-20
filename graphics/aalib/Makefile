@@ -18,7 +18,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		aalib
 
-.if !defined(WITHOUT_X11)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
 		--x-libraries="${LOCALBASE}/lib"
