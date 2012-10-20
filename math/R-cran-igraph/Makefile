@@ -1,13 +1,8 @@
-# New ports collection makefile for:	igraph
-# Date created:		10 May, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	igraph
-DISTVERSION=	0.6-2
-PORTREVISION=	1
+DISTVERSION=	0.6-3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
