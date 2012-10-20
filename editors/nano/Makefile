@@ -19,7 +19,7 @@ MAKE_JOBS_SAFE=	yes
 
 LICENSE=	GPLv3
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 MANLANG=	"" fr
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
 .else
 MAKE_ARGS+=	install_htmlmanDATA=""
