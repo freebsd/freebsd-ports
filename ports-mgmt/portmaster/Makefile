@@ -2,7 +2,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
   		http://mirror.shatow.net/freebsd/portmaster/
@@ -30,10 +30,12 @@ PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
 MAN8=		portmaster.8
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPKGNGPATCH}
+.  if ${OSVERSION} >= 800505
 RUN_DEPENDS+=	pkg>0:${PORTSDIR}/ports-mgmt/pkg
+.  endif
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/portmaster/
 PATCHFILES+=	patch-portmaster-pkgng.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::with_pkgng_current
@@ -79,4 +81,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
