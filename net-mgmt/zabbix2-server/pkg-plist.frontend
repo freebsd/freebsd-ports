@@ -46,6 +46,11 @@
 %%WWWDIR%%/include/views/administration.script.edit.php
 %%WWWDIR%%/include/views/configuration.item.list.php
 %%WWWDIR%%/include/views/monitoring.screen.php
+%%WWWDIR%%/include/views/monitoring.charts.php
+%%WWWDIR%%/include/views/monitoring.history.php
+%%WWWDIR%%/include/views/monitoring.hostscreen.php
+%%WWWDIR%%/include/views/monitoring.maps.php
+%%WWWDIR%%/include/views/monitoring.overview.php
 %%WWWDIR%%/include/views/configuration.screen.constructor.list.php
 %%WWWDIR%%/include/views/administration.node.list.php
 %%WWWDIR%%/include/views/monitoring.slides.php
@@ -116,6 +121,8 @@
 %%WWWDIR%%/include/views/js/configuration.services.child.list.js.php
 %%WWWDIR%%/include/views/js/configuration.sysmaps.js.php
 %%WWWDIR%%/include/views/js/configuration.services.edit.js.php
+%%WWWDIR%%/include/views/js/monitoring.history.js.php
+%%WWWDIR%%/include/views/js/monitoring.maps.js.php
 %%WWWDIR%%/include/views/administration.usergroups.edit.php
 %%WWWDIR%%/include/views/administration.authentication.edit.php
 %%WWWDIR%%/include/views/configuration.item.copy.php
@@ -267,6 +274,27 @@
 %%WWWDIR%%/include/classes/class.clistitem.php
 %%WWWDIR%%/include/classes/class.cvar.php
 %%WWWDIR%%/include/classes/class.ctextarea.php
+%%WWWDIR%%/include/classes/screens/CScreenActions.php
+%%WWWDIR%%/include/classes/screens/CScreenBase.php
+%%WWWDIR%%/include/classes/screens/CScreenBuilder.php
+%%WWWDIR%%/include/classes/screens/CScreenChart.php
+%%WWWDIR%%/include/classes/screens/CScreenClock.php
+%%WWWDIR%%/include/classes/screens/CScreenDataOverview.php
+%%WWWDIR%%/include/classes/screens/CScreenEvents.php
+%%WWWDIR%%/include/classes/screens/CScreenGraph.php
+%%WWWDIR%%/include/classes/screens/CScreenHistory.php
+%%WWWDIR%%/include/classes/screens/CScreenHostTriggers.php
+%%WWWDIR%%/include/classes/screens/CScreenHostgroupTriggers.php
+%%WWWDIR%%/include/classes/screens/CScreenHostsInfo.php
+%%WWWDIR%%/include/classes/screens/CScreenMap.php
+%%WWWDIR%%/include/classes/screens/CScreenPlainText.php
+%%WWWDIR%%/include/classes/screens/CScreenScreen.php
+%%WWWDIR%%/include/classes/screens/CScreenServerInfo.php
+%%WWWDIR%%/include/classes/screens/CScreenSimpleGraph.php
+%%WWWDIR%%/include/classes/screens/CScreenSystemStatus.php
+%%WWWDIR%%/include/classes/screens/CScreenTriggersInfo.php
+%%WWWDIR%%/include/classes/screens/CScreenTriggersOverview.php
+%%WWWDIR%%/include/classes/screens/CScreenUrl.php
 %%WWWDIR%%/include/sounds.inc.php
 %%WWWDIR%%/include/ident.inc.php
 %%WWWDIR%%/include/regexp.inc.php
@@ -371,6 +399,8 @@
 %%WWWDIR%%/api/classes/CConfiguration.php
 %%WWWDIR%%/api/classes/CService.php
 %%WWWDIR%%/api/classes/CTemplate.php
+%%WWWDIR%%/api/classes/CHostGeneral.php
+%%WWWDIR%%/api/classes/CTemplateScreenItem.php
 %%WWWDIR%%/api/.htaccess
 %%WWWDIR%%/triggers.php
 %%WWWDIR%%/slideconf.php
@@ -422,17 +452,11 @@
 %%WWWDIR%%/images/gradients/texture_diagonal.gif
 %%WWWDIR%%/images/gradients/sla_green.png
 %%WWWDIR%%/images/gradients/menu_not_active_bb.gif
-%%WWWDIR%%/images/general/zero.gif
 %%WWWDIR%%/images/general/ipmi_unknown.png
-%%WWWDIR%%/images/general/sort_up.gif
 %%WWWDIR%%/images/general/jmx_unknown.png
 %%WWWDIR%%/images/general/ipmi_available.png
-%%WWWDIR%%/images/general/error_icon.png
 %%WWWDIR%%/images/general/transparent.png
 %%WWWDIR%%/images/general/ok_icon_bb.png
-%%WWWDIR%%/images/general/closed.gif
-%%WWWDIR%%/images/general/error_small.gif
-%%WWWDIR%%/images/general/down_icon.png
 %%WWWDIR%%/images/general/zabbix.png
 %%WWWDIR%%/images/general/dbl_arrow_up.png
 %%WWWDIR%%/images/general/tree/zero.gif
@@ -442,7 +466,6 @@
 %%WWWDIR%%/images/general/tree/pointc.gif
 %%WWWDIR%%/images/general/tree/minus.gif
 %%WWWDIR%%/images/general/ok_icon.png
-%%WWWDIR%%/images/general/sort_down.gif
 %%WWWDIR%%/images/general/snmp_available.png
 %%WWWDIR%%/images/general/zabbix_unavailable.png
 %%WWWDIR%%/images/general/snmp_unavailable.png
@@ -452,11 +475,9 @@
 %%WWWDIR%%/images/general/browserwarning/opera.png
 %%WWWDIR%%/images/general/browserwarning/safari.png
 %%WWWDIR%%/images/general/browserwarning/chrome.png
-%%WWWDIR%%/images/general/inst_current.gif
 %%WWWDIR%%/images/general/zabbix_available.png
 %%WWWDIR%%/images/general/zabbix_available_bb.png
 %%WWWDIR%%/images/general/ipmi_unavailable.png
-%%WWWDIR%%/images/general/sort_down_blue.gif
 %%WWWDIR%%/images/general/bttn/minus.png
 %%WWWDIR%%/images/general/bttn/fullscreen.png
 %%WWWDIR%%/images/general/bttn/move.png
@@ -477,12 +498,8 @@
 %%WWWDIR%%/images/general/bttn/down.png
 %%WWWDIR%%/images/general/bttn/help.png
 %%WWWDIR%%/images/general/zabbix_od.png
-%%WWWDIR%%/images/general/arrowdown.gif
 %%WWWDIR%%/images/general/zabbix_bb.png
-%%WWWDIR%%/images/general/sort_up_blue.gif
-%%WWWDIR%%/images/general/warning_icon.png
 %%WWWDIR%%/images/general/jmx_available_bb.png
-%%WWWDIR%%/images/general/up_icon.png
 %%WWWDIR%%/images/general/snmp_unknown.png
 %%WWWDIR%%/images/general/ok.png
 %%WWWDIR%%/images/general/ok_bb.png
@@ -490,31 +507,19 @@
 %%WWWDIR%%/images/general/setup/welcome_screen.png
 %%WWWDIR%%/images/general/setup/background.png
 %%WWWDIR%%/images/general/setup/logo.png
-%%WWWDIR%%/images/general/arrowup.gif
 %%WWWDIR%%/images/general/zabbix_unknown.png
-%%WWWDIR%%/images/general/tr_space.gif
 %%WWWDIR%%/images/general/chart.png
-%%WWWDIR%%/images/general/inst_completed.gif
 %%WWWDIR%%/images/general/dbl_arrow_up2.png
-%%WWWDIR%%/images/general/tr_top_bottom.gif
 %%WWWDIR%%/images/general/tick.png
-%%WWWDIR%%/images/general/warning_small.gif
 %%WWWDIR%%/images/general/snmp_available_bb.png
-%%WWWDIR%%/images/general/warning16r.gif
-%%WWWDIR%%/images/general/sort_down_od.gif
 %%WWWDIR%%/images/general/jmx_unavailable.png
 %%WWWDIR%%/images/general/login/logo.png
 %%WWWDIR%%/images/general/login/background.png
 %%WWWDIR%%/images/general/login/username_pass_field.png
 %%WWWDIR%%/images/general/ipmi_available_bb.png
 %%WWWDIR%%/images/general/unknown_icon.png
-%%WWWDIR%%/images/general/inst_step.gif
-%%WWWDIR%%/images/general/help.gif
 %%WWWDIR%%/images/general/zabbix.ico
-%%WWWDIR%%/images/general/x.gif
 %%WWWDIR%%/images/general/jmx_available.png
-%%WWWDIR%%/images/general/tr_top_right.gif
-%%WWWDIR%%/images/general/sort_up_od.gif
 %%WWWDIR%%/images/general/zabbix_ob.ico
 %%WWWDIR%%/images/general/error.png
 %%WWWDIR%%/images/general/no_icon.png
@@ -529,10 +534,26 @@
 %%WWWDIR%%/images/general/bar/right_arr.png
 %%WWWDIR%%/images/general/bar/arrow_up.gif
 %%WWWDIR%%/images/general/bar/left.png
-%%WWWDIR%%/images/general/opened.gif
 %%WWWDIR%%/images/general/dbl_arrow_down.png
-%%WWWDIR%%/images/general/tr_top_right_bottom.gif
 %%WWWDIR%%/images/general/dbl_arrow_down2.png
+%%WWWDIR%%/images/general/arrow_down.png
+%%WWWDIR%%/images/general/arrow_down2.png
+%%WWWDIR%%/images/general/arrow_up.png
+%%WWWDIR%%/images/general/arrow_up2.png
+%%WWWDIR%%/images/general/error2.png
+%%WWWDIR%%/images/general/error3.png
+%%WWWDIR%%/images/general/minus.png
+%%WWWDIR%%/images/general/plus.png
+%%WWWDIR%%/images/general/sort_down.png
+%%WWWDIR%%/images/general/sort_down_blue.png
+%%WWWDIR%%/images/general/sort_down_od.png
+%%WWWDIR%%/images/general/sort_up.png
+%%WWWDIR%%/images/general/sort_up_blue.png
+%%WWWDIR%%/images/general/sort_up_od.png
+%%WWWDIR%%/images/general/warning.png
+%%WWWDIR%%/images/general/warning2.png
+%%WWWDIR%%/images/general/wrench12transp.png
+%%WWWDIR%%/images/general/zero.png
 %%WWWDIR%%/chart7.php
 %%WWWDIR%%/css.css
 %%WWWDIR%%/applications.php
@@ -563,6 +584,8 @@
 %%WWWDIR%%/adm.housekeeper.php
 %%WWWDIR%%/popup_httpstep.php
 %%WWWDIR%%/image.php
+%%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/hu/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/hu/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/frontend.po
@@ -639,6 +662,7 @@
 %%WWWDIR%%/js/init.js
 %%WWWDIR%%/js/menu.js
 %%WWWDIR%%/js/functions.js
+%%WWWDIR%%/js/flickerfreescreen.js
 %%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/class.cdebug.js
 %%WWWDIR%%/js/servercheck.js
@@ -746,6 +770,7 @@
 @dirrm %%WWWDIR%%/include/classes/validators
 @dirrm %%WWWDIR%%/include/classes/helpers/trigger
 @dirrm %%WWWDIR%%/include/classes/helpers
+@dirrm %%WWWDIR%%/include/classes/screens
 @dirrm %%WWWDIR%%/include/classes
 @dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%/api/rpc
@@ -803,6 +828,8 @@
 @dirrm %%WWWDIR%%/locale/tr
 @dirrm %%WWWDIR%%/locale/sk/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/sk
+@dirrm %%WWWDIR%%/locale/en_US/LC_MESSAGES/
+@dirrm %%WWWDIR%%/locale/en_US/
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/conf
 @dirrm %%WWWDIR%%/js/jquery
