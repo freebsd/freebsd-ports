@@ -7,6 +7,7 @@
 
 PORTNAME=	Plack
 PORTVERSION=	1.0006
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -23,6 +24,7 @@ RUN_DEPENDS=	\
 	p5-HTTP-Body>=1.06:${PORTSDIR}/www/p5-HTTP-Body \
 	p5-Hash-MultiValue>=0.05:${PORTSDIR}/devel/p5-Hash-MultiValue \
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
+	p5-Stream-Buffered>=0.02:${PORTSDIR}/devel/p5-Stream-Buffered \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
 	p5-URI>=1.59:${PORTSDIR}/net/p5-URI
