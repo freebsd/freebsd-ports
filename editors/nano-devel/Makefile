@@ -3,10 +3,9 @@
 PORTNAME=	nano
 PORTVERSION=	2.3.1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
-		http://www.ewtoo.org/~astyanax/nano/dist/v${PORTVERSION:R}/
+MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/
+
 PKGNAMESUFFIX=	-devel
-#DISTNAME=	nano-${PORTVERSION}pre2
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
@@ -15,7 +14,9 @@ CONFLICTS=	nano-2*
 
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 MANLANG=	"" fr
