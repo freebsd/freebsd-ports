@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Migration
-PORTVERSION=	0.030
+PORTVERSION=	0.034
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Config-MySQL>=0.02:${PORTSDIR}/devel/p5-Config-MySQL \
 	p5-DBD-SQLite>=1.35:${PORTSDIR}/databases/p5-DBD-SQLite \
 	p5-DBIx-Class-DeploymentHandler>=0.002100:${PORTSDIR}/databases/p5-DBIx-Class-DeploymentHandler \
-	p5-DBIx-Class-Fixtures>=1.001014:${PORTSDIR}/databases/p5-DBIx-Class-Fixtures \
+	p5-DBIx-Class-Fixtures>=1.001016:${PORTSDIR}/databases/p5-DBIx-Class-Fixtures \
 	p5-DBIx-Class-Schema-Loader>=0.07017:${PORTSDIR}/databases/p5-DBIx-Class-Schema-Loader \
 	p5-Devel-PartialDump>0:${PORTSDIR}/devel/p5-Devel-PartialDump \
 	p5-File-ShareDir-ProjectDistDir>=0.3.1:${PORTSDIR}/devel/p5-File-ShareDir-ProjectDistDir \
@@ -51,12 +51,19 @@ MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
 	DBIx::Class::Migration::Population.3 \
 	DBIx::Class::Migration::PostgresqlSandbox.3 \
 	DBIx::Class::Migration::RunScript.3 \
+	DBIx::Class::Migration::RunScript::Trait::Dump.3 \
+	DBIx::Class::Migration::RunScript::Trait::Populate.3 \
 	DBIx::Class::Migration::RunScript::Trait::SchemaLoader.3 \
+	DBIx::Class::Migration::RunScript::Trait::TargetPath.3 \
 	DBIx::Class::Migration::Sandbox.3 \
 	DBIx::Class::Migration::SchemaLoader.3 \
 	DBIx::Class::Migration::Script.3 \
 	DBIx::Class::Migration::Script::Help.3 \
 	DBIx::Class::Migration::Script::Help::databases.3 \
+	DBIx::Class::Migration::Script::Help::dbi_connect_attrs.3 \
+	DBIx::Class::Migration::Script::Help::dbic_connect_attrs.3 \
+	DBIx::Class::Migration::Script::Help::dbic_fixture_class.3 \
+	DBIx::Class::Migration::Script::Help::dbic_fixtures_extra_args.3 \
 	DBIx::Class::Migration::Script::Help::delete_table_rows.3 \
 	DBIx::Class::Migration::Script::Help::diagram.3 \
 	DBIx::Class::Migration::Script::Help::downgrade.3 \
@@ -64,6 +71,7 @@ MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
 	DBIx::Class::Migration::Script::Help::dsn.3 \
 	DBIx::Class::Migration::Script::Help::dump_all_sets.3 \
 	DBIx::Class::Migration::Script::Help::dump_named_sets.3 \
+	DBIx::Class::Migration::Script::Help::extra_schemaloader_args.3 \
 	DBIx::Class::Migration::Script::Help::fixture_sets.3 \
 	DBIx::Class::Migration::Script::Help::force_overwrite.3 \
 	DBIx::Class::Migration::Script::Help::help.3 \
