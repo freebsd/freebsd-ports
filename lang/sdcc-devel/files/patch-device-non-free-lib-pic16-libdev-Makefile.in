@@ -1,0 +1,81 @@
+--- device/non-free/lib/pic16/libdev/Makefile.in.orig
++++ device/non-free/lib/pic16/libdev/Makefile.in
+@@ -2444,18 +2444,16 @@
+ 	libdev18f2431.a libdev18f2439.a libdev18f2450.a \
+ 	libdev18f2455.a libdev18f2458.a libdev18f248.a libdev18f2480.a \
+ 	libdev18f24j10.a libdev18f24j11.a libdev18f24j50.a \
+-	libdev18f24k20.a $(am__append_2) libdev18f24k50.a \
++	libdev18f24k20.a $(am__append_2) \
+ 	libdev18f2510.a libdev18f2515.a libdev18f252.a libdev18f2520.a \
+ 	libdev18f2523.a libdev18f2525.a libdev18f2539.a \
+ 	libdev18f2550.a libdev18f2553.a libdev18f258.a libdev18f2580.a \
+ 	libdev18f2585.a libdev18f25j10.a libdev18f25j11.a \
+ 	libdev18f25j50.a libdev18f25k20.a $(am__append_3) \
+-	libdev18f25k50.a libdev18f25k80.a libdev18f2610.a \
++	libdev18f2610.a \
+ 	libdev18f2620.a libdev18f2680.a libdev18f2682.a \
+-	libdev18f2685.a libdev18f26j11.a libdev18f26j13.a \
+-	libdev18f26j50.a libdev18f26j53.a libdev18f26k20.a \
+-	$(am__append_4) libdev18f26k80.a libdev18f27j13.a \
+-	libdev18f27j53.a libdev18f4220.a libdev18f4221.a \
++	libdev18f2685.a libdev18f26j11.a libdev18f26j50.a libdev18f26k20.a \
++	$(am__append_4) libdev18f4220.a libdev18f4221.a \
+ 	libdev18f4320.a libdev18f4321.a libdev18f4331.a \
+ 	libdev18f43k20.a $(am__append_5) libdev18f4410.a \
+ 	libdev18f442.a libdev18f4420.a libdev18f4423.a libdev18f4431.a \
+@@ -2467,47 +2465,38 @@
+ 	libdev18f4525.a libdev18f4539.a libdev18f4550.a \
+ 	libdev18f4553.a libdev18f458.a libdev18f4580.a libdev18f4585.a \
+ 	libdev18f45j10.a libdev18f45j11.a libdev18f45j50.a \
+-	libdev18f45k20.a $(am__append_7) libdev18f45k50.a \
+-	libdev18f45k80.a libdev18f4610.a libdev18f4620.a \
++	libdev18f45k20.a $(am__append_7) libdev18f4610.a libdev18f4620.a \
+ 	libdev18f4680.a libdev18f4682.a libdev18f4685.a \
+-	libdev18f46j11.a libdev18f46j13.a libdev18f46j50.a \
+-	libdev18f46j53.a libdev18f46k20.a $(am__append_8) \
+-	libdev18f46k80.a libdev18f47j13.a libdev18f47j53.a \
++	libdev18f46j11.a libdev18f46j50.a libdev18f46k20.a $(am__append_8) \
+ 	libdev18f6310.a libdev18f6390.a libdev18f6393.a \
+ 	libdev18f63j11.a libdev18f63j90.a libdev18f6410.a \
+ 	libdev18f6490.a libdev18f6493.a libdev18f64j11.a \
+ 	libdev18f64j90.a libdev18f6520.a libdev18f6525.a \
+ 	libdev18f6527.a libdev18f6585.a libdev18f65j10.a \
+ 	libdev18f65j11.a libdev18f65j15.a libdev18f65j50.a \
+-	libdev18f65j90.a libdev18f65k22.a libdev18f65k80.a \
+-	libdev18f65k90.a libdev18f6620.a libdev18f6621.a \
++	libdev18f65j90.a libdev18f6620.a libdev18f6621.a \
+ 	libdev18f6622.a libdev18f6627.a libdev18f6628.a \
+ 	libdev18f6680.a libdev18f66j10.a libdev18f66j11.a \
+ 	libdev18f66j15.a libdev18f66j16.a libdev18f66j50.a \
+ 	libdev18f66j55.a libdev18f66j60.a libdev18f66j65.a \
+-	libdev18f66j90.a libdev18f66j93.a libdev18f66k22.a \
+-	libdev18f66k80.a libdev18f66k90.a libdev18f6720.a \
++	libdev18f66j90.a libdev18f6720.a \
+ 	libdev18f6722.a libdev18f6723.a libdev18f67j10.a \
+ 	libdev18f67j11.a libdev18f67j50.a libdev18f67j60.a \
+-	libdev18f67j90.a libdev18f67j93.a libdev18f67k22.a \
+-	libdev18f67k90.a libdev18f8310.a libdev18f8390.a \
++	libdev18f67j90.a libdev18f8310.a libdev18f8390.a \
+ 	libdev18f8393.a libdev18f83j11.a libdev18f83j90.a \
+ 	libdev18f8410.a libdev18f8490.a libdev18f8493.a \
+ 	libdev18f84j11.a libdev18f84j90.a libdev18f8520.a \
+ 	libdev18f8525.a libdev18f8527.a libdev18f8585.a \
+ 	libdev18f85j10.a libdev18f85j11.a libdev18f85j15.a \
+-	libdev18f85j50.a libdev18f85j90.a libdev18f85k22.a \
+-	libdev18f85k90.a libdev18f8620.a libdev18f8621.a \
++	libdev18f85j50.a libdev18f85j90.a libdev18f8620.a libdev18f8621.a \
+ 	libdev18f8622.a libdev18f8627.a libdev18f8628.a \
+ 	libdev18f8680.a libdev18f86j10.a libdev18f86j11.a \
+ 	libdev18f86j15.a libdev18f86j16.a libdev18f86j50.a \
+ 	libdev18f86j55.a libdev18f86j60.a libdev18f86j65.a \
+-	libdev18f86j72.a libdev18f86j90.a libdev18f86j93.a \
+-	libdev18f86k22.a libdev18f86k90.a libdev18f8720.a \
++	libdev18f86j90.a libdev18f8720.a \
+ 	libdev18f8722.a libdev18f8723.a libdev18f87j10.a \
+ 	libdev18f87j11.a libdev18f87j50.a libdev18f87j60.a \
+-	libdev18f87j72.a libdev18f87j90.a libdev18f87j93.a \
+-	libdev18f87k22.a libdev18f87k90.a libdev18f96j60.a \
++	libdev18f87j90.a libdev18f96j60.a \
+ 	libdev18f96j65.a libdev18f97j60.a
+ libdev18f1220_a_SOURCES = pic18f1220.c \
+ 	gptr/eeprom8_gptrget1_dispatch.S \

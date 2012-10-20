@@ -1,0 +1,76 @@
+--- device/lib/pic16/libio/Makefile.in.orig
++++ device/lib/pic16/libio/Makefile.in
+@@ -4383,16 +4383,15 @@
+ 	libio18f2431.a libio18f2439.a libio18f2450.a libio18f2455.a \
+ 	libio18f2458.a libio18f248.a libio18f2480.a libio18f24j10.a \
+ 	libio18f24j11.a libio18f24j50.a libio18f24k20.a \
+-	libio18f24k22.a libio18f24k50.a libio18f2510.a libio18f2515.a \
++	libio18f24k22.a libio18f2510.a libio18f2515.a \
+ 	libio18f252.a libio18f2520.a libio18f2523.a libio18f2525.a \
+ 	libio18f2539.a libio18f2550.a libio18f2553.a libio18f258.a \
+ 	libio18f2580.a libio18f2585.a libio18f25j10.a libio18f25j11.a \
+ 	libio18f25j50.a libio18f25k20.a libio18f25k22.a \
+-	libio18f25k50.a libio18f25k80.a libio18f2610.a libio18f2620.a \
++	libio18f2610.a libio18f2620.a \
+ 	libio18f2680.a libio18f2682.a libio18f2685.a libio18f26j11.a \
+-	libio18f26j13.a libio18f26j50.a libio18f26j53.a \
+-	libio18f26k20.a libio18f26k22.a libio18f26k80.a \
+-	libio18f27j13.a libio18f27j53.a libio18f4220.a libio18f4221.a \
++	libio18f26j50.a libio18f26k20.a libio18f26k22.a \
++	libio18f4220.a libio18f4221.a \
+ 	libio18f4320.a libio18f4321.a libio18f4331.a libio18f43k20.a \
+ 	libio18f43k22.a libio18f4410.a libio18f442.a libio18f4420.a \
+ 	libio18f4423.a libio18f4431.a libio18f4439.a libio18f4450.a \
+@@ -4403,41 +4402,35 @@
+ 	libio18f4539.a libio18f4550.a libio18f4553.a libio18f458.a \
+ 	libio18f4580.a libio18f4585.a libio18f45j10.a libio18f45j11.a \
+ 	libio18f45j50.a libio18f45k20.a libio18f45k22.a \
+-	libio18f45k50.a libio18f45k80.a libio18f4610.a libio18f4620.a \
++	libio18f4610.a libio18f4620.a \
+ 	libio18f4680.a libio18f4682.a libio18f4685.a libio18f46j11.a \
+-	libio18f46j13.a libio18f46j50.a libio18f46j53.a \
+-	libio18f46k20.a libio18f46k22.a libio18f46k80.a \
+-	libio18f47j13.a libio18f47j53.a libio18f6310.a libio18f6390.a \
++	libio18f46j50.a libio18f46k20.a libio18f46k22.a \
++	libio18f6310.a libio18f6390.a \
+ 	libio18f6393.a libio18f63j11.a libio18f63j90.a libio18f6410.a \
+ 	libio18f6490.a libio18f6493.a libio18f64j11.a libio18f64j90.a \
+ 	libio18f6520.a libio18f6525.a libio18f6527.a libio18f6585.a \
+ 	libio18f65j10.a libio18f65j11.a libio18f65j15.a \
+-	libio18f65j50.a libio18f65j90.a libio18f65k22.a \
+-	libio18f65k80.a libio18f65k90.a libio18f6620.a libio18f6621.a \
++	libio18f65j50.a libio18f65j90.a libio18f6620.a libio18f6621.a \
+ 	libio18f6622.a libio18f6627.a libio18f6628.a libio18f6680.a \
+ 	libio18f66j10.a libio18f66j11.a libio18f66j15.a \
+ 	libio18f66j16.a libio18f66j50.a libio18f66j55.a \
+ 	libio18f66j60.a libio18f66j65.a libio18f66j90.a \
+-	libio18f66j93.a libio18f66k22.a libio18f66k80.a \
+-	libio18f66k90.a libio18f6720.a libio18f6722.a libio18f6723.a \
++	libio18f6720.a libio18f6722.a libio18f6723.a \
+ 	libio18f67j10.a libio18f67j11.a libio18f67j50.a \
+-	libio18f67j60.a libio18f67j90.a libio18f67j93.a \
+-	libio18f67k22.a libio18f67k90.a libio18f8310.a libio18f8390.a \
++	libio18f67j60.a libio18f67j90.a libio18f8310.a libio18f8390.a \
+ 	libio18f8393.a libio18f83j11.a libio18f83j90.a libio18f8410.a \
+ 	libio18f8490.a libio18f8493.a libio18f84j11.a libio18f84j90.a \
+ 	libio18f8520.a libio18f8525.a libio18f8527.a libio18f8585.a \
+ 	libio18f85j10.a libio18f85j11.a libio18f85j15.a \
+-	libio18f85j50.a libio18f85j90.a libio18f85k22.a \
+-	libio18f85k90.a libio18f8620.a libio18f8621.a libio18f8622.a \
++	libio18f85j50.a libio18f85j90.a \
++	libio18f8620.a libio18f8621.a libio18f8622.a \
+ 	libio18f8627.a libio18f8628.a libio18f8680.a libio18f86j10.a \
+ 	libio18f86j11.a libio18f86j15.a libio18f86j16.a \
+ 	libio18f86j50.a libio18f86j55.a libio18f86j60.a \
+-	libio18f86j65.a libio18f86j72.a libio18f86j90.a \
+-	libio18f86j93.a libio18f86k22.a libio18f86k90.a libio18f8720.a \
++	libio18f86j65.a libio18f86j90.a libio18f8720.a \
+ 	libio18f8722.a libio18f8723.a libio18f87j10.a libio18f87j11.a \
+-	libio18f87j50.a libio18f87j60.a libio18f87j72.a \
+-	libio18f87j90.a libio18f87j93.a libio18f87k22.a \
+-	libio18f87k90.a libio18f96j60.a libio18f96j65.a \
++	libio18f87j50.a libio18f87j60.a libio18f87j90.a \
++	libio18f96j60.a libio18f96j65.a \
+	libio18f97j60.a
+ libio18f1220_a_SOURCES = dummy.c adc/adcbusy.c adc/adcclose.c \
+ 	adc/adcconv.c adc/adcopen.c adc/adcread.c adc/adcsetch.c \
