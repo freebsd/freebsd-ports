@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getopt
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.4
 PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
