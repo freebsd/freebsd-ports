@@ -1,18 +1,12 @@
-# New ports collection makefile for:	Business::OnlinePayment
-# Date created:				24 October 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-OnlinePayment
-PORTVERSION=	3.00
-PORTREVISION=	1
+PORTVERSION=	3.02
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IVAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}_08
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A generic interface for processing online credit card payments
