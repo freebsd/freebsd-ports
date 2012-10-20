@@ -2,12 +2,11 @@
 # Date created:				15 August 2012
 # Whom:					Martin Matuska <mm@FreeBSD.org>
 #
-# $FreeBSD: ports/www/c-icap/Makefile,v 1.22 2011/09/23 22:25:54 amdmi3 Exp $
+# $FreeBSD: ports/www/c-icap-modules/Makefile,v 1.3 2012/08/15 01:47:11 mm Exp $
 #
 
 PORTNAME=	c-icap
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.2.x/
 PKGNAMESUFFIX=	-modules
