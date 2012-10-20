@@ -1,23 +1,24 @@
-# New ports collection makefile for:	wmflame
-# Date created:				16 May 2002
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmflame
 PORTVERSION=	0.60
 PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://web.novalis.org/programs/
+MASTER_SITES=	AFTERSTEP/stable/rpms/misc-tarballs \
+		http://web.novalis.org/programs/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp that shows the load average as a flame
+COMMENT=	Dockapp that shows the load average as a flame
 
-PLIST_FILES=	bin/wmflame
-WRKSRC=	${WRKDIR}/wmflame.app/${PORTNAME}
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_XORG=	x11 xpm
+
+PLIST_FILES=	bin/wmflame
+
+WRKSRC=		${WRKDIR}/wmflame.app/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmflame ${PREFIX}/bin
