@@ -3729,3 +3729,5 @@ math/octave-forge-combinatorics||2012-10-15|Incorporated upstream into math/octa
 games/8kingdoms||2012-10-16|Has expired: BROKEN for more than 6 month
 games/freeorion||2012-10-16|Has expired: BROKEN for more than 6 month
 games/rigsofrods||2012-10-16|Has expired: BROKEN for more than 6 month
+sysutils/bacula2-client||2012-10-20|No longer supported upstream and may contain vulnerabilities. Use sysutils/bacula-client instead
+sysutils/bacula2-server||2012-10-20|No longer supported upstream and may contain vulnerabilities. Use sysutils/bacula-server instead
