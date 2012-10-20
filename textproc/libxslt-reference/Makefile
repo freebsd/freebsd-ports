@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libxslt-reference
-# Date created:				09 May 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../libxslt:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/libxslt:configure
 
 PARENT_WRKSRC!=	cd ${.CURDIR}/../libxslt && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
