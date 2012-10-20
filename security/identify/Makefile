@@ -1,30 +1,26 @@
-# New ports collection makefile for:	identify
-# Date created:		13 March 1999
-# Whom:			nsayer@quack.kfu.com
-#
+# Created by: nsayer@quack.kfu.com
 # $FreeBSD$
-#
 
 PORTNAME=	identify
 PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	http://www.scn.rain.com/pub/security/authent/
+MASTER_SITES=	http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/tools/ \
+		http://www.scn.rain.com/pub/security/authent/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client side ident protocol daemon wrapper
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 
 PORTDOCS=	README
 PLIST_FILES=	libexec/identify
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/identify ${PREFIX}/libexec
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
