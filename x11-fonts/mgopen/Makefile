@@ -1,15 +1,11 @@
-# New ports collection makefile for:	MgOpen Font Family
-# Date created:			16 May 2005
-# Whom:				past@ebs.gr
-#
+# Created by: past@ebs.gr
 # $FreeBSD$
-#
 
 PORTNAME=	mgopen
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.zvr.gr/typo/mgopen/files/
+MASTER_SITES=	http://pub.ellak.gr/fonts/${PORTNAME}/files/
 DISTNAME=	MgOpen
 
 MAINTAINER=	ports@FreeBSD.org
