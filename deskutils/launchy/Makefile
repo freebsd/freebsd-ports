@@ -17,6 +17,8 @@ USE_DOS2UNIX=	readme.lyx readme.txt
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui network
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} 's,/usr,${PREFIX},' \
 		${WRKSRC}/platforms/unix/unix.pro \
@@ -32,7 +34,7 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} -r Launchy.pro)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/?eadme.* ${DOCSDIR}
 .endif
