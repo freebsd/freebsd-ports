@@ -20,9 +20,11 @@ PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
 
 DOCS=		COPYING GPL-vs-LGPL INSTALL LICENCE.WAIVERS README README.html TODO changelog
 
+.include <bsd.port.options.mk>
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/adnslogres ${PREFIX}/bin/adnshost
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
