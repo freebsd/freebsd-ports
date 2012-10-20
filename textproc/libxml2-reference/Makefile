@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libxml2-reference
-# Date created:				09 May 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../libxml2:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/libxml2:configure
 
 PARENT_WRKSRC!=	cd ${.CURDIR}/../libxml2 && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
