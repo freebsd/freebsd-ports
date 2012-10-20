@@ -73,7 +73,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icon_${s}.png \
 		${PREFIX}/share/icons/hicolor/${s}/apps/gtklife.png
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
