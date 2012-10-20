@@ -19,6 +19,9 @@ COMMENT=	Jetspeed is an Open Source Portal, written in Java and XML
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 		${JAKARTA_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 
+DEPRECATED=	project retired upstream
+EXPIRATION_DATE=	2012-11-20
+
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-war//}
 USE_ZIP=	yes
 USE_JAVA=	yes
