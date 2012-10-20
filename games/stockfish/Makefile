@@ -1,19 +1,15 @@
-# New ports collection makefile for:   stockfish
-# Date created:		Apr 21 2011
-# Whom:			Gautam Mani <execve@gmail.com>
-#
+# Created by: Gautam Mani <execve@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	stockfish
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.1
 CATEGORIES=	games
-MASTER_SITES=	http://dl.dropbox.com/u/2116588/sf-archive/:src \
+MASTER_SITES=	http://cl.ly/2t3y2k2Y3Y1H/download/:src \
 		http://www.execve.net/sf/:src \
-		http://f.cl.ly/items/1y0Q3P2n0I2S0g0Y100E/:book \
+		http://api.cld.me/2R1L1Y0V0b1M3M1B1D26/download/:book \
 		http://www.execve.net/sf/:book
-DISTNAME=	stockfish-${PORTVERSION:S/.//g}-ja
-DISTFILES=	stockfish-${PORTVERSION:S/.//g}-ja.zip:src \
+DISTNAME=	stockfish-${PORTVERSION:S/.//g}-linux
+DISTFILES=	stockfish-${PORTVERSION:S/.//g}-linux.zip:src \
 		sf-211-book.zip:book
 
 MAINTAINER=	execve@gmail.com
@@ -28,39 +24,48 @@ MYARCH=		${ARCH}
 BOOKDIR=	sf-211-book
 PORTDOCS=	Readme.txt polyglot.ini
 PORTDATA=	Book.bin
+FETCH_ARGS=	-Fpr
 
 PLIST_FILES=	bin/stockfish
 PLIST_DIRSTRY=	share/data/${PORTNAME} \
 		share/docs/${PORTNAME}
 
-ALL_TARGET=	build ARCH=${MYARCH}
-
-OPTIONS=	POPCNT_PROFILE_BUILD       "Make a Profile build (POPCNT enabled)" Off \
-		PROFILE_BUILD "Make a Profile build" Off
-
 TGTBLD=		build
+MYCC=		gcc
+
+.if ${CC} == "clang" || ${CXX} == "clang++"
+MYCC=	clang
+.endif
+
+OPTIONS_DEFINE=	DOCS POPCNT_ENABLED PROFILE_BUILD
+POPCNT_ENABLED_DESC=	Use the POPCNT instruction
+PROFILE_BUILD_DESC=	Make a Profile build
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PROFILE_BUILD)
+.if ${PORT_OPTIONS:MPROFILE_BUILD}
 TGTBLD=		profile-build
 .endif
 
-.if defined(WITH_POPCNT_PROFILE_BUILD)
+.if ${PORT_OPTIONS:MPOPCNT_ENABLED}
 .if ${ARCH} != "amd64"
-BROKEN=		WITH_POPCNT_PROFILE_BUILD compiles only on amd64
+BROKEN=		POPCNT_ENABLED compiles only on amd64
 .endif
-TGTBLD=		popcnt-profile-build
 .endif
 
 .include <bsd.port.pre.mk>
 
 # workaround the ARCH usage in the stockfish Makefile
-.if ${MYARCH} == "i386"
-ALL_TARGET=	${TGTBLD} ARCH=x86-32
-.elif ${MYARCH} == "amd64"
-ALL_TARGET=	${TGTBLD} ARCH=x86-64
+.if ${ARCH} == "i386"
+MYARCH=		x86-32
+.elif ${ARCH} == "amd64"
+.if ${PORT_OPTIONS:MPOPCNT_ENABLED}
+MYARCH=		x86-64-modern
+.else
+MYARCH=		x86-64
 .endif
+.endif
+ALL_TARGET=	${TGTBLD} ARCH=${MYARCH} COMP=${MYCC}
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
@@ -70,7 +75,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${PREFIX}/bin/stockfish
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/polyglot.ini ${DOCSDIR}
