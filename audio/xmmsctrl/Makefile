@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xmmsctrl
-# Date created:				22 September 2005
-# Whom:					Jason E. Hale <jhale@bluebottle.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmmsctrl
 PORTVERSION=	1.8
@@ -15,7 +10,9 @@ MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
 		http://www.sourcefiles.org/Multimedia/MP3/Tools/Miscellaneous/
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	A small utility to control XMMS from the command line
+COMMENT=	Small utility to control XMMS from the command line
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
@@ -26,10 +23,12 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 PORTDOCS=	Changelog README
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmmsctrl ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 	${MKDIR} ${EXAMPLESDIR}
