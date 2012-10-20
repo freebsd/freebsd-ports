@@ -1,28 +1,31 @@
-# ex:ts=8
-# Ports collection makefile for:	echolot
-# Date created:			Jun 23, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	echolot
 PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://echolot.sourceforge.net/download/ \
-		SF
+MASTER_SITES=	SF \
+		http://benjamin-schweizer.de/files/echolot/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A packet sniffer that grabs ARP packets on any ethernet devices
+COMMENT=	Packet sniffer that grabs ARP packets on any ethernet devices
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	echolot.1
+MAN1=		echolot.1
+PORTDOCS=	*
+PLIST_FILES=	bin/echolot
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
