@@ -145,6 +145,33 @@ mingw32/include/fcntl.h
 mingw32/include/fenv.h
 mingw32/include/float.h
 mingw32/include/fltdefs.h
+mingw32/include/gdiplus.h
+mingw32/include/gdiplus/gdiplus.h
+mingw32/include/gdiplus/gdiplusbase.h
+mingw32/include/gdiplus/gdiplusbrush.h
+mingw32/include/gdiplus/gdipluscolor.h
+mingw32/include/gdiplus/gdipluscolormatrix.h
+mingw32/include/gdiplus/gdipluseffects.h
+mingw32/include/gdiplus/gdiplusenums.h
+mingw32/include/gdiplus/gdiplusflat.h
+mingw32/include/gdiplus/gdiplusgpstubs.h
+mingw32/include/gdiplus/gdiplusgraphics.h
+mingw32/include/gdiplus/gdiplusheaders.h
+mingw32/include/gdiplus/gdiplusimageattributes.h
+mingw32/include/gdiplus/gdiplusimagecodec.h
+mingw32/include/gdiplus/gdiplusimaging.h
+mingw32/include/gdiplus/gdiplusimpl.h
+mingw32/include/gdiplus/gdiplusinit.h
+mingw32/include/gdiplus/gdipluslinecaps.h
+mingw32/include/gdiplus/gdiplusmatrix.h
+mingw32/include/gdiplus/gdiplusmem.h
+mingw32/include/gdiplus/gdiplusmetafile.h
+mingw32/include/gdiplus/gdiplusmetaheader.h
+mingw32/include/gdiplus/gdipluspath.h
+mingw32/include/gdiplus/gdipluspen.h
+mingw32/include/gdiplus/gdipluspixelformats.h
+mingw32/include/gdiplus/gdiplusstringformat.h
+mingw32/include/gdiplus/gdiplustypes.h
 mingw32/include/getopt.h
 mingw32/include/gmon.h
 mingw32/include/httpext.h
@@ -428,6 +455,7 @@ mingw32/lib/libdxerr9.a
 mingw32/lib/libdxguid.a
 mingw32/lib/libfaultrep.a
 mingw32/lib/libgdi32.a
+mingw32/lib/libgdiplus.a
 mingw32/lib/libglaux.a
 mingw32/lib/libglu32.a
 mingw32/lib/libgmon.a
@@ -529,7 +557,6 @@ mingw32/lib/libstrmiids.a
 mingw32/lib/libsvrapi.a
 mingw32/lib/libtapi32.a
 mingw32/lib/libtdi.a
-mingw32/lib/libth32.a
 mingw32/lib/libthunk32.a
 mingw32/lib/liburl.a
 mingw32/lib/libusbcamd.a
@@ -559,6 +586,7 @@ mingw32/lib/libwtsapi32.a
 mingw32/lib/txtmode.o
 @dirrm mingw32/include/GL
 @dirrm mingw32/include/ddk
+@dirrm mingw32/include/gdiplus
 @dirrm mingw32/include/sys
 @dirrm mingw32/include
 @dirrmtry mingw32/lib

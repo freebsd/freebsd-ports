@@ -2,5 +2,5 @@ SHA256 (mingw/mingwrt-3.20-mingw32-dev.tar.gz) = a41717c319093e2508a3034e384aaeb
 SIZE (mingw/mingwrt-3.20-mingw32-dev.tar.gz) = 883690
 SHA256 (mingw/mingwrt-3.20-mingw32-dll.tar.gz) = ad8f08d2761e4cba155d662514d8abc2cb513b533252bacccb9618ec11ed106e
 SIZE (mingw/mingwrt-3.20-mingw32-dll.tar.gz) = 16073
-SHA256 (mingw/w32api-3.14-mingw32-dev.tar.gz) = 85639a56208b605ae58bc4dc22445d2ecdf25a33d40a5323eb139404be3cffec
-SIZE (mingw/w32api-3.14-mingw32-dev.tar.gz) = 1632830
+SHA256 (mingw/w32api-3.17-2-mingw32-dev.tar.lzma) = 672b60779bedb13b44aa519c4378394b04fca32f926056596bd439628819090a
+SIZE (mingw/w32api-3.17-2-mingw32-dev.tar.lzma) = 1129114
