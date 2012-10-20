@@ -1,24 +1,16 @@
-# New ports collection makefile for:	MicroEmacs
-# Date created:         16 Jan 1995
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by:	tg
 # $FreeBSD$
-#
 
 PORTNAME=	uemacs
 PORTVERSION=	4.0
 CATEGORIES=	editors
-MASTER_SITES=	http://uemacs.tripod.com/ \
-		ftp://aquest.com/pub/uemacs400/disk2/
+MASTER_SITES=	http://ozzmosis.com/uemacs/
 DISTNAME=	ue400dev
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mail@ozzmosis.com
 COMMENT=	A full screen editor
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
-
-NO_CDROM=	"Resale allowed for media cost only"
+NO_CDROM=	Resale allowed for media cost only
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
