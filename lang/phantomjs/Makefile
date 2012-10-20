@@ -1,12 +1,7 @@
-# New ports collection makefile for:	phantomjs
-# Date created:		20 Apr 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	phantomjs
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -32,11 +27,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/lib/phantomjs/
-	cd ${WRKSRC} && ${INSTALL_LIB} src/qt/lib/libQtWebKit.so.4 ${PREFIX}/lib/phantomjs/
-	cd ${WRKSRC} && ${INSTALL_LIB} src/qt/lib/libQtGui.so.4 ${PREFIX}/lib/phantomjs/
-	cd ${WRKSRC} && ${INSTALL_LIB} src/qt/lib/libQtNetwork.so.4 ${PREFIX}/lib/phantomjs/
-	cd ${WRKSRC} && ${INSTALL_LIB} src/qt/lib/libQtCore.so.4 ${PREFIX}/lib/phantomjs/
 
 .include <bsd.port.pre.mk>
 
