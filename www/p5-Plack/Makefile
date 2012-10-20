@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	1.0003
+PORTVERSION=	1.0006
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -41,6 +41,7 @@ TEST_DEPENDS=  \
 	p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 	p5-Module-Refresh>0:${PORTSDIR}/devel/p5-Module-Refresh \
+	p5-Stream-Buffered>=0.02:${PORTSDIR}/devel/p5-Stream-Buffered \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
@@ -110,7 +111,6 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Request::Upload.3 \
 	Plack::Response.3 \
 	Plack::Runner.3 \
-	Plack::TempBuffer.3 \
 	Plack::Test.3 \
 	Plack::Test::MockHTTP.3 \
 	Plack::Test::Server.3 \
