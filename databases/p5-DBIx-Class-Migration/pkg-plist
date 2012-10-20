@@ -9,12 +9,19 @@ bin/dbic-migration
 %%SITE_PERL%%/DBIx/Class/Migration/Population.pm
 %%SITE_PERL%%/DBIx/Class/Migration/PostgresqlSandbox.pm
 %%SITE_PERL%%/DBIx/Class/Migration/RunScript.pm
+%%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait/Dump.pm
+%%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait/Populate.pm
 %%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait/SchemaLoader.pm
+%%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait/TargetPath.pm
 %%SITE_PERL%%/DBIx/Class/Migration/Sandbox.pm
 %%SITE_PERL%%/DBIx/Class/Migration/SchemaLoader.pm
 %%SITE_PERL%%/DBIx/Class/Migration/Script.pm
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/databases.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbi_connect_attrs.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbic_connect_attrs.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbic_fixture_class.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbic_fixtures_extra_args.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/delete_table_rows.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/diagram.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/downgrade.pod
@@ -22,6 +29,7 @@ bin/dbic-migration
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dsn.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dump_all_sets.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dump_named_sets.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/extra_schemaloader_args.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/fixture_sets.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/force_overwrite.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/help.pod
