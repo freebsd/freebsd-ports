@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getopt
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
@@ -20,10 +20,12 @@ MAKE_ENV=	LIBCGETOPT=0
 MAN1=		getopt.1
 DOCS=		Changelog README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|' ${WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
