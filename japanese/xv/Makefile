@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-xv
-# Date created:		07 Oct 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese
 
@@ -15,7 +11,7 @@ PKGDIR=		${.CURDIR}
 
 MAKE_ENV=	LOCALE_EXTENSION=-DTV_L10N
 
-RUN_DEPENDS=	xv:${.CURDIR}/../../graphics/xv
+RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
 
 NOMAN=		yes
 
