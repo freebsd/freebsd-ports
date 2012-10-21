@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcl8.2.3
-# Date created:		19 August 1997
-# Whom:			jkh
-#
+# Created by:i jkh
 # $FreeBSD$
-#
 
 PORTNAME=	tcl
 PORTVERSION=	8.2.3
