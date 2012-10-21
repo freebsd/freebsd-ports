@@ -1,4 +1,4 @@
-diff --git a/README b/README
+diff --git README README
 index 47ed64b..496c37f 100644
 --- README
 +++ README
@@ -11,8 +11,8 @@ index 47ed64b..496c37f 100644
  - pwgen
    http://sourceforge.net/projects/pwgen/
  - tree
-diff --git a/contrib/pass.bash-completion b/contrib/pass.bash-completion
-index ccffbfa..2c2afc0 100644
+diff --git contrib/pass.bash-completion contrib/pass.bash-completion
+index d0ef012..7b3c149 100644
 --- contrib/pass.bash-completion
 +++ contrib/pass.bash-completion
 @@ -59,7 +59,6 @@ _pass()
@@ -32,8 +32,8 @@ index ccffbfa..2c2afc0 100644
  				_pass_complete_entries
  				;;
  			rm|remove|delete)
-diff --git a/contrib/pass.fish-completion b/contrib/pass.fish-completion
-index 7652d56..5c180e2 100644
+diff --git contrib/pass.fish-completion contrib/pass.fish-completion
+index 9130d1f..8998d96 100644
 --- contrib/pass.fish-completion
 +++ contrib/pass.fish-completion
 @@ -76,7 +76,6 @@ complete -c $PROG -f -A -n '__fish_pass_uses_command insert' -a "(__fish_pass_pr
@@ -58,8 +58,8 @@ index 7652d56..5c180e2 100644
  
  complete -c $PROG -f -A -n '__fish_pass_needs_command' -a git -d 'Command: execute a git command'
  complete -c $PROG -f -A -n '__fish_pass_uses_command git' -a 'init' -d 'Initialize git repository'
-diff --git a/contrib/pass.zsh-completion b/contrib/pass.zsh-completion
-index c6fe678..a01bb2b 100644
+diff --git contrib/pass.zsh-completion contrib/pass.zsh-completion
+index 848bc67..9855ac0 100644
 --- contrib/pass.zsh-completion
 +++ contrib/pass.zsh-completion
 @@ -39,8 +39,6 @@ _pass () {
@@ -81,8 +81,8 @@ index c6fe678..a01bb2b 100644
  	_pass_complete_entries
  }
  _pass_complete_entries_helper () {
-diff --git a/man/pass.1 b/man/pass.1
-index 3ccfa67..c0aa018 100644
+diff --git man/pass.1 man/pass.1
+index efb5d9b..bc65a54 100644
 --- man/pass.1
 +++ man/pass.1
 @@ -68,12 +68,8 @@ by using the
@@ -98,7 +98,7 @@ index 3ccfa67..c0aa018 100644
 +\fBshow\fP \fIpass-name\fP
 +Decrypt and print a password named \fIpass-name\fP.
  .TP
- \fBinsert\fP [ \fI--no-echo\fP, \fI-n\fP | \fI--multiline\fP, \fI-m\fP ] [ \fI--force\fP, \fI-f\fP ] \fIpass-name\fP
+ \fBinsert\fP [ \fI--echo\fP, \fI-e\fP | \fI--multiline\fP, \fI-m\fP ] [ \fI--force\fP, \fI-f\fP ] \fIpass-name\fP
  Insert a new password into the password store called \fIpass-name\fP. This will
 @@ -92,15 +88,12 @@ ensure that temporary files are created in \fI/dev/shm\fP in order to avoid writ
  difficult-to-erase disk sectors. If \fI/dev/shm\fP is not accessible, fallback to
@@ -144,15 +144,15 @@ index 3ccfa67..c0aa018 100644
  Remove password from store
  .B zx2c4@laptop ~ $ pass remove Business/cheese-whiz-factory 
 @@ -345,7 +331,6 @@ The location of the text editor used by \fBedit\fP.
- .BR gpg (1),
+ .BR gpg2 (1),
  .BR pwgen (1),
  .BR git (1),
 -.BR xclip (1).
  
  .SH AUTHOR
  .B pass
-diff --git a/src/password-store.sh b/src/password-store.sh
-index 503bac4..5264fb4 100755
+diff --git src/password-store.sh src/password-store.sh
+index 26a4bd0..fe79c82 100755
 --- src/password-store.sh
 +++ src/password-store.sh
 @@ -1,4 +1,4 @@
@@ -161,7 +161,7 @@ index 503bac4..5264fb4 100755
  
  # Copyright (C) 2012 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  # This file is licensed under the GPLv2+. Please see COPYING for more information.
-@@ -35,18 +35,16 @@ Usage:
+@@ -35,18 +35,18 @@ Usage:
          Optionally reencrypt existing passwords using new gpg-id.
      $program [ls] [subfolder]
          List passwords.
@@ -170,9 +170,11 @@ index 503bac4..5264fb4 100755
 -        If put on the clipboard, it will be cleared in 45 seconds.
 +    $program [show] pass-name
 +        Show existing password
-     $program insert [--no-echo,-n | --multiline,-m] [--force,-f] pass-name
-         Insert new password. Optionally, the console can be enabled to not
-         echo the password back. Or, optionally, it may be multiline. Prompt
+     $program insert [--echo,-e | --multiline,-m] [--force,-f] pass-name
+         Insert new password. Optionally, the console can be enabled echo
+         the password back. Or, optionally, it may be multiline. Prompt
++        Insert new password. Optionally, the console can be enabled to not
++        echo the password back. Or, optionally, it may be multiline. Prompt
          before overwriting existing password unless forced.
      $program edit pass-name
          Insert a new password or edit an existing password using ${EDITOR:-vi}.
@@ -183,7 +185,7 @@ index 503bac4..5264fb4 100755
          Prompt before overwriting existing password unless forced.
      $program rm [--recursive,-r] [--force,-f] pass-name
          Remove existing password or directory, optionally forcefully.
-@@ -80,49 +78,24 @@ yesno() {
+@@ -80,48 +80,21 @@ yesno() {
  #
  # BEGIN Platform definable
  #
@@ -200,7 +202,7 @@ index 503bac4..5264fb4 100755
 -		if [[ $now != $(echo -n "$1" | base64) ]]; then
 -			before="$now"
 -		fi
- 
+-
 -		# It might be nice to programatically check to see if klipper exists,
 -		# as well as checking for other common clipboard managers. But for now,
 -		# this works fine -- if qdbus isn't there or if klipper isn't running,
@@ -218,7 +220,7 @@ index 503bac4..5264fb4 100755
 -	if [[ -d /dev/shm && -w /dev/shm && -x /dev/shm ]]; then
 -		tmp_dir="$(TMPDIR=/dev/shm mktemp -t "$template" -d)"
 +	ramdisk="/var/tmp/password-store.ramdisk"
-+	if [[ -d $ramdisk && -w $ramdisk && -x $ramdisk ]]; then
++	if [[ -d $ramdisk && -d $ramdisk && -d $ramdisk ]]; then
 +		tmp_dir="$(TMPDIR=$ramdisk mktemp -t "$template" -d)"
  	else
 -		yesno "$(echo    "Your system does not have /dev/shm, which means that it may"
@@ -234,17 +236,14 @@ index 503bac4..5264fb4 100755
  	fi
 -
  }
--GPG="gpg"
 -GETOPT="getopt"
  
 -# source /path/to/platform-defined-functions
-+GPG="gpg2"
 +GETOPT="/usr/local/bin/getopt"
-+
  #
  # END Platform definable
  #
-@@ -192,18 +165,8 @@ fi
+@@ -191,18 +164,8 @@ fi
  
  case "$command" in
  	show|ls|list)
@@ -264,20 +263,23 @@ index 503bac4..5264fb4 100755
  			exit 1
  		fi
  
-@@ -221,11 +184,7 @@ case "$command" in
+@@ -220,13 +183,8 @@ case "$command" in
  				echo "$path is not in the password store."
  				exit 1
  			fi
 -			if [[ $clip -eq 0 ]]; then
--				exec $GPG -d $GPG_OPTS "$passfile"
+-				exec gpg2 -d $GPG_OPTS "$passfile"
 -			else
--				clip "$($GPG -d $GPG_OPTS "$passfile" | head -n 1)" "$path"
+-				pass="$(gpg2 -d $GPG_OPTS "$passfile" | head -n 1)"
+-				[[ -n $pass ]] || exit 1
+-				clip "$pass" "$path"
 -			fi
-+			exec $GPG -d $GPG_OPTS "$passfile"
++
++			gpg2 -d $GPG_OPTS "$passfile"
  		fi
  		;;
  	insert)
-@@ -306,22 +265,20 @@ case "$command" in
+@@ -307,22 +265,20 @@ case "$command" in
  		git_add_file "$passfile" "$action password for $path using ${EDITOR:-vi}."
  		;;
  	generate)
@@ -302,8 +304,8 @@ index 503bac4..5264fb4 100755
  			exit 1
  		fi
  		path="$1"
-@@ -340,12 +297,8 @@ case "$command" in
- 		$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$pass"
+@@ -341,12 +297,8 @@ case "$command" in
+ 		gpg2 -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$pass"
  		git_add_file "$passfile" "Added generated password for $path to store."
  		
 -		if [[ $clip -eq 0 ]]; then

@@ -1,5 +1,5 @@
-diff --git a/src/password-store.sh b/src/password-store.sh
-index 503bac4..6fcf2cc 100755
+diff --git src/password-store.sh src/password-store.sh
+index 26a4bd0..4e0526d 100755
 --- src/password-store.sh
 +++ src/password-store.sh
 @@ -1,4 +1,4 @@
@@ -8,16 +8,14 @@ index 503bac4..6fcf2cc 100755
  
  # Copyright (C) 2012 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  # This file is licensed under the GPLv2+. Please see COPYING for more information.
-@@ -107,22 +107,24 @@ clip() {
- 	) & disown
+@@ -108,20 +108,20 @@ clip() {
  	echo "Copied $2 to clipboard. Will clear in 45 seconds."
  }
-+
  tmpdir() {
 -	if [[ -d /dev/shm && -w /dev/shm && -x /dev/shm ]]; then
 -		tmp_dir="$(TMPDIR=/dev/shm mktemp -t "$template" -d)"
 +	ramdisk="/var/tmp/password-store.ramdisk"
-+	if [[ -d $ramdisk && -w $ramdisk && -x $ramdisk ]]; then
++	if [[ -d $ramdisk && -d $ramdisk && -d $ramdisk ]]; then
 +		tmp_dir="$(TMPDIR=$ramdisk mktemp -t "$template" -d)"
  	else
 -		yesno "$(echo    "Your system does not have /dev/shm, which means that it may"
@@ -33,13 +31,10 @@ index 503bac4..6fcf2cc 100755
  	fi
 -
  }
--GPG="gpg"
 -GETOPT="getopt"
  
 -# source /path/to/platform-defined-functions
-+GPG="gpg2"
 +GETOPT="/usr/local/bin/getopt"
-+
  #
  # END Platform definable
  #

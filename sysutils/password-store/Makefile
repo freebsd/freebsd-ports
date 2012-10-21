@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	password-store
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.zx2c4.com/password-store/snapshot/
 
