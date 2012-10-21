@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Dzip
-# Date created:				08 May 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dzip
 PORTVERSION=	2.9
@@ -11,8 +7,10 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://speeddemosarchive.com/dzip/
 DISTNAME=	dz${PORTVERSION:S/.//g}src
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File compression utility specializing in Quake demo compression
+
+LICENSE=	ZLIB
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
