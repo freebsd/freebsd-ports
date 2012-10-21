@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTVERSION=	2.2.4
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	SF
@@ -31,7 +30,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 			--with-libiconv=${LOCALBASE} \
 			--with-libgcrypt-dir=${LOCALBASE} \
-			--with-uams-path=${LOCALBASE}/libexec/netatalk-uams \
+			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE}
 
 OPTIONS=	APPLETALK	"Enable AppleTalk protocol support" on \
