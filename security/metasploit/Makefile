@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	4.1.0
+DISTVERSION=	4.4.0
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/
 DISTNAME=	framework-${DISTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm				\
 		nmap:${PORTSDIR}/security/nmap
 
-WRKSRC=		${WRKDIR}/msf
+WRKSRC=		${WRKDIR}/msf3
 SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 		msfopcode msfpayload msfpescan msfweb
 
