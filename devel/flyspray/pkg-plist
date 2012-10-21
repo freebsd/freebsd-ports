@@ -20,74 +20,168 @@
 %%DATADIR%%/includes/class.user.php
 %%DATADIR%%/includes/constants.inc.php
 %%DATADIR%%/includes/events.inc.php
-%%DATADIR%%/includes/external/Validate.php
 %%DATADIR%%/includes/external/http_build_query.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/ListenerMapper.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/ResponseEvent.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/CommandEvent.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/SendEvent.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/DisconnectEvent.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/ConnectEvent.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events/Listener.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/ClassLoader.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/RecipientList.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/BatchMailer.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Cache.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Sendmail.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/NativeMail.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Multi.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Rotator.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/SMTP.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/CacheFactory.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/EmbeddedFile.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Encoder.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Image.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Headers.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Attachment.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Part.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Mime.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message/MimeException.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Events.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Errors.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Log.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/ConnectionBase.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/ConnectionException.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/FileException.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/File.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PopB4Smtp/Pop3Connection.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PLAIN.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/CRAMMD5.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/LOGIN.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/@PopB4Smtp.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/BadResponseException.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Iterator/Array.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Iterator/MySQLResult.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/LogContainer.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Message.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Exception.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Address.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/AddressContainer.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/EasySwiftResponseTracker.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Decorator/Replacements.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/FileEmbedder.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/ConnectionRotator.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending/DefaultView.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending/AbstractView.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Throttler.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Decorator.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/AntiFlood.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/BandwidthMonitor.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/MailSend.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Log/DefaultLog.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/OutputStream.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/JointOutputStream.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/Disk.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/Memory.php
-%%DATADIR%%/includes/external/swift-mailer/Swift.php
-%%DATADIR%%/includes/external/swift-mailer/EasySwift.php
+%%DATADIR%%/includes/external/sparkline/Object.php
+%%DATADIR%%/includes/external/sparkline/Sparkline.php
+%%DATADIR%%/includes/external/sparkline/Sparkline_Bar.php
+%%DATADIR%%/includes/external/sparkline/Sparkline_Line.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Attachment.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/ByteStream/AbstractFilterableInputStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/ByteStream/ArrayByteStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/ByteStream/FileByteStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReader/GenericFixedWidthReader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReader/UsAsciiReader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReader/Utf8Reader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReaderFactory.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterStream/ArrayCharacterStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterStream/NgCharacterStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/ConfigurableSpool.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/DependencyContainer.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/DependencyException.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/EmbeddedFile.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Encoder/Base64Encoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Encoder/QpEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Encoder/Rfc2231Encoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Encoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Encoding.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/CommandEvent.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/CommandListener.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/Event.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/EventDispatcher.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/EventListener.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/EventObject.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/ResponseEvent.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/ResponseListener.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/SendEvent.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/SendListener.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/SimpleEventDispatcher.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/TransportChangeEvent.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/TransportChangeListener.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/TransportExceptionEvent.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events/TransportExceptionListener.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/FailoverTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/FileSpool.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mailer/ArrayRecipientIterator.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mailer/RecipientIterator.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/FileStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Filterable.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Image.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/InputByteStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/IoException.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache/ArrayKeyCache.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache/DiskKeyCache.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache/DummyKeyCache.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache/KeyCacheInputStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache/NullKeyCache.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/LoadBalancedTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mailer.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/MailTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/MemorySpool.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Message.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Attachment.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/CharsetObserver.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/ContentEncoder/Base64ContentEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/ContentEncoder/PlainContentEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/ContentEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/EmbeddedFile.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/EncodingObserver.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Grammar.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Header.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/HeaderEncoder.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/HeaderFactory.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/AbstractHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/DateHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/IdentificationHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/MailboxHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/ParameterizedHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/PathHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers/UnstructuredHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/HeaderSet.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Message.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/MimeEntity.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/MimePart.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/ParameterizedHeader.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/SimpleHeaderFactory.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/SimpleHeaderSet.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/SimpleMessage.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/SimpleMimeEntity.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/MimePart.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/NullTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/OutputByteStream.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/AntiFloodPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/BandwidthMonitorPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Decorator/Replacements.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/DecoratorPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/ImpersonatePlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Logger.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/LoggerPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Loggers/ArrayLogger.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Loggers/EchoLogger.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/MessageLogger.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Pop/Pop3Connection.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Pop/Pop3Exception.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/PopBeforeSmtpPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/RedirectingPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Reporter.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/ReporterPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Reporters/HitReporter.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Reporters/HtmlReporter.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Sleeper.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/ThrottlerPlugin.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Timer.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Preferences.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/ReplacementFilterFactory.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/RfcComplianceException.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/SendmailTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/SmtpTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Spool.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/SpoolTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/StreamFilter.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/StreamFilters/ByteArrayReplacementFilter.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/StreamFilters/StringReplacementFilter.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/StreamFilters/StringReplacementFilterFactory.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/SwiftException.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/AbstractSmtpTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp/Auth/CramMd5Authenticator.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp/Auth/LoginAuthenticator.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp/Auth/PlainAuthenticator.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp/Authenticator.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp/AuthHandler.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/EsmtpHandler.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/EsmtpTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/FailoverTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/IoBuffer.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/LoadBalancedTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/MailInvoker.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/MailTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/NullTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/SendmailTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/SimpleMailInvoker.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/SmtpAgent.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/SpoolTransport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/StreamBuffer.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/TransportException.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift/Validate.php
+%%DATADIR%%/includes/external/swift-mailer/classes/Swift.php
+%%DATADIR%%/includes/external/swift-mailer/dependency_maps/cache_deps.php
+%%DATADIR%%/includes/external/swift-mailer/dependency_maps/message_deps.php
+%%DATADIR%%/includes/external/swift-mailer/dependency_maps/mime_deps.php
+%%DATADIR%%/includes/external/swift-mailer/dependency_maps/transport_deps.php
+%%DATADIR%%/includes/external/swift-mailer/mime_types.php
+%%DATADIR%%/includes/external/swift-mailer/preferences.php
+%%DATADIR%%/includes/external/swift-mailer/swift_init.php
+%%DATADIR%%/includes/external/swift-mailer/swift_required.php
+%%DATADIR%%/includes/external/swift-mailer/swift_required_pear.php
+%%DATADIR%%/includes/external/Validate.php
 %%DATADIR%%/includes/external/Zend/Http/Client/Adapter/Interface.php
 %%DATADIR%%/includes/external/Zend/Http/Client/Adapter/Socket.php
 %%DATADIR%%/includes/external/Zend/Http/Client.php
@@ -120,6 +214,8 @@
 %%DATADIR%%/javascript/details.js
 %%DATADIR%%/javascript/functions.js
 %%DATADIR%%/javascript/index.js
+%%DATADIR%%/javascript/jit/excanvas.js
+%%DATADIR%%/javascript/jit/jit.js
 %%DATADIR%%/javascript/jscalendar/calendar-blue.css
 %%DATADIR%%/javascript/jscalendar/calendar-blue2.css
 %%DATADIR%%/javascript/jscalendar/calendar-brown.css
@@ -192,12 +288,19 @@
 %%DATADIR%%/javascript/jscalendar/skins/aqua/theme.css
 %%DATADIR%%/javascript/jscalendar/skins/aqua/title-bg.gif
 %%DATADIR%%/javascript/jscalendar/skins/aqua/today-bg.gif
+%%DATADIR%%/javascript/lightbox/css/lightbox.css
+%%DATADIR%%/javascript/lightbox/images/bullet.gif
+%%DATADIR%%/javascript/lightbox/images/close.gif
+%%DATADIR%%/javascript/lightbox/images/closelabel.gif
+%%DATADIR%%/javascript/lightbox/images/loading.gif
+%%DATADIR%%/javascript/lightbox/images/nextlabel.gif
+%%DATADIR%%/javascript/lightbox/images/prevlabel.gif
+%%DATADIR%%/javascript/lightbox/js/lightbox.js
 %%DATADIR%%/javascript/prototype/prototype.js
 %%DATADIR%%/javascript/script.aculo.us/builder.js
 %%DATADIR%%/javascript/script.aculo.us/controls.js
 %%DATADIR%%/javascript/script.aculo.us/dragdrop.js
 %%DATADIR%%/javascript/script.aculo.us/effects.js
-%%DATADIR%%/javascript/script.aculo.us/javascripttest.rb
 %%DATADIR%%/javascript/script.aculo.us/scriptaculous.js
 %%DATADIR%%/javascript/script.aculo.us/slider.js
 %%DATADIR%%/javascript/script.aculo.us/sound.js
@@ -208,6 +311,7 @@
 %%DATADIR%%/lang/.langedit.php
 %%DATADIR%%/lang/bg.php
 %%DATADIR%%/lang/de.php
+%%DATADIR%%/lang/dk.php
 %%DATADIR%%/lang/en.php
 %%DATADIR%%/lang/es.php
 %%DATADIR%%/lang/fr.php
@@ -218,8 +322,10 @@
 %%DATADIR%%/lang/nl.php
 %%DATADIR%%/lang/pl.php
 %%DATADIR%%/lang/pt_br.php
-%%DATADIR%%/lang/sv_SE.php
 %%DATADIR%%/lang/ru.php
+%%DATADIR%%/lang/sr.php
+%%DATADIR%%/lang/sr_lat.php
+%%DATADIR%%/lang/sv_SE.php
 %%DATADIR%%/lang/zh_cn.php
 %%DATADIR%%/plugins/.htaccess
 %%DATADIR%%/plugins/dokuwiki/conf/.htaccess
@@ -249,13 +355,10 @@
 %%DATADIR%%/plugins/dokuwiki/img/source_php.png
 %%DATADIR%%/plugins/dokuwiki/img/text-html.png
 %%DATADIR%%/plugins/dokuwiki/img/ul.gif
-%%DATADIR%%/plugins/dokuwiki/inc/HTTPClient.php
-%%DATADIR%%/plugins/dokuwiki/inc/JpegMeta.php
 %%DATADIR%%/plugins/dokuwiki/inc/cache.php
 %%DATADIR%%/plugins/dokuwiki/inc/common.php
 %%DATADIR%%/plugins/dokuwiki/inc/confutils.php
 %%DATADIR%%/plugins/dokuwiki/inc/events.php
-%%DATADIR%%/plugins/dokuwiki/inc/geshi.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/actionscript-french.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/actionscript.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/ada.php
@@ -266,12 +369,12 @@
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/autoit.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/bash.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/c.php
-%%DATADIR%%/plugins/dokuwiki/inc/geshi/c_mac.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/caddcl.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/cadlisp.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/cpp.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/csharp.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/css.php
+%%DATADIR%%/plugins/dokuwiki/inc/geshi/c_mac.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/d.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/delphi.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/diff.php
@@ -280,8 +383,8 @@
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/eiffel.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/freebasic.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/gml.php
-%%DATADIR%%/plugins/dokuwiki/inc/geshi/html4strict.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/ini.php
+%%DATADIR%%/plugins/dokuwiki/inc/geshi/html4strict.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/inno.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/java.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/javascript.php
@@ -311,10 +414,13 @@
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/vhdl.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/visualfoxpro.php
 %%DATADIR%%/plugins/dokuwiki/inc/geshi/xml.php
+%%DATADIR%%/plugins/dokuwiki/inc/geshi.php
 %%DATADIR%%/plugins/dokuwiki/inc/html.php
+%%DATADIR%%/plugins/dokuwiki/inc/HTTPClient.php
 %%DATADIR%%/plugins/dokuwiki/inc/infoutils.php
 %%DATADIR%%/plugins/dokuwiki/inc/init.php
 %%DATADIR%%/plugins/dokuwiki/inc/io.php
+%%DATADIR%%/plugins/dokuwiki/inc/JpegMeta.php
 %%DATADIR%%/plugins/dokuwiki/inc/pageutils.php
 %%DATADIR%%/plugins/dokuwiki/inc/parser/handler.php
 %%DATADIR%%/plugins/dokuwiki/inc/parser/lexer.php
@@ -412,6 +518,7 @@
 %%DATADIR%%/plugins/dokuwiki/lib/plugins/syntax.php
 %%DATADIR%%/robots.txt
 %%DATADIR%%/schedule.php
+%%DATADIR%%/scripts/activity.php
 %%DATADIR%%/scripts/admin.php
 %%DATADIR%%/scripts/authenticate.php
 %%DATADIR%%/scripts/depends.php
@@ -440,7 +547,6 @@
 %%DATADIR%%/setup/templates/pre_install.tpl
 %%DATADIR%%/setup/templates/structure.tpl
 %%DATADIR%%/setup/templates/upgrade.tpl
-%%DATADIR%%/setup/upgrade.php
 %%DATADIR%%/setup/upgrade/0.9.9/add_data.php
 %%DATADIR%%/setup/upgrade/0.9.9/add_duplicates.php
 %%DATADIR%%/setup/upgrade/0.9.9/add_searches.php
@@ -454,11 +560,11 @@
 %%DATADIR%%/setup/upgrade/0.9.9/rename_columns.php
 %%DATADIR%%/setup/upgrade/0.9.9/upgrade.info
 %%DATADIR%%/setup/upgrade/0.9.9/upgrade_assignments.php
+%%DATADIR%%/setup/upgrade/0.9.9.2/flyspray-install.xml
+%%DATADIR%%/setup/upgrade/0.9.9.2/flyspray.conf.php
 %%DATADIR%%/setup/upgrade/0.9.9.2/lowercase_emails.php
 %%DATADIR%%/setup/upgrade/0.9.9.2/update_users.xml
 %%DATADIR%%/setup/upgrade/0.9.9.2/upgrade.info
-%%DATADIR%%/setup/upgrade/0.9.9.2/flyspray.conf.php
-%%DATADIR%%/setup/upgrade/0.9.9.2/flyspray-install.xml
 %%DATADIR%%/setup/upgrade/0.9.9.4/flyspray-install.xml
 %%DATADIR%%/setup/upgrade/0.9.9.4/flyspray.conf.php
 %%DATADIR%%/setup/upgrade/0.9.9.4/upgrade.info
@@ -467,6 +573,10 @@
 %%DATADIR%%/setup/upgrade/0.9.9.5/flyspray.conf.php
 %%DATADIR%%/setup/upgrade/0.9.9.5/upgrade.info
 %%DATADIR%%/setup/upgrade/0.9.9.5/upgrade.xml
+%%DATADIR%%/setup/upgrade/0.9.9.7/flyspray-install.xml
+%%DATADIR%%/setup/upgrade/0.9.9.7/flyspray.conf.php
+%%DATADIR%%/setup/upgrade/0.9.9.7/upgrade.info
+%%DATADIR%%/setup/upgrade.php
 %%DATADIR%%/templates/.htaccess
 %%DATADIR%%/templates/admin.cat.tpl
 %%DATADIR%%/templates/admin.editgroup.tpl
@@ -577,14 +687,14 @@
 %%DATADIR%%/themes/Bluey/menu/projectprefs.png
 %%DATADIR%%/themes/Bluey/menu/reports.png
 %%DATADIR%%/themes/Bluey/menu/search.png
-%%DATADIR%%/themes/Bluey/mime/application.png
 %%DATADIR%%/themes/Bluey/mime/application/octet-stream.png
 %%DATADIR%%/themes/Bluey/mime/application/pdf.png
 %%DATADIR%%/themes/Bluey/mime/application/x-gzip.png
+%%DATADIR%%/themes/Bluey/mime/application.png
 %%DATADIR%%/themes/Bluey/mime/audio.png
 %%DATADIR%%/themes/Bluey/mime/image.png
-%%DATADIR%%/themes/Bluey/mime/text.png
 %%DATADIR%%/themes/Bluey/mime/text/html.png
+%%DATADIR%%/themes/Bluey/mime/text.png
 %%DATADIR%%/themes/Bluey/mime/video.png
 %%DATADIR%%/themes/Bluey/next.png
 %%DATADIR%%/themes/Bluey/percent-0.png
@@ -601,12 +711,133 @@
 %%DATADIR%%/themes/Bluey/personal.png
 %%DATADIR%%/themes/Bluey/prev.png
 %%DATADIR%%/themes/Bluey/right.png
+%%DATADIR%%/themes/Bluey/up.png
 %%DATADIR%%/themes/Bluey/smile.png
 %%DATADIR%%/themes/Bluey/theme.css
 %%DATADIR%%/themes/Bluey/theme_print.css
 %%DATADIR%%/themes/Bluey/title.png
-%%DATADIR%%/themes/Bluey/up.png
 %%DATADIR%%/themes/Bluey/x-office-calendar.png
+%%DATADIR%%/themes/CleanFS/asc.png
+%%DATADIR%%/themes/CleanFS/button_cancel.png
+%%DATADIR%%/themes/CleanFS/calendar.css
+%%DATADIR%%/themes/CleanFS/comment.png
+%%DATADIR%%/themes/CleanFS/desc.png
+%%DATADIR%%/themes/CleanFS/down.png
+%%DATADIR%%/themes/CleanFS/edit_add.png
+%%DATADIR%%/themes/CleanFS/edit_remove.png
+%%DATADIR%%/themes/CleanFS/ie.css
+%%DATADIR%%/themes/CleanFS/img/black/calendar_alt_fill_16x16.png
+%%DATADIR%%/themes/CleanFS/img/black/comment_stroke_16x14.png
+%%DATADIR%%/themes/CleanFS/img/black/loop_alt3_12x9.png
+%%DATADIR%%/themes/CleanFS/img/caret.gif
+%%DATADIR%%/themes/CleanFS/img/gray/blocking_13x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/calendar_alt_stroke_12x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/cog_alt_12x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/comment_stroke_16x14.png
+%%DATADIR%%/themes/CleanFS/img/gray/compass_12x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/dependent_13x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/document_alt_stroke_9x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/folder_stroke_12x12.png
+%%DATADIR%%/themes/CleanFS/img/gray/list_12x11.png
+%%DATADIR%%/themes/CleanFS/img/gray/pin_24x24.png
+%%DATADIR%%/themes/CleanFS/img/green/check_24x20.png
+%%DATADIR%%/themes/CleanFS/img/red/x_alt_24x24.png
+%%DATADIR%%/themes/CleanFS/img/white/calendar_alt_stroke_12x12.png
+%%DATADIR%%/themes/CleanFS/img/white/cog_alt_12x12.png
+%%DATADIR%%/themes/CleanFS/img/white/compass_12x12.png
+%%DATADIR%%/themes/CleanFS/img/white/document_alt_stroke_9x12.png
+%%DATADIR%%/themes/CleanFS/img/white/folder_stroke_12x12.png
+%%DATADIR%%/themes/CleanFS/img/white/list_12x11.png
+%%DATADIR%%/themes/CleanFS/index.html
+%%DATADIR%%/themes/CleanFS/kaboodleloop.png
+%%DATADIR%%/themes/CleanFS/left.png
+%%DATADIR%%/themes/CleanFS/mime/application/octet-stream.png
+%%DATADIR%%/themes/CleanFS/mime/application/pdf.png
+%%DATADIR%%/themes/CleanFS/mime/application/x-gzip.png
+%%DATADIR%%/themes/CleanFS/mime/application.png
+%%DATADIR%%/themes/CleanFS/mime/audio.png
+%%DATADIR%%/themes/CleanFS/mime/image.png
+%%DATADIR%%/themes/CleanFS/mime/text/html.png
+%%DATADIR%%/themes/CleanFS/mime/text.png
+%%DATADIR%%/themes/CleanFS/mime/video.png
+%%DATADIR%%/themes/CleanFS/README.md
+%%DATADIR%%/themes/CleanFS/reset.css
+%%DATADIR%%/themes/CleanFS/right.png
+%%DATADIR%%/themes/CleanFS/templates/admin.cat.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.editgroup.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.groups.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.menu.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.newgroup.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.newproject.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.newuser.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.os.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.prefs.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.resolution.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.status.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.tasktype.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.users.tpl
+%%DATADIR%%/themes/CleanFS/templates/admin.version.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.attachments.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.cat.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.datepicker.tpl
+%%DATADIR%%/themes/CleanFS/templates/depends.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.dualselect.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.editattachments.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.editgroup.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.list.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.multiuserselect.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.newgroup.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.newuser.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.profile.tpl
+%%DATADIR%%/themes/CleanFS/templates/common.userselect.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.edit.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.comment.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.history.callback.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.history.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.notifs.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.related.tpl
+%%DATADIR%%/themes/CleanFS/templates/editcomment.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.remind.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.tabs.tpl
+%%DATADIR%%/themes/CleanFS/templates/details.view.tpl
+%%DATADIR%%/themes/CleanFS/templates/feed.atom.tpl
+%%DATADIR%%/themes/CleanFS/templates/feed.rss1.tpl
+%%DATADIR%%/themes/CleanFS/templates/feed.rss2.tpl
+%%DATADIR%%/themes/CleanFS/templates/footer.tpl
+%%DATADIR%%/themes/CleanFS/templates/header.tpl
+%%DATADIR%%/themes/CleanFS/templates/index.tpl
+%%DATADIR%%/themes/CleanFS/templates/links.searches.tpl
+%%DATADIR%%/themes/CleanFS/templates/links.tpl
+%%DATADIR%%/themes/CleanFS/templates/loginbox.tpl
+%%DATADIR%%/themes/CleanFS/templates/lostpw.step1.tpl
+%%DATADIR%%/themes/CleanFS/templates/lostpw.step2.tpl
+%%DATADIR%%/themes/CleanFS/templates/myprofile.tpl
+%%DATADIR%%/themes/CleanFS/templates/newtask.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.cat.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.editgroup.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.groups.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.menu.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.newgroup.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.os.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.pendingreq.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.prefs.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.resolution.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.status.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.tasktype.tpl
+%%DATADIR%%/themes/CleanFS/templates/pm.version.tpl
+%%DATADIR%%/themes/CleanFS/templates/profile.tpl
+%%DATADIR%%/themes/CleanFS/templates/progressbar.tpl
+%%DATADIR%%/themes/CleanFS/templates/register.magic.tpl
+%%DATADIR%%/themes/CleanFS/templates/register.no-magic.tpl
+%%DATADIR%%/themes/CleanFS/templates/register.ok.tpl
+%%DATADIR%%/themes/CleanFS/templates/reports.tpl
+%%DATADIR%%/themes/CleanFS/templates/roadmap.text.tpl
+%%DATADIR%%/themes/CleanFS/templates/roadmap.tpl
+%%DATADIR%%/themes/CleanFS/templates/toplevel.tpl
+%%DATADIR%%/themes/CleanFS/theme.css
+%%DATADIR%%/themes/CleanFS/theme_print.css
+%%DATADIR%%/themes/CleanFS/typography.css
+%%DATADIR%%/themes/CleanFS/up.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
@@ -624,18 +855,31 @@
 @dirrm %%DATADIR%%/cache
 @dirrm %%DATADIR%%/docs/licences
 @dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Events
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Connection
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Message
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PopB4Smtp
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Iterator
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Decorator
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Log
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Cache
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift
+@dirrm %%DATADIR%%/includes/external/sparkline
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/ByteStream
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReader
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterReaderFactory
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/CharacterStream
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Encoder
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Events
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mailer
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/KeyCache
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/ContentEncoder
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/HeaderEncoder
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime/Headers
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Mime
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Decorator
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Loggers
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Pop
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins/Reporters
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Plugins
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/StreamFilters
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp/Auth
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport/Esmtp
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift/Transport
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes/Swift
+@dirrm %%DATADIR%%/includes/external/swift-mailer/classes
+@dirrm %%DATADIR%%/includes/external/swift-mailer/dependency_maps
 @dirrm %%DATADIR%%/includes/external/swift-mailer
 @dirrm %%DATADIR%%/includes/external/Zend/Http/Client/Adapter
 @dirrm %%DATADIR%%/includes/external/Zend/Http/Client
@@ -649,10 +893,15 @@
 @dirrm %%DATADIR%%/includes/external
 @dirrm %%DATADIR%%/includes
 @dirrm %%DATADIR%%/javascript/callbacks
+@dirrm %%DATADIR%%/javascript/jit
 @dirrm %%DATADIR%%/javascript/jscalendar/lang
 @dirrm %%DATADIR%%/javascript/jscalendar/skins/aqua
 @dirrm %%DATADIR%%/javascript/jscalendar/skins
 @dirrm %%DATADIR%%/javascript/jscalendar
+@dirrm %%DATADIR%%/javascript/lightbox/css
+@dirrm %%DATADIR%%/javascript/lightbox/images
+@dirrm %%DATADIR%%/javascript/lightbox/js
+@dirrm %%DATADIR%%/javascript/lightbox
 @dirrm %%DATADIR%%/javascript/prototype
 @dirrm %%DATADIR%%/javascript/script.aculo.us
 @dirrm %%DATADIR%%/javascript
@@ -682,6 +931,7 @@
 @dirrm %%DATADIR%%/setup/upgrade/0.9.9.2
 @dirrm %%DATADIR%%/setup/upgrade/0.9.9.4
 @dirrm %%DATADIR%%/setup/upgrade/0.9.9.5
+@dirrm %%DATADIR%%/setup/upgrade/0.9.9.7
 @dirrm %%DATADIR%%/setup/upgrade
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/templates
@@ -693,5 +943,19 @@
 @dirrm %%DATADIR%%/themes/Bluey/mime/video
 @dirrm %%DATADIR%%/themes/Bluey/mime
 @dirrm %%DATADIR%%/themes/Bluey
+@dirrm %%DATADIR%%/themes/CleanFS/img/black
+@dirrm %%DATADIR%%/themes/CleanFS/img/gray
+@dirrm %%DATADIR%%/themes/CleanFS/img/green
+@dirrm %%DATADIR%%/themes/CleanFS/img/red
+@dirrm %%DATADIR%%/themes/CleanFS/img/white
+@dirrm %%DATADIR%%/themes/CleanFS/img
+@dirrm %%DATADIR%%/themes/CleanFS/mime/application
+@dirrm %%DATADIR%%/themes/CleanFS/mime/audio
+@dirrm %%DATADIR%%/themes/CleanFS/mime/image
+@dirrm %%DATADIR%%/themes/CleanFS/mime/text
+@dirrm %%DATADIR%%/themes/CleanFS/mime/video
+@dirrm %%DATADIR%%/themes/CleanFS/mime
+@dirrm %%DATADIR%%/themes/CleanFS/templates
+@dirrm %%DATADIR%%/themes/CleanFS
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/
