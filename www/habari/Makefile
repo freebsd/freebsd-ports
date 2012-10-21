@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	habari
-PORTVERSION=	0.6.6
+PORTVERSION=	0.8
 CATEGORIES=	www
 MASTER_SITES=	http://habariproject.org/dist/ \
 		http://launchpadlibrarian.net/60087200/
@@ -15,7 +15,7 @@ MAINTAINER=	ayu@commun.jp
 COMMENT=	Next-generation free software blogging platform
 
 USE_ZIP=	yes
-USE_PHP=	pdo pcre simplexml session tokenizer iconv mbstring
+USE_PHP=	ctype filter hash json mbstring pcre pdo session simplexml tokenizer zlib
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
@@ -41,15 +41,20 @@ USE_PHP+=	pdo_sqlite
 IGNORE=	please choose the type of database
 .endif
 
+post-patch:
+.for f in doc/index.html system/classes/theme.php.orig user/cache/.gitignore
+	${RM} ${WRKSRC}/${f}
+.endfor
+
 do-install:
 	@${MKDIR} ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.php ${WWWDIR}
-.for f in 3rdparty scripts system user
+.for f in system user
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${WWWDIR})
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in LICENCE NOTICE doc/MIT.txt doc/Tiddlywiki_License.txt
+.for f in LICENSE NOTICE README.md doc/MIT.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} manual ${DOCSDIR})
