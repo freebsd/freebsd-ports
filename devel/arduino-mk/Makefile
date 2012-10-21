@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arduino-mk
-PORTVERSION=	0.8
+PORTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	http://mjo.tc/atelier/2009/02/acli/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,35 +26,47 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 
-PLIST_FILES=	arduino/lib/Arduino.mk \
-		arduino/tools/ard-parse-boards
+OPTIONS_DEFINE+=	DOCS EXAMPLES
 
-.if !defined(NOPORTEXAMPLES)
-PLIST_FILES+=	${EXAMPLESDIR_REL}/Makefile \
-		${EXAMPLESDIR_REL}/blink2.pde
-PLIST_DIRS+=	${EXAMPLESDIR_REL}
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
+PLIST_SUB+=	REFDOCS="@comment "
+.else
+PLIST_SUB+=	REFDOCS=""
 .endif
 
-.include <bsd.port.pre.mk>
+.if empty(PORT_OPTIONS:MEXAMPLES)
+PLIST_SUB+=	EXAMPLES="@comment "
+.else
+PLIST_SUB+=	EXAMPLES=""
+.endif
 
 ARDUINO_CMD=	${FILESDIR}/version.sh ${PREFIX}/arduino/lib/version.txt
 OLD_BOARDS_TXT=	/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/boards.txt
 NEW_BOARDS_TXT=	${PREFIX}/arduino/hardware/arduino/boards.txt
 
+INSLIST=	AnalogInOutSerial Blink BlinkWithoutDelay Fade HelloWorld \
+		WebServer master_reader toneMelody
 post-patch:
 	@ARDUINO="`$(ARDUINO_CMD)`" && \
 	    ${REINPLACE_CMD} -e "s|%%ARDUINO%%|$${ARDUINO}|g" \
-	    ${WRKSRC}/Arduino.mk
+	    ${WRKSRC}/arduino-mk/Arduino.mk
 	@${REINPLACE_CMD} -e "s|'${OLD_BOARDS_TXT}'|'${NEW_BOARDS_TXT}'|g" \
-	    ${WRKSRC}/ard-parse-boards
+	    ${WRKSRC}/bin/ard-parse-boards
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/Arduino.mk ${PREFIX}/arduino/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/ard-parse-boards ${PREFIX}/arduino/tools
-.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${PREFIX}/${PORTNAME}/bin
+	${INSTALL_DATA} ${WRKSRC}/arduino-mk/Arduino.mk ${PREFIX}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ard-parse-boards ${PREFIX}/${PORTNAME}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ard-reset-arduino ${PREFIX}/${PORTNAME}/bin
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/Makefile ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/blink2.pde ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "${INSLIST}" ${EXAMPLESDIR})
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
