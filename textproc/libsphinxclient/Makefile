@@ -1,24 +1,20 @@
-# New ports collection makefile for:    libsphinxclient
-# Date created:         2011-06-6
-# Whom:                 Max Baryshnikov <mephius@gmail.com>
-#
+# Created by: Max Baryshnikov <mephius@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libsphinxclient
-DISTVERSION=	1.10b
+DISTVERSION=	2.0.5
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
-DISTNAME=	sphinx-1.10-beta
+DISTNAME=	sphinx-${PORTVERSION}-release
 
 MAINTAINER=	mephius@gmail.com
 COMMENT=	Sphinx Full-Text Search Engine C++ client library
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/api/libsphinxclient
 
 USE_LDCONFIG=	yes
-
-LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
 
