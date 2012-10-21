@@ -7,6 +7,7 @@
 
 PORTNAME=	fdk-aac
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
@@ -22,6 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LIBS="-lm"
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
