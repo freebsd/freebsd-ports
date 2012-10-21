@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abacus
-# Date created:				18 August 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	abacus
 PORTVERSION=	0.9.13
@@ -15,21 +11,25 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	steve
 PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch.gz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spread sheet for X Window System
 
 LICENSE=	GPLv2
+
+BROKEN=		crashes on start
+EXPIRATION_DATE=2012-12-01
+DEPRECATED=	project dead
 
 USE_GMAKE=	yes
 USE_XORG=	x11
 USE_TK=		82
 USE_TCL=	82
 
-CFLAGS+=	-I$(LOCALBASE)/include \
-		-I$(LOCALBASE)/include/tcl8.2 \
-		-I$(LOCALBASE)/include/tk8.2
+CFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/tcl8.2 \
+		-I${LOCALBASE}/include/tk8.2
 CXXFLAGS+=	-Wno-deprecated
-LDFLAGS+=	-L$(LOCALBASE)/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	dep tcl_interf/nxlc
 
 MAN1=		abacus.1
