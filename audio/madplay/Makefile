@@ -1,9 +1,5 @@
-# New ports collection makefile for:  madplay
-# Date created:        26 November 2003
-# Whom:                Sergey Akifyev <asa@gascom.ru>
-#
+# Created by: Sergey Akifyev <asa@gascom.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	madplay
 PORTVERSION=	0.15.2b
