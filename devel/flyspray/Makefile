@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.9.6
+PORTVERSION=	0.9.9.7
 CATEGORIES=	devel www
 MASTER_SITES=	http://flyspray.org/
 
@@ -81,7 +81,7 @@ post-patch:
 do-install:
 	${MKDIR} ${FLYSPRAYDIR}
 	${CHMOD} 755 ${FLYSPRAYDIR}
-	${CP} ${WRKSRC}/setup/upgrade/0.9.9.5/flyspray.conf.php ${WRKSRC}/flyspray.conf.php-dist
+	${CP} ${WRKSRC}/setup/upgrade/${PORTVERSION}/flyspray.conf.php ${WRKSRC}/flyspray.conf.php-dist
 	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
 	cd ${WRKSRC} && \
 		${TAR} cf - ${FLYSPRAY_FILES} | \
