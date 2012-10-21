@@ -9,7 +9,7 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
 
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Madplay MP3 player (part of MAD project)
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
