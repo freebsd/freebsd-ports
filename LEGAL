@@ -78,7 +78,6 @@ bzip-*			archivers/bzip		Some algorithms used may
 						Opinions differ.  Commercial
 						use could render you liable
 						to unfriendly legal action
-ccc-*.alpha.rpm		lang/compaq-cc		Distribution not allowed
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cli_freebsd*		sysutils/arcconf	May not be redistributed
 condor_src-*		sysutils/condor		Requires (free) registration
@@ -88,7 +87,6 @@ contool-*		sysutils/contool	Do not incorporate the source
 cos-*			java/cos		Special conditions apply for
 						commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
-cpml_*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 cryptix-jce-*		java/cryptix-jce	Testing purpose only
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by
@@ -253,10 +251,6 @@ idea.V*.tar.Z		security/idea		A patented algorithm that
 iperf-*			benchmarks/iperf	Cannot charge a fee for the
 						software
 j2me_wireless_toolkit*	java/sun-wtk		No redistribution allowed
-j2sdk-*-doc.zip		java/jdk13-doc		This documentation is under
-						license and export control
-j2sdk-*-doc.zip		java/jdk14-doc		This documentation is under
-						license and export control
 jdk-1_5_0-bin-scsl.*	java/jdk15		Redistribution of pre-compiled
 						binaries is not permitted
 jdk-1_5_0-src-scsl.*	java/jdk15		Redistribution of pre-compiled
@@ -277,8 +271,6 @@ jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow
 						distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
-jbootstrap-*.tar.gz	java/jbootstrap		Redistribution of pre-compiled
-						binaries is not permitted
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled
 						binaries is not permitted
 jpgraph-2.*		graphics/jpgraph2	Not for commercial use
@@ -303,7 +295,6 @@ libamrnb		audio/libamrnb		No redistribution allowed
 libamrwb		audio/libamrwb		No redistribution allowed
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Must be downloaded manually from Ermapper site
-libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 *_FreeBSD_MegaCLI.zip	sysutils/megacli	Reproduction or redistribution
 						prohibited
 rpm/i386/fedora/4/gtk2-* x11-toolkits/linux-gtk2 LGPL binary, no source
@@ -418,7 +409,7 @@ sid-milter-*		mail/sid-milter		May incorporate intellectual
 simian-*		devel/simian		Have to agree to
 						license before download.
 ski-*.i386.rpm		emulators/ski		Restrictive license
-skype*			net/skype		Not for redistribution
+skype*			net-im/skype		Not for redistribution
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable
 						firmware, documentation, and
 						images
@@ -447,7 +438,7 @@ systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled
 						binaries is not permitted
 scv-1.0p2-sysc*		cad/scv			License agreement required
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
-teamspeak*		audio/teamspeak3_server	No redistribution
+teamspeak*		audio/teamspeak3-server	No redistribution
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed
 						with any commercial product
 timidity-*		audio/timidity		Uses copyrighted patches
