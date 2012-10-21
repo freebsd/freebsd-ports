@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tk
-# Date created:		19 August 1997
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.2.3
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
 USE_TCL=	82
