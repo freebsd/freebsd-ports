@@ -8,7 +8,7 @@ CATEGORIES=	lang tcl
 MASTER_SITES=	SF/${PORTNAME}/Tcl/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Tool Command Language
 
 PORTSCOUT=	limit:^8\.3\.
