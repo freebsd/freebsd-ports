@@ -12,8 +12,9 @@ bin/gpvect
 bin/gpview
 bin/grads2nc_with_gphys
 %%RUBY_SITEARCHLIBDIR%%/numru/gphys_ext.so
-%%RUBY_SITELIBDIR%%/numru/dclext_datetime_ax.rb
 %%RUBY_SITELIBDIR%%/numru/dcl_mouse.rb
+%%RUBY_SITELIBDIR%%/numru/dclext.rb
+%%RUBY_SITELIBDIR%%/numru/dclext_datetime_ax.rb
 %%RUBY_SITELIBDIR%%/numru/derivative.rb
 %%RUBY_SITELIBDIR%%/numru/ganalysis.rb
 %%RUBY_SITELIBDIR%%/numru/gdir.rb
@@ -25,6 +26,8 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/ganalysis/covariance.rb
 %%RUBY_SITELIBDIR%%/numru/ganalysis/eof.rb
 %%RUBY_SITELIBDIR%%/numru/ganalysis/histogram.rb
+%%RUBY_SITELIBDIR%%/numru/ganalysis/met.rb
+%%RUBY_SITELIBDIR%%/numru/ganalysis/planet.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/assoccoords.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/attribute.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/attributenetcdf.rb
@@ -66,77 +69,3 @@ bin/grads2nc_with_gphys
 @dirrm %%RUBY_SITELIBDIR%%/numru/ganalysis
 @dirrm %%RUBY_SITELIBDIR%%/numru/gphys
 @dirrmtry %%RUBY_SITELIBDIR%%/numru
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli1.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli2.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv1.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv2.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_mapfit-axes_dr002687.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_latlon_labelling_dr002690.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/map_projection.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ncep_theta_coord.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_1.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_2.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_3.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/test/test_ep_flux.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/test/eof_slp.rb
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.ctl
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.dat
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.grib
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.packed.withmiss.nc
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/UV.jan.nc
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/assoc_crds.nc
-%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
-%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/ep_flux
-%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
-%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test
-%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testdata
-%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO_ep_flux
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/attribute.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/attributenetcdf.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/axis.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/coordmapping.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/coordtransform.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir_client.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir_connect_ftp-like.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir_server.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ggraph.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpcat.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpcut.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_fft.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_grads_io.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_grib_io.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_io.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_io_common.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_netcdf_io.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gplist.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpmath.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpmaxmin.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpprint.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpview.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/grads2nc_with_gphys.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/grads_gridded.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/grib.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/grid.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/netcdf_convention.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/unumeric.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/varray.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/varraycomposite.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/derivative/gphys-derivative.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/derivative/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/derivative/numru-derivative.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/derivative/document.pdf
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/derivative
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ep_flux/ep_flux.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ep_flux/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ep_flux/ggraph_on_merdional_section.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ep_flux/document.pdf
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ep_flux
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
