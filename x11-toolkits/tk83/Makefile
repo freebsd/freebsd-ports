@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Graphical toolkit for TCL
 
 USE_TCL=	83
