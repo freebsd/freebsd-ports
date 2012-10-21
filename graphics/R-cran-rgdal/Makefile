@@ -1,7 +1,8 @@
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rgdal
-DISTVERSION=	0.7-19
+DISTVERSION=	0.7-20
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
