@@ -130,16 +130,16 @@ export INDEX_JOBS=3
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-${SVN} up ${SRCDIR7}/sys/sys
+${SVN} -q up ${SRCDIR7}/sys/sys
 OSVERSION7=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR7}/sys/sys/param.h)
 
-${SVN} up ${SRCDIR8}/sys/sys
+${SVN} -q up ${SRCDIR8}/sys/sys
 OSVERSION8=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR8}/sys/sys/param.h)
 
-${SVN} up ${SRCDIR9}/sys/sys
+${SVN} -q up ${SRCDIR9}/sys/sys
 OSVERSION9=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR9}/sys/sys/param.h)
 
-${SVN} up ${SRCDIR10}/sys/sys
+${SVN} -q up ${SRCDIR10}/sys/sys
 OSVERSION10=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR10}/sys/sys/param.h)
 
 
