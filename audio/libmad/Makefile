@@ -1,9 +1,5 @@
-# New ports collection makefile for:  libmad
-# Date created:        26 November 2003
-# Whom:                Sergey Akifyev <asa@gascom.ru>
-#
+# Created by: Sergey Akifyev <asa@gascom.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libmad
 PORTVERSION=	0.15.1b
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
 
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
 USE_AUTOTOOLS=	libtool
