@@ -1,0 +1,11 @@
+--- ./configure.orig	2011-01-21 06:49:01.000000000 +0300
++++ ./configure	2012-10-22 12:27:41.000000000 +0400
+@@ -5800,7 +5800,7 @@
+     MAKEVER="freebsd"
+     LDFLAGS="-lpmc"
+     # HWPMC driver is available for FreeBSD >= 6
+-    FREEBSD_VERSION=`uname -r | cut -c 1`
++    FREEBSD_VERSION=`uname -r | cut -d'.' -f1`
+     if test "${FREEBSD_VERSION}" -lt 6 ; then
+       as_fn_error "PAPI requires FreeBSD 6 or greater" "$LINENO" 5
+     fi

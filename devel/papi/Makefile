@@ -1,9 +1,5 @@
-# New ports collection makefile for:   papi
-# Date created:        21 May 2007
-# Whom:                redcrash@gmail.com
-#
+# Created by: redcrash@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	papi
 PORTVERSION=	4.1.2.1
@@ -25,10 +21,11 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 WRKMAN=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/man
 
-OPTIONS=	CORETEMP "Add Intel Core thermal sensor (need coretemp.ko)" Off
-OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
+OPTIONS_DEFINE=	CORETEMP DEBUGINFO
+CORETEMP_DESC=	Add Intel Core thermal sensor (need coretemp.ko)
+DEBUGINFO_DESC=	Add debug information (increased verbosity)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 HAS_HWMPC!=	${SYSCTL} kern.hwpmc >/dev/null 2>&1 && echo yes || true
 
@@ -39,11 +36,11 @@ IGNORE=		needs hwmpc module loaded or compiled into the kernel. \
 
 CONFIGURE_ARGS+=	--with-tests=ctests
 
-.if defined(WITH_CORETEMP)
+.if ${PORT_OPTIONS:MCORETEMP}
 CONFIGURE_ARGS+=	--with-components=coretemp_freebsd
 .endif
 
-.if defined(WITHOUT_DEBUG)
+.if ${PORT_OPTIONS:MDEBUGINFO}
 CONFIGURE_ARGS+=	--without-debug
 .else
 CONFIGURE_ARGS+=	--with-debug
@@ -272,4 +269,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
