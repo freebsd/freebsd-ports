@@ -1,3 +1,4 @@
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mikutter
@@ -28,7 +29,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-CONFLICTS=	mikutter-0.1.1.*
+CONFLICTS=	mikutter-0.2.0.*
 
 RUBY_SHEBANG_FILES=	mikutter.rb \
 			core/autotag.rb \
