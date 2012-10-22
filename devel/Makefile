@@ -176,6 +176,7 @@
     SUBDIR += ccache
     SUBDIR += cccc
     SUBDIR += ccdoc
+    SUBDIR += ccons
     SUBDIR += ccrtp
     SUBDIR += cdash
     SUBDIR += cdecl
