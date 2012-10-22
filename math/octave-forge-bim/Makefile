@@ -1,13 +1,8 @@
-# New ports collection makefile for:	octave-forge-bim
-# Date created:		8 September 2008
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-bim
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
