@@ -1,15 +1,11 @@
-# New ports collection makefile for:	helma
-# Date created:		2008-06-22
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	helma
 PORTVERSION=	1.7.0
 CATEGORIES=	www java
 MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
-		http://home.bluelife.at/ports/distfiles/helma/${PORTVERSION}/
+		LOCAL/decke
 DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org
@@ -36,11 +32,12 @@ PLIST_SUB=	DBDIR="${DBDIR}" \
 		HELMA_USER="${HELMA_USER}" \
 		HELMA_GROUP="${HELMA_GROUP}"
 
-OPTIONS=	MYSQL "Install MySQL Connector for Java" off
+OPTIONS_DEFINE=	MYSQL
+OPTIONS_DESC=	"Install MySQL Connector for Java"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 PLIST_SUB+=	MYSQL=""
 .else
@@ -112,7 +109,7 @@ do-install:
 	(cd ${WRKBASE}/modules/jala/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/api/jala)
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	${LN} -sf ${JAVALIBDIR}/mysql-connector-java.jar ${DATADIR}/lib/ext/mysql-connector-java.jar
 .endif
 
