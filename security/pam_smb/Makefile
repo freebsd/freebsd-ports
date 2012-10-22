@@ -9,7 +9,7 @@ PORTVERSION=	2.0.0.r6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SAMBA} \
 		http://www.csn.ul.ie/~airlied/pam_smb/v2/
-MASTER_SITE_SUBDIR=	pam_smb/v2
+MASTER_SITE_SUBDIR=	samba/pam_smb/v2
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	ports@FreeBSD.org
