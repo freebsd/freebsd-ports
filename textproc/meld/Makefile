@@ -1,13 +1,8 @@
-# New ports collection makefile for:	meld
-# Date created:				2003-04-13
-# Whom:					Pav Lucistnik <pav@oook.cz>
-#
+# Created by: Pav Lucistnik <pav@oook.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	meld
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
