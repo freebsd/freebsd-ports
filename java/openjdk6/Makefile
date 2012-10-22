@@ -117,7 +117,6 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 
 MAKE_ENV=	LANG=C LC_ALL=C \
 		ARCH=${ARCH} \
-		ARCH_DATA_MODEL=64 \
 		LIBARCH=${ARCH} \
 		PLATFORM=bsd \
 		OS_NAME=freebsd \
