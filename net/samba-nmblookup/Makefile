@@ -13,7 +13,7 @@ COMMENT=		NetBIOS Name lookup tool
 
 CONFLICTS=		ja-samba-[23].* samba-[2-4].*
 
-SAMBA_PORT=		samba34
+SAMBA_PORT=		samba36
 SAMBA_SUBPORT=		yes
 
 MASTERDIR=		${.CURDIR}/../${SAMBA_PORT}
@@ -25,7 +25,7 @@ PLIST_FILES=		bin/nmblookup
 
 WITHOUT_ADS=		yes
 
-ALL_TARGET=		libtdb bin/nmblookup
+ALL_TARGET=		bin/nmblookup
 
 do-install:
 	-@${MKDIR} ${PREFIX}/bin
