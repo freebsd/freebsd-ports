@@ -1,17 +1,13 @@
-# New ports collection makefile for:	guspat
-# Date created:				2004/07/04
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	guspat
 PORTVERSION=	20000706
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.linet.gr.jp/~tamuki/timidity/eawplus/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
+MASTER_SITES=	ftp://plamo.linet.gr.jp/pub/Plamo-src/contrib/Sound/timidity/ \
+		RINGSERVER/linux/Plamo/Plamo-src/contrib/Sound/timidity \
+		LOCAL/nork
 DISTFILES=	${PORTNAME}-${PORTVERSION}-required${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-optional${EXTRACT_SUFX}
 
@@ -32,8 +28,9 @@ TIMIDITY_DATADIR=	share/timidity
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@${CP} -pr ${WRKSRC}/* ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
 	@${MKDIR} ${PREFIX}/${TIMIDITY_DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/timidity.cfg ${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-guspat
+	cd ${WRKSRC} && ${INSTALL_DATA} timidity.cfg \
+		${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-guspat
 
 .include <bsd.port.mk>
