@@ -45,6 +45,7 @@
     SUBDIR += fcitx-configtool
     SUBDIR += fcitx-googlepinyin
     SUBDIR += fcitx-libpinyin
+    SUBDIR += fcitx-rime
     SUBDIR += fcitx-sunpinyin
     SUBDIR += fcitx-table-extra
     SUBDIR += fcitx-ui-light
