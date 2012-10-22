@@ -3,4 +3,4 @@
 # $FreeBSD$
 #
 
-/usr/bin/env python %%DATADIR%%/rclint.py ${1+"$@"}
+exec python %%DATADIR%%/rclint.py ${1+"$@"}
