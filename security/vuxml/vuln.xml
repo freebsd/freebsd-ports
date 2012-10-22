@@ -51,6 +51,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7706414-1be7-11e2-9aad-902b343deec9">
+    <topic>Wireshark -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<range><le>1.8.2_1</le></range>
+      </package>
+      <package>
+	<name>wireshark-lite</name>
+	<range><le>1.8.2_1</le></range>
+      </package>
+      <package>
+	<name>tshark</name>
+	<range><le>1.8.2_1</le></range>
+      </package>
+      <package>
+	<name>tshark-lite</name>
+	<range><le>1.8.2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark reports:</p>
+	<blockquote cite="http://www.wireshark.org/docs/relnotes/wireshark-1.8.3.html">
+	  <p>The HSRP dissector could go into an infinite loop.</p>
+	  <p>The PPP dissector could abort.</p>
+	  <p>Martin Wilck discovered an infinite loop in the DRDA
+	    dissector.</p>
+	  <p>Laurent Butti discovered a buffer overflow in the LDP
+	    dissector.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5237</cvename>
+      <cvename>CVE-2012-5238</cvename>
+      <cvename>CVE-2012-5239</cvename>
+      <cvename>CVE-2012-5240</cvename>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-26.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-27.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-28.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-29.html</url>
+      <url>http://www.wireshark.org/docs/relnotes/wireshark-1.8.3.html</url>
+    </references>
+    <dates>
+      <discovery>2012-10-02</discovery>
+      <entry>2012-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57652765-18aa-11e2-8382-00a0d181e71d">
     <topic>xlockmore -- local exploit</topic>
     <affects>
