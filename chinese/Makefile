@@ -78,6 +78,7 @@
     SUBDIR += libpinyin
     SUBDIR += libreoffice-zh_CN
     SUBDIR += libreoffice-zh_TW
+    SUBDIR += librime
     SUBDIR += libtabe
     SUBDIR += lunar
     SUBDIR += mingunittf
