@@ -673,7 +673,6 @@
 %%WWWDIR%%/include/MVC/View/ViewFactory.php
 %%WWWDIR%%/include/MVC/View/tpls/Importvcard.tpl
 %%WWWDIR%%/include/MVC/View/tpls/favorites.tpl
-%%WWWDIR%%/include/MVC/View/tpls/gsdetail.tpl
 %%WWWDIR%%/include/MVC/View/tpls/modulelistmenu.tpl
 %%WWWDIR%%/include/MVC/View/tpls/xsrf.tpl
 %%WWWDIR%%/include/MVC/View/views/view.ajax.php
@@ -685,7 +684,6 @@
 %%WWWDIR%%/include/MVC/View/views/view.detail.php
 %%WWWDIR%%/include/MVC/View/views/view.edit.php
 %%WWWDIR%%/include/MVC/View/views/view.favorites.php
-%%WWWDIR%%/include/MVC/View/views/view.gs.php
 %%WWWDIR%%/include/MVC/View/views/view.html.php
 %%WWWDIR%%/include/MVC/View/views/view.importvcard.php
 %%WWWDIR%%/include/MVC/View/views/view.importvcardsave.php
@@ -993,8 +991,6 @@
 %%WWWDIR%%/include/SugarFields/Fields/Multienum/ListView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Multienum/SearchView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Multienum/SugarFieldMultienum.php
-%%WWWDIR%%/include/SugarFields/Fields/Multienum/WirelessDetailView.tpl
-%%WWWDIR%%/include/SugarFields/Fields/Multienum/WirelessEditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Parent/DetailView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Parent/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Parent/SearchView.tpl
