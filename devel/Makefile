@@ -3709,6 +3709,7 @@
     SUBDIR += raknet
     SUBDIR += rapidsvn
     SUBDIR += rbtools
+    SUBDIR += rclint
     SUBDIR += rcs
     SUBDIR += re2
     SUBDIR += re2c
