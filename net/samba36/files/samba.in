@@ -14,9 +14,9 @@
 # to enable this service:
 #
 #samba_enable="YES"
-# or, for fine grain control:
-#nmbd_enable="YES"
-#smbd_enable="YES"
+# You can disable/enable any of the Samba daemons by specifying:
+#nmbd_enable="NO"
+#smbd_enable="NO"
 %%WINBIND%%# You need to enable winbindd separately, by adding:
 %%WINBIND%%#winbindd_enable="YES"
 #
