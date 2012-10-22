@@ -1,13 +1,8 @@
-# New ports collection makefile for:   efax-gtk
-# Whom:                                Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# Date Created:                        2004-02-29 10:33:43
-#
+# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	efax-gtk
-PORTVERSION=	3.2.9
-PORTREVISION=	1
+PORTVERSION=	3.2.10
 CATEGORIES=	comms
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tgz
@@ -17,16 +12,29 @@ COMMENT=	GUI front end for the efax fax program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	cxx-gtk-utils-2-2.0:${PORTSDIR}/x11-toolkits/c++-gtk-utils \
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		tiff:${PORTSDIR}/graphics/tiff
+		pcre:${PORTSDIR}/devel/pcre \
+		cairo:${PORTSDIR}/graphics/cairo \
+		jbig:${PORTSDIR}/graphics/jbigkit \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		cxx-gtk-utils-2-2.0:${PORTSDIR}/x11-toolkits/c++-gtk-utils \
+		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	ggv:${PORTSDIR}/print/ggv
 
 USE_ICONV=	yes
 USE_GHOSTSCRIPT_RUN=yes
-USE_GNOME=	gtk20
+USE_GNOME=	gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_GCC=	4.4+
+USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
+		xi xinerama xrandr xrender
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	efax-[0-9]*
