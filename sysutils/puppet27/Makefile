@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.0.1
+PORTVERSION=	2.7.19
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -12,12 +13,13 @@ COMMENT=	A configuration management framework written in Ruby
 RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas
 
-CONFLICTS=      puppet-2* rubygem-hiera-puppet-[0-9]*
+LATEST_LINK=	puppet27
+CONFLICTS=      puppet-2.6* puppet-3*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RC_SUBR=	puppet puppetmaster
-PORTDOCS=	LICENSE README.md
+PORTDOCS=	CHANGELOG LICENSE README.md
 PORTEXAMPLES=	*
 USERS=		puppet
 GROUPS=		puppet
@@ -25,7 +27,7 @@ SUB_FILES+=	pkg-message
 
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
-MAN8=	puppet-agent.8 puppet-apply.8 puppet-ca.8 \
+MAN8=	filebucket.8 pi.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
 	puppet-catalog.8 puppet-cert.8 puppet-certificate.8 \
 	puppet-certificate_request.8 puppet-certificate_revocation_list.8 \
 	puppet-config.8 puppet-describe.8 puppet-device.8 puppet-doc.8 \
@@ -36,7 +38,8 @@ MAN8=	puppet-agent.8 puppet-apply.8 puppet-ca.8 \
 	puppet-module.8 puppet-node.8 puppet-parser.8 puppet-plugin.8 \
 	puppet-queue.8 puppet-report.8 puppet-resource.8 \
 	puppet-resource_type.8 puppet-secret_agent.8 puppet-status.8 \
-	puppet.8
+	puppet.8 puppetca.8 puppetd.8 puppetdoc.8 puppetmasterd.8 \
+	puppetqd.8 puppetrun.8 ralsh.8
 
 OPTIONS_DEFINE=		MONGREL PACKAGE_ORIGIN PACKAGE_ROOT
 OPTIONS_DEFAULT=	PACKAGE_ORIGIN

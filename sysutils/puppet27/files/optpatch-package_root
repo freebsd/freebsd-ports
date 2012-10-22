@@ -1,0 +1,11 @@
+--- lib/puppet/provider/package/freebsd.rb-orig	2011-04-21 19:36:17.000000000 -0500
++++ lib/puppet/provider/package/freebsd.rb	2011-04-21 20:09:50.000000000 -0500
+@@ -20,7 +20,7 @@
+ 
+     if @resource[:source] =~ /\/$/
+       if @resource[:source] =~ /^(ftp|https?):/
+-        Puppet::Util::Execution::withenv :PACKAGESITE => @resource[:source] do
++        Puppet::Util::Execution::withenv :PACKAGEROOT => @resource[:source] do
+           pkgadd "-r", @resource[:name]
+         end
+       else

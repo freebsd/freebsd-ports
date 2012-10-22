@@ -1,5 +1,8 @@
---- lib/puppet/provider/package/freebsd.rb.orig	2012-10-20 00:57:51.000000000 -0400
-+++ lib/puppet/provider/package/freebsd.rb	2012-10-21 14:53:41.054105583 -0400
+
+$FreeBSD$
+
+--- lib/puppet/provider/package/freebsd.rb.orig
++++ lib/puppet/provider/package/freebsd.rb
 @@ -1,37 +1,163 @@
 -Puppet::Type.type(:package).provide :freebsd, :parent => :openbsd do
 -  desc "The specific form of package management on FreeBSD.  This is an
@@ -7,14 +10,13 @@
 -    ports and packages.  Apparently all of the tools are written in Ruby,
 -    so there are plans to rewrite this support to directly use those
 -    libraries."
--
--  commands :pkginfo => "/usr/sbin/pkg_info",
--    :pkgadd => "/usr/sbin/pkg_add",
--    :pkgdelete => "/usr/sbin/pkg_delete"
 +require 'open-uri'
 +require 'net/ftp'
 +require 'bzip2'
-+
+ 
+-  commands :pkginfo => "/usr/sbin/pkg_info",
+-    :pkgadd => "/usr/sbin/pkg_add",
+-    :pkgdelete => "/usr/sbin/pkg_delete"
 +Puppet::Type.type(:package).provide :freebsd, :parent => Puppet::Provider::Package do
 +  include Puppet::Util::Execution
 +
@@ -53,7 +55,11 @@
 +      :pkg_version => pkg_string.split("-")[-1],
 +    }
 +  end
-+
+ 
+-    if @resource[:source] =~ /\/$/
+-      if @resource[:source] =~ /^(ftp|https?):/
+-        Puppet::Util::Execution::withenv :PACKAGESITE => @resource[:source] do
+-          pkgadd "-r", @resource[:name]
 +  def self.unparse_pkg_info(pkg_info)
 +    [:pkg_name, :pkg_version].map { |key| pkg_info[key] }.join("-")
 +  end
@@ -85,11 +91,7 @@
 +    end
 +    packages
 +  end
- 
--    if @resource[:source] =~ /\/$/
--      if @resource[:source] =~ /^(ftp|https?):/
--        Puppet::Util.withenv :PACKAGESITE => @resource[:source] do
--          pkgadd "-r", @resource[:name]
++
 +  def ports_index
 +    @@lock.synchronize do
 +      if @@ports_index.nil?
@@ -110,7 +112,7 @@
 +          raise Puppet::Error.new "Could not fetch ports INDEX: #{$!}"
          end
 -      else
--        Puppet::Util.withenv :PKG_PATH => @resource[:source] do
+-        Puppet::Util::Execution::withenv :PKG_PATH => @resource[:source] do
 -          pkgadd @resource[:name]
 +      end
 +    end
