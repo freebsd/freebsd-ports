@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+/usr/bin/env python %%DATADIR%%/rclint.py ${1+"$@"}
