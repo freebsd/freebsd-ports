@@ -1,13 +1,8 @@
-# New ports collection makefile for:	octave-forge-msh
-# Date created:		8 September 2008
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-msh
-PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTVERSION=	1.0.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
