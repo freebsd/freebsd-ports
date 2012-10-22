@@ -1,12 +1,7 @@
-# New ports collection makefile for:    hwloc
-# Date created: 18 Dec 2011
-# Whom:         Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hwloc
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.5/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.5/downloads/
@@ -21,18 +16,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static \
 			--enable-libxml2
 USE_BZIP2=	yes
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2 pkgconfig
+USE_GNOME=	libxml2 gnomehack
 MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	*
 
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
-OPTIONS=	CAIRO		"Enable CAIRO support"		off
+OPTIONS_DEFINE=	CAIRO
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/Makefile.man"
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CAIRO)
+.if empty(PORT_OPTIONS:MCAIRO)
 CONFIGURE_ARGS+=	--disable-cairo \
 			--without-x
 .else
@@ -42,26 +41,17 @@ LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo
 USE_XORG=		x11
 .endif
 
-.include "${FILESDIR}/manpages"
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-	${WRKSRC}/Makefile.in
-.ifdef NOPORTDOCS
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e \
 	's|^\(install-data-am:\) install-dist_pdfDATA \(install-man\)|\1 \2|g' \
 	${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
-	@(cd ${MAN1PREFIX}/man/man1/ ;\
-		${LN} -sf lstopo.1.gz hwloc-info.1.gz ; \
-		${LN} -sf lstopo.1.gz hwloc-ls.1.gz ;\
-		${LN} -sf lstopo.1.gz lstopo-no-graphics.1.gz )
-.ifdef !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${DOCSDIR}/html/.
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

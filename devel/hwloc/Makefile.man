@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 MAN1=		hwloc-assembler-remote.1 \
 		hwloc-assembler.1 \
 		hwloc-bind.1 \
@@ -330,3 +332,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwlocality_types.3
 
 MAN7=		hwloc.7
+
+MLINKS=		lstopo.1 hwloc-info.1 \
+		lstopo.1 hwloc-ls.1 \
+		lstopo.1 lstopo-no-graphics.1
