@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkpod
-# Date created: 			28 January 2003
-# Whom: 				David Le Brun <david@dyn-ns.net>
-#
+# Created by: David Le Brun <david@dyn-ns.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkpod
 PORTVERSION=	1.0.0
@@ -16,8 +12,8 @@ COMMENT=	GUI for Apple iPod using GTK2
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		gpod.7:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
+		gpod:${PORTSDIR}/audio/libgpod
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -26,30 +22,31 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
-MAN1=		gtkpod.1
 
+MAN1=		${PORTNAME}.1
 PORTDOCS=	ChangeLog NEWS README TODOandBUGS.txt TROUBLESHOOTING
 
-OPTIONS=	VORBIS	"Enable Ogg/Vorbis support"		on \
-		FLAC	"Enable FLAC support"			on \
-		CURL	"Enable coverart download support"	on
+OPTIONS_DEFINE=	VORBIS FLAC CURL
+OPTIONS_DEFAULT=	VORBIS FLAC CURL
+
+CURL_DESC=	Cover art download support via libcurl
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--without-ogg
 .endif
 
-.if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=	--without-flac
 .endif
 
-.if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+.if ${PORT_OPTIONS:MCURL}
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
@@ -65,7 +62,7 @@ post-patch:
 		${WRKSRC}/src/mp4file.c
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
