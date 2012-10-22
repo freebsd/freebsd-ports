@@ -1,24 +1,15 @@
---- ./source3/m4/aclocal.m4.orig	2011-08-09 13:17:47.000000000 +0200
-+++ ./source3/m4/aclocal.m4	2011-10-05 22:59:19.000000000 +0200
-@@ -385,11 +385,15 @@
+--- ./source3/m4/aclocal.m4.orig	2012-09-14 08:12:09.000000000 +0000
++++ ./source3/m4/aclocal.m4	2012-10-20 13:13:36.975802862 +0000
+@@ -385,7 +385,7 @@
    ac_new_flags=""
    for i in [$]$1; do
      case [$]i in
 -    -I/usr/include|-I/usr/include/) ;;
-+    -I/usr/include|-I/usr/include/|-I/usr/local/include/|-I/usr/local/include) f=1;;
++    -I/usr/include|-I/usr/include/|-I%%LOCALBASE%%/include/|-I%%LOCALBASE%%/include) f=1;;
      *) ac_new_flags="[$]ac_new_flags [$]i" ;;
      esac
    done
--  $1=[$]ac_new_flags
-+  if test [$]f; then
-+    $1="[$]ac_new_flags -I/usr/local/include"
-+  else
-+    $1=[$]ac_new_flags
-+  fi
- ])
- 
- dnl Removes '-L/usr/lib[/]', '-Wl,-rpath,/usr/lib[/]'
-@@ -437,104 +441,81 @@
+@@ -437,104 +437,81 @@
    dnl those with the standalone portable libiconv installed).
    AC_MSG_CHECKING(for iconv in $1)
      jm_cv_func_iconv="no"

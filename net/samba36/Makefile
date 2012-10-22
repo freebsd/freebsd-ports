@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.7
+PORTVERSION=		3.6.8
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	. old-versions rc pre
+MASTER_SITE_SUBDIR=	samba samba/old-versions samba/rc samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 MAINTAINER?=		timur@FreeBSD.org
@@ -37,11 +37,14 @@ AUTOCONF_ARGS=		${IPATHS}
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
+USE_PKGCONFIG=		build
 USE_AUTOTOOLS=		autoconf autoheader
 USE_LDCONFIG=		${SAMBA_LIBDIR}
-
+# pkg-config is used to find talloc
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 # directories
-VARDIR?=		/var
+VARDIR?=		${DESTDIR}/var
 SAMBA_SPOOL?=		${VARDIR}/spool/${SAMBA_BASENAME}
 SAMBA_LOGDIR=		${VARDIR}/log/${SAMBA_BASENAME}
 SAMBA_RUNDIR=		${VARDIR}/run/${SAMBA_BASENAME}
@@ -67,6 +70,7 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 			--localstatedir="${VARDIR}" \
 			--with-piddir="${SAMBA_RUNDIR}" \
 			--with-ncalrpcdir="${SAMBA_RUNDIR}/ncalrpc" \
+			--with-nmbdsocketdir="${SAMBA_RUNDIR}/nmbd" \
 			--with-lockdir="${SAMBA_LOCKDIR}" \
 			--with-statedir="${SAMBA_LOCKDIR}" \
 			--with-cachedir="${SAMBA_LOCKDIR}" \
@@ -79,11 +83,10 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
 			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
-# pkg-config is used to find talloc
-PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
-PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
-
-USE_PKGCONFIG=		yes
+# XXX: Temporary hack for RELENG6
+CONFIGURE_ENV+=		ac_cv_header_sys_mount_h=yes
+# XXX: readdir test fails on ZFS, bringing unusable replacement code
+CONFIGURE_ENV+=		libreplace_cv_READDIR_NEEDED=no
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 # tdb
@@ -95,7 +98,8 @@ BUILD_DEPENDS+=		talloc>=2.0.1:${PORTSDIR}/devel/talloc
 RUN_DEPENDS+=		talloc>=2.0.1:${PORTSDIR}/devel/talloc
 CONFIGURE_ARGS+=	--without-libtalloc --enable-external-libtalloc
 # These options are common for all (sub)ports
-CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}"
+CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}" \
+			--disable-as-needed
 
 .if !defined(SAMBA_SUBPORT)
 OPTIONS=	LDAP		"With LDAP support" on \
@@ -103,8 +107,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		SWAT		"With SWAT WebGUI" off \
-		ACL_SUPPORT	"With ACL support" off \
-		AIO_SUPPORT	"With Asyncronous IO support" off \
+		ACL_SUPPORT	"With ACL support" on \
+		AIO_SUPPORT	"With Asyncronous IO support" on \
 		FAM_SUPPORT	"With File Alteration Monitor" off \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Disk quota support" off \
@@ -112,6 +116,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
 		AVAHI		"With Bonjour service discovery support" off \
+		PTHREADPOOL	"With pthread pool" off \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
 		IPV6		"With IPv6 support" on \
@@ -158,8 +163,6 @@ CONFIGURE_ARGS+=	--with-pam --with-readline=/usr \
 			--without-libnetapi \
 			--without-libsmbsharemodes
 
-# XXX: Temporary hack for RELENG6
-CONFIGURE_ENV+=		ac_cv_header_sys_mount_h=yes
 .if !defined(WITH_IPV6)
 CONFIGURE_ENV+=		libreplace_cv_HAVE_IPV6=no
 .endif
@@ -288,12 +291,18 @@ CONFIGURE_ARGS+=	--without-dnsupdate
 .endif
 
 .if defined(WITH_AVAHI)
-CPPFLAGS+=		`${PKG_CONFIG} --cflags avahi-client`
-DNSSD_LIBS=		`${PKG_CONFIG} --libs avahi-client`
+CPPFLAGS+=		`pkg-config --cflags avahi-client`
+CONFIGURE_ENV+=		DNSSD_LIBS="`pkg-config --libs avahi-client`"
 LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .else
 CONFIGURE_ARGS+=	--disable-avahi
+.endif
+
+.if defined(WITH_PTHREADPOOL)
+CONFIGURE_ARGS+=	--enable-pthreadpool
+.else
+CONFIGURE_ARGS+=	--disable-pthreadpool
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -302,8 +311,6 @@ CONFIGURE_ARGS+=	--without-included-popt
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
-
-#--enable-pthreadpool
 
 .if defined(WITH_SMBTORTURE)
 PLIST_SUB+=		SMBTORTURE=""
@@ -356,6 +363,8 @@ CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C/(\\\\ )+/,/g}"
 post-patch:
 		@${REINPLACE_CMD} -e 's|%%SAMBA_CONFIG%%|${SAMBA_CONFIG}|g' \
 		    ${WRKSRC}/Makefile.in
+		@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		    ${WRKSRC}/configure.in ${WRKSRC}/m4/aclocal.m4
 ###
 ### end of common part
 ###
@@ -391,6 +400,10 @@ MAN8+=		swat.8
 
 .if defined(WITH_FAM_SUPPORT)
 MAN8+=		vfs_notify_fam.8
+.endif
+
+.if defined(WITH_PTHREADPOOL)
+MAN8+=		vfs_aio_pthread.8
 .endif
 
 .if defined(SAMBA_WANT_LDAP)
