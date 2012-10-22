@@ -241,5 +241,6 @@ gnunet:*:958:
 c_icap:*:959:
 trytond:*:960:
 gearmand:*:961:
+zookeeper:*:962:
 nogroup:*:65533:
 nobody:*:65534:
