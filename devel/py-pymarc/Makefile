@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-pymarc
-# Date created:				09 July 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pymarc
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.5
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
