@@ -10,7 +10,7 @@ PORTVERSION=		3.5.15
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	. old-versions rc pre
+MASTER_SITE_SUBDIR=	samba samba/old-versions samba/rc samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 MAINTAINER?=		timur@FreeBSD.org

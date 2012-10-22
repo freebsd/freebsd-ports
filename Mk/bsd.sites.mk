@@ -1165,10 +1165,10 @@ MASTER_SITE_RUBYGEMS+= \
 
 .if !defined(IGNORE_MASTER_SITE_SAMBA)
 MASTER_SITE_SAMBA+= \
-	http://ftp.samba.org/pub/samba/%SUBDIR%/ \
-	ftp://ca.samba.org/pub/samba/%SUBDIR%/ \
-	ftp://de.samba.org/pub/samba/%SUBDIR%/ \
-	ftp://ftp.easynet.be/samba/%SUBDIR%/ \
+	http://ftp.samba.org/pub/%SUBDIR%/ \
+	ftp://ca.samba.org/pub/%SUBDIR%/ \
+	ftp://de.samba.org/pub/%SUBDIR%/ \
+	ftp://ftp.easynet.be/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
 .endif
 
