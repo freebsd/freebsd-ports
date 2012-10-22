@@ -1,9 +1,5 @@
-# Ports collection makefile for: LibChipCard
-# Date created:                  19 January 2003
-# Whom:                          Martin Preuss <martin@libchipcard.de>
-#
+# Created by: Martin Preuss <martin@libchipcard.de>
 # $FreeBSD$
-#
 
 PORTNAME=	libchipcard
 PORTVERSION=	5.0.2
@@ -12,20 +8,20 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=02&release=26&file=01&dummy=/
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	A library for easy access to chipcards
+COMMENT=	Library for easy access to chipcards
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite \
-		gwenhywfar.63:${PORTSDIR}/devel/gwenhywfar
+LIB_DEPENDS=	pcsclite:${PORTSDIR}/devel/pcsc-lite \
+		gwenhywfar:${PORTSDIR}/devel/gwenhywfar
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
-OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
-		MEMDEBUG "Enable memory debugger statistic" off
+OPTIONS_DEFINE=	DOXYGEN MEMDEBUG
+
+MEMDEBUG_DESC=	Enable memory debugger statistic
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" aq_distrib_name="FreeBSD"
@@ -43,14 +39,13 @@ GWEN_SHLIB_VER=	60
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
-PORTDOCS=	apidoc
 .endif
 
-.if defined(WITH_MEMDEBUG)
+.if ${PORT_OPTIONS:MMEMDEBUG}
 CONFIGURE_ARGS+=--enable-memtrace
 .endif
 
@@ -61,15 +56,19 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-build:
-.if defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOXYGEN}
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-.if defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
+	@${FIND} -P ${DOCSDIR} -type f 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${DOCSDIR} -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
