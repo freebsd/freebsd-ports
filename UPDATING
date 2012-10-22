@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121022:
+  AFFECTS: users of net/samba36
+  AUTHOR: timur@FreeBSD.org
+
+  Startup rc.d/samba script was modified to address some problems with the
+  fine control of supplimentary daemons. As a side effect now it's always
+  necessary to specify in rc.conf:
+
+  samba_enable=YES
+
+  to get the script working. You can still control each of the daemons
+  individualy, by disabling/enabling them with:
+
+  nmbd_enable=NO
+  smbd_enable=NO
+  winbindd_enable=YES
+
 20121015:
   AFFECTS: users of ports-mgmt/portmaster
   AUTHOR: bdrewery@FreeBSD.org
