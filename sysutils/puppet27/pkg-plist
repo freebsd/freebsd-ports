@@ -1,8 +1,13 @@
-bin/extlookup2hiera
+bin/filebucket
+bin/pi
 bin/puppet
-%%RUBY_SITELIBDIR%%/hiera/backend/puppet_backend.rb
-%%RUBY_SITELIBDIR%%/hiera/scope.rb
-%%RUBY_SITELIBDIR%%/hiera_puppet.rb
+bin/puppetdoc
+bin/ralsh
+sbin/puppetca
+sbin/puppetd
+sbin/puppetmasterd
+sbin/puppetqd
+sbin/puppetrun
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
 @dirrmtry etc/puppet
@@ -12,5 +17,3 @@ bin/puppet
 @exec /usr/sbin/chown -Rh puppet:puppet /var/run/puppet
 @exec /bin/mkdir -p /var/puppet
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
-@dirrm %%RUBY_SITELIBDIR%%/hiera/backend
-@dirrm %%RUBY_SITELIBDIR%%/hiera
