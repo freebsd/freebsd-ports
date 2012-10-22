@@ -2,8 +2,3 @@
 %%PL_DEVD%%etc/devd/uhidd-devd.conf.sample
 %%PL_DEVD%%@exec if [ ! -f %D/etc/devd/uhidd-devd.conf ]; then mkdir -p %B; cp -p %D/%F %B/uhidd-devd.conf; fi
 sbin/uhidd
-@cwd %%KMODDIR%%
-uvhid.ko
-@rmtry uvhid.ko.symbols
-@exec kldxref %D
-@unexec kldxref %D
