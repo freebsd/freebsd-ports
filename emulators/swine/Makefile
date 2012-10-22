@@ -3,7 +3,7 @@
 
 PORTNAME=	swine
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators deskutils python
 MASTER_SITES=	GH
 
@@ -13,8 +13,7 @@ COMMENT=	Qt4 graphical Wine frontend
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	pyrcc4:${PORTSDIR}/textproc/py-qt4-xml
-RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine-devel \
-		xterm:${PORTSDIR}/x11/xterm \
+RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 		cabextract:${PORTSDIR}/archivers/cabextract \
 		icotool:${PORTSDIR}/graphics/icoutils \
 		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
@@ -30,28 +29,19 @@ GH_COMMIT=	d14b9f0
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_QT4=	linguist_build
+ONLY_FOR_ARCHS=	i386 amd64
 
 PORTDOCS=	README
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "i386"
+RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/version.sh
-
-pre-build:
-.if !exists(${LOCALBASE}/bin/wine) && ${ARCH} != "i386"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Depends on Wine Port which is only available for i386"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	http://wiki.freebsd.org/Wine"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "FreeBSD/amd64 works with Wine 32bit binary from"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	http://www.mediafire.com/wine_fbsd64"
-	@${ECHO_MSG}
-	exit 1
-.endif
 
 do-install:
 	${MKDIR} ${DATADIRLIB}
