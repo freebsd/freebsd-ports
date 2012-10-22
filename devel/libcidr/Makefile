@@ -1,12 +1,8 @@
-# New ports collection makefile for:		libcidr
-# Date created:					Mar 31 2012
-# Whom:						Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by:	Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libcidr
-DISTVERSION=	1.2
+DISTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/${PORTNAME}/ \
 		http://distfiles.over-yonder.net/${PORTNAME}/ \
@@ -23,7 +19,6 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	CIDR_DOCDIR=${DOCSDIR} CIDR_EXDIR=${EXAMPLESDIR}
 
 MAN3=		libcidr.3
-MANCOMPRESSED=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NO_DOCS=yes
