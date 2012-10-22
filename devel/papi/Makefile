@@ -41,9 +41,9 @@ CONFIGURE_ARGS+=	--with-components=coretemp_freebsd
 .endif
 
 .if ${PORT_OPTIONS:MDEBUGINFO}
-CONFIGURE_ARGS+=	--without-debug
-.else
 CONFIGURE_ARGS+=	--with-debug
+.else
+CONFIGURE_ARGS+=	--without-debug
 .endif
 
 MAN1=	papi_avail.1 \
