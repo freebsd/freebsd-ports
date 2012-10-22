@@ -19,7 +19,7 @@ name="uhidd"
 rcvar=uhidd_enable
 command="%%PREFIX%%/sbin/${name}"
 start_cmd="uhidd_start"
-required_modules="uvhid vkbd"
+required_modules="vkbd"
 pidprefix="/var/run/uhidd"
 
 load_rc_config $name
