@@ -42,11 +42,10 @@ GWEN_SHLIB_VER=	60
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
-PORTDOCS=	apidoc
 .endif
 
 .if ${PORT_OPTIONS:MKTOBLZCHECK} || exists(${LOCALBASE}/lib/libktoblzcheck.so)
@@ -65,15 +64,19 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-build:
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOXYGEN}
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
+	@${FIND} -P ${DOCSDIR} -type f 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${DOCSDIR} -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
