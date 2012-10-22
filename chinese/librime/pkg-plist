@@ -1,0 +1,20 @@
+bin/rime_deployer
+bin/rime_dict_manager
+include/rime_api.h
+lib/librime.so
+lib/librime.so.0
+lib/librime.so.0.9.4
+libdata/pkgconfig/rime.pc
+share/cmake/rime/RimeConfig.cmake
+share/rime/data/cangjie5.prism.bin
+share/rime/data/cangjie5.reverse.bin
+share/rime/data/cangjie5.table.bin
+share/rime/data/essay.kct
+share/rime/data/luna_pinyin.prism.bin
+share/rime/data/luna_pinyin.reverse.bin
+share/rime/data/luna_pinyin.table.bin
+share/rime/data/luna_pinyin_fluency.prism.bin
+share/rime/data/luna_pinyin_simp.prism.bin
+@dirrmtry share/rime/data
+@dirrmtry share/rime
+@dirrm share/cmake/rime
