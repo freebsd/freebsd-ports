@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mathomatic
-PORTVERSION=	16.0.4
+PORTVERSION=	16.0.5
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
