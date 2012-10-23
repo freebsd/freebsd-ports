@@ -3,7 +3,7 @@
 
 PORTNAME=	log4cxx
 PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
@@ -16,17 +16,18 @@ LICENSE=	AL2
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
-.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+OPTIONS_DEFINE=	BOOST DOXYGEN
+OPTIONS_DEFAULT=
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .else
 CONFIGURE_ARGS+=	--disable-doxygen
 .endif
 
-.if exists(${LOCALBASE}/lib/libboost_regex.so)
-WITH_BOOST=	yes
-.endif
-
-.if defined(WITH_BOOST)
+.if ${PORT_OPTIONS:MBOOST}
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-libs
 .endif
 
@@ -37,7 +38,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 PORTDOCS=	*
 .endif
 
@@ -48,7 +49,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${DOCSDIR}
 	for f in ${PORTDOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
