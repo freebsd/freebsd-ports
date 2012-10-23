@@ -25,23 +25,11 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib
 CFLAGS:=	${CFLAGS:N-O*} -O2
 
+.if ${CC:T:M*clang*}
+CFLAGS+=	-fheinous-gnu-extensions
+.endif
+
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_3DNOW_GCC40) && ${OSVERSION} < 700042
-USE_GCC=	4.2+
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-.endif
-
-pre-everything::
-.if ${MACHINE_CPU:M3dnow}!="" && ${OSVERSION} < 700042
-.if !defined(WITH_3DNOW_GCC40)
-	@${ECHO_MSG} "You can enable 3dnow extensions by defining"
-	@${ECHO_MSG} "WITH_3DNOW_GCC40=yes"
-.endif
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Note: ${PORTNAME} will depend on gcc4.0+ with WITH_3DNOW_GCC40"
-	@${ECHO_MSG} "defined."
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\\$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
