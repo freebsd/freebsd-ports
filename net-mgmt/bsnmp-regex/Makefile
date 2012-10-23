@@ -12,11 +12,12 @@ COMMENT=	A bsnmpd module allowing creation of counters from log files
 
 GNU_CONFIGURE=	yes
 
-OPTIONS=	PCRE	"Use PCRE instead of the default regex library"	Off
+OPTIONS_DEFINE=	PCRE
+PCRE_DESC=	Use PCRE instead of the default regex library
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .else
