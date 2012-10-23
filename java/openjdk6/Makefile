@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b26
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
