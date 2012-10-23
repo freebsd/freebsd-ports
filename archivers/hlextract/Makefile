@@ -1,12 +1,8 @@
-# New ports collection makefile for:	HLExtract
-# Date created:				22 Oct 2007
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hlextract
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	archivers games
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
@@ -19,7 +15,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	hl:${PORTSDIR}/games/hllib
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	Main.c
 WRKSRC=		${WRKDIR}/HLExtract
 
 PLIST_FILES=	bin/${PORTNAME}
