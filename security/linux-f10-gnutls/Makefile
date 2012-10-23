@@ -1,8 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-gnutls
-# Date created:				10 Nov 2010
-# Whom:					Stas Timokhin <devel@stasyan.com>
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gnutls
 PORTVERSION=	2.4.2
@@ -21,6 +18,6 @@ RPMVERSION=	5.fc10
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
-DESCR=		${.CURDIR}/../gnutls/pkg-descr
+DESCR=		${PORTSDIR}/security/gnutls/pkg-descr
 
 .include <bsd.port.mk>

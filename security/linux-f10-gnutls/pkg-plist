@@ -38,7 +38,3 @@ usr/share/locale/vi/LC_MESSAGES/gnutls.mo
 @dirrmtry usr/share/locale/de
 @dirrmtry usr/share/locale
 @dirrm usr/share/doc/gnutls-2.4.2
-@dirrm usr/share/doc
-@dirrm usr/share
-@dirrm usr/lib
-@dirrm usr
