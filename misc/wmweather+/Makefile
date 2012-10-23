@@ -1,5 +1,4 @@
 # Created by: Harald Wille <harald.wille@students.jku.at>
-#
 # $FreeBSD$
 
 PORTNAME=		wmweather+
@@ -30,17 +29,19 @@ CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE} \
 			--with-xpm-includes=${LOCALBASE} \
 			--with-xpm-libraries=${LOCALBASE}
 
-OPTIONS=	WM "Depend on Window Maker port (otherwise only libwraster)" on
+OPTIONS_DEFINE=	WM EXAMPLES
+OPTIONS_DEFAULT=	WM
+WM_DESC=	Depend on Window Maker port (otherwise only libwraster)
 
 MAN1=		wmweather+.1
 
 PLIST_FILES=	bin/wmweather+
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CFLAGS:=	${CFLAGS:C/-O[0-9]/-O0/}
 
-.if !defined(WITHOUT_WM)
+.if ${PORT_OPTIONS:MWM}
 LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/windowmaker
 .else
 LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/libwraster
@@ -56,7 +57,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmweather+ ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmweather+.1 ${PREFIX}/man/man1
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/HINTS ${EXAMPLESDIR}/HINTS
 	${INSTALL_DATA} ${WRKSRC}/example.conf ${EXAMPLESDIR}/example.conf
@@ -68,7 +69,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO} "===================================================" > ${PM}
 	@${ECHO} "A sample configuration file has been copied to" >> ${PM}
 	@${ECHO} "${EXAMPLESDIR}/example.conf" >> ${PM}
@@ -79,4 +80,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
