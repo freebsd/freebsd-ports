@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Config-IniFiles
-PORTVERSION=	2.77
+PORTVERSION=	2.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl5 module for reading .ini-style configuration files
 
 LICENSE=	ART10 GPLv1
