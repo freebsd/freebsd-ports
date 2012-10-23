@@ -8,5 +8,5 @@
 +Libs: -L${libdir} -levent_pthreads-2.0
  Libs.private: @LIBS@ @PTHREAD_LIBS@
 -Cflags: -I${includedir} @PTHREAD_CFLAGS@
-+Cflags: -I${includedir} -I${includedir}/event2/compat @PTHREAD_CFLAGS@
++Cflags: -I${includedir}/event2/compat -I${includedir} @PTHREAD_CFLAGS@
  

@@ -8,5 +8,5 @@
 +Libs: -L${libdir} -levent_openssl-2.0
  Libs.private: @LIBS@ -lssl -lcrypto
 -Cflags: -I${includedir}
-+Cflags: -I${includedir} -I${includedir}/event2/compat
++Cflags: -I${includedir}/event2/compat -I${includedir}
  

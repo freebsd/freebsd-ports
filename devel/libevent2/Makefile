@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libevent2
-DISTVERSION=	2.0.19
+DISTVERSION=	2.0.20
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/downloads/libevent/libevent/
 DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}-stable
