@@ -3,6 +3,7 @@
 
 PORTNAME=	scala-ide
 DISTVERSION=	2.1.0m2
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://download.scala-ide.org/releases-29/milestone/ \
 		http://download.scala-ide.org/ecosystem/dev-milestone-2.9/site/features/:feature \
@@ -36,10 +37,10 @@ PLUGINS+=	org.scala-ide.sdt.scalatest.source_0.9.3.jar \
 .endif
 
 .if ${PORT_OPTIONS:MWORKSHEET}
-FEATURES+=	org.scalaide.worksheet.feature_0.1.1.v-2_09-201209171937-dc86a45.jar \
-		org.scalaide.worksheet.source.feature_0.1.1.v-2_09-201209171937-dc86a45.jar
-PLUGINS+=	org.scalaide.worksheet.source_0.1.1.v-2_09-201209171937-dc86a45.jar \
-		org.scalaide.worksheet_0.1.1.v-2_09-201209171937-dc86a45.jar
+FEATURES+=	org.scalaide.worksheet.feature_0.1.2.v-2_09-201210230838-85b738a.jar \
+		org.scalaide.worksheet.source.feature_0.1.2.v-2_09-201210230838-85b738a.jar
+PLUGINS+=	org.scalaide.worksheet.source_0.1.2.v-2_09-201210230838-85b738a.jar \
+		org.scalaide.worksheet_0.1.2.v-2_09-201210230838-85b738a.jar
 .endif
 
 .if ${PORT_OPTIONS:MSCALATEST} || ${PORT_OPTIONS:MWORKSHEET}
