@@ -15,6 +15,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 libgnomecanvas libgnomeui libxml2
