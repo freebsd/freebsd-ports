@@ -135,6 +135,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Panasonic.pm
 %%SITE_PERL%%/Image/ExifTool/PanasonicRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Pentax.pm
+%%SITE_PERL%%/Image/ExifTool/PhotoCD.pm
 %%SITE_PERL%%/Image/ExifTool/PhotoMechanic.pm
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
 %%SITE_PERL%%/Image/ExifTool/PostScript.pm
@@ -256,6 +257,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Panasonic.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PanasonicRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Pentax.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/PhotoCD.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PhotoMechanic.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Photoshop.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PostScript.html

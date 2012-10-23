@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Image-ExifTool
-# Date Created:				15 Sep 2004
-# Whom:					Tod McQuillin <devin@spamcop.net>
-#
+# Created by: Tod McQuillin <devin@spamcop.net>
 # $FreeBSD$
-#
 
 # Note: This port tracks the "production release" of ExifTool as given
 # by http://www.sno.phy.queensu.ca/~phil/exiftool/history.html
@@ -14,7 +10,7 @@
 # For development version, please try graphics/p5-Image-ExifTool-devel
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	8.90
+PORTVERSION=	9.01
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
@@ -41,12 +37,12 @@ MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BigTIFF BuildTagLookup	\
 		MPC MPEG MPF MWG MXF MakerNotes Matroska Microsoft	\
 		Minolta MinoltaRaw Nikon NikonCapture NikonCustom OOXML	\
 		Ogg Olympus OpenEXR PDF PGF PICT PNG PPM PSP Panasonic	\
-		PanasonicRaw Pentax PhotoMechanic Photoshop PostScript	\
-		PrintIM Qualcomm QuickTime RIFF RSRC RTF Radiance	\
-		Rawzor Real Reconyx Ricoh Samsung Sanyo Shift Shortcuts	\
-		Sigma SigmaRaw Sony SonyIDC Stim TagInfoXML TagLookup	\
-		TagNames Theora Unknown Vorbis WriteCanonRaw WriteExif	\
-		WriteIPTC WritePDF WritePNG WritePhotoshop		\
+		PanasonicRaw Pentax PhotoCD PhotoMechanic Photoshop	\
+		PostScript PrintIM Qualcomm QuickTime RIFF RSRC RTF	\
+		Radiance Rawzor Real Reconyx Ricoh Samsung Sanyo Shift	\
+		Shortcuts Sigma SigmaRaw Sony SonyIDC Stim TagInfoXML	\
+		TagLookup TagNames Theora Unknown Vorbis WriteCanonRaw	\
+		WriteExif WriteIPTC WritePDF WritePNG WritePhotoshop	\
 		WritePostScript WriteXMP Writer XMP XMP2 XMPStruct ZIP	\
 		iWork
 LANGTAGS=	cs de en_ca en_gb es fi fr it ja ko nl pl ru sv tr zh_cn zh_tw
