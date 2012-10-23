@@ -1,12 +1,7 @@
-# New ports collection makefile for:	fossil
-# Date created:		2010-06-15
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fossil
-PORTVERSION=	20120808112557
+PORTVERSION=	20121022124804
 PORTEPOCH=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
