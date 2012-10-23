@@ -1,14 +1,10 @@
-# New ports collection makefile for:   impresscms
-# Date created:		25 August 2008
-# Whom:			Wen heping <wenheping@gmail.com>
-#
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	impresscms
-PORTVERSION=	1.3.2.1
+PORTVERSION=	1.3.3
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%201.3.2
+MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%201.3.3
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 
 MAINTAINER=	wen@FreeBSD.org

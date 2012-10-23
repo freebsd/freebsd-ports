@@ -1,3 +1,4 @@
+%%WWWDIR%%/extras/build.properties
 %%WWWDIR%%/extras/build.xml
 %%WWWDIR%%/extras/editors/FCKeditor/editor/filemanager/connectors/index.html
 %%WWWDIR%%/extras/editors/FCKeditor/editor/filemanager/connectors/test.html
@@ -2357,9 +2358,12 @@
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/index.html
 %%WWWDIR%%/htdocs/libraries/jalalijscalendar/jalali.js
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/colorbox.css
+%%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/border.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/controls.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/index.html
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/loading.gif
+%%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/loading_background.png
+%%WWWDIR%%/htdocs/libraries/jquery/colorbox/images/overlay.png
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/index.html
 %%WWWDIR%%/htdocs/libraries/jquery/colorbox/jquery.colorbox-min.js
 %%WWWDIR%%/htdocs/libraries/jquery/helptip.js
@@ -2509,7 +2513,6 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/NEWS
 %%WWWDIR%%/htdocs/libraries/phpopenid/README
 %%WWWDIR%%/htdocs/libraries/phpopenid/README.Debian
-%%WWWDIR%%/htdocs/libraries/phpopenid/README.git
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/adminutil.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/brace_style.pl
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/checkimport
@@ -4378,7 +4381,6 @@
 @dirrm %%WWWDIR%%/htdocs/language/english/mail_template
 @dirrm %%WWWDIR%%/htdocs/language/english
 @dirrm %%WWWDIR%%/htdocs/language
-@dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api
 @dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs
 @dirrm %%WWWDIR%%/htdocs/libraries/geshi/geshi
 @dirrm %%WWWDIR%%/htdocs/libraries/geshi
