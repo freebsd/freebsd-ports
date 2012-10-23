@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipsc
-# Date created:		31 October 1999
-# Whom:			Jeremy Shaffner <jeremy@external.org>
-#
+# Created by: Jeremy Shaffner <jeremy@external.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ipsc
 PORTVERSION=	0.4.3
@@ -14,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	An IP Subnet Calculator
 
-BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build
+BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${PORTSDIR}/sysutils/prips:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
