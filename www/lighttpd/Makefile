@@ -7,7 +7,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.31
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -205,6 +205,9 @@ post-patch:
 		${WRKSRC}/doc/config/lighttpd.conf
 	@${REINPLACE_CMD} -e "s|/etc/lighttpd|${PREFIX}/etc/lighttpd|g" \
 		${WRKSRC}/doc/config/conf.d/auth.conf
+	@${REINPLACE_CMD} -e "s|/usr/bin/python|${LOCALBASE}/bin/python|" \
+		${WRKSRC}/doc/config/conf.d/cgi.conf \
+		${WRKSRC}/tests/*.conf
 	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
 	@${ECHO} "# IPv4 listening socket" >> \
 		${WRKSRC}/doc/config/lighttpd.conf
