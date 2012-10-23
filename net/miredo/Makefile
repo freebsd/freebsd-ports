@@ -7,7 +7,7 @@
 
 PORTNAME=		miredo
 PORTVERSION=	 	1.2.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=		Judy.1:${PORTSDIR}/devel/judy
 
 USE_XZ=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--localstatedir=/var
+CONFIGURE_ARGS=		--localstatedir=/var --enable-examplesdir=$(EXAMPLESDIR)
 USE_LDCONFIG=		yes
 
 OPTIONS=		POLICYTABLE	"Install policy table to support teredo"	off
