@@ -1,12 +1,8 @@
-# New ports collection makefile for:   parallel
-# Date created:        22 September 2010
-# Whom:                Chris Howey <howeyc@gmail.com>
-#
+# Created by: Chris Howey <howeyc@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	parallel
-PORTVERSION=	20120822
+PORTVERSION=	20121022
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
