@@ -1568,7 +1568,6 @@ bin/pycolor
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/config/profile
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/config
 @dirrm %%PYTHON_SITELIBDIR%%/IPython
-@dirrm %%PYTHON_SITELIBDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/directview
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vim
