@@ -21,8 +21,10 @@ PLIST_FILES=	bin/chrpath
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .	for i in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
