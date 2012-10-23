@@ -2,6 +2,7 @@
 
 PORTNAME=	libva-vdpau-driver
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -24,7 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DEBUG STRIP
+OPTIONS_DEFINE=	DEBUG
 
 .include <bsd.port.options.mk>
 
@@ -32,7 +33,9 @@ OPTIONS_DEFINE=	DEBUG STRIP
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
-.if ${PORT_OPTIONS:MSTRIP}
+.include <bsd.port.pre.mk>
+
+.if defined(STRIP) && ${STRIP} != ""
 INSTALL_TARGET=	install-strip
 .endif
 
@@ -43,4 +46,4 @@ post-patch:	.SILENT
 		-e '/\^vdpau_version/s|$$CC -E|& ${CPPFLAGS}|' \
 		 ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

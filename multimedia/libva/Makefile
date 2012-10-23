@@ -2,7 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -29,9 +29,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # prevent types conflict: videodev2.h vs. drm.h
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
 
-OPTIONS_DEFINE=	DEBUG STRIP
+OPTIONS_DEFINE=	DEBUG
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+CFLAGS+=	-D_DEBUG
+.else
+CFLAGS+=	-DNDEBUG
+.endif
+
+.include <bsd.port.pre.mk>
 
 # add strnlen(3) from head/lib/libc/string/strnlen.c
 .if ${OSVERSION} < 800067
@@ -42,13 +50,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-va-va_trace.c
 BROKEN=		glXCreateContext fails during configure
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-D_DEBUG
-.else
-CFLAGS+=	-DNDEBUG
-.endif
-
-.if {PORT_OPTIONS:MSTRIP}
+.if defined(STRIP) && ${STRIP} != ""
 INSTALL_TARGET=	install-strip
 .endif
 
@@ -69,4 +71,4 @@ post-configure:	.SILENT
 	${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/' \
 		${WRKSRC}/test/putsurface/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
