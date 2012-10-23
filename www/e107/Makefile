@@ -1,12 +1,8 @@
-# New ports collection makefile for:	e107
-# Date created:				31 May, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	e107
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_full
