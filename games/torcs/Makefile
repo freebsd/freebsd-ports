@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	torcs
-DISTVERSION=	1.3.3
-PORTREVISION=	3
+DISTVERSION=	1.3.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -12,12 +11,15 @@ COMMENT=	The Open Racing Car Simulator
 
 LICENSE=	GPLv2
 
+MAKE_JOBS_UNSAFE=	yes
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		vorbis:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
+USE_GL=		glut
 USE_OPENAL=	al alut
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -41,8 +43,7 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
 		src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
 		src/tools/trackgen/trackgen.in \
-		src/modules/telemetry/telemetry.sh robotgen Make-default.mk \
-		data/tracks/road/ole-road-1/generate.sh
+		src/modules/telemetry/telemetry.sh robotgen Make-default.mk
 
 DESKTOP_ENTRIES=	"TORCS" \
 			"The Open Racing Car Simulator" \
@@ -51,13 +52,7 @@ DESKTOP_ENTRIES=	"TORCS" \
 			"Game;Simulation;" \
 			false
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FREEGLUT)
-LIB_DEPENDS+=	glut:${PORTSDIR}/graphics/freeglut
-.else
-USE_GL=		glut
-.endif
+.include <bsd.port.options.mk>
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
 
@@ -71,7 +66,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/share/games
 
 post-install:
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/faq/|} ${DOCSDIR}
 .endif
@@ -79,4 +74,4 @@ post-install:
 	${TOUCH} ${INSTDIR}/results/${ed}/.keep_me
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
