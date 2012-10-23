@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.13.7
+PORTVERSION=	3.14.5
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
@@ -45,6 +45,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 .include <bsd.port.pre.mk>
 
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${PREFIX}/bin/d8
 	${INSTALL_LIB} -m 755 ${WRKSRC}/out/native/lib.target/libv8.so ${PREFIX}/lib/libv8.so.1
 	${LN} -sf ${PREFIX}/lib/libv8.so.1 ${PREFIX}/lib/libv8.so
 	${INSTALL_DATA} ${WRKSRC}/include/v8.h ${PREFIX}/include/
