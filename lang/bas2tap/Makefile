@@ -18,12 +18,14 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	${PORTNAME}.doc
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 do-build:
 	${CC} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME} -lm ${CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
