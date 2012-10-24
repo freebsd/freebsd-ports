@@ -1,12 +1,8 @@
-# New ports collection makefile for:	openal-soft
-# Date created:		2009-02-01
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -21,12 +17,13 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
 		-DDSOUND:BOOL=OFF -DALSOFT_CONFIG:BOOL=ON -DEXAMPLES:BOOL=OFF
 
-OPTIONS=	PULSEAUDIO	"Enable sound streaming using PulseAudio" off
+OPTIONS_DEFINE=		PULSEAUDIO
+PULSEAUDIO_DESC=	Enable sound streaming using PulseAudio
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
 CFLAGS+=	-Iinclude -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON
@@ -41,4 +38,4 @@ post-patch:
 	@${REINPLACE_CMD} 's|alsoft.conf|alsoft.conf.sample|' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
