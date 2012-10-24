@@ -1,11 +1,14 @@
 %%WWWDIR%%/config/gitphp.conf.defaults.php
 %%WWWDIR%%/config/gitphp.conf.php.example
 %%WWWDIR%%/config/projects.conf.php.example
-%%WWWDIR%%/css/ext/jquery.qtip.css
+%%WWWDIR%%/css/ext/jquery.qtip.min.css
+%%WWWDIR%%/css/ext/jquery.qtip.min.css.gz
 %%WWWDIR%%/css/gitphp.css
 %%WWWDIR%%/css/gitphp.min.css
+%%WWWDIR%%/css/gitphp.min.css.gz
 %%WWWDIR%%/css/gitphpskin.css
 %%WWWDIR%%/css/gitphpskin.min.css
+%%WWWDIR%%/css/gitphpskin.min.css.gz
 %%WWWDIR%%/doc/AUTHORS
 %%WWWDIR%%/doc/COPYING
 %%WWWDIR%%/doc/README
@@ -15,14 +18,19 @@
 %%WWWDIR%%/images/search-loader.gif
 %%WWWDIR%%/images/tooltip-loader.gif
 %%WWWDIR%%/images/tree-loader.gif
+%%WWWDIR%%/include/AutoLoader.class.php
 %%WWWDIR%%/include/Config.class.php
-%%WWWDIR%%/include/Log.class.php
-%%WWWDIR%%/include/MessageException.class.php
+%%WWWDIR%%/include/DebugLog.class.php
 %%WWWDIR%%/include/Resource.class.php
 %%WWWDIR%%/include/Util.class.php
 %%WWWDIR%%/include/cache/Cache.class.php
+%%WWWDIR%%/include/cache/CacheResource_Memcache.class.php
+%%WWWDIR%%/include/cache/CacheStrategy.interface.php
+%%WWWDIR%%/include/cache/Cache_File.class.php
+%%WWWDIR%%/include/cache/Cache_Memcache.class.php
+%%WWWDIR%%/include/cache/Cache_Memcached.class.php
+%%WWWDIR%%/include/cache/Cacheable.interface.php
 %%WWWDIR%%/include/cache/MemoryCache.class.php
-%%WWWDIR%%/include/controller/Controller.class.php
 %%WWWDIR%%/include/controller/ControllerBase.class.php
 %%WWWDIR%%/include/controller/Controller_Blame.class.php
 %%WWWDIR%%/include/controller/Controller_Blob.class.php
@@ -31,6 +39,8 @@
 %%WWWDIR%%/include/controller/Controller_Commitdiff.class.php
 %%WWWDIR%%/include/controller/Controller_DiffBase.class.php
 %%WWWDIR%%/include/controller/Controller_Feed.class.php
+%%WWWDIR%%/include/controller/Controller_Graph.class.php
+%%WWWDIR%%/include/controller/Controller_GraphData.class.php
 %%WWWDIR%%/include/controller/Controller_Heads.class.php
 %%WWWDIR%%/include/controller/Controller_History.class.php
 %%WWWDIR%%/include/controller/Controller_Log.class.php
@@ -42,59 +52,163 @@
 %%WWWDIR%%/include/controller/Controller_Tag.class.php
 %%WWWDIR%%/include/controller/Controller_Tags.class.php
 %%WWWDIR%%/include/controller/Controller_Tree.class.php
-%%WWWDIR%%/include/git/Archive.class.php
-%%WWWDIR%%/include/git/Blob.class.php
-%%WWWDIR%%/include/git/Commit.class.php
+%%WWWDIR%%/include/exception/AmbiguousHashException.class.php
+%%WWWDIR%%/include/exception/DirectoryNotFoundException.class.php
+%%WWWDIR%%/include/exception/DirectoryTraversalException.class.php
+%%WWWDIR%%/include/exception/FileNotFoundException.class.php
+%%WWWDIR%%/include/exception/InvalidConfigFileException.class.php
+%%WWWDIR%%/include/exception/InvalidDirectoryConfigurationException.class.php
+%%WWWDIR%%/include/exception/InvalidDirectoryException.class.php
+%%WWWDIR%%/include/exception/InvalidFileException.class.php
+%%WWWDIR%%/include/exception/InvalidGitExecutableException.class.php
+%%WWWDIR%%/include/exception/InvalidGitRepositoryException.class.php
+%%WWWDIR%%/include/exception/InvalidHashException.class.php
+%%WWWDIR%%/include/exception/InvalidProjectParameterException.class.php
+%%WWWDIR%%/include/exception/InvalidSearchTypeException.class.php
+%%WWWDIR%%/include/exception/MessageException.class.php
+%%WWWDIR%%/include/exception/MissingMemcacheException.class.php
+%%WWWDIR%%/include/exception/MissingProjectParameterException.class.php
+%%WWWDIR%%/include/exception/MissingProjectrootException.class.php
+%%WWWDIR%%/include/exception/ProjectListFileReadException.class.php
+%%WWWDIR%%/include/exception/ProjectrootBoundException.class.php
+%%WWWDIR%%/include/exception/SearchDisabledException.class.php
+%%WWWDIR%%/include/exception/SearchLengthException.class.php
+%%WWWDIR%%/include/git/CommitSearch.class.php
+%%WWWDIR%%/include/git/FileBlame.class.php
 %%WWWDIR%%/include/git/FileDiff.class.php
+%%WWWDIR%%/include/git/FileHistory.class.php
+%%WWWDIR%%/include/git/FileSearch.class.php
+%%WWWDIR%%/include/git/FileSearchResult.class.php
 %%WWWDIR%%/include/git/FilesystemObject.class.php
 %%WWWDIR%%/include/git/GitConfig.class.php
 %%WWWDIR%%/include/git/GitExe.class.php
 %%WWWDIR%%/include/git/GitObject.class.php
+%%WWWDIR%%/include/git/GitObjectLoader.class.php
+%%WWWDIR%%/include/git/GitObjectManager.class.php
 %%WWWDIR%%/include/git/Head.class.php
-%%WWWDIR%%/include/git/Pack.class.php
-%%WWWDIR%%/include/git/Project.class.php
-%%WWWDIR%%/include/git/ProjectList.class.php
-%%WWWDIR%%/include/git/ProjectListArray.class.php
-%%WWWDIR%%/include/git/ProjectListArrayLegacy.class.php
-%%WWWDIR%%/include/git/ProjectListBase.class.php
-%%WWWDIR%%/include/git/ProjectListDirectory.class.php
-%%WWWDIR%%/include/git/ProjectListFile.class.php
-%%WWWDIR%%/include/git/ProjectListScmManager.class.php
+%%WWWDIR%%/include/git/Observable.interface.php
+%%WWWDIR%%/include/git/Observer.interface.php
+%%WWWDIR%%/include/git/Pagination.interface.php
 %%WWWDIR%%/include/git/Ref.class.php
-%%WWWDIR%%/include/git/Tag.class.php
-%%WWWDIR%%/include/git/Tree.class.php
 %%WWWDIR%%/include/git/TreeDiff.class.php
+%%WWWDIR%%/include/git/archive/Archive.class.php
+%%WWWDIR%%/include/git/archive/ArchiveStrategy.interface.php
+%%WWWDIR%%/include/git/archive/Archive_Bzip2.class.php
+%%WWWDIR%%/include/git/archive/Archive_Gzip.class.php
+%%WWWDIR%%/include/git/archive/Archive_Tar.class.php
+%%WWWDIR%%/include/git/archive/Archive_Zip.class.php
+%%WWWDIR%%/include/git/blob/Blob.class.php
+%%WWWDIR%%/include/git/blob/BlobLoadStrategy.interface.php
+%%WWWDIR%%/include/git/blob/BlobLoad_Git.class.php
+%%WWWDIR%%/include/git/blob/BlobLoad_Raw.class.php
+%%WWWDIR%%/include/git/commit/Commit.class.php
+%%WWWDIR%%/include/git/commit/CommitLoadStrategy.interface.php
+%%WWWDIR%%/include/git/commit/CommitLoad_Base.class.php
+%%WWWDIR%%/include/git/commit/CommitLoad_Git.class.php
+%%WWWDIR%%/include/git/commit/CommitLoad_Raw.class.php
+%%WWWDIR%%/include/git/filemimetype/FileMimeTypeReader.class.php
+%%WWWDIR%%/include/git/filemimetype/FileMimeTypeStrategy.interface.php
+%%WWWDIR%%/include/git/filemimetype/FileMimeType_Extension.class.php
+%%WWWDIR%%/include/git/filemimetype/FileMimeType_FileExe.class.php
+%%WWWDIR%%/include/git/filemimetype/FileMimeType_Fileinfo.class.php
+%%WWWDIR%%/include/git/headlist/HeadList.class.php
+%%WWWDIR%%/include/git/headlist/HeadListLoadStrategy.interface.php
+%%WWWDIR%%/include/git/headlist/HeadListLoad_Git.class.php
+%%WWWDIR%%/include/git/headlist/HeadListLoad_Raw.class.php
+%%WWWDIR%%/include/git/log/Log.class.php
+%%WWWDIR%%/include/git/log/LogLoadStrategy.interface.php
+%%WWWDIR%%/include/git/log/LogLoad_Git.class.php
+%%WWWDIR%%/include/git/log/LogLoad_Raw.class.php
+%%WWWDIR%%/include/git/pack/Pack.class.php
+%%WWWDIR%%/include/git/pack/PackData.class.php
+%%WWWDIR%%/include/git/pack/PackIndex.class.php
+%%WWWDIR%%/include/git/pack/PackIndexReaderV1.class.php
+%%WWWDIR%%/include/git/pack/PackIndexReaderV2.class.php
+%%WWWDIR%%/include/git/pack/PackIndexStrategy.interface.php
+%%WWWDIR%%/include/git/project/Project.class.php
+%%WWWDIR%%/include/git/project/ProjectLoadStrategy.interface.php
+%%WWWDIR%%/include/git/project/ProjectLoad_Git.class.php
+%%WWWDIR%%/include/git/project/ProjectLoad_Raw.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectList.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectListArray.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectListArrayLegacy.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectListBase.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectListDirectory.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectListFile.class.php
+%%WWWDIR%%/include/git/projectlist/ProjectListScmManager.class.php
+%%WWWDIR%%/include/git/reflist/RefList.class.php
+%%WWWDIR%%/include/git/reflist/RefListLoadStrategy.interface.php
+%%WWWDIR%%/include/git/reflist/RefListLoad_Git.class.php
+%%WWWDIR%%/include/git/reflist/RefListLoad_Raw.class.php
+%%WWWDIR%%/include/git/revlist/RevList.class.php
+%%WWWDIR%%/include/git/revlist/RevList_Git.class.php
+%%WWWDIR%%/include/git/tag/Tag.class.php
+%%WWWDIR%%/include/git/tag/TagLoadStrategy.interface.php
+%%WWWDIR%%/include/git/tag/TagLoad_Git.class.php
+%%WWWDIR%%/include/git/tag/TagLoad_Raw.class.php
+%%WWWDIR%%/include/git/taglist/TagList.class.php
+%%WWWDIR%%/include/git/taglist/TagListLoadStrategy.interface.php
+%%WWWDIR%%/include/git/taglist/TagListLoad_Git.class.php
+%%WWWDIR%%/include/git/taglist/TagListLoad_Raw.class.php
+%%WWWDIR%%/include/git/tree/Tree.class.php
+%%WWWDIR%%/include/git/tree/TreeLoadStrategy.interface.php
+%%WWWDIR%%/include/git/tree/TreeLoad_Base.class.php
+%%WWWDIR%%/include/git/tree/TreeLoad_Git.class.php
+%%WWWDIR%%/include/git/tree/TreeLoad_Raw.class.php
+%%WWWDIR%%/include/router/Route.class.php
+%%WWWDIR%%/include/router/Router.class.php
 %%WWWDIR%%/include/smartyplugins/block.t.php
-%%WWWDIR%%/include/smartyplugins/cacheresource.memcache.php
-%%WWWDIR%%/include/smartyplugins/function.scripturl.php
-%%WWWDIR%%/include/smartyplugins/modifier.agestring.php
+%%WWWDIR%%/include/smartyplugins/function.agestring.php
+%%WWWDIR%%/include/smartyplugins/function.geturl.php
+%%WWWDIR%%/include/smartyplugins/function.localfiletype.php
 %%WWWDIR%%/include/smartyplugins/modifier.buglink.php
 %%WWWDIR%%/include/smartyplugins/modifier.highlight.php
 %%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/blob.js
 %%WWWDIR%%/js/blob.min.js
+%%WWWDIR%%/js/blob.min.js.gz
+%%WWWDIR%%/js/commitactivity.js
+%%WWWDIR%%/js/commitactivity.min.js
+%%WWWDIR%%/js/commitactivity.min.js.gz
 %%WWWDIR%%/js/commitdiff.js
 %%WWWDIR%%/js/commitdiff.min.js
+%%WWWDIR%%/js/commitdiff.min.js.gz
 %%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/common.min.js
-%%WWWDIR%%/js/ext/jquery-1.7.1.min.js
+%%WWWDIR%%/js/common.min.js.gz
+%%WWWDIR%%/js/ext/d3.v2.min.js
+%%WWWDIR%%/js/ext/jquery-1.8.1.min.js
+%%WWWDIR%%/js/ext/jquery-1.8.1.min.js.gz
 %%WWWDIR%%/js/ext/jquery.qtip.min.js
+%%WWWDIR%%/js/ext/jquery.qtip.min.js.gz
+%%WWWDIR%%/js/ext/modernizr.custom.js
 %%WWWDIR%%/js/ext/require.js
+%%WWWDIR%%/js/ext/require.js.gz
+%%WWWDIR%%/js/languagedist.js
+%%WWWDIR%%/js/languagedist.min.js
+%%WWWDIR%%/js/languagedist.min.js.gz
 %%WWWDIR%%/js/modules/blameasync.js
+%%WWWDIR%%/js/modules/commitactivitygraph.js
 %%WWWDIR%%/js/modules/getproject.js
 %%WWWDIR%%/js/modules/geturl.js
+%%WWWDIR%%/js/modules/hassearchreset.js
 %%WWWDIR%%/js/modules/lang.js
+%%WWWDIR%%/js/modules/languagedistgraph.js
 %%WWWDIR%%/js/modules/projectsearch.js
+%%WWWDIR%%/js/modules/resources.js
 %%WWWDIR%%/js/modules/sidebysidecommitdiff.js
+%%WWWDIR%%/js/modules/snapshotformats.js
 %%WWWDIR%%/js/modules/tooltip.commit.js
 %%WWWDIR%%/js/modules/tooltip.snapshot.js
 %%WWWDIR%%/js/modules/tooltip.tag.js
 %%WWWDIR%%/js/modules/treedrilldown.js
 %%WWWDIR%%/js/projectlist.js
 %%WWWDIR%%/js/projectlist.min.js
+%%WWWDIR%%/js/projectlist.min.js.gz
 %%WWWDIR%%/js/tree.js
 %%WWWDIR%%/js/tree.min.js
+%%WWWDIR%%/js/tree.min.js.gz
 %%WWWDIR%%/lib/geshi/contrib/aliased.php
 %%WWWDIR%%/lib/geshi/contrib/cssgen.php
 %%WWWDIR%%/lib/geshi/contrib/cssgen2.php
@@ -576,13 +690,13 @@
 %%WWWDIR%%/templates/commitdiff.tpl
 %%WWWDIR%%/templates/commitdiffplain.tpl
 %%WWWDIR%%/templates/committip.tpl
-%%WWWDIR%%/templates/data.tpl
 %%WWWDIR%%/templates/filediff.tpl
 %%WWWDIR%%/templates/filediffsidebyside.tpl
+%%WWWDIR%%/templates/graph.tpl
+%%WWWDIR%%/templates/graphdata.tpl
 %%WWWDIR%%/templates/headlist.tpl
 %%WWWDIR%%/templates/heads.tpl
 %%WWWDIR%%/templates/history.tpl
-%%WWWDIR%%/templates/jsconst.tpl
 %%WWWDIR%%/templates/log.tpl
 %%WWWDIR%%/templates/main.tpl
 %%WWWDIR%%/templates/message.tpl
@@ -593,6 +707,7 @@
 %%WWWDIR%%/templates/projectbase.tpl
 %%WWWDIR%%/templates/projectindex.tpl
 %%WWWDIR%%/templates/projectlist.tpl
+%%WWWDIR%%/templates/projectmessage.tpl
 %%WWWDIR%%/templates/refbadges.tpl
 %%WWWDIR%%/templates/rss.tpl
 %%WWWDIR%%/templates/search.tpl
@@ -656,7 +771,23 @@
 @dirrm %%WWWDIR%%/js/ext
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/include/smartyplugins
+@dirrm %%WWWDIR%%/include/router
+@dirrm %%WWWDIR%%/include/git/tree
+@dirrm %%WWWDIR%%/include/git/taglist
+@dirrm %%WWWDIR%%/include/git/tag
+@dirrm %%WWWDIR%%/include/git/revlist
+@dirrm %%WWWDIR%%/include/git/reflist
+@dirrm %%WWWDIR%%/include/git/projectlist
+@dirrm %%WWWDIR%%/include/git/project
+@dirrm %%WWWDIR%%/include/git/pack
+@dirrm %%WWWDIR%%/include/git/log
+@dirrm %%WWWDIR%%/include/git/headlist
+@dirrm %%WWWDIR%%/include/git/filemimetype
+@dirrm %%WWWDIR%%/include/git/commit
+@dirrm %%WWWDIR%%/include/git/blob
+@dirrm %%WWWDIR%%/include/git/archive
 @dirrm %%WWWDIR%%/include/git
+@dirrm %%WWWDIR%%/include/exception
 @dirrm %%WWWDIR%%/include/controller
 @dirrm %%WWWDIR%%/include/cache
 @dirrm %%WWWDIR%%/include
