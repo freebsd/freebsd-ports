@@ -36,6 +36,9 @@ bin/actdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_pep8.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_pep8.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_pep8.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_rst_directives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_rst_directives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_rst_directives.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/__init__.pyo
