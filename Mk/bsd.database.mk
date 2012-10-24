@@ -243,8 +243,9 @@ LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${P
 _USE_PGSQL_DEP=			contrib docs pgtcl plperl pltcl server
 _USE_PGSQL_DEP_contrib=	pgbench
 _USE_PGSQL_DEP_docs=	postgresql-docs>0
-_USE_PGSQL_DEP_pltcl=	postgresql-pltcl>0
+_USE_PGSQL_DEP_pgtcl=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl
 _USE_PGSQL_DEP_plperl=	postgresql-plperl>0
+_USE_PGSQL_DEP_pltcl=	postgresql-pltcl>0
 _USE_PGSQL_DEP_server=	postgres
 .  for depend in ${_USE_PGSQL_DEP}
 .    if ${USE_PGSQL:M${depend}}
