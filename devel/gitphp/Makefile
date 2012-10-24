@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gitphp
-PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTVERSION=	0.2.8
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.gitphp.org/attachments/download/42/
+MASTER_SITES=	http://www.gitphp.org/attachments/download/47/
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A web based git repository browser written in PHP
