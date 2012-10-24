@@ -130,9 +130,15 @@ bin/nosetests-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/suite.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/suite.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/suite.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/nontrivial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/nontrivial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/nontrivial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/trivial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/trivial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools/trivial.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/twistedtools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/twistedtools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/twistedtools.pyo
@@ -140,6 +146,7 @@ bin/nosetests-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/sphinx
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext
