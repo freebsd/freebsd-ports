@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kde-thumbnailer-chm
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2
 CATEGORIES=	misc kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	153410-${PORTNAME}-${PORTVERSION}
