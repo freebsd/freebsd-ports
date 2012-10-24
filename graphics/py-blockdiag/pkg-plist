@@ -302,15 +302,6 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/PDFTextFolder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/PDFTextFolder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/PDFTextFolder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/PILTextFolder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/PILTextFolder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/PILTextFolder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/TextFolder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/TextFolder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/TextFolder.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/__init__.pyo
