@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ldns
-# Date created:        29 December 2005
-# Whom:                Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
-#
+# Created by: Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.13
-PORTREVISION=	1
+PORTVERSION=	1.6.14
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -22,24 +17,27 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	DOCS "With documentation" Off \
-		EXAMPLES "With example programs" On \
-		DRILL "With drill program" On \
-		GOST "GOST signatures enabled (requires openssl >= 1.0.0)" Off \
-		PYLDNS "Build python bindings" Off
+OPTIONS_DEFINE=	DOCS EXAMPLES DRILL GOST PYLDNS
+OPTIONS_SET=	EXAMPLES DRILL
+OPTIONS_UNSET=	DOCS GOST PYLDNS
+
+EXAMPLES_DESC=	"With example programs"
+DRILL_DESC=	"With drill program"
+GOST_DESC=	"GOST signatures enabled (requires openssl >= 1.0.0)"
+PYLDNS_DESC=	${PYTHON_DESC}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYLDNS)
+.if ${PORT_OPTIONS:MPYLDNS}
 USE_PYTHON=	yes
 .endif
 
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	all
-INSTALL_TARGET=	install-lib install-h
+INSTALL_TARGET=	install-lib install-h install-config
 
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 ALL_TARGET+=	doc
 INSTALL_TARGET+=install-manpages
@@ -66,6 +64,9 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 	ldns_buffer_write_string_at.3 ldns_buffer_write_u16.3 \
 	ldns_buffer_write_u16_at.3 ldns_buffer_write_u8.3 \
 	ldns_buffer_write_u8_at.3 ldns_calc_keytag.3 ldns_create_nsec.3 \
+	ldns_dane_cert2rdf.3 ldns_dane_create_tlsa_owner.3 \
+	ldns_dane_create_tlsa_rr.3 ldns_dane_select_certificate.3 \
+	ldns_dane_verify.3 ldns_dane_verify_rr.3 \
 	ldns_dname.3 ldns_dname2canonical.3 ldns_dname_cat.3 \
 	ldns_dname_cat_clone.3 ldns_dname_compare.3 ldns_dname_interval.3 \
 	ldns_dname_is_subdomain.3 ldns_dname_label.3 \
@@ -232,21 +233,21 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 MAN1+=	ldns-config.1
 .endif
 
-.if defined(WITH_GOST)
+.if ${PORT_OPTIONS:MGOST}
 BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
 .else
 NO_GOST=	--disable-gost
 CONFIGURE_ARGS+=${NO_GOST}
 .endif
 
-.if defined(WITH_DRILL)
+.if ${PORT_OPTIONS:MDRILL}
 PLIST_SUB+=	DRILLPROG=""
 MAN1+=	drill.1
 .else
 PLIST_SUB+=	DRILLPROG="@comment "
 .endif
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 NOMANCOMPRESS=	true
 MANCOMPRESSED=	no
@@ -256,12 +257,12 @@ MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 \
 	ldns-nsec3-hash.1 ldns-read-zone.1 ldns-resolver.1 ldns-revoke.1 \
 	ldns-rrsig.1 ldns-signzone.1 ldns-testns.1 ldns-update.1 \
 	ldns-verify-zone.1 ldns-version.1 ldns-walk.1 ldns-zcat.1 \
-	ldns-zsplit.1 ldnsd.1 ldns-test-edns.1
+	ldns-zsplit.1 ldnsd.1 ldns-test-edns.1 ldns-dane.1
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-.if defined(WITH_PYLDNS)
+.if ${PORT_OPTIONS:MPYLDNS}
 CONFIGURE_ARGS+=--with-pyldns
 BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 INSTALL_TARGET+=install-pyldns
@@ -271,30 +272,30 @@ PLIST_SUB+=	PYLDNS="@comment "
 .endif
 
 post-configure:
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
 		--build=${CONFIGURE_TARGET} ${NO_GOST} ${NO_SHA2})
 .endif
-.if defined(WITH_DRILL)
+.if ${PORT_OPTIONS:MDRILL}
 	@(cd ${WRKSRC}/drill; ./configure --prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
 		--build=${CONFIGURE_TARGET})
 .endif
 
 post-build:
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	 @(cd ${WRKSRC}/examples; ${GMAKE})
 .endif
-.if defined(WITH_DRILL)
+.if ${PORT_OPTIONS:MDRILL}
 	 @(cd ${WRKSRC}/drill; ${GMAKE})
 .endif
 
 post-install:
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC}/examples; ${GMAKE} install)
 .endif
-.if defined(WITH_DRILL)
+.if ${PORT_OPTIONS:MDRILL}
 	@(cd ${WRKSRC}/drill; ${GMAKE} install)
 .endif
 
