@@ -1,12 +1,8 @@
-# Ports collection makefile for:	py-sqlobject
-# Date created:				24 June 2004
-# Whom:					"Choe, Cheng-Dae" whitekid
-#
+# Created by: "Choe, Cheng-Dae" whitekid
 # $FreeBSD$
-#
 
 PORTNAME=	sqlobject
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,50 +19,51 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLObject
 PYDISTUTILS_NOEGGINFO=	yes
 
-PORTDOCS=	*
-
-OPTIONS=	MYSQL	"MySQL supports" off \
-		PGSQL	"PostgreSQL Supports" off \
-		SQLITE	"SQLite Supports" off \
-		MSSQL	"MSSQL Supports" off \
-		FIREBIRD "FireBird Supports" Off \
-		SYBASE  "Sybase Supports" Off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE MSSQL FIREBIRD SYBASE
+SYBASE_DESC=	sybase support
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.pre.mk>
-.if defined(WITH_MYSQL)
+PORTDOCS=	*
+.if empty(PORT_OPTIONS:MDOCS)
+PLIST_SUB+=	PORTDOCS="@comment "
+.else
+PLIST_SUB+=	PORTDOCS=""
+.endif
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-.if defined(WITH_FIREBIRD)
+.if ${PORT_OPTIONS:MFIREBIRD}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}kinterbasdb>=3.2:${PORTSDIR}/databases/kinterbasdb
 .endif
 
-.if defined(WITH_SYBASE)
+.if ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sybase>=0.37:${PORTSDIR}/databases/py-sybase
 .endif
 
 # currently MaxDB(SAP), ADODB are not supported
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.txt ${DOCSDIR}
 	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
