@@ -1,26 +1,6 @@
 bin/SciTE
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
-%%PORTDOCS%%%%DOCSDIR%%/CommandValues.html
-%%PORTDOCS%%%%DOCSDIR%%/PaneAPI.html
-%%PORTDOCS%%%%DOCSDIR%%/PrintHi.png
-%%PORTDOCS%%%%DOCSDIR%%/SciBreak2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/SciTE.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEDirector.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEDoc.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEDownload.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEExtension.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEExternalLexer.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEExtras.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEFAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEIco.png
-%%PORTDOCS%%%%DOCSDIR%%/SciTEImage.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTELexer.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTELua.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTERegEx.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEWord.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ScriptLexer.html
-%%PORTDOCS%%%%DOCSDIR%%/demo.png
 %%DATADIR%%/Embedded.properties
 %%DATADIR%%/SciTE.properties
 %%DATADIR%%/SciTEGlobal.properties
@@ -98,5 +78,4 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/vhdl.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
