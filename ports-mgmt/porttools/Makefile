@@ -1,9 +1,5 @@
-# New ports collection makefile for:	porttools
-# Date created:		2003-06-18
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	porttools
 PORTVERSION=	0.99
@@ -36,11 +32,14 @@ MAKE_ENV+=	PORTEPOCH="${PORTEPOCH}"
 MAN1=		port.1
 MAN5=		porttools.5
 
-OPTIONS=	NEWFILE "Enable newfile support" on
+OPTIONS_DEFINE=	NEWFILE
+OPTIONS_DEFAULT=	NEWFILE
+
+NEWFILE_DESC=	Enable newfile support
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NEWFILE)
+.if ${PORT_OPTIONS:MNEWFILE}
 RUN_DEPENDS+=	newfile:${PORTSDIR}/devel/newfile
 .endif
 
