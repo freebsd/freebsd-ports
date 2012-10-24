@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqdiag
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	AL2
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.4:${PORTSDIR}/devel/py-funcparserlib \
-		${PKGNAMEPREFIX}blockdiag>=1.1.8:${PORTSDIR}/graphics/py-blockdiag
+		${PKGNAMEPREFIX}blockdiag>=1.2.0:${PORTSDIR}/graphics/py-blockdiag
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
