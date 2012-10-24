@@ -36,6 +36,9 @@ bin/seqdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_pep8.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_pep8.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_pep8.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_rst_directives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_rst_directives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_rst_directives.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/utils.pyo
