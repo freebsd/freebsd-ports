@@ -8,7 +8,6 @@
 %%JDK_ROOT%%/bin/jar
 %%JDK_ROOT%%/bin/jarsigner
 %%JDK_ROOT%%/bin/java
-%%CLIENTVM%%%%JDK_ROOT%%/bin/java-rmi.cgi
 %%JDK_ROOT%%/bin/javac
 %%JDK_ROOT%%/bin/javadoc
 %%JDK_ROOT%%/bin/javah
@@ -51,21 +50,10 @@
 %%JDK_ROOT%%/jre/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/jre/LICENSE
 %%JDK_ROOT%%/jre/THIRD_PARTY_README
-%%JDK_ROOT%%/jre/bin/java
-%%JDK_ROOT%%/jre/bin/keytool
-%%JDK_ROOT%%/jre/bin/orbd
-%%JDK_ROOT%%/jre/bin/pack200
-%%JDK_ROOT%%/jre/bin/policytool
-%%JDK_ROOT%%/jre/bin/rmid
-%%JDK_ROOT%%/jre/bin/rmiregistry
-%%JDK_ROOT%%/jre/bin/servertool
-%%JDK_ROOT%%/jre/bin/tnameserv
-%%JDK_ROOT%%/jre/bin/unpack200
 %%CLIENTVM%%%%JDK_ROOT%%/jre/lib/%%ARCH%%/client/Xusage.txt
 %%CLIENTVM%%%%JDK_ROOT%%/jre/lib/%%ARCH%%/client/libjsig.so
 %%CLIENTVM%%%%JDK_ROOT%%/jre/lib/%%ARCH%%/client/libjvm.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/headless/libmawt.so
-%%JDK_ROOT%%/jre/lib/%%ARCH%%/jexec
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/jvm.cfg
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libattach.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libawt.so
@@ -97,7 +85,6 @@
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libunpack.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libverify.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libzip.so
-%%JDK_ROOT%%/jre/lib/%%ARCH%%/native_threads/libhpi.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/server/Xusage.txt
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/server/libjsig.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/server/libjvm.so
@@ -120,25 +107,11 @@
 %%JDK_ROOT%%/jre/lib/flavormap.properties
 %%JDK_ROOT%%/jre/lib/fontconfig.bfc
 %%JDK_ROOT%%/jre/lib/fontconfig.properties.src
-%%JDK_ROOT%%/jre/lib/im/indicim.jar
-%%JDK_ROOT%%/jre/lib/im/thaiim.jar
-%%JDK_ROOT%%/jre/lib/images/cursors/cursors.properties
-%%JDK_ROOT%%/jre/lib/images/cursors/invalid32x32.gif
-%%JDK_ROOT%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
-%%JDK_ROOT%%/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
-%%JDK_ROOT%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
-%%JDK_ROOT%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
-%%JDK_ROOT%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
-%%JDK_ROOT%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
 %%JDK_ROOT%%/jre/lib/jce.jar
 %%JDK_ROOT%%/jre/lib/jsse.jar
 %%JDK_ROOT%%/jre/lib/jvm.hprof.txt
 %%JDK_ROOT%%/jre/lib/logging.properties
 %%JDK_ROOT%%/jre/lib/management-agent.jar
-%%JDK_ROOT%%/jre/lib/management/jmxremote.access
-%%JDK_ROOT%%/jre/lib/management/jmxremote.password.template
-%%JDK_ROOT%%/jre/lib/management/management.properties
-%%JDK_ROOT%%/jre/lib/management/snmp.acl.template
 %%JDK_ROOT%%/jre/lib/meta-index
 %%JDK_ROOT%%/jre/lib/net.properties
 %%JDK_ROOT%%/jre/lib/psfont.properties.ja
@@ -161,20 +134,14 @@
 %%JDK_ROOT%%/lib/tools.jar
 @dirrm %%JDK_ROOT%%/lib
 @dirrm %%JDK_ROOT%%/jre/lib/security
-@dirrm %%JDK_ROOT%%/jre/lib/management
-@dirrm %%JDK_ROOT%%/jre/lib/images/cursors
-@dirrm %%JDK_ROOT%%/jre/lib/images
-@dirrm %%JDK_ROOT%%/jre/lib/im
 @dirrm %%JDK_ROOT%%/jre/lib/ext
 @dirrm %%JDK_ROOT%%/jre/lib/cmm
 @dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/xawt
 @dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/server
-@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/native_threads
 @dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/headless
 %%CLIENTVM%%@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/client
 @dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%
 @dirrm %%JDK_ROOT%%/jre/lib
-@dirrm %%JDK_ROOT%%/jre/bin
 @dirrm %%JDK_ROOT%%/jre
 @dirrm %%JDK_ROOT%%/include/freebsd
 @dirrm %%JDK_ROOT%%/include

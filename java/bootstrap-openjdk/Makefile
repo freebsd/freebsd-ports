@@ -18,8 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 ONLY_FOR_ARCH=	amd64 i386
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
-DISTVERSION_amd64=	r305682
-DISTVERSION_i386=	r305682
+DISTVERSION_amd64=	r306294
+DISTVERSION_i386=	r306294
 
 JDK_NAME=	openjdk
 JDK_PORT=	openjdk6
@@ -31,7 +31,6 @@ USE_XZ=		yes
 WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
 INSTALLDIR=	${PREFIX}/${JDK_ROOT}
-JDK_BINS=	bin/* jre/bin/* jre/lib/${ARCH}/jexec
 
 .include <bsd.port.pre.mk>
 
@@ -47,8 +46,8 @@ PLIST_SUB+=	CLIENTVM="@comment "
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
-	@cd ${INSTALLDIR} && ${CHOWN} ${BINOWN}:${BINGRP} ${JDK_BINS}
-	@cd ${INSTALLDIR} && ${CHMOD} ${BINMODE} ${JDK_BINS}
+	@${CHOWN} ${BINOWN}:${BINGRP} ${INSTALLDIR}/bin/*
+	@${CHMOD} ${BINMODE} ${INSTALLDIR}/bin/*
 	@${CAT} ${PKGMESSAGE}
 
 update:
