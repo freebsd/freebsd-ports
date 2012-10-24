@@ -1,6 +1,8 @@
 %%EXAMPLES%%bin/ldns-chaos
 %%EXAMPLES%%bin/ldns-compare-zones
+%%EXAMPLES%%bin/ldns-config
 %%EXAMPLES%%bin/ldns-dpa
+%%EXAMPLES%%bin/ldns-dane
 %%EXAMPLES%%bin/ldns-gen-zone
 %%EXAMPLES%%bin/ldns-key2ds
 %%EXAMPLES%%bin/ldns-keyfetcher
@@ -25,6 +27,7 @@
 %%DRILLPROG%%bin/drill
 include/ldns/buffer.h
 include/ldns/common.h
+include/ldns/dane.h
 include/ldns/dname.h
 include/ldns/dnssec.h
 include/ldns/dnssec_sign.h
