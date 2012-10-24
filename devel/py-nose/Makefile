@@ -1,18 +1,16 @@
-# New ports collection makefile for:	py-nose
-# Date created:		14 December 2006
-# Whom:			Dryice Liu	<dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	nose
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A discovery-based unittest extension
+COMMENT=	Discovery-based unittest extension
+
+LICENSE=	LGPL21
 
 # Python3 ready
 USE_PYTHON=	yes
@@ -27,4 +25,13 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/nosetests.1 ${MANPREFIX}/man/man1
 .endif
 
-.include <bsd.port.mk>
+test: build
+	cd ${WRKSRC} && ${PYTHON_CMD} selftest.py
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 320
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
+.endif
+
+.include <bsd.port.post.mk>
