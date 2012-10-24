@@ -1,16 +1,12 @@
-# New ports collection makefile for:	maradns
-# Date created:				26 May 2001
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	maradns
 PORTVERSION=	1.4.12
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.4/
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
 LICENSE=	BSD
@@ -28,6 +24,8 @@ GROUPS=		bind
 MAN1=		askmara.1 getzone.1 fetchzone.1
 MAN5=		mararc.5 csv1.5 csv2.5 csv2_txt.5
 MAN8=		maradns.8 zoneserver.8 duende.8
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
@@ -62,11 +60,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_csv2 ${ETCDIR}/example_csv2
 	${MKDIR} ${ETCDIR}/logger
 
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/* ${EXAMPLESDIR}/
 .endif
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/en
 	${INSTALL_DATA} ${WRKSRC}/doc/en/*.* ${DOCSDIR}/en
 	${INSTALL_DATA} ${WRKSRC}/doc/en/QuickStart ${DOCSDIR}/en
