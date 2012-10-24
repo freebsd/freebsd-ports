@@ -221,6 +221,7 @@
     SUBDIR += mplayer
     SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
+    SUBDIR += mplayer2
     SUBDIR += mplayerxp
     SUBDIR += mplex
     SUBDIR += msdl

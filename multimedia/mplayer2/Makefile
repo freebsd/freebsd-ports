@@ -1,0 +1,399 @@
+# $FreeBSD$
+
+PORTNAME=	mplayer2
+PORTVERSION=	${MPLAYER2_PORT_VERSION}
+CATEGORIES=	multimedia audio
+MASTER_SITES=	http://files.roorback.net/
+
+MAINTAINER=	magik@roorback.net
+COMMENT=	Advanced general-purpose video player
+
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg-011 \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2
+
+USE_XZ=		yes
+USE_GMAKE=	yes
+USE_ICONV=	yes
+USE_NCURSES=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		TMPDIR="${WRKSRC}"
+CONFIGURE_ARGS=	--cc=${CC} \
+		--host-cc=${CC} \
+		--extra-cflags=-I${LOCALBASE}/include/ffmpeg-011 \
+		--extra-ldflags=-L${LOCALBASE}/lib/ffmpeg-011 \
+		--mandir=${PREFIX}/man \
+		--disable-alsa \
+		--disable-bitmap-font \
+		--disable-liba52 \
+		--disable-directfb \
+		--disable-svga \
+		--disable-dga1 \
+		--disable-dga2 \
+		--disable-faad \
+		--disable-mng \
+		--disable-libdca \
+		--disable-xvid \
+		--disable-mpg123 \
+		--disable-musepack
+MAKE_ARGS+=	BINDIR=${PREFIX}/bin \
+		CONFDIR=${PREFIX}/etc/mplayer
+
+MPLAYER2_SNAPSHOT_DATE=	2012-05-17
+MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
+
+MAKE_JOBS_SAFE=	yes
+
+OPTIONS_DEFINE=	DEBUG NLS RTC IPV6 SMB JOYSTICK \
+		DVDREAD LIBBLURAY V4L LIVEMEDIA DV THEORA \
+		X11 XVMC XINERAMA OPENGL SDL VDPAU GIF AALIB CACA \
+		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
+		JACK NAS PULSE PORTAUDIO \
+		ASS FRIBIDI LIRC
+OPTIONS_DEFAULT=DVDREAD X11 ASS
+
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFINE+=	WIN32
+OPTIONS_DEFAULT+=	WIN32
+.endif
+
+DVDREAD_DESC=	Enable dvdread support
+RTC_DESC=	Enable kernel realtime clock timing
+PULSE_DESC=	Enable PulseAudio support
+THEORA_DESC=	Enable ogg theora video support
+ASS_DESC=	Enable ASS/SSA subtitle rendering
+WIN32_DESC=	Enable win32 codec set on the IA32 arch
+REALPLAYER_DESC=Enable realplayer plugin
+LIVEMEDIA_DESC=	Enable LIVE555 streaming support
+FRIBIDI_DESC=	Enable FriBiDi support
+LIRC_DESC=	Enable lirc support
+LIBCDIO_DESC=	Enable libcdio support
+JOYSTICK_DESC=	Enable joystick support
+V4L_DESC=	Enable Video4Linux TV support
+
+MAN1=		mplayer.1
+MANCOMPRESSED=	no
+
+SUB_FILES=	pkg-message
+
+CONFLICTS=	mplayer-1.*
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.if ${OSVERSION} < 802502
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_log2f
+.endif
+
+.if ${OSVERSION} < 803000
+CONFIGURE_ARGS+=	--disable-ssse3
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-translation --language=all \
+			--extra-libs-mplayer=-lintl
+MANLANG=		"" cs de es fr hu it pl ru zh_CN
+.else
+CONFIGURE_ARGS+=	--disable-translation --language=en
+.endif
+
+#On i386, gcc runs out of general purpose registers when
+#trying to compile a debug version with the default flags.
+.if ${PORT_OPTIONS:MDEBUG}
+.if ${ARCH} == "i386"
+DEBUG_FLAGS=		-g -O -fomit-frame-pointer
+.endif
+.else
+.if defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-runtime-cpudetection
+CFLAGS+=		-O2 -fomit-frame-pointer
+.else
+CONFIGURE_ENV+=		CPPFLAGS= CFLAGS= LDFLAGS=
+.endif
+.endif
+
+.if ${PORT_OPTIONS:MIPV6}
+CATEGORIES+=		ipv6
+.else
+CONFIGURE_ARGS+=	--disable-inet6
+.endif
+
+.if ${PORT_OPTIONS:MGIF}
+LIB_DEPENDS+=		gif:${PORTSDIR}/graphics/giflib
+.else
+CONFIGURE_ARGS+=	--disable-gif
+.endif
+
+.if ${PORT_OPTIONS:MMAD}
+LIB_DEPENDS+=		mad:${PORTSDIR}/audio/libmad
+.else
+CONFIGURE_ARGS+=	--disable-mad
+.endif
+
+.if ${PORT_OPTIONS:MDV}
+LIB_DEPENDS+=		dv:${PORTSDIR}/multimedia/libdv
+.else
+CONFIGURE_ARGS+=	--disable-libdv
+.endif
+
+.if ${PORT_OPTIONS:MTHEORA}
+LIB_DEPENDS+=		theora:${PORTSDIR}/multimedia/libtheora
+.else
+CONFIGURE_ARGS+=	--disable-theora
+.endif
+
+.if ${PORT_OPTIONS:MSPEEX}
+LIB_DEPENDS+=		speex:${PORTSDIR}/audio/speex
+.else
+CONFIGURE_ARGS+=	--disable-speex
+.endif
+
+.if ${PORT_OPTIONS:MLIVEMEDIA}
+BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+.else
+CONFIGURE_ARGS+=	--disable-live
+.endif
+
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--disable-jack
+.endif
+
+.if ${PORT_OPTIONS:MNAS}
+LIB_DEPENDS+=		audio:${PORTSDIR}/audio/nas
+.else
+CONFIGURE_ARGS+=	--disable-nas
+.endif
+
+.if ${PORT_OPTIONS:MPULSE}
+LIB_DEPENDS+=		pulse:${PORTSDIR}/audio/pulseaudio
+.else
+CONFIGURE_ARGS+=	--disable-pulse
+.endif
+
+.if ${PORT_OPTIONS:MPORTAUDIO}
+LIB_DEPENDS+=		portaudio.2:${PORTSDIR}/audio/portaudio2
+.else
+CONFIGURE_ARGS+=	--disable-portaudio
+.endif
+
+.if ${PORT_OPTIONS:MLIBBLURAY}
+LIB_DEPENDS+=		bluray:${PORTSDIR}/multimedia/libbluray
+CONFIGURE_ARGS+=	--enable-bluray
+.else
+CONFIGURE_ARGS+=	--disable-bluray
+.endif
+
+.if ${PORT_OPTIONS:MDVDREAD}
+LIB_DEPENDS+=		dvdread:${PORTSDIR}/multimedia/libdvdread
+CONFIGURE_ARGS+=	--enable-dvdread
+.else
+CONFIGURE_ARGS+=	--disable-dvdread
+.endif
+
+.if ${PORT_OPTIONS:MSMB}
+LIB_DEPENDS+=		smbclient:${PORTSDIR}/net/samba-libsmbclient
+.else
+CONFIGURE_ARGS+=	--disable-smb
+.endif
+
+.if ${PORT_OPTIONS:MFRIBIDI}
+LIB_DEPENDS+=		fribidi:${PORTSDIR}/converters/fribidi
+.else
+CONFIGURE_ARGS+=	--disable-fribidi
+.endif
+
+.if ${PORT_OPTIONS:MLIBCDIO}
+LIB_DEPENDS+=		cdio:${PORTSDIR}/sysutils/libcdio
+.else
+CONFIGURE_ARGS+=	--disable-libcdio
+.endif
+
+.if ${PORT_OPTIONS:MLADSPA}
+RUN_DEPENDS+=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+.else
+CONFIGURE_ARGS+=	--disable-ladspa
+.endif
+
+.if defined(WITH_DVD_DEVICE)
+DEFAULT_DVD_DEVICE=	${WITH_DVD_DEVICE}
+.else
+DEFAULT_DVD_DEVICE=	/dev/cd0
+.endif
+
+.if defined(WITH_CDROM_DEVICE)
+DEFAULT_CDROM_DEVICE=	${WITH_CDROM_DEVICE}
+.else
+DEFAULT_CDROM_DEVICE=	/dev/cd0
+.endif
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${PORT_OPTIONS:MWIN32} && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
+CODEC_PORT=		${PORTSDIR}/multimedia/win32-codecs
+CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
+RUN_DEPENDS+=		${CODEC_DETECTION_FILE}:${CODEC_PORT}
+CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
+.else
+CONFIGURE_ARGS+=	--disable-win32dll --disable-qtx
+.endif
+.endif # ARCH == i386/amd64
+
+.if ${PORT_OPTIONS:MREALPLAYER}
+RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+.else
+CONFIGURE_ARGS+=	--disable-real
+.endif
+
+.if ${PORT_OPTIONS:MV4L}
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=		v4l2:${PORTSDIR}/multimedia/libv4l
+CONFIGURE_ARGS+=	--enable-tv-v4l1 --enable-tv-v4l2
+EXTRA_LIBS+=		-lv4l1 -lv4l2
+.else
+CONFIGURE_ARGS+=	--disable-tv-v4l1 --disable-tv-v4l2
+.endif
+
+.if defined(EXTRA_LIBS)
+CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
+.endif
+
+.if ${PORT_OPTIONS:MASS}
+LIB_DEPENDS+=		ass:${PORTSDIR}/multimedia/libass
+.else
+CONFIGURE_ARGS+=	--disable-libass --disable-enca
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+USE_XORG=		x11 xv xxf86vm
+.if ${PORT_OPTIONS:MOPENGL}
+USE_XORG+=		glproto
+LIB_DEPENDS+=		GL:${PORTSDIR}/graphics/libGL
+.else
+CONFIGURE_ARGS+=	--disable-gl
+.endif
+.if ${PORT_OPTIONS:MXINERAMA}
+USE_XORG+=		xinerama xineramaproto
+.else
+CONFIGURE_ARGS+=	--disable-xinerama
+.endif
+.if ${PORT_OPTIONS:MXVMC}
+USE_XORG+=		xvmc
+CONFIGURE_ARGS+=	--enable-xvmc --with-xvmclib=XvMCW
+.endif
+.else			#WITHOUT_X11
+CONFIGURE_ARGS+=	--disable-x11 --disable-fontconfig
+.endif
+
+.if ${PORT_OPTIONS:MVDPAU}
+LIB_DEPENDS+=		vdpau:${PORTSDIR}/multimedia/libvdpau
+.else
+CONFIGURE_ARGS+=	--disable-vdpau
+.endif
+
+.if ${PORT_OPTIONS:MRTC}
+BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+CONFIGURE_ARGS+=	--enable-rtc
+.else
+CONFIGURE_ARGS+=	--disable-rtc
+.endif
+
+.if ${PORT_OPTIONS:MLIBCACA}
+LIB_DEPENDS+=		caca:${PORTSDIR}/graphics/libcaca
+.else
+CONFIGURE_ARGS+=	--disable-caca
+.endif
+
+.if ${PORT_OPTIONS:MLIRC}
+LIB_DEPENDS+=		lirc_client:${PORTSDIR}/comms/lirc
+.else
+CONFIGURE_ARGS+=	--disable-lirc
+.endif
+
+.if ${PORT_OPTIONS:MSDL}
+USE_SDL=		sdl
+.else
+CONFIGURE_ARGS+=	--disable-sdl
+.endif
+
+.if ${PORT_OPTIONS:MAALIB}
+LIB_DEPENDS+=		aa:${PORTSDIR}/graphics/aalib
+.else
+CONFIGURE_ARGS+=	--disable-aa
+.endif
+
+.if defined(WITH_KERN_HZ)
+DEFAULT_KERN_HZ=${WITH_KERN_HZ}
+.else
+DEFAULT_KERN_HZ=1024
+.endif
+
+.if ${PORT_OPTIONS:MJOYSTICK}
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+CONFIGURE_ARGS+=	--enable-joystick
+.else
+CONFIGURE_ARGS+=	--disable-joystick
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "N - O - T - E"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
+	@${ECHO_MSG} "OPTIONS framework. You might want to check the Makefile in"
+	@${ECHO_MSG} "order to learn more about them."
+
+post-patch:
+.if ${OSVERSION} >= 900010
+	@${REINPLACE_CMD} -e \
+		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+	@${REINPLACE_CMD} \
+		-e 's/libavutil/libavutil-011/' \
+		-e 's/libavcodec/libavcodec-011/' \
+		-e 's/libavformat/libavformat-011/' \
+		-e 's/libswscale/libswscale-011/' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} \
+		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
+		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
+		-e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|-lbz2|/usr/lib/libbz2.so|' \
+		-e 's|-lncurses|/usr/lib/libncurses.so|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} -E ${WRKSRC} -type f \
+		-iregex ".*(configure|.sh|Makefile)" -print0 | \
+		${XARGS} -x -0 -n 10 \
+		${REINPLACE_CMD} -E \
+			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
+			-e 's|[[:space:]]gcc| ${CC}|' \
+			-e 's|\$$\(CC\)|${CC}|' \
+			-e 's|/usr/X11R6|${LOCALBASE}|'
+	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
+		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
+		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
+		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+.if ${PORT_OPTIONS:MRTC}
+	@${REINPLACE_CMD} -e \
+		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
+		${WRKSRC}/mplayer.c
+.endif
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/etc/example.conf ${PREFIX}/etc/mplayer/mplayer.conf.sample
+.for conf in codecs input
+	@${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf ${PREFIX}/etc/mplayer/${conf}.conf.sample
+.endfor
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

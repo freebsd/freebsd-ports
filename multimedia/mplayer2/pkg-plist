@@ -1,0 +1,23 @@
+bin/mplayer
+etc/mplayer/codecs.conf.sample
+etc/mplayer/input.conf.sample
+etc/mplayer/mplayer.conf.sample
+@dirrmtry etc/mplayer
+@dirrmtry man/cs/man1
+@dirrmtry man/cs
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/hu/man1
+@dirrmtry man/hu
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/zh_CN/man1
+@dirrmtry man/zh_CN
