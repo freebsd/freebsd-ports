@@ -17,14 +17,17 @@ LOCALBASE?=	/usr/local
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
-JDK_EXCLUDE?=	demo man sample src.zip
+JDK_EXCLUDE?=	demo im images java-rmi.cgi jexec jre/bin man management \
+		native_threads sample src.zip
 JDK_PORTDIR!=	${REALPATH} ${PORTSDIR}/java/${JDK_PORT}
 JDK_IMAGEDIR?=	${JDK_PORTDIR}/work/build/bsd-${ARCH:S/i386/i586/}/j2sdk-image
 
 GET_REVISION=	${LOCALBASE}/bin/svnversion ${JDK_PORTDIR}
 TAR?=		/usr/bin/tar
 
+.if !defined(ARCH)
 ARCH!=		${UNAME} -p
+.endif
 BUILD_OS!=	${UNAME} -r | ${SED} -e 's/\..*//'
 PORTREVISION!=	${GET_REVISION} 2>/dev/null || ${TRUE}
 
@@ -58,7 +61,7 @@ all:
 	@${ECHO} "=============================================================="
 	@${ECHO} ""
 .if !defined(NO_BUILD)
-	@cd "${JDK_PORTDIR}" && ${MAKE} BATCH=yes
+	@${SETENV} -i PATH=${PATH} ${MAKE} -C "${JDK_PORTDIR}" BATCH=yes
 .endif
 	@cd "${JDK_IMAGEDIR}" && \
 	${FIND} . \! -type d | ${SORT} | \
