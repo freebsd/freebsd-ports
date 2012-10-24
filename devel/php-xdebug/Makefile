@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xdebug
-# Date created:				Thu Apr  3 12:44:57 GMT 2003
-# Whom:					Jens Rehsack <rehsack@liwing.de>
-#
+# Created by: Jens Rehsack <rehsack@liwing.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xdebug
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xdebug.org/files/
 PKGNAMEPREFIX=	php-
