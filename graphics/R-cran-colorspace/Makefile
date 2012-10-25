@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-colorspace
-# Date created:		2011-09-10
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	colorspace
-DISTVERSION=	1.1-1
-PORTREVISION=	3
+DISTVERSION=	1.2-0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
