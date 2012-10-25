@@ -108,8 +108,6 @@
     SUBDIR += gsuica
     SUBDIR += gtkicq
     SUBDIR += guesswork-classic
-    SUBDIR += gxditview
-    SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ibus-anthy
     SUBDIR += ibus-mozc
@@ -220,7 +218,6 @@
     SUBDIR += nkf
     SUBDIR += ochusha
     SUBDIR += onew
-    SUBDIR += otojiro-fpw
     SUBDIR += p5-Acme-Lou
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
@@ -317,7 +314,6 @@
     SUBDIR += slrn
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
-    SUBDIR += stardict-dict-ja
     SUBDIR += suicavalue
     SUBDIR += suikyo
     SUBDIR += t2ps

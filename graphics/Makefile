@@ -182,7 +182,6 @@
     SUBDIR += evolvotron
     SUBDIR += exact-image
     SUBDIR += exif
-    SUBDIR += exifprobe
     SUBDIR += exiftags
     SUBDIR += exiftran
     SUBDIR += exiv2
@@ -273,7 +272,6 @@
     SUBDIR += gimp-help
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
-    SUBDIR += gimp-manual-pdf
     SUBDIR += gimp-resynthesizer
     SUBDIR += gimp-save-for-web
     SUBDIR += gimpfx-foundry
@@ -393,7 +391,6 @@
     SUBDIR += jpeg2ps-letter
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
-    SUBDIR += jpegpixi
     SUBDIR += jpg2pdf
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
@@ -424,7 +421,6 @@
     SUBDIR += kludge3d
     SUBDIR += kolourpaint
     SUBDIR += kooka
-    SUBDIR += kphotoalbum
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
     SUBDIR += kradview
@@ -569,7 +565,6 @@
     SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multican
-    SUBDIR += multivideo
     SUBDIR += mupdf
     SUBDIR += mxp
     SUBDIR += mypaint
@@ -724,7 +719,6 @@
     SUBDIR += pfstools
     SUBDIR += pgplot
     SUBDIR += pho
-    SUBDIR += photoclip
     SUBDIR += photopc
     SUBDIR += php-facedetect
     SUBDIR += php-gdal
@@ -991,7 +985,6 @@
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += vid
-    SUBDIR += view3ds
     SUBDIR += viewnior
     SUBDIR += vigra
     SUBDIR += vips

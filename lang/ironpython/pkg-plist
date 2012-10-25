@@ -1,6 +1,0 @@
-bin/ironpython
-lib/ironpython/IronMath.dll
-lib/ironpython/IronPython.dll
-lib/ironpython/ipy.exe
-lib/ironpython/ipyw.exe
-@dirrm lib/ironpython
