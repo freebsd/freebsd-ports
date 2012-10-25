@@ -1,12 +1,8 @@
-# New ports collection makefile for:	units
-# Date created:		2001-11-03
-# Whom:			Jason Harris <jharris@widomaker.com>
-#
+# Created by: Jason Harris <jharris@widomaker.com>
 # $FreeBSD$
-#
 
 PORTNAME=	units
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
