@@ -1,12 +1,8 @@
-# New ports collection makefile for:	viewcvs
-# Date created:				Sun 02 Jul 2000
-# Whom:					will
-#
+# Created By: will
 # $FreeBSD$
-#
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.15
+PORTVERSION=	1.1.17
 #PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
