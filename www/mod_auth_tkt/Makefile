@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_auth_tkt
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.openfusion.com.au/labs/dist/mod_auth_tkt/
@@ -13,11 +14,23 @@ COMMENT=	Lightweight single-sign-on authentication module for apache
 
 USE_APACHE=	22
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PATCH_STRIP=	-p1
 AP_FAST_BUILD=	yes
 SRC_FILE=	${PORTNAME}.c sha2.c
 AP_EXTRAS=	-DAPACHE22
 
 MAN3=	mod_auth_tkt.3
+
+OPTIONS_DEFINE=	QUERY_SEP
+QUERY_SEP_DESC=	Experimental TKTAuthQuerySeparator directive
+OPTIONS_DEFAULT=QUERY_SEP
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQUERY_SEP}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-query-separator
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|.usr/share/man|${PREFIX}/man|' ${WRKSRC}/../Makedefs
