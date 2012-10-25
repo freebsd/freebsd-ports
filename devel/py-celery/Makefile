@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-celery
-# Date created:			2012-03-04
-# Whom:				Alexandros Kosiaris <akosiaris+ports@gmail.com>
-#
+# Created by: Alexandros Kosiaris <akosiaris+ports@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	celery
 PORTVERSION=	2.5.5
@@ -26,7 +22,7 @@ USE_PYDISTUTILS=	easy_install
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 270
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict \
 		${PYTHON_PKGNAMEPREFIX}importlib>=0:${PORTSDIR}/devel/py-importlib
 .endif
 
