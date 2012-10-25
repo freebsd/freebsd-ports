@@ -354,9 +354,9 @@ post-install:
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"
 .else
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6/bin/java # OpenJDK6"
-.endif
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"
+.endif
 .endif
 	@${CAT} ${PKGMESSAGE}
 
