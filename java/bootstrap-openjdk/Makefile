@@ -2,6 +2,7 @@
 
 PORTNAME=	${JDK_NAME}
 PORTVERSION=	${DISTVERSION_${ARCH}}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkim
@@ -13,7 +14,9 @@ COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+BUILD_DEPENDS=	${LOCALBASE}/bin/registervm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 
 ONLY_FOR_ARCH=	amd64 i386
 
@@ -48,6 +51,11 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
 	@${CHOWN} ${BINOWN}:${BINGRP} ${INSTALLDIR}/bin/*
 	@${CHMOD} ${BINMODE} ${INSTALLDIR}/bin/*
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # Bootstrap JDK'" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
+
+post-install:
+	@${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # Bootstrap JDK'
 	@${CAT} ${PKGMESSAGE}
 
 update:
