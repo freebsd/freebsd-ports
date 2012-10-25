@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -28,17 +28,19 @@ CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
-		UIM "uim support (experimental)" off \
-		M17NLIB "m17n library support (experimental)" off \
-		SCIM "SCIM support (experimental)" off \
-		IBUS "IBUS support (experimental)" off \
-		CAIRO "Use Cairo for type engine (experimental)" off \
-		SIXEL "Sixel graphics support" off
+
+OPTIONS_DEFINE=	CAIRO FRIBIDI IBUS M17NLIB SCIM SIXEL UIM
+CAIRO_DESC=	"Use Cairo for type engine (experimental)"
+FRIBIDI_DESC=	"Use Fribidi for BiDi rendering"
+IBUS_DESC=	"IBUS support (experimental)"
+M17NLIB_DESC=	"m17n library support (experimental)"
+SCIM_DESC=	"SCIM support (experimental)"
+SIXEL_DESC=	"Sixel graphics support"
+UIM_DESC=	"uim support (experimental)"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FRIBIDI)
+.if ${PORT_OPTIONS:MFRIBIDI}
 CONFIGURE_ARGS+=	--enable-fribidi
 LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
 PLIST_SUB+=	FRIBIDI=""
@@ -47,7 +49,7 @@ CONFIGURE_ARGS+=	--disable-fribidi
 PLIST_SUB+=	FRIBIDI="@comment "
 .endif
 
-.if defined(WITH_UIM)
+.if ${PORT_OPTIONS:MUIM}
 CONFIGURE_ARGS+=	--enable-uim
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	uim:${PORTSDIR}/textproc/uim
@@ -57,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-uim
 PLIST_SUB+=	UIM="@comment "
 .endif
 
-.if defined(WITH_M17NLIB)
+.if ${PORT_OPTIONS:MM17NLIB}
 CONFIGURE_ARGS+=	--enable-m17nlib
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	m17n:${PORTSDIR}/devel/m17n-lib
@@ -67,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-m17nlib
 PLIST_SUB+=	M17NLIB="@comment "
 .endif
 
-.if defined(WITH_SCIM)
+.if ${PORT_OPTIONS:MSCIM}
 CONFIGURE_ARGS+=	--enable-scim
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	scim-1.0:${PORTSDIR}/textproc/scim
@@ -77,7 +79,7 @@ CONFIGURE_ARGS+=	--disable-scim
 PLIST_SUB+=	SCIM="@comment "
 .endif
 
-.if defined(WITH_IBUS)
+.if ${PORT_OPTIONS:MIBUS}
 CONFIGURE_ARGS+=	--enable-ibus
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
@@ -87,7 +89,7 @@ CONFIGURE_ARGS+=	--disable-ibus
 PLIST_SUB+=	IBUS="@comment "
 .endif
 
-.if defined(WITH_CAIRO)
+.if ${PORT_OPTIONS:MCAIRO}
 CONFIGURE_ARGS+=	--with-type-engines="xcore,xft,cairo"
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
@@ -97,7 +99,7 @@ CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
 PLIST_SUB+=	CAIRO="@comment "
 .endif
 
-.if defined(WITH_SIXEL)
+.if ${PORT_OPTIONS:MSIXEL}
 CONFIGURE_ARGS+=	--enable-sixel
 PLIST_SUB+=	SIXEL=""
 .else
