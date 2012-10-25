@@ -1,0 +1,7 @@
+Python module to parse metadata in video files
+
+You can parse any video file. If a parse error occurs, it will throw a
+ParseError exception. To see what data has been parsed, you can print
+the object.
+
+WWW: https://github.com/Diaoul/enzyme
