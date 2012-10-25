@@ -24,107 +24,109 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 CONFLICTS=	bind9*-9.[45679].* bind9-sdb-* host-* bind-tools-9.*
 
-OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
-		LINKS "Create conf file symlinks in ${PREFIX}" on \
-		XML "Support for xml statistics output" on \
-		IDN "Add IDN support to dig, host, etc." off \
-		REPLACE_BASE "Replace base BIND with this version" off \
-		LARGE_FILE "64-bit file support" off \
-		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
-		IPV6 "IPv6 Support (autodetected by default)" off \
-		THREADS	"Compile with thread support" on \
-		DLZ_POSTGRESQL "DLZ Postgres driver" off \
-		DLZ_MYSQL "DLZ MySQL driver (single-threaded BIND)" off \
-		DLZ_BDB "DLZ BDB driver" off \
-		DLZ_LDAP "DLZ LDAP driver" off \
-		DLZ_FILESYSTEM "DLZ filesystem driver" off \
-		DLZ_STUB "DLZ stub driver" off
+OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
+OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
+			SIGCHASE IPV6 THREADS DLZ
+OPTIONS_SINGLE=		DLZ
+OPTIONS_SINGLE_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
+			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
 
-# Just in case
-USE_OPENSSL=	yes
+LINKS_DESC=		Create conf file symlinks in ${PREFIX}
+XML_DESC=		Support for xml statistics output
+REPLACE_BASE_DESC=	Replace base BIND with this version
+LARGE_FILE_DESC=	64-bit file support
+SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
+DLZ_DESC=		Dynamically Loadable Zones
+DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
+DLZ_MYSQL_DESC=		DLZ MySQL driver (single-threaded BIND)
+DLZ_BDB_DESC=		DLZ BDB driver
+DLZ_LDAP_DESC=		DLZ LDAP driver
+DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
+DLZ_STUB_DESC=		DLZ stub driver
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
 .endif
 
-.if !defined(WITHOUT_SSL)
+# Just in case
+USE_OPENSSL=	yes
+
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-.if !defined(WITHOUT_XML)
+.if ${PORT_OPTIONS:MXML}
 CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}
 LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
 .else
 CONFIGURE_ARGS+=	--without-libxml2
 .endif
 
-.if defined(WITH_IDN)
+.if ${PORT_OPTIONS:MIDN}
 CONFIGURE_ARGS+=	--with-idn=${LOCALBASE} --with-libiconv=${LOCALBASE}
 LIB_DEPENDS+=		idnkit.1:${PORTSDIR}/dns/idnkit
 .else
 CONFIGURE_ARGS+=	--without-idn
 .endif
 
-.if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
+.if ${PORT_OPTIONS:MLINKS} && empty($PORT_OPTIONS:MBASE)
 PLIST_SUB+=	LINKS=""
 .else
 PLIST_SUB+=	LINKS="@comment "
 .endif
 
-.if defined(WITH_LARGE_FILE)
+.if ${PORT_OPTIONS:MLARGE_FILE}
 CONFIGURE_ARGS+=	--enable-largefile
 .endif
 
-.if defined(WITH_SIGCHASE)
+.if ${PORT_OPTIONS:MSIGCHASE}
 CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITH_DLZ_POSTGRESQL)
+.if ${PORT_OPTIONS:MDLZ_POSTGRESQL}
 CONFIGURE_ARGS+=	--with-dlz-postgres=yes
 USE_PGSQL=		yes
 .endif
 
-.if defined(WITH_DLZ_MYSQL)
+.if ${PORT_OPTIONS:MDLZ_MYSQL}
 CONFIGURE_ARGS+=	--with-dlz-mysql=yes
 USE_MYSQL=		yes
-WITHOUT_THREADS=	yes
 .endif
 
-.if defined(WITH_DLZ_BDB)
+.if ${PORT_OPTIONS:MDLZ_BDB}
 CONFIGURE_ARGS+=	--with-dlz-bdb=yes
 USE_BDB=		yes
 .endif
 
-.if defined(WITH_DLZ_LDAP)
+.if ${PORT_OPTIONS:MDLZ_LDAP}
 CONFIGURE_ARGS+=	--with-dlz-ldap=yes
 USE_OPENLDAP=		yes
 .endif
 
-.if defined(WITH_DLZ_FILESYSTEM)
+.if ${PORT_OPTIONS:MDLZ_FILESYSTEM}
 CONFIGURE_ARGS+=	--with-dlz-filesystem=yes
 .endif
 
-.if defined(WITH_DLZ_STUB)
+.if ${PORT_OPTIONS:MDLZ_STUB}
 CONFIGURE_ARGS+=	--with-dlz-stub=yes
 .endif
 
-# Has to be after the DLZ_MYSQL option
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS} && empty(PORT_OPTIONS:MDLZ_MYSQL)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITH_REPLACE_BASE)
+.if ${PORT_OPTIONS:MREPLACE_BASE}
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
@@ -198,7 +200,7 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
@@ -206,7 +208,7 @@ PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${BIND_DESTETC}/rndc.conf.sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
@@ -214,10 +216,10 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
 .endif
-.if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
+.if ${PORT_OPTIONS:MLINKS} && empty($PORTOPTIONS:MREPLACE_BASE)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
