@@ -1,17 +1,14 @@
-# New ports collection makefile for:	egroupware
-# Date created:        27 March 2001
-# Whom:                Jimmy Olgeni <olgeni@uli.it>
-#
+# Created by: Jimmy Olgeni <olgeni@uli.it>
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.004.20120507
+PORTVERSION=	1.8.004.20120822
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-egw-pear-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
@@ -31,45 +28,48 @@ SUB_FILES=	pkg-message
 SUB_LIST=	EG_DIR=${EG_DIR} \
 		EG_DATA=${EG_DATA}
 
-OPTIONS=	MYSQL "Use MySQL database" on \
-		POSTGRE "Use PostgreSQL Database" off \
-		OSSL "Enable SSL connection support (for IMAP eg.)" on \
-		TNEF "Supports decoding winmail.dat attachments in felamimail" on \
-		ZIP "Enable contact data insertion for O/MS/Libre Office documents." on \
-		IMAP "Enable Mail support in eGroupware" on \
-		GD "Enable graphic support (needs xorg-libraries)" off \
-		LDAP "Contacts can be stored using OpenLDAP" off \
-		MBSTRING "Support for complete UTF-8 charsets" off
+OPTIONS_DEFINE=	MYSQL POSTGRE OSSL TNEF ZIP IMAP GD LDAP MBSTRING
+OPTIONS_DEFAULT=MYSQL OSSL TNEF ZIP IMAP
 
-.include <bsd.port.pre.mk>
-.if defined(WITH_MYSQL)
+OSSL_DESC=	enable SSL connection support
+TNEF_DESC=	decoding winmail.dat attachments in felamimail support
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 USE_PHP+=	pdo_mysql
 .endif
-.if defined(WITH_POSTGRE)
+
+.if ${PORT_OPTIONS:MPOSTGRE}
 USE_PHP+=	pgsql
-#USE_PHP+=	pdo_pgsql
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
+USE_PHP+=	pdo_pgsql
 .endif
-.if defined(WITH_MBSTRING)
+
+.if ${PORT_OPTIONS:MMBSTRING}
 USE_PHP+=	mbstring
 .endif
-.if defined(WITH_IMAP)
+
+.if ${PORT_OPTIONS:MIMAP}
 USE_PHP+=	imap
 .endif
-.if defined(WITH_OSSL)
+
+.if ${PORT_OPTIONS:MOSSL}
 USE_PHP+=	openssl
 .endif
-.if defined(WITH_TNEF)
+
+.if ${PORT_OPTIONS:MTNEF}
 RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
 .endif
-.if defined(WITH_ZIP)
+
+.if ${PORT_OPTIONS:MZIP}
 USE_PHP+=	zip
 .endif
-.if defined(WITH_GD)
+
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
-.if defined(WITH_LDAP)
+
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
@@ -107,4 +107,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
