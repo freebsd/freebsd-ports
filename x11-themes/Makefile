@@ -62,7 +62,6 @@
     SUBDIR += gtk-aluminumalloy-smog-theme
     SUBDIR += gtk-aluminumalloy-toxic-theme
     SUBDIR += gtk-aluminumalloy-volcanic-theme
-    SUBDIR += gtk-ana-theme
     SUBDIR += gtk-aquaextremesunken-theme
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-aurora-engine
@@ -158,7 +157,6 @@
     SUBDIR += metacity-aluminumalloy-smog-theme
     SUBDIR += metacity-aluminumalloy-toxic-theme
     SUBDIR += metacity-aluminumalloy-volcanic-theme
-    SUBDIR += metacity-ana-theme
     SUBDIR += metacity-aquaextremesunken-theme
     SUBDIR += metacity-bluecurve-theme
     SUBDIR += metacity-digital-cream-theme
