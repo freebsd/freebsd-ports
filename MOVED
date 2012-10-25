@@ -3766,3 +3766,15 @@ sysutils/dupfind||2012-10-25|Has expired: No more public distfiles
 sysutils/dump9660||2012-10-25|Has expired: No more public distfiles
 sysutils/desktopbsd-tools||2012-10-25|Has expired: No more public distfiles
 sysutils/agef||2012-10-25|Has expired: No more public distfiles
+security/sscep||2012-10-25|Has expired: No more public distfiles
+security/py-rijndael||2012-10-25|Has expired: No more public distfiles
+security/pam_af||2012-10-25|Has expired: No more public distfiles
+security/its4||2012-10-25|Has expired: No more public distfiles
+russian/xcyrBGR||2012-10-25|Has expired: No more public distfiles
+russian/wmcyrx||2012-10-25|Has expired: No more public distfiles
+print/advi||2012-10-25|Has expired: No more public distfiles
+palm/plucker||2012-10-25|Has expired: No more public distfiles
+net-p2p/py-bittornado-core||2012-10-25|Has expired: Depends on the deprecated wx 2.4
+net-p2p/py-bittornado||2012-10-25|Has expired: Depends on the deprecated wx 2.4
+net-mgmt/nagios-radauth-plugin||2012-10-25|Has expired: No more public distfiles
+net-mgmt/nagios-check_nick||2012-10-25|Has expired: No more public distfiles

@@ -125,7 +125,6 @@
     SUBDIR += nagios-check_memcached_paranoid
     SUBDIR += nagios-check_mysql_slave
     SUBDIR += nagios-check_netsnmp
-    SUBDIR += nagios-check_nick
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_puppet
     SUBDIR += nagios-check_smartmon
@@ -136,7 +135,6 @@
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-portaudit
-    SUBDIR += nagios-radauth-plugin
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras

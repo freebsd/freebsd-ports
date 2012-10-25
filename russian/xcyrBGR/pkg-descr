@@ -1,8 +1,0 @@
-xcyrBGR - The Bulgarian Cyrillic keyboard layout manager for X11 
-
-Easy toggle layout <English/Cyrillic-BDS/Cyrillic-PHOnetic> 
-Mouse click to toggle encoding (Win-CP1251/KOI8).
-
-Cyrillic fonts for X11 (koi8 and cp1251):
-${MASTER_SITES}/XFree86-3_cyr_fonts_koi_cp1251.tar.gz
-${MASTER_SITES}/XFree86-4_cyr_fonts_cp1251.tar.gz
