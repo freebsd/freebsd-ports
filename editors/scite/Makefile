@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scite
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -25,14 +25,9 @@ MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		scite.1
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.else
-PORTDOCS=
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|[(]CCOMP[)]|(CC)|g ; \
