@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Astro-SpaceTrack
-# Date created:		2006-07-21
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.062
+PORTVERSION=	0.066
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -30,7 +26,8 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	-y
 
 MAN1=		SpaceTrack.1
-MAN3=		Astro::SpaceTrack.3
+MAN3=		Astro::SpaceTrack.3 \
+		Astro::SpaceTrack::BulkData.3
 
 .include <bsd.port.pre.mk>
 

@@ -2,6 +2,7 @@ bin/SpaceTrack
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SpaceTrack/.packlist
 %%SITE_PERL%%/Astro/SpaceTrack.pm
 %%SITE_PERL%%/Astro/SpaceTrack/Parser.pm
+%%SITE_PERL%%/Astro/SpaceTrack/BulkData.pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SpaceTrack
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
 @dirrmtry %%SITE_PERL%%/Astro/SpaceTrack
