@@ -77,8 +77,6 @@
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += p5-pdonkey
     SUBDIR += phex
-    SUBDIR += py-bittornado
-    SUBDIR += py-bittornado-core
     SUBDIR += py-fngrab
     SUBDIR += py-kenosis
     SUBDIR += py-py2play

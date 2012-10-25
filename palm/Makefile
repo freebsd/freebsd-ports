@@ -23,7 +23,6 @@
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
-    SUBDIR += plucker
     SUBDIR += ppmtoTbmp
     SUBDIR += py-synce-librapi2
     SUBDIR += py-synce-librra

@@ -226,7 +226,6 @@
     SUBDIR += ipv6toolkit
     SUBDIR += isakmpd
     SUBDIR += isnprober
-    SUBDIR += its4
     SUBDIR += jbrofuzz
     SUBDIR += john
     SUBDIR += kedpm
@@ -594,7 +593,6 @@
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
     SUBDIR += pam_abl
-    SUBDIR += pam_af
     SUBDIR += pam_alreadyloggedin
     SUBDIR += pam_authsrv
     SUBDIR += pam_bsdbioapi
@@ -756,7 +754,6 @@
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-pysha3
-    SUBDIR += py-rijndael
     SUBDIR += py-rsa
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
@@ -891,7 +888,6 @@
     SUBDIR += squidclamav
     SUBDIR += srm
     SUBDIR += srp
-    SUBDIR += sscep
     SUBDIR += ssdeep
     SUBDIR += ssh-copy-id
     SUBDIR += ssh-gui

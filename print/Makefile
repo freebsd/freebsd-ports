@@ -15,7 +15,6 @@
     SUBDIR += acroread9
     SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
-    SUBDIR += advi
     SUBDIR += afm
     SUBDIR += alignmargins
     SUBDIR += ansiprint
