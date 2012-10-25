@@ -34,7 +34,6 @@
     SUBDIR += cwtex
     SUBDIR += cwtexttf
     SUBDIR += cxterm
-    SUBDIR += dfsongsd
     SUBDIR += dictd-database
     SUBDIR += docproj
     SUBDIR += enscript
@@ -82,7 +81,6 @@
     SUBDIR += librime
     SUBDIR += libtabe
     SUBDIR += lunar
-    SUBDIR += mingunittf
     SUBDIR += miniChinput
     SUBDIR += moefonts-cid
     SUBDIR += moettf
@@ -129,8 +127,6 @@
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables
     SUBDIR += srecite
-    SUBDIR += stardict-dict-zh_CN
-    SUBDIR += stardict-dict-zh_TW
     SUBDIR += sunpinyin
     SUBDIR += telnet
     SUBDIR += tin
@@ -140,7 +136,6 @@
     SUBDIR += unrar
     SUBDIR += unzip
     SUBDIR += ve
-    SUBDIR += wangttf
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
     SUBDIR += wordpress-zh_TW

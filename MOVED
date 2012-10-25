@@ -3818,3 +3818,9 @@ devel/libsigc++||2012-10-25|Has expired: Abandoned upstream, no more depending p
 devel/klassmodeler||2012-10-25|Has expired: Abandonware, depends on the deprecated wxGTK 2.4
 devel/ecos-tools||2012-10-25|Has expired: Depends on an obsolete version of wx, broken with gcc4.2 for long
 devel/datadesigner||2012-10-25|Has expired: Abandonware, depends on the deprecated wxGTK 2.4
+chinese/wangttf||2012-10-25|Has expired: No more public distfiles
+chinese/stardict-dict-zh_TW||2012-10-25|Has expired: No more public distfiles
+chinese/stardict-dict-zh_CN||2012-10-25|Has expired: No more public distfiles
+chinese/mingunittf||2012-10-25|Has expired: No more public distfiles
+chinese/dfsongsd||2012-10-25|Has expired: No more public distfiles
+biology/dna-qc||2012-10-25|Has expired: No more public distfiles

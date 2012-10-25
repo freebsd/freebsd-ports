@@ -18,7 +18,6 @@
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crux
-    SUBDIR += dna-qc
     SUBDIR += dotter
     SUBDIR += embassy
     SUBDIR += emboss
