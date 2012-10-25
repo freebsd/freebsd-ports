@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpillust
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net tcl tk
 MASTER_SITES=	http://www.jp.nishida.org/tcpillust/
@@ -34,10 +34,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 .for file in binread.c button.c draw.c parser.c tcpillust.c tcpdump/print-tcp.c
-	${CC} ${CFLAGS} -I${LOCALBASE}/include/ -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
+	${CC} ${CFLAGS} -I/usr/include -I/usr/include/pcap -I${LOCALBASE}/include/ -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
 	-I${LOCALBASE}/include -DILTDIR=\"${DATADIR}\" -c ${WRKSRC}/${file} -o ${WRKSRC}/${file:S/.c/.o/}
 .endfor
-	${CC} ${CFLAGS} -L${TCL_LIBDIR} -L${TK_LIBDIR} -L${LOCALBASE}/lib \
+	${CC} ${CFLAGS} -L/lib -L/usr/lib -L${TCL_LIBDIR} -L${TK_LIBDIR} -L${LOCALBASE}/lib \
 	-lm -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//} ${WRKSRC}/*.o ${WRKSRC}/tcpdump/*.o -o ${WRKSRC}/tcpillust -lpcap
 
 do-install:
