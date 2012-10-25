@@ -1,9 +1,0 @@
-Database Schema Designer.
-
-Features :
-    * store schema in XML
-    * works in Linux and other Unixes, also in M$ Windows
-    * supported database objects - DOMAIN, ENTITY, RELATION, SEQUENCE,
-      PROCEDURE, TRIGGER, VIEW, ...
-
-WWW: http://sourceforge.net/projects/datadesigner
