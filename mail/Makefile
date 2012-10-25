@@ -39,7 +39,6 @@
     SUBDIR += bogofilter-tc
     SUBDIR += bsfilter
     SUBDIR += bsmtp
-    SUBDIR += bulk_mailer
     SUBDIR += c-sig
     SUBDIR += c-sig-emacs21
     SUBDIR += cclient
@@ -636,7 +635,6 @@
     SUBDIR += smfsav
     SUBDIR += smtp-cli
     SUBDIR += smtp-gated
-    SUBDIR += smtpd
     SUBDIR += smtpfeed
     SUBDIR += smtpmail
     SUBDIR += smtprc
@@ -739,7 +737,6 @@
     SUBDIR += wanderlust-emacs21
     SUBDIR += wanderlust-emacs22
     SUBDIR += wanderlust-xemacs21-mule
-    SUBDIR += wbl
     SUBDIR += websieve
     SUBDIR += whoson
     SUBDIR += wmbiff
@@ -760,7 +757,6 @@
     SUBDIR += xpbiff
     SUBDIR += xpi-displayquota
     SUBDIR += xpi-dispmua
-    SUBDIR += zabit
     SUBDIR += zmailer
 
 .include <bsd.port.subdir.mk>
