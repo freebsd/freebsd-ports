@@ -26,7 +26,6 @@
     SUBDIR += eva
     SUBDIR += farsight2
     SUBDIR += finch
-    SUBDIR += firetalk
     SUBDIR += folks
     SUBDIR += freetalk
     SUBDIR += fugu
@@ -34,7 +33,6 @@
     SUBDIR += gajim-devel
     SUBDIR += gale
     SUBDIR += gloox
-    SUBDIR += grouch
     SUBDIR += gtkyahoo
     SUBDIR += gyach
     SUBDIR += icb

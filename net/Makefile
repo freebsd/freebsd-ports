@@ -305,7 +305,6 @@
     SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcmis
-    SUBDIR += libconnect
     SUBDIR += libdnet
     SUBDIR += libexosip2
     SUBDIR += libfb
@@ -352,7 +351,6 @@
     SUBDIR += linc-reference
     SUBDIR += link-monitor-applet
     SUBDIR += linknx
-    SUBDIR += linneighborhood
     SUBDIR += linphone
     SUBDIR += linphone-base
     SUBDIR += linux-f10-nss_ldap

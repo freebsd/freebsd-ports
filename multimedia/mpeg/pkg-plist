@@ -1,4 +1,0 @@
-bin/mpeg
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/doc.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
