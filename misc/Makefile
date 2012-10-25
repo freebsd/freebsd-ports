@@ -92,7 +92,6 @@
     SUBDIR += findutils
     SUBDIR += firestring
     SUBDIR += floatator
-    SUBDIR += flyway
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
     SUBDIR += fortune-mod-culmea-culmilor
@@ -522,7 +521,6 @@
     SUBDIR += terraform
     SUBDIR += teseq
     SUBDIR += tet
-    SUBDIR += thailocale
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkman
@@ -548,7 +546,6 @@
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += viz
-    SUBDIR += voltcraft304
     SUBDIR += whichman
     SUBDIR += window
     SUBDIR += wmScoreBoard
