@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Bio-MAGETAB
-# Date created:				23 June, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-MAGETAB
-PORTVERSION=	1.23
+PORTVERSION=	1.26
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
