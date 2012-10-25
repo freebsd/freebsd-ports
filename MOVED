@@ -3740,3 +3740,10 @@ x11-wm/blwm||2012-10-25|Has expired: Abandonware, upstream disappeared
 x11-wm/badwm||2012-10-25|Has expired: Development ceased
 x11-wm/amaterus||2012-10-25|Has expired: Abandonware, upstream disappeared
 x11-wm/ahwm||2012-10-25|Has expired: Abandoned upstream
+x11-toolkits/py-SciParam||2012-10-25|Has expired: Depends on the deprecated wx 2.4
+x11-toolkits/p5-GdkImlib||2012-10-25|Has expired: Abandoned upstream, not used by any ports
+x11-toolkits/mesgui||2012-10-25|Has expired: Abandoned upstream, no ports depend on it
+x11-toolkits/gtkmm12||2012-10-25|Has expired: Abandoned upstream, no more depending ports
+x11-toolkits/flu||2012-10-25|Has expired: No more public distfiles
+x11-toolkits/efltk||2012-10-25|Has expired: Abandoned upstream, no ports depend on it
+x11-toolkits/9libs||2012-10-25|Has expired: Abandonware, no ports depend on it, and broken on most arches
