@@ -169,6 +169,7 @@
     SUBDIR += libtuner
     SUBDIR += libv4l
     SUBDIR += libva
+    SUBDIR += libva-intel-driver
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau
     SUBDIR += libvpx
