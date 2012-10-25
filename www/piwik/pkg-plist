@@ -230,6 +230,7 @@
 %%WWWDIR%%/core/Updates/1.9-b9.php
 %%WWWDIR%%/core/Updates/1.9-b16.php
 %%WWWDIR%%/core/Updates/1.9-b19.php
+%%WWWDIR%%/core/Updates/1.9.1-b2.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -1150,8 +1151,6 @@
 %%WWWDIR%%/plugins/DoNotTrack/DoNotTrack.php
 %%WWWDIR%%/plugins/ExampleAPI/API.php
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
-%%WWWDIR%%/plugins/ExampleFeedburner/ExampleFeedburner.php
-%%WWWDIR%%/plugins/ExampleFeedburner/templates/feedburner.tpl
 %%WWWDIR%%/plugins/ExamplePlugin/Controller.php
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
 %%WWWDIR%%/plugins/ExamplePlugin/config/.htaccess
@@ -1208,6 +1207,27 @@
 %%WWWDIR%%/plugins/ImageGraph/fonts/tahoma.ttf
 %%WWWDIR%%/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
 %%WWWDIR%%/plugins/ImageGraph/templates/index.tpl
+%%WWWDIR%%/plugins/Insight/API.php
+%%WWWDIR%%/plugins/Insight/Controller.php
+%%WWWDIR%%/plugins/Insight/Insight.php
+%%WWWDIR%%/plugins/Insight/client/linktags.png
+%%WWWDIR%%/plugins/Insight/client/urlnormalizer.js
+%%WWWDIR%%/plugins/Insight/client/linktags.psd
+%%WWWDIR%%/plugins/Insight/client/linktags_noshadow.png
+%%WWWDIR%%/plugins/Insight/client/loading.gif
+%%WWWDIR%%/plugins/Insight/client/linktags.eps
+%%WWWDIR%%/plugins/Insight/client/close.png
+%%WWWDIR%%/plugins/Insight/client/client.js
+%%WWWDIR%%/plugins/Insight/client/followingpages.js
+%%WWWDIR%%/plugins/Insight/client/linktags_lessshadow.png
+%%WWWDIR%%/plugins/Insight/client/insight.css
+%%WWWDIR%%/plugins/Insight/client/translations.js
+%%WWWDIR%%/plugins/Insight/templates/insight.js
+%%WWWDIR%%/plugins/Insight/templates/notify_parent_iframe.tpl
+%%WWWDIR%%/plugins/Insight/templates/index.tpl
+%%WWWDIR%%/plugins/Insight/templates/sidebar.tpl
+%%WWWDIR%%/plugins/Insight/templates/index.css
+%%WWWDIR%%/plugins/Insight/templates/info.png
 %%WWWDIR%%/plugins/Installation/Controller.php
 %%WWWDIR%%/plugins/Installation/FormDatabaseSetup.php
 %%WWWDIR%%/plugins/Installation/FormFirstWebsiteSetup.php
@@ -2091,6 +2111,7 @@
 %%WWWDIR%%/themes/default/images/expanded_arrows.gif
 %%WWWDIR%%/themes/default/images/export.png
 %%WWWDIR%%/themes/default/images/feed.png
+%%WWWDIR%%/themes/default/images/fullscreen.png
 %%WWWDIR%%/themes/default/images/goal.png
 %%WWWDIR%%/themes/default/images/help.png
 %%WWWDIR%%/themes/default/images/help_grey.png
@@ -2222,6 +2243,9 @@
 @dirrm %%WWWDIR%%/plugins/LanguagesManager
 @dirrm %%WWWDIR%%/plugins/Installation/templates
 @dirrm %%WWWDIR%%/plugins/Installation
+@dirrm %%WWWDIR%%/plugins/Insight/templates
+@dirrm %%WWWDIR%%/plugins/Insight/client
+@dirrm %%WWWDIR%%/plugins/Insight
 @dirrm %%WWWDIR%%/plugins/ImageGraph/templates
 @dirrm %%WWWDIR%%/plugins/ImageGraph/fonts
 @dirrm %%WWWDIR%%/plugins/ImageGraph/StaticGraph
@@ -2240,8 +2264,6 @@
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/lang
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/config
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin
-@dirrm %%WWWDIR%%/plugins/ExampleFeedburner/templates
-@dirrm %%WWWDIR%%/plugins/ExampleFeedburner
 @dirrm %%WWWDIR%%/plugins/ExampleAPI
 @dirrm %%WWWDIR%%/plugins/DoNotTrack
 @dirrm %%WWWDIR%%/plugins/Dashboard/templates

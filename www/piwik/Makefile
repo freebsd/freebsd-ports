@@ -1,14 +1,13 @@
 # Created by:	Wen heping <wenheping@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	1.9
+PORTVERSION=	1.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
 MAINTAINER=	hans@nordhaug.priv.no
-COMMENT=	An Open Source Web Analytics Software Program
+COMMENT=	Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
 
@@ -39,8 +38,8 @@ post-patch:
 
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
-		echo " It seems you install php without CLI enabled. "; \
-		echo " It will cause problem when use piwik. "; \
+		echo " It seems you installed php without CLI enabled. "; \
+		echo " This will cause problems when using piwik. "; \
 		echo " If you want to reconsider, press Ctrl-C now to cancel. "; \
 		echo " Then reinstall php with CLI enabled. "; \
 		sleep 3; \
