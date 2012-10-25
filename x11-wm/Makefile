@@ -7,19 +7,15 @@
     SUBDIR += afterstep
     SUBDIR += afterstep-i18n
     SUBDIR += afterstep-stable
-    SUBDIR += ahwm
-    SUBDIR += amaterus
     SUBDIR += amiwm
     SUBDIR += antiwm
     SUBDIR += awesome
     SUBDIR += awesome-vicious
     SUBDIR += awesome2
-    SUBDIR += badwm
     SUBDIR += bbconf
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
-    SUBDIR += blwm
     SUBDIR += ccsm
     SUBDIR += clementine
     SUBDIR += compiz
@@ -33,7 +29,6 @@
     SUBDIR += devilspie
     SUBDIR += dwm
     SUBDIR += e16
-    SUBDIR += e16utils
     SUBDIR += e17-module-alarm
     SUBDIR += e17-module-calendar
     SUBDIR += e17-module-comp-scale
@@ -119,7 +114,6 @@
     SUBDIR += libwraster
     SUBDIR += lwm
     SUBDIR += lxsession
-    SUBDIR += matchbox
     SUBDIR += matwm2
     SUBDIR += mcwm
     SUBDIR += metacity
@@ -149,8 +143,6 @@
     SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
-    SUBDIR += skippy
-    SUBDIR += skippy-xd
     SUBDIR += spectrwm
     SUBDIR += stumpwm
     SUBDIR += swm
@@ -172,7 +164,6 @@
     SUBDIR += wmanager
     SUBDIR += wmanager-addons
     SUBDIR += wmconfig
-    SUBDIR += wmcp
     SUBDIR += wmfs
     SUBDIR += wmii
     SUBDIR += wmii-devel
