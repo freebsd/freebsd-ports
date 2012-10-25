@@ -1,13 +1,8 @@
-# New ports collection makefile for:	mapnik
-# Date created:		Nov 10, 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mapnik
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
@@ -27,7 +22,7 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 		icu>=4.2:${PORTSDIR}/devel/icu \
 		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu \
-		boost-libs>=1.45:${PORTSDIR}/devel/boost-libs \
+		boost-libs>=1.47:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python-libs
 
 USE_BZIP2=	yes
@@ -37,35 +32,43 @@ USE_SCONS=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig libxml2
 MAKE_JOBS_SAFE=	yes
+WARNING_CXXFLAGS?=	-w
 
-INPUT_PLUGINS=	raster shape
+CONFICTS=	svg2png*
 
-OPTIONS=	CAIRO "Enable cairo rendering" on \
-		SQLITE "SQLite input plugin" on \
-		OGR "ogr input plugin" on \
-		GDAL "gdal input plugin" on \
-		POSTGIS "Postgis input plugin" on \
-		OSM "OSM input plugin" off
+INPUT_PLUGINS=	geojson python raster shape
+
+OPTIONS_DEFINE=	CAIRO CSV GDAL GEOS OGR OSM POSTGIS SQLITE3
+OPTIONS_DEFAULT=	CAIRO CSV GDAL OGR OSM POSTGIS SQLITE3
+
+CAIRO_DESC=	Enable cairo rendering
+CSV_DESC=	CSV input plugin
+GDAL_DESC=	GDAL input plugin
+GEOS_DESC=	GEOS input plugin
+OGR_DESC=	OGR input plugin
+OSM_DESC=	OSM input plugin
+POSTGIS_DESC=	PostGIS input plugin
+SQLITE3_DESC=	SQLite input plugin
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CAIRO)
+.if ${PORT_OPTIONS:MCAIRO}
+LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo \
+   		cairomm-1:${PORTSDIR}/graphics/cairomm
+BUILD_DEPENDS+=	cairomm>=1.8.0:${PORTSDIR}/graphics/cairomm \
+		${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
+.else
 SCONS_ARGS+=	CAIRO=False
-.else
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo \
-   		cairomm-1.0:${PORTSDIR}/graphics/cairomm
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
 .endif
 
-.if !defined(WITHOUT_POSTGIS)
-INPUT_PLUGINS+=	postgis
-USE_PGSQL=	yes
-PLIST_SUB+=	POSTGIS=""
+.if ${PORT_OPTIONS:MCSV}
+INPUT_PLUGINS+=	csv
+PLIST_SUB+=	CSV=""
 .else
-PLIST_SUB+=	POSTGIS="@comment "
+PLIST_SUB+=	CSV="@comment "
 .endif
 
-.if !defined(WITHOUT_GDAL)
+.if ${PORT_OPTIONS:MGDAL}
 INPUT_PLUGINS+=	gdal
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	GDAL=""
@@ -73,7 +76,15 @@ PLIST_SUB+=	GDAL=""
 PLIST_SUB+=	GDAL="@comment "
 .endif
 
-.if !defined(WITHOUT_OGR)
+.if ${PORT_OPTIONS:MGEOS}
+INPUT_PLUGINS+=	geos
+LIB_DEPENDS+=	geos:${PORTSDIR}/graphics/geos
+PLIST_SUB+=	GEOS=""
+.else
+PLIST_SUB+=	GEOS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOGR}
 INPUT_PLUGINS+=	ogr
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	OGR=""
@@ -81,23 +92,30 @@ PLIST_SUB+=	OGR=""
 PLIST_SUB+=	OGR="@comment "
 .endif
 
-.if !defined(WITHOUT_SQLITE)
-INPUT_PLUGINS+=	sqlite
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-PLIST_SUB+=	SQLITE=""
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
-
-.if defined(WITH_OSM)
+.if ${PORT_OPTIONS:MOSM}
 INPUT_PLUGINS+=	osm
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	OSM=""
 .else
 PLIST_SUB+=	OSM="@comment "
 .endif
 
-SCONS_ENV+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
+.if ${PORT_OPTIONS:MPOSTGIS}
+INPUT_PLUGINS+=	postgis
+USE_PGSQL=	yes
+PLIST_SUB+=	POSTGIS=""
+.else
+PLIST_SUB+=	POSTGIS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE3}
+INPUT_PLUGINS+=	sqlite
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS+=	sqlite3>=3.7.12:${PORTSDIR}/databases/sqlite3
+PLIST_SUB+=	SQLITE=""
+.else
+PLIST_SUB+=	SQLITE="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -105,8 +123,22 @@ SCONS_ENV+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
 IGNORE=		does not install: runs out of virtual memory
 .endif
 
+SCONS_ARGS+=	WARNING_CXXFLAGS=${WARNING_CXXFLAGS}
+SCONS_ARGS+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
+
 .if defined (MAKE_JOBS_NUMBER)
-SCONS_ENV+=	JOBS=${MAKE_JOBS_NUMBER}
+SCONS_ARGS+=	JOBS=${MAKE_JOBS_NUMBER}
+.endif
+
+pre-configure:
+.if ${PORT_OPTIONS:MSQLITE3}
+	@if ! ${LOCALBASE}/bin/sqlite3 :memory: 'create virtual table foo using rtree(pkid, xmin, xmax, ymin, ymax)' > /dev/null 2>&1; then \
+	   ${ECHO_MSG} "" ; \
+	   ${ECHO_MSG} "The SQLite plugin requires libsqlite3 built with RTREE support"; \
+	   ${ECHO_MSG} "Please, reinstall 'databases/sqlite3' port with R*Tree module enabled"; \
+	   ${ECHO_MSG} "" ; \
+	   ${FALSE} ; \
+	fi
 .endif
 
 post-patch:
