@@ -106,6 +106,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+        <cvename>CVE-2012-4520</cvename>
         <url>https://www.djangoproject.com/weblog/2012/oct/17/security/</url>
     </references>
     <dates>
