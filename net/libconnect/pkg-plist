@@ -1,6 +1,0 @@
-lib/libconnect.a
-%%NOPROFILE%%lib/libconnect_p.a
-lib/libconnect.so.1
-lib/libconnect.so
-share/doc/libconnect/readme
-@dirrm share/doc/libconnect

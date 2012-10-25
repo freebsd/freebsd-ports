@@ -80,7 +80,6 @@
     SUBDIR += gmimms
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
-    SUBDIR += gnustep-mplayer
     SUBDIR += gopchop
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
@@ -211,7 +210,6 @@
     SUBDIR += mp3cd
     SUBDIR += mp4split
     SUBDIR += mp4v2
-    SUBDIR += mpeg
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
     SUBDIR += mpeg4ip
@@ -334,7 +332,6 @@
     SUBDIR += vcdgear
     SUBDIR += vcdimager
     SUBDIR += vcdpad
-    SUBDIR += vcdtools
     SUBDIR += vdpauinfo
     SUBDIR += vdr
     SUBDIR += vdr-plugin-control
