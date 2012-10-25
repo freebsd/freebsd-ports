@@ -1,23 +1,15 @@
-# New ports collection makefile for:	emh (for emacs21)
-# Date Created:		12 Mar 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	emh
 PORTVERSION=	1.14.1
 PORTREVISION=	13
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ring.aist.go.jp/pub/elisp/semi/semi-1.14-for-flim-1.14/ \
-		http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/semi/semi-1.14-for-flim-1.14/
+MASTER_SITES=	RINGSERVER/elisp/semi/semi-1.14-for-flim-1.14
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIME extension of mh-e.el
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/semi/${SEMI_COOKIE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/share/semi/${SEMI_COOKIE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
