@@ -240,7 +240,7 @@ IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER}-client (Post
 
 LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 
-_USE_PGSQL_DEP=			contrib docs pgtcl plperl pltcl server
+_USE_PGSQL_DEP=			contrib docs pltcl plperl server
 _USE_PGSQL_DEP_contrib=	pgbench
 _USE_PGSQL_DEP_docs=	postgresql-docs>0
 _USE_PGSQL_DEP_pgtcl=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl
