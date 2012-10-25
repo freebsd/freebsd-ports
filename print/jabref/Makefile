@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabref
-PORTVERSION=	2.6
+PORTVERSION=	2.8.1
 PORTEPOCH=	1
 CATEGORIES=	print java editors
 MASTER_SITES=	SF
@@ -11,7 +11,10 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A (BibTeX native) bibliographic reference manager
+COMMENT=	BibTeX native bibliographic reference manager
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
