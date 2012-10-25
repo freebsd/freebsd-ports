@@ -266,6 +266,7 @@
     SUBDIR += pvrxxx
     SUBDIR += pwcbsd
     SUBDIR += pwcview
+    SUBDIR += py-enzyme
     SUBDIR += py-gstreamer
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
