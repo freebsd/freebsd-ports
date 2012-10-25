@@ -41,7 +41,6 @@
     SUBDIR += cocor
     SUBDIR += cparser
     SUBDIR += csharp-mode.el
-    SUBDIR += cu-prolog
     SUBDIR += cython
     SUBDIR += dice
     SUBDIR += diveintopython
@@ -127,7 +126,6 @@
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
-    SUBDIR += ironpython
     SUBDIR += itcl
     SUBDIR += jakarta-commons-jelly
     SUBDIR += jruby
