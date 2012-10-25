@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Math-Cephes
-# Date created:				26 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Cephes
-PORTVERSION=	0.48
+PORTVERSION=	0.51
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
