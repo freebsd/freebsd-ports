@@ -18,7 +18,6 @@
     SUBDIR += afflib
     SUBDIR += afio
     SUBDIR += agedu
-    SUBDIR += agef
     SUBDIR += ah-tty
     SUBDIR += aimage
     SUBDIR += aird
@@ -163,7 +162,6 @@
     SUBDIR += decomment
     SUBDIR += deltup
     SUBDIR += desktop-installer
-    SUBDIR += desktopbsd-tools
     SUBDIR += detach
     SUBDIR += detox
     SUBDIR += devcpu-data
@@ -191,8 +189,6 @@
     SUBDIR += dtpstree
     SUBDIR += du2ps
     SUBDIR += duff
-    SUBDIR += dump9660
-    SUBDIR += dupfind
     SUBDIR += duplicity
     SUBDIR += duply
     SUBDIR += dupmerge
@@ -484,7 +480,6 @@
     SUBDIR += loganalyzer
     SUBDIR += logmon
     SUBDIR += logrotate
-    SUBDIR += logserial
     SUBDIR += logstalgia
     SUBDIR += logtool
     SUBDIR += logwatch
@@ -515,7 +510,6 @@
     SUBDIR += megarc
     SUBDIR += memdump
     SUBDIR += memfetch
-    SUBDIR += memgrep
     SUBDIR += memtest
     SUBDIR += memtest86
     SUBDIR += memtest86+
@@ -559,8 +553,6 @@
     SUBDIR += nautilus-cd-burner
     SUBDIR += nbosd
     SUBDIR += ncdu
-    SUBDIR += nctop
-    SUBDIR += netdump-server
     SUBDIR += netident
     SUBDIR += news
     SUBDIR += nitrogen
@@ -658,8 +650,6 @@
     SUBDIR += pdixtract
     SUBDIR += pdsh
     SUBDIR += pdumpfs
-    SUBDIR += pdumpfs-clean
-    SUBDIR += pdumpfs-rsync
     SUBDIR += pear-Cache
     SUBDIR += pear-Cache_Lite
     SUBDIR += pear-File
@@ -754,7 +744,6 @@
     SUBDIR += rdup
     SUBDIR += readlink
     SUBDIR += recoverdm
-    SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
     SUBDIR += relpath
@@ -1018,7 +1007,6 @@
     SUBDIR += wmupmon
     SUBDIR += worldtools
     SUBDIR += wtail
-    SUBDIR += wtmp-tools
     SUBDIR += wuzzah
     SUBDIR += x86info
     SUBDIR += xacpim

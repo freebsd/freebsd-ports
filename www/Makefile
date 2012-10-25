@@ -1987,7 +1987,6 @@
     SUBDIR += w3m-m17n-img
     SUBDIR += w3mir
     SUBDIR += waccess
-    SUBDIR += wacko
     SUBDIR += wadcomblog
     SUBDIR += web2ldap
     SUBDIR += webalizer

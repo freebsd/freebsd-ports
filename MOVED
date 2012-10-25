@@ -3747,3 +3747,22 @@ x11-toolkits/gtkmm12||2012-10-25|Has expired: Abandoned upstream, no more depend
 x11-toolkits/flu||2012-10-25|Has expired: No more public distfiles
 x11-toolkits/efltk||2012-10-25|Has expired: Abandoned upstream, no ports depend on it
 x11-toolkits/9libs||2012-10-25|Has expired: Abandonware, no ports depend on it, and broken on most arches
+x11-themes/metacity-ana-theme||2012-10-25|Has expired: No more public distfiles
+x11-themes/gtk-ana-theme||2012-10-25|Has expired: No more public distfiles
+x11-fonts/getbdf||2012-10-25|Has expired: No more public distfiles
+x11-fonts/arkpandora||2012-10-25|Has expired: No more public distfiles
+x11-clocks/wmdate||2012-10-25|Has expired: No more public distfiles
+x11/multi-gnome-terminal||2012-10-25|Has expired: depends on deprecated gnome1 things
+www/wacko||2012-10-25|Has expired: No more public distfiles
+sysutils/wtmp-tools||2012-10-25|Has expired: No more public distfiles
+sysutils/reed||2012-10-25|Has expired: No more public distfiles
+sysutils/pdumpfs-rsync||2012-10-25|Has expired: No more public distfiles
+sysutils/pdumpfs-clean||2012-10-25|Has expired: No more public distfiles
+sysutils/netdump-server||2012-10-25|Has expired: No more public distfiles
+sysutils/nctop||2012-10-25|Has expired: No more public distfiles
+sysutils/memgrep||2012-10-25|Has expired: No more public distfiles
+sysutils/logserial||2012-10-25|Has expired: No more public distfiles
+sysutils/dupfind||2012-10-25|Has expired: No more public distfiles
+sysutils/dump9660||2012-10-25|Has expired: No more public distfiles
+sysutils/desktopbsd-tools||2012-10-25|Has expired: No more public distfiles
+sysutils/agef||2012-10-25|Has expired: No more public distfiles
