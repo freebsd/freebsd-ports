@@ -33,7 +33,7 @@ XGETDEFAULT_DESC=	Build with XGetDefault() support
 XIM_DESC=		Build with XIM support
 XTERM_DESC=		Build with Xterm scrollbar
 
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-ttygid \
+CONFIGURE_ARGS=	--enable-wtmp --enable-ttygid \
 		--with-xpm --enable-xpm-background \
 		--with-xpm-includes=${LOCALBASE}/include/X11 \
 		--with-xpm-library=${LOCALBASE}/lib
@@ -42,8 +42,11 @@ PLIST_FILES=	bin/rxvt
 
 .include <bsd.port.pre.mk>
 
+# fails to build with new utmpx
 .if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+CONFIGURE_ARGS=	--disable-utmp
+.else
+CONFIGURE_ARGS=	--enable-utmp
 .endif
 
 .if ${PORT_OPTIONS:MBIG5}
