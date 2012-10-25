@@ -5294,6 +5294,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/utils/simplejson/tool.py
 %%PYTHON_SITELIBDIR%%/django/utils/simplejson/tool.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/simplejson/tool.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/six.py
+%%PYTHON_SITELIBDIR%%/django/utils/six.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/six.pyo
 %%PYTHON_SITELIBDIR%%/django/utils/synch.py
 %%PYTHON_SITELIBDIR%%/django/utils/synch.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/synch.pyo
