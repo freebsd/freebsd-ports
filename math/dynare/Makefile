@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	dynare
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
@@ -36,11 +36,6 @@ BUILD_DEPENDS+=		octave:${PORTSDIR}/math/octave
 .else
 CONFIGURE_ARGS+=	--disable-octave
 .endif
-
-do-fetch:
-	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/release/source/dynare-${PORTVERSION}.tar.xz;\
-	fi
 
 post-configure:
 	@${ECHO_MSG} ""
