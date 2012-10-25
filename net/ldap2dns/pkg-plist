@@ -1,9 +1,0 @@
-bin/ldap2dns
-bin/ldap2dnsd
-%%DATADIR%%/README.html
-%%DATADIR%%/ldap2dns.schema
-%%DATADIR%%/example.ldif
-%%DATADIR%%/axfr2ldap.pl
-%%DATADIR%%/data2ldif.pl
-%%DATADIR%%/ldap2tinydns-conf
-@dirrm %%DATADIR%%
