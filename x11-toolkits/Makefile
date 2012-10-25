@@ -3,7 +3,6 @@
 
     COMMENT = X11 toolkits
 
-    SUBDIR += 9libs
     SUBDIR += SoXt
     SUBDIR += Xaw3d
     SUBDIR += attica
@@ -13,7 +12,6 @@
     SUBDIR += c++-gtk-utils
     SUBDIR += easygtk
     SUBDIR += eel
-    SUBDIR += efltk
     SUBDIR += elementary
     SUBDIR += fl_editor
     SUBDIR += flowcanvas
@@ -21,7 +19,6 @@
     SUBDIR += fltk-threads
     SUBDIR += fltk11
     SUBDIR += fltk2
-    SUBDIR += flu
     SUBDIR += flvw
     SUBDIR += fox14
     SUBDIR += fox16
@@ -64,7 +61,6 @@
     SUBDIR += gtkglextmm
     SUBDIR += gtkimageview
     SUBDIR += gtkmathview
-    SUBDIR += gtkmm12
     SUBDIR += gtkmm20
     SUBDIR += gtkmm20-reference
     SUBDIR += gtkmm24
@@ -133,7 +129,6 @@
     SUBDIR += linux-openmotif
     SUBDIR += linux-pango
     SUBDIR += linux-qt33
-    SUBDIR += mesgui
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += neXtaw
@@ -143,7 +138,6 @@
     SUBDIR += open-motif
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
-    SUBDIR += p5-GdkImlib
     SUBDIR += p5-Glade2
     SUBDIR += p5-Gnome2
     SUBDIR += p5-Gnome2-Canvas
@@ -199,7 +193,6 @@
     SUBDIR += pure-gtk
     SUBDIR += pure-tk
     SUBDIR += py-Pmw
-    SUBDIR += py-SciParam
     SUBDIR += py-fltk
     SUBDIR += py-gnome-desktop
     SUBDIR += py-gnome-extras
