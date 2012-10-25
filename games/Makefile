@@ -272,7 +272,6 @@
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
     SUBDIR += freera
-    SUBDIR += freesci
     SUBDIR += freesweep
     SUBDIR += freesynd
     SUBDIR += freetennis
@@ -486,8 +485,6 @@
     SUBDIR += linux-doom3-demo
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-enemyterritory-etpro
-    SUBDIR += linux-enemyterritory-etpub
-    SUBDIR += linux-enemyterritory-fortress
     SUBDIR += linux-enemyterritory-jaymod
     SUBDIR += linux-enemyterritory-jaymod-21
     SUBDIR += linux-enemyterritory-omni-bot
@@ -680,7 +677,6 @@
     SUBDIR += penguin-command
     SUBDIR += pengupop
     SUBDIR += pentix
-    SUBDIR += pets
     SUBDIR += phalanx
     SUBDIR += phlipple
     SUBDIR += pinball
@@ -991,7 +987,6 @@
     SUBDIR += wmquake
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
-    SUBDIR += wolf3d
     SUBDIR += wolfpack
     SUBDIR += wop
     SUBDIR += wordplay
@@ -1087,7 +1082,6 @@
     SUBDIR += xquarto
     SUBDIR += xrally
     SUBDIR += xrick
-    SUBDIR += xripple
     SUBDIR += xrisk
     SUBDIR += xroach
     SUBDIR += xroads
@@ -1123,7 +1117,6 @@
     SUBDIR += xworm
     SUBDIR += xye
     SUBDIR += xzip
-    SUBDIR += yace
     SUBDIR += yadex
     SUBDIR += yahtzee
     SUBDIR += yamsweeper

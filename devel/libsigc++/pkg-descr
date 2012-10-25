@@ -1,9 +1,0 @@
-Libsigc++ -- The Typesafe Callback Framework for C++
-
-This library implements a full callback system for use in widget libraries,
-abstract interfaces, and general programming.
-
-To get a good overview of how to use the library, read
-/usr/local/share/doc/libsigc++/signals.
-
-WWW: http://libsigc.sourceforge.net/

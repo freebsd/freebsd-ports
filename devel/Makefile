@@ -308,7 +308,6 @@
     SUBDIR += czmq
     SUBDIR += d-feet
     SUBDIR += darts
-    SUBDIR += datadesigner
     SUBDIR += datadraw
     SUBDIR += dbus
     SUBDIR += dbus-glib
@@ -369,7 +368,6 @@
     SUBDIR += ecore-file
     SUBDIR += ecore-ipc
     SUBDIR += ecore-main
-    SUBDIR += ecos-tools
     SUBDIR += edb
     SUBDIR += eet
     SUBDIR += eggdbus
@@ -858,7 +856,6 @@
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
     SUBDIR += kimwitu
-    SUBDIR += klassmodeler
     SUBDIR += kodos
     SUBDIR += kprof
     SUBDIR += kscope
@@ -1024,7 +1021,6 @@
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
-    SUBDIR += libsigc++
     SUBDIR += libsigc++12
     SUBDIR += libsigc++20
     SUBDIR += libsigcx
@@ -4169,7 +4165,6 @@
     SUBDIR += valgrind-snapshot
     SUBDIR += valide
     SUBDIR += varconf
-    SUBDIR += vb2c
     SUBDIR += viewvc
     SUBDIR += violet
     SUBDIR += vstr

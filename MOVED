@@ -3805,3 +3805,16 @@ graphics/kphotoalbum||2012-10-25|Has expired: No more public distfiles
 graphics/jpegpixi||2012-10-25|Has expired: No more public distfiles
 graphics/gimp-manual-pdf||2012-10-25|Has expired: No more public distfiles
 graphics/exifprobe||2012-10-25|Has expired: No more public distfiles
+games/yace||2012-10-25|Has expired: No more public distfiles
+games/xripple||2012-10-25|Has expired: No more public distfiles
+games/wolf3d||2012-10-25|Has expired: No more public distfiles
+games/pets||2012-10-25|Has expired: No more public distfiles
+games/linux-enemyterritory-fortress||2012-10-25|Has expired: No more public distfiles
+games/linux-enemyterritory-etpub||2012-10-25|Has expired: No more public distfiles (for the .pk3)
+games/freesci||2012-10-25|Has expired: No more public distfiles
+dns/gresolver||2012-10-25|Has expired: No more public distfiles
+devel/vb2c||2012-10-25|Has expired: No more public distfiles
+devel/libsigc++||2012-10-25|Has expired: Abandoned upstream, no more depending ports
+devel/klassmodeler||2012-10-25|Has expired: Abandonware, depends on the deprecated wxGTK 2.4
+devel/ecos-tools||2012-10-25|Has expired: Depends on an obsolete version of wx, broken with gcc4.2 for long
+devel/datadesigner||2012-10-25|Has expired: Abandonware, depends on the deprecated wxGTK 2.4

@@ -1,7 +1,0 @@
-=============================================================================
-
-Pets configuration datafiles were installed in %%DATADIR%%.
-To run pets specify path to configuration file on commandline, e.g.
-% pets %%DATADIR%%/cat/cat.xml
-
-=============================================================================
