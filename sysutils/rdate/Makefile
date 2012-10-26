@@ -1,6 +1,4 @@
-# New ports collection makefile for: rdate
-# Date created:         19980128
-# Whom:                 cracauer@cons.org "Martin Cracauer"
+# Created by: cracauer@cons.org "Martin Cracauer"
 #
 # $FreeBSD$
 #
@@ -8,9 +6,7 @@
 PORTNAME=	rdate
 PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cons.org/freebsd-distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cracauer
+MASTER_SITES=	http://www.cons.org/freebsd-distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sets the clock of the local host to the time of another host
