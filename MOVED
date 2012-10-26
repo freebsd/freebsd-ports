@@ -3830,3 +3830,4 @@ x11-toolkits/wxgtk24-docs||2012-10-26|Not supported upstream anymore, consider u
 x11-toolkits/py-wxPython24||2012-10-26|Not supported upstream anymore, consider using more recent version
 audio/gogo||2012-10-26|No more public distfiles
 deskutils/superkaramba-lwp||2012-10-26|Has expired: No more public_distfiles
+x11-toolkits/paragui||2012-10-26|Has expired: No more upstream, no ports depending on it
