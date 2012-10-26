@@ -648,46 +648,36 @@ MASTER_SITE_KENAI+= \
 	http://projectkenai.com/downloads/%SUBDIR%/
 .endif
 
+# List:		http://download.kde.org/extra/mirrors.html
+# Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+= \
 	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
 	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
-	ftp://ftp.oregonstate.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.solnet.ch/mirror/KDE/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/kde/%SUBDIR%/ \
 	http://gd.tuwien.ac.at/kde/%SUBDIR%/ \
-	ftp://kde.mirrors.tds.net/pub/kde/%SUBDIR%/ \
 	http://kde.mirrors.tds.net/pub/kde/%SUBDIR%/ \
 	ftp://ftp.rz.uni-wuerzburg.de/pub/unix/kde/%SUBDIR%/ \
 	http://mirrors.dotsrc.org/kde/%SUBDIR%/ \
 	ftp://mirrors.dotsrc.org/kde/%SUBDIR%/ \
-	http://kambing.vlsm.org/kde/%SUBDIR%/ \
-	http://mirrors.evolva.ro/kdeftp/%SUBDIR%/ \
 	ftp://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
-	http://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.scarlet.be/pub/kde/%SUBDIR%/ \
-	ftp://ftp.unina.it/pub/Linux/kde/%SUBDIR%/ \
-	http://ftp.unina.it/pub/Linux/kde/%SUBDIR%/ \
 	ftp://ftp.belnet.be/packages/kde/%SUBDIR%/ \
-	ftp://ftp.gwdg.de/pub/x11/kde/%SUBDIR%/ \
 	http://ftp.belnet.be/packages/kde/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://kde.paralax.org/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
-	http://kde.cs.nctu.edu.tw/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
 	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
@@ -698,26 +688,25 @@ MASTER_SITE_KDE+= \
 	http://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.yz.yamagata-u.ac.jp/pub/X11/wm/kde/%SUBDIR%/ \
-	http://ftp.yz.yamagata-u.ac.jp/pub/X11/wm/kde/%SUBDIR%/ \
+	http://ftp.cs.pu.edu.tw/pub/kde/%SUBDIR%/ \
+	http://kde.mirror.uber.com.au/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/kde/%SUBDIR%/ \
 	http://ftp.ussg.iu.edu/kde/%SUBDIR%/ \
-	ftp://mirror.pacific.net.au/kde/%SUBDIR%/ \
-	http://mirror.pacific.net.au/kde/%SUBDIR%/ \
 	ftp://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
 	http://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
 	ftp://carroll.aset.psu.edu/pub/kde/%SUBDIR%/ \
 	http://mirror.cc.columbia.edu/pub/software/kde/%SUBDIR%/ \
-	ftp://fr2.rpmfind.net/linux/KDE/%SUBDIR%/ \
-	http://fr2.rpmfind.net/linux/KDE/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.xcp.kiev.ua/ftp.kde.org/%SUBDIR%/ \
+	http://master.kde.org/%SUBDIR%/ \
+	http://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
+	http://kde-mirror.freenux.org/%SUBDIR%/ \
+	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.gwdg.de/pub/x11/kde/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,} \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
+	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://download.kde.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LOGILAB)
@@ -1135,10 +1124,12 @@ MASTER_SITE_SAVANNAH+= \
 	http://download-mirror.savannah.gnu.org/releases/%SUBDIR%/
 .endif
 
+# List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
+# Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in heanet sunet iweb switch surfnet kent freefr \
-		voxel jaist osdn nchc ncu internode ufpr waix
-#		garr dfn ovh (redirect as of 2009-Sep-02)
+.for mirror in heanet sunet iweb switch freefr garr aarnet \
+		voxel jaist osdn nchc ncu internode waix \
+		hivelocity superb-dca3
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
 .endfor
@@ -1320,25 +1311,20 @@ MASTER_SITE_TUCOWS+= \
 .endif
 
 # List:		http://www.vim.org/mirrors.php
-# Updated:	2011-09-12
+# Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_VIM)
 MASTER_SITE_VIM+= \
 	http://ftp.au.vim.org/pub/vim/unix/ \
 	http://ftp.gr.vim.org/pub/vim/unix/ \
 	http://ftp.ie.vim.org/pub/ftp.vim.org/pub/vim/unix/ \
-	http://ftp.ro.vim.org/mirrors/ftp.vim.org/unix/ \
 	http://ftp.stut.edu.tw/vim/unix/ \
 	http://ftp.tw.vim.org/pub/vim/unix/ \
-	http://ftp2.pl.vim.org/pub/vim/unix/ \
 	http://ftp2.tw.vim.org/pub/vim/unix/ \
-	http://ftp2.uk.vim.org/pub/vim/unix/ \
-	http://mirror.hostfuss.com/pub/vim/unix/ \
 	http://tweedo.com/mirror/ftp.vim.org/unix/ \
 	http://vim.cybermirror.org/unix/ \
 	http://vim.mirror.fr/unix/ \
 	http://ftp.vim.org/pub/vim/unix/ \
 	ftp://ftp.ca.vim.org/pub/vim/unix/ \
-	ftp://ftp.cz.vim.org/vim/unix/ \
 	ftp://ftp.de.vim.org/unix/ \
 	ftp://ftp.home.vim.org/pub/vim/unix/ \
 	ftp://ftp.is.vim.org/pub/vim/unix/ \
@@ -1350,8 +1336,6 @@ MASTER_SITE_VIM+= \
 	ftp://ftp.tw.vim.org/pub/vim/unix/ \
 	ftp://ftp.uk.vim.org/pub/vim/unix/ \
 	ftp://ftp3.de.vim.org/pub/vim/unix/ \
-	ftp://ftp3.nl.vim.org/pub/vim/unix/ \
-	ftp://ftp9.us.vim.org/pub/vim/unix/ \
 	ftp://vim.tsu.ru/pub/vim/unix/ \
 	ftp://ftp.vim.org/pub/vim/unix/
 .endif
