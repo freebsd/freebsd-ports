@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-HTML-FormFu
-# Date created:		2007-12-24
-# Whom:			Andrej Zverev <andrey.zverev@electro-com.ru>
-#
+# Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.09007
+PORTVERSION=	0.09010
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -49,9 +45,9 @@ BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPT
 		p5-YAML-LibYAML>=0.32:${PORTSDIR}/textproc/p5-YAML-LibYAML \
 		p5-libwww>=1.64:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
-		p5-Test-Aggregate>=0:${PORTSDIR}/devel/p5-Test-Aggregate
+		p5-Test-Aggregate>=0:${PORTSDIR}/devel/p5-Test-Aggregate \
+		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
