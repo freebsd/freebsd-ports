@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-quaternion
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
