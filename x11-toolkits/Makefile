@@ -186,7 +186,6 @@
     SUBDIR += pango-reference
     SUBDIR += pangomm
     SUBDIR += pangoxsl
-    SUBDIR += paragui
     SUBDIR += paragui-devel
     SUBDIR += phat
     SUBDIR += plib
