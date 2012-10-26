@@ -1,13 +1,9 @@
-# New ports collection makefile for: trac-wysiwyg
-# Date created:                      Jan 11 2008
-# Whom:                              Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-
-#
 
 PORTNAME=	wysiwyg
 DISTVERSION=	0.4.${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/brooks
@@ -18,17 +14,13 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	WYSIWYG editor for Trac wiki
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracWysiwyg
-PLIST_SUB+=	EGGVERSION=${EGGVERSION} PYTHONVERSION=${_PYTHON_VERSION}
-EGGVERSION=	0.12.${PORTVERSION:R}
-PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/TracWysiwyg-%%EGGVERSION%%-py%%PYTHONVERSION%%.egg
-PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_PKGVERSION=	0.12.${PORTVERSION:R}
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.pre.mk>
 
