@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libreoffice-ast
-# Date created:		2012-07-17
-# Whom:			Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 LO_I18N=	ast
 LO_HAS_HELPPACK=	yes

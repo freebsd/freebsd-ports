@@ -1,13 +1,8 @@
-# New ports collection makefile for:	libreoffice
-# Date created:		2010-12-06
-# Whom:			Bapt <bapt@FreeBSD.Org>
-#
 # $FreeBSD$
-#
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
