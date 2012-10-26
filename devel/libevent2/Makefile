@@ -8,7 +8,7 @@
 PORTNAME=	libevent2
 DISTVERSION=	2.0.20
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/downloads/libevent/libevent/
+MASTER_SITES=	http://cloud.github.com/downloads/libevent/libevent/
 DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}-stable
 
 MAINTAINER=	mm@FreeBSD.org
@@ -17,7 +17,6 @@ COMMENT=	API for executing callback functions on events or timeouts
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FETCH_ARGS=	-pRr
 USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
