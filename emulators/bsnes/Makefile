@@ -1,14 +1,10 @@
-# New ports collection makefile for:    bsnes
-# Date created:                         2009-06-13
-# Whom:                                 elbarto
-#
+# Created by: elbarto
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.88
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}-source
 
 MAINTAINER=	cyberbotx@cyberbotx.com
@@ -16,110 +12,119 @@ COMMENT=	Super Nintendo/Super Famicom emulator
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20
-USE_GCC=	4.6
+USE_GCC=	4.6+
+USE_PKGCONFIG=	build
 
 ONLY_FOR_ARCHS=	i386 amd64
-MAKE_ENV+=	c="${CC} -std=gnu99" cpp="${CXX} -std=gnu++0x" profile="performance"
-USE_LDCONFIG=	yes
+MAKE_ENV+=	c="${CC} -std=gnu99" cpp="${CXX} -std=gnu++0x"
 
-OPTIONS=	GUI_GTK "Build with GTK+ GUI" on \
-		GUI_QT4 "Build with QT4 GUI" off \
-		VIDEO_GLX "Build GLX Video Driver" on \
-		VIDEO_XV "Build Xv Video Driver" on \
-		VIDEO_SDL "Build SDL Video Driver" on \
-		SOUND_OPENAL "Build OpenAL Sound Driver" off \
-		SOUND_OSS "Build OSS Sound Driver" on \
-		SOUND_PULSE "Build Pulseaudio Sound Driver" off \
-		SOUND_AO "Build AO Sound Driver" off \
-		INPUT_X "Build X Input Driver" on \
-		INPUT_SDL "Build SDL Input Driver" on
+OPTIONS_SINGLE=		PROFILE GUI
+OPTIONS_SINGLE_PROFILE=	ACCURACY COMPATIBILITY PERFORMANCE
+OPTIONS_SINGLE_GUI=	GTK2 QT4
+OPTIONS_MULTI=		VIDEO SOUND INPUT
+OPTIONS_MULTI_VIDEO=	GLX SDL XV
+OPTIONS_MULTI_SOUND=	AO OPENAL OSS PULSEAUDIO
+OPTIONS_MULTI_INPUT=	INPUT_SDL INPUT_X
+OPTIONS_DEFAULT=	COMPATIBILITY GTK2 GLX XV SDL \
+			OSS INPUT_SDL INPUT_X
+
+ACCURACY_DESC=		Favor accuracy over compatibility
+COMPATIBILITY_DESC=	Favor compatibility over accuracy
+PERFORMANCE_DESC=	Favor performance over accuracy
+GTK2_DESC=		Build with GTK+2 GUI
+QT4_DESC=		Build with QT4 GUI
+GLX_DESC=		Build GLX video driver
+SDL_DESC=		Build SDL video driver
+XV_DESC=		Build Xv video driver
+AO_DESC=		Build AO sound driver
+OPENAL_DESC=		Build OpenAL sound driver
+OSS_DESC=		Build OSS sound driver
+PULSEAUDIO_DESC=	Build Pulseaudio sound driver
+INPUT_SDL_DESC=		Build SDL input driver
+INPUT_X_DESC=		Build X input driver
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI_GTK)
-MAKE_ENV+=	phoenix="gtk"
+.if ${PORT_OPTIONS:MACCURACY}
+MAKE_ENV+=	profile="accuracy"
+.elif ${PORT_OPTIONS:MCOMPATIBILITY}
+MAKE_ENV+=	profile="compatibility"
 .else
-USE_QT4=	corelib gui
+MAKE_ENV+=	profile="performance"
+.endif
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME+=	gtk20
+MAKE_ENV+=	phoenix="gtk"
+.endif
+
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4+=	gui moc_build
 MAKE_ENV+=	phoenix="qt"
 .endif
 
-.if defined(WITH_VIDEO_GLX)
+.if ${PORT_OPTIONS:MGLX}
 USE_GL+=	gl
 VIDEO_DRIVER+=	video.glx
 .endif
 
-.if defined(WITH_VIDEO_XV)
+.if ${PORT_OPTIONS:MXV}
 USE_XORG+=	xv
 VIDEO_DRIVER+=	video.xv
 .endif
 
-.if defined(WITH_VIDEO_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_XORG+=	xv
 USE_SDL+=	sdl
 VIDEO_DRIVER+=	video.sdl
 .endif
 
-.if defined(WITH_SOUND_OPENAL)
-USE_OPENAL=	al
+.if ${PORT_OPTIONS:MOPENAL}
+USE_OPENAL+=	al
 AUDIO_DRIVER+=	audio.openal
 .endif
 
-.if defined(WITH_SOUND_OSS)
+.if ${PORT_OPTIONS:MOSS}
 AUDIO_DRIVER+=	audio.oss
 .endif
 
-.if defined(WITH_SOUND_PULSE)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 AUDIO_DRIVER+=	audio.pulseaudio
 .endif
 
-.if defined(WITH_SOUND_AO)
-LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
+.if ${PORT_OPTIONS:MAO}
+LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 AUDIO_DRIVER+=	audio.ao
 .endif
 
-.if defined(WITH_INPUT_X)
+.if ${PORT_OPTIONS:MINPUT_X}
 INPUT_DRIVER+=	input.x
 .endif
 
-.if defined(WITH_INPUT_SDL)
+.if ${PORT_OPTIONS:MINPUT_SDL}
 USE_SDL+=	sdl
 INPUT_DRIVER+=	input.sdl
 .endif
 
-.if !defined(WITH_GUI_GTK) && !defined(WITH_GUI_QT4)
-IGNORE=	you have to choose a GUI
-.endif
-.if defined(WITH_GUI_GTK) && defined(WITH_GUI_QT4)
-IGNORE=	you may only choose one GUI
-.endif
-
-.if !defined(VIDEO_DRIVER)
-IGNORE=	you have to choose at least one video driver
-.endif
-
-.if !defined(AUDIO_DRIVER)
-IGNORE=	you have to choose at least one audio driver
-.endif
-
-.if !defined(INPUT_DRIVER)
-IGNORE=	you have to choose at least one input driver
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/bsnes/target-ui/Makefile
-	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/bsnes/target-ui/Makefile
-	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/bsnes/target-ui/Makefile
+	${REINPLACE_CMD} \
+		-e 's|%%VIDEO%%|${VIDEO_DRIVER}|' \
+		-e 's|%%AUDIO%%|${AUDIO_DRIVER}|' \
+		-e 's|%%INPUT%%|${INPUT_DRIVER}|' \
+		${WRKSRC}/bsnes/target-ethos/Makefile
 
 do-build:
-	(cd ${WRKSRC}/bsnes && ${GMAKE} ${MAKE_ENV})
-	(cd ${WRKSRC}/purify && ${GMAKE} ${MAKE_ENV})
+.for d in bsnes purify
+.if ${PORT_OPTIONS:MQT4}
+	cd ${WRKSRC}/${d}/phoenix/qt && ${MOC} -i -o platform.moc platform.moc.hpp
+.endif
+	cd ${WRKSRC}/${d} && ${GMAKE} ${MAKE_ENV}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsnes/out/bsnes ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/purify/purify ${PREFIX}/bin/snespurify
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/bsnes/data/bsnes.png ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/bsnes/data/bsnes.desktop ${PREFIX}/share/applications/
