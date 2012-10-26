@@ -1,16 +1,11 @@
-# New ports collection makefile for:	tw_cli
-# Date created:				02/12/2005
-# Whom:					Dmitry Frolov <frolov@riss-telecom.ru>
-#
+# Created by: Dmitry Frolov <frolov@riss-telecom.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tw_cli
 PORTVERSION=	9.5.4
 CATEGORIES=	sysutils
-MASTER_SITES=  ftp://tsupport:tsupport@ftp0.lsil.com/private/3Ware/downloads/
+MASTER_SITES=	ftp://tsupport:tsupport@ftp0.lsil.com/private/3Ware/downloads/
 DISTNAME=	cli_freebsd_10.2.1_9.5.4
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	3ware storage controllers management CLI
@@ -19,14 +14,15 @@ RESTRICTED=	Redistribution is not allowed
 # i386 binary should work on ia64, but not tested
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
+USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-BINSUFFIX=	${ARCH:S,i386,x86,:S,amd64,x86_64,:S,ia64,X86,}
+BINSUFFIX=	${ARCH:S,i386,x86,:S,amd64,x86_64,:S,ia64,x86,}
 SUB_FILES+=	407.status-3ware-raid
 PORTDOCS=	tw_cli.8.html
 MAN8+=		tw_cli.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINSUFFIX}/tw_cli ${PREFIX}/sbin/
@@ -36,9 +32,9 @@ do-install:
 		${PREFIX}/etc/periodic/daily/
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tw_cli.8.html ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
