@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  relay
-# Date created:			  Mon Dec 23, 1998
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien <obrien@NUXI.com>
 # $FreeBSD$
-#
 
 PORTNAME=	relay
 PORTVERSION=	1.10
@@ -16,6 +11,9 @@ DISTNAME=	relay
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP proxy server with telnet, ftp, finger client wrappers
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 IS_INTERACTIVE=	'must set server hostname in relay.h'
 

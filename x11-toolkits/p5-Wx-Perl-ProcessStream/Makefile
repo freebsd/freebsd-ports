@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to access IO of external processes via events
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 BUILD_DEPENDS=	p5-Wx>=0.50:${PORTSDIR}/x11-toolkits/p5-Wx
 RUN_DEPENDS=	p5-Wx>=0.50:${PORTSDIR}/x11-toolkits/p5-Wx
 

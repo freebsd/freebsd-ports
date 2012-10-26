@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Apples Bonjour for GNUstep
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2012-11-26
+
 LIB_DEPENDS=	dns_sd:${PORTSDIR}/net/mDNSResponder
 
 LICENSE_COMB=	dual

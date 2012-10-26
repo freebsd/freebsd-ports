@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nagios-check_ice
-# Date created:				2009-07-11
-# Whom:					steinex
-#
+# Created by: steinex
 # $FreeBSD$
 
 PORTNAME=	check_ice
@@ -12,6 +9,9 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to check a shoutcast or icecast server
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 do-build:
 	cd ${WRKSRC}; \

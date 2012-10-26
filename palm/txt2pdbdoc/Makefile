@@ -1,9 +1,5 @@
-# New ports collection makefile for:    txt2pdbdoc
-# Date created:         Mon Jan 8 2001
-# Whom:                 keichii@iteration.net
-#
+# Created by: keichii@iteration.net
 # $FreeBSD$
-#
 
 PORTNAME=	txt2pdbdoc
 PORTVERSION=	1.4.4
@@ -12,6 +8,9 @@ MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts plain text and HTML files to Palm Pilot Doc formats
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

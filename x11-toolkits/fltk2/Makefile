@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fltk2
-# Date created:				2006-03-26
-# Whom:					Thomas-Martin Seck <tmseck@netcologne.de>
-#
+# Created by: 	Thomas-Martin Seck <tmseck@netcologne.de>
 # $FreeBSD$
-#
 
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
@@ -15,6 +11,9 @@ DISTNAME=	fltk-2.0.x-alpha-${SNAPSHOT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Light Toolkit version 2 (development snapshot)
+
+DEPRECATED=	No more public distfiles for version 2
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	FLTK
 LICENSE_GROUPS=	GPL

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	fuser
-# Date created:				14 Marth 2006
-# Whom:					Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fuser
 PORTVERSION=	1142334561
@@ -13,6 +9,9 @@ MASTER_SITES=	http://mbsd.msk.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX fuser utility for FreeBSD
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_BZIP2=	yes
 

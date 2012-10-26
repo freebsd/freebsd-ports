@@ -12,6 +12,9 @@ COMMENT=	Network load monitor for X11
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 PATCH_STRIP=	-p1
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ascii2pdf
-# Date created:        20 January 2001
-# Whom:                petef@databits.net
-#
+# Created by: petef@databits.net
 # $FreeBSD$
-#
 
 PORTNAME=	ascii2pdf
 PORTVERSION= 	0.9.1
@@ -15,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl script to convert text files to PDF files
 
 RUN_DEPENDS=    p5-PDF-Create>=0:${PORTSDIR}/textproc/p5-PDF-Create
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 NO_BUILD=	yes
 USE_PERL5=	yes

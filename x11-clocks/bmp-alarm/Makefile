@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bmp-alarm
-# Date created:				2005-05-22
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	bmp-alarm
 PORTVERSION=	0.6.0
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alarm timer plugin for beep-media-player
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 

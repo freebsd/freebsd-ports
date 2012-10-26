@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-perl5
-# Date created:		7 January 1997
-# Whom:			Yoshiro MIHIRA
-#
+# Created by: Yoshiro MIHIRA
 # $FreeBSD$
-#
 
 PORTNAME=	perl
 PORTVERSION=	${JPERL_VER}.${JPERL_VER_PL}
@@ -39,6 +35,9 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
+
+DEPRECATED=	Recent perl supports correctly japanese, consider using them
+EXPIRATION_DATE=	2012-11-26
 
 .include <bsd.port.pre.mk>
 

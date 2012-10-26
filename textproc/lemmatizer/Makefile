@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lemmatizer
-# Date created:				26 May 2005
-# Whom:					Andrei V. Shetuhin
-#
+# Created by: Andrei V. Shetuhin
 # $FreeBSD$
-#
 
 PORTNAME=	lemmatizer
 PORTVERSION=	1.0
@@ -17,6 +13,9 @@ DISTFILES=	lemmatizer-1.0.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian / German / English lemmatizer library
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
