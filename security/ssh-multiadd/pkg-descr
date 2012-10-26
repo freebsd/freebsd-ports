@@ -6,5 +6,3 @@ file. It uses ssh-askpass if necessary. Unlike ssh-add, if any of
 the keys use the same passphrase, you will only need to enter each
 unique passphrase once, and keys that are already added will not
 be prompted for again.
-
-WWW: http://users.dakotacom.net/~donut/programs/index_s.html#ssh-multiadd
