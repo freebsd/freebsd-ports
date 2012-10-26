@@ -1,17 +1,11 @@
-# New ports collection makefile for:	annelid
-# Date created:				11 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	annelid
 PORTVERSION=	1
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://www.garthgillespie.com/annelid/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://www.garthgillespie.com/annelid/
 DISTFILES=	${PORTNAME}-src${EXTRACT_SUFX} \
 		${PORTNAME}-media${EXTRACT_SUFX}
 
