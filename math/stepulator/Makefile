@@ -1,9 +1,5 @@
-# New ports collection makefile for:    stepulator.app
-# Date created:         30 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	stepulator
 PORTVERSION=	1.0
@@ -16,6 +12,9 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific calculator implementing RPN notation for GNUstep
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

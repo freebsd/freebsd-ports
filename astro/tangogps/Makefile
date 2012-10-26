@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tangogps
-# Date created:				4 Marth 2009
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	tangogps
 PORTVERSION=	0.99.4
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.tangogps.org/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehencive GPS mapping application
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		exif.12:${PORTSDIR}/graphics/libexif \

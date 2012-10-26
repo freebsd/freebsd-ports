@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jpeg2pdf
-# Date created:		2005-01-22
-# Whom:			<ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	jpeg2pdf
 PORTVERSION=	0.12
@@ -12,6 +8,9 @@ MASTER_SITES=	http://koan.studentenweb.org/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts a directory of JPEG (JPG) files to a PDF file
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_BZIP2=	yes
 USE_RUBY=	yes

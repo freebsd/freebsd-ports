@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcl7.6jp
-# Date created:		11 March 1997
-# Whom:			taguchi@tohoku.iij.ad.jp
-#
+# Created by: taguchi@tohoku.iij.ad.jp
 # $FreeBSD$
-#
 
 PORTNAME=	tcl
 PORTVERSION=	7.6
@@ -16,6 +12,9 @@ PATCHFILES=	${PORTNAME}${PORTVERSION}jp-patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanized Tcl (Tool Command Language)
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_AUTOTOOLS=	autoconf213

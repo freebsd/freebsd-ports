@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jedit-devel
-# Date created:				02 Feb 2004
-# Whom:					Linh Pham <question+fbsdports@closedsrc.org>
-#
+# Created by: Linh Pham <question+fbsdports@closedsrc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jedit
 DISTVERSION=	4.3.p18
@@ -15,6 +11,9 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful programmer\'s text editor written in Java
+
+DEPRECATED=	Stable version is more recent than devel
+EXPIRATION_DATE=	2012-11-26
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

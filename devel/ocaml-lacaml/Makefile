@@ -1,10 +1,5 @@
-# New ports collection makefile for:	lacaml
-# Date created:		2006-08-15
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	lacaml
 PORTVERSION=	5.4.7
@@ -16,6 +11,9 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
 		lapack.4:${PORTSDIR}/math/lapack

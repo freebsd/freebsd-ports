@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-clay-core
-# Date created:				January 13, 2004
-# Whom:					mitsuru@riken.jp
-#
+# Created by: mitsuru@riken.jp
 # $FreeBSD$
-#
 
 PORTNAME=	clay
 PORTVERSION=	1.4.2
@@ -17,6 +13,9 @@ DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database design tool for the Eclipse development environment
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 

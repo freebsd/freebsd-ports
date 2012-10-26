@@ -1,9 +1,5 @@
-# New ports collection makefile for:	snooper
-# Date created:		4 May 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
+# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
 # $FreeBSD$
-#
 
 PORTNAME=	snooper
 PORTVERSION=	1999.12.02
@@ -14,6 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serial line protocol analyzer (need two serial interfaces)
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 

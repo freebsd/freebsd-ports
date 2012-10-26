@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPS and Moving-Map Applikation
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
 LICENSE=	GPLv2

@@ -12,6 +12,9 @@ DISTNAME=	GSBench-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for GNUstep
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes

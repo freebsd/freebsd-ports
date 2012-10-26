@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gcube
-# Date created:			16 Jun 2005
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gcube
 PORTVERSION=	0.4
@@ -14,6 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gamecube emulator
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 

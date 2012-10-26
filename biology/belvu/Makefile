@@ -12,6 +12,9 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for multiple sequence alignments
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 USE_LINUX=	yes
 
 NO_BUILD=	yes

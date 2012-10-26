@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	fastdep
-# Date created:			Oct 30, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	fastdep
 PORTVERSION=	0.16
@@ -13,6 +8,9 @@ MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast dependency generator for C/C++ files
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

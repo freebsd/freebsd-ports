@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sqldjbdns
-# Date created:		1 Sep 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	sqldjbdns
 PORTVERSION=	0.74
@@ -13,6 +9,9 @@ MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJB DNS server with PostgreSQL backend
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 DJ_PORT?=	${PORTSDIR}/dns/djbdns
 BUILD_DEPENDS=	${NONEXISTENT}:${DJ_PORT}:extract

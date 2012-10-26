@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	ale
-# Date created:			Dec 17, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ale
 PORTVERSION=	0.8.11.2
@@ -14,6 +9,9 @@ MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 OPTIONS_DEFINE=	DOUBLE FFTW3 MAGICK
 OPTIONS_DEFAULT=	FFTW3 MAGICK

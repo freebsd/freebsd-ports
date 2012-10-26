@@ -10,6 +10,9 @@ DISTNAME=	digibux_${PORTVERSION}+CVS20060118.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reader for editions of Digitale Bibliothek
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    volumecontrol.app
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	volumecontrol
 PORTVERSION=	0.5
@@ -14,6 +10,9 @@ MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/volumecontrol/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer for GNUstep
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	GPLv2
 

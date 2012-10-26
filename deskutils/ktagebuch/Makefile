@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ktagebuch
-# Date created:			Mon Nov 17 15:37:28 CET 2003
-# Whom:				Markus Brueffer <brueffer@phoenix-systems.de>
-#
+# Created by: Markus Brueffer <brueffer@phoenix-systems.de>
 # $FreeBSD$
 
 PORTNAME=		ktagebuch
@@ -12,6 +9,9 @@ MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A diary program for KDE 3
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=		sqlite3:${PORTSDIR}/databases/sqlite3
 

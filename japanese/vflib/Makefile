@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vflib + FreeType
-# Date created:		10 May 1996
-# Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
-#
+# Created by: Mita Yoshio <mita@jp.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vflib
 PORTVERSION=	2.25.6
@@ -14,6 +10,9 @@ DISTNAME=	VFlib2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Vector font library
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-29
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 RUN_DEPENDS=	${LOCALBASE}/share/font-sazanami/sazanami-mincho.ttf:${PORTSDIR}/japanese/font-sazanami

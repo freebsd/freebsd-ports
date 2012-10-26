@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jetpack
-# Date created:         21 September 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	jetpack
 PORTVERSION=	1.0
@@ -15,6 +11,9 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade action game for X11
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext

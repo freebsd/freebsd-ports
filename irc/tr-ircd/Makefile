@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tr-ircd
-# Date created:         Sat May 4 15:54:47 CET 2002
-# Whom:                 Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tr-ircd
 PORTVERSION=	5.7.3
@@ -14,6 +10,9 @@ DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC daemon based on Bahamut and hybrid-7
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

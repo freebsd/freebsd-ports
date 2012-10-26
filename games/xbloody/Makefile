@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Knife on X
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xt sm ice
