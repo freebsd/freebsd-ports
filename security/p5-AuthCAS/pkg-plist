@@ -1,3 +1,4 @@
 %%SITE_PERL%%/AuthCAS.pm
+%%SITE_PERL%%/sampleCasClient.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AuthCAS/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AuthCAS
