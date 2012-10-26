@@ -2484,7 +2484,6 @@
 %%DEMO%%%%T%%/sample/webservices/EbayServer/src/ebay/server/Main.java
 %%T%%/src.zip
 @exec	mkdir -p %D/%%T%%/jre/lib/applet
-@exec	mkdir -p %D/share/doc/java
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
 %%DEMO%%@dirrm %%T%%/sample/webservices/EbayServer/src/ebay/server
 %%DEMO%%@dirrm %%T%%/sample/webservices/EbayServer/src/ebay

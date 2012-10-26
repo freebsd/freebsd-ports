@@ -4705,9 +4705,7 @@
 @exec	mkdir -p %D/%%T%%/db/demo/programs/localcal/lib
 @exec	mkdir -p %D/%%T%%/jre/lib/applet
 @exec	mkdir -p %D/%%T%%/lib/visualvm/platform/docs
-@exec	mkdir -p %D/share/doc/java
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
-@dirrmtry share/doc/java
 %%DEMO%%@dirrm %%T%%/sample/webservices/EbayServer/src/ebay/server
 %%DEMO%%@dirrm %%T%%/sample/webservices/EbayServer/src/ebay
 %%DEMO%%@dirrm %%T%%/sample/webservices/EbayServer/src
