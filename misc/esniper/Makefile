@@ -1,19 +1,16 @@
-# New ports collection makefile for:	esniper
-# Date created:		10 April 2005
-# Whom:			Lewis Thompson <lewiz@compsoc.man.ac.uk>
-#
+# Created by: Lewis Thompson <lewiz@compsoc.man.ac.uk>
 # $FreeBSD$
 
 PORTNAME=	esniper
-DISTVERSION=	2-27-0
+DISTVERSION=	2-28-0
 CATEGORIES=	misc net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ag-freebsd@muc.de
-COMMENT=	A lightweight console application for sniping ebay auctions
+COMMENT=	Lightweight console application for sniping ebay auctions
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-curl-config=${LOCALBASE}/bin/curl-config
@@ -25,14 +22,12 @@ PLIST_FILES=	bin/esniper
 
 PORTEXAMPLES=	sample_auction.txt sample_config.txt
 
-post-patch:
-	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/http.c
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample_auction.txt ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample_config.txt ${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
