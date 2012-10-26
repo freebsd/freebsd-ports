@@ -3,7 +3,7 @@
 
 PORTNAME=	dzip
 PORTVERSION=	2.9
-CATEGORIES=	archivers
+CATEGORIES=	archivers games
 MASTER_SITES=	http://speeddemosarchive.com/dzip/
 DISTNAME=	dz${PORTVERSION:S/.//g}src
 
