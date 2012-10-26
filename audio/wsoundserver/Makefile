@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wsoundserver
-# Date created:		9 December 1998
-# Whom:			gljohns@bellsouth.net
-#
+# Created by: gljohns@bellsouth.net
 # $FreeBSD$
-#
 
 PORTNAME=	wsoundserver
 PORTVERSION=	0.4.0
@@ -14,6 +10,9 @@ DISTNAME=	WSoundServer-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The sound server for Window Maker
+
+DEPRECATED=	Depends on deprecated libdockapp
+EXPIRATION_DATE=	2012-11-26
 
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
