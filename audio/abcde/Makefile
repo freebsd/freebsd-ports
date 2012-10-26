@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abcde
-# Date created:			July 29, 2002
-# Whom:				Munish Chopra <mchopra@engmail.uwaterloo.ca>
-#
+# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	abcde
 PORTVERSION=	2.4.2
@@ -28,7 +24,7 @@ MAN1=		abcde.1 cddb-tool.1
 
 PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf.sample
 
-OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT GOGO FLAC MPP NORMALIZE REPLAYGAIN SPEEX
+OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT FLAC MPP NORMALIZE REPLAYGAIN SPEEX
 
 EJECT_DESC?=	Enable auto-eject support
 NORMALIZE_DESC?=	Enable normalize support
@@ -58,10 +54,6 @@ RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
 
 .if ${PORT_OPTIONS:MSPEEX}
 RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
-.endif
-
-.if ${PORT_OPTIONS:MGOGO}
-RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
 .if ${PORT_OPTIONS:MAAC}
