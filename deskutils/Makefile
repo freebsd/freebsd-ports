@@ -78,7 +78,6 @@
     SUBDIR += gnotime
     SUBDIR += gnustep-notebook
     SUBDIR += gnustep-wrapper
-    SUBDIR += gnuwash
     SUBDIR += google-gadgets
     SUBDIR += gourmet
     SUBDIR += griffith
