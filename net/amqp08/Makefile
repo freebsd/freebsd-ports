@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amqp08
-# Date Created:				2009-07-05
-# Whom:					Bruce Simpson
-#
+# Created by: Bruce Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	amqp08
 PORTVERSION=	20090705
@@ -12,6 +8,9 @@ MASTER_SITES=	http://www.amqp.org/confluence/download/attachments/720900/
 DISTNAME=	amqp0-8.xml
 EXTRACT_SUFX=
 DIST_SUBDIR=	amqp
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-29
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vendor neutral AMQP 0.8 XML specification

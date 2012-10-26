@@ -1,10 +1,6 @@
-# New ports collection makefile for:	kaffeine-mozilla
-# Date created:				2004-05-25
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 #   $MCom: ports-stable/multimedia/kaffeine-mozilla/Makefile,v 1.1 2008/08/01 23:13:21 mezz Exp $
-#
 
 PORTNAME=	kaffeine-mozilla
 PORTVERSION=	0.2
@@ -14,6 +10,9 @@ MASTER_SITES=	SF/kaffeine/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaffeine Mozilla plugin
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 RUN_DEPENDS=	kaffeine>=0:${PORTSDIR}/multimedia/kaffeine
 

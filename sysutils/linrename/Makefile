@@ -12,6 +12,9 @@ MASTER_SITES=	http://mirror.linux.org.au/pub/linux/utils/util-linux/ \
 MASTER_SITE_SUBDIR=	linux/utils/util-linux
 DISTNAME=	util-linux-${PORTVERSION}
 
+DEPRECATED=	No more public distfile
+EXPIRATION_DATE=	2012-11-26
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using substitution
 

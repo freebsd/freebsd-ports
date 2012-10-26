@@ -12,6 +12,9 @@ DISTNAME=	GSCommander-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep simple unix command monitor
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2012-11-26
+
 LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes

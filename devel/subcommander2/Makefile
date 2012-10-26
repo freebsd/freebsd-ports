@@ -1,9 +1,5 @@
-# New ports collection makefile for:	subcommander2
-# Date created:				6 August 2008
-# Whom:					Naram Qashat
-#
+# Created by: Naram Qashat
 # $FreeBSD$
-#
 
 PORTNAME=	subcommander
 PORTVERSION=	2.0.0.b5
@@ -14,6 +10,9 @@ DISTNAME=	Subcommander-${PORTVERSION:S/.b/b/g}p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based multiplatform subversion client, diff & merge tool
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	neon:${PORTSDIR}/www/neon29 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \

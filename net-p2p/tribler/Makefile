@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tribler
-# Date created:				2007-04-10
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	tribler
 PORTVERSION=	5.5.24
@@ -18,6 +14,9 @@ EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}-1ubuntu1_all.deb
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Streaming capable P2P network client based on BitTorrent
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi

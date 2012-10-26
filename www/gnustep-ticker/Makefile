@@ -15,6 +15,9 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS monitor for RSS and Atom feeds
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2012-11-26
+
 LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes

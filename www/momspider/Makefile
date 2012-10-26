@@ -1,9 +1,5 @@
-# New ports collection makefile for: dict
-# Date created:         11 October 1997
-# Whom:                 wosch
-#
+# Created by:                 wosch
 # $FreeBSD$
-#
 
 PORTNAME=	momspider
 PORTVERSION=	1.00
@@ -14,6 +10,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW Spider for multi-owner maintenance
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 NO_BUILD=	yes
 momdir=		${PREFIX}/momspider

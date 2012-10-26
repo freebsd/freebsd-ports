@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libicq
-# Date Created:			22 Oct 1998
-# Whom:				Seiichirou Hiraoka
-#
+# Created by: Seiichirou Hiraoka
 # $FreeBSD$
-#
 
 PORTNAME=	libicq
 PORTVERSION=	0.33
@@ -12,6 +8,9 @@ CATEGORIES=	japanese net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.korsoft.com/pub/gicq/
 MASTER_SITE_SUBDIR=	flathill
+
+DEPRECATED=	No more public distfiles and development ceased
+EXPIRATION_DATE=	2012-11-26
 
 PATCH_SITES=	${MASTER_SITE_LOCAL} \
 		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/

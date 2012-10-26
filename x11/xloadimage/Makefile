@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xloadimage
-# Date created:         9 January 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	xloadimage
 PORTVERSION=	4.1.17
@@ -23,6 +19,9 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 LICENSE=	MIT
+
+DEPRECATED=	Debian patches no more availables
+EXPIRATION_DATE=	2012-11-26
 
 CONFLICTS_INSTALL=	xli-*
 

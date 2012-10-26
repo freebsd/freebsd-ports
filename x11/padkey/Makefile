@@ -1,9 +1,5 @@
-# New ports collection makefile for:	padkey
-# Date created:			19 Dec 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	padkey
 PORTVERSION=	0.2
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.liquidx.org/padkey/releases/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use an authentic SNES controller to play games
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_XORG=	x11 xtst
 

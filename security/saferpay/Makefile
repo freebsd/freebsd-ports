@@ -1,9 +1,5 @@
-# New ports collection makefile for:	saferpay
-# Date created:		06 September 2001
-# Whom:			mb@imp.ch
-#
+# Created by: mb@imp.ch
 # $FreeBSD$
-#
 
 PORTNAME=	saferpay
 PORTVERSION=	1.3.0
@@ -14,6 +10,9 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}_linux-g++_src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line tool for online payment
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 MAKEFILE=	${WRKSRC}/saferpay/Makefile
 

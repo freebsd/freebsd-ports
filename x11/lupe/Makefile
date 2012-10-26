@@ -10,6 +10,9 @@ DISTNAME=	lupe008c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time magnifying glass for X11
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 WRKSRC=		${WRKDIR}/lupe
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
