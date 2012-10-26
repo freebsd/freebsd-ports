@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121025:
+  AFFECTS: users of net/activemq
+  AUTHOR: tj@FreeBSD.org
+
+  After reinstalling the port if you wish to use the datastore used before
+  or have any undelivered persistant messages add the following to rc.conf
+    activemq_data=/usr/local/activemq
+
 20121022:
   AFFECTS: users of net/samba36
   AUTHOR: timur@FreeBSD.org

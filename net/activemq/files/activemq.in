@@ -35,9 +35,11 @@ load_rc_config $name
 
 # Set defaults
 : ${activemq_enable:=NO}
-: ${activemq_user:=${name}}
-: ${activemq_group:=${name}}
+: ${activemq_user:=%%MQUSER%%}
+: ${activemq_group:=%%MQGROUP%%}
 : ${activemq_classpath:=%%ETCDIR%%}
+: ${activemq_conf:=%%ETCDIR%%}
+: ${activemq_data:=%%MQDB%%}
 : ${activemq_home:=%%DATADIR%%}
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
 : ${activemq_stop_timeout:="10"}
@@ -48,6 +50,8 @@ required_files="%%ETCDIR%%/activemq.xml"
 jar_file="%%DATADIR%%/bin/run.jar"
 java_options=" 	-server -jar ${activemq_javargs} \
 		-Dactivemq.classpath=${activemq_classpath} \
+		-Dactivemq.conf=${activemq_conf} \
+		-Dactivemq.data=${activemq_data} \
 		-Dactivemq.home=${activemq_home} \
 		-Dactivemq.base=${activemq_home}"
 
