@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libreoffice-i18n
-# Date created:		2012-03-01
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 .include "${.CURDIR}/../libreoffice/Makefile.common"
 UNIQUENAME=   ${PORTNAME}${PKGNAMESUFFIX}
@@ -61,5 +56,22 @@ RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 
 do-install:
 	@${DO_NADA}
+
+all-lang-list:
+.for lang in ${LO_LANG_ALL}
+	@${ECHO} ${lang}
+.endfor
+
+all-help-list:
+.for lang in ${LO_LANG_ALL}
+	@${EGREP} -q '^[:blank:]*LO_HAS_HELPPACK[:blank:]*=' \
+	    ${.CURDIR}/../../${${lang}_PORT}/Makefile && ${ECHO} "${lang}" \
+	    || true
+.endfor
+
+all-makesum:
+.for lang in ${LO_LANG_ALL}
+	@cd ${.CURDIR}/../../${${lang}_PORT} && ${MAKE} makesum
+.endfor
 
 .include <bsd.port.mk>
