@@ -242,7 +242,6 @@
     SUBDIR += strigi
     SUBDIR += sugarcrm
     SUBDIR += superkaramba
-    SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
     SUBDIR += surrealtodo
     SUBDIR += systempreferences
