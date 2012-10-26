@@ -8,11 +8,11 @@ include/flowd/flowd-pytypes.h
 include/flowd/store-v2.h
 include/flowd/store.h
 lib/libflowd.a
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Flowd.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Flowd.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.bs
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.so
 sbin/flowd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.tools
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flowinsert.pl
@@ -27,5 +27,5 @@ sbin/flowd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wormsuspects.pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/flowrrd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd
 @dirrm include/flowd
