@@ -8,5 +8,3 @@ advantage of telling the daemon to stop flooding without stopping
 the daemon, allowing you to take a little more time in tracking down
 where they are, and more importantly, how they got there in the first
 place.
-
-WWW: http://razor.bindview.com/tools/ZombieZapper_form.shtml
