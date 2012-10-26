@@ -1652,7 +1652,11 @@ PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 .if defined(WITH_PKGNG)
 .if !defined(PKG_DEPENDS)
 .if !defined(CLEAN_FETCH_ENV)
+.if defined(WITH_PKG_DEVEL)
+PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg-devel
+.else
 PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
+.endif
 .endif
 .endif
 .endif

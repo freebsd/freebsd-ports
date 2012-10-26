@@ -1,7 +1,4 @@
-# New ports collection makefile for:	grip
-# Date created:				31 May 2000
-# Whom:					kbyanc@posi.net
-#
+# Created by: kbyanc@posi.net
 # $FreeBSD$
 #    $MCom: ports/audio/grip/Makefile,v 1.4 2007/05/19 21:35:57 marcus Exp $
 
@@ -24,7 +21,7 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	CDPARANOIA CDDA2WAV LAME VORBIS FAAC FLAC GOGO
+OPTIONS_DEFINE=	CDPARANOIA CDDA2WAV LAME VORBIS FAAC FLAC
 OPTIONS_DEFAULT=	CDPARANOIA VORBIS
 
 .if !defined(PACKAGE_BUILDING)
@@ -56,10 +53,6 @@ RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 
 .if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-
-.if ${PORT_OPTIONS:MGOGO}
-RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
 .if ${PORT_OPTIONS:MLAME}

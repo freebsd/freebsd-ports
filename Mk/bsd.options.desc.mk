@@ -106,7 +106,6 @@ GNOMEVFS2_DESC?=	GnomeVFS2 (virtual file system)
 GNUPG_DESC?=		GNU Privacy Guard
 GNUPLOT_DESC?=		Plotting via gnuplot
 GNUTLS_DESC?=		SSL/TLS via GnuTLS
-GOGO_DESC?=		GOGO MP3 audio encoder
 GOPHER_DESC?=		Gopher support
 GPERFTOOLS_DESC?=	Google gperftools
 GPHOTO_DESC?=		Digital cameras via libgphoto2

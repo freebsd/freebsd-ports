@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pacpl
-# Date created:		21 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pacpl
 PORTVERSION=	4.0.5
@@ -19,7 +15,7 @@ USE_PERL5_RUN=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	BONK CDPARANOIA CDDB FAAC FAAD FFMPEG FLAC FLACTAG GOGO \
+OPTIONS_DEFINE=	BONK CDPARANOIA CDDB FAAC FAAD FFMPEG FLAC FLACTAG \
 		LAME LAUDIO SNDFILE LPAC APE APETAG MP3TAG MP4TAG \
 		MPP  MPLAYER OPTIMFROG VORBIS VORBISTAG SHORTEN \
 		SOX SPEEX TOOLAME TTA WAVPACK WMATAG KDE4 AMAROK NORELANGS \
@@ -108,10 +104,6 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 
 .if ${PORT_OPTIONS:MFLACTAG}
 RUN_DEPENDS+=	p5-Audio-FLAC-Header>0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
-.endif
-
-.if ${PORT_OPTIONS:MGOGO}
-RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
