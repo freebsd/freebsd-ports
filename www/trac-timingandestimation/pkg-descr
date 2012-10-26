@@ -3,4 +3,4 @@ tracking to Trac.  This basically adds CustomFields and CustomReports
 and an interface for filling the dynamic variables for the report
 (requires Javascript).
 
-WWW:    http://trac-hacks.org/wiki/TimingAndEstimationPlugin
+WWW: http://trac-hacks.org/wiki/TimingAndEstimationPlugin
