@@ -5,7 +5,7 @@ PORTVERSION=	1.0.0a.11.0
 DISTVERSION=	1.0.Alpha11.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.MeTA1.org/download/.alpha/rainy/
-PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
@@ -26,11 +26,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 MAKE_ENV+=	META1CONFDIR="${META1CONFDIR}"
+MAN5=		meta1.conf.5
 MAN8=		createmap.8 fsperf1.8 mailq.8 mcp.8 milter-spamd.8 \
-		milter-regex.8 qmgr.8 qmgrctl.8 runas.8 meta1.8 smar.8 \
-		smtpc.8 smtps.8
-MLINKS=		sendmailx.conf.5 meta1.conf.5 \
-		sendmailx.8 sendmailX.8
+		milter-regex.8 qmgr.8 qmgrctl.8 runas.8 meta1.8 \
+		smar.8 smtpc.8 smtps.8
 PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
 		img1.png img2.png img3.png img4.png img5.png img6.png \
 		nx_grp_g.png overview1.eps overview1.gif overview1.pdf \
