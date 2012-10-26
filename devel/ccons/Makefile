@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccons
-PORTVERSION=	r235
+PORTVERSION=	r236
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -38,7 +38,7 @@ MAN1=	ccons.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900044
-BROKEN=	ccons don\'t work on FreeBSD < 9.0-RELEASE
+BROKEN=	ccons does not work on FreeBSD < 9.0-RELEASE
 .endif
 
 do-install:
