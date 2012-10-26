@@ -1,0 +1,103 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Mon Apr 17 05:40:03 2000
++++ Makefile	Sat Aug  3 02:33:28 2002
+@@ -10,23 +10,23 @@
+ BUILD    = \
+ 
+ LIB_DIRS = \
+-    -L/usr/local/lib -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/dt/lib
++    -L${LOCALBASE}/lib
+ LIBS     = \
+-    `gtk-config --libs` -lgdbm -lgdk_imlib
+-CFLAGS   = \
+-    -O -g -D_GNU_SOURCE $(DEVFLAGS)
++    `${IMLIB_CONFIG} --libs-gdk` -lgdbm
++CFLAGS   += \
++    -D_GNU_SOURCE $(DEVFLAGS)
+ #CFLAGS   = \
+ #    -O -g -W -Wall -Wno-unused  -pedantic -pedantic-errors -ansi -D_GNU_SOURCE
+-OPTFLAGS   = \
+-    -O6 -mpentium -mcpu=pentium -march=pentium -ffast-math -D_GNU_SOURCE
++#OPTFLAGS   = \
++#    -O6 -mpentium -mcpu=pentium -march=pentium -ffast-math -D_GNU_SOURCE
+ INCLUDES = \
+-    `gtk-config --cflags` -I..
++    `${IMLIB_CONFIG} --cflags-gdk` -I..
+ 
+ BIN      = e16menuedit
+ 
+ # configurable stuff
+-BINARY_DESTINATION = /usr/local/enlightenment/bin
+-DATA_DESTINATION   = /usr/local/enlightenment/share
++BINARY_DESTINATION = ${PREFIX}/bin
++DATA_DESTINATION   = ${PREFIX}/share
+ 
+ # commands to do things
+ INSTALL  = install
+@@ -39,7 +39,7 @@
+ MAKE     = make
+ STRIP    = strip
+ SED      = sed
+-MAKEDEP  = gcc -MM $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES)
++MAKEDEP  = ${CC} -MM $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES)
+ #MAKEDEP = makedepend -f- -s'\# CUT' -- -Y $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES) --
+ 
+ # piece together variables
+--- viewer.c.orig	2000-04-16 22:40:03.000000000 +0200
++++ viewer.c	2008-01-11 18:08:53.000000000 +0100
+@@ -34,7 +34,7 @@
+   if (!file_to_load)
+     return;
+   if (file_to_load[0] != '/')
+-    sprintf (buf, "%s/.enlightenment/%s", homedir (getuid ()), file_to_load);
++    sprintf (buf, "%s/.e16/menus/%s", homedir (getuid ()), file_to_load);
+   else
+     sprintf (buf, "%s", file_to_load);
+ 
+@@ -108,7 +108,7 @@
+   GtkCTreeNode *parent = NULL;
+ 
+   /* currently hardcoded, but not a big issue to change later */
+-  sprintf (buf, "%s/.enlightenment/file.menu", homedir (getuid ()));
++  sprintf (buf, "%s/.e16/menus/file.menu", homedir (getuid ()));
+   menufile = fopen (buf, "r");
+   if (!menufile)
+     {
+@@ -564,7 +564,7 @@
+   gint retval = 0;
+ 
+   buf =
+-    g_strjoin ("/", homedir (getuid ()), ".enlightenment", "file.menu", NULL);
++    g_strjoin ("/", homedir (getuid ()), ".e16/menus", "file.menu", NULL);
+ 
+   node =
+     gtk_ctree_export_to_gnode (GTK_CTREE (ctree), NULL, NULL,
+@@ -683,7 +683,7 @@
+     {
+       /* Tarnation! A relative path */
+       realfile =
+-	g_strjoin ("/", homedir (getuid ()), ".enlightenment", file, NULL);
++	g_strjoin ("/", homedir (getuid ()), ".e16/menus", file, NULL);
+     }
+   else
+     realfile = g_strdup (file);
+@@ -717,7 +717,7 @@
+   if (G_NODE_IS_LEAF (node))
+     {
+       /* It's an entry */
+-      fprintf (fp, "\"%s\"\t%s\texec\t\"%s\"\n",
++      fprintf (fp, "\"%s\"\t\"%s\"\texec\t\"%s\"\n",
+ 	       dat->desc[0] == '\0' ? "NULL" : dat->desc,
+ 	       dat->icon[0] == '\0' ? "NULL" : dat->icon,
+ 	       dat->params[0] == '\0' ? "" : dat->params);
+@@ -725,7 +725,7 @@
+   else
+     {
+       /* It's a submenu */
+-      fprintf (fp, "\"%s\"\t%s\tmenu\t\"%s\"\n",
++      fprintf (fp, "\"%s\"\t\"%s\"\tmenu\t\"%s\"\n",
+ 	       dat->desc[0] == '\0' ? "NULL" : dat->desc,
+ 	       dat->icon[0] == '\0' ? "NULL" : dat->icon,
+ 	       dat->params[0] == '\0' ? "" : dat->params);

@@ -29,6 +29,7 @@
     SUBDIR += devilspie
     SUBDIR += dwm
     SUBDIR += e16
+    SUBDIR += e16utils
     SUBDIR += e17-module-alarm
     SUBDIR += e17-module-calendar
     SUBDIR += e17-module-comp-scale
