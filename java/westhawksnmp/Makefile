@@ -1,9 +1,5 @@
-# New ports collection makefile for:	westhawksnmp
-# Date created:				2004-10-25
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	westhawksnmp
 PORTVERSION=	5.1
@@ -14,6 +10,9 @@ DISTNAME=	${PORTNAME:S/westhawk//}${PORTVERSION:S/./_/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight SNMP stack for Java
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_JAVA=	yes
 USE_ZIP=	yes

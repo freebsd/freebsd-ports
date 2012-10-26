@@ -1,9 +1,5 @@
-# New ports collection makefile for:    stepbill
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	stepbill
 PORTVERSION=	2.4
@@ -14,6 +10,9 @@ MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/stepbill/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Get rid of those nasty Wingdows viruses
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	GPLv2
 

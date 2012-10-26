@@ -1,9 +1,5 @@
-# New ports collection makefile for:    golddig
-# Date created:         20 November 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	golddig
 PORTVERSION=	2.0

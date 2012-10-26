@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kmquake2
-# Date created:				19 May 2005
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	kmquake2
 PORTVERSION=	0.19
@@ -23,6 +19,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Quake2 OpenGL only engine with Lazarus support
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-29
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 

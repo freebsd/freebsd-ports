@@ -1,9 +1,5 @@
-# Ports collection makefile for:        xxl
-# Date created:                         28 Aug 2003
-# Whom:                                 Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-#
+# Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
 # $FreeBSD$
-#
 
 PORTNAME=	xxl
 PORTVERSION=	1.0.1
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.zork.org/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

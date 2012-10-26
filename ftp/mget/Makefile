@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	mget
-# Date created:			Sep 21, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mget
 PORTVERSION=	1.4.2
@@ -13,6 +8,9 @@ MASTER_SITES=	http://cs-people.bu.edu/dbera/projects/mget/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded commandline web-download manager
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_CSTD=	gnu89
 

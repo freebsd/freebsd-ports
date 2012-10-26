@@ -1,9 +1,5 @@
-# New ports collection makefile for: id3ren
-# Date created:         28 February 1999
-# Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-#
+# Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 # $FreeBSD$
-#
 
 PORTNAME=	id3ren
 PORTVERSION=	1.1b0
@@ -13,6 +9,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mpeg Audio Layer 3 util: rename files, edit tags, search, etc
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 PLIST_FILES=	bin/id3ren
 MAN1=		id3ren.1

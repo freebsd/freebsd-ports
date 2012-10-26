@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PHP module for SQL Relay
-# Date created:		2 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
@@ -15,6 +11,9 @@ DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP modules to access to SQL Relay
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}

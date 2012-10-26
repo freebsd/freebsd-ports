@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drawing program for X11 (Alpha version)
 
+DEPRECATED=	Stable version is more recent than devel version
+EXPIRATION_DATE=	2012-11-26
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d

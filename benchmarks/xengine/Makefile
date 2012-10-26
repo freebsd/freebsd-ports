@@ -13,6 +13,9 @@ PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reciprocating engine for X
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 
 DIST_SUBDIR=	xengine

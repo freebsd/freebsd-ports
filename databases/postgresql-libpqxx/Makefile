@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL Pgaccess
-# Date created:		December 1st, 2002
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libpqxx
 PORTVERSION=	4.0
@@ -14,6 +10,9 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A new C++ interface for PostgreSQL
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 CONFLICTS=	postgresql-libpqxx-3.*
 PORTSCOUT=	limit:^2\.

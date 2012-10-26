@@ -1,10 +1,5 @@
-# New ports collection makefile for:	pomap
-# Date created:		2006-08-15
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pomap
 PORTVERSION=	2.9.8
@@ -16,6 +11,9 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library to maintain a list of partially ordered elements
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

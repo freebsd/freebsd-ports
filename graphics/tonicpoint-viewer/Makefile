@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tonicpoint-viewer
-# Date created:		2007-02-06
-# Whom:			ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	viewer
 PORTVERSION=	1.4
@@ -17,6 +13,9 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerPoint presentations viewer
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 NO_CDROM=	free for non-commercial use
 

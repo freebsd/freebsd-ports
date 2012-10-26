@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-diveintopython
-# Date created:		15 March 2001
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	diveintopython
 PORTVERSION=	5.4
@@ -24,6 +20,9 @@ EXTRACT_ONLY=	${DISTNAME}-html-${VERSIONSTR}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Python tutorial book that is "not For Dummies(tm)"
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 NO_BUILD=	YES
 USE_ZIP=	YES

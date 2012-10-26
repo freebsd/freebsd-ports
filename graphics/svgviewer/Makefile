@@ -10,6 +10,9 @@ DISTNAME=	SVGViewer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SVG Viewer for GNUstep
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 LIB_DEPENDS+=	svg.1:${PORTSDIR}/graphics/libsvg
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	aifad
-# Date created:		2006-08-15
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	aifad
 PORTVERSION=	1.0.27
@@ -14,6 +9,9 @@ MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		${SA_DIR}/res/res.a:${PORTSDIR}/devel/ocaml-res \

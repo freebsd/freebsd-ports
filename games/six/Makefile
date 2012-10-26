@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	six
-# Date created: 			2003-0-1-26
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	six
@@ -12,6 +9,9 @@ MASTER_SITES=	http://six.retes.hu/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE HEX clone
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool

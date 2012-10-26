@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmountains
-# Date created:		16 November 1996
-# Whom:			proff@iq.org
-#
+# Created by: proff@iq.org
 # $FreeBSD$
-#
 
 PORTNAME=	xmountains
 PORTVERSION=	2.9
@@ -13,6 +9,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based fractal landscape generator
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 NO_WRKSUBDIR=	yes
 

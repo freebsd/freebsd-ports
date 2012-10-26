@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irchat-jp
-# Date Created:		8 Aug 2007
-# Whom:			Makoto Matsushita <matusita@FreeBSD.org>
-#
+# Created by: Makoto Matsushita <matusita@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	irchat-jp
 PORTVERSION=	26.d
@@ -17,6 +13,9 @@ DISTFILES=	${DISTNAME}.tgz:master,backup
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC client for Emacs, derived from irchat
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc
 

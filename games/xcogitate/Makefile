@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xcogitate
-# Date created:				15 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xcogitate
 PORTVERSION=	1.02
@@ -14,6 +10,9 @@ MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A logic game with board and stones
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 PLIST_FILES=	bin/xcogitate
 USE_XORG=	xpm

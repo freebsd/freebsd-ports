@@ -1,6 +1,4 @@
-# New ports collection makefile for:	hunt
-# Date created:				2001-02-20
-# Whom:					bdluevel@heitec.net
+# Created by: bdluevel@heitec.net
 #
 # $FreeBSD$
 
@@ -11,6 +9,9 @@ MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like multiplayer game
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	BSD
 

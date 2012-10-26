@@ -14,6 +14,9 @@ DIST_SUBDIR=	repacked/2007-02-15
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep a2ps/gs frontend
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
+
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
 
 LICENSE=	GPLv2

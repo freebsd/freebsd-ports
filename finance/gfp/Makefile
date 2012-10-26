@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gfp
-# Date created:		Ter  6 Mar 2007 03:51:58 UTC
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gfp
 PORTVERSION=	0.7.2
@@ -14,6 +10,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal finances administration software
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_ZIP=	yes
 USE_JAVA=	yes

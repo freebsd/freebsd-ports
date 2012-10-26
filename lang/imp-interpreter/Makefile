@@ -1,8 +1,4 @@
-# New ports collection makefile for:	imp-interpreter
-# Date created:		2006-08-15
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
 #
 
@@ -14,6 +10,9 @@ MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monadic interpreter of a simple imperative language
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

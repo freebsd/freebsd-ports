@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xquarto
-# Date created:				9 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xquarto
 PORTVERSION=	1.0
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.math.lsa.umich.edu/~mattiasj/games/xquarto/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of simple but tricky board game
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 USE_IMAKE=	yes
 USE_XORG=	xaw

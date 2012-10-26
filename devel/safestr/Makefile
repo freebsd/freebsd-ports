@@ -1,9 +1,5 @@
-# Ports collection makefile for:        safestr
-# Date created:                         28 Aug 2003
-# Whom:                                 Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-#
+# Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
 # $FreeBSD$
-#
 
 PORTNAME=	safestr
 PORTVERSION=	1.0.3
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.zork.org/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A string handling library for C
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-11-26
 
 LIB_DEPENDS=	xxl.2:${PORTSDIR}/devel/xxl:install
 
