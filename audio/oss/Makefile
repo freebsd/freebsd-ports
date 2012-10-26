@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oss
-# Date created:		2007-06-14
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oss
 DISTVERSION=	4.2-build2007
@@ -54,7 +50,7 @@ PROTO_SBINDIR=	${PROTO_DIR}/usr/sbin
 PROTO_MANDIR=	${PROTO_DIR}/usr/share/man
 PROTO_OSSLIBDIR=${PROTO_DIR}${PREFIX}/lib/oss
 
-CONFIGURE_ENV=	HOSTCC="${CC}"
+CONFIGURE_ENV=	CC="${CC}" HOSTCC="${CC}"
 
 OPTIONS_DEFINE=	VORBIS
 OPTIONS_DEFAULT=VORBIS
