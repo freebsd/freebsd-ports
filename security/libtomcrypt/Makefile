@@ -11,6 +11,8 @@ DISTNAME=	crypt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
+BROKEN=		incomplete plist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
