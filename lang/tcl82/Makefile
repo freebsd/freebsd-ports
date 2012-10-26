@@ -1,4 +1,4 @@
-# Created by:i jkh
+# Created by: jkh
 # $FreeBSD$
 
 PORTNAME=	tcl
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool Command Language
 
 PORTSCOUT=	limit:^8\.2\.
