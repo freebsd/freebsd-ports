@@ -1,11 +1,8 @@
-# New ports collection makefile for:    fusefs-libs
-# Date created:         01 October 2005
-# Whom:                 Anish Mistry
+# Created by: Anish Mistry
 # $FreeBSD$
-#
 
 PORTNAME=	fusefs
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/fuse/fuse-2.X/${PORTVERSION}
 PKGNAMESUFFIX=	-libs
