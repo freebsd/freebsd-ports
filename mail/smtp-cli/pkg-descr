@@ -7,4 +7,4 @@ images. The MIME-Type of the attachments can either be guessed
 automatically or alternatively set on the command line, separately
 for each attachment if required.
 
-WWW:	http://www.logix.cz/michal/devel/smtp-cli/
+WWW: http://www.logix.cz/michal/devel/smtp-cli/
