@@ -9,3 +9,12 @@
  	}
  
        if (strcmp (line, "project") == 0)
+@@ -913,7 +913,7 @@
+   if (config_phpmake)
+      fprintf (f, "<?php require getenv(\"PHPMAKE_LIBPATH\") . \"library.php\"; phpmake_makefile_top_rules(); ?>\n");
+ 
+-  fprintf (f, "CC=%s\n", conf.ccomp);
++  fprintf (f, "CC=%s\n", targetcc);
+   // fprintf (f, "LD=ld\n");
+   fprintf (f, "HOSTCC=%s\n", hostcc);
+   fprintf (f, "CPLUSPLUS=%s\n", conf.cplusplus);
