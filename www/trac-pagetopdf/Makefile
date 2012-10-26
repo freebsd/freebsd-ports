@@ -1,13 +1,9 @@
-# New ports collection makefile for: trac-pagetopdf
-# Date created:                      December 28 2006
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pagetopdf
 PORTVERSION=	0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
@@ -18,16 +14,11 @@ COMMENT=	Export trac wiki pages as PDFs
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		htmldoc:${PORTSDIR}/textproc/htmldoc
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	2.5+
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
-PYDISTUTILS_NOEGGINFO=	yes
-
-do-build:
-	@${DO_NADA}
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
+WRKSRC=			${WRKDIR}/${PORTNAME}plugin
+PYDISTUTILS_PKGNAME=	TracPageToPDF
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
