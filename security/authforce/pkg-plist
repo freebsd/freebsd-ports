@@ -1,8 +1,0 @@
-bin/authforce
-%%DATADIR%%/blank.lst
-%%DATADIR%%/dummy.lst
-%%DATADIR%%/password.lst
-%%DATADIR%%/username.lst
-%%DATADIR%%/userpass.lst
-share/locale/nl/LC_MESSAGES/authforce.mo
-@dirrm %%DATADIR%%
