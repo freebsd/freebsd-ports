@@ -51,6 +51,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b0f3ab1f-1f3b-11e2-8fe9-0022156e8794">
+    <topic>Exim -- remote code execution</topic>
+    <affects>
+      <package>
+        <name>exim</name>
+        <range><ge>4.70</ge><lt>4.80.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This vulnerability affects Exim instances built with DKIM
+        enabled (this is the default for FreeBSD Exim port) and running
+        verification of DKIM signatures on the incoming mail
+        messages.</p>
+        <p>Phil Penncock reports:</p>
+        <blockquote cite="https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html">
+          <p>This is a SECURITY release, addressing a CRITICAL remote
+            code execution flaw in versions of Exim between 4.70 and
+            4.80 inclusive, when built with DKIM support (the default).</p>
+          <p>This security vulnerability can be exploited by anyone
+            who can send email from a domain for which they control the
+            DNS.</p>
+          <p>You are not vulnerable if you built Exim with DISABLE_DKIM
+            or if you put this at the start of an ACL plumbed into
+            acl_smtp_connect or acl_smtp_rcpt:</p>
+          <pre>warn control = dkim_disable_verify</pre>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5671</cvename>
+      <url>https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html</url>
+    </references>
+    <dates>
+      <discovery>2012-10-25</discovery>
+      <entry>2012-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f326d75-1db9-11e2-bc8f-d0df9acfd7e5">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
