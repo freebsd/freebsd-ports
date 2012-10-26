@@ -8,7 +8,9 @@ CATEGORIES=	archivers games
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utility for manipulating of Quake PAK files
+COMMENT=	Utility for manipulating of Quake packed data files
+
+LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	danfe
