@@ -281,9 +281,6 @@
     SUBDIR += vtkfox
     SUBDIR += wmapp
     SUBDIR += wxd
-    SUBDIR += wxgtk24
-    SUBDIR += wxgtk24-contrib
-    SUBDIR += wxgtk24-docs
     SUBDIR += wxgtk26
     SUBDIR += wxgtk26-common
     SUBDIR += wxgtk26-contrib

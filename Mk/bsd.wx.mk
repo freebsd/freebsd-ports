@@ -131,7 +131,7 @@ _WX_Definitions_Done=	yes
 
 _WX_COMPS_ALL=			wx contrib python svg
 _WX_DEP_TYPES_ALL=		build lib run
-_WX_VERS_ALL=			2.4 2.6 2.8 2.9
+_WX_VERS_ALL=			2.6 2.8 2.9
 _WX_VERS_UC_ALL=		2.6 2.8 2.9
 _WX_VERS_SKIP=			2.9
 _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
@@ -144,16 +144,6 @@ _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 # _WX_FILE_comp_ver		- File installed by that component.
 # _WX_DEPTYPE_comp_ver	- Default dependency type (optional).
 #
-
-# wxgtk 2.4
-_WX_PORT_wx_2.4=		x11-toolkits/wxgtk24
-_WX_LIB_wx_2.4=			wx_gtk2-2.4
-
-_WX_PORT_contrib_2.4=	x11-toolkits/wxgtk24-contrib
-_WX_LIB_contrib_2.4=	wx_gtk2_canvas-2.4
-
-_WX_PORT_python_2.4=	x11-toolkits/py-wxPython24
-_WX_FILE_python_2.4=	${PYTHON_SITELIBDIR}/wx/__init__.py
 
 # wxgtk 2.6
 _WX_PORT_wx_2.6=		x11-toolkits/wxgtk26${_WX_UCL}
