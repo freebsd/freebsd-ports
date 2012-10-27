@@ -3832,3 +3832,4 @@ audio/gogo||2012-10-26|No more public distfiles
 deskutils/superkaramba-lwp||2012-10-26|Has expired: No more public_distfiles
 x11-toolkits/paragui||2012-10-26|Has expired: No more upstream, no ports depending on it
 deskutils/gnuwash||2012-10-26|Has expired: No more public distfiles
+devel/p5-Class-MOP||2012-10-27|Has expired: distribution has been merged with devel/p5-Moose
