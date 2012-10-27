@@ -1,8 +1,10 @@
 bin/gns3
 libexec/gns3/qemuwrapper.py
+libexec/gns3/tcp_pipe_proxy.py
 libexec/gns3/vboxcontroller_4_1.py
 libexec/gns3/vboxwrapper.py
 %%EXAMPLESDIR%%/baseconfig.txt
+%%EXAMPLESDIR%%/baseconfig_sw.txt
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.py
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.pyo
@@ -79,6 +81,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynamips_lib.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynamips_lib.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynamips_lib.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Dynagen/portTracker_lib.py
+%%PYTHON_SITELIBDIR%%/GNS3/Dynagen/portTracker_lib.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Dynagen/portTracker_lib.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/qemu_lib.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/qemu_lib.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/qemu_lib.pyo
@@ -162,6 +167,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Link/Ethernet.py
 %%PYTHON_SITELIBDIR%%/GNS3/Link/Ethernet.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Link/Ethernet.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Link/PipeCapture.py
+%%PYTHON_SITELIBDIR%%/GNS3/Link/PipeCapture.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Link/PipeCapture.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Link/Serial.py
 %%PYTHON_SITELIBDIR%%/GNS3/Link/Serial.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Link/Serial.pyo
