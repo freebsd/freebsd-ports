@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Test::TCP
-# Date created:		20 Feb 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-TCP
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
