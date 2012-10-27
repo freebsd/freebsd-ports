@@ -94,6 +94,7 @@
     SUBDIR += checkmate
     SUBDIR += cheesetracker
     SUBDIR += chordpack
+    SUBDIR += chromaprint
     SUBDIR += clementine-player
     SUBDIR += clunk
     SUBDIR += cmp3
