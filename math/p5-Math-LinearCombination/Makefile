@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math::LinearCombination
-# Date created:		5 Nov 2001
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-LinearCombination
 PORTVERSION=	0.03
@@ -13,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sum of variables with a numerical coefficient
+
+DEPRECATED=	Depends on the expired p5-Class-Field
+EXPIRATION_DATE=	2012-11-27
 
 BUILD_DEPENDS=	p5-Class-Fields>=0:${PORTSDIR}/devel/p5-Class-Fields \
 		p5-Math-SimpleVariable>=0:${PORTSDIR}/math/p5-Math-SimpleVariable
