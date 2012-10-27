@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gns3
-# Date created:		24 may 2009
-# Whom:			Olivier Cochard-Labbe <olivier@cochard.me>
-#
+# Created by:			Olivier Cochard-Labbe <olivier@cochard.me>
 # $FreeBSD$
-#
 
 PORTNAME=	gns3
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gns-3/GNS3/${PORTVERSION}
 DISTNAME=	GNS3-${PORTVERSION}-src
@@ -16,7 +11,6 @@ MAINTAINER=	olivier@cochard.me
 COMMENT=	Graphical Cisco network simulator
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	qemu:${PORTSDIR}/emulators/qemu
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -29,6 +23,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	GNS3
+
+DESKTOP_ENTRIES=	"GNS3" "${COMMENT}" "" "${PORTNAME}" "System;Emulator" "true"
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
