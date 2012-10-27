@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SPOPS
-# Date created:		17 Dec 2001
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SPOPS
 PORTVERSION=	0.87
@@ -15,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Perl Object Persistence with Security
+
+DEPRECATED=	Depend on the expired p5-Class-Fields
+EXPIRATION_DATE=	2012-11-27
 
 BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
 		p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
