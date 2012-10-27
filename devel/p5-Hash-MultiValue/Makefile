@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Hash::MultiValue
-# Date created:		11 Mar 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-MultiValue
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
