@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=		squeak
-PORTVERSION=		4.4.7
-PORTREVISION=		3
+PORTVERSION=		4.10.2
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/:vmsrc \
 			http://ftp.squeak.org/${IMAGEVERSION}/:src \
 			ftp://squeak.org/4.1/:sqsrc \
 			http://squeak.610t.org/patches/:mainsrc
-DISTFILES=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:mainsrc \
+DISTFILES=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:vmsrc \
 			Squeak${IMAGEVERSION}.zip:src \
 			${SQUEAK_SRC}.gz:sqsrc
 EXTRACT_ONLY=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
@@ -24,16 +23,18 @@ LICENSE_COMB=		multi
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
 BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip \
-			cmake:${PORTSDIR}/devel/cmake
+			cmake:${PORTSDIR}/devel/cmake \
+			${LOCALBASE}/include/libv4l2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
 			ffi:${PORTSDIR}/devel/libffi \
 			asound:${PORTSDIR}/audio/alsa-lib \
 			pulse-simple:${PORTSDIR}/audio/pulseaudio \
-			gstreamer:${PORTSDIR}/multimedia/gstreamer
+			gstreamer:${PORTSDIR}/multimedia/gstreamer \
+			v4l2:${PORTSDIR}/multimedia/libv4l
 
 ##################################################
 VM_VERSION=		${PORTVERSION}.${SVNVERSION}
-SVNVERSION=		2383
+SVNVERSION=		2602
 IMAGEVERSION=		4.3
 SQUEAK_SRC=		SqueakV41.sources
 SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
@@ -91,7 +92,7 @@ pre-configure:
 
 ##################################################
 post-install:
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${GUNZIP_CMD} ${SQUEAK_SRC}.gz && ${INSTALL_DATA} ${SQUEAK_SRC} ${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/)
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC}.gz > ${WRKDIR}/${SQUEAK_SRC} && ${INSTALL_DATA} ${WRKDIR}/${SQUEAK_SRC} ${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}.zip -d ${WRKDIR})
 .for f in ${IMAGES}
 	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
