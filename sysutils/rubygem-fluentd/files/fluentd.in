@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: fluentd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fluentd_enable (bool):	Set to NO by default.
+# 		  		Set it to YES to enable fluentd.
+# fluentd_config (path):	Set to %%PREFIX%%/etc/doormand/doormand.cf
+# 		  		by default.
+# fluentd_db_dir (path):	Set DB dir (default: "/var/db/fluentd")
+
+. /etc/rc.subr
+
+name=fluentd
+rcvar=fluentd_enable
+extra_commands="init"
+
+load_rc_config $name
+
+: ${fluentd_enable:="NO"}
+: ${fluentd_config="%%PREFIX%%/etc/fluentd/fluent.conf"}
+: ${fluentd_dir="%%PREFIX%%/etc/fluentd"}
+: ${fluentd_user="%%USER%%"}
+: ${fluentd_group="%%GROUP%%"}
+
+init_cmd="init_fluentd_dir"
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}/${name}.pid
+
+command_args="-d $pidfile -c $fluentd_config"
+
+init_fluentd_dir()
+{
+    # XXX: Using sudo for now.  fluentd user have /nonexistent as
+    # $HOME, and nologin as shell.
+    install -d -o ${fluentd_user} -g ${fluentd_group} -m 775 ${fluentd_dir}
+    %%PREFIX%%/bin/sudo -u fluentd ${command} --setup ${fluentd_dir}
+}
+
+run_rc_command "$1"
