@@ -2,6 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://files.roorback.net/
 
@@ -10,9 +11,10 @@ COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg-011 \
-		png15:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	ffmpeg-011:${PORTSDIR}/multimedia/ffmpeg-011
+RUN_DEPENDS=	ffmpeg-011:${PORTSDIR}/multimedia/ffmpeg-011
 
 USE_XZ=		yes
 USE_GMAKE=	yes
@@ -101,8 +103,10 @@ USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-translation --language=all \
 			--extra-libs-mplayer=-lintl
 MANLANG=		"" cs de es fr hu it pl ru zh_CN
+PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-translation --language=en
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 #On i386, gcc runs out of general purpose registers when
