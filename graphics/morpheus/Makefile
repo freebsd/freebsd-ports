@@ -1,9 +1,5 @@
-# New ports collection makefile for:	morpheus
-# Date created:				14 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	morpheus
 PORTVERSION=	0.3
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mesh (3D model) viewer for GNOME desktop
+
+DEPRECATED=	Depends on the expired gtkglarea
+EXPIRATION_DATE=	2012-11-27
 
 LIB_DEPENDS=	morph.0:${PORTSDIR}/graphics/libmorph \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
