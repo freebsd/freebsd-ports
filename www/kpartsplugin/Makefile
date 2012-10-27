@@ -1,12 +1,8 @@
-# New ports collection Makefile for:	kpartsplugin
-# Date created:				9 July 2012
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kpartsplugin
 DISTVERSION=	0.0-${PORTDATE}
+PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTDATE}
@@ -24,6 +20,7 @@ MAKE_JOBS_SAFE=	yes
 PORTDATE=	20120723
 
 USE_WEBPLUGINS=	native
+WEBPLUGINS_NAME=	# empty
 WEBPLUGINS_FILES=	lib${PORTNAME}.so
 
 .include <bsd.port.pre.mk>
