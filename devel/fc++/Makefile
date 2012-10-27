@@ -14,6 +14,8 @@ OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${PREFIX}/include/fc++
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/fc++
