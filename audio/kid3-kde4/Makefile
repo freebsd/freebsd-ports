@@ -1,13 +1,7 @@
-# New ports collection makefile for:   kid3
-# Date created:                2006-08-02
-# Whom:                        Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kid3
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -19,8 +13,7 @@ LICENSE=	GPLv2
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USE_QT4=	svg gui network dbus xml \
-		qmake_build moc_build rcc_build uic_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 # libchromaprint has not been ported yet
 CMAKE_ARGS=	-DWITH_CHROMAPRINT=off
@@ -39,39 +32,39 @@ TAGLIB_DESC=	Support for various audio formats
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLAC}
-CMAKE_ARGS+=	-DWITH_FLAC=OFF
-.else
 CMAKE_ARGS+=	-DWITH_FLAC=ON
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.else
+CMAKE_ARGS+=	-DWITH_FLAC=OFF
 .endif
 
 .if ${PORT_OPTIONS:MID3LIB}
-CMAKE_ARGS+=	-DWITH_ID3LIB=OFF
-.else
 CMAKE_ARGS+=	-DWITH_ID3LIB=ON
 LIB_DEPENDS+=	id3-3.8.3:${PORTSDIR}/audio/id3lib
+.else
+CMAKE_ARGS+=	-DWITH_ID3LIB=OFF
 .endif
 
 .if ${PORT_OPTIONS:MMP4V2}
-CMAKE_ARGS+=	-DWITH_MP4V2=OFF
-.else
 CMAKE_ARGS+=	-DWITH_MP4V2=ON
 LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
+.else
+CMAKE_ARGS+=	-DWITH_MP4V2=OFF
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-CMAKE_ARGS+=	-DWITH_VORBIS=OFF
-.else
 CMAKE_ARGS+=	-DWITH_VORBIS=ON
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
+.else
+CMAKE_ARGS+=	-DWITH_VORBIS=OFF
 .endif
 
 .if ${PORT_OPTIONS:MTAGLIB}
-CMAKE_ARGS+=	-DWITH_TAGLIB=OFF
-.else
 CMAKE_ARGS+=	-DWITH_TAGLIB=ON
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
+.else
+CMAKE_ARGS+=	-DWITH_TAGLIB=OFF
 .endif
 
 pre-configure:
