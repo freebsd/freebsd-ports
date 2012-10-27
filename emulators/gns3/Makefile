@@ -1,4 +1,4 @@
-# Created by:			Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
 # $FreeBSD$
 
 PORTNAME=	gns3
