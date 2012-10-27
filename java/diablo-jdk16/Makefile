@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diablo-jdk16
-# Date created:		July 26 2008
-# Whom:			Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${RELEASE_VERSION}.${BUILD_VERSION}
@@ -17,6 +13,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_VERSION}_${RELEASE_VERSION}.${BUILD_VERSION}
+
+DEPRECATED=	Outdated, consider using openjdk6 or openjdk7
+EXPIRATION_DATE=	2012-11-27
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
