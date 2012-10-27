@@ -1,17 +1,12 @@
-# New ports collection makefile for:	CHI
-# Date created:		02 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	CHI
-PORTVERSION=	0.550
+PORTVERSION=	0.560
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JSWARTZ
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.55
+DISTNAME=	${PORTNAME}-0.56
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
