@@ -13,16 +13,16 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	mingw32-
-DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
-BINUTILVERSION=	2.22
+BINUTILVERSION=	2.23
 
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
