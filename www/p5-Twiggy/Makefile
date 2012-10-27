@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Twiggy
-# Date created:		05 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Twiggy
-PORTVERSION=	0.1020
+PORTVERSION=	0.1021
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
