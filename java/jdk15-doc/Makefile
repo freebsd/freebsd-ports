@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jdk15-doc
-# Date created:		April 16, 2004
-# Whom:			Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION:S/_/./g}
@@ -14,6 +10,9 @@ DISTNAME=	jdk-1_5_0-doc
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
+
+DEPRECATED=	EOLed upstream since october 2009
+EXPIRATION_DATE=	2012-11-27
 
 LATEST_LINK=	jdk${JDK_CONCAT_VER}-doc
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}

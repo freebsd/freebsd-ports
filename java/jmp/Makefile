@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jmp
-# Date created:        11 January 2003
-# Whom:                Ronald Klop <ronald@cs.vu.nl>
-#
+# Created by: Ronald Klop <ronald@cs.vu.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	jmp
 PORTVERSION=	0.51
@@ -14,6 +10,9 @@ MASTER_SITES=	http://www.khelekore.org/jmp/ \
 
 MAINTAINER=	ronald@echteman.nl
 COMMENT=	Java Memory Profiler
+
+DEPRECATED=	Java 1.5 is EOLed
+EXPIRATION_DATE=	2012-11-27
 
 OPTIONS=	X11 "Enable X11 support" on
 OPTIONS+=	DEBUG "Enable extra debug output" off

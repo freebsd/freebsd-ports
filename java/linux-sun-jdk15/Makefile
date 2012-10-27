@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sun Linux JDK 1.5.x
-# Date created:				24 December 2001
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${DL_JDK_VERSION:S/_/./g}
@@ -17,6 +13,9 @@ EXTRACT_SUFX=	.bin
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.5 for Linux
+
+DEPRECATED=	EOLed upstream since october 2009
+EXPIRATION_DATE=	2012-11-27
 
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper

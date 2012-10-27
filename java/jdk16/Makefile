@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jdk16
-# Date created:				17 June 2007
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
@@ -17,6 +13,9 @@ EXTRACT_ONLY=	${JRL_SRCFILE} ${JRL_BINFILE} ${JRL_MOZFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.6.0
+
+DEPRECATED=	Outdated, consider using openjdk6 or openjdk7
+EXPIRATION_DATE=	2012-11-27
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \

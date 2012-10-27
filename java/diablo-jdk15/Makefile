@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diablo-jdk15
-# Date created:		February 26 2006
-# Whom:			Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${RELEASE_VERSION}.${BUILD_VERSION}
@@ -16,6 +12,9 @@ EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_VERSION}_${RELEASE_VERSION}.${BUILD_VERSION}
+
+DEPRECATED=	EOLed upstream since october 2009
+EXPIRATION_DATE=	2012-11-27
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
