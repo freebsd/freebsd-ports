@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Data::Util
-# Date created:		23 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Util
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
