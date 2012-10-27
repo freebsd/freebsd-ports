@@ -26,6 +26,7 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/i18n/mythmusic_sv.qm
 %%MYTHSHARE%%/music_settings.xml
 %%MYTHSHARE%%/musicmenu.xml
+%%MYTHSHARE%%/mythmusic/streams.xml
 %%MYTHSHARE%%/themes/default-wide/mm-titlelines.png
 %%MYTHSHARE%%/themes/default-wide/mm_blackhole_border.png
 %%MYTHSHARE%%/themes/default-wide/mm_volume_background.png
@@ -34,6 +35,7 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/themes/default-wide/music-sel-bg.png
 %%MYTHSHARE%%/themes/default-wide/music-ui.xml
 %%MYTHSHARE%%/themes/default-wide/musicsettings-ui.xml
+%%MYTHSHARE%%/themes/default-wide/stream-ui.xml
 %%MYTHSHARE%%/themes/default/ff_button_off.png
 %%MYTHSHARE%%/themes/default/ff_button_on.png
 %%MYTHSHARE%%/themes/default/ff_button_pushed.png
@@ -49,6 +51,7 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/themes/default/mm_compartists.png
 %%MYTHSHARE%%/themes/default/mm_compilations.png
 %%MYTHSHARE%%/themes/default/mm_descending.png
+%%MYTHSHARE%%/themes/default/mm_directory.png
 %%MYTHSHARE%%/themes/default/mm_down_arrow.png
 %%MYTHSHARE%%/themes/default/mm_folder.png
 %%MYTHSHARE%%/themes/default/mm_genres.png
@@ -117,4 +120,6 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/themes/default/stop_button_on.png
 %%MYTHSHARE%%/themes/default/stop_button_pushed.png
 %%MYTHSHARE%%/themes/default/track_info_background.png
+@dirrmtry lib/pkgconfig
 @dirrmtry lib/mythtv/plugins
+@dirrm %%MYTHSHARE%%/mythmusic

@@ -1,12 +1,8 @@
-#
-# Ports collection makefile for:        mythtv-frontend
-# Date created:                         14 September 2008
-# Whom:                                 Bernhard Fröhlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.25.2
+PORTVERSION=	0.26.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -17,7 +13,8 @@ DISTNAME=	mythtv-${PORTVERSION}
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
+		yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
 
@@ -52,35 +49,40 @@ QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 DESKTOP_ENTRIES="MythTV Frontend" "MythTV is a homebrew PVR project" "" \
 		"mythfrontend" "AudioVideo;Video;" false
 
-OPTIONS=	JACK		"JACK sound driver" off \
-		OPENGL		"OpenGL support" on \
-		PULSEAUDIO	"PulseAudio audio output support" off \
-		VDPAU		"VDPAU support (nvidia only)" off
+OPTIONS_DEFINE=	OPENGL JACK PULSEAUDIO VDPAU
+OPTIONS_DEFAULT=	OPENGL
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JACK)
+# for too old binutils in base
+.if ${OSVERSION} < 900033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--enable-audio-jack
 .else
 CONFIGURE_ARGS+=	--disable-audio-jack
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_QT4+=	opengl
 CONFIGURE_ARGS+=	--enable-opengl-video
 .else
 CONFIGURE_ARGS+=	--disable-opengl-video
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--enable-audio-pulseoutput
 .else
 CONFIGURE_ARGS+=	--disable-audio-pulseoutput
 .endif
 
-.if defined(WITH_VDPAU)
+.if ${PORT_OPTIONS:MVDPAU}
 LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else

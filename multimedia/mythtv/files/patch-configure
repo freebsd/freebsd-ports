@@ -1,11 +1,19 @@
---- configure.orig	2012-03-19 06:39:10.000000000 +0100
-+++ configure	2012-03-21 23:40:37.060067228 +0100
-@@ -734,21 +734,21 @@
+--- configure.orig	2012-10-02 12:30:24.000000000 +0200
++++ configure	2012-10-03 19:27:16.773415414 +0200
+@@ -731,21 +731,21 @@
      log check_cc "$@"
      cat > $TMPC
      log_file $TMPC
 -    check_cmd $cc $CPPFLAGS $CFLAGS "$@" -c -o $TMPO $TMPC
 +    check_cmd $cc $CPPFLAGS $CFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPC
+ }
+ 
+ check_cxx(){
+     log check_cxx "$@"
+     cat > $TMPCPP
+     log_file $TMPCPP
+-    check_cmd $cxx $CPPFLAGS $CXXFLAGS "$@" -c -o $TMPO $TMPCPP
++    check_cmd $cxx $CPPFLAGS $CXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCPP
  }
  
  check_cpp(){
@@ -16,16 +24,8 @@
 +    check_cmd $cc $CPPFLAGS $CFLAGS -I${prefix}/include "$@" -E -o $TMPO $TMPC
  }
  
- check_cxx(){
-     log check_cxx "$@"
-     cat > $TMPCXX
-     log_file $TMPCXX
--    check_cmd $cxx $CXXPPFLAGS $ECXXFLAGS "$@" -c -o $TMPO $TMPCXX
-+    check_cmd $cxx $CXXPPFLAGS $ECXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCXX
- }
- 
  check_as(){
-@@ -1942,7 +1942,7 @@
+@@ -2152,7 +2152,7 @@
  
  # machine
  arch_default=$(uname -m)
@@ -34,8 +34,8 @@
  processor=`uname -p 2>/dev/null`
  processor_flags=""
  tune="generic"
-@@ -2920,7 +2920,7 @@
-         i686|pentiumpro|pentium[23]|pentium-m|athlon|athlon-tbird|athlon-4|athlon-[mx]p|athlon64|k8|opteron|athlon-fx|k8-sse3|opteron-sse3|athlon64-sse3|core2|amdfam10|barcelona|atom)
+@@ -3185,7 +3185,7 @@
+         i686|pentiumpro|pentium[23]|pentium-m|athlon|athlon-tbird|athlon-4|athlon-[mx]p|athlon64*|k8*|opteron*|athlon-fx|core2|amdfam10|barcelona|atom)
              cpuflags="-march=$cpu"
              enable cmov
 -            enable fast_cmov
@@ -43,15 +43,15 @@
          ;;
          # targets that do support conditional mov but on which it's slow
          pentium4|pentium4m|prescott|nocona)
-@@ -3120,7 +3120,6 @@
-         enable malloc_aligned
+@@ -3401,7 +3401,6 @@
+         append CCONFIG "freebsd"
          # Workaround compile errors from missing u_int/uint def
          CPPFLAGS=`echo $CPPFLAGS | sed 's/-D_POSIX_C_SOURCE=200112//'`
 -        disable ivtv
          enable backend
          ;;
      bsd/os)
-@@ -4962,6 +4961,8 @@
+@@ -5427,6 +5426,8 @@
  QMAKE_LIBDIR_QT-=${sysroot}${libdir}
  QMAKE_LIBDIR-=${sysroot}${libdir}
  LATE_LIBS+=-L${sysroot}${libdir}
@@ -60,7 +60,7 @@
  EOF
  
  #echo "endif # FFMPEG_CONFIG_MAK" >> $TMPMAK
-@@ -5012,7 +5013,7 @@
+@@ -5477,7 +5478,7 @@
  BINDIR=\$(INSTALL_ROOT)$bindir
  DATADIR=\$(INSTALL_ROOT)$datadir
  MANDIR=\$(INSTALL_ROOT)$mandir

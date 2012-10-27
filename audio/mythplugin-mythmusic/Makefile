@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mythplugin-mythmusic
-# Date created:		2010-03-07
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	mythmusic
-PORTVERSION=	0.25.2
+PORTVERSION=	0.26.0
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
