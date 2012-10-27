@@ -1,13 +1,8 @@
-# New ports collection makefile for: mingw2-binutils
-# Date created:		24 Oct 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
