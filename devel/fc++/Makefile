@@ -1,27 +1,25 @@
-# ex:ts=8
-# New ports collection makefile for:	fc++
-# Date created:			Oct 10, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	fc++
 PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cc.gatech.edu/~yannis/fc++/
-DISTNAME=	FC++.${PORTVERSION}
+MASTER_SITES=	http://people.cs.umass.edu/~yannis/fc++/
+DISTNAME=	${PORTNAME:U}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional Programming in C++
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
+OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/fc++
-	${CP} ${WRKSRC}/*.h ${PREFIX}/include/fc++
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/fc++
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/changes.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
