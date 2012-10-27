@@ -1,12 +1,7 @@
-# New ports collection makefile for:	rubygem-fluentd
-# Date created:		10 Jul 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fluentd
-PORTVERSION=	0.10.25
+PORTVERSION=	0.10.27
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -23,13 +18,22 @@ RUN_DEPENDS=	\
 USE_RUBY=	yes
 #RUBY_VER=	1.9	# Please set RUBY_DEFAULT_VER=1.9 in /etc/make.conf
 USE_RUBYGEMS=	yes
-PLIST_FILES=	bin/fluent-cat bin/fluent-gem bin/fluentd
+PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
+		"@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 775 /var/run/fluentd" \
+		"@unexec ${RMDIR} /var/run/fluentd 2>/dev/null || true"
 RUBYGEM_AUTOPLIST=	yes
+USE_RC_SUBR=	fluentd
+USERS=		fluentd
+GROUPS=		fluentd
+SUB_LIST+=	USER=${USERS} GROUP=${GROUPS}
 
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == "1.8"
 IGNORE=		requires Ruby 1.9, please install this first
 .endif
+
+post-install:
+	${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 775 /var/run/fluentd
 
 .include <bsd.port.post.mk>
