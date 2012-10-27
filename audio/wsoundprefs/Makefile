@@ -1,9 +1,5 @@
-# New ports collection makefile for:	WSoundPrefs
-# Date created:		12 December 1998
-# Whom:			gljohns@bellsouth.net
-#
+# Created by: gljohns@bellsouth.net
 # $FreeBSD$
-#
 
 PORTNAME=	wsoundprefs
 PORTVERSION=	1.1.1
@@ -14,6 +10,9 @@ DISTNAME=	WSoundPrefs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for configuring sounds to play for Window Maker events
+
+DEPRECATED=	Depends on the deprecated audio/wsoundserver and expired x11-toolkits/libdockapp
+EXPIRATION_DATE=	2012-11-27
 
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
