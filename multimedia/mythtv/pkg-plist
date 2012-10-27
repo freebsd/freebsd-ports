@@ -8,6 +8,7 @@ bin/mythfilldatabase
 bin/mythfrontend
 bin/mythjobqueue
 bin/mythlcdserver
+bin/mythlogserver
 bin/mythmediaserver
 bin/mythmetadatalookup
 bin/mythpreviewgen
@@ -19,10 +20,20 @@ bin/mythtv-setup
 bin/mythutil
 bin/mythwelcome
 %%BINDINGS%%bin/mythwikiscripts
+include/mythtv/QJson/Parser
+include/mythtv/QJson/QObjectHelper
+include/mythtv/QJson/Serializer
+include/mythtv/QJson/parser.h
+include/mythtv/QJson/parserrunnable.h
+include/mythtv/QJson/qjson_export.h
+include/mythtv/QJson/qobjecthelper.h
+include/mythtv/QJson/serializer.h
+include/mythtv/QJson/serializerrunnable.h
 include/mythtv/audiooutput.h
 include/mythtv/audiooutputsettings.h
 include/mythtv/audiosettings.h
 include/mythtv/autodeletedeque.h
+include/mythtv/bswap.h
 include/mythtv/bluray/attributes.h
 include/mythtv/bluray/bdparse.h
 include/mythtv/bluray/bits.h
@@ -62,6 +73,7 @@ include/mythtv/dvdread/nav_read.h
 include/mythtv/dvdread/nav_types.h
 include/mythtv/eldutils.h
 include/mythtv/exitcodes.h
+include/mythtv/ffmpeg-mmx.h
 include/mythtv/filesysteminfo.h
 include/mythtv/hardwareprofile.h
 include/mythtv/httpcomms.h
@@ -69,38 +81,50 @@ include/mythtv/iso3166.h
 include/mythtv/iso639.h
 include/mythtv/langsettings.h
 include/mythtv/lcddevice.h
+include/mythtv/loggingserver.h
 include/mythtv/libavcodec/avcodec.h
 include/mythtv/libavcodec/avfft.h
 include/mythtv/libavcodec/dxva2.h
-include/mythtv/libavcodec/mmx.h
-include/mythtv/libavcodec/opt.h
 include/mythtv/libavcodec/vaapi.h
+include/mythtv/libavcodec/vda.h
 include/mythtv/libavcodec/vdpau.h
+include/mythtv/libavcodec/version.h
 include/mythtv/libavcodec/xvmc.h
 include/mythtv/libavdevice/avdevice.h
+include/mythtv/libavfilter/asrc_abuffer.h
+include/mythtv/libavfilter/avcodec.h
 include/mythtv/libavfilter/avfilter.h
 include/mythtv/libavfilter/avfiltergraph.h
+include/mythtv/libavfilter/buffersink.h
+include/mythtv/libavfilter/buffersrc.h
+include/mythtv/libavfilter/version.h
+include/mythtv/libavfilter/vsrc_buffer.h
 include/mythtv/libavformat/avformat.h
 include/mythtv/libavformat/avio.h
 include/mythtv/libavformat/version.h
 include/mythtv/libavutil/adler32.h
+include/mythtv/libavutil/aes.h
 include/mythtv/libavutil/attributes.h
+include/mythtv/libavutil/audio_fifo.h
 include/mythtv/libavutil/audioconvert.h
 include/mythtv/libavutil/avassert.h
 include/mythtv/libavutil/avconfig.h
 include/mythtv/libavutil/avstring.h
 include/mythtv/libavutil/avutil.h
 include/mythtv/libavutil/base64.h
+include/mythtv/libavutil/bprint.h
 include/mythtv/libavutil/bswap.h
 include/mythtv/libavutil/common.h
 include/mythtv/libavutil/cpu.h
 include/mythtv/libavutil/crc.h
+include/mythtv/libavutil/dict.h
 include/mythtv/libavutil/error.h
 include/mythtv/libavutil/eval.h
 include/mythtv/libavutil/fifo.h
 include/mythtv/libavutil/file.h
 include/mythtv/libavutil/imgutils.h
 include/mythtv/libavutil/intfloat_readwrite.h
+include/mythtv/libavutil/intfloat.h
 include/mythtv/libavutil/intreadwrite.h
 include/mythtv/libavutil/lfg.h
 include/mythtv/libavutil/log.h
@@ -115,7 +139,9 @@ include/mythtv/libavutil/pixfmt.h
 include/mythtv/libavutil/random_seed.h
 include/mythtv/libavutil/rational.h
 include/mythtv/libavutil/samplefmt.h
-include/mythtv/libavutil/sha1.h
+include/mythtv/libavutil/sha.h
+include/mythtv/libavutil/timecode.h
+include/mythtv/libavutil/timestamp.h
 include/mythtv/libmyth/audiooutput.h
 include/mythtv/libmyth/audiooutputsettings.h
 include/mythtv/libmyth/audiosettings.h
@@ -154,15 +180,18 @@ include/mythtv/libmyth/volumebase.h
 include/mythtv/libmyth/xmlparse.h
 include/mythtv/libmythbase/autodeletedeque.h
 include/mythtv/libmythbase/bonjourregister.h
+include/mythtv/libmythbase/bswap.h
 include/mythtv/libmythbase/compat.h
 include/mythtv/libmythbase/dbutil.h
 include/mythtv/libmythbase/exitcodes.h
+include/mythtv/libmythbase/ffmpeg-mmx.h
 include/mythtv/libmythbase/filesysteminfo.h
 include/mythtv/libmythbase/hardwareprofile.h
 include/mythtv/libmythbase/httpcomms.h
 include/mythtv/libmythbase/iso3166.h
 include/mythtv/libmythbase/iso639.h
 include/mythtv/libmythbase/lcddevice.h
+include/mythtv/libmythbase/loggingserver.h
 include/mythtv/libmythbase/mcodecs.h
 include/mythtv/libmythbase/msocketdevice.h
 include/mythtv/libmythbase/mthread.h
@@ -174,6 +203,7 @@ include/mythtv/libmythbase/mythconfig.h
 include/mythtv/libmythbase/mythconfig.mak
 include/mythtv/libmythbase/mythcorecontext.h
 include/mythtv/libmythbase/mythcoreutil.h
+include/mythtv/libmythbase/mythdate.h
 include/mythtv/libmythbase/mythdb.h
 include/mythtv/libmythbase/mythdbcon.h
 include/mythtv/libmythbase/mythdbparams.h
@@ -187,6 +217,7 @@ include/mythtv/libmythbase/mythlogging.h
 include/mythtv/libmythbase/mythmedia.h
 include/mythtv/libmythbase/mythmiscutil.h
 include/mythtv/libmythbase/mythobservable.h
+include/mythtv/libmythbase/signalhandling.h
 include/mythtv/libmythbase/mythsocket.h
 include/mythtv/libmythbase/mythsocket_cb.h
 include/mythtv/libmythbase/mythstorage.h
@@ -291,6 +322,7 @@ include/mythtv/libmythui/themeinfo.h
 include/mythtv/libmythui/x11colors.h
 include/mythtv/libmythui/xmlparsebase.h
 include/mythtv/libpostproc/postprocess.h
+include/mythtv/libswresample/swresample.h
 include/mythtv/libswscale/swscale.h
 include/mythtv/mcodecs.h
 include/mythtv/metadata/bluraymetadata.h
@@ -327,6 +359,7 @@ include/mythtv/mythconfiggroups.h
 include/mythtv/mythcontext.h
 include/mythtv/mythcorecontext.h
 include/mythtv/mythcoreutil.h
+include/mythtv/mythdate.h
 include/mythtv/mythdb.h
 include/mythtv/mythdbcon.h
 include/mythtv/mythdbparams.h
@@ -359,6 +392,7 @@ include/mythtv/mythwidgets.h
 include/mythtv/mythwizard.h
 include/mythtv/netgrabbermanager.h
 include/mythtv/netutils.h
+include/mythtv/nzmqt/nzmqt.hpp
 include/mythtv/oldsettings.h
 include/mythtv/output.h
 include/mythtv/playgroup.h
@@ -374,6 +408,7 @@ include/mythtv/samplerate.h
 include/mythtv/schemawizard.h
 include/mythtv/serverpool.h
 include/mythtv/settings.h
+include/mythtv/signalhandling.h
 include/mythtv/storagegroup.h
 include/mythtv/storagegroupeditor.h
 include/mythtv/uitypes.h
@@ -413,6 +448,9 @@ include/mythtv/virtualkeyboard_qt.h
 include/mythtv/visual.h
 include/mythtv/volumebase.h
 include/mythtv/xmlparse.h
+include/mythtv/zeromq/zmq.h
+include/mythtv/zeromq/zmq.hpp
+include/mythtv/zeromq/zmq_utils.h
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__init__.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/_conn_mysqldb.py
@@ -489,80 +527,109 @@ include/mythtv/xmlparse.h
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_exceptions.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_exceptions.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_ui.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/__init__.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/__init__.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/altdict.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/altdict.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/dequebuffer.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/dequebuffer.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/dt.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/dt.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/enum.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/enum.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/mixin.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/mixin.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/other.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/other.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/singleton.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/singleton.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_ui.pyc
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility.py
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/__init__.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/wikiscripts.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/wikiscripts.pyc
-lib/libmyth-0.25.so
-lib/libmyth-0.25.so.0
-lib/libmyth-0.25.so.0.25
-lib/libmyth-0.25.so.0.25.0
+lib/libmyth-0.26.so
+lib/libmyth-0.26.so.0
+lib/libmyth-0.26.so.0.26
+lib/libmyth-0.26.so.0.26.0
 lib/libmythavcodec.so
-lib/libmythavcodec.so.52
-lib/libmythavcodec.so.52.113.1
+lib/libmythavcodec.so.54
+lib/libmythavcodec.so.54.23.100
 lib/libmythavdevice.so
-lib/libmythavdevice.so.52
-lib/libmythavdevice.so.52.2.3
+lib/libmythavdevice.so.54
+lib/libmythavdevice.so.54.0.100
 lib/libmythavfilter.so
-lib/libmythavfilter.so.1
-lib/libmythavfilter.so.1.76.0
+lib/libmythavfilter.so.2
+lib/libmythavfilter.so.2.77.100
 lib/libmythavformat.so
-lib/libmythavformat.so.52
-lib/libmythavformat.so.52.101.0
+lib/libmythavformat.so.54
+lib/libmythavformat.so.54.6.101
 lib/libmythavutil.so
-lib/libmythavutil.so.50
-lib/libmythavutil.so.50.39.0
-lib/libmythbase-0.25.so
-lib/libmythbase-0.25.so.0
-lib/libmythbase-0.25.so.0.25
-lib/libmythbase-0.25.so.0.25.0
-lib/libmythbluray-0.25.a
-lib/libmythdvdnav-0.25.a
-lib/libmythfreemheg-0.25.so
-lib/libmythfreemheg-0.25.so.0
-lib/libmythfreemheg-0.25.so.0.25
-lib/libmythfreemheg-0.25.so.0.25.0
-lib/libmythhdhomerun-0.25.so
-lib/libmythhdhomerun-0.25.so.0
-lib/libmythhdhomerun-0.25.so.0.25
-lib/libmythhdhomerun-0.25.so.0.25.0
-lib/libmythlivemedia-0.25.so
-lib/libmythlivemedia-0.25.so.0
-lib/libmythlivemedia-0.25.so.0.25
-lib/libmythlivemedia-0.25.so.0.25.0
-lib/libmythmetadata-0.25.so
-lib/libmythmetadata-0.25.so.0
-lib/libmythmetadata-0.25.so.0.25
-lib/libmythmetadata-0.25.so.0.25.0
+lib/libmythavutil.so.51
+lib/libmythavutil.so.51.56.100
+lib/libmythbase-0.26.so
+lib/libmythbase-0.26.so.0
+lib/libmythbase-0.26.so.0.26
+lib/libmythbase-0.26.so.0.26.0
+lib/libmythbluray-0.26.a
+lib/libmythdvdnav-0.26.a
+lib/libmythfreemheg-0.26.so
+lib/libmythfreemheg-0.26.so.0
+lib/libmythfreemheg-0.26.so.0.26
+lib/libmythfreemheg-0.26.so.0.26.0
+lib/libmythhdhomerun-0.26.so
+lib/libmythhdhomerun-0.26.so.0
+lib/libmythhdhomerun-0.26.so.0.26
+lib/libmythhdhomerun-0.26.so.0.26.0
+lib/libmythlivemedia-0.26.so
+lib/libmythlivemedia-0.26.so.0
+lib/libmythlivemedia-0.26.so.0.26
+lib/libmythlivemedia-0.26.so.0.26.0
+lib/libmythmetadata-0.26.so
+lib/libmythmetadata-0.26.so.0
+lib/libmythmetadata-0.26.so.0.26
+lib/libmythmetadata-0.26.so.0.26.0
+lib/libmythnzmqt.so
+lib/libmythnzmqt.so.0
+lib/libmythnzmqt.so.0.26
+lib/libmythnzmqt.so.0.26.0
 lib/libmythpostproc.so
-lib/libmythpostproc.so.51
-lib/libmythpostproc.so.51.2.0
-lib/libmythprotoserver-0.25.so
-lib/libmythprotoserver-0.25.so.0
-lib/libmythprotoserver-0.25.so.0.25
-lib/libmythprotoserver-0.25.so.0.25.0
-lib/libmythservicecontracts-0.25.so
-lib/libmythservicecontracts-0.25.so.0
-lib/libmythservicecontracts-0.25.so.0.25
-lib/libmythservicecontracts-0.25.so.0.25.0
+lib/libmythpostproc.so.52
+lib/libmythpostproc.so.52.0.100
+lib/libmythprotoserver-0.26.so
+lib/libmythprotoserver-0.26.so.0
+lib/libmythprotoserver-0.26.so.0.26
+lib/libmythprotoserver-0.26.so.0.26.0
+lib/libmythqjson.so
+lib/libmythqjson.so.0
+lib/libmythqjson.so.0.7
+lib/libmythqjson.so.0.7.1
+lib/libmythservicecontracts-0.26.so
+lib/libmythservicecontracts-0.26.so.0
+lib/libmythservicecontracts-0.26.so.0.26
+lib/libmythservicecontracts-0.26.so.0.26.0
+lib/libmythswresample.so
+lib/libmythswresample.so.0
+lib/libmythswresample.so.0.15.100
 lib/libmythswscale.so
-lib/libmythswscale.so.0
-lib/libmythswscale.so.0.12.0
-lib/libmythtv-0.25.so
-lib/libmythtv-0.25.so.0
-lib/libmythtv-0.25.so.0.25
-lib/libmythtv-0.25.so.0.25.0
-lib/libmythui-0.25.so
-lib/libmythui-0.25.so.0
-lib/libmythui-0.25.so.0.25
-lib/libmythui-0.25.so.0.25.0
-lib/libmythupnp-0.25.so
-lib/libmythupnp-0.25.so.0
-lib/libmythupnp-0.25.so.0.25
-lib/libmythupnp-0.25.so.0.25.0
+lib/libmythswscale.so.2
+lib/libmythswscale.so.2.1.100
+lib/libmythtv-0.26.so
+lib/libmythtv-0.26.so.0
+lib/libmythtv-0.26.so.0.26
+lib/libmythtv-0.26.so.0.26.0
+lib/libmythui-0.26.so
+lib/libmythui-0.26.so.0
+lib/libmythui-0.26.so.0.26
+lib/libmythui-0.26.so.0.26.0
+lib/libmythupnp-0.26.so
+lib/libmythupnp-0.26.so.0
+lib/libmythupnp-0.26.so.0.26
+lib/libmythupnp-0.26.so.0.26.0
+lib/libmythzmq.a
+lib/libmythzmq.la
+lib/libmythzmq.so
+lib/libmythzmq.so.1
 lib/mythtv/filters/libadjust.so
 lib/mythtv/filters/libbobdeint.so
 lib/mythtv/filters/libcrop.so
@@ -577,7 +644,9 @@ lib/mythtv/filters/liblinearblend.so
 lib/mythtv/filters/libonefield.so
 lib/mythtv/filters/libpostprocess.so
 lib/mythtv/filters/libquickdnr.so
+lib/mythtv/filters/libvflip.so
 lib/mythtv/filters/libyadif.so
+lib/pkgconfig/libmythzmq.pc
 %%DATADIR%%/CDS_scpd.xml
 %%DATADIR%%/CMGR_scpd.xml
 %%DATADIR%%/MFEXML_scpd.xml
@@ -596,13 +665,35 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/database/mc.sql
 %%DATADIR%%/devicemaster.xml
 %%DATADIR%%/deviceslave.xml
+%%DATADIR%%/fonts/DroidSans-Bold.ttf
+%%DATADIR%%/fonts/DroidSans.ttf
+%%DATADIR%%/fonts/DroidSansMono.ttf
+%%DATADIR%%/fonts/DroidSerif-Bold.ttf
+%%DATADIR%%/fonts/DroidSerif-BoldItalic.ttf
+%%DATADIR%%/fonts/DroidSerif-Italic.ttf
+%%DATADIR%%/fonts/DroidSerif-Regular.ttf
 %%DATADIR%%/fonts/FreeMono.ttf
+%%DATADIR%%/fonts/FreeMonoBold.ttf
+%%DATADIR%%/fonts/FreeMonoBoldOblique.ttf
+%%DATADIR%%/fonts/FreeMonoOblique.ttf
 %%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/fonts/FreeSansBold.ttf
+%%DATADIR%%/fonts/FreeSansBoldOblique.ttf
+%%DATADIR%%/fonts/FreeSansOblique.ttf
+%%DATADIR%%/fonts/FreeSerif.ttf
+%%DATADIR%%/fonts/FreeSerifBold.ttf
+%%DATADIR%%/fonts/FreeSerifBoldItalic.ttf
+%%DATADIR%%/fonts/FreeSerifItalic.ttf
+%%DATADIR%%/fonts/Purisa.ttf
+%%DATADIR%%/fonts/README-TeX-Gyre-Chorus.txt
+%%DATADIR%%/fonts/README-droid.txt
+%%DATADIR%%/fonts/README-freefont-20120503.txt
+%%DATADIR%%/fonts/README-purisa.txt
 %%DATADIR%%/fonts/Tiresias Infofont Bold.ttf
 %%DATADIR%%/fonts/Tiresias Infofont Italic.ttf
 %%DATADIR%%/fonts/Tiresias Infofont.ttf
 %%DATADIR%%/fonts/tiresias_gpl3.txt
+%%DATADIR%%/fonts/texgyrechorus-mediumitalic.otf
 %%DATADIR%%/hardwareprofile/.gitignore
 %%DATADIR%%/hardwareprofile/MultipartPostHandler.py
 %%DATADIR%%/hardwareprofile/__init__.py
@@ -978,6 +1069,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/locales/nb_no.xml
 %%DATADIR%%/locales/ru_ru.xml
 %%DATADIR%%/locales/zh_hk.xml
+%%DATADIR%%/locales/zh_tw.xml
 %%DATADIR%%/metadata/Movie/tmdb.py
 %%DATADIR%%/metadata/Movie/tmdb3.py
 %%DATADIR%%/metadata/Television/ttvdb.py
@@ -1002,9 +1094,6 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/MythCenter-wide/base.xml
 %%DATADIR%%/themes/MythCenter-wide/config-ui.xml
 %%DATADIR%%/themes/MythCenter-wide/controls-ui.xml
-%%DATADIR%%/themes/MythCenter-wide/fonts/DroidSans.ttf
-%%DATADIR%%/themes/MythCenter-wide/fonts/DroidSans-Bold.ttf
-%%DATADIR%%/themes/MythCenter-wide/fonts/LICENSE
 %%DATADIR%%/themes/MythCenter-wide/htmls/progdetails_page1.html
 %%DATADIR%%/themes/MythCenter-wide/htmls/progdetails_page2.html
 %%DATADIR%%/themes/MythCenter-wide/keyboard/keyboard.xml
@@ -1933,6 +2022,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/mythfilebrowser-background.png
 %%DATADIR%%/themes/default/mythprogressdialog-background.png
 %%DATADIR%%/themes/default/osd.xml
+%%DATADIR%%/themes/default/osd_subtitle.xml
 %%DATADIR%%/themes/default/pd-background.png
 %%DATADIR%%/themes/default/pf-background.png
 %%DATADIR%%/themes/default/pf-lines.png
@@ -2088,7 +2178,6 @@ lib/mythtv/filters/libyadif.so
 @dirrm %%DATADIR%%/themes/MythCenter-wide/osd
 @dirrm %%DATADIR%%/themes/MythCenter-wide/keyboard
 @dirrm %%DATADIR%%/themes/MythCenter-wide/htmls
-@dirrm %%DATADIR%%/themes/MythCenter-wide/fonts
 @dirrm %%DATADIR%%/themes/MythCenter-wide
 @dirrm %%DATADIR%%/themes/MythCenter
 @dirrm %%DATADIR%%/themes/DVR
@@ -2150,20 +2239,25 @@ lib/mythtv/filters/libyadif.so
 @dirrm %%DATADIR%%/bindings
 @dirrm %%DATADIR%%/backend-config
 @dirrmtry %%DATADIR%%
+@dirrmtry lib/pkgconfig
 @dirrm lib/mythtv/filters
 @dirrmtry lib/mythtv
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/wikiscripts
+%%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/utility
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/ttvdb/XSLT
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/ttvdb
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb3
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb/XSLT
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV
+@dirrm include/mythtv/zeromq
 @dirrm include/mythtv/upnp
 @dirrm include/mythtv/mpeg2dec
 @dirrm include/mythtv/metadata
 @dirrm include/mythtv/libswscale
+@dirrm include/mythtv/libswresample
 @dirrm include/mythtv/libpostproc
+@dirrm include/mythtv/nzmqt
 @dirrm include/mythtv/libmythui
 @dirrm include/mythtv/libmythservicecontracts/services
 @dirrm include/mythtv/libmythservicecontracts/datacontracts
@@ -2178,4 +2272,5 @@ lib/mythtv/filters/libyadif.so
 @dirrm include/mythtv/dvdread
 @dirrm include/mythtv/dvdnav
 @dirrm include/mythtv/bluray
+@dirrm include/mythtv/QJson
 @dirrm include/mythtv

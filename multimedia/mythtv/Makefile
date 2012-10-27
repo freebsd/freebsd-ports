@@ -1,13 +1,8 @@
-#
-# Ports collection makefile for:        mythtv
-# Date created:                         05 February 2005
-# Whom:                                 Stacey Son <mythdev@son.org>
-#                                       Ari Maniatis <ari@ish.com.au>
-#
+# Created by: Stacey Son <mythdev@son.org>, Ari Maniatis <ari@ish.com.au>
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.25.2
+PORTVERSION=	0.26.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -20,7 +15,8 @@ COMMENT=	MythTV is a homebrew PVR project
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		tag.1:${PORTSDIR}/audio/taglib
-BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
+		yasm:${PORTSDIR}/devel/yasm
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		wget:${PORTSDIR}/ftp/wget
 
@@ -28,6 +24,7 @@ CONFLICTS=	mythtv-frontend-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
+USE_PKGCONFIG=	yes
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes
@@ -56,17 +53,22 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --dvb-path="${LOCALBASE}/include" \
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
-OPTIONS=	BINDINGS	"Perl and Python bindings" on \
-		LIRC		"Native LIRC Support" off \
-		MYSQL_LOCAL	"RUN_DEPEND on selected MySQL server" off \
-		OPENGL		"OpenGL support" on \
-		VDPAU		"VDPAU support (nvidia only)" off
+OPTIONS_DEFINE=	BINDINGS LIRC MYSQL OPENGL VDPAU
+OPTIONS_DEFAULT=	BINDINGS OPENGL
+BINDINGS_DESC=	Perl and Python bindings
 
 .include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message
 
-.if defined(WITH_BINDINGS)
+# for too old binutils in base
+.if ${OSVERSION} < 900033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
+.if ${PORT_OPTIONS:MBINDINGS}
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=yes
 PYDISTUTILS_PKGNAME=MythTV
@@ -92,22 +94,22 @@ CONFIGURE_ARGS+=--without-bindings=perl,python
 PLIST_SUB+=	BINDINGS="@comment "
 .endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 .endif
 
-.if defined(WITH_MYSQL_LOCAL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_QT4+=	opengl
 CONFIGURE_ARGS+=	--enable-opengl-video
 .else
 CONFIGURE_ARGS+=	--disable-opengl-video
 .endif
 
-.if defined(WITH_VDPAU)
+.if ${PORT_OPTIONS:MVDPAU}
 LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else

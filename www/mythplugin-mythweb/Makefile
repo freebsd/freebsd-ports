@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mythplugin-mythweb
-# Date created:		2009-12-27
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	mythweb
-PORTVERSION=	0.25.2
+PORTVERSION=	0.26.0
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -26,16 +22,16 @@ USE_PHP=	spl session mysql pcre posix json
 SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
 
-OPTIONS=	APACHE "Enable Apache Support" on \
-		LIGHTTPD "Enable Lighttpd Support" off
+OPTIONS_DEFINE=	APACHE LIGHTTPD
+OPTIONS_DEFAULT=	APACHE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
 
-.if defined(WITH_LIGHTTPD)
+.if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
