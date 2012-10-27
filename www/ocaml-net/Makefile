@@ -48,11 +48,12 @@ OCAML_LDLIBS=	${OCAML_PKGDIRS:S/^/${OCAML_SITELIBDIR}\//}
 OPTIONS=	SSL "Enable SSL support" ON \
 		NETHTTPD "Enable the integrated HTTP daemon" OFF \
 		AUTH_DH "Enable Diffie-Hellman authorization support" OFF \
-		GTK "Enable GTK support" OFF \
 		GTK2 "Enable GTK2 support" OFF \
 		APACHE "Enable Apache mod connector (experimental)" OFF \
 		ZIP "Enable compression support" OFF \
 		SCRAM "Enable SCRAM support" OFF
+
+CONFIGURE_ARGS+=	-disable-gtk
 
 .include <bsd.port.options.mk>
 
@@ -79,15 +80,6 @@ RUN_DEPENDS+=		${SA_DIR}/cryptgps/cryptgps.a:${PORTSDIR}/security/ocaml-cryptgps
 OCAML_PKGDIRS+=		rpc-auth-dh
 .else
 CONFIGURE_ARGS+=	-without-rpc-auth-dh
-.endif
-
-.if defined(WITH_GTK)
-CONFIGURE_ARGS+=	-enable-gtk
-BUILD_DEPENDS+=		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
-RUN_DEPENDS+=		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
-OCAML_PKGDIRS+=		equeue-gtk1
-.else
-CONFIGURE_ARGS+=	-disable-gtk
 .endif
 
 .if defined(WITH_GTK2)
