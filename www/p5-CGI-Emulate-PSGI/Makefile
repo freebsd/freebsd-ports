@@ -1,12 +1,7 @@
-# New ports collection makefile for:	CGI::Emulate::PSGI
-# Date created:		12 Mar 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Emulate-PSGI
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
