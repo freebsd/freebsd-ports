@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Chain
-# Date created:				October 3, 2005
-# Whom:					Adam VanderHook <acidos@bandwidth-junkies.net>
-#
+# Created by: Adam VanderHook <acidos@bandwidth-junkies.net>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-chain
 PORTVERSION=	1.2
@@ -15,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API implementing Chain of Responsiblity design pattern
+
+DEPRECATED=	Depends on the expired devel/portlet-api
+EXPIRATION_DATE=	2012-11-27
 
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
