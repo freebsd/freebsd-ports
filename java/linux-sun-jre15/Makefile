@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sun Linux JRE 1.5.x
-# Date created:				5 October 2007
-# Whom:					Jung-uk Kim <jkim@FreeBSD.org>
-#
+# Created by: Jung-uk Kim <jkim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jre
 PORTVERSION=	${DL_JRE_VERSION:S/_/./g}
@@ -15,6 +11,9 @@ EXTRACT_SUFX=	.bin
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Runtime Environment 1.5 for Linux
+
+DEPRECATED=	EOLed upstream since october 2009
+EXPIRATION_DATE=	2012-11-27
 
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper

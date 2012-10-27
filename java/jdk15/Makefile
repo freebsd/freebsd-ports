@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jdk15
-# Date created:				12 January 2005
-# Whom:					Alexey Zelkin <phantom@FreeBSD.org>
-#
+# Created by: Alexey Zelkin <phantom@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
@@ -18,6 +14,9 @@ EXTRACT_ONLY=	${JRL_SRCFILE} ${JRL_BINFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.5.0
+
+DEPRECATED=	EOLed upstream since october 2009
+EXPIRATION_DATE=	2012-11-27
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
