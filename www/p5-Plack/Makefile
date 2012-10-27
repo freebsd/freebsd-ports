@@ -1,13 +1,7 @@
-# New ports collection makefile for:	Plack
-# Date created:		13 Oct 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack
-PORTVERSION=	1.0006
-PORTREVISION=	1
+PORTVERSION=	1.0009
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
