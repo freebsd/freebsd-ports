@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.5.15
+DISTVERSION=	1.5.16
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -128,7 +128,7 @@ RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-1.7-x86.msi:${PORTSDIR}/emulators/wine
 .endif
 
 .if ${PORT_OPTIONS:MMONO}
-RUN_DEPENDS+=	${DATADIR}/mono/wine-mono-0.0.4.msi:${PORTSDIR}/emulators/wine-mono
+RUN_DEPENDS+=	${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
 .endif
 
 .if ${OSVERSION} < 800000
