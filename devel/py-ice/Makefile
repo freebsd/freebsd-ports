@@ -1,26 +1,24 @@
-# New ports collection makefile for:	py-ice
-# Date created:				2005-08-30
-# Whom:					Boris B. Samorodov <bsam@ipt.ru>
-#
+# Created by: Boris B. Samorodov <bsam@ipt.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.zeroc.com/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tonymaher@optusnet.com.au
-COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
+MAINTAINER=	freebsd@grem.de
+COMMENT=	Ice (Internet Communications Engine) language mapping for Python
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 BUILD_WRKSRC=	${WRKSRC}/py
 INSTALL_WRKSRC=	${WRKSRC}/py
 
@@ -28,14 +26,19 @@ LIB_VRS=	${PORTVERSION:S|.||g:C|2$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 MAKE_ENV=	ICE_HOME="${LOCALBASE}/share/Ice"
 
+# bypass infrastructure bug (taken from www/py-django)
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONS_DEFINE=	DEBUG DOCS TESTS
+OPTIONS_DEFAULT=TESTS
+TESTS_DESC=	Run tests
+
+.include <bsd.port.options.mk>
+
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
-.if defined(DEBUG)
-CFLAGS+=	-g
-.else
+.if empty(PORT_OPTIONS:MDEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
 
-.include <bsd.port.pre.mk>
 .if ${ARCH} == "ia64"
 BROKEN=		does not compile on ia64
 .endif
@@ -49,12 +52,19 @@ MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
+	@${SED} 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
+		s|%%PREFIX%%|${PREFIX}|g; \
+		s|%%DATADIR%%|${DATADIR}|g; \
+		s|%%DOCSDIR%%|${DOCSDIR}|g; \
+		s|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
+		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g' \
+		${FILESDIR}/Make.rules.FreeBSD > ${WRKSRC}/cpp/config/Make.rules.FreeBSD
+	@${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/py/config/Make.rules
-	${REINPLACE_CMD} 's|.(ice_dir).slice|${DATADIR}|g; \
+	@${REINPLACE_CMD} 's|.(ice_dir).slice|${DATADIR}|g; \
 		s|.(prefix).slice|${DATADIR}|g; \
 		s|.(prefix).[ICE_]*LICENSE|${DATADIR}/LICENSE|g;' \
 		${WRKSRC}/py/config/Make.rules.mak \
@@ -64,4 +74,17 @@ post-patch:
 post-install:
 	${ECHO} "Ice" > ${PYTHON_SITELIBDIR}/Ice.pth
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MTESTS}
+TEST_CMD=	@cd ${BUILD_WRKSRC} && ${PYTHON_CMD} ./allTests.py
+.endif
+
+post-build:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/py/python
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/py/python
+.if ${PORT_OPTIONS:MTESTS}
+	${TEST_CMD}
+regression-test test: build
+	${TEST_CMD}
+.endif
+
+.include <bsd.port.mk>
