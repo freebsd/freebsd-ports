@@ -36,6 +36,7 @@ USE_OCAML_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--without-lablgtk
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PNG "Enable PNG support" on \
@@ -45,8 +46,7 @@ OPTIONS=	PNG "Enable PNG support" on \
 		GIF "Enable GIF support" on \
 		FREETYPE "Enable text rendering via freetype" on \
 		GS "Enable PostScript support via Ghostscript" on \
-		GTK1 "Enable LablGTK1 support" off \
-		GTK2 "Enable LablGTK2 support (conflicts with LablGTK1)" off
+		GTK2 "Enable LablGTK2 support" off
 
 .include <bsd.port.options.mk>
 
@@ -97,18 +97,6 @@ USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-gs
 .else
 CONFIGURE_ARGS+=	--without-gs
-.endif
-
-.if defined(WITH_GTK1) && defined(WITH_GTK2)
-IGNORE=	you should select either LablGTK1 or LablGTK2, but not both
-.endif
-
-.if defined(WITH_GTK1)
-CONFIGURE_ARGS+=	--with-lablgtk
-BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
-RUN_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
-.else
-CONFIGURE_ARGS+=	--without-lablgtk
 .endif
 
 .if defined(WITH_GTK2)
