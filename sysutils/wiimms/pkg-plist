@@ -4,6 +4,7 @@ bin/wdf-dump
 bin/wit
 bin/wwt
 %%DATADIR%%/load-titles.sh
+%%DATADIR%%/magic.txt
 %%DATADIR%%/system-menu.txt
 %%DATADIR%%/titles-de.txt
 %%DATADIR%%/titles-es.txt

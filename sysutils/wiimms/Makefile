@@ -1,12 +1,8 @@
-# New ports collection makefile for:	wiimms
-# Date created:		4 august 2011
-# Whom:			Olivier Cochard-Labbe <olivier@cochard.me>
-#
+# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
 # $FreeBSD$
-#
 
 PORTNAME=	wiimms
-DISTVERSION=	2.05b
+DISTVERSION=	2.10a
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gugus69.free.fr/wiimms/ \
 		LOCAL/martymac
