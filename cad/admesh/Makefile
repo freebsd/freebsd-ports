@@ -1,32 +1,35 @@
-# New ports collection makefile for:	admesh
-# Date created:			25 June 2003
-# Whom:				Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	admesh
 PORTVERSION=	0.95
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.varlog.com/
+MASTER_SITES=	http://launchpadlibrarian.net/67068999/ \
+		http://www.sourcefiles.org/Scientific/Numerical_Analysis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
+LICENSE=	GPLv2 # (or later)
 
-FETCH_ARGS?=	-Fpr
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/admesh
 PORTDOCS=	admesh.doc
+PLIST_FILES=	bin/admesh
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/admesh ${PREFIX}/bin/
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ADMESH.DOC ${DOCSDIR}/admesh.doc
 .endif
 
