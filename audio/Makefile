@@ -11,6 +11,7 @@
     SUBDIR += abcmidi
     SUBDIR += abcselect
     SUBDIR += abraca
+    SUBDIR += acoustid-fingerprinter
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
