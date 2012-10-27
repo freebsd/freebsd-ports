@@ -1,12 +1,7 @@
-# New ports collection makefile for:	AnyEvent::Filesys::Notify
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-Filesys-Notify
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
