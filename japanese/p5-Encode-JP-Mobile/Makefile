@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Encode::JP::Mobile
-# Date created:		23 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-JP-Mobile
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
