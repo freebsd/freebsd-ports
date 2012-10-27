@@ -1,12 +1,16 @@
 --- py/python/Makefile.orig	2010-07-11 13:05:38.000000000 +1000
-+++ py/python/Makefile	2010-07-11 13:09:09.000000000 +1000
-@@ -121,7 +121,8 @@
- 	$(INSTALL_DATA) *.py $(install_pythondir)
++++ py/python/Makefile	2012-09-11 00:09:09.000000000 +2000
+@@ -118,10 +118,11 @@
+ 
+ install:: $(ALL_SRCS)
+ 	@echo "Installing generated code"
+-	$(INSTALL_DATA) *.py $(install_pythondir)
++	$(INSTALL_DATA) *.py* $(install_pythondir)
  	@for i in $(PACKAGES) ; \
  	do \
 -	    $(INSTALL_DATA) -r $$i $(install_pythondir) ; \
 +	    $(INSTALL_DATA) -d $(install_pythondir)/$$i ; \
-+	    $(INSTALL_DATA) $$i/*.py $(install_pythondir)/$$i ; \
++	    $(INSTALL_DATA) $$i/*.py* $(install_pythondir)/$$i ; \
  	done
  
  depend::  $(ICE_SLICE) $(GLACIER2_SLICE) $(ICEBOX_SLICE) $(ICEGRID_SLICE) $(ICEPATCH2_SLICE) $(ICESTORM_SLICE)
