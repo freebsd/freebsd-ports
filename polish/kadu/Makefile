@@ -1,12 +1,9 @@
-# Ports collection makefile for:   kadu
-# Date created:        17 July 2003
-# Whom:                Jacek Pelka <jacek@combit.com.pl>
-#
+# Created by: Jacek Pelka <jacek@combit.com.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	kadu
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -82,6 +79,8 @@ post-patch:
 		${WRKSRC}/plugins/tabs/CMakeLists.txt
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "#!/bin/bash" {} \; \
 		-exec ${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|g' {} \;
+	@${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/plugins/sql_history/storage/sql-restore.cpp
 
 post-install:
 .if ${PORT_OPTIONS:MGG_EMOTS}
