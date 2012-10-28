@@ -1,9 +1,5 @@
-# New ports collection makefile for:	beacon
-# Date created:		26 February 2004
-# Whom:	      		Janos.Mohacsi@bsd.hu
-#
+# Created by:	Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	beacon
 PORTVERSION=	1.4
@@ -22,15 +18,22 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf
 
-OPTIONS=	IPV6	"Enable IPv6 PTR lookups" off
+OPTIONS_DEFINE=		IPV6
+OPTIONS_DEFAULT=	
 
-.ifdef(WITH_IPV6)
+IPV6_DESC=		Enable IPv6 PTR lookups
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPV6}
 BUILD_DEPENDS+=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
