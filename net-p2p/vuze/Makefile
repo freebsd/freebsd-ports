@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	vuze
-PORTVERSION=	4.7.2.0
+PORTVERSION=	4.8.0.0
 CATEGORIES=	net-p2p java
 # Moved to x-obsolete, could do with an update
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
 DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A BitTorrent client written in Java
+MAINTAINER=	pawel@FreeBSD.org
+COMMENT=	BitTorrent client written in Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
@@ -19,19 +19,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_ANT=	yes
-
 USE_ZIP=	yes
-
-#USE_DOS2UNIX=	\
-#org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
-#org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
-#org/gudy/azureus2/platform/PlatformManagerFactory.java \
-#org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
-#org/gudy/azureus2/ui/swt/views/table/impl/TableViewSWTImpl.java \
-#com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
-#com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
-
 NO_WRKSUBDIR=	yes
+INSTALLS_ICONS=	yes
 
 JARFILE=	${PORTNAME}.jar
 
@@ -41,7 +31,7 @@ SWTDEVEL_DESC=	Use SWT Development port
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
-CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar}
+CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar:T}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 		bin/${PORTNAME} \
@@ -51,8 +41,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
-		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java" \
-		GECKO="${GECKO:S/19//}"
+		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
 
 DESKTOP_ENTRIES=	"Vuze" \
 			"A full feature BitTorrent client" \
@@ -60,8 +49,6 @@ DESKTOP_ENTRIES=	"Vuze" \
 			"${PORTNAME}" \
 			"Application;Network;P2P;" \
 			true
-
-INSTALLS_ICONS=		yes
 
 .include <bsd.port.options.mk>
 
@@ -77,7 +64,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
 
 CLASSPATH=.
 .for jar in ${CLASSPATH_JARS}
-CLASSPATH:=${CLASSPATH}:${jar}
+CLASSPATH:=${CLASSPATH}:${JAVALIBDIR}/${jar}
 .endfor
 
 post-patch:
@@ -92,17 +79,10 @@ do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${PREFIX}/share/icons/hicolor/16x16/apps
-	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a16.png \
-		${PREFIX}/share/icons/hicolor/16x16/apps/${PORTNAME}.png
-	${MKDIR} ${PREFIX}/share/icons/hicolor/32x32/apps
-	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a32.png \
-		${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png
-	${MKDIR} ${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a64.png \
-		${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
-
-post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+.for s in 16 32 64
+	${MKDIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${PORTNAME}.png
+.endfor
 
 .include <bsd.port.mk>
