@@ -1,6 +1,7 @@
 include/urcu/urcu_ref.h
 include/urcu/config.h
 include/urcu/uatomic/generic.h
+include/urcu/static/bkp-wfqueue.h
 include/urcu/static/urcu-bp.h
 include/urcu/static/rculfqueue.h
 include/urcu/static/urcu.h
@@ -21,6 +22,7 @@ include/urcu/list.h
 include/urcu/uatomic_arch.h
 include/urcu/hlist.h
 include/urcu/urcu-futex.h
+include/urcu/urcu-flavor.h
 include/urcu/rcuhlist.h
 include/urcu/rculfstack.h
 include/urcu/uatomic.h
@@ -36,6 +38,8 @@ include/urcu-defer.h
 include/urcu-pointer.h
 include/urcu-qsbr.h
 include/urcu.h
+include/urcu/rculfhash.h
+include/urcu/tls-compat.h
 lib/liburcu-bp.a
 lib/liburcu-bp.la
 lib/liburcu-bp.so
@@ -60,6 +64,10 @@ lib/liburcu.a
 lib/liburcu.la
 lib/liburcu.so
 lib/liburcu.so.1
+lib/liburcu-common.a
+lib/liburcu-common.la
+lib/liburcu-common.so
+lib/liburcu-common.so.1
 libdata/pkgconfig/liburcu-signal.pc
 libdata/pkgconfig/liburcu-qsbr.pc
 libdata/pkgconfig/liburcu.pc
