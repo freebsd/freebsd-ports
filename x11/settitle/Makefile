@@ -4,13 +4,10 @@
 PORTNAME=	settitle
 PORTVERSION=	1.1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for setting the title of terminal emulator windows
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
 
 WRKSRC=		${WRKDIR}/settitle
 
