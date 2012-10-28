@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cql
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.10
 CATEGORIES=	databases python
 MASTER_SITES=	http://cassandra-dbapi2.apache-extras.org.codespot.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
