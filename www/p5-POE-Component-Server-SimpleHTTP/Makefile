@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
-PORTVERSION=	2.14
+PORTVERSION=	2.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,12 +29,14 @@ MAN3=		POE::Component::Server::SimpleHTTP.3 \
 		POE::Component::Server::SimpleHTTP::Connection.3 \
 		POE::Component::Server::SimpleHTTP::Response.3
 
-OPTIONS=	SSL "SSL support (POE::Component::SSLify)" on \
+OPTIONS_DEFINE=	SSL
+SSL_DESC=	SSL support (POE::Component::SSLify)
+OPTIONS_DEFAULT=	SSL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 BUILD_DEPENDS+=	p5-POE-Component-SSLify>=0.04:${PORTSDIR}/security/p5-POE-Component-SSLify
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
