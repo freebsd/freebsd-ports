@@ -1,17 +1,12 @@
-# New ports collection makefile for:	ocaml-classes
-# Date created:			Ven 16 aoû 2002 02:05:08 CEST
-# Whom:				Michaël Grünewald
-#
+# Created by: Michaël Grünewald
 # $FreeBSD$
-#
 
 PORTNAME=	classes
 PORTVERSION=	3.05
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/\
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/\
-		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
+MASTER_SITES=	http://caml.inria.fr/pub/distrib/bazar-ocaml/ \
+		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml-${PORTNAME}-${PORTVERSION}
 
