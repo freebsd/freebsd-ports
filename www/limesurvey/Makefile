@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpsurveyor
-# Date created:		21 March 2005
-# Whom:	      		janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	limesurvey
 PORTVERSION=	1.91
@@ -17,16 +13,18 @@ COMMENT=	A PHP-based survey building and runing system
 LICENSE=	GPLv2
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey
-OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
-		GD   "Install PHP gd extention" on \
-		LDAP "Install PHP LDAP extention" off \
-		ZIP  "Install PHP zip extention" off
-#		ZLIB "Install PHP zlib extention" off # For ComfortUpdate
+OPTIONS_DEFINE=		PGSQL GD LDAP ZIP
+OPTIONS_DEFAULT=	GD
+
+PGSQL_DESC=		Use PostgreSQL (instead of MySQL)
+GD_DESC=		Install PHP gd extension
+LDAP_DESC=		Install PHP LDAP extension
+ZIP_DESC=		Install PHP zip extension
 
 .include <bsd.port.options.mk>
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey#Make_sure_you_can_use_LimeSurvey_on_your_website
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 USE_PHP=	pgsql
 .else
@@ -35,13 +33,13 @@ USE_PHP=	pgsql
 USE_MYSQL=	client
 USE_PHP=	mysql
 .endif
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
-.if defined(WITH_ZIP)
+.if ${PORT_OPTIONS:MZIP}
 USE_PHP+=	zip
 .endif
 USE_PHP+=	ctype dom iconv json mbstring pcre \
@@ -61,7 +59,7 @@ PHPSURVEYORDIR=	${WWWDOCROOT}/${PHPSURVEYORURL}
 
 do-install:
 	${MKDIR} "${WWWDIR}"
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 	${SED} -E \
 	  -e 's/^(\$$databasetype[[:space:]]*=[[:space:]]*'"')mysql('"'.*)$$/\1postgres\2/'	\
 	  -e 's/^(\$$databaseuser[[:space:]]*=[[:space:]]*'"')root('"'.*)$$/\1pgsql\2/' \
