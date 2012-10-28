@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -29,11 +29,16 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	YES
-MAKE_JOBS_UNSAFE=	YES
+USE_ZIP=	yes
+USE_GMAKE=	yes
+USE_ICONV=	yes
+USE_XORG+=	x11 xext xi xrender xt xtst
+MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	POLICY   "Install the Unlimited Strength Policy Files"      on \
-		TZUPDATE "Update the time zone data"                        on
+OPTIONS_DEFINE=		POLICY TZUPDATE
+OPTIONS_DEFAULT=	POLICY TZUPDATE
+POLICY_DESC=		Install the Unlimited Strength Policy Files
+TZUPDATE_DESC=		Update the time zone data
 
 PORT_MINOR_VERSION=	${JDK_MINOR_VERSION}
 PORT_BUILD_NUMBER=	${JDK_BUILD_NUMBER}
@@ -49,15 +54,11 @@ ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LATEST_LINK=		openjdk7
 
-USE_GMAKE=	YES
-USE_ICONV=	YES
-USE_XORG+=	x11 xext xi xrender xt xtst
-MAKE_JOBS_UNSAFE=	yes
-
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
-		asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2 \
+		asound:${PORTSDIR}/audio/alsa-lib
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/bin/registervm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 
@@ -83,6 +84,7 @@ MAKE_ENV+=	LANG="C" \
 		ALT_PKG_PATH="${LOCALBASE}" \
 		ALT_PACKAGE_PATH="${LOCALBASE}" \
 		ANT_HOME="${WRKDIR}/apache-ant-${ANT_VERSION}" \
+		JAVACMD=${BOOTSTRAPJDKDIR}/bin/java \
 		X11DIR="${LOCALBASE}" \
 		LOCALDIR="${LOCALBASE}" \
 		NO_DOCS="true" \
@@ -107,12 +109,11 @@ MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 		${LOCALBASE}/openjdk6 \
-		${LOCALBASE}/jdk1.6.0 \
-		${LOCALBASE}/diablo-jdk1.6.0
+		${LOCALBASE}/bootstrap-openjdk
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TZUPDATE)
+.if ${PORT_OPTIONS:MTZUPDATE}
 RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 .endif
 
@@ -125,21 +126,19 @@ BOOTSTRAPJDKDIR=	${BJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
-	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
-		${WRKSRC}/jdk/make/javax/crypto/Makefile
-.if defined(WITH_POLICY)
+.if ${PORT_OPTIONS:MPOLICY}
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
 
-.if defined(WITH_TZUPDATE)
+.if ${PORT_OPTIONS:MTZUPDATE}
 pre-install:
 	@# Update time zones
 	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
@@ -156,6 +155,8 @@ do-install:
 		${CHOWN} -h -R ${BINOWN}:${BINGRP} $$dir; \
 		${FIND} $$dir -type f -exec ${CHMOD} ${BINMODE} "{}" \; ; \
 	done
+	@${CHOWN} ${BINOWN}:${BINGRP} ${INSTALLDIR}/jre/lib/${ARCH}/jexec
+	@${CHMOD} ${BINMODE} ${INSTALLDIR}/jre/lib/${ARCH}/jexec
 	@${INSTALL_DATA} ${FILESDIR}/cacerts ${INSTALLDIR}/jre/lib/security/cacerts
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${INSTALLDIR} -not -type d | ${SORT} | \
@@ -168,4 +169,4 @@ post-install:
 	# Register the VM
 	"${LOCALBASE}/bin/registervm" "${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
