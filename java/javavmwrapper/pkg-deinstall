@@ -21,6 +21,11 @@ if [ -f "${OPTION_CONF}" -a -f "${OPTION_CONF}.dist" ]; then
 	fi
 fi
 
+# Destroy the symbolic links that were created for every executable for a VM.
+find -L ${PKG_PREFIX}/bin -samefile ${PKG_PREFIX}/bin/javavm \
+    \! -name checkvms \! -name javavm \! -name manvm \
+    \! -name registervm \! -name unregistervm | xargs rm -f
+
 # The configuration file
 CONF="${PKG_PREFIX}/etc/javavms"
 
@@ -35,23 +40,7 @@ if [ ! -r "${CONF}" ]; then
     exit 1
 fi
 
-# Destroy the symbolic links that were created for every executable for a VM.
-cat "${CONF}" | \
-(
-while read JAVAVM; do
-    VM=`echo "${JAVAVM}" | sed -E 's|[[:space:]]*#.*||' 2>/dev/null`
-    JAVA_HOME=`dirname "${VM}"`
-    JAVA_HOME=`dirname "${JAVA_HOME}"`
-    for exe in "${JAVA_HOME}"/bin/* "${JAVA_HOME}"/jre/bin/*; do
-        exe=`basename "${exe}"`
-        if [ -L "${PKG_PREFIX}/bin/${exe}" -a \
-             "`ls -ld "${PKG_PREFIX}/bin/${exe}" 2>/dev/null | \
-               awk '/->/{print $NF;exit 0}END{exit 1}'`" = \
-             "${PKG_PREFIX}/bin/javavm" ]; then
-            rm "${PKG_PREFIX}/bin/${exe}"
-        fi
-    done;
-done;
-)
+# Remove the configuration file.
+rm -f "${CONF}"
 
 exit 0

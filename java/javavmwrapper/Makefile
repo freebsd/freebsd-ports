@@ -1,14 +1,11 @@
-# New ports collection makefile for:	javavmwrapper
-# Date created:				10 June 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by:	Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #
 # This port is self contained in the src directory.
-#
 
 PORTNAME=	javavmwrapper
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -53,10 +50,10 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/classpath.sh ${PREFIX}/bin/classpath
 	${INSTALL_SCRIPT} ${WRKDIR}/javavmwrapper.sh ${PREFIX}/bin/javavm
-	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/registervm
-	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/unregistervm
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/checkvms
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/manvm
+	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/registervm
+	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/unregistervm
 .for _man in checkvms.1 javavm.1 manvm.1 registervm.1
 	${INSTALL_MAN} ${WRKDIR}/${_man} ${MAN1PREFIX}/man/man1
 .endfor
