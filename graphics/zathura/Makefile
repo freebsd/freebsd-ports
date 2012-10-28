@@ -3,6 +3,7 @@
 
 PORTNAME=	zathura
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
@@ -32,6 +33,7 @@ MAKE_ENV+=	WITH_SQLITE=0
 BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
 MAN1+=		zathura.1
 MAN5+=		zathurarc.5
+MAKE_ENV+=	RSTTOMAN=${LOCALBASE}/bin/rst2man
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -65,6 +67,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g' \
 		${WRKSRC}/config.h \
 		${WRKSRC}/zathurarc.5.rst
+	(cd ${WRKSRC}; ${RM} -f ${MAN1} ${MAN5})
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
