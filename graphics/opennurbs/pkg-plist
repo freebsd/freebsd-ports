@@ -56,7 +56,6 @@ include/openNURBS/opennurbs_linestyle.h
 include/openNURBS/opennurbs_linetype.h
 include/openNURBS/opennurbs_lookup.h
 include/openNURBS/opennurbs_mapchan.h
-include/openNURBS/opennurbs_massprop.h
 include/openNURBS/opennurbs_material.h
 include/openNURBS/opennurbs_math.h
 include/openNURBS/opennurbs_matrix.h
@@ -81,7 +80,6 @@ include/openNURBS/opennurbs_polyedgecurve.h
 include/openNURBS/opennurbs_polyline.h
 include/openNURBS/opennurbs_polylinecurve.h
 include/openNURBS/opennurbs_qsort_template.h
-include/openNURBS/opennurbs_quaternion.h
 include/openNURBS/opennurbs_rand.h
 include/openNURBS/opennurbs_rendering.h
 include/openNURBS/opennurbs_revsurface.h
@@ -102,7 +100,6 @@ include/openNURBS/opennurbs_uuid.h
 include/openNURBS/opennurbs_version.h
 include/openNURBS/opennurbs_viewport.h
 include/openNURBS/opennurbs_workspace.h
-include/openNURBS/opennurbs_x.h
 include/openNURBS/opennurbs_xform.h
 include/openNURBS/opennurbs_zlib.h
 include/openNURBS/zlib/crc32.h
@@ -117,7 +114,6 @@ include/openNURBS/zlib/zlib.h
 include/openNURBS/zlib/zutil.h
 lib/libopenNURBS.a
 libexec/openNURBS/example_brep
-libexec/openNURBS/example_dump
 libexec/openNURBS/example_read
 libexec/openNURBS/example_roundtrip
 libexec/openNURBS/example_userdata
