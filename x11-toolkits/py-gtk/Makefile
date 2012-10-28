@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-gtk
-# Date created:				09/14/1999
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gtk
 PORTVERSION=	0.6.11
@@ -16,6 +12,9 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK
+
+DEPRECATED=	Depends on the expired gtkglarea
+EXPIRATION_DATE=	2012-11-28
 
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
