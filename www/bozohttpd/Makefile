@@ -23,31 +23,28 @@ HTPASSWD_DESC=		Enable htpassword support
 SSL_DESC=		Enable SSL support
 CGI_DESC=		Enable CGI support
 
-#make happy portlint
-.if empty(PORT_OPTIONS:MSSL)
-.else
-USE_OPENSSL=	yes
-.endif
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTPASSWD}
-CFLAGS+=	-DDO_HTPASSWD
-MAKE_ARGS+=	'LDFLAGS+= -lcrypt'
+MAKE_ARGS+=	'COPTS+=	-DDO_HTPASSWD' \
+		'LDFLAGS+= -lcrypt'
 .else
-CFLAGS+=	-UDO_HTPASSWD
+MAKE_ARGS+=	'COPTS+=	-UDO_HTPASSWD'
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-CFLAGS+=	-UNO_SSL_SUPPORT
+USE_OPENSSL=	yes
+MAKE_ARGS+=	'COPTS+=	-UNO_SSL_SUPPORT'
 .else
-CFLAGS+=	-DNO_SSL_SUPPORT
+MAKE_ARGS+=	'COPTS+=	-DNO_SSL_SUPPORT' \
+		'CRYPTOLIBS=' \
+		'CRYPTODEPS='
 .endif
 
 .if ${PORT_OPTIONS:MCGI}
-CFLAGS+=	-UNO_CGIBIN_SUPPORT
+MAKE_ARGS+=	'COPTS+=	-UNO_CGIBIN_SUPPORT'
 .else
-CFLAGS+=	-DNO_CGIBIN_SUPPORT
+MAKE_ARGS+=	'COPTS+=	-DNO_CGIBIN_SUPPORT'
 .endif
 
 MAN8=		bozohttpd.8
