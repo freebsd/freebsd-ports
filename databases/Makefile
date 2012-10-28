@@ -503,7 +503,6 @@
     SUBDIR += pear-Horde_Memcache
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
-    SUBDIR += pear-MDB2_Driver_ibase
     SUBDIR += pear-MDB2_Driver_mysql
     SUBDIR += pear-MDB2_Driver_mysqli
     SUBDIR += pear-MDB2_Driver_pgsql
