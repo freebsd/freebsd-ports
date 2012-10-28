@@ -25,7 +25,7 @@ MAN1?=		mbmon.1
 PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
 
 OPTIONS_DEFINE=	ASUS SMB
-OPTIONS_SET=	SMB
+OPTIONS_DEFAULT=SMB
 ASUS_DESC=	"Enable A7N8X-VM support"
 SMB_DESC=	"Enable smb(4) support"
 
