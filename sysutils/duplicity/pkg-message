@@ -1,7 +1,7 @@
 *************************************************************************
-* The following two backends are supported by duplicity itself,         *
-* but will require manual installation of their respective dependencies *
-* because they are not yet available in the ports tree:                 *
+* The following backends are supported by duplicity itself, but will    *
+* require manual installation of their respective dependencies because  *
+* they are not yet available in the ports tree:                         *
 *                                                                       *
 *   - The GIO backend.                                                  *
 *   - The HSI backend.                                                  *

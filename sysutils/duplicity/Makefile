@@ -1,13 +1,8 @@
-# New ports collection makefile for:	duplicity
-# Date created:				Wed Jun 11 19:53:46 CEST 2003
-# Whom:					Gerhard Häring <gh@ghaering.de>
-#
+# Created by: Gerhard Häring <gh@ghaering.de>
 # $FreeBSD$
-#
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.19
-PORTREVISION=	2	
+PORTVERSION=	0.6.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
