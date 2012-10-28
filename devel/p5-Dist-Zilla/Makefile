@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dist-Zilla
-PORTVERSION=	4.300024
+PORTVERSION=	4.300028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Dist
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0.309:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd \
 		p5-Hash-Merge-Simple>=0:${PORTSDIR}/devel/p5-Hash-Merge-Simple \
 		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
+		p5-List-AllUtils>=0:${PORTSDIR}/devel/p5-List-AllUtils \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Log-Dispatchouli>=1.102220:${PORTSDIR}/devel/p5-Log-Dispatchouli \
 		p5-Moose-Autobox>=0.10:${PORTSDIR}/devel/p5-Moose-Autobox \
@@ -163,10 +164,12 @@ MAN3=	Dist::Zilla.3 \
 	Dist::Zilla::Role::FileMunger.3 \
 	Dist::Zilla::Role::FilePruner.3 \
 	Dist::Zilla::Role::InstallTool.3 \
+	Dist::Zilla::Role::LicenseProvider.3 \
 	Dist::Zilla::Role::MetaProvider.3 \
 	Dist::Zilla::Role::MintingProfile.3 \
 	Dist::Zilla::Role::MintingProfile::ShareDir.3 \
 	Dist::Zilla::Role::ModuleMaker.3 \
+	Dist::Zilla::Role::NameProvider.3 \
 	Dist::Zilla::Role::PPI.3 \
 	Dist::Zilla::Role::Plugin.3 \
 	Dist::Zilla::Role::PluginBundle.3 \

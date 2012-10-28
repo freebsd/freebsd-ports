@@ -102,10 +102,12 @@ bin/dzil
 %%SITE_PERL%%/Dist/Zilla/Role/FileMunger.pm
 %%SITE_PERL%%/Dist/Zilla/Role/FilePruner.pm
 %%SITE_PERL%%/Dist/Zilla/Role/InstallTool.pm
+%%SITE_PERL%%/Dist/Zilla/Role/LicenseProvider.pm
 %%SITE_PERL%%/Dist/Zilla/Role/MetaProvider.pm
 %%SITE_PERL%%/Dist/Zilla/Role/MintingProfile.pm
 %%SITE_PERL%%/Dist/Zilla/Role/MintingProfile/ShareDir.pm
 %%SITE_PERL%%/Dist/Zilla/Role/ModuleMaker.pm
+%%SITE_PERL%%/Dist/Zilla/Role/NameProvider.pm
 %%SITE_PERL%%/Dist/Zilla/Role/PPI.pm
 %%SITE_PERL%%/Dist/Zilla/Role/Plugin.pm
 %%SITE_PERL%%/Dist/Zilla/Role/PluginBundle.pm
