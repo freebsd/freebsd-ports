@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lmms
-# Date created:				04 Dec 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lmms
 PORTVERSION=	0.4.13
@@ -13,16 +9,16 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	rodrigo@bebik.net
-COMMENT=	An all-in-one sequencer, drum machine, sampler, and more
+COMMENT=	All-in-one sequencer, drum machine, sampler, and more
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+		fluidsynth:${PORTSDIR}/audio/fluidsynth \
+		samplerate:${PORTSDIR}/audio/libsamplerate \
+		sndfile:${PORTSDIR}/audio/libsndfile \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float
 RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugins \
@@ -31,9 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugi
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:${PORTSDIR}/audio/tap-plugins \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPTIONS=	JACK       "Enable JACK support"       OFF \
-		PULSEAUDIO "Enable PulseAudio support" OFF \
-		SDL        "Enable SDL support"        OFF
+OPTIONS_DEFINE=	JACK PULSEAUDIO SDL
 
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
@@ -60,19 +54,19 @@ USE_DOS2UNIX=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/port
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_JACK)
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .else
 CMAKE_ARGS+=	-DWANT_JACK:BOOL=OFF
 .endif
 
-.if defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CMAKE_ARGS+=	-DWANT_PULSEAUDIO:BOOL=OFF
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 .else
 CMAKE_ARGS+=	-DWANT_SDL:BOOL=OFF
