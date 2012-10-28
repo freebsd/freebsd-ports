@@ -2,11 +2,9 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: amavisd_snmp
 # REQUIRE: snmpd
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable amavisd-snmp-subagent:
 #
@@ -18,19 +16,19 @@
 name=amavisd_snmp
 rcvar=amavisd_snmp_enable
 
-command="%%PREFIX%%/sbin/amavisd-snmp-subagent"
-command_interpreter="%%PERL%%"
-pidfile="%%AMAVISDIR%%/amavisd-snmp.pid"
+load_rc_config $name
 
 # defaults
-amavisd_snmp_enable=${amavisd_snmp_enable:-"NO"}
-# amavis database directory
-amavisd_snmp_dbdir=${amavisd_snmp_dbdir:-"%%AMAVISDIR%%/db"}
+: ${amavisd_snmp_enable:=NO}
+: ${amavisd_snmp_dbdir=%%AMAVISDIR%%/db}
 # log_level 0..5, default 0
-amavisd_snmp_loglevel=${amavisd_snmp_loglevel:-"0"}
+: ${amavisd_snmp_loglevel=0}
 
-load_rc_config $name
+command=%%PREFIX%%/sbin/amavisd-snmp-subagent
+command_interpreter=%%PERL%%
+pidfile=${amavisd_pidfile:-%%AMAVISDIR%%/amavisd-snmp.pid}
 
 required_dirs=${amavisd_snmp_dbdir}
 amavisd_snmp_flags="-D ${amavisd_snmp_dbdir} -d ${amavisd_snmp_loglevel} -P ${pidfile}"
-run_rc_command "$1"
+
+run_rc_command $1

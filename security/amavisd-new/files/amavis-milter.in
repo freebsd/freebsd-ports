@@ -2,16 +2,14 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: amavis_milter
 # REQUIRE: amavisd
 # BEFORE: mail
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable amavis-milter:
 #
-#amavis_milter_enable="YES"
+# amavis_milter_enable="YES"
 #
 
 . /etc/rc.subr
@@ -19,14 +17,13 @@
 name=amavis_milter
 rcvar=amavis_milter_enable
 
+load_rc_config $name
+
+: ${amavis_milter_enable:=NO}
+: ${amavis_milter_flags=-D -p %%AMAVISDIR%%/amavis-milter.sock}
+: ${amavis_milter_user=%%AMAVISUSER%%}
+
 command=%%PREFIX%%/sbin/amavis-milter
 required_files=%%PREFIX%%/etc/amavisd.conf
 
-# set defaults
-
-amavis_milter_enable=${amavis_milter_enable:-"NO"}
-amavis_milter_flags=${amavis_milter_flags:-"-D -p %%AMAVISDIR%%/amavis-milter.sock"}
-amavis_milter_user=${amavis_milter_user:-"%%AMAVISUSER%%"}
-
-load_rc_config $name
-run_rc_command "$1"
+run_rc_command $1
