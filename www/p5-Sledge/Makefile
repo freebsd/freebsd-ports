@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sledge
-# Date created:		26 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sledge
 PORTVERSION=	1.11
@@ -17,6 +13,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A pure perl, pluggable, lightweight web application framework
 
 DEPRECATED=	depends on mod_perl 1 which is gone
+EXPIRATION_DATE=	2012-11-28
 
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}

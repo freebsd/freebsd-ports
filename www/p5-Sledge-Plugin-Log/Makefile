@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sledge-Plugin-Log
-# Date created:		27 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sledge-Plugin-Log
 PORTVERSION=	0.02
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Sledge plug-in that adds Log::Dispatch::Config on
+
+DEPRECATED=	depends on mod_perl 1 which is gone
+EXPIRATION_DATE=	2012-11-28
 
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}

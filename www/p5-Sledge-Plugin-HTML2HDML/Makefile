@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sledge-Plugin-HTML2HDML
-# Date created:		27 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sledge-Plugin-HTML2HDML
 PORTVERSION=	0.01
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Sledge plug-in that invokes html2hdml for EZweb WAP/1.0 clients
+
+DEPRECATED=	depends on mod_perl 1 which is gone
+EXPIRATION_DATE=	2012-11-28
 
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS} \

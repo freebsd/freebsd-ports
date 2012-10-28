@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sledge-Plugin-CacheContent
-# Date created:		23 April 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sledge-Plugin-CacheContent
 PORTVERSION=	0.03
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Sledge plug-in that generates and serves cached content
+
+DEPRECATED=	depends on mod_perl 1 which is gone
+EXPIRATION_DATE=	2012-11-28
 
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
