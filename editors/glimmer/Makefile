@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glimmer
-# Date created:				1 August 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glimmer
 PORTVERSION=	1.2.1
@@ -13,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A full featured code editor for GNOME with many advanced features
+
+DEPRECATED=	Depends on the expired gtkglarea through py-gtk
+EXPIRATION_DATE=	2012-11-28
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
