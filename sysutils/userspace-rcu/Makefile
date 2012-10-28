@@ -1,12 +1,8 @@
-# New ports collection makefile for:	userspace-rcu
-# Date created:		29 February 2012
-# Whom:			Leo Vandewoestijne <freebsd@dns-lab.com>
-#
+# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
 # $FreeBSD$
-#
 
 PORTNAME=	userspace-rcu
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 
@@ -15,19 +11,11 @@ COMMENT=	A read-copy-update data synchronization library
 
 LICENSE=	LGPL21
 
+PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's,^\(pkgconfigdir = \).(libdir),\1${PREFIX}/libdata,' \
-		${WRKSRC}/Makefile.in
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
