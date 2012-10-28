@@ -18,6 +18,15 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.  */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <err.h>
+
+#include <sys/param.h>
+#include <sys/sysctl.h>
+#include <sys/user.h>
+#include <libutil.h>
 
 #include <dlfcn.h>
 #include <sys/types.h>
@@ -48,10 +57,18 @@
 
 #define LIBTHREAD_DB_SO "libthread_db.so"
 
+struct private_thread_info
+{
+  char *lwp_name;
+};
+
 struct ps_prochandle
 {
   pid_t pid;
 };
+
+/* Defining the prototype of _initialize_thread_db to remove warning */
+extern initialize_file_ftype _initialize_thread_db;
 
 /* This module's target vectors.  */
 static struct target_ops fbsd_thread_ops;
@@ -76,8 +93,8 @@ static td_thragent_t *thread_agent;
 /* The last thread we are single stepping */
 static ptid_t last_single_step_thread;
 
-/* Pointers to the libthread_db functions.  */
 
+/* Pointers to the libthread_db functions.  */
 static td_err_e (*td_init_p) (void);
 
 static td_err_e (*td_ta_new_p) (struct ps_prochandle *ps, td_thragent_t **ta);
@@ -133,12 +150,16 @@ static CORE_ADDR td_create_bp_addr;
 static CORE_ADDR td_death_bp_addr;
 
 /* Prototypes for local functions.  */
+static void fbsd_find_lwp_name(long lwpid, struct private_thread_info *info);
 static void fbsd_thread_find_new_threads (struct target_ops *ops);
 static int fbsd_thread_alive (struct target_ops *ops, ptid_t ptid);
 static void attach_thread (ptid_t ptid, const td_thrhandle_t *th_p,
                const td_thrinfo_t *ti_p, int verbose);
 static void fbsd_thread_detach (struct target_ops *ops, char *args,
 				int from_tty);
+
+CORE_ADDR fbsd_thread_get_local_address(struct target_ops *ops,
+		ptid_t ptid, CORE_ADDR lm, CORE_ADDR offset);
 
 /* Building process ids.  */
 
@@ -151,6 +172,13 @@ static void fbsd_thread_detach (struct target_ops *ops, char *args,
 
 #define BUILD_LWP(lwp, pid)	ptid_build (pid, lwp, 0)
 #define BUILD_THREAD(tid, pid)	ptid_build (pid, 0, tid)
+
+static void
+free_private_thread_info(struct private_thread_info *info)
+{
+  xfree(info->lwp_name);
+  xfree(info);
+}
 
 static char *
 thread_db_err_str (td_err_e err)
@@ -237,7 +265,7 @@ static ptid_t
 thread_from_lwp (ptid_t ptid, td_thrhandle_t *th, td_thrinfo_t *ti)
 {
   td_err_e err;
- 
+
   gdb_assert (IS_LWP (ptid));
 
   if (fbsd_thread_active)
@@ -252,7 +280,7 @@ thread_from_lwp (ptid_t ptid, td_thrhandle_t *th, td_thrinfo_t *ti)
         }
     }
 
-  /* the LWP is not mapped to user thread */  
+  /* the LWP is not mapped to user thread */
   return BUILD_LWP (GET_LWP (ptid), GET_PID (ptid));
 }
 
@@ -463,7 +491,7 @@ check_for_thread_db (void)
      that at this point there is no guarantee that we actually have a
      child process.  */
   proc_handle.pid = GET_PID (inferior_ptid);
-  
+
   /* Now attempt to open a connection to the thread library.  */
   err = td_ta_new_p (&proc_handle, &thread_agent);
   switch (err)
@@ -477,7 +505,7 @@ check_for_thread_db (void)
       push_target(&fbsd_thread_ops);
       fbsd_thread_present = 1;
       fbsd_thread_activate();
-	  
+
       break;
 
     default:
@@ -631,11 +659,24 @@ static void
 attach_thread (ptid_t ptid, const td_thrhandle_t *th_p,
                const td_thrinfo_t *ti_p, int verbose)
 {
+  struct private_thread_info *private;
+  struct thread_info *tp = NULL;
+  char *lwpstr = NULL;
   td_err_e err;
 
   /* Add the thread to GDB's thread list.  */
   if (!in_thread_list (ptid))
-    add_thread (ptid);
+  {
+    /* Add thread with info */
+    private = xmalloc(sizeof(struct private_thread_info));
+    gdb_assert(private != NULL);
+    // Thread name is assigned when printed
+    memset(private, 0, sizeof(struct private_thread_info));
+
+    tp = add_thread_with_info(ptid, private);
+    tp->private = private;
+    tp->private_dtor = free_private_thread_info;
+  }
 
   if (ti_p->ti_state == TD_THR_UNKNOWN || ti_p->ti_state == TD_THR_ZOMBIE)
     return;                     /* A zombie thread -- do not attach.  */
@@ -743,7 +784,7 @@ fbsd_thread_wait (struct target_ops *ops,
          a non-existing thread to fbsd_thread_resume causes error. However,
          if the exiting thread is the currently selected thread,
          then that is handled later in handle_inferior_event(), and we must
-         not delete the currently selected thread. 
+         not delete the currently selected thread.
       */
       if (!fbsd_thread_alive (ops, inferior_ptid) && !ptid_equal(inferior_ptid, ret))
         {
@@ -781,7 +822,7 @@ fbsd_lwp_fetch_registers (struct target_ops *ops,
   if (ptrace (PT_GETREGS, lwp, (caddr_t) &gregs, 0) == -1)
     error ("Cannot get lwp %d registers: %s\n", lwp, safe_strerror (errno));
   supply_gregset (regcache, &gregs);
-  
+
 #ifdef PT_GETXMMREGS
   if (ptrace (PT_GETXMMREGS, lwp, xmmregs, 0) == 0)
     {
@@ -819,7 +860,7 @@ fbsd_thread_fetch_registers (struct target_ops *ops,
   err = td_ta_map_id2thr_p (thread_agent, GET_THREAD (inferior_ptid), &th);
   if (err != TD_OK)
     error ("Cannot find thread %d: Thread ID=%ld, %s",
-           pid_to_thread_id (inferior_ptid),           
+           pid_to_thread_id (inferior_ptid),
            GET_THREAD (inferior_ptid), thread_db_err_str (err));
 
   err = td_thr_getgregs_p (&th, gregset);
@@ -1051,7 +1092,7 @@ fbsd_thread_alive (struct target_ops *ops, ptid_t ptid)
     {
       lwp = GET_LWP (ptid);
       bfd_map_over_sections (core_bfd, fbsd_core_check_lwp, &lwp);
-      return (lwp == 0); 
+      return (lwp == 0);
     }
 
   /* check lwp in kernel */
@@ -1091,10 +1132,74 @@ fbsd_thread_find_new_threads (struct target_ops *ops)
     error ("Cannot find new threads: %s", thread_db_err_str (err));
 }
 
+static void
+fbsd_find_lwp_name(long lwpid, struct private_thread_info *info)
+{
+  int error, name[4];
+  unsigned int i;
+  struct kinfo_proc *kipp, *kip;
+  char *lwpstr = info->lwp_name;
+  int pid = inferior_ptid.pid;
+  size_t len = 0;
+
+  name[0] = CTL_KERN;
+  name[1] = KERN_PROC;
+  name[2] = KERN_PROC_PID | KERN_PROC_INC_THREAD;
+  name[3] = pid;
+
+  error = sysctl(name, 4, NULL, &len, NULL, 0);
+  if (error < 0 && errno != ESRCH) {
+      warn("sysctl: kern.proc.pid: %d", pid);
+      return;
+  }
+  if (error < 0)
+    return;
+
+  kip = malloc(len);
+  if (kip == NULL)
+    err(-1, "malloc");
+
+  if (sysctl(name, 4, kip, &len, NULL, 0) < 0) {
+      warn("sysctl: kern.proc.pid: %d", pid);
+      free(kip);
+      return;
+  }
+
+  for (i = 0; i < len / sizeof(*kipp); i++) {
+      kipp = &kip[i];
+      if ((kipp->ki_tid == lwpid) && strlen(kipp->ki_ocomm) &&
+          (strcmp(kipp->ki_comm, kipp->ki_ocomm) != 0))
+        {
+          // Found the LWP, update the name field
+          if (lwpstr != NULL)
+            {
+              if (strcmp(lwpstr, kipp->ki_ocomm) != 0)
+                {
+                  xfree(lwpstr);
+                }
+              else
+                {
+                  // Name hasn't changed, just return
+                  break;
+                }
+            }
+
+          len = strlen(kipp->ki_ocomm);
+          lwpstr = xmalloc(len);
+          strcpy(lwpstr, kipp->ki_ocomm);
+          info->lwp_name = lwpstr;
+          break;
+        }
+  }
+
+  free(kip);
+}
+
 static char *
 fbsd_thread_pid_to_str (struct target_ops *ops, ptid_t ptid)
 {
   static char buf[64];
+  struct thread_info *tinfo = NULL;
 
   if (IS_THREAD (ptid))
     {
@@ -1112,10 +1217,25 @@ fbsd_thread_pid_to_str (struct target_ops *ops, ptid_t ptid)
         error ("Cannot get thread info, Thread ID=%ld, %s",
                GET_THREAD (ptid), thread_db_err_str (err));
 
+      tinfo = find_thread_ptid(ptid);
+      gdb_assert(tinfo != NULL);
+
       if (ti.ti_lid != 0)
         {
-          snprintf (buf, sizeof (buf), "Thread %llx (LWP %d)",
-                    (unsigned long long)th.th_thread, ti.ti_lid);
+          // Need to find the name of this LWP, even though it shouldn't change
+          fbsd_find_lwp_name(ti.ti_lid, tinfo->private);
+
+          if (tinfo->private->lwp_name == NULL)
+            {
+              snprintf(buf, sizeof (buf), "Thread %llx (LWP %d)",
+                  (unsigned long long)th.th_thread, ti.ti_lid);
+            }
+          else
+            {
+              snprintf(buf, sizeof (buf), "Thread %llx (LWP %d %s)",
+                  (unsigned long long)th.th_thread, ti.ti_lid,
+                  tinfo->private->lwp_name);
+            }
         }
       else
         {
@@ -1170,7 +1290,7 @@ static int
 tsd_cb (thread_key_t key, void (*destructor)(void *), void *ignore)
 {
   struct minimal_symbol *ms;
-  char *name;
+  const char *name;
 
   ms = lookup_minimal_symbol_by_pc (extract_func_ptr (&destructor));
   if (!ms)
@@ -1333,7 +1453,7 @@ thread_db_load (void)
   td_ta_event_getmsg_p = dlsym (handle, "td_ta_event_getmsg");
   td_thr_event_enable_p = dlsym (handle, "td_thr_event_enable");
   td_thr_tls_get_addr_p = dlsym (handle, "td_thr_tls_get_addr");
-  
+
   return 1;
 }
 
@@ -1514,7 +1634,7 @@ ps_lstop(struct ps_prochandle *ph, lwpid_t lwpid)
 {
   if (ptrace (PT_SUSPEND, lwpid, 0, 0) == -1)
     return PS_ERR;
-  return PS_OK;  
+  return PS_OK;
 }
 
 ps_err_e
@@ -1522,7 +1642,7 @@ ps_lcontinue(struct ps_prochandle *ph, lwpid_t lwpid)
 {
   if (ptrace (PT_RESUME, lwpid, 0, 0) == -1)
     return PS_ERR;
-  return PS_OK;   
+  return PS_OK;
 }
 
 ps_err_e
