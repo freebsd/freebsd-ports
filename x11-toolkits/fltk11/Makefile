@@ -37,7 +37,7 @@ OPORTNAME=	fltk
 WRKSRC=		${WRKDIR}/${OPORTNAME}-${PORTVERSION}
 
 DEPRECATED=	new code should use /x11-toolkits/fltk
-EXPIRATION=	2013-01-01
+EXPIRATION_DATE=	2012-11-28
 
 post-patch:
 	${REINPLACE_CMD} -e '30s/test //' ${WRKSRC}/Makefile
