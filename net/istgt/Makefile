@@ -1,18 +1,13 @@
-# New ports collection makefile for:	istgt
-# Date created:		2009-02-23
-# Whom:			Daisuke Aoyama <aoyama@peach.ne.jp>
-#
+# Created by: Daisuke Aoyama <aoyama@peach.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	istgt
-PORTVERSION=	20120901
-PORTREVISION=	1
+PORTVERSION=	20121028
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
 MAINTAINER=	aoyama@peach.ne.jp
-COMMENT=	iSCSI target for Debian/NetBSD/FreeBSD
+COMMENT=	iSCSI target for openSUSE/Debian/NetBSD/FreeBSD
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
