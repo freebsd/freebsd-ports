@@ -1,16 +1,10 @@
-# New ports collection makefile for:	cmus
-# Date created:				14 October 2005
-# Whom:					Adam Weinberger
-#
+# Created by: Adam Weinberger
 # $FreeBSD$
-#
 
 PORTNAME=	cmus
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.4.3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	h.skuhra@gmail.com
@@ -20,29 +14,19 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_NCURSES=	yes
+USE_PKGCONFIG=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \
 		exampledir=${EXAMPLESDIR} \
-		CONFIG_ALSA=n
+		CONFIG_ALSA=n CONFIG_ROAR=n
 
-OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
-		MAD "MPEG Audio Decoder (libmad) support" On \
-		MODPLUG "libmodplug (mod, x3m, ...) support" Off \
-		MIKMOD "libmikmod (mod, x3m, ...) support" Off \
-		MUSEPACK "libmpcdec (Musepack .mpc) support" Off \
-		VORBIS "Ogg/Vorbis support" On \
-		TREMOR "Use Tremor as Ogg/Vorbis input plugin" Off \
-		MP4 "MPEG-4 AAC support" Off \
-		AAC "AAC support" Off \
-		WAVPACK "Wavpack support" Off \
-		FFMPEG "FFMPEG support" Off \
-		LIBAO "Libao cross-platform audio library" Off \
-		PULSEAUDIO "Pulseaudio support" Off \
-		ARTS "ARTS support" Off
+OPTIONS_DEFINE=	AAC AO ARTS FFMPEG FLAC MAD MIKMOD MODPLUG MP4 \
+		MUSEPACK PULSEAUDIO TREMOR VORBIS WAVPACK
+OPTIONS_DEFAULT=FLAC MAD VORBIS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=CONFIG_FLAC=y
 PLIST_SUB+=	FLAC=""
@@ -51,7 +35,7 @@ CONFIGURE_ARGS+=CONFIG_FLAC=n
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
-.if !defined(WITHOUT_MAD)
+.if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=CONFIG_MAD=y
 PLIST_SUB+=	MAD=""
@@ -60,7 +44,7 @@ CONFIGURE_ARGS+=CONFIG_MAD=n
 PLIST_SUB+=	MAD="@comment "
 .endif
 
-.if defined(WITH_MODPLUG)
+.if ${PORT_OPTIONS:MMODPLUG}
 LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=CONFIG_MODPLUG=y
 PLIST_SUB+=	MODPLUG=""
@@ -69,7 +53,7 @@ CONFIGURE_ARGS+=CONFIG_MODPLUG=n
 PLIST_SUB+=	MODPLUG="@comment "
 .endif
 
-.if defined(WITH_MIKMOD)
+.if ${PORT_OPTIONS:MMIKMOD}
 LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=CONFIG_MIKMOD=y
 PLIST_SUB+=	MIKMOD=""
@@ -77,7 +61,7 @@ PLIST_SUB+=	MIKMOD=""
 PLIST_SUB+=	MIKMOD="@comment "
 .endif
 
-.if defined(WITH_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
 CONFIGURE_ARGS+=CONFIG_MPC=y
 PLIST_SUB+=	MPC=""
@@ -86,7 +70,7 @@ CONFIGURE_ARGS+=CONFIG_MPC=n
 PLIST_SUB+=	MPC="@comment "
 .endif
 
-.if !defined(WITHOUT_VORBIS) || defined(WITH_TREMOR)
+.if ${PORT_OPTIONS:MVORBIS} || ${PORT_OPTIONS:MTREMOR}
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=CONFIG_VORBIS=y
 PLIST_SUB+=	VORBIS=""
@@ -95,12 +79,12 @@ CONFIGURE_ARGS+=CONFIG_VORBIS=n
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if defined(WITH_TREMOR)
+.if ${PORT_OPTIONS:MTREMOR}
 LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
 CONFIGURE_ARGS+=CONFIG_TREMOR=y
 .endif
 
-.if defined(WITH_MP4)
+.if ${PORT_OPTIONS:MMP4}
 LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mp4v2
 CONFIGURE_ARGS+=CONFIG_MP4=y
@@ -110,7 +94,7 @@ CONFIGURE_ARGS+=CONFIG_MP4=n
 PLIST_SUB+=	MP4="@comment "
 .endif
 
-.if defined(WITH_AAC)
+.if ${PORT_OPTIONS:MAAC}
 LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=CONFIG_AAC=y
 PLIST_SUB+=	AAC=""
@@ -119,7 +103,7 @@ CONFIGURE_ARGS+=CONFIG_AAC=n
 PLIST_SUB+=	AAC="@comment "
 .endif
 
-.if defined(WITH_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=CONFIG_WAVPACK=y
 PLIST_SUB+=	WAVPACK=""
@@ -128,8 +112,10 @@ CONFIGURE_ARGS+=CONFIG_WAVPACK=n
 PLIST_SUB+=	WAVPACK="@comment "
 .endif
 
-.if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+.if ${PORT_OPTIONS:MFFMPEG}
+FFMPEG_SUFFIX=	-011
+BUILD_DEPENDS+=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+RUN_DEPENDS+=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
 CONFIGURE_ARGS+=CONFIG_FFMPEG=y
 PLIST_SUB+=	FFMPEG=""
 .else
@@ -137,7 +123,7 @@ CONFIGURE_ARGS+=CONFIG_FFMPEG=n
 PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
-.if defined(WITH_LIBAO)
+.if ${PORT_OPTIONS:MAO}
 LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=CONFIG_AO=y
 PLIST_SUB+=	AO=""
@@ -146,7 +132,7 @@ CONFIGURE_ARGS+=CONFIG_AO=n
 PLIST_SUB+=	AO="@comment "
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=CONFIG_PULSE=y
 PLIST_SUB+=	PULSEAUDIO=""
@@ -155,7 +141,7 @@ CONFIGURE_ARGS+=CONFIG_PULSE=n
 PLIST_SUB+=	PULSEAUDIO="@comment "
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=CONFIG_ARTS=y
 PLIST_SUB+=	ARTS=""
@@ -169,7 +155,11 @@ MAN7=	cmus-tutorial.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' \
-		${WRKSRC}/Makefile ${WRKSRC}/Doc/cmus.txt
+		${WRKSRC}/Doc/cmus.txt
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' ${WRKSRC}/Doc/cmus.txt
+.if ${PORT_OPTIONS:MFFMPEG}
+	@${REINPLACE_CMD} -e 's,libavformat,libavformat${FFMPEG_SUFFIX},g' \
+		${WRKSRC}/configure
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
