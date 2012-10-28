@@ -659,8 +659,8 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 		--disable-updater		\
 		--disable-pedantic
 
-.if ${CXXFLAGS:M-stdlib=libc++}
-LIBS+=		-lcxxrt
+.if exists(/usr/lib/libcxxrt.so)
+LIBS+=		-Wl,--as-needed,-lcxxrt,--no-as-needed
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
@@ -723,6 +723,7 @@ MOZ_OPTIONS+=	--disable-gnomeui
 .if ${PORT_OPTIONS:MGNOMEVFS2}
 USE_GNOME+=		gnomevfs2
 MOZ_OPTIONS+=	--enable-gnomevfs
+MOZ_OPTIONS:=	${MOZ_OPTIONS:C/(extensions)=(.*)/\1=\2,gnomevfs/}
 .else
 MOZ_OPTIONS+=	--disable-gnomevfs
 .endif

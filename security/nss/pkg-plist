@@ -114,6 +114,9 @@ include/nss/nss/ssl.h
 include/nss/nss/sslerr.h
 include/nss/nss/sslproto.h
 include/nss/nss/sslt.h
+include/nss/nss/utilmodt.h
+include/nss/nss/utilpars.h
+include/nss/nss/utilparst.h
 include/nss/nss/utilrename.h
 lib/nss/libcrmf.a
 lib/nss/libfreebl3.so

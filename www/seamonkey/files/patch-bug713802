@@ -25,19 +25,6 @@ index 40ab494..eae5645 100755
  # MOZ_APP_DISPLAYNAME will be set by branding/configure.sh
  # Changing MOZ_*BRANDING_DIRECTORY requires a clobber to ensure correct results,
  # because branding dependencies are broken.
---- mozilla/browser/installer/package-manifest.in~
-+++ mozilla/browser/installer/package-manifest.in
-@@ -679,6 +679,10 @@ bin/libfreebl_32int64_3.so
- 
- ; [Extensions]
- ;
-+#ifdef MOZ_ENABLE_GIO
-+bin/components/@DLL_PREFIX@nkgio@DLL_SUFFIX@
-+#endif
-+
- #ifdef MOZ_ENABLE_GNOMEVFS
- bin/components/@DLL_PREFIX@nkgnomevfs@DLL_SUFFIX@
- #endif
 diff --git mozilla/configure.in mozilla/configure.in
 index 87a9391..2118651 100644
 --- mozilla/configure.in
@@ -109,18 +96,6 @@ index 8c13a33..cdedd30 100755
  MOZ_UPDATER=1
  # This should usually be the same as the value MAR_CHANNEL_ID.
  # If more than one ID is needed, then you should use a comma separated list
---- suite/installer/package-manifest.in~
-+++ suite/installer/package-manifest.in
-@@ -265,6 +265,9 @@
- @BINPATH@/components/necko_wifi.xpt
- #endif
- @BINPATH@/components/necko_wyciwyg.xpt
-+#ifdef MOZ_ENABLE_GIO
-+@BINPATH@/components/@DLL_PREFIX@nkgio@DLL_SUFFIX@
-+#endif
- #ifdef MOZ_ENABLE_GNOMEVFS
- @BINPATH@/components/@DLL_PREFIX@nkgnomevfs@DLL_SUFFIX@
- #endif
 
 commit d884d75
 Author: Karl Tomlinson <karlt+@karlt.net>
