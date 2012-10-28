@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rancid
-# Date created:		3 June 2002
-# Whom:			Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.8
@@ -46,13 +42,18 @@ NEWERCONFIG_FILES1=	etc/rancid.conf
 NEWERCONFIG_FILES2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
-OPTIONS=		SVN "Use Subversion instead of CVS" off
+OPTIONS_DEFINE=		SVN
+OPTIONS_DEFAULT=	
+
+SVN_DESC=		Use Subversion instead of CVS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SVN)
+.if ${PORT_OPTIONS:MSVN}
 CONFIGURE_ARGS+=	--with-svn
 BUILD_DEPENDS+=		svn:${PORTSDIR}/devel/subversion
+.else
+CONFIGURE_ARGS+=	--without-svn
 .endif
 
 pre-everything::
