@@ -21,9 +21,14 @@ else
 fi
 
 # Ensure all JDKs and JREs are installed
-for jvm in "${LOCALBASE}"/*jdk* "${LOCALBASE}"/*jre*; do
-    if [ -x "${jvm}/bin/java" ]; then
-        "${PKG_PREFIX}"/bin/registervm "${jvm}/bin/java" > /dev/null 2>&1
+_excl_dirs='bootstrap-openjdk'
+_find_expr='-depth 2 -regex .*/bin/java'
+for dir in ${_excl_dirs}; do
+    _find_expr="${_find_expr} ! -regex ${dir}/bin/java"
+done
+for jvm in `cd "${LOCALBASE}" && find *jdk* *jre* ${_find_expr}`; do
+    if [ -x "${LOCALBASE}/${jvm}" ]; then
+        "${PKG_PREFIX}"/bin/registervm "${LOCALBASE}/${jvm}" > /dev/null 2>&1
     fi
 done
 
