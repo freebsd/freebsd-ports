@@ -1,6 +1,12 @@
 --- gdb/amd64fbsd-nat.c.orig	2012-02-09 17:06:44.000000000 +0100
-+++ gdb/amd64fbsd-nat.c	2012-08-22 23:51:38.000000000 +0200
-@@ -26,6 +26,7 @@
++++ gdb/amd64fbsd-nat.c	2012-08-30 10:58:55.000000000 +0200
+@@ -21,11 +21,13 @@
+ #include "inferior.h"
+ #include "regcache.h"
+ #include "target.h"
++#include "gregset.h"
+ 
+ #include "gdb_assert.h"
  #include <signal.h>
  #include <stddef.h>
  #include <sys/types.h>
@@ -8,7 +14,7 @@
  #include <sys/ptrace.h>
  #include <sys/sysctl.h>
  #include <machine/reg.h>
-@@ -93,6 +94,47 @@
+@@ -93,6 +95,46 @@
  };
  
  
@@ -28,7 +34,7 @@
 +   do this for all registers.  */
 +
 +void
-+fill_gregset (struct regcache *regcache, gregset_t *gregsetp, int regnum)
++fill_gregset (const struct regcache *regcache, gdb_gregset_t *gregsetp, int regnum)
 +{
 +  amd64_collect_native_gregset (regcache, gregsetp, regnum);
 +}
@@ -47,12 +53,11 @@
 +   do this for all registers.  */
 +
 +void
-+fill_fpregset (struct regcache *regcache, fpregset_t *fpregsetp, int regnum)
++fill_fpregset (const struct regcache *regcache, gdb_fpregset_t *fpregsetp, int regnum)
 +{
 +  amd64_collect_fxsave (regcache, regnum, fpregsetp);
 +}
 +
-+
  /* Support for debugging kernel virtual memory images.  */
  
  #include <sys/types.h>

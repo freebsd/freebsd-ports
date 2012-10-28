@@ -24,13 +24,12 @@ CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-system-readline \
-		--without-libunwind \
+		--without-libunwind-ia64 \
 		--enable-target=all \
 		--enable-tui
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
-EXCLUDE=	dejagnu expect readline sim texinfo intl
+EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXCLUDE:S/^/--exclude /} \
 			--no-same-owner --no-same-permissions
 VER=	${PORTVERSION:S/.//g}
@@ -39,13 +38,14 @@ MAN1=	gdb${VER}.1
 
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
-# Forcing to use readline.6 from ports (newer readline in FreeBSD world is not
-# compatible anymore).
-USE_READLINE=	port
-
 OPTIONS_DEFINE=	DEBUG EXPAT PYTHON THREADS GDB_LINK
+OPTIONS_SINGLE_READLINE=	BASE_READLINE BUNDLED_READLINE PORT_READLINE
+OPTIONS_SINGLE=	READLINE
+BASE_READLINE_DESC=	from base system (EXPERIMENTAL)
+BUNDLED_READLINE_DESC=	from gdb distfile
+PORT_READLINE_DESC=	from devel/readline port
 GDB_LINK_DESC=	Create the gdb link
-OPTIONS_DEFAULT=	THREADS GDB_LINK
+OPTIONS_DEFAULT=	THREADS GDB_LINK PORT_READLINE
 
 .include <bsd.port.options.mk>
 
@@ -59,6 +59,19 @@ PLIST_SUB+=	GDB_LINK="@comment "
 USE_PYTHON=	2.5-2.7
 .endif
 
+.if empty(PORT_OPTIONS:MBUNDLED_READLINE)
+EXCLUDE+=	readline
+CONFIGURE_ARGS+=	--with-system-readline
+.endif
+
+.if ${PORT_OPTIONS:MBASE_READLINE}
+CFLAGS+=	-D_rl_echoing_p=readline_echoing_p
+USE_READLINE=	base
+.endif
+
+.if ${PORT_OPTIONS:MPORT_READLINE}
+USE_READLINE=	port
+.endif
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -97,7 +110,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
-	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
+	${LN} -sf ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
 .if ${PORT_OPTIONS:MGDB_LINK}
 	${LN} -sf gdb${VER} ${PREFIX}/bin/gdb
@@ -105,6 +118,12 @@ do-install:
 .if ${PORT_OPTIONS:MPYTHON}
 	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
 	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MPYTHON}
+	${CHMOD} u+w ${PREFIX}/share/gdb${VER}/python/gdb/*.py*
+	${CHMOD} u+w ${PREFIX}/share/gdb${VER}/python/gdb/command/*.py*
 .endif
 
 .include <bsd.port.post.mk>

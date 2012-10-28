@@ -1,14 +1,17 @@
---- gdb/i386fbsd-nat.c.orig	2010-01-01 02:31:36.000000000 -0500
-+++ gdb/i386fbsd-nat.c	2010-10-22 13:57:48.705926000 -0400
-@@ -24,6 +24,7 @@
+--- gdb/i386fbsd-nat.c.orig	2012-05-24 18:39:09.000000000 +0200
++++ gdb/i386fbsd-nat.c	2012-08-29 17:19:57.000000000 +0200
+@@ -21,8 +21,10 @@
+ #include "inferior.h"
+ #include "regcache.h"
  #include "target.h"
++#include "gregset.h"
  
  #include <sys/types.h>
 +#include <sys/procfs.h>
  #include <sys/ptrace.h>
  #include <sys/sysctl.h>
  
-@@ -81,6 +82,49 @@
+@@ -80,6 +82,49 @@
  }
  
  
@@ -28,7 +31,7 @@
 +   do this for all registers.  */
 +
 +void
-+fill_gregset (struct regcache *regcache, gregset_t *gregsetp, int regnum)
++fill_gregset (const struct regcache *regcache, gdb_gregset_t *gregsetp, int regnum)
 +{
 +  i386bsd_collect_gregset (regcache, gregsetp, regnum);
 +}
@@ -49,7 +52,7 @@
 +   do this for all registers.  */
 +
 +void
-+fill_fpregset (struct regcache *regcache, fpregset_t *fpregsetp, int regnum)
++fill_fpregset (const struct regcache *regcache, gdb_fpregset_t *fpregsetp, int regnum)
 +{
 +  i387_collect_fsave (regcache, regnum, fpregsetp);
 +}
@@ -58,7 +61,7 @@
  /* Support for debugging kernel virtual memory images.  */
  
  #include <sys/types.h>
-@@ -141,7 +185,6 @@
+@@ -141,7 +186,6 @@
  #endif /* HAVE_PT_GETDBREGS */
  
  
