@@ -6,8 +6,7 @@
 #    $MCom ports-experimental/security/nss/Makefile,v 1.4 2008/02/23 15:47:28 ahze Exp $
 
 PORTNAME=	nss
-PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
-PORTREVISION=	1
+PORTVERSION=	${_MAJOR}.${_MINOR} #.${_PATCH}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -22,8 +21,8 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 _MAJOR=	3
-_MINOR=	13
-_PATCH=	6
+_MINOR=	14
+_PATCH=	0
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/mozilla/security/nss
 

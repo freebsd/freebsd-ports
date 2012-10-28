@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	16.0.1
-PORTREVISION=	1
+DISTVERSION=	16.0.2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -82,10 +81,6 @@ MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
 MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
 		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
-.endif
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
 pre-extract:

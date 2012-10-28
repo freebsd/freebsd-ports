@@ -25,19 +25,6 @@ index 40ab494..eae5645 100755
  # MOZ_APP_DISPLAYNAME will be set by branding/configure.sh
  # Changing MOZ_*BRANDING_DIRECTORY requires a clobber to ensure correct results,
  # because branding dependencies are broken.
---- browser/installer/package-manifest.in~
-+++ browser/installer/package-manifest.in
-@@ -679,6 +679,10 @@ bin/libfreebl_32int64_3.so
- 
- ; [Extensions]
- ;
-+#ifdef MOZ_ENABLE_GIO
-+bin/components/@DLL_PREFIX@nkgio@DLL_SUFFIX@
-+#endif
-+
- #ifdef MOZ_ENABLE_GNOMEVFS
- bin/components/@DLL_PREFIX@nkgnomevfs@DLL_SUFFIX@
- #endif
 diff --git configure.in configure.in
 index 87a9391..2118651 100644
 --- configure.in

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.13.1
+DISTVERSION=	2.13.2
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -60,6 +60,12 @@ MAILNEWS_DESC?=	Mail and News modules
 
 OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCHATZILLA}
+MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
+.endif
+
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/comm-release
@@ -103,16 +109,9 @@ EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
 .endif
 .endif
-.if ${PORT_OPTIONS:MCHATZILLA}
-MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
-.endif
 
 .if ! ${PORT_OPTIONS:MCOMPOSER}
 MOZ_OPTIONS+=	--disable-composer
-.endif
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTNING}
