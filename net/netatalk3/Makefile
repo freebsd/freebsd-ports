@@ -44,7 +44,8 @@ OPTIONS=	PAM		"Enable PAM support" off \
 		KRB5		"Enable Kerberos V UAM" off \
 		ZEROCONF	"Enable Zeroconf (Bonjour) support" on \
 		LDAP		"Enable LDAP support" off \
-		SENDFILE	"Enable sendfile support" off
+		SENDFILE	"Enable sendfile support" off \
+		KERBEROS	"Enable Kerberos support" on
 
 MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \
 		dbd.1 macusers.1 \
@@ -61,6 +62,12 @@ CONFIGURE_ARGS+=	--enable-krbV-uam
 PLIST_SUB+=		NETATALKKRB5=""
 .else
 PLIST_SUB+=		NETATALKKRB5="@comment "
+.endif
+
+.if defined (WITH_KERBEROS)
+CONFIGURE_ARGS+=	--with-kerberos
+.else
+CONFIGURE_ARGS+=	--without-kerberos
 .endif
 
 .if defined(WITH_PAM)
