@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bozohttpd
-# Date created:         21.03.2002
-# Whom:                 Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	bozohttpd
 PORTVERSION=	20100920
@@ -20,34 +16,38 @@ USE_BZIP2=	YES
 USE_RC_SUBR=	bozohttpd
 
 #options handling
-OPTIONS=	HTPASSWD_SUPPORT	"Enable htpassord support" 	off \
-		SSL			"Enable SSL support"		on \
-		CGI			"Enable CGI support"		on
+OPTIONS_DEFINE=		HTPASSWD SSL CGI
+OPTIONS_DEFAULT=	SSL CGI
+
+HTPASSWD_DESC=		Enable htpassword support
+SSL_DESC=		Enable SSL support
+CGI_DESC=		Enable CGI support
 
 #make happy portlint
-.if defined(WITHOUT_SSL)
+.if empty(PORT_OPTIONS:MSSL)
 .else
 USE_OPENSSL=	yes
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_HTPASSWD_SUPPORT)
+.if ${PORT_OPTIONS:MHTPASSWD}
 CFLAGS+=	-DDO_HTPASSWD
 MAKE_ARGS+=	'LDFLAGS+= -lcrypt'
+.else
+CFLAGS+=	-UDO_HTPASSWD
 .endif
 
-.if defined(WITHOUT_SSL)
-CFLAGS+=	-DNO_SSL_SUPPORT
-.else
-#USE_OPENSSL=	yes
+.if ${PORT_OPTIONS:MSSL}
 CFLAGS+=	-UNO_SSL_SUPPORT
+.else
+CFLAGS+=	-DNO_SSL_SUPPORT
 .endif
 
-.if defined(WITHOUT_CGI)
-CFLAGS+=	-DNO_CGIBIN_SUPPORT
-.else
+.if ${PORT_OPTIONS:MCGI}
 CFLAGS+=	-UNO_CGIBIN_SUPPORT
+.else
+CFLAGS+=	-DNO_CGIBIN_SUPPORT
 .endif
 
 MAN8=		bozohttpd.8
@@ -57,4 +57,4 @@ PLIST_FILES=	libexec/bozohttpd
 post-patch:
 	@${REINPLACE_CMD} -e 's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/bozohttpd.8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
