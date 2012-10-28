@@ -55,8 +55,8 @@ bin/swig2.0
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Varargs.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Warnings.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Windows.html
-%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/android-simple.png
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/android-class.png
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/android-simple.png
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/ch2.1.png
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/chapters
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/fixstyle.py
@@ -1310,6 +1310,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/allegrocl/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/allowexcept.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/allprotected.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/allprotected_not.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/anonymous_bitfield.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/apply_signed_char.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/apply_strings.i
@@ -2021,6 +2022,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/inherit_target_language_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/intermediary_classname_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_constants_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_director_assumeoverride_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_director_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_enums_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_jnitypes_runme.java
@@ -2048,6 +2050,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/memberin_extend_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/minherit2_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/multiple_inheritance_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/namespace_forward_declaration_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/nested_class_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/nested_structs_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/nested_workaround_runme.java
@@ -2077,22 +2080,27 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_default_class_parms_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_default_class_parms_typedef_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_methods_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_namespace_forward_declaration_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_nested_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_nested_typemaps_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_partial_specialization_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_partial_specialization_typedef_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_template_parameters_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_typedef_inherit_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_using_directive_and_declaration_forward_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/typemap_arrays_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/typemap_namespace_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/typemap_out_optimal_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/unions_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/using_directive_and_declaration_forward_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/using_directive_and_declaration_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/using_pointers_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/varargs_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/virtual_poly_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/wallkw_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_constants.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_director.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_director_assumeoverride.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_enums.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_jnitypes.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_arrays.i
@@ -2139,6 +2147,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_pair.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_pair_extra.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_pair_lang_object.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_pair_using.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_queue.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_set.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_stack.i
@@ -2232,6 +2241,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_class.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_enum.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_extend.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_forward_declaration.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_nested.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_spaces.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/namespace_template.i
@@ -2714,6 +2724,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_map_member_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_map_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_pair_extra_runme.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_pair_using_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_set_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_stream_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_string_extra_runme.py
@@ -3157,6 +3168,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_int_const.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_matrix.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_methods.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_namespace_forward_declaration.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_nested.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_nested_typemaps.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_ns.i
@@ -3202,6 +3214,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typemaps_typedef.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typemaps_typedef2.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_using.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_using_directive_and_declaration_forward.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_virtual.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_whitespace.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir1/hello.i
@@ -3249,6 +3262,8 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using1.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using2.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using_composition.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using_directive_and_declaration.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using_directive_and_declaration_forward.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using_extend.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using_inherit.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/using_namespace.i
@@ -3912,11 +3927,6 @@ bin/swig2.0
 @dirrm %%DATADIR%%/%%PORTVERSION%%/allegrocl
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Devel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/xml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/uffi
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2
@@ -4225,4 +4235,9 @@ bin/swig2.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/class
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Devel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/libs

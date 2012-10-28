@@ -1,12 +1,8 @@
-# New ports collection makefile for:    SWIG
-# Date created:                 19 April 1996
-# Whom:                         jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	swig
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -62,14 +58,14 @@ post-configure:
 	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Examples && ${FIND} . -type d \
 		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Examples && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/${PORTVERSION}/{} \;
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Doc && ${FIND} . -type d \
 		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
