@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nfdump-devel
-# Date created:				2007-05-20
-# Whom:					Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	nfdump-devel
 PORTVERSION=	20070808
@@ -22,10 +18,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nfprofile --with-rrdpath=${LOCALBASE}
 
 #flow-tools support
-OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
-		SFLOW		"Build sflow collector daemon also" off
+OPTIONS_DEFINE=		FT2NFDUMP SFLOW NFDUMP14
+OPTIONS_DEFAULT=	
 
-.include <bsd.port.pre.mk>
+FT2NFDUMP_DESC=		With Flow-tools to nfdump converter
+SFLOW_DESC=		Build sflow collector daemon also
+NFDUMP14_DESC=		Enable compatbility with version 1.4
+
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not configure on 6.X
@@ -33,8 +33,10 @@ BROKEN=		does not configure on 6.X
 
 #for compatibility
 #
-.ifndef(WITHOUT_NFDUMP14_SUPPORT)
+.if ${PORT_OPTIONS:MNFDUMP14}
 CONFIGURE_ARGS+=	--enable-compat14
+.else
+CONFIGURE_ARGS+=	--disable-compat14
 .endif
 
 PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfreplay bin/nfexpire bin/nfprofile
@@ -42,7 +44,7 @@ MAN1=		nfcapd.1 nfdump.1 nfexpire.1 nfprofile.1 nfreplay.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 #flow-tools support
-.if defined(WITH_FT2NFDUMP)
+.if ${PORT_OPTIONS:MFT2NFDUMP}
 BUILD_DEPENDS+=		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
 PLIST_FILES+=	bin/ft2nfdump
@@ -50,16 +52,18 @@ MAN1+=		ft2nfdump.1
 .endif
 
 #sflow capture support
-.if defined(WITH_SFLOW)
+.if ${PORT_OPTIONS:MSFLOW}
 CONFIGURE_ARGS+=	--enable-sflow
 PLIST_FILES+=	bin/sfcapd
 MAN1+=		sfcapd.1
+.else
+CONFIGURE_ARGS+=	--disable-sflow
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
