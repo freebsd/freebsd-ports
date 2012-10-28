@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	barbecue
-PORTVERSION=	1.0.6d
-PORTREVISION=	4
+DISTVERSION=	1.5-beta1
 CATEGORIES=	graphics print java
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
+DIST_SUBDIR=	java
 
-MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A Java barcode generator
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Java barcode generator
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
 
@@ -20,40 +22,57 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
-JARFILES=	${PORTNAME}-${PORTVERSION}.jar
-PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILES:S|-${PORTVERSION}||}	\
-		%%JAVAJARDIR%%/LICENSE.barbecue.txt
+JARFILES=	${PORTNAME}-${DISTVERSION}.jar
 
-.if defined(WITH_TOMCAT55)
-RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-JAKARTA_HOME=	${LOCALBASE}/tomcat5.5
-PLIST_FILES+=	${JAKARTA_HOME:S|^${LOCALBASE}/||}/webapps/${PORTNAME}.war
-.endif
+TOMCATDIR=	${PREFIX}/${TOMCATVER}
+APPHOME=	${LOCALBASE}/${TOMCATVER}
+WEBAPPDIR=	${TOMCATDIR}/webapps
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
-pre-everything::
-.if !defined(WITH_TOMCAT55)
-	@${ECHO_MSG} '*********************************************************'
-	@${ECHO_MSG} '* To use Barbecue as a servlet, define WITH_TOMCAT55.   *'
-	@${ECHO_MSG} '*********************************************************'
+PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||}
+
+OPTIONS_SINGLE=	AS
+OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
+OPTIONS_DEFAULT=	TOMCAT6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTOMCAT6}
+TOMCATVER=	apache-tomcat-6.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+.endif
+
+.if ${PORT_OPTIONS:MTOMCAT7}
+TOMCATVER=	apache-tomcat-7.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 .endif
 
 post-extract:
-	${MV} ${WRKSRC}/${JARFILES} ${WRKSRC}/${JARFILES:S|-${PORTVERSION}||}
+	${MV} ${WRKSRC}/${JARFILES} ${WRKSRC}/${JARFILES:S|-${DISTVERSION}||}
+	${MKDIR} ${WRKDIR}/${PORTNAME}
+	${TAR} xf ${WRKSRC}/${PORTNAME}.war -C ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_DATA} ${JARFILES:S|-${PORTVERSION}||:S|^|${WRKSRC}/|} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${JAVAJARDIR}/LICENSE.barbecue.txt
-.if defined(WITH_TOMCAT55)
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.war ${JAKARTA_HOME}/webapps
+	${INSTALL_DATA} ${JARFILES:S|-${DISTVERSION}||:S|^|${WRKSRC}/|} ${JAVAJARDIR}
+
+.if ${PORT_OPTIONS:MTOMCAT6} || ${PORT_OPTIONS:MTOMCAT7}
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${WEBAPPDIR}/${PORTNAME}
+	(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME})
+	${TOUCH} ${WEBAPPDIR}/${PORTNAME}/WEB-INF/classes/net/sourceforge/barbecue/postnet/.empty
 .endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/examples ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
