@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xerces-c2
-# Date created:		06 September 2002
-# Whom:			"Bjoern A. Zeeb" (bzeeb+freebsdports@zabbadoz.net)
-#
+# Created by: "Bjoern A. Zeeb" (bzeeb+freebsdports@zabbadoz.net)
 # $FreeBSD$
-#
 
 PORTNAME=	xerces-c2-devel
 PORTVERSION=	2.8.0
@@ -17,21 +13,26 @@ COMMENT=	Validating XML parser from the Apache XML Project
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	THREADS "Build a thread enabled shared library." on \
-		DEBUG "Include debugging information, do not strip." off \
-		ICONVFBSD "Use IconvFBSD transcoder." on \
-		ICU "Use ICU transcoder." off \
-		NATIVE "Use native transcoder." off
+OPTIONS_DEFINE=		THREADS DEBUG ICONVFBSD ICU NATIVE
+OPTIONS_DEFAULT=	THREADS ICONVFBSD
 
-.include <bsd.port.pre.mk>
+THREADS_DESC=		Build a thread enabled shared library
+DEBUG_DESC=		Include debugging information, do not strip
+ICONVFBSD_DESC=		Use IconvFBSD transcoder
+ICU_DESC=		Use ICU transcoder
+NATIVE_DESC=		Use native transcoder
 
-.if defined(WITH_NATIVE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNATIVE}
 TRANSCODER=		native
 .endif
-.if defined(WITH_ICU)
+
+.if ${PORT_OPTIONS:MICU}
 TRANSCODER=		icu
 .endif
-.if defined(WITH_ICONVFBSD)
+
+.if ${PORT_OPTIONS:MICONVFBSD}
 TRANSCODER=		IconvFBSD
 .endif
 
@@ -84,7 +85,7 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	-d
 .endif
 
@@ -96,11 +97,11 @@ CONFIGURE_ARGS+=	-b 64
 SAMPLES_CONFIG_ARGS+=	-b 64
 .endif
 
-.if defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	-r none
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
+.else
+CONFIGURE_ARGS+=	-r none
 .endif
 
 XERCESC_LIB_VERSION=	${PORTVERSION:S/.//:R}
@@ -110,24 +111,22 @@ PLIST_SUB+=		XERCESC_LIB=${XERCESC_LIB} \
 			XERCESC_DEPDOM_LIB=${XERCESC_DEPDOM_LIB} \
 			XERCESC_LIB_VERSION=${XERCESC_LIB_VERSION}
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 ALL_TARGET?=	all samples
 XERCES_BINS?=	CreateDOMDocument DOMCount DOMPrint EnumVal MemParse PParse \
 		PSVIWriter Redirect SAX2Count SAX2Print SAXCount SAXPrint \
 		SCMPrint SEnumVal StdInParse
 SAMPLES_CONFIG_ARGS+=	-p freebsd -c ${CC} -x ${CXX}
-.if defined(WITHOUT_THREADS)
-SAMPLES_CONFIG_ARGS+=	-r none
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 SAMPLES_CONFIG_ARGS+=	-r pthread
 SAMPLES_CONFIG_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
+.else
+SAMPLES_CONFIG_ARGS+=	-r none
 .endif
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 SCRIPTS_ENV=	WITH_NATIVE="${WITH_NATIVE}" \
 		WITH_ICU="${WITH_ICU}" \
@@ -149,7 +148,7 @@ pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
 
 post-configure:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 .if defined(TRANSCODER) && (${TRANSCODER} == "icu")
 	@(cd ${WRKSRC}/samples && \
 		${SETENV} \
@@ -168,11 +167,11 @@ post-configure:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${XERCES_BINS} data
 	@${CP} -r ${WRKSRC}/samples/$i ${EXAMPLESDIR}
@@ -182,4 +181,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
