@@ -12,18 +12,6 @@ LIB_PATH=%%LIBDIR%%
 
 CLASS_PATH=:%%JAVAJARDIR%%/%%JARFILE%%:${ECLIPSE_SWT_JAR}
 
-#if [ ! "${MOZILLA_FIVE_HOME}" ]; then
-#	if [ -d "%%LOCALBASE%%/lib/%%GECKO%%" ]; then
-#		MOZILLA_FIVE_HOME="%%LOCALBASE%%/lib/%%GECKO%%"
-#	fi
-#fi
-
-#if [ "${MOZILLA_FIVE_HOME}" ];then
-#	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MOZILLA_FIVE_HOME}"
-#	export MOZILLA_FIVE_HOME LD_LIBRARY_PATH
-#	echo "MOZILLA_FIVE_HOME=${MOZILLA_FIVE_HOME}"
-#fi
-
 if [ "${DEBUG}" ]
 then
 	echo "ECLIPSE_BASE = ${ECLIPSE_BASE}"
