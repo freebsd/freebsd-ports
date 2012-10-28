@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ndpmon
-# Date created:				2006-12-17
-# Whom:					janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	ndpmon
 PORTVERSION=	1.4.0
@@ -18,17 +14,20 @@ COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	PY4SUITE	"Depend on py-4suite-xml (for generating HTML)"	off \
-		MACRESOLV	"Enable MAC Manufacturer Resolution" off
+OPTIONS_DEFINE=		PY4SUITE MACRESOLV
+OPTIONS_DEFAULT=	
+
+PY4SUITE_DESC=		Depend on py-4suite-xml (for generating HTML)
+MACRESOLV_DESC=		Enable MAC Manufacturer Resolution
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_PY4SUITE)
-PLIST_SUB+=	PY="@comment "
-.else
+.if ${PORT_OPTIONS:MPY4SUITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/Domlette.py:${PORTSDIR}/textproc/py-4suite-xml
 USE_PYTHON=	2.6+
 PLIST_SUB+=	PY=""
+.else
+PLIST_SUB+=	PY="@comment "
 .endif
 
 USE_GNOME=	libxml2
@@ -44,8 +43,10 @@ CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${ETCDIR} \
 MAN8=		ndpmon.8
 PORTDOCS=	INSTALL README
 
-.if defined(WITH_MACRESOLV)
+.if ${PORT_OPTIONS:MMACRESOLV}
 CONFIGURE_ARGS+=--enable-mac-resolv
+.else
+CONFIGURE_ARGS+=--disable-mac-resolv
 .endif
 
 post-patch:
@@ -65,7 +66,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.dtd ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/demopipeprogram.pl.sample ${DATADIR}
-.if defined(WITH_PY4SUITE)
+.if ${PORT_OPTIONS:MPY4SUITE}
 	${INSTALL_SCRIPT} ${WRKSRC}/create_html_table.py ${DATADIR}
 .endif
 
@@ -75,7 +76,7 @@ do-install:
 	${MKDIR} ${PREFIX}/var/ndpmon
 	${INSTALL_DATA} ${WRKSRC}/neighbor_list.xml ${PREFIX}/var/ndpmon/neighbor_list.xml
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
