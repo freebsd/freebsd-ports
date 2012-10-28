@@ -1,14 +1,10 @@
-# New ports collection makefile for:	opennurbs
-# Date created:                		Aug 17 2011
-# Whom:                        		Fernando Apesteguia <fernando.apesteguia@gmail.com>
-#
+# Created by: Fernando Apesteguia <fernando.apesteguia@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	opennurbs
-PORTVERSION=	20111122
-PORTREVISION=	1
+PORTVERSION=	20120914
 CATEGORIES=	graphics
-MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2011-11-22/
+MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2012-09-14/
 MASTER_SITE_SUBDIR=${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -30,7 +26,7 @@ pre-build:
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libopenNURBS.a ${PREFIX}/lib
 	@${MKDIR} ${EXAMPLESDIR}
-.for i in brep dump read roundtrip userdata write
+.for i in brep read roundtrip userdata write
 	@${INSTALL_PROGRAM} ${WRKSRC}/example_${i}/example_${i} ${EXAMPLESDIR}
 .endfor
 	@${MKDIR} ${PREFIX}/include/openNURBS/zlib
