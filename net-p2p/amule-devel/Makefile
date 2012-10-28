@@ -1,12 +1,8 @@
-# New ports collection makefile for:	amule-devel
-# Date created:		Wed Nov 05 09:30:00 UTC 2003
-# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amule
-PORTVERSION=	10788
+PORTVERSION=	10792
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -41,27 +37,27 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS DEBUG ED2K FILEVIEW \
-	GEOIP MMAP MONOLITHIC OPTIMIZED_CFLAGS PLASMAMULE UPNP WEBSERVER WXCAS \
-	WXUNICODE XAS
-ALC_DESC=		"Compile aMule Link Creator for GUI"
-ALCC_DESC=		"Compile aMule Link Creator for console"
-AMULECMD_DESC=		"Compile aMule command line client"
-AMULEDAEMON_DESC=	"Compile aMule daemon version"
-AMULEGUI_DESC=		"Compile aMule remote GUI"
-CAS_DESC=		"Compile aMule Statistics for console"
-DEBUG_DESC=		"Compile aMule with additional debugging output"
-ED2K_DESC=		"Compile aMule ed2k links handler"
-FILEVIEW_DESC=		"Compile file viewer for console (EXPERIMENTAL)"
-GEOIP_DESC=		"Enable GeoIP IP2Country support"
-MMAP_DESC=		"Enable using mapped memory"
-MONOLITHIC_DESC=	"Compile monolithic aMule"
-PLASMAMULE_DESC=	"Compile aMule plasma applet and engine"
-UPNP_DESC=		"Enable Universal Plug and Play support"
-WEBSERVER_DESC=		"Compile aMule WebServer"
-WXCAS_DESC=		"Compile aMule Statistics for GUI"
-WXUNICODE_DESC=		"Enable Unicode support"
-XAS_DESC=		"Install XChat2 plugin"
+OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS DEBUG DOCS ED2K \
+	FILEVIEW GEOIP MMAP MONOLITHIC NLS OPTIMIZED_CFLAGS PLASMAMULE UPNP \
+	WEBSERVER WXCAS WXUNICODE XAS
+ALC_DESC=		Compile aMule Link Creator for GUI
+ALCC_DESC=		Compile aMule Link Creator for console
+AMULECMD_DESC=		Compile aMule command line client
+AMULEDAEMON_DESC=	Compile aMule daemon version
+AMULEGUI_DESC=		Compile aMule remote GUI
+CAS_DESC=		Compile aMule Statistics for console
+DEBUG_DESC=		Compile aMule with debugging output
+ED2K_DESC=		Compile aMule ed2k links handler
+FILEVIEW_DESC=		Compile file viewer for console (EXPERIMENTAL)
+GEOIP_DESC=		Enable GeoIP IP2Country support
+MMAP_DESC=		Enable using mapped memory
+MONOLITHIC_DESC=	Compile monolithic aMule
+PLASMAMULE_DESC=	Compile aMule plasma applet and engine
+UPNP_DESC=		Enable Universal Plug and Play support
+WEBSERVER_DESC=		Compile aMule WebServer
+WXCAS_DESC=		Compile aMule Statistics for GUI
+WXUNICODE_DESC=		Enable Unicode support
+XAS_DESC=		Install XChat2 plugin
 OPTIONS_DEFAULT=ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS ED2K FILEVIEW \
 	MONOLITHIC WEBSERVER WXCAS WXUNICODE XAS
 
@@ -128,7 +124,7 @@ PLIST_SUB+=		AMULEGUI="@comment "
 
 .if ${PORT_OPTIONS:MCAS}
 CONFIGURE_ARGS+=	--enable-cas
-LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=		gd:${PORTSDIR}/graphics/gd
 PLIST_SUB+=		CAS=""
 .else
 CONFIGURE_ARGS+=	--disable-cas
@@ -154,7 +150,7 @@ PLIST_SUB+=		FILEVIEW="@comment "
 
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
-LIB_DEPENDS+=		GeoIP.5:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=		GeoIP:${PORTSDIR}/net/GeoIP
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
@@ -191,7 +187,7 @@ PLIST_SUB+=		PLASMAMULE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=		upnp.9:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=		upnp:${PORTSDIR}/devel/upnp
 .else
 CONFIGURE_ARGS+=	--disable-upnp
 .endif
