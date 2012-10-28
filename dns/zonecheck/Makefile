@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zonecheck
-# Date created:		10 July 2003
-# Whom:	      		Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	zonecheck
 PORTVERSION=	3.0.5
@@ -30,13 +26,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		zonecheck.1
 DOCS=		BUGS INSTALL README TODO
 
-OPTIONS=	ZONECHECK_CGI	"Install with CGI support" off
+OPTIONS_DEFINE=		CGI
+OPTIONS_DEFAULT=	
 
-.include <bsd.port.pre.mk>
+CGI_DESC=	Install with CGI support
+
+.include <bsd.port.options.mk>
 
 ZONECHECK_TARGET=	common cli
 
-.if defined(WITH_ZONECHECK_CGI)
+.if ${PORT_OPTIONS:MCGI}
 ZONECHECK_TARGET+=	cgi
 PLIST_SUB+=	ZONECHECK_CGI=""
 .else
@@ -49,10 +48,10 @@ do-install:
 		-DETCDIST='-dist' -DRUBY="${RUBY}" -DPREFIX="${PREFIX}" \
 		-DWWWDIR="${PREFIX}/www/${PORTNAME}"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
