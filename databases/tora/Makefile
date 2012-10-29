@@ -15,9 +15,9 @@ BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2 \
 		pcre.1:${PORTSDIR}/devel/pcre
 
-OPTIONS=	ORACLE "Build with Oracle support (i386 only)" off \
-		PGSQL  "Build with PostgreSQL support" on \
-		MYSQL  "Build with MySQL support" on
+OPTIONS_DEFINE=	PGSQL MYSQL DOCS
+OPTIONS_DEFINE_i386=	ORACLE
+OPTIONS_DEFAULT=	PGSQL MYSQL
 
 USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtool
 USE_QT4=	gui corelib sql xml network linguist moc_build uic_build rcc_build
@@ -26,21 +26,21 @@ GNU_CONFIGURE=	yes
 
 PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 INFO=		tora
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${QT_PLUGINDIR}/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 .endif
 
-.if !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${QT_PLUGINDIR}/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt4-pgsql-plugin
 .endif
 
-.if !defined(WITHOUT_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
 RUN_DEPENDS+=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
 
@@ -52,17 +52,12 @@ CONFIGURE_ARGS+=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:U}
 run-autotools:
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh)
 
-post-patch:
-.if ${OSVERSION} < 700000
-	${REINPLACE_CMD} -e 's|LIBS="|LIBS="-lpthread |' ${WRKSRC}/config/m4/qtkde.m4
-.endif
-
 pre-configure:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
 .else
 	@${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|'	\
 		${PREFIX2FIX:S|^|${WRKSRC}/|}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
