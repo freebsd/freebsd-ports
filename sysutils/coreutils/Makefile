@@ -3,6 +3,7 @@
 
 PORTNAME=	coreutils
 PORTVERSION=	8.20
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +27,7 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PERL5_BUILD=	yes # Required for tests and man page generation
 #USE_BISON=	yes
 
 INFO=		coreutils
