@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	16.0.1
-PORTREVISION=	1
+DISTVERSION=	16.0.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -76,10 +75,6 @@ BROKEN=		Needs binutils 2.17.50 to build
 MOZ_EXPORT+=	UNAME_m="powerpc64"
 CFLAGS+=	-mminimal-toc
 .endif
-.endif
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
 .if ${PORT_OPTIONS:MENIGMAIL}
