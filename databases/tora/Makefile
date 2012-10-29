@@ -54,10 +54,10 @@ run-autotools:
 
 pre-configure:
 .if ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
-.else
 	@${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|'	\
 		${PREFIX2FIX:S|^|${WRKSRC}/|}
+.else
+	@${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
 .endif
 
 .include <bsd.port.mk>
