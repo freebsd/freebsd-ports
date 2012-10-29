@@ -1,9 +1,5 @@
-# Ports collection makefile for:	valgrind
-# Date created:				April 19 2004
-# Whom:					Simon Barner <barner@gmx.de>
-#
+# Created by: Simon Barner <barner@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	valgrind
 PORTVERSION=	10776
@@ -12,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 PKGNAMESUFFIX=	-snapshot
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
 
 CONFLICTS=	valgrind-[0-9]*
