@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sdlmame
-# Date created:				2007-01-10
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	mame
-PORTVERSION=	0.146${PATCHSUFFIX}
+PORTVERSION=	0.147${PATCHSUFFIX}
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}.mirror/${PORTNAME:U}%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \
@@ -35,10 +31,10 @@ USE_ZIP=	yes
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl ttf
-USE_GCC=	4.6+
 USE_GMAKE=	yes
 MAKE_ENV=	NOWERROR=1 OPTIMIZE=0 USE_NETWORK=1 \
-		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}"
+		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
+		TARGET="${PORTNAME}"
 MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
 
@@ -54,6 +50,14 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 .endif
 
 .include <bsd.port.options.mk>
+
+.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
+CC=		/usr/bin/clang
+CPP=		/usr/bin/clang-cpp
+CXX=		/usr/bin/clang++
+.else
+USE_GCC=	4.6+
+.endif
 
 .if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
 USE_GNOME=	gtk20 gconf2
@@ -110,8 +114,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-.for FILE in chdman jedutil ldresample ldverify romcmp testkeys unidasm
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/libexec/${PORTNAME}
+.for F in chdman jedutil ldresample ldverify romcmp testkeys unidasm
+	${INSTALL_PROGRAM} ${WRKSRC}/${F} ${PREFIX}/libexec/${PORTNAME}
 .endfor
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${DATADIR})
@@ -119,7 +123,6 @@ do-install:
 	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps ${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
