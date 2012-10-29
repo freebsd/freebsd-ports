@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libnjb
-# Date created:				16 July 2006
-# Whom:					adrianm
-#
+# Created by: adrianm
 # $FreeBSD$
-#
 
 PORTNAME=	libnjb
 PORTVERSION=	2.2.7
@@ -14,30 +10,39 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library, API for communicating with Creative and Dell audio players
 
-BROKEN=		incomplete plist
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+OPTIONS_DEFINE=	DOCS
+
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
+
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+.else
+CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN=no
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-.else
-NODOC=		/^SUBDIRS/s|doc||
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|;\
-		${NODOC}' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/^SHOW_DIRECTORIES/d' ${WRKSRC}/doc/Doxyfile.in
+	@${REINPLACE_CMD} -e \
+		'/^SHOW_DIRECTORIES/d' ${WRKSRC}/doc/Doxyfile.in
+	@${REINPLACE_CMD} -e \
+		'/pkgdocdir/s|-$$(VERSION)||g' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.post.mk>
