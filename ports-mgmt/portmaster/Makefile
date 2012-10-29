@@ -2,7 +2,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
   		http://mirror.shatow.net/freebsd/portmaster/
@@ -39,6 +39,7 @@ RUN_DEPENDS+=	pkg>0:${PORTSDIR}/ports-mgmt/pkg
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/portmaster/
 PATCHFILES+=	patch-portmaster-pkgng.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::with_pkgng_current
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::pkg_install-pkgng-ss
 .  if ${PORT_OPTIONS:MZSH}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::zsh-completions
 .  endif
