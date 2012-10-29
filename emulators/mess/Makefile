@@ -1,20 +1,16 @@
-# New ports collection makefile for:	sdlmess
-# Date created:				2007-01-10
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	mess
-PORTVERSION=	0.146${PATCHSUFFIX}
+PORTVERSION=	0.147${PATCHSUFFIX}
 CATEGORIES=	emulators
-#MASTER_SITES=	http://www.mess.org/_media/downloads:/
-MASTER_SITES=	http://ompldr.org/vZHV6ag/ \
-		http://distfiles.exherbo.org/distfiles/ \
-		http://www.umich.edu/~archive/apollo/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:C/p[0-9]*$//}s
+MASTER_SITES=	SF/mame.mirror/MAME%20${PORTVERSION} \
+		http://mame.mirrors.zippykid.com/releases/ \
+		http://emumovies.com/aarongiles/releases/ \
+		http://mamedev.org/updates/:patchsets
+DISTNAME=	mame${PORTVERSION:S/.//:C/p[0-9]*$//}s
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${UPDATE_PATCHES:C/$/.zip/}
+		${UPDATE_PATCHES:C/$/.zip:patchsets/}
 DIST_SUBDIR=	mame
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,10 +31,10 @@ USE_ZIP=	yes
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl ttf
-USE_GCC=	4.6+
 USE_GMAKE=	yes
 MAKE_ENV=	NOWERROR=1 OPTIMIZE=0 USE_NETWORK=1 \
-		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}"
+		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
+		TARGET="${PORTNAME}"
 MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
 
@@ -49,11 +45,19 @@ PATCHLEVEL=	# none
 .if defined(PATCHLEVEL) && ${PATCHLEVEL}
 PATCHSUFFIX=	p${PATCHLEVEL}
 UPDATE_PATCHES!=	/usr/bin/jot -s " " \
-		-w ${PORTNAME}${PORTVERSION:S/.//:C/\.p[0-9]*$//}u%d_diff \
+		-w ${PORTVERSION:S/.//:C/\.p[0-9]*$//}u%d_diff \
 		${PATCHLEVEL} 1 ${PATCHLEVEL}
 .endif
 
 .include <bsd.port.options.mk>
+
+.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
+CC=		/usr/bin/clang
+CPP=		/usr/bin/clang-cpp
+CXX=		/usr/bin/clang++
+.else
+USE_GCC=	4.6+
+.endif
 
 .if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
 USE_GNOME=	gtk20 gconf2
@@ -78,6 +82,8 @@ BROKEN=		Does not install on ia64, powerpc, or sparc64
 .endif
 
 post-extract:
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/mame.zip ${EXTRACT_AFTER_ARGS}
+	@${RM} -f ${WRKDIR}/mame.zip
 # Use post-extract target to get in before dos2unix-isation
 .if defined(UPDATE_PATCHES)
 . for patch in ${UPDATE_PATCHES:S/_/./}
@@ -108,9 +114,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-.for FILE in castool chdman imgtool jedutil ldresample ldverify romcmp \
+.for F in castool chdman imgtool jedutil ldresample ldverify romcmp \
 	testkeys unidasm
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${F} ${PREFIX}/libexec/${PORTNAME}
 .endfor
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${DATADIR})
@@ -118,7 +124,6 @@ do-install:
 	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps ${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
