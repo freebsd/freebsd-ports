@@ -3,6 +3,7 @@
 
 PORTNAME=	uhidd
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE \
 		http://people.freebsd.org/~kaiw/distfiles/
