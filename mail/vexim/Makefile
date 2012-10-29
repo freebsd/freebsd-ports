@@ -1,7 +1,4 @@
-# New ports collection makefile for:   vexim
-# Date created:        6 June 2005
-# Whom:                John Oxley <john@yoafrica.com>
-#
+# Created by: John Oxley <john@yoafrica.com>
 # $FreeBSD$
 
 PORTNAME=	vexim
@@ -23,17 +20,17 @@ SUB_FILES=	pkg-message
 NO_BUILD=	yes
 USE_PHP=	gettext session posix
 
-OPTIONS=	MYSQL "Use MySQL" On \
-		PGSQL "Use PostgreSQL" Off
+OPTIONS_DEFINE=	MYSQL PGSQL DOCS
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 WITH_PGSQL=	yes
 USE_PHP+=	pgsql
 .endif
@@ -53,7 +50,7 @@ do-install:
 		-type d -exec ${MKDIR} ${DATADIR}/{} \; \
 		-o \! -path '*.svn*' -type f \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${FIND} docs \! -path '*.svn*' \
 		-type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
@@ -67,4 +64,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
