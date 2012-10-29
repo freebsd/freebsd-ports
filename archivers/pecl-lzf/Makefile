@@ -1,13 +1,8 @@
-# New ports collection makefile for:	pecl-lzf
-# Date created:			2006/09/07
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lzf
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -30,7 +25,6 @@ BETTER_COMPRESSION_DESC=	Better compression ratio
 
 .if ${PORT_OPTIONS:MBETTER_COMPRESSION}
 CONFIGURE_ARGS+=	--enable-lzf-better-compression
-	@${ECHO_MSG} "--enable-lzf-better-compression"
 .endif
 
 .include <bsd.port.mk>
