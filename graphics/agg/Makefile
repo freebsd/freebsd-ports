@@ -1,9 +1,5 @@
-# Ports collection makefile for:	agg
-# Date created:			Aug 3, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	agg
 PORTVERSION=	2.5
@@ -17,9 +13,8 @@ COMMENT=	A High Quality Rendering Engine for C++
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
-USE_GCC=	any
 USE_XORG=	x11
 USE_GNOME=	gnomehack
 USE_SDL=	sdl
