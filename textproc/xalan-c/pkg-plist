@@ -476,15 +476,15 @@ include/xalanc/XercesParserLiaison/XercesWrapperTypes.hpp
 @dirrm include/xalanc/XercesParserLiaison
 @dirrm include/xalanc
 bin/Xalan
-%%LOCALSYS_NLS%%lib/nls/msg/en_US/XalanMsg_en_US.cat
-%%LOCALSYS_NLS%%@dirrm lib/nls/msg/en_US
-%%LOCALSYS_NLS%%@dirrm lib/nls/msg
-%%LOCALSYS_NLS%%@dirrm lib/nls
-%%LOCALSYS_INMEM%%lib/%%XALANMSG_LIB%%
-%%LOCALSYS_INMEM%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so
-%%LOCALSYS_INMEM%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%
-%%LOCALSYS_INMEM%%@unexec if test -L %D/lib/libxalanMsg.so; then rm -f %D/lib/libxalanMsg.so; fi
-%%LOCALSYS_INMEM%%@unexec if test -L %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; fi
+%%LOCALSYS_NLSLOC%%lib/nls/msg/en_US/XalanMsg_en_US.cat
+%%LOCALSYS_NLSLOC%%@dirrm lib/nls/msg/en_US
+%%LOCALSYS_NLSLOC%%@dirrm lib/nls/msg
+%%LOCALSYS_NLSLOC%%@dirrm lib/nls
+%%LOCALSYS_INMEMLOC%%lib/%%XALANMSG_LIB%%
+%%LOCALSYS_INMEMLOC%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so
+%%LOCALSYS_INMEMLOC%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%
+%%LOCALSYS_INMEMLOC%%@unexec if test -L %D/lib/libxalanMsg.so; then rm -f %D/lib/libxalanMsg.so; fi
+%%LOCALSYS_INMEMLOC%%@unexec if test -L %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; fi
 lib/%%XALANC_LIB%%
 @exec ln -fs %%XALANC_LIB%% %D/lib/libxalan-c.so
 @exec ln -fs %%XALANC_LIB%% %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%
@@ -494,100 +494,100 @@ lib/%%XALANC_LIB%%
 @comment
 @comment SAMPLES
 @comment
-%%NO_SAMPLES%%bin/CompileStylesheet
-%%NO_SAMPLES%%bin/DocumentBuilder
-%%NO_SAMPLES%%bin/ExternalFunction
-%%NO_SAMPLES%%bin/ParsedSourceWrappers
-%%NO_SAMPLES%%bin/SerializeNodeSet
-%%NO_SAMPLES%%bin/SimpleTransform
-%%NO_SAMPLES%%bin/SimpleXPathAPI
-%%NO_SAMPLES%%bin/SimpleXPathCAPI
-%%NO_SAMPLES%%bin/StreamTransform
-%%NO_SAMPLES%%bin/ThreadSafe
-%%NO_SAMPLES%%bin/TraceListen
-%%NO_SAMPLES%%bin/TransformToXercesDOM
-%%NO_SAMPLES%%bin/UseStylesheetParam
-%%NO_SAMPLES%%bin/XalanTransform
-%%NO_SAMPLES%%bin/XalanTransformerCallback
+%%PORTEXAMPLES%%bin/CompileStylesheet
+%%PORTEXAMPLES%%bin/DocumentBuilder
+%%PORTEXAMPLES%%bin/ExternalFunction
+%%PORTEXAMPLES%%bin/ParsedSourceWrappers
+%%PORTEXAMPLES%%bin/SerializeNodeSet
+%%PORTEXAMPLES%%bin/SimpleTransform
+%%PORTEXAMPLES%%bin/SimpleXPathAPI
+%%PORTEXAMPLES%%bin/SimpleXPathCAPI
+%%PORTEXAMPLES%%bin/StreamTransform
+%%PORTEXAMPLES%%bin/ThreadSafe
+%%PORTEXAMPLES%%bin/TraceListen
+%%PORTEXAMPLES%%bin/TransformToXercesDOM
+%%PORTEXAMPLES%%bin/UseStylesheetParam
+%%PORTEXAMPLES%%bin/XalanTransform
+%%PORTEXAMPLES%%bin/XalanTransformerCallback
 @comment -----------------------------------------------------------------------
 @comment
 @comment SAMPLE SRC
 @comment
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/foo.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/XalanTransformerCallback.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/XalanTransformerCallback
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/foo.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/XalanTransform.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/XalanTransform
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/TestDriver.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.hpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/XPathWrapper
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/UseStylesheetParam.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/UseStylesheetParam
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/TransformToXercesDOM.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/TransformToXercesDOM
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/birds.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/birds.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/TraceListen.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/TraceListen
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/birds.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/birds.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/ThreadSafe.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ThreadSafe
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StreamTransform/StreamTransform.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/StreamTransform
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/SimpleXPathCAPI.c
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleXPathCAPI
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/SimpleXPathAPI.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleXPathAPI
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/foo.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/SimpleTransform.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/XalanMemoryManagerImpl.hpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleTransform
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/SerializeNodeSet.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SerializeNodeSet
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/foo.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/ParsedSourceWrappers.cpp
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ParsedSourceWrappers
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/ExternalFunction.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/foo.xsl
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ExternalFunction
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DocumentBuilder/DocumentBuilder.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DocumentBuilder/foo.xsl
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/DocumentBuilder
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/CompileStylesheet.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo1.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo10.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo2.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo3.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo4.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo5.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo6.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo7.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo8.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo9.xml
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/CompileStylesheet
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/apachemod.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/apachemod.xsl
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/foo.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/foo.xsl
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ApacheModuleXSLT/xslt
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/mod_xslt.c
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ApacheModuleXSLT
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/XalanTransformerCallback.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/XalanTransformerCallback
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XalanTransform/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XalanTransform/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XalanTransform/XalanTransform.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/XalanTransform
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/TestDriver.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.hpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/XPathWrapper
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/UseStylesheetParam.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/UseStylesheetParam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/TransformToXercesDOM.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/TransformToXercesDOM
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TraceListen/birds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TraceListen/birds.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TraceListen/TraceListen.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/TraceListen
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/birds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/birds.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/ThreadSafe.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ThreadSafe
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StreamTransform/StreamTransform.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/StreamTransform
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/SimpleXPathCAPI.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleXPathCAPI
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/SimpleXPathAPI.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleXPathAPI
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/SimpleTransform.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/XalanMemoryManagerImpl.hpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleTransform
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/SerializeNodeSet.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SerializeNodeSet
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/ParsedSourceWrappers.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ParsedSourceWrappers
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/ExternalFunction.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/foo.xsl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ExternalFunction
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DocumentBuilder/DocumentBuilder.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DocumentBuilder/foo.xsl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/DocumentBuilder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/CompileStylesheet.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo3.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo4.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo5.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo6.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo7.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo8.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CompileStylesheet/foo9.xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CompileStylesheet
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/apachemod.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/apachemod.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/xslt/foo.xsl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ApacheModuleXSLT/xslt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ApacheModuleXSLT/mod_xslt.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ApacheModuleXSLT
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

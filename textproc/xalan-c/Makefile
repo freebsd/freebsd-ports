@@ -1,13 +1,9 @@
-# New ports collection makefile for: xalan-c
-# Date created:		26 October 2002
-# Whom:			"Bjoern A. Zeeb" (bzeeb+freebsdports@zabbadoz.net)
-#
+# Created by: Bjoern A. Zeeb <bz@FreeBSD.org>
 # $FreeBSD$
-#
-# ------------------------------------------------------------------------------
 
 PORTNAME=	xalan-c
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML:S/$/:msax,docs/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
@@ -17,25 +13,23 @@ DISTFILES+=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}:msax
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT processor from the Apache XML Project
 
-OPTIONS=	INMEM "Use inmem locale system." on \
-		ICU "Use ICU locale system." off \
-		NLS "Use nls locale system." off \
-		TRANSCODER_ICU "Use ICU transcoder (if used in xerces-c2)." off \
-		SAMPLES "Copy sample binaries and sources." on \
-		PORTDOCS "Copy documentation." on \
-		DEBUG "Include debugging information, do not strip." off
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES TRANSCODER_ICU
+OPTIONS_SINGLE=		LSYS
+OPTIONS_SINGLE_LSYS=	INMEMLOC ICULOC NLSLOC
+OPTIONS_DEFAULT=	INMEMLOC
+INMEMLOC_DESC=		Use inmem locale system
+ICULOC_DESC=		Use ICU locale system
+NLSLOC_DESC=		Use nls locale system
+TRANSCODER_ICU_DESC=	Use ICU transcoder (if used in xerces-c2)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # move this further down though portlint might not like it but without
 # this I will not be able to make use of make config in the future.
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 PKGNAMESUFFIX+=		-debug
 .endif
-.if defined(WITHOUT_PORTDOCS)
-NOPORTDOCS=	yes
-.endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${DOCS_TARBALL}:docs
 EXTRACT_ONLY=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}
 DOCS_TARBALL=	Xalan-C_${PORTVERSION:S/./_/g}-docs${EXTRACT_SUFX}
@@ -64,38 +58,26 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -l ${PTHREAD_LIBS} \
 				-z ${EXTRA_CFLAGS} -I${LOCALBASE}/include -C --prefix=${PREFIX}
 
-.if defined(WITH_INMEM)
-LOCALSYS=		inmem
-.endif
-.if defined(WITH_ICU)
-LOCALSYS=		icu
-.endif
-.if defined(WITH_NLS)
-LOCALSYS=		nls
-.endif
-
-.if !defined(LOCALSYS)
-CONFIGURE_ARGS+=	-m inmem
-PLIST_SUB+=		LOCALSYS_INMEM=""
-PLIST_SUB+=		LOCALSYS_NLS="@comment "
-.else
-.if (${LOCALSYS} == "icu")
+.if ${PORT_OPTIONS:MICULOC}
 CONFIGURE_ARGS+=	-m icu
-PLIST_SUB+=		LOCALSYS_INMEM=""
-PLIST_SUB+=		LOCALSYS_NLS="@comment "
-WITH_TRANSCODER_ICU=	icu
-.elif (${LOCALSYS} == "nls")
-CONFIGURE_ARGS+=	-m nls
-PLIST_SUB+=		LOCALSYS_INMEM="@comment "
-PLIST_SUB+=		LOCALSYS_NLS=""
-.else
-CONFIGURE_ARGS+=	-m inmem
-PLIST_SUB+=		LOCALSYS_INMEM=""
-PLIST_SUB+=		LOCALSYS_NLS="@comment "
-.endif
+PLIST_SUB+=		LOCALSYS_INMEMLOC=""
+PLIST_SUB+=		LOCALSYS_NLSLOC="@comment "
+PORT_OPTIONS+=		TRANSCODER_ICU
 .endif
 
-.if defined(WITH_TRANSCODER_ICU)
+.if ${PORT_OPTIONS:MNLSLOC}
+CONFIGURE_ARGS+=	-m nls
+PLIST_SUB+=		LOCALSYS_INMEMLOC="@comment "
+PLIST_SUB+=		LOCALSYS_NLSLOC=""
+.endif
+
+.if ${PORT_OPTIONS:MINMEMLOC}
+CONFIGURE_ARGS+=	-m inmem
+PLIST_SUB+=		LOCALSYS_INMEMLOC=""
+PLIST_SUB+=		LOCALSYS_NLSLOC="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTRANSCODER_ICU}
 PKGNAMESUFFIX+=		-icu
 LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
@@ -111,7 +93,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -liconv
 PLIST_SUB+=		ICUDEP="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	-d
 STRIP=
 .endif
@@ -131,28 +113,18 @@ PLIST_SUB+=		XALANC_LIB=${XALANC_LIB} \
 				XALANMSG_LIB=${XALANMSG_LIB} \
 				XALANC_LIB_VERSION=${XALANC_LIB_VERSION}
 
-.if !defined(WITHOUT_SAMPLES)
-PLIST_SUB+=	NO_SAMPLES=""
+.if ${PORT_OPTIONS:MEXAMPLES}
 ALL_TARGET?=	all samples
 SAMPLE_BINS=	CompileStylesheet DocumentBuilder ExternalFunction \
 		ParsedSourceWrappers SerializeNodeSet SimpleTransform \
 		SimpleXPathAPI SimpleXPathCAPI StreamTransform \
 		TraceListen TransformToXercesDOM UseStylesheetParam \
 		XalanTransform XalanTransformerCallback ThreadSafe
-.else
-PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
-
-SCRIPTS_ENV=	WITH_INMEM="${WITH_INMEM}" \
-		WITH_ICU="${WITH_ICU}" \
-		WITH_NLS="${WITH_NLS}"
-
-pre-extract:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check-config-options
 
 post-patch:
 	${RM} -f ${WRKSRC}/src/xalanc/ICUBridge/ICUFormatNumberFunctor.hpp.orig \
@@ -166,10 +138,10 @@ post-patch:
 	${CHMOD} 755 ${WRKSRC}/runConfigure ${WRKSRC}/configure
 
 post-install:
-.if !defined(WITH_DEBUG)
+.if !${PORT_OPTIONS:MDEBUG}
 	@${STRIP_CMD} ${PREFIX}/lib/${XALANC_LIB}
 .endif
-.if !defined(WITHOUT_SAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 .for i in ${SAMPLE_BINS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
 .endfor
@@ -177,7 +149,7 @@ post-install:
 .include "${.CURDIR}/Makefile.inc-sample-src"
 .endif
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${DOCSDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -189,4 +161,4 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
