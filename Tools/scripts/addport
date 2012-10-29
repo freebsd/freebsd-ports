@@ -41,7 +41,6 @@
 use Cwd "abs_path";
 use Getopt::Std;
 use Sys::Hostname;
-use LWP::Simple;
 use locale;
 use strict;
 
@@ -324,8 +323,8 @@ foreach my $thisdir (@dirs) {
 	# Until svn revs are in the database, we'll use dates.
 	print "Checking for previous versions of $category/$portname... \n";
 	my $previous_incarnation = "bogus";
-	my $oldportlist;
-	if ($oldportlist = get('http://people.FreeBSD.org/~crees/removed_ports/index.xml')) {
+	my $oldportlist = `/usr/bin/fetch -qo - http://people.FreeBSD.org/~crees/removed_ports/index.xml`;
+	if ($oldportlist !=~ /^fetch:[^:]+: Not Found/) {
 		foreach (split("\n", $oldportlist)) {
 			if (/^ +\<port\>$category\/$portname(?:\<removed_revision\>r([0-9]*)\<\/removed_revision\>)?\<removed_date\>([^<]*)/) {
 				print "Found one!\n";
