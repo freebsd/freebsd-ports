@@ -1,5 +1,5 @@
---- bse/bseloader-bsewave.c.orig	2008-02-26 23:31:32.000000000 +0100
-+++ bse/bseloader-bsewave.c	2008-02-26 23:35:26.000000000 +0100
+--- bse/bseloader-bsewave.cc.orig	2008-02-26 23:31:32.000000000 +0100
++++ bse/bseloader-bsewave.cc	2008-02-26 23:35:26.000000000 +0100
 @@ -111,13 +111,13 @@
  } WaveDsc;
  

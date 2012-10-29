@@ -1,5 +1,5 @@
---- bse/bseloader-oggvorbis.c.orig	2008-02-26 23:29:43.000000000 +0100
-+++ bse/bseloader-oggvorbis.c	2008-02-26 23:31:04.000000000 +0100
+--- bse/bseloader-oggvorbis.cc.orig	2008-02-26 23:29:43.000000000 +0100
++++ bse/bseloader-oggvorbis.cc	2008-02-26 23:31:04.000000000 +0100
 @@ -33,7 +33,7 @@
    BseWaveFileInfo wfi;
    OggVorbis_File  ofile;

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	BEAST
-# Date created:			23 Jun 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	beast
-PORTVERSION=	0.7.4
-PORTREVISION=	3
+PORTVERSION=	0.7.6
 CATEGORIES=	audio
 MASTER_SITES=	http://dist.testbit.eu/beast/v${PORTVERSION:R}/
 
@@ -18,6 +13,8 @@ LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		mad:${PORTSDIR}/audio/libmad \
 		guile:${PORTSDIR}/lang/guile \
 		asound.2:${PORTSDIR}/audio/alsa-lib
+
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_XORG=	x11
 USE_GMAKE=	yes
@@ -62,5 +59,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/bse/Makefile.in \
 		${WRKSRC}/bse/zintern/Makefile.in
+	@${REINPLACE_CMD} -e 's|; q|;|; /pipefail/s|-o ||;' \
+	    ${WRKSRC}/docs/Makefile.in ${WRKSRC}/docs/Makefile.am
 
 .include <bsd.port.post.mk>
