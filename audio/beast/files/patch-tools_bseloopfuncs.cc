@@ -1,5 +1,5 @@
---- tools/bseloopfuncs.c.orig	2010-02-14 00:47:12.000000000 +0000
-+++ tools/bseloopfuncs.c	2010-09-15 12:05:05.000000000 +0000
+--- tools/bseloopfuncs.cc.orig	2010-02-14 00:47:12.000000000 +0000
++++ tools/bseloopfuncs.cc	2010-09-15 12:05:05.000000000 +0000
 @@ -526,7 +526,7 @@
        ep = sp + minll;
        {
