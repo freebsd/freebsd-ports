@@ -547,6 +547,7 @@
     SUBDIR += moonshine
     SUBDIR += mozplugger
     SUBDIR += multisort
+    SUBDIR += multiwatch
     SUBDIR += mybb
     SUBDIR += myfaces
     SUBDIR += mysar
