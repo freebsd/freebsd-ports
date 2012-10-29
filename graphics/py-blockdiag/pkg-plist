@@ -24,6 +24,9 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/filters/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/filters/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/filters/__init__.pyo
@@ -42,6 +45,12 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/svg.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/svg.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/svg.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/textfolder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/textfolder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/textfolder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/imagedraw/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/metrics.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/metrics.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/metrics.pyo
@@ -287,6 +296,9 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_generate_diagram.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_generate_diagram.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_generate_diagram.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_imagedraw_textfolder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_imagedraw_textfolder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_imagedraw_textfolder.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_parser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/test_parser.pyo
@@ -338,18 +350,6 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/rst/directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/rst/directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/rst/directives.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/pdf.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/pdf.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/pdf.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/pil.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/pil.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder/pil.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/urlutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/urlutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/urlutil.pyo
@@ -359,7 +359,6 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag_sphinxhelper.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/textfolder
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/rst
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/errors
