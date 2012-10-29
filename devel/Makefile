@@ -75,6 +75,7 @@
     SUBDIR += asmx
     SUBDIR += astah-community
     SUBDIR += astyle
+    SUBDIR += atf
     SUBDIR += atlas
     SUBDIR += atlas-devel
     SUBDIR += ats-contrib-testing
