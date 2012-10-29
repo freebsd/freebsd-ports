@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coreutils
-PORTVERSION=	8.19
-PORTREVISION=	2
+PORTVERSION=	8.20
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -11,9 +10,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	The Free Software Foundation's core utilities
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFLICTS=	id-utils-[0-9]* linux-gid-[0-9]*
 
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
 # A rather nasty hack to stop gnustat from conflicting with base gstat
 # bugs.freebsd.org/160060
@@ -21,9 +22,6 @@ CONFIGURE_ARGS=	--program-prefix=g	\
 		--program-transform-name=s/stat/nustat/
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	"-I${LOCALBASE}/include"
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
 USE_GMAKE=	yes
@@ -70,11 +68,6 @@ CONFIGURE_ARGS+=--without-gmp
 
 .if ${OSVERSION} >= 800039
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
-.endif
-
-post-patch:
-.if !defined(WITH_SUID)
-	@${REINPLACE_CMD} -e "s/u+s/u+w/g" ${WRKSRC}/src/Makefile.in
 .endif
 
 post-build:
