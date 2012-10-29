@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	hiera
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A pluggable data store for hierarchical data
 
-RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet
+RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
