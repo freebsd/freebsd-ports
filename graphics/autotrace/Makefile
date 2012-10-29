@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autotrace
-# Date created:		12 April 2001
-# Whom:			KANOU Hiroki <kanou@mil.allnet.ne.jp>
-#
+# Created by: KANOU Hiroki <kanou@mil.allnet.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
@@ -14,42 +10,48 @@ MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap to vector graphics
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-    		MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-MAN1=		autotrace.1
-
-OPTIONS_DEFINE=	MING PSTOEDIT
-OPTIONS_DEFAULT=	PSTOEDIT
+OPTIONS_DEFINE=	IMAGEMAGICK MING PSTOEDIT
+OPTIONS_DEFAULT=	IMAGEMAGICK PSTOEDIT
 MING_DESC=	Enable swf interface
 PSTOEDIT_DESC=	Convert postscript to other formats
 
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
+USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE= yes
+CPPFLAGS+=	$$(libpng-config --I_opts) ${PTHREAD_CFLAGS}
+LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
+
+MAN1=		autotrace.1
+
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
+LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+.else
+CONFIGURE_ARGS+=	--without-magick
+.endif
+
 .if ${PORT_OPTIONS:MMING}
-LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
 .endif
 
 .if ${PORT_OPTIONS:MPSTOEDIT}
-LIB_DEPENDS+=	pstoedit.0:${PORTSDIR}/graphics/pstoedit
+LIB_DEPENDS+=	pstoedit:${PORTSDIR}/graphics/pstoedit
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-
-.if ${PORT_OPTIONS:MPSTOEDIT}
-	@${REINPLACE_CMD} -e '/$$PSTOEDIT_CONFIG/  s|--version|--modversion| ; \
+		's|Magick-config|MagickWand-config|g ; \
+		/$$PSTOEDIT_CONFIG/s|--version|--modversion| ; \
 		s|$$PSTOEDIT_CONFIG $$pstoedit_args|pkg-config pstoedit| ; \
-		/^PSTOEDIT_CONFIG=/ s|=.*$$|=pkg-config| ' ${WRKSRC}/configure
-.endif
+		/^PSTOEDIT_CONFIG=/s|=.*$$|=pkg-config|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
