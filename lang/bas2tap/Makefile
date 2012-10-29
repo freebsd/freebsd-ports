@@ -18,6 +18,8 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	${PORTNAME}.doc
 PLIST_FILES=	bin/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-build:
