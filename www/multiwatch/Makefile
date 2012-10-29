@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/multiwatch/releases-1.x/
 
 MAINTAINER=	chris+freebsd@chrullrich.net
-COMMENT=	A spawn-fcgi helper for forking multiple workers
+COMMENT=	Spawn-fcgi helper for forking multiple workers
 
 LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
 
@@ -18,8 +18,8 @@ USE_BZIP2=	yes
 USE_GNOME=	_glib20
 
 # Help configure find libev.
-CFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-L${PREFIX}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/multiwatch
 
