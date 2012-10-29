@@ -10,7 +10,19 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	hizel@vyborg.ru
 COMMENT=	System to monitor and control a number of processes on UNIX-like OS
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meld3>=0.6.4:${PORTSDIR}/www/py-meld3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meld3>=0.6.5:${PORTSDIR}/www/py-meld3
+TEST_DEPENDS:=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+
+OPTIONS_DEFINE=	TESTS
+TESTS_DESC=	Install mock for running unit tests
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTESTS}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+.endif
 
 PORTDOCS=	*.txt *.rst
 
@@ -36,5 +48,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
