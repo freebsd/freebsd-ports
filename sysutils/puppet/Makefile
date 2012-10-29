@@ -3,6 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -10,9 +11,10 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
 RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
-		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas
+		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
+		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
 
-CONFLICTS=      puppet-2* rubygem-hiera-puppet-[0-9]*
+CONFLICTS=      puppet-2*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
