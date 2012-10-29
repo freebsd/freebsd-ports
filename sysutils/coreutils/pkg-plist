@@ -133,6 +133,8 @@ libexec/coreutils/glibstdbuf.so
 %%NLS%%share/locale/ga/LC_TIME/coreutils.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/gl/LC_TIME/coreutils.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/hr/LC_TIME/coreutils.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/hu/LC_TIME/coreutils.mo
 %%NLS%%share/locale/id/LC_MESSAGES/coreutils.mo
