@@ -52,6 +52,8 @@ DESKTOP_ENTRIES=	"TORCS" \
 			"Game;Simulation;" \
 			false
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace

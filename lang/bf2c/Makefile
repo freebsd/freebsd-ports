@@ -14,6 +14,8 @@ LICENSE=	BSD
 USE_XZ=		yes
 USE_GMAKE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:
