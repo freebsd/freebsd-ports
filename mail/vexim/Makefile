@@ -9,7 +9,10 @@ MASTER_SITES=	http://silverwraith.com/vexim/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web interface for managing virtual domains for exim
+COMMENT=	Web interface for managing virtual domains for exim
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
@@ -19,8 +22,11 @@ WRKSRC=		${WRKDIR}/vexim2
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 USE_PHP=	gettext session posix
+USE_GETTEXT=	yes
 
-OPTIONS_DEFINE=	MYSQL PGSQL DOCS
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL
+OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	MYSQL
 
 .include <bsd.port.options.mk>
@@ -31,7 +37,7 @@ USE_PHP+=	mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-WITH_PGSQL=	yes
+USE_PGSQL=	yes
 USE_PHP+=	pgsql
 .endif
 
@@ -56,7 +62,7 @@ do-install:
 		-type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 		-o \! -path '*.svn*' -type f \
 		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.for i in INSTALL LICENSE README TODO
+.for i in INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
