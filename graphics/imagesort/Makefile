@@ -1,36 +1,48 @@
-# New ports collection makefile for:	imagesort
-# Date created:			Apr 10, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#    $MCom: ports/graphics/imagesort/Makefile,v 1.1 2006/10/04 13:18:57 ahze Exp $
 
 PORTNAME=	imagesort
 PORTVERSION=	2.0
 PORTREVISION=	11
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
+MASTER_SITES=	SUNSITE/apps/graphics/viewers/X
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible X utility for managing many image files
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		gif.5:${PORTSDIR}/graphics/giflib
+LICENSE=	GPLv2
 
-BROKEN=		does not compile
+LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png
+
+OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	x11 xt
 USE_GNOME=	imlib
-CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include
+MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	README imagesortrc.sample
+PLIST_FILES=	bin/imagesort
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^CC/s| =| ?=| ; \
+		 /^LIBS/s| =.*| = `imlib-config --libs`| ; \
+		 /^CFLAGS/s| =.*| += `imlib-config --cflags`|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|unsigned int argc|int argc| ; \
+		 s|^#endif.*|#endif|' ${WRKSRC}/imagesort.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imagesort ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/imagesort
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imagesort
-	${INSTALL_DATA} ${WRKSRC}/imagesortrc.sample ${PREFIX}/share/doc/imagesort
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
