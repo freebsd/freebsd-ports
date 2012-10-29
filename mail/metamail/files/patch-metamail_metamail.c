@@ -1,5 +1,5 @@
---- metamail/metamail.c.orig	Thu Feb 17 02:57:19 1994
-+++ metamail/metamail.c	Mon Dec 18 11:46:22 2006
+--- metamail/metamail.c.orig	1994-02-17 10:57:19.000000000 +0900
++++ metamail/metamail.c	2012-10-16 01:27:14.000000000 +0900
 @@ -20,6 +20,8 @@
  
   ******************************************************* */
@@ -108,6 +108,28 @@
  	while (s && *s && isspace((unsigned char) *s)) ++s;
  	if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') return(1);
  	if (*s == 'n' || *s == 'N' || *s == 'q' || *s == 'Q') {
+@@ -1915,18 +1926,18 @@
+             if (!strcmp(KeyHeadList[numkeys], "*")
+                  || !lc2strncmp(hdr, KeyHeadList[numkeys], len)) {
+ 		if (!KeyKeep) phead(hdr);
+-		return;
++		return(0);
+             }
+         }
+ 	if (KeyKeep) phead(hdr);
+-	return;
++	return(0);
+     }
+     if (!strncmp(hdr, "From ", 5) || !strncmp(hdr, ">From ", 6)) {
+ 	for (numkeys = 0; KeyHeadList[numkeys]; ++numkeys) {
+ 	    if (!strcmp(KeyHeadList[numkeys], "*")
+ 		 || !lc2strncmp(">from", KeyHeadList[numkeys], 5)) {
+ 		if (!KeyKeep) phead(hdr);
+-		return;
++		return(0);
+ 	    }
+ 	}
+ 	if (KeyKeep) phead(hdr);
 @@ -2022,7 +2033,8 @@
      if (lc2strcmp(charset, PrevCharset)) {
          char *s2, *charsetinuse;
@@ -165,6 +187,15 @@
      }
  #else
      if (HasSavedTtyState) {
+@@ -2660,7 +2672,7 @@
+     char Buf[100];
+ #endif
+ 
+-    if (DefinitelyNotTty || MustNotBeTty) return;	
++    if (DefinitelyNotTty || MustNotBeTty) return(0);	
+ #if defined(MSDOS) || defined(AMIGA)
+     printf("Press RETURN to go on\n");
+     gets(Buf);
 @@ -2681,15 +2693,15 @@
  
  StartRawStdin() {
