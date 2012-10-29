@@ -7,30 +7,26 @@
 # REQUIRE: DAEMON cleanvar
 # KEYWORD: nojail shutdown
 
-. /etc/rc.subr
-
 # Usage:
 #	uhidd start ugenX.Y	# start uhidd on device 'ugenX.Y'
 #	uhidd stop ugenX.Y	# stop uhidd on device 'ugenX.Y'
 #	uhidd start		# start uhidd on all ugen device.
 #	uhidd stop		# stop all uhidd instances.
 
-name="uhidd"
+. /etc/rc.subr
+
+name=uhidd
 rcvar=uhidd_enable
-command="%%PREFIX%%/sbin/${name}"
-start_cmd="uhidd_start"
-required_modules="vkbd"
-pidprefix="/var/run/uhidd"
 
 load_rc_config $name
 
-: ${uhidd_enable="NO"}
+: ${uhidd_enable:=NO}
 
-if [ -n "$2" ]; then
-	pidfile="${pidprefix}.`basename $2`.pid"
-else
-	pidfile=
-fi
+command=%%PREFIX%%/sbin/${name}
+start_cmd=uhidd_start
+required_modules=vkbd
+pidprefix=/var/run/uhidd
+pidfile=${2+$pidprefix.`basename $2`.pid}
 
 uhidd_start()
 {
