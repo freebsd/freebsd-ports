@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trac-robotxt
-# Date created:		03. 23, 2007
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	robotxt
 PORTVERSION=	1.0.1
@@ -14,26 +10,13 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	TracRobotsTxt-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Allows simple management of a robots.txt.
+COMMENT=	Allows simple management of a robots.txt
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PYDISTUTILS_BUILD_TARGET=	bdist_egg
-PYDISTUTILS_INSTALL_TARGET=	easy_install
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${TRACROBO_EGG}
-PYDISTUTILS_NOEGGINFO=		yes
-
-TRACROBO_EGG=	TracRobotsTxt-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		TRACROBO_EGG=${TRACROBO_EGG} \
-		TRACROBO_EGG_VER="TracRobotsTxt==${PORTVERSION}"
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	TracRobotsTxt
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
