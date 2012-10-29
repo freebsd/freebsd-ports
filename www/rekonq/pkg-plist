@@ -39,9 +39,15 @@ share/config.kcfg/rekonq.kcfg
 share/doc/HTML/de/rekonq/common
 share/doc/HTML/de/rekonq/index.cache.bz2
 share/doc/HTML/de/rekonq/index.docbook
+share/doc/HTML/el/rekonq/Rekonq-manualplugins.png
+share/doc/HTML/el/rekonq/Rekonq-notabs.png
+share/doc/HTML/el/rekonq/Systemsettings-enablewindowtabbing.png
 share/doc/HTML/el/rekonq/common
 share/doc/HTML/el/rekonq/index.cache.bz2
 share/doc/HTML/el/rekonq/index.docbook
+share/doc/HTML/el/rekonq/shortcuts.png
+share/doc/HTML/el/rekonq/tabs.png
+share/doc/HTML/el/rekonq/webkit.png
 share/doc/HTML/en/rekonq/Bookmarkseditor.png
 share/doc/HTML/en/rekonq/Defaultwebbrowser.png
 share/doc/HTML/en/rekonq/Face-smile.png
@@ -182,6 +188,7 @@ share/locale/pt/LC_MESSAGES/kwebapp.mo
 share/locale/pt/LC_MESSAGES/rekonq.mo
 share/locale/pt_BR/LC_MESSAGES/kwebapp.mo
 share/locale/pt_BR/LC_MESSAGES/rekonq.mo
+share/locale/ro/LC_MESSAGES/kwebapp.mo
 share/locale/ro/LC_MESSAGES/rekonq.mo
 share/locale/ru/LC_MESSAGES/kwebapp.mo
 share/locale/ru/LC_MESSAGES/rekonq.mo
