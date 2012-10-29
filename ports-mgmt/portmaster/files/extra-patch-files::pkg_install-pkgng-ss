@@ -1,0 +1,19 @@
+commit 8d713d8a417e6d4540f3f826870f670fc503df83
+Author: John Hein <jhein@symmetricom.com>
+Date:   Sun Oct 28 14:48:33 2012 -0600
+
+    Fix short-circuit logic for pkg_install to not call pkg(8)
+
+diff --git portmaster portmaster
+index 3abb942..ff06955 100755
+--- portmaster
++++ portmaster
+@@ -4304,7 +4304,7 @@ if [ "$$" -ne "$PM_PARENT_PID" -o -n "$PM_URB" ]; then
+ fi
+ 
+ INSTALLED_LIST="${INSTALLED_LIST}\t${ilist}\n"
+-[ -z "$use_pkgng" -a -e "$pdb/$new_port/+DISPLAY" -o -n "$use_pkgng" -a -n "`pkg query "%M" $new_port`" ] &&
++[ -z "$use_pkgng" -a -e "$pdb/$new_port/+DISPLAY" ] || ( [ -n "$use_pkgng" ] && [ -n "`pkg query %M $new_port`" ] ) &&
+ 	DISPLAY_LIST="${DISPLAY_LIST}$new_port "
+ CUR_DEPS="${CUR_DEPS}${new_port}:${portdir}:"
+ 
