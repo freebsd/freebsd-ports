@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	libarena
-# Date created:			Apr 22, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libarena
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +10,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Custom Memory Allocator Interface
 
+LICENSE=	MIT
+
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	include/arena/align.h \
 		include/arena/arena.h \
@@ -25,5 +23,13 @@ PLIST_FILES=	include/arena/align.h \
 		include/arena/util.h \
 		lib/libarena.a
 PLIST_DIRS=	include/arena
+
+post-patch:
+.for i in Epilogue.mk Prologue.mk
+	@${REINPLACE_CMD} -e \
+		'/!=/s|^|#|' ${WRKSRC}/mk/${i}
+.endfor
+	@${REINPLACE_CMD} -e \
+		'/^PREFIX/s|:=|?=|' ${WRKSRC}/mk/Variables.mk
 
 .include <bsd.port.mk>
