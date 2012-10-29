@@ -1,13 +1,9 @@
-# New ports collection makefile for:	ida
-# Date created:				Thu Aug 19 21:13:58 UTC 2004
-# Whom:					Andrey Slusar <anray@FreeBSD.org>
-#
+# Created by: Andrey Slusar <anray@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ida
 PORTVERSION=	2.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -16,12 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		exif.12:${PORTSDIR}/graphics/libexif
-
-BROKEN=		does not compile
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		exif:${PORTSDIR}/graphics/libexif
 
 OPTIONS_DEFINE=	GIF PCF PNG SANE TIFF WEBP DOCS
 OPTIONS_DEFAULT=	GIF PNG TIFF
@@ -40,7 +33,9 @@ LDFLAGS+=	-liconv
 
 MAN1=		exiftran.1 ida.1
 PORTDOCS=	README TODO INSTALL
-PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
+PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida \
+		${DESKTOPDIR:S/${PREFIX}\///}/ida.desktop
+PLIST_DIRSTRY=	${DESKTOPDIR:S/${PREFIX}\///}
 
 .include <bsd.port.options.mk>
 
@@ -69,7 +64,7 @@ MAKE_ARGS+=	HAVE_LIBSANE=no
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .else
 MAKE_ARGS+=	HAVE_LIBTIFF=no
 .endif
@@ -81,6 +76,8 @@ MAKE_ARGS+=	HAVE_LIBWEBP=no
 .endif
 
 post-install:
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/desktop/ida.desktop ${DESKTOPDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for a in ${PORTDOCS}
