@@ -1,0 +1,15 @@
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/chrome/flagfox/content.jar
+%%XPI_XPIDIR%%/chrome/flagfox/modules/flagfox.jsm
+%%XPI_XPIDIR%%/chrome/flagfox/modules/ipdb.jsm
+%%XPI_XPIDIR%%/defaults/preferences/defaultpreferences.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/ipdb/ip4.db
+%%XPI_XPIDIR%%/ipdb/ip6.db
+@dirrm %%XPI_XPIDIR%%/chrome/flagfox/modules
+@dirrm %%XPI_XPIDIR%%/chrome/flagfox
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/ipdb
+

@@ -2057,6 +2057,7 @@
     SUBDIR += xpi-firefox-showcase
     SUBDIR += xpi-firemobilesimulator
     SUBDIR += xpi-fission
+    SUBDIR += xpi-flagfox
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-flashgot
     SUBDIR += xpi-flatbmark
