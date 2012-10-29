@@ -1,105 +1,98 @@
-# New ports collection makefile for:	openrm
-# Date created:		8 July 2002
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
-PORTNAME=		openrm
-PORTVERSION=		1.6.0
-PORTREVISION=		4
-CATEGORIES=		graphics
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
-DISTNAME=		${PORTNAME}-devel-${PORTVERSION}-1
-.ifdef (WITH_DEMOS)
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			${PORTNAME}-demo-${PORTVERSION}-1${EXTRACT_SUFX}
-.endif
+PORTNAME=	openrm
+PORTVERSION=	1.6.0.2
+CATEGORIES=	graphics
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION:R} \
+		SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION:R}:demo
+DISTNAME=	${PORTNAME}-devel-${PORTVERSION:R}-${PORTVERSION:E}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTFILE:S/$/:demo/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
-BROKEN=		does not build
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
-.ifdef (WITH_DEMOS)
-WRKSRC2=	${WRKDIR}/rmdemo
-EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
-.endif
+WRKSRC=		${WRKDIR}/rm${PORTVERSION:R:S/.//g}
 
 USE_GL=		glu
 USE_XORG=	xmu
 USE_PERL5_BUILD=yes
 ALL_TARGET=	freebsd docs
-MAKE_ARGS=	AR=${AR} \
-		CC=${CC} \
-		CP=${CP} \
-		ECHO_CMD=${ECHO_CMD} \
-		LN=${LN} \
-		RM=${RM} \
-		STRIP_CMD=${STRIP_CMD}
+MAKE_ARGS=	AR="${AR}" \
+		CC="${CC}" \
+		CP="${CP}" \
+		ECHO_CMD="${ECHO_CMD}" \
+		LN="${LN}" \
+		RM="${RM}" \
+		STRIP_CMD="${STRIP_CMD}" \
+		X11BASE="${LOCALBASE}"
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386
+MAKE_JOBS_UNSAFE=yes
 
-.if !defined(WITH_DEMOS)
-PLIST_SUB=	WITH_DEMOS="@comment "
-.else
-PLIST_SUB=	WITH_DEMOS=""
+CFLAGS+=	-fPIC -DPIC
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+DEMO_DISTFILE=	${DISTNAME:S,-devel-,-demo-,}${EXTRACT_SUFX}
+DEMO_WRKSRC=	${WRKDIR}/rmdemo
 .endif
 
-pre-everything::
-.ifndef (WITH_DEMOS)
-	@${ECHO_MSG} "You can define WITH_DEMOS=yes to fetch and install available demos"
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.ifdef (WITH_DEMOS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
-			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
-			      s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC2}/makeinclude
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${REINPLACE_CMD} -e \
+		'/^RM/s|/usr|${PREFIX}| ; \
+		 /^OPENGL/s|/usr|${LOCALBASE}| ; \
+		 /^X11/s|/usr/X11R6|${LOCALBASE}| ; \
+		 /^X11/s|-lpthread|${PTHREAD_LIBS}| ; \
+		 /^OPT/s|-g|| ; \
+		 /^ARCH/s|-m32|| ; \
+		 /^JPEG/s|/usr|${LOCALBASE}|' ${DEMO_WRKSRC}/makeinclude
 .endif
 
 do-install:
-# install libraries
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/librm.so.1 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/librmaux.so.1 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/librmi.so.1 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/librmv.so.1 ${PREFIX}/lib
-	${LN} -fs ${PREFIX}/lib/librm.so.1 ${PREFIX}/lib/librm.so
-	${LN} -fs ${PREFIX}/lib/librmaux.so.1 ${PREFIX}/lib/librmaux.so
-	${LN} -fs ${PREFIX}/lib/librmi.so.1 ${PREFIX}/lib/librmi.so
-	${LN} -fs ${PREFIX}/lib/librmv.so.1 ${PREFIX}/lib/librmv.so
-	${INSTALL_DATA} ${WRKSRC}/lib/librm.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/librmaux.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/librmi.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/librmv.a ${PREFIX}/lib
-
 # install includes
 	@${MKDIR} ${PREFIX}/include/rm
 	${INSTALL_DATA} ${WRKSRC}/include/rm/*.h ${PREFIX}/include/rm
-
-.ifdef (WITH_DEMOS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC2}/README ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC2}/configure ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC2}/makeinclude ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC2}/Makefile.x11 ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC2}/*.c ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC2}/*.h ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/data
-	${INSTALL_DATA} ${WRKSRC2}/data/* ${EXAMPLESDIR}/data
-.endif
-
-.ifndef (NOPORTDOCS)
+# install libraries
+.for f in librm librmaux librmi librmv
+	${INSTALL_DATA} ${WRKSRC}/lib/${f}.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/${f}.so.1 ${PREFIX}/lib
+	${LN} -fs ${f}.so.1 ${PREFIX}/lib/${f}.so
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/FUTUREPLANS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/HTML/*.html ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/doc/HTML/images/* ${DOCSDIR}/images
+	@${MKDIR} ${DOCSDIR}/HTML
+	${INSTALL_DATA} ${WRKSRC}/doc/HTML/*.html ${DOCSDIR}/HTML
+	@${MKDIR} ${DOCSDIR}/HTML/images
+	${INSTALL_DATA} ${WRKSRC}/doc/HTML/images/* ${DOCSDIR}/HTML/images
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${DEMO_WRKSRC}/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${DEMO_WRKSRC}/configure ${EXAMPLESDIR}
+	${INSTALL_DATA} ${DEMO_WRKSRC}/makeinclude ${EXAMPLESDIR}
+	${INSTALL_DATA} ${DEMO_WRKSRC}/Makefile.x11 ${EXAMPLESDIR}
+	${INSTALL_DATA} ${DEMO_WRKSRC}/*.c ${EXAMPLESDIR}
+	${INSTALL_DATA} ${DEMO_WRKSRC}/*.h ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/data
+	${INSTALL_DATA} ${DEMO_WRKSRC}/data/* ${EXAMPLESDIR}/data
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
