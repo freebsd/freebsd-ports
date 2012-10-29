@@ -1,11 +1,8 @@
-# Ports collection makefile for:	py-lxml
-# Date created:				Feb 18, 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	lxml
-PORTVERSION=	2.3.4
+PORTVERSION=	3.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +12,8 @@ COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
+		xslt:${PORTSDIR}/textproc/libxslt
 
 # Python3 ready
 USE_PYTHON=	yes
@@ -32,11 +29,17 @@ PORTDOCS=	CHANGES.txt \
 		TODO.txt \
 		README.rst
 
+.include <bsd.port.pre.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PYTHON_REL} >= 320
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
