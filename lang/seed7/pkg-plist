@@ -59,6 +59,7 @@ lib/seed7/listener.s7i
 lib/seed7/lower.s7i
 lib/seed7/mahjng32.s7i
 lib/seed7/make.s7i
+lib/seed7/makedata.s7i
 lib/seed7/math.s7i
 lib/seed7/modern27.s7i
 lib/seed7/more.s7i
@@ -110,6 +111,7 @@ lib/seed7/time.s7i
 lib/seed7/upper.s7i
 lib/seed7/utf16.s7i
 lib/seed7/utf8.s7i
+lib/seed7/vecfont10.s7i
 lib/seed7/vecfont18.s7i
 lib/seed7/vectorfont.s7i
 lib/seed7/window.s7i

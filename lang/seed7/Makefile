@@ -1,12 +1,8 @@
-# New ports collection Makefile for:	seed7
-# Date created:				16 July 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	seed7
-DISTVERSION=	05_20121007
+DISTVERSION=	05_20121021
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
