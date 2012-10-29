@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.linuxsampler.org/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular MIDI sampler
 
-LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig
+LIB_DEPENDS=	gig:${PORTSDIR}/audio/libgig
 
 RESTRICTED=	no commercial use
 
@@ -23,14 +23,13 @@ DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
 USE_BZIP2=	yes
-USE_GCC=	any
 USE_GNOME=	gnomehack
 USE_SQLITE=	3
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		linuxsampler.1
@@ -38,22 +37,22 @@ MAN1=		linuxsampler.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=--disable-jack-driver
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=--disable-alsa-driver
 .endif
 
 .if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=--disable-arts-driver
 .endif
@@ -84,4 +83,4 @@ post-patch:
 post-install:
 	@${TOUCH} ${PREFIX}/lib/linuxsampler/plugins/.keep_me
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
