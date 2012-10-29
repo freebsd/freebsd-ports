@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	beadm
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/beadm/dist/
 
@@ -12,7 +12,7 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
-GH_COMMIT=	c5bab02
+GH_COMMIT=	27d3511
 
 NO_BUILD=	YES
 
