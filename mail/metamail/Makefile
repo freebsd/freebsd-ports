@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metamail
-# Date created:		17 Oct 1994
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
@@ -17,13 +13,14 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
+LICENSE=	MIT
+
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
 X11_DESC=	X11 hebrew font support
 
-USE_GCC=	any
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		getfilename.1 mailto-hebrew.1 mailto.1 metamail.1 \
 		metasend.1 mime.1 mimencode.1 mmencode.1 \
