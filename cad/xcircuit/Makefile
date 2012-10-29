@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xcircuit
-# Date created:		3 Apr 1998
-# Whom:			Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.40
+PORTVERSION=	3.7.43
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
