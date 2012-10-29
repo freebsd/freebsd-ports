@@ -14,7 +14,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-rcpt.conf
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-spf.conf
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-group-router.conf
