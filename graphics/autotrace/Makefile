@@ -41,10 +41,14 @@ CONFIGURE_ARGS+=	--without-magick
 .if ${PORT_OPTIONS:MMING}
 LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
+.else
+CONFIGURE_ENV+=	ac_cv_header_ming_h=no
 .endif
 
 .if ${PORT_OPTIONS:MPSTOEDIT}
 LIB_DEPENDS+=	pstoedit:${PORTSDIR}/graphics/pstoedit
+.else
+CONFIGURE_ARGS+=	--without-pstoedit
 .endif
 
 post-patch:
