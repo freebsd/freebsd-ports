@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xerces-c2
-# Date created:		06 September 2002
-# Whom:			"Bjoern A. Zeeb" (bzeeb+freebsdports@zabbadoz.net)
-#
+# Created by: Bjoern A. Zeeb <bz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xerces-c2
 PORTVERSION=	2.7.0
@@ -16,46 +12,33 @@ DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
-OPTIONS=	THREADS "Build a thread enabled shared library." on \
-		DEBUG "Include debugging information, do not strip." off \
-		ICONVFBSD "Use IconvFBSD transcoder." on \
-		ICU "Use ICU transcoder." off \
-		NATIVE "Use native transcoder." off
+OPTIONS_DEFINE=		DOCS DEBUG EXAMPLES THREADS
+OPTIONS_SINGLE=		TCODER
+OPTIONS_SINGLE_TCODER=	ICONVFBSD ICU NATIVE
+OPTIONS_DEFAULT=	ICONVFBSD THREADS
+ICONVFBSD_DESC=		Use IconvFBSD transcoder
+ICU_DESC=		Use ICU transcoder
+NATIVE_DESC=		Use native transcoder
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NATIVE)
-TRANSCODER=		native
-.endif
-.if defined(WITH_ICU)
-TRANSCODER=		icu
-.endif
-.if defined(WITH_ICONVFBSD)
-TRANSCODER=		IconvFBSD
-.endif
-
-.if !defined(TRANSCODER)
-USE_ICONV=		yes
-TRANSCODER=		IconvFBSD
-ICONVROOT?=		${LOCALBASE}
-CONFIGURE_ENV+=		ICONVROOT=${ICONVROOT}
-MAKE_ENV+=		ICONVROOT=${ICONVROOT}
-PLIST_SUB+=		TRANSICONV=""
-PLIST_SUB+=		TRANSICU="@comment "
-.else
-.if (${TRANSCODER} == "icu")
-PKGNAMESUFFIX+=		-icu
+.if ${PORT_OPTIONS:MICU}
 LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
 MAKE_ENV+=		ICUROOT=${ICUROOT}
+TRANSCODER=		icu
 PLIST_SUB+=		TRANSICONV="@comment "
 PLIST_SUB+=		TRANSICU=""
-.elif (${TRANSCODER} == "native")
-PKGNAMESUFFIX+=		-native
+.endif
+
+.if ${PORT_OPTIONS:MNATIVE}
+TRANSCODER=		native
 PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
-.else
+.endif
+
+.if ${PORT_OPTIONS:MICONVFBSD}
 USE_ICONV=		yes
 TRANSCODER=		IconvFBSD
 ICONVROOT?=		${LOCALBASE}
@@ -63,7 +46,6 @@ CONFIGURE_ENV+=		ICONVROOT=${ICONVROOT}
 MAKE_ENV+=		ICONVROOT=${ICONVROOT}
 PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
-.endif
 .endif
 
 USE_LDCONFIG=	yes
@@ -84,7 +66,7 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	-d
 .endif
 
@@ -96,7 +78,7 @@ CONFIGURE_ARGS+=	-b 64
 SAMPLES_CONFIG_ARGS+=	-b 64
 .endif
 
-.if defined(WITHOUT_THREADS)
+.if ! ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	-r none
 .else
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -110,13 +92,13 @@ PLIST_SUB+=		XERCESC_LIB=${XERCESC_LIB} \
 			XERCESC_DEPDOM_LIB=${XERCESC_DEPDOM_LIB} \
 			XERCESC_LIB_VERSION=${XERCESC_LIB_VERSION}
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 ALL_TARGET?=	all samples
 XERCES_BINS?=	CreateDOMDocument DOMCount DOMPrint EnumVal MemParse PParse \
 		PSVIWriter Redirect SAX2Count SAX2Print SAXCount SAXPrint \
 		SCMPrint SEnumVal StdInParse
 SAMPLES_CONFIG_ARGS+=	-p freebsd -c ${CC} -x ${CXX}
-.if defined(WITHOUT_THREADS)
+.if ! ${PORT_OPTIONS:MTHREADS}
 SAMPLES_CONFIG_ARGS+=	-r none
 .else
 SAMPLES_CONFIG_ARGS+=	-r pthread
@@ -125,16 +107,9 @@ SAMPLES_CONFIG_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 .endif
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
-
-SCRIPTS_ENV=	WITH_NATIVE="${WITH_NATIVE}" \
-		WITH_ICU="${WITH_ICU}" \
-		WITH_ICONVFBSD="${WITH_ICONVFBSD}"
-
-pre-extract:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check-config-options
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#CP = -cp -p#CP = -cp#'	\
@@ -148,7 +123,7 @@ pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
 
 post-configure:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 .if defined(TRANSCODER) && (${TRANSCODER} == "icu")
 	@(cd ${WRKSRC}/samples && \
 		${SETENV} \
@@ -167,11 +142,11 @@ post-configure:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${XERCES_BINS} data
 	@${CP} -r ${WRKSRC}/samples/$i ${EXAMPLESDIR}
@@ -181,4 +156,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
