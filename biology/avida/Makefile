@@ -1,12 +1,8 @@
-# New ports collection makefile for:	avida
-# Date created:		17 April 2002
-# Whom:			Jeremy <karlj000@unbc.ca>
-#
+# Created by: Jeremy <karlj000@unbc.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	avida
-PORTVERSION=	2.12.3
+PORTVERSION=	2.12.4
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
@@ -17,8 +13,6 @@ COMMENT=	An auto-adaptive genetic system designed for ALife research
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS
-
-NO_WRKSUBDIR=	yes
 
 USE_NCURSES=	yes
 USE_CMAKE=	yes
