@@ -1,12 +1,8 @@
-# New ports collection makefile for:	math/p5- Statistics-Descriptive
-# Date created:				01 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Statistics-Descriptive
-PORTVERSION=	3.0603
+PORTVERSION=	3.0604
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
