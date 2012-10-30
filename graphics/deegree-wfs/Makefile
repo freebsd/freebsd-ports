@@ -13,24 +13,42 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Deegree Web Feature Service(WFS)
 
-RUN_DEPENDS=	${LOCALBASE}/${TOMCATVER}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-
 USE_ZIP=	yes
 USE_JAVA=	1.5+
 
 NO_BUILD=	yes
-TOMCATVER=	apache-tomcat-6.0
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
+APPHOME=	${LOCALBASE}/${TOMCATVER}
 WEBAPPDIR=	${TOMCATDIR}/webapps
-PORTDOCS=	*
+PORTDOCS=	README.txt deegree_wfs_documentation_en.pdf
 DOCSDIR=	${PREFIX}/share/doc/deegree-wfs
 PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||}
+SUB_FILES=	pkg-message
+SUB_LIST=	TCPORT=${TCPORT}
+
+OPTIONS_SINGLE=	AS
+OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
+OPTIONS_DEFAULT=	TOMCAT6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTOMCAT6}
+TOMCATVER=	apache-tomcat-6.0
+TCPORT=	8180
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+.endif
+
+.if ${PORT_OPTIONS:MTOMCAT7}
+TOMCATVER=	apache-tomcat-7.0
+TCPORT=	8080
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/${PORTDIRNAME}
 	@${TAR} xf ${WRKDIR}/deegree-wfs.war -C ${WRKDIR}/${PORTDIRNAME}
-
-.include <bsd.port.options.mk>
 
 do-install:
 	cd ${WRKDIR} && \
@@ -39,11 +57,8 @@ do-install:
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/deegree_wfs_documentation_en.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/|} ${DOCSDIR}
 .endif
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
