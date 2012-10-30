@@ -1,12 +1,9 @@
-# New ports collection makefile for: trac-mercurial
-# Date created:                      January 23, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
 PORTVERSION=	0.12.0.1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/pgollucci
 PKGNAMEPREFIX=	trac-
@@ -14,19 +11,16 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	A plugin to use Mercurial instead of Subversion in Trac
+COMMENT=	Plugin to use Mercurial instead of Subversion in Trac
 
 RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial \
 		tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	yes
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracMercurial
-PYDISTUTILS_NOEGGINFO=	yes
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-0.12.0.23dev-py${PYTHON_VER}.egg
+PYDISTUTILS_PKGVERSION=	0.12.0.23dev
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .if defined(BOOTSTRAP)
 do-fetch:
