@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-math
-# Date created:                      Dec 31, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.1
@@ -18,14 +14,14 @@ COMMENT=	Support for LaTeX math formulas in wiki pages
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		latex:${PORTSDIR}/print/teTeX-base
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=easy_install
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracMath
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 post-install:
 	${CAT} ${PKGMESSAGE}
