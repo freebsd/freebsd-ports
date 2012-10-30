@@ -3,7 +3,7 @@
 to create one.  Simply copy %%WWWDIR%%/etc/Default.conf
 to Site.conf and edit to suit.
 
-2.  New installations will need to run the following commands:
+2. New installations will need to run the following commands:
 
 cd %%WWWDIR%%/bin/
 ./initdb initdb
@@ -11,11 +11,19 @@ cd %%WWWDIR%%/bin/
 This command assumes that you have created a customised Site.conf
 configuration file.
 
-3. Please see %%WWWDIR%%/etc/netdot.cron
+3. Upgrading?  Back up your database first, then run the following commands:
+
+cd %%WWWDIR%%/upgrade/
+perl updatedb
+
+This command assumes that you have created a customised Site.conf
+configuration file.
+
+4. Please see %%WWWDIR%%/etc/netdot.cron
 in the root directory of the installation package for suggestions on
 what should be added to your server's crontab.
 
-4. Suggested Apache configuration files are available here:
+5. Suggested Apache configuration files are available here:
 
 %%WWWDIR%%/etc/netdot_apache2_local.conf
 %%WWWDIR%%/etc/netdot_apache2_ldap.conf
