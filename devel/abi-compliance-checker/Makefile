@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.98.3
+PORTVERSION=	1.98.4
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://forge.ispras.ru/attachments/download/2471/ \
+MASTER_SITES=	http://forge.ispras.ru/attachments/download/2655/ \
 		http://cloud.github.com/downloads/lvc/abi-compliance-checker/ \
 		LOCAL/bf
 
@@ -18,13 +18,16 @@ COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
-NO_BUILD=	yes
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
+BUILD_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags
+RUN_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags
 USE_PERL5=	yes
 .else
+RUN_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags
 USE_PERL5_RUN=	yes
 .endif
 
+NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
 
 .include <bsd.port.pre.mk>
@@ -34,6 +37,7 @@ IGNORE =	: this port requires CC to be a version of gcc
 .endif
 
 CPPFILT?=	/usr/bin/c++filt
+CTAGS?=		exctags
 GZ?=		/usr/bin/gzip
 READELF?=	/usr/bin/readelf
 
@@ -52,6 +56,7 @@ PORT${w}=	*
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "\|get_CmdPath(\"c++filt\")|s|\"c++filt\"|\"${CPPFILT}\"|" \
+		-e "\|get_CmdPath(\"ctags\")|s|\"ctags\"|\"${CTAGS}\"|" \
 		-e "\|get_CmdPath(\"gcc\")|s|\"gcc\"|\"${CC}\"|" \
 		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
 		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
