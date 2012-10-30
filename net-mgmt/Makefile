@@ -162,6 +162,7 @@
     SUBDIR += netdot
     SUBDIR += netleak
     SUBDIR += netmagis-common
+    SUBDIR += netmagis-database
     SUBDIR += netmask
     SUBDIR += netmond
     SUBDIR += netspoc
