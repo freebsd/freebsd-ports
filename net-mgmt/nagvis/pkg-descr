@@ -1,4 +1,4 @@
-NagVis is a visualization addon for the well known 
+NagVis is a visualization addon for the well known
 network managment system Nagios.
 
 NagVis can be used to visualize Nagios Data, e.g. to display IT
@@ -14,6 +14,5 @@ Key features
  * Online documentation of IT environments including current states
  * Multilingual capabilities
  * Web configuration interface (WUI)
-
 
 WWW: http://www.nagvis.org/
