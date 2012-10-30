@@ -1,9 +1,5 @@
-# New ports collection makefile for: ifstated
-# Date created:         18 November 2004
-# Whom:                 Matthew George <mdg@secureworks.net>
-#
+# Created by: Matthew George <mdg@secureworks.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ifstated
 PORTVERSION=	5.1
@@ -14,7 +10,7 @@ MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Interface state daemon
 
-LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
 
 MAN5=		ifstated.conf.5
 MAN8=		ifstated.8
