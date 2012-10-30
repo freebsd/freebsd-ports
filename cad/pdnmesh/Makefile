@@ -2,39 +2,82 @@
 # $FreeBSD$
 
 PORTNAME=	pdnmesh
-PORTVERSION=	0.2.1
-PORTREVISION=	11
+PORTVERSION=	0.2.2
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A finite element program
+COMMENT=	Finite element program
 
-LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext
+LICENSE=	GPLv2 # (or later)
 
-.include <bsd.port.pre.mk>
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		cairo:${PORTSDIR}/graphics/cairo \
+		drm:${PORTSDIR}/graphics/libdrm \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
+		xcb:${PORTSDIR}/x11/libxcb
 
-.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas
-LAPACK=		-lalapack -lcblas
-.else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-BLAS=		-lblas
-LAPACK=		-llapack
-.endif
+OPTIONS_DEFINE=	ATLAS DOCS EXAMPLES
+ATLAS_DESC=	Enable ATLAS support
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	BLAS_LIBS="${BLAS}" LAPACK_LIBS="${LAPACK}"
-USE_GL=		yes
+USE_GL=		glu
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_GNOME=	gdkpixbuf2 gtk20
+USE_PKGCONFIG=	build
+USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
+		xfixes xmu xi xinerama xrandr xrender xt xxf86vm
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	pdnmesh.1
-MAN5=	pdnmesh_input.5
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.post.mk>
+MAN1=		pdnmesh.1
+MAN5=		pdnmesh_input.5
+
+DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" "" "true"
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MATLAS}
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+CONFIGURE_ARGS+=--with-blas=cblas --with-lapack=alapack
+.else
+LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+CONFIGURE_ARGS+=--with-blas=blas --with-lapack=lapack
+.endif
+
+post-patch:
+	@${REINPLACE_CMD}-e \
+		'/^SUBDIRS/s|doc|| ; \
+		 s|^pkgdata_DATA|#pkgdata_DATA|' ${WRKSRC}/Makefile.in
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} \
+		&& ${INSTALL_DATA} ChangeLog ${DOCSDIR} \
+		&& ${INSTALL_DATA} README ${DOCSDIR})
+	@${MKDIR} ${DOCSDIR}/tutorial
+	(cd ${WRKSRC}/doc/tutorial \
+		&& ${INSTALL_DATA} README ${DOCSDIR}/tutorial \
+		&& ${INSTALL_DATA} tutorial.* ${DOCSDIR}/tutorial)
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	@(${TAR} -C ${WRKSRC}/doc/examples --exclude "*Makefile*" -cf - . | \
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -)
+	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHREOWN}:${SHAREGRP}
+	@${FIND} ${EXAMPLESDIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+.endif
+
+.include <bsd.port.mk>
