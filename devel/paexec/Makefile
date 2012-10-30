@@ -1,9 +1,8 @@
-# Created by:				chinsan
+# Created by: chinsan
 # $FreeBSD$
 
 PORTNAME=	paexec
-PORTVERSION=	0.16.1
-PORTREVISION=	2
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,37 +11,43 @@ COMMENT=	Parallel executor, distributes tasks over network
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	mk-configure>=0.23:${PORTSDIR}/devel/mk-configure
 LIB_DEPENDS=	maa:${PORTSDIR}/devel/libmaa
-BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
 RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USE_PERL5_BUILD=yes
+MAKE_ENV=	SUBPRJ_DFLT="${SUBPRJ_DFLT}"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	SUBPRJ_DFLT="${SUBPRJ_DFLT}"
+
+MAN1=		${PORTNAME}.1 \
+		${PORTNAME}_reorder.1
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}_reorder
 
 SUBPRJ_DFLT=	${PORTNAME}
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 SUBPRJ_DFLT+=	doc
 .endif
 
-.if !defined(NOPORTEXAMPLES)
-PORTEXAMPLES=	*
+.if ${PORT_OPTIONS:MEXAMPLES}
 SUBPRJ_DFLT+=	examples
 MAKE_ENV+=	EGDIR="${EXAMPLESDIR}"
 .endif
 
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}_reorder
-
-MAN1=		${PORTNAME}.1 \
-		${PORTNAME}_reorder.1
-
 do-build:
-	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
+	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
 
 do-install:
-	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} ${INSTALL_TARGET}
+	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} \
+		${INSTALL_TARGET}
 
 .include <bsd.port.mk>
