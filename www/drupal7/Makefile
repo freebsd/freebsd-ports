@@ -1,19 +1,15 @@
-# Ports collection makefile for:	drupal7
-# Date Created: 			12 Feb 2007
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drupal7
-PORTVERSION=	7.14
+PORTVERSION=	7.16
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	A database driven web content management system (CMS)
+COMMENT=	Database driven web content management system (CMS)
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -23,7 +19,6 @@ DRUPAL_PORT=	yes
 DRUPAL_VERSION=	7
 
 USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
-IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 
 OPTIONS+=	MYSQL "MySQL database support" on \
@@ -50,7 +45,6 @@ USE_PHP+=	pdo_mysql
 .endif
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-IGNORE_WITH_PGSQL=	73 74 80 81 82
 USE_PHP+=	pdo_pgsql
 .endif
 
