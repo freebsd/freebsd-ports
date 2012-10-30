@@ -1,0 +1,12 @@
+--- helpers/basic_auth/LDAP/config.test.orig	2012-10-20 14:39:49.000000000 +0200
++++ helpers/basic_auth/LDAP/config.test	2012-10-21 20:49:49.000000000 +0200
+@@ -1,8 +1,2 @@
+ #!/bin/sh
+-if [ -f /usr/include/ldap.h ]; then
+-	exit 0
+-fi
+-if [ -f /usr/include/winldap.h ]; then
+-	exit 0
+-fi
+-exit 1
++exit 0

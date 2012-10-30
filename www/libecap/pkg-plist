@@ -6,7 +6,6 @@ include/libecap/common/autoconf.h
 include/libecap/common/body.h
 include/libecap/common/body_size.h
 include/libecap/common/call.h
-include/libecap/common/config.h
 include/libecap/common/delay.h
 include/libecap/common/errors.h
 include/libecap/common/forward.h
@@ -18,6 +17,7 @@ include/libecap/common/message.h
 include/libecap/common/name.h
 include/libecap/common/named_values.h
 include/libecap/common/names.h
+include/libecap/common/options.h
 include/libecap/common/registry.h
 include/libecap/common/version.h
 include/libecap/host/host.h
@@ -29,4 +29,6 @@ include/libecap/host/xaction.h
 lib/libecap.a
 lib/libecap.la
 lib/libecap.so
-lib/libecap.so.0
+lib/libecap.so.2
+lib/pkgconfig/libecap.pc
+@dirrmtry lib/pkgconfig
