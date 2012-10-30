@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt-gstreamer
-# Date created:		Sat 15 Jan 2011, 23:39:37
-# Whom:			Dima Panov <fluffy@FreeBSD.org>
-#
+# Created by: Dima Panov <fluffy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.2
@@ -15,6 +11,8 @@ DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Qt4 bindings for GStreamer multimedia library
+
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
