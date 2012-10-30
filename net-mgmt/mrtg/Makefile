@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MRTG
-# Date created:				April 18th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mrtg
 PORTVERSION=	2.17.4
@@ -18,7 +14,10 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 MAINTAINER=	ports@subnets.ru
 COMMENT=	The multi-router traffic grapher
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+# slave ports override with languages specific gd
+GD_PORT?=	graphics/gd
+
+LIB_DEPENDS=	gd:${PORTSDIR}/${GD_PORT}
 RUN_DEPENDS=	p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
@@ -64,24 +63,18 @@ IMAGES=		favicon.ico mrtg-l.gif mrtg-l.png mrtg-m.gif mrtg-m.png \
 		mrtg-r.gif mrtg-r.png mrtg-ti.gif mrtg-ti.png
 SCRIPTS=	cfgmaker indexmaker mrtg mrtg-traffic-sum
 
-OPTIONS=	IPV6 "Enable IPv6 support" OFF \
-		SNMP "Enable use of SNMPv3" OFF
+OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SNMPV3
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
-
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMPV3}
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
 
@@ -92,11 +85,11 @@ post-patch:
 	@${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}/doc ${EXAMPLESDIR}/images
 	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}/doc/
 	@${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} ${EXAMPLESDIR}/images/
@@ -113,4 +106,4 @@ post-install:
 	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
