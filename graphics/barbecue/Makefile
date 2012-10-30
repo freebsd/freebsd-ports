@@ -1,9 +1,5 @@
-# New ports collection makefile for:	barbecue
-# Date created:		21 May 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	barbecue
 DISTVERSION=	1.5-beta1
@@ -11,7 +7,7 @@ CATEGORIES=	graphics print java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DIST_SUBDIR=	java
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Java barcode generator
 
 LICENSE=	BSD
@@ -61,18 +57,18 @@ do-install:
 
 .if ${PORT_OPTIONS:MTOMCAT6} || ${PORT_OPTIONS:MTOMCAT7}
 	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${WEBAPPDIR}/${PORTNAME}
-	(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME})
+	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME})
 	${TOUCH} ${WEBAPPDIR}/${PORTNAME}/WEB-INF/classes/net/sourceforge/barbecue/postnet/.empty
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
