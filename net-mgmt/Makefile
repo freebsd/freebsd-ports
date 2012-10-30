@@ -161,6 +161,7 @@
     SUBDIR += netdisco-mibs
     SUBDIR += netdot
     SUBDIR += netleak
+    SUBDIR += netmagis-common
     SUBDIR += netmask
     SUBDIR += netmond
     SUBDIR += netspoc
