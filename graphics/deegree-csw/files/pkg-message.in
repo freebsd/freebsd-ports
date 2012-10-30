@@ -4,7 +4,7 @@ To start DeeGree correctly, please set the variable JAVA_OPTS with:
 setenv JAVA_OPTS "-server -Xms256m -Xmx512m"
 
 Now you should start your Tomcat server and browse with:
-   http://your-server:8180/deegree-csw
+   http://your-server:%%TCPORT%%/deegree-csw
 
 Enjoy it !
 ==========================================================================
