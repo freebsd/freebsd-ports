@@ -1,0 +1,13 @@
+--- src/cf.data.pre.orig	2012-10-20 14:39:49.000000000 +0200
++++ src/cf.data.pre	2012-10-28 11:28:18.000000000 +0100
+@@ -3479,6 +3479,10 @@
+ LOC: Config.pidFilename
+ DOC_START
+ 	A filename to write the process-id to.  To disable, enter "none".
++
++	Note: If you change this setting, you need to set squid_pidfile
++	in /etc/rc.conf to reflect the new value. Please see
++	%%PREFIX%%/etc/rc.d/squid for details.
+ DOC_END
+ 
+ NAME: log_fqdn
