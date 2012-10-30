@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	api-sanity-checker
-PORTVERSION=	1.12.9
+PORTVERSION=	1.12.10
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://forge.ispras.ru/attachments/download/1278/ \
+MASTER_SITES=	http://forge.ispras.ru/attachments/download/2634/ \
 		LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
@@ -17,13 +17,13 @@ COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
-NO_BUILD=	yes
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 USE_PERL5=	yes
 .else
 USE_PERL5_RUN=	yes
 .endif
 
+NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
 
 .include <bsd.port.pre.mk>
