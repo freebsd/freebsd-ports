@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	nagvis
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/NagVis%201.7
 
 MAINTAINER=	derfi@vei.ru
-COMMENT=	NagVis is a visualization addon for Nagios
+COMMENT=	Visualization addon for Nagios
 
 LICENSE=	GPLv2
 
