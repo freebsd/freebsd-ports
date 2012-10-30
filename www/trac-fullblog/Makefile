@@ -1,12 +1,9 @@
-# New ports collection makefile for: trac-fullblog
-# Date created:                      January 9, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -15,21 +12,14 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	This plugin provides a project Blog
+COMMENT=	Plugin that provides a project Blog
 
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	2.5+
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracFullBlogPlugin
-PYDISTUTILS_NOEGGINFO=	yes
-PLIST_SUB=	PORTVERSION=${PORTVERSION} \
-		PYTHON_VER=${PYTHON_VER}
-
-EGG_PATH=	${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
 .if defined(BOOTSTRAP)
 do-fetch:
