@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Moo
-# Date created:				Feb 25, 2011
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Moo
-PORTVERSION=	1.000003
+PORTVERSION=	1.000005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ILMARI
@@ -18,7 +14,7 @@ COMMENT=	Minimalist Object Orientation (with Moose compatibility)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.04:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.10:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
 		p5-Devel-GlobalDestruction>=0.09:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Role-Tiny>=1.001.003:${PORTSDIR}/devel/p5-Role-Tiny \
