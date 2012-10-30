@@ -1,9 +1,5 @@
-# New ports collection makefile for: mtpfs
-# Date created: 1 July 2007
-# Whom: John Hixson <john@divinix.org>
-#
+# Created by: John Hixson <john@pcbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mtpfs
 PORTVERSION=	0.9
@@ -18,8 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 LIB_DEPENDS=	mtp:${PORTSDIR}/audio/libmtp \
 		fuse:${PORTSDIR}/sysutils/fusefs-libs \
 		id3-3.8:${PORTSDIR}/audio/id3lib \
-		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		mad.2:${PORTSDIR}/audio/libmad
+		id3tag:${PORTSDIR}/audio/libid3tag \
+		mad:${PORTSDIR}/audio/libmad
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

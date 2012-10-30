@@ -1,11 +1,20 @@
---- mtpfs.c.orig	Sun Jul  1 11:45:55 2007
-+++ mtpfs.c	Sun Jul  1 11:46:30 2007
-@@ -921,7 +921,7 @@
- */
+--- mtpfs.c.orig	2008-08-05 07:29:29.000000000 +0200
++++ mtpfs.c	2012-10-30 00:47:13.487478272 +0100
+@@ -534,7 +534,7 @@
+         }
+     }
+     close (fi->fh);
+-    return_unlock();
++    return_unlock(0);
+ }
+ 
+ void
+@@ -1143,7 +1143,7 @@
+ }
  
  static int
 -mtpfs_statfs (const char *path, struct statfs *stbuf)
 +mtpfs_statfs (const char *path, struct statvfs *stbuf)
  {
-     if (DEBUG) g_debug ("mtpfs_statfs");
+     DBG("mtpfs_statfs");
      stbuf->f_bsize=1024;
