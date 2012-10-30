@@ -167,6 +167,7 @@
     SUBDIR += netmagis-metro
     SUBDIR += netmagis-servers
     SUBDIR += netmagis-topo
+    SUBDIR += netmagis-utils
     SUBDIR += netmask
     SUBDIR += netmond
     SUBDIR += netspoc
