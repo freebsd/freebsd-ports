@@ -1,13 +1,9 @@
-# New ports collection makefile for: trac-wikitopdf
-# Date created:                      January 9, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	2.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -19,18 +15,11 @@ COMMENT=	Plugin to generate PDF documents from the Wiki
 
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	yes
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracWikiToPdfPlugin
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-PYDISTUTILS_NOEGGINFO=	yes
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
-
-do-build:
-	@${DO_NADA}
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+WRKSRC=			${WRKDIR}/${PORTNAME}plugin
 
 .include <bsd.port.mk>
