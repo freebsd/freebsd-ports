@@ -1,16 +1,12 @@
-# Ports collection makefile for:	drupal7-jailadmin
-# Date created:				01 Mar 2012
-# Whom:					Shawn Webb <bsdports@wayfair.com>
-#
+# Created by: Shawn Webb <bsdports@wayfair.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jailadmin
 DISTVERSION=	7.x-0.4.1
 CATEGORIES=	www
-MASTER_SITES=	http://0xfeedface.org/~shawn/freebsd/ports/distfiles/
+MASTER_SITES=	http://ftp.freebsd.org/pub/FreeBSD/distfiles/drupal/
 
-MAINTAINER=	bsdports@wayfair.com
+MAINTAINER=	lattera@gmail.com
 COMMENT=	Drupal 7 module for administering FreeBSD vnet jails
 
 LICENSE=	BSD
@@ -22,19 +18,19 @@ USE_DRUPAL=	yes
 DRUPAL_MODULE=	yes
 DRUPAL_VERSION=	7
 MODULE_FILES=	README \
-				jailadmin.admin.inc \
-				jailadmin.helpers.inc \
-				jailadmin.info \
-				jailadmin.install \
-				jailadmin.module \
-				jailconfig.inc \
-				jailnetwork.inc \
-				jailstatus.inc \
-				classes/Jail.php \
-				classes/Mount.php \
-				classes/Network.php \
-				classes/NetworkDevice.php \
-				classes/Service.php
+		jailadmin.admin.inc \
+		jailadmin.helpers.inc \
+		jailadmin.info \
+		jailadmin.install \
+		jailadmin.module \
+		jailconfig.inc \
+		jailnetwork.inc \
+		jailstatus.inc \
+		classes/Jail.php \
+		classes/Mount.php \
+		classes/Network.php \
+		classes/NetworkDevice.php \
+		classes/Service.php
 
 MODULE_DIRS=	classes
 
