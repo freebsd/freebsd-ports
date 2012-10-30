@@ -19,8 +19,9 @@ sub usage() {
 	my $bn=basename($0);
 	print(<< "_ENOUSAGE");
 Usage: $bn [OPTION] PORT
-  -c                    use 'created by' header
-  -d                    use simple \$FreeBSD\$ RCS string header (default)
+  -c                    use 'created by' header (default)
+  -r                    use simple \$FreeBSD\$ RCS string header
+                        (make sure the original creator is ok with this)
   -h, --help            this help
   -n, --nowrite         don't change file, just print what would be done
 
@@ -43,7 +44,7 @@ sub get_creator($) {
 MAIN: {
 	# get options
 	my $opt={};
-	GetOptions($opt, 'help|h', 'default|d', 'createdby|c', 'nowrite|n');
+	GetOptions($opt, 'help|h', 'rcsonly|r', 'createdby|c', 'nowrite|n');
 
 	if(defined($opt->{help})) {
 		usage();
@@ -81,9 +82,9 @@ MAIN: {
 			}
 
 			# write new Makefile
-			if(defined($opt->{default}) || !defined($opt->{createdby})) {
+			if(defined($opt->{rcsonly})) {
 				print $outh "# \$FreeBSD\$\n";
-			} elsif(defined($opt->{createdby})) {
+			} elsif(defined($opt->{createdby}) || !defined($opt->{rcsonly})) {
 				my $creator=get_creator(\@header);
 				if(defined($creator)) {
 					print $outh "# Created by: $creator\n";
