@@ -1,12 +1,9 @@
-# New ports collection makefile for: trac-email2trac
-# Date created:                      May 18 2007
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	email2trac
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-
@@ -17,23 +14,23 @@ COMMENT=	Convert email to trac tickets
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-OPTIONS=	POSTFIX "Configure suid script for postfix" OFF
+OPTIONS_DEFINE=	POSTFIX
+POSTFIX_DESC=	Configure suid script for postfix
 
 TRACUSER?=	${WWWOWN}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-trac-user=${TRACUSER} --with-mta-user=${MTAUSER}
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_POSTFIX)
+.if ${PORT_OPTIONS:MPOSTFIX}
 MTAUSER?=	nobody
 .else
 MTAUSER?=	mailnull
@@ -50,11 +47,11 @@ do-install:
 		${CP} -p ${PREFIX}/etc/email2trac.conf.sample \
 		    ${PREFIX}/etc/email2trac.conf ; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
