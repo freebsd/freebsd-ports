@@ -20,6 +20,12 @@ SLAVEPORT?=	cli
 
 CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
+OPTIONS_DEFINE=	LIGHTWEIGHT
+
+LIGHTWEIGHT_DESC=	Build for low memory / low speed devices
+
+.include <bsd.port.options.mk>
+
 .if ${SLAVEPORT}!="web"
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
@@ -35,14 +41,16 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=--with-zlib=/usr \
-		--disable-libappindicator \
-		--disable-gconf2 \
 		${EXTRA_CONF_ARGS}
 EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-daemon \
 		 --without-gtk \
 		 --disable-mac \
 		 --disable-nls
+
+.if ${PORT_OPTIONS:MLIGHTWEIGHT}
+CONFIGURE_ARGS+=--enable-lightweight
+.endif
 
 MAN1?=		transmission-cli.1 transmission-create.1 transmission-edit.1 \
 		transmission-show.1
