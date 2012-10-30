@@ -163,6 +163,7 @@
     SUBDIR += netleak
     SUBDIR += netmagis-common
     SUBDIR += netmagis-database
+    SUBDIR += netmagis-detecteq
     SUBDIR += netmask
     SUBDIR += netmond
     SUBDIR += netspoc
