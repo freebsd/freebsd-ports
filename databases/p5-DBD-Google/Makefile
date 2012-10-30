@@ -8,7 +8,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Treat Google as a datasource for DBI
 
 BUILD_DEPENDS=	p5-Net-Google>=0:${PORTSDIR}/net/p5-Net-Google \
