@@ -1,12 +1,9 @@
-# New ports collection makefile for: trac-mercurial
-# Date created:                      January 23, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
 PORTVERSION=	${TRAC_VERSION}.${PLUGIN_VERSION}.${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -15,22 +12,19 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	A trac plugin providing a downloads section
+COMMENT=	Trac plugin providing a downloads section
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 TRAC_VERSION=	0.12
 PLUGIN_VERSION=	0.3
 SVN_REV=	10047
 
-USE_PYTHON=	yes
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracDownloads
-PYDISTUTILS_NOEGGINFO=	yes
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-${PLUGIN_VERSION}-py${PYTHON_VER}.egg
+PYDISTUTILS_PKGVERSION=	${PLUGIN_VERSION}
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .if defined(BOOTSTRAP)
 do-fetch:
@@ -41,10 +35,4 @@ do-fetch:
 	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 260
-EXTRA_PATCHES=	${PATCHDIR}/no-sets-module.diff
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
