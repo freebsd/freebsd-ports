@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libmtp
-# Date created:							3 December 2006
-# Whom:								Petar Zhivkov Petrov (pesho.petrov@gmail.com)
-#
+# Created by: Petar Zhivkov Petrov <pesho.petrov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libmtp
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -23,7 +19,7 @@ USE_GNOME=	gnomehack
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -51,8 +47,11 @@ post-patch:
 		'/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/if test/s|==|=| ; \
-		 /LIBUSB_REQUIRES/s|libusb-1.0||' ${WRKSRC}/configure
+		 /LIBUSB_REQUIRES/s|libusb-1.0|| ; \
+		 /endian.h/s|machine|sys|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|<libusb-1.0/|<|' ${WRKSRC}/src/libusb-glue.h
+	@${REINPLACE_CMD} -e \
+		's|__builtin_bswap|bswap|g' ${WRKSRC}/src/mtpz.c
 
 .include <bsd.port.post.mk>
