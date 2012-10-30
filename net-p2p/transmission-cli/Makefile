@@ -20,9 +20,7 @@ SLAVEPORT?=	cli
 
 CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
-OPTIONS_DEFINE=	LIGHTWEIGHT
-
-LIGHTWEIGHT_DESC=	Build for low memory / low speed devices
+OPTIONS_DEFINE=	LITE
 
 .include <bsd.port.options.mk>
 
@@ -48,7 +46,7 @@ EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-mac \
 		 --disable-nls
 
-.if ${PORT_OPTIONS:MLIGHTWEIGHT}
+.if ${PORT_OPTIONS:MLITE}
 CONFIGURE_ARGS+=--enable-lightweight
 .endif
 
