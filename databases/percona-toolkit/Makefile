@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	percona-toolkit
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/percona-toolkit/${PORTVERSION}/
 
