@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-discussion
-# Date created:                      March 23, 2010
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.7
@@ -14,15 +10,15 @@ MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	A discussion forum plugin for Trac
+COMMENT=	Discussion forum plugin for Trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		trac-TracSpamFilter>=0.2.1:${PORTSDIR}/www/trac-spam-filter
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracDiscussion
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 # Maintainter targets below this point
 
