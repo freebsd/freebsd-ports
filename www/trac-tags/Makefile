@@ -1,12 +1,9 @@
-# New ports collection makefile for: trac-tags
-# Date created:                      December 28 2006
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tags
 DISTVERSION=	0.7.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -14,19 +11,16 @@ PKGNAMEPREFIX=	trac-
 DIST_SUBDIR=	trac
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	A generic tags frontend for trac
+COMMENT=	Generic tags frontend for trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
-NO_BUILD=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracTags
-EGGVERSION=	${PORTVERSION:C/\.r.*/dev/}
-PLIST_SUB+=	EGGVERSION=${EGGVERSION} PYTHONVERSION=${_PYTHON_VERSION}
-PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/\.r.*/dev/}
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.pre.mk>
 
@@ -53,8 +47,5 @@ do-fetch:
 	    freefall.freebsd.org:public_distfiles/
 .endif
 .endif
-
-do-build:
-	@${DO_NADA}
 
 .include <bsd.port.post.mk>
