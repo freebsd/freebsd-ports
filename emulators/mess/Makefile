@@ -51,14 +51,6 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 
 .include <bsd.port.options.mk>
 
-.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
-CC=		/usr/bin/clang
-CPP=		/usr/bin/clang-cpp
-CXX=		/usr/bin/clang++
-.else
-USE_GCC=	4.6+
-.endif
-
 .if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
 USE_GNOME=	gtk20 gconf2
 MAKE_ENV+=	GTK_INCPATH="$$(pkg-config --cflags-only-I gtk+-2.0 gconf-2.0)" \
@@ -76,6 +68,14 @@ MAKE_ENV+=	DEBUG=1
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
+CC=		/usr/bin/clang
+CPP=		/usr/bin/clang-cpp
+CXX=		/usr/bin/clang++
+.else
+USE_GCC=	4.6+
+.endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not install on ia64, powerpc, or sparc64
