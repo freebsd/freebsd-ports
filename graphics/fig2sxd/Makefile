@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fig2sxd
-# Date created:				6 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	fig2sxd
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	graphics converters
 MASTER_SITES=	CRITICAL SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
