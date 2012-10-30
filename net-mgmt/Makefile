@@ -164,6 +164,7 @@
     SUBDIR += netmagis-common
     SUBDIR += netmagis-database
     SUBDIR += netmagis-detecteq
+    SUBDIR += netmagis-metro
     SUBDIR += netmask
     SUBDIR += netmond
     SUBDIR += netspoc
