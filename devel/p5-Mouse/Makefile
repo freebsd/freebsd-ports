@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Mouse
-# Date created:				23 Jul 2008
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mouse
-PORTVERSION=	0.99
+PORTVERSION=	1.02
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
