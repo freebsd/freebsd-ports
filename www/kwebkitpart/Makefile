@@ -3,8 +3,7 @@
 PORTNAME=	kwebkitpart
 PORTVERSION=	1.3.0
 CATEGORIES=	www kde
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	avilla
+MASTER_SITES=	LOCAL/avilla
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Web browser component for KDE SC based on QtWebKit
