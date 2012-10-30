@@ -35,6 +35,7 @@
     SUBDIR += gloox
     SUBDIR += gtkyahoo
     SUBDIR += gyach
+    SUBDIR += hotot
     SUBDIR += icb
     SUBDIR += icmpchat
     SUBDIR += icqlib
