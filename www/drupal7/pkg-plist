@@ -651,6 +651,8 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/entity_query_access_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/entity_query_access_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/error.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/error_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/error_test.module
@@ -716,6 +718,8 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.template_test.tpl.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_basetheme/test_basetheme.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_subtheme/test_subtheme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/template.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/test_theme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/unicode.test
@@ -918,7 +922,6 @@
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.info
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.module
-%%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_compatible_test
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.test
 %%DRUPAL_BASE%%/profiles/testing/testing.info
 %%DRUPAL_BASE%%/profiles/testing/testing.install
@@ -1119,6 +1122,8 @@
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/files
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_compatible_test
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_incompatible_test
+@dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_basetheme
+@dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_subtheme
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/themes
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade

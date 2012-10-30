@@ -51,6 +51,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2adc3e78-22d1-11e2-b9f0-d0df9acfd7e5">
+    <topic>drupal7 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>drupal7</name>
+        <range><lt>7.16</lt></range>
+      </package>
+    </affects>
+    <description>
+     <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Drupal Security Team reports:</p>
+        <blockquote cite="http://drupal.org/node/1815912">
+        <ol>
+          <li>
+          <p>Arbitrary PHP code execution</p>
+          <p>A bug in the installer code was identified that allows an attacker
+             to re-install Drupal using an external database server under certain
+             transient conditions. This could allow the attacker to execute 
+             arbitrary PHP code on the original server.</p>
+          </li>
+          <li>
+          <p>Information disclosure - OpenID module</p>
+          <p>For sites using the core OpenID module, an information disclosure
+             vulnerability was identified that allows an attacker to read files 
+             on the local filesystem by attempting to log in to the site using a
+             malicious OpenID server.</p>
+          </li>
+        </ol>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+        <url>http://drupal.org/node/1815912</url>
+    </references>
+    <dates>
+      <discovery>2012-10-17</discovery>
+      <entry>2012-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b3b1b97-207c-11e2-a03f-c8600054b392">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
