@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Bio-Glite
-# Date created:				1st April, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-Glite
 PORTVERSION=	0.10
@@ -12,7 +8,7 @@ CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Perl Interface to G-language
 
 BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww

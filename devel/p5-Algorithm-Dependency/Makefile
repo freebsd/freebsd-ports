@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Algorithm-Dependency
-# Date created:				20 Nov 2005
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-Dependency
 PORTVERSION=	1.110
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base class for implementing various dependency trees
 
 RUN_DEPENDS=	p5-Params-Util>=0.31:${PORTSDIR}/devel/p5-Params-Util
