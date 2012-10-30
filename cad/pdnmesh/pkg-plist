@@ -1,41 +1,41 @@
 bin/pdnmesh
-%%DATADIR%%/README
-%%DATADIR%%/COPYING
-%%DATADIR%%/ChangeLog
-%%DATADIR%%/tutorial/README
-%%DATADIR%%/tutorial/tutorial.sgml.bz2
-%%DATADIR%%/tutorial/tutorial.html.bz2
-%%DATADIR%%/examples/README
-%%DATADIR%%/examples/coords.1
-%%DATADIR%%/examples/coords.10
-%%DATADIR%%/examples/coords.11
-%%DATADIR%%/examples/coords.1a
-%%DATADIR%%/examples/coords.2
-%%DATADIR%%/examples/coords.3
-%%DATADIR%%/examples/coords.4
-%%DATADIR%%/examples/coords.5
-%%DATADIR%%/examples/coords.6
-%%DATADIR%%/examples/coords.7
-%%DATADIR%%/examples/coords.8
-%%DATADIR%%/examples/coords.9
-%%DATADIR%%/examples/heat
-%%DATADIR%%/examples/flow
-%%DATADIR%%/examples/flow.1
-%%DATADIR%%/examples/heart
-%%DATADIR%%/examples/switch
-%%DATADIR%%/examples/trans
-%%DATADIR%%/pixmaps/open.xpm
-%%DATADIR%%/pixmaps/save.xpm
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/README
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.html.bz2
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.sgml.bz2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.10
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.11
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.1a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.5
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.6
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.9
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/heart
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/heat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/switch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trans
 %%DATADIR%%/pixmaps/help_about.xpm
 %%DATADIR%%/pixmaps/next_eigenmode.xpm
+%%DATADIR%%/pixmaps/open.xpm
 %%DATADIR%%/pixmaps/plot_cont.xpm
 %%DATADIR%%/pixmaps/plot_fill.xpm
 %%DATADIR%%/pixmaps/plot_grad.xpm
 %%DATADIR%%/pixmaps/plot_mesh.xpm
+%%DATADIR%%/pixmaps/save.xpm
 %%DATADIR%%/pixmaps/zoom_all.xpm
 %%DATADIR%%/pixmaps/zoom_back.xpm
 %%DATADIR%%/pixmaps/zoom_window.xpm
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/tutorial
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
