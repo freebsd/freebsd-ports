@@ -1,12 +1,8 @@
-# New ports collection makefile for:    pecl-dbase
-# Date created:                 2010/10/21
-# Whom:                         toomas <toomas@median.ee>
-#
+# Created by: toomas <toomas@median.ee>
 # $FreeBSD$
-#
 
 PORTNAME=	dbase
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
