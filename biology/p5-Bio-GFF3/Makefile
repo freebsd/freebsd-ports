@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Bio-GFF3
-# Date created:				22 Apr, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-GFF3
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
