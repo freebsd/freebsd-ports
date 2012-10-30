@@ -15,6 +15,9 @@ DISTNAME=	LimeWireOther
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A Java based Gnutella client
 
+DEPRECATED=	Abandoned up stream
+EXPIRATION_DATE=	2012-12-01
+
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
