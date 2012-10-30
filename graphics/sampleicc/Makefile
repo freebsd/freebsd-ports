@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sampleicc
-# Date created:		2012-01-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sampleicc
 PORTVERSION=	1.6.6
@@ -17,7 +12,7 @@ COMMENT=	Library for reading, writing, manipulating, and applying ICC profiles
 LICENSE=	ICC
 LICENSE_NAME=	The ICC Software License, Version 0.2
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
