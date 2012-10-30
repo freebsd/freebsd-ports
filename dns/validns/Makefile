@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	validns
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.validns.net/download/
 
@@ -14,9 +14,8 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A high performance DNS/DNSSEC zone validator
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	Judy.1:${PORTSDIR}/devel/judy
+LIB_DEPENDS=	Judy:${PORTSDIR}/devel/judy
 
 ALL_TARGET=
 
@@ -25,12 +24,13 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	Changes README installation.mdwn notes.mdwn \
 		technical-notes.mdwn todo.mdwn usage.mdwn
 
+.include <bsd.port.pre.mk>
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_DATA} ${MAN1:S,^,${WRKSRC}/,} ${PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

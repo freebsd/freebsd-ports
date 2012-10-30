@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2012-10-04 23:54:18.000000000 +0900
++++ ./Makefile	2012-10-10 17:19:11.000000000 +0900
+@@ -11,7 +11,7 @@
+ 	sshfp.o threads.o rp.o spf.o cert.o \
+ 	dname.o tlsa.o nid.o l32.o l64.o lp.o \
+ 	ipseckey.o
+-	$(CC) $(CFLAGS) $(OPTIMIZE) -o validns \
++	$(CC) $(CFLAGS) -o validns \
+ 	    main.o carp.o mempool.o textparse.o base64.o base32hex.o \
+ 	    rr.o soa.o a.o cname.o mx.o ns.o \
+ 	    rrsig.o nsec.o dnskey.o txt.o aaaa.o \
