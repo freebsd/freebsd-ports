@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zsnes
-# Date created:				Fri May  4 13:10:11 CEST 2001
-# Whom:					Stijn Hoop <stijn@win.tue.nl>
-#
+# Created by: Stijn Hoop <stijn@win.tue.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51
@@ -25,11 +21,11 @@ ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
 
-OPTIONS=	X11 "Enable X11 video driver" on \
-		OPENGL "Enable OpenGL video driver" off \
-		DEBUGGER "Enable ZSNES debugger" off \
-		JMA "Enable JMA support" on \
-		LIBAO "Enable libao support" off
+NO_OPTIONS_SORT=yes
+OPTIONS_DEFINE=	X11 OPENGL DEBUGGER JMA AO
+OPTIONS_DEFAULT=X11 JMA
+DEBUGGER_DESC=	ZSNES Debugger
+JMA_DESC=	JMA support
 
 USE_BZIP2=	yes
 USE_SDL=	sdl
@@ -46,34 +42,34 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUGGER)
+.if ${PORT_OPTIONS:MDEBUGGER}
 CONFIGURE_ARGS+=	--enable-debugger
 .else
 CONFIGURE_ARGS+=	--disable-debugger
 .endif
 
-.if defined(WITH_JMA)
+.if ${PORT_OPTIONS:MJMA}
 CONFIGURE_ARGS+=	--enable-jma
 .else
 CONFIGURE_ARGS+=	--disable-jma
 .endif
 
-.if defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
+CONFIGURE_ARGS+=	--with-x
+.else
 CONFIGURE_ARGS+=	--without-x
 PKGNAMESUFFIX=	-nox11
-.else
-CONFIGURE_ARGS+=	--with-x
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=	--enable-opengl
 .else
 CONFIGURE_ARGS+=	--disable-opengl
 .endif
 
-.if defined(WITH_LIBAO)
-LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
+.if ${PORT_OPTIONS:MAO}
+LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=	--enable-libao
 .else
 CONFIGURE_ARGS+=	--disable-libao
