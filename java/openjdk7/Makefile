@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -34,8 +35,9 @@ USE_ICONV=	yes
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		POLICY TZUPDATE
+OPTIONS_DEFINE=		DEBUG POLICY TZUPDATE
 OPTIONS_DEFAULT=	POLICY TZUPDATE
+DEBUG_DESC=		Enable extra debugging info
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
@@ -110,6 +112,10 @@ BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 		${LOCALBASE}/openjdk6
 
 .include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDEBUG)
+MAKE_ENV+=	ALT_OBJCOPY="/nonexistent"
+.endif
 
 .if ${PORT_OPTIONS:MTZUPDATE}
 RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
