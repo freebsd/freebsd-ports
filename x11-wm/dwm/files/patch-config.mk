@@ -1,6 +1,6 @@
---- config.mk.orig	2011-07-10 22:24:25.000000000 +0200
-+++ config.mk	2011-09-01 14:00:05.000000000 +0200
-@@ -4,11 +4,11 @@
+--- config.mk.orig	2011-12-19 15:02:46.000000000 +0000
++++ config.mk	2012-08-18 00:38:31.000000000 +0000
+@@ -4,30 +4,34 @@
  # Customize below to fit your system
  
  # paths
@@ -16,8 +16,17 @@
  
  # Xinerama
  XINERAMALIBS = -L${X11LIB} -lXinerama
-@@ -19,15 +19,15 @@
- LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
+ XINERAMAFLAGS = -DXINERAMA
+ 
++# Xft
++XFTINCS = -I${X11INC}/freetype2
++XFTLIBS = -L${X11LIB} -lXft
++
+ # includes and libs
+-INCS = -I. -I/usr/include -I${X11INC}
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
++INCS = -I. -I/usr/include -I${X11INC} ${XFTINCS}
++LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS} ${XFTLIBS}
  
  # flags
 -CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
