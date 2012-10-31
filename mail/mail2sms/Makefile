@@ -1,22 +1,27 @@
-# New ports collection makefile for:   mail2sms
-# Date created:		2003-04-16
-# Whom:			Gerhard Gonter <g.gonter@ieee.org>
-#
+# Created by: Gerhard Gonter <g.gonter@ieee.org>
 # $FreeBSD$
 
 PORTNAME=	mail2sms
 PORTVERSION=	1.3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.contactor.se/~dast/stuff/
-DISTNAME=	mail2sms-${PORTVERSION}
 
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Mail to SMS converter
 
 GNU_CONFIGURE=	yes
 
+PLIST_FILES=	bin/${PORTNAME}
 MAN1=		mail2sms.1
 MAN5=		mail2sms.5
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	README REGEX example.conf
+.endif
 
 post-patch:
 	${CP} ${WRKSRC}/mail2sms.4 ${WRKSRC}/mail2sms.5
@@ -27,10 +32,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mail2sms ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${PREFIX}/man/man5/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mail2sms
-	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/REGEX ${WRKSRC}/example.conf \
-	${PREFIX}/share/doc/mail2sms
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
