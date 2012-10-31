@@ -1,13 +1,8 @@
-# New ports collection makefile for:	RKWard
-# Date created:        19 April 2006
-# Whom:                thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.7
-PORTREVISION=	6
+PORTVERSION=	0.6.0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -32,6 +27,8 @@ USE_GETTEXT=	yes
 USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 MAN1=		rkward.1
 
@@ -46,9 +43,22 @@ PLIST_SUB+=	NLS=${NLS}
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
 .endif
 
+OPTIONS_DEFINE=	RECDEP
+RECDEP_DESC=	Recommended runtime dependencies
+OPTIONS_DEFAULT=RECDEP
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MRECDEP}
+LR_MOD_DIR=	${LOCALBASE}/lib/R/library
+RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:${PORTSDIR}/textproc/R-cran-R2HTML	\
+		${LR_MOD_DIR}/XML/INDEX:${PORTSDIR}/textproc/R-cran-XML		\
+		${LR_MOD_DIR}/mvtnorm/INDEX:${PORTSDIR}/math/R-cran-mvtnorm	\
+		${LR_MOD_DIR}/car/INDEX:${PORTSDIR}/math/R-cran-car
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
-		${WRKSRC}/rkward/rkward.sh.template	\
 		${WRKSRC}/rkward/rbackend/rkfrontendtransmitter.cpp
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(doc)|#ADD_SUBDIRECTORY(doc)|'	\
@@ -70,7 +80,7 @@ pre-configure:
 regression-test:	install
 	@${ECHO_MSG} "To pass the tests, some CRAN packages like R2HTML"
 	@${ECHO_MSG} "must be installed."
-	(cd ${WRKSRC}/tests && make plugintests)
+	(cd ${WRKSRC}/tests && LANG=C make plugintests)
 .endif
 
 .include <bsd.port.mk>
