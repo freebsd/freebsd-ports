@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-fivestarvote
-# Date created:                      Dec 31, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.1
@@ -14,14 +10,14 @@ MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	A 5 star plugin for voting on Trac resources
+COMMENT=	Five star plugin for voting on Trac resources
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	FiveStarVote
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 # Maintainter targets below this point
 
