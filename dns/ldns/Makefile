@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.14
+PORTVERSION=	1.6.15
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -18,8 +18,7 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES DRILL GOST PYLDNS
-OPTIONS_SET=	EXAMPLES DRILL
-OPTIONS_UNSET=	DOCS GOST PYLDNS
+OPTIONS_DEFAULT=	EXAMPLES DRILL
 
 EXAMPLES_DESC=	"With example programs"
 DRILL_DESC=	"With drill program"
@@ -31,8 +30,6 @@ PYLDNS_DESC=	${PYTHON_DESC}
 .if ${PORT_OPTIONS:MPYLDNS}
 USE_PYTHON=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
@@ -299,4 +296,4 @@ post-install:
 	@(cd ${WRKSRC}/drill; ${GMAKE} install)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

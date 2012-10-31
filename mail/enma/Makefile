@@ -7,6 +7,7 @@
 
 PORTNAME=	enma
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+=	--with-resolver=libbind \
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libbind.a:${PORTSDIR}/dns/libbind
 .else
 CONFIGURE_ARGS+=	--with-resolver=ldns
-LIB_DEPENDS+=	ldns.1:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns
 .endif
 
 pre-configure:
