@@ -3,10 +3,10 @@
 PORTNAME=	domination
 PORTVERSION=	1.1.1.1
 CATEGORIES=	games java
-MASTER_SITES=	http://domination.sourceforge.net/maps/ \
-		SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/
-DISTFILES=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX} \
-		${MAPS:S/$/.zip/}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game  \
+		http://domination.sourceforge.net/maps/:maps
+DISTFILES=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}:game \
+		${MAPS:S/$/.zip/}:maps
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nemysis@gmx.ch
@@ -14,6 +14,7 @@ COMMENT=	Board game that is a bit like the well known game Risk
 
 LICENSE=	GPLv3
 
+FETCH_ARGS?=	-Fpr
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -62,20 +63,15 @@ post-extract-script:
 .endfor
 
 do-install:
-# Scripts
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* ${PREFIX}/bin
 
-# Data
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help lib maps resources saves *.jar *.cmd *.htm *.txt *.ini" ${DATADIR})
 	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} *.sh ${DATADIR})
-# Fix Permission that user can write in saves
 	@(cd ${DATADIR} && ${CHMOD} 774 saves)
 
-# Pixmaps
 	${LN} -sf ${DATADIR}/resources/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
