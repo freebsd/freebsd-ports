@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby18
-# Date created:		6 May 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by:	Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}

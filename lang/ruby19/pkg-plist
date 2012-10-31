@@ -1030,5 +1030,4 @@ include/ruby-1.9/ruby.h
 @dirrmtry %%RUBY_VENDORARCHLIBDIR%%
 @dirrmtry %%RUBY_VENDORLIBDIR%%
 @dirrmtry lib/ruby/vendor_ruby
-@dirrmtry lib/ruby/gems
 @dirrmtry lib/ruby
