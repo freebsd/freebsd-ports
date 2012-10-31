@@ -26,7 +26,7 @@ _find_expr='-depth 2 -regex .*/bin/java'
 for dir in ${_excl_dirs}; do
     _find_expr="${_find_expr} ! -regex ${dir}/bin/java"
 done
-for jvm in `cd "${LOCALBASE}" && find *jdk* *jre* ${_find_expr}`; do
+for jvm in `cd "${LOCALBASE}" && find *jdk* *jre* ${_find_expr} 2> /dev/null`; do
     if [ -x "${LOCALBASE}/${jvm}" ]; then
         "${PKG_PREFIX}"/bin/registervm "${LOCALBASE}/${jvm}" > /dev/null 2>&1
     fi
