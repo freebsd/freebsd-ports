@@ -1127,8 +1127,9 @@ MASTER_SITE_SAVANNAH+= \
 # List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
 # Updated:	2012-10-31
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in aarnet freefr garr heanet ignum hivelocity internode iweb jaist \
-	nchc ncu netcologne osdn space sunet superb-dca3 switch tenet ufpr waix
+.for mirror in heanet sunet iweb switch freefr garr aarnet jaist osdn \
+	nchc ncu internode waix hivelocity superb-dca3 ufpr tenet space \
+	netcologne ignum
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
 .endfor
