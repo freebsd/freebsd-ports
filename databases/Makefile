@@ -538,6 +538,7 @@
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgagent
+    SUBDIR += pgbadger
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
     SUBDIR += pgfouine
