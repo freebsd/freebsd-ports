@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pgbadger
-# Date created:                         October 30, 2012
-# Whom:                                 Palle Girgensohn <girgen@FreeBSD.org>
-#
+# Created by: Palle Girgensohn <girgen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pgbadger
 PORTVERSION=	2.1
