@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.11
-PORTREVISION=	1
+PORTVERSION=	6.1.15
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -38,7 +37,8 @@ RUN_DEPENDS+=	\
 	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 	p5-HTML-StripScripts-Parser>=0:${PORTSDIR}/www/p5-HTML-StripScripts-Parser \
 	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree		\
-	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
+	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit	\
+	p5-MIME-Lite-HTML>=0:${PORTSDIR}/mail/p5-MIME-Lite-HTML
 
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
@@ -62,8 +62,7 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 		--with-modulesdir=${PREFIX}/libexec/${PORTNAME} \
 		--with-piddir=/var/run/${PORTNAME} \
 		--with-scriptdir=${PREFIX}/libexec/${PORTNAME} \
-		--with-spooldir=/var/spool/${PORTNAME}	\
-		--mandir=${MAN8PREFIX}/man
+		--with-spooldir=/var/spool/${PORTNAME}
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install

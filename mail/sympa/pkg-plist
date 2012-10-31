@@ -177,6 +177,7 @@ libexec/sympa/wwsympa.fcgi
 %%EXAMPLESDIR%%/scenari/add.default
 %%EXAMPLESDIR%%/scenari/add.owner
 %%EXAMPLESDIR%%/scenari/add.owner_notify
+%%EXAMPLESDIR%%/scenari/automatic_list_creation.family_owner
 %%EXAMPLESDIR%%/scenari/automatic_list_creation.listmaster
 %%EXAMPLESDIR%%/scenari/automatic_list_creation.public
 %%EXAMPLESDIR%%/scenari/create_list.intranet
@@ -282,6 +283,9 @@ libexec/sympa/wwsympa.fcgi
 %%EXAMPLESDIR%%/web_tt2/arcsearch_form.tt2
 %%EXAMPLESDIR%%/web_tt2/authorization_reject.tt2
 %%EXAMPLESDIR%%/web_tt2/auto_signoff.tt2
+%%EXAMPLESDIR%%/web_tt2/automatic_lists_management_request.tt2
+%%EXAMPLESDIR%%/web_tt2/automatic_lists_request.tt2
+%%EXAMPLESDIR%%/web_tt2/automatic_lists.tt2
 %%EXAMPLESDIR%%/web_tt2/blacklist.tt2
 %%EXAMPLESDIR%%/web_tt2/button_footer.tt2
 %%EXAMPLESDIR%%/web_tt2/button_header.tt2
@@ -311,6 +315,8 @@ libexec/sympa/wwsympa.fcgi
 %%EXAMPLESDIR%%/web_tt2/editfile.tt2
 %%EXAMPLESDIR%%/web_tt2/editsubscriber.tt2
 %%EXAMPLESDIR%%/web_tt2/error.tt2
+%%EXAMPLESDIR%%/web_tt2/family_signoff.tt2
+%%EXAMPLESDIR%%/web_tt2/family_signoff_request.tt2
 %%EXAMPLESDIR%%/web_tt2/footer.tt2
 %%EXAMPLESDIR%%/web_tt2/get_closed_lists.tt2
 %%EXAMPLESDIR%%/web_tt2/get_inactive_lists.tt2
@@ -328,6 +334,7 @@ libexec/sympa/wwsympa.fcgi
 %%EXAMPLESDIR%%/web_tt2/help_mail_commands.tt2
 %%EXAMPLESDIR%%/web_tt2/help_sendmsg.tt2
 %%EXAMPLESDIR%%/web_tt2/help_shared.tt2
+%%EXAMPLESDIR%%/web_tt2/help_suspend.tt2
 %%EXAMPLESDIR%%/web_tt2/help_user.tt2
 %%EXAMPLESDIR%%/web_tt2/help_user_options.tt2
 %%EXAMPLESDIR%%/web_tt2/home.tt2
@@ -409,8 +416,8 @@ libexec/sympa/wwsympa.fcgi
 %%NLS%%share/locale/de/LC_MESSAGES/web_help.mo
 %%NLS%%share/locale/el/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/el/LC_MESSAGES/web_help.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/sympa.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/en/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/en/LC_MESSAGES/web_help.mo
 %%NLS%%share/locale/es/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/es/LC_MESSAGES/web_help.mo
 %%NLS%%share/locale/et/LC_MESSAGES/sympa.mo
@@ -538,8 +545,6 @@ libexec/sympa/wwsympa.fcgi
 %%NLS%%@dirrmtry share/locale/et
 %%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
 %%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/el
 %%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
