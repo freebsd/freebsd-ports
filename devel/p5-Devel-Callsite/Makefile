@@ -1,12 +1,7 @@
-# New ports collection makefile for:	devel/p5-Devel-Callsite
-# Date created:				05 September 2008
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Callsite
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Devel
