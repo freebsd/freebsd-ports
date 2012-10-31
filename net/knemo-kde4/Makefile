@@ -1,12 +1,7 @@
-# New ports collection makefile for:	knemo
-# Date created:				Sat Jan 22 00:20:26 CET 2005
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	knemo
-PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTVERSION=	0.7.4
 CATEGORIES=	net kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
@@ -19,7 +14,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USE_KDE4=	kdeprefix kdelibs automoc4
+USE_KDE4=	kdeprefix kdelibs workspace automoc4
 
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
