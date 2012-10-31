@@ -24,7 +24,7 @@
 #		system call is not available in FreeBSD versions prior to 7.1.
 #
 # squid_user:	The user id that should be used to run the Squid master
-#		process. Default: %%SQUID_UID%%.
+#		process. Default: squid.
 #		Note that you probably need to define "squid_user=root" if
 #		you want to run Squid in reverse proxy setups or if you want
 #		Squid to listen on a "privileged" port < 1024.
@@ -81,6 +81,7 @@ squid_pidfile=${squid_pidfile:-"/var/run/squid/squid.pid"}
 squid_user=${squid_user:-"squid"}
 
 pidfile=${squid_pidfile}
+procname=squid-1
 required_dirs=${squid_chdir}
 
 # squid(8) will not start if ${squid_conf} is not present so try

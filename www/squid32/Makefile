@@ -37,6 +37,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.2.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -239,7 +240,6 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 .include <bsd.port.pre.mk>
 
 # Authentication methods and modules:
-# TODO: external-session hängt wovon ab?
 
 basic_auth=	DB MSNT MSNT-multi-domain NCSA PAM POP3 RADIUS \
 		fake getpwnam
@@ -283,7 +283,6 @@ basic_auth+=	SASL
 libexec+=	basic_sasl_auth
 .endif
 .if ${PORT_OPTIONS:MAUTH_SMB}
-# TODO: build-depends entfernen, wird nur für den configure-check gebraucht
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba36
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba36
 basic_auth+=	SMB
@@ -297,25 +296,21 @@ MAN8+=		ext_wbinfo_group_acl.8
 basic_auth+=	NIS
 libexec+=	basic_nis_auth
 .endif
-CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
-			--enable-auth-digest="${digest_auth}" \
-			--enable-external-acl-helpers="${external_acl}" \
-			--enable-auth-ntlm="${ntlm_auth}"
-# TODO:
-#  - configure-Skript auf bashisms prüfen
-#  - external/kerberos_ldap_group immer mit installieren?
-#  - gehört wrapper auch zu kerberos oder kann man den immer installieren?
-#  - negotiate_auth-Variable einführen
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_KERB} && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
-CONFIGURE_ARGS+=	--enable-auth-negotiate="kerberos wrapper"
+negotiate_auth=	kerberos wrapper
 libexec+=	negotiate_kerberos_auth negotiate_kerberos_auth_test \
 		negotiate_wrapper_auth
 MAN8+=		negotiate_kerberos_auth.8
 .else
-CONFIGURE_ARGS+=	--enable-auth-negotiate="none"
+negotiate_auth=	none
 .endif
 
+CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
+			--enable-auth-digest="${digest_auth}" \
+			--enable-external-acl-helpers="${external_acl}" \
+			--enable-auth-negotiate="${negotiate_auth}" \
+			--enable-auth-ntlm="${ntlm_auth}"
 # Storage schemes:
 
 storage_schemes=	diskd rock ufs
