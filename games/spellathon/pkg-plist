@@ -1,4 +1,7 @@
 bin/spellathon
 bin/spellathon-cl
+lib/libspellathon.so
+lib/libspellathon.so.0
+lib/libspellathon.so.0.0
 %%DATADIR%%/words.txt
 @dirrmtry %%DATADIR%%
