@@ -1,12 +1,8 @@
-# New ports collection makefile for:	php5
-# Date created:				Tue Feb 18 11:17:13 CET 2003
-# Whom:					Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	php53
-PORTVERSION=	5.3.17
+PORTVERSION=	5.3.18
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -63,7 +59,7 @@ MAN1=		php-config.1 phpize.1
 PATCH_DIST_STRIP=	-p1
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	ale
+PATCH_SITE_SUBDIR=	flo
 
 .if ${PORT_OPTIONS:MSUHOSIN}
 PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
