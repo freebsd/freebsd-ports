@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121031:
+  AFFECTS: users of dns/ldns
+  AUTHOR: ak@FreeBSD.org
+
+  There is a binary incompatibility in ldns 1.6.14 which is fixed with an
+  emergency release of ldns 1.6.15.
+
+  Warning!
+  If you have compiled ldns using software with ldns-1.6.14, then this new
+  version will be binary incompatible with your installed version. You
+  will have to recompile the software together with ldns-1.6.15.
+
+  Was the software compiled with ldns-1.6.13 or earlier, then you will not
+  have this problem and can safely install ldns-1.6.15.
+
 20121030:
   AFFECTS: users of www/squid31
   AUTHOR: flo@FreeBSD.org

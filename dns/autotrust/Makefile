@@ -7,15 +7,15 @@
 
 PORTNAME=	autotrust
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A tool to automatically update DNSSEC trust anchors
 
-LIB_DEPENDS+=	ldns.1:${PORTSDIR}/dns/ldns \
-		unbound.3:${PORTSDIR}/dns/unbound
+LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns \
+		unbound:${PORTSDIR}/dns/unbound
 
 GNU_CONFIGURE=	yes
 CFLAGS=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
