@@ -10,6 +10,7 @@ share/apps/kconf_update/knemo.upd
 share/apps/knemo/knemo.notifyrc
 share/apps/knemo/themes/modem.desktop
 share/apps/knemo/themes/monitor.desktop
+share/apps/knemo/themes/monochrome.desktop
 share/apps/knemo/themes/network.desktop
 share/apps/knemo/themes/wireless.desktop
 share/autostart/knemo.desktop
@@ -44,6 +45,12 @@ share/icons/hicolor/32x32/apps/knemo.png
 share/icons/hicolor/48x48/apps/knemo.png
 share/icons/hicolor/64x64/apps/knemo.png
 share/icons/hicolor/scalable/apps/knemo.svgz
+share/icons/hicolor/scalable/status/knemo-monochrome-error.svgz
+share/icons/hicolor/scalable/status/knemo-monochrome-idle.svgz
+share/icons/hicolor/scalable/status/knemo-monochrome-offline.svgz
+share/icons/hicolor/scalable/status/knemo-monochrome-receive.svgz
+share/icons/hicolor/scalable/status/knemo-monochrome-transmit-receive.svgz
+share/icons/hicolor/scalable/status/knemo-monochrome-transmit.svgz
 share/kde4/services/kcm_knemo.desktop
 share/locale/ar/LC_MESSAGES/kcm_knemo.mo
 share/locale/ar/LC_MESSAGES/knemo.mo
