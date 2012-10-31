@@ -1,0 +1,12 @@
+--- pgbadger.orig	2012-10-12 17:00:07.000000000 +0200
++++ pgbadger	2012-10-30 11:18:40.000000000 +0100
+@@ -47,7 +50,8 @@
+ my $zcat                = 'zcat';
+ my $bzcat               = 'bzcat';
+ my $ucat                = 'unzip -p';
+-my $uncompress_size     = "gunzip -l %f | grep -E '^\\s*[0-9]+' | awk '{print \$2}'";
++#my $uncompress_size     = "gunzip -l %f | grep -E '^\\s*[0-9]+' | awk '{print \$2}'";
++my $uncompress_size     = "zcat %f | wc -c | awk '{print \$1}'";
+ my $format              = '';
+ my $outfile             = '';
+ my $outdir              = '';
