@@ -18,7 +18,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://mirror.tor.hu/dist/ \
 		https://mirror.torland.me/torproject.org/dist/ \
 		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
-		http://onion.anonymo.us.org/dist/ \
 		http://theonionrouter.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
 		http://tor.askapache.com/dist/ \
@@ -102,7 +101,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
-(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:T:M*gcc4*)
+(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:T:M*gcc4*) \
+&& empty(ARCH:Mia64)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .endif
 
