@@ -31,7 +31,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/bin/registervm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
