@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xmedcon
-# Date created:		26 September 2002
-# Whom:			Paul Everlund
-#
+# Created by: Paul Everlund
 # $FreeBSD$
-#
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -16,11 +11,9 @@ COMMENT=	A medical image conversion utility and library
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 OPTIONS_DEFINE=	X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF INTERFILE INW PNG
-OPTIONS_DEFAULT=	X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF INTERFILE INW PNG
+OPTIONS_DEFAULT=X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF INTERFILE INW PNG
 GLIB_DESC=	With Glib
 ACR_NEMA_DESC=	With Acr/Nema 2.0
 ANALYZE_DESC=	With Analyze (SPM)
@@ -31,20 +24,20 @@ ECAT_DESC=	With CTI ECAT 6/7
 INTERFILE_DESC=	With InterFile 3.3
 INW_DESC=	With INW (RUG)
 
-WANT_GNOME=	yes
-USE_SUBMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	medcon.1 xmedcon-config.1
-MAN3=	medcon.3
-MAN4=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 
-.include <bsd.port.pre.mk>
+MAN1=		medcon.1 xmedcon-config.1
+MAN3=		medcon.3
+MAN4=		m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 USE_GNOME+=	gtk20
@@ -119,4 +112,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/xmedcon.1 ${MANPREFIX}/man/man1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
