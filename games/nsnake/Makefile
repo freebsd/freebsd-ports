@@ -2,24 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	nsnake
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://softs.malikania.fr/releases/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A snake game written in C and ncurses
+COMMENT=	Snake game written in C and ncurses
 
-MAN6=		nsnake.6
-PLIST_FILES=	bin/nsnake
-PORTDOCS=	LICENSE CHANGELOG
-USE_NCURSES=	yes
+LICENSE=	MIT
 
-post-install:
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+MAN6=		${PORTNAME}.6
+PORTDOCS=	CHANGELOG
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c -lcurses)
+
+do-install:
+	(cd ${WRKSRC} \
+		&& ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin \
+		&& ${INSTALL_MAN} ${PORTNAME}.6 ${MANPREFIX}/man/man6)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
