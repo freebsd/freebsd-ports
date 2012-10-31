@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	9.1
+PORTVERSION=	9.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_9.x_Herbig_Haro/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
@@ -11,9 +11,9 @@ MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 
 USE_PHP=	gettext pcre posix session xml zlib
-WANT_PHP_WEB=	YES
+WANT_PHP_WEB=	yes
 
-NO_BUILD=	YES
+NO_BUILD=	yes
 TIKIWIKI_DIR?=	www/${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	TIKIWIKI_DIR=${TIKIWIKI_DIR}
 TEMP_PLIST=	${WRKDIR}/temp-pkg-plist

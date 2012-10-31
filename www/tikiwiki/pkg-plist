@@ -65,6 +65,7 @@
 %%TIKIWIKI_DIR%%/contribution.php
 %%TIKIWIKI_DIR%%/copyright.txt
 %%TIKIWIKI_DIR%%/copyrights.php
+%%TIKIWIKI_DIR%%/tiki-check.php
 %%TIKIWIKI_DIR%%/css/admin.css
 %%TIKIWIKI_DIR%%/css/calendar-print.css
 %%TIKIWIKI_DIR%%/css/calendar.css
@@ -82,7 +83,7 @@
 %%TIKIWIKI_DIR%%/db/tiki-db-adodb.php
 %%TIKIWIKI_DIR%%/db/tiki-db-pdo.php
 %%TIKIWIKI_DIR%%/db/tiki-db.php
-%%TIKIWIKI_DIR%%/db/tiki-secdb_9.1_mysql.sql
+%%TIKIWIKI_DIR%%/db/tiki-secdb_9.2_mysql.sql
 %%TIKIWIKI_DIR%%/db/tiki.sql
 %%TIKIWIKI_DIR%%/db/tiki_1.8to1.9.sql
 %%TIKIWIKI_DIR%%/db/tiki_1.9to2.0.sql
@@ -1951,6 +1952,7 @@
 %%TIKIWIKI_DIR%%/installer/schema/20120628_correct_admin_user_createdate_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/20120823_admin_user_credit_menu_entry_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/20120825_accounting_menu_entry_tiki.sql
+%%TIKIWIKI_DIR%%/installer/schema/20120927_add_menu_parse_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/999999991_decode_pages_sources_tiki.php
 %%TIKIWIKI_DIR%%/installer/schema/99999999_image_plugins_kill_tiki.php
 %%TIKIWIKI_DIR%%/installer/schema/index.php
@@ -3095,6 +3097,7 @@
 %%TIKIWIKI_DIR%%/lib/core/Search/Formatter/index.php
 %%TIKIWIKI_DIR%%/lib/core/Search/Formatter.php
 %%TIKIWIKI_DIR%%/lib/core/Search/GlobalSource/AdvancedRatingSource.php
+%%TIKIWIKI_DIR%%/lib/core/Search/GlobalSource/VisitsSource.php
 %%TIKIWIKI_DIR%%/lib/core/Search/GlobalSource/CategorySource.php
 %%TIKIWIKI_DIR%%/lib/core/Search/GlobalSource/CommentSource.php
 %%TIKIWIKI_DIR%%/lib/core/Search/GlobalSource/FileAttachmentSource.php
@@ -11375,6 +11378,7 @@
 %%TIKIWIKI_DIR%%/templates/freetag.tpl
 %%TIKIWIKI_DIR%%/templates/freetag_list.tpl
 %%TIKIWIKI_DIR%%/templates/header.tpl
+%%TIKIWIKI_DIR%%/templates/tiki-check.tpl
 %%TIKIWIKI_DIR%%/templates/index.php
 %%TIKIWIKI_DIR%%/templates/interactive_translation_box.tpl
 %%TIKIWIKI_DIR%%/templates/list_file_gallery.tpl
