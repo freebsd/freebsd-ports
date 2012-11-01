@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RenRot
-# Date created:				11 Dec 2011
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	renrot
 PORTVERSION=	1.1
@@ -20,15 +16,16 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	IMAGEMAGICK	"Enable Image::Magick module support"	off
+OPTIONS_DEFINE=	IMAGEMAGICK DOCS
+IMAGEMAGICK_DESC=	Image::Magick Perl module support
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS README ChangeLog NEWS TODO
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_IMAGEMAGICK)
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-install:
@@ -37,7 +34,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/${conf} \
 		${PREFIX}/etc/${PORTNAME}/${conf}.sample
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
