@@ -17,8 +17,6 @@ LOCALBASE?=	/usr/local
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
-JDK_EXCLUDE?=	demo im images java-rmi.cgi jexec jre/bin man management \
-		native_threads sample src.zip
 JDK_PORTDIR!=	${REALPATH} ${PORTSDIR}/java/${JDK_PORT}
 JDK_IMAGEDIR?=	${JDK_PORTDIR}/work/build/bsd-${ARCH:S/i386/i586/}/j2sdk-image
 
@@ -35,12 +33,13 @@ DISTDIR?=	${.CURDIR}
 DISTFILE=	${JDK_PORT}-${ARCH}-r${PORTREVISION}.tar.xz
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 MAKEFILE=	${.CURDIR}/Makefile
+PLIST?=		${.CURDIR}/pkg-plist
+PLIST_SUB=	ARCH="${ARCH}" JDK_ROOT="."
 
-TAR_EXCLUDE=
-.if !empty(JDK_EXCLUDE)
-.for i in ${JDK_EXCLUDE}
-TAR_EXCLUDE+=	--exclude ${i}
-.endfor
+.if ${ARCH} == "i386"
+PLIST_SUB+=	CLIENTVM=""
+.else
+PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
 all:
@@ -64,8 +63,8 @@ all:
 	@${SETENV} -i PATH=${PATH} ${MAKE} -C "${JDK_PORTDIR}" BATCH=yes
 .endif
 	@cd "${JDK_IMAGEDIR}" && \
-	${FIND} . \! -type d | ${SORT} | \
-	${TAR} -c -f - -T - -s '|^\./|${JDK_ROOT}/|' ${TAR_EXCLUDE} | \
+	${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | \
+	${GREP} -v ^@ | ${TAR} -c -f - -T - -s '|^\./|${JDK_ROOT}/|' | \
 	${XZ_CMD} -9 -c > "${DISTDIR}/${DISTFILE}"
 	@${SED} -i.bak \
 	    's/^DISTVERSION_${ARCH}=.*/DISTVERSION_${ARCH}=	r${PORTREVISION}/' \
