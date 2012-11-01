@@ -1,43 +1,61 @@
-# New ports collection makefile for:	nagaina
-# Date created:		21 August 2007
-# Whom:			Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nagaina
 PORTVERSION=	0.1.2
-PORTREVISION=	3
+DISTVERSIONSUFFIX=	-sources
+PORTREVISION=	4
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A notes-taking application based QT4
+COMMENT=	Notes-taking application based on Qt4
 
-USE_QT4=	gui xml qmake_build moc_build rcc_build uic_build
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
+
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
-PORTDOCS=	CHANGELOG COMPILE LICENSE TODO
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_GNOME=	glib20
+USE_QT4=	corelib gui xml moc_build qmake_build rcc_build uic_build
+USE_XORG=	ice sm x11 xau xdmcp xext xrender
+MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES=	"${PORTNAME}" \
+PORTDOCS=	CHANGELOG TODO
+PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
+
+DESKTOP_ENTRIES=	"Nagaina" \
 			"${COMMENT}" \
 			"${PORTNAME}" \
 			"${PORTNAME}" \
 			"Qt;KDE;Office;Utility;" \
 			"false"
 
-pre-build:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE}
+.include <bsd.port.options.mk>
+
+do-configure:
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC}/bin \
+		&& ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC}/images \
+		&& ${INSTALL_DATA} ${PORTNAME}.png ${PREFIX}/share/pixmaps)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})
 .endfor
 .endif
 
