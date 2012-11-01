@@ -1,6 +1,6 @@
---- iodev/eth_fbsd.cc.orig	Sat Dec 10 19:37:35 2005
-+++ iodev/eth_fbsd.cc	Sun Nov 19 15:56:46 2006
-@@ -227,6 +227,14 @@
+--- iodev/network/eth_fbsd.cc.orig	2012-09-02 20:30:11.000000000 +0900
++++ iodev/network/eth_fbsd.cc	2012-09-03 23:41:03.000000000 +0900
+@@ -235,6 +235,14 @@
      return;
    }
  
