@@ -1,13 +1,8 @@
-# New ports collection makefile for:	upp
-# Date created:				February, 8th 2006
-# Whom:					Matthias Sund <m.sund@arcor.de>
-#
+# Created by: Matthias Sund <m.sund@arcor.de>
 # $FreeBSD$
-#
 
 PORTNAME=	upp
-PORTVERSION=	4193
-PORTREVISION=	2
+PORTVERSION=	5485
 CATEGORIES=	devel x11-toolkits
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-x11-src-${PORTVERSION}
@@ -17,52 +12,53 @@ COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		notify:${PORTSDIR}/devel/libnotify
 
 USE_XORG=	xft
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
-WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/uppsrc
 MAKE_JOBS_SAFE=	yes
 
 MACRO_FLAGS=	-DflagGUI -DflagGCC -DflagSHARED -DflagPOSIX -DflagBSD -DflagFREEBSD
 
 MAKE_ARGS=	UPPOUT="../_out/" OutFile="../theide" \
-	Macro="${MACRO_FLAGS}" \
-	LIBPATH="-L${LOCALBASE}/lib -L/usr/lib" \
-	CINC="-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/include/atk-1.0 -I${LOCALBASE}/include/cairo -I${LOCALBASE}/include/gdk-pixbuf-2.0 -I${LOCALBASE}/include/pango-1.0 -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/include/libpng -I/usr/include"
+		Macro="${MACRO_FLAGS}" \
+		LIBPATH="-L${LOCALBASE}/lib -L/usr/lib" \
+		CINC="-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+		-I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/include/atk-1.0 \
+		-I${LOCALBASE}/include/cairo -I${LOCALBASE}/include/gdk-pixbuf-2.0 \
+		-I${LOCALBASE}/include/pango-1.0 -I${LOCALBASE}/include/glib-2.0 \
+		-I${LOCALBASE}/include/libpng -I/usr/include"
 
 PORTDATA=	bazaar examples reference tutorial uppsrc GCC.bm
 
 DESKTOP_ENTRIES="TheIDE" "IDE for cross-platform C++ development" \
-	"${DATADIR}/uppsrc/ide/theide-48.png" "theide" \
-	"Application;Development;IDE;" ${FALSE}
+		"${DATADIR}/uppsrc/ide/theide-48.png" "theide" \
+		"Application;Development;IDE;" ${FALSE}
 
-OPTIONS=	SDL	"Install with SDL library" off \
-		GL	"Install wiht OpenGL library" off \
-		MYSQL	"Install with MySQL database" off \
-		PGSQL	"Install with PostreSQL database" off \
-		USEMALLOC	"Compile without U++ heap allocator" off
+OPTIONS_DEFINE=	SDL OPENGL MYSQL PGSQL USEMALLOC
+USEMALLOC_DESC=	Compile without U++ heap allocator
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 .endif
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=	gl
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 .endif
-.if defined(WITH_USEMALLOC)
+.if ${PORT_OPTIONS:MUSEMALLOC}
 MACRO_FLAGS+=	-DflagUSEMALLOC
 .endif
 
@@ -71,6 +67,7 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 pre-build: .SILENT
+	${MV} ${BUILD_WRKSRC}/Makefile.in ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/^CC =/d;/^CFLAGS =/d;/^CXXFLAGS =/d;/^LDFLAGS =/d' \
 	-e 's|$$(CC)|$$(CXX)|' \
 	-e 's|-Linux-|-BSD-FreeBSD-|' \
@@ -109,4 +106,4 @@ do-install: .SILENT
 post-install:
 	@${ECHO_CMD} bin/theide >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
