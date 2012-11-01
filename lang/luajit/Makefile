@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luajit
-DISTVERSION=	2.0.0-beta11
+DISTVERSION=	2.0.0-rc1
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	LuaJIT-${DISTVERSION}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A Just-In-Time Compiler for Lua
 
-WRKSRC=		${WRKDIR}/LuaJIT-${DISTVERSION}
+WRKSRC=		${WRKDIR}/LuaJIT-${DISTVERSION:C/-rc1//}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
@@ -23,7 +23,7 @@ MAN1=		luajit.1
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/bin/${PORTNAME}-${DISTVERSION} \
+	${LN} -sf ${PREFIX}/bin/${PORTNAME}-${DISTVERSION:C/-rc1//} \
 		${PREFIX}/bin/${PORTNAME}
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${MAN1PREFIX}/man/man1
