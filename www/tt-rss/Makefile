@@ -1,12 +1,9 @@
-# New ports collection makefile for:	tt-rss
-# Date created:		18 August 2010
-# Whom:			Thierry Thomas <thierry@pompo.net>
+# Created by: Thierry Thomas <thierry@pompo.net>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.11
+PORTVERSION=	1.6.0
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -41,7 +38,7 @@ SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN}
 PLIST_SUB=	WWWOWN=${WWWOWN}:${WWWGRP}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PHP2FIX=	config.php-dist update.php update_daemon2.php
+PHP2FIX=	config.php-dist update.php
 
 SCRIPTS=	update.php update_daemon2.php
 

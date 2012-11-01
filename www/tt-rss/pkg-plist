@@ -12,24 +12,28 @@
 %%WWWDIR%%/cdm.css
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
+%%WWWDIR%%/classes/auth/base.php
+%%WWWDIR%%/classes/auth/internal.php
+%%WWWDIR%%/classes/auth/remote.php
 %%WWWDIR%%/classes/backend.php
+%%WWWDIR%%/classes/button.php
+%%WWWDIR%%/classes/button/mail.php
+%%WWWDIR%%/classes/button/note.php
+%%WWWDIR%%/classes/button/share.php
+%%WWWDIR%%/classes/button/tweet.php
 %%WWWDIR%%/classes/dlg.php
 %%WWWDIR%%/classes/feeds.php
 %%WWWDIR%%/classes/handler.php
-%%WWWDIR%%/classes/mail_button.php
-%%WWWDIR%%/classes/note_button.php
-%%WWWDIR%%/classes/plugin_button.php
-%%WWWDIR%%/classes/pref_feeds.php
-%%WWWDIR%%/classes/pref_filters.php
-%%WWWDIR%%/classes/pref_instances.php
-%%WWWDIR%%/classes/pref_labels.php
-%%WWWDIR%%/classes/pref_prefs.php
-%%WWWDIR%%/classes/pref_users.php
-%%WWWDIR%%/classes/protected_handler.php
-%%WWWDIR%%/classes/public_handler.php
+%%WWWDIR%%/classes/handler/protected.php
+%%WWWDIR%%/classes/handler/public.php
+%%WWWDIR%%/classes/opml.php
+%%WWWDIR%%/classes/pref/feeds.php
+%%WWWDIR%%/classes/pref/filters.php
+%%WWWDIR%%/classes/pref/instances.php
+%%WWWDIR%%/classes/pref/labels.php
+%%WWWDIR%%/classes/pref/prefs.php
+%%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
-%%WWWDIR%%/classes/share_button.php
-%%WWWDIR%%/classes/tweet_button.php
 @unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 %%WWWDIR%%/config.php-dist
 @exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
@@ -75,6 +79,7 @@
 %%WWWDIR%%/images/piggie_icon.png
 %%WWWDIR%%/images/pub_set.png
 %%WWWDIR%%/images/pub_unset.png
+%%WWWDIR%%/images/recently_read.png
 %%WWWDIR%%/images/score_half_high.png
 %%WWWDIR%%/images/score_half_low.png
 %%WWWDIR%%/images/score_high.png
@@ -97,6 +102,7 @@
 %%WWWDIR%%/include/sanity_check.php
 %%WWWDIR%%/include/sanity_config.php
 %%WWWDIR%%/include/sessions.php
+%%WWWDIR%%/include/update_self.php
 %%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/FeedTree.js
@@ -116,16 +122,20 @@
 %%WWWDIR%%/js/viewfeed.js
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
+%%WWWDIR%%/lib/Mobile_Detect.php
 %%WWWDIR%%/lib/accept-to-gettext.php
 %%WWWDIR%%/lib/button/license.txt
 %%WWWDIR%%/lib/button/musicplayer.swf
 %%WWWDIR%%/lib/button/musicplayer_f6.swf
+%%WWWDIR%%/lib/dijit/BackgroundIframe.js
 %%WWWDIR%%/lib/dijit/Calendar.js
+%%WWWDIR%%/lib/dijit/CalendarLite.js
 %%WWWDIR%%/lib/dijit/CheckedMenuItem.js
 %%WWWDIR%%/lib/dijit/ColorPalette.js
 %%WWWDIR%%/lib/dijit/Declaration.js
 %%WWWDIR%%/lib/dijit/Dialog.js
 %%WWWDIR%%/lib/dijit/DialogUnderlay.js
+%%WWWDIR%%/lib/dijit/DropDownMenu.js
 %%WWWDIR%%/lib/dijit/Editor.js
 %%WWWDIR%%/lib/dijit/InlineEditBox.js
 %%WWWDIR%%/lib/dijit/Menu.js
@@ -142,18 +152,25 @@
 %%WWWDIR%%/lib/dijit/Tooltip.js
 %%WWWDIR%%/lib/dijit/TooltipDialog.js
 %%WWWDIR%%/lib/dijit/Tree.js
+%%WWWDIR%%/lib/dijit/WidgetSet.js
+%%WWWDIR%%/lib/dijit/_BidiSupport.js
 %%WWWDIR%%/lib/dijit/_Calendar.js
 %%WWWDIR%%/lib/dijit/_Contained.js
 %%WWWDIR%%/lib/dijit/_Container.js
 %%WWWDIR%%/lib/dijit/_CssStateMixin.js
 %%WWWDIR%%/lib/dijit/_DialogMixin.js
+%%WWWDIR%%/lib/dijit/_FocusMixin.js
 %%WWWDIR%%/lib/dijit/_HasDropDown.js
 %%WWWDIR%%/lib/dijit/_KeyNavContainer.js
+%%WWWDIR%%/lib/dijit/_MenuBase.js
+%%WWWDIR%%/lib/dijit/_OnDijitClickMixin.js
 %%WWWDIR%%/lib/dijit/_PaletteMixin.js
 %%WWWDIR%%/lib/dijit/_Templated.js
+%%WWWDIR%%/lib/dijit/_TemplatedMixin.js
 %%WWWDIR%%/lib/dijit/_TimePicker.js
 %%WWWDIR%%/lib/dijit/_Widget.js
 %%WWWDIR%%/lib/dijit/_WidgetBase.js
+%%WWWDIR%%/lib/dijit/_WidgetsInTemplateMixin.js
 %%WWWDIR%%/lib/dijit/_base.js
 %%WWWDIR%%/lib/dijit/_base/focus.js
 %%WWWDIR%%/lib/dijit/_base/manager.js
@@ -172,6 +189,9 @@
 %%WWWDIR%%/lib/dijit/_editor/nls/ar/FontChoice.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ar/LinkDialog.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ar/commands.js
+%%WWWDIR%%/lib/dijit/_editor/nls/az/FontChoice.js
+%%WWWDIR%%/lib/dijit/_editor/nls/az/LinkDialog.js
+%%WWWDIR%%/lib/dijit/_editor/nls/az/commands.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ca/FontChoice.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ca/LinkDialog.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ca/commands.js
@@ -200,6 +220,9 @@
 %%WWWDIR%%/lib/dijit/_editor/nls/he/FontChoice.js
 %%WWWDIR%%/lib/dijit/_editor/nls/he/LinkDialog.js
 %%WWWDIR%%/lib/dijit/_editor/nls/he/commands.js
+%%WWWDIR%%/lib/dijit/_editor/nls/hr/FontChoice.js
+%%WWWDIR%%/lib/dijit/_editor/nls/hr/LinkDialog.js
+%%WWWDIR%%/lib/dijit/_editor/nls/hr/commands.js
 %%WWWDIR%%/lib/dijit/_editor/nls/hu/FontChoice.js
 %%WWWDIR%%/lib/dijit/_editor/nls/hu/LinkDialog.js
 %%WWWDIR%%/lib/dijit/_editor/nls/hu/commands.js
@@ -271,13 +294,18 @@
 %%WWWDIR%%/lib/dijit/_editor/range.js
 %%WWWDIR%%/lib/dijit/_editor/selection.js
 %%WWWDIR%%/lib/dijit/_tree/dndSource.js
+%%WWWDIR%%/lib/dijit/a11y.js
 %%WWWDIR%%/lib/dijit/dijit-all.js
 %%WWWDIR%%/lib/dijit/dijit.js
+%%WWWDIR%%/lib/dijit/dijit.profile.js
+%%WWWDIR%%/lib/dijit/focus.js
 %%WWWDIR%%/lib/dijit/form/Button.js
 %%WWWDIR%%/lib/dijit/form/CheckBox.js
 %%WWWDIR%%/lib/dijit/form/ComboBox.js
+%%WWWDIR%%/lib/dijit/form/ComboBoxMixin.js
 %%WWWDIR%%/lib/dijit/form/ComboButton.js
 %%WWWDIR%%/lib/dijit/form/CurrencyTextBox.js
+%%WWWDIR%%/lib/dijit/form/DataList.js
 %%WWWDIR%%/lib/dijit/form/DateTextBox.js
 %%WWWDIR%%/lib/dijit/form/DropDownButton.js
 %%WWWDIR%%/lib/dijit/form/FilteringSelect.js
@@ -302,16 +330,33 @@
 %%WWWDIR%%/lib/dijit/form/VerticalRule.js
 %%WWWDIR%%/lib/dijit/form/VerticalRuleLabels.js
 %%WWWDIR%%/lib/dijit/form/VerticalSlider.js
+%%WWWDIR%%/lib/dijit/form/_AutoCompleterMixin.js
+%%WWWDIR%%/lib/dijit/form/_ButtonMixin.js
+%%WWWDIR%%/lib/dijit/form/_CheckBoxMixin.js
+%%WWWDIR%%/lib/dijit/form/_ComboBoxMenu.js
+%%WWWDIR%%/lib/dijit/form/_ComboBoxMenuMixin.js
 %%WWWDIR%%/lib/dijit/form/_DateTimeTextBox.js
+%%WWWDIR%%/lib/dijit/form/_ExpandingTextAreaMixin.js
 %%WWWDIR%%/lib/dijit/form/_FormMixin.js
 %%WWWDIR%%/lib/dijit/form/_FormSelectWidget.js
+%%WWWDIR%%/lib/dijit/form/_FormValueMixin.js
+%%WWWDIR%%/lib/dijit/form/_FormValueWidget.js
 %%WWWDIR%%/lib/dijit/form/_FormWidget.js
+%%WWWDIR%%/lib/dijit/form/_FormWidgetMixin.js
+%%WWWDIR%%/lib/dijit/form/_ListBase.js
+%%WWWDIR%%/lib/dijit/form/_ListMouseMixin.js
+%%WWWDIR%%/lib/dijit/form/_RadioButtonMixin.js
 %%WWWDIR%%/lib/dijit/form/_Spinner.js
+%%WWWDIR%%/lib/dijit/form/_TextBoxMixin.js
+%%WWWDIR%%/lib/dijit/form/_ToggleButtonMixin.js
 %%WWWDIR%%/lib/dijit/form/nls/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/ar/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/ar/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/ar/validate.js
+%%WWWDIR%%/lib/dijit/form/nls/az/ComboBox.js
+%%WWWDIR%%/lib/dijit/form/nls/az/Textarea.js
+%%WWWDIR%%/lib/dijit/form/nls/az/validate.js
 %%WWWDIR%%/lib/dijit/form/nls/ca/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/ca/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/ca/validate.js
@@ -339,6 +384,9 @@
 %%WWWDIR%%/lib/dijit/form/nls/he/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/he/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/he/validate.js
+%%WWWDIR%%/lib/dijit/form/nls/hr/ComboBox.js
+%%WWWDIR%%/lib/dijit/form/nls/hr/Textarea.js
+%%WWWDIR%%/lib/dijit/form/nls/hr/validate.js
 %%WWWDIR%%/lib/dijit/form/nls/hu/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/hu/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/hu/validate.js
@@ -397,6 +445,18 @@
 %%WWWDIR%%/lib/dijit/form/nls/zh/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/zh/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/zh/validate.js
+%%WWWDIR%%/lib/dijit/form/templates/Button.html
+%%WWWDIR%%/lib/dijit/form/templates/CheckBox.html
+%%WWWDIR%%/lib/dijit/form/templates/ComboButton.html
+%%WWWDIR%%/lib/dijit/form/templates/DropDownBox.html
+%%WWWDIR%%/lib/dijit/form/templates/DropDownButton.html
+%%WWWDIR%%/lib/dijit/form/templates/HorizontalSlider.html
+%%WWWDIR%%/lib/dijit/form/templates/Select.html
+%%WWWDIR%%/lib/dijit/form/templates/Spinner.html
+%%WWWDIR%%/lib/dijit/form/templates/TextBox.html
+%%WWWDIR%%/lib/dijit/form/templates/ValidationTextBox.html
+%%WWWDIR%%/lib/dijit/form/templates/VerticalSlider.html
+%%WWWDIR%%/lib/dijit/hccss.js
 %%WWWDIR%%/lib/dijit/icons/commonIcons.css
 %%WWWDIR%%/lib/dijit/icons/commonIcons_rtl.css
 %%WWWDIR%%/lib/dijit/icons/editorIcons.css
@@ -427,9 +487,17 @@
 %%WWWDIR%%/lib/dijit/layout/_ContentPaneResizeMixin.js
 %%WWWDIR%%/lib/dijit/layout/_LayoutWidget.js
 %%WWWDIR%%/lib/dijit/layout/_TabContainerBase.js
-%%WWWDIR%%/lib/dijit/lib/main.js
+%%WWWDIR%%/lib/dijit/layout/templates/AccordionButton.html
+%%WWWDIR%%/lib/dijit/layout/templates/ScrollingTabController.html
+%%WWWDIR%%/lib/dijit/layout/templates/TabContainer.html
+%%WWWDIR%%/lib/dijit/layout/templates/_ScrollingTabControllerButton.html
+%%WWWDIR%%/lib/dijit/layout/templates/_TabButton.html
+%%WWWDIR%%/lib/dijit/layout/utils.js
+%%WWWDIR%%/lib/dijit/main.js
 %%WWWDIR%%/lib/dijit/nls/ar/common.js
 %%WWWDIR%%/lib/dijit/nls/ar/loading.js
+%%WWWDIR%%/lib/dijit/nls/az/common.js
+%%WWWDIR%%/lib/dijit/nls/az/loading.js
 %%WWWDIR%%/lib/dijit/nls/ca/common.js
 %%WWWDIR%%/lib/dijit/nls/ca/loading.js
 %%WWWDIR%%/lib/dijit/nls/common.js
@@ -449,6 +517,8 @@
 %%WWWDIR%%/lib/dijit/nls/fr/loading.js
 %%WWWDIR%%/lib/dijit/nls/he/common.js
 %%WWWDIR%%/lib/dijit/nls/he/loading.js
+%%WWWDIR%%/lib/dijit/nls/hr/common.js
+%%WWWDIR%%/lib/dijit/nls/hr/loading.js
 %%WWWDIR%%/lib/dijit/nls/hu/common.js
 %%WWWDIR%%/lib/dijit/nls/hu/loading.js
 %%WWWDIR%%/lib/dijit/nls/it/common.js
@@ -489,9 +559,27 @@
 %%WWWDIR%%/lib/dijit/nls/zh/common.js
 %%WWWDIR%%/lib/dijit/nls/zh/loading.js
 %%WWWDIR%%/lib/dijit/package.json
+%%WWWDIR%%/lib/dijit/place.js
+%%WWWDIR%%/lib/dijit/popup.js
+%%WWWDIR%%/lib/dijit/registry.js
 %%WWWDIR%%/lib/dijit/resources/_modules.js
-%%WWWDIR%%/lib/dijit/robot.js
-%%WWWDIR%%/lib/dijit/robotx.js
+%%WWWDIR%%/lib/dijit/templates/Calendar.html
+%%WWWDIR%%/lib/dijit/templates/CheckedMenuItem.html
+%%WWWDIR%%/lib/dijit/templates/ColorPalette.html
+%%WWWDIR%%/lib/dijit/templates/Dialog.html
+%%WWWDIR%%/lib/dijit/templates/InlineEditBox.html
+%%WWWDIR%%/lib/dijit/templates/Menu.html
+%%WWWDIR%%/lib/dijit/templates/MenuBar.html
+%%WWWDIR%%/lib/dijit/templates/MenuBarItem.html
+%%WWWDIR%%/lib/dijit/templates/MenuItem.html
+%%WWWDIR%%/lib/dijit/templates/MenuSeparator.html
+%%WWWDIR%%/lib/dijit/templates/ProgressBar.html
+%%WWWDIR%%/lib/dijit/templates/TimePicker.html
+%%WWWDIR%%/lib/dijit/templates/TitlePane.html
+%%WWWDIR%%/lib/dijit/templates/Tooltip.html
+%%WWWDIR%%/lib/dijit/templates/TooltipDialog.html
+%%WWWDIR%%/lib/dijit/templates/Tree.html
+%%WWWDIR%%/lib/dijit/templates/TreeNode.html
 %%WWWDIR%%/lib/dijit/themes/a11y/README.txt
 %%WWWDIR%%/lib/dijit/themes/a11y/colors3x4.png
 %%WWWDIR%%/lib/dijit/themes/a11y/colors7x10.png
@@ -999,41 +1087,44 @@
 %%WWWDIR%%/lib/dijit/tree/_dndSelector.js
 %%WWWDIR%%/lib/dijit/tree/dndSource.js
 %%WWWDIR%%/lib/dijit/tree/model.js
+%%WWWDIR%%/lib/dijit/typematic.js
 %%WWWDIR%%/lib/dojo-src/.gitignore
-%%WWWDIR%%/lib/dojo-src/profile.js
 %%WWWDIR%%/lib/dojo-src/rebuild-dojo.sh
+%%WWWDIR%%/lib/dojo-src/tt-rss.profile.js
 %%WWWDIR%%/lib/dojo/AdapterRegistry.js
 %%WWWDIR%%/lib/dojo/DeferredList.js
+%%WWWDIR%%/lib/dojo/Evented.js
 %%WWWDIR%%/lib/dojo/NodeList-data.js
+%%WWWDIR%%/lib/dojo/NodeList-dom.js
 %%WWWDIR%%/lib/dojo/NodeList-fx.js
 %%WWWDIR%%/lib/dojo/NodeList-html.js
 %%WWWDIR%%/lib/dojo/NodeList-manipulate.js
 %%WWWDIR%%/lib/dojo/NodeList-traverse.js
 %%WWWDIR%%/lib/dojo/OpenAjax.js
 %%WWWDIR%%/lib/dojo/Stateful.js
-%%WWWDIR%%/lib/dojo/_base.js
 %%WWWDIR%%/lib/dojo/_base/Color.js
 %%WWWDIR%%/lib/dojo/_base/Deferred.js
 %%WWWDIR%%/lib/dojo/_base/NodeList.js
-%%WWWDIR%%/lib/dojo/_base/_loader/bootstrap.js
-%%WWWDIR%%/lib/dojo/_base/_loader/hostenv_browser.js
-%%WWWDIR%%/lib/dojo/_base/_loader/hostenv_ff_ext.js
-%%WWWDIR%%/lib/dojo/_base/_loader/hostenv_rhino.js
-%%WWWDIR%%/lib/dojo/_base/_loader/hostenv_spidermonkey.js
-%%WWWDIR%%/lib/dojo/_base/_loader/loader.js
-%%WWWDIR%%/lib/dojo/_base/_loader/loader_debug.js
-%%WWWDIR%%/lib/dojo/_base/_loader/loader_xd.js
 %%WWWDIR%%/lib/dojo/_base/array.js
 %%WWWDIR%%/lib/dojo/_base/browser.js
+%%WWWDIR%%/lib/dojo/_base/config.js
+%%WWWDIR%%/lib/dojo/_base/configFirefoxExtension.js
+%%WWWDIR%%/lib/dojo/_base/configNode.js
+%%WWWDIR%%/lib/dojo/_base/configRhino.js
+%%WWWDIR%%/lib/dojo/_base/configSpidermonkey.js
 %%WWWDIR%%/lib/dojo/_base/connect.js
 %%WWWDIR%%/lib/dojo/_base/declare.js
 %%WWWDIR%%/lib/dojo/_base/event.js
 %%WWWDIR%%/lib/dojo/_base/fx.js
 %%WWWDIR%%/lib/dojo/_base/html.js
 %%WWWDIR%%/lib/dojo/_base/json.js
+%%WWWDIR%%/lib/dojo/_base/kernel.js
 %%WWWDIR%%/lib/dojo/_base/lang.js
-%%WWWDIR%%/lib/dojo/_base/query-sizzle.js
+%%WWWDIR%%/lib/dojo/_base/loader.js
 %%WWWDIR%%/lib/dojo/_base/query.js
+%%WWWDIR%%/lib/dojo/_base/sniff.js
+%%WWWDIR%%/lib/dojo/_base/unload.js
+%%WWWDIR%%/lib/dojo/_base/url.js
 %%WWWDIR%%/lib/dojo/_base/window.js
 %%WWWDIR%%/lib/dojo/_base/xhr.js
 %%WWWDIR%%/lib/dojo/_firebug/errorIcon.png
@@ -1045,9 +1136,9 @@
 %%WWWDIR%%/lib/dojo/_firebug/tab_rgt_norm.png
 %%WWWDIR%%/lib/dojo/_firebug/tab_rgt_over.png
 %%WWWDIR%%/lib/dojo/_firebug/warningIcon.png
+%%WWWDIR%%/lib/dojo/aspect.js
 %%WWWDIR%%/lib/dojo/back.js
 %%WWWDIR%%/lib/dojo/behavior.js
-%%WWWDIR%%/lib/dojo/build.txt
 %%WWWDIR%%/lib/dojo/cache.js
 %%WWWDIR%%/lib/dojo/cldr/README
 %%WWWDIR%%/lib/dojo/cldr/monetary.js
@@ -1055,7 +1146,6 @@
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/hebrew.js
-%%WWWDIR%%/lib/dojo/cldr/nls/ar/islamic-civil.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/buddhist.js
@@ -1200,6 +1290,7 @@
 %%WWWDIR%%/lib/dojo/date.js
 %%WWWDIR%%/lib/dojo/date/locale.js
 %%WWWDIR%%/lib/dojo/date/stamp.js
+%%WWWDIR%%/lib/dojo/dnd/AutoSource.js
 %%WWWDIR%%/lib/dojo/dnd/Avatar.js
 %%WWWDIR%%/lib/dojo/dnd/Container.js
 %%WWWDIR%%/lib/dojo/dnd/Manager.js
@@ -1207,28 +1298,41 @@
 %%WWWDIR%%/lib/dojo/dnd/Mover.js
 %%WWWDIR%%/lib/dojo/dnd/Selector.js
 %%WWWDIR%%/lib/dojo/dnd/Source.js
+%%WWWDIR%%/lib/dojo/dnd/Target.js
 %%WWWDIR%%/lib/dojo/dnd/TimedMoveable.js
 %%WWWDIR%%/lib/dojo/dnd/autoscroll.js
 %%WWWDIR%%/lib/dojo/dnd/common.js
 %%WWWDIR%%/lib/dojo/dnd/move.js
 %%WWWDIR%%/lib/dojo/dojo.js
-%%WWWDIR%%/lib/dojo/dojo.js.uncompressed.js
+%%WWWDIR%%/lib/dojo/dojo.profile.js
+%%WWWDIR%%/lib/dojo/dom-attr.js
+%%WWWDIR%%/lib/dojo/dom-class.js
+%%WWWDIR%%/lib/dojo/dom-construct.js
+%%WWWDIR%%/lib/dojo/dom-form.js
+%%WWWDIR%%/lib/dojo/dom-geometry.js
+%%WWWDIR%%/lib/dojo/dom-prop.js
+%%WWWDIR%%/lib/dojo/dom-style.js
+%%WWWDIR%%/lib/dojo/dom.js
+%%WWWDIR%%/lib/dojo/domReady.js
 %%WWWDIR%%/lib/dojo/fx.js
 %%WWWDIR%%/lib/dojo/fx/Toggler.js
 %%WWWDIR%%/lib/dojo/fx/easing.js
 %%WWWDIR%%/lib/dojo/gears.js
+%%WWWDIR%%/lib/dojo/has.js
 %%WWWDIR%%/lib/dojo/hash.js
 %%WWWDIR%%/lib/dojo/html.js
 %%WWWDIR%%/lib/dojo/i18n.js
+%%WWWDIR%%/lib/dojo/io-query.js
 %%WWWDIR%%/lib/dojo/io/iframe.js
 %%WWWDIR%%/lib/dojo/io/script.js
 %%WWWDIR%%/lib/dojo/jaxer.js
-%%WWWDIR%%/lib/dojo/lib/backCompat.js
-%%WWWDIR%%/lib/dojo/lib/kernel.js
-%%WWWDIR%%/lib/dojo/lib/main-browser.js
-%%WWWDIR%%/lib/dojo/lib/plugins/i18n.js
-%%WWWDIR%%/lib/dojo/lib/plugins/text.js
+%%WWWDIR%%/lib/dojo/json.js
+%%WWWDIR%%/lib/dojo/keys.js
+%%WWWDIR%%/lib/dojo/loadInit.js
+%%WWWDIR%%/lib/dojo/main.js
+%%WWWDIR%%/lib/dojo/mouse.js
 %%WWWDIR%%/lib/dojo/nls/ar/colors.js
+%%WWWDIR%%/lib/dojo/nls/az/colors.js
 %%WWWDIR%%/lib/dojo/nls/ca/colors.js
 %%WWWDIR%%/lib/dojo/nls/colors.js
 %%WWWDIR%%/lib/dojo/nls/cs/colors.js
@@ -1239,6 +1343,7 @@
 %%WWWDIR%%/lib/dojo/nls/fi/colors.js
 %%WWWDIR%%/lib/dojo/nls/fr/colors.js
 %%WWWDIR%%/lib/dojo/nls/he/colors.js
+%%WWWDIR%%/lib/dojo/nls/hr/colors.js
 %%WWWDIR%%/lib/dojo/nls/hu/colors.js
 %%WWWDIR%%/lib/dojo/nls/it/colors.js
 %%WWWDIR%%/lib/dojo/nls/ja/colors.js
@@ -1262,49 +1367,40 @@
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_cs.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_da.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_de-de.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_de.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_el.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_en-gb.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_en-us.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_en.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_es-es.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_es.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fi-fi.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fi.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fr-fr.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fr.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_he-il.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_he.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_hu.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_it-it.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_it.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ja-jp.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ja.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ko-kr.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ko.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_nb.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_nl-nl.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_nl.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pl.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pt-br.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pt-pt.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pt.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ru.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_sk.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_sl.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_sv.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_th.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_tr.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_xx.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_zh-cn.js
 %%WWWDIR%%/lib/dojo/nls/tt-rss-layer_zh-tw.js
-%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_zh.js
 %%WWWDIR%%/lib/dojo/nls/zh-tw/colors.js
 %%WWWDIR%%/lib/dojo/nls/zh/colors.js
 %%WWWDIR%%/lib/dojo/number.js
+%%WWWDIR%%/lib/dojo/on.js
 %%WWWDIR%%/lib/dojo/package.json
 %%WWWDIR%%/lib/dojo/parser.js
+%%WWWDIR%%/lib/dojo/query.js
+%%WWWDIR%%/lib/dojo/ready.js
 %%WWWDIR%%/lib/dojo/regexp.js
+%%WWWDIR%%/lib/dojo/require.js
 %%WWWDIR%%/lib/dojo/resources/_modules.js
 %%WWWDIR%%/lib/dojo/resources/blank.gif
 %%WWWDIR%%/lib/dojo/resources/blank.html
@@ -1315,11 +1411,12 @@
 %%WWWDIR%%/lib/dojo/resources/images/dndMove.png
 %%WWWDIR%%/lib/dojo/resources/images/dndNoCopy.png
 %%WWWDIR%%/lib/dojo/resources/images/dndNoMove.png
-%%WWWDIR%%/lib/dojo/robot.js
-%%WWWDIR%%/lib/dojo/robotx.js
 %%WWWDIR%%/lib/dojo/rpc/JsonService.js
 %%WWWDIR%%/lib/dojo/rpc/JsonpService.js
 %%WWWDIR%%/lib/dojo/rpc/RpcService.js
+%%WWWDIR%%/lib/dojo/selector/_loader.js
+%%WWWDIR%%/lib/dojo/selector/acme.js
+%%WWWDIR%%/lib/dojo/selector/lite.js
 %%WWWDIR%%/lib/dojo/store/Cache.js
 %%WWWDIR%%/lib/dojo/store/DataStore.js
 %%WWWDIR%%/lib/dojo/store/JsonRest.js
@@ -1330,8 +1427,10 @@
 %%WWWDIR%%/lib/dojo/store/util/QueryResults.js
 %%WWWDIR%%/lib/dojo/store/util/SimpleQueryEngine.js
 %%WWWDIR%%/lib/dojo/string.js
+%%WWWDIR%%/lib/dojo/text.js
+%%WWWDIR%%/lib/dojo/topic.js
+%%WWWDIR%%/lib/dojo/touch.js
 %%WWWDIR%%/lib/dojo/tt-rss-layer.js
-%%WWWDIR%%/lib/dojo/tt-rss-layer.js.uncompressed.js
 %%WWWDIR%%/lib/dojo/uacss.js
 %%WWWDIR%%/lib/dojo/window.js
 %%WWWDIR%%/lib/gettext/README
@@ -1360,7 +1459,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Filter.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Font.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/FontFamily.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Ident.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Length.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.php
@@ -1369,7 +1467,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Clone.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Class.php
@@ -1410,7 +1507,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/ScriptRequired.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/TargetBlank.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Textarea.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTypes.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrValidator.php
@@ -1420,7 +1516,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Chameleon.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Custom.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Empty.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/List.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Optional.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Required.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/StrictBlockquote.php
@@ -1433,6 +1528,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Id.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Namespace.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
@@ -1452,6 +1548,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
@@ -1462,6 +1559,9 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
@@ -1471,15 +1571,16 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
@@ -1492,16 +1593,20 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksEscaping.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksScope.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksTidyImpl.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
@@ -1519,22 +1624,23 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
@@ -1551,7 +1657,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/info.ini
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ContentSets.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Context.php
@@ -1586,7 +1692,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Edit.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Forms.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Hypertext.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Iframe.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Image.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
@@ -1603,7 +1708,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/StyleAttribute.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tables.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Target.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/TargetBlank.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Text.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Name.php
@@ -1633,6 +1737,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/DOMLex.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/DirectLex.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/PEARSax3.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/PH5P.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/PercentEncoder.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer.php
@@ -1672,7 +1777,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/SafeIframe.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIParser.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/data.php
@@ -1721,9 +1825,440 @@
 %%WWWDIR%%/lib/magpierss/rss_fetch.inc
 %%WWWDIR%%/lib/magpierss/rss_parse.inc
 %%WWWDIR%%/lib/magpierss/rss_utils.inc
+%%WWWDIR%%/lib/otphp/LICENCE
+%%WWWDIR%%/lib/otphp/lib/hotp.php
+%%WWWDIR%%/lib/otphp/lib/otp.php
+%%WWWDIR%%/lib/otphp/lib/otphp.php
+%%WWWDIR%%/lib/otphp/lib/totp.php
+%%WWWDIR%%/lib/otphp/vendor/base32.php
+%%WWWDIR%%/lib/otphp/vendor/libs.php
 %%WWWDIR%%/lib/phpmailer/class.phpmailer.php
 %%WWWDIR%%/lib/phpmailer/class.smtp.php
 %%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-en.php
+%%WWWDIR%%/lib/phpqrcode/CHANGELOG
+%%WWWDIR%%/lib/phpqrcode/INSTALL
+%%WWWDIR%%/lib/phpqrcode/README
+%%WWWDIR%%/lib/phpqrcode/VERSION
+%%WWWDIR%%/lib/phpqrcode/bindings/tcpdf/qrcode.php
+%%WWWDIR%%/lib/phpqrcode/cache/frame_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_1.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_10.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_10.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_11.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_11.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_12.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_12.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_13.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_13.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_14.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_14.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_15.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_15.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_16.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_16.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_17.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_17.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_18.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_18.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_19.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_19.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_2.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_20.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_20.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_21.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_21.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_22.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_22.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_23.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_23.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_24.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_24.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_25.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_25.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_26.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_26.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_27.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_27.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_28.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_28.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_29.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_29.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_3.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_30.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_30.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_31.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_31.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_32.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_32.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_33.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_33.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_34.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_34.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_35.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_35.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_36.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_36.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_37.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_37.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_38.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_38.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_39.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_39.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_4.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_40.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_40.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_5.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_6.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_7.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_8.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_8.png
+%%WWWDIR%%/lib/phpqrcode/cache/frame_9.dat
+%%WWWDIR%%/lib/phpqrcode/cache/frame_9.png
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_101_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_105_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_109_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_113_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_117_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_121_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_125_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_129_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_133_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_137_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_141_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_145_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_149_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_153_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_157_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_161_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_165_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_169_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_173_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_177_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_21_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_25_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_29_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_33_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_37_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_41_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_45_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_49_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_53_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_57_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_61_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_65_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_69_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_73_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_77_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_81_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_85_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_89_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_93_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_97_0.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_101_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_105_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_109_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_113_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_117_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_121_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_125_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_129_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_133_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_137_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_141_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_145_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_149_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_153_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_157_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_161_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_165_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_169_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_173_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_177_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_21_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_25_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_29_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_33_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_37_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_41_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_45_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_49_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_53_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_57_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_61_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_65_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_69_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_73_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_77_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_81_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_85_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_89_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_93_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_97_1.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_101_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_105_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_109_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_113_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_117_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_121_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_125_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_129_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_133_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_137_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_141_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_145_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_149_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_153_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_157_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_161_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_165_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_169_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_173_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_177_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_21_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_25_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_29_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_33_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_37_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_41_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_45_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_49_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_53_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_57_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_61_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_65_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_69_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_73_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_77_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_81_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_85_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_89_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_93_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_97_2.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_101_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_105_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_109_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_113_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_117_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_121_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_125_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_129_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_133_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_137_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_141_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_145_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_149_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_153_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_157_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_161_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_165_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_169_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_173_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_177_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_21_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_25_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_29_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_33_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_37_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_41_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_45_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_49_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_53_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_57_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_61_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_65_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_69_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_73_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_77_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_81_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_85_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_89_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_93_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_97_3.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_101_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_105_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_109_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_113_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_117_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_121_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_125_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_129_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_133_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_137_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_141_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_145_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_149_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_153_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_157_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_161_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_165_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_169_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_173_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_177_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_21_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_25_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_29_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_33_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_37_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_41_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_45_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_49_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_53_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_57_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_61_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_65_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_69_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_73_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_77_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_81_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_85_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_89_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_93_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_97_4.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_101_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_105_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_109_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_113_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_117_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_121_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_125_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_129_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_133_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_137_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_141_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_145_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_149_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_153_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_157_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_161_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_165_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_169_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_173_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_177_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_21_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_25_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_29_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_33_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_37_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_41_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_45_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_49_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_53_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_57_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_61_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_65_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_69_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_73_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_77_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_81_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_85_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_89_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_93_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_97_5.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_101_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_105_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_109_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_113_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_117_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_121_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_125_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_129_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_133_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_137_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_141_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_145_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_149_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_153_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_157_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_161_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_165_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_169_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_173_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_177_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_21_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_25_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_29_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_33_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_37_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_41_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_45_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_49_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_53_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_57_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_61_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_65_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_69_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_73_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_77_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_81_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_85_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_89_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_93_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_97_6.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_101_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_105_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_109_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_113_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_117_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_121_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_125_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_129_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_133_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_137_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_141_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_145_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_149_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_153_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_157_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_161_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_165_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_169_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_173_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_177_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_21_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_25_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_29_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_33_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_37_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_41_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_45_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_49_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_53_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_57_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_61_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_65_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_69_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_73_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_77_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_81_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_85_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_89_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_93_7.dat
+%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_97_7.dat
+%%WWWDIR%%/lib/phpqrcode/index.php
+%%WWWDIR%%/lib/phpqrcode/phpqrcode.php
+%%WWWDIR%%/lib/phpqrcode/qrbitstream.php
+%%WWWDIR%%/lib/phpqrcode/qrconfig.php
+%%WWWDIR%%/lib/phpqrcode/qrconst.php
+%%WWWDIR%%/lib/phpqrcode/qrencode.php
+%%WWWDIR%%/lib/phpqrcode/qrimage.php
+%%WWWDIR%%/lib/phpqrcode/qrinput.php
+%%WWWDIR%%/lib/phpqrcode/qrlib.php
+%%WWWDIR%%/lib/phpqrcode/qrmask.php
+%%WWWDIR%%/lib/phpqrcode/qrrscode.php
+%%WWWDIR%%/lib/phpqrcode/qrspec.php
+%%WWWDIR%%/lib/phpqrcode/qrsplit.php
+%%WWWDIR%%/lib/phpqrcode/qrtools.php
+%%WWWDIR%%/lib/phpqrcode/tools/merge.bat
+%%WWWDIR%%/lib/phpqrcode/tools/merge.php
+%%WWWDIR%%/lib/phpqrcode/tools/merge.sh
+%%WWWDIR%%/lib/phpqrcode/tools/merged_config.php
+%%WWWDIR%%/lib/phpqrcode/tools/merged_header.php
 %%WWWDIR%%/lib/position.js
 %%WWWDIR%%/lib/prototype.js
 %%WWWDIR%%/lib/pubsubhubbub/README.txt
@@ -1736,9 +2271,8 @@
 %%WWWDIR%%/lib/simplepie/simplepie.inc
 %%WWWDIR%%/lib/sphinxapi.php
 %%WWWDIR%%/lib/timezones.txt
-%%WWWDIR%%/lib/tmhoauth/README.md
-%%WWWDIR%%/lib/tmhoauth/tmhOAuth.php
 %%WWWDIR%%/lib/xsl_mop-up.js
+@comment php-gettext is not required (replacement included)
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
@@ -1755,6 +2289,8 @@
 %%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
@@ -1873,6 +2409,12 @@
 %%WWWDIR%%/schema/versions/mysql/9.sql
 %%WWWDIR%%/schema/versions/mysql/90.sql
 %%WWWDIR%%/schema/versions/mysql/91.sql
+%%WWWDIR%%/schema/versions/mysql/92.sql
+%%WWWDIR%%/schema/versions/mysql/93.sql
+%%WWWDIR%%/schema/versions/mysql/94.sql
+%%WWWDIR%%/schema/versions/mysql/95.sql
+%%WWWDIR%%/schema/versions/mysql/96.sql
+%%WWWDIR%%/schema/versions/mysql/97.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
@@ -1962,6 +2504,12 @@
 %%WWWDIR%%/schema/versions/pgsql/9.sql
 %%WWWDIR%%/schema/versions/pgsql/90.sql
 %%WWWDIR%%/schema/versions/pgsql/91.sql
+%%WWWDIR%%/schema/versions/pgsql/92.sql
+%%WWWDIR%%/schema/versions/pgsql/93.sql
+%%WWWDIR%%/schema/versions/pgsql/94.sql
+%%WWWDIR%%/schema/versions/pgsql/95.sql
+%%WWWDIR%%/schema/versions/pgsql/96.sql
+%%WWWDIR%%/schema/versions/pgsql/97.sql
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -1971,7 +2519,6 @@
 %%WWWDIR%%/themes/triple-pane/theme.ini
 %%WWWDIR%%/themes/triple-pane/theme.js
 %%WWWDIR%%/tt-rss.css
-%%WWWDIR%%/twitter.php
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
 %%WWWDIR%%/utility.css
@@ -1979,12 +2526,9 @@
 %%WWWDIR%%/utils/create-release-tarball.sh
 %%WWWDIR%%/utils/extract-i18n-js.pl
 %%WWWDIR%%/utils/localized_schema.txt
-%%WWWDIR%%/utils/mysql_convert_unicode.php
 %%WWWDIR%%/utils/regen_config_checks.sh
-%%WWWDIR%%/utils/stats.php
 %%WWWDIR%%/utils/update-schema-translations.sh
 %%WWWDIR%%/utils/update-translations.sh
-@comment php-gettext is not required (replacement included)
 @exec chmod -R 777 %B
 @exec chmod 444 %D/%F
 @exec chown -R %%WWWOWN%% %D/%%WWWDIR%%
@@ -2004,6 +2548,8 @@
 @dirrm %%WWWDIR%%/locale/ru_RU
 @dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/pt_BR
+@dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pl_PL
 @dirrm %%WWWDIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/nb_NO
 @dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
@@ -2021,12 +2567,27 @@
 @dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ca_CA
 @dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/lib/tmhoauth
 @dirrm %%WWWDIR%%/lib/simplepie
 @dirrm %%WWWDIR%%/lib/scriptaculous
 @dirrm %%WWWDIR%%/lib/pubsubhubbub
+@dirrm %%WWWDIR%%/lib/phpqrcode/tools
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_7
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_6
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_5
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_4
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_3
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_2
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_1
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache/mask_0
+@dirrm %%WWWDIR%%/lib/phpqrcode/cache
+@dirrm %%WWWDIR%%/lib/phpqrcode/bindings/tcpdf
+@dirrm %%WWWDIR%%/lib/phpqrcode/bindings
+@dirrm %%WWWDIR%%/lib/phpqrcode
 @dirrm %%WWWDIR%%/lib/phpmailer/language
 @dirrm %%WWWDIR%%/lib/phpmailer
+@dirrm %%WWWDIR%%/lib/otphp/vendor
+@dirrm %%WWWDIR%%/lib/otphp/lib
+@dirrm %%WWWDIR%%/lib/otphp
 @dirrm %%WWWDIR%%/lib/magpierss/extlib
 @dirrm %%WWWDIR%%/lib/magpierss
 @dirrm %%WWWDIR%%/lib/iui
@@ -2069,6 +2630,7 @@
 @dirrm %%WWWDIR%%/lib/dojo/store/util
 @dirrm %%WWWDIR%%/lib/dojo/store/api
 @dirrm %%WWWDIR%%/lib/dojo/store
+@dirrm %%WWWDIR%%/lib/dojo/selector
 @dirrm %%WWWDIR%%/lib/dojo/rpc
 @dirrm %%WWWDIR%%/lib/dojo/resources/images
 @dirrm %%WWWDIR%%/lib/dojo/resources
@@ -2091,6 +2653,7 @@
 @dirrm %%WWWDIR%%/lib/dojo/nls/ja
 @dirrm %%WWWDIR%%/lib/dojo/nls/it
 @dirrm %%WWWDIR%%/lib/dojo/nls/hu
+@dirrm %%WWWDIR%%/lib/dojo/nls/hr
 @dirrm %%WWWDIR%%/lib/dojo/nls/he
 @dirrm %%WWWDIR%%/lib/dojo/nls/fr
 @dirrm %%WWWDIR%%/lib/dojo/nls/fi
@@ -2100,10 +2663,9 @@
 @dirrm %%WWWDIR%%/lib/dojo/nls/da
 @dirrm %%WWWDIR%%/lib/dojo/nls/cs
 @dirrm %%WWWDIR%%/lib/dojo/nls/ca
+@dirrm %%WWWDIR%%/lib/dojo/nls/az
 @dirrm %%WWWDIR%%/lib/dojo/nls/ar
 @dirrm %%WWWDIR%%/lib/dojo/nls
-@dirrm %%WWWDIR%%/lib/dojo/lib/plugins
-@dirrm %%WWWDIR%%/lib/dojo/lib
 @dirrm %%WWWDIR%%/lib/dojo/io
 @dirrm %%WWWDIR%%/lib/dojo/fx
 @dirrm %%WWWDIR%%/lib/dojo/dnd
@@ -2149,7 +2711,6 @@
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls
 @dirrm %%WWWDIR%%/lib/dojo/cldr
 @dirrm %%WWWDIR%%/lib/dojo/_firebug
-@dirrm %%WWWDIR%%/lib/dojo/_base/_loader
 @dirrm %%WWWDIR%%/lib/dojo/_base
 @dirrm %%WWWDIR%%/lib/dojo-src
 @dirrm %%WWWDIR%%/lib/dojo
@@ -2174,6 +2735,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/themes/claro
 @dirrm %%WWWDIR%%/lib/dijit/themes/a11y
 @dirrm %%WWWDIR%%/lib/dijit/themes
+@dirrm %%WWWDIR%%/lib/dijit/templates
 @dirrm %%WWWDIR%%/lib/dijit/resources
 @dirrm %%WWWDIR%%/lib/dijit/nls/zh-tw
 @dirrm %%WWWDIR%%/lib/dijit/nls/zh
@@ -2191,6 +2753,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/nls/nb
 @dirrm %%WWWDIR%%/lib/dijit/nls/ko
 @dirrm %%WWWDIR%%/lib/dijit/nls/kk
+@dirrm %%WWWDIR%%/lib/dijit/nls/hr
 @dirrm %%WWWDIR%%/lib/dijit/nls/ja
 @dirrm %%WWWDIR%%/lib/dijit/nls/it
 @dirrm %%WWWDIR%%/lib/dijit/nls/hu
@@ -2203,12 +2766,14 @@
 @dirrm %%WWWDIR%%/lib/dijit/nls/da
 @dirrm %%WWWDIR%%/lib/dijit/nls/cs
 @dirrm %%WWWDIR%%/lib/dijit/nls/ca
+@dirrm %%WWWDIR%%/lib/dijit/nls/az
 @dirrm %%WWWDIR%%/lib/dijit/nls/ar
 @dirrm %%WWWDIR%%/lib/dijit/nls
-@dirrm %%WWWDIR%%/lib/dijit/lib
+@dirrm %%WWWDIR%%/lib/dijit/layout/templates
 @dirrm %%WWWDIR%%/lib/dijit/layout
 @dirrm %%WWWDIR%%/lib/dijit/icons/images
 @dirrm %%WWWDIR%%/lib/dijit/icons
+@dirrm %%WWWDIR%%/lib/dijit/form/templates
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/zh-tw
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/zh
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/tr
@@ -2225,6 +2790,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/nb
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/ko
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/kk
+@dirrm %%WWWDIR%%/lib/dijit/form/nls/hr
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/ja
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/it
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/hu
@@ -2237,6 +2803,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/da
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/cs
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/ca
+@dirrm %%WWWDIR%%/lib/dijit/form/nls/az
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/ar
 @dirrm %%WWWDIR%%/lib/dijit/form/nls
 @dirrm %%WWWDIR%%/lib/dijit/form
@@ -2258,6 +2825,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/nb
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/ko
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/kk
+@dirrm %%WWWDIR%%/lib/dijit/_editor/nls/hr
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/ja
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/it
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/hu
@@ -2270,19 +2838,24 @@
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/da
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/cs
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/ca
+@dirrm %%WWWDIR%%/lib/dijit/_editor/nls/az
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/ar
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls
 @dirrm %%WWWDIR%%/lib/dijit/_editor
 @dirrm %%WWWDIR%%/lib/dijit/_base
 @dirrm %%WWWDIR%%/lib/dijit
 @dirrm %%WWWDIR%%/lib/button
-@dirrmtry %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/help
 @dirrmtry %%WWWDIR%%/feed-icons
+@dirrm %%WWWDIR%%/classes/pref
+@dirrm %%WWWDIR%%/classes/handler
+@dirrm %%WWWDIR%%/classes/button
+@dirrm %%WWWDIR%%/classes/auth
 @dirrm %%WWWDIR%%/classes
 @dirrmtry %%WWWDIR%%/cache/simplepie
 @dirrmtry %%WWWDIR%%/cache/magpie
