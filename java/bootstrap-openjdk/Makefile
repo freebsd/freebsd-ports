@@ -2,9 +2,9 @@
 
 PORTNAME=	${JDK_NAME}
 PORTVERSION=	${DISTVERSION_${ARCH}}
-PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~jkim/
 MASTER_SITE_SUBDIR=	jkim
 PKGNAMEPREFIX=	bootstrap-
 DISTNAME=	${JDK_PORT}-${ARCH}-${PORTVERSION}
@@ -14,15 +14,13 @@ COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/registervm:${PORTSDIR}/java/javavmwrapper
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 
 ONLY_FOR_ARCH=	amd64 i386
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
-DISTVERSION_amd64=	r306294
-DISTVERSION_i386=	r306294
+DISTVERSION_amd64=	r306764
+DISTVERSION_i386=	r306764
 
 JDK_NAME=	openjdk
 JDK_PORT=	openjdk6
@@ -49,13 +47,10 @@ PLIST_SUB+=	CLIENTVM="@comment "
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
-	@${CHOWN} ${BINOWN}:${BINGRP} ${INSTALLDIR}/bin/*
-	@${CHMOD} ${BINMODE} ${INSTALLDIR}/bin/*
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # Bootstrap JDK'" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
+	@${CHOWN} ${BINOWN}:${BINGRP} ${INSTALLDIR}/bin/* ${INSTALLDIR}/jre/bin/*
+	@${CHMOD} ${BINMODE} ${INSTALLDIR}/bin/* ${INSTALLDIR}/jre/bin/*
 
 post-install:
-	@${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # Bootstrap JDK'
 	@${CAT} ${PKGMESSAGE}
 
 update:
