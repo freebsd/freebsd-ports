@@ -821,8 +821,8 @@ MASTER_SITE_NETBSD+= \
 MASTER_SITE_NETLIB+= \
 	ftp://ftp.netlib.org/%SUBDIR%/ \
 	http://www.netlib.org/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
-	http://www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+	ftp://old-ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+	http://old-www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
 	ftp://ftp.netlib.no/netlib/%SUBDIR%/ \
 	http://www.netlib.no/netlib/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
