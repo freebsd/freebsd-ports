@@ -1,13 +1,10 @@
 bin/aoi
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/ArtOfIllusion.jar
 %%DATADIR%%/Icons/32x32.png
 %%DATADIR%%/Icons/48x48.png
 %%DATADIR%%/Icons/64x64.png
 %%DATADIR%%/Plugins/Help/AOIHelp.zip
-%%DATADIR%%/Plugins/Help/helpgui-1.1a.jar
+%%DATADIR%%/Plugins/Help/helpgui-1.1b.jar
 %%DATADIR%%/Plugins/Help/jhall.jar
 %%DATADIR%%/Plugins/Help/jhelpaction.jar
 %%DATADIR%%/Plugins/Help/pircbot.jar
@@ -29,6 +26,27 @@ bin/aoi
 %%DATADIR%%/Scripts/Tools/Sculpt.bsh
 %%DATADIR%%/Scripts/Tools/Text.bsh
 %%DATADIR%%/Scripts/Tools/Thicken.bsh
+%%DATADIR%%/Textures and Materials/Library/.DS_Store
+%%DATADIR%%/Textures and Materials/Library/Building Materials.aoi
+%%DATADIR%%/Textures and Materials/Library/Effects.aoi
+%%DATADIR%%/Textures and Materials/Library/Fire.aoi
+%%DATADIR%%/Textures and Materials/Library/Geography.aoi
+%%DATADIR%%/Textures and Materials/Library/Metal.aoi
+%%DATADIR%%/Textures and Materials/Library/Sky.aoi
+%%DATADIR%%/Textures and Materials/Library/Water.aoi
+%%DATADIR%%/Textures and Materials/Library/Wood.aoi
+%%DATADIR%%/lib/Buoy.jar
+%%DATADIR%%/lib/Buoyx.jar
+%%DATADIR%%/lib/Jama-1.0.2.jar
+%%DATADIR%%/lib/QuickTimeWriter.jar
+%%DATADIR%%/lib/beanshell.jar
+%%DATADIR%%/lib/gluegen-rt.jar
+%%DATADIR%%/lib/jogl.jar
+%%DATADIR%%/lib/svgSalamander.jar
+share/pixmaps/aoi.png
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/Textures and Materials/Library
+@dirrm %%DATADIR%%/Textures and Materials
 @dirrm %%DATADIR%%/Scripts/Tools
 @dirrm %%DATADIR%%/Scripts/Startup
 @dirrm %%DATADIR%%/Scripts/Objects
@@ -37,4 +55,3 @@ bin/aoi
 @dirrm %%DATADIR%%/Plugins
 @dirrm %%DATADIR%%/Icons
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
