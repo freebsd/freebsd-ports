@@ -80,7 +80,7 @@ pre-configure:
 regression-test:	install
 	@${ECHO_MSG} "To pass the tests, some CRAN packages like R2HTML"
 	@${ECHO_MSG} "must be installed."
-	(cd ${WRKSRC}/tests && LANG=C make plugintests)
+	(cd ${WRKSRC}/tests && KDE_LANG=en_US make plugintests)
 .endif
 
 .include <bsd.port.mk>
