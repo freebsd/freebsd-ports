@@ -1,12 +1,8 @@
-# New ports collection makefile for:	OpenTTD
-# Date created:				16 Dec 2004
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openttd
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
