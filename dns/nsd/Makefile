@@ -1,12 +1,8 @@
-# New ports collection makefile for:	nsd
-# Date created:				08 August 2002
-# Whom:					alexis
-#
+# Created by: alexis
 # $FreeBSD$
-#
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.13
+PORTVERSION=	3.2.14
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
