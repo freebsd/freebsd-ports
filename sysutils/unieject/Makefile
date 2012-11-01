@@ -1,44 +1,44 @@
-# New ports collection makefile for:	unieject
-# Date created:		23 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unieject
-DISTVERSION=	5.3.2
-PORTREVISION=	6
+PORTVERSION=	6
 CATEGORIES=	sysutils
-MASTER_SITES=	SF BERLIOS
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eject(1) replacement
 
-LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
-		confuse.0:${PORTSDIR}/devel/libconfuse \
-		popt.0:${PORTSDIR}/devel/popt
+LICENSE=	GPLv2
 
-BROKEN=		does not link
+LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
+		pcre:${PORTSDIR}/devel/pcre \
+		cdio:${PORTSDIR}/sysutils/libcdio
 
-USE_LDCONFIG=	yes
 USE_BZIP2=	yes
+USE_GNOME=	glib20 gnomehack
 USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
-MAN1=	unieject.1
-MAN5=	unieject.conf.5
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--disable-doc
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lcdio -lconfuse
-CONFIGURE_ENV=	PKG_CONFIG="${TRUE}"
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
-		--with-libpopt-prefix=${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		unieject.1
+MAN5=		unieject.conf.5
 
 post-patch:
-	${REINPLACE_CMD} -e 's#if.*<<<$$DOXYFORMATS#if false#' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's#$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -Ee 's#install-htmlDATA (install-man)#\1#' ${WRKSRC}/manpages/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/-D_POSIX_C_SOURCE/s|^CPPFLAGS|#CPPFLAGS|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^install-data-am:/s|install-dist_docDATA|| ; \
+		 /^install-data-am:/s|install-dist_htmlDATA||' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/unieject.conf.sample ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/unieject.conf.sample ${PREFIX}/etc
 
 .include <bsd.port.mk>
