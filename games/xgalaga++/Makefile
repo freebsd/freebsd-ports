@@ -4,7 +4,7 @@ PORTNAME=	xgalaga++
 PORTVERSION=	0.8.3
 CATEGORIES=	games
 MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/ \
-		http://packages.nimblex.net/slacky/games/xgalaga++/0.8.2/src/:icons
+		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
