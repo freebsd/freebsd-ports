@@ -1,9 +1,13 @@
+bin/cdg2mpg
 bin/pycdg
 bin/pykar
 bin/pykaraoke
 bin/pykaraoke_mini
 bin/pympg
 %%PYTHON_SITELIBDIR%%/_pycdgAux.so
+%%PYTHON_SITELIBDIR%%/performer_prompt.py
+%%PYTHON_SITELIBDIR%%/performer_prompt.pyc
+%%PYTHON_SITELIBDIR%%/performer_prompt.pyo
 %%PYTHON_SITELIBDIR%%/pycdg.py
 %%PYTHON_SITELIBDIR%%/pycdg.pyc
 %%PYTHON_SITELIBDIR%%/pycdg.pyo
@@ -42,16 +46,17 @@ bin/pympg
 %%PYTHON_SITELIBDIR%%/pympg.pyo
 share/applications/pykaraoke.desktop
 share/applications/pykaraoke_mini.desktop
-share/pykaraoke/fonts/DejaVuSans.ttf
-share/pykaraoke/fonts/DejaVuSansCondensed-Bold.ttf
-share/pykaraoke/fonts/DejaVuSansCondensed.ttf
-share/pykaraoke/icons/audio_16.png
-share/pykaraoke/icons/folder_close_16.png
-share/pykaraoke/icons/folder_open_16.png
-share/pykaraoke/icons/microphone.ico
-share/pykaraoke/icons/pykaraoke.xpm
-share/pykaraoke/icons/splash.jpg
+%%DATADIR%%/fonts/DejaVuSans.ttf
+%%DATADIR%%/fonts/DejaVuSansCondensed-Bold.ttf
+%%DATADIR%%/fonts/DejaVuSansCondensed.ttf
+%%DATADIR%%/icons/audio_16.png
+%%DATADIR%%/icons/folder_close_16.png
+%%DATADIR%%/icons/folder_open_16.png
+%%DATADIR%%/icons/microphone.ico
+%%DATADIR%%/icons/microphone.png
+%%DATADIR%%/icons/pykaraoke.xpm
+%%DATADIR%%/icons/splash.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm share/pykaraoke/icons
-@dirrm share/pykaraoke/fonts
-@dirrm share/pykaraoke

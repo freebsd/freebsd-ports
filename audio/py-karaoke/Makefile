@@ -2,25 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	karaoke
-PORTVERSION=	0.5
-PORTREVISION=	6
+PORTVERSION=	0.7.5
 CATEGORIES=	audio python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pykaraoke-${PORTVERSION}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+LICENSE=	LGPL21 # (or later)
 
-USE_WX=	2.4+
-WX_COMPS=	python
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		aa:${PORTSDIR}/graphics/aalib \
+		xcb:${PORTSDIR}/x11/libxcb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
+		dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
+		${PYNUMPY}
+
+OPTIONS_DEFINE=	MUTAGEN
+MUTAGEN_DESC=	Enable Mutagen support
+
 USE_ZIP=	yes
+USE_ICONV=	yes
+USE_SDL=	sdl
+USE_XORG=	x11 xau xdmcp
+USE_WX=		2.6+
+WX_COMPS=	python:lib
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pykaraoke
+PYDISTUTILS_PKGNAME=	py${PORTNAME}
+
+DATADIR=	${PREFIX}/share/py${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMUTAGEN}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/if /s|==|=|' ${WRKSRC}/install/cdg2mpg
+.for i in pykaraoke.desktop pykaraoke_mini.desktop
+	@${REINPLACE_CMD} -e \
+		'/^Encodings=/d ; \
+		 /^Icon=/s|/usr/share/pykaraoke|${DATADIR}| ; \
+		 /^MimeType=/s|audio/midi$$|audio/midi;| ; \
+		 /^Categories=/s|Application;||' ${WRKSRC}/install/${i}
+.endfor
+
+post-install:
+	@${MKDIR} ${DATADIR}/fonts
+.for i in DejaVuSans.ttf DejaVuSansCondensed-Bold.ttf DejaVuSansCondensed.ttf
+	@${LN} -sf ${LOCALBASE}/lib/X11/fonts/dejavu/${i} ${DATADIR}/fonts
+.endfor
 
 .include <bsd.port.mk>
