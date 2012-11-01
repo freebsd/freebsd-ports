@@ -182,6 +182,7 @@
     SUBDIR += evolvotron
     SUBDIR += exact-image
     SUBDIR += exif
+    SUBDIR += exifprobe
     SUBDIR += exiftags
     SUBDIR += exiftran
     SUBDIR += exiv2
