@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-gnutls
-# Date created:		Apr. 06, 2007
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnutls
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
