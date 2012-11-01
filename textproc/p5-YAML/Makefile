@@ -1,12 +1,7 @@
-# New ports collection makefile for:	textproc/p5-YAML
-# Date created:				01 May 2003
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	YAML
-PORTVERSION=	0.81
+PORTVERSION=	0.84
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
