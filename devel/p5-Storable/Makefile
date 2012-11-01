@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Storable
-# Date created:				July 7th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Storable
-PORTVERSION=	2.30
-PORTREVISION=	1
+PORTVERSION=	2.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
