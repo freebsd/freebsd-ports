@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-NetAddr-IP
-# Date created:				12 July 2000
-# Whom:					Christopher N. Harrell <cnh@ivmg.net>
-#
+# Created by: Christopher N. Harrell <cnh@ivmg.net>
 # $FreeBSD$
-#
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	4.061
+PORTVERSION=	4.066
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
