@@ -1,4 +1,8 @@
+%%TOOLS%%bin/atf-config
+%%TOOLS%%bin/atf-report
+%%TOOLS%%bin/atf-run
 bin/atf-sh
+%%TOOLS%%bin/atf-version
 include/atf-c++.hpp
 include/atf-c++/build.hpp
 include/atf-c++/check.hpp
@@ -33,11 +37,18 @@ share/aclocal/atf-c++.m4
 share/aclocal/atf-c.m4
 share/aclocal/atf-common.m4
 share/aclocal/atf-sh.m4
+%%TOOLS%%%%DATADIR%%/atf-run.hooks
 %%DATADIR%%/libatf-sh.subr
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atf-run.hooks
+%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/common.conf
+%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests-results.css
+%%TOOLS%%share/xml/atf/tests-results.dtd
+%%TOOLS%%share/xsl/atf/tests-results.xsl
+%%TOOLS%%tests/atf/Atffile
 tests/atf/Kyuafile
 tests/atf/atf-c++/Atffile
 tests/atf/atf-c++/Kyuafile
@@ -90,6 +101,33 @@ tests/atf/atf-c/tc_test
 tests/atf/atf-c/tp_test
 tests/atf/atf-c/unused_test.c
 tests/atf/atf-c/utils_test
+%%TOOLS%%tests/atf/atf-config/Atffile
+%%TOOLS%%tests/atf/atf-config/Kyuafile
+%%TOOLS%%tests/atf/atf-config/integration_test
+%%TOOLS%%tests/atf/atf-report/Atffile
+%%TOOLS%%tests/atf/atf-report/Kyuafile
+%%TOOLS%%tests/atf/atf-report/fail_helper
+%%TOOLS%%tests/atf/atf-report/integration_test
+%%TOOLS%%tests/atf/atf-report/misc_helpers
+%%TOOLS%%tests/atf/atf-report/pass_helper
+%%TOOLS%%tests/atf/atf-report/reader_test
+%%TOOLS%%tests/atf/atf-run/Atffile
+%%TOOLS%%tests/atf/atf-run/Kyuafile
+%%TOOLS%%tests/atf/atf-run/atffile_test
+%%TOOLS%%tests/atf/atf-run/bad_metadata_helper
+%%TOOLS%%tests/atf/atf-run/config_test
+%%TOOLS%%tests/atf/atf-run/expect_helpers
+%%TOOLS%%tests/atf/atf-run/fs_test
+%%TOOLS%%tests/atf/atf-run/integration_test
+%%TOOLS%%tests/atf/atf-run/io_test
+%%TOOLS%%tests/atf/atf-run/misc_helpers
+%%TOOLS%%tests/atf/atf-run/pass_helper
+%%TOOLS%%tests/atf/atf-run/requirements_test
+%%TOOLS%%tests/atf/atf-run/several_tcs_helper
+%%TOOLS%%tests/atf/atf-run/signals_test
+%%TOOLS%%tests/atf/atf-run/test_program_test
+%%TOOLS%%tests/atf/atf-run/user_test
+%%TOOLS%%tests/atf/atf-run/zero_tcs_helper
 tests/atf/atf-sh/Atffile
 tests/atf/atf-sh/Kyuafile
 tests/atf/atf-sh/atf-check_test
@@ -113,12 +151,19 @@ tests/atf/test-programs/sh_helpers
 tests/atf/test-programs/srcdir_test
 @dirrm tests/atf/test-programs
 @dirrm tests/atf/atf-sh
+%%TOOLS%%@dirrm tests/atf/atf-run
+%%TOOLS%%@dirrm tests/atf/atf-report
+%%TOOLS%%@dirrm tests/atf/atf-config
 @dirrm tests/atf/atf-c/detail
 @dirrm tests/atf/atf-c++/detail
 @dirrm tests/atf/atf-c++
 @dirrm tests/atf/atf-c
 @dirrm tests/atf
 @dirrm tests
+%%TOOLS%%@dirrm share/xsl/atf
+%%TOOLS%%@dirrm share/xsl
+%%TOOLS%%@dirrm share/xml/atf
+%%TOOLS%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm include/atf-c++
