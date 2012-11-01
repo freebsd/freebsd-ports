@@ -1,0 +1,23 @@
+bin/csv2rec
+bin/rec2csv
+bin/recdel
+bin/recfix
+bin/recfmt
+bin/recinf
+bin/recins
+bin/recsel
+bin/recset
+include/rec.h
+lib/librec.a
+lib/librec.la
+lib/librec.so
+lib/librec.so.0
+share/emacs/site-lisp/ob-rec.el
+share/emacs/site-lisp/rec-mode.el
+%%NLS%%share/locale/de/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/recutils.mo
+share/recutils/etc/FSD.rec
+@dirrm share/recutils/etc
+@dirrm share/recutils
