@@ -463,6 +463,7 @@ share/rt38/html/Elements/HeaderJavascript
 share/rt38/html/Elements/ListActions
 share/rt38/html/Elements/ListMenu
 share/rt38/html/Elements/Login
+share/rt38/html/Elements/LoginRedirectWarning
 share/rt38/html/Elements/Logo
 share/rt38/html/Elements/Logout
 share/rt38/html/Elements/MakeClicky
