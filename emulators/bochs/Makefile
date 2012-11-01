@@ -94,7 +94,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MTERM} && !${PORT_OPTIONS:MWX} && !${PORT_OPTIONS:MX11}
+.if empty(PORT_OPTIONS:MTERM) && empty(PORT_OPTIONS:MWX) && empty(PORT_OPTIONS:MX11)
 CONFIGURE_ARGS+=--with-nogui
 .endif
 
