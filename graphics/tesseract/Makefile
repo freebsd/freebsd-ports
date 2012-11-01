@@ -6,80 +6,69 @@
 #
 
 PORTNAME=	tesseract
-PORTVERSION=	3.01
-PORTREVISION=	3
+PORTVERSION=	3.02.02
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-.if !defined(NOPORTDATA) || make(makesum)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		tesseract-ocr-3.01.eng.tar.gz tesseract-ocr-3.01.osd.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
+DISTFILES=	tesseract-ocr-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	lept.2:${PORTSDIR}/graphics/leptonica
+LIB_DEPENDS=	lept:${PORTSDIR}/graphics/leptonica
 
 DIST_SUBDIR=	${PORTNAME}
 PROJECTHOST=	tesseract-ocr
+WRKSRC= 	${WRKDIR}/tesseract-ocr
 
-USE_AUTOTOOLS=	automake autoconf:env
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica"
+CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica" \
+		LIBS="${PTHREAD_LIBS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=	cntraining.1 combine_tessdata.1 mftraining.1 tesseract.1 \
-	unicharset_extractor.1 wordlist2dawg.1
-MAN5=	unicharambigs.5 unicharset.5
-
-.include <bsd.port.pre.mk>
-
-.if defined(USE_GCC) || !empty(CC:M*gcc4*)
-CXXFLAGS+=	-fpermissive
-.endif
+.include <bsd.port.options.mk>
 
 .ifndef NOPORTDATA
-DATADIR=	${PREFIX}/share/tessdata
-PORTDATA=	eng.traineddata osd.traineddata
+DATADIR=        ${PREFIX}/share/tessdata
+MAN1=		ambiguous_words.1 cntraining.1 combine_tessdata.1 dawg2wordlist.1 \
+		mftraining.1 shapeclustering.1 tesseract.1 unicharset_extractor.1 \
+		wordlist2dawg.1
+MAN5=		unicharambigs.5 unicharset.5
+PORTDATA=	*
 .endif
 
-.ifndef NOPORTDOCS
-PORTDOCS=	AUTHORS ChangeLog README ReleaseNotes
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	AUTHORS ChangeLog README ReleaseNotes html
 .endif
 
-.ifndef NOPORTEXAMPLES
+.if ${PORT_OPTIONS:MDOCS} || make(makesum)
+DISTFILES+=	tesseract-ocr-${PORTVERSION}-doc-html${EXTRACT_SUFX}
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	eurotext.tif phototest.tif
 .endif
 
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
-			  ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '1s|.*|/*|' ${WRKSRC}/ccutil/strngs.h
+	@${REINPLACE_CMD} -e 's|-O3 -DNDEBUG||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+	${WRKSRC}/Makefile.in
+.ifdef NOPORTDATA
+	@${FIND} ${WRKSRC} -type f -name 'Makefile.in' -print0 | ${XARGS} -0 \
+	${REINPLACE_CMD} -e '\|^install-am:|,+1s|install-data-am||'
+.endif
 
 post-install:
-.ifndef NOPORTDATA
-	@${MKDIR} ${DATADIR}
-.for f in ${PORTDATA:R}
-	@${TAR} --strip-components 2 -C ${DATADIR} \
-	-xf ${_DISTDIR}/tesseract-ocr-3.01.${f}.tar.gz *.traineddata
-.endfor
-	@cd ${DATADIR}; ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PORTDATA}; \
-	${CHMOD} ${BINMODE} ${PORTDATA}
-.endif
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS:Nhtml} ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}
 .endif
-.ifndef NOPORTEXAMPLES
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
@@ -87,4 +76,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
