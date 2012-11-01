@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-
-( cd "%%DATADIR%%" && \
-	"%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/ArtOfIllusion.jar" "${@}" )

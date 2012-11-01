@@ -1,45 +1,58 @@
-# New ports collection makefile for:	Art Of Illusion
-# Date created:				Fri Jun 21 17:10:56 UTC 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by:	Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aoi
-PORTVERSION=	2.5.1
-PORTREVISION=	2
+PORTVERSION=	2.9.2
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+DIST_SUBDIR=	java
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open source Java written 3D modelling and rendering studio
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Open source Java written 3D modelling and rendering studio
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-a -q
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-USE_ZIP=	yes
 NO_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}
 
-EXTRACT_BEFORE_ARGS=	-a -q
-
+PORTDOCS=	HISTORY README
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-SUB_FILES=	aoi.sh
+SUB_FILES=	${PORTNAME} \
+		pkg-message
+
+DESKTOP_ENTRIES="Art of Illusion" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Application;Graphics;" ${FALSE}
+
+.include <bsd.port.options.mk>
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing ..."
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${FIND} ArtOfIllusion.jar Icons Plugins Scripts | \
-	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
-	${INSTALL_SCRIPT} ${WRKDIR}/aoi.sh ${PREFIX}/bin/aoi
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+.for d in Icons Plugins Scripts lib *.jar
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
+.endfor
+	@(cd ${WRKSRC} && ${CP} -r "Textures and Materials" ${DATADIR})
 
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+post-install:
+# Fix Permission that user can write in Plugins and Scripts
+	@(cd ${DATADIR} && ${CHMOD} -R 774 Plugins Scripts)
+	${LN} -sf ${DATADIR}/Icons/48x48.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY LICENSE README ${DOCSDIR})
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>
