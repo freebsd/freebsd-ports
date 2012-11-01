@@ -12,11 +12,24 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-MAN8=		bwping.8 bwping6.8
+MAN8=		bwping.8
 
-PLIST_FILES=	sbin/bwping sbin/bwping6
+PLIST_FILES=	sbin/bwping
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ENV+=	ac_cv_ipv6=yes
+MAN8+=		bwping6.8
+PLIST_FILES+=	sbin/bwping6
+.else
+CONFIGURE_ENV+=	ac_cv_ipv6=no
+.endif
 
 post-install:
-	@${CHMOD} 4555 ${PREFIX}/sbin/bwping ${PREFIX}/sbin/bwping6
+	@${CHMOD} 4555 ${PREFIX}/sbin/bwping
+.if ${PORT_OPTIONS:MIPV6}
+	@${CHMOD} 4555 ${PREFIX}/sbin/bwping6
+.endif
 
 .include <bsd.port.mk>
