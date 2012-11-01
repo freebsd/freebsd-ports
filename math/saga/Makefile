@@ -1,9 +1,5 @@
-# Ports collection makefile for:   saga
-# Date created:        13 November 2009
-# Whom:                Rainer Hurling <rhurlin@gwdg.de>
-#
+# Created by: Rainer Hurling <rhurlin@gwdg.de>
 # $FreeBSD$
-#
 
 PORTNAME=	saga
 PORTVERSION=	2.0.8
@@ -28,6 +24,7 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 USE_WX=		2.8
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	any
 USE_AUTOTOOLS=	libtool
 CFLAGS+=	-I${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
