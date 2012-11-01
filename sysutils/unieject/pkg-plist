@@ -5,15 +5,15 @@ include/unieject/unieject.h
 lib/libunieject.a
 lib/libunieject.la
 lib/libunieject.so
-lib/libunieject.so.3
+lib/libunieject.so.5
 libdata/pkgconfig/libunieject.pc
 share/locale/de/LC_MESSAGES/unieject.mo
 share/locale/es_AR/LC_MESSAGES/unieject.mo
 share/locale/es_ES/LC_MESSAGES/unieject.mo
 share/locale/it/LC_MESSAGES/unieject.mo
 share/locale/nl/LC_MESSAGES/unieject.mo
-share/locale/pt_BR/LC_MESSAGES/unieject.mo
 share/locale/pt/LC_MESSAGES/unieject.mo
-@dirrm include/unieject
+share/locale/pt_BR/LC_MESSAGES/unieject.mo
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
+@dirrm include/unieject
