@@ -76,6 +76,7 @@
     SUBDIR += codespell
     SUBDIR += cole
     SUBDIR += colordiff
+    SUBDIR += confetti
     SUBDIR += confget
     SUBDIR += cost
     SUBDIR += crimson
