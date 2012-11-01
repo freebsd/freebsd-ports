@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-tz
-# Date created:			Mar 22, 2006
-# Whom:				Khairil Yusof <kaeru@inigo-tech.com>
-#
+# Created by: Khairil Yusof <kaeru@inigo-tech.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pytz
-PORTVERSION=	2012f
+PORTVERSION=	2012h
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
