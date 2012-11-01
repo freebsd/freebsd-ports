@@ -16,6 +16,8 @@ BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
 RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
 		llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
 
+BROKEN=		distinfo is out of date
+
 OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
