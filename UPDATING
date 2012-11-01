@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121101:
+  AFFECTS: users of graphics/tesseract
+  AUTHOR: bf@FreeBSD.org
+
+  The trained English and OSD language data that were distributed in
+  graphics/tesseract have been moved to graphics/tesseract-data.  The
+  latter port includes all available trained language data by default;
+  as before, users who desire a subset of languages may build smaller
+  packages by defining TESSERACT_LANGS during a build.
+
 20121031:
   AFFECTS: users of dns/ldns
   AUTHOR: ak@FreeBSD.org

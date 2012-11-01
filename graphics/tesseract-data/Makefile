@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	tesseract-data
-PORTVERSION=	3.01
-PORTREVISION=	1
+PORTVERSION=	3.02
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${TESSERACT_LANGS_300:O:u:S|$|.traineddata.gz|} \
-		${TESSERACT_LANGS_301:O:u:S|^|tesseract-ocr-3.01.|:S|$|.tar.gz|}
+		${TESSERACT_LANGS_301:O:u:S|^|tesseract-ocr-3.01.|:S|$|.tar.gz|} \
+		${TESSERACT_LANGS_302:O:u:S|^|tesseract-ocr-3.02.|:S|$|.tar.gz|}
 EXTRACT_ONLY=	#empty
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	Additional trained language data for the Tesseract OCR engine
+COMMENT=	Trained language data for the Tesseract OCR engine
 
 LICENSE=	AL2
 
@@ -24,24 +24,26 @@ PROJECTHOST=	tesseract-ocr
 
 NO_BUILD=	yes
 
-LANGS_300=	bul cat ces chi_sim chi_tra chr dan dan-frak deu deu-frak ell \
-		fin fra hun ind ita jpn kor lav lit nld nor pol por ron rus slk \
-		slv spa srp swe swe-frak tgl tur ukr vie
-
-LANGS_301=	ara heb hin slk-frak tha
+LANGS_300=	dan-frak deu-frak swe-frak
+LANGS_301=	osd slk-frak
+LANGS_302=	afr ara aze bel ben bul cat ces chi_sim chi_tra chr dan deu \
+		ell eng enm epo equ est eus fin fra frk frm glg grc heb hin \
+		hrv hun ind isl ita ita_old jpn kan kor lav lit mal mkd mlt \
+		msa nld nor pol por ron rus slk slv spa spa_old sqi srp swa \
+		swe tam tel tgl tha tur ukr vie
 
 .if make(makesum)
-TESSERACT_LANGS=	${LANGS_300} ${LANGS_301}
+TESSERACT_LANGS=	${LANGS_300} ${LANGS_301} ${LANGS_302}
 .else
-TESSERACT_LANGS ?=	${LANGS_300} ${LANGS_301}
+TESSERACT_LANGS ?=	${LANGS_300} ${LANGS_301} ${LANGS_302}
 .endif
 
-TESSERACT_LANGS_300=
-TESSERACT_LANGS_301=
-
 .for l in ${TESSERACT_LANGS}
-TESSERACT_LANGS_300+=	${LANGS_300:M${l}}
-TESSERACT_LANGS_301+=	${LANGS_301:M${l}}
+.for n in 0 1 2
+.if ${LANGS_30${n}:M${l}}
+TESSERACT_LANGS_30${n}+= ${LANGS_30${n}:M${l}}
+.endif
+.endfor
 .endfor
 
 .ifndef NOPORTDATA
@@ -61,9 +63,11 @@ do-install:
 .for l in ${TESSERACT_LANGS_300:O:u:S|$|.traineddata|}
 	@${GUNZIP_CMD} -c ${_DISTDIR}/${l}.gz > ${DATADIR}/${l}
 .endfor
-.for l in ${TESSERACT_LANGS_301:O:u}
+.for n in 1 2
+.for l in ${TESSERACT_LANGS_30${n}:O:u}
 	@${TAR} --strip-components 2 -C ${DATADIR} \
-	-xf ${_DISTDIR}/tesseract-ocr-3.01.${l}.tar.gz *.traineddata
+	-xf ${_DISTDIR}/tesseract-ocr-3.0${n}.${l}.tar.gz *.traineddata
+.endfor
 .endfor
 	@cd ${DATADIR} ; ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PORTDATA} ; \
 	${CHMOD} ${BINMODE} ${PORTDATA}

@@ -1,5 +1,4 @@
-This port furnishes various non-English
-trained language data intended for use with
-the Tesseract OCR engine.
+This port furnishes various trained language data intended
+for use with the Tesseract OCR engine.
 
 WWW: http://code.google.com/p/tesseract-ocr/
