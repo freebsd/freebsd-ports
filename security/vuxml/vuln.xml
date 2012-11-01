@@ -51,6 +51,65 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4b738d54-2427-11e2-9817-c8600054b392">
+    <topic>RT -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rt40</name>
+	<range><ge>4.0</ge><lt>4.0.8</lt></range>
+      </package>
+      <package>
+	<name>rt38</name>
+	<range><lt>3.8.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>BestPractical report:</p>
+	<blockquote cite="http://blog.bestpractical.com/2012/10/security-vulnerabilities-in-rt.html">
+	  <p>All versions of RT are vulnerable to an email header injection
+	    attack. Users with ModifySelf or AdminUser can cause RT to add
+	    arbitrary headers or content to outgoing mail. Depending on the
+	    scrips that are configured, this may be be leveraged for information
+	    leakage or phishing.</p>
+	  <p>RT 4.0.0 and above and RTFM 2.0.0 and above contain a vulnerability
+	    due to lack of proper rights checking, allowing any privileged user
+	    to create Articles in any class.</p>
+	  <p>All versions of RT with cross-site-request forgery (CSRF)
+	    protection (RT 3.8.12 and above, RT 4.0.6 and above, and any
+	    instances running the security patches released 2012-05-22) contain
+	    a vulnerability which incorrectly allows though CSRF requests which
+	    toggle ticket bookmarks.</p>
+	  <p>All versions of RT are vulnerable to a confused deputy attack on
+	    the user. While not strictly a CSRF attack, users who are not logged
+	    in who are tricked into following a malicious link may, after
+	    supplying their credentials, be subject to an attack which leverages
+	    their credentials to modify arbitrary state. While users who were
+	    logged in would have observed the CSRF protection page, users who
+	    were not logged in receive no such warning due to the intervening
+	    login process. RT has been extended to notify users of pending
+	    actions during the login process.</p>
+	  <p>RT 3.8.0 and above are susceptible to a number of vulnerabilities
+	    concerning improper signing or encryption of messages using GnuPG;
+	    if GnuPG is not enabled, none of the following affect you.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4730</cvename>
+      <cvename>CVE-2012-4731</cvename>
+      <cvename>CVE-2012-4732</cvename>
+      <cvename>CVE-2012-4734</cvename>
+      <cvename>CVE-2012-4735</cvename>
+      <cvename>CVE-2012-4884</cvename>
+      <url>http://blog.bestpractical.com/2012/10/security-vulnerabilities-in-rt.html</url>
+    </references>
+    <dates>
+      <discovery>2012-10-26</discovery>
+      <entry>2012-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2adc3e78-22d1-11e2-b9f0-d0df9acfd7e5">
     <topic>drupal7 -- multiple vulnerabilities</topic>
     <affects>
