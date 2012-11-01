@@ -209,13 +209,6 @@ post-install:
 	@${FIND} -ds ${RUBY_RIDIR}/ -type d -mindepth 1 | \
 		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-#
-# Add generated CAPI files to pkg-plist
-#
-	@${FIND} -ds ${RUBY_DOCDIR}/capi/ ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${RUBY_DOCDIR}/capi -type d -mindepth 1 | \
-		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 #
 # Add generated doxygen files to pkg-plist

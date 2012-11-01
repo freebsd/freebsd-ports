@@ -827,9 +827,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/source_index.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/ca-bundle.pem
 %%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
