@@ -1,4 +1,5 @@
-bin/monitor
+bin/gamin-monitor
+man/man1/gamin-monitor.1
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.bs
