@@ -1,12 +1,8 @@
-# New ports collection makefile for:	assp
-# Date created:				16 May 2005
-# Whom:					J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	assp
-PORTVERSION=	1.9.4.2
+PORTVERSION=	1.9.4.8
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
