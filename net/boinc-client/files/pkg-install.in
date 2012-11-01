@@ -33,9 +33,6 @@ PRE-INSTALL)
 	fi
 	echo "Adjusting file ownership in \"${home}\" to ${user}:${group}"
 	chown -hR ${user}:${group} "${home}"
-        ;;
-*)
-	exit 64
 	;;
 esac
 
