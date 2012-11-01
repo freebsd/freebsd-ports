@@ -1,12 +1,8 @@
-# Ports collection makefile for:	texmaker
-# Date created:				2003-12-29
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	texmaker
-PORTVERSION=	3.5
+PORTVERSION=	3.5.1
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
