@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs
 
-USE_PYTHON=		yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 
 DOCS=		ChangeLog COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO VERSION
