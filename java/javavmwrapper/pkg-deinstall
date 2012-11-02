@@ -22,9 +22,17 @@ if [ -f "${OPTION_CONF}" -a -f "${OPTION_CONF}.dist" ]; then
 fi
 
 # Destroy the symbolic links that were created for every executable for a VM.
-find -L ${PKG_PREFIX}/bin -samefile ${PKG_PREFIX}/bin/javavm \
-    \! -name checkvms \! -name javavm \! -name manvm \
-    \! -name registervm \! -name unregistervm | xargs rm -f
+_excl_links='checkvms manvm registervm unregistervm'
+_find_expr='-depth 1 -type l'
+for i in ${_excl_links}; do
+	_find_expr="${_find_expr} ! -name ${i}"
+done
+_javavm_path=`realpath ${PKG_PREFIX}/bin/javavm`
+for i in `find ${PKG_PREFIX}/bin ${_find_expr}`; do
+	if [ "${_javavm_path}" = `realpath ${i}` ]; then
+		rm -f "${i}"
+	fi
+done
 
 # The configuration file
 CONF="${PKG_PREFIX}/etc/javavms"
