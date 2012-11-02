@@ -1,8 +1,0 @@
---- src/smtpscan.orig  Sun May  4 23:42:44 2003
-+++ src/smtpscan       Sun May  4 23:44:07 2003
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl -w
-+#!/usr/bin/perl
- #
- # Author : Julien Bordet <zejames@greyhats.org>
- # Copyright (C) 2002-2003 Julien Bordet
