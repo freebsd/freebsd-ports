@@ -1,39 +1,34 @@
-# New ports collection makefile for:    ko-scim-hangul
-# Date created:		13 Oct 2005
-# Whom:			CHOI Junho <cjh@FreeBSD.org>
-#
+# Created by:	CHOI Junho <cjh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-hangul
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	korean
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	SCIM IMEngine module for Korean(Hangul) input
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
-RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+LICENSE=	GPLv2
 
-USE_ICONV=	yes
-USE_GMAKE=	yes
+LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul \
+		scim-1.0:${PORTSDIR}/textproc/scim
+
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
-.if !defined(WITHOUT_NLS)
+OPTIONS_DEFINE=	NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/skim/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
