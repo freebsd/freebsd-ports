@@ -1,12 +1,8 @@
-# New ports collection makefile for:	octave-forge-fpl
-# Date created:		8 September 2008
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-fpl
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
