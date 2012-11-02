@@ -18,7 +18,13 @@ COMMENT=	A webmail system which accesses mail over IMAP
 
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
+### Folks, please stop removing the following line and asking me why
+### squirrelmail doesn't work. I know the canned error says that SM
+### is incompatible with php 5, but it is just php-5.4 that it is
+### incompatible with. Install lang/php53 and it will work.
+### This will be fixed if/when the SM team releases the next version.
 IGNORE_WITH_PHP=5 # known incompatibilities with php-5.4, use 5.3 for now
+DEFAULT_PHP_VER=53
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
