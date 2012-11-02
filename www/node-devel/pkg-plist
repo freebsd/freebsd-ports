@@ -1,26 +1,5 @@
 bin/node
-include/node/eio-emul.h
-include/node/ev-emul.h
-include/node/node.h
-include/node/node_buffer.h
-include/node/node_object_wrap.h
-include/node/node_version.h
-include/node/uv-private/eio.h
-include/node/uv-private/ev.h
-include/node/uv-private/ngx-queue.h
-include/node/uv-private/tree.h
-include/node/uv-private/uv-unix.h
-include/node/uv-private/uv-win.h
-include/node/uv.h
-include/node/v8-debug.h
-include/node/v8-preparser.h
-include/node/v8-profiler.h
-include/node/v8-testing.h
-include/node/v8.h
-include/node/v8stdint.h
 lib/dtrace/node.d
 lib/node_modules/.keepme
 @dirrm lib/node_modules
 @dirrm lib/dtrace
-@dirrm include/node/uv-private
-@dirrm include/node

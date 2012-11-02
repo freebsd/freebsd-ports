@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -19,14 +19,13 @@ MAN1=		node.1
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.7
-USE_OPENSSL=	yes
 USE_GMAKE=	yes
 
 CONFLICTS=	node-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-openssl --shared-zlib
+CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 
