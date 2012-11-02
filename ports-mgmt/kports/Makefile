@@ -28,7 +28,7 @@ OPTIONS=	PORTAUDIT "Require Portaudit" on \
 		KDESU4 "With KDE4 kdesu" off \
 		GKSU "With gksu" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_KDESU) && defined(WITHOUT_KDESU4) && defined(WITHOUT_GKSU)
 PKGMESSAGE=	${FILESDIR}/pkg-message.nosu
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/kdesu:${PORTSDIR}/x11/kdebase3
 .endif
 
 .if defined(WITH_KDESU4)
-RUN_DEPENDS+=	${LOCALBASE}/kde4/lib/kde4/libexec/kdesu:${PORTSDIR}/x11/kdebase4-runtime
+USE_KDE4+=	runtime
 .endif
 
 .if defined(WITH_GKSU)
@@ -58,4 +58,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
