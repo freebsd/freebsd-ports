@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver-nspostgres
-# Date created:		12 Oct 2006
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nspostgres
 PORTVERSION=	4.1
@@ -14,7 +10,7 @@ MASTER_SITES=	SF/aolserver/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	aolserver-
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internal PostgreSQL driver for AOLserver
 
 LICENSE=	MPL
