@@ -57,7 +57,6 @@
     SUBDIR += calife-devel
     SUBDIR += ccrypt
     SUBDIR += ccsrch
-    SUBDIR += cfv
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam

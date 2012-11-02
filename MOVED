@@ -3836,3 +3836,4 @@ x11-toolkits/ocaml-lablgtk||2012-10-27|Has expired: Abandoned upstream, consider
 audio/xmms-arts_output||2012-10-28|Has expired: Outdated and distfile no longer available
 databases/pear-MDB2_Driver_ibase||2012-10-28|Has expired: BROKEN for more than 6 month
 security/py-fchksum||2012-11-02|Has expired: No more public distfiles
+security/cfv||2012-11-02|Depends on security/py-fchksum which is not in the ports tree anymore
