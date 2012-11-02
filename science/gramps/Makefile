@@ -8,7 +8,7 @@ CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@herveybayaustralia.com.au
 COMMENT=	A GTK/GNOME-based genealogy program
 
 LICENSE=	GPLv2
