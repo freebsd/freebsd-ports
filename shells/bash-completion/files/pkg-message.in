@@ -1,15 +1,13 @@
 
 =====================================================================
 
-You must enable the bash programmable completion library yourself!
+To enable the bash completion library, add the following to
+your .bashrc file:
 
-	* source %%PREFIX%%/etc/bash_completion from your .bashrc file
+[[ $PS1 && -f %%RUNFILE%% ]] && \
+	source %%RUNFILE%%
 
-		if [ -f %%PREFIX%%/etc/bash_completion ]; then
-			. %%PREFIX%%/etc/bash_completion
-		fi
-	
-	* or, run %%PREFIX%%/bin/bash_completion.sh from your .bashrc
+See %%DOCSDIR%%/README for more information.
 
 =====================================================================
 
