@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gramps
-# Date created:		2003-12-25
-# Whom:			Andreas Fehlner <fehlner@gmx.de>
-#
+# Created by: Andreas Fehlner <fehlner@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	gramps
@@ -11,7 +8,7 @@ CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	freebsd@troback.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK/GNOME-based genealogy program
 
 LICENSE=	GPLv2
