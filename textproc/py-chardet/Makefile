@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	py-chardet
-# Date created:				2005-01-25
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	chardet
@@ -18,11 +15,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Character encoding auto-detection in Python
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
