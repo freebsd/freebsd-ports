@@ -1,15 +1,10 @@
-# New ports collection makefile for:	mod_webkit
-# Date created:		2005-12-22
-# Whom:			Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	mod_webkit
-PORTVERSION=	1.1b1
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	www
-MASTER_SITES=	SF/webware/Webware/1.1b1
+MASTER_SITES=	SF/webware/Webware/1.1
 DISTNAME=	Webware-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
