@@ -1,34 +1,35 @@
-# New ports collection makefile for:	imapproxy
-# Date created:		11.05.04
-# Whom:			Martin Blapp
-#
+# Created by: Martin Blapp
 # $FreeBSD$
-#
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.univie.ac.at/applications/www.imapproxy.org/downloads/
+MASTER_SITES=	SF/squirrelmail/imap_proxy/${PORTVERSION}
 PKGNAMEPREFIX=	up-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DISTNAME=	squirrelmail-imap_proxy-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A caching IMAP proxy server
+COMMENT=	Caching IMAP proxy server
 
-USE_AUTOTOOLS=	autoheader
-
-USE_RC_SUBR=	imapproxyd
-DOCS=		COPYING ChangeLog README README.debian \
-		README.known_issues README.ssl
-SBINS=		in.imapproxyd pimpstat
-
-SUB_FILES=	pkg-message
-
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	DOVECOT DOCS
 DOVECOT_DESC=	Use with dovecot2
+
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack
+USE_OPENSSL=	yes
+USE_AUTOTOOLS=	autoheader
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
+MAKE_JOBS_SAFE=	yes
+
+USE_RC_SUBR=	imapproxyd
+
+SUB_FILES=	pkg-message
+
+DOCS=		ChangeLog README README.debian README.known_issues README.ssl
+SBIN=		in.imapproxyd pimpstat
 
 .include <bsd.port.options.mk>
 
@@ -40,12 +41,17 @@ SUB_LIST+=	DOVECOT=""
 .endif
 
 do-install:
+.for i in ${SBIN}
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${i} ${PREFIX}/sbin)
+.endfor
+	(cd ${WRKSRC}/scripts && ${INSTALL_DATA} imapproxy.conf \
+		${PREFIX}/etc/imapproxyd.conf.sample)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.for i in ${DOCS}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
 .endif
-	@${INSTALL_PROGRAM} ${SBINS:S,^,${WRKSRC}/bin/,} ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/scripts/imapproxy.conf ${PREFIX}/etc/imapproxyd.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
