@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	abills
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	net
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -20,21 +19,28 @@ RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES
 
-USE_PERL5_RUN=	yes
-NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_BUILD=	yes
+
+USE_PERL5_RUN=	yes
+
 SUB_FILES=	pkg-message
 
 post-patch:
-	@ ${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
-	@ ${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' -e 's,/usr/abills,${PREFIX}/abills,g' {} \;
-	@ ${FIND} ${WRKSRC} -type f -name '*.DS*' -exec ${RM} {} \;
+	@${GREP} -lR "/usr/abills" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/abills|${PREFIX}/abills|g'
+	@${GREP} -lR "/usr/bin/perl" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/bin/perl|${PERL}|g'
 
 do-install:
-	@ ${CP} -R ${WRKSRC} ${PREFIX}
-	@ ${CHOWN} -R www ${PREFIX}/abills/cgi-bin
-
-post-install:
-	@ ${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${PREFIX}/abills
+	@(${TAR} -C ${WRKSRC} --exclude "*.DS*" --exclude "*.bak" \
+		--exclude "*.orig" -cf - . | ${TAR} -C ${PREFIX}/abills \
+		--unlink -xf -)
+	@${FIND} ${PREFIX}/abills | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${PREFIX}/abills/cgi-bin | ${XARGS} ${CHOWN} www
+	@${FIND} ${PREFIX}/abills -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${PREFIX}/abills -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
