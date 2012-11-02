@@ -14,9 +14,6 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/config.py
 %%PYTHON_SITELIBDIR%%/zim/config.pyc
 %%PYTHON_SITELIBDIR%%/zim/config.pyo
-%%PYTHON_SITELIBDIR%%/zim/daemon.py
-%%PYTHON_SITELIBDIR%%/zim/daemon.pyc
-%%PYTHON_SITELIBDIR%%/zim/daemon.pyo
 %%PYTHON_SITELIBDIR%%/zim/datetimetz.py
 %%PYTHON_SITELIBDIR%%/zim/datetimetz.pyc
 %%PYTHON_SITELIBDIR%%/zim/datetimetz.pyo
@@ -44,6 +41,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/formats/plain.py
 %%PYTHON_SITELIBDIR%%/zim/formats/plain.pyc
 %%PYTHON_SITELIBDIR%%/zim/formats/plain.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/rst.py
+%%PYTHON_SITELIBDIR%%/zim/formats/rst.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/rst.pyo
 %%PYTHON_SITELIBDIR%%/zim/formats/wiki.py
 %%PYTHON_SITELIBDIR%%/zim/formats/wiki.pyc
 %%PYTHON_SITELIBDIR%%/zim/formats/wiki.pyo
@@ -95,6 +95,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/gui/server.py
 %%PYTHON_SITELIBDIR%%/zim/gui/server.pyc
 %%PYTHON_SITELIBDIR%%/zim/gui/server.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/templateeditordialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/templateeditordialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/templateeditordialog.pyo
 %%PYTHON_SITELIBDIR%%/zim/gui/widgets.py
 %%PYTHON_SITELIBDIR%%/zim/gui/widgets.pyc
 %%PYTHON_SITELIBDIR%%/zim/gui/widgets.pyo
@@ -113,6 +116,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/index.py
 %%PYTHON_SITELIBDIR%%/zim/index.pyc
 %%PYTHON_SITELIBDIR%%/zim/index.pyo
+%%PYTHON_SITELIBDIR%%/zim/ipc.py
+%%PYTHON_SITELIBDIR%%/zim/ipc.pyc
+%%PYTHON_SITELIBDIR%%/zim/ipc.pyo
 %%PYTHON_SITELIBDIR%%/zim/notebook.py
 %%PYTHON_SITELIBDIR%%/zim/notebook.pyc
 %%PYTHON_SITELIBDIR%%/zim/notebook.pyo
@@ -131,6 +137,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/automount.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/automount.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/automount.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/backlinkpane.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/backlinkpane.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/backlinkpane.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/calendar.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/calendar.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/calendar.pyo
@@ -170,6 +179,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/quicknote.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/quicknote.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/quicknote.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/scoreeditor.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/scoreeditor.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/scoreeditor.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/screenshot.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/screenshot.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/screenshot.pyo
@@ -200,9 +212,15 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/hg.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/hg.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/hg.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/zeitgeist-logger.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/zeitgeist-logger.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/zeitgeist-logger.pyo
 %%PYTHON_SITELIBDIR%%/zim/search.py
 %%PYTHON_SITELIBDIR%%/zim/search.pyc
 %%PYTHON_SITELIBDIR%%/zim/search.pyo
+%%PYTHON_SITELIBDIR%%/zim/signals.py
+%%PYTHON_SITELIBDIR%%/zim/signals.pyc
+%%PYTHON_SITELIBDIR%%/zim/signals.pyo
 %%PYTHON_SITELIBDIR%%/zim/stores/__init__.py
 %%PYTHON_SITELIBDIR%%/zim/stores/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zim/stores/__init__.pyo
@@ -262,6 +280,8 @@ share/locale/ja/LC_MESSAGES/zim.mo
 share/locale/ko/LC_MESSAGES/zim.mo
 share/locale/nl/LC_MESSAGES/zim.mo
 share/locale/pl/LC_MESSAGES/zim.mo
+share/locale/pt_BR/LC_MESSAGES/zim.mo
+share/locale/ro/LC_MESSAGES/zim.mo
 share/locale/ru/LC_MESSAGES/zim.mo
 share/locale/sk/LC_MESSAGES/zim.mo
 share/locale/sl/LC_MESSAGES/zim.mo
@@ -276,11 +296,6 @@ share/mime/application/x-zim-notebook.xml
 share/mime/packages/zim.xml
 share/mime/text/x-zim-wiki.xml
 share/pixmaps/zim.png
-%%DATADIR%%/applications/firefox.desktop
-%%DATADIR%%/applications/open.desktop
-%%DATADIR%%/applications/thunderbird.desktop
-%%DATADIR%%/applications/xdg-email.desktop
-%%DATADIR%%/applications/xdg-open.desktop
 %%DATADIR%%/dates.list
 %%DATADIR%%/globe.svg
 %%DATADIR%%/globe_banner.svg
@@ -289,10 +304,12 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Bugs.txt
 %%DATADIR%%/manual/FAQ.txt
 %%DATADIR%%/manual/Help.txt
+%%DATADIR%%/manual/Help/Attachments.txt
 %%DATADIR%%/manual/Help/Auto_Formatting.txt
 %%DATADIR%%/manual/Help/Check_Boxes.txt
 %%DATADIR%%/manual/Help/Config_Files.txt
 %%DATADIR%%/manual/Help/Custom_Tools.txt
+%%DATADIR%%/manual/Help/Default_Applications.txt
 %%DATADIR%%/manual/Help/Export.txt
 %%DATADIR%%/manual/Help/Export/HTML.txt
 %%DATADIR%%/manual/Help/Export/LaTeX.txt
@@ -310,6 +327,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Help/Wiki_Syntax.txt
 %%DATADIR%%/manual/Plugins.txt
 %%DATADIR%%/manual/Plugins/Arithmetic.txt
+%%DATADIR%%/manual/Plugins/Attachment_Browser.txt
 %%DATADIR%%/manual/Plugins/Automount.txt
 %%DATADIR%%/manual/Plugins/Calendar.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor.txt
@@ -331,7 +349,17 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Plugins/Insert_Screenshot.txt
 %%DATADIR%%/manual/Plugins/Insert_Symbol.txt
 %%DATADIR%%/manual/Plugins/Link_Map.txt
+%%DATADIR%%/manual/Plugins/Log_events_with_Zeitgeist.txt
 %%DATADIR%%/manual/Plugins/Quick_Note.txt
+%%DATADIR%%/manual/Plugins/Score_Editor.txt
+%%DATADIR%%/manual/Plugins/Score_Editor/score.ly
+%%DATADIR%%/manual/Plugins/Score_Editor/score.png
+%%DATADIR%%/manual/Plugins/Score_Editor/score001.ly
+%%DATADIR%%/manual/Plugins/Score_Editor/score001.png
+%%DATADIR%%/manual/Plugins/Score_Editor/score002.ly
+%%DATADIR%%/manual/Plugins/Score_Editor/score002.png
+%%DATADIR%%/manual/Plugins/Score_Editor/score003.ly
+%%DATADIR%%/manual/Plugins/Score_Editor/score003.png
 %%DATADIR%%/manual/Plugins/Spell_Checker.txt
 %%DATADIR%%/manual/Plugins/Table_Of_Contents.txt
 %%DATADIR%%/manual/Plugins/Tags.txt
@@ -340,11 +368,13 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Plugins/Version_Control.txt
 %%DATADIR%%/manual/Start.txt
 %%DATADIR%%/manual/Usage.txt
+%%DATADIR%%/manual/Usage/Collaboration.txt
 %%DATADIR%%/manual/Usage/Daily_Journal.txt
 %%DATADIR%%/manual/Usage/GTD_flowchart.png
 %%DATADIR%%/manual/Usage/GTD_flowchart.svg
 %%DATADIR%%/manual/Usage/Getting_Started.txt
 %%DATADIR%%/manual/Usage/Getting_Things_Done.txt
+%%DATADIR%%/manual/Usage/Publishing.txt
 %%DATADIR%%/manual/notebook.zim
 %%DATADIR%%/menubar-maemo4.xml
 %%DATADIR%%/menubar-maemo5.xml
@@ -361,10 +391,6 @@ share/pixmaps/zim.png
 %%DATADIR%%/pixmaps/xchecked-box.png
 %%DATADIR%%/style.conf
 %%DATADIR%%/symbols.list
-%%DATADIR%%/templates/_Equation.tex
-%%DATADIR%%/templates/_GNU_R_Plot.r
-%%DATADIR%%/templates/_gnuplot.gnu
-%%DATADIR%%/templates/_quicknote.txt
 %%DATADIR%%/templates/html/Default.html
 %%DATADIR%%/templates/html/Default_with_index.html
 %%DATADIR%%/templates/html/Presentation.html
@@ -374,17 +400,26 @@ share/pixmaps/zim.png
 %%DATADIR%%/templates/latex/Part.tex
 %%DATADIR%%/templates/latex/Report.tex
 %%DATADIR%%/templates/markdown/Default.markdown
+%%DATADIR%%/templates/plugins/equationeditor.tex
+%%DATADIR%%/templates/plugins/gnu_r_editor.r
+%%DATADIR%%/templates/plugins/gnuploteditor.gnu
+%%DATADIR%%/templates/plugins/quicknote.txt
+%%DATADIR%%/templates/plugins/scoreeditor.ly
+%%DATADIR%%/templates/rst/Default.rst
 %%DATADIR%%/templates/wiki/Calendar.txt
 %%DATADIR%%/templates/wiki/Default.txt
 %%DATADIR%%/urls.list
 %%DATADIR%%/zim.png
 @dirrm %%DATADIR%%/templates/wiki
+@dirrm %%DATADIR%%/templates/rst
+@dirrm %%DATADIR%%/templates/plugins
 @dirrm %%DATADIR%%/templates/markdown
 @dirrm %%DATADIR%%/templates/latex
 @dirrm %%DATADIR%%/templates/html
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/manual/Usage
+@dirrm %%DATADIR%%/manual/Plugins/Score_Editor
 @dirrm %%DATADIR%%/manual/Plugins/Gnuplot_Editor
 @dirrm %%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor
 @dirrm %%DATADIR%%/manual/Plugins/Equation_Editor
@@ -394,7 +429,6 @@ share/pixmaps/zim.png
 @dirrm %%DATADIR%%/manual/Help/Export
 @dirrm %%DATADIR%%/manual/Help
 @dirrm %%DATADIR%%/manual
-@dirrm %%DATADIR%%/applications
 @dirrm %%DATADIR%%
 @dirrmtry share/mime/text
 @dirrmtry share/mime/packages

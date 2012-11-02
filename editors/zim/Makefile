@@ -1,13 +1,8 @@
-# New ports collection makefile for:	zim
-# Date created:		2006-03-21
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	zim
-PORTVERSION=	0.56
-PORTREVISION=	3
+PORTVERSION=	0.57
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -28,43 +23,42 @@ USE_PYDISTUTILS=	yes
 
 MAN1=		zim.1
 
-OPTIONS=	GNUR "Add support of plot editor based on GNU R" Off \
-		LATEX "Add equation editor support" Off \
-		GRAPHVIZ "Add diagram editor support" Off \
-		SCROT "Add screenshot taking and inserting support" Off \
-		GNUPLOT "Add plot editor support" Off \
-		BZR "Use bzr for notebooks version control support" Off \
-		GIT "Use git for notebooks version control support" Off \
-		MERCURIAL "Use hg for notebooks version control support" Off \
-		DITAA "Add diagram editor support" Off
+OPTIONS_DEFINE=	GNUR LATEX GRAPHVIZ SCROT GNUPLOT BZR GIT MERCURIAL DITAA
+OPTIONS_EXCLUDE=DOCS NLS
+GNUR_DESC=	Support of plot editor based on GNU R
+SCROT_DESC=	Screenshot taking and inserting support
+BZR_DESC=	Version control for notebooks using bzr
+GIT_DESC=	Version control for notebooks using git
+MERCURIAL_DESC=	Version control for notebooks using hg
+DITAA_DESC=		Diagram editor support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNUR)
+.if ${PORT_OPTIONS:MGNUR}
 RUN_DEPENDS+=	R:${PORTSDIR}/math/R
 .endif
-.if defined(WITH_LATEX)
+.if ${PORT_OPTIONS:MLATEX}
 RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
 .endif
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	fdp:${PORTSDIR}/graphics/graphviz
 .endif
-.if defined(WITH_SCROT)
+.if ${PORT_OPTIONS:MSCROT}
 RUN_DEPENDS+=	scrot:${PORTSDIR}/graphics/scrot
 .endif
-.if defined(WITH_GNUPLOT)
+.if ${PORT_OPTIONS:MGNUPLOT}
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .endif
-.if defined(WITH_BZR)
+.if ${PORT_OPTIONS:MBZR}
 RUN_DEPENDS+=	bzr:${PORTSDIR}/devel/bzr
 .endif
-.if defined(WITH_GIT)
+.if ${PORT_OPTIONS:MGIT}
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
 .endif
-.if defined(WITH_MERCURIAL)
+.if ${PORT_OPTIONS:MMERCURIAL}
 RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial
 .endif
-.if defined(WITH_DITAA)
+.if ${PORT_OPTIONS:MDITAA}
 RUN_DEPENDS+=	ditaa:${PORTSDIR}/graphics/ditaa
 .endif
 
