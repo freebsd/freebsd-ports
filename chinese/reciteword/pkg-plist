@@ -75,6 +75,8 @@ share/pixmaps/rwdict.png
 %%DATADIR%%/books/qqssbdc/bjbcz/ck-26.bok
 %%DATADIR%%/books/qqssbdc/bjbcz/dirname
 %%DATADIR%%/books/qqssbdc/bjbxx/Ck-k2.bok
+%%DATADIR%%/books/qqssbdc/bjbxx/ck-03.bok
+%%DATADIR%%/books/qqssbdc/bjbxx/ck-04.bok
 %%DATADIR%%/books/qqssbdc/bjbxx/ck-vv.bok
 %%DATADIR%%/books/qqssbdc/bjbxx/ck-xa.bok
 %%DATADIR%%/books/qqssbdc/bjbxx/ck-xb.bok
@@ -85,6 +87,8 @@ share/pixmaps/rwdict.png
 %%DATADIR%%/books/qqssbdc/bsdcz/Ck-I4.bok
 %%DATADIR%%/books/qqssbdc/bsdcz/Ck-I5.bok
 %%DATADIR%%/books/qqssbdc/bsdcz/dirname
+%%DATADIR%%/books/qqssbdc/cd/ck-33.bok
+%%DATADIR%%/books/qqssbdc/cd/dirname
 %%DATADIR%%/books/qqssbdc/cpfjch/ck-j1.bok
 %%DATADIR%%/books/qqssbdc/cpfjch/ck-j2.bok
 %%DATADIR%%/books/qqssbdc/cpfjch/ck-j3.bok
@@ -232,6 +236,7 @@ share/pixmaps/rwdict.png
 %%DATADIR%%/books/qqssbdc/pgych/ck-a5.bok
 %%DATADIR%%/books/qqssbdc/pgych/dirname
 %%DATADIR%%/books/qqssbdc/qt/Ck-x8.bok
+%%DATADIR%%/books/qqssbdc/qt/ck-01.bok
 %%DATADIR%%/books/qqssbdc/qt/dirname
 %%DATADIR%%/books/qqssbdc/rjbcz/ck-b1.bok
 %%DATADIR%%/books/qqssbdc/rjbcz/ck-b2.bok
@@ -282,6 +287,13 @@ share/pixmaps/rwdict.png
 %%DATADIR%%/books/qqssbdc/wmyy/ck-w3.bok
 %%DATADIR%%/books/qqssbdc/wmyy/ck-w4.bok
 %%DATADIR%%/books/qqssbdc/wmyy/dirname
+%%DATADIR%%/books/qqssbdc/wybcz/ck-27.bok
+%%DATADIR%%/books/qqssbdc/wybcz/ck-28.bok
+%%DATADIR%%/books/qqssbdc/wybcz/ck-29.bok
+%%DATADIR%%/books/qqssbdc/wybcz/ck-30.bok
+%%DATADIR%%/books/qqssbdc/wybcz/ck-31.bok
+%%DATADIR%%/books/qqssbdc/wybcz/ck-32.bok
+%%DATADIR%%/books/qqssbdc/wybcz/dirname
 %%DATADIR%%/books/qqssbdc/xbdxyy/Ck-x6.bok
 %%DATADIR%%/books/qqssbdc/xbdxyy/ck-x5.bok
 %%DATADIR%%/books/qqssbdc/xbdxyy/ck-xd.bok
@@ -389,6 +401,15 @@ share/pixmaps/rwdict.png
 %%DATADIR%%/books/qqssbdc/yjsyy/ck-yj.bok
 %%DATADIR%%/books/qqssbdc/yjsyy/ck-zt.bok
 %%DATADIR%%/books/qqssbdc/yjsyy/dirname
+%%DATADIR%%/books/qqssbdc/yjxx/CK-61.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-62.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-63.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-64.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-65.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-66.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-67.bok
+%%DATADIR%%/books/qqssbdc/yjxx/CK-68.bok
+%%DATADIR%%/books/qqssbdc/yjxx/dirname
 %%DATADIR%%/books/qqssbdc/ylbcz/CK-K9.bok
 %%DATADIR%%/books/qqssbdc/ylbcz/dirname
 %%DATADIR%%/books/qqssbdc/yxyy/ck-y1.bok
@@ -565,91 +586,94 @@ share/pixmaps/rwdict.png
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/dicts
-@dirrm %%DATADIR%%/books/wyabdc/
-@dirrm %%DATADIR%%/books/qqssbdc/zwwl/
-@dirrm %%DATADIR%%/books/qqssbdc/zk/
-@dirrm %%DATADIR%%/books/qqssbdc/zhyy/
-@dirrm %%DATADIR%%/books/qqssbdc/zcyy/
-@dirrm %%DATADIR%%/books/qqssbdc/zbmg/
-@dirrm %%DATADIR%%/books/qqssbdc/yy/
-@dirrm %%DATADIR%%/books/qqssbdc/yxyy/
-@dirrm %%DATADIR%%/books/qqssbdc/ylbcz/
-@dirrm %%DATADIR%%/books/qqssbdc/yjsyy/
-@dirrm %%DATADIR%%/books/qqssbdc/yhbxx/
-@dirrm %%DATADIR%%/books/qqssbdc/xxxyy2/
-@dirrm %%DATADIR%%/books/qqssbdc/xsydx/
-@dirrm %%DATADIR%%/books/qqssbdc/xsjxx/
-@dirrm %%DATADIR%%/books/qqssbdc/xsjgz/
-@dirrm %%DATADIR%%/books/qqssbdc/xrjgz/
-@dirrm %%DATADIR%%/books/qqssbdc/xrjbxx/
-@dirrm %%DATADIR%%/books/qqssbdc/xrjbgz/
-@dirrm %%DATADIR%%/books/qqssbdc/xrjbcz/
-@dirrm %%DATADIR%%/books/qqssbdc/xmbrj/
-@dirrm %%DATADIR%%/books/qqssbdc/xmbcz/
-@dirrm %%DATADIR%%/books/qqssbdc/xgzyy/
-@dirrm %%DATADIR%%/books/qqssbdc/xglyy/
-@dirrm %%DATADIR%%/books/qqssbdc/xdxdg/
-@dirrm %%DATADIR%%/books/qqssbdc/xbzxx/
-@dirrm %%DATADIR%%/books/qqssbdc/xbzgz/
-@dirrm %%DATADIR%%/books/qqssbdc/xbjqse/
-@dirrm %%DATADIR%%/books/qqssbdc/xbjbxx/
-@dirrm %%DATADIR%%/books/qqssbdc/xbdxyy/
-@dirrm %%DATADIR%%/books/qqssbdc/wmyy/
-@dirrm %%DATADIR%%/books/qqssbdc/tdxl/
-@dirrm %%DATADIR%%/books/qqssbdc/sxsyy/
-@dirrm %%DATADIR%%/books/qqssbdc/swyy/
-@dirrm %%DATADIR%%/books/qqssbdc/shdjks/
-@dirrm %%DATADIR%%/books/qqssbdc/shbjc/
-@dirrm %%DATADIR%%/books/qqssbdc/rjbxx/
-@dirrm %%DATADIR%%/books/qqssbdc/rjbcz/
-@dirrm %%DATADIR%%/books/qqssbdc/qt/
-@dirrm %%DATADIR%%/books/qqssbdc/pgych/
-@dirrm %%DATADIR%%/books/qqssbdc/njxxyy/
-@dirrm %%DATADIR%%/books/qqssbdc/njgzyy/
-@dirrm %%DATADIR%%/books/qqssbdc/njczyy/
-@dirrm %%DATADIR%%/books/qqssbdc/njcz/
-@dirrm %%DATADIR%%/books/qqssbdc/mgzy/
-@dirrm %%DATADIR%%/books/qqssbdc/mgyyjc/
-@dirrm %%DATADIR%%/books/qqssbdc/ltseyy/
-@dirrm %%DATADIR%%/books/qqssbdc/lsxyy/
-@dirrm %%DATADIR%%/books/qqssbdc/kydjks/
-@dirrm %%DATADIR%%/books/qqssbdc/kydg/
-@dirrm %%DATADIR%%/books/qqssbdc/ktxxx/
-@dirrm %%DATADIR%%/books/qqssbdc/jsscz/
-@dirrm %%DATADIR%%/books/qqssbdc/jsjyy/
-@dirrm %%DATADIR%%/books/qqssbdc/jqseyy/
-@dirrm %%DATADIR%%/books/qqssbdc/jqgj/
-@dirrm %%DATADIR%%/books/qqssbdc/hbbgz/
-@dirrm %%DATADIR%%/books/qqssbdc/gzyy/
-@dirrm %%DATADIR%%/books/qqssbdc/gzxx/
-@dirrm %%DATADIR%%/books/qqssbdc/gkch/
-@dirrm %%DATADIR%%/books/qqssbdc/ggyy/
-@dirrm %%DATADIR%%/books/qqssbdc/dzyy/
-@dirrm %%DATADIR%%/books/qqssbdc/dxyyzy/
-@dirrm %%DATADIR%%/books/qqssbdc/dxyyjd/
-@dirrm %%DATADIR%%/books/qqssbdc/dxtyyy/
-@dirrm %%DATADIR%%/books/qqssbdc/dxchdg/
-@dirrm %%DATADIR%%/books/qqssbdc/ddyy/
-@dirrm %%DATADIR%%/books/qqssbdc/dddxyy/
-@dirrm %%DATADIR%%/books/qqssbdc/cykych/
-@dirrm %%DATADIR%%/books/qqssbdc/crgk/
-@dirrm %%DATADIR%%/books/qqssbdc/cpfjch/
-@dirrm %%DATADIR%%/books/qqssbdc/bsdcz/
-@dirrm %%DATADIR%%/books/qqssbdc/bjbxx/
-@dirrm %%DATADIR%%/books/qqssbdc/bjbcz/
-@dirrm %%DATADIR%%/books/qqssbdc/XXXyy/
-@dirrm %%DATADIR%%/books/qqssbdc/VOCABULARY/
-@dirrm %%DATADIR%%/books/qqssbdc/TOEIC/
-@dirrm %%DATADIR%%/books/qqssbdc/TOEFL/
-@dirrm %%DATADIR%%/books/qqssbdc/MBAdg/
-@dirrm %%DATADIR%%/books/qqssbdc/IELTS/
-@dirrm %%DATADIR%%/books/qqssbdc/GRE/
-@dirrm %%DATADIR%%/books/qqssbdc/GMAT/
-@dirrm %%DATADIR%%/books/qqssbdc/AAAyy/
-@dirrm %%DATADIR%%/books/qqssbdc/21sjdx/
-@dirrm %%DATADIR%%/books/qqssbdc/
-@dirrm %%DATADIR%%/books/ljjy/
-@dirrm %%DATADIR%%/books/fkbdc/
-@dirrm %%DATADIR%%/books/
+@dirrm %%DATADIR%%/books/wyabdc
+@dirrm %%DATADIR%%/books/qqssbdc/zwwl
+@dirrm %%DATADIR%%/books/qqssbdc/zk
+@dirrm %%DATADIR%%/books/qqssbdc/zhyy
+@dirrm %%DATADIR%%/books/qqssbdc/zcyy
+@dirrm %%DATADIR%%/books/qqssbdc/zbmg
+@dirrm %%DATADIR%%/books/qqssbdc/yy
+@dirrm %%DATADIR%%/books/qqssbdc/yxyy
+@dirrm %%DATADIR%%/books/qqssbdc/ylbcz
+@dirrm %%DATADIR%%/books/qqssbdc/yjxx
+@dirrm %%DATADIR%%/books/qqssbdc/yjsyy
+@dirrm %%DATADIR%%/books/qqssbdc/yhbxx
+@dirrm %%DATADIR%%/books/qqssbdc/xxxyy2
+@dirrm %%DATADIR%%/books/qqssbdc/xsydx
+@dirrm %%DATADIR%%/books/qqssbdc/xsjxx
+@dirrm %%DATADIR%%/books/qqssbdc/xsjgz
+@dirrm %%DATADIR%%/books/qqssbdc/xrjgz
+@dirrm %%DATADIR%%/books/qqssbdc/xrjbxx
+@dirrm %%DATADIR%%/books/qqssbdc/xrjbgz
+@dirrm %%DATADIR%%/books/qqssbdc/xrjbcz
+@dirrm %%DATADIR%%/books/qqssbdc/xmbrj
+@dirrm %%DATADIR%%/books/qqssbdc/xmbcz
+@dirrm %%DATADIR%%/books/qqssbdc/xgzyy
+@dirrm %%DATADIR%%/books/qqssbdc/xglyy
+@dirrm %%DATADIR%%/books/qqssbdc/xdxdg
+@dirrm %%DATADIR%%/books/qqssbdc/xbzxx
+@dirrm %%DATADIR%%/books/qqssbdc/xbzgz
+@dirrm %%DATADIR%%/books/qqssbdc/xbjqse
+@dirrm %%DATADIR%%/books/qqssbdc/xbjbxx
+@dirrm %%DATADIR%%/books/qqssbdc/xbdxyy
+@dirrm %%DATADIR%%/books/qqssbdc/wybcz
+@dirrm %%DATADIR%%/books/qqssbdc/wmyy
+@dirrm %%DATADIR%%/books/qqssbdc/tdxl
+@dirrm %%DATADIR%%/books/qqssbdc/sxsyy
+@dirrm %%DATADIR%%/books/qqssbdc/swyy
+@dirrm %%DATADIR%%/books/qqssbdc/shdjks
+@dirrm %%DATADIR%%/books/qqssbdc/shbjc
+@dirrm %%DATADIR%%/books/qqssbdc/rjbxx
+@dirrm %%DATADIR%%/books/qqssbdc/rjbcz
+@dirrm %%DATADIR%%/books/qqssbdc/qt
+@dirrm %%DATADIR%%/books/qqssbdc/pgych
+@dirrm %%DATADIR%%/books/qqssbdc/njxxyy
+@dirrm %%DATADIR%%/books/qqssbdc/njgzyy
+@dirrm %%DATADIR%%/books/qqssbdc/njczyy
+@dirrm %%DATADIR%%/books/qqssbdc/njcz
+@dirrm %%DATADIR%%/books/qqssbdc/mgzy
+@dirrm %%DATADIR%%/books/qqssbdc/mgyyjc
+@dirrm %%DATADIR%%/books/qqssbdc/ltseyy
+@dirrm %%DATADIR%%/books/qqssbdc/lsxyy
+@dirrm %%DATADIR%%/books/qqssbdc/kydjks
+@dirrm %%DATADIR%%/books/qqssbdc/kydg
+@dirrm %%DATADIR%%/books/qqssbdc/ktxxx
+@dirrm %%DATADIR%%/books/qqssbdc/jsscz
+@dirrm %%DATADIR%%/books/qqssbdc/jsjyy
+@dirrm %%DATADIR%%/books/qqssbdc/jqseyy
+@dirrm %%DATADIR%%/books/qqssbdc/jqgj
+@dirrm %%DATADIR%%/books/qqssbdc/hbbgz
+@dirrm %%DATADIR%%/books/qqssbdc/gzyy
+@dirrm %%DATADIR%%/books/qqssbdc/gzxx
+@dirrm %%DATADIR%%/books/qqssbdc/gkch
+@dirrm %%DATADIR%%/books/qqssbdc/ggyy
+@dirrm %%DATADIR%%/books/qqssbdc/dzyy
+@dirrm %%DATADIR%%/books/qqssbdc/dxyyzy
+@dirrm %%DATADIR%%/books/qqssbdc/dxyyjd
+@dirrm %%DATADIR%%/books/qqssbdc/dxtyyy
+@dirrm %%DATADIR%%/books/qqssbdc/dxchdg
+@dirrm %%DATADIR%%/books/qqssbdc/ddyy
+@dirrm %%DATADIR%%/books/qqssbdc/dddxyy
+@dirrm %%DATADIR%%/books/qqssbdc/cykych
+@dirrm %%DATADIR%%/books/qqssbdc/crgk
+@dirrm %%DATADIR%%/books/qqssbdc/cpfjch
+@dirrm %%DATADIR%%/books/qqssbdc/cd
+@dirrm %%DATADIR%%/books/qqssbdc/bsdcz
+@dirrm %%DATADIR%%/books/qqssbdc/bjbxx
+@dirrm %%DATADIR%%/books/qqssbdc/bjbcz
+@dirrm %%DATADIR%%/books/qqssbdc/XXXyy
+@dirrm %%DATADIR%%/books/qqssbdc/VOCABULARY
+@dirrm %%DATADIR%%/books/qqssbdc/TOEIC
+@dirrm %%DATADIR%%/books/qqssbdc/TOEFL
+@dirrm %%DATADIR%%/books/qqssbdc/MBAdg
+@dirrm %%DATADIR%%/books/qqssbdc/IELTS
+@dirrm %%DATADIR%%/books/qqssbdc/GRE
+@dirrm %%DATADIR%%/books/qqssbdc/GMAT
+@dirrm %%DATADIR%%/books/qqssbdc/AAAyy
+@dirrm %%DATADIR%%/books/qqssbdc/21sjdx
+@dirrm %%DATADIR%%/books/qqssbdc
+@dirrm %%DATADIR%%/books/ljjy
+@dirrm %%DATADIR%%/books/fkbdc
+@dirrm %%DATADIR%%/books
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
