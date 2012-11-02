@@ -34,7 +34,7 @@ MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 watchquagga.8
 INFO=		quagga
 
 OPTIONS_DEFINE=	ISISD PAM OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS DLMALLOC \
-		NO_BGP_ANNOUNCE
+		NO_BGP_ANNOUNCE OSPF_NEXTHOP
 
 ISISD_DESC=		Enable experimental ISIS daemon
 PAM_DESC=		PAM authentication for vtysh
@@ -43,6 +43,7 @@ RTADV_DESC=		IPv6 Router Advertisements
 TCPSOCKETS_DESC=	Use TCP/IP sockets for protocol daemons
 DLMALLOC_DESC=		Use dlmalloc (makes bgpd much faster)
 NO_BGP_ANNOUNCE_DESC=	Turn off BGP route announcement
+OSPF_NEXTHOP_DESC=	Set ip next-hop in OSPF route maps
 
 .include <bsd.port.options.mk>
 
@@ -125,6 +126,11 @@ SUB_LIST=	RCLDCONFIG=
 
 .if ${PORT_OPTIONS:MNO_BGP_ANNOUNCE}
 CONFIGURE_ARGS+=--disable-bgp-announce
+.endif
+
+.if ${PORT_OPTIONS:MOSPF_NEXTHOP}
+post-patch:
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-ospf-nexthop
 .endif
 
 USE_RC_SUBR=	quagga watchquagga
