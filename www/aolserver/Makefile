@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver
-# Date created:		13 January 2000
-# Whom:			Matthew Braithwaite <mab@red-bean.com>
-#
+# Created by: Matthew Braithwaite <mab@red-bean.com>
 # $FreeBSD$
-#
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.1
@@ -13,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AOLserver/${PORTVERSION}
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multithreaded web server with embedded TCL interpreter
 
 LICENSE=	MPL
