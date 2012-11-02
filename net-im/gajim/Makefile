@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gajim
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.15/
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	Gajim is a Jabber client based on a plugin system
+COMMENT=	Jabber client based on a plugin system
 
 LICENSE=	GPLv3
 
@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	-2.7
 USE_XORG=	x11 xext xscrnsaver
+MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
 
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -62,10 +63,8 @@ USE_GNOME+=	pygnomedesktop
 LIB_DEPENDS=	gtkspell:${PORTSDIR}/textproc/gtkspell
 .endif
 
-MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
-
 pre-build:
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
-		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 
 .include <bsd.port.mk>
