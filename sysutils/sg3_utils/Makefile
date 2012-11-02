@@ -1,12 +1,8 @@
-# New ports collection makefile for:   sg3_utils
-# Date created:        06 Jun 2008
-# Whom:                Denis Barov <dindin@dindin.ru>
-#
+# Created by: Denis Barov <dindin@dindin.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	sg3_utils
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
