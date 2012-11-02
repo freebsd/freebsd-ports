@@ -88,6 +88,8 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-48.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-64.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-14.png
+%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-85.png
+%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-96.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/bulletlist.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/date.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/formula.png
@@ -136,6 +138,7 @@ share/locale/eu/LC_MESSAGES/rednotebook.mo
 share/locale/fi/LC_MESSAGES/rednotebook.mo
 share/locale/fo/LC_MESSAGES/rednotebook.mo
 share/locale/fr/LC_MESSAGES/rednotebook.mo
+share/locale/ga/LC_MESSAGES/rednotebook.mo
 share/locale/gl/LC_MESSAGES/rednotebook.mo
 share/locale/he/LC_MESSAGES/rednotebook.mo
 share/locale/hr/LC_MESSAGES/rednotebook.mo
@@ -177,9 +180,7 @@ share/locale/zh_CN/LC_MESSAGES/rednotebook.mo
 share/locale/zh_HK/LC_MESSAGES/rednotebook.mo
 share/locale/zh_TW/LC_MESSAGES/rednotebook.mo
 share/applications/rednotebook.desktop
-share/icons/hicolor/48x48/apps/rednotebook.png
 share/icons/hicolor/scalable/apps/rednotebook.svg
-share/pixmaps/rednotebook.png
 bin/rednotebook
 @dirrmtry share/locale/ar/LC_MESSAGES
 @dirrmtry share/locale/ar
@@ -217,6 +218,8 @@ bin/rednotebook
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/fr/LC_MESSAGES
 @dirrmtry share/locale/fr
+@dirrmtry share/locale/ga/LC_MESSAGES
+@dirrmtry share/locale/ga
 @dirrmtry share/locale/gl/LC_MESSAGES
 @dirrmtry share/locale/gl
 @dirrmtry share/locale/he/LC_MESSAGES
