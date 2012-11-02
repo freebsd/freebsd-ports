@@ -1,0 +1,9 @@
+--- Makefile.orig	Fri Dec  7 17:01:19 2001
++++ Makefile	Fri Dec  7 17:01:56 2001
+@@ -1,5 +1,5 @@
+ PYTHON=python
+-prefix=/usr/local
++prefix=%%PREFIX%%
+ exec_prefix=${prefix}
+ 
+ #finds the site-packages dir that matches the selected prefix, or if none do, falls back to wherever it can find one..
