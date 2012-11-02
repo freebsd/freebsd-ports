@@ -1,7 +1,5 @@
-GRX is a 2D graphics library originaly written by Csaba Biegl for DJ Delorie's
-DOS port of the GCC compiler.
-
-Now it support DOS (using the DJGPP v2 compiler), Linux console, X11 and Win32
-(using the Mingw compiler).
+GRX is a 2D graphics C library originaly written by Csaba Biegl for
+DJ Delorie's DOS port of the GCC compiler. Now it support a big range
+of platforms.
 
 WWW: http://grx.gnu.de/
