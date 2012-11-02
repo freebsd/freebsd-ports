@@ -1,14 +1,8 @@
-# New ports collection makefile for:	emulators/catapult
-# Date created:				14 November 2007
-# Whom:					Martin Tournoij <carpetsmoker@xs4all.nl>
-#
-# $Carpetsmoker: ports/emulators/catapult/Makefile,v 1.2 2008/07/21 12:54:29 carpetsmoker Exp $
+# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	catapult
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
@@ -19,12 +13,30 @@ COMMENT=	GUI for openMSX
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
+LIB_DEPENDS=	mspack:${PORTSDIR}/archivers/libmspack \
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		cairo:${PORTSDIR}/graphics/cairo \
+		jbig:${PORTSDIR}/graphics/jbigkit \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 
-USE_GNOME=	libxml2
+OPTIONS_DEFINE=	DEBUG DOCS
+
+USE_GNOME=	gdkpixbuf2 glib20 gtk20 libxml2
 USE_WX=		2.6+
 USE_PYTHON_BUILD=yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp \
+		xext xfixes xi xinerama xrandr xrender xxf86vm
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		INSTALL_SHARE_DIR="${DATADIR}" \
@@ -32,15 +44,18 @@ MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		CATAPULT_OPENMSX_BINARY="${LOCALBASE}/bin/openmsx" \
 		CATAPULT_OPENMSX_SHARE="${LOCALBASE}/share/openmsx" \
 		SYMLINK_FOR_BINARY="false"
+MAKE_JOBS_SAFE=	yes
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ARGS+=	INSTALL_DOC_DIR="${DOCSDIR}"
+.else
 # Use dummy target rather than rewriting makefile
 MAKE_ARGS+=	INSTALL_DOC_DIR="${WRKSRC}/dummy"
-.else
-MAKE_ARGS+=	INSTALL_DOC_DIR="${DOCSDIR}"
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-DDEBUG
 CATAPULT_STRIP=	false
 .else
@@ -51,10 +66,11 @@ CATAPULT_STRIP=	true
 post-patch:
 	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' \
 		${WRKSRC}/build/info2code.mk
-.for FILE in build/main.mk build/probe.mk
-	@${REINPLACE_CMD} 's|@$$(CXX)|$$(CXX)| ; \
-		 s|wx-config|${WX_CONFIG}|g' ${WRKSRC}/${FILE}
-.endfor
+	@${REINPLACE_CMD} '/--no-strict-aliasing/s|^CXXFLAGS|#CXXFLAGS| ; \
+		 /--cxx/s|^CXX|#CXX| ; \
+		 s|@$$(CXX)|$$(CXX)|' ${WRKSRC}/build/main.mk
+	@${REINPLACE_CMD} 's|wx-config --|${WX_CONFIG:T} --|g' \
+		${WRKSRC}/build/probe.mk
 	@${ECHO_CMD} > ${WRKSRC}/build/flavour-portbld.mk
 	@${ECHO_CMD} 'CXXFLAGS+=${CXXFLAGS}' \
 		>> ${WRKSRC}/build/flavour-portbld.mk
