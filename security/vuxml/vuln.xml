@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ec89dc70-2515-11e2-8eda-000a5e1e33c6">
+    <topic>webmin -- potential XSS attack via real name field</topic>
+    <affects>
+      <package>
+	<name>webmin</name>
+	<range><lt>1.600_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The webmin updates site reports</p>
+	<blockquote cite="http://www.webmin.com/updates.html">
+	  <p>Module: Change Passwords; Version: 1.600; Problem: Fix for potential XSS attack
+	  via real name field; Solution: New module.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.webmin.com/updates.html</url>
+    </references>
+    <dates>
+      <discovery>2012-11-02</discovery>
+      <entry>2012-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3decc87d-2498-11e2-b0c7-000d601460a4">
     <topic>ruby - Unintentional file creation caused by inserting an illegal NUL character</topic>
     <affects>
