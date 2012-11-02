@@ -1,38 +1,40 @@
-# New ports collection makefile for:	qmars
-# Date created:				2008-01-15
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	qmars
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://corewar.co.uk/ankerl/
+MASTER_SITES=	http://martin.ankerl.com/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Quicker Mars is heavily optimized to be as fast as possible
+COMMENT=	Quicker Mars - heavily optimized mars simulator
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-USE_BZIP2=	yes
-REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_BZIP2=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|CCFLAGS =|& ${CXXFLAGS}|' \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|g++|$${CXX}| ; \
+		s|-O3|$${CXXFLAGS}|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|\./||' ${WRKSRC}/bench.*
 	@${REINPLACE_CMD} -e 's|pmars|&-server|' ${WRKSRC}/bench.pmars
 	@${REINPLACE_CMD} -e 's|Warrior::||' ${WRKSRC}/warrior.hpp
 	@${REINPLACE_CMD} -e 's|Parser::||' ${WRKSRC}/parser.hpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bench.* ${DATADIR}
-	${CP} -r ${WRKSRC}/warriors ${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	@${MKDIR} ${DATADIR}
+.for i in bench.exhaust bench.exmars bench.pmars bench.qmars
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${DATADIR})
+.endfor
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} warriors ${DATADIR})
 
 .include <bsd.port.mk>
