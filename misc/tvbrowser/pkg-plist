@@ -47,7 +47,6 @@ bin/tvbrowser
 %%DATADIR%%/imgs/columns_evening.jpg
 %%DATADIR%%/imgs/columns_midday.jpg
 %%DATADIR%%/imgs/desktop.ico
-%%DATADIR%%/imgs/splash.png
 %%DATADIR%%/imgs/systray.ico
 %%DATADIR%%/imgs/time_block_gray.png
 %%DATADIR%%/imgs/time_block_white.png
