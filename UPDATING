@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121102:
+  AFFECTS: users of shells/bash-completion
+  AUTHOR: adamw@FreeBSD.org
+
+  The bash completion library has been updated to 2.0, and the mechanism
+  for activating the library has changed. To use the library, you must:
+
+  source /usr/local/share/bash-completion/bash_completion.sh
+
+  from your .bashrc file. See the pkg-message or README for a more
+  graceful invocation.
+
 20121101:
   AFFECTS: users of graphics/tesseract
   AUTHOR: bf@FreeBSD.org
