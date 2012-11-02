@@ -51,6 +51,87 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3decc87d-2498-11e2-b0c7-000d601460a4">
+    <topic>ruby - Unintentional file creation caused by inserting an illegal NUL character</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><gt>1.9.3,1</gt><lt>1.9.3.286,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2012/10/12/poisoned-NUL-byte-vulnerability/">
+	  <p>A vulnerability was found that file creation routines can create
+	    unintended files by strategically inserting NUL(s) in file paths.
+	    This vulnerability has been reported as CVE-2012-4522.</p>
+	  <p>Ruby can handle arbitrary binary patterns as Strings, including
+	    NUL chars. On the other hand OSes and other libraries tend not.
+	    They usually treat a NUL as an End of String mark. So to interface
+	    them with Ruby, NUL chars should properly be avoided.</p>
+	  <p>However methods like IO#open did not check the filename passed to
+	    them, and just passed those strings to lower layer routines. This
+	    led to create unintentional files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4522</cvename>
+      <url>http://www.ruby-lang.org/en/news/2012/10/12/poisoned-NUL-byte-vulnerability/</url>
+      <url>https://access.redhat.com/security/cve/CVE-2012-4522/</url>
+    </references>
+    <dates>
+      <discovery>2012-10-12</discovery>
+      <entry>2012-11-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a093853-2495-11e2-b0c7-000d601460a4">
+    <topic>ruby - $SAFE escaping vulnerability about Exception#to_s/NameError#to_s</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><gt>1.8.7,1</gt><lt>1.8.7.371,1</lt></range>
+	<range><gt>1.9.3,1</gt><lt>1.9.3.286,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2012/10/12/cve-2012-4464-cve-2012-4466/">
+	  <p>Vulnerabilities found for Exception#to_s, NameError#to_s, and
+	    name_err_mesg_to_s() which is Ruby interpreter-internal API. A
+	    malicious user code can bypass $SAFE check by utilizing one of
+	    those security holes.</p>
+	  <p>Ruby's $SAFE mechanism enables untrusted user codes to run in
+	    $SAFE &gt;= 4 mode. This is a kind of sandboxing so some operations
+	    are restricted in that mode to protect other data outside the
+	    sandbox.</p>
+	  <p>The problem found was around this mechanism. Exception#to_s,
+	    NameError#to_s, and name_err_mesg_to_s() interpreter-internal API
+	    was not correctly handling the $SAFE bits so a String object which
+	    is not tainted can destructively be marked as tainted using them.
+	    By using this an untrusted code in a sandbox can modify a
+	    formerly-untainted string destructively.</p>
+	  <p>Ruby 1.8 once had a similar security issue. It fixed
+	    Exception#to_s and NameError#to_s, but name_err_mesg_to_str() issue
+	    survived previous security fix</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4464</cvename>
+      <cvename>CVE-2012-4466</cvename>
+      <url>http://www.ruby-lang.org/en/news/2012/10/12/cve-2012-4464-cve-2012-4466/</url>
+      <url>https://access.redhat.com/security/cve/CVE-2012-4464/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-21</discovery>
+      <entry>2012-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b738d54-2427-11e2-9817-c8600054b392">
     <topic>RT -- Multiple Vulnerabilities</topic>
     <affects>
