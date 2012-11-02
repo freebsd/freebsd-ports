@@ -1,12 +1,8 @@
-# New ports collection makefile for:   jhead
-# Date created:                01 Dec 2001
-# Whom:                        Jamie Hermans <jamie@hermans.ca>
-#
+# Created by: Jamie Hermans <jamie@hermans.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	jhead
-PORTVERSION=	2.95
+PORTVERSION=	2.96
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
 
@@ -22,13 +18,15 @@ PORTDOCS=	usage.html
 PLIST_FILES=	bin/jhead
 MAN1=		jhead.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E '/^CFLAGS=/d' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/jhead.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/usage.html ${DOCSDIR}
 .endif
