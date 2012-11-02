@@ -2,41 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	linrename
-PORTVERSION=	2.12r
-PORTREVISION=	2
+PORTVERSION=	2.22
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mirror.linux.org.au/pub/linux/utils/util-linux/ \
-		http://debian.csail.mit.edu/pub/linux/utils/util-linux/ \
-		http://www.club.cc.cmu.edu/pub/linux.out-of-date/utils/util-linux/ \
-		${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	linux/utils/util-linux
+#MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}
+MASTER_SITES=	http://ftp.ntu.edu.tw/ftp/linux/%SUBDIR%/ \
+		http://ftp.sunet.se/pub/Linux/kernel.org/linux/%SUBDIR%/ \
+		http://kernel.org/pub/linux/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,linux/kernel.org/&,}
+MASTER_SITE_SUBDIR=	utils/util-linux/v${PORTVERSION}
 DISTNAME=	util-linux-${PORTVERSION}
-
-DEPRECATED=	No more public distfile
-EXPIRATION_DATE=	2012-11-26
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using substitution
 
-PLIST_FILES=	bin/linrename
-MAN1=		linrename.1
+BUILD_WRKSRC=	${WRKSRC}/misc-utils
+INSTALL_WRKSRC=	${WRKSRC}/misc-utils
 
-USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USE_XZ=		yes
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lintl -I${WRKSRC}/lib
-EXTRACT_AFTER_ARGS=	| tar -xf - \
-			${DISTNAME}/lib/nls.h \
-			${DISTNAME}/misc-utils/rename.1 \
-			${DISTNAME}/misc-utils/rename.c
+CPPFLAGS+=	-I../include -DHAVE_LOCALE_H -DHAVE_LANGINFO_H \
+		-DPACKAGE_STRING=\"util-linux\ ${PORTVERSION}\"
 
-.include <bsd.port.pre.mk>
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	${LN} -sf rename.1 ${BUILD_WRKSRC}/${PORTNAME}.1
 
 do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/misc-utils/rename.c
+	(cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME} \
+		rename.c ${LDFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/misc-utils/rename.1 ${PREFIX}/man/man1/${MAN1}
+	(cd ${INSTALL_WRKSRC} \
+		&& ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin \
+		&& ${INSTALL_MAN} ${PORTNAME}.1 ${MANPREFIX}/man/man1)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
