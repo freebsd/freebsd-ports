@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vuxml
-# Date created:		2004/02/12
-# Whom:			nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vuxml
 PORTVERSION=	1.1
