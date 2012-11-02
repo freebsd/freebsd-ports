@@ -5,13 +5,13 @@
  make install
  
 -  Inspect and edit the /etc/mail/smfs/smf-sav.conf file.
-+  Inspect and edit the /usr/local/etc/smfsav.conf file.
++  Inspect and edit the %%PREFIX%%/etc/smfsav.conf file.
  
 -/usr/local/sbin/smf-sav
-+/usr/local/sbin/smfsav
++%%PREFIX%%/sbin/smfsav
  or
 -/usr/local/sbin/smf-sav -c /etc/mail/smfs/smf-sav.conf
-+/usr/local/sbin/smfsav -c /usr/local/etc/smfsav.conf
++%%PREFIX%%/sbin/smfsav -c %%PREFIX%%/etc/smfsav.conf
  
    Add this milter to start-up scripts before starting a Sendmail daemon.
  Look at the contributed samples of start-up scripts.

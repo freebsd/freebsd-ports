@@ -1,64 +1,51 @@
-# New ports collection makefile for:	smfsav
-# Date created:				17 February 2008
-# Whom:					Anton Lysenok <bart@tapolsky.net.ua>
-#
+# Created by: Anton Lysenok <bart@tapolsky.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	smfsav
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	SF/smfs/smf-sav/smf-sav-${PORTVERSION}:0 \
-		${MASTER_SITE_ISC}:1
-MASTER_SITE_SUBDIR=	smfs/:0 \
-		bind8/src/8.4.7/:1
-DISTNAME=	smf-sav-1.4.0
-DISTFILES=	smf-sav-1.4.0.tar.gz:0 \
-		bind-src.tar.gz:1
+MASTER_SITES=	SF/smfs
+DISTNAME=	smf-sav-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail Sender Address Validator
 
-PLIST_FILES=	sbin/smfsav \
-		etc/smfsav.conf-dist
+LICENSE=	GPLv2
 
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%PORTDOCS%%%%DOCSDIR%%/COPYING \
-		%%PORTDOCS%%%%DOCSDIR%%/CHANGES \
-		%%PORTDOCS%%%%DOCSDIR%%/README
-PLIST_DIRS=	share/doc/${PORTNAME}
-.endif
+OPTIONS_DEFINE=	DOCS
 
 USE_RC_SUBR=	smfsav
 
+CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS}
+LDFLAGS+=	-lmilter ${PTHREAD_LIBS}
+
 SUB_FILES=	pkg-message
+
+PORTDOCS=	CHANGES README
+PLIST_FILES=	sbin/smfsav \
+		etc/smfsav.conf-dist
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/readme
 
-pre-build:
-	@${ECHO}
-	@${ECHO} [*] Compiling BIND 8 to make SmfSav able to resolve DNS names
-	${MAKE} all -C ${WRKDIR}/src
-	@${ECHO}
-	@${ECHO} [*] Compiling SmfSav
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o smf-sav smf-sav.c \
+		${LDFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/smf-sav ${PREFIX}/sbin/smfsav
-	${INSTALL_DATA} ${WRKSRC}/smf-sav.conf ${PREFIX}/etc/smfsav.conf-dist
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/COPYING
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}/CHANGES
-	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}/README
+	(cd ${WRKSRC} \
+		&& ${INSTALL_PROGRAM} smf-sav ${PREFIX}/sbin/smfsav \
+		&& ${INSTALL_DATA} smf-sav.conf ${PREFIX}/etc/smfsav.conf-dist)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} \
+		&& ${INSTALL_DATA} ChangeLog ${DOCSDIR}/CHANGES \
+		&& ${INSTALL_DATA} readme ${DOCSDIR}/README)
 .endif
-
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
