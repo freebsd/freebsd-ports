@@ -1,13 +1,8 @@
-# New ports collection makefile for:	grx
-# Date created:				1 Jul 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	grx
-PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTVERSION=	2.4.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -15,21 +10,31 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D graphics library
 
-USE_GMAKE=	yes
-USE_XORG=	x11
-USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
-		--with-x11-base=${LOCALBASE}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-ALL_TARGET=	libs
-INSTALL_TARGET=	install install-bin install-fonts install-info
+LICENSE=	LGPL20 MIT
+LICENSE_COMB=	multi
+
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		xcb:${PORTSDIR}/x11/libxcb
 
 OPTIONS_DEFINE=	BGI BMP JPEG PNG PRINT TIFF ZLIB
 OPTIONS_DEFAULT=	ZLIB BGI BMP PNG PRINT
 BGI_DESC=	Enable BGI support
 BMP_DESC=	Enable BMP support
+
+USE_XORG=	x11 xau xdmcp
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
+		--with-x11-base=${LOCALBASE}
+ALL_TARGET=	libs
+INSTALL_TARGET=	install install-bin install-fonts install-info
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 INFO=		grx
 
@@ -50,7 +55,7 @@ CONFIGURE_ARGS+=--disable-bmp
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg
@@ -72,7 +77,7 @@ PLIST_SUB+=	PRINT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=--enable-tiff
 .else
 CONFIGURE_ARGS+=--disable-tiff
@@ -84,7 +89,9 @@ CONFIGURE_ARGS+=--enable-zlib
 CONFIGURE_ARGS+=--disable-zlib
 .endif
 
-.if ${ARCH} == amd64
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--enable-x86_64
 .endif
 
@@ -96,13 +103,16 @@ post-patch:
 	@${GREP} -ERl '<(malloc|alloca)\.h>' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -Ee 's|<(malloc\|alloca)\.h>|<stdlib.h>|'
 	@${REINPLACE_CMD} -Ee \
-		's|-m32||; s|-m64||; \
-		 s|^(CC[[:blank:]]*=).*|\1 ${CC}|; \
-		 s|^(CCOPT =)|\1 ${CPPFLAGS} ${CFLAGS}|; \
-		 s|^(LDOPT =)|\1 ${LDFLAGS}|;' \
-		-e 's|lib64|lib|' \
+		's|-m32|| ; \
+		 s|-m64|| ; \
+		 s|^(CC[[:blank:]]*=).*|\1 ${CC}| ; \
+		 s|^(CCOPT =)|\1 ${CPPFLAGS} ${CFLAGS}| ; \
+		 s|^(LDOPT =)|\1 ${LDFLAGS}| ; \
+		 s|lib64|lib|' \
 		${WRKSRC}/makedefs.grx
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|lib64|lib|' \
-		 ${WRKSRC}/src/makefile.[lx]*
+	@${REINPLACE_CMD} -e \
+		's|gcc|${CC}| ; \
+		 s|lib64|lib|' \
+		${WRKSRC}/src/makefile.[lx]*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
