@@ -66,6 +66,7 @@
 %%WWWDIR%%/admin/editor/plugins/table/js/table.js
 %%WWWDIR%%/admin/editor/plugins/table/cell.htm
 %%WWWDIR%%/admin/editor/plugins/table/merge_cells.htm
+%%WWWDIR%%/admin/editor/plugins/table/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/table/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/table/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/table/editor_plugin_src.js
@@ -93,15 +94,17 @@
 %%WWWDIR%%/admin/editor/plugins/fullpage/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/fullpage/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/fullpage/js/fullpage.js
-%%WWWDIR%%/admin/editor/plugins/fullpage/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/fullpage/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/fullpage/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/fullpage/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/directionality/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/directionality/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/del.htm
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/editor_plugin.js
-%%WWWDIR%%/admin/editor/plugins/xhtmlxtras/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/xhtmlxtras/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/xhtmlxtras/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/ins.htm
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/cite.htm
 %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/acronym.htm
@@ -119,6 +122,7 @@
 %%WWWDIR%%/admin/editor/plugins/paste/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/paste/js/pasteword.js
 %%WWWDIR%%/admin/editor/plugins/paste/js/pastetext.js
+%%WWWDIR%%/admin/editor/plugins/paste/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/paste/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/paste/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/paste/pastetext.htm
@@ -152,8 +156,9 @@
 %%WWWDIR%%/admin/editor/plugins/emotions/img/smiley-cool.gif
 %%WWWDIR%%/admin/editor/plugins/emotions/img/smiley-frown.gif
 %%WWWDIR%%/admin/editor/plugins/emotions/editor_plugin.js
-%%WWWDIR%%/admin/editor/plugins/emotions/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/emotions/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/emotions/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/emotions/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/emotions/js/emotions.js
 %%WWWDIR%%/admin/editor/plugins/emotions/emotions.htm
 %%WWWDIR%%/admin/editor/plugins/emotions/editor_plugin_src.js
@@ -169,8 +174,9 @@
 %%WWWDIR%%/admin/editor/plugins/advlink/link.htm
 %%WWWDIR%%/admin/editor/plugins/advlink/css/advlink.css
 %%WWWDIR%%/admin/editor/plugins/advlink/editor_plugin_src.js
-%%WWWDIR%%/admin/editor/plugins/advlink/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/advlink/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advlink/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/advlink/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advlink/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/advlink/js/advlink.js
 %%WWWDIR%%/admin/editor/plugins/visualchars/editor_plugin.js
@@ -190,6 +196,7 @@
 %%WWWDIR%%/admin/editor/plugins/pagebreak/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/pagebreak/css/content.css
 %%WWWDIR%%/admin/editor/plugins/template/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/template/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/template/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/template/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/template/js/template.js
@@ -216,8 +223,9 @@
 %%WWWDIR%%/admin/editor/plugins/searchreplace/css/searchreplace.css
 %%WWWDIR%%/admin/editor/plugins/searchreplace/js/searchreplace.js
 %%WWWDIR%%/admin/editor/plugins/searchreplace/searchreplace.htm
-%%WWWDIR%%/admin/editor/plugins/searchreplace/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/searchreplace/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/searchreplace/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/searchreplace/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/compat2x/editor_plugin_src.js
@@ -238,6 +246,7 @@
 %%WWWDIR%%/admin/editor/plugins/autolink/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/autolink/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/media/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/media/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/media/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/media/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/media/js/embed.js
@@ -609,6 +618,7 @@
 %%WWWDIR%%/admin/editor/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/advhr/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/advhr/js/rule.js
+%%WWWDIR%%/admin/editor/plugins/advhr/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advhr/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advhr/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advhr/editor_plugin_src.js
@@ -619,13 +629,15 @@
 %%WWWDIR%%/admin/editor/plugins/advimage/image.htm
 %%WWWDIR%%/admin/editor/plugins/advimage/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/advimage/img/sample.gif
-%%WWWDIR%%/admin/editor/plugins/advimage/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/advimage/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advimage/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/advimage/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advimage/js/image.js
 %%WWWDIR%%/admin/editor/plugins/advimage/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/advimage/css/advimage.css
-%%WWWDIR%%/admin/editor/plugins/style/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/style/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/style/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/style/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/style/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/style/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/style/css/props.css
@@ -640,6 +652,22 @@
 %%WWWDIR%%/admin/editor/themes/advanced/skins/highcontrast/dialog.css
 %%WWWDIR%%/admin/editor/themes/advanced/skins/highcontrast/content.css
 %%WWWDIR%%/admin/editor/themes/advanced/skins/highcontrast/ui.css
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/content.css
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/dialog.css
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/butt2.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/button-bg.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/buttons.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/down_arrow.gif
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/fade-butt.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/icons.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/items.gif
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/menu-arrow.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/menu-check.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/progress.gif
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/tabs.gif
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img/toolbarbg.png
+%%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/ui.css
 %%WWWDIR%%/admin/editor/themes/advanced/skins/default/dialog.css
 %%WWWDIR%%/admin/editor/themes/advanced/skins/default/ui.css
 %%WWWDIR%%/admin/editor/themes/advanced/skins/default/content.css
@@ -683,8 +711,10 @@
 %%WWWDIR%%/admin/editor/themes/advanced/editor_template.js
 %%WWWDIR%%/admin/editor/themes/advanced/shortcuts.htm
 %%WWWDIR%%/admin/editor/themes/advanced/editor_template_src.js
-%%WWWDIR%%/admin/editor/themes/advanced/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/themes/advanced/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/themes/advanced/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/themes/advanced/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/themes/advanced/langs/cs.js
 %%WWWDIR%%/admin/editor/themes/advanced/langs/de.js
 %%WWWDIR%%/admin/editor/themes/advanced/langs/en.js
 %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7/content.css
@@ -695,10 +725,12 @@
 %%WWWDIR%%/admin/editor/themes/simple/editor_template_src.js
 %%WWWDIR%%/admin/editor/themes/simple/img/icons.gif
 %%WWWDIR%%/admin/editor/themes/simple/editor_template.js
-%%WWWDIR%%/admin/editor/themes/simple/langs/en.js
+%%WWWDIR%%/admin/editor/themes/simple/langs/cs.js
 %%WWWDIR%%/admin/editor/themes/simple/langs/de.js
+%%WWWDIR%%/admin/editor/themes/simple/langs/en.js
 %%WWWDIR%%/admin/editor/jquery.tinymce.js
 %%WWWDIR%%/admin/editor/tiny_mce_src.js
+%%WWWDIR%%/admin/editor/langs/cs.js
 %%WWWDIR%%/admin/editor/langs/de.js
 %%WWWDIR%%/admin/editor/langs/en.js
 %%WWWDIR%%/admin/record.delatt.php
@@ -1208,6 +1240,8 @@
 @dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/highcontrast
 @dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/default/img
 @dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit
 @dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins
 @dirrm %%WWWDIR%%/admin/editor/themes/advanced/langs
 @dirrm %%WWWDIR%%/admin/editor/themes/advanced/js
