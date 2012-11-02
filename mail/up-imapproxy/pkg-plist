@@ -2,7 +2,6 @@
 etc/imapproxyd.conf.sample
 sbin/pimpstat
 sbin/in.imapproxyd
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.debian
