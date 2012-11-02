@@ -190,6 +190,7 @@
 %%LIB32DIR%%/webmin/virtual-server/feature-web.pl
 %%LIB32DIR%%/webmin/virtual-server/feature-webalizer.pl
 %%LIB32DIR%%/webmin/virtual-server/feature-webmin.pl
+%%LIB32DIR%%/webmin/virtual-server/fix-domain-quota.pl
 %%LIB32DIR%%/webmin/virtual-server/fixperms.cgi
 %%LIB32DIR%%/webmin/virtual-server/frame_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/framefwd-template
@@ -644,6 +645,9 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_modules.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_theme.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_theme.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_rs_endpoint.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_rs_key.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_rs_user.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_s3_akey.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_s3_endpoint.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_s3_endpoint.nl.html
@@ -656,6 +660,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_secmx_nodns.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_shell.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_shell.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_show_lastlogin.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_show_mailsize.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_show_mailsize.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_show_nf.html
