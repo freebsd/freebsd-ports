@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.600
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -28,7 +29,7 @@ USE_RC_SUBR=	webmin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	passwd-1.600-5.wbm.gz
 
 post-extract:
 	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
