@@ -1,13 +1,8 @@
-# Ports collection makefile for:	reciteword
-# Date created:			1 November 2004
-# Whom:				hamigua <hamigua@cuc.cn>
-#
+# Created by: hamigua <hamigua@cuc.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	reciteword
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	chinese
 MASTER_SITES=	SF:src \
 		SF/${PORTNAME}/${PORTNAME}-books/${PORTVERSION}:books \
@@ -29,20 +24,18 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO readme.txt
 
-OPTIONS=	RPTTS "With Real People TTS" off
+XTRACT_AFTER_ARGS+=	--exclude CVS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RPTTS)
-RUN_DEPENDS+=	${LOCALBASE}/share/WyabdcRealPeopleTTS/a/a.wav:${PORTSDIR}/textproc/stardict2-rptts
-.endif
+LIB_DEPENDS+=	espeak:${PORTSDIR}/audio/espeak
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' ${WRKSRC}/src/readword.cpp
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	(cd ${WRKDIR}/ && ${COPYTREE_SHARE} "books dicts" ${DATADIR} "! ( -type d -a -name CVS )")
+	(cd ${WRKDIR}/ && ${COPYTREE_SHARE} "books dicts" ${DATADIR})
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
@@ -50,4 +43,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
