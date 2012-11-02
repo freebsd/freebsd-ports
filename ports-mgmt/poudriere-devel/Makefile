@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.2.99.20121026
+PORTVERSION=	2.2.99.20121102
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 PKGNAMESUFFIX=	-devel
@@ -13,7 +13,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	f21e916b8b
+FSL_CHKIN=	1f2d4d3281
 
 NO_BUILD=	yes
 MANCOMPRESSED=	yes
