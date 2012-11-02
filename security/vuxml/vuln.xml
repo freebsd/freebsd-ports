@@ -51,6 +51,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65539c54-2517-11e2-b9d6-20cf30e32f6d">
+    <topic>apache22 -- several vulnerability</topic>
+    <affects>
+      <package>
+	<name>apache22</name>
+	<range><gt>2.2.0</gt><lt>2.2.23</lt></range>
+      </package>
+      <package>
+	<name>apache22-event-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.23</lt></range>
+      </package>
+      <package>
+	<name>apache22-itk-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.23</lt></range>
+      </package>
+      <package>
+	<name>apache22-peruser-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.23</lt></range>
+      </package>
+      <package>
+	<name>apache22-worker-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://httpd.apache.org/security/vulnerabilities_22.html">
+	  <h1>low: XSS in mod_negotiation when untrusted uploads are supported CVE-2012-2687</h1>
+	  <p>Possible XSS for sites which use mod_negotiation and
+	    allow untrusted uploads to locations which have MultiViews enabled.</p>
+	  <h1>low: insecure LD_LIBRARY_PATH handling CVE-2012-0883</h1>
+	  <p>This issue was already fixed in port version 2.2.22_5</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2687</cvename>
+      <cvename>CVE-2012-0833</cvename><!-- already fixed in r301849 -->
+    </references>
+    <dates>
+      <discovery>2012-09-13</discovery>
+      <entry>2012-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec89dc70-2515-11e2-8eda-000a5e1e33c6">
     <topic>webmin -- potential XSS attack via real name field</topic>
     <affects>
