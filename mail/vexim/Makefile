@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	vexim
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+DISTVERSION=	2.2.2_rc1
 CATEGORIES=	mail www
-MASTER_SITES=	http://silverwraith.com/vexim/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web interface for managing virtual domains for exim
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 VEXIMDIR=	www/${PORTNAME}
-WRKSRC=		${WRKDIR}/vexim2
+WRKSRC=		${WRKDIR}/vexim-release
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
@@ -42,25 +41,26 @@ USE_PHP+=	pgsql
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -name CVS -prune -exec ${RM} -r {} \;
+	${RM} -r ${WRKSRC}/.hg ${WRKSRC}/.hgtags ${WRKSRC}/vexim/adminuserchange.phps
+	${MV} ${WRKSRC}/vexim/config/variables.php ${WRKSRC}/vexim/config/variables.php.dist
 
 do-install:
 	@${ECHO} "Installing in ${VEXIMDIR}"
 	${MKDIR} ${PREFIX}/${VEXIMDIR}
-	cd ${WRKSRC}/vexim && ${FIND} . \! -path '*.svn*' \
+	cd ${WRKSRC}/vexim && ${FIND} . \
 		-type d -exec ${MKDIR} ${PREFIX}/${VEXIMDIR}/{} \;  \
-		-o \! -path '*.svn*' -type f \
+		-o -type f \
 		-exec ${INSTALL_DATA} {} ${PREFIX}/${VEXIMDIR}/{} \;
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/setup && ${FIND} . \! -path '*.svn*' \
+	cd ${WRKSRC}/setup && ${FIND} . \
 		-type d -exec ${MKDIR} ${DATADIR}/{} \; \
-		-o \! -path '*.svn*' -type f \
+		-o -type f \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${FIND} docs \! -path '*.svn*' \
+	cd ${WRKSRC} && ${FIND} docs \
 		-type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-		-o \! -path '*.svn*' -type f \
+		-o -type f \
 		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .for i in INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

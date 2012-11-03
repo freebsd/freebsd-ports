@@ -60,7 +60,7 @@ www/vexim/config/httpheaders.php
 www/vexim/config/hu.po
 www/vexim/config/i18n.php
 www/vexim/config/template.pot
-www/vexim/config/variables.php
+www/vexim/config/variables.php.dist
 www/vexim/images/check.gif
 www/vexim/images/trashcan.gif
 www/vexim/index.php
