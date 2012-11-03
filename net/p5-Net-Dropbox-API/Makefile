@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Dropbox-API
-# Date created:		2010-11-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Dropbox-API
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
