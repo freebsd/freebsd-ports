@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20121030
+PORTVERSION=	20121102
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaq614.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaq615.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
