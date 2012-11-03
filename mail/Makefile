@@ -594,6 +594,7 @@
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-groupvice
+    SUBDIR += roundcube-login_info
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-sieverules
