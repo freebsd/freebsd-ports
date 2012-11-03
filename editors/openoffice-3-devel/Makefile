@@ -1,9 +1,5 @@
-# New ports collection makefile for: Apache OpenOffice
-# Date created:		28 February 2002
-# Whom:                 Martin Blapp
-#
+# Created by: Martin Blapp
 # $FreeBSD$
-#
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.${SVNREVISION}
@@ -252,8 +248,8 @@ post-extract:
 
 post-patch:
 .if defined (USE_GCC)
-	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .else
 	@${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
 	@${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
