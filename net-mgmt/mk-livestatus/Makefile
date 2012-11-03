@@ -16,7 +16,9 @@ LICENSE=	GPLv2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	lib/mk-livestatus/unixcat lib/mk-livestatus/livestatus.o
+PLIST_FILES=	lib/mk-livestatus/unixcat \
+		lib/mk-livestatus/livecheck \
+		lib/mk-livestatus/livestatus.o
 PLIST_DIRS=	lib/${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX}
