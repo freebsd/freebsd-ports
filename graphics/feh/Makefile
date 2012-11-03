@@ -1,12 +1,8 @@
-# ports collection makefile for:	feh
-# Date created:				16 Oct 2000
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by:				Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	feh
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
