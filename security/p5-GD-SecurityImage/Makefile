@@ -1,13 +1,8 @@
-# New ports collection makefile for:	GD-SecurityImage
-# Date created:				15 October 2005
-# Whom:					ports@rbt.ca
-#
+# Created by: ports@rbt.ca
 # $FreeBSD$
-#
 
 PORTNAME=	GD-SecurityImage
-PORTVERSION=	1.71
-PORTREVISION=	1
+PORTVERSION=	1.72
 PORTEPOCH=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
