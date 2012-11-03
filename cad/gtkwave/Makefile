@@ -1,12 +1,8 @@
-# Ports collection makefile for:	gtkwave
-# Date created:			April 28, 2008
-# Whom:				bms
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkwave
-PORTVERSION=	3.3.40
+PORTVERSION=	3.3.41
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
