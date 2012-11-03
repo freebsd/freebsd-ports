@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mk-livestatus
-# Date created:		10 april 2010
-# Whom:			Peter C. Lai <cowbert@gmail.com>
-#
+# Created by: Peter C. Lai <cowbert@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.1.11i4
+PORTVERSION=	1.2.0p3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/ \
 		LOCAL/ohauer
