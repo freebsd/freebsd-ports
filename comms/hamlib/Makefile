@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hamlib
-# Date created:			30 April 2003
-# Whom:				Sebastian Yepes <esn@x123.info>
-#
+# Created by:	Sebastian Yepes <esn@x123.info>
 # $FreeBSD$
-#
 
 PORTNAME=	hamlib
 PORTVERSION=	1.2.15.3
@@ -12,6 +8,8 @@ MASTER_SITES=	SF
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
+
+LICENSE=	LGPL20
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
@@ -30,7 +28,6 @@ PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 
 MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1 rigsmtr.1
 MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8 rotctld.8
-LICENSE=	LGPL20
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
