@@ -75,9 +75,11 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/cs/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/de_CH/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/el/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/et/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi_FI/LC_MESSAGES/mc.mo
@@ -160,6 +162,7 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/c.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cabal.syntax
 %%EDITOR%%%%DATADIR%%/syntax/changelog.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cmake.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cs.syntax
 %%EDITOR%%%%DATADIR%%/syntax/css.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cxx.syntax
@@ -170,6 +173,7 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/debian-description.syntax
 %%EDITOR%%%%DATADIR%%/syntax/debian-sources-list.syntax
 %%EDITOR%%%%DATADIR%%/syntax/diff.syntax
+%%EDITOR%%%%DATADIR%%/syntax/dlink.syntax
 %%EDITOR%%%%DATADIR%%/syntax/dos.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ebuild.syntax
 %%EDITOR%%%%DATADIR%%/syntax/eiffel.syntax
@@ -237,6 +241,8 @@ libexec/mc/mc.sh
 %%NLS%%@dirrmtry share/locale/ia
 %%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi_FI
+%%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_CH
 @dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc
