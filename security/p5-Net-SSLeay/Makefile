@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-SSLeay
-# Date created:				April 17th 2000
-# Whom:	      				Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SSLeay
-PORTVERSION=	1.48
+PORTVERSION=	1.49
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
