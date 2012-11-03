@@ -1,0 +1,13 @@
+%%WWWDIR%%/CHANGELOG
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/README
+%%WWWDIR%%/config.inc.php.dist
+%%WWWDIR%%/delete.png
+%%WWWDIR%%/localization/en_US.inc
+%%WWWDIR%%/localization/fr_FR.inc
+%%WWWDIR%%/localization/nb_NO.inc
+%%WWWDIR%%/veximaccountadmin.css
+%%WWWDIR%%/veximaccountadmin.js
+%%WWWDIR%%/veximaccountadmin.php
+@dirrm %%WWWDIR%%/localization
+@dirrmtry %%WWWDIR%%
