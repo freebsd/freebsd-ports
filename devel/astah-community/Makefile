@@ -1,21 +1,18 @@
-# New ports collection makefile for:	jude_take
-# Date created:				19 April 2004
-# Whom:					Yoshihiko Sarumaru <mistral@imasy.or.jp>
-#
+# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	astah
-PORTVERSION=	6.6.3
+PORTVERSION=	6.6.4
 CATEGORIES=	devel java
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-community
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S!.!_!g}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S!.!_!g}-${REVISION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Java/UML Object-Oriented Design Tool
 
 USE_ZIP=	yes
+REVISION=	41775
 
 .include <bsd.port.pre.mk>
 
@@ -46,9 +43,9 @@ PORTDATA=	astah-community.jar astah-api.jar astah-gui_en.properties_org \
 		lib template
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	API_sample_program_license_agreement-e.txt \
-		API_sample_program_license_agreement.txt \
-		CommandRunner-e.html CommandRunner.html \
+PORTDOCS=	API_sample_program_license_agreement.txt \
+		API_sample_program_license_agreement_ja.txt \
+		CommandRunner.html CommandRunner_ja.html \
 		ProductInformation.txt \
 		api
 .endif
