@@ -1,13 +1,8 @@
-# New ports collection makefile for:	graphics/yagf
-# Date created:				2009-09-11
-# Whom:					bsam
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yagf
-PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 
@@ -20,12 +15,16 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
 INSTALLS_ICONS=	yes
+USE_PKGCONFIG=	build
+USE_GNOME=	desktopfileutils
 USE_QT4=	corelib gui imageformats linguist_build \
 		moc_build qmake_build rcc_build uic_build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
+
+post-install:
+	-update-desktop-database
 
 .include <bsd.port.mk>
