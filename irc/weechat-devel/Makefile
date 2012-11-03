@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20120929
+PORTVERSION=	20121103
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,7 @@ WANT_PERL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITREV=	e095948
+GITREV=	c848cb4
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
