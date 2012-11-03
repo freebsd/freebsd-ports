@@ -1,12 +1,8 @@
-# New ports collection makefile for:	salt
-# Date created:				2011-12-26
-# Whom:					Christer Edwards <christer.edwards@gmail.com>
-#
+# Created by: Christer Edwards <christer.edwards@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	salt
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -15,7 +11,6 @@ COMMENT=	Distributed remote execution and configuration management system
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	zmq:${PORTSDIR}/devel/zmq
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
@@ -51,12 +46,10 @@ post-patch:
     doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
     doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.7 doc/man/salt.1 \
     salt/cli/__init__.py salt/__init__.py salt/config.py salt/client.py \
-    salt/modules/mysql.py
+    salt/modules/mysql.py salt/cli/key.py salt/utils/parsers.py
 	@${REINPLACE_CMD} -e 's|/etc/salt|${PREFIX}/etc/salt|' \
 	    -e 's|/srv/salt|${PREFIX}/etc/salt/states|' ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e "s|'install_requires|'data_files': [],'install_requires|" \
-		${WRKSRC}/setup.py
 
 post-install:
 	${MKDIR} ${ETCDIR}
