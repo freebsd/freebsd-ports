@@ -1103,6 +1103,7 @@
     SUBDIR += php53-xmlreader
     SUBDIR += php53-xmlwriter
     SUBDIR += php53-xsl
+    SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += pootle
