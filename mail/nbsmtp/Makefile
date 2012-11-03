@@ -1,3 +1,4 @@
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
 
 PORTNAME=	nbsmtp
