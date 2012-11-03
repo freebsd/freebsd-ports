@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libburn
-# Date created:		2008 November 06
-# Whom:			J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libburn
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libisoburn
-# Date created:		2008 November 13
-# Whom:			J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xorriso
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
