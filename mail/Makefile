@@ -600,6 +600,7 @@
     SUBDIR += roundcube-sieverules
     SUBDIR += roundcube-thunderbird_labels
     SUBDIR += roundcube-umich
+    SUBDIR += roundcube-veximaccountadmin
     SUBDIR += rspamd
     SUBDIR += rss2email
     SUBDIR += ruby-rfilter
