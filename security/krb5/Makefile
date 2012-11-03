@@ -6,14 +6,12 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.9.2
-PORTREVISION=	3
+PORTVERSION=		1.10.3
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
-PATCHFILES=		2011-007-patch.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
@@ -29,6 +27,7 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu89
 USE_AUTOTOOLS=		libtool
+USE_GETTEXT=		yes
 CONFIGURE_ARGS?=	--enable-shared
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
@@ -45,6 +44,7 @@ PREFIX=			${KRB5_HOME}
 CFLAGS+=		-rpath=${KRB5_HOME}/lib
 LDFLAGS+=		-rpath=${KRB5_HOME}/lib
 .endif
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -73,9 +73,11 @@ WITH_OPENSSL_PORT=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 MAN1=			k5srvutil.1 kadmin.1 krb5-send-pr.1 krb5-config.1 \
-			kpasswd.1 klist.1 kinit.1 kdestroy.1 ksu.1 ktutil.1 \
+			kpasswd.1 klist.1 kinit.1 kdestroy.1 kswitch.1 ksu.1 \
+			ktutil.1 \
 			sclient.1 kerberos.1 kvno.1 compile_et.1
-MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
+MAN5=			kdc.conf.5 krb5.conf.5 .k5identity.5 .k5login.5 \
+			k5identity.5 k5login.5
 MAN8=			krb5kdc.8 kadmin.local.8 kdb5_util.8 kadmind.8 \
 			kprop.8 kpropd.8 kproplog.8 sserver.8
 
