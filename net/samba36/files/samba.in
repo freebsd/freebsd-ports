@@ -21,7 +21,7 @@
 %%WINBIND%%#winbindd_enable="YES"
 #
 # Configuration file can be set with:
-#samba_config="/usr/local/etc/smb.conf"
+#samba_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
 #
 
 . /etc/rc.subr
@@ -39,9 +39,9 @@ reload_precmd="samba_checkconfig"
 reload_cmd="samba_reload_cmd"
 rcvar_cmd="samba_rcvar_cmd"
 # Defaults
-samba_config_default="/usr/local/etc/smb.conf"
-testparm_command="/usr/local/bin/testparm"
-smbcontrol_command="/usr/local/bin/smbcontrol"
+samba_config_default="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+testparm_command="%%PREFIX%%/bin/testparm"
+smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
 samba_parm="${testparm_command} -s -v --parameter-name"
 pid_extra=
 #
@@ -134,7 +134,7 @@ samba_cmd() {
 	# Daemon should be enabled and running
 	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
 	    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
-	    # If any of the of the commands failed, take it as a total result
+	    # If any of the commands failed, take it as a global result
 	    result=$((${result} || $?))
 	fi
     done
@@ -176,7 +176,7 @@ samba_config_init() {
 
 # Load configuration variables
 samba_config_init
-# Where is lockdir
+# Where is the lockdir
 samba_lockdir=$(${samba_parm} 'lock directory' "${samba_config}" 2>/dev/null)
 # Common flags
 command_args=${samba_config:+-s "${samba_config}"} #"
