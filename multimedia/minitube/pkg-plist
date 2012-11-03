@@ -28,7 +28,6 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/hu.qm
 %%NLS%%%%DATADIR%%/locale/ia.qm
 %%NLS%%%%DATADIR%%/locale/id.qm
-%%NLS%%%%DATADIR%%/locale/id_ID.qm
 %%NLS%%%%DATADIR%%/locale/it.qm
 %%NLS%%%%DATADIR%%/locale/jv.qm
 %%NLS%%%%DATADIR%%/locale/ka_GE.qm
@@ -46,7 +45,6 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/sq.qm
 %%NLS%%%%DATADIR%%/locale/sr.qm
 %%NLS%%%%DATADIR%%/locale/sv_SE.qm
-%%NLS%%%%DATADIR%%/locale/te.qm
 %%NLS%%%%DATADIR%%/locale/tr.qm
 %%NLS%%%%DATADIR%%/locale/uk_UA.qm
 %%NLS%%%%DATADIR%%/locale/zh_CN.qm

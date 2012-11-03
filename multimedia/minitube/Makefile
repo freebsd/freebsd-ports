@@ -1,17 +1,12 @@
-# New ports collection makefile for:	minitube
-# Date created:		2009-08-15
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	minitube
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A native YouTube client
+COMMENT=	TV-like client for YouTube
 
 USE_QT4=	gui network xml dbus phonon phonon-gst \
 		qmake_build moc_build rcc_build imageformats_run
@@ -26,6 +21,8 @@ QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
 LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 STRIP_FILES=	bin/minitube
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
