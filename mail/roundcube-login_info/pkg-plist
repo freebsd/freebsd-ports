@@ -1,0 +1,5 @@
+%%WWWDIR%%/CAcert-ssl-security.png
+%%WWWDIR%%/README
+%%WWWDIR%%/config.inc.php.dist
+%%WWWDIR%%/login_info.php
+@dirrmtry %%WWWDIR%%
