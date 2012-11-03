@@ -1,12 +1,8 @@
-# New ports collection makefile for:	security/p5-Module-Signature
-# Date created:				Aug 27 2003
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Signature
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
