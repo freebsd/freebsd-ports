@@ -21,6 +21,8 @@ PLIST_FILES=	bin/html2text
 
 CONFLICTS=	py27-html2text-[0-9]*
 
+PORTSCOUT=	skipb:0
+
 .include <bsd.port.options.mk>
 
 post-patch:
