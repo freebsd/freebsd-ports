@@ -92,6 +92,7 @@ include/gmsh/mathex.h
 include/gmsh/meshGEdge.h
 include/gmsh/meshGFace.h
 include/gmsh/meshGFaceDelaunayInsertion.h
+include/gmsh/meshGFaceElliptic.h
 include/gmsh/meshGFaceOptimize.h
 include/gmsh/meshPartition.h
 include/gmsh/meshPartitionOptions.h
@@ -103,6 +104,7 @@ include/gmsh/polynomialBasis.h
 include/gmsh/simple3D.h
 include/gmsh/simpleFunction.h
 include/gmsh/sparsityPattern.h
+include/gmsh/yamakawa.h
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

@@ -1,12 +1,8 @@
-# New ports collection makefile for:  gmsh
-# Date created:               19 April 2003
-# Whom:                       Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmsh
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
