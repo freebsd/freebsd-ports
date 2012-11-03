@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4.20120928
+PORTVERSION=	4.6.4.20121026
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -131,7 +131,7 @@ INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
 
-# Preps the source tree for the gcj build
+# Prep the source tree for the GCJ build.
 post-patch::
 	@${CP} ${DISTDIR}/${ECJ_JAR} ${SRCDIR}/ecj.jar
 .else
