@@ -1,3 +1,4 @@
+# Created by: Christian Lackas
 # $FreeBSD$
 
 PORTNAME=	vpnc

@@ -1,3 +1,4 @@
+# Created by: krion
 # $FreeBSD$
 
 PORTNAME=	xterm

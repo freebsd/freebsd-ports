@@ -1,3 +1,4 @@
+# Created by: Roman Neuhauser <neuhauser@sigpipe.cz>
 # $FreeBSD$
 
 PORTNAME=	mathomatic
