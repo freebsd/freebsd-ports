@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pear-IO_SWF
-# Date created:		2011-11-02
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO_SWF
-PORTVERSION=	2.1.8
+PORTVERSION=	2.1.9
 CATEGORIES=	graphics www pear
 MASTER_SITES=	http://openpear.org/get/ \
 		LOCAL
