@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -48,7 +47,9 @@ MAN1=		octave.1 mkoctfile.1 octave-config.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgoto2.so)
+.if exists(${LOCALBASE}/lib/libopenblas.so)
+WITH_BLAS?=	openblas
+.elif exists(${LOCALBASE}/lib/libgoto2.so)
 WITH_BLAS?=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
@@ -61,6 +62,10 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
+.elif ${WITH_BLAS} == openblas
+LIB_DEPENDS+=	openblas:${PORTSDIR}/math/gotoblas
+BLAS=		-lopenblasp
+LAPACK=		-lopenblasp
 .elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
 BLAS=		-lgoto2p
