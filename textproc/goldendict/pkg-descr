@@ -9,6 +9,4 @@ It supports:
     * ABBYY Lingvo .lsa/.dat audio archives. Those can be indexed
       separately, or be referred to from .dsl files.
 
-LICENSE: GPL3 or later
-
-WWW: http://goldendict.berlios.de/
+WWW: http://goldendict.org/
