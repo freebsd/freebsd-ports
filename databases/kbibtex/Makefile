@@ -1,12 +1,8 @@
-# New ports collection makefile for:	kbibtex
-# Date created:				Mon Aug  8 18:43:04 CEST 2005
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kbibtex
-DISTVERSION=	0.4
-PORTREVISION=	1
+DISTVERSION=	0.4.1
 CATEGORIES=	databases kde
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C,(^[[:digit:]]\.[[:digit:]]).*,\1,}/
 
