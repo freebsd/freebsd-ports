@@ -1,13 +1,8 @@
-# New ports collection makefile for:	fricas
-# Date created:		11 November 2008
-# Whom:			stephen@math.missouri.edu
-#
+# Created by: stephen@math.missouri.edu
 # $FreeBSD$
-#
 
 PORTNAME=	fricas
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	math
 MASTER_SITES=	SF
