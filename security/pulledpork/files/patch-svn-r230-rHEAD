@@ -1,8 +1,8 @@
 Index: doc/README.CHANGES
 ===================================================================
 --- doc/README.CHANGES	(revision 230)
-+++ doc/README.CHANGES	(working copy)
-@@ -1,5 +1,25 @@
++++ doc/README.CHANGES	(revision 243)
+@@ -1,5 +1,30 @@
  PulledPork Changelog
  
 +V0.6.2 the Cigar Pig
@@ -21,9 +21,14 @@ Index: doc/README.CHANGES
 +		flowbit resolution.  NOTE that this DOES NOT AND WILL NOT disable automatic flowbit
 +		resolution, this is a critical piece.
 +- Bug #81 - Updated valid SO distro pre-compiled list
++- Bug #114 - Update Regex to allow for null search/replace in modify_sid sub
++- Unlisted Bug - Allow for escaped ; "\;" in references
++- Bug #121 - Update to allow for new etpro.com url and cert!
++- Bug #119 - Fixed regex [^\\]...
 +
 +New Features / changes:
 +- Bug #105 - Removed Switch function as it is deprecated in > 5.12 perl
++- Unlisted Bug - Include IP Reputation capability
 +
  v0.6.1 the Smoking Pig, revisited
  
@@ -31,8 +36,45 @@ Index: doc/README.CHANGES
 Index: etc/pulledpork.conf
 ===================================================================
 --- etc/pulledpork.conf	(revision 230)
-+++ etc/pulledpork.conf	(working copy)
-@@ -116,12 +116,15 @@
++++ etc/pulledpork.conf	(revision 243)
+@@ -10,20 +10,22 @@
+ #######  snort version and subscription etc...)
+ ####### 
+ 
+-# The rule_url value replaces the old base_url and rule_file configuration
+-# options.  You can now specify one or as many rule_urls as you like, they 
++# You can specify one or as many rule_urls as you like, they 
+ # must appear as http://what.site.com/|rulesfile.tar.gz|1234567.  You can specify
+ # each on an individual line, or you can specify them in a , separated list
+ # i.e. rule_url=http://x.y.z/|a.tar.gz|123,http://z.y.z/|b.tar.gz|456
+ # note that the url, rule file, and oinkcode itself are separated by a pipe |
+ # i.e. url|tarball|123456789, 
+ rule_url=https://www.snort.org/reg-rules/|snortrules-snapshot.tar.gz|<oinkcode>
++# NEW For IP Blacklisting! Note the format is urltofile|IPBLACKLIST|<oinkcode>
++# This format MUST be followed to let pulledpork know that this is a blacklist
++rule_url=http://labs.snort.org/feeds/ip-filter.blf|IPBLACKLIST|open
+ # get the rule docs!
+ rule_url=https://www.snort.org/reg-rules/|opensource.gz|<oinkcode>
+-rule_url=https://rules.emergingthreats.net/|emerging.rules.tar.gz|open
++rule_url=https://rules.emergingthreatspro.com/|emerging.rules.tar.gz|open
+ # THE FOLLOWING URL is for etpro downloads, note the tarball name change!
+ # and the et oinkcode requirement!
+-rule_url=https://rules.emergingthreats.net/|etpro.rules.tar.gz|<et oinkcode>
++rule_url=https://rules.emergingthreatspro.com/|etpro.rules.tar.gz|<et oinkcode>
+ # NOTE above that the VRT snortrules-snapshot does not contain the version
+ # portion of the tarball name, this is because PP now automatically populates
+ # this value for you, if, however you put the version information in, PP will
+@@ -50,9 +52,6 @@
+ # previous ignore line and uncomment the following!
+ # ignore=deleted,experimental,local,decoder,preprocessor,sensitive-data
+ 
+-# Define your Oinkcode - DEPRICATED, SEE RULE_URL
+-# oinkcode=replacethiswithyouroinkcode
+-
+ # What is our temp path, be sure this path has a bit of space for rule 
+ # extraction and manipulation, no trailing slash
+ temp_path=/tmp
+@@ -116,12 +115,15 @@
  sostub_path=/usr/local/etc/snort/rules/so_rules.rules
  
  # Define your distro, this is for the precompiled shared object libs!
@@ -54,7 +96,7 @@ Index: etc/pulledpork.conf
  
  #######  This next section is optional, but probably pretty useful to you.
  #######  Please read thoroughly!
-@@ -160,8 +163,7 @@
+@@ -160,8 +162,7 @@
  
  # This defines the version of snort that you are using, for use ONLY if the 
  # proper snort binary is not on the system that you are fetching the rules with
@@ -64,10 +106,16 @@ Index: etc/pulledpork.conf
  # numbers. ET rules are now also dependant on this, verify supported ET versions
  # prior to simply throwing rubbish in this variable kthx!
  # snort_version=2.9.0.0
+@@ -183,4 +184,4 @@
+ ####### need to process so_rules, simply comment out the so_rule section
+ ####### you can also specify -T at runtime to process only GID 1 rules.
+ 
+-version=0.6.0
++version=0.6.1
 Index: etc/disablesid.conf
 ===================================================================
 --- etc/disablesid.conf	(revision 230)
-+++ etc/disablesid.conf	(working copy)
++++ etc/disablesid.conf	(revision 243)
 @@ -6,6 +6,10 @@
  # Example of modifying state for rule ranges
  # 1:220-1:3264,3:13010-3:13013
@@ -82,7 +130,7 @@ Index: etc/disablesid.conf
 Index: etc/dropsid.conf
 ===================================================================
 --- etc/dropsid.conf	(revision 230)
-+++ etc/dropsid.conf	(working copy)
++++ etc/dropsid.conf	(revision 243)
 @@ -10,6 +10,10 @@
  # Example of modifying state for rule ranges
  # 1:220-1:3264,3:13010-3:13013
@@ -97,7 +145,7 @@ Index: etc/dropsid.conf
 Index: etc/enablesid.conf
 ===================================================================
 --- etc/enablesid.conf	(revision 230)
-+++ etc/enablesid.conf	(working copy)
++++ etc/enablesid.conf	(revision 243)
 @@ -10,6 +10,10 @@
  # Example of modifying state for rule ranges
  # 1:220-1:3264,3:13010-3:13013
@@ -112,7 +160,7 @@ Index: etc/enablesid.conf
 Index: pulledpork.pl
 ===================================================================
 --- pulledpork.pl	(revision 230)
-+++ pulledpork.pl	(working copy)
++++ pulledpork.pl	(revision 243)
 @@ -33,7 +33,6 @@
  use Getopt::Long qw(:config no_ignore_case bundling);
  use Archive::Tar;
@@ -165,7 +213,34 @@ Index: pulledpork.pl
              $tar->remove("preproc_rules/$preprocfile");
          }
          elsif ( $_ =~ /\.so/ ) {
-@@ -714,11 +715,10 @@
+@@ -368,6 +369,10 @@
+           getstore( "https://www.snort.org/reg-rules/$rule_file/$oinkcode",
+             $temp_path . $rule_file );
+     }
++    elsif ($rule_file eq "IPBLACKLIST"){
++	$getrules_rule =
++	  getstore( "http://labs.snort.org/feeds/ip-filter.blf", $temp_path . "black_list.rules")
++    }
+     else {
+         $getrules_rule =
+           getstore( $base_url . "/" . $rule_file, $temp_path . $rule_file );
+@@ -435,7 +440,7 @@
+           getstore( "https://www.snort.org/reg-rules/$rule_file.md5/$oinkcode",
+             $temp_path . $rule_file . ".md5" );
+     }
+-    elsif ( $base_url =~ /emergingthreats\.net/i ) {
++    elsif ( $base_url =~ /(emergingthreats\.net|emergingthreatspro\.com)/i ) {
+         $getrules_md5 = getstore(
+             "$base_url/$rule_file" . ".md5",
+             $temp_path . $rule_file . ".md5"
+@@ -708,17 +713,16 @@
+     open( FH, "<$file" ) || carp "Unable to open $file\n";
+     while (<FH>) {
+         next if ( ( $_ =~ /^\s*#/ ) || ( $_ eq " " ) );
+-        if ( $_ =~ /([\d+|,|\*]*)\s+"(.+)"\s+"(.+)"/ ) {
++        if ( $_ =~ /([\d+|,|\*]*)\s+"(.+)"\s+"(.*)"/ ) {
+             my ( $sids, $from, $to ) = ( $1, $2, $3 );
+             @arry = split( /,/, $sids ) if $sids !~ /\*/;
              @arry = "*" if $sids =~ /\*/;
              foreach my $sid (@arry) {
                  $sid = trim($sid);
@@ -179,7 +254,7 @@ Index: pulledpork.pl
                  }
                  elsif ( $sid eq "*" ) {
                      print "\tModifying ALL SIDS from:$from to:$to\n"
-@@ -739,21 +739,22 @@
+@@ -739,21 +743,22 @@
  # speed ftw!
  sub modify_state {
      my ( $function, $SID_conf, $hashref, $rstate ) = @_;
@@ -206,7 +281,7 @@ Index: pulledpork.pl
              {
                  push( @sid_mod, split( /,/, $sidlist ) );
              }
-@@ -861,8 +862,8 @@
+@@ -861,8 +866,8 @@
                      if ( $gid && $sid ) {
                          $gid =~ s/:\d+//;
                          $sid =~ s/\d+://;
@@ -217,7 +292,7 @@ Index: pulledpork.pl
                                  if ( exists $$hashref{$gid}{$sid}
                                      && $$hashref{$gid}{$sid}{'rule'} =~
                                      /^\s*#\s*(alert|drop|pass)/i
-@@ -904,7 +905,7 @@
+@@ -904,7 +909,7 @@
                                      }
                                  }
                              }
@@ -226,7 +301,7 @@ Index: pulledpork.pl
                                  if ( exists $$hashref{$gid}{$sid}
                                      && $$hashref{$gid}{$sid}{'rule'} =~
                                      /^\s*#*\s*alert/i )
-@@ -919,7 +920,7 @@
+@@ -919,7 +924,7 @@
                                      $sidcount++;
                                  }
                              }
@@ -235,7 +310,7 @@ Index: pulledpork.pl
                                  if ( exists $$hashref{$gid}{$sid}
                                      && $$hashref{$gid}{$sid}{'rule'} =~
                                      /^\s*(alert|drop|pass)/i )
-@@ -974,11 +975,12 @@
+@@ -974,15 +979,16 @@
  
  ## make the sid-msg.map
  sub sid_msg {
@@ -249,7 +324,49 @@ Index: pulledpork.pl
              ( my $header, my $options ) =
                split( /^[^"]* \(\s*/, $$ruleshash{$k}{$k2}{'rule'} )
                if defined $$ruleshash{$k}{$k2}{'rule'};
-@@ -1843,6 +1845,10 @@
+-            my @optarray = split( /;(\t|\s)?/, $options ) if $options;
++            my @optarray = split( /[^\\];(\t|\s)?/, $options ) if $options;
+             foreach my $option ( reverse(@optarray) ) {
+                 my ( $kw, $arg ) = split( /:/, $option ) if $option;
+                 if ( $kw && $arg ) {
+@@ -1460,8 +1466,8 @@
+ 
+ if ( exists $Config_info{'version'} ) {
+     croak "You are not using the current version of pulledpork.conf!\n",
+-      "Please use the version that shipped with $VERSION!\n\n"
+-      if $Config_info{'version'} ne "0.6.0";
++      "Please use the version of pulledpork.conf that shipped with $VERSION!\n\n"
++      if $Config_info{'version'} ne "0.6.1";
+ }
+ else {
+     croak
+@@ -1674,6 +1680,7 @@
+     }
+     else {
+         $ENV{HTTPS_PROXY} = $proxy;
++	$ENV{HTTP_PROXY} = $proxy;
+     }
+ }
+ undef $proxy;
+@@ -1742,7 +1749,7 @@
+                     $rule_file = "snortrules-snapshot-$Snortv.tar.gz";
+                 }
+             }
+-            elsif ( $base_url =~ /emergingthreats.net/ ) {
++            elsif ( $base_url =~ /(emergingthreats.net|emergingthreatspro.com)/ ) {
+                 $prefix = "ET-";
+                 my $Snortv = $Snort;
+                 $Snortv =~ s/(?<=\d\.\d\.\d)\.\d//;
+@@ -1794,7 +1801,7 @@
+                     $rule_file = "snortrules-snapshot-$Snortv.tar.gz";
+                 }
+             }
+-            $prefix = "ET-" if $base_url =~ /emergingthreats.net/;
++            $prefix = "ET-" if $base_url =~ /(emergingthreats.net|emergingthreatspro.com)/;
+             croak "file $temp_path/$rule_file does not exist!\n"
+               unless -f "$temp_path/$rule_file";
+             rule_extract(
+@@ -1843,6 +1850,10 @@
          policy_set( $ips_policy, \%rules_hash );
      }
  
@@ -260,7 +377,7 @@ Index: pulledpork.pl
      foreach (@sidact) {
          if ( $sidmod{$_} && -f $sidmod{$_} ) {
              modify_state( $_, $sidmod{$_}, \%rules_hash, $rstate );
-@@ -1852,11 +1858,7 @@
+@@ -1852,11 +1863,7 @@
          }
      }
  
@@ -273,7 +390,7 @@ Index: pulledpork.pl
        if ( !$Quiet );
  
      my $fbits = 1;
-@@ -1878,8 +1880,7 @@
+@@ -1878,8 +1885,7 @@
      }
  
      if ($sid_msg_map) {

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	pulledpork
-# Date created:				01 Mai 2010
-# Whom:					Olli Hauer
-#
+# Create by: Olli Hauer
 # $FreeBSD$
-#
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -50,9 +46,6 @@ post-patch:
 		-e "s|/usr/local/lib/snort_dynamicrules/|${PREFIX}/etc/snort/so_rules/|g" \
 		${WRKSRC}/etc/pulledpork.conf
 	@${REINPLACE_CMD} -e "s| /usr/bin/perl|${PERL}|" ${WRKSRC}/contrib/oink-conv.pl
-# pulledpork bug id:110
-	@${REINPLACE_CMD} -e 's|distro=FreeBSD-8.0|distro=FreeBSD-8-1|g' \
-		${WRKSRC}/etc/pulledpork.conf
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${PREFIX}/bin
