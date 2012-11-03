@@ -1,28 +1,25 @@
-# New ports collection makefile for:	yelp
-# Date created:				18 May 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/yelp/Makefile,v 1.164 2010/10/18 13:37:34 kwm Exp $
-#
+#   $MCom: ports/x11/yelp/Makefile,v 1.171 2012/10/01 16:19:07 kwm Exp $
 
 PORTNAME=	yelp
 PORTVERSION=	2.30.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	LOCAL/kwm
+DISTNAME=	${PORTNAME}-webkit-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A help browser for the GNOME 2 desktop
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-    		rarian.0:${PORTSDIR}/textproc/rarian
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		startup-notification-1:${PORTSDIR}/x11/startup-notification \
+		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
+		rarian:${PORTSDIR}/textproc/rarian
 
-CONFLICTS=	yelp-2.31.*
+CONFLICTS=	yelp-3.[0-9]*
 
-USE_GECKO=	libxul19
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XORG=	ice
@@ -32,8 +29,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gecko=${GECKO:S/19//} \
-		--with-gecko-home=${LOCALBASE}/lib/${GECKO:S/19//}
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GCONF_SCHEMAS=	yelp.schemas
