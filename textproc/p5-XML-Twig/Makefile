@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-Twig
-# Date created:		13 August 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Twig
-PORTVERSION=	3.40
+PORTVERSION=	3.41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
