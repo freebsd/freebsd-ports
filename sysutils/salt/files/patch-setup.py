@@ -1,6 +1,6 @@
---- work/salt-0.10.2/setup.py.orig	2012-07-16 20:33:03.000000000 -0600
-+++ setup.py	2012-07-31 20:53:47.983862084 -0600
-@@ -71,7 +71,7 @@
+--- ./setup.py.orig	2012-10-24 04:51:35.000000000 +0400
++++ ./setup.py	2012-10-24 16:30:49.000000000 +0400
+@@ -93,7 +93,7 @@
  if 'SYSCONFDIR' in os.environ:
      etc_path = os.environ['SYSCONFDIR']
  else:
@@ -9,7 +9,7 @@
  
  libraries = ['ws2_32'] if sys.platform == 'win32' else []
  
-@@ -115,7 +115,7 @@
+@@ -139,7 +139,7 @@
                               'salt.utils',
                               ],
                  'package_data': {'salt.modules': ['rh_ip/*.jinja']},
@@ -18,14 +18,12 @@
                                  ['doc/man/salt-master.1',
                                   'doc/man/salt-key.1',
                                   'doc/man/salt.1',
-@@ -125,9 +125,8 @@
+@@ -149,7 +149,7 @@
                                   'doc/man/salt-run.1',
                                   'doc/man/salt-minion.1',
                                   ]),
 -                               ('share/man/man7', ['doc/man/salt.7']),
 +                               ('man/man7', ['doc/man/salt.7']),
                                 ],
--                'install_requires': requirements,
-                 }
- 
- if with_setuptools:
+                 'install_requires': requirements,
+                 # The dynamic module loading in salt.modules makes this

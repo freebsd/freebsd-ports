@@ -24,7 +24,7 @@ load_rc_config ${name}
 
 command="%%PREFIX%%/bin/salt-master"
 command_interpreter="%%PYTHON_CMD%%"
-required_files="%%PREFIX%%/etc/salt/master"
+required_files="%%PREFIX%%/etc/salt"
 command_args="-c ${required_files} -d"
 
 run_rc_command "$1"
