@@ -7,6 +7,7 @@ bin/kinit
 bin/klist
 bin/kpasswd
 bin/krb5-config
+bin/kswitch
 bin/ksu
 bin/ktutil
 bin/kvno
@@ -46,7 +47,10 @@ include/kadm5/admin.h
 include/kadm5/chpass_util_strings.h
 include/kadm5/kadm_err.h
 include/kdb.h
+include/krb5/preauth_plugin.h
 include/profile.h
+include/verto-module.h
+include/verto.h
 lib/libcom_err.so
 lib/libcom_err.so.3
 lib/libgssapi_krb5.so
@@ -62,14 +66,17 @@ lib/libkadm5srv.so
 lib/libkadm5srv_mit.so
 lib/libkadm5srv_mit.so.8
 lib/libkdb5.so
-lib/libkdb5.so.5
+lib/libkdb5.so.6
 lib/libkrb5.so
 lib/libkrb5.so.3
 lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
-lib/krb5/plugins/preauth/encrypted_challenge.so
 lib/krb5/plugins/preauth/pkinit.so
+lib/libverto-k5ev.so.0
+lib/libverto-k5ev.so
+lib/libverto.so.0
+lib/libverto.so
 sbin/gss-server
 sbin/kadmin.local
 sbin/kadmind
@@ -89,6 +96,7 @@ share/examples/krb5/kdc.conf
 share/examples/krb5/krb5.conf
 share/examples/krb5/services.append
 share/gnats/mit
+share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 @dirrm lib/krb5/plugins/preauth
 @dirrm lib/krb5/plugins/libkrb5
 @dirrm lib/krb5/plugins/kdb
