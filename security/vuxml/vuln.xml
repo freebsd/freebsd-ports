@@ -52,7 +52,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="65539c54-2517-11e2-b9d6-20cf30e32f6d">
-    <topic>apache22 -- several vulnerability</topic>
+    <topic>apache22 -- several vulnerabilities</topic>
     <affects>
       <package>
 	<name>apache22</name>
@@ -23920,7 +23920,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="e15f2356-9139-11de-8f42-001aa0166822">
-    <topic>apache22 -- several vulnerability</topic>
+    <topic>apache22 -- several vulnerabilities</topic>
     <affects>
       <package>
 	<name>apache</name>
