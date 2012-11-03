@@ -1,12 +1,8 @@
-# Ports collection makefile for:	p5-HTTP-Body
-# Date created:			Nov 15, 2005
-# Whom:				Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Body
-PORTVERSION=	1.15
+PORTVERSION=	1.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GETTY
