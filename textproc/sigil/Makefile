@@ -1,13 +1,8 @@
-# New ports collection makefile for:	sigil
-# Date created:		2010-09-07
-# Whom:			Jonathan Chen <jonc@chen.org.nz>
-#
+# Created by: Jonathan Chen <jonc@chen.org.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	sigil
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	Sigil-${PORTVERSION}-Code
@@ -15,31 +10,25 @@ DISTNAME=	Sigil-${PORTVERSION}-Code
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
-		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
-		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
+		xerces-c:${PORTSDIR}/textproc/xerces-c3 \
+		hunspell-1:${PORTSDIR}/textproc/hunspell \
+		pcre:${PORTSDIR}/devel/pcre
+
+LICENCE=	GPLv3
 
 USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_DOS2UNIX=	CMakeLists.txt DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
 NO_WRKSUBDIR=	yes
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
-
-DESKTOP_ENTRIES="Sigil Editor" \
-		"${COMMENT}" \
-		"${PREFIX}/share/pixmaps/sigil.png" \
-		"sigil" \
-		"Application;" \
-		${FALSE}
+USE_GNOME=	desktopfileutils
+USE_PKGCONFIG=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.pre.mk>
+post-install:
+	@-update-desktop-database > /dev/null
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
