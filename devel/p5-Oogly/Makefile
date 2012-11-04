@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Oogly
-# Date created:	   20 Dec 2010
-# Whom:		   Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Oogly
 PORTVERSION=	0.31
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AWNCORP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A Data validation idea that just might be ideal
 
 BUILD_DEPENDS=	p5-Array-Unique>0:${PORTSDIR}/devel/p5-Array-Unique \

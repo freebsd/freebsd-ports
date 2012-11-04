@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sub-Signatures
-# Date created:	   21 Nov 2010
-# Whom:		   Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sub-Signatures
 PORTVERSION=	0.21
@@ -12,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Use proper signatures for subroutines, including dispatching
 
 BUILD_DEPENDS=	p5-Sub-Uplevel>=0.12:${PORTSDIR}/devel/p5-Sub-Uplevel

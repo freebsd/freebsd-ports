@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evas-loader-bmp
-# Date created:		14 June 2010
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	loader-bmp
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${DISTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (BMP loader)
 
 LICENSE=	BSD

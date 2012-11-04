@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evas_generic_loaders-pdf
-# Date created:		9 March 2012
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pdf
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	evas_generic_loaders-
 DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Additional loader for Evas (pdf)
 
 LICENSE=	GPLv2

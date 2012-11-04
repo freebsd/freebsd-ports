@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecore
-# Date created:		22 September 2007
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ecore
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (meta port)
 
 NO_BUILD=	yes

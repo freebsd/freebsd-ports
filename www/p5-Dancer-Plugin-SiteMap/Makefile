@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Dancer-Plugin-SiteMap
-# Date created:				2012-01-27
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-SiteMap
 PORTVERSION=	0.11
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JAMESR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Automated site map for the Dancer web framework
 
 LICENSE=	ART10 GPLv1

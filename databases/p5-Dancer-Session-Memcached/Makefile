@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Dancer-Session-Memcached
-# Date created:		31 Dec 2010
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Session-Memcached
 PORTVERSION=	0.2.02
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Memcached-based session backend for Dancer
 
 BUILD_DEPENDS=	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \

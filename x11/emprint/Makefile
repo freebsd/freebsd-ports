@@ -1,16 +1,12 @@
-# New ports collection makefile for:	efreet
-# Date created:				28 September 2007
-# Whom:					Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	emprint
 PORTVERSION=	20111128
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/extra/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Utility for taking screenshots for E17
 
 DIST_SUBDIR=	e17

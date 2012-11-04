@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://files.roorback.net/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2

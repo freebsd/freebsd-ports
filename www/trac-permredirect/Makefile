@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-permredirect
-# Date created:                      2012-01-22
-# Whom:                              Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	permredirect
 PORTVERSION=	2.0.${REV}
@@ -12,7 +8,7 @@ MASTER_SITES=	http://trac-hacks.org/changeset/${REV}/${PORTNAME}plugin/${BRANCH}
 		http://files.roorback.net/
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Redirect users to the login screen on PermissionError
 
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac

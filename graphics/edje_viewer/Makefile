@@ -1,17 +1,12 @@
-# New ports collection makefile for:	edje_viewer
-# Date created:		2006-08-14
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	edje_viewer
 PORTVERSION=	20111128
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/extra/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A simple viewer for .edj files
 
 DIST_SUBDIR=	e17

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecore-input
-# Date created:				16 May 2010
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	input
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (input module)
 
 LICENSE=	BSD

@@ -31,7 +31,7 @@
 # Feel free to send any comments and suggestion to maintainer.
 #
 
-EFL_Include_MAINTAINER=	magik@roorback.net
+EFL_Include_MAINTAINER=	gblach@FreeBSD.org
 
 #
 # Define all supported libraries

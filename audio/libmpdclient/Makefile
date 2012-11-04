@@ -1,16 +1,12 @@
-# New ports collection makefile for:	libmpdclient
-# Date created:		Dec 23 2009
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmpdclient
 PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	API library for interfacing MPD
 
 USE_BZIP2=	yes

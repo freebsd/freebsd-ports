@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-module-everything-shotgun
-# Date created:		21 April 2012
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	everything-shotgun
 PORTVERSION=	20111128
@@ -11,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	An e17 shotgun plugin for the "everything" module
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

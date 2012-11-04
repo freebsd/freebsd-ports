@@ -1,9 +1,5 @@
-# New ports collection makefile for:	expedite
-# Date created:			10 March 2012
-# Whom:				Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	expedite
 DISTVERSION=	1.1.0
@@ -11,7 +7,7 @@ CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-12-02/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Expedite is a benchmark suite for Evas
 
 LICENSE=	BSD

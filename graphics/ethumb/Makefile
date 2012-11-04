@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ethumb
-# Date created:				29 August 2010
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ethumb
 PORTVERSION=	0.1.1.65643
@@ -11,7 +7,7 @@ CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
 		http://files.roorback.net/e17/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Thumbnail generator library
 
 LICENSE=	LGPL21

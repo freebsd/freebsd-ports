@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-module-news
-# Date created:		29 January 2011
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	news
 PORTVERSION=	20111128
@@ -11,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A module to display information feeds like Rss
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

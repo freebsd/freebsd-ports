@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enlightenment
-# Date created:			10 June 1997
-# Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.999.65643
@@ -12,7 +8,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
 		http://files.roorback.net/e17/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
 LICENSE=	BSD

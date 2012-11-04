@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cursor-neutral-white-theme
-# Date created:			28 Nov 2010
-# Whom:				Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cursor-neutral-white-theme
 DISTVERSION=	1.1
@@ -11,7 +7,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	108143-Neutral++_White-${DISTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	White cursor theme based on neutral
 
 USE_BZIP2=	yes

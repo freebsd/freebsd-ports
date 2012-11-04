@@ -1,10 +1,5 @@
-# New ports collection makefile for:	winselector
-# Date created:		2006-08-15
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	winselector
 PORTVERSION=	20111128
@@ -12,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	An e17 module to switch between windows
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

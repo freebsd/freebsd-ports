@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Feersum
-# Date created:				2010-12-20
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Feersum
 PORTVERSION=	1.400
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:STASH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A PSGI engine for Perl based on EV/libev
 
 LICENSE=	ART10 GPLv1

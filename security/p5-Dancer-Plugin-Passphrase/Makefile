@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Dancer-Plugin-Passphrase
-# Date created:				2012-01-24
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-Passphrase
 PORTVERSION=	1.0.0
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JAITKEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Passphrases and Passwords as objects for Dancer
 
 LICENSE=	ART10 GPLv1

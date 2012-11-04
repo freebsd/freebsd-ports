@@ -1,16 +1,12 @@
-# New ports collection makefile for:	pretty.go
-# Date created:				4 Nov, 2010
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	prettygo
 PORTVERSION=	20120306
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/jlaffaye
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Pretty-printing package for go values
 
 USE_GO=		yes

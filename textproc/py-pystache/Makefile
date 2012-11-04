@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pystache
-# Date created:				19 March 2012
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pystache
@@ -10,7 +7,7 @@ CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Logic-less templates for Python
 
 LICENSE=	MIT

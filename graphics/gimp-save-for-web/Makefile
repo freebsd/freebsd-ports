@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-save-for-web
-# Date created:		2009-11-25
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gimp-save-for-web
 PORTVERSION=	0.29.3
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	GIMP Save For Web plugin
 
 LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app

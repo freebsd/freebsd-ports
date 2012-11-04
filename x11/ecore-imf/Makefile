@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecore-imf
-# Date created:				17 September 2007
-# Whom:					Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imf
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (IMF module)
 
 LICENSE=	BSD

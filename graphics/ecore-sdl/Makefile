@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecore-sdl
-# Date created:				22 September 2007
-# Whom:					Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (sdl module)
 
 LICENSE=	BSD

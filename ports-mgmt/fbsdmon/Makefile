@@ -1,4 +1,4 @@
-# Created by: Grzegorz Blach <magik@roorback.net>
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fbsdmon
@@ -6,7 +6,7 @@ PORTVERSION=	0.93
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://files.roorback.net/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Submit system and ports statistics to fbsdmon.org
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

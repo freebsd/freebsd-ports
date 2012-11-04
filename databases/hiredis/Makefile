@@ -1,15 +1,11 @@
-# New ports collection makefile for:	hiredis
-# Date created:	   29 December 2010
-# Whom:		   Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hiredis
 DISTVERSION=	0.11.0
 CATEGORIES=	databases
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Minimalistic C client library for the Redis database
 
 LICENSE=	BSD

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-modules
-# Date created:				12 November 2010
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	e17-modules
 PORTVERSION=	20111128
@@ -11,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Meta-port for e17 modules
 
 NO_BUILD=	yes
