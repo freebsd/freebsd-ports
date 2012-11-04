@@ -47,6 +47,7 @@
     SUBDIR += aoi
     SUBDIR += aolserver-nsgd
     SUBDIR += apngasm
+    SUBDIR += apngdis
     SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += asciio
