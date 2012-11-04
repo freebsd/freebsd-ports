@@ -3,5 +3,6 @@ bin/qrqscore
 %%DATADIR%%/callbase.qcb
 %%DATADIR%%/english.qcb
 %%DATADIR%%/qrqrc
+%%DATADIR%%/qrq.png
 %%DATADIR%%/toplist
 @dirrm %%DATADIR%%
