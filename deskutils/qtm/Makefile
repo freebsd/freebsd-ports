@@ -1,12 +1,9 @@
-# New ports collection makefile for:	qtm
-# Date created:		22 Jun 2007
-# Whom:			Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	qtm
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.12
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin/${PORTNAME}-1.3 \
 		http://www.c-s.li/ports/
