@@ -2,12 +2,22 @@ bin/gsynaptics
 bin/gsynaptics-init
 share/applications/gsynaptics.desktop
 share/gnome/autostart/gsynaptics-init.desktop
-share/gsynaptics/gsynaptics.glade
+share/gnome/help/gsynaptics/C/gsynaptics.xml
+share/gnome/help/gsynaptics/C/legal.xml
+%%DATADIR%%/gsynaptics.glade
+share/locale/ar/LC_MESSAGES/gsynaptics.mo
+share/locale/el/LC_MESSAGES/gsynaptics.mo
 share/locale/es/LC_MESSAGES/gsynaptics.mo
 share/locale/fr/LC_MESSAGES/gsynaptics.mo
+share/locale/hu/LC_MESSAGES/gsynaptics.mo
 share/locale/ja/LC_MESSAGES/gsynaptics.mo
+share/locale/nb/LC_MESSAGES/gsynaptics.mo
+share/locale/pl/LC_MESSAGES/gsynaptics.mo
+share/locale/ru/LC_MESSAGES/gsynaptics.mo
 share/locale/zh_CN/LC_MESSAGES/gsynaptics.mo
 share/locale/zh_TW/LC_MESSAGES/gsynaptics.mo
 share/pixmaps/touchpad.png
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/gsynaptics/C
+@dirrm share/gnome/help/gsynaptics
 @dirrmtry share/applications
-@dirrm share/gsynaptics
