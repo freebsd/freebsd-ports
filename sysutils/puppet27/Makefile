@@ -25,6 +25,8 @@ USERS=		puppet
 GROUPS=		puppet
 SUB_FILES+=	pkg-message
 
+PORTSCOUT=	limit:^2\.7\.
+
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
 MAN8=	filebucket.8 pi.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
