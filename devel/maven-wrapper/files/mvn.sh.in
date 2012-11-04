@@ -26,4 +26,4 @@ if [ -z "${M2_HOME}" ] ; then
 fi
 
 export M2_HOME
-exec "${M2_HOME}/bin/mvn" $@
+exec "${M2_HOME}/bin/mvn" "$@"
