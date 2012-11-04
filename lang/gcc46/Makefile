@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4.20121026
+PORTVERSION=	4.6.4.20121102
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -60,7 +60,8 @@ TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=--disable-nls \
+CONFIGURE_ARGS+=--disable-bootstrap \
+		--disable-nls \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -72,7 +73,6 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
