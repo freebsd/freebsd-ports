@@ -3754,7 +3754,6 @@ x11-clocks/wmdate||2012-10-25|Has expired: No more public distfiles
 x11/multi-gnome-terminal||2012-10-25|Has expired: depends on deprecated gnome1 things
 www/wacko||2012-10-25|Has expired: No more public distfiles
 sysutils/wtmp-tools||2012-10-25|Has expired: No more public distfiles
-sysutils/reed||2012-10-25|Has expired: No more public distfiles
 sysutils/pdumpfs-rsync||2012-10-25|Has expired: No more public distfiles
 sysutils/pdumpfs-clean||2012-10-25|Has expired: No more public distfiles
 sysutils/netdump-server||2012-10-25|Has expired: No more public distfiles
