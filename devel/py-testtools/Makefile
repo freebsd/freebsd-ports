@@ -1,14 +1,11 @@
-# New ports collection makefile for:	testtools
-# Date created:				2010-08-25
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
 #
 
 PORTNAME=	testtools
-PORTVERSION=	0.9.16
+PORTVERSION=	0.9.21
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/112414996/ \
+MASTER_SITES=	http://launchpadlibrarian.net/121090421/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
