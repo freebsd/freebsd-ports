@@ -49,6 +49,7 @@
 %%DATADIR%%/etc/web2ldap/templates/inputform_pwdPolicy.html
 %%DATADIR%%/etc/web2ldap/templates/login.html
 %%DATADIR%%/etc/web2ldap/templates/login.html.de
+%%DATADIR%%/etc/web2ldap/templates/passwd.html
 %%DATADIR%%/etc/web2ldap/templates/print_organization.html
 %%DATADIR%%/etc/web2ldap/templates/print_organizationalUnit.html
 %%DATADIR%%/etc/web2ldap/templates/print_person.html

@@ -1,12 +1,8 @@
-# New ports collection makefile for:   web2ldap
-# Date created:        21 July 2000
-# Whom:                Oddbjorn Steffensen <oddbjorn@tricknology.org>
-#
+# Created by: Oddbjorn Steffensen <oddbjorn@tricknology.org>
 # $FreeBSD$
-#
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.1.24
+PORTVERSION=	1.1.25
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.sfr-fresh.com/unix/www/
