@@ -4,6 +4,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -38,7 +39,7 @@ SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN}
 PLIST_SUB=	WWWOWN=${WWWOWN}:${WWWGRP}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PHP2FIX=	config.php-dist update.php
+PHP2FIX=	config.php-dist update.php update_daemon2.php
 
 SCRIPTS=	update.php update_daemon2.php
 
@@ -54,6 +55,7 @@ pre-everything::
 pre-configure:
 .for script in ${PHP2FIX}
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
+		-e 's|/usr/bin/env php| ${LOCALBASE}/bin/php|'		\
 		${WRKSRC}/${script}
 .endfor
 	${REINPLACE_CMD} -e 's|/usr/bin/curl|${LOCALBASE}/bin/curl|' \
