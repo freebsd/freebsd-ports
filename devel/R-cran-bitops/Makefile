@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-bitops
-# Date created:		2011-08-28
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bitops
-DISTVERSION=	1.0-4.1
-PORTREVISION=	6
+DISTVERSION=	1.0-4.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
