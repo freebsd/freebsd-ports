@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121104:
+  AFFECTS: users of lang/perl5.16
+  AUTHOR: az@FreeBSD.org
+
+  lang/perl5.16 has been updated to 5.16.2.  You should update everything
+  that depends on perl.  The easiest way to do that is to use
+  "perl-after-upgrade" script supplied with lang/perl5.16.
+  Please see its manual page for details.
+
 20121102:
   AFFECTS: users of shells/bash-completion
   AUTHOR: adamw@FreeBSD.org
