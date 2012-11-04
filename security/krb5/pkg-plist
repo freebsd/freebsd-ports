@@ -97,6 +97,8 @@ share/examples/krb5/krb5.conf
 share/examples/krb5/services.append
 share/gnats/mit
 share/locale/en_US/LC_MESSAGES/mit-krb5.mo
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 @dirrm lib/krb5/plugins/preauth
 @dirrm lib/krb5/plugins/libkrb5
 @dirrm lib/krb5/plugins/kdb
