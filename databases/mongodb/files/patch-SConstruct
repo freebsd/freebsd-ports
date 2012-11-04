@@ -1,23 +1,99 @@
---- ./SConstruct.orig	2012-06-29 09:53:07.000000000 -0400
-+++ ./SConstruct	2012-06-29 10:34:03.000000000 -0400
-@@ -800,8 +800,9 @@
-     options_topass["nix"] = nix
-     
-     if has_option( "use-system-" + shortName ) or has_option( "use-system-all" ):
--        print( "using system version of: " + shortName )
--        myModule.configureSystem( env , fileLists , options_topass )
-+        if not (shortName == 'sm' and usev8):
-+            print( "using system version of: " + shortName )
-+            myModule.configureSystem( env , fileLists , options_topass )
-     else:
-         myModule.configure( env , fileLists , options_topass )
+diff -ru ./SConstruct ../../mongodb-src-r2.2.0/SConstruct
+--- ./SConstruct	2012-08-28 09:28:11.000000000 +0400
++++ ../../mongodb-src-r2.2.0/SConstruct	2012-10-14 14:04:31.000000000 +0400
+@@ -790,6 +790,20 @@
+             print( "c++ compiler not installed!" )
+             Exit(1)
  
-@@ -1461,7 +1462,7 @@
-     fullInstallName = installDir + "/bin/" + name
++    if use_system_version_of_library("pcre"):
++        if not conf.CheckLib("pcrecpp"):
++            Exit(1)
++        if not conf.CheckLib("pcre"):
++            Exit(1)
++
++    if use_system_version_of_library("snappy"):
++        if not conf.CheckLib("snappy"):
++            Exit(1)
++
++    if use_system_version_of_library("js"):
++        if not conf.CheckLib("js"):
++            Exit(1)
++
+     if use_system_version_of_library("boost"):
+         if not conf.CheckCXXHeader( "boost/filesystem/operations.hpp" ):
+             print( "can't find boost headers" )
+@@ -1100,7 +1114,7 @@
+ Export("has_option use_system_version_of_library")
+ Export("installSetup")
+ Export("usesm usev8")
+-Export("darwin windows solaris linux nix")
++Export("darwin windows solaris linux nix freebsd")
  
-     allBinaries += [ name ]
+ env.SConscript( 'src/SConscript', variant_dir='$BUILD_DIR', duplicate=False )
+ env.SConscript( 'src/SConscript.client', variant_dir='$BUILD_DIR/client_build', duplicate=False )
+diff -ru ./src/SConscript.client ../../mongodb-src-r2.2.0/src/SConscript.client
+--- ./src/SConscript.client	2012-08-28 09:28:11.000000000 +0400
++++ ../../mongodb-src-r2.2.0/src/SConscript.client	2012-10-14 16:48:25.000000000 +0400
+@@ -134,7 +134,7 @@
+ # install
+ prefix = GetOption("prefix")
+ 
+-env.Install(prefix + "/lib", '${LIBPREFIX}mongoclient${LIBSUFFIX}')
++env.InstallAs(prefix + "/lib", '${LIBPREFIX}mongoclient${LIBSUFFIX}')
+ 
+ for x in clientHeaderDirectories:
+     env.Install(prefix + "/include/mongo/" + x,
+diff -ru ./src/mongo/SConscript ../../mongodb-src-r2.2.0/src/mongo/SConscript
+--- ./src/mongo/SConscript	2012-08-28 09:28:11.000000000 +0400
++++ ../../mongodb-src-r2.2.0/src/mongo/SConscript	2012-10-14 21:34:12.000000000 +0400
+@@ -11,7 +11,7 @@
+ Import("has_option")
+ Import("usesm usev8")
+ Import("installSetup")
+-Import("darwin windows solaris linux nix")
++Import("darwin windows solaris linux nix freebsd")
+ 
+ env.SConscript(['platform/SConscript',
+                 'unittest/SConscript'])
+@@ -170,7 +170,7 @@
+ 
+ if usesm:
+     env.StaticLibrary('scripting', scripting_common_files + ['scripting/engine_spidermonkey.cpp'],
+-                      LIBDEPS=['$BUILD_DIR/third_party/js-1.7/js', 'bson_template_evaluator'])
++                      LIBDEPS=['bson_template_evaluator'], CPPDEFINES=["XP_UNIX"])
+ elif usev8:
+     env.StaticLibrary('scripting', scripting_common_files + ['scripting/engine_v8.cpp',
+                                                              'scripting/v8_db.cpp',
+@@ -519,7 +519,7 @@
+     if (not has_option( "no-glibc-check" ) and linux and "s3dist" in COMMAND_LINE_TARGETS):
+         e.AddPostAction( name, checkGlibc )
+ 
 -    if (solaris or linux) and (not has_option("nostrip")):
 +    if (solaris or linux or freebsd) and (not has_option("nostrip")):
-         e.AddPostAction( inst, e.Action( 'strip ' + fullInstallName ) )
+         name = e.Command('stripped/%s' % name, name, Copy('$TARGET', '$SOURCE'))[0]
+         e.AddPostAction(name, 'strip $TARGET')
  
-     if not has_option( "no-glibc-check" ) and linux and len( COMMAND_LINE_TARGETS ) == 1 and str( COMMAND_LINE_TARGETS[0] ) == "s3dist":
+diff -ru ./src/mongo/scripting/engine_spidermonkey.cpp ../../mongodb-src-r2.2.0/src/mongo/scripting/engine_spidermonkey.cpp
+--- ./src/mongo/scripting/engine_spidermonkey.cpp	2012-08-28 09:28:11.000000000 +0400
++++ ../../mongodb-src-r2.2.0/src/mongo/scripting/engine_spidermonkey.cpp	2012-10-14 21:34:33.000000000 +0400
+@@ -25,7 +25,7 @@
+ #include <boost/date_time/posix_time/posix_time.hpp>
+ #endif
+ 
+-#include <third_party/js-1.7/jsdate.h>
++#include <jsdate.h>
+ 
+ #include "mongo/util/mongoutils/str.h"
+ 
+diff -ru ./src/mongo/scripting/engine_spidermonkey.h ../../mongodb-src-r2.2.0/src/mongo/scripting/engine_spidermonkey.h
+--- ./src/mongo/scripting/engine_spidermonkey.h	2012-08-28 09:28:11.000000000 +0400
++++ ../../mongodb-src-r2.2.0/src/mongo/scripting/engine_spidermonkey.h	2012-10-14 21:35:21.000000000 +0400
+@@ -29,7 +29,7 @@
+ #define JS_PUBLIC_DATA(t)   t
+ #endif
+ 
+-#include <third_party/js-1.7/jsapi.h>
++#include <jsapi.h>
+ 
+ // END inc hacking
+ 
