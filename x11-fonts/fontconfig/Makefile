@@ -61,9 +61,8 @@ post-install:
 		s|%%LOCALBASE%%|${LOCALBASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}
 .if !defined(PACKAGE_BUILDING)
-	@${LDCONFIG} -m ${PREFIX}/lib
+	-@${LDCONFIG} -m ${PREFIX}/lib
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .endif
 
 .include <bsd.port.post.mk>
