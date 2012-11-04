@@ -1,12 +1,9 @@
-# New ports collection makefile for:   hiawatha
-# Date created:        24 november 2006
-# Whom:                Hugo Leisink <hugo@leisink.net>
-#
+# Created by: Hugo Leisink
 # $FreeBSD$
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	8.5
+PORTVERSION=	8.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
