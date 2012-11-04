@@ -55,9 +55,9 @@
              end.millitm,
 +#else
 +            (int)start.tv_sec,
-+            start.tv_usec,
++            start.tv_usec / 1000,
 +            (int)end.tv_sec,
-+            end.tv_usec,
++            end.tv_usec / 1000,
 +#endif
              return_code,
              output);
