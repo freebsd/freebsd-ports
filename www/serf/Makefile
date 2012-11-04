@@ -23,6 +23,9 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-1-config
 
+post-patch:
+	${REINPLACE_CMD} -e '/^Requires.private/d' ${WRKSRC}/serf.pc.in
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
