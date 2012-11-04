@@ -188,7 +188,6 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Semaphore.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SharedMem.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SysV.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util/PP.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util/XS.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/Base64.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
@@ -204,7 +203,6 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/scalar.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/via.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/SDBM_File.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util/PP.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Socket.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Storable.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Hostname.pm
@@ -714,6 +712,7 @@ lib/perl5/%%PERL_VER%%/Module/Build/Platform/os2.pm
 lib/perl5/%%PERL_VER%%/Module/Build/PodParser.pm
 lib/perl5/%%PERL_VER%%/Module/Build/Version.pm
 lib/perl5/%%PERL_VER%%/Module/Build/YAML.pm
+lib/perl5/%%PERL_VER%%/Module/CoreList/TieHashDelta.pm
 lib/perl5/%%PERL_VER%%/Module/CoreList.pm
 lib/perl5/%%PERL_VER%%/Module/CoreList.pod
 lib/perl5/%%PERL_VER%%/Module/Load.pm
@@ -1039,7 +1038,10 @@ lib/perl5/%%PERL_VER%%/pod/perl5124delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5140delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5141delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5142delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5143delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5160delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5161delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5162delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl561delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl56delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl581delta.pod
@@ -1521,7 +1523,7 @@ lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC122.pl
 lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC129.pl
 lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC13.pl
 lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC130.pl
-lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC133.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC132.pl
 lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC14.pl
 lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC15.pl
 lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC16.pl
@@ -2086,6 +2088,7 @@ lib/perl5/%%PERL_VER%%/vmsish.pm
 lib/perl5/%%PERL_VER%%/warnings.pm
 lib/perl5/%%PERL_VER%%/warnings/register.pm
 %%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
 %%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
@@ -2178,7 +2181,6 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt
@@ -2330,6 +2332,7 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @dirrm lib/perl5/%%PERL_VER%%/Module/Load
 @dirrm lib/perl5/%%PERL_VER%%/Module/Build/Platform
 @dirrm lib/perl5/%%PERL_VER%%/Module/Build
+@dirrm lib/perl5/%%PERL_VER%%/Module/CoreList
 @dirrm lib/perl5/%%PERL_VER%%/Module
 @dirrm lib/perl5/%%PERL_VER%%/Memoize
 @dirrm lib/perl5/%%PERL_VER%%/Math/BigInt
