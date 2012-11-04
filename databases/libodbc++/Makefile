@@ -6,14 +6,19 @@
 #
 
 PORTNAME=	libodbc++
-PORTVERSION=	0.2.3
-PORTREVISION=	8
+PORTVERSION=	0.2.5
+PORTREVISION=	0
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C++ class library and toolset for ODBC access to data sources
 
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig
@@ -21,35 +26,33 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-isqlxx
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CXXFLAGS+=	${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 
-# libodbc++ needs an ODBC driver manager to be installed, and it supports
-# both iODBC and unixODBC.
+OPTIONS_SINGLE=	ODBC
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+OPTIONS_DEFAULT=	ODBC IODBC
 
-.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
-IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
-WITH_UNIXODBC?=	yes
-.endif
-
-.if defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
-.elif defined(WITH_UNIXODBC)
+.endif
+
+.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS=	odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	INSTALL progref
+PORTDOCS=	progref
 
-.ifdef NOPORTDOCS
+.if defined(NOPORTDOCS)
 post-patch:
-	${REINPLACE_CMD} '/install-data-am:/s/install-data-local//' \
-		${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} '/install-data-am:/s/install-data-local//' \
-		${WRKSRC}/doc/progref/Makefile.in
+	${REINPLACE_CMD} '/^SUBDIRS/s/=.*/=/' ${WRKSRC}/doc/Makefile.in
+.else
+post-extract:
+	${RM} -f ${WRKSRC}/doc/progref/progref-stamp
 .endif
 
 .include <bsd.port.mk>

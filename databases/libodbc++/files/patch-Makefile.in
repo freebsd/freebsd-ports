@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu May 13 04:22:06 2004
-+++ Makefile.in	Thu May 13 04:22:20 2004
-@@ -140,7 +140,7 @@
+--- Makefile.in.orig	2009-08-21 04:41:27.000000000 +0700
++++ Makefile.in	2012-11-03 18:11:42.000000000 +0700
+@@ -244,7 +244,7 @@
+ 	m4/ac_check_odbc.m4
  
  ACLOCAL_AMFLAGS = -I m4
- 
 -pkgconfdir = $(libdir)/pkgconfig
 +pkgconfdir = $(prefix)/libdata/pkgconfig
  pkgconf_DATA = libodbc++.pc
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
