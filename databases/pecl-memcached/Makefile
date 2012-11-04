@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-memcached
-# Date created:		2009-01-31
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	memcached
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -29,14 +25,15 @@ USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 CONFIGURE_ARGS+=--with-libmemcached-dir=${LOCALBASE}
 
-OPTIONS=	IGBINARY "Binary serializer support" off
+OPTIONS_DEFINE=	IGBINARY
+IGBINARY_DESC=	Binary serializer support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IGBINARY)
+.if ${PORT_OPTIONS:MIGBINARY}
 CONFIGURE_ARGS+=--enable-memcached-igbinary
 BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
