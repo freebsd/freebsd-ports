@@ -745,6 +745,7 @@
     SUBDIR += rdup
     SUBDIR += readlink
     SUBDIR += recoverdm
+    SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
     SUBDIR += relpath

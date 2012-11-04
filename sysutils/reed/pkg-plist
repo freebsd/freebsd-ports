@@ -1,0 +1,5 @@
+bin/breed
+bin/reed
+bin/wrap
+share/reed/fix_bookmarks.pl
+@dirrm share/reed
