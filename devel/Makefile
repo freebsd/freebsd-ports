@@ -530,6 +530,7 @@
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-merge-changelog
+    SUBDIR += git-review
     SUBDIR += git-subversion
     SUBDIR += gitg
     SUBDIR += gitolite
