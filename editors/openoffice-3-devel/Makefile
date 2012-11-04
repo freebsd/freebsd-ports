@@ -68,7 +68,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1403191
+SVNREVISION=		1405434
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -209,9 +209,9 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
 			--with-system-beanshell	\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
-			--without-fonts
+			--without-fonts \
+			--with-system-serf
 #			--with-system-jpeg
-#			--with-system-serf \
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
