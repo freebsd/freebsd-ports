@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Dancer-Template-Xslate
-# Date created:		23 October 2011
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Template-Xslate
 PORTVERSION=	0.03
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSIMOES
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Text::Xslate wrapper for Dancer
 
 LICENSE=	ART10 GPLv1

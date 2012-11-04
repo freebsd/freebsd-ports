@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jupp
-# Date created:				2010-11-15
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jupp
 PORTVERSION=	3.1.22
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 DISTNAME=	joe-${PORTVERSION:C/([0-9]+\.[0-9]+)\.([0-9]+)/\1${PORTNAME}\2/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Portable version of Joe's Own Editor from MirBSD
 
 LICENSE=	GPLv1

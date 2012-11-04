@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evas
-# Date created:		24 Oct 2000
-# Whom:			Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	evas
 DISTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (meta-port)
 
 NO_BUILD=	yes

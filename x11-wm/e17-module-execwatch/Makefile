@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-module-execwatch
-# Date created:		07 January 2010
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	execwatch
 PORTVERSION=	20111128
@@ -11,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	An e17 module to show state of a periodically executed command
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

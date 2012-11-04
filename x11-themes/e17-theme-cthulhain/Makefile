@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-theme-cthulhain
-# Date created:		5 June 2006
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cthulhain
 PORTVERSION=	0.4.5
@@ -15,7 +11,7 @@ MASTER_SITE_SUBDIR=	Themes/E17
 PKGNAMEPREFIX=	e17-theme-
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Cthulhain theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

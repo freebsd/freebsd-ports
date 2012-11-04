@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e_dbus
-# Date created:				23 February 2008
-# Whom:					Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	e_dbus
 DISTVERSION=	1.1.0
@@ -12,7 +8,7 @@ CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-12-02/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	EFL DBUS connectivity library
 
 LICENSE=	BSD

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	emotion
-# Date created:		2006-07-16
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	emotion
 PORTVERSION=	0.2.0.65643
@@ -13,7 +8,7 @@ CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
 		http://files.roorback.net/e17/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Video playback wrapper library for Enlightenment
 
 LICENSE=	BSD

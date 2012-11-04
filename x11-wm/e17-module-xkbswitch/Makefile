@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-module-xkbswitch
-# Date created:		21 April 2012
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xkbswitch
 PORTVERSION=	20111128
@@ -11,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	X keyboard switcher module for Enlightenment 0.17
 
 LIB_DEPENDS=	xkbfile.1:${PORTSDIR}/x11/libxkbfile

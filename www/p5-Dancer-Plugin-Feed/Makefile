@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Dancer-Plugin-Feed
-# Date created:		01 March 2011
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-Feed
 PORTVERSION=	0.8
@@ -11,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Dancer plugin for generating RSS or Atom feeds
 
 LICENSE=	ART10 GPLv1

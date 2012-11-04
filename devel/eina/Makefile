@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eina
-# Date created:		Dec 10 2009
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	eina
 DISTVERSION=	1.1.0
@@ -11,7 +7,7 @@ CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-12-02/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment API for data types
 
 LICENSE=	LGPL21

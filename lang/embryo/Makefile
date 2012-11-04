@@ -1,9 +1,5 @@
-# New ports collection makefile for:	embryo
-# Date created:				08/08/2004
-# Whom:					vanilla
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	embryo
 DISTVERSION=	1.1.0
@@ -12,7 +8,7 @@ CATEGORIES=	lang enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-12-02/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A C like scripting language used in Enlightenment
 
 LICENSE=	BSD

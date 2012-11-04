@@ -1,4 +1,4 @@
-# Created by: Grzegorz Blach <magik@roorback.net>
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ninja
@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Ninja is a small build system closest in spirit to Make
 
 LICENSE=	AL2

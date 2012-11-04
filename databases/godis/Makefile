@@ -1,16 +1,12 @@
-# New ports collection makefile for:	godis
-# Date created:				20 June , 2011
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	godis
 PORTVERSION=	20120405
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/jlaffaye
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A Redis client library written in Go
 
 USE_GO=		yes

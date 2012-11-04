@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Dancer-Plugin-Redis
-# Date created:		31 August 2011
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-Redis
 PORTVERSION=	0.02
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CSCM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Redis database connector for Dancer
 
 LICENSE=	ART10 GPLv1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e17-theme-darkness
-# Date created:		22 August 2006
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	darkness
 PORTVERSION=	0.99.042
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	e17-theme-
 DISTNAME=	Darkness_by_saturn_vk
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Darkness theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

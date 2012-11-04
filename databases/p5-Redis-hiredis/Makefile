@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Redis-hiredis
-# Date created:		29 December 2010
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Redis-hiredis
 PORTVERSION=	0.10.2
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEOPHENIX
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A Simple wrapper around hiredis C client
 
 PERL_CONFIGURE=	yes

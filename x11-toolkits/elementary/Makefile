@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elementary
-# Date created:				07 January 2010
-# Whom:					Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elementary
 PORTVERSION=	0.8.0.65643
@@ -11,7 +7,7 @@ CATEGORIES=	x11-toolkits enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
 		http://files.roorback.net/e17/base/
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Simple widget toolkit using EFL
 
 LICENSE=	LGPL21

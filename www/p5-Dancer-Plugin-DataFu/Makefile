@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Dancer-Plugin-DataFu
-# Date created:		20 Dec 2010
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-DataFu
 PORTVERSION=	1.103070
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AWNCORP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Dancer HTML Form and Grid/Table engine with Input Validation
 
 RUN_DEPENDS=    p5-Dancer>=1.2:${PORTSDIR}/www/p5-Dancer \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ario
-# Date created:		Oct 07 2009
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ario
 PORTVERSION=	1.5.1
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Ario is a GTK2 client for MPD
 
 LICENSE=	GPLv2
