@@ -1,13 +1,9 @@
-# ex:ts=8
-# New ports collection makefile for:	match
-# Date created:			Dec 17, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 #
 
 PORTNAME=	match
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	astro
 MASTER_SITES=	http://spiff.rit.edu/match/ \
 		http://www.c-s.li/ports/
