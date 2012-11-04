@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-ROAuth
-# Date created:		2011-09-04
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ROAuth
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	0.9.2
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
