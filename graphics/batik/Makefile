@@ -1,20 +1,17 @@
-# Ports collection makefile for:	batik
-# Date created:			Feb 25, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	batik
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	xmlgraphics/${PORTNAME}
+MASTER_SITES=	APACHE/xmlgraphics/${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	SVG Toolkit
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Java based SVG toolkit
+
+LICENSE=	AL2
 
 USE_ZIP=	yes
 USE_JAVA=	1.5+
@@ -27,7 +24,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+PORTDOCS=	CHANGES NOTICE README
+
+.include <bsd.port.options.mk>
+
 do-install:
 	cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
