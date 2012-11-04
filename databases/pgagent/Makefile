@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgagent
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	pgadmin3/release/pgagent
@@ -22,5 +22,8 @@ USE_WX=		2.8
 WX_UNICODE=	yes
 USE_PGSQL=	yes
 IGNORE_WITH_PGSQL=	82 83
+
+PLIST_FILES=	bin/pgagent
+PORTDATA=	*
 
 .include <bsd.port.mk>
