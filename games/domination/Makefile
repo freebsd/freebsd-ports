@@ -4,9 +4,9 @@ PORTNAME=	domination
 PORTVERSION=	1.1.1.1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game  \
-		http://domination.sourceforge.net/maps/:maps
+		http://domination.sourceforge.net/maps/
 DISTFILES=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}:game \
-		${MAPS:S/$/.zip/}:maps
+		${MAPS:S/$/.zip/}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nemysis@gmx.ch
