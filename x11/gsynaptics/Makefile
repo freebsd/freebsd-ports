@@ -1,26 +1,24 @@
-# created by: Norikatsu Shigemura <nork@FreeBSD.org>
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gsynaptics
-PORTVERSION=	0.9.9
-PORTREVISION=	14
+PORTVERSION=	0.9.16
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	gsynaptics/21527
+MASTER_SITES=	SFJP/${PORTNAME}/38463
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Synaptics Touchpad setting tool
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+LICENSE=	GPLv2
 
-USE_GNOME=	lthack intlhack intltool gtk20 libgnome libglade2 libgnomeui
+RUN_DEPENDS=	xf86-input-synaptics>0:${PORTSDIR}/x11-drivers/xf86-input-synaptics
+
+USE_GNOME=	gconf2 gnomehack libglade2 gnomedocutils
+USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
-USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-drivers/xf86-input-synaptics
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
