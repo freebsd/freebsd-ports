@@ -1,30 +1,26 @@
-# New ports collection makefile for:    Burpsuite
-# Date created:				2010-02-22
-# Whom:					Niels Heinen
-#
+# Created by: Niels Heinen
 # $FreeBSD$
-#
 
 PORTNAME=	burpsuite
-PORTVERSION=	1.4.01
+PORTVERSION=	1.5
 CATEGORIES=	security java
 MASTER_SITES=	http://www.portswigger.net/burp/ \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,sbz,}
-DISTNAME=	${PORTNAME}_v${PORTVERSION}
+		LOCAL/sbz
+DISTNAME=	${PORTNAME}_free_v${PORTVERSION}
+EXTRACT_SUFX=	.jar
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Burp Suite is an integrated platform for testing web applications
 
-USE_ZIP=	YES
-USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+EXTRACT_CMD=	""
+USE_JAVA=	yes
 NO_BUILD=	yes
+JAVA_VERSION=	1.7
+JAVA_VENDOR=	openjdk
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${DISTNAME}.jar
-
-PORTDOCS=	readme_-_running_burp.txt
 
 .include <bsd.port.pre.mk>
 
@@ -35,7 +31,8 @@ pre-extract:
 .endif
 
 post-extract:
-	@${MV} ${WRKSRC}/readme\ -\ running\ burp.txt ${WRKSRC}/readme_-_running_burp.txt
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/
 
 pre-install:
 	@${SED} -e 's:%%PATH%%:${JAVAJARDIR}/:' \
@@ -46,9 +43,5 @@ pre-install:
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme_-_running_burp.txt ${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
