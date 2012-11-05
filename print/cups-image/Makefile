@@ -2,7 +2,7 @@
 
 CATEGORIES=	print
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../cups-base
  
