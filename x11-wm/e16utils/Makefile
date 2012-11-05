@@ -26,7 +26,7 @@ PLIST_FILES=	bin/e16menuedit \
 do-patch:
 .for i in ${SUB_STUBS}
 	if [ -f "${PATCHDIR}/patch-${i}" ]; then \
-		cd ${WRKDIR}/${i} ; ${PATCH} -s < ${PATCHDIR}/patch-${i}
+		cd ${WRKDIR}/${i} ; ${PATCH} -s < ${PATCHDIR}/patch-${i}; \
 	fi
 .endfor
 
