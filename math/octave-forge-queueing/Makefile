@@ -1,12 +1,8 @@
-# New ports collection makefile for:	octave-forge-queueing
-# Date created:		6 February 2012
-# Whom:			Stephen Montgomery-Smith <stephen@FreeBSD.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-queueing
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
