@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pam_pseudo
-# Date created:				11 May 2006
-# Whom:					Jim Pirzyk <pirzyk@FreeBSD.org>
-#
+# Created by: Jim Pirzyk <pirzyk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_pseudo
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_pseudo/
 
