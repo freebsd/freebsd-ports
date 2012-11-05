@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zorba
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	textproc
-MASTER_SITES=	https://launchpadlibrarian.net/112668806/
+MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -16,7 +16,8 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
    		xerces-c:${PORTSDIR}/textproc/xerces-c3 \
 		icudata:${PORTSDIR}/devel/icu \
 		curl:${PORTSDIR}/ftp/curl \
-		tidy:${PORTSDIR}/www/tidy-lib
+		tidy:${PORTSDIR}/www/tidy-lib \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	fop:${PORTSDIR}/textproc/fop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -30,8 +31,10 @@ USE_GNOME=	libxml2 libxslt
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_OUTSOURCE=yes
-CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING=-I${LOCALBASE}/include
+CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
 

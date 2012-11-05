@@ -71,6 +71,7 @@ include/zorba/util/time.h.orig
 include/zorba/util/time.h
 include/zorba/util/timer.h
 include/zorba/util/uri.h
+include/zorba/util/uuid.h
 include/zorba/vector_item_sequence.h
 include/zorba/version.h
 include/zorba/xmldatamanager.h
@@ -91,10 +92,12 @@ lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/libhttp-client_2.0.s
 lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/libdatetime_2.0.so
 lib/zorba/core/%%FULLVERSION%%/edu/princeton/wordnet/wordnet-en.zth
 lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
+%%WITH_PHP%%%%PHP_EXTLIBDIR%%/XQueryProcessor.php
 %%WITH_PHP%%%%PHP_EXTLIBDIR%%/zorba_api_wrapper.php
 %%WITH_PHP%%%%PHP_EXTLIBDIR%%/zorba_api.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/zorba_api.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_zorba_api.so
+%%WITH_JAVA%%%%JAVASHAREDIR%%/classes/libzorba_api.so
 %%WITH_JAVA%%%%JAVASHAREDIR%%/zorba_xqj.jar
 %%WITH_JAVA%%%%JAVASHAREDIR%%/xqjapi.jar
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
@@ -206,20 +209,23 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%WITH_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/html/rtab_r.gif
 %%WITH_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/html/rtab_l.gif
 %%WITH_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/python_test.py
+%%WITH_RUBY%%share/ruby/zorba_api.so
 %%WITH_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/html/rtab_b.gif
 %%WITH_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/html/rtab_l.gif
 %%WITH_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/html/rtab_r.gif
+%%WITH_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/ruby_test.rb
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_b.gif
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_l.gif
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_r.gif
 %%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/examples
+%%WITH_RUBY%%@dirrmtry share/ruby
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
-%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/html
-%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
 %%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/examples
-%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/html
-%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/html
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqj/html
@@ -326,6 +332,7 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml_2.0.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xml_2.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc-options.xsd
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/error.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml/error_2.0.xq
@@ -348,12 +355,15 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/file_2.0.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/file_2.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns/http-client.xsd
-%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/functions.xq
-%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/functions_1.xq
-%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/functions_1.0.xq
-%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/errors.xq
-%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/errors_0.xq
-%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www/errors_0.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/functions.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/functions_1.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/functions_1.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/function-library.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/function-library_1.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/function-library_1.0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/errors.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/errors_0.xq
+%%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/errors_0.0.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2001/xml.xsd
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/XQueryX.xsd
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions.xq
@@ -426,7 +436,6 @@ share/cmake/Modules/zorba-%%FULLVERSION%%/ExternalModuleConfig.cmake.in
 @dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2001
 @dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www
 @dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq/www
 @dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq
 @dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns
 @dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath
