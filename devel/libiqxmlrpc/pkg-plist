@@ -23,7 +23,6 @@ include/libiqxmlrpc/libiqxmlrpc.h
 include/libiqxmlrpc/lock.h
 include/libiqxmlrpc/method.h
 include/libiqxmlrpc/net_except.h
-include/libiqxmlrpc/parser.h
 include/libiqxmlrpc/reactor.h
 include/libiqxmlrpc/reactor_interrupter.h
 include/libiqxmlrpc/request.h
@@ -34,25 +33,10 @@ include/libiqxmlrpc/socket.h
 include/libiqxmlrpc/ssl_connection.h
 include/libiqxmlrpc/ssl_lib.h
 include/libiqxmlrpc/sysinc.h
-include/libiqxmlrpc/utf_conv.h
 include/libiqxmlrpc/util.h
 include/libiqxmlrpc/value.h
 include/libiqxmlrpc/value_type.h
 include/libiqxmlrpc/value_type_visitor.h
-include/libiqxmlrpc/xml_utils.h
-lib/libiqxmlrpc-client.a
-lib/libiqxmlrpc-client.la
-lib/libiqxmlrpc-client.so
-lib/libiqxmlrpc-client.so.0
-lib/libiqxmlrpc-server.a
-lib/libiqxmlrpc-server.la
-lib/libiqxmlrpc-server.so
-lib/libiqxmlrpc-server.so.0
-lib/libiqxmlrpc.a
-lib/libiqxmlrpc.la
 lib/libiqxmlrpc.so
-lib/libiqxmlrpc.so.0
-libdata/pkgconfig/libiqxmlrpc-client.pc
-libdata/pkgconfig/libiqxmlrpc-server.pc
 libdata/pkgconfig/libiqxmlrpc.pc
 @dirrm include/libiqxmlrpc
