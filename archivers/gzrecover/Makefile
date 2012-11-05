@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gzrecover
-# Date created:				3 June 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	gzrecover
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
 		CRITICAL
