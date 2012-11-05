@@ -1,12 +1,9 @@
-# New ports collection makefile for:	flyspray
-# Date created:			2003.08.28
-# Whom:				Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flyspray
 PORTVERSION=	0.9.9.7
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://flyspray.org/
 
@@ -22,10 +19,14 @@ WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	GRAPHVIZ "Install Graphviz for task dependency graphs" off \
-		MYSQL "Use MySQL Database Interface" off \
-		MYSQLI "Use MySQLi Database Interface" on \
-		POSTGRES "Use PostgreSQL Database Interface" off
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.php
+
+OPTIONS_DEFINE=	GRAPHVIZ MYSQL MYSQLI POSTGRES
+OPTIONS_DEFAULT=	MYSQLI
+
+MYSQLI_DESC=	Use MySQLi Database Interface
+POSTGRES_DESC=	Use PostgreSQL Database Interface
 
 FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
 ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
@@ -53,21 +54,21 @@ SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
 		WWWGRP="${WWWGRP}" \
 		WWWOWN="${WWWOWN}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if !defined(WITHOUT_MYSQLI)
+.if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
 .endif
 
-.if defined(WITH_POSTGRES)
+.if ${PORT_OPTIONS:MPOSTGRES}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 .endif
 
@@ -77,6 +78,8 @@ post-patch:
 		-e "s|%%DOCSDIR%%|"${DOCSDIR}"|g" \
 		${WRKSRC}/docs/README.FreeBSD
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} '{}' ';'
+	@${REINPLACE_CMD} "s|E_ALL|E_ALL \& ~E_STRICT|g" \
+		${WRKSRC}/includes/fix.inc.php
 
 do-install:
 	${MKDIR} ${FLYSPRAYDIR}
@@ -102,4 +105,4 @@ install-doc:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
