@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121105:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: sahil@FreeBSD.org
+
+  With this version of Postfix, the default master.cf now uses "unix"
+  instead of "fifo" for the pickup and qmgr services.  In addition, a
+  new smtpd_relay_restrictions feature has been introduced for mail
+  relay control.  For sites that do not define this parameter in
+  main.cf, the upgrade process will add an entry to main.cf.  Please
+  read the RELEASE_NOTES to understand this new feature, how it may
+  affect your site, and backwards compatibility options.
+
 20121104:
   AFFECTS: users of lang/perl5.16
   AUTHOR: az@FreeBSD.org
