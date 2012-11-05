@@ -6,6 +6,7 @@ share/basic256/Examples/arrays.kbs
 share/basic256/Examples/ballaccel.kbs
 share/basic256/Examples/ballaccel_2.kbs
 share/basic256/Examples/ballanim.kbs
+share/basic256/Examples/ballanim_2.kbs
 share/basic256/Examples/basic256_icon.kbs
 share/basic256/Examples/basic256_icon_V1.kbs
 share/basic256/Examples/card_suites.kbs
@@ -76,10 +77,12 @@ share/basic256/Examples/testing/beautifytest.kbs
 share/basic256/Examples/testing/counttest.kbs
 share/basic256/Examples/testing/explodetest.kbs
 share/basic256/Examples/testing/fontdemo.kbs
+share/basic256/Examples/testing/global_array_test.kbs
 share/basic256/Examples/testing/input_numeric_test.kbs
 share/basic256/Examples/testing/input_string_test.kbs
 share/basic256/Examples/testing/instrtest.kbs
 share/basic256/Examples/testing/random_one.kbs
+share/basic256/Examples/testing/readbinary_test.kbs
 share/basic256/Examples/testing/replacetest.kbs
 share/basic256/Examples/testing/tes_oo.kbs
 share/basic256/Examples/testing/test_dountil.kbs
@@ -92,6 +95,9 @@ share/basic256/Examples/testing/testimagesave.kbs
 share/basic256/Examples/testing/testlineio.kbs
 share/basic256/Examples/testing/testmath.kbs
 share/basic256/Examples/testing/testmodulo.kbs
+share/basic256/Examples/testing/testplusplus.kbs
+share/basic256/Examples/testing/testplusplus2.kbs
+share/basic256/Examples/testing/testsubroutinebyref.kbs
 share/basic256/Examples/testing/testtextfont.kbs
 share/basic256/Examples/testing/testtime.kbs
 share/basic256/Examples/testing/uaarray.kbs
