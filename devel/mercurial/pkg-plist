@@ -633,7 +633,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-monoblue.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-paper.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style.css
-%%PYTHON_SITELIBDIR%%/mercurial/templates/template-vars.txt
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.py
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyo
