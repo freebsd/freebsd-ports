@@ -3,6 +3,7 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://cloud.github.com/downloads/zlandau/authforce/
 
@@ -44,6 +45,7 @@ CONFIGURE_ARGS+=	--without-curl
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_FILES+=	share/locale/nl/LC_MESSAGES/authforce.mo
+CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
