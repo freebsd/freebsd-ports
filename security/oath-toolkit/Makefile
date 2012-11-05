@@ -1,7 +1,8 @@
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	oath-toolkit
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -11,6 +12,7 @@ COMMENT=	Library, tools, and PAM module for OATH authentication
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -36,7 +38,8 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPSKC}
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2 \
+		xmlsec1:${PORTSDIR}/security/xmlsec1
 
 CONFIGURE_ARG+=--with-xml-prefix=${LOCALBASE}
 
@@ -76,14 +79,16 @@ MAN3+=		pskc_build_xml.3 pskc_check_version.3 pskc_done.3 \
 		pskc_get_key_policy_startdate.3 \
 		pskc_get_key_profileid.3 pskc_get_key_reference.3 \
 		pskc_get_key_userid.3 pskc_get_keypackage.3 \
+		pskc_get_signed_p.3 \
 		pskc_get_version.3 pskc_global_done.3 \
 		pskc_global_init.3 pskc_global_log.3 \
 		pskc_init.3 pskc_keyusage2str.3 pskc_output.3 \
 		pskc_parse_from_memory.3 pskc_pinusagemode2str.3 \
+		pskc_sign_x509.3 \
 		pskc_str2keyusage.3 pskc_str2pinusagemode.3 \
 		pskc_str2valueformat.3 pskc_strerror.3 \
 		pskc_strerror_name.3 pskc_validate.3 \
-		pskc_valueformat2str.3
+		pskc_valueformat2str.3 pskc_verify_x509crt.3
 
 PLIST_SUB+=	PSKC=""
 .else
