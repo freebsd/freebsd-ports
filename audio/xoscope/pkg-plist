@@ -1,7 +1,2 @@
 bin/xoscope
-bin/bitscope
-libexec/xoscope/operl
-libexec/xoscope/xy
-libexec/xoscope/ofreq.ini
-libexec/xoscope/offt
 @dirrm libexec/xoscope

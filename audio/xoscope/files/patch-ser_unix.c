@@ -1,7 +1,7 @@
---- ser_unix.c.orig	2008-03-29 20:34:36.000000000 -0400
-+++ ser_unix.c	2008-03-29 20:53:04.000000000 -0400
-@@ -13,7 +13,14 @@
- #include <stdlib.h>
+--- ser_unix.c.orig	2008-12-17 12:46:15.000000000 -0500
++++ ser_unix.c	2012-11-04 09:22:00.000000000 -0500
+@@ -14,7 +14,14 @@
+ #include <errno.h>
  #include <unistd.h>
  #include <string.h>
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
@@ -15,7 +15,7 @@
  #include <fcntl.h>
  #include <sys/types.h>
  #include <sys/ioctl.h>
-@@ -23,7 +30,11 @@
+@@ -24,7 +31,11 @@
  
  char device[512] = "";		/* Serial device */
  int sflags;
@@ -25,9 +25,9 @@
  struct termio stbuf, svbuf;	/* termios: svbuf=saved, stbuf=set */
 +#endif
  
- /* return a single byte from the serial device or return -1 if none avail. */
- int
-@@ -65,7 +76,11 @@
+ char serial_error[256];
+ 
+@@ -68,7 +79,11 @@
  cleanup_serial(int fd)
  {
    if (fd > 0) {
@@ -36,11 +36,11 @@
 +#else
      if (ioctl(fd, TCSETA, &svbuf) < 0) {
 +#endif
-       sprintf(error, "%s: can't ioctl set device %s", progname, device);
-       perror(error);
+       /* sprintf(serial_error, "Can't ioctl set device %s", device); */
+       /* perror(error); */
      }
-@@ -84,13 +99,21 @@
-     perror(error);
+@@ -86,12 +101,20 @@
+     sprintf(serial_error, "%s %s", dev, strerror(errno));
      return(0);
    }
 +#ifdef BSD
@@ -48,8 +48,7 @@
 +#else
    if (ioctl(fd, TCGETA, &svbuf) < 0) { /* save settings */
 +#endif
-     sprintf(error, "%s: can't ioctl get device %s", progname, dev);
-     perror(error);
+     sprintf(serial_error, "%s Can't ioctl TCGETA", dev);
      close(fd);
      return(0);
    }
@@ -58,9 +57,9 @@
 +#else
    if (ioctl(fd, TCSETA, &stbuf) < 0) {
 +#endif
-     sprintf(error, "%s: can't ioctl set device %s", progname, dev);
-     perror(error);
+     sprintf(serial_error, "%s Can't ioctl TCSETA", dev);
      close(fd);
+     return(0);
 @@ -101,7 +124,11 @@
      return (1);		/* serial port scope found! */
    }
@@ -70,6 +69,6 @@
 +#else
    if (ioctl(fd, TCSETA, &svbuf) < 0) { /* restore settings */
 +#endif
-     sprintf(error, "%s: can't ioctl set device %s", progname, dev);
-     perror(error);
+ #if 0
+     sprintf(serial_error, "Can't ioctl (set) %s", dev);
      close(fd);
