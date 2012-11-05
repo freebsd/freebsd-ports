@@ -17,6 +17,8 @@ COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 USE_CMAKE=	yes
