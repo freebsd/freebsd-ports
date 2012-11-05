@@ -1,12 +1,8 @@
-# New ports collection makefile for:    robocode
-# Date created:				10 September 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	robocode
-PORTVERSION=	1.7.3.4
+PORTVERSION=	1.7.4.2
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-setup
