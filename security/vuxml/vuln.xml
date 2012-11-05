@@ -51,6 +51,66 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36533a59-2770-11e2-bb44-003067b2972c">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><le>11.2r202.238</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb12-22.html">
+	  <p>These vulnerabilities could cause a crash and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5248</cvename>
+      <cvename>CVE-2012-5249</cvename>
+      <cvename>CVE-2012-5250</cvename>
+      <cvename>CVE-2012-5251</cvename>
+      <cvename>CVE-2012-5252</cvename>
+      <cvename>CVE-2012-5253</cvename>
+      <cvename>CVE-2012-5254</cvename>
+      <cvename>CVE-2012-5255</cvename>
+      <cvename>CVE-2012-5256</cvename>
+      <cvename>CVE-2012-5257</cvename>
+      <cvename>CVE-2012-5258</cvename>
+      <cvename>CVE-2012-5259</cvename>
+      <cvename>CVE-2012-5260</cvename>
+      <cvename>CVE-2012-5261</cvename>
+      <cvename>CVE-2012-5262</cvename>
+      <cvename>CVE-2012-5263</cvename>
+      <cvename>CVE-2012-5264</cvename>
+      <cvename>CVE-2012-5265</cvename>
+      <cvename>CVE-2012-5266</cvename>
+      <cvename>CVE-2012-5267</cvename>
+      <cvename>CVE-2012-5269</cvename>
+      <cvename>CVE-2012-5270</cvename>
+      <cvename>CVE-2012-5271</cvename>
+      <cvename>CVE-2012-5272</cvename>
+      <cvename>CVE-2012-5285</cvename>
+      <cvename>CVE-2012-5286</cvename>
+      <cvename>CVE-2012-5287</cvename>
+      <cvename>CVE-2012-5673</cvename>
+      <cvename>CVE-2012-2034</cvename>
+      <cvename>CVE-2012-2035</cvename>
+      <cvename>CVE-2012-2036</cvename>
+      <cvename>CVE-2012-2037</cvename>
+      <cvename>CVE-2012-2038</cvename>
+      <cvename>CVE-2012-2039</cvename>
+      <cvename>CVE-2012-2040</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb12-22.html</url>
+    </references>
+    <dates>
+      <discovery>2012-10-08</discovery>
+      <entry>2012-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65539c54-2517-11e2-b9d6-20cf30e32f6d">
     <topic>apache22 -- several vulnerabilities</topic>
     <affects>
