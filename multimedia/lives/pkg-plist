@@ -63,10 +63,14 @@ lib/lives/plugins/effects/realtime/weed/RGBdelay.la
 lib/lives/plugins/effects/realtime/weed/RGBdelay.so
 lib/lives/plugins/effects/realtime/weed/alien_overlay.la
 lib/lives/plugins/effects/realtime/weed/alien_overlay.so
+lib/lives/plugins/effects/realtime/weed/audio_fft.la
+lib/lives/plugins/effects/realtime/weed/audio_fft.so
 lib/lives/plugins/effects/realtime/weed/audio_transition.la
 lib/lives/plugins/effects/realtime/weed/audio_transition.so
 lib/lives/plugins/effects/realtime/weed/audio_volume.la
 lib/lives/plugins/effects/realtime/weed/audio_volume.so
+lib/lives/plugins/effects/realtime/weed/beat_detector.la
+lib/lives/plugins/effects/realtime/weed/beat_detector.so
 lib/lives/plugins/effects/realtime/weed/blank_frame_detector.la
 lib/lives/plugins/effects/realtime/weed/blank_frame_detector.so
 lib/lives/plugins/effects/realtime/weed/blurzoom.la
@@ -85,6 +89,8 @@ lib/lives/plugins/effects/realtime/weed/deinterlace.la
 lib/lives/plugins/effects/realtime/weed/deinterlace.so
 lib/lives/plugins/effects/realtime/weed/edge.la
 lib/lives/plugins/effects/realtime/weed/edge.so
+lib/lives/plugins/effects/realtime/weed/farneback_analyser.la
+lib/lives/plugins/effects/realtime/weed/farneback_analyser.so
 lib/lives/plugins/effects/realtime/weed/fg_bg_removal.la
 lib/lives/plugins/effects/realtime/weed/fg_bg_removal.so
 lib/lives/plugins/effects/realtime/weed/fireTV.la
@@ -97,6 +103,8 @@ lib/lives/plugins/effects/realtime/weed/haar_analyser.la
 lib/lives/plugins/effects/realtime/weed/haar_analyser.so
 lib/lives/plugins/effects/realtime/weed/haip.la
 lib/lives/plugins/effects/realtime/weed/haip.so
+lib/lives/plugins/effects/realtime/weed/ladspa.la
+lib/lives/plugins/effects/realtime/weed/ladspa.so
 lib/lives/plugins/effects/realtime/weed/layout_blends.la
 lib/lives/plugins/effects/realtime/weed/layout_blends.so
 lib/lives/plugins/effects/realtime/weed/lifeTV.la

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	lives
-# Date created:		3 November 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lives
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -16,32 +12,42 @@ COMMENT=	Video editing system
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:${PORTSDIR}/multimedia/v4l_compat \
+		${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
+		FLAC:${PORTSDIR}/audio/flac \
 		jack:${PORTSDIR}/audio/jack \
 		ogg:${PORTSDIR}/audio/libogg \
+		sndfile:${PORTSDIR}/audio/libsndfile \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		pulse:${PORTSDIR}/audio/pulseaudio \
-		oil-0.3.0:${PORTSDIR}/devel/liboil \
+		gdbm:${PORTSDIR}/databases/gdbm \
+		dbus-1:${PORTSDIR}/devel/dbus \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		oil:${PORTSDIR}/devel/liboil \
 		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		orc-0.4:${PORTSDIR}/devel/orc \
+		orc:${PORTSDIR}/devel/orc \
 		pcre:${PORTSDIR}/devel/pcre \
 		aa:${PORTSDIR}/graphics/aalib \
 		cairo:${PORTSDIR}/graphics/cairo \
-		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
+		visual-0.4:${PORTSDIR}/graphics/libvisual04 \
+		opencv_calib3d:${PORTSDIR}/graphics/opencv \
 		png15:${PORTSDIR}/graphics/png \
+		fftw3:${PORTSDIR}/math/fftw3 \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		dv:${PORTSDIR}/multimedia/libdv \
 		theora:${PORTSDIR}/multimedia/libtheora \
 		vpx:${PORTSDIR}/multimedia/libvpx \
-		mjpegutils-2.0.0:${PORTSDIR}/multimedia/mjpegtools \
-		schroedinger-1.0:${PORTSDIR}/multimedia/schroedinger \
+		mjpegutils:${PORTSDIR}/multimedia/mjpegtools \
+		schroedinger:${PORTSDIR}/multimedia/schroedinger \
 		xvidcore:${PORTSDIR}/multimedia/xvid \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		xcb:${PORTSDIR}/x11/libxcb
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
+RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
+		mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
@@ -59,6 +65,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:L}
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
+USE_NCURSES=	yes
 USE_GNOME=	gtk20 gnomehack gdkpixbuf2
 USE_SDL=	sdl
 USE_PYTHON=	yes
@@ -67,8 +74,8 @@ USE_CDRTOOLS=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 USE_PKGCONFIG=	build
-USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
-		xi xinerama xrandr xrender
+USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
+		xfixes xi xinerama xrandr xrender xtst
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab
@@ -86,7 +93,6 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
 OPTIONS_DEFINE=	DOXYGEN FREI0R
-FREI0R_DESC=	Enable frei0r support
 
 .include <bsd.port.options.mk>
 
@@ -135,7 +141,7 @@ post-patch:
 		 /flags/s|-Wl,-Bsymbolic||g ; \
 		 /flags/s|--tag=disable-static||g'
 	@${REINPLACE_CMD} -e 's|-$$(VERSION)||g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
+	@${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
 		${WRKSRC}/smogrify \
 		${WRKSRC}/src/callbacks.c \
 		${WRKSRC}/src/saveplay.c \
