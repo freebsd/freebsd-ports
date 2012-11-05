@@ -29,6 +29,8 @@
 # MAINTAINER=   sbz@FreeBSD.org
 
 import argparse
+import codecs
+import locale
 import re
 import sys
 if sys.version_info.major == 3:
@@ -49,6 +51,7 @@ class GetPatch(object):
         self.url = str()
         self.patch = str()
         self.output_stdout = False
+        self.default_locale = locale.getdefaultlocale()[1].lower()
 
     def fetch(self, *largs, **kwargs):
         raise NotImplementedError()
@@ -56,8 +59,8 @@ class GetPatch(object):
     def write(self, filename, data):
         if filename.endswith(('.patch', '.txt')):
             filename = filename[:filename.rindex('.')]+'.diff'
-        f=open(filename, 'w')
-        f.write(data.decode())
+        f=codecs.open(filename, encoding=self.default_locale, mode='w')
+        f.write(data.decode(self.default_locale))
         f.close()
         self.out("[+] %s created" % filename)
 
@@ -79,7 +82,7 @@ class GetPatch(object):
             data = urllib2.urlopen(url).read()
 
             if self.output_stdout:
-                sys.stdout.write(data.decode())
+                sys.stdout.write(data.decode(self.default_locale))
             else:
                 self.write(p, data)
 
