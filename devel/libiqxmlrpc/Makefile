@@ -23,7 +23,7 @@ USE_CMAKE=	yes
 .if defined(NOPORTDOCS)
 CMAKE_ARGS=	-Dbuild_docs=off
 .endif
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 PORTDATA=	*
