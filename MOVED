@@ -3835,3 +3835,7 @@ x11-toolkits/ocaml-lablgtk||2012-10-27|Has expired: Abandoned upstream, consider
 audio/xmms-arts_output||2012-10-28|Has expired: Outdated and distfile no longer available
 databases/pear-MDB2_Driver_ibase||2012-10-28|Has expired: BROKEN for more than 6 month
 security/py-fchksum||2012-11-02|Has expired: No more public distfiles
+textproc/xerces-c||2012-11-05|Has expired: No more supported upstream, consider using xerces-c2 or xerces-c3
+x11-wm/wampager||2012-11-05|Has expired: Development ceased
+x11-wm/waimea||2012-11-05|Has expired: Development ceased
+x11-wm/waimea-devel||2012-11-05|Has expired: Development ceased

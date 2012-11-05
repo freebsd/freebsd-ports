@@ -1462,7 +1462,6 @@
     SUBDIR += xaira
     SUBDIR += xalan-c
     SUBDIR += xalan-j
-    SUBDIR += xerces-c
     SUBDIR += xerces-c2
     SUBDIR += xerces-c2-devel
     SUBDIR += xerces-c3
