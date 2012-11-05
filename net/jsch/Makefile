@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jsch
-PORTVERSION=	0.1.44
+PORTVERSION=	0.1.49
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
