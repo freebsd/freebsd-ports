@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:C|(.*)\.[0-9]*$|\1|}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	Feature-rich dictionary lookup program (with QT lib)
+COMMENT=	Feature-rich Qt4 based dictionary lookup program
 
 LICENSE=	GPLv3
 
