@@ -1,12 +1,9 @@
-# New ports collection makefile for:	gallery3
-# Date created:		16 June 2009
-# Whom:			Bo-Yi Wu <appleboy.tw@gmail.com>
-#
+# Created by: Bo-Yi Wu <appleboy.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gallery3
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}
@@ -16,8 +13,8 @@ COMMENT=	Web based photo album organizer written in PHP
 
 USE_ZIP=	yes
 
-USE_PHP=	pcre session filter xml iconv spl simplexml json mysql \
-		tokenizer
+USE_PHP=	ctype filter iconv json mysql mbstring pcre \
+		simplexml session spl tokenizer xml
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -47,7 +44,7 @@ RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
 .if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if defined(WITH_GD)
