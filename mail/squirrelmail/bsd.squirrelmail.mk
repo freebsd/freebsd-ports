@@ -26,30 +26,24 @@ RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail
 .endif
 
 NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
+NO_WRKSUBDIR=	yes
 USE_PHP?=		yes
-WANT_PHP_WEB=		yes
+WANT_PHP_WEB=	yes
+
+IGNORE_WITH_PHP=5 # known incompatibilities with php-5.4, use 5.3 for now
+DEFAULT_PHP_VER=53
 
 SQUIRREL_PLUGIN_NAME?=   ${PORTNAME}
-
-.ifdef SQUIRRELDIR
-PLIST_SUB+=     SQUIRRELDIR=${SQUIRRELDIR}
-SUB_LIST+=      SQUIRRELDIR=${SQUIRRELDIR}
-.else
-.ifndef WITHOUT_WWWDIR
-SQUIRRELDIR=    ${PREFIX}/www/squirrelmail
-PLIST_SUB+=     SQUIRRELDIR=www/squirrelmail
-SUB_LIST+=      SQUIRRELDIR=www/squirrelmail
-.else
-SQUIRRELDIR=    ${PREFIX}/squirrelmail
-PLIST_SUB+=     SQUIRRELDIR=squirrelmail
-SUB_LIST+=      SQUIRRELDIR=squirrelmail
-.endif
-.endif
 PLIST_SUB+=     SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
+SUB_LIST+=		SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
+
+# As with mail/squirreldir, if you were using WITHOUT_WWWDIR=yes,
+# set SQUIRRELDIR=${PREFIX}/squirrelmail
+SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
+PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR}
+SUB_LIST+=		SQUIRRELDIR=${SQUIRRELDIR}
 
 .if exists(${FILESDIR}/pkg-message.in)
-SUB_LIST+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 SUB_FILES=	pkg-message
 .endif
 
