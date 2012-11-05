@@ -4,17 +4,17 @@
 # License agreement
 more << EOF_LICENSE
 Burpuite Free Edition Licence Agreement
-Version 1.4.01
+Version 1.5
 
 This licence agreement (Licence) is a legal agreement between you (Licensee or
-you) and PORTSWIGGER LTD of 6 Altenburg Gardens, London SW11 1JJ (Licensor or
-we) for a suite of tools designed for web application security testers (Burp
-Suite Free Edition or Software), which includes computer software, and the
-online documentation current at the date of the download of this Licence
+you) and PORTSWIGGER LTD of 320 Garratt Lane, London, SW18 4EJ (Licensor or we)
+for a suite of tools designed for web application security testers (Burp Suite
+Free Edition or Software), which includes computer software, and the online
+documentation current at the date of the download of this Licence
 (Documentation).
 
 BURP SUITE FREE EDITION REQUIRES A COMPUTER WITH A MINIMUM OF 2GB OF MEMORY AND
-THE OFFICIAL JAVA RUNTIME ENVIRONMENT (VERSION 1.5 OR LATER). BY INSTALLING THE
+THE OFFICIAL JAVA RUNTIME ENVIRONMENT (VERSION 1.6 OR LATER). BY INSTALLING THE
 SOFTWARE YOU AGREE TO THE TERMS OF THIS LICENCE AND THE TERMS AND CONDITIONS OF
 THE LICENSOR WHICH WILL BIND YOU AND YOUR EMPLOYEES. IF YOU DO NOT AGREE TO THE
 TERMS OF THIS LICENCE AND THE TERMS AND CONDITIONS, WE ARE UNWILLING TO LICENSE
@@ -83,7 +83,7 @@ purposes, particularly as Burp Suite Free Edition contains functionality that
 can be used to attack and compromise computer systems.
 
 2.2.2    to obtain all necessary authorisations from system owners prior to
-using Burp Suite Free Edition thereon;
+using Bup Suite Free Edition thereon;
 
 2.2.3    unless agreed by the Licensor in writing not to copy the Software or
 Documentation except where such copying is incidental to normal use of the
@@ -165,11 +165,11 @@ measures (TPM) so that the intellectual property rights, including copyright,
 in the Software of the Licensor are not misappropriated. You must not attempt
 in any way to remove or circumvent any such TPM, nor apply or manufacture for
 sale or hire, import, distribute, sell or let for hire, offer or expose for
-sale or hire, advertise for sale or hire or have in your possession for private
+sale or hire, advertise for sale or hire or have in your possession for priate
 or commercial purposes any means the sole intended purpose of which is to
 facilitate the unauthorised removal or circumvention of such TPM.
 
-5.    LICENSOR'S WARRANTY
+5.    LICENSOR’S WARRANTY
 
 5.1    The Licensor warrants that for a period of 90 days from the download of
 the Software (Warranty Period) the Software will, when properly used, perform
@@ -207,135 +207,172 @@ misrepresentation.
 6.2    Subject to condition 6.1, the Licensor's liability for losses suffered
 by you arising out of or in connection with this agreement (including any
 liability for the acts or omissions of its employees, agents and
-subcontractors), whether arising in contract, rt (including negligence),
+subcontractors), whether arising in contract, tort (including negligence),
 misrepresentation or otherwise, shall not include liability for:
 
-6.2.1    loss of turnover, sales oress profits or contracts;
+6.2.1    loss of turnover, sales or income;
+
+6.2.2    loss of business profits or contracts;
 
 6.2.3    business interruption;
 
 6.2.4    loss of the use of money or anticipated savings;
 
-6.2.5    f opportunity, goodwill or reputation;
+6.2.5    loss of information;
+
+6.2.6    loss of opportunity, goodwill or reputation;
 
 6.2.7    loss of, damage to or corruption of software or data; or
 
-6.2.8    any indirectntial loss or damage of any kind howsoever arising and
-whether caused by tort (including negligence), breach of contract or othet
-claims for loss of or damage to your tangible property that fall within the
-terms of condition 5 or any other claims for direc by any of categories 6.2.1
-to 6.2.8 inclusive of this condition 6.2.
+6.2.8    any indirect or consequential loss or damage of any kind howsoever
+arising and whether caused by tort (including negligence), breach of contract
+or otherwise;
 
-6.3    Subject to condition 6.1, the Licensor's maximum ability under or in
-connection with this Licence, or any collateral contract, whether in contract,
-tort (including negligence) orse, shall be limited to £50.
+provided that this condition 6.2 shall not prevent claims for loss of or damage
+to your tangible property that fall within the terms of condition 5 or any
+other claims for direct financial loss that are not excluded by any of
+categories 6.2.1 to 6.2.8 inclusive of this condition 6.2.
+
+6.3    Subject to condition 6.1, the Licensor's maximum aggregate liability
+under or in connection with this Licence, or any collateral contract, whether
+in contract, tort (including negligence) or otherwise, shall be limited to £50.
 
 6.4    Subject to condition 6.1, condition 6.2 and condition 6.3, the
-Licensor's liability for ingement of third-party intellectual property rights
-shall be limited to breaches of rights subsisting in the UK.
+Licensor's liability for infringement of third-party intellectual property
+rights shall be limited to breaches of rights subsisting in the UK.
 
-6.5    This Licthe full extent of the Licensor's obligations and liabilities in
-respect of the supply of the Software. In particular, there arethe Licensor
-except as specifically stated in this Licence. Any condition, warranty,
-representation or other term concerning theplied into, or incorporated in, this
+6.5    This Licence sets out the full extent of the Licensor's obligations and
+liabilities in respect of the supply of the Software. In particular, there are
+no conditions, warranties, representations or other terms, express or implied,
+that are binding on the Licensor except as specifically stated in this Licence.
+Any condition, warranty, representation or other term concerning the supply of
+the Software which might otherwise be implied into, or incorporated in, this
 Licence, or any collateral contract, whether by statute, common law or
-otherwise, is hereby  TERMINATION
+otherwise, is hereby excluded to the fullst extent permitted by law.
+
+7.    TERMINATION
 
 7.1    The Licensor may terminate this Licence immediately by written notice to
-you if you commit a material or pail to remedy (if remediable) within 14 days
-after the service of written notice requiring you to do so.
+you if you commit a material or persistent breach of this Licence which you
+fail to remedy (if remediable) within 14 days after the service of written
+notice requiring you to do so.
 
-7.2    Upon terminatior any reason:
+7.2    Upon termination for any reason:
 
 7.2.1    all rights granted to you under this Licence shall cease;
 
-7.2.2    you must cease all activities author Licence; and
+7.2.2    you must cease all activities authorised by this Licence; and
 
 7.2.3    you must immediately delete or remove the Software from all computer
-equipment in your possession, and iely destroy or return to the Licensor (at
-the Licensor's option) all copies of the Software then in your possession,
-custody or ntrol and, in the case of destruction, certify to the Licensor that
-you have done so.
+equipment in your possession, and immediately destroy or return to the Licensor
+(at the Licensor's option) all copies of the Software then in your possession,
+custody or control and, in the case of destruction, certify to the Licensor
+that you have done so.
 
-8.    TRANSFER OF RIGHTS AND OBLIGATIONS s Licence is binding on you and us,
-and on our respective successors and assigns.
+8.    TRANSFER OF RIGHTS AND OBLIGATIONS
 
-8.2    You may not transfer, assign, charge ocence, or any of your rights or
-obligations arising under it, without our prior written consent.
+8.1    This Licence is binding on you and us, and on our respective successors
+and assigns.
 
-8.3    We may transfer, assignose of this Licence, or any of our rights or
-obligations arising under it, at any time during the term of the Licence.
+8.2    You may not transfer, assign, charge or otherwise dispose of this
+Licence, or any of your rights or obligations arising under it, without our
+prior written consent.
 
-9.    NOy you to us must be given to PortSwigger Ltd at mail@portswigger.net or
-6 Altenburg Gardens London SW11 1JJ. We may give notice e e-mail or postal
-address you provided to us when downloading the Software or provided in other
-communications from you to us.  will be deemed received and properly served
-immediately when posted on our website, 24 hours after an e-mail is sent, or
-three ter the date of posting of any letter. In proving the service of any
-notice, it will be sufficient to prove, in the case of a leer, that such letter
-was properly addressed, stamped and placed in the post and, in the case of an
-e-mail, that such e-mail was e specified e-mail address of the addressee.
+8.3    We may transfer, assign, charge, sub-contract or otherwise dispose of
+this Licence, or any of our rights or obligations arising under it, at any time
+during the term of the Licence.
+
+9.    NOTICES
+
+All notices given by you to us must be given to PortSwigger Ltd at
+office@portswigger.net or 320 Garratt Lane, London, SW18 4EJ. We may give
+notice to you at either the e-mail or postal address you provided to us when
+downloading the Software or provided in other communications from you to us.
+Notice will be deemed received and properly served immediately when posted on
+our website, 24 hours after an e-mail is sent, or three days after the date of
+posting of any letter. In proving the service of any notice, it will be
+sufficient to prove, in the case of a letter, that such letter was properly
+addressed, stamped and placed in the post and, in the case of an e-mail, that
+such e-mail was sent to the specified e-mail address of the addressee.
 
 10.    EVENTS OUTSIDE OUR CONTROL
 
-10.1    We will not be liable or responsible foy failure to perform, or delay
-in performance of, any of our obligations under this Licence that is caused by
-events outside ourble control (Force Majeure Event).
+10.1    We will not be liable or responsible for any failure to perform, or
+delay in performance of, any of our obligations under this Licence that is
+caused by events outside our reasonable control (Force Majeure Event).
 
 10.2    A Force Majeure Event includes any act, event, non-happening, omission
-or accident be control and includes in particular (without limitation) the
-following:
+or accident beyond our reasonable control and includes in particular (without
+limitation) the following:
 
-10.2.1    strikes, lock-outs or other industrial actioterrorist attack or
-threat of terrorist attack, war (whether declared or not) or threat or
-preparation for war;
+10.2.1    strikes, lock-outs or other industrial action;
 
-10.2.3    fire,ke, subsidence, epidemic or other natural disaster;
+10.2.2    civil commotion, riot, invasion, terrorist attack or threat of
+terrorist attack, war (whether declared or not) or threat or preparation for
+war;
+
+10.2.3    fire, explosion, storm, flood, earthquake, subsidence, epidemic or
+other natural disaster;
 
 10.2.4    impossibility of the use of railways, shipping, aircraft, motor
-trivate telecommunications networks;
+transport or other means of public or private transport;
+
+10.2.5    impossibility of the use of public or private telecommunications
+networks;
 
 10.2.6    the acts, decrees, legislation, regulations or restrictions of any
 government.
 
-1nues, and we will have an extension of time for performance for the duration
-of that period. We will use our reasonable endeavoua solution by which our
-obligations under this Licence may be performed despite the Force Majeure
-Event.
+10.3    Our performance under this Licence is deemed to be suspended for the
+period that the Force Majeure Event continues, and we will have an extension of
+time for performance for the duration of that period. We will use our
+reasonable endeavours to bring the Force Majeure Event to a close or to find a
+solution by which our obligations under this Licence may be performed despite
+the Force Majeure Event.
 
 11.    WAIVER
 
-11.1   o insist upon strict performance of any of your obligations under this
-Licence, or if we fail to exercise any of the rights or rtitled under this
-Licence, this shall not constitute a waiver of such rights or remedies and
-shall not relieve you from compliantute a waiver of any subsequent default.
+11.1    If we fail, at any time during the term of this Licence, to insist upon
+strict performance of any of your obligations uncence, or if we fail to
+exercise any of the rights or remedies to which we are entitled under this
+Licence, this shall not consthts or remedies and shall not relieve you from
+compliance with such obligations.
+
+11.2    A waiver by us of any default shall nosubsequent default.
 
 11.3    No waiver by us of any of these terms and conditions shall be effective
-unlessu in writing.
+unless it is expressly stat is communicated to you in writing.
 
 12.    SEVERABILITY
 
-If any of the terms of this Licence are determined by any competent authority
-to be invalid,e to any extent, such term, condition or provision will to that
-extent be severed from the remaining terms, conditions and proviMENT
+If any of the terms of this Licence are determined by any competent au
+unenforceable to any extent, such term, condition or provision will to that
+extent be severed from the remaining terms, conditisions which will continue to
+be valid to the fullest extent permitted by law.
 
-13.1    This Licence and any document expressly referred to in it represents
-the entire agreement between us in relation tre and the Documentation and
-supersedes any prior agreement, understanding or arrangement between us,
-whether oral or in writing each acknowledge that, in entering into this
-Licence, neither of us has relied on any representation, undertaking or promise
-gi or written in negotiations between us prior to entering into this Licence
-except as expressly stated in this Licence.
+13.    ENTIRE AGREEMENT
 
-13.3    l have any remedy in respect of any untrue statement made by the other,
-whether orally or in writing, prior to the date we enter's only remedy shall be
-for breach of contract as provided in these terms and conditions.
+13.1    This Licence andany document expressly referred to in it represents the
+entire agreement between us in relation to the licensing of the Software and
+the Documentation and supersedes any prior agreement, understanding or
+arrangement between us, whether oral or in writing.
+
+13.2    We each acknowledge that, in entering into this Licence, neither of us
+has relied on any representation, undertaking or promise given by the other or
+implied from anything said or written in negotiations between us prior to
+entering into this Licence except as expressly stated in this Licence.
+
+13.3    Neither of us shall have any remedy in respect of any untrue statement
+made by the other, whether orally or in writing, prior to the date we entered
+into this Licence (unless such untrue statement was made fraudulently) and the
+other party's only remedy shall be for breach of contract as provided in these
+terms and conditions.
 
 14.    LAW AND JURISDICTION
 
-This Lic formation (including non-contractual disputes or claims) shall be
-governed by and construed in accordance with English law and tted to the
-exclusive jurisdiction of the English courts.
+This Licence, its subject matter or its formation (including non-contractual
+disputes or claims) shall be governed by and construed in accordance with
+English law and submitted to the exclusive jurisdiction of the English courts.
 EOF_LICENSE
 
 agreed=

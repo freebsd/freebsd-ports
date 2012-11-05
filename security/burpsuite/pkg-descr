@@ -1,7 +1,6 @@
-Burp Suite is a closed source tool which allows you to combine
-manual and automated techniques to enumerate, analyse, scan, attack
-and exploit web applications.  The various Burp tools work together
-effectively to share information and allow findings identified
-within one tool to form the basis of an attack using another.
+Burp Suite is an integrated platform for performing security testing of web
+applications. Its various tools work seamlessly together to support the entire
+testing process, from initial mapping and analysis of an application's attack
+surface, through to finding and exploiting security vulnerabilities.
 
-WWW:	http://www.portswigger.net/suite/ 
+WWW:	http://www.portswigger.net/burp/downloadfree.html
