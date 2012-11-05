@@ -1,0 +1,8 @@
+--- utils/postdownload.orig	2012-11-03 03:56:52.000000000 -0500
++++ utils/postdownload	2012-11-03 03:57:09.000000000 -0500
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Simple script for processing of downloaded undelimited gzipped
+ # USGS DEM files, and converting them to SPLAT Data Files.
