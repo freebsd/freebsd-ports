@@ -847,6 +847,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080800.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080800.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080800.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080900.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080900.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080900.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1089999.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1089999.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1089999.pyo
@@ -865,6 +868,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090400.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090400.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090400.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090500.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090500.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090500.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
