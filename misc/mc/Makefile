@@ -18,6 +18,8 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
+LICENSE=	GPLv3
+
 CONFLICTS=	mc-light-4*
 
 USE_GMAKE=	yes
