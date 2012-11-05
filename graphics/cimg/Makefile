@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.4.9
-PORTREVISION=	3
+PORTVERSION=	1.5.2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -71,7 +70,7 @@ RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
-DOCBASE=	CHANGES.txt README.txt
+DOCBASE=	README.txt
 PROGS=		CImg_demo gmic use_jpeg_buffer
 .else
 NO_BUILD=	yes
@@ -128,7 +127,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@(cd ${EXAMPLESDIR} && ${GMAKE} clean)
-	@${RM} ${EXAMPLESDIR}/Makefile.orig
+	@${RM} ${EXAMPLESDIR}/*.orig
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	${FIND} ${DOCSDIR} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif

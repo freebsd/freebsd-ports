@@ -1,17 +1,17 @@
---- examples/Makefile.orig	2011-06-09 13:32:15.000000000 +0200
-+++ examples/Makefile	2011-06-27 22:17:58.000000000 +0200
+--- examples/Makefile.orig	2012-10-15 17:30:59.000000000 +0200
++++ examples/Makefile	2012-11-04 22:25:42.000000000 +0100
 @@ -85,8 +85,8 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.4.9
+ CIMG_VERSION = 1.5.2
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = /usr/X11R6
 +CC           = $(CXX)
- CCVER        = `$(CC) -v 2>&1 | tail -n 1`
  EXEPFX       =
- 
-@@ -120,7 +120,7 @@
+ CCVER       = $(CC)
+ ifeq ($(CC),g++)
+@@ -126,7 +126,7 @@
  ifeq ($(CC),icc)
  CIMG_OPT_CFLAGS = -O3 -ipo -no-prec-div
  else
@@ -20,7 +20,7 @@
  endif
  
  # Flags to enable OpenMP support.
-@@ -131,7 +131,7 @@
+@@ -137,7 +137,7 @@
  endif
  
  # Flags to enable OpenCV support.
@@ -29,7 +29,7 @@
  CIMG_OPENCV_LDFLAGS = -lcv -lhighgui
  
  # Flags used to disable display capablities of CImg
-@@ -141,7 +141,7 @@
+@@ -147,7 +147,7 @@
  # (X11 is used by CImg to handle display windows)
  # !!! For 64bits systems : replace -L$(X11PATH)/lib by -L$(X11PATH)/lib64 !!!
  CIMG_X11_CFLAGS = -I$(X11PATH)/include
@@ -37,8 +37,8 @@
 +CIMG_X11_LDFLAGS = -L$(X11PATH)/lib -lX11 $(PTHREAD_LIBS)
  
  # Flags to enable fast image display, using the XSHM library (when using X11).
- # !!! Seems to randomly crash when used on MacOSX, so do not use it on MacOSX !!!
-@@ -180,12 +180,12 @@
+ # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
+@@ -186,12 +186,12 @@
  
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
@@ -53,7 +53,7 @@
  CIMG_FFMPEG_LDFLAGS = -lavcodec -lavformat -lswscale
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
-@@ -195,8 +195,8 @@
+@@ -201,8 +201,8 @@
  
  # Flags to enable native support of most classical image file formats, using the Magick++ library.
  # ( http://www.imagemagick.org/Magick++/ )
@@ -64,7 +64,7 @@
  
  # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
  # ( http://www.fftw.org/ )
-@@ -209,14 +209,17 @@
+@@ -215,14 +215,17 @@
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -85,7 +85,7 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LDFLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -250,6 +253,9 @@
+@@ -256,6 +259,9 @@
  	@echo "  > mlinux   : Linus/BSD target, no display, minimal features, optimizations enabled."
  	@echo "  > Mlinux   : Linux/BSD target, X11 display, maximal features, optimizations enabled."
  	@echo
@@ -95,7 +95,7 @@
  	@echo "  > solaris  : Sun Solaris target, X11 display, optimizations disabled."
  	@echo "  > dsolaris : Sun Solaris target, X11 display, debug mode."
  	@echo "  > osolaris : Sun Solaris target, X11 display, optimizations enabled."
-@@ -293,7 +299,7 @@
+@@ -292,7 +298,7 @@
  	$(CC) -o gmic_gimp.o -c gmic.cpp -Dcimg_build -Dgmic_gimp -Dgmic_minimal $(CIMG_OPT_CFLAGS) $(CIMG_FFTW3_CFLAGS) $(CIMG_PNG_CFLAGS)
  
  gmic_gimp: gmic_gimp.o gmic_gimp.cpp
@@ -104,7 +104,7 @@
  
  # Specific targets for 'gmic'.
  gmic_def: gmic_def.gmic
-@@ -333,7 +339,7 @@
+@@ -326,7 +332,7 @@
  		 gmic_uint.o gmic_int.o gmic_float.o gmic_double.o $(CFLAGS) $(LDFLAGS) $(CONF_CFLAGS) $(CONF_LDFLAGS)
  
  gmic_minimal:
@@ -113,7 +113,7 @@
  
  ifeq ($(STRIP_EXE),true)
  	strip $(EXEPFX)gmic
-@@ -421,6 +427,56 @@
+@@ -414,6 +420,56 @@
  "STRIP_EXE=true" \
  all $(CIMG_EXTRA_FILES)
  
