@@ -1,13 +1,8 @@
-# New ports collection makefile for:	pstodit
-# Date created:		03 July 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.60
-PORTREVISION=	1
+PORTVERSION=	3.61
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -16,7 +11,7 @@ COMMENT=	Convert PostScript to other vector graphic formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 OPTIONS_DEFINE=	MAGICK EMF MING PLOTUTILS DOCS EXAMPLES
 OPTIONS_DEFAULT=	MAGICK EMF PLOTUTILS
