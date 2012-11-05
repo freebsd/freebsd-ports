@@ -20,7 +20,7 @@ BUILD_DEPENDS=		p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
 RUN_DEPENDS=		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 			p5-Encode>0:${PORTSDIR}/converters/p5-Encode\
 			p5-XSLoader>0.1:${PORTSDIR}/devel/p5-XSLoader
-LIB_DEPENDS=		mecab.1:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=		mecab:${PORTSDIR}/japanese/mecab
 
 MAKE_JOBS_UNSAFE=	yes
 
