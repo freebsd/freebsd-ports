@@ -1,6 +1,6 @@
 lftp 4.3.3 checked for _Bool using C, not C++ ; keep this behaviour here because
 a failure to detect _Bool here would lead to try to re-define it in lftp's
-stdbool.h also included by C files, C having this thype is already defined.
+stdbool.h also included by C files, C having this type already defined.
 See HAVE__BOOL, "stdbool.h" and <stdbool.h>.
 
 --- configure.orig	2012-01-05 18:27:42.780415913 +0100
