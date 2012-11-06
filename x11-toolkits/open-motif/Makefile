@@ -19,7 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 MAKE_JOBS_UNSAFE=	yes
-CONFLICTS=	lesstif-[0-9]* open-motif-[0-0]*
+CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
