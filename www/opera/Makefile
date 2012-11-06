@@ -30,6 +30,8 @@ USE_XORG=	x11 xext sm ice xft xrender
 USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
 
+FORBIDDEN=	http://www.opera.com/support/kb/view/1030/ http://www.opera.com/support/kb/view/1031/ http://www.opera.com/support/kb/view/1033/
+
 MAN1=		opera.1
 MANCOMPRESSED=	yes
 
