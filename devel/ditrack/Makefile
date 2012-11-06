@@ -1,36 +1,33 @@
-# New ports collection makefile for:	ditrack
-# Date created:		2007-02-04
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ditrack
 PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ditrack.org/files/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tracking system based on Subversion repository
+COMMENT=	Tracking system based on Subversion repository
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
+WRKSRC=		${WRKDIR}/DITrack-${PORTVERSION}
 NO_BUILD=	yes
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	DITrack
-WRKSRC=		${WRKDIR}/DITrack-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/upgrade-0.7-db.py ${DATADIR}
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/index.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
