@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.7
-PORTREVISION=	1
+PORTVERSION=	4.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
