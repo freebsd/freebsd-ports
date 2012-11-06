@@ -1,12 +1,8 @@
-# New ports collection makefile for:	R-cran-Epi
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Epi
-PORTVERSION=	1.1.36
+PORTVERSION=	1.1.40
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
