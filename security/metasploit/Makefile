@@ -1,9 +1,5 @@
-# Ports collection makefile for:	metasploit-devel
-# Date created:				18 Nov 2004
-# Whom:					Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	metasploit
 DISTVERSION=	4.4.0
@@ -11,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/
 DISTNAME=	framework-${DISTVERSION}
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER=	tanawts@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
 RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm				\
