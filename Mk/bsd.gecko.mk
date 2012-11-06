@@ -62,7 +62,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  USE_GECKO= libxul libxul19
 # 
 #  post-patch:
-#	@${REINPALCE_CMD} -e 's|mozilla-|${GECKO}-|' \
+#	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
 #		${MOZSRC}/configure
 #
 #  If you want your port to check the ${GECKO} variable to see which backend
