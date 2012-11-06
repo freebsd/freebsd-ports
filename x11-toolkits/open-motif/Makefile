@@ -4,7 +4,8 @@
 PORTNAME=	open-motif
 PORTVERSION=	2.3.4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
+# MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
+MASTER_SITES=	SF/motif/Motif%202.3.4%20Source%20Code/
 DISTNAME=	motif-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -19,7 +20,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]* open-motif-[0-0]*
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool autoconf:env automake:env
 USE_ICONV=	yes
