@@ -1,0 +1,54 @@
+--- webapp/graphite/local_settings.py.example.orig	2012-05-31 00:28:54.000000000 -0600
++++ webapp/graphite/local_settings.py.example	2012-10-12 19:39:54.000000000 -0600
+@@ -44,6 +44,7 @@
+ # Change only GRAPHITE_ROOT if your install is merely shifted from /opt/graphite
+ # to somewhere else
+ #GRAPHITE_ROOT = '/opt/graphite'
++GRAPHITE_ROOT = '/usr/local/graphite'
+ 
+ # Most installs done outside of a separate tree such as /opt/graphite will only
+ # need to change these three settings. Note that the default settings for each
+@@ -51,6 +52,9 @@
+ #CONF_DIR = '/opt/graphite/conf'
+ #STORAGE_DIR = '/opt/graphite/storage'
+ #CONTENT_DIR = '/opt/graphite/webapp/content'
++CONF_DIR = '/usr/local/etc/graphite'
++STORAGE_DIR = '/usr/local/storage'
++CONTENT_DIR = '/usr/local/graphite/webapp/content'
+ 
+ # To further or fully customize the paths, modify the following. Note that the
+ # default settings for each of these are relative to CONF_DIR and STORAGE_DIR
+@@ -58,6 +62,8 @@
+ ## Webapp config files
+ #DASHBOARD_CONF = '/opt/graphite/conf/dashboard.conf'
+ #GRAPHTEMPLATES_CONF = '/opt/graphite/conf/graphTemplates.conf'
++DASHBOARD_CONF = '/usr/local/etc/graphite/dashboard.conf'
++GRAPHTEMPLATES_CONF = '/usr/local/etc/graphite/graphTemplates.conf'
+ 
+ ## Data directories
+ # NOTE: If any directory is unreadable in DATA_DIRS it will break metric browsing
+@@ -66,6 +72,11 @@
+ #DATA_DIRS = [WHISPER_DIR, RRD_DIR] # Default: set from the above variables
+ #LOG_DIR = '/opt/graphite/storage/log/webapp'
+ #INDEX_FILE = '/opt/graphite/storage/index'  # Search index file
++WHISPER_DIR = '/usr/local/storage/whisper'
++RRD_DIR = '/usr/local/graphite/storage/rrd'
++DATA_DIRS = [WHISPER_DIR, RRD_DIR] # Default: set from the above variables
++LOG_DIR = '/usr/local/graphite/storage/log/webapp'
++INDEX_FILE = '/usr/local/graphite/storage/index'  # Search index file
+ 
+ 
+ #####################################
+@@ -156,6 +167,12 @@
+ #DATABASE_PASSWORD = 'graphite-is-awesome'
+ #DATABASE_HOST = 'mysql.mycompany.com'
+ #DATABASE_PORT = '3306'
++DATABASES = {
++	'default': {
++		'NAME': '/usr/local/graphite/storage/graphite.db',
++		'ENGINE': 'django.db.backends.sqlite3',
++	}
++}
+ 
+ 
+ #########################

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-graphite-web
-# Date created:		2012-02-18
-# Whom:			Evan Sarmiento <esarmiento@wayfair.com>
-#
+# Created by: Evan Sarmiento <esarmiento@wayfair.com>
 # $FreeBSD$
-#
 
 PORTNAME=	graphite-web
 PORTVERSION=	0.9.10
@@ -28,5 +24,12 @@ USE_PYDISTUTILS=yes
 post-patch:
 	@${MKDIR} ${WRKSRC}/graphite/webapp/
 	@${CP} -LR ${WRKSRC}/webapp/content ${WRKSRC}/graphite/webapp
+	@${RM} ${WRKSRC}/bin/build-index.sh.orig
+
+post-install:
+	@${ECHO} ${PYTHON_SITELIBDIR}
+	${CHOWN} ${WWWOWN} ${PREFIX}/graphite/storage
+	${CHOWN} ${WWWOWN} ${PREFIX}/graphite/storage/log/webapp
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>
