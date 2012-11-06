@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
@@ -20,13 +20,12 @@ MING_DESC=	Enable swf interface
 PLOTUTILS_DESC=	Enable libplot interface
 
 USE_GNOME=	gnomehack
-USE_PKGCONFIG=	yes
 USE_GHOSTSCRIPT=	yes
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_SAFE=yes
 
-CFLAGS+=	-DHAVE_LIBGD
 CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -35,7 +34,7 @@ MAN1=		pstoedit.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick++:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=	--without-magick
@@ -43,7 +42,7 @@ PLIST_SUB+=	IMAGEMAGICK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MEMF}
-LIB_DEPENDS+=	EMF.1:${PORTSDIR}/graphics/libemf
+LIB_DEPENDS+=	EMF:${PORTSDIR}/graphics/libemf
 CONFIGURE_ARGS+=	--with-libemf-include=${LOCALBASE}/include/libEMF
 PLIST_SUB+=	EMF=""
 .else
@@ -52,7 +51,7 @@ PLIST_SUB+=	EMF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMING}
-LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming
 PLIST_SUB+=	MING=""
 .else
 CONFIGURE_ARGS+=	--without-swf
@@ -60,7 +59,7 @@ PLIST_SUB+=	MING="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPLOTUTILS}
-LIB_DEPENDS+=	plotter.4:${PORTSDIR}/graphics/plotutils
+LIB_DEPENDS+=	plotter:${PORTSDIR}/graphics/plotutils
 PLIST_SUB+=	PLOTUTILS=""
 .else
 CONFIGURE_ARGS+=	--without-libplot
