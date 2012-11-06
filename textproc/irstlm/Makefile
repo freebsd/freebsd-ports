@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irstlm
-PORTVERSION=	5.40.01
+PORTVERSION=	5.40.02
 CATEGORIES=	textproc
 MASTER_SITES=	http://hlt.fbk.eu/sites/hlt.fbk.eu/files/irstlm/
 

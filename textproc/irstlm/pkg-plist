@@ -25,4 +25,5 @@ include/ngrampool.h
 include/ngramtable.h
 include/normcache.h
 include/shiftlm.h
+include/timer.h
 include/util.h
