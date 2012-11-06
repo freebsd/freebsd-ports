@@ -1,0 +1,14 @@
+bin/readpe
+bin/pedis
+bin/pepack
+bin/pescan
+bin/rva2ofs
+bin/pesec
+bin/ofs2rva
+bin/pestr
+bin/pehash
+lib/libpe.so
+lib/libpe.so.1
+lib/libpe.so.1.0
+%%DATADIR%%/userdb.txt
+@dirrm share/pev
