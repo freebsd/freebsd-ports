@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qemu
-# Date created:			2004/05/31
-# Whom:				Juergen Lock <nox@jelal.kn-bremen.de>
-#
+# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
@@ -18,6 +14,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator
 
 HAS_CONFIGURE=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 PATCH_STRIP=	-p1
