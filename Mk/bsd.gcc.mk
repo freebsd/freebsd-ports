@@ -202,6 +202,7 @@ CPP:=			cpp${V}
 .   if ${_USE_GCC} != 3.4
 _GCC_RUNTIME:=		${LOCALBASE}/lib/gcc${V}
 CFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
+CXXFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 .    if defined (USE_FORTRAN)
 .    if ${USE_FORTRAN} == yes
