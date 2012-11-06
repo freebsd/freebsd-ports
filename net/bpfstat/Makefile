@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bpfstat
-# Date created:         27 July 2005
-# Whom:                 Christian S.J. Peron <csjp@FreeBSD.org>
-#
+# Created by: Christian S.J. Peron <csjp@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bpfstat
 PORTVERSION=	1.0
@@ -13,6 +9,9 @@ MASTER_SITE_SUBDIR=     csjp
 
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Program to retrieve bpf statistics
+
+DEPRECATED=	Merge in netstat on all supported version of FreeBSD
+EXPIRATION_DATE=	2012-12-06
 
 MAN8=		bpfstat.8
 PLIST_FILES=	sbin/bpfstat
