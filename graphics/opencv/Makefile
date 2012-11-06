@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${PORTVERSION}
 DISTNAME=	OpenCV-${DISTVERSION}a
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Computer Vision library from Intel
 
 LICENSE=	BSD
