@@ -3839,3 +3839,4 @@ textproc/xerces-c||2012-11-05|Has expired: No more supported upstream, consider 
 x11-wm/wampager||2012-11-05|Has expired: Development ceased
 x11-wm/waimea||2012-11-05|Has expired: Development ceased
 x11-wm/waimea-devel||2012-11-05|Has expired: Development ceased
+x11-toolkits/open-motif|motif|2012-11-06|Openmotif is now named Motif (under LGPL 2.1)

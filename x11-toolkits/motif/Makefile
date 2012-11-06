@@ -1,29 +1,27 @@
-# ex:ts=8
-# New ports collection makefile for:	motif
-# Date created:		5 December 1994
-# Whom:			asami
-#
 # $FreeBSD$
 #
 
-PORTNAME=	open-motif
-PORTVERSION=	2.3.3
-PORTREVISION=	2
+PORTNAME=	motif
+PORTVERSION=	2.3.4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.ics.com/openmotif/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
-DISTNAME=	openmotif-${PORTVERSION}
-DIST_SUBDIR=	openmotif
+MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
+DISTNAME=	motif-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 MAKE_JOBS_UNSAFE=	yes
-CONFLICTS=	lesstif-[0-9]*
+CONFLICTS=	lesstif-[0-9]* open-motif-[0-0]*
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool autoconf:env automake:env
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_XORG=	xaw xbitmaps xft
@@ -87,9 +85,9 @@ post-patch:
 	@${FIND} ${WRKSRC}/doc/man/man5 -name '*.5' -maxdepth 1 | \
 		${XARGS} ${REINPLACE_CMD} -e 's|special file|5| ; \
 		 s|file formats|5|'
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-		-e '/-dumpversion/{ s/==/=/; s/gcc/$$CC/; }' \
-		${WRKSRC}/configure
+
+pre-configure:
+	cd ${WRKSRC} && ./autogen.sh
 
 post-install:
 .if defined(WITH_OPENMOTIF_DEMOS)
@@ -172,7 +170,7 @@ post-install:
 .endif
 .if !defined(WITHOUT_OPENMOTIF_MANUALS)
 	@${MKDIR} ${DOCSDIR}
-.for i in BUGREPORT COPYRIGHT.MOTIF README RELNOTES
+.for i in BUGREPORT README RELNOTES
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif

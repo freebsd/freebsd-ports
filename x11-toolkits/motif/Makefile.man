@@ -711,8 +711,9 @@ MAN3= \
 	XmVaCreateToggleButton.3 \
 	XmVaCreateToggleButtonGadget.3 \
 	XmWidgetGetDisplayRect.3
+MAN4= \
+	mwmrc.4
 MAN5= \
 	Traits.5 \
 	UIL.5 \
-	WML.5 \
-	mwmrc.5
+	WML.5

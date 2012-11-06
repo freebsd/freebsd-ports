@@ -352,8 +352,290 @@ lib/libXm.a
 lib/libXm.la
 lib/libXm.so
 lib/libXm.so.4
+man/manm/exm_in_c.man
+man/manm/simpleDemo.man
+share/Xm/ButtonBox/Imakefile
+share/Xm/ButtonBox/bboxdemo
+share/Xm/ButtonBox/bboxdemo.c
+share/Xm/Color/Imakefile
+share/Xm/Color/colordemo
+share/Xm/Color/colordemo.c
+share/Xm/Color/util-c.c
+share/Xm/Column/Column.ad
+share/Xm/Column/Imakefile
+share/Xm/Column/column
+share/Xm/Column/column.c
+share/Xm/Exm/app_in_c/exm_in_c
+share/Xm/Exm/simple_app/README
+share/Xm/Exm/simple_app/simpleDemo
+share/Xm/Ext18list/Imakefile
+share/Xm/Ext18list/callbacks-c.c
+share/Xm/Ext18list/creation.c
+share/Xm/Ext18list/ext18list
+share/Xm/Ext18list/ext18list.c
+share/Xm/Ext18list/extlist.h
+share/Xm/Ext18list/pixmaps/clown.xbm
+share/Xm/Ext18list/pixmaps/crab.xpm
+share/Xm/Ext18list/pixmaps/eye.xpm
+share/Xm/Ext18list/pixmaps/porsche.xpm
+share/Xm/Ext18list/pixmaps/stopsign.xpm
+share/Xm/Ext18list/util-c.c
+share/Xm/Icon/Imakefile
+share/Xm/Icon/iconbuttondemo
+share/Xm/Icon/iconbuttondemo.c
+share/Xm/Icon/misc.c
+share/Xm/Icon/small.bm
+share/Xm/Outline/Imakefile
+share/Xm/Outline/outline
+share/Xm/Outline/outline.c
+share/Xm/Paned2/Imakefile
+share/Xm/Paned2/creation-c.c
+share/Xm/Paned2/paned
+share/Xm/Paned2/paned.c
+share/Xm/Tabstack/Imakefile
+share/Xm/Tabstack/bxutils.c
+share/Xm/Tabstack/callbacks.c
+share/Xm/Tabstack/creation.c
+share/Xm/Tabstack/creation.h
+share/Xm/Tabstack/main.c
+share/Xm/Tabstack/tabstack
+share/Xm/Tree/Imakefile
+share/Xm/Tree/bxutil-c.c
+share/Xm/Tree/tree
+share/Xm/Tree/tree.c
+share/Xm/airport/Imakefile
+share/Xm/airport/README
+share/Xm/airport/XmdAirport.ad
+share/Xm/airport/airport
+share/Xm/airport/airport.h
+share/Xm/airport/dragsource.c
+share/Xm/airport/dragsource.h
+share/Xm/airport/dropsite.c
+share/Xm/airport/dropsite.h
+share/Xm/airport/main.c
+share/Xm/airport/main.h
+share/Xm/animate/Imakefile
+share/Xm/animate/README
+share/Xm/animate/XmdAnimate.ad
+share/Xm/animate/animate.help
+share/Xm/animate/animate.man
+share/Xm/animate/dog.uid
+share/Xm/animate/dog.uil
+share/Xm/animate/plane.uid
+share/Xm/animate/plane.uil
+share/Xm/animate/superman.uid
+share/Xm/animate/superman.uil
+share/Xm/animate/superman1.xbm
+share/Xm/animate/superman2.xbm
+share/Xm/animate/superman3.xbm
+share/Xm/animate/superman4.xbm
+share/Xm/animate/superman5.xbm
+share/Xm/animate/superman6.xbm
+share/Xm/animate/xmanimate
+share/Xm/animate/xmanimate.c
+share/Xm/animate/xmanimate.man
+share/Xm/animate/xmanimate.uid
+share/Xm/animate/xmanimate.uil
+share/Xm/autopopups/Imakefile
+share/Xm/autopopups/README
+share/Xm/autopopups/autopopups
+share/Xm/autopopups/autopopups.c
+share/Xm/autopopups/autopopups.man
+share/Xm/combo2/Combo.ad
+share/Xm/combo2/Imakefile
+share/Xm/combo2/combo
+share/Xm/combo2/combo.c
+share/Xm/drag_and_drop/DNDDemo
+share/Xm/drag_and_drop/DNDDemo.c
+share/Xm/drag_and_drop/DNDDemo.man
+share/Xm/drag_and_drop/DNDDraw.c
+share/Xm/drag_and_drop/Imakefile
+share/Xm/drag_and_drop/README
+share/Xm/drag_and_drop/simpledrop
+share/Xm/drag_and_drop/simpledrop.c
+share/Xm/drag_and_drop/simpledrop.man
+share/Xm/draw/Imakefile
+share/Xm/draw/README
+share/Xm/draw/XmdDraw.ad
+share/Xm/draw/draw
+share/Xm/draw/draw.c
+share/Xm/draw/draw.help
+share/Xm/draw/draw.man
+share/Xm/earth/Imakefile
+share/Xm/earth/README
+share/Xm/earth/earth
+share/Xm/earth/earth.c
+share/Xm/earth/earth.man
+share/Xm/earth/terre.xbm
+share/Xm/filemanager/Imakefile
+share/Xm/filemanager/XmdFilemanager.ad
+share/Xm/filemanager/actions.c
+share/Xm/filemanager/code.xpm
+share/Xm/filemanager/convert.c
+share/Xm/filemanager/dir.xpm
+share/Xm/filemanager/exec.xpm
+share/Xm/filemanager/file.xpm
+share/Xm/filemanager/filemanager
+share/Xm/filemanager/filemanager.c
+share/Xm/filemanager/filemanager.h
+share/Xm/filemanager/filemanager.help
+share/Xm/filemanager/filemanager.man
+share/Xm/filemanager/interface.c
+share/Xm/filemanager/none.xpm
+share/Xm/filemanager/obj.xpm
+share/Xm/filemanager/pix.xpm
+share/Xm/filemanager/readdir.c
+share/Xm/filemanager/s_dir.xpm
+share/Xm/filemanager/s_exec.xpm
+share/Xm/filemanager/s_file.xpm
+share/Xm/filemanager/s_none.xpm
+share/Xm/filemanager/s_pix.xpm
+share/Xm/fileview/English.df
+share/Xm/fileview/English.uid
+share/Xm/fileview/English.uil
+share/Xm/fileview/Fileview.ad
+share/Xm/fileview/French.df
+share/Xm/fileview/French.uid
+share/Xm/fileview/French.uil
+share/Xm/fileview/German.df
+share/Xm/fileview/German.uid
+share/Xm/fileview/German.uil
+share/Xm/fileview/README
+share/Xm/fileview/file.c
+share/Xm/fileview/file.h
+share/Xm/fileview/fileE.h
+share/Xm/fileview/fileview
+share/Xm/fileview/fileview.h
+share/Xm/fileview/main.c
+share/Xm/fileview/main.h
+share/Xm/fileview/mainE.h
+share/Xm/fileview/text.c
+share/Xm/fileview/text.h
+share/Xm/fileview/textE.h
+share/Xm/fontsel/Imakefile
+share/Xm/fontsel/callbacks-c.c
+share/Xm/fontsel/creation-c.c
+share/Xm/fontsel/fontsel
+share/Xm/fontsel/fontsel.c
+share/Xm/fontsel/fontsel.h
+share/Xm/getsubres/Imakefile
+share/Xm/getsubres/README
+share/Xm/getsubres/getsubres
+share/Xm/getsubres/getsubres.c
+share/Xm/getsubres/getsubres.help
+share/Xm/getsubres/getsubres.man
+share/Xm/helloint/Imakefile
+share/Xm/helloint/README
+share/Xm/helloint/helloint
+share/Xm/helloint/helloint.c
+share/Xm/helloint/helloint.man
+share/Xm/helloint/helloint.uid
+share/Xm/helloint/helloint.uil
+share/Xm/hellomotif/Imakefile
+share/Xm/hellomotif/README
+share/Xm/hellomotif/hellomotif
+share/Xm/hellomotif/hellomotif.c
+share/Xm/hellomotif/hellomotif.uid
+share/Xm/hellomotif/hellomotif.uil
+share/Xm/i18ninput/Imakefile
+share/Xm/i18ninput/README
+share/Xm/i18ninput/XmdI18nInput.ad
+share/Xm/i18ninput/i18ninput
+share/Xm/i18ninput/i18ninput.c
+share/Xm/i18ninput/i18ninput.help
+share/Xm/i18ninput/i18ninput.man
+share/Xm/i18ninput/input.c
+share/Xm/panner/Imakefile
+share/Xm/panner/README
+share/Xm/panner/panner
+share/Xm/panner/panner.c
+share/Xm/panner/panner.man
+share/Xm/periodic/Imakefile
+share/Xm/periodic/README
+share/Xm/periodic/XmdPeriodic.ad
+share/Xm/periodic/periodic
+share/Xm/periodic/periodic.c
+share/Xm/periodic/periodic.uid
+share/Xm/periodic/periodic.uil
+share/Xm/periodic/periodic_l.uil
+share/Xm/piano/Imakefile
+share/Xm/piano/Inv8_part1.piano
+share/Xm/piano/Inv8_part2.piano
+share/Xm/piano/README
+share/Xm/piano/piano
+share/Xm/piano/piano.c
+share/Xm/piano/piano.images
+share/Xm/piano/piano.man
+share/Xm/pixmaps/clown.xbm
+share/Xm/pixmaps/crab.xpm
+share/Xm/pixmaps/eye.xpm
+share/Xm/pixmaps/porsche.xpm
+share/Xm/pixmaps/stopsign.xpm
+share/Xm/sampler2_0/Imakefile
+share/Xm/sampler2_0/README
+share/Xm/sampler2_0/XmdSampler2_0.ad
+share/Xm/sampler2_0/bee.xpm
+share/Xm/sampler2_0/bomb.xpm
+share/Xm/sampler2_0/cherry.xpm
+share/Xm/sampler2_0/da.xpm
+share/Xm/sampler2_0/girlface.xpm
+share/Xm/sampler2_0/k7.xpm
+share/Xm/sampler2_0/labir.xpm
+share/Xm/sampler2_0/main.xpm
+share/Xm/sampler2_0/pile.xpm
+share/Xm/sampler2_0/prev.xpm
+share/Xm/sampler2_0/sampler2_0
+share/Xm/sampler2_0/sampler2_0.c
+share/Xm/sampler2_0/sampler2_0.help
+share/Xm/sampler2_0/sampler2_0.man
+share/Xm/sampler2_0/spir.xpm
+share/Xm/sampler2_0/stack.xpm
+share/Xm/sampler2_0/text.xpm
+share/Xm/setDate/Imakefile
+share/Xm/setDate/README
+share/Xm/setDate/XmdSetDate.ad
+share/Xm/setDate/setDate
+share/Xm/setDate/setDate.c
+share/Xm/setDate/setDate.man
+share/Xm/todo/Imakefile
+share/Xm/todo/README
+share/Xm/todo/XmdTodo.ad
+share/Xm/todo/actions.c
+share/Xm/todo/example.todo
+share/Xm/todo/io.c
+share/Xm/todo/page.h
+share/Xm/todo/todo
+share/Xm/todo/todo.c
+share/Xm/todo/todo.help
+share/Xm/todo/todo.man
+share/Xm/tooltips/Imakefile
+share/Xm/tooltips/tooltips
+share/Xm/tooltips/tooltips.c
+share/Xm/wsm/Imakefile
+share/Xm/wsm/README
+share/Xm/wsm/client_win.c
+share/Xm/wsm/command_ui.c
+share/Xm/wsm/command_ui.h
+share/Xm/wsm/wsm
+share/Xm/wsm/wsm.c
+share/Xm/wsm/wsm.h
+share/Xm/wsm/wsm.man
+share/Xm/wsm/wsmData.c
+share/Xm/wsm/wsmData.h
+share/Xm/wsm/wsmDebug.c
+share/Xm/wsm/wsmDebug.h
+share/Xm/wsm/wsmSend.c
+share/Xm/wsm/wsmSend.h
+share/Xm/wsm/wsmStruct.c
+share/Xm/wsm/wsmStruct.h
+share/Xm/wsm/wsm_cb.c
+share/Xm/wsm/wsm_cb.h
+share/Xm/wsm/wsm_create.c
+share/Xm/wsm/wsm_create.h
+share/Xm/wsm/wsm_ui.h
+share/Xm/wsm/xrmLib.c
+share/Xm/wsm/xrmLib.h
 %%MANUALS%%%%DOCSDIR%%/BUGREPORT
-%%MANUALS%%%%DOCSDIR%%/COPYRIGHT.MOTIF
 %%MANUALS%%%%DOCSDIR%%/README
 %%MANUALS%%%%DOCSDIR%%/RELNOTES
 %%MANUALS%%@dirrm %%DOCSDIR%%
@@ -375,3 +657,41 @@ lib/libXm.so.4
 @dirrm include/uil
 @dirrm include/Xm
 @dirrm include/Mrm
+@dirrm share/Xm/wsm
+@dirrm share/Xm/tooltips
+@dirrm share/Xm/todo
+@dirrm share/Xm/setDate
+@dirrm share/Xm/sampler2_0
+@dirrm share/Xm/pixmaps
+@dirrm share/Xm/piano
+@dirrm share/Xm/periodic
+@dirrm share/Xm/panner
+@dirrm share/Xm/i18ninput
+@dirrm share/Xm/hellomotif
+@dirrm share/Xm/helloint
+@dirrm share/Xm/getsubres
+@dirrm share/Xm/fontsel
+@dirrm share/Xm/fileview
+@dirrm share/Xm/filemanager
+@dirrm share/Xm/earth
+@dirrm share/Xm/draw
+@dirrm share/Xm/drag_and_drop
+@dirrm share/Xm/combo2
+@dirrm share/Xm/autopopups
+@dirrm share/Xm/animate
+@dirrm share/Xm/airport
+@dirrm share/Xm/Tree
+@dirrm share/Xm/Tabstack
+@dirrm share/Xm/Paned2
+@dirrm share/Xm/Outline
+@dirrm share/Xm/Icon
+@dirrm share/Xm/Ext18list/pixmaps
+@dirrm share/Xm/Ext18list
+@dirrm share/Xm/Exm/simple_app
+@dirrm share/Xm/Exm/app_in_c
+@dirrm share/Xm/Exm
+@dirrm share/Xm/Column
+@dirrm share/Xm/Color
+@dirrm share/Xm/ButtonBox
+@dirrm share/Xm
+@dirrmtry man/manm

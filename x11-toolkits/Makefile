@@ -129,12 +129,12 @@
     SUBDIR += linux-openmotif
     SUBDIR += linux-pango
     SUBDIR += linux-qt33
+    SUBDIR += motif
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += neXtaw
     SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk2
-    SUBDIR += open-motif
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
     SUBDIR += p5-Glade2
