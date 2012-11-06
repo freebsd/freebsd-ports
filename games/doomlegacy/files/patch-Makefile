@@ -1,0 +1,41 @@
+--- Makefile.orig
++++ Makefile
+@@ -76,7 +76,7 @@
+   # std=c89, does not support // commments, no inline, no asm
+ 
+ # gcc or g++
+-CC=gcc
++CC?=gcc
+ 
+ # End of User tunable settings
+ 
+@@ -116,9 +116,9 @@
+     LIBS := -lopengl32 -lglu32 -lwsock32 -lm
+   else
+     # default is Linux, for all unix SDL
+-    OPTS := -DLINUX
++    OPTS := -DLINUX -DFREEBSD
+     LDFLAGS=-L/usr/X11R6/lib
+-    LIBS := -lGL -lGLU -lm
++    LIBS := -lGL -lGLU -lm -lipx
+     # -L/usr/X11R6/lib is needed by Linux 2.4 and others that still have
+     # the GLU libraries in an X11 directory.
+     # -lm is needed for pow, powf, and other MATH1 functions.
+@@ -296,7 +296,7 @@
+ 
+ 
+ # compiler and linker flags
+-CFLAGS = $(WFLAGS)
++#CFLAGS = $(WFLAGS)
+ 
+ ifdef PROFILEMODE
+ # build with gprof profiling information
+@@ -309,7 +309,7 @@
+ else
+ # build a normal optimized version
+   #CFLAGS += -O3
+-  CFLAGS += $(OPTLEV) -fomit-frame-pointer
++  #CFLAGS += $(OPTLEV) -fomit-frame-pointer
+ endif
+ endif
+ 
