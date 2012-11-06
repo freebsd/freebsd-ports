@@ -1,12 +1,8 @@
-# New ports collection makefile for:    tdiary
-# Date created:                 21 May 2003
-# Whom:                         Fumihiko Kimura <jfkimura@yahoo.co.jp>
-#
+# Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	tdiary
-PORTVERSION=	3.1.4
+PORTVERSION=	3.2.0
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://www.tdiary.org/download/
@@ -16,7 +12,6 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 RUN_DEPENDS=	hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
 		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize
@@ -36,13 +31,19 @@ RUBY_SHEBANG_FILES=	index.fcgi \
 			misc/plugin/xmlrpc/xmlrpc.rb \
 			misc/standalone_cgi/bin/server
 
-MD=	HOWTO-authenticate-in-rack.html.md HOWTO-make-io.html.md \
-	HOWTO-make-plugin.html.md HOWTO-make-theme.html.md \
-	HOWTO-testing-tDiary.html.md HOWTO-use-plugin.html.md \
-	HOWTO-write-tDiary.en.html.md HOWTO-write-tDiary.html.md \
-	INSTALL-heroku.html.md INSTALL.html.md README.en.html.md \
-	README.html.md UPGRADE.html.md
-PORTDOCS=	ChangeLog LICENSE README.md doc.css ${MD}
+HTML=	HOWTO-authenticate-in-rack.html HOWTO-make-io.html \
+	HOWTO-make-plugin.html HOWTO-make-theme.html \
+	HOWTO-testing-tDiary.html HOWTO-use-plugin.html \
+	HOWTO-write-tDiary.en.html HOWTO-write-tDiary.html \
+	INSTALL-paas.html INSTALL.html README.en.html \
+	README.html UPGRADE.html
+MD=	HOWTO-authenticate-in-rack.md HOWTO-make-io.md \
+	HOWTO-make-plugin.md HOWTO-make-theme.md \
+	HOWTO-testing-tDiary.md HOWTO-use-plugin.md \
+	HOWTO-write-tDiary.en.md HOWTO-write-tDiary.md \
+	INSTALL-paas.md INSTALL.md README.en.md \
+	README.md UPGRADE.md
+PORTDOCS=	ChangeLog LICENSE doc.css ${HTML} ${MD}
 
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
@@ -78,7 +79,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
 .endif
 
-post-extract:
+pre-patch:
 	@${RM} ${WRKSRC}/.gitignore
 	@${RM} ${WRKSRC}/.travis.yml
 	@${RM} ${WRKSRC}/Capfile
@@ -93,6 +94,7 @@ post-extract:
 	@${RM} -r ${WRKSRC}/test
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
+	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.37
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
