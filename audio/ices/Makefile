@@ -1,28 +1,44 @@
-# New ports collection makefile for: ices
-# Date created:         11 Nov 2002
-# Whom:                 Michael Nottebrock <michaelnottebrock@gmx.net>
-#
+# Created by: Michael Nottebrock <michaelnottebrock@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ices
 PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://svn.xiph.org/releases/ices/
+MASTER_SITES=	http://downloads.xiph.org/releases/ices/ \
+		http://svn.xiph.org/releases/ices/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A vorbis streaming source client for icecast 2
+COMMENT=	Vorbis streaming source client for icecast 2
 
-LIB_DEPENDS=	shout:${PORTSDIR}/audio/libshout2 \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
+		shout:${PORTSDIR}/audio/libshout2 \
 		vorbis:${PORTSDIR}/audio/libvorbis \
-		xml2:${PORTSDIR}/textproc/libxml2
+		speex:${PORTSDIR}/audio/speex \
+		theora:${PORTSDIR}/multimedia/libtheora
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--disable-alsa --disable-roaraudio --disable-sun-audio
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+OPTIONS_DEFINE=	ALSA
+
 USE_BZIP2=	yes
+USE_GNOME=	libxml2
+USE_GMAKE=	yes
+USE_ICONV=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
+USE_PKGCONFIG=	build
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=--disable-alsa
+.endif
 
 .include <bsd.port.mk>
