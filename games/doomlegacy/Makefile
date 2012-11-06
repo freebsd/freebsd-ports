@@ -30,12 +30,18 @@ PORTDOCS=	*
 
 SVN_REV=	845
 
-OPTIONS_DEFINE=	ASM DOCS
-OPTIONS_DEFAULT=	ASM
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MASM} && ${ARCH} == "i386"
+.if ${ARCH} == "i386"
+OPTIONS_DEFINE+=	ASM
+OPTIONS_DEFAULT=	ASM
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ENV+=	USEASM=1
 .endif
