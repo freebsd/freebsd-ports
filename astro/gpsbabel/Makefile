@@ -1,16 +1,13 @@
-# New ports collection makefile for:	gpsbabel
-# Date created:		Apr 2006
-# Whom:			Laurent Courty
-#
+# Created by: Laurent Courty
 # $FreeBSD$
 
 PORTNAME=	gpsbabel
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPS file translating tool
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
