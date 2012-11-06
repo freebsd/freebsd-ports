@@ -1,31 +1,29 @@
-# New ports collection makefile for:	shotwell
-# Date created:		Tue Sep  7 02:00:03 UTC 2010
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org> et al.
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org> et al.
 # $FreeBSD$
-#
 
 PORTNAME=	shotwell
 PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
 
+LICENSE=	LGPL21
+
 BUILD_DEPENDS=	vala>=0.12.0:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gee.2:${PORTSDIR}/devel/libgee \
-		json-glib-1.0.0:${PORTSDIR}/devel/json-glib \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		gee:${PORTSDIR}/devel/libgee \
+		json-glib-1.0:${PORTSDIR}/devel/json-glib \
+		soup-2.4:${PORTSDIR}/devel/libsoup \
 		gexiv2:${PORTSDIR}/graphics/gexiv2 \
-		exif.12:${PORTSDIR}/graphics/libexif \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
+		exif:${PORTSDIR}/graphics/libexif \
+		gphoto2:${PORTSDIR}/graphics/libgphoto2 \
 		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		raw.5:${PORTSDIR}/graphics/libraw
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
+		raw:${PORTSDIR}/graphics/libraw
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
