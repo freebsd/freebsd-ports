@@ -1,9 +1,5 @@
-# New ports collection makefile for:   opencv
-# Date created:                05 March 2005
-# Whom:                        Marc Abramowitz (http://marc.abramowitz.info)
-#
+# Created by: Marc Abramowitz (http://marc.abramowitz.info)
 # $FreeBSD$
-#
 
 PORTNAME?=	opencv
 PORTVERSION=	2.3.1
@@ -12,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${PORTVERSION}
 DISTNAME=	OpenCV-${DISTVERSION}a
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Open Source Computer Vision library from Intel
 
 LICENSE=	BSD
