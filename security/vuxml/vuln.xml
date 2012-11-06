@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="38daea4f-2851-11e2-9483-14dae938ec40">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<name>linux-opera-devel</name>
+	<range><lt>12.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/kb/view/1030/">
+	  <p>CORS (Cross-Origin Resource Sharing) allows web pages to retrieve
+	    the contents of pages from other sites, with their permission,
+	    as they would appear for the current user.
+	    When requests are made in this way, the browser should only allow
+	    the page content to be retrieved if the target site sends the
+	    correct headers that give permission for their contents to be
+	    used in this way.  Specially crafted requests may trick Opera
+	    into thinking that the target site has given permission when it
+	    had not done so. This can result in the contents of any target page
+	    being revealed to untrusted sites, including any
+	    sensitive information or session IDs contained within the
+	    source of those pages.</p>
+	</blockquote>
+	<p>Also reported are vulnerabilities involving SVG graphics and XSS.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/1030/</url>
+      <url>http://www.opera.com/support/kb/view/1031/</url>
+      <url>http://www.opera.com/support/kb/view/1033/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-06</discovery>
+      <entry>2012-11-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36533a59-2770-11e2-bb44-003067b2972c">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
