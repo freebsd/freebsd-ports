@@ -1,12 +1,8 @@
-# New ports collection makefile for:    py-markdown
-# Date created:         28 November 2006
-# Whom:                 Graham Todd <gtodd@bellanet.org>
-#
+# Created by: Graham Todd <gtodd@bellanet.org>
 # $FreeBSD$
-#
 
 PORTNAME=		markdown
-PORTVERSION=		2.2.0
+PORTVERSION=		2.2.1
 CATEGORIES=		textproc python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
