@@ -80,6 +80,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} '{}' ';'
 	@${REINPLACE_CMD} "s|E_ALL|E_ALL \& ~E_STRICT|g" \
 		${WRKSRC}/includes/fix.inc.php
+	@${RM} ${WRKSRC}/includes/fix.inc.php.bak
 
 do-install:
 	${MKDIR} ${FLYSPRAYDIR}
