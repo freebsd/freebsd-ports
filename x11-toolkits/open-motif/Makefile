@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	motif
+PORTNAME=	open-motif
 PORTVERSION=	2.3.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
