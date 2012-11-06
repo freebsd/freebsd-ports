@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -74,6 +74,9 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/411.pkg-backup ${PREFIX}/etc/periodic/daily
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/libpkg/pkg.pc ${PREFIX}/libdata/pkgconfig/
+	@${MKDIR} ${PREFIX}/share/zsh/site-functions
+	@${INSTALL_DATA} ${WRKSRC}/scripts/zsh/_pkg ${PREFIX}/share/zsh/site-functions/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
