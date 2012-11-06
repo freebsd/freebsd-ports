@@ -26,7 +26,8 @@ you update your ports collection, before attempting any port upgrades.
   "perl-after-upgrade" script supplied with lang/perl5.16.
   Please see its manual page for details.
 
-  If you are using pkgng, do this instead of "perl-after-upgrade":
+  If you are using binary packages with pkgng, not ports, do this instead of
+  "perl-after-upgrade":
   # pkg install -fRx perl 
 
 20121102:
