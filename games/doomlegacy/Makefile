@@ -6,7 +6,7 @@ DISTVERSION=	1.44_alpha3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://doomlegacy.sourceforge.net/releases/ \
-		http://freebsd.nsu.ru/distfiles/legacy.wad:wad
+		http://freebsd.nsu.ru/distfiles/:wad
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_r${SVN_REV}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} legacy.wad:wad
 DIST_SUBDIR=	${PORTNAME}
