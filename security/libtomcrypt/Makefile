@@ -11,8 +11,6 @@ DISTNAME=	crypt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
-BROKEN=		incomplete plist
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
@@ -50,6 +48,7 @@ CFLAGS+=	-DGMP_DESC
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+PORTDOCS=	*
 .else
 MAKE_ARGS+=	NODOCS=yes
 .endif
