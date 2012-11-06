@@ -1,14 +1,8 @@
-# New ports collection makefile for:	linux-sdl
-# Date created:				8 October 2001
-# Whom:                         Martin Matuska <martin@tradex.sk>
-# Based on:		emulators/linux_base by marcel@FreeBSD.org
-#
+# Created by: Martin Matuska <martin@tradex.sk>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.10
-PORTREVISION=	2
+PORTVERSION=	1.2.15
 PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
