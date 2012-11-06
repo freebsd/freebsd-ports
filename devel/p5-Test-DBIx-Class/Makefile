@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Test-DBIx-Class
-# Date created:		2012-01-18
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
