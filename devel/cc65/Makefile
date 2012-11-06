@@ -2,52 +2,56 @@
 
 PORTNAME=	cc65
 PORTVERSION=	2.13.3
+DISTVERSIONPREFIX=	sources-
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
-		http://www.funet.fi/pub/cbm/programming/cc65/ \
-		http://www.acc.umu.se/~arvid/cc65_mirror/ \
-		http://bj.spline.de/cc65/
-DISTNAME=	${PORTNAME}-sources-${PORTVERSION}
+MASTER_SITES=	http://bj.spline.de/cc65/ \
+		http://cc65.oldos.net/ \
+		ftp://ftp.musoftware.de/pub/uz/cc65/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
-USE_SUBMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
-MAKEFILE=	${WRKSRC}/make/gcc.mak
 USE_PERL5_BUILD=yes
-MAKE_JOBS_UNSAFE=	yes
+USE_GMAKE=	yes
+MAKEFILE=	${WRKSRC}/make/gcc.mak
+MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
 post-patch:
-#
-# CFLAGS safety
-#
-	@(${FIND} ${WRKSRC}/ -name gcc.mak -type f|${XARGS} ${REINPLACE_CMD} -E \
-		-e "s,=[[:space:]]*-g -O2 -Wall -W(.*),+=\1," \
-		-e "s,=[[:space:]]*-g -O2 -Wall(.*),+=\1," \
-		-e "s,=[[:space:]]*-O2 -g -Wall -W(.*),+=\1," \
-		-e "s,-std=c89,-std=c99,g" \
-		-e "s,CC[[:space:]]*=.*,#&,")
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -E -e "s,(install:.*)install-docs(.*)$$,\1\2," \
-		-e '/\(MKDIR\)[[:space:]]+\$$\(CC65DOC\)/d' \
-		${WRKSRC}/make/gcc.mak
-	@${REINPLACE_CMD} -E -e "s,^(docdir[[:space:]]*=).*,\1," \
-		-e "s,^(CC65_DOC[[:space:]]*=).*,\1," ${WRKSRC}/make/gcc.mak
-.endif
+	@${FIND} ${WRKSRC} -name "gcc.mak" | ${XARGS} ${REINPLACE_CMD} -e \
+		'/gcc/s|^CC|#CC| ; \
+		/-O2/s|^CFLAGS|#CFLAGS|'
+	@${REINPLACE_CMD} -e \
+		'/^prefix/s|=.*|= $${PREFIX}| ; \
+		 /^docdir/s|=.*|=| ; \
+		 /^CC65_DOC/s|=.*|=| ;  \
+		 /^INSTALL_DATA/s|=.*|= $${BSD_INSTALL_DATA}| ; \
+		 /^INSTALL_PROG/s|=.*|= $${BSD_INSTALL_SCRIPT}| ; \
+		 /^INSTALL_STRIP/s|=.*|= $${BSD_INSTALL_PROGRAM}| ; \
+		 /^all:/s|docs|| ; \
+		 /^install:/s|install-docs||' ${WRKSRC}/make/gcc.mak
 
 # XXX: gmake>=3.82 hack:  beats the hell out of me.  Quick fix.
 pre-install:
-	@${MKDIR} -p ${PREFIX}/lib/cc65/tgi
+	@${MKDIR} ${PREFIX}/lib/cc65/tgi
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in BUGS CREDITS compile.txt internal.txt newvers.txt readme.1st
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/src/ca65/macpack/*.mac ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 	@${CAT} ${PKGMESSAGE}
 

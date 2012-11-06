@@ -238,53 +238,53 @@ lib/cc65/tgi/lynx-160-102-16.tgi
 %%PORTDOCS%%%%DOCSDIR%%/longbranch.mac
 %%PORTDOCS%%%%DOCSDIR%%/newvers.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.1st
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ascii.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/diodemo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/fire.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/appfile.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/apphello1.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/apphello2.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/apprmvprot.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/appvector-demo.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/appyesno.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/cvthead.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir0.s
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir1.s
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir2.s
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/dialog.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/filesel.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/geosconio.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/geosconiores.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/getid.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/getidres.grc
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/grphstr.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/hello1.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/hello2.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/inittab.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/menu.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/rmvprot.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/vector-demo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geos/yesno.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/gunzip65.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/hello.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/mousedemo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/nachtm.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/overlaydemo-apple2enh.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/overlaydemo-c64.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/overlaydemo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/plasma.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/sieve.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tgidemo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/hello.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/text.s
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/geos/ca65-vlir
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/geos
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diodemo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fire.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/appfile.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/apphello1.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/apphello2.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/apprmvprot.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/appvector-demo.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/appyesno.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/ca65-vlir/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/ca65-vlir/cvthead.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir0.s
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir1.s
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir2.s
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/dialog.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/filesel.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/geosconio.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/geosconiores.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/getid.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/getidres.grc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/grphstr.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/hello1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/hello2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/inittab.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/menu.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/rmvprot.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/vector-demo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geos/yesno.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gunzip65.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mandelbrot.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mousedemo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nachtm.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlaydemo-apple2enh.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlaydemo-c64.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlaydemo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plasma.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sieve.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tgidemo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/hello.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/text.s
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/geos/ca65-vlir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/geos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cc65/tgi
 @dirrm lib/cc65/ser

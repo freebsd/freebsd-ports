@@ -1,24 +1,21 @@
-CC65 is a C cross-compiler for 6502 and 65C02 systems.  CC65 includes
-a powerful macro assembler, a debugger, an archiver, and a highly
-configurable linker.  The linker supports overlays, ROMable code, and
-split output, among other features.  The compiler supports a large
-subset of ISO C (as per the ISO 9899 specification) and can compile
-the uIP TCP stack.  A 6502 simulator is available in the distribution
-but is not currently installed by the FreeBSD port/package.
+cc65 is a complete cross development package for 65(C)02 systems,
+including a powerful macro assembler, a C compiler, linker, librarian
+and several other tools.
 
-It is easy to write code for standalone 6502 boards (target none).  In
-addition, particular support for the following targets is included:
+Direct library support (that is, startup/initialization code) and
+support libraries for other features are available for...
 
-        - C64 and C128
-        - the GEOS operating system for the C64 and C128
-        - Commodore C16, C116, Plus/4
-        - Commodore VIC20
-        - CBM 600/700 family (programs run in bank 1)
-        - Newer PET machines (not 2001)
-        - The Apple ][
-        - Atari 8bit machines
-        - The Oric Atmos (beta)
-
-The assembler and linker also support 65816 as a target.
+ - the Commodore C64
+ - the GEOS operating system for the Commodore C64
+ - the Commodore C128
+ - the Commodore C16, C116 and Plus/4
+ - the Commodore P500
+ - the Commodore 600/700 family of computers
+ - the Apple ][
+ - the Atari 8bit machines
+ - the Oric Atmos
+ - the Nintendo Entertainment System (NES)
+ - the Supervision Game Console
+ - the Atari Lynx Console
 
 WWW: http://www.cc65.org/
