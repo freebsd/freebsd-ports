@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qemu
-# Date created:			2004/05/31
-# Whom:				Juergen Lock <nox@jelal.kn-bremen.de>
-#
+# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	qemu
 PORTVERSION=	1.1.1
@@ -61,6 +57,8 @@ PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 .if ${PORT_OPTIONS:MCLANG_HACK}
 CONFIGURE_ARGS+=	--enable-tcg-interpreter
 CLANG_CFLAGS_AS+=	-no-integrated-as
+.else
+USE_GCC=	any
 .endif
 
 .if ${PORT_OPTIONS:MX86_TARGETS}
