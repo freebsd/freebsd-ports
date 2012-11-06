@@ -1,12 +1,7 @@
-# New ports collection makefile for:	devel/p5-Directory-Queue
-# Date created:				21 June 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Directory-Queue
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LCONS
