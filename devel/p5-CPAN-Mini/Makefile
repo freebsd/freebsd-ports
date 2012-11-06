@@ -1,12 +1,7 @@
-# New ports collection makefile for:	devel/p5-CPAN-Mini
-# Date created:				16 February 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-Mini
-PORTVERSION=	1.111008
+PORTVERSION=	1.111010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
