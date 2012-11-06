@@ -2,6 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/More/UTF8/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/More/UTF8
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/More
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/More
 @dirrmtry %%SITE_PERL%%/Test
