@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kmod-${OSBRANCH}
 DISTFILES=	${FILE_8} ${FILE_9}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	virtio kernel modules port for 8.[23]/9.0
+COMMENT=	virtio kernel modules port for 8.[23]/9.[01]
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -30,14 +30,20 @@ NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
 IGNORE=		requires kernel source to be installed
 .endif
 
-SVN_REV=	239473
+SVN_REV=	242658
 FILE_8=		${PORTNAME}-8-0.${SVN_REV}${EXTRACT_SUFX}
 FILE_9=		${PORTNAME}-9-0.${SVN_REV}${EXTRACT_SUFX}
-.if ${OSREL} == "8.2" || ${OSREL} == "8.3"
-OSBRANCH=	8
+.if ${OSREL} == "8.2"
+OSBRANCH=	8.2
 EXTRACT_ONLY=	${FILE_8}
-.elif ${OSREL} == "9.0" || ${OSREL} == "9.1"
-OSBRANCH=	9
+.elif ${OSREL} == "8.3"
+OSBRANCH=	8.3
+EXTRACT_ONLY=	${FILE_8}
+.elif ${OSREL} == "9.0"
+OSBRANCH=	9.0
+EXTRACT_ONLY=	${FILE_9}
+.elif ${OSREL} == "9.1"
+OSBRANCH=	9.1
 EXTRACT_ONLY=	${FILE_9}
 .else
 IGNORE=		not supported $${OSREL} (${OSREL})
@@ -80,7 +86,7 @@ maintainer-tar:
 	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${FILE_8} dev modules
 
 maintainer-check:
-	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD head/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
+	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD stable/9/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
 	old="${SVN_REV}";\
 	if [ "$${new}" -gt "$${old}" ]; then ${ECHO_MSG} "New virtio rev: r$${new}"; fi
 
