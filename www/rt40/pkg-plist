@@ -113,6 +113,10 @@ etc/rt40/schema.mysql
 %%SITE_PERL%%/RT/ObjectTopic.pm
 %%SITE_PERL%%/RT/ObjectTopics.pm
 %%SITE_PERL%%/RT/Plugin.pm
+%%SITE_PERL%%/RT/Pod/HTML.pm
+%%SITE_PERL%%/RT/Pod/HTMLBatch.pm
+%%SITE_PERL%%/RT/Pod/Search.pm
+%%SITE_PERL%%/RT/Pod/HTML.pm
 %%SITE_PERL%%/RT/Principal.pm
 %%SITE_PERL%%/RT/Principals.pm
 %%SITE_PERL%%/RT/Queue.pm
@@ -217,6 +221,7 @@ sbin/rt-setup-database
 sbin/rt-setup-fulltext-index
 sbin/rt-shredder
 sbin/rt-test-dependencies
+sbin/rt-validate-aliases
 sbin/rt-validator
 sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -558,6 +563,7 @@ share/rt40/html/Elements/HeaderJavascript
 share/rt40/html/Elements/ListActions
 share/rt40/html/Elements/ListMenu
 share/rt40/html/Elements/Login
+share/rt40/html/Elements/LoginRedirectWarning
 share/rt40/html/Elements/Logo
 share/rt40/html/Elements/MakeClicky
 share/rt40/html/Elements/Menu
@@ -1502,6 +1508,7 @@ share/rt40/po/zh_TW.po
 @dirrm %%SITE_PERL%%/RT/Search
 @dirrm %%SITE_PERL%%/RT/Report/Tickets
 @dirrm %%SITE_PERL%%/RT/Report
+@dirrm %%SITE_PERL%%/RT/Pod
 @dirrm %%SITE_PERL%%/RT/Interface/Web/QueryBuilder
 @dirrm %%SITE_PERL%%/RT/Interface/Web
 @dirrm %%SITE_PERL%%/RT/Interface/Email/Auth
