@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.0.3
-PORTREVISION=	4
+DISTVERSION=	2.0.4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
@@ -24,14 +23,14 @@ RUN_DEPENDS=	ffmpeg${FFMPEG_SUFFIX}>=1.0:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_S
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
 		DVDNAV FAAD FLAC FLUID FRIBIDI GLX GNOMEVFS GNUTLS GOOM \
 		HTTPD JACK LIVEMEDIA LUA MAD MATROSKA MODPLUG MPEG2 MTP \
-		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
+		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG OPUS \
 		PNG PORTAUDIO PROJM PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
 		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
 		X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
 		NO_DVD
 OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
-		HTTPD LUA MAD MATROSKA MPEG2 OGG PNG QT4 REALAUDIO \
+		HTTPD LUA MAD MATROSKA MPEG2 OGG OPUS PNG QT4 REALAUDIO \
 		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
 		VCD VORBIS X11 X264 XCB XVIDEO
 ASS_DESC=	ASS/SSA subtitle rendering
@@ -42,6 +41,7 @@ FLUID_DESC=	Fluidsynth MIDI support
 GNOMEVFS_DESC=	Gnome VFS support
 GOOM_DESC=	the Goom visual effect library
 NCURSES_DESC=	ncurses (console) interface
+OPUS_DESC=	Opus audio format
 PROJM_DESC=	ProjectM visualizations
 REALAUDIO_DESC=	Real Audio(R) support
 RUNROOT_DESC=	Enable running as root
@@ -375,6 +375,7 @@ CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .if ${PORT_OPTIONS:MNCURSES}
+CONFIGURE_ENV+=	NCURSES_CFLAGS="-I/usr/include" NCURSES_LIBS="-lncursesw"
 CONFIGURE_ARGS+=--enable-ncurses
 .else
 CONFIGURE_ARGS+=--disable-ncurses
@@ -404,6 +405,13 @@ CONFIGURE_ARGS+=--enable-ogg
 .else
 PORT_OPTIONS:=	${PORT_OPTIONS:NVORBIS}
 CONFIGURE_ARGS+=--disable-ogg
+.endif
+
+.if ${PORT_OPTIONS:MOPUS}
+LIB_DEPENDS+=	opus:${PORTSDIR}/audio/opus
+CONFIGURE_ARGS+=--enable-opus
+.else
+CONFIGURE_ARGS+=--disable-opus
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
@@ -754,11 +762,11 @@ pre-install:
 .if ${PORT_OPTIONS:MNLS}
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
-.endif
-.for locale in ach cgg ckb co ff fur gd kk km lg my oc ps tet tl zu kmr
+.for locale in ach cgg bn_IN ckb co ff fur gd kk km kmr lg my oc ps tet tl zu
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
+.endif
 
 do-install:
 	cd ${FAKEDIR}/bin && ${FIND} . | \
