@@ -1,11 +1,8 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-openmotif
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openmotif
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.ics.com/openmotif/2.3/${PORTVERSION}/ \
 		CRITICAL/rpm
