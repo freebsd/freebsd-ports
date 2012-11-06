@@ -18,9 +18,6 @@ bin/pystache-test
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/defaults.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/defaults.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/defaults.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/foo.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/foo.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/foo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/init.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/init.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/init.pyo
@@ -63,9 +60,6 @@ bin/pystache-test
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/benchmark.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/benchmark.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/benchmark.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/benchmark2.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/benchmark2.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/benchmark2.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/common.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/common.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/common.pyo
@@ -87,6 +81,9 @@ bin/pystache-test
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_context.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_context.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_context.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_defaults.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_defaults.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_defaults.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_examples.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_examples.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/test_examples.pyo
@@ -129,6 +126,7 @@ bin/pystache-test
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/data/locator/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/data/locator/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/data/locator/duplicate.mustache
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/data/locator/template.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/examples/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/examples/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pystache/tests/examples/__init__.pyo
