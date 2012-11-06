@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Getargs::Long
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Getargs-Long
 PORTVERSION=	1.1003
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse routine arguments
 
 BUILD_DEPENDS=	p5-Log-Agent>=0.105:${PORTSDIR}/devel/p5-Log-Agent \

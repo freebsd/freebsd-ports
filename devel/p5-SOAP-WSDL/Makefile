@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SOAP-WSDL
-# Date created:		28 Feb, 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	SOAP-WSDL
 PORTVERSION=	2.00.10
@@ -12,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for SOAP with WSDL support
 
 RUN_DEPENDS=	p5-Class-Std-Fast>=0:${PORTSDIR}/devel/p5-Class-Std-Fast \
