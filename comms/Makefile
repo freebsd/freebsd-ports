@@ -128,6 +128,7 @@
     SUBDIR += qsstv
     SUBDIR += qtel
     SUBDIR += remserial
+    SUBDIR += rtl-sdr
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
     SUBDIR += rxtx
