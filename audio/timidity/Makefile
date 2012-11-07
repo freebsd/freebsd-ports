@@ -4,16 +4,13 @@ PORTNAME=	timidity
 PORTVERSION=	0.2i
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.onicos.com/staff/iz/timidity/dist/:timidity
-
+MASTER_SITES=	http://www.onicos.com/staff/iz/timidity/dist/:timidity	\
+		http://www.anime.net/~goemon/timidity/:tiins
 DISTFILES=	${TIINS}:tiins ${DISTNAME}.tar.gz:timidity
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI to WAV renderer and player
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-12-29
 
 CONFLICTS=	timidity++-2.13.*
 
