@@ -1,12 +1,8 @@
-# New ports collection makefile for:	puppet-lint
-# Date created:				25 January 2012
-# Whom:					Tim Bishop <tdb@FreeBSD.org>
-#
+# Created by: Tim Bishop <tdb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	puppet-lint
-PORTVERSION=	0.1.12
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
