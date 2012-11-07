@@ -1,12 +1,8 @@
-# New ports collection makefile for:	jalbum
-# Date created:				20 March 2005
-# Whom:					Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jalbum
-PORTVERSION=	10.4.3
+PORTVERSION=	10.10.7
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
 DISTNAME=	jAlbum${PORTVERSION}

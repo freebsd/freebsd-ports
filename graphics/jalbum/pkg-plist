@@ -3,6 +3,7 @@ bin/jalbum
 %%DATADIR%%/JAlbum.jar
 %%DATADIR%%/StartJAlbum.cmd
 %%DATADIR%%/ext/CameraImporter.jaext
+%%DATADIR%%/ext/Histogram.jaext
 %%DATADIR%%/ext/InstantPreview.jar
 %%DATADIR%%/ext/JCameraInfo.jar
 %%DATADIR%%/ext/JCaptionCopier.jaext
@@ -23,6 +24,8 @@ bin/jalbum
 %%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_pt.properties
 %%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_sk.properties
 %%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_sv.properties
+%%DATADIR%%/ext/MetadataScout.jaext
+%%DATADIR%%/ext/OpenWith.jaext
 %%DATADIR%%/ext/TranslatorTool.jar
 %%DATADIR%%/ext/XmpEditor.jaext
 %%DATADIR%%/icons/JalbumApp.ico
@@ -45,7 +48,7 @@ bin/jalbum
 %%DATADIR%%/lib/bsh-2.0b4.jar
 %%DATADIR%%/lib/commons-collections-3.1.jar
 %%DATADIR%%/lib/commons-logging.jar
-%%DATADIR%%/lib/edtftpj-2.1.0.jar
+%%DATADIR%%/lib/edtftpj-2.3.0.jar
 %%DATADIR%%/lib/ftp4j-1.6.1.jar
 %%DATADIR%%/lib/incors-alloy-1.4.4.jar
 %%DATADIR%%/lib/jalbum-core.jar
@@ -58,8 +61,8 @@ bin/jalbum
 %%DATADIR%%/lib/linux/x86/libtray.so
 %%DATADIR%%/lib/metadata-extractor.jar
 %%DATADIR%%/lib/miglayout-3.7.3.1-swing.jar
+%%DATADIR%%/lib/myresty-0.3.1.jar
 %%DATADIR%%/lib/org.mortbay.jetty.jar
-%%DATADIR%%/lib/resty-0.2.0.jar
 %%DATADIR%%/lib/sanselan-0.97-incubator.jar
 %%DATADIR%%/lib/sbbi-upnplib-1.0.4.jar
 %%DATADIR%%/lib/sunos/jdic_stub.jar
@@ -169,7 +172,10 @@ bin/jalbum
 %%DATADIR%%/skins/Base/plugins/photodata.png
 %%DATADIR%%/skins/Base/plugins/site.png
 %%DATADIR%%/skins/Base/plugins/slide.png
+%%DATADIR%%/skins/Base/postdir.bsh
 %%DATADIR%%/skins/Base/readme.txt
+%%DATADIR%%/skins/Base/res/author.png
+%%DATADIR%%/skins/Base/res/contact.png
 %%DATADIR%%/skins/Base/res/favicon.ico
 %%DATADIR%%/skins/Base/res/foldericon.png
 %%DATADIR%%/skins/Base/res/home.png
@@ -179,6 +185,7 @@ bin/jalbum
 %%DATADIR%%/skins/Base/res/mail.png
 %%DATADIR%%/skins/Base/res/navigation.png
 %%DATADIR%%/skins/Base/res/navigation_d.png
+%%DATADIR%%/skins/Base/res/share.png
 %%DATADIR%%/skins/Base/skin.properties
 %%DATADIR%%/skins/Base/slide.htt
 %%DATADIR%%/skins/Base/styles/Enhanced.css
@@ -199,8 +206,14 @@ bin/jalbum
 %%DATADIR%%/skins/Base/styles/Transparent.css
 %%DATADIR%%/skins/Base/styles/Transparent.jap
 %%DATADIR%%/skins/Base/styles/Transparent.jpg
+%%DATADIR%%/skins/Base/templates/About.htt
+%%DATADIR%%/skins/Base/templates/Contact.htt
+%%DATADIR%%/skins/Base/templates/Sitemap.htt
+%%DATADIR%%/skins/Base/templates/styles.css
 %%DATADIR%%/skins/Base/texts/texts.properties
 %%DATADIR%%/skins/Base/texts/texts_es.properties
+%%DATADIR%%/skins/Base/texts/texts_sv.properties
+%%DATADIR%%/skins/Base/thumbnav.inc
 %%DATADIR%%/skins/Galleria/common.css
 %%DATADIR%%/skins/Galleria/headless-settings.jap
 %%DATADIR%%/skins/Galleria/hints.jap
@@ -402,27 +415,42 @@ bin/jalbum
 %%DATADIR%%/skins/Lumen/styles/Slideshow.jap
 %%DATADIR%%/skins/Lumen/styles/Slideshow.jpg
 %%DATADIR%%/skins/Lumen/texts/texts.properties
+%%DATADIR%%/skins/Minimal/common.css
+%%DATADIR%%/skins/Minimal/hints.jap
 %%DATADIR%%/skins/Minimal/index.htt
+%%DATADIR%%/skins/Minimal/init.bsh
 %%DATADIR%%/skins/Minimal/onload.bsh
-%%DATADIR%%/skins/Minimal/page-footer.inc
-%%DATADIR%%/skins/Minimal/preview.jpg
-%%DATADIR%%/skins/Minimal/res/camera.gif
-%%DATADIR%%/skins/Minimal/res/first.gif
-%%DATADIR%%/skins/Minimal/res/index.gif
-%%DATADIR%%/skins/Minimal/res/last.gif
-%%DATADIR%%/skins/Minimal/res/movie.gif
-%%DATADIR%%/skins/Minimal/res/movie.png
-%%DATADIR%%/skins/Minimal/res/next.gif
-%%DATADIR%%/skins/Minimal/res/next_disabled.gif
-%%DATADIR%%/skins/Minimal/res/previous.gif
-%%DATADIR%%/skins/Minimal/res/previous_disabled.gif
-%%DATADIR%%/skins/Minimal/res/up.gif
 %%DATADIR%%/skins/Minimal/skin.properties
 %%DATADIR%%/skins/Minimal/slide.htt
-%%DATADIR%%/skins/Minimal/styles/lineborder.css
-%%DATADIR%%/skins/Minimal/styles/plain.css
+%%DATADIR%%/skins/Minimal/styles/dark.css
+%%DATADIR%%/skins/Minimal/styles/dark.jpg
+%%DATADIR%%/skins/Minimal/styles/dark/first-disabled.png
+%%DATADIR%%/skins/Minimal/styles/dark/first.png
+%%DATADIR%%/skins/Minimal/styles/dark/index-disabled.png
+%%DATADIR%%/skins/Minimal/styles/dark/index.png
+%%DATADIR%%/skins/Minimal/styles/dark/last-disabled.png
+%%DATADIR%%/skins/Minimal/styles/dark/last.png
+%%DATADIR%%/skins/Minimal/styles/dark/next-disabled.png
+%%DATADIR%%/skins/Minimal/styles/dark/next.png
+%%DATADIR%%/skins/Minimal/styles/dark/prev-disabled.png
+%%DATADIR%%/skins/Minimal/styles/dark/prev.png
+%%DATADIR%%/skins/Minimal/styles/dark/up-disabled.png
+%%DATADIR%%/skins/Minimal/styles/dark/up.png
+%%DATADIR%%/skins/Minimal/styles/light.css
+%%DATADIR%%/skins/Minimal/styles/light.jpg
+%%DATADIR%%/skins/Minimal/styles/light/first-disabled.png
+%%DATADIR%%/skins/Minimal/styles/light/first.png
+%%DATADIR%%/skins/Minimal/styles/light/index-disabled.png
+%%DATADIR%%/skins/Minimal/styles/light/index.png
+%%DATADIR%%/skins/Minimal/styles/light/last-disabled.png
+%%DATADIR%%/skins/Minimal/styles/light/last.png
+%%DATADIR%%/skins/Minimal/styles/light/next-disabled.png
+%%DATADIR%%/skins/Minimal/styles/light/next.png
+%%DATADIR%%/skins/Minimal/styles/light/prev-disabled.png
+%%DATADIR%%/skins/Minimal/styles/light/prev.png
+%%DATADIR%%/skins/Minimal/styles/light/up-disabled.png
+%%DATADIR%%/skins/Minimal/styles/light/up.png
 %%DATADIR%%/skins/Minimal/texts/texts.properties
-%%DATADIR%%/skins/Minimal/texts/texts_es.properties
 %%DATADIR%%/skins/Mr.Burns/headless-settings.jap
 %%DATADIR%%/skins/Mr.Burns/hints.jap
 %%DATADIR%%/skins/Mr.Burns/index.htt
@@ -462,66 +490,18 @@ bin/jalbum
 %%DATADIR%%/skins/PhotoBox/texts/texts_de.properties
 %%DATADIR%%/skins/PhotoBox/texts/texts_fi.properties
 %%DATADIR%%/skins/PhotoBox/texts/texts_ko.properties
+%%DATADIR%%/skins/PhotoBox/texts/texts_nl.properties
 %%DATADIR%%/skins/PhotoBox/texts/texts_no.properties
 %%DATADIR%%/skins/PhotoBox/texts/texts_sv.properties
-%%DATADIR%%/skins/Spartan/hints.jap
-%%DATADIR%%/skins/Spartan/index.htt
-%%DATADIR%%/skins/Spartan/init.bsh
-%%DATADIR%%/skins/Spartan/onload.bsh
-%%DATADIR%%/skins/Spartan/preview.jpg
-%%DATADIR%%/skins/Spartan/res/first.png
-%%DATADIR%%/skins/Spartan/res/folder.png
-%%DATADIR%%/skins/Spartan/res/global.css
-%%DATADIR%%/skins/Spartan/res/index.png
-%%DATADIR%%/skins/Spartan/res/js/keyboard.js
-%%DATADIR%%/skins/Spartan/res/js/navIndex.js
-%%DATADIR%%/skins/Spartan/res/js/navSlide.js
-%%DATADIR%%/skins/Spartan/res/last.png
-%%DATADIR%%/skins/Spartan/res/movie.png
-%%DATADIR%%/skins/Spartan/res/next.png
-%%DATADIR%%/skins/Spartan/res/next_disabled.png
-%%DATADIR%%/skins/Spartan/res/previous.png
-%%DATADIR%%/skins/Spartan/res/previous_disabled.png
-%%DATADIR%%/skins/Spartan/res/up.png
-%%DATADIR%%/skins/Spartan/setupIndex.js
-%%DATADIR%%/skins/Spartan/setupSlide.js
-%%DATADIR%%/skins/Spartan/skin.properties
-%%DATADIR%%/skins/Spartan/slide.htt
-%%DATADIR%%/skins/Spartan/styles/coal.css
-%%DATADIR%%/skins/Spartan/styles/coal.jpg
-%%DATADIR%%/skins/Spartan/styles/coal/bg.jpg
-%%DATADIR%%/skins/Spartan/styles/emerald.css
-%%DATADIR%%/skins/Spartan/styles/emerald.jpg
-%%DATADIR%%/skins/Spartan/styles/emerald/bg.jpg
-%%DATADIR%%/skins/Spartan/styles/ruby.css
-%%DATADIR%%/skins/Spartan/styles/ruby.jpg
-%%DATADIR%%/skins/Spartan/styles/ruby/bg.jpg
-%%DATADIR%%/skins/Spartan/styles/silver.css
-%%DATADIR%%/skins/Spartan/styles/silver.jpg
-%%DATADIR%%/skins/Spartan/styles/silver/bg.jpg
-%%DATADIR%%/skins/Spartan/texts/texts.properties
-%%DATADIR%%/skins/Spartan/texts/texts_es.properties
 %%DATADIR%%/skins/Turtle/common.css
 %%DATADIR%%/skins/Turtle/copy/humans.txt
 %%DATADIR%%/skins/Turtle/copy/robots.txt
 %%DATADIR%%/skins/Turtle/cssinit.bsh
 %%DATADIR%%/skins/Turtle/finally.bsh
+%%DATADIR%%/skins/Turtle/folders.inc
 %%DATADIR%%/skins/Turtle/headless-settings.jap
-%%DATADIR%%/skins/Turtle/help/advanced.png
-%%DATADIR%%/skins/Turtle/help/audiovideo.png
-%%DATADIR%%/skins/Turtle/help/captions.png
-%%DATADIR%%/skins/Turtle/help/design.png
-%%DATADIR%%/skins/Turtle/help/footer.png
-%%DATADIR%%/skins/Turtle/help/general.png
-%%DATADIR%%/skins/Turtle/help/header.png
-%%DATADIR%%/skins/Turtle/help/helphd.jpg
-%%DATADIR%%/skins/Turtle/help/imagedata.png
-%%DATADIR%%/skins/Turtle/help/index.html
-%%DATADIR%%/skins/Turtle/help/map.png
-%%DATADIR%%/skins/Turtle/help/photodata.png
-%%DATADIR%%/skins/Turtle/help/selling.png
-%%DATADIR%%/skins/Turtle/help/sharing.png
 %%DATADIR%%/skins/Turtle/hints.jap
+%%DATADIR%%/skins/Turtle/images.inc
 %%DATADIR%%/skins/Turtle/includes/controls_bg_cr.css
 %%DATADIR%%/skins/Turtle/includes/controls_bg_page.css
 %%DATADIR%%/skins/Turtle/includes/controls_bg_w80.css
@@ -550,6 +530,7 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/includes/panels_bg_w60.css
 %%DATADIR%%/skins/Turtle/includes/scrbar_bg_cr.css
 %%DATADIR%%/skins/Turtle/includes/scrbar_bg_k10.css
+%%DATADIR%%/skins/Turtle/includes/scrbar_bg_k20.css
 %%DATADIR%%/skins/Turtle/includes/scrbar_bg_page.css
 %%DATADIR%%/skins/Turtle/includes/shadow_light.css
 %%DATADIR%%/skins/Turtle/includes/title_buttons_cr.css
@@ -560,6 +541,7 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/onload.bsh
 %%DATADIR%%/skins/Turtle/page-footer.inc
 %%DATADIR%%/skins/Turtle/page-header.inc
+%%DATADIR%%/skins/Turtle/pages.inc
 %%DATADIR%%/skins/Turtle/plugins/Compile.bat
 %%DATADIR%%/skins/Turtle/plugins/Gui$1$1$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$1$1.class
@@ -585,13 +567,26 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/plugins/Gui$1$8.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$1$9.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$1$1$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$1$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$1$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$10$1$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$10$1$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$10$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$10$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$10.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$11$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$11.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$12$1$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$12$1$2.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$12$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$12$2.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$12$3.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$12.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$13.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$14.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$15.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$2$1$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$2$1$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$2$1$3.class
@@ -615,9 +610,13 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$5$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$5$3.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$5.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$6$1$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$6$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$6$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$6.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$7$1.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$7$2.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$2$7$3.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$7.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$8$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$2$8.class
@@ -627,6 +626,8 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/plugins/Gui$CustomUI$1.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$CustomUI$2.class
 %%DATADIR%%/skins/Turtle/plugins/Gui$CustomUI.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$ExternalContentUI.class
+%%DATADIR%%/skins/Turtle/plugins/Gui$ImageDataUI.class
 %%DATADIR%%/skins/Turtle/plugins/Gui.class
 %%DATADIR%%/skins/Turtle/plugins/Gui.java
 %%DATADIR%%/skins/Turtle/plugins/JFileFilter.class
@@ -638,14 +639,19 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/plugins/commenting.png
 %%DATADIR%%/skins/Turtle/plugins/design.png
 %%DATADIR%%/skins/Turtle/plugins/footer.png
+%%DATADIR%%/skins/Turtle/plugins/fotomoto.png
 %%DATADIR%%/skins/Turtle/plugins/general.png
 %%DATADIR%%/skins/Turtle/plugins/header.png
+%%DATADIR%%/skins/Turtle/plugins/index.png
+%%DATADIR%%/skins/Turtle/plugins/info.png
 %%DATADIR%%/skins/Turtle/plugins/map.png
 %%DATADIR%%/skins/Turtle/plugins/photodata.png
 %%DATADIR%%/skins/Turtle/plugins/share.png
 %%DATADIR%%/skins/Turtle/plugins/shop.png
-%%DATADIR%%/skins/Turtle/plugins/splash.png
+%%DATADIR%%/skins/Turtle/plugins/site.png
+%%DATADIR%%/skins/Turtle/plugins/slide.png
 %%DATADIR%%/skins/Turtle/plugins/templates.png
+%%DATADIR%%/skins/Turtle/postdir.bsh
 %%DATADIR%%/skins/Turtle/readme.txt
 %%DATADIR%%/skins/Turtle/res/apple-touch-icon-114x114-precomposed.png
 %%DATADIR%%/skins/Turtle/res/apple-touch-icon-57x57-precomposed.png
@@ -654,11 +660,13 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/res/apple-touch-precomposed.png
 %%DATADIR%%/skins/Turtle/res/audio.png
 %%DATADIR%%/skins/Turtle/res/audioplay.swf
+%%DATADIR%%/skins/Turtle/res/author.png
 %%DATADIR%%/skins/Turtle/res/blank.gif
 %%DATADIR%%/skins/Turtle/res/buttons.png
 %%DATADIR%%/skins/Turtle/res/buttons_c.png
 %%DATADIR%%/skins/Turtle/res/buttons_g.png
 %%DATADIR%%/skins/Turtle/res/buttons_w.png
+%%DATADIR%%/skins/Turtle/res/contact.png
 %%DATADIR%%/skins/Turtle/res/controls.png
 %%DATADIR%%/skins/Turtle/res/controls_c.png
 %%DATADIR%%/skins/Turtle/res/controls_g.png
@@ -668,10 +676,11 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/res/draw.png
 %%DATADIR%%/skins/Turtle/res/favicon.ico
 %%DATADIR%%/skins/Turtle/res/folder.png
+%%DATADIR%%/skins/Turtle/res/fotomoto_logo.png
 %%DATADIR%%/skins/Turtle/res/helpgallery.png
 %%DATADIR%%/skins/Turtle/res/helpsplash.png
 %%DATADIR%%/skins/Turtle/res/image.png
-%%DATADIR%%/skins/Turtle/res/jquery-1.7.1.min.js
+%%DATADIR%%/skins/Turtle/res/jquery-1.7.2.min.js
 %%DATADIR%%/skins/Turtle/res/k10.png
 %%DATADIR%%/skins/Turtle/res/k20.png
 %%DATADIR%%/skins/Turtle/res/k30.png
@@ -715,7 +724,6 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/res/start_c.png
 %%DATADIR%%/skins/Turtle/res/start_g.png
 %%DATADIR%%/skins/Turtle/res/start_w.png
-%%DATADIR%%/skins/Turtle/res/swfobject.js
 %%DATADIR%%/skins/Turtle/res/txt.png
 %%DATADIR%%/skins/Turtle/res/unknown.png
 %%DATADIR%%/skins/Turtle/res/url.png
@@ -735,6 +743,7 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/res/zip.png
 %%DATADIR%%/skins/Turtle/script-starter.inc
 %%DATADIR%%/skins/Turtle/skin.properties
+%%DATADIR%%/skins/Turtle/slide.htt
 %%DATADIR%%/skins/Turtle/styles/Black.css
 %%DATADIR%%/skins/Turtle/styles/Black.jap
 %%DATADIR%%/skins/Turtle/styles/Black.jpg
@@ -846,6 +855,10 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/styles/Yellow.css
 %%DATADIR%%/skins/Turtle/styles/Yellow.jap
 %%DATADIR%%/skins/Turtle/styles/Yellow.jpg
+%%DATADIR%%/skins/Turtle/templates/About.htt
+%%DATADIR%%/skins/Turtle/templates/Contact.htt
+%%DATADIR%%/skins/Turtle/templates/Sitemap.htt
+%%DATADIR%%/skins/Turtle/templates/styles.css
 %%DATADIR%%/skins/Turtle/texts/texts.properties
 %%DATADIR%%/skins/Turtle/texts/texts_cs.properties
 %%DATADIR%%/skins/Turtle/texts/texts_de.properties
@@ -856,6 +869,7 @@ bin/jalbum
 %%DATADIR%%/skins/Turtle/texts/texts_it.properties
 %%DATADIR%%/skins/Turtle/texts/texts_ko.properties
 %%DATADIR%%/skins/Turtle/texts/texts_nl.properties
+%%DATADIR%%/skins/Turtle/texts/texts_pt.properties
 %%DATADIR%%/skins/Turtle/texts/texts_sv.properties
 %%DATADIR%%/skins/Turtle/top-navigation.inc
 %%DATADIR%%/startjalbum.sh
@@ -920,10 +934,12 @@ bin/jalbum
 %%DATADIR%%/tools/Sample tool.bsh
 %%DATADIR%%/tools/Server mode.bsh
 %%DATADIR%%/tools/Show supported file types.bsh
+%%DATADIR%%/tools/jAlbum core update.bsh
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/texts
 @dirrm %%DATADIR%%/system
 @dirrm %%DATADIR%%/skins/Turtle/texts
+@dirrm %%DATADIR%%/skins/Turtle/templates
 @dirrm %%DATADIR%%/skins/Turtle/styles/Yellow
 @dirrm %%DATADIR%%/skins/Turtle/styles/Wood
 @dirrm %%DATADIR%%/skins/Turtle/styles/White
@@ -954,18 +970,8 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Turtle/res
 @dirrm %%DATADIR%%/skins/Turtle/plugins
 @dirrm %%DATADIR%%/skins/Turtle/includes
-@dirrm %%DATADIR%%/skins/Turtle/help
 @dirrm %%DATADIR%%/skins/Turtle/copy
 @dirrm %%DATADIR%%/skins/Turtle
-@dirrm %%DATADIR%%/skins/Spartan/texts
-@dirrm %%DATADIR%%/skins/Spartan/styles/silver
-@dirrm %%DATADIR%%/skins/Spartan/styles/ruby
-@dirrm %%DATADIR%%/skins/Spartan/styles/emerald
-@dirrm %%DATADIR%%/skins/Spartan/styles/coal
-@dirrm %%DATADIR%%/skins/Spartan/styles
-@dirrm %%DATADIR%%/skins/Spartan/res/js
-@dirrm %%DATADIR%%/skins/Spartan/res
-@dirrm %%DATADIR%%/skins/Spartan
 @dirrm %%DATADIR%%/skins/PhotoBox/texts
 @dirrm %%DATADIR%%/skins/PhotoBox/styles
 @dirrm %%DATADIR%%/skins/PhotoBox/res
@@ -976,6 +982,8 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Mr.Burns/res
 @dirrm %%DATADIR%%/skins/Mr.Burns
 @dirrm %%DATADIR%%/skins/Minimal/texts
+@dirrm %%DATADIR%%/skins/Minimal/styles/light
+@dirrm %%DATADIR%%/skins/Minimal/styles/dark
 @dirrm %%DATADIR%%/skins/Minimal/styles
 @dirrm %%DATADIR%%/skins/Minimal/res
 @dirrm %%DATADIR%%/skins/Minimal
@@ -1005,6 +1013,7 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Galleria/includes
 @dirrm %%DATADIR%%/skins/Galleria
 @dirrm %%DATADIR%%/skins/Base/texts
+@dirrm %%DATADIR%%/skins/Base/templates
 @dirrm %%DATADIR%%/skins/Base/styles
 @dirrm %%DATADIR%%/skins/Base/res
 @dirrm %%DATADIR%%/skins/Base/plugins
