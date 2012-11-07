@@ -1,14 +1,10 @@
-# New ports collection makefile for:	ports-mgmt/pkg-plist
-# Date created:				2011-11-14
-# Whom:					Martin Tournoij <martin@arp242.net>
-#
+# Created by: Martin Tournoij <martin@arp242.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg-plist
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	ports-mgmt python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://code.arp242.net/pkg-plist/downloads/
 
 MAINTAINER=	martin@arp242.net
 COMMENT=	Generate a pkg-plist for a port
@@ -19,6 +15,7 @@ USE_PYTHON=	yes
 MAN1=		pkg-plist.1
 PLIST_FILES=	bin/pkg-plist
 NO_BUILD=	yes
+FETCH_ARGS=	-Fpr
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg-plist ${PREFIX}/bin/
