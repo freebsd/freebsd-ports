@@ -1,13 +1,9 @@
-# New ports collection makefile for:    cpdup
-# Date created:         28 Oct 1999
-# Whom:                 dillon
-#
+# Created by: Matthew Dillon <dillon@backplane.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cpdup
 PORTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeSrc/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
