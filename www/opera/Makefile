@@ -21,16 +21,14 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER?=	12.02
-OPERA_BUILD?=	1578
+OPERA_VER?=	12.10
+OPERA_BUILD?=	1652
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
 USE_XORG=	x11 xext sm ice xft xrender
 USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
-
-FORBIDDEN=	http://www.opera.com/support/kb/view/1030/ http://www.opera.com/support/kb/view/1031/ http://www.opera.com/support/kb/view/1033/
 
 MAN1=		opera.1
 MANCOMPRESSED=	yes
@@ -45,6 +43,17 @@ CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 
 .include <bsd.port.options.mk>
+
+.if defined(FETCH_ALL)
+# distfiles for both arch
+.if ${ARCH} == i386
+DISTFILES=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.amd64.freebsd${EXTRACT_SUFX} \
+		${DISTNAME}${EXTRACT_SUFX}
+.else
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.freebsd${EXTRACT_SUFX}
+.endif
+.endif
 
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
@@ -85,5 +94,9 @@ do-install:
 	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
 	-${LOCALBASE}/bin/update-desktop-database
 	-${LOCALBASE}/bin/update-mime-database ${LOCALBASE}/share/mime
+
+# target to build distinfo for both arch
+makesum-all:
+	make makesum FETCH_ALL=yes
 
 .include <bsd.port.post.mk>
