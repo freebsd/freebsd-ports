@@ -1,6 +1,20 @@
---- libtme/module.c.orig	Wed Jan 26 13:59:24 2005
-+++ libtme/module.c	Sun Dec 17 19:11:37 2006
-@@ -107,13 +107,14 @@
+--- libtme/module.c.orig	2010-06-06 04:04:42.000000000 +0900
++++ libtme/module.c	2011-03-20 06:00:02.000000000 +0900
+@@ -62,11 +62,13 @@
+ #endif /* !lt_ptr_t */
+ #endif /* !lt_ptr */
+ 
++#if 0
+ /* similarly, the installed libltdl may be so recent that its ltdl.h
+    renames lt_preloaded_symbols with a macro, to a name different from
+    what our libtool script makes.  it's possible that the renaming
+    macro is meant to be undefined to handle this problem: */
+ #undef lt_preloaded_symbols
++#endif
+ 
+ /* types: */
+ struct tme_module {
+@@ -113,13 +115,14 @@
    FILE *modules_index;
  
    /* pass over the search path environment variables: */
