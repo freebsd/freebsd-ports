@@ -1,0 +1,32 @@
+--- Makefile.am.orig	2012-08-23 18:26:27.000000000 +0200
++++ Makefile.am	2012-08-23 18:26:39.000000000 +0200
+@@ -15,29 +15,4 @@
+ 
+ EXTRA_DIST = git-version-gen
+ 
+-if HAVE_DOXYGEN
+-
+-pkgdocdir=$(docdir)/$(PACKAGE)-$(VERSION)
+-doc_htmldir=$(pkgdocdir)/html
+-
+-doc_html_DATA = $(top_builddir)/doc/html.tar
+-
+-$(doc_html_DATA): $(top_builddir)/doc/html/index.html
+-	cd $(top_builddir)/doc && tar cf html.tar html
+-
+-$(top_builddir)/doc/html/index.html: $(SOURCES) Doxyfile
+-	@rm -rf doc
+-	mkdir -p doc
+-	$(DOXYGEN) Doxyfile
+-
+-install-data-hook:
+-	cd $(DESTDIR)$(doc_htmldir) && tar xf html.tar --strip-components 1 && rm -f html.tar
+-
+-uninstall-hook:
+-	cd $(DESTDIR) && rm -rf $(doc_htmldir)
+-
+-DX_CLEAN = doc/{html,latex}/* doc/html.tar
+-
+-endif
+-
+ MOSTLYCLEANFILES = $(DX_CLEAN)
