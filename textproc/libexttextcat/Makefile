@@ -19,32 +19,15 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	README README.libtextcat TODO
 
-OPTIONS_DEFINE=	COMPAT_TEXTCAT DOCS
+OPTIONS_DEFINE=	DOCS
 COMPAT_TEXTCAT_DESC=	Install libtextcat compatible files
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCOMPAT_TEXTCAT}
-.if exists(${PREFIX}/lib/libtextcat.a)
-CONFLICTS_INSTALL=	libtextcat*
-.endif
-PLIST_SUB+=	TEXTCAT=''
-PLIST_SUB+=	EXEEXT=''
-.else
-PLIST_SUB+=	TEXTCAT='@comment '
 PLIST_SUB+=	EXEEXT='x'
 MAKE_ARGS=	EXEEXT=x
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MCOMPAT_TEXTCAT}
-	${LN} -sf libexttextcat/textcat.h ${PREFIX}/include/
-	${LN} -sf libexttextcat ${PREFIX}/include/libtextcat
-	${LN} -sf libexttextcat-1.0.a ${PREFIX}/lib/libtextcat.a
-	${LN} -sf libexttextcat-1.0.la ${PREFIX}/lib/libtextcat.la
-	${LN} -sf libexttextcat-1.0.so.0 ${PREFIX}/lib/libtextcat.so
-	${LN} -sf libexttextcat-1.0.so.0 ${PREFIX}/lib/libtextcat.so.0
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

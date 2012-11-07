@@ -1,4 +1,4 @@
-bin/createfp%%EXEEXT%%
+bin/createfpx
 include/libexttextcat/common.h
 include/libexttextcat/constants.h
 include/libexttextcat/exttextcat-version.h
@@ -6,16 +6,10 @@ include/libexttextcat/fingerprint.h
 include/libexttextcat/textcat.h
 include/libexttextcat/textcat_properties.h
 include/libexttextcat/utf8misc.h
-%%TEXTCAT%%include/textcat.h
-%%TEXTCAT%%include/libtextcat
 lib/libexttextcat-1.0.a
 lib/libexttextcat-1.0.la
 lib/libexttextcat-1.0.so
 lib/libexttextcat-1.0.so.0
-%%TEXTCAT%%lib/libtextcat.a
-%%TEXTCAT%%lib/libtextcat.la
-%%TEXTCAT%%lib/libtextcat.so
-%%TEXTCAT%%lib/libtextcat.so.0
 libdata/pkgconfig/libexttextcat.pc
 share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/ab.lm
