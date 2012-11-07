@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mu
-PORTVERSION=	0.9.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	mail
 MASTER_SITES=	http://mu0.googlecode.com/files/
 
@@ -34,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gui=none
 
 do-install:
-	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} mu ${PREFIX}/bin
+	cd ${WRKSRC}/mu && ${INSTALL_PROGRAM} mu ${PREFIX}/bin
 	cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask ${PREFIX}/bin
 	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
 	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
