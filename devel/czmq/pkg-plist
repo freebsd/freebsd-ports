@@ -10,6 +10,7 @@ include/zhash.h
 include/zlist.h
 include/zloop.h
 include/zmsg.h
+include/zmutex.h
 include/zsocket.h
 include/zsockopt.h
 include/zstr.h
@@ -19,4 +20,3 @@ lib/libczmq.la
 lib/libczmq.so
 lib/libczmq.so.1
 libdata/pkgconfig/libczmq.pc
-@dirrmtry libdata/pkgconfig
