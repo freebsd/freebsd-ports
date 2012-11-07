@@ -1,0 +1,12 @@
+--- ./tools/occ21/configure.ac.orig	2012-08-25 14:22:30.000000000 +0100
++++ ./tools/occ21/configure.ac	2012-08-25 14:22:34.000000000 +0100
+@@ -13,9 +13,6 @@
+ dnl AC_PROG_RANLIB
+ AC_CHECK_TOOL(RANLIB,ranlib,:)
+ 
+-
+-AM_C_PROTOTYPES
+-
+ target_cpu_=target_cpu_`echo $target_cpu | tr -d _.`
+ ARCH_DEFS="-D${target_cpu_}"
+ 

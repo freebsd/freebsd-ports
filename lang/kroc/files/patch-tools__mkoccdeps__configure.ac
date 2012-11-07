@@ -1,0 +1,11 @@
+--- ./tools/mkoccdeps/configure.ac.orig	2012-08-25 14:22:34.000000000 +0100
++++ ./tools/mkoccdeps/configure.ac	2012-08-25 14:22:38.000000000 +0100
+@@ -9,8 +9,6 @@
+ AM_PROG_CC_STDC
+ AC_PROG_MAKE_SET
+ 
+-AM_C_PROTOTYPES
+-
+ dnl Checks for libraries.
+ 
+ dnl Checks for header files.
