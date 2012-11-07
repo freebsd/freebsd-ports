@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-xts
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xts
-DISTVERSION=	0.8-6
-PORTREVISION=	2
+DISTVERSION=	0.8-8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
