@@ -1,13 +1,8 @@
-# New ports collection makefile for:  getdp
-# Date created:               25 September 2004
-# Whom:                       Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	getdp
-PORTVERSION=	1.2.1
-PORTREVISION=	16
+PORTVERSION=	2.2.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -19,10 +14,14 @@ COMMENT=	A rather general finite element solver using mixed finite elements
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl	\
 		lapack.4:${PORTSDIR}/math/lapack
 
+USE_GMAKE=	yes
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
+# Using --enable-sparskit instead of math/petsc.  The maintainer couldn't get
+# the math/petsc to work.  This is a bmake/gmake clash.
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
-		--with-blas-lapack-prefix=${LOCALBASE}
+		--with-blas-lapack-prefix=${LOCALBASE} \
+		--enable-sparskit
 WANT_PERL=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,37 +29,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		getdp.1
 
-EXAMPLES=	Magnetostatics.pro README solver.par test.geo test.msh test.pro
-
-.if defined(WITH_MULTIHARMONIC)
-CONFIGURE_ARGS+=	--enable-multiharmonic
+post-install:
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/doc && ${FIND} -s ${WRKSRC}/doc/* | ${SED} -e 's#${WRKSRC}/doc/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/demos && ${FIND} -s ${WRKSRC}/demos/* | ${SED} -e 's#${WRKSRC}/demos/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
-ALL_TARGET=	all doc
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base	\
-		dvips:${PORTSDIR}/print/dvipsk-tetex	\
-		texi2pdf:${PORTSDIR}/print/texinfo
-USE_PERL5_BUILD=	yes
-.endif
-
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/getdp
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${DOCSDIR} && ${TAR} xfz ${WRKSRC}/${PORTNAME}-${PORTVERSION}-doc.tgz
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/demos/|} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===>  Examples installed in ${EXAMPLESDIR}."
-.endif
-
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	cd ${WRKSRC}/demos && ${PORTNAME} test.pro -solve MagSta_phi
+	cd ${WRKSRC}/demos && yes "" | ${PORTNAME} magnet.pro -solve MagSta_phi
 .endif
 
 .include <bsd.port.post.mk>
