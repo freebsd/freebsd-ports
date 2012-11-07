@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-WebTest
-# Date created:		24 Feb, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping
 # $FreeBSD$
-#
 
 PORTNAME=	WebTest
-PORTVERSION=	1.3.6
+PORTVERSION=	1.4.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://www.c-s.li/ports/
