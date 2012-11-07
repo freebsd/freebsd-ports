@@ -1,13 +1,11 @@
-# New ports collection makefile for:	vtk5
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-# Repocopied from math/vtk by:	Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
+# Created by: Mykola Khotyaintsev <ko@irfu.se>, 
+#             Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	vtk
-PORTVERSION=	5.10.0
+PORTVERSION=	5.10.1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -22,7 +20,7 @@ LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 
 LATEST_LINK=	vtk5
 
-WRKSRC=		${WRKDIR}/VTK
+WRKSRC=		${WRKDIR}/VTK${PORTVERSION}
 
 CONFLICTS=	vtk-4*
 
@@ -104,12 +102,11 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	OSMesa32:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	OSMesa:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so \
-		-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so \
-		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSGLU.so \
+		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
+		-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
 		-DVTK_USE_X:BOOL=OFF
 PLIST_SUB+=	X11="@comment "
 .else
