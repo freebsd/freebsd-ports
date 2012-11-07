@@ -1,12 +1,8 @@
-# New ports collection makefile for:	slock
-# Date created:		18 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	slock
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
