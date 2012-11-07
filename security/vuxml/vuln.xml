@@ -51,6 +51,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="209c068d-28be-11e2-9160-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>23.0.1271.64</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[157079] Medium CVE-2012-5127: Integer overflow leading to
+	    out-of-bounds read in WebP handling. Credit to Phil Turnbull.</p>
+	  <p>[Linux 64-bit only] [150729] Medium CVE-2012-5120: Out-of-bounds
+	    array access in v8. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[143761] High CVE-2012-5116: Use-after-free in SVG filter
+	    handling. Credit to miaubiz.</p>
+	  <p>[Mac OS only] [149717] High CVE-2012-5118: Integer bounds check
+	    issue in GPU command buffers. Credit to miaubiz.</p>
+	  <p>[154055] High CVE-2012-5121: Use-after-free in video layout.
+	    Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[145915] Low CVE-2012-5117: Inappropriate load of SVG subresource
+	    in img context. Credit to Felix Gröbert of the Google Security
+	    Team.</p>
+	  <p>[149759] Medium CVE-2012-5119: Race condition in Pepper buffer
+	    handling. Credit to Fermin Serna of the Google Security Team.</p>
+	  <p>[154465] Medium CVE-2012-5122: Bad cast in input handling. Credit
+	    to Google Chrome Security Team (Inferno).</p>
+	  <p>[154590] [156826] Medium CVE-2012-5123: Out-of-bounds reads in
+	    Skia. Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[155323] High CVE-2012-5124: Memory corruption in texture handling.
+	    Credit to Al Patrick of the Chromium development community.</p>
+	  <p>[156051] Medium CVE-2012-5125: Use-after-free in extension tab
+	    handling. Credit to Alexander Potapenko of the Chromium development
+	    community.</p>
+	  <p>[156366] Medium CVE-2012-5126: Use-after-free in plug-in
+	    placeholder handling. Credit to Google Chrome Security Team
+	    (Inferno).</p>
+	  <p>[157124] High CVE-2012-5128: Bad write in v8. Credit to Google
+	    Chrome Security Team (Cris Neckar).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5127</cvename>
+      <cvename>CVE-2012-5120</cvename>
+      <cvename>CVE-2012-5116</cvename>
+      <cvename>CVE-2012-5118</cvename>
+      <cvename>CVE-2012-5121</cvename>
+      <cvename>CVE-2012-5117</cvename>
+      <cvename>CVE-2012-5119</cvename>
+      <cvename>CVE-2012-5122</cvename>
+      <cvename>CVE-2012-5123</cvename>
+      <cvename>CVE-2012-5124</cvename>
+      <cvename>CVE-2012-5125</cvename>
+      <cvename>CVE-2012-5126</cvename>
+      <cvename>CVE-2012-5128</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-11-06</discovery>
+      <entry>2012-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38daea4f-2851-11e2-9483-14dae938ec40">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
