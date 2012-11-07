@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kroc
-# Date created:				15 January 2006
-# Whom:					Tim Bishop <tdb@FreeBSD.org>
-#
+# Created by: Tim Bishop <tdb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kroc
 PORTVERSION=	1.5.r6372
@@ -21,7 +17,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	i386
-BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
