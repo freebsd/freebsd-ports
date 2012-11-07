@@ -1,12 +1,8 @@
-# New ports collection makefile for:	squeezeboxserver-superdatetime
-# Date created:		21 June 2008
-# Whom:			Tim Bishop <tdb@FreeBSD.org>
-#
+# Created by: Tim Bishop <tdb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	superdatetime
-PORTVERSION=	5.9.12
+PORTVERSION=	5.9.14
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	squeezeboxserver-
