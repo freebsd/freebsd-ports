@@ -1,12 +1,8 @@
-# New ports collection makefile for:	czmq
-# Date created:		2008-07-28
-# Whom:			Andrew Thompson <thompsa@FreeBSD.org>
-#
+# Created by: Andrew Thompson <thompsa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	czmq
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 
@@ -32,6 +28,7 @@ MAN7=		czmq.7 \
 		zlist.7 \
 		zloop.7 \
 		zmsg.7 \
+		zmutex.7 \
 		zsocket.7 \
 		zsockopt.7 \
 		zstr.7 \
