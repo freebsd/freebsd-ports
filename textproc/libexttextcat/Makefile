@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 PORTDOCS=	README README.libtextcat TODO
 
 OPTIONS_DEFINE=	DOCS
-COMPAT_TEXTCAT_DESC=	Install libtextcat compatible files
 
 .include <bsd.port.options.mk>
 
