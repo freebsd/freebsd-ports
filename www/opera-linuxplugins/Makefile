@@ -1,9 +1,5 @@
-# New ports collection makefile for:		opera-linuxplugins
-# Date created:					December 17th 2006
-# Whom:						Arjan van Leeuwen <freebsd-maintainer@opera.com>
-#
+# Created by: Arjan van Leeuwen <freebsd-maintainer@opera.com>
 # $FreeBSD$
-#
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
@@ -24,8 +20,8 @@ COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${LOCALBASE}/lib/opera/pluginwrapper/operapluginwrapper:${PORTSDIR}/${PKGCATEGORY}/opera
 
-OPERA_VER?=	12.02
-OPERA_BUILD?=	1578
+OPERA_VER?=	12.10
+OPERA_BUILD?=	1652
 MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}/
 
 USE_XZ=		yes

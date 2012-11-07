@@ -120,6 +120,7 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/locale/kk/kk.lng
 %%DATADIR%%/locale/ko/ko.lng
 %%DATADIR%%/locale/lt/lt.lng
+%%DATADIR%%/locale/lv/lv.lng
 %%DATADIR%%/locale/me/me.lng
 %%DATADIR%%/locale/mk/mk.lng
 %%DATADIR%%/locale/ms/ms.lng
@@ -182,6 +183,11 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/mathml.dtd
 %%DATADIR%%/package-id.ini
 %%DATADIR%%/pubsuffix.xml
+%%DATADIR%%/region/ar/bookmarks.adr
+%%DATADIR%%/region/ar/search.ini
+%%DATADIR%%/region/ar/standard_speeddial.ini
+%%DATADIR%%/region/au/bookmarks.adr
+%%DATADIR%%/region/au/standard_speeddial.ini
 %%DATADIR%%/region/cis/en/bookmarks.adr
 %%DATADIR%%/region/cis/en/search.ini
 %%DATADIR%%/region/cis/en/standard_speeddial.ini
@@ -193,6 +199,9 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/cn/en/search.ini
 %%DATADIR%%/region/cn/en/standard_speeddial.ini
 %%DATADIR%%/region/cn/turbosettings.xml
+%%DATADIR%%/region/eg/bookmarks.adr
+%%DATADIR%%/region/eg/search.ini
+%%DATADIR%%/region/eg/standard_speeddial.ini
 %%DATADIR%%/region/gb/bookmarks.adr
 %%DATADIR%%/region/gb/search.ini
 %%DATADIR%%/region/gb/standard_speeddial.ini
@@ -210,6 +219,11 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/middle_east/bookmarks.adr
 %%DATADIR%%/region/middle_east/search.ini
 %%DATADIR%%/region/middle_east/standard_speeddial.ini
+%%DATADIR%%/region/mx/bookmarks.adr
+%%DATADIR%%/region/mx/search.ini
+%%DATADIR%%/region/mx/standard_speeddial.ini
+%%DATADIR%%/region/my/bookmarks.adr
+%%DATADIR%%/region/my/standard_speeddial.ini
 %%DATADIR%%/region/ng/bookmarks.adr
 %%DATADIR%%/region/ng/standard_speeddial.ini
 %%DATADIR%%/region/ph/bookmarks.adr
@@ -217,6 +231,11 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/pk/bookmarks.adr
 %%DATADIR%%/region/pk/standard_speeddial.ini
 %%DATADIR%%/region/region.ini
+%%DATADIR%%/region/ru/bookmarks.adr
+%%DATADIR%%/region/ru/search.ini
+%%DATADIR%%/region/ru/standard_speeddial.ini
+%%DATADIR%%/region/se/bookmarks.adr
+%%DATADIR%%/region/se/standard_speeddial.ini
 %%DATADIR%%/region/tw/browser.js
 %%DATADIR%%/region/tw/turbosettings.xml
 %%DATADIR%%/region/ua/ru/bookmarks.adr
@@ -227,6 +246,8 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/us/standard_speeddial.ini
 %%DATADIR%%/region/vn/bookmarks.adr
 %%DATADIR%%/region/vn/standard_speeddial.ini
+%%DATADIR%%/region/za/bookmarks.adr
+%%DATADIR%%/region/za/standard_speeddial.ini
 %%DATADIR%%/skin/standard_skin.zip
 %%DATADIR%%/skin/unix_skin.zip
 %%DATADIR%%/styles/about.css
@@ -320,25 +341,33 @@ share/mime/packages/opera-extension.xml
 @dirrm %%DATADIR%%/styles/images
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/region/za
 @dirrm %%DATADIR%%/region/vn
 @dirrm %%DATADIR%%/region/us
 @dirrm %%DATADIR%%/region/ua/ru
 @dirrm %%DATADIR%%/region/ua
 @dirrm %%DATADIR%%/region/tw
+@dirrm %%DATADIR%%/region/se
+@dirrm %%DATADIR%%/region/ru
 @dirrm %%DATADIR%%/region/pk
 @dirrm %%DATADIR%%/region/ph
 @dirrm %%DATADIR%%/region/ng
+@dirrm %%DATADIR%%/region/my
+@dirrm %%DATADIR%%/region/mx
 @dirrm %%DATADIR%%/region/middle_east
 @dirrm %%DATADIR%%/region/latin_america
 @dirrm %%DATADIR%%/region/in
 @dirrm %%DATADIR%%/region/id
 @dirrm %%DATADIR%%/region/hk
 @dirrm %%DATADIR%%/region/gb
+@dirrm %%DATADIR%%/region/eg
 @dirrm %%DATADIR%%/region/cn/en
 @dirrm %%DATADIR%%/region/cn
 @dirrm %%DATADIR%%/region/cis/ru
 @dirrm %%DATADIR%%/region/cis/en
 @dirrm %%DATADIR%%/region/cis
+@dirrm %%DATADIR%%/region/au
+@dirrm %%DATADIR%%/region/ar
 @dirrm %%DATADIR%%/region
 @dirrm %%DATADIR%%/locale/zu
 @dirrm %%DATADIR%%/locale/zh-tw
@@ -368,6 +397,7 @@ share/mime/packages/opera-extension.xml
 @dirrm %%DATADIR%%/locale/ms
 @dirrm %%DATADIR%%/locale/mk
 @dirrm %%DATADIR%%/locale/me
+@dirrm %%DATADIR%%/locale/lv
 @dirrm %%DATADIR%%/locale/lt
 @dirrm %%DATADIR%%/locale/ko
 @dirrm %%DATADIR%%/locale/kk
