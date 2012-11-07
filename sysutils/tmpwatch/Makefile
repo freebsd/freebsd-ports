@@ -1,12 +1,7 @@
-# New ports collection makefile for:	tmpwatch
-# Date created:			Feb 20, 2002
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tmpwatch
-PORTVERSION=	2.10.3
+PORTVERSION=	2.11
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/t/m/tmpwatch/
 
