@@ -1,9 +1,5 @@
-# New ports collection makefile for:	telak
-# Date created:				13 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	telak
 PORTVERSION=	0.6
@@ -17,8 +13,8 @@ COMMENT=	A tool to draw pictures on your root window
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_GMAKE=	yes
 USE_EFL=	imlib2
