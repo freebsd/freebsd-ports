@@ -1,6 +1,7 @@
 #! /bin/sh
 # the next line restarts using wish \
 exec %%WISH%% "$0" ${1+"$@"}
+lappend auto_path %%PREFIX%%/lib/jstrack/tracker/lib
 set myName [info script]
 if {![catch {
     set linkName [file readlink $myName]
