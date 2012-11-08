@@ -1,12 +1,8 @@
-# New ports collection makefile for:	simutrans
-# Date created:		24 January 2009
-# Whom:			Tijl Coosemans <tijl@ulyssis.org>
-#
+# Created by: Tijl Coosemans <tijl@ulyssis.org>
 # $FreeBSD$
-#
 
 PORTNAME=	simutrans
-PORTVERSION=	111.3.1
+PORTVERSION=	112.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIMUTRANS_VERSION} \
 		SF/${PORTNAME}/pak64/${SIMUTRANS_PAK64}:pak64
@@ -20,8 +16,8 @@ LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/simutrans/license.txt
 
 SIMUTRANS_VERSION=	${PORTVERSION:S,.,-,g}
-SIMUTRANS_REVISION=	5843
-SIMUTRANS_PAK64=	111-3
+SIMUTRANS_REVISION=	6000
+SIMUTRANS_PAK64=	112-0
 
 OPTIONS_DEFINE= DOCS
 MAKE_ARGS=	BACKEND=mixer_sdl \
