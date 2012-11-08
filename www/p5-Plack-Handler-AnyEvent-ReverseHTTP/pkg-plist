@@ -5,3 +5,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/AnyEvent/ReverseHTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/AnyEvent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler
+@dirrmtry %%SITE_PERL%%/Plack/Server
