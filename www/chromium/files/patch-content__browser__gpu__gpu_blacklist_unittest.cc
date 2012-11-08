@@ -1,5 +1,5 @@
---- chrome/browser/gpu_blacklist_unittest.cc.orig	2012-02-01 21:51:33.000000000 +0200
-+++ chrome/browser/gpu_blacklist_unittest.cc	2012-02-01 21:52:45.000000000 +0200
+--- content/browser/gpu/gpu_blacklist_unittest.cc.orig	2012-02-01 21:51:33.000000000 +0200
++++ content/browser/gpu/gpu_blacklist_unittest.cc	2012-02-01 21:52:45.000000000 +0200
 @@ -191,7 +191,7 @@
    EXPECT_EQ(flags.flags(),
              static_cast<uint32>(GpuFeatureFlags::kGpuFeatureWebgl));
