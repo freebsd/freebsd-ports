@@ -15,7 +15,7 @@ COMMENT=	Machine learning algorithms for python
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	cblas:${PORTSDIR}/math/cblas
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy:${PORTSDIR}/science/py-scipy
+		${PYTHON_PKGNAMEPREFIX}scipy>0.8.0:${PORTSDIR}/science/py-scipy
 
 USE_FORTRAN=	yes
 LATEST_LINK=	py-${PORTNAME}
