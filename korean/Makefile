@@ -12,6 +12,7 @@
     SUBDIR += baekmukfonts-ttf
     SUBDIR += engdic
     SUBDIR += eterm
+    SUBDIR += fcitx-hangul
     SUBDIR += gimp-help
     SUBDIR += gtkcomm
     SUBDIR += h2ps
