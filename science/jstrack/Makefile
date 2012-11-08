@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jstrack
-PORTVERSION=	3.3.3a
+PORTVERSION=	3.3.4
 CATEGORIES=	science
 MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -25,14 +25,14 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_TCL_RUN=	84
-USE_TK=		84
+USE_TCL_RUN=	85
+USE_TK=		85
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	WISH=${WISH}
 
-PORTDOCS=	00-README_FIRST.txt HISTORY install.txt jstrackdoc.pdf
+PORTDOCS=	00-README_FIRST.txt HISTORY install.txt jstrackdoc-v2.pdf
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
