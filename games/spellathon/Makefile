@@ -19,6 +19,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		xcb:${PORTSDIR}/x11/libxcb
 
+CXXFLAGS+=	-fPIC
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GNOME=	glib20
