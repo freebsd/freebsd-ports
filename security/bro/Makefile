@@ -44,4 +44,8 @@ RUN_DEPENDS+=	cf:${PORTSDIR}/sysutils/lbl-cf
 CMAKE_ARGS+=	-DENABLE_DEBUG:BOOL=ON
 .endif
 
+post-patch:
+#	avoid installing .in header file
+	${REINPLACE_CMD} -e '13d' ${WRKSRC}/aux/binpac/lib/CMakeLists.txt
+
 .include <bsd.port.mk>
