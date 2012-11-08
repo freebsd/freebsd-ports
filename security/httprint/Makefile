@@ -8,7 +8,7 @@
 PORTNAME=	httprint
 PORTVERSION=	301
 CATEGORIES=	security
-MASTER_SITES=	http://www.net-square.com/httprint/
+MASTER_SITES=	http://net-square.com/zip%20folders/
 DISTNAME=	${PORTNAME}_freebsd_${PORTVERSION}
 
 MAINTAINER=	onatan@gmail.com
