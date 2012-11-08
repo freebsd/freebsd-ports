@@ -1,13 +1,7 @@
-# New ports collection makefile for:   	bitlbee
-# Date created:                        	10 June 2003
-# Whom:                                 Peter van Dijk <peter@dataloss.nl>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.0.6
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
