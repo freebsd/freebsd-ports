@@ -3,7 +3,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	22.0.1229.94
+DISTVERSION=	23.0.1271.64
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -140,6 +140,7 @@ BUILDTYPE=	Release
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
+CONFIGURE_ENV+=	LD=${CC}
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
@@ -174,14 +175,12 @@ do-configure:
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/chrome.pak \
-		${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png \
-		${WRKSRC}/out/${BUILDTYPE}/resources.pak \
-		${WRKSRC}/out/${BUILDTYPE}/content_resources.pak \
-		${WRKSRC}/out/${BUILDTYPE}/ui_resources_100_percent.pak \
-		${WRKSRC}/out/${BUILDTYPE}/theme_resources_100_percent.pak ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper \
 		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
+.for p in chrome chrome_100_percent content_resources resources
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${DATADIR}
+.endfor
 .for f in chrome libffmpegsumo.so mksnapshot protoc
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${f} ${DATADIR}
 .endfor
