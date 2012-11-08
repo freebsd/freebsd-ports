@@ -3,6 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.15
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -17,12 +18,11 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES DRILL GOST PYLDNS
+OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL GOST PYLDNS
 OPTIONS_DEFAULT=	EXAMPLES DRILL
 
-EXAMPLES_DESC=	"With example programs"
-DRILL_DESC=	"With drill program"
-GOST_DESC=	"GOST signatures enabled (requires openssl >= 1.0.0)"
+DRILL_DESC=	With drill program
+GOST_DESC=	GOST signatures enabled, requires openssl >= 1.0.0
 PYLDNS_DESC=	${PYTHON_DESC}
 
 .include <bsd.port.options.mk>
@@ -34,7 +34,7 @@ USE_PYTHON=	yes
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 ALL_TARGET+=	doc
 INSTALL_TARGET+=install-manpages
