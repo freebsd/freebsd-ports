@@ -2,6 +2,7 @@ bin/chrome
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome.pak
+%%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/content_resources.pak
 %%DATADIR%%/libffmpegsumo.so
 %%DATADIR%%/locales/am.pak
@@ -63,12 +64,19 @@ bin/chrome
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
 %%DATADIR%%/resources/inspector/auditsPanel.css
+%%DATADIR%%/resources/inspector/AuditsPanel.js
+%%DATADIR%%/resources/inspector/breadcrumbList.css
+%%DATADIR%%/resources/inspector/cmdevtools.css
+%%DATADIR%%/resources/inspector/codemirror.css
+%%DATADIR%%/resources/inspector/CodeMirrorTextEditor.js
+%%DATADIR%%/resources/inspector/cssNamedFlows.css
 %%DATADIR%%/resources/inspector/dataGrid.css
 %%DATADIR%%/resources/inspector/devTools.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/resources/inspector/DevTools.js
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
 %%DATADIR%%/resources/inspector/elementsPanel.css
+%%DATADIR%%/resources/inspector/ElementsPanel.js
 %%DATADIR%%/resources/inspector/filteredItemSelectionDialog.css
 %%DATADIR%%/resources/inspector/heapProfiler.css
 %%DATADIR%%/resources/inspector/HeapSnapshotWorker.js
@@ -117,6 +125,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/indexedDBIndex.png
 %%DATADIR%%/resources/inspector/Images/indexedDBObjectStore.png
 %%DATADIR%%/resources/inspector/Images/localStorage.png
+%%DATADIR%%/resources/inspector/Images/namedFlowOverflow.png
 %%DATADIR%%/resources/inspector/Images/navigatorShowHideButton.png
 %%DATADIR%%/resources/inspector/Images/paneAddButtons.png
 %%DATADIR%%/resources/inspector/Images/paneBottomGrow.png
@@ -134,6 +143,9 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/profilesSilhouette.png
 %%DATADIR%%/resources/inspector/Images/programCounterBorder.png
 %%DATADIR%%/resources/inspector/Images/radioDot.png
+%%DATADIR%%/resources/inspector/Images/regionEmpty.png
+%%DATADIR%%/resources/inspector/Images/regionFit.png
+%%DATADIR%%/resources/inspector/Images/regionOverset.png
 %%DATADIR%%/resources/inspector/Images/resourceCSSIcon.png
 %%DATADIR%%/resources/inspector/Images/resourceDocumentIcon.png
 %%DATADIR%%/resources/inspector/Images/resourceDocumentIconSmall.png
@@ -169,6 +181,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/splitviewDimple.png
 %%DATADIR%%/resources/inspector/Images/splitviewDividerBackground.png
 %%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs.png
+%%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs2x.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerHorizontal.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerVertical.png
 %%DATADIR%%/resources/inspector/Images/successGreenDot.png
@@ -217,20 +230,24 @@ bin/chrome
 %%DATADIR%%/resources/inspector/navigatorView.css
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css
+%%DATADIR%%/resources/inspector/NetworkPanel.js
 %%DATADIR%%/resources/inspector/panelEnablerView.css
 %%DATADIR%%/resources/inspector/profilesPanel.css
+%%DATADIR%%/resources/inspector/ProfilesPanel.js
 %%DATADIR%%/resources/inspector/resourcesPanel.css
+%%DATADIR%%/resources/inspector/ResourcesPanel.js
 %%DATADIR%%/resources/inspector/resourceView.css
 %%DATADIR%%/resources/inspector/revisionHistory.css
 %%DATADIR%%/resources/inspector/ScriptFormatterWorker.js
 %%DATADIR%%/resources/inspector/scriptsPanel.css
+%%DATADIR%%/resources/inspector/ScriptsPanel.js
 %%DATADIR%%/resources/inspector/splitView.css
 %%DATADIR%%/resources/inspector/tabbedPane.css
-%%DATADIR%%/resources/inspector/textPrompt.css
 %%DATADIR%%/resources/inspector/textEditor.css
+%%DATADIR%%/resources/inspector/textPrompt.css
 %%DATADIR%%/resources/inspector/timelinePanel.css
-%%DATADIR%%/theme_resources_100_percent.pak
-%%DATADIR%%/ui_resources_100_percent.pak
+%%DATADIR%%/resources/inspector/TimelinePanel.js
+%%DATADIR%%/resources/inspector/webGLProfiler.css
 %%DATADIR%%/xdg-settings
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/resources/inspector/Images

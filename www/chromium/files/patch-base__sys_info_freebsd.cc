@@ -1,23 +1,27 @@
---- base/sys_info_freebsd.cc.orig	2011-01-29 10:49:10.000000000 +0100
-+++ base/sys_info_freebsd.cc	2011-02-07 22:02:40.000000000 +0100
-@@ -30,4 +30,21 @@
+--- base/sys_info_freebsd.cc.orig	2012-10-31 21:02:04.000000000 +0200
++++ base/sys_info_freebsd.cc	2012-11-07 17:49:20.000000000 +0200
+@@ -33,4 +33,25 @@
    return limit;
  }
  
++// static
++std::string SysInfo::CPUModelName() {
++  int mib[] = { CTL_HW, HW_MODEL };
++  char name[256];
++  size_t size = arraysize(name);
++  if (sysctl(mib, arraysize(mib), &name, &size, NULL, 0) == 0)
++    return name;
++  return std::string();
++}
++
 +int SysInfo::NumberOfProcessors() {
-+  int mib[2];
-+  
-+  mib[0] = CTL_HW;
-+  mib[1] = HW_NCPU;
-+
++  int mib[] = { CTL_HW, HW_NCPU };
 +  int ncpu;
-+  size_t len = sizeof(ncpu);
-+
-+  if (sysctl(mib, 2, &ncpu, &len, NULL, 0) == -1) {
++  size_t size = sizeof(ncpu);
++  if (sysctl(mib, arraysize(mib), &ncpu, &size, NULL, 0) == -1) {
 +    NOTREACHED();
 +    return 1;
 +  }
-+
 +  return ncpu;
 +}
 +
