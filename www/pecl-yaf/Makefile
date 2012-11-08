@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -10,7 +10,9 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
-COMMENT=	Yaf is a php framework, the difference is yaf is a PHP Extension
+COMMENT=	MVC framework written as a C PHP extension
+
+LICENSE=	PHP301
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
