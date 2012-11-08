@@ -1,5 +1,6 @@
 bin/devede
 bin/devede-debug
+lib/devede/devede_avconv_convert.py
 lib/devede/devede_bincue.py
 lib/devede/devede_convert.py
 lib/devede/devede_delete.py
