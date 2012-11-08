@@ -1,0 +1,32 @@
+bin/fet
+%%NLS%%%%DATADIR%%/translations/fet_ar.qm
+%%NLS%%%%DATADIR%%/translations/fet_ca.qm
+%%NLS%%%%DATADIR%%/translations/fet_da.qm
+%%NLS%%%%DATADIR%%/translations/fet_de.qm
+%%NLS%%%%DATADIR%%/translations/fet_el.qm
+%%NLS%%%%DATADIR%%/translations/fet_es.qm
+%%NLS%%%%DATADIR%%/translations/fet_fa.qm
+%%NLS%%%%DATADIR%%/translations/fet_fr.qm
+%%NLS%%%%DATADIR%%/translations/fet_gl.qm
+%%NLS%%%%DATADIR%%/translations/fet_he.qm
+%%NLS%%%%DATADIR%%/translations/fet_hu.qm
+%%NLS%%%%DATADIR%%/translations/fet_id.qm
+%%NLS%%%%DATADIR%%/translations/fet_it.qm
+%%NLS%%%%DATADIR%%/translations/fet_lt.qm
+%%NLS%%%%DATADIR%%/translations/fet_mk.qm
+%%NLS%%%%DATADIR%%/translations/fet_ms.qm
+%%NLS%%%%DATADIR%%/translations/fet_nl.qm
+%%NLS%%%%DATADIR%%/translations/fet_pl.qm
+%%NLS%%%%DATADIR%%/translations/fet_pt_BR.qm
+%%NLS%%%%DATADIR%%/translations/fet_ro.qm
+%%NLS%%%%DATADIR%%/translations/fet_ru.qm
+%%NLS%%%%DATADIR%%/translations/fet_si.qm
+%%NLS%%%%DATADIR%%/translations/fet_sk.qm
+%%NLS%%%%DATADIR%%/translations/fet_sr.qm
+%%NLS%%%%DATADIR%%/translations/fet_tr.qm
+%%NLS%%%%DATADIR%%/translations/fet_uk.qm
+%%NLS%%%%DATADIR%%/translations/fet_untranslated.qm
+%%NLS%%%%DATADIR%%/translations/fet_uz.qm
+%%NLS%%%%DATADIR%%/translations/fet_vi.qm
+%%NLS%%@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm %%DATADIR%%
