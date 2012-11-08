@@ -26,6 +26,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MANCOMPRESSED=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAN1=		gource.1
 
 .include <bsd.port.mk>
