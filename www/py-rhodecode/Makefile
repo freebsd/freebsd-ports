@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-rhodecode
-# Date created:		2012-04-21
-# Whom:			gugabsd <gugabsd@mundounix.com.br>
-#
+# Created by: gugabsd <gugabsd@mundounix.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	rhodecode
 PORTVERSION=	1.3.6
@@ -17,6 +13,7 @@ COMMENT=	Fast and powerful management tool for Mercurial and GIT
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:${PORTSDIR}/www/py-pastescript
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7.3:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.4:${PORTSDIR}/textproc/py-pygments \
