@@ -2,9 +2,8 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://files.roorback.net/
+MASTER_SITES=	LOCAL/gblach/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Advanced general-purpose video player
@@ -13,11 +12,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	ffmpeg-011:${PORTSDIR}/multimedia/ffmpeg-011
-RUN_DEPENDS=	ffmpeg-011:${PORTSDIR}/multimedia/ffmpeg-011
+BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
+		rst2man:${PORTSDIR}/textproc/py-docutils
+RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
 
 USE_XZ=		yes
 USE_GMAKE=	yes
+USE_PYTHON=	3.1+
 USE_ICONV=	yes
 USE_NCURSES=	yes
 HAS_CONFIGURE=	yes
@@ -25,17 +26,12 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
-		--host-cc=${CC} \
-		--extra-cflags=-I${LOCALBASE}/include/ffmpeg-011 \
-		--extra-ldflags=-L${LOCALBASE}/lib/ffmpeg-011 \
+		--extra-cflags=-I${LOCALBASE}/include/ffmpeg1 \
+		--extra-ldflags=-L${LOCALBASE}/lib/ffmpeg1 \
 		--mandir=${PREFIX}/man \
 		--disable-alsa \
-		--disable-bitmap-font \
 		--disable-liba52 \
 		--disable-directfb \
-		--disable-svga \
-		--disable-dga1 \
-		--disable-dga2 \
 		--disable-faad \
 		--disable-mng \
 		--disable-libdca \
@@ -45,17 +41,16 @@ CONFIGURE_ARGS=	--cc=${CC} \
 MAKE_ARGS+=	BINDIR=${PREFIX}/bin \
 		CONFDIR=${PREFIX}/etc/mplayer
 
-MPLAYER2_SNAPSHOT_DATE=	2012-05-17
+MPLAYER2_SNAPSHOT_DATE=	2012-11-03
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	DEBUG NLS RTC IPV6 SMB JOYSTICK \
-		DVDREAD LIBBLURAY V4L LIVEMEDIA DV THEORA \
-		X11 XVMC XINERAMA OPENGL SDL VDPAU GIF AALIB CACA \
+OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB JOYSTICK \
+		DVDREAD LIBBLURAY V4L DV THEORA \
+		X11 XVMC XINERAMA OPENGL SDL VDPAU GIF CACA \
 		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
-		JACK NAS PULSE PORTAUDIO \
-		ASS FRIBIDI LIRC
+		JACK PULSE PORTAUDIO ASS LIRC
 OPTIONS_DEFAULT=DVDREAD X11 ASS
 
 .if !defined(PACKAGE_BUILDING)
@@ -70,8 +65,6 @@ THEORA_DESC=	Enable ogg theora video support
 ASS_DESC=	Enable ASS/SSA subtitle rendering
 WIN32_DESC=	Enable win32 codec set on the IA32 arch
 REALPLAYER_DESC=Enable realplayer plugin
-LIVEMEDIA_DESC=	Enable LIVE555 streaming support
-FRIBIDI_DESC=	Enable FriBiDi support
 LIRC_DESC=	Enable lirc support
 LIBCDIO_DESC=	Enable libcdio support
 JOYSTICK_DESC=	Enable joystick support
@@ -98,16 +91,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_log2f
 CONFIGURE_ARGS+=	--disable-ssse3
 .endif
 
-.if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-translation --language=all \
-			--extra-libs-mplayer=-lintl
-MANLANG=		"" cs de es fr hu it pl ru zh_CN
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-translation --language=en
-PLIST_SUB+=		NLS="@comment "
-.endif
+WITH_CDROM_DEVICE?=	/dev/cd0
 
 #On i386, gcc runs out of general purpose registers when
 #trying to compile a debug version with the default flags.
@@ -160,22 +144,10 @@ LIB_DEPENDS+=		speex:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=	--disable-speex
 .endif
 
-.if ${PORT_OPTIONS:MLIVEMEDIA}
-BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-.else
-CONFIGURE_ARGS+=	--disable-live
-.endif
-
 .if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MNAS}
-LIB_DEPENDS+=		audio:${PORTSDIR}/audio/nas
-.else
-CONFIGURE_ARGS+=	--disable-nas
 .endif
 
 .if ${PORT_OPTIONS:MPULSE}
@@ -210,12 +182,6 @@ LIB_DEPENDS+=		smbclient:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=	--disable-smb
 .endif
 
-.if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=		fribidi:${PORTSDIR}/converters/fribidi
-.else
-CONFIGURE_ARGS+=	--disable-fribidi
-.endif
-
 .if ${PORT_OPTIONS:MLIBCDIO}
 LIB_DEPENDS+=		cdio:${PORTSDIR}/sysutils/libcdio
 .else
@@ -226,18 +192,6 @@ CONFIGURE_ARGS+=	--disable-libcdio
 RUN_DEPENDS+=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
 .else
 CONFIGURE_ARGS+=	--disable-ladspa
-.endif
-
-.if defined(WITH_DVD_DEVICE)
-DEFAULT_DVD_DEVICE=	${WITH_DVD_DEVICE}
-.else
-DEFAULT_DVD_DEVICE=	/dev/cd0
-.endif
-
-.if defined(WITH_CDROM_DEVICE)
-DEFAULT_CDROM_DEVICE=	${WITH_CDROM_DEVICE}
-.else
-DEFAULT_CDROM_DEVICE=	/dev/cd0
 .endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
@@ -330,12 +284,6 @@ USE_SDL=		sdl
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
-.if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=		aa:${PORTSDIR}/graphics/aalib
-.else
-CONFIGURE_ARGS+=	--disable-aa
-.endif
-
 .if defined(WITH_KERN_HZ)
 DEFAULT_KERN_HZ=${WITH_KERN_HZ}
 .else
@@ -363,14 +311,13 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 	@${REINPLACE_CMD} \
-		-e 's/libavutil/libavutil-011/' \
-		-e 's/libavcodec/libavcodec-011/' \
-		-e 's/libavformat/libavformat-011/' \
-		-e 's/libswscale/libswscale-011/' \
+		-e 's/libavutil/libavutil1/' \
+		-e 's/libavcodec/libavcodec1/' \
+		-e 's/libavformat/libavformat1/' \
+		-e 's/libswscale/libswscale1/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} \
-		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
-		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
+		-e 's|/dev/acd0|${WITH_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
 		-e 's|-lncurses|/usr/lib/libncurses.so|' \
@@ -383,10 +330,13 @@ post-patch:
 			-e 's|[[:space:]]gcc| ${CC}|' \
 			-e 's|\$$\(CC\)|${CC}|' \
 			-e 's|/usr/X11R6|${LOCALBASE}|'
+	@${FIND} -E ${WRKSRC}/TOOLS -type f -name '*.py' -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} \
+		-e 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|'
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
-		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
-		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${WITH_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g ; \
+		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${WITH_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
 .if ${PORT_OPTIONS:MRTC}
 	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \

@@ -3,21 +3,3 @@ etc/mplayer/codecs.conf.sample
 etc/mplayer/input.conf.sample
 etc/mplayer/mplayer.conf.sample
 @dirrmtry etc/mplayer
-%%NLS%%@dirrmtry man/cs/man1
-%%NLS%%@dirrmtry man/cs
-%%NLS%%@dirrmtry man/de/man1
-%%NLS%%@dirrmtry man/de
-%%NLS%%@dirrmtry man/es/man1
-%%NLS%%@dirrmtry man/es
-%%NLS%%@dirrmtry man/fr/man1
-%%NLS%%@dirrmtry man/fr
-%%NLS%%@dirrmtry man/hu/man1
-%%NLS%%@dirrmtry man/hu
-%%NLS%%@dirrmtry man/it/man1
-%%NLS%%@dirrmtry man/it
-%%NLS%%@dirrmtry man/pl/man1
-%%NLS%%@dirrmtry man/pl
-%%NLS%%@dirrmtry man/ru/man1
-%%NLS%%@dirrmtry man/ru
-%%NLS%%@dirrmtry man/zh_CN/man1
-%%NLS%%@dirrmtry man/zh_CN
