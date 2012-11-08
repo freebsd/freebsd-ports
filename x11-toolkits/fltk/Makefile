@@ -1,13 +1,8 @@
-# New ports collection makefile for:   	fltk
-# Date created:				11 February 1999
-# Whom:                			Dima Sivachenko <dima@Chg.RU>
-#
+# Created by: Dima Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	fltk
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/${PORTVERSION}
@@ -22,6 +17,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 USE_LDCONFIG=	yes
 USE_XORG=	xft
 USE_GL=		gl glu
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-threads \
 		--enable-shared \
