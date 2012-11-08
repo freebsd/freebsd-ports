@@ -1,27 +1,29 @@
-# New ports collection makefile for:    abakus
-# Date created:                         3 January 2005
-# Whom:                                 Andy Fawcett <andy@athame.co.uk>
-#
+# Created by: Andy Fawcett <andy@athame.co.uk>
 # $FreeBSD$
 
 PORTNAME=	abakus
-PORTVERSION=	0.91
-PORTREVISION=	10
+PORTVERSION=	0.92
 CATEGORIES=	math kde
-MASTER_SITES=	http://purinchu.net/abakus/ \
-		http://www.athame.co.uk/mirror/
+MASTER_SITES=	http://purinchu.net/abakus/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Michael Pyne's Abakus Calculator
+COMMENT=	Simple KDE Calculator
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	mpfr:${PORTSDIR}/math/mpfr
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	bison=no flex=no prefix=${PREFIX} extraincludes=${LOCALBASE}
-_NO_KDE_CONFTARGET_HACK=	yes
-QT_NONSTANDARD=	yes
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
+USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_BISON=	build
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
+		-DCMAKE_REQUIRED_FLAGS:STRING="${LDFLAGS}" \
+		-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
+MAKE_JOBS_SAFE=	yes
+
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
