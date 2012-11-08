@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	pcsxr
-PORTVERSION=	1.9.92.r78288
-PORTREVISION=	1
+PORTVERSION=	1.9.92.r81088
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Playstation (PSX) emulator
@@ -37,7 +35,7 @@ USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
-USE_GNOME=	gtk20 desktopfileutils glib20 libglade2
+USE_GNOME=	gtk20 desktopfileutils glib20
 USE_ICONV=	yes
 USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
