@@ -22,7 +22,7 @@ share/pcsxr/spu.png
 share/pcsxr/cd.png
 share/pcsxr/iso-reopen.png
 share/pcsxr/cdr.png
-share/pcsxr/pcsxr.glade2
+share/pcsxr/pcsxr.ui
 share/pcsxr/iso-open.png
 share/pcsxr/play.png
 share/pcsxr/pad.png

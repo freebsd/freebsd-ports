@@ -1,5 +1,5 @@
---- plugins/dfinput/Makefile.am.orig	2011-06-30 08:58:33.770048349 +0200
-+++ plugins/dfinput/Makefile.am	2011-06-30 09:00:09.852609400 +0200
+--- plugins/dfinput/Makefile.am.orig	2012-11-07 17:22:21.000000000 +0100
++++ plugins/dfinput/Makefile.am	2012-11-07 17:24:22.000000000 +0100
 @@ -1,14 +1,14 @@
 -bindir = @libdir@/games/psemu/
 -libdir = @libdir@/games/psemu/
@@ -17,11 +17,11 @@
  AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	$(GTK2_CFLAGS) \
  	-I../../include -I../../libpcsxcore $(SDL_CFLAGS)
  
 @@ -17,5 +17,5 @@
- cfgDFInput_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS) $(SDL_LIBS) -lX11
+ cfgDFInput_LDADD = $(GTK2_LIBS) $(SDL_LIBS) -lX11
  
  glade_DATA = dfinput.ui
 -gladedir = $(datadir)/psemu/

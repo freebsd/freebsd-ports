@@ -1,5 +1,5 @@
---- plugins/dfnet/Makefile.am.orig	2011-01-25 07:30:51.232551129 +0100
-+++ plugins/dfnet/Makefile.am	2011-01-25 16:39:03.458776989 +0100
+--- plugins/dfnet/Makefile.am.orig	2012-11-07 17:26:37.000000000 +0100
++++ plugins/dfnet/Makefile.am	2012-11-07 17:28:04.000000000 +0100
 @@ -1,5 +1,5 @@
 -bindir = @libdir@/games/psemu/
 -libdir = @libdir@/games/psemu/
@@ -14,13 +14,13 @@
  AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	$(GTK2_CFLAGS) \
  	-I../../libpcsxcore -I../../include
  
 @@ -16,5 +16,5 @@
- cfgDFNet_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
+ cfgDFNet_LDADD = $(GTK2_LIBS)
  
  glade_DATA = dfnet.ui
 -gladedir = $(datadir)/psemu/
-+gladedir = $(datadir)/pcsxr
++gladedir = $(datadir)/pcsxr/
  EXTRA_DIST = $(glade_DATA)
