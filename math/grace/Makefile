@@ -1,13 +1,8 @@
-# New ports collection makefile for: grace
-# Date created:		Dec 28 1998
-# Whom:			Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
-#
+# Created by: Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
 # $FreeBSD$
-#
 
 PORTNAME=	grace
-PORTVERSION=	5.1.22
-PORTREVISION=	8
+PORTVERSION=	5.1.23
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
@@ -18,17 +13,16 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/stable/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful plotting tool (successor of xmgr)
+COMMENT=	Powerful 2D plotting tool (successor of xmgr)
 
-LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib		\
-		jpeg.11:${PORTSDIR}/graphics/jpeg	\
-		png15:${PORTSDIR}/graphics/png		\
-		tiff.4:${PORTSDIR}/graphics/tiff	\
-		fftw.2:${PORTSDIR}/math/fftw		\
-		pdf.6:${PORTSDIR}/print/pdflib		\
-		netcdf.4:${PORTSDIR}/science/netcdf	\
-		Xbae.4:${PORTSDIR}/x11-toolkits/xbae	\
-		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff \
+		Xbae:${PORTSDIR}/x11-toolkits/xbae \
+		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
 
 USE_MOTIF=	yes
 USE_GCC=	any
@@ -39,10 +33,38 @@ CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
 		--with-extra-ldpath=${LOCALBASE}/lib \
 		--without-bundled-xbae
 ALL_TARGET=	# empty
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		convcal.1 grace.1 grconvert.1
 MLINKS=		grace.1 gracebat.1 \
 		grace.1 xmgrace.1
+
+OPTIONS_DEFINE=	FFTW NETCDF PDF DOCS EXAMPLES
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+PDF_DESC=	PDF output
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFFTW}
+LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
+CONFIGURE_ARGS+=	--with-fftw
+.else
+CONFIGURE_ARGS+=	--without-fftw
+.endif
+
+.if ${PORT_OPTIONS:MNETCDF}
+LIB_DEPENDS+=	netcdf:${PORTSDIR}/science/netcdf
+CONFIGURE_ARGS+=	--enable-netcdf
+.else
+CONFIGURE_ARGS+=	--disable-netcdf
+.endif
+
+.if ${PORT_OPTIONS:MPDF}
+LIB_DEPENDS+=	pdf:${PORTSDIR}/print/pdflib
+CONFIGURE_ARGS+=	--enable-pdfdrv
+.else
+CONFIGURE_ARGS+=	--disable-pdfdrv
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xmgrace ${PREFIX}/bin
@@ -70,7 +92,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fonts/type1/*.pfb ${DATADIR}/fonts/type1
 	@${MKDIR} ${DATADIR}/templates
 	${INSTALL_DATA} ${WRKSRC}/templates/*.agr ${DATADIR}/templates
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.1" \
 		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
@@ -78,7 +100,7 @@ do-install:
 	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	@${LN} -sf ${DOCSDIR} ${DATADIR}/doc
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" \
 		-cf - . | ${TAR} -C ${EXAMPLESDIR} --unlink -xf -
