@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.6.3
+DISTVERSION=	2.6.4
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-devel
@@ -26,7 +26,7 @@ USE_TCL_BUILD=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
 
-CONFLICTS?=	redis-2.4.*
+CONFLICTS?=	redis-2.*
 
 USE_GMAKE=	yes
 MAKE_ENV=	"V=yo"
