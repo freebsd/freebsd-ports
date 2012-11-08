@@ -297,7 +297,11 @@ post-install:	${MKREPOS_TARGET}
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
 .endif
 .if ${PORT_OPTIONS:MSVNMUCC}
+. if ${PORT_OPTIONS:MSTATIC}
+	@${INSTALL} ${WRKSRC}/tools/client-side/svnmucc/svnmucc ${PREFIX}/bin
+. else
 	@${INSTALL} ${WRKSRC}/tools/client-side/svnmucc/.libs/svnmucc ${PREFIX}/bin
+. endif
 .endif
 
 repository:	_mkrepos
