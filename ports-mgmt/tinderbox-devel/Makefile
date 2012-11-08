@@ -1,12 +1,9 @@
-# Ports collection makefile for:	misc/tinderbox
-# Whom:			Edwin Groothuis <edwin@mavetju.org>
-# Date created:		31 december 2005
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
 
 PORTNAME=	tinderbox
 DISTVERSION=	3.4${SNAP}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
