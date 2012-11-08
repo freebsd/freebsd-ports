@@ -1,16 +1,12 @@
-# New ports collection makefile for:	sdcc
-# Date created:		3 May 2004
-# Whom:			Tijl Coosemans <tijl@ulyssis.org>
-#
+# Created by: Tijl Coosemans <tijl@ulyssis.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdcc
-PORTVERSION=	3.2.1.2012.10.18
+PORTVERSION=	3.2.1.2012.11.01
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
-DISTNAME=	${PORTNAME}-src-20121018-8160
+DISTNAME=	${PORTNAME}-src-20121101-8180
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
@@ -71,8 +67,8 @@ PLIST_SUB+=	MCS51="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPIC}
-BUILD_DEPENDS+= gputils>=0.14.2:${PORTSDIR}/devel/gputils
-RUN_DEPENDS+=	gputils>=0.14.2:${PORTSDIR}/devel/gputils
+BUILD_DEPENDS+= gputils>=0.14.3:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=	gpasm:${PORTSDIR}/devel/gputils
 PLIST_SUB+=	PIC=""
 .else
 CONFIGURE_ARGS+=--disable-pic14-port --disable-pic16-port
