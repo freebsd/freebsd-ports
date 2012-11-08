@@ -1,4 +1,4 @@
-# Created by:				Jeremy Norris <ishmael27@home.com>
+# Created by: Jeremy Norris <ishmael127@home.com>
 # $FreeBSD$
 
 PORTNAME=	feh
@@ -29,16 +29,16 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+.include	<bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's#/bin/bash#/bin/sh#' ${WRKSRC}/cam/gen-cam-menu
-	@${REINPLACE_CMD} 's#/install-man install-doc#install-man#' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's#/install-man install-doc#install-man#' \
+		${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOC}
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
