@@ -18,6 +18,8 @@ COMMENT=	Utility for tagging groups of audio files using CDDB
 LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
 		tag.1:${PORTSDIR}/audio/taglib
 
+USE_PKGCONFIG=	build
+
 MAN1=		taglookup.1
 PLIST_FILES=	bin/taglookup
 
