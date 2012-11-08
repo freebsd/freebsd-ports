@@ -4,3 +4,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/PSGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/Plack/Server
