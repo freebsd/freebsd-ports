@@ -40,7 +40,7 @@ SUB_LIST+=		SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 # As with mail/squirreldir, if you were using WITHOUT_WWWDIR=yes,
 # set SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
-PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR}
+PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR:S,${PREFIX}/,,}
 SUB_LIST+=		SQUIRRELDIR=${SQUIRRELDIR}
 
 .if exists(${FILESDIR}/pkg-message.in)
