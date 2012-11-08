@@ -11,7 +11,6 @@ COMMENT=	Creates a common metadata repository
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metadata-parser \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/rpm/__init__.py:${PORTSDIR}/archivers/rpm5 \
 		${PYTHON_SITELIBDIR}/urlgrabber/__init__.py:${PORTSDIR}/www/py-urlgrabber \
 		${PYTHON_SITELIBDIR}/yum/__init__.py:${PORTSDIR}/sysutils/yum
 
