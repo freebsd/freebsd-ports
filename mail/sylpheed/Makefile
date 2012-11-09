@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
