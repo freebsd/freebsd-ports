@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121109:
+  AFFECTS: users of devel/py-liblarch_gtk deskutils/gtg
+  AUTHOR: rm@FreeBSD.org
+
+  Code of py-liblarch_gtk has been merged into py-liblarch 2.1.0. To avoid
+  any conflicts, user need to remove py-liblarch_gtk before the update of
+  py-liblarch.
+
 20121105:
   AFFECTS: users of mail/postfix-current
   AUTHOR: sahil@FreeBSD.org

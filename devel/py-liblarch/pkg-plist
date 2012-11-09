@@ -16,4 +16,17 @@
 %%PYTHON_SITELIBDIR%%/liblarch/treenode.py
 %%PYTHON_SITELIBDIR%%/liblarch/treenode.pyc
 %%PYTHON_SITELIBDIR%%/liblarch/treenode.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/viewcount.py
+%%PYTHON_SITELIBDIR%%/liblarch/viewcount.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/viewcount.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/viewtree.py
+%%PYTHON_SITELIBDIR%%/liblarch/viewtree.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/viewtree.pyo
+%%PYTHON_SITELIBDIR%%/liblarch_gtk/__init__.py
+%%PYTHON_SITELIBDIR%%/liblarch_gtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/liblarch_gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/liblarch_gtk/treemodel.py
+%%PYTHON_SITELIBDIR%%/liblarch_gtk/treemodel.pyc
+%%PYTHON_SITELIBDIR%%/liblarch_gtk/treemodel.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/liblarch_gtk
 @dirrm %%PYTHON_SITELIBDIR%%/liblarch
