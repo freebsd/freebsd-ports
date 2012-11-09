@@ -4,7 +4,6 @@ etc/LCDd.conf.sample
 etc/lcdexec.conf.sample
 etc/lcdproc.conf.sample
 lib/lcdproc/CFontz.so
-lib/lcdproc/CFontz633.so
 lib/lcdproc/CFontzPacket.so
 lib/lcdproc/CwLnx.so
 lib/lcdproc/ea65.so
@@ -16,6 +15,7 @@ lib/lcdproc/NoritakeVFD.so
 lib/lcdproc/bayrad.so
 lib/lcdproc/curses.so
 lib/lcdproc/glk.so
+lib/lcdproc/glcd.so
 lib/lcdproc/hd44780.so
 %%FTDI%%lib/lcdproc/i2500vfd.so
 lib/lcdproc/icp_a106.so
@@ -29,6 +29,7 @@ lib/lcdproc/mtc_s16209x.so
 %%USB%%lib/lcdproc/picolcd.so
 lib/lcdproc/pyramid.so
 lib/lcdproc/SureElec.so
+lib/lcdproc/sdeclcd.so
 lib/lcdproc/sed1330.so
 lib/lcdproc/sed1520.so
 lib/lcdproc/serialPOS.so
@@ -40,5 +41,6 @@ lib/lcdproc/t6963.so
 lib/lcdproc/text.so
 lib/lcdproc/tyan.so
 %%FTDI%%lib/lcdproc/ula200.so
+lib/lcdproc/vlsys_m428.so
 sbin/LCDd
 @dirrm lib/lcdproc
