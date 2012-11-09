@@ -131,7 +131,7 @@
 +option(DISABLE_PORTAUDIO "Disable PortAudio (mic) support" OFF)
 +if(NOT DISABLE_PORTAUDIO)
 +	include(CheckCXXSourceRuns)
-+	include_directories(${CMAKE_INSTALL_PREFIX}/include/portaudio2)
++	include_directories(BEFORE ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
 +	link_directories(${CMAKE_INSTALL_PREFIX}/lib/portaudio2)
 +	set(CMAKE_REQUIRED_INCLUDES ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
 +	set(CMAKE_REQUIRED_FLAGS -L${CMAKE_INSTALL_PREFIX}/lib/portaudio2)

@@ -7,7 +7,6 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	3.0.r${REVDATE}
-PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -24,7 +23,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		lzo2:${PORTSDIR}/archivers/lzo2 \
 		sfml-network:${PORTSDIR}/devel/sfml
 
-REVDATE=	20120912
+REVDATE=	20121107
 
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig
