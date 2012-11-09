@@ -105,6 +105,7 @@ CONFIGURE_ARGS+=	--with-openipmi
 .ifndef WITHOUT_JABBER
 LIB_DEPENDS+=	iksemel:${PORTSDIR}/textproc/iksemel
 CONFIGURE_ARGS+=	--with-jabber
+USE_PKGCONFIG=	build
 .endif
 
 .ifndef WITHOUT_FPING
