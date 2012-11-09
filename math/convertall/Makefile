@@ -1,29 +1,28 @@
-# New ports collection makefile for:	convertall
-# Date created:		2004-08-12
-# Whom:			Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	convertall
-PORTVERSION=	0.5.1b
-PORTREVISION=	2
+PORTVERSION=	0.5.2
 CATEGORIES=	math
-MASTER_SITES=	BERLIOS
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/b//}${EXTRACT_SUFX} \
-		${PORTNAME}-i18n-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-i18n-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another unit converter
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+LICENSE=	GPLv2 # (or later)
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 WRKSRC=		${WRKDIR}/ConvertAll
 
 USE_PYTHON=	2.4+
+
+DESKTOP_ENTRIES="ConvertAll" "${COMMENT}" "${DATADIR}/icons/${PORTNAME}.svg" \
+		"${PORTNAME}" "Utility;Calculator;" true
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@cd ${WRKSRC}/source && ${REINPLACE_CMD} -e \
@@ -51,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/*.svg ${DATADIR}/icons
 	@${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
