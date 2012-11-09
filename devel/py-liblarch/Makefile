@@ -1,15 +1,9 @@
-# New ports collection makefile for:	py-liblarch
-# Date created:				13 February 2012
-# Whom:					Ruslan Mahmatkhanov <rm@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	liblarch
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://gtg.fritalk.com/publique/gtg.fritalk.com/${PORTNAME}/0.1/
+MASTER_SITES=	http://gtg.fritalk.com/publique/gtg.fritalk.com/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
