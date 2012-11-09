@@ -1,9 +1,5 @@
-# New ports collection makefile for:	logmon
-# Date created:				12 September 2001
-# Whom:					Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-#
+# Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
 # $FreeBSD$
-#
 
 PORTNAME=	logmon
 PORTVERSION=	0.4.4
@@ -12,16 +8,25 @@ MASTER_SITES=	http://www.edespot.com/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An ncurses-based split window log monitoring program
+COMMENT=	Ncurses-based split window log monitoring program
+
+LICENSE=	ART10
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/logmon %%EXAMPLESDIR%%/logmon.conf.example
-PLIST_DIRS=	%%EXAMPLESDIR%%
+USE_NCURSES=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+PORTEXAMPLES=	logmon.conf.example
+PLIST_FILES=	bin/logmon
+
+.include <bsd.port.options.mk>
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/logmon.conf.example ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
