@@ -1,15 +1,11 @@
-# New ports collection makefile for:	xzx
-# Date created:				13 Nov 1997
-# Whom:					Sheldon Hearn <axl@iafrica.com>
-#
+# Created by: Sheldon Hearn <axl@iafrica.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xzx
 PORTVERSION=	4.6
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	http://mitglied.lycos.de/suppentops123/spectrum/xzx/
+MASTER_SITES=	http://fossies.org/linux/misc/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,9 +13,6 @@ COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
 # xmkmf is used in configure script; USE_IMAKE makes the build unhappy
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
-
-# Server redirects to distfile; won't work with -A
-FETCH_CMD=	/usr/bin/fetch -Rr
 
 USE_MOTIF=	yes
 USE_XORG=	x11 ice sm xext xpm xt xxf86vm
