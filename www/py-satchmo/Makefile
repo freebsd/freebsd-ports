@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-satchmo
-# Date created:				12 December 2009
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	satchmo
 PORTVERSION=	0.9.2
@@ -16,6 +12,7 @@ COMMENT=	Shopping cart application for Django
 
 LICENSE=	BSD
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_hg>=0.4:${PORTSDIR}/devel/py-setuptools_hg
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2.3:${PORTSDIR}/www/py-django \
 				${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
 				${PYTHON_PKGNAMEPREFIX}reportlab>=0:${PORTSDIR}/print/py-reportlab \
