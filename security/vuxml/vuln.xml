@@ -51,6 +51,82 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="152e4c7e-2a2e-11e2-99c7-00a0d181e71d">
+    <topic>tomcat -- authentication weaknesses</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><gt>5.5.0</gt><lt>5.5.36</lt></range>
+	<range><gt>6.0.0</gt><lt>6.0.36</lt></range>
+	<range><gt>7.0.0</gt><lt>7.0.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation:</p>
+	<blockquote cite="http://tomcat.apache.org/security.html">
+	  <p>Three weaknesses in Tomcat's implementation of DIGEST
+	    authentication were identified and resolved:</p>
+	  <ul>
+	    <li> Tomcat tracked client rather than server nonces and nonce count.</li>
+	    <li> When a session ID was present, authentication was bypassed.</li>
+	    <li> The user name and password were not checked before when indicating
+	       that a nonce was stale.</li>
+	  </ul>
+	  <p>These issues reduced the security of DIGEST authentication making
+	    replay attacks possible in some circumstances.</p>
+	  <p>The first issue was identified by Tilmann Kuhn. The second and third
+	    issues were identified by the Tomcat security team during the code
+	    review resulting from the first issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3439</cvename>
+      <url>http://tomcat.apache.org/security.html</url>
+      <url>http://tomcat.apache.org/security-5.html</url>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-11-05</discovery>
+      <entry>2012-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4ca26574-2a2c-11e2-99c7-00a0d181e71d">
+    <topic>tomcat -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><gt>6.0.0</gt><lt>6.0.36</lt></range>
+	<range><gt>7.0.0</gt><lt>7.0.28</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation:</p>
+	<blockquote cite="http://tomcat.apache.org/security.html">
+	  <p>The checks that limited the permitted size of request headers were
+	    implemented too late in the request parsing process for the HTTP NIO
+	    connector. This enabled a malicious user to trigger an
+	    OutOfMemoryError by sending a single request with very large
+	    headers. This issue was identified by Josh Spiewak.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2733</cvename>
+      <url>http://tomcat.apache.org/security.html</url>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-11-05</discovery>
+      <entry>2012-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b8b748e-2a24-11e2-bb44-003067b2972c">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
