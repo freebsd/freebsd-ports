@@ -1224,6 +1224,7 @@ lib/wine/fakedlls/sc.exe
 lib/wine/fakedlls/scarddlg.dll
 lib/wine/fakedlls/sccbase.dll
 lib/wine/fakedlls/schannel.dll
+lib/wine/fakedlls/schtasks.exe
 lib/wine/fakedlls/scrrun.dll
 lib/wine/fakedlls/scsiport.sys
 lib/wine/fakedlls/secedit.exe
@@ -1371,6 +1372,7 @@ lib/wine/fakedlls/xinput9_1_0.dll
 lib/wine/fakedlls/xmllite.dll
 lib/wine/fakedlls/xolehlp.dll
 lib/wine/fakedlls/xpsprint.dll
+lib/wine/fakedlls/xpssvcs.dll
 lib/wine/faultrep.dll.so
 lib/wine/findstr.exe.so
 lib/wine/fltlib.dll.so
@@ -1745,6 +1747,7 @@ lib/wine/sc.exe.so
 lib/wine/scarddlg.dll.so
 lib/wine/sccbase.dll.so
 lib/wine/schannel.dll.so
+lib/wine/schtasks.exe.so
 lib/wine/scrrun.dll.so
 lib/wine/scsiport.sys.so
 lib/wine/secedit.exe.so
@@ -1892,6 +1895,7 @@ lib/wine/xinput9_1_0.dll.so
 lib/wine/xmllite.dll.so
 lib/wine/xolehlp.dll.so
 lib/wine/xpsprint.dll.so
+lib/wine/xpssvcs.dll.so
 share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
