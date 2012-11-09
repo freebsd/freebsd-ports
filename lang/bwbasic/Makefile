@@ -1,12 +1,8 @@
-# New ports collection makefile for:	bwbasic
-# Date created:		16 Jan 1997
-# Whom:			msmith@gsoft.com.au
-#
+# Created by: msmith@gsoft.com.au
 # $FreeBSD$
-#
 
 PORTNAME=	bwbasic
-PORTVERSION=	2.50
+PORTVERSION=	2.60
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/version%20${PORTVERSION}/
 
