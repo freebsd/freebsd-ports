@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	xautomation
-# Date created:			Sep 11, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xautomation
-PORTVERSION=	1.03
-PORTREVISION=	2
+PORTVERSION=	1.06
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
