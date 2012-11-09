@@ -15,6 +15,7 @@ DISTFILES=	$(PORTNAME)-3.3.6.91-20121008-v3.3.6.91.tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
+IGNORE=		syslog-ng 3.3.7 has gone GA
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
