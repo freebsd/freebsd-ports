@@ -63,7 +63,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Apache Software Foundation:</p>
+	<p>The Apache Software Foundation reports:</p>
 	<blockquote cite="http://tomcat.apache.org/security.html">
 	  <p>Three weaknesses in Tomcat's implementation of DIGEST
 	    authentication were identified and resolved:</p>
@@ -91,6 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-11-05</discovery>
       <entry>2012-11-08</entry>
+      <modified>2012-11-09</modified>
     </dates>
   </vuln>
 
@@ -105,7 +106,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Apache Software Foundation:</p>
+	<p>The Apache Software Foundation reports:</p>
 	<blockquote cite="http://tomcat.apache.org/security.html">
 	  <p>The checks that limited the permitted size of request headers were
 	    implemented too late in the request parsing process for the HTTP NIO
@@ -124,6 +125,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-11-05</discovery>
       <entry>2012-11-08</entry>
+      <modified>2012-11-09</modified>
     </dates>
   </vuln>
 
