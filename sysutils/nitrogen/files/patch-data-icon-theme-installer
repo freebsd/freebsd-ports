@@ -1,5 +1,11 @@
---- data/icon-theme-installer.orig	Sun Dec 31 16:59:08 2006
-+++ data/icon-theme-installer	Tue Jul  3 21:45:35 2007
+--- data/icon-theme-installer.orig	2007-08-07 07:20:48.000000000 +0900
++++ data/icon-theme-installer	2012-09-25 01:26:45.000000000 +0900
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ 
+ # icon-theme-installer
+ # Copyright (C) 2006 Novell, Inc.
 @@ -101,12 +101,12 @@
  	exit 1
  fi
