@@ -48,6 +48,9 @@ bin/tlsdb.py
 %%PYTHON_SITELIBDIR%%/tlslite/integration/tlssocketservermixin.py
 %%PYTHON_SITELIBDIR%%/tlslite/integration/tlssocketservermixin.pyc
 %%PYTHON_SITELIBDIR%%/tlslite/integration/tlssocketservermixin.pyo
+%%PYTHON_SITELIBDIR%%/tlslite/integration/xmlrpcserver.py
+%%PYTHON_SITELIBDIR%%/tlslite/integration/xmlrpcserver.pyc
+%%PYTHON_SITELIBDIR%%/tlslite/integration/xmlrpcserver.pyo
 %%PYTHON_SITELIBDIR%%/tlslite/integration/xmlrpctransport.py
 %%PYTHON_SITELIBDIR%%/tlslite/integration/xmlrpctransport.pyc
 %%PYTHON_SITELIBDIR%%/tlslite/integration/xmlrpctransport.pyo
@@ -108,6 +111,9 @@ bin/tlsdb.py
 %%PYTHON_SITELIBDIR%%/tlslite/utils/openssl_tripledes.py
 %%PYTHON_SITELIBDIR%%/tlslite/utils/openssl_tripledes.pyc
 %%PYTHON_SITELIBDIR%%/tlslite/utils/openssl_tripledes.pyo
+%%PYTHON_SITELIBDIR%%/tlslite/utils/pem.py
+%%PYTHON_SITELIBDIR%%/tlslite/utils/pem.pyc
+%%PYTHON_SITELIBDIR%%/tlslite/utils/pem.pyo
 %%PYTHON_SITELIBDIR%%/tlslite/utils/pycrypto_aes.py
 %%PYTHON_SITELIBDIR%%/tlslite/utils/pycrypto_aes.pyc
 %%PYTHON_SITELIBDIR%%/tlslite/utils/pycrypto_aes.pyo

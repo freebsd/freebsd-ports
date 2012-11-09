@@ -1,11 +1,8 @@
-# New ports collection makefile for:	py-tlslite
-# Date created:				05 Sep 2006
-# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
 
 PORTNAME=	tlslite
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.3
 CATEGORIES=	security python
 MASTER_SITES=	http://cloud.github.com/downloads/trevp/tlslite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
