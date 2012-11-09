@@ -1,3 +1,4 @@
+# Created by: pat
 # $FreeBSD$
 
 PORTNAME=	lcdproc
