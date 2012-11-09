@@ -1,12 +1,7 @@
-# New ports collection makefile for:	lcdproc
-# Date created:				Sat Jun  1 20:03:41 EDT 2002
-# Whom:					pat
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lcdproc
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -20,11 +15,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_AUTOTOOLS=	autoconf automake aclocal
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
 USE_RC_SUBR=	LCDd lcdproc lcdexec
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--enable-drivers="${LCDPROC_DRIVERS}" \
 		--disable-dependency-tracking \
+		--disable-libusb-1-0 \
 		--disable-doxygen
 
 SUB_FILES=	pkg-message
@@ -33,11 +29,12 @@ MAN1=		lcdexec.1 lcdproc.1
 MAN5=		lcdproc-config.5
 MAN8=		LCDd.8
 
-OPTIONS_DEFINE=	USB FTDI HID
-USB_DESC=	Enable USB support
-FTDI_DESC=	Enable libftdi support (requires USB)
-HID_DESC=	Enable libhid support (requires USB)
-OPTIONS_DEFAULT=USB
+OPTIONS_DEFINE=	USB FTDI HID FREETYPE PNG SERDISP
+USB_DESC=	USB support
+FTDI_DESC=	Build drivers using libftdi (requires USB)
+HID_DESC=	Build drivers using libhid (requires USB)
+SERDISP_DESC=	Build drivers using serdisplib
+OPTIONS_DEFAULT=USB FREETYPE
 NO_OPTIONS_SORT=yes
 
 # Empty args to aclocal required!
@@ -45,12 +42,12 @@ ACLOCAL_ARGS=
 
 LCDPROC_DRIVERS=bayrad \
 		CFontz \
-		CFontz633 \
 		CFontzPacket \
 		CwLnx \
 		curses \
 		ea65 \
 		EyeboxOne \
+		glcd \
 		glk \
 		hd44780 \
 		icp_a106 \
@@ -64,6 +61,7 @@ LCDPROC_DRIVERS=bayrad \
 		NoritakeVFD \
 		pyramid \
 		SureElec \
+		sdeclcd \
 		sed1330 \
 		sed1520 \
 		serialPOS \
@@ -72,13 +70,14 @@ LCDPROC_DRIVERS=bayrad \
 		stv5730 \
 		t6963 \
 		text \
-		tyan
+		tyan \
+		vlsys_m428
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
-LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
+LIB_DEPENDS+=		usb-0.1:${PORTSDIR}/devel/libusb
 CONFIGURE_ARGS+=	--with-libusb
 . else
 CONFIGURE_ARGS+=	--with-libusb=/usr
@@ -89,8 +88,7 @@ LCDPROC_DRIVERS+=IOWarrior \
 		shuttleVFD
 
 . if ${PORT_OPTIONS:MFTDI}
-LIB_DEPENDS+=		ftdi.19:${PORTSDIR}/devel/libftdi
-CONFIGURE_ARGS+=	--enable-libftdi
+LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
 PLIST_SUB+=		FTDI=""
 LCDPROC_DRIVERS+=i2500vfd \
 		lis \
@@ -102,7 +100,6 @@ PLIST_SUB+=		FTDI="@comment "
 
 . if ${PORT_OPTIONS:MHID}
 LIB_DEPENDS+=		hid:${PORTSDIR}/devel/libhid
-CONFIGURE_ARGS+=	--enable-libhid
 PLIST_SUB+=		HID=""
 LCDPROC_DRIVERS+=mdm166a
 . else
@@ -113,6 +110,25 @@ PLIST_SUB+=		HID="@comment "
 .else
 CONFIGURE_ARGS+=	--without-libusb --disable-libftdi --disable-libhid
 PLIST_SUB+=		USB="@comment " FTDI="@comment " HID="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFREETYPE}
+LIB_DEPENDS+=		freetype:${PORTSDIR}/print/freetype2
+.else
+CONFIGURE_ARGS+=	--disable-freetype
+.endif
+
+.if ${PORT_OPTIONS:MPNG}
+LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=	--disable-libpng
+.endif
+
+.if ${PORT_OPTIONS:MSERDISP}
+LIB_DEPENDS+=		serdisp:${PORTSDIR}/devel/serdisplib
+CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=		-I${LOCALBASE}/include
 .endif
 
 post-patch:

@@ -1,15 +1,15 @@
---- ./configure.in.orig	2011-11-09 20:52:28.000000000 +0100
-+++ ./configure.in	2011-11-10 23:29:33.000000000 +0100
+--- ./configure.in.orig	2012-11-04 11:41:16.000000000 +0100
++++ ./configure.in	2012-11-07 00:13:35.000000000 +0100
 @@ -4,6 +4,7 @@
- AC_INIT(lcdproc, 0.5.5, lcdproc@lists.omnipotent.net)
+ AC_INIT([lcdproc], [0.5.6], [lcdproc@lists.omnipotent.net])
  AC_CONFIG_SRCDIR([clients/lcdproc/batt.c])
- AM_INIT_AUTOMAKE(1.7)
+ AM_INIT_AUTOMAKE
 +PKG_PROG_PKG_CONFIG()
-
+ 
  AC_CONFIG_HEADERS(config.h)
-
-@@ -249,26 +250,63 @@
-
+ 
+@@ -249,26 +250,62 @@
+ 
  dnl ######################################################################
  dnl libusb support
 +dnl Stolen from the gnupg project and modified for LCDproc's need.
@@ -20,7 +20,7 @@
 -AC_ARG_ENABLE(libusb,
 -	[AS_HELP_STRING([--disable-libusb],[disable USB support using libusb])],
 -	[ if test "$enableval" != "no"; then
--		enable_libusb="yes"
+-		enable_libusb=yes
 -	fi ],
 -	[ enable_libusb=yes ]
 -)
@@ -30,7 +30,7 @@
 +		[look for the libusb library in DIR]),
 +		[_do_libusb=$withval],[_do_libusb=yes])
 +AC_MSG_RESULT($_do_libusb)
-
+ 
 -if test "$enable_libusb" = "yes"; then
 -	ifdef([PKG_CHECK_MODULES],
 -		[PKG_CHECK_MODULES(LIBUSB, libusb,
@@ -84,7 +84,6 @@
  fi
 -AC_SUBST(LIBUSB_LIBS)
 -AC_SUBST(LIBUSB_CFLAGS)
-+
-
+ 
  dnl ######################################################################
- dnl libftdi support
+ dnl libusb-1.0 support
