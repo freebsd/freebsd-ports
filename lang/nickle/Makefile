@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Nickle
-# Date created:				16 April 2001
-# Whom:				Christopher Elkins <chrise@scardini.com>
-#
+# Created by: Christopher Elkins <chrise@scardini.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nickle
-PORTVERSION=	2.76
+PORTVERSION=	2.77
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
