@@ -1,9 +1,5 @@
-# New ports collection makefile for:		NetBSD makefs
-# Date created:					17 December 2003
-# Whom:						cperciva@daemonology.net
-#
+# Created by: cperciva@daemonology.net
 # $FreeBSD$
-#
 
 PORTNAME=	makefs
 PORTVERSION=	20040704
@@ -12,6 +8,9 @@ MASTER_SITES=	http://www.daemonology.net/makefs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Builds FFS images
+
+DEPRECATED=	Part of base in an earlier version for every supported FreeBSD version.
+EXPIRATION_DATE=	2012-12-09
 
 MAN8=		makefs.8
 PLIST_FILES=	sbin/makefs
