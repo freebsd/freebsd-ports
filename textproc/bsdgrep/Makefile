@@ -7,6 +7,7 @@
 
 PORTNAME=	grep
 PORTVERSION=	20111002
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -37,7 +38,7 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls"
 
-OPTIONS_DEFINE=	GNU_COMPAT
+OPTIONS_DEFINE=	GNU_COMPAT NLS
 OPTIONS_DEFAULT=	GNU_COMPAT
 GNU_COMPAT_DESC=	Use GNU regex library (recommended)
 
@@ -47,16 +48,16 @@ CONFLICTS=	gnugrep-*
 
 .if !(${OSVERSION} >= 900012 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800505))
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 BROKEN=		overwrites files installed by dependency
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 MAKE_ENV+=	WITHOUT_NLS=yes
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
 .if !${PORT_OPTIONS:MGNU_COMPAT}
@@ -65,7 +66,7 @@ MAKE_ENV+=	WITHOUT_GNU_COMPAT=yes
 
 pre-install:
 .if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${LOCALBASE}/share/nls/gl_ES.ISO8859-1
+	${MKDIR} ${PREFIX}/share/nls/gl_ES.ISO8859-1
 .endif
 
 post-install:
