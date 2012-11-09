@@ -289,6 +289,7 @@
     SUBDIR += gtkpod
     SUBDIR += guspat
     SUBDIR += gxmms2
+    SUBDIR += harp
     SUBDIR += hawkvoice
     SUBDIR += herrie
     SUBDIR += hexter
