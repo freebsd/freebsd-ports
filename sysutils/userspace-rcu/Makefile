@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
 USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
