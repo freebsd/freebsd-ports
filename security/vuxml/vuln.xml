@@ -52,32 +52,35 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="e02c572f-2af0-11e2-bb44-003067b2972c">
-    <topic>weechat -- crash bug from specially crafted messages</topic>
+    <topic>weechat -- Crash or freeze when decoding IRC colors in strings</topic>
     <affects>
       <package>
 	<name>weechat</name>
-	<range><le>0.3.9</le></range>
+	<range><ge>0.3.6</ge><lt>0.3.9.1</lt></range>
       </package>
       <package>
 	<name>weechat-devel</name>
-	<range><le>20121103</le></range>
+	<range><ge>20110614</ge><lt>20121110</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Sebastien Helleu reports:</p>
 	<blockquote cite="https://savannah.nongnu.org/bugs/?37704">
-	  <p>weechat is vulnerable to a crash when sending a special coloured
-	    message.</p>
+	  <p>A buffer overflow is causing a crash or freeze of WeeChat when 
+	  decoding IRC colors in strings.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <freebsdpr>ports/173513</freebsdpr>
+      <url>http://weechat.org/security/</url>
+      <url>https://savannah.nongnu.org/bugs/?37704</url>
     </references>
     <dates>
       <discovery>2012-11-09</discovery>
       <entry>2012-11-10</entry>
+      <modified>2012-11-10</modified>
     </dates>
   </vuln>
 
