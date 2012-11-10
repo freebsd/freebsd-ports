@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milter-callback
-PORTVERSION=	1.5.10
+PORTVERSION=	1.6.0
 CATEGORIES=	mail
 MASTER_SITES=	http://unix.zhegan.in/distfiles/ \
 		CRITICAL
@@ -12,24 +12,22 @@ COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS+=	spf2:${PORTSDIR}/mail/libspf2
+
 USE_BZIP2=	yes
 USE_RC_SUBR=	milter-callback
 
 SUB_FILES=	pkg-message
 MAN8=		milter-callback.8
 
+MAKE_ENV+=	WITH_SPF=yes
+
 # make sure flat distfile gets extracted in ${WRKSRC}
 EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKSRC}; ${TAR} -xf - --no-same-owner \
 				--no-same-permissions -C ${WRKSRC})
 
-OPTIONS_DEFINE=	SPF
-SPF_DESC=	libspf support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSPF}
-MAKE_ENV+=	WITH_SPF=yes
-LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
+.if ${CC} == "clang" || ${CXX} == "clang++"
+BROKEN=	does not build with clang, uses nested functions
 .endif
 
 post-patch:
