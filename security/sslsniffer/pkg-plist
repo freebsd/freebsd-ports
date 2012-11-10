@@ -1,3 +1,0 @@
-bin/sslsniffer
-%%PORTDOCS%%share/doc/sslsniffer/README
-%%PORTDOCS%%@dirrm share/doc/sslsniffer
