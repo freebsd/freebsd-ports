@@ -1,9 +1,5 @@
-# New ports collection makefile for:	backfract
-# Date created:		8 August 2000
-# Whom:			Patrick Gardella <patrick@freebsd.org>
-#
+# Created by: Patrick Gardella <patrick@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	backfract
 PORTVERSION=	1.1.2
@@ -14,16 +10,20 @@ MASTER_SITES=	http://www.igoweb.org/~wms/comp/backfract/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractal image animated wallpaper program
 
+LICENSE=	GPLv2 # (or later)
+
 USE_XORG=	x11
-PLIST_FILES=	bin/backfract
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
-NO_INSTALL_MANPAGE=	yes
-ALL_TARGET= 	# none
+ALL_TARGET=	# none
 MAKE_JOBS_UNSAFE=	yes
 
-pre-configure:
-	${PERL} -pi -e "s@-O3@${CFLAGS}@g" ${WRKSRC}/configure
+PLIST_FILES=	bin/backfract
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"/'-O3'/s|^|#| ; \
+		 /'-O'/s|^|#| ; \
+		 s|linux/soundcard.h|sys/soundcard.h|" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/backfract ${PREFIX}/bin
