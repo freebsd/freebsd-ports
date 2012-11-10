@@ -1,6 +1,6 @@
---- Makefile.orig	2008-03-16 14:23:22.000000000 +0000
-+++ Makefile	2009-01-02 23:45:48.380520000 +0000
-@@ -1,6 +1,6 @@
+--- Makefile.orig	2008-03-16 23:23:22.000000000 +0900
++++ Makefile	2012-07-12 22:47:37.000000000 +0900
+@@ -1,26 +1,26 @@
  
 -DESTDIR=/usr/local
 -PREFIX=xyssl_
@@ -9,7 +9,11 @@
  
  .SILENT:
  
-@@ -10,17 +10,17 @@
+ all:
+-	cd library  && make all && cd ..
+-	cd programs && make all && cd ..
++	cd library  && $(MAKE) all && cd ..
++	cd programs && $(MAKE) all && cd ..
  
  install:
  	mkdir -p $(DESTDIR)/include/xyssl
