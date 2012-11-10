@@ -16,5 +16,5 @@ share/aclocal/libxosd.m4
 %%DATADIR%%/top-right.png
 %%DATADIR%%/top.png
 @dirrm %%DATADIR%%
-%%WITH_XMMS%%lib/xmms/General/libxmms_osd.la
-%%WITH_XMMS%%lib/xmms/General/libxmms_osd.so
+%%XMMS%%lib/xmms/General/libxmms_osd.la
+%%XMMS%%lib/xmms/General/libxmms_osd.so
