@@ -1,30 +1,27 @@
-# New ports collection makefile for:	xosd
-# Date created:			2 May 2001
-# Whom:				Hye-Shik Chang <perky@python.or.kr>
-#
+# Created by: Hye-Shik Chang <perky@python.or.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.14
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	libxosd/libxosd/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/libxosd/libxosd/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	X On-Screen-Display Library and XMMS plug-in
+COMMENT=	X11 on-screen-display program and library
 
-XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config
+LICENSE=	GPLv2
+
+USE_AUTOTOOLS=	libtool
+USE_CSTD=	gnu89
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt sm ice
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_CSTD=	gnu89
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		LOCALBASE='${LOCALBASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
 		XMMS_PLUGINDIR=${LOCALBASE}/lib/xmms
+CONFIGURE_ARGS=	--disable-beep_media_player_plugin
 
 MAN1=		osd_cat.1 xosd-config.1
 MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
@@ -33,27 +30,48 @@ MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
 		xosd_set_horizontal_offset.3 xosd_set_pos.3 \
 		xosd_set_shadow_offset.3 xosd_set_vertical_offset.3 \
 		xosd_show.3 xosd_uninit.3
+PORTDOCS=	AUTHORS ChangeLog TODO
 
-OPTIONS_DEFINE=	XMMS
+OPTIONS_DEFINE=	XMMS MSEC
 OPTIONS_DEFAULT=	XMMS
-XMMS_DESC=	Install XMMS-OSD plugin
+XMMS_DESC=	Build and install XMMS-OSD plugin
+MSEC_DESC=	Use milliseconds timeout (breaks compatibility!)
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms \
+COMMENT+=	(with XMMS plugin)
+LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-PLIST_SUB=	WITH_XMMS=""
+# shlib version is needed for libgdk_pixbuf, otherwise it could be bogusly
+# satisfied by installed `graphics/gdk-pixbuf2'
+PLIST_SUB=	XMMS=""
 .else
-CONFIGURE_ARGS=	--disable-new-plugin
-PLIST_SUB=	WITH_XMMS="@comment "
+CONFIGURE_ARGS+=	--disable-new-plugin
+PLIST_SUB=	XMMS="@comment "
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,g' ${WRKSRC}/ltmain.sh
-	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,' ${WRKSRC}/configure
-.for f in src/libxosd/Makefile.in src/xmms_plugin/Makefile.in
-	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
-.endfor
+.if ${PORT_OPTIONS:MMSEC}
+DELAY_UNITS=	milliseconds
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-msec-timeout
+.else
+DELAY_UNITS=	seconds
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,' ${WRKSRC}/ltmain.sh
+	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS}, ; \
+		s,echo aout,echo elf,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I..\2,' \
+		${WRKSRC}/src/libxosd/Makefile.in \
+		${WRKSRC}/src/xmms_plugin/Makefile.in
+	@${REINPLACE_CMD} -e 's,specified time,& (${DELAY_UNITS}),' \
+		${WRKSRC}/src/osd_cat.c
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
