@@ -111,8 +111,8 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Visualization_Makefile.am
 PLIST_SUB+=	SPEC="@comment "
 .endif
 
-.if empty(${PORT_OPTIONS:MSIMD})
 post-extract:
+.if ! ${PORT_OPTIONS:MSIMD}
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
 	${REINPLACE_CMD} -e 's:\.s :.S :g' -e 's:\.s$$:.S:g' \
@@ -129,7 +129,7 @@ pre-extract:
 	@${ECHO_MSG} ""
 .endif
 
-.if empty(${PORT_OPTIONS:MRUSXMMS_PATCHES})
+.if ! ${PORT_OPTIONS:MRUSXMMS_PATCHES}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can enable support for ID3v2 tags and CP1251"
 	@${ECHO_MSG} "encoding by setting the RUSXMMS_PATCHES option."
