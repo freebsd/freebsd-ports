@@ -1,54 +1,57 @@
-# New ports collection makefile for:	cocor
-# Date Created: 			24 March 2002
-# Whom: 				Guy Antony Halse <guy@rucus.ru.za.za>
-#
+# Created by: Guy Antony Halse <guy@rucus.ru.za.za>
 # $FreeBSD$
-#
 
 PORTNAME=	cocor
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	http://www.scifac.ru.ac.za/coco/
-DISTNAME=	cocorc17
+MASTER_SITES=	ftp://ftp.psg.com/pub/modula-2/coco/ \
+		ftp://ftp.ssw.uni-linz.ac.at/pub/Coco/C/ \
+		http://www.scifac.ru.ac.za/coco/
+DISTNAME=	${PORTNAME}c${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A compiler generator that combines the functionality of lex and yacc
+COMMENT=	Compiler generator that combines the functionality of lex and yacc
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
+
+USE_DOS2UNIX=	yes
+MAKE_ENV=	CRFRAMES="${WRKSRC}/frames"
+MAKEFILE=	unix.mk
 ALL_TARGET=	all1
-MAKE_ENV+=	CRFRAMES=${WRKSRC}/frames
-CFLAGS+=	-I${WRKSRC}/cplus2
-PLIST_SUB+=	FRAMES=${CRFRAMES}
-CRFRAMES?=	${PREFIX}/lib/cocor
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		cocor.1
+MAN1=		${PORTNAME}.1
 
-post-extract:
-	${LN} -s ${WRKSRC}/unix.mk ${WRKSRC}/Makefile
-
-pre-patch:
-	uudecode -p ${WRKSRC}/dos2unix.uue > ${WRKSRC}/dos2unix.sh
-	${CHMOD} +x ${WRKSRC}/dos2unix.sh
-	cd ${WRKSRC} && ./dos2unix.sh unix.mk && ${MAKE} -f unix.mk dos2unix
+.include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e "s,^MAKE,#MAKE," ${WRKSRC}/Makefile
-	${RM} ${WRKSRC}/taste/unix.mk.orig
+.for i in sources/unix.mk taste/unix.mk
+	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|' ${WRKSRC}/${i}
+.endfor
+.for i in cplus2 taste taste_cp
+	@${RM} -f ${WRKSRC}/${i}/unix.mk.*
+.endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cocor ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/cocor.1 ${PREFIX}/man/man1
-	${MKDIR} -m 755 ${CRFRAMES}
-	${CP} -r ${WRKSRC}/frames/* ${CRFRAMES} && \
-		${FIND} ${CRFRAMES} -type f -exec ${CHMOD} 644 {} \; && \
-		${FIND} ${CRFRAMES} -type d -exec ${CHMOD} 755 {} \;
-	${MKDIR} -m 755 ${PREFIX}/share/cocor
-.for i in samples cplus2 taste taste_cp docs
-	${CP} -r ${WRKSRC}/${i} ${PREFIX}/share/cocor
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+.for i in cplus2 taste taste_cp
+	@(cd ${WRKSRC}; ${COPYTREE_SHARE} ${i} ${PREFIX}/lib/${PORTNAME})
 .endfor
-	${FIND} ${PREFIX}/share/cocor -type f -exec ${CHMOD} 644 {} \; && \
-	${FIND} ${PREFIX}/share/cocor -type d -exec ${CHMOD} 755 {} \;
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC}/frames; ${COPYTREE_SHARE} . ${DATADIR})
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/coco.use ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/cocol ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.atg ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.inp ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
