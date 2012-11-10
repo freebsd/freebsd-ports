@@ -1,5 +1,5 @@
---- src/xosd.h.orig
-+++ src/xosd.h
+--- a/src/xosd.h
++++ b/src/xosd.h
 @@ -64,7 +64,7 @@ extern "C"
   *     font           X Logical Font Descriptor, see "xfontsel".
   *     colour         X colour, see "rgb.txt" that comes with your X11
@@ -18,8 +18,8 @@
   *
   * RETURNS
   *   0 on success
---- src/libxosd/xosd.c.orig
-+++ src/libxosd/xosd.c
+--- a/src/libxosd/xosd.c
++++ b/src/libxosd/xosd.c
 @@ -402,15 +402,13 @@ event_loop(void *osdv)
      }
      /* Calculate timeout delta or hide display. */
@@ -41,8 +41,8 @@
          tvp = &tv;
        } else {
          timerclear(&osd->timeout_start);
---- src/osd_cat.c.orig
-+++ src/osd_cat.c
+--- a/src/osd_cat.c
++++ b/src/osd_cat.c
 @@ -53,7 +53,7 @@ int percentage = 50;
  int outline_offset = 0;
  char *outline_colour = NULL;
@@ -52,8 +52,8 @@
  int forcewait = 0;
  xosd_pos pos = XOSD_top;
  int voffset = 0;
---- man/osd_cat.1.orig
-+++ man/osd_cat.1
+--- a/man/osd_cat.1
++++ b/man/osd_cat.1
 @@ -37,7 +37,7 @@ This option specifies the \fIFONT\fP to 
  This option specifies the \fICOLOR\fP to be used for displaying the text. The default is \fBred\fP. 
  .TP
@@ -63,8 +63,8 @@
  .TP
  \fB\-l\fP, \fB\-\-lines\fP=\fILINES\fP
  This option specifies the number of \fILINES\fP to scroll the display over. The default is \fB5\fP.
---- src/xmms_plugin/xmms_osd.c.orig
-+++ src/xmms_plugin/xmms_osd.c
+--- a/src/xmms_plugin/xmms_osd.c
++++ b/src/xmms_plugin/xmms_osd.c
 @@ -260,7 +260,7 @@ apply_config(void)
        DEBUG("invalid font %s", font);
  
