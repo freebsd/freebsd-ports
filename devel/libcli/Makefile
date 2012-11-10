@@ -2,10 +2,11 @@
 
 PORTNAME=	libcli
 PORTVERSION=	1.9.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	 http://cloud.github.com/downloads/dparrish/libcli/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Emulates a Cisco style command-line interface
 
 LICENSE=	LGPL21
