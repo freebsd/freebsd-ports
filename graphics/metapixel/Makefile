@@ -1,7 +1,4 @@
-# Ports collection makefile for:	metapixel
-# Date created:			2002-05-23
-# Whom:				Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	metapixel
@@ -12,22 +9,31 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 		http://mirror.roe.ch/dist/metapixel/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A photomosaic generator
+COMMENT=	Photomosaic generator
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		gif.5:${PORTSDIR}/graphics/giflib
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		gif:${PORTSDIR}/graphics/giflib \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		xcb:${PORTSDIR}/x11/libxcb
 
 USE_GMAKE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I. -I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_XORG=	ice sm x11 xau xdmcp
+MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/metapixel bin/metapixel-convert bin/metapixel-imagesize \
-		bin/metapixel-prepare bin/metapixel-sizesort \
-		share/examples/metapixel/metapixelrc
-PLIST_DIRS=	share/examples/metapixel
-PORTDOCS=	README NEWS
+CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
+LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
+
 MAN1=		metapixel.1
+PORTDOCS=	README NEWS
+PORTEXAMPLES=	metapixelrc
+PLIST_FILES=	bin/metapixel bin/metapixel-convert bin/metapixel-imagesize \
+		bin/metapixel-prepare bin/metapixel-sizesort
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
@@ -38,12 +44,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel-imagesize ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-prepare ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-sizesort ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${PREFIX}/man/man1
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/metapixelrc ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
