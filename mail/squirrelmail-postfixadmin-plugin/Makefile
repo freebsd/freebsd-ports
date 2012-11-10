@@ -20,6 +20,7 @@ COMMENT=	Lets users change password, vacation, and forwarding
 RUN_DEPENDS=	ZendFramework>=1.9.0:${PORTSDIR}/www/zend-framework
 
 USE_BZIP2=	yes
+DEFAULT_PHP_VER=	53
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
