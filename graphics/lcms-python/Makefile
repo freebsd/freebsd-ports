@@ -1,39 +1,36 @@
-# New ports collection makefile for:	lcms-python
-# Date created:		13/10/2009
-# Whom:			stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	lcms
 PORTVERSION=	1.19
 CATEGORIES=	graphics devel python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.19 \
-		http://www.littlecms.com/
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System (python bindings)
 
-LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
+LICENSE=	MIT
+
+LIB_DEPENDS+=	lcms:${PORTSDIR}/graphics/lcms
+
+BUILD_WRKSRC=	${WRKSRC}/python
+INSTALL_WRKSRC=	${WRKSRC}/python
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-WRKSRC=		${WRKDIR}/lcms-1.19
-PLIST_FILES=	${PYTHON_SITELIBDIR:C,${PREFIX}/?,,}/_lcms.so \
-		${PYTHON_SITELIBDIR:C,${PREFIX}/?,,}/lcms.py
 
-.include <bsd.port.pre.mk>
-
-do-build:
-	cd ${WRKSRC}/python && ${SETENV} ${MAKE_ENV} ${MAKE} all
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_lcms.so \
+		%%PYTHON_SITELIBDIR%%/lcms.py
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/python/.libs/_lcms.so \
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/.libs/_lcms.so \
 		${PYTHON_SITELIBDIR}/_lcms.so
-	${INSTALL_DATA} ${WRKSRC}/python/lcms.py \
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/lcms.py \
 		${PYTHON_SITELIBDIR}/lcms.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
