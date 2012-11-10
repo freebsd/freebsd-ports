@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e02c572f-2af0-11e2-bb44-003067b2972c">
+    <topic>weechat -- crash bug from specially crafted messages</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><le>0.3.9</le></range>
+      </package>
+      <package>
+	<name>weechat-devel</name>
+	<range><le>20121103</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastien Helleu reports:</p>
+	<blockquote cite="https://savannah.nongnu.org/bugs/?37704">
+	  <p>weechat is vulnerable to a crash when sending a special coloured
+	    message.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/173513</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2012-11-09</discovery>
+      <entry>2012-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5e647ca3-2aea-11e2-b745-001fd0af1a4c">
     <topic>lang/ruby19 -- Hash-flooding DoS vulnerability for ruby 1.9</topic>
     <affects>
