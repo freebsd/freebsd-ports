@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sslwrap
-# Date created:		1999 november 7.
-# Whom:			Zahemszky, Gabor <ZGabor at CoDe dot HU>
-#
+# Created by: Zahemszky, Gabor <ZGabor at CoDe dot HU>
 # $FreeBSD$
-#
 
 PORTNAME=	sslwrap
 PORTVERSION=	2.0.6
@@ -15,25 +11,27 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another SSL Wrapper application, which uses SSLEay/OpenSSL
 
-USE_OPENSSL=	YES
-
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
-DOCS=		 README docs.html
+USE_OPENSSL=	yes
+
+PORTDOCS=	README docs.html
+PLIST_FILES=	bin/sslwrap
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e \
-		's/SSL_OP_NON_EXPORT_FIRST/SSL_OP_CIPHER_SERVER_PREFERENCE/g' \
-		${WRKSRC}/s_server.c
-	${REINPLACE_CMD} -e \
-		's,%%OPENSSL%%,openssl/,g' \
-		${WRKSRC}/s_server.c ${WRKSRC}/s_cb.c ${WRKSRC}/apps.h ${WRKSRC}/s_socket.c
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SSL_OP_NON_EXPORT_FIRST|SSL_OP_CIPHER_SERVER_PREFERENCE|g ; \
+		 s|OPENSSL"|"openssl/|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin/sslwrap
-.if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
