@@ -1,21 +1,20 @@
-lib/libxyssl.a
 bin/xyssl_aescrypt2
-bin/xyssl_hello
-bin/xyssl_md5sum
-bin/xyssl_sha1sum
-bin/xyssl_sha2sum
+bin/xyssl_benchmark
 bin/xyssl_dh_client
 bin/xyssl_dh_genprime
 bin/xyssl_dh_server
+bin/xyssl_hello
+bin/xyssl_md5sum
 bin/xyssl_mpi_demo
 bin/xyssl_rsa_genkey
 bin/xyssl_rsa_sign
 bin/xyssl_rsa_verify
+bin/xyssl_selftest
+bin/xyssl_sha1sum
+bin/xyssl_sha2sum
 bin/xyssl_ssl_client1
 bin/xyssl_ssl_client2
 bin/xyssl_ssl_server
-bin/xyssl_benchmark
-bin/xyssl_selftest
 bin/xyssl_ssl_test
 include/xyssl/aes.h
 include/xyssl/arc4.h
@@ -41,4 +40,5 @@ include/xyssl/sha4.h
 include/xyssl/ssl.h
 include/xyssl/timing.h
 include/xyssl/x509.h
+lib/libxyssl.a
 @dirrm include/xyssl

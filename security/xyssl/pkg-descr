@@ -4,7 +4,4 @@ and 3DES ciphers, and the MD2, MD4, MD5, SHA1, and SHA256 hashes.
 Support is also included for X.509 certificate structures, 
 as well as an internal PRNG.  
 
-LICENSE: BSD
-Copyright (c) 2006-2008, Christophe Devine.
-
-WWW: http://xyssl.org/
+WWW: http://polarssl.org/
