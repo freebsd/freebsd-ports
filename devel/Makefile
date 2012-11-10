@@ -3140,6 +3140,7 @@
     SUBDIR += pit
     SUBDIR += pkgconf
     SUBDIR += plan9port
+    SUBDIR += pmccabe
     SUBDIR += pmd
     SUBDIR += pmk
     SUBDIR += poco
