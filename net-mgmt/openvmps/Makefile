@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	openvmps
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4.04
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/vmps/vmpsd/${PORTVERSION}
 DISTNAME=	vmpsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GPL implementation of the VMPS protocol
+COMMENT=	GPL implementation of the VMPS protocol
 
-WRKSRC=		${WRKDIR}/vmpsd
-USE_RC_SUBR=	vpmsd
+LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
+USE_RC_SUBR=	vmpsd
+
 USE_GMAKE=	yes
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--bindir=${PREFIX}/sbin
 
 MAN1=		vmpsd.1
@@ -27,11 +26,14 @@ MAN1=		vmpsd.1
 IGNORE=		does not run correctly on amd64 architecture, see ports/136376
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^install-exec-am:/s|install-sysconfDATA||' \
+		${WRKSRC}/Makefile.in
+
 post-install:
-	${INSTALL_DATA} -m 644 ${WRKSRC}/vlan.db \
-		${PREFIX}/etc/vmps.db.sample
-	@if [ ! -f ${PREFIX}/etc/vmps.db ]; then \
-		${CP} -p ${PREFIX}/etc/vmps.db.sample ${PREFIX}/etc/vmps.db ; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/vlan.db ${PREFIX}/etc/vmps.db.sample
+.if !exists(${PREFIX}/etc/vmps.db)
+	cd ${PREFIX}/etc && ${CP} -p vmps.db.sample vmps.db
+.endif
 
 .include <bsd.port.post.mk>
