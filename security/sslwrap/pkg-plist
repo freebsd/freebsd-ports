@@ -1,4 +1,0 @@
-bin/sslwrap
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/docs.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
