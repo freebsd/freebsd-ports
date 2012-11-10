@@ -4,6 +4,12 @@ bin/argouml
 %%DATADIR%%/argouml-mdr.jar
 %%DATADIR%%/argouml-model.jar
 %%DATADIR%%/argouml.jar
+%%DATADIR%%/batik-awt-util-1.7.jar
+%%DATADIR%%/batik-dom-1.7.jar
+%%DATADIR%%/batik-ext-1.7.jar
+%%DATADIR%%/batik-svggen-1.7.jar
+%%DATADIR%%/batik-util-1.7.jar
+%%DATADIR%%/batik-xml-1.7.jar
 %%DATADIR%%/commons-logging-1.0.2.jar
 %%DATADIR%%/ext/anarres-cpp-no-dependencies-1.2.3.jar
 %%DATADIR%%/ext/antlr-2.7.7.jar
@@ -14,6 +20,7 @@ bin/argouml
 %%DATADIR%%/ext/argo_php.jar
 %%DATADIR%%/ext/argouml-csharp.jar
 %%DATADIR%%/ext/argouml-diagrams-activity.jar
+%%DATADIR%%/ext/argouml-diagrams-deployment.jar
 %%DATADIR%%/ext/argouml-diagrams-sequence.jar
 %%DATADIR%%/ext/argouml-diagrams-state.jar
 %%DATADIR%%/ext/argouml-i18n-de.jar
@@ -26,11 +33,12 @@ bin/argouml
 %%DATADIR%%/ext/argouml-i18n-pt_BR.jar
 %%DATADIR%%/ext/argouml-i18n-ru.jar
 %%DATADIR%%/ext/argouml-i18n-zh.jar
+%%DATADIR%%/ext/argouml-notation.jar
 %%DATADIR%%/ext/argouml-sql.jar
 %%DATADIR%%/ext/argouml-transformer.jar
 %%DATADIR%%/ext/argouml-umlpropertypanels.jar
 %%DATADIR%%/ext/domainmapping.xml
-%%DATADIR%%/gef-0.13.3.jar
+%%DATADIR%%/gef-0.13.8.jar
 %%DATADIR%%/icon/ArgoIcon128x128.png
 %%DATADIR%%/icon/ArgoIcon256x256.png
 %%DATADIR%%/icon/ArgoIcon512x512.png

@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	ArgoUML
-# Date created:			June 14, 2003
-# Whom:				ijliao
-#
+# Created by:	ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	argouml
-PORTVERSION=	0.32.2
+PORTVERSION=	0.34
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
@@ -18,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A UML design tool with cognitive support
+COMMENT=	UML design tool with cognitive support
 
 LICENSE=	EPL
 
@@ -35,6 +30,10 @@ JAVA_VERSION=	1.5+
 SUB_FILES=	argouml.sh
 SUB_LIST=	JAVA_VERSION=${JAVA_VERSION}
 PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 DESKTOP_ENTRIES=	"ArgoUML" \
 			"Create advanced UML diagrams" \
@@ -53,7 +52,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/icon
 	${INSTALL_DATA} ${WRKSRC}/icon/*.png ${DATADIR}/icon
 	${INSTALL_DATA} ${WRKSRC}/icon/*.svg ${DATADIR}/icon
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${PORTVERSION}.pdf ${DOCSDIR}
