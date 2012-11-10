@@ -1,6 +1,6 @@
---- config.mk.orig	2009-02-08 23:35:47.000000000 +0100
-+++ config.mk	2009-02-08 23:37:06.000000000 +0100
-@@ -3,14 +3,14 @@
+--- config.mk.orig	2012-08-01 13:28:25.000000000 +0200
++++ config.mk	2012-11-10 15:50:08.000000000 +0100
+@@ -3,8 +3,8 @@
  
  # Customize below to fit your system
  
@@ -9,16 +9,15 @@
 +PREFIX ?= /usr/local
 +MANPREFIX = ${PREFIX}/man
  
- INCS = -I. -I/usr/include -I/usr/local/include 
+ INCS = -I. -I/usr/include -I/usr/local/include
  LIBS = -lc -lutil -lncursesw
- #LIBS = -lc -lutil -lncurses
+@@ -15,9 +15,9 @@
+ # Cygwin
+ #INCS += -I/usr/include/ncurses
  
 -CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
 +CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
  LDFLAGS += -L/usr/lib -L/usr/local/lib ${LIBS}
- 
- # Mouse handling
-@@ -20,4 +20,4 @@
  
  DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall
  

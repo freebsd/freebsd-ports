@@ -1,12 +1,7 @@
-# New ports collection makefile for:   dvtm
-# Date created:                May 18, 2008
-# Whom:                        Beat Gätzi <beat@chruetertee.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dvtm
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 
