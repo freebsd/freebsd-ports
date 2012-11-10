@@ -1,5 +1,5 @@
---- taste_cp/unix.mk.orig	2009-03-25 13:31:23.000000000 +0100
-+++ taste_cp/unix.mk	2009-03-25 13:33:00.000000000 +0100
+--- taste_cp/unix.mk.orig	1999-11-21 15:34:48.000000000 +0900
++++ taste_cp/unix.mk	2010-01-26 03:48:40.000000000 +0900
 @@ -8,17 +8,17 @@
  
  #CC sets the name of the compiler to use (cc, gcc, etc)
@@ -7,17 +7,18 @@
 -#CC             = g++
 +CC             = ${CXX}
  
- CFLAGS          = -g -I../cplus2
+-CFLAGS          = -g -I../cplus2
++CFLAGS          = -I../cplus2 ${CXXFLAGS}
  COCOR           = ../cocor
  DOS2UNIX        = ../dos2unix.sh
  LIB             = ../cplus2/cr_lib.a
  
 -%.o: %.cpp
-+*.o: *.cpp
++.cpp.o:
  		$(CC) -c $(CFLAGS) $< -o $@
  
 -%.o: %.cxx
-+*.o: *.cxx
++.cxx.o:
  		$(CC) -c $(CFLAGS) $< -o $@
  
  all:            taste pretty xref
