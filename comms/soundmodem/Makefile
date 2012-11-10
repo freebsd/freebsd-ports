@@ -1,13 +1,7 @@
-# ports collection makefile for:	soundmodem
-# Date created:		4 November 2006
-# Whom:			db
-#
 # $FreeBSD$
-#
 
 PORTNAME=	soundmodem
-PORTVERSION=	0.10
-PORTREVISION=	3
+PORTVERSION=	0.17
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://chronos.org.uk/distfiles/
@@ -21,23 +15,19 @@ CONFIGURE_ARGS=	--disable-alsatest
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386
-USE_GNOME=	gtk12 libxml
+USE_GNOME=	gtk20 libxml2
 MAN8=		soundmodem.8 soundmodemconfig.8
-PLIST_FILES=	bin/soundmodemconfig etc/rc.d/soundmodem \
-		include/modem.h include/simd.h sbin/soundmodem
 
 pre-patch:
 	@${CP} ${FILESDIR}/soundmodem ${WRKSRC}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/soundcard/soundmodem.8 \
 		${WRKSRC}/soundcard/main.c \
 		${WRKSRC}/configapp/src/soundmodemconfig.8 \
 		${WRKSRC}/configapp/src/main.c \
 		${WRKSRC}/soundmodem
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/soundmodem ${PREFIX}/etc/rc.d
 
