@@ -12,6 +12,7 @@ COMMENT=	X11 on-screen-display program and library
 
 LICENSE=	GPLv2
 
+PATCH_STRIP=	-p1
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
@@ -32,10 +33,11 @@ MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
 		xosd_show.3 xosd_uninit.3
 PORTDOCS=	AUTHORS ChangeLog TODO
 
-OPTIONS_DEFINE=	XMMS MSEC
+OPTIONS_DEFINE=	XMMS MSEC XFT
 OPTIONS_DEFAULT=	XMMS
 XMMS_DESC=	Build and install XMMS-OSD plugin
 MSEC_DESC=	Use milliseconds timeout (breaks compatibility!)
+XFT_DESC=	Unofficial Xft support
 
 .include <bsd.port.options.mk>
 
@@ -52,10 +54,16 @@ PLIST_SUB=	XMMS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMSEC}
-DELAY_UNITS=	milliseconds
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-msec-timeout
+DELAY_UNITS=	milliseconds
 .else
 DELAY_UNITS=	seconds
+.endif
+
+.if ${PORT_OPTIONS:MXFT}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xft
+USE_GNOME=	pango
+USE_XORG+=	xft
 .endif
 
 post-patch:
