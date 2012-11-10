@@ -1,6 +1,6 @@
---- configapp/src/main.c.orig	Sun Nov  5 21:45:29 2006
-+++ configapp/src/main.c	Sun Nov  5 21:45:50 2006
-@@ -358,7 +358,7 @@
+--- configapp/src/main.c.orig	2010-10-30 11:49:09.000000000 -0500
++++ configapp/src/main.c	2012-11-05 17:20:25.000000000 -0500
+@@ -359,7 +359,7 @@
  #else /* WIN32 */
  
  static xmlDocPtr doc = NULL;

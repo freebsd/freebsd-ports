@@ -1,6 +1,6 @@
---- soundcard/main.c.orig	Sun Nov  5 21:44:34 2006
-+++ soundcard/main.c	Sun Nov  5 21:44:53 2006
-@@ -354,7 +354,7 @@
+--- soundcard/main.c.orig	2010-10-30 11:49:10.000000000 -0500
++++ soundcard/main.c	2012-11-05 17:22:52.000000000 -0500
+@@ -358,7 +358,7 @@
  		{ "daemonize", 0, 0, 'D' },
  		{ 0, 0, 0, 0 }
  	};
