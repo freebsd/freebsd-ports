@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5e647ca3-2aea-11e2-b745-001fd0af1a4c">
+    <topic>lang/ruby19 -- Hash-flooding DoS vulnerability for ruby 1.9</topic>
+    <affects>
+      <package>
+        <name>ruby</name>
+        <range><ge>1.9</ge><lt>1.9.3.327</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Hash-flooding DoS vulnerability</p>
+        <blockquote cite="http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/">
+          <p>Carefully crafted sequence of strings can cause a denial of service
+             attack on the service that parses the sequence to create a Hash
+             object by using the strings as keys. For instance, this
+             vulnerability affects web application that parses the JSON data
+             sent from untrusted entity.</p>
+          <p>This vulnerability is similar to CVS-2011-4815 for ruby 1.8.7. ruby
+             1.9 versions were using modified MurmurHash function but it's
+             reported that there is a way to create sequence of strings that
+             collide their hash values each other.  This fix changes the Hash
+             function of String object from the MurmurHash to SipHash 2-4.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5371</cvename>
+      <url>http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-10</discovery>
+      <entry>2012-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="152e4c7e-2a2e-11e2-99c7-00a0d181e71d">
     <topic>tomcat -- authentication weaknesses</topic>
     <affects>
