@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-JE
-# Date created:				27 Jan 2010
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	JE
 PORTVERSION=	0.060
@@ -34,5 +30,8 @@ MAN3=		JE::Object.3 JE::_FieldHash.3 JE::String.3 \
 		JE::Object::RegExp.3 JE::Object::String.3 JE::Object::Proxy.3 \
 		JE::Types.3 JE::Object::Array.3 JE::Object::Function.3 JE.3 \
 		JE::Destroyer.3
+
+# Wrong versioning upstream
+PORTSCOUT=	skipv:0.54
 
 .include <bsd.port.mk>
