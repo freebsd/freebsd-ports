@@ -5,6 +5,7 @@
 %%SITE_PERL%%/DBIx/DBHResolver/Strategy/List.pm
 %%SITE_PERL%%/DBIx/DBHResolver/Strategy/Range.pm
 %%SITE_PERL%%/DBIx/DBHResolver/Strategy/Remainder.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/RoundRobin.pm
 @dirrm %%SITE_PERL%%/DBIx/DBHResolver/Strategy
 @dirrm %%SITE_PERL%%/DBIx/DBHResolver
 @dirrmtry %%SITE_PERL%%/DBIx
