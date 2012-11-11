@@ -109,7 +109,6 @@ share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk
 share/include/scl/syslogconf/plugin.conf
 share/include/scl/system/generate-system-source.sh
-share/include/scl/system/generate-system-source.sh.orig
 share/include/scl/system/plugin.conf
 share/tools/cfg-grammar.y
 share/tools/lex-rules.am
