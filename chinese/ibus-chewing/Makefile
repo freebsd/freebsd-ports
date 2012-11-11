@@ -1,4 +1,4 @@
-# Created by: Eric L. Chen <lihong@ieee.org>
+# Created by: Eric L. Camachat <eric@camachat.org>
 # $FreeBSD$
 
 PORTNAME=	ibus-chewing
@@ -7,7 +7,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	lihong@ieee.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Chewing engine for IBus
 
 LICENSE=	GPLv2

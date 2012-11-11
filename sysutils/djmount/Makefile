@@ -1,9 +1,5 @@
-# New ports collection makefile for:	djmount
-# Date created:		15 October 2008
-# Whom:			Eric L. Chen <d9364104@mail.nchu.edu.tw>
-#
+# Created by: Eric L. Camachat <eric@camachat.org>
 # $FreeBSD$
-#
 
 PORTNAME=	djmount
 PORTVERSION=	0.71
@@ -11,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	d9364104@mail.nchu.edu.tw
+MAINTAINER=	eric@camachat.org
 COMMENT=	Mount UPnP A/V Media
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
