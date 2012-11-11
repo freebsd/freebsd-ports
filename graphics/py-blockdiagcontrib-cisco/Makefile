@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-blockdiagcontrib-cisco
-# Date created:		2 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	blockdiagcontrib-cisco
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
