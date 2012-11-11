@@ -1,12 +1,7 @@
-# New ports collection makefile for:	TAP::Harness::JUnit
-# Date created:		10 Apr 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	TAP-Harness-JUnit
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
