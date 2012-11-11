@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pwlib
-# Date created:		Fri Aug 22 07:11:44 GMT 2003
-# Whom:			Roger Hardiman <roger@freebsd.org>
-#
+# Created by: Roger Hardiman <roger@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ptlib
 PORTVERSION=	2.4.4
@@ -13,8 +9,8 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.4
 DISTNAME=	ptlib-${PORTVERSION}
 
-MAINTAINER=	lihong@ieee.org
-COMMENT=	A cross platform C++ library, used by OpenH323
+MAINTAINER=	eric@camachat.org
+COMMENT=	Cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
