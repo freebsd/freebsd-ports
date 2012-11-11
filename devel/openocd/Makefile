@@ -1,4 +1,4 @@
-# Created by:               Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
+# Created by: Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
 # $FreeBSD$
 
 PORTNAME=	openocd
