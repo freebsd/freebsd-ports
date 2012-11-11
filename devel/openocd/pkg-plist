@@ -118,6 +118,7 @@ share/openocd/scripts/board/stm3220g_eval_stlink.cfg
 share/openocd/scripts/board/stm3241g_eval.cfg
 share/openocd/scripts/board/stm3241g_eval_stlink.cfg
 share/openocd/scripts/board/stm32f0discovery.cfg
+share/openocd/scripts/board/stm32f3discovery.cfg
 share/openocd/scripts/board/stm32f4discovery.cfg
 share/openocd/scripts/board/stm32ldiscovery.cfg
 share/openocd/scripts/board/stm32vldiscovery.cfg
