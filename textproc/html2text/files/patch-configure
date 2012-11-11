@@ -1,0 +1,12 @@
+--- ./configure.orig	2012-11-11 09:42:22.000000000 -0500
++++ ./configure	2012-11-11 09:46:01.000000000 -0500
+@@ -38,8 +38,7 @@
+   return 0;
+ }
+ EOF
+-CXX=unknown;
+-for i in "CC" "g++" "cc" "$CC"; do
++for i in "$CXX" "c++"; do
+   if $i -c $tmp_file.C 2>/dev/null; then
+     CXX="$i";
+     break;
