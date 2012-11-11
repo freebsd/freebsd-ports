@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-DBHResolver
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,6 +36,7 @@ MAN3=	DBIx::DBHResolver.3 \
 	DBIx::DBHResolver::Strategy::Key.3 \
 	DBIx::DBHResolver::Strategy::List.3 \
 	DBIx::DBHResolver::Strategy::Range.3 \
-	DBIx::DBHResolver::Strategy::Remainder.3
+	DBIx::DBHResolver::Strategy::Remainder.3 \
+	DBIx::DBHResolver::Strategy::RoundRobin.3
 
 .include <bsd.port.mk>
