@@ -1,9 +1,4 @@
-# New ports collection makefile for: trac-accountmanager
-# Date created:                      17 Feb 2006
-# Whom:                              kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	accountmanager
 PORTVERSION=	0.4.${REV}
@@ -18,22 +13,17 @@ DIST_SUBDIR=	trac
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Account Manager Plugin for trac
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			11722
 USE_ZIP=		yes
-USE_PYTHON=		yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracAccountManager
 PYDISTUTILS_PKGVERSION=	0.4dev
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-pre-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py bdist_egg
 
 # --- trac.ini
 # [components]
