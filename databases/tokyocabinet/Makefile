@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tokyocabinet
-# Date created:		2007-12-22
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
 # $FreeBSD$
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.47
+PORTVERSION=	1.4.48
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://fallabs.com/${PORTNAME}/
@@ -84,7 +80,7 @@ CONFIGURE_ARGS+=	--enable-swab
 CONFIGURE_ARGS+=	--enable-uyield
 .endif
 
-SHLIB_VER=	9.10.0
+SHLIB_VER=	9.11.0
 SHLIB_VER_MAJ=	9
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
