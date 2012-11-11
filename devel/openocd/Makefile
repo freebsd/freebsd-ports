@@ -1,12 +1,8 @@
-# New ports collection makefile for:   openocd
-# Date created:       16 August 2009
-# Whom:               Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
-#
+# Created by:               Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
 # $FreeBSD$
-#
 
 PORTNAME=	openocd
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
