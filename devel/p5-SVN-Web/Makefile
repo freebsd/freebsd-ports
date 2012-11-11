@@ -1,18 +1,13 @@
-# New ports collection makefile for:	devel/p5-SVN-Web
-# Date created:				Feb 21 2004
-# Whom:					CPANPLUS User <cpanplus@example.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.61
+PORTVERSION=	0.63
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Subversion repository web frontend
 
 RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
@@ -27,6 +22,7 @@ RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+		p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
 		p5-Template-Plugin-Clickable-Email>=0:${PORTSDIR}/www/p5-Template-Plugin-Clickable-Email \
 		p5-Template-Plugin-Clickable>=0:${PORTSDIR}/www/p5-Template-Plugin-Clickable \
 		p5-Template-Plugin-Number-Format>=0:${PORTSDIR}/www/p5-Template-Plugin-Number-Format \
@@ -62,6 +58,8 @@ MAN3=		SVN::CHANGES.3 \
 		SVN::Web::action.3
 
 post-install:
+	@${MKDIR} -p ${WWWDIR}
+	@${CP} -r ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${WWWDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
