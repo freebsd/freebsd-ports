@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpra
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -24,28 +24,14 @@ RUN_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-MAN1=		${PORTNAME}.1
-PORTDOCS=	README.wimpiggy README.xpra
+MANCOMPRESSED=	no
+MAN1=		xpra.1 xpra_launcher.1 parti.1
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xext xtst xfixes xcomposite xdamage
 
-NO_BUILD=	yes
-
-do-install:
-	( cd ${WRKSRC} ; ./do-build )
-	${INSTALL_SCRIPT}  ${WRKSRC}/install/bin/xpra                     ${PREFIX}/bin
-	${RM} -rf ${WRKSRC}/install/lib/python/xpra/win32
-	${RM} -rf ${WRKSRC}/install/lib/python/xpra/darwin
-	(cd ${WRKSRC}/install/lib/python/xpra && ${COPYTREE_SHARE} \* ${PYTHON_SITELIBDIR}/xpra )
-	(cd ${WRKSRC}/install/lib/python/wimpiggy && ${COPYTREE_SHARE} \* ${PYTHON_SITELIBDIR}/wimpiggy )
-	${INSTALL_MAN}     ${WRKSRC}/install/share/man/man1/${PORTNAME}.1 ${MANPREFIX}/man/man1
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.wimpiggy ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.xpra ${DOCSDIR}
-.endif
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	parti_all
 
 .include <bsd.port.mk>
