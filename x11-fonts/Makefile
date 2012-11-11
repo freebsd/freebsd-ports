@@ -143,7 +143,6 @@
     SUBDIR += texcm-ttf
     SUBDIR += tkfont
     SUBDIR += tmu
-    SUBDIR += tolkien-ttf
     SUBDIR += ttmkfdir
     SUBDIR += tv-fonts
     SUBDIR += ubuntu-font
