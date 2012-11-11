@@ -1,13 +1,7 @@
-# New ports collection makefile for:	howm
-# Date created:		28 Dec 2003
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	howm
-PORTVERSION=	1.3.9.2
-PORTREVISION=	3
+PORTVERSION=	1.4.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 
