@@ -3839,3 +3839,4 @@ x11-wm/wampager||2012-11-05|Has expired: Development ceased
 x11-wm/waimea||2012-11-05|Has expired: Development ceased
 x11-wm/waimea-devel||2012-11-05|Has expired: Development ceased
 devel/py-liblarch_gtk||2012-11-09|Merged into devel/py-liblarch
+x11-fonts/tolkien-ttf||2012-11-11|Has expired: Does not fetch: there are no more public distfiles
