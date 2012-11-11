@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
@@ -133,6 +133,7 @@ PLIST_FILES+=		sbin/syslog2ng
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
 .if defined(WITH_SYSLOG2NG)
