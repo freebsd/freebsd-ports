@@ -1,39 +1,41 @@
-# New ports collection makefile for:	filerunner
-# Date created:		3 August 1996
-# Whom:			lukin
-#
+# Created by: lukin
 # $FreeBSD$
-#
 
 PORTNAME=	filerunner
-PORTVERSION=	12.03.30.12
+PORTVERSION=	12.05.23.16
 CATEGORIES=	x11-fm tk
 MASTER_SITES=	SF/${PORTNAME}/Release-${PORTVERSION}
-DISTNAME=	fr-12.3.30.12
+DISTNAME=	fr-${PORTVERSION:S/.0/./}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Filemanager with FTP capabilities. Uses Tcl/Tk
+COMMENT=	Tcl/Tk-based filemanager with FTP capabilities
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 USE_TK_WRAPPER=	yes
 
+PORTDOCS=	FAQ HISTORY README *.txt
+
+.include <bsd.port.options.mk>
+
 do-install:
-	@${MKDIR} ${PREFIX}/lib/FileRunner
-.for file in COPYING FAQ HISTORY README fr frftp tclIndex *.tcl *.txt *.xpm
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/FileRunner
+	@${MKDIR} ${DATADIR}
+.for file in fr frftp tclIndex *.tcl *.xpm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
-	@${MKDIR} ${PREFIX}/lib/FileRunner/bitmaps
-.for file in *.bit
-	${INSTALL_DATA} ${WRKSRC}/bitmaps/${file} ${PREFIX}/lib/FileRunner/bitmaps
+.for dir in bitmaps packages
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR}
 .endfor
 .for file in fr frftp frcolor.tcl
-	@${CHMOD} ${BINMODE} ${PREFIX}/lib/FileRunner/${file}
+	@${CHMOD} ${BINMODE} ${DATADIR}/${file}
 .endfor
-	@${LN} -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin/fr
+	@${LN} -sf ${DATADIR}/fr ${PREFIX}/bin/fr
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
