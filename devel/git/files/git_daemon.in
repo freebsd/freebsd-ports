@@ -15,13 +15,15 @@
 . /etc/rc.subr
 
 name="git_daemon"
-rcvar=git_daemon_enable
+rcvar="git_daemon_enable"
 
 load_rc_config $name
 
+: ${git_daemon_user:=git_daemon}
+: ${git_daemon_group:=git_daemon}
 : ${git_daemon_enable:=NO}
 : ${git_daemon_directory:=%%PREFIX%%/git}
-: ${git_daemon_flags:="--syslog --reuseaddr --detach"}
+: ${git_daemon_flags:=--syslog --reuseaddr --detach}
 
 command="%%PREFIX%%/libexec/git-core/git-daemon"
 command_args="${git_daemon_directory}"
