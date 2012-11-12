@@ -184,6 +184,9 @@ MAN7=		gitcli.7 \
 
 CONFLICTS?=	git-subversion-[0-9]*
 
+USERS=	git_daemon
+GROUPS=	git_daemon
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
