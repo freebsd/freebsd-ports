@@ -1,14 +1,10 @@
-# New ports collection makefile for:	colordiff
-# Date created:				6 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	colordiff
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.12
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/version%20${PORTVERSION}
+MASTER_SITES=	http://www.colordiff.org/ CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to colorize diff output
