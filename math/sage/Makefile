@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sage
-# Date created:		24 January 2012
-# Whom:			Stephen Montgomery-Smith <stephen@FreeBSD.org>
-#
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sage
-PORTVERSION=	5.3
+PORTVERSION=	5.4
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
