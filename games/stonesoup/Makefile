@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.0
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -23,7 +23,6 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_LUA=	5.1
 USE_PERL5_BUILD=	yes
-USE_GCC=	4.2+
 
 MAKE_JOBS_SAFE=	yes
 
@@ -71,6 +70,9 @@ MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
 PKGNAMESUFFIX=	-sdl
 USE_PKGCONFIG=	yes
+BUILD_DEPENDS+=	fc-list:${PORTSDIR}/x11-fonts/fontconfig \
+		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl image
