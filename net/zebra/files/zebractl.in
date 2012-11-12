@@ -24,17 +24,17 @@ case $1 in
 			exit 1
 		fi
 		[ -f %%ETCDIR%%/zebra.conf ] \
-			&& %%PREFIX%%/sbin/zebra -d && echo -n ' zebra'
+			&& %%PREFIX%%/sbin/zebra %%ZEBRAARGS%% && echo -n ' zebra'
 		[ -f %%ETCDIR%%/ripd.conf ] \
-			&& %%PREFIX%%/sbin/ripd -d && echo -n ' ripd'
+			&& %%PREFIX%%/sbin/ripd %%RIPDARGS%% && echo -n ' ripd'
 		[ -f %%ETCDIR%%/ripngd.conf ] \
-			&& %%PREFIX%%/sbin/ripngd -d && echo -n ' ripngd'
+			&& %%PREFIX%%/sbin/ripngd %%RIPNGDARGS%% && echo -n ' ripngd'
 		[ -f %%ETCDIR%%/ospfd.conf ] \
-			&& %%PREFIX%%/sbin/ospfd -d && echo -n ' ospfd'
+			&& %%PREFIX%%/sbin/ospfd %%OSPFDARGS%% && echo -n ' ospfd'
 		[ -f %%ETCDIR%%/ospf6d.conf ] \
-			&& %%PREFIX%%/sbin/ospf6d -d && echo -n ' ospf6d'
+			&& %%PREFIX%%/sbin/ospf6d %%OSPF6DARGS%% && echo -n ' ospf6d'
 		[ -f %%ETCDIR%%/bgpd.conf ] \
-			&& %%PREFIX%%/sbin/bgpd -d && echo -n ' bgpd'
+			&& %%PREFIX%%/sbin/bgpd %%BGPDARGS%% && echo -n ' bgpd'
 		;;
 
 	stop)
