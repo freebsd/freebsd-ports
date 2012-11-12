@@ -5146,6 +5146,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi2/class.tx_rtehtmlarea_pi2.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi2/locallang.xlf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi3/class.tx_rtehtmlarea_pi3.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi4/class.tx_rtehtmlarea_pi4.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/download.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/external_link_new_window.gif
@@ -5154,6 +5155,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/mail.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/locallang.xlf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/pageTSConfig.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/setup.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/advanced/pageTSConfig.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/advanced/userTSConfig.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/contentcss/default.css
@@ -8231,6 +8233,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons/img
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res/accessibilityicons
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/res
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi4
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi3
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi2
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/rtehtmlarea/pi1
