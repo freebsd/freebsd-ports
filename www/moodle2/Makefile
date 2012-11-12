@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable23/
 EXTRACT_SUFX=	.tgz
