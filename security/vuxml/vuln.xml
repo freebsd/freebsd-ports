@@ -51,6 +51,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79818ef9-2d10-11e2-9160-00262d5ed8ee">
+    <topic>typo3 -- Multiple vulnerabilities in TYPO3 Core</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><ge>4.5.0</ge><lt>4.5.21</lt></range>
+	<range><ge>4.6.0</ge><lt>4.6.14</lt></range>
+	<range><ge>4.7.0</ge><lt>4.7.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Typo Security Team reports:</p>
+	<blockquote cite="http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-005/">
+	  <p>TYPO3 Backend History Module - Due to missing encoding of user
+	    input, the history module is susceptible to SQL Injection and
+	    Cross-Site Scripting. A valid backend login is required to exploit
+	    this vulnerability. Credits go to Thomas Worm who discovered and
+	    reported the issue.</p>
+	  <p>TYPO3 Backend API - Failing to properly HTML-encode user input the
+	    tree render API (TCA-Tree) is susceptible to Cross-Site Scripting.
+	    TYPO3 Versions below 6.0 does not make us of this API, thus is not
+	    exploitable, if no third party extension is installed which uses
+	    this API. A valid backend login is required to exploit this
+	    vulnerability. Credits go to Richard Brain who discovered and
+	    reported the issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-005/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-08</discovery>
+      <entry>2012-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a537b449-2b19-11e2-b339-90e6ba652cce">
     <topic>DomainKeys Identified Mail (DKIM) Verifiers may inappropriately convey message trust</topic>
     <affects>
