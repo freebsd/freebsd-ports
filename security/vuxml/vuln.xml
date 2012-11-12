@@ -51,6 +51,217 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79818ef9-2d10-11e2-9160-00262d5ed8ee">
+    <topic>typo3 -- Multiple vulnerabilities in TYPO3 Core</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><ge>4.5.0</ge><lt>4.5.21</lt></range>
+	<range><ge>4.6.0</ge><lt>4.6.14</lt></range>
+	<range><ge>4.7.0</ge><lt>4.7.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Typo Security Team reports:</p>
+	<blockquote cite="http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-005/">
+	  <p>TYPO3 Backend History Module - Due to missing encoding of user
+	    input, the history module is susceptible to SQL Injection and
+	    Cross-Site Scripting. A valid backend login is required to exploit
+	    this vulnerability. Credits go to Thomas Worm who discovered and
+	    reported the issue.</p>
+	  <p>TYPO3 Backend API - Failing to properly HTML-encode user input the
+	    tree render API (TCA-Tree) is susceptible to Cross-Site Scripting.
+	    TYPO3 Versions below 6.0 does not make us of this API, thus is not
+	    exploitable, if no third party extension is installed which uses
+	    this API. A valid backend login is required to exploit this
+	    vulnerability. Credits go to Richard Brain who discovered and
+	    reported the issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-005/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-08</discovery>
+      <entry>2012-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a537b449-2b19-11e2-b339-90e6ba652cce">
+    <topic>DomainKeys Identified Mail (DKIM) Verifiers may inappropriately convey message trust</topic>
+    <affects>
+      <package>
+	<name>opendkim</name>
+	<range><lt>2.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/268267">
+	  <p>DomainKeys Identified Mail (DKIM) Verifiers may
+          inappropriately convey message trust when messages are
+          signed using test or small bit signing keys.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>268267</certvu>
+    </references>
+    <dates>
+      <discovery>2012-10-24</discovery>
+      <entry>2012-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e02c572f-2af0-11e2-bb44-003067b2972c">
+    <topic>weechat -- Crash or freeze when decoding IRC colors in strings</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><ge>0.3.6</ge><lt>0.3.9.1</lt></range>
+      </package>
+      <package>
+	<name>weechat-devel</name>
+	<range><ge>20110614</ge><lt>20121110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastien Helleu reports:</p>
+	<blockquote cite="https://savannah.nongnu.org/bugs/?37704">
+	  <p>A buffer overflow is causing a crash or freeze of WeeChat when 
+	  decoding IRC colors in strings.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/173513</freebsdpr>
+      <url>http://weechat.org/security/</url>
+      <url>https://savannah.nongnu.org/bugs/?37704</url>
+    </references>
+    <dates>
+      <discovery>2012-11-09</discovery>
+      <entry>2012-11-10</entry>
+      <modified>2012-11-10</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="5e647ca3-2aea-11e2-b745-001fd0af1a4c">
+    <topic>ruby -- Hash-flooding DoS vulnerability for ruby 1.9</topic>
+    <affects>
+      <package>
+        <name>ruby</name>
+        <range><ge>1.9</ge><lt>1.9.3.327</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The official ruby site reports:</p>
+        <blockquote cite="http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/">
+          <p>Carefully crafted sequence of strings can cause a denial of service
+             attack on the service that parses the sequence to create a Hash
+             object by using the strings as keys. For instance, this
+             vulnerability affects web application that parses the JSON data
+             sent from untrusted entity.</p>
+          <p>This vulnerability is similar to CVS-2011-4815 for ruby 1.8.7. ruby
+             1.9 versions were using modified MurmurHash function but it's
+             reported that there is a way to create sequence of strings that
+             collide their hash values each other.  This fix changes the Hash
+             function of String object from the MurmurHash to SipHash 2-4.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5371</cvename>
+      <url>http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-10</discovery>
+      <entry>2012-11-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="152e4c7e-2a2e-11e2-99c7-00a0d181e71d">
+    <topic>tomcat -- authentication weaknesses</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><gt>5.5.0</gt><lt>5.5.36</lt></range>
+	<range><gt>6.0.0</gt><lt>6.0.36</lt></range>
+	<range><gt>7.0.0</gt><lt>7.0.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security.html">
+	  <p>Three weaknesses in Tomcat's implementation of DIGEST
+	    authentication were identified and resolved:</p>
+	  <ul>
+	    <li> Tomcat tracked client rather than server nonces and nonce count.</li>
+	    <li> When a session ID was present, authentication was bypassed.</li>
+	    <li> The user name and password were not checked before when indicating
+	       that a nonce was stale.</li>
+	  </ul>
+	  <p>These issues reduced the security of DIGEST authentication making
+	    replay attacks possible in some circumstances.</p>
+	  <p>The first issue was identified by Tilmann Kuhn. The second and third
+	    issues were identified by the Tomcat security team during the code
+	    review resulting from the first issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3439</cvename>
+      <url>http://tomcat.apache.org/security.html</url>
+      <url>http://tomcat.apache.org/security-5.html</url>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-11-05</discovery>
+      <entry>2012-11-08</entry>
+      <modified>2012-11-09</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="4ca26574-2a2c-11e2-99c7-00a0d181e71d">
+    <topic>tomcat -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><gt>6.0.0</gt><lt>6.0.36</lt></range>
+	<range><gt>7.0.0</gt><lt>7.0.28</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security.html">
+	  <p>The checks that limited the permitted size of request headers were
+	    implemented too late in the request parsing process for the HTTP NIO
+	    connector. This enabled a malicious user to trigger an
+	    OutOfMemoryError by sending a single request with very large
+	    headers. This issue was identified by Josh Spiewak.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2733</cvename>
+      <url>http://tomcat.apache.org/security.html</url>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-11-05</discovery>
+      <entry>2012-11-08</entry>
+      <modified>2012-11-09</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="4b8b748e-2a24-11e2-bb44-003067b2972c">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
