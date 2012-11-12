@@ -1,27 +1,15 @@
 @comment $FreeBSD$
 %%LUA%%bin/miltertest
-%%ATPS%%bin/opendkim-atpszone
-bin/opendkim-genkey
-%%REPUTE%%bin/opendkim-genrates
-bin/opendkim-genzone
-%%REPUTE%%bin/opendkim-modtotals
-%%STATS%%bin/opendkim-spam
-%%STATS%%bin/opendkim-stats
-bin/opendkim-testadsp
-bin/opendkim-testkey
-bin/opendkim-testmsg
+%%REPRRD%%bin/opendkim-reprrdimport
+%%ODBX%%%%STATS%%bin/opendkim-spam
 etc/mail/opendkim.conf.sample
-%%ARLIB%%include/async-resolv.h
 %%DKIMREP%%include/dkim-rep/dkim-rep.h
 include/opendkim/dkim.h
 %%RBL%%include/rbl/rbl.h
+%%REPRRD%%include/reprrd/reprrd.h
 %%REPUTE%%include/repute/repute.h
 %%REPUTE%%include/ut/ut.h
 %%VBR%%include/vbr/vbr.h
-%%ARLIB%%lib/libar.a
-%%ARLIB%%lib/libar.la
-%%ARLIB%%lib/libar.so
-%%ARLIB%%lib/libar.so.2
 %%DKIMREP%%lib/libdkimrep.a
 %%DKIMREP%%lib/libdkimrep.la
 %%DKIMREP%%lib/libdkimrep.so
@@ -29,11 +17,15 @@ include/opendkim/dkim.h
 lib/libopendkim.a
 lib/libopendkim.la
 lib/libopendkim.so
-lib/libopendkim.so.6
+lib/libopendkim.so.8
 %%RBL%%lib/librbl.a
 %%RBL%%lib/librbl.la
 %%RBL%%lib/librbl.so
 %%RBL%%lib/librbl.so.1
+%%REPRRD%%lib/libreprrd.a
+%%REPRRD%%lib/libreprrd.la
+%%REPRRD%%lib/libreprrd.so
+%%REPRRD%%lib/libreprrd.so.1
 %%REPUTE%%lib/librepute.a
 %%REPUTE%%lib/librepute.la
 %%REPUTE%%lib/librepute.so
@@ -46,7 +38,6 @@ lib/libopendkim.so.6
 %%VBR%%lib/libvbr.la
 %%VBR%%lib/libvbr.so
 %%VBR%%lib/libvbr.so.2
-%%ARLIB%%libdata/pkgconfig/ar.pc
 %%DKIMREP%%libdata/pkgconfig/dkim-rep.pc
 libdata/pkgconfig/opendkim.pc
 %%RBL%%libdata/pkgconfig/rbl.pc
@@ -54,5 +45,26 @@ libdata/pkgconfig/opendkim.pc
 %%REPUTE%%libdata/pkgconfig/ut.pc
 %%VBR%%libdata/pkgconfig/vbr.pc
 %%FILTER%%sbin/opendkim
+%%ATPS%%sbin/opendkim-atpszone
+%%STATS%%sbin/opendkim-expire
+%%STATS%%sbin/opendkim-gengraphs
+sbin/opendkim-genkey
+%%REPUTE%%sbin/opendkim-genrates
+%%STATS%%sbin/opendkim-genstats
+sbin/opendkim-genzone
+%%ODBX%%%%STATS%%sbin/opendkim-importstats
+%%REPUTE%%sbin/opendkim-modtotals
+%%REPUTE%%sbin/opendkim-rephistory
+%%STATS%%sbin/opendkim-reportstats
+%%STATS%%sbin/opendkim-stats
+sbin/opendkim-testadsp
+sbin/opendkim-testkey
+sbin/opendkim-testmsg
+%%VBR%%@dirrm include/vbr
+%%REPUTE%%@dirrm include/ut
+%%REPUTE%%@dirrm include/repute
+%%REPRRD%%@dirrm include/reprrd
+%%RBL%%@dirrm include/rbl
 @dirrm include/opendkim
+%%DKIMREP%%@dirrm include/dkim-rep
 @dirrmtry etc/mail

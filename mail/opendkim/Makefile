@@ -1,12 +1,8 @@
-# New ports collection makefile for:	opendkim
-# Date created:				2009-08-26
-# Whom:					Hirohisa Yamaguchi <umq@ueo.co.jp>
-#
+# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=		opendkim
-PORTVERSION=		2.5.2
+PORTVERSION=		2.7.1
 CATEGORIES=		mail security
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -17,7 +13,6 @@ COMMENT=		DKIM library and milter implementation
 
 LICENSE=		BSD SENDMAIL
 LICENSE_COMB=		multi
-LICENSE_FILE=		${WRKSRC}/LICENSE
 
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
@@ -25,29 +20,40 @@ LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+NO_OPTIONS_SORT=yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 MAN8=		opendkim-genkey.8 opendkim-genzone.8 opendkim-testadsp.8 \
 		opendkim-testkey.8 opendkim-testmsg.8
+PORTDOCS=	*
 
-OPTIONS=	\
-	ARLIB		"Asynchronous thread-safe DNS library"	On  \
-	FILTER		"OpenDKIM filter, requires libmilter/Sendmail"	On \
-	GNUTLS		"Use GnuTLS instead of OpenSSL"		Off \
-	LUA		"Describe filter policy with lua"	Off \
-	MEMCACHED	"Use memcached as a data set"		Off \
-	OPENDBX		"Store filter policies via OpenDBX"	Off \
-	OPENLDAP	"Store filter policies in LDAP"		Off \
-	POPAUTH		"Use POP authentication DB"		Off \
-	QUERY_CACHE	"Cache DNS query results locally"	Off \
-	UNBOUND		"Use unbound DNS library"		Off
+OPTIONS_SINGLE=		RESOLV
+OPTIONS_SINGLE_RESOLV=	STOCK_RESOLVER UNBOUND
+OPTIONS_DEFINE=		FILTER GNUTLS LUA MEMCACHED BDB_BASE OPENDBX OPENLDAP \
+			POPAUTH QUERY_CACHE STATS
+OPTIONS_DEFAULT=	FILTER LUA UNBOUND
+
+STOCK_RESOLVER_DESC=	Use the stock resolver library
+UNBOUND_DESC=		Use unbound DNS library
+FILTER_DESC=		OpenDKIM filter, requires libmilter/Sendmail
+GNUTLS_DESC=		Use GnuTLS instead of OpenSSL
+LUA_DESC=		Describe filter policy with lua
+MEMCACHED_DESC=		Use memcached as a data set
+BDB_BASE_DESC=		Use Berkeley DB from base
+OPENDBX_DESC=		Store filter policies via OpenDBX
+OPENLDAP_DESC=		Store filter policies in LDAP
+POPAUTH_DESC=		Use POP authentication DB
+QUERY_CACHE_DESC=	Cache DNS query results locally
+STATS_DESC=		Setup statistics tools
 
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/Makefile.options"
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FILTER) && !defined(WITHOUT_FILTER)
+.if ${PORT_OPTIONS:MFILTER}
 USE_RC_SUBR=		milter-opendkim
 MAN5+=			opendkim.conf.5
 MAN8+=			opendkim.8
@@ -62,8 +68,8 @@ CONFIGURE_ARGS+=	--disable-filter
 PLIST_SUB+=		FILTER="@comment "
 .endif
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
@@ -71,66 +77,74 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 
 .include "${.CURDIR}/Makefile.features"
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.else
+.if ! ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--docdir=${WRKDIR}/doc
 .endif
 
-.if (defined(WITH_POPAUTH) \
-	|| defined(WITH_QUERY_CACHE) \
-	|| defined(WITH_BODYLENGTH_DB) \
-	|| defined(WITH_LDAP_CACHING) \
-	|| defined(WITH_STATS)) \
-	&& !defined(WITH_BDB_BASE)
+.if ${PORT_OPTIONS:MSTATS} || ${PORT_OPTIONS:MSTATSEXT}
+CONFIGURE_ARGS+=	--enable-stats
+MAN8+=			opendkim-expire.8 opendkim-gengraphs.8 \
+			opendkim-genstats.8 opendkim-stats.8
+. if ${PORT_OPTIONS:MOPENDBX}
+MAN1+=			opendkim-spam.1
+MAN8+=			opendkim-importstats.8
+. endif
+PLIST_SUB+=		STATS=""
+.else
+PLIST_SUB+=		STATS="@comment "
+.endif
+.if ${PORT_OPTIONS:MPOPAUTH} \
+	|| ${PORT_OPTIONS:MQUERY_CACHE} \
+	|| ${PORT_OPTIONS:MLDAP_CACHING} \
+	|| ${PORT_OPTIONS:MREPUTATION} \
+	|| ${PORT_OPTIONS:MSTATS}
+. if ${PORT_OPTIONS:MBDB_BASE}
+CONFIGURE_ARGS+=	--with-db-lib=c
+. else
 CONFIGURE_ARGS+=	--with-db-incdir=${BDB_INCLUDE_DIR} \
 			--with-db-libdir=${BDB_LIB_DIR} \
 			--with-db-lib=${BDB_LIB_NAME}
 USE_BDB=		41+
+. endif
 .endif
-.if defined(WITH_UNBOUND) && !defined(WITHOUT_UNBOUND)
-.if defined(WITH_ARLIB)
-IGNORE=		libar cannot be used simultaneously with libunbound
-.endif
-CONFIGURE_ARGS+=	--with-unbound \
-			--disable-arlib
+.if ${PORT_OPTIONS:MUNBOUND}
+CONFIGURE_ARGS+=	--with-unbound
 LIB_DEPENDS+=		unbound:${PORTSDIR}/dns/unbound
-PLIST_SUB+=		ARLIB="@comment "
-.else
-.if defined(WITH_ARLIB)
-PLIST_SUB+=		ARLIB=""
-CONFIGURE_ARGS+=	--enable-arlib
-MAN3=			ar.3
-.else
-CONFIGURE_ARGS+=	--disable-arlib
-PLIST_SUB+=		ARLIB="@comment "
 .endif
-.endif
-.if defined(WITH_POPAUTH) && !defined(WITHOUT_POPAUTH)
+.if ${PORT_OPTIONS:MPOPAUTH}
 CONFIGURE_ARGS+=	--enable-popauth
 .endif
-.if defined(WITH_QUERY_CACHE) && !defined(WITHOUT_QUERY_CACHE)
+.if ${PORT_OPTIONS:MQUERY_CACHE}
 CONFIGURE_ARGS+=	--enable-query_cache
 .endif
-.if defined(WITH_MEMCACHED)
+.if ${PORT_OPTIONS:MMEMCACHED}
 CONFIGURE_ARGS+=	--with-libmemcached
 LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
+.else
+CONFIGURE_ARGS+=	--without-libmemcached
 .endif
-.if defined(WITH_OPENDBX)
+.if ${PORT_OPTIONS:MOPENDBX}
 CONFIGURE_ARGS+=	--with-odbx
 LIB_DEPENDS+=		opendbx:${PORTSDIR}/databases/opendbx
+PLIST_SUB+=		ODBX=""
+.else
+CONFIGURE_ARGS+=	--without-odbx
+PLIST_SUB+=		ODBX="@comment "
 .endif
-.if defined(WITH_OPENLDAP)
+.if ${PORT_OPTIONS:MOPENLDAP}
 CONFIGURE_ARGS+=	--with-openldap
+LIB_DEPENDS+=		ldap:${PORTSDIR}/net/openldap24-sasl-client
 USE_OPENLDAP=		yes
+.else
+CONFIGURE_ARGS+=	--without-openldap
 .endif
-.if defined(WITH_LUA) || defined(WITH_RBL) || defined(WITH_STATSEXT)
+.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MRBL} || ${PORT_OPTIONS:MSTATSEXT}
 CONFIGURE_ARGS+=	--with-lua
-. if !defined(WITHOUT_FILTER)
+. if ${PORT_OPTIONS:MFILTER}
 MAN3+=			opendkim-lua.3
 . endif
 MAN8+=			miltertest.8
@@ -141,16 +155,16 @@ PLIST_SUB+=		LUA="@comment "
 .endif
 
 post-install:
-.if !defined(WITH_DEBUG) && defined(WITH_FILTER) && !defined(WITHOUT_FILTER)
+.if ! ${PORT_OPTIONS:MDEBUG} && ${PORT_OPTIONS:MFILTER}
 	@${STRIP_CMD} ${PREFIX}/sbin/opendkim
 .endif
 	@${MKDIR} ${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample ${PREFIX}/etc/mail/
-.if !defined(WITHOUT_FILTER)
+.if ${PORT_OPTIONS:MFILTER}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
 regression-test: build
 	cd ${WRKSRC} ; ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
