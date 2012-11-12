@@ -3,14 +3,13 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.23
+PORTREVISION=	1
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
-		ftp://ftp.chg.ru/pub/math/grace/src/stable/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/stable/ \
-		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/stable/
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful 2D plotting tool (successor of xmgr)
@@ -20,9 +19,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
 		Xbae:${PORTSDIR}/x11-toolkits/xbae \
 		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_MOTIF=	yes
 USE_GCC=	any
@@ -31,6 +30,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
 		--with-extra-incpath=${LOCALBASE}/include \
 		--with-extra-ldpath=${LOCALBASE}/lib \
+		--with-helpviewer="xdg-open %s" \
 		--without-bundled-xbae
 ALL_TARGET=	# empty
 MAKE_JOBS_SAFE=	yes
