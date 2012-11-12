@@ -1,12 +1,7 @@
-# New ports collection makefile for:	graphics/p5-Color-Scheme
-# Date created:				02 September 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Color-Scheme
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Color
