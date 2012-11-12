@@ -1,13 +1,8 @@
-# New ports collection makefile for:	apache-ant
-# Date created:		21 February 2001
-# Whom:			znerd@FreeBSD.org
-#
+# Created by:	Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.8.4
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		LOCAL/hq:man
