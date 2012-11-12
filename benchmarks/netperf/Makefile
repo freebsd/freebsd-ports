@@ -1,9 +1,5 @@
-# New ports collection makefile for: netperf
-# Date created:		19 July 1996
-# Whom:			koshy
-#
+# Created by:                  koshy
 # $FreeBSD$
-#
 
 PORTNAME=	netperf
 PORTVERSION=	2.6.0
@@ -11,14 +7,17 @@ CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		http://fossies.org/unix/misc/
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 
-OPTIONS=	SOCKETS		"Enable Unix Domain socket support" On \
-		SCTP		"Enable SCTP support" On \
-		EXS		"Enable ICSC async socket support" On \
-		HISTOGRAM	"Enable optional histogram output" On \
-		OMNI		"Enable OMNI tests" Off \
+OPTIONS_DEFINE=        OMNI SCTP SOCKETS HISTOGRAM EXS
+OPTIONS_DEFAULT=       SCTP SOCKETS HISTOGRAM EXS
+
+OMNI_DESC=     Enable OMNI tests
+SCTP_DESC=     Enable SCTP support
+SOCKETS_DESC=  Enable Unix Domain socket support
+HISTOGRAM_DESC=        Enable optional histogram output
+EXS_DESC=      Enable ICSC async socket support
 
 .include <bsd.port.options.mk>
 
@@ -27,31 +26,31 @@ CONFIGURE_ENV=	"transform="
 CONFIGURE_ARGS=	--program-prefix=""  --program-suffix="" --enable-dirty \
 		--enable-demo --enable-burst --enable-intervals
 
-.if !defined(WITHOUT_SOCKETS)
+.if ${PORT_OPTIONS:MSOCKETS}
 CONFIGURE_ARGS+=	--enable-unixdomain
 .else
 CONFIGURE_ARGS+=	--disable-unixdomain
 .endif
 
-.if !defined(WITHOUT_SCTP)
+.if ${PORT_OPTIONS:MSCTP}
 CONFIGURE_ARGS+=	--enable-sctp
 .else
 CONFIGURE_ARGS+=	--disable-sctp
 .endif
 
-.if !defined(WITHOUT_EXS)
+.if ${PORT_OPTIONS:MEXS}
 CONFIGURE_ARGS+=	--enable-exs
 .else
 CONFIGURE_ARGS+=	--disable-exs
 .endif
 
-.if !defined(WITHOUT_HISTOGRAM)
+.if ${PORT_OPTIONS:MHISTOGRAM}
 CONFIGURE_ARGS+=	--enable-histogram
 .else
 CONFIGURE_ARGS+=	--disable-histogram
 .endif
 
-.if !defined(WITHOUT_OMNI)
+.if ${PORT_OPTIONS:MOMNI}
 CONFIGURE_ARGS+=	--enable-omni
 .else
 CONFIGURE_ARGS+=	--disable-omni
