@@ -1,15 +1,15 @@
---- ./Makefile.orig	2012-04-10 21:47:14.000000000 +0200
-+++ ./Makefile	2012-04-14 18:50:22.291961515 +0200
-@@ -63,7 +63,7 @@
+--- ./Makefile.orig	2012-09-30 23:25:31.000000000 +0200
++++ ./Makefile	2012-10-27 20:49:08.837330946 +0200
+@@ -66,7 +66,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
  
 -GAME = crawl
 +GAME = stonesoup
  
- ASSERTS = yes
- 
-@@ -111,7 +111,7 @@
+ # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
+ # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
+@@ -112,7 +112,7 @@
  
  else
  
@@ -18,7 +18,7 @@
  
  endif # USE_ICC
  
-@@ -119,7 +119,7 @@
+@@ -120,7 +120,7 @@
  CFOPTIMIZE += -flto=jobserver -fwhole-program
  endif
  
@@ -27,7 +27,56 @@
  CFWARN := -Wall -Wformat-security
  CFWARN_L := -Wundef
  
-@@ -688,7 +688,7 @@
+@@ -133,8 +133,6 @@
+ #
+ AR = ar
+ RANLIB = ranlib
+-CC = $(GCC)
+-CXX = $(GXX)
+ RM = rm -f
+ COPY = cp
+ COPY_R = cp -r
+@@ -530,30 +528,19 @@
+ ifndef BUILD_LUA
+   ifdef NO_PKGCONFIG
+     BUILD_LUA = yes
+-  endif
+-endif
+-ifndef BUILD_LUA
+-  ifneq ($(shell $(PKGCONFIG) lua5.1 --exists || echo no),)
+-    ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
++  else
++    LUA_PACKAGE := $(shell for lua in lua51 lua5.1 lua-5.1 lua; do \
++      $(PKGCONFIG) $$lua --exists && test `$(PKGCONFIG) $$lua --modversion | head -c 3` = 5.1 && \
++        echo $$lua && break;\
++    done)
++    ifeq (,$(LUA_PACKAGE))
+       BUILD_LUA = yes
+     else
+-      ifeq ($(shell $(PKGCONFIG) lua --modversion | head -c 3),5.1)
+-        LUA_PACKAGE = lua
+-      else
+-        BUILD_LUA = yes
+-      endif
++      INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I)
++      CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
++      LIBS += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --libs)
+     endif
+-  else
+-    LUA_PACKAGE = lua5.1
+-  endif
+-endif
+-ifndef BUILD_LUA
+-  ifndef LUA_PACKAGE
+-    LUA_PACKAGE = lua5.1
+   endif
+-  INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I)
+-  CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
+-  LIBS += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --libs)
+ endif
+ 
+ ifndef BUILD_SQLITE
+@@ -707,7 +694,7 @@
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -36,12 +85,54 @@
  endif
  
  ifdef PCH
-@@ -953,7 +953,7 @@
+@@ -831,10 +818,12 @@
+     INSTALL_FONTS += $(PROPORTIONAL_FONT)
+   endif
+ else
+-  SYS_PROPORTIONAL_FONT = $(shell find /usr/share/fonts -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
+-  ifeq (,$(SYS_PROPORTIONAL_FONT))
+-    SYS_PROPORTIONAL_FONT = $(shell find /usr/local/share/fonts -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
+-  endif
++  SYS_PROPORTIONAL_FONT = $(shell name=$(OUR_PROPORTIONAL_FONT);\
++    {\
++      fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
++      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
++      do [ -d $$dir ] && echo $$dir; done;\
++    } 2>/dev/null | xargs -I% find % -type f -iname $$name -print | head -n1)
+   ifneq (,$(SYS_PROPORTIONAL_FONT))
+     ifeq (,$(COPY_FONTS))
+       DEFINES += -DPROPORTIONAL_FONT=\"$(SYS_PROPORTIONAL_FONT)\"
+@@ -854,10 +843,12 @@
+     INSTALL_FONTS += $(MONOSPACED_FONT)
+   endif
+ else
+-  SYS_MONOSPACED_FONT = $(shell find /usr/share/fonts -iname $(OUR_MONOSPACED_FONT)|head -n 1)
+-  ifeq (,$(SYS_MONOSPACED_FONT))
+-    SYS_MONOSPACED_FONT = $(shell find /usr/local/share/fonts -iname $(OUR_MONOSPACED_FONT)|head -n 1)
+-  endif
++  SYS_MONOSPACED_FONT = $(shell name=$(OUR_MONOSPACED_FONT);\
++    {\
++      fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
++      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
++      do [ -d $$dir ] && echo $$dir; done;\
++    } 2>/dev/null | xargs -I% find % -type f -iname $$name -print | head -n1)
+   ifneq (,$(SYS_MONOSPACED_FONT))
+     ifeq (,$(COPY_FONTS))
+       DEFINES += -DMONOSPACED_FONT=\"$(SYS_MONOSPACED_FONT)\"
+@@ -1036,7 +1027,7 @@
+                    cmd-name.h $(INI_OBJECTS)
  
- GAME_DEPENDS  := $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS) dat/dlua/tags.lua
  SRC_PKG_BASE  := stone_soup
 -SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
 +SRC_VERSION   := $(shell cat util/release_ver)
  MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|sed -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
  
  export SRC_VERSION
+@@ -1049,6 +1040,7 @@
+ greet:
+ 	@if [ ! -e $(GAME) ]; then\
+ 		printf "  * If you experience any problems building Crawl, please take a second look\\n"\
++		;printf\
+ 		"  * at INSTALL.txt: the solution to your problem just might be in there!\\n";\
+ 	fi
+ 
