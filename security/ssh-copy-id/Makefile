@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssh-copy-id
-# Date created:				14 Jan 2011
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssh-copy-id
 PORTVERSION=	5.6p1
@@ -19,6 +15,12 @@ NO_BUILD=	yes
 MAN1=		ssh-copy-id.1
 PLIST_FILES=	bin/ssh-copy-id
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000024
+IGNORE=		is already in the base system
+.endif
+
 pre-patch:
 .for f in ssh-copy-id ssh-copy-id.1
 	@${CP} ${FILESDIR}/${f} ${WRKDIR}
@@ -28,4 +30,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
