@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Mail-Sender
-# Date created:				July 27th 2000
-# Whom:	      				Ben Smithurst <ben@FreeBSD.org>
-#
+# Created by: Ben Smithurst <ben@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Sender
-PORTVERSION=	0.8.16
+PORTVERSION=	0.8.21
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
