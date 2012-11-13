@@ -4148,6 +4148,7 @@
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += u-boot
+    SUBDIR += uatraits
     SUBDIR += uclmmbase
     SUBDIR += ucommon
     SUBDIR += ucpp
