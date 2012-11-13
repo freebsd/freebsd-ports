@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-irclib
-# Date created:				25 April 2001
-# Whom:					Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	irclib
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	irc python
 MASTER_SITES=	SF/python-${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +20,8 @@ PYDISTUTILS_NOEGGINFO=yes
 
 # TODO: irclib have some weird install script bundled and use of
 #       USE_PYDISTUTILS=easy_install would break it
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools \
+		${PYTHON_PKGNAMEPREFIX}hgtools>0:${PORTSDIR}/devel/py-hgtools
 
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
 
