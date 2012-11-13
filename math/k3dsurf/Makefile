@@ -1,26 +1,25 @@
-# New ports collection makefile for:	K3DSurf
-# Date created:		Sun 19 feb 2006
-# Whom:			thierry@pompo.net
+# Created by: thierry@pompo.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	k3dsurf
-PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTVERSION=	0.6.2.4
 CATEGORIES=	math graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_Linux/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_Linux/${PORTVERSION:R}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualize and manipulate Mathematical surfaces or curves
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_GL=		yes
 USE_QT_VER=	3
-QTDIR?=		${QT_PREFIX}
+QTDIR=		${QT_PREFIX}
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
-		QTDIR="${QTDIR}"
+		QTDIR="${QTDIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
