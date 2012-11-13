@@ -1,9 +1,5 @@
-# New ports collection makefile for:	murmur
-# Date created:		2009-08-03
-# Whom:			Ayumi M <ayu@commun.jp>
-#
+# Created by: Ayumi M <ayu@commun.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.3
@@ -60,9 +56,6 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} \
 		${QMAKE} -unix PREFIX=${PREFIX} ${QMAKEFLAGS} main.pro "CONFIG+=${CONFIG}"
 
-pre-su-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 pre-install:
 	@${SED} -i '' -e 's|database=.*|database=/var/db/murmur/murmur.sqlite|' ${WRKSRC}/scripts/murmur.ini
 	@${SED} -i '' -e 's|#pidfile=.*|pidfile=/var/run/murmur/murmur.pid|' ${WRKSRC}/scripts/murmur.ini
@@ -82,5 +75,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
