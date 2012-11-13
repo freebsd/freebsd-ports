@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	recoverjpeg
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral
