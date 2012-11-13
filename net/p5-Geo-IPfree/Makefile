@@ -1,12 +1,7 @@
-# New ports collection makefile for:	net/p5-Geo-IPfree
-# Date created:				02 April 2003
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-IPfree
-PORTVERSION=	1.121660
+PORTVERSION=	1.122880
 CATEGORIES=	net perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
