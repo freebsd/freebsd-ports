@@ -1,0 +1,42 @@
+# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
+# $FreeBSD$
+
+# This file is used to tune build time options.
+# Please refer FEATURES file distributed with the source for details.
+
+OPTIONS_DEFINE+=	XML FFR
+XML_DESC=		Prefer textproc/libxml2 to devel/jansson for JSON processing
+FFR_DESC=		Use features marked as For-Future-Releases
+
+OPTIONS_MULTI+=		FFR
+OPTIONS_MULTI_FFR=	ADSP_LISTS ALLSYMBOLS ATPS CODECOVERAGE \
+			DB_HANDLE_POOLS DEFAULT_SENDER DIFFHEADERS \
+			DKIM_REPUTATION ERLANG IDENTITY_HEADER \
+			LDAP_CACHING POSTGRES_RECONNECT_HACK \
+			RATE_LIMIT RBL REDIRECT REPLACE_RULES REPRRD \
+			REPUTATION RESIGN SENDER_MACRO SOCKETDB \
+			STATSEXT VBR
+
+ADSP_LISTS_DESC=		ADSP filtering for lists (experimental)
+ALLSYMBOLS_DESC=		Export internal symbols for test
+ATPS_DESC=			Authorized Third Party Sign check
+CODECOVERAGE_DESC=		Include coverage/profile code
+DB_HANDLE_POOLS_DESC=		Database handle pools (experimental)
+DEFAULT_SENDER_DESC=		Default sender address
+DIFFHEADERS_DESC=		Compare signed and verified headers (experimental)
+DKIM_REPUTATION_DESC=		DKIM reputation check (experimental)
+ERLANG_DESC=			Support for Erlang datasets
+IDENTITY_HEADER_DESC=		Special header to set identity
+LDAP_CACHING_DESC=		LDAP query piggybacking and caching
+POSTGRES_RECONNECT_HACK_DESC=	PostgreSQL connection error detection bug hack
+RATE_LIMIT_DESC=		DKIM based rate limiting support
+RBL_DESC=			Realtime Blacklist query support
+REDIRECT_DESC=			Redirecting failed verification to a mailbox
+REPLACE_RULES_DESC=		String substition when signing
+REPRRD_DESC=			Support for collaborative reputation that uses rrdtool (experimental)
+REPUTATION_DESC=		Reputation check (experimental)
+RESIGN_DESC=			One-step resigning
+SENDER_MACRO_DESC=		Macro to determine sender
+SOCKETDB_DESC=			Arbitrary socket data sets
+STATSEXT_DESC=			Extended stats
+VBR_DESC=			Vouch-By-Reference support
