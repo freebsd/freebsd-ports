@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xtrabackup
-# Date created:				29 Marc 2010
-# Whom:					Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL_GRP} \
 		http://downloads.skysql.com/archives/mysql-5.5/:mysql55 \
