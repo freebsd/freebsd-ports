@@ -133,6 +133,7 @@
     SUBDIR += erlyvideo
     SUBDIR += etherboot
     SUBDIR += etrace
+    SUBDIR += exabgp
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: exabgp
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable exabgp:
+#
+# exabgp_enable="YES"
+
+. /etc/rc.subr
+
+name=exabgp
+rcvar=exabgp_enable
+
+load_rc_config $name
+
+exabgp_enable=${exabgp_enable:-"NO"}
+exabgp_conf=${exabgp_conf:-"%%ETCDIR%%/exabgp.conf"}
+exabgp_logfile=${exabgp_log:-"/var/log/exabgp.log"}
+
+pidfile=/var/run/${name}/${name}.pid
+
+required_files=${exabgp_conf}
+
+command="%%PYTHON_SITELIBDIR%%/${name}/application.py"
+procname="%%PYTHON_CMD%%"
+
+start_precmd="exabgp_precmd"
+start_cmd="exabgp_start"
+extra_commands="reload"
+
+exabgp_precmd()
+{
+	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
+	touch ${exabgp_logfile}
+	chown _bgpd:_bgpd ${exabgp_logfile}
+}
+
+exabgp_start()
+{
+    	echo "Starting ${name}..."
+	rm -f ${pidfile}
+	${procname} ${command} -c %%ETCDIR%% ${exabgp_conf}
+}
+
+run_rc_command "$1"

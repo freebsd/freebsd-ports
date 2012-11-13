@@ -1,0 +1,4 @@
+Sample configurations are located in %%EXAMPLESDIR%%.
+
+Please create %%ETCDIR%%/exabgp.conf based on one of the above examples and
+add exabgp_enable="YES" to /etc/rc.conf
