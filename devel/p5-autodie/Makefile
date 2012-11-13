@@ -1,12 +1,8 @@
-# New ports collection makefile for:	autodie
-# Date created:				22 Sep, 2009
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	autodie
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
