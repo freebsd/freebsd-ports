@@ -1,4 +1,5 @@
-Library and executable for calculating dvdids as returned by Windows' 
-IDvdInfo2::GetDiscID.
+The dvdid project provides a library and executable for calculating dvdids,
+as returned by Windows' IDvdInfo2::GetDiscID() method. It is available as
+source code, which should compile on Windows and any POSIX compliant platform.
 
-WWW:	http://www.srcf.ucam.org/~cjk32/dvdid/
+WWW: http://dvdid.cjkey.org.uk/
