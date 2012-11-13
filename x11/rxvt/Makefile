@@ -46,9 +46,9 @@ MAKE_JOBS_SAFE=	yes
 
 # fails to build with new utmpx
 .if ${OSVERSION} > 900007
-CONFIGURE_ARGS=	--disable-utmp --disable-wtmp
+CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp
 .else
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp
+CONFIGURE_ARGS+=	--enable-utmp --enable-wtmp
 .endif
 
 .if ${PORT_OPTIONS:MBIG5}
