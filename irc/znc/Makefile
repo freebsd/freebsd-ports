@@ -1,16 +1,12 @@
-# New ports collection makefile for:   znc
-# Date created:        6 March 2008
-# Whom:                elvstone@gmail.com
-#
+# Created by: elvstone@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	znc
 PORTVERSION=	0.206
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	An advanced IRC bouncer
 
 LICENSE=	GPLv2
