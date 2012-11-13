@@ -1,14 +1,8 @@
-# New ports collection makefile for: 	nikto
-# Date created: 			23 September 2002
-# Whom: 				pandzilla
-#
+# Created by: pandzilla
 # $FreeBSD$
-#
-# $Tecnik: ports/security/nikto/Makefile,v 1.7 2005/12/13 16:26:20 itetcu Exp $
-#
 
 PORTNAME=	nikto
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
@@ -17,44 +11,53 @@ MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
-MAN1=		nikto.1
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	SSLEAY DOCS
+OPTIONS_DEFAULT=SSLEAY
+SSLEAY_DESC=	Use NET::SSLeay for ssl scanning
+
+NO_BUILD=	yes
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
-NO_BUILD=	yes
 
-PORTDOCS=	CHANGES.txt LICENSE.txt nikto.dtd nikto_manual.html
+MAN1=		nikto.1
 
-OPTIONS+=	SSLEAY "Use NET::SSLeay for ssl scanning" on
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.ifdef(WITH_SSLEAY)
+.if ${PORT_OPTIONS:MSSLEAY}
 RUN_DEPENDS+=	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local/bin/perl|${PERL}|" \
-		-e "s|/etc/nikto.conf|${PREFIX}/etc/nikto.conf|" ${WRKSRC}/nikto.pl
-	@${REINPLACE_CMD} -Ee "s|# (EXECDIR=)/usr/local/nikto|\1${DATADIR}|g" \
-		-e "s|# (PLUGINDIR=)/opt/nikto/plugins|\1${DATADIR}/plugins|g" \
-		-e "s|# (TEMPLATEDIR=)/opt/nikto/templates|\1${DATADIR}/templates|g" \
-		-e "s|# (DOCDIR=)/opt/nikto/docs|\1${DOCSDIR}|g" ${WRKSRC}/nikto.conf
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/bin/perl|${PERL}| ; \
+		 s|/etc/nikto.conf|${PREFIX}/etc/nikto.conf|' ${WRKSRC}/nikto.pl
+	@${REINPLACE_CMD} -Ee \
+		's|# (EXECDIR=).*/nikto|\1${DATADIR}| ; \
+		 s|# (DBDIR=).*/databases|\1${DATADIR}/databases| ; \
+		 s|# (PLUGINDIR=).*/plugins|\1${DATADIR}/plugins| ; \
+		 s|# (TEMPLATEDIR=).*/templates|\1${DATADIR}/templates| ; \
+		 s|# (DOCDIR=).*/docs|\1${DOCSDIR}|' ${WRKSRC}/nikto.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
+	${INSTALL_MAN} ${WRKSRC}/docs/nikto.1 ${PREFIX}/man/man1/nikto.1
 	${INSTALL_DATA} ${WRKSRC}/nikto.conf ${PREFIX}/etc/nikto.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/docs/nikto.1 ${PREFIX}/man/man1/
-	[ -f ${PREFIX}/etc/nikto.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/nikto.conf ${PREFIX}/etc/nikto.conf
-
-	( cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} .  ${DATADIR}/plugins )
-	( cd ${WRKSRC}/templates && ${COPYTREE_SHARE} .  ${DATADIR}/templates )
-.if !defined(NOPORTDOCS)
+.if !exists(${PREFIX}/etc/nikto.conf)
+	(cd ${PREFIX}/etc && ${CP} -p nikto.conf.sample nikto.conf)
+.endif
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/replay.pl ${DATADIR}
+.for i in databases plugins templates
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${DATADIR})
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.	for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
-.	endfor
+.for i in CHANGES.txt LICENSE.txt nikto.dtd nikto_manual.html
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
