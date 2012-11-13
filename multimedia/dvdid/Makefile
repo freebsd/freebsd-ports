@@ -1,21 +1,28 @@
-# New ports collection makefile for:	dvdid
-# Date created:		2009-09-14
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	dvdid
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0a
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.srcf.ucam.org/~cjk32/dvdid/
+MASTER_SITES=	http://dvdid.cjkey.org.uk/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Tool for calculating dvdids
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} dvdid.tag ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html/api
+	cd ${WRKSRC}/doc/html/api && ${INSTALL_DATA} * ${DOCSDIR}/html/api
+.endif
 
 .include <bsd.port.mk>
