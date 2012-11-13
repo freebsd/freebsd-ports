@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	liboauth
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0.0
 CATEGORIES=	net
-MASTER_SITES=	http://liboauth.sourceforge.net/pool/
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C library implementing the OAuth Core standard
@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 MAN3=		oauth.3
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^if test/s/ == / = /' \
-		-e '/PC_REQ=/s/ libcrypto//' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/PC_REQ=/s/ libcrypto//' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
