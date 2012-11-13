@@ -1,12 +1,7 @@
-# New ports collection makefile for:	devel/p5-B-Generate
-# Date created:				26 February 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	B-Generate
-PORTVERSION=	1.44
+PORTVERSION=	1.47
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
