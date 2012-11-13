@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121112:
+  AFFECTS: Users of devel/git
+  AUTHOR: wxs@FreeBSD.org
+
+  The git-daemon(1) process now runs as the git_daemon user. Please make
+  sure that this user has appropriate permissions to the repositories.
+
 20121109:
   AFFECTS: FreeBSD < 9.1 users of syslog-ng >= 3.3.6
   AUTHOR: cy@FreeBSD.org
