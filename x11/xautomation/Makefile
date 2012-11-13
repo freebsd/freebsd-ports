@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xautomation
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Control X from the command line for scripts
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
