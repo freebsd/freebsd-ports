@@ -134,10 +134,13 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="https://savannah.nongnu.org/bugs/?37704">
 	  <p>A buffer overflow is causing a crash or freeze of WeeChat when 
 	  decoding IRC colors in strings.</p>
+	  <p>Workaround for a non-patched version: 
+	  /set irc.network.colors_receive off</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-5854</cvename>
       <freebsdpr>ports/173513</freebsdpr>
       <url>http://weechat.org/security/</url>
       <url>https://savannah.nongnu.org/bugs/?37704</url>
@@ -145,7 +148,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-11-09</discovery>
       <entry>2012-11-10</entry>
-      <modified>2012-11-10</modified>
+      <modified>2012-11-13</modified>
     </dates>
   </vuln>
 
