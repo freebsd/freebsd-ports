@@ -16,9 +16,4 @@ lib/X11/app-defaults/XXkb
 %%DATADIR%%/su48.xpm
 %%DATADIR%%/ua15.xpm
 %%DATADIR%%/ua48.xpm
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.koi8
-%%PORTDOCS%%%%DOCSDIR%%/README.koi8
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
