@@ -90,6 +90,8 @@ lib/subtitleeditor/plugins/actions/libviewmanager.so
 lib/subtitleeditor/plugins/actions/libviewmanager.la
 lib/subtitleeditor/plugins/actions/libwaveformmanagement.so
 lib/subtitleeditor/plugins/actions/libwaveformmanagement.la
+lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.so
+lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.la
 lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.so
 lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.la
 lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.so
@@ -136,6 +138,8 @@ share/locale/it/LC_MESSAGES/subtitleeditor.mo
 share/locale/nl/LC_MESSAGES/subtitleeditor.mo
 share/locale/pl/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt/LC_MESSAGES/subtitleeditor.mo
+share/locale/lt/LC_MESSAGES/subtitleeditor.mo
+share/locale/zh_TW/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt_BR/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt_PT/LC_MESSAGES/subtitleeditor.mo
 share/locale/ru/LC_MESSAGES/subtitleeditor.mo
@@ -225,6 +229,7 @@ share/subtitleeditor/ui/dialog-open-document.ui
 share/subtitleeditor/ui/dialog-save-document.ui
 share/subtitleeditor/ui/dialog-script-properties.ui
 share/subtitleeditor/ui/subtitleeditor.ui
+share/subtitleeditor/plugins-description/subtitleformats/dcsubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/documentsnavigation.se-plugin
 share/subtitleeditor/plugins-description/actions/insertsubtitlefromkeyframe.se-plugin
 share/subtitleeditor/plugins-description/actions/sortsubtitles.se-plugin

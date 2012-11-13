@@ -1,13 +1,8 @@
-# New ports collection makefile for:	subtitleeditor
-# Date created:		08 January 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.39.0
-PORTREVISION=	2
+PORTVERSION=	0.40.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
 		CRITICAL
