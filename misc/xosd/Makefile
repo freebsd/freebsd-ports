@@ -12,7 +12,6 @@ COMMENT=	X11 on-screen-display program and library
 
 LICENSE=	GPLv2
 
-PATCH_STRIP=	-p1
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
@@ -23,6 +22,7 @@ CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
 		XMMS_PLUGINDIR=${LOCALBASE}/lib/xmms
 CONFIGURE_ARGS=	--disable-beep_media_player_plugin
+PATCH_STRIP=	-p1
 
 MAN1=		osd_cat.1 xosd-config.1
 MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
@@ -33,7 +33,7 @@ MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
 		xosd_show.3 xosd_uninit.3
 PORTDOCS=	AUTHORS ChangeLog TODO
 
-OPTIONS_DEFINE=	XMMS MSEC XFT
+OPTIONS_DEFINE=	XMMS MSEC XFT DOCS
 OPTIONS_DEFAULT=	XMMS
 XMMS_DESC=	Build and install XMMS-OSD plugin
 MSEC_DESC=	Use milliseconds timeout (breaks compatibility!)
@@ -67,7 +67,6 @@ USE_XORG+=	xft
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,' ${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS}, ; \
 		s,echo aout,echo elf,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I..\2,' \
