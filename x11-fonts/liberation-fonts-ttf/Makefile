@@ -1,12 +1,10 @@
-# New ports collection makefile for:	Liberation fonts
-# Date created:		17 May 2007
-# Whom:			Thierry Thomas <thierry@pompo.net>
+# Created by: Thierry Thomas <thierry@pompo.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	1.07.0
+PORTVERSION=	2.00.1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
@@ -14,11 +12,13 @@ MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
 
+LICENSE=	OFL
+LICENSE_NAME=	SIL Open Font License (OFL)
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	auto-accept
+
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/License.txt
 
 USE_XORG=	x11
 
