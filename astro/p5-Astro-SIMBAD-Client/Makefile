@@ -1,12 +1,8 @@
-# Ports collection makefile for:	Astro-SIMBAD-Client
-# Date created:			11 April, 2009
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-SIMBAD-Client
-PORTVERSION=	0.025
+PORTVERSION=	0.026
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
