@@ -1,36 +1,47 @@
 bin/nikto
-etc/nikto.conf
+@unexec if cmp -s %D/etc/nikto.conf %D/etc/nikto.conf.sample; then rm -f %D/etc/nikto.conf; fi
 etc/nikto.conf.sample
+@exec if [ ! -f %D/etc/nikto.conf ] ; then cp -p %D/%F %B/nikto.conf; fi
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/nikto.dtd
+%%PORTDOCS%%%%DOCSDIR%%/nikto_manual.html
+%%DATADIR%%/databases/db_404_strings
+%%DATADIR%%/databases/db_content_search
+%%DATADIR%%/databases/db_dictionary
+%%DATADIR%%/databases/db_embedded
+%%DATADIR%%/databases/db_favicon
+%%DATADIR%%/databases/db_headers
+%%DATADIR%%/databases/db_httpoptions
+%%DATADIR%%/databases/db_multiple_index
+%%DATADIR%%/databases/db_outdated
+%%DATADIR%%/databases/db_parked_strings
+%%DATADIR%%/databases/db_realms
+%%DATADIR%%/databases/db_server_msgs
+%%DATADIR%%/databases/db_subdomains
+%%DATADIR%%/databases/db_tests
+%%DATADIR%%/databases/db_variables
+%%DATADIR%%/plugins/JSON-PP.pm
 %%DATADIR%%/plugins/LW2.pm
-%%DATADIR%%/plugins/db_404_strings
-%%DATADIR%%/plugins/db_content_search
-%%DATADIR%%/plugins/db_embedded
-%%DATADIR%%/plugins/db_favicon
-%%DATADIR%%/plugins/db_headers
-%%DATADIR%%/plugins/db_httpoptions
-%%DATADIR%%/plugins/db_multiple_index
-%%DATADIR%%/plugins/db_outdated
-%%DATADIR%%/plugins/db_realms
-%%DATADIR%%/plugins/db_server_msgs
-%%DATADIR%%/plugins/db_subdomains
-%%DATADIR%%/plugins/db_tests
-%%DATADIR%%/plugins/db_variables
 %%DATADIR%%/plugins/nikto_apache_expect_xss.plugin
 %%DATADIR%%/plugins/nikto_apacheusers.plugin
 %%DATADIR%%/plugins/nikto_auth.plugin
 %%DATADIR%%/plugins/nikto_cgi.plugin
+%%DATADIR%%/plugins/nikto_clientaccesspolicy.plugin
 %%DATADIR%%/plugins/nikto_content_search.plugin
 %%DATADIR%%/plugins/nikto_cookies.plugin
 %%DATADIR%%/plugins/nikto_core.plugin
-%%DATADIR%%/plugins/nikto_core.plugin.debug
 %%DATADIR%%/plugins/nikto_dictionary_attack.plugin
 %%DATADIR%%/plugins/nikto_embedded.plugin
 %%DATADIR%%/plugins/nikto_favicon.plugin
+%%DATADIR%%/plugins/nikto_fileops.plugin
 %%DATADIR%%/plugins/nikto_headers.plugin
 %%DATADIR%%/plugins/nikto_httpoptions.plugin
 %%DATADIR%%/plugins/nikto_msgs.plugin
 %%DATADIR%%/plugins/nikto_multiple_index.plugin
 %%DATADIR%%/plugins/nikto_outdated.plugin
+%%DATADIR%%/plugins/nikto_parked.plugin
+%%DATADIR%%/plugins/nikto_paths.plugin
 %%DATADIR%%/plugins/nikto_put_del_test.plugin
 %%DATADIR%%/plugins/nikto_report_csv.plugin
 %%DATADIR%%/plugins/nikto_report_html.plugin
@@ -39,10 +50,11 @@ etc/nikto.conf.sample
 %%DATADIR%%/plugins/nikto_report_text.plugin
 %%DATADIR%%/plugins/nikto_report_xml.plugin
 %%DATADIR%%/plugins/nikto_robots.plugin
-%%DATADIR%%/plugins/nikto_single.plugin
+%%DATADIR%%/plugins/nikto_siebel.plugin
 %%DATADIR%%/plugins/nikto_ssl.plugin
 %%DATADIR%%/plugins/nikto_subdomain.plugin
 %%DATADIR%%/plugins/nikto_tests.plugin
+%%DATADIR%%/replay.pl
 %%DATADIR%%/templates/htm_close.tmpl
 %%DATADIR%%/templates/htm_end.tmpl
 %%DATADIR%%/templates/htm_host_head.tmpl
@@ -60,4 +72,6 @@ etc/nikto.conf.sample
 %%DATADIR%%/templates/xml_summary.tmpl
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/databases
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
