@@ -1,9 +1,5 @@
-# New ports collection makefile for:    iozone
-# Date created:         26 September 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	iozone
 PORTVERSION=	3.397
@@ -27,29 +23,29 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		iozone.1
 PLIST_FILES=	bin/iozone
 
-OPTIONS=	THREADS "Enable threading (uses pthreads)"	on \
-		SSH "Use ssh in distributed measurement"	on
+OPTIONS_DEFINE=	SSH THREADS
+OPTIONS_DEFAULT=SSH THREADS
 
-.include <bsd.port.pre.mk>
+SSH_DESC=	Use ssh in distributed measurement
+THREADS_DESC=	Enable threading (uses pthreads)
 
-.if defined (WITH_THREADS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTHREADS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 .else
-CFLAGS+=-DNO_THREADS
+CFLAGS+=	-DNO_THREADS
 .endif
 
-.if defined (WITH_SSH)
-post-patch::
+post-patch:
+.if ${PORT_OPTIONS:MSSH}
 	@${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' ${WRKSRC}/iozone.c
 .endif
-
-post-patch::
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/makefile
 
 do-install:
-	${STRIP_CMD} ${WRKSRC}/iozone
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
