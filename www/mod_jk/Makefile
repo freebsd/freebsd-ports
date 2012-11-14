@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.32
-PORTREVISION=	1
+PORTVERSION=	1.2.37
 PORTEPOCH?=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -21,15 +20,9 @@ COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 MAKE_JOBS_SAFE=	yes
 
 USE_APACHE?=	22+
+APACHE_VER=	2.0
 
 .include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} >= 20
-PKGNAMESUFFIX=	-ap2
-APACHE_VER=	2.0
-.else
-APACHE_VER=	1.3
-.endif
 
 WRKSRC=		${WRKDIR}/tomcat-connectors-${PORTVERSION}-src/native
 
