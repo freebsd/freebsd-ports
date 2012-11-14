@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.13.2
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
-EM_VERSION=	1.4.5
+EM_VERSION=	1.4.6
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=yes
