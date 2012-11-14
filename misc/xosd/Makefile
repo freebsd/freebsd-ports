@@ -74,6 +74,9 @@ post-patch:
 		${WRKSRC}/src/xmms_plugin/Makefile.in
 	@${REINPLACE_CMD} -e 's,specified time,& (${DELAY_UNITS}),' \
 		${WRKSRC}/src/osd_cat.c
+# Unbreak against Clang
+	@${REINPLACE_CMD} -e '52s,^,void xosd_xypos(xosd *osd);,' \
+		${WRKSRC}/src/libxosd/xosd.c
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
