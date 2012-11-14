@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.2.99.20121106
+PORTVERSION=	2.2.99.20121114
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 PKGNAMESUFFIX=	-devel
@@ -13,7 +13,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	02876f6378
+FSL_CHKIN=	76032fe87d
 
 NO_BUILD=	yes
 MANCOMPRESSED=	yes
@@ -26,15 +26,16 @@ ZSH_DESC=	Install zsh completion
 
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
+		share/poudriere/bulk.sh \
 		share/poudriere/clean.sh \
 		share/poudriere/common.sh \
-		share/poudriere/test_ports.sh \
-		share/poudriere/ports.sh \
-		share/poudriere/jail.sh \
-		share/poudriere/bulk.sh \
 		share/poudriere/cron.sh \
-		share/poudriere/queue.sh \
+		share/poudriere/distclean.sh \
+		share/poudriere/jail.sh \
 		share/poudriere/options.sh \
+		share/poudriere/ports.sh \
+		share/poudriere/queue.sh \
+		share/poudriere/test_ports.sh
 
 PLIST_DIRS=	share/poudriere
 
