@@ -43,7 +43,7 @@ post-install:
 	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/dns/*
 
 .if ${PORT_OPTIONS:MPYCRYPTO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}crypto>0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 .endif
 
 .include <bsd.port.mk>
