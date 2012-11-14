@@ -7,6 +7,7 @@
 %%XPI_XPIDIR%%/chrome/content/flst/lasttab.js
 %%XPI_XPIDIR%%/chrome/content/links/contentLinks.js
 %%XPI_XPIDIR%%/chrome/content/links/links.xul
+%%XPI_XPIDIR%%/chrome/content/links/newTab.xul
 %%XPI_XPIDIR%%/chrome/content/links/setup.js
 %%XPI_XPIDIR%%/chrome/content/links/text_link.css
 %%XPI_XPIDIR%%/chrome/content/links/text_link.xul
@@ -18,9 +19,11 @@
 %%XPI_XPIDIR%%/chrome/content/minit/tablib.js
 %%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay40.css
 %%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay_base.css
+%%XPI_XPIDIR%%/chrome/content/overlay/tabContextMenu.xul
 %%XPI_XPIDIR%%/chrome/content/places/bookmarkProperties.xul
 %%XPI_XPIDIR%%/chrome/content/places/places.js
 %%XPI_XPIDIR%%/chrome/content/places/places.xul
+%%XPI_XPIDIR%%/chrome/content/pref/incontentPreferences.xul
 %%XPI_XPIDIR%%/chrome/content/pref/overlaySanitizeUI.js
 %%XPI_XPIDIR%%/chrome/content/pref/overlaySanitizeUI.xul
 %%XPI_XPIDIR%%/chrome/content/pref/pref-appearance.css
