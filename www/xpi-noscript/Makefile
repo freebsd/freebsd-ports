@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-noscript
-# Date created:		28 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	noscript
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6
 DISTVERSIONSUFFIX=	-sm+fx+fn
 CATEGORIES=	www
 
