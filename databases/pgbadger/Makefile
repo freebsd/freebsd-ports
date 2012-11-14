@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pgbadger
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	databases
 MASTER_SITES=	http://cloud.github.com/downloads/dalibo/pgbadger/
+DISTFILES=	${DISTNAME}-1${EXTRACT_SUFX}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Very comptent log analyzer for PostgreSQL
