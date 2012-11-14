@@ -2,7 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.0.8
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -21,9 +21,10 @@ NO_WRKSUBDIR=	yes
 
 LANGDIR=	${WWWDIR}/template/de
 
-#post-patch:
-#	${REINPLACE_CMD} -i '' -e 's/4.0.7/4.0.8/' \
-#		${WRKDIR}/de/default/global/gzversion.html.tmpl
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's/4.0.8/4.0.9/' \
+		${WRKDIR}/de/default/global/gzversion.html.tmpl
+	@${FIND} ${WRKDIR}/de/default/ -type f \( -name \*.orig -o -name \*.bak \) -delete
 
 do-install:
 	@-${MKDIR} ${LANGDIR}
