@@ -1,12 +1,7 @@
-# New ports collection makefile for:	www/p5-pQuery
-# Date created:				25 November 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pQuery
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
