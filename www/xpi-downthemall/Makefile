@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-downthemall
-# Date created:		19 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	downthemall
-PORTVERSION=	2.0.13
+PORTVERSION=	2.0.15
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
