@@ -1,12 +1,7 @@
-# New ports collection makefile for:	phonon-vlc
-# Date created:		2010-07-25
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	phonon
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
