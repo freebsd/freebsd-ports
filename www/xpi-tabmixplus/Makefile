@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-tabmixplus
-# Date created:		29 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tabmixplus
-DISTVERSION=	0.4.0.2
+DISTVERSION=	0.4.0.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
