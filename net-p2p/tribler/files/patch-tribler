@@ -6,7 +6,7 @@
 +# Startup script for %%OPSYS%%
  
 -_TRIBLERPATH="/usr/share/tribler"
-+_TRIBLERPATH="%%PYTHON_SITELIBDIR%%"
++_TRIBLERPATH="%%PYTHON_SITELIBDIR%%/tribler"
  
  export PYTHONPATH="$PYTHONPATH":$_TRIBLERPATH
  
