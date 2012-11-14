@@ -1,9 +1,5 @@
-# Ports collection makefile for:	uarduno
-# Date created:				11-19-2010
-# Whom:					'Big Bad Bob' Frazier <bobf@mrp3.com>
-#
+# Created by: 'Big Bad Bob' Frazier <bobf@mrp3.com>
 # $FreeBSD$
-#
 
 PORTNAME=	uarduno
 PORTVERSION=	1.02
@@ -17,7 +13,7 @@ NO_PACKAGE=	You must (re)build this port with your kernel source
 
 # need to enforce installation into kernel module directory
 MAKE_ENV+=	KMODDIR=${KMODDIR}
-LOCALBASE=	${KMODDIR}
+PREFIX=		${KMODDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -29,7 +25,8 @@ NO_MTREE= yes
 # some test targets need a predictable source directory
 WRKSRC=		${WRKDIR}/uarduno
 
-PLIST_FILES=	uarduno.ko
+PLIST_FILES=	uarduno.ko \
+		"@unexec kldxref ${KMODDIR}"
 MAKE_JOBS_SAFE=	yes
 
 # no license required
