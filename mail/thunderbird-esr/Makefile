@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	10.0.10
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
-EM_VERSION=	1.4.5
+EM_VERSION=	1.4.3
 
 USE_AUTOTOOLS=	autoconf213:env
 LATEST_LINK=	thunderbird-esr
@@ -123,6 +124,7 @@ post-patch:
 		-e '/^XPI_MODULE_VERS/s/= .*/= ${EM_VERSION}/' \
 		${WRKSRC}/mailnews/extensions/enigmail/Makefile.in
 	@${REINPLACE_CMD} -e '/em:version/s,>[^<]*<,>${EM_VERSION}<,' \
+		-e '/em:minVersion/s/1[0-9].0/10.0/' \
 		-e '/em:maxVersion/s/pre//' \
 		${WRKSRC}/mailnews/extensions/enigmail/package/install.rdf
 .endif
