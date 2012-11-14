@@ -1,12 +1,7 @@
-# New ports collection makefile for:	textproc/p5-Text-Format
-# Date created:				30 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Format
-PORTVERSION=	0.53
+PORTVERSION=	0.58
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
