@@ -28,6 +28,9 @@ USE_PERL5=	yes
 
 BINMODE=	700
 
+DEPRECATED=	Note that when Bugzilla 4.4 is released, the Bugzilla 3.6.x \
+		series will reach end of life
+
 SUB_FILES=	pkg-message
 
 DATA_DIRS_LIST=	images js skins
