@@ -1,66 +1,82 @@
-# New ports collection makefile for:	gtk-youtube-viewer
-# Date created:		13 August 2012
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	2.0.5
-CATEGORIES=	multimedia
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	trizen
+PORTVERSION=	3.0.3
+CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+BUILD_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		mplayer:${PORTSDIR}/multimedia/mplayer
+TEST_DEPENDS=	p5-Test-More-UTF8>=0:${PORTSDIR}/devel/p5-Test-More-UTF8
 
-OPTIONS_DEFINE=	GCAP
-GCAP_DESC=	GCAP support
+CONFLICTS=	youtube-viewer-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+USE_GITHUB=	yes
+GH_ACCOUNT=	trizen
+GH_PROJECT=	youtube-viewer
+GH_COMMIT=	c4496ed
 
-USE_PERL5_RUN=	yes
-NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/WWW-YoutubeViewer
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png \
-		share/applications/${PORTNAME}.desktop
-PLIST_DIRSTRY=	share/applications
+PERL_MODBUILD=	yes
 
-PORTDATA=	*
+MAN1=		youtube-viewer.1
+MAN3=		WWW::YoutubeViewer.3
+
+PORTDOCS=	Changes README
+
+OPTIONS_DEFINE=	GTK2 GCAP
+OPTIONS_DEFAULT=GTK2 GCAP
+GCAP_DESC=	Enable YouTube captions support
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
+BUILD_DEPENDS+=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS+=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+CONFIGURE_ARGS+=--gtk-youtube-viewer
+PLIST_SUB+=	GTK2=""
+.else
+PLIST_SUB+=	GTK2="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MGCAP}
 RUN_DEPENDS+=	${LOCALBASE}/bin/gcap:${PORTSDIR}/multimedia/gcap
 .endif
 
 post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" gtk-youtube-viewer.pl \
-		youtube-viewer && ${REINPLACE_CMD} -e "s|/usr/share/|${PREFIX}/share/|g" gtk-youtube-viewer)
+	cd ${WRKSRC} && ${REINPLACE_CMD} -n '1,/create_build_script()/p' \
+		Build.PL
+	cd ${WRKSRC}/bin && ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
+		gtk-youtube-viewer youtube-viewer
 
-do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/youtube-viewer ${DATADIR}
-
-# Data
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "icons lib" ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pl ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.glade ${DATADIR}
-
-# Pixmaps and Desktop
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+post-install:
+.if ${PORT_OPTIONS:MGTK2}
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer.desktop ${PREFIX}/share/applications
+	${MKDIR} ${DATADIR}/icons
+	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer.glade ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer-icons/* ${DATADIR}/icons
+	${INSTALL_DATA} ${WRKSRC}/share/icons/gtk-youtube-viewer.png ${PREFIX}/share/pixmaps
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+
+regression-test: build
+	cd ${WRKSRC} && ${PERL} ./Build test
 
 .include <bsd.port.mk>
