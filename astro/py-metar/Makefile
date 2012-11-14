@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-metar
-# Date created:		26 July 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	metar
 PORTVERSION=	0.17
@@ -18,6 +14,7 @@ COMMENT=	Python module that provides access to NOAA METAR weather reports
 
 LICENSE=	GPLv2
 
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
 PYDISTUTILS_PKGNAME=	${REALPORTNAME}
