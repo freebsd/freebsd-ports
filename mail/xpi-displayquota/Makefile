@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-displayquota
-# Date created:			10 May 2006
-# Whom:				Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	displayquota
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 DISTVERSIONSUFFIX=	-tb
 CATEGORIES=	mail
 
