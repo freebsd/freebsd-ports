@@ -42,7 +42,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-3.7.jar
+%%T%%/lib/ecj-3.7.2.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -466,9 +466,9 @@
 %%T%%/webapps/examples/servlets/reqinfo.html
 %%T%%/webapps/examples/servlets/reqparams.html
 %%T%%/webapps/examples/servlets/sessions.html
-%%T%%/webapps/host-manager/401.jsp
-%%T%%/webapps/host-manager/403.jsp
 %%T%%/webapps/host-manager/META-INF/context.xml
+%%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
+%%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
 %%T%%/webapps/host-manager/WEB-INF/web.xml
 %%T%%/webapps/host-manager/images/add.gif
 %%T%%/webapps/host-manager/images/asf-logo.gif
@@ -480,9 +480,9 @@
 %%T%%/webapps/host-manager/images/update.gif
 %%T%%/webapps/host-manager/images/void.gif
 %%T%%/webapps/host-manager/manager.xml
-%%T%%/webapps/manager/401.jsp
-%%T%%/webapps/manager/403.jsp
 %%T%%/webapps/manager/META-INF/context.xml
+%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
+%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
 %%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%T%%/webapps/manager/WEB-INF/web.xml
@@ -508,6 +508,7 @@
 @dirrm %%T%%/webapps/manager/META-INF
 @dirrm %%T%%/webapps/manager
 @dirrm %%T%%/webapps/host-manager/images
+@dirrm %%T%%/webapps/host-manager/WEB-INF/jsp
 @dirrm %%T%%/webapps/host-manager/WEB-INF
 @dirrm %%T%%/webapps/host-manager/META-INF
 @dirrm %%T%%/webapps/host-manager

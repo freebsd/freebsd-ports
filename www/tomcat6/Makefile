@@ -1,12 +1,8 @@
-# New ports collection makefile for:	apache-tomcat
-# Date created:		14 Feb 2007
-# Whom:			Nemo Liu <nemoliu@FreeBSD.org>
-#
+# Created by: Nemo Liu <nemoliu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomcat
-PORTVERSION=	6.0.35
+PORTVERSION=	6.0.36
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-6/v${PORTVERSION}/bin
