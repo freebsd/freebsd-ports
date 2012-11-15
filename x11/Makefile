@@ -248,6 +248,7 @@
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += rxvt-unicode
+    SUBDIR += sbxkb
     SUBDIR += scripts
     SUBDIR += scrnsaverproto
     SUBDIR += sessreg
