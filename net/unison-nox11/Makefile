@@ -1,11 +1,7 @@
-# New ports collection makefile for:	net/unison-nox11
-# Date created:				2008-09-05
-# Whom:					bsam
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
-#
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	bsam@FreeBSD.org
