@@ -1,8 +1,8 @@
-# Created by:                       Ulf Lilleengen
+# Created by: Ulf Lilleengen
 # $FreeBSD$
 
 PORTNAME=	paramiko
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
