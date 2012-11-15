@@ -213,6 +213,7 @@ NAS_DESC?=		Network Audio System
 NETCDF_DESC?=		NetCDF data format
 NETPBM_DESC?=		Netpbm graphics toolkit
 NLS_DESC?=		Native Language Support
+NMAP_DESC?=		NMAP support
 NNTP_DESC?=		NNTP (News) support
 NOTIFY_DESC?=		Startup notification
 NTLM_DESC?=		NTLM authentication
