@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-greasemonkey
-# Date created:		18 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	greasemonkey
-PORTVERSION=	0.9.20
+PORTVERSION=	1.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
