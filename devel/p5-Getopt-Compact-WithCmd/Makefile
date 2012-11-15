@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Getopt-Compact-WithCmd
-# Date created:				27 Feb 2012
-# Whom:	      				Kan Sasaki <sasaki@fcc.ad.jp>
-#
+# Created by: Kan Sasaki <sasaki@fcc.ad.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	Getopt-Compact-WithCmd
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +15,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table
 RUN_DEPENDS=	p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table
-
 TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
