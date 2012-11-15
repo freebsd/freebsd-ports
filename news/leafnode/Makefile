@@ -22,6 +22,8 @@ MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 
+CONFLICTS=	newsx-1* s-news-0*
+
 .include <bsd.port.pre.mk>
 
 .if exists(/var/spool/news/leaf.node) && !defined(PACKAGE_BUILDING)
