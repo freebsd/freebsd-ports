@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.lost.org.uk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple news server for hosts with one or two users
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
-CONFLICTS=	nntp-[0-9]*
+CONFLICTS=	leafnode-[1-9]* nntp-[0-9]*
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-confdir=${PREFIX}/etc/s-news \
