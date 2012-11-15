@@ -1,7 +1,4 @@
-# New ports collection makefile for:	eigen
-# Date created:				2008-01-18
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	eigen
@@ -12,6 +9,9 @@ MASTER_SITES=	http://download.tuxfamily.org/eigen/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
+
+DEPRECATED=	Development for 1.x series has long ceased, use math/eigen3
+EXPIRATION_DATE=2012-12-15
 
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	..
