@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.63rc6
+DISTVERSION=	2.64rc1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
