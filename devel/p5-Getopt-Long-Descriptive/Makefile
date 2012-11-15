@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Getopt-Long-Descriptive
-# Date created:				28 Jul 2008
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Getopt-Long-Descriptive
-PORTVERSION=	0.092
+PORTVERSION=	0.093
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
