@@ -23,6 +23,8 @@ MAN1=		plink.1 pscp.1 psftp.1 puttygen.1
 OPTIONS=	GSSAPI "Enable GSSAPI support" on \
 		GTK    "Enable GTK+ 2 GUI (recommended)" on
 
+CONFLICTS=	pssh-[0-9]*
+
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6
