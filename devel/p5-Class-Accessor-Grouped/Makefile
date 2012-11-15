@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Class-Accessor-Grouped
-# Date created:				Jun 18, 2007
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Accessor-Grouped
-PORTVERSION=	0.10005
+PORTVERSION=	0.10007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
@@ -18,8 +14,8 @@ COMMENT=	Lets you build groups of accessors
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Class-XSAccessor>=1.13:${PORTSDIR}/devel/p5-Class-XSAccessor \
+BUILD_DEPENDS=	p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Class-XSAccessor>=1.15:${PORTSDIR}/devel/p5-Class-XSAccessor \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
