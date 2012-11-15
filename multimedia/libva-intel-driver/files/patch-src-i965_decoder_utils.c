@@ -1,9 +1,9 @@
---- src/i965_decoder_utils.c.orig	2012-08-14 17:08:16.000000000 +0200
-+++ src/i965_decoder_utils.c	2012-10-10 17:25:22.358503055 +0200
-@@ -24,7 +24,11 @@
- #include <assert.h>
- #include <stddef.h>
- #include <string.h>
+--- src/i965_decoder_utils.c.orig	2012-11-09 02:44:47.000000000 +0100
++++ src/i965_decoder_utils.c	2012-11-14 10:45:13.909019239 +0100
+@@ -22,7 +22,11 @@
+  */
+ 
+ #include "sysdeps.h"
 +#ifdef __FreeBSD__
 +#include <stdlib.h>
 +#else
