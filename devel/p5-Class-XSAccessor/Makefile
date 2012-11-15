@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Class-XSAccessor
-# Date created:		                12 Nov 2008
-# Whom:			                Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-XSAccessor
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
