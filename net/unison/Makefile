@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unison
-PORTVERSION=	2.40.63
-PORTREVISION?=	3
+PORTVERSION=	2.40.102
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
