@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	di
-PORTVERSION=	4.32
+PORTVERSION=	4.33
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/
 
@@ -13,6 +13,8 @@ MAKE_ENV+=	prefix="${PREFIX}"
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		di.1
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
