@@ -61,6 +61,9 @@
 %%PYTHON_SITELIBDIR%%/paramiko/primes.py
 %%PYTHON_SITELIBDIR%%/paramiko/primes.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/primes.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/proxy.py
+%%PYTHON_SITELIBDIR%%/paramiko/proxy.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/proxy.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/resource.py
 %%PYTHON_SITELIBDIR%%/paramiko/resource.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/resource.pyo
