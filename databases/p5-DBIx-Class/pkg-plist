@@ -83,7 +83,6 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource.pm
-%%SITE_PERL%%/DBIx/Class/ResultSource/RowParser.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/Table.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/View.pm
 %%SITE_PERL%%/DBIx/Class/ResultSourceHandle.pm
