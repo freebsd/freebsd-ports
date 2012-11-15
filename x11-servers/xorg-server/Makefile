@@ -67,7 +67,7 @@ MAN4=		exa.4 \
 		fbdevhw.4
 MAN5=		xorg.conf.5
 
-.if (WITH_NEW_XORG)
+.if defined(WITH_NEW_XORG)
 MAN5+=		xorg.conf.d.5
 .endif
 .else
