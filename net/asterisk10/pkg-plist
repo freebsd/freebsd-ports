@@ -550,6 +550,7 @@ lib/asterisk/modules/cel_sqlite3_custom.so
 %%WITH_FREETDS%%lib/asterisk/modules/cel_tds.so
 lib/asterisk/modules/chan_agent.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
+%%WITH_H323%%lib/asterisk/modules/chan_h323.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
