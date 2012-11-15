@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-colorfultabs
-# Date created:		29 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	colorfultabs
-PORTVERSION=	11.2
+PORTVERSION=	16.4
 DISTVERSIONSUFFIX=	-fx+sm
 PORTEPOCH=	1
 CATEGORIES=	www

@@ -1,3 +1,5 @@
+%%XPI_XPIDIR%%/chrome/.DS_Store
+%%XPI_XPIDIR%%/chrome/content/.DS_Store
 %%XPI_XPIDIR%%/chrome/content/bak.png
 %%XPI_XPIDIR%%/chrome/content/bkg.png
 %%XPI_XPIDIR%%/chrome/content/border.png
@@ -16,6 +18,7 @@
 %%XPI_XPIDIR%%/chrome/skin/clrtabs-seamonkey.css
 %%XPI_XPIDIR%%/chrome/skin/clrtabs.css
 %%XPI_XPIDIR%%/chrome/skin/options.css
+%%XPI_XPIDIR%%/chrome/skin/prefs.css
 %%XPI_XPIDIR%%/chrome/skin/seamonkey-bg.png
 %%XPI_XPIDIR%%/chrome/skin/seamonkey.png
 %%XPI_XPIDIR%%/chrome/skin/tab-border-image-pinned-hover6.png
