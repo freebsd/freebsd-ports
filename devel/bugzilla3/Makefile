@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.11
+PORTVERSION=	3.6.12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -27,6 +27,9 @@ LATEST_LINK=	bugzilla3
 USE_PERL5=	yes
 
 BINMODE=	700
+
+DEPRECATED=	Note that when Bugzilla 4.4 is released, the Bugzilla 3.6.x \
+		series will reach end of life
 
 SUB_FILES=	pkg-message
 
