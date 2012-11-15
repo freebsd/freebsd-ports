@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pear-Net_DNSBL
-# Date created:			  02 December 2004
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	Net_DNSBL
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,11 +11,11 @@ COMMENT=	PEAR DNSBL Checker
 BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite \
 		${PEARDIR}/Net/CheckIP.php:${PORTSDIR}/net/pear-Net_CheckIP \
 		${PEARDIR}/Net/DNS/RR/A.php:${PORTSDIR}/dns/pear-Net_DNS \
-		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
+		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
 RUN_DEPENDS:=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite \
 		${PEARDIR}/Net/CheckIP.php:${PORTSDIR}/net/pear-Net_CheckIP \
 		${PEARDIR}/Net/DNS/RR/A.php:${PORTSDIR}/dns/pear-Net_DNS \
-		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
+		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
 
 USE_PHP=	yes
 
