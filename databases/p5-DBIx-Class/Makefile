@@ -1,21 +1,16 @@
-# New ports collection makefile for:	DBIx-Class
-# Date created:		14 Aug 2005
-# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08198
+PORTVERSION=	0.08204
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:FREW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10007:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0009:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Method-Modifiers>=1.06:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
