@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	10.10.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -45,21 +46,21 @@ MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-1.8*
 
-OPTIONS_DEFINE= VORBIS PGSQL MYSQL RADIUS SNMP H323 FREETDS JABBER SQLITE GSM \
+OPTIONS_DEFINE=	VORBIS PGSQL MYSQL RADIUS SNMP H323 FREETDS JABBER SQLITE GSM \
 		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP ODBC OOH323
-OPTIONS_DEFAULT= VORBIS ODBC UNIXODBC PGSQL RADIUS SNMP H323 FREETDS JABBER GSM \
+OPTIONS_DEFAULT=	VORBIS ODBC UNIXODBC PGSQL RADIUS SNMP H323 FREETDS JABBER GSM \
 		SQLITE CURL
 
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
-OPTIONS_DEFINE_i386= DAHDI
-OPTIONS_DEFINE_amd64= DAHDI
-OPTIONS_DEFINE_sparc64= DAHDI
+OPTIONS_DEFINE_i386=	DAHDI
+OPTIONS_DEFINE_amd64=	DAHDI
+OPTIONS_DEFINE_sparc64=	DAHDI
 
-OPTIONS_DEFAULT_i386= DAHDI
-OPTIONS_DEFAULT_amd64= DAHDI
-OPTIONS_DEFAULT_sparc64= DAHDI
+OPTIONS_DEFAULT_i386=	DAHDI
+OPTIONS_DEFAULT_amd64=	DAHDI
+OPTIONS_DEFAULT_sparc64=	DAHDI
 
 EXCHANGE_DESC?=	Exchange calendar support
 NEWG711_DESC?=	New G711 Codec
@@ -281,12 +282,15 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-configure:
-.if !empty(PORT_OPTIONS:MMYSQL) || !empty(PORT_OPTIONS:MNEWG711) || !empty(PORT_OPTIONS:MOOH323)
+.if !empty(PORT_OPTIONS:MMYSQL) || !empty(PORT_OPTIONS:MNEWG711) || !empty(PORT_OPTIONS:MOOH323) || !empty(PORT_OPTIONS:MH323)
 	@cd ${WRKSRC} && make menuselect.makeopts
 .if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable cdr_mysql menuselect.makeopts
+.endif
+.if ${PORT_OPTIONS:MH323}
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_h323 menuselect.makeopts
 .endif
 .if ${PORT_OPTIONS:MOOH323}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_ooh323 menuselect.makeopts
