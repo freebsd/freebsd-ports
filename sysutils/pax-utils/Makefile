@@ -1,16 +1,12 @@
-# New ports collection makefile for:	pax-utils
-# Date created:		20 July 2006
-# Whom:			Timothy Redaelli
-#
+# Created by: Timothy Redaelli
 # $FreeBSD$
-#
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://dev.gentoo.org/~vapier/dist/ \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,sbz,}
+		LOCAL/sbz
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	sbz@FreeBSD.org
