@@ -1,12 +1,8 @@
-# New ports collection makefile for:	BSD-stat
-# Date created:		17 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	BSD-stat
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
