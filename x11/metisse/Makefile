@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Metisse
-# Date created:				31 May 2007
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	metisse
 PORTVERSION=	0.4.1
@@ -11,14 +7,14 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	An innovative X-based window system
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Innovative X-based window system
 
 LICENSE=	GPLv3
 
 CONFLICTS=	fvwm-1.* fvwm-2.5.*
 
-LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo \
+LIB_DEPENDS=	Nucleo:${PORTSDIR}/x11-toolkits/nucleo \
 		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
@@ -34,59 +30,59 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
 
-OPTIONS=	MMX	"Enable MMX optimizations"		on \
-		GLX	"Enable GLX extension"			on \
-		GLX_X86	"Build GLX with x86 optimizations"	on \
-		ATSPI	"Enable widget tracking support"	off \
-		STROKE	"Enable support for mouse gestures"	off \
-		RPLAY	"Enable RPlay support in FvwmEvent"	off \
-		BIDI	"Enable bi-directional text support"	off \
-		GLIB	"Use GLib 2.x for module integration"	off \
-		GTK2	"Use GDK-PixBuf-2.0 for image loading"	off \
-		GCONF	"Enable GConf/Glade configuration UI"	off \
-		GTK1	"Enable legacy GTK+ 1.2.x support"	off \
-		IMLIB	"Enable Imlib support in FvwmGtk"	off \
-		GNOME	"Enable legacy GNOME 1.4 support"	off
+OPTIONS_DEFINE=	MMX GLX GLX_X86 ATSPI STROKE RPLAY FRIBIDI GLIB GTK2 GCONF \
+		GTK1 IMLIB GNOME
+
+GLX_X86_DESC=	GLX with x86 optimizations
+ATSPI_DESC=	Widget tracking support
+RPLAY_DESC=	Enable RPlay support in FvwmEvent
+GLIB_DESC=	Use GLib 2.x for module integration
+GTK2_DESC=	Use GDK-PixBuf-2.0 for image loading
+GTK1_DESC=	Legacy GTK+ 1.2.x support
+IMLIB_DESC=	Imlib support in FvwmGtk
+GNOME_DESC=	Legacy GNOME 1.4 support
+
+OPTIONS_DEFAULT=	MMX GLX GLX_X86
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_CPU:Mmmx} && !defined(WITHOUT_MMX)
+.if ${MACHINE_CPU:Mmmx} && ${PORT_OPTIONS:MMMX}
 CONFIGURE_ARGS+=	--enable-mmx
 .endif
 
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MGLX}
 CONFIGURE_ARGS+=	--enable-glx
 .endif
 
-.if ${ARCH} == "i386" && !defined(WITHOUT_GLX_X86)
+.if ${ARCH} == "i386" && ${PORT_OPTIONS:MGLX_X86}
 CONFIGURE_ARGS+=	--enable-glx-x86
 .endif
 
-.if defined(WITH_ATSPI)
+.if ${PORT_OPTIONS:MATSPI}
 USE_GNOME+=	atspi
 .endif
 
-.if defined(WITH_STROKE)
-LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
+.if ${PORT_OPTIONS:MSTROKE}
+LIB_DEPENDS+=	stroke:${PORTSDIR}/devel/libstroke
 .endif
 
-.if defined(WITH_RPLAY)
-LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
+.if ${PORT_OPTIONS:MRPLAY}
+LIB_DEPENDS+=	rplay:${PORTSDIR}/audio/rplay
 .endif
 
-.if defined(WITH_BIDI)
-LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
+.if ${PORT_OPTIONS:MFRIBIDI}
+LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
 .endif
 
-.if ${HAVE_GNOME:Mglib20} || defined(WITH_GLIB)
+.if ${HAVE_GNOME:Mglib20} || ${PORT_OPTIONS:MGLIB}
 USE_GNOME+=	glib20
 .endif
 
-.if ${HAVE_GNOME:Mgtk20} || defined(WITH_GTK2)
+.if ${HAVE_GNOME:Mgtk20} || ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 .endif
 
-.if ${HAVE_GNOME:Mgconf2} && ${HAVE_GNOME:Mlibglade2} || defined(WITH_GCONF)
+.if ${HAVE_GNOME:Mgconf2} && ${HAVE_GNOME:Mlibglade2} || ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2 libglade2
 PLIST_SUB+=	GCONF=""
 .else
@@ -94,15 +90,15 @@ _NOGLADEDIR=	yes
 PLIST_SUB+=	GCONF="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mgtk12} || defined(WITH_GTK1)
+.if ${HAVE_GNOME:Mgtk12} || ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=	gtk12
 .endif
 
-.if ${HAVE_GNOME:Mimlib} || defined(WITH_IMLIB)
+.if ${HAVE_GNOME:Mimlib} || ${PORT_OPTIONS:MIMLIB}
 USE_GNOME+=	imlib
 .endif
 
-.if ${HAVE_GNOME:Mgnomelibs} || defined(WITH_GNOME)
+.if ${HAVE_GNOME:Mgnomelibs} || ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gnomelibs
 .endif
 
