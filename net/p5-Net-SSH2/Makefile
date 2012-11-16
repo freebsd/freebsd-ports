@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-SSH2
-# Date created:		2007-03-01
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SSH2
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
