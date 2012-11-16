@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tenshi
-# Date created:				21 Jul 2004
-# Whom:					Oliver Eikemeier
-#
+# Created by: Oliver Eikemeier
 # $FreeBSD$
-#
 
 PORTNAME=		tenshi
-PORTVERSION=		0.12
+PORTVERSION=		0.14
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
