@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-CSS-DOM
-# Date created:		2008-11-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CSS-DOM
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CSS
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Document Object Model for Cascading Style Sheets
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Clone>=0.09:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS:=	${RUN_DEPENDS}
@@ -43,10 +42,4 @@ MAN3=		CSS::DOM.3 \
 		CSS::DOM::Value::List.3 \
 		CSS::DOM::Value::Primitive.3 \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500807
-RUN_DEPENDS+=	p5-Encode>=2.1:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
