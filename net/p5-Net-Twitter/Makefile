@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Twitter
-# Date created:		2007-08-03
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.18003
+PORTVERSION=	3.18004
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
