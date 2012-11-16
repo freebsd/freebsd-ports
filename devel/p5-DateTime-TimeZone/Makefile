@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-DateTime-TimeZone
-# Date created:	   4 mai 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	1.50
+PORTVERSION=	1.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
