@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.10
-PORTREVISION=	1
+PORTVERSION=	3.6.12
 CATEGORIES=	russian
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-ru/bugzilla-${PORTVERSION:R}-ru/${PORTVERSION}
-DISTNAME=	bugzilla-${PORTVERSION}-ru-20120809
+DISTNAME=	bugzilla-${PORTVERSION}-ru-20121115
 
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
@@ -18,12 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 .include "${.CURDIR}/../../devel/bugzilla3/Makefile.common"
 
 LATEST_LINK=	${PKGNAMEPREFIX}bugzilla3
-
-post-patch:
-	${REINPLACE_CMD} -i '' -e '/abbrev/d' \
-		${WRKSRC}/template/ru-RU/default/filterexceptions.pl
-	${REINPLACE_CMD} -i '' -e 's/column.title -%/column.title FILTER html -%/' \
-		${WRKSRC}/template/ru-RU/default/list/table.html.tmpl
 
 do-install:
 	${MKDIR} ${WWWDIR}
