@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mucommander
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.0
 CATEGORIES=	x11-fm java
 MASTER_SITES=	http://www.mucommander.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
