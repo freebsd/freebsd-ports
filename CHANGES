@@ -50,13 +50,13 @@ AUTHOR: gahr@FreeBSD.org
 
     GH_ACCOUNT  - account name of the GitHub user hosting the project
                   default: not set, mandatory
-   
+
     GH_PROJECT  - name of the project on GitHub
                   default: ${PORTNAME}
-   
+
     GH_TAGNAME  - name of the tag to download (master, 2.0.1, ...)
                   default: ${DISTVERSION}
-   
+
     GH_COMMIT   - first 7 digits of the commit that generated GH_TAGNAME
                   (man git-describe(1))
                   default: not set, mandatory

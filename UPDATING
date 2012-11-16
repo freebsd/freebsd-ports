@@ -52,7 +52,8 @@ you update your ports collection, before attempting any port upgrades.
 
   If you are using binary packages with pkgng, not ports, do this instead of
   "perl-after-upgrade":
-  # pkg install -fRx perl 
+
+	# pkg install -fRx perl
 
 20121102:
   AFFECTS: users of shells/bash-completion
@@ -251,7 +252,7 @@ you update your ports collection, before attempting any port upgrades.
   may be installed at the same time, you should update your port origins
   first since many ports that depend on clanlib will not work with the
   new version.
- 
+
   Update your port origins as follows:
 
   # portmaster -o devel/clanlib1 devel/clanlib
@@ -427,7 +428,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20120820:
   AFFECTS: users of ports-mgmt/portupgrade-devel
-  AUTHOR:  bdrewery@FreeBSD.org
+  AUTHOR: bdrewery@FreeBSD.org
 
   Due to a bug introduced in 20120601, portupgrade is unable to
   upgrade itself on FreeBSD 7.x. This has been fixed in 20120820.
@@ -437,7 +438,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20120817:
   AFFECTS: users of games/unnethack
-  AUTHOR:  knu@FreeBSD.org
+  AUTHOR: knu@FreeBSD.org
 
   The place for variable files has changed from
   $PREFIX/share/unnethack to $PREFIX/var/games/unnethack.  To keep
@@ -455,10 +456,10 @@ you update your ports collection, before attempting any port upgrades.
 
 20120816:
   AFFECTS: users of sysutils/cfengine*
-  AUTHOR:  gjb@FreeBSD.org
+  AUTHOR: gjb@FreeBSD.org
 
   The sysutils/cfengine* ports have been renamed as follows:
- 
+
   o sysutils/cfengine         -> sysutils/cfengine22
   o sysutils/cfengine3-legacy -> sysutils/cfengine32
   o sysutils/cfengine3        -> sysutils/cfengine33
@@ -783,7 +784,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20120618:
   AFFECTS: users of databases/db5
-  AUTHOR:  mandree@FreeBSD.org
+  AUTHOR: mandree@FreeBSD.org
 
   The databases/db5 port has been upgraded to BerkeleyDB 5.3.  This
   entails a shared library bump.
@@ -931,7 +932,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20120530:
   AFFECTS: users of databases/postgresql*-server
-  AUTHOR:  jgh@FreeBSD.org
+  AUTHOR: jgh@FreeBSD.org
 
   Affected users are those who use the crypt(text, text) function with
   DES encryption in the optional pg_crypto module. Passwords affected
