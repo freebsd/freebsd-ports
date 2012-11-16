@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-IO-Socket-SSL
-# Date created:				October 27th 2000
-# Whom:	      				Marc G. Fournier <scrappy@FreeBSD.org>
-#
+# Created by: scrappy
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Socket-SSL
-PORTVERSION=	1.76
+PORTVERSION=	1.77
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SULLR
