@@ -48,7 +48,7 @@
 #
 # tomcat7_classpath (str):
 #   Set to "" by default.
-#   Addtional classes to add to the CLASSPATH
+#   Addtional classes to add to the CLASSPATH. If set, must start with ':'
 #
 # tomcat7_java_opts (str):
 #   Set to "" by default.
