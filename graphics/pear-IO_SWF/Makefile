@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO_SWF
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	graphics www pear
 MASTER_SITES=	http://openpear.org/get/ \
 		LOCAL
