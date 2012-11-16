@@ -27,9 +27,6 @@ bin/seqdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/parser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/parser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_builder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_builder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_builder.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_generate_diagram.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_generate_diagram.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_generate_diagram.pyo
