@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Git-Wrapper
-# Date created:		2010-11-12
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Git-Wrapper
-PORTVERSION=	0.025
+PORTVERSION=	0.028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
