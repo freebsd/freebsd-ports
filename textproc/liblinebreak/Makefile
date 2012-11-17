@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liblinebreak
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/vimgadgets/${PORTNAME}/${PORTVERSION}
 
