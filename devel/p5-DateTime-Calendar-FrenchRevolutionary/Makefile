@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-DateTime-Calendar-FrenchRevolutionary
-# Date created:	   26 june 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Calendar-FrenchRevolutionary
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
