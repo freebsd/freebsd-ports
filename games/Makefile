@@ -860,6 +860,7 @@
     SUBDIR += spider
     SUBDIR += spring
     SUBDIR += springlobby
+    SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
     SUBDIR += stepbill
