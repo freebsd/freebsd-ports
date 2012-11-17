@@ -1,4 +1,2 @@
-SHA256 (webmin-1.600.tar.gz) = a45ddad342e9a3b9263f45749ec1d440e0702645c6297310701e988f5f1c74a9
-SIZE (webmin-1.600.tar.gz) = 21397348
-SHA256 (passwd-1.600-5.wbm.gz) = 19f288bc7f6f94f60981a5f2978f6a4e98d0a59aa4c5518f1d7cd4f4204e39e9
-SIZE (passwd-1.600-5.wbm.gz) = 31500
+SHA256 (webmin-1.610.tar.gz) = 6393a2a33040951b17bb2d3e663b2a54f921e0f7b74ec49f4997dcd74f8a8d6e
+SIZE (webmin-1.610.tar.gz) = 21526599
