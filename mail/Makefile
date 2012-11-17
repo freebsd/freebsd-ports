@@ -672,6 +672,7 @@
     SUBDIR += squirrelmail-change_sqlpass-plugin
     SUBDIR += squirrelmail-check_quota-plugin
     SUBDIR += squirrelmail-compatibility-plugin
+    SUBDIR += squirrelmail-decode
     SUBDIR += squirrelmail-email_footer-plugin
     SUBDIR += squirrelmail-login_auth-plugin
     SUBDIR += squirrelmail-login_notes-plugin
