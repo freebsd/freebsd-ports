@@ -3012,6 +3012,7 @@
     SUBDIR += pear-PHPUnit_MockObject
     SUBDIR += pear-PHP_ArrayOf
     SUBDIR += pear-PHP_Beautifier
+    SUBDIR += pear-PHP_CodeCoverage
     SUBDIR += pear-PHP_CodeSniffer
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-PHP_CompatInfo
