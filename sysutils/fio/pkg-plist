@@ -2,6 +2,7 @@ bin/fio
 bin/fio_generate_plots
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1mbs_clients
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpuio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag2
@@ -13,10 +14,12 @@ bin/fio_generate_plots
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iometer-file-access-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-client
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-steadystate.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-test
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface-scan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zipf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
