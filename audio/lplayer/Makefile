@@ -1,11 +1,5 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
-# New ports collection makefile for:	longplayer
-# Date created:		2002-12-16
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	lplayer
 PORTVERSION=	1.01
