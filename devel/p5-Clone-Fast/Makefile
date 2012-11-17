@@ -1,18 +1,18 @@
-# New ports collection makefile for:	p5-Clone-Fast
-# Date created:		2006-07-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Clone-Fast
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Natively copying Perl data structures
+
+LICENSE=	ART20
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 
