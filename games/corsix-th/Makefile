@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	corsixth
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	corsix-th
-DISTNAME=	CorsixTH-${DISTVERSION}-Sourze
+DISTNAME=	CorsixTH-${DISTVERSION}-Source
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source clone of Theme Hospital
@@ -19,7 +19,6 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 USE_CMAKE=	yes
 USE_LUA=	yes
 USE_SDL=	mixer
-WRKSRC=		${WRKDIR}
 
 post-patch:
 # Allow the game to find its resources without wrapper scripts
