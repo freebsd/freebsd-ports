@@ -1,33 +1,22 @@
-# New ports collection makefile for:	krusader
-# Date created:		21-04-2003
-# Whom:			Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	krusader
-PORTVERSION=	2.4.0.b1
-PORTREVISION=	2
+DISTVERSION=	2.4.0-beta3
 CATEGORIES=	x11-fm kde
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.b/-beta/}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A two window file-manager for KDE, like midnight or norton commander
+COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-KDE4_BUILDENV=	yes
-USE_QT4=	gui network xml moc_build qmake_build \
-		rcc_build uic_build
 USE_BZIP2=	yes
+USE_CMAKE=	yes
 USE_GETTEXT=	yes
-USE_ICONV=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_QT4=	moc_build qmake_build rcc_build uic_build
+
+CMAKE_OUTSOURCE=	yes
+MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	${PORTNAME}2
-
-MAN1=		krusader.1
-
-post-extract:
-	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.mk>
