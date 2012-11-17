@@ -3049,6 +3049,7 @@
     SUBDIR += pear-channel-horde
     SUBDIR += pear-channel-openpear
     SUBDIR += pear-channel-phpunit
+    SUBDIR += pear-channel-pirum
     SUBDIR += pear-channel-symfony
     SUBDIR += pear-codegen
     SUBDIR += pecl-automap
