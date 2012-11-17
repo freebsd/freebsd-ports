@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-AnyEvent
-# Date created:		2006-12-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent
-PORTVERSION=	7.02
+PORTVERSION=	7.04
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
