@@ -1,4 +1,4 @@
-# Created by	nemysis@gmx.ch
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
 
 PORTNAME=	starfighter
