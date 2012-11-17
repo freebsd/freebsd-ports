@@ -1,11 +1,5 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
-# New ports collection makefile for:	ermixer
-# Date created:		2003-01-20
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ermixer
 PORTVERSION=	0.8

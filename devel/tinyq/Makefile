@@ -1,11 +1,5 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
-# New ports collection makefile for:	tinyq
-# Date created:		2003-01-25
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tinyq
 PORTVERSION=	3.0.6
