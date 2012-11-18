@@ -13,7 +13,6 @@
 # fcgiwrap_enable="YES"
 #
 # You can fine tune others variables too:
-# fcgiwrap_fib="NONE"
 # fcgiwrap_socket="unix:/var/run/fcgiwrap.sock" 
 # this could also be:
 # - tcp:[ipv4_addr]:port (for ipv4)
@@ -42,8 +41,13 @@ name="fcgiwrap"
 rcvar=fcgiwrap_enable
 
 fcgiwrap_setfib() {
-	sysctl net.fibs >/dev/null 2>&1 || return 0
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+	
+	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
 
+	fcgiwrap_fib=${fcgiwrap_fib:-"NONE"}
 	case "$fcgiwrap_fib" in
 	[Nn][Oo][Nn][Ee])
 		;;
@@ -80,7 +84,6 @@ load_rc_config $name
 
 # These are just the defaults, they might get overriden for a specific profile.
 fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
-fcgiwrap_fib=${fcgiwrap_fib:-"NONE"}
 fcgiwrap_user=${fcgiwrap_user:-"root"}
 fcgiwrap_socket=${fcgiwrap_socket:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
 

@@ -47,7 +47,6 @@ envvars="%%PREFIX%%/sbin/envvars"
 [ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
 [ -z "$apache22limits_args" ]   && apache22limits_args="-e -C daemon"
 [ -z "$apache22_http_accept_enable" ] && apache22_http_accept_enable="NO"
-[ -z "$apache22_fib" ] && apache22_fib="NO"
 
 apache22_accf() {
 
@@ -174,10 +173,14 @@ apache22_precmd()
 }
 
 apache22_checkfib () {
-	$SYSCTL net.fibs >/dev/null 2>&1
-	ret=$? 
- 	[ $ret -gt 0 ] && return 0 
-	if [ "x$apache22_fib" != "xNO" ]
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+	
+	$SYSCTL net.fibs >/dev/null 2>&1 || return 0
+	
+	apache22_fib={apache22_fib:-"NONE"}
+	if [ "x$apache22_fib" != "xNONE" ]
 	then 
 		command="/usr/sbin/setfib -F ${apache22_fib} ${command}"
 	else

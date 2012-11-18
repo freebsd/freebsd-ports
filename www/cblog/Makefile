@@ -7,6 +7,7 @@
 
 PORTNAME=	cblog
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://files.etoilebsd.net/cblog/
 

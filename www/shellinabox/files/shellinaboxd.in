@@ -14,7 +14,6 @@
 # shellinaboxd_enable="YES"
 #
 # You can fine tune others variables too:
-# shellinaboxd_fib="NONE"
 # shellinaboxd_pidfile="/var/run/shellinabox.pid"
 # shellinaboxd_user="%%USERS%%"
 # shellinaboxd_group="%%GROUPS%%"
@@ -24,9 +23,14 @@
 # 	Example: shellinaboxd_certfile="/your/cert.pem"
 # shellinaboxd_flags=
 
-shellinaboxd_setfib() {
-	sysctl net.fibs >/dev/null 2>&1 || return 0
+shellinaboxd_precmd() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
 
+	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
+
+	shellinaboxd_fib=${shellinaboxd_fib:-"NONE"}
 	case "$shellinaboxd_fib" in
 	[Nn][Oo][Nn][Ee])
 		;;
@@ -42,12 +46,11 @@ name="shellinaboxd"
 rcvar=shellinaboxd_enable
 
 command="%%PREFIX%%/bin/${name}"
-start_precmd="shellinaboxd_setfib"
+start_precmd="shellinaboxd_precmd"
 
 load_rc_config $name
 
 shellinaboxd_enable=${shellinaboxd_enable:-"NO"}
-shellinaboxd_fib=${shellinaboxd_fib:-"NONE"}
 shellinaboxd_user=${shellinaboxd_user:-"%%USERS%%"}
 shellinaboxd_group=${shellinaboxd_group:-"%%GROUPS%%"}
 shellinaboxd_port=${shellinaboxd_port:-"4200"}

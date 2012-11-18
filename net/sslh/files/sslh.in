@@ -17,7 +17,6 @@
 # sslh_mode="fork | select"
 # fork: stable but slow performance
 # select: new but high performance
-# sslh_fib="NONE"
 # sslh_pidfile="/var/run/sslh.pid"
 # sslh_ssltarget="localhost:443"
 # sslh_sshtarget="localhost:22"
@@ -26,9 +25,13 @@
 # sslh_uid="nobody"
 # sslh_flags
 
-sslh_setfib() {
+sslh_precmd() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
 	sysctl net.fibs >/dev/null 2>&1 || return 0
 
+	sslh_fib=${sslh_fib:-"NONE"}
 	case "$sslh_fib" in
 	[Nn][Oo][Nn][Ee])
 		;;
@@ -43,14 +46,13 @@ sslh_setfib() {
 name="sslh"
 rcvar=sslh_enable
 
-start_precmd="sslh_setfib"
+start_precmd="sslh_precmd"
 stop_postcmd="sslh_postcmd"
 
 load_rc_config $name
 
 sslh_enable=${sslh_enable:-"NO"}
 sslh_mode=${sslh_mode:-"fork"}
-sslh_fib=${sslh_fib:-"NONE"}
 sslh_listening=${sslh_listening:-"0.0.0.0:443"}
 sslh_sshtarget=${sslh_sshtarget:-"localhost:22"}
 sslh_ssltarget=${sslh_ssltarget:-"localhost:8443"}

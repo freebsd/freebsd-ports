@@ -45,7 +45,13 @@ squid_checkrunning() {
 }
 
 squid_setfib() {
-	sysctl net.fibs >/dev/null 2>&1 || return 0
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+
+	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
+
+	squid_fib=${squid_fib:-"NONE"}
 	if [ "x${squid_fib}" != "xNONE" ]; then
 		command="setfib -F ${squid_fib} ${command}"
 	else
@@ -76,7 +82,6 @@ load_rc_config ${name}
 squid_chdir=${squid_chdir:-"/var/squid/logs"}
 squid_conf=${squid_conf:-"%%PREFIX%%/etc/squid/squid.conf"}
 squid_enable=${squid_enable:-"NO"}
-squid_fib=${squid_fib:-"NONE"}
 squid_flags=${squid_flags-"-D"}
 squid_pidfile=${squid_pidfile:-"/var/squid/logs/squid.pid"}
 squid_user=${squid_user:-%%SQUID_UID%%}
