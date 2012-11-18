@@ -1,41 +1,36 @@
 $FreeBSD$
 
---- src/Makefile.orig	2011-07-28 04:59:26.000000000 -0700
-+++ src/Makefile	2011-07-30 00:27:22.000000000 -0700
-@@ -16,17 +16,17 @@
- # You should have received a copy of the GNU Affero General Public License
- # along with this program.  If not, see <http://www.gnu.org/licenses/>.
- #
--HOST=	DARWIN
--DEFINES=-D$(HOST)	# -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50 -DDUMP_FUNCS
-+HOST=	FREEBSD
-+DEFINES=-D$(HOST) $(EXTRA_DEFINES)	# -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50 -DDUMP_FUNCS
+--- src/Makefile.orig	2012-11-01 05:57:43.000000000 -0700
++++ src/Makefile	2012-11-17 20:33:47.000000000 -0800
+@@ -39,14 +39,14 @@
+   $(error HOST is undefined)
+ endif
+ 
+-DEFINES=-D$(HOST)	# -DSLASHSLASH -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50
++DEFINES=-D$(HOST) $(EXTRA_DEFINES)	# -DSLASHSLASH -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50
  DEBUG=	-O -g
 -CCFLAGS=$(DEFINES) $(DEBUG)
 +CCFLAGS=$(DEFINES)
  CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
  LDFLAGS=
--LIBS=	-ldl		# FreeBSD may require "make HOST=FREEBSD LIBS="
+-LIBS=	-ldl
 +LIBS=
  LINTFLAGS=-abcehpruz
 -CC=	gcc
 +CC?=	gcc
  LD=	$(CC)
--DMAKE=	make
-+DMAKE=	$(MAKE)
  YACC=	yacc
  BIN=	../bin
- 
-@@ -37,6 +37,8 @@
+@@ -65,6 +65,8 @@
  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
  	interpret.o config.o ext.o
  
 +all: a.out comp/a.out
 +
  a.out:	$(OBJ) always
- 	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
- 	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-@@ -56,10 +58,15 @@
+ 	cd comp; $(MAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
+ 	cd lex; $(MAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+@@ -84,10 +86,15 @@
  all:	a.out
  
  $(BIN)/driver: a.out
@@ -52,13 +47,13 @@ $FreeBSD$
  
  lint:
  	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
-@@ -85,7 +92,8 @@
+@@ -113,7 +120,8 @@
  
  comp/a.out:
- 	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
--			  'YACC=$(YACC)' 'LIBS=$(LIBS)' a.out
-+			  'LDFLAGS=$(LDFLAGS)' 'YACC=$(YACC)' 'LIBS=$(LIBS)' \
-+			  a.out
+ 	cd comp; $(MAKE) 'CC=$(CC)' 'HOST=$(HOST)' 'CCFLAGS=$(CCFLAGS)' \
+-			 'YACC=$(YACC)' 'LIBS=$(LIBS)' a.out
++			 'LDFLAGS=$(LDFLAGS)' 'YACC=$(YACC)' 'LIBS=$(LIBS)' \
++			 a.out
  
  clean:
  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
