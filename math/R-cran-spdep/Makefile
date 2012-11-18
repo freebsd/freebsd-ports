@@ -1,7 +1,8 @@
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-51
+DISTVERSION=	0.5-52
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,7 +15,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	R-cran-sp>=0.9:${PORTSDIR}/math/R-cran-sp \
 		R-cran-maptools>=0.5.4:${PORTSDIR}/astro/R-cran-maptools \
 		R-cran-deldir>0:${PORTSDIR}/math/R-cran-deldir \
-		R-cran-coda>0:${PORTSDIR}/math/R-cran-coda
+		R-cran-coda>0:${PORTSDIR}/math/R-cran-coda \
+		R-cran-MCMCpack>0:${PORTSDIR}/math/R-cran-MCMCpack
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
