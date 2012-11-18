@@ -237,7 +237,7 @@ post-patch:
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
 # Fix man pages for executable names
-	@${REINPLACE_CMD} -e 's/^\(\.B m\)pd/\1usic/' \
+	@${REINPLACE_CMD} -e 's/^\(\.B m\)pd/\1usicpd/' \
 		-e 's#^\(\.BI \)/etc/mpd.conf#\1${PREFIX}/etc/${MPDCONF}#' \
 		-e 's#^mpd.conf#${MPDCONF}#' \
 		-e 's#^mpd(1)#musicpd(1)#' \
