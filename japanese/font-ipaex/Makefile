@@ -1,13 +1,10 @@
-# New ports collection makefile for:	font-ipaex
-# Date created:		2 March 2010
-# Whom:			hrs
 # $FreeBSD$
-#
 
-PORTNAME=	font-ipaex
-PORTVERSION=	00103
+PORTNAME=	ipaex
+PORTVERSION=	00201
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
+MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/7bf84182a04a9632268dbcb03f100d05/
+PKGNAMEPREFIX=	ja-font-
 DISTNAME=	IPAexfont${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
