@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.4.15
+PORTVERSION=	1.4.18
 CATEGORIES=	net lang games
 MASTER_SITES=	http://cloud.github.com/downloads/dworkin/${PORTNAME}/
 
@@ -16,9 +16,10 @@ COMMENT=	Dworkin\'s Game Driver
 LICENSE=	GPLv3
 
 OPTIONS=	NETWORKING	"With networking kfuns"		off \
-		DUMP		"With dump kfuns"		off \
 		CLOSURES	"With function pointer support"	off \
-		LPC_EXTENSION	"With LPC extension interface"	off
+		CPLUSPLUS_COMMENTS	"With C++ style comment support"	on
+
+USE_GMAKE=	yes
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
@@ -38,24 +39,19 @@ GROUPS=		mud
 
 EXTRA_DEFINES=
 
-.if defined(WITH_NETWORKING)
-EXTRA_DEFINES+=	-DNETWORK_EXTENSIONS
-.endif
-
-.if defined(WITH_DUMP)
-EXTRA_DEFINES+=	-DDUMP_FUNCS
-.endif
-
-.if defined(WITH_LPC_EXTENSION)
-EXTRA_DEFINES+=	-DLPC_EXTENSION
-.endif
-
 .if defined(WITH_CLOSURES)
 EXTRA_DEFINES+=	-DCLOSURES
 .endif
 
+.if defined(WITH_CPLUSPLUS_COMMENTS)
+EXTRA_DEFINES+=	-DSLASHSLASH
+.endif
+
+.if defined(WITH_NETWORKING)
+EXTRA_DEFINES+=	-DNETWORK_EXTENSIONS
+.endif
+
 post-patch:
-	@${MV} ${WRKSRC}/host/Makefile.bsd ${WRKSRC}/host/Makefile
 	@cd ${WRKDIR}/dgd/ && ${FIND} . -name '*.orig' -delete
 
 do-install:
@@ -72,8 +68,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/dgd/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/dgd/Changelog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/dgd/Credits ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/dgd/README ${DOCSDIR}
 	cd ${WRKDIR}/dgd/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
