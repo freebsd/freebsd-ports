@@ -1,23 +1,58 @@
-$FreeBSD$
-
---- docs/Makefile.in.orig	Sun Oct 28 18:24:49 2007
-+++ docs/Makefile.in	Sun Oct 28 18:25:14 2007
-@@ -351,12 +351,12 @@
+--- docs/Makefile.in.orig	2012-11-02 13:21:14.000000000 -0700
++++ docs/Makefile.in	2012-11-02 13:21:48.000000000 -0700
+@@ -395,15 +395,15 @@
  # Thanks to Bruce Ravel for doc2texi.el!
- $(srcdir)/gnuplot.texi: $(srcdir)/doc2texi.el $(srcdir)/gnuplot.doc
- 	@echo "Creating texinfo"
+ gnuplot.texi $(srcdir)/gnuplot-eldoc.el $(srcdir)/gnuplot-eldoc.elc: $(srcdir)/doc2texi.el $(srcdir)/gnuplot.doc
+ 	@echo "Creating texinfo and eldoc strings file"
 -	@if test "$(EMACS)" != no; then \
--	   cd $(srcdir) ;  \
--	   $(EMACS) -batch -l doc2texi.el -f d2t-doc-to-texi ; \
+-	   @test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
+-	   @test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
+-	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
+-	   echo "Compiling gnuplot-eldoc.el" ; \
+-	   $(EMACS) -batch --eval='(byte-compile-file "gnuplot-eldoc.el")' ; \
 -	else \
 -	   echo "No emacs found - cannot create texinfo file" ; \
 -	fi
 +#	@if test "$(EMACS)" != no; then \
-+#	   cd $(srcdir) ;  \
-+#	   $(EMACS) -batch -l doc2texi.el -f d2t-doc-to-texi ; \
++#	   @test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
++#	   @test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
++#	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
++#	   echo "Compiling gnuplot-eldoc.el" ; \
++#	   $(EMACS) -batch --eval='(byte-compile-file "gnuplot-eldoc.el")' ; \
 +#	else \
 +#	   echo "No emacs found - cannot create texinfo file" ; \
 +#	fi
  
+ 
  # this is how to make OS/2 ipfc documentation
- ipf: gnuplot.ipf
+@@ -461,18 +461,18 @@
+ 	    $(INSTALL_DATA) gnuplot.pdf $(DESTDIR)$(GIHDIR)/gnuplot.pdf; \
+ 	fi
+ 
+-install-info: gnuplot.info gnuplot-eldoc.el gnuplot-eldoc.elc
+-	@if test "$(EMACS)" != no; then \
+-	    $(top_srcdir)/mkinstalldirs $(DESTDIR)$(infodir) $(DESTDIR)$(lispdir); \
+-	    $(INSTALL_DATA) gnuplot.info $(DESTDIR)$(infodir)/gnuplot.info; \
+-	    $(INSTALL_DATA) gnuplot-eldoc.el $(DESTDIR)$(lispdir)/gnuplot-eldoc.el; \
+-	    $(INSTALL_DATA) gnuplot-eldoc.elc $(DESTDIR)$(lispdir)/gnuplot-eldoc.elc; \
+-	else : ; fi
+-	@if (test "$(EMACS)" != no && install-info --version && \
+-	     install-info --version | fgrep -i -v debian) >/dev/null 2>&1; then \
+-	  echo "install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/gnuplot.info";\
+-	  install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/gnuplot.info || :;\
+-	else : ; fi
++install-info:
++#	@if test "$(EMACS)" != no; then \
++#	    $(top_srcdir)/mkinstalldirs $(DESTDIR)$(infodir) $(DESTDIR)$(lispdir); \
++#	    $(INSTALL_DATA) gnuplot.info $(DESTDIR)$(infodir)/gnuplot.info; \
++#	    $(INSTALL_DATA) gnuplot-eldoc.el $(DESTDIR)$(lispdir)/gnuplot-eldoc.el; \
++#	    $(INSTALL_DATA) gnuplot-eldoc.elc $(DESTDIR)$(lispdir)/gnuplot-eldoc.elc; \
++#	else : ; fi
++#	@if (test "$(EMACS)" != no && install-info --version && \
++#	     install-info --version | fgrep -i -v debian) >/dev/null 2>&1; then \
++#	  echo "install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/gnuplot.info";\
++#	  install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/gnuplot.info || :;\
++#	else : ; fi
+ 
+ installcheck:
+ 
