@@ -488,7 +488,6 @@
     SUBDIR += mod_hosts_access
     SUBDIR += mod_jail
     SUBDIR += mod_jk
-    SUBDIR += mod_jk-apache2
     SUBDIR += mod_layout22
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_line_edit
