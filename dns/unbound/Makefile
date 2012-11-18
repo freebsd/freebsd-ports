@@ -42,7 +42,7 @@ OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Enable whenever using many (10000) outgoing ports
 GOST_DESC=	Enable GOST support (requires OpenSSL from ports)
-ECDSA_DESC=	Enable ECDSA (elliptic curve) support
+ECDSA_DESC=	Enable ECDSA support (requires OpenSSL from ports)
 MUNIN_DESC=	Install Munin plugin
 
 .include <bsd.port.options.mk>
