@@ -1,16 +1,12 @@
-# New ports collection makefile for:	umefont
-# Date created:		25 May 2008
-# Whom:			hrs
-#
 # $FreeBSD$
-#
 
-PORTNAME=	font-ume
-PORTVERSION=	0.0.441
+PORTNAME=	ume
+PORTVERSION=	0.0.445
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	ume-font/22212
-DISTNAME=	umefont_441
+PKGNAMEPREFIX=	ja-font-
+DISTNAME=	umefont_445
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ume Japanese TrueType fonts
