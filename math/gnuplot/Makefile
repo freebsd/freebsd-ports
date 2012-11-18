@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.6.0
-PORTREVISION=	2
+PORTVERSION=	4.6.1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -36,7 +35,6 @@ OPTIONS=	X11		"Enable X11 support"		on \
 USE_GCC=	any
 
 MAN1=		gnuplot.1 lasergnu.1
-INFO=		gnuplot
 
 .include <bsd.port.options.mk>
 
@@ -105,7 +103,10 @@ USE_GNOME+=		pango
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	gnuplot.dvi gnuplot.ps gnuplot.txt psdoc
+PORTDOCS=	*
+.endif
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
 .endif
 
 post-patch:
