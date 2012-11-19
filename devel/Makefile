@@ -3334,6 +3334,7 @@
     SUBDIR += py-ezpyinline
     SUBDIR += py-fabric
     SUBDIR += py-fam
+    SUBDIR += py-fastimport
     SUBDIR += py-fileutils
     SUBDIR += py-five.customerize
     SUBDIR += py-five.formlib
