@@ -7,6 +7,7 @@
 
 PORTNAME=	dispatcher
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Dispatcher
 PKGNAMEPREFIX=	razorback-
@@ -23,7 +24,6 @@ LIB_DEPENDS=	razorback_api:${PORTSDIR}/security/razorback-api \
 		cli:${PORTSDIR}/devel/libcli
 
 OPTIONS_DEFINE=	DEBUG ASSERT ACTIVEMQ
-OPTIONS_DEFAULT=ACTIVEMQ
 ASSERT_DESC=	Enable Asserts
 ACTIVEMQ_DESC=	ActiveMQ runs locally
 
