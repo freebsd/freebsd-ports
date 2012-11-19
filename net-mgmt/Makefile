@@ -262,7 +262,6 @@
     SUBDIR += py-flowtools
     SUBDIR += py-ipy
     SUBDIR += py-pyang
-    SUBDIR += py-snmp2
     SUBDIR += py-snmp4
     SUBDIR += py-snmp4-apps
     SUBDIR += py-snmp4-mibs

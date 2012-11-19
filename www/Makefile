@@ -1862,7 +1862,6 @@
     SUBDIR += trac-childtickets
     SUBDIR += trac-codetags
     SUBDIR += trac-customfieldadmin
-    SUBDIR += trac-customroadmap
     SUBDIR += trac-datefield
     SUBDIR += trac-defaultcc
     SUBDIR += trac-discussion
