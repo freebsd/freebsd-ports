@@ -6,6 +6,7 @@
     SUBDIR += anope
     SUBDIR += bip
     SUBDIR += bitchx
+    SUBDIR += bitchx-devel
     SUBDIR += bitlbee
     SUBDIR += bnc
     SUBDIR += bobot++

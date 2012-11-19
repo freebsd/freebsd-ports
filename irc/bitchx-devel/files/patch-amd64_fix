@@ -1,0 +1,32 @@
+
+
+Patch attached with submission follows:
+
+diff -ur BitchX.orig/include/module.h BitchX/include/module.h
+--- BitchX.orig/include/module.h	Fri Apr 11 03:09:07 2003
++++ include/module.h	Sun Jan  8 17:18:15 2006
+@@ -15,7 +15,7 @@
+ 
+ #include "struct.h"
+ 
+-typedef int (*Function_ptr)();
++typedef long (*Function_ptr)();
+ 
+ #ifdef WANT_DLL
+ #ifdef HPUX
+diff -ur BitchX.orig/source/screen.c BitchX/source/screen.c
+--- BitchX.orig/source/screen.c	Thu Jul 31 09:01:08 2003
++++ source/screen.c	Sun Jan  8 17:18:18 2006
+@@ -1377,8 +1377,8 @@
+ {
+ 	if (!w)
+ 		w = current_window;
+-	if (w->screen)
+-		w->screen->cursor_window = w;
++/*	if (w->screen)
++		w->screen->cursor_window = w;*/
+ }
+ 
+ /*
+
+

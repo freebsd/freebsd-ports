@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Mar  5 21:30:04 2001
++++ Makefile.in	Fri Apr 19 15:09:40 2002
+@@ -115,7 +115,7 @@
+ # This command will be used to install the BitchX help files. If you don't
+ # want to install them, replace with the following:
+ # INSTALL_HELP_CMD = @echo The help files have not been installed.
+-INSTALL_HELP_CMD = @INSTALL_HELP_CMD@
++INSTALL_HELP_CMD = echo
+ 
+ # This is where the optional plugins will be copied to.
+ PLUGINDIR = @PLUGINDIR@

@@ -9,15 +9,6 @@
  
  /* if you use cidentd the filename is called .authlie instead of .noident.
   * as well some modifications to the format of the file were made. So we 
-@@ -449,7 +449,7 @@
- #define DEFAULT_FTP_GRAB OFF
- #define DEFAULT_HTTP_GRAB OFF
- #define DEFAULT_HELP_WINDOW OFF
--#define DEFAULT_NICK_COMPLETION ON
-+#define DEFAULT_NICK_COMPLETION OFF
- #define DEFAULT_NICK_COMPLETION_LEN 2
- #define DEFAULT_NICK_COMPLETION_TYPE 0  /* 0 1 2 */
- #define DEFAULT_NOTIFY ON
 @@ -480,9 +480,9 @@
  #define DEFAULT_AINV 0
  #define DEFAULT_ANNOY_KICK OFF

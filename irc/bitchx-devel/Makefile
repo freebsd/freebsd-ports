@@ -1,33 +1,31 @@
 # Created by: Jimbo Bahooli <griffin@blackhole.iceworld.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BitchX
-PORTVERSION=	1.1.0.1
-PORTREVISION=	4
-PORTEPOCH=	1
+PORTVERSION=	1.2
 CATEGORIES+=	irc
-MASTER_SITES=	SF/bitchx/ircii-pana/ircii-pana-1.1
-DISTNAME=	ircii-pana-1.1-final
+DISTNAME=	${PORTNAME}-${PORTNAME}${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER?=	c.petrik.sosa@gmail.com
 COMMENT?=	Feature-rich scriptable IRC client
 
-WRKSRC=		${WRKDIR}/BitchX
-USE_PERL5=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}1.2
+GH_TAGNAME=	master
+GH_COMMIT=	a22b86f
+
+LATEST_LINK=	BitchX-devel
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--libdir="${PREFIX}/share"
 USE_GMAKE=	yes
+USE_PERL5=	yes
+WANT_GNOME=	yes
 DOCSDIR=	${PREFIX}/share/bx/help
 PORTDOCS=	*
-CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
-		--bindir="${PREFIX}/bin" \
-		--datadir="${PREFIX}/share" \
-		--libdir="${PREFIX}/share"
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		BitchX.1
+MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	ESOUND GNOME IPV6 LATIN PLUGINS SSL XMMS
 
@@ -67,8 +65,9 @@ PLIST_SUB+=	GNOME="@comment " NOGNOME=""
 .endif
 
 .if ${PORT_OPTIONS:MPLUGINS}
-PLUGINS=	abot acro arcfour autocycle blowfish cdrom encrypt scan \
-		europa fserv hint nicklist pkga possum qbx qmail wavplay
+PLUGINS=	abot acro aim arcfour autocycle blowfish cavlink cdrom \
+		encrypt europa fserv hint nap nicklist pkga possum qbx \
+		qmail wavplay
 PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
@@ -97,9 +96,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MGNOME}
-	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX-1.1-final
+	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX
 .else
-	${STRIP_CMD} ${PREFIX}/bin/BitchX-1.1-final
+	${STRIP_CMD} ${PREFIX}/bin/BitchX
 	${STRIP_CMD} ${PREFIX}/bin/scr-bx
 .endif
 .if ${PORT_OPTIONS:MDOCS}
@@ -107,6 +106,7 @@ post-install:
 	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
+# Ensure that `@dirrm share/bx' will be appended last (after PORTDOCS stuff)
 add-plist-post:
 	@${ECHO_CMD} "@dirrm share/bx" >> ${TMPPLIST}
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
