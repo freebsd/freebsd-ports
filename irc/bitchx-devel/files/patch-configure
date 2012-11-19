@@ -1,0 +1,26 @@
+--- configure.orig	2012-11-18 22:48:07.000000000 -0500
++++ configure	2012-11-18 22:48:27.000000000 -0500
+@@ -14756,11 +14756,6 @@
+             SHLIB_LD="ld -shared"
+         fi
+         ;;
+-      FreeBSD-1*)
+-                { { echo "$as_me:$LINENO: error: sorry" >&5
+-echo "$as_me: error: sorry" >&2;}
+-   { (exit no plugins on $ac_cv_system_version); exit no plugins on $ac_cv_system_version; }; }
+-        ;;
+       FreeBSD-2.2*)
+         SHLIB_LD="ld -Bshareable"
+         ;;
+@@ -16242,11 +16237,6 @@
+             SHLIB_LD="ld -shared"
+         fi
+         ;;
+-      FreeBSD-1*)
+-                { { echo "$as_me:$LINENO: error: sorry" >&5
+-echo "$as_me: error: sorry" >&2;}
+-   { (exit no plugins on $ac_cv_system_version); exit no plugins on $ac_cv_system_version; }; }
+-        ;;
+       FreeBSD-2.2*)
+         SHLIB_LD="ld -Bshareable"
+         ;;

@@ -1,8 +1,8 @@
 @unexec if [ -f %D/share/bx/script/bxglobal.old ]; then rm -f %D/share/bx/script/bxglobal.old; fi
 %%NOGNOME%%bin/BitchX
-%%NOGNOME%%bin/BitchX-1.1-final
+%%NOGNOME%%bin/BitchX-1.2c01-svn
 %%GNOME%%bin/gtkBitchX
-%%GNOME%%bin/gtkBitchX-1.1-final
+%%GNOME%%bin/gtkBitchX-1.2c01-svn
 %%NOGNOME%%bin/scr-bx
 share/bx/BitchX.help
 share/bx/BitchX.ircnames
@@ -18,12 +18,14 @@ share/bx/BitchX.kick
 %%PLUGINS%%share/bx/plugins/pkga.so
 %%PLUGINS%%share/bx/plugins/possum.so
 %%PLUGINS%%share/bx/plugins/qmail.so
-%%PLUGINS%%share/bx/plugins/scan.so
 %%PLUGINS%%share/bx/plugins/wavplay.so
 %%PLUGINS%%share/bx/plugins/qbx.so
 %%PLUGINS%%share/bx/plugins/arcfour.so
 %%PLUGINS%%share/bx/plugins/autocycle.so
+%%PLUGINS%%share/bx/plugins/aim.so
+%%PLUGINS%%share/bx/plugins/cavlink.so
 %%PLUGINS%%share/bx/plugins/cdrom.so
+%%PLUGINS%%share/bx/plugins/nap.so
 %%PLUGINS%%share/bx/plugins/nicklist.so
 %%XMMS%%share/bx/plugins/xmms.so
 share/bx/script/SCRIPTS
@@ -79,4 +81,4 @@ share/bx/translation/UNITED_KINGDOM_COM
 @dirrm share/bx/translation
 @dirrm share/bx/script
 @dirrm share/bx/plugins
-@dirrm share/bx
+@comment "@dirrm share/bx" must be appended after PORTDOCS stuff, see Makefile
