@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uwsgi
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.1
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
@@ -21,6 +21,9 @@ MAKE_JOBS_SAFE=	yes
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_RC_SUBR=	uwsgi
+
+post-patch:
+	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
