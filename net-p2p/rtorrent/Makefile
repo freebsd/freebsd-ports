@@ -8,7 +8,7 @@ MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/rtorrent/
 
-MAINTAINER?=	flz@FreeBSD.org
+MAINTAINER?=	az@FreeBSD.org
 COMMENT?=	BitTorrent Client written in C++
 
 BUILD_DEPENDS?=	libtorrent=0.13.2_1:${PORTSDIR}/net-p2p/libtorrent

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 PORTREVISION=	0
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
 BUILD_DEPENDS=	libtorrent-devel=0.13.1_1:${PORTSDIR}/net-p2p/libtorrent-devel
