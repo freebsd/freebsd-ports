@@ -45,16 +45,7 @@ MAN8=	silcd.8
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-WITHOUT_OPTIMIZED_ASM=	yes
-.endif
-
-.ifdef(WITHOUT_OPTIMIZED_ASM)
 CONFIGURE_ARGS+=	--disable-asm
-.endif
-
-pre-everything::
-.ifndef(WITHOUT_OPTIMIZED_ASM)
-	@${ECHO_MSG} '===> Define WITHOUT_OPTIMIZED_ASM to disable assembler optimizations'
 .endif
 
 post-patch:
