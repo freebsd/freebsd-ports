@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Crypt-CBC
-# Date created:				October 20th 1996
-# Whom:	      				Mark Murray <markm@FreeBSD.org>
-#
+# Created by: Mark Murray <markm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-CBC
-PORTVERSION=	2.30
+PORTVERSION=	2.31
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
