@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-TreeDumper
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,4 +26,11 @@ MAN3=		Data::TreeDumper.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501400
+BUILD_DEPENDS+=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
+RUN_DEPENDS+=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
+.endif
+
+.include <bsd.port.post.mk>
