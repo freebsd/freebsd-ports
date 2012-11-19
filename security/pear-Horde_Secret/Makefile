@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_Secret
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org

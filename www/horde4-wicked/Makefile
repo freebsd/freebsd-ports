@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wicked
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 

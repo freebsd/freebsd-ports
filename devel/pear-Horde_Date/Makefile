@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_Date
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
