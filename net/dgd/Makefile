@@ -15,9 +15,11 @@ COMMENT=	Dworkin\'s Game Driver
 
 LICENSE=	GPLv3
 
-OPTIONS=	NETWORKING	"With networking kfuns"		off \
-		CLOSURES	"With function pointer support"	off \
-		CPLUSPLUS_COMMENTS	"With C++ style comment support"	on
+OPTIONS_DEFINE=	NETWORKING CLOSURES CPLUSPLUS_COMMENTS
+NETWORKING_DESC=Enable networking kfuns
+CLOSURES_DESC=	Enable function pointer support
+CPLUSPLUS_COMMENTS_DESC=	Allow C++ style comments in LPC
+OPTIONS_DEFAULT=CPLUSPLUS_COMMENTS
 
 USE_GMAKE=	yes
 
@@ -39,15 +41,15 @@ GROUPS=		mud
 
 EXTRA_DEFINES=
 
-.if defined(WITH_CLOSURES)
+.if ${PORT_OPTIONS:MCLOSURES}
 EXTRA_DEFINES+=	-DCLOSURES
 .endif
 
-.if defined(WITH_CPLUSPLUS_COMMENTS)
+.if ${PORT_OPTIONS:MCPLUSPLUS_COMMENTS}
 EXTRA_DEFINES+=	-DSLASHSLASH
 .endif
 
-.if defined(WITH_NETWORKING)
+.if ${PORT_OPTIONS:MNETWORKING}
 EXTRA_DEFINES+=	-DNETWORK_EXTENSIONS
 .endif
 
