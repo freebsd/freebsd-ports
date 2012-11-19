@@ -35,8 +35,8 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 WANT_PERL=	yes
 
 OPTIONS_DEFINE=	PTHREADS IPV6 ICONV PERL OPTIMIZED_ASM
-PTHREADS_DESC=	"Enable pthreads support"
-OPTIMIZED_ASM_DESC=	"Use assembler optimizations (i386 only)"
+PTHREADS_DESC=	Enable pthreads support
+OPTIMIZED_ASM_DESC=	Use assembler optimizations (i386 only)
 OPTIONS_DEFAULT=	IPV6 ICONV PERL OPTIMIZED_ASM
 
 .ifdef(IRSSI_PLUGIN)
