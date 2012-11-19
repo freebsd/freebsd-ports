@@ -34,11 +34,10 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--without-libtoolfix
 WANT_PERL=	yes
 
-OPTIONS=	PTHREADS "Enable pthreads support" off \
-		IPV6 "Enable IPv6 support" on \
-		ICONV "Enable international character support" on \
-		PERL "Enable perl support" on \
-		OPTIMIZED_ASM "Use assembler optimizations (i386 only)" on
+OPTIONS_DEFINE=	PTHREADS IPV6 ICONV PERL OPTIMIZED_ASM
+PTHREADS_DESC=	"Enable pthreads support"
+OPTIMIZED_ASM_DESC=	"Use assembler optimizations (i386 only)"
+OPTIONS_DEFAULT=	IPV6 ICONV PERL OPTIMIZED_ASM
 
 .ifdef(IRSSI_PLUGIN)
 CONFIGURE_ARGS+=	--with-silc-plugin=${PREFIX}/lib/irssi \
@@ -83,41 +82,40 @@ post-install:
 	fi
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"
 WITHOUT_OPTIMIZED_ASM=	yes
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=		yes
 CONFIGURE_ARGS+=	--with-iconv
 .else
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=		yes
-PERL_ARCHNAME!=		${PERL} -V:archname 2>/dev/null || true
-PLIST_SUB+=		WITH_PERL="" PERL_ARCHNAME=${PERL_ARCHNAME:S/archname='//:S/';//}
+PLIST_SUB+=		WITH_PERL="" PERL_ARCHNAME="${ARCH}-freebsd"
 CONFIGURE_ARGS+=	--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl
 .else
 CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
-.if defined(WITHOUT_OPTIMIZED_ASM)
+.if ${PORT_OPTIONS:MOPTIMIZED_ASM}
 CONFIGURE_ARGS+=	--disable-asm
 .endif
 
-.if defined(WITH_PTHREADS)
+.if ${PORT_OPTIONS:MPTHREADS}
 CFLAGS+=		${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--without-pthreads
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
