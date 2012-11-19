@@ -15,30 +15,32 @@ COMMENT=	Network monitoring library with TCP/IP reassembly
 
 LICENSE=	GPLv2
 
-OPTIONS=	LIBNET "Include code requiring libnet" ON \
-		LIBNET10 "Use the old libnet-1.0.x version" ON \
-		GLIB2 "Use GLIB2 for multiprocessing support" ON
+OPTIONS_DEFINE=	LIBNET GLIB2
+LIBNET_DESC=	"Use libnet 1.1.x"
+GLIB2_DESC=	"Use GLIB2 for multiprocessing support"
+OPTIONS_DEFAULT=	LIBNET GLIB2
 
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 MAN3=		libnids.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LIBNET)
-.if !defined(WITHOUT_LIBNET10)
-BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_SUB+= PORTDOCS=""
 .else
+PLIST_SUB+= PORTDOCS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLIBNET}
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-libnet
 .endif
 
-.if !defined(WITHOUT_GLIB2)
+.if ${PORT_OPTIONS:MGLIB2}
 USE_GNOME+=	glib20
 .else
 CONFIGURE_ARGS+=	--disable-libglib
@@ -56,11 +58,11 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/src/libnids.3 ${PREFIX}/man/man3
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in README doc/*
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}/
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
