@@ -1,18 +1,14 @@
-# New ports collection makefile for:	p5-URI-Encode
-# Date created:		2010-09-29
-# Whom:			ports@c0decafe.net <ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-Encode
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MITHUN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Simple URI Encoding/Decoding
 
 LICENSE=	ART10 GPLv1
