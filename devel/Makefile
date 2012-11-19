@@ -157,6 +157,7 @@
     SUBDIR += bzr-colo
     SUBDIR += bzr-explorer
     SUBDIR += bzr-externals
+    SUBDIR += bzr-fastimport
     SUBDIR += bzr-git
     SUBDIR += bzr-grep
     SUBDIR += bzr-gtk
