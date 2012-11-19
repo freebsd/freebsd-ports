@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libvmod-header
-DISTVERSION=	0.3-4
+DISTVERSION=	0.3-5
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/KristianLyng/libvmod-header/tarball/master/ \
-		http://anders.fupp.net/distfiles/
+MASTER_SITES=	http://anders.fupp.net/distfiles/
 PKGNAMEPREFIX=	varnish-
-DISTNAME=	KristianLyng-${PORTNAME}-${VMOD_HEADER_HASH}
-DISTFILES=	KristianLyng-${PORTNAME}-${DISTVERSION}-g${VMOD_HEADER_HASH}.tar.gz
+#DISTNAME=	KristianLyng-${PORTNAME}-${VMOD_HEADER_HASH}
+#DISTFILES=	KristianLyng-${PORTNAME}-${DISTVERSION}-g${VMOD_HEADER_HASH}.tar.gz
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
@@ -33,9 +32,8 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 
-VMOD_HEADER_HASH=	c8589c0
-
 MAN3=		vmod_header.3
+WRKSRC=		${WRKDIR}/${PORTNAME}-master
 
 .include <bsd.port.pre.mk>
 
