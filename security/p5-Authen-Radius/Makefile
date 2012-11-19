@@ -1,13 +1,8 @@
-# New ports collection makefile for:    p5-Authen-Radius
-# Date created:				September 11th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Radius
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
