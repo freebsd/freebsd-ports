@@ -1,18 +1,17 @@
-# New ports collection makefile for:    p5-Crypt-OpenSSL-DSA
-# Date created:				2002/09/20
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenSSL-DSA
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to DSA signature verification using OpenSSL
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
