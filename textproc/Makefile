@@ -333,6 +333,7 @@
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
     SUBDIR += jing
+    SUBDIR += jq
     SUBDIR += jrefentry
     SUBDIR += kbedic
     SUBDIR += kdiff3
