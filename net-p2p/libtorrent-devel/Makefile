@@ -9,7 +9,7 @@ PORTNAME=	libtorrent-devel
 PORTVERSION=	0.13.1
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++ (development version)
 
 MASTERDIR=	${.CURDIR}/../libtorrent
