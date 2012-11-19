@@ -16,8 +16,8 @@ COMMENT=	Network monitoring library with TCP/IP reassembly
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	LIBNET GLIB2
-LIBNET_DESC=	"Use libnet 1.1.x"
-GLIB2_DESC=	"Use GLIB2 for multiprocessing support"
+LIBNET_DESC=	Use libnet 1.1.x
+GLIB2_DESC=	Use GLIB2 for multiprocessing support
 OPTIONS_DEFAULT=	LIBNET GLIB2
 
 WANT_GNOME=	yes
