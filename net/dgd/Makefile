@@ -37,7 +37,7 @@ PORTDOCS=	*
 USERS=		mud
 GROUPS=		mud
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 EXTRA_DEFINES=
 
@@ -74,4 +74,4 @@ do-install:
 	cd ${WRKDIR}/dgd/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
