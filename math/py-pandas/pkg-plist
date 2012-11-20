@@ -44,6 +44,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/daterange.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/daterange.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/daterange.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/daterange_flymake.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/daterange_flymake.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/daterange_flymake.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/datetools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/datetools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/core/datetools.pyo
@@ -161,9 +164,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/sandbox/qtpandas.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/sandbox/qtpandas.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/sandbox/qtpandas.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/setup.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/setup.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/setup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/sparse/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/sparse/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/sparse/__init__.pyo
@@ -330,6 +330,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/cut_data.csv
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/test_merge.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/test_merge.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tools/tests/test_merge.pyo
@@ -383,7 +384,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/daterange_073.pickle
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/frame.pickle
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/frame2.pickle
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/series.pickle
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/data/series_daterange0.pickle
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/tseries/tests/test_converter.py
@@ -440,9 +440,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/decorators.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/decorators.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/testing_flymake.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/testing_flymake.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/testing_flymake.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/util/misc.pyo
