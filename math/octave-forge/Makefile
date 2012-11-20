@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge
-PORTVERSION=	20121015
+PORTVERSION=	20121120
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -18,6 +18,7 @@ OPTIONS=	\
 	BENCHMARK "Install package: benchmark" On \
 	BIM "Install package: bim" On \
 	BIOINFO "Install package: bioinfo" On \
+	CGI "Install package: cgi" On \
 	CIVIL_ENGINEERING "Install package: civil-engineering" On \
 	COMMUNICATIONS "Install package: communications" On \
 	CONTROL "Install package: control" On \
@@ -116,6 +117,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:${PORTSDIR}/math/octave-forge-bim
 .endif
 .if defined(WITH_BIOINFO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/bioinfo.tar.gz:${PORTSDIR}/math/octave-forge-bioinfo
+.endif
+.if defined(WITH_CGI)
+RUN_DEPENDS+=	${TARBALLS_DIR}/cgi.tar.gz:${PORTSDIR}/math/octave-forge-cgi
 .endif
 .if defined(WITH_CIVIL_ENGINEERING)
 RUN_DEPENDS+=	${TARBALLS_DIR}/civil-engineering.tar.gz:${PORTSDIR}/math/octave-forge-civil-engineering
