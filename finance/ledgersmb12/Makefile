@@ -1,16 +1,12 @@
-# New ports collection makefile for:	ledger-smb
-# Date created:		2007-3-20
-# Whom:			anarcat@anarcat.ath.cx
-#
+# Created by: anarcat@anarcat.ath.cx
 # $FreeBSD$
-#
 
 PORTNAME=	ledgersmb
 PORTVERSION=	1.2.17
 CATEGORIES=	finance perl5
 MASTER_SITES=	SF/ledger-smb/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	anarcat@anarcat.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A double entry accounting system
 
 BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
