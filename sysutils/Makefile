@@ -851,6 +851,7 @@
     SUBDIR += sge61
     SUBDIR += sge62
     SUBDIR += shlock
+    SUBDIR += shmcat
     SUBDIR += sievelog
     SUBDIR += skill
     SUBDIR += slack
