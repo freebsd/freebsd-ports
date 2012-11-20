@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	instead
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
