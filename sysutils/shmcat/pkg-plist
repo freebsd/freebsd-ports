@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/ftok
+bin/shmcat
+%%NLS%%share/locale/de/LC_MESSAGES/shmcat.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/shmcat.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/shmcat.mo
+%%NLS%%@dirrmtry man/de
+%%NLS%%@dirrmtry man/de/man1
+%%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
