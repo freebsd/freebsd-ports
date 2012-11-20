@@ -1,9 +1,5 @@
-# New ports collection makefile for:   backupninja
-# Date created:        7 june 2006
-# Whom:                anarcat
-#
+# Created by: anarcat@anarcat.ath.cx
 # $FreeBSD$
-#
 
 PORTNAME=	nagircbot
 PORTVERSION=	0.0.33
@@ -11,7 +7,7 @@ CATEGORIES=	net-mgmt irc
 MASTER_SITES=	http://www.vanheusden.com/nagircbot/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anarcat@anarcat.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC bot for Nagios
 
 USE_GMAKE=	yes
