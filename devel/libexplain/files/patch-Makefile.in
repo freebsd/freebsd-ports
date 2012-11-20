@@ -1,18 +1,21 @@
---- ./Makefile.in.orig	2011-09-10 12:21:14.000000000 +0200
-+++ ./Makefile.in	2011-09-10 12:24:45.000000000 +0200
-@@ -2585,13 +2585,11 @@
- 		./config.status
+--- ./Makefile.in.orig	2012-11-20 16:54:45.000000000 +0100
++++ ./Makefile.in	2012-11-20 16:55:58.000000000 +0100
+@@ -3182,7 +3182,7 @@
  
- libdir/pkgconfig/.pkgconfigdir:
--	-$(INSTALL) -m 0755 -d $(pkgconfigdir)
--	@-test -d $(pkgconfigdir) && touch $@
--	@sleep 1
-+	@true
- 
- $(pkgconfigdir)/libexplain.pc: libdir/pkgconfig/libexplain.pc \
- 		libdir/pkgconfig/.pkgconfigdir
+ $(libdir)/pkgconfig/libexplain.pc: .mkdir.__libdir__pkgconfig \
+ 		libdir/pkgconfig/libexplain.pc
 -	$(INSTALL_DATA) libdir/pkgconfig/libexplain.pc $@
 +	@true
  
- libexplain/ac/mntent.lo: libexplain/ac/mntent.c libexplain/ac/ctype.h \
- 		libexplain/ac/mntent.h libexplain/ac/stdio.h \
+ libexplain/ac/mntent.$(OBJEXT) libexplain/ac/mntent.lo: libexplain/ac/ctype.h \
+ 		libexplain/ac/mntent.c libexplain/ac/mntent.h \
+@@ -42187,8 +42187,7 @@
+ 	@sleep 1
+ 
+ .mkdir.__libdir__pkgconfig: .mkdir.__libdir_
+-	-$(INSTALL_DIR) $(libdir)/pkgconfig
+-	@-test -d $(libdir)/pkgconfig && touch $@
++	@true
+ 	@sleep 1
+ 
+ .mkdir.__mandir_:
