@@ -176,12 +176,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/notifier_browser.pyc
 %%DATADIR%%/notify.py
 %%DATADIR%%/notify.pyc
+%%DATADIR%%/percentile.py
+%%DATADIR%%/percentile.pyc
 %%DATADIR%%/pollable.py
 %%DATADIR%%/pollable.pyc
 %%DATADIR%%/poller.py
 %%DATADIR%%/poller.pyc
 %%DATADIR%%/privacy.py
 %%DATADIR%%/privacy.pyc
+%%DATADIR%%/raw_analyze.py
+%%DATADIR%%/raw_analyze.pyc
 %%DATADIR%%/raw.py
 %%DATADIR%%/raw.pyc
 %%DATADIR%%/raw_clnt.py
