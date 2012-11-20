@@ -8,9 +8,9 @@
 PORTNAME=	tbb
 PORTVERSION=	4.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://threadingbuildingblocks.org/uploads/78/174/4.0/ \
+MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
-DISTNAME=	tbb40_233oss_src
+DISTNAME=	tbb40_20110809oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_ENV=	CPLUS=${CXX}
 
-WRKSRC=	${WRKDIR}/tbb40_233oss
+WRKSRC=	${WRKDIR}/tbb40_20110809oss
 
 post-extract:
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
