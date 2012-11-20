@@ -500,6 +500,7 @@
     SUBDIR += libqrencode
     SUBDIR += librasterlite
     SUBDIR += libraw
+    SUBDIR += libreatlas
     SUBDIR += librsvg2
     SUBDIR += libspiro
     SUBDIR += libsvg
