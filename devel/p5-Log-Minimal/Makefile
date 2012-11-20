@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Log-Minimal
-# Date created:				18 Oct 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Minimal
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
