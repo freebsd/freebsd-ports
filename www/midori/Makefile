@@ -27,8 +27,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-libnotify \
 		--enable-addons \
 		--enable-docs \
-		--disable-gtk3 \
-		--jobs=${MAKE_JOBS_NUMBER}
+		--disable-gtk3
+
+# if user has set DISABLE_MAKE_JOBS, then MAKE_JOBS_NUMBER is undefined
+.if defined(DISABLE_MAKE_JOBS)
+CONFIGURE_ARGS+=--jobs=1
+.else
+CONFIGURE_ARGS+=--jobs=${MAKE_JOBS_NUMBER}
+.endif
 
 MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
@@ -55,7 +61,7 @@ UNIQUE_DESC=	Single instance support
 CONFIGURE_ENV+=	CC="${CC}"
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes 
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
