@@ -26,16 +26,6 @@ index 6a9be4b..d2e49e3 100755
      add_makefiles "
        memory/jemalloc/Makefile
      "
---- mozilla/config/autoconf.mk.in
-+++ mozilla/config/autoconf.mk.in
-@@ -74,6 +74,7 @@ MOZ_JSDEBUGGER  = @MOZ_JSDEBUGGER@
- MOZ_IPDL_TESTS 	= @MOZ_IPDL_TESTS@
- MOZ_MEMORY      = @MOZ_MEMORY@
- MOZ_JEMALLOC    = @MOZ_JEMALLOC@
-+MOZ_NATIVE_JEMALLOC    = @MOZ_NATIVE_JEMALLOC@
- MOZ_PROFILING   = @MOZ_PROFILING@
- MOZ_ENABLE_PROFILER_SPS = @MOZ_ENABLE_PROFILER_SPS@
- MOZ_JPROF       = @MOZ_JPROF@
 diff --git configure.in configure.in
 index bb05782..2f32516 100644
 --- mozilla/configure.in

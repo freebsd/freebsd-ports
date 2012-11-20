@@ -1,12 +1,8 @@
-# New ports collection makefile for:	phoenix
-# Date created:			2002/10/21
-# Whom:				Alan Eldridge <alane@FreeBSD.org>
-#
+# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	firefox
-DISTVERSION=	10.0.10
+DISTVERSION=	10.0.11
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -68,7 +64,7 @@ CFLAGS+=	-mminimal-toc
 
 .if ${PORT_OPTIONS:MPGO}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	-2.7
 USE_DISPLAY=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 
@@ -80,7 +76,7 @@ MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
 		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
 .endif
 
-.if !empty(CXX:M*clang++*)
+.if !empty(CXX:M*clang++*) || (${CXX:Mc++} && ${OSVERSION} > 1000023)
 CXXFLAGS+=	-Wno-return-type-c-linkage
 .endif
 

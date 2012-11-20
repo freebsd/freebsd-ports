@@ -56,7 +56,7 @@ $NetBSD: patch-ipc_chromium_Makefile.in,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 
 --- mozilla/ipc/chromium/Makefile.in.orig	2012-02-16 06:40:33.000000000 +0000
 +++ mozilla/ipc/chromium/Makefile.in
-@@ -278,6 +278,34 @@ endif
+@@ -278,6 +278,33 @@ endif
  
  endif # } OS_LINUX
  
@@ -64,7 +64,6 @@ $NetBSD: patch-ipc_chromium_Makefile.in,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 +
 +CPPSRCS += \
 +  atomicops_internals_x86_gcc.cc \
-+  file_util_linux.cc \
 +  process_util_bsd.cc \
 +  time_posix.cc \
 +  $(NULL)
@@ -404,19 +403,6 @@ index 9a34492..62b280c 100644
  #else
  typedef DirReaderFallback DirReaderPosix;
  #endif
-diff --git mozilla/ipc/chromium/src/base/file_util_linux.cc mozilla/ipc/chromium/src/base/file_util_linux.cc
-index 171e44f..0c6dfcc 100644
---- mozilla/ipc/chromium/src/base/file_util_linux.cc
-+++ mozilla/ipc/chromium/src/base/file_util_linux.cc
-@@ -28,7 +28,7 @@ bool GetTempDir(FilePath* path) {
- }
- 
- bool GetShmemTempDir(FilePath* path) {
--#ifdef ANDROID
-+#if defined(ANDROID) || defined(OS_BSD)
-   return GetTempDir(path);
- #else
-   *path = FilePath("/dev/shm");
 $NetBSD: patch-ipc_chromium_src_base_file__util__posix.cc,v 1.2 2012/03/06 12:34:09 ryoon Exp $
 
 --- mozilla/ipc/chromium/src/base/file_util_posix.cc.orig	2011-12-20 23:28:19.000000000 +0000
@@ -541,8 +527,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
    pthread_set_name_np(pthread_self(), name);
 -#elif defined(__NetBSD__)
 +#elif defined(OS_NETBSD)
--  pthread_setname_np(pthread_self(), "%s", name);
-+  pthread_setname_np(pthread_self(), "%s", (void *)name);
+   pthread_setname_np(pthread_self(), "%s", (void *)name);
  #else
    prctl(PR_SET_NAME, reinterpret_cast<uintptr_t>(name), 0, 0, 0); 
 $NetBSD: patch-ipc_chromium_src_base_process__util.h,v 1.1 2012/03/06 12:34:09 ryoon Exp $
@@ -586,7 +571,7 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 
 --- mozilla/ipc/chromium/src/base/process_util_bsd.cc.orig	2012-04-01 00:04:28.000000000 +0000
 +++ mozilla/ipc/chromium/src/base/process_util_bsd.cc
-@@ -0,0 +1,318 @@
+@@ -0,0 +1,367 @@
 +// Copyright (c) 2008 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -619,6 +604,20 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +#if (defined(_POSIX_SPAWN) && _POSIX_SPAWN > 0) \
 +  || (defined(OS_NETBSD) && __NetBSD_Version__ >= 599006500)
 +#define HAVE_POSIX_SPAWN	1
++#endif
++
++/*
++ * On platforms that are not gonk based, we fall back to an arbitrary
++ * UID. This is generally the UID for user `nobody', albeit it is not
++ * always the case.
++ */
++
++#if defined(OS_NETBSD) || defined(OS_OPENBSD)
++# define CHILD_UNPRIVILEGED_UID 32767
++# define CHILD_UNPRIVILEGED_GID 32767
++#else
++# define CHILD_UNPRIVILEGED_UID 65534
++# define CHILD_UNPRIVILEGED_GID 65534
 +#endif
 +
 +#ifndef __dso_public
@@ -667,6 +666,17 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +bool LaunchApp(const std::vector<std::string>& argv,
 +               const file_handle_mapping_vector& fds_to_remap,
 +               const environment_map& env_vars_to_set,
++               bool wait, ProcessHandle* process_handle,
++               ProcessArchitecture arch) {
++  return LaunchApp(argv, fds_to_remap, env_vars_to_set,
++                   SAME_PRIVILEGES_AS_PARENT,
++                   wait, process_handle);
++}
++
++bool LaunchApp(const std::vector<std::string>& argv,
++               const file_handle_mapping_vector& fds_to_remap,
++               const environment_map& env_vars_to_set,
++               ChildPrivileges privs,
 +               bool wait, ProcessHandle* process_handle,
 +               ProcessArchitecture arch) {
 +  bool retval = true;
@@ -783,6 +793,17 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +               const environment_map& env_vars_to_set,
 +               bool wait, ProcessHandle* process_handle,
 +               ProcessArchitecture arch) {
++  return LaunchApp(argv, fds_to_remap, env_vars_to_set,
++                   SAME_PRIVILEGES_AS_PARENT,
++                   wait, process_handle);
++}
++
++bool LaunchApp(const std::vector<std::string>& argv,
++               const file_handle_mapping_vector& fds_to_remap,
++               const environment_map& env_vars_to_set,
++               ChildPrivileges privs,
++               bool wait, ProcessHandle* process_handle,
++               ProcessArchitecture arch) {
 +  scoped_array<char*> argv_cstr(new char*[argv.size() + 1]);
 +  // Illegal to allocate memory after fork and before execvp
 +  InjectiveMultimap fd_shuffle1, fd_shuffle2;
@@ -805,19 +826,32 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +
 +    CloseSuperfluousFds(fd_shuffle2);
 +
++    for (size_t i = 0; i < argv.size(); i++)
++      argv_cstr[i] = const_cast<char*>(argv[i].c_str());
++    argv_cstr[argv.size()] = NULL;
++
++    if (privs == UNPRIVILEGED) {
++      if (setgid(CHILD_UNPRIVILEGED_GID) != 0) {
++        DLOG(ERROR) << "FAILED TO setgid() CHILD PROCESS, path: " << argv_cstr[0];
++        _exit(127);
++      }
++      if (setuid(CHILD_UNPRIVILEGED_UID) != 0) {
++        DLOG(ERROR) << "FAILED TO setuid() CHILD PROCESS, path: " << argv_cstr[0];
++        _exit(127);
++      }
++      if (chdir("/") != 0)
++        gProcessLog.print("==> could not chdir()\n");
++    }
++
 +    for (environment_map::const_iterator it = env_vars_to_set.begin();
 +         it != env_vars_to_set.end(); ++it) {
 +      if (setenv(it->first.c_str(), it->second.c_str(), 1/*overwrite*/))
 +        _exit(127);
 +    }
-+
-+    for (size_t i = 0; i < argv.size(); i++)
-+      argv_cstr[i] = const_cast<char*>(argv[i].c_str());
-+    argv_cstr[argv.size()] = NULL;
-+    execvp(argv_cstr[0], argv_cstr.get());
++    execv(argv_cstr[0], argv_cstr.get());
 +    // if we get here, we're in serious trouble and should complain loudly
 +    DLOG(ERROR) << "FAILED TO exec() CHILD PROCESS, path: " << argv_cstr[0];
-+    exit(127);
++    _exit(127);
 +  } else {
 +    gProcessLog.print("==> process %d launched child process %d\n",
 +                      GetCurrentProcId(), pid);
@@ -1144,7 +1178,7 @@ $NetBSD: patch-ipc_glue_GeckoChildProcessHost.cpp,v 1.2 2012/03/15 08:30:06 ryoo
    base::LaunchApp(childArgv, mFileMap,
 -#if defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
-                   newEnvVars,
+                   newEnvVars, privs,
  #endif
                    false, &process, arch);
 diff --git ipc/glue/SharedMemorySysV.h ipc/glue/SharedMemorySysV.h

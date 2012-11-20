@@ -1,12 +1,8 @@
-# New ports collection makefile for:	firefox-i18n
-# Date created:		28 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	10.0.10
+PORTVERSION=	10.0.11
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=

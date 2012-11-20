@@ -1,5 +1,5 @@
---- mozilla/config/baseconfig.mk~
-+++ mozilla/config/baseconfig.mk
+--- config/baseconfig.mk~
++++ config/baseconfig.mk
 @@ -1,9 +1,9 @@
  INCLUDED_AUTOCONF_MK = 1
  
@@ -11,6 +11,6 @@
 +idldir = $(datadir)/idl/%%MOZILLA%%
 +installdir = $(libdir)/%%MOZILLA%%
 +sdkdir = $(libdir)/%%MOZILLA%%
- DIST = $(DEPTH)/dist
- 
- # We do magic with OBJ_SUFFIX in config.mk, the following ensures we don't
+ MOZILLA_SRCDIR = $(topsrcdir)/mozilla
+ MOZDEPTH = $(DEPTH)/mozilla
+ DIST = $(MOZDEPTH)/dist

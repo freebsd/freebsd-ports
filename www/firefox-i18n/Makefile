@@ -1,12 +1,8 @@
-# New ports collection makefile for:	firefox-i18n
-# Date created:		28 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	16.0.2
+PORTVERSION=	17.0
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -18,7 +14,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_FIREFOX=	16
+USE_FIREFOX=	17
 USE_XPI=	firefox linux-firefox
 
 USE_SUBMAKE=	yes
