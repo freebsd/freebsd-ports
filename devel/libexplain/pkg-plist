@@ -20,6 +20,7 @@ include/libexplain/dup.h
 include/libexplain/dup2.h
 include/libexplain/eventfd.h
 include/libexplain/execlp.h
+include/libexplain/execv.h
 include/libexplain/execve.h
 include/libexplain/execvp.h
 include/libexplain/exit.h
@@ -36,6 +37,7 @@ include/libexplain/fflush.h
 include/libexplain/fgetc.h
 include/libexplain/fgetpos.h
 include/libexplain/fgets.h
+include/libexplain/filename.h
 include/libexplain/fileno.h
 include/libexplain/flock.h
 include/libexplain/fopen.h
@@ -69,6 +71,8 @@ include/libexplain/gethostname.h
 include/libexplain/getpeername.h
 include/libexplain/getpgid.h
 include/libexplain/getpgrp.h
+include/libexplain/getresgid.h
+include/libexplain/getresuid.h
 include/libexplain/getrlimit.h
 include/libexplain/getsockname.h
 include/libexplain/getsockopt.h
@@ -77,6 +81,7 @@ include/libexplain/getw.h
 include/libexplain/ioctl.h
 include/libexplain/kill.h
 include/libexplain/large_file_support.h
+include/libexplain/lchmod.h
 include/libexplain/lchown.h
 include/libexplain/libexplain.h
 include/libexplain/link.h
@@ -118,6 +123,7 @@ include/libexplain/readdir.h
 include/libexplain/readlink.h
 include/libexplain/readv.h
 include/libexplain/realloc.h
+include/libexplain/realpath.h
 include/libexplain/remove.h
 include/libexplain/rename.h
 include/libexplain/rmdir.h
@@ -126,13 +132,22 @@ include/libexplain/setbuf.h
 include/libexplain/setbuffer.h
 include/libexplain/setdomainname.h
 include/libexplain/setenv.h
+include/libexplain/setgid.h
 include/libexplain/setgroups.h
 include/libexplain/sethostname.h
 include/libexplain/setlinebuf.h
 include/libexplain/setpgid.h
 include/libexplain/setpgrp.h
+include/libexplain/setregid.h
+include/libexplain/setresgid.h
+include/libexplain/setresuid.h
+include/libexplain/setreuid.h
+include/libexplain/setsid.h
 include/libexplain/setsockopt.h
+include/libexplain/setuid.h
 include/libexplain/setvbuf.h
+include/libexplain/shmat.h
+include/libexplain/shmctl.h
 include/libexplain/signalfd.h
 include/libexplain/snprintf.h
 include/libexplain/socket.h
@@ -171,6 +186,8 @@ include/libexplain/unlink.h
 include/libexplain/unsetenv.h
 include/libexplain/ustat.h
 include/libexplain/utime.h
+include/libexplain/utimens.h
+include/libexplain/utimensat.h
 include/libexplain/utimes.h
 include/libexplain/vfork.h
 include/libexplain/vfprintf.h
@@ -187,5 +204,10 @@ include/libexplain/writev.h
 lib/libexplain.a
 lib/libexplain.la
 lib/libexplain.so
-lib/libexplain.so.45
+lib/libexplain.so.53
+share/doc/libexplain/building.pdf
+share/doc/libexplain/new_system_call.pdf
+share/doc/libexplain/readme.pdf
+share/doc/libexplain/reference.pdf
 @dirrm include/libexplain
+@dirrm %%DOCSDIR%%
