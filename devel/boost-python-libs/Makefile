@@ -9,7 +9,7 @@ PORTNAME=	boost-python-libs
 COMMENT=	Framework for interfacing Python and C++
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.5-3.1
+USE_PYTHON=	yes
 
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \
@@ -35,7 +35,7 @@ BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 post-patch: customize-boost-build
 
 do-build:
-	${ECHO_CMD} "using python : " ${PYTHON_VER} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam
+	${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam
 # build the library
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
