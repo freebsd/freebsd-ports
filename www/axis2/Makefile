@@ -8,7 +8,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
 LICENSE=	AL2
@@ -18,16 +18,10 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
 OPTIONS_SINGLE=	AS
-OPTIONS_SINGLE_AS=	TOMCAT5 TOMCAT6 TOMCAT7
+OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_DEFAULT=	TOMCAT6
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTOMCAT5}
-APPHOME=	${LOCALBASE}/tomcat5.5
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-.endif
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 APPHOME=	${LOCALBASE}/apache-tomcat-6.0
@@ -57,7 +51,7 @@ do-install:
 	( ${MKDIR} ${APPHOME}/webapps/${PORTNAME}/axis2-web && cd ${WRKSRC}/webapp/axis2-web && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/axis2-web )
 	( cd ${WRKSRC}/repository && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF )
 	@${CHOWN} ${SHAREGRP}:${SHAREOWN} ${APPHOME}/webapps/${PORTNAME}
-	@install -d -g ${SHAREGRP} -o ${SHAREOWN} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
+	@${INSTALL} -d -g ${SHAREGRP} -o ${SHAREOWN} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
 	@(cd ${WRKSRC};${FIND} conf -type f | ${SED} -e '/${CONF_EXT}/d') \
 		| while read a; do \
 			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.${CONF_EXT}; \
