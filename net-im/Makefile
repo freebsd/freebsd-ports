@@ -7,7 +7,6 @@
     SUBDIR += ari-yahoo
     SUBDIR += ayttm
     SUBDIR += bsflite
-    SUBDIR += ccmsn
     SUBDIR += centericq
     SUBDIR += centerim
     SUBDIR += centerim-devel
