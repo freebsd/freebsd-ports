@@ -1,22 +1,18 @@
-# ex:ts=8
-# Ports collection makefile for:	jsmin
-# Date created:			Jul 18, 2006
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jsmin
-PORTVERSION=	20120702
+PORTVERSION=	20121118
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/douglascrockford/JSMin/tarball/master/
-DISTNAME=	douglascrockford-JSMin-${GITVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	The JavaScript Minifier
 
-GITVERSION=	49a70cf
-FETCH_ARGS=	-pRr
+USE_GITHUB=	yes
+GH_ACCOUNT=	douglascrockford
+GH_PROJECT=	JSMin
+GH_TAGNAME=	master
+GH_COMMIT=	0d58ea6
 
 PLIST_FILES=	bin/jsmin
 PORTDOCS=	README
