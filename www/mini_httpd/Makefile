@@ -7,6 +7,7 @@
 
 PORTNAME=	mini_httpd
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 
