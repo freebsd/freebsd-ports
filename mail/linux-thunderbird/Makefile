@@ -1,12 +1,8 @@
-# New ports collection makefile for:	linux-thunderbird
-# Date created:		17 April 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thunderbird
-PORTVERSION=	10.0.10
+PORTVERSION=	10.0.11
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 DISTNAME=	${PORTNAME}-${DISTVERSION}esr

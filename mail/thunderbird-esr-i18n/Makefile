@@ -1,12 +1,8 @@
-# New ports collection makefile for:	thunderbird-i18n
-# Date created:		29 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	10.0.10
+PORTVERSION=	10.0.11
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=

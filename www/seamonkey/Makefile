@@ -1,13 +1,8 @@
-# New ports collection makefile for:	mozilla
-# Date created:		31 Mar 1998
-# Whom:			eivind/dima/jseger
-#
+# Created by: eivind/dima/jseger
 # $FreeBSD$
-#
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.13.2
-PORTREVISION=	1
+DISTVERSION=	2.14
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -26,7 +21,7 @@ BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 EM_VERSION=	1.4.6
 
 USE_AUTOTOOLS=	autoconf213:env
-USE_PYTHON_BUILD=yes
+USE_PYTHON_BUILD=-2.7
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	gecko

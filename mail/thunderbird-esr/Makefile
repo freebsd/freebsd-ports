@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mozilla-thunderbird
-# Date created:			4 September 2003
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thunderbird
-DISTVERSION=	10.0.10
+DISTVERSION=	10.0.11
 PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -77,7 +73,7 @@ CFLAGS+=	-mminimal-toc
 .endif
 .endif
 
-.if !empty(CXX:M*clang++*)
+.if !empty(CXX:M*clang++*) || (${CXX:Mc++} && ${OSVERSION} > 1000023)
 CFLAGS+=	-Wno-return-type-c-linkage
 .endif
 

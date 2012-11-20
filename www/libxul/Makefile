@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xulrunner
-# Date created:		2006-02-20
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libxul
-DISTVERSION=	10.0.10
+DISTVERSION=	10.0.11
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	firefox/releases/${DISTVERSION}esr/source
@@ -69,7 +65,7 @@ CFLAGS+=	-mminimal-toc
 .endif
 .endif
 
-.if !empty(CXX:M*clang++*)
+.if !empty(CXX:M*clang++*) || (${CXX:Mc++} && ${OSVERSION} > 1000023)
 CXXFLAGS+=	-Wno-return-type-c-linkage
 .endif
 

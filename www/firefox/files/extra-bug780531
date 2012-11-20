@@ -1,32 +1,13 @@
 --- configure.in~
 +++ configure.in
-@@ -5282,10 +5282,13 @@ if test -n "$MOZ_OGG"; then
-     MOZ_SYDNEYAUDIO=1
-     MOZ_CUBEB=1
-     MOZ_MEDIA=1
--    case "$target_cpu" in
-+    case "$target" in
-     arm*)
-         MOZ_TREMOR=1
-     ;;
-+    *-freebsd*)
-+        MOZ_TREMOR=1
-+    ;;
-     *)
-         MOZ_VORBIS=1
-     ;;
-@@ -5417,10 +5420,13 @@ if test "$MOZ_WEBM"; then
-     MOZ_SYDNEYAUDIO=1
-     MOZ_CUBEB=1
-     MOZ_MEDIA=1
--    case "$target_cpu" in
-+    case "$target" in
-     arm*)
-         MOZ_TREMOR=1
-     ;;
-+    *-freebsd*)
-+        MOZ_TREMOR=1
-+    ;;
-     *)
-         MOZ_VORBIS=1
-     ;;
+@@ -5151,8 +5148,8 @@ fi
+ 
+ AC_SUBST(MOZ_WEBRTC)
+ 
+-case "$target_cpu" in
+-arm*)
++case "$target" in
++arm-*-linux*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
+     MOZ_SAMPLE_TYPE_S16LE=1
+     AC_DEFINE(MOZ_SAMPLE_TYPE_S16LE)
+     AC_SUBST(MOZ_SAMPLE_TYPE_S16LE)

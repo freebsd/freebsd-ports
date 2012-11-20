@@ -1,12 +1,8 @@
-# New ports collection makefile for:	firefox3-i18n
-# Date created:		28 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.13.2
+PORTVERSION=	2.14
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -22,7 +18,7 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
-USE_SEAMONKEY=	13
+USE_SEAMONKEY=	14
 USE_XPI=	seamonkey linux-seamonkey
 
 USE_SUBMAKE=	yes
