@@ -11,7 +11,6 @@ www/dotproject/classes/date.class.php
 www/dotproject/classes/dp.class.php
 www/dotproject/classes/event_queue.class.php
 www/dotproject/classes/index.html
-www/dotproject/classes/kses.class.php
 www/dotproject/classes/libmail.class.php
 www/dotproject/classes/permissions.class.php
 www/dotproject/classes/query.class.php
@@ -139,6 +138,7 @@ www/dotproject/includes/dP_compat.php
 www/dotproject/includes/db_adodb.php
 www/dotproject/includes/db_connect.php
 www/dotproject/includes/gateway.pl
+www/dotproject/includes/htmLawed.php
 www/dotproject/includes/index.html
 www/dotproject/includes/main_functions.php
 www/dotproject/includes/permissions.php
@@ -159,6 +159,7 @@ www/dotproject/install/docs/rfc0001.00.html
 www/dotproject/install/dp.png
 www/dotproject/install/index.php
 www/dotproject/install/install.inc.php
+www/dotproject/install/versions.inc.php
 www/dotproject/install/vw_idx_check.php
 www/dotproject/js/base.js
 www/dotproject/js/collapse.js
