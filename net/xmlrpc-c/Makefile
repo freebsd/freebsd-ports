@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.16.42
+PORTVERSION=	1.16.43
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Xmlrpc-c%20Super%20Stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -54,8 +54,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -type l -name srcdir -delete
 
 post-patch:
-	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g'
+	@${GREP} -lR '\-lpthread' ${WRKSRC} 2>/dev/null | \
+		${XARGS} ${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e '/#include.*features.h/d' \
 		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
