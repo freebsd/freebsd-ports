@@ -1,13 +1,10 @@
-# New ports collection makefile for: 	fhist
-# Date created:				Jan 05 2000
-# Whom: 				<jkoshy@freebsd.org>
-#
+# Created by: <jkoshy@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fhist
 PORTVERSION=	1.21
 DISTVERSIONSUFFIX=	.D001
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +13,7 @@ COMMENT=	Utilities to maintain file history, do file comparisons, and merges
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	explain.45:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
 
 OPTIONS_DEFINE=	NLS
 

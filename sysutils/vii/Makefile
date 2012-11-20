@@ -1,12 +1,9 @@
-# New ports collection makefile for:	vii
-# Date created:				12 Aug 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	vii
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vii.sourceforge.net/ \
 		CRITICAL
@@ -16,7 +13,7 @@ COMMENT=	Execute a command repeatedly and scroll the output
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	explain.45:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

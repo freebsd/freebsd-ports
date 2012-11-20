@@ -1,13 +1,10 @@
-# Ports collection makefile for:	tardy
-# Date created:				Jan 14, 2003
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	tardy
 PORTVERSION=	1.26
 DISTVERSIONSUFFIX=	.D001
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/tardy/${PORTVERSION}/
 
