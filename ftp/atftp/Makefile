@@ -1,13 +1,8 @@
-# New ports collection makefile for:	atftp
-# Date created:		5 October 2010
-# Whom:			kevlo
-#
 # $FreeBSD$
-#
 
 PORTNAME=	atftp
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/a/${PORTNAME}
