@@ -17,8 +17,9 @@ MASTER_SITE_CRAN+=	http://ftp.ctex.org/mirrors/CRAN/src/contrib/ \
 			http://cran.md.tsukuba.ac.jp/src/contrib/ \
 			http://mirrors.ibiblio.org/pub/mirrors/CRAN/src/contrib/ \
 			http://cran.cnr.berkeley.edu/src/contrib/
+MASTER_SITE_CRAN_ARCHIVE+=	${MASTER_SITE_CRAN:S,$,Archive/${PORTNAME}/,}
 
-MASTER_SITES?=	${MASTER_SITE_CRAN}
+MASTER_SITES?=	${MASTER_SITE_CRAN} ${MASTER_SITE_CRAN_ARCHIVE}
 
 USE_FORTRAN=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
