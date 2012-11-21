@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -88,7 +89,7 @@ CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 CONFIGURE_ARGS+=--with-dummy-values
 .endif
 
-.if empty(${PORT_OPTIONS:MTKMIB})
+.if empty(PORT_OPTIONS:MTKMIB)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
@@ -99,7 +100,7 @@ PLIST_SUB+=	WITH_TKMIB=""
 .if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perl-modules
-.if empty(${PORT_OPTIONS:MPERL_EMBEDDED})
+.if empty(PORT_OPTIONS:MPERL_EMBEDDED)
 CONFIGURE_ARGS+=--disable-embedded-perl
 PLIST_SUB+=	WITH_PERL_EMBEDDED="@comment "
 .else
