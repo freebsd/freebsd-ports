@@ -5,40 +5,8 @@ PORTNAME=	cherokee
 PORTVERSION=	1.2.101
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
-		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
-		http://mirror.its.uidaho.edu/pub/cherokee/1.2/\${PORTVERSION}/ \
-		http://www.gtlib.gatech.edu/pub/cherokee/1.2/\${PORTVERSION}/ \
-		ftp://mirrors.secution.com/cherokee/1.2/${PORTVERSION}/ \
-		ftp://ftp.easynet.be/cherokee/1.2/${PORTVERSION}/ \
-		http://ftp.heanet.ie/mirrors/cherokee/1.2/${PORTVERSION}/ \
-		http://www.ftp.ne.jp/infosystems/cherokee/1.2/${PORTVERSION}/ \
-		http://www.ring.gr.jp/archives/net/cherokee/1.2/${PORTVERSION}/ \
-		http://ftp.nluug.nl/pub/internet/cherokee/1.2/${PORTVERSION}/ \
-		http://ftp.surfnet.nl/pub/internet/cherokee/1.2/${PORTVERSION}/ \
-		http://mirror.is.co.za/mirrors/cherokee/1.2/${PORTVERSION}/ \
-		http://mirror.aarnet.edu.au/pub/cherokee/1.2/\${PORTVERSION}/ \
-		http://ftp.ntua.gr/pub/www/cherokee/1.2/\${PORTVERSION}/ \
-		http://ftp.cc.uoc.gr/mirrors/cherokee/1.2/\${PORTVERSION}/ \
-		http://cherokee.mirror.garr.it/mirrors/cherokee/1.2/\${PORTVERSION}/ \
-		http://ftp.yz.yamagata-u.ac.jp/pub/network/cherokee/1.2/\${PORTVERSION}/ \
-		http://ftp.icm.edu.pl/packages/cherokee/1.2/\${PORTVERSION}/ \
-		ftp://download.srv.ro/pub/cherokee/1.2/\${PORTVERSION}/ \
-		http://mirror.yandex.ru/mirrors/cherokee-project.com/1.2/\${PORTVERSION}/ \
-		http://cherokee.hyperial.com/1.2/\${PORTVERSION}/ \
-		http://cherokee.labs.itb.ac.id/1.2/\${PORTVERSION}/ \
-		http://mirror.cpsc.ucalgary.ca/mirror/cherokee/1.2/\${PORTVERSION}/ \
-		http://www.feel3.de/mirrors/cherokee/1.2/\${PORTVERSION}/ \
-		http://cherokee.pubcrawler.com/1.2/\${PORTVERSION}/
-
-# Disabled mirrors
-# due to 404
-#		http://cherokee-project.pl/mirror/cherokee/1.0/${PORTVERSION}/ \
-#		http://ftp.saix.net/Cherokee/1.0/${PORTVERSION}/ \
-#		http://sunsite.rediris.es/mirror/cherokee/1.0/\${PORTVERSION}/
-
-# due to site down
-#		http://mirror.apung.web.id/cherokee/1.0/\${PORTVERSION}/ \
+MASTER_SITES=	${MASTER_SITE_SAMBA}
+MASTER_SITE_SUBDIR=cherokee/1.2/${PORTVERSION}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Extremely fast and flexible web server
@@ -54,6 +22,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+PORTSCOUT=	limit:^1\.2\.102
 
 CHEROKEE_VARDIR?=	/var
 CHEROKEE_LOGDIR?=	${CHEROKEE_VARDIR}/log
@@ -79,11 +49,11 @@ CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 cherokee-admin-launcher.1 \
-		cherokee-tweak.1 cherokee-worker.1 
+		cherokee-tweak.1 cherokee-worker.1
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	IPV6 MYSQL LDAP GEOIP FFMPEG NLS INTPCRE ADMIN ADMIN RRDTOOL UWSGI DOCS
-OPTIONS_DEFAULT=	IPV6 GEOIP ADMIN
+OPTIONS_DEFAULT=IPV6 GEOIP ADMIN
 ADMIN_DESC=	Build the Admin Interface
 INTPCRE_DESC=	Use internal PCRE library
 RRDTOOL_DESC=	Usage graphs support
@@ -99,36 +69,36 @@ CONFIGURE_ARGS+=--disable-admin
 PLIST_SUB+=	ADMIN="@comment "
 .endif
 
-CONFIGURE_ARGS+=	--with-wwwuser=${CHEROKEE_USER} --with-wwwgroup=${CHEROKEE_GROUP}
+CONFIGURE_ARGS+=--with-wwwuser=${CHEROKEE_USER} --with-wwwgroup=${CHEROKEE_GROUP}
 
 .if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--disable-ipv6
+CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql=yes
+CONFIGURE_ARGS+=--with-mysql=yes
 PLIST_SUB+=	MYSQL=""
 .else
-CONFIGURE_ARGS+=	--with-mysql=no
+CONFIGURE_ARGS+=--with-mysql=no
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--with-ldap=yes
+CONFIGURE_ARGS+=--with-ldap=yes
 PLIST_SUB+=	LDAP=""
 .else
-CONFIGURE_ARGS+=	--with-ldap=no
+CONFIGURE_ARGS+=--with-ldap=no
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
-CONFIGURE_ARGS+=	--with-geoip=yes
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+CONFIGURE_ARGS+=--with-geoip=yes
 PLIST_SUB+=	GEOIP=""
 .else
-CONFIGURE_ARGS+=	--with-geoip=no
+CONFIGURE_ARGS+=--with-geoip=no
 PLIST_SUB+=	GEOIP="@comment "
 .endif
 
@@ -136,22 +106,22 @@ PLIST_SUB+=	GEOIP="@comment "
 LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		avutil:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--with-ffmpeg=yes
+CONFIGURE_ARGS+=--with-ffmpeg=yes
 .else
-CONFIGURE_ARGS+=	--with-ffmpeg=no
+CONFIGURE_ARGS+=--with-ffmpeg=no
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MINTPCRE}
-CONFIGURE_ARGS+=	--enable-internal-pcre
+CONFIGURE_ARGS+=--enable-internal-pcre
 .else
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 .endif
 
 .if ${PORT_OPTIONS:MRRDTOOL}
