@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.8
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -41,7 +41,7 @@ MANUAL_PACKAGE_BUILD=	fails to link on pointyhat
 .endif
 
 .if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-config-h-in
 .endif
 
 .if defined(WITH_GPG)
