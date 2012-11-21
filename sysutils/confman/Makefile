@@ -7,6 +7,7 @@
 
 PORTNAME=	confman
 PORTVERSION=	1.9.4b
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.timesinks.net/distfiles/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ccowart@timesinks.net
 COMMENT=	A revision controlled configuration manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		svn:${PORTSDIR}/devel/subversion \
+		svn:${PORTSDIR}/devel/subversion16 \
 		sudo:${PORTSDIR}/security/sudo \
 		greadlink:${PORTSDIR}/sysutils/coreutils \
 		wget:${PORTSDIR}/ftp/wget
