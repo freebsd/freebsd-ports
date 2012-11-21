@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- newlisp.c.orig
 +++ newlisp.c
-@@ -470,16 +470,16 @@
+@@ -463,16 +463,16 @@
+     else if(getenv("DOCUMENT_ROOT"))
          strncpy(initFile, getenv("DOCUMENT_ROOT"), MAX_LINE - 16);
  
-     /* for non BSDs strlcat and strlcpy are redefined as strncat and strncpy */
--    strlcat(initFile, "/.", 3);
--    strlcat(initFile, INIT_FILE, 9);
+-    strncat(initFile, "/.", 2);
+-    strncat(initFile, INIT_FILE, 9);
 +    strlcat(initFile, "/.", sizeof(initFile));
 +    strlcat(initFile, INIT_FILE, sizeof(initFile));
      if(loadFile(initFile, 0, 0, mainContext) == NULL)
@@ -16,9 +16,9 @@ $FreeBSD$
          envPtr = getenv("NEWLISPDIR");
          if(envPtr)
              {
--            strlcpy(initFile, envPtr, MAX_LINE - 16);
--            strlcat(initFile, "/", 2);
--            strlcat(initFile, INIT_FILE, 9);
+-            strncpy(initFile, envPtr, MAX_LINE - 16);
+-            strncat(initFile, "/", 1);
+-            strncat(initFile, INIT_FILE, 9);
 +            strlcpy(initFile, envPtr, sizeof(initFile));
 +            strlcat(initFile, "/", sizeof(initFile));
 +            strlcat(initFile, INIT_FILE, sizeof(initFile));

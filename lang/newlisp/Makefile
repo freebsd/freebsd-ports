@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.4.4
+PORTVERSION=	10.4.5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 EXTRACT_SUFX=	.tgz
