@@ -1,10 +1,16 @@
---- configure.ac.orig	2011-07-03 09:33:11.000000000 -0700
-+++ configure.ac	2012-05-03 16:49:19.000000000 -0700
-@@ -18,2 +18,3 @@
+--- configure.ac.orig	2012-11-19 11:05:29.000000000 +0100
++++ configure.ac	2012-11-21 14:22:53.723233779 +0100
+@@ -16,6 +16,7 @@
+ dnl Checks for programs.
+ AC_PROG_CC
  AM_PROG_CC_C_O
 +AM_PROG_AR
  AC_PROG_LD
-@@ -26,7 +27,2 @@
+ AC_PROG_INSTALL
+ AC_PROG_AWK
+@@ -30,11 +31,6 @@
+ dnl AM_PROG_AR requires automake 1.11 (and uses AC_COMPILE_IFELSE which wants AC_USE_SYSTEM_EXTENSIONS)
+ m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
  
 -dnl check environment
 -AC_AIX
@@ -12,9 +18,5 @@
 -AC_MINIX
 -
  dnl AC_CANONICAL_HOST
-@@ -40,5 +36,2 @@
- 
--dnl more automake stuff
--AM_C_PROTOTYPES
--
- dnl libtool
+ case $host_os in
+ 	*darwin*|*cygwin*|*aix*|*mingw* ) NO_RDYNAMIC=yes;;
