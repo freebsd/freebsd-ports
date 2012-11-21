@@ -16,11 +16,12 @@ COMMENT=	Liberate the universe from the evil company WEAPCO
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	image mixer
 WITH_ZLIB=	yes
+USE_GMAKE=	yes
+MAKEFILE=	makefile
 
 INSTALLS_ICONS=	yes
 
@@ -41,10 +42,6 @@ post-patch:
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -i '' -e '/$$(DESTDIR)$$(DOCDIR)/d' ${WRKSRC}/makefile
 .endif
-	@(cd ${WRKSRC} && ${CP} makefile Makefile)
-
-do-build:
-	@(cd ${WRKSRC} && ${GMAKE})
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
