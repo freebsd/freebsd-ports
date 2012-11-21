@@ -16,7 +16,9 @@ BUILD_DEPENDS=	p5-Alien-wxWidgets>=0.25:${PORTSDIR}/x11-toolkits/p5-Alien-wxWidg
 		p5-ExtUtils-XSpp>=0.06:${PORTSDIR}/devel/p5-ExtUtils-XSpp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	UNICODE "Build with Unicode support"    on
+OPTIONS_DEFINE=	UNICODE
+OPTIONS_DEFAULT=	UNICODE
+UNICODE_DESC=	Build with Unicode support
 
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
@@ -26,7 +28,8 @@ CC=		${CXX}
 CFLAGS+=	-pthread -Wno-write-strings
 MAKE_JOBS_UNSAFE=	yes
 
-.if defined(WITH_UNICODE)
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MUNICODE}
 WX_UNICODE=	yes
 .endif
 
@@ -46,7 +49,7 @@ MAN3=		Wx::Perl::TextValidator.3 \
 		Wx::Thread.3 \
 		Wx.3
 
-.if defined(WITH_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 pre-configure:
 	@if [ ! "$$(${ALIEN_UNICODE})" ]; then \
 		${ECHO_MSG}; \
