@@ -21,6 +21,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+FORBIDDEN=	http://www.opera.com/support/kb/view/1036/
+
 OPERA_VER?=	12.10
 OPERA_BUILD?=	1652
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
