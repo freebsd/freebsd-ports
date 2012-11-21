@@ -1,5 +1,4 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
-#
 # $FreeBSD$
 
 PORTNAME=	htdig
@@ -31,11 +30,12 @@ MAN1=		htdig.1 htdig-pdfparser.1 htdump.1 htfuzzy.1 htload.1 \
 
 MAN8=		htdigconfig.8
 
-OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
+OPTIONS_DEFINE=	APACHE DOCS
+OPTIONS_DEFAULT=	APACHE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE=	22+
 CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
@@ -55,7 +55,7 @@ post-install:
 .if exists(${PREFIX}/etc/htdig/htdig.conf.old)
 	${MV} ${PREFIX}/etc/htdig/htdig.conf.old ${PREFIX}/etc/htdig/htdig.conf
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/html
 .for f in ChangeLog ChangeLog.0 README STATUS
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
@@ -65,4 +65,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
