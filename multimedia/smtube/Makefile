@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smplayer/SMTube/${PORTVERSION}/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+ALL_TARGET=	#empty
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xdmcp xext xrender
@@ -34,6 +35,7 @@ post-patch:
 		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|g' \
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
 		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
+		-e 's| make| ${GMAKE}|' \
 		${WRKSRC}/Makefile
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -43,8 +45,5 @@ PORTDOCS=	*
 .else
 	@${REINPLACE_CMD} -e '/DOC_PATH/d' ${WRKSRC}/Makefile
 .endif
-
-do-build:
-	cd ${WRKSRC} && ${MAKE}
 
 .include <bsd.port.mk>
