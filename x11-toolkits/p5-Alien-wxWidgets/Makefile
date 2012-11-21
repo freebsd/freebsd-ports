@@ -13,7 +13,9 @@ COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
 
 BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
-OPTIONS=	UNICODE "Build with Unicode support"    on
+OPTIONS_DEFINE=	UNICODE
+OPTIONS_DEFAULT=	UNICODE
+UNICODE_DESC=	Build with Unicode support
 
 USE_GCC=	any
 USE_WX=		2.6+
@@ -26,7 +28,7 @@ PERL_MODBUILD=	yes
 BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
 
-.if defined(WITH_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 WX_UNICODE=	yes
 WX_UNI=		uni_
 CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=1
