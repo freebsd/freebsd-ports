@@ -1,12 +1,8 @@
-# New ports collection makefile for:	linux-seamonkey
-# Date created:		1 February 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	seamonkey
-PORTVERSION=	2.13.2
+PORTVERSION=	2.14
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
 

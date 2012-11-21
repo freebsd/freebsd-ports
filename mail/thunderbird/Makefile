@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mozilla-thunderbird
-# Date created:			4 September 2003
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thunderbird
-DISTVERSION=	16.0.2
+DISTVERSION=	17.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -23,10 +19,10 @@ BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
-EM_VERSION=	1.4.5
+EM_VERSION=	1.4.6
 
 USE_AUTOTOOLS=	autoconf213:env
-USE_PYTHON_BUILD=yes
+USE_PYTHON_BUILD=-2.7
 USE_GECKO=	gecko
 CONFLICTS=	thunderbird-10.*
 USE_MOZILLA=	# empty

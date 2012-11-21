@@ -179,7 +179,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 10+ 16+ 10 16+
+#                         Available values: yes 10+ 17+ 10 17+
 #                         NOTE:
 #                         default value 10 is used in case of USE_FIREFOX=yes
 #
@@ -190,9 +190,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 13+ 13
+#                         Available values: yes 14+ 14
 #                         NOTE:
-#                         default value 13 is used in case of USE_SEAMONKEY=yes
+#                         default value 14 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -201,7 +201,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 10+ 16+ 10 16
+#                         Available values: yes 10+ 17+ 10 17
 #                         NOTE:
 #                         default value 10 is used in case of USE_THUNDERBIRD=yes
 #
@@ -221,11 +221,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	10
-_FIREFOX_VERSIONS=			10 16
-_FIREFOX_RANGE_VERSIONS=	10+ 16+
+_FIREFOX_VERSIONS=			10 17
+_FIREFOX_RANGE_VERSIONS=	10+ 17+
 
 # For specifying [10, ..]+
-_FIREFOX_16P=	16 ${_FIREFOX_10P}
+_FIREFOX_17P=	17 ${_FIREFOX_10P}
 _FIREFOX_10P=	10
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-16_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -294,12 +294,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	13
-_SEAMONKEY_VERSIONS=		13
-_SEAMONKEY_RANGE_VERSIONS=	13+
+_SEAMONKEY_DEFAULT_VERSION=	14
+_SEAMONKEY_VERSIONS=		14
+_SEAMONKEY_RANGE_VERSIONS=	14+
 
-# For specifying [13, ..]+
-_SEAMONKEY_13P=	13
+# For specifying [14, ..]+
+_SEAMONKEY_14P=	14
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -341,7 +341,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-13_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+14_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -364,11 +364,11 @@ _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
 _THUNDERBIRD_DEFAULT_VERSION=	10
-_THUNDERBIRD_VERSIONS=			10 16
-_THUNDERBIRD_RANGE_VERSIONS=	10+ 16+
+_THUNDERBIRD_VERSIONS=			10 17
+_THUNDERBIRD_RANGE_VERSIONS=	10+ 17+
 
 # For specifying [10, ..]+
-_THUNDERBIRD_16P=	16 ${_THUNDERBIRD_10P}
+_THUNDERBIRD_17P=	17 ${_THUNDERBIRD_10P}
 _THUNDERBIRD_10P=	10
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
@@ -414,7 +414,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 
 # Dependence lines for different Thunderbird versions
 10_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird-esr
-16_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+17_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 # Add dependencies
 .if defined(USE_THUNDERBIRD)
@@ -841,6 +841,8 @@ gecko-post-patch:
 	@for i in ${.CURDIR}/../../devel/nspr/files/patch-*; do \
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/nsprpub/build < $$i; \
 	done
+	@${REINPLACE_CMD} -e '/DLL_SUFFIX/s/so\.1$$/so/' \
+		${WRKSRC}/nsprpub/configure
 .endif
 .if ${USE_MOZILLA:M-nss}
 	@${ECHO_MSG} "===>  Applying NSS patches"

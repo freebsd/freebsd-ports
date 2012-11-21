@@ -12,23 +12,3 @@
  	SkTime_Unix.cpp \
  	$(NULL)
  endif
---- widget/qt/nsNativeThemeQt.cpp~
-+++ widget/qt/nsNativeThemeQt.cpp
-@@ -25,7 +25,6 @@
- #include "nsThemeConstants.h"
- #include "nsIServiceManager.h"
- #include "nsIDOMHTMLInputElement.h"
--#include <malloc.h>
- 
- 
- #include "gfxASurface.h"
---- widget/qt/nsSound.cpp~
-+++ widget/qt/nsSound.cpp
-@@ -40,6 +40,7 @@
- #include <QSound>
- 
- #include <string.h>
-+#include <unistd.h>
- 
- #include "nscore.h"
- #include "plstr.h"

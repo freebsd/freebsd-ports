@@ -51,6 +51,159 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d23119df-335d-11e2-b64c-c8600054b392">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>17.0,1</lt></range>
+	<range><lt>10.0.11,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>10.0.11,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.14</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>10.0.11</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.14</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>17.0</lt></range>
+	<range><lt>10.0.11</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2012-91 Miscellaneous memory safety hazards (rv:17.0/
+	    rv:10.0.11)</p>
+	  <p>MFSA 2012-92 Buffer overflow while rendering GIF images</p>
+	  <p>MFSA 2012-93 evalInSanbox location context incorrectly applied</p>
+	  <p>MFSA 2012-94 Crash when combining SVG text on path with CSS</p>
+	  <p>MFSA 2012-95 Javascript: URLs run in privileged context on New Tab
+	    page</p>
+	  <p>MFSA 2012-96 Memory corruption in str_unescape</p>
+	  <p>MFSA 2012-97 XMLHttpRequest inherits incorrect principal within
+	    sandbox</p>
+	  <p>MFSA 2012-98 Firefox installer DLL hijacking</p>
+	  <p>MFSA 2012-99 XrayWrappers exposes chrome-only properties when not
+	    in chrome compartment</p>
+	  <p>MFSA 2012-100 Improper security filtering for cross-origin
+	    wrappers</p>
+	  <p>MFSA 2012-101 Improper character decoding in HZ-GB-2312 charset</p>
+	  <p>MFSA 2012-102 Script entered into Developer Toolbar runs with
+	    chrome privileges</p>
+	  <p>MFSA 2012-103 Frames can shadow top.location</p>
+	  <p>MFSA 2012-104 CSS and HTML injection through Style Inspector</p>
+	  <p>MFSA 2012-105 Use-after-free and buffer overflow issues found</p>
+	  <p>MFSA 2012-106 Use-after-free, buffer overflow, and memory
+	    corruption issues found using Address Sanitizer</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-4201</cvename>
+	<cvename>CVE-2012-4202</cvename>
+	<cvename>CVE-2012-4203</cvename>
+	<cvename>CVE-2012-4204</cvename>
+	<cvename>CVE-2012-4205</cvename>
+	<cvename>CVE-2012-4206</cvename>
+	<cvename>CVE-2012-4207</cvename>
+	<cvename>CVE-2012-4208</cvename>
+	<cvename>CVE-2012-4209</cvename>
+	<cvename>CVE-2012-4210</cvename>
+	<cvename>CVE-2012-4212</cvename>
+	<cvename>CVE-2012-4213</cvename>
+	<cvename>CVE-2012-4214</cvename>
+	<cvename>CVE-2012-4215</cvename>
+	<cvename>CVE-2012-4216</cvename>
+	<cvename>CVE-2012-4217</cvename>
+	<cvename>CVE-2012-4218</cvename>
+	<cvename>CVE-2012-5829</cvename>
+	<cvename>CVE-2012-5830</cvename>
+	<cvename>CVE-2012-5833</cvename>
+	<cvename>CVE-2012-5835</cvename>
+	<cvename>CVE-2012-5836</cvename>
+	<cvename>CVE-2012-5837</cvename>
+	<cvename>CVE-2012-5838</cvename>
+	<cvename>CVE-2012-5839</cvename>
+	<cvename>CVE-2012-5840</cvename>
+	<cvename>CVE-2012-5841</cvename>
+	<cvename>CVE-2012-5842</cvename>
+	<cvename>CVE-2012-5843</cvename>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-90.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-91.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-92.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-93.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-94.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-95.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-96.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-97.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-98.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-99.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-100.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-101.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-102.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-103.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-104.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-105.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-106.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-20</discovery>
+      <entry>2012-11-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="81826d12-317a-11e2-9186-406186f3d89d">
+    <topic>weechat -- Arbitrary shell command execution via scripts</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><ge>0.3.0</ge><lt>0.3.9.2</lt></range>
+      </package>
+      <package>
+	<name>weechat-devel</name>
+	<range><lt>20121118</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastien Helleu reports:</p>
+	<blockquote cite="http://weechat.org/security/">
+	  <p>Untrusted command for function hook_process could lead to 
+	  execution of commands, because of shell expansions.</p>
+	  <p>Workaround with a non-patched version: remove/unload all scripts
+	  calling function hook_process (for maximum safety).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://weechat.org/security/</url>
+      <url>https://savannah.nongnu.org/bugs/?37764</url>
+    </references>
+    <dates>
+      <discovery>2012-11-15</discovery>
+      <entry>2012-11-18</entry>
+      <modified>2012-11-18</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="2b841f88-2e8d-11e2-ad21-20cf30e32f6d">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>

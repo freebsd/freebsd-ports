@@ -1,12 +1,8 @@
-# New ports collection makefile for:	phoenix
-# Date created:			2002/10/21
-# Whom:				Alan Eldridge <alane@FreeBSD.org>
-#
+# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	firefox
-DISTVERSION=	16.0.2
+DISTVERSION=	17.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -24,7 +20,7 @@ BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		unzip:${PORTSDIR}/archivers/unzip
 
 USE_AUTOTOOLS=	autoconf213:env
-USE_PYTHON_BUILD=yes
+USE_PYTHON_BUILD=-2.7
 USE_GECKO=	gecko
 CONFLICTS=	firefox-10.*
 MOZ_PKGCONFIG_FILES=	# empty

@@ -1,27 +1,8 @@
-diff --git config/autoconf.mk.in config/autoconf.mk.in
-index 44c0b06..748511b 100644
---- config/autoconf.mk.in
-+++ config/autoconf.mk.in
-@@ -536,9 +536,14 @@ MOZ_LIBNOTIFY_CFLAGS	= @MOZ_LIBNOTIFY_CFLAGS@
- MOZ_LIBNOTIFY_LIBS	= @MOZ_LIBNOTIFY_LIBS@
- MOZ_ENABLE_LIBNOTIFY	= @MOZ_ENABLE_LIBNOTIFY@
- 
-+MOZ_ALSA                = @MOZ_ALSA@
- MOZ_ALSA_LIBS           = @MOZ_ALSA_LIBS@
- MOZ_ALSA_CFLAGS         = @MOZ_ALSA_CFLAGS@
- 
-+MOZ_PULSEAUDIO          = @MOZ_PULSEAUDIO@
-+MOZ_PULSEAUDIO_LIBS     = @MOZ_PULSEAUDIO_LIBS@
-+MOZ_PULSEAUDIO_CFLAGS   = @MOZ_PULSEAUDIO_CFLAGS@
-+
- GLIB_CFLAGS	= @GLIB_CFLAGS@
- GLIB_LIBS	= @GLIB_LIBS@
- GLIB_GMODULE_LIBS	= @GLIB_GMODULE_LIBS@
 diff --git configure.in configure.in
 index 5980b76..11f5f77 100644
 --- configure.in
 +++ configure.in
-@@ -5600,13 +5600,45 @@ dnl ========================================================
+@@ -5600,13 +5600,25 @@ dnl ========================================================
  dnl = Check alsa availability on Linux if using sydneyaudio
  dnl ========================================================
  
@@ -45,28 +26,8 @@ index 5980b76..11f5f77 100644
  
 +AC_SUBST(MOZ_ALSA)
 +
-+dnl ========================================================
-+dnl = Enable PulseAudio
-+dnl ========================================================
-+
-+MOZ_ARG_ENABLE_BOOL(pulseaudio,
-+[  --enable-pulseaudio          Enable PulseAudio support],
-+MOZ_PULSEAUDIO=1,
-+MOZ_PULSEAUDIO=)
-+
-+if test -n "$MOZ_PULSEAUDIO"; then
-+    AC_DEFINE(MOZ_CUBEB)
-+    PKG_CHECK_MODULES(MOZ_PULSEAUDIO, libpulse, ,
-+         [echo "$MOZ_PULSEAUDIO_PKG_ERRORS"
-+          AC_MSG_ERROR([pulseaudio audio backend requires libpulse package])])
-+fi
-+
-+AC_SUBST(MOZ_PULSEAUDIO_CFLAGS)
-+AC_SUBST(MOZ_PULSEAUDIO_LIBS)
-+AC_SUBST(MOZ_PULSEAUDIO)
-+
  dnl ========================================================
- dnl = Enable GStreamer
+ dnl = Enable PulseAudio
  dnl ========================================================
 diff --git media/libcubeb/src/Makefile.in media/libcubeb/src/Makefile.in
 index 5ab4dd8..c8df26f 100644
@@ -83,7 +44,7 @@ index 5ab4dd8..c8df26f 100644
  endif
  
  ifeq ($(OS_TARGET),Darwin)
-@@ -42,4 +38,16 @@ CSRCS           = \
+@@ -42,6 +38,12 @@ CSRCS           = \
                  $(NULL)
  endif
  
@@ -93,25 +54,9 @@ index 5ab4dd8..c8df26f 100644
 +              $(NULL)
 +endif
 +
-+ifdef MOZ_PULSEAUDIO
-+CSRCS		= \
-+		cubeb_pulse.c \
-+		$(NULL)
-+endif
-+
- include $(topsrcdir)/config/rules.mk
-diff --git media/libcubeb/src/cubeb_alsa.c media/libcubeb/src/cubeb_alsa.c
-index 599aea2..41fd5af 100644
---- media/libcubeb/src/cubeb_alsa.c
-+++ media/libcubeb/src/cubeb_alsa.c
-@@ -6,6 +6,6 @@
- #undef NDEBUG
- #define _BSD_SOURCE
--#define _POSIX_SOURCE
-+#define _XOPEN_SOURCE 500
- #include <pthread.h>
- #include <sys/time.h>
- #include <assert.h>
+ ifdef MOZ_PULSEAUDIO
+ CSRCS		= \
+ 		cubeb_pulse.c \
 diff --git media/libsydneyaudio/src/Makefile.in media/libsydneyaudio/src/Makefile.in
 index 8dda8ce..b19641d 100644
 --- media/libsydneyaudio/src/Makefile.in
@@ -150,7 +95,7 @@ diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 43384e9..e46a6e3 100644
 --- toolkit/library/Makefile.in
 +++ toolkit/library/Makefile.in
-@@ -379,10 +379,13 @@ endif
+@@ -370,14 +370,11 @@ endif
  
  EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib) 
  
@@ -160,9 +105,10 @@ index 43384e9..e46a6e3 100644
 +ifdef MOZ_ALSA
  EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
  endif
-+ifdef MOZ_PULSEAUDIO
-+EXTRA_DSO_LDOPTS += $(MOZ_PULSEAUDIO_LIBS)
-+endif
+-endif
+-
+ ifdef MOZ_PULSEAUDIO
+-ifdef MOZ_CUBEB
+ EXTRA_DSO_LDOPTS += $(MOZ_PULSEAUDIO_LIBS)
  endif
- 
- ifdef HAVE_CLOCK_MONOTONIC
+ endif

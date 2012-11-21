@@ -1,12 +1,8 @@
-# New ports collection makefile for:	linux-firefox
-# Date created:				2004-09-17
-# Whom:					voisine
-#
+# Created by: voisine
 # $FreeBSD$
-#
 
 PORTNAME=	firefox
-PORTVERSION=	10.0.10
+PORTVERSION=	10.0.11
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}esr/linux-i686/en-US
