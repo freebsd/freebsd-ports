@@ -1,5 +1,5 @@
---- tftpd.h.orig	2010-10-11 11:33:53.000000000 +0800
-+++ tftpd.h	2010-10-11 11:34:33.000000000 +0800
+--- tftpd.h.orig	2004-02-27 10:05:26.000000000 +0800
++++ tftpd.h	2012-11-21 13:07:15.000000000 +0800
 @@ -71,6 +71,11 @@
  struct client_info {
       struct sockaddr_in client;
@@ -12,3 +12,12 @@
       struct client_info *next;
  };
  
+@@ -93,7 +98,7 @@
+ /*
+  * Defined in tftpd_list.c, operation on client structure list.
+  */
+-inline void tftpd_clientlist_ready(struct thread_data *thread);
++extern inline void tftpd_clientlist_ready(struct thread_data *thread);
+ void tftpd_clientlist_remove(struct thread_data *thread,
+                              struct client_info *client);
+ void tftpd_clientlist_free(struct thread_data *thread);
