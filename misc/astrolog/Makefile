@@ -8,10 +8,13 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.41g
+PORTREVISION=	1
 CATEGORIES=	misc astro
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
+		ftp://ftp.astro.com/pub/swisseph/:libswe \
 		http://astrolog.offline.ee/astrolog/changed/:dist
-DISTFILES=	a541gsrc.tar.gz:dist ${EPHE}
+DISTFILES=      a541gsrc.tar.gz:dist ${EPHE} \
+		swe_unix_src_1.78.00.tar.gz:libswe
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
@@ -40,6 +43,9 @@ MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
 DOCS=		helpfile.540 readme.541 changes.txt
+
+post-extract:
+	${RM} ${WRKDIR}/swe[a-z]*
 
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog

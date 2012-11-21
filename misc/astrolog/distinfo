@@ -36,3 +36,5 @@ SHA256 (astrolog/swephm48.tar.gz) = 03dadea99521fbbccbc90e6c3f5315986ec308a3973a
 SIZE (astrolog/swephm48.tar.gz) = 1988548
 SHA256 (astrolog/swephm54.tar.gz) = 500b2ed7940ee593c7c361270ee808a74ab3940c24656b2b84c92e8578322748
 SIZE (astrolog/swephm54.tar.gz) = 2000428
+SHA256 (astrolog/swe_unix_src_1.78.00.tar.gz) = 69abd9a49d16693768d223a0acad484b8c5b9ca46d434c8942f5ea815ffd81ee
+SIZE (astrolog/swe_unix_src_1.78.00.tar.gz) = 4517350
