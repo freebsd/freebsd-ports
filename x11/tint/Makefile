@@ -26,15 +26,17 @@ PLIST_FILES=	bin/tint2 \
 		share/tint2/default_icon.png
 PLIST_DIRS=	share/tint2
 
-OPTIONS=	PYCONF "Configuration editing tool (req. python)" on
+OPTIONS_DEFINE=	PYCONF DOCS EXAMPLES
+OPTIONS_DEFAULT=	PYCONF
+PYCONF_DESC=	Configuration editing tool (req. python)
 
 MAN1=		tint2.1
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PYCONF)
+.if ${PORT_OPTIONS:MPYCONF}
 USE_PYTHON=	yes
 USE_GNOME=	gtk20 pygtk2
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=ON
@@ -47,7 +49,7 @@ PYCONF_SRC=	${WRKSRC}/src/tint2conf
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=OFF
 .endif
 
-.if !defined(WITHOUT_PYCONF)
+.if ${PORT_OPTIONS:MPYCONF}
 post-patch:
 	@${MV} ${PYCONF_SRC}/tintwizard.py ${PYCONF_SRC}/tintwizard.py.Dist
 	@${SED} -e 's#pidof#pgrep#g' ${PYCONF_SRC}/tintwizard.py.Dist \
@@ -59,7 +61,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/tint2
 	${INSTALL_DATA} ${WRKSRC}/default_icon.png ${PREFIX}/share/tint2
 	${INSTALL_MAN} ${WRKSRC}/doc/tint2.1 ${MANPREFIX}/man/man1
-.if defined(WITH_PYCONF)
+.if ${PORT_OPTIONS:MPYCONF}
 	${INSTALL_PROGRAM} ${PYCONF_SRC}/tint2conf ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PYCONF_SRC}/tintwizard.py ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/applications
@@ -67,13 +69,13 @@ do-install:
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.png ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.svg ${PREFIX}/share/pixmaps
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	@for file in ${RCS}; do \
 	${INSTALL_DATA} ${WRKSRC}/sample/$${file} ${EXAMPLESDIR}; \
@@ -85,4 +87,4 @@ PLIST_FILES+=	${EXAMPLESDIR_REL}/${file}
 PLIST_DIRS+=	${EXAMPLESDIR_REL}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
