@@ -1,9 +1,5 @@
-# New ports collection makefile for:	popa3d
-# Date created:		Sun Feb  6 12:31:29 MSK 2000
-# Whom:			Sergey Samoyloff <gonza@techline.ru>
-#
+# Created by: Sergey Samoyloff <gonza@techline.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	popa3d
 PORTVERSION=	1.0.2
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/pub/projects/popa3d/
 PKGNAMESUFFIX?=	${SMTP_AFTER_POP3_SUFFIX}${STANDALONE_SUFFIX}${PKGNAMESUFFIX2}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Secure, performance, tiny POP3 daemon
 
 ALL_TARGET=	popa3d
@@ -103,8 +99,8 @@ do-install:
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MSTANDALONE_POP3}
 post-install:
+.if ! ${PORT_OPTIONS:MSTANDALONE_POP3}
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
