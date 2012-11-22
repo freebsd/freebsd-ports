@@ -7,7 +7,7 @@
 
 PORTNAME=	xmpppy-irc
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im python irc
 MASTER_SITES=	SF/xmpppy/PyIRCt/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	An xmpp to irc transport
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
-		${PYTHON_SITELIBDIR}/irclib.py:${PORTSDIR}/irc/py-irclib
+		${PYTHON_PKGNAMEPREFIX}irc>0:${PORTSDIR}/irc/py-irc
 
 USE_PYTHON=	2.5+
 NO_BUILD=	yes
