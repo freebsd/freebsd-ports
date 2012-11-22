@@ -1,23 +1,24 @@
-# Makefile for defining variables used by other Doom related ports.
+# Makefile for defining variables used by other Doom related ports
+# $FreeBSD$
 
-# Set variables.
+# Set variables
 
 DMPKGNAMEPREFIX?=doom-
 DMDIR?=		${LOCALBASE}/share/doom
 
-# Add them to the environment.
+# Add them to the environment
 
 MAKE_ENV+=	DMDIR="${DMDIR}"
 PLIST_SUB+=	DMDIR="${DMDIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	DMDIR="${DMDIR}"
 
-# Add the dependency.
+# Add the dependency
 
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${DMDIR}:${PORTSDIR}/games/doom-data
 .endif
 
-# DOS to Unix text conversion.
+# DOS to Unix text conversion
 
 .if defined(USE_CRLF)
 .   if defined(USE_ZIP)
