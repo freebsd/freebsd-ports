@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.11
+PORTVERSION=	3.6.12
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	tota/bugzilla-ja
-DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel01
+DISTNAME=	Bugzilla-ja-${PORTVERSION}-template
 
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
