@@ -1,62 +1,34 @@
-# New ports collection makefile for:	U-Hexen
-# Date created:				10 February 2003
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uhexen
 PORTVERSION=	0.601
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://uhexen.sourceforge.net/
-DISTNAME=	${PORTNAME}-latest
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/U-hexen%20version%20${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another port of Hexen, popular game from Raven Software
 
-USE_SDL=	mixer sdl
 USE_GMAKE=	yes
+USE_SDL=	mixer sdl
 
-OPTIONS=	WAD	"Install demo-version WAD file"		on \
-		MUSIC	"Enable support for in-game music"	on
+OPTIONS_DEFINE=	MUSIC
+OPTIONS_DEFAULT=	MUSIC
+MUSIC_DESC=	In-game MIDI music support
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
+BROKEN=		Does not compile on ${ARCH}
 .endif
 
-.if !defined(WITHOUT_WAD)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} hexen.zip
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-PLIST_SUB=	WAD=""
-.else
-PLIST_SUB=	WAD="@comment "
-.endif
-
-.if !defined(WITHOUT_MUSIC)
-RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-PLIST_FILES=	bin/uhexen %%DATADIR%%/.keep_me %%WAD%%%%DATADIR%%/hexen.wad
-PLIST_DIRS=	%%DATADIR%%
-
-post-extract:
-.if !defined(WITHOUT_WAD)
-	@${UNZIP_CMD} -qo ${DISTDIR}/hexen.zip \
-		-d ${WRKSRC}
+.if ${PORT_OPTIONS:MMUSIC}
+RUN_DEPENDS=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/uhexen ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-.if !defined(WITHOUT_WAD)
-	${INSTALL_DATA} ${WRKSRC}/hexen.wad ${DATADIR}
-.endif
-	@${TOUCH} ${DATADIR}/.keep_me
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
+.include "${.CURDIR}/../doom-data/Makefile.include"
 .include <bsd.port.post.mk>
