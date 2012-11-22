@@ -21,8 +21,8 @@ LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 # 387 option: this only makes a difference for the amd64 architecture.  Causes
 # the internal floating point calculations to be performed with extended
 # precision.
-OPTIONS_DEFINE=	387
-387_DESC=	Use 387 instead of SSE FPU
+OPTIONS_DEFINE_amd64=	387
+387_DESC=		Use 387 instead of SSE FPU
 
 .include <bsd.port.options.mk>
 
