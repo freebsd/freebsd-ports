@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Medit
-# Date created:			Sep 24, 2006
-# Whom:				Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
 PORTNAME=	medit
-PORTVERSION=	2011.03.06
-PORTREVISION=	1
+PORTVERSION=	2012.02.05
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.ann.jussieu.fr/~frey/ftp/archives/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +12,8 @@ EXTRACT_ONLY=	${SOURCETARB}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
 
+BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:${PORTSDIR}/lang/cfortran
+
 USE_XORG=	x11 xmu xext
 USE_GL=		glut
 USE_GMAKE=	yes
@@ -24,9 +22,7 @@ ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}
 NO_WRKSUBDIR=	yes
 
-# medit-2011.03.06 does not compile with library.2011.03.06
-#LIBVERSION=	${PORTVERSION}
-LIBVERSION=	2010.05.20
+LIBVERSION=	${PORTVERSION}
 SOURCETARB=	${PORTNAME}.${PORTVERSION}${EXTRACT_SUFX}
 LIBTARBALL=	library.${LIBVERSION}${EXTRACT_SUFX}
 
@@ -43,6 +39,10 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 post-extract:
 	cd ${WRKDIR} &&	\
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${LIBTARBALL} ${EXTRACT_AFTER_ARGS} --exclude ${MAKEFILE}
+	${CP} ${FILESDIR}/gttime.c ${WRKSRC}/sources/
+.for l in lplib2.c lplib2.h
+	${MV} ${WRKSRC}/sources/${l} ${WRKSRC}/sources/${l}.old
+.endfor
 
 pre-build:
 	${MKDIR} ${WRKSRC}/bin/${ARCH}/${OSREL}
