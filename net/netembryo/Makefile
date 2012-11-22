@@ -6,20 +6,40 @@
 #
 
 PORTNAME=	netembryo
-PORTVERSION=	0.0.5
+PORTVERSION=	0.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://lscube.org/files/downloads/netembryo/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A network abstraction library used by for feng, libnemesi, felix
+COMMENT=	Network abstraction library used by for feng, libnemesi, felix
 
 LICENSE=	LGPL21
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	OPENSSL
+OPTIONS_DEFAULT=OPENSSL
+
 USE_BZIP2=	yes
+USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
-USE_GNOME=	gnomehack
+MAKE_JOBS_SAFE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB}"
+.else
+CONFIGURE_ARGS+=--without-openssl
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CPPFLAGS=|#CPPFLAGS| ; \
+		 s|freebsd[0-9]|freebsd|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
