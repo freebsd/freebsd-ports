@@ -260,6 +260,7 @@
     SUBDIR += pnp
     SUBDIR += portmon
     SUBDIR += py-flowtools
+    SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-pyang
     SUBDIR += py-snmp4
