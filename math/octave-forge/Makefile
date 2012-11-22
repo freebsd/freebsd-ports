@@ -11,348 +11,363 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge metaport for math/octave
 
-OPTIONS=	\
-	ACTUARIAL "Install package: actuarial" On \
-	AD "Install package: ad" On \
-	AUDIO "Install package: audio" On \
-	BENCHMARK "Install package: benchmark" On \
-	BIM "Install package: bim" On \
-	BIOINFO "Install package: bioinfo" On \
-	CGI "Install package: cgi" On \
-	CIVIL_ENGINEERING "Install package: civil-engineering" On \
-	COMMUNICATIONS "Install package: communications" On \
-	CONTROL "Install package: control" On \
-	DATA_SMOOTHING "Install package: data-smoothing" On \
-	DATAFRAME "Install package: dataframe" On \
-	DICOM "Install package: dicom" On \
-	ECONOMETRICS "Install package: econometrics" On \
-	ENGINE "Install package: engine" On \
-	ES "Install package: es" Off \
-	FENV "Install package: fenv" On \
-	FITS "Install package: fits" On \
-	FINANCIAL "Install package: financial" On \
-	FL_CORE "Install package: fl-core" On \
-	FPL "Install package: fpl" On \
-	FUZZY_LOGIC_TOOLKIT "Install package: fuzzy-logic-toolkit" On \
-	GA "Install package: ga" On \
-	GEOMETRY "Install package: geometry" On \
-	GENERAL "Install package: general" On \
-	GENERATE_HTML "Install package: generate_html" On \
-	GNUPLOT "Install package: gnuplot" On \
-	GSL "Install package: gsl" On \
-	IDENT "Install package: ident" On \
-	IMAGE "Install package: image" On \
-	INFORMATIONTHEORY "Install package: informationtheory" On \
-	INTEGRATION "Install package: integration" On \
-	IO "Install package: io" On \
-	IRSA "Install package: irsa" On \
-	JAVA "Install package: java" On \
-	LINEAR_ALGEBRA "Install package: linear-algebra" On \
-	LSSA "Install package: lssa" On \
-	MAPPING "Install package: mapping" On \
-	MECHANICS "Install package: mechanics" On \
-	MISCELLANEOUS "Install package: miscellaneous" On \
-	MISSING_FUNCTIONS "Install package: missing-functions" On \
-	MSH "Install package: msh" On \
-	MULTICORE "Install package: multicore" On \
-	NAN "Install package: nan" On \
-	NCARRAY "Install package: ncarray" On \
-	NLWING2 "Install package: nlwing2" On \
-	NNET "Install package: nnet" On \
-	NURBS "Install package: nurbs" On \
-	OCS "Install package: ocs" On \
-	OCT2MAT "Install package: oct2mat" On \
-	OCTCDF "Install package: octcdf" On \
-	OCTCLIP "Install package: octclip" On \
-	OCTGPR "Install package: octgpr" On \
-	OCTPROJ "Install package: octproj" On \
-	ODEBVP "Install package: odebvp" On \
-	ODEPKG "Install package: odepkg" On \
-	OPTIM "Install package: optim" On \
-	OPTIMINTERP "Install package: optiminterp" On \
-	OUTLIERS "Install package: outliers" On \
-	PARALLEL "Install package: parallel" On \
-	PDB "Install package: pdb" On \
-	PLOT "Install package: plot" On \
-	PT_BR "Install package: pt_br" On \
-	QUATERNION "Install package: quaternion" On \
-	QUEUEING "Install package: queueing" On \
-	SECS1D "Install package: secs1d" On \
-	SECS2D "Install package: secs2d" On \
-	SECS3D "Install package: secs3d" On \
-	SIGNAL "Install package: signal" On \
-	SIMP "Install package: simp" On \
-	SOCKETS "Install package: sockets" On \
-	SPECFUN "Install package: specfun" On \
-	SPECIAL_MATRIX "Install package: special-matrix" On \
-	SPLINE_GCVSPL "Install package: spline-gcvspl" On \
-	SPLINES "Install package: splines" On \
-	STATISTICS "Install package: statistics" On \
-	STRINGS "Install package: strings" On \
-	STRUCT "Install package: struct" On \
-	SYMBAND "Install package: symband" On \
-	SYMBOLIC "Install package: symbolic" On \
-	TCL_OCTAVE "Install package: tcl-octave" On \
-	TSA "Install package: tsa" On \
-	VIDEO "Install package: video" On \
-	XRAYLIB "Install package: xraylib" On \
-	ZENITY "Install package: zenity" On
+OPTIONS_DEFINE=	ACTUARIAL AD AUDIO BENCHMARK BIM BIOINFO CGI \
+		CIVIL_ENGINEERING COMMUNICATIONS CONTROL DATA_SMOOTHING \
+		DATAFRAME DICOM ECONOMETRICS ENGINE ES FENV FITS FINANCIAL \
+		FL_CORE FPL FUZZY_LOGIC_TOOLKIT GA GEOMETRY GENERAL \
+		GENERATE_HTML GNUPLOT GSL IDENT IMAGE INFORMATIONTHEORY \
+		INTEGRATION IO IRSA JAVA LINEAR_ALGEBRA LSSA MAPPING \
+		MECHANICS MISCELLANEOUS MISSING_FUNCTIONS MSH MULTICORE NAN \
+		NCARRAY NLWING2 NNET NURBS OCS OCT2MAT OCTCDF OCTCLIP OCTGPR \
+		OCTPROJ ODEBVP ODEPKG OPTIM OPTIMINTERP OUTLIERS PARALLEL \
+		PDB PLOT PT_BR QUATERNION QUEUEING SECS1D SECS2D SECS3D \
+		SIGNAL SIMP SOCKETS SPECFUN SPECIAL_MATRIX SPLINE_GCVSPL \
+		SPLINES STATISTICS STRINGS STRUCT SYMBAND SYMBOLIC \
+		TCL_OCTAVE TSA VIDEO XRAYLIB ZENITY
+
+ACTUARIAL_DESC=		Install package: actuarial
+AD_DESC=		Install package: ad
+AUDIO_DESC=		Install package: audio
+BENCHMARK_DESC=		Install package: benchmark
+BIM_DESC=		Install package: bim
+BIOINFO_DESC=		Install package: bioinfo
+CGI_DESC=		Install package: cgi
+CIVIL_ENGINEERING_DESC=	Install package: civil-engineering
+COMMUNICATIONS_DESC=	Install package: communications
+CONTROL_DESC=		Install package: control
+DATA_SMOOTHING_DESC=	Install package: data-smoothing
+DATAFRAME_DESC=		Install package: dataframe
+DICOM_DESC=		Install package: dicom
+ECONOMETRICS_DESC=	Install package: econometrics
+ENGINE_DESC=		Install package: engine
+ES_DESC=		Install package: es
+FENV_DESC=		Install package: fenv
+FITS_DESC=		Install package: fits
+FINANCIAL_DESC=		Install package: financial
+FL_CORE_DESC=		Install package: fl-core
+FPL_DESC=		Install package: fpl
+FUZZY_LOGIC_TOOLKIT_DESC=	Install package: fuzzy-logic-toolkit
+GA_DESC=		Install package: ga
+GEOMETRY_DESC=		Install package: geometry
+GENERAL_DESC=		Install package: general
+GENERATE_HTML_DESC=	Install package: generate_html
+GNUPLOT_DESC=		Install package: gnuplot
+GSL_DESC=		Install package: gsl
+IDENT_DESC=		Install package: ident
+IMAGE_DESC=		Install package: image
+INFORMATIONTHEORY_DESC=	Install package: informationtheory
+INTEGRATION_DESC=	Install package: integration
+IO_DESC=		Install package: io
+IRSA_DESC=		Install package: irsa
+JAVA_DESC=		Install package: java
+LINEAR_ALGEBRA_DESC=	Install package: linear-algebra
+LSSA_DESC=		Install package: lssa
+MAPPING_DESC=		Install package: mapping
+MECHANICS_DESC=		Install package: mechanics
+MISCELLANEOUS_DESC=	Install package: miscellaneous
+MISSING_FUNCTIONS_DESC=	Install package: missing-functions
+MSH_DESC=		Install package: msh
+MULTICORE_DESC=		Install package: multicore
+NAN_DESC=		Install package: nan
+NCARRAY_DESC=		Install package: ncarray
+NLWING2_DESC=		Install package: nlwing2
+NNET_DESC=		Install package: nnet
+NURBS_DESC=		Install package: nurbs
+OCS_DESC=		Install package: ocs
+OCT2MAT_DESC=		Install package: oct2mat
+OCTCDF_DESC=		Install package: octcdf
+OCTCLIP_DESC=		Install package: octclip
+OCTGPR_DESC=		Install package: octgpr
+OCTPROJ_DESC=		Install package: octproj
+ODEBVP_DESC=		Install package: odebvp
+ODEPKG_DESC=		Install package: odepkg
+OPTIM_DESC=		Install package: optim
+OPTIMINTERP_DESC=	Install package: optiminterp
+OUTLIERS_DESC=		Install package: outliers
+PARALLEL_DESC=		Install package: parallel
+PDB_DESC=		Install package: pdb
+PLOT_DESC=		Install package: plot
+PT_BR_DESC=		Install package: pt_br
+QUATERNION_DESC=	Install package: quaternion
+QUEUEING_DESC=		Install package: queueing
+SECS1D_DESC=		Install package: secs1d
+SECS2D_DESC=		Install package: secs2d
+SECS3D_DESC=		Install package: secs3d
+SIGNAL_DESC=		Install package: signal
+SIMP_DESC=		Install package: simp
+SOCKETS_DESC=		Install package: sockets
+SPECFUN_DESC=		Install package: specfun
+SPECIAL_MATRIX_DESC=	Install package: special-matrix
+SPLINE_GCVSPL_DESC=	Install package: spline-gcvspl
+SPLINES_DESC=		Install package: splines
+STATISTICS_DESC=	Install package: statistics
+STRINGS_DESC=		Install package: strings
+STRUCT_DESC=		Install package: struct
+SYMBAND_DESC=		Install package: symband
+SYMBOLIC_DESC=		Install package: symbolic
+TCL_OCTAVE_DESC=	Install package: tcl-octave
+TSA_DESC=		Install package: tsa
+VIDEO_DESC=		Install package: video
+XRAYLIB_DESC=		Install package: xraylib
+ZENITY_DESC=		Install package: zenity
+
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NES}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ACTUARIAL)
+.if ${PORT_OPTIONS:MACTUARIAL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/actuarial.tar.gz:${PORTSDIR}/math/octave-forge-actuarial
 .endif
-.if defined(WITH_AD)
+.if ${PORT_OPTIONS:MAD}
 RUN_DEPENDS+=	${TARBALLS_DIR}/ad.tar.gz:${PORTSDIR}/math/octave-forge-ad
 .endif
-.if defined(WITH_AUDIO)
+.if ${PORT_OPTIONS:MAUDIO}
 RUN_DEPENDS+=	${TARBALLS_DIR}/audio.tar.gz:${PORTSDIR}/math/octave-forge-audio
 .endif
-.if defined(WITH_BENCHMARK)
+.if ${PORT_OPTIONS:MBENCHMARK}
 RUN_DEPENDS+=	${TARBALLS_DIR}/benchmark.tar.gz:${PORTSDIR}/benchmarks/octave-forge-benchmark
 .endif
-.if defined(WITH_BIM)
+.if ${PORT_OPTIONS:MBIM}
 RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:${PORTSDIR}/math/octave-forge-bim
 .endif
-.if defined(WITH_BIOINFO)
+.if ${PORT_OPTIONS:MBIOINFO}
 RUN_DEPENDS+=	${TARBALLS_DIR}/bioinfo.tar.gz:${PORTSDIR}/math/octave-forge-bioinfo
 .endif
-.if defined(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 RUN_DEPENDS+=	${TARBALLS_DIR}/cgi.tar.gz:${PORTSDIR}/math/octave-forge-cgi
 .endif
-.if defined(WITH_CIVIL_ENGINEERING)
+.if ${PORT_OPTIONS:MCIVIL_ENGINEERING}
 RUN_DEPENDS+=	${TARBALLS_DIR}/civil-engineering.tar.gz:${PORTSDIR}/math/octave-forge-civil-engineering
 .endif
-.if defined(WITH_COMMUNICATIONS)
+.if ${PORT_OPTIONS:MCOMMUNICATIONS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forge-communications
 .endif
-.if defined(WITH_CONTROL)
+.if ${PORT_OPTIONS:MCONTROL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/control.tar.gz:${PORTSDIR}/math/octave-forge-control
 .endif
-.if defined(WITH_DATA_SMOOTHING)
+.if ${PORT_OPTIONS:MDATA_SMOOTHING}
 RUN_DEPENDS+=	${TARBALLS_DIR}/data-smoothing.tar.gz:${PORTSDIR}/math/octave-forge-data-smoothing
 .endif
-.if defined(WITH_DATAFRAME)
+.if ${PORT_OPTIONS:MDATAFRAME}
 RUN_DEPENDS+=	${TARBALLS_DIR}/dataframe.tar.gz:${PORTSDIR}/math/octave-forge-dataframe
 .endif
-.if defined(WITH_DICOM)
+.if ${PORT_OPTIONS:MDICOM}
 RUN_DEPENDS+=	${TARBALLS_DIR}/dicom.tar.gz:${PORTSDIR}/math/octave-forge-dicom
 .endif
-.if defined(WITH_ECONOMETRICS)
+.if ${PORT_OPTIONS:MECONOMETRICS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/econometrics.tar.gz:${PORTSDIR}/math/octave-forge-econometrics
 .endif
-.if defined(WITH_ENGINE)
+.if ${PORT_OPTIONS:MENGINE}
 RUN_DEPENDS+=	${TARBALLS_DIR}/engine.tar.gz:${PORTSDIR}/math/octave-forge-engine
 .endif
-.if defined(WITH_ES)
+.if ${PORT_OPTIONS:MES}
 RUN_DEPENDS+=	${TARBALLS_DIR}/es.tar.gz:${PORTSDIR}/math/octave-forge-es
 .endif
-.if defined(WITH_FENV)
+.if ${PORT_OPTIONS:MFENV}
 RUN_DEPENDS+=	${TARBALLS_DIR}/fenv.tar.gz:${PORTSDIR}/math/octave-forge-fenv
 .endif
-.if defined(WITH_FITS)
+.if ${PORT_OPTIONS:MFITS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/fits.tar.gz:${PORTSDIR}/math/octave-forge-fits
 .endif
-.if defined(WITH_FINANCIAL)
+.if ${PORT_OPTIONS:MFINANCIAL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/financial.tar.gz:${PORTSDIR}/math/octave-forge-financial
 .endif
-.if defined(WITH_FL_CORE)
+.if ${PORT_OPTIONS:MFL_CORE}
 RUN_DEPENDS+=	${TARBALLS_DIR}/fl-core.tar.gz:${PORTSDIR}/math/octave-forge-fl-core
 .endif
-.if defined(WITH_FPL)
+.if ${PORT_OPTIONS:MFPL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
 .endif
-.if defined(WITH_FUZZY_LOGIC_TOOLKIT)
+.if ${PORT_OPTIONS:MFUZZY_LOGIC_TOOLKIT}
 RUN_DEPENDS+=	${TARBALLS_DIR}/fuzzy-logic-toolkit.tar.gz:${PORTSDIR}/math/octave-forge-fuzzy-logic-toolkit
 .endif
-.if defined(WITH_GA)
+.if ${PORT_OPTIONS:MGA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/ga.tar.gz:${PORTSDIR}/math/octave-forge-ga
 .endif
-.if defined(WITH_GEOMETRY)
+.if ${PORT_OPTIONS:MGEOMETRY}
 RUN_DEPENDS+=	${TARBALLS_DIR}/geometry.tar.gz:${PORTSDIR}/math/octave-forge-geometry
 .endif
-.if defined(WITH_GENERAL)
+.if ${PORT_OPTIONS:MGENERAL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:${PORTSDIR}/math/octave-forge-general
 .endif
-.if defined(WITH_GENERATE_HTML)
+.if ${PORT_OPTIONS:MGENERATE_HTML}
 RUN_DEPENDS+=	${TARBALLS_DIR}/generate_html.tar.gz:${PORTSDIR}/math/octave-forge-generate_html
 .endif
-.if defined(WITH_GNUPLOT)
+.if ${PORT_OPTIONS:MGNUPLOT}
 RUN_DEPENDS+=	${TARBALLS_DIR}/gnuplot.tar.gz:${PORTSDIR}/math/octave-forge-gnuplot
 .endif
-.if defined(WITH_GSL)
+.if ${PORT_OPTIONS:MGSL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/gsl.tar.gz:${PORTSDIR}/math/octave-forge-gsl
 .endif
-.if defined(WITH_IDENT)
+.if ${PORT_OPTIONS:MIDENT}
 RUN_DEPENDS+=	${TARBALLS_DIR}/ident.tar.gz:${PORTSDIR}/math/octave-forge-ident
 .endif
-.if defined(WITH_IMAGE)
+.if ${PORT_OPTIONS:MIMAGE}
 RUN_DEPENDS+=	${TARBALLS_DIR}/image.tar.gz:${PORTSDIR}/math/octave-forge-image
 .endif
-.if defined(WITH_INFORMATIONTHEORY)
+.if ${PORT_OPTIONS:MINFORMATIONTHEORY}
 RUN_DEPENDS+=	${TARBALLS_DIR}/informationtheory.tar.gz:${PORTSDIR}/math/octave-forge-informationtheory
 .endif
-.if defined(WITH_INTEGRATION)
+.if ${PORT_OPTIONS:MINTEGRATION}
 RUN_DEPENDS+=	${TARBALLS_DIR}/integration.tar.gz:${PORTSDIR}/math/octave-forge-integration
 .endif
-.if defined(WITH_IO)
+.if ${PORT_OPTIONS:MIO}
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
 .endif
-.if defined(WITH_IRSA)
+.if ${PORT_OPTIONS:MIRSA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/irsa.tar.gz:${PORTSDIR}/math/octave-forge-irsa
 .endif
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/java.tar.gz:${PORTSDIR}/math/octave-forge-java
 .endif
-.if defined(WITH_LINEAR_ALGEBRA)
+.if ${PORT_OPTIONS:MLINEAR_ALGEBRA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/linear-algebra.tar.gz:${PORTSDIR}/math/octave-forge-linear-algebra
 .endif
-.if defined(WITH_LSSA)
+.if ${PORT_OPTIONS:MLSSA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/lssa.tar.gz:${PORTSDIR}/math/octave-forge-lssa
 .endif
-.if defined(WITH_MAPPING)
+.if ${PORT_OPTIONS:MMAPPING}
 RUN_DEPENDS+=	${TARBALLS_DIR}/mapping.tar.gz:${PORTSDIR}/math/octave-forge-mapping
 .endif
-.if defined(WITH_MECHANICS)
+.if ${PORT_OPTIONS:MMECHANICS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/mechanics.tar.gz:${PORTSDIR}/math/octave-forge-mechanics
 .endif
-.if defined(WITH_MISCELLANEOUS)
+.if ${PORT_OPTIONS:MMISCELLANEOUS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
 .endif
-.if defined(WITH_MISSING_FUNCTIONS)
+.if ${PORT_OPTIONS:MMISSING_FUNCTIONS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/missing-functions.tar.gz:${PORTSDIR}/math/octave-forge-missing-functions
 .endif
-.if defined(WITH_MSH)
+.if ${PORT_OPTIONS:MMSH}
 RUN_DEPENDS+=	${TARBALLS_DIR}/msh.tar.gz:${PORTSDIR}/math/octave-forge-msh
 .endif
-.if defined(WITH_MULTICORE)
+.if ${PORT_OPTIONS:MMULTICORE}
 RUN_DEPENDS+=	${TARBALLS_DIR}/multicore.tar.gz:${PORTSDIR}/math/octave-forge-multicore
 .endif
-.if defined(WITH_NAN)
+.if ${PORT_OPTIONS:MNAN}
 RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
 .endif
-.if defined(WITH_NCARRAY)
+.if ${PORT_OPTIONS:MNCARRAY}
 RUN_DEPENDS+=	${TARBALLS_DIR}/ncarray.tar.gz:${PORTSDIR}/math/octave-forge-ncarray
 .endif
-.if defined(WITH_NLWING2)
+.if ${PORT_OPTIONS:MNLWING2}
 RUN_DEPENDS+=	${TARBALLS_DIR}/nlwing2.tar.gz:${PORTSDIR}/math/octave-forge-nlwing2
 .endif
-.if defined(WITH_NNET)
+.if ${PORT_OPTIONS:MNNET}
 RUN_DEPENDS+=	${TARBALLS_DIR}/nnet.tar.gz:${PORTSDIR}/math/octave-forge-nnet
 .endif
-.if defined(WITH_NURBS)
+.if ${PORT_OPTIONS:MNURBS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/nurbs.tar.gz:${PORTSDIR}/math/octave-forge-nurbs
 .endif
-.if defined(WITH_OCS)
+.if ${PORT_OPTIONS:MOCS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/ocs.tar.gz:${PORTSDIR}/math/octave-forge-ocs
 .endif
-.if defined(WITH_OCT2MAT)
+.if ${PORT_OPTIONS:MOCT2MAT}
 RUN_DEPENDS+=	${TARBALLS_DIR}/oct2mat.tar.gz:${PORTSDIR}/math/octave-forge-oct2mat
 .endif
-.if defined(WITH_OCTCDF)
+.if ${PORT_OPTIONS:MOCTCDF}
 RUN_DEPENDS+=	${TARBALLS_DIR}/octcdf.tar.gz:${PORTSDIR}/math/octave-forge-octcdf
 .endif
-.if defined(WITH_OCTCLIP)
+.if ${PORT_OPTIONS:MOCTCLIP}
 RUN_DEPENDS+=	${TARBALLS_DIR}/octclip.tar.gz:${PORTSDIR}/math/octave-forge-octclip
 .endif
-.if defined(WITH_OCTGPR)
+.if ${PORT_OPTIONS:MOCTGPR}
 RUN_DEPENDS+=	${TARBALLS_DIR}/octgpr.tar.gz:${PORTSDIR}/math/octave-forge-octgpr
 .endif
-.if defined(WITH_OCTPROJ)
+.if ${PORT_OPTIONS:MOCTPROJ}
 RUN_DEPENDS+=	${TARBALLS_DIR}/octproj.tar.gz:${PORTSDIR}/math/octave-forge-octproj
 .endif
-.if defined(WITH_ODEBVP)
+.if ${PORT_OPTIONS:MODEBVP}
 RUN_DEPENDS+=	${TARBALLS_DIR}/odebvp.tar.gz:${PORTSDIR}/math/octave-forge-odebvp
 .endif
-.if defined(WITH_ODEPKG)
+.if ${PORT_OPTIONS:MODEPKG}
 RUN_DEPENDS+=	${TARBALLS_DIR}/odepkg.tar.gz:${PORTSDIR}/math/octave-forge-odepkg
 .endif
-.if defined(WITH_OPTIM)
+.if ${PORT_OPTIONS:MOPTIM}
 RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
 .endif
-.if defined(WITH_OPTIMINTERP)
+.if ${PORT_OPTIONS:MOPTIMINTERP}
 RUN_DEPENDS+=	${TARBALLS_DIR}/optiminterp.tar.gz:${PORTSDIR}/math/octave-forge-optiminterp
 .endif
-.if defined(WITH_OUTLIERS)
+.if ${PORT_OPTIONS:MOUTLIERS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/outliers.tar.gz:${PORTSDIR}/math/octave-forge-outliers
 .endif
-.if defined(WITH_PARALLEL)
+.if ${PORT_OPTIONS:MPARALLEL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/parallel.tar.gz:${PORTSDIR}/math/octave-forge-parallel
 .endif
-.if defined(WITH_PDB)
+.if ${PORT_OPTIONS:MPDB}
 RUN_DEPENDS+=	${TARBALLS_DIR}/pdb.tar.gz:${PORTSDIR}/math/octave-forge-pdb
 .endif
-.if defined(WITH_PLOT)
+.if ${PORT_OPTIONS:MPLOT}
 RUN_DEPENDS+=	${TARBALLS_DIR}/plot.tar.gz:${PORTSDIR}/math/octave-forge-plot
 .endif
-.if defined(WITH_PT_BR)
+.if ${PORT_OPTIONS:MPT_BR}
 RUN_DEPENDS+=	${TARBALLS_DIR}/pt_br.tar.gz:${PORTSDIR}/math/octave-forge-pt_br
 .endif
-.if defined(WITH_QUATERNION)
+.if ${PORT_OPTIONS:MQUATERNION}
 RUN_DEPENDS+=	${TARBALLS_DIR}/quaternion.tar.gz:${PORTSDIR}/math/octave-forge-quaternion
 .endif
-.if defined(WITH_QUEUEING)
+.if ${PORT_OPTIONS:MQUEUEING}
 RUN_DEPENDS+=	${TARBALLS_DIR}/queueing.tar.gz:${PORTSDIR}/math/octave-forge-queueing
 .endif
-.if defined(WITH_SECS1D)
+.if ${PORT_OPTIONS:MSECS1D}
 RUN_DEPENDS+=	${TARBALLS_DIR}/secs1d.tar.gz:${PORTSDIR}/math/octave-forge-secs1d
 .endif
-.if defined(WITH_SECS2D)
+.if ${PORT_OPTIONS:MSECS2D}
 RUN_DEPENDS+=	${TARBALLS_DIR}/secs2d.tar.gz:${PORTSDIR}/math/octave-forge-secs2d
 .endif
-.if defined(WITH_SECS3D)
+.if ${PORT_OPTIONS:MSECS3D}
 RUN_DEPENDS+=	${TARBALLS_DIR}/secs3d.tar.gz:${PORTSDIR}/math/octave-forge-secs3d
 .endif
-.if defined(WITH_SIGNAL)
+.if ${PORT_OPTIONS:MSIGNAL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 .endif
-.if defined(WITH_SIMP)
+.if ${PORT_OPTIONS:MSIMP}
 RUN_DEPENDS+=	${TARBALLS_DIR}/simp.tar.gz:${PORTSDIR}/math/octave-forge-simp
 .endif
-.if defined(WITH_SOCKETS)
+.if ${PORT_OPTIONS:MSOCKETS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/sockets.tar.gz:${PORTSDIR}/math/octave-forge-sockets
 .endif
-.if defined(WITH_SPECFUN)
+.if ${PORT_OPTIONS:MSPECFUN}
 RUN_DEPENDS+=	${TARBALLS_DIR}/specfun.tar.gz:${PORTSDIR}/math/octave-forge-specfun
 .endif
-.if defined(WITH_SPECIAL_MATRIX)
+.if ${PORT_OPTIONS:MSPECIAL_MATRIX}
 RUN_DEPENDS+=	${TARBALLS_DIR}/special-matrix.tar.gz:${PORTSDIR}/math/octave-forge-special-matrix
 .endif
-.if defined(WITH_SPLINE_GCVSPL)
+.if ${PORT_OPTIONS:MSPLINE_GCVSPL}
 RUN_DEPENDS+=	${TARBALLS_DIR}/spline-gcvspl.tar.gz:${PORTSDIR}/math/octave-forge-spline-gcvspl
 .endif
-.if defined(WITH_SPLINES)
+.if ${PORT_OPTIONS:MSPLINES}
 RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:${PORTSDIR}/math/octave-forge-splines
 .endif
-.if defined(WITH_STATISTICS)
+.if ${PORT_OPTIONS:MSTATISTICS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/statistics.tar.gz:${PORTSDIR}/math/octave-forge-statistics
 .endif
-.if defined(WITH_STRINGS)
+.if ${PORT_OPTIONS:MSTRINGS}
 RUN_DEPENDS+=	${TARBALLS_DIR}/strings.tar.gz:${PORTSDIR}/math/octave-forge-strings
 .endif
-.if defined(WITH_STRUCT)
+.if ${PORT_OPTIONS:MSTRUCT}
 RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:${PORTSDIR}/math/octave-forge-struct
 .endif
-.if defined(WITH_SYMBAND)
+.if ${PORT_OPTIONS:MSYMBAND}
 RUN_DEPENDS+=	${TARBALLS_DIR}/symband.tar.gz:${PORTSDIR}/math/octave-forge-symband
 .endif
-.if defined(WITH_SYMBOLIC)
+.if ${PORT_OPTIONS:MSYMBOLIC}
 RUN_DEPENDS+=	${TARBALLS_DIR}/symbolic.tar.gz:${PORTSDIR}/math/octave-forge-symbolic
 .endif
-.if defined(WITH_TCL_OCTAVE)
+.if ${PORT_OPTIONS:MTCL_OCTAVE}
 RUN_DEPENDS+=	${TARBALLS_DIR}/tcl-octave.tar.gz:${PORTSDIR}/math/octave-forge-tcl-octave
 .endif
-.if defined(WITH_TSA)
+.if ${PORT_OPTIONS:MTSA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/tsa.tar.gz:${PORTSDIR}/math/octave-forge-tsa
 .endif
-.if defined(WITH_VIDEO)
+.if ${PORT_OPTIONS:MVIDEO}
 RUN_DEPENDS+=	${TARBALLS_DIR}/video.tar.gz:${PORTSDIR}/math/octave-forge-video
 .endif
-.if defined(WITH_XRAYLIB)
+.if ${PORT_OPTIONS:MXRAYLIB}
 RUN_DEPENDS+=	${TARBALLS_DIR}/xraylib.tar.gz:${PORTSDIR}/math/octave-forge-xraylib
 .endif
-.if defined(WITH_ZENITY)
+.if ${PORT_OPTIONS:MZENITY}
 RUN_DEPENDS+=	${TARBALLS_DIR}/zenity.tar.gz:${PORTSDIR}/math/octave-forge-zenity
 .endif
 
