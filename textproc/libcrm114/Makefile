@@ -1,4 +1,4 @@
-# Created: Martin Schuette <info@mschuette.name>
+# Created by: Martin Schuette <info@mschuette.name>
 # $FreeBSD$
 
 PORTNAME=	libcrm114
