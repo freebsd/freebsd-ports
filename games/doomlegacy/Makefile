@@ -31,13 +31,8 @@ PORTDOCS=	*
 SVN_REV=	845
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-OPTIONS_DEFINE+=	ASM
-OPTIONS_DEFAULT=	ASM
-.endif
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT_i386=	ASM
 
 .include <bsd.port.options.mk>
 
@@ -57,9 +52,10 @@ post-patch: .SILENT
 		${WRKSRC}/z_zone.c
 # Adjust config and save games directory name to be less ambiguous
 	${REINPLACE_CMD} -e 's|\.legacy|.${PORTNAME}|' ${WRKSRC}/doomdef.h
-# Change default value of DOOMWADDIR
-	${REINPLACE_CMD} -e 's,\(doomwaddir = \)"\.",\1"${DMDIR}", ; \
-		1306,1309d' ${WRKSRC}/d_main.c
+# Change default value of DOOMWADDIR; better support for relative paths
+	${REINPLACE_CMD} -e 's|\(doomwaddir = \)"\."|\1"${DMDIR}"| ; \
+		1306,1309d' -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
+			${WRKSRC}/d_main.c
 # Remove broken dependency file (wrong paths inside) and a copy of GPL
 	${RM} ${WRKSRC}/sdl.dep ; ${TOUCH} ${WRKSRC}/sdl.dep
 	${RM} ${WRKSRC}/_doc/LICENSE.txt
@@ -73,4 +69,4 @@ do-install:
 .endif
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
