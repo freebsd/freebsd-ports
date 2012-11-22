@@ -51,6 +51,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0925716f-34e2-11e2-aa75-003067c2616f">
+    <topic>opera -- execution of arbitrary code</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <name>opera-devel</name>
+        <name>linux-opera</name>
+        <name>linux-opera-devel</name>
+        <range><lt>12.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Opera reports:</p>
+        <blockquote cite="http://www.opera.com/support/kb/view/1036/">
+          <p>When requesting pages using HTTP, Opera temporarily stores the
+            response in a buffer.  In some cases, Opera may incorrectly allocate
+            too little space for a buffer, and may then store too much of the
+            response in that buffer.  This causes a buffer overflow, which in
+            turn can lead to a memory corruption and crash.  It is possible to
+            use this crash to execute the overflowing data as code, which may
+            be controlled by an attacking site.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/1036/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-19</discovery>
+      <entry>2012-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1cd3ca42-33e6-11e2-a255-5404a67eef98">
     <topic>lighttpd -- remote DoS in header parsing</topic>
     <affects>
