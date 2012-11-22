@@ -3067,6 +3067,7 @@
     SUBDIR += pecl-hidef
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
+    SUBDIR += pecl-inotify
     SUBDIR += pecl-intl
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
