@@ -1,8 +1,9 @@
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gdata_provider
-PORTVERSION=	0.16
-DISTVERSIONSUFFIX=	-sm+tb
+PORTVERSION=	0.18
+DISTVERSIONSUFFIX=	-tb+sm
 CATEGORIES=	www deskutils
 
 MAINTAINER=	ale@FreeBSD.org
