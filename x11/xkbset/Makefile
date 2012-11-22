@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xkbset
-# Date created:		12 May 2001
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	xkbset
 PORTVERSION=	0.5
@@ -22,11 +18,12 @@ MAKE_ARGS=	X11BASE="${LOCALBASE}" X11PREFIX="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
-OPTIONS=	GUI "Install Tk GUI" off
+OPTIONS_DEFINE=	GUI
+GUI_DESC=	Install Tk GUI
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 PLIST_SUB=	GUI=""
 MAKE_ARGS+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
@@ -38,4 +35,4 @@ MAKE_ARGS+=	INSTALL_SCRIPT=:
 post-build:
 	@${REINPLACE_CMD} "s%#!/usr/bin/perl%#!${PERL}%" ${WRKSRC}/xkbset-gui
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
