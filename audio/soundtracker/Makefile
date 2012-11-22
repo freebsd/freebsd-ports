@@ -1,9 +1,5 @@
-# New ports collection makefile for:   soundtracker
-# Date created:        28 November 1999
-# Whom:                kzentner
-#
+# Created by: Kristopher Zentner <kzentner@u.washington.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
@@ -15,27 +11,27 @@ MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LICENSE=	GPLv2
 
-USE_GNOME=	esound gdkpixbuf gnomehack
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+
 GNU_CONFIGURE=	yes
+USE_GNOME=	esound gdkpixbuf gnomehack
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	GNOME1 I386_ASM JACK SDL NLS
-GNOME1_DESC=	use GNOME 1.x (enables envelope editors)
-I386_ASM_DESC=	i386 asm optimizations (potentially unstable)
+OPTIONS_DEFINE=	GNOME1 JACK SDL NLS
+OPTIONS_DEFINE_i386=	ASM
+GNOME1_DESC=	Use GNOME 1.x (enables envelope editing)
+ASM_DESC=	Use optimized assembly (potentially unstable)
 
-DESKTOP_ENTRIES="SoundTracker" \
-		"Compose music" \
-		"soundtracker.xpm" \
-		"soundtracker" \
-		"" \
-		false
+DESKTOP_ENTRIES="SoundTracker" "Compose music" "soundtracker.xpm" \
+		"soundtracker" "Audio;Player;Recorder;" false
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && ${PORT_OPTIONS:MI386_ASM}
+.if ${PORT_OPTIONS:MASM}
 CONFIGURE_ARGS+=	--enable-asm
 .endif
 
@@ -47,7 +43,7 @@ CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
@@ -82,6 +78,7 @@ pre-build:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/sharp.xpm ${PREFIX}/share/pixmaps/soundtracker.xpm
+	${INSTALL_DATA} ${WRKSRC}/sharp.xpm \
+		${PREFIX}/share/pixmaps/soundtracker.xpm
 
 .include <bsd.port.post.mk>
