@@ -8,7 +8,7 @@ $FreeBSD$
  {
  	"hexen.wad",
 -	"/usr/local/share/games/uhexen/hexen.wad"
-+	PREFIX "/share/uhexen/hexen.wad"
++	PREFIX "/share/doom/hexen.wad"
  };
  #else
  static char *wadfiles[MAXWADFILES] =
