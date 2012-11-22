@@ -1,5 +1,5 @@
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-# Created by:	Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	data
 PORTVERSION=	1.0
@@ -13,7 +13,7 @@ DISTFILES=	#
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
-COMMENT=	Doom data files (Doom, Doom II, Hexen, Heretic, and Strife)
+COMMENT=	Shareware data files for Doom, Doom II, Hexen, Heretic, and Strife
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
