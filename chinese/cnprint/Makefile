@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cnprint
-# Date created:		29 Jan 2003
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	cnprint
 PORTVERSION=	3.30b
@@ -23,7 +19,10 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 FILES=		${WRKSRC}/*.sym ${WRKSRC}/*.htf ${WRKSRC}/*.hbf \
 		${WRKSRC}/*.bin ${WRKSRC}/*.ttf
 
-OPTIONS=	A4SIZE  "Set A4 (not Letter) as a default paper size" on
+OPTIONS_DEFINE=	A4SIZE
+OPTIONS_DEFAULT=	A4SIZE
+
+A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
 
 .include <bsd.port.pre.mk>
 
@@ -43,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/\(DEFAULT_JIS_FONT\):.*$$/\1: kanji48.hbf/; \
 		s/\(DEFAULT_BIG5FONT\):.*$$/\1: ntu_kai48.hbf/; \
 		s/\(DEFAULT_ENCODING\):.*$$/\1: BIG5/' ${WRKSRC}/cnprint33.cmd
-.if defined(WITH_A4SIZE)
+.if ${PORT_OPTIONS:MA4SIZE}
 	@${REINPLACE_CMD} -e 's/\(DEFAULT_PAPERSIZE\):.*$$/\1: 8.27 11.69/' \
 		${WRKSRC}/cnprint33.cmd
 .endif
