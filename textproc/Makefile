@@ -357,6 +357,7 @@
     SUBDIR += lemmatizer
     SUBDIR += lemmatizer2
     SUBDIR += lexxia
+    SUBDIR += libcrm114
     SUBDIR += libcroco
     SUBDIR += libcsv
     SUBDIR += libcue
