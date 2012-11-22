@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netgen
-PORTVERSION=	4.9.13
-PORTREVISION=	7
+PORTVERSION=	5.0.0
 CATEGORIES=	cad
-MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION}/
+MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	An automatic 3D tetrahedral mesh generator
@@ -27,14 +26,15 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} --enable-jpegli
 
 FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
-OPTIONS_DEFINE=	OCC FFMPEG
-OCC_DESC=	Compile with OpenCascade geometry kernel
-FFMPEG_DESC=	video recording with FFmpeg
-OPTIONS_DEFAULTS=	OCC
+OPTIONS_DEFINE=		OCC FFMPEG
+OCC_DESC=		Compile with OpenCascade geometry kernel
+FFMPEG_DESC=		video recording with FFmpeg
+OPTIONS_DEFAULT=	# OCC Switch it back on when opencascade is updated.
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCC}
+BROKEN=		The opencascade port needs to be updated before OCC will work
 LIB_DEPENDS+=	TKernel.0:${PORTSDIR}/cad/opencascade
 CXXFLAGS+=	-DOCCGEOMETRY -DOCC63 -DHAVE_WOK_CONFIG_H -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/OpenCAS/ros/inc
 CONFIGURE_ARGS+=	--enable-occ
@@ -54,7 +54,6 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 		TK_INCLUDEDIR="${TK_INCLUDEDIR}"	\
 		MACHINE=${MACHINE} MAKE=${GMAKE}	\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
