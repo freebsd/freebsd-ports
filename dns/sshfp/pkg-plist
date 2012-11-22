@@ -1,0 +1,3 @@
+bin/dane
+bin/sshfp
+%%PYTHON_SITELIBDIR%%/daneldnsx.py
