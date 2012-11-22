@@ -1,17 +1,13 @@
-# New ports collection makefile for:	dgen-sdl
-# Date created:				20 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dgen-sdl
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
 MAINTAINER=	ak@FreeBSD.org
-COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
+COMMENT=	Wonderful Sega Genesis/MegaDrive emulator
 
 USE_SDL=	sdl
 USE_GL=		yes
