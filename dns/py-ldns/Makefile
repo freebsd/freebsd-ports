@@ -3,6 +3,6 @@
 
 MASTERDIR=	${.CURDIR}/../../dns/ldns
 
-WITH_PYLDNS=	yes
+OPTIONS_SET=	PYLDNS
 
 .include "${MASTERDIR}/Makefile"
