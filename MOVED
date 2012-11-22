@@ -3845,3 +3845,4 @@ net-im/qutim-plugin-jabber||2012-11-19|Has expired: It is not needed for new Qut
 www/trac-customroadmap||2012-11-19|Has expired: Functionality of this plugin is available in the Trac core as of 0.11
 net-mgmt/py-snmp2||2012-11-19|Has expired: Dead upstream, use net-mgmt/py-snmp4 instead
 net-im/ccmsn||2012-11-19|Has expired: The project no longer exists
+irc/py-irclib|irc/py-irc|2012-11-22|Rename according to upstream name change
