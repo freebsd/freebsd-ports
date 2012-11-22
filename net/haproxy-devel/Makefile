@@ -1,12 +1,8 @@
-# New ports collection makefile for:    haproxy-devel
-# Date created:         Thu May  3 16:30:19 WEST 2007
-# Whom:                 Hugo Saro <hugo@barafranca.com>
-#
+# Created by: Hugo Saro <hugo@barafranca.com>
 # $FreeBSD$
-#
 
 PORTNAME=	haproxy
-DISTVERSION=	1.5-dev12
+DISTVERSION=	1.5-dev13
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/devel/
 PKGNAMESUFFIX=	-devel

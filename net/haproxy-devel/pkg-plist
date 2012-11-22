@@ -29,6 +29,9 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-header.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/entities.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/entities.pdf
+%%PORTDOCS%%%%DOCSDIR%%/internals/entities.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-tree.txt
