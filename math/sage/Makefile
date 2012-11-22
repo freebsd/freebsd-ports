@@ -21,7 +21,8 @@ LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 # 387 option: this only makes a difference for the amd64 architecture.  Causes
 # the internal floating point calculations to be performed with extended
 # precision.
-OPTIONS=	387	"Use 387 instead of SSE FPU"	Off
+OPTIONS_DEFINE=	387
+387_DESC=	Use 387 instead of SSE FPU
 
 .include <bsd.port.options.mk>
 
@@ -158,7 +159,7 @@ post-install:
 BROKEN=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
 .endif
 
-.if defined(WITH_387) && ${ARCH} == amd64
+.if ${PORT_OPTIONS:M387} && ${ARCH} == amd64
 FPM_FLAG=	-mfpmath=387
 .else
 FPM_FLAG=
