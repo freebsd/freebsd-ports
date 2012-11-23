@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-52
+DISTVERSION=	0.5-53
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	R-cran-sp>=0.9:${PORTSDIR}/math/R-cran-sp \
 		R-cran-maptools>=0.5.4:${PORTSDIR}/astro/R-cran-maptools \
 		R-cran-deldir>0:${PORTSDIR}/math/R-cran-deldir \
 		R-cran-coda>0:${PORTSDIR}/math/R-cran-coda \
-		R-cran-MCMCpack>0:${PORTSDIR}/math/R-cran-MCMCpack
+		R-cran-LearnBayes>0:${PORTSDIR}/math/R-cran-LearnBayes
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
