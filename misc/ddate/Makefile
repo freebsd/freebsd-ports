@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddate
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/v${PORTVERSION}/ \
@@ -17,14 +17,19 @@ LICENSE=	GPLv2
 PLIST_FILES=	bin/ddate
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		ddate.1
+CONFIGURE_ARGS=	--disable-libuuid --disable-libblkid --disable-libmount \
+		--disable-mount --disable-losetup --disable-fsck \
+		--disable-partx --disable-uuidd --disable-mountpoint \
+		--disable-fallocate --disable-unshare --disable-eject \
+		--disable-agetty --disable-cramfs --disable-switch_root \
+		--disable-pivot_root --disable-kill --disable-utmpdump \
+		--disable-rename --disable-login --disable-sulogin \
+		--disable-su --disable-schedutils --disable-wall
 
-#OPTIONS=	USFORMAT  "Use US time format" off \
-#		PRAISEBOB "Use SubGenius slogans" off \
-#		KILLBOB   "Use countdown to X-Day" on
+MAN1=		ddate.1
 
 OPTIONS_DEFINE=	USFORMAT PRAISEBOB KILLBOB
 
