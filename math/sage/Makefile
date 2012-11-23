@@ -159,7 +159,7 @@ post-install:
 BROKEN=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
 .endif
 
-.if ${PORT_OPTIONS:M387} && ${ARCH} == amd64
+.if ${PORT_OPTIONS:M387}
 FPM_FLAG=	-mfpmath=387
 .else
 FPM_FLAG=
