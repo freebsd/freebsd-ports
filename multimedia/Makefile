@@ -278,6 +278,7 @@
     SUBDIR += py-qt4-phonon
     SUBDIR += py-tvnamer
     SUBDIR += pyjama
+    SUBDIR += pymp
     SUBDIR += qdvdauthor
     SUBDIR += qmmp
     SUBDIR += qmmp-plugin-pack
