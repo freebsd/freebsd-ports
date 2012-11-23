@@ -1,17 +1,8 @@
-# New ports collection makefile for:   panorama-tools
-# Date created:        26 august 2004
-# Whom:                cartola (Carlos E. G. Carvalho)
-#
+# Created by:                cartola (Carlos E. G. Carvalho)
 # $FreeBSD$
-#
-# This port has been made as a building dependence for the hugin port.
-# As far as I could test the hugin port runs without this port installed, so the package
-# does not need to refer to this dependence.
-# The hugin port is a gui interface to interact with panorama tools.
 
 PORTNAME=	vigra
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,24 +10,48 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
+LICENSE=	MIT
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \
-		-DDOCINSTALL:PATH=${DOCSDIR_REL} \
-		-DWITH_HDF5=1
+		-DDOCINSTALL:PATH=${DOCSDIR_REL}
 
 USE_LDCONFIG=	yes
 
-OPTIONS=	PYTHON "Python bindings" off
+OPTIONS_DEFINE=		HDF5 OPENEXR PYTHON
+OPTIONS_DEFAULT=	HDF5 OPENEXR
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MHDF5}
+CMAKE_ARGS+=	-DWITH_HDF5=1
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
+.else
+CMAKE_ARGS+=	-DWITH_HDF5=0
+.endif
+
+.if ${PORT_OPTIONS:MOPENEXR}
+CMAKE_ARGS+=	-DWITH_OPENEXR=1
+LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+.else
+CMAKE_ARGS+=	-DWITH_OPENEXR=0
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON}
 CONFLICTS_BUILD=	python3*
+CMAKE_ARGS+=	-DWITH_VIGRANUMPY=1
 USE_PYTHON=	2.6-2.7
+BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
+#BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+PLIST_SUB+=	PYTHON=""
 .else
 CMAKE_ARGS+=	-DWITH_VIGRANUMPY=0
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -67,14 +82,6 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .if !defined(WITHOUT_VIGRA_FFTW)
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
-.endif
-
-.if !defined(WITHOUT_VIGRA_HDF5)
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
-.endif
-
-.if !defined(WITHOUT_VIGRA_OPENEXR)
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
 .endif
 
 post-patch:
