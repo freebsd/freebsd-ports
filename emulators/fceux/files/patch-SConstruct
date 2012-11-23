@@ -1,33 +1,15 @@
---- SConstruct	2010-03-30 21:41:39.000000000 -0600
-+++ SConstruct.bak	2010-04-28 20:52:16.000000000 -0500
-@@ -16,7 +16,7 @@
-   BoolVariable('GTK_LITE', 'Enable GTK2 for dialogs only', 0)
- )
- 
--env = Environment(options = opts)
-+env = Environment(ENV = os.environ, options = opts)
- 
- # LSB_FIRST must be off for PPC to compile
- if platform.system == "ppc":
-@@ -37,6 +37,8 @@
-   env.Append(CCFLAGS = os.environ['CFLAGS'].split())
- if os.environ.has_key('LDFLAGS'):
-   env.Append(LINKFLAGS = os.environ['LDFLAGS'].split())
-+  env['CPPPATH'] = Split(env['CPPPATH'])
-+  env['LIBPATH'] = Split(env['LIBPATH'])
- 
- print "platform: ", env['PLATFORM']
- 
-@@ -53,9 +55,9 @@
-   env.Append(LIBS = ["rpcrt4", "comctl32", "vfw32", "winmm", "ws2_32", "comdlg32", "ole32", "gdi32", "htmlhelp"])
+--- SConstruct.bak	2012-09-30 14:49:24.000000000 -0500
++++ SConstruct	2012-09-30 14:50:46.000000000 -0500
+@@ -56,9 +56,9 @@
  else:
    conf = Configure(env)
+   assert conf.CheckLibWithHeader('z', 'zlib.h', 'C', 'inflate;', 1), "please install: zlib"
 -  if not conf.CheckLib('SDL'):
 -    print 'Did not find libSDL or SDL.lib, exiting!'
 -    Exit(1)
 +  ###if not conf.CheckLib('SDL'):
 +  ###  print 'Did not find libSDL or SDL.lib, exiting!'
 +  ###  Exit(1)
-   if env['GTK'] or env['GTK_LITE']:
+ 
+   if env['GTK']:
      # Add compiler and linker flags from pkg-config
-     env.ParseConfig('pkg-config --cflags --libs gtk+-2.0')

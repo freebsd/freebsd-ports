@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fceux
-PORTVERSION=	2.1.4a
-PORTREVISION=	3
+PORTVERSION=	2.1.5
 CATEGORIES=	emulators
-MASTER_SITES=	SF/fceultra/Source%20Code/2.1.4%20src/
+MASTER_SITES=	SF/fceultra/Source%20Code/2.1.5%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	davide.italiano@gmail.com
