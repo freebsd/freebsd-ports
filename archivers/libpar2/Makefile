@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libpar2
-# Date created:				16 Aug 2008
-# Whom:					Jeff Burchell <toxic@doobie.com>
-#
+# Created by: Jeff Burchell <toxic@doobie.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libpar2
 PORTVERSION=	0.2
@@ -23,18 +19,20 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_LDCONFIG=	yes
 
-OPTIONS=	ENABLECANCEL "Enable graceful cancellation of repairs" On
+OPTIONS_DEFINE=	ENABLECANCEL
+OPTIONS_DEFAULT=	ENABLECANCEL
+ENABLECANCEL_DESC=	Enable graceful cancellation of repairs
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ENABLECANCEL)
+.if ${PORT_OPTIONS:MENABLECANCEL}
 EXTRA_PATCHES+=	${FILESDIR}/xpatch-addcancel-par2repairer.cpp
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
