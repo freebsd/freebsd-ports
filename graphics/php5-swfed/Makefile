@@ -1,15 +1,11 @@
-# New ports collection makefile for:	php5-swfed
-# Date created:		2010-06-13
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	swfed
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	graphics www
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	${PORTNAME}/56609
+MASTER_SITE_SUBDIR=	${PORTNAME}/57469
 PKGNAMEPREFIX=	php5-
 
 MAINTAINER=	yoya@awm.jp
