@@ -3821,6 +3821,7 @@
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-caesars
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-classifier
