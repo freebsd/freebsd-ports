@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sourcesanspro-ttf
-PORTVERSION=	1.036
+PORTVERSION=	1.038
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcesans.adobe
 DISTNAME=	SourceSansPro_FontsOnly-${PORTVERSION}
@@ -41,7 +41,7 @@ do-build:
 do-install:
 	${MKDIR} ${FONTDIR}
 	cd ${WRKSRC}/ &&	\
-	${INSTALL_DATA} ${INSTDAT} *.ttf ${FONTDIR}
+	${INSTALL_DATA} ${INSTDAT} TTF/*.ttf ${FONTDIR}
 
 post-install:
 	@${ECHO_MSG}
