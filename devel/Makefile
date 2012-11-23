@@ -3806,6 +3806,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-allison
     SUBDIR += rubygem-analogger
+    SUBDIR += rubygem-annoy
     SUBDIR += rubygem-ansi
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
