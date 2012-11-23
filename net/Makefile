@@ -995,6 +995,7 @@
     SUBDIR += ruby-net-geoip
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
+    SUBDIR += rubygem-amazon-ec2
     SUBDIR += rubygem-amq-client
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
