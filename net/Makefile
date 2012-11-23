@@ -1021,6 +1021,7 @@
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
     SUBDIR += rubygem-rubytter
+    SUBDIR += rubygem-rudy
     SUBDIR += rubygem-rye
     SUBDIR += rubygem-simple_oauth
     SUBDIR += rubygem-stompserver
