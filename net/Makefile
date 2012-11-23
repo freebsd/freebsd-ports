@@ -1001,6 +1001,7 @@
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-amqp-utils
     SUBDIR += rubygem-amqp067
+    SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-geoip
