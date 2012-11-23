@@ -8,6 +8,7 @@
     SUBDIR += R
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-KFAS
+    SUBDIR += R-cran-LearnBayes
     SUBDIR += R-cran-MCMCpack
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-SuppDists
