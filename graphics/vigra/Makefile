@@ -11,6 +11,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -26,6 +27,19 @@ CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \
 		-DWITH_HDF5=1
 
 USE_LDCONFIG=	yes
+
+OPTIONS=	PYTHON "Python bindings" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PYTHON)
+CONFLICTS_BUILD=	python3*
+USE_PYTHON=	2.6-2.7
+.else
+CMAKE_ARGS+=	-DWITH_VIGRANUMPY=0
+.endif
+
+.include <bsd.port.pre.mk>
 
 # Vigra's CMakeLists.txt does not support disabling those so we hook them
 # as dependencies here unconditionally (without OPTIONS=) even though if
@@ -67,4 +81,4 @@ post-patch:
 # FIXME: This is ugly
 	@${RM} ${WRKSRC}/include/vigra/*.orig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
