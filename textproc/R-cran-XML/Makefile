@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-XML
-# Date created:		2011-08-06
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML
-DISTVERSION=	3.9-4
-PORTREVISION=	3
+DISTVERSION=	3.95-0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
