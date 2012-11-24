@@ -3,6 +3,7 @@
 
 PORTNAME=	veximaccountadmin
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://axel.sjostedt.no/misc/files/
 PKGNAMEPREFIX=	roundcube-
@@ -30,7 +31,8 @@ x-generate-plist: build
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
 do-install:
+	@${ECHO} "Installing in ${WWWDIR}"
 	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
 
 .include <bsd.port.mk>
