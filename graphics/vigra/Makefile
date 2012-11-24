@@ -56,6 +56,12 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .include <bsd.port.pre.mk>
 
+# Check for clang, else use gcc46+
+CPP_check!=	${CPP} --version | tr -d '()'
+.if !${CPP_check:Mclang}
+USE_GCC=	4.6+
+.endif
+
 # Vigra's CMakeLists.txt does not support disabling those so we hook them
 # as dependencies here unconditionally (without OPTIONS=) even though if
 # they are not present then Vigra/CMake will do without them (they are not
