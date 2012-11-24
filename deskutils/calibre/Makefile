@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.70
+PORTVERSION=	0.9.6
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
+LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		wmflite:${PORTSDIR}/graphics/libwmf \
-		chm.0:${PORTSDIR}/misc/chmlib \
-		icudata.48:${PORTSDIR}/devel/icu
+		chm:${PORTSDIR}/misc/chmlib \
+		icudata:${PORTSDIR}/devel/icu \
+		podofo:${PORTSDIR}/graphics/podofo
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
@@ -38,41 +39,30 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:${PORTSDIR}/net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}cssselect>=0:${PORTSDIR}/www/py-cssselect \
 		pdftohtml:${PORTSDIR}/graphics/poppler-utils \
 		lshal:${PORTSDIR}/sysutils/hal
-
-OPTIONS_DEFINE=	PODOFO
-PODOFO_DESC=	PDF support via PoDoFo library
-OPTIONS_DEFAULT=PODOFO
 
 USE_XZ=		yes
 USE_PYTHON=	2.7
 USE_QT4=	qmake_build moc_build
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CFLAGS+=	"-I${LOCALBASE}/include"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		FC_LIB_DIR="${LOCALBASE}/lib" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \
-		OVERRIDE_LDFLAGS="${LDFLAGS}"
+		OVERRIDE_LDFLAGS="${LDFLAGS}" \
+		PODOFO_LIB_DIR="${LOCALBASE}/lib" \
+		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
 MAKE_ENV+=	WITH_USB=no
-PLIST_SUB+=	USB="@comment "
 .else
 MAKE_ENV+=	WITH_USB=yes
-PLIST_SUB+=	USB=""
-.endif
-.if ${PORT_OPTIONS:MPODOFO} || exists(${LOCALBASE}/lib/libpodofo.so)
-LIB_DEPENDS+=	podofo:${PORTSDIR}/graphics/podofo
-MAKE_ENV+=	PODOFO_LIB_DIR="${LOCALBASE}/lib" \
-		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
-PLIST_SUB+=	PODOFO=""
-.else
-PLIST_SUB+=	PODOFO="@comment "
 .endif
 
 do-build:
