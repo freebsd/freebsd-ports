@@ -42,7 +42,7 @@ PLIST_SUB+=	EXAMPLES="@comment "
 PLIST_SUB+=	EXAMPLES=""
 .endif
 
-ARDUINO_CMD=	${FILESDIR}/version.sh ${PREFIX}/arduino/lib/version.txt
+ARDUINO_CMD=	${SH} ${FILESDIR}/version.sh ${PREFIX}/arduino/lib/version.txt
 OLD_BOARDS_TXT=	/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/boards.txt
 NEW_BOARDS_TXT=	${PREFIX}/arduino/hardware/arduino/boards.txt
 
