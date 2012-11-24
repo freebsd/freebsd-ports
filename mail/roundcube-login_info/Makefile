@@ -3,6 +3,7 @@
 
 PORTNAME=	login_info
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.std-soft.de/webmail/plugins/
 PKGNAMEPREFIX=	roundcube-
@@ -30,7 +31,8 @@ x-generate-plist: build
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
 do-install:
+	@${ECHO} "Installing in ${WWWDIR}"
 	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
 
 .include <bsd.port.mk>
