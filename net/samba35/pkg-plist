@@ -43,7 +43,6 @@ sbin/nmbd
 %%EXAMPLESDIR%%/LDAP/samba-nds.schema
 %%EXAMPLESDIR%%/LDAP/samba-schema-FDS.ldif
 %%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds4.x
-%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x
 %%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x.README
 %%EXAMPLESDIR%%/LDAP/samba-schema.IBMSecureWay
 %%EXAMPLESDIR%%/LDAP/samba.schema
