@@ -1,25 +1,21 @@
-# New ports collection makefile for:	fail2ban
-# Date created:				13 January 2009
-# Whom:					    Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by:    Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7.1
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       ${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
+DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	theis@gmx.at
 COMMENT=	Scans log files and bans IP that makes too many password failures
 
-LICENSE=        GPLv2
+LICENSE=	GPLv2
 
-GITVERSION=     0-g1efe1bc
-FETCH_ARGS=      -pRr
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTNAME}-a20d1f8
+GITVERSION=	0-g0b5c66f
+FETCH_ARGS=	-pRr
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTNAME}-e59babb
 
 MAKE_JOBS_SAFE=	yes
 
@@ -31,6 +27,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-purelib=${PYTHON_SITELIBDIR} \
 				--install-data=${ETCDIR}
+PYDISTUTILS_EGGINFO=	${PORTNAME}-0.8.7-py${PYTHON_VER}.egg-info
 
 FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/man/fail2ban-client.1 \
@@ -41,5 +38,8 @@ FILES=	${WRKSRC}/fail2ban-regex \
 
 post-patch:
 	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'
+
+post-install:
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>

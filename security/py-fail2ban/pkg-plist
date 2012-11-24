@@ -10,6 +10,7 @@
 %%ETCDIR%%/action.d/iptables-multiport.conf
 %%ETCDIR%%/action.d/iptables-new.conf
 %%ETCDIR%%/action.d/iptables.conf
+%%ETCDIR%%/action.d/iptables-xt_recent-echo.conf
 %%ETCDIR%%/action.d/mail-buffered.conf
 %%ETCDIR%%/action.d/mail-whois-lines.conf
 %%ETCDIR%%/action.d/mail-whois.conf
@@ -27,6 +28,7 @@
 %%ETCDIR%%/filter.d/apache-nohome.conf
 %%ETCDIR%%/filter.d/apache-noscript.conf
 %%ETCDIR%%/filter.d/apache-overflows.conf
+%%ETCDIR%%/filter.d/asterisk.conf
 %%ETCDIR%%/filter.d/bsd-sshd.conf
 %%ETCDIR%%/filter.d/bsdftp.conf
 %%ETCDIR%%/filter.d/common.conf
@@ -37,6 +39,7 @@
 %%ETCDIR%%/filter.d/dropbear.conf
 %%ETCDIR%%/filter.d/exim.conf
 %%ETCDIR%%/filter.d/gssftpd.conf
+%%ETCDIR%%/filter.d/lighttpd-auth.conf
 %%ETCDIR%%/filter.d/lighttpd-fastcgi.conf
 %%ETCDIR%%/filter.d/named-refused.conf
 %%ETCDIR%%/filter.d/pam-generic.conf
@@ -45,6 +48,7 @@
 %%ETCDIR%%/filter.d/proftpd.conf
 %%ETCDIR%%/filter.d/pure-ftpd.conf
 %%ETCDIR%%/filter.d/qmail.conf
+%%ETCDIR%%/filter.d/recidive.conf
 %%ETCDIR%%/filter.d/sasl.conf
 %%ETCDIR%%/filter.d/sieve.conf
 %%ETCDIR%%/filter.d/sshd-ddos.conf
@@ -106,6 +110,8 @@
 %%PYTHON_SITELIBDIR%%/server/failregex.pyc
 %%PYTHON_SITELIBDIR%%/server/filter.py
 %%PYTHON_SITELIBDIR%%/server/filter.pyc
+%%PYTHON_SITELIBDIR%%/server/filterpyinotify.py
+%%PYTHON_SITELIBDIR%%/server/filterpyinotify.pyc
 %%PYTHON_SITELIBDIR%%/server/filtergamin.py
 %%PYTHON_SITELIBDIR%%/server/filtergamin.pyc
 %%PYTHON_SITELIBDIR%%/server/filterpoll.py
@@ -129,9 +135,9 @@
 bin/fail2ban-client
 bin/fail2ban-regex
 bin/fail2ban-server
-@dirrm %%ETCDIR%%/filter.d
-@dirrm %%ETCDIR%%/action.d
-@dirrm %%ETCDIR%%
+@dirrmtry %%ETCDIR%%/filter.d
+@dirrmtry %%ETCDIR%%/action.d
+@dirrmtry %%ETCDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/server
 @dirrm %%PYTHON_SITELIBDIR%%/common
 @dirrm %%PYTHON_SITELIBDIR%%/client
