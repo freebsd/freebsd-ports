@@ -1,13 +1,8 @@
-# New ports collection makefile for:	Mason
-# Date created:				03 April, 2012
-# Whom:					Muhammad Moinur Rahman <5u623l20@gmail.com>
-#
+# Created by:	Muhammad Moinur Rahman <5u623l20@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Class-Most
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OVID
@@ -16,8 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Test Classes the easy way
 
-BUILD_DEPENDS=	p5-Test-Class>0:${PORTSDIR}/devel/p5-Test-Class \
-		p5-Test-Most>0:${PORTSDIR}/devel/p5-Test-Most
+BUILD_DEPENDS=	p5-Test-Class>=0.33:${PORTSDIR}/devel/p5-Test-Class \
+		p5-Test-Most>=0.31:${PORTSDIR}/devel/p5-Test-Most
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
