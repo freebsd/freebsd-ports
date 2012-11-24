@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docear
-PORTVERSION=	1.0.0.b06
+PORTVERSION=	1.0.0.b07
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
 DISTNAME=	docear_linux
@@ -28,7 +28,7 @@ NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
 icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-WRKSRC=		${WRKDIR}/docear-1.0.0.6_beta_build123
+WRKSRC=		${WRKDIR}/docear-1.0.0.7_beta_build139
 SUB_FILES=	docear.desktop
 
 post-patch:
