@@ -1,0 +1,8 @@
+'mitmproxy' is an SSL-capable man-in-the-middle HTTP proxy. It provides a
+console interface that allows traffic flows to be inspected and edited on the
+fly.
+
+'mitmdump' is the command-line version of mitmproxy, with the same
+functionality but without the frills. Think tcpdump for HTTP.
+
+WWW: http://mitmproxy.org/index.html
