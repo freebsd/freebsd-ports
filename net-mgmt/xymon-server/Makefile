@@ -2,13 +2,13 @@
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	feld@feld.me
 COMMENT=	System for monitoring servers and networks
 
 LICENSE=	GPLv2
