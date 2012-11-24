@@ -20,7 +20,6 @@ bin/lrs2lrf
 bin/markdown-calibre
 bin/web2disk
 etc/bash_completion.d/calibre
-%%PYTHON_SITELIBDIR%%/init_calibre.py
 lib/calibre/calibre/__init__.py
 lib/calibre/calibre/constants.py
 lib/calibre/calibre/customize/__init__.py
@@ -29,6 +28,19 @@ lib/calibre/calibre/customize/conversion.py
 lib/calibre/calibre/customize/profiles.py
 lib/calibre/calibre/customize/ui.py
 lib/calibre/calibre/customize/zipplugin.py
+lib/calibre/calibre/db/__init__.py
+lib/calibre/calibre/db/backend.py
+lib/calibre/calibre/db/cache.py
+lib/calibre/calibre/db/errors.py
+lib/calibre/calibre/db/fields.py
+lib/calibre/calibre/db/lazy.py
+lib/calibre/calibre/db/locking.py
+lib/calibre/calibre/db/schema_upgrades.py
+lib/calibre/calibre/db/tables.py
+lib/calibre/calibre/db/tests/__init__.py
+lib/calibre/calibre/db/tests/base.py
+lib/calibre/calibre/db/tests/reading.py
+lib/calibre/calibre/db/view.py
 lib/calibre/calibre/debug.py
 lib/calibre/calibre/devices/__init__.py
 lib/calibre/calibre/devices/android/__init__.py
@@ -76,19 +88,19 @@ lib/calibre/calibre/devices/kindle/apnx.py
 lib/calibre/calibre/devices/kindle/bookmark.py
 lib/calibre/calibre/devices/kindle/driver.py
 lib/calibre/calibre/devices/kobo/__init__.py
+lib/calibre/calibre/devices/kobo/bookmark.py
 lib/calibre/calibre/devices/kobo/books.py
 lib/calibre/calibre/devices/kobo/driver.py
-lib/calibre/calibre/devices/kobo/bookmark.py
 lib/calibre/calibre/devices/manager.py
 lib/calibre/calibre/devices/mime.py
 lib/calibre/calibre/devices/misc.py
-lib/calibre/calibre/devices/mtp/books.py
 lib/calibre/calibre/devices/mtp/__init__.py
+lib/calibre/calibre/devices/mtp/base.py
+lib/calibre/calibre/devices/mtp/books.py
 lib/calibre/calibre/devices/mtp/defaults.py
 lib/calibre/calibre/devices/mtp/driver.py
-lib/calibre/calibre/devices/mtp/test.py
-lib/calibre/calibre/devices/mtp/base.py
 lib/calibre/calibre/devices/mtp/filesystem_cache.py
+lib/calibre/calibre/devices/mtp/test.py
 lib/calibre/calibre/devices/mtp/unix/__init__.py
 lib/calibre/calibre/devices/mtp/unix/driver.py
 lib/calibre/calibre/devices/mtp/unix/upstream/update.py
@@ -114,8 +126,6 @@ lib/calibre/calibre/devices/sne/driver.py
 lib/calibre/calibre/devices/teclast/__init__.py
 lib/calibre/calibre/devices/teclast/driver.py
 lib/calibre/calibre/devices/udisks.py
-lib/calibre/calibre/devices/user_defined/__init__.py
-lib/calibre/calibre/devices/user_defined/driver.py
 lib/calibre/calibre/devices/usbms/__init__.py
 lib/calibre/calibre/devices/usbms/books.py
 lib/calibre/calibre/devices/usbms/cli.py
@@ -123,20 +133,9 @@ lib/calibre/calibre/devices/usbms/device.py
 lib/calibre/calibre/devices/usbms/deviceconfig.py
 lib/calibre/calibre/devices/usbms/driver.py
 lib/calibre/calibre/devices/usbobserver/test.py
+lib/calibre/calibre/devices/user_defined/__init__.py
+lib/calibre/calibre/devices/user_defined/driver.py
 lib/calibre/calibre/devices/utils.py
-lib/calibre/calibre/db/__init__.py
-lib/calibre/calibre/db/backend.py
-lib/calibre/calibre/db/locking.py
-lib/calibre/calibre/db/schema_upgrades.py
-lib/calibre/calibre/db/errors.py
-lib/calibre/calibre/db/tables.py
-lib/calibre/calibre/db/cache.py
-lib/calibre/calibre/db/lazy.py
-lib/calibre/calibre/db/view.py
-lib/calibre/calibre/db/fields.py
-lib/calibre/calibre/db/tests/__init__.py
-lib/calibre/calibre/db/tests/base.py
-lib/calibre/calibre/db/tests/reading.py
 lib/calibre/calibre/ebooks/BeautifulSoup.py
 lib/calibre/calibre/ebooks/__init__.py
 lib/calibre/calibre/ebooks/azw4/__init__.py
@@ -153,51 +152,50 @@ lib/calibre/calibre/ebooks/compression/tcr.py
 lib/calibre/calibre/ebooks/conversion/__init__.py
 lib/calibre/calibre/ebooks/conversion/cli.py
 lib/calibre/calibre/ebooks/conversion/config.py
+lib/calibre/calibre/ebooks/conversion/plugins/__init__.py
+lib/calibre/calibre/ebooks/conversion/plugins/azw4_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/chm_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/comic_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/djvu_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/epub_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/epub_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/fb2_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/fb2_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/html_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/html_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/htmlz_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/htmlz_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/lit_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/lit_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/lrf_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/lrf_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/mobi_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/mobi_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/odt_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/oeb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdb_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdf_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdf_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/pml_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/pml_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/rb_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/rb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/recipe_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/rtf_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/rtf_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/snb_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/snb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/tcr_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/tcr_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/txt_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/txt_output.py
 lib/calibre/calibre/ebooks/conversion/plumber.py
 lib/calibre/calibre/ebooks/conversion/preprocess.py
 lib/calibre/calibre/ebooks/conversion/utils.py
-lib/calibre/calibre/ebooks/conversion/plugins/pml_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/htmlz_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/tcr_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/chm_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/odt_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/mobi_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/lrf_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/pdb_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/epub_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/pdb_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/pdf_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/lit_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/djvu_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/snb_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/tcr_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/rtf_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/fb2_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/__init__.py
-lib/calibre/calibre/ebooks/conversion/plugins/snb_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/azw4_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/pdf_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/mobi_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/fb2_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/rb_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/htmlz_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/txt_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/html_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/comic_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/rtf_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/lit_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/pml_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/html_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/lrf_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/oeb_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/recipe_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/txt_output.py
-lib/calibre/calibre/ebooks/conversion/plugins/epub_input.py
-lib/calibre/calibre/ebooks/conversion/plugins/rb_input.py
-lib/calibre/calibre/ebooks/cssselect.py
 lib/calibre/calibre/ebooks/djvu/__init__.py
-lib/calibre/calibre/ebooks/djvu/djvubzzdec.py
 lib/calibre/calibre/ebooks/djvu/djvu.py
+lib/calibre/calibre/ebooks/djvu/djvubzzdec.py
 lib/calibre/calibre/ebooks/epub/__init__.py
 lib/calibre/calibre/ebooks/epub/fix/__init__.py
 lib/calibre/calibre/ebooks/epub/fix/container.py
@@ -248,28 +246,28 @@ lib/calibre/calibre/ebooks/lrf/tags.py
 lib/calibre/calibre/ebooks/markdown/__init__.py
 lib/calibre/calibre/ebooks/markdown/blockparser.py
 lib/calibre/calibre/ebooks/markdown/blockprocessors.py
+lib/calibre/calibre/ebooks/markdown/commandline.py
 lib/calibre/calibre/ebooks/markdown/etree_loader.py
+lib/calibre/calibre/ebooks/markdown/extensions/__init__.py
+lib/calibre/calibre/ebooks/markdown/extensions/abbr.py
+lib/calibre/calibre/ebooks/markdown/extensions/codehilite.py
+lib/calibre/calibre/ebooks/markdown/extensions/def_list.py
+lib/calibre/calibre/ebooks/markdown/extensions/extra.py
+lib/calibre/calibre/ebooks/markdown/extensions/fenced_code.py
+lib/calibre/calibre/ebooks/markdown/extensions/footnotes.py
+lib/calibre/calibre/ebooks/markdown/extensions/headerid.py
+lib/calibre/calibre/ebooks/markdown/extensions/meta.py
+lib/calibre/calibre/ebooks/markdown/extensions/rss.py
+lib/calibre/calibre/ebooks/markdown/extensions/tables.py
+lib/calibre/calibre/ebooks/markdown/extensions/toc.py
+lib/calibre/calibre/ebooks/markdown/extensions/wikilinks.py
 lib/calibre/calibre/ebooks/markdown/html4.py
 lib/calibre/calibre/ebooks/markdown/inlinepatterns.py
 lib/calibre/calibre/ebooks/markdown/markdown.py
 lib/calibre/calibre/ebooks/markdown/odict.py
+lib/calibre/calibre/ebooks/markdown/postprocessors.py
 lib/calibre/calibre/ebooks/markdown/preprocessors.py
 lib/calibre/calibre/ebooks/markdown/treeprocessors.py
-lib/calibre/calibre/ebooks/markdown/postprocessors.py
-lib/calibre/calibre/ebooks/markdown/commandline.py
-lib/calibre/calibre/ebooks/markdown/extensions/rss.py
-lib/calibre/calibre/ebooks/markdown/extensions/wikilinks.py
-lib/calibre/calibre/ebooks/markdown/extensions/footnotes.py
-lib/calibre/calibre/ebooks/markdown/extensions/__init__.py
-lib/calibre/calibre/ebooks/markdown/extensions/codehilite.py
-lib/calibre/calibre/ebooks/markdown/extensions/toc.py
-lib/calibre/calibre/ebooks/markdown/extensions/fenced_code.py
-lib/calibre/calibre/ebooks/markdown/extensions/abbr.py
-lib/calibre/calibre/ebooks/markdown/extensions/tables.py
-lib/calibre/calibre/ebooks/markdown/extensions/def_list.py
-lib/calibre/calibre/ebooks/markdown/extensions/headerid.py
-lib/calibre/calibre/ebooks/markdown/extensions/extra.py
-lib/calibre/calibre/ebooks/markdown/extensions/meta.py
 lib/calibre/calibre/ebooks/metadata/__init__.py
 lib/calibre/calibre/ebooks/metadata/archive.py
 lib/calibre/calibre/ebooks/metadata/book/__init__.py
@@ -321,53 +319,54 @@ lib/calibre/calibre/ebooks/metadata/worker.py
 lib/calibre/calibre/ebooks/metadata/xisbn.py
 lib/calibre/calibre/ebooks/metadata/zip.py
 lib/calibre/calibre/ebooks/mobi/__init__.py
-lib/calibre/calibre/ebooks/mobi/debug/main.py
 lib/calibre/calibre/ebooks/mobi/debug/__init__.py
-lib/calibre/calibre/ebooks/mobi/debug/mobi6.py
 lib/calibre/calibre/ebooks/mobi/debug/headers.py
-lib/calibre/calibre/ebooks/mobi/debug/mobi8.py
 lib/calibre/calibre/ebooks/mobi/debug/index.py
+lib/calibre/calibre/ebooks/mobi/debug/main.py
+lib/calibre/calibre/ebooks/mobi/debug/mobi6.py
+lib/calibre/calibre/ebooks/mobi/debug/mobi8.py
 lib/calibre/calibre/ebooks/mobi/huffcdic.py
 lib/calibre/calibre/ebooks/mobi/langcodes.py
 lib/calibre/calibre/ebooks/mobi/mobiml.py
+lib/calibre/calibre/ebooks/mobi/reader/__init__.py
+lib/calibre/calibre/ebooks/mobi/reader/headers.py
 lib/calibre/calibre/ebooks/mobi/reader/index.py
 lib/calibre/calibre/ebooks/mobi/reader/markup.py
-lib/calibre/calibre/ebooks/mobi/reader/ncx.py
-lib/calibre/calibre/ebooks/mobi/reader/__init__.py
 lib/calibre/calibre/ebooks/mobi/reader/mobi6.py
-lib/calibre/calibre/ebooks/mobi/reader/headers.py
 lib/calibre/calibre/ebooks/mobi/reader/mobi8.py
+lib/calibre/calibre/ebooks/mobi/reader/ncx.py
 lib/calibre/calibre/ebooks/mobi/tweak.py
 lib/calibre/calibre/ebooks/mobi/utils.py
 lib/calibre/calibre/ebooks/mobi/writer2/__init__.py
-lib/calibre/calibre/ebooks/mobi/writer2/main.py
 lib/calibre/calibre/ebooks/mobi/writer2/indexer.py
+lib/calibre/calibre/ebooks/mobi/writer2/main.py
 lib/calibre/calibre/ebooks/mobi/writer2/resources.py
 lib/calibre/calibre/ebooks/mobi/writer2/serializer.py
-lib/calibre/calibre/ebooks/mobi/writer8/main.py
 lib/calibre/calibre/ebooks/mobi/writer8/__init__.py
-lib/calibre/calibre/ebooks/mobi/writer8/index.py
-lib/calibre/calibre/ebooks/mobi/writer8/skeleton.py
 lib/calibre/calibre/ebooks/mobi/writer8/cleanup.py
 lib/calibre/calibre/ebooks/mobi/writer8/exth.py
-lib/calibre/calibre/ebooks/mobi/writer8/tbs.py
 lib/calibre/calibre/ebooks/mobi/writer8/header.py
+lib/calibre/calibre/ebooks/mobi/writer8/index.py
+lib/calibre/calibre/ebooks/mobi/writer8/main.py
 lib/calibre/calibre/ebooks/mobi/writer8/mobi.py
+lib/calibre/calibre/ebooks/mobi/writer8/skeleton.py
+lib/calibre/calibre/ebooks/mobi/writer8/tbs.py
 lib/calibre/calibre/ebooks/mobi/writer8/toc.py
 lib/calibre/calibre/ebooks/odt/__init__.py
 lib/calibre/calibre/ebooks/odt/input.py
 lib/calibre/calibre/ebooks/oeb/__init__.py
 lib/calibre/calibre/ebooks/oeb/base.py
+lib/calibre/calibre/ebooks/oeb/display/__init__.py
+lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.py
+lib/calibre/calibre/ebooks/oeb/display/webview.py
+lib/calibre/calibre/ebooks/oeb/iterator/__init__.py
+lib/calibre/calibre/ebooks/oeb/iterator/book.py
+lib/calibre/calibre/ebooks/oeb/iterator/bookmarks.py
+lib/calibre/calibre/ebooks/oeb/iterator/extract_fonts.py
+lib/calibre/calibre/ebooks/oeb/iterator/spine.py
 lib/calibre/calibre/ebooks/oeb/parse_utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
 lib/calibre/calibre/ebooks/oeb/stylizer.py
-lib/calibre/calibre/ebooks/oeb/display/__init__.py
-lib/calibre/calibre/ebooks/oeb/display/webview.py
-lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.py
-lib/calibre/calibre/ebooks/oeb/iterator/book.py
-lib/calibre/calibre/ebooks/oeb/iterator/bookmarks.py
-lib/calibre/calibre/ebooks/oeb/iterator/__init__.py
-lib/calibre/calibre/ebooks/oeb/iterator/spine.py
 lib/calibre/calibre/ebooks/oeb/transforms/__init__.py
 lib/calibre/calibre/ebooks/oeb/transforms/cover.py
 lib/calibre/calibre/ebooks/oeb/transforms/filenames.py
@@ -383,6 +382,7 @@ lib/calibre/calibre/ebooks/oeb/transforms/rasterize.py
 lib/calibre/calibre/ebooks/oeb/transforms/rescale.py
 lib/calibre/calibre/ebooks/oeb/transforms/split.py
 lib/calibre/calibre/ebooks/oeb/transforms/structure.py
+lib/calibre/calibre/ebooks/oeb/transforms/subset.py
 lib/calibre/calibre/ebooks/oeb/transforms/trimmanifest.py
 lib/calibre/calibre/ebooks/oeb/transforms/unsmarten.py
 lib/calibre/calibre/ebooks/oeb/writer.py
@@ -423,8 +423,8 @@ lib/calibre/calibre/ebooks/rb/rbml.py
 lib/calibre/calibre/ebooks/rb/reader.py
 lib/calibre/calibre/ebooks/rb/writer.py
 lib/calibre/calibre/ebooks/readability/__init__.py
-lib/calibre/calibre/ebooks/readability/debug.py
 lib/calibre/calibre/ebooks/readability/cleaners.py
+lib/calibre/calibre/ebooks/readability/debug.py
 lib/calibre/calibre/ebooks/readability/htmls.py
 lib/calibre/calibre/ebooks/readability/readability.py
 lib/calibre/calibre/ebooks/rtf/__init__.py
@@ -558,15 +558,15 @@ lib/calibre/calibre/gui2/comments_editor.py
 lib/calibre/calibre/gui2/complete.py
 lib/calibre/calibre/gui2/complete2.py
 lib/calibre/calibre/gui2/convert/__init__.py
-lib/calibre/calibre/gui2/convert/azw3_output_ui.py
 lib/calibre/calibre/gui2/convert/azw3_output.py
+lib/calibre/calibre/gui2/convert/azw3_output_ui.py
 lib/calibre/calibre/gui2/convert/bulk.py
 lib/calibre/calibre/gui2/convert/comic_input.py
 lib/calibre/calibre/gui2/convert/comic_input_ui.py
 lib/calibre/calibre/gui2/convert/debug.py
 lib/calibre/calibre/gui2/convert/debug_ui.py
-lib/calibre/calibre/gui2/convert/djvu_input_ui.py
 lib/calibre/calibre/gui2/convert/djvu_input.py
+lib/calibre/calibre/gui2/convert/djvu_input_ui.py
 lib/calibre/calibre/gui2/convert/epub_output.py
 lib/calibre/calibre/gui2/convert/epub_output_ui.py
 lib/calibre/calibre/gui2/convert/fb2_input.py
@@ -578,8 +578,8 @@ lib/calibre/calibre/gui2/convert/font_key_ui.py
 lib/calibre/calibre/gui2/convert/gui_conversion.py
 lib/calibre/calibre/gui2/convert/heuristics.py
 lib/calibre/calibre/gui2/convert/heuristics_ui.py
-lib/calibre/calibre/gui2/convert/htmlz_output_ui.py
 lib/calibre/calibre/gui2/convert/htmlz_output.py
+lib/calibre/calibre/gui2/convert/htmlz_output_ui.py
 lib/calibre/calibre/gui2/convert/look_and_feel.py
 lib/calibre/calibre/gui2/convert/look_and_feel_ui.py
 lib/calibre/calibre/gui2/convert/lrf_output.py
@@ -590,7 +590,6 @@ lib/calibre/calibre/gui2/convert/mobi_output.py
 lib/calibre/calibre/gui2/convert/mobi_output_ui.py
 lib/calibre/calibre/gui2/convert/page_setup.py
 lib/calibre/calibre/gui2/convert/page_setup_ui.py
-lib/calibre/calibre/gui2/convert/pdb_input_ui.py
 lib/calibre/calibre/gui2/convert/pdb_output.py
 lib/calibre/calibre/gui2/convert/pdb_output_ui.py
 lib/calibre/calibre/gui2/convert/pdf_input.py
@@ -674,8 +673,8 @@ lib/calibre/calibre/gui2/dialogs/password_ui.py
 lib/calibre/calibre/gui2/dialogs/plugin_updater.py
 lib/calibre/calibre/gui2/dialogs/progress.py
 lib/calibre/calibre/gui2/dialogs/progress_ui.py
-lib/calibre/calibre/gui2/dialogs/quickview_ui.py
 lib/calibre/calibre/gui2/dialogs/quickview.py
+lib/calibre/calibre/gui2/dialogs/quickview_ui.py
 lib/calibre/calibre/gui2/dialogs/restore_library.py
 lib/calibre/calibre/gui2/dialogs/saved_search_editor.py
 lib/calibre/calibre/gui2/dialogs/saved_search_editor_ui.py
@@ -685,8 +684,8 @@ lib/calibre/calibre/gui2/dialogs/search.py
 lib/calibre/calibre/gui2/dialogs/search_item_ui.py
 lib/calibre/calibre/gui2/dialogs/search_ui.py
 lib/calibre/calibre/gui2/dialogs/select_formats.py
-lib/calibre/calibre/gui2/dialogs/smartdevice_ui.py
 lib/calibre/calibre/gui2/dialogs/smartdevice.py
+lib/calibre/calibre/gui2/dialogs/smartdevice_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_categories.py
 lib/calibre/calibre/gui2/dialogs/tag_categories_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_editor.py
@@ -704,11 +703,12 @@ lib/calibre/calibre/gui2/duplicates.py
 lib/calibre/calibre/gui2/ebook_download.py
 lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
+lib/calibre/calibre/gui2/font_family_chooser.py
 lib/calibre/calibre/gui2/init.py
 lib/calibre/calibre/gui2/jobs.py
-lib/calibre/calibre/gui2/layout.py
-lib/calibre/calibre/gui2/languages.py
 lib/calibre/calibre/gui2/keyboard.py
+lib/calibre/calibre/gui2/languages.py
+lib/calibre/calibre/gui2/layout.py
 lib/calibre/calibre/gui2/library/__init__.py
 lib/calibre/calibre/gui2/library/delegates.py
 lib/calibre/calibre/gui2/library/models.py
@@ -741,7 +741,6 @@ lib/calibre/calibre/gui2/preferences/conversion.py
 lib/calibre/calibre/gui2/preferences/conversion_ui.py
 lib/calibre/calibre/gui2/preferences/create_custom_column.py
 lib/calibre/calibre/gui2/preferences/create_custom_column_ui.py
-lib/calibre/calibre/gui2/preferences/custom_columns_ui.py
 lib/calibre/calibre/gui2/preferences/device_debug.py
 lib/calibre/calibre/gui2/preferences/device_user_defined.py
 lib/calibre/calibre/gui2/preferences/email_ui.py
@@ -752,8 +751,8 @@ lib/calibre/calibre/gui2/preferences/keyboard.py
 lib/calibre/calibre/gui2/preferences/look_feel.py
 lib/calibre/calibre/gui2/preferences/look_feel_ui.py
 lib/calibre/calibre/gui2/preferences/main.py
-lib/calibre/calibre/gui2/preferences/metadata_sources_ui.py
 lib/calibre/calibre/gui2/preferences/metadata_sources.py
+lib/calibre/calibre/gui2/preferences/metadata_sources_ui.py
 lib/calibre/calibre/gui2/preferences/misc.py
 lib/calibre/calibre/gui2/preferences/misc_ui.py
 lib/calibre/calibre/gui2/preferences/plugboard.py
@@ -782,115 +781,113 @@ lib/calibre/calibre/gui2/search_box.py
 lib/calibre/calibre/gui2/search_restriction_mixin.py
 lib/calibre/calibre/gui2/shortcuts.py
 lib/calibre/calibre/gui2/shortcuts_ui.py
-lib/calibre/calibre/gui2/store/search_ui.py
 lib/calibre/calibre/gui2/store/__init__.py
-lib/calibre/calibre/gui2/store/mobileread_store_dialog_ui.py
-lib/calibre/calibre/gui2/store/web_control.py
-lib/calibre/calibre/gui2/store/web_store_dialog_ui.py
-lib/calibre/calibre/gui2/store/search_result.py
 lib/calibre/calibre/gui2/store/basic_config.py
-lib/calibre/calibre/gui2/store/opensearch_store.py
-lib/calibre/calibre/gui2/store/web_store_dialog.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
+lib/calibre/calibre/gui2/store/config/__init__.py
+lib/calibre/calibre/gui2/store/config/chooser/__init__.py
+lib/calibre/calibre/gui2/store/config/chooser/adv_search_builder.py
+lib/calibre/calibre/gui2/store/config/chooser/adv_search_builder_ui.py
+lib/calibre/calibre/gui2/store/config/chooser/chooser_dialog.py
+lib/calibre/calibre/gui2/store/config/chooser/chooser_widget.py
+lib/calibre/calibre/gui2/store/config/chooser/chooser_widget_ui.py
+lib/calibre/calibre/gui2/store/config/chooser/models.py
+lib/calibre/calibre/gui2/store/config/chooser/results_view.py
+lib/calibre/calibre/gui2/store/config/search/__init__.py
+lib/calibre/calibre/gui2/store/config/search/search_widget.py
+lib/calibre/calibre/gui2/store/config/search/search_widget_ui.py
+lib/calibre/calibre/gui2/store/config/store.py
+lib/calibre/calibre/gui2/store/opensearch_store.py
+lib/calibre/calibre/gui2/store/search/__init__.py
+lib/calibre/calibre/gui2/store/search/adv_search_builder.py
+lib/calibre/calibre/gui2/store/search/adv_search_builder_ui.py
+lib/calibre/calibre/gui2/store/search/download_thread.py
+lib/calibre/calibre/gui2/store/search/models.py
+lib/calibre/calibre/gui2/store/search/results_view.py
+lib/calibre/calibre/gui2/store/search/search.py
+lib/calibre/calibre/gui2/store/search/search_ui.py
+lib/calibre/calibre/gui2/store/search_result.py
+lib/calibre/calibre/gui2/store/stores/__init__.py
+lib/calibre/calibre/gui2/store/stores/amazon_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
-lib/calibre/calibre/gui2/store/stores/biblio_plugin.py
-lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
-lib/calibre/calibre/gui2/store/stores/ebooksgratuits_plugin.py
-lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
-lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
-lib/calibre/calibre/gui2/store/stores/litres_plugin.py
-lib/calibre/calibre/gui2/store/stores/mills_boon_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
-lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
-lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
-lib/calibre/calibre/gui2/store/stores/sony_plugin.py
-lib/calibre/calibre/gui2/store/stores/whsmith_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/zixo_plugin.py
-lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
-lib/calibre/calibre/gui2/store/stores/archive_org_plugin.py
-lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/bewrite_plugin.py
-lib/calibre/calibre/gui2/store/stores/baen_webscription_plugin.py
-lib/calibre/calibre/gui2/store/stores/__init__.py
-lib/calibre/calibre/gui2/store/stores/eharlequin_plugin.py
-lib/calibre/calibre/gui2/store/stores/waterstones_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/ebooks_com_plugin.py
-lib/calibre/calibre/gui2/store/stores/gutenberg_plugin.py
-lib/calibre/calibre/gui2/store/stores/amazon_de_plugin.py
-lib/calibre/calibre/gui2/store/stores/bn_plugin.py
-lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
-lib/calibre/calibre/gui2/store/stores/kobo_plugin.py
-lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
-lib/calibre/calibre/gui2/store/stores/foyles_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/diesel_ebooks_plugin.py
-lib/calibre/calibre/gui2/store/stores/manybooks_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/legimi_plugin.py
-lib/calibre/calibre/gui2/store/stores/ebookshoppe_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
-lib/calibre/calibre/gui2/store/stores/open_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/libri_de_plugin.py
-lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/xinxii_plugin.py
+lib/calibre/calibre/gui2/store/stores/archive_org_plugin.py
+lib/calibre/calibre/gui2/store/stores/baen_webscription_plugin.py
+lib/calibre/calibre/gui2/store/stores/bewrite_plugin.py
+lib/calibre/calibre/gui2/store/stores/biblio_plugin.py
+lib/calibre/calibre/gui2/store/stores/bn_plugin.py
 lib/calibre/calibre/gui2/store/stores/bookoteka_plugin.py
-lib/calibre/calibre/gui2/store/stores/ebook_nl_plugin.py
 lib/calibre/calibre/gui2/store/stores/chitanka_plugin.py
-lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.py
+lib/calibre/calibre/gui2/store/stores/diesel_ebooks_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebook_nl_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebooks_com_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebooksgratuits_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebookshoppe_uk_plugin.py
+lib/calibre/calibre/gui2/store/stores/eharlequin_plugin.py
 lib/calibre/calibre/gui2/store/stores/eknigi_plugin.py
-lib/calibre/calibre/gui2/store/config/__init__.py
-lib/calibre/calibre/gui2/store/config/search_widget_ui.py
-lib/calibre/calibre/gui2/store/config/store.py
-lib/calibre/calibre/gui2/store/config/search/__init__.py
-lib/calibre/calibre/gui2/store/config/search/search_widget_ui.py
-lib/calibre/calibre/gui2/store/config/search/search_widget.py
-lib/calibre/calibre/gui2/store/config/chooser/results_view.py
-lib/calibre/calibre/gui2/store/config/chooser/__init__.py
-lib/calibre/calibre/gui2/store/config/chooser/chooser_dialog.py
-lib/calibre/calibre/gui2/store/config/chooser/adv_search_builder.py
-lib/calibre/calibre/gui2/store/config/chooser/models.py
-lib/calibre/calibre/gui2/store/config/chooser/adv_search_builder_ui.py
-lib/calibre/calibre/gui2/store/config/chooser/chooser_widget.py
-lib/calibre/calibre/gui2/store/config/chooser/chooser_widget_ui.py
+lib/calibre/calibre/gui2/store/stores/empik_plugin.py
+lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
+lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
+lib/calibre/calibre/gui2/store/stores/foyles_uk_plugin.py
+lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
+lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
+lib/calibre/calibre/gui2/store/stores/gutenberg_plugin.py
+lib/calibre/calibre/gui2/store/stores/kobo_plugin.py
+lib/calibre/calibre/gui2/store/stores/legimi_plugin.py
+lib/calibre/calibre/gui2/store/stores/libri_de_plugin.py
+lib/calibre/calibre/gui2/store/stores/litres_plugin.py
+lib/calibre/calibre/gui2/store/stores/manybooks_plugin.py
+lib/calibre/calibre/gui2/store/stores/mills_boon_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/mobileread/__init__.py
 lib/calibre/calibre/gui2/store/stores/mobileread/adv_search_builder.py
 lib/calibre/calibre/gui2/store/stores/mobileread/adv_search_builder_ui.py
-lib/calibre/calibre/gui2/store/stores/mobileread/models.py
-lib/calibre/calibre/gui2/store/stores/mobileread/store_dialog.py
+lib/calibre/calibre/gui2/store/stores/mobileread/cache_progress_dialog.py
 lib/calibre/calibre/gui2/store/stores/mobileread/cache_progress_dialog_ui.py
 lib/calibre/calibre/gui2/store/stores/mobileread/cache_update_thread.py
-lib/calibre/calibre/gui2/store/stores/mobileread/cache_progress_dialog.py
-lib/calibre/calibre/gui2/store/stores/mobileread/store_dialog_ui.py
 lib/calibre/calibre/gui2/store/stores/mobileread/mobileread_plugin.py
-lib/calibre/calibre/gui2/store/search/results_view.py
-lib/calibre/calibre/gui2/store/search/search_ui.py
-lib/calibre/calibre/gui2/store/search/__init__.py
-lib/calibre/calibre/gui2/store/search/download_thread.py
-lib/calibre/calibre/gui2/store/search/adv_search_builder.py
-lib/calibre/calibre/gui2/store/search/models.py
-lib/calibre/calibre/gui2/store/search/search.py
-lib/calibre/calibre/gui2/store/search/adv_search_builder_ui.py
+lib/calibre/calibre/gui2/store/stores/mobileread/models.py
+lib/calibre/calibre/gui2/store/stores/mobileread/store_dialog.py
+lib/calibre/calibre/gui2/store/stores/mobileread/store_dialog_ui.py
+lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
+lib/calibre/calibre/gui2/store/stores/open_books_plugin.py
+lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.py
+lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
+lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
+lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
+lib/calibre/calibre/gui2/store/stores/sony_plugin.py
+lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
+lib/calibre/calibre/gui2/store/stores/waterstones_uk_plugin.py
+lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
+lib/calibre/calibre/gui2/store/stores/whsmith_uk_plugin.py
+lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
+lib/calibre/calibre/gui2/store/stores/xinxii_plugin.py
+lib/calibre/calibre/gui2/store/stores/zixo_plugin.py
+lib/calibre/calibre/gui2/store/web_control.py
+lib/calibre/calibre/gui2/store/web_store_dialog.py
+lib/calibre/calibre/gui2/store/web_store_dialog_ui.py
 lib/calibre/calibre/gui2/tag_browser/__init__.py
+lib/calibre/calibre/gui2/tag_browser/model.py
 lib/calibre/calibre/gui2/tag_browser/ui.py
 lib/calibre/calibre/gui2/tag_browser/view.py
-lib/calibre/calibre/gui2/tag_browser/model.py
 lib/calibre/calibre/gui2/threaded_jobs.py
 lib/calibre/calibre/gui2/throbber.py
 lib/calibre/calibre/gui2/tools.py
 lib/calibre/calibre/gui2/ui.py
 lib/calibre/calibre/gui2/update.py
 lib/calibre/calibre/gui2/viewer/__init__.py
-lib/calibre/calibre/gui2/viewer/config.py
 lib/calibre/calibre/gui2/viewer/bookmarkmanager.py
 lib/calibre/calibre/gui2/viewer/bookmarkmanager_ui.py
+lib/calibre/calibre/gui2/viewer/config.py
 lib/calibre/calibre/gui2/viewer/config_ui.py
 lib/calibre/calibre/gui2/viewer/dictionary.py
 lib/calibre/calibre/gui2/viewer/documentview.py
-lib/calibre/calibre/gui2/viewer/javascript.py
 lib/calibre/calibre/gui2/viewer/flip.py
 lib/calibre/calibre/gui2/viewer/image_popup.py
+lib/calibre/calibre/gui2/viewer/javascript.py
 lib/calibre/calibre/gui2/viewer/keys.py
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/main_ui.py
@@ -909,11 +906,11 @@ lib/calibre/calibre/gui2/wizard/stanza_ui.py
 lib/calibre/calibre/library/__init__.py
 lib/calibre/calibre/library/add_to_library.py
 lib/calibre/calibre/library/caches.py
-lib/calibre/calibre/library/catalogs/bibtex.py
-lib/calibre/calibre/library/catalogs/epub_mobi_builder.py
-lib/calibre/calibre/library/catalogs/epub_mobi.py
 lib/calibre/calibre/library/catalogs/__init__.py
+lib/calibre/calibre/library/catalogs/bibtex.py
 lib/calibre/calibre/library/catalogs/csv_xml.py
+lib/calibre/calibre/library/catalogs/epub_mobi.py
+lib/calibre/calibre/library/catalogs/epub_mobi_builder.py
 lib/calibre/calibre/library/catalogs/utils.py
 lib/calibre/calibre/library/check_library.py
 lib/calibre/calibre/library/cli.py
@@ -945,20 +942,21 @@ lib/calibre/calibre/libunrar.py
 lib/calibre/calibre/libunzip.py
 lib/calibre/calibre/libwand.py
 lib/calibre/calibre/linux.py
-lib/calibre/calibre/plugins/calibre_style.so
 lib/calibre/calibre/plugins/cPalmdoc.so
+lib/calibre/calibre/plugins/calibre_style.so
 lib/calibre/calibre/plugins/chm_extra.so
 lib/calibre/calibre/plugins/chmlib.so
-lib/calibre/calibre/plugins/fontconfig.so
+lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/lzx.so
 lib/calibre/calibre/plugins/magick.so
 lib/calibre/calibre/plugins/msdes.so
 lib/calibre/calibre/plugins/pictureflow.so
-%%PODOFO%%lib/calibre/calibre/plugins/podofo.so
+lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
+lib/calibre/calibre/plugins/woff.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/startup.py
 lib/calibre/calibre/test_build.py
@@ -982,6 +980,27 @@ lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/dictclient.py
 lib/calibre/calibre/utils/filenames.py
 lib/calibre/calibre/utils/fonts/__init__.py
+lib/calibre/calibre/utils/fonts/free_type.py
+lib/calibre/calibre/utils/fonts/metadata.py
+lib/calibre/calibre/utils/fonts/scanner.py
+lib/calibre/calibre/utils/fonts/sfnt/__init__.py
+lib/calibre/calibre/utils/fonts/sfnt/cff/__init__.py
+lib/calibre/calibre/utils/fonts/sfnt/cff/constants.py
+lib/calibre/calibre/utils/fonts/sfnt/cff/dict_data.py
+lib/calibre/calibre/utils/fonts/sfnt/cff/table.py
+lib/calibre/calibre/utils/fonts/sfnt/cff/writer.py
+lib/calibre/calibre/utils/fonts/sfnt/cmap.py
+lib/calibre/calibre/utils/fonts/sfnt/container.py
+lib/calibre/calibre/utils/fonts/sfnt/errors.py
+lib/calibre/calibre/utils/fonts/sfnt/glyf.py
+lib/calibre/calibre/utils/fonts/sfnt/head.py
+lib/calibre/calibre/utils/fonts/sfnt/kern.py
+lib/calibre/calibre/utils/fonts/sfnt/loca.py
+lib/calibre/calibre/utils/fonts/sfnt/maxp.py
+lib/calibre/calibre/utils/fonts/sfnt/subset.py
+lib/calibre/calibre/utils/fonts/utils.py
+lib/calibre/calibre/utils/fonts/win_fonts.py
+lib/calibre/calibre/utils/fonts/woff/__init__.py
 lib/calibre/calibre/utils/formatter.py
 lib/calibre/calibre/utils/formatter_functions.py
 lib/calibre/calibre/utils/html2text.py
@@ -990,12 +1009,14 @@ lib/calibre/calibre/utils/icu.py
 lib/calibre/calibre/utils/ipc/__init__.py
 lib/calibre/calibre/utils/ipc/job.py
 lib/calibre/calibre/utils/ipc/launch.py
+lib/calibre/calibre/utils/ipc/proxy.py
 lib/calibre/calibre/utils/ipc/server.py
 lib/calibre/calibre/utils/ipc/simple_worker.py
-lib/calibre/calibre/utils/ipc/proxy.py
 lib/calibre/calibre/utils/ipc/worker.py
 lib/calibre/calibre/utils/ipython.py
+lib/calibre/calibre/utils/linux_trash.py
 lib/calibre/calibre/utils/localization.py
+lib/calibre/calibre/utils/localunzip.py
 lib/calibre/calibre/utils/lock.py
 lib/calibre/calibre/utils/logging.py
 lib/calibre/calibre/utils/magick/__init__.py
@@ -1005,11 +1026,11 @@ lib/calibre/calibre/utils/mdns.py
 lib/calibre/calibre/utils/mem.py
 lib/calibre/calibre/utils/mreplace.py
 lib/calibre/calibre/utils/network.py
-lib/calibre/calibre/utils/ordered_dict.py
 lib/calibre/calibre/utils/opensearch/__init__.py
 lib/calibre/calibre/utils/opensearch/description.py
-lib/calibre/calibre/utils/opensearch/url.py
 lib/calibre/calibre/utils/opensearch/query.py
+lib/calibre/calibre/utils/opensearch/url.py
+lib/calibre/calibre/utils/ordered_dict.py
 lib/calibre/calibre/utils/osx_symlinks.py
 lib/calibre/calibre/utils/pdftk.py
 lib/calibre/calibre/utils/podofo/__init__.py
@@ -1032,7 +1053,6 @@ lib/calibre/calibre/utils/smartypants.py
 lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
 lib/calibre/calibre/utils/soupparser.py
-lib/calibre/calibre/utils/linux_trash.py
 lib/calibre/calibre/utils/terminfo.py
 lib/calibre/calibre/utils/text2int.py
 lib/calibre/calibre/utils/threadpool.py
@@ -1053,47 +1073,47 @@ lib/calibre/calibre/web/feeds/recipes/model.py
 lib/calibre/calibre/web/feeds/templates.py
 lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/simple.py
-lib/calibre/calibre/web/jsbrowser/browser.py
 lib/calibre/calibre/web/jsbrowser/__init__.py
+lib/calibre/calibre/web/jsbrowser/browser.py
+lib/calibre/calibre/web/jsbrowser/forms.py
 lib/calibre/calibre/web/jsbrowser/login.py
 lib/calibre/calibre/web/jsbrowser/test.py
-lib/calibre/calibre/web/jsbrowser/forms.py
-lib/calibre/chardet/euctwprober.py
-lib/calibre/chardet/hebrewprober.py
-lib/calibre/chardet/euckrfreq.py
-lib/calibre/chardet/charsetgroupprober.py
-lib/calibre/chardet/latin1prober.py
-lib/calibre/chardet/mbcssm.py
-lib/calibre/chardet/langthaimodel.py
-lib/calibre/chardet/euckrprober.py
-lib/calibre/chardet/escprober.py
-lib/calibre/chardet/mbcharsetprober.py
-lib/calibre/chardet/langcyrillicmodel.py
 lib/calibre/chardet/__init__.py
-lib/calibre/chardet/chardistribution.py
-lib/calibre/chardet/sbcharsetprober.py
-lib/calibre/chardet/sjisprober.py
-lib/calibre/chardet/langbulgarianmodel.py
-lib/calibre/chardet/langhebrewmodel.py
-lib/calibre/chardet/gb2312prober.py
-lib/calibre/chardet/escsm.py
-lib/calibre/chardet/utf8prober.py
-lib/calibre/chardet/codingstatemachine.py
-lib/calibre/chardet/test.py
 lib/calibre/chardet/big5freq.py
-lib/calibre/chardet/gb2312freq.py
-lib/calibre/chardet/langgreekmodel.py
-lib/calibre/chardet/euctwfreq.py
-lib/calibre/chardet/eucjpprober.py
-lib/calibre/chardet/jpcntx.py
-lib/calibre/chardet/jisfreq.py
-lib/calibre/chardet/charsetprober.py
-lib/calibre/chardet/sbcsgroupprober.py
-lib/calibre/chardet/constants.py
-lib/calibre/chardet/mbcsgroupprober.py
-lib/calibre/chardet/langhungarianmodel.py
-lib/calibre/chardet/universaldetector.py
 lib/calibre/chardet/big5prober.py
+lib/calibre/chardet/chardistribution.py
+lib/calibre/chardet/charsetgroupprober.py
+lib/calibre/chardet/charsetprober.py
+lib/calibre/chardet/codingstatemachine.py
+lib/calibre/chardet/constants.py
+lib/calibre/chardet/escprober.py
+lib/calibre/chardet/escsm.py
+lib/calibre/chardet/eucjpprober.py
+lib/calibre/chardet/euckrfreq.py
+lib/calibre/chardet/euckrprober.py
+lib/calibre/chardet/euctwfreq.py
+lib/calibre/chardet/euctwprober.py
+lib/calibre/chardet/gb2312freq.py
+lib/calibre/chardet/gb2312prober.py
+lib/calibre/chardet/hebrewprober.py
+lib/calibre/chardet/jisfreq.py
+lib/calibre/chardet/jpcntx.py
+lib/calibre/chardet/langbulgarianmodel.py
+lib/calibre/chardet/langcyrillicmodel.py
+lib/calibre/chardet/langgreekmodel.py
+lib/calibre/chardet/langhebrewmodel.py
+lib/calibre/chardet/langhungarianmodel.py
+lib/calibre/chardet/langthaimodel.py
+lib/calibre/chardet/latin1prober.py
+lib/calibre/chardet/mbcharsetprober.py
+lib/calibre/chardet/mbcsgroupprober.py
+lib/calibre/chardet/mbcssm.py
+lib/calibre/chardet/sbcharsetprober.py
+lib/calibre/chardet/sbcsgroupprober.py
+lib/calibre/chardet/sjisprober.py
+lib/calibre/chardet/test.py
+lib/calibre/chardet/universaldetector.py
+lib/calibre/chardet/utf8prober.py
 lib/calibre/cherrypy/__init__.py
 lib/calibre/cherrypy/_cpchecker.py
 lib/calibre/cherrypy/_cpcompat.py
@@ -1141,42 +1161,42 @@ lib/calibre/cherrypy/wsgiserver/ssl_builtin.py
 lib/calibre/cherrypy/wsgiserver/ssl_pyopenssl.py
 lib/calibre/cherrypy/wsgiserver/wsgiserver2.py
 lib/calibre/cherrypy/wsgiserver/wsgiserver3.py
-lib/calibre/html5lib/sanitizer.py
-lib/calibre/html5lib/tokenizer.py
-lib/calibre/html5lib/html5parser.py
-lib/calibre/html5lib/ihatexml.py
 lib/calibre/html5lib/__init__.py
-lib/calibre/html5lib/tokenizer_old.py
-lib/calibre/html5lib/inputstream.py
-lib/calibre/html5lib/utils.py
 lib/calibre/html5lib/constants.py
-lib/calibre/html5lib/filters/lint.py
-lib/calibre/html5lib/filters/sanitizer.py
-lib/calibre/html5lib/filters/whitespace.py
 lib/calibre/html5lib/filters/__init__.py
-lib/calibre/html5lib/filters/inject_meta_charset.py
 lib/calibre/html5lib/filters/_base.py
 lib/calibre/html5lib/filters/formfiller.py
+lib/calibre/html5lib/filters/inject_meta_charset.py
+lib/calibre/html5lib/filters/lint.py
 lib/calibre/html5lib/filters/optionaltags.py
-lib/calibre/html5lib/serializer/xhtmlserializer.py
+lib/calibre/html5lib/filters/sanitizer.py
+lib/calibre/html5lib/filters/whitespace.py
+lib/calibre/html5lib/html5parser.py
+lib/calibre/html5lib/ihatexml.py
+lib/calibre/html5lib/inputstream.py
+lib/calibre/html5lib/sanitizer.py
 lib/calibre/html5lib/serializer/__init__.py
 lib/calibre/html5lib/serializer/htmlserializer.py
-lib/calibre/html5lib/treewalkers/dom.py
-lib/calibre/html5lib/treewalkers/genshistream.py
-lib/calibre/html5lib/treewalkers/etree.py
-lib/calibre/html5lib/treewalkers/__init__.py
-lib/calibre/html5lib/treewalkers/pulldom.py
-lib/calibre/html5lib/treewalkers/soup.py
-lib/calibre/html5lib/treewalkers/lxmletree.py
-lib/calibre/html5lib/treewalkers/_base.py
-lib/calibre/html5lib/treewalkers/simpletree.py
+lib/calibre/html5lib/serializer/xhtmlserializer.py
+lib/calibre/html5lib/tokenizer.py
+lib/calibre/html5lib/tokenizer_old.py
+lib/calibre/html5lib/treebuilders/__init__.py
+lib/calibre/html5lib/treebuilders/_base.py
 lib/calibre/html5lib/treebuilders/dom.py
 lib/calibre/html5lib/treebuilders/etree.py
-lib/calibre/html5lib/treebuilders/__init__.py
 lib/calibre/html5lib/treebuilders/etree_lxml.py
-lib/calibre/html5lib/treebuilders/soup.py
-lib/calibre/html5lib/treebuilders/_base.py
 lib/calibre/html5lib/treebuilders/simpletree.py
+lib/calibre/html5lib/treebuilders/soup.py
+lib/calibre/html5lib/treewalkers/__init__.py
+lib/calibre/html5lib/treewalkers/_base.py
+lib/calibre/html5lib/treewalkers/dom.py
+lib/calibre/html5lib/treewalkers/etree.py
+lib/calibre/html5lib/treewalkers/genshistream.py
+lib/calibre/html5lib/treewalkers/lxmletree.py
+lib/calibre/html5lib/treewalkers/pulldom.py
+lib/calibre/html5lib/treewalkers/simpletree.py
+lib/calibre/html5lib/treewalkers/soup.py
+lib/calibre/html5lib/utils.py
 lib/calibre/odf/__init__.py
 lib/calibre/odf/anim.py
 lib/calibre/odf/attrconverters.py
@@ -1220,33 +1240,10 @@ lib/calibre/routes/middleware.py
 lib/calibre/routes/route.py
 lib/calibre/routes/util.py
 lib/calibre/templite/__init__.py
+%%PYTHON_SITELIBDIR%%/init_calibre.py
+share/applications/calibre-ebook-viewer.desktop
 share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
-share/applications/calibre-ebook-viewer.desktop
-share/mime/packages/calibre-mimetypes.xml
-share/icons/hicolor/128x128/apps/calibre-viewer.png
-share/icons/hicolor/128x128/mimetypes/application-lrf.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-lrf.png
-share/icons/hicolor/128x128/mimetypes/text-lrs.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-text-lrs.png
-share/icons/hicolor/128x128/mimetypes/application-x-mobipocket-ebook.png
-share/icons/hicolor/128x128/mimetypes/application-x-topaz-ebook.png
-share/icons/hicolor/128x128/mimetypes/application-x-kindle-application.png
-share/icons/hicolor/128x128/mimetypes/application-x-mobi8-ebook.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobipocket-ebook.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-topaz-ebook.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-kindle-application.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobi8-ebook.png
-share/icons/hicolor/256x256/apps/calibre-gui.png
-share/gnome/apps/calibre-gui.desktop
-share/gnome/apps/calibre-lrfviewer.desktop
-share/gnome/apps/calibre-ebook-viewer.desktop
-share/mime/application/x-sony-bbeb.xml
-share/mime/application/x-topaz-ebook.xml
-share/mime/application/x-mobi8-ebook.xml
-share/mime/application/x-kindle-application.xml
-share/mime/application/x-mobipocket-subscription.xml
-share/mime/text/lrs.xml
 %%DATADIR%%/builtin_recipes.xml
 %%DATADIR%%/builtin_recipes.zip
 %%DATADIR%%/calibre-portable.bat
@@ -1307,6 +1304,7 @@ share/mime/text/lrs.xml
 %%DATADIR%%/content_server/star-on.png
 %%DATADIR%%/default_tweaks.py
 %%DATADIR%%/ebook-convert-complete.pickle
+%%DATADIR%%/fonts/calibreSymbols.otf
 %%DATADIR%%/fonts/liberation/LiberationMono-Bold.ttf
 %%DATADIR%%/fonts/liberation/LiberationMono-BoldItalic.ttf
 %%DATADIR%%/fonts/liberation/LiberationMono-Italic.ttf
@@ -1322,7 +1320,6 @@ share/mime/text/lrs.xml
 %%DATADIR%%/fonts/prs500/tt0003m_.ttf
 %%DATADIR%%/fonts/prs500/tt0011m_.ttf
 %%DATADIR%%/fonts/prs500/tt0419m_.ttf
-%%DATADIR%%/fonts/calibreSymbols.otf
 %%DATADIR%%/images.qrc
 %%DATADIR%%/images/add_book.png
 %%DATADIR%%/images/arrow-down.png
@@ -1339,9 +1336,11 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/column.png
 %%DATADIR%%/images/config.png
 %%DATADIR%%/images/connect_share.png
+%%DATADIR%%/images/connect_share_on.png
 %%DATADIR%%/images/console.png
 %%DATADIR%%/images/convert.png
 %%DATADIR%%/images/cover_flow.png
+%%DATADIR%%/images/cover_texture.png
 %%DATADIR%%/images/debug.png
 %%DATADIR%%/images/default_cover.png
 %%DATADIR%%/images/devices/bambook.png
@@ -1361,7 +1360,11 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/document-encrypt.png
 %%DATADIR%%/images/document_open.png
 %%DATADIR%%/images/donate.png
+%%DATADIR%%/images/dot_green.png
+%%DATADIR%%/images/dot_red.png
 %%DATADIR%%/images/drawer.png
+%%DATADIR%%/images/drm-locked.png
+%%DATADIR%%/images/drm-unlocked.png
 %%DATADIR%%/images/edit-clear.png
 %%DATADIR%%/images/edit-copy.png
 %%DATADIR%%/images/edit-cut.png
@@ -1372,6 +1375,7 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/edit_input.png
 %%DATADIR%%/images/eject.png
 %%DATADIR%%/images/exec.png
+%%DATADIR%%/images/font.png
 %%DATADIR%%/images/font_size_larger.png
 %%DATADIR%%/images/font_size_smaller.png
 %%DATADIR%%/images/format-fill-color.png
@@ -1395,12 +1399,14 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/gmail_logo.png
 %%DATADIR%%/images/help.png
 %%DATADIR%%/images/heuristics.png
+%%DATADIR%%/images/highlight_only_off.png
+%%DATADIR%%/images/highlight_only_on.png
 %%DATADIR%%/images/hotmail.png
+%%DATADIR%%/images/identifiers.png
 %%DATADIR%%/images/insert-link.png
 %%DATADIR%%/images/jobs.png
-%%DATADIR%%/images/languages.png
-%%DATADIR%%/images/random.png
 %%DATADIR%%/images/keyboard-prefs.png
+%%DATADIR%%/images/languages.png
 %%DATADIR%%/images/library.png
 %%DATADIR%%/images/list_remove.png
 %%DATADIR%%/images/lookfeel.png
@@ -1413,6 +1419,7 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/mimetypes/bmp.png
 %%DATADIR%%/images/mimetypes/computer.png
 %%DATADIR%%/images/mimetypes/dir.png
+%%DATADIR%%/images/mimetypes/djvu.png
 %%DATADIR%%/images/mimetypes/docx.png
 %%DATADIR%%/images/mimetypes/epub.png
 %%DATADIR%%/images/mimetypes/fb2.png
@@ -1433,10 +1440,9 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/mimetypes/tpz.png
 %%DATADIR%%/images/mimetypes/txt.png
 %%DATADIR%%/images/mimetypes/unknown.png
+%%DATADIR%%/images/mimetypes/xps.png
 %%DATADIR%%/images/mimetypes/zero.png
 %%DATADIR%%/images/mimetypes/zip.png
-%%DATADIR%%/images/mimetypes/djvu.png
-%%DATADIR%%/images/mimetypes/xps.png
 %%DATADIR%%/images/minus.png
 %%DATADIR%%/images/minusminus.png
 %%DATADIR%%/images/network-server.png
@@ -1447,35 +1453,39 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/page.png
 %%DATADIR%%/images/plugboard.png
 %%DATADIR%%/images/plugins.png
-%%DATADIR%%/images/plugins/plugin_updater_updates.png
-%%DATADIR%%/images/plugins/plugin_new_invalid.png
-%%DATADIR%%/images/plugins/plugin_upgrade_ok.png
-%%DATADIR%%/images/plugins/plugin_disabled_ok.png
-%%DATADIR%%/images/plugins/plugin_new_valid.png
-%%DATADIR%%/images/plugins/plugin_new.png
-%%DATADIR%%/images/plugins/plugin_upgrade_valid.png
-%%DATADIR%%/images/plugins/plugin_deprecated.png
 %%DATADIR%%/images/plugins/mobileread.png
+%%DATADIR%%/images/plugins/plugin_deprecated.png
 %%DATADIR%%/images/plugins/plugin_disabled_invalid.png
-%%DATADIR%%/images/plugins/plugin_updater.png
+%%DATADIR%%/images/plugins/plugin_disabled_ok.png
 %%DATADIR%%/images/plugins/plugin_disabled_valid.png
+%%DATADIR%%/images/plugins/plugin_new.png
+%%DATADIR%%/images/plugins/plugin_new_invalid.png
+%%DATADIR%%/images/plugins/plugin_new_valid.png
+%%DATADIR%%/images/plugins/plugin_updater.png
+%%DATADIR%%/images/plugins/plugin_updater_updates.png
 %%DATADIR%%/images/plugins/plugin_upgrade_invalid.png
+%%DATADIR%%/images/plugins/plugin_upgrade_ok.png
+%%DATADIR%%/images/plugins/plugin_upgrade_valid.png
 %%DATADIR%%/images/plus.png
 %%DATADIR%%/images/plusplus.png
 %%DATADIR%%/images/previous.png
 %%DATADIR%%/images/print-preview.png
 %%DATADIR%%/images/print.png
 %%DATADIR%%/images/publisher.png
+%%DATADIR%%/images/random.png
 %%DATADIR%%/images/rating.png
 %%DATADIR%%/images/reader.png
+%%DATADIR%%/images/rotate-right.png
 %%DATADIR%%/images/save.png
 %%DATADIR%%/images/scheduler.png
+%%DATADIR%%/images/scroll.png
 %%DATADIR%%/images/sd.png
 %%DATADIR%%/images/search.png
 %%DATADIR%%/images/search_add_saved.png
 %%DATADIR%%/images/search_copy_saved.png
 %%DATADIR%%/images/search_delete_saved.png
 %%DATADIR%%/images/series.png
+%%DATADIR%%/images/store.png
 %%DATADIR%%/images/swap.png
 %%DATADIR%%/images/sync.png
 %%DATADIR%%/images/tags.png
@@ -1484,36 +1494,27 @@ share/mime/text/lrs.xml
 %%DATADIR%%/images/trash.png
 %%DATADIR%%/images/trim.png
 %%DATADIR%%/images/user_profile.png
+%%DATADIR%%/images/view-image.png
 %%DATADIR%%/images/view.png
 %%DATADIR%%/images/viewer.png
 %%DATADIR%%/images/welcome_wizard.png
 %%DATADIR%%/images/window-close.png
 %%DATADIR%%/images/wizard.png
-%%DATADIR%%/images/store.png
-%%DATADIR%%/images/highlight_only_off.png
-%%DATADIR%%/images/identifiers.png
-%%DATADIR%%/images/drm-locked.png
-%%DATADIR%%/images/highlight_only_on.png
-%%DATADIR%%/images/connect_share_on.png
-%%DATADIR%%/images/drm-unlocked.png
-%%DATADIR%%/images/cover_texture.png
-%%DATADIR%%/images/scroll.png
-%%DATADIR%%/images/dot_green.png
-%%DATADIR%%/images/dot_red.png
 %%DATADIR%%/jacket/stylesheet.css
 %%DATADIR%%/jacket/template.xhtml
 %%DATADIR%%/jquery.simulate.js
 %%DATADIR%%/localization/iso639.pickle
+%%DATADIR%%/localization/locales.zip
 %%DATADIR%%/localization/pykakasi/itaijidict2.pickle
 %%DATADIR%%/localization/pykakasi/kanadict2.pickle
 %%DATADIR%%/localization/pykakasi/kanwadict2.pickle
-%%DATADIR%%/localization/locales.zip
 %%DATADIR%%/localization/stats.pickle
 %%DATADIR%%/metadata_sqlite.sql
 %%DATADIR%%/mime.types
 %%DATADIR%%/quick_start.epub
 %%DATADIR%%/scripts.pickle
 %%DATADIR%%/template-functions.json
+%%DATADIR%%/templates/book_details.css
 %%DATADIR%%/templates/fb2.xsl
 %%DATADIR%%/templates/html.css
 %%DATADIR%%/templates/html_export_default.css
@@ -1521,7 +1522,6 @@ share/mime/text/lrs.xml
 %%DATADIR%%/templates/html_export_default_index.tmpl
 %%DATADIR%%/templates/lrf.xsl
 %%DATADIR%%/templates/rtf.xsl
-%%DATADIR%%/templates/book_details.css
 %%DATADIR%%/tracer.epub
 %%DATADIR%%/viewer/blank.html
 %%DATADIR%%/viewer/bookmarks.js
@@ -1530,240 +1530,277 @@ share/mime/text/lrs.xml
 %%DATADIR%%/viewer/hyphenation.js
 %%DATADIR%%/viewer/images.js
 %%DATADIR%%/viewer/jquery_scrollTo.js
+%%DATADIR%%/viewer/mathjax/MathJax.js
 %%DATADIR%%/viewer/mathjax/extensions/FontWarnings.js
-%%DATADIR%%/viewer/mathjax/extensions/v1.0-warning.js
-%%DATADIR%%/viewer/mathjax/extensions/mml2jax.js
-%%DATADIR%%/viewer/mathjax/extensions/asciimath2jax.js
-%%DATADIR%%/viewer/mathjax/extensions/tex2jax.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/HTML.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/unicode.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/mathchoice.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/begingroup.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/cancel.js
+%%DATADIR%%/viewer/mathjax/extensions/MathEvents.js
+%%DATADIR%%/viewer/mathjax/extensions/MathMenu.js
+%%DATADIR%%/viewer/mathjax/extensions/MathZoom.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/AMSmath.js
 %%DATADIR%%/viewer/mathjax/extensions/TeX/AMSsymbols.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/HTML.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/action.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/autobold.js
 %%DATADIR%%/viewer/mathjax/extensions/TeX/autoload-all.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/bbox.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/begingroup.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/boldsymbol.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/cancel.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/color.js
 %%DATADIR%%/viewer/mathjax/extensions/TeX/enclose.js
 %%DATADIR%%/viewer/mathjax/extensions/TeX/extpfeil.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/color.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/noErrors.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/mathchoice.js
 %%DATADIR%%/viewer/mathjax/extensions/TeX/mhchem.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/noUndefined.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/verb.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/bbox.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/AMSmath.js
 %%DATADIR%%/viewer/mathjax/extensions/TeX/newcommand.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/boldsymbol.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/autobold.js
-%%DATADIR%%/viewer/mathjax/extensions/TeX/action.js
-%%DATADIR%%/viewer/mathjax/extensions/toMathML.js
-%%DATADIR%%/viewer/mathjax/extensions/MathZoom.js
-%%DATADIR%%/viewer/mathjax/extensions/MathMenu.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/noErrors.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/noUndefined.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/unicode.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/verb.js
+%%DATADIR%%/viewer/mathjax/extensions/asciimath2jax.js
 %%DATADIR%%/viewer/mathjax/extensions/jsMath2jax.js
-%%DATADIR%%/viewer/mathjax/extensions/MathEvents.js
+%%DATADIR%%/viewer/mathjax/extensions/mml2jax.js
+%%DATADIR%%/viewer/mathjax/extensions/tex2jax.js
+%%DATADIR%%/viewer/mathjax/extensions/toMathML.js
+%%DATADIR%%/viewer/mathjax/extensions/v1.0-warning.js
 %%DATADIR%%/viewer/mathjax/jax/element/mml/jax.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SupplementalArrowsB.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscTechnical.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscMathSymbolsA.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SupplementalArrowsA.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SpacingModLetters.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SuppMathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Dingbats.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Latin1Supplement.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GeneralPunctuation.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/CombDiactForSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GeometricShapes.js
 %%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Arrows.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscMathSymbolsB.js
 %%DATADIR%%/viewer/mathjax/jax/element/mml/optable/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/LetterlikeSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscSymbolsAndArrows.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/CombDiactForSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Dingbats.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GeometricShapes.js
 %%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GreekAndCoptic.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/maction.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mtable.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/ms.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mglyph.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/annotation-xml.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/multiline.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/menclose.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mmultiscripts.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Other.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/PUA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Other.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/PUA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Other.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Other.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Other.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Other.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/BoldItalic/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/Italic/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscTechnical.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SpacingModLetters.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SuppMathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/PUA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Dingbats.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Latin1Supplement.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeneralPunctuation.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/EnclosedAlphanum.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/BoxDrawing.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeometricShapes.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LatinExtendedA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Arrows.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscMathSymbolsB.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LetterlikeSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GreekAndCoptic.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata-extra.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscTechnical.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscMathSymbolsA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SupplementalArrowsA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SpacingModLetters.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SuppMathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedB.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Latin1Supplement.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeneralPunctuation.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiactForSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeometricShapes.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Arrows.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LetterlikeSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GreekAndCoptic.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/MathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedB.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GeneralPunctuation.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LetterlikeSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GreekAndCoptic.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SpacingModLetters.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/CombDiacritMarks.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SuppMathOperators.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/Main.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedB.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GeometricShapes.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedA.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/BasicLatin.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LetterlikeSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GreekAndCoptic.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MiscSymbols.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/config.js
-%%DATADIR%%/viewer/mathjax/jax/output/SVG/jax.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Latin1Supplement.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscMathSymbolsA.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscMathSymbolsB.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscSymbolsAndArrows.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscTechnical.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SupplementalArrowsA.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SupplementalArrowsB.js
 %%DATADIR%%/viewer/mathjax/jax/input/AsciiMath/config.js
 %%DATADIR%%/viewer/mathjax/jax/input/AsciiMath/jax.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/v.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/config.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/a.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/b.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/c.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/d.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/j.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/x.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/m.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/w.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/n.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/e.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/opf.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/z.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/f.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/fr.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/g.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/h.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/q.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/o.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/y.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/t.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/a.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/p.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/b.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/s.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/fr.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/scr.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/c.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/r.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/l.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/f.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/i.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/j.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/k.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/l.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/m.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/n.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/o.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/opf.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/p.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/q.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/r.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/s.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/scr.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/t.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/u.js
-%%DATADIR%%/viewer/mathjax/jax/input/MathML/config.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/v.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/w.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/x.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/y.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/z.js
 %%DATADIR%%/viewer/mathjax/jax/input/MathML/jax.js
 %%DATADIR%%/viewer/mathjax/jax/input/TeX/config.js
 %%DATADIR%%/viewer/mathjax/jax/input/TeX/jax.js
-%%DATADIR%%/viewer/mathjax/MathJax.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/annotation-xml.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/maction.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/menclose.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mglyph.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mmultiscripts.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/ms.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mtable.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/multiline.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/config.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Arrows.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/BoxDrawing.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Dingbats.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/EnclosedAlphanum.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Latin1Supplement.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscMathSymbolsB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscTechnical.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/PUA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/PUA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/PUA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Arrows.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiactForSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Latin1Supplement.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscMathSymbolsA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscTechnical.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SupplementalArrowsA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MiscSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/BoldItalic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/Italic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata-extra.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/jax.js
 %%DATADIR%%/viewer/referencing.js
-@dirrm %%DATADIR%%/viewer/hyphenate
-@dirrm %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities
-@dirrm %%DATADIR%%/viewer/mathjax/jax/input/MathML
-@dirrm %%DATADIR%%/viewer/mathjax/jax/input/AsciiMath
-@dirrm %%DATADIR%%/viewer/mathjax/jax/input/TeX
-@dirrm %%DATADIR%%/viewer/mathjax/jax/input
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic
+share/gnome/apps/calibre-ebook-viewer.desktop
+share/gnome/apps/calibre-gui.desktop
+share/gnome/apps/calibre-lrfviewer.desktop
+share/icons/hicolor/128x128/apps/calibre-viewer.png
+share/icons/hicolor/128x128/mimetypes/application-lrf.png
+share/icons/hicolor/128x128/mimetypes/application-x-kindle-application.png
+share/icons/hicolor/128x128/mimetypes/application-x-mobi8-ebook.png
+share/icons/hicolor/128x128/mimetypes/application-x-mobipocket-ebook.png
+share/icons/hicolor/128x128/mimetypes/application-x-topaz-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-lrf.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-kindle-application.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobi8-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobipocket-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-topaz-ebook.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-text-lrs.png
+share/icons/hicolor/128x128/mimetypes/text-lrs.png
+share/icons/hicolor/256x256/apps/calibre-gui.png
+share/mime/application/x-kindle-application.xml
+share/mime/application/x-mobi8-ebook.xml
+share/mime/application/x-mobipocket-subscription.xml
+share/mime/application/x-sony-bbeb.xml
+share/mime/application/x-topaz-ebook.xml
+share/mime/packages/calibre-mimetypes.xml
+share/mime/text/lrs.xml
+@dirrmtry share/mime/text
+@dirrmtry share/mime/packages
+@dirrmtry share/mime/application
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/gnome/apps
+@dirrmtry share/gnome
+@dirrmtry share/desktop-directories
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2/Regular
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/Italic
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/BoldItalic
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1/Regular
-@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/TeX
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/MathML
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/AsciiMath
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input
 @dirrm %%DATADIR%%/viewer/mathjax/jax/element/mml/optable
 @dirrm %%DATADIR%%/viewer/mathjax/jax/element/mml
 @dirrm %%DATADIR%%/viewer/mathjax/jax/element
@@ -1771,14 +1808,15 @@ share/mime/text/lrs.xml
 @dirrm %%DATADIR%%/viewer/mathjax/extensions/TeX
 @dirrm %%DATADIR%%/viewer/mathjax/extensions
 @dirrm %%DATADIR%%/viewer/mathjax
+@dirrm %%DATADIR%%/viewer/hyphenate
 @dirrm %%DATADIR%%/viewer
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/localization/pykakasi
 @dirrm %%DATADIR%%/localization
 @dirrm %%DATADIR%%/jacket
+@dirrm %%DATADIR%%/images/plugins
 @dirrm %%DATADIR%%/images/mimetypes
 @dirrm %%DATADIR%%/images/devices
-@dirrm %%DATADIR%%/images/plugins
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts/prs500
 @dirrm %%DATADIR%%/fonts/liberation
@@ -1793,16 +1831,23 @@ share/mime/text/lrs.xml
 @dirrm %%DATADIR%%/content_server
 @dirrm %%DATADIR%%/catalog
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm lib/calibre/templite
 @dirrm lib/calibre/routes
 @dirrm lib/calibre/qtcurve
 @dirrm lib/calibre/odf
-@dirrm lib/calibre/chardet
+@dirrm lib/calibre/html5lib/treewalkers
+@dirrm lib/calibre/html5lib/treebuilders
+@dirrm lib/calibre/html5lib/serializer
+@dirrm lib/calibre/html5lib/filters
+@dirrm lib/calibre/html5lib
 @dirrm lib/calibre/cherrypy/wsgiserver
 @dirrm lib/calibre/cherrypy/scaffold
 @dirrm lib/calibre/cherrypy/process
 @dirrm lib/calibre/cherrypy/lib
 @dirrm lib/calibre/cherrypy
+@dirrm lib/calibre/chardet
 @dirrm lib/calibre/calibre/web/jsbrowser
 @dirrm lib/calibre/calibre/web/fetch
 @dirrm lib/calibre/calibre/web/feeds/recipes
@@ -1812,8 +1857,11 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/utils/pyconsole
 @dirrm lib/calibre/calibre/utils/podofo
 @dirrm lib/calibre/calibre/utils/opensearch
-@dirrm lib/calibre/calibre/utils/ipc
 @dirrm lib/calibre/calibre/utils/magick
+@dirrm lib/calibre/calibre/utils/ipc
+@dirrm lib/calibre/calibre/utils/fonts/woff
+@dirrm lib/calibre/calibre/utils/fonts/sfnt/cff
+@dirrm lib/calibre/calibre/utils/fonts/sfnt
 @dirrm lib/calibre/calibre/utils/fonts
 @dirrm lib/calibre/calibre/utils/chm
 @dirrm lib/calibre/calibre/utils
@@ -1827,11 +1875,11 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/gui2/viewer
 @dirrm lib/calibre/calibre/gui2/tag_browser
 @dirrm lib/calibre/calibre/gui2/store/stores/mobileread
+@dirrm lib/calibre/calibre/gui2/store/stores
+@dirrm lib/calibre/calibre/gui2/store/search
 @dirrm lib/calibre/calibre/gui2/store/config/search
 @dirrm lib/calibre/calibre/gui2/store/config/chooser
 @dirrm lib/calibre/calibre/gui2/store/config
-@dirrm lib/calibre/calibre/gui2/store/search
-@dirrm lib/calibre/calibre/gui2/store/stores
 @dirrm lib/calibre/calibre/gui2/store
 @dirrm lib/calibre/calibre/gui2/progress_indicator
 @dirrm lib/calibre/calibre/gui2/preferences
@@ -1861,13 +1909,13 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/ebooks/pdb/plucker
 @dirrm lib/calibre/calibre/ebooks/pdb/pdf
 @dirrm lib/calibre/calibre/ebooks/pdb/palmdoc
-@dirrm lib/calibre/calibre/ebooks/pdb/ereader
 @dirrm lib/calibre/calibre/ebooks/pdb/haodoo
+@dirrm lib/calibre/calibre/ebooks/pdb/ereader
 @dirrm lib/calibre/calibre/ebooks/pdb
+@dirrm lib/calibre/calibre/ebooks/oeb/transforms
+@dirrm lib/calibre/calibre/ebooks/oeb/iterator
 @dirrm lib/calibre/calibre/ebooks/oeb/display/test-cfi
 @dirrm lib/calibre/calibre/ebooks/oeb/display
-@dirrm lib/calibre/calibre/ebooks/oeb/iterator
-@dirrm lib/calibre/calibre/ebooks/oeb/transforms
 @dirrm lib/calibre/calibre/ebooks/oeb
 @dirrm lib/calibre/calibre/ebooks/odt
 @dirrm lib/calibre/calibre/ebooks/mobi/writer8
@@ -1888,8 +1936,8 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/ebooks/lit/maps
 @dirrm lib/calibre/calibre/ebooks/lit
 @dirrm lib/calibre/calibre/ebooks/iterator
-@dirrm lib/calibre/calibre/ebooks/html
 @dirrm lib/calibre/calibre/ebooks/htmlz
+@dirrm lib/calibre/calibre/ebooks/html
 @dirrm lib/calibre/calibre/ebooks/fb2
 @dirrm lib/calibre/calibre/ebooks/epub/fix
 @dirrm lib/calibre/calibre/ebooks/epub
@@ -1901,22 +1949,20 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/ebooks/chm
 @dirrm lib/calibre/calibre/ebooks/azw4
 @dirrm lib/calibre/calibre/ebooks
-@dirrm lib/calibre/calibre/db/tests
-@dirrm lib/calibre/calibre/db
+@dirrm lib/calibre/calibre/devices/user_defined
 @dirrm lib/calibre/calibre/devices/usbobserver
 @dirrm lib/calibre/calibre/devices/usbms
-@dirrm lib/calibre/calibre/devices/user_defined
 @dirrm lib/calibre/calibre/devices/teclast
 @dirrm lib/calibre/calibre/devices/sne
 @dirrm lib/calibre/calibre/devices/smart_device_app
-@dirrm lib/calibre/calibre/devices/prs505
 @dirrm lib/calibre/calibre/devices/prst1
+@dirrm lib/calibre/calibre/devices/prs505
 @dirrm lib/calibre/calibre/devices/nuut2
 @dirrm lib/calibre/calibre/devices/nook
 @dirrm lib/calibre/calibre/devices/nokia
+@dirrm lib/calibre/calibre/devices/mtp/windows
 @dirrm lib/calibre/calibre/devices/mtp/unix/upstream
 @dirrm lib/calibre/calibre/devices/mtp/unix
-@dirrm lib/calibre/calibre/devices/mtp/windows
 @dirrm lib/calibre/calibre/devices/mtp
 @dirrm lib/calibre/calibre/devices/kobo
 @dirrm lib/calibre/calibre/devices/kindle
@@ -1938,24 +1984,14 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/devices/apple
 @dirrm lib/calibre/calibre/devices/android
 @dirrm lib/calibre/calibre/devices
+@dirrm lib/calibre/calibre/db/tests
+@dirrm lib/calibre/calibre/db
 @dirrm lib/calibre/calibre/customize
 @dirrm lib/calibre/calibre
-@dirrm lib/calibre/html5lib/filters
-@dirrm lib/calibre/html5lib/serializer
-@dirrm lib/calibre/html5lib/treewalkers
-@dirrm lib/calibre/html5lib/treebuilders
-@dirrm lib/calibre/html5lib
 @dirrm lib/calibre
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
 @dirrmtry etc/bash_completion.d
-@dirrmtry share/applications
-@dirrmtry share/mime/packages
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128/mimetypes
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/gnome/apps
-@dirrmtry share/gnome
-@dirrmtry share/desktop-directories
-@dirrmtry share/mime/application
-@dirrmtry share/mime/text
+@exec mkdir -p %D/share/mime/packages
+@exec mkdir -p %D/share/icons/hicolor/128x128/apps
+@exec mkdir -p %D/share/gnome/apps
+@exec mkdir -p %D/share/desktop-directories
+@exec mkdir -p %D/share/applications
