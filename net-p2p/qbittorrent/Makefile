@@ -38,6 +38,9 @@ USE_QT4+=	dbus
 CONFIGURE_ARGS+=	--disable-qt-dbus
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,qputenv,!&,' ${WRKSRC}/src/main.cpp
+
 post-install:
 .if !defined(QB_NOX_SLAVE)
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
