@@ -114,6 +114,8 @@ post-configure:
 		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
 	${REINPLACE_CMD} -e 's/444/644/g' \
 		${WRKSRC}/kdesktop/init/Templates/Makefile
+	${REINPLACE_CMD} -e 's|-fno-exceptions||' \
+		${WRKSRC}/kioslave/thumbnail/Makefile
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/freebsd.keytab ${PREFIX}/share/apps/konsole/
