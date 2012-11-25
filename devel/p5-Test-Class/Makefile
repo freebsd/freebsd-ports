@@ -1,12 +1,8 @@
-# New ports collection makefile for:    p5-Test-Class
-# Date created:				January 27th 2003
-# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Class
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
