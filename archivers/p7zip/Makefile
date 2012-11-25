@@ -10,8 +10,11 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	File archiver with high compression ratio
 
-OPTIONS=	MINIMAL	"Support only .7z file format" off \
-		MODULES	"Build modules" on
+OPTIONS_DEFINE=        MINIMAL MODULES
+OPTIONS_DEFAULT=       MODULES
+
+MINIMAL_DESC=  Support only .7z file format
+MODULES_DESC=  Build modules
 
 USE_BZIP2=	yes
 MAKEFILE=	makefile
@@ -19,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MINIMAL)
+.if ${PORT_OPTIONS:MMINIMAL}
 MAN1=		7zr.1
 MLINKS=		7zr.1 7z.1
 PLIST_SUB=	MODULES="@comment "
@@ -39,7 +42,7 @@ PLIST_FILES=	bin/7z \
 		libexec/p7zip/7za \
 		libexec/p7zip/7zr \
 		libexec/p7zip/7zCon.sfx
-.if !defined(WITHOUT_MODULES)
+.if ${PORT_OPTIONS:MMODULES}
 ALL_TARGET=	7z 7za 7zr Client7z sfx
 7ZBIN=		7z 7za 7zr Client7z 7zCon.sfx
 PLIST_DIRS+=	libexec/p7zip/Codecs
