@@ -2,6 +2,9 @@ bin/meld
 lib/meld/meld/__init__.py
 lib/meld/meld/__init__.pyc
 lib/meld/meld/__init__.pyo
+lib/meld/meld/dbus_service.py
+lib/meld/meld/dbus_service.pyc
+lib/meld/meld/dbus_service.pyo
 lib/meld/meld/diffmap.py
 lib/meld/meld/diffmap.pyc
 lib/meld/meld/diffmap.pyo
@@ -26,6 +29,9 @@ lib/meld/meld/matchers.pyo
 lib/meld/meld/meldapp.py
 lib/meld/meld/meldapp.pyc
 lib/meld/meld/meldapp.pyo
+lib/meld/meld/meldbuffer.py
+lib/meld/meld/meldbuffer.pyc
+lib/meld/meld/meldbuffer.pyo
 lib/meld/meld/melddoc.py
 lib/meld/meld/melddoc.pyc
 lib/meld/meld/melddoc.pyo
@@ -80,6 +86,9 @@ lib/meld/meld/ui/msgarea.pyo
 lib/meld/meld/ui/notebooklabel.py
 lib/meld/meld/ui/notebooklabel.pyc
 lib/meld/meld/ui/notebooklabel.pyo
+lib/meld/meld/ui/statusbar.py
+lib/meld/meld/ui/statusbar.pyc
+lib/meld/meld/ui/statusbar.pyo
 lib/meld/meld/ui/wraplabel.py
 lib/meld/meld/ui/wraplabel.pyc
 lib/meld/meld/ui/wraplabel.pyo
@@ -89,9 +98,6 @@ lib/meld/meld/undo.pyo
 lib/meld/meld/util/__init__.py
 lib/meld/meld/util/__init__.pyc
 lib/meld/meld/util/__init__.pyo
-lib/meld/meld/util/namedtuple.py
-lib/meld/meld/util/namedtuple.pyc
-lib/meld/meld/util/namedtuple.pyo
 lib/meld/meld/util/prefs.py
 lib/meld/meld/util/prefs.pyc
 lib/meld/meld/util/prefs.pyo
@@ -197,6 +203,7 @@ share/icons/hicolor/scalable/apps/meld.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/meld.mo
+%%DATADIR%%/gtkrc
 %%DATADIR%%/icons/button_apply0.xpm
 %%DATADIR%%/icons/button_apply1.xpm
 %%DATADIR%%/icons/button_copy0.xpm
