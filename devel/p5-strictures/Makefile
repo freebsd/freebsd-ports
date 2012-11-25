@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-strictures
-# Date created:				Feb 25, 2011
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	strictures
-PORTVERSION=	1.004002
+PORTVERSION=	1.004004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
