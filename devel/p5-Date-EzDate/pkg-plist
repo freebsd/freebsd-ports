@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Date/EzDate.pm
+%%SITE_PERL%%/Date/EzDate.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/EzDate/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/EzDate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date

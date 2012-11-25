@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Date-EzDate
-# Date created:				28 February 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-EzDate
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
