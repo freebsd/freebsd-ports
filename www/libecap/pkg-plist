@@ -30,5 +30,4 @@ lib/libecap.a
 lib/libecap.la
 lib/libecap.so
 lib/libecap.so.2
-lib/pkgconfig/libecap.pc
-@dirrmtry lib/pkgconfig
+libdata/pkgconfig/libecap.pc

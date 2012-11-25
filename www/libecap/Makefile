@@ -7,6 +7,7 @@
 
 PORTNAME=	libecap
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
@@ -21,6 +22,8 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTDOCS=	CREDITS LICENSE NOTICE README
+
+CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 post-install:
 .if !defined(NOPORTDOCS)
