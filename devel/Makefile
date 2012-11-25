@@ -4010,6 +4010,7 @@
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-turn
+    SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-uuid
