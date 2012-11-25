@@ -2,11 +2,11 @@
 # Date created:				15 August 2012
 # Whom:					Martin Matuska <mm@FreeBSD.org>
 #
-# $FreeBSD: ports/www/squidclamav/Makefile,v 1.1 2012/08/15 01:41:41 mm Exp $
+# $FreeBSD: ports/www/squidclamav/Makefile,v 1.3 2012/11/17 06:03:06 svnexp Exp $
 #
 
 PORTNAME=	squidclamav
-PORTVERSION=	6.9
+PORTVERSION=	6.10
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
