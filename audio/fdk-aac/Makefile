@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fdk-aac
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
@@ -19,7 +18,7 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 LICENSE=	FRAUNHOFER_FDK_AAC
 LICENSE_NAME=	Software License for The Fraunhofer FDK AAC Codec Library for Android
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/NOTICE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 GNU_CONFIGURE=	yes
