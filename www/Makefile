@@ -4,6 +4,7 @@
     COMMENT = Ports related to the World Wide Web
 
     SUBDIR += MT
+    SUBDIR += R-cran-RgoogleMaps
     SUBDIR += R-cran-Rpad
     SUBDIR += R-cran-scrapeR
     SUBDIR += WebMagick
