@@ -1,12 +1,9 @@
-# New ports collection makefile for:	mysql-connector-java
-# Date created:		8 October 2003
-# Whom:			Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
+
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	5.1.21
+PORTVERSION=	5.1.22
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
@@ -18,7 +15,6 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 BUILDDIR=	${WRKDIR}/${DISTNAME}
