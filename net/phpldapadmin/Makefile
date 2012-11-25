@@ -1,12 +1,8 @@
-# New ports collection makefile for: phpLDAPadmin
-# Date created:		30 Apr 2004
-# Whom:			Matthew Seaman
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
