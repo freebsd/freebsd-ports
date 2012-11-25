@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-WWW-MobileCarrierJP
-# Date created:		2009-04-13
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-MobileCarrierJP
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
