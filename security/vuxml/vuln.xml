@@ -204,6 +204,40 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
+  <vuln vid="81826d12-317a-11e2-9186-406186f3d89d">
+    <topic>weechat -- Arbitrary shell command execution via scripts</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><ge>0.3.0</ge><lt>0.3.9.2</lt></range>
+      </package>
+      <package>
+	<name>weechat-devel</name>
+	<range><lt>20121118</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastien Helleu reports:</p>
+	<blockquote cite="http://weechat.org/security/">
+	  <p>Untrusted command for function hook_process could lead to 
+	  execution of commands, because of shell expansions.</p>
+	  <p>Workaround with a non-patched version: remove/unload all scripts
+	  calling function hook_process (for maximum safety).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://weechat.org/security/</url>
+      <url>https://savannah.nongnu.org/bugs/?37764</url>
+    </references>
+    <dates>
+      <discovery>2012-11-15</discovery>
+      <entry>2012-11-18</entry>
+      <modified>2012-11-18</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="2b841f88-2e8d-11e2-ad21-20cf30e32f6d">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
