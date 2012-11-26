@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwhois
-PORTVERSION=	20100728
+PORTVERSION=	20120626
 CATEGORIES=	net
 MASTER_SITES=	http://gwhois.de/gwhois/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Flexible whois client and proxy
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
+		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN \
 		lynx:${PORTSDIR}/www/lynx \
 		curl:${PORTSDIR}/ftp/curl
 
