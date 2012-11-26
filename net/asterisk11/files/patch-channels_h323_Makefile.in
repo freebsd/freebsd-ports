@@ -1,0 +1,11 @@
+--- ./channels/h323/Makefile.in.orig	2010-06-03 16:48:09.000000000 +0200
++++ ./channels/h323/Makefile.in	2010-11-06 14:54:36.000000000 +0100
+@@ -13,7 +13,7 @@
+ STDCCFLAGS	+= -I../../include -include ../../include/asterisk/autoconfig.h
+ STDCCFLAGS	+= -fPIC
+ #OPTCCFLAGS	+=
+-CFLAGS		= -pipe
++CFLAGS		= -pipe @CXXFLAGS@
+ TARGET		= libchanh323.a
+ TARGET		+= Makefile.ast
+ SOURCES		= ast_h323.cxx compat_h323.cxx cisco-h225.cxx caps_h323.cxx

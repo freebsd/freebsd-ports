@@ -1,0 +1,1285 @@
+@unexec if cmp -s %D/etc/asterisk/acl.conf %D/etc/asterisk/acl.conf-dist; then rm -f %D/etc/asterisk/acl.conf; fi
+etc/asterisk/acl.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_adaptive_odbc.conf %D/etc/asterisk/cdr_adaptive_odbc.conf-dist; then rm -f %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
+etc/asterisk/cdr_adaptive_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_sqlite3_custom.conf %D/etc/asterisk/cdr_sqlite3_custom.conf-dist; then rm -f %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
+etc/asterisk/cdr_sqlite3_custom.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_syslog.conf %D/etc/asterisk/cdr_syslog.conf-dist; then rm -f %D/etc/asterisk/cdr_syslog.conf; fi
+etc/asterisk/cdr_syslog.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cli.conf %D/etc/asterisk/cli.conf-dist; then rm -f %D/etc/asterisk/cli.conf; fi
+etc/asterisk/cli.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cli_aliases.conf %D/etc/asterisk/cli_aliases.conf-dist; then rm -f %D/etc/asterisk/cli_aliases.conf; fi
+etc/asterisk/cli_aliases.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cli_permissions.conf %D/etc/asterisk/cli_permissions.conf-dist; then rm -f %D/etc/asterisk/cli_permissions.conf; fi
+etc/asterisk/cli_permissions.conf-dist
+@unexec if cmp -s %D/etc/asterisk/confbridge.conf %D/etc/asterisk/confbridge.conf-dist; then rm -f %D/etc/asterisk/confbridge.conf; fi
+etc/asterisk/confbridge.conf-dist
+@unexec if cmp -s %D/etc/asterisk/config_test.conf %D/etc/asterisk/config_test.conf-dist; then rm -f %D/etc/asterisk/config_test.conf; fi
+etc/asterisk/config_test.conf-dist
+@unexec if cmp -s %D/etc/asterisk/console.conf %D/etc/asterisk/console.conf-dist; then rm -f %D/etc/asterisk/console.conf; fi
+etc/asterisk/console.conf-dist
+@unexec if cmp -s %D/etc/asterisk/dbsep.conf %D/etc/asterisk/dbsep.conf-dist; then rm -f %D/etc/asterisk/dbsep.conf; fi
+etc/asterisk/dbsep.conf-dist
+@unexec if cmp -s %D/etc/asterisk/dsp.conf %D/etc/asterisk/dsp.conf-dist; then rm -f %D/etc/asterisk/dsp.conf; fi
+etc/asterisk/dsp.conf-dist
+@unexec if cmp -s %D/etc/asterisk/extensions.lua %D/etc/asterisk/extensions.lua-dist; then rm -f %D/etc/asterisk/extensions.lua; fi
+etc/asterisk/extensions.lua-dist
+@unexec if cmp -s %D/etc/asterisk/extensions_minivm.conf %D/etc/asterisk/extensions_minivm.conf-dist; then rm -f %D/etc/asterisk/extensions_minivm.conf; fi
+etc/asterisk/extensions_minivm.conf-dist
+@unexec if cmp -s %D/etc/asterisk/jingle.conf %D/etc/asterisk/jingle.conf-dist; then rm -f %D/etc/asterisk/jingle.conf; fi
+etc/asterisk/jingle.conf-dist
+@unexec if cmp -s %D/etc/asterisk/minivm.conf %D/etc/asterisk/minivm.conf-dist; then rm -f %D/etc/asterisk/minivm.conf; fi
+etc/asterisk/minivm.conf-dist
+@unexec if cmp -s %D/etc/asterisk/motif.conf %D/etc/asterisk/motif.conf-dist; then rm -f %D/etc/asterisk/motif.conf; fi
+etc/asterisk/motif.conf-dist
+@unexec if cmp -s %D/etc/asterisk/ooh323.conf %D/etc/asterisk/ooh323.conf-dist; then rm -f %D/etc/asterisk/ooh323.conf; fi
+etc/asterisk/ooh323.conf-dist
+@unexec if cmp -s %D/etc/asterisk/phoneprov.conf %D/etc/asterisk/phoneprov.conf-dist; then rm -f %D/etc/asterisk/phoneprov.conf; fi
+etc/asterisk/phoneprov.conf-dist
+@unexec if cmp -s %D/etc/asterisk/queuerules.conf %D/etc/asterisk/queuerules.conf-dist; then rm -f %D/etc/asterisk/queuerules.conf; fi
+etc/asterisk/queuerules.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_ldap.conf %D/etc/asterisk/res_ldap.conf-dist; then rm -f %D/etc/asterisk/res_ldap.conf; fi
+etc/asterisk/res_ldap.conf-dist
+@unexec if cmp -s %D/etc/asterisk/unistim.conf %D/etc/asterisk/unistim.conf-dist; then rm -f %D/etc/asterisk/unistim.conf; fi
+etc/asterisk/unistim.conf-dist
+@unexec if cmp -s %D/etc/asterisk/adsi.conf %D/etc/asterisk/adsi.conf-dist; then rm -f %D/etc/asterisk/adsi.conf; fi
+etc/asterisk/adsi.conf-dist
+@unexec if cmp -s %D/etc/asterisk/agents.conf %D/etc/asterisk/agents.conf-dist; then rm -f %D/etc/asterisk/agents.conf; fi
+etc/asterisk/agents.conf-dist
+@unexec if cmp -s %D/etc/asterisk/alarmreceiver.conf %D/etc/asterisk/alarmreceiver.conf-dist; then rm -f %D/etc/asterisk/alarmreceiver.conf; fi
+etc/asterisk/alarmreceiver.conf-dist
+@unexec if cmp -s %D/etc/asterisk/alsa.conf %D/etc/asterisk/alsa.conf-dist; then rm -f %D/etc/asterisk/alsa.conf; fi
+etc/asterisk/alsa.conf-dist
+@unexec if cmp -s %D/etc/asterisk/asterisk.adsi %D/etc/asterisk/asterisk.adsi-dist; then rm -f %D/etc/asterisk/asterisk.adsi; fi
+etc/asterisk/asterisk.adsi-dist
+@unexec if cmp -s %D/etc/asterisk/asterisk.conf %D/etc/asterisk/asterisk.conf-dist; then rm -f %D/etc/asterisk/asterisk.conf; fi
+etc/asterisk/asterisk.conf-dist
+@unexec if cmp -s %D/etc/asterisk/calendar.conf %D/etc/asterisk/calendar.conf-dist; then rm -f %D/etc/asterisk/calendar.conf; fi
+etc/asterisk/calendar.conf-dist
+@unexec if cmp -s %D/etc/asterisk/ccss.conf %D/etc/asterisk/ccss.conf-dist; then rm -f %D/etc/asterisk/ccss.conf; fi
+etc/asterisk/ccss.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr.conf %D/etc/asterisk/cdr.conf-dist; then rm -f %D/etc/asterisk/cdr.conf; fi
+etc/asterisk/cdr.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_custom.conf %D/etc/asterisk/cdr_custom.conf-dist; then rm -f %D/etc/asterisk/cdr_custom.conf; fi
+etc/asterisk/cdr_custom.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_manager.conf %D/etc/asterisk/cdr_manager.conf-dist; then rm -f %D/etc/asterisk/cdr_manager.conf; fi
+etc/asterisk/cdr_manager.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_mysql.conf %D/etc/asterisk/cdr_mysql.conf-dist; then rm -f %D/etc/asterisk/cdr_mysql.conf; fi
+etc/asterisk/cdr_mysql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_odbc.conf %D/etc/asterisk/cdr_odbc.conf-dist; then rm -f %D/etc/asterisk/cdr_odbc.conf; fi
+etc/asterisk/cdr_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_pgsql.conf %D/etc/asterisk/cdr_pgsql.conf-dist; then rm -f %D/etc/asterisk/cdr_pgsql.conf; fi
+etc/asterisk/cdr_pgsql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cdr_tds.conf %D/etc/asterisk/cdr_tds.conf-dist; then rm -f %D/etc/asterisk/cdr_tds.conf; fi
+etc/asterisk/cdr_tds.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cel.conf %D/etc/asterisk/cel.conf-dist; then rm -f %D/etc/asterisk/cel.conf; fi
+etc/asterisk/cel.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cel_custom.conf %D/etc/asterisk/cel_custom.conf-dist; then rm -f %D/etc/asterisk/cel_custom.conf; fi
+etc/asterisk/cel_custom.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cel_odbc.conf %D/etc/asterisk/cel_odbc.conf-dist; then rm -f %D/etc/asterisk/cel_odbc.conf; fi
+etc/asterisk/cel_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cel_pgsql.conf %D/etc/asterisk/cel_pgsql.conf-dist; then rm -f %D/etc/asterisk/cel_pgsql.conf; fi
+etc/asterisk/cel_pgsql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cel_sqlite3_custom.conf %D/etc/asterisk/cel_sqlite3_custom.conf-dist; then rm -f %D/etc/asterisk/cel_sqlite3_custom.conf; fi
+etc/asterisk/cel_sqlite3_custom.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cel_tds.conf %D/etc/asterisk/cel_tds.conf-dist; then rm -f %D/etc/asterisk/cel_tds.conf; fi
+etc/asterisk/cel_tds.conf-dist
+@unexec if cmp -s %D/etc/asterisk/codecs.conf %D/etc/asterisk/codecs.conf-dist; then rm -f %D/etc/asterisk/codecs.conf; fi
+etc/asterisk/codecs.conf-dist
+@unexec if cmp -s %D/etc/asterisk/dnsmgr.conf %D/etc/asterisk/dnsmgr.conf-dist; then rm -f %D/etc/asterisk/dnsmgr.conf; fi
+etc/asterisk/dnsmgr.conf-dist
+@unexec if cmp -s %D/etc/asterisk/dundi.conf %D/etc/asterisk/dundi.conf-dist; then rm -f %D/etc/asterisk/dundi.conf; fi
+etc/asterisk/dundi.conf-dist
+@unexec if cmp -s %D/etc/asterisk/enum.conf %D/etc/asterisk/enum.conf-dist; then rm -f %D/etc/asterisk/enum.conf; fi
+etc/asterisk/enum.conf-dist
+@unexec if cmp -s %D/etc/asterisk/extconfig.conf %D/etc/asterisk/extconfig.conf-dist; then rm -f %D/etc/asterisk/extconfig.conf; fi
+etc/asterisk/extconfig.conf-dist
+@unexec if cmp -s %D/etc/asterisk/extensions.ael %D/etc/asterisk/extensions.ael-dist; then rm -f %D/etc/asterisk/extensions.ael; fi
+etc/asterisk/extensions.ael-dist
+@unexec if cmp -s %D/etc/asterisk/extensions.conf %D/etc/asterisk/extensions.conf-dist; then rm -f %D/etc/asterisk/extensions.conf; fi
+etc/asterisk/extensions.conf-dist
+@unexec if cmp -s %D/etc/asterisk/features.conf %D/etc/asterisk/features.conf-dist; then rm -f %D/etc/asterisk/features.conf; fi
+etc/asterisk/features.conf-dist
+@unexec if cmp -s %D/etc/asterisk/festival.conf %D/etc/asterisk/festival.conf-dist; then rm -f %D/etc/asterisk/festival.conf; fi
+etc/asterisk/festival.conf-dist
+@unexec if cmp -s %D/etc/asterisk/iax.conf %D/etc/asterisk/iax.conf-dist; then rm -f %D/etc/asterisk/iax.conf; fi
+etc/asterisk/iax.conf-dist
+@unexec if cmp -s %D/etc/asterisk/iaxprov.conf %D/etc/asterisk/iaxprov.conf-dist; then rm -f %D/etc/asterisk/iaxprov.conf; fi
+etc/asterisk/iaxprov.conf-dist
+@unexec if cmp -s %D/etc/asterisk/indications.conf %D/etc/asterisk/indications.conf-dist; then rm -f %D/etc/asterisk/indications.conf; fi
+etc/asterisk/indications.conf-dist
+@unexec if cmp -s %D/etc/asterisk/logger.conf %D/etc/asterisk/logger.conf-dist; then rm -f %D/etc/asterisk/logger.conf; fi
+etc/asterisk/logger.conf-dist
+@unexec if cmp -s %D/etc/asterisk/manager.conf %D/etc/asterisk/manager.conf-dist; then rm -f %D/etc/asterisk/manager.conf; fi
+etc/asterisk/manager.conf-dist
+@unexec if cmp -s %D/etc/asterisk/meetme.conf %D/etc/asterisk/meetme.conf-dist; then rm -f %D/etc/asterisk/meetme.conf; fi
+etc/asterisk/meetme.conf-dist
+@unexec if cmp -s %D/etc/asterisk/mgcp.conf %D/etc/asterisk/mgcp.conf-dist; then rm -f %D/etc/asterisk/mgcp.conf; fi
+etc/asterisk/mgcp.conf-dist
+@unexec if cmp -s %D/etc/asterisk/misdn.conf %D/etc/asterisk/misdn.conf-dist; then rm -f %D/etc/asterisk/misdn.conf; fi
+etc/asterisk/misdn.conf-dist
+@unexec if cmp -s %D/etc/asterisk/modules.conf %D/etc/asterisk/modules.conf-dist; then rm -f %D/etc/asterisk/modules.conf; fi
+etc/asterisk/modules.conf-dist
+@unexec if cmp -s %D/etc/asterisk/musiconhold.conf %D/etc/asterisk/musiconhold.conf-dist; then rm -f %D/etc/asterisk/musiconhold.conf; fi
+etc/asterisk/musiconhold.conf-dist
+@unexec if cmp -s %D/etc/asterisk/osp.conf %D/etc/asterisk/osp.conf-dist; then rm -f %D/etc/asterisk/osp.conf; fi
+etc/asterisk/osp.conf-dist
+@unexec if cmp -s %D/etc/asterisk/oss.conf %D/etc/asterisk/oss.conf-dist; then rm -f %D/etc/asterisk/oss.conf; fi
+etc/asterisk/oss.conf-dist
+@unexec if cmp -s %D/etc/asterisk/phone.conf %D/etc/asterisk/phone.conf-dist; then rm -f %D/etc/asterisk/phone.conf; fi
+etc/asterisk/phone.conf-dist
+@unexec if cmp -s %D/etc/asterisk/queues.conf %D/etc/asterisk/queues.conf-dist; then rm -f %D/etc/asterisk/queues.conf; fi
+etc/asterisk/queues.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_config_mysql.conf %D/etc/asterisk/res_config_mysql.conf-dist; then rm -f %D/etc/asterisk/res_config_mysql.conf; fi
+etc/asterisk/res_config_mysql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_config_sqlite3.conf %D/etc/asterisk/res_config_sqlite3.conf-dist; then rm -f %D/etc/asterisk/res_config_sqlite3.conf; fi
+etc/asterisk/res_config_sqlite3.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_corosync.conf %D/etc/asterisk/res_corosync.conf-dist; then rm -f %D/etc/asterisk/res_corosync.conf; fi
+etc/asterisk/res_corosync.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_pgsql.conf %D/etc/asterisk/res_pgsql.conf-dist; then rm -f %D/etc/asterisk/res_pgsql.conf; fi
+etc/asterisk/res_pgsql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_pktccops.conf %D/etc/asterisk/res_pktccops.conf-dist; then rm -f %D/etc/asterisk/res_pktccops.conf; fi
+etc/asterisk/res_pktccops.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_odbc.conf %D/etc/asterisk/res_odbc.conf-dist; then rm -f %D/etc/asterisk/res_odbc.conf; fi
+etc/asterisk/res_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/rtp.conf %D/etc/asterisk/rtp.conf-dist; then rm -f %D/etc/asterisk/rtp.conf; fi
+etc/asterisk/rtp.conf-dist
+@unexec if cmp -s %D/etc/asterisk/sip.conf %D/etc/asterisk/sip.conf-dist; then rm -f %D/etc/asterisk/sip.conf; fi
+etc/asterisk/sip.conf-dist
+@unexec if cmp -s %D/etc/asterisk/sip_notify.conf %D/etc/asterisk/sip_notify.conf-dist; then rm -f %D/etc/asterisk/sip_notify.conf; fi
+etc/asterisk/sip_notify.conf-dist
+@unexec if cmp -s %D/etc/asterisk/skinny.conf %D/etc/asterisk/skinny.conf-dist; then rm -f %D/etc/asterisk/skinny.conf; fi
+etc/asterisk/skinny.conf-dist
+@unexec if cmp -s %D/etc/asterisk/telcordia-1.adsi %D/etc/asterisk/telcordia-1.adsi-dist; then rm -f %D/etc/asterisk/telcordia-1.adsi; fi
+etc/asterisk/telcordia-1.adsi-dist
+@unexec if cmp -s %D/etc/asterisk/voicemail.conf %D/etc/asterisk/voicemail.conf-dist; then rm -f %D/etc/asterisk/voicemail.conf; fi
+etc/asterisk/voicemail.conf-dist
+@unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
+etc/asterisk/vpb.conf-dist
+@unexec if cmp -s %D/etc/asterisk/chan_dahdi.conf %D/etc/asterisk/chan_dahdi.conf-dist; then rm -f %D/etc/asterisk/chan_dahdi.conf; fi
+etc/asterisk/chan_dahdi.conf-dist
+@unexec if cmp -s %D/etc/asterisk/chan_mobile.conf %D/etc/asterisk/chan_mobile.conf-dist; then rm -f %D/etc/asterisk/chan_mobile.conf; fi
+etc/asterisk/chan_mobile.conf-dist
+@unexec if cmp -s %D/etc/asterisk/udptl.conf %D/etc/asterisk/udptl.conf-dist; then rm -f %D/etc/asterisk/udptl.conf; fi
+etc/asterisk/udptl.conf-dist
+@unexec if cmp -s %D/etc/asterisk/users.conf %D/etc/asterisk/users.conf-dist; then rm -f %D/etc/asterisk/users.conf; fi
+etc/asterisk/users.conf-dist
+@unexec if cmp -s %D/etc/asterisk/smdi.conf %D/etc/asterisk/smdi.conf-dist; then rm -f %D/etc/asterisk/smdi.conf; fi
+etc/asterisk/smdi.conf-dist
+@unexec if cmp -s %D/etc/asterisk/sla.conf %D/etc/asterisk/sla.conf-dist; then rm -f %D/etc/asterisk/sla.conf; fi
+etc/asterisk/sla.conf-dist
+@unexec if cmp -s %D/etc/asterisk/say.conf %D/etc/asterisk/say.conf-dist; then rm -f %D/etc/asterisk/say.conf; fi
+etc/asterisk/say.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_snmp.conf %D/etc/asterisk/res_snmp.conf-dist; then rm -f %D/etc/asterisk/res_snmp.conf; fi
+etc/asterisk/res_snmp.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_stun_monitor.conf %D/etc/asterisk/res_stun_monitor.conf-dist; then rm -f %D/etc/asterisk/res_stun_monitor.conf; fi
+etc/asterisk/res_stun_monitor.conf-dist
+@unexec if cmp -s %D/etc/asterisk/muted.conf %D/etc/asterisk/muted.conf-dist; then rm -f %D/etc/asterisk/muted.conf; fi
+etc/asterisk/muted.conf-dist
+@unexec if cmp -s %D/etc/asterisk/jabber.conf %D/etc/asterisk/jabber.conf-dist; then rm -f %D/etc/asterisk/jabber.conf; fi
+etc/asterisk/jabber.conf-dist
+@unexec if cmp -s %D/etc/asterisk/http.conf %D/etc/asterisk/http.conf-dist; then rm -f %D/etc/asterisk/http.conf; fi
+etc/asterisk/http.conf-dist
+@unexec if cmp -s %D/etc/asterisk/h323.conf %D/etc/asterisk/h323.conf-dist; then rm -f %D/etc/asterisk/h323.conf; fi
+etc/asterisk/h323.conf-dist
+@unexec if cmp -s %D/etc/asterisk/gtalk.conf %D/etc/asterisk/gtalk.conf-dist; then rm -f %D/etc/asterisk/gtalk.conf; fi
+etc/asterisk/gtalk.conf-dist
+@unexec if cmp -s %D/etc/asterisk/func_odbc.conf %D/etc/asterisk/func_odbc.conf-dist; then rm -f %D/etc/asterisk/func_odbc.conf; fi
+etc/asterisk/func_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/followme.conf %D/etc/asterisk/followme.conf-dist; then rm -f %D/etc/asterisk/followme.conf; fi
+etc/asterisk/followme.conf-dist
+@unexec if cmp -s %D/etc/asterisk/amd.conf %D/etc/asterisk/amd.conf-dist; then rm -f %D/etc/asterisk/amd.conf; fi
+etc/asterisk/amd.conf-dist
+@unexec if cmp -s %D/etc/asterisk/app_skel.conf %D/etc/asterisk/app_skel.conf-dist; then rm -f %D/etc/asterisk/app_skel.conf; fi
+etc/asterisk/app_skel.conf-dist
+@unexec if cmp -s %D/etc/asterisk/app_mysql.conf %D/etc/asterisk/app_mysql.conf-dist; then rm -f %D/etc/asterisk/app_mysql.conf; fi
+etc/asterisk/app_mysql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_config_sqlite.conf %D/etc/asterisk/res_config_sqlite.conf-dist; then rm -f %D/etc/asterisk/res_config_sqlite.conf; fi
+etc/asterisk/res_config_sqlite.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_curl.conf %D/etc/asterisk/res_curl.conf-dist; then rm -f %D/etc/asterisk/res_curl.conf; fi
+etc/asterisk/res_curl.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_fax.conf %D/etc/asterisk/res_fax.conf-dist; then rm -f %D/etc/asterisk/res_fax.conf; fi
+etc/asterisk/res_fax.conf-dist
+@unexec if cmp -s %D/etc/asterisk/xmpp.conf %D/etc/asterisk/xmpp.conf-dist; then rm -f %D/etc/asterisk/xmpp.conf; fi
+etc/asterisk/xmpp.conf-dist
+@exec if test ! -e %D/etc/asterisk/acl.conf; then cp -p %D/etc/asterisk/acl.conf-dist %D/etc/asterisk/acl.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_adaptive_odbc.conf; then cp -p %D/etc/asterisk/cdr_adaptive_odbc.conf-dist %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_syslog.conf; then cp -p %D/etc/asterisk/cdr_syslog.conf-dist %D/etc/asterisk/cdr_syslog.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cdr_sqlite3_custom.conf-dist %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
+@exec if test ! -e %D/etc/asterisk/cli.conf; then cp -p %D/etc/asterisk/cli.conf-dist %D/etc/asterisk/cli.conf; fi
+@exec if test ! -e %D/etc/asterisk/confbridge.conf; then cp -p %D/etc/asterisk/confbridge.conf-dist %D/etc/asterisk/confbridge.conf; fi
+@exec if test ! -e %D/etc/asterisk/config_test.conf; then cp -p %D/etc/asterisk/config_test.conf-dist %D/etc/asterisk/config_test.conf; fi
+@exec if test ! -e %D/etc/asterisk/console.conf; then cp -p %D/etc/asterisk/console.conf-dist %D/etc/asterisk/console.conf; fi
+@exec if test ! -e %D/etc/asterisk/extensions.lua; then cp -p %D/etc/asterisk/extensions.lua-dist %D/etc/asterisk/extensions.lua; fi
+@exec if test ! -e %D/etc/asterisk/extensions_minivm.conf; then cp -p %D/etc/asterisk/extensions_minivm.conf-dist %D/etc/asterisk/extensions_minivm.conf; fi
+@exec if test ! -e %D/etc/asterisk/jingle.conf; then cp -p %D/etc/asterisk/jingle.conf-dist %D/etc/asterisk/jingle.conf; fi
+@exec if test ! -e %D/etc/asterisk/minivm.conf; then cp -p %D/etc/asterisk/minivm.conf-dist %D/etc/asterisk/minivm.conf; fi
+@exec if test ! -e %D/etc/asterisk/motif.conf; then cp -p %D/etc/asterisk/motif.conf-dist %D/etc/asterisk/motif.conf; fi
+@exec if test ! -e %D/etc/asterisk/ooh323.conf; then cp -p %D/etc/asterisk/ooh323.conf-dist %D/etc/asterisk/motif.conf; fi
+@exec if test ! -e %D/etc/asterisk/phoneprov.conf; then cp -p %D/etc/asterisk/phoneprov.conf-dist %D/etc/asterisk/phoneprov.conf; fi
+@exec if test ! -e %D/etc/asterisk/queuerules.conf; then cp -p %D/etc/asterisk/queuerules.conf-dist %D/etc/asterisk/queuerules.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_ldap.conf; then cp -p %D/etc/asterisk/res_ldap.conf-dist %D/etc/asterisk/res_ldap.conf; fi
+@exec if test ! -e %D/etc/asterisk/unistim.conf; then cp -p %D/etc/asterisk/unistim.conf-dist %D/etc/asterisk/unistim.conf; fi
+@exec if test ! -e %D/etc/asterisk/adsi.conf; then cp -p %D/etc/asterisk/adsi.conf-dist %D/etc/asterisk/adsi.conf; fi
+@exec if test ! -e %D/etc/asterisk/agents.conf; then cp -p %D/etc/asterisk/agents.conf-dist %D/etc/asterisk/agents.conf; fi
+@exec if test ! -e %D/etc/asterisk/alarmreceiver.conf; then cp -p %D/etc/asterisk/alarmreceiver.conf-dist %D/etc/asterisk/alarmreceiver.conf; fi
+@exec if test ! -e %D/etc/asterisk/alsa.conf; then cp -p %D/etc/asterisk/alsa.conf-dist %D/etc/asterisk/alsa.conf; fi
+@exec if test ! -e %D/etc/asterisk/asterisk.adsi; then cp -p %D/etc/asterisk/asterisk.adsi-dist %D/etc/asterisk/asterisk.adsi; fi
+@exec if test ! -e %D/etc/asterisk/ccss.conf; then cp -p %D/etc/asterisk/ccss.conf-dist %D/etc/asterisk/ccss.conf; fi
+@exec if test ! -e %D/etc/asterisk/calendar.conf; then cp -p %D/etc/asterisk/calendar.conf-dist %D/etc/asterisk/calendar.conf; fi
+@exec if test ! -e %D/etc/asterisk/asterisk.conf; then cp -p %D/etc/asterisk/asterisk.conf-dist %D/etc/asterisk/asterisk.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr.conf; then cp -p %D/etc/asterisk/cdr.conf-dist %D/etc/asterisk/cdr.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_custom.conf; then cp -p %D/etc/asterisk/cdr_custom.conf-dist %D/etc/asterisk/cdr_custom.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_mysql.conf; then cp -p %D/etc/asterisk/cdr_mysql.conf-dist %D/etc/asterisk/cdr_mysql.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_manager.conf; then cp -p %D/etc/asterisk/cdr_manager.conf-dist %D/etc/asterisk/cdr_manager.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_odbc.conf; then cp -p %D/etc/asterisk/cdr_odbc.conf-dist %D/etc/asterisk/cdr_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_pgsql.conf; then cp -p %D/etc/asterisk/cdr_pgsql.conf-dist %D/etc/asterisk/cdr_pgsql.conf; fi
+@exec if test ! -e %D/etc/asterisk/cel_tds.conf; then cp -p %D/etc/asterisk/cel_tds.conf-dist %D/etc/asterisk/cel_tds.conf; fi
+@exec if test ! -e %D/etc/asterisk/cel_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cel_sqlite3_custom.conf-dist %D/etc/asterisk/cel_sqlite3_custom.conf; fi
+@exec if test ! -e %D/etc/asterisk/cel_pgsql.conf; then cp -p %D/etc/asterisk/cel_pgsql.conf-dist %D/etc/asterisk/cel_pgsql.conf; fi
+@exec if test ! -e %D/etc/asterisk/cel_odbc.conf; then cp -p %D/etc/asterisk/cel_odbc.conf-dist %D/etc/asterisk/cel_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/cel_custom.conf; then cp -p %D/etc/asterisk/cel_custom.conf-dist %D/etc/asterisk/cel_custom.conf; fi
+@exec if test ! -e %D/etc/asterisk/cel.conf; then cp -p %D/etc/asterisk/cel.conf-dist %D/etc/asterisk/cel.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_tds.conf; then cp -p %D/etc/asterisk/cdr_tds.conf-dist %D/etc/asterisk/cdr_tds.conf; fi
+@exec if test ! -e %D/etc/asterisk/codecs.conf; then cp -p %D/etc/asterisk/codecs.conf-dist %D/etc/asterisk/codecs.conf; fi
+@exec if test ! -e %D/etc/asterisk/dnsmgr.conf; then cp -p %D/etc/asterisk/dnsmgr.conf-dist %D/etc/asterisk/dnsmgr.conf; fi
+@exec if test ! -e %D/etc/asterisk/dundi.conf; then cp -p %D/etc/asterisk/dundi.conf-dist %D/etc/asterisk/dundi.conf; fi
+@exec if test ! -e %D/etc/asterisk/enum.conf; then cp -p %D/etc/asterisk/enum.conf-dist %D/etc/asterisk/enum.conf; fi
+@exec if test ! -e %D/etc/asterisk/extconfig.conf; then cp -p %D/etc/asterisk/extconfig.conf-dist %D/etc/asterisk/extconfig.conf; fi
+@exec if test ! -e %D/etc/asterisk/extensions.ael; then cp -p %D/etc/asterisk/extensions.ael-dist %D/etc/asterisk/extensions.ael; fi
+@exec if test ! -e %D/etc/asterisk/extensions.conf; then cp -p %D/etc/asterisk/extensions.conf-dist %D/etc/asterisk/extensions.conf; fi
+@exec if test ! -e %D/etc/asterisk/features.conf; then cp -p %D/etc/asterisk/features.conf-dist %D/etc/asterisk/features.conf; fi
+@exec if test ! -e %D/etc/asterisk/festival.conf; then cp -p %D/etc/asterisk/festival.conf-dist %D/etc/asterisk/festival.conf; fi
+@exec if test ! -e %D/etc/asterisk/iax.conf; then cp -p %D/etc/asterisk/iax.conf-dist %D/etc/asterisk/iax.conf; fi
+@exec if test ! -e %D/etc/asterisk/iaxprov.conf; then cp -p %D/etc/asterisk/iaxprov.conf-dist %D/etc/asterisk/iaxprov.conf; fi
+@exec if test ! -e %D/etc/asterisk/indications.conf; then cp -p %D/etc/asterisk/indications.conf-dist %D/etc/asterisk/indications.conf; fi
+@exec if test ! -e %D/etc/asterisk/logger.conf; then cp -p %D/etc/asterisk/logger.conf-dist %D/etc/asterisk/logger.conf; fi
+@exec if test ! -e %D/etc/asterisk/manager.conf; then cp -p %D/etc/asterisk/manager.conf-dist %D/etc/asterisk/manager.conf; fi
+@exec if test ! -e %D/etc/asterisk/meetme.conf; then cp -p %D/etc/asterisk/meetme.conf-dist %D/etc/asterisk/meetme.conf; fi
+@exec if test ! -e %D/etc/asterisk/mgcp.conf; then cp -p %D/etc/asterisk/mgcp.conf-dist %D/etc/asterisk/mgcp.conf; fi
+@exec if test ! -e %D/etc/asterisk/misdn.conf; then cp -p %D/etc/asterisk/misdn.conf-dist %D/etc/asterisk/misdn.conf; fi
+@exec if test ! -e %D/etc/asterisk/modules.conf; then cp -p %D/etc/asterisk/modules.conf-dist %D/etc/asterisk/modules.conf; fi
+@exec if test ! -e %D/etc/asterisk/musiconhold.conf; then cp -p %D/etc/asterisk/musiconhold.conf-dist %D/etc/asterisk/musiconhold.conf; fi
+@exec if test ! -e %D/etc/asterisk/osp.conf; then cp -p %D/etc/asterisk/osp.conf-dist %D/etc/asterisk/osp.conf; fi
+@exec if test ! -e %D/etc/asterisk/oss.conf; then cp -p %D/etc/asterisk/oss.conf-dist %D/etc/asterisk/oss.conf; fi
+@exec if test ! -e %D/etc/asterisk/phone.conf; then cp -p %D/etc/asterisk/phone.conf-dist %D/etc/asterisk/phone.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_fax.conf; then cp -p %D/etc/asterisk/res_fax.conf-dist %D/etc/asterisk/res_fax.conf; fi
+@exec if test ! -e %D/etc/asterisk/xmpp.conf; then cp -p %D/etc/asterisk/xmpp.conf-dist %D/etc/asterisk/xmpp.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_curl.conf; then cp -p %D/etc/asterisk/res_curl.conf-dist %D/etc/asterisk/res_curl.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_config_mysql.conf; then cp -p %D/etc/asterisk/res_config_mysql.conf-dist %D/etc/asterisk/res_config_mysql.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_config_sqlite.conf; then cp -p %D/etc/asterisk/res_config_sqlite.conf-dist %D/etc/asterisk/res_config_sqlite.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_config_sqlite3.conf; then cp -p %D/etc/asterisk/res_config_sqlite3.conf-dist %D/etc/asterisk/res_config_sqlite3.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_corosync.conf; then cp -p %D/etc/asterisk/res_corosync.conf-dist %D/etc/asterisk/res_corosync.conf; fi
+@exec if test ! -e %D/etc/asterisk/queues.conf; then cp -p %D/etc/asterisk/queues.conf-dist %D/etc/asterisk/queues.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_pktccops.conf; then cp -p %D/etc/asterisk/res_pktccops.conf-dist %D/etc/asterisk/res_pktccops.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_pgsql.conf; then cp -p %D/etc/asterisk/res_pgsql.conf-dist %D/etc/asterisk/res_pgsql.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_odbc.conf; then cp -p %D/etc/asterisk/res_odbc.conf-dist %D/etc/asterisk/res_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/rtp.conf; then cp -p %D/etc/asterisk/rtp.conf-dist %D/etc/asterisk/rtp.conf; fi
+@exec if test ! -e %D/etc/asterisk/sip.conf; then cp -p %D/etc/asterisk/sip.conf-dist %D/etc/asterisk/sip.conf; fi
+@exec if test ! -e %D/etc/asterisk/sip_notify.conf; then cp -p %D/etc/asterisk/sip_notify.conf-dist %D/etc/asterisk/sip_notify.conf; fi
+@exec if test ! -e %D/etc/asterisk/skinny.conf; then cp -p %D/etc/asterisk/skinny.conf-dist %D/etc/asterisk/skinny.conf; fi
+@exec if test ! -e %D/etc/asterisk/telcordia-1.adsi; then cp -p %D/etc/asterisk/telcordia-1.adsi-dist %D/etc/asterisk/telcordia-1.adsi; fi
+@exec if test ! -e %D/etc/asterisk/voicemail.conf; then cp -p %D/etc/asterisk/voicemail.conf-dist %D/etc/asterisk/voicemail.conf; fi
+@exec if test ! -e %D/etc/asterisk/vpb.conf; then cp -p %D/etc/asterisk/vpb.conf-dist %D/etc/asterisk/vpb.conf; fi
+@exec if test ! -e %D/etc/asterisk/chan_mobile.conf; then cp -p %D/etc/asterisk/chan_mobile.conf-dist %D/etc/asterisk/chan_mobile.conf; fi
+@exec if test ! -e %D/etc/asterisk/chan_dahdi.conf; then cp -p %D/etc/asterisk/chan_dahdi.conf-dist %D/etc/asterisk/chan_dahdi.conf; fi
+@exec if test ! -e %D/etc/asterisk/udptl.conf; then cp -p %D/etc/asterisk/udptl.conf-dist %D/etc/asterisk/udptl.conf; fi
+@exec if test ! -e %D/etc/asterisk/users.conf; then cp -p %D/etc/asterisk/users.conf-dist %D/etc/asterisk/users.conf; fi
+@exec if test ! -e %D/etc/asterisk/smdi.conf; then cp -p %D/etc/asterisk/smdi.conf-dist %D/etc/asterisk/smdi.conf; fi
+@exec if test ! -e %D/etc/asterisk/sla.conf; then cp -p %D/etc/asterisk/sla.conf-dist %D/etc/asterisk/sla.conf; fi
+@exec if test ! -e %D/etc/asterisk/say.conf; then cp -p %D/etc/asterisk/say.conf-dist %D/etc/asterisk/say.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_stun_monitor.conf; then cp -p %D/etc/asterisk/res_stun_monitor.conf-dist %D/etc/asterisk/res_stun_monitor.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_snmp.conf; then cp -p %D/etc/asterisk/res_snmp.conf-dist %D/etc/asterisk/res_snmp.conf; fi
+@exec if test ! -e %D/etc/asterisk/muted.conf; then cp -p %D/etc/asterisk/muted.conf-dist %D/etc/asterisk/muted.conf; fi
+@exec if test ! -e %D/etc/asterisk/jabber.conf; then cp -p %D/etc/asterisk/jabber.conf-dist %D/etc/asterisk/jabber.conf; fi
+@exec if test ! -e %D/etc/asterisk/http.conf; then cp -p %D/etc/asterisk/http.conf-dist %D/etc/asterisk/http.conf; fi
+@exec if test ! -e %D/etc/asterisk/h323.conf; then cp -p %D/etc/asterisk/h323.conf-dist %D/etc/asterisk/h323.conf; fi
+@exec if test ! -e %D/etc/asterisk/gtalk.conf; then cp -p %D/etc/asterisk/gtalk.conf-dist %D/etc/asterisk/gtalk.conf; fi
+@exec if test ! -e %D/etc/asterisk/func_odbc.conf; then cp -p %D/etc/asterisk/func_odbc.conf-dist %D/etc/asterisk/func_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/followme.conf; then cp -p %D/etc/asterisk/followme.conf-dist %D/etc/asterisk/followme.conf; fi
+@exec if test ! -e %D/etc/asterisk/app_mysql.conf; then cp -p %D/etc/asterisk/app_mysql.conf-dist %D/etc/asterisk/app_mysql.conf; fi
+@exec if test ! -e %D/etc/asterisk/app_skel.conf; then cp -p %D/etc/asterisk/app_skel.conf-dist %D/etc/asterisk/app_skel.conf; fi
+@exec if test ! -e %D/etc/asterisk/amd.conf; then cp -p %D/etc/asterisk/amd.conf-dist %D/etc/asterisk/amd.conf; fi
+include/asterisk/doxygen/architecture.h
+include/asterisk/doxygen/asterisk-git-howto.h
+include/asterisk/doxygen/commits.h
+include/asterisk/doxygen/licensing.h
+include/asterisk/doxygen/mantisworkflow.h
+include/asterisk/doxygen/releases.h
+include/asterisk/doxygen/reviewboard.h
+include/asterisk/_private.h
+include/asterisk/aoc.h
+include/asterisk/ast_version.h
+include/asterisk/autochan.h
+include/asterisk/calendar.h
+include/asterisk/ccss.h
+include/asterisk/cel.h
+include/asterisk/celt.h
+include/asterisk/channel_internal.h
+include/asterisk/channelstate.h
+include/asterisk/config_options.h
+include/asterisk/data.h
+include/asterisk/event.h
+include/asterisk/event_defs.h
+include/asterisk/extconf.h
+include/asterisk/frame_defs.h
+include/asterisk/framehook.h
+include/asterisk/format.h
+include/asterisk/format_cap.h
+include/asterisk/format_pref.h
+include/asterisk/fskmodem_float.h
+include/asterisk/fskmodem_int.h
+include/asterisk/hashtab.h
+include/asterisk/http_websocket.h
+include/asterisk/message.h
+include/asterisk/mod_format.h
+include/asterisk/netsock2.h
+include/asterisk/network.h
+include/asterisk/optional_api.h
+include/asterisk/pktccops.h
+include/asterisk/presencestate.h
+include/asterisk/pval.h
+include/asterisk/res_fax.h
+include/asterisk/res_srtp.h
+include/asterisk/rtp_engine.h
+include/asterisk/select.h
+include/asterisk/security_events.h
+include/asterisk/security_events_defs.h
+include/asterisk/silk.h
+include/asterisk/sip_api.h
+include/asterisk/stun.h
+include/asterisk/syslog.h
+include/asterisk/tcptls.h
+include/asterisk.h
+include/asterisk/abstract_jb.h
+include/asterisk/acl.h
+include/asterisk/adsi.h
+include/asterisk/ael_structs.h
+include/asterisk/agi.h
+include/asterisk/alaw.h
+include/asterisk/app.h
+include/asterisk/ast_expr.h
+include/asterisk/astdb.h
+include/asterisk/astmm.h
+include/asterisk/astobj.h
+include/asterisk/astobj2.h
+include/asterisk/astosp.h
+include/asterisk/audiohook.h
+include/asterisk/autoconfig.h
+include/asterisk/bridging.h
+include/asterisk/bridging_features.h
+include/asterisk/bridging_technology.h
+include/asterisk/build.h
+include/asterisk/buildinfo.h
+include/asterisk/buildopts.h
+include/asterisk/callerid.h
+include/asterisk/causes.h
+include/asterisk/cdr.h
+include/asterisk/channel.h
+include/asterisk/chanvars.h
+include/asterisk/cli.h
+include/asterisk/compat.h
+include/asterisk/compiler.h
+include/asterisk/config.h
+include/asterisk/crypto.h
+include/asterisk/datastore.h
+include/asterisk/devicestate.h
+include/asterisk/dial.h
+include/asterisk/dlinkedlists.h
+include/asterisk/dns.h
+include/asterisk/dnsmgr.h
+include/asterisk/doxyref.h
+include/asterisk/dsp.h
+include/asterisk/dundi.h
+include/asterisk/endian.h
+include/asterisk/enum.h
+include/asterisk/features.h
+include/asterisk/file.h
+include/asterisk/frame.h
+include/asterisk/fskmodem.h
+include/asterisk/global_datastores.h
+include/asterisk/heap.h
+include/asterisk/http.h
+include/asterisk/image.h
+include/asterisk/indications.h
+include/asterisk/inline_api.h
+include/asterisk/io.h
+include/asterisk/jabber.h
+include/asterisk/jingle.h
+include/asterisk/linkedlists.h
+include/asterisk/localtime.h
+include/asterisk/lock.h
+include/asterisk/logger.h
+include/asterisk/manager.h
+include/asterisk/md5.h
+include/asterisk/module.h
+include/asterisk/monitor.h
+include/asterisk/musiconhold.h
+include/asterisk/netsock.h
+include/asterisk/options.h
+include/asterisk/paths.h
+include/asterisk/pbx.h
+include/asterisk/plc.h
+include/asterisk/poll-compat.h
+include/asterisk/privacy.h
+include/asterisk/res_odbc.h
+include/asterisk/say.h
+include/asterisk/sched.h
+include/asterisk/sha1.h
+include/asterisk/slin.h
+include/asterisk/slinfactory.h
+include/asterisk/smdi.h
+include/asterisk/speech.h
+include/asterisk/srv.h
+include/asterisk/stringfields.h
+include/asterisk/strings.h
+include/asterisk/taskprocessor.h
+include/asterisk/tdd.h
+include/asterisk/term.h
+include/asterisk/test.h
+include/asterisk/threadstorage.h
+include/asterisk/time.h
+include/asterisk/timing.h
+include/asterisk/transcap.h
+include/asterisk/translate.h
+include/asterisk/udptl.h
+include/asterisk/ulaw.h
+include/asterisk/unaligned.h
+include/asterisk/utils.h
+include/asterisk/version.h
+include/asterisk/xml.h
+include/asterisk/xmldoc.h
+include/asterisk/xmpp.h
+lib/asterisk/modules/app_celgenuserevent.so
+lib/asterisk/modules/app_confbridge.so
+lib/asterisk/modules/app_minivm.so
+%%WITH_MYSQL%%lib/asterisk/modules/app_mysql.so
+lib/asterisk/modules/app_originate.so
+lib/asterisk/modules/app_page.so
+lib/asterisk/modules/app_playtones.so
+lib/asterisk/modules/app_readexten.so
+lib/asterisk/modules/app_waituntil.so
+lib/asterisk/modules/bridge_builtin_features.so
+lib/asterisk/modules/bridge_multiplexed.so
+lib/asterisk/modules/bridge_simple.so
+lib/asterisk/modules/bridge_softmix.so
+%%WITH_ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
+lib/asterisk/modules/chan_bridge.so
+%%WITH_XMPP%%lib/asterisk/modules/chan_motif.so
+lib/asterisk/modules/chan_unistim.so
+lib/asterisk/modules/codec_g722.so
+lib/asterisk/modules/format_g719.so
+lib/asterisk/modules/format_siren14.so
+lib/asterisk/modules/format_siren7.so
+lib/asterisk/modules/func_aes.so
+lib/asterisk/modules/func_audiohookinherit.so
+lib/asterisk/modules/func_blacklist.so
+lib/asterisk/modules/func_config.so
+lib/asterisk/modules/func_devstate.so
+lib/asterisk/modules/func_dialgroup.so
+lib/asterisk/modules/func_dialplan.so
+lib/asterisk/modules/func_extstate.so
+lib/asterisk/modules/func_hangupcause.so
+lib/asterisk/modules/func_iconv.so
+lib/asterisk/modules/func_jitterbuffer.so
+lib/asterisk/modules/func_lock.so
+lib/asterisk/modules/func_module.so
+lib/asterisk/modules/func_presencestate.so
+lib/asterisk/modules/func_shell.so
+lib/asterisk/modules/func_speex.so
+lib/asterisk/modules/func_sprintf.so
+lib/asterisk/modules/func_sysinfo.so
+lib/asterisk/modules/func_version.so
+lib/asterisk/modules/func_vmcount.so
+lib/asterisk/modules/func_volume.so
+lib/asterisk/modules/res_ael_share.so
+lib/asterisk/modules/res_clialiases.so
+%%WITH_CURL%%lib/asterisk/modules/res_curl.so
+%%WITH_CURL%%lib/asterisk/modules/res_config_curl.so
+%%WITH_LDAP%%lib/asterisk/modules/res_config_ldap.so
+%%WITH_SQLITE%%lib/asterisk/modules/res_config_sqlite.so
+lib/asterisk/modules/res_config_sqlite3.so
+lib/asterisk/modules/res_format_attr_celt.so
+lib/asterisk/modules/res_format_attr_h263.so
+lib/asterisk/modules/res_format_attr_h264.so
+lib/asterisk/modules/res_format_attr_silk.so
+lib/asterisk/modules/res_http_websocket.so
+lib/asterisk/modules/res_limit.so
+lib/asterisk/modules/res_phoneprov.so
+lib/asterisk/modules/res_realtime.so
+%%WITH_SRTP%%lib/asterisk/modules/res_srtp.so
+%%WITH_DAHDI%%lib/asterisk/modules/res_timing_dahdi.so
+lib/asterisk/modules/res_timing_pthread.so
+%%WITH_XMPP%%lib/asterisk/modules/res_xmpp.so
+lib/asterisk/modules/app_adsiprog.so
+lib/asterisk/modules/app_alarmreceiver.so
+lib/asterisk/modules/app_amd.so
+lib/asterisk/modules/app_authenticate.so
+lib/asterisk/modules/app_cdr.so
+lib/asterisk/modules/app_chanisavail.so
+lib/asterisk/modules/app_channelredirect.so
+lib/asterisk/modules/app_chanspy.so
+lib/asterisk/modules/app_controlplayback.so
+lib/asterisk/modules/app_db.so
+lib/asterisk/modules/app_dial.so
+lib/asterisk/modules/app_dictate.so
+lib/asterisk/modules/app_directed_pickup.so
+lib/asterisk/modules/app_directory.so
+lib/asterisk/modules/app_disa.so
+lib/asterisk/modules/app_dumpchan.so
+lib/asterisk/modules/app_echo.so
+lib/asterisk/modules/app_exec.so
+lib/asterisk/modules/app_externalivr.so
+lib/asterisk/modules/app_festival.so
+lib/asterisk/modules/app_followme.so
+lib/asterisk/modules/app_forkcdr.so
+lib/asterisk/modules/app_getcpeid.so
+lib/asterisk/modules/app_ices.so
+lib/asterisk/modules/app_image.so
+lib/asterisk/modules/app_macro.so
+lib/asterisk/modules/app_milliwatt.so
+lib/asterisk/modules/app_mixmonitor.so
+lib/asterisk/modules/app_morsecode.so
+lib/asterisk/modules/app_mp3.so
+lib/asterisk/modules/app_nbscat.so
+lib/asterisk/modules/app_parkandannounce.so
+lib/asterisk/modules/app_playback.so
+lib/asterisk/modules/app_privacy.so
+lib/asterisk/modules/app_queue.so
+lib/asterisk/modules/app_read.so
+lib/asterisk/modules/app_record.so
+lib/asterisk/modules/app_sayunixtime.so
+lib/asterisk/modules/app_senddtmf.so
+lib/asterisk/modules/app_sendtext.so
+lib/asterisk/modules/app_sms.so
+lib/asterisk/modules/app_softhangup.so
+lib/asterisk/modules/app_speech_utils.so
+lib/asterisk/modules/app_stack.so
+lib/asterisk/modules/app_system.so
+lib/asterisk/modules/app_talkdetect.so
+lib/asterisk/modules/app_test.so
+lib/asterisk/modules/app_transfer.so
+lib/asterisk/modules/app_url.so
+lib/asterisk/modules/app_userevent.so
+lib/asterisk/modules/app_verbose.so
+lib/asterisk/modules/app_voicemail.so
+lib/asterisk/modules/app_waitforring.so
+lib/asterisk/modules/app_waitforsilence.so
+lib/asterisk/modules/app_while.so
+lib/asterisk/modules/app_zapateller.so
+lib/asterisk/modules/cdr_csv.so
+lib/asterisk/modules/cdr_custom.so
+lib/asterisk/modules/cdr_manager.so
+%%WITH_MYSQL%%lib/asterisk/modules/cdr_mysql.so
+%%WITH_PGSQL%%lib/asterisk/modules/cdr_pgsql.so
+%%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
+lib/asterisk/modules/cdr_sqlite3_custom.so
+lib/asterisk/modules/cdr_syslog.so
+lib/asterisk/modules/cel_custom.so
+lib/asterisk/modules/cel_manager.so
+%%WITH_ODBC%%lib/asterisk/modules/cel_odbc.so
+%%WITH_PGSQL%%lib/asterisk/modules/cel_pgsql.so
+%%WITH_RADIUS%%lib/asterisk/modules/cel_radius.so
+lib/asterisk/modules/cel_sqlite3_custom.so
+%%WITH_FREETDS%%lib/asterisk/modules/cel_tds.so
+lib/asterisk/modules/chan_agent.so
+lib/asterisk/modules/chan_iax2.so
+lib/asterisk/modules/chan_local.so
+lib/asterisk/modules/chan_mgcp.so
+lib/asterisk/modules/chan_multicast_rtp.so
+%%WITH_OOH323%%lib/asterisk/modules/chan_ooh323.so
+lib/asterisk/modules/chan_oss.so
+lib/asterisk/modules/chan_sip.so
+lib/asterisk/modules/chan_skinny.so
+lib/asterisk/modules/codec_a_mu.so
+lib/asterisk/modules/codec_adpcm.so
+lib/asterisk/modules/codec_alaw.so
+lib/asterisk/modules/codec_g726.so
+%%WITH_GSM%%lib/asterisk/modules/codec_gsm.so
+lib/asterisk/modules/codec_ilbc.so
+lib/asterisk/modules/codec_lpc10.so
+lib/asterisk/modules/codec_resample.so
+lib/asterisk/modules/codec_speex.so
+lib/asterisk/modules/codec_ulaw.so
+lib/asterisk/modules/format_g723.so
+lib/asterisk/modules/format_g726.so
+lib/asterisk/modules/format_g729.so
+lib/asterisk/modules/format_gsm.so
+lib/asterisk/modules/format_h263.so
+lib/asterisk/modules/format_h264.so
+lib/asterisk/modules/format_ilbc.so
+lib/asterisk/modules/format_jpeg.so
+%%WITH_VORBIS%%lib/asterisk/modules/format_ogg_vorbis.so
+lib/asterisk/modules/format_pcm.so
+lib/asterisk/modules/format_sln.so
+lib/asterisk/modules/format_vox.so
+lib/asterisk/modules/format_wav.so
+lib/asterisk/modules/format_wav_gsm.so
+lib/asterisk/modules/func_base64.so
+lib/asterisk/modules/func_callcompletion.so
+lib/asterisk/modules/func_callerid.so
+lib/asterisk/modules/func_cdr.so
+lib/asterisk/modules/func_channel.so
+%%WITH_CURL%%lib/asterisk/modules/func_curl.so
+lib/asterisk/modules/func_cut.so
+lib/asterisk/modules/func_db.so
+lib/asterisk/modules/func_enum.so
+lib/asterisk/modules/func_env.so
+lib/asterisk/modules/func_frame_trace.so
+lib/asterisk/modules/func_global.so
+lib/asterisk/modules/func_groupcount.so
+lib/asterisk/modules/func_logic.so
+lib/asterisk/modules/func_math.so
+lib/asterisk/modules/func_md5.so
+%%WITH_ODBC%%lib/asterisk/modules/func_odbc.so
+lib/asterisk/modules/func_pitchshift.so
+lib/asterisk/modules/func_rand.so
+lib/asterisk/modules/func_realtime.so
+lib/asterisk/modules/func_sha1.so
+lib/asterisk/modules/func_srv.so
+lib/asterisk/modules/func_strings.so
+lib/asterisk/modules/func_timeout.so
+lib/asterisk/modules/func_uri.so
+lib/asterisk/modules/pbx_ael.so
+lib/asterisk/modules/pbx_config.so
+lib/asterisk/modules/pbx_dundi.so
+lib/asterisk/modules/pbx_loopback.so
+lib/asterisk/modules/pbx_realtime.so
+lib/asterisk/modules/pbx_spool.so
+lib/asterisk/modules/res_adsi.so
+lib/asterisk/modules/res_agi.so
+lib/asterisk/modules/res_calendar.so
+%%WITH_EXCHANGE%%lib/asterisk/modules/res_calendar_ews.so
+lib/asterisk/modules/res_clioriginate.so
+%%WITH_MYSQL%%lib/asterisk/modules/res_config_mysql.so
+%%WITH_PGSQL%%lib/asterisk/modules/res_config_pgsql.so
+lib/asterisk/modules/res_convert.so
+lib/asterisk/modules/res_crypto.so
+lib/asterisk/modules/res_fax.so
+%%WITH_SPANDSP%%lib/asterisk/modules/res_fax_spandsp.so
+lib/asterisk/modules/res_monitor.so
+lib/asterisk/modules/res_musiconhold.so
+lib/asterisk/modules/res_mutestream.so
+lib/asterisk/modules/res_rtp_asterisk.so
+lib/asterisk/modules/res_rtp_multicast.so
+lib/asterisk/modules/res_security_log.so
+lib/asterisk/modules/res_stun_monitor.so
+lib/asterisk/modules/res_smdi.so
+%%WITH_SNMP%%lib/asterisk/modules/res_snmp.so
+lib/asterisk/modules/res_speech.so
+lib/libasteriskssl.so
+lib/libasteriskssl.so.1
+sbin/astcanary
+sbin/astdb2bdb
+sbin/astdb2sqlite3
+sbin/asterisk
+sbin/astgenkey
+sbin/autosupport
+sbin/rasterisk
+sbin/safe_asterisk
+share/asterisk/agi-bin/agi-test.agi
+share/asterisk/agi-bin/eagi-sphinx-test
+share/asterisk/agi-bin/eagi-test
+share/asterisk/agi-bin/jukebox.agi
+share/asterisk/documentation/appdocsxml.dtd
+share/asterisk/documentation/core-en_US.xml
+share/asterisk/moh/.asterisk-moh-opsound-wav-2.03
+share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
+share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
+share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
+share/asterisk/moh/macroform-cold_day.wav
+share/asterisk/moh/macroform-robot_dity.wav
+share/asterisk/moh/macroform-the_simplicity.wav
+share/asterisk/moh/manolo_camp-morning_coffee.wav
+share/asterisk/moh/reno_project-system.wav
+share/asterisk/phoneprov/000000000000-directory.xml
+share/asterisk/phoneprov/000000000000-phone.cfg
+share/asterisk/phoneprov/000000000000.cfg
+share/asterisk/phoneprov/polycom.xml
+share/asterisk/phoneprov/polycom_line.xml
+share/asterisk/phoneprov/snom-mac.xml
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.22
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.22
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.22
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.22
+share/asterisk/sounds/en/ascending-2tone.gsm
+share/asterisk/sounds/en/conf-adminmenu-162.gsm
+share/asterisk/sounds/en/conf-extended.gsm
+share/asterisk/sounds/en/conf-nonextended.gsm
+share/asterisk/sounds/en/conf-now-muted.gsm
+share/asterisk/sounds/en/conf-now-recording.gsm
+share/asterisk/sounds/en/conf-now-unmuted.gsm
+share/asterisk/sounds/en/conf-roll-callcomplete.gsm
+share/asterisk/sounds/en/conf-usermenu-162.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-a.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-b.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-c.gsm
+share/asterisk/sounds/en/confbridge-begin-leader.gsm
+share/asterisk/sounds/en/confbridge-conf-begin.gsm
+share/asterisk/sounds/en/confbridge-conf-end.gsm
+share/asterisk/sounds/en/confbridge-dec-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-dec-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-dec-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-dec-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-has-joined.gsm
+share/asterisk/sounds/en/confbridge-has-left.gsm
+share/asterisk/sounds/en/confbridge-inc-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-inc-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-inc-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-inc-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-invalid.gsm
+share/asterisk/sounds/en/confbridge-join.gsm
+share/asterisk/sounds/en/confbridge-leave-in.gsm
+share/asterisk/sounds/en/confbridge-leave-out.gsm
+share/asterisk/sounds/en/confbridge-leave.gsm
+share/asterisk/sounds/en/confbridge-lock-extended.gsm
+share/asterisk/sounds/en/confbridge-lock-in.gsm
+share/asterisk/sounds/en/confbridge-lock-no-join.gsm
+share/asterisk/sounds/en/confbridge-lock-out.gsm
+share/asterisk/sounds/en/confbridge-locked.gsm
+share/asterisk/sounds/en/confbridge-menu-exit-in.gsm
+share/asterisk/sounds/en/confbridge-menu-exit-out.gsm
+share/asterisk/sounds/en/confbridge-mute-extended.gsm
+share/asterisk/sounds/en/confbridge-mute-in.gsm
+share/asterisk/sounds/en/confbridge-mute-out.gsm
+share/asterisk/sounds/en/confbridge-muted.gsm
+share/asterisk/sounds/en/confbridge-only-one.gsm
+share/asterisk/sounds/en/confbridge-only-participant.gsm
+share/asterisk/sounds/en/confbridge-participants.gsm
+share/asterisk/sounds/en/confbridge-pin-bad.gsm
+share/asterisk/sounds/en/confbridge-pin.gsm
+share/asterisk/sounds/en/confbridge-remove-last-in.gsm
+share/asterisk/sounds/en/confbridge-remove-last-out.gsm
+share/asterisk/sounds/en/confbridge-removed.gsm
+share/asterisk/sounds/en/confbridge-rest-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-rest-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-rest-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-rest-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-there-are.gsm
+share/asterisk/sounds/en/confbridge-unlocked.gsm
+share/asterisk/sounds/en/confbridge-unmuted.gsm
+share/asterisk/sounds/en/descending-2tone.gsm
+share/asterisk/sounds/en/spy-dahdi.gsm
+share/asterisk/sounds/en/vm-Urgent.gsm
+share/asterisk/sounds/en/vm-forward-multiple.gsm
+share/asterisk/sounds/en/vm-invalid-password.gsm
+share/asterisk/sounds/en/vm-marked-nonurgent.gsm
+share/asterisk/sounds/en/vm-marked-urgent.gsm
+share/asterisk/sounds/en/vm-pls-try-again.gsm
+share/asterisk/sounds/en/vm-record-prepend.gsm
+share/asterisk/sounds/en/vm-review-nonurgent.gsm
+share/asterisk/sounds/en/vm-review-urgent.gsm
+share/asterisk/sounds/en/dir-usingkeypad.gsm
+share/asterisk/sounds/en/dir-welcome.gsm
+share/asterisk/sounds/en/agent-alreadyon.gsm
+share/asterisk/sounds/en/agent-incorrect.gsm
+share/asterisk/sounds/en/agent-loggedoff.gsm
+share/asterisk/sounds/en/agent-loginok.gsm
+share/asterisk/sounds/en/agent-newlocation.gsm
+share/asterisk/sounds/en/agent-pass.gsm
+share/asterisk/sounds/en/agent-user.gsm
+share/asterisk/sounds/en/auth-incorrect.gsm
+share/asterisk/sounds/en/auth-thankyou.gsm
+share/asterisk/sounds/en/beep.gsm
+share/asterisk/sounds/en/beeperr.gsm
+share/asterisk/sounds/en/conf-adminmenu.gsm
+share/asterisk/sounds/en/conf-enteringno.gsm
+share/asterisk/sounds/en/conf-errormenu.gsm
+share/asterisk/sounds/en/conf-getchannel.gsm
+share/asterisk/sounds/en/conf-getconfno.gsm
+share/asterisk/sounds/en/conf-getpin.gsm
+share/asterisk/sounds/en/conf-hasjoin.gsm
+share/asterisk/sounds/en/conf-hasleft.gsm
+share/asterisk/sounds/en/conf-invalid.gsm
+share/asterisk/sounds/en/conf-invalidpin.gsm
+share/asterisk/sounds/en/conf-kicked.gsm
+share/asterisk/sounds/en/conf-leaderhasleft.gsm
+share/asterisk/sounds/en/conf-locked.gsm
+share/asterisk/sounds/en/conf-lockednow.gsm
+share/asterisk/sounds/en/conf-muted.gsm
+share/asterisk/sounds/en/conf-noempty.gsm
+share/asterisk/sounds/en/conf-onlyone.gsm
+share/asterisk/sounds/en/conf-onlyperson.gsm
+share/asterisk/sounds/en/conf-otherinparty.gsm
+share/asterisk/sounds/en/conf-placeintoconf.gsm
+share/asterisk/sounds/en/conf-thereare.gsm
+share/asterisk/sounds/en/conf-unlockednow.gsm
+share/asterisk/sounds/en/conf-unmuted.gsm
+share/asterisk/sounds/en/conf-usermenu.gsm
+share/asterisk/sounds/en/conf-userswilljoin.gsm
+share/asterisk/sounds/en/conf-userwilljoin.gsm
+share/asterisk/sounds/en/conf-waitforleader.gsm
+share/asterisk/sounds/en/core-sounds-en.txt
+share/asterisk/sounds/en/demo-abouttotry.gsm
+share/asterisk/sounds/en/demo-congrats.gsm
+share/asterisk/sounds/en/demo-echodone.gsm
+share/asterisk/sounds/en/demo-echotest.gsm
+share/asterisk/sounds/en/demo-enterkeywords.gsm
+share/asterisk/sounds/en/demo-instruct.gsm
+share/asterisk/sounds/en/demo-moreinfo.gsm
+share/asterisk/sounds/en/demo-nogo.gsm
+share/asterisk/sounds/en/demo-nomatch.gsm
+share/asterisk/sounds/en/demo-thanks.gsm
+share/asterisk/sounds/en/dictate/both_help.gsm
+share/asterisk/sounds/en/dictate/enter_filename.gsm
+share/asterisk/sounds/en/dictate/forhelp.gsm
+share/asterisk/sounds/en/dictate/pause.gsm
+share/asterisk/sounds/en/dictate/paused.gsm
+share/asterisk/sounds/en/dictate/play_help.gsm
+share/asterisk/sounds/en/dictate/playback.gsm
+share/asterisk/sounds/en/dictate/playback_mode.gsm
+share/asterisk/sounds/en/dictate/record.gsm
+share/asterisk/sounds/en/dictate/record_help.gsm
+share/asterisk/sounds/en/dictate/record_mode.gsm
+share/asterisk/sounds/en/dictate/truncating_audio.gsm
+share/asterisk/sounds/en/digits/0.gsm
+share/asterisk/sounds/en/digits/1.gsm
+share/asterisk/sounds/en/digits/10.gsm
+share/asterisk/sounds/en/digits/11.gsm
+share/asterisk/sounds/en/digits/12.gsm
+share/asterisk/sounds/en/digits/13.gsm
+share/asterisk/sounds/en/digits/14.gsm
+share/asterisk/sounds/en/digits/15.gsm
+share/asterisk/sounds/en/digits/16.gsm
+share/asterisk/sounds/en/digits/17.gsm
+share/asterisk/sounds/en/digits/18.gsm
+share/asterisk/sounds/en/digits/19.gsm
+share/asterisk/sounds/en/digits/2.gsm
+share/asterisk/sounds/en/digits/20.gsm
+share/asterisk/sounds/en/digits/3.gsm
+share/asterisk/sounds/en/digits/30.gsm
+share/asterisk/sounds/en/digits/4.gsm
+share/asterisk/sounds/en/digits/40.gsm
+share/asterisk/sounds/en/digits/5.gsm
+share/asterisk/sounds/en/digits/50.gsm
+share/asterisk/sounds/en/digits/6.gsm
+share/asterisk/sounds/en/digits/60.gsm
+share/asterisk/sounds/en/digits/7.gsm
+share/asterisk/sounds/en/digits/70.gsm
+share/asterisk/sounds/en/digits/8.gsm
+share/asterisk/sounds/en/digits/80.gsm
+share/asterisk/sounds/en/digits/9.gsm
+share/asterisk/sounds/en/digits/90.gsm
+share/asterisk/sounds/en/digits/a-m.gsm
+share/asterisk/sounds/en/digits/at.gsm
+share/asterisk/sounds/en/digits/billion.gsm
+share/asterisk/sounds/en/digits/day-0.gsm
+share/asterisk/sounds/en/digits/day-1.gsm
+share/asterisk/sounds/en/digits/day-2.gsm
+share/asterisk/sounds/en/digits/day-3.gsm
+share/asterisk/sounds/en/digits/day-4.gsm
+share/asterisk/sounds/en/digits/day-5.gsm
+share/asterisk/sounds/en/digits/day-6.gsm
+share/asterisk/sounds/en/digits/dollars.gsm
+share/asterisk/sounds/en/digits/h-1.gsm
+share/asterisk/sounds/en/digits/h-10.gsm
+share/asterisk/sounds/en/digits/h-11.gsm
+share/asterisk/sounds/en/digits/h-12.gsm
+share/asterisk/sounds/en/digits/h-13.gsm
+share/asterisk/sounds/en/digits/h-14.gsm
+share/asterisk/sounds/en/digits/h-15.gsm
+share/asterisk/sounds/en/digits/h-16.gsm
+share/asterisk/sounds/en/digits/h-17.gsm
+share/asterisk/sounds/en/digits/h-18.gsm
+share/asterisk/sounds/en/digits/h-19.gsm
+share/asterisk/sounds/en/digits/h-2.gsm
+share/asterisk/sounds/en/digits/h-20.gsm
+share/asterisk/sounds/en/digits/h-3.gsm
+share/asterisk/sounds/en/digits/h-30.gsm
+share/asterisk/sounds/en/digits/h-4.gsm
+share/asterisk/sounds/en/digits/h-40.gsm
+share/asterisk/sounds/en/digits/h-5.gsm
+share/asterisk/sounds/en/digits/h-50.gsm
+share/asterisk/sounds/en/digits/h-6.gsm
+share/asterisk/sounds/en/digits/h-60.gsm
+share/asterisk/sounds/en/digits/h-7.gsm
+share/asterisk/sounds/en/digits/h-70.gsm
+share/asterisk/sounds/en/digits/h-8.gsm
+share/asterisk/sounds/en/digits/h-80.gsm
+share/asterisk/sounds/en/digits/h-9.gsm
+share/asterisk/sounds/en/digits/h-90.gsm
+share/asterisk/sounds/en/digits/h-billion.gsm
+share/asterisk/sounds/en/digits/h-hundred.gsm
+share/asterisk/sounds/en/digits/h-million.gsm
+share/asterisk/sounds/en/digits/h-thousand.gsm
+share/asterisk/sounds/en/digits/hundred.gsm
+share/asterisk/sounds/en/digits/million.gsm
+share/asterisk/sounds/en/digits/minus.gsm
+share/asterisk/sounds/en/digits/mon-0.gsm
+share/asterisk/sounds/en/digits/mon-1.gsm
+share/asterisk/sounds/en/digits/mon-10.gsm
+share/asterisk/sounds/en/digits/mon-11.gsm
+share/asterisk/sounds/en/digits/mon-2.gsm
+share/asterisk/sounds/en/digits/mon-3.gsm
+share/asterisk/sounds/en/digits/mon-4.gsm
+share/asterisk/sounds/en/digits/mon-5.gsm
+share/asterisk/sounds/en/digits/mon-6.gsm
+share/asterisk/sounds/en/digits/mon-7.gsm
+share/asterisk/sounds/en/digits/mon-8.gsm
+share/asterisk/sounds/en/digits/mon-9.gsm
+share/asterisk/sounds/en/digits/oclock.gsm
+share/asterisk/sounds/en/digits/oh.gsm
+share/asterisk/sounds/en/digits/p-m.gsm
+share/asterisk/sounds/en/digits/pound.gsm
+share/asterisk/sounds/en/digits/star.gsm
+share/asterisk/sounds/en/digits/thousand.gsm
+share/asterisk/sounds/en/digits/today.gsm
+share/asterisk/sounds/en/digits/tomorrow.gsm
+share/asterisk/sounds/en/digits/yesterday.gsm
+share/asterisk/sounds/en/dir-first.gsm
+share/asterisk/sounds/en/dir-firstlast.gsm
+share/asterisk/sounds/en/dir-instr.gsm
+share/asterisk/sounds/en/dir-intro-fn.gsm
+share/asterisk/sounds/en/dir-intro.gsm
+share/asterisk/sounds/en/dir-last.gsm
+share/asterisk/sounds/en/dir-multi1.gsm
+share/asterisk/sounds/en/dir-multi2.gsm
+share/asterisk/sounds/en/dir-multi3.gsm
+share/asterisk/sounds/en/dir-multi9.gsm
+share/asterisk/sounds/en/dir-nomatch.gsm
+share/asterisk/sounds/en/dir-nomore.gsm
+share/asterisk/sounds/en/dir-pls-enter.gsm
+share/asterisk/sounds/en/followme/call-from.gsm
+share/asterisk/sounds/en/followme/no-recording.gsm
+share/asterisk/sounds/en/followme/options.gsm
+share/asterisk/sounds/en/followme/pls-hold-while-try.gsm
+share/asterisk/sounds/en/followme/sorry.gsm
+share/asterisk/sounds/en/followme/status.gsm
+share/asterisk/sounds/en/hello-world.gsm
+share/asterisk/sounds/en/hours.gsm
+share/asterisk/sounds/en/invalid.gsm
+share/asterisk/sounds/en/letters/a.gsm
+share/asterisk/sounds/en/letters/ascii123.gsm
+share/asterisk/sounds/en/letters/ascii124.gsm
+share/asterisk/sounds/en/letters/ascii125.gsm
+share/asterisk/sounds/en/letters/ascii126.gsm
+share/asterisk/sounds/en/letters/ascii34.gsm
+share/asterisk/sounds/en/letters/ascii36.gsm
+share/asterisk/sounds/en/letters/ascii37.gsm
+share/asterisk/sounds/en/letters/ascii38.gsm
+share/asterisk/sounds/en/letters/ascii39.gsm
+share/asterisk/sounds/en/letters/ascii40.gsm
+share/asterisk/sounds/en/letters/ascii41.gsm
+share/asterisk/sounds/en/letters/ascii42.gsm
+share/asterisk/sounds/en/letters/ascii44.gsm
+share/asterisk/sounds/en/letters/ascii58.gsm
+share/asterisk/sounds/en/letters/ascii59.gsm
+share/asterisk/sounds/en/letters/ascii60.gsm
+share/asterisk/sounds/en/letters/ascii62.gsm
+share/asterisk/sounds/en/letters/ascii63.gsm
+share/asterisk/sounds/en/letters/ascii91.gsm
+share/asterisk/sounds/en/letters/ascii92.gsm
+share/asterisk/sounds/en/letters/ascii93.gsm
+share/asterisk/sounds/en/letters/ascii94.gsm
+share/asterisk/sounds/en/letters/ascii95.gsm
+share/asterisk/sounds/en/letters/ascii96.gsm
+share/asterisk/sounds/en/letters/asterisk.gsm
+share/asterisk/sounds/en/letters/at.gsm
+share/asterisk/sounds/en/letters/b.gsm
+share/asterisk/sounds/en/letters/c.gsm
+share/asterisk/sounds/en/letters/d.gsm
+share/asterisk/sounds/en/letters/dash.gsm
+share/asterisk/sounds/en/letters/dollar.gsm
+share/asterisk/sounds/en/letters/dot.gsm
+share/asterisk/sounds/en/letters/e.gsm
+share/asterisk/sounds/en/letters/equals.gsm
+share/asterisk/sounds/en/letters/exclaimation-point.gsm
+share/asterisk/sounds/en/letters/f.gsm
+share/asterisk/sounds/en/letters/g.gsm
+share/asterisk/sounds/en/letters/h.gsm
+share/asterisk/sounds/en/letters/i.gsm
+share/asterisk/sounds/en/letters/j.gsm
+share/asterisk/sounds/en/letters/k.gsm
+share/asterisk/sounds/en/letters/l.gsm
+share/asterisk/sounds/en/letters/m.gsm
+share/asterisk/sounds/en/letters/n.gsm
+share/asterisk/sounds/en/letters/o.gsm
+share/asterisk/sounds/en/letters/p.gsm
+share/asterisk/sounds/en/letters/plus.gsm
+share/asterisk/sounds/en/letters/q.gsm
+share/asterisk/sounds/en/letters/r.gsm
+share/asterisk/sounds/en/letters/s.gsm
+share/asterisk/sounds/en/letters/slash.gsm
+share/asterisk/sounds/en/letters/space.gsm
+share/asterisk/sounds/en/letters/t.gsm
+share/asterisk/sounds/en/letters/u.gsm
+share/asterisk/sounds/en/letters/v.gsm
+share/asterisk/sounds/en/letters/w.gsm
+share/asterisk/sounds/en/letters/x.gsm
+share/asterisk/sounds/en/letters/y.gsm
+share/asterisk/sounds/en/letters/z.gsm
+share/asterisk/sounds/en/letters/zed.gsm
+share/asterisk/sounds/en/minutes.gsm
+share/asterisk/sounds/en/pbx-invalid.gsm
+share/asterisk/sounds/en/pbx-invalidpark.gsm
+share/asterisk/sounds/en/pbx-parkingfailed.gsm
+share/asterisk/sounds/en/pbx-transfer.gsm
+share/asterisk/sounds/en/phonetic/9_p.gsm
+share/asterisk/sounds/en/phonetic/a_p.gsm
+share/asterisk/sounds/en/phonetic/b_p.gsm
+share/asterisk/sounds/en/phonetic/c_p.gsm
+share/asterisk/sounds/en/phonetic/d_p.gsm
+share/asterisk/sounds/en/phonetic/e_p.gsm
+share/asterisk/sounds/en/phonetic/f_p.gsm
+share/asterisk/sounds/en/phonetic/g_p.gsm
+share/asterisk/sounds/en/phonetic/h_p.gsm
+share/asterisk/sounds/en/phonetic/i_p.gsm
+share/asterisk/sounds/en/phonetic/j_p.gsm
+share/asterisk/sounds/en/phonetic/k_p.gsm
+share/asterisk/sounds/en/phonetic/l_p.gsm
+share/asterisk/sounds/en/phonetic/m_p.gsm
+share/asterisk/sounds/en/phonetic/n_p.gsm
+share/asterisk/sounds/en/phonetic/o_p.gsm
+share/asterisk/sounds/en/phonetic/p_p.gsm
+share/asterisk/sounds/en/phonetic/q_p.gsm
+share/asterisk/sounds/en/phonetic/r_p.gsm
+share/asterisk/sounds/en/phonetic/s_p.gsm
+share/asterisk/sounds/en/phonetic/t_p.gsm
+share/asterisk/sounds/en/phonetic/u_p.gsm
+share/asterisk/sounds/en/phonetic/v_p.gsm
+share/asterisk/sounds/en/phonetic/w_p.gsm
+share/asterisk/sounds/en/phonetic/x_p.gsm
+share/asterisk/sounds/en/phonetic/y_p.gsm
+share/asterisk/sounds/en/phonetic/z_p.gsm
+share/asterisk/sounds/en/priv-callee-options.gsm
+share/asterisk/sounds/en/priv-callpending.gsm
+share/asterisk/sounds/en/priv-introsaved.gsm
+share/asterisk/sounds/en/priv-recordintro.gsm
+share/asterisk/sounds/en/privacy-incorrect.gsm
+share/asterisk/sounds/en/privacy-prompt.gsm
+share/asterisk/sounds/en/privacy-thankyou.gsm
+share/asterisk/sounds/en/privacy-unident.gsm
+share/asterisk/sounds/en/queue-callswaiting.gsm
+share/asterisk/sounds/en/queue-holdtime.gsm
+share/asterisk/sounds/en/queue-less-than.gsm
+share/asterisk/sounds/en/queue-minute.gsm
+share/asterisk/sounds/en/queue-minutes.gsm
+share/asterisk/sounds/en/queue-periodic-announce.gsm
+share/asterisk/sounds/en/queue-quantity1.gsm
+share/asterisk/sounds/en/queue-quantity2.gsm
+share/asterisk/sounds/en/queue-reporthold.gsm
+share/asterisk/sounds/en/queue-seconds.gsm
+share/asterisk/sounds/en/queue-thankyou.gsm
+share/asterisk/sounds/en/queue-thereare.gsm
+share/asterisk/sounds/en/queue-youarenext.gsm
+share/asterisk/sounds/en/screen-callee-options.gsm
+share/asterisk/sounds/en/seconds.gsm
+share/asterisk/sounds/en/silence/1.gsm
+share/asterisk/sounds/en/silence/10.gsm
+share/asterisk/sounds/en/silence/2.gsm
+share/asterisk/sounds/en/silence/3.gsm
+share/asterisk/sounds/en/silence/4.gsm
+share/asterisk/sounds/en/silence/5.gsm
+share/asterisk/sounds/en/silence/6.gsm
+share/asterisk/sounds/en/silence/7.gsm
+share/asterisk/sounds/en/silence/8.gsm
+share/asterisk/sounds/en/silence/9.gsm
+share/asterisk/sounds/en/spy-agent.gsm
+share/asterisk/sounds/en/spy-console.gsm
+share/asterisk/sounds/en/spy-h323.gsm
+share/asterisk/sounds/en/spy-iax.gsm
+share/asterisk/sounds/en/spy-iax2.gsm
+share/asterisk/sounds/en/spy-jingle.gsm
+share/asterisk/sounds/en/spy-local.gsm
+share/asterisk/sounds/en/spy-mgcp.gsm
+share/asterisk/sounds/en/spy-misdn.gsm
+share/asterisk/sounds/en/spy-mobile.gsm
+share/asterisk/sounds/en/spy-nbs.gsm
+share/asterisk/sounds/en/spy-sip.gsm
+share/asterisk/sounds/en/spy-skinny.gsm
+share/asterisk/sounds/en/spy-unistim.gsm
+share/asterisk/sounds/en/spy-usbradio.gsm
+share/asterisk/sounds/en/spy-zap.gsm
+share/asterisk/sounds/en/ss-noservice.gsm
+share/asterisk/sounds/en/transfer.gsm
+share/asterisk/sounds/en/tt-allbusy.gsm
+share/asterisk/sounds/en/tt-monkeys.gsm
+share/asterisk/sounds/en/tt-monkeysintro.gsm
+share/asterisk/sounds/en/tt-somethingwrong.gsm
+share/asterisk/sounds/en/tt-weasels.gsm
+share/asterisk/sounds/en/vm-Cust1.gsm
+share/asterisk/sounds/en/vm-Cust2.gsm
+share/asterisk/sounds/en/vm-Cust3.gsm
+share/asterisk/sounds/en/vm-Cust4.gsm
+share/asterisk/sounds/en/vm-Cust5.gsm
+share/asterisk/sounds/en/vm-Family.gsm
+share/asterisk/sounds/en/vm-Friends.gsm
+share/asterisk/sounds/en/vm-INBOX.gsm
+share/asterisk/sounds/en/vm-Old.gsm
+share/asterisk/sounds/en/vm-Work.gsm
+share/asterisk/sounds/en/vm-advopts.gsm
+share/asterisk/sounds/en/vm-and.gsm
+share/asterisk/sounds/en/vm-calldiffnum.gsm
+share/asterisk/sounds/en/vm-changeto.gsm
+share/asterisk/sounds/en/vm-delete.gsm
+share/asterisk/sounds/en/vm-deleted.gsm
+share/asterisk/sounds/en/vm-dialout.gsm
+share/asterisk/sounds/en/vm-duration.gsm
+share/asterisk/sounds/en/vm-enter-num-to-call.gsm
+share/asterisk/sounds/en/vm-extension.gsm
+share/asterisk/sounds/en/vm-first.gsm
+share/asterisk/sounds/en/vm-for.gsm
+share/asterisk/sounds/en/vm-forward.gsm
+share/asterisk/sounds/en/vm-forwardoptions.gsm
+share/asterisk/sounds/en/vm-from-extension.gsm
+share/asterisk/sounds/en/vm-from-phonenumber.gsm
+share/asterisk/sounds/en/vm-from.gsm
+share/asterisk/sounds/en/vm-goodbye.gsm
+share/asterisk/sounds/en/vm-helpexit.gsm
+share/asterisk/sounds/en/vm-incorrect-mailbox.gsm
+share/asterisk/sounds/en/vm-incorrect.gsm
+share/asterisk/sounds/en/vm-instructions.gsm
+share/asterisk/sounds/en/vm-intro.gsm
+share/asterisk/sounds/en/vm-invalidpassword.gsm
+share/asterisk/sounds/en/vm-isonphone.gsm
+share/asterisk/sounds/en/vm-isunavail.gsm
+share/asterisk/sounds/en/vm-last.gsm
+share/asterisk/sounds/en/vm-leavemsg.gsm
+share/asterisk/sounds/en/vm-login.gsm
+share/asterisk/sounds/en/vm-mailboxfull.gsm
+share/asterisk/sounds/en/vm-message.gsm
+share/asterisk/sounds/en/vm-messages.gsm
+share/asterisk/sounds/en/vm-minutes.gsm
+share/asterisk/sounds/en/vm-mismatch.gsm
+share/asterisk/sounds/en/vm-msginstruct.gsm
+share/asterisk/sounds/en/vm-msgsaved.gsm
+share/asterisk/sounds/en/vm-newpassword.gsm
+share/asterisk/sounds/en/vm-newuser.gsm
+share/asterisk/sounds/en/vm-next.gsm
+share/asterisk/sounds/en/vm-no.gsm
+share/asterisk/sounds/en/vm-nobodyavail.gsm
+share/asterisk/sounds/en/vm-nobox.gsm
+share/asterisk/sounds/en/vm-nomore.gsm
+share/asterisk/sounds/en/vm-nonumber.gsm
+share/asterisk/sounds/en/vm-num-i-have.gsm
+share/asterisk/sounds/en/vm-onefor.gsm
+share/asterisk/sounds/en/vm-onefor-full.gsm
+share/asterisk/sounds/en/vm-options.gsm
+share/asterisk/sounds/en/vm-opts.gsm
+share/asterisk/sounds/en/vm-opts-full.gsm
+share/asterisk/sounds/en/vm-passchanged.gsm
+share/asterisk/sounds/en/vm-password.gsm
+share/asterisk/sounds/en/vm-press.gsm
+share/asterisk/sounds/en/vm-prev.gsm
+share/asterisk/sounds/en/vm-reachoper.gsm
+share/asterisk/sounds/en/vm-rec-busy.gsm
+share/asterisk/sounds/en/vm-rec-name.gsm
+share/asterisk/sounds/en/vm-rec-temp.gsm
+share/asterisk/sounds/en/vm-rec-unv.gsm
+share/asterisk/sounds/en/vm-received.gsm
+share/asterisk/sounds/en/vm-reenterpassword.gsm
+share/asterisk/sounds/en/vm-repeat.gsm
+share/asterisk/sounds/en/vm-review.gsm
+share/asterisk/sounds/en/vm-saved.gsm
+share/asterisk/sounds/en/vm-savedto.gsm
+share/asterisk/sounds/en/vm-savefolder.gsm
+share/asterisk/sounds/en/vm-savemessage.gsm
+share/asterisk/sounds/en/vm-saveoper.gsm
+share/asterisk/sounds/en/vm-sorry.gsm
+share/asterisk/sounds/en/vm-star-cancel.gsm
+share/asterisk/sounds/en/vm-starmain.gsm
+share/asterisk/sounds/en/vm-tempgreetactive.gsm
+share/asterisk/sounds/en/vm-tempgreeting.gsm
+share/asterisk/sounds/en/vm-tempgreeting2.gsm
+share/asterisk/sounds/en/vm-tempremoved.gsm
+share/asterisk/sounds/en/vm-then-pound.gsm
+share/asterisk/sounds/en/vm-theperson.gsm
+share/asterisk/sounds/en/vm-tmpexists.gsm
+share/asterisk/sounds/en/vm-tocallback.gsm
+share/asterisk/sounds/en/vm-tocallnum.gsm
+share/asterisk/sounds/en/vm-tocancel.gsm
+share/asterisk/sounds/en/vm-tocancelmsg.gsm
+share/asterisk/sounds/en/vm-toenternumber.gsm
+share/asterisk/sounds/en/vm-toforward.gsm
+share/asterisk/sounds/en/vm-tohearenv.gsm
+share/asterisk/sounds/en/vm-tomakecall.gsm
+share/asterisk/sounds/en/vm-tooshort.gsm
+share/asterisk/sounds/en/vm-toreply.gsm
+share/asterisk/sounds/en/vm-torerecord.gsm
+share/asterisk/sounds/en/vm-undelete.gsm
+share/asterisk/sounds/en/vm-undeleted.gsm
+share/asterisk/sounds/en/vm-unknown-caller.gsm
+share/asterisk/sounds/en/vm-whichbox.gsm
+share/asterisk/sounds/en/vm-youhave.gsm
+share/asterisk/static-http/ajamdemo.html
+share/asterisk/static-http/astman.css
+share/asterisk/static-http/astman.js
+share/asterisk/static-http/core-en_US.xml
+share/asterisk/static-http/prototype.js
+share/asterisk/static-http/mantest.html
+%%WITH_DAHDI%%lib/asterisk/modules/app_flash.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_dahdiras.so
+%%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
+%%WITH_FREETDS%%lib/asterisk/modules/cdr_tds.so
+%%WITH_DAHDI%%lib/asterisk/modules/chan_dahdi.so
+%%WITH_DAHDI%%lib/asterisk/modules/codec_dahdi.so
+%%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
+%%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
+%%WITH_LUA%%lib/asterisk/modules/pbx_lua.so
+%%DOCSDIR%%/images/asterisk-intro.jpg
+%%DOCSDIR%%/images/kpad2.jpg
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%
+@dirrm share/asterisk/static-http
+@dirrm share/asterisk/sounds/en/silence
+@dirrm share/asterisk/sounds/en/phonetic
+@dirrm share/asterisk/sounds/en/letters
+@dirrm share/asterisk/sounds/en/followme
+@dirrm share/asterisk/sounds/en/digits
+@dirrm share/asterisk/sounds/en/dictate
+@dirrm share/asterisk/sounds/en
+@dirrm share/asterisk/sounds
+@dirrm share/asterisk/phoneprov
+@dirrm share/asterisk/moh
+@dirrm share/asterisk/keys
+@dirrm share/asterisk/images
+@dirrm share/asterisk/firmware/iax
+@dirrm share/asterisk/firmware
+@dirrm share/asterisk/documentation/thirdparty
+@dirrm share/asterisk/documentation
+@dirrm share/asterisk/agi-bin
+@dirrm share/asterisk
+@dirrm lib/asterisk/modules
+@dirrm lib/asterisk
+@dirrm include/asterisk/doxygen
+@dirrm include/asterisk
+@dirrmtry etc/asterisk
+@exec mkdir -p %D/share/asterisk/keys
+@exec mkdir -p %D/share/asterisk/images
+@exec mkdir -p %D/share/asterisk/firmware/iax
+@exec mkdir -p %D/share/asterisk/documentation/thirdparty
+@cwd %%VARDIR%%
+spool/asterisk/voicemail/default/1234/en/busy.gsm
+spool/asterisk/voicemail/default/1234/en/unavail.gsm
+@exec mkdir -p %D/log/asterisk/cdr-csv
+@exec mkdir -p %D/log/asterisk/cdr-custom
+@exec mkdir -p %D/log/asterisk/cel-custom
+@exec mkdir -p %D/spool/asterisk/dictate
+@exec mkdir -p %D/spool/asterisk/meetme
+@exec mkdir -p %D/spool/asterisk/monitor
+@exec mkdir -p %D/spool/asterisk/outgoing
+@exec mkdir -p %D/spool/asterisk/system
+@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
+@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/en
+@exec mkdir -p %D/spool/asterisk/tmp
+@exec mkdir -p %D/db/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/db/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/spool/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/log/asterisk
+@dirrm spool/asterisk/dictate
+@dirrm spool/asterisk/meetme
+@dirrm spool/asterisk/monitor
+@dirrm spool/asterisk/outgoing
+@dirrm spool/asterisk/system
+@dirrm spool/asterisk/voicemail/default/1234/INBOX
+@dirrm spool/asterisk/voicemail/default/1234/en
+@dirrm spool/asterisk/voicemail/default/1234
+@dirrm spool/asterisk/voicemail/default
+@dirrm spool/asterisk/voicemail
+@dirrm spool/asterisk/tmp
+@dirrm spool/asterisk
+@dirrm log/asterisk/cdr-csv
+@dirrm log/asterisk/cdr-custom
+@dirrm log/asterisk/cel-custom
+@dirrm log/asterisk
+@dirrmtry db/asterisk
