@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://public.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
@@ -32,7 +32,8 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}d
 
-MAN8=		knot.conf.8 knotc.8 knotd.8
+MAN8=		knotc.8 knotd.8
+MAN5=		knot.conf.5
 
 INFO=		knot
 
