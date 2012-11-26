@@ -833,7 +833,6 @@ lib/calibre/calibre/gui2/store/stores/empik_plugin.py
 lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
 lib/calibre/calibre/gui2/store/stores/foyles_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
 lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/gutenberg_plugin.py
 lib/calibre/calibre/gui2/store/stores/kobo_plugin.py
@@ -856,6 +855,7 @@ lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
 lib/calibre/calibre/gui2/store/stores/open_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.py
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
+lib/calibre/calibre/gui2/store/stores/publio_plugin.py
 lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
 lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
 lib/calibre/calibre/gui2/store/stores/sony_plugin.py
@@ -893,6 +893,7 @@ lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/main_ui.py
 lib/calibre/calibre/gui2/viewer/position.py
 lib/calibre/calibre/gui2/viewer/printing.py
+lib/calibre/calibre/gui2/viewer/table_popup.py
 lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/widgets.py
 lib/calibre/calibre/gui2/wizard/__init__.py
@@ -990,8 +991,10 @@ lib/calibre/calibre/utils/fonts/sfnt/cff/dict_data.py
 lib/calibre/calibre/utils/fonts/sfnt/cff/table.py
 lib/calibre/calibre/utils/fonts/sfnt/cff/writer.py
 lib/calibre/calibre/utils/fonts/sfnt/cmap.py
+lib/calibre/calibre/utils/fonts/sfnt/common.py
 lib/calibre/calibre/utils/fonts/sfnt/container.py
 lib/calibre/calibre/utils/fonts/sfnt/errors.py
+lib/calibre/calibre/utils/fonts/sfnt/gsub.py
 lib/calibre/calibre/utils/fonts/sfnt/glyf.py
 lib/calibre/calibre/utils/fonts/sfnt/head.py
 lib/calibre/calibre/utils/fonts/sfnt/kern.py
@@ -1053,7 +1056,7 @@ lib/calibre/calibre/utils/smartypants.py
 lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
 lib/calibre/calibre/utils/soupparser.py
-lib/calibre/calibre/utils/terminfo.py
+lib/calibre/calibre/utils/terminal.py
 lib/calibre/calibre/utils/text2int.py
 lib/calibre/calibre/utils/threadpool.py
 lib/calibre/calibre/utils/titlecase.py
