@@ -1,16 +1,12 @@
-# New ports collection makefile for:	tkcon
-# Date created:         28 Jun 1999
-# Whom:                 wghicks@bellsouth.net
-#
+# Created by: wghicks@bellsouth.net
 # $FreeBSD$
-#
 
 PORTNAME=	tkcon
 PORTVERSION=	2.5
 CATEGORIES=	devel tcl tk
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tk console for Tcl
 
 NO_BUILD=	yes

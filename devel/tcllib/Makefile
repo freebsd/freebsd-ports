@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	A collection of utility modules for Tcl
 
 USE_TCL_BUILD=	82+

@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://tdbc.tcl.tk/index.cgi/tarball/
 DISTFILES=	${PORTNAME:U}-${FOSSIL_HASH}.${EXTRACT_SUFX}?uuid=${FOSSIL_HASH}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	The common database access interface for Tcl
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC

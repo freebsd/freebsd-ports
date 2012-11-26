@@ -1,9 +1,5 @@
-# New ports collection makefile for:    roxirc
-# Date created:         Mar 15 1999
-# Whom:                 rox@fearme.com
-#
+# Created by: rox@fearme.com
 # $FreeBSD$
-#
 
 PORTNAME=	roxirc
 PORTVERSION=	2.0
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	irc tk
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	A tcl/tk irc client
 
 USE_TK=		yes
