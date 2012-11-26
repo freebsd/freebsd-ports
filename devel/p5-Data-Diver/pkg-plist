@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Data/Diver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Diver/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Diver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data
