@@ -1,15 +1,11 @@
-# New ports collection makefile for:	Apache-XML-Security-J
-# Date created:			14 Dec 2010
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xml-security
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 CATEGORIES=	security java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	santuario/java-library/1_5_0
+MASTER_SITE_SUBDIR=	santuario/java-library/${PORTVERSION:S/./_/g}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -20,7 +16,6 @@ BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-common
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
 LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_ZIP=	yes
 USE_JAVA=	yes
