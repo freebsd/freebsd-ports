@@ -35,9 +35,6 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/cli/cp.py
 %%PYTHON_SITELIBDIR%%/salt/cli/cp.pyc
 %%PYTHON_SITELIBDIR%%/salt/cli/cp.pyo
-%%PYTHON_SITELIBDIR%%/salt/cli/key.py
-%%PYTHON_SITELIBDIR%%/salt/cli/key.pyc
-%%PYTHON_SITELIBDIR%%/salt/cli/key.pyo
 %%PYTHON_SITELIBDIR%%/salt/client.py
 %%PYTHON_SITELIBDIR%%/salt/client.pyc
 %%PYTHON_SITELIBDIR%%/salt/client.pyo
@@ -68,6 +65,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/grains/opts.py
 %%PYTHON_SITELIBDIR%%/salt/grains/opts.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/opts.pyo
+%%PYTHON_SITELIBDIR%%/salt/key.py
+%%PYTHON_SITELIBDIR%%/salt/key.pyc
+%%PYTHON_SITELIBDIR%%/salt/key.pyo
 %%PYTHON_SITELIBDIR%%/salt/loader.py
 %%PYTHON_SITELIBDIR%%/salt/loader.pyc
 %%PYTHON_SITELIBDIR%%/salt/loader.pyo
@@ -110,9 +110,6 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/butterkvm.py
 %%PYTHON_SITELIBDIR%%/salt/modules/butterkvm.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/butterkvm.pyo
-%%PYTHON_SITELIBDIR%%/salt/modules/ca.py
-%%PYTHON_SITELIBDIR%%/salt/modules/ca.pyc
-%%PYTHON_SITELIBDIR%%/salt/modules/ca.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/cassandra.py
 %%PYTHON_SITELIBDIR%%/salt/modules/cassandra.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/cassandra.pyo
@@ -131,6 +128,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/cron.py
 %%PYTHON_SITELIBDIR%%/salt/modules/cron.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/cron.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/daemontools.py
+%%PYTHON_SITELIBDIR%%/salt/modules/daemontools.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/daemontools.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/data.py
 %%PYTHON_SITELIBDIR%%/salt/modules/data.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/data.pyo
@@ -155,6 +155,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/file.py
 %%PYTHON_SITELIBDIR%%/salt/modules/file.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/file.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/freebsd_sysctl.py
+%%PYTHON_SITELIBDIR%%/salt/modules/freebsd_sysctl.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/freebsd_sysctl.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/freebsdjail.py
 %%PYTHON_SITELIBDIR%%/salt/modules/freebsdjail.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/freebsdjail.pyo
@@ -176,6 +179,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/git.py
 %%PYTHON_SITELIBDIR%%/salt/modules/git.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/git.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/glance.py
+%%PYTHON_SITELIBDIR%%/salt/modules/glance.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/glance.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/grains.py
 %%PYTHON_SITELIBDIR%%/salt/modules/grains.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/grains.pyo
@@ -191,6 +197,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/hosts.py
 %%PYTHON_SITELIBDIR%%/salt/modules/hosts.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/hosts.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/keystone.py
+%%PYTHON_SITELIBDIR%%/salt/modules/keystone.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/keystone.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/kmod.py
 %%PYTHON_SITELIBDIR%%/salt/modules/kmod.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/kmod.pyo
@@ -200,9 +209,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/launchctl.py
 %%PYTHON_SITELIBDIR%%/salt/modules/launchctl.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/launchctl.pyo
-%%PYTHON_SITELIBDIR%%/salt/modules/ldap.py
-%%PYTHON_SITELIBDIR%%/salt/modules/ldap.pyc
-%%PYTHON_SITELIBDIR%%/salt/modules/ldap.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/ldapmod.py
+%%PYTHON_SITELIBDIR%%/salt/modules/ldapmod.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/ldapmod.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.py
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.pyo
@@ -230,6 +239,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/nginx.py
 %%PYTHON_SITELIBDIR%%/salt/modules/nginx.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/nginx.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/nova.py
+%%PYTHON_SITELIBDIR%%/salt/modules/nova.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/nova.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/nzbget.py
 %%PYTHON_SITELIBDIR%%/salt/modules/nzbget.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/nzbget.pyo
@@ -287,13 +299,16 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/reg.py
 %%PYTHON_SITELIBDIR%%/salt/modules/reg.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/reg.pyo
-%%PYTHON_SITELIBDIR%%/salt/modules/rh_ip.py
-%%PYTHON_SITELIBDIR%%/salt/modules/rh_ip.pyc
-%%PYTHON_SITELIBDIR%%/salt/modules/rh_ip.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/ret.py
+%%PYTHON_SITELIBDIR%%/salt/modules/ret.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/ret.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_ip/conf.jinja
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_ip/network.jinja
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_ip/rh5_eth.jinja
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_ip/rh6_eth.jinja
+%%PYTHON_SITELIBDIR%%/salt/modules/rh_ip.py
+%%PYTHON_SITELIBDIR%%/salt/modules/rh_ip.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/rh_ip.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_service.py
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_service.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/rh_service.pyo
@@ -345,12 +360,18 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/supervisord.py
 %%PYTHON_SITELIBDIR%%/salt/modules/supervisord.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/supervisord.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/svn.py
+%%PYTHON_SITELIBDIR%%/salt/modules/svn.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/svn.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.py
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/test.py
 %%PYTHON_SITELIBDIR%%/salt/modules/test.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/test.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/tls.py
+%%PYTHON_SITELIBDIR%%/salt/modules/tls.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/tls.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/tomcat.py
 %%PYTHON_SITELIBDIR%%/salt/modules/tomcat.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/tomcat.pyo
@@ -402,9 +423,30 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/zypper.py
 %%PYTHON_SITELIBDIR%%/salt/modules/zypper.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/zypper.pyo
-%%PYTHON_SITELIBDIR%%/salt/output.py
-%%PYTHON_SITELIBDIR%%/salt/output.pyc
-%%PYTHON_SITELIBDIR%%/salt/output.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/__init__.py
+%%PYTHON_SITELIBDIR%%/salt/output/__init__.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/__init__.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/highstate.py
+%%PYTHON_SITELIBDIR%%/salt/output/highstate.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/highstate.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/json_out.py
+%%PYTHON_SITELIBDIR%%/salt/output/json_out.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/json_out.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/key.py
+%%PYTHON_SITELIBDIR%%/salt/output/key.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/key.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/pprint_out.py
+%%PYTHON_SITELIBDIR%%/salt/output/pprint_out.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/pprint_out.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/raw.py
+%%PYTHON_SITELIBDIR%%/salt/output/raw.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/raw.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/txt.py
+%%PYTHON_SITELIBDIR%%/salt/output/txt.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/txt.pyo
+%%PYTHON_SITELIBDIR%%/salt/output/yaml_out.py
+%%PYTHON_SITELIBDIR%%/salt/output/yaml_out.pyc
+%%PYTHON_SITELIBDIR%%/salt/output/yaml_out.pyo
 %%PYTHON_SITELIBDIR%%/salt/payload.py
 %%PYTHON_SITELIBDIR%%/salt/payload.pyc
 %%PYTHON_SITELIBDIR%%/salt/payload.pyo
@@ -429,27 +471,27 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/renderers/__init__.py
 %%PYTHON_SITELIBDIR%%/salt/renderers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_jinja.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_jinja.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_jinja.pyo
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_mako.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_mako.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_mako.pyo
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_wempy.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_wempy.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/json_wempy.pyo
+%%PYTHON_SITELIBDIR%%/salt/renderers/jinja.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/jinja.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/jinja.pyo
+%%PYTHON_SITELIBDIR%%/salt/renderers/json.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/json.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/json.pyo
+%%PYTHON_SITELIBDIR%%/salt/renderers/mako.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/mako.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/mako.pyo
 %%PYTHON_SITELIBDIR%%/salt/renderers/py.py
 %%PYTHON_SITELIBDIR%%/salt/renderers/py.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/py.pyo
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_jinja.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_jinja.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_jinja.pyo
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_mako.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_mako.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_mako.pyo
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_wempy.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_wempy.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/yaml_wempy.pyo
+%%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.pyo
+%%PYTHON_SITELIBDIR%%/salt/renderers/wempy.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/wempy.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/wempy.pyo
+%%PYTHON_SITELIBDIR%%/salt/renderers/yaml.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/yaml.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/yaml.pyo
 %%PYTHON_SITELIBDIR%%/salt/returners/__init__.py
 %%PYTHON_SITELIBDIR%%/salt/returners/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/returners/__init__.pyo
@@ -459,12 +501,18 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/returners/local.py
 %%PYTHON_SITELIBDIR%%/salt/returners/local.pyc
 %%PYTHON_SITELIBDIR%%/salt/returners/local.pyo
+%%PYTHON_SITELIBDIR%%/salt/returners/mongo_future_return.py
+%%PYTHON_SITELIBDIR%%/salt/returners/mongo_future_return.pyc
+%%PYTHON_SITELIBDIR%%/salt/returners/mongo_future_return.pyo
 %%PYTHON_SITELIBDIR%%/salt/returners/mongo_return.py
 %%PYTHON_SITELIBDIR%%/salt/returners/mongo_return.pyc
 %%PYTHON_SITELIBDIR%%/salt/returners/mongo_return.pyo
 %%PYTHON_SITELIBDIR%%/salt/returners/redis_return.py
 %%PYTHON_SITELIBDIR%%/salt/returners/redis_return.pyc
 %%PYTHON_SITELIBDIR%%/salt/returners/redis_return.pyo
+%%PYTHON_SITELIBDIR%%/salt/returners/syslog_return.py
+%%PYTHON_SITELIBDIR%%/salt/returners/syslog_return.pyc
+%%PYTHON_SITELIBDIR%%/salt/returners/syslog_return.pyo
 %%PYTHON_SITELIBDIR%%/salt/runner.py
 %%PYTHON_SITELIBDIR%%/salt/runner.pyc
 %%PYTHON_SITELIBDIR%%/salt/runner.pyo
@@ -585,9 +633,15 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/states/ssh_known_hosts.py
 %%PYTHON_SITELIBDIR%%/salt/states/ssh_known_hosts.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/ssh_known_hosts.pyo
+%%PYTHON_SITELIBDIR%%/salt/states/stateconf.py
+%%PYTHON_SITELIBDIR%%/salt/states/stateconf.pyc
+%%PYTHON_SITELIBDIR%%/salt/states/stateconf.pyo
 %%PYTHON_SITELIBDIR%%/salt/states/supervisord.py
 %%PYTHON_SITELIBDIR%%/salt/states/supervisord.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/supervisord.pyo
+%%PYTHON_SITELIBDIR%%/salt/states/svn.py
+%%PYTHON_SITELIBDIR%%/salt/states/svn.pyc
+%%PYTHON_SITELIBDIR%%/salt/states/svn.pyo
 %%PYTHON_SITELIBDIR%%/salt/states/sysctl.py
 %%PYTHON_SITELIBDIR%%/salt/states/sysctl.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/sysctl.pyo
@@ -615,6 +669,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/utils/debug.py
 %%PYTHON_SITELIBDIR%%/salt/utils/debug.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/debug.pyo
+%%PYTHON_SITELIBDIR%%/salt/utils/dictupdate.py
+%%PYTHON_SITELIBDIR%%/salt/utils/dictupdate.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/dictupdate.pyo
 %%PYTHON_SITELIBDIR%%/salt/utils/event.py
 %%PYTHON_SITELIBDIR%%/salt/utils/event.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/event.pyo
@@ -624,9 +681,15 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/utils/find.py
 %%PYTHON_SITELIBDIR%%/salt/utils/find.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/find.pyo
+%%PYTHON_SITELIBDIR%%/salt/utils/gzip_util.py
+%%PYTHON_SITELIBDIR%%/salt/utils/gzip_util.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/gzip_util.pyo
 %%PYTHON_SITELIBDIR%%/salt/utils/jinja.py
 %%PYTHON_SITELIBDIR%%/salt/utils/jinja.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/jinja.pyo
+%%PYTHON_SITELIBDIR%%/salt/utils/mako.py
+%%PYTHON_SITELIBDIR%%/salt/utils/mako.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/mako.pyo
 %%PYTHON_SITELIBDIR%%/salt/utils/minions.py
 %%PYTHON_SITELIBDIR%%/salt/utils/minions.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/minions.pyo
@@ -657,6 +720,22 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/version.py
 %%PYTHON_SITELIBDIR%%/salt/version.pyc
 %%PYTHON_SITELIBDIR%%/salt/version.pyo
+%%PYTHON_SITELIBDIR%%/salt/wheel/__init__.py
+%%PYTHON_SITELIBDIR%%/salt/wheel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/salt/wheel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/salt/wheel/config.py
+%%PYTHON_SITELIBDIR%%/salt/wheel/config.pyc
+%%PYTHON_SITELIBDIR%%/salt/wheel/config.pyo
+%%PYTHON_SITELIBDIR%%/salt/wheel/file_roots.py
+%%PYTHON_SITELIBDIR%%/salt/wheel/file_roots.pyc
+%%PYTHON_SITELIBDIR%%/salt/wheel/file_roots.pyo
+%%PYTHON_SITELIBDIR%%/salt/wheel/key.py
+%%PYTHON_SITELIBDIR%%/salt/wheel/key.pyc
+%%PYTHON_SITELIBDIR%%/salt/wheel/key.pyo
+%%PYTHON_SITELIBDIR%%/salt/wheel/pillar_roots.py
+%%PYTHON_SITELIBDIR%%/salt/wheel/pillar_roots.pyc
+%%PYTHON_SITELIBDIR%%/salt/wheel/pillar_roots.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/salt/wheel
 @dirrm %%PYTHON_SITELIBDIR%%/salt/utils
 @dirrm %%PYTHON_SITELIBDIR%%/salt/tops
 @dirrm %%PYTHON_SITELIBDIR%%/salt/states
@@ -664,6 +743,7 @@ bin/salt-syndic
 @dirrm %%PYTHON_SITELIBDIR%%/salt/returners
 @dirrm %%PYTHON_SITELIBDIR%%/salt/renderers
 @dirrm %%PYTHON_SITELIBDIR%%/salt/pillar
+@dirrm %%PYTHON_SITELIBDIR%%/salt/output
 @dirrm %%PYTHON_SITELIBDIR%%/salt/modules/rh_ip
 @dirrm %%PYTHON_SITELIBDIR%%/salt/modules
 @dirrm %%PYTHON_SITELIBDIR%%/salt/grains
