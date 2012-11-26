@@ -1,18 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.3
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
-MASTER_SITES=	http://polarssl.org/code/download/
+MASTER_SITES=	http://polarssl.org/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
 
-USE_PERL5_BUILD=	yes
+FETCH_ARGS=	-pRr
+ALL_TARGET=	no_test
+
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -33,8 +36,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/programs/*/${i} ${PREFIX}/bin/polarssl_${i}
 .endfor
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/
