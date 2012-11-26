@@ -1,12 +1,8 @@
-# Ports collection makefile for:	XStream
-# Date created:			19 July 2006
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xstream
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	textproc java
 MASTER_SITES=	https://nexus.codehaus.org/content/repositories/releases/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-distribution-${PORTVERSION}-bin${EXTRACT_SUFX}
