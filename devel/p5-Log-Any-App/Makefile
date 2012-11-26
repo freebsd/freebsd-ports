@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Log::Any::App
-# Date created:		22 Mar 2011
-# Whom:			Evgeniy Kosov <evgeniy@kosov.su>
-#
+# Created by: Evgeniy Kosov <evgeniy@kosov.su>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Any-App
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
