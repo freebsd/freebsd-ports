@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -46,7 +46,8 @@ post-patch:
     doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
     doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.7 doc/man/salt.1 \
     salt/cli/__init__.py salt/__init__.py salt/config.py salt/client.py \
-    salt/modules/mysql.py salt/cli/key.py salt/utils/parsers.py
+    salt/modules/mysql.py salt/utils/parsers.py salt/modules/tls.py \
+    salt/modules/postgres.py
 	@${REINPLACE_CMD} -e 's|/etc/salt|${PREFIX}/etc/salt|' \
 	    -e 's|/srv/salt|${PREFIX}/etc/salt/states|' ${WRKSRC}/${file}
 .endfor
