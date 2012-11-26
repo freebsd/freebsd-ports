@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.15
-PORTREVISION=	2
+PORTVERSION=	1.6.16
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
