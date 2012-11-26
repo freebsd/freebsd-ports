@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-digest
-# Date created:		2011-09-04
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	digest
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
