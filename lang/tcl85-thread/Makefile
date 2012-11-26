@@ -3,7 +3,7 @@
 
 PORTNAME=	tcl
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	TclTk@FreeBSD.org
 COMMENT=	Tool command language (threads support)
 
 BUILDING_TCL_THREADS=	yes
