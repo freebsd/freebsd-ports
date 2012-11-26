@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1cd3ca42-33e6-11e2-a255-5404a67eef98">
+    <topic>lighttpd -- remote DoS in header parsing</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><gt>1.4.30</gt><lt>1.4.32</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lighttpd security advisory reports:</p>
+	<blockquote cite="http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2012_01.txt">
+	  <p>Certain Connection header values will trigger an endless loop, for example:
+	    "Connection: TE,,Keep-Alive"</p>
+	  <p>On receiving such value, lighttpd will enter an endless loop, 
+	    detecting an empty token but not incrementing the current string 
+	    position, and keep reading the ',' again and again.</p>
+	  <p>This bug was introduced in 1.4.31, when we fixed an "invalid read" 
+	    bug (it would try to read the byte before the string if it started 
+	    with ',', although the value wasn't actually used).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-5533</cvename>
+    </references>
+    <dates>
+      <discovery>2012-11-17</discovery>
+      <entry>2012-11-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d23119df-335d-11e2-b64c-c8600054b392">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
