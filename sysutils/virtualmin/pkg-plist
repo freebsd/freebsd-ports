@@ -645,8 +645,10 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_modules.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_theme.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_theme.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_rs_chunk.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_rs_endpoint.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_rs_key.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_rs_snet.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_rs_user.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_s3_akey.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_s3_endpoint.html
@@ -1078,6 +1080,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/spam_spam.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/spam_trap.html
 %%LIB32DIR%%/webmin/virtual-server/help/spam_trap.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/spam_trashclear.html
 %%LIB32DIR%%/webmin/virtual-server/help/spam_virus.html
 %%LIB32DIR%%/webmin/virtual-server/help/spam_virus.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/spam_white.html
@@ -1249,6 +1252,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_name.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_othergroups.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_othergroups.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_owners.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_php4cgi.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_php4cgi.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_php4fcgi.html
@@ -1703,6 +1707,7 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94/1-aliasmail
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94/2-dependent
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94/3-rackspace
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96/1-security
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1887,6 +1892,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.93
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.91
