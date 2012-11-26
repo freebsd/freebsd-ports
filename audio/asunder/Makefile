@@ -1,12 +1,8 @@
-# New ports collection makefile for:	asunder
-# Date created:				14 September 2007
-# Whom:					frase@frase.id.au
-#
+# Created by: Fraser Tweedale <frase@frase.id.au>
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	2.0
-PORTREVISION?=	2
+PORTVERSION=	2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -16,50 +12,59 @@ COMMENT=	A lightweight GTK+ CD ripper
 LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 
-OPTIONS=	LAME "lame support" on \
-		OGG "ogg-vorbis support" on \
-		FLAC "FLAC support" on \
-		WAVPACK "WavPack support" off \
-		MONKEYAUDIO "Monkey's Audio support" off \
-		WINDOWS_CHARS "Allow Windows special chars in filenames" off
+OPTIONS_DEFINE=	LAME OGG FLAC WAVPACK MONKEYAUDIO WINDOWS_CHARS NLS DOCS
+OPTIONS_DEFAULT=	LAME OGG FLAC
+
+MONKEYAUDIO_DESC=	Monkey's Audio support
+WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_OGG)
+.if ${PORT_OPTIONS:MOGG}
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITH_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 .endif
 
-.if defined(WITH_MONKEYAUDIO)
+.if ${PORT_OPTIONS:MMONKEYAUDIO}
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 .endif
 
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=''
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS='@comment '
+.endif
+
 post-patch:
-.if defined(WITH_WINDOWS_CHARS)
+	@${REINPLACE_CMD} -e 's/^itlocaledir = .*/itlocaledir = @datarootdir@\/locale/' ${WRKSRC}/po/Makefile.in.in
+.if ${PORT_OPTIONS:MWINDOWS_CHARS}
 	@${REINPLACE_CMD} -e 's^#define[[:blank:]]*BADCHARS.*^#define BADCHARS "/"^' ${WRKSRC}/src/util.h
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
