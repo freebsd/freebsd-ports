@@ -2069,6 +2069,7 @@
     SUBDIR += p5-Iterator
     SUBDIR += p5-Iterator-IO
     SUBDIR += p5-Iterator-Misc
+    SUBDIR += p5-Iterator-Simple
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-JIRA-Client
     SUBDIR += p5-JQuery
