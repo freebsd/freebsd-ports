@@ -1,20 +1,25 @@
---- library/Makefile.orig	2010-03-24 15:57:15.000000000 +0900
-+++ library/Makefile	2010-07-15 14:33:59.000000000 +0900
-@@ -11,7 +11,7 @@
+--- library/Makefile.orig	2012-11-26 19:20:30.821850410 +0000
++++ library/Makefile	2012-11-26 19:21:01.534380354 +0000
+@@ -18,9 +18,7 @@
  # CFLAGS += -D_BSD_EXTENSION
-
+ 
  # To compile as a shared library:
--# CFLAGS += -fPIC
-+CFLAGS += -fPIC
-
- DLEXT=so
- # OSX shared library extension:
-@@ -29,7 +29,7 @@
-
+-ifdef SHARED
+ CFLAGS += -fPIC
+-endif
+ 
+ SONAME=libpolarssl.so.0
+ 
+@@ -53,11 +51,7 @@
+ 
  .SILENT:
-
+ 
+-ifndef SHARED
 -all: static
-+all: static shared
-
+-else
+-all: shared
+-endif
++all: shared static
+ 
  static: libpolarssl.a
-
+ 

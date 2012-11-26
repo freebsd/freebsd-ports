@@ -20,8 +20,10 @@ bin/polarssl_ssl_test
 include/polarssl/aes.h
 include/polarssl/arc4.h
 include/polarssl/asn1.h
+include/polarssl/asn1write.h
 include/polarssl/base64.h
 include/polarssl/bignum.h
+include/polarssl/blowfish.h
 include/polarssl/bn_mul.h
 include/polarssl/camellia.h
 include/polarssl/certs.h
@@ -35,6 +37,7 @@ include/polarssl/dhm.h
 include/polarssl/entropy.h
 include/polarssl/entropy_poll.h
 include/polarssl/error.h
+include/polarssl/gcm.h
 include/polarssl/havege.h
 include/polarssl/md.h
 include/polarssl/md2.h
@@ -45,15 +48,18 @@ include/polarssl/net.h
 include/polarssl/openssl.h
 include/polarssl/padlock.h
 include/polarssl/pem.h
+include/polarssl/pbkdf2.h
 include/polarssl/pkcs11.h
 include/polarssl/rsa.h
 include/polarssl/sha1.h
 include/polarssl/sha2.h
 include/polarssl/sha4.h
 include/polarssl/ssl.h
+include/polarssl/ssl_cache.h
 include/polarssl/timing.h
 include/polarssl/version.h
 include/polarssl/x509.h
+include/polarssl/x509write.h
 include/polarssl/xtea.h
 lib/libpolarssl.a
 lib/libpolarssl.so
