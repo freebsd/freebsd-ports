@@ -1,0 +1,95 @@
+--- Makefile.orig	2012-06-13 16:30:34.000000000 +0200
++++ Makefile	2012-08-02 00:12:13.812569306 +0200
+@@ -123,7 +123,7 @@
+ OVERWRITE=y
+ 
+ # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
+-DEBUG=-g3
++#DEBUG=-g3
+ 
+ # Asterisk.conf is located in ASTETCDIR or by using the -C flag
+ # when starting Asterisk
+@@ -192,7 +192,7 @@
+ 
+ ifeq ($(OSARCH),FreeBSD)
+   # -V is understood by BSD Make, not by GNU make.
+-  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
++  BSDVERSION=$(OSVERSION)
+   _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
+ endif
+ 
+@@ -425,8 +425,12 @@
+ 			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
+ 		done \
+ 	fi
++	if [ ! -d $(DESTDIR)$(DOCSDIR)/images ]; then \
++		$(MKDIR) $(DESTDIR)$(DOCSDIR)/images; \
++	fi
++
+ 	for x in images/*.jpg; do \
+-		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/images" ; \
++		$(INSTALL) -m 644 $$x "$(DESTDIR)$(DOCSDIR)/images" ; \
+ 	done
+ 	$(MAKE) -C sounds install
+ 
+@@ -485,7 +489,7 @@
+ 	"$(ASTDATADIR)/documentation/thirdparty" "$(ASTDATADIR)/firmware" \
+ 	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
+ 	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/static-http" "$(ASTDATADIR)/sounds" \
+-	"$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)"
++	"$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)" "$(ASTSPOOLDIR)/outgoing"
+ 
+ installdirs:
+ 	@for i in $(INSTALLDIRS); do \
+@@ -552,7 +556,7 @@
+ 	@exit 1
+ endif
+ 
+-install: badshell bininstall datafiles
++install: badshell bininstall datafiles samples
+ 	@if [ -x /usr/sbin/asterisk-post-install ]; then \
+ 		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
+ 	fi
+@@ -594,29 +598,18 @@
+ 		else \
+ 			echo "Installing $$x" ; \
+ 		fi ; \
+-		$(INSTALL) -m 644 "$$x" "$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`" ; \
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`-dist ; \
+ 	done
+ 
+ samples: adsi
+ 	@echo Installing other config files...
+ 	@for x in configs/*.sample; do \
+-		dst="$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`" ;	\
+-		if [ -f "$${dst}" ]; then \
+-			if [ "$(OVERWRITE)" = "y" ]; then \
+-				if cmp -s "$${dst}" "$$x" ; then \
+-					echo "Config file $$x is unchanged"; \
+-					continue; \
+-				fi ; \
+-				mv -f "$${dst}" "$${dst}.old" ; \
+-			else \
+-				echo "Skipping config file $$x"; \
+-				continue; \
+-			fi ;\
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`-dist ; \
++		if [ ! -f $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` ]; then \
++			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`; \
+ 		fi ; \
+-		echo "Installing file $$x"; \
+-		$(INSTALL) -m 644 "$$x" "$${dst}" ;\
+ 	done
+-	if [ "$(OVERWRITE)" = "y" ]; then \
++	@if true; then \
+ 		echo "Updating asterisk.conf" ; \
+ 		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
+ 			-e 's|^astmoddir.*$$|astmoddir => $(MODULES_DIR)|' \
+@@ -630,6 +623,7 @@
+ 			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
+ 			"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
+ 		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)" ; \
++		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)-dist" ; \
+ 		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
+ 	fi ; \
+ 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX"
