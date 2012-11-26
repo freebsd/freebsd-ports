@@ -1,12 +1,8 @@
-# New ports collection makefile for:	megaglest-data
-# Date created:				2010-11-12
-# Whom:					Sven Moeller <smoeller@nichthelfer.de>
-#
+# Created by: Sven Moeller <smoeller@nichthelfer.de>
 # $FreeBSD$
-#
 
 PORTNAME=	megaglest
-PORTVERSION=	3.6.0.3
+PORTVERSION=	3.7.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}/
 PKGNAMESUFFIX=	-data

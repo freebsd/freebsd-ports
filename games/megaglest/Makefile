@@ -1,12 +1,8 @@
-# New ports collection makefile for:	megaglest
-# Date created:				2011-02-10
-# Whom:					Sven Moeller <smoeller@nichthelfer.de>
-#
+# Created by: Sven Moeller <smoeller@nichthelfer.de>
 # $FreeBSD$
-#
 
 PORTNAME=	megaglest
-PORTVERSION=	3.6.0.3
+PORTVERSION=	3.7.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -14,12 +10,12 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Open source 3D real-time strategy game
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
-		ftgl.2:${PORTSDIR}/graphics/ftgl \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		xerces-c:${PORTSDIR}/textproc/xerces-c2 \
+		ftgl:${PORTSDIR}/graphics/ftgl \
+		vorbis:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient \
 		${LOCALBASE}/include/miniupnpc/miniupnpc.h:${PORTSDIR}/net/miniupnpc
 RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSDIR}/games/megaglest-data
@@ -39,11 +35,12 @@ MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	EDITOR "Install MegaGlest Editor" off
+OPTIONS_DEFINE=	EDITOR
+EDITOR_DESC=	Install MegaGlest Editor
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EDITOR)
+.if ${PORT_OPTIONS:MEDITOR}
 PLIST_SUB+=	EDITOR=""
 .else
 PLIST_SUB+=	EDITOR="@comment "
@@ -66,7 +63,7 @@ do-install:
 .for f in AUTHORS.source_code.txt CHANGELOG.txt README.txt COPYRIGHT.source_code.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
-.if defined(WITH_EDITOR)
+.if ${PORT_OPTIONS:MEDITOR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mk/linux/megaglest_editor ${PREFIX}/bin/megaglest_editor
 .endif
 
