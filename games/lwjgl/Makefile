@@ -1,18 +1,18 @@
-# New ports collection makefile for:   jinput
-# Date created:                        Mar 25 2012
-# Whom:                                loader <loader@freebsdmall.com>
-#
+# Created by: loader <loader@freebsdmall.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lwjgl
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.5
 CATEGORIES=	games java
 MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:U}%20${PORTVERSION}/
-DISTNAME=	${PORTNAME}-source-${DISTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-source-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	loader@freebsdmall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Lightweight Java Game Library
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/${DISTNAME}/doc/LICENSE
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils \
 		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput \
@@ -33,11 +33,12 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*.[^j][^a][^r]$
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes
-MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jutils/jutils.jar:${JAVALIBDIR}/jinput/jinput.jar
+MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jutils/jutils.jar:${JAVALIBDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
 ALL_TARGET=	jars compile_native
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar \
@@ -49,13 +50,16 @@ PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME} \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == i386
 PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}.so
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}64.so
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,PREFIX,${PREFIX},g' ${WRKSRC}/platform_build/linux_ant/build.xml
 
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}/${PORTNAME}/ ..."
@@ -65,10 +69,10 @@ do-install:
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
-.if ${ARCH} == "i386"
+.if ${ARCH} == i386
 	@${INSTALL_DATA} ${WRKSRC}/libs/linux/lib${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 	@${INSTALL_DATA} ${WRKSRC}/libs/linux/lib${PORTNAME}64.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 
