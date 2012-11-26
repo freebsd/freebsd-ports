@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.nyx.net/~mschwart/
 DISTNAME=	signal_ext${PORTVERSION:R:R}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Dynamically loadable signal handling for Tcl/Tk scripts
 
 USE_TCL=	yes

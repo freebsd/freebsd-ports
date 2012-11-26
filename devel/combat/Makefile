@@ -1,16 +1,12 @@
-# New ports collection Makefile for:	combat
-# Date created:				24 February 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	combat
 PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.fpx.de/Combat/download/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	A CORBA ORB implementation in Tcl
 
 LICENSE=	BSD

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnocl
-# Date created:         15 August 2003
-# Whom:                 Stephane Legrand <stephane@FreeBSD.org>
-#
+# Created by: Stephane Legrand <stephane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnocl
 DISTVERSION=	${BASE_VERSION}-${NIGHTLY_BUILD}
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
 
 LIB_DEPENDS=	canberra.0:${PORTSDIR}/audio/libcanberra \
