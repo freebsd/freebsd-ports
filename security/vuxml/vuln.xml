@@ -16660,7 +16660,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php52</name>
-	<range><ge>0</ge></range>
+	<range><lt>5.2.17_12</lt></range>
       </package>
     </affects>
     <description>
@@ -16679,11 +16679,6 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Paths with NULL in them (foo\0bar.txt) are now considered
 	    as invalid (CVE-2006-7243).</p>
 	</blockquote>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/171583">
-	  <p>The php52 backports maintainer reports that this issue is unlikely
-	    to be fixed in 5.2 due to design roadblocks. Users are strongly
-	    encouraged to upgrade as soon as possible.</p>
-	</blockquote>
       </body>
     </description>
     <references>
@@ -16694,7 +16689,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-12-10</discovery>
       <entry>2011-01-13</entry>
-      <modified>2012-09-19</modified>
+      <modified>2012-11-25</modified>
     </dates>
   </vuln>
 
