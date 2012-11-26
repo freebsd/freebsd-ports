@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rpl
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	misc
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/
 
