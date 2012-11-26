@@ -22,6 +22,8 @@
 #				Default is 80.
 # uwsgi_flags (str):		Set the uwsgi command line arguments
 #				Default is "-M -L".
+# uwsgi_procname (str):		Define to "uWSGI" if you start uwsgi with
+#				--auto-procname option.
 #
 # If you would like to have multiple uWSGI instances running, you can
 # define multiple profiles:
@@ -39,6 +41,7 @@ rcvar=uwsgi_enable
 
 load_rc_config $name
 
+command=%%PREFIX%%/bin/uwsgi
 : ${uwsgi_enable="NO"}
 : ${uwsgi_profiles=""}
 : ${uwsgi_socket="/tmp/${name}.sock"}
@@ -47,6 +50,7 @@ load_rc_config $name
 : ${uwsgi_uid="80"}
 : ${uwsgi_gid="80"}
 : ${uwsgi_flags="-M -L"}
+: ${uwsgi_procname="${command}"}
 
 is_uwsgi_profile() {
     local profile
@@ -73,6 +77,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 		eval uwsgi_uid=\${uwsgi_${profile}_uid:-"${uwsgi_uid}"}
 		eval uwsgi_gid=\${uwsgi_${profile}_gid:-"${uwsgi_uid}"}
 		eval uwsgi_flags=\${uwsgi_${profile}_flags:-"${uwsgi_flags}"}
+		eval uwsgi_procname=\${uwsgi_${profile}_procname:-"${uwsgi_procname}"}
 	elif [ -n "$1" ]; then
 		for profile in ${uwsgi_profiles}; do
 	            echo "Processing ${name} profile: ${profile}"
@@ -90,6 +95,7 @@ reload_precmd=reload_precmd
 brutalreload_cmd=brutalreload_cmd
 sig_stop="INT"
 extra_commands="reload brutalreload"
+procname=${uwsgi_procname}
 
 stop_postcmd()
 {
