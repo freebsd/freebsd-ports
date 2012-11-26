@@ -1,13 +1,9 @@
-# New ports collection makefile for:	xpi-adblock_plus
-# Date created:			2 May 2006
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	adblock_plus
-PORTVERSION=	2.1.2
-DISTVERSIONSUFFIX=	-sm+an+fx+tb
+PORTVERSION=	2.2.1
+DISTVERSIONSUFFIX=	-sm+tb+an+fx
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
