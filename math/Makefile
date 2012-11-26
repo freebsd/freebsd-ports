@@ -470,6 +470,7 @@
     SUBDIR += p5-Number-Uncertainty
     SUBDIR += p5-Number-WithError
     SUBDIR += p5-Number-WithError-LaTeX
+    SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
     SUBDIR += p5-Set-IntSpan-Fast

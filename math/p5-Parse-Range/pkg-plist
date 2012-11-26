@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Parse/Range.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Range/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Range
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
+@dirrm %%SITE_PERL%%/Parse
