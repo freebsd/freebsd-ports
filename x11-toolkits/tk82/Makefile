@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	TclTk@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
 DEPRECATED=	no longer maintained upstream

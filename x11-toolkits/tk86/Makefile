@@ -8,7 +8,7 @@ MASTER_SITES=	SF/tcl/Tcl/8.6b2
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.2/b2/}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT?=	Graphical toolkit for Tcl
 
 LICENSE=	BSD
