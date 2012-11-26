@@ -1,6 +1,6 @@
---- Dclock.ad.orig	Sun Dec 18 00:18:10 2005
-+++ Dclock.ad	Sun Dec 18 00:20:00 2005
-@@ -1,14 +1,14 @@
+--- Dclock.ad.orig	2008-07-03 14:39:21.000000000 +0900
++++ Dclock.ad	2012-09-27 19:01:16.000000000 +0900
+@@ -1,13 +1,13 @@
  !       sample dclock defaults
 -dclock*geometry:                240x87+271+5
 -dclock*foreground:              chartreuse
@@ -10,21 +10,19 @@
 -dclock*borderWidth:		2
 -dclock*widthFactor:		0.143
 -dclock*spaceFactor:		0.062
--dclock*bellFile:		/usr/share/sounds/bell.wav
--dclock*alarmFile:		/usr/share/sounds/digital.wav
+-dclock*bellFile:		/usr/share/sound/bell.wav
+-dclock*alarmFile:		/usr/share/sound/digital.wav
 -dclock*font:                    *helvetica-medium-r-normal--14*
 -dclock*audioPlay:		/usr/bin/play
--dclock.input:			true
-+*geometry:	240x87+271+5
-+*foreground:	chartreuse
-+*background:	DarkSlateGray
-+*led_off:	DarkGreen
-+*borderColor:	white
-+*borderWidth:	2
-+*widthFactor:	0.143
-+*spaceFactor:	0.062
-+*bellFile:	%%DATADIR%%/sounds/bell.wav
-+*alarmFile:	%%DATADIR%%/sounds/digital.wav
-+*font:		*helvetica-medium-r-normal--14*
-+*audioPlay:	%%LOCALBASE%%/bin/play
-+.input:		true
++*geometry:                240x87+271+5
++*foreground:              chartreuse
++*background:              DarkSlateGray
++*led_off:              	DarkGreen
++*borderColor:             white
++*borderWidth:		2
++*widthFactor:		0.143
++*spaceFactor:		0.062
++*bellFile:		%%DATADIR%%/sound/bell.wav
++*alarmFile:		%%DATADIR%%/sound/digital.wav
++*font:                    *helvetica-medium-r-normal--14*
++*audioPlay:		%%LOCALBASE%%/bin/play

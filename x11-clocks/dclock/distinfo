@@ -1,4 +1,2 @@
-SHA256 (dclock_2.1.2.orig.tar.gz) = e613b2ea01e7bc41c1ae76b2ae7a5ad81805e2aba29c0e843fa2f9b28518136e
-SIZE (dclock_2.1.2.orig.tar.gz) = 51418
-SHA256 (dclock_2.1.2-8.diff.gz) = 52fb10719e998ace55676c665f5b6eba348f3d8f6083c636942a145edfb0334b
-SIZE (dclock_2.1.2-8.diff.gz) = 5247
+SHA256 (dclock-2.2.2.tgz) = af329ecf8e1a27defc8f060b94219bd054e79a7dc53e508b79265bcfbc380021
+SIZE (dclock-2.2.2.tgz) = 65429
