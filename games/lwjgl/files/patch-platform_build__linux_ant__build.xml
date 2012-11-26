@@ -1,16 +1,13 @@
-Obtained from http://foo.poildetroll.net/minecraft/lwjgl-2.7.1-freebsd.diff
-
-
---- ./platform_build/linux_ant/build.xml.orig	2011-02-06 19:22:44.000000000 +0000
-+++ ./platform_build/linux_ant/build.xml	2012-03-26 18:14:03.120371531 +0000
+--- platform_build/linux_ant/build.xml.orig
++++ platform_build/linux_ant/build.xml
 @@ -4,8 +4,8 @@
  	<property name="native" location="../../src/native"/>
  	<property name="libname32" value="liblwjgl.so"/>
  	<property name="libname64" value="liblwjgl64.so"/>
 -	<property name="libs32" value="-L/usr/X11R6/lib -L/usr/X11/lib -lm -lX11 -lXext -lXcursor -lXrandr -lpthread -L${java.home}/lib/i386 -ljawt" />
 -	<property name="libs64" value="-L/usr/X11R6/lib64 -L/usr/X11/lib64 -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -lpthread -L${java.home}/lib/amd64 -ljawt" />
-+	<property name="libs32" value="-L/usr/lib -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -lpthread -L${java.home}/lib/i386 -ljawt" />
-+	<property name="libs64" value="-L/usr/lib -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -lpthread -L${java.home}/lib/amd64 -ljawt" />
++	<property name="libs32" value="-LPREFIX/lib -lm -lX11 -lXext -lXcursor -lXrandr -pthread -L${java.home}/lib/i386 -ljawt" />
++	<property name="libs64" value="-LPREFIX/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -pthread -L${java.home}/lib/amd64 -ljawt" />
  	<property name="cflags32" value="-O2 -Wall -c -fPIC -std=c99 -Wunused"/>
  
  	<target name="clean">
@@ -43,33 +40,29 @@ Obtained from http://foo.poildetroll.net/minecraft/lwjgl-2.7.1-freebsd.diff
      	</condition>
  
      	<antcall target="compile32"/>
-@@ -69,11 +76,14 @@
- 			<arg line="${cflags32} ${cflags_pthread}"/>
- 			<arg value="-I${java.home}/include"/>
- 			<arg value="-I${java.home}/include/linux"/>
-+			<arg value="-I${java.home}/include/freebsd"/>
+@@ -72,10 +79,12 @@
  			<arg value="-I${java.home}/../include"/>
  			<arg value="-I${java.home}/../include/linux"/>
  			<arg value="-I${java.home}/../include/solaris"/>
 +			<arg value="-I${java.home}/../include/freebsd"/>
  			<arg value="-I${native}/common"/>
+ 		    <arg value="-I${native}/common/opengl"/>
  			<arg value="-I${native}/linux"/>
-+			<arg value="-I/usr/local/include"/>
+ 		    <arg value="-I${native}/linux/opengl"/>
++		    <arg value="-IPREFIX/include"/>
  			<mapper type="glob" from="*.c" to="*.o"/>
- 			<fileset dir="${native}/linux" includes="*.c"/>
- 			<fileset dir="${native}/generated" includes="*.c"/>
-@@ -95,11 +105,14 @@
- 			<arg line="${cflags64} ${cflags_pthread}"/>
- 			<arg value="-I${java.home}/include"/>
- 			<arg value="-I${java.home}/include/linux"/>
-+			<arg value="-I${java.home}/include/freebsd"/>
+ 		    <fileset dir="${native}/common" includes="*.c"/>
+ 		    <fileset dir="${native}/common/opengl" includes="*.c"/>
+@@ -104,10 +113,12 @@
  			<arg value="-I${java.home}/../include"/>
  			<arg value="-I${java.home}/../include/linux"/>
  			<arg value="-I${java.home}/../include/solaris"/>
 +			<arg value="-I${java.home}/../include/freebsd"/>
  			<arg value="-I${native}/common"/>
+ 		    <arg value="-I${native}/common/opengl"/>
  			<arg value="-I${native}/linux"/>
-+			<arg value="-I/usr/local/include"/>
+ 		    <arg value="-I${native}/linux/opengl"/>
++		    <arg value="-IPREFIX/include"/>
  			<mapper type="glob" from="*.c" to="*.o"/>
- 			<fileset dir="${native}/linux" includes="*.c"/>
- 			<fileset dir="${native}/generated" includes="*.c"/>
+ 		    <fileset dir="${native}/common" includes="*.c"/>
+ 		    <fileset dir="${native}/common/opengl" includes="*.c"/>
