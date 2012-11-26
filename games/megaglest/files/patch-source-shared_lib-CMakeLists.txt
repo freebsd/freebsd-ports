@@ -1,0 +1,11 @@
+--- source/shared_lib/CMakeLists.txt.orig	2012-11-25 00:19:10.000000000 +0000
++++ source/shared_lib/CMakeLists.txt	2012-11-25 00:12:01.000000000 +0000
+@@ -124,7 +124,7 @@
+         FIND_PACKAGE(LUA REQUIRED)
+         INCLUDE_DIRECTORIES(${LUA_INCLUDE_DIR})
+         IF(UNIX)
+-	        SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${LUA_LIBRARIES} "libdl.so")
++	        SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${LUA_LIBRARIES} ${CMAKE_DL_LIBS})
+         ENDIF()
+ #        ENDIF()
+ 
