@@ -51,6 +51,131 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5536c8e4-36b3-11e2-a633-902b343deec9">
+    <topic>FreeBSD -- Linux compatibility layer input validation error</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_11</lt></range>
+	<range><ge>8.3</ge><lt>8.3_5</lt></range>
+	<range><ge>9.0</ge><lt>9.0_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-12:08.linux.asc">
+	  <p>A programming error in the handling of some Linux system calls
+	     may result in memory locations being accessed without proper
+	     validation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:08.linux</freebsdsa>
+      <cvename>CVE-2012-4576</cvename>
+    </references>
+    <dates>
+      <discovery>2012-11-22</discovery>
+      <entry>2012-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f115f693-36b2-11e2-a633-902b343deec9">
+    <topic>FreeBSD -- Insufficient message length validation for EAP-TLS messages</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>8.3</ge><lt>8.3_5</lt></range>
+	<range><ge>9.0</ge><lt>9.0_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-12:07.hostapd.asc">
+	  <p>The internal authentication server of hostapd does not
+	     sufficiently validate the message length field of EAP-TLS
+	     messages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:07.hostapd</freebsdsa>
+      <cvename>CVE-2012-4445</cvename>
+    </references>
+    <dates>
+      <discovery>2012-11-22</discovery>
+      <entry>2012-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0f020b7b-e033-11e1-90a2-000c299b62e1">
+    <topic>FreeBSD -- Multiple Denial of Service vulnerabilities with named(8)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_11</lt></range>
+	<range><ge>8.3</ge><lt>8.3_5</lt></range>
+	<range><ge>9.0</ge><lt>9.0_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-12:06.bind.asc">
+	  <p>The BIND daemon would crash when a query is made on a resource
+	     record with RDATA that exceeds 65535 bytes.</p>
+	  <p>The BIND daemon would lock up when a query is made on specific
+	     combinations of RDATA.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:06.bind</freebsdsa>
+      <cvename>CVE-2012-4244</cvename>
+      <cvename>CVE-2012-5166</cvename>
+    </references>
+    <dates>
+      <discovery>2012-11-22</discovery>
+      <entry>2012-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0925716f-34e2-11e2-aa75-003067c2616f">
+    <topic>opera -- execution of arbitrary code</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <name>opera-devel</name>
+        <name>linux-opera</name>
+        <name>linux-opera-devel</name>
+        <range><lt>12.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Opera reports:</p>
+        <blockquote cite="http://www.opera.com/support/kb/view/1036/">
+          <p>When requesting pages using HTTP, Opera temporarily stores the
+            response in a buffer.  In some cases, Opera may incorrectly allocate
+            too little space for a buffer, and may then store too much of the
+            response in that buffer.  This causes a buffer overflow, which in
+            turn can lead to a memory corruption and crash.  It is possible to
+            use this crash to execute the overflowing data as code, which may
+            be controlled by an attacking site.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/1036/</url>
+    </references>
+    <dates>
+      <discovery>2012-11-19</discovery>
+      <entry>2012-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1cd3ca42-33e6-11e2-a255-5404a67eef98">
     <topic>lighttpd -- remote DoS in header parsing</topic>
     <affects>
