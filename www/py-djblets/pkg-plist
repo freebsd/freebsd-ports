@@ -42,9 +42,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/feedparser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/feedparser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/feedparser.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templates/feedview/feed-inline.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templates/feedview/feed-page.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/__init__.py
