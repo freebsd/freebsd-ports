@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Algorithm-Networksort
-PORTVERSION=	1.23
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl module that will create sorting networks
+COMMENT=	Perl module that will create sorting networks
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
