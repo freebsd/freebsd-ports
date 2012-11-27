@@ -1,12 +1,9 @@
-# New ports collection makefile for:	slim
-# Date created:				8 Jan 2006
-# Whom:					Tobias Roth <ports@fsck.ch>
-#
+# Created by: Tobias Roth <ports@fsck.ch>
 # $FreeBSD$
 
 PORTNAME=	slim
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://slim.berlios.de/releases/
 
@@ -15,8 +12,8 @@ COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		ck-connector.0:${PORTSDIR}/sysutils/consolekit \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		ck-connector:${PORTSDIR}/sysutils/consolekit \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
