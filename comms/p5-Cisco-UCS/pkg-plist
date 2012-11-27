@@ -1,5 +1,19 @@
 %%SITE_PERL%%/Cisco/UCS.pm
+%%SITE_PERL%%/Cisco/UCS/Blade.pm
+%%SITE_PERL%%/Cisco/UCS/Chassis.pm
+%%SITE_PERL%%/Cisco/UCS/Common/EthernetPort.pm
+%%SITE_PERL%%/Cisco/UCS/Common/Fan.pm
+%%SITE_PERL%%/Cisco/UCS/Common/FanModule.pm
+%%SITE_PERL%%/Cisco/UCS/Common/PSU.pm
+%%SITE_PERL%%/Cisco/UCS/Common/SwitchCard.pm
+%%SITE_PERL%%/Cisco/UCS/FEX.pm
+%%SITE_PERL%%/Cisco/UCS/Fault.pm
+%%SITE_PERL%%/Cisco/UCS/Interconnect.pm
+%%SITE_PERL%%/Cisco/UCS/MgmtEntity.pm
+%%SITE_PERL%%/Cisco/UCS/ServiceProfile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
+@dirrmtry %%SITE_PERL%%/Cisco/UCS/Common
+@dirrmtry %%SITE_PERL%%/Cisco/UCS
 @dirrmtry %%SITE_PERL%%/Cisco
