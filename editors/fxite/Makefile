@@ -1,13 +1,8 @@
-# New ports collection Makefile for:	fxite
-# Date created:				23 August 2010
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	fxite
-PORTVERSION=	0.7
-PORTREVISION=	4
+PORTVERSION=	0.9
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -32,7 +27,9 @@ LIB_DEPENDS+=	getline.1:${PORTSDIR}/devel/libgetline
 LDFLAGS+=	-lgetline
 .endif
 
-PLIST_FILES=	bin/fxite
+PLIST_FILES=	bin/fxite \
+		share/pixmaps/fxite.xpm \
+		share/applications/fxite.desktop
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
