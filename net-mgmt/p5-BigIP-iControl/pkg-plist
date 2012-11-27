@@ -1,0 +1,5 @@
+%%SITE_PERL%%/BigIP/iControl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BigIP/iControl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BigIP/iControl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BigIP
+@dirrmtry %%SITE_PERL%%/BigIP
