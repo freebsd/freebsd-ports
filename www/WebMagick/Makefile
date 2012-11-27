@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	WebMagick
-PORTVERSION=	2.03p16
-DISTVERSION=	2.03pre16
+PORTVERSION=	2.03p17
+DISTVERSION=	2.03pre17
 PORTEPOCH=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/${DISTVERSION}
@@ -18,6 +18,7 @@ COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
 USE_PERL5=	yes
 USE_AUTOTOOLS=  autoconf aclocal automake
