@@ -1,14 +1,8 @@
-# New ports collection makefile for:	lilypond-devel
-# Date created:				2001-02-10
-# Whom:					patrick
-# based on print/lilypond originally by trevor
-#
+# Created by: patrick, trevor
 # $FreeBSD$
-# $Id: Makefile,v 1.18 2004/05/25 22:16:33 patrick Exp $
-#
 
 PORTNAME=	lilypond
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 
@@ -28,7 +22,6 @@ LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
     		mftrace:${PORTSDIR}/print/mftrace \
-		gs:${PORTSDIR}/print/ghostscript9 \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
@@ -51,9 +44,11 @@ INFO=		lilypond-notation \
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_GHOSTSCRIPT=9
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	pango
+USE_GCC=	any
 
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
