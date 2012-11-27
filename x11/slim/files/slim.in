@@ -61,9 +61,8 @@ slim_prestop ()
 
 	find_pidfile
 
-	xpid=`ps -axww | grep '/bin/[X] .* -auth /var/run/slim.auth'`
-	xpid="${xpid## }"
-	[ -n "$xpid" ] && kill ${xpid%% *}
+	xpid=`ps -axww | grep '/bin/[X] .* -auth /var/run/slim.auth' | grep -v grep | awk '{print $1};'`
+	[ -n "$xpid" ] && kill $xpid
 }
 
 run_rc_command "$1"
