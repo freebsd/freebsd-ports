@@ -11,6 +11,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Message/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Message
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrm %%SITE_PERL%%/HTTP/Headers
-@dirrm %%SITE_PERL%%/HTTP/Request
+@dirrmtry %%SITE_PERL%%/HTTP/Headers
+@dirrmtry %%SITE_PERL%%/HTTP/Request
 @dirrmtry %%SITE_PERL%%/HTTP
