@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-Parse-PhoneNumber
-# Date created:				18 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Parse-PhoneNumber
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
