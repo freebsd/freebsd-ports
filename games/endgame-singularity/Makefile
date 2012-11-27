@@ -1,13 +1,8 @@
-# New ports collection makefile for:	endgame-singularity
-# Date created:		10 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	singularity
-PORTVERSION=	0.30b
-PORTREVISION=	2
+PORTVERSION=	0.30c
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	endgame-
