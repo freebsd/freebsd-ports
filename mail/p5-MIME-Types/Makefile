@@ -1,11 +1,7 @@
-# New ports collection makefile for:    p5-MIME-Types
-# Date created:                         15 March 2001
-# Whom:                                 -
-#
 # $FreeBSD$
 
 PORTNAME=	MIME-Types
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
