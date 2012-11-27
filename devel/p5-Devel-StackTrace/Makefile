@@ -1,19 +1,16 @@
-# ex:ts=8
-# New ports collection makefile for:	p5-Devel-StackTrace
-# Date created:			Jul 28, 2001
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-StackTrace
-PORTVERSION=	1.27
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stack trace and stack trace frame objects
+
+LICENSE=	ART20
 
 PERL_CONFIGURE=	yes
 
