@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4d64fc61-3878-11e2-a4eb-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>23.0.1271.91</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[156567] High CVE-2012-5133: Use-after-free in SVG filters. Credit
+	    to miaubiz.</p>
+	  <p>[148638] Medium CVE-2012-5130: Out-of-bounds read in Skia. Credit
+	    to Atte Kettunen of OUSPG.</p>
+	  <p>[155711] Low CVE-2012-5132: Browser crash with chunked encoding.
+	    Credit to Attila Szász.</p>
+	  <p>[158249] High CVE-2012-5134: Buffer underflow in libxml. Credit to
+	    Google Chrome Security Team (Jüri Aedla).</p>
+	  <p>[159165] Medium CVE-2012-5135: Use-after-free with printing.
+	    Credit to Fermin Serna of Google Security Team.</p>
+	  <p>[159829] Medium CVE-2012-5136: Bad cast in input element handling.
+	    Credit to Google Chrome Security Team (Inferno).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5130</cvename>
+      <cvename>CVE-2012-5132</cvename>
+      <cvename>CVE-2012-5133</cvename>
+      <cvename>CVE-2012-5134</cvename>
+      <cvename>CVE-2012-5135</cvename>
+      <cvename>CVE-2012-5136</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-11-26</discovery>
+      <entry>2012-11-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5536c8e4-36b3-11e2-a633-902b343deec9">
     <topic>FreeBSD -- Linux compatibility layer input validation error</topic>
     <affects>
