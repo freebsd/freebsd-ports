@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	vtkfox
-# Date created:				7 August 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	vtkfox
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.gahr.ch/vtkfox/
 
