@@ -1,19 +1,15 @@
-# New ports collection makefile for:	p5-File-Find-Object
-# Date created:		2006-07-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Find-Object
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An object oriented File::Find replacement
+COMMENT=	Object oriented File::Find replacement
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
