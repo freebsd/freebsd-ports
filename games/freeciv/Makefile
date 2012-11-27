@@ -7,7 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -23,7 +23,6 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-libiconv-prefix=${PREFIX} --program-transform-name=
-INSTALLS_ICONS=	yes
 
 MAN6=		freeciv-server.6 freeciv-client.6 \
 		freeciv-xaw.6 freeciv-sdl.6 freeciv-gtk2.6 \
@@ -48,6 +47,7 @@ LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff \
 USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-client=gtk
 CONFLICTS=	freeciv-nox11-[0-9]*
 PLIST_SUB+=	X11="" GTK=""
