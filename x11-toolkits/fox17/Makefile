@@ -1,12 +1,8 @@
-# New ports collection Makefile for:	fox17
-# Date created:				23 August 2010
-# Whom:					gahr
-#
+# Whom: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	fox
-PORTVERSION=	1.7.36
+PORTVERSION=	1.7.37
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
