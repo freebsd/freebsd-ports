@@ -13,11 +13,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ie-session
-%%PORTDOCS%%%%DOCSDIR%%/distel-3.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/distel-euc.pdf
-%%PORTDOCS%%%%DOCSDIR%%/distel-euc.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/distel-user-3.3.pdf
-%%PORTDOCS%%%%DOCSDIR%%/distel-user-3.3.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/gorrie02distel.pdf
 %%PORTDOCS%%%%DOCSDIR%%/html/Applications.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Attach-Buffer.html
