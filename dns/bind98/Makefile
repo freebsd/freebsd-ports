@@ -22,20 +22,25 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[45679].* bind9-sdb-* host-* bind-tools-9.*
+CONFLICTS=	bind9*-9.[45679].* bind9*-sdb-9.[45679].* bind-tools-9.*
 
 OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
 OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
+			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME \
 			SIGCHASE IPV6 THREADS DLZ
 OPTIONS_SINGLE=		DLZ
 OPTIONS_SINGLE_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
 
+SSL_DESC=		Building without OpenSSL removes DNSSEC
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 XML_DESC=		Support for xml statistics output
 REPLACE_BASE_DESC=	Replace base BIND with this version
 LARGE_FILE_DESC=	64-bit file support
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
+FIXED_RRSET_DESC=	Enable fixed rrset ordering
+RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
+RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
 DLZ_DESC=		Dynamically Loadable Zones
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
 DLZ_MYSQL_DESC=		DLZ MySQL driver (no threading)
@@ -50,11 +55,9 @@ DLZ_STUB_DESC=		DLZ stub driver
 ARCH=		x86_64
 .endif
 
-# Just in case
-USE_OPENSSL=	yes
-
 .if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+USE_OPENSSL=		yes
 .else
 CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
@@ -74,7 +77,7 @@ LIB_DEPENDS+=		idnkit.1:${PORTSDIR}/dns/idnkit
 CONFIGURE_ARGS+=	--without-idn
 .endif
 
-.if ${PORT_OPTIONS:MLINKS} && empty($PORT_OPTIONS:MBASE)
+.if ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
 PLIST_SUB+=	LINKS=""
 .else
 PLIST_SUB+=	LINKS="@comment "
@@ -90,6 +93,18 @@ CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 
 .if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if ${PORT_OPTIONS:MFIXED_RRSET}
+CONFIGURE_ARGS+=	--enable-fixed-rrset
+.endif
+
+.if ${PORT_OPTIONS:MRPZ_NSIP}
+CONFIGURE_ARGS+=	--enable-rpz-nsip
+.endif
+
+.if ${PORT_OPTIONS:MRPZ_NSDNAME}
+CONFIGURE_ARGS+=	--enable-rpz-nsdname
 .endif
 
 .if ${PORT_OPTIONS:MDLZ_POSTGRESQL}
@@ -216,7 +231,7 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
 .endif
-.if ${PORT_OPTIONS:MLINKS} && empty($PORTOPTIONS:MREPLACE_BASE)
+.if ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 

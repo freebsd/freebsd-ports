@@ -21,20 +21,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[45789].* bind9-sdb-* host-* bind-tools-9.*
+CONFLICTS=	bind9*-9.[45789].* bind9*-sdb-9.[45789].* bind-tools-9.*
 
 OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
 OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
-			SIGCHASE IPV6 THREADS DLZ
+			SIGCHASE IPV6 THREADS DLZ FIXED_RRSET
 OPTIONS_SINGLE=		DLZ
 OPTIONS_SINGLE_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
 
+SSL_DESC=		Building without OpenSSL removes DNSSEC
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 XML_DESC=		Support for xml statistics output
 REPLACE_BASE_DESC=	Replace base BIND with this version
 LARGE_FILE_DESC=	64-bit file support
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
+FIXED_RRSET=		Enable fixed rrset ordering
 DLZ_DESC=		Dynamically Loadable Zones
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
 DLZ_MYSQL_DESC=		DLZ MySQL driver (no threading)
@@ -42,9 +44,6 @@ DLZ_BDB_DESC=		DLZ BDB driver
 DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
-
-# Just in case
-USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
 
@@ -54,6 +53,7 @@ ARCH=		x86_64
 
 .if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+USE_OPENSSL=		yes
 .else
 CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
@@ -89,6 +89,10 @@ CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 
 .if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if ${PORT_OPTIONS:MFIXED_RRSET}
+CONFIGURE_ARGS+=	--enable-fixed-rrset
 .endif
 
 .if ${PORT_OPTIONS:MDLZ_POSTGRESQL}
