@@ -1,12 +1,9 @@
-# New ports collection makefile for:	xfe
-# Date created:				Sun, Jul 13 2003
-# Whom:					ptiJo
-#
+# Created by: ptiJo
 # $FreeBSD$
-#
 
 PORTNAME=	xfe
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
