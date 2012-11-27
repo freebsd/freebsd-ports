@@ -10,12 +10,14 @@ DISTNAME=	yui_${PORTVERSION}r1
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
 
+LICENSE=	BSD
+
+FORBIDDEN=	CVE-2012-5881 Cross-site scripting (XSS) vulnerability in the Flash component infrastructure
+
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/yui
 NO_BUILD=	yes
-
-LICENSE=	BSD
 
 OPTIONS=	APACHE	"Configure for Apache-2.x" off \
 		MINIMAL "Do not install documentation and examples" off
