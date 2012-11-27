@@ -63,6 +63,7 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/paste
 %%DATADIR%%/script/pipe
 %%DATADIR%%/script/reconnect
+%%DATADIR%%/script/rejoin
 %%DATADIR%%/script/renumber
 %%DATADIR%%/script/revdcc
 %%DATADIR%%/script/save
