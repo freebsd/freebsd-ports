@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tif22pnm
-PORTVERSION=	0.12
-PORTREVISION=	7
+PORTVERSION=	0.14
 CATEGORIES=	graphics
 MASTER_SITES=	http://pts.szit.bme.hu/ \
 		GOOGLE_CODE
