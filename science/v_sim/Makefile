@@ -1,17 +1,18 @@
-# New ports collection makefile for:	V_Sim
-# Date created:			Sep 27, 2005
-# Whom:				Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTVERSION=	3.6.1.1
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualization of atomic structures
+
+LICENSE=	CeCILL
+LICENSE_NAME=	CeCILL
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
@@ -25,6 +26,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 .if !defined(NOPORTDOCS)
 MAN1=		v_sim.1
@@ -48,7 +50,7 @@ PLIST_SUB+=	CDF="@comment "
 
 .if !defined(WITHOUT_BABEL)
 LIB_DEPENDS+=	openbabel.3:${PORTSDIR}/science/openbabel
-CONFIGURE_ARGS+=--with-openbabel --with-openbabel-path=${LOCALBASE}
+CONFIGURE_ARGS+=--with-openbabel
 PLIST_SUB+=	BABEL=""
 .else
 CONFIGURE_ARGS+=--without-openbabel
