@@ -86,6 +86,7 @@ share/yang/xslt/iso_abstract_expand.xsl
 share/yang/xslt/iso_schematron_skeleton_for_xslt1.xsl
 share/yang/xslt/iso_svrl_for_xslt1.xsl
 share/yang/xslt/svrl2text.xsl
+share/yang/xslt/yin2yang.xsl
 @dirrm share/yang/xslt
 @dirrm share/yang/schema
 @dirrm share/yang/modules
