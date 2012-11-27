@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sterm
-# Date created:			April 01, 2011
-# Whom:				Matthew Donovan <kitchetech@gmail.com>
-#
+# Created by: Matthew Donovan <kitchetech@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sterm
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/st/
 DISTNAME=	st-${PORTVERSION}
@@ -16,13 +12,17 @@ COMMENT=	A simple X terminal
 
 LICENSE=	BSD
 
+LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
-USE_XORG=	x11
+USE_XORG=	x11 xext xft
 MAN1=	st.1
 PLIST_FILES=	bin/st
 
 PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/config.mk
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
