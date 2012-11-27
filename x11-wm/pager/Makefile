@@ -1,12 +1,8 @@
-# New ports collection makefile for:		pager
-# Date created:					November 20 2002
-# Whom:						Michael Ebert <ebert@informatik.unibw-muenchen.de>
-#
+# Created by: Michael Ebert <ebert@informatik.unibw-muenchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pager
-PORTVERSION=	0.90.2
+PORTVERSION=	0.90.3
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfishpager/
