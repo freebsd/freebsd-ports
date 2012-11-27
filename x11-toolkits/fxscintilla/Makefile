@@ -1,13 +1,9 @@
-# New ports collection makefile for:	fxscintilla
-# Date created:				16 June 2004
-# Whom:                 		Alexander Novitsky <alecn2002@yandex.ru>
-#
+# Created by: Alexander Novitsky <alecn2002@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fxscintilla
 PORTVERSION=	2.28.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SAVANNAH
 
