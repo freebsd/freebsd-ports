@@ -10,8 +10,11 @@ bin/powerman
 %%ETCDIR%%/apcold.dev
 %%ETCDIR%%/apcpdu.dev
 %%ETCDIR%%/apcpdu3.dev
+%%ETCDIR%%/appro-gb2.dev
 %%ETCDIR%%/appro-greenblade.dev
 %%ETCDIR%%/bashfun.dev
+%%ETCDIR%%/baytech-rpc18d-nc.dev
+%%ETCDIR%%/baytech-rpc22.dev
 %%ETCDIR%%/baytech-rpc28-nc.dev
 %%ETCDIR%%/baytech-rpc3-nc.dev
 %%ETCDIR%%/baytech-snmp.dev
@@ -22,6 +25,7 @@ bin/powerman
 %%ETCDIR%%/cyclades-pm42.dev
 %%ETCDIR%%/cyclades-pm8.dev
 %%ETCDIR%%/dli.dev
+%%ETCDIR%%/dli4.dev
 %%ETCDIR%%/eaton-epdu-blue-switched.dev
 %%ETCDIR%%/eaton-revelation-snmp.dev
 %%ETCDIR%%/hp3488.dev
@@ -36,12 +40,15 @@ bin/powerman
 %%ETCDIR%%/ics8064.dev
 %%ETCDIR%%/ilom.dev
 %%ETCDIR%%/ipmi.dev
+%%ETCDIR%%/ipmipower-serial.dev
 %%ETCDIR%%/ipmipower.dev
 %%ETCDIR%%/lom.dev
 %%ETCDIR%%/phantom.dev
 %%ETCDIR%%/plmpower.dev
 %%ETCDIR%%/powerman.conf.example
 %%ETCDIR%%/powerman.dev
+%%ETCDIR%%/raritan-px4316.dev
+%%ETCDIR%%/sentry_cdu.dev
 %%ETCDIR%%/swpdu.dev
 %%ETCDIR%%/vpc.dev
 %%ETCDIR%%/wti-rps10.dev

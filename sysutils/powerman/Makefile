@@ -1,11 +1,8 @@
-# New ports collection makefile for:	powerman
-# Date created:		29 March 2004
-# Whom:			Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	powerman
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.16
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +12,7 @@ COMMENT=	A tool for doing remote power control
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
