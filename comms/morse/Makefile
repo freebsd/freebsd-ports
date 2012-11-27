@@ -1,9 +1,5 @@
-# New ports collection makefile for:	morse
-# Date created:		2012-04-11
-# Whom:			Stephen Hurd <shurd@sasktel.net>
-#
+# Created by:	Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	morse
 PORTVERSION=	2.4
@@ -17,37 +13,29 @@ MAN1=		morsec.1 QSO.1
 PLIST_FILES=	bin/morsec \
 		bin/QSO
 
-OPTIONS=	OSS "Beep using OSS (/dev/dsp)"	on \
-		X11 "Beep using X server"	off \
-		PA  "Beep using Pulse Audio"	off
+OPTIONS_SINGLE=	SOUND
+OPTIONS_SINGLE_SOUND=	OSS X11 PA
+OPTIONS_DEFAULT=	OSS
+
+OSS_DESC=	Beep using OSS (/dev/dsp)
+X11_DESC=	Beep using X server
+PA_DESC=	Beep using Pulse Audio
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OSS)
+.if ${PORT_OPTIONS:MOSS}
 MAKE_FLAGS+=	DEVICE=OSS
 
-.if defined(WITH_X11) || defined(WITH_PA)
-BROKEN=	Only one sound output method must be chosen.
-.endif
-
-.elif defined(WITH_X11)
+.elif ${PORT_OPTIONS:MX11}
 MAKE_FLAGS+=	DEVICE=X11
 USE_XORG=	x11
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 
-.if defined(WITH_OSS) || defined(WITH_PA)
-BROKEN=	Only one sound output method must be chosen.
-.endif
-
-.elif defined(WITH_PA)
+.elif ${PORT_OPTIONS:MPA}
 MAKE_FLAGS+=	DEVICE=PA
 LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
 USE_GNOME=	pkgconfig
-
-.if defined(WITH_OSS) || defined(WITH_X11)
-BROKEN=	Only one sound output method must be chosen.
-.endif
 .endif
 
 do-install:
