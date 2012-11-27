@@ -3,22 +3,21 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+		tiff:${PORTSDIR}/graphics/tiff \
+		Xft:${PORTSDIR}/x11-fonts/libXft
 
 LATEST_LINK=	fox16
 
 MAJORVER=	1.6
-SHVER=		46
+SHVER=		47
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack gnomehack
@@ -58,7 +57,7 @@ CONFIGURE_ARGS+=	--with-xshm=no
 .endif
 #
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 #
 .if ${PORT_OPTIONS:MDEBUG}
