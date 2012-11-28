@@ -1,47 +1,34 @@
-# New Ports collection makefile for:	gottet
-# Date created:		21 April 2012
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	gottet
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A Tetris clone
+COMMENT=	Tetris clone
 
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_QT4=	moc_build qmake_build rcc_build iconengines imageformats
-USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	ChangeLog
-
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.png
-PLIST_DIRSTRY=	share/applications
 
 .include <bsd.port.options.mk>
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS}
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
-do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Pixmaps and Desktop
+post-install:
+# Pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.desktop ${PREFIX}/share/applications/
 
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}
