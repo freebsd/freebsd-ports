@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121128:
+  AFFECTS: Users of www/opera
+  AUTHOR: itetcu@FreeBSD.org
+
+  If you are running KDE and you are using KDE's File dialog toolkit, and if
+  your Opera crashes on start with a 'libpng error: incorrect data check'
+  you can work around it by setting 'Dialog Toolkit=4' in your 
+  .opera/operaprefs.ini [File Selector] section.
+
 20121112:
   AFFECTS: Users of devel/git
   AUTHOR: wxs@FreeBSD.org
