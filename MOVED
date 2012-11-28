@@ -3929,3 +3929,4 @@ www/p5-Sledge-Plugin-SessionAutoCleanup||2012-11-28|Has expired: depends on mod_
 www/p5-Sledge-Plugin-XSLT||2012-11-28|Has expired: depends on mod_perl 1 which is gone
 www/p5-Sledge-SessionManager-CookieStore||2012-11-28|Removed depends on mod_perl 1 which is gone
 www/p5-Sledge-Template-Expr||2012-11-28|Removed depends on mod_perl 1 which is gone
+mail/vchkuser|mail/qmail-spamcontrol|2012-11-28|Has expired: mail/qmail-spamcontrol replaces this port
