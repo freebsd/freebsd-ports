@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 
 LICENSE=	GPLv2
@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT FLAC MPP NORMALIZE REPLAYGAIN SPEEX
 
 EJECT_DESC?=	Enable auto-eject support
 NORMALIZE_DESC?=	Enable normalize support
-REPLAYGAIN_DESC?=	"Enable (vorbis|mp3)gain support"
+REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
 
 .include <bsd.port.options.mk>
 
