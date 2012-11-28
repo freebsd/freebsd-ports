@@ -1,18 +1,13 @@
-# New ports collection makefile for:	frotz
-# Date created:				16 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	frotz
-PORTVERSION=	2.43
-PORTREVISION=	1
+PORTVERSION=	2.43d
 CATEGORIES=	games
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.43/ \
 		http://www.ifarchive.org/if-archive/infocom/interpreters/frotz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Infocom games interpreter
 
 LICENSE=	GPLv2 # (or later)
@@ -22,21 +17,25 @@ MAKE_ARGS=	CC="${CC}" OPTS="${CFLAGS}" PREFIX="${PREFIX}" \
 		SOUND_DEV="/dev/dsp" INCL="" LIB=""
 MAKE_JOBS_SAFE=	yes
 
-MAN6=		frotz.6
-PORTDOCS=	BUGS HOW_TO_PLAY README
+MAN6=		frotz.6 dfrotz.6
+PORTDOCS=	AUTHORS BUGS ChangeLog DUMB HOW_TO_PLAY README
 PORTEXAMPLES=	frotz.conf-big frotz.conf-small
 PLIST_FILES=	bin/frotz
 
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/frotz ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/frotz.6 ${MANPREFIX}/man/man6
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.for m in ${MAN6}
+	${INSTALL_MAN} ${WRKSRC}/doc/${m} ${MAN6PREFIX}/man/man6
 .endfor
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for ex in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${ex} ${EXAMPLESDIR}
