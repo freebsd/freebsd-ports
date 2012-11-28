@@ -1,12 +1,8 @@
-# New ports collection makefile for:	blue
-# Date created:				6 June 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	blue
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 DISTNAME=	bluemoon-${PORTVERSION}
