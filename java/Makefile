@@ -28,7 +28,6 @@
     SUBDIR += eclipse-aptana2
     SUBDIR += eclipse-cdt
     SUBDIR += eclipse-checkstyle
-    SUBDIR += eclipse-clay-core
     SUBDIR += eclipse-datatools
     SUBDIR += eclipse-devel
     SUBDIR += eclipse-drjava
@@ -113,7 +112,6 @@
     SUBDIR += jlex
     SUBDIR += jlint
     SUBDIR += jmf
-    SUBDIR += jmp
     SUBDIR += jode
     SUBDIR += jomp
     SUBDIR += jrosetta

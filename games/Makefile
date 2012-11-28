@@ -7,7 +7,6 @@
     SUBDIR += 0verkill
     SUBDIR += 3dc
     SUBDIR += 3dpong
-    SUBDIR += 44bsd-hunt
     SUBDIR += 4stattack
     SUBDIR += 54321
     SUBDIR += BillardGL
@@ -837,7 +836,6 @@
     SUBDIR += simplevaders
     SUBDIR += simsu
     SUBDIR += simutrans
-    SUBDIR += six
     SUBDIR += sjeng
     SUBDIR += sl
     SUBDIR += slashem-tty
@@ -1006,7 +1004,6 @@
     SUBDIR += xblackjack
     SUBDIR += xblast
     SUBDIR += xblood
-    SUBDIR += xbloody
     SUBDIR += xboard
     SUBDIR += xboing
     SUBDIR += xbomb
@@ -1082,7 +1079,6 @@
     SUBDIR += xpuzzletama
     SUBDIR += xpyraminx
     SUBDIR += xqf
-    SUBDIR += xquarto
     SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xrisk

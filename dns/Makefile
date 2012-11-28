@@ -152,7 +152,6 @@
     SUBDIR += sheerdns
     SUBDIR += skadns
     SUBDIR += sleuth
-    SUBDIR += sqldjbdns
     SUBDIR += sshfp
     SUBDIR += tinystats
     SUBDIR += totd

@@ -122,7 +122,6 @@
     SUBDIR += icon
     SUBDIR += ifc
     SUBDIR += ikarus
-    SUBDIR += imp-interpreter
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io

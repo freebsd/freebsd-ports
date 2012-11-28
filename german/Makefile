@@ -17,7 +17,6 @@
     SUBDIR += bugzilla42
     SUBDIR += calligra-l10n
     SUBDIR += dict
-    SUBDIR += digibux
     SUBDIR += ding
     SUBDIR += dtaus
     SUBDIR += eric4
