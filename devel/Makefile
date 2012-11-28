@@ -803,7 +803,6 @@
     SUBDIR += ireport
     SUBDIR += itext
     SUBDIR += ixlib
-    SUBDIR += jakarta-commons-chain
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io

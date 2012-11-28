@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/LinearCombination/.packlist
-%%SITE_PERL%%/Math/LinearCombination.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/LinearCombination
-@dirrmtry %%SITE_PERL%%/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

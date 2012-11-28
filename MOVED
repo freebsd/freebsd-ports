@@ -3865,3 +3865,12 @@ multimedia/kaffeine-mozilla||2012-11-28|Has expired: No more public distfiles
 www/gnustep-ticker||2012-11-28|Has expired: Abandonware
 net/tryst-examples||2012-11-28|Has expired: Abandonware
 net/tryst||2012-11-28|Has expired: Abandonware
+graphics/morpheus||2012-11-28|Has expired: Depends on the expired gtkglarea
+devel/jakarta-commons-chain||2012-11-28|Has expired: Depends on the expired devel/portlet-api
+math/p5-Math-LinearCombination||2012-11-28|Has expired: Depends on the expired p5-Class-Field
+x11/padkey||2012-11-28|Has expired: No more public distfiles
+japanese/gicq||2012-11-28|Has expired: No more public distfiles and development ceased
+www/momspider||2012-11-28|Has expired: No more public distfiles
+japanese/perl5||2012-11-28|Has expired: Recent perl supports correctly japanese, consider using them
+sysutils/fuser||2012-11-28|Has expired: No more public distfiles
+textproc/ascii2pdf||2012-11-28|Has expired: No more public distfiles
