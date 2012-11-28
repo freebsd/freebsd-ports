@@ -1,4 +1,4 @@
-# Created by:	Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
 
 PORTNAME=	morse
@@ -14,12 +14,12 @@ PLIST_FILES=	bin/morsec \
 		bin/QSO
 
 OPTIONS_SINGLE=	SOUND
-OPTIONS_SINGLE_SOUND=	OSS X11 PA
+OPTIONS_SINGLE_SOUND=	OSS X11 PULSEAUDIO
 OPTIONS_DEFAULT=	OSS
 
 OSS_DESC=	Beep using OSS (/dev/dsp)
 X11_DESC=	Beep using X server
-PA_DESC=	Beep using Pulse Audio
+PULSEAUDIO_DESC=	Beep using Pulse Audio
 
 .include <bsd.port.options.mk>
 
@@ -32,7 +32,7 @@ USE_XORG=	x11
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 
-.elif ${PORT_OPTIONS:MPA}
+.elif ${PORT_OPTIONS:MPULSEAUDIO}
 MAKE_FLAGS+=	DEVICE=PA
 LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
 USE_GNOME=	pkgconfig
