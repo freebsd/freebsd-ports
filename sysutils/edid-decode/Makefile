@@ -1,12 +1,8 @@
-# New ports collection makefile for:	edid-decode
-# Date created:				05 Jun 2012
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	edid-decode
-PORTVERSION=	0.1.20120605
+PORTVERSION=	0.1.20121128
 CATEGORIES=	sysutils
 MASTER_SITES=	CRITICAL
 
@@ -15,6 +11,7 @@ COMMENT=	Decodes binary EDID information from monitors
 
 LICENSE=	MIT
 
+USE_XZ=		yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/edid-decode
