@@ -157,7 +157,6 @@
     SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
-    SUBDIR += libicq
     SUBDIR += libjcode
     SUBDIR += libreoffice
     SUBDIR += libskk

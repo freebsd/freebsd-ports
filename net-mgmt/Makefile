@@ -120,7 +120,6 @@
     SUBDIR += nagios-check_email_delivery
     SUBDIR += nagios-check_hdd_health
     SUBDIR += nagios-check_hp_bladechassis
-    SUBDIR += nagios-check_ice
     SUBDIR += nagios-check_kumofs
     SUBDIR += nagios-check_memcached_paranoid
     SUBDIR += nagios-check_mysql_slave

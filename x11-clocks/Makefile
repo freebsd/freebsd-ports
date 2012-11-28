@@ -14,7 +14,6 @@
     SUBDIR += astzclock
     SUBDIR += bbdate
     SUBDIR += bclock
-    SUBDIR += bmp-alarm
     SUBDIR += buici-clock
     SUBDIR += cairo-clock
     SUBDIR += dclock

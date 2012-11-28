@@ -1,6 +1,0 @@
-bin/rfinger
-bin/rftp
-bin/rtelnet
-libexec/relay
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3874,3 +3874,11 @@ www/momspider||2012-11-28|Has expired: No more public distfiles
 japanese/perl5||2012-11-28|Has expired: Recent perl supports correctly japanese, consider using them
 sysutils/fuser||2012-11-28|Has expired: No more public distfiles
 textproc/ascii2pdf||2012-11-28|Has expired: No more public distfiles
+devel/p5-SPOPS||2012-11-28|Has expired: Depend on the expired p5-Class-Fields
+textproc/lemmatizer||2012-11-28|Has expired: No more public distfiles
+net/relay||2012-11-28|Has expired: No more public distfiles
+x11-clocks/bmp-alarm||2012-11-28|Has expired: No more public distfiles
+net-mgmt/nagios-check_ice||2012-11-28|Has expired: No more public distfiles
+japanese/libicq||2012-11-28|Has expired: No more public distfiles and development ceased
+graphics/tonicpoint-viewer||2012-11-28|Has expired: No more public distfiles
+devel/safestr||2012-11-28|Has expired: No more public distfiles
