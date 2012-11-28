@@ -1,9 +1,5 @@
-# New ports collection makefile for:	super-smack
-# Date created:		2005-12-10
-# Whom:			Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-#
+# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	super-smack
 PORTVERSION=	1.3
@@ -12,7 +8,7 @@ CATEGORIES=	benchmarks databases
 MASTER_SITES=	http://vegan.net/tony/supersmack/
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	A benchmarking, stress testing, and load generation tool for Databases
+COMMENT=	Benchmarking, stress testing, and load generation tool for Databases
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-smacks-dir=${DATADIR}
@@ -20,26 +16,30 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	README TUTORIAL
 
-OPTIONS=	MYSQL "Enable MySQL support" on \
-		POSTGRESQL "Enable PostgreSQL support" off
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+PGSQL_DESC=	Enable PostgreSQL support
+MYSQL_DESC=	Enable MySQL support
 
-.if !defined(WITHOUT_MYSQL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql \
 		--with-mysql-include=${LOCALBASE}/include/mysql \
 		--with-mysql-lib=${LOCALBASE}/lib/mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql \
 		--with-pgsql-include=${LOCALBASE}/include \
 		--with-pgsql-lib=${LOCALBASE}/lib
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
@@ -47,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
