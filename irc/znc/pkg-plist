@@ -1,6 +1,5 @@
 bin/znc
 bin/znc-buildmod
-bin/znc-config
 include/znc/Buffer.h
 include/znc/Chan.h
 include/znc/Client.h
@@ -9,6 +8,7 @@ include/znc/Csocket.h
 include/znc/ExecSock.h
 include/znc/FileUtils.h
 include/znc/HTTPSock.h
+include/znc/IRCNetwork.h
 include/znc/IRCSock.h
 include/znc/Listener.h
 include/znc/MD5.h
@@ -25,58 +25,57 @@ include/znc/ZNCDebug.h
 include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
+include/znc/version.h
 include/znc/znc.h
 include/znc/zncconfig.h
-lib/znc/admin.so
 lib/znc/adminlog.so
 lib/znc/autoattach.so
+lib/znc/autocycle.so
 lib/znc/autoop.so
 lib/znc/autoreply.so
+lib/znc/autovoice.so
 lib/znc/awaynick.so
+lib/znc/block_motd.so
 lib/znc/blockuser.so
 lib/znc/bouncedcc.so
 lib/znc/buffextras.so
 lib/znc/chansaver.so
+lib/znc/charset.so
+lib/znc/clearbufferonmsg.so
 lib/znc/clientnotify.so
+lib/znc/controlpanel.so
+lib/znc/ctcpflood.so
+lib/znc/dcc.so
 lib/znc/disconkick.so
 lib/znc/fail2ban.so
+lib/znc/flooddetach.so
 lib/znc/identfile.so
+lib/znc/imapauth.so
 lib/znc/keepnick.so
 lib/znc/kickrejoin.so
 lib/znc/lastseen.so
+lib/znc/listsockets.so
+lib/znc/log.so
+lib/znc/missingmotd.so
 lib/znc/nickserv.so
 lib/znc/notes.so
+lib/znc/notify_connect.so
 lib/znc/partyline.so
 lib/znc/perform.so
 lib/znc/q.so
 lib/znc/raw.so
 lib/znc/route_replies.so
 lib/znc/sample.so
+lib/znc/sasl.so
+lib/znc/send_raw.so
+lib/znc/shell.so
 lib/znc/simple_away.so
 lib/znc/stickychan.so
 lib/znc/watch.so
 lib/znc/webadmin.so
-%%EXTRA%%lib/znc/antiidle.so
-%%EXTRA%%lib/znc/autocycle.so
-%%EXTRA%%lib/znc/autovoice.so
-%%EXTRA%%%%OPENSSL%%lib/znc/away.so
-%%EXTRA%%lib/znc/block_motd.so
-%%EXTRA%%lib/znc/charset.so
-%%EXTRA%%lib/znc/clearbufferonmsg.so
-%%EXTRA%%lib/znc/ctcpflood.so
-%%EXTRA%%lib/znc/dcc.so
-%%EXTRA%%lib/znc/droproot.so
-%%EXTRA%%lib/znc/email.so
-%%EXTRA%%lib/znc/fakeonline.so
-%%EXTRA%%lib/znc/flooddetach.so
-%%EXTRA%%lib/znc/imapauth.so
-%%EXTRA%%lib/znc/listsockets.so
-%%EXTRA%%lib/znc/log.so
-%%EXTRA%%lib/znc/motdfile.so
-%%EXTRA%%lib/znc/notify_connect.so
-%%EXTRA%%%%SASL%%lib/znc/saslauth.so
-%%EXTRA%%lib/znc/send_raw.so
-%%EXTRA%%lib/znc/shell.so
+libdata/pkgconfig/znc.pc
+%%CYRUS%%lib/znc/cyrusauth.so
+%%OPENSSL%%lib/znc/awaystore.so
 %%OPENSSL%%lib/znc/cert.so
 %%OPENSSL%%lib/znc/certauth.so
 %%OPENSSL%%lib/znc/crypt.so
@@ -96,26 +95,29 @@ lib/znc/webadmin.so
 %%TCL%%lib/znc/modtcl.so
 %%TCL%%share/znc/modtcl/binds.tcl
 %%TCL%%share/znc/modtcl/modtcl.tcl
-libdata/pkgconfig/znc.pc
 %%DATADIR%%/modules/blockuser/tmpl/blockuser_WebadminUser.tmpl
 %%DATADIR%%/modules/cert/tmpl/index.tmpl
 %%DATADIR%%/modules/certauth/tmpl/index.tmpl
 %%DATADIR%%/modules/lastseen/tmpl/index.tmpl
 %%DATADIR%%/modules/lastseen/tmpl/lastseen_WebadminUser.tmpl
+%%DATADIR%%/modules/listsockets/tmpl/index.tmpl
 %%DATADIR%%/modules/notes/files/trash.gif
 %%DATADIR%%/modules/notes/tmpl/index.tmpl
 %%DATADIR%%/modules/perform/tmpl/index.tmpl
+%%DATADIR%%/modules/send_raw/files/select.js
+%%DATADIR%%/modules/send_raw/tmpl/index.tmpl
 %%DATADIR%%/modules/stickychan/tmpl/index.tmpl
 %%DATADIR%%/modules/stickychan/tmpl/stickychan_WebadminChan.tmpl
+%%DATADIR%%/modules/webadmin/files/webadmin.js
 %%DATADIR%%/modules/webadmin/tmpl/add_edit_chan.tmpl
+%%DATADIR%%/modules/webadmin/tmpl/add_edit_network.tmpl
 %%DATADIR%%/modules/webadmin/tmpl/add_edit_user.tmpl
+%%DATADIR%%/modules/webadmin/tmpl/del_network.tmpl
 %%DATADIR%%/modules/webadmin/tmpl/del_user.tmpl
 %%DATADIR%%/modules/webadmin/tmpl/index.tmpl
 %%DATADIR%%/modules/webadmin/tmpl/listusers.tmpl
 %%DATADIR%%/modules/webadmin/tmpl/settings.tmpl
 %%DATADIR%%/modules/webadmin/tmpl/traffic.tmpl
-%%EXTRA%%share/znc/modules/listsockets/tmpl/index.tmpl
-%%EXTRA%%share/znc/modules/send_raw/tmpl/index.tmpl
 %%DATADIR%%/webskins/_default_/pub/_default_.css
 %%DATADIR%%/webskins/_default_/pub/favicon.ico
 %%DATADIR%%/webskins/_default_/pub/global.css
@@ -175,14 +177,20 @@ libdata/pkgconfig/znc.pc
 @dirrmtry %%DATADIR%%/webskins/_default_
 @dirrmtry %%DATADIR%%/webskins
 @dirrmtry %%DATADIR%%/modules/webadmin/tmpl
+@dirrmtry %%DATADIR%%/modules/webadmin/files
 @dirrmtry %%DATADIR%%/modules/webadmin
 @dirrmtry %%DATADIR%%/modules/stickychan/tmpl
 @dirrmtry %%DATADIR%%/modules/stickychan
+@dirrmtry %%DATADIR%%/modules/send_raw/tmpl
+@dirrmtry %%DATADIR%%/modules/send_raw/files
+@dirrmtry %%DATADIR%%/modules/send_raw
 @dirrmtry %%DATADIR%%/modules/perform/tmpl
 @dirrmtry %%DATADIR%%/modules/perform
 @dirrmtry %%DATADIR%%/modules/notes/tmpl
 @dirrmtry %%DATADIR%%/modules/notes/files
 @dirrmtry %%DATADIR%%/modules/notes
+@dirrmtry %%DATADIR%%/modules/listsockets/tmpl
+@dirrmtry %%DATADIR%%/modules/listsockets
 @dirrmtry %%DATADIR%%/modules/lastseen/tmpl
 @dirrmtry %%DATADIR%%/modules/lastseen
 @dirrmtry %%DATADIR%%/modules/certauth/tmpl
@@ -191,10 +199,6 @@ libdata/pkgconfig/znc.pc
 @dirrmtry %%DATADIR%%/modules/cert
 @dirrmtry %%DATADIR%%/modules/blockuser/tmpl
 @dirrmtry %%DATADIR%%/modules/blockuser
-%%EXTRA%%@dirrmtry share/znc/modules/send_raw/tmpl
-%%EXTRA%%@dirrmtry share/znc/modules/send_raw
-%%EXTRA%%@dirrmtry share/znc/modules/listsockets/tmpl
-%%EXTRA%%@dirrmtry share/znc/modules/listsockets
 %%TCL%%@dirrmtry share/znc/modtcl
 @dirrmtry %%DATADIR%%/modules
 @dirrmtry %%DATADIR%%
