@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncdc
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://dev.yorhel.nl/download/
@@ -12,29 +12,21 @@ MAINTAINER=	earl1k@mail.ru
 COMMENT=	Lightweight direct connect client with ncurses interface
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		gnutls:${PORTSDIR}/security/gnutls
+		pcre:${PORTSDIR}/devel/pcre \
+		gmp:${PORTSDIR}/math/gmp \
+		gnutls:${PORTSDIR}/security/gnutls \
+		nettle:${PORTSDIR}/security/nettle \
+		p11-kit:${PORTSDIR}/security/p11-kit
 
-OPTIONS_DEFINE=	GDBM
-GDBM_DESC=	Build ncdc-db-upgrade
-
+USE_PKGCONFIG=	build
+USE_NCURSES=	yes
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		ncdc.1
 PLIST_FILES=	bin/ncdc
 
-#force base compiler,linker flags to avoid linking to ncurses from ports
-CFLAGS+=	-I/usr/include -I${LOCALBASE}/include
-LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGDBM}
-CONFIGURE_ARGS+=--enable-db-upgrade
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
-PLIST_FILES+=	bin/ncdc-db-upgrade
-MAN1+=		ncdc-db-upgrade.1
-.endif
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
