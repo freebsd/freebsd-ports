@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fusefs-exfat
-# Date created:				2012-01-25
-# Whom:					Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	exfat
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
@@ -17,8 +13,8 @@ COMMENT=	A full-featured exFAT FS implementation as a FUSE module
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		ublio.1:${PORTSDIR}/devel/libublio
+LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \
+		ublio:${PORTSDIR}/devel/libublio
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_ICONV=	yes
