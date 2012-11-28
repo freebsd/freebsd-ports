@@ -1,4 +1,5 @@
 bin/hi
+bin/hi_comp
 lib/seed7/COPYING
 lib/seed7/LGPL
 lib/seed7/array.s7i
@@ -32,6 +33,7 @@ lib/seed7/enable_input.s7i
 lib/seed7/enable_io.s7i
 lib/seed7/enable_output.s7i
 lib/seed7/encoding.s7i
+lib/seed7/environment.s7i
 lib/seed7/external_file.s7i
 lib/seed7/field.s7i
 lib/seed7/file.s7i
