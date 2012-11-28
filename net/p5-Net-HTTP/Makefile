@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Net-HTTP
-# Date created:				2011-04-15
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-HTTP
-PORTVERSION=	6.03
-PORTREVISION=	1
+PORTVERSION=	6.05
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
