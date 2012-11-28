@@ -1,0 +1,9 @@
+bin/gottet
+share/applications/gottet.desktop
+share/icons/hicolor/48x48/apps/gottet.png
+share/pixmaps/gottet.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
