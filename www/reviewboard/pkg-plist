@@ -677,9 +677,6 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/plastic.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/plastic.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/plastic.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/sshutils.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/sshutils.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/sshutils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/svn.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/svn.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/svn.pyo
@@ -849,6 +846,27 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/site/validation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/site/validation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/site/validation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/client.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/client.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/client.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/policy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/policy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/policy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/storage.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/storage.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/storage.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/403.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/404.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/500.html
@@ -982,6 +1000,7 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/accounts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/ssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/site/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/site/fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/site
@@ -1088,5 +1107,5 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm lib/python2.7
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry lib/python2.7
