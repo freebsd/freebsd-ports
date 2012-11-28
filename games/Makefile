@@ -361,6 +361,7 @@
     SUBDIR += gti
     SUBDIR += gtkatlantic
     SUBDIR += gtkballs
+    SUBDIR += gtkevemon
     SUBDIR += gtklife
     SUBDIR += gtkpool
     SUBDIR += gtkradiant
