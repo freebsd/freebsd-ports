@@ -306,7 +306,6 @@
     SUBDIR += id3el
     SUBDIR += id3lib
     SUBDIR += id3mtag
-    SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
     SUBDIR += ifp-line
@@ -766,7 +765,6 @@
     SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc
     SUBDIR += voipong
-    SUBDIR += volumecontrol
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
@@ -787,8 +785,6 @@
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
     SUBDIR += workman
-    SUBDIR += wsoundprefs
-    SUBDIR += wsoundserver
     SUBDIR += wxguitar
     SUBDIR += x11amp
     SUBDIR += xanalyser
