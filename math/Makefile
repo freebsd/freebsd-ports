@@ -608,7 +608,6 @@
     SUBDIR += speedcrunch
     SUBDIR += spooles
     SUBDIR += spooles-mpich
-    SUBDIR += stepulator
     SUBDIR += stp
     SUBDIR += suitesparse
     SUBDIR += superlu

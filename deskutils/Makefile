@@ -140,7 +140,6 @@
     SUBDIR += kruler
     SUBDIR += ksmoothdock
     SUBDIR += ksshaskpass
-    SUBDIR += ktagebuch
     SUBDIR += labyrinth
     SUBDIR += launchy
     SUBDIR += libgcal

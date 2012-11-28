@@ -151,7 +151,6 @@
     SUBDIR += sun-wtk
     SUBDIR += trove4j
     SUBDIR += veditor
-    SUBDIR += westhawksnmp
     SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>

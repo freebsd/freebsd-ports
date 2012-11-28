@@ -407,7 +407,6 @@
     SUBDIR += jag
     SUBDIR += jaggedalliance2
     SUBDIR += jchessboard
-    SUBDIR += jetpack
     SUBDIR += jfk
     SUBDIR += jfsw
     SUBDIR += jigsaw
@@ -862,7 +861,6 @@
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
-    SUBDIR += stepbill
     SUBDIR += stepmania-devel
     SUBDIR += stockfish
     SUBDIR += stonesoup
@@ -915,7 +913,6 @@
     SUBDIR += trackballs
     SUBDIR += tractorgen
     SUBDIR += traindirector
-    SUBDIR += tremor
     SUBDIR += tremulous
     SUBDIR += trigger
     SUBDIR += trimines
