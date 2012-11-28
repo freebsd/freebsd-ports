@@ -1,7 +1,4 @@
-# New ports collection makefile for:  Sphinx full-text search engine
-# Date created:		12 November 2006
-# Whom:			Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
 #
 # Note: the Sphinx Storage Engine MySQL plugin is not supported by
@@ -9,7 +6,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
