@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Sledge/Plugin/HTML2HDML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/HTML2HDML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/HTML2HDML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin
-@dirrmtry %%SITE_PERL%%/Sledge/Plugin
