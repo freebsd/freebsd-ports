@@ -1,12 +1,8 @@
-# New ports collection makefile for:	lmdbg
-# Date created:				14 March 2009
-# Whom:					Mikolaj Golub <to.my.trociny@gmail.com>
-#
+# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lmdbg
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,7 +11,7 @@ COMMENT=	Lightweight malloc debugger
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
+BUILD_DEPENDS=	mk-configure>=0.23:${PORTSDIR}/devel/mk-configure
 LIB_DEPENDS=	Judy:${PORTSDIR}/devel/judy
 RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk \
 		${LOCALBASE}/bin/pipestatus:${PORTSDIR}/devel/pipestatus
@@ -24,7 +20,7 @@ USE_LDCONFIG=	yes
 
 MKCMAKE?=	${LOCALBASE}/bin/mkcmake
 
-PORTDOCS=	LICENSE NEWS README TODO
+PORTDOCS=	ChangeLog LICENSE NEWS README TODO
 
 MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1 \
 		lmdbg-stat.1 lmdbg-grep.1 lmdbg-sort.1
