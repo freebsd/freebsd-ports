@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clunk
-# Date created:		05 Aug 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clunk
 PORTVERSION=	1.2.130
@@ -20,11 +16,11 @@ USE_SDL=	sdl
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SIMD "Enable SIMD support (SSE)" off
+OPTIONS_DEFINE=	SSE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SIMD)
+.if ${PORT_OPTIONS:MSSE}
 CMAKE_ARGS+=	-DWITH_SSE:BOOL=TRUE
 .endif
 
