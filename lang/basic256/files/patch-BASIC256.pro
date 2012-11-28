@@ -1,7 +1,29 @@
---- BASIC256.pro.orig	2011-08-26 19:37:38.000000000 +0200
-+++ BASIC256.pro	2011-09-03 13:07:27.000000000 +0200
-@@ -62,72 +62,72 @@
- 	## rules for make install
+--- BASIC256.pro.orig	2012-11-22 23:15:56.000000000 +0100
++++ BASIC256.pro	2012-11-22 23:17:00.000000000 +0100
+@@ -84,87 +84,87 @@
+ 	#DEFINES 		+= SOUND_DSP
+ 
+         # Sound - Option 1 - SDL Mixer
+-	#DEFINES 		+= SOUND_SDL
+-	#LIBS			+= -lSDL
+-	#LIBS			+= -lSDL_mixer
++	DEFINES 		+= SOUND_SDL
++	LIBS			+= -lSDL
++	LIBS			+= -lSDL_mixer
+ 
+ 	# Sound - Option 2 - QT Mobility Multimedia AudioOut
+-	DEFINES 		+= SOUND_QMOBILITY
+-	QT			+= mobility
+-	CONFIG			+= mobility
+-	MOBILITY		+= multimedia
++#DEFINES 		+= SOUND_QMOBILITY
++#	QT			+= mobility
++#	CONFIG			+= mobility
++#	MOBILITY		+= multimedia
+ 
+         ########
+ 	# rules for make install
+         ########
  	examplesDiceFiles.files = ./Examples/dice/*.kbs \
  				./Examples/dice/*.wav
 -	examplesDiceFiles.path = /usr/share/basic256/Examples/dice
