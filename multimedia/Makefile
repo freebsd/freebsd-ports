@@ -130,7 +130,6 @@
     SUBDIR += k9copy
     SUBDIR += k9copy-kde4
     SUBDIR += kaffeine
-    SUBDIR += kaffeine-mozilla
     SUBDIR += kdemultimedia3
     SUBDIR += kdemultimedia4
     SUBDIR += kdenlive
