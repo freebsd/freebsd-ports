@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Sledge/SessionManager/CookieStore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/SessionManager/CookieStore/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/SessionManager/CookieStore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/SessionManager
-@dirrmtry %%SITE_PERL%%/Sledge/SessionManager

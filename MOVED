@@ -3916,3 +3916,16 @@ japanese/tcl76||2012-11-28|Has expired: No more public distfiles
 math/stepulator||2012-11-28|Has expired: No more public distfiles
 editors/jedit-devel|editors/jedit|2012-11-28|Has expired: Stable version is more recent than devel
 www/trac-wikirename||2012-11-28|Has expired: Functionality of this plugin is included in the Trac core since 0.12
+www/p5-Sledge||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-CacheContent||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-Download||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-Dumper||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-HTML2HDML||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-Log||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-NoCache||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-SaveUpload||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-ScratchPad||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-SessionAutoCleanup||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-Plugin-XSLT||2012-11-28|Has expired: depends on mod_perl 1 which is gone
+www/p5-Sledge-SessionManager-CookieStore||2012-11-28|Removed
+www/p5-Sledge-Template-Expr||2012-11-28|Removed

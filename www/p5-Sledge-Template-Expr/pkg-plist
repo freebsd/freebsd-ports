@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Sledge/Template/Expr.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Template/Expr/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Template/Expr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Template
-@dirrmtry %%SITE_PERL%%/Sledge/Template

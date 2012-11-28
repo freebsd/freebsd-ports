@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Sledge/Plugin/Log.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/Log/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/Log
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin
-@dirrmtry %%SITE_PERL%%/Sledge/Plugin

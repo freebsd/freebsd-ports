@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Sledge/Plugin/ScratchPad.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/ScratchPad/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/ScratchPad
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin
-@dirrmtry %%SITE_PERL%%/Sledge/Plugin

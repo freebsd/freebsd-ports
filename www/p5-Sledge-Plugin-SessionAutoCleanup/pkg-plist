@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Sledge/Plugin/SessionAutoCleanup.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/SessionAutoCleanup/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/SessionAutoCleanup
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin
-@dirrmtry %%SITE_PERL%%/Sledge/Plugin
