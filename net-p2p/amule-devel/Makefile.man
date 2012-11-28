@@ -17,7 +17,7 @@ MAN1+=		amulecmd.1
 MAN1+=		amuled.1
 . endif
 . if ${PORT_OPTIONS:MAMULEGUI}
-MAN1+=	amulegui.1
+MAN1+=		amulegui.1
 . endif
 . if ${PORT_OPTIONS:MCAS}
 MAN1+=		cas.1
@@ -34,5 +34,5 @@ MAN1+=		wxcas.1
 .endif
 
 .if ${PORT_OPTIONS:MXAS}
-MAN1+=	xas.1
+MAN1+=		xas.1
 .endif
