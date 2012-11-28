@@ -16,7 +16,6 @@
     SUBDIR += fd
     SUBDIR += fish
     SUBDIR += flash
-    SUBDIR += gscommander
     SUBDIR += heirloom-sh
     SUBDIR += ibsh
     SUBDIR += jailkit

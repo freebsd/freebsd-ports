@@ -830,7 +830,6 @@
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-twitter_oauth
-    SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
     SUBDIR += samba-virusfilter

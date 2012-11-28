@@ -1037,7 +1037,6 @@
     SUBDIR += xfsprogs
     SUBDIR += xin
     SUBDIR += xjobs
-    SUBDIR += xloadface
     SUBDIR += xlogmaster
     SUBDIR += xmbmon
     SUBDIR += xorriso
