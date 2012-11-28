@@ -17,6 +17,9 @@ USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=4
 
+DEPRECATED=	Obsolete stable release
+EXPIRATION_DATE=2013-04-30
+
 TYPO3WWW=	www
 TYPO3RELEASE=	46
 TYPO3SITE=	${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}
