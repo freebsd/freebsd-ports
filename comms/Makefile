@@ -38,7 +38,6 @@
     SUBDIR += flwrap
     SUBDIR += gammu
     SUBDIR += gammu-devel
-    SUBDIR += garmin-utils
     SUBDIR += geoid
     SUBDIR += ge-x2212
     SUBDIR += ghfaxviewer
@@ -138,7 +137,6 @@
     SUBDIR += serialoverip
     SUBDIR += seyon
     SUBDIR += smstools3
-    SUBDIR += snooper
     SUBDIR += soundmodem
     SUBDIR += spandsp
     SUBDIR += spandsp-devel

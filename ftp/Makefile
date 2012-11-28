@@ -51,7 +51,6 @@
     SUBDIR += linux-f10-curl
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
-    SUBDIR += mget
     SUBDIR += mirror
     SUBDIR += multiget
     SUBDIR += ncftp1

@@ -401,7 +401,6 @@
     SUBDIR += fam
     SUBDIR += fampp
     SUBDIR += fastcrc
-    SUBDIR += fastdep
     SUBDIR += fb303
     SUBDIR += fc++
     SUBDIR += ffcall
