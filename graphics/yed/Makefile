@@ -1,12 +1,8 @@
-# New ports collection makefile for:    yed
-# Date created:                         15 Jan 2010
-# Whom:                                 Eugene Mychlo <myc@barev.net>
-#
+# Created by: Eugene Mychlo <myc@barev.net>
 # $FreeBSD$
-#
 
 PORTNAME=	yed
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
@@ -43,6 +39,7 @@ IGNORE=	you must manually obtain ${DISTNAME}${EXTRACT_SUFX} from\
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/vectorgraphics.jar ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/license.html ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
