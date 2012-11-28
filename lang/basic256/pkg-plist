@@ -74,6 +74,7 @@ share/basic256/Examples/testing/2dstrarraytest.kbs
 share/basic256/Examples/testing/KalRGB.kbs
 share/basic256/Examples/testing/arraylistassign.kbs
 share/basic256/Examples/testing/beautifytest.kbs
+share/basic256/Examples/testing/binaryfileio.kbs
 share/basic256/Examples/testing/counttest.kbs
 share/basic256/Examples/testing/explodetest.kbs
 share/basic256/Examples/testing/fontdemo.kbs
@@ -98,6 +99,7 @@ share/basic256/Examples/testing/testmodulo.kbs
 share/basic256/Examples/testing/testplusplus.kbs
 share/basic256/Examples/testing/testplusplus2.kbs
 share/basic256/Examples/testing/testsubroutinebyref.kbs
+share/basic256/Examples/testing/testsuite.kbs
 share/basic256/Examples/testing/testtextfont.kbs
 share/basic256/Examples/testing/testtime.kbs
 share/basic256/Examples/testing/uaarray.kbs
