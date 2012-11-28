@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	sam2p
-# Date created:			Jan 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sam2p
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.49.1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
