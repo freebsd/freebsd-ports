@@ -79,7 +79,6 @@
     SUBDIR += p5-ZConf-Weather
     SUBDIR += phoon
     SUBDIR += planets
-    SUBDIR += position
     SUBDIR += pp3
     SUBDIR += prune
     SUBDIR += ptiger
@@ -104,7 +103,6 @@
     SUBDIR += stellarium
     SUBDIR += sunclock
     SUBDIR += swe
-    SUBDIR += tangogps
     SUBDIR += tclgeomap
     SUBDIR += tkgeomap
     SUBDIR += viking

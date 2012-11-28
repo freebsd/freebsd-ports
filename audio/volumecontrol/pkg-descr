@@ -1,7 +1,0 @@
-VolumeControl is a GNUstep program for adjusting the audio mixer on systems that
-use the OSS API. It allows the sound level, left/right speakers, muting for
-master, PCM, bass, and treble levels to be controlled.
-
-LICENSE: GPL2 or later
-
-WWW: http://gnu.ethz.ch/linuks.mine.nu/volumecontrol/
