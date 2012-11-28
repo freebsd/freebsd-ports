@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pire
-# Date created:		17 Jun 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pire
 PORTVERSION=	0.0.4
@@ -23,13 +19,14 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to big-endian platforms"
+ONLY_FOR_ARCHS_REASON=	not yet ported to big-endian platforms
 
-OPTIONS=	UNITTEST "Compile with unittest support" off
+OPTIONS_DEFINE=	UNITTEST
+OPTIONS_UNITTEST_DESC=	Compile with unittest support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_UNITTEST) || defined(PACKAGE_BUILDING)
+.if ${PORT_OPTIONS:MUNITTEST} || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
 CONFIGURE_ARGS=	--with-cppunit-prefix=${LOCALBASE}
 
