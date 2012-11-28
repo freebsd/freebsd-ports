@@ -354,7 +354,6 @@
     SUBDIR += lacheck
     SUBDIR += latex-service
     SUBDIR += latex2html
-    SUBDIR += lemmatizer
     SUBDIR += lemmatizer2
     SUBDIR += lexxia
     SUBDIR += libcrm114

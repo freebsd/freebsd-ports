@@ -961,7 +961,6 @@
     SUBDIR += rdist6
     SUBDIR += recvnet
     SUBDIR += redir
-    SUBDIR += relay
     SUBDIR += relayd
     SUBDIR += remmina
     SUBDIR += remmina-applet

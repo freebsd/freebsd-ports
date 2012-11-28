@@ -977,7 +977,6 @@
     SUBDIR += tinyows
     SUBDIR += tkpng
     SUBDIR += togl
-    SUBDIR += tonicpoint-viewer
     SUBDIR += truevision
     SUBDIR += tulip
     SUBDIR += tumble
