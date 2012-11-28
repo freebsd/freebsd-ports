@@ -955,7 +955,6 @@
     SUBDIR += svg2swf
     SUBDIR += svgalib
     SUBDIR += svgfig
-    SUBDIR += svgviewer
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools
@@ -1009,7 +1008,6 @@
     SUBDIR += xenomorph
     SUBDIR += xface.el
     SUBDIR += xfig
-    SUBDIR += xfig-devel
     SUBDIR += xfpovray
     SUBDIR += xfractint
     SUBDIR += xglurbules
@@ -1053,7 +1051,6 @@
     SUBDIR += xzgv
     SUBDIR += yafray
     SUBDIR += yagf
-    SUBDIR += yap
     SUBDIR += yed
     SUBDIR += yukon
     SUBDIR += zathura

@@ -178,7 +178,6 @@
     SUBDIR += darkplaces
     SUBDIR += deal
     SUBDIR += defendguin
-    SUBDIR += demonquake
     SUBDIR += deng
     SUBDIR += diameter
     SUBDIR += digger-vgl
@@ -1012,7 +1011,6 @@
     SUBDIR += xchadance
     SUBDIR += xcheckers
     SUBDIR += xchomp
-    SUBDIR += xcogitate
     SUBDIR += xconq
     SUBDIR += xcowsay
     SUBDIR += xcubes
