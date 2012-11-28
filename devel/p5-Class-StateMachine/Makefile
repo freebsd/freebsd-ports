@@ -1,12 +1,7 @@
-# New ports collection makefile for:	devel/p5-Class-StateMachine
-# Date created:				07 December 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Class-StateMachine
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
