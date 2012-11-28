@@ -1,0 +1,11 @@
+*****************************************************************************
+
+If you are upgrading znc from a version prior to 1.0, please be aware that 
+znc will modify your configuration file to incorporate support for new
+functionality.
+
+Please visit the following URL for more information:
+
+http://wiki.znc.in/ChangeLog/1.0
+
+*****************************************************************************

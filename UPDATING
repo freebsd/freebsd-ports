@@ -6,6 +6,29 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20121128:
+  AFFECTS: Users of irc/znc
+  AUTHOR: jase@FreeBSD.org
+
+  znc has been updated to 1.0. This introduces some major changes to its
+  functionality. As a result, if you are upgrading from a previous version
+  you need to be aware that znc will automatically modify your
+  configuration file to incorporate support for the new functionality.
+  Users are recommended to take a backup of their configuration file
+  before running this new version.
+
+  The SASL option has been renamed to CYRUS following a rename of the
+  associated module. Additionally, a number of modules have been removed
+  or renamed in this release.
+
+  Modules that were classed as Extra modules in previous versions are now
+  built as standard. The EXTRA option has been removed accordingly.
+
+  Please refer to the following URL for detailed information regarding all
+  changes in this release:
+
+  http://wiki.znc.in/ChangeLog/1.0
+
+20121128:
   AFFECTS: Users of www/opera
   AUTHOR: itetcu@FreeBSD.org
 
