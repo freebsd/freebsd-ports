@@ -3858,3 +3858,10 @@ audio/id3ren||2012-11-28|Has expired: No more public distfiles
 audio/volumecontrol||2012-11-28|Has expired: No more public distfiles
 audio/wsoundprefs||2012-11-28|Has expired: Depends on the deprecated audio/wsoundserver and expired x11-toolkits/libdockapp
 audio/wsoundserver||2012-11-28|Has expired: Depends on deprecated libdockapp
+benchmarks/gsbench||2012-11-28|Has expired: No more public distfiles
+benchmarks/xengine||2012-11-28|Has expired: No more public distfiles
+biology/belvu||2012-11-28|Has expired: No more public distfiles
+multimedia/kaffeine-mozilla||2012-11-28|Has expired: No more public distfiles
+www/gnustep-ticker||2012-11-28|Has expired: Abandonware
+net/tryst-examples||2012-11-28|Has expired: Abandonware
+net/tryst||2012-11-28|Has expired: Abandonware

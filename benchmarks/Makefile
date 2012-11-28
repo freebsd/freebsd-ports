@@ -17,7 +17,6 @@
     SUBDIR += flops
     SUBDIR += forkbomb
     SUBDIR += geekbench
-    SUBDIR += gsbench
     SUBDIR += gtkperf
     SUBDIR += himenobench
     SUBDIR += hpl
@@ -73,6 +72,5 @@
     SUBDIR += webbench
     SUBDIR += wrk
     SUBDIR += xdd
-    SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>

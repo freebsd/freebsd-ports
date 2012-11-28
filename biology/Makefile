@@ -8,7 +8,6 @@
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
-    SUBDIR += belvu
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blast

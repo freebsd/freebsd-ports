@@ -1,4 +1,0 @@
-%%WEBPLUGINS_DIR%%/kaffeineplugin.so
-%%WEBPLUGINS_DIR%%/kaffeineplugin.la
-%%WEBPLUGINS_DIR%%/kaffeineplugin.a
-@dirrmtry %%WEBPLUGINS_DIR%%
