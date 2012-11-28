@@ -127,6 +127,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	dialyzer.3 \
 	diameter.3 \
 	diameter_app.3 \
+	diameter_codec.3 \
+	diameter_make.3 \
 	diameter_sctp.3 \
 	diameter_tcp.3 \
 	diameter_transport.3 \
