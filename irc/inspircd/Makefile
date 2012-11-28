@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	irc
 MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
 DISTNAME=	InspIRCd-${PORTVERSION}
 
 MAINTAINER=	feld@feld.me
 COMMENT=	A modular C++ IRC daemon
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 CONFLICTS=	inspircd-1.*
 
@@ -39,7 +42,6 @@ CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR} \
 		--prefix=${PREFIX}/lib/${PORTNAME} --binary-dir=${PREFIX}/bin \
 		--enable-kqueue --disable-interactive \
 		--uid=${INSPIRCD_UID}
-PORTDOCS=	docs/* extras/*
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAPAUTH LDAPOPER GNUTLS OPENSSL PCRE POSIX
 OPTIONS_DEFAULT=	POSIX
@@ -137,6 +139,9 @@ pre-configure:
 	@if [ ${EXTRAS} ]; then \
 		cd ${WRKSRC} && ./${CONFIGURE_SCRIPT} --enable-extras=${EXTRAS} ; \
 	fi
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|DATA_PATH "/inspircd.pid"|"/var/run/inspircd/inspircd.pid"|' ${WRKSRC}/src/inspircd.cpp
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/${PORTNAME}/modules/*.so

@@ -218,6 +218,7 @@ lib/inspircd/modules/m_swhois.so
 lib/inspircd/modules/m_testnet.so
 lib/inspircd/modules/m_timedbans.so
 lib/inspircd/modules/m_tline.so
+lib/inspircd/modules/m_topiclock.so
 lib/inspircd/modules/m_uhnames.so
 lib/inspircd/modules/m_uninvite.so
 lib/inspircd/modules/m_userip.so
