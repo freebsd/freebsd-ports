@@ -1,16 +1,12 @@
-# New ports collection makefile for:	httest
-# Date created:			Jun 15, 2011
-# Whom:				Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	httest
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.11
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	HTTP Test Tool
 
 LICENSE=	AL2
@@ -42,10 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/generate_modules_c.sh
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
-BROKEN=		does not compile on 7.X/amd64
-.endif
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
