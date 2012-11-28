@@ -294,7 +294,6 @@
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-wdfs
     SUBDIR += fusefs-wikipediafs
-    SUBDIR += fuser
     SUBDIR += fvcool
     SUBDIR += gaffitter
     SUBDIR += gai-leds

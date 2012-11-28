@@ -97,7 +97,6 @@
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += gedy
-    SUBDIR += gicq
     SUBDIR += gimp-help
     SUBDIR += gjiten
     SUBDIR += gorua
@@ -245,7 +244,6 @@
     SUBDIR += p5-manual
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
-    SUBDIR += perl5
     SUBDIR += php5-mecab
     SUBDIR += php_doc
     SUBDIR += plain2

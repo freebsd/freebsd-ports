@@ -566,7 +566,6 @@
     SUBDIR += mingplot
     SUBDIR += mirage
     SUBDIR += mmrecover
-    SUBDIR += morpheus
     SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multican

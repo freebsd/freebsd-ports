@@ -216,7 +216,6 @@
     SUBDIR += p5-X11-IdleTime
     SUBDIR += p5-X11-Protocol
     SUBDIR += p5-X11-Resolution
-    SUBDIR += padkey
     SUBDIR += peeper
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python

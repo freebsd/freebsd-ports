@@ -538,7 +538,6 @@
     SUBDIR += mod_xsendfile
     SUBDIR += mohawk
     SUBDIR += moinmoin
-    SUBDIR += momspider
     SUBDIR += monast
     SUBDIR += mongrel2
     SUBDIR += moodle

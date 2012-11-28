@@ -415,7 +415,6 @@
     SUBDIR += p5-Math-Int64
     SUBDIR += p5-Math-Interpolate
     SUBDIR += p5-Math-Intersection-StraightLine
-    SUBDIR += p5-Math-LinearCombination
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-Math-MPC
     SUBDIR += p5-Math-MPFR

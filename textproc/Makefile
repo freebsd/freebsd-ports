@@ -24,7 +24,6 @@
     SUBDIR += apertium
     SUBDIR += archmage
     SUBDIR += artha
-    SUBDIR += ascii2pdf
     SUBDIR += asciidoc
     SUBDIR += asm-xml
     SUBDIR += aspell
