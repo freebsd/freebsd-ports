@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pear-Services_Weather
-# Date created:			  04 April 2004
-# Whom:				  Thierry Thomas (<thierry@FreeBSD.org>)
-#
+# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
 # $FreeBSD$
-#
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	misc www pear geography
 
 MAINTAINER=	miwi@FreeBSD.org
