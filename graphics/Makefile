@@ -38,7 +38,6 @@
     SUBDIR += agave
     SUBDIR += agg
     SUBDIR += albumshaper
-    SUBDIR += ale
     SUBDIR += allegrogl
     SUBDIR += alpng
     SUBDIR += amanith

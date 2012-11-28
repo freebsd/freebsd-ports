@@ -139,9 +139,6 @@ eagle-lin-*.run		cad/linux-eagle5	Usage permitted for
 eawpats*		audio/eawpats		Some of the patches are not
 						for commercial use
 eClient-linux-i686.run	games/atitd		Redistribution not allowed
-eclipse/jp.azzurri.clay.core_*.bin.dist.* java/eclipse-clay-core License
-						agreement is required to
-						download
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not
 						free

@@ -133,7 +133,6 @@
     SUBDIR += thales
     SUBDIR += tircd
     SUBDIR += tircproxy
-    SUBDIR += tr-ircd
     SUBDIR += trickyirc
     SUBDIR += undernet-ircu
     SUBDIR += unreal
