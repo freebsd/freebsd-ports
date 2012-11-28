@@ -1,0 +1,4 @@
+share/applications/gtkevemon.desktop
+share/pixmaps/gtkevemon.png
+bin/gtkevemon
+@dirrmtry share/applications
