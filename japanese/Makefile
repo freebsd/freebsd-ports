@@ -314,7 +314,6 @@
     SUBDIR += suicavalue
     SUBDIR += suikyo
     SUBDIR += t2ps
-    SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tdiary
     SUBDIR += teTeX

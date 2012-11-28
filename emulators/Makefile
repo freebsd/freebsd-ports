@@ -43,7 +43,6 @@
     SUBDIR += fuse
     SUBDIR += fuse-utils
     SUBDIR += gbe
-    SUBDIR += gcube
     SUBDIR += generator
     SUBDIR += generator-cbiere
     SUBDIR += gens
