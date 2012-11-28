@@ -1,29 +1,28 @@
-# New ports collection makefile for:	mp3guessenc
-# Date created:				1 Oct 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3guessenc
-PORTVERSION=	0.21
+DISTVERSION=	${DIST_REL}${ALPHA_REL}
 CATEGORIES=	audio
-MASTER_SITES=	http://shibatch.sourceforge.net/download/ \
-		CRITICAL
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${DIST_REL}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 
-WRKSRC=		${WRKDIR}
+DIST_REL=	0.25
+ALPHA_REL=	alpha23-HPR
 
 PLIST_FILES=	bin/mp3guessenc
+SRC=		decode.c mp3guessenc.c
 
 do-build:
-	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
+.for f in ${SRC}
+	${CC} ${CFLAGS} ${WRKSRC}/${f} -c -o ${WRKSRC}/${f:C/\.c/.o/}
+.endfor
+	${CC} ${SRC:S|\.c|${WRKSRC}/.o|:S|^|${WRKSRC}/|} \
+		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
