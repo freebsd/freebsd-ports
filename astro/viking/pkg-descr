@@ -1,10 +1,7 @@
-viking is a free/open source program to manage GPS data.
+Viking is a free/open source program to manage GPS data.
 
-You can import and plot tracks and waypoints, show Google maps and/or
-Terraserver maps under it, download geocaches for an area on the map, make new
-tracks and waypoints, see real-time GPS position, etc.
+You can import, plot and create tracks and waypoints, show OSM, Terraserver
+and other maps, see real-time GPS position, get geocaches, control items, etc.
+It is written in C & the GTK+2 toolkit.
 
-It is written in C with the GTK+ 2 toolkit, available for Linux, other POSIX
-operating systems, and Windows, and is licensed under the GNU GPL.
-
-WWW: http://viking.sourceforge.net/
+WWW: http://sourceforge.net/apps/mediawiki/viking/index.php

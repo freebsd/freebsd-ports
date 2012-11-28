@@ -1,34 +1,34 @@
-# New ports collection makefile for:	viking
-# Date created: 			29 April 2008
-# Whom: 				David Le Brun <david@trucs.org>
-#
+# Created by: David Le Brun <david@trucs.org>
 # $FreeBSD$
-#
 
 PORTNAME=	viking
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2.1
 CATEGORIES=	astro
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.2/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Program to manage GPS data (tracks, waypoints, etc)
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		curl:${PORTSDIR}/ftp/curl \
+		cairo:${PORTSDIR}/graphics/cairo \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-OPTIONS_DEFINE=	GEOTAR GPSD
-OPTIONS_DEFAULT=	GEOTAG
-GEOTAG_DESC=	Enable Geotag support
-GPSD_DESC=	Enable realtime GPS tracking
-
+USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
+		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gnomedocutils gtk20
+USE_ICONV=	yes
 USE_PERL5_RUN=	yes
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 MAKE_JOBS_SAFE=	yes
@@ -36,7 +36,22 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+
+OPTIONS_DEFINE=	GEOTAG GPSD
+OPTIONS_DEFAULT=	GEOTAG
+GEOTAG_DESC=	Enable Geotag support
+GPSD_DESC=	Enable realtime GPS tracking
+
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MGEOTAG}
 LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
@@ -52,5 +67,13 @@ CONFIGURE_ARGS+=	--disable-realtime-gps-tracking
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in
+
+post-install:
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
