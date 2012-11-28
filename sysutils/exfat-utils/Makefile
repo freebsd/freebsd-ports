@@ -1,12 +1,8 @@
-# New ports collection makefile for:	exfat-utils
-# Date created:				2012-01-25
-# Whom:					Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	exfat-utils
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +11,7 @@ COMMENT=	Utilities to create, check, label and dump exFAT filesystem
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	ublio.1:${PORTSDIR}/devel/libublio
+LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 
 PROJECTHOST=	exfat
 
