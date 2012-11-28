@@ -1,11 +1,8 @@
-# New ports collection makefile for:	flake8
-# Date created:				30 May 2012
-# Whom:					William Grzybowski <william88@gmail.com>
-#
+# Created by: William Grzybowski <william88@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	flake8
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
