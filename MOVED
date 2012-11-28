@@ -3902,6 +3902,6 @@ devel/fastdep||2012-11-28|Has expired: No more public distfiles
 graphics/svgviewer||2012-11-28|Has expired: No more public distfiles
 comms/garmin-utils||2012-11-28|Has expired: No more public distfiles
 comms/snooper||2012-11-28|Has expired: No more public distfiles
-graphics/xfig-devel||2012-11-28|Has expired: Stable version is more recent than devel version
+graphics/xfig-devel|graphics/xfig|2012-11-28|Has expired: Stable version is more recent than devel version
 irc/irchat-jp||2012-11-28|Has expired: No more public distfiles
 games/xcogitate||2012-11-28|Has expired: No more public distfiles
