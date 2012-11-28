@@ -3846,3 +3846,9 @@ www/trac-customroadmap||2012-11-19|Has expired: Functionality of this plugin is 
 net-mgmt/py-snmp2||2012-11-19|Has expired: Dead upstream, use net-mgmt/py-snmp4 instead
 net-im/ccmsn||2012-11-19|Has expired: The project no longer exists
 irc/py-irclib|irc/py-irc|2012-11-22|Rename according to upstream name change
+editors/glimmer||2012-11-28|Has expired: Depends on the expired gtkglarea through py-gtk
+palm/txt2pdbdoc||2012-11-28|Has expired: No more public distfiles
+sysutils/xloadface||2012-11-28|Has expired: No more public distfiles
+shells/gscommander||2012-11-28|Has expired: Abandonware
+security/saferpay||2012-11-28|Has expired: No more public distfiles
+x11-wm/qvwm||2012-11-28|Has expired: No more public distfiles

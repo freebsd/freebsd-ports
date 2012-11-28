@@ -35,6 +35,5 @@
     SUBDIR += synce-sync-engine
     SUBDIR += synce-trayicon
     SUBDIR += synce-vdccm
-    SUBDIR += txt2pdbdoc
 
 .include <bsd.port.subdir.mk>
