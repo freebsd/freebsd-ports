@@ -3155,7 +3155,6 @@
     SUBDIR += poco
     SUBDIR += poco-ssl
     SUBDIR += popt
-    SUBDIR += portlet-api
     SUBDIR += poslib
     SUBDIR += powerpc-rtems-binutils
     SUBDIR += powerpc-rtems-gcc
