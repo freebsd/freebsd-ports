@@ -1,0 +1,23 @@
+--- configure.orig	2011-01-18 22:36:19.000000000 +0100
++++ configure	2012-11-27 17:10:24.000000000 +0100
+@@ -3925,7 +3925,7 @@
+    linux_pthread="#define LINUX_PTHREAD"
+ fi
+ 
+-LDFLAGS=-lpthread
++LDFLAGS=%%PTHREAD_LIBS%%
+ 
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+@@ -3944,10 +3944,7 @@
+ }
+ _ACEOF
+ if ac_fn_cxx_try_link "$LINENO"; then :
+-  thread_ldflags="-lpthread"
+-
+-else
+-  thread_ldflags="-pthread"
++  thread_ldflags="%%PTHREAD_LIBS%%"
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
