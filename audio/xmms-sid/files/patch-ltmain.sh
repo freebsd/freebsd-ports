@@ -1,16 +1,18 @@
---- ltmain.sh.orig	Wed Mar 27 14:10:10 2002
-+++ ltmain.sh	Mon Sep  9 02:23:20 2002
-@@ -4209,11 +4209,13 @@
- 	  IFS="$save_ifs"
+--- ltmain.sh.bak	2012-11-20 07:44:50.000000000 -0600
++++ ltmain.sh	2012-11-20 07:45:18.000000000 -0600
+@@ -3020,13 +3020,13 @@
+ 	  lib="$destdir/$realname"
+ 	  func_execute_cmds "$postinstall_cmds" 'exit $?'
  	fi
- 
+-
 +	if /usr/bin/false; then
  	# Install the pseudo-library for information purposes.
- 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+ 	func_basename "$file"
+ 	name="$func_basename_result"
  	instname="$dir/$name"i
- 	$show "$install_prog $instname $destdir/$name"
- 	$run eval "$install_prog $instname $destdir/$name" || exit $?
+ 	func_show_eval "$install_prog $instname $destdir/$name" 'exit $?'
+-
 +	fi
- 
  	# Maybe install the static library, too.
- 	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
+ 	test -n "$old_library" && func_append staticlibs " $dir/$old_library"
+ 	;;
