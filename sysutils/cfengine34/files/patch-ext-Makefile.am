@@ -1,0 +1,8 @@
+--- ext/Makefile.am.orig	2012-11-26 03:13:20.000000000 -0800
++++ ext/Makefile.am	2012-11-27 15:39:01.000000000 -0800
+@@ -1,4 +1,4 @@
+-sbin_PROGRAMS = rpmvercmp
++sbin_PROGRAMS = 
+ 
+ rpmvercmp_LDADD = ../pub/libcfpub.la
+ 
