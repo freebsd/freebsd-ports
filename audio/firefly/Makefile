@@ -45,6 +45,8 @@ PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
 
 USE_LDCONFIG=	yes
 
+USE_GCC=	any
+
 OPTIONS=	JAPANESE "Japanese support in ID3 tags" off
 
 .include <bsd.port.options.mk>
