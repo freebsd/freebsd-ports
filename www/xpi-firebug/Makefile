@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	firebug
-PORTVERSION=	1.10.5
+PORTVERSION=	1.10.6
 DISTVERSIONSUFFIX=	-fx
 PORTEPOCH=	3
 CATEGORIES=	www
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Lets you edit, debug, and monitor CSS, HTML, and JS
 
 LICENSE=	BSD
