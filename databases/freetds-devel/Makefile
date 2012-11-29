@@ -1,16 +1,12 @@
-# New ports collection makefile for:   freetds-devel
-# Date created:		02 Nov 1999
-# Whom:			Domas Mituzas <midom@dammit.lt>
-#
+# Created by: Domas Mituzas <midom@dammit.lt>
 # $FreeBSD$
 
 PORTNAME=	freetds
 PORTVERSION=	0.91
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/${PORTNAME}/stable
+MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	fbsd-ports@opsec.eu
@@ -33,41 +29,48 @@ MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 bsqlodbc.1 \
 		defncopy.1 fisql.1 osql.1
 MAN5=		freetds.conf.5
 
-OPTIONS=	OPENSSL "Use openssl" off       \
-		GNUTLS "Use GNUTLS" off \
-		IODBC   "Use iodbc (Mutually Exclusive)" off    \
-		UNIXODBC "Use unixodbc (Mutually Exclusive)" off        \
-		MSDBLIB "MS SQL Server support (breaks databases/sybtcl)" off
+.include <bsd.port.options.mk>
+
+# OPTIONS_DEFINE=	OPENSSL GNUTLS IODBC UNIXODBC MSDBLIB
+OPTIONS_DEFINE=	MSDBLIB
+
+OPTIONS_SINGLE=	ODBC SSL
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
+
+OPTIONS_DEFAULT=	OPENSSL IODBC
+
+OPENSSL_DESC=	Use OpenSSL
+GNUTLS_DESC=	Use GnuTLS
+IODBC_DESC=	Depend on iodbc
+UNIXODBC_DESC=	Depend on unixodbc
+MSDBLIB_DESC=	MS SQL Server compatibility (breaks databases/sybtcl)
 
 CONFLICTS=	freetds-0.64.[0-9]
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .endif
 
-.if defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .endif
 
-.if defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 .endif
 
-.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
-IGNORE=	selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
-.endif
-
-.if defined(WITH_IODBC) || defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MUNIXODBC}
 PLIST_SUB+=	ODBC=""
 .else
 PLIST_SUB+=	ODBC="@comment "
@@ -75,7 +78,7 @@ PLIST_SUB+=	ODBC="@comment "
 
 # We cannot use msdblib-style by default, because port databases/sybtcl
 # relies on sybase-style dblib
-.if defined(WITH_MSDBLIB)
+.if ${PORT_OPTIONS:MMSDBLIB}
 CONFIGURE_ARGS+=	--enable-msdblib
 TDS_VER=	7.2
 .endif
