@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>yahoo-ui</name>
-	<range><lt>3.0.0</lt></range>
+	<range><le>2.8.2</le></range>
       </package>
     </affects>
     <description>
@@ -82,7 +82,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-10-30</discovery>
       <entry>2012-11-27</entry>
-      <modified>2012-11-28</modified>
+      <modified>2012-11-29</modified>
     </dates>
   </vuln>
 
