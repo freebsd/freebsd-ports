@@ -1,5 +1,5 @@
 --- content/browser/child_process_launcher.cc.orig	2012-10-31 21:01:35.000000000 +0200
-+++ content/browser/child_process_launcher.cc	2012-11-07 13:39:44.000000000 +0200
++++ content/browser/child_process_launcher.cc	2012-11-19 22:35:00.000000000 +0200
 @@ -52,7 +52,7 @@
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
          exit_code_(content::RESULT_CODE_NORMAL_EXIT),
@@ -18,6 +18,15 @@
      content::GetContentClient()->browser()->
          GetAdditionalMappedFilesForChildProcess(*cmd_line, &files_to_register);
      if (use_zygote) {
+@@ -209,7 +209,7 @@
+             id_file.first + base::GlobalDescriptors::kBaseDescriptor));
+       }
+ 
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+       if (process_type == switches::kRendererProcess) {
+         const int sandbox_fd =
+             RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
 @@ -261,7 +261,7 @@
        base::Bind(
            &Context::Notify,
