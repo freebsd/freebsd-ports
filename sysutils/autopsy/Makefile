@@ -3,6 +3,7 @@
 
 PORTNAME=	autopsy
 PORTVERSION=	2.24
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
