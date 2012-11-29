@@ -1,30 +1,25 @@
-# New ports collection makefile for:	vegastrike-data
-# Date created:		05 May 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	vegastrike
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1.r1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
 PKGNAMESUFFIX=	-data
-DISTNAME=	vegastrike-linux-${PORTVERSION}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Vega Strike data files
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MANUAL_PACKAGE_BUILD=huge
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/bin ${WRKSRC}/I* ${WRKSRC}/.vsinstall.sh.swp
 	@${FIND} ${WRKSRC} -name "Makefile.am" -delete
 
 pre-install:
