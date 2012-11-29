@@ -32,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/share/|${PREFIX}/share/|g' ${WRKSRC}/bonnie++.8
 	@${REINPLACE_CMD} \
-		's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
