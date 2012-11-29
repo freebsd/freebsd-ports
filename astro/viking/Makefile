@@ -4,10 +4,10 @@
 PORTNAME=	viking
 PORTVERSION=	1.3.2.1
 CATEGORIES=	astro
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.2/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Program to manage GPS data (tracks, waypoints, etc)
+COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 
 LICENSE=	GPLv2 # (or later)
 
@@ -22,13 +22,13 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_ICONV=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gnomedocutils gtk20
-USE_ICONV=	yes
 USE_PERL5_RUN=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 MAKE_JOBS_SAFE=	yes
@@ -40,8 +40,8 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	GEOTAG GPSD
 OPTIONS_DEFAULT=	GEOTAG
-GEOTAG_DESC=	Enable Geotag support
-GPSD_DESC=	Enable realtime GPS tracking
+GEOTAG_DESC=	Geotag support
+GPSD_DESC=	Realtime GPS tracking
 
 .include <bsd.port.options.mk>
 
