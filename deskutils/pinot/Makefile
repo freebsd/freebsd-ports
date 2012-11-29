@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pinot
-# Date created:		2006-11-19
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pinot
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
