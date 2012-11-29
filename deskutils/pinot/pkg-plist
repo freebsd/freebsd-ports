@@ -119,6 +119,7 @@ share/icons/hicolor/22x22/apps/pinot.png
 share/icons/hicolor/24x24/apps/pinot.png
 share/icons/hicolor/32x32/apps/pinot.png
 share/icons/hicolor/48x48/apps/pinot.png
+share/locale/cs/LC_MESSAGES/pinot.mo
 share/locale/de/LC_MESSAGES/pinot.mo
 share/locale/es/LC_MESSAGES/pinot.mo
 share/locale/fr/LC_MESSAGES/pinot.mo
