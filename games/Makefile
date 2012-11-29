@@ -440,7 +440,6 @@
     SUBDIR += klondike
     SUBDIR += kmancala
     SUBDIR += kmastermind
-    SUBDIR += kmquake2
     SUBDIR += knights
     SUBDIR += knights-kde4
     SUBDIR += kobodeluxe
