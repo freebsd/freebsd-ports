@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lgeneral
-# Date created:                27 Aug 2002
-# Whom:                        Filippo Natali <filippo@widestore.net>
-#
+# Created by: Filippo Natali <filippo@widestore.net>
 # $FreeBSD$
-#
 
 PORTNAME=	lgeneral
 PORTVERSION=	1.2.3
@@ -28,6 +24,7 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_CSTD=	gnu89
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
