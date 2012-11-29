@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	sleuthkit
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tools and library for filesystem forensic analysis
 
 CONFLICTS=	ja-ls-[0-9]*
