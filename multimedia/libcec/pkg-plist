@@ -1,0 +1,12 @@
+lib/libcec.so
+lib/libcec.so.2
+lib/libcec.la
+lib/libcec.a
+include/libcec/cec.h
+include/libcec/cecc.h
+include/libcec/cectypes.h
+include/libcec/cecloader.h
+bin/cec-config
+bin/cec-client
+libdata/pkgconfig/libcec.pc
+@dirrm include/libcec

@@ -145,6 +145,7 @@
     SUBDIR += libaacs
     SUBDIR += libass
     SUBDIR += libbluray
+    SUBDIR += libcec
     SUBDIR += libdc1394
     SUBDIR += libdca
     SUBDIR += libdv
