@@ -15,7 +15,6 @@
     SUBDIR += activemq
     SUBDIR += acx100
     SUBDIR += aget
-    SUBDIR += amqp08
     SUBDIR += aoe
     SUBDIR += apinger
     SUBDIR += appkonference
