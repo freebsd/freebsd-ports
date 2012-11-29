@@ -808,6 +808,7 @@
     SUBDIR += razorback-yaraNugget
     SUBDIR += rdigest
     SUBDIR += regripper
+    SUBDIR += regripperplugins
     SUBDIR += retranslator
     SUBDIR += revelation
     SUBDIR += rkhunter
