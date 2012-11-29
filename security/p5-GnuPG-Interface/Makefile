@@ -1,12 +1,8 @@
-# New ports collection makefile for:   p5-GnuPG-Interface
-# Date created:                                2000-07-09
-# Whom:                                        Trevor Johnson
-#
+# Created by: Trevor Johnson
 # $FreeBSD$
-#
 
 PORTNAME=	GnuPG-Interface
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
-		p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Class-MethodMaker>=1.00:${PORTSDIR}/devel/p5-Class-MethodMaker
+		p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
