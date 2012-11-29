@@ -761,6 +761,7 @@
     SUBDIR += py-trustedpickle
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
+    SUBDIR += py-volatility
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-zope.app.authentication
