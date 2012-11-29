@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmime
-# Date created:			7 Apr 2001
-# Whom:				Bas Kruit <baskruit@bsltwr.dnsalias.org>
-#
+# Created by: Bas Kruit <baskruit@bsltwr.dnsalias.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmime
 PORTVERSION=	1.0.8
@@ -26,5 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	confexecdir=${PREFIX}/etc
 
 USE_LDCONFIG=	yes
+
+DEPRECATED=	Superceded with version 2.4
+EXPIRATION_DATE=	2013-02-28
 
 .include <bsd.port.mk>
