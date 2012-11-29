@@ -1,18 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	yahoo
-PORTVERSION=	2.8.2
+DISTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://yuilibrary.com/downloads/yui2/
+MASTER_SITES=	http://yuilibrary.com/downloads/yui2/:main \
+		http://yuilibrary.com/support/20121030-vulnerability/dropin_patches/:patch
 PKGNAMESUFFIX=	-ui
-DISTNAME=	yui_${PORTVERSION}r1
+DISTFILES=	yui_${DISTVERSION}r1.zip:main \
+		charts-${DISTVERSION:S/.//g}.zip:patch \
+		swfstore-${DISTVERSION:S/.//g}.zip:patch \
+		uploader-${DISTVERSION:S/.//g}.zip:patch
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
 
 LICENSE=	BSD
-
-FORBIDDEN=	CVE-2012-5881 Cross-site scripting (XSS) vulnerability in the Flash component infrastructure
 
 USE_ZIP=	yes
 
@@ -52,6 +55,17 @@ SUB_LIST+=	HASHMARK2=
 .else
 PLIST_SUB+=	NOAPACHE="@comment "
 .endif
+
+pre-patch:
+	@${FIND} ${WRKSRC} -type f \( -name charts.swf -o -name swfstore.swf -o -name uploader.swf \) -delete
+
+post-patch: .SILENT
+	${INSTALL_DATA} ${WRKDIR}/charts-${DISTVERSION:S/.//g}/charts.swf ${WRKSRC}/build/charts/assets/charts.swf
+	${INSTALL_DATA} ${WRKDIR}/swfstore-${DISTVERSION:S/.//g}/swfstore.swf ${WRKSRC}/build/swfstore/swfstore.swf
+	${INSTALL_DATA} ${WRKDIR}/swfstore-${DISTVERSION:S/.//g}/swfstore.swf ${WRKSRC}/examples/storage/swfstore.swf
+	${INSTALL_DATA} ${WRKDIR}/swfstore-${DISTVERSION:S/.//g}/swfstore.swf ${WRKSRC}/examples/swfstore/swfstore.swf
+	${INSTALL_DATA} ${WRKDIR}/uploader-${DISTVERSION:S/.//g}/uploader.swf ${WRKSRC}/build/uploader/assets/uploader.swf
+	${INSTALL_DATA} ${WRKDIR}/uploader-${DISTVERSION:S/.//g}/uploader.swf ${WRKSRC}/examples/uploader/assets/uploader.swf
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "assets build index.html \
