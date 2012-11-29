@@ -807,6 +807,7 @@
     SUBDIR += razorback-virusTotal
     SUBDIR += razorback-yaraNugget
     SUBDIR += rdigest
+    SUBDIR += regripper
     SUBDIR += retranslator
     SUBDIR += revelation
     SUBDIR += rkhunter
