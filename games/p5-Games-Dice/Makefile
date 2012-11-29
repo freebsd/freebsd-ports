@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Games-Dice
-# Date created:				28 May 2005
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Games-Dice
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
