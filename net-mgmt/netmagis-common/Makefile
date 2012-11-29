@@ -32,7 +32,7 @@ USE_APACHE=	22+
 RUN_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base \
 		dot:${PORTSDIR}/graphics/graphviz \
 		pwgen:${PORTSDIR}/sysutils/pwgen \
-		${LOCALBASE}/libexec/apache22/mod_auth_pgsql.so:${PORTSDIR}/www/mod_auth_pgsql2/
+		${LOCALBASE}/libexec/apache22/mod_auth_pgsql.so:${PORTSDIR}/www/mod_auth_pgsql2
 # FIXME compile apache22 with option mod_auth_ldap
 # FIXME add ap22-mod_auth_cas
 .endif
