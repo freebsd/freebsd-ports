@@ -1,18 +1,13 @@
-# New ports collection makefile for:	vegastrike
-# Date created:		05 May 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	vegastrike
-PORTVERSION=	0.5.0
-PORTREVISION=	19
+PORTVERSION=	0.5.1.r1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-DISTNAME=	vegastrike-source-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
+DISTNAME=	vegastrike-src-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Opensource 3D space simulator
 
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data
@@ -27,12 +22,11 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_SDL=	sdl
 USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \
-		xcomposite xdamage xfixes 
+		xcomposite xdamage xfixes
 USE_GL=		gl glu glut
 USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_SAFE=	yes
 
 # cegui and ffmpeg are not used yet
@@ -42,25 +36,23 @@ CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \
 
 PLIST_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
-.endif
 
-OPTIONS=	MESHER "Enable mesher modelling tool" off
+OPTIONS_DEFINE=	MESHER
+MESHER_DESC=	Enable mesher modelling tool
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_MESHER)
-CONFIGURE_ARGS+=	--disable-ogre
-.else
+.if ${OSVERSION} < 800000
+BROKEN=		fails to build on 7.x
+.endif
+
+.if ${PORT_OPTIONS:MMESHER}
 PLIST_FILES+=	bin/mesher
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS+=		${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d
-.endif
-
-.if (${OSVERSION} >= 800501 && ${OSVERSION} < 900000) || ${OSVERSION} >= 900006
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-cmd-basecomputer.cpp \
-		${FILESDIR}/extra-patch-src-vsfilesystem.cpp
+.else
+CONFIGURE_ARGS+=	--disable-ogre
 .endif
 
 post-patch:
@@ -71,15 +63,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vegaserver ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/vegastrike ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/vssetup ${PREFIX}/bin
-.if !defined(WITHOUT_MESHER)
+.if ${PORT_OPTIONS:MMESHER}
 	${INSTALL_PROGRAM} ${WRKSRC}/mesher ${PREFIX}/bin
 .endif
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 post-install:
