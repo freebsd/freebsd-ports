@@ -73,7 +73,6 @@ include/Kokyu/DSRT_Sched_Queue_T.cpp
 include/Kokyu/DSRT_Sched_Queue_T.h
 include/Kokyu/Default_Dispatcher_Impl.h
 include/Kokyu/Default_Dispatcher_Impl.inl
-include/Kokyu/Dispatch_Deferrer.h
 include/Kokyu/Dispatcher_Impl.h
 include/Kokyu/Dispatcher_Impl.inl
 include/Kokyu/Dispatcher_Task.h
@@ -146,6 +145,7 @@ include/ace/Atomic_Op_Sparc.h
 include/ace/Atomic_Op_T.cpp
 include/ace/Atomic_Op_T.h
 include/ace/Atomic_Op_T.inl
+include/ace/Auto_Event.cpp
 include/ace/Auto_Event.h
 include/ace/Auto_Event.inl
 include/ace/Auto_Functor.cpp
@@ -204,6 +204,8 @@ include/ace/Compression/Compressor.h
 include/ace/Compression/Compressor.inl
 include/ace/Compression/rle/ACE_RLECompression_export.h
 include/ace/Compression/rle/RLECompressor.h
+include/ace/Condition_Attributes.h
+include/ace/Condition_Attributes.inl
 include/ace/Condition_Recursive_Thread_Mutex.h
 include/ace/Condition_T.cpp
 include/ace/Condition_T.h
@@ -269,8 +271,11 @@ include/ace/Encoding_Converter_Factory.h
 include/ace/Env_Value_T.cpp
 include/ace/Env_Value_T.h
 include/ace/Env_Value_T.inl
+include/ace/Event.cpp
 include/ace/Event.h
 include/ace/Event.inl
+include/ace/Event_Base.h
+include/ace/Event_Base.inl
 include/ace/Event_Handler.h
 include/ace/Event_Handler.inl
 include/ace/Event_Handler_Handle_Timeout_Upcall.h
@@ -533,6 +538,7 @@ include/ace/Malloc_T.inl
 include/ace/Managed_Object.cpp
 include/ace/Managed_Object.h
 include/ace/Managed_Object.inl
+include/ace/Manual_Event.cpp
 include/ace/Manual_Event.h
 include/ace/Manual_Event.inl
 include/ace/Map_Manager.cpp
@@ -596,6 +602,8 @@ include/ace/Monitor_Control_Action.h
 include/ace/Monitor_Control_Types.h
 include/ace/Monitor_Point_Registry.h
 include/ace/Monitor_Size.h
+include/ace/Monotonic_Time_Policy.h
+include/ace/Monotonic_Time_Policy.inl
 include/ace/Msg_WFMO_Reactor.h
 include/ace/Msg_WFMO_Reactor.inl
 include/ace/Multihomed_INET_Addr.h
@@ -980,6 +988,9 @@ include/ace/Time_Policy_T.h
 include/ace/Time_Policy_T.inl
 include/ace/Time_Value.h
 include/ace/Time_Value.inl
+include/ace/Time_Value_T.cpp
+include/ace/Time_Value_T.h
+include/ace/Time_Value_T.inl
 include/ace/Timeprobe.h
 include/ace/Timeprobe.inl
 include/ace/Timeprobe_T.cpp
@@ -1089,6 +1100,7 @@ include/ace/config-macosx-iOS-hardware.h
 include/ace/config-macosx-iOS-simulator.h
 include/ace/config-macosx-leopard.h
 include/ace/config-macosx-lion.h
+include/ace/config-macosx-mountain-lion.h
 include/ace/config-macosx-panther.h
 include/ace/config-macosx-snowleopard.h
 include/ace/config-macosx-tiger.h
@@ -1353,6 +1365,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_tkreactor.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_unicode.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_x11.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/ace_xml_utils.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_xt.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_xtreactor.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_zlib.mpb
@@ -1439,6 +1452,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/docs/ACE-development-process.html
 %%DATADIR%%/docs/ACE-guidelines.html
 %%DATADIR%%/docs/ACE-lessons.html
+%%DATADIR%%/docs/ACE-monotonic-timer.html
 %%DATADIR%%/docs/ACE-porting.html
 %%DATADIR%%/docs/ACE-subsets.html
 %%DATADIR%%/docs/CE-status.txt
@@ -1486,6 +1500,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_macosx_icc.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_leopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_lion.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_mountain_lion.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_panther.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_snowleopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_tiger.GNU
