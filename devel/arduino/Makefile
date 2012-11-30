@@ -1,6 +1,4 @@
-# New ports collection makefile for:	arduino
-# Date created:				10 Feb 2010
-# Whom:					Warren Block <wblock@wonkity.com>
+# Created by: Warren Block <wblock@wonkity.com>
 # $FreeBSD$
 
 PORTNAME=	arduino
@@ -12,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wblock@freebsd.org
+MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Open-source electronics prototyping platform
 
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx \
