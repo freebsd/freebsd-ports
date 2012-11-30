@@ -292,7 +292,7 @@ CONFIGURE_ARGS+=	--enable-rwm=${OVERLAY_ENABLE}
 .if ${PORT_OPTIONS:MSEQMOD}
 CONFIGURE_ARGS+=	--enable-seqmod=${OVERLAY_ENABLE}
 .else
-CONFIGURE_ARGS+=	--disble-seqmod
+CONFIGURE_ARGS+=	--disable-seqmod
 .endif
 
 .if ${PORT_OPTIONS:MSSSVLV}
