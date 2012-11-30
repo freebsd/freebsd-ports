@@ -1,12 +1,8 @@
-# New ports collection makefile for:    magic
-# Date created:         18 Dec 1994
-# Whom:                 swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	magic
-PORTVERSION=	7.5.220
+PORTVERSION=	7.5.229
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
@@ -17,7 +13,7 @@ COMMENT=	An interactive editor for VLSI layouts
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
+LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
