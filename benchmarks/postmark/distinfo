@@ -1,4 +1,2 @@
-SHA256 (postmark_1.51.orig.tar.gz) = 7cb7c31d4e7725ce8d8e11fb7df62ed700dee4dbd5ca1e31bf3a9161fc890b41
-SIZE (postmark_1.51.orig.tar.gz) = 13394
-SHA256 (postmark_1.51-5.diff.gz) = 65bddac38d38d51ba0c0662c3a2fcc28d868a104316fd1afbe93e15556ed7d36
-SIZE (postmark_1.51-5.diff.gz) = 3509
+SHA256 (postmark_1.53.orig.tar.gz) = 8a88fd322e1c5f0772df759de73c42aa055b1cd36cbba4ce6ee610ac5a3c47d3
+SIZE (postmark_1.53.orig.tar.gz) = 14195
