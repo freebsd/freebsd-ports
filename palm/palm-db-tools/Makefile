@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	palm-db-tools
-# Date created:			Dec 25, 2006
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	palm-db-tools
 PORTVERSION=	0.3.6
@@ -25,7 +20,7 @@ PLIST_FILES=	lib/libpdbtools.so \
 		bin/pdb2csv
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-Wno-deprecated|& -fPIC -DPIC|" \
+	@${REINPLACE_CMD} -e "s|-Wno-deprecated|& -fPIC -DPIC -Wno-error|" \
 		${WRKSRC}/libflatfile/Makefile.in ${WRKSRC}/libpalm/Makefile.in \
 		${WRKSRC}/libsupport/Makefile.in ${WRKSRC}/flatfile/Makefile.in
 
