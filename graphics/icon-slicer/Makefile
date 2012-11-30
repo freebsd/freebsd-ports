@@ -1,21 +1,20 @@
-# New ports collection makefile for:	icon-slicer
-# Date created:			29 May 2005
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	icon-slicer
 PORTVERSION=	0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/icon-slicer/releases/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An utility for generating icon and cursor themes
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Utility for generating icon and cursor themes
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
+USE_PKGCONFIG=	build
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,19 +22,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/icon-slicer
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+PORTDOCS=	AUTHORS ChangeLog README TODO
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|examples||' ${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in AUTHORS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
