@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20100328
-PORTREVISION=	1
+PORTVERSION=	20110311
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/latest/ \
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
+		http://project.ktug.or.kr/dvipdfmx/snapshot/latest/ \
 		http://project.ktug.or.kr/dvipdfmx/snapshot/archive/
+MASTER_SITE_SUBDIR=	dviware/dvipdfmx
 DIST_SUBDIR=	dvipdfmx
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
+
+LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
@@ -24,12 +27,15 @@ RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
+MAKE_JOBS_SAFE=	yes
+
 PLIST_SUB=	DVIPDFMXDIR=${DVIPDFMXDIR} \
 		FONTMAPDIR=${FONTMAPDIR} \
 		GLYPHMAPDIR=${GLYPHMAPDIR} \
 		FONTCMAPDIR=${FONTCMAPDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		ADOBECMAPDIR=${ADOBECMAPDIR}
+
 MAN1=		extractbb.1
 
 TEXMFDIR=	share/texmf
