@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Pd
-# Date created:				2002-05-24
-# Whom:					Trevor Johnson <trevor@FreeBSD.org>
-#
+# Created by: Trevor Johnson <trevor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pd
-DISTVERSION=	0.43-3
+DISTVERSION=	0.43-4
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
