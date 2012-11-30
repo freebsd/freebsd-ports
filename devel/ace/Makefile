@@ -1,25 +1,20 @@
-# Ports collection makefile for:	ace
-# Date created:				5 January 2004
-# Whom:					Sergey Matveychuk <sem@ciam.ru>
-#
+# Created by: Sergey Matveychuk <sem@ciam.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ace
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
-DISTNAME=	ACE-${PORTVERSION}
+DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adaptive Communication Environment for C++
 
 OPTIONS_DEFINE=	SSL TRIO X11 FLTK TK QT4
 OPTIONS_DEFAULT=SSL
-TRIO_DESC=	Enable trio support
-FLTK_DESC=	Enable FLTK support
-TK_DESC=	Enable Tcl/Tk support
+TRIO_DESC=	Trio portable string functions
+FLTK_DESC=	FLTK GUI toolkit
 
 CONFLICTS=	ace+tao-5*
 
@@ -27,12 +22,12 @@ WRKSRC=		${WRKDIR}/ACE_wrappers
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 		CROSS-COMPILE=1
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -101,7 +96,7 @@ post-patch:
 		's|/$$libdir/pkgconfig|/libdata/pkgconfig|g' ${WRKSRC}/bin/ace_install_pkgconfig.pl
 	@${REINPLACE_CMD} -e \
 		's|bin/moc)|bin/moc-qt4)|g ; \
-		 s|bin/moc,|bin/moc-qt4,|'g ${WRKSRC}/ace/QtReactor/GNUmakefile.ACE_Qt4Reactor_moc
+		 s|bin/moc,|bin/moc-qt4,|g' ${WRKSRC}/ace/QtReactor/GNUmakefile.ACE_Qt4Reactor_moc
 
 do-configure:
 	@cd ${WRKSRC}/ace \
