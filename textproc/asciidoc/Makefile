@@ -6,35 +6,34 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION=	8.6.6
+PORTVERSION=	8.6.8
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text document format for writing short documents and man pages
 
+LICENSE=	GPLv2 MIT
+LICENSE_COMB=	multi
+
 USE_PYTHON=	2.5+
 USE_GMAKE=	yes
-MAKE_ENV=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}"
-
 GNU_CONFIGURE=	yes
+
 MAN1=		a2x.1 asciidoc.1
 
-CONFFILES=	asciidoc.conf docbook45.conf filters/code/code-filter.conf \
+CONFFILES=	asciidoc.conf docbook45.conf \
+		filters/code/code-filter.conf \
 		filters/graphviz/graphviz-filter.conf \
 		filters/latex/latex-filter.conf \
 		filters/music/music-filter.conf \
 		filters/source/source-highlight-filter.conf \
-		help.conf html4.conf html5.conf lang-de.conf lang-en.conf \
-		lang-es.conf lang-fr.conf lang-hu.conf lang-it.conf \
-		lang-nl.conf lang-pt-BR.conf lang-ru.conf lang-uk.conf \
+		help.conf html4.conf html5.conf \
+		lang-de.conf lang-el.conf lang-en.conf lang-es.conf \
+		lang-fr.conf lang-hu.conf lang-it.conf lang-nl.conf \
+		lang-pt-BR.conf lang-ru.conf lang-uk.conf \
 		latex.conf slidy.conf text.conf wordpress.conf \
-		xhtml11-quirks.conf xhtml11.conf
-
-# a future improvement to this port is to also install the vim syntax
-# highlighing mode which is currently disabled by being patched away in
-# Makefile.in
+		xhtml11.conf xhtml11-quirks.conf
 
 post-patch:
 .for f in ${CONFFILES}

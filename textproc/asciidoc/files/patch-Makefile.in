@@ -1,16 +1,21 @@
---- Makefile.in.orig	2011-05-30 22:54:30.000000000 +0200
-+++ Makefile.in	2012-08-17 14:22:11.031409140 +0200
-@@ -4,9 +4,6 @@
- 
+--- Makefile.in.orig	2011-05-31 05:54:30.000000000 +0900
++++ Makefile.in	2012-08-18 21:30:48.000000000 +0900
+@@ -5,7 +5,7 @@
  .NOTPARALLEL:
  
--INSTALL = @INSTALL@
+ INSTALL = @INSTALL@
 -INSTALL_PROG = @INSTALL_PROGRAM@
--INSTALL_DATA = @INSTALL_DATA@
++INSTALL_PROG = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
  SED = @SED@
+@@ -27,37 +27,37 @@
+ prog = asciidoc.py a2x.py
+ progdir = $(bindir)
  
-@@ -32,32 +29,32 @@
+-vimdir = @sysconfdir@/vim
++vimdir = @datadir@/vim/vimfiles
+ 
  manp = $(patsubst %1.txt,%1,$(wildcard doc/*.1.txt))
  manpdir = $(mandir)/man1
  
@@ -49,21 +54,23 @@
  latexfilterconfdir = $(filtersdir)/latex
  
  themesdir = $(ASCIIDOCCONF)/themes
-@@ -103,7 +100,7 @@
- 	$(INSTALL) -d $(DESTDIR)/$($@)
+@@ -145,8 +145,7 @@
+ 	done
  
- $(PROGTARGETS): % : %dir
--	$(INSTALL_PROG) $($@) $(DESTDIR)/$($<)/
-+	$(INSTALL_SCRIPT) $($@) $(DESTDIR)/$($<)/
+ install-vim:
+-	@for d in $(DESTDIR)/$(vimdir) /etc/vim; do \
+-		if ! test -d $$d; then continue; fi ; \
++	@for d in $(DESTDIR)/$(vimdir); do \
+ 		echo "installing Vim files in $$d" ; \
+ 		$(INSTALL) -d $$d/syntax ; \
+ 		$(INSTALL_DATA) vim/syntax/asciidoc.vim $$d/syntax ; \
+@@ -155,8 +154,7 @@
+ 	done
  
- $(DATATARGETS): % : %dir
- 	$(INSTALL_DATA) $($@) $(DESTDIR)/$($<)/
-@@ -166,7 +163,7 @@
- build: fixconfpath $(manp)
- 
- 
--install: all $(PROGTARGETS) $(DATATARGETS) progsymlink install-vim
-+install: all $(PROGTARGETS) $(DATATARGETS) progsymlink
- 
- uninstall: uninstall-vim
- 	rm -f $(DESTDIR)/$(progdir)/asciidoc
+ uninstall-vim:
+-	@for d in $(DESTDIR)/$(vimdir) /etc/vim; do \
+-		if ! test -d $$d; then continue; fi ; \
++	@for d in $(DESTDIR)/$(vimdir); do \
+ 		echo "uninstalling Vim files in $$d" ; \
+ 		rm -f $$d/syntax/asciidoc.vim ; \
+ 		rm -f $$d/ftdetect/asciidoc_filetype.vim ; \
