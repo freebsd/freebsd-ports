@@ -1,12 +1,8 @@
-# New ports collection makefile for:	SoundTouch
-# Date created:				16 May 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	soundtouch
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
@@ -15,37 +11,37 @@ COMMENT=	Open-source audio processing library
 
 LICENSE=	LGPL21
 
-USE_AUTOTOOLS=	autoconf automake libtool
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-shared=yes
-MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
-		pkgdoc_DATA="${PORTDOCS}" pkgdocdir="${DOCSDIR}"
-.if !defined(NOPORTDOCS)
-PORTDOCS=	README.html
-.endif
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-OPTIONS_DEFINE=	INTEGER_SAMPLES
+OPTIONS_DEFINE=	INTEGER_SAMPLES DOCS
 INTEGER_SAMPLES_DESC=	Use integer sample format
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
+ACLOCAL_ARGS=	-I config/m4
+AUTOMAKE_ARGS=	--add-missing --copy --foreign
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINTEGER_SAMPLES}
 CONFIGURE_ARGS+=	--enable-integer-samples
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E 's|-O3 ?||' \
-		${WRKSRC}/source/SoundStretch/Makefile.am \
-		${WRKSRC}/source/SoundTouch/Makefile.am
-.if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${ARCH} != "ia64"
-	@${REINPLACE_CMD} '/AM_CXXFLAGS=/s|-msse2 ||' \
-		${WRKSRC}/source/SoundTouch/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|^pkgdoc_DATA|#pkgdoc_DATA| ; \
+		 s|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.am
+	@${FIND} ${WRKSRC}/source -name "Makefile.am" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		's|-O[0-9]|| ; \
+		 s|-msse||'
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
-run-autotools:	# see ${WRKSRC}/bootstrap for reference
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} \
-		AUTOMAKE="${AUTOMAKE} --add-missing --foreign --copy" \
-		${AUTORECONF} -fisv)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
