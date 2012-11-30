@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	jrtplib
-PORTVERSION=	3.7.1
+PORTVERSION=	3.9.1
 CATEGORIES=	devel
 MASTER_SITES=	http://research.edm.uhasselt.be/jori/jrtplib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented RTP library written in C++
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-jthread
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
-PLIST_SUB+=	JRTPLIB_VER=${PORTVERSION}
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+PLIST_SUB=	JRTPLIB_VER="${PORTVERSION}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/pkgconfig/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/pkgconfig/s|$${LIBRARY_INSTALL_DIR}|$${CMAKE_INSTALL_PREFIX}/libdata|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
