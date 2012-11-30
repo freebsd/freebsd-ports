@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tycho
-# Date created:				2008-01-16
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tycho
 PORTVERSION=	0.1
