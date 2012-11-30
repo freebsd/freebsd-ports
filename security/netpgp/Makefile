@@ -1,9 +1,4 @@
-# New ports collection makefile for:	netpgp
-# Date created:		2009-05-27
-# Whom:			bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	netpgp
 PORTVERSION=	20101107
@@ -20,7 +15,7 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-DOPENSSL_NO_IDEA
+CFLAGS+=	-DOPENSSL_NO_IDEA -Wno-error
 
 MAN1+=		netpgp.1 \
 		netpgpkeys.1 \
@@ -28,10 +23,4 @@ MAN1+=		netpgp.1 \
 MAN3+=		libnetpgp.3 \
 		libmj.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-BROKEN=		does not build on 6.x.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
