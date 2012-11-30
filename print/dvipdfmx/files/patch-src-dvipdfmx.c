@@ -1,12 +1,12 @@
---- src/dvipdfmx.c.orig	2009-05-11 11:15:25.000000000 +0900
-+++ src/dvipdfmx.c	2009-06-12 10:26:27.000000000 +0900
-@@ -806,6 +806,9 @@
-     if (!(strcmp(base, "dvipdfm") && strcmp(base, "ebb")))
+--- src/dvipdfmx.c.orig	2011-03-08 11:08:35.000000000 +0900
++++ src/dvipdfmx.c	2012-07-11 18:05:25.000000000 +0900
+@@ -842,6 +842,9 @@
+     if (!(STRCMP_BASE("dvipdfm") && STRCMP_BASE("ebb")))
        compat_mode = 1;
  
-+    if (strcmp(base, "ebb-dvipdfmx") == 0)
++    if (STRCMP_BASE("ebb-dvipdfmx") == 0)
 +      return extractbb(argc, argv);
 +
-     if (!(strcmp(base, "extractbb") && strcmp(base, "xbb") &&
- 	  strcmp(base, "ebb")))
+     if (!(STRCMP_BASE("extractbb") && STRCMP_BASE("xbb") &&
+ 	  STRCMP_BASE("ebb")))
        return extractbb(argc, argv);
