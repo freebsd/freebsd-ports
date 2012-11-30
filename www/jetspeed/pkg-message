@@ -1,6 +1,0 @@
-Once everything is finally installed set the JAVA_HOME 
-variable to ${LOCALBASE}/jdk and run the Tomcat
-server. The JetSpeed portal war file is copied to 
-${LOCALBASE}/apache-tomcat4.1/webapps, where tomcat resides.
-
-For more information on how it works look at JetSpeed homepage.

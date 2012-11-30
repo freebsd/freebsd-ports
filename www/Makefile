@@ -363,7 +363,6 @@
     SUBDIR += jdresolve
     SUBDIR += jericho-html
     SUBDIR += jesred
-    SUBDIR += jetspeed
     SUBDIR += jetty
     SUBDIR += jinzora
     SUBDIR += joomla15
