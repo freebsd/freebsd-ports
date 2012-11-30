@@ -34,7 +34,6 @@ LDFLAGS+=	$$(pkg-config --libs libpng15) \
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ((${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505)
