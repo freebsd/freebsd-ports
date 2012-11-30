@@ -545,6 +545,7 @@
     SUBDIR += meandmyshadow
     SUBDIR += megaglest
     SUBDIR += megaglest-data
+    SUBDIR += megamario
     SUBDIR += memonix
     SUBDIR += meqcc
     SUBDIR += meritous

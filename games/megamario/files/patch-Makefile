@@ -1,0 +1,12 @@
+Index: Makefile
+@@ -1,8 +1,7 @@
+-PREFIX  = /home/opt
+ DATADIR = $(PREFIX)/share/$(TARGET)
+-CFLAGS  = -g -Wall -O2
++CFLAGS += $(shell sdl-config --cflags)
+ CXXFLAGS= $(CFLAGS)
+-LDFLAGS = -lSDL -lSDL_mixer -lSDL_ttf -lSDL_image -lGL
++LDFLAGS += $(shell sdl-config --libs) -lSDL -lSDL_mixer -lSDL_ttf -lSDL_image -lGL -lm
+ DEFINES = -DDATADIR=\"$(DATADIR)/\"
+ OBJS    = src/bonus.o src/gamepad.o src/killerblume.o src/player.o \
+   src/bowser.o      src/global.o    src/levels.o      src/spiny.o  \
