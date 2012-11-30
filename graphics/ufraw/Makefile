@@ -33,9 +33,7 @@ OPTIONS_DEFAULT=CONTRAST EXIV2 LENSFUN GTK2
 
 CONTRAST_DESC=	Enable contrast setting option
 DST_DESC=	Use local time for timestamps
-EXIV2_DESC=	Enable EXIF support via exiv2 library
-LENSFUN_DESC=	Enable LensFun library support
-FITS_DESC=	Enable FITS output support
+FITS_DESC=	FITS output support
 GIMP_DESC=	Install GIMP plugin
 
 .include <bsd.port.options.mk>
