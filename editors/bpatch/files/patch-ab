@@ -1,5 +1,5 @@
---- bpatch.c.orig	Wed Jan 17 08:33:33 1990
-+++ bpatch.c	Sat Sep 18 18:08:04 1999
+--- bpatch.c.orig	1990-01-17 15:33:33.000000000 +0100
++++ bpatch.c	2012-11-30 15:20:18.000000000 +0100
 @@ -90,10 +90,15 @@
  /*E*/
  /*S includes, globals, and defines */
@@ -17,7 +17,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  
-@@ -103,14 +108,8 @@
+@@ -103,14 +108,18 @@
  void icc ();
  void copyrec ();
  void schwapp ();
@@ -31,10 +31,20 @@
 -extern void perror();
 +void breakp ();
 +void reset ();
++int  ckfile (char *, long *);
++int  bread (int, char *, int, int);
++void errmsg (char *, unsigned);
++void show (int, char[16][16], char *, long, int, long, char, int, int, int, int, int, int);
++void dbg_msg (register char *);
++void dohelp ();
++void search (register int);
++int  arrow (register int, register int*, register int *);
++void outstr (char *);
++void outch (register char);
  
  /* set up for calls to outstr and errmsg, etc, */
  /* by use of sprintf to fill outbuf */
-@@ -190,7 +189,7 @@
+@@ -190,7 +199,7 @@
  #ifdef	MOD_HAX
  #else	/* use original code... */
  	/* plus some more for restoring terminal function */
@@ -43,7 +53,15 @@
  #endif	/* MOD_HAX */
  
  /*S main - control all the work from here */
-@@ -210,12 +209,10 @@
+@@ -202,6 +211,7 @@
+ *
+ *********************************************************************/
+ /*E*/
++int
+ main (argc, argv)
+ int argc;
+ char *argv[];
+@@ -210,12 +220,10 @@
  	extern WINDOW *newwin ();
  
  	register char	*cp;		/* general purpose char ptr	*/
@@ -56,7 +74,7 @@
  	int		c;		/* current screen column	*/
  	int		change = 0;	/* true if cmd line option toggled */
  	int		fid;		/* file descriptor 		*/
-@@ -234,8 +231,7 @@
+@@ -234,8 +242,7 @@
  	extern char *optarg;		/* getopt pointer to opt arg	*/
  
  	extern long getnum ();
@@ -66,7 +84,7 @@
  
  	/* ------------------------------------------------------------ */
  	/* set up signal handling					 */
-@@ -333,19 +329,27 @@
+@@ -333,19 +340,27 @@
  		alphawin = subwin (stdscr, 16, 16, 4, 57);
  		keypad (alphawin, TRUE);
  		errwin = subwin (stdscr, 1, 80, 23, 0);
@@ -96,7 +114,16 @@
  #endif	/* MOD_HAX */
  	}
  
-@@ -478,7 +482,9 @@
+@@ -398,7 +413,7 @@
+ 		{
+ 			position = lseek (fid, ((long )recno) * 256, 0);
+ 
+-			if ((bytes = bread (fid, record, 256, block)) < 0)
++			if ((bytes = bread (fid, (char *)record, 256, block)) < 0)
+ 			{
+ 				sprintf(outbuf, "error on reading file %s", filename);
+ 				errmsg (outbuf, SLEEP_TIME);
+@@ -478,7 +493,9 @@
  				}
  				pbrk = 0;
  				fprintf (stderr, "\007");
@@ -107,7 +134,7 @@
  
  				if (pbrk) status = EOF;
  			}
-@@ -617,7 +623,7 @@
+@@ -617,7 +634,7 @@
  
  			case	'\006':	/* new file (^F) */
  				close (fid);
@@ -116,7 +143,7 @@
  				if (fid < 0)
  				{
  					fid = ckfile (filename, &size);
-@@ -832,7 +838,8 @@
+@@ -832,7 +849,8 @@
  				touchwin (alphawin);
  				wrefresh (alphawin);
  
@@ -126,7 +153,7 @@
  				{
  					if (!arrow (z, &r, &c))
  					{
-@@ -902,7 +909,8 @@
+@@ -902,7 +920,8 @@
  				touchwin (hexwin);
  				wrefresh (hexwin);
  
@@ -136,7 +163,32 @@
  				{
  					if (!arrow (z, &r, &c))
  					{
-@@ -1281,7 +1289,7 @@
+@@ -1083,21 +1102,9 @@
+ /*E*/
+ /*checked typing of parameters as declared in fucntion */
+ /* versus declarations at call */
+-show (bytes, record, filename, size, recno, position,
+-	  m,reclen, dump, ebcdic, swab_opt, block, honly)
+-int bytes;
+-char record[16][16];
+-char *filename;
+-long size;
+-int recno;
+-long position;
+-char m;
+-int reclen;
+-int dump;
+-int ebcdic;
+-int swab_opt;
+-int block;
+-int honly;
++void
++show (int bytes, char record[16][16], char *filename, long size, int recno, long position,
++	  char m, int reclen, int dump, int ebcdic, int swab_opt, int block, int honly)
+ {
+ 	int		i;
+ 	int		j;
+@@ -1281,7 +1288,7 @@
  /*S breakp - set pbrk on interrupt */
  /*H breakp */
  /*E*/
@@ -145,7 +197,23 @@
  int i;
  {
  	int s;
-@@ -1592,6 +1600,7 @@
+@@ -1448,6 +1455,7 @@
+ /*S ckfile - check on existence, accessibility, and type of file */
+ /*H ckfile */
+ /*E*/
++int
+ ckfile (filename, sizep)
+ char	*filename;
+ long	*sizep;
+@@ -1515,6 +1523,7 @@
+ /*S dohelp - display help text */
+ /*H dohelp */
+ /*E*/
++void
+ dohelp ()
+ {
+ 	static char *helptxt[] = {
+@@ -1592,6 +1601,7 @@
  /*S reset - reset terminal to original state */
  /*H reset */
  /*E*/
@@ -153,7 +221,7 @@
  reset (sig)
  int sig;
  {
-@@ -1600,7 +1609,7 @@
+@@ -1600,7 +1610,7 @@
  		move (23, 0);
  		refresh ();
  #ifndef MOD_HAX
@@ -162,7 +230,7 @@
  #endif
  		endwin ();
  	}
-@@ -1610,7 +1619,6 @@
+@@ -1610,17 +1620,17 @@
  		fprintf (stderr, "killed with signal %d\n", sig);
  		exit (sig);
  	}
@@ -170,7 +238,27 @@
  }
  /*S arrow - determine if current character is a cursor control key */
  /*H arrow */
-@@ -1683,11 +1691,11 @@
+ /*E*/
++int
+ arrow (k, r, c)
+ register int k;
+ register int *r;
+ register int *c;
+ {
+-	register ret = 1;
++	register int ret = 1;
+ 
+ 	/* watch out for conflict of VI_* amd KEY_* definitions */
+ 	if (k == KEY_UP || k == VI_UP)
+@@ -1673,6 +1683,7 @@
+ /*S dbg_msg - print a debug message */
+ /*H dbg_msg */
+ /*E*/
++void
+ dbg_msg (msg)
+ register char *msg;
+ {
+@@ -1683,11 +1694,11 @@
  
  	return;
  }
@@ -185,7 +273,15 @@
  {
  	static char buf[512];
  
-@@ -1827,7 +1835,7 @@
+@@ -1815,6 +1826,7 @@
+ /*S search - look for an ascii string in the file */
+ /*H search */
+ /*E*/
++void
+ search (fid)
+ register int fid;
+ {
+@@ -1827,13 +1839,13 @@
  	register int matched = 0;
  	register int srch_len;
  
@@ -194,7 +290,44 @@
  	register char *rp;
  
  	int row, col;
-@@ -1924,8 +1932,8 @@
+ 
+ 	srch_len = strlen (cp);
+-	copyrec (record, lrecord, sizeof record);
++	copyrec ((char *)record, lrecord, sizeof record);
+ 	lrecord[256] = '\0';
+ 
+ 	pbrk = 0;
+@@ -1875,7 +1887,7 @@
+ 	{
+ 		recno = currec;
+ 		stay = 0;
+-		copyrec (record, unch_rec, sizeof record);
++		copyrec ((char *)record, (char *)unch_rec, sizeof record);
+ 		werase (errwin);
+ 		touchwin (errwin);
+ 		wrefresh (errwin);
+@@ -1891,6 +1903,7 @@
+ }
+ /* simplified call to errmsg(), by using sprintf to load format */
+ /* sleep_time is not implemented and awaits cleaning up of the signals (?) */
++void
+ errmsg (fmt, sleep_time)
+ unsigned sleep_time;
+ char *fmt;
+@@ -1911,7 +1924,7 @@
+ 	}
+ 	else
+ 	{
+-		fprintf (stderr, fmt);
++		fprintf (stderr, "%s", fmt);
+ 		fprintf (stderr, "\n");
+ 	}
+ 	/* signal problem ?? if sleep called
+@@ -1921,16 +1934,17 @@
+ 	return;
+ }
+ /* simplified call to outstr(), by using sprintf to load format */
++void
  outstr (fmt)
  char *fmt;
  {
@@ -205,3 +338,10 @@
  
  	return;
  }
+-outch (ch)
+-register char ch;
++void
++outch (register char ch)
+ {
+ 	if (dump) putchar (ch);
+ 	else addch (ch);
