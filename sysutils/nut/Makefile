@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -139,6 +139,7 @@ MAN8+=		netxml-ups.8
 PLIST_SUB+=	NUT_NEON=""
 .else
 CONFIGURE_ARGS+=	--without-neonxml
+CONFIGURE_ARGS+=	--disable-neonxml
 PLIST_SUB+=	NUT_NEON="@comment "
 .endif
 
