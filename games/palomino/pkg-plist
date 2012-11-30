@@ -1,4 +1,5 @@
 bin/palomino
+share/pixmaps/palomino.png
 %%DOCSDIR%%/coding.html
 %%DOCSDIR%%/compression.html
 %%DOCSDIR%%/crash.html
