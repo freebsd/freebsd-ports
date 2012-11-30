@@ -2,4 +2,4 @@ mrouted is an implementation of the DVMRP multicast routing protocol.
 It turns a UNIX workstation into a DVMRP multicast router with tunnel
 support, in order to cross non-multicast-aware routers.
 
-WWW: http://troglobit.com/mrouted.shtml
+WWW: http://freecode.com/projects/mrouted
