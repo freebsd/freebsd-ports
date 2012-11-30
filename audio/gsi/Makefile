@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gsi
-# Date created:				3 October 2000
-# Whom:					Sean Farley <sean-freebsd@farley.org>
-#
+# Created by: Sean Farley <sean-freebsd@farley.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gsi
 PORTVERSION=	0.9.6
