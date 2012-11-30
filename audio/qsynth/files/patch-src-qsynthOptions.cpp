@@ -1,6 +1,6 @@
---- src/qsynthOptions.cpp.orig	2009-08-27 18:35:48.000000000 +0200
-+++ src/qsynthOptions.cpp	2009-08-27 18:36:39.000000000 +0200
-@@ -155,11 +155,11 @@ void qsynthOptions::print_usage ( const 
+--- src/qsynthOptions.cpp.orig	2011-03-30 20:53:04.000000000 +0900
++++ src/qsynthOptions.cpp	2012-09-25 21:29:15.000000000 +0900
+@@ -172,11 +172,11 @@
  	out << "  -n, --no-midi-in" + sEot +
  		QObject::tr("Don't create a midi driver to read MIDI input events [default = yes]") + sEol;
  	out << "  -m, --midi-driver=[label]" + sEot +
@@ -14,12 +14,12 @@
  	out << "  -j, --connect-jack-outputs" + sEot +
  		QObject::tr("Attempt to connect the jack outputs to the physical ports") + sEol;
  	out << "  -L, --audio-channels=[num]" + sEot +
-@@ -459,7 +459,7 @@ void qsynthOptions::loadSetup ( qsynthSe
-     pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 512).toInt();
-     pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 8).toInt();
+@@ -477,7 +477,7 @@
+ 	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 512).toInt();
+ 	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 8).toInt();
  #else
 -	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "alsa_seq").toString();
 +	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "jack").toString();
-     pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "jack").toString();
-     pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 64).toInt();
-     pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 2).toInt();
+ 	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "jack").toString();
+ 	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 64).toInt();
+ 	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 2).toInt();
