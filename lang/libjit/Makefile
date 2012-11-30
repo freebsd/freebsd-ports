@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+CFLAGS+=	-O0
 
 INFO=		libjit
 MAN3=		libjit.3
