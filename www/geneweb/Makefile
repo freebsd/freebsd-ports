@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geneweb
-# Date created:				10 septembre 2005
-# Whom:					Hubert Tournier <hubert@frbsd.org>
-#
+# Created by: Hubert Tournier <hubert@frbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geneweb
 PORTVERSION=	5.02
@@ -11,8 +7,8 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An advanced genealogy software
+MAINTAINER=	alex@stangl.us
+COMMENT=	Advanced genealogy software
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
