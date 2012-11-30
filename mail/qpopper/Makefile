@@ -1,9 +1,6 @@
-# New ports collection makefile for:	qpopper
-# Date created:		1 April 1995
-# Whom:			pst
+# Created by: pst
 #
 # $FreeBSD$
-#
 
 PORTNAME=	qpopper
 PORTVERSION=	4.1.0
@@ -45,23 +42,29 @@ SAMPLE_EXT=	.sample
 #
 PKGDEINSTALL=	${PKGINSTALL}
 
-OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
-		APOP		"build with APOP" on \
-		DOCUMENTATION	"install pdf documentation" off \
-		DRAC		"build with Dynamic Relay Authorization" off \
-		FULL_POPD_DEBUG	"build with more verbose debugging" off \
-		PAM		"build with PAM authentication" off \
-		POPPASSD	"build the poppassd daemon" off \
-		QPOPAUTH_SETUID	"install qpopauth setuid to pop user" on \
-		SAMPLE_POPUSERS	"build a default reject file" off \
-		SHY_ENABLED	"hide qpopper version in POP3 banner" off \
-		SSL		"build with SSL/TLS support" on \
-		STANDALONE_MODE	"build qpopper to be run without inetd" off \
-		U_OPTION	"include support for user .qpopper-options" on
+OPTIONS_DEFINE=	APOP_ONLY APOP DOCUMENTATION DRAC FULL_POPD_DEBUG PAM \
+	POPPASSD QPOPAUTH_SETUID SAMPLE_POPUSERS SHY_ENABLED \
+	SSL STANDALONE_MODE U_OPTION
+
+APOP_ONLY_DESC=	build with APOP authentication only
+APOP_DESC=	build with APOP
+DOCUMENTATION_DESC=	install pdf documentation
+DRAC_DESC=	build with Dynamic Relay Authorization
+FULL_POPD_DEBUG_DESC=	build with more verbose debugging
+PAM_DESC=	build with PAM authentication
+POPPASSD_DESC=	build the poppassd daemon
+QPOPAUTH_SETUID_DESC=	install qpopauth setuid to pop user
+SAMPLE_POPUSERS_DESC=	build a default reject file
+SHY_ENABLED_DESC=	hide qpopper version in POP3 banner
+SSL_DESC=	build with SSL/TLS support
+STANDALONE_MODE_DESC=	build qpopper to be run without inetd
+U_OPTION_DESC=	include support for user .qpopper-options
+
+OPTIONS_DEFAULT=	APOP QPOPAUTH_SETUID SSL U_OPTION
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_APOP)
+.if empty(PORT_OPTIONS:MAPOP)
 QPOPAUTH=	"@comment "
 .else
 CONFIGURE_ARGS+=	--enable-apop=${ETCDIR}/pop.auth \
@@ -70,38 +73,38 @@ MAN8+=		qpopauth.8
 QPOPAUTH=	""
 # If WITH_APOP_ONLY variable present in the environment, qpopper builds
 # with APOP authentication only.
-.if defined(WITH_APOP_ONLY)
+.if ${PORT_OPTIONS:MAPOP_ONLY}
 OS_DEFS+=	-DAPOP_ONLY
 .endif
 .endif
 
 # Do not install documentation since it is in pdf format and normally
 # not used unless user wants it.
-.if !defined(WITH_DOCUMENTATION)
+.if empty(PORT_OPTIONS:MDOCUMENTATION)
 NOPORTDOCS=	yes
 .endif
 
 # If WITH_DRAC variable present in the environment, qpopper builds
 # with Dynamic Relay Authorization Control support.
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 CONFIGURE_ARGS+=	--with-drac
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 # If WITH_FULL_POPD_DEBUG variable present in the environment, qpopper builds
 # with more verbose debugging. See also -d option to qpopper.
-.if defined(WITH_FULL_POPD_DEBUG)
+.if ${PORT_OPTIONS:MFULL_POPD_DEBUG}
 CONFIGURE_ARGS+=	--enable-debugging
 .endif
 
 # If WITH_PAM variable present qpopper builds with PAM authentication
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--with-pam=pop3
 .endif
 
 # If WITH_POPPASSD variable present in the environment, qpopper builds
 # with poppassd support.
-.if defined(WITH_POPPASSD)
+.if ${PORT_OPTIONS:MPOPPASSD}
 CONFIGURE_ARGS+=	--enable-poppassd
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c \
 		${FILESDIR}/extra-patch-password::auth_user.c
@@ -112,19 +115,19 @@ EPOPPASSD=	"@comment "
 
 # If WITH_SHY_ENABLED variable present,  qpopper does not present
 # its version number within the POP3 session.
-.if defined(WITH_SHY_ENABLED)
+.if ${PORT_OPTIONS:MSHY_ENABLED}
 CONFIGURE_ARGS+=	--enable-shy
 .endif
 
 # If WITH STANDALONE_MODE variable present qpopper is built so it runs
 # without inetd.
-.if defined(WITH_STANDALONE_MODE)
+.if ${PORT_OPTIONS:MSTANDALONE_MODE}
 CONFIGURE_ARGS+=	--enable-standalone
 USE_RC_SUBR=	 ${PORTNAME}
 .endif
 
 # The default is to build without SSL/TLS support.
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
