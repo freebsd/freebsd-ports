@@ -1,6 +1,5 @@
 @stopdaemon minecraft
 %%DATADIR%%/minecraft_server.jar
-%%X11%%%%DATADIR%%/Bookshelf.png
 %%X11%%bin/minecraft-server
 bin/minecraft-server-nogui
 @exec mkdir -p %D/etc/minecraft
@@ -24,5 +23,6 @@ bin/minecraft-server-nogui
 @exec if [ ! -f %D/etc/minecraft/banned-ips.txt ] ; then cp -p %D/%F %B/banned-ips.txt; fi
 %%DATADIR%%/banned-players.txt.sample
 @exec if [ ! -f %D/etc/minecraft/banned-players.txt ] ; then cp -p %D/%F %B/banned-players.txt; fi
+%%X11%%share/pixmaps/minecraft-server.png
 @dirrmtry %%DATADIR%%
 @dirrmtry etc/minecraft
