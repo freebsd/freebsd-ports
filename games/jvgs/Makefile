@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jvgs
-# Date created:		15 Jan 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jvgs
 PORTVERSION=	0.4
@@ -30,7 +26,9 @@ NO_CDROM=	contains data under CC-by-NC-SA
 
 PORTDOCS=	AUTHORS
 
-PORTSCOUT=	ignore:0.5 # unplayable due to broken double jump
+PORTSCOUT=	skipv:0.5 # unplayable due to broken double jump
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|main.lua|${DATADIR}/&|' ${WRKSRC}/src/main.cpp
@@ -40,7 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jvgs ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "resources main.lua" ${DATADIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
 .endif
