@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5af51ae9-3acd-11e2-a4eb-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>23.0.1271.95</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[161564] High CVE-2012-5138: Incorrect file path handling. Credit
+	    to Google Chrome Security Team (Jüri Aedla).</p>
+	  <p>[162835] High CVE-2012-5137: Use-after-free in media source
+	    handling. Credit to Pinkie Pie.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5137</cvename>
+      <cvename>CVE-2012-5138</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-11-29</discovery>
+      <entry>2012-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa4f86af-3172-11e2-ad21-20cf30e32f6d">
     <topic>YUI JavaScript library -- JavaScript injection exploits in Flash components</topic>
     <affects>
