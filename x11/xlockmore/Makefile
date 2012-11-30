@@ -1,19 +1,15 @@
-# New ports collection makefile for:	xlockmore
-# Date created:		9 November 1994
-# Whom:			smace
+# Created by: smace
 #
 # $FreeBSD$
-#
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.40
-PORTREVISION=	1
+PORTVERSION=	5.41
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		CRITICAL
 
-MAINTAINER=	marius@nuenneri.ch
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
