@@ -1,15 +1,13 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Net-IP
-PORTVERSION=	1.25
-PORTREVISION=	3
+PORTVERSION=	1.26
 CATEGORIES=	net-mgmt perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv4/IPv6 addresses
 
 PERL_CONFIGURE=	yes
