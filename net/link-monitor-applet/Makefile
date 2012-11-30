@@ -6,24 +6,37 @@
 #
 
 PORTNAME=	link-monitor-applet
-PORTVERSION=	2.1
-PORTREVISION=	9
+PORTVERSION=	3.0
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	link-monitor
+MASTER_SITES=	SAVANNAH/${PORTNAME:S/-applet//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME applet displaying the round-trip time to one or more hosts
 
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
-USE_GNOME=	gnomehack gnomeprefix gnomepanel eel2 librsvg2 libgnomeui
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_BZIP2=	yes
+USE_GNOME=	gnomepanel gnomeprefix libgnomeui librsvg2 
+USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	link-monitor-applet.schemas
-INSTALLS_OMF=	yes
+
+do-configure:
+	@(cd ${WRKSRC} && ${SH} jb configure cc="${CC}" cflags="${CFLAGS}" \
+		cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" \
+		libdir="${PREFIX}/libdata" prefix="${PREFIX}")
+
+do-build:
+	@(cd ${WRKSRC} && ${SH} jb build)
+	
+do-install:
+	@(cd ${WRKSRC} && ${SH} jb install)
 
 .include <bsd.port.mk>
