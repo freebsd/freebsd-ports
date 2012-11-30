@@ -5,9 +5,7 @@ PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://tipok.org.ua/downloads/media/aac+/libaacplus/:site1\
-		http://217.20.164.161/~tipok/aacplus/:site1\
-		http://media.wnet.ua/~tipok/aacplus/:site1\
+MASTER_SITES=	http://media.wnet.ua/~tipok/aacplus/:site1\
 		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2\
 		http://www.3gpp.org/ftp/Specs/archive/26_series/26.410/:site2
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:site1\
