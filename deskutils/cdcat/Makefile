@@ -1,16 +1,12 @@
-# New ports collection makefile for:	cdcat
-# Date created: 			04 May 2006
-# Whom: 				Aren Tyr <aren.tyr@gawab.com>
-#
+# Created by: Aren Tyr <aren.tyr@gawab.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cdcat
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		GOOGLE_CODE:lib7zip
+PROJECTHOST=	lib7zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${L7Z_DISTFILE}:lib7zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -18,17 +14,18 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT based tool for offline CD/DVD/disk catalogs
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2 MPL
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/archivers/p7zip:patch \
 		${NONEXISTENT}:${PORTSDIR}/multimedia/mediainfo:build
-LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar \
-		exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	tar:${PORTSDIR}/devel/libtar \
+		exif:${PORTSDIR}/graphics/libexif
+
+OPTIONS_DEFINE=	DOCS
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-PROJECTHOST=	lib7zip
 USE_BZIP2=	yes
 USE_QT4=	corelib gui xml \
 		linguist_build moc_build qmake_build uic_build
@@ -62,7 +59,7 @@ PLIST_FILES+=	share/icons/hicolor/scalable/apps/${PORTNAME}_logo.svg
 PLIST_DIRS=	%%DATADIR%%/translations %%DATADIR%%
 
 L7Z_NAME=	lib7zip
-L7Z_VERSION=	1.4.1
+L7Z_VERSION=	1.6.3
 L7Z_DISTFILE=	${L7Z_NAME}-${L7Z_VERSION}.tar.gz
 L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 
@@ -70,6 +67,10 @@ L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 
 P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC)
 MIF_WRKSRC=	$$(cd ${PORTSDIR}/multimedia/mediainfo && ${MAKE} -V WRKSRC)
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not build on 7.X
+.endif
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/${L7Z_DISTFILE} | (cd ${WRKDIR} && ${TAR} -xf -)
@@ -112,10 +113,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_logo_${size}x${size}.png \
 		${PREFIX}/share/icons/hicolor/${size}x${size}/apps/${PORTNAME}_logo.png
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
