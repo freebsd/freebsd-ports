@@ -1,17 +1,28 @@
---- ambfor/makefile.orig	2008-10-30 10:06:37.000000000 +0100
-+++ ambfor/makefile	2008-10-30 10:07:19.000000000 +0100
-@@ -14,11 +14,11 @@
+--- ambfor/makefile.orig	2011-04-29 20:40:50.000000000 +0900
++++ ambfor/makefile	2012-09-24 02:50:23.000000000 +0900
+@@ -12,12 +12,12 @@
  #
- #CC = cc
+ # 
  
--CFLAGS = -c
--FC = g77
-+CFLAGS += -DFREEBSD=1
-+#FC = g77
- FFLAGS = -c -O3 -ffast-math
+-CFLAGS = -c -g
++CFLAGS += -c
+ #FC = g77 
+-FC = gfortran
+-FFLAGS = -c -g -ffast-math -funroll-loops -O3
++#FC = gfortran
++#FFLAGS = -c -g -ffast-math -funroll-loops -O3
  LIBS =  -lm
--LDR = g77 
-+LDR = $(FC) 
+-LDR = ${FC} -g
++LDR = ${FC}
  
- OBJS = ambfor.o angle.o bond.o charge.o conn.o enegrd.o getinp.o \
- 	param.o tors.o vdwlj.o math.o optimise.o wrtout.o
+ OBJS = angle.o bond.o charge.o conn.o enegrd.o getinp.o param.o \
+ 	tors.o vdwlj.o math.o switch.o wrtout.o pbc.o 
+@@ -47,7 +47,7 @@
+ 	$(LDR) -o ambmd md.o verlet.o qvdw.o allocmd.o $(OBJS) $(LIBS)
+ 
+ ambfor.o:	ambfor.f
+-	${FC} -c -g -ffast-math -funroll-loops -o ambfor.o ambfor.f
++	${FC} -c ${FFLAGS} -o ambfor.o ambfor.f
+ 
+ allocmd.o:	alloc.c
+ 	$(CC) $(CFLAGS) -DMD -c alloc.c -o allocmd.o

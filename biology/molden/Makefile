@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	molden
-PORTVERSION=	4.6
-PORTREVISION=	3
+PORTVERSION=	5.0.2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
@@ -12,16 +11,35 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
-USE_XORG=	x11 xmu
-USE_GL=		glut
+RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
+
+OPTIONS_DEFINE=	DATA DOCS
+OPTIONS_DEFAULT=DATA
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
+
+USE_XORG=	x11
+USE_GL=		glu
 USE_FORTRAN=	yes
+USE_GMAKE=	yes
+MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=yes
 
-RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable
-MAKEFILE=	${WRKSRC}/makefile
+CFLAGS+=	-D${OPSYS:U} -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	docs/*
-.endif
+PORTDOCS=	*
+PORTDATA=	*
+PLIST_FILES=	bin/ambfor bin/gmolden bin/molden bin/surf
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CC |#CC | ; \
+		 s|^FC |#FC | ; \
+		 s|/usr/X11R6|${LOCALBASE}| ; \
+		 s|-lXmu|| ; \
+		 /depend/s|^|#|' ${WRKSRC}/makefile
 
 post-configure:
 	@${ECHO_MSG} "********************"
@@ -32,17 +50,18 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/molden ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ambfor/ambfor ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gmolden ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ambfor/ambfor ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/surf/surf ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDATA}
+	@${MKDIR} ${DATADIR}/test
+	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
+	@${MKDIR} ${DATADIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/* ${DATADIR}/utils
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}/test ${DATADIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
-	${INSTALL_DATA} ${WRKSRC}/utils/* ${DATADIR}/utils
 .endif
 
 .include <bsd.port.mk>

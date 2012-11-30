@@ -1,5 +1,21 @@
---- surf/Makefile.orig	2008-10-30 10:12:27.000000000 +0100
-+++ surf/Makefile	2008-10-30 10:08:43.000000000 +0100
+--- surf/Makefile.orig	2008-08-26 02:59:06.000000000 +0900
++++ surf/Makefile	2012-09-24 02:45:55.000000000 +0900
+@@ -1,12 +1,12 @@
+ # Compilation flags
+ #CC	    = cc
+-CC	    = cc
++#CC	    = cc
+ INCLUDE     = -I. 
+ #LINCLUDE    = -lcurses -ltermcap -lm
+ LINCLUDE    = -lm
+-OPT_CFLAGS  = -O2 $(FLAGS) $(INCLUDE)
++#OPT_CFLAGS  = -O2 $(FLAGS) $(INCLUDE)
+ #CFLAGS	    = -g $(FLAGS) $(INCLUDE)
+-CFLAGS	    = -O2 $(FLAGS) $(INCLUDE)
++#CFLAGS	    = -O2 $(FLAGS) $(INCLUDE)
+ 
+ # These are the user object files in the application
+ SRCS        = surf.c io.c compute.c dual.c utils.c lp.c chull.c tessel_cases.c \
 @@ -63,46 +63,120 @@
  # DO NOT DELETE THIS LINE -- make depend depends on it.
    
