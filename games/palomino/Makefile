@@ -3,6 +3,7 @@
 
 PORTNAME=	palomino
 PORTVERSION=	20121026
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.palomino3d.org/sim/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
@@ -11,8 +12,8 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 		${PORTNAME}_data_sounds_${SOUNDS_VER}.tar.bz2 \
 		${PORTNAME}_data_terrain_${TERRAIN_VER}.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Action flight simulator with its own 3D engine
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Action flight simulation computer program using OSG
 
 LIB_DEPENDS=	osg:${PORTSDIR}/graphics/osg
 
@@ -39,6 +40,9 @@ SDL_DESC=	SDL support for input and sound
 PLIB_DESC=	Enable sound support through plib
 GUI_DESC=	Enable FLTK GUI
 
+DESKTOP_ENTRIES=	"Palomino" "${COMMENT}" "${PORTNAME}" \
+			"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJOYSTICK}
@@ -62,11 +66,11 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR}; \
-	for file in ${DISTFILES}; do \
-		if ${ECHO_CMD} $$file | ${GREP} -q txz$$; then \
-			${XZ_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; \
+	for distfile in ${DISTFILES}; do \
+		if ${ECHO_CMD} $$distfile | ${GREP} -q txz$$; then \
+			${XZ_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$distfile ${EXTRACT_AFTER_ARGS}; \
 		else \
-			${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; \
+			${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$distfile ${EXTRACT_AFTER_ARGS}; \
 		fi; \
 	done
 
@@ -102,6 +106,9 @@ post-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} "data scripts" ${DATADIR}/
 # docs are used from within the game, so this is unconditional
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} "*" ${DOCSDIR}/
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/
+
+	${LN} -sf ${PREFIX}/share/doc/palomino/images/palominoLogo.png \
+		${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
