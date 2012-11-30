@@ -202,20 +202,20 @@
 %%PYTHON_SITELIBDIR%%/pyNN/utility.py
 %%PYTHON_SITELIBDIR%%/pyNN/utility.pyc
 %%PYTHON_SITELIBDIR%%/pyNN/utility.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/brian/standardmodels
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/brian
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates/cheetah
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates/jinja2
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates/string
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/nest/standardmodels
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/nest
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/neuron/nmodl
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/neuron/standardmodels
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/neuron
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/standardmodels
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/recording
 @dirrm %%PYTHON_SITELIBDIR%%/pyNN/pcsim/standardmodels
 @dirrm %%PYTHON_SITELIBDIR%%/pyNN/pcsim
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/recording
-@dirrm %%PYTHON_SITELIBDIR%%/pyNN/standardmodels
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/neuron/standardmodels
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/neuron/nmodl
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/neuron
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/nest/standardmodels
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/nest
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates/string
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates/jinja2
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates/cheetah
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/descriptions
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/brian/standardmodels
+@dirrm %%PYTHON_SITELIBDIR%%/pyNN/brian
 @dirrm %%PYTHON_SITELIBDIR%%/pyNN
