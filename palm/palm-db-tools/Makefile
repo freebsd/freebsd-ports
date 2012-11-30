@@ -20,7 +20,7 @@ PLIST_FILES=	lib/libpdbtools.so \
 		bin/pdb2csv
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-Wno-deprecated|& -fPIC -DPIC -Wno-error|" \
+	@${REINPLACE_CMD} -e "s|-Wno-deprecated|& -fPIC -DPIC|" \
 		${WRKSRC}/libflatfile/Makefile.in ${WRKSRC}/libpalm/Makefile.in \
 		${WRKSRC}/libsupport/Makefile.in ${WRKSRC}/flatfile/Makefile.in
 
