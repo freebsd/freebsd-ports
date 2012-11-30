@@ -1,27 +1,21 @@
-# ex:ts=8
-# Ports collection makefile for:  postmark
-# Date created:			  Sat Sep 18, 1999
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	postmark
-PORTVERSION=	1.51
-PORTREVISION=	1
+PORTVERSION=	1.53
 CATEGORIES=	benchmarks
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
-
-PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL}
-PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetApps file system benchmark
 
+LICENSE=	ART10 LGPL21
+LICENSE_COMB=	multi
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAN1=		postmark.1
 PLIST_FILES=	sbin/postmark
 
 do-build:
@@ -29,5 +23,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postmark ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/postmark.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
