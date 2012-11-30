@@ -1,4 +1,4 @@
-bin/shepp
+%%READLINE%%bin/shepp
 include/libepp_nicbr/Action.H
 include/libepp_nicbr/AsnCheck.H
 include/libepp_nicbr/AsnCheckCmd.H
@@ -135,6 +135,7 @@ include/libepp_nicbr/TransportTLS.H
 include/libepp_nicbr/TransportTLSCommon.H
 include/libepp_nicbr/XmlException.H
 include/libepp_nicbr/libepp_nicbr.H
+include/libepp_nicbr/libepp_nicbr.H.template
 lib/libepp-nicbr-%%VER%%.a
 %%DATADIR%%/schemas/asn-1.0.xsd
 %%DATADIR%%/schemas/brdomain-1.0.xsd
