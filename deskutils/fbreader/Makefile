@@ -10,7 +10,8 @@ PORTVERSION=	0.12.10
 PORTREVISION=	2
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.fbreader.org/
+MASTER_SITES=	http://www.fbreader.org/files/sources/ \
+		http://old.fbreader.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fluffy@FreeBSD.org
