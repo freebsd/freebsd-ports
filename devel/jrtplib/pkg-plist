@@ -11,13 +11,13 @@ include/jrtplib3/rtcpsdespacket.h
 include/jrtplib3/rtcpsrpacket.h
 include/jrtplib3/rtcpunknownpacket.h
 include/jrtplib3/rtpaddress.h
+include/jrtplib3/rtpbyteaddress.h
 include/jrtplib3/rtpcollisionlist.h
 include/jrtplib3/rtpconfig.h
-include/jrtplib3/rtpconfig_unix.h
-include/jrtplib3/rtpconfig_win.h
 include/jrtplib3/rtpdebug.h
 include/jrtplib3/rtpdefines.h
 include/jrtplib3/rtperrors.h
+include/jrtplib3/rtpexternaltransmitter.h
 include/jrtplib3/rtpfaketransmitter.h
 include/jrtplib3/rtphashtable.h
 include/jrtplib3/rtpinternalsourcedata.h
@@ -33,6 +33,9 @@ include/jrtplib3/rtppacket.h
 include/jrtplib3/rtppacketbuilder.h
 include/jrtplib3/rtppollthread.h
 include/jrtplib3/rtprandom.h
+include/jrtplib3/rtprandomrand48.h
+include/jrtplib3/rtprandomrands.h
+include/jrtplib3/rtprandomurandom.h
 include/jrtplib3/rtprawpacket.h
 include/jrtplib3/rtpsession.h
 include/jrtplib3/rtpsessionparams.h
@@ -43,13 +46,14 @@ include/jrtplib3/rtpstructs.h
 include/jrtplib3/rtptimeutilities.h
 include/jrtplib3/rtptransmitter.h
 include/jrtplib3/rtptypes.h
-include/jrtplib3/rtptypes_unix.h
 include/jrtplib3/rtptypes_win.h
 include/jrtplib3/rtpudpv4transmitter.h
 include/jrtplib3/rtpudpv6transmitter.h
-lib/libjrtp-%%JRTPLIB_VER%%.so
+lib/cmake/JRTPLIB/JRTPLIBConfig.cmake
 lib/libjrtp.a
-lib/libjrtp.la
 lib/libjrtp.so
+lib/libjrtp.so.%%JRTPLIB_VER%%
 libdata/pkgconfig/jrtplib.pc
+@dirrm lib/cmake/JRTPLIB
+@dirrmtry lib/cmake
 @dirrm include/jrtplib3
