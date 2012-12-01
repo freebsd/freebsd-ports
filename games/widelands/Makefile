@@ -1,24 +1,19 @@
-# Ports collection makefile for:        widelands
-# Date created:                         8 April 2007
-# Whom:                                 Bartosz Fabianowski <freebsd@chillt.de>
-#
+# Created by: Bartosz Fabianowski <freebsd@chillt.de>
 # $FreeBSD$
-#
 
 PORTNAME=	widelands
-DISTVERSION=	build16
-PORTREVISION=	3
+DISTVERSION=	build17
 CATEGORIES=	games
-MASTER_SITES=	http://launchpadlibrarian.net/69520494/ \
+MASTER_SITES=	https://launchpadlibrarian.net/102893896/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
-LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
-		png15:${PORTSDIR}/graphics/png \
-		GLEW.1:${PORTSDIR}/graphics/glew
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
+		GLEW.1:${PORTSDIR}/graphics/glew \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
@@ -32,7 +27,6 @@ CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 USE_LUA=	5.1+
 USE_SDL=	sdl mixer image net ttf gfx
 USE_PYTHON_BUILD=2.5+
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/widelands
@@ -45,8 +39,6 @@ DESKTOP_ENTRIES="Widelands" \
 		false
 
 post-patch:
-	@${REINPLACE_CMD} -e '/ifndef/ s|__APPLE__|__FreeBSD__|' \
-		${WRKSRC}/src/backtrace.cc
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
 
