@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.15
+PORTVERSION=	6.1.16
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
