@@ -92,8 +92,10 @@ include/wine/windows/asptlb.h
 include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
+include/wine/windows/atlbase.h
 include/wine/windows/atliface.h
 include/wine/windows/atliface.idl
+include/wine/windows/atlwin.h
 include/wine/windows/audevcod.h
 include/wine/windows/audioclient.h
 include/wine/windows/audioclient.idl
@@ -739,6 +741,7 @@ lib/wine/apphelp.dll.so
 lib/wine/appwiz.cpl.so
 lib/wine/aspnet_regiis.exe.so
 lib/wine/atl.dll.so
+lib/wine/atl100.dll.so
 lib/wine/atl80.dll.so
 lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
@@ -881,6 +884,7 @@ lib/wine/fakedlls/apphelp.dll
 lib/wine/fakedlls/appwiz.cpl
 lib/wine/fakedlls/aspnet_regiis.exe
 lib/wine/fakedlls/atl.dll
+lib/wine/fakedlls/atl100.dll
 lib/wine/fakedlls/atl80.dll
 lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
@@ -1426,6 +1430,7 @@ lib/wine/libadsiid.a
 lib/wine/libadvapi32.def
 lib/wine/libadvpack.def
 lib/wine/libatl.def
+lib/wine/libatl100.def
 lib/wine/libavicap32.def
 lib/wine/libavifil32.def
 lib/wine/libavrt.def
