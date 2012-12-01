@@ -1,3 +1,4 @@
+# Created by: Marc van Woerkom <3d@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	audacity
