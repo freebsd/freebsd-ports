@@ -1,18 +1,11 @@
-# New ports collection makefile for:	Mixxx
-# Date created:			25 Jun 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	mixxx
-PORTVERSION=	1.10.0
-PORTREVISION=	3
+PORTVERSION=	1.10.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	audio
-MASTER_SITES=	http://mixxx.rasant-records.de/downloads/%SUBDIR%/ \
-		http://moo.glines.org/mixxx/%SUBDIR%/ \
-		http://web.mit.edu/rryan/www/downloads.mixxx.org/%SUBDIR%/
+MASTER_SITES=	http://moo.glines.org/mixxx/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,24 +13,25 @@ COMMENT=	A DJ mixing application
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		mad.2:${PORTSDIR}/audio/libmad \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		tag.1:${PORTSDIR}/audio/taglib
+BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+		id3tag:${PORTSDIR}/audio/libid3tag \
+		mad:${PORTSDIR}/audio/libmad \
+		sndfile:${PORTSDIR}/audio/libsndfile \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		tag:${PORTSDIR}/audio/taglib
+RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 
-OPTIONS_DEFINE=	LAME FAAD WAVPACK SHOUTCAST DOCS
-SHOUTCAST_DESC=	Enable Shoutcast Broadcasting
-WAVPACK_DESC=	Enable WavPack audio support plugin
+OPTIONS_DEFINE=	LAME SHOUTCAST FAAD WAVPACK DOCS
+SHOUTCAST_DESC=	Shoutcast Broadcasting
+WAVPACK_DESC=	WavPack audio support plugin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GL=		glu
 USE_QT4=	corelib gui network opengl script sql svg webkit xml \
 		xmlpatterns linguist_build moc_build qmake_build rcc_build \
 		uic_build
+USE_GL=		glu
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
 SCONS_ARGS=	qtdir="${QT_PREFIX}" optimize=0
@@ -82,7 +76,8 @@ post-patch:
 		 s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${FILE}
 .endfor
 	@${REINPLACE_CMD} -e \
-		"/('install', docs)/d" ${WRKSRC}/src/SConscript
+		"/_get_bzr_/s|^|#| ; \
+		 /('install', docs)/d" ${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e \
 		"s|^Exec=.*|Exec=mixxx|" ${WRKSRC}/src/mixxx.desktop
 
