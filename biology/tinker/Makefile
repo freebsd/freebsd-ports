@@ -1,76 +1,74 @@
-# New ports collection makefile for:   tinker
-# Date Created:                26 August 1998
-# Whom:                        Glenn Johnson
-#
+# Created by: Glenn Johnson
 # $FreeBSD$
-#
 
 PORTNAME=	tinker
-PORTVERSION=	5.1.09
+PORTVERSION=	6.1.01
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
 
-MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-
-WRKSRC=		${WRKDIR}/tinker/source
-
-MAKEFILE=	${WRKDIR}/tinker/make/Makefile
-ALL_TARGET=	all listing
-INSTALL_TARGET=	rename
 RESTRICTED=	author requests no distribution except from his FTP site
 
-DOCS=		0README *.pdf *.txt announce/release*
-SAMPLES=	0README *.make *.dyn *.int *.frac *.key *.seq *.pdb *.run *.xyz
+OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DATA DOCS EXAMPLES
+OPTIONS_DEFAULT=DATA
+OPTIMIZED_FFLAGS_DESC=	compilation optimizations
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/source
+INSTALL_WRKSRC=	${WRKSRC}/source
+
+USE_FORTRAN=	yes
+MAKE_ENV=	HAVE_G2C=yes
+MAKEFILE=	${WRKSRC}/make/Makefile
+ALL_TARGET=	all listing
+INSTALL_TARGET=	rename
+MAKE_JOBS_SAFE=	yes
+
+SUB_FILES=	pkg-message
+
+DOCS=		0README *.pdf *.txt
+SAMPLES=	0README *.make *.dyn *.int *.frac *.key *.seq *.pdb *.xyz
 BENCHES=	0README *.dyn0 *.log *.key *.run *.xyz results*
 
 .include <bsd.port.pre.mk>
 
-USE_FORTRAN=	yes
-
-.if defined(WITH_OPTIMIZED_FLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_FFLAGS}
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 .if (${ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
 .endif
 
-pre-everything::
-.if !defined(WITH_OPTIMIZED_FLAGS)
-	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+.if empty(PORT_OPTIONS:MDATA)
+NOPORTDATA=	yes
 .endif
 
 post-extract:
-	${CHMOD} -R u+w ${WRKDIR}/tinker
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%FFLAGS%%|${FFLAGS}|g' ${WRKSRC}/../make/Makefile
+	@${CHMOD} -R u+w ${WRKSRC}
 
 post-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/tinker.txt ${DATADIR}
 	@${MKDIR} ${DATADIR}/params
-	@${INSTALL_DATA} ${WRKDIR}/tinker/source/tinker.txt \
-		${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/tinker/params/* \
-		${DATADIR}/params
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/params/* ${DATADIR}/params
+.if ${PORT_OPTIONS:MDATA}
 	@${MKDIR} ${DATADIR}/bench
+	${INSTALL_DATA} ${BENCHES:S|^|${WRKSRC}/bench/|} ${DATADIR}/bench
 	@${MKDIR} ${DATADIR}/test
-	@${INSTALL_DATA} ${DOCS:S|^|${WRKDIR}/tinker/doc/|} ${DOCSDIR}
-	@${INSTALL_DATA} ${SAMPLES:S|^|${WRKDIR}/tinker/example/|} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${BENCHES:S|^|${WRKDIR}/tinker/bench/|} ${DATADIR}/bench
-	@${INSTALL_DATA} ${WRKDIR}/tinker/test/* ${DATADIR}/test
+	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
 .endif
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "   **********************************************************"
-	@${ECHO_MSG} "       The author requests that you return a license form    "
-	@${ECHO_MSG} "       to him if you find Tinker to be useful.               "
-	@${ECHO_MSG} "                                                             "
-	@${ECHO_MSG} "       See ${DOCSDIR} for license forms.     "
-	@${ECHO_MSG} "   **********************************************************"
-	@${ECHO_MSG} ""
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${SAMPLES:S|^|${WRKSRC}/example/|} ${EXAMPLESDIR}
+.endif
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
