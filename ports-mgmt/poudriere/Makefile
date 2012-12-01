@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
@@ -23,15 +23,16 @@ CONFLICTS_INSTALL=	poudriere-devel-*
 
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
+		share/poudriere/bulk.sh \
 		share/poudriere/clean.sh \
 		share/poudriere/common.sh \
-		share/poudriere/test_ports.sh \
-		share/poudriere/ports.sh \
-		share/poudriere/jail.sh \
-		share/poudriere/bulk.sh \
 		share/poudriere/cron.sh \
-		share/poudriere/queue.sh \
+		share/poudriere/distclean.sh \
+		share/poudriere/jail.sh \
 		share/poudriere/options.sh \
+		share/poudriere/ports.sh \
+		share/poudriere/queue.sh \
+		share/poudriere/test_ports.sh
 
 PLIST_DIRS=	share/poudriere
 
