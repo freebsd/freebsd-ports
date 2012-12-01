@@ -1,19 +1,19 @@
-# New ports collection makefile for:	cfitsio
-# Date created:				Fri Apr 30 16:49:36 CEST 2004
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.300
+PORTVERSION=	3.310
 CATEGORIES=	astro
-MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
-		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/
+MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/%SUBDIR%/ \
+		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. oldvers
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 
@@ -21,13 +21,17 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
 ALL_TARGET=	shared
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
+
+post-extract:
+	@cd ${WRKSRC} && ${MV} zlib.h zlib.h.dist
 
 post-patch:
 	@${GREP} -lR "<malloc.\h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
