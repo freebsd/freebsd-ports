@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kobodeluxe
-# Date created:		12 June 2002
-# Whom:			Amar Takhar <verm@drunkmonk.net>
-#
+# Created by: Amar Takhar <verm@drunkmonk.net>
 # $FreeBSD$
-#
 
 PORTNAME=	kobodeluxe
 PORTVERSION=	0.5.1
@@ -36,11 +32,12 @@ DESKTOP_ENTRIES="Kobo Deluxe" \
 		"Game;ArcadeGame;" \
 		false
 
-OPTIONS=	OPENGL "OpenGL rendering layer" on
+OPTIONS_DEFINE=	OPENGL
+OPTIONS_DEFAULT=OPENGL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=	--enable-opengl
 .else
@@ -67,4 +64,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobo-icon.xpm \
 		${PREFIX}/share/pixmaps/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
