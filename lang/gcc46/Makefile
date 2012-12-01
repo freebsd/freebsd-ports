@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4.20121102
+PORTVERSION=	4.6.4.20121123
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -14,6 +14,7 @@ COMMENT=	GNU Compiler Collection 4.6
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		mpfr:${PORTSDIR}/math/mpfr \
 		mpc:${PORTSDIR}/math/mpc
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
