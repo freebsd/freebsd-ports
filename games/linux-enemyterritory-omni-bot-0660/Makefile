@@ -1,9 +1,5 @@
-# New ports collection makefile for:	omni-bot
-# Date created:				7 May 2006
-# Whom:					alepulver
-#
+# Created by:	alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.660
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	linux-enemyterritory-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-server_spy
-# Date created:				10 November 2011
-# Whom:					Barbara <barbara.xxx1975@libero.it>
-#
+# Created by:	Barbara Guida <bar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	server_spy
 PORTVERSION=	0.2.1
@@ -11,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Indicates what brand of HTTP server runs on the visited site
 
 USE_XPI=	*firefox*

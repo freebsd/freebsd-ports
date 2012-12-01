@@ -1,16 +1,12 @@
-# New ports collection makefile for:	xpi-showip
-# Date created:				10 November 2011
-# Whom:					Barbara <barbara.xxx1975@libero.it>
-#
+# Created by:	Barbara Guida <bar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	showip
 PORTVERSION=	1.8.1
 DISTVERSIONSUFFIX=	-tb+sm+fx
 CATEGORIES=	www
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Show the IP address of the current page in the status bar
 
 LICENSE=	GPLv2
