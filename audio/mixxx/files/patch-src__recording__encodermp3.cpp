@@ -1,17 +1,15 @@
---- src/recording/encodermp3.cpp.orig	2011-12-24 11:53:18.000000000 +0900
-+++ src/recording/encodermp3.cpp	2012-01-16 06:10:09.000000000 +0900
-@@ -85,7 +85,9 @@
+--- src/recording/encodermp3.cpp.orig	2012-06-26 05:23:37.000000000 +0900
++++ src/recording/encodermp3.cpp	2012-08-09 09:06:21.000000000 +0900
+@@ -85,7 +85,7 @@
       */
      QStringList libnames;
      QString libname = "";
 -#ifdef __LINUX__
-+#ifdef __BSD__
-+    libnames << "%%LOCALBASE%%/lib/libmp3lame.so";
-+#elif __LINUX__
-     libnames << "/usr/lib/libmp3lame.so.0";
-     libnames << "/usr/lib/libmp3lame.so";
++#if defined(__BSD__) || defined(__LINUX__)
+        libnames << "mp3lame";
  #elif __WINDOWS__
-@@ -109,7 +111,7 @@
+     libnames << "lame_enc.dll";
+@@ -108,7 +108,7 @@
          props->setType(DLG_WARNING);
          props->setTitle(tr("Encoder"));
          QString key = "";

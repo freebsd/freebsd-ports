@@ -19,6 +19,8 @@ share/applications/mixxx.desktop
 %%DATADIR%%/midi/DJ-Tech-i-Mix-Reload-scripts.js
 %%DATADIR%%/midi/DJTechTools MIDI Fighter.midi.xml
 %%DATADIR%%/midi/DJTechTools-MIDIFighter-scripts.js
+%%DATADIR%%/midi/Denon MC3000.midi.xml
+%%DATADIR%%/midi/Denon-MC3000-scripts.js
 %%DATADIR%%/midi/Evolution_Xsession.midi.xml
 %%DATADIR%%/midi/FaderFoxDJ2.midi.xml
 %%DATADIR%%/midi/Hercules DJ Console Mac Edition.midi.xml
@@ -75,9 +77,11 @@ share/applications/mixxx.desktop
 %%DATADIR%%/midi/Vestax Spin.midi.xml
 %%DATADIR%%/midi/Vestax Typhoon.midi.xml
 %%DATADIR%%/midi/Vestax VCI-100.midi.xml
+%%DATADIR%%/midi/Vestax VCI-400.midi.xml
 %%DATADIR%%/midi/Vestax-Spin-scripts.js
 %%DATADIR%%/midi/Vestax-Typhoon-scripts.js
 %%DATADIR%%/midi/Vestax-VCI-100-scripts.js
+%%DATADIR%%/midi/Vestax-VCI-400-scripts.js
 %%DATADIR%%/midi/Wireless DJ App.midi.xml
 %%DATADIR%%/midi/Wireless-DJ-scripts.js
 %%DATADIR%%/midi/convertToXMLSchemaV1.php
