@@ -1,17 +1,15 @@
-# New ports collection makefile for:	bin86
-# Date created:				2000-10-19
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	bin86
-PORTVERSION=	0.16.18
+PORTVERSION=	0.16.19
 CATEGORIES=	devel
 MASTER_SITES=	http://www.debath.co.uk/dev86/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	16-bit assembler and loader
+
+OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_SAFE=	yes
 
@@ -34,7 +32,7 @@ do-install:
 .for i in ${BINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
