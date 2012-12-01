@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jaymod
-# Date created:				7 May 2006
-# Whom:					alepulver
-#
+# Created by:	alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	jaymod
 PORTVERSION=	2.2.0
@@ -12,7 +8,7 @@ MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://www.zenenterprises.biz/bud/jaymod/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

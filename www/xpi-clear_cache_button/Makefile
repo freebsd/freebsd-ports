@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-clear_cache_button
-# Date created:				14 September 2011
-# Whom:					Barbara <barbara.xxx1975@libero.it>
-#
+# Created by:	Barbara Guida <bar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clear_cache_button
 PORTVERSION=	0.9f
@@ -11,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Adds a button to the toolbar that clears the browser cache
 
 USE_XPI=	*firefox*
@@ -42,7 +38,7 @@ XPI_DIRS=	chrome/skin/classic chrome/skin \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<em:maxVersion>6\.\*<|<em:maxVersion>99.*<|' \
-	    ${WRKSRC}/install.rdf
+		${WRKSRC}/install.rdf
 
 pre-install:
 	@${RM} -f ${WRKSRC}/install.rdf.bak

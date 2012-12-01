@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flashblock
-# Date created:		14 May 2006
-# Whom:			Simon Olofsson
-#
+# Created by:	Simon Olofsson
 # $FreeBSD$
-#
 
 PORTNAME=	flashblock
 PORTVERSION=	1.5.15.1
@@ -11,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Replaces Flash objects with a button you can click to view them
 
 USE_XPI=	*firefox*
