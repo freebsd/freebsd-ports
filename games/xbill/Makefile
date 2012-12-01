@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  xbill
-# Date created:			  12 September 1995
-# Whom:				  asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	xbill
 PORTVERSION=	2.1
@@ -32,25 +27,27 @@ DESKTOP_ENTRIES="xBill" \
 		"Game;ArcadeGame;" \
 		false
 
-OPTIONS=	ATHENA	"Build with Athena widget set" off \
-		GTK	"Build with GTK widget set" on \
-		MOTIF	"Build with Motif widget set" off
+OPTIONS_SINGLE=	WIDGETSET
+OPTIONS_SINGLE_WIDGETSET=	ATHENA GTK MOTIF
+OPTIONS_DEFAULT=	GTK
+
+ATHENA_DESC=	Athena widget set
+GTK_DESC=	GTK widget set
+MOTIF_DESC=	Motif widget set
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ATHENA) && !defined(WITH_GTK) && !defined(WITH_MOTIF)
+.if ${PORT_OPTIONS:MATHENA}
 CONFIGURE_ARGS+=	--disable-gtk --disable-motif
 USE_XORG=	xaw xmu xt x11 sm ice
-.elif !defined(WITH_ATHENA) && defined(WITH_GTK) && !defined(WITH_MOTIF)
-CONFIGURE_ARGS+=	--disable-athena --disable-motif
-USE_GNOME=	gtk12
-USE_XORG=	sm ice
-.elif !defined(WITH_ATHENA) && !defined(WITH_GTK) && defined(WITH_MOTIF)
+.elif ${PORT_OPTIONS:MMOTIF}
 CONFIGURE_ARGS+=	--disable-athena --disable-gtk
 USE_XORG=	xt x11 sm ice xpm
 USE_MOTIF=	yes
-.else
-IGNORE=		can't be build: please rerun 'make config' and chose exactly one widget set
+.else # ${PORT_OPTIONS:MGTK}
+CONFIGURE_ARGS+=	--disable-athena --disable-motif
+USE_GNOME=	gtk12
+USE_XORG=	sm ice
 .endif
 
 post-patch:
