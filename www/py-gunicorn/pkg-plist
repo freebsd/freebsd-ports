@@ -67,9 +67,6 @@ bin/gunicorn_paster
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/http/wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/http/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/http/wsgi.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/logging_config.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/logging_config.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/logging_config.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/management/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/management/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/management/__init__.pyo
@@ -82,6 +79,9 @@ bin/gunicorn_paster
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/pidfile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/pidfile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/pidfile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/six.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/six.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/six.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/sock.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/sock.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/sock.pyo
