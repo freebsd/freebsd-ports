@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121201:
+  AFFECTS: Users of www/typo3
+  AUTHOR: Helmut Ritter <freebsd-ports@charlieroot.de>
+
+  www/typo3 has been repocopied to www/typo347. If you need to continue with
+  the old stable version please run
+
+  # portmaster -o www/typo347 www/typo3
+  or
+  # portupgrade -fo www/typo347 www/typo3
+  or
+  # pkg set -o www/typo3:www/typo347
+
 20121128:
   AFFECTS: Users of irc/znc
   AUTHOR: jase@FreeBSD.org

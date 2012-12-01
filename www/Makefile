@@ -1947,6 +1947,7 @@
     SUBDIR += typo3
     SUBDIR += typo345
     SUBDIR += typo346
+    SUBDIR += typo347
     SUBDIR += typolight
     SUBDIR += udmsearch
     SUBDIR += ump
