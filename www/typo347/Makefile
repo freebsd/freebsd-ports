@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.0.0
+PORTVERSION=	4.7.7
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=52-
+IGNORE_WITH_PHP=4
 
 TYPO3WWW=	www
 TYPO3RELEASE=
@@ -27,20 +27,12 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
 
-OPTIONS_DEFINE=	APC CURL GD IMAGICK MBSTRING MYSQL ZLIB
-APC_DESC=	Alternative PHP Cache
-CURL_DESC=	cURL supprt
-GD_DESC=	GDlib/freetype support
+OPTIONS_DEFINE=	CURL GD IMAGICK MBSTRING ZLIB
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
-MYSQL_DESC=	Install MySQL Server
-ZLIB_DESC=	zlib support
+GD_DESC=	GDlib/freetype support
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MAPC}
-USE_PHP+=	apc
-.endif
 
 .if ${PORT_OPTIONS:MCURL}
 USE_PHP+=	curl
@@ -62,17 +54,12 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
 USE_PHP+=	mbstring
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	41 50
-.endif
-
 .if ${PORT_OPTIONS:MZLIB}
 USE_PHP+=	zlib
 .endif
 
 pre-install:
-	${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php.dist
+	${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/localconf.php ${WRKDIR}/${TYPO3DUMMY}/typo3conf/localconf.php.dist
 
 do-install:
 	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${PREFIX}/${TYPO3SITE}
