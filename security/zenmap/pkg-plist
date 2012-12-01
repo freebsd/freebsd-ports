@@ -1,7 +1,11 @@
-bin/zenmap
 bin/ndiff
-share/applications/zenmap-root.desktop
-share/applications/zenmap.desktop
+bin/zenmap
+%%PYTHON_SITELIBDIR%%/radialnet/__init__.py
+%%PYTHON_SITELIBDIR%%/radialnet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/radialnet/__init__.pyo
+%%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/__init__.py
+%%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/__init__.pyo
 %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/boxes.py
 %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/boxes.pyc
 %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/boxes.pyo
@@ -26,9 +30,6 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/windows.py
 %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/windows.pyc
 %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/windows.pyo
-%%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/__init__.py
-%%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/__init__.pyc
-%%PYTHON_SITELIBDIR%%/radialnet/bestwidgets/__init__.pyo
 %%PYTHON_SITELIBDIR%%/radialnet/core/ArgvHandle.py
 %%PYTHON_SITELIBDIR%%/radialnet/core/ArgvHandle.pyc
 %%PYTHON_SITELIBDIR%%/radialnet/core/ArgvHandle.pyo
@@ -83,6 +84,9 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/radialnet/gui/__init__.py
 %%PYTHON_SITELIBDIR%%/radialnet/gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/radialnet/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/radialnet/util/__init__.py
+%%PYTHON_SITELIBDIR%%/radialnet/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/radialnet/util/__init__.pyo
 %%PYTHON_SITELIBDIR%%/radialnet/util/drawing.py
 %%PYTHON_SITELIBDIR%%/radialnet/util/drawing.pyc
 %%PYTHON_SITELIBDIR%%/radialnet/util/drawing.pyo
@@ -95,24 +99,18 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/radialnet/util/misc.py
 %%PYTHON_SITELIBDIR%%/radialnet/util/misc.pyc
 %%PYTHON_SITELIBDIR%%/radialnet/util/misc.pyo
-%%PYTHON_SITELIBDIR%%/radialnet/util/__init__.py
-%%PYTHON_SITELIBDIR%%/radialnet/util/__init__.pyc
-%%PYTHON_SITELIBDIR%%/radialnet/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/radialnet/__init__.py
-%%PYTHON_SITELIBDIR%%/radialnet/__init__.pyc
-%%PYTHON_SITELIBDIR%%/radialnet/__init__.pyo
 %%PYTHON_SITELIBDIR%%/zenmapCore/BasePaths.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/BasePaths.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/BasePaths.pyo
-%%PYTHON_SITELIBDIR%%/zenmapCore/BugRegister.py
-%%PYTHON_SITELIBDIR%%/zenmapCore/BugRegister.pyc
-%%PYTHON_SITELIBDIR%%/zenmapCore/BugRegister.pyo
 %%PYTHON_SITELIBDIR%%/zenmapCore/Diff.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/Diff.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/Diff.pyo
 %%PYTHON_SITELIBDIR%%/zenmapCore/I18N.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/I18N.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/I18N.pyo
+%%PYTHON_SITELIBDIR%%/zenmapCore/NSEDocParser.py
+%%PYTHON_SITELIBDIR%%/zenmapCore/NSEDocParser.pyc
+%%PYTHON_SITELIBDIR%%/zenmapCore/NSEDocParser.pyo
 %%PYTHON_SITELIBDIR%%/zenmapCore/Name.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/Name.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/Name.pyo
@@ -134,9 +132,18 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/zenmapCore/RecentScans.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/RecentScans.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/RecentScans.pyo
+%%PYTHON_SITELIBDIR%%/zenmapCore/ScriptArgsParser.py
+%%PYTHON_SITELIBDIR%%/zenmapCore/ScriptArgsParser.pyc
+%%PYTHON_SITELIBDIR%%/zenmapCore/ScriptArgsParser.pyo
+%%PYTHON_SITELIBDIR%%/zenmapCore/ScriptMetadata.py
+%%PYTHON_SITELIBDIR%%/zenmapCore/ScriptMetadata.pyc
+%%PYTHON_SITELIBDIR%%/zenmapCore/ScriptMetadata.pyo
 %%PYTHON_SITELIBDIR%%/zenmapCore/SearchResult.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/SearchResult.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/SearchResult.pyo
+%%PYTHON_SITELIBDIR%%/zenmapCore/StringPool.py
+%%PYTHON_SITELIBDIR%%/zenmapCore/StringPool.pyc
+%%PYTHON_SITELIBDIR%%/zenmapCore/StringPool.pyo
 %%PYTHON_SITELIBDIR%%/zenmapCore/TargetList.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/TargetList.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/TargetList.pyo
@@ -161,6 +168,102 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/zenmapCore/__init__.py
 %%PYTHON_SITELIBDIR%%/zenmapCore/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zenmapCore/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/About.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/About.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/About.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/App.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/App.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/App.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/BugReport.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/BugReport.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/BugReport.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/CrashReport.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/CrashReport.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/CrashReport.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/DiffCompare.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/DiffCompare.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/DiffCompare.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/MainWindow.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/MainWindow.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/MainWindow.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputProperties.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputProperties.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputProperties.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputViewer.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputViewer.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputViewer.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/OptionBuilder.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/OptionBuilder.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/OptionBuilder.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/Print.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/Print.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/Print.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileCombo.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileCombo.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileCombo.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileEditor.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileEditor.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileEditor.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileHelp.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileHelp.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileHelp.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostDetailsPage.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostDetailsPage.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostDetailsPage.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanRunDetailsPage.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanRunDetailsPage.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanRunDetailsPage.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanScanListPage.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanScanListPage.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanScanListPage.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanToolbar.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanToolbar.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanToolbar.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScansListStore.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScansListStore.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScansListStore.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScriptInterface.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScriptInterface.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScriptInterface.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchGUI.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchGUI.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchGUI.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchWindow.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchWindow.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchWindow.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/TargetCombo.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/TargetCombo.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/TargetCombo.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/TopologyPage.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/TopologyPage.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/TopologyPage.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/__init__.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/__init__.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/__init__.pyo
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/gtkutils.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/gtkutils.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/gtkutils.pyo
@@ -212,99 +315,18 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/utils.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/utils.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/utils.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/__init__.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/__init__.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/__init__.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/About.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/About.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/About.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/App.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/App.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/App.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/BugReport.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/BugReport.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/BugReport.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/CrashReport.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/CrashReport.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/CrashReport.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/DiffCompare.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/DiffCompare.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/DiffCompare.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/MainWindow.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/MainWindow.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/MainWindow.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputProperties.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputProperties.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputProperties.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputViewer.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputViewer.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/NmapOutputViewer.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/OptionBuilder.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/OptionBuilder.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/OptionBuilder.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileCombo.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileCombo.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileCombo.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileEditor.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileEditor.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileEditor.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileHelp.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileHelp.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ProfileHelp.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostDetailsPage.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostDetailsPage.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostDetailsPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanRunDetailsPage.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanRunDetailsPage.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanRunDetailsPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanScanListPage.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanScanListPage.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanScanListPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanToolbar.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanToolbar.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanToolbar.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScansListStore.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScansListStore.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScansListStore.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchGUI.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchGUI.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchGUI.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchWindow.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchWindow.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/SearchWindow.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/Splash.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/Splash.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/Splash.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/TargetCombo.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/TargetCombo.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/TargetCombo.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/TopologyPage.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/TopologyPage.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/TopologyPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/__init__.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/__init__.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/__init__.pyo
+share/applications/zenmap.desktop
+share/applications/zenmap-root.desktop
+%%DATADIR%%/config/scan_profile.usp
+%%DATADIR%%/config/zenmap.conf
+%%DATADIR%%/config/zenmap_version
+%%DATADIR%%/docs/help.html
+%%DATADIR%%/locale/de/LC_MESSAGES/zenmap.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/zenmap.mo
+%%DATADIR%%/locale/hr/LC_MESSAGES/zenmap.mo
+%%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
+%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
+%%DATADIR%%/misc/profile_editor.xml
 %%DATADIR%%/pixmaps/default_32.png
 %%DATADIR%%/pixmaps/default_75.png
 %%DATADIR%%/pixmaps/freebsd_32.png
@@ -317,11 +339,17 @@ share/applications/zenmap.desktop
 %%DATADIR%%/pixmaps/macosx_75.png
 %%DATADIR%%/pixmaps/openbsd_32.png
 %%DATADIR%%/pixmaps/openbsd_75.png
+%%DATADIR%%/pixmaps/radialnet/border.png
+%%DATADIR%%/pixmaps/radialnet/firewall.png
+%%DATADIR%%/pixmaps/radialnet/logo.png
+%%DATADIR%%/pixmaps/radialnet/padlock.png
+%%DATADIR%%/pixmaps/radialnet/router.png
+%%DATADIR%%/pixmaps/radialnet/switch.png
+%%DATADIR%%/pixmaps/radialnet/wireless.png
 %%DATADIR%%/pixmaps/redhat_32.png
 %%DATADIR%%/pixmaps/redhat_75.png
 %%DATADIR%%/pixmaps/solaris_32.png
 %%DATADIR%%/pixmaps/solaris_75.png
-%%DATADIR%%/pixmaps/splash.png
 %%DATADIR%%/pixmaps/throbber.gif
 %%DATADIR%%/pixmaps/throbber.png
 %%DATADIR%%/pixmaps/ubuntu_32.png
@@ -341,50 +369,30 @@ share/applications/zenmap.desktop
 %%DATADIR%%/pixmaps/win_32.png
 %%DATADIR%%/pixmaps/win_75.png
 %%DATADIR%%/pixmaps/zenmap.png
-%%DATADIR%%/pixmaps/radialnet/border.png
-%%DATADIR%%/pixmaps/radialnet/firewall.png
-%%DATADIR%%/pixmaps/radialnet/logo.png
-%%DATADIR%%/pixmaps/radialnet/padlock.png
-%%DATADIR%%/pixmaps/radialnet/router.png
-%%DATADIR%%/pixmaps/radialnet/switch.png
-%%DATADIR%%/pixmaps/radialnet/wireless.png
-%%DATADIR%%/config/scan_profile.usp
-%%DATADIR%%/config/zenmap.conf
-%%DATADIR%%/config/zenmap_version
-%%DATADIR%%/docs/help.html
-%%DATADIR%%/locale/hr/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/de/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/misc/profile_editor.xml
 %%DATADIR%%/su-to-zenmap.sh
+@dirrm %%DATADIR%%/pixmaps/radialnet
+@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/hr
+@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/ru
 @dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/pt_BR
+@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/hr
 @dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/fr
 @dirrm %%DATADIR%%/locale/de/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/de
-@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ru
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/pixmaps/radialnet
-@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/icons
-@dirrm %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets
-@dirrm %%PYTHON_SITELIBDIR%%/radialnet/core
-@dirrm %%PYTHON_SITELIBDIR%%/radialnet/gui
-@dirrm %%PYTHON_SITELIBDIR%%/radialnet/util
-@dirrm %%PYTHON_SITELIBDIR%%/radialnet
 @dirrm %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets
 @dirrm %%PYTHON_SITELIBDIR%%/zenmapGUI
 @dirrm %%PYTHON_SITELIBDIR%%/zenmapCore
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/radialnet/util
+@dirrm %%PYTHON_SITELIBDIR%%/radialnet/gui
+@dirrm %%PYTHON_SITELIBDIR%%/radialnet/core
+@dirrm %%PYTHON_SITELIBDIR%%/radialnet/bestwidgets
+@dirrm %%PYTHON_SITELIBDIR%%/radialnet
