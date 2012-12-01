@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sieve-connect
-# Date created:				Sat 14 May 2011
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sieve-connect
-PORTVERSION=	0.83
+PORTVERSION=	0.84
 CATEGORIES=	mail
 MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -28,7 +24,7 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/sieve-connect
 
 MAN1=		sieve-connect.1
 
