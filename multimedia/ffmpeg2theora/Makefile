@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg2theora
-PORTVERSION=	0.28
-PORTREVISION=	4
+PORTVERSION=	0.29
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/downloads/
 
@@ -15,15 +14,19 @@ COMMENT=	Reencode many media file formats to Ogg Theora
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		kate.4:${PORTSDIR}/multimedia/libkate
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		kate:${PORTSDIR}/multimedia/libkate \
+		theora:${PORTSDIR}/multimedia/libtheora
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_SCONS=	yes
+SCONS_BUILDENV=	CC="${CC}" CCFLAGS="${CFLAGS}" \
+		APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
-SCONS_ENV+=	APPEND_LINKFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-		APPEND_CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		ffmpeg2theora.1
 PLIST_FILES=	bin/ffmpeg2theora
