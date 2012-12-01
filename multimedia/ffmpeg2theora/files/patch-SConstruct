@@ -1,0 +1,19 @@
+--- SConstruct.orig	2012-06-26 02:15:16.000000000 +0900
++++ SConstruct	2012-07-04 01:17:19.000000000 +0900
+@@ -37,7 +37,7 @@
+   BoolVariable('libkate', 'enable libkate support', 1),
+   BoolVariable('crossmingw', 'Set to 1 for crosscompile with mingw', 0)
+ )
+-env = Environment(options = opts)
++env = Environment(options = opts, CC = Split(os.environ['CC']), CCFLAGS = Split(os.environ['CCFLAGS']))
+ Help(opts.GenerateHelpText(env))
+ 
+ pkg_flags="--cflags --libs"
+@@ -151,7 +151,6 @@
+       "libavcodec >= 52.30.0",
+       "libpostproc",
+       "libswscale",
+-      "libswresample",
+       "libavutil",
+   ]
+   if os.path.exists("./ffmpeg"):
