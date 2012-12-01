@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -23,7 +23,7 @@ LATEST_LINK=	collectd5
 
 OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT VIRT
 OPTIONS_MULTI=		INPUT OUTPUT
-OPTIONS_MULTI_OUTPUT=	RRDTOOL RRDCACHED WRITE_HTTP
+OPTIONS_MULTI_OUTPUT=	RRDTOOL RRDCACHED WRITE_GRAPHITE WRITE_HTTP
 OPTIONS_MULTI_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK \
 			GCRYPT NUTUPS INTERFACE MBMON MEMCACHED MYSQL NGINX OPENVPN \
 			PDNS PGSQL PING PYTHON ROUTEROS SNMP TOKYOTYRANT XMMS
@@ -60,6 +60,7 @@ XMMS_DESC=		XMMS
 # OUTPUT
 RRDTOOL_DESC=		RRDTool
 RRDCACHED_DESC=		RRDTool Cached (requires RRDTOOL)
+WRITE_GRAPHITE_DESC=	write_graphite
 WRITE_HTTP_DESC=	write_http
 
 MAN1=		collectd.1 collectd-nagios.1 collectdmon.1 collectdctl.1
@@ -133,11 +134,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-teamspeak2 \
 		--disable-ted \
 		--disable-thermal \
-		--disable-users \
 		--disable-vmem \
 		--disable-vserver \
 		--disable-wireless \
-		--disable-zfs_arc \
 		--without-perl-bindings \
 		--without-librabbitmq \
 		--disable-varnish \
@@ -403,6 +402,14 @@ PLIST_SUB+=	VIRT=""
 .else
 CONFIGURE_ARGS+=--disable-libvirt
 PLIST_SUB+=	VIRT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MWRITE_GRAPHITE}
+CONFIGURE_ARGS+=--enable-write_graphite
+PLIST_SUB+=	WRITE_GRAPHITE=""
+.else
+CONFIGURE_ARGS+=--disable-write_graphite
+PLIST_SUB+=	WRITE_GRAPHITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWRITE_HTTP}
