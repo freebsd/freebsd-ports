@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kcachegrind
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kcachegrind.sourceforge.net/
 
