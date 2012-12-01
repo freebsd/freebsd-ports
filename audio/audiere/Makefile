@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audiere
-# Date created:		12 Sep 2007
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	audiere
 PORTVERSION=	1.9.4
@@ -30,11 +26,13 @@ PORTDOCS=	changelog.txt cvs.txt dependencies.txt faq.txt glossary.txt \
 
 CONFIGURE_REPLACES='s|wx_config|no_&|'
 
-OPTIONS=	DUMB	"Enable DUMB support"	on \
-		CDAUDIO	"Enable libcdaudio support"	on \
-		VORBIS	"Enable ogg vorbis support"	on \
-		SPEEX	"Enable speex support"	on
-#		FLAC	"Enable FLAC support"	on
+#OPTIONS_DEFINE=	DUMB CDAUDIO VORBIS SPEEX FLAC
+#OPTIONS_DEFAULT=	DUMB CDAUDIO VORBIS SPEEX FLAC
+OPTIONS_DEFINE=		DUMB CDAUDIO VORBIS SPEEX
+OPTIONS_DEFAULT=	DUMB CDAUDIO VORBIS SPEEX
+
+DUMB_DESC=	DUMB support
+CDAUDIO_DESC=	libcdaudio support
 
 .include <bsd.port.pre.mk>
 
@@ -45,27 +43,29 @@ OPTIONS=	DUMB	"Enable DUMB support"	on \
 CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|FLAC|no_&|'
 #.endif
 
-.if !defined(WITHOUT_DUMB)
+.if ${PORT_OPTIONS:MDUMB}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|dumb|no_&|'
 .endif
 
-.if !defined(WITHOUT_CDAUDIO)
-LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+.if ${PORT_OPTIONS:MCDAUDIO}
+LIB_DEPENDS+=	cdaudio:${PORTSDIR}/audio/libcdaudio
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|cdaudio|no_&|'
 .endif
 
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+# since dumb is a static lib and it depends on ogg, we should
+# link audiere with ogg as well
+.if ${PORT_OPTIONS:MVORBIS} || ${PORT_OPTIONS:MDUMB}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|vorbis|no_&|'
 .endif
 
-.if !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+.if ${PORT_OPTIONS:MSPEEX}
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|speex|no_&|'
 .endif
