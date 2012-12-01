@@ -108,7 +108,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/
 
-	${LN} -sf ${PREFIX}/share/doc/palomino/images/palominoLogo.png \
+	${LN} -sf ${DOCSDIR}/images/palominoLogo.png \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
