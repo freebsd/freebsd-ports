@@ -3,12 +3,13 @@
 
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
 
 MAINTAINER=	bra@fsn.hu
-COMMENT=	A Sieve plugin for the Dovecot 'deliver' LDA and LMTP
+COMMENT=	Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 
 LICENSE=	LGPL21
 
