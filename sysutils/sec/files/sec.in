@@ -1,5 +1,11 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
+# PROVIDE: sec
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
 # Sample SEC startup script for FreeBSD (contributed by Jo Rhett)
 #
 # Add the following lines to /etc/rc.conf to enable sec:
@@ -26,7 +32,7 @@ rcvar=sec_enable
 
 command="%%PREFIX%%/bin/sec"
 command_args="-detach"
-command_interpreter="%%PERL%%"
+command_interpreter="/usr/bin/perl"
 extra_commands="reload"
 pidfile="/var/run/sec.pid"
 
