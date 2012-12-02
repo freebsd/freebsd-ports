@@ -74,4 +74,3 @@ share/doc/dovecot/example-config/conf.d/90-sieve.conf
 @dirrmtry lib/dovecot
 @dirrm include/dovecot/sieve
 @dirrmtry include/dovecot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
