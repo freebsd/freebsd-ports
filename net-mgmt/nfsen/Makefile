@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nfsen
-PORTVERSION=	1.3.5
-PORTREVISION=	3
+PORTVERSION=	1.3.6p1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
@@ -44,7 +43,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/installer-items/CopyRecursive.pm ${PREFIX}/libexec/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/installer-items/RRDconvertv1.pm ${PREFIX}/libexec/${PORTNAME}/
-	${RM} -f ${WRKSRC}/libexec/NfSenRC.pm.orig
 	@ if [ -f ${PREFIX}/etc/nfsen.conf ] ; then \
 	${ECHO_MSG} "installing with existing nfsen.conf"; \
 	cd ${WRKSRC} ;${PERL} ${WRKSRC}/install.pl ${PREFIX}/etc/nfsen.conf; \
