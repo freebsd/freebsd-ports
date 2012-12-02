@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jaymod
-# Date created:				7 May 2006
-# Whom:					alepulver
-#
+# Created by:	alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	jaymod
 PORTVERSION=	2.1.7
@@ -15,7 +11,7 @@ MASTER_SITES=	http://etmod.googlecode.com/files/ \
 		http://et.lsdfunweb.fr/et/jaymod/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
@@ -26,7 +22,8 @@ PLIST_SUB=	VERSTR="${VERSTR}"
 
 USE_LINUX=	yes
 
-OPTIONS=	OMNIBOT "Install Omni-Bot for bot support" off
+OPTIONS_DEFINE=	DOCS OMNIBOT
+OMNIBOT_DESC=	Install Omni-Bot 0.660 for bot support
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
@@ -34,9 +31,9 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB+=	CLIENT_PK3="${CLIENT_PK3}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OMNIBOT)
+.if ${PORT_OPTIONS:MOMNIBOT}
 OB_VERSTR=	0660
 RUN_DEPENDS+=	et-omni-bot-${OB_VERSTR}:${PORTSDIR}/games/linux-enemyterritory-omni-bot-${OB_VERSTR}
 .endif
@@ -56,9 +53,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} *.cfg ${DATADIR}
 	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
