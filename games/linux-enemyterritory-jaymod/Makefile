@@ -15,7 +15,7 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 USE_LINUX=	yes
 
-OPTIONS_DEFINE=	OMNIBOT
+OPTIONS_DEFINE=	DOCS OMNIBOT
 OMNIBOT_DESC=	Install Omni-Bot for bot support
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
@@ -48,7 +48,7 @@ do-install:
 	${CP} -p ${WRKSRC}/${f} ${DATADIR}/${f}.sample
 .endfor
 	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${DOCSDIR}
 .endif
