@@ -13,17 +13,10 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/environment.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/image.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/initialize.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna/native.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna/pure.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/template.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/uri.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/version.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/deferred.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/deferredable.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/test.deferred.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/escape.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/lazy.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/api_call_support.rb
@@ -67,8 +60,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue/test/test_timelimitedqueue.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue/timelimitedqueue.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/typed-array.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/typed-array/functions.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/uithreadonly.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/weakstorage.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/message.rb
@@ -297,8 +288,10 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/userlist.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/utils.rb
 %%RUBY_SITELIBDIR%%/mikutter/plugin/WHATSTHIS
+%%RUBY_SITELIBDIR%%/mikutter/vendor/escape.rb
 share/applications/mikutter.desktop
 @dirrmtry share/applications
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/vendor
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/plugin
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/test
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data/e00/d00

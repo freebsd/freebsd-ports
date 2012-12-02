@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	0.2.0.1054
+PORTVERSION=	0.2.0.1064
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -18,11 +18,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 INSTALL_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo \
+		rubygem-addressable>=2.2.7:${PORTSDIR}/www/rubygem-addressable \
 		${RUBY_PKGNAMEPREFIX}hmac>=0.4.0:${PORTSDIR}/security/ruby-hmac \
 		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure \
 		${RUBY_SITELIBDIR}/memoize.rb:${PORTSDIR}/devel/ruby-memoize \
 		rubygem-oauth>=0:${PORTSDIR}/net/rubygem-oauth \
-		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
+		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch \
+		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
@@ -65,7 +67,7 @@ RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|chdir\(.*\)|chdir\('${RUBY_SITELIBDIR}/mikutter/core'\)|" \
+	@${REINPLACE_CMD} -i '' -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" \
 		${WRKSRC}/mikutter.rb
 	@${REINPLACE_CMD} -i '' -e "s|miquire :lib, 'ruby-bsearch-1.5/bsearch'|require 'bsearch'|" \
 		${WRKSRC}/core/mui/cairo_inner_tl.rb
@@ -74,12 +76,20 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/core/lib/memoize.rb
 	@${RM} -rf ${WRKSRC}/core/lib/oauth*
 	@${RM} -rf ${WRKSRC}/core/lib/ruby-bsearch-1.5
+	@${RM} -rf ${WRKSRC}/vendor/addressable
+	@${RM} -rf ${WRKSRC}/vendor/hmac*
+	@${RM} -rf ${WRKSRC}/vendor/json*
+	@${RM} -rf ${WRKSRC}/vendor/memoize.rb
+	@${RM} -rf ${WRKSRC}/vendor/oauth*
+	@${RM} -rf ${WRKSRC}/vendor/ruby-bsearch-1.5
+	@${RM} -rf ${WRKSRC}/vendor/typed-array*
 
 do-install:
 	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/mikutter.rb ${PREFIX}/bin/mikutter
 	@cd ${INSTALL_WRKSRC} \
 		&& ${COPYTREE_SHARE} core ${RUBY_SITELIBDIR}/mikutter \
-		&& ${COPYTREE_SHARE} plugin ${RUBY_SITELIBDIR}/mikutter
+		&& ${COPYTREE_SHARE} plugin ${RUBY_SITELIBDIR}/mikutter \
+		&& ${COPYTREE_SHARE} vendor ${RUBY_SITELIBDIR}/mikutter
 	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${PREFIX}/share/applications/
 .if !defined(NOPORTDOCS)
