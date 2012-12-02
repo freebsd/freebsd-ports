@@ -1,12 +1,7 @@
-# New ports collection makefile for:		cyrus-imapd
-# Date created:					Dec 10th 2005
-# Whom:						ume@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.16
+PORTVERSION=	2.4.17
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -18,8 +13,8 @@ COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
-		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
+		pcre:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].*
 
