@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Growl-GNTP
-# Date created:				09 Oct 2011
-# Whom:					brix@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Growl-GNTP
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
