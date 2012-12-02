@@ -5,9 +5,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 COMMENT=	Python bindings for libtorrent-rasterbar-16
 CATEGORIES=	net-p2p python
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools
 LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
 
@@ -16,7 +15,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
 
 INSTALLS_EGGINFO=	yes
-PYDISTUTILS_EGGINFO=	python_libtorrent-${PORTVERSION}-py${PYTHON_VER}.egg-info
+PYDISTUTILS_PKGNAME=	python_libtorrent
 
 NOPORTDOCS=	yes
 
@@ -37,5 +36,3 @@ MASTERDIR=	${.CURDIR}/../libtorrent-rasterbar-16
 # insure python paths are correctly identified
 CONFIGURE_ENV+=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 		PYTHON_VERSION="${PYTHON_VERSION}"
-# prefix PKGNAME with python- so that the egg info file is properly named.
-PYDISTUTILS_PKGNAME=	python-${PORTNAME}
