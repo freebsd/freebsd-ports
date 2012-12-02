@@ -50,6 +50,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/list_possible_dependencies.php
 %%DATADIR%%/pts-core/commands/list_saved_results.php
 %%DATADIR%%/pts-core/commands/list_test_usage.php
+%%DATADIR%%/pts-core/commands/list_unsupported_tests.php
 %%DATADIR%%/pts-core/commands/make_download_cache.php
 %%DATADIR%%/pts-core/commands/merge_results.php
 %%DATADIR%%/pts-core/commands/module_info.php
