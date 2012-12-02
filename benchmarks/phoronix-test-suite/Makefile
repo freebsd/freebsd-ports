@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
