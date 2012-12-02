@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-urwid
-# Date created:		7 December 2004
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	urwid
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +12,12 @@ COMMENT=	Curses-based user interface library for Python
 
 LICENSE=	LGPL21
 
+# Bypass ports infrastructure bug
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
 
 PORTEXAMPLES=	bigtext.py \
 		browse.py \
@@ -46,7 +44,10 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m urwid.tests
 
 .include <bsd.port.mk>
