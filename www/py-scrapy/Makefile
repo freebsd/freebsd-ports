@@ -1,35 +1,33 @@
-# New ports collection makefile for:	py-scrapy
-# Date created:				10 Jul 2009
-# Whom:					Qing Feng <qingfeng@douban.com>
-#
+# Created by: Qing Feng <qingfeng@douban.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Scrapy
-PORTVERSION=	0.12.0.2542
+PORTVERSION=	0.16.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A high level scraping and web crawling framework
+COMMENT=	High level scraping and web crawling framework
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.2.0:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.0:${PORTSDIR}/devel/py-lxml
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.2.0:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+LICENSE=	BSD
 
-USE_PYTHON=	2.6-2.7
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}w3lib>=1.2:${PORTSDIR}/www/py-w3lib
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
+USE_TWISTED_RUN=yes
 
-OPTIONS=	SSL	"Support HTTPS"			on
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+.if ${PORT_OPTIONS:MSSL}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
