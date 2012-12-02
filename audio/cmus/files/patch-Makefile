@@ -1,15 +1,15 @@
---- ./Makefile.orig	2011-11-30 03:57:20.000000000 -0500
-+++ ./Makefile	2012-10-14 20:42:11.000000000 -0400
-@@ -96,7 +96,7 @@
+--- Makefile.orig	2012-11-11 17:40:55.000000000 +0100
++++ Makefile	2012-11-11 17:42:25.000000000 +0100
+@@ -105,7 +105,7 @@
  $(wavpack-objs):	CFLAGS += $(WAVPACK_CFLAGS)
  $(mp4-objs):		CFLAGS += $(MP4_CFLAGS)
  $(aac-objs):		CFLAGS += $(AAC_CFLAGS)
 -$(ffmpeg-objs):		CFLAGS += $(FFMPEG_CFLAGS)
 +$(ffmpeg-objs):		CFLAGS := $(FFMPEG_CFLAGS) $(CFLAGS)
+ $(cue-objs):		CFLAGS += $(CUE_CFLAGS)
  
- flac.so: $(flac-objs) $(libcmus-y)
- 	$(call cmd,ld_dl,$(FLAC_LIBS))
-@@ -200,10 +200,10 @@
+ cdio.so: $(cdio-objs) $(libcmus-y)
+@@ -216,10 +216,10 @@
  	$(call cmd,ttman)
  
  Doc/ttman.o: Doc/ttman.c
