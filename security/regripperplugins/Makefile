@@ -12,7 +12,7 @@ COMMENT=	Supplemental plugins for Harlan Carvey's RegRipper
 
 LICENSE=	GPLv3
 
-RUN_DEPEND=	regripper>=0:${PORTSDIR}/security/regripper
+RUN_DEPENDS=	regripper>=0:${PORTSDIR}/security/regripper
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
@@ -21,6 +21,6 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/* ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${DATADIR}
 
 .include <bsd.port.mk>
