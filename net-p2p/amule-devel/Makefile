@@ -49,14 +49,11 @@ CAS_DESC=		Compile aMule Statistics for console
 DEBUG_DESC=		Compile aMule with debugging output
 ED2K_DESC=		Compile aMule ed2k links handler
 FILEVIEW_DESC=		Compile file viewer for console (EXPERIMENTAL)
-GEOIP_DESC=		Enable GeoIP IP2Country support
-MMAP_DESC=		Enable using mapped memory
+MMAP_DESC=		Use mapped memory
 MONOLITHIC_DESC=	Compile monolithic aMule
 PLASMAMULE_DESC=	Compile aMule plasma applet and engine
-UPNP_DESC=		Enable Universal Plug and Play support
-WEBSERVER_DESC=		Compile aMule WebServer
 WXCAS_DESC=		Compile aMule Statistics for GUI
-WXUNICODE_DESC=		Enable Unicode support
+WXUNICODE_DESC=		Unicode support
 XAS_DESC=		Install XChat2 plugin
 OPTIONS_DEFAULT=ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS ED2K \
 	FILEVIEW MONOLITHIC WEBSERVER WXCAS WXUNICODE XAS
