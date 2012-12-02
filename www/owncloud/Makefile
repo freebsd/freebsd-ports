@@ -30,9 +30,11 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${FIND} -s -d ${WWWDIR} -type f -print | \
-		${SED} -e "s#${PREFIX}/##g" >> ${TMPPLIST}
-	@${FIND} -s -d ${WWWDIR} -type d  -print | \
-		${SED} -E -e "s#${PREFIX}/#@dirrm #g" >> ${TMPPLIST}
+	@cd ${WRKSRC} && \
+	    ${FIND} -s -d . -type f -print | \
+		${SED} -e "s#^\.#${WWWDIR_REL}#" >> ${TMPPLIST}
+	@cd ${WRKSRC} && \
+	    ${FIND} -s -d . -type d  -print | \
+		${SED} -e "s#^\.#@dirrm ${WWWDIR_REL}#" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
