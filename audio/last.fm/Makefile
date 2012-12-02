@@ -32,6 +32,7 @@ USE_QT4=	gui imageformats_run moc_build network qmake_build rcc_build \
 		sql uic_build xml
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
