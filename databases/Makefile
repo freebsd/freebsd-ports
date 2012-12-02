@@ -735,6 +735,7 @@
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
     SUBDIR += py-swift
+    SUBDIR += py-swiftclient
     SUBDIR += py-sybase
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
