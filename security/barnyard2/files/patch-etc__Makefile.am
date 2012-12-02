@@ -1,8 +1,0 @@
---- ./etc/Makefile.am.orig	2012-10-08 10:03:32.000000000 -0400
-+++ ./etc/Makefile.am	2012-10-08 10:05:02.000000000 -0400
-@@ -4,4 +4,4 @@
- EXTRA_DIST = barnyard2.conf 
- 
- install-data-am:
--	test -e $(sysconfdir)/barnyard2.conf || install -m 600 $(top_srcdir)/etc/barnyard2.conf $(sysconfdir)
-+	install -m 600 $(top_srcdir)/etc/barnyard2.conf $(sysconfdir)/barnyard2.conf.sample
