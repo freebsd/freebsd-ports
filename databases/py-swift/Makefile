@@ -25,8 +25,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:${PORTSDIR}/net/py-eventlet 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
-.include <bsd.port.pre.mk>
-
 MAN1=		swift-account-auditor.1 \
 		swift-account-reaper.1 \
 		swift-account-replicator.1 \
@@ -116,10 +114,10 @@ post-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${CP} -R ${WRKSRC}/etc/ ${PREFIX}/etc/${PORTNAME}
 .for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/manpages/${i} ${PREFIX}/man/man1/${i}
+	${INSTALL_MAN} ${WRKSRC}/doc/manpages/${i} ${MANPREFIX}/man/man1/${i}
 .endfor
 .for i in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/doc/manpages/${i} ${PREFIX}/man/man5/${i}
+	${INSTALL_MAN} ${WRKSRC}/doc/manpages/${i} ${MANPREFIX}/man/man5/${i}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
