@@ -11,6 +11,8 @@ lib/cmus/ip/wav.so
 %%AAC%%lib/cmus/ip/aac.so
 %%WAVPACK%%lib/cmus/ip/wavpack.so
 %%FFMPEG%%lib/cmus/ip/ffmpeg.so
+%%CDIO%%lib/cmus/ip/cdio.so
+%%CUE%%lib/cmus/ip/cue.so
 lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
 %%PULSEAUDIO%%lib/cmus/op/pulse.so
@@ -22,6 +24,7 @@ lib/cmus/op/oss.so
 %%DATADIR%%/green.theme
 %%DATADIR%%/rc
 %%DATADIR%%/xterm-white.theme
+%%DATADIR%%/zenburn.theme
 %%EXAMPLESDIR%%/cmus-status-display
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
