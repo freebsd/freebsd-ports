@@ -13,7 +13,7 @@ COMMENT=	Tool for registry analysis in forensics examinations
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPEND=	p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry
+RUN_DEPENDS=	p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
