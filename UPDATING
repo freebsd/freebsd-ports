@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121202:
+  AFFECTS: Users of www/owncloud
+  AUTHOR: crees@FreeBSD.org
+
+  www/owncloud includes the entire WWWDIR directory structure in pkg-plist.
+
+  This means that if you upgrade it, your config files are added to pkg-plist,
+  and are then removed on the next deinstall.
+
+  This issue has been fixed, but you must back up your install of owncloud and
+  reinstall to avoid data loss;
+
+  # cd /usr/ports/www/owncloud
+  # tar cfC /tmp/owncloud.tar `make -VWWWDIR` .
+  # make deinstall
+  # tar xfC /tmp/owncloud.tar `make -VWWWDIR`
+  # make install clean && rm /tmp/owncloud.tar
+
 20121201:
   AFFECTS: Users of www/typo3
   AUTHOR: Helmut Ritter <freebsd-ports@charlieroot.de>
