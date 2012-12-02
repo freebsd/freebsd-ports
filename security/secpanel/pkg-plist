@@ -1,4 +1,5 @@
 bin/secpanel
+share/pixmaps/secpanel.png
 %%DATADIR%%/convert_history.tcl
 %%DATADIR%%/convert_profile.tcl
 %%DATADIR%%/default.config
@@ -16,7 +17,7 @@ bin/secpanel
 %%DATADIR%%/images/swinback_gr.gif
 %%DATADIR%%/secpanel.wait
 %%DATADIR%%/secpanel_remoteconf.sh
-%%DATADIR%%/termdefs.txt
 %%DATADIR%%/spdistkey
+%%DATADIR%%/termdefs.txt
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
