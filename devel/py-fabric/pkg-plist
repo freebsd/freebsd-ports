@@ -51,6 +51,9 @@ bin/fab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/decorators.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/decorators.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/decorators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/docs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/docs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/docs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/fabric/exceptions.pyo
