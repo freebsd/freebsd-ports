@@ -1,20 +1,16 @@
-# New ports collection makefile for:	audio/linux-f10-alsa-lib
-# Date created:				2009-05-03
-# Whom:					bsam
-#
 # $FreeBSD$
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The Advanced Linux Sound Architecture libraries (Linux Fedora 10)
+COMMENT=	Advanced Linux Sound Architecture libraries (Linux Fedora 10)
 
 CONFLICTS=	linux-alsa-lib-[0-9]* linux-f8-alsa-lib-[0-9]*
 
@@ -24,5 +20,12 @@ LINUX_DIST_VER=	10
 RPMVERSION=	2.fc10
 BRANDELF_FILES=	usr/bin/aserver
 USE_LDCONFIG=	yes
+
+# We will use some other configuration file, so delete a linux one
+post-extract:
+	@${RM} -r ${WRKSRC}/etc
+
+post-install:
+	@${LN} -s ${LOCALBASE}/etc/asound.conf ${PREFIX}/etc/asound.conf
 
 .include <bsd.port.mk>
