@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	barnyard2
-PORTVERSION=	1.10
-PORTREVISION?=	0
+PORTVERSION=	1.11
 CATEGORIES=	security
 
 MAINTAINER=	pauls@utdallas.edu
@@ -13,22 +12,23 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	firnsy
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v2-${PORTVERSION}
-GH_COMMIT=	2f5d496
+GH_TAGNAME=	master
+GH_COMMIT=	4dfdc80
 
-OPTIONS_DEFINE=	MYSQL PGSQL BRO SNORT SNORTSAM SURICATA
-OPTIONS_DEFAULT=#empty
+OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL-SSL ODBC PRELUDE PGSQL
 NO_OPTIONS_SORT=yes
 
-BRO_DESC=	Depend on security/bro
-MYSQL_DESC=	Enable MySQL support
-PGSQL_DESC=	Enable PostgreSQL support
-SNORT_DESC=	Depend on security/snort
-SNORTSAM_DESC=	Depend on security/snortsam
-SURICATA_DESC=	Depend on security/suricata
+64BIT_DESC=	Enable 64bit compilation (experimental)
+ARUBA_DESC=	Enable aruba support
+BRO_DESC=	Enable bro support (libbroccoli)
+GRE_DESC=	Enable gre support
+MYSQL-SSL_DESC=	Enable mysql ssl support (experimental)
+PRELUDE_DESC=	Enable prelude support
 
-.if !defined(SLAVE)
-OPTIONS_DEFINE+=TCL
+.if defined(SLAVE)
+OPTIONS_DEFINE+=	TCL
+OPTIONS_DESC=	Enable tcl support for sguil
+OPTIONS_DEFAULT+=	TCL
 .endif
 
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
@@ -44,45 +44,83 @@ SUB_FILES=	pkg-message
 
 PORTDOCS1=	README RELEASE.NOTES
 PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.snortsam
-PORTEXAMPLES=	create_db2 create_mysql	create_postgresql SCHEMA_ACCESS	create_mssql create_oracle.sql
-PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
+PORTEXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:M64BIT}
+CONFIGURE_ARGS+=	--enable-64bit-gcc
+.else
+CONFIGURE_ARGS+=	--disable-64bit-gcc
+.endif
+
+.if ${PORT_OPTIONS:MARUBA}
+CONFIGURE_ARGS+=	--enable-aruba
+.else
+CONFIGURE_ARGS+=	--disable-aruba
+.endif
+
+.if ${PORT_OPTIONS:MBRO}
+BROKEN=			Will not compile until bro update is committed - deselect this option
+BUILD_DEPENDS+=		bro:${PORTSDIR}/security/bro-barnyard2
+CONFIGURE_ARGS+=	--enable-bro --with-broccoli=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-bro
+.endif
+
+.if ${PORT_OPTIONS:MGRE}
+CONFIGURE_ARGS+=	--enable-gre
+.else
+CONFIGURE_ARGS+=	--disable-gre
+.endif
+
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if ${PORT_OPTIONS:MMPLS}
+CONFIGURE_ARGS+=	--enable-mpls
+.else
+CONFIGURE_ARGS+=	--disable-mpls
+.endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
-SUB_LIST+=		MYSQL=" mysql"
 .else
 CONFIGURE_ARGS+=	--without-mysql
-SUB_LIST+=		MYSQL=""
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL-SSL}
+OPTIONS_DEFAULT+=	MYSQL
+CONFIGURE_ARGS+=	--enable-mysql-ssl-support
+.else
+CONFIGURE_ARGS+=	--disable-mysql-ssl-support
+.endif
+
+.if ${PORT_OPTIONS:MODBC}
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=	--with-odbc
+.else
+CONFIGURE_ARGS+=	--without-odbc
+.endif
+
+.if ${PORT_OPTIONS:MPRELUDE}
+BUILD_DEPENDS+=	prelude-manager:${PORTSDIR}/security/prelude-manager
+CONFIGURE_ARGS+=	--enable-prelude
+.else
+CONFIGURE_ARGS+=	--disable-prelude
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
-SUB_LIST+=		PGSQL=" postgresql"
+CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
 .else
 CONFIGURE_ARGS+=	--without-postgresql
-SUB_LIST+=		PGSQL=""
-.endif
-
-.if ${PORT_OPTIONS:MBRO}
-RUN_DEPENDS+=		${LOCALBASE}/bin/bro:${PORTSDIR}/security/bro
-.endif
-
-.if ${PORT_OPTIONS:MSNORT}
-RUN_DEPENDS+=		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
-.endif
-
-.if ${PORT_OPTIONS:MSNORTSAM}
-RUN_DEPENDS+=		${LOCALBASE}/bin/snortsnam:${PORTSDIR}/security/snortsam
-.endif
-
-.if ${PORT_OPTIONS:MSURICATA}
-RUN_DEPENDS+=		${LOCALBASE}/bin/suricata:${PORTSDIR}/security/suricata
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -97,6 +135,7 @@ post-patch:
 		${WRKSRC}/etc/barnyard2.conf
 
 post-install:
+	@cp ${WRKSRC}/etc/barnyard2.conf ${PREFIX}/etc/barnyard2.conf.sample
 	if [ ! -f ${PREFIX}/etc/barnyard2.conf ]; then \
 		${CP} -p ${PREFIX}/etc/barnyard2.conf.sample ${PREFIX}/etc/barnyard2.conf; \
 	fi
