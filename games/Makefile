@@ -924,6 +924,7 @@
     SUBDIR += ttraffic
     SUBDIR += ttt
     SUBDIR += tux-aqfh
+    SUBDIR += tuxfighter
     SUBDIR += tuxkart
     SUBDIR += tuxmath
     SUBDIR += tuxpaint
