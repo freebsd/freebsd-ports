@@ -26,7 +26,7 @@ NO_BUILD=	yes
 USE_TK_WRAPPER=	yes
 
 DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;System;" ${FALSE}
+		"${PORTNAME}" "Application;System;" "false"
 
 post-patch:
 	@${REINPLACE_CMD} \
