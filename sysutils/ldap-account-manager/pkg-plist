@@ -745,6 +745,7 @@
 %%WWWDIR%%/lib/modules/quota.inc
 %%WWWDIR%%/lib/modules/posixGroup.inc
 %%WWWDIR%%/lib/modules/posixAccount.inc
+%%WWWDIR%%/lib/modules/puppetClient.inc
 %%WWWDIR%%/lib/modules/nisnetgroup.inc
 %%WWWDIR%%/lib/modules/nisMailAlias.inc
 %%WWWDIR%%/lib/modules/ldapPublicKey.inc
@@ -839,6 +840,7 @@
 %%WWWDIR%%/graphics/samba.png
 %%WWWDIR%%/graphics/required.png
 %%WWWDIR%%/graphics/refresh.png
+%%WWWDIR%%/graphics/puppet.png
 %%WWWDIR%%/graphics/profiles.png
 %%WWWDIR%%/graphics/process.png
 %%WWWDIR%%/graphics/plus.png
