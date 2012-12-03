@@ -44,6 +44,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS1=	README RELEASE.NOTES
 PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.snortsam
+PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 PORTEXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
 .include <bsd.port.options.mk>
