@@ -341,7 +341,6 @@
     SUBDIR += tcl-manual
     SUBDIR += tcl-modules
     SUBDIR += tcl-wrapper
-    SUBDIR += tcl82
     SUBDIR += tcl83
     SUBDIR += tcl84
     SUBDIR += tcl84-thread
