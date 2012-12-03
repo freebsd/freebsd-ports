@@ -15,6 +15,4 @@ querying several servers at the same time so that very slow or unavailable
 servers will not block the answer for one timeout interval.
 Since version 1.0.0, pdnsd has full IPv6 support.
 
-WWW: http://www.phys.uu.nl/~rombouts/pdnsd.html
-
-Roman Shterenzon <roman@xpert.com>
+WWW: http://members.home.nl/p.a.rombouts/pdnsd/
