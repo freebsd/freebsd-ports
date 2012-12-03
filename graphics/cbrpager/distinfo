@@ -1,2 +1,4 @@
-SHA256 (cbrpager-0.9.22.tar.gz) = 1852303374d7777f2a5f395fda97d78f970fa87c854ee048495a901922b7dd84
-SIZE (cbrpager-0.9.22.tar.gz) = 146216
+SHA256 (cbrpager/cbrpager-0.9.22.tar.gz) = 1852303374d7777f2a5f395fda97d78f970fa87c854ee048495a901922b7dd84
+SIZE (cbrpager/cbrpager-0.9.22.tar.gz) = 146216
+SHA256 (cbrpager/snap.jpeg) = 3cc4264676c69d84620d6c136cfa87270ed214468553a94a64ea8ea1191b5877
+SIZE (cbrpager/snap.jpeg) = 60792
