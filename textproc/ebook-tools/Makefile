@@ -1,23 +1,18 @@
-# New ports collection makefile for:	ebook-tools
-# Date created:		2008-07-13
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ebook-tools
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Accessing and converting various ebook file formats
+COMMENT=	Accesses and converts various ebook file formats
 
-LIB_DEPENDS=	zip.3:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2 pkgconfig
+USE_GNOME=	libxml2
 
 .include <bsd.port.mk>
