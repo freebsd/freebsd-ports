@@ -1,11 +1,8 @@
-# New ports collection Makefile for:	FreeBSD::Portindex
-# Date created:		5 Nov 2004
-# Whom:			Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
