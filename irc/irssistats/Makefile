@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irssistats
-# Date created:			14 Feb 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	irssistats
 PORTVERSION=	0.75
