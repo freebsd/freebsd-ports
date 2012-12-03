@@ -3057,6 +3057,7 @@
     SUBDIR += pear-channel-pirum
     SUBDIR += pear-channel-symfony
     SUBDIR += pear-channel-symfony2
+    SUBDIR += pear-channel-theseer
     SUBDIR += pear-codegen
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
