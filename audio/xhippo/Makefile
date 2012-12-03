@@ -12,8 +12,8 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A Generic music player for UNIX systems
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generic music player for UNIX systems
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
