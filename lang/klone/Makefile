@@ -1,9 +1,5 @@
-# Ports collection makefile for:  klone
-# Date created:			  23 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	klone
 PORTVERSION=	2.1.359
