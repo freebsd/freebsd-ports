@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libsocketcpp
-# Date created:			Aug 12, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libsocketcpp
 PORTVERSION=	1.0.7
