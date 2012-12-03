@@ -3,13 +3,13 @@
 
 PORTNAME=	dovecot2-antispam-plugin
 PORTVERSION=	20101222
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bamus.cz/distfiles/
 DISTFILES=	dovecot-antispam-plugin-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The dovecot 2.x plugin for spam systems training
+COMMENT=	Dovecot 2.x plugin for spam systems training
 
 BUILD_DEPENDS=	dovecot>=2.0.7:${PORTSDIR}/mail/dovecot2 \
 		gawk:${PORTSDIR}/lang/gawk
@@ -26,6 +26,9 @@ USE_LDCONFIG=	${PREFIX}/lib/dovecot
 ACLOCAL_ARGS=	-I m4
 
 MAN7=		dovecot-antispam.7
+
+PLIST_FILES=	lib/dovecot/lib90_antispam_plugin.so
+PLIST_DIRSTRY=	lib/dovecot
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
