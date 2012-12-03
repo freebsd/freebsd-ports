@@ -28,7 +28,7 @@ OPTIONS_SINGLE=		DLZ
 OPTIONS_SINGLE_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
 
-SSL_DESC=		Building without OpenSSL removes DNSSEC
+SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 XML_DESC=		Support for xml statistics output
 REPLACE_BASE_DESC=	Replace base BIND with this version
