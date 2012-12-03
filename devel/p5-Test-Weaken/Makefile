@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Test-Weaken
-# Date created:				2011-10-05
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Weaken
-PORTVERSION=	3.020000
+PORTVERSION=	3.022000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
