@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	the_silver_searcher
-PORTVERSION=	0.12
+PORTVERSION=	0.13.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://cloud.github.com/downloads/ggreer/${PORTNAME}/
 
