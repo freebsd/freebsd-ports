@@ -5,7 +5,6 @@ PORTNAME=	nwreckdum
 PORTVERSION=	0.0.6
 PORTREVISION=	2
 CATEGORIES=	archivers games
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for manipulating of Quake packed data files
