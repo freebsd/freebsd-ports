@@ -254,7 +254,6 @@
     SUBDIR += tile
     SUBDIR += tix
     SUBDIR += tk-wrapper
-    SUBDIR += tk82
     SUBDIR += tk83
     SUBDIR += tk84
     SUBDIR += tk84-thread
