@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
