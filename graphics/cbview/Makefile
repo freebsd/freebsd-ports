@@ -11,8 +11,10 @@ PORTREVISION=	8
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sourcefiles.org/Toys/Humor/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A viewer/converter for CBR/CBZ comic book archives
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Viewer/converter for CBR/CBZ comic book archives
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -23,19 +25,21 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	COPYING Changes INSTALL README TODO
+
+PORTDOCS=	Changes README TODO
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|perl -w|env perl|g' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl -w|${PERL}|' \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
