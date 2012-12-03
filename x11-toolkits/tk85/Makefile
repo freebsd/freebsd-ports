@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.12
+PORTVERSION=	8.5.13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
@@ -42,7 +42,7 @@ USE_TCL=	${SHORT_TK_VER}
 OPTIONS_DEFINE=	TK85_MAN XFT DEMOS
 OPTIONS_DEFAULT=	XFT
 TK85_MAN_DESC=	Install tk 8.5 function manpages
-XFT_DESC=	Use Xft fonts 
+XFT_DESC=	Use Xft fonts
 DEMOS_DESC=	Install demos
 
 .else
@@ -414,7 +414,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g; s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|wish |wish${TCL_VER}${THREADS_SUFFIX} |g' -e 's|Wish |Wish${TCL_VER}${THREADS_SUFFIX} |g' \
 		-e 's|wish\\fR|wish${TCL_VER}${THREADS_SUFFIX}\\fR|g' -e 's|Wish\\fR|Wish${TCL_VER}${THREADS_SUFFIX}\\fR|g' \
 		-e 's|^.so man.macros|.so ${DATADIR}/man.macros|' \
