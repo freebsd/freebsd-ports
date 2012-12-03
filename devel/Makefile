@@ -3019,6 +3019,7 @@
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-PHP_CompatInfo
     SUBDIR += pear-PHP_Depend
+    SUBDIR += pear-PHP_PMD
     SUBDIR += pear-PHP_Parser
     SUBDIR += pear-PHP_ParserGenerator
     SUBDIR += pear-PHP_Timer
