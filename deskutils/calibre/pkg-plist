@@ -705,6 +705,7 @@ lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
 lib/calibre/calibre/gui2/font_family_chooser.py
 lib/calibre/calibre/gui2/init.py
+lib/calibre/calibre/gui2/job_indicator.py
 lib/calibre/calibre/gui2/jobs.py
 lib/calibre/calibre/gui2/keyboard.py
 lib/calibre/calibre/gui2/languages.py
@@ -939,7 +940,6 @@ lib/calibre/calibre/library/server/utils.py
 lib/calibre/calibre/library/server/xml.py
 lib/calibre/calibre/library/sqlite.py
 lib/calibre/calibre/library/test.py
-lib/calibre/calibre/libunrar.py
 lib/calibre/calibre/libunzip.py
 lib/calibre/calibre/libwand.py
 lib/calibre/calibre/linux.py
@@ -957,6 +957,7 @@ lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
+lib/calibre/calibre/plugins/unrar.so
 lib/calibre/calibre/plugins/woff.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/startup.py
@@ -1061,6 +1062,7 @@ lib/calibre/calibre/utils/text2int.py
 lib/calibre/calibre/utils/threadpool.py
 lib/calibre/calibre/utils/titlecase.py
 lib/calibre/calibre/utils/unsmarten.py
+lib/calibre/calibre/utils/unrar.py
 lib/calibre/calibre/utils/winshell.py
 lib/calibre/calibre/utils/wmf/__init__.py
 lib/calibre/calibre/utils/wmf/parse.py
@@ -1420,6 +1422,8 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/mimetypes/azw2.png
 %%DATADIR%%/images/mimetypes/azw3.png
 %%DATADIR%%/images/mimetypes/bmp.png
+%%DATADIR%%/images/mimetypes/cbr.png
+%%DATADIR%%/images/mimetypes/cbz.png
 %%DATADIR%%/images/mimetypes/computer.png
 %%DATADIR%%/images/mimetypes/dir.png
 %%DATADIR%%/images/mimetypes/djvu.png
