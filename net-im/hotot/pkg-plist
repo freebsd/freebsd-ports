@@ -20,25 +20,41 @@
 %%GTK2%%share/applications/hotot.desktop
 %%QT4%%share/applications/hotot-qt.desktop
 share/hotot/_locales/bg/messages.json
+share/hotot/_locales/bg/timestring.js
 share/hotot/_locales/bn/messages.json
 share/hotot/_locales/ca/messages.json
+share/hotot/_locales/ca/timestring.js
 share/hotot/_locales/de/messages.json
+share/hotot/_locales/de/timestring.js
 share/hotot/_locales/el/messages.json
 share/hotot/_locales/en/messages.json
 share/hotot/_locales/es/messages.json
+share/hotot/_locales/es/timestring.js
 share/hotot/_locales/fr/messages.json
+share/hotot/_locales/fr/timestring.js
 share/hotot/_locales/it/messages.json
+share/hotot/_locales/it/timestring.js
 share/hotot/_locales/ja/messages.json
+share/hotot/_locales/ja/timestring.js
 share/hotot/_locales/lv/messages.json
 share/hotot/_locales/nl/messages.json
+share/hotot/_locales/nl/timestring.js
 share/hotot/_locales/pl_PL/messages.json
+share/hotot/_locales/pl_PL/timestring.js
 share/hotot/_locales/pt_BR/messages.json
+share/hotot/_locales/pt_BR/timestring.js
 share/hotot/_locales/ru/messages.json
+share/hotot/_locales/ru/timestring.js
 share/hotot/_locales/uk/messages.json
 share/hotot/_locales/zh_CAN/messages.json
+share/hotot/_locales/zh_CAN/timestring.js
 share/hotot/_locales/zh_CLS/messages.json
+share/hotot/_locales/zh_CLS/timestring.js
 share/hotot/_locales/zh_CN/messages.json
+share/hotot/_locales/zh_CN/timestring.js
 share/hotot/_locales/zh_TW/messages.json
+share/hotot/_locales/zh_TW/timestring.js
+share/hotot/background.html
 share/hotot/css/hotot.widget.css
 share/hotot/css/mochi.css
 share/hotot/css/style.css
@@ -48,10 +64,11 @@ share/hotot/ext/org.hotot.appmask/icon.png
 share/hotot/ext/org.hotot.cfw/entry.js
 share/hotot/ext/org.hotot.cfw/ic16_cfw.png
 share/hotot/ext/org.hotot.cfw/icon.png
+share/hotot/ext/org.hotot.expandurls/entry.js
 share/hotot/ext/org.hotot.gmap/entry.js
 share/hotot/ext/org.hotot.gmap/ic16_marker.png
 share/hotot/ext/org.hotot.gmap/icon.png
-share/hotot/ext/org.hotot.expandurls/entry.js
+share/hotot/ext/org.hotot.imghp/entry.js
 share/hotot/ext/org.hotot.sample/entry.js
 share/hotot/ext/org.hotot.shorturl/entry.js
 share/hotot/ext/org.hotot.shorturl/icon.png
@@ -62,6 +79,7 @@ share/hotot/ext/org.hotot.stat/icon.png
 share/hotot/ext/org.hotot.stat/jquery.flot.min.js
 share/hotot/ext/org.hotot.stat/jquery.flot.pie.min.js
 share/hotot/ext/org.hotot.stat/summary.html
+share/hotot/ext/org.hotot.stat/summary.js
 share/hotot/ext/org.hotot.translate/entry.js
 share/hotot/ext/org.hotot.translate/ic16_translate.png
 share/hotot/ext/org.hotot.translate/icon.png
@@ -127,10 +145,10 @@ share/hotot/image/ic_mention.png
 share/hotot/image/ic_people.png
 share/hotot/image/ic_retweet.png
 share/hotot/image/ic_search.png
-share/hotot/image/tweet_ctrl_icons.png
-share/hotot/image/welcome_bg.jpg
 share/hotot/image/mask.png
+share/hotot/image/tweet_ctrl_icons.png
 share/hotot/image/tweet_fav_indicator.png
+share/hotot/image/welcome_bg.jpg
 share/hotot/index.html
 share/hotot/js/background.coffee
 share/hotot/js/background.js
@@ -138,8 +156,8 @@ share/hotot/js/base64.js
 share/hotot/js/conf.js
 share/hotot/js/daemon.js
 share/hotot/js/db.js
-share/hotot/js/hotot.js
 share/hotot/js/hotkey.js
+share/hotot/js/hotot.js
 share/hotot/js/i18n.js
 share/hotot/js/jquery.js
 share/hotot/js/jquery.layout.js
@@ -149,14 +167,15 @@ share/hotot/js/lib.network.js
 share/hotot/js/lib.oauth.js
 share/hotot/js/lib.twitter.js
 share/hotot/js/mochi.js
+share/hotot/js/moment.min.js
 share/hotot/js/notification.js
 share/hotot/js/readlater.coffee
 share/hotot/js/readlater.js
 share/hotot/js/sha1.js
 share/hotot/js/toast.js
 share/hotot/js/ui.about_dlg.js
-share/hotot/js/ui.add_to_list_dlg.js
 share/hotot/js/ui.action_menu.js
+share/hotot/js/ui.add_to_list_dlg.js
 share/hotot/js/ui.context_menu.js
 share/hotot/js/ui.dm_tabs.js
 share/hotot/js/ui.error_dlg.js
@@ -185,15 +204,16 @@ share/hotot/js/ui.status_box.js
 share/hotot/js/ui.template.js
 share/hotot/js/ui.trending_topicsview.js
 share/hotot/js/ui.welcome.js
-share/hotot/js/widget.autocomplete.js
-share/hotot/js/widget.scrollbar.coffee
 share/hotot/js/util.js
+share/hotot/js/widget.autocomplete.js
 share/hotot/js/widget.bubble.js
 share/hotot/js/widget.button.js
 share/hotot/js/widget.dialog.js
 share/hotot/js/widget.listview.js
 share/hotot/js/widget.radio_group.js
+share/hotot/js/widget.scrollbar.coffee
 share/hotot/js/widget.scrollbar.js
+share/hotot/manifest.json
 share/hotot/sound/notify.wav
 share/hotot/theme/Bare/info.json
 share/hotot/theme/Bare/preview.png
@@ -212,16 +232,14 @@ share/hotot/theme/Iron Heart/style.css
 share/hotot/theme/New Hope/info.json
 share/hotot/theme/New Hope/preview.png
 share/hotot/theme/New Hope/style.css
-share/hotot/background.html
-share/hotot/manifest.json
-share/icons/hicolor/scalable/status/hotot_qt-inactive.svg
-share/icons/hicolor/scalable/status/hotot_qt-active.svg
+share/icons/hicolor/128x128/apps/hotot.png
 share/icons/hicolor/22x22/apps/hotot.png
 share/icons/hicolor/24x24/apps/hotot.png
 share/icons/hicolor/32x32/apps/hotot.png
 share/icons/hicolor/48x48/apps/hotot.png
 share/icons/hicolor/64x64/apps/hotot.png
-share/icons/hicolor/128x128/apps/hotot.png
+share/icons/hicolor/scalable/status/hotot_qt-active.svg
+share/icons/hicolor/scalable/status/hotot_qt-inactive.svg
 share/locale/ca/LC_MESSAGES/hotot.mo
 share/locale/de_DE/LC_MESSAGES/hotot.mo
 share/locale/es_ES/LC_MESSAGES/hotot.mo
@@ -236,10 +254,10 @@ share/locale/tr_TR/LC_MESSAGES/hotot.mo
 share/locale/zh_CN/LC_MESSAGES/hotot.mo
 share/locale/zh_TW/LC_MESSAGES/hotot.mo
 @dirrmtry share/locale/tr_TR/LC_MESSAGES
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/tr_TR
+@dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
+@dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
 @dirrm share/hotot/theme/New Hope
 @dirrm share/hotot/theme/Iron Heart
@@ -266,6 +284,7 @@ share/locale/zh_TW/LC_MESSAGES/hotot.mo
 @dirrm share/hotot/ext/org.hotot.stat
 @dirrm share/hotot/ext/org.hotot.shorturl
 @dirrm share/hotot/ext/org.hotot.sample
+@dirrm share/hotot/ext/org.hotot.imghp
 @dirrm share/hotot/ext/org.hotot.gmap
 @dirrm share/hotot/ext/org.hotot.expandurls
 @dirrm share/hotot/ext/org.hotot.cfw
