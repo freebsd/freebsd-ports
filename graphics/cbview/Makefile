@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cbview
-# Date created:				05 May 2004
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
+# Created by: Mezz <mezz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cbview
 PORTVERSION=	0.06
