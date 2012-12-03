@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.2.2
-PORTREVISION?=	3
+PORTVERSION=	1.2.3
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-${PORTVERSION}
 
