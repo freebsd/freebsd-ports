@@ -156,6 +156,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/mq.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/mq.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/mq.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/mqutil.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/mqutil.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/mqutil.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.pyo
