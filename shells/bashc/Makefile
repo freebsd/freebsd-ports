@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bashc
-# Date created:				2008-02-10
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	bashc
 PORTVERSION=	3.2.33.0
