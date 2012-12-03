@@ -1,6 +1,5 @@
-Image_3D is a highly object oriented PHP5 package
-that allows the creation of 3 dimensional images
-using PHP.
+Image_3D is a highly object oriented PHP5 package that allows the creation
+of 3 dimensional images using PHP.
 
 Image_3D currently supports:
 * Creation of 3D objects like cubes, spheres, maps, text, pie, torus, ...
