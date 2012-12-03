@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.3:${PORTSDIR}/devel/py-qt4-cor
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.3:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.3:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		hg:${PORTSDIR}/devel/mercurial \
-		${PYTHON_SITELIBDIR}/iniparse/ini.py:${PORTSDIR}/devel/py-iniparse \
+		${PYTHON_PKGNAMEPREFIX}iniparse>0:${PORTSDIR}/devel/py-iniparse \
 		pygmentize:${PORTSDIR}/textproc/py-pygments
 
 OPTIONS_DEFINE=	NAUTILUS
