@@ -1,10 +1,5 @@
-# New ports collection makefile for:	amrcoder
-# Date created:				5 March 2005
-# Whom:					Andrew Wingorodov (Wingborn) <programmer@coolsoft.ru>
-#
+# Created by: Andrew Wingorodov (Wingborn) <programmer@coolsoft.ru>
 # $FreeBSD$
-#
-#
 
 PORTNAME=	amrcoder
 PORTVERSION=	1.0
@@ -22,5 +17,8 @@ MANCOMPRESSED=	yes
 
 post-extract:
 	@${RM} ${WRKSRC}/*.o
+
+post-patch:
+	${REINPLACE_CMD} -e 's|O4|O3|' ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
