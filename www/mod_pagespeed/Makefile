@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_pagespeed
-PORTVERSION=	0.10.22.7
+PORTVERSION=	1.1.23.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -32,7 +32,9 @@ MAKE_JOBS_SAFE=	yes
 
 # debugging
 #MAKE_ENV+=     V=1
-#MAKE_JOBS_UNSAFE=      yes
+
+# seems new version isn't JOBS safe
+MAKE_JOBS_UNSAFE=      yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -100,13 +102,13 @@ do-install:
 		${CAT} common/pagespeed.load.template common/pagespeed.conf.template | \
 			${SED} -e "s,@@COMMENT_OUT_DEFLATE@@,," \
 				-e "s,@@APACHE_MODULEDIR@@,${APACHEMODDIR}," \
-				-e "s,@@MODPAGESPEED_CACHE_ROOT@@,/var/mod_pagespeed/,g" \
+				-e "s,@@MOD_PAGESPEED_STATS_LOG@@,/var/log/mod_pagespeed_stats.log," \
+				-e "s,@@MOD_PAGESPEED_CACHE@@,/var/mod_pagespeed/,g" \
 				> ${PREFIX}/${APACHEETCDIR}/pagespeed.conf-dist ; \
 	fi
 
 post-install:
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} -m 755 /var/mod_pagespeed/cache
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} -m 755 /var/mod_pagespeed/files
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} -m 755 /var/mod_pagespeed
 	@if [ ! -f ${PREFIX}/etc/pagespeed.conf ]; then \
 		${CP} -p ${PREFIX}/${APACHEETCDIR}/pagespeed.conf-dist ${PREFIX}/${APACHEETCDIR}/pagespeed.conf ; \
 	fi
