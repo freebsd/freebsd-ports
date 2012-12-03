@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CSPECIAL="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-lm
 CPP=		#
+USE_CSTD=	gnu89
 
 do-install:
 	@${MKDIR} ${DATADIR}
