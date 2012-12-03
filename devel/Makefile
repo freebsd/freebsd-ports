@@ -3062,6 +3062,7 @@
     SUBDIR += pear-channel-symfony2
     SUBDIR += pear-channel-theseer
     SUBDIR += pear-codegen
+    SUBDIR += pear-ezc_Base
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler

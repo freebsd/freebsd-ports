@@ -1,0 +1,10 @@
+The Base component provides the basic functionality, such as autoloading,
+that all eZ Components need to function properly. The Base component needs
+to be loaded specifically. Base can also autoload external class reposito-
+ries from outside the eZ Components.
+
+Aside from the autoload functionality, the Base component also contains a
+number of generic Exception classes that all inherit from the ezcBaseExce-
+ption class.
+
+WWW: http://ezcomponents.org/
