@@ -6,8 +6,6 @@ CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 DISTNAME=	bind-${ISCVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
@@ -194,9 +192,6 @@ MAN8=	ddns-confgen.8 dnssec-dsfromkey.8 dnssec-keyfromlabel.8 \
 	named-checkzone.8 named-journalprint.8 named.8 nsec3hash.8 \
 	rndc-confgen.8 rndc.8
 MLINKS=	named-checkzone.8 named-compilezone.8
-
-verify:	checksum
-	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
