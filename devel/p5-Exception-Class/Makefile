@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Exception-Class
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A module that allows you to declare real exception classes in Perl
+COMMENT=	Module that allows you to declare real exception classes in Perl
 
 LICENSE=	ART20
 
