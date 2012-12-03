@@ -69,6 +69,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2012-5468</cvename>
+      <url>http://bogofilter.sourceforge.net/security/bogofilter-SA-2012-01</url>
     </references>
     <dates>
       <discovery>2012-10-17</discovery>
