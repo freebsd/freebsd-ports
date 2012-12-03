@@ -1,12 +1,7 @@
-# New ports collection makefile for:	riece
-# Date created: 	30 May 2004
-# Whom:			KIMURA Yasuhiro <yasu@utahime.org>
-#
 # $FreeBSD$
 
 PORTNAME=	riece
-PORTVERSION=	8.0.0
-PORTREVISION=	3
+PORTVERSION=	9.0.0
 PORTEPOCH=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -21,13 +16,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 USE_GMAKE=	yes
-USE_RUBY=	yes
-RUBY_VER=	1.8
 
 INFO=	riece-en riece-ja
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS ChangeLog NEWS NEWS.ja README README.ja doc/HACKING doc/HACKING.ja
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
