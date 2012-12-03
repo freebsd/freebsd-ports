@@ -1,6 +1,6 @@
-Prune is an application for viewing, editing and converting coordinate
-data from GPS systems. Basically it's a tool to let you play with
-your GPS data after you get home from your trip.
+GpsPrune is an application for viewing, editing and converting
+coordinate data from GPS systems. Basically it's a tool to let you
+play with your GPS data after you get home from your trip.
 
 It can load data from arbitrary text-based formats (for example,
 any tab-separated or comma-separated file) or Xml, or directly from
@@ -11,4 +11,4 @@ data (in various text-based formats). It can also export data as a
 Gpx file, or as Kml/Kmz for import into Google Earth, or send it
 to a GPS receiver.
 
-WWW: http://activityworkshop.net/software/prune/
+WWW: http://activityworkshop.net/software/gpsprune/
