@@ -3066,6 +3066,7 @@
     SUBDIR += pear-codegen
     SUBDIR += pear-ezc_Base
     SUBDIR += pear-ezc_ConsoleTools
+    SUBDIR += pear-pdepend-staticReflection
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
