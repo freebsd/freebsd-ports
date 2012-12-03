@@ -22,14 +22,12 @@ CONFIGURE_ARGS+=	--disable-python
 MAN1=	lspst.1 pst2dii.1 pst2ldif.1 readpst.1
 MAN5=	outlook.pst.5
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS PST2DII
-PST2DII_DESC=	"allow Summation Document Image Information output"
+PST2DII_DESC=	Allow Summation Document Image Information output
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
 
 .if ${PORT_OPTIONS:MPST2DII}
 CONFIGURE_ARGS+=	--enable-dii=yes
