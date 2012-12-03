@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcprelya
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	net
 MASTER_SITES=	http://sem.semmy.ru/
 
@@ -22,7 +22,8 @@ PORTDOCS=	README
 PLIST_FILES=	sbin/${PORTNAME} lib/${PORTNAME}_log_plugin.so \
 		lib/${PORTNAME}_option82_plugin.so
 
-OPTIONS_DEFINE=	RADIUS_PLUGIN
+# The modules use a new system libradius that is not committed yet
+#OPTIONS_DEFINE=	RADIUS_PLUGIN
 RADIUS_PLUGIN_PLUGIN_DESC=	build radius plugin
 
 .include <bsd.port.options.mk>
