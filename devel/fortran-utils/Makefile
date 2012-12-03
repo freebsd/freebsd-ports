@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fortran-utils
-# Date created:		19 Dec 1999
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	fortran-utils
 PORTVERSION=	1.1
