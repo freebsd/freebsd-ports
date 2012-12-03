@@ -19,6 +19,6 @@ post-extract:
 	@${RM} ${WRKSRC}/*.o
 
 post-patch:
-	${REINPLACE_CMD} -e 's|O4|O3|' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|-O4||' ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
