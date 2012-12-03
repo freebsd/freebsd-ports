@@ -1,7 +1,3 @@
-# New ports collection makefile for:	riece
-# Date created: 	30 May 2004
-# Whom:			KIMURA Yasuhiro <yasu@utahime.org>
-#
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../riece
