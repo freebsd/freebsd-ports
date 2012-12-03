@@ -27,6 +27,7 @@
     SUBDIR += gpsd
     SUBDIR += gpsdrive
     SUBDIR += gpsman
+    SUBDIR += gpsprune
     SUBDIR += gpstk
     SUBDIR += gpxloggerd
     SUBDIR += jday
@@ -80,7 +81,6 @@
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += pp3
-    SUBDIR += prune
     SUBDIR += ptiger
     SUBDIR += py-RO
     SUBDIR += py-aipy
