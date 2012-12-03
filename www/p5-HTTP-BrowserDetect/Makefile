@@ -1,12 +1,8 @@
-# New ports collection makefile for:	HTTP-BrowserDetect
-# Date created:	   10 December 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-BrowserDetect
-PORTVERSION=	1.44
+PORTVERSION=	1.45
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OALDERS
@@ -18,8 +14,7 @@ COMMENT=	Determine the Web browser, version, OS from an HTTP user agent string
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 
 PERL_CONFIGURE=	yes
 
