@@ -13,7 +13,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	A basic interface between Pure and Tcl/Tk
 
 USE_PURE=	yes
-USE_TK=	82+
+USE_TK=	83+
 SHORT_TCL_VER=	${TCL_VER:S/8./8/}
 
 MAKE_ARGS+=	tclvers=${TCL_VER}

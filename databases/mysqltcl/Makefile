@@ -16,7 +16,7 @@ COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes
-USE_TCL=	82+
+USE_TCL=	83+
 USE_DOS2UNIX=	generic/mysqltcl.c
 
 MANN=		mysqltcl.n

@@ -34,7 +34,7 @@ CFLAGS+=	-Wall -Wno-uninitialized
 CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 MAKE_JOBS_SAFE=	yes
 
-USE_TK=		82+
+USE_TK=		83+
 USE_XORG=	x11
 
 post-install:

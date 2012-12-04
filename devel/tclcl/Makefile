@@ -35,7 +35,7 @@ PORTDOCS=	CHANGES.html TODO.html
 OTCL_TCLVER!=	${ECHO_CMD} puts \$$tcl_version | ${LOCALBASE}/bin/otclsh
 USE_TK=		${OTCL_TCLVER:S/.//}
 .else
-USE_TK=		82+
+USE_TK=		83+
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"

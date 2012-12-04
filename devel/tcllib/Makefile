@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	A collection of utility modules for Tcl
 
-USE_TCL_BUILD=	82+
+USE_TCL_BUILD=	83+
 USE_TCL_RUN=	${USE_TCL_BUILD}
 
 USE_BZIP2=	yes

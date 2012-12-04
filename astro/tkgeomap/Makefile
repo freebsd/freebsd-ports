@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x
 		--with-tk=${TK_LIBDIR} --with-tkinclude=${TK_INCLUDEDIR} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	TCLGEOMAP_LIB=${LOCALBASE}/lib/tclgeomap
-USE_TK=		82+
+USE_TK=		83+
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 TKPKG=		${PORTNAME}

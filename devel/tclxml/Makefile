@@ -21,7 +21,7 @@ PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
 		tcldom.html tcldom.xml tclxml.css tclxml.html tclxml.xml \
 		tclxslt.html tclxslt.xml transform.tcl txt.xsl
 
-USE_TCL=	82+
+USE_TCL=	83+
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
