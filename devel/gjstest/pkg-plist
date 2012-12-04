@@ -9,6 +9,7 @@ bin/gjstest
 %%DATADIR%%/internal/js/mock_instance.js
 %%DATADIR%%/internal/js/namespace.js
 %%DATADIR%%/internal/js/run_test.js
+%%DATADIR%%/internal/js/slice.js
 %%DATADIR%%/internal/js/stack_frame.js
 %%DATADIR%%/internal/js/stack_utils.js
 %%DATADIR%%/internal/js/test_environment.js

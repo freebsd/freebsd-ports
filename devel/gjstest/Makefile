@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gjstest
-# Date created:		2011-10-04
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gjstest
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
