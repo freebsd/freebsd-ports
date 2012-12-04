@@ -12,7 +12,7 @@ MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/ \
 		http://www.predatorlabs.net/dl/
 DISTNAME=	${PORTNAME}-src-all-${PORTVERSION}
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API to display mathematical formulas written in LaTeX
 
 LICENSE=	GPLv2

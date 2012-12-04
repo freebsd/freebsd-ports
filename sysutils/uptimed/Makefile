@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/ \
 		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uptime daemon
 
 MAKE_JOBS_SAFE=	yes

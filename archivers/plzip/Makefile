@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
-MAINTAINER=	f3cun3c02@sneakemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a parallel, lossless data compressor based on the LZMA algorithm
 
 BUILD_DEPENDS=	lzlib>=1.1:${PORTSDIR}/archivers/lzlib

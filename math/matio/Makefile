@@ -10,7 +10,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading/writing Matlab files
 
 GNU_CONFIGURE=	yes

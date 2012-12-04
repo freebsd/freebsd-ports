@@ -11,7 +11,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
 LICENSE=	BSD
