@@ -1,5 +1,5 @@
---- icmake/manpage.orig	2007-09-12 11:09:09.000000000 +0200
-+++ icmake/manpage	2009-11-02 12:19:34.000000000 +0100
+--- icmake/manpage.orig	2012-02-20 17:33:31.000000000 +0100
++++ icmake/manpage	2012-12-02 13:45:58.000000000 +0100
 @@ -3,7 +3,7 @@
  
  void manpage()
@@ -9,11 +9,13 @@
  
      special();
  
-@@ -12,7 +12,22 @@
+@@ -11,8 +11,23 @@
+ 
      if ("bisonc++.yo" younger MANPAGE || "release.yo" younger MANPAGE)
      {
-         run("yodl2man  -o " MANPAGE " bisonc++");
+-        run("yodl2man  -o " MANPAGE " bisonc++");
 -        run("yodl2html  -o " MANHTML " bisonc++");
++        run("yodl2man -l3 -o " MANPAGE " bisonc++");
      }
      exit(0);
  }
@@ -28,7 +30,7 @@
 +
 +    if ("bisonc++.yo" younger MANHTML || "release.yo" younger MANHTML)
 +    {
-+        run("yodl2html  -o " MANHTML " bisonc++");
++        run("yodl2html -l3 -o " MANHTML " bisonc++");
 +    }
 +
 +    chdir("../..");
