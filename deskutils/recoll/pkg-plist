@@ -1,6 +1,7 @@
 %%QT%%bin/recoll
+bin/recollq
 bin/recollindex
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll.so
+%%PYTHON_SITELIBDIR%%/recoll.so
 %%QT%%share/applications/recoll-searchgui.desktop
 %%QT%%share/icons/hicolor/48x48/apps/recoll.png
 %%QT%%share/pixmaps/recoll.png
@@ -23,6 +24,7 @@ bin/recollindex
 %%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
 %%DATADIR%%/filters/rcldvi
+%%DATADIR%%/filters/rclepub
 %%DATADIR%%/filters/rclexecm.py
 %%DATADIR%%/filters/rclfb2
 %%DATADIR%%/filters/rclgaim
@@ -51,16 +53,21 @@ bin/recollindex
 %%DATADIR%%/filters/rclsiduxman
 %%DATADIR%%/filters/rclsoff
 %%DATADIR%%/filters/rclsvg
+%%DATADIR%%/filters/rcltar
 %%DATADIR%%/filters/rcltex
 %%DATADIR%%/filters/rcltext
 %%DATADIR%%/filters/rcluncomp
 %%DATADIR%%/filters/rclwar
 %%DATADIR%%/filters/rclwpd
 %%DATADIR%%/filters/rclxls
+%%DATADIR%%/filters/rclxml
 %%DATADIR%%/filters/rclzip
 %%DATADIR%%/filters/xdg-open
 %%DATADIR%%/images/aptosid-book.png
 %%DATADIR%%/images/aptosid-manual.png
+%%DATADIR%%/images/archive.png
+%%DATADIR%%/images/book.png
+%%DATADIR%%/images/bookchap.png
 %%DATADIR%%/images/document.png
 %%DATADIR%%/images/drawing.png
 %%DATADIR%%/images/folder.png
@@ -82,6 +89,7 @@ bin/recollindex
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_cs.qm
 %%DATADIR%%/translations/recoll_de.qm
+%%DATADIR%%/translations/recoll_el.qm
 %%DATADIR%%/translations/recoll_es.qm
 %%DATADIR%%/translations/recoll_fr.qm
 %%DATADIR%%/translations/recoll_it.qm
@@ -103,3 +111,5 @@ bin/recollindex
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
