@@ -1,15 +1,11 @@
-# New ports collection makefile for:	cave9
-# Date created:		17 Sep 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cave9
-PORTVERSION=	0.3
-PORTREVISION=	7
+PORTVERSION=	0.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tgz \
 		${PORTNAME}_data-${DATAVER}.tgz
@@ -30,6 +26,8 @@ CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${MV} ${WRKDIR}/data ${WRKSRC}/
 
@@ -37,7 +35,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cave9 ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
