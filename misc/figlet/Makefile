@@ -23,8 +23,10 @@ MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
 
 MAN6=		chkfont.6 figlet.6 figlist.6 showfigfonts.6
 
-post-build:
+regression-test:
 	@ cd ${WRKSRC} && ${MAKE} check
+
+post-build tests test: regression-test
 
 do-install:
 	@ ${MKDIR} ${DATADIR}
