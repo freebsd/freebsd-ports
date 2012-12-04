@@ -23,7 +23,7 @@ RDIST_DESC=	rdist support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDIST}
+.if ${PORT_OPTIONS:MRDIST}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rdist6:${PORTSDIR}/net/rdist6
 CONFIGURE_ARGS+=--with-rdist=${LOCALBASE}/bin/rdist6
 .endif
