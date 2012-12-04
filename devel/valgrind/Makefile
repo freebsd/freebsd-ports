@@ -7,13 +7,14 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/:dist \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/:dist \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:manpages
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
 		${DISTNAME}-manpages${EXTRACT_SUFX}:manpages
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	A (memory) debugging and profiling tool
+COMMENT=	Memory debugging and profiling tool
 
 CONFLICTS=	valgrind-snapshot-[0-9]*
 
@@ -41,7 +42,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPI}
-LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 PLIST_SUB+=	MPI=""
 .else
 PLIST_SUB+=	MPI="@comment "
