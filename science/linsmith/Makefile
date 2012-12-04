@@ -1,16 +1,10 @@
-# ex:ts=8
-# Ports collection Makefile for:	linsmith
-# Date created:			Dec 22, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	linsmith
-PORTVERSION=	0.99.22
-PORTREVISION=	1
+PORTVERSION=	0.99.24
 CATEGORIES=	science hamradio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smith charting program
@@ -23,6 +17,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_GCC=	any
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
