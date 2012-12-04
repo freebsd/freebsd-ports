@@ -1,9 +1,5 @@
-# New ports collection makefile for:	python-mode.el
-# Date created:				11 October 2005
-# Whom:					Dario Freni <saturnero@gufi.org
-#
+# Created by: Dario Freni <saturnero@gufi.org
 # $FreeBSD$
-#
 
 PORTNAME=	python-mode.el
 PORTVERSION=	1.0
@@ -13,7 +9,7 @@ CATEGORIES=	lang elisp python
 MASTER_SITES=	SF/python-mode/OldFiles
 DISTNAME=	python-mode-${PORTVERSION}
 
-MAINTAINER=	saturnero@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Python language
 
 NO_BUILD=	yes

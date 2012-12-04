@@ -1,16 +1,12 @@
-# New ports collection makefile for:	proxsmtp
-# Date created:		2005-05-03
-# Whom:			Dario Freni <saturnero@gufi.org>
-#
+# Created by: Dario Freni <saturnero@gufi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	proxsmtp
 PORTVERSION=	1.8
 CATEGORIES=	mail security
 MASTER_SITES=	http://memberwebs.com/stef/software/proxsmtp/
 
-MAINTAINER=	saturnero@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible SMTP filter which can act also as transparent proxy
 
 USE_GMAKE=	yes
