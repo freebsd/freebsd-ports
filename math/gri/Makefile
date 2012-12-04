@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	christopher.illies@ki.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
