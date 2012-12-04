@@ -1,33 +1,41 @@
-# Ports collection makefile for:  cadubi
-# Date created:			  24 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cadubi
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	graphics editors
 MASTER_SITES=	http://langworth.com/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	ASCII drawing utility
+
+LICENSE=	ART10
 
 RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+PLIST_FILES=	bin/${PORTNAME}
+
+PORTDATA=	*
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
 do-configure:
 	@${PERL} -pi -e \
 		's|Bin/help|Bin/../share/cadubi/help|g' ${WRKSRC}/cadubi
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cadubi ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/help.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/logo.txt ${DATADIR}
-.if !defined(NOPORTDOCS)
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+.for d in help.txt logo.txt
+	@(cd ${WRKSRC} && ${INSTALL_DATA} ${d} ${DATADIR})
+.endfor
+
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/extras/ansi_term_codes.txt ${DOCSDIR}
