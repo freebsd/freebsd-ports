@@ -1,4 +1,5 @@
 bin/violetland
+share/applications/violetland.desktop
 %%DATADIR%%/README_EN.TXT
 %%DATADIR%%/README_RU.TXT
 %%DATADIR%%/fonts/archangelsk.ttf
@@ -419,3 +420,4 @@ bin/violetland
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

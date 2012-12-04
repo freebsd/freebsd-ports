@@ -1,13 +1,8 @@
-# New ports collection makefile for:	violetland
-# Date created:		25 Oct 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	violetland
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -28,15 +23,23 @@ CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
-DESKTOP_ENTRIES="Violetland" \
-		"Top-down survival shoot 'em up" \
-		"${DATADIR}/icon-light.png" \
-		"violetland" \
-		"Game;ArcadeGame;" \
-		false
+PORTDOCS=	CHANGELOG README_EN.TXT README_RU.TXT
+
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/set.libList/ s|)| ${LOCALBASE}/lib/libintl.so&|' \
 		${WRKSRC}/CMakeLists.txt
+
+post-install:
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
