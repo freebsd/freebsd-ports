@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-libsoldout
-# Date created:				2012-07-22
-# Whom:					Rodrigo OSORIO <rodrigo@bebik.net>
-#
+# Created by: Rodrigo OSORIO <rodrigo@bebik.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libsoldout
 PORTVERSION=	0.02
