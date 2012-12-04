@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	figlet
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/ \
 		${MASTER_SITE_LOCAL}
