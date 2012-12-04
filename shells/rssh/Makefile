@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	rssh
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	shells security
 MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
-COMMENT=	A Restricted Secure SHell only for sftp or/and scp
-
-FORBIDDEN=	http://www.vuxml.org/freebsd/65b25acc-e63b-11e1-b81c-001b77d09812.html (vulnerability)
+COMMENT=	Restricted Secure SHell only for sftp or/and scp
 
 GNU_CONFIGURE=	yes
 
 MAN1=		rssh.1
 MAN5=		rssh.conf.5
 
-OPTIONS=	RDIST "rdist support" off
+OPTIONS_DEFINE=	RDIST
+RDIST_DESC=	rdist support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RDIST)
+.if ${PORT_OPTIONS:MDIST}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rdist6:${PORTSDIR}/net/rdist6
 CONFIGURE_ARGS+=--with-rdist=${LOCALBASE}/bin/rdist6
 .endif
@@ -40,4 +39,4 @@ post-install:
 		${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > /etc/shells
 	@${RM} /etc/shells.bak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
