@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Compress-Raw-Zlib
-# Date created:		2006-11-07
-# Whom:			Thomas Abthorpe <thomas@goodking.ca>
-#
+# Created by: Thomas Abthorpe <thomas@goodking.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Compress-Raw-Zlib
-PORTVERSION=	2.056
+PORTVERSION=	2.059
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
