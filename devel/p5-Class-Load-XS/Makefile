@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Load-XS
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS implementation of parts of Class::Load
+
+LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-Class-Load>=0.20:${PORTSDIR}/devel/p5-Class-Load
 RUN_DEPENDS:=	${BUILD_DEPENDS}
