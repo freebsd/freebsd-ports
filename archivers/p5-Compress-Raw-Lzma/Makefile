@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Compress-Raw-Lzma
-# Date created:		2010-07-26
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Compress-Raw-Lzma
-PORTVERSION=	2.055
+PORTVERSION=	2.059
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
