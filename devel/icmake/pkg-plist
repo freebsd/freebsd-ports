@@ -1,21 +1,15 @@
 @comment $FreeBSD$
 bin/icmake
-bin/icmun
 bin/icmbuild
 bin/icmstart
-etc/icmake/AUTHOR
-etc/icmake/VERSION
-etc/icmake/YEARS
+bin/icmun
+etc/icmake/icmake.rc
 etc/icmake/icmstart.rc
 lib/icmake-%%PORTVERSION%%/icm-comp
 lib/icmake-%%PORTVERSION%%/icm-exec
 lib/icmake-%%PORTVERSION%%/icm-pp
-share/icmake-%%PORTVERSION%%/parser/gramspec/grambuild
-share/icmake-%%PORTVERSION%%/parser/gramspec/header.gr0
-share/icmake-%%PORTVERSION%%/parser/gramspec/startrule.gr0
 share/icmake-%%PORTVERSION%%/parser/grammar
 share/icmake-%%PORTVERSION%%/scanner/lexer
-share/icmake-%%PORTVERSION%%/scanner/scanner.h
 share/icmake-%%PORTVERSION%%/scanner/scanner.ih
 share/icmake-%%PORTVERSION%%/CLASSES
 share/icmake-%%PORTVERSION%%/icmconf
@@ -25,7 +19,6 @@ share/icmake-%%PORTVERSION%%/usage.cc
 share/icmake-%%PORTVERSION%%/version.cc
 @dirrm etc/icmake
 @dirrm lib/icmake-%%PORTVERSION%%
-@dirrm share/icmake-%%PORTVERSION%%/parser/gramspec
 @dirrm share/icmake-%%PORTVERSION%%/parser
 @dirrm share/icmake-%%PORTVERSION%%/scanner
 @dirrm share/icmake-%%PORTVERSION%%
