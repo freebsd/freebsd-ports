@@ -13,6 +13,7 @@
 %%SITE_PERL%%/SNMP/Info/CiscoStats.pm
 %%SITE_PERL%%/SNMP/Info/CiscoStpExtensions.pm
 %%SITE_PERL%%/SNMP/Info/CiscoVTP.pm
+%%SITE_PERL%%/SNMP/Info/EDP.pm
 %%SITE_PERL%%/SNMP/Info/Entity.pm
 %%SITE_PERL%%/SNMP/Info/EtherLike.pm
 %%SITE_PERL%%/SNMP/Info/FDP.pm
@@ -71,15 +72,18 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/N1600.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/NetSNMP.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Netscreen.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Nexus.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Passport.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/PacketFront.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Pf.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Sun.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/SonicWALL.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Tasman.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Timetra.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/HP9300.pm
 %%SITE_PERL%%/SNMP/Info/Layer7.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/APC.pm
+%%SITE_PERL%%/SNMP/Info/Layer7/Neoteris.pm
 %%SITE_PERL%%/SNMP/Info/MAU.pm
 %%SITE_PERL%%/SNMP/Info/NortelStack.pm
 %%SITE_PERL%%/SNMP/Info/PowerEthernet.pm

@@ -1,17 +1,14 @@
-# New ports collection makefile for:	p5-SNMP-Info
-# Date created:				2003-09-18
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	2.08
+PORTVERSION=	2.09
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	A perl5 module for gathering information from network devices
+COMMENT=	Perl5 module for gathering information from network devices
 
 LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
@@ -41,7 +38,9 @@ MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
 	SNMP::Info::Layer2::HP.3 SNMP::Info::Layer2::HP4000.3 \
 	SNMP::Info::Layer2::N2270.3 \
 	SNMP::Info::Layer2::NAP222x.3 SNMP::Info::Layer2::Orinoco.3 \
-	SNMP::Info::Layer2::ZyXEL_DSLAM.3 SNMP::Info::Layer3.3 \
+	SNMP::Info::Layer2::ZyXEL_DSLAM.3 SNMP::Info::EDP.3 \
+	SNMP::Info::Layer3::Nexus.3 SNMP::Info::Layer3.3 \
+	SNMP::Info::Layer3::Tasman.3 SNMP::Info::Layer7::Neoteris.3 \
 	SNMP::Info::Layer3::Aironet.3 SNMP::Info::Layer3::AlteonAD.3 \
 	SNMP::Info::Layer3::BayRS.3 SNMP::Info::Layer3::C3550.3 \
 	SNMP::Info::Layer3::C4000.3 SNMP::Info::Layer3::C6500.3 \
