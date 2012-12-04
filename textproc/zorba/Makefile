@@ -13,7 +13,7 @@ COMMENT=	A general purpose C++ XQuery processor
 LICENSE=	AL2
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-   		xerces-c:${PORTSDIR}/textproc/xerces-c3 \
+   		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
 		icudata:${PORTSDIR}/devel/icu \
 		curl:${PORTSDIR}/ftp/curl \
 		tidy:${PORTSDIR}/www/tidy-lib \
