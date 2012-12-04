@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Coro
-# Date created:				27 Jan 2003
-# Whom:					tobez
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Coro
-PORTVERSION=	6.08
+PORTVERSION=	6.10
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
