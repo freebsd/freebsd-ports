@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	daq
-PORTVERSION=	1.1.1
+PORTVERSION=	2.0.0
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
