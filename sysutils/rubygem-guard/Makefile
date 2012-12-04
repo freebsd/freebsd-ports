@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-guard
-# Date created:		2011-10-20
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	guard
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +10,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool to easily handle events on file system modifications
 
 RUN_DEPENDS=	rubygem-listen>=0.4.2:${PORTSDIR}/devel/rubygem-listen \
+		rubygem-lumberjack>=1.0.2:${PORTSDIR}/devel/rubygem-lumberjack \
+		rubygem-pry>=0.9.10:${PORTSDIR}/devel/rubygem-pry \
 		rubygem-thor>=0.14.6:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
