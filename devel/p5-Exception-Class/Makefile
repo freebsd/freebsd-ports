@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Module that allows to declare real exception classes in Perl
+COMMENT=	Real exception classes in Perl
 
 LICENSE=	ART20
 
