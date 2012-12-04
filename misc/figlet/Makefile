@@ -23,6 +23,9 @@ MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
 
 MAN6=		figlet.6
 
+post-build:
+	@ cd ${WRKSRC} && ${MAKE} check
+
 do-install:
 	@ ${MKDIR} ${DATADIR}
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/figlet ${PREFIX}/bin
