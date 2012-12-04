@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-net-http-persistent
-# Date created:		2011-10-31
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	net-http-persistent
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
