@@ -1,16 +1,12 @@
-# New ports collection makefile for:	lzlib
-# Date created:		2010-05-22
-# Whom:			Albert Vernon <f3cun3c02@sneakemail.com>
-#
+# Created by: Albert Vernon <f3cun3c02@sneakemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lzlib
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Provides in-memory LZMA compression and decompression functions
 
 PLIST_FILES=	include/lzlib.h \
