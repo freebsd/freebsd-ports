@@ -9,6 +9,7 @@
 %%DATADIR%%/bin/examples/CSVSample_user.csv
 %%DATADIR%%/bin/hc.parameters
 %%DATADIR%%/bin/httpclient.parameters
+%%DATADIR%%/bin/heapdump.sh
 %%DATADIR%%/bin/jmeter
 %%DATADIR%%/bin/jmeter-report
 %%DATADIR%%/bin/jmeter-server
@@ -51,6 +52,7 @@
 %%DATADIR%%/lib/bsh-2.0b5.jar
 %%DATADIR%%/lib/bshclient.jar
 %%DATADIR%%/lib/commons-io.jar
+%%DATADIR%%/lib/commons-lang3-3.1.jar
 %%DATADIR%%/lib/commons-jexl-1.1.jar
 %%DATADIR%%/lib/commons-jexl-2.1.1.jar
 @comment %%DATADIR%%/lib/commons-net-3.0.1.jar
