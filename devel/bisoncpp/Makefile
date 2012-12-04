@@ -1,12 +1,7 @@
-# New ports collection makefile for:    bisoncpp
-# Date created:         March 5, 2009
-# Whom:                 Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bisoncpp
-PORTVERSION=	2.09.03
+PORTVERSION=	4.01.00
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}
@@ -19,7 +14,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		yodl>=3.0:${PORTSDIR}/textproc/yodl \
-		libbobcat>=2.18:${PORTSDIR}/devel/libbobcat
+		libbobcat>=3:${PORTSDIR}/devel/libbobcat
 
 .if !defined(NO_INSTALL_MANPAGES)
 MANCOMPRESSED=	yes
@@ -41,8 +36,10 @@ post-patch:
 		s|"/share/doc/bisonc++"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/man/man1"|"/man/man1"| ; \
 		s|"g++"|"g++46"|' \
-		${WRKSRC}/INSTALL.im
-	@${REINPLACE_CMD} 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake|' \
+		${WRKSRC}/INSTALL.im \
+		${WRKSRC}/build
+	@${REINPLACE_CMD} 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake| ; \
+		s|"g++|"g++46|' \
 		${WRKSRC}/build \
 		${WRKSRC}/scanner/driver/build \
 		${WRKSRC}/parser/driver/build
@@ -53,17 +50,11 @@ post-patch:
 		${WRKSRC}/documentation/manual/examples/errorcalc/build \
 		${WRKSRC}/documentation/manual/examples/calc/build \
 		${WRKSRC}/documentation/manual/examples/mfcalc/build \
-		${WRKSRC}/documentation/man/calculator/build \
-		${WRKSRC}/scanner/buildlexer
-	@${REINPLACE_CMD} 's|"-Wall -O3|"-Wall ${CXXFLAGS} -I${LOCALBASE}/include| ; \
-		s|""|"${LOCALBASE}/lib"|' \
-		${WRKSRC}/icmake/library
+		${WRKSRC}/documentation/man/calculator/build
 	@${REINPLACE_CMD} 's|"cp -d |"cp -Pp | ; \
 		s|"cp -r |"cp -R | ; \
 		s|"-doc"|"/doc"|' \
 		${WRKSRC}/icmake/install
-	@${REINPLACE_CMD} 's|libpath|libpath, "-Wl,--allow-shlib-undefined"|' \
-		${WRKSRC}/icmake/program
 
 do-build:
 	@cd ${WRKSRC} && ./build program strip

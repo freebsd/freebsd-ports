@@ -4,4 +4,6 @@ share/bisoncpp-%%PORTVERSION%%/bisonc++.cc
 share/bisoncpp-%%PORTVERSION%%/bisonc++.h
 share/bisoncpp-%%PORTVERSION%%/bisonc++.ih
 share/bisoncpp-%%PORTVERSION%%/bisonc++base.h
+share/bisoncpp-%%PORTVERSION%%/bisonc++polymorphic
+share/bisoncpp-%%PORTVERSION%%/bisonc++polymorphic.inline
 @dirrm share/bisoncpp-%%PORTVERSION%%
