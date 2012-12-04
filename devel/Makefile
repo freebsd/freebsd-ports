@@ -3910,6 +3910,7 @@
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-loquacious
+    SUBDIR += rubygem-lumberjack
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
     SUBDIR += rubygem-mash
