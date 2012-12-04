@@ -1,16 +1,29 @@
 bin/darktable
+bin/darktable-cli
 bin/darktable-cltest
 %%DATADIR%%/darktable.gtkrc
+%%DATADIR%%/darktablerc
 %%DATADIR%%/gdb_commands
+%%DATADIR%%/js/builder.js
+%%DATADIR%%/js/effects.js
+%%DATADIR%%/js/lightbox-web.js
+%%DATADIR%%/js/lightbox.js
+%%DATADIR%%/js/prototype.js
+%%DATADIR%%/js/scriptaculous.js
 %%DATADIR%%/kernels/atrous.cl
 %%DATADIR%%/kernels/basic.cl
+%%DATADIR%%/kernels/bilateral.cl
 %%DATADIR%%/kernels/blendop.cl
 %%DATADIR%%/kernels/demosaic_ppg.cl
+%%DATADIR%%/kernels/extended.cl
 %%DATADIR%%/kernels/gaussian.cl
 %%DATADIR%%/kernels/highpass.cl
 %%DATADIR%%/kernels/nlmeans.cl
 %%DATADIR%%/kernels/programs.conf
 %%DATADIR%%/kernels/sharpen.cl
+%%DATADIR%%/kernels/soften.cl
+%%DATADIR%%/latex/photobook.cls
+%%DATADIR%%/pixmaps/dt_logo_128x128.png
 %%DATADIR%%/pixmaps/idbutton.png
 %%DATADIR%%/pixmaps/off.png
 %%DATADIR%%/pixmaps/plugins/darkroom/anlfyeni.png
@@ -63,8 +76,19 @@ bin/darktable-cltest
 %%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.png
 %%DATADIR%%/rawspeed/cameras.xml
 %%DATADIR%%/rawspeed/showcameras.xsl
+%%DATADIR%%/style/bullet.gif
+%%DATADIR%%/style/close.gif
+%%DATADIR%%/style/closelabel.gif
+%%DATADIR%%/style/donate-button.gif
+%%DATADIR%%/style/download-icon.gif
 %%DATADIR%%/style/favicon.ico
+%%DATADIR%%/style/image-1.jpg
+%%DATADIR%%/style/lightbox.css
+%%DATADIR%%/style/loading.gif
+%%DATADIR%%/style/nextlabel.gif
+%%DATADIR%%/style/prevlabel.gif
 %%DATADIR%%/style/style.css
+%%DATADIR%%/style/thumb-1.jpg
 %%DATADIR%%/watermarks/darktable.svg
 %%DATADIR%%/watermarks/hasselblad.svg
 %%DATADIR%%/watermarks/promo.svg
@@ -78,10 +102,13 @@ lib/darktable/plugins/imageio/format/libppm.so
 lib/darktable/plugins/imageio/format/libtiff.so
 lib/darktable/plugins/imageio/storage/libdisk.so
 lib/darktable/plugins/imageio/storage/libemail.so
+lib/darktable/plugins/imageio/storage/libfacebook.so
 lib/darktable/plugins/imageio/storage/libgallery.so
+lib/darktable/plugins/imageio/storage/liblatex.so
 lib/darktable/plugins/imageio/storage/libpicasa.so
 lib/darktable/plugins/libatrous.so
 lib/darktable/plugins/libbasecurve.so
+lib/darktable/plugins/libbilat.so
 lib/darktable/plugins/libbilateral.so
 lib/darktable/plugins/libbloom.so
 lib/darktable/plugins/libborders.so
@@ -101,6 +128,7 @@ lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
 lib/darktable/plugins/libflip.so
 lib/darktable/plugins/libgamma.so
+lib/darktable/plugins/libglobaltonemap.so
 lib/darktable/plugins/libgraduatednd.so
 lib/darktable/plugins/libgrain.so
 lib/darktable/plugins/libhighlights.so
@@ -139,6 +167,7 @@ lib/darktable/plugins/lighttable/libdarktable_label.so
 lib/darktable/plugins/lighttable/libexport.so
 lib/darktable/plugins/lighttable/libfilmstrip.so
 lib/darktable/plugins/lighttable/libfilter.so
+lib/darktable/plugins/lighttable/libgeotagging.so
 lib/darktable/plugins/lighttable/libglobal_toolbox.so
 lib/darktable/plugins/lighttable/libhinter.so
 lib/darktable/plugins/lighttable/libhistogram.so
@@ -147,6 +176,8 @@ lib/darktable/plugins/lighttable/libimage.so
 lib/darktable/plugins/lighttable/libimport.so
 lib/darktable/plugins/lighttable/libkeywords.so
 lib/darktable/plugins/lighttable/liblighttable_mode.so
+lib/darktable/plugins/lighttable/liblocation.so
+lib/darktable/plugins/lighttable/libmap_settings.so
 lib/darktable/plugins/lighttable/libmetadata.so
 lib/darktable/plugins/lighttable/libmetadata_view.so
 lib/darktable/plugins/lighttable/libmodule_toolbox.so
@@ -156,6 +187,7 @@ lib/darktable/plugins/lighttable/libnavigation.so
 lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
+lib/darktable/plugins/lighttable/libsimilarity.so
 lib/darktable/plugins/lighttable/libsnapshots.so
 lib/darktable/plugins/lighttable/libstyles.so
 lib/darktable/plugins/lighttable/libtagging.so
@@ -163,6 +195,7 @@ lib/darktable/plugins/lighttable/libview_toolbox.so
 lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/libdarkroom.so
 lib/darktable/views/liblighttable.so
+lib/darktable/views/libmap.so
 share/applications/darktable.desktop
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
@@ -183,6 +216,8 @@ share/locale/it/LC_MESSAGES/darktable.mo
 share/locale/ja/LC_MESSAGES/darktable.mo
 share/locale/nl/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
+share/locale/pt_BR/LC_MESSAGES/darktable.mo
+share/locale/pt_PT/LC_MESSAGES/darktable.mo
 share/locale/ro/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
@@ -203,5 +238,7 @@ share/locale/zh_CN/LC_MESSAGES/darktable.mo
 @dirrm %%DATADIR%%/pixmaps/plugins/darkroom
 @dirrm %%DATADIR%%/pixmaps/plugins
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/latex
 @dirrm %%DATADIR%%/kernels
+@dirrm %%DATADIR%%/js
 @dirrm %%DATADIR%%

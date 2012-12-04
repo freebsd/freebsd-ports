@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2 \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		lensfun:${PORTSDIR}/graphics/lensfun \
@@ -29,10 +30,13 @@ USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	GCONF GPHOTO FLICKR RAWSPEED SLIDESHOW KWALLET GNOMEKEYRING \
-		NLS GCC46
+OPTIONS_DEFINE=	GPHOTO GEO FLICKR GLIBJSON KWALLET GNOMEKEYRING RAWSPEED \
+		SLIDESHOW NLS GCC46
 
+GEO_DESC=	Build geotagging parts
+GLIBJSON_DESC=	GlibJson library support
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 GCC46_DESC=	Build with GCC 4.6+ (better OpenMP support)
@@ -41,22 +45,20 @@ OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC46
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-CMAKE_ARGS+=	-DDONT_INSTALL_GCONF_SCHEMAS:BOOL=ON	# bogus name, no typo
-GCONF_SCHEMAS=	${PORTNAME}.schemas
-.else
-CMAKE_ARGS+=	-DUSE_GCONF_BACKEND:BOOL=OFF
-PLIST_FILES+=	share/darktable/darktablerc
-.endif
-
 .if ${PORT_OPTIONS:MGPHOTO}
 LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
 PLIST_FILES+=	lib/darktable/plugins/lighttable/libcamera.so \
 		lib/darktable/plugins/lighttable/libcapture.so \
+		lib/darktable/plugins/lighttable/liblive_view.so \
 		lib/darktable/views/libcapture.so
 .else
 CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MGEO}
+LIB_DEPENDS+=	soup-2.4:${PORTSDIR}/devel/libsoup
+.else
+CMAKE_ARGS+=	-DUSE_GEO:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFLICKR}
@@ -66,16 +68,10 @@ PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
 CMAKE_ARGS+=	-DUSE_FLICKR:BOOL=OFF
 .endif
 
-.if ! ${PORT_OPTIONS:MRAWSPEED}
-CMAKE_ARGS+=	-DDONT_USE_RAWSPEED:BOOL=ON
-.endif
-
-.if ${PORT_OPTIONS:MSLIDESHOW}
-USE_GL=		gl
-USE_SDL=	sdl
-PLIST_FILES+=	bin/darktable-viewer
+.if ${PORT_OPTIONS:MGLIBJSON}
+LIB_DEPENDS+=	json-glib-1.0:${PORTSDIR}/devel/json-glib
 .else
-CMAKE_ARGS+=	-DBUILD_SLIDESHOW:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_GLIBJSON:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MKWALLET}
@@ -88,6 +84,18 @@ CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=OFF
 LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 .else
 CMAKE_ARGS+=	-DUSE_GNOME_KEYRING:BOOL=OFF
+.endif
+
+.if ! ${PORT_OPTIONS:MRAWSPEED}
+CMAKE_ARGS+=	-DDONT_USE_RAWSPEED:BOOL=ON
+.endif
+
+.if ${PORT_OPTIONS:MSLIDESHOW}
+USE_GL=		gl
+USE_SDL=	sdl
+PLIST_FILES+=	bin/darktable-viewer
+.else
+CMAKE_ARGS+=	-DBUILD_SLIDESHOW:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -109,10 +117,9 @@ LDFLAGS+=	-lstdc++
 .endif
 
 post-patch:
-# Do not define _XOPEN_SOURCE, it breaks the build on FreeBSD (and is bogus
-# here anyways); instead, use this space to define required _WITH_DPRINTF
-	@${REINPLACE_CMD} -e 's,_XOPEN_SOURCE 700,_WITH_DPRINTF,' \
-		${WRKSRC}/src/common/darktable.h
+	@${RM} ${WRKSRC}/data/js/.DS_Store
+	@${REINPLACE_CMD} -e 's,const gint,gint,' \
+		${WRKSRC}/src/external/osm-gps-map/src/osm-gps-map-image.*
 # Do not install useless (to end-user) documentation; adjust manpages path
 	@${REINPLACE_CMD} -e '/DOC_FILES/d ; s,share/man/man1,man/man1,' \
 		${WRKSRC}/doc/CMakeLists.txt
@@ -120,12 +127,12 @@ post-patch:
 # are used for release builds as well
 	@${REINPLACE_CMD} -e '/-O3/s,^,#, ; /-msse2/s, -g,,' \
 		${WRKSRC}/src/CMakeLists.txt
-# Fix GConf schemas installation prefix
-	@${REINPLACE_CMD} -e 's,/etc/gconf/schemas,.&,' \
-		${WRKSRC}/data/CMakeLists.txt
-# Do not use bash(1) when good ol' sh(1) can suffice
-	@${REINPLACE_CMD} -e 's,usr/bin/env bash,bin/sh,' \
-		${WRKSRC}/tools/create_preferences.sh.in
+# Add some missing newlines at the EOF to unbreak the build
+	@${ECHO_CMD} >> ${WRKSRC}/src/common/srgb_tone_curve_values.h
+	@${ECHO_CMD} >> ${WRKSRC}/src/common/gpx.c
+	@${ECHO_CMD} >> ${WRKSRC}/src/gui/drag_and_drop.h
+	@${ECHO_CMD} >> ${WRKSRC}/src/gui/gtkentry.c
+	@${ECHO_CMD} >> ${WRKSRC}/src/views/map.c
 
 post-install:
 .if ! ${PORT_OPTIONS:MRAWSPEED}
