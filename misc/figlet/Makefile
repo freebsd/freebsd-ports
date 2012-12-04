@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
 
-MAN6=		figlet.6
+MAN6=		chkfont.6 figlet.6 figlist.6 showfigfonts.6
 
 post-build:
 	@ cd ${WRKSRC} && ${MAKE} check
@@ -34,7 +34,7 @@ do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/showfigfonts ${PREFIX}/bin
 	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flf ${DATADIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flc ${DATADIR}
-	@ ${INSTALL_MAN} ${WRKSRC}/figlet.6 ${PREFIX}/man/man6
+	@ cd ${WRKSRC} && ${INSTALL_MAN} *.6 ${PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/figfont.txt ${DOCSDIR}
