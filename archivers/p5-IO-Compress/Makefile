@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-IO-Compress
-# Date created:		2010-09-10
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.055
+PORTVERSION=	2.058
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
