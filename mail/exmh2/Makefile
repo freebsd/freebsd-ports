@@ -14,7 +14,7 @@ CATEGORIES+=	mail tk
 MASTER_SITES=	${MASTER_SITE_TCLTK} \
 		SF
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	X11/TK based mail reader front end to MH
 
 .if defined(JAPANESE_EXMH)
@@ -23,10 +23,10 @@ BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
 WISH=		wish8.0jp
 TCLSH=		tclsh8.0jp
 .else
-RUN_DEPENDS=	wish8.5:${PORTSDIR}/x11-toolkits/tk85
-BUILD_DEPENDS=	tclsh8.5:${PORTSDIR}/lang/tcl85
-WISH=		wish8.5
-TCLSH=		tclsh8.5
+RUN_DEPENDS=	wish8.6:${PORTSDIR}/x11-toolkits/tk86
+BUILD_DEPENDS=	tclsh8.6:${PORTSDIR}/lang/tcl86
+WISH=		wish8.6
+TCLSH=		tclsh8.6
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.
