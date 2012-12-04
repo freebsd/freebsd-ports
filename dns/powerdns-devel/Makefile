@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.1.r3
-PORTREVISION?=	1
+PORTVERSION=	3.2.r1
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://powerdnssec.org/downloads/
@@ -14,7 +14,6 @@ COMMENT=	An advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam
 LIB_DEPENDS=	boost_serialization.[4-9]:${PORTSDIR}/devel/boost-libs
 #		botan.0:${PORTSDIR}/security/botan
 
@@ -35,7 +34,6 @@ CONFIGURE_ARGS=	--with-modules="" \
 		--with-dynmodules="pipe ${CONFIGURE_MODULES}" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}" \
-#		--enable-botan1.8
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR2="${.CURDIR}" \
 		MKDIR="${MKDIR}" \
