@@ -75,7 +75,7 @@ post-patch:
 		s|-lX11|-lX11 -L${LOCALBASE}/lib| ; \
 		s|-lmilter|-lmilter -lpthread|' \
 		${WRKSRC}/icmake/special
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's|#define DOCOTHER||' \
 		${WRKSRC}/INSTALL.im
 .endif

@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
 USE_GCC=	4.6
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/bisonc++"|"/share/${PORTNAME}-${PORTVERSION}"| ; \
@@ -61,7 +63,7 @@ do-build:
 .if !defined(NO_INSTALL_MANPAGES)
 	@cd ${WRKSRC} && ./build man
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC} && ./build manual
 .endif
 
@@ -70,7 +72,7 @@ do-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	cd ${WRKSRC} && ./build install man
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} && ./build install manual
 .endif
 
