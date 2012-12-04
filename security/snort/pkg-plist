@@ -32,9 +32,10 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 @exec if [ ! -f %D/etc/snort/preproc_rules/decoder.rules ] ; then cp -p %D/%F %B/; fi
 @dirrmtry etc/snort/preproc_rules
 @dirrmtry etc/snort
-%%DYNAMIC%%src/snort_dynamicsrc/attribute_table_api.h
 %%DYNAMIC%%src/snort_dynamicsrc/bitop.h
 %%DYNAMIC%%src/snort_dynamicsrc/event.h
+%%DYNAMIC%%src/snort_dynamicsrc/file_api.h
+%%DYNAMIC%%src/snort_dynamicsrc/file_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/obfuscation.h
 %%DYNAMIC%%src/snort_dynamicsrc/pcap_pkthdr32.h
 %%DYNAMIC%%src/snort_dynamicsrc/plugin_enum.h
@@ -95,7 +96,6 @@ include/snort/dynamic_output/sfrt.h
 include/snort/dynamic_output/sfrt_dir.h
 include/snort/dynamic_output/sfrt_trie.h
 @dirrmtry include/snort/dynamic_output
-%%DYNAMIC%%include/snort/dynamic_preproc/attribute_table_api.h
 %%DYNAMIC%%include/snort/dynamic_preproc/ssl.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sfcommon.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_preproc_info.h
@@ -108,6 +108,8 @@ include/snort/dynamic_output/sfrt_trie.h
 %%DYNAMIC%%include/snort/dynamic_preproc/snort_debug.h
 %%DYNAMIC%%include/snort/dynamic_preproc/snort_bounds.h
 %%DYNAMIC%%include/snort/dynamic_preproc/cpuclock.h
+%%DYNAMIC%%include/snort/dynamic_preproc/file_api.h
+%%DYNAMIC%%include/snort/dynamic_preproc/file_lib.h
 %%DYNAMIC%%include/snort/dynamic_preproc/profiler.h
 %%DYNAMIC%%include/snort/dynamic_preproc/bitop.h
 %%DYNAMIC%%include/snort/dynamic_preproc/idle_processing.h
@@ -239,6 +241,7 @@ lib/snort/dynamic_output/libsf_dynamic_output.la
 %%PORTDOCS%%%%DOCSDIR%%/README.dnp3
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
+%%PORTDOCS%%%%DOCSDIR%%/README.file
 %%PORTDOCS%%%%DOCSDIR%%/README.filters
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
