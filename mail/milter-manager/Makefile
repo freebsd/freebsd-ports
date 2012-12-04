@@ -1,12 +1,8 @@
-# New ports collection makefile for:	milter-manager
-# Date created:		2009-05-17
-# Whom:			Hirohisa Yamaguchi <umq@ueo.co.jp>
-#
+# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	milter-manager
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.5
 CATEGORIES=	mail ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/-/%20/}/${PORTVERSION}
 
@@ -29,12 +25,18 @@ USE_LDCONFIG=	yes
 USE_RUBY=	yes
 MAKE_JOBS_SAFE=	yes
 
-## TEMPORARY DISABLED
-#.if defined(WITH_LOG_ANALYZER)
+## YET TO BE DONE
+#OPTIONS_DEFINE=	LOG_ANALYZER MILTER_MANAGER_ADMIN
+#LOG_ANALYZER_DESC=		Setup log analyzer
+#MILTER_MANAGER_ADMIN_DESC=	Setup admin tool
+#
+#.include <bsd.port.options.mk>
+#
+#.if ${PORT_OPTIONS:MLOG_ANALYZER}
 #USE_APACHE=	22
 #BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/RRD.so:${PORTSDIR}/databases/rrdtool
 #.endif
-#.if defined(WITH_MILTER_MANAGER_ADMIN)
+#.if ${PORT_OPTIONS:MMILTER_MANAGER_ADMIN}
 #USE_APACHE=	22
 #RUN_DEPENDS+=	rubygem-passenger>=2.0.0:${PORTSDIR}/www/rubygem-passenger \
 #		rubygem-rails>=2.3.2:${PORTSDIR}/www/rubygem-rails \
