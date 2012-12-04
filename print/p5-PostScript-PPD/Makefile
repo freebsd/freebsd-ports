@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-PostScript-PPD
-# Date created:		2011-10-21
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PostScript-PPD
-PORTVERSION=	0.0203
+PORTVERSION=	0.0204
 CATEGORIES=	print perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
