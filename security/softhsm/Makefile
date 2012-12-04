@@ -1,17 +1,13 @@
-# New ports collection makefile for:   	softhsm
-# Date created:        15 December 2009
-# Whom:                Jaap Akkerhuis <jaap@NLnetLabs.nl>
-#
+# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	softhsm
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	security
-MASTER_SITES=	http://www.opendnssec.org/files/source/
+MASTER_SITES=	http://dist.opendnssec.org/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
-COMMENT=	A software implementation of a Hardware Security Module (HSM)
+COMMENT=	Software implementation of a Hardware Security Module (HSM)
 
 LIB_DEPENDS=	botan:${PORTSDIR}/security/botan \
 		sqlite3:${PORTSDIR}/databases/sqlite3
