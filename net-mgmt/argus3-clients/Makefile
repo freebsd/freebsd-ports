@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	pauls@utdallus.edu
+MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Client programs for the argus IP network transaction auditing tool
 
 CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
