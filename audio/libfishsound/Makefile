@@ -11,15 +11,17 @@ MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A programing interface to decode/encode audio data
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		speex:${PORTSDIR}/audio/speex \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
+OPTIONS_DEFINE=	DOCS DOXYGEN
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS DOXYGEN
 
 .include <bsd.port.options.mk>
 
