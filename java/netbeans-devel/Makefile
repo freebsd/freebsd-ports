@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	7.3beta
+DISTVERSION=	7.3beta2
 CATEGORIES=	java devel
-MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.3/beta/zip/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.3/beta2/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${DISTVERSION}-201210011125
+DISTNAME=	netbeans-${DISTVERSION}-201211062253
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
+LICENSE=	CDDL GPLv2
+LICENSE_COMB=	dual
+
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
