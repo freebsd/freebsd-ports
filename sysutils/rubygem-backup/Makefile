@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-backup
-# Date created:		2011-10-30
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	backup
-PORTVERSION=	3.0.25
+PORTVERSION=	3.0.27
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +11,6 @@ COMMENT=	Perform backup operations on remote and local environment
 
 RUN_DEPENDS=	rubygem-open4>=1.3.0:${PORTSDIR}/devel/rubygem-open4 \
 		rubygem-thor>=0.15.4:${PORTSDIR}/devel/rubygem-thor
-
-BROKEN=		unable to resolve dependencies
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
