@@ -19,8 +19,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
-USE_TK_BUILD=	82+
-USE_TK=		82+
+USE_TK_BUILD=	83+
+USE_TK=		83+
 GNU_CONFIGURE=	yes
 # Explicitly disable Tcl otherwise the configure script picks-up
 # crud from the $PATH like /usr/opt/Simili/tcl/.
