@@ -29,6 +29,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 REINPLACE_ARGS=	-I ""
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/icm_bootstrap \
@@ -103,7 +105,7 @@ do-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install man
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install doc
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install docdoc
 .endif
