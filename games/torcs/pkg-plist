@@ -2846,7 +2846,6 @@ share/games/torcs/wheels/trb1-6/wheel3d.png
 @dirrm share/games/torcs/cars
 @dirrm share/games/torcs
 @dirrmtry share/games
-@dirrmtry share/applications
 @dirrm lib/torcs/modules/track
 @dirrm lib/torcs/modules/telemetry
 @dirrm lib/torcs/modules/simu
