@@ -16,6 +16,8 @@ COMMENT=	An open source client for China Mobile's Fetion IM
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2013-01-04
 OPTIONS=	XSCREENSAVER	"Enable X screensaver extension"	on \
 		NOTIFY		"Enable libnotify support"		on \
 		GSTREAMER	"Enable gstreamer support"		on
