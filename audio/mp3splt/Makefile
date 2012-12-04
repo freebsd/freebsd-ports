@@ -1,12 +1,8 @@
-# New ports collection makefile for:	audio/mp3splt
-# Date created:				30.05.2003
-# Whom:					Ulrich Spoerlein <q@uni.de>
-#
+# Created by:	Ulrich Spoerlein <q@uni.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
