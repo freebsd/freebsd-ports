@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libcec
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	multimedia
-MASTER_SITES=	https://github.com/Pulse-Eight/libcec/zipball/libcec-2.0.2/
 
 MAINTAINER=	manuel.creach@icloud.com
-COMMENT=	Library that allows you to use the Pulse-Eight's HDMI-CEC Adapter
+COMMENT=	Library to control Pulse-Eight's HDMI-CEC adapter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FETCH_ARGS=	-Fpr
+USE_GITHUB=	yes
+GH_ACCOUNT=	Pulse-Eight
+GH_COMMIT=	178d498
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_AUTORECONF=	yes
@@ -24,8 +26,6 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-D_FILE_OFFSET_BITS=64
-
-WRKSRC=		${WRKDIR}/Pulse-Eight-libcec-a9ac151
 
 post-patch:
 	${REINPLACE_CMD} 's|-Werror||' \
