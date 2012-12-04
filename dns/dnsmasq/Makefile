@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.63
+DISTVERSION=	2.64
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_LOCAL}/
-#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 MASTER_SITE_SUBDIR=	mandree
 
 MAINTAINER=	mandree@FreeBSD.org
