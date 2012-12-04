@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache-jmeter
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	jmeter/binaries
@@ -73,7 +73,7 @@ do-install:
 	cd ${WRKSRC} \
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	  && ${FIND} ${DATAFILES} -type f -not -name '*.orig' -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} \
 	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
