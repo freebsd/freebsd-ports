@@ -5,6 +5,7 @@ include/bobcat/arg
 include/bobcat/argconfig
 include/bobcat/autoptr
 include/bobcat/bigint
+include/bobcat/binarysearch
 include/bobcat/binops
 include/bobcat/cgi
 include/bobcat/cidr
@@ -18,15 +19,12 @@ include/bobcat/digestbuf
 include/bobcat/encryptbuf
 include/bobcat/errno
 include/bobcat/fnwrap
-include/bobcat/fnwrap1
-include/bobcat/fnwrap1c
-include/bobcat/fnwrap2
-include/bobcat/fnwrap2c
 include/bobcat/foreach
 include/bobcat/fork
 include/bobcat/fswap
 include/bobcat/gethostent
 include/bobcat/glob
+include/bobcat/gs
 include/bobcat/hash
 include/bobcat/hmacbuf
 include/bobcat/hostent
@@ -62,7 +60,9 @@ include/bobcat/onekey
 include/bobcat/pattern
 include/bobcat/pipe
 include/bobcat/process
+include/bobcat/ptriter
 include/bobcat/randbuffer
+include/bobcat/ranger
 include/bobcat/readlinebuf
 include/bobcat/readlinehistory
 include/bobcat/readlinestream
@@ -71,6 +71,7 @@ include/bobcat/refcount
 include/bobcat/repeat
 include/bobcat/selector
 include/bobcat/serversocket
+include/bobcat/signal
 include/bobcat/socketbase
 include/bobcat/stat
 include/bobcat/string
@@ -82,6 +83,7 @@ include/bobcat/tablebase
 include/bobcat/tablebuf
 include/bobcat/tablelines
 include/bobcat/tablesupport
+include/bobcat/tempstream
 include/bobcat/typetrait
 include/bobcat/user
 include/bobcat/x2a
@@ -89,5 +91,5 @@ include/bobcat/xpointer
 lib/libbobcat.a
 lib/libbobcat.so
 lib/libbobcat.so.%%PORTVERSION%%
-lib/libbobcat.so.2
+lib/libbobcat.so.3
 @dirrm include/bobcat
