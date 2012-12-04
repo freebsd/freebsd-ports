@@ -9,7 +9,10 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+DEPRECATED=	Development has ceased 10 years ago
+EXPIRATION_DATE=2013-02-01
+
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	An X11 interface to Internet Relay Chat
 
 LICENSE=	BSD
