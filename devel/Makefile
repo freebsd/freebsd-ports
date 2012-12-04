@@ -2012,6 +2012,7 @@
     SUBDIR += p5-IO-Callback
     SUBDIR += p5-IO-Capture
     SUBDIR += p5-IO-CaptureOutput
+    SUBDIR += p5-IO-Detect
     SUBDIR += p5-IO-Digest
     SUBDIR += p5-IO-HTML
     SUBDIR += p5-IO-Handle-Util
