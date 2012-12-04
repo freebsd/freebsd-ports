@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 
 MAINTAINER=	pgj@FreeBSD.org
-COMMENT=	An Intelligent C-like Maker
+COMMENT=	Intelligent C-like Maker
 
 LICENSE=	GPLv3
 
@@ -27,25 +27,25 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
+REINPLACE_ARGS=	-I ""
 
 post-patch:
-	@${REINPLACE_CMD} -I "" -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/icm_bootstrap \
 		${WRKSRC}/icm_install \
 		${WRKSRC}/icm_prepare \
 		${WRKSRC}/scripts/convert
-	@${REINPLACE_CMD} -I "" -e 's|sed|gsed|g' \
+	@${REINPLACE_CMD} -e 's|sed|gsed|g' \
 		${WRKSRC}/scripts/conversions \
 		${WRKSRC}/scripts/convert
-	@${REINPLACE_CMD} -I "" -e 's|"usr/bin"|"bin"| ; \
+	@${REINPLACE_CMD} -e 's|"usr/bin"|"bin"| ; \
 		s|"usr/share/icmake"|"share/icmake-${PORTVERSION}"| ; \
 		s|"usr/share/man"|"man"| ; \
 		s|"usr/lib/icmake"|"lib/icmake-${PORTVERSION}"| ; \
 		s|"usr/share/doc/icmake"|"share/doc/icmake-${PORTVERSION}"| ; \
 		s|"usr/share/doc/icmake-doc"|"share/doc/icmake-${PORTVERSION}/doc"|' \
 		${WRKSRC}/INSTALL.im
-	@${REINPLACE_CMD} -I "" -e '\
+	@${REINPLACE_CMD} -e '\
 		s|"ar"|"${AR}"| ; \
 		s|"rsv"|"${ARFLAGS}"| ; \
 		s|"gcc"|"${CC}"| ; \
@@ -55,10 +55,10 @@ post-patch:
 		s|"rm"|"${RM}"| ; \
 		s|"strip"|"${STRIP_CMD}"|' \
 		${WRKSRC}/def/programs
-	@${REINPLACE_CMD} -I "" -e 's|cp -r|cp -R|' \
+	@${REINPLACE_CMD} -e 's|cp -r|cp -R|' \
 		${WRKSRC}/icm_bootstrap \
 		${WRKSRC}/icm_install
-	@${REINPLACE_CMD} -I "" -e 's|#!.*/usr/bin/icmake|#!${LOCALBASE}/bin/icmake|' \
+	@${REINPLACE_CMD} -e 's|#!.*/usr/bin/icmake|#!${LOCALBASE}/bin/icmake|' \
 		${WRKSRC}/comp/build \
 		${WRKSRC}/doc/icmake.1 \
 		${WRKSRC}/doc/manpage/icmake.yo \
@@ -75,7 +75,7 @@ post-patch:
 		${WRKSRC}/pp/build \
 		${WRKSRC}/rss/build \
 		${WRKSRC}/un/build
-	@${REINPLACE_CMD} -I "" -e 's|"gcc"|"${CC}"|g; s|-Wall -O2|${CFLAGS}|g' \
+	@${REINPLACE_CMD} -e 's|"gcc"|"${CC}"|g; s|-Wall -O2|${CFLAGS}|g' \
 		${WRKSRC}/comp/build \
 		${WRKSRC}/def/programs \
 		${WRKSRC}/doc/icmake.doc \
@@ -86,7 +86,7 @@ post-patch:
 		${WRKSRC}/pp/build \
 		${WRKSRC}/rss/build \
 		${WRKSRC}/un/build
-	@${REINPLACE_CMD} -I "" -e '\
+	@${REINPLACE_CMD} -e '\
 		s|/usr/lib/icmake|/usr/local/lib/icmake-${PORTVERSION}|g; \
 		s|/usr/share/icmake|/usr/local/share/icmake-${PORTVERSION}|g; \
 		s|/etc/icmake/icmake.cf|/usr/local/etc/icmake/icmake.rc|g' \
