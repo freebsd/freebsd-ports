@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Compress-Raw-Bzip2
-# Date created:		2007-01-16
-# Whom:			Thomas Abthorpe <thomas@goodking.ca>
-#
+# Created by: Thomas Abthorpe <thomas@goodking.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Compress-Raw-Bzip2
-PORTVERSION=	2.055
+PORTVERSION=	2.059
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
