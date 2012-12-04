@@ -508,9 +508,9 @@ bin/formido
 %%DATADIR%%/wpn_bar1.dat
 %%DATADIR%%/wpn_bar2.dat
 %%DATADIR%%/formido.cfg
-%%MUSIC:%%%%DATADIR%%/music1.ogg
-%%MUSIC:%%%%DATADIR%%/music2.ogg
-%%MUSIC:%%%%DATADIR%%/music3.ogg
-%%MUSIC:%%%%DATADIR%%/music_credits.ogg
-%%MUSIC:%%%%DATADIR%%/music_menu.ogg
+%%MUSIC%%%%DATADIR%%/music1.ogg
+%%MUSIC%%%%DATADIR%%/music2.ogg
+%%MUSIC%%%%DATADIR%%/music3.ogg
+%%MUSIC%%%%DATADIR%%/music_credits.ogg
+%%MUSIC%%%%DATADIR%%/music_menu.ogg
 @dirrm %%DATADIR%%

@@ -30,9 +30,9 @@ MUSIC_DESC=	Install music (6MB)
 .if ${PORT_OPTIONS:MMUSIC}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-music${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-PLIST_SUB+=	MUSIC:=""
+PLIST_SUB+=	MUSIC=""
 .else
-PLIST_SUB+=	MUSIC:="@comment "
+PLIST_SUB+=	MUSIC="@comment "
 .endif
 
 post-patch:
