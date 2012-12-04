@@ -905,6 +905,7 @@
     SUBDIR += tksol
     SUBDIR += tmw
     SUBDIR += tomatoes
+    SUBDIR += tong
     SUBDIR += toppler
     SUBDIR += torcs
     SUBDIR += tornado
