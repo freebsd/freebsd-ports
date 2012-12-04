@@ -2,6 +2,7 @@ bin/qxkb
 share/applications/qxkb.desktop
 share/pixmaps/qxkb.png
 share/qxkb/i18n/qxkb_ru.qm
+share/qxkb/i18n/qxkb_sr.qm
 share/qxkb/theme/default/add.png
 share/qxkb/theme/default/down.png
 share/qxkb/theme/default/language/ad.png
