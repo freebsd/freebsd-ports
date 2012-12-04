@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Mojo
-# Date created:		2008-12-29
-# Whom:			Murilo Opsfelder <mopsfelder@gmail.com>
-#
+# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Mojolicious
-PORTVERSION=	3.34
+PORTVERSION=	3.60
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -103,8 +99,8 @@ MAN3=		Mojo.3 \
 		Mojolicious::Commands.3 \
 		Mojolicious::Controller.3 \
 		Mojolicious::Guides.3 \
-		Mojolicious::Guides::CodingGuidelines.3 \
 		Mojolicious::Guides::Cookbook.3 \
+		Mojolicious::Guides::Contributing.3 \
 		Mojolicious::Guides::FAQ.3 \
 		Mojolicious::Guides::Growing.3 \
 		Mojolicious::Guides::Rendering.3 \
