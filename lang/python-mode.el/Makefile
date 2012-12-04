@@ -1,4 +1,4 @@
-# Created by: Dario Freni <saturnero@gufi.org
+# Created by: Dario Freni <saturnero@gufi.org>
 # $FreeBSD$
 
 PORTNAME=	python-mode.el
