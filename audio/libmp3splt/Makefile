@@ -1,13 +1,8 @@
-# New ports collection makefile for:	libmp3splt
-# Date created:		2009-03-26
-# Whom:			Anton Yuzhaninov <citrin@citrin.ru>
-#
+# Created by:	Anton Yuzhaninov <citrin@citrin.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
