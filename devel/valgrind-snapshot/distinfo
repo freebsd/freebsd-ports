@@ -1,2 +1,4 @@
-SHA256 (valgrind-10776.tar.bz2) = af9059adfdba63473f2073a1abd8f1c3446ce0884d6920f6e0807f0aa4f954d2
-SIZE (valgrind-10776.tar.bz2) = 5054309
+SHA256 (valgrind-freebsd-3.8.0.tar.bz2) = 0edf104f87f97712af0adab032c91c525c8d6e9e7b5f824f88f06a3f28249756
+SIZE (valgrind-freebsd-3.8.0.tar.bz2) = 7238044
+SHA256 (valgrind-freebsd-3.8.0-manpages.tar.bz2) = aeb586be19bafd583dd9faf5d616e574ee3ef13263ef886e4a3978d5542faf58
+SIZE (valgrind-freebsd-3.8.0-manpages.tar.bz2) = 23899
