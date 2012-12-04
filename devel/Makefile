@@ -2504,6 +2504,7 @@
     SUBDIR += p5-SVN-Web
     SUBDIR += p5-Safe-Isa
     SUBDIR += p5-Scalar-Defer
+    SUBDIR += p5-Scalar-Does
     SUBDIR += p5-Scalar-Listify
     SUBDIR += p5-Scalar-String
     SUBDIR += p5-Scope-Guard
