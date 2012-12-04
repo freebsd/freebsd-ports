@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-IO-Compress-Lzma
-# Date created:		2010-07-26
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Compress-Lzma
-PORTVERSION=	2.055
+PORTVERSION=	2.058
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -20,9 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Compress-Raw-Lzma>=2.052:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \
 		p5-IO-Compress>=2.052:${PORTSDIR}/archivers/p5-IO-Compress
-RUN_DEPENDS=	p5-Compress-Raw-Lzma>=2.052:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \
-		p5-IO-Compress>=2.052:${PORTSDIR}/archivers/p5-IO-Compress
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p7zip>=0:${PORTSDIR}/archivers/p7zip
