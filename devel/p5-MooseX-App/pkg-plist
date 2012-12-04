@@ -22,13 +22,14 @@
 %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta/Class.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Typo.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Version.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Version/Command.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Version/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Role.pm
 %%SITE_PERL%%/MooseX/App/Role/Base.pm
 %%SITE_PERL%%/MooseX/App/Role/Common.pm
-%%SITE_PERL%%/MooseX/App/Role/Simple.pm
 %%SITE_PERL%%/MooseX/App/Simple.pm
 %%SITE_PERL%%/MooseX/App/Tutorial.pod
 %%SITE_PERL%%/MooseX/App/Utils.pm
@@ -39,6 +40,8 @@
 @dirrmtry %%SITE_PERL%%/MooseX/App/Role
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Version/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Version
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Typo
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta
