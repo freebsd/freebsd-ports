@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	phyml_20090706
 
-MAINTAINER=	ben@sysadminschronicles.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple, fast, and accurate algorithm to estimate large phylogenies
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
