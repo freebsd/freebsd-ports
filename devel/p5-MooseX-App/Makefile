@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-MooseX-App
-# Date created:		2012-04-19
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-App
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Getopt>=0:${PORTSDIR}/devel/p5-MooseX-Getopt \
+		p5-MooseX-Getopt>=0.43:${PORTSDIR}/devel/p5-MooseX-Getopt \
 		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Pod-Elemental>=0:${PORTSDIR}/textproc/p5-Pod-Elemental \
@@ -43,6 +39,7 @@ MAN3=		MooseX::App.3 \
 		MooseX::App::Plugin::ConfigHome.3 \
 		MooseX::App::Plugin::Env.3 \
 		MooseX::App::Plugin::Fuzzy.3 \
+		MooseX::App::Plugin::Typo.3 \
 		MooseX::App::Plugin::Version.3 \
 		MooseX::App::Role.3 \
 		MooseX::App::Simple.3 \
