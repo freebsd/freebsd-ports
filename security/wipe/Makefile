@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File and block device wiping utility
 
 USE_BZIP2=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
-MAINTAINER=	f3cun3c02@sneakemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides in-memory LZMA compression and decompression functions
 
 PLIST_FILES=	include/lzlib.h \

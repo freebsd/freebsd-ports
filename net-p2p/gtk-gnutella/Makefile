@@ -48,7 +48,7 @@ PORTREVISION=	2
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	jamie@bishopston.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based Gnutella client
 
 USE_PERL5=	yes

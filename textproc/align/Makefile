@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text column alignment filter
 
 USE_PERL5=	yes

@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.${QT_VER}.tgz:${PORTNAME} \
 		${_DB_D}:db
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.${QT_VER}.tgz
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Romanian dictionaries databases and query application
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

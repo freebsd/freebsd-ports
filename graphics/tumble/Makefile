@@ -12,7 +12,7 @@ CATEGORIES=	graphics print
 MASTER_SITES=	http://tumble.brouhaha.com/download/ \
 		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a PDF file from image files
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
