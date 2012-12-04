@@ -23,6 +23,7 @@ USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
+USE_GCC=	any
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
