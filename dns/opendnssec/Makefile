@@ -1,21 +1,15 @@
-# New ports collection makefile for:   opendnssec
-# Date created:        28 December 2009
-# Whom:                Jaap Akkerhuis <jaap@NLnetLabs.nl>
-#
+# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.3.10
-PORTREVISION=	1
+PORTVERSION=	1.3.12
 CATEGORIES=	dns
-MASTER_SITES=	http://www.opendnssec.org/files/source/ \
-		http://dist.opendnssec.org/source/
+MASTER_SITES=	http://dist.opendnssec.org/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
-BUILD_DEPENDS=	ldns>=1.6.15:${PORTSDIR}/dns/ldns
+BUILD_DEPENDS=	ldns>=1.6.16:${PORTSDIR}/dns/ldns
 LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns
 
 GNU_CONFIGURE=	yes
@@ -34,8 +28,8 @@ MAN7=		opendnssec.7
 MAN8=		ods-control.8 ods-enforcerd.8 ods-signer.8 ods-signerd.8
 
 OPTIONS_DEFINE=		SOFTHSM AUDITOR MYSQL
-SOFTHSM_DESC=		Build/update SOFTHSM as well.
-AUDITOR_DESC=		Build with Auditor.
+SOFTHSM_DESC=		Build/update SOFTHSM as well
+AUDITOR_DESC=		Build with Auditor
 OPTIONS_DEFAULT=	AUDITOR
 
 .include <bsd.port.options.mk>
