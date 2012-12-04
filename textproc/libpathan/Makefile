@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libpathan
-# Date created:				Nov 4 2003
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libpathan
 PORTVERSION=	2.0
@@ -17,6 +13,9 @@ COMMENT=	Validating XML parser from the Apache XML Project
 
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/xerces-c2:extract
+
+DEPRECATED=	Does not build and upstream has discontinued the project and advises that it has been replaced by textproc/xqilla
+EXPIRATION_DATE=2013-01-04
 
 USE_BISON=	build
 USE_GMAKE=	yes
