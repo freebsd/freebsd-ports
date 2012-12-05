@@ -1,0 +1,7 @@
+bin/remoos
+%%SITE_PERL%%/Moos.pm
+%%SITE_PERL%%/Moos/Role.pm
+%%SITE_PERL%%/oos.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moos/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moos
+@dirrm %%SITE_PERL%%/Moos
