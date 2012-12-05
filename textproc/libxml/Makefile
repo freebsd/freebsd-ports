@@ -14,6 +14,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML parser library for GNOME
 
+DEPRECATED=	Last release in 2002, unsupported by developers
+
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

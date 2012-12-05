@@ -19,6 +19,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
 
+DEPRECATED=	Last release in 2000, unsupported by developers
+
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
