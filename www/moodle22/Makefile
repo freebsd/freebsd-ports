@@ -17,7 +17,7 @@ COMMENT=	Course management system based on social constructionism
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle-1.*.* moodle-2.3.*
+CONFLICTS=	moodle-1.*.* moodle-2.3.* moodle-2.4.*
 LATEST_LINK=	moodle22
 
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
