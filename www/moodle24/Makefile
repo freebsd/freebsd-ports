@@ -75,7 +75,7 @@ do-install:
 		>> ${TMPPLIST}
 	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
-.if !defined(WITHOUT_MIMETEX)
+.if ${PORT_OPTIONS:MIMETEX}
 	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
 
