@@ -242,6 +242,7 @@
     SUBDIR += p5-Xymon-Client
     SUBDIR += p5-Xymon-Server
     SUBDIR += p5-Zenoss
+    SUBDIR += p5-jmx4perl
     SUBDIR += packit
     SUBDIR += pads
     SUBDIR += pancho
