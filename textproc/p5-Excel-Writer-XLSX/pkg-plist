@@ -1,3 +1,4 @@
+bin/extract_vba
 %%SITE_PERL%%/Excel/Writer/XLSX.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Area.pm
@@ -5,6 +6,7 @@
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Column.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Line.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Pie.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Radar.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Scatter.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Stock.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chartsheet.pm
@@ -23,7 +25,6 @@
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Theme.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/VML.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriter.pm
-%%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriterSimple.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Shape.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Utility.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Workbook.pm
