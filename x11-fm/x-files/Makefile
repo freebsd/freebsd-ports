@@ -15,6 +15,9 @@ DISTNAME=	X-Files-${PORTVERSION}
 MAINTAINER=	dmaddox099@yahoo.com
 COMMENT=	A nice Tk-based filemanager
 
+DEPRECATED=	Project has been abandoned
+EXPIRATION_DATE=2013-02-01
+
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
