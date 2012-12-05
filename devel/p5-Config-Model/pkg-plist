@@ -5,11 +5,6 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/Backend/Any.pm
-%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg.pm
-%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Control.pm
-%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Copyright.pm
-%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Patch.pm
-%%SITE_PERL%%/Config/Model/Backend/Debian/DpkgSyntax.pm
 %%SITE_PERL%%/Config/Model/Backend/Fstab.pm
 %%SITE_PERL%%/Config/Model/Backend/IniFile.pm
 %%SITE_PERL%%/Config/Model/Backend/PlainFile.pm
@@ -18,7 +13,6 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/BackendMgr.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Cookbook/CreateModelFromDoc.pod
-%%SITE_PERL%%/Config/Model/Debian/Dependency.pm
 %%SITE_PERL%%/Config/Model/Describe.pm
 %%SITE_PERL%%/Config/Model/DumpAsData.pm
 %%SITE_PERL%%/Config/Model/Dumper.pm
@@ -46,36 +40,8 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/ValueComputer.pm
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/Warper.pm
-%%SITE_PERL%%/Config/Model/application.d/dpkg
-%%SITE_PERL%%/Config/Model/application.d/dpkg-control
-%%SITE_PERL%%/Config/Model/application.d/dpkg-copyright
 %%SITE_PERL%%/Config/Model/application.d/multistrap
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/FileLicense.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/FileLicense.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/GlobalLicense.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/GlobalLicense.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Patch.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Patch.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source/Options.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source/Options.pod
+%%SITE_PERL%%/Config/Model/extensions/cme-gen-class-pod
 %%SITE_PERL%%/Config/Model/models/Fstab.pl
 %%SITE_PERL%%/Config/Model/models/Fstab.pod
 %%SITE_PERL%%/Config/Model/models/Fstab/CommonOptions.pl
@@ -203,19 +169,12 @@ bin/config-edit
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Multistrap
 @dirrmtry %%SITE_PERL%%/Config/Model/models/LCDd
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Fstab
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/models
+@dirrmtry %%SITE_PERL%%/Config/Model/extensions
 @dirrmtry %%SITE_PERL%%/Config/Model/application.d
 @dirrmtry %%SITE_PERL%%/Config/Model/Value
 @dirrmtry %%SITE_PERL%%/Config/Model/Manual
-@dirrmtry %%SITE_PERL%%/Config/Model/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/Cookbook
-@dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg
-@dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend
 @dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
