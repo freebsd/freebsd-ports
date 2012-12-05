@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-App-Genpass
-# Date created:		2011-10-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-Genpass
-PORTVERSION=	2.32
+PORTVERSION=	2.33
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
