@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Term/Clui/FileSelect.pm
+%%SITE_PERL%%/Term/Clui.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Clui/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Clui
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrm %%SITE_PERL%%/Term/Clui
+@dirrmtry %%SITE_PERL%%/Term

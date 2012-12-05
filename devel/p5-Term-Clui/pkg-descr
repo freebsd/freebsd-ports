@@ -1,0 +1,9 @@
+Term::Clui offers a high-level user interface to give the user of command-line
+applications a consistent "look and feel". Its metaphor for the computer is as
+a human-like conversation-partner, and as each question/response is completed
+it is summarised onto one line, and remains on screen, so that the history of
+the session gradually accumulates on the screen and is available for review, or
+for cut/paste. This user interface can therefore be intermixed with standard
+applications which write to STDOUT or STDERR, such as make, pgp, rcs etc.
+
+WWW: http://search.cpan.org/dist/Term-Clui/
