@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Excel-Writer-XLSX
-# Date created:		2011-10-02
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Excel-Writer-XLSX
-PORTVERSION=	0.51
+PORTVERSION=	0.59
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JMCNAMARA
@@ -25,6 +21,7 @@ TEST_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 
 PERL_CONFIGURE=	yes
 
+MAN1=		extract_vba.1
 MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Chart.3 \
 		Excel::Writer::XLSX::Chart::Area.3 \
@@ -32,6 +29,7 @@ MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Chart::Column.3 \
 		Excel::Writer::XLSX::Chart::Line.3 \
 		Excel::Writer::XLSX::Chart::Pie.3 \
+		Excel::Writer::XLSX::Chart::Radar.3 \
 		Excel::Writer::XLSX::Chart::Scatter.3 \
 		Excel::Writer::XLSX::Chart::Stock.3 \
 		Excel::Writer::XLSX::Chartsheet.3 \
@@ -50,7 +48,6 @@ MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Package::Theme.3 \
 		Excel::Writer::XLSX::Package::VML.3 \
 		Excel::Writer::XLSX::Package::XMLwriter.3 \
-		Excel::Writer::XLSX::Package::XMLwriterSimple.3 \
 		Excel::Writer::XLSX::Shape.3 \
 		Excel::Writer::XLSX::Utility.3 \
 		Excel::Writer::XLSX::Workbook.3 \
