@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chromium
-# Date created:				17 Dec, 2003
-# Whom:					Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chromium-bsu
 PORTVERSION=	0.9.15
@@ -14,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
 
-LIB_DEPENDS=	glpng.1:${PORTSDIR}/graphics/glpng \
-		ftgl.2:${PORTSDIR}/graphics/ftgl \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	glpng:${PORTSDIR}/graphics/glpng \
+		ftgl:${PORTSDIR}/graphics/ftgl \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu
@@ -29,12 +25,13 @@ PORTDOCS=	*
 
 MAN6=		chromium-bsu.6
 
-OPTIONS=	SDL_MIXER "Use SDL_mixer instead of openal for audio" off \
-		GLUT	"Use GLUT instead of SDL for video" off
+OPTIONS_DEFINE=	SDL_MIXER GLUT
+SDL_MIXER_DESC=	Use SDL_mixer instead of OpenAL for audio
+GLUT_DESC=	Use GLUT instead of SDL for video
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GLUT)
+.if ${PORT_OPTIONS:MGLUT}
 USE_GL+=	glut
 CONFIGURE_ARGS+=--disable-sdl --disable-sdlimage
 .else
@@ -42,7 +39,7 @@ USE_SDL+=	sdl image
 CONFIGURE_ARGS+=--disable-glut
 .endif
 
-.if defined(WITH_SDL_MIXER)
+.if ${PORT_OPTIONS:MSDL_MIXER}
 USE_SDL+=	mixer
 CONFIGURE_ARGS+=--disable-openal
 .else
@@ -50,7 +47,7 @@ USE_OPENAL=	al alut
 CONFIGURE_ARGS+=--disable-sdlmixer
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -64,8 +61,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\([A-Z][A-Z_]*[A-Z]\)\+="\(.*\)"$$|\1="$$\1 \2"|; \
 		s|\([A-Z][A-Z_]*[A-Z]\)\+=\(.*\)$$|\1="$$\1 \2"|' \
 		${WRKSRC}/configure
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/doc / d' ${WRKSRC}/data/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
