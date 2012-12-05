@@ -1,12 +1,8 @@
-# New ports collection makefile for:	vidalia
-# Date created:		2007-02-19
-# Whom:			Fabian Keil <fk@fabiankeil.de>
-#
+# Created by: Fabian Keil <fk@fabiankeil.de>
 # $FreeBSD$
-#
 
 PORTNAME=	vidalia
-PORTVERSION=	0.2.20
+PORTVERSION=	0.2.21
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	https://archive.torproject.org/tor-package-archive/vidalia/ \
 		https://www.torproject.org/dist/vidalia/ \
@@ -15,7 +11,7 @@ MASTER_SITES=	https://archive.torproject.org/tor-package-archive/vidalia/ \
 		http://www.torservers.net/mirrors/torproject.org/dist/vidalia/
 
 MAINTAINER=	fk@fabiankeil.de
-COMMENT=	A graphical Tor controller based on Qt 4.x
+COMMENT=	Graphical Tor controller based on Qt 4.x
 
 USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
