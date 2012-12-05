@@ -1,0 +1,64 @@
+bin/cacti_jmx4perl
+bin/check_jmx4perl
+bin/j4psh
+bin/jmx4perl
+bin/jolokia
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier/GnuPGVerifier.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier/SHA1Verifier.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier/ChecksumVerifier.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier/OpenPGPVerifier.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier/MD5Verifier.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier/PGPKey.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Meta.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Logger.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/DownloadAgent.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/WebXmlHandler.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/ArtifactHandler.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent/UserAgent.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Alias/Object.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Command/Global.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Command/MBean.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Command/Server.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Shell.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/CommandHandler.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Command.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/ServerHandler.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh/CompletionHandler.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Nagios/CactiJmx4Perl.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Nagios/SingleCheck.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Nagios/CheckJmx4Perl.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Tomcat.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Terracotta.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/ActiveMQ.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Unknown.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/SpringDM.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Jonas.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/BaseHandler.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Resin.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/JBoss.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Glassfish.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Jetty.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Websphere.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Geronimo.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Weblogic.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Product/Hadoop.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/J4psh.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Agent.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Request.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Response.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Util.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Alias.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Config.pm
+%%SITE_PERL%%/JMX/Jmx4Perl/Manual.pod
+%%SITE_PERL%%/JMX/Jmx4Perl.pm
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Alias
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Command
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/J4psh
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Nagios
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Product
+@dirrm %%SITE_PERL%%/JMX/Jmx4Perl
+@dirrmtry %%SITE_PERL%%/JMX
