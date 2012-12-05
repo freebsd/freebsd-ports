@@ -2,7 +2,141 @@
 bin/xmlcopyeditor
 share/applications/xmlcopyeditor.desktop
 share/pixmaps/xmlcopyeditor.png
-%%DATADIR%%/help/Table of Contents.hhc
+%%DATADIR%%/catalog/catalog
+%%DATADIR%%/dtd/NewsML_1.2.dtd
+%%DATADIR%%/dtd/OUGenericFull.dtd
+%%DATADIR%%/dtd/dita/catalog-dita.txt
+%%DATADIR%%/dtd/dita/catalog-dita.xml
+%%DATADIR%%/dtd/dita/concept.dtd
+%%DATADIR%%/dtd/dita/concept.mod
+%%DATADIR%%/dtd/dita/ditabase.dtd
+%%DATADIR%%/dtd/dita/highlight-domain.ent
+%%DATADIR%%/dtd/dita/highlight-domain.mod
+%%DATADIR%%/dtd/dita/map.dtd
+%%DATADIR%%/dtd/dita/map.mod
+%%DATADIR%%/dtd/dita/mapgroup.ent
+%%DATADIR%%/dtd/dita/mapgroup.mod
+%%DATADIR%%/dtd/dita/meta_xml.mod
+%%DATADIR%%/dtd/dita/meta_xml.mod.old
+%%DATADIR%%/dtd/dita/programming-domain.ent
+%%DATADIR%%/dtd/dita/programming-domain.mod
+%%DATADIR%%/dtd/dita/reference.dtd
+%%DATADIR%%/dtd/dita/reference.mod
+%%DATADIR%%/dtd/dita/software-domain.ent
+%%DATADIR%%/dtd/dita/software-domain.mod
+%%DATADIR%%/dtd/dita/task.dtd
+%%DATADIR%%/dtd/dita/task.mod
+%%DATADIR%%/dtd/dita/tbl_xml.mod
+%%DATADIR%%/dtd/dita/topic.dtd
+%%DATADIR%%/dtd/dita/topic.mod
+%%DATADIR%%/dtd/dita/topic_class.ent
+%%DATADIR%%/dtd/dita/topic_defn.ent
+%%DATADIR%%/dtd/dita/ui-domain.ent
+%%DATADIR%%/dtd/dita/ui-domain.mod
+%%DATADIR%%/dtd/dita/utilities-domain.ent
+%%DATADIR%%/dtd/dita/utilities-domain.mod
+%%DATADIR%%/dtd/docbook.dtd
+%%DATADIR%%/dtd/docbook/4.4/calstblx.dtd
+%%DATADIR%%/dtd/docbook/4.4/catalog.xml
+%%DATADIR%%/dtd/docbook/4.4/dbcentx.mod
+%%DATADIR%%/dtd/docbook/4.4/dbgenent.mod
+%%DATADIR%%/dtd/docbook/4.4/dbhierx.mod
+%%DATADIR%%/dtd/docbook/4.4/dbnotnx.mod
+%%DATADIR%%/dtd/docbook/4.4/dbpoolx.mod
+%%DATADIR%%/dtd/docbook/4.4/docbook.cat
+%%DATADIR%%/dtd/docbook/4.4/docbookx.dtd
+%%DATADIR%%/dtd/docbook/4.4/ent/isoamsa.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isoamsb.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isoamsc.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isoamsn.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isoamso.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isoamsr.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isobox.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isocyr1.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isocyr2.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isodia.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isogrk1.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isogrk2.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isogrk3.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isogrk4.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isolat1.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isolat2.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isonum.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isopub.ent
+%%DATADIR%%/dtd/docbook/4.4/ent/isotech.ent
+%%DATADIR%%/dtd/docbook/4.4/htmltblx.mod
+%%DATADIR%%/dtd/docbook/4.4/soextblx.dtd
+%%DATADIR%%/dtd/docbook/5.0b/docbook.dtd
+%%DATADIR%%/dtd/lzx.dtd
+%%DATADIR%%/dtd/moodle_glossary.dtd
+%%DATADIR%%/dtd/moodle_xml.dtd
+%%DATADIR%%/dtd/rss2.dtd
+%%DATADIR%%/dtd/tei/p4/catalog.tei
+%%DATADIR%%/dtd/tei/p4/dummy.dtd
+%%DATADIR%%/dtd/tei/p4/index.xml
+%%DATADIR%%/dtd/tei/p4/tei2.dtd
+%%DATADIR%%/dtd/tei/p4/teiana2.dtd
+%%DATADIR%%/dtd/tei/p4/teiana2.ent
+%%DATADIR%%/dtd/tei/p4/teiback2.dtd
+%%DATADIR%%/dtd/tei/p4/teicatalog.xml
+%%DATADIR%%/dtd/tei/p4/teicert2.dtd
+%%DATADIR%%/dtd/tei/p4/teiclas2.ent
+%%DATADIR%%/dtd/tei/p4/teicore2.dtd
+%%DATADIR%%/dtd/tei/p4/teicorp2.dtd
+%%DATADIR%%/dtd/tei/p4/teidict2.dtd
+%%DATADIR%%/dtd/tei/p4/teidict2.ent
+%%DATADIR%%/dtd/tei/p4/teidram2.dtd
+%%DATADIR%%/dtd/tei/p4/teidram2.ent
+%%DATADIR%%/dtd/tei/p4/teifig2.dtd
+%%DATADIR%%/dtd/tei/p4/teifig2.ent
+%%DATADIR%%/dtd/tei/p4/teifron2.dtd
+%%DATADIR%%/dtd/tei/p4/teifs2.dtd
+%%DATADIR%%/dtd/tei/p4/teifsd2.dtd
+%%DATADIR%%/dtd/tei/p4/teigen2.dtd
+%%DATADIR%%/dtd/tei/p4/teigis2.ent
+%%DATADIR%%/dtd/tei/p4/teihdr2.dtd
+%%DATADIR%%/dtd/tei/p4/teikey2.ent
+%%DATADIR%%/dtd/tei/p4/teilink2.dtd
+%%DATADIR%%/dtd/tei/p4/teilink2.ent
+%%DATADIR%%/dtd/tei/p4/teilite.dec
+%%DATADIR%%/dtd/tei/p4/teilitex.dtd
+%%DATADIR%%/dtd/tei/p4/teilitex.ent
+%%DATADIR%%/dtd/tei/p4/teimix2.dtd
+%%DATADIR%%/dtd/tei/p4/teind2.dtd
+%%DATADIR%%/dtd/tei/p4/teind2.ent
+%%DATADIR%%/dtd/tei/p4/teinet2.dtd
+%%DATADIR%%/dtd/tei/p4/teipl2.dtd
+%%DATADIR%%/dtd/tei/p4/teipros2.dtd
+%%DATADIR%%/dtd/tei/p4/teisgml.dec
+%%DATADIR%%/dtd/tei/p4/teishd2.dtd
+%%DATADIR%%/dtd/tei/p4/teispok2.dtd
+%%DATADIR%%/dtd/tei/p4/teispok2.ent
+%%DATADIR%%/dtd/tei/p4/teistr2.dtd
+%%DATADIR%%/dtd/tei/p4/teitc2.dtd
+%%DATADIR%%/dtd/tei/p4/teitc2.ent
+%%DATADIR%%/dtd/tei/p4/teite2f.dtd
+%%DATADIR%%/dtd/tei/p4/teite2n.dtd
+%%DATADIR%%/dtd/tei/p4/teiterm2.dtd
+%%DATADIR%%/dtd/tei/p4/teiterm2.ent
+%%DATADIR%%/dtd/tei/p4/teitran2.dtd
+%%DATADIR%%/dtd/tei/p4/teitran2.ent
+%%DATADIR%%/dtd/tei/p4/teitsd2.dtd
+%%DATADIR%%/dtd/tei/p4/teivers2.dtd
+%%DATADIR%%/dtd/tei/p4/teivers2.ent
+%%DATADIR%%/dtd/tei/p4/teiwsd2.dtd
+%%DATADIR%%/dtd/tei/p4/teixlite.dec
+%%DATADIR%%/dtd/tei/p5/tei_all.dtd
+%%DATADIR%%/dtd/xhtml-lat1.ent
+%%DATADIR%%/dtd/xhtml-special.ent
+%%DATADIR%%/dtd/xhtml-symbol.ent
+%%DATADIR%%/dtd/xhtml1-frameset.dtd
+%%DATADIR%%/dtd/xhtml1-strict.dtd
+%%DATADIR%%/dtd/xhtml1-transitional.dtd
+%%DATADIR%%/dtd/xliff.dtd
+%%DATADIR%%/dtd/xslt10.dtd
+%%DATADIR%%/dtd/xtm1.dtd
+%%DATADIR%%/dtd/xtm2.dtd
+%%DATADIR%%/help/Table_of_Contents.hhc
 %%DATADIR%%/help/html/appendix.html
 %%DATADIR%%/help/html/association.html
 %%DATADIR%%/help/html/attribute_hiding.html
@@ -63,10 +197,12 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/png/stock_spellcheck.png
 %%DATADIR%%/png/stock_undo-16.png
 %%DATADIR%%/png/stock_undo.png
+%%DATADIR%%/po/ca/messages.mo
 %%DATADIR%%/po/de/messages.mo
-%%DATADIR%%/po/en_us/messages.po
 %%DATADIR%%/po/es/messages.mo
 %%DATADIR%%/po/fr/messages.mo
+%%DATADIR%%/po/it/messages.mo
+%%DATADIR%%/po/nl/messages.mo
 %%DATADIR%%/po/ru/messages.mo
 %%DATADIR%%/po/sk/messages.mo
 %%DATADIR%%/po/sv/messages.mo
@@ -124,52 +260,52 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/rulesets/American.xml
 %%DATADIR%%/rulesets/Commonwealth.xml
 %%DATADIR%%/rulesets/Contractions.xml
-%%DATADIR%%/rulesets/Default dictionary and style.xml
-%%DATADIR%%/rulesets/Default dictionary.xml
-%%DATADIR%%/rulesets/Default style.xml
+%%DATADIR%%/rulesets/Default_dictionary.xml
+%%DATADIR%%/rulesets/Default_dictionary_and_style.xml
+%%DATADIR%%/rulesets/Default_style.xml
 %%DATADIR%%/rulesets/Disability.xml
 %%DATADIR%%/rulesets/Diversity.xml
 %%DATADIR%%/rulesets/Ethnicity.xml
 %%DATADIR%%/rulesets/Gender.xml
 %%DATADIR%%/rulesets/Hyphenation.xml
 %%DATADIR%%/rulesets/Ise.xml
-%%DATADIR%%/rulesets/Ize and yse.xml
 %%DATADIR%%/rulesets/Ize.xml
+%%DATADIR%%/rulesets/Ize_and_yse.xml
 %%DATADIR%%/rulesets/Postcolonial.xml
 %%DATADIR%%/rulesets/Punctuation.xml
 %%DATADIR%%/rulesets/Query.xml
 %%DATADIR%%/rulesets/Religion.xml
 %%DATADIR%%/rulesets/Repetition.xml
-%%DATADIR%%/rulesets/White space.xml
+%%DATADIR%%/rulesets/White_space.xml
 %%DATADIR%%/rulesets/ruleset.css
 %%DATADIR%%/rulesets/ruleset.ctm
 %%DATADIR%%/rulesets/ruleset.rld
 %%DATADIR%%/rulesets/ruleset.xsd
-%%DATADIR%%/templates/Custom rule set.xml
-%%DATADIR%%/templates/DITA Concept.xml
-%%DATADIR%%/templates/DITA Map.xml
-%%DATADIR%%/templates/DITA Task.xml
-%%DATADIR%%/templates/DITA Topic.xml
+%%DATADIR%%/templates/Custom_rule_set.xml
+%%DATADIR%%/templates/DITA_Concept.xml
+%%DATADIR%%/templates/DITA_Map.xml
+%%DATADIR%%/templates/DITA_Task.xml
+%%DATADIR%%/templates/DITA_Topic.xml
 %%DATADIR%%/templates/DTD.dtd
-%%DATADIR%%/templates/DocBook 4.4 article.xml
-%%DATADIR%%/templates/DocBook 4.4 book.xml
-%%DATADIR%%/templates/DocBook 5.0b article.xml
-%%DATADIR%%/templates/DocBook 5.0b book.xml
-%%DATADIR%%/templates/Moodle glossary.xml
-%%DATADIR%%/templates/Moodle quiz.xml
-%%DATADIR%%/templates/NewsML 1.2.xml
+%%DATADIR%%/templates/DocBook_4.4_article.xml
+%%DATADIR%%/templates/DocBook_4.4_book.xml
+%%DATADIR%%/templates/DocBook_5.0b_article.xml
+%%DATADIR%%/templates/DocBook_5.0b_book.xml
+%%DATADIR%%/templates/Moodle_glossary.xml
+%%DATADIR%%/templates/Moodle_quiz.xml
+%%DATADIR%%/templates/NewsML_1.2.xml
 %%DATADIR%%/templates/OpenLaszlo.lzx
-%%DATADIR%%/templates/OpenLearn document.xml
-%%DATADIR%%/templates/RELAX NG grammar.rng
-%%DATADIR%%/templates/RSS 2.0.rss
-%%DATADIR%%/templates/TEI document.xml
-%%DATADIR%%/templates/WordprocessingML document.xml
-%%DATADIR%%/templates/XHTML 1.0 Strict document.html
-%%DATADIR%%/templates/XLIFF document.xlf
-%%DATADIR%%/templates/XML Schema.xsd
-%%DATADIR%%/templates/XML Topic Map 1.0.xtm
-%%DATADIR%%/templates/XML Topic Map 2.0.xtm
-%%DATADIR%%/templates/XSL stylesheet.xsl
+%%DATADIR%%/templates/OpenLearn_document.xml
+%%DATADIR%%/templates/RELAX_NG_grammar.rng
+%%DATADIR%%/templates/RSS_2.0.rss
+%%DATADIR%%/templates/TEI_document.xml
+%%DATADIR%%/templates/WordprocessingML_document.xml
+%%DATADIR%%/templates/XHTML_1.0_Strict_document.html
+%%DATADIR%%/templates/XLIFF_document.xlf
+%%DATADIR%%/templates/XML_Schema.xsd
+%%DATADIR%%/templates/XML_Topic_Map_1.0.xtm
+%%DATADIR%%/templates/XML_Topic_Map_2.0.xtm
+%%DATADIR%%/templates/XSL_stylesheet.xsl
 %%DATADIR%%/xpm/appicon.xpm
 %%DATADIR%%/xpm/stock_copy_16.xpm
 %%DATADIR%%/xpm/stock_cut_16.xpm
@@ -193,6 +329,15 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/xpm/stock_spellcheck.xpm
 %%DATADIR%%/xpm/stock_spellcheck_16.xpm
 %%DATADIR%%/xpm/stock_undo_16.xpm
+%%DATADIR%%/xsl/openlearn2daisyhtml/heading.xsl
+%%DATADIR%%/xsl/openlearn2daisyhtml/inline.xsl
+%%DATADIR%%/xsl/openlearn2daisyhtml/item.xsl
+%%DATADIR%%/xsl/openlearn2daisyhtml/lang.xsl
+%%DATADIR%%/xsl/openlearn2daisyhtml/object.xsl
+%%DATADIR%%/xsl/openlearn2daisyhtml/openlearn2daisyhtml.xsl
+%%DATADIR%%/xsl/openlearn2daisyhtml/structure.xsl
+@dirrm %%DATADIR%%/xsl/openlearn2daisyhtml
+@dirrm %%DATADIR%%/xsl
 @dirrm %%DATADIR%%/xpm
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/rulesets
@@ -205,14 +350,26 @@ share/pixmaps/xmlcopyeditor.png
 @dirrm %%DATADIR%%/po/sv
 @dirrm %%DATADIR%%/po/sk
 @dirrm %%DATADIR%%/po/ru
+@dirrm %%DATADIR%%/po/nl
+@dirrm %%DATADIR%%/po/it
 @dirrm %%DATADIR%%/po/fr
-@dirrm %%DATADIR%%/po/en_us
 @dirrm %%DATADIR%%/po/es
 @dirrm %%DATADIR%%/po/de
+@dirrm %%DATADIR%%/po/ca
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/png
 @dirrm %%DATADIR%%/help/html
 @dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/dtd/tei/p5
+@dirrm %%DATADIR%%/dtd/tei/p4
+@dirrm %%DATADIR%%/dtd/tei
+@dirrm %%DATADIR%%/dtd/docbook/5.0b
+@dirrm %%DATADIR%%/dtd/docbook/4.4/ent
+@dirrm %%DATADIR%%/dtd/docbook/4.4
+@dirrm %%DATADIR%%/dtd/docbook
+@dirrm %%DATADIR%%/dtd/dita
+@dirrm %%DATADIR%%/dtd
+@dirrm %%DATADIR%%/catalog
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps
 @dirrmtry share/applications

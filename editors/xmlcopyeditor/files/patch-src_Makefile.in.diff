@@ -1,21 +1,33 @@
---- src/Makefile.in.orig	2009-04-14 11:38:17.000000000 -0500
-+++ src/Makefile.in	2010-10-02 16:22:21.000000000 -0500
-@@ -228,4 +228,4 @@
+--- src/Makefile.in.orig	2012-10-07 15:20:23.000000000 +0200
++++ src/Makefile.in	2012-12-02 17:24:51.000000000 +0100
+@@ -260,8 +260,8 @@
+ # these are the headers for your project
+ noinst_HEADERS = $(srcdir)/*.h
  xmlcopyeditordir = ${prefix}/share/xmlcopyeditor
 -pixmapdir = /usr/share/pixmaps
 -applicationsdir = /usr/share/applications
 +pixmapdir = ${prefix}/share/pixmaps
 +applicationsdir = ${prefix}/share/applications
  
-@@ -269,11 +269,2 @@
- 	help/*.* help/html/*.* \
--	copying/*.txt copying/boost_shared_ptr/* \
--	copying/Expat/* copying/libxml2/* copying/libxslt/* \
--	copying/PCRE/* copying/Scintilla/* \
--	copying/wxStyledTextCtrl/* \
--	copying/wxStEditor/* \
--	copying/xmlcopyeditor/* \
--	copying/Aspell/* \
--	copying/Apache/LICENSE-2.0 \
--	copying/Apache/LICENSE-2_files/* \
- 	po/sk/messages.mo \
+ # the application source, library search path, and link libraries
+ xmlcopyeditor_SOURCES = xmlcopyeditor.cpp associatedialog.cpp casehandler.cpp \
+@@ -287,19 +287,6 @@
+ 	-lexpat -lxslt -lxml2 -lpcre -lxerces-c $(ASPELL_LIBS) $(ENCHANT_LIBS)
+ 
+ nobase_dist_xmlcopyeditor_DATA = $(srcdir)/catalog/catalog \
+-	$(srcdir)/copying/*.txt \
+-	$(srcdir)/copying/Apache/LICENSE-2.0 \
+-	$(srcdir)/copying/Apache/LICENSE-2_files/* \
+-	$(srcdir)/copying/Aspell/* \
+-	$(srcdir)/copying/boost_shared_ptr/* \
+-	$(srcdir)/copying/Expat/* \
+-	$(srcdir)/copying/libxml2/* \
+-	$(srcdir)/copying/libxslt/* \
+-	$(srcdir)/copying/PCRE/* \
+-	$(srcdir)/copying/Scintilla/* \
+-	$(srcdir)/copying/wxStEditor/* \
+-	$(srcdir)/copying/wxStyledTextCtrl/* \
+-	$(srcdir)/copying/xmlcopyeditor/* \
+ 	$(srcdir)/dtd/*.* \
+ 	$(srcdir)/dtd/dita/*.* \
+ 	$(srcdir)/dtd/docbook/4.4/*.* \
