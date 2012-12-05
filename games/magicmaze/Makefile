@@ -1,7 +1,5 @@
 # Created by: nemysis@gmx.ch
-#
 # $FreeBSD$
-#
 
 PORTNAME=	magicmaze
 PORTVERSION=	1.4.3.6
@@ -32,7 +30,7 @@ SUB_FILES=	${PORTNAME}
 SUB_LIST=	RUBY=${RUBY}
 
 DESKTOP_ENTRIES="Magic Maze" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
 .include <bsd.port.options.mk>
 
