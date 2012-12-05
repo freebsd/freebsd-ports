@@ -1,0 +1,27 @@
+--- configure.orig	2012-12-05 10:09:59.000000000 +0100
++++ configure	2012-12-05 10:13:45.000000000 +0100
+@@ -12867,13 +12867,13 @@
+ 
+ 
+ if test "${WIN32}" = "no"; then
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
++		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -lc" >&5
+ $as_echo_n "checking for dlopen in -ldl... " >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -12908,7 +12908,7 @@
+ #define HAVE_LIBDL 1
+ _ACEOF
+ 
+-  LIBS="-ldl $LIBS"
++  LIBS="$LIBS"
+ 
+ else
+   as_fn_error $? "libdl required" "$LINENO" 5
