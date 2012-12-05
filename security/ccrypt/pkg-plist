@@ -1,10 +1,11 @@
 bin/ccat
 bin/ccdecrypt
 bin/ccencrypt
+bin/ccguess
 bin/ccrypt
 %%NLS%%share/locale/de/LC_MESSAGES/ccrypt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ccrypt.mo
-%%PORTDOCS%%share/doc/ccrypt/README
-%%PORTDOCS%%share/doc/ccrypt/ccrypt.html
-%%PORTDOCS%%share/doc/ccrypt/cypfaq01.txt
-%%PORTDOCS%%@dirrm share/doc/ccrypt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ccrypt.html
+%%PORTDOCS%%%%DOCSDIR%%/cypfaq01.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
