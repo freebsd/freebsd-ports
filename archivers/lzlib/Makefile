@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
 MAINTAINER=	delphij@FreeBSD.org
-COMMENT=	Provides in-memory LZMA compression and decompression functions
+COMMENT=	In-memory LZMA compression and decompression library
 
 PLIST_FILES=	include/lzlib.h \
 		lib/liblz.a

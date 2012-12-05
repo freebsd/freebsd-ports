@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
 MAINTAINER=	delphij@FreeBSD.org
-COMMENT=	Is a parallel, lossless data compressor based on the LZMA algorithm
+COMMENT=	Parallel, lossless data compressor based on the LZMA algorithm
 
 BUILD_DEPENDS=	lzlib>=1.1:${PORTSDIR}/archivers/lzlib
 
