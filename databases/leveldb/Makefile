@@ -1,12 +1,8 @@
-# New ports collection makefile for:	leveldb
-# Date created:		2011-10-04
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	leveldb
-PORTVERSION=	1.5.0
+PORTVERSION=	1.7.0
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
