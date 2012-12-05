@@ -1,35 +1,30 @@
-# ex:ts=8
-# Ports collection makefile for:	ccrypt
-# Date created:			Feb 7, 2002
-# Whom:				ijliao
-#
-
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ccrypt
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	security
 MASTER_SITES=	SF \
 		http://www.mathstat.dal.ca/~selinger/ccrypt/download/
 
 MAINTAINER=	dev2@heesakkers.info
-COMMENT=	A command-line utility for encrypting and decrypting files and streams
+COMMENT=	Command-line utility for encrypting and decrypting files and streams
 
-.if !defined(WITHOUT_NLS)
-USE_GNOME=	intltool
-USE_GETTEXT=	yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
 .else
+PLIST_SUB+=	NLS="@comment "
 USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
 .endif
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-MAN1=	ccrypt.1
+MAN1=	ccrypt.1 ccguess.1
 MLINKS=	ccrypt.1 ccencrypt.1 \
 	ccrypt.1 ccdecrypt.1 \
 	ccrypt.1 ccat.1
@@ -38,10 +33,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gtar|tar|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in README doc/ccrypt.html doc/cypfaq01.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for i in ccrypt.html cypfaq01.txt
+	${INSTALL_DATA} ${WRKSRC}/doc/$i ${DOCSDIR}
 .endfor
 .endif
 
