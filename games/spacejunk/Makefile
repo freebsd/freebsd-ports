@@ -1,23 +1,16 @@
-# New ports collection makefile for:	spacejunk
-# Date created:		21 Jan 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spacejunk
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A video game about traveling in 2D planetary systems
 
-USE_SDL=	sdl mixer image
-USE_AUTOTOOLS=	automake
-AUTOMAKE_ARGS=	-i --add-missing
 GNU_CONFIGURE=	yes
+USE_SDL=	sdl mixer image
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
@@ -41,16 +34,10 @@ DESKTOP_ENTRIES=	"Spacejunk" \
 BROKEN=		Doesn't compile on sparc64
 .endif
 
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/gem-uta.c \
 		${WRKSRC}/libinfo/gem-uta.c
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/&|' ${WRKSRC}/src/*.c*
-	@${RM} -f ${WRKSRC}/config.guess
-	@${REINPLACE_CMD} -e 's|1.10.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|1.10|%%AUTOMAKE_VERSION%%|g' \
-			  ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${PREFIX}/libexec/
