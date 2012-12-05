@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.023
+PORTVERSION=	2.029
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -45,8 +45,7 @@ TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_MODBUILD=	5.10.1+
 
@@ -56,11 +55,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::AnyId.3 \
 		Config::Model::AnyThing.3 \
 		Config::Model::Backend::Any.3 \
-		Config::Model::Backend::Debian::Dpkg.3 \
-		Config::Model::Backend::Debian::Dpkg::Control.3 \
-		Config::Model::Backend::Debian::Dpkg::Copyright.3 \
-		Config::Model::Backend::Debian::Dpkg::Patch.3 \
-		Config::Model::Backend::Debian::DpkgSyntax.3 \
 		Config::Model::Backend::Fstab.3 \
 		Config::Model::Backend::IniFile.3 \
 		Config::Model::Backend::PlainFile.3 \
@@ -69,7 +63,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::BackendMgr.3 \
 		Config::Model::CheckList.3 \
 		Config::Model::Cookbook::CreateModelFromDoc.3 \
-		Config::Model::Debian::Dependency.3 \
 		Config::Model::Describe.3 \
 		Config::Model::DumpAsData.3 \
 		Config::Model::Dumper.3 \
@@ -97,19 +90,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::ValueComputer.3 \
 		Config::Model::WarpedNode.3 \
 		Config::Model::Warper.3 \
-		Config::Model::models::Debian::Dpkg.3 \
-		Config::Model::models::Debian::Dpkg::Control.3 \
-		Config::Model::models::Debian::Dpkg::Control::Binary.3 \
-		Config::Model::models::Debian::Dpkg::Control::Source.3 \
-		Config::Model::models::Debian::Dpkg::Copyright.3 \
-		Config::Model::models::Debian::Dpkg::Copyright::Content.3 \
-		Config::Model::models::Debian::Dpkg::Copyright::FileLicense.3 \
-		Config::Model::models::Debian::Dpkg::Copyright::GlobalLicense.3 \
-		Config::Model::models::Debian::Dpkg::Copyright::LicenseSpec.3 \
-		Config::Model::models::Debian::Dpkg::Meta.3 \
-		Config::Model::models::Debian::Dpkg::Patch.3 \
-		Config::Model::models::Debian::Dpkg::Source.3 \
-		Config::Model::models::Debian::Dpkg::Source::Options.3 \
 		Config::Model::models::Fstab.3 \
 		Config::Model::models::Fstab::FsLine.3 \
 		Config::Model::models::LCDd.3 \
