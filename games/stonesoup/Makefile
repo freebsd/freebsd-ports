@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -52,7 +52,27 @@ MAKE_ARGS=	prefix=${PREFIX} \
 
 .include <bsd.port.options.mk>
 
-.if ${CC:T:M*clang*}
+.if !defined(COMPILER_TYPE)
+.if ${CC:T:Mgcc*}
+COMPILER_TYPE:= gcc
+.elif ${CC:T:Mclang}
+COMPILER_TYPE:= clang
+.elif ${CC:T} == "cc"
+_COMPILER_VERSION!=     ${CC} --version
+.if ${_COMPILER_VERSION:Mgcc}
+COMPILER_TYPE:= gcc
+.elif ${_COMPILER_VERSION:M\(GCC\)}
+COMPILER_TYPE:= gcc
+.elif ${_COMPILER_VERSION:Mclang}
+COMPILER_TYPE:= clang
+.endif
+.undef _COMPILER_VERSION
+.else
+COMPILER_TYPE:= ${CC:T}
+.endif
+.endif
+
+.if ${COMPILER_TYPE} == "clang"
 MAKE_ARGS+=	NO_INLINE_DEPGEN=1
 .endif
 
