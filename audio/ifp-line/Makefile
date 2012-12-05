@@ -11,7 +11,7 @@ PORTVERSION=	0.2.4.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/ifp-driver/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	riggs@rrr.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line interface to iRiver music players
 
 MAN1=		ifp.1
