@@ -534,6 +534,7 @@
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
+    SUBDIR += magicmaze
     SUBDIR += magicor
     SUBDIR += mahjong
     SUBDIR += maitretarot
