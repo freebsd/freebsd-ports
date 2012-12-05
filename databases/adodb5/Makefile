@@ -1,5 +1,4 @@
 # Created by: mm@FreeBSD.org
-#
 # $FreeBSD$
 
 PORTNAME=	adodb
@@ -27,7 +26,7 @@ NO_BUILD=	YES
 ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 
 OPTIONS_DEFINE=	TESTS
-TESTS_DESC=	"Install tests"
+TESTS_DESC=	Install tests
 
 .include <bsd.port.options.mk>
 
