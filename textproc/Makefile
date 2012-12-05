@@ -369,6 +369,7 @@
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss
+    SUBDIR += libmrss-php
     SUBDIR += libnxml
     SUBDIR += libparsifal
     SUBDIR += libpathan
