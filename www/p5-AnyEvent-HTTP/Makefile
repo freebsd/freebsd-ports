@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-AnyEvent-HTTP
-# Date created:		06 Jul 2008
-# Whom:			Vladimir Timofeev <vovkasm@gmail.com>
-#
+# Created by: Vladimir Timofeev <vovkasm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-HTTP
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
