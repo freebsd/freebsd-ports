@@ -85,6 +85,7 @@
 %%DATADIR%%/drivers/adodb-postgres64.inc.php
 %%DATADIR%%/drivers/adodb-postgres7.inc.php
 %%DATADIR%%/drivers/adodb-postgres8.inc.php
+%%DATADIR%%/drivers/adodb-postgres9.inc.php
 %%DATADIR%%/drivers/adodb-proxy.inc.php
 %%DATADIR%%/drivers/adodb-sapdb.inc.php
 %%DATADIR%%/drivers/adodb-sqlanywhere.inc.php
