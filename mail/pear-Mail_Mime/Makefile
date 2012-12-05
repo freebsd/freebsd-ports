@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pear-Mail_Mime
-# Date created:			  24 October 2002
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
