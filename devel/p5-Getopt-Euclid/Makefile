@@ -1,18 +1,17 @@
-# New ports collection makefile for:	devel/p5-Getopt-Euclid
-# Date created:				28 Oct 2008
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Getopt-Euclid
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Executable Uniform Command-Line Interface Descriptions
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_MODBUILD=	yes
 
