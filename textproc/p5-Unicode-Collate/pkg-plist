@@ -5,6 +5,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/CJK/Korean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/CJK/Pinyin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/CJK/Stroke.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/CJK/Zhuyin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/af.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ar.pl
@@ -86,6 +87,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/zh_gb.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/zh_pin.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/zh_strk.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/zh_zhu.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/allkeys.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/keys.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Collate/.packlist
