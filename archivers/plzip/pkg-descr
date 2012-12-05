@@ -5,5 +5,3 @@ Plzip uses the lzip file format; the files produced by plzip are
 fully compatible with lzip-1.4 or newer.
 
 WWW: http://www.nongnu.org/lzip/plzip.html
-
-Albert Vernon <f3cun3c02@sneakemail.com>
