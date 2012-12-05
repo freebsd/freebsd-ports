@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Cache-Transparent
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,10 +20,4 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 PERL_CONFIGURE=	yes
 MAN3=		HTTP::Cache::Transparent.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BROKEN=		Does not compile with perl ${PERL_VERSION}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
