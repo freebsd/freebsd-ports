@@ -115,7 +115,7 @@ CFLAGS+=		-DCHROOT
 .endif
 
 .if ${PORT_OPTIONS:MHPN}
-PATCH_SITES+=		http://www.shatow.net/freebsd/
+PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/
 PATCHFILES+=		${PORTNAME}-5.8p1-hpn13v11.diff.gz
 PATCH_DIST_STRIP=
 .endif
