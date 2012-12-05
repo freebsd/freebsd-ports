@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apricots
-# Date created:		07 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	apricots
 PORTVERSION=	0.2.6
@@ -33,24 +29,25 @@ DESKTOP_ENTRIES="Apricots" \
 		"Game;ArcadeGame;" \
 		false
 
-OPTIONS=	OPENAL	"Enable OpenAL audio" on
+OPTIONS_DEFINE=	OPENAL
+OPTIONS_DEFAULT=OPENAL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPENAL)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al alut
 .endif
 
 post-patch:
-.if defined(WITHOUT_OPENAL)
-	@${REINPLACE_CMD} -e 's|-DAP_AUDIO_OPENAL||' ${WRKSRC}/configure
-.else
+.if ${PORT_OPTIONS:MOPENAL}
 	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| -lopenal -lalut|' \
 		${WRKSRC}/apricots/Makefile.in
+.else
+	@${REINPLACE_CMD} -e 's|-DAP_AUDIO_OPENAL||' ${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
@@ -58,4 +55,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
