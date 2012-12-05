@@ -125,6 +125,13 @@ lib/%%APP_NAME%%/update-settings.ini
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
 @dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/modules/services-notifications
+@dirrm lib/%%APP_NAME%%/modules/services-sync/engines
+@dirrm lib/%%APP_NAME%%/modules/services-sync
+@dirrm lib/%%APP_NAME%%/modules/services-crypto
+@dirrm lib/%%APP_NAME%%/modules/services-common
+@dirrm lib/%%APP_NAME%%/modules/services-aitc
+@dirrm lib/%%APP_NAME%%/modules
 @dirrm lib/%%APP_NAME%%/jssubloader/185/resource
 @dirrm lib/%%APP_NAME%%/jssubloader/185
 @dirrm lib/%%APP_NAME%%/jssubloader

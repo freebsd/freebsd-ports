@@ -44,6 +44,8 @@ post-extract:
 post-patch:
 	@${ECHO} 'pref("general.useragent.vendor", "'${OPSYS}'");' >> ${PREFS_FILE}
 	@${ECHO} 'pref("general.useragent.vendorSub", "'${ARCH}'");' >> ${PREFS_FILE}
+	# prefer libsydneyaudio (bug780531)
+	${ECHO} 'pref("media.use_cubeb", false);' >> ${PREFS_FILE}
 .endif
 .endif
 
