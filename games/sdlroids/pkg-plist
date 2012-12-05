@@ -1,4 +1,5 @@
 bin/sdlroids
+share/pixmaps/sdlroids.png
 share/sdlroids/bmp/blank.bmp
 share/sdlroids/bmp/bomb.bmp
 share/sdlroids/bmp/icon.bmp
