@@ -101,6 +101,7 @@ libexec/spacejunk
 %%DATADIR%%/data/art/soundscreen.png
 %%DATADIR%%/data/art/soundslidermarker.png
 %%DATADIR%%/data/art/spacejunk.gpl
+%%DATADIR%%/data/art/spacejunk_icon.png
 %%DATADIR%%/data/art/spacemus.ogg
 %%DATADIR%%/data/art/spacemus2.ogg
 %%DATADIR%%/data/art/star1.png
