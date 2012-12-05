@@ -1,4 +1,2 @@
-SHA256 (bind-9.9.2.tar.gz) = 7e6530b198d512e27a856bbd7426b1a3c47fd55d06d667adb66f760259009b48
-SIZE (bind-9.9.2.tar.gz) = 7285050
-SHA256 (bind-9.9.2.tar.gz.asc) = d759edfd7c69bdc037e368d3e52a508a1ccc3e5d5e95ead62b461afdb24729d9
-SIZE (bind-9.9.2.tar.gz.asc) = 490
+SHA256 (bind-9.9.2-P1.tar.gz) = 4bce7c020402623333b655be5167ae8c52f30a6bfe9750caa3ab70da7d90219c
+SIZE (bind-9.9.2-P1.tar.gz) = 7277498

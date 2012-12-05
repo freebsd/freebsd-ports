@@ -1,4 +1,2 @@
-SHA256 (bind-9.8.4.tar.gz) = fdc378b04af99ed3a4cb82a4b0142fdd751fda568e1f7c7e95eab16ef63cac84
-SIZE (bind-9.8.4.tar.gz) = 7141026
-SHA256 (bind-9.8.4.tar.gz.asc) = dfe508f85143823d024dd4759a36a9a5298c0948fd783679d0f42a557e3663af
-SIZE (bind-9.8.4.tar.gz.asc) = 490
+SHA256 (bind-9.8.4-P1.tar.gz) = 60c979575bf6288570cb4e3e9ab9d99bb93a55d2a4946ce277f6e6e642dda21f
+SIZE (bind-9.8.4-P1.tar.gz) = 7129321
