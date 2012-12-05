@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fillets-ng
-# Date created:         11 Oct 2005
-# Whom:                 Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fillets-ng
 PORTVERSION=	1.0.1
@@ -26,6 +22,9 @@ LDFLAGS+=	-L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	*
+PORTDATA=	*
+
+PLIST_FILES=	bin/fillets
 
 DATAVERSION=	1.0.0
 
@@ -40,11 +39,11 @@ DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		"Game;LogicGame;" \
 		false
 
-OPTIONS=	FRIBIDI	"Enable fribidi support" on
+OPTIONS_DEFINE=	FRIBIDI
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_FRIBIDI)
+.if ${PORT_OPTIONS:MFRIBIDI}
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
@@ -53,17 +52,19 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^\(AM_CPPFLAGS.*(datadir)\)/.*|\1"\\"|' \
 		${WRKSRC}/src/gengine/Makefile.in
-.if defined(WITHOUT_FRIBIDI)
+.if ! ${PORT_OPTIONS:MFRIBIDI}
 	@${REINPLACE_CMD} -e \
 		's|FRIBIDI_CFLAGS=$$pkg_cv_FRIBIDI_CFLAGS||; s|FRIBIDI_LIBS=$$pkg_cv_FRIBIDI_LIBS||; s|have_fribidi="yes"|have_fribidi="no"|' \
 		${WRKSRC}/configure
 .endif
 
 post-install:
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
 		${COPYTREE_SHARE} "font	images music script sound" ${DATADIR}
-.if !defined(NOPORTDOCS)
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}/doc; \
 		${COPYTREE_SHARE} "*" ${DOCSDIR}
