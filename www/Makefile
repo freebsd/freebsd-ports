@@ -542,6 +542,7 @@
     SUBDIR += moodle
     SUBDIR += moodle2
     SUBDIR += moodle22
+    SUBDIR += moodle24
     SUBDIR += moonshine
     SUBDIR += mozplugger
     SUBDIR += multisort
