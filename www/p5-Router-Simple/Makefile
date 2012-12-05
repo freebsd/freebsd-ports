@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Router-Simple
-# Date created:		2011-11-30
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Router-Simple
-PORTVERSION=	0.09
+PORTVERSION=	0.13
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -15,10 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple HTTP Router
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_MODBUILD=	yes
 
 MAN3=		Router::Simple.3 \
 		Router::Simple::Cookbook.3 \
@@ -31,7 +30,10 @@ MAN3=		Router::Simple.3 \
 .if ${PERL_LEVEL} < 501001
 BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
 RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
