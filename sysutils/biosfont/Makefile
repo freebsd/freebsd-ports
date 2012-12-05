@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	biosfont
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
@@ -18,7 +18,7 @@ MAN4=		biosfont.4
 
 .include <bsd.port.pre.mk>
 
-KMODDIR?=	/boot/modules
+KMODDIR=	/boot/modules
 
 PLIST_SUB=	KMODDIR=${KMODDIR} PREFIX=${PREFIX}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
