@@ -60,7 +60,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>tomcat7</name>
-	<range><ge>7.0.0</ge><le>7.0.27</le></range>
+	<range><ge>7.0.0</ge><le>7.0.31</le></range>
       </package>
     </affects>
     <description>
