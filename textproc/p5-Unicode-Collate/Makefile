@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Unicode-Collate
-# Date created:		2011-10-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Unicode-Collate
-PORTVERSION=	0.90
+PORTVERSION=	0.94
 CATEGORIES=	textproc converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SADAHIRO
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unicode Collation Algorithm
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
@@ -24,6 +23,7 @@ MAN3=		Unicode::Collate.3 \
 		Unicode::Collate::CJK::Korean.3 \
 		Unicode::Collate::CJK::Pinyin.3 \
 		Unicode::Collate::CJK::Stroke.3 \
+		Unicode::Collate::CJK::Zhuyin.3 \
 		Unicode::Collate::Locale.3
 
 .include <bsd.port.mk>
