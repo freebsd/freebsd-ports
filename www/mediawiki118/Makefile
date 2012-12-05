@@ -13,7 +13,7 @@ MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.19.*
+CONFLICTS=	mediawiki-1.19.* mediawiki-1.2[0-9].*
 
 FETCH_ARGS=	-pr
 NO_LATEST_LINK=	yes
