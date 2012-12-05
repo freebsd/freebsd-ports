@@ -30,8 +30,7 @@ MAN5=		recoll.conf.5
 
 OPTIONS_DEFINE=	QT4 ASPELL PYTHON X11MON
 OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
-ASPELL_DESC=	Enable ASpell support
-X11MON_DESC=	Enable X11 session monitoring support
+X11MON_DESC=	X11 session monitoring support
 
 .include <bsd.port.options.mk>
 
