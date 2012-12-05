@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A wrapper for AT&T Graphviz
+
+LICENSE=	ART10
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Algorithm-Dependency>=1.110:${PORTSDIR}/devel/p5-Algorithm-Dependency \
@@ -32,7 +34,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-TimeDate>=1.20:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Tree-DAG_Node>=1.06:${PORTSDIR}/devel/p5-Tree-DAG_Node \
 		p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-XML-Bare>=0.45:${PORTSDIR}/textproc/p5-XML-Bare \
+		p5-XML-Bare>=0:${PORTSDIR}/textproc/p5-XML-Bare \
 		p5-XML-Tiny>=2.06:${PORTSDIR}/textproc/p5-XML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.44:${PORTSDIR}/devel/p5-Test-Pod
