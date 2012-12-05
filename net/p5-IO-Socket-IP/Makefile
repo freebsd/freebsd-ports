@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-IO-Socket-IP
-# Date created:		2011-10-15
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Socket-IP
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	net ipv6 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
