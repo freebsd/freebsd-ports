@@ -51,6 +51,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f599dfc4-3ec2-11e2-8ae1-001a8056d0b5">
+    <topic>tomcat -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>tomcat6</name>
+	<range><ge>6.0.0</ge><le>6.0.35</le></range>
+      </package>
+      <package>
+	<name>tomcat7</name>
+	<range><ge>7.0.0</ge><le>7.0.27</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security.html">
+	  <p>When using the NIO connector with sendfile and HTTPS enabled, if a
+	     client breaks the connection while reading the response an infinite loop
+	     is entered leading to a denial of service.</p>
+	  <p>When using FORM authentication it was possible to bypass the security
+	     constraint checks in the FORM authenticator by appending
+	     "/j_security_check" to the end of the URL if some other component
+	     (such as the Single-Sign-On valve) had called request.setUserPrincipal()
+	     before the call to FormAuthenticator#authenticate().</p>
+	  <p>The CSRF prevention filter could be bypassed if a request was made to a
+	     protected resource without a session identifier present in the request.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3546</cvename>
+      <cvename>CVE-2012-4431</cvename>
+      <cvename>CVE-2012-4534</cvename>
+      <url>http://tomcat.apache.org/security.html</url>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-12-04</discovery>
+      <entry>2012-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2892a8e2-3d68-11e2-8e01-0800273fe665">
     <topic>dns/bind9* -- servers using DNS64 can be crashed by a crafted query</topic>
     <affects>
