@@ -1,12 +1,8 @@
-# New ports collection makefile for:	DBIx-RetryOverDisconnects
-# Date created:		06 Jul 2008
-# Whom:			Vladimir Timofeev <vovkasm@gmail.com>
-#
+# Created by: Vladimir Timofeev <vovkasm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-RetryOverDisconnects
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
