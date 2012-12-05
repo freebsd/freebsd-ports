@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Role/Tiny.pm
 %%SITE_PERL%%/Role/Tiny/With.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Role-Tiny/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role-Tiny
-@dirrmtry %%SITE_PERL%%/Role/Tiny
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Tiny/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role
+@dirrm %%SITE_PERL%%/Role/Tiny
 @dirrmtry %%SITE_PERL%%/Role
