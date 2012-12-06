@@ -1,4 +1,4 @@
-MUNIN_VERSION=	2.0.7
+MUNIN_VERSION=	2.0.9
 MUNIN_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 MUNIN_DISTINFO=	${PORTSDIR}/sysutils/munin-common/distinfo
 MUNIN_PATCHES=	${PORTSDIR}/sysutils/munin-common/files/patch-Makefile \

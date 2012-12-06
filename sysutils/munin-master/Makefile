@@ -38,7 +38,8 @@ RUN_DEPENDS=	munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

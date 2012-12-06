@@ -1,15 +1,13 @@
---- node/sbin/munin-node.orig	2012-07-24 12:45:57.000000000 +0200
-+++ node/sbin/munin-node	2012-07-30 11:30:49.735734436 +0200
-@@ -53,8 +53,11 @@
-         $ENV{$key} =~ /^(.*)$/;
+--- node/sbin/munin-node.orig	2012-11-12 14:10:58.234196646 +0100
++++ node/sbin/munin-node	2012-11-12 14:11:19.591568597 +0100
+@@ -54,6 +54,10 @@
          $ENV{$key} = $1;
      }
+ 
 +    # plugins run in taint mode because the uid is changed, so the path
 +    # must not contain writable directories.
 +    $ENV{PATH}='/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin';
- 
--    $0 =~ /([^\/]*)$/;
-+    $0 =~ /^(.*)$/;
-     $0 = $1;
- 
++
      parse_args();
+ 
+     my $config = Munin::Node::Config->instance();
