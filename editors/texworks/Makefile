@@ -7,12 +7,11 @@ PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple TeX front-end program
+MAINTAINER=	gahr@FreeBSD.org
+COMMENT=	Simple TeX front-end program
 
 BUILD_DEPENDS=	hunspell:${PORTSDIR}/textproc/hunspell
-LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
-		dbus:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -31,13 +30,13 @@ PLIST_FILES=	bin/texworks \
 		share/pixmaps/TeXworks.png
 
 post-patch:
-	@${RM} -f ${WRKSRC}/ui_*.h ${WRKSRC}/moc_*.cpp ${WRKSRC}/qrc_*.cpp
 	@${REINPLACE_CMD} -e 's|\/usr\/share|\${LOCALBASE}\/share|g' ${WRKSRC}/src/TWUtils.cpp
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC} TeXworks.pro
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} TeXworks.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/texworks ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/res/images/TeXworks.png ${PREFIX}/share/pixmaps/TeXworks.png
+
 .include <bsd.port.mk>
