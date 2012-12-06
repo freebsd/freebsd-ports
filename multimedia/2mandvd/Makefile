@@ -8,7 +8,7 @@ CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Create your own video dvd
+COMMENT=	DVD authoring and slideshow tool
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
@@ -27,37 +27,34 @@ LICENSE=	GPLv2
 
 USE_CDRTOOLS=	true
 USE_PERL5_RUN=	yes
-USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
-		webkit
+USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build webkit
 
-MAKE_ENV+=	QTDIR=${QT_PREFIX}
+MAKE_ENV=	QTDIR=${QT_PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="2ManDVD" \
-		"DVD Maker" \
-		"mandvdico.png" \
-		"2ManDVD" \
-		"Application;AudioVideo;" \
-		false
+DESKTOP_ENTRIES="2ManDVD" "DVD Maker" "mandvdico.png" "2ManDVD" \
+		"Application;AudioVideo;" false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|bash|sh|g' ${WRKSRC}/mainfrm.cpp \
+	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/mainfrm.cpp \
 		${WRKSRC}/rendering.cpp ${WRKSRC}/project.cpp \
 		${WRKSRC}/media_browser.cpp
-	@${REINPLACE_CMD} -e 's|cp -rf|cp -Rf|g' ${WRKSRC}/project.cpp
+	@${REINPLACE_CMD} -e 's|cp -rf|cp -Rf|' ${WRKSRC}/project.cpp
 	@${RM} -f ${WRKSRC}/ui_*.h ${WRKSRC}/moc_*.cpp ${WRKSRC}/qrc_*.cpp \
 		${WRKSRC}/*/*/*/*~
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC} 2ManDVD.pro
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${QMAKE} -spec ${QMAKESPEC} 2ManDVD.pro
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "Bibliotheque Interface" ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/2ManDVD ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/Interface/mandvdico.png ${PREFIX}/share/pixmaps/mandvdico.png
-	${LN} -fs ${DATADIR}/2ManDVD ${PREFIX}/bin/
+	@${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "Bibliotheque Interface" ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/2ManDVD ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/Interface/mandvdico.png \
+		${PREFIX}/share/pixmaps
+	${LN} -fs ${DATADIR}/2ManDVD ${PREFIX}/bin
 
 .include <bsd.port.mk>
