@@ -1,0 +1,4 @@
+Podcastdl, is a simple podcast downloader application written in plain C and
+designed to work in console or from the crontab
+
+WWW: http://www.bebik.net/doku.php?id=software:podcastdl

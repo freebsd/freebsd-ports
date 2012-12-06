@@ -256,6 +256,7 @@
     SUBDIR += photofilmstrip
     SUBDIR += pitivi
     SUBDIR += playd
+    SUBDIR += podcastdl
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
