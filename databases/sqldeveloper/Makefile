@@ -1,12 +1,8 @@
-# New ports collection makefile for:	sqldeveloper
-# Date created:				16 January 2008
-# Whom:					jjuanino@gmail.com
-#
+# Created by: jjuanino@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	3.1.07.42
+PORTVERSION=	3.2.20.09.87
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
@@ -32,14 +28,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	readme.html
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE= Due to Oracle license restrictions, you must fetch the source \
+IGNORE=	Due to Oracle license restrictions, you must fetch the source \
 distribution manually. Please access \
 http://www.oracle.com/technology/software/products/sql/index.html \
 with a web browser and follow the link for the ${DISTFILES}. You will be \
@@ -79,7 +75,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${DOCSDIR}
 .endif
@@ -87,4 +83,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

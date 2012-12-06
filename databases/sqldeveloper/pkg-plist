@@ -12,7 +12,9 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/alterDBUnRestrictSession.sql
 %%DATADIR%%/dataminer/scripts/alterUserDefaultRole.sql
 %%DATADIR%%/dataminer/scripts/createuser.sql
+%%DATADIR%%/dataminer/scripts/createusersgrantbackup.sql
 %%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup.sql
+%%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup2.sql
 %%DATADIR%%/dataminer/scripts/disconnectODMRSessions.sql
 %%DATADIR%%/dataminer/scripts/dmsh.sql
 %%DATADIR%%/dataminer/scripts/dmshgrants.sql
@@ -102,8 +104,10 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_2To11_2_1_1_3.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_3To11_2_1_1_4.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_4To11_2_1_1_5.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_5To11_2_1_1_6.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepository.sql
 %%DATADIR%%/dataminer/scripts/usergrants.sql
+%%DATADIR%%/dataminer/scripts/usergrantshelper.sql
 %%DATADIR%%/dataminer/scripts/validateODMRSYS.sql
 %%DATADIR%%/dataminer/scripts/validateVersionUpgrade.sql
 %%DATADIR%%/icon.png
@@ -167,7 +171,7 @@ bin/sqldeveloper
 %%DATADIR%%/ide/themes/creating_themes.html
 %%DATADIR%%/ide/themes/fusionblue.jar
 %%DATADIR%%/ide/themes/sizingmargins.png
-%%DATADIR%%/javavm/lib/aurora.zip
+%%DATADIR%%/javavm/lib/aurora.jar
 %%DATADIR%%/jdbc/lib/ojdbc6.jar
 %%DATADIR%%/jdbc/lib/ojdbc6dms.jar
 %%DATADIR%%/jdev.label
@@ -296,6 +300,31 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.conf
 %%DATADIR%%/sqldeveloper/bin/ututil.sh
 %%DATADIR%%/sqldeveloper/bin/version.properties
+%%DATADIR%%/sqldeveloper/demo/migration/application/README.txt
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/README.txt
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/asp/example1.asp
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/c/sample1.c
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/c/sample2.c
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/example/specialized.example
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/java/Test.java
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/ksh/script.ksh
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/ksh/scriptnoext
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/perl/example1.pl
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/php/example1.php
+%%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/sql/sample.sql
+%%DATADIR%%/sqldeveloper/demo/migration/application/recognizers/recognizer.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/README.txt
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/asp.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/java.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/ksh.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/perl.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/sample.sql
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/specialized.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/sql.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/sybase_bcp_c.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/sybase_ctlib_c.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/sybase_dblib_c.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/schema/scanner.xsd
 %%DATADIR%%/sqldeveloper/doc/dataminer_cue_cards.jar
 %%DATADIR%%/sqldeveloper/doc/dataminer_help.jar
 %%DATADIR%%/sqldeveloper/doc/icon.png
@@ -424,6 +453,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM3.0_DML.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2_DM2patch.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.0_DM3.1.sql
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.1_DM3.2.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Pkg_Osdm_Utils.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Pkg_Osdm_Utils_body.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams/Data Types model.pdf
@@ -573,6 +603,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/BusinessInfoDesign.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CalculatedAttribute.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CandidateKey.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ChangeRequest.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterColumnOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterColumnOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterColumnOraclev9i.xml
@@ -582,6 +613,12 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterOraclev9i.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.DataTypeWrapper.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxy.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOracle.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev10g.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Column.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnIdentityDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnIdentityDB2v80.xml
@@ -599,12 +636,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDBv71.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDBv81.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnView.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.DataTypeWrapper.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxy.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOracle.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev10g.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainedObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainedObjectWithDomain.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainerMapping.xml
@@ -618,7 +649,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContextOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContextOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Cube.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ChangeRequest.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DBConnectionStamp.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DBPartitionGroupUDBv81.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DDLFileStamp.xml
@@ -1032,6 +1062,9 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/XMLSchemaCollectionSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/XMLSchemaCollectionSqlServerv2k5.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/XtdMapping.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/README.rtf
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/README.txt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/README2.txt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/details.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/index.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/list.html
@@ -1047,6 +1080,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.extras.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.filenavigator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.listener.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.application.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.db2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.jar
@@ -1065,6 +1099,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.scheduler.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.schemabrowser.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.searchbar.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.security.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.snippet.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.spatial.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.sqlmonitor.jar
@@ -1083,6 +1118,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/bcmail-jdk16-145.jar
 %%DATADIR%%/sqldeveloper/lib/bcprov-jdk16-145.jar
 %%DATADIR%%/sqldeveloper/lib/bctsp-jdk16-145.jar
+%%DATADIR%%/sqldeveloper/lib/common.jar
 %%DATADIR%%/sqldeveloper/lib/commons-codec-1.4.jar
 %%DATADIR%%/sqldeveloper/lib/commons-logging-1.1.1.jar
 %%DATADIR%%/sqldeveloper/lib/dom4j-1.6.1.jar
@@ -1103,6 +1139,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/poi-3.7-20101029.jar
 %%DATADIR%%/sqldeveloper/lib/poi-ooxml-3.7-20101029.jar
 %%DATADIR%%/sqldeveloper/lib/poi-ooxml-schemas-3.7-20101029.jar
+%%DATADIR%%/sqldeveloper/lib/resource-templates.jar
 %%DATADIR%%/sqldeveloper/lib/sdoapi.jar
 %%DATADIR%%/sqldeveloper/lib/sdovis.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate-3.1b1.jar
@@ -1164,6 +1201,21 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/sqldeveloper/doc/welcome/de
 @dirrm %%DATADIR%%/sqldeveloper/doc/welcome
 @dirrm %%DATADIR%%/sqldeveloper/doc
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/schema
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/rules
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/recognizers
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/sql
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/php
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/perl
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/ksh
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/java
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/example
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/c
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/asp
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application
+@dirrm %%DATADIR%%/sqldeveloper/demo/migration
+@dirrm %%DATADIR%%/sqldeveloper/demo
 @dirrm %%DATADIR%%/sqldeveloper/bin
 @dirrm %%DATADIR%%/sqldeveloper
 @dirrm %%DATADIR%%/sleepycat/je-3.3.62/lib
