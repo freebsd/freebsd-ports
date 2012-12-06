@@ -1,9 +1,9 @@
 bin/notmuch
 etc/bash_completion.d/notmuch
 include/notmuch.h
-lib/libnotmuch.so.2.0.0
+lib/libnotmuch.so.3.0.0
 lib/libnotmuch.so
-lib/libnotmuch.so.2
+lib/libnotmuch.so.3
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/notmuch-logo.png
 share/emacs/site-lisp/notmuch-address.el
@@ -13,8 +13,10 @@ share/emacs/site-lisp/notmuch-lib.el
 share/emacs/site-lisp/notmuch-maildir-fcc.el
 share/emacs/site-lisp/notmuch-message.el
 share/emacs/site-lisp/notmuch-mua.el
+share/emacs/site-lisp/notmuch-print.el
 share/emacs/site-lisp/notmuch-query.el
 share/emacs/site-lisp/notmuch-show.el
+share/emacs/site-lisp/notmuch-tag.el
 share/emacs/site-lisp/notmuch-wash.el
 share/emacs/site-lisp/notmuch.el
 share/zsh/functions/Completion/Unix/_notmuch
