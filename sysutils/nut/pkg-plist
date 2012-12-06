@@ -67,11 +67,10 @@ libdata/pkgconfig/libupsclient.pc
 %%NUT_SERIAL%%libexec/nut/liebert-esp2
 %%NUT_SERIAL%%libexec/nut/masterguard
 %%NUT_SERIAL%%libexec/nut/metasys
-%%NUT_SERIAL%%libexec/nut/mge-shut
 %%NUT_SERIAL%%libexec/nut/mge-utalk
 %%NUT_SERIAL%%libexec/nut/microdowell
 %%NUT_NEON%%libexec/nut/netxml-ups
-%%NUT_SERIAL%%libexec/nut/newmge-shut
+%%NUT_SERIAL%%libexec/nut/mge-shut
 %%NUT_SERIAL%%libexec/nut/oldmge-shut
 %%NUT_SERIAL%%libexec/nut/oneac
 %%NUT_SERIAL%%libexec/nut/optiups

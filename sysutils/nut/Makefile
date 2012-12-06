@@ -7,6 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.6.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -55,7 +56,7 @@ MAN3=		nutscan.3 nutscan_add_device_to_device.3 \
 MAN5=		nut.conf.5 ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
 
-MAN8=		apcsmart-old.8 nut-recorder.8 nut-scanner.8 nutupsdrv.8 upsc.8 \
+MAN8=		nut-recorder.8 nut-scanner.8 nutupsdrv.8 upsc.8 \
 		upscmd.8 upsd.8 upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 upssched.8
 
 PORTDOCS=	*
@@ -95,13 +96,13 @@ PLIST_SUB+=	NUT_CGI="@comment "
 
 .if ${PORT_OPTIONS:MSERIAL}
 CONFIGURE_ARGS+=	--with-serial
-MAN8+=		apcsmart.8 bestfortress.8 bcmxcp.8 belkin.8 belkinunv.8 \
-		bestuferrups.8 bestups.8 bestfcom.8 blazer.8 clone.8 \
-		dummy-ups.8 etapro.8 everups.8 gamatronic.8 genericups.8 \
-		isbmex.8 ivtscd.8 liebert.8 liebert-esp2.8 masterguard.8 \
-		metasys.8 mge-shut.8 mge-utalk.8 microdowell.8 oneac.8 \
-		optiups.8 powercom.8 powerpanel.8 rhino.8 safenet.8 solis.8 \
-		tripplite.8 tripplitesu.8 upscode2.8 victronups.8
+MAN8+=		apcsmart.8 apcsmart-old.8 bestfortress.8 bcmxcp.8 belkin.8 \
+		belkinunv.8 bestuferrups.8 bestups.8 bestfcom.8 blazer.8 \
+		clone.8 dummy-ups.8 etapro.8 everups.8 gamatronic.8 \
+		genericups.8 isbmex.8 ivtscd.8 liebert.8 liebert-esp2.8 \
+		masterguard.8 metasys.8 mge-shut.8 mge-utalk.8 microdowell.8 \
+		oneac.8 optiups.8 powercom.8 powerpanel.8 rhino.8 safenet.8 \
+		solis.8 tripplite.8 tripplitesu.8 upscode2.8 victronups.8
 PLIST_SUB+=	NUT_SERIAL=""
 .else
 CONFIGURE_ARGS+=	--without-serial
@@ -168,7 +169,7 @@ PLIST_SUB+=	NUT_HAL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBASH}
-RUN_DEPENDS+=	${LOCALBASE}/bin/bash_completion.sh:${PORTSDIR}/shells/bash-completion
+RUN_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:${PORTSDIR}/shells/bash-completion
 PLIST_SUB+=	BASH=""
 .else
 PLIST_SUB+=	BASH="@comment "
