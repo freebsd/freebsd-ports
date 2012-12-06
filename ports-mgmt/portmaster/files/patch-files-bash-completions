@@ -1,0 +1,46 @@
+diff --git files/bash-completions files/bash-completions
+index 2293183..d5bf298 100644
+--- files/bash-completions
++++ files/bash-completions
+@@ -1,13 +1,25 @@
+ # $FreeBSD$
+ #
++_pkgs_list() {
++	local dbdir="$1"
++	shift 1 # the rest will be passed diretly to compgen
++	if [ -n "$(make -f /usr/share/mk/bsd.port.mk -V WITH_PKGNG)" ]; then
++		compgen -W "$(pkg info -aq)" $*
++	else
++		cd ${dbdir} && compgen -d $*
++	fi
++}
++
+ _portmaster () {
+-	local cur
++	local cur dbdir portsdir
+ 	cur=${COMP_WORDS[COMP_CWORD]}
++	dbdir=${PKG_DBDIR:-/var/db/pkg}
++	portsdir=${PORTSDIR:-/usr/ports}
+ 
+ 	case "$cur" in
+-	/usr/ports/*)
++	${portsdir}/*)
+ 		COMPREPLY=( $( compgen -d $cur ) ) ;;
+-	*/*)	COMPREPLY=( $( compgen -d /usr/ports/$cur ) ) ;;
++	*/*)	COMPREPLY=( $( compgen -d ${portsdir}/$cur ) ) ;;
+ 	--*)	COMPREPLY=( $( compgen -W '--force-config --show-work \
+ 		--packages --packages-only \
+ 		--packages-build --packages-if-newer --delete-build-only \
+@@ -20,9 +32,9 @@ _portmaster () {
+ 		--check-depends --check-port-dbdir --list-origins \
+ 		--help --version' -- $cur ) )
+ 		;;
+-	*)	COMPREPLY=( $( compgen -d /var/db/pkg/$cur ) )
+-		COMPREPLY=( ${COMPREPLY[@]#/var/db/pkg/} )
+-		COMPREPLY=( ${COMPREPLY[@]} $( compgen -d /usr/ports/$cur ) )
++	*)	COMPREPLY=( $(_pkgs_list ${dbdir} "${cur}" ) )
++		COMPREPLY=( ${COMPREPLY[@]#${dbdir}/} )
++		COMPREPLY=( ${COMPREPLY[@]} $( compgen -d ${portsdir}/$cur ) )
+ 		COMPREPLY=( ${COMPREPLY[@]#/ports/} )
+ 		;;
+ 	esac
