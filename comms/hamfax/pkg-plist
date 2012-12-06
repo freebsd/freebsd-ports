@@ -1,4 +1,7 @@
 bin/hamfax
-share/HamFax/HamFax.html
-share/HamFax/hamfax_de.qm
-@dirrm share/HamFax
+share/applications/hamfax.desktop
+%%DATADIR%%/hamfax.html
+%%DATADIR%%/hamfax_de.qm
+%%DATADIR%%/hamfax_fr.qm
+@dirrmtry share/applications
+@dirrm %%DATADIR%%

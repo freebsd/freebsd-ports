@@ -1,27 +1,24 @@
-# New ports collection makefile for:   hamfax
-# Date created:                7th June 2003
-# Whom:                        Carl Makin <carl@stagecraft.cx>
-#
+# Created by:	Carl Makin <carl@stagecraft.cx>
 # $FreeBSD$
 
 PORTNAME=	hamfax
-PORTVERSION=	0.6.4
-PORTREVISION=	7
+PORTVERSION=	0.8.1
 CATEGORIES=	comms audio hamradio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/HamFax%20${PORTVERSION}
-DISTNAME=	HamFax-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	QT application for sending and receiving facsimiles over radio
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile
 
-USE_QT_VER=	3
+USE_QT4=	gui moc_build
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-Qt-dir=${LOCALBASE} CXX="${CXX} ${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
+					LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		hamfax.1
 .include <bsd.port.mk>
