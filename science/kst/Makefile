@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kst
-# Date created:			Fri Apr 30 17:28:56 CEST 2004
-# Whom:				Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by:	Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kst
@@ -15,8 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data viewing program for KDE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
-LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		gsl.16:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	cfitsio:${PORTSDIR}/astro/cfitsio \
+		gsl:${PORTSDIR}/math/gsl
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
@@ -27,32 +24,32 @@ MAKE_JOBS_SAFE=	yes
 
 AUTOTOOLSFILES=	admin/cvs.sh
 
-OPTIONS=	NETCDF "Enable netcdf data support" off \
-		CDF "Enable cdf data support" off \
-		KDEBASE "Enable JavaScript console" off
+OPTIONS_DEFINE=	NETCDF CDF KDEBASE
+CDF_DESC=	CDF data support
+KDEBASE=	JavaScript console
 
 MAN1=		kst.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
+.if ${PORT_OPTIONS:MNETCDF}
+LIB_DEPENDS+=	netcdf:${PORTSDIR}/science/netcdf
 PLIST_SUB+=	NETCDF=""
 .else
 CONFIGURE_ARGS+=	--without-netcdf
 PLIST_SUB+=	NETCDF="@comment "
 .endif
 
-.if defined(WITH_CDF)
+.if ${PORT_OPTIONS:MCDF}
 CONFIGURE_ARGS+=LDFLAGS="-lm"
-LIB_DEPENDS+=	cdf.0:${PORTSDIR}/science/cdf
+LIB_DEPENDS+=	cdf:${PORTSDIR}/science/cdf
 PLIST_SUB+=	CDF=""
 .else
 CONFIGURE_ARGS+=	--without-cdf
 PLIST_SUB+=	CDF="@comment "
 .endif
 
-.if defined(WITH_KDEBASE)
+.if ${PORT_OPTIONS:MKDEBASE}
 RUN_DEPENDS+=	${KDE_PREFIX}/lib/kde3/libkonsolepart.so:${PORTSDIR}/x11/kdebase3
 .endif
 
@@ -61,10 +58,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|@kde_widgetdir@|@prefix@/lib/kde3/plugins/designer|' \
 		${WRKSRC}/kst/src/widgets/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|et||;/^SUBDIRS/s|pt||' ${WRKSRC}/doc/Makefile.in
-.if !defined(WITH_NETCDF)
+.if empty(PORT_OPTIONS:MNETCDF)
 	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
-.if !defined(WITH_CDF)
+.if empty(PORT_OPTIONS:MCDF)
 	@${REINPLACE_CMD} -e 's| cdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
 
