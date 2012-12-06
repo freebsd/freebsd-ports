@@ -12,3 +12,14 @@ that some compilers (clang-3.2) complain about it...
 -        OLEStorage*   resultStorage;    // Result FPX Image storage
  
          // Geometric parameters
+--- oless/h/dir.hxx.orig       2012-11-23 13:08:46.000000000 +0800
++++ oless/h/dir.hxx    2012-11-23 13:09:02.000000000 +0800
+@@ -140,8 +140,6 @@
+ private:
+     inline BYTE  GetBitFlags() const;
+     inline void  SetBitFlags(BYTE bValue, BYTE bMask);
+-
+-    BYTE  _bpad[CBDIRPAD];
+ };
+ 
+ //+-------------------------------------------------------------------------
