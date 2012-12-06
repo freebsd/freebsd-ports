@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 MASTER_SITES=	http://bsd-sharp.googlecode.com/files/ \
