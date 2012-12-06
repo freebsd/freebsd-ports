@@ -5,13 +5,16 @@
 # $FreeBSD$
 #
 
-DISTVERSION?=	8.3.21
+DISTVERSION?=	8.3.22
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
+
+DEPRECATED=	End-of-life is coming up
+EXPIRATION_DATE=2013-03-01
 
 ICU_PATCHFILE=	pg-8311-icu-xx-2010-05-14.diff.gz
 BUILD_DIRS?=	src/port src/timezone src/backend \
