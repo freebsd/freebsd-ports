@@ -3,6 +3,7 @@
 
 PORTNAME=	jmx4perl
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/R/RO/ROLAND
@@ -93,5 +94,24 @@ MAN3=	JMX::Jmx4Perl.3 \
 	JMX::Jmx4Perl::Request.3 \
 	JMX::Jmx4Perl::Response.3 \
 	JMX::Jmx4Perl::Util.3
+
+ETC_FILES=	common.cfg \
+		glassfish.cfg \
+		jboss.cfg \
+		jetty.cfg \
+		memory.cfg \
+		metrics.cfg \
+		threads.cfg \
+		tomcat.cfg \
+		weblogic.cfg
+
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	ETC_FILES="${ETC_FILES}"
+
+post-install:
+	@${MKDIR} ${ETCDIR}
+.for f in ${ETC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/config/${f} ${ETCDIR}/${f}.sample
+.endfor
 
 .include <bsd.port.mk>
