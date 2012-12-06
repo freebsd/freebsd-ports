@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jasperserver
-# Date created:				27 August 2010
-# Whom:					Jason Helfman
-#
+# Created by:	Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jasperserver
 PORTVERSION=	4.7.0
@@ -41,10 +37,8 @@ USE_ZIP=	yes
 # use own DOS2UNIX in pre-patch, not the one from bsd.port.mk!
 DOS2UNIX_REGEX=	.*(css|dtd|java|js|txt|wsdd|xml|xsl)$$
 
-OPTIONS_DEFINE=	XLS
-XLS_DESC=	Alternative Patches for XLS Spreadsheets
 OPTIONS_SINGLE=	AS DB
-OPTIONS_SINGLE_AS=	TOMCAT5 TOMCAT6 TOMCAT7
+OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_SINGLE_DB=	MYSQL PGSQL
 OPTIONS_DEFAULT=	TOMCAT6 PGSQL
 
@@ -93,15 +87,6 @@ DBPASS?=	pgsql
 DATABASE=	postgresql
 PLIST_SUB+=	JDBC=${JDBC}
 MASTER_SITES+=	http://jdbc.postgresql.org/download/:source2
-.endif
-
-.if ${PORT_OPTIONS:MTOMCAT5}
-APPHOME?=	${LOCALBASE}/tomcat5.5
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-APPTYPE=	tomcat5
-PLIST_SUB+=	APP_VERSION="tomcat5.5"
-JDBCLOC=	common/lib
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT6}
@@ -163,12 +148,6 @@ post-patch:
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 	@${REINPLACE_CMD} -e 's|--DROP|-- DROP|' ${SQLSRC}/mysql/quartz.ddl
-
-.if ${PORT_OPTIONS:MXLS}
-	@${ECHO} "Applying alternative patches for Xls."
-	@cd ${PATCH_WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/alt-patch-jasperserver__common__shared-config__applicationContext.xml
-	@cd ${PATCH_WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/alt-patch-jasperserver__jasperserver-war__src__main__webappAdditions__WEB-INF__classes__jasperreports.properties
-.endif
 
 post-patch-script:
 	@${ECHO_MSG} -n ">> Removing unneeded patched files..."
@@ -243,6 +222,7 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
 	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc4.jar
 .else
+	@${RM} ${APPHOME}/${JDBCLOC}/mysql-connector-java-5.1.17-bin.jar
 	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${APPHOME}/${JDBCLOC}
 .endif
 
