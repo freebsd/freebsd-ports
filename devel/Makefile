@@ -363,6 +363,7 @@
     SUBDIR += e4graph
     SUBDIR += e_dbus
     SUBDIR += easygit
+    SUBDIR += eblob
     SUBDIR += ebnf2yacc
     SUBDIR += ecb
     SUBDIR += eclipse-eclemma
