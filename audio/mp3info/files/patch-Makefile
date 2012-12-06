@@ -1,0 +1,12 @@
+--- Makefile.orig      2012-11-30 13:59:48.000000000 +0800
++++ Makefile   2012-11-30 14:00:09.000000000 +0800
+@@ -44,8 +44,8 @@
+ STRIP = strip
+ 
+ LIBS = -lncurses
+-CC = gcc
+-CFLAGS = -g -O2 -Wall
++CC ?= cc
++CFLAGS ?= -O -pipe
+ 
+ all: mp3info gmp3info doc
