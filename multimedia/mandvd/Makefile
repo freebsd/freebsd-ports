@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mandvd
-# Date created:		Sun Feb 11 23:38:00 CET 2007
-# Whom:                Diego Depaoli <trebestie@gmail.com>
-#
+# Created by: Diego Depaoli <trebestie@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mandvd
 DISTVERSION=	2.4
@@ -13,7 +9,7 @@ MASTER_SITES=	http://csgib36.ifrance.com/FTP/
 DISTNAME=	ManDVD
 DISTFILES=	${PORTNAME}-${PORTVERSION}src${EXTRACT_SUFX}
 
-MAINTAINER=	trebestie@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to simply create dvd-video
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
