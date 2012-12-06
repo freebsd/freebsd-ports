@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xorp
-# Date created:		22nd September 2006
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by:	Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xorp-devel
 PORTVERSION=	2009120801
@@ -18,8 +14,8 @@ COMMENT=	Open source network routing platform, development branch
 
 # Uses libcurses, libcrypto, librt from base system.
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
-		pcap.1:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
+		pcap:${PORTSDIR}/net/libpcap
 
 CONFLICTS=	xorp-1*
 
@@ -31,12 +27,12 @@ USE_SCONS=	yes
 #USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	defined
 
-OPTIONS=								\
-	    OPTIMIZE	 "Build with optimization" On			\
-	    ORIGIN	 "Use ORIGIN with shared libraries" On		\
-	    SHARED	 "Build with shared libraries" On		\
-	    STRIP	 "Strip binaries before installing" On		\
-	    TCP_RPC	 "Use TCP as RPC transport (defaults to AF_LOCAL)" Off
+OPTIONS_DEFINE=	OPTIMIZE ORIGIN SHARED STRIP TCP_RPC
+OPTIONS_DEFAULT=	OPTIMIZE ORIGIN SHARED STRIP
+OPTIMIZE_DESC=	Build with optimization
+ORIGIN_DESC=	Use ORIGIN with shared libraries
+SHARED_DESC=	Build with shared libraries
+TCP_RPC_DESC=	Use TCP as RPC transport (defaults to AF_LOCAL)
 
 #
 # To roll snapshot: as bms: make BOOTSTRAP=defined fetch
@@ -57,40 +53,40 @@ do-fetch:
 .endif
 .endif # defined(BOOTSTRAP)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 XORP_GROUP=	xorp
 USE_RC_SUBR=	xorp
 
 SCONS_ARGS+=	prefix=${PREFIX}
 
-.if defined(WITHOUT_OPTIMIZE)
-SCONS_ARGS+=	optimize=no
-.else
+.if ${PORT_OPTIONS:MOPTIMIZE}
 SCONS_ARGS+=	optimize=yes
+.else
+SCONS_ARGS+=	optimize=no
 .endif
 
-.if defined(WITHOUT_SHARED)
-SCONS_ARGS+=	shared=false
-PLIST_SUB+=	XORP_SHLIB="@comment "
-.else
+.if ${PORT_OPTIONS:MSHARED}
 SCONS_ARGS+=	shared=true
 PLIST_SUB+=	XORP_SHLIB=""
 USE_LDCONFIG=	${PREFIX}/lib/xorp/lib
-. if defined (WITHOUT_ORIGIN)
-SCONS_ARGS+=	origin=false
-. else
+. if ${PORT_OPTIONS:MORIGIN}
 SCONS_ARGS+=	origin=true
+. else
+SCONS_ARGS+=	origin=false
 . endif
-.endif
-
-.if defined(WITHOUT_STRIP)
-SCONS_ARGS+=	strip=false
 .else
-SCONS_ARGS+=	strip=true
+SCONS_ARGS+=	shared=false
+PLIST_SUB+=	XORP_SHLIB="@comment "
 .endif
 
-.if defined(WITH_TCP_RPC)
+.if ${PORT_OPTIONS:MSTRIP}
+SCONS_ARGS+=	strip=true
+.else
+SCONS_ARGS+=	strip=false
+.endif
+
+.if ${PORT_OPTIONS:MTCP_RPC}
 SCONS_ARGS+=	transport=tcp
 .else
 SCONS_ARGS+=	transport=local
@@ -103,4 +99,4 @@ BROKEN=		Does not compile on sparc64
 post-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
