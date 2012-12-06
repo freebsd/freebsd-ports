@@ -1,4 +1,4 @@
-# Created by:	José García Juanino <jjuanino@gmail.com>
+# Created by: José García Juanino <jjuanino@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	xmlcopyeditor
@@ -24,7 +24,7 @@ USE_DOS2UNIX=	src/templates/DTD.dtd \
 		src/rng/xhtml.rng
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS+=	xerces-c:${PORTSDIR}/textproc/xerces-c3 \
+LIB_DEPENDS=	xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
 		xslt:${PORTSDIR}/textproc/libxslt \
 		aspell:${PORTSDIR}/textproc/aspell \
 		pcre:${PORTSDIR}/devel/pcre \
