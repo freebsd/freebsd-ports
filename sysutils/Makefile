@@ -311,6 +311,7 @@
     SUBDIR += geomgui
     SUBDIR += getdelta
     SUBDIR += geteltorito
+    SUBDIR += gigolo
     SUBDIR += gkfreq
     SUBDIR += gkleds2
     SUBDIR += gkrellfire
