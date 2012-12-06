@@ -1,9 +1,5 @@
-# New ports collection makefile for: 2ManDVD
-# Date created:		Mon 16 Mar 2009 19:23:00 CET
-# Whom:                	Diego Depaoli <trebestie@gmail.com>
-#
+# Created by: Diego Depaoli <trebestie@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	2ManDVD
 PORTVERSION=	1.3.5
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
-MAINTAINER=	trebestie@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create your own video dvd
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \

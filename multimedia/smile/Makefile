@@ -1,9 +1,5 @@
-# New ports collection makefile for: smile
-# Date created:		Mer 06 Jul 2008 23:44:00 CET
-# Whom:                	Diego Depaoli <trebestie@gmail.com>
-#
+# Created by: Diego Depaoli <trebestie@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	smile
 PORTVERSION=	1.0
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/smiletool/
 
-MAINTAINER=	trebestie@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slideshow Maker in Linux Environment
 
 RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \

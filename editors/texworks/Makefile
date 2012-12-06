@@ -1,9 +1,5 @@
-# New ports collection makefile for:	texworks
-# Date created:		2009-09-30
-# Whom:			Diego DepaolI <trebestie@gmail.com>
-#
+# Created by: Diego DepaolI <trebestie@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	texworks
 PORTVERSION=	0.2.2
@@ -11,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	trebestie@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple TeX front-end program
 
 BUILD_DEPENDS=	hunspell:${PORTSDIR}/textproc/hunspell
