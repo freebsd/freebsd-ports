@@ -13,7 +13,7 @@ MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTN
 		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-api/${PORTVERSION}/:api \
 		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-engine/${PORTVERSION}/:engine
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 
 USE_JAVA=	yes

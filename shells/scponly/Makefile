@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-snapshots
 DISTNAME=	${PORTNAME}-20110526
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny shell that only permits scp and sftp
 
 MAN8=		scponly.8

@@ -12,7 +12,7 @@ MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	f3cun3c02@sneakemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around libGeoIP
 
 BUILD_DEPENDS=	GeoIP>=1.4.6:${PORTSDIR}/net/GeoIP

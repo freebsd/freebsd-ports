@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 DISTFILES=	${DISTNAME}-src.tar.gz:scilab
 EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific software package for numerical computations
 
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip

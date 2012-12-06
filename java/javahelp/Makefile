@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.java.net/javadesktop/javahelp/ \
 DISTNAME=	${PORTNAME}2_0_05
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system to add online help to Java applications
 
 USE_JAVA=	yes

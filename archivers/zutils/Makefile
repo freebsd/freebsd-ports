@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/zutils
 
-MAINTAINER=	f3cun3c02@sneakemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for searching in bzip2, gzip, lzip, and xz archives
 
 GNU_CONFIGURE=	yes

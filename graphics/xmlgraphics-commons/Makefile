@@ -11,7 +11,7 @@ CATEGORIES=	graphics textproc java
 MASTER_SITES=	http://www.predatorlabs.net/dl/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
 
 USE_JAVA=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://utter.chaos.org.uk/~pdh/software/arc/ \
 DISTNAME=	ig615src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jamie@bishopston.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient animated GIF optimiser
 
 WRKSRC=		${WRKDIR}/igsrc

@@ -14,7 +14,7 @@ MASTER_SITES=	http://spiegl.de/qiv/download/ \
 		http://www.predatorlabs.net/dl/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib2 image viewer
 
 LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2
