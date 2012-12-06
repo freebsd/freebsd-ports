@@ -1,9 +1,5 @@
-# New ports collection makefile for:	LibStroke
-# Date created:				31 December 2001
-# Whom:					Jerry A! <jerry@thehutt.org>
-#
+# Created by: Jerry A! <jerry@thehutt.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1
@@ -19,6 +15,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	any
 
 OPTIONS_DEFINE=	GTK1
 GTK1_DESC=	Build with legacy Gtk+/GNOME stroke support
