@@ -52,6 +52,15 @@ bin/jolokia
 %%SITE_PERL%%/JMX/Jmx4Perl/Config.pm
 %%SITE_PERL%%/JMX/Jmx4Perl/Manual.pod
 %%SITE_PERL%%/JMX/Jmx4Perl.pm
+%%ETCDIR%%/common.cfg.sample
+%%ETCDIR%%/glassfish.cfg.sample
+%%ETCDIR%%/jboss.cfg.sample
+%%ETCDIR%%/jetty.cfg.sample
+%%ETCDIR%%/memory.cfg.sample
+%%ETCDIR%%/metrics.cfg.sample
+%%ETCDIR%%/threads.cfg.sample
+%%ETCDIR%%/tomcat.cfg.sample
+%%ETCDIR%%/weblogic.cfg.sample
 @dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier
 @dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia
 @dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent
@@ -62,3 +71,4 @@ bin/jolokia
 @dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Product
 @dirrm %%SITE_PERL%%/JMX/Jmx4Perl
 @dirrmtry %%SITE_PERL%%/JMX
+@dirrmtry %%ETCDIR%%
