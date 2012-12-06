@@ -64,6 +64,7 @@ www/cgi-bin/munin-cgi-html
 @dirrmtry www/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%DATADIR%%
+@dirrmtry %%DBDIR%%/cgi-tmp
 @dirrmtry %%DBDIR%%
 @dirrm %%SITE_PERL%%/Munin/Master
 @dirrmtry %%SITE_PERL%%/Munin

@@ -10,4 +10,4 @@
 @dirrm %%SITE_PERL%%/Munin
 @exec mkdir -p %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%%
 @exec chown %%USER%%:%%GROUP%% %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%%
-@unexec rmdir %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%% 2>/dev/null || /usr/bin/true
+@unexec rmdir %%DBDIR%% %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%% 2>/dev/null || /usr/bin/true
