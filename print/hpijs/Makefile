@@ -9,7 +9,7 @@ MASTER_SITES=	SF/hpinkjet/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	hplip-[0-9]*
 
@@ -21,25 +21,16 @@ WANT_PERL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	CUPS		"install support for cups" on \
-		FOOMATIC	"install foomatic-rip and ppd files" on
+OPTIONS_DEFINE=	CUPS DOCS FOOMATIC
+OPTIONS_DEFAULT=	CUPS FOOMATIC
+FOOMATIC_DESC=	Install foomatic-rip and PPD files
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CUPS) || defined(WITH_FOOMATIC)
-CONFLICTS+=	foomatic-filters-*
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
-CONFIGURE_ARGS+=	--enable-cups-install
-PLIST_SUB+=		CUPS=""
-.else
-CONFIGURE_ARGS+=	--disable-cups-install
-PLIST_SUB+=		CUPS="@comment "
-.endif
-
-.if !defined(WITHOUT_FOOMATIC) || !defined(WITHOUT_CUPS)
+.if ${PORT_OPTIONS:MCUPS} || ${PORT_OPTIONS:MFOOMATIC}
+CONFLICTS+=		foomatic-filters-*
 USE_PERL5=		true
 CONFIGURE_ARGS+=	--enable-foomatic-install
 PLIST_SUB+=		FOOMATIC=""
@@ -48,12 +39,21 @@ CONFIGURE_ARGS+=	--disable-foomatic-install
 PLIST_SUB+=		FOOMATIC="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MCUPS}
+LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-base
+CONFIGURE_ARGS+=	--enable-cups-install
+PLIST_SUB+=		CUPS=""
+.else
+CONFIGURE_ARGS+=	--disable-cups-install
+PLIST_SUB+=		CUPS="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/cups|${LOCALBASE}/share/cups|g ; \
 		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
 			${WRKSRC}/configure
 
-.if defined(WITHOUT_CUPS) && defined(WITHOUT_FOOMATIC)
+.if empty(PORT_OPTIONS:MCUPS) && empty(PORT_OPTIONS:MFOOMATIC)
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${PREFIX}/bin
 .else
@@ -61,11 +61,11 @@ INSTALL_TARGET=	install-exec install-foomatic
 .endif
 
 post-install:
-.if !defined(WITHOUT_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 	@${LN} -s ${PREFIX}/bin/foomatic-rip ${LOCALBASE}/libexec/cups/filter/foomatic-rip
 	@${LN} -s ${PREFIX}/share/ppd ${LOCALBASE}/share/cups/model/foomatic-ppds
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/hpijs_readme.html ${DOCSDIR}
