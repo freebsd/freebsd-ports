@@ -1,4 +1,11 @@
-The TeXworkS project is an effort to build a simple 
-TeX like TeXShop for Mac OS X.
+The TeXworks project is an effort to build a simple TeX front-end program
+(working environment) that will be available for all today's major desktop
+operating systems.  It is deliberately modeled after Dick Koch's award-
+winning TeXShop for Mac OS X.
 
-WWW:	http://www.tug.org/texworks/
+TeXworks includes an integrated PDF viewer, based on the Poppler library,
+and supports source/preview synchronization.  This capability is based on
+the "SyncTeX" feature developed by Jerome Laurens, and supported by both
+the pdfTeX and XeTeX programs in TeX Live, and other current distributions.
+
+WWW: http://www.tug.org/texworks/
