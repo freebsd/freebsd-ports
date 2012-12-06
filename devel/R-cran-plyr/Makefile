@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-plyr
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plyr
-PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTVERSION=	1.8
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
