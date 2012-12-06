@@ -1,0 +1,709 @@
+%%WWWDIR%%/Core/Distrib.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Core/ClassLoader.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Core/Tools.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Framework.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/AddressBook.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/AddressBook/Contact.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Calendar.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Calendar/Event.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Config.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Config/Database.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Config/Distrib.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Config/Standard.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Config/System.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/Principal.php
+%%WWWDIR%%/Core/Frameworks/Baikal/Model/User.php
+%%WWWDIR%%/Core/Frameworks/Baikal/WWWRoot/cal.php
+%%WWWDIR%%/Core/Frameworks/Baikal/WWWRoot/card.php
+%%WWWDIR%%/Core/Frameworks/Baikal/WWWRoot/index.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Dashboard.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Install/Database.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Install/Initialize.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Install/VersionUpgrade.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Login.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Logout.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar/Anonymous.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar/Install.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Settings/Standard.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Settings/System.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/User/AddressBooks.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/User/Calendars.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Users.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Core/Auth.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Core/ClassLoader.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Core/View.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Framework.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro/generate-sprite.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro/glyph-dark.png
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro/glyph2x-dark.png
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro/glyphpro-2x.css
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro/glyphpro.css
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro/test-glyphpro2x.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Images/logo-framboise.png
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Strings/EN/Exceptions.json
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Dashboard.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Install/Database.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Install/Initialize.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Login.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Navigation/Topbar.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Navigation/Topbar/Anonymous.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Navigation/Topbar/Install.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Page/baikal-text-20.png
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Page/index.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Page/style.css
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings/Standard.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings/System.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/User/AddressBooks.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/User/Calendars.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Users.html
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Dashboard.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Logout.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Settings/Standard.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Settings/System.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/User/AddressBooks.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/User/Calendars.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Users.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Dashboard.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Install/Database.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Install/Initialize.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Login.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar/Anonymous.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar/Install.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Settings/Standard.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Settings/System.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/User/AddressBooks.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/User/Calendars.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Users.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/WWWRoot/index.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/WWWRoot/install/index.php
+%%WWWDIR%%/Core/Frameworks/BaikalAdmin/config.php
+%%WWWDIR%%/Core/Frameworks/Flake/Controller/Cli.php
+%%WWWDIR%%/Core/Frameworks/Flake/Controller/HtmlBlock.php
+%%WWWDIR%%/Core/Frameworks/Flake/Controller/HtmlBlockTemplated.php
+%%WWWDIR%%/Core/Frameworks/Flake/Controller/Page.php
+%%WWWDIR%%/Core/Frameworks/Flake/Controller/Rpc.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/ClassLoader.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Collection.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/CollectionTyped.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Controller.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/DOM/HTMLElement.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Database.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Database/Mysql.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Database/Sqlite.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Database/Statement.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Datastructure/Chain.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Datastructure/ChainLink.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Datastructure/Chainable.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/FLObject.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Framework.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Model.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Model/Db.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Model/NoDb.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/PostConnectionService.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Render/Container.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Render/Zone.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Requester.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Requester/Sql.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Route.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/Template.php
+%%WWWDIR%%/Core/Frameworks/Flake/Core/View.php
+%%WWWDIR%%/Core/Frameworks/Flake/Framework.php
+%%WWWDIR%%/Core/Frameworks/Flake/Model/IUser.php
+%%WWWDIR%%/Core/Frameworks/Flake/Model/User/Admin.php
+%%WWWDIR%%/Core/Frameworks/Flake/Model/User/Customer.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Frameworks.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Profiler.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Router.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Router/QuestionMarkRewrite.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Tools.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/AUTHORS
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/CHANGELOG
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/LICENSE
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/README.markdown
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Autoloader.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Compiler.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/CompilerInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Environment.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Error.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Error/Loader.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Error/Runtime.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Error/Syntax.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/ExpressionParser.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension/Core.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension/Debug.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension/Escaper.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension/Optimizer.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension/Sandbox.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/ExtensionInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Filter.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Filter/Function.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Filter/Method.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Filter/Node.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/FilterInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Function.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Function/Function.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Function/Method.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Function/Node.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/FunctionInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Lexer.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/LexerInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Loader/Array.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Loader/Chain.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Loader/Filesystem.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Loader/String.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/LoaderInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Markup.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/AutoEscape.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Block.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/BlockReference.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Body.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Do.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Embed.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Array.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/AssignName.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Add.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/And.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/BitwiseAnd.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/BitwiseOr.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/BitwiseXor.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Concat.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Div.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Equal.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/FloorDiv.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Greater.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/GreaterEqual.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/In.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Less.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/LessEqual.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Mod.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Mul.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/NotEqual.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/NotIn.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Or.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Power.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Range.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary/Sub.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/BlockReference.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Conditional.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Constant.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/ExtensionReference.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Filter.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Filter/Default.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Function.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/GetAttr.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/MethodCall.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Name.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Parent.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/TempName.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Constant.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Defined.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Divisibleby.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Even.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Null.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Odd.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test/Sameas.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Unary.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Unary/Neg.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Unary/Not.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Unary/Pos.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Flush.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/For.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/ForLoop.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/If.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Import.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Include.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Macro.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Module.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Print.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Sandbox.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/SandboxedModule.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/SandboxedPrint.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Set.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/SetTemp.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Spaceless.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Text.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeOutputInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeTraverser.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeVisitor/Escaper.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeVisitor/Optimizer.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeVisitor/SafeAnalysis.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeVisitor/Sandbox.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeVisitorInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Parser.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/ParserInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Sandbox/SecurityError.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Sandbox/SecurityPolicy.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Sandbox/SecurityPolicyInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Template.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TemplateInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Test/Function.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Test/Method.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Test/Node.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TestInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Token.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/AutoEscape.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Block.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Do.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Embed.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Extends.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Filter.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Flush.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/For.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/From.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/If.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Import.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Include.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Macro.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Sandbox.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Set.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Spaceless.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser/Use.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParserBroker.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParserBrokerInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParserInterface.php
+%%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenStream.php
+%%WWWDIR%%/Core/Frameworks/Flake/config.php
+%%WWWDIR%%/Core/Frameworks/Formal/Core/ClassLoader.php
+%%WWWDIR%%/Core/Frameworks/Formal/Core/Message.php
+%%WWWDIR%%/Core/Frameworks/Formal/Element.php
+%%WWWDIR%%/Core/Frameworks/Formal/Element/Checkbox.php
+%%WWWDIR%%/Core/Frameworks/Formal/Element/Listbox.php
+%%WWWDIR%%/Core/Frameworks/Formal/Element/Password.php
+%%WWWDIR%%/Core/Frameworks/Formal/Element/Text.php
+%%WWWDIR%%/Core/Frameworks/Formal/Form.php
+%%WWWDIR%%/Core/Frameworks/Formal/Form/Morphology.php
+%%WWWDIR%%/Core/Frameworks/Formal/Framework.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/ChangeLog
+%%WWWDIR%%/Core/Frameworks/SabreDAV/LICENSE
+%%WWWDIR%%/Core/Frameworks/SabreDAV/README.md
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Backend/AbstractBackend.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Backend/BackendInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Backend/NotificationSupport.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Backend/PDO.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Backend/SharingSupport.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Calendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/CalendarObject.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/CalendarQueryParser.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/CalendarQueryValidator.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/CalendarRootNode.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Exception/InvalidComponentType.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/ICSExportPlugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/ICalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/ICalendarObject.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/IShareableCalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/ISharedCalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/Collection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/ICollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/INode.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/INotificationType.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/Node.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/Notification/Invite.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/Notification/InviteReply.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/Notification/SystemStatus.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal/Collection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal/IProxyRead.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal/IProxyWrite.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal/ProxyRead.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal/ProxyWrite.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal/User.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property/AllowedSharingModes.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property/Invite.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property/ScheduleCalendarTransp.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property/SupportedCalendarComponentSet.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property/SupportedCalendarData.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property/SupportedCollationSet.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Schedule/IMip.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Schedule/IOutbox.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Schedule/Outbox.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/ShareableCalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/SharedCalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/SharingPlugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/UserCalendars.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Version.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/AddressBook.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/AddressBookQueryParser.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/AddressBookRoot.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Backend/AbstractBackend.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Backend/BackendInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Backend/PDO.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Card.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/IAddressBook.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/ICard.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/IDirectory.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Property/SupportedAddressData.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/UserAddressBooks.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/VCFExportPlugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Version.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend/AbstractBasic.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend/AbstractDigest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend/Apache.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend/BackendInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend/File.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend/PDO.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/GuessContentType.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/MapGetToPropFind.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/favicon.ico
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/addressbook.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/calendar.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/card.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/collection.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/file.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/parent.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons/principal.png
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Client.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Collection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/BadRequest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/Conflict.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/ConflictingLock.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/FileNotFound.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/Forbidden.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/InsufficientStorage.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/InvalidResourceType.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/LockTokenMatchesRequestUri.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/Locked.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/MethodNotAllowed.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/NotAuthenticated.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/NotFound.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/NotImplemented.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/PaymentRequired.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/PreconditionFailed.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/ReportNotSupported.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/RequestedRangeNotSatisfiable.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception/UnsupportedMediaType.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FS/Directory.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FS/File.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FS/Node.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FSExt/Directory.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FSExt/File.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FSExt/Node.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/File.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/ICollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/IExtendedCollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/IFile.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/INode.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/IProperties.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/IQuota.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Backend/AbstractBackend.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Backend/BackendInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Backend/FS.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Backend/File.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Backend/PDO.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/LockInfo.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Mount/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Node.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/ObjectTree.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/PartialUpdate/IFile.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/PartialUpdate/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/GetLastModified.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/Href.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/HrefList.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/IHref.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/LockDiscovery.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/ResourceType.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/Response.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/ResponseList.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/SupportedLock.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property/SupportedReportSet.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/PropertyInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Server.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/ServerPlugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/SimpleCollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/SimpleFile.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/StringUtil.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/TemporaryFileFilterPlugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Tree.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Tree/Filesystem.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/URLUtil.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/UUIDUtil.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Version.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/XMLUtil.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/AbstractPrincipalCollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Exception/AceConflict.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Exception/NeedPrivileges.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Exception/NoAbstract.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Exception/NotRecognizedPrincipal.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Exception/NotSupportedPrivilege.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/IACL.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/IPrincipal.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/IPrincipalCollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Plugin.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Principal.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/PrincipalBackend/AbstractBackend.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/PrincipalBackend/BackendInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/PrincipalBackend/PDO.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/PrincipalCollection.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Property/Acl.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Property/AclRestrictions.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Property/CurrentUserPrivilegeSet.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Property/Principal.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Property/SupportedPrivilegeSet.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Version.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/AWSAuth.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/AbstractAuth.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/BasicAuth.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/DigestAuth.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/Request.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/Response.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/Util.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP/Version.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/autoload.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/autoload.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/composer/ClassLoader.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/composer/autoload_real.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/composer/installed.json
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/.travis.yml
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/ChangeLog
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/LICENSE
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/README.md
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/bin/vobjectvalidate.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/composer.json
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VAlarm.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCard.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VEvent.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VFreeBusy.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VJournal.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VTodo.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/DateTimeParser.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/ElementList.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/FreeBusyGenerator.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Node.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Parameter.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/ParseException.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property/Compound.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property/DateTime.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property/MultiDateTime.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Reader.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/RecurrenceIterator.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/ICalendar.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/SplitterInterface.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/VCard.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/StringUtil.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/TimeZoneUtil.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Version.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/includes.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VAlarmTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCalendarTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCardTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VEventTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VFreeBusyTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VJournalTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VTodoTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ComponentTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/DateTimeParserTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ElementListTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/EmClientTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/FreeBusyGeneratorTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Issue153Test.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Issue154Test.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ParameterTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property/CompoundTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property/DateTimeTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property/MultiDateTimeTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/PropertyTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ReaderTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorFifthTuesdayProblemTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorInfiniteLoopProblemTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorMinusOneProblemTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/ICalendarTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/VCardTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/StringUtilTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/TimeZoneUtilTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/VersionTest.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/issue153.vcf
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/bootstrap.php
+%%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/phpunit.xml
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/css/bootstrap-responsive.css
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/css/bootstrap-responsive.min.css
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/css/bootstrap.css
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/css/bootstrap.min.css
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/img/glyphicons-halflings-orig.png
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/img/glyphicons-halflings-white.png
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/img/glyphicons-halflings.png
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/js/bootstrap-popover.js
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/js/bootstrap-tooltip.js
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/js/bootstrap.js
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/js/bootstrap.min.js
+%%WWWDIR%%/Core/Frameworks/TwitterBootstrap/js/jquery-1.7.1.min.js
+%%WWWDIR%%/Core/Resources/Db/MySQL/db.sql
+%%WWWDIR%%/Core/Resources/Db/SQLite/db.sqlite
+%%WWWDIR%%/Core/Resources/System/htaccess-documentroot
+%%WWWDIR%%/Core/Resources/System/htaccess-specific
+%%WWWDIR%%/Core/Resources/Web/BaikalAdmin
+%%WWWDIR%%/Core/Resources/Web/README.md
+%%WWWDIR%%/Core/Resources/Web/TwitterBootstrap
+%%WWWDIR%%/Specific/.htaccess
+@rmtry %%WWWDIR%%/Specific/ENABLE_INSTALL
+@unexec if test -f %%CALDB%% && cmp -s %%CALDB%%-dist %%CALDB%%; then /bin/rm -f %%CALDB%%; fi
+%%WWWDIR%%/Specific/db/db.sqlite-dist
+%%WWWDIR%%/html/.htaccess
+%%WWWDIR%%/html/admin/index.php
+%%WWWDIR%%/html/admin/install/index.php
+%%WWWDIR%%/html/cal.php
+%%WWWDIR%%/html/card.php
+%%WWWDIR%%/html/index.php
+%%WWWDIR%%/html/res/core
+@dirrm %%WWWDIR%%/html/res
+@dirrm %%WWWDIR%%/html/admin/install
+@dirrm %%WWWDIR%%/html/admin
+@dirrm %%WWWDIR%%/html
+@dirrmtry %%WWWDIR%%/Specific/db
+@dirrmtry %%WWWDIR%%/Specific
+@dirrm %%WWWDIR%%/Core/Resources/Web
+@dirrm %%WWWDIR%%/Core/Resources/System
+@dirrm %%WWWDIR%%/Core/Resources/Db/SQLite
+@dirrm %%WWWDIR%%/Core/Resources/Db/MySQL
+@dirrm %%WWWDIR%%/Core/Resources/Db
+@dirrm %%WWWDIR%%/Core/Resources
+@dirrm %%WWWDIR%%/Core/Frameworks/TwitterBootstrap/js
+@dirrm %%WWWDIR%%/Core/Frameworks/TwitterBootstrap/img
+@dirrm %%WWWDIR%%/Core/Frameworks/TwitterBootstrap/css
+@dirrm %%WWWDIR%%/Core/Frameworks/TwitterBootstrap
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Splitter
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests/Sabre
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/tests
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib/Sabre
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/lib
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject/bin
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre/vobject
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/sabre
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor/composer
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/vendor
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/HTTP
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Property
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/PrincipalBackend
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL/Exception
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAVACL
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Tree
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Property
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/PartialUpdate
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Mount
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks/Backend
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Locks
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FSExt
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/FS
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Exception
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets/icons
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser/assets
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Browser
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth/Backend
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV/Auth
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/DAV
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Property
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV/Backend
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CardDAV
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Schedule
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Property
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Principal
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications/Notification
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Notifications
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Exception
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV/Backend
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre/CalDAV
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib/Sabre
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV/lib
+@dirrm %%WWWDIR%%/Core/Frameworks/SabreDAV
+@dirrm %%WWWDIR%%/Core/Frameworks/Formal/Form
+@dirrm %%WWWDIR%%/Core/Frameworks/Formal/Element
+@dirrm %%WWWDIR%%/Core/Frameworks/Formal/Core
+@dirrm %%WWWDIR%%/Core/Frameworks/Formal
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/TokenParser
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Test
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Sandbox
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/NodeVisitor
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Unary
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Test
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Filter
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression/Binary
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node/Expression
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Node
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Loader
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Function
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Filter
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Extension
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig/Error
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib/Twig
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig/lib
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Twig
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util/Router
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Util
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Model/User
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Model
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core/Requester
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core/Render
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core/Model
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core/Datastructure
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core/Database
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core/DOM
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Core
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake/Controller
+@dirrm %%WWWDIR%%/Core/Frameworks/Flake
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/WWWRoot/install
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/WWWRoot
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/User
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Settings
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Navigation
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/View/Install
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/View
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/User
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Settings
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/User
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Page
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Navigation/Topbar
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Navigation
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Install
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Strings/EN
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Strings
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Images
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/GlyphiconsPro
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Core
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/User
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Settings
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Navigation
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller/Install
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Controller
+@dirrm %%WWWDIR%%/Core/Frameworks/BaikalAdmin
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal/WWWRoot
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal/Model/Config
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal/Model/Calendar
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal/Model/AddressBook
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal/Model
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal/Core
+@dirrm %%WWWDIR%%/Core/Frameworks/Baikal
+@dirrm %%WWWDIR%%/Core/Frameworks
+@dirrm %%WWWDIR%%/Core
+@dirrmtry %%WWWDIR%%
