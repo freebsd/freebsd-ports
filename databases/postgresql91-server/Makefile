@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.1.6
+DISTVERSION?=	9.1.7
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
@@ -94,7 +94,7 @@ DTRACE_DESC=	Build with DTrace probes (server only)
 PAM_DESC=	Build with PAM Support
 LDAP_DESC=	Build with LDAP authentication support
 MIT_KRB5_DESC=	Build with MIT's kerberos support
-HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos support
+HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=	Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
 XML_DESC=	Build with XML data type (server)

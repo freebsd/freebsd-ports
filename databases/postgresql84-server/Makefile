@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.4.14
+DISTVERSION?=	8.4.15
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
@@ -114,7 +114,7 @@ ICU_DESC=	Use ICU for unicode collation (server)
 PAM_DESC=	Build with PAM support (server only)
 LDAP_DESC=	Build with LDAP authentication support
 MIT_KRB5_DESC=	Build with MIT's kerberos support
-HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos support
+HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
 DEBUG_DESC=	Builds with debugging symbols
 INTDATE_DESC=	Builds with 64-bit date/time type (server)
