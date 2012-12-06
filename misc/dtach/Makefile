@@ -11,7 +11,7 @@ PORTREVISION=		1
 CATEGORIES=		misc
 MASTER_SITES=		SF
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates the detach feature of screen
 
 GNU_CONFIGURE=	yes

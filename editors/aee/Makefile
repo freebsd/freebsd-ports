@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy editor with both curses and X11 interfaces
 
 OPTIONS=	XAE "Build X11 version 'xae'" off

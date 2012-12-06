@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Eng-Rom/${PORTVERSION}
 DISTFILES=	eng-rom-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictd database for Eng-Ro dictionary
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd

@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly command line shell
 
 USE_AUTOTOOLS=	autoconf

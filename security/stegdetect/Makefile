@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.outguess.org/ \
 		http://distfiles.master.finkmirrors.net/ \
 		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
 
 OPTIONS=	X11 "Build xsteg" On

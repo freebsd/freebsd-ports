@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME:S/-//g}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	jamie@bishopston.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle game based on hexagonal tiles
 
 USE_SDL=	sdl

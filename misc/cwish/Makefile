@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.predatorlabs.net/dl/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based user friendly windowing shell
 
 NO_WRKSUBDIR=	yes

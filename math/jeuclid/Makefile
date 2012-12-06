@@ -11,7 +11,7 @@ CATEGORIES=	math java
 MASTER_SITES=	SF/${PORTNAME}/3.1.x/${PORTVERSION}/
 EXTRACT_SUFX=	-distribution.zip
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java based MathML rendering solution
 
 USE_JAVA=	yes

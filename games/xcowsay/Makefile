@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical configurable talking cow
 
 OPTIONS=	DBUS "Enable DBus support" off

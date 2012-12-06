@@ -12,7 +12,7 @@ MASTER_SITES=	APACHE/xml/commons
 DISTNAME=	${PORTNAME}-external-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides common XML code for Apache projects
 
 USE_JAVA=	yes
