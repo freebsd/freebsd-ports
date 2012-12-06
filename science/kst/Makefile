@@ -1,4 +1,4 @@
-# Created by:	Markus Brueffer <markus@FreeBSD.org>
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kst
@@ -26,7 +26,7 @@ AUTOTOOLSFILES=	admin/cvs.sh
 
 OPTIONS_DEFINE=	NETCDF CDF KDEBASE
 CDF_DESC=	CDF data support
-KDEBASE=	JavaScript console
+KDEBASE_DESC=	JavaScript console
 
 MAN1=		kst.1
 
