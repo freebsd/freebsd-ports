@@ -4,10 +4,11 @@
 PORTNAME=	podcastdl
 PORTVERSION=	0.3.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ http://files.bebik.net/podcastdl/
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
+		http://files.bebik.net/podcastdl/
 
 MAINTAINER=	rodrigo@bebik.net
-COMMENT=	A simple podcast client write in plain C for the comman line
+COMMENT=	Simple command line podcast client written in plain C
 
 LICENSE=	BSD
 
