@@ -11,10 +11,13 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Eng-Rom/${PORTVERSION}
 DISTFILES=	eng-rom-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Dictd database for Eng-Ro dictionary
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
+
+DEPRECATED=		Upstream the project seems dead for years
+EXPIRATION_DATE=	2013-06-30
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
