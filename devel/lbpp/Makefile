@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	lbpp
-# Date created:			Jun 4, 2002
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lbpp
 PORTVERSION=	0.0.6b
@@ -13,7 +8,10 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A front end to GCC from Liberty Basic source code
+COMMENT=	Front end to GCC from Liberty Basic source code
+
+DEPRECATED=	Dead upstream since 2001
+EXPIRATION_DATE=	2013-01-12
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
