@@ -4085,6 +4085,7 @@
     SUBDIR += simulavr
     SUBDIR += skalibs
     SUBDIR += slf4j
+    SUBDIR += smack
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += sml_tk
