@@ -1,22 +1,32 @@
-# Ports collection Makefile for:	smurflog
-# Date created:				7/06/1998
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	smurflog
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	security
-#MASTER_SITES=  None available anymore, so this is stored locally
+MASTER_SITES=	PACKETSTORM/UNIX/loggers
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to assist logging of smurf attacks
 
-GNU_CONFIGURE=	YES
+USE_CSTD=	gnu89
+GNU_CONFIGURE=	yes
+
+PORTDOCS=	README
+PLIST_FILES=	sbin/smurflog
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/strip/d' ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.smurflog
-	${INSTALL_PROGRAM} ${WRKSRC}/smurflog ${PREFIX}/sbin/smurflog
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} smurflog ${PREFIX}/sbin)
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
