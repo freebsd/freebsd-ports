@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	hunspell:${PORTSDIR}/textproc/hunspell
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
 		dbus xml
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \
