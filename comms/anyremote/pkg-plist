@@ -17,6 +17,31 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Utils/aliases-server-fbrowser-v3i.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/run-or-switch-to.sh
+%%DATADIR%%/cfg-data/Utils/anyremote.gui
+%%DATADIR%%/cfg-data/Utils/iViewer/next-active.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_vol_off.png
+%%DATADIR%%/cfg-data/Utils/iViewer/btn_repeat_off.png
+%%DATADIR%%/cfg-data/Utils/iViewer/prev-active.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_indicator_off.png
+%%DATADIR%%/cfg-data/Utils/iViewer/btn_repeat_on.png
+%%DATADIR%%/cfg-data/Utils/iViewer/prev.png
+%%DATADIR%%/cfg-data/Utils/iViewer/play-active.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_v_off.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_progress_indicator.png
+%%DATADIR%%/cfg-data/Utils/iViewer/btn_shuffle_on.png
+%%DATADIR%%/cfg-data/Utils/iViewer/bg_portrait.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_vol_on.png
+%%DATADIR%%/cfg-data/Utils/iViewer/pause.png
+%%DATADIR%%/cfg-data/Utils/iViewer/img_coverart-300.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_indicator_on.png
+%%DATADIR%%/cfg-data/Utils/iViewer/btn_shuffle_off.png
+%%DATADIR%%/cfg-data/Utils/iViewer/stop-active.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_progress_on.png
+%%DATADIR%%/cfg-data/Utils/iViewer/gauge_progress_off.png
+%%DATADIR%%/cfg-data/Utils/iViewer/play.png
+%%DATADIR%%/cfg-data/Utils/iViewer/next.png
+%%DATADIR%%/cfg-data/Utils/iViewer/stop.png
+%%DATADIR%%/cfg-data/Utils/iViewer/pause-active.png
 %%DATADIR%%/cfg-data/Icons/128/favorites.png
 %%DATADIR%%/cfg-data/Icons/128/minus.png
 %%DATADIR%%/cfg-data/Icons/128/right.png
@@ -64,6 +89,32 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/16/last.png
 %%DATADIR%%/cfg-data/Icons/16/top.png
 %%DATADIR%%/cfg-data/Icons/16/bottom.png
+%%DATADIR%%/cfg-data/Icons/16/up.png
+%%DATADIR%%/cfg-data/Icons/16/no.png
+%%DATADIR%%/cfg-data/Icons/16/default.png
+%%DATADIR%%/cfg-data/Icons/16/question.png
+%%DATADIR%%/cfg-data/Icons/16/rewind.png
+%%DATADIR%%/cfg-data/Icons/16/left.png
+%%DATADIR%%/cfg-data/Icons/16/fit.png
+%%DATADIR%%/cfg-data/Icons/16/prev.png
+%%DATADIR%%/cfg-data/Icons/16/mute.png
+%%DATADIR%%/cfg-data/Icons/16/down.png
+%%DATADIR%%/cfg-data/Icons/16/plus.png
+%%DATADIR%%/cfg-data/Icons/16/pause.png
+%%DATADIR%%/cfg-data/Icons/16/forward.png
+%%DATADIR%%/cfg-data/Icons/16/none.png
+%%DATADIR%%/cfg-data/Icons/16/click_icon.png
+%%DATADIR%%/cfg-data/Icons/16/fullscreen.png
+%%DATADIR%%/cfg-data/Icons/16/folder.png
+%%DATADIR%%/cfg-data/Icons/16/refresh.png
+%%DATADIR%%/cfg-data/Icons/16/play.png
+%%DATADIR%%/cfg-data/Icons/16/minus.png
+%%DATADIR%%/cfg-data/Icons/16/vol_down.png
+%%DATADIR%%/cfg-data/Icons/16/right.png
+%%DATADIR%%/cfg-data/Icons/16/next.png
+%%DATADIR%%/cfg-data/Icons/16/stop.png
+%%DATADIR%%/cfg-data/Icons/16/file.png
+%%DATADIR%%/cfg-data/Icons/16/vol_up.png
 %%DATADIR%%/cfg-data/Icons/anyRemote.png
 %%DATADIR%%/cfg-data/Icons/48/bottom.png
 %%DATADIR%%/cfg-data/Icons/48/vol_up.png
@@ -137,6 +188,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/32/right.png
 %%DATADIR%%/cfg-data/Icons/32/click_icon.png
 %%DATADIR%%/cfg-data/Icons/32/minus.png
+%%DATADIR%%/cfg-data/Icons/32/none.png
 %%DATADIR%%/cfg-data/Icons/64/first.png
 %%DATADIR%%/cfg-data/Icons/64/folder.png
 %%DATADIR%%/cfg-data/Icons/64/up.png
@@ -216,6 +268,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/AT-mode/listen.cfg
 %%DATADIR%%/cfg-data/AT-mode/audacious.cfg
 %%DATADIR%%/cfg-data/AT-mode/totem.cfg
+%%DATADIR%%/cfg-data/AT-mode/example-lirc.cfg
 %%DATADIR%%/cfg-data/Server-mode/qwerty-device-test.cfg
 %%DATADIR%%/cfg-data/Server-mode/mpd.cfg
 %%DATADIR%%/cfg-data/Server-mode/xbmc.cfg
@@ -300,6 +353,11 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/wmctrl.cfg
 %%DATADIR%%/cfg-data/Server-mode/banshee-v2.cfg
 %%DATADIR%%/cfg-data/Server-mode/template-presentation.cfg
+%%DATADIR%%/cfg-data/Server-mode/exampleEditField.cfg
+%%DATADIR%%/cfg-data/Server-mode/gnomeShortcuts.cfg
+%%DATADIR%%/cfg-data/Server-mode/parserTest.cfg
+%%DATADIR%%/cfg-data/Server-mode/pingTest.cfg
+%%DATADIR%%/cfg-data/Server-mode/exampleVibrate.cfg
 @dirrm %%DATADIR%%/cfg-data/AT-mode
 @dirrm %%DATADIR%%/cfg-data/Bemused-emulation
 @dirrm %%DATADIR%%/cfg-data/Icons/16
@@ -310,6 +368,7 @@ bin/anyremote
 @dirrm %%DATADIR%%/cfg-data/Icons
 @dirrm %%DATADIR%%/cfg-data/iViewer
 @dirrm %%DATADIR%%/cfg-data/Server-mode
+@dirrm %%DATADIR%%/cfg-data/Utils/iViewer
 @dirrm %%DATADIR%%/cfg-data/Utils
 @dirrm %%DATADIR%%/cfg-data
 @dirrm %%DATADIR%%
@@ -504,6 +563,7 @@ bin/anyremote
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/iviewer.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/dbus.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/android-client.html
+%%PORTDOCS%%%%DOCSDIR%%/doc-html/cm-xml.html
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
