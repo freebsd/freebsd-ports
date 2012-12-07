@@ -229,6 +229,7 @@
     SUBDIR += hs-sendfile
     SUBDIR += hs-simple-sendfile
     SUBDIR += hs-socks
+    SUBDIR += hsflowd
     SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += httping
