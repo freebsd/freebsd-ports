@@ -1,9 +1,5 @@
-# Ports collection makefile for: freeswitch scripts
-# Date created: september , 2009
-# Whom: Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch-scripts
 PORTVERSION=	1.0.7.1
@@ -14,7 +10,7 @@ MASTER_SITES=	http://dl.dropbox.com/u/152504/
 DISTNAME=	${BASE_PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	${BASE_PORTNAME}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch Scripts
 
 RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core

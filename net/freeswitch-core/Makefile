@@ -1,9 +1,5 @@
-# Ports collection makefile for:	freeswitch-core
-# Date created:				May 11, 2010
-# Whom:					Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch-core
 PORTVERSION=	1.0.7.1
@@ -31,7 +27,7 @@ DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
 DIST_SUBDIR=	${BASE_PORTNAME}
 EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch SoftSwitch Port
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

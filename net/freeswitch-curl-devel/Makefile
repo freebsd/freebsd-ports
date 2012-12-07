@@ -1,9 +1,5 @@
-# Ports collection makefile for:	net/freeswitch-sbc-devel
-# Date created:				May 11, 2012
-# Whom:					Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 FREESWITCH_CONF_DIST=	curl
 DESCR=			${.CURDIR}/pkg-descr

@@ -1,9 +1,5 @@
-# Ports collection makefile for: freeswitch-music
-# Date created: May 11, 2009
-# Whom: Eric F Crist <ecrist@secure-computing.net>
-#
+# Created by: Eric F Crist <ecrist@secure-computing.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.0.8
@@ -13,7 +9,7 @@ MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-music
 DIST_SUBDIR=	freeswitch
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch Music - All Bitrates
 
 NO_WRKSUBDIR=	yes

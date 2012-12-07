@@ -1,9 +1,5 @@
-# Ports collection makefile for:	freeswitch-pizza
-# Date created:				September 2009
-# Whom:					Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch-pizza
 PORTVERSION=	1.0.7.1
@@ -16,7 +12,7 @@ DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
 		pizza_sounds.tar.gz:2
 DIST_SUBDIR=	${BASE_PORTNAME}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch pizza demo
 
 RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core \

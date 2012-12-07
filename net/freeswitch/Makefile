@@ -1,9 +1,5 @@
-# Ports collection makefile for: freeswitch
-# Date created: Augets 9, 2009
-# Whom: Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.0.6
@@ -13,7 +9,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch meta-port to pull in all the components
 
 CONFLICTS=	freeswitch-devel-[0-9]*

@@ -1,9 +1,5 @@
-# Ports collection makefile for: freeswitch Version 1.2
-# Date created: May 14, 2012
-# Whom: Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.2.3
@@ -13,7 +9,7 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch meta-port to pull in all the components
 
 RUN_DEPENDS=	freeswitch:${PORTSDIR}/net/freeswitch-core-devel

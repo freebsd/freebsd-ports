@@ -1,9 +1,5 @@
-# Ports collection makefile for: fusionpbx
-# Date created: Jan 12, 2011
-# Whom: Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fusionpbx
 DISTVERSION=	3.1.2
@@ -11,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 Graphical User Interface for FreeSwitch
 
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
