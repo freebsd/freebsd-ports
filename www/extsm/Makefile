@@ -18,7 +18,7 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xsm
 
-OPTIONS_DEFINE=	TOMCAT6 TOMCAT5 RESIN3 DOCS EXAMPLES
+OPTIONS_DEFINE=	TOMCAT6 RESIN3 DOCS EXAMPLES
 OPTIONS_DEFAULT=	TOMCAT6
 
 .include <bsd.port.options.mk>
@@ -35,11 +35,6 @@ WEBAPP_DIRS=	#empty
 .if ${PORT_OPTIONS:MTOMCAT6}
 WEBAPP_DIRS+=	apache-tomcat-6.0
 RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-.endif
-
-.if ${PORT_OPTIONS:MTOMCAT5}
-WEBAPP_DIRS+=	tomcat5.5
-RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 .endif
 
 .if ${PORT_OPTIONS:MRESIN3}
