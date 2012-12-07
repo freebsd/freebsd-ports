@@ -9,6 +9,7 @@ share/applications/sagasu.desktop
 share/gnome/help/sagasu/C/sagasu.html
 share/gnome/help/sagasu/fr/sagasu.html
 share/locale/cs/LC_MESSAGES/sagasu.mo
+share/locale/da/LC_MESSAGES/sagasu.mo
 share/locale/de/LC_MESSAGES/sagasu.mo
 share/locale/fr/LC_MESSAGES/sagasu.mo
 share/locale/ja/LC_MESSAGES/sagasu.mo
@@ -18,8 +19,6 @@ share/pixmaps/close.xpm
 share/pixmaps/sagasu.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/sagasu-helper.pl
-share/sounds/sagasu/sagasu.wav
-@dirrm share/sounds/sagasu
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/sagasu/fr
 @dirrm share/gnome/help/sagasu/C
