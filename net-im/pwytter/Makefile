@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Pwytter
-# Date created:				24 May 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pwytter
 PORTVERSION=	0.8
@@ -13,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free multi-platform Twitter client written in Python
+COMMENT=	Free multi-platform Twitter client written in Python
 
 LICENSE=	GPLv2
 
