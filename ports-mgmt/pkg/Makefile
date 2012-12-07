@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -14,6 +14,8 @@ LICENSE=	BSD
 USE_XZ=		yes
 
 MAKE_JOBS_SAFE=	yes
+# Disable CCACHE support because of the chicken/egg problem pkg should always
+# With no dependency at all
 NO_CCACHE=	yes
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
