@@ -1,16 +1,10 @@
 bin/gonvert
 share/applications/gonvert.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/gonvert.glade
-%%DATADIR%%/pixmaps/gonvert.png
 %%DATADIR%%/pixmaps/gonvert-icon_alternative.png
-share/locale/pl/LC_MESSAGES/gonvert.mo
+%%DATADIR%%/pixmaps/gonvert.png
+%%NLS%%share/locale/pl/LC_MESSAGES/gonvert.mo
 share/pixmaps/gonvert.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
