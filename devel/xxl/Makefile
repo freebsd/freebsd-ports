@@ -5,13 +5,10 @@ PORTNAME=	xxl
 PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zork.org/software/
+MASTER_SITES=	http://launchpadlibrarian.net/39195019/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
