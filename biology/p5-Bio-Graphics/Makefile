@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	2.29
+PORTVERSION=	2.31
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -57,6 +57,7 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Glyph::ellipse.3 \
 		Bio::Graphics::Glyph::ex.3 \
 		Bio::Graphics::Glyph::extending_arrow.3 \
+		Bio::Graphics::Glyph::fb_shmiggle.3 \
 		Bio::Graphics::Glyph::fixedwidth.3 \
 		Bio::Graphics::Glyph::flag.3 \
 		Bio::Graphics::Glyph::gene.3 \
