@@ -1,12 +1,7 @@
-# New ports collection makefile for:	devel/p5-Best
-# Date created:				03 April 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Best
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GAAL
