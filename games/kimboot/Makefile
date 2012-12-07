@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kimboot
-# Date created:		26 Jan 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	kimboot
 PORTVERSION=	0.74
@@ -24,6 +20,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	kimboot
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
+
+PORTSCOUT=	skipv:1.0 # has severe memory leak
 
 DESKTOP_ENTRIES="Kimboot" \
 		"A sick and addictive arcade game" \
