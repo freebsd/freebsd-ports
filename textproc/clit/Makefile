@@ -15,7 +15,7 @@ DISTFILES=	clit${MAJ_VER}${MIN_VER}src.zip:clit \
 		ltm-0.33.tar.bz2:ltm
 EXTRACT_ONLY=	clit${MAJ_VER}${MIN_VER}src.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Microsoft Lit to HTML and Open eBooks converter
 
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${MAJ_VER}${MIN_VER}
