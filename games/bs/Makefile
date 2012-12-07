@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bs
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
