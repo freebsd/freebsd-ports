@@ -351,7 +351,7 @@ openldap_f10_FILE=	${LINUXBASE}/usr/lib/libldap-2.4.so.2.2.0
 openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openldap_PORT=		${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-openldap
 
-openmotif_FILE=		${LINUXBASE}/usr/X11R6/lib/libXm.so.4.0.3
+openmotif_FILE=		${LINUXBASE}/usr/X11R6/lib/libXm.so.3.0.3
 openmotif_f10_FILE=	${LINUXBASE}/usr/lib/libXm.so.4
 openmotif_DETECT=	${openmotif${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openmotif_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-openmotif
