@@ -6,21 +6,32 @@
 #
 
 PORTNAME=	hexter
-PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	DSSI softsynth that models the sound generation of a Yamaha DX7
 
-LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.7:${PORTSDIR}/audio/liblo \
-		jack.0:${PORTSDIR}/audio/jack
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
+		lo:${PORTSDIR}/audio/liblo \
+		jack:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+
+PORTDOCS=	AUTHORS ChangeLog README TODO
+
+.include <bsd.port.options.mk>
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
