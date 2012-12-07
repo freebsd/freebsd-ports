@@ -45,7 +45,7 @@ PLIST_SUB=	PORTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT HEIMDAL_PATCH LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD PERL PYTHON OCI8 RUBY DHCP \
-		EXPERIMENTAL UDPFROMTO DEVELOPER
+		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR
 OPTIONS_DEFAULT=USER PERL PYTHON
 
 DHCP_DESC=		With DHCP support (EXPERIMENTAL)
@@ -59,6 +59,7 @@ OCI8_DESC=		With Oracle support (currently experimental)
 EXPERIMENTAL_DESC=	Build experimental modules
 UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
+EDIR_DESC=		Enable eDirectory support (implies LDAP)
 
 .include <bsd.port.options.mk>
 
@@ -112,6 +113,13 @@ PLIST_SUB+=	KRB5="@comment "
 # Patch rlm_krb5.c to add Heimdal support for specifying keytab+SPN
 .if ${PORT_OPTIONS:MHEIMDAL_PATCH}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__modules__rlm_krb5__rlm_krb5.c
+.endif
+
+.if ${PORT_OPTIONS:MEDIR}
+CONFIGURE_ARGS+=--with-edir
+.if empty(${PORT_OPTIONS:MLDAP})
+PORT_OPTIONS+= LDAP
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
