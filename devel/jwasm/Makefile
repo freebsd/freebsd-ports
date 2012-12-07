@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwasm
-PORTVERSION=	208
+PORTVERSION=	209
 CATEGORIES=	devel
 MASTER_SITES=	http://www.japheth.de/Download/JWasm/
 DISTNAME=	JWasm${PORTVERSION}s
@@ -32,8 +32,6 @@ post-patch:
 		'/^extra_c_flags/s|-O2|$$(CFLAGS)| ; \
 		 /^CC/s| =| ?=| ; \
 		 s|-s -o|-o|' ${WRKSRC}/GccUnix.mak
-	@${REINPLACE_CMD} -e \
-		'/v2.07/s|<malloc.h>|<stdlib.h>|' ${WRKSRC}/H/memalloc.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/GccUnixR/jwasm ${PREFIX}/bin
