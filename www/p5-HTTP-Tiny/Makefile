@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Tiny
-PORTVERSION=	0.022
+PORTVERSION=	0.024
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -24,10 +24,17 @@ MAN3=		HTTP::Tiny.3
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTPS}
-BUILD_DEPENDS+=	p5-IO-Socket-SSL>=1.56:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
-RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.56:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
+BUILD_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay
+		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
+RUN_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay
+		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
+RUN_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
+.endif
+
+.include <bsd.port.post.mk>
