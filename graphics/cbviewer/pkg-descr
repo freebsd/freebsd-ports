@@ -1,5 +1,4 @@
-CBViewer is a comic book viewer for comic book archives in cbz, cbr, zip, and
-rar formats. The interface is written in java but it requires unrar for linux
-or windows depending which OS you are running on. It will do zip files in java.
+CBViewer is a comic book viewer for comic book archives in cbz, cbr, zip
+and rar formats.
 
 WWW: http://www.renuncln.com/programs/cbviewer/
