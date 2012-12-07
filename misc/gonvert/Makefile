@@ -8,17 +8,29 @@
 
 PORTNAME=	gonvert
 PORTVERSION=	0.2.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A conversion utility that allows conversion between many units
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Conversion utility that allows conversion between many units
+
+LICENSE=	GPLv2
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 NO_BUILD=	yes
+
+PORTDOCS=	CHANGELOG FAQ README THANKS TODO
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|g ; \
@@ -35,14 +47,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}/pixmaps
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	${LN} -sf ${DATADIR}/pixmaps/gonvert.png ${PREFIX}/share/pixmaps
+
+.if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} ${PREFIX}/share/locale/pl/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/i18n/pl_messages.gmo \
 		${PREFIX}/share/locale/pl/LC_MESSAGES/gonvert.mo
-.if !defined(NOPORTDOCS)
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG FAQ README THANKS TODO
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
