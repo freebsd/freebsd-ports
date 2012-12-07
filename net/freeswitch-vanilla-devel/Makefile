@@ -1,9 +1,5 @@
-# Ports collection makefile for:	net/freeswitch-vanilla-devel
-# Date created:				May 11, 2012
-# Whom:					Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 DISTVERSION=	1.2.3
@@ -12,7 +8,7 @@ MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-${FREESWITCH_CONF_DIST}-devel
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch configuration files; ${FREESWITCH_CONF_DIST} variant
 
 RUN_DEPENDS=    freeswitch:${PORTSDIR}/net/freeswitch-core-devel

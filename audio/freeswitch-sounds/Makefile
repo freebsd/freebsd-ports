@@ -1,9 +1,5 @@
-# Ports collection makefile for: freeswitch-sounds
-# Date created: May 11, 2010
-# Whom: Eric F Crist <ecrist@secure-computing.net>
-#
+# Created by: Eric F Crist <ecrist@secure-computing.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 DISTVERSION=	1.0.20
@@ -12,7 +8,7 @@ MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-sounds
 DIST_SUBDIR=	${PORTNAME}${PORTNAMESUFFIX}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch Sounds (All Bitrates)
 
 PLIST=		${WRKDIR}/plist

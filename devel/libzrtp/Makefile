@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libzrtp for freeswitch
-# Date created:        3 December 2010
-# Whom:                rneese@gmail.com
-#
+# Created by: rneese@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	libzrtp
 PORTVERSION=	0.81.514
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# http://philzimmermann.com/zfone/EN/registration/index.html
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZRTP library from the Zfone SDK
 
 GNU_CONFIGURE=	yes

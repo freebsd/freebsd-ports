@@ -1,7 +1,4 @@
-# New ports collection Makefile for:   autotalent
-# Date created:         03/24/11
-# Whom:                 Rich Neese <r.neese@gmail.com>
-#
+# Created by: Rich Neese <r.neese@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	autotalent
@@ -10,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://web.mit.edu/tbaran/www/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time pitch correction plugin for ladspa
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	freeswitch-core-devel
-# Date created:				May 14, 2012
-# Whom:					Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 DISTVERSION=	1.2.3
@@ -30,7 +26,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.bz2 \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.tar.bz2
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch SoftSwitch Port
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

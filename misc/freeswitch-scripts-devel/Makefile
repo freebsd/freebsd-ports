@@ -1,9 +1,5 @@
-# Ports collection makefile for: freeswitch scripts
-# Date created: september , 2009
-# Whom: Richard Neese <r.neese@gmail.com>
-#
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	freeswitch
 DISTVERSION=	1.2.3
@@ -12,7 +8,7 @@ MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-scripts-devel
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch Scripts
 
 RUN_DEPENDS=	freeswitch:${PORTSDIR}/net/freeswitch-core-devel

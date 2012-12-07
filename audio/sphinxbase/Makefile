@@ -1,16 +1,12 @@
-# New ports collection makefile for:   sphinxbase
-# Date created:        8 Jan 2008
-# Whom:                r.neese
-#
+# Created by: r.neese
 # $FreeBSD$
-#
 
 PORTNAME=	sphinxbase
 PORTVERSION=	0.7
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison 

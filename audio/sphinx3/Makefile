@@ -1,16 +1,12 @@
-# New ports collection makefile for:	sphinx3
-# Date created:				4 Jan 2008
-# Whom:					Richard Neese
-#
+# Created by: Richard Neese
 # $FreeBSD$
-#
 
 PORTNAME=	sphinx3
 PORTVERSION=	0.7
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	r.neese@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
 LIB_DEPENDS=	sphinxbase:${PORTSDIR}/audio/sphinxbase
