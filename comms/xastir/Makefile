@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xastir
-# Date created:				17th June 2004
-# Whom:					Carl Makin <carl@stagecraft.cx>
-#
 # $FreeBSD$
-#
+# Created by:		Carl Makin <carl@stagecraft.cx>
 
 PORTNAME=	xastir
-PORTVERSION=	2.0.0
-PORTREVISION=	9
+PORTVERSION=	2.0.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +11,7 @@ COMMENT=	X Amateur Station Tracking and Information Reporting
 
 BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
@@ -24,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		xastir.1 \
 		callpass.1 \
@@ -53,19 +49,19 @@ OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSHAPELIB}
-LIB_DEPENDS+=	shp.1:${PORTSDIR}/devel/shapelib
+LIB_DEPENDS+=	shp:${PORTSDIR}/devel/shapelib
 .else
 CONFIGURE_ARGS+=	--without-shapelib
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	GraphicsMagickWand.7:${PORTSDIR}/graphics/GraphicsMagick13
+LIB_DEPENDS+=	GraphicsMagickWand:${PORTSDIR}/graphics/GraphicsMagick13
 .else
 CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .endif
 
 .if ${PORT_OPTIONS:MDBFAWK}
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--without-dbfawk
 .endif

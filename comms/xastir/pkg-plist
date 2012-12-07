@@ -2,45 +2,6 @@ bin/callpass
 bin/testdbfawk
 bin/xastir
 bin/xastir_udp_client
-lib/xastir/Coordinate.pm
-lib/xastir/Xastir_tigerpoly.py
-lib/xastir/coord-convert.pl
-lib/xastir/get-NWSdata
-lib/xastir/get-fcc-rac.pl
-lib/xastir/get-gnis
-lib/xastir/get-maptools.sh
-lib/xastir/get-pop
-lib/xastir/get_shapelib.sh
-lib/xastir/gpx2shape
-lib/xastir/icontable.pl
-lib/xastir/inf2geo.pl
-lib/xastir/kiss-off.pl
-lib/xastir/langElmerFudd.pl
-lib/xastir/langMuppetsChef.pl
-lib/xastir/langOldeEnglish.pl
-lib/xastir/langPigLatin.pl
-lib/xastir/langPirateEnglish.pl
-lib/xastir/mapblast2geo.pl
-lib/xastir/mapfgd.pl
-lib/xastir/object2shp.pl
-lib/xastir/overlay.pl
-lib/xastir/ozi2geo.pl
-lib/xastir/permutations.pl
-lib/xastir/pos2shp.pl
-lib/xastir/ridge_radar.pl
-lib/xastir/slideshow.pl
-lib/xastir/split_gnis.bash
-lib/xastir/split_gnis.pl
-lib/xastir/test_coord.pl
-lib/xastir/toporama250k.pl
-lib/xastir/toporama50k.pl
-lib/xastir/track-get.pl
-lib/xastir/update_langfile.pl
-lib/xastir/values
-lib/xastir/values.pl
-lib/xastir/waypoint-get.pl
-lib/xastir/xastir-fixcfg.sh
-lib/xastir/xastir-migrate.sh
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/COPYING.LIB.LESSTIF
@@ -71,6 +32,11 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/cousub00.dbfawk
 %%DATADIR%%/config/edge.dbfawk
 %%DATADIR%%/config/featnames.dbfawk
+%%DATADIR%%/config/gfe_coastal_waters.dbfawk
+%%DATADIR%%/config/gfe_coastal_waters_warnings.dbfawk
+%%DATADIR%%/config/gfe_fire_weather.dbfawk
+%%DATADIR%%/config/gfe_metro_areas.dbfawk
+%%DATADIR%%/config/gfe_public_weather.dbfawk
 %%DATADIR%%/config/gps_wpt.dbfawk
 %%DATADIR%%/config/language-Dutch.sys
 %%DATADIR%%/config/language-ElmerFudd.sys
@@ -87,17 +53,27 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/nwsc_ddmmyy.dbfawk
 %%DATADIR%%/config/nwsc_ddmmyy_09.dbfawk
 %%DATADIR%%/config/nwsc_ddmmyy_09b.dbfawk
+%%DATADIR%%/config/nwsc_ddmmyy_10.dbfawk
+%%DATADIR%%/config/nwsc_ddmmyy_10a.dbfawk
+%%DATADIR%%/config/nwshzddmmyy.dbfawk
 %%DATADIR%%/config/nwsmzddmmyy.dbfawk
 %%DATADIR%%/config/nwsmzddmmyy_09.dbfawk
+%%DATADIR%%/config/nwsmzddmmyy_11.dbfawk
 %%DATADIR%%/config/nwsmzoddmmyy.dbfawk
+%%DATADIR%%/config/nwsozddap12.dbfawk
 %%DATADIR%%/config/nwsozddmmyy.dbfawk
 %%DATADIR%%/config/nwsozddmmyy_09.dbfawk
+%%DATADIR%%/config/nwsw_ddjn12.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy_09.dbfawk
+%%DATADIR%%/config/nwsw_ddmmyy_10.dbfawk
 %%DATADIR%%/config/nwsz1ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy_09.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy_10.dbfawk
+%%DATADIR%%/config/nwsz_ddmmyy_10b.dbfawk
+%%DATADIR%%/config/nwsz_ddmmyy_10c.dbfawk
+%%DATADIR%%/config/nwsz_ddmmyy_11.dbfawk
 %%DATADIR%%/config/nwszoddmmyy.dbfawk
 %%DATADIR%%/config/pointlm.dbfawk
 %%DATADIR%%/config/predefined_EVENT.sys
@@ -127,6 +103,7 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/tl_2009_zcta5.dbfawk
 %%DATADIR%%/config/tnc-startup.aea
 %%DATADIR%%/config/tnc-startup.d700
+%%DATADIR%%/config/tnc-startup.d72_d710
 %%DATADIR%%/config/tnc-startup.kam
 %%DATADIR%%/config/tnc-startup.kpc2
 %%DATADIR%%/config/tnc-startup.kpc3
@@ -138,6 +115,7 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/tnc-startup.tnc2
 %%DATADIR%%/config/tnc-startup.tnc2-ui
 %%DATADIR%%/config/tnc-stop.d700
+%%DATADIR%%/config/tnc-stop.d72_d710
 %%DATADIR%%/config/tnc-stop.sys
 %%DATADIR%%/config/tnc-stop.thd7
 %%DATADIR%%/config/tnc-stop.tnc2-ui
@@ -176,21 +154,64 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/maps/Online/terraserver-urban.geo
 %%DATADIR%%/maps/Online/terraserver.geo
 %%DATADIR%%/maps/worldhi.map
+%%DATADIR%%/scripts/Coordinate.pm
+%%DATADIR%%/scripts/Xastir_tigerpoly.py
+%%DATADIR%%/scripts/coord-convert.pl
+%%DATADIR%%/scripts/geopdf2gtiff.pl
+%%DATADIR%%/scripts/get-BOMdata
+%%DATADIR%%/scripts/get-NWSdata
+%%DATADIR%%/scripts/get-fcc-rac.pl
+%%DATADIR%%/scripts/get-gnis
+%%DATADIR%%/scripts/get-maptools.sh
+%%DATADIR%%/scripts/get-pop
+%%DATADIR%%/scripts/get_shapelib.sh
+%%DATADIR%%/scripts/gpx2shape
+%%DATADIR%%/scripts/icontable.pl
+%%DATADIR%%/scripts/inf2geo.pl
+%%DATADIR%%/scripts/kiss-off.pl
+%%DATADIR%%/scripts/langElmerFudd.pl
+%%DATADIR%%/scripts/langMuppetsChef.pl
+%%DATADIR%%/scripts/langOldeEnglish.pl
+%%DATADIR%%/scripts/langPigLatin.pl
+%%DATADIR%%/scripts/langPirateEnglish.pl
+%%DATADIR%%/scripts/mapblast2geo.pl
+%%DATADIR%%/scripts/mapfgd.pl
+%%DATADIR%%/scripts/object2shp.pl
+%%DATADIR%%/scripts/overlay.pl
+%%DATADIR%%/scripts/ozi2geo.pl
+%%DATADIR%%/scripts/permutations.pl
+%%DATADIR%%/scripts/pos2shp.pl
+%%DATADIR%%/scripts/ridge_radar.pl
+%%DATADIR%%/scripts/slideshow.pl
+%%DATADIR%%/scripts/split_gnis.bash
+%%DATADIR%%/scripts/split_gnis.pl
+%%DATADIR%%/scripts/test_coord.pl
+%%DATADIR%%/scripts/toporama250k.pl
+%%DATADIR%%/scripts/toporama50k.pl
+%%DATADIR%%/scripts/track-get.pl
+%%DATADIR%%/scripts/update_langfile.pl
+%%DATADIR%%/scripts/values
+%%DATADIR%%/scripts/values.pl
+%%DATADIR%%/scripts/waypoint-get.pl
+%%DATADIR%%/scripts/xastir-fixcfg.sh
+%%DATADIR%%/scripts/xastir-migrate.sh
 %%DATADIR%%/sounds/placeholder
 %%DATADIR%%/symbols/13pct.xbm
 %%DATADIR%%/symbols/25pct.xbm
 %%DATADIR%%/symbols/2x2.xbm
 %%DATADIR%%/symbols/alert.xbm
 %%DATADIR%%/symbols/flood.xbm
+%%DATADIR%%/symbols/icon.png
 %%DATADIR%%/symbols/red_flag.xbm
 %%DATADIR%%/symbols/snow.xbm
 %%DATADIR%%/symbols/symbols.dat
-%%DATADIR%%/symbols/tornado.xbm
+%%DATADIR%%/symbols/torndo.xbm
 %%DATADIR%%/symbols/wind.xbm
-%%DATADIR%%/symbols/winter_wx.xbm
-%%DATADIR%%/symbols/wntr_strm.xbm
+%%DATADIR%%/symbols/winter_storm.xbm
+%%DATADIR%%/symbols/winter_weather.xbm
 @dirrm %%DATADIR%%/symbols
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/maps/Online
 @dirrm %%DATADIR%%/maps/GPS
 @dirrm %%DATADIR%%/maps
@@ -201,4 +222,3 @@ lib/xastir/xastir-migrate.sh
 @dirrm %%DATADIR%%/Counties
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrm lib/xastir
