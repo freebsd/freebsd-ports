@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+etc/hsflowd/hsflowd.conf.sample
+sbin/hsflowd
+@dirrmtry etc/hsflowd
+@unexec if cmp -s %D/etc/hsflowd/hsflowd.conf %D/etc/hsflowd.conf.sample; then rm -f %D/etc/hsflowd.conf; fi
+@unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
