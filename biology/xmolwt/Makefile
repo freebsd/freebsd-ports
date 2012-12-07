@@ -1,23 +1,41 @@
-# New ports collection makefile for:	xmolwt/gmolwt
-# Date created:		1999-08-30
-# Whom:			Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
-#
+# Created by: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	xmolwt
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Calculate formula weight and percent of each element for a given formula
+COMMENT=	Calculate atom weight and percent of each element for a given formula
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-MAKEFILE=	Makefile.gtk
+OPTIONS_DEFINE=	GTK2
 
 USE_GMAKE=	yes
+MAKEFILE=	Makefile.gtk
+ALL_TARGET=	gmolwt
+MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	*
+PLIST_FILES=	bin/gmolwt bin/molwt
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME=	gtk20
+USE_PKGCONFIG=	build
+MAKE_ENV+=	GTKCONFIG="pkg-config gtk+-2.0"
+.else
 USE_GNOME=	gtk12
+MAKE_ENV+=	GTKCONFIG="${GTK_CONFIG}"
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^CC/s| =| ?=| ; \
+		/^CFLAGS/s| =| +=| ; \
+		/^GTKCONFIG/s| =| ?=|' ${WRKSRC}/Makefile.gtk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmolwt ${PREFIX}/bin
