@@ -2,28 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	aifad
-PORTVERSION=	1.0.27
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://cdn.bitbucket.org/mmottl/aifad/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
-
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		${SA_DIR}/res/res.a:${PORTSDIR}/devel/ocaml-res \
-		${SA_DIR}/cfg/cfg.a:${PORTSDIR}/devel/ocaml-cfg
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+		${SA_DIR}/cfg/cfg.a:${PORTSDIR}/devel/ocaml-cfg \
+		omake:${PORTSDIR}/devel/omake	\
+		menhir:${PORTSDIR}/devel/menhir
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 
-ALL_TARGET=	opt
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 DOCS=	README.txt TODO

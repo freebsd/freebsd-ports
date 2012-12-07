@@ -1,6 +1,7 @@
 bin/aifad
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%EXAMPLESDIR%%/OMakefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/breast_cancer1.add
 %%PORTDOCS%%%%EXAMPLESDIR%%/breast_cancer1.ads
 %%PORTDOCS%%%%EXAMPLESDIR%%/breast_cancer2.add
