@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Chemistry-MacroMol
-# Date created:				17 May, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Chemistry-MacroMol
 PORTVERSION=	0.06
@@ -11,7 +7,7 @@ CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl toolkit to describe macromolecules
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0.37:${PORTSDIR}/science/p5-Chemistry-Mol
