@@ -1,24 +1,23 @@
-# New ports collection makefile for:	textproc/sagasu
-# Date created:				10 Jul 2003
-# Whom:					Juan Salaverria <rael@vectorstar.net>
-#
+# Created by: Juan Salaverria <rael@vectorstar.net>
 # $FreeBSD$
-#
 
 PORTNAME=	sagasu
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.0.12
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME tool to find strings in a set of files
 
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+LICENSE=	GPLv2 # (or later)
+
+USE_GNOME=	gnomehack gnomehier libgnomeui
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -33,8 +32,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS INSTALL NEWS README THANKS TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in AUTHORS INSTALL NEWS README THANKS TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
