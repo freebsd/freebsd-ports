@@ -1,5 +1,5 @@
---- ttf.cpp.orig	Wed Jul 19 11:13:20 2006
-+++ ttf.cpp	Wed Jul 19 11:22:41 2006
+--- ttf.cpp	2003-01-08 00:25:25.000000000 -0500
++++ ttf.cpp	2012-12-07 12:34:54.000000000 -0500
 @@ -51,20 +51,27 @@
  bool
  Face::MappingPresent (int cmapidx, NumericMapping *m, int enc_size, int start_code, bool enc_comp)
@@ -44,3 +44,30 @@
              };
              platform = NamePtr.platform_id;
              encoding = NamePtr.encoding_id;
+@@ -483,7 +490,7 @@
+ const char *
+ Face::PanoseWeight (void) const
+ {
+-    static char *panose_weight_latin[] = {
++    static const char *panose_weight_latin[] = {
+ 	"any",
+ 	"no fit",
+ 	"very light",
+@@ -548,7 +555,7 @@
+ const char *
+ Face::PanoseWidth (void) const
+ {
+-    static char *panose_spacing_latin_text [] = {
++    static const char *panose_spacing_latin_text [] = {
+ 	"any",
+ 	"no fit",
+ 	"old style",
+@@ -561,7 +568,7 @@
+ 	"monospaced",
+     };
+     
+-    static char *panose_spacing_latin_decorative [] = {
++    static const char *panose_spacing_latin_decorative [] = {
+ 	"any",
+ 	"no fit",
+ 	"super condensed",
