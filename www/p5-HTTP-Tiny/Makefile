@@ -24,9 +24,9 @@ MAN3=		HTTP::Tiny.3
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTPS}
-BUILD_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay
+BUILD_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
-RUN_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
 .endif
 
