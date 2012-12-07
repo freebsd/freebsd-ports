@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	msktutil
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
     		http://mirrors.rit.edu/zi/
