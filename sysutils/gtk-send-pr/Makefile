@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-send-pr
-# Date created:			Fri May  2 22:08:08 CEST 2003
-# Whom:				Miguel Mendez <flynn@energyhq.es.eu.org>
-#
+# Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-send-pr
 PORTVERSION=	0.4.9
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.7:${PORTSDIR}/mail/libesmtp
