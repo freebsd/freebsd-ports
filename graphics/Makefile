@@ -84,6 +84,7 @@
     SUBDIR += camerakit
     SUBDIR += cbrpager
     SUBDIR += cbview
+    SUBDIR += cbviewer
     SUBDIR += cegui
     SUBDIR += cenon
     SUBDIR += cfdg
