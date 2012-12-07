@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Titano
-# Date created:				25 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	titano
 PORTVERSION=	0.0.7
@@ -14,7 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IDE for GNOME desktop
 
-LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
+DEPRECATED=	Dead upstream since 2001
+EXPIRATION_DATE=	2013-01-07
+
+LIB_DEPENDS=	unicode:${PORTSDIR}/devel/libunicode
 
 USE_GNOME=	gnomelibs libglade
 USE_GMAKE=	yes
