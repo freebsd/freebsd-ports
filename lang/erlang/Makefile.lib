@@ -20,7 +20,7 @@ OTP_LIBS=	appmon-2.1.14.1 \
 		eldap-1.0 \
 		erl_docgen-0.3.3 \
 		erl_interface-3.7.9 \
-		erts-5.9.3  \
+		erts-5.9.3.1  \
 		et-1.4.4.2 \
 		eunit-2.2.3 \
 		gs-1.5.15.1 \
@@ -46,7 +46,7 @@ OTP_LIBS=	appmon-2.1.14.1 \
 		sasl-2.2.1 \
 		snmp-4.22.1 \
 		ssh-2.1.2 \
-		ssl-5.1.1 \
+		ssl-5.1.2 \
 		stdlib-1.18.3 \
 		syntax_tools-1.6.9 \
 		test_server-3.5.3 \
