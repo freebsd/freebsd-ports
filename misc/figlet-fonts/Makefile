@@ -21,6 +21,9 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/share/figlet
 PLIST_SUB=	DATADIR=${DATADIR:S|^${PREFIX}/||}
 
+RUN_DEPENDS=	figlet:${PORTSDIR}/misc/figlet
+
+
 post-extract:
 	@cd ${WRKDIR}/contributed && \
 		${TAR} xf Obanner-canon.tgz -C ${WRKDIR}/contributed/ && \
