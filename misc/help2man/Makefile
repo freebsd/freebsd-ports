@@ -1,12 +1,8 @@
-# Ports collection makefile for:	help2man
-# Date created:			Jan 30, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	help2man
-PORTVERSION=	1.40.12
+PORTVERSION=	1.40.13
 CATEGORIES=	misc
 MASTER_SITES=	GNU/${PORTNAME}
 
