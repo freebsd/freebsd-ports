@@ -1,15 +1,12 @@
-# New ports collection makefile for:    diakonos
-# Date created:         30 June 2009
-# Whom:                 chris@officialunix.com
-#
+# Created by: Chris Petrik <chris@officialunix.com>
 # $FreeBSD$
 #
 
 PORTNAME=	diakonos
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	editors ruby
-MASTER_SITES=	http://diakonos.pist0s.ca/archives/
-
+MASTER_SITES=   http://diakonos.pist0s.ca/archives/ \
+         	http://distfiles.bsdjunk.com
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A Linux editor for the masses
 
