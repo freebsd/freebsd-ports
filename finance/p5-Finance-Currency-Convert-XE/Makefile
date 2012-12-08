@@ -1,18 +1,14 @@
-# New ports collection makefile for:	finance/p5-Finance-Currency-Convert-XE
-# Date created:				10 December 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Finance-Currency-Convert-XE
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Finance::Currency::Convert::XE - Currency conversion module
+COMMENT=	Currency conversion module
 
 LICENSE=	ART20
 
