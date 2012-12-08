@@ -1,34 +1,35 @@
-# New ports collection makefile for:	alabastra
-# Date created:				20 Jun 2007
-# Whom:					Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	alabastra
 PORTVERSION=	0.21b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	Alabastra-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C++ editor written with QT4
+COMMENT=	C++ editor written with Qt4
 
-USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build \
-		iconengines
-USE_GMAKE=	yes
-ALL_TARGET=	Alabastra
+LICENSE=	GPLv2 # (or later)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USE_QT4=	gui xml \
+		moc_build qmake_build rcc_build uic_build \
+		iconengines_run
+USE_GMAKE=	yes
+ALL_TARGET=	Alabastra
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/alabastra
 
 do-configure:
-	cd ${WRKSRC} \
-	    && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} Alabastra.pro
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Alabastra ${PREFIX}/bin/alabastra
+	(cd ${INSTALL_WRKSRC} \
+		&& ${INSTALL_PROGRAM} Alabastra ${PREFIX}/bin/alabastra)
 
 .include <bsd.port.mk>
