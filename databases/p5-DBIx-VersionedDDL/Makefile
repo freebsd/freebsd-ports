@@ -1,19 +1,17 @@
-# New ports collection makefile for:	p5-DBIx-VersionedDDL
-# Date created:			30 December 2009
-# Whom:				alan
-#
+# Created by: Alan Snelson <Alan@Wave2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-VersionedDDL
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Alan@Wave2.org
 COMMENT=	Upgrade and downgrade database schemas to a specified version
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=1.31:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Moose>=1.21:${PORTSDIR}/devel/p5-Moose \
