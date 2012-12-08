@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glide3
-# Date created:				31 Mar 2001
-# Whom:					Nick Sayer <nsayer@freebsd.org>
-#
+# Created by: Nick Sayer <nsayer@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	driglide
 PORTVERSION=	0.9.1
@@ -15,6 +11,9 @@ MASTER_SITE_SUBDIR=	anholt/driglide/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
+DEPRECATED=	3dfx is dead, fails to compile on recent versions of freebsd
+EXPIRATION_DATE=	2013-02-28
+
 USE_XORG=	xxf86vm xxf86dga
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -22,7 +21,6 @@ USE_AUTOTOOLS=	automake autoconf libtool
 AUTOMAKE_ARGS=	-a
 USE_GMAKE=	yes
 MAKE_ARGS=	PREPROCESSOR=/usr/bin/cpp
-# Not yet ported to Alpha.
 ONLY_FOR_ARCHS=	i386
 
 # Glide DOES NOT work with CFLAGS greater than -O2
