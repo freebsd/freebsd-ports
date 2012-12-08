@@ -1483,6 +1483,7 @@ lib/wine/libgdiplus.def
 lib/wine/libglu32.def
 lib/wine/libhid.def
 lib/wine/libhlink.def
+lib/wine/libhtmlhelp.def
 lib/wine/libieframe.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def
