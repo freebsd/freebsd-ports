@@ -1,0 +1,13 @@
+Rsyncrypto is a modified encryption scheme. It is based on industry standard
+AES for symmetric encryption, as well as RSA for having different keys for
+each file while allowing a single key to decrypt all files. It even uses an
+encryption mode that is based on CBC.
+
+Rsyncrypto does, however, do one thing differently. It changes the encryption
+schema from plain CBC to a slightly modified version. This modification ensures
+that two almost identical files, such as the same file before an after a
+change, when encrypted using rsyncrypto and the same key, will produce almost
+identical encrypted files. This means that both objectives can be achieved
+simultaneously.
+
+WWW: http://rsyncrypto.lingnu.com/
