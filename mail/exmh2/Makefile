@@ -8,11 +8,11 @@
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 
 PORTNAME=	exmh
-PORTVERSION=	2.7.2
-PORTREVISION=	6
+PORTVERSION=	2.8.0
 CATEGORIES+=	mail tk
 MASTER_SITES=	${MASTER_SITE_TCLTK} \
 		SF
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	X11/TK based mail reader front end to MH
@@ -23,10 +23,7 @@ BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
 WISH=		wish8.0jp
 TCLSH=		tclsh8.0jp
 .else
-RUN_DEPENDS=	wish8.6:${PORTSDIR}/x11-toolkits/tk86
-BUILD_DEPENDS=	tclsh8.6:${PORTSDIR}/lang/tcl86
-WISH=		wish8.6
-TCLSH=		tclsh8.6
+USE_TK=		86
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.
@@ -53,13 +50,21 @@ PLIST_SUB=	EXMH_VERSION=${PORTVERSION}
 
 MAN1=		exmh.1
 
+.if defined(JAPANESE_EXMH)
 do-build:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} TCLSH=${TCLSH} \
 		WISH=${PREFIX}/bin/${WISH} WRKSRC=${WRKSRC} \
 		${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build
+.else
+do-build:
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} TCLSH=${TCLSH} \
+		WISH=${WISH} WRKSRC=${WRKSRC} \
+		${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
 		WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/install
+
 
 .include <bsd.port.mk>
