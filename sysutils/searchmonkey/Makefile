@@ -1,13 +1,9 @@
-# New ports collection makefile for:	searchmonkey
-# Date created:		26 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	searchmonkey
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/Searchmonkey2/${PORTVERSION}%20%5Bstable%5D
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -15,17 +11,20 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search using regexes for file names and text
 
+LICENSE=	GPLv3 # (or later)
+
 USE_ZIP=	yes
+USE_DOS2UNIX=	*.cpp *.h
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${PORTNAME}_2_0.pro \
-		-spec ${QMAKESPEC}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${PORTNAME}_2_0.pro \
+		${QMAKEFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
 
 .include <bsd.port.mk>
