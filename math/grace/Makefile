@@ -5,11 +5,10 @@ PORTNAME=	grace
 PORTVERSION=	5.1.23
 PORTREVISION=	1
 CATEGORIES=	math print
-#
-MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
-		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
+MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/stable/
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/stable/ \
+		ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful 2D plotting tool (successor of xmgr)
@@ -19,9 +18,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		Xbae:${PORTSDIR}/x11-toolkits/xbae \
-		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
+		Xbae:${PORTSDIR}/x11-toolkits/xbae
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+
+OPTIONS_DEFINE=	FFTW NETCDF PDF XMHTML DOCS EXAMPLES
+OPTIONS_DEFAULT=FFTW NETCDF PDF XMHTML
+PDF_DESC=	PDF output
+XMHTML_DESC=	Use XmHTML widget for on-line help
 
 USE_MOTIF=	yes
 USE_GCC=	any
@@ -38,10 +41,6 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		convcal.1 grace.1 grconvert.1
 MLINKS=		grace.1 gracebat.1 \
 		grace.1 xmgrace.1
-
-OPTIONS_DEFINE=	FFTW NETCDF PDF DOCS EXAMPLES
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-PDF_DESC=	PDF output
 
 .include <bsd.port.options.mk>
 
@@ -64,6 +63,13 @@ LIB_DEPENDS+=	pdf:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--enable-pdfdrv
 .else
 CONFIGURE_ARGS+=	--disable-pdfdrv
+.endif
+
+.if ${PORT_OPTIONS:MXMHTML}
+LIB_DEPENDS+=	XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
+CONFIGURE_ARGS+=	--enable-xmhtml
+.else
+CONFIGURE_ARGS+=	--disable-xmhtml
 .endif
 
 do-install:
