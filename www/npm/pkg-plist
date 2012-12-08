@@ -320,11 +320,6 @@ lib/node_modules/npm/node_modules/chownr/LICENCE
 lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
 lib/node_modules/npm/node_modules/chownr/package.json
-lib/node_modules/npm/node_modules/couch-login/README.md
-lib/node_modules/npm/node_modules/couch-login/couch-login.js
-lib/node_modules/npm/node_modules/couch-login/package.json
-lib/node_modules/npm/node_modules/couch-login/test/basic.js
-lib/node_modules/npm/node_modules/couch-login/test/registry.js
 lib/node_modules/npm/node_modules/fstream-npm/.npmignore
 lib/node_modules/npm/node_modules/fstream-npm/LICENCE
 lib/node_modules/npm/node_modules/fstream-npm/README.md
@@ -385,6 +380,7 @@ lib/node_modules/npm/node_modules/glob/package.json
 lib/node_modules/npm/node_modules/glob/test/00-setup.js
 lib/node_modules/npm/node_modules/glob/test/bash-comparison.js
 lib/node_modules/npm/node_modules/glob/test/cwd-test.js
+lib/node_modules/npm/node_modules/glob/test/mark.js
 lib/node_modules/npm/node_modules/glob/test/pause-resume.js
 lib/node_modules/npm/node_modules/glob/test/root-nomount.js
 lib/node_modules/npm/node_modules/glob/test/root.js
@@ -449,6 +445,12 @@ lib/node_modules/npm/node_modules/minimatch/.travis.yml
 lib/node_modules/npm/node_modules/minimatch/LICENSE
 lib/node_modules/npm/node_modules/minimatch/README.md
 lib/node_modules/npm/node_modules/minimatch/minimatch.js
+lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/LICENSE
+lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/README.md
+lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/bench.js
+lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json
+lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/sigmund.js
+lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/test/basic.js
 lib/node_modules/npm/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/minimatch/test/basic.js
 lib/node_modules/npm/node_modules/minimatch/test/brace-expand.js
@@ -474,6 +476,7 @@ lib/node_modules/npm/node_modules/mkdirp/test/root.js
 lib/node_modules/npm/node_modules/mkdirp/test/sync.js
 lib/node_modules/npm/node_modules/mkdirp/test/umask.js
 lib/node_modules/npm/node_modules/mkdirp/test/umask_sync.js
+lib/node_modules/npm/node_modules/node-gyp/.jshintrc
 lib/node_modules/npm/node_modules/node-gyp/.npmignore
 lib/node_modules/npm/node_modules/node-gyp/LICENSE
 lib/node_modules/npm/node_modules/node-gyp/README.md
@@ -566,6 +569,19 @@ lib/node_modules/npm/node_modules/npm-registry-client/lib/star.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/tag.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/unpublish.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/upload.js
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/.npmignore
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/LICENSE
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/README.md
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/couch-login.js
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/package.json
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/00-setup.js
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/basic.js
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/fixtures/_replicator.couch
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/fixtures/couch.ini
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/fixtures/registry.couch
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/registry.js
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/reset-then-signup.js
+lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/zz-teardown.js
 lib/node_modules/npm/node_modules/npm-registry-client/package.json
 lib/node_modules/npm/node_modules/npm-registry-client/test/00-setup.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/adduser-new.js
@@ -628,14 +644,19 @@ lib/node_modules/npm/node_modules/osenv/osenv.js
 lib/node_modules/npm/node_modules/osenv/package.json
 lib/node_modules/npm/node_modules/osenv/test/unix.js
 lib/node_modules/npm/node_modules/osenv/test/windows.js
+lib/node_modules/npm/node_modules/read-installed/LICENSE
 lib/node_modules/npm/node_modules/read-installed/README.md
 lib/node_modules/npm/node_modules/read-installed/package.json
 lib/node_modules/npm/node_modules/read-installed/read-installed.js
 lib/node_modules/npm/node_modules/read-installed/test/basic.js
+lib/node_modules/npm/node_modules/read-package-json/LICENSE
 lib/node_modules/npm/node_modules/read-package-json/README.md
 lib/node_modules/npm/node_modules/read-package-json/package.json
 lib/node_modules/npm/node_modules/read-package-json/read-json.js
 lib/node_modules/npm/node_modules/read-package-json/test/basic.js
+lib/node_modules/npm/node_modules/read-package-json/test/bom.js
+lib/node_modules/npm/node_modules/read-package-json/test/fixtures/bom.json
+lib/node_modules/npm/node_modules/read-package-json/test/fixtures/nobom.json
 lib/node_modules/npm/node_modules/read-package-json/test/fixtures/not-json.css
 lib/node_modules/npm/node_modules/read-package-json/test/non-json.js
 lib/node_modules/npm/node_modules/read/.npmignore
@@ -728,6 +749,7 @@ lib/node_modules/npm/node_modules/semver/README.md
 lib/node_modules/npm/node_modules/semver/bin/semver
 lib/node_modules/npm/node_modules/semver/package.json
 lib/node_modules/npm/node_modules/semver/semver.js
+lib/node_modules/npm/node_modules/semver/test.js
 lib/node_modules/npm/node_modules/slide/.npmignore
 lib/node_modules/npm/node_modules/slide/LICENSE
 lib/node_modules/npm/node_modules/slide/README.md
@@ -944,6 +966,10 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/underscore
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client/test
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test/fixtures
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login/test
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/node_modules/couch-login
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/node_modules
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client/lib
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client
 @dirrm lib/node_modules/npm/node_modules/nopt/lib
@@ -968,6 +994,9 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/mkdirp/examples
 @dirrm lib/node_modules/npm/node_modules/mkdirp
 @dirrm lib/node_modules/npm/node_modules/minimatch/test
+@dirrm lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/test
+@dirrm lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund
+@dirrm lib/node_modules/npm/node_modules/minimatch/node_modules
 @dirrm lib/node_modules/npm/node_modules/minimatch
 @dirrm lib/node_modules/npm/node_modules/lru-cache/test
 @dirrm lib/node_modules/npm/node_modules/lru-cache/lib
@@ -1000,8 +1029,6 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/example
 @dirrm lib/node_modules/npm/node_modules/fstream-npm
 @dirrm lib/node_modules/npm/node_modules/fstream
-@dirrm lib/node_modules/npm/node_modules/couch-login/test
-@dirrm lib/node_modules/npm/node_modules/couch-login
 @dirrm lib/node_modules/npm/node_modules/chownr
 @dirrm lib/node_modules/npm/node_modules/block-stream/test
 @dirrm lib/node_modules/npm/node_modules/block-stream/bench
