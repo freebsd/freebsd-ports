@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	gtkdatabox
-# Date created:			Mar 20, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gtkdatabox
-PORTVERSION=	0.9.1.3
+PORTVERSION=	0.9.2.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
@@ -22,12 +17,15 @@ GLADE_DESC=	Enable libglade2 support
 GLADEUI_DESC=	Enable glade3 support
 
 USE_GNOME=	gnomehack gtk20
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}" \
 		--with-html-dir="${PREFIX}/share/doc"
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
@@ -61,11 +59,11 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/reference/html/*.* ${DOCSDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} api ${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.c ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
