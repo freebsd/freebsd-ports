@@ -244,5 +244,6 @@ gearmand:*:961:
 zookeeper:*:962:
 fluentd:*:963:
 git_daemon:*:964:
+elasticsearch:*:965:
 nogroup:*:65533:
 nobody:*:65534:
