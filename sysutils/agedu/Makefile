@@ -1,12 +1,8 @@
-# New ports collection makefile for:	agedu
-# Date created:		2011-08-17
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	agedu
-PORTVERSION=	9671
+PORTVERSION=	9722
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/ \
 		LOCAL/sunpoet
