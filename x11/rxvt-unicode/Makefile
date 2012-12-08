@@ -1,9 +1,5 @@
-# New ports collection Makefile for: rxvt
-# Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.15
@@ -32,26 +28,32 @@ CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 USE_BZIP2=		yes
 WANT_PERL=		yes
 
-OPTIONS=	\
-	PERL		"Embedded perl interpreter"			On	\
-	XIM		"Support for XIM (X Input Method) protocol"	On	\
-	UNICODE3	"Support Unicode codepoints above 65535"	On	\
-	ISO14755	"Support for extended ISO 14755 modes"		On	\
-	COMBINING	"Automatic composition of combining chars"	On	\
-	RXVT_SCROLLBAR	"Support for the original rxvt scrollbar"	On	\
-	NEXT_SCROLLBAR	"Support for a NeXT-like scrollbar"		On	\
-	XTERM_SCROLLBAR	"Support for an Xterm-like scrollbar"		On	\
-	BACKSPACE_KEY	"Handling of the backspace key by rxvt"		On	\
-	DELETE_KEY	"Handling of the delete key by rxvt"		On	\
-	MOUSEWHEEL	"Support for scrolling via mouse wheel"		On	\
-	SMART_RESIZE	"Smart growth/shrink behaviour"			On	\
-	IMLOCALE_FIX	"imlocale encoding conversion fix" 		On	\
-	GDK_PIXBUF	"Use gdk-pixbuf for background images"		On	\
-	AFTERIMAGE	"Use libAfterImage for background images"	Off	\
-	NOTIFY		"Freedesktop startup notification support"	Off	\
-	256_COLOR	"Support for 256 colors"			Off
+OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
+		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
+		MOUSEWHEEL SMART_RESIZE IMLOCALE_FIX GDK_PIXBUF		\
+		AFTERIMAGE NOTIFY 256_COLOR
 
-.include <bsd.port.pre.mk>
+PERL_DESC=		Embedded Perl interpreter
+XIM_DESC=		Support for XIM (X Input Method) protocol
+UNICODE3_DESC=		Support Unicode codepoints above 65535
+ISO14755_DESC=		Support for extended ISO 14755 modes
+COMBINING_DESC=		Automatic composition of combining chars
+RXVT_SCROLLBAR_DESC=	Support for the original rxvt scrollbar
+NEXT_SCROLLBAR_DESC=	Support for a NeXT-like scrollbar
+XTERM_SCROLLBAR_DESC=	Support for an Xterm-like scrollbar
+BACKSPACE_KEY_DESC=	Handling of the backspace key by rxvt
+DELETE_KEY_DESC=	Handling of the delete key by rxvt
+MOUSEWHEEL_DESC=	Support for scrolling via mouse wheel
+SMART_RESIZE_DESC=	Smart growth/shrink behaviour
+IMLOCALE_FIX_DESC=	imlocale encoding conversion fix
+GDK_PIXBUF_DESC=	Use gdk-pixbuf for background images
+AFTERIMAGE_DESC=	Use libAfterImage for background images
+NOTIFY_DESC=		Freedesktop startup notification support
+256_COLOR_DESC=		Support for 256 colors
+
+OPTIONS_DEFAULT=PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
+		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
+		MOUSEWHEEL SMART_RESIZE IMLOCALE_FIX GDK_PIXBUF
 
 MAN1=		urxvt.1 urxvtc.1 urxvtcd.1 urxvtd.1
 MAN7=		urxvt.7
@@ -59,13 +61,15 @@ MAN7=		urxvt.7
 PORTDOCS1=	Changes README.FAQ README.configure
 PORTDOCS=	README.xvt ${PORTDOCS1}
 
-.if !defined(WITHOUT_IMLOCALE_FIX)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIMLOCALE_FIX}
 PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:${PORTSDIR}/chinese/p5-Encode-HanExtra \
 		p5-Encode-JIS2K>=0:${PORTSDIR}/converters/p5-Encode-JIS2K
 .endif
 
 # disable the embedded perl interpreter
-.if defined(WITHOUT_PERL)
+.if !${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=	--disable-perl
 USE_PERL5_BUILD=	yes
 PLIST_SUB=		PERL="@comment "
@@ -76,68 +80,68 @@ PLIST_SUB=		PERL=""
 .endif
 
 # disable XIM (X Input Method) protocol support
-.if defined(WITHOUT_XIM)
+.if !${PORT_OPTIONS:MXIM}
 CONFIGURE_ARGS+=	--disable-xim
 .endif
 
 # disable support for Unicode codepoints above 65535
-.if defined(WITHOUT_UNICODE3)
+.if !${PORT_OPTIONS:MUNICODE3}
 CONFIGURE_ARGS+=	--disable-unicode3
 .endif
 
 # disable support for extended ISO 14755 modes
-.if defined(WITHOUT_ISO14755)
+.if !${PORT_OPTIONS:MISO14755}
 CONFIGURE_ARGS+=	--disable-iso14755
 .endif
 
 # disable automatic composition of combining characters
 # into composite characters
-.if defined(WITHOUT_COMBINING)
+.if !${PORT_OPTIONS:MCOMBINING}
 CONFIGURE_ARGS+=	--disable-combining
 .endif
 
 # disable support for the original rxvt scrollbar
-.if defined(WITHOUT_RXVT_SCROLLBAR)
+.if !${PORT_OPTIONS:MRXVT_SCROLLBAR}
 CONFIGURE_ARGS+=	--disable-rxvt-scroll
 .endif
 
 # disable support for a NeXT-like scrollbar
-.if defined(WITHOUT_NEXT_SCROLLBAR)
+.if !${PORT_OPTIONS:MNEXT_SCROLLBAR}
 CONFIGURE_ARGS+=	--disable-next-scroll
 .endif
 
 # disable support for an Xterm-like scrollbar
-.if defined(WITHOUT_XTERM_SCROLLBAR)
+.if !${PORT_OPTIONS:MXTERM_SCROLLBAR}
 CONFIGURE_ARGS+=	--disable-xterm-scroll
 .endif
 
 # disable any handling of the backspace key by rxvt
 # let the X server do it
-.if defined(WITHOUT_BACKSPACE_KEY)
+.if !${PORT_OPTIONS:MBACKSPACE_KEY}
 CONFIGURE_ARGS+=	--disable-backspace-key
 .endif
 
 # disable any handling of the delete key by rxvt
-.if defined(WITHOUT_DELETE_KEY)
+.if !${PORT_OPTIONS:MDELETE_KEY}
 CONFIGURE_ARGS+=	--disable-delete-key
 .endif
 
 # enable scrolling via mouse wheel or buttons 4 & 5
-.if defined(WITHOUT_MOUSEWHEEL)
+.if !${PORT_OPTIONS:MMOUSEWHEEL}
 CONFIGURE_ARGS+=	--disable-mousewheel
 .endif
 
 # enable smart resize
-.if defined(WITHOUT_SMART_RESIZE)
+.if !${PORT_OPTIONS:MSMART_RESIZE}
 CONFIGURE_ARGS+=	--disable-smart-resize
 .else
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
 # enable integration with gdk-pixbuf / or libAfterImage for background images
-.if defined(WITHOUT_GDK_PIXBUF)
+.if !${PORT_OPTIONS:MGDK_PIXBUF}
 CONFIGURE_ARGS+=	--disable-pixbuf
-. if defined(WITHOUT_AFTERIMAGE)
+. if !${PORT_OPTIONS:MAFTERIMAGE}
 CONFIGURE_ARGS+=	--disable-afterimage	# To be upgraded
 . else
 LIB_DEPENDS+=		AfterImage:${PORTSDIR}/graphics/libafterimage
@@ -149,7 +153,7 @@ CONFIGURE_ARGS+=	--enable-pixbuf
 .endif
 
 # enable startup notification
-.if defined(WITHOUT_NOTIFY)
+.if !${PORT_OPTIONS:MNOTIFY}
 CONFIGURE_ARGS+=	--disable-startup-notification
 .else
 CONFIGURE_ARGS+=	--enable-startup-notification
@@ -157,12 +161,12 @@ LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification
 .endif
 
 # enable support for 256 colors
-.if defined(WITH_256_COLOR)
+.if ${PORT_OPTIONS:M256_COLOR}
 CONFIGURE_ARGS+=	--enable-256-color
 .endif
 
 # compile in support for additional codeset groups
-.if defined(WITH_ENCODING)
+.if ${PORT_OPTIONS:MENCODING}
 AVAIL_ENC=	jp jp_ext kr zh zh_ext all
 . for ENC in ${AVAIL_ENC}
 .  if (${WITH_ENCODING} == ${ENC})
@@ -177,7 +181,7 @@ _ENC=		${ENC}
 WITH_ENCODING=	all
 . endif
 .endif
-.if defined(WITH_ENCODING)
+.if ${PORT_OPTIONS:MENCODING}
 CONFIGURE_ARGS+=	--with-codesets=${WITH_ENCODING}
 .endif # WITH_ENCODING
 
@@ -194,7 +198,7 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if !defined(WITHOUT_IMLOCALE_FIX)
+.if ${PORT_OPTIONS:MIMLOCALE_FIX}
 post-patch:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
 	cd ${WRKSRC}/src && ./gentables
@@ -214,4 +218,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
