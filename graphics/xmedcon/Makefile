@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -24,14 +24,15 @@ ECAT_DESC=	With CTI ECAT 6/7
 INTERFILE_DESC=	With InterFile 3.3
 INW_DESC=	With INW (RUG)
 
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		medcon.1 xmedcon-config.1
 MAN3=		medcon.3
