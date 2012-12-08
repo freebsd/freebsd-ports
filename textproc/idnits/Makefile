@@ -1,12 +1,8 @@
-# New ports collection makefile for: idnits
-# Date Created:		9 July 2004
-# Whom:			fenner@FreeBSD.Org
-#
+# Created by: fenner@FreeBSD.Org
 # $FreeBSD$
-#
 
 PORTNAME=	idnits
-PORTVERSION=	2.12.12
+PORTVERSION=	2.12.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
 		LOCAL/sunpoet
@@ -22,8 +18,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '1 s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e '1 s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
