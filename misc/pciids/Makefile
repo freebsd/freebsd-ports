@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pciids
-# Date created:		2006-08-07
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pciids
-PORTVERSION=	20120906
+PORTVERSION=	20121208
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -40,9 +36,10 @@ maketar: do-clean extract
 	${GREP} '^#	Version: [0-9.]\{10\}$$' ${MS_WRKSRC}/${MS_DISTFILES} \
 		| ${SED} -e 's|^.* \([0-9]*\)\.\([0-9]*\)\.\([0-9]*\)$$|\1\2\3|' \
 			> ${MS_VERSIONFILE}
-	${MKDIR} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
+	${MKDIR} ${MS_WRKSRC}/${PORTNAME}-${PORTVERSION}/ ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
 	${MV} ${MS_WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
-	(${DIFF} -u ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
+	${CP} ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${PORTVERSION}/${MS_DISTFILES}
+	(cd ${MS_WRKSRC}/ && ${DIFF} -u ${PORTNAME}-${PORTVERSION}/${MS_DISTFILES} ${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
 	if [ -s ${MS_DIFF} ]; then \
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
 		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
