@@ -1,12 +1,8 @@
-# New ports collection makefile for:	confget
-# Date created:		18 March 2009
-# Whom:			Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	confget
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc
 MASTER_SITES=	http://devel.ringlet.net/textproc/confget/ \
 		LOCAL/sunpoet
