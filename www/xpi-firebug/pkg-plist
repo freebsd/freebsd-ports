@@ -34,6 +34,7 @@
 %%XPI_XPIDIR%%/content/firebug/console/commandLine.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLineExposed.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLineHelp.js
+%%XPI_XPIDIR%%/content/firebug/console/commandLineInclude.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLinePopup.js
 %%XPI_XPIDIR%%/content/firebug/console/console.js
 %%XPI_XPIDIR%%/content/firebug/console/consoleExposed.js
@@ -41,7 +42,9 @@
 %%XPI_XPIDIR%%/content/firebug/console/consolePanel.js
 %%XPI_XPIDIR%%/content/firebug/console/errors.js
 %%XPI_XPIDIR%%/content/firebug/console/eventMonitor.js
+%%XPI_XPIDIR%%/content/firebug/console/functionMonitor.js
 %%XPI_XPIDIR%%/content/firebug/console/memoryProfiler.js
+%%XPI_XPIDIR%%/content/firebug/console/performanceTiming.js
 %%XPI_XPIDIR%%/content/firebug/console/profiler.js
 %%XPI_XPIDIR%%/content/firebug/cookies/baseObserver.js
 %%XPI_XPIDIR%%/content/firebug/cookies/breakpoints.js
@@ -69,6 +72,9 @@
 %%XPI_XPIDIR%%/content/firebug/css/cssModule.js
 %%XPI_XPIDIR%%/content/firebug/css/cssPanel.js
 %%XPI_XPIDIR%%/content/firebug/css/cssReps.js
+%%XPI_XPIDIR%%/content/firebug/css/selectorEditor.js
+%%XPI_XPIDIR%%/content/firebug/css/selectorModule.js
+%%XPI_XPIDIR%%/content/firebug/css/selectorPanel.js
 %%XPI_XPIDIR%%/content/firebug/css/stylePanel.js
 %%XPI_XPIDIR%%/content/firebug/dom/domBreakpointGroup.js
 %%XPI_XPIDIR%%/content/firebug/dom/domModule.js
@@ -79,11 +85,13 @@
 %%XPI_XPIDIR%%/content/firebug/firebug.css
 %%XPI_XPIDIR%%/content/firebug/firebug.js
 %%XPI_XPIDIR%%/content/firebug/firebugOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/aboutOverlay.js
-%%XPI_XPIDIR%%/content/firebug/firefox/aboutOverlay.xul
 %%XPI_XPIDIR%%/content/firebug/firefox/bindings.xml
+%%XPI_XPIDIR%%/content/firebug/firefox/browserCommands.js
+%%XPI_XPIDIR%%/content/firebug/firefox/browserMenu.js
 %%XPI_XPIDIR%%/content/firebug/firefox/browserOverlay.css
 %%XPI_XPIDIR%%/content/firebug/firefox/browserOverlay.js
+%%XPI_XPIDIR%%/content/firebug/firefox/browserOverlayLib.js
+%%XPI_XPIDIR%%/content/firebug/firefox/browserToolbar.js
 %%XPI_XPIDIR%%/content/firebug/firefox/customizeShortcuts.js
 %%XPI_XPIDIR%%/content/firebug/firefox/customizeShortcuts.xul
 %%XPI_XPIDIR%%/content/firebug/firefox/external-editors/changeeditor.js
@@ -213,6 +221,10 @@
 %%XPI_XPIDIR%%/locale/es-ES/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug.properties
+%%XPI_XPIDIR%%/locale/eu/cookies.properties
+%%XPI_XPIDIR%%/locale/eu/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/eu/firebug-tracing.properties
+%%XPI_XPIDIR%%/locale/eu/firebug.properties
 %%XPI_XPIDIR%%/locale/fa/cookies.properties
 %%XPI_XPIDIR%%/locale/fa/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/fa/firebug-tracing.properties
@@ -327,7 +339,6 @@
 %%XPI_XPIDIR%%/modules/require-debug.js
 %%XPI_XPIDIR%%/modules/require.js
 %%XPI_XPIDIR%%/modules/storageService.js
-%%XPI_XPIDIR%%/skin/classic/about.css
 %%XPI_XPIDIR%%/skin/classic/activation-menu-console.png
 %%XPI_XPIDIR%%/skin/classic/activation-menu-net.png
 %%XPI_XPIDIR%%/skin/classic/activation-menu-script.png
@@ -384,7 +395,8 @@
 %%XPI_XPIDIR%%/skin/classic/inspect.png
 %%XPI_XPIDIR%%/skin/classic/jsonViewer.css
 %%XPI_XPIDIR%%/skin/classic/layout.css
-%%XPI_XPIDIR%%/skin/classic/loading_16.gif
+%%XPI_XPIDIR%%/skin/classic/linux/firebug.css
+%%XPI_XPIDIR%%/skin/classic/loading.svg
 %%XPI_XPIDIR%%/skin/classic/mac/close.png
 %%XPI_XPIDIR%%/skin/classic/mac/commandHistory.png
 %%XPI_XPIDIR%%/skin/classic/mac/debugger.css
@@ -413,11 +425,13 @@
 %%XPI_XPIDIR%%/skin/classic/orion-firebug.css
 %%XPI_XPIDIR%%/skin/classic/panel.css
 %%XPI_XPIDIR%%/skin/classic/panelbase.css
+%%XPI_XPIDIR%%/skin/classic/performanceTiming.css
 %%XPI_XPIDIR%%/skin/classic/rerun.png
 %%XPI_XPIDIR%%/skin/classic/rulerH.png
 %%XPI_XPIDIR%%/skin/classic/rulerV.png
 %%XPI_XPIDIR%%/skin/classic/search-close.png
 %%XPI_XPIDIR%%/skin/classic/search.png
+%%XPI_XPIDIR%%/skin/classic/selector.css
 %%XPI_XPIDIR%%/skin/classic/stepInto.png
 %%XPI_XPIDIR%%/skin/classic/stepOut.png
 %%XPI_XPIDIR%%/skin/classic/stepOver.png
@@ -432,6 +446,7 @@
 %%XPI_XPIDIR%%/skin/classic/win/detach.png
 %%XPI_XPIDIR%%/skin/classic/win/down.png
 %%XPI_XPIDIR%%/skin/classic/win/firebug.css
+%%XPI_XPIDIR%%/skin/classic/win/linux.css
 %%XPI_XPIDIR%%/skin/classic/win/min.png
 %%XPI_XPIDIR%%/skin/classic/win/off.png
 %%XPI_XPIDIR%%/skin/classic/win/panel.css
@@ -476,6 +491,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/es
 @dirrm %%XPI_XPIDIR%%/locale/es-AR
 @dirrm %%XPI_XPIDIR%%/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/locale/eu
 @dirrm %%XPI_XPIDIR%%/locale/fa
 @dirrm %%XPI_XPIDIR%%/locale/fr
 @dirrm %%XPI_XPIDIR%%/locale/he
@@ -505,6 +521,7 @@
 @dirrm %%XPI_XPIDIR%%/modules
 @dirrm %%XPI_XPIDIR%%/skin/classic/breakOn
 @dirrm %%XPI_XPIDIR%%/skin/classic/cookies
+@dirrm %%XPI_XPIDIR%%/skin/classic/linux
 @dirrm %%XPI_XPIDIR%%/skin/classic/mac
 @dirrm %%XPI_XPIDIR%%/skin/classic/tabbar
 @dirrm %%XPI_XPIDIR%%/skin/classic/win
