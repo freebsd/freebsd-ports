@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon
 
 MAINTAINER=	crees@FreeBSD.org
@@ -16,10 +16,11 @@ RUN_DEPENDS=	${GEN_RUN_DEPENDS}
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
-PKGINSTALL=	${.CURDIR}/pkg-install
 SLAVEPORT=	daemon
 
 USE_RC_SUBR=	transmission
+USERS=		transmission
+GROUPS=		transmission
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--enable-daemon \
@@ -28,11 +29,5 @@ EXTRA_CONF_ARGS=--disable-cli \
 		--disable-nls
 
 MAN1=		transmission-daemon.1 transmission-remote.1
-
-post-install: general-install
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 
 .include "${MASTERDIR}/Makefile"

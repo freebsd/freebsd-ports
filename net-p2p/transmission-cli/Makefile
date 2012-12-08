@@ -82,7 +82,7 @@ general-patch:
 post-patch: general-patch
 
 general-install:
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
