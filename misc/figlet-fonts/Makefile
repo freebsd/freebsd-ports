@@ -15,14 +15,13 @@ DIST_SUBDIR=	figlet
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Assorted fonts for the figlet(6) program
 
+RUN_DEPENDS=    figlet:${PORTSDIR}/misc/figlet
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${PREFIX}/share/figlet
 PLIST_SUB=	DATADIR=${DATADIR:S|^${PREFIX}/||}
-
-RUN_DEPENDS=	figlet:${PORTSDIR}/misc/figlet
-
 
 post-extract:
 	@cd ${WRKDIR}/contributed && \
