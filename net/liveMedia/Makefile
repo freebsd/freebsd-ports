@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2012.04.04
+PORTVERSION=	2012.11.30
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/
@@ -118,7 +118,6 @@ liveMedia=		\
 		liveMedia/include/MP3ADUinterleaving.hh \
 		liveMedia/include/MP3AudioFileServerMediaSubsession.hh \
 		liveMedia/include/MP3FileSource.hh \
-		liveMedia/include/MP3HTTPSource.hh \
 		liveMedia/include/MP3Transcoder.hh \
 		liveMedia/include/MPEG1or2AudioRTPSink.hh \
 		liveMedia/include/MPEG1or2AudioRTPSource.hh \
