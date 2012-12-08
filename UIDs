@@ -248,4 +248,5 @@ gearmand:*:961:961::0:0:gearmand daemon:/var/empty:/usr/sbin/nologin
 zookeeper:*:962:962::0:0:zookeeper user:/nonexistent:/usr/sbin/nologin
 fluentd:*:963:963::0:0:fluentd user:/nonexistent:/usr/sbin/nologin
 git_daemon:*:964:964::0:0:git daemon:/nonexistent:/usr/sbin/nologin
+elasticsearch:*:965:965::0:0:elasticsearch user:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
