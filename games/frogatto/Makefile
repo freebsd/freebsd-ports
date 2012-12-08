@@ -1,25 +1,25 @@
-# New ports collection makefile for:	Frogatto & Friends
-# Date created:				14 Jul 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	frogatto
-PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.frogatto.com/files/
+MASTER_SITES=	GH
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	An old-school 2D classic adventure platformer game
 
-NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
-
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
+NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	frogatto
+GH_PROGECT=	frogatto
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	64c84bf
+
 USE_GMAKE=	yes
 ALL_TARGET=	game server
 USE_GL=		glew
@@ -35,7 +35,7 @@ post-patch:
 		-e 's,= (ccache )?g\+\+,:= $$(CXX) $$(CXXFLAGS),' \
 		-e 's, -O2,, ; s, -g,, ; s, -L/usr/lib,, ; s, -L/sw/lib,,' \
 		-e '/server/s,`.*mixer,-L${LOCALBASE}/lib ${PTHREAD_LIBS},' \
-		-e 's,-mt,,g' ${WRKSRC}/Makefile
+		-e 's,-mt,,g' -e 's,-lpng,-lpng15,g' ${WRKSRC}/Makefile
 # Point to the right location where to look for resources on FreeBSD
 	@${REINPLACE_CMD} -e 's,HAVE_CONFIG_H,__FreeBSD__,' \
 		-e 's,DATADIR,"${DATADIR}",' ${WRKSRC}/src/filesystem.cpp
@@ -49,6 +49,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/bin/${PORTNAME}-server
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "data images music sounds" \
 		${DATADIR}
+	cd ${WRKSRC}/locale && ${MV} hu_HU hu && ${MV} ms_MY ms
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "locale" ${PREFIX}/share
 # Fix permissions on DATADIR after COPYTREE_SHARE (cpio(1) defaults to 700
 # if target directory (${DATADIR}) does not exist)
