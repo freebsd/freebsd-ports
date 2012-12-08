@@ -4,6 +4,7 @@
 #
 # PROVIDE: transmission
 # REQUIRE: DAEMON 
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable this service:
 #
@@ -18,28 +19,47 @@
 #			     Default: %%PREFIX%%/etc/transmission/home/Downloads
 # transmission_user:	     The user account transmission daemon runs as what
 #			     you want it to be. It uses 'transmission' user by
-#			     default. Do not sets it as empty or it will run
-#			     as root.
+#			     default.
+# transmission_web_home:     Use alternative directory for the web interface
+#			     files, such as javascript, html and graphics.
 #
 
 . /etc/rc.subr
 
-name="transmission"
+name=transmission
 rcvar=transmission_enable
 
+load_rc_config $name
+
+: ${transmission_enable:=NO}
+: ${transmission_conf_dir=%%PREFIX%%/etc/transmission/home}
+: ${transmission_download_dir=%%PREFIX%%/etc/transmission/home/Downloads}
+: ${transmission_user:=transmission}
+transmission_group=${transmission_group:-$transmission_user}
+
 command=%%PREFIX%%/bin/transmission-daemon
-
-load_rc_config ${name}
-
-: ${transmission_enable:="NO"}
-: ${transmission_user:="transmission"}
-: ${transmission_conf_dir="%%PREFIX%%/etc/transmission/home"}
-: ${transmission_download_dir="%%PREFIX%%/etc/transmission/home/Downloads"}
+pidfile=/var/run/transmission/damon.pid
+start_precmd=transmission_prestart
 
 transmission_flags=" \
 	${transmission_watch_dir:+-c ${transmission_watch_dir}} \
 	${transmission_conf_dir:+-g ${transmission_conf_dir}} \
 	${transmission_download_dir:+-w ${transmission_download_dir}} \
+	${pidfile:+-x $pidfile} \
 	${transmission_flags}"
 
-run_rc_command "$1"
+transmission_prestart()
+{
+	install -d -o $transmission_user ${pidfile%/*}
+	mkdir -p $transmission_conf_dir $transmission_download_dir
+	chown $transmission_user:$transmission_group $transmission_download_dir
+	chown -R $transmission_user:$transmission_group $transmission_conf_dir/*
+	chgrp $transmission_group $transmission_conf_dir
+	chmod 1770 $transmission_conf_dir
+	if [ -n "$transmission_web_home" ]; then
+		TRANSMISSION_WEB_HOME=$transmission_web_home
+		export TRANSMISSION_WEB_HOME
+	fi
+}
+
+run_rc_command $1
