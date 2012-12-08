@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgnslib
-# Date created:		Sat 24 oct 2007
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	cgnslib
 DISTVERSION=	3.1.3-4
@@ -23,12 +19,22 @@ USE_CMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
-.if !defined(WITHOUT_HDF5)
+OPTIONS_DEFINE=	HDF5 SZIP TESTS TOOLS
+HDF5_DESC=	Enable or disable HDF5 interface
+TESTS_DESC=	Enable test programs
+TOOLS_DESC=	Build the CGNSTools package
+SZIP_DESC=	SZIP support in HDF5
+
+OPTIONS_DEFAULT=HDF5 TESTS TOOLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MHDF5}
 LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 CMAKE_ARGS+=	-DENABLE_HDF5:BOOL=TRUE -DHDF5_NEED_ZLIB:BOOL=TRUE	\
 		-DHDF5_INCLUDE_PATH:PATH="${LOCALBASE}/include"
 PLIST_SUB=	HDF5=""
-. if !defined(WITHOUT_SZIP)
+. if ${PORT_OPTIONS:MSZIP}
 CMAKE_ARGS+=	-DHDF5_NEED_SZIP:BOOL=OFF
 . endif
 .else
@@ -36,13 +42,13 @@ CMAKE_ARGS+=	-DENABLE_HDF5:BOOL=OFF
 PLIST_SUB=	HDF5="@comment "
 .endif
 
-.if !defined(WITHOUT_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 USE_FORTRAN=	yes
 CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=TRUE -DENABLE_FORTRAN:BOOL=TRUE
 TESTSBIN=	cgwrite cgread test_partial
 .endif
 
-.if !defined(WITHOUT_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 USE_TK=		yes
 USE_GL=		gl glu
 USE_XORG=	xmu
@@ -57,12 +63,7 @@ PLIST_SUB=	TOOLS="@comment "
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R}
 LIBVER=		${PORTVERSION:R:R}
 
-OPTIONS=	HDF5	"Enable or disable HDF5 interface"	on	\
-		TESTS	"Enable test programs"			on	\
-		TOOLS	"Build the CGNSTools package"		on	\
-		SZIP	"SZIP support in HDF5"			off
-
-.if !defined(WITHOUT_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 regression-test:
 . for pg in ${TESTSBIN}
 	@(cd ${BUILD_WRKSRC}/src/tests; ./${pg})
