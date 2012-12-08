@@ -76,6 +76,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/vlans.rb
 %%RUBY_SITELIBDIR%%/facter/util/wmi.rb
 %%RUBY_SITELIBDIR%%/facter/util/xendomains.rb
+%%RUBY_SITELIBDIR%%/facter/version.rb
 %%RUBY_SITELIBDIR%%/facter/virtual.rb
 %%RUBY_SITELIBDIR%%/facter/vlans.rb
 %%RUBY_SITELIBDIR%%/facter/xendomains.rb

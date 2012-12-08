@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.6.11
+PORTVERSION=	1.6.16
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
