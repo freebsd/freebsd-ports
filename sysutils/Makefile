@@ -760,6 +760,7 @@
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
+    SUBDIR += rsyncrypto
     SUBDIR += rsyslog5
     SUBDIR += rsyslog5-dbi
     SUBDIR += rsyslog5-gnutls
