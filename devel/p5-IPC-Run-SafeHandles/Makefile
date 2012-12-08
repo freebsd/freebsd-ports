@@ -1,20 +1,19 @@
-# New ports collection makefile for:	devele/p5-IPC-Run-SafeHandles
-# Date created:				29 July 2008
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-Run-SafeHandles
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	IPC::Run::SafeHandles - Safe guarding for IPC::Run(3)
+COMMENT=	Safe guarding for IPC::Run(3)
 
-MAKE_JOBS_SAFE=  yes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+MAKE_JOBS_SAFE=	yes
 
 PERL_CONFIGURE=	yes
 
