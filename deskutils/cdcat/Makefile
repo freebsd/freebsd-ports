@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A QT based tool for offline CD/DVD/disk catalogs
+COMMENT=	Qt based tool for offline CD/DVD/disk catalogs
 
 LICENSE=	GPLv2 MPL
 LICENSE_COMB=	multi
@@ -68,10 +68,6 @@ L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC)
 MIF_WRKSRC=	$$(cd ${PORTSDIR}/multimedia/mediainfo && ${MAKE} -V WRKSRC)
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not build on 7.X
-.endif
-
 post-extract:
 	@${GZCAT} ${DISTDIR}/${L7Z_DISTFILE} | (cd ${WRKDIR} && ${TAR} -xf -)
 	@${LN} -sf ${L7Z_NAME}-${L7Z_VERSION} ${L7Z_WRKSRC}
@@ -83,6 +79,11 @@ post-patch:
 		's|/dev/sr0|/dev/cd0|' ${BUILD_WRKSRC}/config.cpp
 	@${REINPLACE_CMD} -e \
 		's|-ldl||' ${L7Z_WRKSRC}/Test7Zip/Makefile.in
+.if ${OSVERSION} < 800501
+	@${REINPLACE_CMD} -e \
+		's|const struct dirent|struct dirent|' \
+		${L7Z_WRKSRC}/Lib7Zip/OSFunctions_UnixLike.cpp
+.endif
 
 pre-configure:
 	@cd ${L7Z_WRKSRC} && ./configure --disable-shared \
