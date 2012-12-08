@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Router-Simple
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -14,7 +14,7 @@ COMMENT=	Simple HTTP Router
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
