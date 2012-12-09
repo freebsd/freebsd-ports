@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.0a.11.0
-DISTVERSION=	1.0.Alpha11.0
+PORTVERSION=	1.0.0a.12.0
+DISTVERSION=	1.0.Alpha12.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/rainy/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/sunny/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-pmilter
 .endif
 
 .if ${PORT_OPTIONS:MSASL2}
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-SASL
 CONFIGURE_ARGS+=	--with-sasl-incdir=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-sasl-libdir=${LOCALBASE}/lib
