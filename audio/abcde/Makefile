@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	abcde
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.5.4
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
-		id3v2:${PORTSDIR}/audio/id3v2 \
+		eyeD3:${PORTSDIR}/audio/py-eyed3 \
 		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		bash:${PORTSDIR}/shells/bash
@@ -75,6 +74,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
 		-e 's#/bin/bash#${LOCALBASE}/bin/bash#g' \
 		${WRKSRC}/abcde
+	${REINPLACE_CMD} -e 's#/bin/bash#${LOCALBASE}/bin/bash#g' \
+		${WRKSRC}/cddb-tool
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
