@@ -1,13 +1,8 @@
-# New ports collection makefile for:	freeciv
-# Date created:		Jun 20 1997
-# Whom:			ada@bsd.org
-#
+# Created by: ada@bsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	freeciv
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.3.3
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -26,7 +21,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${PREFIX} --program-transform-name=
 
 MAN6=		freeciv-server.6 freeciv-client.6 \
 		freeciv-xaw.6 freeciv-sdl.6 freeciv-gtk2.6 \
-		freeciv-modpack.6
+		freeciv-manual.6 freeciv-modpack.6
 
 OPTIONS_DEFINE?=	X11 SDL MYSQL IPV6
 OPTIONS_DEFAULT?=	X11 MYSQL IPV6
@@ -84,8 +79,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test.*==/s|==|=|;\
-		/^LIBS/s|mixer|mixer $$SDL_LIBS|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e\
 		'/pkgdatadir/s|$$[(]datadir[)]/@PACKAGE@|${DATADIR}|'
 
