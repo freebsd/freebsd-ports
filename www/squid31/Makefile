@@ -1,7 +1,4 @@
-# New ports collection makefile for:	squid24
-# Date created:		Tue Mar 27 14:56:08 CEST 2001
-# Whom:			Adrian Chadd <adrian@FreeBSD.org>
-#
+# Created by: Adrian Chadd <adrian@FreeBSD.org>
 # $FreeBSD$
 #
 # Tunables not (yet) configurable via 'make config':
@@ -51,7 +48,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -91,7 +87,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	21
+DEPRECATED=	Squid 3.1 is no longer recommended for new installations. Please use www/squid32 instead
+EXPIRATION_DATE=	2013-03-31
+
+SQUID_STABLE_VER=	22
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -135,7 +134,6 @@ OPTIONS=	SQUID_KERB_AUTH "Install Kerberos authentication helpers" on \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
-		SQUID_ECAP "En. loadable content adaptation modules" off \
 		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_ESI "Enable ESI support (experimental)" off \
 		SQUID_AUFS "Enable the aufs storage scheme" on \
