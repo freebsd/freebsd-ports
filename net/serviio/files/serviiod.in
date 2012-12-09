@@ -5,20 +5,18 @@
 ##                                                                          ##
 ### ====================================================================== ###
 
+PATH=$PATH:%%PREFIX%%/bin
 SERVIIO_HOME=%%JAVAJARDIR%%/serviio
 SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar"
 # Setup the classpath
-for j in derby jcs concurrent freemarker httpcore jaudiotagger	\
-    jul-to-slf4j jcl-over-slf4j log4j sanselan slf4j-api	\
-    slf4j-log4j12 org.restlet org.restlet.ext.xstream xstream	\
-    rome rome-modules jdom groovy-all winp org.restlet.ext.gson gson
+for j in $SERVIIO_HOME/*.jar
 do
-	SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:$SERVIIO_HOME/$j.jar"
+	SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:$j"
 done
 SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:%%ETCDIR%%"
 
 # Setup Serviio specific properties
-JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$SERVIIO_HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg"
+JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$SERVIIO_HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg1"
 JAVA_OPTS="${JAVA_OPTS} -Djcs.auxiliary.DC.attributes.DiskPath=/var/db/serviio"
 
 
@@ -33,4 +31,4 @@ do
 done
 
 # Execute the JVM in the foreground
-exec java -Xmx384M $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@"
+exec java -Xmx512M -Xms20M -XX:+UseParNewGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@" 2>&1 >/dev/null

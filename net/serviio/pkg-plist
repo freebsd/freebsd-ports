@@ -1,31 +1,36 @@
 sbin/serviiod
 bin/serviio-console
-%%JAVAJARDIR%%/serviio/serviio-client.jar
-%%JAVAJARDIR%%/serviio/serviio.jar
-%%JAVAJARDIR%%/serviio/gson.jar
-%%JAVAJARDIR%%/serviio/groovy-all.jar
-%%JAVAJARDIR%%/serviio/org.restlet.ext.gson.jar
-%%JAVAJARDIR%%/serviio/rome.jar
-%%JAVAJARDIR%%/serviio/rome-modules.jar
-%%JAVAJARDIR%%/serviio/log4j.jar
-%%JAVAJARDIR%%/serviio/freemarker.jar
+%%JAVAJARDIR%%/serviio/commons-codec.jar
+%%JAVAJARDIR%%/serviio/commons-io.jar
+%%JAVAJARDIR%%/serviio/concurrent.jar
 %%JAVAJARDIR%%/serviio/derby.jar
+%%JAVAJARDIR%%/serviio/freemarker.jar
+%%JAVAJARDIR%%/serviio/groovy-all.jar
+%%JAVAJARDIR%%/serviio/gson.jar
+%%JAVAJARDIR%%/serviio/httpcore.jar
 %%JAVAJARDIR%%/serviio/jaudiotagger.jar
-%%JAVAJARDIR%%/serviio/sanselan.jar
-%%JAVAJARDIR%%/serviio/slf4j-api.jar
-%%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
-%%JAVAJARDIR%%/serviio/slf4j-log4j12.jar
 %%JAVAJARDIR%%/serviio/jcl-over-slf4j.jar
 %%JAVAJARDIR%%/serviio/jcs.jar
 %%JAVAJARDIR%%/serviio/jdom.jar
-%%JAVAJARDIR%%/serviio/winp.jar
-%%JAVAJARDIR%%/serviio/concurrent.jar
-%%JAVAJARDIR%%/serviio/xstream.jar
-%%JAVAJARDIR%%/serviio/org.restlet.jar
+%%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
+%%JAVAJARDIR%%/serviio/log4j.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.gson.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.xstream.jar
-%%JAVAJARDIR%%/serviio/httpcore.jar
+%%JAVAJARDIR%%/serviio/org.restlet.jar
+%%JAVAJARDIR%%/serviio/padlock.jar
+%%JAVAJARDIR%%/serviio/rome-modules.jar
+%%JAVAJARDIR%%/serviio/rome.jar
+%%JAVAJARDIR%%/serviio/sanselan.jar
+%%JAVAJARDIR%%/serviio/serviio-client.jar
+%%JAVAJARDIR%%/serviio/serviio-media-browser.jar
+%%JAVAJARDIR%%/serviio/serviio.jar
+%%JAVAJARDIR%%/serviio/slf4j-api.jar
+%%JAVAJARDIR%%/serviio/slf4j-log4j12.jar
+%%JAVAJARDIR%%/serviio/winp.jar
+%%JAVAJARDIR%%/serviio/xstream.jar
 @dirrm %%JAVAJARDIR%%/serviio/plugins
 @dirrm %%JAVAJARDIR%%/serviio
+@unexec cmp %D/%%ETCDIR%%/application-profiles.xml %D/%%ETCDIR%%/application-profiles.dist.xml && rm -f %D/%%ETCDIR%%/application-profiles.xml || echo Modified application-profiles.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/profiles.xml %D/%%ETCDIR%%/profiles.dist.xml && rm -f %D/%%ETCDIR%%/profiles.xml || echo Modified profiles.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/log4j.xml %D/%%ETCDIR%%/log4j.dist.xml && rm -f %D/%%ETCDIR%%/log4j.xml || echo Modified log4j.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/console-log4j.properties %D/%%ETCDIR%%/console-log4j.dist.properties && rm -f %D/%%ETCDIR%%/console-log4j.properties || echo Modified console-log4j.properties remains in %D/%%ETCDIR%%
