@@ -1,5 +1,5 @@
-@comment $FreeBSD$
 %%CONF_DIR%%/freeipmi.conf.sample
+%%CONF_DIR%%/ipmiseld.conf
 %%CONF_DIR%%/freeipmi_interpret_sel.conf
 %%CONF_DIR%%/freeipmi_interpret_sensor.conf
 %%CONF_DIR%%/ipmidetect.conf
@@ -48,7 +48,7 @@ include/freeipmi/driver/ipmi-ssif-driver.h
 include/freeipmi/driver/ipmi-sunbmc-driver.h
 include/freeipmi/fiid/fiid.h
 include/freeipmi/freeipmi.h
-include/freeipmi/fru-parse/ipmi-fru-parse.h
+include/freeipmi/fru/ipmi-fru.h
 include/freeipmi/interface/ipmi-interface.h
 include/freeipmi/interface/ipmi-ipmb-interface.h
 include/freeipmi/interface/ipmi-kcs-interface.h
@@ -60,13 +60,14 @@ include/freeipmi/locate/ipmi-locate.h
 include/freeipmi/payload/ipmi-sol-payload.h
 include/freeipmi/record-format/ipmi-cipher-suite-record-format.h
 include/freeipmi/record-format/ipmi-fru-information-record-format.h
+include/freeipmi/record-format/ipmi-fru-oem-record-format.h
 include/freeipmi/record-format/ipmi-platform-event-trap-record-format.h
 include/freeipmi/record-format/ipmi-sdr-oem-record-format.h
 include/freeipmi/record-format/ipmi-sdr-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
-include/freeipmi/sdr-cache/ipmi-sdr-cache.h
-include/freeipmi/sdr-parse/ipmi-sdr-parse.h
-include/freeipmi/sel-parse/ipmi-sel-parse.h
+include/freeipmi/sdr/ipmi-sdr-oem.h
+include/freeipmi/sdr/ipmi-sdr.h
+include/freeipmi/sel/ipmi-sel.h
 include/freeipmi/sensor-read/ipmi-sensor-read.h
 include/freeipmi/spec/ipmi-authentication-type-spec.h
 include/freeipmi/spec/ipmi-channel-spec.h
@@ -89,6 +90,7 @@ include/freeipmi/spec/ipmi-lan-configuration-parameters-oem-spec.h
 include/freeipmi/spec/ipmi-lan-configuration-parameters-spec.h
 include/freeipmi/spec/ipmi-netfn-oem-spec.h
 include/freeipmi/spec/ipmi-netfn-spec.h
+include/freeipmi/spec/ipmi-oem-spec.h
 include/freeipmi/spec/ipmi-pef-configuration-parameters-oem-spec.h
 include/freeipmi/spec/ipmi-pef-configuration-parameters-spec.h
 include/freeipmi/spec/ipmi-privilege-level-spec.h
@@ -153,7 +155,6 @@ include/freeipmi/util/ipmi-lan-util.h
 include/freeipmi/util/ipmi-outofband-util.h
 include/freeipmi/util/ipmi-rmcpplus-util.h
 include/freeipmi/util/ipmi-sensor-and-event-code-tables-util.h
-include/freeipmi/util/ipmi-sensor-units-util.h
 include/freeipmi/util/ipmi-sensor-util.h
 include/freeipmi/util/ipmi-util.h
 include/freeipmi/util/rmcp-util.h
@@ -165,11 +166,11 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.la
 lib/libfreeipmi.so
-lib/libfreeipmi.so.12
+lib/libfreeipmi.so.13
 lib/libipmiconsole.a
 lib/libipmiconsole.la
 lib/libipmiconsole.so
-lib/libipmiconsole.so.4
+lib/libipmiconsole.so.5
 lib/libipmidetect.a
 lib/libipmidetect.la
 lib/libipmidetect.so
@@ -208,6 +209,7 @@ sbin/ipmidetectd
 sbin/ipmimonitoring
 sbin/ipmiping
 sbin/ipmipower
+sbin/ipmiseld
 sbin/pef-config
 sbin/rmcp-ping
 sbin/rmcpping
@@ -222,6 +224,7 @@ sbin/rmcpping
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmimonitoring
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiping
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmipower
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiseld
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.pstdout
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.sunbmc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -241,6 +244,7 @@ sbin/rmcpping
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping.UC
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiseld
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout.UC
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -282,15 +286,14 @@ sbin/rmcpping
 @dirrm include/freeipmi/templates
 @dirrm include/freeipmi/spec
 @dirrm include/freeipmi/sensor-read
-@dirrm include/freeipmi/sel-parse
-@dirrm include/freeipmi/sdr-parse
-@dirrm include/freeipmi/sdr-cache
+@dirrm include/freeipmi/sel
+@dirrm include/freeipmi/sdr
 @dirrm include/freeipmi/record-format
 @dirrm include/freeipmi/payload
 @dirrm include/freeipmi/locate
 @dirrm include/freeipmi/interpret
 @dirrm include/freeipmi/interface
-@dirrm include/freeipmi/fru-parse
+@dirrm include/freeipmi/fru
 @dirrm include/freeipmi/fiid
 @dirrm include/freeipmi/driver
 @dirrm include/freeipmi/debug
