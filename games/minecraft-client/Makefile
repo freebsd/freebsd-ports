@@ -1,40 +1,42 @@
-# New ports collection makefile for:   minecraft-client
-# Date created:        12 November 2011
-# Whom:                Martin Kropfinger
-#
+# Created by: Martin Kropfinger
 # $FreeBSD$
-#
 
 PORTNAME=	minecraft-client
-PORTVERSION=	1.0.0
+PORTVERSION=	1.4.5
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/:minecraft \
-				http://www.minecraftwiki.net/images/c/c5/:icon
+		http://media-mcw.cursecdn.com/c/c5/:icon
 DISTNAME=	minecraft
 DISTFILES=	minecraft.jar:minecraft \
-			Grass.png:icon
+		Grass.png:icon
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@rakor-net.de
 COMMENT=	Client for the block building game
 
 OPTIONS_DEFINE=		NATIVE_LIBS
+OPTIONS_DEFAULT=	NATIVE_LIBS
 NATIVE_LIBS_DESC=	Enable native libs support
-
-.include <bsd.port.options.mk>
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
-DESKTOP_ENTRIES=	"Minecraft" "Block building game" "${DATADIR}/Grass.png" "minecraft-client" "Application;Game;" false
+DESKTOP_ENTRIES="Minecraft" \
+		"Block building game" \
+		"${PORTNAME}" \
+		"${PORTNAME}" \
+		"Application;Game;" \
+		false
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNATIVE_LIBS}
 USE_OPENAL=	soft
-BUILD_DEPENDS+=	${JAVALIBDIR}/lwjgl/lwjgl_util.jar:${PORTSDIR}/games/lwjgl
 RUN_DEPENDS+=	${JAVALIBDIR}/lwjgl/lwjgl_util.jar:${PORTSDIR}/games/lwjgl
 JAVA_OS=	native
-JAVA_VENDER=	openjdk
+JAVA_VENDOR=	openjdk
 .else
 JAVA_OS=	linux
 JAVA_VENDOR=	sun
@@ -54,7 +56,7 @@ do-install:
 	${ECHO_CMD} "${ECHO_MSG} \"  the symlinks before doing any upgrade: \"" >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "${ECHO_MSG} \"\""                                          >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "${ECHO_MSG} \"find ~/.minecraft/bin -type l -print0 | \
-	                  xargs -0 rm -v\""                          >> ${WRKDIR}/minecraft-client
+			${XARGS} -0 ${RM} -v\""                                 >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "${ECHO_MSG} \"\""                                          >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "MINECRAFT_DIR=\"\$${HOME}/.minecraft\""                >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "BIN=\"\$${MINECRAFT_DIR}/bin\""                        >> ${WRKDIR}/minecraft-client
@@ -74,7 +76,7 @@ do-install:
 	${ECHO_CMD} ""                                                      >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "for j in jinput.jar lwjgl.jar lwjgl_util.jar"          >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "do"                                                    >> ${WRKDIR}/minecraft-client
-	${ECHO_CMD} "  if [ -f \$${BIN}/\$${j} -a ! -L \$${BIN}/\$${j} ]"   >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "  if [ ! -f \$${BIN}/\$${j} -o ! -L \$${BIN}/\$${j} ]" >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  then"                                                >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "    target=\$$(${BASENAME} \$${j} .jar)"               >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "    eval target=\\\$$\$${target}"                      >> ${WRKDIR}/minecraft-client
@@ -84,10 +86,11 @@ do-install:
 	${ECHO_CMD} ""                                                      >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "lwjgl=\"\$${NATIVES}/liblwjgl.so\""                    >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "lwjgl64=\"\$${NATIVES}/liblwjgl64.so\""                >> ${WRKDIR}/minecraft-client
-	${ECHO_CMD} "if [ -f \$${lwjgl} -a ! -L \$${lwjgl} -a \
-                   -f \$${lwjgl64} -a ! -L \$${lwjgl64} ]; then"     >> ${WRKDIR}/minecraft-client 
+	${ECHO_CMD} "if [ \( -f \$${lwjgl} -a ! -L \$${lwjgl} -a \
+			-f \$${lwjgl64} -a ! -L \$${lwjgl64} \) -o \
+			\( ! -f \$${lwjgl} -a ! -f \$${lwjgl64} \) ]; then" >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  LIBLWJGL=\$$(${FIND} ${LOCALBASE}/lib/lwjgl* \
-                        -name 'liblwjgl*.so' | ${HEAD} -n 1)"        >> ${WRKDIR}/minecraft-client
+			-name 'liblwjgl*.so' | ${HEAD} -n 1)"               >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  LWJGLSO=\$$(${ECHO} \$${LIBJGL} | ${GREP} \"64\")"   >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  if [ \"x\$${LIBWJGLSO}\" = \"x\" ]; then"            >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "    ${LN} -snf \$${LIBLWJGL} \$${lwjgl}"               >> ${WRKDIR}/minecraft-client
@@ -102,8 +105,8 @@ do-install:
 	${ECHO_CMD} "exec java -Xmx1024M -Xms1024M -jar ${DATADIR}/minecraft.jar" >>  ${WRKDIR}/minecraft-client
 .endif
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} "${DISTDIR}/minecraft.jar" ${DATADIR}/
-	${INSTALL_DATA} "${DISTDIR}/Grass.png" ${DATADIR}/
-	${INSTALL_SCRIPT} "${WRKDIR}/minecraft-client" ${PREFIX}/bin/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/minecraft.jar ${DATADIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Grass.png ${PREFIX}/share/pixmaps/minecraft-client.png
+	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-client ${PREFIX}/bin/
 
 .include <bsd.port.mk>
