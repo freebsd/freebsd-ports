@@ -1,7 +1,9 @@
 bin/smtube
+%%DATADIR%%/translations/smtube_el.qm
 %%DATADIR%%/translations/smtube_en.qm
 %%DATADIR%%/translations/smtube_es.qm
 %%DATADIR%%/translations/smtube_eu.qm
+%%DATADIR%%/translations/smtube_gl.qm
 %%DATADIR%%/translations/smtube_hu.qm
 %%DATADIR%%/translations/smtube_ja.qm
 %%DATADIR%%/translations/smtube_lt.qm
