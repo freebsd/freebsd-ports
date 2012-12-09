@@ -9,6 +9,7 @@
 %%WWWDIR%%/custom/_cf_radio_head.php
 %%WWWDIR%%/custom_config.inc.php.example
 %%PORTDOCS%%%%WWWDIR%%/docs
+%%WWWDIR%%/error.php
 %%WWWDIR%%/firstLogin.php
 %%WWWDIR%%/gui/drag_and_drop/css/context-menu.css
 %%WWWDIR%%/gui/drag_and_drop/css/drag-drop-folder-tree.css
@@ -57,6 +58,7 @@
 %%WWWDIR%%/gui/templates/classTester.tpl
 %%WWWDIR%%/gui/templates/drag_drop.inc.tpl
 %%WWWDIR%%/gui/templates/emailSent.tpl
+%%WWWDIR%%/gui/templates/error.tpl
 %%WWWDIR%%/gui/templates/error_icon.tpl
 %%WWWDIR%%/gui/templates/events/eventinfo.tpl
 %%WWWDIR%%/gui/templates/events/eventviewer.tpl
@@ -243,6 +245,7 @@
 %%WWWDIR%%/gui/themes/default/css/tl_print.css
 %%WWWDIR%%/gui/themes/default/css/tl_treemenu.css
 %%WWWDIR%%/gui/themes/default/images/45px-Nuvola_apps_bug.png
+%%WWWDIR%%/gui/themes/default/images/README.TXT
 %%WWWDIR%%/gui/themes/default/images/accept.png
 %%WWWDIR%%/gui/themes/default/images/answer.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2.png
@@ -256,6 +259,20 @@
 %%WWWDIR%%/gui/themes/default/images/bug.png
 %%WWWDIR%%/gui/themes/default/images/bug1.gif
 %%WWWDIR%%/gui/themes/default/images/bug1_greyed.gif
+%%WWWDIR%%/gui/themes/default/images/bug_add_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_add_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_delete_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_delete_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_edit_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_edit_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_error_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_error_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_go_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_go_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_link_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_link_famfamfam.png
 %%WWWDIR%%/gui/themes/default/images/bullet_wrench.png
 %%WWWDIR%%/gui/themes/default/images/calendar.gif
 %%WWWDIR%%/gui/themes/default/images/cancel.png
@@ -272,7 +289,9 @@
 %%WWWDIR%%/gui/themes/default/images/data_new_16.png
 %%WWWDIR%%/gui/themes/default/images/date.png
 %%WWWDIR%%/gui/themes/default/images/disconnect.png
+%%WWWDIR%%/gui/themes/default/images/door.png
 %%WWWDIR%%/gui/themes/default/images/door_in.png
+%%WWWDIR%%/gui/themes/default/images/door_open.png
 %%WWWDIR%%/gui/themes/default/images/edit-undo.png
 %%WWWDIR%%/gui/themes/default/images/edit_icon.png
 %%WWWDIR%%/gui/themes/default/images/emoticon_tongue.png
@@ -283,6 +302,8 @@
 %%WWWDIR%%/gui/themes/default/images/export_import.png
 %%WWWDIR%%/gui/themes/default/images/favicon.ico
 %%WWWDIR%%/gui/themes/default/images/filter.png
+%%WWWDIR%%/gui/themes/default/images/flag_green.png
+%%WWWDIR%%/gui/themes/default/images/flag_yellow.png
 %%WWWDIR%%/gui/themes/default/images/history.png
 %%WWWDIR%%/gui/themes/default/images/history_small.png
 %%WWWDIR%%/gui/themes/default/images/ico_all_l.gif
@@ -297,8 +318,10 @@
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_br.png
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_tl.png
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_tr.png
+%%WWWDIR%%/gui/themes/default/images/lightbulb.png
 %%WWWDIR%%/gui/themes/default/images/lightbulb_on.gif
 %%WWWDIR%%/gui/themes/default/images/lightning.png
+%%WWWDIR%%/gui/themes/default/images/link_error.png
 %%WWWDIR%%/gui/themes/default/images/lock-mini.png
 %%WWWDIR%%/gui/themes/default/images/lock.png
 %%WWWDIR%%/gui/themes/default/images/magnifier.png
@@ -338,6 +361,7 @@
 %%WWWDIR%%/gui/themes/default/images/warning.gif
 %%WWWDIR%%/gui/themes/default/images/white-top-bottom.gif
 %%WWWDIR%%/gui/themes/default/images/world_link.png
+%%WWWDIR%%/gui/themes/default/images/wrench.png
 %%WWWDIR%%/gui/themes/default/images/x-icon.gif
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/css/style.css
@@ -626,6 +650,7 @@
 %%WWWDIR%%/lib/functions/code_testing/tree.class.test.php
 %%WWWDIR%%/lib/functions/common.php
 %%WWWDIR%%/lib/functions/configCheck.php
+%%WWWDIR%%/lib/functions/csrf.php
 %%WWWDIR%%/lib/functions/csv.inc.php
 %%WWWDIR%%/lib/functions/database.class.php
 %%WWWDIR%%/lib/functions/date_api.php
@@ -636,8 +661,6 @@
 %%WWWDIR%%/lib/functions/exec_cfield_mgr.class.php
 %%WWWDIR%%/lib/functions/exttable.class.php
 %%WWWDIR%%/lib/functions/files.inc.php
-%%WWWDIR%%/lib/functions/form_api.php
-%%WWWDIR%%/lib/functions/gpc_api.php
 %%WWWDIR%%/lib/functions/info.inc.php
 %%WWWDIR%%/lib/functions/inputparameter.class.php
 %%WWWDIR%%/lib/functions/inputparameter.inc.php
@@ -698,13 +721,19 @@
 %%WWWDIR%%/lib/inventory/setInventory.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzilladbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzillaxmlrpcInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue01.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue02.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzillaxmlrpc.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugz.api.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugzrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.gforgesoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jiraOnDemand.jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-fman.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-raw-api.01.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine.01.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine.rest.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redminerestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.tracxmlrpc.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.youtrackrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test2_int_mantissoap.php
@@ -823,6 +852,7 @@
 %%WWWDIR%%/lib/usermanagement/usersEdit.php
 %%WWWDIR%%/lib/usermanagement/usersView.php
 %%WWWDIR%%/linkto.php
+%%WWWDIR%%/lnl.php
 %%WWWDIR%%/locale/cs_CZ/custom_strings.txt.example
 %%WWWDIR%%/locale/cs_CZ/description.php
 %%WWWDIR%%/locale/cs_CZ/strings.txt
@@ -3097,6 +3127,7 @@
 %%WWWDIR%%/third_party/fogbugz-php-api/test/data/error.xml
 %%WWWDIR%%/third_party/fogbugz-php-api/test/data/login_expected.xml
 %%WWWDIR%%/third_party/fogbugz-php-api/test/fogbugz.php
+%%WWWDIR%%/third_party/images-icons/famfamfam_silk_icons_v013.zip
 %%WWWDIR%%/third_party/pchart/Fonts/GeosansLight.ttf
 %%WWWDIR%%/third_party/pchart/Fonts/MankSans.ttf
 %%WWWDIR%%/third_party/pchart/Fonts/Silkscreen.ttf
@@ -3900,6 +3931,7 @@
 @dirrm %%WWWDIR%%/third_party/pchart/pChart
 @dirrm %%WWWDIR%%/third_party/pchart/Fonts
 @dirrm %%WWWDIR%%/third_party/pchart
+@dirrm %%WWWDIR%%/third_party/images-icons
 @dirrm %%WWWDIR%%/third_party/fogbugz-php-api/test/data
 @dirrm %%WWWDIR%%/third_party/fogbugz-php-api/test
 @dirrm %%WWWDIR%%/third_party/fogbugz-php-api/lib
