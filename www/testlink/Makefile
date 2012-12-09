@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	testlink
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
@@ -10,18 +10,16 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A web based test management and test execution system
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PHP=	gd iconv mbstring session
 WANT_PHP_WEB=	yes
-WRKSRC=	${WRKDIR}/testlink-ga-testlink-code
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 REINPLACE_ARGS=	-i ''
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
-DOCS=	CHANGELOG CODE_REUSE README TL-1.9-Prague-NEWS.txt
+DOCS=	CHANGELOG CODE_REUSE README
 EXAMPLES=	db_sample file_examples samples.txt
 
 OPTIONS_DEFINE=		OPENLDAP EXTJS
