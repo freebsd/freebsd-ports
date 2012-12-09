@@ -1,19 +1,15 @@
-# New ports collection makefile for:	py-ws2300
-# Date created:				26 December 2010
-# Whom:					Stefan Bethke <stb@lassitu.de>
-#
+# Created by: Stefan Bethke <stb@lassitu.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ws2300
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	science python
 MASTER_SITES=	http://ace-host.stuart.id.au/russell/files/ws2300/ \
 		http://www.transit.hanse.de/mirror/ace-host.stuart.id.au/russell/files/ws2300/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stb@lassitu.de
-COMMENT=	A driver for the LaCrosse WS-2300 weather station
+COMMENT=	Driver for the LaCrosse WS-2300 weather station
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
