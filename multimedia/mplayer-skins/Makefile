@@ -1,10 +1,9 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_MPLAYERHQ}
 MASTER_SITE_SUBDIR=	skins
