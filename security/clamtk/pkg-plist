@@ -11,6 +11,7 @@ share/applications/clamtk.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/af/LC_MESSAGES/clamtk.mo
 share/locale/ar/LC_MESSAGES/clamtk.mo
 share/locale/ast/LC_MESSAGES/clamtk.mo
 share/locale/bg/LC_MESSAGES/clamtk.mo
@@ -35,6 +36,7 @@ share/locale/it/LC_MESSAGES/clamtk.mo
 share/locale/ja/LC_MESSAGES/clamtk.mo
 share/locale/ko/LC_MESSAGES/clamtk.mo
 share/locale/lt/LC_MESSAGES/clamtk.mo
+share/locale/mr/LC_MESSAGES/clamtk.mo
 share/locale/ms/LC_MESSAGES/clamtk.mo
 share/locale/nb/LC_MESSAGES/clamtk.mo
 share/locale/nl/LC_MESSAGES/clamtk.mo
