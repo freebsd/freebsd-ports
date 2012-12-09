@@ -1,8 +1,8 @@
-# created by: Alan Eldridge <alane@geeksrus.net>
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
 
 PORTNAME=	cups
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -54,17 +54,17 @@ CUPSSYSGRP=	wheel
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
-PORTREVISION=	2
+PORTREVISION=	0
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_DEFINE=	GNUTLS
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	1
+PORTREVISION=	0
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
 .else
-PORTREVISION=	2
+PORTREVISION=	0
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM LDAP DBUS LIBUSB XDG_OPEN GHOSTSCRIPT XPDF AVAHI MDNSRESPONDER
@@ -88,10 +88,10 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	cups:${PORTSDIR}/${PKGCATEGORY}/cups-client \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff:${PORTSDIR}/graphics/tiff
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 COMMENT2=	Library cupsimage
@@ -102,8 +102,8 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
 .else
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
-LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
+LIB_DEPENDS+=	cups:${PORTSDIR}/${PKGCATEGORY}/cups-client
+LIB_DEPENDS+=	cupsimage:${PORTSDIR}/${PKGCATEGORY}/cups-image
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 BUILD_DEPENDS+=	cups-image${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-image
@@ -125,8 +125,8 @@ CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
  
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
-LIB_DEPENDS+=		gcrypt.18:${PORTSDIR}/security/libgcrypt
-LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 USE_PKGCONFIG=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
@@ -168,7 +168,7 @@ USE_PYTHON=		yes
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBPAPER}
 CONFIGURE_ARGS+=	--enable-libpaper
-LIB_DEPENDS+=		paper.2:${PORTSDIR}/print/libpaper
+LIB_DEPENDS+=		paper:${PORTSDIR}/print/libpaper
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MMDNSRESPONDER}
@@ -205,7 +205,7 @@ CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=		dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 PLIST_SUB+=		WITH_DBUS=""
 .else

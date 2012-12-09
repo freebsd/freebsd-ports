@@ -1,36 +1,28 @@
---- configure.orig	2011-07-25 22:19:20.000000000 +0200
-+++ configure	2011-08-25 06:04:32.000000000 +0200
-@@ -6259,6 +6259,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <sys/param.h>
- #include <sys/ucred.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -8689,7 +8690,7 @@
+--- configure.orig	2012-07-27 22:57:23.000000000 +0200
++++ configure	2012-11-05 20:13:13.000000000 +0100
+@@ -566,6 +566,7 @@
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
++#include <netinet/in.h>
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
+@@ -5660,7 +5661,7 @@
  		CFLAGS="$CFLAGS `$PKGCONFIG --cflags dbus-1` -DDBUS_API_SUBJECT_TO_CHANGE"
- 		CUPSDLIBS="$CUPSDLIBS `$PKGCONFIG --libs dbus-1`"
+ 		SERVERLIBS="$SERVERLIBS `$PKGCONFIG --libs dbus-1`"
  		DBUS_NOTIFIER="dbus"
 -		DBUS_NOTIFIERLIBS="`$PKGCONFIG --libs dbus-1`"
 +		DBUS_NOTIFIERLIBS="`$PKGCONFIG --libs dbus-1` -pthread"
  		SAVELIBS="$LIBS"
  		LIBS="$LIBS $DBUS_NOTIFIERLIBS"
- 		{ echo "$as_me:$LINENO: checking for dbus_message_iter_init_append" >&5
-@@ -13524,6 +13525,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <netinet/in.h>
- #include <resolv.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -17447,7 +17449,7 @@
+ 		ac_fn_c_check_func "$LINENO" "dbus_message_iter_init_append" "ac_cv_func_dbus_message_iter_init_append"
+@@ -8302,7 +8303,7 @@
  
  
  	if test x$ac_cv_header_pthread_h = xyes; then
 -				for flag in -lpthreads -lpthread -pthread; do
 +				for flag in -pthread; do
-         		{ echo "$as_me:$LINENO: checking for pthread_create using $flag" >&5
- echo $ECHO_N "checking for pthread_create using $flag... $ECHO_C" >&6; }
+         		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create using $flag" >&5
+ $as_echo_n "checking for pthread_create using $flag... " >&6; }
  			SAVELIBS="$LIBS"
