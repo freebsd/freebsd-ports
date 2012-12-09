@@ -17,6 +17,8 @@ include/licq/icq/chat.h
 include/licq/icq/codes.h
 include/licq/icq/filetransfer.h
 include/licq/icq/icq.h
+include/licq/icq/owner.h
+include/licq/icq/user.h
 include/licq/inifile.h
 include/licq/licqversion.h
 include/licq/logging/log.h

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    qt-gui-licq
-# Date created:                         18 October 2000
-# Whom:                                 Jeremy Norris <ishmael272home.com>
-#
+# Created by: Jeremy Norris <ishmael272home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qt4-gui
 PORTVERSION=	${QT_LICQ_VER}
@@ -13,7 +9,7 @@ PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Qt plugin for licq
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 #BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
 LICENSE=	GPLv2
