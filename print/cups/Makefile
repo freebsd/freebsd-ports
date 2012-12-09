@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
