@@ -60,9 +60,9 @@ PLIST_SUB+=	X11="@comment "
 
 do-install:
 	${MKDIR} ${DATADIR}
-	(${INSTALL_DATA} "${DISTDIR}/minecraft_server.jar" ${DATADIR}/)
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/minecraft_server.jar ${DATADIR}/
 .if ${PORT_OPTIONS:MX11}
-	(${INSTALL_DATA} "${DISTDIR}/Bookshelf.png" ${PREFIX}/share/pixmaps/minecraft-server.png)
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Bookshelf.png ${PREFIX}/share/pixmaps/minecraft-server.png
 .endif
 	echo "#!/bin/sh"				>  ${WRKDIR}/${PORTNAME}
 	echo "if ! test -d ~/.minecraft-server ; then"	>> ${WRKDIR}/${PORTNAME}
