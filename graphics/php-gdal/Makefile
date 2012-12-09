@@ -1,12 +1,8 @@
-# New ports collection makefile for:	php-gdal
-# Date created:		2012-03-06
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdal
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
