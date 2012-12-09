@@ -1,11 +1,8 @@
-# New ports collection makefile for:	rpm
-# Date created:				6 May 2003
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.10.1
+PORTVERSION=	4.10.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
