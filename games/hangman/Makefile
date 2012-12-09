@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hangman
-# Date created:				10 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	hangman
 PORTVERSION=	0.9.2
@@ -14,6 +10,8 @@ MASTER_SITES=	http://www.shiftygames.com/hangman/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenge your spelling skills in the old western style
+
+CONFLICTS=	bsdgames-*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
