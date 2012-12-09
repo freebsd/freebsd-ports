@@ -1,13 +1,8 @@
-# ex:ts=8
-# New ports collection makefile for:	HT Editor
-# Date created:			Jun 12, 2001
-# Whom:				ijliao
-#
+# Created By: Ying-Chieh Liao
 # $FreeBSD$
-#
 
 PORTNAME=	hte
-PORTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/ht-source
 DISTNAME=	ht-${PORTVERSION}
@@ -22,30 +17,33 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ht
 
-OPTIONS=	LZO2	"Enable external lzo2 compresssion support"	off	\
-		X11	"Build X11 textmode support"			on
+OPTIONS_DEFINE=		DOCS LZO2 X11
+OPTIONS_DEFAULT=	X11
+
+LZO2_DESC=	External lzo2 compression support
+X11_DESC=	X11 textmode support
 
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON=	does not build on ia64
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LZO2)
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
+.if ${PORT_OPTIONS:MLZO2}
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 .else
 CONFIGURE_ARGS=	--with-included-lzo
 .endif
 
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS+=--disable-x11-textmode
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=--disable-x11-textmode
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README
 INFO=		ht
 .endif
@@ -58,7 +56,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ht ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/hthelp.info ${PREFIX}/${INFO_PATH}/ht.info
