@@ -1,4 +1,4 @@
-share/minecraft-client/minecraft.jar
-share/minecraft-client/Grass.png
 bin/minecraft-client
-@dirrm share/minecraft-client
+%%DATADIR%%/minecraft.jar
+share/pixmaps/minecraft-client.png
+@dirrm %%DATADIR%%
