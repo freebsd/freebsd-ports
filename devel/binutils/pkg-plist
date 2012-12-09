@@ -67,8 +67,15 @@ lib/libopcodes.la
 %%NLS%%share/locale/id/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/id/LC_MESSAGES/ld.mo
 %%NLS%%%%GOLD%%share/locale/id/LC_MESSAGES/gold.mo
+%%NLS%%share/locale/it/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gprof.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ld.mo
+%%NLS%%share/locale/it/LC_MESSAGES/opcodes.mo
+%%NLS%%%%GOLD%%share/locale/it/LC_MESSAGES/gold.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gas.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gprof.mo
@@ -88,6 +95,7 @@ lib/libopcodes.la
 %%NLS%%share/locale/rw/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gprof.mo
@@ -99,7 +107,11 @@ lib/libopcodes.la
 %%NLS%%share/locale/tr/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/opcodes.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gprof.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/ld.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gprof.mo
