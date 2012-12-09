@@ -7,6 +7,7 @@
 
 PORTNAME=	squidclamav
 PORTVERSION=	6.10
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -22,7 +23,7 @@ CFLAGS+=	-DHAVE_STRNSTR
 
 MAN1=		squidclamav.1
 
-CONFIGURE_ARGS+=	--enable-static \
+CONFIGURE_ARGS+=	--enable-shared --enable-static \
 			--sysconfdir="${PREFIX}/etc/c-icap" \
 			--with-c-icap=${LOCALBASE}
 
@@ -30,6 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CFGDIR=.*|CFGDIR="${PREFIX}/etc/c-icap"|g' \
 		${WRKSRC}/configure.in ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/squidclamav.conf|${PREFIX}/etc/c\\-icap/squidclamav.conf|g' \
-		${WRKSRC}/doc/squidclamav.1
+		${WRKSRC}/doc/squidclamav.1 ${WRKSRC}/src/squidclamav.h
 
 .include <bsd.port.mk>
