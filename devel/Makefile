@@ -4234,6 +4234,7 @@
     SUBDIR += zmq
     SUBDIR += zmq-devel
     SUBDIR += zookeeper
+    SUBDIR += zpu-binutils
     SUBDIR += ztcl
     SUBDIR += zthread
     SUBDIR += zziplib

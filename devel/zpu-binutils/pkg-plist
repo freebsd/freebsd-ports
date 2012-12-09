@@ -1,0 +1,98 @@
+info/zpu/dir
+zpu/bin/zpu-elf-addr2line
+zpu/bin/zpu-elf-ar
+zpu/bin/zpu-elf-as
+zpu/bin/zpu-elf-c++filt
+zpu/bin/zpu-elf-ld
+zpu/bin/zpu-elf-nm
+zpu/bin/zpu-elf-objcopy
+zpu/bin/zpu-elf-objdump
+zpu/bin/zpu-elf-ranlib
+zpu/bin/zpu-elf-readelf
+zpu/bin/zpu-elf-size
+zpu/bin/zpu-elf-strings
+zpu/bin/zpu-elf-strip
+zpu/lib/libiberty.a
+zpu/share/locale/da/LC_MESSAGES/bfd.mo
+zpu/share/locale/da/LC_MESSAGES/binutils.mo
+zpu/share/locale/da/LC_MESSAGES/ld.mo
+zpu/share/locale/da/LC_MESSAGES/opcodes.mo
+zpu/share/locale/de/LC_MESSAGES/opcodes.mo
+zpu/share/locale/es/LC_MESSAGES/bfd.mo
+zpu/share/locale/es/LC_MESSAGES/binutils.mo
+zpu/share/locale/es/LC_MESSAGES/gas.mo
+zpu/share/locale/es/LC_MESSAGES/ld.mo
+zpu/share/locale/es/LC_MESSAGES/opcodes.mo
+zpu/share/locale/fr/LC_MESSAGES/bfd.mo
+zpu/share/locale/fr/LC_MESSAGES/binutils.mo
+zpu/share/locale/fr/LC_MESSAGES/gas.mo
+zpu/share/locale/fr/LC_MESSAGES/ld.mo
+zpu/share/locale/fr/LC_MESSAGES/opcodes.mo
+zpu/share/locale/id/LC_MESSAGES/opcodes.mo
+zpu/share/locale/ja/LC_MESSAGES/bfd.mo
+zpu/share/locale/ja/LC_MESSAGES/binutils.mo
+zpu/share/locale/nl/LC_MESSAGES/opcodes.mo
+zpu/share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+zpu/share/locale/ro/LC_MESSAGES/bfd.mo
+zpu/share/locale/ro/LC_MESSAGES/opcodes.mo
+zpu/share/locale/ru/LC_MESSAGES/binutils.mo
+zpu/share/locale/sv/LC_MESSAGES/bfd.mo
+zpu/share/locale/sv/LC_MESSAGES/binutils.mo
+zpu/share/locale/sv/LC_MESSAGES/ld.mo
+zpu/share/locale/sv/LC_MESSAGES/opcodes.mo
+zpu/share/locale/tr/LC_MESSAGES/bfd.mo
+zpu/share/locale/tr/LC_MESSAGES/binutils.mo
+zpu/share/locale/tr/LC_MESSAGES/gas.mo
+zpu/share/locale/tr/LC_MESSAGES/ld.mo
+zpu/share/locale/tr/LC_MESSAGES/opcodes.mo
+zpu/share/locale/zh_CN/LC_MESSAGES/bfd.mo
+zpu/share/locale/zh_CN/LC_MESSAGES/binutils.mo
+zpu/zpu-elf/bin/ar
+zpu/zpu-elf/bin/as
+zpu/zpu-elf/bin/ld
+zpu/zpu-elf/bin/nm
+zpu/zpu-elf/bin/ranlib
+zpu/zpu-elf/bin/strip
+zpu/zpu-elf/lib/ldscripts/zpuelf.x
+zpu/zpu-elf/lib/ldscripts/zpuelf.xbn
+zpu/zpu-elf/lib/ldscripts/zpuelf.xn
+zpu/zpu-elf/lib/ldscripts/zpuelf.xr
+zpu/zpu-elf/lib/ldscripts/zpuelf.xs
+zpu/zpu-elf/lib/ldscripts/zpuelf.xu
+@dirrmtry zpu/man/man1
+@dirrmtry zpu/man
+@dirrmtry zpu/bin
+@dirrmtry zpu/lib
+@dirrm zpu/zpu-elf/lib/ldscripts
+@dirrmtry zpu/zpu-elf/bin
+@dirrmtry zpu/zpu-elf/lib
+@dirrmtry zpu/zpu-elf
+@dirrmtry zpu/share/locale/tr/LC_MESSAGES
+@dirrmtry zpu/share/locale/tr
+@dirrmtry zpu/share/locale/fr/LC_MESSAGES
+@dirrmtry zpu/share/locale/fr
+@dirrmtry zpu/share/locale/ja/LC_MESSAGES
+@dirrmtry zpu/share/locale/ja
+@dirrmtry zpu/share/locale/es/LC_MESSAGES
+@dirrmtry zpu/share/locale/es
+@dirrmtry zpu/share/locale/sv/LC_MESSAGES
+@dirrmtry zpu/share/locale/sv
+@dirrmtry zpu/share/locale/da/LC_MESSAGES
+@dirrmtry zpu/share/locale/da
+@dirrmtry zpu/share/locale/zh_CN/LC_MESSAGES
+@dirrmtry zpu/share/locale/zh_CN
+@dirrmtry zpu/share/locale/ro/LC_MESSAGES
+@dirrmtry zpu/share/locale/ro
+@dirrmtry zpu/share/locale/de/LC_MESSAGES
+@dirrmtry zpu/share/locale/de
+@dirrmtry zpu/share/locale/id/LC_MESSAGES
+@dirrmtry zpu/share/locale/id
+@dirrmtry zpu/share/locale/pt_BR/LC_MESSAGES
+@dirrmtry zpu/share/locale/pt_BR
+@dirrmtry zpu/share/locale/nl/LC_MESSAGES
+@dirrmtry zpu/share/locale/nl
+@dirrmtry zpu/share/locale/ru/LC_MESSAGES
+@dirrmtry zpu/share/locale/ru
+@dirrmtry zpu/share/locale
+@dirrmtry zpu/share
+@dirrmtry zpu
