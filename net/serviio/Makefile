@@ -1,20 +1,16 @@
-# New ports collection makefile for:	serviio
-# Date created:		2011-01-03
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	serviio
-PORTVERSION=	0.6.2
+PORTVERSION=	1.0.1
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Transcoding DLNA-server implemented in Java
 
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
 
 NO_BUILD=	yes
 USE_JAVA=	yes
@@ -35,7 +31,7 @@ do-install:
 	${MKDIR} ${JAVAJARDIR}/${PORTNAME}/plugins
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${JAVAJARDIR}/${PORTNAME}/
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-.for f in profiles log4j
+.for f in application-profiles profiles log4j
 	${INSTALL_DATA} ${WRKSRC}/config/$f.xml ${ETCDIR}/$f.dist.xml
 	${TEST} -e ${ETCDIR}/$f.xml ||
 		${INSTALL_DATA} ${WRKSRC}/config/$f.xml ${ETCDIR}/
