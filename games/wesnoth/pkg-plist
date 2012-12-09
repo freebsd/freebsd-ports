@@ -561,6 +561,31 @@ share/applications/wesnoth_editor.desktop
 %%NLS%%share/locale/ga/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-dw.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-help.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-did.mo
@@ -1560,6 +1585,8 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%@dirrmtry share/locale/en@shaw
 %%NLS%%@dirrmtry share/locale/fur_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fur_IT
+%%NLS%%@dirrmtry share/locale/gd/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gd
 %%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/la
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
