@@ -1,18 +1,17 @@
-# New ports collection makefile for:	zfs-periodic
-# Date created:				8 November 2010
-# Whom:					Peter Ankerstal <peter@pean.org>
-#
+# Created by: Peter Ankerstal <peter@pean.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zfs-periodic
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.20121207
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.pean.org/zfs-periodic/
 
 MAINTAINER=	peter@pean.org
 COMMENT=	Simple way of maintaining zfs snapshots using the periodic system
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ross
+GH_COMMIT=	5401176
+GH_TAGNAME=	${GH_COMMIT}
 
 NO_BUILD=	yes
 
