@@ -1,9 +1,9 @@
-# $FreeBSD$
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
+# $FreeBSD$
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
@@ -20,12 +20,5 @@ LINUX_DIST_VER=	10
 RPMVERSION=	2.fc10
 BRANDELF_FILES=	usr/bin/aserver
 USE_LDCONFIG=	yes
-
-# We will use some other configuration file, so delete a linux one
-post-extract:
-	@${RM} -r ${WRKSRC}/etc
-
-post-install:
-	@${LN} -s ${LOCALBASE}/etc/asound.conf ${PREFIX}/etc/asound.conf
 
 .include <bsd.port.mk>
