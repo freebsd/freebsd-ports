@@ -1,12 +1,8 @@
-# New ports collection makefile for:	yaz
-# Date created:				16 Sep 2000
-# Whom:					Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	yaz
-PORTVERSION=	4.2.37
+PORTVERSION=	4.2.47
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -41,7 +37,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-doc__Makefile.in
 .endif
 
 post-configure:
-	${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
+	@${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		${WRKSRC}/doc/Makefile
 
 .include <bsd.port.mk>
