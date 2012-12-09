@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Log-Report
-PORTVERSION=	0.99
+PORTVERSION=	0.99.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Report a problem, pluggable handlers and language support
