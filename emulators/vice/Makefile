@@ -1,12 +1,8 @@
-# New ports collection makefile for:	vice
-# Date created:		Mar 28, 1998
-# Whom:			dchapes@ddm.on.ca
-#
+# Created by: dchapes@ddm.on.ca
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	2.3
-PORTREVISION=	4
+PORTVERSION=	2.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -42,7 +38,7 @@ CONFLICTS?=	vice-gnome-1.* vice-1.*
 .else
 .if !defined(VICE_WITHOUT_GNOME)
 GNOME_SUFFIX=	-gnome
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 vte
 CONFIGURE_ARGS=	--enable-gnomeui
 CONFLICTS?=	vice-1.* vice-xaw3d-1.*
 .else
@@ -56,6 +52,17 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 --disable-dependency-tracking
+#CONFIGURE_ARGS+=	--enable-ethernet
+# libpcap or libnet
+#CONFIGURE_ARGS+=	--enable-sdlui
+#CONFIGURE_ARGS+=	--enable-gp2x
+#CONFIGURE_ARGS+=	--enable-wiz
+#CONFIGURE_ARGS+=	--enable-parsid
+#CONFIGURE_ARGS+=	--enable-memmap
+
+Optional Features:
+
+
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \
 		vice.1 x128.1 \
@@ -97,7 +104,7 @@ PLIST_SUB+=		NOFCCACHE=""
 
 # will be picked up by configure
 .if exists(${LOCALBASE}/include/ffmpeg/avformat.h)
-LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -119,7 +126,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include/SDL
 .endif
 
 .if defined(VICE_WITH_ASOUND)
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 .endif
 
 post-extract:
