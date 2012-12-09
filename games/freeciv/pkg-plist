@@ -91,6 +91,7 @@ share/applications/freeciv-server.desktop
 %%DATADIR%%/civ1/game.ruleset
 %%DATADIR%%/civ1/governments.ruleset
 %%DATADIR%%/civ1/nations.ruleset
+%%DATADIR%%/civ1/script.lua
 %%DATADIR%%/civ1/techs.ruleset
 %%DATADIR%%/civ1/terrain.ruleset
 %%DATADIR%%/civ1/units.ruleset
@@ -101,6 +102,7 @@ share/applications/freeciv-server.desktop
 %%DATADIR%%/civ2/game.ruleset
 %%DATADIR%%/civ2/governments.ruleset
 %%DATADIR%%/civ2/nations.ruleset
+%%DATADIR%%/civ2/script.lua
 %%DATADIR%%/civ2/techs.ruleset
 %%DATADIR%%/civ2/terrain.ruleset
 %%DATADIR%%/civ2/units.ruleset
@@ -2435,6 +2437,7 @@ share/icons/hicolor/32x32/apps/freeciv-server.png
 share/icons/hicolor/48x48/apps/freeciv-server.png
 share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/ar/LC_MESSAGES/freeciv.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/da/LC_MESSAGES/freeciv.mo
@@ -2463,6 +2466,7 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/freeciv.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/freeciv.mo
