@@ -83,7 +83,7 @@ OPTIONS_DEFAULT=	CODECS GCONF
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || ! ${PORT_OPTIONS:MCLANG}
+.if ${OSVERSION} < 900033 || empty(PORT_OPTIONS:MCLANG)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -110,7 +110,7 @@ GYP_DEFINES+=	use_pulseaudio=1
 GYP_DEFINES+=	use_pulseaudio=0
 .endif
 
-.if ! ${MACHINE_CPU:Msse2}
+.if empty(MACHINE_CPU:Msse2)
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
