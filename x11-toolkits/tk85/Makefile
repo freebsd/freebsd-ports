@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tk
-# Date created:		17 January 2007
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.5.13
@@ -12,7 +8,7 @@ MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	jnagyjr1978@gmail.com
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT?=	Graphical toolkit for Tcl
 
 LICENSE=	BSD
