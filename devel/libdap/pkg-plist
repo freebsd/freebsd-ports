@@ -13,6 +13,7 @@ include/libdap/Clause.h
 include/libdap/Connect.h
 include/libdap/ConstraintEvaluator.h
 include/libdap/Constructor.h
+include/libdap/DAPCache3.h
 include/libdap/DAS.h
 include/libdap/DDS.h
 include/libdap/DDXExceptions.h
@@ -95,7 +96,7 @@ lib/libdapclient.so.4
 lib/libdapserver.a
 lib/libdapserver.la
 lib/libdapserver.so
-lib/libdapserver.so.9
+lib/libdapserver.so.11
 libdata/pkgconfig/libdap.pc
 libdata/pkgconfig/libdapclient.pc
 libdata/pkgconfig/libdapserver.pc
