@@ -1,0 +1,15 @@
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+%%FONTDIR%%/DinaBold10.pcf.gz
+%%FONTDIR%%/DinaBold8.pcf.gz
+%%FONTDIR%%/DinaBold9.pcf.gz
+%%FONTDIR%%/DinaBoldItalic10.pcf.gz
+%%FONTDIR%%/DinaBoldItalic8.pcf.gz
+%%FONTDIR%%/DinaBoldItalic9.pcf.gz
+%%FONTDIR%%/DinaItalic10.pcf.gz
+%%FONTDIR%%/DinaItalic8.pcf.gz
+%%FONTDIR%%/DinaItalic9.pcf.gz
+%%FONTDIR%%/DinaMedium10.pcf.gz
+%%FONTDIR%%/DinaMedium8.pcf.gz
+%%FONTDIR%%/DinaMedium9.pcf.gz
+@dirrm %%FONTDIR%%
