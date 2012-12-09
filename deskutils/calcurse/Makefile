@@ -1,18 +1,13 @@
-# Ports collection makefile for:	calcurse
-# Date created:                         Nov 1, 2005
-# Whom:                                 Herbert J. Skuhra <h.skuhra@gmail.com>
-#
+# Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	calcurse
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://calcurse.org/files/ \
-		ftp://ftp2.culot.org/culot/
+MASTER_SITES=	http://calcurse.org/files/
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A text-based calendar and scheduling application
+COMMENT=	Text-based calendar and scheduling application
 
 LICENSE=	BSD
 
