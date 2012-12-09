@@ -1,24 +1,20 @@
-# New ports collection makefile for:	gnash
-# Date created:				12 Jan 2006
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		curl.6:${PORTSDIR}/ftp/curl \
-		gif.5:${PORTSDIR}/graphics/giflib \
-		speex.1:${PORTSDIR}/audio/speex \
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		curl:${PORTSDIR}/ftp/curl \
+		gif:${PORTSDIR}/graphics/giflib \
+		speex:${PORTSDIR}/audio/speex \
 		nspr4:${PORTSDIR}/devel/nspr
 
 CONFLICTS=	gnash-devel-[0-9]*
@@ -105,8 +101,8 @@ WEBPLUGINS_FILES=	libgnashplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 PLIST_SUB+=	NPAPI=""
 CONFIGURE_ARGS+=--with-npapi-plugindir="${WEBPLUGINS_DIR}"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul19
-RUN_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul19
+BUILD_DEPENDS+=	${LOCALBASE}/bin/xulrunner:${PORTSDIR}/www/libxul
+RUN_DEPENDS+=	${LOCALBASE}/bin/xulrunner:${PORTSDIR}/www/libxul
 .else
 PLIST_SUB+=	NPAPI="@comment "
 CONFIGURE_ARGS+=	--disable-npapi
@@ -182,7 +178,7 @@ CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 GNASH_RENDERERS=
 
 .if ${PORT_OPTIONS:MAGG} 
-LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
+LIB_DEPENDS+=		agg:${PORTSDIR}/graphics/agg
 GNASH_RENDERERS+=	agg
 .endif
 
@@ -190,7 +186,7 @@ GNASH_RENDERERS+=	agg
 USE_GL=			yes
 GNASH_RENDERERS+=	ogl
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=		gtkglext-x11-1:${PORTSDIR}/x11-toolkits/gtkglext
 .endif
 .endif
 
@@ -215,7 +211,7 @@ CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
 .if empty(PORT_OPTIONS:MFFMPEG)
 IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG.
 .endif
-LIB_DEPENDS+=		va.1:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=		va:${PORTSDIR}/multimedia/libva
 PLIST_SUB+=		VAAPI=""
 .else
 CONFIGURE_ARGS+=	--enable-hwaccel=none # XVideo
@@ -226,7 +222,7 @@ PLIST_SUB+=		VAAPI="@comment "
 # Media handler options processing
 #
 .if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER) 
-LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg
 USE_SDL+=		sdl
 .elif empty(PORT_OPTIONS:MFFMPEG) && ${PORT_OPTIONS:MGSTREAMER}
