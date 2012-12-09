@@ -1047,6 +1047,7 @@ sbin/reject
 %%DATADIR%%/ipptool/onepage-letter.ps
 %%DATADIR%%/ipptool/get-completed-jobs.test
 %%DATADIR%%/ipptool/get-jobs.test
+%%DATADIR%%/ipptool/get-printer-attributes.test
 %%DATADIR%%/ipptool/ipp-1.1.test
 %%DATADIR%%/ipptool/ipp-2.0.test
 %%DATADIR%%/ipptool/ipp-2.1.test
