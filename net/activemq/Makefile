@@ -2,7 +2,7 @@
 #
 
 PORTNAME=	activemq
-PORTVERSION=	5.6.0
+PORTVERSION=	5.7.0
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/
@@ -24,6 +24,12 @@ MQUSER?=	activemq
 MQGROUP?=	${MQUSER}
 USERS=		${MQUSER}
 GROUPS=		${MQGROUP}
+CAMELVERSION=	2.10.1
+SPRINGVERSION=	3.0.7
+SPRINGVERSION=	3.0.7
+JETTYVERSION=	7.6.7.v20120910
+LVDBVERSION=	0.2
+LVDBJNIVERSION=	1.3
 
 ALL_TARGET=	${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
@@ -42,12 +48,7 @@ ETC_FILES=	activemq-command.xml \
 		activemq-stomp.xml \
 		activemq-throughput.xml \
 		activemq.xml \
-		broker-localhost.cert \
-		broker.ks \
-		broker.ts \
 		camel.xml \
-		client.ks \
-		client.ts \
 		credentials-enc.properties \
 		credentials.properties \
 		jetty-realm.properties \
@@ -63,7 +64,15 @@ SUB_LIST=	ETC_FILES="${ETC_FILES}" \
 		MQUSER="${MQUSER}" \
 		MQGROUP="${MQGROUP}" \
 		MQDB="${MQDB}"
-PLIST_SUB=	MQUSER="${MQUSER}" MQGROUP="${MQGROUP}" MQDB="${MQDB}"
+PLIST_SUB=	MQUSER="${MQUSER}" \
+		MQGROUP="${MQGROUP}" \
+		MQDB="${MQDB}" \
+		PORTVERSION="${PORTVERSION}" \
+		CAMELVERSION="${CAMELVERSION}" \
+		SPRINGVERSION="${SPRINGVERSION}" \
+		JETTYVERSION="${JETTYVERSION}" \
+		LVDBVERSION="${LVDBVERSION}" \
+		LVDBJNIVERSION="${LVDBJNIVERSION}"
 
 .include <bsd.port.options.mk>
 
@@ -83,12 +92,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${ETCDIR}/${f}.sample
 .endfor
 
-.for f in ${PORTNAME} ${PORTNAME}-admin
+.for f in ${PORTNAME} ${PORTNAME}-admin diag
 	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${f} ${MQDATA}/bin
 .endfor
-.for f in run.jar wrapper.jar
-	@cd ${WRKSRC}/bin && ${INSTALL_DATA} ${f} ${MQDATA}/bin
-.endfor
+
+	@cd ${WRKSRC}/bin && ${INSTALL_DATA} run.jar ${MQDATA}/bin
+
 .for f in webapps lib
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${MQDATA}
 .endfor
