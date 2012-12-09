@@ -1,12 +1,8 @@
-# New ports collection makefile for:	aria2
-# Date created:		1 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aria2
-PORTVERSION=	1.15.2
+PORTVERSION=	1.16.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -52,9 +48,16 @@ PLIST_DIRS=	%%DOCSDIR%%/xmlrpc \
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
 USE_GETTEXT=	yes
-LANGS=		ar bg ca da de el en@boldquot en@quot es fi fr he hu id it ja \
-		ko nl nn pl pt pt_BR ru sk sr sv th tr uk vi zh_CN zh_TW
-PLIST_FILES+=	${LANGS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2.mo|}
+LANGS=		en@boldquot en@quot fil kk oc zh_HK
+LANGS_MTREE=	ar bg bn ca da de el es fa fi fr he hr hu id it ja ko ms nb nl \
+		nn pl pt pt_BR ro ru sk sr sv th tr uk vi zh_CN zh_TW
+.for lang in ${LANGS} ${LANGS_MTREE}
+PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+.endfor
+.for lang in ${LANGS}
+PLIST_DIRSTRY+=	share/locale/${lang}/LC_MESSAGES \
+		share/locale/${lang}
+.endfor
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif
