@@ -1,15 +1,8 @@
-# New ports collection makefile for:	tiff
-# Date created:		8 October 1996
-# Whom:			Richard Hwang <rhwang@bigpanda.com>
-#			Mikhail Teterin <mi@aldan.algebra.com>
-#			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
+# Created by: Richard Hwang <rhwang@bigpanda.com>, Mikhail Teterin <mi@aldan.algebra.com>, Jun-ichiro itojun Itoh <itojun@itojun.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tiff
-PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTVERSION=	4.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
@@ -17,8 +10,8 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		jbig.1:${PORTSDIR}/graphics/jbigkit
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		jbig:${PORTSDIR}/graphics/jbigkit
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -42,9 +35,11 @@ MAN1=	bmp2tiff.1 tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 \
 	thumbnail.1 tiff2bw.1 tiff2ps.1 tiff2rgba.1 tiffcmp.1 tiffcp.1 \
 	tiffcrop.1 tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \
 	tiffset.1 tiffsplit.1 tiffsv.1
-MAN3=	TIFFClose.3tiff TIFFDataWidth.3tiff TIFFError.3tiff TIFFFlush.3tiff \
-	TIFFGetField.3tiff TIFFOpen.3tiff TIFFPrintDirectory.3tiff \
-	TIFFRGBAImage.3tiff TIFFReadDirectory.3tiff \
+MAN3=	TIFFClose.3tiff TIFFDataWidth.3tiff TIFFError.3tiff \
+	TIFFFieldDataType.3tiff TIFFFieldName.3tiff TIFFFieldPassCount.3tiff \
+	TIFFFieldReadCount.3tiff TIFFFieldTag.3tiff TIFFFieldWriteCount.3tiff \
+	TIFFFlush.3tiff TIFFGetField.3tiff TIFFOpen.3tiff \
+	TIFFPrintDirectory.3tiff TIFFRGBAImage.3tiff TIFFReadDirectory.3tiff \
 	TIFFReadEncodedStrip.3tiff TIFFReadEncodedTile.3tiff \
 	TIFFReadRGBAImage.3tiff TIFFReadRGBAStrip.3tiff \
 	TIFFReadRGBATile.3tiff TIFFReadRawStrip.3tiff TIFFReadRawTile.3tiff \

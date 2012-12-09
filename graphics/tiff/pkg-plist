@@ -66,6 +66,12 @@ libdata/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFClose.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFDataWidth.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFError.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/TIFFFieldDataType.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/TIFFFieldName.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/TIFFFieldPassCount.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/TIFFFieldReadCount.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/TIFFFieldTag.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/TIFFFieldWriteCount.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFFlush.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFGetField.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFOpen.3tiff.html
@@ -100,6 +106,7 @@ libdata/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFstrip.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFswab.3tiff.html
 %%PORTDOCS%%%%DOCSDIR%%/man/TIFFtile.3tiff.html
+%%PORTDOCS%%%%DOCSDIR%%/man/bmp2tiff.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/fax2ps.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/fax2tiff.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/gif2tiff.1.html
