@@ -1,9 +1,5 @@
-# New ports collection makefile for: vpopmail
-# Date created:		21 Sep 2000
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.32
@@ -45,58 +41,98 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-vpopuser=${USERS} \
 		--enable-vpopgroup=${GROUPS}
 
-#
-# User-configurable variables
-#
-# Define these to change from the default behaviour
-#
-# WITH_PASSWD   - allow authentication off /etc/passwd
-# WITHOUT_MD5_PASSWORDS - store encrypted passwords in MD5 format
-# WITH_CLEAR_PASSWD - store passwords in plaintext
-# WITH_LEARN_PASSWORDS	- enable learning passwords during pop auth
-# WITH_MYSQL	- allow authentitation via mysql
-# WITH_MYSQL_REPLICATION - enables MySQL database replication
-# WITH_MYSQL_LIMITS - enables the MySQL mailbox limit code
-# WITH_PGSQL	- allow authentication via PostgreSQL
-# WITH_SYBASE   - allow authentication via Sybase (NOT TESTED!)
-# WITH_ORACLE   - allow authentication via Oracle (NOT TESTED!)
-# WITH_LDAP     - allow authentication via LDAP
-# WITH_VALIAS   - enable valias processing
-# WITHOUT_ROAMING - disallow roaming users
-# WITH_IP_ALIAS - enables IP aliasing
-# WITH_QMAIL_EXT - enables qmail-like user-* address extesions processing
-# WITHOUT_FILE_LOCKING - disable file locking
-# WITH_FILE_SYNC - enables immediate synching (may decrease performance)
-# WITHOUT_USERS_BIG_DIR - disables using big directories for users
-# WITHOUT_SEEKABLE - disables vdelivermail's attempt to make its input seekable
-# WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
-# WITH_SUID_VCHKPW	- set the setuid bit on the vchkpw program
-# WITH_SMTP_AUTH_PATCH	- apply an SMTP authentcation fix
-# WITH_ONCHANGE_SCRIPT	- enable the use of the $PREFIX/vpopmail/etc/onchange
-#                         script, see README.onchange for more information.
-# WITHOUT_FPIC		- do not add -fPIC to the C compiler flags
-# WITH_MAILDROP		- enable maildrop as an MDA (see README.maildrop)
-# MAILDROP_PORT		- the port that provides the bin/maildrop program
-# WITH_DOMAIN_QUOTAS	- enable non-system domain quotas
-#
-# Set these to the values you'd prefer
-#
-# RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
-# SPAM_THRESHOLD - minimum score required to delete spam messages (requires spamassassin)
-# WITH_SPAMFOLDER - move spam messages into Junk folder (requires spamassassin)
-# DEFAULT_DOMAIN - default domain for non-vhost lookups
-# WITH_SINGLE_DOMAIN - optimize for a site with many users in a single domain
-# LOGLEVEL	- n - no logging, y - log all,
-#                 e - log errors, p - log passwords in errors,
-#		  v - verbose success and errors with passwords
-# WITHOUT_AUTH_LOG - disables authentication logging
-# WITH_MYSQL_LOG - enable auth logging to a MySQL database [deprecateed]
-# WITH_PGSQL_LOG - enable auth logging to a PostgreSQL database [deprecated]
-# WITH_SQL_LOG  - enable auth logging to the selected SQL database
-# WITH_SQL_LOG_REMOVE_DELETED - remove log entries for deleted users/domains
-# QMAIL_PREFIX  - location of qmail directory
-# PREFIX	- installation area for vpopmail (see comment below)
-#
+OPTIONS_DEFINE=	DOCS \
+		PASSWD \
+		MD5_PASSWORDS \
+		CLEAR_PASSWD \
+		LEARN_PASSWORDS \
+		MYSQL \
+		MYSQL_REPLICATION \
+		MYSQL_LIMITS \
+		PGSQL \
+		SYBASE \
+		ORACLE \
+		LDAP \
+		LDAP_SASL \
+		VALIAS \
+		ROAMING \
+		IP_ALIAS \
+		QMAIL_EXT \
+		FILE_LOCKING \
+		FILE_SYNC \
+		USERS_BIG_DIR \
+		SEEKABLE \
+		SPAMASSASSIN \
+		SUID_VCHKPW \
+		SMTP_AUTH_PATCH \
+		ONCHANGE_SCRIPT \
+		FPIC \
+		MAILDROP \
+		DOMAIN_QUOTAS \
+		SPAMFOLDER \
+		SINGLE_DOMAIN \
+		AUTH_LOG \
+		SQL_LOG \
+		SQL_LOG_TRIM
+
+OPTIONS_DEFAULT=MD5_PASSWORDS \
+		ROAMING \
+		FILE_LOCKING \
+		USERS_BIG_DIR \
+		SEEKABLE \
+		FPIC \
+		AUTH_LOG
+
+PASSWD_DESC=			Auth via /etc/passwd
+MYSQL_DESC=			Auth via MySQL
+PGSQL_DESC=			Auth via PostgreSQL
+SYBASE_DESC=			Auth via Sybase
+MD5_PASSWORDS_DESC=		Store passwords in MD5 format
+CLEAR_PASSWD_DESC=		Store passwords in plaintext
+LEARN_PASSWORDS_DESC=		Learn passwords during POP auth
+MYSQL_REPLICATION_DESC=		MySQL database replication support
+MYSQL_LIMITS_DESC=		MySQL mailbox limitations support
+ORACLE_DESC=			Auth via Oracle
+LDAP_DESC=			Auth via LDAP
+LDAP_SASL_DESC=			Auth via LDAP SASL
+VALIAS_DESC=			valias processing
+ROAMING_DESC=			roaming users support
+IP_ALIAS_DESC=			IP alias support
+QMAIL_EXT_DESC=			qmail-like user-* address support
+FILE_LOCKING_DESC=		file locking support
+FILE_SYNC_DESC=			fsync support (decreases performance)
+USERS_BIG_DIR_DESC=		Hashing user directories (BIGDIR)
+SEEKABLE_DESC=			Make input to vdelivermail seekable
+SPAMASSASSIN_DESC=		SpamAssassin support
+SUID_VCHKPW_DESC=		Set vchkpw setugid vpopmail:vchkpw
+SMTP_AUTH_PATCH_DESC=		Swap Challenge/Response for CRAM-MD5
+ONCHANGE_SCRIPT_DESC=		vpopmail/etc/onchange script support
+FPIC_DESC=			Compile with -fPIC
+MAILDROP_DESC=			Maildrop MDA support
+DOMAIN_QUOTAS_DESC=		Domain quotas support
+SPAMFOLDER_DESC=		Move spam to Junk (requires SA)
+SINGLE_DOMAIN_DESC=		Optimize for a single domain setup
+AUTH_LOG_DESC=			Log auth attempts when using a DB
+SQL_LOG_DESC=			Log to selected SQL database
+SQL_LOG_TRIM_DESC=		Trim logs of deleted users/domains
+
+# Compatibility with older KNOB, correctly will enable if set,
+# but be unset if unselected in the 'config' dialog
+.if defined(WITH_POSTGRESQL)
+PORT_OPTIONS+=	PGSQL
+.endif
+.if defined(WITH_MYSQL_LOG)
+PORT_OPTIONS+=	SQL_LOG
+.endif
+.if defined(WITH_PGSQL_LOG)
+PORT_OPTIONS+=	SQL_LOG
+.endif
+.if defined(WITH_SQL_LOG_REMOVE_DELETED)
+PORT_OPTIONS+=	SQL_LOG_TRIM
+.endif
+
+.include <bsd.port.pre.mk>
+
 # PostgreSQL database configuration options
 #
 # WITH_PGSQL_USER - the username for connecting to the PostgreSQL server (postgres)
@@ -133,14 +169,46 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 # WITH_COURIER_IMAPLOGIN - the path to the imaplogin program
 # WITH_COURIER_IMAPD - the path to the imapd program
 
+# User-configurable variables
+#
+# ONCHANGE_SCRIPT	- see README.onchange
+# MAILDROP 		- see README.maildrop
+#
+# Define these to change from the default behaviour
+#
+# MAILDROP_PORT		- the port that provides the bin/maildrop program
+#
+# Set these to the values you'd prefer
+#
+# RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
+# SPAM_THRESHOLD - minimum score required to delete spam messages (requires spamassassin)
+# LOGLEVEL	- n - no logging, y - log all,
+#                 e - log errors, p - log passwords in errors,
+#		  v - verbose success and errors with passwords
+# QMAIL_PREFIX  - location of qmail directory
+# PREFIX	- installation area for vpopmail (see comment below)
+#
+#
 RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
 MAILDROP_PORT?=	mail/maildrop
+WITH_COURIER_IMAPLOGIN?=	${LOCALBASE}/sbin/imaplogin
+WITH_VPOPMAIL_AUTHVCHKPW?=	${PREFIX}/vpopmail/bin/authvchkpw
+WITH_COURIER_IMAPD?=		${LOCALBASE}/bin/imapd
+WITH_ORACLE_PROC?=	proc
 
-.if defined(WITH_LDAP)
+# Uncomment this, or set PREFIX to /home if you have an existing
+# vpopmail install with the vpopmail users' home directory set to
+# /home/vpopmail - package rules dictate we default to LOCALBASE/vpopmail
+#
+#PREFIX?=	/home
+
+# End of user-configurable variables
+
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
-.if defined(WITH_LDAP_SASL)
+.if ${PORT_OPTIONS:MLDAP_SASL}
 WANT_OPENLDAP_SASL=	yes
 .endif
 CONFIGURE_ARGS+=	--enable-auth-module=ldap
@@ -156,19 +224,16 @@ PLIST_SUB+=	LDAP=""
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-auth-module=mysql \
 			--enable-incdir=${LOCALBASE}/include/mysql \
 			--enable-libdir=${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
-.if defined(WITH_MYSQL_REPLICATION)
+.if ${PORT_OPTIONS:MMYSQL_REPLICATION}
 CONFIGURE_ARGS+=	--enable-mysql-replication
 .endif
-.if defined(WITH_MYSQL_LOG)
-WITH_SQL_LOG=		yes
-.endif
-.if defined(WITH_MYSQL_LIMITS)
+.if ${PORT_OPTIONS:MMYSQL_LIMITS}
 CONFIGURE_ARGS+=	--enable-mysql-limits
 .endif
 
@@ -195,35 +260,31 @@ PLIST_SUB+=	MYSQL="@comment "
 BROKEN=	The default vpopmail domain is no longer setup at compile time - please edit the ${PREFIX}/vpopmail/etc/defaultdomain file instead
 .endif
 
-.if defined(WITH_POSTGRESQL)
-WITH_PGSQL=	yes
+.if defined(WITH_APOP)
+BROKEN=		The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-auth-module=pgsql
-
-.if defined(WITH_PGSQL_LOG)
-WITH_SQL_LOG=		yes
-.endif
 .endif
 
-.if defined(WITH_SQL_LOG)
+.if ${PORT_OPTIONS:MSQL_LOG}
 CONFIGURE_ARGS+=	--enable-sql-logging
-.if defined(WITH_SQL_LOG_REMOVE_DELETED)
+.if ${PORT_OPTIONS:MSQL_LOG_TRIM}
 EXTRA_PATCHES+=	${FILESDIR}/sql-remove-deleted.patch
 .endif
 .endif
 
-.if defined(WITH_SMTP_AUTH_PATCH)
+.if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
 EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
 .endif
 
-.if defined(WITH_ONCHANGE_SCRIPT)
+.if ${PORT_OPTIONS:MONCHANGE_SCRIPT}
 CONFIGURE_ARGS+=	--enable-onchange-script
 .endif
 
-.if defined(WITH_MAILDROP)
+.if ${PORT_OPTIONS:MMAILDROP}
 CONFIGURE_ARGS+=	--enable-maildrop=y \
 			--enable-maildrop-prog=${LOCALBASE}/bin/maildrop
 BUILD_DEPENDS+=	maildrop:${PORTSDIR}/${MAILDROP_PORT}
@@ -236,29 +297,19 @@ CONFIGURE_ARGS+=	--enable-maildrop=n
 PLIST_SUB+=	MAILDROP="@comment "
 .endif
 
-.if defined(WITH_DOMAIN_QUOTAS)
+.if ${PORT_OPTIONS:MDOMAIN_QUOTAS}
 CONFIGURE_ARGS+=	--enable-domainquotas=y
 .else
 CONFIGURE_ARGS+=	--enable-domainquotas=n
 .endif
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/Makefile.in-noportdocs.patch
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_FPIC) && ( ${ARCH} == "amd64" || ${ARCH} == "ia64" )
+.if ${PORT_OPTIONS:MFPIC} && ( ${ARCH} == "amd64" || ${ARCH} == "ia64" )
 CFLAGS+=	-fPIC
 .endif
-
-# Uncomment this, or set PREFIX to /home if you have an existing
-# vpopmail install with the vpopmail users' home directory set to
-# /home/vpopmail - package rules dictate we default to LOCALBASE/vpopmail
-#
-#PREFIX?=	/home
-
-# End of user-configurable variables
 
 #
 # Some suggestions from Gabriel Ambuehl <gabriel_ambuehl@buz.ch>
@@ -266,89 +317,80 @@ CFLAGS+=	-fPIC
 
 CONFIGURE_ARGS+=	--enable-logging=${LOGLEVEL}
 
-.if defined(WITH_PASSWD)
+.if ${PORT_OPTIONS:MPASSWD}
 CONFIGURE_ARGS+=	--enable-passwd
 .endif
 
-.if defined(WITHOUT_MD5_PASSWORDS)
+.if empty(PORT_OPTIONS:MMD5_PASSWORDS)
 CONFIGURE_ARGS+=	--disable-md5-passwords
 .endif
 
-.if defined(WITH_APOP)
-BROKEN=		The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work
-.endif
-
-.if defined(WITH_VALIAS)
+.if ${PORT_OPTIONS:MVALIAS}
 CONFIGURE_ARGS+=	--enable-valias
 .endif
 
-.if !defined(WITHOUT_ROAMING)
+.if ${PORT_OPTIONS:MROAMING}
 CONFIGURE_ARGS+=	--enable-roaming-users \
 			--enable-relay-clear-minutes=${RELAYCLEAR}
 .endif
 
-.if !defined(WITH_CLEAR_PASSWD)
+.if empty(PORT_OPTIONS:MCLEAR_PASSWD)
 CONFIGURE_ARGS+=	--disable-clear-passwd
 .endif
 
-.if defined(WITH_LEARN_PASSWORDS)
+.if ${PORT_OPTIONS:MLEARN_PASSWORDS}
 CONFIGURE_ARGS+=	--enable-learn-passwords
 .endif
 
-.if defined(WITH_SYBASE)
+.if ${PORT_OPTIONS:MSYBASE}
 CONFIGURE_ARGS+=	--enable-auth-module=sybase
 .endif
 
-.if defined(WITH_ORACLE)
-WITH_ORACLE_PROC?=	proc
+.if ${PORT_OPTIONS:MORACLE}
 CONFIGURE_ARGS+=	--enable-auth-module=oracle
 .endif
 
-.if defined(WITH_SINGLE_DOMAIN)
+.if ${PORT_OPTIONS:MSINGLE_DOMAIN}
 CONFIGURE_ARGS+=	--disable-many-domains
 .endif
 
-.if defined(WITH_IP_ALIAS)
+.if ${PORT_OPTIONS:MIP_ALIAS}
 CONFIGURE_ARGS+=	--enable-ip-alias-domains
 .endif
 
-.if defined(WITH_QMAIL_EXT)
+.if ${PORT_OPTIONS:MQMAIL_EXT}
 CONFIGURE_ARGS+=	--enable-qmail-ext
 .endif
 
-.if defined(WITHOUT_FILE_LOCKING)
+.if empty(PORT_OPTIONS:MFILE_LOCKING)
 CONFIGURE_ARGS+=	--disable-file-locking
 .endif
 
-.if defined(WITH_FILE_SYNC)
+.if ${PORT_OPTIONS:MFILE_SYNC}
 CONFIGURE_ARGS+=	--enable-file-sync
 .endif
 
-.if defined(WITHOUT_AUTH_LOG)
+.if empty(PORT_OPTIONS:MAUTH_LOG)
 CONFIGURE_ARGS+=	--disable-auth-logging
 .endif
 
-.if defined(WITHOUT_USERS_BIG_DIR)
+.if empty(PORT_OPTIONS:MUSERS_BIG_DIR)
 CONFIGURE_ARGS+=	--disable-users-big-dir
 .endif
 
-.if defined(WITHOUT_SEEKABLE)
+.if empty(PORT_OPTIONS:MSEEKABLE)
 CONFIGURE_ARGS+=	--disable-make-seekable
 .endif
 
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin \
 			--enable-spamc-prog=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
-.if defined(WITH_SPAMFOLDER)
+.if ${PORT_OPTIONS:MSPAMFOLDER}
 CONFIGURE_ARGS+=	--enable-spam-junkfolder
 .endif
 .endif
-
-WITH_COURIER_IMAPLOGIN?=	${LOCALBASE}/sbin/imaplogin
-WITH_VPOPMAIL_AUTHVCHKPW?=	${PREFIX}/vpopmail/bin/authvchkpw
-WITH_COURIER_IMAPD?=		${LOCALBASE}/bin/imapd
 
 DOCS=		README README.activedirectory README.filelocking \
 		README.ipaliasdomains README.ldap README.maildrop \
@@ -370,7 +412,7 @@ pre-configure:
 	${AWK} -F: '/^${USERS}:/ { print $$3 }' ${UID_FILES} > ${WRKSRC}/vpopmail.uid
 	${AWK} -F: '/^${USERS}:/ { sub(/\/usr\/local/, "${PREFIX}", $$9); print $$9 }' ${UID_FILES} > ${WRKSRC}/vpopmail.dir
 	${AWK} -F: '/^${GROUPS}:/ { print $$3 }' ${GID_FILES} > ${WRKSRC}/vpopmail.gid
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 .if defined(WITH_PGSQL_DB)
 	${REINPLACE_CMD} -E -e "s/(#define DB.*)vpopmail(.*)/\1${WITH_PGSQL_DB}\2/" ${WRKSRC}/vpgsql.h
 .endif
@@ -378,7 +420,7 @@ pre-configure:
 	${REINPLACE_CMD} -E -e "s/(#define PG_CONNECT.*)postgres(.*)/\1${WITH_PGSQL_USER}\2/" ${WRKSRC}/vpgsql.h
 .endif
 .endif
-.if defined(WITH_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 .if defined(WITH_ORACLE_SERVICE)
 	${REINPLACE_CMD} -E -e "s/(#define ORACLE_SERVICE.*)jimmy(.*)/\1${WITH_ORACLE_SERVICE}\2/" ${WRKSRC}/voracle.h
 .endif
@@ -396,7 +438,7 @@ pre-configure:
 .endif
 	cd ${WRKSRC} && ${WITH_ORACLE_PROC} voracle.pc
 .endif
-.if defined(WITH_SYBASE)
+.if ${PORT_OPTIONS:MSYBASE}
 .if defined(WITH_SYBASE_SERVER)
 	${REINPLACE_CMD} -E -e "s/(#define SYBASE_SERVER.*)\"\"(.*)/\1\"${WITH_SYBASE_SERVER}\"\2/" ${WRKSRC}/vsybase.h
 .endif
@@ -434,13 +476,13 @@ post-install:
 	if [ ! -f ${PREFIX}/vpopmail/etc/vusagec.conf ]; then \
 		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/vusagec.conf-dist ${PREFIX}/vpopmail/etc/vusagec.conf; \
 	fi
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	if [ ! -f ${PREFIX}/vpopmail/etc/vpopmail.mysql ]; then \
 		${CP} ${PREFIX}/vpopmail/etc/vpopmail.mysql-dist ${PREFIX}/vpopmail/etc/vpopmail.mysql; \
 	fi
 .endif
 	${TOUCH} ${PREFIX}/vpopmail/etc/defaultdomain
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 	@${ECHO_CMD} "# LDAP CONNECTION SETTINGS FOR VPOPMAIL" > ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
 	@${ECHO_CMD} "# Line format:" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
 	@${ECHO_CMD} "# host|port|user|password|basedn" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
@@ -451,25 +493,25 @@ post-install:
 	@${ECHO_CMD} "You need to specify the LDAP connection settings in the ${PREFIX}/vpopmail/etc/vpopmail.ldap file"
 .endif
 	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail/bin/ ${PREFIX}/vpopmail/etc/
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 	${ECHO_CMD} "***********************************************************************"
 	${ECHO_CMD} "Now you should add the following options to your spamd.sh startup file:"
 	${ECHO_CMD} "-v -u vpopmail"
 	${ECHO_CMD} "***********************************************************************"
 .endif
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 	${MKDIR} ${PREFIX}/vpopmail/ldap
 	${INSTALL_DATA} ${LDAP_FILES} ${PREFIX}/vpopmail/ldap
 .endif
-.if defined(WITH_MAILDROP)
+.if ${PORT_OPTIONS:MMAILDROP}
 	${MKDIR} ${PREFIX}/vpopmail/maildrop
 	${INSTALL_DATA} ${MAILDROP_FILES} ${PREFIX}/vpopmail/maildrop
 .endif
-.if defined(WITH_SUID_VCHKPW)
+.if ${PORT_OPTIONS:MSUID_VCHKPW}
 	${CHMOD} ug+s ${PREFIX}/vpopmail/bin/vchkpw
 .endif
 	@${TOUCH} ${QMAIL_PREFIX}/control/locals
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${PREFIX}/vpopmail/doc/
 .endif
 
