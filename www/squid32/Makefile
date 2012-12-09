@@ -37,7 +37,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.2.${SQUID_STABLE_VER}
-PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -66,7 +65,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.2/changesets
-PATCHFILES=	# empty
+PATCHFILES=	squid-3.2-11738.patch
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
@@ -76,7 +75,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid32
 
-SQUID_STABLE_VER=	3
+SQUID_STABLE_VER=	4
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!2].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -98,7 +97,7 @@ OPTIONS_DEFINE=	ARP_ACL AUTH_KERB AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
 		CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
 		FOLLOW_XFF FS_AUFS FS_COSS HTCP ICAP ICMP IDENT IPV6 KQUEUE \
 		LARGEFILE SNMP SSL SSL_CRTD STACKTRACES STRICT_HTTP \
-		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 
+		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2
 
 ARP_ACL_DESC=	Enable ARP/MAC/EUI based authentification
 AUTH_KERB_DESC=	Install Kerberos authentication helpers
@@ -302,6 +301,15 @@ negotiate_auth=	kerberos wrapper
 libexec+=	negotiate_kerberos_auth negotiate_kerberos_auth_test \
 		negotiate_wrapper_auth
 MAN8+=		negotiate_kerberos_auth.8
+# the kerberos_ldap_group external helper depends on LDAP and SASL:
+.if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
+external_acl+=	kerberos_ldap_group
+libexec+=	ext_kerberos_ldap_group_acl \
+		cert_tool
+# XXX: this manpage is present in Squid's source but is not being
+# built/installed yet (Squid 3.2.3 as at 11/2012).
+#MAN8+=		ext_kerberos_ldap_group_acl.8
+.endif
 .else
 negotiate_auth=	none
 .endif
@@ -311,6 +319,7 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-auth-negotiate="${negotiate_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
+
 # Storage schemes:
 
 storage_schemes=	diskd rock ufs
