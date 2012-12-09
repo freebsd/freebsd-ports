@@ -1,21 +1,16 @@
-# New ports collection makefile for:	enet
-# Date created:		2006-09-23
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	enet
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Simple and robust communication library based on UDP
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	MIT
 
 OPTIONS_DEFINE=	DOCS
 
