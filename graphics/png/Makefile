@@ -1,14 +1,10 @@
-# New ports collection makefile for:    PNG images library
-# Date created:         5 Dec 1995
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	png
-PORTVERSION=	1.5.12
+PORTVERSION=	1.5.13
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}15/older-releases/${PORTVERSION}
+MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}15/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
