@@ -405,6 +405,10 @@ foreach my $thisdir (@dirs) {
 		}
 	}
 
+	# strip svn:executable if added-- not allowed
+
+	system("cd $portname && svn -qR propdel svn:executable");
+
 	# figure out where the port name belongs in category Makefile
 	my ($spaces, @ports) = &lsports;
 	errx(1, "Error: $portname already exists in $category\'s Makefile") if (&contains($portname, @ports));
