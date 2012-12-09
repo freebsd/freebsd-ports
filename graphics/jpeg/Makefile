@@ -1,20 +1,16 @@
-# New ports collection makefile for:	jpeg
-# Date created:		6 November 1994
-# Whom:			smace
-#
+# Created by: smace
 # $FreeBSD$
-#
 
 PORTNAME=	jpeg
 PORTVERSION=	8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		http://sylvana.net/jpegcrop/:exif
 DISTNAME=	jpegsrc.v${DISTVERSION2}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jpegexiforient.c:exif exifautotran.txt:exif
-DIST_SUBDIR=	${PORTNAME}${DISTVERSION2}2
+DIST_SUBDIR=	${PORTNAME}${DISTVERSION2}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -23,7 +19,7 @@ COMMENT=	IJG's jpeg compression utilities
 CONFLICTS=	libjpeg-turbo-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
 
-DISTVERSION2=	8b
+DISTVERSION2=	8d
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static

@@ -1,5 +1,5 @@
---- transupp.c.orig	2009-09-03 16:45:06.000000000 +0200
-+++ transupp.c	2010-01-13 09:38:15.000000000 +0100
+--- transupp.c.orig	2011-10-26 13:20:05.000000000 +0200
++++ transupp.c	2012-11-15 21:46:57.000000000 +0100
 @@ -51,6 +51,13 @@
   * guarantee we can touch more than one row at a time.  So in that case,
   * we have to use a separate destination array.
@@ -272,7 +272,7 @@
 +	}
 +      } else {
 +	for (offset_y = 0; offset_y < compptr->v_samp_factor; offset_y++) {
-+	  jzero_far(dst_buffer[offset_y] + x_drop_blocks,
++	  FMEMZERO(dst_buffer[offset_y] + x_drop_blocks,
 +		    comp_width * SIZEOF(JBLOCK));
 +	} 	
 +      }
@@ -314,7 +314,7 @@
 +      if (dst_blk_y < y_crop_blocks ||
 +          dst_blk_y >= comp_height + y_crop_blocks) {
 +        for (offset_y = 0; offset_y < compptr->v_samp_factor; offset_y++) {
-+          jzero_far(dst_buffer[offset_y],
++          FMEMZERO(dst_buffer[offset_y],
 +                    compptr->width_in_blocks * SIZEOF(JBLOCK));
 +        }
 +        continue;
@@ -332,14 +332,14 @@
        for (offset_y = 0; offset_y < compptr->v_samp_factor; offset_y++) {
 +      if (dstinfo->image_width > srcinfo->image_width) {
 +        if (x_crop_blocks > 0) {
-+          jzero_far(dst_buffer[offset_y],
++          FMEMZERO(dst_buffer[offset_y],
 +                    x_crop_blocks * SIZEOF(JBLOCK));
 +        }
 +        jcopy_block_row(src_buffer[offset_y],
 +                        dst_buffer[offset_y] + x_crop_blocks,
 +                        comp_width);
 +        if (compptr->width_in_blocks > comp_width + x_crop_blocks) {
-+          jzero_far(dst_buffer[offset_y] +
++          FMEMZERO(dst_buffer[offset_y] +
 +                      comp_width + x_crop_blocks,
 +                    (compptr->width_in_blocks -
 +                      comp_width - x_crop_blocks) * SIZEOF(JBLOCK));
@@ -356,7 +356,7 @@
  }
  
  
-@@ -876,7 +1183,9 @@
+@@ -884,7 +1191,9 @@
    JDIMENSION xoffset, yoffset;
    JDIMENSION width_in_iMCUs, height_in_iMCUs;
    JDIMENSION width_in_blocks, height_in_blocks;
@@ -366,7 +366,7 @@
  
    /* Determine number of components in output image */
    if (info->force_grayscale &&
-@@ -957,33 +1266,112 @@
+@@ -965,39 +1274,120 @@
        info->crop_xoffset = 0;	/* default to +0 */
      if (info->crop_yoffset_set == JCROP_UNSET)
        info->crop_yoffset = 0;	/* default to +0 */
@@ -479,19 +479,27 @@
 +    /* Ensure the effective crop region will cover the requested */
 +    if (info->crop_width > info->output_width)
 +    info->output_width = info->crop_width;
-+    else
-     info->output_width =
-       info->crop_width + (xoffset % info->iMCU_sample_width);
++    else {
+     if (info->crop_width_set == JCROP_FORCE)
+       info->output_width = info->crop_width;
+     else
+       info->output_width =
+         info->crop_width + (xoffset % info->iMCU_sample_width);
++    }
 +    if (info->crop_height > info->output_height)
-+    info->output_height = info->crop_height;
-+    else
-     info->output_height =
-       info->crop_height + (yoffset % info->iMCU_sample_height);
++       info->output_height = info->crop_height;
++    else {
+     if (info->crop_height_set == JCROP_FORCE)
+       info->output_height = info->crop_height;
+     else
+       info->output_height =
+         info->crop_height + (yoffset % info->iMCU_sample_height);
++    }
 +    }
      /* Save x/y offsets measured in iMCUs */
      info->x_crop_offset = xoffset / info->iMCU_sample_width;
      info->y_crop_offset = yoffset / info->iMCU_sample_height;
-@@ -999,7 +1387,9 @@
+@@ -1013,7 +1403,9 @@
    transpose_it = FALSE;
    switch (info->transform) {
    case JXFORM_NONE:
@@ -502,7 +510,7 @@
        need_workspace = TRUE;
      /* No workspace needed if neither cropping nor transforming */
      break;
-@@ -1053,6 +1443,11 @@
+@@ -1067,6 +1459,11 @@
      need_workspace = TRUE;
      transpose_it = TRUE;
      break;
@@ -514,7 +522,7 @@
    }
  
    /* Allocate workspace if needed.
-@@ -1359,6 +1754,11 @@
+@@ -1373,6 +1770,11 @@
    case JXFORM_ROT_270:
      transpose_critical_parameters(dstinfo);
      break;
@@ -526,7 +534,7 @@
    default:
      break;
    }
-@@ -1413,7 +1813,9 @@
+@@ -1427,7 +1829,9 @@
     */
    switch (info->transform) {
    case JXFORM_NONE:
@@ -537,7 +545,7 @@
        do_crop(srcinfo, dstinfo, info->x_crop_offset, info->y_crop_offset,
  	      src_coef_arrays, dst_coef_arrays);
      break;
-@@ -1449,6 +1851,12 @@
+@@ -1463,6 +1867,12 @@
      do_rot_270(srcinfo, dstinfo, info->x_crop_offset, info->y_crop_offset,
  	       src_coef_arrays, dst_coef_arrays);
      break;
