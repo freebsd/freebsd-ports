@@ -28,6 +28,8 @@ include/c++-gtk-utils-2-2.0/c++-gtk-utils/reassembler.h
 include/c++-gtk-utils-2-2.0/c++-gtk-utils/rw_lock.h
 include/c++-gtk-utils-2-2.0/c++-gtk-utils/shared_handle.h
 include/c++-gtk-utils-2-2.0/c++-gtk-utils/shared_ptr.h
+include/c++-gtk-utils-2-2.0/c++-gtk-utils/task_manager.h
+include/c++-gtk-utils-2-2.0/c++-gtk-utils/task_manager.tpp
 include/c++-gtk-utils-2-2.0/c++-gtk-utils/text_print_manager.h
 include/c++-gtk-utils-2-2.0/c++-gtk-utils/thread.h
 include/c++-gtk-utils-2-2.0/c++-gtk-utils/timeout.h
@@ -36,7 +38,7 @@ include/c++-gtk-utils-2-2.0/c++-gtk-utils/window.h
 lib/libcxx-gtk-utils-2-2.0.a
 lib/libcxx-gtk-utils-2-2.0.la
 lib/libcxx-gtk-utils-2-2.0.so
-lib/libcxx-gtk-utils-2-2.0.so.0
+lib/libcxx-gtk-utils-2-2.0.so.1
 libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/BUGS
 %%DOCSDIR%%/2.0/COPYING
@@ -247,6 +249,8 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1RecMutex_1_1Lock.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1RecMutex_1_1TrackLock-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1RecMutex_1_1TrackLock.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1TaskManager-members.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1TaskManager.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1Thread-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1Thread.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Utf8_1_1ConversionError-members.html
@@ -459,11 +463,15 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1RWLockError.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1RecMutexError-members.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1RecMutexError.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1TaskError-members.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1TaskError.html
 %%DOCSDIR%%/2.0/html/tab_a.png
 %%DOCSDIR%%/2.0/html/tab_b.png
 %%DOCSDIR%%/2.0/html/tab_h.png
 %%DOCSDIR%%/2.0/html/tab_s.png
 %%DOCSDIR%%/2.0/html/tabs.css
+%%DOCSDIR%%/2.0/html/task__manager_8h.html
+%%DOCSDIR%%/2.0/html/task__manager_8h_source.html
 %%DOCSDIR%%/2.0/html/text__print__manager_8h.html
 %%DOCSDIR%%/2.0/html/text__print__manager_8h_source.html
 %%DOCSDIR%%/2.0/html/thread_8h.html
