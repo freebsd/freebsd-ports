@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	fusefs-libs>=2.7.2:${PORTSDIR}/sysutils/fusefs-libs
 LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*
@@ -42,7 +41,11 @@ MAN8=		mkntfs.8 ntfs-3g.8 ntfs-3g.probe.8 \
 		ntfscluster.8 ntfscmp.8 ntfscp.8 ntfsfix.8 ntfsinfo.8 \
 		ntfslabel.8 ntfsls.8 ntfsprogs.8 ntfsresize.8 ntfsundelete.8
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000021
+RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+.endif
 
 .if ${PORT_OPTIONS:MLOCK}
 CFLAGS+=	-DUSE_LOCK
@@ -72,4 +75,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
