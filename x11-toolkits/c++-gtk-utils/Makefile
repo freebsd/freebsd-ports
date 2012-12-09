@@ -1,12 +1,8 @@
-# New ports collection makefile for:	c++-gtk-utils
-# Date created:		2011-12-23
-# Whom:			Pawel Pekala <pawel@FreeBSD.org>
-#
+# Created by: Pawel Pekala <pawel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -16,7 +12,7 @@ COMMENT=	Lightweight library for programming GTK+ programs
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		pcre:${PORTSDIR}/devel/pcre \
 		cairo:${PORTSDIR}/graphics/cairo \
