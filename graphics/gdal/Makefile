@@ -1,13 +1,8 @@
-# New ports collection makefile for:	Geospatial Data Abstraction Library
-# Date created:		27 Aug 2001
-# Whom:			Randall Hopper
-#
+# Created by: Randall Hopper
 # $FreeBSD$
-#
 
 PORTNAME=	gdal
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -33,6 +28,8 @@ MAKEFILE=	GNUmakefile
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
 
 .include <bsd.port.options.mk>
 
