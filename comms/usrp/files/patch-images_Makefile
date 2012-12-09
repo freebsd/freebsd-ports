@@ -1,0 +1,114 @@
+--- images/Makefile.orig	2012-07-30 14:09:48.000000000 -0500
++++ images/Makefile	2012-10-27 08:32:32.000000000 -0500
+@@ -29,6 +29,8 @@
+ 
+ ##filled in below
+ IMAGES_LIST =
++USRP1_LIST =
++USRP2_LIST =
+ 
+ ##little rule to make the images directory
+ $(BUILT_IMAGES_DIR):
+@@ -61,6 +63,7 @@
+ _usrp1_fw_ihx = $(BUILT_IMAGES_DIR)/usrp1_fw.ihx
+ _usrp_b100_fw_ihx = $(BUILT_IMAGES_DIR)/usrp_b100_fw.ihx
+ IMAGES_LIST += $(_usrp1_fw_ihx) $(_usrp_b100_fw_ihx)
++USRP1_LIST += $(_usrp1_fw_ihx) $(_usrp_b100_fw_ihx)
+ 
+ $(_usrp1_fw_ihx): $(GLOBAL_DEPS)
+ 	cd $(_usrp1_fw_dir) && rm -rf build
+@@ -81,6 +84,7 @@
+ _usrp1_fpga_rbf = $(BUILT_IMAGES_DIR)/usrp1_fpga.rbf
+ _usrp1_fpga_4rx_rbf = $(BUILT_IMAGES_DIR)/usrp1_fpga_4rx.rbf
+ IMAGES_LIST += $(_usrp1_fpga_rbf) $(_usrp1_fpga_4rx_rbf)
++USRP1_LIST += $(_usrp1_fpga_rbf) $(_usrp1_fpga_4rx_rbf)
+ 
+ $(_usrp1_fpga_rbf): $(GLOBAL_DEPS)
+ 	cp $(_usrp1_fpga_dir)/std_2rxhb_2tx.rbf $@
+@@ -96,6 +100,7 @@
+ _usrp_b100_fpga_dir = $(TOP_FPGA_DIR)/usrp2/top/B100
+ _usrp_b100_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_b100_fpga.bin
+ IMAGES_LIST += $(_usrp_b100_fpga_bin)
++USRP1_LIST += $(_usrp_b100_fpga_bin)
+ 
+ $(_usrp_b100_fpga_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp_b100_fpga_dir) && make -f Makefile.B100 clean
+@@ -114,6 +119,7 @@
+ _usrp_n200_fw_bin = $(BUILT_IMAGES_DIR)/usrp_n200_fw.bin
+ _usrp_n210_fw_bin = $(BUILT_IMAGES_DIR)/usrp_n210_fw.bin
+ IMAGES_LIST += $(_usrp2_fw_bin) $(_usrp_n200_fw_bin) $(_usrp_n210_fw_bin)
++USRP2_LIST += $(_usrp2_fw_bin) $(_usrp_n200_fw_bin) $(_usrp_n210_fw_bin)
+ 
+ $(_usrp2_fw_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp2_fw_dir) && rm -rf build
+@@ -138,6 +144,7 @@
+ _usrp2_fpga_dir = $(TOP_FPGA_DIR)/usrp2/top/USRP2
+ _usrp2_fpga_bin = $(BUILT_IMAGES_DIR)/usrp2_fpga.bin
+ IMAGES_LIST += $(_usrp2_fpga_bin)
++USRP2_LIST += $(_usrp2_fpga_bin)
+ 
+ $(_usrp2_fpga_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp2_fpga_dir) && make clean
+@@ -155,6 +162,7 @@
+ _usrp_n200_r3_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_n200_r3_fpga.bin
+ _usrp_n200_r3_fpga_bit = $(BUILT_IMAGES_DIR)/bit/usrp_n200_r3_fpga.bit
+ IMAGES_LIST += $(_usrp_n200_r3_fpga_bin) $(_usrp_n200_r3_fpga_bit)
++USRP2_LIST += $(_usrp_n200_r3_fpga_bin) $(_usrp_n200_r3_fpga_bit)
+ 
+ $(_usrp_n200_r3_fpga_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp_n200_r3_fpga_dir) && make -f Makefile.N200R3 clean
+@@ -167,6 +175,7 @@
+ #its called r2 on the silkscreen, so make an r2
+ _usrp_n200_r2_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_n200_r2_fpga.bin
+ IMAGES_LIST += $(_usrp_n200_r2_fpga_bin)
++USRP2_LIST += $(_usrp_n200_r2_fpga_bin)
+ $(_usrp_n200_r2_fpga_bin): $(_usrp_n200_r3_fpga_bin)
+ 	cp $< $@
+ 
+@@ -181,6 +190,7 @@
+ _usrp_n210_r3_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_n210_r3_fpga.bin
+ _usrp_n210_r3_fpga_bit = $(BUILT_IMAGES_DIR)/bit/usrp_n210_r3_fpga.bit
+ IMAGES_LIST += $(_usrp_n210_r3_fpga_bin) $(_usrp_n210_r3_fpga_bit)
++USRP2_LIST += $(_usrp_n210_r3_fpga_bin) $(_usrp_n210_r3_fpga_bit)
+ 
+ $(_usrp_n210_r3_fpga_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp_n210_r3_fpga_dir) && make -f Makefile.N210R3 clean
+@@ -193,6 +203,7 @@
+ #its called r2 on the silkscreen, so make an r2
+ _usrp_n210_r2_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_n210_r2_fpga.bin
+ IMAGES_LIST += $(_usrp_n210_r2_fpga_bin)
++USRP2_LIST += $(_usrp_n210_r2_fpga_bin)
+ $(_usrp_n210_r2_fpga_bin): $(_usrp_n210_r3_fpga_bin)
+ 	cp $< $@
+ 
+@@ -207,6 +218,7 @@
+ _usrp_n200_r4_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_n200_r4_fpga.bin
+ _usrp_n200_r4_fpga_bit = $(BUILT_IMAGES_DIR)/bit/usrp_n200_r4_fpga.bit
+ IMAGES_LIST += $(_usrp_n200_r4_fpga_bin) $(_usrp_n200_r4_fpga_bit)
++USRP2_LIST += $(_usrp_n200_r4_fpga_bin) $(_usrp_n200_r4_fpga_bit)
+ 
+ $(_usrp_n200_r4_fpga_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp_n200_r4_fpga_dir) && make -f Makefile.N200R4 clean
+@@ -227,6 +239,7 @@
+ _usrp_n210_r4_fpga_bin = $(BUILT_IMAGES_DIR)/usrp_n210_r4_fpga.bin
+ _usrp_n210_r4_fpga_bit = $(BUILT_IMAGES_DIR)/bit/usrp_n210_r4_fpga.bit
+ IMAGES_LIST += $(_usrp_n210_r4_fpga_bin) $(_usrp_n210_r4_fpga_bit)
++USRP2_LIST += $(_usrp_n210_r4_fpga_bin) $(_usrp_n210_r4_fpga_bit)
+ 
+ $(_usrp_n210_r4_fpga_bin): $(GLOBAL_DEPS)
+ 	cd $(_usrp_n210_r4_fpga_dir) && make -f Makefile.N210R4 clean
+@@ -275,7 +288,13 @@
+ ########################################################################
+ images: $(IMAGES_LIST)
+ 	find $(BUILT_IMAGES_DIR) -type f | xargs chmod -x
+-	find $(TOP_FPGA_DIR) -name "*.twr" | xargs grep constraint | grep met
++#	find $(TOP_FPGA_DIR) -name "*.twr" | xargs grep constraint | grep met
++
++images_usrp1:	$(USRP1_LIST)
++	find $(BUILT_IMAGES_DIR) -type f | xargs chmod -x
++
++images_usrp2:	$(USRP2_LIST)
++	find $(BUILT_IMAGES_DIR) -type f | xargs chmod -x
+ 
+ package:
+ 	mkdir -p $(CMAKE_BUILD_DIR)
