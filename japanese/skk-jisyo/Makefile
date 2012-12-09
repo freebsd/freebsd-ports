@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skk-jisyo
-PORTVERSION=	201204
+PORTVERSION=	201212
 #PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/matusita/${PORTNAME}
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-cdb
 .endif
 DIST_SUBDIR=	skk-jisyo
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	meta+ports@vmeta.jp
 COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 
 .if defined(WITH_SKKJISYO_CDB)
