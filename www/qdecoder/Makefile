@@ -1,12 +1,8 @@
-# New ports collection makefile for:    qDecoder library
-# Date created:         Sep 10 1999
-# Whom:                 CHOI Junho <cjh@FreeBSD.org>
-#
+# Created by: CHOI Junho <cjh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qdecoder
-PORTVERSION=	12.0.2
+PORTVERSION=	12.0.4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/ \
 		ftp://ftp.qdecoder.org/pub/qDecoder/
@@ -18,6 +14,7 @@ COMMENT=	C/C++ language library including CGI supports
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	exec_prefix="${PREFIX}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DEBUG
 
@@ -32,16 +29,14 @@ PLIST_FILES=	include/qdecoder.h \
 CONFIGURE_ARGS+="--enable-debug"
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "Makefile *.c *.html" ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
