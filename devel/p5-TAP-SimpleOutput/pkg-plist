@@ -1,0 +1,5 @@
+%%SITE_PERL%%/TAP/SimpleOutput.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TAP/SimpleOutput/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TAP/SimpleOutput
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TAP
+@dirrmtry %%SITE_PERL%%/TAP

@@ -2593,6 +2593,7 @@
     SUBDIR += p5-System2
     SUBDIR += p5-TAP-Formatter-JUnit
     SUBDIR += p5-TAP-Harness-JUnit
+    SUBDIR += p5-TAP-SimpleOutput
     SUBDIR += p5-Taint-Runtime
     SUBDIR += p5-Taint-Util
     SUBDIR += p5-Task-Weaken
