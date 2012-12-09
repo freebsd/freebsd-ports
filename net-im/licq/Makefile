@@ -1,9 +1,5 @@
-# New ports collection makefile for:    licq
-# Date created:                         2 July 1998
-# Whom:                                 Brian Feldman & Matt Heckaman
-#
+# Created by: Brian Feldman & Matt Heckaman
 # $FreeBSD$
-#
 
 PORTNAME=	base
 PORTVERSION=	${LICQ_VER}
@@ -13,7 +9,7 @@ PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A popular ICQ-compatible plugin-based program
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    console-licq
-# Date created:                         18 October 2000
-# Whom:                                 Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	console
 PORTVERSION=	${CONSOLE_LICQ_VER}
@@ -12,8 +8,8 @@ CATEGORIES=	net-im
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
 
-LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk \
+		boost_regex:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 
