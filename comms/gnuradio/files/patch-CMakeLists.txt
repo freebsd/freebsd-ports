@@ -1,0 +1,55 @@
+--- CMakeLists.txt.orig	2012-09-04 19:43:13.000000000 -0500
++++ CMakeLists.txt	2012-10-26 16:35:52.000000000 -0500
+@@ -96,6 +96,14 @@
+ ########################################################################
+ include(GrPlatform) #define LIB_SUFFIX
+ set(GR_RUNTIME_DIR      bin)
++########################################################################
++# FreeBSD needs libiconv
++########################################################################
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++set(GR_PKGCONFIG_DIR      libdata${LIB_SUFFIX})
++else()
++set(GR_PKGCONFIG_DIR      lib${LIB_SUFFIX})
++endif()
+ set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
+ set(GR_INCLUDE_DIR      include)
+ set(GR_DATA_DIR         share)
+@@ -133,6 +141,22 @@
+ )
+ 
+ ########################################################################
++# FreeBSD needs libiconv
++########################################################################
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  message( "-- Adding iconv for FreeBSD")
++
++  find_path(ICONV_INCLUDE_DIR
++    NAMES iconv.h
++    PATHS /usr/local/include ${ICONV_INCLUDE_DIRS}
++  )
++
++  find_library(ICONV_LIBRARY
++    NAMES iconv
++    PATHS /usr/local/lib ${ICONV_LIB_DIRS}
++  )
++endif()
++########################################################################
+ # Enable python component
+ ########################################################################
+ find_package(PythonLibs)
+@@ -214,12 +238,13 @@
+ ########################################################################
+ # Distribute the README file
+ ########################################################################
++if(ENABLE_DOXYGEN)
+ install(
+     FILES README README.hacking
+     DESTINATION ${GR_PKG_DOC_DIR}
+     COMPONENT "docs"
+ )
+-
++endif(ENABLE_DOXYGEN)
+ 
+ ########################################################################
+ # Add subdirectories (in order of deps)
