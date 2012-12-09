@@ -1,0 +1,29 @@
+--- gr-wxgui/CMakeLists.txt.orig	2012-09-04 19:43:06.000000000 -0500
++++ gr-wxgui/CMakeLists.txt	2012-10-01 11:49:03.000000000 -0500
+@@ -64,16 +64,24 @@
+     ${CMAKE_CURRENT_SOURCE_DIR}/gr-wxgui.pc.in
+     ${CMAKE_CURRENT_BINARY_DIR}/gr-wxgui.pc
+ @ONLY)
+-
+ install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/gr-wxgui.pc
+-    DESTINATION ${GR_LIBRARY_DIR}/pkgconfig
++    DESTINATION ${GR_PKGCONFIG_DIR}/pkgconfig
+     COMPONENT "wxgui"
+ )
+ 
+ ########################################################################
+ # Install the conf file
+ ########################################################################
++# Install an original for FreeBSD
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++install(
++    FILES ${CMAKE_CURRENT_SOURCE_DIR}/gr-wxgui.conf
++    DESTINATION ${GR_PREFSDIR}
++    RENAME "gr-wxgui.conf.sample"
++    COMPONENT "wxgui"
++)
++endif()
+ install(
+     FILES ${CMAKE_CURRENT_SOURCE_DIR}/gr-wxgui.conf
+     DESTINATION ${GR_PREFSDIR}
