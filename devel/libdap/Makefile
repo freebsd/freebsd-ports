@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libdap
-PORTVERSION=	3.11.5
+PORTVERSION=	3.11.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
@@ -31,8 +29,5 @@ MAN1=		dap-config.1 \
 post-patch:
 	# do not alter ${PREFIX}/lib/charset.alias
 	@${REINPLACE_CMD} -e '/^install-exec-am: / s|install-exec-local||' ${WRKSRC}/gl/Makefile.in
-
-verify:	checksum
-	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
 .include <bsd.port.mk>
