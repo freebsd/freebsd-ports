@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.10.4
+PORTVERSION=	1.10.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -98,9 +98,11 @@ CMAKE_ARGS+=	-DENABLE_NLS=on -DLOCALEDIR=${PREFIX}/share/locale
 USE_GETTEXT=	yes
 MANLANG=	"" cs de en_GB es et fi fr gl hu id it lt pl ru sk \
 		sr sr@ijekavian sr@ijekavianlatin sr@latin vi zh_CN zh_TW
+.if ${PORT_OPTIONS:MSERVER}
 _MANPAGES+=	${PREFIX}/man/ja/man6/wesnothd.6 \
 		${PREFIX}/man/pt_BR/man6/wesnothd.6 \
 		${PREFIX}/man/tr/man6/wesnothd.6
+.endif
 PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DENABLE_NLS=off
@@ -115,12 +117,13 @@ CMAKE_ARGS+=	-DENABLE_OMP=off
 
 .if ${PORT_OPTIONS:MPOOLALLOC}
 CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=on
+BROKEN=		does not build with pool alloc
 .else
 CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=off
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-BROKEN=		cmake build doesn\'t support installing python tools
+BROKEN=		cmake build doesn't support installing python tools
 USE_PYTHON=	yes
 CONFIGURE_ENV+=	PYTHON_PREFIX=${PREFIX} \
 		PYTHON_VERSION=${PYTHON_VERSION:S/python//}
