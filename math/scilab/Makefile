@@ -130,7 +130,7 @@ JAVA_VERSION=	1.6+
 # bsdjava (ie java/jdk16) doesn't have some "extra" classes that aren't in
 # the standard java. namespace, but are required by scilab, such as
 # javax.xml.bind.annotation.XmlSeeAlso
-JAVA_VENDOR=	freebsd openjdk
+JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 USE_XORG=	x11

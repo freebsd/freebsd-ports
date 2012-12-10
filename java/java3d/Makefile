@@ -18,7 +18,7 @@ USE_JAVA=	yes
 USE_GL=		gl
 USE_XORG=	xt
 JAVA_VERSION=	1.6+
-JAVA_VENDOR=	freebsd bsdjava openjdk
+JAVA_VENDOR=	openjdk
 USE_ANT=	yes
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}

@@ -33,7 +33,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 JAVA_VERSION=	1.6+
-JAVA_VENDOR=	freebsd bsdjava sun
 NOCCACHE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/TuxGuitar

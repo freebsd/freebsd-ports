@@ -1,9 +1,5 @@
-# New ports collection makefile for: OpenOffice.org VCLTestTool
-# Date created:		2009/7/11
-# Whom:                 NAKATA Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openoffice.org-vcltesttool
 PORTVERSION=	2.4.${SNAPDATE}
@@ -34,8 +30,8 @@ MAKE_JOBS_SAFE=	yes
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-JAVA_VENDOR=	freebsd bsdjava openjdk
-JAVA_VERSION=	1.5 1.6
+JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.6
 
 ONLY_FOR_ARCHS=	i386 amd64
 
