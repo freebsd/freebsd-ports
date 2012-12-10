@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2010-04-11 07:49:08.000000000 +0200
-+++ GNUmakefile	2010-04-14 18:29:35.000000000 +0200
-@@ -1,24 +1,23 @@
+--- GNUmakefile.orig	2012-12-07 12:27:09.595489622 -0800
++++ GNUmakefile	2012-12-07 12:35:03.890478583 -0800
+@@ -1,24 +1,22 @@
 -#DEBUG=1
 -ZLIB=1
 -prefix=/opt/diet
@@ -9,11 +9,10 @@
  MANDIR=${prefix}/man
  man1dir=$(MANDIR)/man1
  
--TARGETS=gatling httpbench bindbench dl ioerr bench tlsgatling \
--pthreadbench cgi
+-TARGETS=gatling httpbench bindbench dl ioerr bench tlsgatling_nofail \
+-pthreadbench cgi ptlsgatling_nofail
 -TARGETS2=mktestdata mmapbench manymapbench forkbench forksbench
-+TARGETS=gatling dl \
-+cgi
++TARGETS=gatling dl cgi
 +TARGETS2=
 +ifdef BENCHMARKS
 +TARGETS+=httpbench bindbench ioerr bench pthreadbench
@@ -33,10 +32,10 @@
 -CFLAGS=-pipe -Wall
 -LDFLAGS=
 -
+ #CFLAGS+=-DSTATE_DEBUG -DMOREDEBUG -DDEBUG_EVENTS -DSMDEBUG
+ 
  path = $(subst :, ,$(PATH))
- diet_path = $(foreach dir,$(path),$(wildcard $(dir)/diet))
- ifeq ($(strip $(diet_path)),)
-@@ -34,15 +33,11 @@
+@@ -36,15 +34,11 @@
  # to build without diet libc support, use $ make DIET=
  # see http://www.fefe.de/dietlibc/ for details about the diet libc
  
@@ -54,7 +53,7 @@
  endif
  
  LDLIBS=-lowfat
-@@ -68,7 +63,7 @@
+@@ -70,7 +64,7 @@
  CC:=$(DIET) $(CC)
  
  pthreadbench: pthreadbench.o
@@ -63,7 +62,7 @@
  
  forksbench: forkbench.o
  	$(CC) -static -o $@ forkbench.o $(LDFLAGS) $(LDLIBS)
-@@ -121,11 +116,13 @@
+@@ -136,11 +130,13 @@
  	rm -f trysocket
  
  libiconv: tryiconv.c
