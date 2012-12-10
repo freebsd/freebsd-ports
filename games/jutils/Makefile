@@ -10,12 +10,12 @@ PORTVERSION=	20070610.r26
 CATEGORIES=	games java
 MASTER_SITES=	LOCAL/loader
 
-MAINTAINER=	loader@freebsdmall.com
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Common utilities for Java Game Technology Group projects
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	YES
