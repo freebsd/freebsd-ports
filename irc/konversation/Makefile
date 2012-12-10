@@ -12,7 +12,7 @@ CATEGORIES=	irc kde
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE
 
 USE_KDELIBS_VER=3

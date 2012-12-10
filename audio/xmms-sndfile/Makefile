@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mega-nerd.com/xmms_sndfile/
 PKGNAMESUFFIX=	-sndfile
 DISTNAME=	xmms_sndfile-${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing libsndfile supported files
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \

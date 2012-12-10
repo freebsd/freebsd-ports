@@ -12,7 +12,7 @@ MASTER_SITES=	http://nmap.org/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	nmap-${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend for the nmap scanning utility
 
 LICENSE=	GPLv2

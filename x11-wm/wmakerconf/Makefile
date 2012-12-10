@@ -13,7 +13,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
 
 LICENSE=	GPLv2

@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}plugin/Plugin%20for%20XMMS
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog VUmeter plugin for XMMS
 
 LICENSE=	GPLv2 GPLv3

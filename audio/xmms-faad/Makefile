@@ -3,7 +3,7 @@
 
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for faad
 
 MASTERDIR=	${.CURDIR}

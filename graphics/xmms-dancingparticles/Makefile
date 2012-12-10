@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes particles dance with very pretty neon colors
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
