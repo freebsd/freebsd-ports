@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sourcecodepro-ttf
-PORTVERSION=	1.010
+PORTVERSION=	1.013
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcecodepro.adobe
 DISTNAME=	SourceCodePro_FontsOnly-${PORTVERSION}
