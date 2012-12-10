@@ -1,4 +1,4 @@
-# Whom:                 gpalmer@FreeBSD.org
+# Created by: gpalmer@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	rxvt-unicode
