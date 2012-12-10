@@ -173,7 +173,7 @@ IGNORE=		java wrapping requires shared libraries.\
 CXXFLAGS+=	-fPIC
 .endif
 USE_JAVA=	yes
-JAVA_VENDOR=	freebsd openjdk
+JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
     		-DJAVA_AWT_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \

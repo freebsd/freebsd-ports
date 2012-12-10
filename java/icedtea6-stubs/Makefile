@@ -1,9 +1,5 @@
-# New ports collection makefile for:    icedtea6-stubs
-# Date created:         2009/2/21
-# Whom:                 Brian Gardner <brian@experts-exchange.com>
-#
+# Created by: Brian Gardner <brian@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	icedtea6-stubs
 PORTVERSION=	1.6b
@@ -14,13 +10,15 @@ DISTNAME=	jdk-7-icedtea-plugs-${PORTVERSION}
 MAINTAINER=	openjdk@getsnappy.com
 COMMENT=	IcedTea6 binary plugs for openjdk
 
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+
+BROKEN=		Does not build with any of the supported Java vendors
 
 WRKSRC=		${WRKDIR}/jdk-7-icedtea-plugs
 
 USE_JAVA=	yes
-JAVA_VENDOR=	freebsd bsdjava
+JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6
 USE_ANT=	yes
 
