@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	last.fm
-PORTVERSION=	1.4.2.58240
-PORTREVISION=	6
+PORTVERSION=	1.5.4.26862
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -32,7 +31,7 @@ USE_QT4=	gui imageformats_run moc_build network qmake_build rcc_build \
 		sql uic_build xml
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	yes
+USE_DOS2UNIX=	*.h
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -43,6 +42,7 @@ USE_GCC=4.2+
 .endif
 
 post-patch:
+	${CP} ${WRKSRC}/dist/tarball_files/configure ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/bin/bash|/${LOCALBASE}/bin/bash|g' \
 			-E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
 			-e 's|function header|header()|g' \
@@ -55,7 +55,9 @@ post-patch:
 		${WRKSRC}/src/mediadevices/ipod/ipod.pro
 	${REINPLACE_CMD} -e 's|^RUNDIR.*|RUNDIR=${DATADIR}|' ${WRKSRC}/bin/last.fm.sh
 	${RM} ${WRKSRC}/bin/libmad.1.dylib ${WRKSRC}/bin/libmad.dylib \
-		${WRKSRC}/bin/last.fm.sh.bak
+		${WRKSRC}/bin/last.fm.sh.bak \
+		${WRKSRC}/bin/*.dll ${WRKSRC}/bin/LastFM.exe.config
+	${RM} -rf ${WRKSRC}/bin/Microsoft* ${WRKSRC}/bin/sqldrivers
 
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
