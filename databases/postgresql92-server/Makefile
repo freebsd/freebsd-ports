@@ -136,7 +136,7 @@ LIB_DEPENDS+=	icudata.48:${PORTSDIR}/devel/icu
 .  endif
 .endif # !SLAVE_ONLY
 
-.if ${PORT_OPTIONS:MOSSP_UUID)
+.if ${PORT_OPTIONS:MOSSP_UUID}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid
 CONFIGURE_ARGS+=--with-ossp-uuid
 PLIST_SUB+=	OSSP=""
