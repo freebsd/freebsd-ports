@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libclaw
-# Date created:		28 Mar 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libclaw
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
