@@ -1,12 +1,7 @@
-# Ports collection makefile for:	qore
-# Date created:				12 November 2009
-# Whom:					B. Estrade <estrabd@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qore
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.6.2
 CATEGORIES=	lang
 MASTER_SITES=	SF/qore/qore/${PORTVERSION}/
 
@@ -16,25 +11,38 @@ COMMENT=	The Qore Programming Language
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		xml2:${PORTSDIR}/textproc/libxml2
+		mpfr:${PORTSDIR}/math/mpfr
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack
+USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"LEX=${LOCALBASE}/bin/flex"
-CONFIGURE_ARGS=	--disable-debug --disable-static
+MAKE_JOBS_SAFE=	yes
+
+CONFIGURE_ENV=	LEX="${LOCALBASE}/bin/flex" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTRHEAD_CFLAGS}"
+CONFIGURE_ARGS=	--disable-debug --disable-static --with-doxygen=no
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		qore.1
+
+# VERSION sub should always be the first three components of
+# PORTVERSION (x.y.z).  Adjust with :R accordingly.
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|; make|; $${MAKE}|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
