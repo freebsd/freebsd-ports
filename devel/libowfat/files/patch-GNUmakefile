@@ -1,5 +1,5 @@
---- ./GNUmakefile.orig	Sat Jan 13 13:06:31 2007
-+++ ./GNUmakefile	Sat Jan 13 13:06:49 2007
+--- GNUmakefile.orig	2012-12-07 13:56:58.228489366 -0800
++++ GNUmakefile	2012-12-07 14:03:23.455485788 -0800
 @@ -4,10 +4,10 @@
  # in /opt/diet, where they are in the default search path for my diet libc
  # work but don't conflict with anything there.  YMMV.
@@ -16,7 +16,7 @@
  buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a \
 @@ -15,14 +15,6 @@
  
- all: t $(LIBS) libowfat.a libsocket
+ all: $(LIBS) libowfat.a libsocket t
  
 -CROSS=
 -#CROSS=i686-mingw-
@@ -29,18 +29,26 @@
  CFLAGS += -D_REENTRANT
  
  # startrip
-@@ -162,10 +154,10 @@
- errmsg.h cdb.h cdb_make.h rangecheck.h
+@@ -169,16 +161,16 @@
+ errmsg.h cdb.h cdb_make.h rangecheck.h iarray.h va_narg.h isset.h
  
- install: libowfat.a
--	install -d $(INCLUDEDIR) $(MAN3DIR) $(LIBDIR)
+ install-inc:
+-	install -d $(INCLUDEDIR)
 -	install -m 644 $(INCLUDES) $(INCLUDEDIR)
--	install -m 644 $(wildcard */*.3) $(MAN3DIR)
--	install -m 644 libowfat.a $(LIBDIR)
-+	${INSTALL} -d $(INCLUDEDIR) $(MAN3DIR) $(LIBDIR)
-+	${BSD_INSTALL_DATA} $(INCLUDES) $(INCLUDEDIR)
-+	${BSD_INSTALL_MAN} $(wildcard */*.3) $(MAN3DIR)
-+	${BSD_INSTALL_DATA} libowfat.a $(LIBDIR)
++	${INSTALL} -d $(INCLUDEDIR)
++	${BSD_INSTALL_DATA} -m 644 $(INCLUDES) $(INCLUDEDIR)
  
- uninstall:
- 	rm -f $(patsubst %.h,$(INCLUDEDIR)/%.h,$(INCLUDES))
+ install-lib: libowfat.a
+-	install -d $(LIBDIR)
+-	install -m 644 libowfat.a $(LIBDIR)
++	${INSTALL} -d $(LIBDIR)
++	${BSD_INSTALL_DATA} -m 644 libowfat.a $(LIBDIR)
+ 
+ install-man:
+-	install -d $(MAN3DIR)
+-	install -m 644 $(wildcard */*.3) $(MAN3DIR)
++	${INSTALL} -d $(MAN3DIR)
++	${BSD_INSTALL_MAN} -m 644 $(wildcard */*.3) $(MAN3DIR)
+ 
+ install: install-inc install-man install-lib
+ 
