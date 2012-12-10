@@ -20,6 +20,8 @@ COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine-devel
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
+IGNORE=		Development version not branched from cfengine34
+
 CONFLICTS=	cfengine-[23]*
 
 USE_RC_SUBR=	cf-execd cf-serverd
