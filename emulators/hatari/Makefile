@@ -1,18 +1,14 @@
-# New ports collection makefile for:    hatari
-# Date created:         15 March 2004
-# Whom:                 Michael Neumann <mneumann@ntecs.de>
-#
+# Created by: Michael Neumann <mneumann@ntecs.de>
 # $FreeBSD$
-#
 
 PORTNAME=	hatari
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Atari ST emulator
+COMMENT=	Atari ST emulator
 
 LICENSE=	GPLv2 # (or later)
 
@@ -25,6 +21,7 @@ OPTIONS_DEFINE=	DOCS
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
 USE_SDL=	sdl
+USE_READLINE=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DPORTAUDIO_INCLUDE_DIR:STRING="${PA2_INCLUDE_DIR}" \
 		-DPORTAUDIO_LIBRARY:STRING="${PA2_LIBRARY}" \
