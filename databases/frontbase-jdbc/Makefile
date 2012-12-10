@@ -1,9 +1,5 @@
-# New ports collection makefile for:    frontbase-jdbc
-# Date created:                         Mon Apr 16 07:07:22 EST 2007
-# Whom:                                 Quinton Dolan <q@onthenet.com.au>
-#
+# Created by: Quinton Dolan <q@onthenet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	frontbase
 PORTVERSION=	2.5.6
@@ -17,7 +13,7 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for FrontBase
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 JARFILE=	frontbasejdbc.jar

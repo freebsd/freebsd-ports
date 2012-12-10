@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDBC drivers for Oracle 11g
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

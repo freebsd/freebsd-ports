@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jdraw
-# Date created:		2006-04-15
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	jdraw
 PORTVERSION=	1.1.5
@@ -39,6 +35,6 @@ do-install:
 PLASTIC3D=	"-Dlf=\"com.jgoodies.looks.plastic.Plastic3DLookAndFeel\""
 RUN_DEPENDS+=	${JAVAJARDIR}/looks.jar:${PORTSDIR}/devel/looks
 .endif
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .include <bsd.port.post.mk>

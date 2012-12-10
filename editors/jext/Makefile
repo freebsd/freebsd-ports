@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jext
-# Date created:				17 Febrary 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jext
 PORTVERSION=	3.0.2
@@ -15,7 +11,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Powerful 100% pure Java text editor
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 NO_BUILD=	yes

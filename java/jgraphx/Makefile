@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	jgraphx
-# Date created:				5 Jan 2010
-# Whom:					Chris Rees
-#
+# Created by: Chris Rees
 # $FreeBSD$
-#
 
 PORTNAME=	jgraphx
 PORTVERSION=	1.5.1.5
@@ -24,7 +20,7 @@ MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
 .if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)

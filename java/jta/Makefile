@@ -1,9 +1,5 @@
-# New ports collection makefile for:    JTA
-# Date created:			5 Nov 2010
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jta
 PORTVERSION=	1.0.1
@@ -16,7 +12,7 @@ COMMENT=	Java Transaction API (JTA)
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_CDROM=	See the license

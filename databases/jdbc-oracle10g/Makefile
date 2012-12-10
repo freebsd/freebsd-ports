@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jdbc-oracle10g
-# Date created:		19 March 2012
-# Whom:			José García Juanino <jjuanino@gmail.com>
-#
+# Created by: José García Juanino <jjuanino@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	oracle10g
 PORTVERSION=	10.2.0.5
@@ -18,7 +14,7 @@ MAINTAINER=	jjuanino@gmail.com
 COMMENT=	The JDBC drivers for Oracle 10g
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 

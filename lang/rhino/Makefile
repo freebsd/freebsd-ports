@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rhino
-# Date created:		2008-01-26
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale	<nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rhino
 DISTVERSION=	1_7R4
@@ -27,7 +23,7 @@ ALL_TARGET=	jar
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.5.0.zip \
 		-Dswing-ex-url=file://${DISTDIR}/${DIST_SUBDIR}/src.zip

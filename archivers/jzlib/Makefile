@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jzlib
-# Date created:		Fri Dec 31 14:28:16 UTC 2004
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jzlib
 PORTVERSION=	1.1.0
@@ -14,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A re-implementation of zlib in pure Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 JAR_FILE=	${WRKSRC}/src/main/java/${PORTNAME}.jar
 

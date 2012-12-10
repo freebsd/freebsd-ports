@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libpano13
-# Date created:				8 October 2007
-# Whom:					Vasil Dimov <vd@FreeBSD.org>
-#
+# Created by: Vasil Dimov <vd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libpano13
 PORTVERSION=	2.9.18
@@ -49,7 +45,7 @@ MAN1=		\
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 PLIST_SUB=	JAVA=""

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Jakarta Commons Primitives
-# Date created:				06 November 2003
-# Whom:					Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-#
+# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-primitives
 PORTVERSION=	1.0
@@ -18,7 +14,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A library supporting Java primitive types
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

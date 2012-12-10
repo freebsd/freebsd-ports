@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-viPlugin
-# Date created:				2005-08-01
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	viPlugin
 PORTVERSION=	1.14.0
@@ -23,7 +19,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 

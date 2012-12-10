@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jchessboard
-# Date created:				24 November 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	jchessboard
 PORTVERSION=	1.5
@@ -17,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess game and PGN viewer/editor written in Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   servingxml
-# Date created:        6 September 2009
-# Whom:                jpbeconne
-#
+# Created by: jpbeconne
 # $FreeBSD$
-#
 
 PORTNAME=	servingxml
 PORTVERSION=	1.1.2
@@ -17,7 +13,7 @@ BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=	${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 ANT_TARGETS=	dist

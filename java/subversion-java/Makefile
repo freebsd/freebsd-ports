@@ -1,9 +1,5 @@
-# New ports collection makefile for:   subversion-java
-# Date Created:                30 June 2008
-# Whom:                        Lev Serebryako <lev@FreeBSD.org>
-#
+# Created by: Lev Serebryako <lev@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-java
 CATEGORIES=	java
@@ -19,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Merchant Of Venice
-# Date created:		Thu Jan 20 03:24:01 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	venice
 DISTVERSION=	0.71beta
@@ -17,7 +13,7 @@ COMMENT=	Merchant Of Venice, a stock market trading program
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_RUN=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 JARFILE=	${PORTNAME}.jar
 

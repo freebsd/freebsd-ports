@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spicetrade
-# Date created:				2005-09-09
-# Whom:					Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	spicetrade
 PORTVERSION=	1.2
@@ -20,7 +16,7 @@ COMMENT=	Colourful 14th century Arab spice trading game
 NO_PACKAGE=	Package will be 186MB, set FORCE_PACKAGE if you really want to build it
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 

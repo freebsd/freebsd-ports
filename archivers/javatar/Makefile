@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Java Tar
-# Date created:				24 Oct 2007
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	javatar
 PORTVERSION=	2.5
@@ -18,7 +14,7 @@ COMMENT=	A Java tar archive io package
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 

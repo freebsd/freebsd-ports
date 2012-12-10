@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x10
-# Date created:		2011-10-12
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	x10
 PORTVERSION=	2.2.1
@@ -28,7 +24,7 @@ COMMENT=	Object-oriented parallel programming language
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 USE_LDCONFIG=	${PREFIX}/stdlib/lib

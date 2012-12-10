@@ -1,9 +1,5 @@
-# Ports collection makefile for:	eXist
-# Date created:			August 9, 2007
-# Whom:				Anton Yudin (<contact@toha.org.ua>)
-#
+# Created by: Anton Yudin (<contact@toha.org.ua>)
 # $FreeBSD$
-#
 
 PORTNAME=	exist
 PORTVERSION=	1.1.1
@@ -19,7 +15,7 @@ COMMENT=	Open Source Native XML Database
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_RC_SUBR=	eXist
 REINPLACE_ARGS=	-i ''
 NO_BUILD=	yes

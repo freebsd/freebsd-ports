@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jrosetta
-# Date created:				11 February 2010
-# Whom:					rfarmer@predatorlabs.net
-#
+# Created by: rfarmer@predatorlabs.net
 # $FreeBSD$
-#
 
 PORTNAME=	jrosetta
 PORTVERSION=	1.0.4
@@ -17,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \

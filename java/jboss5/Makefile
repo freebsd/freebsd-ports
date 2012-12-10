@@ -1,9 +1,5 @@
-# ports collection makefile for: jboss5
-# Date created:                  7 May 2007
-# Whom:                          nemoliu@FreeBSD.org <nemoliu@gmail.com>
-#
+# Created by: nemoliu@FreeBSD.org <nemoliu@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jboss
 PORTVERSION=	5.1.0.GA
@@ -18,7 +14,7 @@ COMMENT=	Open-source J2EE application server (5.x family)
 
 LATEST_LINK=	jboss5
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 ANT_HOME=	${WRKSRC}/tools
 ANT=		${WRKSRC}/tools/bin/ant

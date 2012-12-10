@@ -1,9 +1,5 @@
-# New ports collection makefile for:    openbase-jdbc
-# Date created:                         Mon Apr 16 07:07:22 EST 2007
-# Whom:                                 Quinton Dolan <q@onthenet.com.au>
-#
+# Created by: Quinton Dolan <q@onthenet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	openbase
 PORTVERSION=	2006.10
@@ -17,7 +13,7 @@ COMMENT=	The Java JDBC implementation for OpenBase
 
 USE_JAVA=	yes
 USE_ZIP=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 JARFILE=	OpenBaseJDBC.jar

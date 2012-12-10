@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Java Media Framework
-# Date created:				Sat Oct 25 16:05:29 EEST 2003
-# Whom:					Anton Yudin <toha@toha.org.ua>
-#
+# Created by: Anton Yudin <toha@toha.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	jmf
 PORTVERSION=	2.1.1e
@@ -16,7 +12,7 @@ MAINTAINER=	toha@toha.org.ua
 COMMENT=	Java Media Framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	YES
 NO_BUILD=	YES
 

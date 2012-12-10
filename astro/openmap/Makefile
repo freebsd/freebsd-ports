@@ -11,7 +11,7 @@ COMMENT=	Java toolkit for manipulating and displaying geographic data
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 PKGMESSAGE=	${WRKSRC}/LICENSE
 

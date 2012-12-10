@@ -16,7 +16,7 @@ COMMENT=	A comprehensive editor for OpenStreetMap.org database
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 JOSM_MEMORY_LIMIT?=1024
 

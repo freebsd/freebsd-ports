@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cosmoplayer
-# Date created:		25 January 2006
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cosmoplayer
 PORTVERSION=	2.1.1
@@ -21,7 +17,7 @@ COMMENT=	Java classes to support VRML
 RUN_DEPENDS=	${JAVALIBDIR}/java40.jar:${PORTSDIR}/devel/netscape-java40
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 JARFILES=	npcosmop211.jar LICENSE.npcosmop211.txt

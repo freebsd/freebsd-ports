@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Infobus 1.2
-# Date created:		1999/08/08
-# Whom:			Jose Marques
-#
+# Created by: Jose Marques
 # $FreeBSD$
-#
 
 PORTNAME=	infobus
 PORTVERSION=	1.2
@@ -16,7 +12,7 @@ COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

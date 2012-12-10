@@ -1,9 +1,5 @@
-# New ports collection makefile for:	erlang
-# Date created:		11 Dec 1998
-# Whom:			ruslan@shevchenko.kiev.ua
-#
+# Created by: ruslan@shevchenko.kiev.ua
 # $FreeBSD$
-#
 
 PORTNAME=	erlang
 PORTVERSION=	14.b.04
@@ -81,7 +77,7 @@ CONFIGURE_ARGS+=--disable-ssl
 
 .if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 # Make sure ${JAVA_HOME}/bin is in the path
 CONFIGURE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 MAKE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin

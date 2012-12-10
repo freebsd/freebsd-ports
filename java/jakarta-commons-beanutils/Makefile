@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Beanutils
-# Date created:				November 14, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-beanutils
 PORTVERSION=	1.8.3
@@ -23,7 +19,7 @@ JAR_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	dist

@@ -18,7 +18,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 RESTRICTED=	Downloading requires acceptance of license agreement
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "" "false"

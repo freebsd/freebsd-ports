@@ -1,7 +1,4 @@
-# New ports collection makefile for: ftjava
-# Date created:                      06FEB11
-# Whom:                              peter.thoenen@yahoo.com
-#
+# Created by: peter.thoenen@yahoo.com
 # $FreeBSD$
 
 PORTNAME=	ftjava
@@ -19,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Thrust PBEM Client
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

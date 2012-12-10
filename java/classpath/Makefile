@@ -1,4 +1,4 @@
-# Created by:	Ying-Chieh Liao <ijliao@FreeBSD.org>
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	classpath
@@ -131,7 +131,7 @@ IGNORE=you need to enable the Gtk+ AWT peer in order to use Cairo based Graphics
 .if ${PORT_OPTIONS:MJDK}
 USE_JAVA=		yes
 JAVA_BUILD=		jdk
-JAVA_VERSION=		1.5+
+JAVA_VERSION=		1.6+
 .else
 .if defined(WITH_GCC)
 GCC_SUFX=		${WITH_GCC:S/.//}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jasmin
-# Date created:			May 26, 2004
-# Whom:				Volker Stolz <vs@FreeBSD.org>
-#
+# Created by: Volker Stolz <vs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jasmin
 PORTVERSION=	2.4
@@ -18,7 +14,7 @@ USE_ZIP=	yes
 USE_ANT=	yes
 ALL_TARGET=	jasmin
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 

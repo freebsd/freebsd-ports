@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bouncycastle
-# Date created:        27 December 2001
-# Whom:                rasputin
-#
+# Created by: rasputin
 # $FreeBSD$
-#
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.45
@@ -24,7 +20,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf \
 		${JAVALIBDIR}/mail.jar:${PORTSDIR}/java/javamail
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
 JDKNVERSION=	${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1\2/}
 USE_ANT=	yes

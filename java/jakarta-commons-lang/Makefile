@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Lang
-# Date created:				October 18, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-lang
 PORTVERSION=	2.6
@@ -19,7 +15,7 @@ COMMENT=	Jakarta library with helper utilities for the java.lang API
 LICENSE=	AL2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 

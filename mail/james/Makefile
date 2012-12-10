@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geronimo
-# Date created:		30 May 2007
-# Whom:			Nemo Liu <nemoliu@FreeBSD.org>
-#
+# Created by: Nemo Liu <nemoliu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	james
 PORTVERSION=	2.3.1
@@ -17,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SMTP and POP3 Mail server and NNTP News server
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 
 USE_RC_SUBR=	james

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ganttproject
-# Date created:			Jul 6, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ganttproject
 DISTVERSION=	2.1-m3
@@ -18,7 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src/${PORTNAME}-builder
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

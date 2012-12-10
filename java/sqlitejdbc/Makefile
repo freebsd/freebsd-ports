@@ -1,9 +1,5 @@
-# New ports collection makefile for:   sqlitejdbc
-# Date created:        23 June 2008
-# Whom:                Lapo Luchini <lapo@lapo.it>
-#
+# Created by: Lapo Luchini <lapo@lapo.it>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlitejdbc
 PORTVERSION=	056
@@ -21,7 +17,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_GMAKE=	yes
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native

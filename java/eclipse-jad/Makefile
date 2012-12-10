@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse support for Jad
-# Date created:				Tue Aug 15 21:22:20 UTC 2006
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jad
 PORTVERSION=	3.3.0
@@ -25,7 +21,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 PLIST_FILES=	share/eclipse/dropins/${DISTNAME}${EXTRACT_SUFX}
 

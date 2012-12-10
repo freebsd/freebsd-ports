@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jgrapht
-# Date created:			Jul 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jgrapht
 PORTVERSION=	0.7.3
@@ -16,7 +12,7 @@ COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes

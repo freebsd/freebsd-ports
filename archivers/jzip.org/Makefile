@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jzip.org
-# Date created:			Dec 24, 2003
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jzip.org
 PORTVERSION=	0.2.0
@@ -21,7 +16,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 PLIST_FILES=	%%JAVAJARDIR%%/jzip.org.jar bin/${PORTNAME}
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}.src
 
 SUB_FILES=	${PORTNAME}.sh

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    JavaMail API Implementation
-# Date created:		1999/08/08
-# Whom:			Jose Marques
-#
+# Created by: Jose Marques
 # $FreeBSD$
-#
 
 PORTNAME=	javamail
 PORTVERSION=	1.4.5
@@ -22,7 +18,7 @@ LICENSE_COMB=	dual
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	YES
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 

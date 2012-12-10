@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netbeans
-# Date Created:				2 Jun 2003
-# Whom:				 	olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	netbeans
 PORTVERSION=	6.1
@@ -17,7 +13,7 @@ COMMENT=	A full-featured integrated environment for Java
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_LATEST_LINK=	yes
 

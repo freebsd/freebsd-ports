@@ -1,9 +1,5 @@
-# New ports collection makefile for:    JDBC connection pool
-# Date created:		1999/07/04
-# Whom:			Jose Marques
-#
+# Created by: Jose Marques
 # $FreeBSD$
-#
 
 PORTNAME=	jdbcpool
 PORTVERSION=	0.99
@@ -15,7 +11,7 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	JDBC connection pool
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGES LICENSE README

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	jid3lib
-# Date created:				11 Apr 2006
-# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
 
 PORTNAME=	jid3lib
@@ -14,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java ID3 Tag Library
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jid3lib.jar

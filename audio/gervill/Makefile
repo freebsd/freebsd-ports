@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	gervill
-# Date created:				14 October 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	gervill
 PORTVERSION=	1.0
@@ -15,7 +11,7 @@ COMMENT=	A generic sound synthesizer for Java
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

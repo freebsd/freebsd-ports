@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JUMP PostGIS plugin
-# Date created:				June 25 2004
-# Whom:					Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	jumpgis-postgis
 PORTVERSION=	1.1.0
@@ -19,7 +15,7 @@ RUN_DEPENDS=	jumpgis:${PORTSDIR}/graphics/jumpgis
 
 TARGET_DIR=	${PREFIX}/jumpgis
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

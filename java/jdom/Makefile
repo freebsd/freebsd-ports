@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JDOM
-# Date created:		June 1, 2001
-# Whom:			Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdom
 PORTVERSION=	1.1.1
@@ -17,7 +13,7 @@ COMMENT=	Java library for accessing and manipulating XML documents
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	package

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    StarLogo
-# Date created:		14th November 1999
-# Whom:			Jose Marques
-#
+# Created by: Jose Marques
 # $FreeBSD$
-#
 
 PORTNAME=	starlogo
 PORTVERSION=	2.0.2
@@ -16,7 +12,7 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Specialized version of the Logo programming language written in Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

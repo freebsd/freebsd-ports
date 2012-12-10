@@ -1,9 +1,5 @@
-# New ports collection makefile for:	The Oracle 8.1.6 JDBC Drivers
-# Date created:		2 January 2000
-# Whom:			Patrick Gardella <patrick@freebsd.org>
-#
+# Created by: Patrick Gardella <patrick@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oracle8i
 PORTVERSION=	8.1.7.1
@@ -25,7 +21,7 @@ RESTRICTED=	Must be downloaded direct from Oracle via www interface
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

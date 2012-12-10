@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jdbm2
-# Date created:			25 Feb 2011
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdbm
 PORTVERSION=	2.4
@@ -15,7 +11,7 @@ COMMENT=	A fast, simple, and transactional Java persistence engine
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PROJECTHOST=	jdbm2

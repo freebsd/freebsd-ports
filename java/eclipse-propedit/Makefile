@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-propedit
-# Date created:				3 October 2007
-# Whom:					Sutra Zhou <zhoushuqun@gmail.com>
-#
+# Created by: Sutra Zhou <zhoushuqun@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	PropertiesEditor
 PORTVERSION=	4.8.2
@@ -24,7 +20,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 do-install:

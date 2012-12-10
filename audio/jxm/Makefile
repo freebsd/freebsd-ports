@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jxm
-# Date created:		07 March 2004
-# Whom:			Nick Sayer <nsayer@freebsd.org>
-#
+# Created by: Nick Sayer <nsayer@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jxm
 PORTVERSION=	1.4
@@ -19,7 +15,7 @@ COMMENT=	XMPCR (USB XM radio) control software
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 NO_BUILD=	yes

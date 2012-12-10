@@ -1,10 +1,5 @@
-# New ports collection makefile for:	opendx
-# Date created:		27 May 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-# Updates:              Randall Hopper <rhh@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
@@ -53,7 +48,7 @@ CONFIGURE_ARGS+=	--without-netcdf
 
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
 RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
 CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar \

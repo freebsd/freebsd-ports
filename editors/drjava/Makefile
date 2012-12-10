@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drjava
-# Date created:		2006-04-13
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	drjava
 DISTVERSION=	20100913-r5387
@@ -19,7 +15,7 @@ COMMENT=	A lightweight IDE for writing Java programs
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	DRJAVAJAR=${DRJAVAJAR}

@@ -1,10 +1,6 @@
-# New ports collection makefile for:   cairo-java
-# Date created:        26 Oct 2005
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/cairo-java/Makefile,v 1.4 2006/09/14 12:47:28 ahze Exp $
-#
 
 PORTNAME=	cairo-java
 PORTVERSION=	1.0.8
@@ -24,7 +20,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}

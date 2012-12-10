@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Collections
-# Date created:				October 18, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-collections
 PORTVERSION=	3.2.1
@@ -17,7 +13,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar

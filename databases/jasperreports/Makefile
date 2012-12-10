@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jasperreports
-# Date created:		20 May 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jasperreports
 PORTVERSION=	3.7.6
@@ -34,7 +30,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 .endif
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-aptana
-# Date created:		2007-11-14
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale	<nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aptana
 PORTVERSION=	1.2.2.024747
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 CONFLICTS_INSTALL=	eclipse-aptana-[2-9]*
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sun-wtk
-# Date created:				Mon 12 Apr 2004 19:42:00 EEST
-# Whom:					Panagiotis Astithas <past@noc.ntua.gr>
-#
+# Created by: Panagiotis Astithas <past@noc.ntua.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	wtk
 PORTVERSION=	2.2
@@ -24,7 +20,7 @@ EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR@CDS-CDS_Developer
 

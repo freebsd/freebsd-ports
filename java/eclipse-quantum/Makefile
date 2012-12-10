@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-quantum
-# Date created:				July 30, 2004
-# Whom:					gldisater@gldis.ca
-#
+# Created by: gldisater@gldis.ca
 # $FreeBSD$
-#
 
 PORTNAME=	quantum
 PORTVERSION=	3.0.1
@@ -24,7 +20,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_EXTRACT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
 

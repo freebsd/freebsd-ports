@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jcalendar
-# Date created:			Apr 2, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jcalendar
 PORTVERSION=	1.3.3
@@ -16,7 +11,7 @@ COMMENT=	Java Date Chooser
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CrossIP
-# Date created:				Mon Feb  9 20:27:00 CST 2004
-# Whom:					Dan Smith <dan@algenta.com>
-#
+# Created by: Dan Smith <dan@algenta.com>
 # $FreeBSD$
-#
 
 PORTNAME=	crossip
 DISTVERSION=	1.2
@@ -15,7 +11,7 @@ MAINTAINER=	dan@algenta.com
 COMMENT=	Java DNS update client for the ThatIP protocol
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 
 NO_BUILD=	yes

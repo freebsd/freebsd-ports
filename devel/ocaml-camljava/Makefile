@@ -1,10 +1,5 @@
-# New ports collection makefile for:	camljava
-# Date created:		2006-07-31
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	camljava
 PORTVERSION=	0.3
@@ -18,7 +13,7 @@ COMMENT=	An OCaml-Java library interface
 
 USE_OCAML=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .include <bsd.port.pre.mk>
 

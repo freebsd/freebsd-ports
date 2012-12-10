@@ -1,9 +1,5 @@
-# Ports collection makefile for:	c3p0
-# Date created:		Sep 23 2010
-# Whom:			olgeni
-#
+# Created by: olgeni
 # $FreeBSD$
-#
 
 PORTNAME=	c3p0
 PORTVERSION=	0.9.1.2
@@ -17,7 +13,7 @@ COMMENT=	A library for augmenting JDBC drivers with JNDI-bindable DataSources
 
 USE_JAVA=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/c3p0-${PORTVERSION}
 
 do-install:

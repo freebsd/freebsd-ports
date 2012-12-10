@@ -1,9 +1,5 @@
-# New ports collection makefile for: Apache OpenOffice
-# Date created:		28 February 2002
-# Whom:                 Martin Blapp
-#
+# Created by: Martin Blapp
 # $FreeBSD$
-#
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.1

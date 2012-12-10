@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jogl
-# Date created:        5 December 1994
-# Whom:                Peter Jeremy <peterjeremy@optushome.com.au>
-#
+# Created by: Peter Jeremy <peterjeremy@optushome.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
@@ -46,7 +42,7 @@ USE_ZIP=	yes
 USE_ANT=	yes
 USE_LDCONFIG=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 

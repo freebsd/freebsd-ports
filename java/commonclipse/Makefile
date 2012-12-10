@@ -1,9 +1,5 @@
-# New ports collection makefile for:	commonclipse
-# Date created:				20 December 2007
-# Whom:					Sutra Zhou <zhoushuqun@gmail.com>
-#
+# Created by: Sutra Zhou <zhoushuqun@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	commonclipse
 PORTVERSION=	1.3.0
@@ -22,7 +18,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 PLIST_SUB=	DISTNAME=${DISTNAME}
 

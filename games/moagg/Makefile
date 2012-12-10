@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	moagg
-# Date created:		03 August 2012
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	moagg
 PORTVERSION=	1.95b
@@ -22,7 +18,7 @@ LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jcommon
-# Date created:			Nov 11, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jcommon
 PORTVERSION=	1.0.18
@@ -15,7 +10,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes

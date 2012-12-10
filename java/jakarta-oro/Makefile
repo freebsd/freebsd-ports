@@ -1,9 +1,5 @@
-# Ports collection makefile for:    Jakarta ORO
-# Date created:         2000/12/01
-# Whom:                 Dave Glowacki <dglo@ssec.wisc.edu>
-#
+# Created by: Dave Glowacki <dglo@ssec.wisc.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8
@@ -17,7 +13,7 @@ COMMENT=	Perl/awk/sh regular expressions for Java
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 PLIST=	${WRKDIR}/PLIST
 

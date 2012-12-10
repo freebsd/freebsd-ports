@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jomp
-# Date created:			Wed Jul 14 14:02:25 CEST 2004
-# Whom:				Christian Brueffer <brueffer@FreeBSD.org>
-#
+# Created by: Christian Brueffer <brueffer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jomp
 PORTVERSION=	1.0b
@@ -18,7 +14,7 @@ MAINTAINER=	brueffer@FreeBSD.org
 COMMENT=	Prototype OpenMP implementation for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

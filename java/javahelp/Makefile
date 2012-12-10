@@ -1,9 +1,5 @@
-# New ports collection makefile for:	javahelp
-# Date created:				11 February 2010
-# Whom:					rfarmer@predatorlabs.net
-#
+# Created by: rfarmer@predatorlabs.net
 # $FreeBSD$
-#
 
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05
@@ -18,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system to add online help to Java applications
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 NO_BUILD=	yes
 

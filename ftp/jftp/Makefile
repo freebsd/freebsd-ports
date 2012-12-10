@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jftp
-# Date created:			June 14, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jftp
 PORTVERSION=	1.56
@@ -19,7 +15,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/j-ftp

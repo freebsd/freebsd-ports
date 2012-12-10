@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JUMP Unified Mapping Platform
-# Date created:				June 16 2004
-# Whom:					Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	jumpgis
 PORTVERSION=	1.1.2
@@ -23,7 +19,7 @@ EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 TARGET_DIR=	${PREFIX}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_BUILD=	yes
 WANT_GNOME=	yes

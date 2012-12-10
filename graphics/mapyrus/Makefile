@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mapyrus
-# Date created:		2006-04-25
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	mapyrus
 PORTVERSION=	1.202
@@ -20,7 +16,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

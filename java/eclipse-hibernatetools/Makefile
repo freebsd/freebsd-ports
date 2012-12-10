@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Eclipse Hibernate Tools
-# Date created:		Mon 24 Dec 2007 11:16:09 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hibernatetools
 DISTVERSION=	3.2.3.GA
@@ -30,7 +26,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 post-extract:

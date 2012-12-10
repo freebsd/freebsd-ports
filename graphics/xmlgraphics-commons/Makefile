@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmlgraphics-commons
-# Date created:				11 February 2010
-# Whom:					rfarmer@predatorlabs.net
-#
+# Created by: rfarmer@predatorlabs.net
 # $FreeBSD$
-#
 
 PORTNAME=	xmlgraphics-commons
 PORTVERSION=	1.5.r1222519
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 USE_ANT=	yes

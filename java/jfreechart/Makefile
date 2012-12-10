@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jfreechart
-# Date created:			Nov 11, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jfreechart
 PORTVERSION=	1.0.14
@@ -17,7 +12,7 @@ COMMENT=	A free Java class library for generating charts
 RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes

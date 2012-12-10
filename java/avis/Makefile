@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avis
-# Date created:		13 November, 2007
-# Whom:			Benjamin Close <benjsc@FreeBSD.org>
-#
+# Created by: Benjamin Close <benjsc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	avis
 PORTVERSION=	1.2.0
@@ -18,7 +14,7 @@ COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
 USE_RC_SUBR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(WITHOUT_COMPILE)
