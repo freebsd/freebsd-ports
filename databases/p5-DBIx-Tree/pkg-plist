@@ -1,8 +1,6 @@
 %%SITE_PERL%%/DBIx/Tree.pm
-%%SITE_PERL%%/auto/DBIx/Tree/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Tree/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Tree
-@dirrm %%SITE_PERL%%/auto/DBIx/Tree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Tree
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx
