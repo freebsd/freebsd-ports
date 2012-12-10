@@ -1,12 +1,8 @@
-# New ports collection makefile for: vsftpd
-# Date created:		03 Feb 2001
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME=	vsftpd
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://security.appspot.com/downloads/ \
 		${MASTER_SITE_GENTOO}
@@ -27,7 +23,7 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		SIZE SPEED TODO TUNING
 
 OPTIONS_DEFINE=	VSFTPD_SSL PIDFILE STACKPROTECTOR
-OPTIONS_DEFAULT?=	STACKPROTECTOR
+OPTIONS_DEFAULT?=	VSFTPD_SSL STACKPROTECTOR
 NO_OPTIONS_SORT=yes
 
 VSFTPD_SSL_DESC=Include support for SSL

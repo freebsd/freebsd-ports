@@ -1,5 +1,5 @@
---- sysdeputil.c.orig	2010-03-26 04:25:33.000000000 +0100
-+++ sysdeputil.c	2012-04-14 10:31:00.000000000 +0200
+--- sysdeputil.c.orig	2012-09-16 06:18:04.000000000 +0200
++++ sysdeputil.c	2012-10-13 20:20:42.000000000 +0200
 @@ -57,7 +57,7 @@
  #endif
  #define VSF_SYSDEP_HAVE_SHADOW
@@ -12,7 +12,7 @@
 @@ -323,8 +323,12 @@
                        const struct mystr* p_remote_host)
  {
-   int retval;
+   int retval = -1;
 +#ifdef PAM_USER
    pam_item_t item;
 +#endif
@@ -22,7 +22,7 @@
    struct pam_conv the_conv =
    {
      &pam_conv_func,
-@@ -1213,7 +1217,9 @@
+@@ -1216,7 +1220,9 @@
    setutxent();
    (void) pututxline(&s_utent);
    endutxent();
@@ -32,7 +32,7 @@
  }
  
  void
-@@ -1232,7 +1238,9 @@
+@@ -1235,7 +1241,9 @@
    (void) pututxline(&s_utent);
    endutxent();
    s_utent.ut_tv.tv_sec = vsf_sysutil_get_time_sec();
