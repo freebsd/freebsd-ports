@@ -1,12 +1,8 @@
-# New ports collection makefile for:	www/drush
-# Date created:				April 29th 2010
-# Whom:	      				Thomas Sandford <freebsduser@paradisegreen.co.uk>
-#
+# Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	drush
-PORTVERSION=	5.7
+PORTVERSION=	5.8
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drush-7.x-${PORTVERSION}
