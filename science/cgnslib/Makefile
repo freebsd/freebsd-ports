@@ -20,7 +20,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	HDF5 SZIP TESTS TOOLS
-HDF5_DESC=	Enable or disable HDF5 interface
+HDF5_DESC=	Enable HDF5 interface
 TESTS_DESC=	Enable test programs
 TOOLS_DESC=	Build the CGNSTools package
 SZIP_DESC=	SZIP support in HDF5
