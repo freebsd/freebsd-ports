@@ -1,7 +1,4 @@
-# Ports collection makefile for:	GNU Trove4J
-# Date created:				14 November 2002
-# Whom:					Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-#
+# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
 
 PORTNAME=	trove4j
@@ -15,7 +12,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	High performance collections API for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)

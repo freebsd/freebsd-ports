@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iSQL-Viewer
-# Date created:		June 19, 2005
-# Whom:			Stefan Schmidt <stefan.schmidt@stadtbuch.de>
-#
+# Created by: Stefan Schmidt <stefan.schmidt@stadtbuch.de>
 # $FreeBSD$
-#
 
 PORTNAME=	isql-viewer
 PORTVERSION=	2.1.8
@@ -26,7 +22,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \
 		${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 ISQL=		iSQL-Viewer

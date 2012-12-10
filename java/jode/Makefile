@@ -1,7 +1,4 @@
-# New ports collection makefile for:		jode-regexp
-# Date created:					June 24th 2003
-# Whom:						mi
-#
+# Created by: mi
 # $FreeBSD$
 
 PORTNAME=	jode
@@ -19,7 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 VENDOR_VERSION=	1.1.2-pre1
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NEED_JAVAC=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

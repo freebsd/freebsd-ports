@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons CLI
-# Date created:				November 14, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-cli
 PORTVERSION=	1.2
@@ -20,7 +16,7 @@ COMMENT=	Java library for command line arguments and options
 LICENSE=	AL2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

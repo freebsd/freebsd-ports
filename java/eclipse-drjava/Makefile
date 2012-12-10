@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-drjava
-# Date created:		2006-04-14
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	drjava
 PORTVERSION=	0.9.8
@@ -23,7 +19,7 @@ NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 DATADIR=	${PREFIX}/lib/eclipse/plugins

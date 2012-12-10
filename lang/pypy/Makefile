@@ -117,7 +117,7 @@ BROKEN=		CLI backend broken, unsupported upstream
 
 .if defined(WITH_JVM)
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 ONLY_FOR_ARCHS=	i386 powerpc
 ONLY_FOR_ARCHS_REASON=	only translates on 32bit systems
 BROKEN=		JVM backend broken, partially supported upstream

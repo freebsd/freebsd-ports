@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mx4j
-# Date created:                16 Jan 2005
-# Whom:                        Filippo Natali <filippo@widestore.net>
-#
+# Created by: Filippo Natali <filippo@widestore.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mx4j
 PORTVERSION=	3.0.2
@@ -15,7 +11,7 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

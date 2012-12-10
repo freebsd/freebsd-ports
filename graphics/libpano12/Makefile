@@ -1,8 +1,6 @@
-# New ports collection makefile for:   panorama-tools
-# Date created:        26 august 2004
-# Whom:                cartola (Carlos E. G. Carvalho)
-#
+# Created by: cartola (Carlos E. G. Carvalho)
 # $FreeBSD$
+
 # This port has been made as a building and running dependence for the
 # hugin port.
 # The hugin port is a gui interface to interact with this and other
@@ -39,7 +37,7 @@ USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 .else

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Jakarta Commons HttpCLient
-# Date created:			17 October 2004
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-httpclient
 DISTVERSION=	3.1
@@ -25,7 +21,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 RUN_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-lomboz
-# Date created:				June 18, 2004
-# Whom:					sugimura@jp.FreeBSD.org
-#
+# Created by: sugimura@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	lomboz
 PORTVERSION=	3.1.r2
@@ -27,7 +23,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 do-install:

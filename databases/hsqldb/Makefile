@@ -1,9 +1,5 @@
-# New ports collection makefile for:   hsqldb
-# Date created:        14 Feb 2006
-# Whom:                Michael Winking <mwfp@foldl.net>
-#
+# Created by: Michael Winking <mwfp@foldl.net>
 # $FreeBSD$
-#
 
 PORTNAME=	hsqldb
 PORTVERSION=	1.8.1.3
@@ -18,7 +14,7 @@ COMMENT=	An embeddable SQL database written in Java
 LICENSE=	BSD
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

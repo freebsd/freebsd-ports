@@ -1,4 +1,4 @@
-# Created by:	nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	rescue
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/r/R/}

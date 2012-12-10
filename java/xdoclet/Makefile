@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdoclet
-# Date created:				Feb 25 2003
-# Whom:					Sheldon Hearn <sheldonh@FreeBSD.org>
-#
+# Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xdoclet
 PORTVERSION=	1.2.3
@@ -20,7 +16,7 @@ COMMENT=	Java attribute-oriented code generation engine
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

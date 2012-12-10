@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jin
-# Date created:		2007-03-05
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jin
 PORTVERSION=	2.14.1
@@ -17,7 +13,7 @@ COMMENT=	A graphical client for chess servers
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	JINJAR=${JINJAR}

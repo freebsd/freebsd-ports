@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jgraph
-# Date created:			Jul 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jgraph
 PORTVERSION=	5.13.0.4
@@ -22,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
 .if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)

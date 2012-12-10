@@ -1,9 +1,5 @@
-# New ports collection makefile for: biojava
-# Date created:	15 September 2000
-# Whom:		FreeBSD Bio porters (bio@freebsd.net)
-#
+# Created by: FreeBSD Bio porters (bio@freebsd.net)
 # $FreeBSD$
-#
 
 PORTNAME=	biojava
 DISTVERSION=	1.7
@@ -19,7 +15,7 @@ COMMENT=	Open-source Java tools for processing biological data
 EXTRACT_DEPENDS+=	jar:${PORTSDIR}/java/diablo-jdk16
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 MAKE_ENV=	CLASSPATH="${JAVALIBDIR}"
 ALL_TARGET=	package-biojava

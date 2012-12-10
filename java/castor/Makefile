@@ -1,9 +1,5 @@
-# Ports collection Makefile for:    Castor
-# Date created:         2005/05/12
-# Whom:                 Adam VanderHook <acidos@bandwidth-junkies.net>
-#
+# Created by: Adam VanderHook <acidos@bandwidth-junkies.net>
 # $FreeBSD$
-#
 
 PORTNAME=	castor
 PORTVERSION=	1.3.2
@@ -17,7 +13,7 @@ COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 LICENSE=	AL2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-anttasks.jar \

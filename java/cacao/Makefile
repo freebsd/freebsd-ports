@@ -1,4 +1,4 @@
-# Created by:	Tilman Keskinoz <arved@FreeBSD.org>
+# Created by: Tilman Keskinoz <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cacao
@@ -36,7 +36,7 @@ JDK_DESC=	Build with native JDK
 .if ${PORT_OPTIONS:MJDK}
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 .else
 .if defined(WITH_GCC)
 GCC_SUFX=	${WITH_GCC:S/.//}

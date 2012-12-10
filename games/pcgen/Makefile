@@ -1,7 +1,4 @@
-# Ports collection makefile for:	PCGen
-# Date created:				17 November 2003
-# Whom:					Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-#
+# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
 
 PORTNAME=	pcgen
@@ -18,7 +15,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	java3d
-# Date created:				2003/12/19
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
@@ -21,7 +17,7 @@ FETCH_ARGS=	-Fpr
 USE_JAVA=	yes
 USE_GL=		gl
 USE_XORG=	xt
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_VENDOR=	freebsd bsdjava openjdk
 USE_ANT=	yes
 

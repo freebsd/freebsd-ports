@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	clojure-contrib
-# Date created:		Jun 12 2010
-# Whom:			olgeni
-#
+# Created by: olgeni
 # $FreeBSD$
-#
 
 PORTNAME=	clojure-contrib
 PORTVERSION=	1.2.0
@@ -19,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/clojure:${PORTSDIR}/lang/clojure
 USE_ZIP=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 PLIST_FILES=	%%JAVAJARDIR%%/clojure-contrib-1.2.0.jar
 

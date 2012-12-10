@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Pool
-# Date created:				October 6, 2003
-# Whom:					Anton Yudin <toha@toha.org.ua>
-#
+# Created by: Anton Yudin <toha@toha.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-pool
 PORTVERSION=	1.6
@@ -17,7 +13,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Jakarta Object-pooling API
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	build-jar

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-uml
-# Date created:				October 20, 2004
-# Whom:					gldisater@gldis.ca
-#
+# Created by: gldisater@gldis.ca
 # $FreeBSD$
-#
 
 PORTNAME=	uml
 PORTVERSION=	1.1.1
@@ -24,7 +20,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 do-install:

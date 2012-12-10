@@ -1,9 +1,5 @@
-# ports collection makefile for: jboss2
-# Date created:                  16 April 2002
-# Whom:                          Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${APP_TITLE:L}
 PORTVERSION=	2.4.11
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBoss 2.x, an open-source J2EE application server
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ZIP=	YES
 NO_BUILD=	YES

@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML editor featuring a word processor-like view
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 
 RESTRICTED=	Licensee may not distribute the software, evaluation edition

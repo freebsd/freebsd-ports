@@ -1,10 +1,5 @@
-# ex: ts=8
-# New ports collection makefile for:   tuxguitar
-# Date created:        26 April 2007
-# Whom:                Pietro Cerutti (gahr@gahr.ch)
-#
+# Created by: Pietro Cerutti (gahr@gahr.ch)
 # $FreeBSD$
-#
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.2
@@ -37,7 +32,7 @@ USE_GECKO=	libxul19
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_VENDOR=	freebsd bsdjava sun
 NOCCACHE=	yes
 

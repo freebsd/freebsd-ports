@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-ocl
-# Date created:				August, 25 2007
-# Whom:					vj562001@yahoo.de
-#
+# Created by: vj562001@yahoo.de
 # $FreeBSD$
-#
 
 PORTNAME=	ocl
 DISTVERSION=	1.1
@@ -25,7 +21,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 do-install:

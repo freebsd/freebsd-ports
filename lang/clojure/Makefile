@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	clojure
-# Date created:			Oct 21. 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	clojure
 PORTVERSION=	1.4.0
@@ -17,7 +12,7 @@ COMMENT=	A dynamic programming language for the JVM
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 SUB_FILES=	clojure-bin
 OPTIONS=	JLINE "Enable jline support for the REPL" on

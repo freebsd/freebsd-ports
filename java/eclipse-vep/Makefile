@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-vep
-# Date created:				January 13, 2004
-# Whom:					alex@FreeBSD.org
-#
+# Created by: alex@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vep
 PORTVERSION=	1.2
@@ -27,7 +23,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 do-install:

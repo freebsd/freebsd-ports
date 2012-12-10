@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freecol
-# Date created:			31 March 2007
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freecol
 PORTVERSION=	0.10.5
@@ -19,7 +15,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .if defined(NOPORTDATA)
 IGNORE=		needs data file to run, unset NOPORTDATA

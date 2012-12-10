@@ -1,4 +1,4 @@
-# Created by:	Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	aoi
@@ -18,7 +18,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-a -q
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}

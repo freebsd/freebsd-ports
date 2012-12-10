@@ -1,9 +1,5 @@
-# New ports collection makefile for:	powerarchitect
-# Date created:				05 Jun 2008
-# Whom:					José García Juanino <jjuanino@gmail.com>
-#
+# Created by: José García Juanino <jjuanino@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	powerarchitect
 PORTVERSION=	1.0.6
@@ -20,7 +16,7 @@ OPTIONS_DEFINE=	ORACLE_JDBC MYSQL_JDBC PGSQL_JDBC
 
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 

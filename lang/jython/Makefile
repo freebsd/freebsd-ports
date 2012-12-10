@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jython
-# Date created:				3 April 2001
-# Whom:					Hye-Shik Chang <perky@python.or.kr>
-#
+# Created by: Hye-Shik Chang <perky@python.or.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	jython
 PORTVERSION=	2.5.2
@@ -20,7 +16,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 

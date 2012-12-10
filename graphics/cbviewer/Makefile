@@ -1,4 +1,4 @@
-# Created by:	nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	cbviewer
@@ -23,7 +23,7 @@ FETCH_ARGS?=	-Fpr
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Logging
-# Date created:				November 14, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-logging
 PORTVERSION=	1.1.1
@@ -19,7 +15,7 @@ COMMENT=	Generic logging wrapper library
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

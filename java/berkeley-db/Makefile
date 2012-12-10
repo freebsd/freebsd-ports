@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Berkeley DB Java
-# Date created:		Feb 2, 2005
-# Whom:			Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	je
 PORTVERSION=	3.2.76
@@ -21,7 +17,7 @@ OPTIONS=	TEST "Run the self-tests after building automatically" off
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 MAKE_ENV+=	JAVALIBDIR="${JAVALIBDIR}"
 MAKE_ARGS+=	-cp ${JAVALIBDIR}/junit.jar

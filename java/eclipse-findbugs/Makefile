@@ -1,9 +1,5 @@
-# New ports collection makefile for:	findbugs eclipse plugin
-# Date created:		Dom  1 Abr 2007 22:42:25 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	findbugs
 DISTVERSION=	1.3.2.20080222
@@ -22,7 +18,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 PLIST_DIRS=	\

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   linux-j
-# Date created:        29 September 2001
-# Whom:                js@jeannot.org
-#
+# Created by: js@jeannot.org
 # $FreeBSD$
-#
 
 PORTNAME=	j
 PORTVERSION=	504b
@@ -21,7 +17,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 ONLY_FOR_ARCHS=	i386
 

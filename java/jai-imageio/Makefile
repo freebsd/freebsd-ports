@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JAI Image I/O Tools
-# Date created:				2004-01-10
-# Whom:					OISHI Masakuni <yamasa@bsdhouse.org>
-#
+# Created by: OISHI Masakuni <yamasa@bsdhouse.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jai-imageio
 PORTVERSION=	1.0
@@ -16,7 +12,7 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Plug-ins for the Java Image I/O Framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386

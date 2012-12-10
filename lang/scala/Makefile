@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Scala
-# Date created:			21 April 2009
-# Whom:				Mitsuru YOSHIDA <mitsuru@riken.jp>
-#
+# Created by: Mitsuru YOSHIDA <mitsuru@riken.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	scala
 PORTVERSION=	2.9.1
@@ -20,7 +16,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 MAN1=		fsc.1 sbaz.1 scala.1 scalac.1 scaladoc.1 scalap.1
 

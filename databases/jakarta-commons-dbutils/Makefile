@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Jakarta Commons DbUtils
-# Date created:			14 Feb 2006
-# Whom:				Michael Winking <mwfp@foldl.net>
-#
+# Created by: Michael Winking <mwfp@foldl.net>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-dbutils
 PORTVERSION=	1.1
@@ -20,7 +16,7 @@ COMMENT=	JDBC helper library
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	dist
