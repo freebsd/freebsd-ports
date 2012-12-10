@@ -106,6 +106,7 @@ bin/drush
 %%DATADIR%%/tests/makefiles/defaults.make
 %%DATADIR%%/tests/makefiles/contrib-destination.make
 %%DATADIR%%/tests/makefiles/svn.make
+%%DATADIR%%/tests/makefiles/qd-devel.make
 %%DATADIR%%/tests/makefiles/translations-inside7.make
 %%DATADIR%%/tests/makefiles/recursion.make
 %%DATADIR%%/tests/makefiles/included2.make
@@ -124,6 +125,9 @@ bin/drush
 %%DATADIR%%/tests/makefiles/get.make
 %%DATADIR%%/tests/makefiles/patches.make
 %%DATADIR%%/tests/makefiles/md5-succeed.make
+%%DATADIR%%/tests/quickDrupalTest.php
+%%DATADIR%%/tests/completetest.drush.inc
+%%DATADIR%%/tests/completetestsite.drush.inc
 %%DATADIR%%/tests/queueTest.php
 %%DATADIR%%/tests/siteSetTest.php
 %%DATADIR%%/tests/commandUnitTest.php
