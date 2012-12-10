@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yuicompressor
-# Date created:	   25 Apr 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	yuicompressor
 PORTVERSION=	2.4.7
@@ -15,7 +11,7 @@ COMMENT=	The Yahoo! JavaScript and CSS Compressor
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/yuicompressor %%DATADIR%%/yuicompressor.jar

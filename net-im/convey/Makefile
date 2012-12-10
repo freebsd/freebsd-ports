@@ -1,9 +1,5 @@
-# New ports collection makefile for:	convey
-# Date created:				2005-07-18
-# Whom:					Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	convey
 PORTVERSION=	0.3
@@ -21,7 +17,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 USE_ANT=	yes
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 MAKE_ARGS=	-quiet
 

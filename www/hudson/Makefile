@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hudson
-# Date created:		2008-03-08
-# Whom:			Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hudson
 PORTVERSION=	1.395
@@ -18,7 +14,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An extensible continuous integration engine
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 USE_RC_SUBR=	hudson

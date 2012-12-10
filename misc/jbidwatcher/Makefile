@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jbidwatcher
-# Date Created:		24 July 2004
-# Whom:			Jose Rodriguez <king@v2project.com>
-#
+# Created by: Jose Rodriguez <king@v2project.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jbidwatcher
 PORTVERSION=	2.5
@@ -18,7 +14,7 @@ USE_BZIP2=	yes
 USE_JAVA=	yes
 USE_ANT=	yes
 ALL_TARGET=	jar
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 SUB_FILES=	jbidwatcher
 SUB_LIST+=	PORTVERSION=${PORTVERSION}

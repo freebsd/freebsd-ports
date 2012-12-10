@@ -1,9 +1,5 @@
-# New ports collection makefile for:	i2p
-# Date created:		Sun Jan  9 05:05:02 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	i2p
 PORTVERSION=	0.8.7
@@ -37,7 +33,7 @@ USE_RC_SUBR=	i2p
 
 JAVA_BUILD=	jdk
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	\

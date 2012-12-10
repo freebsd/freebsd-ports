@@ -1,4 +1,4 @@
-# Created by:	Tom Judge <tj@FreeBSD.org>
+# Created by: Tom Judge <tj@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
@@ -14,7 +14,7 @@ LICENSE=	AL2
 USE_ZIP=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 

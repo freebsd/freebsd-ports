@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ppower4
-# Date created:		07 November 2003
-# Whom:			Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ppower4
 PORTVERSION=	0.9.4
@@ -23,7 +19,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

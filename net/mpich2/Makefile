@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpich (portable mpi standard imp.)
-# Date created:		2 May 1998
-# Whom:                 dbader@ece.unm.edu
-#
+# Created by: dbader@ece.unm.edu
 # $FreeBSD$
-#
 
 PORTNAME=	mpich2
 DISTVERSION=	1.3.2p1
@@ -79,7 +75,7 @@ IGNORE =	WITH_JAVA requires WITH_X11
 .endif
 CONFIGURE_ARGS+=	--with-java="${JAVA_HOME}"
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""

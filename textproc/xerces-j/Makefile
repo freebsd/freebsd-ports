@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Xerces
-# Date created:		2000/08/12
-# Whom:			Marcin Cieslak
-#
+# Created by: Marcin Cieslak
 # $FreeBSD$
-#
 
 PORTNAME=	xerces-j
 PORTVERSION=	2.11.0
@@ -16,7 +12,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	XML parser for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jCIFS
-# Date created:			Mar 8, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jcifs
 PORTVERSION=	1.3.17
@@ -19,7 +15,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 NO_BUILD=	yes
 

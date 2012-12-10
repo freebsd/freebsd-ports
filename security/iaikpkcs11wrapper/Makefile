@@ -1,9 +1,5 @@
-# New ports collection makefile for:    iaikPkcs11Wrapper
-# Date created:			19 Feb 2007
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iaikPkcs11Wrapper
 PORTVERSION=	1.2.18
@@ -17,7 +13,7 @@ COMMENT=	A PKCS\#11 Java wrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GMAKE=	yes
 ALL_TARGET=	release

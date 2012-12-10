@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scloader
-# Date created:		2007-04-13
-# Whom:			Radim Kolar <hsn@sanatana.dharma>
-#
+# Created by: Radim Kolar <hsn@sanatana.dharma>
 # $FreeBSD$
-#
 
 PORTNAME=	scloader
 PORTVERSION=	0.32
@@ -16,7 +12,7 @@ COMMENT=	Configurable web graber/spider
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_DOS2UNIX=	yes
 
 NO_WRKSUBDIR=	yes

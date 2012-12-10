@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pauker
-# Date created:				11 November 2007
-# Whom:					Alex Stangl <alex@stangl.us>
-#
+# Created by: Alex Stangl <alex@stangl.us>
 # $FreeBSD$
-#
 
 PORTNAME=	pauker
 DISTVERSION=	1.8RC2
@@ -17,7 +13,7 @@ MAINTAINER=	alex@stangl.us
 COMMENT=	Java-based flashcard learning using the Leitner system
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/${PORTNAME}

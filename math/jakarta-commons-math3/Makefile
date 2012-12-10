@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Math 3
-# Date created:				25 May, 2012
-# Whom:					Muhammad Moinur Rahmanh <5u623l20@gmail.com>
-#
+# Created by: Muhammad Moinur Rahmanh <5u623l20@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-math3
 PORTVERSION=	3.0
@@ -23,7 +19,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jakarta-jmeter
-# Date created:		12 August 2002
-# Whom:			Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.8
@@ -45,7 +41,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
 		${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jmeter.sh

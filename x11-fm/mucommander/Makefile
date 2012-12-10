@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mucommander
-# Date created:		2007-06-24
-# Whom:			Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mucommander
 PORTVERSION=	0.9.0
@@ -15,7 +11,7 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mucommander %%DATADIR%%/mucommander.jar %%DATADIR%%/license.txt

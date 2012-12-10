@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Azureus
-# Date created:				October 6, 2004
-# Whom:					Jeremy Faulkner <gldisater@gldis.ca>
-#
+# Created by: Jeremy Faulkner <gldisater@gldis.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	azureus2
 PORTVERSION=	2.5.0.4
@@ -22,7 +18,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 RUN_DEPENDS=	${JAVALIBDIR}/${SWT}.jar:${PORTSDIR}/x11-toolkits/${SWT}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
 

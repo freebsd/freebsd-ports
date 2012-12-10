@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Open-Source Java Viewer for Chemical Structures in 3D
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JMOL_FILES=	Jmol.jar JmolApplet.jar JmolApplet0.jar \
 		JmolApplet0_Console.jar \

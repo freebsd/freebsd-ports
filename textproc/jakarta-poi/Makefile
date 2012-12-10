@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta POI API
-# Date created:				Wed Mar  2 22:01:02 EET 2005
-# Whom:					Anton Yudin <toha@toha.org.ua>
-#
+# Created by: Anton Yudin <toha@toha.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	poi
 PORTVERSION=	2.5.1
@@ -20,7 +16,7 @@ COMMENT=	Java API To Access Microsoft Format Files
 BUILD_DEPENDS=	${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_WRKSUBDIR=	yes
 

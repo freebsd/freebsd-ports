@@ -1,9 +1,5 @@
-# New ports collection makefile for:	subsonic
-# Date created:		2011-02-01
-# Whom:			Nicole Reid <root@cooltrainer.org>
-#
+# Created by: Nicole Reid <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	subsonic
 PORTVERSION=	4.7
@@ -47,7 +43,7 @@ SUB_LIST=	TOMCATOPTS="tomcat60_java_opts"
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 USER=		www
 GROUP=		www

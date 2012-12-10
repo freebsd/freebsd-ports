@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ldapbrowser
-# Date created:         17 August 2002
-# Whom:                 Bruce M. Simpson
-#
+# Created by: Bruce M. Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
@@ -19,7 +15,7 @@ COMMENT=	Java/Swing-based LDAP browser/editor
 RESTRICTED=	No reply from author regarding redistribution licensing
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NOMAN=		defined
 WRKSRC=		${WRKDIR}/${PORTNAME}

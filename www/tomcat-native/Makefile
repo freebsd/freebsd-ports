@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tomcat-native
-# Date created:			28 Feb 2008
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomcat-native
 PORTVERSION=	1.1.24
@@ -27,7 +23,7 @@ OCSP_DESC=	Enable OCSP verification support
 USE_OPENSSL=	yes
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-java-home=${JAVA_HOME} \

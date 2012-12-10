@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DeViSoR
-# Date created:		Jan. 2005
-# Whom:			Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	devisor
 PORTVERSION=	2.1
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Design and Visualization Software Resource for FeatFlow
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes	# Sources are available though
 
 SUB_FILES=	devisorgrid.sh

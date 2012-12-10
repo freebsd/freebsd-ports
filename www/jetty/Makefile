@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jetty
-# Date created:				28 August 2000
-# Whom:				Stephane Legrand <stephane@freebsd-fr.org>
-#
+# Created by: Stephane Legrand <stephane@freebsd-fr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jetty
 DISTVERSION=	6.1.26
@@ -16,7 +12,7 @@ COMMENT=	Full-featured web server implemented entirely in Java
 USE_RC_SUBR=	${PORTNAME}
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_PYTHON=	1.6+
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message

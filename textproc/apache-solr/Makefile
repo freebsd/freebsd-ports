@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apache-solr
-# Date created:		2009-03-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	apache-solr
 PORTVERSION=	3.6.0
@@ -16,7 +12,7 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
 
 LICENSE=	AL2
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	yes

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jpilot-db
-# Date created:			Sep 22, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jpilot-db
 PORTVERSION=	1.3.20
@@ -21,7 +16,7 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 SUB_FILES=	jpilot-db.sh
 SUB_LIST=	PKGNAME=${PKGNAME}

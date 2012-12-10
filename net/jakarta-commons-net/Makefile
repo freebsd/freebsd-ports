@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Jakarta Commons Net
-# Date created:			1 Oct 2006
-# Whom:				Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-net
 PORTVERSION=	1.4.1
@@ -22,7 +18,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 RUN_DEPENDS=	${JAVAJARDIR}/jakarta-oro.jar:${PORTSDIR}/java/jakarta-oro
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

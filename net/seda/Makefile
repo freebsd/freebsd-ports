@@ -1,9 +1,5 @@
-# New ports collection makefile for:	seda
-# Date created:		Thu Jan 13 15:45:22 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	seda
 PORTVERSION=	3.0
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Architecture for Highly Concurrent Server Applications
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	dist
 

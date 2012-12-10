@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ovt
-# Date created:                16 Sept 2003
-# Whom:                        Mykola Khotyaintsev <ko@nest.irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@nest.irfu.se>
 # $FreeBSD$
-#
 
 PORTNAME=	ovt
 PORTVERSION=	2.3
@@ -26,7 +22,7 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}

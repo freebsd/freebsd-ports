@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xom
-# Date created:		2004-10-26
-# Whom:			Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xom
 PORTVERSION=	1.1
@@ -19,7 +15,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XOM
 

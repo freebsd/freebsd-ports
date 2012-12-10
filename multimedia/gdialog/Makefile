@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdialog
-# Date created:			Sun Apr 19 21:30:26 CEST 2009
-# Whom:				Heiner Eichmann <h.eichmann@gmx.de>
-#
+# Created by: Heiner Eichmann <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gdialog
 PORTVERSION=	2.5
@@ -19,7 +15,7 @@ RUN_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

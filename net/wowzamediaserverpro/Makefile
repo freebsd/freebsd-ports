@@ -1,9 +1,5 @@
-# New ports collection makefile for:	WowzaMediaServerPro
-# Date created:				October 07, 2009
-# Whom:					meritus@innervision.pl
-#
+# Created by: meritus@innervision.pl
 # $FreeBSD$
-#
 
 PORTNAME=	WowzaMediaServerPro
 PORTVERSION=	1.7.2
@@ -21,7 +17,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_EXTRACT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 WOWZA_USER?=	www
 WOWZA_GROUP?=	www

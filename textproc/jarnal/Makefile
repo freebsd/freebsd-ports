@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jarnal
-# Date created:		28 August 2010
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jarnal
 PORTVERSION=	999
@@ -19,7 +15,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 LICENSE=	GPLv2
 

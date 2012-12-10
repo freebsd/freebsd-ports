@@ -1,9 +1,5 @@
-# New ports collection makefile for:    openfire-devel
-# Date created:                         24 January 2011
-# Whom:                                 gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	openfire
 DISTVERSION=	3.7.0.beta
@@ -24,7 +20,7 @@ CONFLICTS=	openfire-[0-9]*
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 CONFLICTS=	wildfire-[0-9]*
 

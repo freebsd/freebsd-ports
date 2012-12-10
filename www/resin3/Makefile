@@ -1,5 +1,4 @@
-# Created by:	Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-#
+# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # $FreeBSD$
 
 PORTNAME=		resin
@@ -17,7 +16,7 @@ APACHE22_DESC=	Use Apache 2.2
 .include <bsd.port.options.mk>
 
 USE_JAVA=		yes
-JAVA_VERSION=		1.5+
+JAVA_VERSION=		1.6+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_OPENSSL=		yes

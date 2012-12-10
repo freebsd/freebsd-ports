@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xalan-j
-# Date created:		21 February 2001
-# Whom:			znerd@FreeBSD.org
-#
+# Created by: znerd@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xalan-j
 PORTVERSION=	2.7.1
@@ -22,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    openfire
-# Date created:                         2006-11-12
-# Whom:                                 Nikolay Pavlov <qpadla@gmail.com>
-#
+# Created by: Nikolay Pavlov <qpadla@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openfire
 PORTVERSION=	3.7.1
@@ -23,7 +19,7 @@ USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 CONFLICTS=	wildfire-[0-9]*
 

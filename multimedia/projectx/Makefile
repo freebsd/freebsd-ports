@@ -1,9 +1,5 @@
-# New ports collection makefile for:	projectx
-# Date created:			Sun Jul 18 15:07:26 CEST 2004
-# Whom:				Juergen Lock <nox@jelal.kn-bremen.de>
-#
+# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	projectx
 PORTVERSION=	0.90.4.00
@@ -21,7 +17,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 SUB_FILES=	project-x.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Print formatter driven by XSL formatting
-# Date created:		19 December 2000
-# Whom:			KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fop
 PORTVERSION=	1.1
@@ -24,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 # Prevent out of memory error during build
