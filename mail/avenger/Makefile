@@ -13,6 +13,7 @@
 
 PORTNAME=	avenger
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
@@ -33,7 +34,7 @@ CONFIGURE_ENV=	WFLAGS='-Wall'
 CONFIGURE_ARGS=	--with-db=${LOCALBASE}
 
 .if defined(WITH_AVENGER_SASL2)
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 # Note, for version 0.7.2, the --enable-sasl=/... syntax is broken
 #CONFIGURE_ARGS+=	--enable-sasl=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-sasl

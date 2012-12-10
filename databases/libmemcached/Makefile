@@ -7,7 +7,7 @@
 
 PORTNAME=	libmemcached
 PORTVERSION=	1.0.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
@@ -27,8 +27,8 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libsasl.so.2)
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+.if exists(${LOCALBASE}/lib/libsasl.so.3)
+LIB_DEPENDS+=	sasl2.3:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 .if ${OSVERSION} < 800000

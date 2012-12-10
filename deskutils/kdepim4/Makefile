@@ -6,6 +6,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +17,7 @@ COMMENT=	Libraries for KDE-PIM applications
 
 LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
 		assuan.0:${PORTSDIR}/security/libassuan \
-		sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
+		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		grantlee_gui.0:${PORTSDIR}/devel/grantlee \
 		clucene.0:${PORTSDIR}/textproc/clucene

@@ -8,6 +8,7 @@
 
 PORTNAME=	libetpan
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		expat:${PORTSDIR}/textproc/expat2 \
-		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool autoconf

@@ -7,7 +7,7 @@
 
 PORTNAME=		openldap
 DISTVERSION=		2.3.43
-PORTREVISION=	1
+PORTREVISION=		2
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -139,7 +139,7 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--enable-dynamic
 
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl

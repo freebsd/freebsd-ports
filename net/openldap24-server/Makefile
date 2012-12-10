@@ -42,8 +42,8 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_CLIENT=	1
+PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	8
 
 OPTIONS_DEFINE=	SASL FETCH
@@ -172,7 +172,7 @@ CONFIGURE_ARGS+=	--without-fetch
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl

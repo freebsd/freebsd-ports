@@ -124,6 +124,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.21
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -321,7 +322,7 @@ CFLAGS+=	-I${NCURSESINC}
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if exists(${LOCALBASE}/lib/libidn.so) && !defined(WITHOUT_MUTT_IDN)
 WITH_MUTT_IDN=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	argus-clients
 PORTVERSION=	3.0.4.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -28,7 +29,7 @@ USE_NCURSES=	yes
 
 .if defined(WITH_SASL)
 PKGNAMESUFFIX=	-sasl
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 

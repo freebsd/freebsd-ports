@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121210:
+  AFFECTS: users of security/cyrus-sasl2
+  AUTHOR: ume@FreeBSD.org
+
+  The cyrus-sasl2 library has been updated to version 2.1.26.  Please
+  rebuild all ports that depend on it.
+
+  If you use portmaster:
+        portmaster -r cyrus-sasl-
+  If you use portupgrade:
+        portupgrade -fr security/cyrus-sasl2
+
 20121202:
   AFFECTS: Users of www/owncloud
   AUTHOR: crees@FreeBSD.org

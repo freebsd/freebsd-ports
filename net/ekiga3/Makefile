@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga3
 PORTVERSION=	3.2.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
 DISTNAME=	ekiga-${PORTVERSION}
@@ -75,7 +75,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-ldap --with-ldap-dir="${LOCALBASE}" --with-libsasl2-dir="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=	--disable-ldap

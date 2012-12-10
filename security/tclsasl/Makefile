@@ -7,7 +7,7 @@
 
 PORTNAME=	tclsasl
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security tcl
 MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A Tcl interface to the Cyrus SASLv2 library
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
