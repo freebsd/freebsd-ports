@@ -5,8 +5,13 @@
 %%SITE_PERL%%/Workflow/Action/Null.pm
 %%SITE_PERL%%/Workflow/Base.pm
 %%SITE_PERL%%/Workflow/Condition.pm
+%%SITE_PERL%%/Workflow/Condition/CheckReturn.pm
 %%SITE_PERL%%/Workflow/Condition/Evaluate.pm
+%%SITE_PERL%%/Workflow/Condition/GreedyOR.pm
 %%SITE_PERL%%/Workflow/Condition/HasUser.pm
+%%SITE_PERL%%/Workflow/Condition/LazyAND.pm
+%%SITE_PERL%%/Workflow/Condition/LazyOR.pm
+%%SITE_PERL%%/Workflow/Condition/Nested.pm
 %%SITE_PERL%%/Workflow/Config.pm
 %%SITE_PERL%%/Workflow/Config/Perl.pm
 %%SITE_PERL%%/Workflow/Config/XML.pm
