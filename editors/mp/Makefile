@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-PORTVERSION=	5.2.3
+PORTVERSION=	5.2.4
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/mp/
 
@@ -71,7 +71,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp-5 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mpsl/mpsl ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mpsl/mpsl2 ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mp-5.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mp_*.mpsl ${DATADIR}

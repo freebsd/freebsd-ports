@@ -1,5 +1,5 @@
 bin/mp-5
-bin/mpsl
+bin/mpsl2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
@@ -44,10 +44,10 @@ bin/mpsl
 %%DATADIR%%/mp_clipboard.mpsl
 %%DATADIR%%/mp_core.mpsl
 %%DATADIR%%/mp_crypt.mpsl
+%%DATADIR%%/mp_dir.mpsl
 %%DATADIR%%/mp_drv.mpsl
 %%DATADIR%%/mp_edit.mpsl
 %%DATADIR%%/mp_file.mpsl
-%%DATADIR%%/mp_keyseq.mpsl
 %%DATADIR%%/mp_macro.mpsl
 %%DATADIR%%/mp_misc.mpsl
 %%DATADIR%%/mp_move.mpsl
