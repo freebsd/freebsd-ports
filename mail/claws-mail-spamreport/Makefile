@@ -1,26 +1,21 @@
-# New ports collection makefile for:	claws-mail-spamreport
-# Date created:		06 April 2007
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spamreport
-PORTVERSION=	0.3.16
-PORTREVISION=	1
+PORTVERSION=	0.3.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	spam_report-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	SpamReport plugin for claws-mail
+COMMENT=	Spam report plugin for Claws Mail
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XORG=	x11

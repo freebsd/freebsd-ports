@@ -1,25 +1,20 @@
-# New ports collection makefile for:	sylpheed-claws-perl
-# Date created:	3 April 2006
-# Whom:	Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	perl
-PORTVERSION=	0.9.19
-PORTREVISION=	2
+PORTVERSION=	0.9.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	perl_plugin-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Perl filtering plugin for claws-mail
+COMMENT=	Perl filtering plugin for Claws Mail
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf

@@ -1,24 +1,20 @@
-# New ports collection makefile for:	claws-mail-python
-# Date created:		27 November 2009
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	python
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	python_plugin-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Python plugin for claws-mail
+COMMENT=	Python scripting plugin for Claws Mail
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes

@@ -1,23 +1,19 @@
-# New ports collection makefile for:	claws-mail-clamd
-# Date created:		2010-12-01
-# Whom:			Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	clamd
-PORTVERSION=	3.5.4
+PORTVERSION=	3.5.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	This plugin scans messages using clamd (Clam AV)
+COMMENT=	ClamAV based antivirus plugin for Claws Mail
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail \
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail \
 		clamd:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
