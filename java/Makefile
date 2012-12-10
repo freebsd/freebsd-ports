@@ -15,10 +15,6 @@
     SUBDIR += cos
     SUBDIR += cryptix-jce
     SUBDIR += dbvis
-    SUBDIR += diablo-jdk15
-    SUBDIR += diablo-jdk16
-    SUBDIR += diablo-jre15
-    SUBDIR += diablo-jre16
     SUBDIR += drexelsnmp
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
@@ -98,9 +94,6 @@
     SUBDIR += jcckit
     SUBDIR += jcommon
     SUBDIR += jdbcpool
-    SUBDIR += jdk15
-    SUBDIR += jdk15-doc
-    SUBDIR += jdk16
     SUBDIR += jdk16-doc
     SUBDIR += jdom
     SUBDIR += jflex
@@ -120,10 +113,8 @@
     SUBDIR += jump
     SUBDIR += junit
     SUBDIR += langspec
-    SUBDIR += linux-sun-jdk15
     SUBDIR += linux-sun-jdk16
     SUBDIR += linux-sun-jdk17
-    SUBDIR += linux-sun-jre15
     SUBDIR += linux-sun-jre16
     SUBDIR += linux-sun-jre17
     SUBDIR += mmake

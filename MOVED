@@ -3942,3 +3942,12 @@ lang/tcl82||2012-12-03|No longer developed, no more consumers
 x11-toolkits/tk82||2012-12-03|No longer developed, no more consumers
 astro/prune|astro/gpsprune|2012-12-03|Project was renamed
 net-p2p/limewire||2012-12-07|Has expired: Abandoned up stream
+java/diablo-jre16|java/openjdk6-jre|2012-12-10|Has expired: Outdated, consider using openjdk6 or openjdk7
+java/diablo-jdk16|java/openjdk6|2012-12-10|Has expired: Outdated, consider using openjdk6 or openjdk7
+java/diablo-jre15|java/openjdk6-jre|2012-12-10|Has expired: Outdated, consider using openjdk6 or openjdk7
+java/diablo-jdk15|java/openjdk6|2012-12-10|Has expired: Outdated, consider using openjdk6 or openjdk7
+java/jdk15|java/openjdk6|2012-12-10|Has expired: EOLed upstream since october 2009
+java/jdk16|java/openjdk6|2012-12-10|Has expired: Outdated, consider using openjdk6 or openjdk7
+java/linux-sun-jre15|java/linux-sun-jre16|2012-12-10|Has expired: EOLed upstream since october 2009
+java/linux-sun-jdk15|java/linux-sun-jdk16|2012-12-10|Has expired: EOLed upstream since october 2009
+java/jdk15-doc|java/jdk16-doc|2012-12-10|Has expired: EOLed upstream since october 2009

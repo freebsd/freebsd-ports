@@ -25,7 +25,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 1.5[+] 1.6[+] 1.7[+])
+#					versions. (allowed values: 1.6[+] 1.7[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -156,10 +156,10 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.5 1.6 1.7
+__JAVA_VERSION_LIST=	1.6 1.7
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
-_JAVA_VENDOR_LIST=		freebsd bsdjava sun openjdk
+_JAVA_VENDOR_LIST=		sun openjdk
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
@@ -167,24 +167,12 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/
 											VERSION=1.7.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_1_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
 											VERSION=1.6.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_NATIVE_FREEBSD_JDK_1_6_INFO=		PORT=java/diablo-jdk16			HOME=${LOCALBASE}/diablo-jdk1.6.0 \
-											VERSION=1.6.0	OS=native	VENDOR=freebsd
-_JAVA_PORT_NATIVE_FREEBSD_JDK_1_5_INFO=		PORT=java/diablo-jdk15			HOME=${LOCALBASE}/diablo-jdk1.5.0 \
-											VERSION=1.5.0	OS=native	VENDOR=freebsd
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5_INFO=		PORT=java/jdk15					HOME=${LOCALBASE}/jdk1.5.0 \
-											VERSION=1.5.0	OS=native	VENDOR=bsdjava
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6_INFO=		PORT=java/jdk16					HOME=${LOCALBASE}/jdk1.6.0 \
-											VERSION=1.6.0	OS=native	VENDOR=bsdjava
-_JAVA_PORT_LINUX_SUN_JDK_1_5_INFO=			PORT=java/linux-sun-jdk15		HOME=${LOCALBASE}/linux-sun-jdk1.5.0 \
-											VERSION=1.5.0	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_SUN_JDK_1_6_INFO=			PORT=java/linux-sun-jdk16		HOME=${LOCALBASE}/linux-sun-jdk1.6.0 \
 											VERSION=1.6.0	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_SUN_JDK_1_7_INFO=			PORT=java/linux-sun-jdk17		HOME=${LOCALBASE}/linux-sun-jdk1.7.0 \
 											VERSION=1.7.0	OS=linux	VENDOR=sun
 
 # Verbose description for each VENDOR
-_JAVA_VENDOR_freebsd=		"FreeBSD Foundation"
-_JAVA_VENDOR_bsdjava=		"BSD Java Porting Team"
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
 _JAVA_VENDOR_sun=			Sun
 
@@ -196,15 +184,10 @@ _JAVA_OS_linux=		Linux
 _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_6
 
 # List all JDK ports
-__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6 \
-					JAVA_PORT_NATIVE_FREEBSD_JDK_1_5 \
-					JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
+__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
-					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6 \
-					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
 					JAVA_PORT_LINUX_SUN_JDK_1_7 \
-					JAVA_PORT_LINUX_SUN_JDK_1_6 \
-					JAVA_PORT_LINUX_SUN_JDK_1_5
+					JAVA_PORT_LINUX_SUN_JDK_1_6
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${_JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
@@ -269,7 +252,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.5+/1.5 1.6+/:S/1.6+/1.6 1.7+/:S/1.7+/1.7/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.6+/1.6 1.7+/:S/1.7+/1.7/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
