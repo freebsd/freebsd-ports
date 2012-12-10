@@ -1,9 +1,5 @@
-# Ports collection makefile for:	swank-clojure
-# Date created:		Jun 17 2010
-# Whom:			olgeni
-#
+# Created by: olgeni
 # $FreeBSD$
-#
 
 PORTNAME=	swank-clojure
 PORTVERSION=	1.2.1
@@ -17,7 +13,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Swank/SLIME support for Clojure
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 WRKSRC=		${WRKDIR}/technomancy-swank-clojure-0af258a
 

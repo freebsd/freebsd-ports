@@ -1,9 +1,5 @@
-# New ports collection makefile for:	antlr
-# Date created:		5 July 2002
-# Whom:			Geoffrey Mainland <mainland@apeiron.net>
-#
+# Created by: Geoffrey Mainland <mainland@apeiron.net>
 # $FreeBSD$
-#
 
 PORTNAME=	antlr
 PORTVERSION=	2.7.7
@@ -19,7 +15,7 @@ CONFLICTS=	pccts-[0-9]*
 
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 OPTIONS_DEFINE=	PYTHON DOCS
 

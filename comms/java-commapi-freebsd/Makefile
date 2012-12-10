@@ -1,9 +1,5 @@
-# New ports collection makefile for:	java freebsd-commapi
-# Date created:         2001/07/01
-# Whom:			Ari Suutari <ari.suutari@syncrontech.com>
-#
+# Created by: Ari Suutari <ari.suutari@syncrontech.com>
 # $FreeBSD$
-#
 
 PORTNAME=	java-commapi-freebsd
 PORTVERSION=	0.9
@@ -18,7 +14,7 @@ BUILD_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
 RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_BUILD=	yes
 

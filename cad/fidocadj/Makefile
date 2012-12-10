@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fidocadj
-# Date created:		2012-05-02
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fidocadj
 PORTVERSION=	0.24
@@ -25,7 +21,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}.sh
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_JAVA=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -43,10 +39,8 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${FDCJ_MANUAL} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${PORTNAME}_manual_en.pdf:docs
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	impact
-# Date created:			Mar 4, 2005
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	impact
 PORTVERSION=	0.7.5.3
@@ -18,7 +13,7 @@ COMMENT=	Dynamic Finite Element Program Suite
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/Impact
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

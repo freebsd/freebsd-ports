@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jep
-# Date created:		2005-03-04
-# Whom:			Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	jep
 PORTVERSION=	2.4
@@ -18,7 +14,7 @@ CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX}
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_PYTHON=	2.2+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

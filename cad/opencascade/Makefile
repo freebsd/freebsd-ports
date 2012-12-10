@@ -1,9 +1,5 @@
-# New ports collection makefile for:  opencascade
-# Date created:               29 November 2005
-# Whom:                       Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=		opencascade
 PORTVERSION=		6.3
@@ -33,7 +29,7 @@ USE_TCL_RUN=	84+
 USE_TCL_THREADS=yes
 USE_JAVA=	yes
 USE_XORG=	xmu
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 #.if defined(MAINTAINER_MODE)
 # linux-sun-jdk was required for 6.1, but 6.2 is OK with diablo-jdk.
 #JAVA_OS=	linux

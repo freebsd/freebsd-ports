@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer and editor for multiple sequence alignments
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	makejars
 WRKSRC=		${WRKDIR}/${PORTNAME}

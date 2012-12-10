@@ -1,9 +1,5 @@
-# Ports collection makefile for:	umlgraph
-# Date created:			15 February, 2010
-# Whom:				Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	umlgraph
 PORTVERSION=	5.6
@@ -20,7 +16,7 @@ LICENSE=	BSD
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		pic2plot:${PORTSDIR}/graphics/plotutils

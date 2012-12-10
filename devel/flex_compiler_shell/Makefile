@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Flex Compiler Shell
-# Date created:		1 Dec 2007
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flex_compiler_shell
 PORTVERSION=	0.20070123
@@ -23,7 +19,7 @@ CONFLICTS=	flex-sdk-3.*
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 SUB_FILES=	fcsh

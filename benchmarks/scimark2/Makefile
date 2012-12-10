@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scimark2-java
-# Date created:		Sat Apr 05 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	scimark2
 PORTVERSION=	2.0
@@ -20,7 +16,7 @@ WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NEED_JAVAC=	yes
 JAVAC_OPTS?=	-O
 

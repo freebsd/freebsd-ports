@@ -1,9 +1,5 @@
-# ports collection makefile for:    Jakarta Commons Modeler
-# Date created:                         February 08, 2007
-# Whom:                                 Nemo Liu <nemoliu@FreeBSD.org>
-#
+# Created by: Nemo Liu <nemoliu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-modeler
 PORTVERSION=	2.0.1
@@ -17,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mechanisms to create Model MBeans compatible with JMX specification
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

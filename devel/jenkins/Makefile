@@ -13,7 +13,7 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open-source continuous integration server
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 FETCH_ARGS=	-Fpr
 NO_BUILD=	yes

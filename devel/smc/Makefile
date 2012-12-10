@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	smc
-# Date created:			Jun 3, 2004
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smc
 PORTVERSION=	4.3.0
@@ -18,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The State Machine Compiler
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 do-install:

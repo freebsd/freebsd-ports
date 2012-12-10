@@ -1,9 +1,5 @@
-# New ports collection makefile for:	maven3
-# Date created:		2011-08-24
-# Whom:			Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	maven3
 DISTVERSION=	3.0.4
@@ -20,7 +16,7 @@ LICENSE=	AL2
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}

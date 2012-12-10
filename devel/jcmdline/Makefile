@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jcmdline
-# Date created:		22 May 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jcmdline
 PORTVERSION=	2.0.0
@@ -14,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java command line processor
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 LICENSE=	MPL

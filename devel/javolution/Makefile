@@ -1,9 +1,5 @@
-# Ports collection makefile for:	javolution
-# Date created:			22 September 2007
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	javolution
 PORTVERSION=	5.5.1
@@ -18,7 +14,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
 USE_ANT=	yes
 ALL_TARGET=	${JDKMVERSION}

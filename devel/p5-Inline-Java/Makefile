@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Inline::Java
-# Date created:			Aug 15, 2002
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Inline-Java
 PORTVERSION=	0.53
@@ -20,7 +15,7 @@ BUILD_DEPENDS=	p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_JAVA=       yes
-JAVA_VERSION=   1.5+
+JAVA_VERSION=   1.6+
 JAVA_OS=        native
 
 MAKE_JOBS_UNSAFE=	yes

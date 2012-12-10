@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	itext
-# Date created:			Apr 2, 2004
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	itext
 PORTVERSION=	4.2.0
@@ -26,7 +21,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	jar jar.rtf jar.rups
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES

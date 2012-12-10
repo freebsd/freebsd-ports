@@ -15,7 +15,7 @@ COMMENT=	A DNA sequence viewer and annotation tool
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	statcvs
-# Date created:				25 Mar 2009
-# Whom:					glarkin
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	statcvs
 PORTVERSION=	0.7.0
@@ -22,7 +18,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 USE_ZIP=	yes
 USE_JAVA=	yes
 USE_ANT=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET=	jar javadoc

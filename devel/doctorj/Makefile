@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  doctorj
-# Date created:                   Wed Apr 16, 2003
-# Whom:                           Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
 # $FreeBSD$
-#
 
 PORTNAME=	doctorj
 PORTVERSION=	5.1.2
@@ -16,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for analyzing Java code and documentation
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jarfile
