@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
@@ -175,7 +175,7 @@ CONFIGURE_ARGS+=	--without-otf --without-m17n-flt
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=		MagickCore.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=		MagickCore:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--with-imagemagick
 .else
 CONFIGURE_ARGS+=	--without-imagemagick
