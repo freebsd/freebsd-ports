@@ -1,12 +1,8 @@
-# New ports collection makefile for:	netpbm
-# Date created:		?
-# Whom:			jmz (original)
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	netpbm
-PORTVERSION=	10.35.86
+PORTVERSION=	10.35.87
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -14,12 +10,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		jbig.1:${PORTSDIR}/graphics/jbigkit \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		jbig:${PORTSDIR}/graphics/jbigkit \
+		jasper:${PORTSDIR}/graphics/jasper \
+		xml2:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 MAKE_JOBS_UNSAFE=	yes
