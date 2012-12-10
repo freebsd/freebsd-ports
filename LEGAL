@@ -112,10 +112,6 @@ dgd/*			net/dgd-lpmud		No monetary gain.  No point in
 						it depends on dgd, which has
 						restrictions on distribution
 						Source tarball may go on CD-ROM
-diablo-caffe-freebsd*-*-* java/diablo-jdk15	License does not allow
-						distribution with fee
-diablo-latte-freebsd*-*-* java/diablo-jre15	License does not allow
-						distribution with fee
 djbdns*			dns/djbdns		No license -- see
 						http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see
@@ -243,14 +239,6 @@ idea.V*.tar.Z		security/idea		A patented algorithm that
 iperf-*			benchmarks/iperf	Cannot charge a fee for the
 						software
 j2me_wireless_toolkit*	java/sun-wtk		No redistribution allowed
-jdk-1_5_0-bin-scsl.*	java/jdk15		Redistribution of pre-compiled
-						binaries is not permitted
-jdk-1_5_0-src-scsl.*	java/jdk15		Redistribution of pre-compiled
-						binaries is not permitted
-jdk-1_5_0-doc.*		java/jdk15-doc		This documentation is under
-						license and export control
-jdk-1_5_0*-i586.bin	java/linux-sun-jdk15	Redistribution of repackaged
-						binaries not permitted
 jdk-6*-i586.bin		java/linux-sun-jdk16	Redistribution of repackaged
 						binaries not permitted
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged
@@ -266,8 +254,6 @@ javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled
 						binaries is not permitted
 jpgraph-2.*		graphics/jpgraph2	Not for commercial use
-jre-1_5*-i586.bin	java/linux-sun-jre15	License does not allow
-						distribution with fee
 jre-6*-i586.bin		java/linux-sun-jre16	License does not allow
 						distribution with fee
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow
