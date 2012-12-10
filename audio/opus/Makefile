@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	opus
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		https://ftp.mozilla.org/pub/mozilla.org/opus/
 
 MAINTAINER=	naddy@FreeBSD.org
-COMMENT=	Interactive speech and audio codec
+COMMENT=	IETF audio codec
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
