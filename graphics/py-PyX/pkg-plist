@@ -95,6 +95,7 @@
 %%PYTHON_SITELIBDIR%%/pyx/filelocator.py
 %%PYTHON_SITELIBDIR%%/pyx/filelocator.pyc
 %%PYTHON_SITELIBDIR%%/pyx/filelocator.pyo
+%%T1CODE%%%%PYTHON_SITELIBDIR%%/pyx/font/_t1code.so
 %%PYTHON_SITELIBDIR%%/pyx/font/__init__.py
 %%PYTHON_SITELIBDIR%%/pyx/font/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyx/font/__init__.pyo
@@ -107,6 +108,9 @@
 %%PYTHON_SITELIBDIR%%/pyx/font/metric.py
 %%PYTHON_SITELIBDIR%%/pyx/font/metric.pyc
 %%PYTHON_SITELIBDIR%%/pyx/font/metric.pyo
+%%PYTHON_SITELIBDIR%%/pyx/font/pfmfile.py
+%%PYTHON_SITELIBDIR%%/pyx/font/pfmfile.pyc
+%%PYTHON_SITELIBDIR%%/pyx/font/pfmfile.pyo
 %%PYTHON_SITELIBDIR%%/pyx/font/t1code.py
 %%PYTHON_SITELIBDIR%%/pyx/font/t1code.pyc
 %%PYTHON_SITELIBDIR%%/pyx/font/t1code.pyo
@@ -161,6 +165,15 @@
 %%PYTHON_SITELIBDIR%%/pyx/mesh.py
 %%PYTHON_SITELIBDIR%%/pyx/mesh.pyc
 %%PYTHON_SITELIBDIR%%/pyx/mesh.pyo
+%%PYTHON_SITELIBDIR%%/pyx/metapost/__init__.py
+%%PYTHON_SITELIBDIR%%/pyx/metapost/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyx/metapost/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyx/metapost/mp_path.py
+%%PYTHON_SITELIBDIR%%/pyx/metapost/mp_path.pyc
+%%PYTHON_SITELIBDIR%%/pyx/metapost/mp_path.pyo
+%%PYTHON_SITELIBDIR%%/pyx/metapost/path.py
+%%PYTHON_SITELIBDIR%%/pyx/metapost/path.pyc
+%%PYTHON_SITELIBDIR%%/pyx/metapost/path.pyo
 %%PYTHON_SITELIBDIR%%/pyx/normpath.py
 %%PYTHON_SITELIBDIR%%/pyx/normpath.pyc
 %%PYTHON_SITELIBDIR%%/pyx/normpath.pyo
@@ -182,6 +195,7 @@
 %%PYTHON_SITELIBDIR%%/pyx/pycompat.py
 %%PYTHON_SITELIBDIR%%/pyx/pycompat.pyc
 %%PYTHON_SITELIBDIR%%/pyx/pycompat.pyo
+%%KPATHSEA%%%%PYTHON_SITELIBDIR%%/pyx/pykpathsea.so
 %%PYTHON_SITELIBDIR%%/pyx/reader.py
 %%PYTHON_SITELIBDIR%%/pyx/reader.pyc
 %%PYTHON_SITELIBDIR%%/pyx/reader.pyo
@@ -200,6 +214,7 @@
 %%PYTHON_SITELIBDIR%%/pyx/version.py
 %%PYTHON_SITELIBDIR%%/pyx/version.pyc
 %%PYTHON_SITELIBDIR%%/pyx/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyx/metapost
 @dirrm %%PYTHON_SITELIBDIR%%/pyx/graph/axis
 @dirrm %%PYTHON_SITELIBDIR%%/pyx/graph
 @dirrm %%PYTHON_SITELIBDIR%%/pyx/font
