@@ -17,7 +17,7 @@ COMMENT=	A small window manager inspired by CTWM, evilwm, and tinywm
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	xcb-util${PORTSDIR}/x11/xcb-util \
+LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm \
 
