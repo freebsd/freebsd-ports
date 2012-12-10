@@ -9,7 +9,7 @@ PORTNAME=	flac
 PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
