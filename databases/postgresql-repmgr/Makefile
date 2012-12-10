@@ -1,19 +1,17 @@
-# New ports collection makefile for: 	repmgr
-# Date created:		January 15, 2011
-# Whom:			alp@sfedu.ru
+# Created by:	alp@sfedu.ru
 # $FreeBSD$
 
 PORTNAME=	postgresql-repmgr
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
-MASTER_SITES=	http://projects.2ndquadrant.it/sites/default/files/
+MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}
 
 MAINTAINER=	alp@sfedu.ru
 COMMENT=	PostgreSQL replication manager
 
 BUILD_DEPENDS=	postgresql-server>=9.0:${PORTSDIR}/databases/postgresql90-server
-RUN_DEPENDS=	postgresql-server>=9.0:${PORTSDIR}/databases/postgresql90-server \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		rsync:${PORTSDIR}/net/rsync
 
 USE_GMAKE=	yes
