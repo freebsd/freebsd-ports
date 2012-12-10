@@ -1,18 +1,20 @@
-# New ports collection makefile for:	pktsuckers
-# Date created:		31 May 1999
-# Whom:			Warren Toomey <wkt@cs.adfa.edu.au>
-#
+# Created by: Warren Toomey <wkt@cs.adfa.edu.au>
 # $FreeBSD$
-#
 
 PORTNAME=	pktsuckers
 PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://minnie.tuhs.org/pub/NetSecurity/
-DISTNAME=	${PORTNAME}1_2
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Log contents of unwanted UDP packets and TCP connections
+
+PLIST_FILES=	libexec/tcpsuck libexec/udpsuck
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^void main|int main|' ${WRKSRC}/tcpsuck.c ${WRKSRC}/udpsuck.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpsuck ${PREFIX}/libexec
