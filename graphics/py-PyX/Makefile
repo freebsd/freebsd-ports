@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	PyX
-# Date created:			Jun 8, 2004
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PyX
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	graphics python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +10,46 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A Python package for the creation of encapsulated PostScript figures
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
+
+OPTIONS_DEFINE=		T1CODE KPATHSEA
+OPTIONS_DEFAULT=	T1CODE KPATHSEA
+T1CODE_DESC=		Fast t1 font encoding/decoding
+KPATHSEA_DESC=		Python wrapper around kpathsea
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MT1CODE} || ${PORT_OPTIONS:MKPATHSEA}
+CFLAGS+=	-I${LOCALBASE}/include
+.endif
+
+.if ${PORT_OPTIONS:MT1CODE}
+PLIST_SUB+=	T1CODE=""
+.else
+PLIST_SUB+=	T1CODE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MKPATHSEA}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
+LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB+=	KPATHSEA=""
+.else
+PLIST_SUB+=	KPATHSEA="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MT1CODE} || ${PORT_OPTIONS:MKPATHSEA}
+do-patch:
+.if ${PORT_OPTIONS:MT1CODE}
+	@${REINPLACE_CMD} -e 's|build_t1code=0|build_t1code=1|' ${WRKSRC}/setup.cfg
+.endif
+.if ${PORT_OPTIONS:MKPATHSEA}
+	@${REINPLACE_CMD} -e 's|build_pykpathsea=0|build_pykpathsea=1|' ${WRKSRC}/setup.cfg
+.endif
+.endif
 
 .include <bsd.port.mk>
