@@ -1,9 +1,4 @@
-# New ports collection makefile for:	obexapp
-# Date created:				22 March 2004
-# Whom:					Guido Falsi <mad@madpilot.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	obexapp
 PORTVERSION=	1.4.15

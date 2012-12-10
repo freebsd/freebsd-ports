@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnokii
-# Date created:				15 March 1999
-# Whom:			Staffan Ulfberg <staffanu@multivac.fatburen.org>
-#
+# Created by: Staffan Ulfberg <staffanu@multivac.fatburen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31

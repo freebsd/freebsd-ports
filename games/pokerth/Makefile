@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pokerth
-# Date created:		24 Jun 2007
-# Whom:			Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pokerth
 PORTVERSION=	0.9.5

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chpasswd
-# Date created:		18 December 2003
-# Whom:			Jean Milanez Melo <jmelo@FreeBSD.org>
-#
+# Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chpasswd
 PORTVERSION=	2.2.4
