@@ -1,0 +1,16 @@
+circuits is a Lightweight Event driven and Asynchronous Application Framework
+for the Python Programming Language with a strong Component Architecture.
+
+circuits also includes a lightweight, high performance and scalable HTTP/WSGI
+compliant web server as well as various I/O and Networking components.
+
+Features:
+
+- Event driven, with concurrency support
+- Component architecture
+- Asynchronous I/O components
+- No compulsory external dependencies
+- Full featured web framework (circuits.web)
+- Coroutine based synchronization primitives
+
+WWW: https://bitbucket.org/prologic/circuits/
