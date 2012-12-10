@@ -1,14 +1,9 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	aRts
-# Date created:				18 February 2002
-# Whom:					will@cvs.kde.org
-#
+# Created by: will@cvs.kde.org
 # $FreeBSD$
-#
 
 PORTNAME=	arts
 PORTVERSION=	1.5.10
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -18,11 +13,22 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio system for the KDE integrated X11 desktop
 
-LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib \
+		audiofile:${PORTSDIR}/audio/libaudiofile \
 		mad:${PORTSDIR}/audio/libmad \
 		ogg:${PORTSDIR}/audio/libogg \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		glib-2.0:${PORTSDIR}/devel/glib20 \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lcms:${PORTSDIR}/graphics/lcms \
+		mng:${PORTSDIR}/graphics/libmng \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
 
 PREFIX=		${KDE_PREFIX}
 WANT_GNOME=	yes
@@ -30,6 +36,10 @@ USE_QT_VER=	3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xft xi \
+		xinerama xrandr xrender xt
 USE_LDCONFIG=	yes
 QTCPPFLAGS+=	-L${LOCALBASE}/lib
 DO_NOT_COMPILE+=gmcop
