@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
-		--enable-pcre8 --enable-pcre16
+		--enable-pcre8 --enable-pcre16 --enable-pcre32
 
 .include <bsd.port.options.mk>
 
