@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-vnc
 PORTVERSION=	0.3.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -16,7 +16,7 @@ COMMENT=	VNC viewer widget for GTK+
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
+		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GNOME=	pygtk2 gnomehack

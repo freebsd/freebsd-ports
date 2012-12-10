@@ -7,7 +7,7 @@
 
 PORTNAME=	sssd
 DISTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		pcre.1:${PORTSDIR}/devel/pcre \
 		unistring.1:${PORTSDIR}/devel/libunistring \
 		nss3.1:${PORTSDIR}/security/nss \
-		sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
+		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		xml2:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	xmlcatalog:${PORTSDIR}/textproc/libxml2 \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl

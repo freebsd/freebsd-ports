@@ -2,6 +2,7 @@
 
 PORTNAME=	meta1
 PORTVERSION=	1.0.0a.13.0
+PORTREVISION=	1
 DISTVERSION=	1.0.Alpha13.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.MeTA1.org/download/.alpha/calist/

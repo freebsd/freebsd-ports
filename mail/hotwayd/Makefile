@@ -7,6 +7,7 @@
 
 PORTNAME=	hotwayd
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
@@ -15,7 +16,7 @@ MAINTAINER=	john@jnielsen.net
 COMMENT=	A Hotmail -> POP3 gateway
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -1,12 +1,7 @@
-# New ports collection makefile for:	cyrus-sasl2-ldapdb
-# Date created:				May 18 2005
-# Whom:					ume@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ldapdb
-PORTVERSION=	2.1.25
+PORTVERSION=	2.1.26
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
@@ -22,7 +17,7 @@ COMMENT=	SASL LDAPDB auxprop plugin
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 CYRUS_SASL2_DIR=${MASTERDIR}/../cyrus-sasl2
 DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
@@ -63,7 +58,7 @@ CONFIGURE_ARGS+=--enable-ldapdb --with-ldap=${LOCALBASE}
 PLIST_FILES=	lib/sasl2/libldapdb.a \
 		lib/sasl2/libldapdb.la \
 		lib/sasl2/libldapdb.so \
-		lib/sasl2/libldapdb.so.2
+		lib/sasl2/libldapdb.so.3
 
 .include <bsd.port.pre.mk>
 

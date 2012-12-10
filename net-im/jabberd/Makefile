@@ -7,7 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://cloud.github.com/downloads/Jabberd2/jabberd2/
 DIST_SUBDIR=	jabber
@@ -174,7 +174,7 @@ SUB_LIST+=	REQUIRE="LOGIN"
 
 .if defined(WITH_CYRUS)
 CONFIGURE_ARGS+=	--with-sasl=cyrus
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--with-sasl=gsasl
 LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl

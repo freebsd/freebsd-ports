@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.7.7
-#PORTREVISION?=	1
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
 		${MASTER_SITE_LOCAL:S/$/:book/}
@@ -51,7 +51,7 @@ PLIST_SUB+=	NEON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}
 PLIST_SUB+=	SASL=""
 .else

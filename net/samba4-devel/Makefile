@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA_PORTNAME}
 PORTVERSION?=		${SAMBA_VERSION}
-PORTREVISION?=		3
+PORTREVISION?=		4
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/samba4
@@ -78,7 +78,7 @@ LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 # BLKID
 LIB_DEPENDS+=		blkid.1:${PORTSDIR}/misc/e2fsprogs-libblkid
 # SASL
-LIB_DEPENDS=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 # tdb
 LIB_DEPENDS+=		tdb.1:${PORTSDIR}/databases/tdb
 CONFIGURE_ARGS+=	--enable-external-libtdb

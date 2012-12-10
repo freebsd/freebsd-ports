@@ -1,13 +1,8 @@
-# New ports collection makefile for:		cyrus-imapd
-# Date created:					Jan 4th 2001
-# Whom:						ume@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.1.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -20,7 +15,7 @@ PATCHFILES=	${PORTNAME}-2.1.16-ipv6-20031121.diff.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^1].*

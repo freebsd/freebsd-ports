@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrus-imspd
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	databases mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://ftp.kfki.hu/packages/mail/cyrus/
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 GNU_CONFIGURE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include

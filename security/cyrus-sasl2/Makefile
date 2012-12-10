@@ -1,13 +1,8 @@
-# New ports collection makefile for:	cyrus-sasl2
-# Date created:				Nov 1 1999
-# Whom:					hetzels@westbend.net
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.25
-PORTREVISION=	2
+PORTVERSION=	2.1.26
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 
@@ -48,6 +43,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--with-dbpath=${PREFIX}/etc/sasldb2 \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--includedir=${PREFIX}/include \
 		--enable-static \
 		--enable-auth-sasldb \

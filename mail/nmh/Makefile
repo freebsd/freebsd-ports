@@ -53,6 +53,7 @@
 
 PORTNAME=	nmh
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	nmh
@@ -104,7 +105,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
 .endif
 
 .if defined(WITH_SASL2)
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl=${PREFIX}
 .endif
 
