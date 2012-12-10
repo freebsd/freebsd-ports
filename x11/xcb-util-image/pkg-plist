@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+include/xcb/xcb_bitops.h
 include/xcb/xcb_image.h
 include/xcb/xcb_pixel.h
 lib/libxcb-image.so.0

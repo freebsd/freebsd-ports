@@ -8,6 +8,7 @@
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.freedesktop.org/software/startup-notification/releases/
 DIST_SUBDIR=	gnome2
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library that supports startup notification spec from freedesktop.org
 
-LIB_DEPENDS=	xcb-util.0:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util
 
 USE_XORG=	x11
 USE_AUTOTOOLS=	libtool
