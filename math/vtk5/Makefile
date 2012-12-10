@@ -1,8 +1,5 @@
 # Created by: Mykola Khotyaintsev <ko@irfu.se>, 
-#             Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	vtk
 PORTVERSION=	5.10.1
@@ -177,7 +174,7 @@ CXXFLAGS+=	-fPIC
 .endif
 USE_JAVA=	yes
 JAVA_VENDOR=	freebsd openjdk
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
     		-DJAVA_AWT_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
     		-DJAVA_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \

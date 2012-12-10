@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-java
-# Date created:		19 June 2012
-# Whom:			Stephen Montgomery-Smith <stephen@FreeBSD.org>
-#
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-java
 PORTVERSION=	1.2.9
@@ -18,7 +14,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src

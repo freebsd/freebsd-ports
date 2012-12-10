@@ -1,9 +1,5 @@
-# New ports collection makefile for:    spread-j
-# Date created:		06 November 2002
-# Whom:			Joshua Goodall <joshua@roughtrade.net>
-#
+# Created by: Joshua Goodall <joshua@roughtrade.net>
 # $FreeBSD$
-#
 
 PORTNAME=	spread
 PORTVERSION=	3.17.3
@@ -19,7 +15,7 @@ COMMENT=	Java client library for the Spread Group Communication System
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 PKGMESSAGE=	${WRKSRC}/../license.txt
 
 ANT?=		${LOCALBASE}/bin/ant

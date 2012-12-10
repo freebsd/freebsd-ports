@@ -1,9 +1,5 @@
-# Ports collection makefile for:        sge
-# Date created:				Fri Jul 11, 2003
-# Whom:					Brooks Davis <brooks@FreeBSD.org>
-#
+# Created by: Brooks Davis <brooks@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
@@ -100,7 +96,7 @@ PLIST_SUB+=	BDB_SPOOL="@comment "
 
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 PLIST_SUB+=	DRMAA=
 CATEGORIES+=	java
 .else

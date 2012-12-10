@@ -1,9 +1,5 @@
-# New ports collection makefile for:   saxon-devel
-# Date created:                03 July 2004
-# Whom:                        Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-#
+# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	saxon
 PORTVERSION=	9.1.0.8
@@ -26,7 +22,7 @@ OPTIONS=	JDOM "Install Jdom support" off \
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

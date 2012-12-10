@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Adobe Acrobar Viewer Version 1.1
-# Date created:				4 Febrary 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	acrobatviewer
 PORTVERSION=	1.1
@@ -19,7 +15,7 @@ COMMENT=	Viewer for the PDF files written in Java(TM)
 #XXX need info-unzip for archive.zip
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_EXTRACT=	yes
 NO_BUILD=	yes
 SUB_FILES+=	AcrobatViewer

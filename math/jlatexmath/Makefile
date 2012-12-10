@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jlatexmath
-# Date created:				11 February 2010
-# Whom:					rfarmer@predatorlabs.net
-#
+# Created by: rfarmer@predatorlabs.net
 # $FreeBSD$
-#
 
 PORTNAME=	jlatexmath
 PORTVERSION=	0.9.7
@@ -19,7 +15,7 @@ LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 USE_ANT=	yes

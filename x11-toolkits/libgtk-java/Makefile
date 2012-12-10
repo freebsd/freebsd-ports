@@ -1,10 +1,5 @@
-# New ports collection makefile for:   libgtk-java
-# Date created:        22 December 2003
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libgtk-java/Makefile,v 1.16 2005/10/29 22:06:06 marcus Exp $
-#
 
 PORTNAME=	libgtk-java
 PORTVERSION=	2.10.2
@@ -23,7 +18,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR} \

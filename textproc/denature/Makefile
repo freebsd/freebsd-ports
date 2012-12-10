@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	denature
-# Date created:			Jan 6, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	denature
 PORTVERSION=	0.6.5
@@ -23,7 +18,7 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 
 USE_PERL5=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 POD2MAN?=	pod2man
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

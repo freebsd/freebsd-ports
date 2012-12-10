@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bittyrant
-# Date created:				2007-04-19
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	bittyrant
 PORTVERSION=	1.1
@@ -26,7 +22,7 @@ USE_DOS2UNIX=	build.xml \
 		org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
 WRKSRC=		${WRKDIR}/BitTyrant

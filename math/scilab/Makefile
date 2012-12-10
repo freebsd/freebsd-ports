@@ -1,9 +1,5 @@
-# New ports collection makefile for:   scilab
-# Date created:        30 April 2001
-# Whom:                js@jeannot.org
-#
+# Created by: js@jeannot.org
 # $FreeBSD$
-#
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
@@ -130,7 +126,7 @@ BUILD_DEPENDS+=	${GUI_DEPENDS} \
 RUN_DEPENDS+=	${GUI_DEPENDS}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 # bsdjava (ie java/jdk16) doesn't have some "extra" classes that aren't in
 # the standard java. namespace, but are required by scilab, such as
 # javax.xml.bind.annotation.XmlSeeAlso

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XT
-# Date created:		23 June 1999
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xt
 PORTVERSION=	20020426a
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
 		${LOCALBASE}/bin/classpath:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 
 .if !defined(NOPORTDOCS)

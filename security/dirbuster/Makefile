@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dirbuster
-# Date created:				2010-03-08
-# Whom:					Niels Heinen
-#
+# Created by: Niels Heinen
 # $FreeBSD$
-#
 
 PORTNAME=	dirbuster
 PORTVERSION=	1.0r1
@@ -16,7 +12,7 @@ COMMENT=	DirBuster allows file and directory brute forcing on web servers
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

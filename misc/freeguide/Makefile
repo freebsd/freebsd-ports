@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freeguide
-# Date Created:		27 October 2005
-# Whom:			Stephen Hurd <shurd@sasktel.net>
-#
+# Created by: Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freeguide
 PORTVERSION=	0.11
@@ -19,7 +15,7 @@ RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
 LICENSE=	GPLv2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 MANCOMPRESSED=	yes
 MAN1=		freeguide.1

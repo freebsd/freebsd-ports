@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rssowl
-# Date created:				February, 1st 2006
-# Whom:					Matthias Sund <m.sund@arcor.de>
-#
+# Created by: Matthias Sund <m.sund@arcor.de>
 # $FreeBSD$
-#
 
 PORTNAME=	rssowl
 PORTVERSION=	1.2.3
@@ -23,7 +19,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_RUN=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nux
-# Date created:		2004-10-28
-# Whom:			Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nux
 PORTVERSION=	1.6
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
 OPTIONS=	XQUERY_TOOL "Install the XQuery command-line tool" on
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -1,10 +1,6 @@
-# New ports collection makefile for:   libgnome-java
-# Date created:        28 February 2004
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/libgnome-java/Makefile,v 1.9 2005/10/29 22:06:06 marcus Exp $
-#
 
 PORTNAME=	libgnome-java
 PORTVERSION=	2.12.7
@@ -24,7 +20,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libgnomeui
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}

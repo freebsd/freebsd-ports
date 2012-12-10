@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grails
-# Date created:			2008-03-10
-# Whom:				Mitchell Smith <mjs@bur.st>
-#
+# Created by: Mitchell Smith <mjs@bur.st>
 # $FreeBSD$
-#
 
 PORTNAME=	grails
 DISTVERSION=	1.3.6
@@ -19,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LICENSE README build.gradle build.properties gradle.properties \

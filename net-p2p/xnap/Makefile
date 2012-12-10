@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XNap
-# Date created:				Mon Nov 19 22:02:27 BRST 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XNap
 DISTVERSION=	2.5r3
@@ -17,7 +13,7 @@ MAINTAINER=	conrads@cox.net
 COMMENT=	Pure Java napster client; also, supports OpenNap & giFT (FastTrack)
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 JAVAVM=		${LOCALBASE}/bin/java

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	htmlcompressor
-# Date created:	   20 Nov 2010
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlcompressor
 PORTVERSION=	0.9.4
@@ -19,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/htmlcompressor %%DATADIR%%/htmlcompressor.jar

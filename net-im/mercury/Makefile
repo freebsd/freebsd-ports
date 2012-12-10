@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mercury
-# Date created:			1 May 2005
-# Whom:				Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mercury
 DISTVERSION=	2.0${RCVER:U}
@@ -26,7 +22,7 @@ RCVER=		rc8a
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 JMF_JARS=	customizer jmf mediaplayer multiplayer

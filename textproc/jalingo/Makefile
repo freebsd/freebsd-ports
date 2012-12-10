@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jalingo
-# Date created:		2007-03-17
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jalingo
 PORTVERSION=	0.6.0
@@ -21,7 +17,7 @@ EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 ALL_TARGET=	dist
 

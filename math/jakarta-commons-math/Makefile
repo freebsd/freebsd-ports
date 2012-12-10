@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Math
-# Date created:				January 30th, 2004
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-math
 PORTVERSION=	2.2
@@ -23,7 +19,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar

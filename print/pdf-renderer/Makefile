@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pdf-renderer
-# Date created:			21 Nov 2008
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pdf-renderer
 PORTVERSION=	0.9.1
@@ -20,7 +16,7 @@ LICENSE=	LGPL21
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar

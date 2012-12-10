@@ -1,7 +1,4 @@
-# Ports collection makefile for:	Jaxup
-# Date created:				17 November 2004
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	jaxup
@@ -26,7 +23,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 

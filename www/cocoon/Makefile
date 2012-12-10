@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Cocoon
-# Date created:		27 June 1999
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cocoon
 PORTVERSION=	2.1.11
@@ -18,7 +14,7 @@ COMMENT=	XML Web Development Framework
 
 USE_RC_SUBR=		${PORTNAME}
 USE_JAVA=		yes
-JAVA_VERSION=		1.5+
+JAVA_VERSION=		1.6+
 USE_PYTHON=		1.6+
 MAKE_ENV=		JAVA_HOME=${JAVA_HOME}
 WRKSRC=			${WRKDIR}/${PDISTNAME}

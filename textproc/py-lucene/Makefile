@@ -1,10 +1,5 @@
-#
-# Ports collection makefile for:	py-lucene
-# Date created:				Nov 2, 2006
-# Whom:					Frank J. Laszlo <laszlof@vonostingroup.com>
-#
+# Created by: Frank J. Laszlo <laszlof@vonostingroup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	PyLucene
 PORTVERSION=	3.6.0
@@ -27,7 +22,7 @@ BROKEN=		does not build
 USE_PYTHON=	2.5+
 USE_GCC=	4.2+
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_GMAKE=	yes
 PATCHSET=	-2
 LUCENE_VER=	3.6.1

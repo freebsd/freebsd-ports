@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dom4j
-# Date created:		7 Oct 2005
-# Whom:			<glewis@FreeBSD.org>
-#
+# Created by: <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dom4j
 PORTVERSION=	1.6.1
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source XML framework for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar

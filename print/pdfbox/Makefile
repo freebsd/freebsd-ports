@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdfbox
-# Date created:				03 July, 2011
-# Whom:					Pedro Giffuni <giffunip@tutopia.com>
-#
+# Created by: Pedro Giffuni <giffunip@tutopia.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pdfbox
 PORTVERSION=	1.6.0
@@ -22,7 +18,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle	\
 LICENSE=	AL2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 DIST_SUBDIR=	${PORTNAME}
 NO_EXTRACT=	yes

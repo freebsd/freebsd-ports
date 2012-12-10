@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xp
-# Date created:        21 September 1999
-# Whom:                mike
-#
+# Created by: mike
 # $FreeBSD$
-#
 
 PORTNAME=	xp
 PORTVERSION=	0.5
@@ -16,7 +12,7 @@ MAINTAINER=	mike@vee.net
 COMMENT=	An XML parser written in Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_WORKSUBDIR=	yes
 NO_BUILD=	yes

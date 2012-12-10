@@ -1,9 +1,5 @@
-# New ports collection makefile for:	truthtable
-# Date created:		2006-07-10
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	truthtable
 PORTVERSION=	1.2.2
@@ -19,7 +15,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Truth Tables generator (written in Java)
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

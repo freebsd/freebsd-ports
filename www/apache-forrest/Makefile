@@ -1,7 +1,4 @@
-# New ports collection makefile for:	apache-forrest
-# Date created:				14 October 2003
-# Whom:					nivit@users.sourceforge.net
-#
+# Created by: nivit@users.sourceforge.net
 # $FreeBSD$
 
 PORTNAME=		apache-forrest

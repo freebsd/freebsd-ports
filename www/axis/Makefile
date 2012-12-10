@@ -1,5 +1,4 @@
-# Created by:	Kensaku MASUDA <greg@greg.rim.or.jp>
-#
+# Created by: Kensaku MASUDA <greg@greg.rim.or.jp>
 # $FreeBSD$
 
 PORTNAME=		axis
@@ -33,7 +32,7 @@ RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:${PORTSDIR}/www/t
 
 NO_BUILD=	YES
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USER=		www
 GROUP=		www
 

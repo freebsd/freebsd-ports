@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sahi
-# Date created:		2012-08-04
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sahi
 PORTVERSION=	3.5.${SAHI_BUILD}
@@ -23,7 +19,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_RUN=	yes
 

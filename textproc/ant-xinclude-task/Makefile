@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XInclude task for Jakarta Ant
-# Date created:				October 18, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xinclude-task
 PORTVERSION=	0.2
@@ -18,7 +14,7 @@ COMMENT=	XInclude task for Jakarta Ant
 BUILD_DEPENDS=	${JAVAJARDIR}/xincluder.jar:${PORTSDIR}/textproc/xincluder
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar

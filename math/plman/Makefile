@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plman
-# Date created:		2005-12-12
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	plman
 PORTVERSION=	2.5.1
@@ -24,7 +20,7 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 REPLACE_FILES=	${WRKSRC}/bin/${PORTNAME}
 WRKSRC=	${WRKDIR}/${PORTNAME}

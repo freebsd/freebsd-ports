@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sakai
-# Date created:         11 March 2008
-# Whom:                 wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	sakai
 PORTVERSION=	2.7.1
@@ -17,7 +13,7 @@ COMMENT=	Sakai is an online Collaboration and Learning Environment
 RUN_DEPENDS=	${LOCALBASE}/${TOMCAT}:${PORTSDIR}/www/tomcat55
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}

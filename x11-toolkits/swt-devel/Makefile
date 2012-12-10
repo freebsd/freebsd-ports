@@ -1,9 +1,5 @@
-# New ports collection makefile for:	swt-devel
-# Date created:				2006-11-16
-# Whom:					Robert C. Noland III <rnoland@FreeBSD.org>
-#
+# Created by: Robert C. Noland III <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	swt
 DISTVERSION=	3.7.1
@@ -29,7 +25,7 @@ USE_ZIP=	yes
 USE_GL=		yes
 USE_GNOME=	gtk20 pkgconfig
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
 USE_LDCONFIG=	yes

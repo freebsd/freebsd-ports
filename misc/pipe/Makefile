@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pipe
-# Date created:			Feb 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pipe
 PORTVERSION=	2.5
@@ -19,7 +14,7 @@ COMMENT=	A tool for creating and analysing Petri nets
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 PLIST_FILES=	bin/pipe
 SUB_FILES=	pipe.sh

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	paros
-# Date created:				25 June 2007
-# Whom:					Wesley Shields <wxs@atarininja.org>
-#
+# Created by: Wesley Shields <wxs@atarininja.org>
 # $FreeBSD$
-#
 
 PORTNAME=	paros
 PORTVERSION=	3.2.13

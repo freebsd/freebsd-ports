@@ -1,9 +1,5 @@
-# New ports collection makefile for:   beepcore-java
-# Date created:                14 May 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	beepcore
 PORTVERSION=	0.9.08
@@ -19,7 +15,7 @@ COMMENT=	An implementation of BEEP core and BEEP mapping for TCP in Java
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 do-install:

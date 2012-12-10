@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Digester
-# Date created:				November 28, 2004
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-digester
 PORTVERSION=	1.8
@@ -21,7 +17,7 @@ BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 MAKE_ARGS=	-Dcommons-beanutils.api=${COMMONS_BEANUTILS_API} \

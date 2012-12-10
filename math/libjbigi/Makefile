@@ -1,9 +1,5 @@
-# New ports collection makefile for:	i2p jbigi JNI
-# Date created:		Fri Dec 23 12:02:32 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libjbigi
 PORTVERSION=	0.8.7
@@ -20,7 +16,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 PROJECTHOST=	i2p
 

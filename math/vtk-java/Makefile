@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vtk-java
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
 
 CATEGORIES+=	java
 PKGNAMESUFFIX=	-java
@@ -18,7 +14,7 @@ WRAP=		Java
 BINARIES=	vtkParseJava vtkWrapJava
 
 USE_JAVA=       yes
-JAVA_VERSION=   1.5+
+JAVA_VERSION=   1.6+
 JAVA_OS=        native
 JAVA_BUILD=     jdk
 
