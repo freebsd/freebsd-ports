@@ -1,14 +1,10 @@
-# New ports collection makefile for:	portsreinstall
-# Date created:		2011-12-25
-# Whom:			Mamoru Sakaue / MwGhennndo
-#
+# Created by: Mamoru Sakaue / MwGhennndo
 # $FreeBSD$
-#
 
 PORTNAME=	portsreinstall
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SFJP/${PORTNAME}/56629/ \
+MASTER_SITES=	SFJP/${PORTNAME}/57607/ \
 		http://www.mwghennndo.com/softwares/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@samurai.mwghennn.net
