@@ -10,7 +10,7 @@ DISTVERSION=	20110801.r247
 CATEGORIES=	games java
 MASTER_SITES=	LOCAL/loader
 
-MAINTAINER=	loader@freebsdmall.com
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Java Game Controller API
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes
