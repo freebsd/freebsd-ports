@@ -12,15 +12,28 @@
 # OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
 # ${OPTION}_DESC		- Description the the ${OPTION}
 #
-# OPTIONS_SINGLE		- List of radio choice grouped options
-# OPTIONS_MULTI			- List of multiple-choice grouped options
+# OPTIONS_SINGLE		- List of single-choice grouped options: 1 and
+# 				  only 1 among N
+# OPTIONS_RADIO			- List of radio-choice grouped options: 0 or 1
+#				  among N
+# OPTIONS_MULTI			- List of multiple-choice grouped options: at
+#				  least 1 among N
+# OPTIONS_GROUP			- List of group-choice grouped options: 0 or
+#				  more among N
 #
-# OPTIONS_SINGLE_${NAME}	- List of OPTIONS grouped as radio choice (for
+# OPTIONS_SINGLE_${NAME}	- List of OPTIONS grouped as single choice (for
 #				the single named as ${NAME} as defined in
 #				OPTIONS_SINGLE)
-# OTPIONS_MULTI_${NAME}		- List of OPTIONS grouped as multiple-choice
-#				(for the multi named as ${NAME} as defined in 
+# OPTIONS_RADIO_${NAME}		- List of OPTIONS grouped as radio choice (for
+#				the radio named as ${NAME} as defined in
+#				OPTIONS_RADIO)
+# OPTIONS_MULTI_${NAME}		- List of OPTIONS grouped as multiple-choice
+#				(for the multi named as ${NAME} as defined in
 #				OPTIONS_MULTI)
+# OPTIONS_GROUP_${NAME}		- List of OPTIONS grouped as group-choice (for
+#				the group named as ${NAME} as defined in
+#				OPTIONS_GROUP)
+#
 # WITH				Set options from the command line
 # WITHOUT			Unset options from the command line
 
@@ -28,6 +41,8 @@
 # Set all the options available for the ports, beginning with the
 # global ones and ending with the ones decided by the maintainer.
 # Options global to the entire ports tree
+.if !defined(OPTIONSMKINCLUDED)
+OPTIONSMKINCLUDED=	bsd.options.mk
 
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 
@@ -127,8 +142,14 @@ COMPLETE_OPTIONS_LIST=	${ALL_OPTIONS}
 .for single in ${OPTIONS_SINGLE}
 COMPLETE_OPTIONS_LIST+=	${OPTIONS_SINGLE_${single}}
 .endfor
+.for radio in ${OPTIONS_RADIO}
+COMPLETE_OPTIONS_LIST+=	${OPTIONS_RADIO_${radio}}
+.endfor
 .for multi in ${OPTIONS_MULTI}
 COMPLETE_OPTIONS_LIST+=	${OPTIONS_MULTI_${multi}}
+.endfor
+.for group in ${OPTIONS_GROUP}
+COMPLETE_OPTIONS_LIST+= ${OPTIONS_GROUP_${group}}
 .endfor
 
 ## Now create the list of activated options
@@ -255,4 +276,5 @@ WITH_${opt}:=  true
 .endif
 .      undef opt
 .endfor
+.endif
 ###
