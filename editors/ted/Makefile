@@ -7,7 +7,7 @@
 
 PORTNAME=	ted
 PORTVERSION=	2.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
@@ -17,7 +17,7 @@ COMMENT=	X11 based RTF editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		paper.2:${PORTSDIR}/print/libpaper

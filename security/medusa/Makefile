@@ -7,6 +7,7 @@
 
 PORTNAME=	medusa
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/

@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-sendmail
 .endif
 
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre \
 			spf2.3:${PORTSDIR}/mail/libspf2
 
 CFLAGS+=	${PTHREAD_CFLAGS}

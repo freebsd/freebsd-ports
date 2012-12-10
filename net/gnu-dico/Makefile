@@ -7,6 +7,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +52,7 @@ PLIST_SUB+=	GUILE="@comment "
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 CONFIGURE_ARGS+=--without-pcre

@@ -7,7 +7,7 @@
 
 PORTNAME=	leafnode
 DISTVERSION=	1.11.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
@@ -15,7 +15,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 

@@ -61,7 +61,7 @@ PLIST_SUB+=		MAP_TOOLS="@comment "
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-pcre

@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_security21
 PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/21//}-apache_${PORTVERSION}
@@ -61,7 +61,7 @@ REINPLACE_ARGS=	-i ""
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} == 22
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 .endif
 
 post-patch:

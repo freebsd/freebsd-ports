@@ -3,6 +3,7 @@
 
 PORTNAME=	confget
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://devel.ringlet.net/textproc/confget/ \
 		LOCAL/sunpoet
@@ -28,7 +29,7 @@ MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 .else
 MAKE_ENV+=	PCRE_CFLAGS="" PCRE_LIBS=""
 .endif

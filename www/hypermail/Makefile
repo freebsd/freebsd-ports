@@ -7,7 +7,7 @@
 
 PORTNAME=	hypermail
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www mail
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	dan@langille.org
 COMMENT=	A program to generate a cross-referenced HTML mail archive
 
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm \
-		pcre.1:${PORTSDIR}/devel/pcre
+		pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail \

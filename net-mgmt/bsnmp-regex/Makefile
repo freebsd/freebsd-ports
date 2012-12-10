@@ -3,7 +3,7 @@
 
 PORTNAME=	bsnmp-regex
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://memberwebs.com/stef/software/bsnmp-regex/
 
@@ -18,7 +18,7 @@ PCRE_DESC=	Use PCRE instead of the default regex library
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre

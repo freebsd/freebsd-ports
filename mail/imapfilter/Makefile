@@ -7,6 +7,7 @@
 
 PORTNAME=	imapfilter
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	stefan@FreeBSD.org

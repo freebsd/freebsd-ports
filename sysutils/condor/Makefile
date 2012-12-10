@@ -7,6 +7,7 @@
 
 PORTNAME=	condor
 PORTVERSION=	7.6.6
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	# empty
 DISTNAME=	condor_src-${PORTVERSION}-all-all

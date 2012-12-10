@@ -165,7 +165,7 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
 # You should not need to fiddle with anything below this point.
 
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 
 .if defined(WITHOUT_DKIM)
 SEDLIST+=	-e 's,^\# (DISABLE_DKIM=),\1,'

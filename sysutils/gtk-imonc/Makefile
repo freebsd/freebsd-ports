@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-imonc
 PORTVERSION=	0.6.4.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://stefan-strigler.de/download/
 

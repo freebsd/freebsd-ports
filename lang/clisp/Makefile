@@ -7,7 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.49
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
@@ -138,7 +138,7 @@ CONFIGURE_ARGS+=--with-module=pari
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-module=pcre
 .endif
 

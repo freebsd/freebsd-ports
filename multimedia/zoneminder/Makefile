@@ -7,6 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.25.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -20,7 +21,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
-		pcre.1:${PORTSDIR}/devel/pcre \
+		pcre.3:${PORTSDIR}/devel/pcre \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \

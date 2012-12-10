@@ -3,7 +3,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.10.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 

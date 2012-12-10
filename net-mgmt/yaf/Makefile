@@ -6,7 +6,7 @@
 
 PORTNAME=	yaf
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	fixbuf:${PORTSDIR}/net/libfixbuf \
-		pcre.1:${PORTSDIR}/devel/pcre
+		pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gnomehack

@@ -7,14 +7,14 @@
 
 PORTNAME=	kbarcode
 PORTVERSION=	2.0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A barcode and label printing application for KDE
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes

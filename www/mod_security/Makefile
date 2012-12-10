@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.6.6
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	An intrusion detection and prevention engine
 LICENSE=	AL2
 MAKE_JOBS_SAFE=	yes
 
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre \
 		apr-1:${PORTSDIR}/devel/apr1
 
 USE_APACHE=	22+

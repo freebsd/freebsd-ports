@@ -3,7 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -19,7 +19,7 @@ EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		pcre.1:${PORTSDIR}/devel/pcre
+		pcre.3:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 

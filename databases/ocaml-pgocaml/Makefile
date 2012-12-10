@@ -7,6 +7,7 @@
 
 PORTNAME=	pgocaml
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/850/
 PKGNAMEPREFIX=	ocaml-

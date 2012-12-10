@@ -7,7 +7,7 @@
 
 PORTNAME=		regexxer
 PORTVERSION=		0.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		SF
 
@@ -16,7 +16,7 @@ COMMENT=		An interactive tool for performing search and replace operations
 
 LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 			glademm-2.4:${PORTSDIR}/devel/libglademm24 \
-			pcre.1:${PORTSDIR}/devel/pcre
+			pcre.3:${PORTSDIR}/devel/pcre
 
 USE_GETTEXT=		yes
 GNU_CONFIGURE=		yes

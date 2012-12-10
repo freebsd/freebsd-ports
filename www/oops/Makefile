@@ -7,7 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/ \
 		ftp://kucha.ru/pub/misc/oops/
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--with-PGSQL=${PREFIX}/pgsql
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-regexp=pcre
 .endif
 

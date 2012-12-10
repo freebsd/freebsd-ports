@@ -7,7 +7,7 @@
 
 PORTNAME=	lemmatizer2
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://reki.ru/products/lemmatizer/ \
 		http://havoc.ru/products/lemmatizer/

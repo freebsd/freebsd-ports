@@ -7,7 +7,7 @@
 
 PORTNAME=	qxv
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	graphics
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/422/
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/iconv \
 		icui18n.48:${PORTSDIR}/devel/icu \
 		intl.9:${PORTSDIR}/devel/gettext \
-		pcre.1:${PORTSDIR}/devel/pcre \
+		pcre.3:${PORTSDIR}/devel/pcre \
 		pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		xcb.2:${PORTSDIR}/x11/xcb

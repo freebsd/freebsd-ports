@@ -7,7 +7,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	0.0.20120716
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/tarball/${GITVERSION}/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -43,7 +43,7 @@ LIB_DEPENDS=	icudata.48:${PORTSDIR}/devel/icu \
 		gd.4:${PORTSDIR}/graphics/gd \
 		mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		onig.1:${PORTSDIR}/devel/oniguruma4 \
-		pcre.1:${PORTSDIR}/devel/pcre \
+		pcre.3:${PORTSDIR}/devel/pcre \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		memcached.10:${PORTSDIR}/databases/libmemcached \
 		c-client4.9:${PORTSDIR}/mail/cclient

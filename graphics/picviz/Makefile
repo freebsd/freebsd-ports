@@ -7,7 +7,7 @@
 
 PORTNAME=	picviz
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics security
 MASTER_SITES=	http://www.wallinfire.net/picviz/attachment/wiki/ReleasesDownload/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?format=raw
@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?format=raw
 MAINTAINER=	ports@timit.nl
 COMMENT=	Parallel coordinates plotter
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_CMAKE=	yes

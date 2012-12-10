@@ -8,7 +8,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/ \
 		PACKETSTORM/groups/thc/

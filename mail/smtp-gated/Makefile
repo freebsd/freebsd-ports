@@ -7,6 +7,7 @@
 
 PORTNAME=	smtp-gated
 PORTVERSION=	1.4.18.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=	--enable-silent-econnreset
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	bsmtrace
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	csjp
@@ -22,7 +22,7 @@ MAN5=		bsmtrace.conf.5
 MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 MAKE_ENV+=	PCRE=1
 .endif
 
