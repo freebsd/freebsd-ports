@@ -1,3 +1,4 @@
-This plugin enables reading application/ms-tnef attachments.
+This plugin enables reading application/ms-tnef attachments
+used by Microsoft Outlook.
 
-WWW:	http://www.claws-mail.org/plugins.php
+WWW: http://www.claws-mail.org/plugins.php

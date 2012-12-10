@@ -1,24 +1,20 @@
-# New ports collection makefile for:	claws-mail-attach_warner
-# Date created:	2 March 2007
-# Whom:	Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	attach_warner
-PORTVERSION=	0.2.24
+PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	attachwarner-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Not attached file warning plugin for claws-mail
+COMMENT=	Not attached file warning plugin for Claws Mail
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_ICONV=	yes

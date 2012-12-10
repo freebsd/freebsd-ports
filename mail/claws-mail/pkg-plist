@@ -21,9 +21,11 @@ include/claws-mail/addrindex.h
 include/claws-mail/addritem.h
 include/claws-mail/addrquery.h
 include/claws-mail/addrselect.h
+include/claws-mail/advsearch.h
 include/claws-mail/alertpanel.h
 include/claws-mail/autofaces.h
 include/claws-mail/browseldap.h
+include/claws-mail/claws-features.h
 include/claws-mail/codeconv.h
 include/claws-mail/common/base64.h
 include/claws-mail/common/claws.h
@@ -53,7 +55,6 @@ include/claws-mail/common/version.h
 include/claws-mail/common/xml.h
 include/claws-mail/common/xmlprops.h
 include/claws-mail/compose.h
-include/claws-mail/config.h
 include/claws-mail/crash.h
 include/claws-mail/customheader.h
 include/claws-mail/displayheader.h
@@ -141,6 +142,7 @@ include/claws-mail/matcher.h
 include/claws-mail/matcher_parser.h
 include/claws-mail/matcher_parser_lex.h
 include/claws-mail/matcher_parser_parse.h
+include/claws-mail/matchertypes.h
 include/claws-mail/mbox.h
 include/claws-mail/message_search.h
 include/claws-mail/messageview.h
@@ -198,6 +200,7 @@ include/claws-mail/privacy.h
 include/claws-mail/procheader.h
 include/claws-mail/procmime.h
 include/claws-mail/procmsg.h
+include/claws-mail/proctypes.h
 include/claws-mail/quote_fmt.h
 include/claws-mail/quote_fmt_lex.h
 include/claws-mail/quote_fmt_parse.h
@@ -217,6 +220,7 @@ include/claws-mail/undo.h
 include/claws-mail/unmime.h
 include/claws-mail/uri_opener.h
 include/claws-mail/vcard.h
+include/claws-mail/viewtypes.h
 include/claws-mail/wizard.h
 %%BOGO_PLUG%%lib/claws-mail/plugins/bogofilter.a
 %%BOGO_PLUG%%lib/claws-mail/plugins/bogofilter.la
@@ -302,31 +306,31 @@ share/applications/claws-mail.desktop
 share/icons/hicolor/128x128/apps/claws-mail-128x128.png
 share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/apps/claws-mail-64x64.png
-share/locale/bg/LC_MESSAGES/claws-mail.mo
-share/locale/ca/LC_MESSAGES/claws-mail.mo
-share/locale/cs/LC_MESSAGES/claws-mail.mo
-share/locale/de/LC_MESSAGES/claws-mail.mo
-share/locale/en_GB/LC_MESSAGES/claws-mail.mo
-share/locale/es/LC_MESSAGES/claws-mail.mo
-share/locale/fi/LC_MESSAGES/claws-mail.mo
-share/locale/fr/LC_MESSAGES/claws-mail.mo
-share/locale/hu/LC_MESSAGES/claws-mail.mo
-share/locale/id_ID/LC_MESSAGES/claws-mail.mo
-share/locale/it/LC_MESSAGES/claws-mail.mo
-share/locale/ja/LC_MESSAGES/claws-mail.mo
-share/locale/lt/LC_MESSAGES/claws-mail.mo
-share/locale/nl/LC_MESSAGES/claws-mail.mo
-share/locale/pl/LC_MESSAGES/claws-mail.mo
-share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
-share/locale/ru/LC_MESSAGES/claws-mail.mo
-share/locale/sk/LC_MESSAGES/claws-mail.mo
-share/locale/sv/LC_MESSAGES/claws-mail.mo
-share/locale/uk/LC_MESSAGES/claws-mail.mo
-share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
-share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
-@dirrmtry share/locale/id_ID/LC_MESSAGES
-@dirrmtry share/locale/id_ID
+%%NLS%%share/locale/bg/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/de/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/es/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/it/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
 @dirrmtry %%DATADIR%%
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual/pl
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual/fr

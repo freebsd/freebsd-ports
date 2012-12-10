@@ -1,25 +1,21 @@
-# New ports collection makefile for:	sylpheed-claws-notification
-# Date created:	7 April 2006
-# Whom:	Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	notification
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	notification_plugin-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	New/unread mail notification plugin for claws-mail
+COMMENT=	New mail notification plugin for Claws Mail
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf

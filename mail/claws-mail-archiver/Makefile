@@ -1,25 +1,20 @@
-# New ports collection makefile for:	sylpheed-claws-mail-archiver
-# Date created:		28 june 2008
-# Whom:			Martin Wilke
-#
+# Created by: Martin Wilke
 # $FreeBSD$
-#
 
 PORTNAME=	archiver
-PORTVERSION=	0.6.12
-PORTREVISION=	1
+PORTVERSION=	0.6.13
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	archive-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	mail archiver plugin for claws-mail
+COMMENT=	Mail archiver plugin for Claws Mail
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf

@@ -1,25 +1,21 @@
-# New ports collection makefile for:	rssyl
-# Date created:				17 December 2005
-# Whom:					v.velox@vvelox.net
-#
+# Created by: v.velox@vvelox.net
 # $FreeBSD$
-#
 
 PORTNAME=	rssyl
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 PORTEPOCH=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	A RSS/Atom plugin for claws-mail
+COMMENT=	RSS/Atom feed reader plugin for Claws Mail
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_AUTOTOOLS=	autoconf
 USE_ICONV=	yes

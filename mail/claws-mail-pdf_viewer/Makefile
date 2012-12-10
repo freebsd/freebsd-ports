@@ -1,24 +1,20 @@
-# New ports collection makefile for:	claws-mail-pdf_viewer
-# Date created:		2007-03-02
-# Whom:			Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	pdf_viewer
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	This claws-mail plugin enables viewing of PDF and PS files
+COMMENT=	PDF and PostScript viewer plugin for Claws Mail
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_ICONV=	yes

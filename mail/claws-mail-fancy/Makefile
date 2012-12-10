@@ -1,27 +1,22 @@
-# New ports collection makefile for:	claws-mail-fancy
-# Date created:		2009-07-06
-# Whom:			Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	fancy
-PORTVERSION=	0.9.16
-PORTREVISION=	1
+PORTVERSION=	0.9.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Webkit based HTML renderer plugin for claws-mail
+COMMENT=	Webkit based HTML renderer plugin for Claws Mail
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		soup-gnome:${PORTSDIR}/devel/libsoup-gnome \
-		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+		webkitgtk:${PORTSDIR}/www/webkit-gtk2
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf

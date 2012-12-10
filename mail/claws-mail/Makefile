@@ -1,42 +1,47 @@
-# New ports collection makefile for:	claws-mail
-# Date created:		3 January 2002
-# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-#
+# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
+COMMENT=	Lightweight and very featureful GTK+ based e-mail and news client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		curl:${PORTSDIR}/ftp/curl \
 		cairo:${PORTSDIR}/graphics/cairo \
+		png15:${PORTSDIR}/graphics/png \
+		etpan:${PORTSDIR}/mail/libetpan \
+		gmp:${PORTSDIR}/math/gmp \
+		freetype:${PORTSDIR}/print/freetype2 \
+		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
+		gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		gpg-error:${PORTSDIR}/security/libgpg-error \
+		tasn1:${PORTSDIR}/security/libtasn1 \
+		nettle:${PORTSDIR}/security/nettle \
+		p11-kit:${PORTSDIR}/security/p11-kit \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		png15:${PORTSDIR}/graphics/png \
-		gnutls.47:${PORTSDIR}/security/gnutls \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	sylpheed-claws
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xinerama xrandr \
-		xrender
-USE_GNOME=	gnomehack pkgconfig gtk20 glib20 atk libartlgpl2 pango libxml2
+USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
+		xfixes xi xinerama xrandr xrender
+USE_GNOME=	atk glib20 gnomehack gtk20 libartlgpl2 libxml2 pango
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
+USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -44,27 +49,26 @@ MAN1=		claws-mail.1
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
-
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --disable-dbus
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS_DEFINE=	BOGOFILTER COMPFACE DEBUG DILLO ENCHANT GPGME IPV6 JPILOT LDAP \
 		MANUAL SPAMASSASSIN STARTUP THEMES
 
-BOGOFILTER_DESC=	Enable bogofilter plugin
-COMPFACE_DESC=		Enable X-Face support
-DILLO_DESC=		Enable Dillo HTML viewer plugin
-ENCHANT_DESC=		Enable spell checking support
-GPGME_DESC=		Enable PGP/GnuPG/SMIME plugins
-JPILOT_DESC=		Enable JPilot plugin
-MANUAL_DESC=		Build and install manual files
-SPAMASSASSIN_DESC=	Enable SpamAssassin plugin
-STARTUP_DESC=		Enable startup notification support
-THEMES_DESC=		Install additional themes
+BOGOFILTER_DESC=	Bogofilter plugin
+COMPFACE_DESC=		X-Face support
+DILLO_DESC=		Dillo HTML viewer plugin
+ENCHANT_DESC=		Spell checking support
+GPGME_DESC=		PGP/GnuPG/SMIME plugins
+JPILOT_DESC=		JPilot plugin
+MANUAL_DESC=		User manual
+SPAMASSASSIN_DESC=	SpamAssassin plugin
+STARTUP_DESC=		Startup notification support
+THEMES_DESC=		Additional themes
 
-OPTIONS_DEFAULT=	COMPFACE ENCHANT IPV6 MANUAL STARTUP THEMES
+OPTIONS_DEFAULT=	COMPFACE ENCHANT MANUAL STARTUP THEMES
 
 .include <bsd.port.options.mk>
 
@@ -78,7 +82,7 @@ PLIST_SUB+=		BOGO_PLUG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOMPFACE}
-LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
+LIB_DEPENDS+=		compface:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
@@ -115,6 +119,14 @@ CONFIGURE_ARGS+=	--disable-manual
 PLIST_SUB+=		MANUAL="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@Comment "
+.endif
+
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin-plugin
@@ -129,7 +141,8 @@ PLIST_SUB+=		GPGME=""
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
 			--enable-pgpinline-plugin --enable-smime-plugin
 LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme \
-			gpg-error:${PORTSDIR}/security/libgpg-error
+			gpg-error:${PORTSDIR}/security/libgpg-error \
+			assuan:${PORTSDIR}/security/libassuan
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .else
 PLIST_SUB+=		GPGME="@comment "
@@ -156,7 +169,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MSTARTUP}
-LIB_DEPENDS+=		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification \
+			xcb-util:${PORTSDIR}/x11/xcb-util
 CONFIGURE_ARGS+=	--enable-startup-notification
 .else
 CONFIGURE_ARGS+=	--disable-startup-notification

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	claws-mail-gdata
-# Date created:		2011-12-17
-# Whom:			Pawel Pekala <pawel@FreeBSD.org>
-#
+# Created by: Pawel Pekala <pawel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdata
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -17,9 +13,9 @@ COMMENT=	Plugin providing Google Contacts in the Tab-address completion
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 LIB_DEPENDS=	gdata:${PORTSDIR}/devel/libgdata
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
