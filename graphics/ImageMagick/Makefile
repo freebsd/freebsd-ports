@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.9-4
+DISTVERSION=	6.8.0-7
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
@@ -26,7 +26,7 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 		ftp://ftp.is.co.za/pub/imagemagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Image processing tools
 
 LICENSE=	AL2
@@ -211,7 +211,7 @@ CONFIGURE_ARGS+=	--without-gslib
 
 .if ${PORT_OPTIONS:MLQR}
 CONFIGURE_ARGS+=	--with-lqr
-LIB_DEPENDS+=		lqr-1.3:${PORTSDIR}/graphics/liblqr-1
+LIB_DEPENDS+=		lqr-1:${PORTSDIR}/graphics/liblqr-1
 .else
 CONFIGURE_ARGS+=	--without-lqr
 .endif
@@ -339,7 +339,7 @@ CONFIGURE_ARGS+=	--without-rsvg --without-xml
 
 # Pango support
 .if ${PORT_OPTIONS:MPANGO} && !defined(WITHOUT_X11)
-LIB_DEPENDS+=		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
+LIB_DEPENDS+=		pangocairo-1\.0:${PORTSDIR}/x11-toolkits/pango
 PLIST_SUB+=		PANGO=""
 .else
 CONFIGURE_ARGS+=	--without-pango
@@ -371,14 +371,9 @@ INSTALL_TARGET=	install
 .endif
 
 # Test suite, requires installed ghostscript to pass
-.if ${ARCH} == sparc64
-_NO_IMAGEMAGICK_TESTS=yes
-.endif
 
 .if defined(PACKAGE_BUILDING) || ${PORT_OPTIONS:MTESTS}
-. if !defined(_NO_IMAGEMAGICK_TESTS)
 USE_GHOSTSCRIPT_BUILD=yes
-. endif
 .endif
 
 post-patch:
@@ -401,7 +396,7 @@ post-patch:
 	@${PERL} -pi -e 's|^(MagickLibSubdir).*$$|\1="ImageMagick"|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
-	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
+#	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
 .if ${_IMAGEMAGICK_THREADS} == "yes"
@@ -441,7 +436,7 @@ post-install: test
 .endif
 
 test check:
-.if (${PORT_OPTIONS:MTESTS} || defined(PACKAGE_BUILDING)) && !defined(_NO_IMAGEMAGICK_TESTS)
+.if (${PORT_OPTIONS:MTESTS} || defined(PACKAGE_BUILDING))
 	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} check
 .endif
 

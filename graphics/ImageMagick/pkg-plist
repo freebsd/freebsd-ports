@@ -397,15 +397,15 @@ lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick++.so
-lib/libMagick++.so.5
+lib/libMagick++.so.6
 lib/libMagickCore.a
 lib/libMagickCore.la
 lib/libMagickCore.so
-lib/libMagickCore.so.5
+lib/libMagickCore.so.6
 lib/libMagickWand.a
 lib/libMagickWand.la
 lib/libMagickWand.so
-lib/libMagickWand.so.5
+lib/libMagickWand.so.6
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/Magick++.pc
 libdata/pkgconfig/ImageMagick.pc
@@ -529,6 +529,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/white-highlight.png
 %%PORTDOCS%%%%DOCSDIR%%/images/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/wizard.png
+%%PORTDOCS%%%%DOCSDIR%%/images/ImageMagick.ico
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ImageMagickObject.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Blob.html
@@ -1343,6 +1344,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/version.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/wand-view.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/magick++-classes.html
 %%PORTDOCS%%%%DOCSDIR%%/www/architecture.html
 %%PORTDOCS%%%%DOCSDIR%%/www/binary-releases.html
 %%PORTDOCS%%%%DOCSDIR%%/www/changelog.html
