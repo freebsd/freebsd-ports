@@ -116,5 +116,4 @@ libdata/pkgconfig/libcollectdclient.pc
 @dirrm include/collectd
 @dirrm %%DATADIR%%
 @exec mkdir -p /var/db/collectd
-@cwd /
-@dirrmtry /var/db/collectd
+@unexec rmdir /var/db/collectd 2>/dev/null || true
