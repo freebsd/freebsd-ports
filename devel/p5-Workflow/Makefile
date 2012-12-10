@@ -1,18 +1,17 @@
-# New ports collection makefile for:	p5-Workflow
-# Date created:				8 June 2006
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski
 # $FreeBSD$
-#
 
 PORTNAME=	Workflow
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Simple, flexible system to implement workflows
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Class-Observable>=0:${PORTSDIR}/devel/p5-Class-Observable \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -52,8 +51,13 @@ MAN3=	Workflow.3 \
 	Workflow::Action::Null.3 \
 	Workflow::Base.3 \
 	Workflow::Condition.3 \
+	Workflow::Condition::CheckReturn.3 \
 	Workflow::Condition::Evaluate.3 \
+	Workflow::Condition::GreedyOR.3 \
 	Workflow::Condition::HasUser.3 \
+	Workflow::Condition::LazyAND.3 \
+	Workflow::Condition::LazyOR.3 \
+	Workflow::Condition::Nested.3 \
 	Workflow::Config.3 \
 	Workflow::Config::Perl.3 \
 	Workflow::Config::XML.3 \
