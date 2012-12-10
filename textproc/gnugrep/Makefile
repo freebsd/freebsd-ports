@@ -7,6 +7,7 @@
 
 PORTNAME=	grep
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -40,7 +41,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-perl-regexp
 .endif

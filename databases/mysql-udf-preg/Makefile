@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-udf-preg
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mysqludf.org/lib_mysqludf_preg/
 DISTNAME=	lib_mysqludf_preg-${PORTVERSION}

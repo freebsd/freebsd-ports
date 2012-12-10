@@ -7,7 +7,7 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Determine the malware activity on a network
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		magic.1:${PORTSDIR}/sysutils/file \
-		pcre.1:${PORTSDIR}/devel/pcre \
+		pcre.3:${PORTSDIR}/devel/pcre \
 		adns.1:${PORTSDIR}/dns/adns
 
 .if defined(WITH_PRELUDE)

@@ -3,6 +3,7 @@
 
 PORTNAME=	repsnapper
 PORTVERSION=	2.0.0b01
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://nodeload.github.com/timschmidt/repsnapper/tarball/
 DISTNAME=	${PORTVERSION}

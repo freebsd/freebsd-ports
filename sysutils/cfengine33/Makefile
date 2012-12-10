@@ -4,6 +4,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.3.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -29,7 +30,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-pcre=${LOCALBASE} \
 		--enable-fhs
 
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 OPTIONS_SINGLE=	DB

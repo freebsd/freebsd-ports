@@ -3,6 +3,7 @@
 
 PORTNAME=	aifad
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/aifad/downloads/
 

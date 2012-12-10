@@ -7,6 +7,7 @@
 
 PORTNAME=	gsmartcontrol
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://artificialtime.com/${PORTNAME}/
 

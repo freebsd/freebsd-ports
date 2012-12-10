@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif

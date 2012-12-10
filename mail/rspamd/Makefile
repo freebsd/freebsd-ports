@@ -7,6 +7,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://cdn.bitbucket.org/vstakhov/rspamd/downloads/
 
@@ -15,7 +16,7 @@ COMMENT=	Fast spam filtering system
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		gmime-2.0:${PORTSDIR}/mail/gmime2 \
 		event-1.4:${PORTSDIR}/devel/libevent
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-rc
 MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/3.3/3.3.6.91/
@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif

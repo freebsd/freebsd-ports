@@ -7,7 +7,7 @@
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils www
 MASTER_SITES=	GOOGLE_CODE CRITICAL
 
@@ -19,7 +19,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	ftgl:${PORTSDIR}/graphics/ftgl \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		pcre.1:${PORTSDIR}/devel/pcre
+		pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_PKGCONFIG=	build

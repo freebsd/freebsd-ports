@@ -3,6 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}

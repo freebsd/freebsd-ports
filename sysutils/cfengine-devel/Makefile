@@ -7,6 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.4.0b2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -38,7 +39,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-pcre=${LOCALBASE} \
 		--enable-fhs
 
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 
 OPTIONS=	TOKYOCABINET	"Enable TokyoCabinet support"		on \
 		QDBM	"Enable QDBM support"				off \

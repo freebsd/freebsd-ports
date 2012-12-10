@@ -8,14 +8,14 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.4.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GTK+ set of document centric objects and utilities
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 NO_LATEST_LINK=	yes
 

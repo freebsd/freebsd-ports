@@ -7,6 +7,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
 DISTNAME=	InspIRCd-${PORTVERSION}

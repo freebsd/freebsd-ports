@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.4.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -26,7 +26,7 @@ NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \

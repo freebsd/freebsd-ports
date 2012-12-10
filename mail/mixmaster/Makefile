@@ -7,7 +7,7 @@
 
 PORTNAME=	mixmaster
 PORTVERSION=	2.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME}/Mixmaster/${PORTVERSION} \
 		ftp://ftp.erisiandiscord.de/pub/misc/

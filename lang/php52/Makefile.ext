@@ -584,7 +584,7 @@ CONFIGURE_ARGS+=--with-pcre-regex=yes
 
 PHP_HEADER_DIRS=pcrelib
 .	else
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 
 CONFIGURE_ARGS+=--with-pcre-regex=${LOCALBASE}
 .	endif

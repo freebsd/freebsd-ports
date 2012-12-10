@@ -3,7 +3,7 @@
 
 PORTNAME=	tora
 PORTVERSION=	2.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
@@ -13,7 +13,7 @@ COMMENT=	Toolkit for Oracle
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2 \
-		pcre.1:${PORTSDIR}/devel/pcre
+		pcre.3:${PORTSDIR}/devel/pcre
 
 OPTIONS_DEFINE=	PGSQL MYSQL DOCS
 OPTIONS_DEFINE_i386=	ORACLE
