@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Java
-# Date Created:				27 January 2006
-# Whom:					Simun Mikecin <numisemis@yahoo.com>
-#
+# Created by: Simun Mikecin <numisemis@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Java
 PORTVERSION=	4.7
@@ -18,7 +14,7 @@ COMMENT=	Perl extension for accessing a JVM remotely or locally
 USE_RC_SUBR=	javaserver
 PERL_CONFIGURE=	YES
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 MAN3=		Java.3 JavaArray.3
 

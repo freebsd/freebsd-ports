@@ -1,9 +1,5 @@
-# New ports collection makefile for:   musiccontrol
-# Date created:        9 june 2003
-# Whom:                Christian Laursen <xi@borderworlds.dk>
-#
+# Created by: Christian Laursen <xi@borderworlds.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	musiccontrol
 PORTVERSION=	0.3
@@ -22,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/simplemod:${PORTSDIR}/audio/simplemod
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_FILES=	share/java/classes/MusicControl-${PORTVERSION}.jar bin/musiccontrol
 

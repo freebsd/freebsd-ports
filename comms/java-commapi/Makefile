@@ -1,6 +1,4 @@
-# New ports collection makefile for:    Java Commapi
-# Date created:		2001/07/01
-# Whom:			Ari Suutari <ari.suutari@syncrontech.com>
+# Created by: Ari Suutari <ari.suutari@syncrontech.com>
 #
 # $FreeBSD$
 #
@@ -17,7 +15,7 @@ COMMENT=	Sun's Java Communications API
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_CDROM=	Sun has a funky license for this software
 RESTRICTED=	no commercial use

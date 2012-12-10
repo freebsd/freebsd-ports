@@ -1,10 +1,6 @@
-# New ports collection makefile for:   libglade-java
-# Date created:        28 February 2004
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/libglade-java/Makefile,v 1.8 2005/10/29 22:06:06 marcus Exp $
-#
 
 PORTNAME=	libglade-java
 PORTVERSION=	2.12.8
@@ -26,7 +22,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libglade2
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}

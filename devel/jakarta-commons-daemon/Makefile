@@ -1,9 +1,5 @@
-# New ports collection makefile for:   commons-daemon
-# Date created:        9 July 2007
-# Whom:                Ronald Klop <ronald@echteman.nl>
-#
+# Created by: Ronald Klop <ronald@echteman.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-daemon
 PORTVERSION=	1.0.10
@@ -22,7 +18,7 @@ COMMENT=	Wrapper code to start/stop a Java application as a daemon
 LICENSE=	AL2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-java=${JAVA_HOME}

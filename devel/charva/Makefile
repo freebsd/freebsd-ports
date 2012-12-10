@@ -1,6 +1,4 @@
-# Ports collection makefile for:	charva
-# Date created:			12 December 2006
-# Whom:				Alex Dupre <ale@FreeBSD.org>
+# Created by: Alex Dupre <ale@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -20,7 +18,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	clean makeDLL dist
 

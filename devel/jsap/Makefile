@@ -16,7 +16,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java package to parse command-line arguments
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)

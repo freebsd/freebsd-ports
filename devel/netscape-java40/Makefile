@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netscape-java40
-# Date created:		25 January 2006
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	netscape-java40
 PORTVERSION=	1999.11.15
@@ -17,7 +13,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Classes to allow a Java applet access to JavaScript objects
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 JARFILES=	java40.jar LICENSE.java40.txt

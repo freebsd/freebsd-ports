@@ -1,9 +1,5 @@
-# Ports collection makefile for:	sabre
-# Date created:			28 Jun 2010
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sabre
 PORTVERSION=	20100501
@@ -20,7 +16,7 @@ LICENSE=	LGPL21
 WRKSRC=		${WRKDIR}/Simple\ API\ for\ Binary\ REpresentations\ \(SABRE\)
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	dist
 

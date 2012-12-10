@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ireport
-# Date created:		21 May 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ireport
 PORTVERSION=	3.7.6
@@ -17,7 +13,7 @@ COMMENT=	A visual report builder/designer for JasperReports
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_DOS2UNIX=	*.txt
 NO_BUILD=	yes
 

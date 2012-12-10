@@ -1,9 +1,5 @@
-# New ports collection makefile for:	obfuscatejs
-# Date created:		2006-04-21
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	obfuscatejs
 PORTVERSION=	0.3.6
@@ -24,7 +20,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	OBFUSCATEJSJAR=${DATADIR}/${OBFUSCATEJSJAR}

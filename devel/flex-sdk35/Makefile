@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Adobe Flex SDK
-# Date created:		18 Oct 2007
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flex-sdk
 PORTVERSION=	3.5.0.12683
@@ -21,7 +17,7 @@ CONFLICTS=	ja-flex-sdk-2.* flex-sdk-2.* flex-sdk-4.*
 NO_LATEST_LINK=	YES
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}
 SUB_FILES=	${SCRIPTS:C/\$/.sh/g}
 NO_BUILD=	YES

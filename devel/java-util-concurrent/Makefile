@@ -1,9 +1,5 @@
-# New ports collection makefile for:	java-util-concurrent
-# Date created:				2004-11-19
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	util-concurrent
 PORTVERSION=	1.3.4
@@ -17,7 +13,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Utility classes for concurrent Java programming
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	dist

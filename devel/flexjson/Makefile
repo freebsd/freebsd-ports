@@ -1,9 +1,5 @@
-# Ports collection makefile for:	FlexJson
-# Date created:			20 Apr 2006
-# Whom:				Nemo Liu <nemoliu@FreeBSD.org>
-#
+# Created by: Nemo Liu <nemoliu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flexjson
 PORTVERSION=	1.6
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight Java library to write JSON
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 USE_ZIP=	yes
 

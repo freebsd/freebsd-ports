@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinylaf
-# Date created:		22 May 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tinylaf
 PORTVERSION=	1.4.0
@@ -16,7 +12,7 @@ COMMENT=	A pluggable Look and Feel for Java
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 JARFILE=	${PORTNAME}.jar tinycp.jar

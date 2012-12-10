@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pmd
-# Date created:				2006-06-07
-# Whom:	      				Alex Varju <freebsd-ports@varju.ca>
-#
+# Created by: Alex Varju <freebsd-ports@varju.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	pmd
 PORTVERSION=	3.7
@@ -19,7 +15,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar

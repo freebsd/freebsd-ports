@@ -1,8 +1,4 @@
-# New ports collection makefile for:	electric-ng
-# Date created:		2006-07-14
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
 #
 
@@ -21,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated VLSI design system
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 		bin/electric-ng

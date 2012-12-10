@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jcc
-# Date created:		16 May 2008
-# Whom:			clsung@FreeBSD.org
-#
+# Created by: clsung@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	jcc
 PORTVERSION=	2.13
@@ -20,7 +16,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	JCC
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_VENDOR=	freebsd
 USE_GCC=	4.2+
 

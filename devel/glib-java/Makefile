@@ -1,10 +1,6 @@
-# New ports collection makefile for:   glib-java
-# Date created:        26 Oct 2005
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/glib-java/Makefile,v 1.4 2006/09/14 12:37:40 ahze Exp $
-#
 
 PORTNAME=	glib-java
 PORTVERSION=	0.4.2
@@ -21,7 +17,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack glib20
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}

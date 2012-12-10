@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Fujaba
-# Date created:			July 14, 2005
-# Whom:				Gerrit Beine (<tux@pinguru.net>)
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fujaba
 PORTVERSION=	4.3.2
@@ -19,7 +15,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Fujaba\ Tool\ Suite\ ${PORTVERSION}
 

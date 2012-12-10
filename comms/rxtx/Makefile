@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rxtx
-# Whom:					Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# Date Created:				2004-04-10 00:15:35
-#
+# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rxtx
 PORTVERSION=	2.2p2
@@ -19,7 +15,7 @@ COMMENT=	Native interface to serial ports in Java
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 GNU_CONFIGURE=	yes
 
