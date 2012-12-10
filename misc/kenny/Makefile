@@ -1,53 +1,39 @@
-# ex:ts=8
-#
-# New ports collection makefile for:	kenny
-# Date created:		2001/12/25
-# Whom:			Alan E alane@FreeBSD.org
-#
+# Created by: Alan E <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kenny
 PORTVERSION=	1.7
 CATEGORIES=	misc perl5
-MASTER_SITES=	http://www.cgarbs.de/stuff/
-DISTNAME=	kenny.pl-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}\
+				http://www.cgarbs.de/stuff/
+DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
-EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translate text both to and from KennySpeak
+
+PROJECTHOST=	ak-various-projects
 
 CONFLICTS=	filters-*
 
 USE_PERL5=	yes
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		kenny.1
 PLIST_FILES=	bin/kenny
 
-program=	kenny
-manpage=	kenny.1
-
-.if exists(/usr/bin/pod2man)
-POD2MAN=	/usr/bin/pod2man
-.elif exists(${LOCALBASE}/bin/pod2man)
-POD2MAN=	${LOCALBASE}/bin/pod2man
-.else
-POD2MAN=	pod2man
-.endif
+POD2MAN?=	${LOCALBASE}/bin/pod2man
 
 post-extract:
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		> ${WRKDIR}/${program}
-	@${POD2MAN} ${WRKDIR}/${program} > ${WRKDIR}/${manpage}
-
-post-patch:
-	@${PERL} -pi -e "s|/usr/bin/perl|${PERL}|" ${WRKDIR}/${program}
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}
+	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${program} ${PREFIX}/bin/${program}
-	@${INSTALL_MAN} ${WRKDIR}/${manpage} ${MANPREFIX}/man/man1/${manpage}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
