@@ -1,20 +1,15 @@
-# New ports collection makefile for:	mp
-# Date created:			Apr 12, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	mp
 PORTVERSION=	5.2.3
 CATEGORIES=	editors
-MASTER_SITES=	http://triptico.com/download/
+MASTER_SITES=	http://triptico.com/download/mp/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A programming text editor
+COMMENT=	Programming text editor
 
 LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	NLS GUI PCRE DOCS
 OPTIONS_SINGLE=	GUI
