@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-util-keysyms
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 

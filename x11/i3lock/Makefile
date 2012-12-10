@@ -7,6 +7,7 @@
 
 PORTNAME=	i3lock
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/ \
 		http://mirror.4bit.ws/ \
@@ -20,8 +21,8 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms \
-		xcb-image.0:${PORTSDIR}/x11/xcb-util-image \
+		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
+		xcb-image:${PORTSDIR}/x11/xcb-util-image \
 		ev.4:${PORTSDIR}/devel/libev
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
