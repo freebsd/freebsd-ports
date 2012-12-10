@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abraca
-# Date created:				31 May 2005
-# Whom:					Olivier Smedts <olivier@gid0.org>
-#
+# Created by: Olivier Smedts <olivier@gid0.org>
 # $FreeBSD$
-#
 
 PORTNAME=	abraca
 PORTVERSION=	0.7.0

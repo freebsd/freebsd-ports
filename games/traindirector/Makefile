@@ -1,9 +1,4 @@
-# New ports collection makefile for:	traindirector
-# Date created:				09/08/2003
-# Whom:					Guido Falsi <mad@madpilot.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	traindirector
 PORTVERSION=	3.6

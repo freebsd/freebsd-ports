@@ -1,9 +1,4 @@
-# New ports collection makefile for:	openobex
-# Date created:				15 March 2004
-# Whom:					Guido Falsi <mad@madpilot.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openobex
 PORTVERSION=	1.6

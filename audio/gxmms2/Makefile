@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gxmms2
-# Date created:				03 Mar 2006
-# Whom:				  	Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gxmms2
 PORTVERSION=	0.7.1

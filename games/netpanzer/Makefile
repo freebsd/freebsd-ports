@@ -1,9 +1,4 @@
-# New ports collection makefile for:    netpanzer
-# Date created:				29 May 2004
-# Whom:					Guido Falsi <mad@madpilot.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	netpanzer
 PORTVERSION=	0.8.4

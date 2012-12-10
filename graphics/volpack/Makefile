@@ -1,9 +1,4 @@
-# New ports collection makefile for:	volpack
-# Date created:		2012-05-29
-# Whom:			Guido Falsi <madpilot@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	volpack
 PORTVERSION=	1.0b3
