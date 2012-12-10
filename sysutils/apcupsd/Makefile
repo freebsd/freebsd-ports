@@ -137,7 +137,7 @@ pre-configure:
 .if defined(WITH_CLIENT_ONLY) && ( defined(WITH_APCSMART_DRV) || \
 	defined(WITH_APCDUMB_DRV) || defined(WITH_PCNET_DRV) || \
 	defined(WITH_POWERFLUTE) || defined(WITH_USB) || \
-	definedWITH_SNMP_DRV) || defined(WITH_TEST_DRV) )
+	defined(WITH_SNMP_DRV) || defined(WITH_TEST_DRV) )
 	@${ECHO_CMD} "It doesn't make sense to build drivers if all you want is"
 	@${ECHO_CMD} "the client; please do make config and select either"
 	@${ECHO_CMD} "CLIENT_ONLY or the *_DRV you need"
