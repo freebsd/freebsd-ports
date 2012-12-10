@@ -1,5 +1,4 @@
 bin/last.fm
-%%DATADIR%%/LastFmHelper
 %%DATADIR%%/data/about.png
 %%DATADIR%%/data/about_generic.png
 %%DATADIR%%/data/about_mac.png
@@ -34,6 +33,7 @@ bin/last.fm
 %%DATADIR%%/data/icons/my_friends.png
 %%DATADIR%%/data/icons/my_neighbours.png
 %%DATADIR%%/data/icons/my_tags.png
+%%DATADIR%%/data/icons/mymix_radio.png
 %%DATADIR%%/data/icons/neighbour_radio.png
 %%DATADIR%%/data/icons/options_account.png
 %%DATADIR%%/data/icons/options_connection.png
@@ -105,10 +105,10 @@ bin/last.fm
 %%DATADIR%%/libfftw3f-3.lib
 %%DATADIR%%/services/libsrv_Ipod_device.so
 %%DATADIR%%/services/libsrv_httpinput.so
-%%DATADIR%%/services/libsrv_itunesdevice.so
 %%DATADIR%%/services/libsrv_madtranscode.so
 %%DATADIR%%/services/libsrv_rtaudioplayback.so
-%%DATADIR%%/updater-autorestart.sh
+%%DATADIR%%/services/libsrv_output_alsa.so
+%%DATADIR%%/services/libsrv_output_portaudio.so
 %%DATADIR%%/zlibwapi.lib
 share/applications/last.fm.desktop
 share/services/lastfm.protocol
