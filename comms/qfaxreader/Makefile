@@ -29,11 +29,17 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		qfaxreader.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	GDBM "For sender-id look-up (recomended)" on
+OPTIONS_DEFINE=	GDBM
+GDBM_DESC=	For sender-id look-up (recomended)
+OPTIONS_DEFAULT=GDBM
+
+DEPRECATED=	No activity upstream since 2006; uses QT3
+EXPIRATION_DATE=	2013-06-30
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
+#.if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
+.if ${PORT_OPTIONS:MGDBM) || exists(${LOCALBASE}/include/gdbm.h)
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .endif
 
