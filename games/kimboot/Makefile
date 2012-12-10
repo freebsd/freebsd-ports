@@ -21,6 +21,10 @@ NO_BUILD=	yes
 SUB_FILES=	kimboot
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
+BROKEN=		no longer works
+DEPRECATED=	no longer works
+EXPIRATION_DATE=2013-02-11
+
 PORTSCOUT=	skipv:1.0 # has severe memory leak
 
 DESKTOP_ENTRIES="Kimboot" \
