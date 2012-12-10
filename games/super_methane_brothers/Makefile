@@ -9,7 +9,7 @@ MASTER_SITES=	SF/methane/Methane%20Stable/Methane%20V${PORTVERSION}
 DISTNAME=	methane-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the Amiga platform game of the same name
 
 LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1 \

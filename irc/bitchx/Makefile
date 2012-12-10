@@ -10,7 +10,7 @@ CATEGORIES+=	irc
 MASTER_SITES=	SF/bitchx/ircii-pana/ircii-pana-1.1
 DISTNAME=	ircii-pana-1.1-final
 
-MAINTAINER?=	c.petrik.sosa@gmail.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Feature-rich scriptable IRC client
 
 WRKSRC=		${WRKDIR}/BitchX

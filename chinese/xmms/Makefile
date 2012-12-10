@@ -11,6 +11,6 @@ PATCH_SITE_SUBDIR=	sobomax
 
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-xmms-1.2.x-xfont
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 
 .include "${MASTERDIR}/Makefile"

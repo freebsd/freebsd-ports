@@ -11,7 +11,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}-1.src
 PATCH_SITES=		http://www.brueffer.de/distfiles/
 PATCHFILES=		${DISTNAME:S/.src/-patch/}.gz
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}

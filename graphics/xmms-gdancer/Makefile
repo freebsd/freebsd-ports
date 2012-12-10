@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.travisemslander.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Visualization plugin, displays dancing figures
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/|}
 DISTNAME=	doomsrc
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM: the game and the sound server
 
 LICENSE=	GPLv1

@@ -8,7 +8,7 @@
 PORTNAME=	xmms
 CATEGORIES=	russian
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RusXMMS - X Multimedia System with Russian encoding patch
 
 MASTERDIR=	${.CURDIR}/../../multimedia/xmms
