@@ -1,10 +1,38 @@
 @unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin login_auth; fi
-%%SQUIRRELDIR%%/plugins/login_auth/COPYING
-%%SQUIRRELDIR%%/plugins/login_auth/INSTALL
 %%SQUIRRELDIR%%/plugins/login_auth/README
+%%SQUIRRELDIR%%/plugins/login_auth/config_default.php
+%%SQUIRRELDIR%%/plugins/login_auth/config_example.php
+%%SQUIRRELDIR%%/plugins/login_auth/configtest.php
+%%SQUIRRELDIR%%/plugins/login_auth/contrib/.htaccess
+%%SQUIRRELDIR%%/plugins/login_auth/contrib/README.HTTP_authentication
+%%SQUIRRELDIR%%/plugins/login_auth/contrib/README.Shibboleth
+%%SQUIRRELDIR%%/plugins/login_auth/contrib/README.crudesaml
+%%SQUIRRELDIR%%/plugins/login_auth/contrib/index.php
+%%SQUIRRELDIR%%/plugins/login_auth/docs/.htaccess
+%%SQUIRRELDIR%%/plugins/login_auth/docs/COPYING
+%%SQUIRRELDIR%%/plugins/login_auth/docs/INSTALL
+%%SQUIRRELDIR%%/plugins/login_auth/docs/README
+%%SQUIRRELDIR%%/plugins/login_auth/docs/index.php
+%%SQUIRRELDIR%%/plugins/login_auth/expired.php
 %%SQUIRRELDIR%%/plugins/login_auth/functions.php
 %%SQUIRRELDIR%%/plugins/login_auth/index.php
+%%SQUIRRELDIR%%/plugins/login_auth/locale/.htaccess
+%%SQUIRRELDIR%%/plugins/login_auth/locale/getpot
+%%SQUIRRELDIR%%/plugins/login_auth/locale/index.php
+%%SQUIRRELDIR%%/plugins/login_auth/locale/login_auth.pot
+%%SQUIRRELDIR%%/plugins/login_auth/logout.php
+%%SQUIRRELDIR%%/plugins/login_auth/make_release.sh
 %%SQUIRRELDIR%%/plugins/login_auth/setup.php
+%%SQUIRRELDIR%%/plugins/login_auth/templates/.htaccess
+%%SQUIRRELDIR%%/plugins/login_auth/templates/default/index.php
+%%SQUIRRELDIR%%/plugins/login_auth/templates/default/login_auth_expired.tpl
+%%SQUIRRELDIR%%/plugins/login_auth/templates/default/login_auth_signout.tpl
+%%SQUIRRELDIR%%/plugins/login_auth/templates/index.php
 %%SQUIRRELDIR%%/plugins/login_auth/version
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth/
+@dirrm %%SQUIRRELDIR%%/plugins/login_auth/templates/default
+@dirrm %%SQUIRRELDIR%%/plugins/login_auth/templates
+@dirrm %%SQUIRRELDIR%%/plugins/login_auth/locale
+@dirrm %%SQUIRRELDIR%%/plugins/login_auth/docs
+@dirrm %%SQUIRRELDIR%%/plugins/login_auth/contrib
+@dirrm %%SQUIRRELDIR%%/plugins/login_auth
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin login_auth; fi
