@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20121210:
+AUTHOR: bapt@FreeBSD.org
+  * OPTIONS has been extended 2 new macros are available:
+
+    OPTIONS_RADIO - allows only 0 or 1 options to be selected
+    OPTIONS_GROUP - allows 0 or N options among to be selected
+
 20121010:
 AUTHOR: bapt@FreeBSD.org
 
