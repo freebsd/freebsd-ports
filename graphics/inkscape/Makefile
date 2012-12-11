@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.48.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
@@ -24,7 +24,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		png15:${PORTSDIR}/graphics/png \
-		Magick++.5:${PORTSDIR}/graphics/ImageMagick
+		Magick++:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes
