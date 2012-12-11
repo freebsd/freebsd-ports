@@ -3,7 +3,7 @@
 
 PORTNAME=	avogadro
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ MAINTAINER=	tkjacobsen@gmail.com
 COMMENT=	Advanced molecular editor and viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel
+LIB_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

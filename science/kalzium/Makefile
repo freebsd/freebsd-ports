@@ -7,6 +7,7 @@
 
 PORTNAME=	kalzium
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,8 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Periodic table of elements for KDE 4
 
-LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel \
-		avogadro.1:${PORTSDIR}/science/avogadro
+LIB_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel \
+		avogadro:${PORTSDIR}/science/avogadro
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile

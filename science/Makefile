@@ -166,7 +166,6 @@
     SUBDIR += py-obspy.taup
     SUBDIR += py-obspy.wav
     SUBDIR += py-obspy.xseed
-    SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-pydicom
     SUBDIR += py-scikit-learn

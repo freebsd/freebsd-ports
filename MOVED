@@ -3951,3 +3951,4 @@ java/jdk16|java/openjdk6|2012-12-10|Has expired: Outdated, consider using openjd
 java/linux-sun-jre15|java/linux-sun-jre16|2012-12-10|Has expired: EOLed upstream since october 2009
 java/linux-sun-jdk15|java/linux-sun-jdk16|2012-12-10|Has expired: EOLed upstream since october 2009
 java/jdk15-doc|java/jdk16-doc|2012-12-10|Has expired: EOLed upstream since october 2009
+science/py-openbabel||2012-12-11|Merged to science/openbabel
