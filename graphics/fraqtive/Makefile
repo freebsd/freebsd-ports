@@ -1,13 +1,8 @@
-# New ports collection makefile for:	fraqtive
-# Date created:				Wed Sep  7 22:29:05 CEST 2005
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fraqtive
-PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTVERSION=	0.4.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 
@@ -15,7 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
 USE_BZIP2=	yes
-USE_QT4=	gui opengl qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui opengl xml qmake_build uic_build moc_build rcc_build
 QT_NONSTANDARD=	yes
 USE_GL=		glu
 HAS_CONFIGURE=	yes
