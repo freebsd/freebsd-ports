@@ -1,13 +1,8 @@
-# New ports collection makefile for:	hplip
-# Date created:		1 April 2006
-# Whom:			amistry@am-productions.biz
-#
+# Created by: amistry@am-productions.biz
 # $FreeBSD$
-#
 
 PORTNAME=	hplip
-PORTVERSION=	3.12.2
-PORTREVISION=	2
+PORTVERSION=	3.12.11
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -41,7 +36,8 @@ CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--with-hpppddir=${PREFIX}/share/ppd/HP \
 		--with-mimedir=${PREFIX}/etc/cups \
 		--with-docdir=${DOCSDIR} \
-		--with-drvdir=${PREFIX}/libexec/cups/driver
+		--with-drvdir=${PREFIX}/libexec/cups/driver \
+		--enable-libusb01_build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
@@ -155,6 +151,11 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
 		-e '/[[:space:]]install-hplip_confDATA/ s,install-hplip_confDATA,,' \
+		-e '/[[:space:]]install-dist_hplip_LogDATA/ s,install-dist_hplip_LogDATA,,' \
+		-e '/[[:space:]]install-dist_cronDATA/ s,install-dist_cronDATA,,' \
+		-e '/[[:space:]]install-dist_halpreDATA/ s,install-dist_halpreDATA,,' \
+		-e '/[[:space:]]install-dist_hplip_stateDATA/ s,install-dist_hplip_stateDATA,,' \
+		-e '/[[:space:]]install-dist_hplip_tmpDATA/ s,install-dist_hplip_tmpDATA,,' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
 		-e 's,/etc/cups,${LOCALBASE}&,g' \
@@ -171,7 +172,9 @@ post-patch:
 .endif
 
 post-install:
+.if ${PORT_OPTIONS:MQT}
 	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
+.endif
 	${MKDIR} ${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${PREFIX}/etc/hp/hplip.conf.sample
 	if [ ! -f ${PREFIX}/etc/hp/hplip.conf ]; then \
