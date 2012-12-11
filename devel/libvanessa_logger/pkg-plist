@@ -1,5 +1,6 @@
 include/vanessa_logger.h
-lib/libvanessa_logger.so.0
-lib/libvanessa_logger.so
-lib/libvanessa_logger.la
 lib/libvanessa_logger.a
+lib/libvanessa_logger.la
+lib/libvanessa_logger.so
+lib/libvanessa_logger.so.0
+libdata/pkgconfig/vanessa-logger.pc
