@@ -526,8 +526,11 @@ setJavaHome() {
         _JAVAVM_VERSION=
         for version in ${JAVA_VERSION}; do
             case "${version}" in
+                1.5)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6"
+                    ;;
                 1.5+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.5 1.6 1.7"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7"
                     ;;
                 1.6+)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7"
@@ -588,12 +591,6 @@ setJavaHome() {
         if [ -n "${JAVA_VENDOR}" ]; then
             _JAVAVM_VENDOR=
             case "${_JAVAVM_VM}" in
-                diablo*)
-                    _JAVAVM_VENDOR=freebsd
-                    ;;
-                j*)
-                    _JAVAVM_VENDOR=bsdjava
-                    ;;
                 openjdk*)
                     _JAVAVM_VENDOR=openjdk
                     ;;
