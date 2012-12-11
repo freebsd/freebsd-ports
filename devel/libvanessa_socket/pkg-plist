@@ -1,6 +1,7 @@
 bin/vanessa_socket_pipe
 include/vanessa_socket.h
-lib/libvanessa_socket.so.0
-lib/libvanessa_socket.so
-lib/libvanessa_socket.la
 lib/libvanessa_socket.a
+lib/libvanessa_socket.la
+lib/libvanessa_socket.so
+lib/libvanessa_socket.so.3
+libdata/pkgconfig/vanessa-socket.pc
