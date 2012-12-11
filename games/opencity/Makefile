@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opencity
-# Date created:		07 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	opencity
 PORTVERSION=	0.0.6.4
@@ -27,12 +23,12 @@ MAN6=		opencity.6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900027
+.if ${OSVERSION} < 802502
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-macros.h
 .endif
 
+.if ! ${PORT_OPTIONS:MDOCS}
 post-patch:
-.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-docsDATA||' \
 		${WRKSRC}/docs/Makefile.in
 .endif
