@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://6bone.informatik.uni-leipzig.de/pub/ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 CONFLICTS=	openbgpd-[0-9]* quagga-[0-9]* quagga-re-[0-9]* openospfd-[0-9]*
@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=--disable-ripngd
 PLIST_SUB+=	RIPNGD="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MVTYSH)
+.if ${PORT_OPTIONS:MVTYSH}
 PLIST_SUB+=	VTYSH=""
 CONFIGURE_ARGS+=--enable-vtysh
 .else
