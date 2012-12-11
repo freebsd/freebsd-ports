@@ -1,9 +1,5 @@
-# New ports collection makefile for:   stardict3
-# Date created:        23 July 2008
-# Whom:                eric
-#
+# Created by: eric
 # $FreeBSD$
-#
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.3
