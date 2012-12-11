@@ -170,6 +170,7 @@ LIBEXTRACTOR_DESC?=	libextractor support
 LIBMNG_DESC?=		MNG animated images via libmng
 LIBPAPER_DESC?=		libpaper support
 LIBRSVG2_DESC?=		SVG vector graphics via librsvg2
+LIBVIRT_DESC?=		libvirt support
 LIBVISUAL_DESC?=	Audio visualisation via libvisual
 LIBWMF_DESC?=		libwmf support
 LIBWRAP_DESC?=		TCP wrapper support
