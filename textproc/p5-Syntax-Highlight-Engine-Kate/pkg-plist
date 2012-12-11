@@ -1,3 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate/.packlist
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/ABC.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/AHDL.pm
@@ -6,7 +7,6 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/AVR_Assembler.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/AWK.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Ada.pm
-%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Alerts
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Alerts.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/All.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Ansys.pm
@@ -28,6 +28,8 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/ColdFusion.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Common_Lisp.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/ComponentminusPascal.pm
+%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Convert/ToolKit.pm
+%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Convert/XMLData.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Cplusplus.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/D.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/De_DE.pm
@@ -89,6 +91,7 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/POVminusRay.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Pascal.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Perl.pm
+%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Perl6.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/PicAsm.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Pike.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/PostScript.pm
@@ -118,7 +121,6 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/TaskJuggler.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Tcl_Tk.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Template.pm
-%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/ToolKit.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Txt2tags.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/UnrealScript.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/VHDL.pm
@@ -129,21 +131,21 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Wikimedia.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/XHarbour.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/XML.pm
-%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/XMLData.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/XML_Debug.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Xorg_Configuration.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Xslt.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Yacas.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Yacc_Bison.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/hlansi.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hlhtml.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/regen.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax
-@dirrm %%SITE_PERL%%/Syntax/Highlight/Engine/Kate
+@dirrmtry %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Convert
+@dirrmtry %%SITE_PERL%%/Syntax/Highlight/Engine/Kate
 @dirrmtry %%SITE_PERL%%/Syntax/Highlight/Engine
 @dirrmtry %%SITE_PERL%%/Syntax/Highlight
 @dirrmtry %%SITE_PERL%%/Syntax
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax
