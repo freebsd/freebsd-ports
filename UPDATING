@@ -156,7 +156,7 @@ you update your ports collection, before attempting any port upgrades.
   If you are using binary packages with pkgng, not ports, do this instead of
   "perl-after-upgrade":
 
-	# pkg install -fRx perl
+	# pkg install -fR perl
 
 20121102:
   AFFECTS: users of shells/bash-completion
