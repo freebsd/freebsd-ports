@@ -7,14 +7,14 @@
 
 PORTNAME=	xdrawchem
 PORTVERSION=	1.9.9
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	biology
 MASTER_SITES=	SF
 
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	Chemical drawing program
 
-LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel
+LIB_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
