@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	andrey@zonov.org
+MAINTAINER=	zont@FreeBSD.org
 COMMENT=	A utility for reading, writing the contents of CMOS memory
 
 USE_BZIP2=	yes
