@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	Tools for testing and submitting port updates and new ports
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
 		cdiff:${PORTSDIR}/textproc/cdiff \
 		sudo:${PORTSDIR}/security/sudo
