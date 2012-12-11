@@ -3,7 +3,7 @@
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	devel tk
 MASTER_SITES=	SF/cvsgui/gCvs/${PORTNAME}-${PORTVERSION}
@@ -11,28 +11,29 @@ MASTER_SITES=	SF/cvsgui/gCvs/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-end interface client for CVS
 
-BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+LICENSE=	GPLv2
 
 USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
+USE_TCL_BUILD=	yes
+USE_TCL_WRAPPER=yes
+USE_TK_WRAPPER=	yes
 USE_GMAKE=	yes
-BREAKS_IF_PEDANTIC=	yes
-CONFIGURE_ARGS+=	--with-tclinclude=${LOCALBASE}/include/tcl8.4
-CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/tcl8.4
-CONFIGURE_SCRIPT=	make_configure
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing --force --copy --gnu
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS:N-std=*:N:}"
+CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
+		--with-tcllib=${TCL_LIBDIR}
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
-USE_AUTOTOOLS=	automake14:env autoconf:env
-MAKE_JOBS_UNSAFE=	yes
-AUTOTOOLSFILES=	make_configure
 
-.include <bsd.port.pre.mk>
+pre-configure:
+	@(cd ${WRKSRC}/cvsunix && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
 
-.if ${OSVERSION} >= 800037
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
