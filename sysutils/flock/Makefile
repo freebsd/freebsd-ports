@@ -10,7 +10,7 @@ PORTVERSION=	2.19
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 
-MAINTAINER=	andrey@zonov.org
+MAINTAINER=	zont@FreeBSD.org
 COMMENT=	Manage locks from shell scripts
 
 PLIST_FILES=	bin/${PORTNAME}

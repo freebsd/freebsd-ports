@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 
-MAINTAINER=	andrey@zonov.org
+MAINTAINER=	zont@FreeBSD.org
 COMMENT=	A daemon that protects processes from killing when memory is exhausted
 
 USE_RC_SUBR=	${PORTNAME}
