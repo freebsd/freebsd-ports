@@ -21,8 +21,6 @@ CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
 USE_GNOME=	#
 USE_XORG=	x11 xaw ice
 
-.include <bsd.port.pre.mk>
-
 LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 
 MAN1=		xlock.1
@@ -43,10 +41,8 @@ XLOCK_GROUP_DESC=	Allow xlock group to logout
 TIME_BOMB_DESC=	Allow autologout
 CUSTOMIZATION_DESC=	Allow tune through resource file
 
-OPTIONS_DEFINE+=	ONE
-OPTIONS_SINGLE=	ONE
-OPTIONS_SINGLE_ONE=	PAM XLOCK_GROUP
-ONE_DESC=	Choose one of PAM or XLOCK_GROUP
+OPTIONS_RADIO=	ONE
+OPTIONS_RADIO_ONE=	PAM XLOCK_GROUP
 
 NO_OPTIONS_SORT=yes
 
@@ -147,4 +143,4 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
