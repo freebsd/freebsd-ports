@@ -1,12 +1,8 @@
-# New ports collection makefile for:	hgsubversion
-# Date created:				07 May 2012
-# Whom:					William Grzybowski
-#
+# Created by: William Grzybowski
 # $FreeBSD$
-#
 
 PORTNAME=	hgsubversion
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,12 +10,19 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	william88@gmail.com
 COMMENT=	Mercurial extension that allows using it as a Subversion client
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion \
-	${PYTHON_PKGNAMEPREFIX}subvertpy>=0:${PORTSDIR}/devel/py-subvertpy
+OPTIONS_DEFINE=	SUBVERTPY
+OPTIONS_DEFAULT=SUBVERTPY
+SUBVERTPY_DESC=	Use subvertpy python bindings
 
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=easy_install
 
-PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSUBVERTPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion
+.else
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subvertpy>=0:${PORTSDIR}/devel/py-subvertpy
+.endif
 
 .include <bsd.port.mk>
