@@ -1,18 +1,16 @@
-# New ports collection makefile for:	p5-Syntax-Highlight-Engine-Kate
-# Date created:				29 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Syntax-Highlight-Engine-Kate
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A port of the syntax highlight engine of the Kate texteditor
+
+TEST_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 
 MAN3=	Syntax::Highlight::Engine::Kate.3 \
 	Syntax::Highlight::Engine::Kate::ABC.3 \
@@ -42,6 +40,7 @@ MAN3=	Syntax::Highlight::Engine::Kate.3 \
 	Syntax::Highlight::Engine::Kate::ColdFusion.3 \
 	Syntax::Highlight::Engine::Kate::Common_Lisp.3 \
 	Syntax::Highlight::Engine::Kate::ComponentminusPascal.3 \
+	Syntax::Highlight::Engine::Kate::Convert::ToolKit.3 \
 	Syntax::Highlight::Engine::Kate::Cplusplus.3 \
 	Syntax::Highlight::Engine::Kate::D.3 \
 	Syntax::Highlight::Engine::Kate::De_DE.3 \
@@ -103,6 +102,7 @@ MAN3=	Syntax::Highlight::Engine::Kate.3 \
 	Syntax::Highlight::Engine::Kate::POVminusRay.3 \
 	Syntax::Highlight::Engine::Kate::Pascal.3 \
 	Syntax::Highlight::Engine::Kate::Perl.3 \
+	Syntax::Highlight::Engine::Kate::Perl6.3 \
 	Syntax::Highlight::Engine::Kate::PicAsm.3 \
 	Syntax::Highlight::Engine::Kate::Pike.3 \
 	Syntax::Highlight::Engine::Kate::PostScript.3 \
