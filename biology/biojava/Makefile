@@ -12,8 +12,7 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Open-source Java tools for processing biological data
 
-EXTRACT_DEPENDS+=	jar:${PORTSDIR}/java/diablo-jdk16
-
+USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
@@ -23,13 +22,7 @@ ALL_TARGET=	package-biojava
 JARFILES=	biojava.jar bytecode.jar
 PORTDOCS=	biojava
 PORTEXAMPLES=	demos
-EXTRACT_CMD=	jar -xvf ${_DISTDIR}/${DISTFILES}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${EXTRACT_CMD}
 
 .if !defined(WITHOUT_TESTS)
 regression-test:
