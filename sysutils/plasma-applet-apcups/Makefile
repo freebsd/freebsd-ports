@@ -1,13 +1,7 @@
-# New ports collection makefile for:	plasma-applet-apcups
-# Date created:		2010-08-18
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	apcups
-PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	plasma-applet-
