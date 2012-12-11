@@ -13,10 +13,8 @@ DISTNAME=	apache-tomcat-${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
-OPTIONS_DEFINE=	LOG
-OPTIONS_SINGLE=	LOG
-OPTIONS_SINGLE_LOG= CRONOLOG CRONOLOG_DEVEL
-LOG_DESC=	Use Log Pre-Processor
+OPTIONS_RADIO=	LOG
+OPTIONS_RADIO_LOG=	CRONOLOG CRONOLOG_DEVEL
 CRONOLOG_DESC=	Use Cronolog for Log Processing
 CRONOLOG_DEVEL_DESC=	Use Cronlog-Devel for Log Processing
 
