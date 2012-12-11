@@ -1,0 +1,13 @@
+--- src/CMakeLists.txt.orig	2012-12-11 02:19:57.157548371 +0400
++++ src/CMakeLists.txt	2012-12-11 02:23:55.400718104 +0400
+@@ -155,6 +155,10 @@
+     set (common_libraries ${common_libraries} dl)
+ endif()
+ 
++if (NOT LINUX)
++    set (common_libraries ${common_libraries} intl) # if used not GNU libc, depended by gettext
++endif()
++
+ if (ENABLE_GCOV)
+     set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCOV_C_FLAGS}")
+     set (LDFLAGS "${LDFLAGS} ${GCOV_LDFLAGS}")
