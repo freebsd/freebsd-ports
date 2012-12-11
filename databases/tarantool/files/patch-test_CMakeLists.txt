@@ -1,9 +1,16 @@
---- test/CMakeLists.txt.orig	2011-12-11 16:16:40.594230551 +0000
-+++ test/CMakeLists.txt	2011-12-11 16:19:44.915010706 +0000
-@@ -9,5 +9,4 @@
- 
- install (PROGRAMS tarantool DESTINATION bin)
- install (DIRECTORY lib DESTINATION bin)
--install (FILES box/tarantool.cfg box/00000000000000000001.snap
--    DESTINATION bin)
-+install (FILES box/tarantool.cfg DESTINATION %%ETCDIR%%)
+--- test/CMakeLists.txt.orig	2012-07-30 17:05:05.000000000 +0400
++++ test/CMakeLists.txt	2012-11-02 14:25:15.725342910 +0400
+@@ -18,12 +18,9 @@ else()
+     if (NOT CPACK_GENERATOR OR "${CPACK_GENERATOR}" STREQUAL "TGZ")
+         install (FILES ${CMAKE_SOURCE_DIR}/test/share/tarantool_tgz.cfg
+                  DESTINATION "${CMAKE_SYSCONF_DIR}"
+-                 RENAME "tarantool.cfg")
++                 RENAME "tarantool.cfg.sample")
+     else()
+         install (FILES ${CMAKE_SOURCE_DIR}/test/share/tarantool.cfg
+                  DESTINATION "${CMAKE_SYSCONF_DIR}")
+     endif()
+-
+-    install (FILES ${CMAKE_SOURCE_DIR}/test/box/00000000000000000001.snap
+-             DESTINATION "${CMAKE_LOCALSTATE_DIR}/lib/tarantool")
+ endif()
