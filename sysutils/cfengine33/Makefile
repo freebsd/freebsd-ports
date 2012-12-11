@@ -4,7 +4,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -69,7 +69,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 
 .if ${PORT_OPTIONS:MLIBVIRT}
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
-LIB_DEPENDS+=		virt:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS+=		virt.1000:${PORTSDIR}/devel/libvirt
 .endif
 
 MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\

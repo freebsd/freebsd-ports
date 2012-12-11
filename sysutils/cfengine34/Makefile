@@ -1,13 +1,9 @@
-
-# Date created:		February 2, 2009
-# Whom:			jrhett@netconsonance.com
-#
+# Created by: jrhett@netconsonance.com
 # $FreeBSD$
-#
 
 PORTNAME=	cfengine
 PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -80,7 +76,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 
 .if defined(WITH_LIBVIRT)
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
-LIB_DEPENDS+=		virt:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS+=		virt.1000:${PORTSDIR}/devel/libvirt
 .endif
 
 MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\

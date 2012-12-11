@@ -1,13 +1,8 @@
-# New ports collection makefile for:	collectd
-# Date created:				Sat Sep 29 05:19:31 PDT 2007
-# Whom:					Matt Peterson <matt@peterson.org>
-#
+# Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
-#
-
 PORTNAME=	collectd
 PORTVERSION=	5.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -397,7 +392,7 @@ PLIST_SUB+=	TOKYOTYRANT="@comment "
 
 .if ${PORT_OPTIONS:MVIRT}
 CONFIGURE_ARGS+=--enable-libvirt
-LIB_DEPENDS+=	virt:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS+=	virt.1000:${PORTSDIR}/devel/libvirt
 PLIST_SUB+=	VIRT=""
 .else
 CONFIGURE_ARGS+=--disable-libvirt

@@ -1,7 +1,8 @@
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	0.10.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -40,7 +41,7 @@ USE_GNOME=	gnomehack
 GNOME_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
-SHLIB_VER=	10
+SHLIB_VER=	1000
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 

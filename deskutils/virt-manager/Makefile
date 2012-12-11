@@ -1,13 +1,9 @@
-# New ports collection makefile for: virt-manager
-# Date created:    2011-05-28
-# Whom:      Jason Helfman <jhelfman@experts-exchange.com>
-#
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	virt-manager
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.et.redhat.com/download/sources/${PORTNAME}/
 
@@ -16,7 +12,7 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	virt.10:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	virt.1000:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}virtinst>=0.600.3:${PORTSDIR}/net-mgmt/virtinst \

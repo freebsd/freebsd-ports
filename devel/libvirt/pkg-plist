@@ -66,7 +66,6 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/auth.html
 %%DOCSDIR%%%%PORTVERSION%%/html/bindings.html
 %%DOCSDIR%%%%PORTVERSION%%/html/bugs.html
-%%DOCSDIR%%%%PORTVERSION%%/html/command.html
 %%DOCSDIR%%%%PORTVERSION%%/html/compiling.html
 %%DOCSDIR%%%%PORTVERSION%%/html/contact.html
 %%DOCSDIR%%%%PORTVERSION%%/html/csharp.html
@@ -80,6 +79,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvlxc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvopenvz.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvparallels.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvphyp.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvqemu.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvremote.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvtest.html
@@ -106,6 +106,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/goals.html
 %%DOCSDIR%%%%PORTVERSION%%/html/hacking.html
 %%DOCSDIR%%%%PORTVERSION%%/html/hooks.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/home.png
 %%DOCSDIR%%%%PORTVERSION%%/html/html/index.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/left.png
@@ -115,7 +116,9 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/html/up.png
 %%DOCSDIR%%%%PORTVERSION%%/html/hvsupport.html
 %%DOCSDIR%%%%PORTVERSION%%/html/index.html
-%%DOCSDIR%%%%PORTVERSION%%/html/internals.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals/command.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals/locking.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals/rpc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/intro.html
 %%DOCSDIR%%%%PORTVERSION%%/html/java.html
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirt-daemon-arch.png
@@ -143,7 +146,6 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/relatedlinks.html
-%%DOCSDIR%%%%PORTVERSION%%/html/rpc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html
 %%DOCSDIR%%%%PORTVERSION%%/html/sitemap.html
 %%DOCSDIR%%%%PORTVERSION%%/html/storage.html
@@ -275,6 +277,7 @@ lib/libvirt/connection-driver/libvirt_driver_storage.la
 @dirrm lib/libvirt/connection-driver
 @dirrm lib/libvirt
 @dirrm %%DOCSDIR%%%%PORTVERSION%%/html/html
+@dirrm %%DOCSDIR%%%%PORTVERSION%%/html/internals
 @dirrm %%DOCSDIR%%%%PORTVERSION%%/html
 @dirrm %%DOCSDIR%%%%PORTVERSION%%
 @dirrm %%DOCSDIR%%-python%%PORTVERSION%%/examples
