@@ -4,4 +4,4 @@ limitations in the implementation of syslog opening multiple syslog loggers
 doesn't makes sense. Includes the ability to limit which messages will be
 logged based on priorities. 
 
-WWW: http://www.vergenet.net/linux/vanessa/
+WWW: http://horms.net/projects/vanessa/
