@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xmoto
-# Date created:		07 Oct 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xmoto
-PORTVERSION=	0.5.8
-PORTREVISION=	3
+PORTVERSION=	0.5.10
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -39,7 +34,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 
-OPTIONS=	ASIAN_TTF "Use asian TTF font" off
+OPTIONS_DEFINE=	ASIAN_TTF
+ASIAN_TTF_DESC=	"Use asian TTF font"
 
 MAN6=		xmoto.6
 
@@ -56,14 +52,14 @@ DESKTOP_ENTRIES="XMoto" \
 BROKEN=		does not compile due to missing getline()
 .endif
 
-.if defined(WITH_ASIAN_TTF)
+.if ${PORT_OPTIONS:MASIAN_TTF}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf
 CONFIGURE_ARGS+=--with-asian-ttf-file=${LOCALBASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf
 .else
 CONFIGURE_ARGS+=--without-asian-ttf-file
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CONFIGURE_ENV+=	LIBS="-lintl"
@@ -72,11 +68,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-	${WRKSRC}/src/image/tim_png.cpp
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
