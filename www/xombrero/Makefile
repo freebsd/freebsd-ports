@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xxxterm
-# Date created:				2011.01.15
-# Whom:					Aldis Berjoza <aldis@bsdroot.lv>
-#
+# Created by:				Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	xombrero
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 EXTRACT_SUFX=	.tgz
