@@ -4,8 +4,7 @@
 PORTNAME=	qdecoder
 PORTVERSION=	12.0.4
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/ \
-		ftp://ftp.qdecoder.org/pub/qDecoder/
+MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	qDecoder-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -17,6 +16,7 @@ MAKE_ARGS=	exec_prefix="${PREFIX}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DEBUG
+PORTEXAMPLES=	*
 
 PLIST_FILES=	include/qdecoder.h \
 		lib/libqdecoder.a \
@@ -27,10 +27,6 @@ PLIST_FILES=	include/qdecoder.h \
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+="--enable-debug"
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PORTEXAMPLES=	*
 .endif
 
 post-install:
