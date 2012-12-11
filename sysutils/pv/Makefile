@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ivarch.com/programs/sources/
 
@@ -56,8 +56,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
 .endfor
 .endif
-
-test:
-	cd ${WRKSRC} && make test
 
 .include <bsd.port.post.mk>
