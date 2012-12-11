@@ -7,14 +7,14 @@
 
 PORTNAME=	libdmtx
 PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Library for reading and writing Data Matrix barcodes
 
-LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 
 MAN3=		libdmtx.3
 

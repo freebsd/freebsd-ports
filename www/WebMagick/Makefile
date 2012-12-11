@@ -7,6 +7,7 @@
 
 PORTNAME=	WebMagick
 PORTVERSION=	2.03p17
+PORTREVISION=	1
 DISTVERSION=	2.03pre17
 PORTEPOCH=	1
 CATEGORIES=	www graphics
@@ -17,7 +18,7 @@ COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
 USE_PERL5=	yes

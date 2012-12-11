@@ -7,6 +7,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	6.1.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -76,7 +77,7 @@ check:
 
 .if defined(WITH_IMAGEMAGICK)
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
-LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick
