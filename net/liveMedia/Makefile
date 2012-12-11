@@ -8,6 +8,7 @@
 PORTNAME=	liveMedia
 PORTVERSION=	2012.11.30
 PORTEPOCH=	2
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -161,6 +162,7 @@ liveMedia=		\
 		liveMedia/include/OnDemandServerMediaSubsession.hh \
 		liveMedia/include/OutputFile.hh \
 		liveMedia/include/PassiveServerMediaSubsession.hh \
+		liveMedia/include/ProxyServerMediaSession.hh \
 		liveMedia/include/QCELPAudioRTPSource.hh \
 		liveMedia/include/QuickTimeFileSink.hh \
 		liveMedia/include/QuickTimeGenericRTPSource.hh \
