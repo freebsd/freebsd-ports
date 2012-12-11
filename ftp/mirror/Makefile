@@ -7,7 +7,7 @@
 
 PORTNAME=	mirror
 PORTVERSION=	2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://sunsite.ualberta.ca/pub/Mirror/mirror/ \
 		http://komquats.com/distfiles/ \
