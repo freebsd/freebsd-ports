@@ -1,9 +1,5 @@
-# New ports collection makefile for:    irsim
-# Date created:         18 Dec 1994
-# Whom:                 swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	irsim
 PORTVERSION=	9.7.74
@@ -16,11 +12,9 @@ COMMENT=	An event-driven logic-level simulator for MOS circuis
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	INTERPRETER
-OPTIONS_SINGLE=	INTERPRETER
-OPTIONS_SINGLE_INTERPRETER=	SCHEME TCL
-OPTIONS_DEFAULT=	INTERPRETER SCHEME
-INTERPRETER_DESC=	Enable built-in interpreter support
+OPTIONS_RADIO=	INTERPRETER
+OPTIONS_RADIO_INTERPRETER=	SCHEME TCL
+OPTIONS_DEFAULT=	SCHEME
 SCHEME_DESC=	Scheme interpreter
 TCL_DESC=	Tcl interpreter
 
