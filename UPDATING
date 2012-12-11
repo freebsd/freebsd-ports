@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   rebuild all ports that depend on it.
 
   If you use portmaster:
-        portmaster -r -w cyrus-sasl-
+        portmaster -w -r cyrus-sasl-
   If you use portupgrade:
         portupgrade -fr security/cyrus-sasl2
 
