@@ -1,9 +1,9 @@
 # Created by:	Kang Liu <liukang@bjpu.edu.cn>
-#
 # $FreeBSD$
 
 PORTNAME=	tomcat
 PORTVERSION=	5.5.36
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 	LOCAL/jgh
@@ -24,8 +24,7 @@ DEPRECATED=	EOL approaching, consider www/tomcat{6,7}
 EXPIRATION_DATE=2012-12-31
 
 USE_JAVA=	yes
-JAVA_VERSION?=	1.5+
-JAVA_VENDOR?=	freebsd
+JAVA_VERSION?=	1.6+
 NO_BUILD=	YES
 
 USE_RC_SUBR=	tomcat55
