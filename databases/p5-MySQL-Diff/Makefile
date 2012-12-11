@@ -7,7 +7,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl module for comparing the table structure of two MySQL databases
 
 BUILD_DEPENDS=	p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
