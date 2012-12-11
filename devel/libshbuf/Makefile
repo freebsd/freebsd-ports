@@ -1,25 +1,20 @@
-# ex:ts=8
-# Ports collection makefile for:	libshbuf
-# Date created:			May 6, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libshbuf
-PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTVERSION=	0.0.3
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	http://0pointer.de/lennart/projects/libshbuf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Shared Buffer IPC
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+LICENSE=	GPLv2
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
+USE_GNOME=	gnomehack
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--disable-lynx
 
 .include <bsd.port.mk>
