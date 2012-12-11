@@ -1,0 +1,6 @@
+nb - Micro-benchmarking NoSQL storage. Features include:
+
+* Benchmarking support: tarantool, memcached, redis
+* GNUPlot generation
+
+WWW: https://github.com/mailru/nosqlbench
