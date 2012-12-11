@@ -1,6 +1,16 @@
 --- rf/uwidget.cpp.orig	2003-01-14 19:07:42.000000000 +0100
 +++ rf/uwidget.cpp	2007-11-22 20:06:28.000000000 +0100
-@@ -231,23 +231,23 @@
+@@ -24,7 +24,8 @@
+ #include "config.h"
+ #endif
+ 
+-#include <stdio.h>
++#include <cstdio>
++#include <cstdlib>
+ 
+ #include "uwidget.h"
+ #include "uconsole.h"
+@@ -231,23 +232,23 @@
  
  	static void gtkclicked(GtkButton *button, gpointer user_data)
  	{
@@ -30,7 +40,7 @@
  		gchar *text;
  		gtk_clist_get_text(GTK_CLIST(clist), row, column, &text);
  		UEventSendMessage(widid, EV_LIST_SELECTING, UMAKEINT(cmdid, row), text);
-@@ -255,15 +255,15 @@
+@@ -255,15 +256,15 @@
  
  	static void gtkselectclistcolumn(GtkCList *clist, gint column, gpointer user_data)
  	{
@@ -50,7 +60,7 @@
  		if (event->type == GDK_2BUTTON_PRESS)
  		{
  			UEventSendMessage(widid, EV_LIST_DBLCLICK, cmdid, 0L);
-@@ -274,8 +274,8 @@
+@@ -274,8 +275,8 @@
  
  	static void gtkcomboclicked(GtkWidget *widget, gpointer user_data)
  	{
@@ -61,7 +71,7 @@
  
  		GtkList *list = GTK_LIST(widget->parent);
  		GList *selection = list->selection;
-@@ -320,8 +320,8 @@
+@@ -320,8 +321,8 @@
  
  	static void gtkmenuactivated(GtkWidget *widget, gpointer user_data)
  	{
@@ -72,7 +82,7 @@
  
  		UStr selTxt;
  
-@@ -392,7 +392,7 @@
+@@ -392,7 +393,7 @@
  	static void dataForeach(GQuark key_id, gpointer data, gpointer user_data)
  	{
  		const char *str = g_quark_to_string(key_id);
@@ -81,7 +91,7 @@
  		int cmd;
  		if(matchToken(str, cmd))
  		{
-@@ -514,32 +514,32 @@
+@@ -514,32 +515,32 @@
  
  	static void gtktreeexpand(GtkWidget *item, gpointer user_data)
  	{
@@ -122,7 +132,7 @@
  		g_assert(GTK_IS_TREE_ITEM(item));
  		UEventSendMessage(widid, EV_TREE_SELECTING, UMAKEINT(cmdid, 1), item);
  	}
-@@ -661,8 +661,8 @@
+@@ -661,8 +662,8 @@
  				  gint             page_num,
  				  gpointer         data)
  	{
@@ -133,7 +143,7 @@
  		
  		UEventSendMessage(widid, EV_PAGE_CHANGED, UMAKEINT(cmdid, page_num), 0L);
  	}
-@@ -682,8 +682,8 @@
+@@ -682,8 +683,8 @@
  
  	static gint gtkexposeevent(GtkWidget *widget, GdkEvent *event, gpointer user_data)
  	{
@@ -144,7 +154,7 @@
  		
  		UEventSendMessage(widid, EV_CUSTOM_DRAW, cmdid, event);
  		return TRUE;
-@@ -782,7 +782,7 @@
+@@ -782,7 +783,7 @@
  	m_listeners.push_back(listener);
  }
  
@@ -153,7 +163,7 @@
  {
  	std::vector<UCmdTarget *>::iterator i;
  	for(i = m_listeners.begin(); i != m_listeners.end(); ++i)
-@@ -3136,10 +3136,10 @@
+@@ -3136,10 +3137,10 @@
  	if(!GTK_IS_CLIST(w))
  		return;
  

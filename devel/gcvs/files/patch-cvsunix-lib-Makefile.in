@@ -1,6 +1,23 @@
 --- cvsunix/lib/Makefile.in.orig	Thu Nov  7 19:29:36 2002
 +++ cvsunix/lib/Makefile.in	Tue Jul  1 04:38:17 2003
-@@ -200,6 +200,7 @@
+@@ -125,6 +125,7 @@
+ CC       = @CC@
+ CXX      = @CXX@
+ CFLAGS = @CFLAGS@
++CXXFLAGS = @CXXFLAGS@
+ CPPFLAGS=
+ 
+ YACC = @YACC@
+@@ -135,7 +136,7 @@
+ 
+ .cpp.o:
+ 	$(CXX) $(CPPFLAGS) -I.. -I$(srcdir) -I$(cvs_srcdir) \
+-              $(DEFS) $(CFLAGS) -c $<
++              $(DEFS) $(CXXFLAGS) -c $<
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .cpp .o .obj
+@@ -200,6 +201,7 @@
  regex.o: regex.h
  md5.o: md5.h
  argmatch.o: cvsgui.h

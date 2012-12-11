@@ -28,7 +28,8 @@
 -    LIBS="$LIBS -L$GSSAPI/lib -lgssapi -lkrb5 -lasn1 -ldes -lroken"
 +    LIBS="$LIBS -L$GSSAPI/lib -lgssapi -lkrb5 -lasn1 -lcrypto -lroken -lcrypt -lcom_err"
    else
-     LIBS="$LIBS -L$GSSAPI/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err"
+-    LIBS="$LIBS -L$GSSAPI/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err"
++    LIBS="$LIBS -L$GSSAPI/lib -lgssapi_krb5 -lgssapi -lkrb5 -lasn1 -lcrypto -lroken -lcrypt -lcom_err"
    fi
    save_CPPFLAGS=$CPPFLAGS
    CPPFLAGS="-I$GSSAPI/include $CPPFLAGS"
