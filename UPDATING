@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121211:
+  AFFECTS: users of graphics/ImageMagick
+  AUTHOR: bdrewery@FreeBSD.org
+
+  The ImageMagick library has been updated to version 6.8.0-7.  Please
+  rebuild all ports that depend on it.
+
+  If you use portmaster:
+        portmaster -w -r ImageMagick
+  If you use portupgrade:
+        portupgrade -fr graphics/ImageMagick
+  If you use pkgng with binary packages:
+        pkg install -fR graphics/ImageMagick
+
+20121211:
+  AFFECTS: users of devel/pcre
+  AUTHOR: bdrewery@FreeBSD.org
+
+  The pcre library has been updated to version 8.32.  Please
+  rebuild all ports that depend on it.
+
+  If you use portmaster:
+        portmaster -w -r pcre
+  If you use portupgrade:
+        portupgrade -fr devel/pcre
+  If you use pkgng with binary packages:
+        pkg install -fR devel/pcre
+
 20121210:
   AFFECTS: users of security/cyrus-sasl2
   AUTHOR: ume@FreeBSD.org
