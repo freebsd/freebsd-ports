@@ -3,6 +3,7 @@
 
 PORTNAME=	jasperserver
 PORTVERSION=	4.7.0
+PORTREVISION=	1
 CATEGORIES=	databases print java
 MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperReports%20Server%20${PORTVERSION}/:source1 \
 		SF/bsdsrc/:source2
@@ -30,7 +31,6 @@ JSUPDATE=	4.5.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
-JAVA_VENDOR?=	freebsd
 JAVA_VERSION=	1.6
 USE_ZIP=	yes
 
