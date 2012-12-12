@@ -1,9 +1,4 @@
-# New ports collection makefile for:    yara
-# Date created:         Mar 7 2011
-# Whom:                 wxs@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yara
 PORTVERSION=	1.6

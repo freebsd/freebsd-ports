@@ -1,9 +1,4 @@
-# Ports collection makefile for:  silc-irssi-plugin
-# Date created:			  Sat Jul 28, 2007
-# Whom:				  Wesley Shields <wxs@atarininja.org>
-#
 # $FreeBSD$
-#
 
 CATEGORIES=	net irc
 

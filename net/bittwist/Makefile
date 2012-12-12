@@ -1,9 +1,4 @@
-# New ports collection makefile for:	bittwist
-# Date created:			17 April 2006
-# Whom:				Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bittwist
 PORTVERSION=	1.1

@@ -1,9 +1,4 @@
-# New ports collection makefile for:   libhtp
-# Date created:        19 December 2011
-# Whom:                wxs@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libhtp
 PORTVERSION=	0.3.0

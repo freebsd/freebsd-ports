@@ -1,9 +1,4 @@
-# New ports collection makefile for:   pktanon
-# Date created:        9 March 2009
-# Whom:                Wesley Shields <wxs@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pktanon
 PORTVERSION=	1.2.3

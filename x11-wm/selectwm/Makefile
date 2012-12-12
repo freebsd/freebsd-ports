@@ -1,9 +1,4 @@
-# New ports collection makefile for:   selectwm
-# Date created:        13 January 2004
-# Whom:                Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	selectwm
 PORTVERSION=	0.4.1

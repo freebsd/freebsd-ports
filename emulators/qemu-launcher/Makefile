@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qemu-launcher
-# Date created:				22 December 2005
-# Whom:					Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qemu-launcher
 PORTVERSION=	1.7.4

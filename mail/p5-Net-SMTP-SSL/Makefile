@@ -1,4 +1,3 @@
-# Created by: Wesley Shields <wxs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-SMTP-SSL

@@ -1,9 +1,4 @@
-# New ports collection makefile for:   daemonlogger
-# Date created:        10 April 2007
-# Whom:                Wesley Shields <wxs@atarininja.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	daemonlogger
 PORTVERSION=	1.2.1

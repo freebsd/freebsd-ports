@@ -1,9 +1,4 @@
-# Ports collection makefile for:  tftpgrab
-# Date created:			  21 Sep 2007
-# Whom:				  Wesley Shields <wxs@atarininja.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tftpgrab
 PORTVERSION=	0.2

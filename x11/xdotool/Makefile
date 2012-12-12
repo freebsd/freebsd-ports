@@ -1,9 +1,4 @@
-# New ports collection makefile for:   xdotool
-# Date created:        29 June 2007
-# Whom:                Wesley Shields <wxs@atarininja.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xdotool
 DISTVERSION=	2.20110530.1

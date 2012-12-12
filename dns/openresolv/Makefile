@@ -1,6 +1,6 @@
 # New ports collection makefile for:	openresolv
 # Date created:	20 December 2007
-# Whom:	Wesley Shields <wxs@atarininja.org>
+# Whom:	Roy Marples <roy@marples.name>
 #
 # $FreeBSD$
 #

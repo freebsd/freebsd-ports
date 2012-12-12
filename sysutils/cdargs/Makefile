@@ -1,9 +1,4 @@
-# New ports collection makefile for:   cdargs
-# Date created:        1 May 2004
-# Whom:                Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cdargs
 PORTVERSION=	1.35
