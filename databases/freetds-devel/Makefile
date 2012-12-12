@@ -29,8 +29,6 @@ MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 bsqlodbc.1 \
 		defncopy.1 fisql.1 osql.1
 MAN5=		freetds.conf.5
 
-.include <bsd.port.options.mk>
-
 # OPTIONS_DEFINE=	OPENSSL GNUTLS IODBC UNIXODBC MSDBLIB
 OPTIONS_DEFINE=	MSDBLIB
 
