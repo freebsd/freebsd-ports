@@ -73,7 +73,7 @@ DIAGNOSTICS
      getpatch exits 0 on success or 1 if a help message was displayed.
 
 SEE ALSO
-     getpr, prpatch
+     getpr
 
 AUTHORS
      Sofian Brabez <sbz@FreeBSD.org>
