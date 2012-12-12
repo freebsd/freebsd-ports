@@ -1,18 +1,14 @@
-# New ports collection makefile for:	lazarus
-# Date Created:				2006-02-09
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by:	Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.30.4
-PORTREVISION?=	3
+PORTVERSION=	1.0.4
+PORTREVISION?=	0
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
 		SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-src/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-1/}
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
@@ -24,7 +20,7 @@ RUN_DEPENDS?=	#
 PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	#
 USE_FPC?=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
@@ -32,13 +28,20 @@ USE_FPC?=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
 MAKE_ENV=	OPT="-Sgic -Fu../lcl -Fu../lcl/widgetset -Fu../lcl/forms -Fu../../lcl \
 			-Fu../../lcl/forms -Fu../../lcl/widgetset -Fu../../lcl/nonwin32 \
 			-Fu. -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 \
-				${OPT_EXTRA} -Fi../lcl/include -Fi../../lcl/include"
+				${OPT_EXTRA} -Fi../lcl/include -Fi../../lcl/include \
+			-Fu../components/lazutils -Fu../../components/lazutils"
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 
 .if !defined(PKGNAMESUFFIX)
-OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	on \
-		QT4	"Use qt4 interface" off
+OPTIONS_SINGLE=         LCL
+OPTIONS_SINGLE_LCL=     GTK1 GTK2 QT4
+
+GTK1_DESC=		Use gtk12 interface
+GTK2_DESC=              Use gtk20 interface
+QT4_DESC=               Use qt4 interface
+
+OPTIONS_DEFAULT=        GTK2
 .endif
 
 .include <bsd.port.pre.mk>
@@ -67,27 +70,23 @@ MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 
-.if defined(WITH_GTK2) && defined(WITH_QT4)
-IGNORE=		please select only one option QT4 or GTK2, don't select both options
-.endif
-
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
 USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-.else
-.if !defined(WITH_QT4)
+.endif
+
+.if ${PORT_OPTIONS:MGTK1}
 USE_FPC+=	gtk1
 USE_GNOME=	gtk12 gdkpixbuf
 LCL_PLATFORM=	gtk
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
 RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
 .endif
-.endif
 
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 LIB_DEPENDS+=	Qt4Pas.5:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
@@ -105,14 +104,14 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-			-e 's|tools: lcl|tools:|g' -e '3519d' ${WRKSRC}/${MAKEFILE}
+			-e 's|tools: lcl|tools:|g' -e '2744d' ${WRKSRC}/${MAKEFILE}
 
 pre-build:
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/lcl/units ${WRKSRC}/lcl/units
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} packager/registration ideintf components ide starter lazbuilder LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${GMAKE} registration lazutils codetools ideintf basecomponents ide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} tools LCL_PLATFORM=${LCL_PLATFORM}
 

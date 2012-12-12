@@ -1,9 +1,10 @@
-# $FreeBSD: /tmp/pcvs/ports/editors/lazarus/Makefile.common,v 1.1 2012-05-07 19:08:40 acm Exp $
+# $FreeBSD: ports/editors/lazarus/Makefile.common,v 1.2 2012/11/17 05:57:14 svnexp Exp $
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${LCLDIR}
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${LCLDIR} ${PORTNAME}/packager/registration \
+				${PORTNAME}/components/lazutils
 PATCHDIR=	${.CURDIR}/files
 FILESDIR=	${.CURDIR}/files
 PLIST_SUB+=	BUILDNAME=${BUILDNAME}
@@ -25,6 +26,10 @@ pre-build:
 .endif
 
 do-build:
+	@cd ${WRKDIR}/${PORTNAME}/packager/registration && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
+	@cd ${WRKDIR}/${PORTNAME}/components/lazutils && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
 	@cd ${BUILDSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
 
