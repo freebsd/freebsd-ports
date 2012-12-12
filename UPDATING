@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121212:
+  AFFECTS: users of horde-* applications
+  AUTHOR: Martin Matuska <mm@FreeBSD.org>
+
+  Horde3 has reached EOL and to make place for new horde application versions
+  all old horde3 applications have been renamed to use the "horde3-" prefix.
+
 20121211:
   AFFECTS: users of graphics/ImageMagick
   AUTHOR: bdrewery@FreeBSD.org
