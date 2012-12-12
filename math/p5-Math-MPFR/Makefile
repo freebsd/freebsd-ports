@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Math-MPFR
-# Date created:				31 Jan 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-MPFR
-PORTVERSION=	3.15
+PORTVERSION=	3.16
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
