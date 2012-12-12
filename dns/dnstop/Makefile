@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnstop
-PORTVERSION=	20120611
+PORTVERSION=	20121017
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 
