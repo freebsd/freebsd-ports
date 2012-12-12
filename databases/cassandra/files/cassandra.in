@@ -57,7 +57,7 @@ export JVM_OPTS=-javaagent:%%DATADIR%%/lib/jamm-0.2.5.jar
 export JVM_OVERRIDE_OPTS="$cassandra_vmargs"
 
 export JAVA_VENDOR=openjdk
-export JAVA_VERSION=1.6
+export JAVA_VERSION=1.7
 
 cassandra_prestop() {
 	$CASSANDRA_HOME/bin/nodetool -h localhost disablegossip
