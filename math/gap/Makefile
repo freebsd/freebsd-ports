@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gap
-# Date created:				28 Apr, 2002
-# Whom:					keith@FreeBSD.org
-#
+# Created by: keith@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gap
 PORTVERSION=	4.5.6.${GAP_DISTDATE}
@@ -22,7 +18,7 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 
 GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
-GAP_DISTTIME=	2012_09_16-01_02
+GAP_DISTTIME=	2012_12_09-19_28
 GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}
