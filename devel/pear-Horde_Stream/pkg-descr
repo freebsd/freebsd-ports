@@ -1,0 +1,5 @@
+An Horde object-oriented interface to assist in creating and storing PHP
+stream resources, and to provide utility methods to access and manipulate
+the stream contents.
+
+WWW: http://pear.horde.org
