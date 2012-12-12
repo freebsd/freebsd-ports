@@ -27,6 +27,7 @@ PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 PROJECT_FILE=	src/doublecmd.lpi
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
+LAZARUS_DIR=	${LOCALBASE}/share/lazarus
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-help-0.5.1
 
@@ -70,8 +71,9 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/components && \
 		${FIND} * -name *.lpk -exec ${LAZBUILD_CMD} --ws=${LCL_PLATFORM} "{}" \;
+			--lazarusdir=${LAZARUS_DIR}
 	@cd ${WRKSRC} && \
-		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --bm="${BUILD_MODE}" ${PROJECT_FILE}
+		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --bm="${BUILD_MODE}" --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE}
 
 post-build:
 	@${RM} -rf ${DOCSRC}/*/dev-help
