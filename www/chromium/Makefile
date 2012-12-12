@@ -3,7 +3,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	23.0.1271.95
+DISTVERSION=	23.0.1271.97
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -83,7 +83,7 @@ OPTIONS_DEFAULT=	CODECS GCONF
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || empty(PORT_OPTIONS:MCLANG)
+.if ${OSVERSION} < 900033 || ! ${PORT_OPTIONS:MCLANG}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -110,7 +110,7 @@ GYP_DEFINES+=	use_pulseaudio=1
 GYP_DEFINES+=	use_pulseaudio=0
 .endif
 
-.if empty(MACHINE_CPU:Msse2)
+.if ! ${MACHINE_CPU:Msse2}
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
