@@ -7,6 +7,7 @@
 
 PORTNAME=	rtpproxy
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rtpproxy.org/chrome/site/
 
@@ -24,6 +25,9 @@ MAN8=		rtpproxy.8
 post-build:
 	${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%RC_SUBR%%|/etc/rc.subr|g' \
 	    ${WRKSRC}/freebsd/rtpproxy.in > ${WRKDIR}/rtpproxy
+
+pre-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rtpproxy ${PREFIX}/etc/rc.d/rtpproxy
