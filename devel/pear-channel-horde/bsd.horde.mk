@@ -53,6 +53,7 @@ horde-Horde_Kolab_Server-DEPEND=	${PEARDIR}/Horde/Kolab/Server/Factory.php:${POR
 horde-Horde_Kolab_Session-DEPEND=	${PEARDIR}/Horde/Kolab/Session.php:${PORTSDIR}/net/pear-Horde_Kolab_Session
 horde-Horde_Kolab_Storage-DEPEND=	${PEARDIR}/Horde/Kolab/Storage.php:${PORTSDIR}/mail/pear-Horde_Kolab_Storage
 horde-Horde_Ldap-DEPEND=	${PEARDIR}/Horde/Ldap.php:${PORTSDIR}/net/pear-Horde_Ldap
+horde-Horde_ListHeaders-DEPEND=	${PEARDIR}/Horde/ListHeaders.php:${PORTSDIR}/mail/pear-Horde_ListHeaders
 horde-Horde_Lock-DEPEND=	${PEARDIR}/Horde/Lock.php:${PORTSDIR}/devel/pear-Horde_Lock
 horde-Horde_Log-DEPEND=		${PEARDIR}/Horde/Log.php:${PORTSDIR}/sysutils/pear-Horde_Log
 horde-Horde_LoginTasks-DEPEND=	${PEARDIR}/Horde/LoginTasks.php:${PORTSDIR}/devel/pear-Horde_LoginTasks
