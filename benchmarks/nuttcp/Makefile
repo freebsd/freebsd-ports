@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nuttcp
-# Date Created:				17 Jul 2009
 # Whom:					Andy Clark <andrewclarkii@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nuttcp
 PORTVERSION=	6.1.2
@@ -26,11 +22,14 @@ MAN8=		${PORTNAME}.8
 NUTTSCPVERSION=	1.7
 NUTTSCPDISTFILE=nuttscp-${NUTTSCPVERSION}
 
-OPTIONS=	NUTTSCP "Install script for copying files over nuttcp" on
+OPTIONS_DEFINE=	NUTTSCP
+OPTIONS_DEFAULT=	NUTTSCP
+
+NUTTSCP_DESC=	Install script for copying files over nuttcp
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NUTTSCP)
+.if ${PORT_OPTIONS:MNUTTSCP}
 USE_PERL5=	yes
 PLIST_SUB+=	NUTTSCP=""
 .else
@@ -46,7 +45,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} 's|/usr/bin/perl|${PERL}|g' ${WRKDIR}/nuttscp
 
 do-install:
-.	if defined(WITH_NUTTSCP)
+.	if ${PORT_OPTIONS:MNUTTSCP}
 		${INSTALL_SCRIPT} ${WRKDIR}/nuttscp ${PREFIX}/bin/
 		( cd ${PREFIX}/bin; ${LN} -sf nuttscp nuttrcp )
 .	endif
