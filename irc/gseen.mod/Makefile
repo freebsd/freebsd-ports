@@ -1,9 +1,5 @@
-# Ports collection makefile for:  gseen.mod
-# Date created:			  28 Mai 2004
-# Whom:				  Gerrit Beine (<tux@pinguru.net>)
-#
+# Created by: Gerrit Beine (<tux@pinguru.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	gseen.mod
 PORTVERSION=	1.1.1.p3

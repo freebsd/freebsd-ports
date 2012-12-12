@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MIRACL
-# Date created:		Mon Jan 17 21:38:16 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	miracl
 PORTVERSION=	5.6

@@ -1,7 +1,3 @@
-# Ports collection makefile for:	zfstools
-# Date created:				26 April 2012
-# Whom:					Bryan Drewery <bryan@shatow.net>
-#
 # $FreeBSD$
 
 PORTNAME=	zfstools
