@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Abuse-Utils
-# Date created:		2008-10-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Abuse-Utils
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
