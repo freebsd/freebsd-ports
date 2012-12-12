@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.68
+PORTVERSION=	0.70
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,10 +25,13 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-online-tests --no-IPv6-tests
 
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
-		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
+		Net::DNS::Parameters.3 Net::DNS::Question.3 \
+		Net::DNS::RR.3 Net::DNS::RR::A.3 \
 		Net::DNS::RR::AFSDB.3 Net::DNS::RR::CNAME.3 \
-		Net::DNS::RR::ISDN.3 Net::DNS::RR::MG.3 \
-		Net::DNS::RR::HINFO.3 Net::DNS::RR::IPSECKEY.3 \
+		Net::DNS::RR::ISDN.3 Net::DNS::RR::L32.3 \
+		Net::DNS::RR::L64.3 Net::DNS::RR::LP.3 \
+		Net::DNS::RR::MG.3 Net::DNS::RR::NID.3 \
+		Net::DNS::RR::TLSA.3 Net::DNS::RR::HINFO.3 Net::DNS::RR::IPSECKEY.3 \
 		Net::DNS::RR::MINFO.3 Net::DNS::RR::MR.3 Net::DNS::RR::MX.3 \
 		Net::DNS::RR::NS.3 Net::DNS::RR::PTR.3 Net::DNS::RR::RP.3 \
 		Net::DNS::RR::RT.3 Net::DNS::RR::SOA.3 Net::DNS::RR::SRV.3 \
@@ -40,14 +43,14 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Nameserver.3 Net::DNS::RR::CERT.3 \
 		Net::DNS::FAQ.3 Net::DNS::RR::TKEY.3 \
 		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3 \
-		Net::DNS::Resolver::Win32.3 Net::DNS::RR::SSHFP.3 \
-		Net::DNS::Resolver::Base.3 Net::DNS::Resolver::UNIX.3 \
-		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
-		Net::DNS::RR::APL.3 Net::DNS::RR::APL::ApItem.3 \
+		Net::DNS::RR::SSHFP.3 Net::DNS::Resolver::Base.3 \
+		Net::DNS::Resolver::cygwin.3 Net::DNS::Resolver::MSWin32.3 \
+		Net::DNS::Resolver::os2.3 Net::DNS::Resolver::UNIX.3\
+	       	Net::DNS::Resolver::Recurse.3 Net::DNS::RR::APL.3 \
 		Net::DNS::RR::DHCID.3 Net::DNS::Domain.3 \
 		Net::DNS::DomainName.3 Net::DNS::Text.3 Net::DNS::Mailbox.3 \
-		Net::DNS::RR::KX.3 Net::DNS::RR::HIP.3 \
-		Net::DNS::Resolver::Cygwin.3 Net::DNS::RR::SPF.3
+		Net::DNS::ZoneFile.3 Net::DNS::RR::KX.3 Net::DNS::RR::HIP.3 \
+		Net::DNS::RR::SPF.3
 
 PORTDOCS=	Changes README TODO
 
