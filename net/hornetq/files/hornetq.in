@@ -38,6 +38,7 @@ load_rc_config $name
 
 hornetq_enable=${hornetq_enable:-"NO"}
 hornetq_config=${hornetq_config:-"non-clustered"}
+hornetq_vmargs=${hornetq_vmargs:-""}
 hornetq_deployment=${hornetq_deployment:-"hornetq-beans.xml"}
 hornetq_data=${hornetq_data:-"/var/spool/hornetq"}
 
@@ -54,7 +55,8 @@ export PATH=$PATH:%%LOCALBASE%%/bin
 export HORNETQ_HOME=%%DATADIR%%
 export CLUSTER_PROPS=-Ddata.dir=${hornetq_data}
 export JAVA_VENDOR=openjdk
-export JAVA_VERSION=1.6
+export JAVA_VERSION=1.7
+export CLUSTER_PROPS="${hornetq_vmargs}"
 
 hornetq_prestop() {
 	$HORNETQ_HOME/bin/stop.sh %%DATADIR%%/config/stand-alone/${hornetq_config}
