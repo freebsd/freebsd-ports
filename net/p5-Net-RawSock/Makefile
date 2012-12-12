@@ -1,7 +1,3 @@
-# New ports collection makefile for:    p5-Net-Divert
-# Date created:                         January 30, 2003
-# Whom:                                 Nicolas Jombart
-#
 # $FreeBSD$
 
 PORTNAME=	Net-RawSock
@@ -10,7 +6,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/rawsock/download/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ecu@ipv42.net
+MAINTAINER=	ecu@200ok.org
 COMMENT=	Net::RawSock provides a base function to send raw IP packets from Perl
 
 PERL_CONFIGURE=	yes

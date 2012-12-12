@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ccze
-# Date Created:				2nd june 2003
-# Whom:					Nicolas Jombart <ecu@ipv42.net>
-#
 # $FreeBSD$
-# ex:ts=8
 
 PORTNAME=	ccze
 PORTVERSION=	0.2.1
@@ -12,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://falafel.200ok.org/distfiles/ccze/ \
 		http://200ok.org/distfiles/ccze/
 
-MAINTAINER=	ecu@ipv42.net
+MAINTAINER=	ecu@200ok.org
 COMMENT=	Fast log colorizer
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
