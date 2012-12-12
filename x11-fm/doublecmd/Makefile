@@ -1,12 +1,9 @@
-# New ports collection makefile for:   doublecmd
-# Date created:                01 Oct 2011
-# Whom:                        Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
-#
+# Created by:	Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
 # $FreeBSD$
-#
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -29,7 +26,7 @@ USE_GNOME=	desktopfileutils
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 PROJECT_FILE=	src/doublecmd.lpi
-LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
+LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-help-0.5.1
 
