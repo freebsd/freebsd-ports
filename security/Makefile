@@ -183,7 +183,7 @@
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += honggfuzz
-    SUBDIR += horde-jeta
+    SUBDIR += horde3-jeta
     SUBDIR += hotssh
     SUBDIR += hs-Crypto
     SUBDIR += hs-HsOpenSSL

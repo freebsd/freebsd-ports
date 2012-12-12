@@ -82,7 +82,7 @@
     SUBDIR += gsnmp
     SUBDIR += hastmon
     SUBDIR += hawk
-    SUBDIR += horde-nic
+    SUBDIR += horde3-nic
     SUBDIR += icinga
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
