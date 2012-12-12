@@ -34,14 +34,14 @@ PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 
 .if !defined(PKGNAMESUFFIX)
-OPTIONS_SINGLE=         LCL
-OPTIONS_SINGLE_LCL=     GTK1 GTK2 QT4
+OPTIONS_SINGLE=		LCL
+OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
 
 GTK1_DESC=		Use gtk12 interface
-GTK2_DESC=              Use gtk20 interface
-QT4_DESC=               Use qt4 interface
+GTK2_DESC=		Use gtk20 interface
+QT4_DESC=		Use qt4 interface
 
-OPTIONS_DEFAULT=        GTK2
+OPTIONS_DEFAULT=	GTK2
 .endif
 
 .include <bsd.port.pre.mk>
