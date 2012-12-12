@@ -5,20 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Image
-PORTVERSION=	1.0.10
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics www pear
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Image API
 
-OPTIONS=	GD "Depend on PHP gd extension" Off
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Support \
+		Horde_Translation \
+		Horde_Util
 
-USE_HORDE_RUN=	Horde_Exception Horde_Support Horde_Translation Horde_Util
+OPTIONS_DEFINE=	GD
+GD_DESC=	Depend on PHP gd extension
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
 

@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Text_Diff
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde engine for performing and rendering text diffs
 
-USE_HORDE_RUN=	Horde_Exception Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Util
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

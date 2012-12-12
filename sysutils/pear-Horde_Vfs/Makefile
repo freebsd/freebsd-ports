@@ -5,20 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Vfs
-PORTVERSION=	1.0.9
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Virtual File System API
 
-OPTIONS=	FTP "Depend on FTP PHP extension" Off
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Translation \
+		Horde_Util
 
-USE_HORDE_RUN=	Horde_Exception Horde_Translation Horde_Util
+OPTIONS_DEFINE=	FTP
+FTP_DESC=	Depend on FTP PHP extension
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FTP)
+.if ${PORT_OPTIONS:MFTP}
 USE_PHP+=	ftp
 .endif
 

@@ -5,14 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_SyncMl
-PORTVERSION=	1.0.9
+PORTVERSION=	2.0.1
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for processing SyncML requests
 
-USE_HORDE_RUN=	Horde_Date Horde_Icalendar Horde_Log Horde_Support \
-		Horde_Util Horde_Xml_Wbxml Horde_Translation Horde_Auth \
+USE_HORDE_RUN=	Horde_Date \
+		Horde_Icalendar \
+		Horde_Log \
+		Horde_Support \
+		Horde_Util \
+		Horde_Xml_Wbxml \
+		Horde_Translation \
+
+# optional but we want it
+USE_HORDE_RUN+= Horde_Auth \
 		Horde_Core
 
 .include <bsd.port.pre.mk>

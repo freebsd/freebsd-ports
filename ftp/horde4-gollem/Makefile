@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gollem
-PORTVERSION=	2.0.2
+DISTVERSION=	3.0.0RC1
 CATEGORIES=	ftp www pear
 PKGNAMEPREFIX=	horde-
 
@@ -16,29 +16,31 @@ COMMENT=	Horde Web-based File Manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde5-${PORTNAME}
 
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		horde \
 		Horde_Auth \
-		Horde_Browser \
 		Horde_Cache \
 		Horde_Core \
-		Horde_Db \
 		Horde_Editor \
 		Horde_Exception \
 		Horde_Mime \
 		Horde_Mime_Viewer \
-		Horde_Notification \
 		Horde_Perms \
 		Horde_Secret \
 		Horde_Serialize \
 		Horde_Support \
 		Horde_Url \
 		Horde_Util \
-		Horde_Vfs
+		Horde_Vfs \
+		Horde_View
+
+# Optional but we want it
+USE_HORDE_RUN+=	Horde_Db \
+		Horde_Share
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

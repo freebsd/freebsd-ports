@@ -5,13 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Token
-PORTVERSION=	1.1.7
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Token API
 
-USE_HORDE_RUN=	Horde_Exception Horde_Translation Horde_Url Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Translation \
+		Horde_Url \
+		Horde_Util
 USE_PHP=	hash
 
 .include <bsd.port.pre.mk>

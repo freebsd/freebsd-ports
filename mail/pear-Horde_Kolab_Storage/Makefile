@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Kolab_Storage
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.2
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -19,8 +19,8 @@ USE_HORDE_RUN=	Horde_Cache \
 		Horde_Support \
 		Horde_Util
 
-# Not required but we want it
-USE_PHP=	imap
+# Optional but we want it
+USE_PHP+=	imap
 USE_HORDE_RUN+=	Horde_Imap_Client
 
 .include <bsd.port.pre.mk>

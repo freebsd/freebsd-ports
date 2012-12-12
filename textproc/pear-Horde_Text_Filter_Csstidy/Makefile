@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Text_Filter_Csstidy
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org

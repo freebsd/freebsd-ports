@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Text_Filter
-PORTVERSION=	1.1.6
+PORTVERSION=	2.0.3
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Text Filter API
 
-USE_HORDE_RUN=	Horde_Exception Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Util
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

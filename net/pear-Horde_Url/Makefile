@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Url
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org

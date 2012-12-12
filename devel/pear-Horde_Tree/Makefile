@@ -5,13 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Tree
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Tree API
 
-USE_HORDE_RUN=	Horde_Exception Horde_Url Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Url \
+		Horde_Util
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

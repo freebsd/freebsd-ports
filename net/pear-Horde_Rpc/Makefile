@@ -5,15 +5,26 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Rpc
-PORTVERSION=	1.0.4
+PORTVERSION=	2.0.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde RPC API
 
-USE_HORDE_RUN=	Horde_ActiveSync Horde_Core Horde_Exception Horde_Lock \
-		Horde_Perms Horde_Serialize Horde_Support Horde_SyncMl \
-		Horde_Translation Horde_Util Horde_Xml_Element Horde_Http
+USE_HORDE_RUN=	Horde_Core \
+		Horde_Exception \
+		Horde_Perms \
+		Horde_Serialize \
+		Horde_Support \
+		Horde_Translation \
+		Horde_Util \
+		Horde_Xml_Element
+
+# Optional but we want it
+USE_HORDE_RUN+=	Horde_ActiveSync \
+		Horde_Lock \
+		Horde_SyncMl \
+		Horde_Http
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

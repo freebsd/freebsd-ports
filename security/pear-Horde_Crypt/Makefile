@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	Horde_Crypt
-PORTVERSION=	1.1.2
+PORTVERSION=	2.1.0
 CATEGORIES=	security www pear
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Cryptography API
 
-OPTIONS=	BCMATH "Depend on bcmath PHP extension" Off
+OPTIONS_DEFINE=	BCMATH
+BCMATH_DESC=	Depend on bcmath PHP extension
 
-USE_HORDE_RUN=	Horde_Exception Horde_Mime Horde_Stream_Filter \
-		Horde_Translation Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Mime \
+		Horde_Stream_Filter \
+		Horde_Translation \
+		Horde_Util
 USE_PHP=	hash openssl
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BCMATH)
+.if ${PORT_OPTIONS:MBCMATH}
 USE_PHP+=	bcmath
 .endif
 

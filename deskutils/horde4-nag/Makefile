@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	3.0.9
+PORTVERSION=	4.0.1
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
@@ -21,6 +21,7 @@ LATEST_LINK=	horde4-${PORTNAME}
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
+		content \
 		horde \
 		Horde_Auth \
 		Horde_Core \
@@ -32,6 +33,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Group \
 		Horde_History \
 		Horde_Icalendar \
+		Horde_Mail \
 		Horde_Mime \
 		Horde_Perms \
 		Horde_Prefs \

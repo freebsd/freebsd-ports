@@ -5,13 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Translation
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde translation library
-
-USE_HORDE_RUN=	Horde_Exception
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
