@@ -1,9 +1,5 @@
-# New ports collection makefile for:    openbravoerp
-# Date created:         		2 Nov 2008
-# Whom:                 		loader@freebsdmall.com
-#
+# Created by: loader@freebsdmall.com
 # $FreeBSD$
-#
 
 PORTNAME=	openbravoerp
 PORTVERSION=	2.40
@@ -15,6 +11,9 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	loader@freebsdmall.com
 COMMENT=	Openbravo ERP is a Web based ERP
+
+DEPRECATED=	version incompatibility with devel/apache-ant
+EXPIRATION_DATE=2013-01-11
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_JAVA=	yes
