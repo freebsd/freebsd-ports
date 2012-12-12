@@ -1,16 +1,14 @@
 # Created by: dom@myrddin.demon.co.uk
-#
 # $FreeBSD$
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.19
+PORTVERSION=	5.20
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
-BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
@@ -24,6 +22,7 @@ MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
+USE_PKGCONFIG=	build
 USE_XORG=	xpm
 USE_GL=		yes
 USE_GMAKE=	yes
