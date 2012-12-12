@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tbb
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
-DISTNAME=	tbb40_20110809oss_src
+DISTNAME=	tbb41_20121003oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -20,19 +20,21 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
-MAKE_ENV=	CPLUS=${CXX}
 
-WRKSRC=	${WRKDIR}/tbb40_20110809oss
+WRKSRC=	${WRKDIR}/tbb41_20121003oss
 
 post-extract:
+	@${CP} ${WRKSRC}/build/FreeBSD.gcc.inc ${WRKSRC}/build/FreeBSD.${CC}.inc
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/build/FreeBSD.gcc.inc
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		-e 's|gcc|${CC}|g' -e 's|g++|${CXX}|g' \
+		${WRKSRC}/build/FreeBSD.${CC}.inc
 
 do-install:
 	cd ${WRKSRC}; \

@@ -7,7 +7,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	0.0.20120716
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/tarball/${GITVERSION}/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
