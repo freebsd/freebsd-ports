@@ -3,8 +3,9 @@
 
 PORTNAME=	cassandra
 PORTVERSION=	1.0.12
+PORTREVISION=	1
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
 DISTNAME=	apache-cassandra-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
@@ -14,7 +15,7 @@ COMMENT=	Open source distributed database management system
 
 LICENSE=	AL2
 
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 REINPLACE_ARGS=	-i ''
 USE_JAVA=	yes
