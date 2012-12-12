@@ -1,46 +1,73 @@
-# New ports collection makefile for:    jspwiki
-# Date created:         29 April, 2009
-# Whom:                 wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	jspwiki
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.ecyrd.com/~jalkanen/JSPWiki/${PORTVERSION}/
 DISTNAME=	JSPWiki-${PORTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A feature-rich and extensible Wiki engine built around J2EE
+COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 
-RUN_DEPENDS=	${TOMCATDIR}:${PORTSDIR}/www/tomcat55
+LICENSE=	AL2
 
 USE_ZIP=	yes
-USE_JAVA=	1.5+
-
+USE_JAVA=	1.6+
 NO_BUILD=	yes
-TOMCATVER=	tomcat5.5
+
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
-TOMCATOWN=	www
-TOMCATGRP=	www
+APPHOME=	${LOCALBASE}/${TOMCATVER}
 WEBAPPDIR=	${TOMCATDIR}/webapps
-PORTDOCS=	LICENSE README ReleaseNotes
-PLIST_FILES=	${TOMCATVER}/webapps/JSPWiki.war
-WRKSRC=		${WRKDIR}/JSPWiki
+WEBAPP=		JSPWiki
 
-do-install:
-	cd ${WRKSRC} && \
-		${INSTALL} -g ${TOMCATGRP} -o ${TOMCATOWN} -m 444 JSPWiki.war ${WEBAPPDIR};
+PORTDOCS=	ChangeLog README ReleaseNotes JSPWiki-*.zip
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||}
+
+OPTIONS_SINGLE=	AS
+OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
+OPTIONS_DEFAULT=	TOMCAT6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTOMCAT6}
+TOMCATVER=	apache-tomcat-6.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 .endif
 
-post-install:
+.if ${PORT_OPTIONS:MTOMCAT7}
+TOMCATVER=	apache-tomcat-7.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+.endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${WEBAPP} ${WRKDIR}/${PORTNAME}
+	@${MKDIR} ${WRKDIR}/${WEBAPP}
+	@${TAR} xf ${WRKDIR}/${PORTNAME}/JSPWiki.war -C ${WRKDIR}/${WEBAPP}
+.for file in jspwiki.policy jspwiki.properties web.xml
+	@${MV} ${WRKDIR}/${WEBAPP}/WEB-INF/${file} ${WRKDIR}/${WEBAPP}/WEB-INF/${file}.example
+.endfor
+
+do-install:
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${WEBAPPDIR}/${WEBAPP}
+	@(cd ${WRKDIR}/${WEBAPP} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${WEBAPP})
+	@for file in jspwiki.policy jspwiki.properties web.xml ; do \
+		if [ ! -e "${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file}" ]; then \
+			${ECHO_MSG} "	Installing local configuration file: ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file"; \
+			${CP} ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$${file}.example ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file; \
+				else \
+					${ECHO_MSG} "	Preserving local configuration file: ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file"; \
+		fi; \
+	done
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/${PORTNAME}/|} ${DOCSDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
