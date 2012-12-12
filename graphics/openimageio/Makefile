@@ -7,6 +7,7 @@
 
 PORTNAME=	openimageio
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://github.com/OpenImageIO/oiio/tarball/
 DISTNAME=	Release-${PORTVERSION}

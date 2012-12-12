@@ -23,6 +23,13 @@ include/tbb/concurrent_unordered_set.h
 include/tbb/memory_pool.h
 include/tbb/flow_graph.h
 include/tbb/runtime_loader.h
+include/tbb/concurrent_lru_cache.h
+include/tbb/aggregator.h
+include/tbb/task_arena.h
+include/tbb/machine/icc_generic.h
+include/tbb/machine/mic_common.h
+include/tbb/machine/gcc_ia32_common.h
+include/tbb/machine/msvc_ia32_common.h
 include/tbb/machine/gcc_generic.h
 include/tbb/machine/windows_api.h
 include/tbb/machine/macos_common.h
