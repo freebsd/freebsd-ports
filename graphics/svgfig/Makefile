@@ -1,9 +1,4 @@
-# New ports collection makefile for:	svgfig
-# Date created:		01 June 2008
-# Whom:			Wesley Shields <wxs@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	SVGFig
 PORTVERSION=	1.1.6

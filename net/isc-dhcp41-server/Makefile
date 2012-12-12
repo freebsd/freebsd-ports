@@ -1,9 +1,4 @@
-# Ports collection makefile for:    isc-dhcp41-server
-# Date created:         28 March 2010
-# Whom:                 Wesley Shields <wxs@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dhcp
 DISTVERSION=	4.1-ESV

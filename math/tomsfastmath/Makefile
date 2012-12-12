@@ -1,9 +1,4 @@
-# Ports collection makefile for:  tomsfastmath
-# Date created:			  05 Aug 2005
-# Whom:				  Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.12

@@ -1,9 +1,4 @@
-# Ports collection makefile for:  grok
-# Date created:			  07 March 2006
-# Whom:				  Wesley Shields <wxs@atarininja.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	grok
 PORTVERSION=	1.20110708.1

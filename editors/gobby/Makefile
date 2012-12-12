@@ -1,9 +1,4 @@
-# Ports collection makefile for:  gobby
-# Date created:			  28 September 2005
-# Whom:				  Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gobby
 PORTVERSION=	0.4.12

@@ -1,9 +1,4 @@
-# Ports collection makefile for:  libtommath
-# Date created:			  05 Aug 2005
-# Whom:				  Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libtommath
 PORTVERSION=	0.42.0

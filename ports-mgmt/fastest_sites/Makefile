@@ -1,9 +1,4 @@
-# Ports collection makefile for:  fastest_sites
-# Date created:			  20 March 2008
-# Whom:				  Wesley Shields <wxs@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fastest_sites
 PORTVERSION=	20110317

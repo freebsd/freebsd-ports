@@ -1,4 +1,3 @@
-# Created by: Wesley Shields <wxs@atarininja.org>
 # $FreeBSD$
 
 PORTNAME=	paros

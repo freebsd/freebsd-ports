@@ -1,9 +1,4 @@
-# Ports collection makefile for:  suxus
-# Date created:			  08 Feb 2006
-# Whom:				  Wesley Shields <wxs@csh.rit.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	suxus
 PORTVERSION=	1.5

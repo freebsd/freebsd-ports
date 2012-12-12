@@ -1,7 +1,3 @@
-# New ports collection makefile for:	git-subversion
-# Date created:				01 August 2011
-# Whom:					wxs@FreeBSD.org
-#
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-subversion

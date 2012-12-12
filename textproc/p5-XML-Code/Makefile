@@ -1,9 +1,4 @@
-# New ports collection makefile for:	XML::Code
-# Date created:		1 June 2008
-# Whom:			Wesley Shields <wxs@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Code
 PORTVERSION=	0.4
