@@ -15,6 +15,7 @@ COMMENT=	A general purpose library based on code by D. J. Bernstein
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+ALL_TARGET=	dep all
 
 MAKEFILE=	GNUmakefile
 
@@ -42,6 +43,7 @@ PORTDOCS=	CHANGES README TODO
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/man
+# Manual pages clash with other programs; prepend libowfat_ to them.
 .for i in ${MAN3}
 	@${MV} ${WRKSRC}/*/${i:S/libowfat_//} ${WRKSRC}/man/${i}
 .endfor
