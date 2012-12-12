@@ -1,12 +1,9 @@
-# New ports collection makefile for: apr
-# Date created:		19 February 2002
-# Whom:			Garrett Rooney <rooneg@electricjellyfish.net>
-#
+# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 # $FreeBSD$
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -20,14 +17,17 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 MAKE_JOBS_SAFE=	yes
 
 NO_OPTIONS_SORT=yes
-# apr
-OPTIONS_DEFINE=	THREADS IPV6 DEVRANDOM
-# apr-util
-OPTIONS_DEFINE+=BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE
-OPTIONS_DEFAULT=THREADS IPV6 DEVRANDOM BDB GDBM
+OPTIONS_GROUP=		APR APU
+OPTIONS_GROUP_APR=	THREADS IPV6 DEVRANDOM
+OPTIONS_GROUP_APU=	BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE
+OPTIONS_RADIO=		CRYPTO
+OPTIONS_RADIO_CRYPTO=	SSL
+OPTIONS_DEFAULT=	THREADS IPV6 DEVRANDOM BDB GDBM SSL
 
-DEVRANDOM_DESC= Use /dev/random or compatible
+DEVRANDOM_DESC=	Use /dev/random or compatible
 NDBM_DESC=	NDBM support
+SSL_DESC=	OpenSSL crypto driver
+NSS_DESC=	NSS crypto driver
 
 .include <bsd.port.options.mk>
 
@@ -36,7 +36,6 @@ APU_VERSION=	1.4.1
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake autoconf libtool:env
-USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	-2.7
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
@@ -150,6 +149,34 @@ APU_CONF_ARGS+=	--without-sqlite3
 PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
+# crypto (apache24)
+.if ${PORT_OPTIONS:MSSL} || ${PORT_OPTIONS:MNSS}
+APU_CONF_ARGS+=	--with-crypto
+.endif
+
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
+PLIST_SUB+=	SSL=""
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+APU_CONF_ARGS+=	--with-openssl=${OPENSSLBASE}
+.else
+PLIST_SUB+=	SSL="@comment "
+APU_CONF_ARGS+=	--without-openssl
+.endif
+
+# TODO figure out why nss flag is ignored if ssl is set
+# this works on other OS as expected
+.if ${PORT_OPTIONS:MNSS}
+PLIST_SUB+=	NSS=""
+LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
+CFLAGS+=	-I${LOCALBASE}/include/nss
+LDFLAGS+=	-L${LOCALBASE}/lib/nss
+APU_CONF_ARGS+=	--with-nss=${LOCALBASE}
+.else
+PLIST_SUB+=	NSS="@comment "
+.endif
+
 .if defined(APU_EXTRAS)
 PLIST_SUB+=	APU_EXTRAS=""
 .else
@@ -169,7 +196,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4
 
 # http://svn.apache.org/viewvc?view=revision&revision=1362895
-	${REINPLACE_CMD} -e 's|sql = apr_palloc|sql = apr_pcalloc|' ${APU_WRKDIR}/dbd/apr_dbd_freetds.c	
+	${REINPLACE_CMD} -e 's|sql = apr_palloc|sql = apr_pcalloc|' ${APU_WRKDIR}/dbd/apr_dbd_freetds.c
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \
