@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Editor
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -16,7 +16,6 @@ CONFLICTS=	horde-3*
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		Horde_Browser \
-		Horde_Core \
 		Horde_Exception \
 		Horde_Serialize
 

@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Util
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Utility Libraries
 
 USE_PHP=	dom
-USE_HORDE_RUN=	Horde_Url
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

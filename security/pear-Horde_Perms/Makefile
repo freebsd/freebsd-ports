@@ -5,13 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Perms
-PORTVERSION=	1.0.7
+PORTVERSION=	2.0.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Permissions System
 
-USE_HORDE_RUN=	Horde_Db Horde_Exception Horde_Group Horde_Util \
+USE_HORDE_RUN=	Horde_Db \
+		Horde_Exception \
+		Horde_Group \
+		Horde_Util \
 		Horde_Translation
 
 .include <bsd.port.pre.mk>

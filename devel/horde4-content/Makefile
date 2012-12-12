@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	content
-PORTVERSION=	1.0.3
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 
@@ -15,7 +15,7 @@ COMMENT=	Horde tagging application
 
 LATEST_LINK=	horde4-${PORTNAME}
 
-USE_PHP=	gettext
+USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		Horde_Core \

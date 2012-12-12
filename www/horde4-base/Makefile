@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	4.0.16
-PKGNAMEPREFIX=
+PORTVERSION=	5.0.2
 CATEGORIES=	www pear
+PKGNAMEPREFIX=
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Application Framework
@@ -17,10 +17,13 @@ CONFLICTS=	horde-3*
 
 RUN_DEPENDS=	${PEARDIR}/Net/DNS2.php:${PORTSDIR}/dns/pear-Net_DNS2
 
-OPTIONS=	FACEBOOK "Support connections to Facebook" Off \
-		ICONV "Depend on PHP iconv extension" On \
-		TWITTER "Support connections to Twitter" Off \
-		WEATHER "Support weather forecast display" Off
+OPTIONS_DEFAULT=	ICONV
+OPTIONS_DEFINE=	FACEBOOK ICONV TWITTER WEATHER
+
+FACEBOOK_DESC=	Support connections to Facebook
+ICONV_DESC=	Depend on PHP iconv extension
+TWITTER_DESC=	Support connections to Twitter
+WEATHER_DESC=	Support weather forecast display
 
 USE_PHP=	filter gettext hash
 
@@ -39,6 +42,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Http \
 		Horde_Image \
 		Horde_LoginTasks \
+		Horde_Mail \
 		Horde_Mime \
 		Horde_Nls \
 		Horde_Perms \
@@ -57,8 +61,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Vfs
 
 # Optional in package but we want them in
-USE_HORDE_RUN+=	Horde_DataTree \
-		Horde_Feed
+USE_HORDE_RUN+=	Horde_Feed
 
 .include <bsd.port.options.mk>
 

@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	Horde_Secret
-PORTVERSION=	1.0.4
+PORTVERSION=	2.0.2
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Secret Encryption API
 
-RUN_DEPENDS=	${PEARDIR}/Crypt/Blowfish.php:${PORTSDIR}/security/pear-Crypt_Blowfish
-
-USE_HORDE_RUN=	Horde_Exception
+USE_HORDE_RUN=	Horde_Crypt_Blowfish \
+		Horde_Exception \
+		Horde_Support
+		
 USE_PHP=	hash
 
 .include <bsd.port.pre.mk>

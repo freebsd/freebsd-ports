@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_SpellChecker
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Spellcheck API
 
-USE_HORDE_RUN=	Horde_Exception Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Util
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

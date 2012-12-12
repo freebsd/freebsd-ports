@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	3.0.18
+PORTVERSION=	4.0.2
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
@@ -18,9 +18,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	horde4-${PORTNAME}
 
-OPTIONS=	DATE_HOLIDAYS "Install PEAR Date_Holidays" On \
-		TIMEOBJECTS "Install Horde timeobjects" On \
-		XMLWRITER "Depend on PHP xmlwriter extension" Off
+OPTIONS_DEFAULT=	DATE_HOLIDAYS TIMEOBJECTS
+OPTIONS_DEFINE=		DATE_HOLIDAYS TIMEOBJECTS XMLWRITER
+DATE_HOLIDAYS_DESC=	Depend on PEAR Date_Holidays
+TIMEOBJECTS_DESC=	Depenbd on Horde timeobjects
+XMLWRITER_DESC=		Depend on PHP xmlwriter extension
 
 USE_PHP=	gettext json simplexml
 USE_HORDE_BUILD=	Horde_Role
@@ -51,21 +53,22 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Share \
 		Horde_Support \
 		Horde_Text_Filter \
+		Horde_Timezone \
 		Horde_Url \
 		Horde_Util \
 		Horde_View
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_DATE_HOLIDAYS)
+.if ${PORT_OPTIONS:MDATE_HOLIDAYS}
 RUN_DEPENDS+=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
 .endif
 
-.if !defined(WITHOUT_TIMEOBJECTS)
+.if ${PORT_OPTIONS:MTIMEOBJECTS
 USE_HORDE_RUN+=	timeobjects
 .endif
 
-.if defined(WITH_XMLWRITER)
+.if ${PORT_OPTIONS:MXMLWRITER}
 USE_PHP+=	xmlwriter
 .endif
 

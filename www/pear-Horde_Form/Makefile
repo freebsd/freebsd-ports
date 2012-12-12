@@ -5,14 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Form
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Form API
 
-USE_HORDE_RUN=	Horde_Core Horde_Date Horde_Exception Horde_Mime \
-		Horde_Nls Horde_Token Horde_Translation Horde_Util
+USE_HORDE_RUN=	Horde_Core \
+		Horde_Date \
+		Horde_Exception \
+		Horde_Mail \
+		Horde_Mime \
+		Horde_Nls \
+		Horde_Token \
+		Horde_Translation \
+		Horde_Util
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

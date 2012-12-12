@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timeobjects
-PORTVERSION=	1.0.7
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 

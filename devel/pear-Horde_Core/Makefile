@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Core
-PORTVERSION=	1.9.3
+PORTVERSION=	2.1.0
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
@@ -14,9 +14,10 @@ COMMENT=	Horde Core Framework libraries
 
 CONFLICTS=	horde-3*
 
-OPTIONS=	KOLAB "Enable Kolab server support" Off \
-		LZF "Depend on lzf PHP extension" Off \
-		SOCKETS "Depend on sockets PHP extension" Off
+OPTONS_DEFINE=	KOLAB LZF SOCKETS
+KOLAB_DESC=	Enable Kolab server support
+LZF_DESC=	Depend on lzf PHP extension
+SOCKETS_DESC=	Depend on sockets PHP extension
 
 USE_PHP=	session
 
@@ -71,11 +72,11 @@ USE_HORDE_RUN+=	Horde_Kolab_Server \
 		Horde_Kolab_Storage
 .endif
 
-.if defined(WITH_LZF)
+.if ${PORT_OPTIONS:MLZF}
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/lzf.so:${PORTSDIR}/archivers/pecl-lzf
 .endif
 
-.if defined(WITH_SOCKETS)
+.if ${PORT_OPTIONS:MSOCKETS}
 USE_PHP+=	sockets
 .endif
 

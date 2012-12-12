@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	webmail
-PORTVERSION=	4.0.9
+PORTVERSION=	5.0.2
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware Webmail Edition
 
-CONFLICTS=	horde-groupware-4*
+CONFLICTS=	horde-groupware-[456]*
 
 LATEST_LINK=	horde4-${PORTNAME}
 
@@ -27,8 +27,7 @@ USE_HORDE_RUN=	Horde_Role \
 		mnemo \
 		nag \
 		timeobjects \
-		turba \
-		Horde_Core
+		turba
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Group
-PORTVERSION=	1.0.5
+PORTVERSION=	2.0.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde User Groups System
 
-USE_HORDE_RUN=	Horde_Exception Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Util
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

@@ -5,26 +5,27 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Cache
-PORTVERSION=	1.0.6
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Caching API
 
-OPTIONS=	APC "Require APC PHP extension" Off \
-		MEMCACHE "Enable Memcache support" Off \
+OPTIONS_DEFINE=	APC MEMCACHE
+APC_DESC=	Require APC PHP extension
+MEMCACHE_DESC=	Enable Memcache support
 		
 USE_HORDE_RUN=	Horde_Exception Horde_Util
 USE_PHP=	hash
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_APC)
+.if ${PORT_OPTIONS:MAPC}
 USE_PHP+=	apc
 .endif
 
-.if defined(WITH_MEMCACHE)
+.if ${PORT_OPTIONS:MMEMCACHE}
 USE_HORDE_RUN+=	Horde_Memcache
 .endif
 

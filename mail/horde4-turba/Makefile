@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	3.0.16
+PORTVERSION=	4.0.1
 PKGNAMEPREFIX=	horde-
 CATEGORIES=	mail www pear
 
@@ -18,9 +18,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LATEST_LINK=	horde4-${PORTNAME}
 
-OPTIONS=	FACEBOOK "Support connections with Facebook" Off \
-		IMSP "Support IMSP addressbooks" Off \
-		LDAP "Support LDAP Addressbooks" Off
+OPTIONS_DEFINE=	FACEBOOK IMSP LDAP
+FACEBOOK_DESC=	Support connections with Facebook
+IMSP_DSC=	Support IMSP addressbooks
+LDAP_DESC=	Support LDAP Addressbooks
 
 USE_PHP=	gettext hash json
 USE_HORDE_BUILD=	Horde_Role
@@ -49,15 +50,15 @@ USE_HORDE_RUN=	Horde_Role \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FACEBOOK)
+.if ${PORT_OPTIONS:MFACEBOOK}
 USE_HORDE_RUN+=	Horde_Service_Facebook
 .endif
 
-.if defined(WITH_IMSP)
+.if ${PORT_OPTIONS:MIMSP}
 USE_HORDE_RUN+=	Horde_Imsp
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_HORDE_RUN+=	Horde_Ldap
 .endif
 

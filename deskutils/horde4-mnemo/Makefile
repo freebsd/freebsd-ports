@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	3.0.7
+PORTVERSION=	4.0.1
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
@@ -17,8 +17,6 @@ LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LATEST_LINK=	horde4-${PORTNAME}
-
-OPTIONS=	PDF "Support PDF generation" On
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
@@ -40,9 +38,13 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Text_Filter \
 		Horde_Util
 
+OPTIONS_DEFAULT=	PDF
+OPTIONS_DEFINE=		PDF
+PDF_DESC=		Support PDF generation
+
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PDF)
+.if ${PORT_OPTIONS:MPDF}
 USE_HORDE_RUN+=	Horde_Pdf
 .endif
 

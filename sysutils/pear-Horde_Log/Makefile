@@ -5,20 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Log
-PORTVERSION=	1.1.2
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Logging library
 
-OPTIONS=	SCRIBE "Enable scribe support" Off
+OPTIONS_DEFINE=	SCRIBE
+SCRIBE_DESC=	Enable scribe support
 
-USE_HORDE_RUN=	Horde_Constraint Horde_Exception
+USE_HORDE_RUN=	Horde_Constraint \
+		Horde_Exception
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SCRIBE)
+.if ${PORT_OPTIONS:MSCRIBE}
 USE_HORDE+=	Horde_Scribe
 .endif
 

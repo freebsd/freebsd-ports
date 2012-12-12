@@ -5,13 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Prefs
-PORTVERSION=	1.1.8
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Preferences API
 
-USE_HORDE_RUN=	Horde_Exception Horde_Mime Horde_Translation Horde_Util
+USE_HORDE_RUN=	Horde_Exception \
+		Horde_Mail \
+		Horde_Mime \
+		Horde_Translation \
+		Horde_Util
 USE_PHP=	json
 
 .include <bsd.port.pre.mk>

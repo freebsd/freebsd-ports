@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	2.0.10
+PORTVERSION=	3.0.1
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
@@ -34,8 +34,9 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Share \
 		Horde_Util
 
-RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
-RUN_DEPENDS+=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+# Optional but we want it
+RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve \
+		${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"

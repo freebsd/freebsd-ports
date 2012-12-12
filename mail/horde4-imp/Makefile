@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	5.0.24
+PORTVERSION=	6.0.2
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
@@ -34,6 +34,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Image \
 		Horde_Imap_Client \
 		Horde_Itip \
+		Horde_ListHeaders \
 		Horde_LoginTasks \
 		Horde_Mail \
 		Horde_Mime \
