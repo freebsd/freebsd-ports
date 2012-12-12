@@ -69,6 +69,14 @@ include/apr-1/apu.h
 include/apr-1/apu_errno.h
 include/apr-1/apu_version.h
 include/apr-1/apu_want.h
+%%NSS%%lib/apr-util-1/apr_crypto_nss-1.so
+%%NSS%%lib/apr-util-1/apr_crypto_nss.so
+%%NSS%%lib/apr-util-1/apr_crypto_nss.la
+%%NSS%%lib/apr-util-1/apr_crypto_nss.a
+%%SSL%%lib/apr-util-1/apr_crypto_openssl-1.so
+%%SSL%%lib/apr-util-1/apr_crypto_openssl.a
+%%SSL%%lib/apr-util-1/apr_crypto_openssl.la
+%%SSL%%lib/apr-util-1/apr_crypto_openssl.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql-1.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.a
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.la
