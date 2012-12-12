@@ -2993,6 +2993,7 @@
     SUBDIR += pear-Horde_Role
     SUBDIR += pear-Horde_Scheduler
     SUBDIR += pear-Horde_Serialize
+    SUBDIR += pear-Horde_Stream
     SUBDIR += pear-Horde_Stream_Filter
     SUBDIR += pear-Horde_Stream_Wrapper
     SUBDIR += pear-Horde_Support
