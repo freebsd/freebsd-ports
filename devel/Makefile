@@ -431,6 +431,7 @@
     SUBDIR += fpc-fcl-async
     SUBDIR += fpc-fcl-base
     SUBDIR += fpc-fcl-db
+    SUBDIR += fpc-fcl-extra
     SUBDIR += fpc-fcl-fpcunit
     SUBDIR += fpc-fcl-image
     SUBDIR += fpc-fcl-json
