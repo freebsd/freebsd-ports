@@ -1,9 +1,5 @@
-# New ports collection makefile for: qmailadmin
-# Date created:		23 Sep 2000
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
