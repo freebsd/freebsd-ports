@@ -1,12 +1,8 @@
-# New ports collection makefile for:	TEA
-# Date created:				13 Jul 2004
-# Whom:					Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	tea
-DISTVERSION=	33.3.0
+DISTVERSION=	33.4.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION} \
 		http://semiletov.ho.ua/${PORTNAME}-releases/
