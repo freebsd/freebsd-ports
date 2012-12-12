@@ -57,14 +57,14 @@ BUILDNAME=		${FPC_ARCH}-freebsd
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 
 _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dbus dts fastcgi fcl-async fcl-base \
-		fcl-db fcl-fpcunit fcl-image fcl-json fcl-net fcl-passrc fcl-process \
-		fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpmkunit fppkg fpvectorial \
-		fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash hermes httpd22 \
-		ibase iconvenc imagemagick imlib ldap libcurl libgd libpng libxml2 \
-		lua mad matroska modplug mysql ncurses newt numlib odbc oggvorbis \
-		openal opengl openssl oracle pasjpeg paszlib pcap postgres proj4 \
-		pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite svgalib symbolic \
-		syslog tcl unzip users utmp uuid x11 xforms zlib
+		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-json fcl-net fcl-passrc \
+		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpmkunit \
+		fppkg fpvectorial fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash \
+		hermes httpd22 ibase iconvenc imagemagick imlib ldap libcurl libgd \
+		libpng libxml2 lua mad matroska modplug mysql ncurses newt numlib \
+		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
+		postgres proj4 pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite \
+		svgalib symbolic syslog tcl unzip users utmp uuid x11 xforms zlib
 
 _FPC_CFG_UNITS=	fastcgi fcl-web
 
@@ -122,6 +122,7 @@ fastcgi_UNIT=	www/fpc-fastcgi
 fcl_async_UNIT=	devel/fpc-fcl-async
 fcl_base_UNIT=	devel/fpc-fcl-base
 fcl_db_UNIT=	devel/fpc-fcl-db
+fcl_extra_UNIT=	devel/fpc-fcl-extra
 fcl_fpcunit_UNIT=	devel/fpc-fcl-fpcunit
 fcl_image_UNIT=	devel/fpc-fcl-image
 fcl_json_UNIT=	devel/fpc-fcl-json
