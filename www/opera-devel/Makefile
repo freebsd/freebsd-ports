@@ -12,6 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser (Next version)
+IGNORE=		Development version is not currently active. Use www/opera instead of
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
