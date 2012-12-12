@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-memcache
-# Date created:			10 August 2004
-# Whom:				Gerrit Beine <tux@pinguru.net>
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	memcache
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
