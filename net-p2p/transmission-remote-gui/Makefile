@@ -1,12 +1,8 @@
-# New ports collection makefile for:	transmission-remote-gui
-# Date created:		2009-05-20
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	transmission-remote-gui
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1
 PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -31,33 +27,36 @@ PLIST_FILES=	bin/transgui
 SUB_FILES=	pkg-message
 
 LAZARUS_PROJECT_FILE=	transgui.lpi
-LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild
+LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild -d
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}
+LAZARUS_DIR=		${LOCALBASE}/share/lazarus
 
-OPTIONS=	GTK2    "Use gtk20 interface instead of gtk12"  on \
-		QT4     "Use qt4 interface" off
+OPTIONS_SINGLE=		LCL
+OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
+
+GTK1_DESC=		Use gtk12 interface
+GTK2_DESC=		Use gtk20 interface
+QT4_DESC=		Use qt4 interface
+
+OPTIONS_DEFAULT=	GTK2
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GTK2) && defined(WITH_QT4)
-IGNORE=	Please select only one option QT4 or GTK2, don't select both options
-.endif
-
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
 USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-.else
-.if !defined(WITH_QT4)
+.endif
+
+.if ${PORT_OPTIONS:MGTK1}
 USE_FPC+=	gtk1
 USE_GNOME=	gtk12 gdkpixbuf
 LCL_PLATFORM=	gtk
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
 .endif
-.endif
 
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 LIB_DEPENDS+=	Qt4Pas.5:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
@@ -65,7 +64,7 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/edit
 
 do-build:
 	@cd ${WRKSRC} && \
-		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} ${LAZARUS_PROJECT_FILE}
+		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --lazarusdir=${LAZARUS_DIR} ${LAZARUS_PROJECT_FILE}
 
 do-install:
 	@cd ${WRKSRC}/units && \
