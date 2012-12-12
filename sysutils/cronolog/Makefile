@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	A web log rotation utility that provides datestamp filenames
+COMMENT=	Web log rotation utility that provides datestamp filenames
 
 CONFLICTS_INSTALL=      cronolog-devel-[0-9]*
 
