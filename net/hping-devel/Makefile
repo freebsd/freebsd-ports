@@ -1,18 +1,14 @@
-# New ports collection makefile for:	hping-devel
-# Date Created:				2005/10/31
-# Whom:					Nicolas Jombart <ecu@ipv42.net>
-#
 # $FreeBSD$
 
 PORTNAME=	hping
 PORTVERSION=	3.0.20051105
 CATEGORIES=	net security
 MASTER_SITES=	http://www.hping.org/ \
-		http://ipv42.net/distfiles/hping/
+		http://200ok.org/distfiles/hping/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	hping3-20051105
 
-MAINTAINER=	ecu@ipv42.net
+MAINTAINER=	ecu@200ok.org
 COMMENT=	Network auditing tool
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84

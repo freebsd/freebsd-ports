@@ -1,18 +1,13 @@
-# New ports collection makefile for:    pancho
-# Date created:                         november 2nd, 2001
-# Whom: 				Nicolas Jombart <Nicolas.Jombart@hsc-labs.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pancho
 PORTVERSION=	9.3.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pancho.org/archives/pancho/ \
-		http://ipv42.net/distfiles/pancho/
+		http://200ok.org/distfiles/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
-MAINTAINER=	ecu@ipv42.net
+MAINTAINER=	ecu@200ok.org
 COMMENT=	Network devices management tool using TFTP and SNMP
 
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \

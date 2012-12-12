@@ -1,18 +1,13 @@
-# New ports collection makefile for:    ipsorc
-# Date created:                         02 December, 2001
-# Whom:                                 Nicolas.Jombart@hsc-labs.com
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ipsorc
 PORTVERSION=	1.7.5
 PORTREVISION=	4
 CATEGORIES=	net security
-MASTER_SITES=	http://ipv42.net/distfiles/ipsorc/ \
+MASTER_SITES=	http://200ok.org/distfiles/ipsorc/ \
 		http://sorcerer.mirrors.pair.com/sources/ipsorcery/${PORTVERSION}/
 
-MAINTAINER=	ecu@ipv42.net
+MAINTAINER=	ecu@200ok.org
 COMMENT=	A tool to create and send IP packets with a graphical GTK front-end
 
 USE_GNOME=	gtk12

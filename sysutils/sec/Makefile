@@ -1,4 +1,3 @@
-# Created by: Nicolas Jombart <ecu@200ok.org>
 # $FreeBSD$
 
 PORTNAME=	sec

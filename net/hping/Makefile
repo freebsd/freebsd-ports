@@ -10,10 +10,10 @@ PORTVERSION=	2.0.0r3
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.hping.org/ \
-		http://ipv42.net/distfiles/hping/
+		http://200ok.org/distfiles/hping/
 DISTNAME=	hping2.0.0-rc3
 
-MAINTAINER=	ecu@ipv42.net
+MAINTAINER=	ecu@200ok.org
 COMMENT=	Network auditing tool
 
 CONFLICTS=	hping-devel-[0-9]*

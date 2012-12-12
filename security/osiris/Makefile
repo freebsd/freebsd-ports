@@ -1,9 +1,4 @@
-# New ports collection Makefile for: 	osiris
-# Date created:				10, February 2003
-# Whom:					Nicolas Jombart <ecu@ipv42.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	osiris
 PORTVERSION=	4.2.3
