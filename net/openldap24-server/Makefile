@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openldap24-server
-# Date created:				19 May 2006
-# Whom:					Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		openldap
 DISTVERSION=		2.4.33
@@ -17,7 +13,24 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
+
+.if defined(CLIENT_ONLY)
+.if ${CLIENT_ONLY} == sasl
+PKGNAMESUFFIX=		-sasl-client
+COMMENT=		Open source LDAP client implementation with SASL2 support
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!4].*
+.else
+PKGNAMESUFFIX=		-client
+COMMENT=		Open source LDAP client implementation
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!4].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
+.endif
+.else
 PKGNAMESUFFIX?=		-server
+# Do not use ${PKGNAMESUFFIX} here has it can change later
+OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}24-server/options
+.endif
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		delphij@FreeBSD.org
@@ -46,9 +59,8 @@ PORTREVISION_CLIENT=	1
 PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	8
 
-OPTIONS_DEFINE=	SASL FETCH
+OPTIONS_DEFINE=	FETCH
 
-SASL_DESC=	With (Cyrus) SASL2 support
 FETCH_DESC=	Enable fetch(3) support
 
 .if !defined(CLIENT_ONLY)
@@ -57,7 +69,7 @@ OPTIONS_DEFINE+=	SOCK ODBC RLOOKUPS SLP SLAPI TCP_WRAPPERS
 OPTIONS_DEFINE+=	ACCESSLOG AUDITLOG COLLECT CONSTRAINT DDS
 OPTIONS_DEFINE+=	DEREF DYNGROUP DYNLIST MEMBEROF PPOLICY PROXYCACHE
 OPTIONS_DEFINE+=	REFINT RETCODE RWM SEQMOD SSSVLV SYNCPROV TRANSLUCENT
-OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD DYNAMIC_BACKENDS
+OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD DYNAMIC_BACKENDS SASL
 
 OPTIONS_DEFAULT=	BDB TCP_WRAPPERS SEQMOD SYNCPROV DYNAMIC_BACKENDS
 
@@ -90,6 +102,7 @@ PROXYCACHE_DESC=	With Proxy Cache overlay
 REFINT_DESC=		With Referential Integrity overlay
 RETCODE_DESC=		With Return Code testing overlay
 RWM_DESC=		With Rewrite/Remap overlay
+SASL_DESC=		With (Cyrus) SASL2 support
 SEQMOD_DESC=		With Sequential Modify overlay
 SSSVLV_DESC=		With ServerSideSort/VLV overlay
 SYNCPROV_DESC=		With Syncrepl Provider overlay
@@ -112,21 +125,12 @@ CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.
 
 .include <bsd.port.pre.mk>
 
-.if defined(CLIENT_ONLY)
-.if ${PORT_OPTIONS:MSASL}
-PKGNAMESUFFIX=		-sasl-client
-COMMENT=		Open source LDAP client implementation with SASL2 support
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!4].*
-.else
-PKGNAMESUFFIX=		-client
-COMMENT=		Open source LDAP client implementation
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!4].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
-.endif
-
 PORTDOCS=		CHANGES drafts rfc
 
+.if defined(CLIENT_ONLY)
+.if ${CLIENT_ONLY} == sasl
+PORT_OPTIONS+=	SASL
+.endif
 .if defined(USE_OPENLDAP)
 BROKEN=			You have `USE_OPENLDAP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
