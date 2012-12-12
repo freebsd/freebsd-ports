@@ -96,11 +96,11 @@
     SUBDIR += hamster-applet
     SUBDIR += hebcal
     SUBDIR += helpviewer
-    SUBDIR += horde-hermes
-    SUBDIR += horde-klutz
-    SUBDIR += horde-kronolith
-    SUBDIR += horde-mnemo
-    SUBDIR += horde-nag
+    SUBDIR += horde3-hermes
+    SUBDIR += horde3-klutz
+    SUBDIR += horde3-kronolith
+    SUBDIR += horde3-mnemo
+    SUBDIR += horde3-nag
     SUBDIR += horde4-groupware
     SUBDIR += horde4-kronolith
     SUBDIR += horde4-mnemo

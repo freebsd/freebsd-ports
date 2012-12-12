@@ -621,8 +621,8 @@
     SUBDIR += hgsvn
     SUBDIR += hgview
     SUBDIR += highlighterkit
-    SUBDIR += horde-chora
-    SUBDIR += horde-whups
+    SUBDIR += horde3-chora
+    SUBDIR += horde3-whups
     SUBDIR += horde4-content
     SUBDIR += horde4-timeobjects
     SUBDIR += horde4-whups
