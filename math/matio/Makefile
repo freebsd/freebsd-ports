@@ -1,9 +1,5 @@
-# New ports collection makefile for:	matio
-# Date created:				14 February 2010
-# Whom:					rfarmer@predatorlabs.net
-#
+# Created by: rfarmer@predatorlabs.net
 # $FreeBSD$
-#
 
 PORTNAME=	matio
 PORTVERSION=	1.3.4
@@ -18,7 +14,8 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC
 
-OPTIONS=	FORTRAN "Build Fortran bindings" OFF
+OPTIONS_DEFINE=	FORTRAN
+FORTRAN_DESC=	Build Fortran bindings
 
 .include <bsd.port.options.mk>
 
@@ -29,7 +26,7 @@ PLIST_FILES= 	include/matio.h \
 		lib/libmatio.so.1 \
 		libdata/pkgconfig/matio.pc
 
-.if !defined(WITHOUT_FORTRAN)
+.if ${PORT_OPTIONS:MFORTRAN}
 USE_FORTRAN=	yes
 
 FFLAGS+=	-fPIC
@@ -41,7 +38,7 @@ PLIST_FILES+=	include/matio.mod
 .endif
 
 post-build:
-.if defined(WITHOUT_FORTRAN)
+.if !${PORT_OPTIONS:MFORTRAN}
 	(cd ${WRKSRC}/src && ${CC} ${CFLAGS} -shared -o libmatio.so.1 snprintf.o \
 	endian.o io.o inflate.o read_data.o mat5.o mat4.o mat.o)
 .else
@@ -57,7 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/matioConfig.h ${PREFIX}/include
 	${INSTALL_PROGRAM} ${WRKSRC}/src/libmatio.so.1 ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/matio.pc ${PREFIX}/libdata/pkgconfig
-.if !defined(WITHOUT_FORTRAN)
+.if ${PORT_OPTIONS:MFORTRAN}
 	${INSTALL_DATA} ${WRKSRC}/src/matio.mod ${PREFIX}/include
 .endif
 
