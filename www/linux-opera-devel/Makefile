@@ -12,6 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser (next version)
+IGNORE=		Development version is not currently active. Use www/linux-opera instead of
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
