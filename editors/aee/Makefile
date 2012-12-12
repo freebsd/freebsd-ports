@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aee
-# Date created:		19 Aug 1999
-# Whom:			Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	aee
 PORTVERSION=	2.2.15b
@@ -12,13 +8,14 @@ CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An easy editor with both curses and X11 interfaces
+COMMENT=	Easy editor with both curses and X11 interfaces
 
-OPTIONS=	XAE "Build X11 version 'xae'" off
+OPTIONS_DEFINE=	XAE
+XAE_DESC=	Build X11 version 'xae'
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_XAE)
+.if !${PORT_OPTIONS:MXAE}
 ALL_TARGET=	main
 PLIST_SUB=	XAE="@comment "
 .else
@@ -42,9 +39,9 @@ do-install:
 	${LN} ${PREFIX}/bin/aee ${PREFIX}/bin/rae
 	${INSTALL_MAN} ${WRKSRC}/aee.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/help.ae ${PREFIX}/lib
-.if defined(WITH_XAE)
+.if ${PORT_OPTIONS:MXAE}
 	${INSTALL_PROGRAM} ${WRKSRC}/xae ${PREFIX}/bin
 	${LN} ${PREFIX}/bin/xae ${PREFIX}/bin/rxae
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
