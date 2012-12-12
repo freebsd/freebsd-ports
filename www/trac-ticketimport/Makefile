@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-ticketimport
-# Date created:                      Dec 31, 2009
-# Whom:                              Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.7c
@@ -18,11 +14,11 @@ COMMENT=	Import or update tickets from a CSV file or Excel file
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=0.7.1:${PORTSDIR}/textproc/py-xlrd
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYTHON=		-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TicketImport
+PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 # Maintainter targets below this point
 
