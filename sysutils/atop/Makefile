@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	atop
-PORTVERSION=	1.26.b8
+PORTVERSION=	2.0.2.b1
 CATEGORIES=	sysutils
-MASTER_SITES=	BERLIOS
-MASTER_SITE_SUBDIR=atop-freebsd
+MASTER_SITES=	http://cloud.github.com/downloads/samm-git/atop-freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
 
 MAINTAINER=	samm@os2.kiev.ua
@@ -19,7 +18,7 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_NCURSES=	yes
-MAKEFILE=	Makefile.fbsd
+MAKEFILE=	BSDmakefile
 MAN1=		atop.1 atopsar.1
 MAN5=		atoprc.5
 LOGDIR?=	/var/log/atop
