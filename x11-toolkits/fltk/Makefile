@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Cross-platform C++ graphical user interface toolkit
 
+LICENSE=	LGPL20
+
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
