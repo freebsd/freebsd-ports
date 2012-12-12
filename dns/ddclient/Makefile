@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ddclient
-# Date created:		Sun Aug 26 14:45:12 CEST 2001
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ddclient
 PORTVERSION=	3.8.1
@@ -21,11 +17,12 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS=	SSL "Enable SSL support" ON
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 
 .include <bsd.port.options.mk>
 
-.ifndef WITHOUT_SSL
+.if ${PORT_OPTIONS:MSSL}
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
@@ -50,7 +47,7 @@ post-patch:
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample-etc_ddclient.conf ${PREFIX}/etc/ddclient.conf.sample
 	@${INSTALL_SCRIPT} ${WRKSRC}/ddclient ${PREFIX}/sbin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
