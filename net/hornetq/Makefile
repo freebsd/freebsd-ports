@@ -1,12 +1,9 @@
-# New ports collection makefile for:	hornetq
-# Date created:		2012-03-16
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	hornetq
 PORTVERSION=	2.2.14
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://downloads.jboss.org/hornetq/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.Final
@@ -21,7 +18,7 @@ PORTDOCS=	quickstart-guide api rest-api user-manual \
 
 USE_RC_SUBR=	hornetq
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 
 NO_BUILD=	yes
