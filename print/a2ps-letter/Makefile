@@ -10,9 +10,6 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${PAPERSIZE:L}${PKGNAMESUFFIX2}
-.if defined(WITH_I18N) || make(makesum) || defined(FETCH_ALL)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ASCII file for printing on a postscript printer
@@ -80,6 +77,7 @@ PLIST_SUB+=	WITHEMACS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MI18N}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}
 PLIST_SUB+=	WITHI18N=""
 
 pre-configure:
