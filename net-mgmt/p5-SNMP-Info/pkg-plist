@@ -66,6 +66,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Enterasys.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Extreme.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Foundry.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Force10.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Juniper.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Microsoft.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Mikrotik.pm

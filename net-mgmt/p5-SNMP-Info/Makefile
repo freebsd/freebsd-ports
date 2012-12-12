@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	2.09
+PORTVERSION=	2.11
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -19,9 +19,9 @@ MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
 	SNMP::Info::Layer2::Kentrox.3 SNMP::Info::Layer3::Altiga.3 \
 	SNMP::Info::Layer3::Arista.3 SNMP::Info::Layer3::Aruba.3 \
 	SNMP::Info::Layer3::BlueCoatSG.3 SNMP::Info::Bridge.3 \
-	SNMP::Info::Layer3::CiscoFWSM.3 SNMP::Info::Layer3::Pf.3 \
-	SNMP::Info::Layer3::SonicWALL.3 SNMP::Info::Layer7.3 \
-	SNMP::Info::Layer7::APC.3 \
+	SNMP::Info::Layer3::CiscoFWSM.3 SNMP::Info::Layer3::Force10.3 \
+	SNMP::Info::Layer3::Pf.3 SNMP::Info::Layer3::SonicWALL.3 \
+	SNMP::Info::Layer7.3 SNMP::Info::Layer7::APC.3 \
 	SNMP::Info::CDP.3 SNMP::Info::CiscoImage.3 SNMP::Info::CiscoQOS.3 \
 	SNMP::Info::CiscoRTT.3 SNMP::Info::CiscoStack.3 \
 	SNMP::Info::CiscoStats.3 SNMP::Info::CiscoStpExtensions.3 \
