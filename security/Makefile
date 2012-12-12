@@ -641,6 +641,7 @@
     SUBDIR += pear-HTML_Crypt
     SUBDIR += pear-Horde_Auth
     SUBDIR += pear-Horde_Crypt
+    SUBDIR += pear-Horde_Crypt_Blowfish
     SUBDIR += pear-Horde_Group
     SUBDIR += pear-Horde_Oauth
     SUBDIR += pear-Horde_Perms
