@@ -27,6 +27,7 @@ USE_GSTREAMER=	yes
 #USE_GCC=	4.6+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+#PYTHON_VERSION= 3.2
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
@@ -136,6 +137,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
+		${JAVALIBDIR}/lucene-core-3.6.1.jar:${PORTSDIR}/textproc/lucene \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		epm:${PORTSDIR}/devel/epm \
@@ -185,6 +187,9 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
 			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar	\
+			--with-system-lucene \
+			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.1.jar	\
+			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.1.jar	\
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
 			--with-package-format="archive" \
 			--enable-gstreamer \
