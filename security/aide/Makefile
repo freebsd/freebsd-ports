@@ -7,6 +7,7 @@
 
 PORTNAME=	aide
 PORTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF \
 		http://www.cs.tut.fi/~rammer/
