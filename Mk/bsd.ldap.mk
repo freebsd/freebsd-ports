@@ -23,6 +23,8 @@ Database_Include_MAINTAINER=		ports@FreeBSD.org
 #				  Default: 24.
 # WANT_OPENLDAP_VER
 #				- Maintainer can set an arbitrary version of OpenLDAP by using it.
+# WANT_OPENLDAP_SASL
+#				- If set, this port depends on SASL enabled OpenLDAP client.
 # IGNORE_OPENLDAP_OPENLDAP
 #				- This variable can be defined if the ports doesn't support
 #				  one or more version of OpenLDAP.

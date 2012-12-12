@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20121212:
+  AFFECTS: users of openldap24-client who uses SASL
+  AUTHOR: Xin Li <delphij@FreeBSD.org>
+
+  There is a change in the openldap24-client port which removes the SASL
+  option.  If the user previously install openldap24-client, but enabled
+  SASL from the config menu, the user would have to replace it with
+  openldap24-sasl-client.
+
+  Note that this only affects those who manually set SASL from the menu,
+  most of the users are not affected.
+
+  If you use portmaster:
+        portmaster -o net/openldap24-sasl-client openldap24-client
+  If you use portupgrade:
+	portupgrade -fo net/openldap24-sasl-client openldap24-client
+
+20121212:
   AFFECTS: users of horde-* applications
   AUTHOR: Martin Matuska <mm@FreeBSD.org>
 
