@@ -1,9 +1,9 @@
---- package.xml.orig	2011-07-06 19:43:43.648445754 +0200
-+++ package.xml	2011-07-06 19:44:38.243342032 +0200
-@@ -33,16 +33,6 @@
-  <contents>
+--- package.xml.orig	2012-11-19 15:15:23.000000000 +0100
++++ package.xml	2012-12-12 11:34:53.100630566 +0100
+@@ -34,16 +34,6 @@
    <dir baseinstalldir="/" name="/">
-    <file baseinstalldir="/" md5sum="439c9f2fe87c01e0d3a8131d81a13f56" name="Horde/Role.php" role="php">
+    <file baseinstalldir="/" md5sum="54edc91d65943f49ff224424822cb057" name="doc/Horde/Role/COPYING" role="doc" />
+    <file baseinstalldir="/" md5sum="bffe45ff771e5246552d1b5cb757deeb" name="Horde/Role.php" role="php">
 -    <tasks:postinstallscript>
 -     <tasks:paramgroup>
 -      <tasks:id>first</tasks:id>
@@ -15,5 +15,5 @@
 -     </tasks:paramgroup>
 -    </tasks:postinstallscript>
     </file>
-    <file baseinstalldir="/" md5sum="a076d676b0ec3a5394c98770c8ccb000" name="Horde.php" role="php" />
+    <file baseinstalldir="/" md5sum="ad152b5366044103a7d0aef45c5f1215" name="Horde.php" role="php" />
     <file baseinstalldir="/" md5sum="801c6dc09a5c93f9f140ed423164f788" name="Horde.xml" role="php" />
