@@ -1,15 +1,10 @@
-# New ports collection makefile for:	gmapcatcher
-# Date created:		24 March 2010
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gmapcatcher
-PORTVERSION=	0.7.7.2
+PORTVERSION=	0.8.0.0
 CATEGORIES=	astro geography
 MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
-DISTNAME=	GMapCatcher-${PORTVERSION}
+DISTNAME=	mapcatcher_${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Offline map viewer
@@ -17,22 +12,20 @@ COMMENT=	Offline map viewer
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GNOME=	pygtk2
-PYDISTUTILS_EGGINFO=${DISTNAME}-py${PYTHON_VER}.egg-info
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-MAN1=		mapcatcher.1 \
-		mapdownloader.1
+PYDISTUTILS_NOEGGINFO=	yes
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share/pixmaps,${PREFIX}/share/pixmaps,g' \
-		${WRKSRC}/gmapcatcher/mapPixbuf.py
+		${WRKSRC}/gmapcatcher/widgets/mapPixbuf.py
+
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/download.py ${PREFIX}/bin/mapdownloader
-	${INSTALL_SCRIPT} ${WRKSRC}/maps.py ${PREFIX}/bin/mapcatcher
+	${INSTALL_SCRIPT} ${WRKSRC}/mapcatcher ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mapdownloader ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
