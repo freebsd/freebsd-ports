@@ -22,7 +22,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use portupgrade:
 	portupgrade -fo net/openldap24-sasl-client openldap24-client
   If you use pkgng with binary packages:
-        pkg set -o openldap24-client:net/openldap24-sasl-client
+        pkg set -o net/openldap24-client:net/openldap24-sasl-client
 
 20121212:
   AFFECTS: users of horde-* applications
