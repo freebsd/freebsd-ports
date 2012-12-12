@@ -1,12 +1,8 @@
-# New ports collection makefile for:   v8
-# Date created:        12 November 2010
-# Whom:                siasia
-#
+# Created by: siasia
 # $FreeBSD$
-#
 
 PORTNAME=	v8
-PORTVERSION=	3.14.5
+PORTVERSION=	3.15.10
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
@@ -14,35 +10,24 @@ MASTER_SITES=	LOCAL/vanilla
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Google\'s open source JavaScript engine
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
-USE_GCC=	any
 USE_GMAKE=	yes
 USE_PYTHON=	2.7+
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
-OPTIONS=	SNAPSHOT "Enable snapshots" Off
-
-.include <bsd.port.options.mk>
 
 MAKE_ARGS=	library=shared
 
-.if ${CC} == "clang" && ${CXX} == "clang++"
+.if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
 MAKE_ENV+=	LINK=clang++
 .else
 MAKE_ARGS+=	strictaliasing=off
-.endif
-
-.if defined(WITHOUT_SNAPSHOT)
-MAKE_ARGS+=	snapshot=off
-.else
-MAKE_ARGS+=	snapshot=on
+USE_GCC=	any
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${PREFIX}/bin/d8
@@ -55,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/v8-testing.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/v8stdint.h ${PREFIX}/include/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
