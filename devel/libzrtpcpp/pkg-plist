@@ -1,12 +1,13 @@
-include/libzrtpcpp/ZrtpCodes.h
 include/libzrtpcpp/ZrtpCallback.h
+include/libzrtpcpp/ZrtpCodes.h
+include/libzrtpcpp/ZrtpConfigure.h
+include/libzrtpcpp/ZrtpCWrapper.h
 include/libzrtpcpp/ZrtpQueue.h
 include/libzrtpcpp/ZrtpUserCallback.h
 include/libzrtpcpp/zrtpccrtp.h
 include/libzrtpcpp/TimeoutProvider.h
-lib/libzrtpcpp.so.0
+lib/libzrtpcpp.so.2.3.2
+lib/libzrtpcpp.so.2
 lib/libzrtpcpp.so
-lib/libzrtpcpp.la
-lib/libzrtpcpp.a
 libdata/pkgconfig/libzrtpcpp.pc
 @dirrm include/libzrtpcpp
