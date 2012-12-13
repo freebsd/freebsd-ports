@@ -1,13 +1,9 @@
-# New ports collection makefile for:	npretty
-# Date created:				11 October 2006
-# Whom:					Peter Ankerstal <peter@pean.org>
-#
+# Created by: Peter Ankerstal <peter@pean.org>
 # $FreeBSD$
-#
 
 PORTNAME=	npretty
 PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/ \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@gabor@}

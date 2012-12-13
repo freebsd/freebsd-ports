@@ -1,9 +1,9 @@
+# Created by: Oliver Heesakkers <dev2@heesakkers.info>
 # $FreeBSD$
-# Created by:	Oliver Heesakkers <dev2@heesakkers.info>
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
