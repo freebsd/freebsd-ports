@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lineak-xosdplugin
-# Date created:		2004-12-29
-# Whom:			Kay Lehmann <kay_lehmann@web.de>
-#
+# Created by: Kay Lehmann <kay_lehmann@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	lineak-xosdplugin
 PORTVERSION=	0.9
@@ -15,25 +11,30 @@ DIST_SUBDIR=	lineak
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xosd-plugin for lineakd
 
-LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd \
-		xosd.4:${PORTSDIR}/misc/xosd
+LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+LIB_DEPENDS=	xosd:${PORTSDIR}/misc/xosd \
+		lineak:${PORTSDIR}/sysutils/lineakd
+
 USE_XORG=	x11 xext xt
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_xosd_config_script="${TRUE}"
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=		-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--program-prefix=''
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 MAN1=		lineak_xosdplugin.1
-MAN_COMPRESSED=	yes
 PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
 		lib/lineakd/plugins/xosdplugin.so
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|"-O2 $$CXXFLAGS"|"$$CXXFLAGS"| ; \
+		 s|echo aout|echo elf| ; \
+		 /LDFLAGS/s|-ldl||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
