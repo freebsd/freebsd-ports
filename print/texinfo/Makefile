@@ -1,18 +1,14 @@
-# New ports collection makefile for:	latest texinfo
-# Date created:		Sun May 29 17:32:08 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	texinfo
-PORTVERSION=	4.13.20120516
+PORTVERSION=	4.13.20121116
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} texinfo.tex texi2dvi
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texinfo.tex texi2dvi
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -58,5 +54,6 @@ post-patch:
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${INSTALL_DATA} ${DISTDIR}/htmlxref.cnf ${DATADIR}/
 
 .include <bsd.port.mk>

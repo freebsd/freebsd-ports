@@ -28,6 +28,7 @@ bin/pdftexi2dvi
 %%NLS%%share/locale/vi/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/texinfo.mo
+%%DATADIR%%/htmlxref.cnf
 %%DATADIR%%/texinfo.cat
 %%DATADIR%%/texinfo.dtd
 %%DATADIR%%/texinfo.xsl
