@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hex-a-hop
-# Date created:				21 February 2006
-# Whom:					jamie
-#
+# Created by: jamie
 # $FreeBSD$
-#
 
 PORTNAME=	hex-a-hop
 PORTVERSION=	1.1.0
@@ -21,20 +17,22 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	PANGO "Use sdl_pango instead of sdl_ttf" off \
-		SOUND "Compile sound support" on
+OPTIONS_DEFINE=	PANGO SOUND NLS DEBUG
+OPTIONS_DEFAULT=	SOUND
+PANGO_DESC=	Use sdl_pango instead of sdl_ttf
+SOUND_DESC=	Sound support
 
 DESKTOP_ENTRIES="Hex-a-Hop" "A puzzle game based on hexagonal tiles" \
 		"${DATADIR}/icon.bmp" \
 		"hex-a-hop" "Application;LogicGame;Game;" false
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=yes
 LDFLAGS+=	-lintl
@@ -42,14 +40,14 @@ LDFLAGS+=	-lintl
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
 .endif
 
-.if !defined(WITHOUT_PANGO)
+.if ${PORT_OPTIONS:MPANGO}
 USE_SDL+=	pango
 CONFIGURE_ARGS+=--disable-sdlttf
 .else
 USE_SDL+=	ttf
 .endif
 
-.if !defined(WITHOUT_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 USE_SDL+=	mixer
 .else
 CONFIGURE_ARGS+=--disable-sound
@@ -58,4 +56,4 @@ CONFIGURE_ARGS+=--disable-sound
 post-patch:	.SILENT
 	${REINPLACE_CMD} -E '/CFLAGS|CXXFLAGS/s/-g//' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
