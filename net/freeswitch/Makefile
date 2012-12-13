@@ -19,26 +19,28 @@ RUN_DEPENDS=	${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS=	SOUNDS	"Sound files for use with FreeSwitch PBX" on \
-		MUSIC	"Music on hold for use with FreeSwitch PBX" on \
-		PIZZA	"Install Pizza Shop voice demo" off \
-		SCRIPTS	"Install Freeswitch various scripts" off \
+OPTIONS_DEFINE=	SOUNDS MUSIC PIZZA SCRIPTS
+OPTIONS_DEFAULT=	SOUNDS MUSIC
+SOUNDS_DESC=	Sound files for use with FreeSwitch PBX
+MUSIC_DESC=	Music on hold for use with FreeSwitch PBX
+PIZZA_DESC=	Pizza Shop voice demo
+SCRIPTS_DESC=	Freeswitch various scripts
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SOUNDS)
+.if ${PORT_OPTIONS:MSOUNDS}
 RUN_DEPENDS+=	${LOCALBASE}/share/freeswitch/sounds/.freeswitch-sounds:${PORTSDIR}/audio/freeswitch-sounds
 .endif
 
-.if defined(WITH_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 RUN_DEPENDS+=	${LOCALBASE}/share/freeswitch/sounds/.freeswitch-music:${PORTSDIR}/audio/freeswitch-music
 .endif
 
-.if defined(WITH_PIZZA)
+.if ${PORT_OPTIONS:MPIZZA}
 RUN_DEPENDS+=	${LOCALBASE}/share/freeswitch/sounds/.pizza:${PORTSDIR}/misc/freeswitch-pizzademo
 .endif
 
-.if defined(WITH_SCRIPTS)
+.if ${PORT_OPTIONS:MSCRIPTS}
 RUN_DEPENDS+=	${LOCALBASE}/etc/freeswitch/scripts/.freeswitch-scripts:${PORTSDIR}/misc/freeswitch-scripts
 .endif
 
