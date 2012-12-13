@@ -1,13 +1,9 @@
-# New ports collection makefile for:	imgseek
-# Date created:		16 June 2003
-# Whom:			Ben Haga <tuxsuximus@hotmail.com>
-#
+# Created by: Ben Haga <tuxsuximus@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	imgSeek
 PORTVERSION=	0.8.6
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,7 +13,7 @@ COMMENT=	A photo manager and viewer with content-based search
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+		MagickWand:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
