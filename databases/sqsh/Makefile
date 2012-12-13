@@ -1,7 +1,4 @@
-# New ports collection makefile for:   sqsh
-# Date created:		14 Jan 2000
-# Whom:			Domas Mituzas <midom@dammit.lt>
-#
+# Created by: Domas Mituzas <midom@dammit.lt>
 # $FreeBSD$
 
 PORTNAME=	sqsh
@@ -12,21 +9,30 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 
+LICENSE=	GPLv2 # (or later)
+
 LIB_DEPENDS=	ct:${PORTSDIR}/databases/freetds
 
-USE_GETTEXT=	yes
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+USE_READLINE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` build
+ALL_TARGET=	build
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	sqsh.1
+MAN1=		sqsh.1
+PLIST_FILES=	bin/sqsh etc/sqshrc.default
 
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif --with-x
+.else
+PKGNAMESUFFIX=	-nox11
 .endif
 
 post-patch:
