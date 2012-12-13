@@ -1,13 +1,9 @@
-# New ports collection makefile for:	RMagick
-# Date created:		16 November 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rmagick
 PORTVERSION=	2.13.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics ruby
 MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
-LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
