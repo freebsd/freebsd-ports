@@ -214,7 +214,6 @@
 %%WWWDIR%%/include/classes/core/CAutoloader.php
 %%WWWDIR%%/include/classes/core/ZBase.php
 %%WWWDIR%%/include/classes/core/CSession.php
-%%WWWDIR%%/include/classes/class.cstringparser.php
 %%WWWDIR%%/include/classes/class.cpagefilter.php
 %%WWWDIR%%/include/classes/class.ctabview.php
 %%WWWDIR%%/include/classes/class.cwarning.php
@@ -267,6 +266,7 @@
 %%WWWDIR%%/include/classes/helpers/CArrayHelper.php
 %%WWWDIR%%/include/classes/validators/CValidator.php
 %%WWWDIR%%/include/classes/validators/CTimePeriodValidator.php
+%%WWWDIR%%/include/classes/validators/CTriggerFunctionValidator.php
 %%WWWDIR%%/include/classes/class.cbar.php
 %%WWWDIR%%/include/classes/class.cimagetexttable.php
 %%WWWDIR%%/include/classes/class.cpassbox.php
@@ -295,6 +295,7 @@
 %%WWWDIR%%/include/classes/screens/CScreenTriggersInfo.php
 %%WWWDIR%%/include/classes/screens/CScreenTriggersOverview.php
 %%WWWDIR%%/include/classes/screens/CScreenUrl.php
+%%WWWDIR%%/include/classes/parsers/CTriggerExpression.php
 %%WWWDIR%%/include/sounds.inc.php
 %%WWWDIR%%/include/ident.inc.php
 %%WWWDIR%%/include/regexp.inc.php
@@ -335,7 +336,6 @@
 %%WWWDIR%%/authentication.php
 %%WWWDIR%%/adm.images.php
 %%WWWDIR%%/report3.php
-%%WWWDIR%%/vtext.php
 %%WWWDIR%%/report4.php
 %%WWWDIR%%/overview.php
 %%WWWDIR%%/tr_events.php
@@ -366,7 +366,6 @@
 %%WWWDIR%%/api/classes/CItemPrototype.php
 %%WWWDIR%%/api/classes/CMaintenance.php
 %%WWWDIR%%/api/classes/CItemGeneral.php
-%%WWWDIR%%/api/classes/CTriggerExpression.php
 %%WWWDIR%%/api/classes/CGraph.php
 %%WWWDIR%%/api/classes/CGraphGeneral.php
 %%WWWDIR%%/api/classes/CTrigger.php
@@ -456,6 +455,10 @@
 %%WWWDIR%%/images/general/jmx_unknown.png
 %%WWWDIR%%/images/general/ipmi_available.png
 %%WWWDIR%%/images/general/transparent.png
+%%WWWDIR%%/images/general/tr_space.gif
+%%WWWDIR%%/images/general/tr_top_bottom.gif
+%%WWWDIR%%/images/general/tr_top_right.gif
+%%WWWDIR%%/images/general/tr_top_right_bottom.gif
 %%WWWDIR%%/images/general/ok_icon_bb.png
 %%WWWDIR%%/images/general/zabbix.png
 %%WWWDIR%%/images/general/dbl_arrow_up.png
@@ -590,6 +593,8 @@
 %%WWWDIR%%/locale/hu/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/pt_PT/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/pt_PT/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/pl/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pl/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/update_po.sh
@@ -598,6 +603,10 @@
 %%WWWDIR%%/locale/README
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/fa/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/fa/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/fi/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/fi/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/fr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/fr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.po
@@ -623,6 +632,8 @@
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ru/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ru/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/id/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/id/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/it/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/it/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
@@ -631,7 +642,6 @@
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/add_new_language.sh
 %%WWWDIR%%/conf/zabbix.conf.php.example
-%%WWWDIR%%/conf/COPYING
 %%WWWDIR%%/conf/maintenance.inc.php
 %%WWWDIR%%/conf/.htaccess
 %%WWWDIR%%/users.php
@@ -666,6 +676,7 @@
 %%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/class.cdebug.js
 %%WWWDIR%%/js/servercheck.js
+%%WWWDIR%%/js/vendors/activity-indicator.js
 %%WWWDIR%%/popup_trexpr.php
 %%WWWDIR%%/chart2.php
 %%WWWDIR%%/items.php
@@ -751,7 +762,6 @@
 %%WWWDIR%%/tr_logform.php
 %%WWWDIR%%/auditlogs.php
 %%WWWDIR%%/report6.php
-%%WWWDIR%%/adm.triggerdisplayingoptions.php
 @dirrm %%WWWDIR%%/audio
 @dirrm %%WWWDIR%%/include/views/js
 @dirrm %%WWWDIR%%/include/views
@@ -767,10 +777,11 @@
 @dirrm %%WWWDIR%%/include/classes/core
 @dirrm %%WWWDIR%%/include/classes/sysmaps
 @dirrm %%WWWDIR%%/include/classes/db
-@dirrm %%WWWDIR%%/include/classes/validators
 @dirrm %%WWWDIR%%/include/classes/helpers/trigger
 @dirrm %%WWWDIR%%/include/classes/helpers
 @dirrm %%WWWDIR%%/include/classes/screens
+@dirrm %%WWWDIR%%/include/classes/parsers
+@dirrm %%WWWDIR%%/include/classes/validators
 @dirrm %%WWWDIR%%/include/classes
 @dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%/api/rpc
@@ -792,12 +803,18 @@
 @dirrm %%WWWDIR%%/locale/hu
 @dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/pt_BR
+@dirrm %%WWWDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_PT
 @dirrm %%WWWDIR%%/locale/pl/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/pl
 @dirrm %%WWWDIR%%/locale/es/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/es
 @dirrm %%WWWDIR%%/locale/cs/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/cs
+@dirrm %%WWWDIR%%/locale/fa/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fa
+@dirrm %%WWWDIR%%/locale/fi/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fi
 @dirrm %%WWWDIR%%/locale/fr/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/fr
 @dirrm %%WWWDIR%%/locale/nl/LC_MESSAGES
@@ -822,6 +839,8 @@
 @dirrm %%WWWDIR%%/locale/zh_CN
 @dirrm %%WWWDIR%%/locale/ru/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ru
+@dirrm %%WWWDIR%%/locale/id/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/id
 @dirrm %%WWWDIR%%/locale/it/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/it
 @dirrm %%WWWDIR%%/locale/tr/LC_MESSAGES
@@ -833,6 +852,7 @@
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/conf
 @dirrm %%WWWDIR%%/js/jquery
+@dirrm %%WWWDIR%%/js/vendors
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/fonts
 @dirrm %%WWWDIR%%/styles/themes/classic/images

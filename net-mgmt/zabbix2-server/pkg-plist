@@ -31,6 +31,19 @@ sbin/zabbix_%%ZABBIX_BUILD%%
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/postgresql/patch.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/oracle/patch.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/mysql/patch.sql
+%%JAVAGW%%%%ZABBIX_JAVA%%/shutdown.sh
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback-console.xml
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback-core-0.9.27.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/org-json-2010-12-28.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback-classic-0.9.27.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback.xml
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/slf4j-api-1.6.1.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/settings.sh
+%%JAVAGW%%%%ZABBIX_JAVA%%/startup.sh
+%%JAVAGW%%%%ZABBIX_JAVA%%/bin/zabbix-java-gateway-2.0.4.jar
+%%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%/lib
+%%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%/bin
+%%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/ibm_db2
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/postgresql
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/oracle
