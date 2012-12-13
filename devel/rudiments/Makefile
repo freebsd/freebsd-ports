@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rudiments
-# Date created:		2 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rudiments
-PORTVERSION=	0.36.1
+PORTVERSION=	0.38
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,9 +11,10 @@ COMMENT=	A utility C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
+OPTIONS_DEFINE=	DOCS
+
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIB="${PTHREAD_LIBS}"
@@ -29,24 +26,21 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		rudiments-config.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/pkgconfig/s|$$(libdir)/|$$(prefix)/libdata/| ; \
-		 /^install:/s| install-doc | |' ${WRKSRC}/Makefile
+		'/cd doc;/s|^|#| ; \
+		 /pkgconfig/s|$$(libdir)/|$$(prefix)/libdata/|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/doc/programming/insert.pl
 	@${REINPLACE_CMD} -e \
-		's| -release $$(RUDIMENTS_VERSION)||' ${WRKSRC}/src/Makefile
+		's| -release $$(RUDIMENTS_VERSION)||' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(${TAR} -C ${WRKSRC}/doc --exclude CVS --exclude "Makefile" \
-		--exclude "*.bak" --exclude "*.in" -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -)
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+.if ${PORT_OPTIONS:MDOCS}
+	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
 
 .include <bsd.port.mk>
