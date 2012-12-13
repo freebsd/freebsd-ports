@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-gnutella
-# Date created:				19 May, 2000
-# Whom:					rbt@zort.on.ca
-#
+# Created by: rbt@zort.on.ca
 # $FreeBSD$
-#
 
 #
 # A quick note on configurable make symbols:
@@ -68,31 +64,25 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		gtk-gnutella.1
 
-OPTIONS=	X11 "Build with GUI" on \
-		GTK2 "Build with GTK2 frontend" on \
-		TLS "Enable GNU TLS encryption support" on \
-		NLS "Enable national language support" on \
-		IPV6 "Enable IPv6 support" on \
-		DBUS "Enable D-BUS IPC support" off \
-		SQLITE "Enable SQLite support" off \
-		DEBUG "Build with debugging symbols" off \
-		PORTABILITY "Use the PATH variable at run-time" off
+OPTIONS_DEFINE=	X11 GTK2 GNUTLS NLS IPV6 DBUS SQLITE DEBUG PORTABILITY
+OPTIONS_DEFAULT=	X11 GTK2 GNUTLS
+PORTABILITY_DESC=	Use the PATH variable at run-time
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(INTERACTIVE_CONFIGURE)
 CONFIGURE_ARGS+=	-ders
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	-D optimize=-g  -D official=false
 .else
 CONFIGURE_ARGS+=	-D official=true
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=		x11
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	-D gtkversion=2
 USE_GNOME+=		gtk20
 .else
@@ -103,19 +93,17 @@ USE_GNOME+=		gtk12
 CONFIGURE_ARGS+=	-D d_headless
 .endif
 
-.if defined(WITH_PORTABILITY)
+.if ${PORT_OPTIONS:MPORTABILITY}
 CONFIGURE_ARGS+=	-D d_portable
 .endif
 
-.if defined(WITH_TLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	-U d_gnutls
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	-U d_nls
-.else
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	-D d_nls
 USE_GETTEXT=		yes
 PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
@@ -130,34 +118,36 @@ PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/tr/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/uk/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
+.else
+CONFIGURE_ARGS+=	-U d_nls
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPB6}
 CONFIGURE_ARGS+=	-D ipv6=false
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=		dbus:${PORTSDIR}/devel/dbus
 .else
 CONFIGURE_ARGS+=	-D dbus=false
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=		yes
 .else
 CONFIGURE_ARGS+=	-U d_sqlite
 .endif
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == i386
 PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 PLIST_SUB+=	AMD64=""
 .else
 PLIST_SUB+=	AMD64="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
