@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
-OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC
+OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC JAVAGW
 OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL LDAP
 
 CURL_DESC=	Support for web monitoring
@@ -77,6 +77,7 @@ LDAP_DESC=	Support for LDAP server checks
 NMAP_DESC=	Build/install nmap for o/s detection
 SSH_DESC=	Support for SSH-based checks
 ODBC_DESC=	Support for database checks via ODBC
+JAVAGW_DESC=	Support for Java gateway
 IODBC_DESC=	Use iODBC for ODBC support
 UNIXODBC_DESC=	Use UnixODBC for ODBC support
 
@@ -152,6 +153,16 @@ CONFIGURE_ARGS+=	--enable-ipv6
 RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap \
 		sudo:${PORTSDIR}/security/sudo
 .endif
+
+.if ${PORT_OPTIONS:MJAVAGW}
+USE_JAVA=       yes
+CONFIGURE_ARGS+=        --enable-java
+PLIST_SUB+=	ZABBIX_JAVA="sbin/zabbix_java"
+PLIST_SUB+=      JAVAGW=""
+.else
+PLIST_SUB+=      JAVAGW="@comment "
+.endif
+
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
