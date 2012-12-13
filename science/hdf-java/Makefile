@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hdf-java
-# Date created:				11 February 2010
-# Whom:					rfarmer@predatorlabs.net
-#
+# Created by: rfarmer@predatorlabs.net
 # $FreeBSD$
-#
 
 PORTNAME=	hdf-java
 PORTVERSION=	2.8
@@ -37,17 +33,18 @@ CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	SZIP "SZIP support (must match with science/hdf5-18)" off
+OPTIONS_DEFINE=	SZIP DOCS
+SZIP_DESC=	SZIP support (must match with science/hdf5-18)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SZIP)
+.if ${PORT_OPTIONS:MSZIP}
 CONFIGURE_ARGS+=	--with-libsz=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--without-libsz
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET=	all javadocs
 .endif
 
@@ -67,7 +64,7 @@ post-patch:
 		${WRKSRC}/bin/hdfview.sh.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/UsersGuide
 	(cd ${WRKSRC}/docs/hdfview/ && ${COPYTREE_SHARE} "UsersGuide" ${DOCSDIR}/)
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} "javadocs" ${DOCSDIR}/)
