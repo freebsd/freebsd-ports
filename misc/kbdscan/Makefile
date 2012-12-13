@@ -1,17 +1,11 @@
-# ex:ts=8
-# Ports collection makefile for: kbdscan
-# Date created:		April 23, 2010
-# Whom:			Eitan Adler
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kbdscan
 PORTVERSION=	20110507
 CATEGORIES=	misc
 MASTER_SITES=	http://hack.org/mc/hacks/${PORTNAME}/
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Kbdscan shows the scancodes of keys pressed
 
 USE_BZIP2=	yes
