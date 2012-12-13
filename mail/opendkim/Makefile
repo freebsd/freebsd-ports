@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		opendkim
-PORTVERSION=		2.7.1
+PORTVERSION=		2.7.3
 CATEGORIES=		mail security
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=--docdir=${WRKDIR}/doc
 .endif
 
-.if ${PORT_OPTIONS:MSTATS} || ${PORT_OPTIONS:MSTATSEXT}
+.if ${PORT_OPTIONS:MSTATS}
 CONFIGURE_ARGS+=	--enable-stats
 MAN8+=			opendkim-expire.8 opendkim-gengraphs.8 \
 			opendkim-genstats.8 opendkim-stats.8
@@ -99,8 +99,8 @@ PLIST_SUB+=		STATS="@comment "
 .endif
 .if ${PORT_OPTIONS:MPOPAUTH} \
 	|| ${PORT_OPTIONS:MQUERY_CACHE} \
-	|| ${PORT_OPTIONS:MLDAP_CACHING} \
-	|| ${PORT_OPTIONS:MREPUTATION} \
+	|| (${PORT_OPTIONS:MFFR} && ${PORT_OPTIONS:MLDAP_CACHING} ) \
+	|| (${PORT_OPTIONS:MFFR} && ${PORT_OPTIONS:MREPUTATION} ) \
 	|| ${PORT_OPTIONS:MSTATS}
 . if ${PORT_OPTIONS:MBDB_BASE}
 CONFIGURE_ARGS+=	--with-db-lib=c
@@ -142,7 +142,7 @@ USE_OPENLDAP=		yes
 .else
 CONFIGURE_ARGS+=	--without-openldap
 .endif
-.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MRBL} || ${PORT_OPTIONS:MSTATSEXT}
+.if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=	--with-lua
 . if ${PORT_OPTIONS:MFILTER}
 MAN3+=			opendkim-lua.3
