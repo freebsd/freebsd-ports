@@ -1,12 +1,9 @@
-# New ports collection makefile for:	gimp-gmic-plugin
-# Date created:				07 Feb 2011
-# Whom:					Mahmatkhanov Ruslan <cvs-src@yandex.ru>
-#
+# Created by: Mahmatkhanov Ruslan <cvs-src@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gmic
 PORTVERSION=	1.5.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -19,7 +16,7 @@ COMMENT=	GREYC's Magic Image Converter
 
 LIB_DEPENDS=	GraphicsMagick++.9:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		Magick++.5:${PORTSDIR}/graphics/ImageMagick \
+		Magick++:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
