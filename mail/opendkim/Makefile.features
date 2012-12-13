@@ -4,6 +4,8 @@
 # This file is used to tune build time options.
 # Please refer FEATURES file distributed with the source for details.
 
+.if ${PORT_OPTIONS:MFFR}
+
 .if ${PORT_OPTIONS:MADSP_LISTS}
 CONFIGURE_ARGS+=	--enable-adsp_lists
 .endif
@@ -75,6 +77,7 @@ CONFIGURE_ARGS+=	--enable-rate_limit
 CONFIGURE_ARGS+=	--enable-rbl
 MAN3+=			rbl.3
 PLIST_SUB+=		RBL=""
+PORT_OPTIONS+=		LUA
 .else
 PLIST_SUB+=		RBL="@comment "
 .endif
@@ -102,11 +105,14 @@ CONFIGURE_ARGS+=	--enable-reputation \
 			--with-libcurl
 LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
 . if ${PORT_OPTIONS:MXML}
-CONFIGURE_ARGS+=	--with-libxml2
+CONFIGURE_ARGS+=	--without-libjansson --with-libxml2
 LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
+PLIST_SUB+=		JANSSON="@comment "
 . else
 CONFIGURE_ARGS+=	--with-libjansson
 LIB_DEPENDS+=		jansson:${PORTSDIR}/devel/jansson
+MAN8+=			autobuild.8
+PLIST_SUB+=		JANSSON=""
 . endif
 MAN3+=			ut.3
 MAN8+=			opendkim-genrates.8 opendkim-modtotals.8 \
@@ -131,6 +137,7 @@ CONFIGURE_ARGS+=	--enable-socketdb
 
 .if ${PORT_OPTIONS:MSTATSEXT}
 CONFIGURE_ARGS+=	--enable-statsext
+PORT_OPTIONS+=		LUA STATS
 .endif
 
 .if ${PORT_OPTIONS:MVBR}
@@ -140,3 +147,13 @@ PLIST_SUB+=		VBR=""
 .else
 PLIST_SUB+=		VBR="@comment "
 .endif
+
+.else # ${PORT_OPTIONS:MFFR}
+PLIST_SUB+=		ATPS="@comment "
+PLIST_SUB+=		DKIMREP="@comment "
+PLIST_SUB+=		RBL="@comment "
+PLIST_SUB+=		REPRRD="@comment "
+PLIST_SUB+=		JANSSON="@comment "
+PLIST_SUB+=		REPUTE="@comment "
+PLIST_SUB+=		VBR="@comment "
+.endif # ${PORT_OPTIONS:MFFR}
