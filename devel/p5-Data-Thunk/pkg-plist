@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Data/Thunk.pm
+%%SITE_PERL%%/Data/Thunk/Code.pm
+%%SITE_PERL%%/Data/Thunk/Object.pm
+%%SITE_PERL%%/Data/Thunk/ScalarValue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Thunk/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Thunk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/Thunk
+@dirrmtry %%SITE_PERL%%/Data
