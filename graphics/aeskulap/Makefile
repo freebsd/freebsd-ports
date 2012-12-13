@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	aeskulap
-# Date created:				21 July 2010
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	aeskulap
 PORTVERSION=	0.2.1
