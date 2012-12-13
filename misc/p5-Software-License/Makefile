@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Software::License
-# Date created:				11 May 2010
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Software-License
-PORTVERSION=	0.103004
+PORTVERSION=	0.103005
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -48,6 +44,7 @@ MAN3=		Software::License.3 \
 		Software::License::MIT.3 \
 		Software::License::Mozilla_1_0.3 \
 		Software::License::Mozilla_1_1.3 \
+		Software::License::Mozilla_2_0.3 \
 		Software::License::None.3 \
 		Software::License::OpenSSL.3 \
 		Software::License::Perl_5.3 \

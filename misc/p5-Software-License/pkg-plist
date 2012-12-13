@@ -18,6 +18,7 @@
 %%SITE_PERL%%/Software/License/MIT.pm
 %%SITE_PERL%%/Software/License/Mozilla_1_0.pm
 %%SITE_PERL%%/Software/License/Mozilla_1_1.pm
+%%SITE_PERL%%/Software/License/Mozilla_2_0.pm
 %%SITE_PERL%%/Software/License/None.pm
 %%SITE_PERL%%/Software/License/OpenSSL.pm
 %%SITE_PERL%%/Software/License/Perl_5.pm
