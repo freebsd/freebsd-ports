@@ -53,7 +53,6 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
@@ -156,10 +155,12 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/css/content.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/includes/.keepme
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/css/props.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
@@ -321,8 +322,11 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/includes
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/classes/utils
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/classes
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js
@@ -368,7 +372,6 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autolink
@@ -395,4 +398,4 @@
 @dirrm %%WWWDIR%%/examples/lists
 @dirrm %%WWWDIR%%/examples/css
 @dirrm %%WWWDIR%%/examples
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
