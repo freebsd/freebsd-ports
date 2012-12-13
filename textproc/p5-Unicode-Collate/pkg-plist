@@ -19,6 +19,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/cy.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/da.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/de_phone.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ee.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/eo.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/es.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/es_trad.pl
