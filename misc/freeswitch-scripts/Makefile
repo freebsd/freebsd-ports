@@ -26,17 +26,14 @@ FREESWITCH_GROUP=	${FREESWITCH_USER}
 
 WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}/scripts/
 
-OPTIONS=	JAVASCRIPT	"Install FreeSWITCH JAVASCRIPTS" off \
-		PERL		"Install FreeSWITCH Perl Scripts" off \
-		PYTHON		"Install FreeSWITCH Python Scripts" off \
-		PHP		"Install FreeSWITCH PHP Scripts" off \
-		RSS		"Install FreeSWITCH RSS Scripts" off \
-		LUA		"Install FreeSWITCH LUA Scripts" off
+OPTIONS_DEFINE=	JAVASCRIPT PERL PYTHON PHP RSS LUA
+JAVASCRIPT_DESC=	Javascript scripting language
+RSS_DESC=	RSS scripts
 
 .include <bsd.port.options.mk>
 
 .for i in JAVASCRIPT PERL PYTHON PHP RSS LUA C
-.if !defined(WITH_${i})
+.if ${PORT_OPTIONS:M${i}}
 PLIST_SUB+=	WITH_${i}="@comment "
 .else
 PLIST_SUB+=	WITH_${i}=""
@@ -54,7 +51,7 @@ pre-install:
 	${CHOWN} ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts/.freeswitch-scripts
 
 do-install:
-.if defined(WITH_JAVASCRIPT)
+.if ${PORT_OPTIONS:MJAVASCRIPT}
 	@${RM} ${WRKSRC}/javascript/ps_pizza.js
 	@${RM} ${WRKSRC}/javascript/pizza.js
 	@${RM} -rf ${WRKSRC}/javascript/js_modules
@@ -62,28 +59,28 @@ do-install:
 		| ${CPIO} -pdm -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 	@cd ${WRKSRC}; ${FIND} perl \
 		| ${CPIO} -pdm -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 	@cd ${WRKSRC}; ${FIND} python  \
 		| ${CPIO} -pdm -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts
 
 .endif
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 	@cd ${WRKSRC}; ${FIND} php  \
 		| ${CPIO} -pdm -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts
 .endif
 
-.if defined(WITH_RSS)
+.if ${PORT_OPTIONS:MRSS}
 	@cd ${WRKSRC}; ${FIND} rss  \
 		| ${CPIO} -pdm -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 	@cd ${WRKSRC}; ${FIND} lua  \
 		| ${CPIO} -pdm -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}/scripts
 .endif
