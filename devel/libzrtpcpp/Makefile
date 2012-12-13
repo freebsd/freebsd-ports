@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	libzrtpcpp
-PORTVERSION=	1.4.6
-PORTREVISION=	3
+PORTVERSION=	2.3.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=ccrtp
@@ -15,14 +15,15 @@ MASTER_SITE_SUBDIR=ccrtp
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	ZRTP extension for GNU ccRTP
 
-LIB_DEPENDS=	ccrtp1-1.7.0:${PORTSDIR}/devel/ccrtp \
+LIB_DEPENDS=	ccrtp:${PORTSDIR}/devel/ccrtp \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_CMAKE=	yes
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
+CXXFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 USE_LDCONFIG=	yes
 
@@ -30,6 +31,7 @@ post-patch:
 	@cd ${WRKSRC}/src && \
 		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \; && \
 			${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<stdint.h>|<inttypes.h>|g" "{}" \;
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e "s|int32_t dataLength);|int32_t dataLength)|g" \
+		${WRKSRC}/src/libzrtpcpp/crypto/gcrypt/gcryptAesCFB.cpp
 
 .include <bsd.port.mk>
