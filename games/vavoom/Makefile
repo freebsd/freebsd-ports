@@ -1,9 +1,5 @@
-# New ports collection makefile for: vavoom
-# Date created:		18 Jan 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	vavoom
 PORTVERSION=	1.33
@@ -11,10 +7,10 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
@@ -47,7 +43,7 @@ CMAKE_ARGS+=	-DWITH_ALLEGRO=N
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 CMAKE_ARGS+=	-DWITH_FLAC=Y
 .else
 CMAKE_ARGS+=	-DWITH_FLAC=N
@@ -64,14 +60,14 @@ PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
 CMAKE_ARGS+=	-DWITH_LIBMAD=Y
 .else
 CMAKE_ARGS+=	-DWITH_LIBMAD=N
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
 CMAKE_ARGS+=	-DWITH_MIKMOD=Y
 .else
 CMAKE_ARGS+=	-DWITH_MIKMOD=N
@@ -87,7 +83,7 @@ CMAKE_ARGS+=	-DWITH_OPENAL=N
 .if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 . if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	agl.0:${PORTSDIR}/graphics/allegrogl
+LIB_DEPENDS+=	agl:${PORTSDIR}/graphics/allegrogl
 BROKEN=		please use SDL instead of ALLEGRO, for OPENGL support
 . endif
 CMAKE_ARGS+=	-DWITH_OPENGL=Y
@@ -100,7 +96,7 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 CMAKE_ARGS+=	-DWITH_VORBIS=Y
 .else
 CMAKE_ARGS+=	-DWITH_VORBIS=N
