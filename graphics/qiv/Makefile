@@ -1,10 +1,5 @@
-# New ports collection makefile for:	qiv
-# Date created:		25 December 1998
-# Whom:			Bill Fumerola <billf@chc-chimes.com>
-#
-# $Carpetsmoker: ports/graphics/qiv/Makefile,v 1.2 2008/01/26 15:24:30 carpetsmoker Exp $
+# Created by: Bill Fumerola <billf@chc-chimes.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qiv
 PORTVERSION=	2.2.4
@@ -26,19 +21,19 @@ USE_GNOME=	gtk20
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	XINERAMA "use multiple monitors" off
+OPTIONS_DEFINE=	XINERAMA
 
 MAN1=		qiv.1
 PLIST_FILES=	bin/qiv
 USE_XORG+=	x11
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 pre-configure:
-.if ! defined(WITH_XINERAMA)
-	@${REINPLACE_CMD} 's|GTD.*=|#|' ${WRKSRC}/Makefile
-.else
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
+.else
+	@${REINPLACE_CMD} 's|GTD.*=|#|' ${WRKSRC}/Makefile
 .endif
 
 do-configure:
@@ -52,4 +47,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qiv ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/qiv.1 ${MAN1PREFIX}/man/man1/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
