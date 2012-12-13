@@ -1,10 +1,5 @@
-# New ports collection makefile for:	jtag
-# Date created:		2006-08-05
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	jtag
 PORTVERSION=	0.5.1
@@ -15,25 +10,36 @@ MASTER_SITES=	SF/openwince/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to work with JTAG-aware boards
 
+LICENSE=	GPLv2 # (or later)
+
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_DEFAULT=NLS
+
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USE_READLINE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTDOCS=	*
 
 ONLY_FOR_ARCHS=	i386
 OPENWINCE_INCLUDE=${LOCALBASE}/include/openwince
 OPENWINCE_INCLUDE_DEP=${OPENWINCE_INCLUDE}/common.h
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-extract:
@@ -42,10 +48,11 @@ post-extract:
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/TODO \
-		${WRKSRC}/doc/internals.xml ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for f in README TODO doc/internals.xml
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

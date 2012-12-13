@@ -41,7 +41,7 @@ bin/jtag
 %%DATADIR%%/xilinx/xcr3128xl-cs144/xcr3128xl-cs144
 %%DATADIR%%/xilinx/xcr3256xl-ft256/STEPPINGS
 %%DATADIR%%/xilinx/xcr3256xl-ft256/xcr3256xl-ft256
-share/locale/sk/LC_MESSAGES/jtag.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/jtag.mo
 @dirrm %%DATADIR%%/xilinx/xcr3256xl-ft256
 @dirrm %%DATADIR%%/xilinx/xcr3128xl-cs144
 @dirrm %%DATADIR%%/xilinx/xc2c256-tq144
