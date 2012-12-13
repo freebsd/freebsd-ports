@@ -22,13 +22,13 @@ USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	FOP "textproc/fop plugin (required for math/scilab)" ON
+OPTIONS_DEFINE=	FOP EXAMPLES
+OPTIONS_DEFAULT=	FOP
+FOP_DESC=	textproc/fop plugin (required for math/scilab)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_FOP)
-PLIST_SUB+=	FOP="@comment "
-.else
+.if ${PORT_OPTIONS:MFOP}
 BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons \
 		${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik \
@@ -42,6 +42,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 ALL_TARGET+=	fop
 
 PLIST_SUB+=	FOP=""
+.else
+PLIST_SUB+=	FOP="@comment "
 .endif
 
 post-patch:
@@ -52,7 +54,7 @@ post-patch:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-${PORTVERSION}.jar ${JAVAJARDIR}/jlatexmath.jar
 	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-fop-${PORTVERSION}.jar ${JAVAJARDIR}/jlatexmath-fop.jar
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
