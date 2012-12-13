@@ -2827,6 +2827,7 @@
     SUBDIR += p5-UNIVERSAL-can
     SUBDIR += p5-UNIVERSAL-isa
     SUBDIR += p5-UNIVERSAL-moniker
+    SUBDIR += p5-UNIVERSAL-ref
     SUBDIR += p5-UNIVERSAL-require
     SUBDIR += p5-UNIVERSAL-which
     SUBDIR += p5-UUID
