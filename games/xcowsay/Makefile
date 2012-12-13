@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xcowsay
-# Date created:		2008/09/07
-# Whom:			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	xcowsay
 PORTVERSION=	1.3
@@ -15,7 +11,7 @@ MASTER_SITES=	http://www.nickg.me.uk/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical configurable talking cow
 
-OPTIONS=	DBUS "Enable DBus support" off
+OPTIONS_DEFINE=	DBUS
 
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
@@ -39,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CFLAGS+=	-DWITH_DBUS
 CONFIGURE_ARGS+=	--enable-dbus
