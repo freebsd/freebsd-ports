@@ -1,5 +1,6 @@
 bin/ccgnu2-config
 include/cc++/address.h
+include/cc++/applog.h
 include/cc++/buffer.h
 include/cc++/cmdoptns.h
 include/cc++/common.h
@@ -37,13 +38,13 @@ include/cc++/unix.h
 include/cc++/url.h
 include/cc++/xml.h
 include/cc++/zstream.h
-lib/libccext2-1.7.so
-lib/libccext2-1.7.so.0
+lib/libccext2-1.8.so
+lib/libccext2-1.8.so.0
 lib/libccext2.a
 lib/libccext2.la
 lib/libccext2.so
-lib/libccgnu2-1.7.so
-lib/libccgnu2-1.7.so.0
+lib/libccgnu2-1.8.so
+lib/libccgnu2-1.8.so.0
 lib/libccgnu2.a
 lib/libccgnu2.la
 lib/libccgnu2.so
