@@ -1,4 +1,5 @@
 include/ccrtp/CryptoContext.h
+include/ccrtp/CryptoContextCtrl.h
 include/ccrtp/base.h
 include/ccrtp/cqueue.h
 include/ccrtp/channel.h
@@ -13,10 +14,9 @@ include/ccrtp/rtcppkt.h
 include/ccrtp/rtp.h
 include/ccrtp/rtppkt.h
 include/ccrtp/sources.h
-lib/libccrtp1-1.7.so.0
-lib/libccrtp1-1.7.so
-lib/libccrtp1.so
-lib/libccrtp1.a
-lib/libccrtp1.la
-libdata/pkgconfig/libccrtp1.pc
+lib/libccrtp.so.0
+lib/libccrtp.so
+lib/libccrtp.la
+lib/libccrtp.a
+libdata/pkgconfig/libccrtp.pc
 @dirrm include/ccrtp

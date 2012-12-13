@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ccrtp
-PORTVERSION=	1.7.1
+PORTVERSION=	2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
 
-LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	commoncpp:${PORTSDIR}/devel/ucommon
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
