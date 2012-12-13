@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ufoai-data
-# Date created:		2006-09-03
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	data
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4
 CATEGORIES=	games
 MASTER_SITES=	SF/ufoai/UFO_AI%202.x/${PORTVERSION}
 PKGNAMEPREFIX=	ufoai-
@@ -19,7 +15,7 @@ COMMENT=	UFO alien invasion data files
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
-NO_PACKAGE=	Package will be 500MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 900MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
