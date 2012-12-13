@@ -1,43 +1,38 @@
-# New ports collection makefile for:    libthai
-# Date created:        28 March 2006
-# Whom:                Thawatchai Piyawat <piyawat@usablelabs.com>
-#
+# Created by: Thawatchai Piyawat <piyawat@usablelabs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libthai
 PORTVERSION=	0.1.5
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.usablelabs.com/download/
+MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai language support library
 
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake autoconf libtool
-AUTOTOOLSFILES=	autogen.sh
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	LGPL21
 
-ALL_TARGET=	all check
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
+LIBTOOLIZE_ARGS=--copy --force
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
+USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=yes
 
 MAN3=	libthai.3 thctype.3 wtt.3
-
-post-patch:
-	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,' \
-		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's,15,-%%AUTOMAKE_VERSION%%,' -e 's,259,-%%AUTOCONF_VERSION%%,' \
-		${WRKSRC}/autogen.sh
-
-pre-configure:
-	@cd ${WRKSRC} && ${SH} autogen.sh
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
 ALL_TARGET=	all
+.else
+ALL_TARGET= all check
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^pkgconfigdir/s|=.*|= $$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.post.mk>
