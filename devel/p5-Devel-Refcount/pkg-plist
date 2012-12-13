@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refcount/Refcount.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refcount/Refcount.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Refcount.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refcount
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
