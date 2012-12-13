@@ -2,6 +2,7 @@ bin/ufo
 bin/ufomodel
 %%UFOSERVER%%bin/ufoded
 %%UFO2MAP%%bin/ufo2map
+%%UFORADIANT%%bin/uforadiant
 %%DATADIR%%/base/game.so
 %%DATADIR%%/base/i18n/bg_BG/LC_MESSAGES/ufoai.mo
 %%DATADIR%%/base/i18n/cs/LC_MESSAGES/ufoai.mo
@@ -27,13 +28,53 @@ bin/ufomodel
 %%DATADIR%%/base/i18n/sl/LC_MESSAGES/ufoai.mo
 %%DATADIR%%/base/i18n/sv/LC_MESSAGES/ufoai.mo
 %%DATADIR%%/base/i18n/th/LC_MESSAGES/ufoai.mo
+%%DATADIR%%/base/i18n/tr/LC_MESSAGES/ufoai.mo
 %%DATADIR%%/base/i18n/uk/LC_MESSAGES/ufoai.mo
 %%DATADIR%%/base/i18n/zh_CN/LC_MESSAGES/ufoai.mo
+%%DATADIR%%/base/i18n/zh_TW/LC_MESSAGES/ufoai.mo
 lib/ufoai/ufo
 lib/ufoai/ufomodel
 %%UFOSERVER%%lib/ufoai/ufoded
 %%UFO2MAP%%lib/ufoai/ufo2map
 lib/ufoai/base
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_hideunused.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/grid_toggle.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_flushandreload.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_float.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/tex_flips.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/tex_flipt.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/arrow_up.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_vector3.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_skipcommon.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/grid_up.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_bool.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/particle_map.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_model.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/helpicon.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_classname.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_text.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_showall.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/particle_weapon.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_entity.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/textool_merge.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/modify_entities.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_angle.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/grid_down.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/grid_window.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_colour.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/editcolour16.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/grid_snap.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/delete.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/iconFilter16.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/arrow_down.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_hideinvalid.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/bgimage16.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_findandreplace.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/arrow_right.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/textool_facescale_pivot.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/uforadiantsplash.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/icon_skin.png
+%%UFORADIANT%%lib/ufoai/radiant/bitmaps/arrow_left.png
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/background.png
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/brush_flipx.png
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/brush_flipy.png
@@ -101,13 +142,40 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/view_forcelight.png
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/window_regular.png
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/window_split.png
-%%UFORADIANT%%lib/ufoai/radiant/games/mapdef.template
-%%UFORADIANT%%lib/ufoai/radiant/games/ufoai.game
 %%UFORADIANT%%lib/ufoai/radiant/i18n/de/LC_MESSAGES/uforadiant.mo
 %%UFORADIANT%%lib/ufoai/radiant/i18n/en/LC_MESSAGES/uforadiant.mo
 %%UFORADIANT%%lib/ufoai/radiant/i18n/ru/LC_MESSAGES/uforadiant.mo
 %%UFORADIANT%%lib/ufoai/radiant/i18n/zh_CN/LC_MESSAGES/uforadiant.mo
-%%UFORADIANT%%lib/ufoai/radiant/plugins/brushexport.so
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/gas_tank_01.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/stand.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/katana.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/stair2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/pingpong.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/winebarrel.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/automat.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/sodamachine.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/waterdisp.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel6.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/pipes3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/staircase_spiral.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/computer.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel5.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/pharaoh.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/stand.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/gas_tank_01.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/pingpong.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/katana.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/stair2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/winebarrel.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/automat.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel6.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/sodamachine.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/waterdisp.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/staircase_spiral.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/computer.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/pipes3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel5.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/pharaoh.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/wormhole.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/wormhole.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/4x4.jpg
@@ -136,8 +204,48 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/van.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/van3.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/van3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/street_corner.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/sign01.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/powerline.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/garage.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/valuepart01.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/diner.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/gasstation.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/street_t.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/blocker.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/garages.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/trafficlight.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/light.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/street.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/sign01.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/street_corner.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/garage.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/powerline.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/valuepart01.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/valuepart01.mat
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/street_t.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/blocker.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/diner.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/gasstation.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/trafficlight.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/garages.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/light.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/city/street.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/doors/door1.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/doors/door1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/chair10.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/benches.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bookshelf.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bedroom/bed_big2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bedroom/bed_big2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/crashed_car.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/car3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/crashed_car.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/cars/car3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/trucks/truck3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/trucks/truck3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/doors/sliding_door.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/doors/sliding_door.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/dropships/drop_firebird.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/dropships/drop_firebird.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/dropships/drop_firebird.txt
@@ -225,6 +333,58 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/household/table4.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/household/washing_machine.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/household/washing_machine.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/armchair3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/armchair2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/bench2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/bench.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/couch4.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/tv2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/armchair3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/armchair2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/bench.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/couch4.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/bench2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/living_room/tv2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/kitchen/coffeemaker.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/kitchen/kitchen.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/kitchen/coffeemaker.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/kitchen/kitchen.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/carpet.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/chair9.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/handdryer.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/soap.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/washbasin3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/toilet2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/urinal2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/handdryer.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/soap.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/washbasin3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/toilet2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bath/urinal2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/bookshelf.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/benches.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/chair10.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/carpet.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/household/chair9.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_recb_1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_sq_1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/alien_med2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/alien_med1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_sqb_1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/barrel.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_rec_1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_recb_1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_sq_1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/alien_med2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/alien_med1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_sqb_1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/barrel.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/alien/crate_rec_1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/houses/house1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/houses/storage.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/houses/storage.mat
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/houses/house1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/houses/storage.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/interceptors/inter_dragon.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/interceptors/inter_dragon.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/interceptors/inter_saracen.jpg
@@ -251,6 +411,10 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/mixer.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/three_forklifts.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/three_forklifts.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/cons_lights.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/workbench.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/cons_lights.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/machines/workbench.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel1.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel1.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/barrel2.jpg
@@ -441,8 +605,6 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/tires.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/train.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/train.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/trash.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/trash.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/trashbin001.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/trashbin001.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/misc/vending_machine.jpg
@@ -526,6 +688,51 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/ufos/ufo_scout.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/ufos/ufo_supply.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/ufos/ufo_supply.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant12.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2a.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant10.txt
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_plant1.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2_lrg.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant10.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant8.txt
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/grass_dry.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2a_lrg.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut4.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree4.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/wheat.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant11.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant9.txt
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant_tropical.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/grass2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant9.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant11.txt
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree2.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant12.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut2.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2a.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant12.txt
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_plant1.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/grass_dry.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2a_lrg.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern2_lrg.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant10.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut4.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut3.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree4.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/wheat.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree3.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant11.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant_tropical.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/gumtree.jpg
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant9.map
+%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/grass2.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/cactus2.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/cactus2.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/chestnut.jpg
@@ -534,24 +741,6 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fern.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fir.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fir.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fir2.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/fir2.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm1.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm1.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm2.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm2.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm3.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm3.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm4.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm4.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm5.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm5.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm6.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm6.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm7.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm7.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm7_2.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm7_2.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_small.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_small.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_small2.jpg
@@ -560,36 +749,22 @@ lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_v1.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_v2.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/palm_v2.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/pine.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/pine.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant1.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant1.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant2.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant2.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant3.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant3.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant4.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant4.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant5.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant5.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant6.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant6.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant7.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant7.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant8.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant8.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant_hang.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/plant_hang.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tree01.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tree01.map
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tree_dead.jpg
 %%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tree_dead.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tropic_plant.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tropic_plant.map
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tropical1.jpg
-%%UFORADIANT%%lib/ufoai/radiant/prefabs/vegetation/tropical1.map
-%%UFORADIANT%%lib/ufoai/radiant/shaders/common.shader
-%%UFORADIANT%%lib/ufoai/radiant/shaders/textures.shader
 %%UFORADIANT%%lib/ufoai/radiant/sourceviewer/classic.xml
 %%UFORADIANT%%lib/ufoai/radiant/sourceviewer/cobalt.xml
 %%UFORADIANT%%lib/ufoai/radiant/sourceviewer/def.lang
@@ -606,6 +781,10 @@ lib/ufoai/base
 @dirrm %%DATADIR%%/base/i18n/zh_CN
 @dirrm %%DATADIR%%/base/i18n/uk/LC_MESSAGES
 @dirrm %%DATADIR%%/base/i18n/uk
+@dirrm %%DATADIR%%/base/i18n/zh_TW/LC_MESSAGES/
+@dirrm %%DATADIR%%/base/i18n/zh_TW/
+@dirrm %%DATADIR%%/base/i18n/tr/LC_MESSAGES/
+@dirrm %%DATADIR%%/base/i18n/tr/
 @dirrm %%DATADIR%%/base/i18n/th/LC_MESSAGES/
 @dirrm %%DATADIR%%/base/i18n/th/
 @dirrm %%DATADIR%%/base/i18n/sv/LC_MESSAGES
@@ -658,7 +837,6 @@ lib/ufoai/base
 @dirrmtry %%DATADIR%%/base
 @dirrmtry %%DATADIR%%
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/bitmaps
-%%UFORADIANT%%@dirrm lib/ufoai/radiant/games
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/i18n/de/LC_MESSAGES
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/i18n/de
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/i18n/en/LC_MESSAGES
@@ -668,18 +846,19 @@ lib/ufoai/base
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/i18n/zh_CN/LC_MESSAGES
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/i18n/zh_CN
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/i18n
-%%UFORADIANT%%@dirrm lib/ufoai/radiant/plugins
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/interceptors
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/vegetation
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/doors
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/machines
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/alien
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/cars
+%%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/city
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/household/kitchen
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/household/bath
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/household/living_room
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/household/bedroom
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/household
+%%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/houses
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/dropships
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/misc/shop
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/misc
@@ -687,7 +866,6 @@ lib/ufoai/base
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/trucks
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs/ufos
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/prefabs
-%%UFORADIANT%%@dirrm lib/ufoai/radiant/shaders
 %%UFORADIANT%%@dirrm lib/ufoai/radiant/sourceviewer
 %%UFORADIANT%%@dirrm lib/ufoai/radiant
 @dirrm lib/ufoai
