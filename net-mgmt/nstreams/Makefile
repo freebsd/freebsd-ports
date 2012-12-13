@@ -1,4 +1,4 @@
-# Whom:			darius@dons.net.au
+# Created by: darius@dons.net.au
 # $FreeBSD$
 
 PORTNAME=	nstreams
