@@ -1,27 +1,23 @@
-# New ports collection makefile for:	twinkle
-# Date created:		2006-04-22
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	twinkle
 PORTVERSION=	1.4.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
-MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
+MASTER_SITES=	http://mfnboer.home.xs4all.nl/twinkle/download/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Soft phone for your VoIP communications using the SIP protocol
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp \
-		ccrtp1-1.7.0:${PORTSDIR}/devel/ccrtp \
+LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
+		ccrtp:${PORTSDIR}/devel/ccrtp \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
-		zrtpcpp.0:${PORTSDIR}/devel/libzrtpcpp
+		zrtpcpp:${PORTSDIR}/devel/libzrtpcpp
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
@@ -51,7 +47,10 @@ CONFIGURE_ARGS+=--without-kde
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lresolv||g' -e 's|-lbind||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-lresolv||g' -e 's|-lbind||g' \
+		-e 's|libccrtp1|libccrtp|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|localtime_r|ost::localtime_r|g' \
+		${WRKSRC}/src/log.cpp
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/src/gui/${MAKEFILE}
