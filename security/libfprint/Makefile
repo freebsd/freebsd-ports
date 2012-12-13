@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libfprint
-# Date created:				April 12 2008
-# Whom:					barner
-#
+# Created by: barner
 # $FreeBSD$
-#
 
 PORTNAME=	libfprint
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 

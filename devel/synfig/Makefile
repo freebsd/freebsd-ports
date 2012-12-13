@@ -1,13 +1,9 @@
-# New ports collection makefile for:	synfig
-# Date created:				25 Jun 2006
-# Whom:					Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	synfig
 DISTVERSION=	0.63.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
