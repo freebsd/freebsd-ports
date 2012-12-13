@@ -19,11 +19,12 @@ JAVA_RUN=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
 		%%JAVAJARDIR%%/jrosetta-engine.jar
 
-OPTIONS=	COMPILE	"Download and compile source instead of binaries" off
+OPTIONS_DEFINE=	COMPILE
+COMPILE_DESC=	Download and compile source instead of binaries
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_COMPILE)
+.if ${PORT_OPTIONS:MCOMPILE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}-sources.jar:source
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3
@@ -41,7 +42,7 @@ EXTRACT_ONLY=
 NO_BUILD=	yes
 .endif
 
-.if defined(WITH_COMPILE)
+.if ${PORT_OPTIONS:MCOMPILE}
 post-patch:
 	${MKDIR} ${WRKDIR}/m2
 	${CP} ${FILESDIR}/settings.xml ${WRKDIR}
@@ -52,7 +53,7 @@ do-build:
 .endif
 
 do-install:
-.if defined(WITH_COMPILE)
+.if ${PORT_OPTIONS:MCOMPILE}
 	${INSTALL_DATA} ${OUTPUT}/jrosetta-api/${PORTVERSION}/jrosetta-api-${PORTVERSION}.jar \
 		${JAVAJARDIR}/jrosetta-api.jar
 	${INSTALL_DATA} ${OUTPUT}/jrosetta-engine/${PORTVERSION}/jrosetta-engine-${PORTVERSION}.jar \
