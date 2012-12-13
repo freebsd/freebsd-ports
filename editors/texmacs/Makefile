@@ -1,9 +1,5 @@
-# New ports collection makefile for:	texmacs
-# Date created:		1 December 2001
-# Whom:			Geoffrey Mainland <mainland@apeiron.net>
-#
+# Created by: Geoffrey Mainland <mainland@apeiron.net>
 # $FreeBSD$
-#
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.14
@@ -37,12 +33,10 @@ DATADIR=	${PREFIX}/share/TeXmacs
 MAN1=		texmacs.1 fig2ps.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	FREETYPE "FreeType support" ON \
-		GHOSTSCRIPT "Ghostscript support" ON \
-		ICONV "Iconv support" ON \
-		IMLIB2 "Use imlib2" ON \
-		PDF "Experimental PDF renderer" OFF \
-		QT4 "QT4 GUI" ON
+OPTIONS_DEFINE=	FREETYPE GHOSTSCRIPT ICONV IMLIB2 PDF QT4
+OPTIONS_DEFAULT=	FREETYPE GHOSTSCRIPT ICONV IMLIB2 QT4
+GHOSTSCRIPT_DESC=	Ghostscript support
+PDF_DESC=	Experimental PDF renderer
 
 DESKTOP_ENTRIES=	"TeXmacs" "${COMMENT}" \
 			"${DATADIR}/misc/pixmaps/TeXmacs.xpm" "texmacs" \
@@ -50,39 +44,39 @@ DESKTOP_ENTRIES=	"TeXmacs" "${COMMENT}" \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype=linked
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
 
-.if !defined(WITHOUT_GHOSTSCRIPT)
+.if ${PORT_OPTIONS:MGHOSTSCRIPT}
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-gs=yes
 .else
 CONFIGURE_ARGS+=	--without-gs
 .endif
 
-.if !defined(WITHOUT_ICONV)
+.if ${PORT_OPTIONS:MICONv}
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--with-iconv="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
-.if !defined(WITHOUT_IMLIB2)
+.if ${PORT_OPTIONS:MIMLIB2}
 USE_EFL=	imlib2
 CONFIGURE_ARGS+=	--with-imlib2
 .else
 CONFIGURE_ARGS+=	--without-imlib
 .endif
 
-.if !defined(WITHOUT_PDF)
+.if ${PORT_OPTIONS:MPDF}
 CONFIGURE_ARGS+=	--enable-pdf-renderer
 .endif
 
-.if !defined(WITHOUT_QT4)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4=	gui moc_build qmake_build rcc uic_build
 CONFIGURE_ARGS+=	--with-qt --enable-qtpipes
 .else
