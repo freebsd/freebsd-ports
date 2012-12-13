@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Kawa
-# Date created:				23 January 2002
-# Whom:					Zach Garner <zach@neurosoft.org>
-#
+# Created by: Zach Garner <zach@neurosoft.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kawa
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	lang scheme java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
@@ -14,7 +10,10 @@ MASTER_SITE_SUBDIR=	kawa
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Java-based Scheme implementation
 
+LICENSE=	MIT
+
 USE_JAVA=	yes
+USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
@@ -32,5 +31,8 @@ pre-patch:
 		-e '/^JAR =/s|[a-zA-Z]*$$|${JAR}|g;'
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
 		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
+
+regression-test: install
+	cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.mk>
