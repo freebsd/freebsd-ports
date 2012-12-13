@@ -1,39 +1,68 @@
-# New ports collection makefile for:	calf
-# Date created:		2009-08-26
-# Whom:			 <trasz@FreeBSD.org>
-#
+# Created by: <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	calf
-PORTVERSION=	0.0.18.6
-PORTREVISION=	1
+PORTVERSION=	0.0.19
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Calf audio plugin pack
+COMMENT=	Audio plug-in pack for LV2 and JACK environments
 
-LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.7:${PORTSDIR}/audio/liblo \
-		jack.0:${PORTSDIR}/audio/jack \
-		lash.2:${PORTSDIR}/audio/lash
-BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
-		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS=	fftw3>0:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth \
+		jack:${PORTSDIR}/audio/jack \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
+		expat:${PORTSDIR}/textproc/expat2
+
+OPTIONS_DEFINE=	LASH LV2
+OPTIONS_DEFAULT=LASH LV2
+LV2_DESC=	LV2 audio plugin
+
+USE_GCC=	any
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libglade2
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dssi -L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAN1=		calfjackhost.1
 MAN7=		calf.7
-INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLASH}
+LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
+.else
+CONFIGURE_ARGS+=--without-lash
+.endif
+
+.if ${PORT_OPTIONS:MLV2}
+BUILD_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
+RUN_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
+PLIST_SUB+=	LV2=""
+.else
+CONFIGURE_ARGS+=--without-lv2
+PLIST_SUB+=	LV2="@comment "
+.endif
 
 post-patch:
-		@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} \
-			${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
+	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<malloc.h>|<stdlib.h>|'
+	@${REINPLACE_CMD} -e '/CXXFLAGS/s|-O3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-data-local||' \
+		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+post-install:
+.if !defined(NOPORTDOCS)
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data-local)
+.endif
+
+.include <bsd.port.mk>

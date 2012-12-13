@@ -1,30 +1,303 @@
 bin/calfjackhost
-lib/ladspa/calf.so
-lib/dssi/calf/calf_gtk
-lib/dssi/calf.so
-share/calf/presets.xml
-share/calf/knob.png
-share/calf/gui-filter.xml
-share/calf/gui-filterclavier.xml
-share/calf/gui-flanger.xml
-share/calf/gui-reverb.xml
-share/calf/gui-monosynth.xml
-share/calf/gui-vintagedelay.xml
-share/calf/gui-organ.xml
-share/calf/gui-rotaryspeaker.xml
-share/calf/gui-phaser.xml
-share/calf/gui-multichorus.xml
-share/calf/gui-compressor.xml
-share/calf/gui-sidechaingate.xml
-share/calf/calf.glade
-share/ladspa/rdf/calf.rdf
-share/icons/hicolor/16x16/apps/calf.png
-share/icons/hicolor/24x24/apps/calf.png
-share/icons/hicolor/32x32/apps/calf.png
-share/icons/hicolor/48x48/apps/calf.png
+lib/calf/calf.a
+lib/calf/calf.la
+lib/calf/calf.so
+%%LV2%%lib/lv2/calf.lv2/Analyzer.ttl
+%%LV2%%lib/lv2/calf.lv2/BassEnhancer.ttl
+%%LV2%%lib/lv2/calf.lv2/Compressor.ttl
+%%LV2%%lib/lv2/calf.lv2/Deesser.ttl
+%%LV2%%lib/lv2/calf.lv2/Equalizer12Band.ttl
+%%LV2%%lib/lv2/calf.lv2/Equalizer5Band.ttl
+%%LV2%%lib/lv2/calf.lv2/Equalizer8Band.ttl
+%%LV2%%lib/lv2/calf.lv2/Exciter.ttl
+%%LV2%%lib/lv2/calf.lv2/Filter.ttl
+%%LV2%%lib/lv2/calf.lv2/Filterclavier.ttl
+%%LV2%%lib/lv2/calf.lv2/Flanger.ttl
+%%LV2%%lib/lv2/calf.lv2/Gate.ttl
+%%LV2%%lib/lv2/calf.lv2/Limiter.ttl
+%%LV2%%lib/lv2/calf.lv2/MonoInput.ttl
+%%LV2%%lib/lv2/calf.lv2/Monosynth.ttl
+%%LV2%%lib/lv2/calf.lv2/MultiChorus.ttl
+%%LV2%%lib/lv2/calf.lv2/Multibandcompressor.ttl
+%%LV2%%lib/lv2/calf.lv2/Multibandgate.ttl
+%%LV2%%lib/lv2/calf.lv2/Multibandlimiter.ttl
+%%LV2%%lib/lv2/calf.lv2/Organ.ttl
+%%LV2%%lib/lv2/calf.lv2/Phaser.ttl
+%%LV2%%lib/lv2/calf.lv2/Pulsator.ttl
+%%LV2%%lib/lv2/calf.lv2/Reverb.ttl
+%%LV2%%lib/lv2/calf.lv2/RotarySpeaker.ttl
+%%LV2%%lib/lv2/calf.lv2/Saturator.ttl
+%%LV2%%lib/lv2/calf.lv2/Sidechaincompressor.ttl
+%%LV2%%lib/lv2/calf.lv2/Sidechaingate.ttl
+%%LV2%%lib/lv2/calf.lv2/StereoTools.ttl
+%%LV2%%lib/lv2/calf.lv2/VintageDelay.ttl
+%%LV2%%lib/lv2/calf.lv2/calf.so
+%%LV2%%lib/lv2/calf.lv2/calflv2gui.so
+%%LV2%%lib/lv2/calf.lv2/manifest.ttl
+%%LV2%%lib/lv2/calf.lv2/presets-Filter.ttl
+%%LV2%%lib/lv2/calf.lv2/presets-Flanger.ttl
+%%LV2%%lib/lv2/calf.lv2/presets-Monosynth.ttl
+%%LV2%%lib/lv2/calf.lv2/presets-Organ.ttl
+%%LV2%%lib/lv2/calf.lv2/presets-Reverb.ttl
 share/applications/calf.desktop
-@dirrm lib/dssi/calf
-@dirrm share/calf
-@dirrmtry share/ladspa/rdf
-@dirrmtry share/ladspa
+%%DATADIR%%/background_black.png
+%%DATADIR%%/background_blue.png
+%%DATADIR%%/background_dark.png
+%%DATADIR%%/background_fur.png
+%%DATADIR%%/background_fur_bw.png
+%%DATADIR%%/background_fur_white.png
+%%DATADIR%%/background_light_alu.png
+%%DATADIR%%/background_light_calf.png
+%%DATADIR%%/background_light_green.png
+%%DATADIR%%/background_light_metal.png
+%%DATADIR%%/blank.png
+%%DATADIR%%/button.png
+%%DATADIR%%/button_active.png
+%%DATADIR%%/button_default.png
+%%DATADIR%%/button_default_active.png
+%%DATADIR%%/button_default_prelight.png
+%%DATADIR%%/button_insens.png
+%%DATADIR%%/button_normal.png
+%%DATADIR%%/button_prelight.png
+%%DATADIR%%/calf-gui.xml
+%%DATADIR%%/calf.rc
+%%DATADIR%%/combo.png
+%%DATADIR%%/combo_active.png
+%%DATADIR%%/combo_arrow.png
+%%DATADIR%%/combo_inactive.png
+%%DATADIR%%/entry.png
+%%DATADIR%%/entry_inactive.png
+%%DATADIR%%/frame.png
+%%DATADIR%%/frame_bottom_end.png
+%%DATADIR%%/frame_bottom_start.png
+%%DATADIR%%/frame_left_end.png
+%%DATADIR%%/frame_left_start.png
+%%DATADIR%%/frame_right_end.png
+%%DATADIR%%/frame_right_start.png
+%%DATADIR%%/frame_top_end.png
+%%DATADIR%%/frame_top_start.png
+%%DATADIR%%/gui-analyzer.xml
+%%DATADIR%%/gui-bassenhancer.xml
+%%DATADIR%%/gui-compressor.xml
+%%DATADIR%%/gui-deesser.xml
+%%DATADIR%%/gui-enhancer.xml
+%%DATADIR%%/gui-eq12.xml
+%%DATADIR%%/gui-eq5.xml
+%%DATADIR%%/gui-eq8.xml
+%%DATADIR%%/gui-exciter.xml
+%%DATADIR%%/gui-filter.xml
+%%DATADIR%%/gui-filterclavier.xml
+%%DATADIR%%/gui-flanger.xml
+%%DATADIR%%/gui-fluidsynth.xml
+%%DATADIR%%/gui-gate.xml
+%%DATADIR%%/gui-limiter.xml
+%%DATADIR%%/gui-mono.xml
+%%DATADIR%%/gui-monosynth.xml
+%%DATADIR%%/gui-multibandcompressor.xml
+%%DATADIR%%/gui-multibandgate.xml
+%%DATADIR%%/gui-multibandlimiter.xml
+%%DATADIR%%/gui-multichorus.xml
+%%DATADIR%%/gui-organ.xml
+%%DATADIR%%/gui-phaser.xml
+%%DATADIR%%/gui-pulsator.xml
+%%DATADIR%%/gui-reverb.xml
+%%DATADIR%%/gui-rotaryspeaker.xml
+%%DATADIR%%/gui-saturator.xml
+%%DATADIR%%/gui-sidechaincompressor.xml
+%%DATADIR%%/gui-sidechaingate.xml
+%%DATADIR%%/gui-stereo.xml
+%%DATADIR%%/gui-vintagedelay.xml
+%%DATADIR%%/gui-wavetable.xml
+%%DATADIR%%/handle-h.png
+%%DATADIR%%/handle-v.png
+%%DATADIR%%/hline.png
+%%DATADIR%%/knob1.png
+%%DATADIR%%/knob2.png
+%%DATADIR%%/knob3.png
+%%DATADIR%%/knob4.png
+%%DATADIR%%/knob5.png
+%%DATADIR%%/led2_active.png
+%%DATADIR%%/led2_inactive.png
+%%DATADIR%%/led2_normal.png
+%%DATADIR%%/led2_prelight.png
+%%DATADIR%%/led_active.png
+%%DATADIR%%/led_inactive.png
+%%DATADIR%%/led_normal.png
+%%DATADIR%%/led_prelight.png
+%%DATADIR%%/light_bottom.png
+%%DATADIR%%/light_top.png
+%%DATADIR%%/logo_button.png
+%%DATADIR%%/notebook.png
+%%DATADIR%%/notebook_bottom.png
+%%DATADIR%%/notebook_left.png
+%%DATADIR%%/notebook_right.png
+%%DATADIR%%/notebook_top.png
+%%DATADIR%%/null.png
+%%DATADIR%%/presets.xml
+%%DATADIR%%/rect3155.png
+%%DATADIR%%/screw1.png
+%%DATADIR%%/screw2.png
+%%DATADIR%%/scroll-thumb-horiz.png
+%%DATADIR%%/scroll-thumb-vert.png
+%%DATADIR%%/scroller-horiz-insens.png
+%%DATADIR%%/scroller-horiz-prelight.png
+%%DATADIR%%/scroller-horiz.png
+%%DATADIR%%/scroller-vert-insens.png
+%%DATADIR%%/scroller-vert-prelight.png
+%%DATADIR%%/scroller-vert.png
+%%DATADIR%%/side_d_e.png
+%%DATADIR%%/side_d_ne.png
+%%DATADIR%%/side_d_nw.png
+%%DATADIR%%/side_d_se.png
+%%DATADIR%%/side_d_sw.png
+%%DATADIR%%/side_d_w.png
+%%DATADIR%%/side_e.png
+%%DATADIR%%/side_e_logo.png
+%%DATADIR%%/side_ne.png
+%%DATADIR%%/side_nw.png
+%%DATADIR%%/side_se.png
+%%DATADIR%%/side_sw.png
+%%DATADIR%%/side_w.png
+%%DATADIR%%/slider1-horiz-prelight.png
+%%DATADIR%%/slider1-horiz.png
+%%DATADIR%%/slider1-vert-prelight.png
+%%DATADIR%%/slider1-vert.png
+%%DATADIR%%/slider2-horiz-prelight.png
+%%DATADIR%%/slider2-horiz.png
+%%DATADIR%%/slider2-vert-prelight.png
+%%DATADIR%%/slider2-vert.png
+%%DATADIR%%/spin_down_active.png
+%%DATADIR%%/spin_down_inactive.png
+%%DATADIR%%/spin_down_normal.png
+%%DATADIR%%/spin_down_prelight.png
+%%DATADIR%%/spin_up_active.png
+%%DATADIR%%/spin_up_inactive.png
+%%DATADIR%%/spin_up_normal.png
+%%DATADIR%%/spin_up_prelight.png
+%%DATADIR%%/tab_bottom_normal.png
+%%DATADIR%%/tab_bottom_prelight.png
+%%DATADIR%%/tab_left_normal.png
+%%DATADIR%%/tab_left_prelight.png
+%%DATADIR%%/tab_right_normal.png
+%%DATADIR%%/tab_right_prelight.png
+%%DATADIR%%/tab_top_normal.png
+%%DATADIR%%/tab_top_prelight.png
+%%DATADIR%%/toggle1_black.png
+%%DATADIR%%/toggle1_silver.png
+%%DATADIR%%/toggle2_black.png
+%%DATADIR%%/toggle2_silver.png
+%%DATADIR%%/trough1-horizontal.png
+%%DATADIR%%/trough1-vertical.png
+%%DATADIR%%/trough2-horizontal.png
+%%DATADIR%%/trough2-vertical.png
+%%DATADIR%%/tubeH1.png
+%%DATADIR%%/tubeH2.png
+%%DATADIR%%/tubeV1.png
+%%DATADIR%%/tubeV2.png
+%%DATADIR%%/vline.png
+%%PORTDOCS%%%%DOCSDIR%%/About.html
+%%PORTDOCS%%%%DOCSDIR%%/Analyzer.html
+%%PORTDOCS%%%%DOCSDIR%%/Bass Enhancer.html
+%%PORTDOCS%%%%DOCSDIR%%/Calf.html
+%%PORTDOCS%%%%DOCSDIR%%/Compressor.html
+%%PORTDOCS%%%%DOCSDIR%%/Controls.html
+%%PORTDOCS%%%%DOCSDIR%%/Deesser.html
+%%PORTDOCS%%%%DOCSDIR%%/Equalizer12band.html
+%%PORTDOCS%%%%DOCSDIR%%/Equalizer5band.html
+%%PORTDOCS%%%%DOCSDIR%%/Equalizer8band.html
+%%PORTDOCS%%%%DOCSDIR%%/Exciter.html
+%%PORTDOCS%%%%DOCSDIR%%/Filter.html
+%%PORTDOCS%%%%DOCSDIR%%/Filterclavier.html
+%%PORTDOCS%%%%DOCSDIR%%/Flanger.html
+%%PORTDOCS%%%%DOCSDIR%%/Gate.html
+%%PORTDOCS%%%%DOCSDIR%%/Limiter.html
+%%PORTDOCS%%%%DOCSDIR%%/Mono Input.html
+%%PORTDOCS%%%%DOCSDIR%%/Monosynth.html
+%%PORTDOCS%%%%DOCSDIR%%/Multi Chorus.html
+%%PORTDOCS%%%%DOCSDIR%%/Multiband Compressor.html
+%%PORTDOCS%%%%DOCSDIR%%/Multiband Gate.html
+%%PORTDOCS%%%%DOCSDIR%%/Multiband Limiter.html
+%%PORTDOCS%%%%DOCSDIR%%/Organ.html
+%%PORTDOCS%%%%DOCSDIR%%/Phaser.html
+%%PORTDOCS%%%%DOCSDIR%%/Pulsator.html
+%%PORTDOCS%%%%DOCSDIR%%/Reverb.html
+%%PORTDOCS%%%%DOCSDIR%%/Rotary Speaker.html
+%%PORTDOCS%%%%DOCSDIR%%/Saturator.html
+%%PORTDOCS%%%%DOCSDIR%%/Sidechain Compressor.html
+%%PORTDOCS%%%%DOCSDIR%%/Sidechain Gate.html
+%%PORTDOCS%%%%DOCSDIR%%/Stereo Tools.html
+%%PORTDOCS%%%%DOCSDIR%%/Vintage Delay.html
+%%PORTDOCS%%%%DOCSDIR%%/_blank.html
+%%PORTDOCS%%%%DOCSDIR%%/images/About.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Analyzer.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Bass Enhancer.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Compressor.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Controls.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Deesser.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Equalizer 12 Band.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Equalizer 5 Band.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Equalizer 8 Band.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Exciter.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Filter.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Filterclavier.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Flanger.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Gate.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Limiter.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Mono Input.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Monosynth - Audio Path.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Monosynth - Modulation Matrix.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Monosynth - Modulation.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Multi Chorus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Multiband Compressor.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Multiband Gate.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Multiband Limiter.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Organ - Advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Organ - Sound Processor.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Organ - Tone Generator.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Phaser.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Pulsator.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Reverb.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Rotary Speaker.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Saturator.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Sidechain Compressor.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Sidechain Gate.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Stereo Tools.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf - Vintage Delay.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Calf.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Index.png
+%%PORTDOCS%%%%DOCSDIR%%/images/background_dark.png
+%%PORTDOCS%%%%DOCSDIR%%/images/plugins.png
+%%PORTDOCS%%%%DOCSDIR%%/images/style_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/images/style_p.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/scripts/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/scripts/manual.js
+%%PORTDOCS%%%%DOCSDIR%%/scripts/style.css
+%%PORTDOCS%%%%DOCSDIR%%/scripts/thickbox.css
+%%PORTDOCS%%%%DOCSDIR%%/scripts/thickbox.js
+share/icons/hicolor/128x128/apps/calf.png
+share/icons/hicolor/128x128/apps/calf_plugin.png
+share/icons/hicolor/16x16/apps/calf.png
+share/icons/hicolor/16x16/apps/calf_plugin.png
+share/icons/hicolor/22x22/apps/calf.png
+share/icons/hicolor/22x22/apps/calf_plugin.png
+share/icons/hicolor/24x24/apps/calf.png
+share/icons/hicolor/24x24/apps/calf_plugin.png
+share/icons/hicolor/256x256/apps/calf.png
+share/icons/hicolor/256x256/apps/calf_plugin.png
+share/icons/hicolor/32x32/apps/calf.png
+share/icons/hicolor/32x32/apps/calf_plugin.png
+share/icons/hicolor/48x48/apps/calf.png
+share/icons/hicolor/48x48/apps/calf_plugin.png
+share/icons/hicolor/64x64/apps/calf.png
+share/icons/hicolor/64x64/apps/calf_plugin.png
+share/icons/hicolor/scalable/apps/calf.svg
+share/icons/hicolor/scalable/apps/calf_plugin.svg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
+%%LV2%%@dirrm lib/lv2/calf.lv2
+%%LV2%%@dirrmtry lib/lv2
+@dirrm lib/calf
