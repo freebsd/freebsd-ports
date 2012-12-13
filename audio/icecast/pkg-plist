@@ -1,28 +1,28 @@
-etc/icecast/conf/groups.aut.dist
-etc/icecast/conf/icecast.conf.dist
-etc/icecast/conf/mounts.aut.dist
-etc/icecast/conf/users.aut.dist
-etc/icecast/templates/306.html
-etc/icecast/templates/400.html
-etc/icecast/templates/403.html
-etc/icecast/templates/404.html
-etc/icecast/templates/504.html
-etc/icecast/templates/admin.html
-etc/icecast/templates/admin_change.html
-etc/icecast/templates/admin_describe.html
-etc/icecast/templates/alias_add.html
-etc/icecast/templates/alias_del.html
-etc/icecast/templates/bodytag.html
-etc/icecast/templates/footer.html
-etc/icecast/templates/header.html
-etc/icecast/templates/info.html
-etc/icecast/templates/list_directory.html
-etc/icecast/templates/manual.html
-etc/icecast/templates/mountlist.html
-etc/icecast/templates/statistics.html
+%%ETCDIR%%/conf/groups.aut.dist
+%%ETCDIR%%/conf/icecast.conf.dist
+%%ETCDIR%%/conf/mounts.aut.dist
+%%ETCDIR%%/conf/users.aut.dist
+%%ETCDIR%%/templates/306.html
+%%ETCDIR%%/templates/400.html
+%%ETCDIR%%/templates/403.html
+%%ETCDIR%%/templates/404.html
+%%ETCDIR%%/templates/504.html
+%%ETCDIR%%/templates/admin.html
+%%ETCDIR%%/templates/admin_change.html
+%%ETCDIR%%/templates/admin_describe.html
+%%ETCDIR%%/templates/alias_add.html
+%%ETCDIR%%/templates/alias_del.html
+%%ETCDIR%%/templates/bodytag.html
+%%ETCDIR%%/templates/footer.html
+%%ETCDIR%%/templates/header.html
+%%ETCDIR%%/templates/info.html
+%%ETCDIR%%/templates/list_directory.html
+%%ETCDIR%%/templates/manual.html
+%%ETCDIR%%/templates/mountlist.html
+%%ETCDIR%%/templates/statistics.html
 sbin/icecast
-%%DOCSDIR%%/manual.html
-@dirrm etc/icecast/conf
-@dirrm etc/icecast/templates
-@dirrm etc/icecast
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%/templates
+@dirrm %%ETCDIR%%/conf
+@dirrm %%ETCDIR%%
