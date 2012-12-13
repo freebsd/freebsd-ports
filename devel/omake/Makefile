@@ -1,17 +1,12 @@
-# New ports collection makefile for:	omake
-# Date created:		2006-08-06
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	omake
 PORTVERSION=	0.9.8.5
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://omake.metaprl.org/downloads/
-DISTNAME=	omake-0.9.8.5-3
+MASTER_SITES=	http://main.metaprl.org/download/omake/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible build system
@@ -19,21 +14,13 @@ COMMENT=	A flexible build system
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
+USE_NCURSES=	yes
+USE_READLINE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-FETCH_CMD?=	/usr/bin/fetch -Rr
-
-.if !defined(NOPORTDOCS)
 INFO=		omake-doc
-.endif
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not build on powerpc
@@ -43,23 +30,26 @@ post-patch:
 #
 # Dirty hack for PREFIX safety
 #
-	@${REINPLACE_CMD} -E -e "s,(getenv[[:space:]]+)LIBDIR,\1PREFLIBDIR," \
-		${WRKSRC}/mk/defaults
+	@${REINPLACE_CMD} -E -e \
+		's|(getenv[[:space:]]+)LIBDIR|\1PREFLIBDIR|' ${WRKSRC}/mk/defaults
 
 #
 # Permissions safety
 #
-	@${REINPLACE_CMD} -E -e "s,cp -f -m 444,\$$(BSD_INSTALL_DATA)," \
-		-e "s,cp -f -m 555,\$$(BSD_INSTALL_PROGRAM)," \
-		${WRKSRC}/OMakefile ${WRKSRC}/src/main/OMakefile \
-		${WRKSRC}/doc/OMakefile
+.for f in OMakefile doc/OMakefile src/main/OMakefile
+	@${REINPLACE_CMD} -e \
+		's|cp -f -m 444|$$(BSD_INSTALL_DATA)| ; \
+		 s|cp -f -m 555|$$(BSD_INSTALL_PROGRAM)|' ${WRKSRC}/${f}
+.endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	@(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* "${DOCSDIR}/")
-	@(cd ${WRKSRC}/doc/info/ \
-		&& ${COPYTREE_SHARE} \* "${PREFIX}/${INFO_PATH}/")
+	@(cd ${WRKSRC}/doc/info \
+		&& ${INSTALL_DATA} omake-doc.info ${PREFIX}/${INFO_PATH})
+	@(cd ${WRKSRC}/doc/info \
+		&& ${INSTALL_DATA} omake-doc.info-* ${PREFIX}/${INFO_PATH})
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
