@@ -1,11 +1,11 @@
---- src/thread.cpp	Wed Oct  4 19:16:54 2006
-+++ src/thread.cpp	Wed Oct  4 19:17:17 2006
-@@ -820,7 +820,7 @@
+--- src/thread.cpp	2010-10-31 17:58:07.000000000 -0700
++++ src/thread.cpp	2012-08-12 20:26:53.000000000 -0700
+@@ -796,7 +796,7 @@
  cctid_t Thread::getId(void) const
  {
- 	if(!priv)
--		return -1;
-+		return false;
+     if(!priv)
+-        return (cctid_t)-1;
++	return (cctid_t)false;
  
- 	return priv->_tid;
+     return priv->_tid;
  }
