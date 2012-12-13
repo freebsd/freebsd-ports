@@ -7,7 +7,7 @@
 
 PORTNAME=	panoptis
 PORTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ COMMENT=	Detect and block DoS/DDoS attacks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
