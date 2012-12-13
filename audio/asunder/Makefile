@@ -3,19 +3,22 @@
 
 PORTNAME=	asunder
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
 MAINTAINER=	frase@frase.id.au
 COMMENT=	A lightweight GTK+ CD ripper
 
-LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	cddb:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 
-OPTIONS_DEFINE=	LAME OGG FLAC WAVPACK MONKEYAUDIO WINDOWS_CHARS NLS DOCS
+OPTIONS_DEFINE=	LAME OGG FLAC WAVPACK APE WINDOWS_CHARS NLS DOCS
 OPTIONS_DEFAULT=	LAME OGG FLAC
 
-MONKEYAUDIO_DESC=	Monkey's Audio support
 WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 USE_BZIP2=	yes
@@ -24,7 +27,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
 .include <bsd.port.options.mk>
 
@@ -44,7 +47,7 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 .endif
 
-.if ${PORT_OPTIONS:MMONKEYAUDIO}
+.if ${PORT_OPTIONS:MAPE}
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 .endif
 
