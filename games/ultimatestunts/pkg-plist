@@ -252,6 +252,43 @@ bin/ustuntstrackedit
 %%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-tilecollection1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-tilecollectiontool.jpg
 %%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit1.jpg
+%%DATADIR%%/cars/alfa6c_2500.conf
+%%DATADIR%%/cars/alfa6c_2500/body.glb
+%%DATADIR%%/cars/alfa6c_2500/dash.png
+%%DATADIR%%/cars/alfa6c_2500/readme.txt
+%%DATADIR%%/cars/alfa6c_2500/rpm.png
+%%DATADIR%%/cars/alfa6c_2500/steeringwheel.png
+%%DATADIR%%/cars/alfa6c_2500/tacho.png
+%%DATADIR%%/cars/alfa6c_2500/wheel.glb
+%%DATADIR%%/cars/allardk.conf
+%%DATADIR%%/cars/allard_k/body.glb
+%%DATADIR%%/cars/allard_k/interior.png
+%%DATADIR%%/cars/allard_k/tacho.png
+%%DATADIR%%/cars/allard_k/wheel.glb
+%%DATADIR%%/cars/allard_k/wheel.png
+%%DATADIR%%/cars/chrysler_tc_46.conf
+%%DATADIR%%/cars/chrysler_tc_46/body.glb
+%%DATADIR%%/cars/chrysler_tc_46/dash.png
+%%DATADIR%%/cars/chrysler_tc_46/tacho.png
+%%DATADIR%%/cars/chrysler_tc_46/wheel.glb
+%%DATADIR%%/cars/chrysler_tc_46/wheel.png
+%%DATADIR%%/cars/countach.conf
+%%DATADIR%%/cars/countach/body.glb
+%%DATADIR%%/cars/countach/dash.png
+%%DATADIR%%/cars/countach/engine.wav
+%%DATADIR%%/cars/countach/readme.txt
+%%DATADIR%%/cars/countach/rpm.png
+%%DATADIR%%/cars/countach/steeringwheel.png
+%%DATADIR%%/cars/countach/tacho.png
+%%DATADIR%%/cars/countach/wheel.glb
+%%DATADIR%%/cars/db4gt.conf
+%%DATADIR%%/cars/db4gt/body.glb
+%%DATADIR%%/cars/db4gt/dash.png
+%%DATADIR%%/cars/db4gt/readme.txt
+%%DATADIR%%/cars/db4gt/rpm.png
+%%DATADIR%%/cars/db4gt/steer.png
+%%DATADIR%%/cars/db4gt/tacho.png
+%%DATADIR%%/cars/db4gt/wheel.glb
 %%DATADIR%%/cars/diablo.conf
 %%DATADIR%%/cars/diablo/body.glb
 %%DATADIR%%/cars/diablo/dashboard.png
@@ -268,6 +305,13 @@ bin/ustuntstrackedit
 %%DATADIR%%/cars/f1/rpm.png
 %%DATADIR%%/cars/f1/steer.png
 %%DATADIR%%/cars/f1/textures.jpg
+%%DATADIR%%/cars/ferrari512bb.conf
+%%DATADIR%%/cars/ferrari512bb/body.glb
+%%DATADIR%%/cars/ferrari512bb/dash.png
+%%DATADIR%%/cars/ferrari512bb/rpm.png
+%%DATADIR%%/cars/ferrari512bb/tacho.png
+%%DATADIR%%/cars/ferrari512bb/wheel.glb
+%%DATADIR%%/cars/ferrari512bb/wheel.png
 %%DATADIR%%/cars/ferrarif40.conf
 %%DATADIR%%/cars/ferrarif40/body.glb
 %%DATADIR%%/cars/ferrarif40/wheel.glb
@@ -278,6 +322,13 @@ bin/ustuntstrackedit
 %%DATADIR%%/cars/ferrarispider/rpm.png
 %%DATADIR%%/cars/ferrarispider/steer.png
 %%DATADIR%%/cars/ferrarispider/wheel.glb
+%%DATADIR%%/cars/frazernash.conf
+%%DATADIR%%/cars/frazernash/body.glb
+%%DATADIR%%/cars/frazernash/dash.png
+%%DATADIR%%/cars/frazernash/rpm.png
+%%DATADIR%%/cars/frazernash/tacho.png
+%%DATADIR%%/cars/frazernash/wheel.glb
+%%DATADIR%%/cars/frazernash/wheel.png
 %%DATADIR%%/cars/generic/bodycollision.glb
 %%DATADIR%%/cars/generic/crash.png
 %%DATADIR%%/cars/generic/crash_fatal.wav
@@ -297,6 +348,20 @@ bin/ustuntstrackedit
 %%DATADIR%%/cars/lego.conf
 %%DATADIR%%/cars/lego/body.glb
 %%DATADIR%%/cars/lego/wheel.glb
+%%DATADIR%%/cars/maserati5000gt.conf
+%%DATADIR%%/cars/maserati5000gt/body.glb
+%%DATADIR%%/cars/maserati5000gt/interior.png
+%%DATADIR%%/cars/maserati5000gt/rpm.png
+%%DATADIR%%/cars/maserati5000gt/tacho.png
+%%DATADIR%%/cars/maserati5000gt/wheel.glb
+%%DATADIR%%/cars/maserati5000gt/wheel.png
+%%DATADIR%%/cars/maseratibora.conf
+%%DATADIR%%/cars/maseratibora/body.glb
+%%DATADIR%%/cars/maseratibora/dash.png
+%%DATADIR%%/cars/maseratibora/rpm.png
+%%DATADIR%%/cars/maseratibora/tacho.png
+%%DATADIR%%/cars/maseratibora/wheel.glb
+%%DATADIR%%/cars/maseratibora/wheel.png
 %%DATADIR%%/cars/porsche911.conf
 %%DATADIR%%/cars/porsche911/body.glb
 %%DATADIR%%/cars/porsche911/dashboard.png
@@ -647,6 +712,11 @@ bin/ustuntstrackedit
 %%DATADIR%%/tiles/wateredge3.glb
 %%DATADIR%%/tracks/StuntsImportExample.track
 %%DATADIR%%/tracks/acropolis.track
+%%DATADIR%%/tracks/andr1.track
+%%DATADIR%%/tracks/andr2.track
+%%DATADIR%%/tracks/andr3.track
+%%DATADIR%%/tracks/andr4.track
+%%DATADIR%%/tracks/andr6.track
 %%DATADIR%%/tracks/clifftest.track
 %%DATADIR%%/tracks/corners.track
 %%DATADIR%%/tracks/default.track
@@ -655,6 +725,9 @@ bin/ustuntstrackedit
 %%DATADIR%%/tracks/mcp.track
 %%DATADIR%%/tracks/mountain.track
 %%DATADIR%%/tracks/nocorners.track
+%%DATADIR%%/tracks/oleg_sup.track
+%%DATADIR%%/tracks/serge.track
+%%DATADIR%%/tracks/sergesup.track
 %%DATADIR%%/tracks/small.track
 %%DATADIR%%/tracks/test.track
 %%DATADIR%%/tracks/ustunts.track
@@ -681,13 +754,22 @@ bin/ustuntstrackedit
 @dirrm %%DATADIR%%/cars/subaruimpreza
 @dirrm %%DATADIR%%/cars/porsche928
 @dirrm %%DATADIR%%/cars/porsche911
+@dirrm %%DATADIR%%/cars/maseratibora
+@dirrm %%DATADIR%%/cars/maserati5000gt
 @dirrm %%DATADIR%%/cars/lego
 @dirrm %%DATADIR%%/cars/jeep
 @dirrm %%DATADIR%%/cars/generic
+@dirrm %%DATADIR%%/cars/frazernash
 @dirrm %%DATADIR%%/cars/ferrarispider
 @dirrm %%DATADIR%%/cars/ferrarif40
+@dirrm %%DATADIR%%/cars/ferrari512bb
 @dirrm %%DATADIR%%/cars/f1
 @dirrm %%DATADIR%%/cars/diablo
+@dirrm %%DATADIR%%/cars/db4gt
+@dirrm %%DATADIR%%/cars/countach
+@dirrm %%DATADIR%%/cars/chrysler_tc_46
+@dirrm %%DATADIR%%/cars/allard_k
+@dirrm %%DATADIR%%/cars/alfa6c_2500
 @dirrm %%DATADIR%%/cars
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files
