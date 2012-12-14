@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hsftp
-# Date created:				Mon 03 Jul 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	hsftp
 PORTVERSION=	1.15
@@ -15,20 +11,30 @@ MASTER_SITES=	http://la-samhna.de/hsftp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP emulator that uses ssh to transport commands/data
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	OPENSSH READLINE
+OPTIONS_DEFAULT=READLINE
+OPENSSH_DESC=	Build with OpenSSH support
+READLINE_DESC=	Enable readline support
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-readline
 MAKEFILE=	makefile
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		hsftp.1
 PLIST_FILES=	bin/hsftp
-
-OPTIONS_DEFINE=	OPENSSH
-OPENSSH_DESC=	Build with OpenSSH support
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSH}
-RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh
+RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh-portable
 CONFIGURE_ARGS+=	--with-openssh
+.endif
+
+.if ${PORT_OPTIONS:MREADLINE}
+USE_READLINE=	yes
+CONFIGURE_ARGS+=	--with-readline
 .endif
 
 pre-patch:
