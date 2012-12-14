@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irsim
-PORTVERSION=	9.7.74
+PORTVERSION=	9.7.78
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 EXTRACT_SUFX=	.tgz
