@@ -17,9 +17,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		fuse:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
+USE_FUSE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

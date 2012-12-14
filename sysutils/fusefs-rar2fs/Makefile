@@ -18,8 +18,6 @@ COMMENT=	Mount rar archives as filesystem
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	unrar:${PORTSDIR}/archivers/libunrar4 \
-		fuse:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
@@ -29,6 +27,7 @@ CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		rar2fs.1
+USE_FUSE=	yes
 USE_GMAKE=	yes
 
 do-install:

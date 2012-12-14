@@ -80,7 +80,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 	${CONFIGURE_TARGET}
 
 .if ${PORT_OPTIONS:MFUSE}
-LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+USE_FUSE=	yes
 PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse-client

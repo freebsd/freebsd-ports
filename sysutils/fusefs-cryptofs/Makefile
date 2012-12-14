@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A encrypted filesystem for FUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		glib-2.0:${PORTSDIR}/devel/glib20
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 
 PLIST_FILES=	bin/cryptofs
 

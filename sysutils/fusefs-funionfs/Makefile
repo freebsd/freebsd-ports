@@ -14,12 +14,10 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Union filesystem for the FUSE driver
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 
 MAN1=		funionfs.1
 PLIST_FILES=	bin/funionfs

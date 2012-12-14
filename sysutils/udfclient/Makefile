@@ -46,8 +46,7 @@ MASTER_SITES+=	http://www.icyb.net.ua/~avg/distfiles/:fuse
 DISTFILES+=	${UDFCLIENTFS_NAME}-${UDFCLIENTFS_VERSION}.tgz:fuse
 EXTRA_PATCHES+=	${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.patch
 
-RUN_DEPENDS+=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+USE_FUSE=	yes
 
 PLIST_FILES+=	bin/${UDFCLIENTFS_NAME}
 .endif

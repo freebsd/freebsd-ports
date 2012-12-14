@@ -17,16 +17,13 @@ COMMENT=	Mount iPod Touch / iPhone directories over USB
 # LICENSE=	LGPL21
 # LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
+LIB_DEPENDS=	imobiledevice.1:${PORTSDIR}/comms/libimobiledevice
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		imobiledevice.1:${PORTSDIR}/comms/libimobiledevice
-
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \
-		usbmuxd:${PORTSDIR}/comms/usbmuxd
+RUN_DEPENDS=	usbmuxd:${PORTSDIR}/comms/usbmuxd
 
 SUB_FILES=	pkg-message
 USE_BZIP2=	yes
+USE_FUSE=	yes
 USE_GNOME=	glib20 pkgconfig
 
 GNU_CONFIGURE=	yes

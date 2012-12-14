@@ -16,12 +16,9 @@ COMMENT=	Mount remote directories over ssh
 
 KMODDIR?=	${LOCALBASE}/modules
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${KMODDIR}/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
-
 GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
+USE_FUSE=	yes
 USE_GNOME=	glib20
 
 MAN1=	sshfs.1

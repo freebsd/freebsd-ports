@@ -15,12 +15,10 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A FUSE based filesystem with replication at the filesystem level
 
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_FUSE=	yes
 
 PLIST_FILES=	bin/chironfs bin/chirctl
 PORTDOCS=	*

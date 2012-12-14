@@ -15,11 +15,9 @@ DISTNAME=	${RPORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-
 RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
+USE_FUSE=	yes
 USE_GNOME=	gnomevfs2
 USE_GMAKE=	yes
 USE_PKGCONFIG=	yes

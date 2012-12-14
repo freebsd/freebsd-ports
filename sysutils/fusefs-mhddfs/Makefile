@@ -15,9 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	proler@gmail.com
 COMMENT=	Multi HDD [FUSE] File System
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-
+USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 MAKE_ARGS=	WITHOUT_XATTR=1

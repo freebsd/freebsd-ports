@@ -15,9 +15,7 @@ DISTNAME=	${PORTNAME}_with_static_binaries_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuse-based http filesystem
 
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-
+USE_FUSE=	yes
 PLIST_FILES=	bin/httpfs
 WRKSRC=		${WRKDIR}
 

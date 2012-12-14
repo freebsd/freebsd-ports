@@ -13,10 +13,9 @@ COMMENT=	A full-featured exFAT FS implementation as a FUSE module
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \
-		ublio:${PORTSDIR}/devel/libublio
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 
+USE_FUSE=	yes
 USE_ICONV=	yes
 USE_SCONS=	yes
 

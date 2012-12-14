@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20121214:
+AUTHOR: flo@FreeBSD.org
+
+  * Add a USE_FUSE macro to handle fuse dependencies. It makes
+    sure sysutils/fusefs-libs gets installed and depending on 
+    fuse being in base or not it installs sysutils/fusefs-kmod.
+
 20121210:
 AUTHOR: bapt@FreeBSD.org
   * OPTIONS has been extended 2 new macros are available:

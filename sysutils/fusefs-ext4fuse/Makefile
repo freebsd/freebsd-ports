@@ -16,11 +16,9 @@ COMMENT=	EXT4 implementation for FUSE
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	fusefs-libs>=2.7.2:${PORTSDIR}/sysutils/fusefs-libs
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 

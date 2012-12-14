@@ -15,8 +15,7 @@ DISTNAME=	fuse-python-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE Python bindings
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-
+USE_FUSE=	yes
 USE_PYTHON=	yes
 USE_PKGCONFIG=	yes
 USE_PYDISTUTILS=easy_install

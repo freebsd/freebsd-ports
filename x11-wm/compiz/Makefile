@@ -149,8 +149,7 @@ PLIST_SUB+=	DBUS="@comment "
 
 .if ${PORT_OPTIONS:MFUSE}
 CONFIGURE_ARGS+=	--enable-fuse
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fuse.pc:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fuse.pc:${PORTSDIR}/sysutils/fusefs-libs
+USE_FUSE=		yes
 PLIST_SUB+=		FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse

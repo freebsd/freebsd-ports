@@ -53,8 +53,7 @@ CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .endif
 
 .if !defined(WITHOUT_FUSE)
-LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS+=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
+USE_FUSE=	yes
 PLIST_SUB+=	FUSE=""
 .else
 PLIST_SUB+=	FUSE="@comment "

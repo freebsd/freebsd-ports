@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Mount remote WedDAV directories with Fuse
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		neon.27:${PORTSDIR}/www/neon29
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
 
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 USE_GNOME=	glib20
 
 PLIST_FILES=	bin/wdfs

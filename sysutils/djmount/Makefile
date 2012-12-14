@@ -10,13 +10,12 @@ MASTER_SITES=	SF
 MAINTAINER=	eric@camachat.org
 COMMENT=	Mount UPnP A/V Media
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		upnp.9:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 PLIST_FILES=	bin/${PORTNAME}
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 USE_GNOME=	pkgconfig
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-fuse-prefix=${LOCALBASE} \

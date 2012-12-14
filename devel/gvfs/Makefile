@@ -39,8 +39,7 @@ OPTIONS=	FUSE "Enable fuse" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FUSE)
-LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS+=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
+USE_FUSE=	yes
 PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse

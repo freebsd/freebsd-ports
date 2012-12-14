@@ -18,8 +18,6 @@ COMMENT=	An encrypted pass-through FUSE filesystem
 
 LIB_DEPENDS=	rlog.5:${PORTSDIR}/devel/rlog \
 		boost_serialization.4:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
@@ -29,6 +27,7 @@ CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
 		--with-boost-filesystem=boost_filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

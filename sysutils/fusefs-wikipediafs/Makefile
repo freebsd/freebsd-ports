@@ -14,10 +14,9 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Mount mediawikis
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \
-		py*-fusefs>=0.2:${PORTSDIR}/devel/py-fusefs
+RUN_DEPENDS=	py*-fusefs>=0.2:${PORTSDIR}/devel/py-fusefs
 
+USE_FUSE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO

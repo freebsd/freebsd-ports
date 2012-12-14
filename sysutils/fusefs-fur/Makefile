@@ -15,15 +15,14 @@ DISTNAME=	FUR-${PORTVERSION}
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	FUSE-based filesystem for Windows CE based devices
 
-LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2 \
-		fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 
 OPTIONS=	VCHMOD	"Enable a fake hook for chmod that just returns 0"	on
 
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig

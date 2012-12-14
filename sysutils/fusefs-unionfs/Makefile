@@ -15,11 +15,9 @@ DISTNAME=	unionfs-fuse-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	FUSE based implementation of the well-known unionfs
 
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-
 PLIST_FILES=	bin/unionfs
 
+USE_FUSE=	yes
 USE_BZIP2=	yes
 
 do-build:

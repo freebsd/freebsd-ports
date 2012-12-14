@@ -18,9 +18,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-
+USE_FUSE=	yes
 USE_SQLITE=	3
 
 .if !defined(NOPORTDOCS)
