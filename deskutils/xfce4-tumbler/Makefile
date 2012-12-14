@@ -1,15 +1,11 @@
-# New ports collection makefile for:	tumbler
-# Date created:				2010-12-03
-# Whom:					Olivier Duchateau <duchateau.olivier@gmail.com>
-#
 # $FreeBSD$
 #
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.25
-PORTREVISION=	2
+PORTVERSION=	0.1.26
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 PKGNAMEPREFIX=	xfce4-
 DIST_SUBDIR=	xfce4
 
@@ -17,8 +13,8 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+		freetype:${PORTSDIR}/print/freetype2 \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -33,7 +29,9 @@ CONFIGURE_ARGS=	--enable-xdg-cache \
 
 OPTIONS_DEFINE=	DOCS NLS PIXBUF FONTS JPEG FFMPEG POPPLER GSTREAMER ODF RAW
 OPTIONS_DEFAULT=	PIXBUF FONTS JPEG POPPLER GSTREAMER ODF
-FONTS_DESC=	Enable fonts plugin thumbnailer
+# GStreamer thumbnailer needs new 1.0 API
+OPTIONS_EXCLUDE=	GSTREAMER
+FONTS_DESC=	Fonts thumbnailer plugin
 
 .include <bsd.port.options.mk>
 
@@ -72,8 +70,8 @@ PLIST_SUB+=	FONTS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		exif.12:${PORTSDIR}/graphics/exif
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+		exif:${PORTSDIR}/graphics/exif
 CONFIGURE_ARGS+=--enable-jpeg-thumbnailer
 PLIST_SUB+=	JPEG=""
 .else
@@ -82,7 +80,7 @@ PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	ffmpegthumbnailer.4:${PORTSDIR}/multimedia/ffmpegthumbnailer
+LIB_DEPENDS+=	ffmpegthumbnailer:${PORTSDIR}/multimedia/ffmpegthumbnailer
 CONFIGURE_ARGS+=--enable-ffmpeg-thumbnailer
 PLIST_SUB+=	FFMPEG=""
 .else
@@ -91,7 +89,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPOPPLER}
-LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS+=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=--enable-poppler-thumbnailer
 PLIST_SUB+=	POPPLER=""
 .else
@@ -118,7 +116,7 @@ PLIST_SUB+=	ODF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRAW}
-LIB_DEPENDS+=	openraw.6:${PORTSDIR}/graphics/libopenraw
+LIB_DEPENDS+=	openraw:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-raw-thumbnailer
 PLIST_SUB+=	RAW=""
 .else
@@ -126,8 +124,8 @@ CONFIGURE_ARGS+=--disable-raw-thumbnailer
 PLIST_SUB+=	RAW="@comment "
 .endif
 
-.if empty(PORT_OPTIONS:MNLS)
 post-patch:
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 
