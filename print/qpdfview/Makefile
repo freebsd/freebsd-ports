@@ -1,14 +1,11 @@
-# New ports collection makefile for:	qpdfview
-# Date created:		2012-07-10
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qpdfview
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.7
 CATEGORIES=	print
-MASTER_SITES=	https://launchpadlibrarian.net/109087731/
+MASTER_SITES=	https://launchpadlibrarian.net/125207295/
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta1
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Tabbed PDF viewer using the poppler library
@@ -18,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		cups:${PORTSDIR}/print/cups-client
 
-USE_QT4=	corelib dbus gui moc_build qmake_build svg xml
+USE_QT4=	corelib dbus gui moc_build qmake_build rcc sql svg xml
 
 MAN1=		${PORTNAME}.1
 
