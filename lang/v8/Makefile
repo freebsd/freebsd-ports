@@ -20,6 +20,8 @@ ALL_TARGET=	native
 
 MAKE_ARGS=	library=shared
 
+.include <bsd.port.pre.mk>
+
 .if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
 MAKE_ENV+=	LINK=clang++
 .else
@@ -40,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/v8-testing.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/v8stdint.h ${PREFIX}/include/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
