@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-MooseX-Types-DateTime-MoreCoercions
-# Date created:		2011-12-12
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Types-DateTime-MoreCoercions
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
