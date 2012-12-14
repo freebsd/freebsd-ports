@@ -73,8 +73,9 @@ LOCALBASE_REPLACE_FILES=	\
 		third_party/gyp/pylib/gyp/generator/make.py
 SSL_REINPLACE_STR=
 .for V in OPENSSL_CFLAGS OPENSSLLIB OPENSSLINC OPENSSL_LDFLAGS
-SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}},"
+SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}:S/\\/\\\\/g:S/"/\"/g:S/\$/\\$/g:S/,/\,/g},"
 .endfor
+LOCALBASE_PTN=	${LOCALBASE:S/\\/\\\\/g:S/"/\"/g:S/\$/\\$/g:S/,/\,/g}
 
 GYP_DEFINES="use_libprotobuf=1"
 
@@ -88,7 +89,7 @@ BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CM
 
 post-patch:
 	cd ${WRKSRC} && \
-		${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \
+		${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE_PTN},g" \
 		${LOCALBASE_REPLACE_FILES}
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} ${SSL_REINPLACE_STR} base/base.gyp
@@ -97,7 +98,7 @@ post-patch:
 		${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
 		unix/fcitx/gen_fcitx_mozc_i18n.sh
 	cd ${WRKSRC} && \
-		${REINPLACE_CMD} "s,/usr,${LOCALBASE}," \
+		${REINPLACE_CMD} "s,/usr,${LOCALBASE_PTN}," \
 		unix/fcitx/mozc.conf
 .endif
 
