@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.18
-PORTREVISION=	3
+PORTVERSION=	1.4.19
+PORTREVISION=	0
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -28,7 +28,15 @@ USERS=		${PORTNAME}
 USE_RC_SUBR=	unbound
 
 MAN1=		unbound-host.1
-MAN3=		libunbound.3
+MAN3=		libunbound.3 ub_cancel.3 ub_ctx.3 ub_ctx_add_ta.3 \
+		ub_ctx_add_ta_file.3 ub_ctx_async.3 ub_ctx_config.3 \
+		ub_ctx_create.3 ub_ctx_data_add.3 ub_ctx_data_remove.3 \
+		ub_ctx_debuglevel.3 ub_ctx_debugout.3 ub_ctx_delete.3 \
+		ub_ctx_get_option.3 ub_ctx_hosts.3 ub_ctx_print_local_zones.3 \
+		ub_ctx_resolvconf.3 ub_ctx_set_fwd.3 ub_ctx_set_option.3 \
+		ub_ctx_trustedkeys.3 ub_ctx_zone_add.3 ub_ctx_zone_remove.3 \
+		ub_fd.3 ub_poll.3 ub_process.3 ub_resolve.3 ub_resolve_async.3 \
+		ub_resolve_free.3 ub_result.3 ub_strerror.3 ub_wait.3
 MAN5=		unbound.conf.5
 MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 unbound-checkconf.8
 
@@ -42,7 +50,7 @@ OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Enable whenever using many (10000) outgoing ports
 GOST_DESC=	Enable GOST support (requires OpenSSL from ports)
-ECDSA_DESC=	Enable ECDSA support (requires OpenSSL from ports)
+ECDSA_DESC=	Enable ECDSA (elliptic curve) support
 MUNIN_DESC=	Install Munin plugin
 
 .include <bsd.port.options.mk>
