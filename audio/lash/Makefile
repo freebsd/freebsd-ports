@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lash
-# Date created:				2007-01-13
-# Whom:			Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	lash
 PORTVERSION=	0.5.4
@@ -18,37 +14,50 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		dssialsacompat:${PORTSDIR}/audio/libdssialsacompat
+		dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-alsa-midi
+OPTIONS_DEFINE=	READLINE DOCS
+OPTIONS_DEFAULT=READLINE
+READLINE_DESC=	Enable readline support
+
 USE_GNOME=	gnomehack gtk20 libxml2
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-alsa-midi
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	*
-
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+.if ${PORT_OPTIONS:MREADLINE}
+USE_READLINE=	yes
+PLIST_SUB+=	READLINE=""
+.else
+CONFIGURE_ENV+=	vl_cv_lib_readline=no
+PLIST_SUB+=	READLINE="@comment "
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's|texi2html --number|texi2html|' \
-		${WRKSRC}/docs/Makefile.in
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.else
+CONFIGURE_ENV+=	ac_cv_prog_lash_texi2html=no
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/if test/s|==|=|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/texi2html/s|--number||' ${WRKSRC}/docs/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/docs/lash-manual-html-one-page/lash-manual.html \
-		${DOCSDIR}
+	cd ${WRKSRC}/docs/lash-manual-html-one-page \
+		&& ${INSTALL_DATA} lash-manual.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

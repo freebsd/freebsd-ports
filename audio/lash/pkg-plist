@@ -1,5 +1,5 @@
 bin/lashd
-bin/lash_control
+%%READLINE%%bin/lash_control
 bin/lash_save_button
 bin/lash_panel
 include/lash-1.0/lash/lash.h
@@ -13,6 +13,7 @@ lib/liblash.so
 lib/liblash.la
 lib/liblash.a
 libdata/pkgconfig/lash-1.0.pc
+%%PORTDOCS%%%%DOCSDIR%%/lash-manual.html
 %%DATADIR%%/dtds/lash-project-1.0.dtd
 %%DATADIR%%/icons/lash_16px.png
 %%DATADIR%%/icons/lash_24px.png
@@ -23,5 +24,6 @@ libdata/pkgconfig/lash-1.0.pc
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/dtds
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/lash-1.0/lash
 @dirrm include/lash-1.0
