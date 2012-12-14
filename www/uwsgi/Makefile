@@ -10,7 +10,7 @@ PORTVERSION=	1.4.3
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
-MAINTAINER=	danger@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 
 LICENSE=	GPLv2
