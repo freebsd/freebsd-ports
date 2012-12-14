@@ -11,12 +11,11 @@ COMMENT=	Utilities and library to manipulate NTFS partitions
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	fusefs-libs>2.5:${PORTSDIR}/sysutils/fusefs-libs
-
 CONFLICTS_INSTALL=	fusefs-ntfs-*
 
 USE_PKGCONFIG=	build
 USE_BZIP2=	yes
+USE_FUSE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

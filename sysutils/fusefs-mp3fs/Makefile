@@ -13,16 +13,15 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	sterum@overrider.at
 COMMENT=	FUSE-based filesystem for transcoding flac to mp3
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs\
-		mp3lame.0:${PORTSDIR}/audio/lame\
+LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame\
 		FLAC.10:${PORTSDIR}/audio/flac\
 		id3tag.0:${PORTSDIR}/audio/libid3tag
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 FETCH_CMD=	fetch -Fpr
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 MAN1=		mp3fs.1
 PLIST_FILES=	bin/mp3fs
 

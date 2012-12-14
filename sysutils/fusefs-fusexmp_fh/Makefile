@@ -15,10 +15,9 @@ DISTNAME=	fuse-${PORTVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Dummy driver from fusefs-libs example
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_AUTOTOOLS=	libtool
+USE_FUSE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_ICONV=	yes

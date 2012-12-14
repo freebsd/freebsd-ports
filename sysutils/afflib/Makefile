@@ -17,13 +17,13 @@ COMMENT=	The Advanced Forensics Format library and utilities
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \
- 		expat:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_ICONV =	yes
+USE_ICONV=	yes
+USE_FUSE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack

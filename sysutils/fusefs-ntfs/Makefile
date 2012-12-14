@@ -14,13 +14,11 @@ COMMENT=	Mount NTFS partitions (read/write) and disk images
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	fusefs-libs>=2.7.2:${PORTSDIR}/sysutils/fusefs-libs
-LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs
-
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
+USE_FUSE=	yes
 USE_ICONV=	yes
 USE_PKGCONFIG=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
@@ -42,10 +40,6 @@ MAN8=		mkntfs.8 ntfs-3g.8 ntfs-3g.probe.8 \
 		ntfslabel.8 ntfsls.8 ntfsprogs.8 ntfsresize.8 ntfsundelete.8
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000021
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-.endif
 
 .if ${PORT_OPTIONS:MLOCK}
 CFLAGS+=	-DUSE_LOCK

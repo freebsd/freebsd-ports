@@ -15,9 +15,7 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	On-demand, transcoding filesystem (using GStreamer pipeline)
 
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-
+USE_FUSE=	yes
 USE_GNOME=	pkgconfig
 USE_GSTREAMER=	yes
 

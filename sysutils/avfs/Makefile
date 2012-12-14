@@ -13,9 +13,7 @@ MASTER_SITES=	SF/avf/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	A Virtual File System
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 BROKEN=		does not package
 
@@ -24,6 +22,7 @@ NO_INSTALL_MANPAGES=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv
 
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

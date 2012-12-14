@@ -16,11 +16,10 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	FUSE-based file system backed by Amazon S3
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		fuse:${PORTSDIR}/sysutils/fusefs-libs \
 		xml2:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 GNU_CONFIGURE=	yes
+USE_FUSE=	yes
 PLIST_FILES=	bin/s3fs
 
 post-install:

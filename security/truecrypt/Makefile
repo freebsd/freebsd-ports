@@ -17,14 +17,12 @@ EXTRACT_ONLY=	${TC_SRCFILE} wxWidgets-${WX_VER}.tar.gz
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Free open-source disk encryption software
 
-BUILD_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \
-		nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \
-		sudo:${PORTSDIR}/security/sudo
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
+USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 RESTRICTED=	Downloading requires acceptance of license agreement

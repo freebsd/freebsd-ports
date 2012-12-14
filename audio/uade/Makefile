@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--with-text-scope
 .endif
 
 .if ${PORT_OPTIONS:MFUSE}
-LIB_DEPENDS+=	fuse:${PORTSDIR}/sysutils/fusefs-libs
+USE_FUSE=	yes
 MAN1+=		uadefs.1
 PLIST_SUB+=	FUSE=""
 .else

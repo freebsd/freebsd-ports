@@ -13,10 +13,8 @@ MASTER_SITES=	http://fuse.gunzip.silverice.org/files/
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	Fuse.gunzip provides transparent decompression of gzip compressed files
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-
 WRKSRC=		${WRKDIR}/fuse.gunzip
+USE_FUSE=	yes
 
 PLIST_FILES=	bin/fuse.gunzip
 

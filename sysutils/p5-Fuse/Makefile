@@ -12,13 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write filesystems in Perl using FUSE
 
-BUILD_DEPENDS=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
-RUN_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-BUILD_DEPENDS+=	${RUN_DEPENDS}
-
 PERL_CONFIGURE=	yes
 PORTSCOUT=	skipv:0.09_4
 
+USE_FUSE=	yes
 USE_PKGCONFIG=	build
 
 MAN3=		Fuse.3
