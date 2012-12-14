@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pocketsphinx
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
