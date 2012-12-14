@@ -22,8 +22,8 @@ configenv_CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALB
 garcon_BUILD_DEPENDS=		garcon>=0.2.0:${PORTSDIR}/sysutils/garcon
 garcon_RUN_DEPENDS=		garcon>=0.2.0:${PORTSDIR}/sysutils/garcon
 
-libexo_BUILD_DEPENDS=		libexo>=0.8.0:${PORTSDIR}/x11/libexo
-libexo_RUN_DEPENDS=		libexo>=0.8.0:${PORTSDIR}/x11/libexo
+libexo_BUILD_DEPENDS=		libexo>=0.10.1:${PORTSDIR}/x11/libexo
+libexo_RUN_DEPENDS=		libexo>=0.10.1:${PORTSDIR}/x11/libexo
 
 libgui_BUILD_DEPENDS=		libxfce4gui>=4.10.0:${PORTSDIR}/x11-toolkits/libxfce4gui
 libgui_RUN_DEPENDS=		libxfce4gui>=4.10.0:${PORTSDIR}/x11-toolkits/libxfce4gui
@@ -37,8 +37,8 @@ libutil_RUN_DEPENDS=		libxfce4util>=4.10.0:${PORTSDIR}/x11/libxfce4util
 panel_BUILD_DEPENDS=		xfce4-panel>=4.10.0:${PORTSDIR}/x11-wm/xfce4-panel
 panel_RUN_DEPENDS=		xfce4-panel>=4.10.0:${PORTSDIR}/x11-wm/xfce4-panel
 
-thunar_BUILD_DEPENDS=		Thunar>=1.4.0:${PORTSDIR}/x11-fm/thunar
-thunar_RUN_DEPENDS=		Thunar>=1.4.0:${PORTSDIR}/x11-fm/thunar
+thunar_BUILD_DEPENDS=		Thunar>=1.6.1:${PORTSDIR}/x11-fm/thunar
+thunar_RUN_DEPENDS=		Thunar>=1.6.1:${PORTSDIR}/x11-fm/thunar
 
 wm_BUILD_DEPENDS=		xfce4-wm>=4.10.0:${PORTSDIR}/x11-wm/xfce4-wm
 wm_RUN_DEPENDS=			xfce4-wm>=4.10.0:${PORTSDIR}/x11-wm/xfce4-wm
