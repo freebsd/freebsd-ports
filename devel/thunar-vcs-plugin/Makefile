@@ -1,13 +1,10 @@
-# New ports collection makefile for:	thunar-vcs-plugin
-# Date created: 	2008-10-15
-# Whom:			Sergey V. Dyatko <sergey.dyatko@gmail.com>
-#
+# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -20,10 +17,10 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	desktopfileutils gnomehack gtk20 glib20 intltool intlhack \
-		pkgconfig
+USE_GNOME=	desktopfileutils gnomehack gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libexo libutil thunar
 INSTALLS_ICONS=	yes
+USE_PKGCONFIG=	build
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -1,19 +1,16 @@
-# New ports collection makefile for:	thunar-archive-plugin
-# Date created:		2008-07-27
-# Whom:			ports@c0decafe.net <ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net <ports@c0decafe.net>
 # $FreeBSD$
 #
 
 PORTNAME=	thunar-archive-plugin
 PORTVERSION=	0.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/thunar-plugins//${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=src/thunar-plugins//${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Archive plugin for the Thunar File Manager
 
 USE_BZIP2=	yes
