@@ -3,7 +3,7 @@
 
 PORTNAME=	thunar-vfs
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/${PORTNAME}/${PORTVERSION:R}
@@ -13,18 +13,19 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The virtual filesystem for Thunar
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		gamin-1.1:${PORTSDIR}/devel/gamin
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		freetype:${PORTSDIR}/print/freetype2 \
+		gamin-1:${PORTSDIR}/devel/gamin
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--disable-debug
 
@@ -46,21 +47,21 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=--with-volume-manager=hal
 .else
 CONFIGURE_ARGS+=--with-volume-manager=freebsd
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 .else
 CONFIGURE_ARGS+=--disable-dbus
 .endif
 
 .if ${PORT_OPTIONS:MSTARTUP}
-LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
