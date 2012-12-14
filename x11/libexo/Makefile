@@ -1,23 +1,20 @@
-# New ports collection makefile for:	libexo
-# Date created:		23 October 2004
-# Whom:			Matt Lancereau <ports@FreeBSD.org>
-#
+# Created by: Matt Lancereau <ports@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
+#
 
 PORTNAME=	libexo
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/exo/${PORTVERSION:R}
 DISTNAME=	exo-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application library for the Xfce desktop environment
 
-BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>=1.60:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-URI>=1.60:${PORTSDIR}/net/p5-URI
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/lib//}
@@ -33,8 +30,7 @@ USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11
 USE_PKGCONFIG=	build
 
-CONFIGURE_ARGS+=--enable-gio-unix \
-		--disable-gtk-doc-html
+CONFIGURE_ARGS+=--disable-gtk-doc-html
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -59,8 +55,10 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if empty(PORT_OPTIONS:MNLS)
 post-patch:
+# Downgrade GLib to 2.28
+	@${REINPLACE_CMD} -e 's|2.30.|2.28.|g' ${WRKSRC}/configure
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 

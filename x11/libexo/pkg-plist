@@ -29,7 +29,7 @@ include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
 lib/libexo-1.la
 lib/libexo-1.so
-lib/libexo-1.so.0
+lib/libexo-1.so.1
 lib/xfce4/exo-1/exo-compose-mail-1
 lib/xfce4/exo-1/exo-helper-1
 libdata/pkgconfig/exo-1.pc
@@ -135,6 +135,7 @@ share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
 %%NLS%%share/locale/sk/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/tl_PH/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/exo-1.mo
