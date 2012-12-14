@@ -1,0 +1,1458 @@
+jboss-as-7.1.3.Final/LICENSE.txt
+jboss-as-7.1.3.Final/README.txt
+jboss-as-7.1.3.Final/appclient/configuration/appclient.xml
+jboss-as-7.1.3.Final/appclient/configuration/logging.properties
+jboss-as-7.1.3.Final/bin/add-user.bat
+jboss-as-7.1.3.Final/bin/add-user.sh
+jboss-as-7.1.3.Final/bin/appclient.bat
+jboss-as-7.1.3.Final/bin/appclient.conf
+jboss-as-7.1.3.Final/bin/appclient.conf.bat
+jboss-as-7.1.3.Final/bin/appclient.sh
+jboss-as-7.1.3.Final/bin/client/README.txt
+jboss-as-7.1.3.Final/bin/client/jboss-client.jar
+jboss-as-7.1.3.Final/bin/domain.bat
+jboss-as-7.1.3.Final/bin/domain.conf
+jboss-as-7.1.3.Final/bin/domain.conf.bat
+jboss-as-7.1.3.Final/bin/domain.sh
+jboss-as-7.1.3.Final/bin/init.d/jboss-as-standalone.sh
+jboss-as-7.1.3.Final/bin/init.d/jboss-as.conf
+jboss-as-7.1.3.Final/bin/jboss-cli-logging.properties
+jboss-as-7.1.3.Final/bin/jboss-cli.bat
+jboss-as-7.1.3.Final/bin/jboss-cli.sh
+jboss-as-7.1.3.Final/bin/jboss-cli.xml
+jboss-as-7.1.3.Final/bin/jconsole.bat
+jboss-as-7.1.3.Final/bin/jconsole.sh
+jboss-as-7.1.3.Final/bin/jdr.bat
+jboss-as-7.1.3.Final/bin/jdr.sh
+jboss-as-7.1.3.Final/bin/run.bat
+jboss-as-7.1.3.Final/bin/run.sh
+jboss-as-7.1.3.Final/bin/standalone.bat
+jboss-as-7.1.3.Final/bin/standalone.conf
+jboss-as-7.1.3.Final/bin/standalone.conf.bat
+jboss-as-7.1.3.Final/bin/standalone.sh
+jboss-as-7.1.3.Final/bin/vault.bat
+jboss-as-7.1.3.Final/bin/vault.sh
+jboss-as-7.1.3.Final/bin/wsconsume.bat
+jboss-as-7.1.3.Final/bin/wsconsume.sh
+jboss-as-7.1.3.Final/bin/wsprovide.bat
+jboss-as-7.1.3.Final/bin/wsprovide.sh
+jboss-as-7.1.3.Final/bundles/javax/servlet/api/v25/jboss-servlet-api_2.5_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/bundles/org/apache/felix/configadmin/main/org.apache.felix.configadmin-1.2.8.jar
+jboss-as-7.1.3.Final/bundles/org/apache/felix/log/main/org.apache.felix.log-1.0.0.jar
+jboss-as-7.1.3.Final/bundles/org/jboss/as/osgi/configadmin/main/jboss-as-osgi-configadmin-7.1.3.Final.jar
+jboss-as-7.1.3.Final/bundles/org/jboss/osgi/logging/main/jboss-osgi-logging-1.0.0.Final.jar
+jboss-as-7.1.3.Final/bundles/org/osgi/enterprise/main/org.osgi.enterprise-4.2.0.jar
+jboss-as-7.1.3.Final/bundles/org/projectodd/stilts/main/stilts-stomplet-server-bundle-0.1.26.jar
+jboss-as-7.1.3.Final/copyright.txt
+jboss-as-7.1.3.Final/docs/examples/configs/standalone-hornetq-colocated.xml
+jboss-as-7.1.3.Final/docs/examples/configs/standalone-jts.xml
+jboss-as-7.1.3.Final/docs/examples/configs/standalone-minimalistic.xml
+jboss-as-7.1.3.Final/docs/examples/configs/standalone-osgi-only.xml
+jboss-as-7.1.3.Final/docs/examples/configs/standalone-xts.xml
+jboss-as-7.1.3.Final/docs/schema/ejb-jar_1_1.dtd
+jboss-as-7.1.3.Final/docs/schema/ejb-jar_2_0.dtd
+jboss-as-7.1.3.Final/docs/schema/ejb-jar_2_1.xsd
+jboss-as-7.1.3.Final/docs/schema/ejb-jar_3_0.xsd
+jboss-as-7.1.3.Final/docs/schema/ejb-jar_3_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-app_7_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-cli_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-cli_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-cmp_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-config_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-config_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-config_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-config_1_3.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-configadmin_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-datasources_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-datasources_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-deployment-scanner_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-deployment-scanner_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-ee_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-ee_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-ejb3_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-ejb3_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-ejb3_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-ejb3_1_3.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-infinispan_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-infinispan_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-infinispan_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-infinispan_1_3.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jacorb_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jacorb_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jacorb_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jaxr_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jaxr_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jaxrs_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jca_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jca_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jdr_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jgroups_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jgroups_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jmx_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jmx_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jpa_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-jsr77_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-logging_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-logging_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-mail_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-messaging-deployment_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-messaging_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-messaging_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-messaging_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-mod-cluster_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-mod-cluster_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-naming_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-naming_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-naming_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-osgi_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-osgi_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-osgi_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-pojo_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-remoting_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-remoting_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-resource-adapters_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-sar_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-security_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-security_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-security_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-threads_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-threads_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-txn_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-txn_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-txn_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-web_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-web_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-web_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-webservices_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-webservices_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-as-weld_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-deployment-structure-1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-deployment-structure-1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-deployment-structure-1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-cache_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-client_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-client_1_1.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-client_1_2.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-iiop_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-pool_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-resource-adapter-binding_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-security-role_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb-security_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb3-2_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-ejb3-spec-2_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-pojo_7_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-service_7_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jboss-xts.xsd
+jboss-as-7.1.3.Final/docs/schema/jbossws-jaxws-config_4_0.xsd
+jboss-as-7.1.3.Final/docs/schema/jbossws-web-services_1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/module-1_0.xsd
+jboss-as-7.1.3.Final/docs/schema/module-1_1.xsd
+jboss-as-7.1.3.Final/domain/configuration/application-roles.properties
+jboss-as-7.1.3.Final/domain/configuration/application-users.properties
+jboss-as-7.1.3.Final/domain/configuration/domain.xml
+jboss-as-7.1.3.Final/domain/configuration/host-master.xml
+jboss-as-7.1.3.Final/domain/configuration/host-slave.xml
+jboss-as-7.1.3.Final/domain/configuration/host.xml
+jboss-as-7.1.3.Final/domain/configuration/logging.properties
+jboss-as-7.1.3.Final/domain/configuration/mgmt-users.properties
+jboss-as-7.1.3.Final/jboss-modules.jar
+jboss-as-7.1.3.Final/modules/asm/asm/main/asm-3.3.1.jar
+jboss-as-7.1.3.Final/modules/asm/asm/main/module.xml
+jboss-as-7.1.3.Final/modules/ch/qos/cal10n/main/cal10n-api-0.7.3.jar
+jboss-as-7.1.3.Final/modules/ch/qos/cal10n/main/module.xml
+jboss-as-7.1.3.Final/modules/com/github/relaxng/main/module.xml
+jboss-as-7.1.3.Final/modules/com/github/relaxng/main/relaxngDatatype-2011.1.jar
+jboss-as-7.1.3.Final/modules/com/google/guava/main/guava-11.0.2.jar
+jboss-as-7.1.3.Final/modules/com/google/guava/main/module.xml
+jboss-as-7.1.3.Final/modules/com/h2database/h2/main/h2-1.3.168.jar
+jboss-as-7.1.3.Final/modules/com/h2database/h2/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/codemodel/main/codemodel-2.6.jar
+jboss-as-7.1.3.Final/modules/com/sun/codemodel/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/istack/main/istack-commons-runtime-2.6.1.jar
+jboss-as-7.1.3.Final/modules/com/sun/istack/main/istack-commons-tools-2.6.1.jar
+jboss-as-7.1.3.Final/modules/com/sun/istack/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/jsf-impl/1.2/jsf-impl-1.2_15-jbossorg-2.jar
+jboss-as-7.1.3.Final/modules/com/sun/jsf-impl/1.2/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/jsf-impl/main/jsf-impl-2.1.11-jbossorg-3.jar
+jboss-as-7.1.3.Final/modules/com/sun/jsf-impl/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/xml/bind/main/jaxb-impl-2.2.5.jboss-1.jar
+jboss-as-7.1.3.Final/modules/com/sun/xml/bind/main/jaxb-xjc-2.2.5.jboss-1.jar
+jboss-as-7.1.3.Final/modules/com/sun/xml/bind/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/xml/messaging/saaj/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/xml/messaging/saaj/main/saaj-impl-1.3.16-jbossorg-1.jar
+jboss-as-7.1.3.Final/modules/com/sun/xml/txw2/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/xml/txw2/main/txw2-20110809.jar
+jboss-as-7.1.3.Final/modules/com/sun/xsom/main/module.xml
+jboss-as-7.1.3.Final/modules/com/sun/xsom/main/xsom-20110809.jar
+jboss-as-7.1.3.Final/modules/gnu/getopt/main/getopt-1.0.13.jar
+jboss-as-7.1.3.Final/modules/gnu/getopt/main/module.xml
+jboss-as-7.1.3.Final/modules/ibm/jdk/main/module.xml
+jboss-as-7.1.3.Final/modules/javaee/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/activation/api/main/activation-1.1.1.jar
+jboss-as-7.1.3.Final/modules/javax/activation/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/annotation/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.2.Final.jar
+jboss-as-7.1.3.Final/modules/javax/ejb/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/el/api/main/jboss-el-api_2.2_spec-1.0.2.Final.jar
+jboss-as-7.1.3.Final/modules/javax/el/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/enterprise/api/main/cdi-api-1.0-SP4.jar
+jboss-as-7.1.3.Final/modules/javax/enterprise/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/enterprise/deploy/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/faces/api/1.2/jsf-api-1.2_15-jbossorg-2.jar
+jboss-as-7.1.3.Final/modules/javax/faces/api/1.2/module.xml
+jboss-as-7.1.3.Final/modules/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/javax/faces/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/inject/api/main/javax.inject-1.jar
+jboss-as-7.1.3.Final/modules/javax/inject/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/interceptor/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/jms/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/jws/api/main/jsr181-api-1.0-MR1.jar
+jboss-as-7.1.3.Final/modules/javax/jws/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/mail/api/main/mail-1.4.4.jar
+jboss-as-7.1.3.Final/modules/javax/mail/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/management/j2ee/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/persistence/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/resource/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/javax/rmi/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/security/auth/message/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.2.Final.jar
+jboss-as-7.1.3.Final/modules/javax/security/jacc/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/servlet/api/main/jbosgi-xservice.properties
+jboss-as-7.1.3.Final/modules/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/servlet/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/servlet/jsp/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.3.Final.jar
+jboss-as-7.1.3.Final/modules/javax/servlet/jstl/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/transaction/api/main/jbosgi-xservice.properties
+jboss-as-7.1.3.Final/modules/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/transaction/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/validation/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/validation/api/main/validation-api-1.0.0.GA.jar
+jboss-as-7.1.3.Final/modules/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/ws/rs/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/wsdl4j/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/wsdl4j/api/main/wsdl4j-1.6.2.jar
+jboss-as-7.1.3.Final/modules/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/javax/xml/bind/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/xml/jaxp-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.2.Final.jar
+jboss-as-7.1.3.Final/modules/javax/xml/registry/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/xml/rpc/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.2.Final.jar
+jboss-as-7.1.3.Final/modules/javax/xml/soap/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/xml/stream/api/main/module.xml
+jboss-as-7.1.3.Final/modules/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/javax/xml/ws/api/main/module.xml
+jboss-as-7.1.3.Final/modules/jline/main/jline-0.9.94.jar
+jboss-as-7.1.3.Final/modules/jline/main/module.xml
+jboss-as-7.1.3.Final/modules/net/jcip/main/jcip-annotations-1.0.jar
+jboss-as-7.1.3.Final/modules/net/jcip/main/module.xml
+jboss-as-7.1.3.Final/modules/nu/xom/main/module.xml
+jboss-as-7.1.3.Final/modules/nu/xom/main/xom-1.2.5.jar
+jboss-as-7.1.3.Final/modules/org/antlr/main/antlr-2.7.7.jar
+jboss-as-7.1.3.Final/modules/org/antlr/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/beanutils/main/commons-beanutils-1.8.3.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/beanutils/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/cli/main/commons-cli-1.2.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/cli/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/codec/main/commons-codec-1.4.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/codec/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/collections/main/commons-collections-3.2.1.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/collections/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/configuration/main/commons-configuration-1.6.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/configuration/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/io/main/commons-io-2.1.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/io/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/lang/main/commons-lang-2.6.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/lang/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/logging/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/commons/pool/main/commons-pool-1.5.6.jar
+jboss-as-7.1.3.Final/modules/org/apache/commons/pool/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-common-utilities-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-bindings-http-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-bindings-object-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-bindings-soap-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-bindings-xml-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-core-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-frontend-simple-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-management-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-transports-common-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-transports-http-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-transports-jms-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-transports-local-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-ws-addr-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-ws-policy-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-ws-rm-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-rt-ws-security-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-tools-common-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-tools-java2ws-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-tools-validator-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-xjc-boolean-2.4.0.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-xjc-dv-2.4.0.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/cxf-xjc-ts-2.4.0.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/cxf/main/cxf-api-2.4.8-patch-01.jar
+jboss-as-7.1.3.Final/modules/org/apache/cxf/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/httpcomponents/main/httpclient-4.1.2.jar
+jboss-as-7.1.3.Final/modules/org/apache/httpcomponents/main/httpcore-4.1.4.jar
+jboss-as-7.1.3.Final/modules/org/apache/httpcomponents/main/httpmime-4.1.2.jar
+jboss-as-7.1.3.Final/modules/org/apache/httpcomponents/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/james/mime4j/main/apache-mime4j-0.6.jar
+jboss-as-7.1.3.Final/modules/org/apache/james/mime4j/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/juddi/juddi-client/main/juddi-client-3.1.3.jar
+jboss-as-7.1.3.Final/modules/org/apache/juddi/juddi-client/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/juddi/scout/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/juddi/scout/main/scout-1.2.6.jar
+jboss-as-7.1.3.Final/modules/org/apache/juddi/uddi-ws/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/juddi/uddi-ws/main/uddi-ws-3.1.3.jar
+jboss-as-7.1.3.Final/modules/org/apache/log4j/main/log4j-1.2.16.jar
+jboss-as-7.1.3.Final/modules/org/apache/log4j/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/neethi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/neethi/main/neethi-3.0.2.jar
+jboss-as-7.1.3.Final/modules/org/apache/santuario/xmlsec/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/santuario/xmlsec/main/xmlsec-1.5.2.jar
+jboss-as-7.1.3.Final/modules/org/apache/velocity/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/velocity/main/velocity-1.6.3.jar
+jboss-as-7.1.3.Final/modules/org/apache/ws/security/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/ws/security/main/wss4j-1.6.6.jar
+jboss-as-7.1.3.Final/modules/org/apache/ws/xmlschema/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/ws/xmlschema/main/xmlschema-core-2.0.2.jar
+jboss-as-7.1.3.Final/modules/org/apache/xalan/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/xalan/main/serializer-2.7.1.jbossorg-1.jar
+jboss-as-7.1.3.Final/modules/org/apache/xalan/main/xalan-2.7.1.jbossorg-1.jar
+jboss-as-7.1.3.Final/modules/org/apache/xerces/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/xerces/main/xercesImpl-2.9.1-jbossas-2.jar
+jboss-as-7.1.3.Final/modules/org/apache/xml-resolver/main/module.xml
+jboss-as-7.1.3.Final/modules/org/apache/xml-resolver/main/xml-resolver-1.2.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-core-asl/main/jackson-core-asl-1.9.2.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-core-asl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-jaxrs/main/jackson-jaxrs-1.9.2.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-jaxrs/main/module.xml
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-mapper-asl/main/jackson-mapper-asl-1.9.2.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-mapper-asl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-xc/main/jackson-xc-1.9.2.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-xc/main/module.xml
+jboss-as-7.1.3.Final/modules/org/codehaus/jettison/main/jettison-1.3.1.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/jettison/main/module.xml
+jboss-as-7.1.3.Final/modules/org/codehaus/woodstox/main/module.xml
+jboss-as-7.1.3.Final/modules/org/codehaus/woodstox/main/stax2-api-3.1.1.jar
+jboss-as-7.1.3.Final/modules/org/codehaus/woodstox/main/woodstox-core-asl-4.1.1.jar
+jboss-as-7.1.3.Final/modules/org/dom4j/main/dom4j-1.6.1.jar
+jboss-as-7.1.3.Final/modules/org/dom4j/main/module.xml
+jboss-as-7.1.3.Final/modules/org/hibernate/commons-annotations/main/hibernate-commons-annotations-4.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/hibernate/commons-annotations/main/module.xml
+jboss-as-7.1.3.Final/modules/org/hibernate/envers/main/hibernate-envers-4.1.6.Final.jar
+jboss-as-7.1.3.Final/modules/org/hibernate/envers/main/module.xml
+jboss-as-7.1.3.Final/modules/org/hibernate/main/hibernate-core-4.1.6.Final.jar
+jboss-as-7.1.3.Final/modules/org/hibernate/main/hibernate-entitymanager-4.1.6.Final.jar
+jboss-as-7.1.3.Final/modules/org/hibernate/main/hibernate-infinispan-4.1.6.Final.jar
+jboss-as-7.1.3.Final/modules/org/hibernate/main/module.xml
+jboss-as-7.1.3.Final/modules/org/hibernate/validator/main/hibernate-validator-4.2.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/hibernate/validator/main/module.xml
+jboss-as-7.1.3.Final/modules/org/hornetq/main/hornetq-core-2.2.21.Final.jar
+jboss-as-7.1.3.Final/modules/org/hornetq/main/hornetq-jms-2.2.21.Final.jar
+jboss-as-7.1.3.Final/modules/org/hornetq/main/lib/linux-i686/libHornetQAIO32.so
+jboss-as-7.1.3.Final/modules/org/hornetq/main/lib/linux-x86_64/libHornetQAIO64.so
+jboss-as-7.1.3.Final/modules/org/hornetq/main/module.xml
+jboss-as-7.1.3.Final/modules/org/hornetq/ra/main/hornetq-ra-2.2.21.Final.jar
+jboss-as-7.1.3.Final/modules/org/hornetq/ra/main/module.xml
+jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-5.1.7.Final.jar
+jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/jdbc/main/module.xml
+jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-5.1.7.Final.jar
+jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/remote/main/module.xml
+jboss-as-7.1.3.Final/modules/org/infinispan/client/hotrod/main/infinispan-client-hotrod-5.1.7.Final.jar
+jboss-as-7.1.3.Final/modules/org/infinispan/client/hotrod/main/module.xml
+jboss-as-7.1.3.Final/modules/org/infinispan/main/infinispan-core-5.1.7.Final.jar
+jboss-as-7.1.3.Final/modules/org/infinispan/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jacorb/main/jacorb-2.3.2.jbossorg-0.jar
+jboss-as-7.1.3.Final/modules/org/jacorb/main/module.xml
+jboss-as-7.1.3.Final/modules/org/javassist/main/javassist-3.15.0-GA.jar
+jboss-as-7.1.3.Final/modules/org/javassist/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jaxen/main/jaxen-1.1.3.jar
+jboss-as-7.1.3.Final/modules/org/jaxen/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/aggregate/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/appclient/main/jboss-as-appclient-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/appclient/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/cli/main/jboss-as-cli-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/cli/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/api/main/jboss-as-clustering-api-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/api/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/common/main/jboss-as-clustering-common-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/common/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/ejb3/infinispan/main/jboss-as-clustering-ejb3-infinispan-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/ejb3/infinispan/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/impl/main/jboss-as-clustering-impl-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/impl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/infinispan/main/jboss-as-clustering-infinispan-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/infinispan/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/jgroups/main/jboss-as-clustering-jgroups-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/jgroups/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/registry/main/jboss-as-clustering-registry-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/registry/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/service/main/jboss-as-clustering-service-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/service/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/singleton/main/jboss-as-clustering-singleton-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/singleton/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/infinispan/main/jboss-as-clustering-web-infinispan-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/infinispan/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/spi/main/jboss-as-clustering-web-spi-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/spi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/cmp/main/jboss-as-cmp-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/cmp/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/configadmin/main/jboss-as-configadmin-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/configadmin/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/connector/main/jboss-as-connector-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/connector/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/console/main/jboss-as-console-1.4.0.Final-resources.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/console/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/controller-client/main/jboss-as-controller-client-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/controller-client/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/controller/main/jboss-as-controller-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/controller/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-repository/main/jboss-as-deployment-repository-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-repository/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-scanner/main/jboss-as-deployment-scanner-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-scanner/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-add-user/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-error-context/main/jboss-as-domain-http-error-context-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-error-context/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-interface/main/jboss-as-domain-http-interface-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-interface/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-management/main/jboss-as-domain-management-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/domain-management/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/ee/deployment/main/jboss-as-ee-deployment-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/ee/deployment/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/ee/main/jboss-as-ee-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/ee/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/ejb3/main/jboss-as-ejb3-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/ejb3/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/embedded/main/jboss-as-embedded-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/embedded/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/host-controller/main/jboss-as-host-controller-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/host-controller/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jacorb/main/jboss-as-jacorb-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jacorb/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jaxr/main/jboss-as-jaxr-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jaxr/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jaxrs/main/jboss-as-jaxrs-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jaxrs/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jdr/main/jboss-as-jdr-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jdr/main/jboss-as-sos-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jdr/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jmx/main/jboss-as-jmx-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jmx/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate/3/jboss-as-jpa-hibernate3-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate/3/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate/4/jboss-as-jpa-hibernate4-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate/4/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/main/jboss-as-jpa-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/openjpa/main/jboss-as-jpa-openjpa-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/openjpa/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/spi/main/jboss-as-jpa-spi-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/spi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/util/main/jboss-as-jpa-util-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/util/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jsf/main/jboss-as-jsf-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jsf/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/jsr77/main/jboss-as-jsr77-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/jsr77/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/logging/main/jboss-as-logging-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/logging/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/mail/main/jboss-as-mail-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/mail/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/management-client-content/main/jboss-as-management-client-content-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/management-client-content/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/messaging/main/jboss-as-messaging-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/messaging/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main/jboss-as-modcluster-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main/mod_cluster-container-catalina-1.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main/mod_cluster-container-jbossweb-1.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main/mod_cluster-container-spi-1.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main/mod_cluster-core-1.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/naming/main/jboss-as-naming-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/naming/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/network/main/jboss-as-network-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/network/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/osgi/main/jboss-as-osgi-service-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/osgi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/platform-mbean/main/jboss-as-platform-mbean-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/platform-mbean/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/pojo/main/jboss-as-pojo-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/pojo/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/process-controller/main/jboss-as-process-controller-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/process-controller/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/protocol/main/jboss-as-protocol-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/protocol/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/remoting/main/jboss-as-remoting-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/remoting/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/sar/main/jboss-as-sar-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/sar/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/security/main/jboss-as-security-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/security/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/server/main/jboss-as-server-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/server/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/standalone/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/threads/main/jboss-as-threads-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/threads/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/transactions/main/jboss-as-transactions-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/transactions/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/jasper-jdt-7.0.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/jboss-as-web-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/jbossweb-7.0.17.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-i686/libapr-1.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-i686/libcrypto.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-i686/libssl.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-i686/libtcnative-1.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-x86_64/libapr-1.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-x86_64/libcrypto.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-x86_64/libssl.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-x86_64/libtcnative-1.so
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-i686/libapr-1.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-i686/libcrypto.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-i686/libssl.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-i686/libtcnative-1.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-x86_64/libapr-1.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-x86_64/libcrypto.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-x86_64/libssl.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-x86_64/libtcnative-1.jnilib
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/win-i686/tcnative-1.dll
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/win-x86_64/tcnative-1.dll
+jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/main/jboss-as-webservices-server-integration-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/main/jbossws-cxf-resources-4.0.5.GA-jboss712.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server/integration/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server/jaxrpc-integration/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/weld/main/jboss-as-weld-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/weld/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/as/xts/main/jboss-as-xts-7.1.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/as/xts/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/classfilewriter/main/jboss-classfilewriter-1.0.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/classfilewriter/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/com/sun/httpserver/main/httpserver-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/com/sun/httpserver/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/common-beans/main/jboss-common-beans-1.0.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/common-beans/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/common-core/main/jboss-common-core-2.2.17.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/common-core/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/dmr/main/jboss-dmr-1.1.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/dmr/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ejb-client/main/jboss-ejb-client-1.0.11.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ejb-client/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.0.0.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ejb3/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/iiop-client/main/jboss-iiop-client-1.0.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/iiop-client/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/integration/ext-content/main/bundled/jboss-seam-int.jar
+jboss-as-7.1.3.Final/modules/org/jboss/integration/ext-content/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/invocation/main/jboss-invocation-1.1.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/invocation/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/api/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.0.12.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/jdbcadapters/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/jandex/main/jandex-1.0.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/jandex/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/jaxbintros/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.0.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/jboss-transaction-spi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/jts/integration/main/jbossjts-integration-4.16.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/jts/integration/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/jts/main/jbossjts-4.16.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/jts/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/log4j/logmanager/main/log4j-jboss-logmanager-1.0.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/log4j/logmanager/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/logging/jul-to-slf4j-stub/main/jul-to-slf4j-stub-1.0.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/logging/jul-to-slf4j-stub/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/logging/main/jboss-logging-3.1.2.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/logging/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/logmanager/main/jboss-logmanager-1.3.2.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/logmanager/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/marshalling/main/jboss-marshalling-1.3.15.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/marshalling/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/marshalling/river/main/jboss-marshalling-river-1.3.15.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/marshalling/river/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/metadata/main/jboss-metadata-appclient-7.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/metadata/main/jboss-metadata-common-7.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/metadata/main/jboss-metadata-ear-7.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/metadata/main/jboss-metadata-ejb-7.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/metadata/main/jboss-metadata-web-7.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/metadata/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/modules/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/msc/main/jboss-msc-1.0.2.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/msc/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/netty/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/netty/main/netty-3.2.6.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/framework/main/jbosgi-deployment-1.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/framework/main/jbosgi-framework-core-1.3.1.CR1.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/framework/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/metadata/main/jbosgi-metadata-2.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/metadata/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/repository/main/jbosgi-repository-api-1.2.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/repository/main/jbosgi-repository-core-1.2.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/repository/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/resolver/main/jbosgi-resolver-api-2.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/resolver/main/jbosgi-resolver-felix-2.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/resolver/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/spi/main/jbosgi-spi-3.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/spi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/vfs/main/jbosgi-vfs-1.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/vfs/main/jbosgi-vfs30-1.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/osgi/vfs/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/remote-naming/main/jboss-remote-naming-1.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/remote-naming/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/remoting3/main/jboss-remoting-3.2.8.SP1.jar
+jboss-as-7.1.3.Final/modules/org/jboss/remoting3/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/remoting3/remoting-jmx/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/remoting3/remoting-jmx/main/remoting-jmx-1.0.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-atom-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-cdi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jackson-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jettison-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jsapi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-multipart-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-yaml-provider/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-2.3.3.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-2.3.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/sasl/main/jboss-sasl-1.0.3.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/sasl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main/jboss-negotiation-common-2.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main/jboss-negotiation-extras-2.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main/jboss-negotiation-net-2.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-2.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main/jboss-negotiation-spnego-2.2.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/security/xacml/main/jbossxacml-2.0.8.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/security/xacml/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap/core/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap/core/main/shrinkwrap-api-1.0.0.jar
+jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap/core/main/shrinkwrap-impl-base-1.0.0.jar
+jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap/core/main/shrinkwrap-spi-1.0.0.jar
+jboss-as-7.1.3.Final/modules/org/jboss/staxmapper/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/staxmapper/main/staxmapper-1.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/stdio/main/jboss-stdio-1.0.1.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/stdio/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/threads/main/jboss-threads-2.0.0.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/threads/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/vfs/main/jboss-vfs-3.1.0.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/vfs/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/weld/api/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/weld/api/main/weld-api-1.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/weld/core/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/weld/core/main/weld-core-1.1.9.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/weld/spi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/weld/spi/main/weld-spi-1.1.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/api/main/jbossws-api-1.0.0.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/api/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/common/main/jbossws-common-2.0.4.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/common/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-client/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-4.0.5.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-factories/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-4.0.5.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-server/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/jbossws-cxf-transports-httpserver-4.0.5.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-4.0.5.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-client/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main/jaxws-jboss-httpserver-httpspi-1.0.1.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-core/main/jbossws-native-core-4.0.5.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-core/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-services/main/jbossws-native-services-4.0.5.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-services/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/saaj-impl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/spi/main/jbossws-spi-2.0.4.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/spi/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/common/main/jbossws-common-tools-1.0.1.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/common/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/wsconsume/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/wsprovide/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/xb/main/jbossxb-2.0.3.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/xb/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/xnio/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/xnio/main/xnio-api-3.0.6.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/xnio/nio/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jboss/xnio/nio/main/xnio-nio-3.0.6.GA.jar
+jboss-as-7.1.3.Final/modules/org/jboss/xts/main/jbosstxbridge-4.16.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/xts/main/jbossxts-4.16.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/xts/main/jbossxts-api-4.16.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/jboss/xts/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jdom/main/jdom-1.1.2.jar
+jboss-as-7.1.3.Final/modules/org/jdom/main/module.xml
+jboss-as-7.1.3.Final/modules/org/jgroups/main/jgroups-3.0.14.Final.jar
+jboss-as-7.1.3.Final/modules/org/jgroups/main/module.xml
+jboss-as-7.1.3.Final/modules/org/joda/time/main/joda-time-1.6.2.jar
+jboss-as-7.1.3.Final/modules/org/joda/time/main/module.xml
+jboss-as-7.1.3.Final/modules/org/kohsuke/rngom/main/module.xml
+jboss-as-7.1.3.Final/modules/org/kohsuke/rngom/main/rngom-201103.jboss-1.jar
+jboss-as-7.1.3.Final/modules/org/omg/api/main/module.xml
+jboss-as-7.1.3.Final/modules/org/osgi/core/main/module.xml
+jboss-as-7.1.3.Final/modules/org/osgi/core/main/org.osgi.core-4.2.0.jar
+jboss-as-7.1.3.Final/modules/org/picketbox/main/module.xml
+jboss-as-7.1.3.Final/modules/org/picketbox/main/picketbox-4.0.13.Final.jar
+jboss-as-7.1.3.Final/modules/org/picketbox/main/picketbox-commons-1.0.0.final.jar
+jboss-as-7.1.3.Final/modules/org/picketbox/main/picketbox-infinispan-4.0.13.Final.jar
+jboss-as-7.1.3.Final/modules/org/picketlink/main/module.xml
+jboss-as-7.1.3.Final/modules/org/picketlink/main/picketlink-core-2.1.4.Final-jandex-jandex.jar
+jboss-as-7.1.3.Final/modules/org/picketlink/main/picketlink-core-2.1.4.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/picketlink/main/picketlink-core-2.1.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/picketlink/main/picketlink-jbas7-2.1.4.Final-jandex.jar
+jboss-as-7.1.3.Final/modules/org/picketlink/main/picketlink-jbas7-2.1.4.Final.jar
+jboss-as-7.1.3.Final/modules/org/python/jython/standalone/main/jython-standalone-2.5.2.jar
+jboss-as-7.1.3.Final/modules/org/python/jython/standalone/main/module.xml
+jboss-as-7.1.3.Final/modules/org/scannotation/scannotation/main/module.xml
+jboss-as-7.1.3.Final/modules/org/scannotation/scannotation/main/scannotation-1.0.2.jar
+jboss-as-7.1.3.Final/modules/org/slf4j/ext/main/module.xml
+jboss-as-7.1.3.Final/modules/org/slf4j/ext/main/slf4j-ext-1.6.1.jar
+jboss-as-7.1.3.Final/modules/org/slf4j/impl/main/module.xml
+jboss-as-7.1.3.Final/modules/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.0.GA.jar
+jboss-as-7.1.3.Final/modules/org/slf4j/jcl-over-slf4j/main/jcl-over-slf4j-1.6.1.jar
+jboss-as-7.1.3.Final/modules/org/slf4j/jcl-over-slf4j/main/module.xml
+jboss-as-7.1.3.Final/modules/org/slf4j/main/module.xml
+jboss-as-7.1.3.Final/modules/org/slf4j/main/slf4j-api-1.6.1.jar
+jboss-as-7.1.3.Final/modules/org/yaml/snakeyaml/main/module.xml
+jboss-as-7.1.3.Final/modules/org/yaml/snakeyaml/main/snakeyaml-1.8.jar
+jboss-as-7.1.3.Final/modules/sun/jdk/main/module.xml
+jboss-as-7.1.3.Final/modules/sun/jdk/main/service-loader-resources/META-INF/services/javax.script.ScriptEngineFactory
+jboss-as-7.1.3.Final/standalone/configuration/application-roles.properties
+jboss-as-7.1.3.Final/standalone/configuration/application-users.properties
+jboss-as-7.1.3.Final/standalone/configuration/logging.properties
+jboss-as-7.1.3.Final/standalone/configuration/mgmt-users.properties
+jboss-as-7.1.3.Final/standalone/configuration/standalone-full-ha.xml
+jboss-as-7.1.3.Final/standalone/configuration/standalone-full.xml
+jboss-as-7.1.3.Final/standalone/configuration/standalone-ha.xml
+jboss-as-7.1.3.Final/standalone/configuration/standalone.xml
+jboss-as-7.1.3.Final/standalone/deployments/README.txt
+jboss-as-7.1.3.Final/welcome-content/as7_logo.png
+jboss-as-7.1.3.Final/welcome-content/as7_style.css
+jboss-as-7.1.3.Final/welcome-content/bkg.gif
+jboss-as-7.1.3.Final/welcome-content/documentation.html
+jboss-as-7.1.3.Final/welcome-content/favicon.ico
+jboss-as-7.1.3.Final/welcome-content/index.html
+jboss-as-7.1.3.Final/welcome-content/index_noconsole.html
+jboss-as-7.1.3.Final/welcome-content/jboss_community.png
+jboss-as-7.1.3.Final/welcome-content/noconsole.html
+jboss-as-7.1.3.Final/welcome-content/noredirect.html
+@dirrm jboss-as-7.1.3.Final/welcome-content
+@dirrm jboss-as-7.1.3.Final/standalone/tmp/auth
+@dirrm jboss-as-7.1.3.Final/standalone/tmp
+@dirrm jboss-as-7.1.3.Final/standalone/lib/ext
+@dirrm jboss-as-7.1.3.Final/standalone/lib
+@dirrm jboss-as-7.1.3.Final/standalone/deployments
+@dirrm jboss-as-7.1.3.Final/standalone/configuration
+@dirrm jboss-as-7.1.3.Final/standalone
+@dirrm jboss-as-7.1.3.Final/modules/sun/jdk/main/service-loader-resources/META-INF/services
+@dirrm jboss-as-7.1.3.Final/modules/sun/jdk/main/service-loader-resources/META-INF
+@dirrm jboss-as-7.1.3.Final/modules/sun/jdk/main/service-loader-resources
+@dirrm jboss-as-7.1.3.Final/modules/sun/jdk/main
+@dirrm jboss-as-7.1.3.Final/modules/sun/jdk
+@dirrm jboss-as-7.1.3.Final/modules/sun
+@dirrm jboss-as-7.1.3.Final/modules/org/yaml/snakeyaml/main
+@dirrm jboss-as-7.1.3.Final/modules/org/yaml/snakeyaml
+@dirrm jboss-as-7.1.3.Final/modules/org/yaml
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/main
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/jcl-over-slf4j/main
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/jcl-over-slf4j
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/impl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/impl
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/ext/main
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j/ext
+@dirrm jboss-as-7.1.3.Final/modules/org/slf4j
+@dirrm jboss-as-7.1.3.Final/modules/org/scannotation/scannotation/main
+@dirrm jboss-as-7.1.3.Final/modules/org/scannotation/scannotation
+@dirrm jboss-as-7.1.3.Final/modules/org/scannotation
+@dirrm jboss-as-7.1.3.Final/modules/org/python/jython/standalone/main
+@dirrm jboss-as-7.1.3.Final/modules/org/python/jython/standalone
+@dirrm jboss-as-7.1.3.Final/modules/org/python/jython
+@dirrm jboss-as-7.1.3.Final/modules/org/python
+@dirrm jboss-as-7.1.3.Final/modules/org/picketlink/main
+@dirrm jboss-as-7.1.3.Final/modules/org/picketlink
+@dirrm jboss-as-7.1.3.Final/modules/org/picketbox/main
+@dirrm jboss-as-7.1.3.Final/modules/org/picketbox
+@dirrm jboss-as-7.1.3.Final/modules/org/osgi/core/main
+@dirrm jboss-as-7.1.3.Final/modules/org/osgi/core
+@dirrm jboss-as-7.1.3.Final/modules/org/osgi
+@dirrm jboss-as-7.1.3.Final/modules/org/omg/api/main
+@dirrm jboss-as-7.1.3.Final/modules/org/omg/api
+@dirrm jboss-as-7.1.3.Final/modules/org/omg
+@dirrm jboss-as-7.1.3.Final/modules/org/kohsuke/rngom/main
+@dirrm jboss-as-7.1.3.Final/modules/org/kohsuke/rngom
+@dirrm jboss-as-7.1.3.Final/modules/org/kohsuke
+@dirrm jboss-as-7.1.3.Final/modules/org/joda/time/main
+@dirrm jboss-as-7.1.3.Final/modules/org/joda/time
+@dirrm jboss-as-7.1.3.Final/modules/org/joda
+@dirrm jboss-as-7.1.3.Final/modules/org/jgroups/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jgroups
+@dirrm jboss-as-7.1.3.Final/modules/org/jdom/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jdom
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xts/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xts
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xnio/nio/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xnio/nio
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xnio/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xnio
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xb/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/xb
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/wsprovide/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/wsprovide
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/wsconsume/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/wsconsume
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/common/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools/common
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/tools
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/spi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/spi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/saaj-impl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/saaj-impl
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-services/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-services
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-core/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/native/jbossws-native-core
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/native
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-jboss-httpserver-httpspi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-client/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/jaxws-client
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-server/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-server
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-factories/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-factories
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-client/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf/jbossws-cxf-client
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/cxf
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/common/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/common
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/api/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws/api
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ws
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld/spi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld/spi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld/core/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld/core
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld/api/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld/api
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/weld
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/vfs/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/vfs
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/threads/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/threads
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/stdio/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/stdio
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/staxmapper/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/staxmapper
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap/core/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap/core
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/shrinkwrap
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/security/xacml/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/security/xacml
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/security/negotiation
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/security
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/sasl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/sasl
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-yaml-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-yaml-provider
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-multipart-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-multipart-provider
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jsapi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jsapi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jettison-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jettison-provider
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxrs
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jackson-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-jackson-provider
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-cdi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-cdi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-atom-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy/resteasy-atom-provider
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/resteasy
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/remoting3/remoting-jmx/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/remoting3/remoting-jmx
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/remoting3/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/remoting3
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/remote-naming/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/remote-naming
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/vfs/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/vfs
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/spi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/spi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/resolver/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/resolver
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/repository/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/repository
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/metadata/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/metadata
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/framework/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi/framework
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/osgi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/netty/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/netty
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/msc/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/msc
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/modules/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/modules
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/metadata/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/metadata
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/marshalling/river/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/marshalling/river
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/marshalling/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/marshalling
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/logmanager/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/logmanager
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/logging/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/logging/jul-to-slf4j-stub/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/logging/jul-to-slf4j-stub
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/logging
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/log4j/logmanager/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/log4j/logmanager
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/log4j
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jts/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jts/integration/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jts/integration
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jts
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jboss-transaction-spi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jboss-transaction-spi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jaxbintros/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jaxbintros
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jandex/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/jandex
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/jdbcadapters/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/jdbcadapters
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/impl
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/api/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar/api
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ironjacamar
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/invocation/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/invocation
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/integration/ext-content/main/bundled
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/integration/ext-content/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/integration/ext-content
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/integration
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/iiop-client/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/iiop-client
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ejb3/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ejb3
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ejb-client/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/ejb-client
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/dmr/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/dmr
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/common-core/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/common-core
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/common-beans/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/common-beans
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/com/sun/httpserver/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/com/sun/httpserver
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/com/sun
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/com
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/classfilewriter/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/classfilewriter
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/xts/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/xts
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/weld/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/weld
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server/jaxrpc-integration/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server/jaxrpc-integration
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server/integration/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server/integration
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/server
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/webservices
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/win-x86_64
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/win-i686
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-x86_64
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/macosx-i686
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-x86_64
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib/linux-i686
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main/lib
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/web
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/transactions/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/transactions
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/threads/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/threads
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/standalone/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/standalone
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/server/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/server
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/security/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/security
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/sar/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/sar
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/remoting/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/remoting
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/protocol/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/protocol
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/process-controller/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/process-controller
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/pojo/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/pojo
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/platform-mbean/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/platform-mbean
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/osgi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/osgi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/network/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/network
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/naming/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/naming
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/modcluster
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/messaging/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/messaging
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/management-client-content/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/management-client-content
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/mail/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/mail
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/logging/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/logging
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jsr77/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jsr77
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jsf/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jsf
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/util/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/util
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/spi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/spi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/openjpa/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/openjpa
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate/4
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate/3
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa/hibernate
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jpa
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jmx/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jmx
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jdr/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jdr
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jaxrs/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jaxrs
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jaxr/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jaxr
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jacorb/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/jacorb
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/host-controller/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/host-controller
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/embedded/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/embedded
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/ejb3/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/ejb3
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/ee/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/ee/deployment/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/ee/deployment
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/ee
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-management/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-management
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-interface/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-interface
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-error-context/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-http-error-context
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-add-user/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/domain-add-user
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-scanner/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-scanner
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-repository/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/deployment-repository
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/controller/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/controller-client/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/controller-client
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/controller
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/console/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/console
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/connector/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/connector
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/configadmin/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/configadmin
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/cmp/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/cmp
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/spi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/spi
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/infinispan/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web/infinispan
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/web
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/singleton/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/singleton
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/service/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/service
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/registry/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/registry
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/jgroups/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/jgroups
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/infinispan/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/infinispan
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/impl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/impl
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/ejb3/infinispan/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/ejb3/infinispan
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/ejb3
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/common/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/common
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/api/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering/api
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/clustering
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/cli/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/cli
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/appclient/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/appclient
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/aggregate/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as/aggregate
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss/as
+@dirrm jboss-as-7.1.3.Final/modules/org/jboss
+@dirrm jboss-as-7.1.3.Final/modules/org/jaxen/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jaxen
+@dirrm jboss-as-7.1.3.Final/modules/org/javassist/main
+@dirrm jboss-as-7.1.3.Final/modules/org/javassist
+@dirrm jboss-as-7.1.3.Final/modules/org/jacorb/main
+@dirrm jboss-as-7.1.3.Final/modules/org/jacorb
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/main
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/client/hotrod/main
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/client/hotrod
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/client
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/remote/main
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/remote
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/jdbc/main
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/cachestore/jdbc
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan/cachestore
+@dirrm jboss-as-7.1.3.Final/modules/org/infinispan
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq/ra/main
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq/ra
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq/main/lib/linux-x86_64
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq/main/lib/linux-i686
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq/main/lib
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq/main
+@dirrm jboss-as-7.1.3.Final/modules/org/hornetq
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/validator/main
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/validator
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/main
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/envers/main
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/envers
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/commons-annotations/main
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate/commons-annotations
+@dirrm jboss-as-7.1.3.Final/modules/org/hibernate
+@dirrm jboss-as-7.1.3.Final/modules/org/dom4j/main
+@dirrm jboss-as-7.1.3.Final/modules/org/dom4j
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/woodstox/main
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/woodstox
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jettison/main
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jettison
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-xc/main
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-xc
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-mapper-asl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-mapper-asl
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-jaxrs/main
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-jaxrs
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-core-asl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson/jackson-core-asl
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus/jackson
+@dirrm jboss-as-7.1.3.Final/modules/org/codehaus
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/xml-resolver/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/xml-resolver
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/xerces/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/xerces
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/xalan/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/xalan
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/ws/xmlschema/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/ws/xmlschema
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/ws/security/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/ws/security
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/ws
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/velocity/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/velocity
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/santuario/xmlsec/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/santuario/xmlsec
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/santuario
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/neethi/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/neethi
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/log4j/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/log4j
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi/uddi-ws/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi/uddi-ws
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi/scout/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi/scout
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi/juddi-client/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi/juddi-client
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/juddi
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/james/mime4j/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/james/mime4j
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/james
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/httpcomponents/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/httpcomponents
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/cxf/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/cxf/impl/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/cxf/impl
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/cxf
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/pool/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/pool
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/logging/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/logging
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/lang/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/lang
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/io/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/io
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/configuration/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/configuration
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/collections/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/collections
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/codec/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/codec
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/cli/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/cli
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/beanutils/main
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons/beanutils
+@dirrm jboss-as-7.1.3.Final/modules/org/apache/commons
+@dirrm jboss-as-7.1.3.Final/modules/org/apache
+@dirrm jboss-as-7.1.3.Final/modules/org/antlr/main
+@dirrm jboss-as-7.1.3.Final/modules/org/antlr
+@dirrm jboss-as-7.1.3.Final/modules/org
+@dirrm jboss-as-7.1.3.Final/modules/nu/xom/main
+@dirrm jboss-as-7.1.3.Final/modules/nu/xom
+@dirrm jboss-as-7.1.3.Final/modules/nu
+@dirrm jboss-as-7.1.3.Final/modules/net/jcip/main
+@dirrm jboss-as-7.1.3.Final/modules/net/jcip
+@dirrm jboss-as-7.1.3.Final/modules/net
+@dirrm jboss-as-7.1.3.Final/modules/jline/main
+@dirrm jboss-as-7.1.3.Final/modules/jline
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/ws/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/ws/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/ws
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/stream/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/stream/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/stream
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/soap/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/soap/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/soap
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/rpc/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/rpc/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/rpc
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/registry/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/registry/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/registry
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/jaxp-provider/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/jaxp-provider
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/bind/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/bind/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml/bind
+@dirrm jboss-as-7.1.3.Final/modules/javax/xml
+@dirrm jboss-as-7.1.3.Final/modules/javax/wsdl4j/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/wsdl4j/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/wsdl4j
+@dirrm jboss-as-7.1.3.Final/modules/javax/ws/rs/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/ws/rs/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/ws/rs
+@dirrm jboss-as-7.1.3.Final/modules/javax/ws
+@dirrm jboss-as-7.1.3.Final/modules/javax/validation/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/validation/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/validation
+@dirrm jboss-as-7.1.3.Final/modules/javax/transaction/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/transaction/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/transaction
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/jstl/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/jstl/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/jstl
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/jsp/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/jsp/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/jsp
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/servlet
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/jacc/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/jacc/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/jacc
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/auth/message/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/auth/message/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/auth/message
+@dirrm jboss-as-7.1.3.Final/modules/javax/security/auth
+@dirrm jboss-as-7.1.3.Final/modules/javax/security
+@dirrm jboss-as-7.1.3.Final/modules/javax/rmi/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/rmi/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/rmi
+@dirrm jboss-as-7.1.3.Final/modules/javax/resource/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/resource/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/resource
+@dirrm jboss-as-7.1.3.Final/modules/javax/persistence/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/persistence/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/persistence
+@dirrm jboss-as-7.1.3.Final/modules/javax/management/j2ee/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/management/j2ee/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/management/j2ee
+@dirrm jboss-as-7.1.3.Final/modules/javax/management
+@dirrm jboss-as-7.1.3.Final/modules/javax/mail/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/mail/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/mail
+@dirrm jboss-as-7.1.3.Final/modules/javax/jws/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/jws/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/jws
+@dirrm jboss-as-7.1.3.Final/modules/javax/jms/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/jms/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/jms
+@dirrm jboss-as-7.1.3.Final/modules/javax/interceptor/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/interceptor/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/interceptor
+@dirrm jboss-as-7.1.3.Final/modules/javax/inject/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/inject/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/inject
+@dirrm jboss-as-7.1.3.Final/modules/javax/faces/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/faces/api/1.2
+@dirrm jboss-as-7.1.3.Final/modules/javax/faces/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/faces
+@dirrm jboss-as-7.1.3.Final/modules/javax/enterprise/deploy/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/enterprise/deploy/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/enterprise/deploy
+@dirrm jboss-as-7.1.3.Final/modules/javax/enterprise/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/enterprise/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/enterprise
+@dirrm jboss-as-7.1.3.Final/modules/javax/el/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/el/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/el
+@dirrm jboss-as-7.1.3.Final/modules/javax/ejb/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/ejb/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/ejb
+@dirrm jboss-as-7.1.3.Final/modules/javax/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/annotation/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/annotation/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/annotation
+@dirrm jboss-as-7.1.3.Final/modules/javax/activation/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javax/activation/api
+@dirrm jboss-as-7.1.3.Final/modules/javax/activation
+@dirrm jboss-as-7.1.3.Final/modules/javax
+@dirrm jboss-as-7.1.3.Final/modules/javaee/api/main
+@dirrm jboss-as-7.1.3.Final/modules/javaee/api
+@dirrm jboss-as-7.1.3.Final/modules/javaee
+@dirrm jboss-as-7.1.3.Final/modules/ibm/jdk/main
+@dirrm jboss-as-7.1.3.Final/modules/ibm/jdk
+@dirrm jboss-as-7.1.3.Final/modules/ibm
+@dirrm jboss-as-7.1.3.Final/modules/gnu/getopt/main
+@dirrm jboss-as-7.1.3.Final/modules/gnu/getopt
+@dirrm jboss-as-7.1.3.Final/modules/gnu
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xsom/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xsom
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/txw2/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/txw2
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/messaging/saaj/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/messaging/saaj
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/messaging
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/bind/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml/bind
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/xml
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/jsf-impl/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/jsf-impl/1.2
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/jsf-impl
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/istack/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/istack
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/codemodel/main
+@dirrm jboss-as-7.1.3.Final/modules/com/sun/codemodel
+@dirrm jboss-as-7.1.3.Final/modules/com/sun
+@dirrm jboss-as-7.1.3.Final/modules/com/h2database/h2/main
+@dirrm jboss-as-7.1.3.Final/modules/com/h2database/h2
+@dirrm jboss-as-7.1.3.Final/modules/com/h2database
+@dirrm jboss-as-7.1.3.Final/modules/com/google/guava/main
+@dirrm jboss-as-7.1.3.Final/modules/com/google/guava
+@dirrm jboss-as-7.1.3.Final/modules/com/google
+@dirrm jboss-as-7.1.3.Final/modules/com/github/relaxng/main
+@dirrm jboss-as-7.1.3.Final/modules/com/github/relaxng
+@dirrm jboss-as-7.1.3.Final/modules/com/github
+@dirrm jboss-as-7.1.3.Final/modules/com
+@dirrm jboss-as-7.1.3.Final/modules/ch/qos/cal10n/main
+@dirrm jboss-as-7.1.3.Final/modules/ch/qos/cal10n
+@dirrm jboss-as-7.1.3.Final/modules/ch/qos
+@dirrm jboss-as-7.1.3.Final/modules/ch
+@dirrm jboss-as-7.1.3.Final/modules/asm/asm/main
+@dirrm jboss-as-7.1.3.Final/modules/asm/asm
+@dirrm jboss-as-7.1.3.Final/modules/asm
+@dirrm jboss-as-7.1.3.Final/modules
+@dirrm jboss-as-7.1.3.Final/domain/tmp/auth
+@dirrm jboss-as-7.1.3.Final/domain/tmp
+@dirrm jboss-as-7.1.3.Final/domain/data/content
+@dirrm jboss-as-7.1.3.Final/domain/data
+@dirrm jboss-as-7.1.3.Final/domain/configuration
+@dirrm jboss-as-7.1.3.Final/domain
+@dirrm jboss-as-7.1.3.Final/docs/schema
+@dirrm jboss-as-7.1.3.Final/docs/examples/configs
+@dirrm jboss-as-7.1.3.Final/docs/examples
+@dirrm jboss-as-7.1.3.Final/docs
+@dirrm jboss-as-7.1.3.Final/bundles/org/projectodd/stilts/main
+@dirrm jboss-as-7.1.3.Final/bundles/org/projectodd/stilts
+@dirrm jboss-as-7.1.3.Final/bundles/org/projectodd
+@dirrm jboss-as-7.1.3.Final/bundles/org/osgi/enterprise/main
+@dirrm jboss-as-7.1.3.Final/bundles/org/osgi/enterprise
+@dirrm jboss-as-7.1.3.Final/bundles/org/osgi
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/osgi/logging/main
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/osgi/logging
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/osgi
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/as/osgi/configadmin/main
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/as/osgi/configadmin
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/as/osgi
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss/as
+@dirrm jboss-as-7.1.3.Final/bundles/org/jboss
+@dirrm jboss-as-7.1.3.Final/bundles/org/apache/felix/log/main
+@dirrm jboss-as-7.1.3.Final/bundles/org/apache/felix/log
+@dirrm jboss-as-7.1.3.Final/bundles/org/apache/felix/configadmin/main
+@dirrm jboss-as-7.1.3.Final/bundles/org/apache/felix/configadmin
+@dirrm jboss-as-7.1.3.Final/bundles/org/apache/felix
+@dirrm jboss-as-7.1.3.Final/bundles/org/apache
+@dirrm jboss-as-7.1.3.Final/bundles/org
+@dirrm jboss-as-7.1.3.Final/bundles/javax/servlet/api/v25
+@dirrm jboss-as-7.1.3.Final/bundles/javax/servlet/api
+@dirrm jboss-as-7.1.3.Final/bundles/javax/servlet
+@dirrm jboss-as-7.1.3.Final/bundles/javax
+@dirrm jboss-as-7.1.3.Final/bundles
+@dirrm jboss-as-7.1.3.Final/bin/init.d
+@dirrm jboss-as-7.1.3.Final/bin/client
+@dirrm jboss-as-7.1.3.Final/bin
+@dirrm jboss-as-7.1.3.Final/appclient/configuration
+@dirrm jboss-as-7.1.3.Final/appclient
+@dirrm jboss-as-7.1.3.Final
