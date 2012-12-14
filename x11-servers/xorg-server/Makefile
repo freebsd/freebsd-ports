@@ -26,10 +26,11 @@ SLAVE_PORT?=	no
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.10.6
-XORG_REVISION=	1
+XORG_REVISION=	2
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-hw_dmx_glxProxy_compsize.h \
-		${FILESDIR}/extra-hw_dmx_glxProxy_glxcmds.h
+		${FILESDIR}/extra-hw_dmx_glxProxy_glxcmds.h \
+		${FILESDIR}/extra-clang
 .else
 XORG_VERSION=	1.7.7
 XORG_REVISION=	6
