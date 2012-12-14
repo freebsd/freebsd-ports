@@ -1,12 +1,7 @@
-# New ports collection makefile for:	textproc/p5-Perl-MinimumVersion
-# Date created:				25 October 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Perl-MinimumVersion
-PORTVERSION=	1.28
+PORTVERSION=	1.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +12,7 @@ COMMENT=	Find a minimum required version of perl for Perl code
 BUILD_DEPENDS=	p5-File-Find-Rule>=0.32:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-File-Find-Rule-Perl>=1.04:${PORTSDIR}/devel/p5-File-Find-Rule-Perl \
 		p5-PPI>=1.215:${PORTSDIR}/textproc/p5-PPI \
+		p5-PPIx-Regexp>=0.028:${PORTSDIR}/textproc/p5-PPIx-Regexp \
 		p5-Perl-Critic>=1.10.4:${PORTSDIR}/textproc/p5-Perl-Critic \
 		p5-Params-Util>=0.25:${PORTSDIR}/devel/p5-Params-Util \
 		p5-version>=0.76:${PORTSDIR}/devel/p5-version
