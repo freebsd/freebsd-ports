@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:  mdk
-# Date created:			Apr 1, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mdk
 PORTVERSION=	1.2.6
@@ -21,6 +16,7 @@ OPTIONS_DEFAULT=GLADE GUILE
 
 USE_GNOME=	glib20 intltool
 USE_NCURSES=	yes
+USE_READLINE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -55,10 +51,6 @@ PLIST_FILES+=	bin/mixguile \
 		%%DATADIR%%/mixguile-vm-stat.scm
 .else
 CONFIGURE_ARGS+=--without-guile
-.endif
-
-.if exists(${LOCALBASE}/lib/libreadline.so)
-LIB_DEPENDS+=	readline:${PORTSDIR}/devel/readline
 .endif
 
 post-patch:
