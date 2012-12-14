@@ -1,13 +1,10 @@
-# New ports collection makefile for:	thunar
-# Date created:		19.04.2006
-# Whom:			Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	Thunar
 PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -15,17 +12,18 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 file manager
 
-LIB_DEPENDS=	tumbler-1.0:${PORTSDIR}/deskutils/xfce4-tumbler
+LIB_DEPENDS=	tumbler-1:${PORTSDIR}/deskutils/xfce4-tumbler
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	desktopfileutils gnomehack gtk20 intltool intlhack pkgconfig gdkpixbuf2
+USE_GNOME=	desktopfileutils gnomehack gtk20 intltool intlhack gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
+USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	 STARTUP DBUS NOTIFY NLS DOCS PLUG_APR PLUG_APR_EXIF PLUG_SBR PLUG_SBR_PCRE PLUG_TPA PLUG_UCA PLUG_WALL GVFS
 OPTIONS_DEFAULT= STARTUP DBUS NOTIFY PLUG_APR PLUG_SBR PLUG_SBR_PCRE PLUG_UCA PLUG_WALL GVFS
