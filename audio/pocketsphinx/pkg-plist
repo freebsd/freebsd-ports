@@ -39,6 +39,7 @@ libdata/pkgconfig/pocketsphinx.pc
 %%DATADIR%%/model/lm/en/turtle.DMP
 %%DATADIR%%/model/lm/en/turtle.dic
 %%DATADIR%%/model/lm/en_US/cmu07a.dic
+%%DATADIR%%/model/lm/en_US/hub4.5000.dic
 %%DATADIR%%/model/lm/en_US/hub4.5000.DMP
 %%DATADIR%%/model/lm/en_US/wsj0vp.5000.DMP
 %%DATADIR%%/model/lm/zh_CN/gigatdt.5000.DMP
