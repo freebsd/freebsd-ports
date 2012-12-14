@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grass
-# Date created:		15 January 2000
-# Whom:			reg
-#
+# Created by: reg
 # $FreeBSD$
-#
 
 PORTNAME=	grass
 PORTVERSION=	6.4.2
@@ -26,20 +22,19 @@ COMMENT=	An open source Geographical Information System (GIS)
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	gdal.17:${PORTSDIR}/graphics/gdal \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		proj.7:${PORTSDIR}/graphics/proj \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		fftw3.6:${PORTSDIR}/math/fftw3 \
-		freetype.9:${PORTSDIR}/print/freetype2
+		proj:${PORTSDIR}/graphics/proj \
+		tiff:${PORTSDIR}/graphics/tiff \
+		fftw3:${PORTSDIR}/math/fftw3 \
+		freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
-BROKEN=		does not build
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+USE_READLINE=	yes
 USE_PERL5=	yes
 USE_XORG=	sm ice xi x11 xt xmu xext
 USE_GL=		glut
