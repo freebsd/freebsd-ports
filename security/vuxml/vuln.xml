@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>linux-f10-flashplugin</name>
-	<range><le>11.2r202.258</le></range>
+	<range><lt>11.2r202.258</lt></range>
       </package>
     </affects>
     <description>
