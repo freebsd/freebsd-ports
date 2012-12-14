@@ -550,6 +550,7 @@
     SUBDIR += luxrender
     SUBDIR += mahotas
     SUBDIR += makehuman
+    SUBDIR += mandelbulber
     SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
