@@ -5,7 +5,7 @@
  readonly name=pkg_libchk
  readonly version=1.6.1
 +readonly osname=`uname -s`
-+readonly pkgng=`make -VWITH_PKGNG`
++readonly pkgng=`make -f /usr/share/mk/bsd.port.mk -V WITH_PKGNG`
  
  # Use a line break as delimiter.
  IFS='
