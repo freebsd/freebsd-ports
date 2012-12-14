@@ -1,13 +1,10 @@
-# New ports collection makefile for:	xfdesktop
-# Date created:		7 June 2003
-# Whom:			James Earl <jdearl@telus.net>
-#
+# Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -16,17 +13,17 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's desktop manager
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
-		notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
+		notify:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig \
-		desktopfileutils
+USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack desktopfileutils
 USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 	--enable-notifications
