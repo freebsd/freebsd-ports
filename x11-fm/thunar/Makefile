@@ -3,14 +3,14 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	1.4.0
-PORTREVISION=	4
+PORTVERSION=	1.6.1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 file manager
+COMMENT=	Xfce file manager
 
 LIB_DEPENDS=	tumbler-1:${PORTSDIR}/deskutils/xfce4-tumbler
 
@@ -25,13 +25,16 @@ USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
 USE_PKGCONFIG=	build
 
-OPTIONS_DEFINE=	 STARTUP DBUS NOTIFY NLS DOCS PLUG_APR PLUG_APR_EXIF PLUG_SBR PLUG_SBR_PCRE PLUG_TPA PLUG_UCA PLUG_WALL GVFS
-OPTIONS_DEFAULT= STARTUP DBUS NOTIFY PLUG_APR PLUG_SBR PLUG_SBR_PCRE PLUG_UCA PLUG_WALL GVFS
-STARTUP_DESC=	Enable startup notification support
+OPTIONS_DEFINE=	DBUS DOCS GVFS NLS NOTIFY STARTUP
+OPTIONS_MULTI=	PLUGINS
+OPTIONS_MULTI_PLUGINS=	PLUG_APR PLUG_SBR PLUG_TPA PLUG_UCA PLUG_WALL
+OPTIONS_DEFAULT=	DBUS GVFS NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_WALL STARTUP
+
+# Override NOTIFY_DESC
+NOTIFY_DESC=	Display notifications
+STARTUP_DESC=	Startup notification
 PLUG_APR_DESC=	Thunar Advanced Properties plugin
-PLUG_APR_EXIF_DESC=	Exif support for the APR plugin
 PLUG_SBR_DESC=	Thunar Simple Builtin Renamers plugin
-PLUG_SBR_PCRE_DESC=	Regular expression support for the SBR plugin
 PLUG_TPA_DESC=		Thunar Trash Panel Applet plugin
 PLUG_UCA_DESC=		Thunar User Customizable Actions plugin
 PLUG_WALL_DESC=		Thunar Wallpaper plugin
@@ -45,7 +48,7 @@ MAN1=		Thunar.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	WITH_DBUS=""
 .else
@@ -63,7 +66,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notifications
 .else
 CONFIGURE_ARGS+=--disable-notifications
@@ -78,28 +81,18 @@ PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPLUG_APR}
-CONFIGURE_ARGS+=--enable-apr-plugin
+LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
+CONFIGURE_ARGS+=--enable-apr-plugin --enable-exif
 PLIST_SUB+=	PLUGIN_APR=""
-.if ${PORT_OPTIONS:MPLUG_APR_EXIF}
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
-CONFIGURE_ARGS+=--enable-exif
-.else
-CONFIGURE_ARGS+=--disable-exif
-.endif
 .else
 CONFIGURE_ARGS+=--disable-apr-plugin --disable-exif
 PLIST_SUB+=	PLUGIN_APR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPLUG_SBR}
-CONFIGURE_ARGS+=--enable-sbr-plugin
-PLIST_SUB+=	PLUGIN_SBR=""
-.if ${PORT_OPTIONS:MPLUG_SBR_PCRE}
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--enable-pcre
-.else
-CONFIGURE_ARGS+=--disable-pcre
-.endif
+CONFIGURE_ARGS+=--enable-sbr-plugin --enable-pcre
+PLIST_SUB+=	PLUGIN_SBR=""
 .else
 CONFIGURE_ARGS+=--disable-sbr-plugin --disable-pcre
 PLIST_SUB+=	PLUGIN_SBR="@comment "
@@ -131,7 +124,7 @@ PLIST_SUB+=	PLUGIN_WALL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTARTUP}
-LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
@@ -140,6 +133,13 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .if ${PORT_OPTIONS:MGVFS}
 USE_GNOME+=gvfs
 .endif
+
+post-patch:
+# Downgrade GLib to 2.28
+	@${REINPLACE_CMD} -e 's|2.30.|2.28.|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name '*.c' -type f \
+		| ${XARGS} ${REINPLACE_CMD} -e \
+		's|g_format_size (|g_format_size_for_display (|g'
 
 post-install:
 	@-update-desktop-database
