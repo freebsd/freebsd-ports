@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sphinxbase
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison 
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
