@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-MooseX-MetaDescription
-# Date created:		2011-05-31
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-MetaDescription
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A framework for adding additional metadata to Moose classes
 
-BUILD_DEPENDS=	p5-Moose>=0.4:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	p5-Moose>=0.4:${PORTSDIR}/devel/p5-Moose
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Moose>=0.4:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
