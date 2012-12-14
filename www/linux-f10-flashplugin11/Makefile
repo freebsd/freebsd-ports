@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.251
+PORTVERSION=	11.2r202.258
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
 PKGNAMEPREFIX=	linux-f10-
-DISTFILES=	install_flash_player_11_linux_i386.tar.gz:plugin \
+DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin \
 		linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
