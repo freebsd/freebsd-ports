@@ -1,23 +1,20 @@
-# New ports collection makefile for:	xfburn
-# Date created:		2008 November 06
-# Whom:			J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
 #
 
 PORTNAME=	xfburn
 PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD/DVD burning tool for Xfce
 
-LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
-		isofs.6:${PORTSDIR}/devel/libisofs
+LIB_DEPENDS=	burn:${PORTSDIR}/devel/libburn \
+		isofs:${PORTSDIR}/devel/libisofs
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 GNU_CONFIGURE=	yes

@@ -1,13 +1,10 @@
-# New ports collection makefile for:	xfce4-panel
-# Date created:		7 June 2003
-# Whom:			James Earl <jdearl@telus.net>
-#
+# Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -15,9 +12,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's panel
 
-LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
-		cairo.2:${PORTSDIR}/graphics/cairo \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
+		cairo:${PORTSDIR}/graphics/cairo \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

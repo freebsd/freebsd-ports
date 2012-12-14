@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -22,9 +22,10 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig glib20 desktopfileutils
+USE_GNOME=	gnomehack gtk20 intltool intlhack glib20 desktopfileutils
 USE_XFCE=	configenv libexo libmenu libutil panel xfconf
 USE_XORG=	xtst
+USE_PKGCONFIG=	build
 
 INSTALLS_ICONS=	yes
 
