@@ -13,8 +13,11 @@ MASTER_SITES=	http://tedlab.mit.edu/~dr/Lens/Dist/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/
 DISTNAME=	lens
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Light Efficient Neural Network Simulator
+
+DEPRECATED=	Project has been abandoned
+EXPIRATION_DATE=2013-02-01
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
