@@ -1,18 +1,19 @@
---- config.mk.orig	2012-03-17 22:55:49.000000000 +0100
-+++ config.mk	2012-07-11 20:57:38.000000000 +0200
-@@ -6,11 +6,12 @@
+--- config.mk.orig	2012-12-14 12:16:05.000000000 -0500
++++ config.mk	2012-12-14 12:16:51.000000000 -0500
+@@ -6,12 +6,13 @@ ERROR_SETTING=2> /dev/null
  
  default: all
  
--CC	:= gcc
--CXX	:= g++
-+CC	?= gcc
-+CXX	?= g++
+-CC    := gcc
+-CXX   := g++
++CC    ?= cc
++CXX   ?= c++
+ OSDIR := linux
  
  # (Add a -g for debugging)
 -CPPFLAGS += -O2 -Wall
 +CPPFLAGS += -Wall -I%%LOCALBASE%%/include %%PTHREAD_CFLAGS%%
-+LDFLAGS += %%PTHREAD_LIBS%%
++LDFLAGS	+= %%PTHREAD_LIBS%%
  
- # Add compile options, such as -I option to include jpeglib's headers
- # CPPFLAGS += -I/home/fred/jpeglib
+ ### FreeBSD configuration
+ 
