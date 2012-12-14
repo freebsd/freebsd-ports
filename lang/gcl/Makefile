@@ -1,16 +1,11 @@
-# New ports collection makefile for:	gcl
-# Date created:				Feb  8 1995
-# Whom:					hsu
-#
+# Created by: hsu
 # $FreeBSD$
-#
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.7
 PORTREVISION=	7
 CATEGORIES=	lang tcl tk
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gcl
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Common Lisp
@@ -19,10 +14,14 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 ONLY_FOR_ARCHS=	i386
 
-USE_TK=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_XORG=	x11
+USE_TCL_BUILD=	yes
+USE_TCL=	yes
+USE_TK_BUILD=	yes
+USE_TK=		yes
+USE_READLINE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--enable-ansi \
 	--enable-machine=FreeBSD \
@@ -35,20 +34,20 @@ CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--disable-statsysbfd \
 	--disable-locbfd \
 	--enable-custreloc
-CONFIGURE_ENV=	C_INCLUDE_PATH=${PREFIX}/include LIBRARY_PATH=${PREFIX}/lib
-CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	C_INCLUDE_PATH="${PREFIX}/include" LIBRARY_PATH="${PREFIX}/lib"
 MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=yes
 
-INFO=	gcl-si gcl-tk
+CFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_SUB=	GCL_VER=${PORTVERSION}
+PLIST_SUB=	GCL_VER="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
+INFO=		gcl-si gcl-tk
 
-pre-configure:
-	${SED} -i '' \
-		-e 's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include|' \
-		-e 's|@@LOCALLIBS@@|-lreadline -lm -L${LOCALBASE}/lib -lgmp|' \
-		${WRKSRC}/h/FreeBSD.defs
+post-patch::
+	@${REINPLACE_CMD} -e \
+		's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include| ; \
+		 s|@@LOCALLIBS@@|-lreadline -lm -L${LOCALBASE}/lib -lgmp|' \
+			${WRKSRC}/h/FreeBSD.defs
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
