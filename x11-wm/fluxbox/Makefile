@@ -124,7 +124,7 @@ post-patch:
 		${WRKSRC}/util/fluxbox-generate_menu.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/util/fbsetbg
-.if empty(PORT_OPTIONS:MNLS}
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
 		${WRKSRC}/configure
 .endif
