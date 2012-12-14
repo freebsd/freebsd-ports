@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ultimatestunts
-# Date created:		9 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ultimatestunts
-PORTVERSION=	0.7.6.1
-PORTREVISION=	3
+PORTVERSION=	0.7.7.1
 DISTVERSIONPREFIX=	srcdata-
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
@@ -16,40 +11,45 @@ MASTER_SITES=	SF/${PORTNAME}/sourcecode
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Racing game with elaborate stunts
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
+
+OPTIONS_DEFINE=	DOCS
 
 USE_OPENAL=	al alut
 USE_GL=		gl glu
 USE_SDL=	sdl image
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openal
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS+=	`${SDL_CONFIG} --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	$$(pkgconf --cflags-only-I sdl) -I${LOCALBASE}/include
+LDFLAGS+=	$$(pkgconf --libs-only-L sdl) -L${LOCALBASE}/lib
 
 PORT_VERBS=	${PORTNAME} ustunts
 
+.include <bsd.port.options.mk>
+
 post-extract:
-	@${FIND} ${WRKSRC} -name CVS -print0 | ${XARGS} -0 ${RM} -rf
+	@${FIND} ${WRKSRC} -name ".svn" -print0 | ${XARGS} -0 ${RM} -rf
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-I/usr/local/include|| ; \
-		 s|-L/usr/local/lib|| ; \
-		 /usdatadir=/s|=.*|="${DATADIR}"| ; \
-		 /SDL_CONFIG.*cflags/d' ${WRKSRC}/configure
+		 s|-L/usr/local/lib||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		'/^sysconf_DATA/d ; \
+		'/^sysconf_DATA/s|^|#| ; \
 		 /^SUBDIRS/s| data | |' ${WRKSRC}/Makefile.in
 
 post-install:
 .for dir in cars environment lang misc music textures textures.dat tiles tracks
-	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${dir} ${DATADIR}
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${dir} ${DATADIR})
 .endfor
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
