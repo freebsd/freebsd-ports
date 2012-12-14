@@ -3,7 +3,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -155,6 +155,7 @@ APU_CONF_ARGS+=	--with-crypto
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
+APU_EXTRAS=	yes
 USE_OPENSSL=	yes
 PLIST_SUB+=	SSL=""
 CFLAGS+=	-I${OPENSSLINC}
@@ -168,6 +169,7 @@ APU_CONF_ARGS+=	--without-openssl
 # TODO figure out why nss flag is ignored if ssl is set
 # this works on other OS as expected
 .if ${PORT_OPTIONS:MNSS}
+APU_EXTRAS=	yes
 PLIST_SUB+=	NSS=""
 LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
 CFLAGS+=	-I${LOCALBASE}/include/nss
