@@ -73,7 +73,6 @@ share/icons/hicolor/16x16/apps/Thunar.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-move.png
 share/icons/hicolor/16x16/stock/navigation/stock_thunar-shortcuts.png
-share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
 share/icons/hicolor/24x24/apps/Thunar.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-move.png
@@ -81,6 +80,7 @@ share/icons/hicolor/48x48/apps/Thunar.png
 share/icons/hicolor/64x64/apps/Thunar.png
 share/icons/hicolor/128x128/apps/Thunar.png
 share/icons/hicolor/scalable/apps/Thunar.svg
+%%NLS%%share/locale/am/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/be/LC_MESSAGES/Thunar.mo
@@ -176,4 +176,3 @@ share/pixmaps/Thunar/Thunar-about-logo.png
 @dirrm include/thunarx-2/thunarx
 @dirrm include/thunarx-2
 %%PLUGIN_UCA%%@dirrm etc/xdg/Thunar
-%%PLUGIN_UCA%%@dirrmtry etc/xdg
