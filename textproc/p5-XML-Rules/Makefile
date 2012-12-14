@@ -1,12 +1,7 @@
-# New ports collection makefile for:	textproc/p5-XML-Rules
-# Date created:				14 October 2008
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Rules
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
