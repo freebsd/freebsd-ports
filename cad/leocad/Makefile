@@ -1,13 +1,8 @@
-# New ports collection makefile for:	leocad
-# Date created:				27 Jan 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	leocad
-PORTVERSION=	0.77.0
-PORTREVISION=	1
+PORTVERSION=	0.79.0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${LEOCAD_DISTNAME} ${LEOCAD_PIECES}
