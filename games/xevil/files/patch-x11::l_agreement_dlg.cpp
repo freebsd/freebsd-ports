@@ -1,12 +1,10 @@
---- x11/l_agreement_dlg.cpp.orig	Wed Jan 19 12:55:04 2000
-+++ x11/l_agreement_dlg.cpp	Sat Oct 25 21:46:33 2003
-@@ -31,7 +31,8 @@
+--- x11/l_agreement_dlg.cpp.orig	2012-05-27 06:52:29.000000000 +0900
++++ x11/l_agreement_dlg.cpp	2012-05-27 06:52:59.000000000 +0900
+@@ -31,7 +31,6 @@
  #include <X11/Xatom.h>
  }
  
 -#include <strstream.h>
-+#include <strstream>
-+using namespace std;
  
  #include "xdata.h"
  #include "panel.h"

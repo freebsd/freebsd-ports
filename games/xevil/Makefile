@@ -1,47 +1,47 @@
-# New ports collection makefile for:   xevil
-# Date created:        7 November 2000
-# Whom:    Göran Runfeldt <goranrunfeldt@home.se>
-#
+# Created by: G_ran Runfeldt <goranrunfeldt@home.se>
 # $FreeBSD$
-#
 
 PORTNAME=	xevil
 PORTVERSION=	2.02.r2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.xevil.com/download/stable/
-DISTNAME=	xevilsrc${PORTVERSION:S/.r/r/}
+MASTER_SITES=	SF/${PORTNAME}.mirror \
+		http://www.xevil.com/download/stable/
+DISTNAME=	${PORTNAME}src${PORTVERSION:S/.r/r/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast-action, networked, anti-social, kill-everything game
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
+
+NO_WRKSUBDIR=yes
+
 USE_ZIP=	yes
 USE_XORG=	xpm
-USE_DOS2UNIX= makefile config.mk cmn/makefile cmn/*.cpp cmn/*.h x11/makefile x11/*.cpp
+USE_DOS2UNIX=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd
-MAKE_JOBS_UNSAFE=	yes
+MAKE_ARGS=	DEPTH="${WKRSRC}"
+ALL_TARGET=	${OPSYS:L}
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
+PLIST_FILES=	bin/${PORTNAME}
 
-# I'm not sure if this should be here
-.if (${MACHINE} == "alpha")
-CFLAGS+="-DXEVIL_KEYSET=UIalpha"
-.endif
+.include <bsd.port.options.mk>
 
-pre-extract:
-	@${MKDIR} ${WRKDIR}/${DISTNAME}
-
-do-extract:
-	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
+port-patch:
+	@${FIND} ${WRKSRC} -name "*.xpm" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^static char|static const char|'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x11/FREEBSD/xevil ${PREFIX}/bin/xevil
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/x11/${OPSYS:U}/${PORTNAME} ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
+	@{MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/instructions
 	${INSTALL_DATA} ${WRKSRC}/instructions/* ${DOCSDIR}/instructions
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
