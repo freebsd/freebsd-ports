@@ -246,7 +246,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: timur@FreeBSD.org
 
   Startup rc.d/samba script was modified to address some problems with the
-  fine control of supplimentary daemons. As a side effect now it's always
+  fine control of supplementary daemons. As a side effect now it's always
   necessary to specify in rc.conf:
 
   samba_enable=YES
@@ -1075,7 +1075,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: scheidell@FreeBSD.org
 
   The net/nss-pam-ldapd port no longer provides an option for SASL. This has
-  been sourced out to the new net/nss-pam-ldapd-sasl port, to accomodate
+  been sourced out to the new net/nss-pam-ldapd-sasl port, to accommodate
   users using packages (see ports/162240). Users with openldap-sasl-client
   installed are encouraged to change the port's origin to:
   net/nss-pam-ldapd-sasl using their favorite ports management tool.
