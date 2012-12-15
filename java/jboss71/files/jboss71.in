@@ -46,7 +46,7 @@ JBOSS_HOME="%%APP_HOME%%"
 	daemon -u ${%%APP_SHORTNAME%%_user} ${JBOSS_HOME}/bin/standalone.sh ${%%APP_SHORTNAME%%_logging} >> ${%%APP_SHORTNAME%%_logdir}/boot.log 2>> ${%%APP_SHORTNAME%%_logdir}/boot.log
 
 	sleep 1		# let daemon(8) and sh(1) finish before executing pgrep(1)
-	pgrep -U ${%%APP_SHORTNAME%%_user} -f ${JBOSS_MAIN} > ${pidfile}
+	pgrep -U ${%%APP_SHORTNAME%%_user} -f ${JBOSS_HOME}/modules > ${pidfile}
 	chown ${%%APP_SHORTNAME%%_user} $pidfile
 }
 
