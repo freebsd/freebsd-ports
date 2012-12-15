@@ -1,11 +1,8 @@
-# New ports collection:		eclipse-ecj
-# Date created:			17 March 2012
-# Whom:				Jason Helfman
-#
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ecj
-PORTVERSION=	3.8
+PORTVERSION=	3.8.1
 CATEGORIES=	java devel
 MASTER_SITES=	ECLIPSE
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-${DROPDATE}
@@ -29,7 +26,7 @@ SUB_FILES=	ecj.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION}
 NO_WRKSUBDIR=	yes
 
-DROPDATE=	201206081200
+DROPDATE=	201209141540
 PLIST_FILES=	bin/${PORTNAME}.sh \
 		%%JAVAJARDIR%%/${PORTNAME}-${PORTVERSION}.jar
 
