@@ -24,7 +24,6 @@ bin/sfscandiff
 %%DATADIR%%/assets/p_unknown.png
 %%DATADIR%%/assets/p_value.png
 %%DATADIR%%/assets/sf_name.png
-%%DATADIR%%/dictionaries/README-FIRST
 %%DATADIR%%/dictionaries/complete.wl
 %%DATADIR%%/dictionaries/medium.wl
 %%DATADIR%%/dictionaries/extensions-only.wl
