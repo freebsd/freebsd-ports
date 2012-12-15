@@ -1,11 +1,9 @@
-# New ports collection makefile for:	samhain
-# Date created:				9 January 2003
-# Whom:					lx
-#
+# Created by: lx
 # $FreeBSD$
 
 PORTNAME=	samhain
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -106,7 +104,7 @@ CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
 CONFIGURE_ARGS+=	--with-altlogserver=${WITH_ALT_LOG_SERVER}
 .endif
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.20:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--with-prelude
 .endif
 

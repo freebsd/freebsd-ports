@@ -1,13 +1,9 @@
-# Ports collection makefile for:	nepenthes
-# Date created:				1 Dec 2005
-# Whom:					ryo
-#
+# Created by: ryo
 # $FreeBSD$
-#
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
@@ -20,7 +16,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		adns.1:${PORTSDIR}/dns/adns
 
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.20:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
 .endif
 
