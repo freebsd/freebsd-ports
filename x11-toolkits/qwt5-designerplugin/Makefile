@@ -1,13 +1,7 @@
-# New ports collection makefile for:	qwt5-designerplugin
-# Date created:		2010-07-02
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qwt
-PORTVERSION=	5.2.2
-PORTREVISION=	1
+PORTVERSION=	5.2.3
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-designerplugin
@@ -20,7 +14,7 @@ LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 USE_QT4=	designer moc_build qmake_build rcc_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-QMAKE_ARGS+=	-unix -recursive CONFIG+=QwtDesigner \
+QMAKE_ARGS+=	-recursive CONFIG+=QwtDesigner \
 		PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

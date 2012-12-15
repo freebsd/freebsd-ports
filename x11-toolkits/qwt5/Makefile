@@ -1,13 +1,7 @@
-# New ports collection makefile for:	qwt-devel
-# Date created:		2006-12-08
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qwt
-PORTVERSION=	5.2.2
-PORTREVISION=	1
+PORTVERSION=	5.2.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
@@ -17,11 +11,15 @@ COMMENT=	Qt Widgets for Technical Applications
 USE_QT4=	gui svg moc_build qmake_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
+QMAKE_ARGS+=	-recursive PREFIX=${PREFIX}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 PORTSCOUT=	limit:^5\.
+
+PORTDOCS=	*
+PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
+		SHLIB_SHVER=${PORTVERSION:R}
 
 STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
 
