@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mtpfs
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.adebenham.com/mtpfs/
+MASTER_SITES=	http://www.adebenham.com/files/mtp/
 
 MAINTAINER=	john@pcbsd.org
 COMMENT=	MTP device filesystem
