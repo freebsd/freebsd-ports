@@ -1,44 +1,39 @@
 # Created by: Matthew Seaman
 # $FreeBSD$
 
-PORTNAME=	GentiumBasic
-PORTVERSION=	110
+PORTNAME=	GentiumPlus
+PORTVERSION=	1.510
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=${MEDIA_ID}&filename=/
-DISTNAME=	ttf-sil-gentium-basic_1.1.orig
 
 MAINTAINER=	matthew@FreeBSD.org
-COMMENT=	Gentium Basic and Gentium Book Basic TrueType fonts
+COMMENT=	Gentium Plus TrueType font collection
 
 LICENSE=	OFL
 LICENSE_NAME=	SIL Open Font License (OFL)
 LICENSE_FILE=	${WRKSRC}/OFL.txt
 LICENSE_PERMS=	auto-accept
 
-USE_TGZ=	yes
+USE_ZIP=	yes
 XORG_CAT=	font
 
 FONTLIBPATH=	lib/X11/fonts
 FONTROOTDIR=	${PREFIX}/${FONTLIBPATH}
 INSTALLS_TTF=	yes
-MEDIA_ID=	${PORTNAME}_${PORTVERSION}_tar
+MEDIA_ID=	${DISTNAME}${EXTRACT_SUFX}
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S,.orig,,:S,_,-,}
+USE_TGZ=	yes	#prevent bsd.xorg.mk from setting USE_BZIP
 
-PLIST_FILES=	${FONTLIBPATH}/${FONTDIR}/GenBasB.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBasBI.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBasI.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBasR.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBkBasB.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBkBasBI.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBkBasI.ttf \
-		${FONTLIBPATH}/${FONTDIR}/GenBkBasR.ttf
+PLIST_FILES=	${FONTLIBPATH}/${FONTDIR}/${PORTNAME}-I.ttf \
+		${FONTLIBPATH}/${FONTDIR}/${PORTNAME}-R.ttf
 
 SUB_LIST=	"FONTPATH=${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
-DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt
+DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt OFL.txt README.txt \
+		documentation/GentiumPlus-features.pdf
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
+
 
 .include <bsd.port.options.mk>
 
