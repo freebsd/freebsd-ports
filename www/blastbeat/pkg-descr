@@ -1,0 +1,4 @@
+BlastBeat is an high-performance HTTP/HTTPS/SPDY proxy for new generation
+web apps (websockets, socket.io, push, comet...).
+
+WWW: https://github.com/unbit

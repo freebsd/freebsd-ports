@@ -1,0 +1,50 @@
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# $FreeBSD$
+
+PORTNAME=	blastbeat
+PORTVERSION=	20121205
+CATEGORIES=	www
+MASTER_SITES=	GH GHC
+
+MAINTAINER=	g.veniamin@googlemail.com
+COMMENT=	High-performance HTTP/HTTPS/SPDY proxy
+
+LICENSE=	UNBIT
+LICENSE_NAME=	UNBIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	auto-accept
+
+LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		zmq:${PORTSDIR}/devel/zmq
+
+USE_GMAKE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	zloidemon
+GH_COMMIT=	cdac9a9
+GH_TAGNAME=	master
+PORTEXAMPLES=	*
+
+CFLAGS+=	-I${LOCALBASE}/include \
+		-L${LOCALBASE}/lib
+
+PLIST_FILES=	bin/blastbeat \
+		%%ETCDIR%%/blastbeat.ini.sample
+PLIST_DIRSTRY=	%%ETCDIR%%
+
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${ETCDIR} && \
+		${INSTALL} ${WRKSRC}/${PORTNAME}.ini ${ETCDIR}/${PORTNAME}.ini.sample
+
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} examples ${EXAMPLESDIR}
+.endif
+
+.include <bsd.port.mk>
