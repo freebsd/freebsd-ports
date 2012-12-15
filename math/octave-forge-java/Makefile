@@ -20,6 +20,8 @@ CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 MAKE_ENV+=	MKOCTFILE=mkoctfile
 
+BROKEN=		does not work with openjdk ,and will soon be part of octave base
+
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 
 .include <bsd.port.pre.mk>

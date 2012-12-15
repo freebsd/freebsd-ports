@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20121120
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -111,7 +112,7 @@ VIDEO_DESC=		Install package: video
 XRAYLIB_DESC=		Install package: xraylib
 ZENITY_DESC=		Install package: zenity
 
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NES}
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NES:NJAVA}
 
 .include <bsd.port.options.mk>
 
