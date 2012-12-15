@@ -28,7 +28,7 @@ Usage: $bn [OPTION] PORT
 _ENOUSAGE
 }
 
-my $nicepeople=".*(avilla@|bapt@|bdrewery@|beat@|eadler@|flo@|flz@|garga@|bsdkaffee@|linimon@|makc@|araujo@|rm@|villa.alberto@|crees@|pgollucci@).*";
+my $nicepeople="(araujo@|avilla@|bapt@|bdrewery@|beat@|crees@|eadler@|flo@|flz@|garga@|bsdkaffee@|linimon@|makc@|rm@|wxs@|cvs-src\@yandex\.ru|villa\.alberto@|pgollucci\@p6m7g8\.com)";
 
 sub get_creator($) {
 	my $header=shift;
