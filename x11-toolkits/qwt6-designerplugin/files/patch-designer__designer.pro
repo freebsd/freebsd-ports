@@ -1,6 +1,6 @@
---- ./designer/designer.pro.orig	2011-08-01 14:33:53.000000000 +0000
-+++ ./designer/designer.pro	2011-08-19 15:46:20.185856767 +0000
-@@ -18,7 +18,7 @@
+--- ./designer/designer.pro.orig	2012-11-30 13:22:47.000000000 +0000
++++ ./designer/designer.pro	2012-12-13 12:55:56.229759237 +0000
+@@ -19,7 +19,7 @@
      CONFIG    += warn_on
  
      TEMPLATE        = lib
@@ -10,15 +10,15 @@
      DESTDIR         = plugins/designer
  
 @@ -35,7 +35,7 @@
+         LIBS      += -L$${QWT_ROOT}/lib
      }
  
-     IPATH       = $${INCLUDEPATH}
--    qtAddLibrary(qwt)
-+    qtAddLibrary(qwt6)
-     INCLUDEPATH = $${IPATH}
+-    qwtAddLibrary(qwt)
++    qwtAddLibrary(qwt6)
  
      contains(QWT_CONFIG, QwtDll) {
-@@ -64,7 +64,7 @@
+ 
+@@ -63,7 +63,7 @@
  
      RESOURCES += qwt_designer_plugin.qrc
  

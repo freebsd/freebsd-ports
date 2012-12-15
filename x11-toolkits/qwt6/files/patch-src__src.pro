@@ -1,15 +1,15 @@
---- ./src/src.pro.orig	2011-08-01 14:33:53.000000000 +0000
-+++ ./src/src.pro	2011-08-19 09:33:07.161341857 +0000
-@@ -14,7 +14,7 @@
- include( $${QWT_ROOT}/qwtbuild.pri )
+--- ./src/src.pro.orig	2012-11-30 13:22:47.000000000 +0000
++++ ./src/src.pro	2012-12-13 12:53:01.312756345 +0000
+@@ -15,7 +15,7 @@
+ include( $${QWT_ROOT}/qwtfunctions.pri )
  
  TEMPLATE          = lib
--TARGET            = $$qtLibraryTarget(qwt)
-+TARGET            = $$qtLibraryTarget(qwt$${QWT_VER_MAJ})
+-TARGET            = $$qwtLibraryTarget(qwt)
++TARGET            = $$qwtLibraryTarget(qwt$${QWT_VER_MAJ})
  
  DESTDIR           = $${QWT_ROOT}/lib
  
-@@ -220,7 +220,7 @@
+@@ -221,7 +221,7 @@
  unix:doc.files += $${QWT_ROOT}/doc/man
  doc.path       = $${QWT_INSTALL_DOCS}
  

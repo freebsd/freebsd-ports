@@ -1,13 +1,7 @@
-# New ports collection makefile for:	qwt5-designerplugin
-# Date created:		2010-07-02
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qwt
-PORTVERSION=	6.0.1
-PORTREVISION=	1
+PORTVERSION=	6.0.2
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-designerplugin

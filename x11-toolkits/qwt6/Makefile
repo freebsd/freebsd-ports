@@ -1,13 +1,7 @@
-# New ports collection makefile for:	qwt-devel
-# Date created:		2006-12-08
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qwt
-PORTVERSION=	6.0.1
-PORTREVISION=	1
+PORTVERSION=	6.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
@@ -25,14 +19,21 @@ DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
 LATEST_LINK=	qwt6
 
+PORTDOCS=	*
 PLIST_SUB=	INCLUDEDIR=include/${LATEST_LINK} \
 		SHLIB_VER=${PORTVERSION} \
-		SHLIB_SHVER=${PORTVERSION:R}
+		SHLIB_SHVER=${PORTVERSION:R} \
+		QT_MKSPECDIR=share/qt4/mkspecs
 
 STRIP_FILES=	lib/libqwt6.so.${PORTVERSION} \
 		lib/libqwtmathml.so.${PORTVERSION}
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	cd ${WRKSRC} && \
+	${REINPLACE_CMD} -e 's,qwtAddLibrary(qwt),qwtAddLibrary(qwt6),g' \
+		qwt.prf textengines/textengines.pri
 
 do-configure:
 	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})
