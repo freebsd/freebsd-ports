@@ -3,6 +3,7 @@
 
 PORTNAME=	blastbeat
 PORTVERSION=	20121205
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GH GHC
 
@@ -44,7 +45,7 @@ do-install:
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} examples ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
