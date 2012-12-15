@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mytop
-# Date created:				28 Augest 2000
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mytop
 PORTVERSION=	1.6

@@ -1,11 +1,5 @@
-# New ports collection makefile for:	Gentium Font Family
-# Date created:		March 31 2004
-# Whom:			Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
-# This port is shamelessly copied from Joe Marcus Clarke's bitstream-vera
-# port.
 
 PORTNAME=	gentium-basic
 PORTVERSION=	1.1.0
@@ -17,7 +11,7 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Gentium Basic and Gentium Book Basic TrueType fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ttf-sil-${PORTNAME}-${PORTVERSION:C@\.[[:digit:]]+$@@}

@@ -1,9 +1,5 @@
-# New ports collection Makefile for: RT-Extension-SLA
-# Date created:	        23 August 2008
-# Whom:                 Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
 
 PORTNAME=	RT-Extension-SLA
 PORTVERSION=	0.07

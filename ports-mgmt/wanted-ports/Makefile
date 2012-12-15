@@ -1,10 +1,5 @@
-# New ports collection makefile for:  wanted-ports
-# Date created:    7 June 2010
-# Whom:            Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
 # $FreeBSD$
-#
-# port is self-contained in the files directory.
 
 PORTNAME=	wanted-ports
 PORTVERSION=	0.2
