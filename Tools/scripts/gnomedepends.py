@@ -69,7 +69,7 @@ regobj = re.compile('^@dirrm (?P<dirname>\S+).*$')
 for portdir in gnomeports:
 	try:
 		lines = readfile(os.path.join(portdir, 'pkg-plist'))
-		lines = filter(lines, regobj)
+		lines = list(filter(lines, regobj))
 		if len(lines) > 0:
 			newgnomeports.append([portdir, lines])
 	except IOError:
@@ -79,14 +79,14 @@ newgnomeports = []
 
 try:
 	currplist = readfile('pkg-plist')
-except IOError, errmsg:
-	print errmsg
+except IOError as errmsg:
+	print(errmsg)
 	sys.exit(1)
 
 regobj = re.compile('^(?!@)(?P<dirname>\S+)/.*')
-currdirs = filter(currplist, regobj)
+currdirs = list(filter(currplist, regobj))
 regobj = re.compile('^@dirrm (?P<dirname>\S+).*$')
-currdirs.extend(filter(currplist, regobj))
+currdirs.extend(list(filter(currplist, regobj)))
 currportdir = os.getcwd()
 
 newcurrdirs = []
