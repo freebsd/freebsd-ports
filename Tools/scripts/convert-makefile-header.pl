@@ -41,6 +41,17 @@ sub get_creator($) {
 	return $creator;
 }
 
+sub get_mcom($) {
+	my $header=shift;
+	my $mcom;
+	for my $line (@$header) {
+		if ($line=~m'\$MCom:'i) {
+			return $line;
+		}
+	}
+	return "";
+}
+
 MAIN: {
 	# get options
 	my $opt={};
@@ -86,12 +97,14 @@ MAIN: {
 				print $outh "# \$FreeBSD\$\n";
 			} elsif(defined($opt->{createdby}) || !defined($opt->{rcsonly})) {
 				my $creator=get_creator(\@header);
+				my $mcom=get_mcom(\@header);
 				if(defined($creator)) {
 					print $outh "# Created by: $creator\n";
 				} else {
 					print STDERR "$mf creator not found. Reverting to RCS string only.\n";
 				}
 				print $outh "# \$FreeBSD\$\n";
+				print $outh $mcom;
 			}
 		
 			for my $line (@makefile) {
