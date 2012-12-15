@@ -53,6 +53,7 @@
     SUBDIR += bins
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
+    SUBDIR += blastbeat
     SUBDIR += blogsum
     SUBDIR += bluefish
     SUBDIR += bluefish-devel
