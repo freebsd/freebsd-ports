@@ -171,7 +171,7 @@ PLIST_SUB+=	FIREBIRD="@comment "
 .endif
 
 # Firebird module is still experimental
-.if ${PORT_OPTIONS:MFIREBIRD} && empty(${PORT_OPTIONS:MEXPERIMENTAL}
+.if ${PORT_OPTIONS:MFIREBIRD} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 

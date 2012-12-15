@@ -826,7 +826,6 @@ include/freeradius/vqp.h
 @dirrmtry share/examples/freeradius
 @dirrmtry share/doc/freeradius/rfc
 @dirrmtry share/doc/freeradius
-@dirrmtry %%LIBDIR%%
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
 @exec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
 @exec mkdir -p /var/run/radiusd
