@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Event
-# Date created:		29 Apr 2001
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Event
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
