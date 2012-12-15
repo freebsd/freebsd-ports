@@ -51,26 +51,27 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
 		--disable-krb4
 
-OPTIONS_DEFINE=		BDB MYSQL PGSQL SQLITE SQLITE3 ALWAYSTRUE AUTHDAEMOND \
-			DEV_URANDOM KEEP_DB_OPEN OBSOLETE_CRAM_ATTR CRAM \
-			DIGEST LOGIN NTLM OTP PLAIN SCRAM
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=		ALWAYSTRUE AUTHDAEMOND KEEP_DB_OPEN \
+			OBSOLETE_CRAM_ATTR BDB MYSQL PGSQL
+OPTIONS_RADIO=		SQLITE
+OPTIONS_RADIO_SQLITE=	SQLITE2 SQLITE3
+OPTIONS_GROUP=		MECH
+OPTIONS_GROUP_MECH=	CRAM DIGEST LOGIN NTLM OTP PLAIN SCRAM
 OPTIONS_DEFAULT=	AUTHDAEMOND OBSOLETE_CRAM_ATTR CRAM DIGEST LOGIN NTLM \
 			OTP PLAIN SCRAM
-NO_OPTIONS_SORT=	yes
-SQLITE_DESC=		Enable SQLite2 backend
-SQLITE3_DESC=		Enable SQLite3 backend
-ALWAYSTRUE_DESC=	Enable the alwaystrue password verifier
-AUTHDAEMOND_DESC=	Enable use of authdaemon
-DEV_URANDOM_DESC=	Use /dev/urandom
+ALWAYSTRUE_DESC=	the alwaystrue password verifier
+AUTHDAEMOND_DESC=	use of authdaemon
 KEEP_DB_OPEN_DESC=	Keep handle to Berkeley DB open
-OBSOLETE_CRAM_ATTR_DESC=Enable cmusaslsecretCRAM-MD5 property
-CRAM_DESC=		Enable CRAM-MD5 authentication
-DIGEST_DESC=		Enable DIGEST-MD5 authentication
-LOGIN_DESC=		Enable LOGIN authentication
-NTLM_DESC=		Enable NTLM authentication
-OTP_DESC=		Enable OTP authentication
-PLAIN_DESC=		Enable PLAIN authentication
-SCRAM_DESC=		Enable SCRAM authentication
+OBSOLETE_CRAM_ATTR_DESC=cmusaslsecretCRAM-MD5 property
+SQLITE2_DESC=		SQLite 2 database
+CRAM_DESC=		CRAM-MD5 authentication
+DIGEST_DESC=		DIGEST-MD5 authentication
+LOGIN_DESC=		LOGIN authentication
+NTLM_DESC=		NTLM authentication
+OTP_DESC=		OTP authentication
+PLAIN_DESC=		PLAIN authentication
+SCRAM_DESC=		SCRAM authentication
 
 .include <bsd.port.pre.mk>
 
@@ -101,11 +102,7 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 CONFIGURE_ARGS+=--without-pgsql
 .endif
 
-.if ${PORT_OPTIONS:MSQLITE} && ${PORT_OPTIONS:MSQLITE3}
-BROKEN=		SQLITE and SQLITE3 are mutually exclusive.
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
+.if ${PORT_OPTIONS:MSQLITE2}
 USE_SQLITE=	2
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
@@ -120,14 +117,10 @@ CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
-    ${PORT_OPTIONS:MSQLITE} || ${PORT_OPTIONS:MSQLITE3}
+    ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
 CONFIGURE_ARGS+=--enable-sql
 .else
 SQL=	"@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEV_URANDOM}
-CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
 .endif
 
 .if ${PORT_OPTIONS:MALWAYSTRUE}
