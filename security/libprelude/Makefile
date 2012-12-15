@@ -2,27 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.24.1
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-technologies.com/download/releases/${PORTNAME}/
+MASTER_SITES=	https://www.prelude-ids.org/attachments/download/241/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework library for Prelude NIDS
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		gpg-error:${PORTSDIR}/security/libgpg-error \
+		nettle:${PORTSDIR}/security/nettle \
+		p11-kit:${PORTSDIR}/security/p11-kit
 
 OPTIONS_DEFINE=	PERL PYTHON DOCS
 
-BROKEN=		does not configure
-
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool libltdl
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-gtk-doc=no \
 		--with-html-dir=${PREFIX}/share/doc
+USE_GMAKE=	yes
+USE_PKGCONFIG=	build
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		prelude-admin.1
 PORTDOCS=	*
@@ -30,22 +39,21 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=		yes
-.include "${PORTSDIR}/Mk/bsd.perl.mk"
-CONFIGURE_ARGS+=	--with-perl
-PLIST_SUB+=		WITH_PERL=""
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--with-perl
+PLIST_SUB+=	PERL=""
 .else
-CONFIGURE_ARGS+=	--without-perl
-PLIST_SUB+=		WITH_PERL="@comment "
+CONFIGURE_ARGS+=--without-perl
+PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--with-python
-PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
+CONFIGURE_ARGS+=--with-python
+PLIST_SUB+=	PYTHON="" PYTHON_VER="${PYTHON_VER}" VERSION="${PORTVERSION}"
 .else
-CONFIGURE_ARGS+=	--without-python
-PLIST_SUB+=		WITH_PYTHON="@comment "
+CONFIGURE_ARGS+=--without-python
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -55,38 +63,24 @@ BROKEN=		Does not compile
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^install-data-am:/s|install-data-local||' ${WRKSRC}/docs/api/Makefile.in
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1
+.for f in client.conf global.conf idmef-client.conf tls.conf
+	${INSTALL_DATA} ${WRKSRC}/${f} \
+		${PREFIX}/etc/prelude/default/${f}-dist
+.if !exists(${PREFIX}/etc/prelude/default/${f})
+	(cd ${PREFIX}/etc/prelude/default && ${CP} -p ${f}-dist ${f})
+.endif
+.endfor
+.if ${PORT_OPTIONS:MPERL}
+	-@${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/perllocal.pod
+.endif
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1/
-	@${INSTALL_DATA} ${WRKSRC}/client.conf \
-	                ${PREFIX}/etc/prelude/default/client.conf-dist
-	@${INSTALL_DATA} ${WRKSRC}/global.conf \
-	                ${PREFIX}/etc/prelude/default/global.conf-dist
-	@${INSTALL_DATA} ${WRKSRC}/tls.conf \
-	                ${PREFIX}/etc/prelude/default/tls.conf-dist
-	@${INSTALL_DATA} ${WRKSRC}/idmef-client.conf \
-	                ${PREFIX}/etc/prelude/default/idmef-client.conf-dist
-
-	@if [ ! -f ${PREFIX}/etc/prelude/default/client.conf ]; then \
-	   ${CP} -p ${PREFIX}/etc/prelude/default/client.conf-dist \
-	      ${PREFIX}/etc/prelude/default/client.conf ; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/prelude/default/global.conf ]; then \
-	   ${CP} -p ${PREFIX}/etc/prelude/default/global.conf-dist \
-	      ${PREFIX}/etc/prelude/default/global.conf ; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/prelude/default/idmef-client.conf ]; then \
-	   ${CP} -p ${PREFIX}/etc/prelude/default/idmef-client.conf-dist \
-	      ${PREFIX}/etc/prelude/default/idmef-client.conf ; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/prelude/default/tls.conf ]; then \
-	   ${CP} -p ${PREFIX}/etc/prelude/default/tls.conf-dist \
-	      ${PREFIX}/etc/prelude/default/tls.conf ; \
-	fi
 
 .include <bsd.port.post.mk>

@@ -14,12 +14,10 @@ lib/prelude-manager/filters/thresholding.so
 lib/prelude-manager/filters/thresholding.la
 lib/prelude-manager/decodes/normalize.so
 lib/prelude-manager/decodes/normalize.la
-%%WITH_PRELUDEDB%%lib/prelude-manager/reports/db.la
-%%WITH_PRELUDEDB%%lib/prelude-manager/reports/db.so
+lib/prelude-manager/reports/db.la
+lib/prelude-manager/reports/db.so
 lib/prelude-manager/reports/debug.la
 lib/prelude-manager/reports/debug.so
-lib/prelude-manager/reports/relaying.la
-lib/prelude-manager/reports/relaying.so
 lib/prelude-manager/reports/smtp.la
 lib/prelude-manager/reports/smtp.so
 lib/prelude-manager/reports/textmod.la
@@ -38,6 +36,4 @@ lib/prelude-manager/reports/textmod.so
 @dirrmtry lib/prelude-manager
 @dirrmtry include/prelude-manager
 @dirrmtry etc/prelude-manager
-@dirrmtry /var/run/prelude-manager
-@dirrmtry /var/spool/prelude-manager
 @unexec echo "If you are permanently removing this port, you should remove ${PKG_PREFIX}/etc/prelude-manager, /var/run/prelude-manager and /var/spool/prelude-manager directories to clean up any files left." | fmt
