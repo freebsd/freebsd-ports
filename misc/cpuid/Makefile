@@ -1,4 +1,4 @@
-# Created by:				ijliao
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	cpuid
