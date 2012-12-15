@@ -1,9 +1,5 @@
-# New ports collection Makefile for: RT-Authen-ExternalAuth
-# Date created:	        19 December 2008
-# Whom:                 Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
 
 PORTNAME=	RT-Authen-ExternalAuth
 DISTVERSION=	0.11

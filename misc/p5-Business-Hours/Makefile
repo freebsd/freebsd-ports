@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Business-Hours
-# Date created:    23 August 2008
-# Whom:            Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
 
 PORTNAME=	Business-Hours
 PORTVERSION=	0.10

@@ -1,9 +1,5 @@
-# New ports collection Makefile for: RT-Extension-LDAPImport
-# Date created:	        24 August 2008
-# Whom:                 Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
 
 PORTNAME=	RT-Extension-LDAPImport
 PORTVERSION=	0.33

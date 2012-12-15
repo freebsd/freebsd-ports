@@ -1,7 +1,5 @@
-# Created by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
+# Created by: Matthew Seaman
 # $FreeBSD$
-#
-# Port is self-contained in the files directory.
 
 PORTNAME=	sa-utils
 PORTVERSION=	0.02
