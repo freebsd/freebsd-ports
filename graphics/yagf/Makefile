@@ -3,15 +3,23 @@
 
 PORTNAME=	yagf
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	Graphical interface for the cuneiform OCR program
+COMMENT=	Graphical interface for an OCR program (cuneiform and tesseract)
 
 LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+OPTIONS_MULTI=		OCRENGINE
+OPTIONS_MULTI_OCRENGINE=CUNEIFORM TESSERACT
+CUNEIFORM_DESC=		Cuneiform OCR engine
+TESSERACT_DESC=		Tesseract OCR engine
+
+OPTIONS_DEFAULT=	CUNEIFORM
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
@@ -26,5 +34,14 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 post-install:
 	-update-desktop-database
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCUNEIFORM}
+RUN_DEPENDS+=	cuneiform:${PORTSDIR}/graphics/cuneiform
+.endif
+.if ${PORT_OPTIONS:MTESSERACT}
+RUN_DEPENDS+=	tesseract:${PORTSDIR}/graphics/tesseract
+.endif
 
 .include <bsd.port.mk>
