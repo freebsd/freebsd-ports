@@ -1,4 +1,4 @@
-# Created By: Alejandro Pulver <alejandro@varnet.biz>
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
 
 PORTNAME=	adime
