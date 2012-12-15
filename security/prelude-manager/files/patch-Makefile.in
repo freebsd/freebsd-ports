@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-04-28 13:56:31.000000000 +0200
-+++ Makefile.in	2008-04-29 11:30:33.000000000 +0200
-@@ -927,17 +927,8 @@
+--- Makefile.in.orig	2012-06-13 12:25:15.000000000 +0200
++++ Makefile.in	2012-12-15 21:04:06.000000000 +0100
+@@ -1425,17 +1425,7 @@
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_run_dir);
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_scheduler_dir);
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_failover_dir);
@@ -16,7 +16,6 @@
 -		$(INSTALL) -m 600 $(top_builddir)/prelude-manager.conf $(DESTDIR)$(configdir)/;                          \
 -	fi                                                                                                   
 +	$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist
-+
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+ 
+ dist-hook:
+ 	@if test -d "$(srcdir)/.git"; then      \

@@ -1,29 +1,25 @@
-# New ports collection makefile for:	prewikka
-# Date created:				2006-03-13
-# Whom:					Robin Gruyters <r.gruyters@yirdis.nl>
-#
+# Created by: Robin Gruyters <r.gruyters@yirdis.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	prewikka
-PORTVERSION=	0.9.17.1
-PORTREVISION=	2
+PORTVERSION=	1.0.1p1
 CATEGORIES=	www security python
-MASTER_SITES=	http://www.prelude-technologies.com/download/releases/${PORTNAME}/
-
+MASTER_SITES=	https://www.prelude-ids.org/attachments/download/286/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for the Prelude IDS
 
 BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	prelude.20:${PORTSDIR}/security/libprelude \
-		preludedb.4:${PORTSDIR}/security/libpreludedb
+LIB_DEPENDS=	prelude:${PORTSDIR}/security/libprelude \
+		preludedb:${PORTSDIR}/security/libpreludedb
 
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
@@ -34,7 +30,7 @@ post-patch:
 	${MV} ${WRKSRC}/conf/prewikka.conf ${WRKSRC}/conf/prewikka.conf-dist
 	${REINPLACE_CMD} 's,conf/prewikka.conf,conf/prewikka.conf-dist,' \
 	   ${WRKSRC}/setup.py
-.if defined(WITHOUT_NLS)
+.if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} 's,\(.*self.data_files.extend(self._compile_po_files())\),#\1,' \
 	   ${WRKSRC}/setup.py
 .endif

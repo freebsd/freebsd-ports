@@ -16,18 +16,21 @@ etc/prelude-lml/ruleset/checkpoint.rules
 etc/prelude-lml/ruleset/cisco-asa.rules
 etc/prelude-lml/ruleset/cisco-common.rules
 etc/prelude-lml/ruleset/cisco-css.rules
+etc/prelude-lml/ruleset/cisco-ips-4200.rules
 etc/prelude-lml/ruleset/cisco-ips.rules
 etc/prelude-lml/ruleset/cisco-router.rules
 etc/prelude-lml/ruleset/cisco-vpn.rules
 etc/prelude-lml/ruleset/clamav.rules
 etc/prelude-lml/ruleset/dell-om.rules
 etc/prelude-lml/ruleset/f5-bigip.rules
+etc/prelude-lml/ruleset/freeradius.rules
 etc/prelude-lml/ruleset/grsecurity.rules
 etc/prelude-lml/ruleset/honeyd.rules
 etc/prelude-lml/ruleset/honeytrap.rules
 etc/prelude-lml/ruleset/httpd.rules
 etc/prelude-lml/ruleset/ipchains.rules
 etc/prelude-lml/ruleset/ipfw.rules
+etc/prelude-lml/ruleset/juniper.rules
 etc/prelude-lml/ruleset/kojoney.rules
 etc/prelude-lml/ruleset/linksys-wap11.rules
 etc/prelude-lml/ruleset/modsecurity.rules
@@ -53,6 +56,7 @@ etc/prelude-lml/ruleset/selinux.rules
 etc/prelude-lml/ruleset/sendmail.rules
 etc/prelude-lml/ruleset/shadow-utils.rules
 etc/prelude-lml/ruleset/single.rules
+etc/prelude-lml/ruleset/snare_windows.rules
 etc/prelude-lml/ruleset/sonicwall.rules
 etc/prelude-lml/ruleset/spamassassin.rules
 etc/prelude-lml/ruleset/squid.rules
@@ -60,6 +64,7 @@ etc/prelude-lml/ruleset/ssh.rules
 etc/prelude-lml/ruleset/su.rules
 etc/prelude-lml/ruleset/sudo.rules
 etc/prelude-lml/ruleset/suhosin.rules
+etc/prelude-lml/ruleset/symantec.rules
 etc/prelude-lml/ruleset/tripwire.rules
 etc/prelude-lml/ruleset/vigor.rules
 etc/prelude-lml/ruleset/vpopmail.rules
@@ -70,8 +75,8 @@ lib/prelude-lml/debug.la
 lib/prelude-lml/debug.so
 lib/prelude-lml/pcre.la
 lib/prelude-lml/pcre.so
-@dirrm include/prelude-lml
 @dirrm lib/prelude-lml
+@dirrm include/prelude-lml
 @dirrm etc/prelude-lml/ruleset
 @dirrmtry etc/prelude-lml
 @unexec echo "If you are permanently removing this port, you should remove ${PKG_PREFIX}/etc/prelude-lml and /var/spool/prelude-lml directories to clean up any configuration and logfile metadata files left." | fmt

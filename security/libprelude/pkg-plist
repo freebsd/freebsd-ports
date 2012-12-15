@@ -16,9 +16,12 @@ etc/prelude/default/tls.conf-dist
 @exec if [ ! -f %D/etc/prelude/default/tls.conf ] ; then cp -p %D/%F %B/tls.conf; fi
 include/libprelude/common.h
 include/libprelude/daemonize.h
+include/libprelude/idmef.h
+include/libprelude/idmef.hxx
 include/libprelude/idmef-additional-data.h
 include/libprelude/idmef-class.h
 include/libprelude/idmef-criteria.h
+include/libprelude/idmef-criteria.hxx
 include/libprelude/idmef-criterion-value.h
 include/libprelude/idmef-data.h
 include/libprelude/idmef-message-helpers.h
@@ -27,19 +30,29 @@ include/libprelude/idmef-message-print.h
 include/libprelude/idmef-message-read.h
 include/libprelude/idmef-message-write.h
 include/libprelude/idmef-path.h
+include/libprelude/idmef-path.hxx
 include/libprelude/idmef-time.h
+include/libprelude/idmef-time.hxx
 include/libprelude/idmef-tree-data.h
 include/libprelude/idmef-tree-wrap.h
-include/libprelude/idmef-value-type.h
 include/libprelude/idmef-value.h
-include/libprelude/idmef.h
+include/libprelude/idmef-value.hxx
+include/libprelude/idmef-value-type.h
+include/libprelude/prelude.h
+include/libprelude/prelude.hxx
 include/libprelude/prelude-async.h
-include/libprelude/prelude-client-profile.h
 include/libprelude/prelude-client.h
+include/libprelude/prelude-client.hxx
+include/libprelude/prelude-client-easy.hxx
+include/libprelude/prelude-client-profile.h
+include/libprelude/prelude-client-profile.hxx
 include/libprelude/prelude-config.h
-include/libprelude/prelude-connection-pool.h
 include/libprelude/prelude-connection.h
+include/libprelude/prelude-connection.hxx
+include/libprelude/prelude-connection-pool.h
+include/libprelude/prelude-connection-pool.hxx
 include/libprelude/prelude-error.h
+include/libprelude/prelude-error.hxx
 include/libprelude/prelude-extract.h
 include/libprelude/prelude-failover.h
 include/libprelude/prelude-hash.h
@@ -49,6 +62,7 @@ include/libprelude/prelude-io.h
 include/libprelude/prelude-linked-object.h
 include/libprelude/prelude-list.h
 include/libprelude/prelude-log.h
+include/libprelude/prelude-log.hxx
 include/libprelude/prelude-message-id.h
 include/libprelude/prelude-msg.h
 include/libprelude/prelude-msgbuf.h
@@ -58,21 +72,31 @@ include/libprelude/prelude-plugin.h
 include/libprelude/prelude-string.h
 include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
-include/libprelude/prelude.h
+lib/libprelude.a
 lib/libprelude.la
 lib/libprelude.so
-lib/libprelude.so.20
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude-0.9.24.1-py%%PYTHON_VER%%.egg-info
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
+lib/libprelude.so.21
+lib/libpreludecpp.a
+lib/libpreludecpp.la
+lib/libpreludecpp.so
+lib/libpreludecpp.so.3
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/.packlist
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy-%%VERSION%%-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_PreludeEasy.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude-%%VERSION%%-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 libdata/pkgconfig/libprelude.pc
 share/aclocal/libprelude.m4
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude
 @dirrm include/libprelude
 @dirrm etc/prelude/default
 @dirrmtry etc/prelude/profile

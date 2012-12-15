@@ -1,29 +1,38 @@
-# New ports collection makefile for:	prelude-lml
-# Date created:			Sun Aug 4 19:31:17 CEST 2002
-# Whom:				Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
 
 PORTNAME=	prelude-lml
-PORTVERSION=	0.9.15
-PORTREVISION=	3
+PORTVERSION=	1.0.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-technologies.com/download/releases/${PORTNAME}/
+MASTER_SITES=	https://www.prelude-ids.org/attachments/download/242/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
-LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu \
+		pcre:${PORTSDIR}/devel/pcre \
+		gmp:${PORTSDIR}/math/gmp \
+		gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		gpg-error:${PORTSDIR}/security/libgpg-error \
+		prelude:${PORTSDIR}/security/libprelude \
+		nettle:${PORTSDIR}/security/nettle \
+		p11-kit:${PORTSDIR}/security/p11-kit
 
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-lml
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
+USE_PKGCONFIG=	build
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	FAM
 
-.if defined(WITH_FAM)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFAM}
 USE_FAM=	yes
 CONFIGURE_ARGS+=	--enable-fam
 .else
@@ -40,4 +49,4 @@ post-install:
 	      ${PREFIX}/etc/prelude-lml/plugins.rules ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
