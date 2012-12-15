@@ -1,6 +1,6 @@
---- ./report.c.orig	2010-04-09 00:36:30.000000000 +0200
-+++ ./report.c	2010-04-11 19:05:39.000000000 +0200
-@@ -741,7 +741,7 @@
+--- ./src/report.c.orig	2012-09-24 11:55:23.000000000 -0400
++++ ./src/report.c	2012-09-24 11:55:32.000000000 -0400
+@@ -799,7 +799,7 @@
  static void copy_static_code(u8* out_dir) {
    struct dirent** d;
    ca_out_dir = out_dir;
