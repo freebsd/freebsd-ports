@@ -1,12 +1,9 @@
-# New ports collection makefile for:	brlcad
-# Date created:		Jan 2005
-# Whom:			Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	brlcad
 PORTVERSION=	7.22.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 
@@ -15,16 +12,22 @@ COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama	\
 		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		rle.1:${PORTSDIR}/graphics/urt
-
-BROKEN=		does not compile
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		drm:${PORTSDIR}/graphics/libdrm \
+		png15:${PORTSDIR}/graphics/png \
+		rle:${PORTSDIR}/graphics/urt \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
 
 USE_BZIP2=	yes
 USE_GL=		gl glu
-USE_XORG=	x11 xt xi xproto xext inputproto
+USE_XORG=	ice inputproto sm x11 xau xdamage xdmcp xext xfixes xft xi \
+		xproto xrender xscrnsaver xt xxf86vm
 USE_GMAKE=	yes
 USE_BISON=	build
+USE_TCL=	85
 USE_TK=		85
 USE_LDCONFIG=	yes
 
@@ -38,7 +41,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 CFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-L${LOCALBASE}/lib
-CMAKE_ARGS=	-DBRLCAD_ENABLE_STRICT:BOOL=OFF
+CMAKE_ARGS=	-DBRLCAD_ENABLE_STRICT:BOOL=OFF -DBRLCAD_TOGL=SYSTEM
 MANPREFIX=	${DATADIR}/${PORTVERSION}
 
 MAN1=	aliastorle.1 anim_script.1 anim_sort.1 anim_time.1 anim_track.1		\

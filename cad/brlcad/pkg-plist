@@ -219,7 +219,6 @@ bin/into
 bin/ios-icons.sh
 bin/ir-X
 bin/irdisp
-bin/isst
 bin/istats
 bin/jack-g
 bin/kurt
@@ -492,7 +491,6 @@ bin/wire
 bin/xbmtorle
 bin/xyz-pl
 bin/yuv-pix
-include/GL/glew.h
 include/brlcad/RtServerImpl.h
 include/brlcad/analyze.h
 include/brlcad/anim.h
@@ -737,9 +735,6 @@ include/tnt_stopwatch.h
 include/tnt_subscript.h
 include/tnt_vector.h
 include/tnt_version.h
-include/togl/togl.h
-include/togl/toglDecls.h
-include/togl/togl_config.h
 lib/Itcl3.4/pkgIndex.tcl
 lib/Itk3.4/pkgIndex.tcl
 lib/Iwidgets4.0.1/iwidgets.tcl
@@ -810,8 +805,6 @@ lib/Tktable2.10/license.txt
 lib/Tktable2.10/pkgIndex.tcl
 lib/Tktable2.10/tkTable.tcl
 lib/Tktable2.10/tktable.py
-lib/Togl2.1/pkgIndex.tcl
-lib/isst0.1/pkgIndex.tcl
 lib/itcl3.4/itcl.tcl
 lib/itk3.4/Archetype.itk
 lib/itk3.4/Toplevel.itk
@@ -872,7 +865,6 @@ lib/libicv.a
 lib/libicv.so
 lib/libicv.so.20
 lib/libicv.so.20.0.1
-lib/libissttcltk.so
 lib/libitcl.so
 lib/libitcl.so.3
 lib/libitcl.so.3.4
@@ -940,8 +932,6 @@ lib/libtermlib.a
 lib/libtermlib.so
 lib/libtkpng.so
 lib/libtkpng.so.0.8
-lib/libtogl.so
-lib/libtoglstub.a
 lib/libutahrle.a
 lib/libutahrle.so
 lib/libutahrle.so.19
@@ -2908,8 +2898,6 @@ libdata/pkgconfig/libwdb.pc
 @dirrm lib/tkpng0.8
 @dirrm lib/itk3.4
 @dirrm lib/itcl3.4
-@dirrm lib/isst0.1
-@dirrm lib/Togl2.1
 @dirrm lib/Tktable2.10
 @dirrm lib/Tkhtml3.0
 @dirrm lib/Iwidgets4.0.1/scripts
@@ -2917,12 +2905,10 @@ libdata/pkgconfig/libwdb.pc
 @dirrm lib/Itk3.4
 @dirrm lib/Itcl3.4
 @dirrm lib
-@dirrm include/togl
 @dirrm include/tie
 @dirrm include/openNURBS
 @dirrm include/express
 @dirrm include/exppp
 @dirrm include/brlcad
-@dirrm include/GL
 @dirrm include
 @dirrm bin
