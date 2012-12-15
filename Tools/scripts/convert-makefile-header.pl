@@ -28,6 +28,8 @@ Usage: $bn [OPTION] PORT
 _ENOUSAGE
 }
 
+my $nicepeople=".*(avilla@|bapt@|bdrewery@|beat@|eadler@|flo@|flz@|garga@|bsdkaffee@|linimon@|makc@|araujo@|rm@|villa.alberto@).*";
+
 sub get_creator($) {
 	my $header=shift;
 	my $creator;
@@ -99,7 +101,9 @@ MAIN: {
 				my $creator=get_creator(\@header);
 				my $mcom=get_mcom(\@header);
 				if(defined($creator)) {
-					print $outh "# Created by: $creator\n";
+					if ($creator!~m"$nicepeople"i) {
+						print $outh "# Created by: $creator\n";
+					}
 				} else {
 					print STDERR "$mf creator not found. Reverting to RCS string only.\n";
 				}
