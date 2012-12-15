@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gpsbabel
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	astro geography
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	https://secure.ohos.nl/downloads/ \
+		LOCAL/beech
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dev2@heesakkers.info
 COMMENT=	A GPS file translating tool
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
