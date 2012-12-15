@@ -7,12 +7,12 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.0a3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
-DISTFILES=	$(PORTNAME)_$(DISTVERSION).tar.gz
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(DISTVERSION)/source/
+DISTFILES=	syslog-ng-3.4.0alpha3-20121210-v3.4.0alpha3-176-gfded.tar.gz
+MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/3.4/3.4.0alpha3/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
@@ -29,8 +29,7 @@ OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		IPV6 "Build with IPV6 support" on \
 		PCRE "Build with PCRE support" on \
 		SMTP "Build with SMTP support" off \
-		JSON_C "Build with JSON-C support" off \
-		JSON_GLIB "Build with JSON-GLIB support" off \
+		JSON "Build with JSON-C support" off \
 
 .include <bsd.port.options.mk>
 
@@ -121,19 +120,10 @@ PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
 CONFIGURE_ARGS+=	--disable-sql
 .endif
 
-.if defined(WITH_JSON_C) && defined(WITH_JSON_GLIB)
-BROKEN=		JSON_C and JSON_GLIB are mutually exclusive
-.endif
-
-.if defined(WITH_JSON_GLIB)
-LIB_DEPENDS+=		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
-CONFIGURE_ARGS+=	--with-json=json-glib
-PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
-.elif defined(WITH_JSON_C)
+.if defined(WITH_JSON)
 LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
-CONFIGURE_ARGS+=	--with-json=json-c
-PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
-PLIST_FILES+= 		lib/syslog-ng/libjsonparser.so lib/syslog-ng/libjsonparser.la
+CONFIGURE_ARGS+=	--enable-json
+PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.la lib/syslog-ng/libjson-plugin.so
 .else
 CONFIGURE_ARGS+=        --disable-json
 .endif
@@ -145,13 +135,6 @@ CONFIGURE_ARGS+=        --disable-linux-caps
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
-.if ${OSVERSION} >= 900007
-	@${REINPLACE_CMD} \
-		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
-		-e 's|ut_name|ut_user|' \
-		${WRKSRC}/configure ${WRKSRC}/modules/afuser/afuser.c \
-		${WRKSRC}/lib/utils.c ${WRKSRC}/lib/utils.h
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
