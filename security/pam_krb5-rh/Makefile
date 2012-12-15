@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_krb5
-DISTVERSION=	2.3.13-1
+DISTVERSION=	2.4.1
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -25,10 +25,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} --without-afs \
 		--with-libintl-prefix=${LOCALBASE} --with-krb4=no \
 		--without-keyutils
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN5=		pam_krb5.5
-MAN8=		pam_krb5.8 pam_krb5_storetmp.8
+MAN8=		pam_krb5.8 pam_krb5_cchelper.8
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -37,6 +37,12 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS=""
 LDFLAGS+=	-lintl
 USE_GETTEXT=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not build on FreeBSD 7.x
 .endif
 
 post-patch:
@@ -48,4 +54,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PAM_AUTHTOK_RECOVER_ERR|PAM_AUTHTOK_RECOVERY_ERR|g' \
 		${WRKSRC}/src/password.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

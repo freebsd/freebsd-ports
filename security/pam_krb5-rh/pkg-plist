@@ -1,4 +1,4 @@
-lib/pam_krb5/pam_krb5_storetmp
+lib/pam_krb5/pam_krb5_cchelper
 lib/pam_krb5.so
 lib/pam_krb5.la
 @dirrm lib/pam_krb5
