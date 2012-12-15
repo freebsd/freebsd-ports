@@ -1,13 +1,9 @@
-# New ports collection makefile for:	suricata
-# Date created:		Sun Aug 29 16:39:08 BRT 2010
-# Whom:			Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
-#
+# Created by: Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	suricata
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
