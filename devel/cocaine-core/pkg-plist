@@ -1,0 +1,67 @@
+bin/cocaine-runtime
+bin/cocaine-tool
+include/cocaine/api/client.hpp
+include/cocaine/api/driver.hpp
+include/cocaine/api/event.hpp
+include/cocaine/api/isolate.hpp
+include/cocaine/api/logger.hpp
+include/cocaine/api/reactor.hpp
+include/cocaine/api/sandbox.hpp
+include/cocaine/api/service.hpp
+include/cocaine/api/storage.hpp
+include/cocaine/api/stream.hpp
+include/cocaine/app.hpp
+include/cocaine/archive.hpp
+include/cocaine/asio.hpp
+include/cocaine/auth.hpp
+include/cocaine/cached.hpp
+include/cocaine/common.hpp
+include/cocaine/config.hpp
+include/cocaine/context.hpp
+include/cocaine/engine.hpp
+include/cocaine/exceptions.hpp
+include/cocaine/forwards.hpp
+include/cocaine/helpers/atomic.hpp
+include/cocaine/helpers/birth_control.hpp
+include/cocaine/helpers/format.hpp
+include/cocaine/helpers/json.hpp
+include/cocaine/helpers/pid_file.hpp
+include/cocaine/io.hpp
+include/cocaine/isolates/process.hpp
+include/cocaine/loggers/files.hpp
+include/cocaine/loggers/stdout.hpp
+include/cocaine/loggers/syslog.hpp
+include/cocaine/logging.hpp
+include/cocaine/manifest.hpp
+include/cocaine/profile.hpp
+include/cocaine/repository.hpp
+include/cocaine/rpc.hpp
+include/cocaine/session.hpp
+include/cocaine/slave.hpp
+include/cocaine/storages/files.hpp
+include/cocaine/traits.hpp
+include/cocaine/traits/json.hpp
+include/cocaine/traits/policy.hpp
+include/cocaine/traits/unique_id.hpp
+include/cocaine/unique_id.hpp
+include/json/autolink.h
+include/json/config.h
+include/json/features.h
+include/json/forwards.h
+include/json/json.h
+include/json/reader.h
+include/json/value.h
+include/json/writer.h
+lib/libcocaine-common.so
+lib/libcocaine-common.so.2
+lib/libcocaine-core.so
+lib/libcocaine-core.so.2
+lib/libjson.a
+@dirrm include/cocaine/traits
+@dirrm include/cocaine/storages
+@dirrm include/cocaine/loggers
+@dirrm include/cocaine/isolates
+@dirrm include/cocaine/helpers
+@dirrm include/cocaine/api
+@dirrm include/cocaine
+@dirrm include/json

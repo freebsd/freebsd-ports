@@ -235,6 +235,7 @@
     SUBDIR += cmph
     SUBDIR += cmunge
     SUBDIR += cobf
+    SUBDIR += cocaine-core
     SUBDIR += coccinelle
     SUBDIR += codeblocks
     SUBDIR += codeworker
