@@ -2923,6 +2923,7 @@ bin/pysolfc
 %%DATADIR%%/tiles/stretch/Sunset.gif
 %%NLS%%share/locale/ru/LC_MESSAGES/pysol.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/pysol.mo
+share/pixmaps/pysolfc.png
 share/pixmaps/pysol.xbm
 share/pixmaps/pysol.xpm
 share/applications/pysol.desktop
@@ -2990,7 +2991,6 @@ share/icons/pysol02.png
 @dirrm %%DATADIR%%/cardset-dashavatara-ganjifa
 @dirrm %%DATADIR%%/cardset-crystal-mahjongg
 @dirrm %%DATADIR%%/cardset-2000
-@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pysollib/winsystems
 @dirrm %%PYTHON_SITELIBDIR%%/pysollib/tk
 @dirrm %%PYTHON_SITELIBDIR%%/pysollib/tile

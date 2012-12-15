@@ -1,19 +1,19 @@
-# New ports collection makefile for:	pysolfc
-# Date created:		2009-03-13
-# Whom:			Marcus von Appen
-#
+# Created by: Marcus von Appen
 # $FreeBSD$
-#
 
 PORTNAME=	pysolfc
 PORTVERSION=	2.0
-PORTREVISION=	2
-CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION}
-DISTNAME=	PySolFC-${PORTVERSION}
+PORTREVISION=	3
+CATEGORIES=	games python
+MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION} \
+		SF/${PORTNAME}/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}:cardsets
+DISTFILES=	PySolFC-${DISTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
@@ -24,14 +24,27 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	PySolFC
 
 DATADIR=	${PREFIX}/share/PySolFC
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/PySolFC-${PORTVERSION}
 PORTDOCS=	README
 
-OPTIONS=	NLS	"Native language support" on
+CARDSET_DUPS=	2000 crystal-mahjongg dashavatara-ganjifa dondorf \
+		gnome-mahjongg-1 hexadeck kintengu matrix mughal-ganjifa \
+		oxymoron standard tuxedo vienna-2k
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	CARDSETS DOCS NLS
+CARDSETS_DESC=	Install additional cardsets
 
-.if !defined(WITHOUT_NLS)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCARDSETS}
+DISTFILES+=	PySolFC-Cardsets-${DISTVERSION}${EXTRACT_SUFX}:cardsets
+PLIST_SUB+=	CARDSETS=""
+.else
+PLIST_SUB+=	CARDSETS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -41,14 +54,37 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${MV} ${WRKSRC}/pysol.py ${WRKSRC}/pysolfc
 	@${REINPLACE_CMD} -e 's|pysol.py|pysolfc|' ${WRKSRC}/setup.py
-.if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e "s|for l in ('ru', 'ru_RU')|for l in ()|" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|^Icon.*|Icon=${PORTNAME}|' \
+		-e 's|^Exec.*|Exec=${PORTNAME}|' \
+		${WRKSRC}/data/pysol.desktop
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e "s|for l in ('ru', 'ru_RU')|for l in ()|" \
+		${WRKSRC}/setup.py
 .endif
+	@${FIND} ${WRKDIR} -name .thumbnails -or -name .xvpics | \
+		${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
-.if !defined(NOPORTDOCS)
+
 post-install:
+	${LN} -sf ${PREFIX}/share/icons/pysol01.png \
+		${PREFIX}/share/pixmaps/${PORTNAME}.png
+.if ${PORT_OPTIONS:MCARDSETS}
+.for cdir in ${CARDSET_DUPS}
+	@${RM} -rf ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
+.endfor
+	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
+		${COPYTREE_SHARE} \* ${DATADIR}
+	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
+		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST}
+	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
+		${FIND} . -type d -mindepth 1 | ${SORT} -r | \
+		${SED} -e 's|^./|@dirrm ${DATADIR_REL}/|' >> ${TMPPLIST}
+.endif
+	@${ECHO} '@dirrm ${DATADIR_REL}' >> ${TMPPLIST}
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
