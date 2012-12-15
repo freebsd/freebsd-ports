@@ -1,6 +1,4 @@
-DBoxFE is a Qt4 frontend for DOSBox. With DBoxFE you can create and
-manage your configuration files very easily, which are needed by
-DOSBox. In addition it's also possible to create gameprofiles to
-generate different configuration files
+DBoxFE is a Qt4 frontend for DOSBox.  With DBoxFE you can easily
+create and manage configuration profiles for DOSBox.
 
-WWW:    http://chmaster.freeforge.net/dboxfe-project.htm
+WWW: http://chm-projects.de/?q=dboxfe
