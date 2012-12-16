@@ -8,10 +8,11 @@
 PORTNAME=	zip
 PORTVERSION=	3.0
 CATEGORIES=	archivers
-MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
+MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION} \
+		ftp://ftp.skysmurf.nl/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Create/update ZIP files compatible with PKZIP
 
 MAKEFILE=	unix/Makefile
