@@ -4,7 +4,7 @@
 PORTNAME=	salt
 PORTVERSION=	0.11.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://pypi.python.org/packages/source/s/salt/	
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system
