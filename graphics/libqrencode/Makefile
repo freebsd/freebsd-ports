@@ -1,13 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	libqrencode
-# Date created:			Dec 14, 2006
-# Whom:				ijliao
+# Created by:	ijliao
 #
 # $FreeBSD$
-#
 
 PORTNAME=	libqrencode
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://fukuchi.org/works/qrencode/
