@@ -488,6 +488,9 @@ bin/frescobaldi
 %%PYTHON_SITELIBDIR%%/frescobaldi_app/node.py
 %%PYTHON_SITELIBDIR%%/frescobaldi_app/node.pyc
 %%PYTHON_SITELIBDIR%%/frescobaldi_app/node.pyo
+%%PYTHON_SITELIBDIR%%/frescobaldi_app/open_file_at_cursor.py
+%%PYTHON_SITELIBDIR%%/frescobaldi_app/open_file_at_cursor.pyc
+%%PYTHON_SITELIBDIR%%/frescobaldi_app/open_file_at_cursor.pyo
 %%PYTHON_SITELIBDIR%%/frescobaldi_app/panel.py
 %%PYTHON_SITELIBDIR%%/frescobaldi_app/panel.pyc
 %%PYTHON_SITELIBDIR%%/frescobaldi_app/panel.pyo
