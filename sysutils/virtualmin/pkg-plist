@@ -191,6 +191,8 @@
 %%LIB32DIR%%/webmin/virtual-server/feature-webalizer.pl
 %%LIB32DIR%%/webmin/virtual-server/feature-webmin.pl
 %%LIB32DIR%%/webmin/virtual-server/fix-domain-quota.pl
+%%LIB32DIR%%/webmin/virtual-server/fix_modphp.cgi
+%%LIB32DIR%%/webmin/virtual-server/fix_symlinks.cgi
 %%LIB32DIR%%/webmin/virtual-server/fixperms.cgi
 %%LIB32DIR%%/webmin/virtual-server/frame_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/framefwd-template
