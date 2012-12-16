@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	mingw32-
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
-BINUTILVERSION=	2.23
+BINUTILVERSION=	2.23.1
 
 USE_BZIP2=	yes
 USE_GCC=	any
