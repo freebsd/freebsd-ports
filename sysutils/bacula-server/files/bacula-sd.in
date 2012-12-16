@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="bacula_sd"
-rcvar=bacula_sd_enable
+rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/bacula-sd
 
 load_rc_config $name

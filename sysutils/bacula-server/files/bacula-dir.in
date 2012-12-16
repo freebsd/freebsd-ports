@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="bacula_dir"
-rcvar=bacula_dir_enable
+rcvar=${name}_enable
 command=%%PREFIX%%/sbin/bacula-dir
 
 load_rc_config $name

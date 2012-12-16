@@ -54,6 +54,7 @@
     SUBDIR += backuppc
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
+    SUBDIR += bacula-client-static
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
     SUBDIR += bashburn

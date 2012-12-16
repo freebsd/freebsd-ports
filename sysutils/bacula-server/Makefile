@@ -1,19 +1,16 @@
-# New ports collection makefile for:	bacula
-# Date created:				24 February 2003
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bacula
 DISTVERSION=	5.2.12
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
+PKGNAMEPREFIX?=	#
+PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	dan@langille.org
-COMMENT?=	The network backup solution (server)
-
-CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]* bacula-docs-devel-[0-9]*
+COMMENT?=	Network backup solution (server)
 
 UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -22,26 +19,24 @@ GROUPS=		${USERS}
 
 PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITH_BAT) && !defined(WITH_NAGIOS_CHECK_ONLY)  #Till end of the file
-PKGNAMESUFFIX?=	-server
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX NLS OPENSSL
+OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
+MTX_DESC=		Install mtx for control of autochanger devices
 
-PORTDOCS=	VERIFYING \
-		technotes \
-		ChangeLog \
-		README \
-		ReleaseNotes \
-		LICENSE \
-		INSTALL
+.include <bsd.port.pre.mk>
+
+.if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
 .if !defined(WITH_CLIENT_ONLY)
+LIB_DEPENDS+=	bac:${PORTSDIR}/sysutils/bacula-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 
@@ -51,18 +46,15 @@ SUB_FILES+=	pkg-install.client pkg-deinstall.client pkg-message.client
 SUB_FILES+=	pkg-install.server pkg-deinstall.server pkg-message.server
 .endif
 
-#
 MANCOMPRESSED=	yes
 CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
-		--docdir=${DOCSDIR} \
-		--htmldir=${DOCSDIR} \
 		--with-readline=yes \
 		--disable-conio \
 		--enable-batch-insert \
-		--with-plugindir=${LOCALBASE}/lib \
+		--with-plugindir=${PREFIX}/lib \
 		--with-dump-email=root@localhost \
 		--with-job-email=root@localhost \
 		--with-db-name=bacula \
@@ -79,18 +71,6 @@ CONFIGURE_ARGS+=--with-dir-user=${BACULA_USER} \
 		--with-sd-user=${BACULA_USER} \
 		--with-sd-group=operator
 .endif
-
-.if defined(WITH_CLIENT_ONLY)
-OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
-OPTIONS+=	SFDAEMON "Build with staticly compiled file daemon" off
-.else
-OPTIONS=	SQLITE3 "Use SQLite-3 database" off
-OPTIONS+=	MYSQL "Use MySQL database" off
-OPTIONS+=	POSTGRESQL "Use PostgreSQL database" off
-OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
-.endif
-OPTIONS+=	NLS "Native Language Support via gettext utilities" on
-OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" on
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -109,8 +89,6 @@ SUB_LIST=	BACULA_USER=${BACULA_USER} \
 		BACULA_GID=${BACULA_GID} \
 		BACULA_DIR=${BACULA_DIR}
 
-.include <bsd.port.pre.mk>
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
@@ -125,41 +103,20 @@ PKGINSTALL=	${FILESDIR}/pkg-install.server
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
-# --disable-xattr is temporary to allow build with 8-current
-CONFIGURE_ARGS+=	--enable-client-only --disable-xattr
+CONFIGURE_ARGS+=	--enable-client-only
+
 PKGDEINSTALL=	${FILESDIR}/pkg-deinstall.client
 PKGINSTALL=	${FILESDIR}/pkg-install.client
-# Build a static fd binary.
-.if defined(WITH_SFDAEMON)
-CONFIGURE_ARGS+=	--enable-static-fd
-CONFIGURE_ARGS+=	--disable-libtool
-PLIST_SUB+=	SFDAEMON=""
-PLIST_SUB+=	NOSF="@comment "
-.else
-PLIST_SUB+=	SFDAEMON="@comment "
-PLIST_SUB+=	NOSF=""
-.endif
-#Build bwx-console is deprecated use bacula-bat instead
-.if defined(WITH_WXCONSOLE)
-IGNORE=			please use sysutils/bacula-bat instead of wxconsole
-USE_WX=			2.4
-CONFIGURE_ARGS+=	--enable-bwx-console
-CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
-PLIST_SUB+=		WXCONS=""
-.else
-PLIST_SUB+=		WXCONS="@comment "
-.endif
 .else
 # Server only Options
-PLIST_SUB+=		WXCONS="@comment "
 CONFFILES=		sd dir
 # Server default database
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
 DBTYPE=			mysql
 SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
-.elif defined(WITH_SQLITE3)
+.elif ${PORT_OPTIONS:MSQLITE3}
 CONFIGURE_ARGS+=	--with-sqlite3=yes
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 DBTYPE=			sqlite3
@@ -171,12 +128,12 @@ SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
 # Install mtx
-.if defined(WITH_MTX)
+.if ${PORT_OPTIONS:MMTX}
 RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
 .endif
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
@@ -184,26 +141,25 @@ CONFIGURE_ARGS+=	--with-openssl="no"
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-MAN8=			bacula-fd.8 bconsole.8
-EXTRA_PATCHES+=		${FILESDIR}/extra__manpages__Makefile.in
+MAN8+=	bacula-fd.8 bconsole.8
 .else
-MAN1=			bat.1 bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
-MAN8=			bacula.8 bacula-dir.8 bacula-fd.8 bacula-sd.8 bconsole.8 \
-			bcopy.8 bextract.8 bls.8 bregex.8 bscan.8 btape.8 \
-			btraceback.8 bwild.8 dbcheck.8
+MAN8+=	bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 \
+	btape.8 btraceback.8 dbcheck.8 bwild.8 bregex.8
+MAN1+=	bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
 .endif
+
+MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
-#	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SQLite-3 as the database (not recommended)."
-.if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL as the database."
-	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL as the database."
+	@${ECHO_MSG} "  WITH_PGSQL=yes		if you want PostgreSQL as the database."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is PostgreSQL!"
 .endif
@@ -211,19 +167,17 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
-.else
-	@${ECHO_MSG} "You may use the following build options (or make config):"
-	@${ECHO_MSG} "  WITH_SFDAEMON=yes	if you want staticly compiled file daemon (client)."
-	@${ECHO_MSG} "===> Building file daemon only."
 .endif
 
 post-patch:
-#	Respect NOPORTDOCS
-.if defined(NOPORTDOCS)
+#	This port does not install docs.  See bacula-docs for that
 	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
-.endif
+#	Change $(ECHO) to echo in some Makefile.in files
+	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g' ${WRKSRC}/src/filed/Makefile.in \
+		${WRKSRC}/src/console/Makefile.in
 #	Default bconsole.conf is ${PREFIX}/etc
 	@${REINPLACE_CMD} -e 's|./bconsole.conf|${PREFIX}/etc/bconsole.conf|g' ${WRKSRC}/src/console/console.c
+	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
 .if defined(WITH_CLIENT_ONLY)
 # 	In client port only install startup script out of script dir (see below post-install)
 # 	Dont mkdir ${PREFIX}/share/bacula cause it's empty
@@ -231,7 +185,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
 #	In server port don't install filed
-	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
+		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|../lib/|$$(LOCALBASE)/lib/|g' -e 's|../findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
+		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in
+	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
+		${WRKSRC}/src/tools/bpluginfo.c
 .endif
 
 .if !target(pre-install)
@@ -263,14 +222,6 @@ post-install:
 		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.sample; \
 		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
 	fi
-.if defined(WITH_WXCONSOLE)
-	if [ -f ${PREFIX}/etc/bwx-console.conf.new ]; then \
-		${ECHO_CMD} "etc/bwx-console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/bwx-console.conf ]; then \
-		${MV} ${PREFIX}/etc/bwx-console.conf ${PREFIX}/etc/bwx-console.conf.sample; \
-		${ECHO_CMD} "etc/bwx-console.conf.sample" >> ${TMPPLIST}; \
-	fi
-.endif
 
 #	ensure that users in the bacula group can run bconsole
 	${CHGRP} bacula ${PREFIX}/sbin/bconsole
@@ -312,6 +263,7 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 .endif
-
+.else
+.include "${MASTERDIR}/Makefile.common"
+.endif # -client and -server are defined
 .include <bsd.port.post.mk>
-.endif # if !defined(WITH_BAT) && !defined(WITH_NAGIOS_CHECK_ONLY)

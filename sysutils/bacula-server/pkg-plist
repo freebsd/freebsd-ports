@@ -1,25 +1,12 @@
-lib/libbac.la
-lib/libbac.so
-lib/libbac.so.%%MAJOR%%
-lib/libbaccats-%%DBTYPE%%.la
-lib/libbaccats-%%DBTYPE%%.so
-lib/libbaccats-%%DBTYPE%%.so.%%MAJOR%%
 lib/libbaccats.la
 lib/libbaccats.so
 lib/libbaccats.so.%%MAJOR%%
-lib/libbaccfg.la
-lib/libbaccfg.so
-lib/libbaccfg.so.%%MAJOR%%
-lib/libbacfind.la
-lib/libbacfind.so
-lib/libbacfind.so.%%MAJOR%%
-lib/libbacpy.la
-lib/libbacpy.so
-lib/libbacpy.so.%%MAJOR%%
+lib/libbaccats-%%DBTYPE%%.la
+lib/libbaccats-%%DBTYPE%%.so
+lib/libbaccats-%%DBTYPE%%.so.%%MAJOR%%
 lib/libbacsql.la
 lib/libbacsql.so
 lib/libbacsql.so.%%MAJOR%%
-lib/bpipe-fd.so
 sbin/bacula
 sbin/bacula-dir
 sbin/bacula-sd
@@ -63,7 +50,6 @@ sbin/dbcheck
 %%DATADIR%%/query.sql
 %%DATADIR%%/update_bacula_tables
 %%DATADIR%%/update_%%DBTYPE%%_tables
-
 @dirrm %%DATADIR%%
 @unexec /usr/bin/killall bacula-sd  > /dev/null 2>&1 || true
 @unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
