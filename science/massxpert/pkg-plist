@@ -76,6 +76,7 @@ share/applications/massxpert.desktop
 %%DATADIR%%/pol-chem-defs/protein-1-letter/glutamine.svg
 %%DATADIR%%/pol-chem-defs/protein-1-letter/glycine.svg
 %%DATADIR%%/pol-chem-defs/protein-1-letter/histidine.svg
+%%DATADIR%%/pol-chem-defs/protein-1-letter/hydroxylation.svg
 %%DATADIR%%/pol-chem-defs/protein-1-letter/isoleucine.svg
 %%DATADIR%%/pol-chem-defs/protein-1-letter/leucine.svg
 %%DATADIR%%/pol-chem-defs/protein-1-letter/lysine.svg
