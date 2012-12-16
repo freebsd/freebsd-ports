@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.58
+PORTVERSION=	1.1.2
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -64,7 +64,7 @@ SBCLCONFIG=	Config.x86-64-freebsd
 .endif
 
 MAKE_SH_ARGS?=	--prefix=${PREFIX} --dynamic-space-size=${DYNAMIC_SPACE_SIZE} \
---with-sb-core-compression
+--with-sb-core-compression --with-sb-qshow
 NM?=	/usr/bin/nm
 NMFLAGS?=	-gp
 
@@ -117,6 +117,11 @@ MAKE_SH_ARGS+=	--with-sb-thread
 MAKE_SH_ARGS+=	--with-sb-futex
 .else
 MAKE_SH_ARGS+=	--without-sb-futex
+.endif
+.if defined(WITH_SAFEPOINT)
+MAKE_SH_ARGS+=	--with-sb-safepoint --with-sb-thruption --with-sb-wtimer
+.else
+MAKE_SH_ARGS+=	--without-sb-safepoint --without-sb-thruption --without-sb-wtimer
 .endif
 .else
 MAKE_SH_ARGS+=	--without-sb-thread
