@@ -22,10 +22,11 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	3.01a08
+PORTVERSION=	3.01a09
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
+		http://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
 
 MAINTAINER=	marius@FreeBSD.org
