@@ -21,19 +21,22 @@ NO_BUILD=	yes
 SUB_FILES+=	pkg-message pkg-install
 SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS=	MYSQL "MySQL back-end (use mysql PHP extension)" on
-OPTIONS+=	PGSQL "PostgreSQL back-end (use pgsql PHP extension)" off
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
 
-.if !defined(WITHOUT_MYSQL)
+MYSQL_DESC=	MySQL back-end (use mysql PHP extension)
+PGSQL_DESC= 	PostgreSQL back-end (use pgsql PHP extension)
+
+OPTIONS_DEFAULT=MYSQL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
-.endif
-
-.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=	needs at least one database back-end
 .endif
 
 WANT_PHP_WEB=	yes
