@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scponly
-# Date created:				2002/07/23
-# Whom:					mcglk@artlogix.com
-#
+# Created by: mcglk@artlogix.com
 # $FreeBSD$
-#
 
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526
@@ -22,35 +18,38 @@ PORTDOCS=	BUILDING-JAILS.TXT INSTALL README SECURITY
 
 GNU_CONFIGURE=	yes
 
-OPTIONS=	SCPONLY_WILDCARDS "wildcards processing" on \
-		SCPONLY_GFTP "gftp compatibility" on \
-		SCPONLY_CHROOT "chroot functionality" off \
-		SCPONLY_RSYNC "rsync compatibility" off \
-		SCPONLY_SCP "vanilla scp compatibility" off \
-		SCPONLY_SVN "subversion compatibility" off \
-		SCPONLY_SVNSERVE "subversion compatibility svn+ssh://" off \
-		SCPONLY_UNISON "unison compatibility" off \
-		SCPONLY_WINSCP "WinSCP compatibility" off
+OPTIONS_DEFINE=	WILDCARDS GFTP CHROOT RSYNC SCP SVN SVNSERVE UNISON WINSCP \
+		DEFAULT_CHDIR DOCS
+OPTIONS_DEFAULT=	WILDCARDS
+DEFAULT_CHDIR_DESC=	Chdir(2) by default
+WILDCARDS_DESC=		Wildcards processing
+GFTP_DESC=	gftp support
+RSYNC_DESC=	rsync support
+CHROOT_DESC=	chroot(8) functionality
+SCP_DESC=	vanilla scp support
+SVNSERVE_DESC=	Suversion support for svn+ssh://
+UNISON_DESC=	Unisson support
+WINSCP_DESC=	WinSCP support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(SCPONLY_DEFAULT_CHDIR) && !empty(SCPONLY_DEFAULT_CHDIR)
+.if ${PORT_OPTIONS:MDEFAULT_CHDIR}
 CONFIGURE_ARGS+=--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
 .endif
 
-.if defined(WITH_SCPONLY_WILDCARDS)
+.if ${PORT_OPTIONS:MWILDCARDS}
 CONFIGURE_ARGS+=--enable-wildcards
 .else
 CONFIGURE_ARGS+=--disable-wildcards
 .endif
 
-.if defined(WITH_SCPONLY_GFTP)
+.if ${PORT_OPTIONS:MGFTP}
 CONFIGURE_ARGS+=--enable-gftp-compat
 .else
 CONFIGURE_ARGS+=--disable-gftp-compat
 .endif
 
-.if defined(WITH_SCPONLY_CHROOT)
+.if ${PORT_OPTIONS:MCHROOT}
 PLIST_SUB+=	SCPONLY_CHROOT=""
 CONFIGURE_ARGS+=--enable-chrooted-binary
 USE_RC_SUBR+=	scponlyc
@@ -58,39 +57,39 @@ USE_RC_SUBR+=	scponlyc
 PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 .endif
 
-.if defined(WITH_SCPONLY_RSYNC)
+.if ${PORT_OPTIONS:MRSYNC}
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 CONFIGURE_ARGS+=--enable-rsync-compat
 .else
 CONFIGURE_ARGS+=--disable-rsync-compat
 .endif
 
-.if defined(WITH_SCPONLY_SCP)
+.if ${PORT_OPTIONS:MSCP}
 CONFIGURE_ARGS+=--enable-scp-compat
 .else
 CONFIGURE_ARGS+=--disable-scp-compat
 .endif
 
-.if defined(WITH_SCPONLY_SVN)
+.if ${PORT_OPTIONS:MSVN}
 CONFIGURE_ARGS+=--enable-svn-compat
 .else
 CONFIGURE_ARGS+=--disable-svn-compat
 .endif
 
-.if defined(WITH_SCPONLY_SVNSERVE)
+.if ${PORT_OPTIONS:MSVNSERVE}
 CONFIGURE_ARGS+=--enable-svnserv-compat
 .else
 CONFIGURE_ARGS+=--disable-svnserv-compat
 .endif
 
-.if defined(WITH_SCPONLY_UNISON)
+.if ${PORT_OPTIONS:MUNISON}
 BUILD_DEPENDS+=	unison:${PORTSDIR}/net/unison
 CONFIGURE_ARGS+=--enable-unison-compat
 .else
 CONFIGURE_ARGS+=--disable-unison-compat
 .endif
 
-.if defined(WITH_SCPONLY_WINSCP)
+.if ${PORT_OPTIONS:MWINSCP}
 CONFIGURE_ARGS+=--enable-winscp-compat
 .else
 CONFIGURE_ARGS+=--disable-winscp-compat
@@ -98,7 +97,7 @@ CONFIGURE_ARGS+=--disable-winscp-compat
 
 # svn, svnlook ... are per default in subversion
 # only check for one of them!
-.if defined(WITH_SCPONLY_SVN) || defined(WITH_SCPONLY_SVNSERVE)
+.if ${PORT_OPTIONS:MSVN} || ${PORT_OPTIONS:MSVNSERVE}
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
@@ -115,7 +114,7 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/scponly /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/scponly) > /etc/shells
 	@${RM} /etc/shells.bak
-.if defined(WITH_SCPONLY_CHROOT)
+.if ${PORT_OPTIONS:MCHROOT}
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/sbin/scponlyc /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/sbin/scponlyc) > /etc/shells
@@ -130,7 +129,7 @@ post-install:
 	@${ECHO_MSG} "  3) Run ${PREFIX}/etc/rc.d/scponly start"
 	@${ECHO_MSG} ""
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
@@ -142,4 +141,4 @@ post-install:
 	@${ECHO_MSG} ""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
