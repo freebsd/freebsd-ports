@@ -31,7 +31,6 @@ horde-Horde_Core-DEPEND=	${PEARDIR}/Horde.php:${PORTSDIR}/devel/pear-Horde_Core
 horde-Horde_Crypt-DEPEND=	${PEARDIR}/Horde/Crypt.php:${PORTSDIR}/security/pear-Horde_Crypt
 horde-Horde_Crypt_Blowfish-DEPEND=	${PEARDIR}/Horde/Crypt/Blowfish.php:${PORTSDIR}/security/pear-Horde_Crypt_Blowfish
 horde-Horde_Data-DEPEND=	${PEARDIR}/Horde/Data.php:${PORTSDIR}/devel/pear-Horde_Data
-horde-Horde_DataTree-DEPEND=	${PEARDIR}/Horde/DataTree.php:${PORTSDIR}/devel/pear-Horde_DataTree
 horde-Horde_Date-DEPEND=	${PEARDIR}/Horde/Date.php:${PORTSDIR}/devel/pear-Horde_Date
 horde-Horde_Date_Parser-DEPEND=	${PEARDIR}/Horde/Date/Parser.php:${PORTSDIR}/devel/pear-Horde_Date_Parser
 horde-Horde_Db-DEPEND=		${PEARDIR}/Horde/Db.php:${PORTSDIR}/databases/pear-Horde_Db
