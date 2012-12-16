@@ -1,12 +1,8 @@
-# Ports collection makefile for:	dulwich
-# Date created:		2009-10-24
-# Whom:			Marco Broeder <marco.broeder@gmx.eu>
-#
+# Created by: Marco Broeder <marco.broeder@gmx.eu>
 # $FreeBSD$
-#
 
 PORTNAME=	dulwich
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
 		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
@@ -20,23 +16,29 @@ LICENSE_COMB=	dual
 
 MAKE_JOBS_SAFE=	yes
 
-USE_PYTHON=	yes
+PORTDOCS=	AUTHORS HACKING NEWS README introduction.txt \
+		object-store.txt protocol.txt remote.txt repo.txt
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
 FETCH_ARGS=	-Fpr	# default '-AFpr' prevents 302 redirects by launchpad
 
-.ifndef (NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING HACKING NEWS README
-.endif
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|PYTHON = python|PYTHON = /usr/bin/env python|g' \
+	${REINPLACE_CMD} -e 's|PYTHON = python|PYTHON = ${PYTHON_CMD}|g' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
+	${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		${WRKSRC}/setup.py
 
 post-install:
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+	${CP} ${WRKSRC}/docs/*.txt ${WRKSRC}/docs/tutorial/*.txt ${WRKSRC}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
