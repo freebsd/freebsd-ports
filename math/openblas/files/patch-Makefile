@@ -1,6 +1,6 @@
---- Makefile.orig	2012-10-09 21:08:28.000000000 +0900
-+++ Makefile	2012-10-12 21:37:18.000000000 +0900
-@@ -201,7 +201,7 @@
+--- Makefile.orig	2012-11-27 08:24:53.000000000 +0900
++++ Makefile	2012-11-28 01:13:31.000000000 +0900
+@@ -203,7 +203,7 @@
  netlib : 
  
  else
@@ -9,7 +9,7 @@
  ifndef NOFORTRAN
  	-@$(MAKE) -C $(NETLIB_LAPACK_DIR) lapacklib
  endif
-@@ -210,7 +210,7 @@
+@@ -212,7 +212,7 @@
  endif
  endif
  
@@ -18,16 +18,16 @@
  	-@$(MAKE) -C $(NETLIB_LAPACK_DIR) lapack_prof
  
  $(NETLIB_LAPACK_DIR)/make.inc :
-@@ -223,7 +223,7 @@
- 	-@echo "LOADOPTS    = $(FFLAGS) $(EXTRALIB)" >> $(NETLIB_LAPACK_DIR)/make.inc
- 	-@echo "CC          = $(CC)" >> $(NETLIB_LAPACK_DIR)/make.inc
+@@ -229,7 +229,7 @@
+ else
  	-@echo "CFLAGS      = $(CFLAGS)" >> $(NETLIB_LAPACK_DIR)/make.inc
+ endif
 -	-@echo "ARCH        = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
 +	-@echo "ARCH_       = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "ARCHFLAGS   = -ru" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "RANLIB      = $(RANLIB)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "LAPACKLIB   = ../$(LIBNAME)" >> $(NETLIB_LAPACK_DIR)/make.inc
-@@ -235,24 +235,19 @@
+@@ -241,24 +241,19 @@
  	-@cat  make.inc >> $(NETLIB_LAPACK_DIR)/make.inc
  endif
  
@@ -59,7 +59,7 @@
  ifndef NOFORTRAN
  #http://stackoverflow.com/questions/7656425/makefile-ifeq-logical-or
  ifeq ($(OSNAME), $(filter $(OSNAME),Darwin NetBSD))
-@@ -276,7 +271,7 @@
+@@ -282,7 +277,7 @@
  	-wget http://www.netlib.org/lapack/timing/timing.tgz
  endif
  
@@ -68,7 +68,7 @@
  ifndef NOFORTRAN
  	(cd $(NETLIB_LAPACK_DIR); $(TAR) zxf ../timing.tgz TIMING)
  	(cd $(NETLIB_LAPACK_DIR)/TIMING; $(TAR) zxf ../../large.tgz )
-@@ -314,4 +309,4 @@
+@@ -320,4 +315,4 @@
  	rm -rf $(NETLIB_LAPACK_DIR) ;\
  	fi
  	@rm -f *.grd Makefile.conf_last config_last.h
