@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enet
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
