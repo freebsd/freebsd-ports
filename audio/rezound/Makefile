@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ReZound
-# Date created:				17 May 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
@@ -25,75 +21,71 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-alsa
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	LARGEFILE	"Enable 64-bit file I/O support"	off \
-		JACK		"Enable Jack audio server support"	off \
-		AUDIOFILE	"Enable Audio File library support"	on \
-		PORTAUDIO	"Enable PortAudio support"		on \
-		OGG		"Enable OGG support"			on \
-		VORBIS		"Enable Vorbis support"			on \
-		FLAC		"Enable FLAC support"			on \
-		FFTW		"Enable FFTW support"			off \
-		SOUNDTOUCH	"Enable SoundTouch features"		on \
-		LADSPA		"Enable LADSPA plugins support"		on \
-		LAME		"Enable loading and saving MP3 files"	on \
-		CDRDAO		"Enable burning audio files to CD"	off
-#		BROKEN_NLS	"Enable Native Language Support"	on
-# NLS support is broken as of recent versions of libstdc++; rezound dies at
-# startup with "locale::facet::_S_create_c_locale name not valid" exception
+OPTIONS_DEFINE=	LARGEFILE JACK AUDIOFILE PORTAUDIO OGG VORBIS FLAC FFTW \
+		SOUNDTOUCH LADSPA LAME CDRDAO DOCS BROKEN_NLS
+OPTIONS_DEFAULT=	AUDIOFILE PORTAUDIO OGG VORBIS FLAC SOUNDTOUCH \
+		LADSPA LAME
 
-.include <bsd.port.pre.mk>
+LARGEFILE_DESC=	64-bit file I/O support
+FFTW_DESC=	Use fast Fourier transform routines
+CDRDAO_DESC=	Burning audio files to CD support
+BROKEN_NLS_DESC=	${NLS_DESC} (broken!)
 
-.if defined(WITH_LARGEFILE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLARGEFILE}
 CONFIGURE_ARGS+=	--enable-largefile
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .endif
 
-.if defined(WITH_AUDIOFILE)
+.if ${PORT_OPTIONS:MAUDIOFILE}
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio
 .endif
 
-.if defined(WITH_OGG)
+.if ${PORT_OPTIONS:MOGG}
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITH_FFTW)
+.if ${PORT_OPTIONS:MFFTW}
 LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
 .endif
 
-.if defined(WITH_SOUNDTOUCH)
+.if ${PORT_OPTIONS:MSOUNDTOUCH}
 LIB_DEPENDS+=	SoundTouch:${PORTSDIR}/audio/soundtouch
 .endif
 
-.if defined(WITH_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
 .else
 CONFIGURE_ARGS+=	--disable-ladspa
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_CDRDAO)
+.if ${PORT_OPTIONS:MCDRDAO}
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 .endif
 
-.if defined(WITH_BROKEN_NLS)	# Enable only if you know what you're doing
+# NLS support is broken as of recent versions of libstdc++; rezound dies at
+# startup with "locale::facet::_S_create_c_locale name not valid" exception
+.if ${PORT_OPTIONS:MBROKEN_NLS}	# Enable only if you know what you're doing
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -126,10 +118,10 @@ post-patch: .SILENT
 		${WRKSRC}/src/backend/Remaster/Makefile.in \
 		${WRKSRC}/src/backend/LADSPA/Makefile.in \
 		${WRKSRC}/src/frontend_fox/Makefile.in
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's/ install-pkgdocDATA$$//' ${WRKSRC}/Makefile.in
-.else
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/AUTHORS/d; /COPYING/d' ${WRKSRC}/Makefile.in
+.else
+	${REINPLACE_CMD} -e 's/ install-pkgdocDATA$$//' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
