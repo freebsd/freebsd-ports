@@ -5,6 +5,8 @@
 #				Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 
+LATEST_LINK?=		horde3-${PORTNAME}
+
 MASTER_SITES?=		HORDE
 DISTVERSIONPREFIX?=	h3-
 PKGNAMEPREFIX?=	horde-
