@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rc
-# Date created:		Sun Aug 13 12:36:14 CDT 1995
-# Whom:			erich@rrnet.com
-#
+# Created by: erich@rrnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	rc
 PORTVERSION=	1.7.1
@@ -20,14 +16,15 @@ CONFIGURE_ARGS=	--with-history
 MAN1=		history.1 rc.1
 
 
-OPTIONS=	READLINE "Build readline support" off
+OPTIONS_DEFINE=	READLINE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_READLINE)
+.if ${PORT_OPTIONS:MREADLINE}
+USE_READLINE=	yes
 CONFIGURE_ARGS+=	--with-readline
 .else
 MAKE_ARGS+=	CFLAGS="$(CFLAGS) -static"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
