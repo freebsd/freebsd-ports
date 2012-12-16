@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_USER}/${GH_PORTNAME}/tarball/${GH_VERSION}/ \
 		NL:lapack,lapack_tmg
@@ -12,7 +12,7 @@ DISTFILES=	${GH_USER}-${GH_PORTNAME}-${GH_VERSION}-0-g${GH_REVISION}${EXTRACT_SU
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
-COMMENT=	An optimized BLAS library based on GotoBLAS2
+COMMENT=	Optimized BLAS library based on GotoBLAS2
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,7 +21,7 @@ DIST_SUBDIR=	openblas
 FETCH_ARGS=	-pRr
 GH_USER=	xianyi
 GH_PORTNAME=	OpenBLAS
-GH_REVISION=	3a26470
+GH_REVISION=	e01b3d4
 GH_VERSION=	v${PORTVERSION}
 LAPACKVER=	3.4.2
 LAPACK_SRCFILE=	lapack-${LAPACKVER}.tgz
@@ -39,21 +39,20 @@ OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVE
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
 
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-ea9a46c
+WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-93dd133
+
+OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX
+
+DYNAMIC_ARCH_DESC=	"Support multiple CPU types on i386 and amd64"
+INTERFACE64_DESC=	"Use 8 byte integers on 64-bit architectures"
+OPENMP_DESC=		"Use OpenMP for threading"
+AVX_DESC=		"Support Advanced Vector Extensions (AVX)"
 
 .if defined(PACKAGE_BUILDING)
-DYNAMIC_ARCH_DEFAULT=	on
-.else
-DYNAMIC_ARCH_DEFAULT=	off
+OPTIONS_DEFAULT=	DYNAMIC_ARCH
 .endif
 
-OPTIONS=	DYNAMIC_ARCH	"Support multiple CPU types on i386 and amd64" \
-							${DYNAMIC_ARCH_DEFAULT} \
-		INTERFACE64	"Use 8 byte integers on 64-bit architectures" off \
-		OPENMP		"Use OpenMP for threading" off \
-		AVX		"Support Advanced Vector Extensions (AVX)" off
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(TARGET_CPU_ARCH)
 BUILDFLAGS+=	TARGET=${TARGET_CPU_ARCH}
@@ -67,28 +66,28 @@ BUILDFLAGS+=	BINARY32=1
 BUILDFLAGS+=	BINARY64=1
 .endif
 
-.if ! ( defined(WITH_DYNAMIC_ARCH) && ( ${ARCH} == "amd64" || ${ARCH} == "i386" ) )
+.if ! ( ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" ) )
 MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 .endif
 
-.if defined(WITH_DYNAMIC_ARCH)
+.if ${PORT_OPTIONS:MDYNAMIC_ARCH}
 BUILDFLAGS+=	DYNAMIC_ARCH=1
 .endif
 
-.if defined(WITH_INTERFACE64)
+.if ${PORT_OPTIONS:MINTERFACE64}
 BUILDFLAGS+=	INTERFACE64=1
 .endif
 
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 BUILDFLAGS+=	USE_OPENMP=1
 .endif
 
-.if defined(WITH_QUAD_PRECISION)
-BROKEN =	WITH_QUAD_PRECISION is broken; please disable this option
+.if ${PORT_OPTIONS:MQUAD_PRECISION}
+BROKEN =	QUAD_PRECISION is broken; please disable this option
 BUILDFLAGS+=	QUAD_PRECISION=1
 .endif
 
-.if ! ( defined(WITH_AVX) )
+.if empty ( ${PORT_OPTIONS:MAVX} )
 BUILDFLAGS+=	NO_AVX=1
 .endif
 
@@ -128,7 +127,7 @@ post-patch:
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 	-e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
 		${WRKSRC}/Makefile.system
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
 		${WRKSRC}/test/Makefile \
 		${WRKSRC}/ctest/Makefile
@@ -144,12 +143,12 @@ do-build:
 	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblasp.a
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblasp.so.${OPENBLAS_SVER}
-.if !defined(WITH_DEBUG)
+.if !${PORT_OPTIONS:MDEBUG}
 	${LOCALBASE}/bin/strip -X ${WRKDIR}/lib/*.so.${OPENBLAS_SVER}
 .endif
 
 BENCHMARK_MAXTHREADS?=	${MAXTHREADS}
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 BENCHMARK_THREADS_FLAG =	OMP_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 .else
 BENCHMARK_THREADS_FLAG =	OPENBLAS_NUM_THREADS=${BENCHMARK_MAXTHREADS}
@@ -170,4 +169,4 @@ do-install:
 		${LN} -sf $$i.${OPENBLAS_SVER} $$i ; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
