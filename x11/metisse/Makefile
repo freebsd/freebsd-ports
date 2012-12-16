@@ -30,12 +30,13 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
 
-OPTIONS_DEFINE=	MMX GLX GLX_X86 ATSPI STROKE RPLAY FRIBIDI GLIB GTK2 GCONF \
+OPTIONS_DEFINE=	MMX GLX ATSPI STROKE RPLAY FRIBIDI GLIB GTK2 GCONF \
 		GTK1 IMLIB GNOME
+OPTIONS_DEFINE_i386=	GLX_X86
 
 GLX_X86_DESC=	GLX with x86 optimizations
 ATSPI_DESC=	Widget tracking support
-RPLAY_DESC=	Enable RPlay support in FvwmEvent
+RPLAY_DESC=	RPlay support in FvwmEvent
 GLIB_DESC=	Use GLib 2.x for module integration
 GTK2_DESC=	Use GDK-PixBuf-2.0 for image loading
 GTK1_DESC=	Legacy GTK+ 1.2.x support
@@ -43,6 +44,7 @@ IMLIB_DESC=	Imlib support in FvwmGtk
 GNOME_DESC=	Legacy GNOME 1.4 support
 
 OPTIONS_DEFAULT=	MMX GLX GLX_X86
+OPTIONS_DEFAULT_i386=	GLX_X86
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +56,7 @@ CONFIGURE_ARGS+=	--enable-mmx
 CONFIGURE_ARGS+=	--enable-glx
 .endif
 
-.if ${ARCH} == "i386" && ${PORT_OPTIONS:MGLX_X86}
+.if ${PORT_OPTIONS:MGLX_X86}
 CONFIGURE_ARGS+=	--enable-glx-x86
 .endif
 
