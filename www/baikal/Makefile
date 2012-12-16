@@ -3,6 +3,7 @@
 
 PORTNAME=		baikal
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=	http://baikal.codr.fr/get/
 DISTNAME=		${PORTNAME}-regular-${PORTVERSION}
@@ -20,15 +21,12 @@ PLIST_SUB+=		CALDB="${WWWDIR}/Specific/db/db.sqlite"
 SUB_LIST+=		CALDB="${WWWDIR}/Specific/db/db.sqlite"
 SUB_FILES=		pkg-install pkg-message
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=		*
-.endif
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
 
+.include <bsd.port.options.mk>
 post-patch:
-	${FIND} ${WRKSRC} -type f \! -name '*.php' -exec ${CHMOD} ${SHAREMODE} {} \;
+	${FIND} ${WRKSRC} -type f -not -name '*.php' -exec ${CHMOD} ${SHAREMODE} {} \;
 	${FIND} ${WRKSRC} -type f -name '*.php' -exec ${CHMOD} ${BINMODE} {} \;
 	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \;
 	${MV} ${WRKSRC}/Specific/db/db.sqlite \
@@ -42,18 +40,20 @@ post-patch:
 
 do-install:
 	${MKDIR} ${WWWDIR}
-.for DIR in Core html Specific
-	cd ${WRKSRC} && ${FIND} ${DIR} \! -path '*/virtualhosts*' | \
-		${CPIO} -pdmu -R ${WWWOWN}:${WWWGRP} --quiet ${WWWDIR}
+.for DIR in Core html
+	cd ${WRKSRC} && ${FIND} ${DIR} | \
+		${CPIO} -pdmu -R ${BINOWN}:${BINGRP} --quiet ${WWWDIR}
 .endfor
+	cd ${WRKSRC} && ${FIND} Specific -not -path '*/virtualhosts*' | \
+		${CPIO} -pdmu -R ${WWWOWN}:${WWWGRP} --quiet ${WWWDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 .for f in INSTALL.md LICENSE.txt README.md TROUBLESHOOTING.md
 	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 .for f in apache2 nginx
 	${INSTALL_DATA} ${WRKSRC}/Specific/virtualhosts/baikal.$f ${EXAMPLESDIR}
 .endfor

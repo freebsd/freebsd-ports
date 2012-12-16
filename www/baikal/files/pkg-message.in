@@ -1,7 +1,6 @@
 
 To finish installing Baikal:
-	1) Set up an httpd directive; Baikal *MUST* run from
-	   the root of a VirtualHost or subdomain.
+	1) Set up an httpd directive
 	   See %%EXAMPLESDIR%%
 	2) touch %%WWWDIR%%/Specific/ENABLE_INSTALL
 	3) Browse http://your.host.here/admin
