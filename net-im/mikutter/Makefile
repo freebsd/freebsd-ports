@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	0.2.0.1080
+PORTVERSION=	0.2.0.1089
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -69,14 +69,11 @@ RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" \
 		${WRKSRC}/mikutter.rb
-	@${REINPLACE_CMD} -i '' -e "s|miquire :lib, 'ruby-bsearch-1.5/bsearch'|require 'bsearch'|" \
-		${WRKSRC}/core/mui/cairo_inner_tl.rb
-	@${RM} -rf ${WRKSRC}/core/lib/hmac*
 	@${RM} -rf ${WRKSRC}/core/lib/json*
-	@${RM} -rf ${WRKSRC}/core/lib/memoize.rb
 	@${RM} -rf ${WRKSRC}/core/lib/oauth*
 	@${RM} -rf ${WRKSRC}/core/lib/ruby-bsearch-1.5
 	@${RM} -rf ${WRKSRC}/vendor/addressable
+	@${RM} -rf ${WRKSRC}/vendor/bsearch*
 	@${RM} -rf ${WRKSRC}/vendor/hmac*
 	@${RM} -rf ${WRKSRC}/vendor/json*
 	@${RM} -rf ${WRKSRC}/vendor/memoize.rb
