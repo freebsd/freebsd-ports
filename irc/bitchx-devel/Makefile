@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES+=	irc
 DISTNAME=	${PORTNAME}-${PORTNAME}${PORTVERSION}-${GH_COMMIT}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	dan.mashal@gmail.com
 COMMENT?=	Feature-rich scriptable IRC client
 
 USE_GITHUB=	yes
