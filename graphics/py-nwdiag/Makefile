@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nwdiag
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,9 +34,11 @@ post-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
+.for d in ${PORTNAME} packetdiag
 	@${INSTALL_DATA} \
-		${INSTALL_WRKSRC}/examples/${PORTNAME}/${PORTEXAMPLES} \
+		${INSTALL_WRKSRC}/examples/${d}/${PORTEXAMPLES} \
 		${EXAMPLESDIR}
+.endfor
 .endif
 .for f in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/${f} ${MAN1PREFIX}/man/man1/

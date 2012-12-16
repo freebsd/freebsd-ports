@@ -53,6 +53,9 @@ bin/rackdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/nodes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.pyo
@@ -95,6 +98,9 @@ bin/rackdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/nodes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag_sphinxhelper.pyo
@@ -137,6 +143,9 @@ bin/rackdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/nodes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag_sphinxhelper.pyo
