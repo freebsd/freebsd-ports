@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Gtk
-# Date created:		28 Oct 1997
-# Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
-#
+# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk
-PORTVERSION=	0.7009
-PORTREVISION=	4
+PORTVERSION=	0.7010
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
