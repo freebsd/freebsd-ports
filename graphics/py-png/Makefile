@@ -1,13 +1,10 @@
-# Ports collection makefile for:	py-png
-# Date created:				Nov 04, 2011
-# Whom:					Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	png
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 CATEGORIES=	graphics python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -17,9 +14,7 @@ COMMENT=	Python PNG encoder/decoder
 PROJECTHOST=	pypng
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pypng
-
-PLIST_SUB+=	PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
 
 .include <bsd.port.mk>
