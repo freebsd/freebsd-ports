@@ -363,6 +363,7 @@
     SUBDIR += p5-DBIx-Class-QueryProfiler
     SUBDIR += p5-DBIx-Class-ResultSet-HashRef
     SUBDIR += p5-DBIx-Class-ResultSet-RecursiveUpdate
+    SUBDIR += p5-DBIx-Class-Schema-Config
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-Schema-PopulateMore
     SUBDIR += p5-DBIx-Class-TimeStamp
