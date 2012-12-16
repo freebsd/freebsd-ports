@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmailer
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://${PORTNAME}.apache-extras.org.codespot.com/files/
 DISTNAME=	PHPMailer_${PORTVERSION}
