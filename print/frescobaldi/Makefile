@@ -1,20 +1,19 @@
-# New ports collection makefile for:   frescobaldi
-# Date created:        17 April 2011
-# Whom:                martin.dieringer@gmx.de
-#
+# Created by: martin.dieringer@gmx.de
 # $FreeBSD$
-#
 
 PORTNAME=	frescobaldi
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	print kde
 MASTER_SITES=	http://cloud.github.com/downloads/wbsoft/frescobaldi/
 
 MAINTAINER=	martin.dieringer@gmx.de
-COMMENT=	A music score editor for lilypond
+COMMENT=	Music score editor for lilypond
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond \
-		${PYTHON_SITELIBDIR}/popplerqt4.so:${PORTSDIR}/graphics/py-poppler-qt4
+		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:${PORTSDIR}/graphics/py-poppler-qt4
 
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
