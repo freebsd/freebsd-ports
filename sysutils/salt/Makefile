@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	0.10.5
+PORTVERSION=	0.11.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	https://github.com/downloads/saltstack/salt/
+MASTER_SITES=	http://pypi.python.org/packages/source/s/salt/	
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system
@@ -42,7 +42,7 @@ MAN1=		salt-call.1 \
 MAN7=		salt.7
 
 post-patch:
-.for file in conf/minion.template conf/master.template doc/man/salt-key.1 \
+.for file in conf/minion conf/master doc/man/salt-key.1 \
     doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
     doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.7 doc/man/salt.1 \
     salt/cli/__init__.py salt/__init__.py salt/config.py salt/client.py \
@@ -54,8 +54,8 @@ post-patch:
 
 post-install:
 	${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/conf/master.template ${PREFIX}/etc/salt/master.sample
-	${INSTALL_DATA} ${WRKSRC}/conf/minion.template ${PREFIX}/etc/salt/minion.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/master ${PREFIX}/etc/salt/master.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/minion ${PREFIX}/etc/salt/minion.sample
 	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/doc/man/,} ${MANPREFIX}/man/man1/
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/${MAN7} ${MANPREFIX}/man/man7/
 	@${CAT} ${PKGMESSAGE}
