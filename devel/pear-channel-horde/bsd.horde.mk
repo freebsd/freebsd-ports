@@ -11,6 +11,8 @@ RUN_DEPENDS+=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 PKGNAMEPREFIX?=	pear-
 HORDE_DIR?=	www/horde
 
+CONFLICTS+=	horde3-*.[0-9]*
+
 DIST_SUBDIR=	Horde
 PEAR_CHANNEL=	horde
 PEAR_AUTOINSTALL=	yes
