@@ -1,16 +1,12 @@
-# Ports collection makefile for:	openmpi
-# Date created:				August 22, 2005
-# Whom:					Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 # TODO:
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
 DISTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.6/downloads/
 
