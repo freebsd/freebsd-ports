@@ -1,12 +1,8 @@
-# New ports collection makefile for:	wordpress-zh_TW
-# Date created:		2010-03-01
-# Whom:			Joe Horn <joehorn@gmail.com>
-#
+# Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
@@ -14,20 +10,20 @@ PKGNAMESUFFIX=	-zh_TW
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	joehorn@gmail.com
-COMMENT=	A state-of-the-art semantic personal publishing platform
+COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
-NO_BUILD=	YES
-WANT_PHP_WEB=	YES
+NO_BUILD=	yes
+WANT_PHP_WEB=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
-PORTDOCS=	license.txt readme.html
+PORTDOCS=	readme.html
 
 OPTIONS_DEFINE=	DOCS
 

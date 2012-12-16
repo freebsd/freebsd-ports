@@ -1,7 +1,7 @@
 *************************************************************************************
 Please read following note for installation steps before the first use of WordPress.
 
-1. Copy wp-config-sample.php to wp-config.php 
+1. Copy wp-config-sample.php to wp-config.php
    in %%WWWDIR%% .
 
 2. Modify it to fit your MySQL.
