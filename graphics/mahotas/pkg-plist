@@ -4,7 +4,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/_interpolate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/_interpolate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/_interpolate.pyo
@@ -16,8 +15,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/interpolate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/interpolate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/interpolate.pyo
-
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/__init__.pyo
@@ -126,7 +123,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/colors.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/colors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/colors.pyo
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/features/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/features/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/features/__init__.pyo
@@ -167,14 +163,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/features/zernike.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/features/zernike.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/features/zernike.pyo
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/io/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/io/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/io/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/io/freeimage.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/io/freeimage.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/io/freeimage.pyo
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/__init__.pyo
@@ -205,12 +199,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/wavelet_compress.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/wavelet_compress.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/wavelet_compress.pyo
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/data/DepartmentStore.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/data/lena.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/data/luispedro.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/data/nuclear.png
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/texture.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/texture.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/texture.pyo
@@ -223,14 +215,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/zernike.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/zernike.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/zernike.pyo
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/data/1bpp.bmp
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/data/determinant_zero.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/data/rgba.png
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/pymorph_copy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/pymorph_copy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/pymorph_copy.pyo
@@ -252,8 +242,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_segmentation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_segmentation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_segmentation.pyo
-
-
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_bbox.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_bbox.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_bbox.pyo
@@ -353,7 +341,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_zernike.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_zernike.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/test_zernike.pyo
-
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/demos
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mahotas/tests/data

@@ -1,16 +1,17 @@
-Mahotas is an Image Processing Library for Python.
-It includes a couple of algorithms implemented in C++ for speed while
-operating in numpy arrays.
+Mahotas is a computer vision and image processing library for Python.  It
+includes many algorithms implemented in C++ for speed while operating in
+numpy arrays and with a very clean Python interface.
 
 Notable algorithms:
- - watershed.
- - thresholding.
- - convex points calculations.
- - hit & miss. thinning.
- - Zernike & Haralick features.
- - freeimage based numpy image loading (requires freeimage libraries
-to be installed).
- - Release the GIL in morphological functions
- - Convolution
+
+  - Watershed
+  - Convex points calculations
+  - Hit & miss thinning
+  - Zernike & Haralick, LBP, and TAS features
+  - Freeimage-based numpy image loading
+  - Speeded-Up Robust Features (SURF), a form of local features
+  - Thresholding
+  - Convolution
+  - Sobel edge detection
 
 WWW: http://packages.python.org/mahotas/
