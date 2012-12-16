@@ -51,7 +51,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/Liberation/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/lib/X11/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/lib/X11/fonts/gentium-basic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic
+		${LOCALBASE}/lib/X11/fonts/GentiumBasic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic
 
 CONFLICTS_INSTALL=	libreoffice-legacy-[0-9]*
 
