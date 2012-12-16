@@ -6,10 +6,11 @@
 #
 
 LATEST_LINK?=		horde3-${PORTNAME}
+CONFLICTS?=		horde-*.[0-9]*
 
 MASTER_SITES?=		HORDE
 DISTVERSIONPREFIX?=	h3-
-PKGNAMEPREFIX?=	horde-
+PKGNAMEPREFIX?=	horde3-
 
 .if defined(USE_HORDE) && ${USE_HORDE:Mbase}
 RUN_DEPENDS+=	${HORBAS}/rpc.php:${PORTSDIR}/www/horde3-base
@@ -56,10 +57,10 @@ post-extract:
 .if !target(post-patch)
 post-patch:
 .	for file in pkg-deinstall pkg-install
-	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde-base/files/${file}.in > ${WRKDIR}/${file}
+	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde3-base/files/${file}.in > ${WRKDIR}/${file}
 .	endfor
 .	if defined(USE_HORDE) && ${USE_HORDE:Mpkg-message}
-	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde-base/files/pkg-message.common.in >\
+	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde3-base/files/pkg-message.common.in >\
 		${WRKDIR}/pkg-message
 .	endif
 	@${EGREP} -lr '(/usr/local|%%LOCALBASE%%|/tmp/horde.log)' ${WRKSRC}/config/ |\

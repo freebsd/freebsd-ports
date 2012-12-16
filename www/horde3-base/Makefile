@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	horde
+PORTNAME=	base
 PORTVERSION=	3.3.13
 DISTVERSIONPREFIX=
+PORTREVISION=	1
 CATEGORIES=	www
-PKGNAMEPREFIX=
-PKGNAMESUFFIX=	-base
+MASTER_SITE_SUBDIR=	horde
+DISTNAME=	horde-${PORTVERSION}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications
@@ -77,8 +78,6 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File		\
 		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP   \
 		${PEARDIR}/MDB2/Schema/Validate.php:${PORTSDIR}/databases/pear-MDB2_Schema
-
-CONFLICTS=	horde-4*
 
 USE_GETTEXT=	yes
 USE_PHP=	ctype gettext session
