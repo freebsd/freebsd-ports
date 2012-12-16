@@ -1,13 +1,8 @@
-# New ports collection makefile for:	artha
-# Date created:		2011-03-15
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	artha
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -16,8 +11,8 @@ COMMENT=	A free cross-platform English thesaurus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		WN.2:${PORTSDIR}/textproc/wordnet
+LIB_DEPENDS=	dbus-glib:${PORTSDIR}/devel/dbus-glib \
+		WN:${PORTSDIR}/textproc/wordnet
 
 MAN1=		artha.1
 
@@ -31,12 +26,13 @@ CONFIGURE_ARGS=	--enable-static=no --x-includes=${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/WordNet
 
-OPTIONS=	NOTIFY "Popup word definition as notification" On
+OPTIONS_DEFINE=	NOTIFY
+NOTIFY_DESC=	Popup word definition as notification
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NOTIFY)
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
 .include <bsd.port.mk>
