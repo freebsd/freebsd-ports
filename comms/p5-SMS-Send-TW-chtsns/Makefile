@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
 		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.10+
+PERL_CONFIGURE=	yes
 
 MAN3=		SMS::Send::TW::chtsns.3
 

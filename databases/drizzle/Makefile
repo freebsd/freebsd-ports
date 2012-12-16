@@ -16,7 +16,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A database optimized for Cloud and Net applications
 
 USE_GCC=	4.2+
-USE_PERL5=	5.6.0+
+USE_PERL5=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

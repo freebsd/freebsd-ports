@@ -15,7 +15,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Collection of miscellaneous subroutines
 
 PERL_CONFIGURE=	yes
-USE_PERL5_RUN=	5.8.1+
 
 MAN3=		Data::Miscellany.3
 

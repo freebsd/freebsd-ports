@@ -20,7 +20,6 @@ BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMak
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-USE_PERL5=	5.8.1+
 PERL_CONFIGURE=	yes
 
 MAN3=		Module::Refresh.3

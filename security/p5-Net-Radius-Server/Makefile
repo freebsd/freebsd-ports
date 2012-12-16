@@ -24,7 +24,6 @@ RUN_DEPENDS=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	5.10.0+
 
 MAN1=		nrsd.1 \
 		nrsdbtoyaml.1 \

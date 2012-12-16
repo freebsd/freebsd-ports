@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 USE_RC_SUBR=	backuppc
 
 USERS=		backuppc

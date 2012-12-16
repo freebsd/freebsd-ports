@@ -44,7 +44,6 @@ OPTIONS=	TENTACLE	"Install tentacle_server"		on \
 		ORACLE		"Use Oracle backend (experimental)"	off \
 		EXTRAS		"Extra dependencies for util scripts"	on
 
-USE_PERL5=	5.8+
 PERL_CONFIGURE=	yes
 SUB_LIST+=	PERL="${PERL}"
 

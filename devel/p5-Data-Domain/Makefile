@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_MODBUILD=	5.10.1+
+PERL_MODBUILD=	yes
 
 MAN3=		Data::Domain.3
 

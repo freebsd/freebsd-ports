@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	soldout:${PORTSDIR}/textproc/libsoldout
 
-PERL_CONFIGURE=	5.10.0+
+PERL_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAN3=		libsoldout.3

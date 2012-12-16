@@ -26,7 +26,7 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	5.8.0+
+USE_PERL5_RUN=	yes
 
 SUB_FILES=	pkg-message validator.conf.sample
 

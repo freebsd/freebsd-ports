@@ -42,7 +42,7 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 USE_BISON=	build
-USE_PERL5_BUILD=	5.8.0+
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 
 MAN1=		perl6.1 rakudo.1

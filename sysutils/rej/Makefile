@@ -13,7 +13,7 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
-USE_PERL5=	5.8.6+
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG README vimrc

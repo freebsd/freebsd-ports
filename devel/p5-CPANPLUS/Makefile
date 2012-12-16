@@ -17,7 +17,6 @@ COMMENT=	Ameliorated interface to the CPAN
 
 RUN_DEPENDS=	p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature
 
-USE_PERL5=	5.6.1+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install

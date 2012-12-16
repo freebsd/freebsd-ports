@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server \
 		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
 
-USE_PERL5_RUN=	5.8.2+
+USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes
 

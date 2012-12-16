@@ -15,7 +15,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module enabling one to delete subroutines
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	5.8.3+
 
 MAN3=		Sub::Delete.3
 

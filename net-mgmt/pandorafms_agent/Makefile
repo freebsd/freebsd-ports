@@ -18,7 +18,7 @@ LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
 OPTIONS=	TENTACLE_SERVER "Install tentalce_server" on
 
-USE_PERL5=	5.8+
+USE_PERL5=	yes
 SUB_LIST+=	PERL="${PERL}"
 
 MAN1=		pandora_agent.1	tentacle_client.1

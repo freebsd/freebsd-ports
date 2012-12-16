@@ -26,7 +26,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-LWP-Online>=1.07:${PORTSDIR}/www/p5-LWP-Online \
 		p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
 
-USE_PERL5=	5.8.1+
 PERL_CONFIGURE=	yes
 
 MAN1=		www-mobilecarrierjp-dump_all.pl.1

@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Marpa-PP>=0.012:${PORTSDIR}/lang/p5-Marpa-PP \
 		p5-Marpa-XS>=0.026:${PORTSDIR}/lang/p5-Marpa-XS
 
-PERL_CONFIGURE=	5.10.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		html_fmt.1 \
 		html_score.1

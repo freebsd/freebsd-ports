@@ -17,7 +17,7 @@ COMMENT=	Search, index, or stream archive video from BBC iPlayer
 
 RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
 
-USE_PERL5_RUN=	5.8.0+
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 USE_RC_SUBR=	${PORTNAME}

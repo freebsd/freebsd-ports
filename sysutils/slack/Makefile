@@ -16,7 +16,7 @@ COMMENT=	Configuration management system designed to appeal to lazy admins
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-USE_PERL5=	5.6.0+
+USE_PERL5=	yes
 USE_GMAKE=	yes
 
 MAN1=		slack-diff.1

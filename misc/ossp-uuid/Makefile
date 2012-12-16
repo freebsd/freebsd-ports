@@ -27,7 +27,7 @@ MAN1=	uuid-config.1 uuid.1
 MAN3=	uuid.3 uuid++.3
 
 .if defined(WITH_PERL)
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 CONFIGURE_ENV+=	PERL=${PERL5}
 CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=	WITH_PERL=''

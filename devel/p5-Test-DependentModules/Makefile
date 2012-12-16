@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-autodie>=0:${PORTSDIR}/devel/p5-autodie
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.10.1+	# CPAN>=1.9402
+PERL_CONFIGURE=	yes
 
 MAN3=		Test::DependentModules.3
 

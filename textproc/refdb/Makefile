@@ -21,7 +21,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_PERL5=	5.6.0+
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 

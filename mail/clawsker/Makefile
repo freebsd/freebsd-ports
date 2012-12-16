@@ -19,7 +19,7 @@ RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 
 MAN1=		clawsker.1
 

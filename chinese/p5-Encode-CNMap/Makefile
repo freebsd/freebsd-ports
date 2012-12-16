@@ -16,7 +16,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Enhanced Chinese encodings with Simplified-Traditional auto-mapping
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	5.8.0+
 
 MAN1=		cnmap.1 cnmapdir.1 cnmapwx.1
 

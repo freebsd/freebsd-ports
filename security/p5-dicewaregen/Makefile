@@ -16,7 +16,7 @@ COMMENT=	A simple perl script to generate Diceware dictionaries for passwords
 
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 
-USE_PERL5_RUN=	5.8.8+
+USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

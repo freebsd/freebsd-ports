@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		avahi-publish-service:${PORTSDIR}/net/avahi-app
 
 USE_GMAKE=	yes
-USE_PERL5_RUN=	5.10.0+
+USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	pkgconfig
 

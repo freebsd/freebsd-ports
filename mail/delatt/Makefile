@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
-USE_PERL5_RUN=	5.8.6+
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/delatt

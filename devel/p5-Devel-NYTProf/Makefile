@@ -16,8 +16,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	5.8.1+
-
 PERL_CONFIGURE=	yes
 
 MAN1=	nytprofhtml.1 \

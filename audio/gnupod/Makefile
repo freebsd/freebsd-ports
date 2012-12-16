@@ -30,7 +30,7 @@ MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
 		tunes2pod.pl.1
 MANCOMPRESSED=	yes
 
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
