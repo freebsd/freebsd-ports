@@ -26,6 +26,7 @@ PORTVERSION=	3.00
 PORTREVISION=	2
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
+		http://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
 
 MAINTAINER=	marius@FreeBSD.org
