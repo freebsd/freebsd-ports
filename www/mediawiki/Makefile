@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.19.2
-PORTREVISION=	1
+PORTVERSION=	1.19.3
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -34,7 +33,7 @@ IMAGICK_DESC=	use ImageMagick
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server
+USE_MYSQL=	client
 USE_PHP+=	mysql
 .endif
 
