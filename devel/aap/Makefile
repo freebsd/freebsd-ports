@@ -1,15 +1,10 @@
-# New ports collection makefile for:	A-A-P Recipe Executive: aap
-# Date created:				28 October 2002
-# Whom:					Bram Moolenaar <bram@a-a-p.org>
-#
+# Created by: Bram Moolenaar <bram@a-a-p.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aap
-PORTVERSION=	1.091
-PORTREVISOIN=	1
+PORTVERSION=	1.092
 CATEGORIES=	devel
-MASTER_SITES=	SF/a-a-p/Aap/${PORTVERSION}
+MASTER_SITES=	SF/a-a-p/Aap
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A build tool alternative to make with internet access and CVS support
@@ -25,7 +20,9 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 FULLDOCS=yes
 .else
 FULLDOCS=no
