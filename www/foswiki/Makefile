@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
 
 LICENSE=	GPLv2
 
-USE_PERL5=	5.8.4+
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 OPTIONS=	OPTINT "Install Perl modules for intl character support" On \

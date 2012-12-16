@@ -20,7 +20,7 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
-USE_PERL5_RUN=	5.8.0+
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	gnump3d
 SUB_LIST+=	PERL=${PERL}

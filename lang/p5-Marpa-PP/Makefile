@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-PPI>=1.206:${PORTSDIR}/textproc/p5-PPI \
 TEST_DEPENDS=	p5-Test-Weaken>=3.004000:${PORTSDIR}/devel/p5-Test-Weaken
 
 # PERL_CONFIGURE failed on Perl 5.12.4
-PERL_MODBUILD=	5.10.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Marpa::PP.3 \
 		Marpa::PP::Advanced::Bibliography.3 \

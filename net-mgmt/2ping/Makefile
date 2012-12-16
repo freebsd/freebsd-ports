@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC \
 		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
-USE_PERL5_RUN=	5.8.0+
+USE_PERL5_RUN=	yes
 
 MAN8=		2ping.8 2ping6.8
 

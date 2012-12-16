@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.10.1+
+PERL_CONFIGURE=	yes
 
 MAN1=		umph.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/umph

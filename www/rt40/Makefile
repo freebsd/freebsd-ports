@@ -60,7 +60,7 @@ BUILD_DEPENDS+=	${CORE_DEPS}       \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	5.8.3+
+USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf
 
 .include <bsd.port.options.mk>

@@ -30,7 +30,7 @@ DBDIR=		${BASEDIR}/var/db/${PORTNAME}
 RUNDIR=		${BASEDIR}/var/run/${PORTNAME}
 
 # Enable Perl dependency for logtail script
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755

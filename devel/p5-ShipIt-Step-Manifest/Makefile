@@ -19,7 +19,6 @@ RUN_DEPENDS=	p5-Dist-Joseki>=0:${PORTSDIR}/devel/p5-Dist-Joseki \
 		p5-ShipIt>=0:${PORTSDIR}/devel/p5-ShipIt
 
 PERL_CONFIGURE=	yes
-USE_PERL5_RUN=	5.8.1+
 
 MAN3=		ShipIt::Step::Manifest.3
 

@@ -31,7 +31,7 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0.94:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 # SVN source: https://www.maiamailguard.com/svn/branches/1.0
 SVNREVISION=	r1575
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0-${SVNREVISION}
-USE_PERL5_RUN=	5.8.2+
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 DOCS=	LICENSE README maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist

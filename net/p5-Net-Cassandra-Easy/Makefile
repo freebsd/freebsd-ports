@@ -22,7 +22,6 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	5.10.0+
 
 MAN3=		Net::Cassandra::Easy.3
 

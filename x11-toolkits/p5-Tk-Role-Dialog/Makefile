@@ -29,7 +29,7 @@ RUN_DEPENDS=	p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
 		p5-Tk-Role-HasWidgets>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/p5-Tk-Role-HasWidgets \
 		p5-Tk-Sugar>=0:${PORTSDIR}/x11-toolkits/p5-Tk-Sugar
 
-PERL_MODBUILD=	5.10.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Tk::Role::Dialog.3
 

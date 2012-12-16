@@ -22,7 +22,6 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-USE_PERL5_RUN=	5.8.1+
 
 MAN3=		Class::Accessor::Complex.3
 

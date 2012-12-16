@@ -23,7 +23,7 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 # It requires UNIVERSAL::DOES on Perl 5.8
-PERL_CONFIGURE=	5.10+
+PERL_CONFIGURE=	yes
 
 MAN3=		Scalar::Does.3 \
 		Scalar::Does::MooseTypes.3

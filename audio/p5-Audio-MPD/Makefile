@@ -29,7 +29,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Corpus-Audio-MPD>=1.113282:${PORTSDIR}/audio/p5-Test-Corpus-Audio-MPD
 
-PERL_MODBUILD=	5.10.0+
+PERL_MODBUILD=	yes
 
 MAN1=		mpd-dynamic.1 \
 		mpd-rate.1

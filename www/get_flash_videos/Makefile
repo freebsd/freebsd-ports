@@ -29,7 +29,7 @@ RUN_DEPENDS=	\
 		rtmpdump>=2.4.0:${PORTSDIR}/multimedia/rtmpdump
 
 FETCH_ARGS=	-Fpr	# work around 302 redirect at github
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

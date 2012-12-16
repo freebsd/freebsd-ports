@@ -15,7 +15,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Attribute wrapper for Getopt::Long
 
 PERL_CONFIGURE=	yes
-USE_PERL5_RUN=	5.8.1+
 
 MAN3=		Getopt::Attribute.3
 

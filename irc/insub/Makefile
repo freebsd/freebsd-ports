@@ -19,7 +19,7 @@ RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
 NO_BUILD=	YES
 
 USE_BZIP2=	YES
-USE_PERL5=	5.6+
+USE_PERL5=	yes
 
 SCRIPT=	${PORTNAME}.pl
 

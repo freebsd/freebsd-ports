@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Perl extension for serialize/deserialize AMF0/AMF3 data
 
-USE_PERL5=	5.8.1+
 PERL_CONFIGURE=	yes
 
 MAN3=	Storable::AMF.3 \

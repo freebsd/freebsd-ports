@@ -17,8 +17,6 @@ COMMENT=	A return-value object that can be treated as a boolean, array, or objec
 BUILD_DEPENDS=	p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	5.8.0+
-USE_PERL5_REASON=	fails tests with 5.6.X
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::ReturnValue.3

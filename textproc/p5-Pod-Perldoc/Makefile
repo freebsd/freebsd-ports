@@ -15,7 +15,6 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Look up Perl documentation in Pod format
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	5.0+
 
 MAN3=		Pod::Perldoc::ToNroff.3 \
 		Pod::Perldoc::ToTk.3 \

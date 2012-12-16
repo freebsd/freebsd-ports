@@ -28,8 +28,7 @@ RUN_DEPENDS=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
 
 CONFLICTS=	keitairc-1.*
 NO_BUILD=	yes
-USE_PERL5=	5.8.0+
-USE_PERL5_REASON= runs on perl 5.8 or later
+USE_PERL5=	yes
 
 post-extract:
 	${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM} -rf

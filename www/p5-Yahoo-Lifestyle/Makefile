@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-Yahoo-BBAuth>=0:${PORTSDIR}/security/p5-Yahoo-BBAuth \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	5.8.1+
 PERL_CONFIGURE=	yes
 
 MAN3=		Yahoo::Lifestyle.3

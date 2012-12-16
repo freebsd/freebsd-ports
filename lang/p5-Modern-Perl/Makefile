@@ -16,7 +16,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Enable all of the features of Modern Perl with one command
 
 PERL_MODBUILD=	yes
-USE_PERL5=	5.10.0+
 
 MAN3=		Modern::Perl.3
 

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Add grammatical parsing features to Perl 5.10 regexes
 
-PERL_MODBUILD=	5.10+
+PERL_MODBUILD=	yes
 
 MAN3=	Regexp::Grammars.3
 

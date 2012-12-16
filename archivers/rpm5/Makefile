@@ -42,7 +42,7 @@ LIBTOOLFILES=	configure db3/configure db/dist/configure \
 CONFIGURE_ARGS=	--without-js
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=5.8.0+
+USE_PERL5_BUILD=yes
 LATEST_LINK=	rpm5
 CONFLICTS=	rpm-3.* rpm-4.*
 

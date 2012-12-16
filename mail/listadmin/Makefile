@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Text-Reform>=0:${PORTSDIR}/textproc/p5-Text-Reform \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5_RUN=	5.8.0+
+USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/listadmin
 MAN1=		listadmin.1
