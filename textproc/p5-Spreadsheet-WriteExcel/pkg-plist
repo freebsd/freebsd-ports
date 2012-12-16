@@ -21,8 +21,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.packlist
 bin/chartex
 %%PORTDOCS%%%%DOCSDIR%%/Perl_Journal_Article.html
-%%PORTDOCS%%%%DOCSDIR%%/WriteExcel.html
-%%PORTDOCS%%%%DOCSDIR%%/WriteExcel_Install.html
 %%PORTDOCS%%%%DOCSDIR%%/images/example.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/swe.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
