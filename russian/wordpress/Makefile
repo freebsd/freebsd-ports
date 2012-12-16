@@ -1,22 +1,16 @@
-# New ports collection makefile for:	wordpress
-# Date created:		2011-12-27
-# Whom:			Mihail Timofeev <9267096@gmail.com>
-#			(based on wordpress by Elvis Chiang)
-#
+# Created by: Mihail Timofeev <9267096@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ru_RU
 
 MAINTAINER=	9267096@gmail.com
-COMMENT=	A state-of-the-art semantic personal publishing platform
+COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/license.txt
 
 CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ja-wordpress-3.*
 
@@ -27,7 +21,7 @@ WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST=		${WRKDIR}/pkg-plist
-PORTDOCS=	license.txt readme.html
+PORTDOCS=	readme.html
 SUB_FILES=	pkg-message
 
 pre-everything::
