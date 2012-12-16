@@ -424,7 +424,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger_algorithm.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger_linear_algebra.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/aes.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/altsimp/altsimp.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/augmented_lagrangian.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/bitwise/bitwise.lisp
@@ -581,8 +580,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/test/type.output
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/vaxinit.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/vaxlsp.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/aes.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/aes2.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf_hard_test.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf_manual.pdf
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf_manual.tex
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf_test.mac
@@ -1151,8 +1151,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/misc/declin.mac
 %%DATADIR%%/%%PORTVERSION%%/share/misc/declin.usg
 %%DATADIR%%/%%PORTVERSION%%/share/misc/diffop.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/misc/disran.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/misc/disran.usg
 %%DATADIR%%/%%PORTVERSION%%/share/misc/dump.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/misc/dump.usg
 %%DATADIR%%/%%PORTVERSION%%/share/misc/foptim.lisp
@@ -1455,7 +1453,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/db.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/defcal.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/defint.lisp
-%%DATADIR%%/%%PORTVERSION%%/src/defopt.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/desoln.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/displa.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/displm.lisp
@@ -1488,7 +1485,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/invert.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/irinte.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/laplac.lisp
-%%DATADIR%%/%%PORTVERSION%%/src/ldisp.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/lesfac.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/letmac.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/limit.lisp
@@ -1772,6 +1768,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_integrate.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_integrate_special.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_lambert_w.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_laplace.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_log.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
@@ -1779,6 +1776,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_plot.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_power.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_round.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_rules.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_scalarp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_sign.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_signum.mac
@@ -1788,6 +1786,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_trig.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_zeta.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtestconjugate.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtestdefstruct.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtesthyp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtestifactor.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtestint.mac

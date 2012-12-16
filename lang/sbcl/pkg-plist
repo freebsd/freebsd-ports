@@ -56,6 +56,8 @@ lib/sbcl/sb-cltl2/sb-cltl2.asd
 lib/sbcl/sb-cltl2/sb-cltl2.fasl
 lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
+lib/sbcl/sb-concurrency/frlock.fasl
+lib/sbcl/sb-concurrency/frlock.lisp
 lib/sbcl/sb-concurrency/gate.fasl
 lib/sbcl/sb-concurrency/gate.lisp
 lib/sbcl/sb-concurrency/mailbox.fasl
