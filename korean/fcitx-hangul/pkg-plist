@@ -3,11 +3,13 @@ share/fcitx/addon/fcitx-hangul.conf
 share/fcitx/configdesc/fcitx-hangul.desc
 share/fcitx/hangul/symbol.txt
 share/fcitx/inputmethod/hangul.conf
-share/fcitx/skin/default/hangul.png
+share/fcitx/skin/imicon/hangul.png
 share/icons/hicolor/64x64/apps/fcitx-hangul.png
 share/icons/hicolor/64x64/status/fcitx-hanja-active.png
 share/icons/hicolor/64x64/status/fcitx-hanja-inactive.png
 share/locale/ko/LC_MESSAGES/fcitx-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-hangul.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-hangul.mo
+@dirrm share/fcitx/skin/imicon
+@dirrmtry share/fcitx/skin
 @dirrm share/fcitx/hangul
