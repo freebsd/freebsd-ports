@@ -43,7 +43,7 @@ GTK1_DESC=	Legacy GTK+ 1.2.x support
 IMLIB_DESC=	Imlib support in FvwmGtk
 GNOME_DESC=	Legacy GNOME 1.4 support
 
-OPTIONS_DEFAULT=	MMX GLX GLX_X86
+OPTIONS_DEFAULT=	MMX GLX
 OPTIONS_DEFAULT_i386=	GLX_X86
 
 .include <bsd.port.pre.mk>
