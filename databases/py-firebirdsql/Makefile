@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-firebirdsql
-# Date created:				2011-04-11
-# Whom:					Jose Jachuf <jjachuf@gmail.com>
-#
+# Created by: Jose Jachuf <jjachuf@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	firebirdsql
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
