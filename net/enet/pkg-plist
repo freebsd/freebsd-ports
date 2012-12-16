@@ -10,6 +10,6 @@ include/enet/win32.h
 lib/libenet.a
 lib/libenet.la
 lib/libenet.so
-lib/libenet.so.2
+lib/libenet.so.3
 libdata/pkgconfig/libenet.pc
 @dirrm include/enet
