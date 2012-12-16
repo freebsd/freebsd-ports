@@ -43,10 +43,10 @@ WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-93dd133
 
 OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX
 
-DYNAMIC_ARCH_DESC=	"Support multiple CPU types on i386 and amd64"
-INTERFACE64_DESC=	"Use 8 byte integers on 64-bit architectures"
-OPENMP_DESC=		"Use OpenMP for threading"
-AVX_DESC=		"Support Advanced Vector Extensions (AVX)"
+DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
+INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
+OPENMP_DESC=		Use OpenMP for threading
+AVX_DESC=		Support Advanced Vector Extensions (AVX)
 
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT=	DYNAMIC_ARCH
@@ -87,7 +87,7 @@ BROKEN =	QUAD_PRECISION is broken; please disable this option
 BUILDFLAGS+=	QUAD_PRECISION=1
 .endif
 
-.if empty ( ${PORT_OPTIONS:MAVX} )
+.if ! ${PORT_OPTIONS:MAVX}
 BUILDFLAGS+=	NO_AVX=1
 .endif
 
