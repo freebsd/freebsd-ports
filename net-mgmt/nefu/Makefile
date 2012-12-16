@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nefu
-# Date created:				17.10.2003
-# Whom:					Kirill Ponomarew <krion@FreeBSD.org>
-#
+# Created by: Kirill Ponomarew <krion@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nefu
 PORTVERSION=	1.5
@@ -32,24 +28,24 @@ USERS=		nefu
 GROUPS=		nefu
 
 USE_OPENSSL=	yes
-OPTIONS=	LDAP "Enable OpenLDAP support" off \
-		HTML "Enable HTML support" off
+OPTIONS_DEFINE=	LDAP HTML
+HTML_DESC=	HTML support
 
 MAN1=		nefu.1
 MAN4=		nefu.conf.4
 DBDIR=		/var/db/nefu
 PLIST_FILES=	bin/nefu
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if defined(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 CONFIGURE_ARGS+=--with-html=${WWWDIR}
 PLIST_FILES+=	"@unexec rm -rf "%D/%%WWWDIR%%" 2> /dev/null || true"
 .else
@@ -72,11 +68,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/nefu.conf.4 ${PREFIX}/man/man4
 
 post-install:
-.if defined(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 	${MKDIR} ${WWWDIR}
 	${CHOWN} -R ${USERS}:${GROUPS} ${WWWDIR}
 .endif
 	${MKDIR} ${DBDIR}
 	${CHOWN} -R ${USERS}:${GROUPS} ${DBDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

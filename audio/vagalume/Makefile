@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vagalume
-# Date created:	2008-06-14
-# Whom:		Bernhard Fröhlich <decke@bluelife.at>
-#
+# Created by: Bernhard Fröhlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	vagalume
 PORTVERSION=	0.8.5
@@ -21,18 +17,20 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gtk20
+USE_GNOME=	gtk20
+USE_PKGCONFIG=	build
 USE_GSTREAMER=	good mad gconf
 INSTALLS_ICONS=	yes
 
 MAN1=		vagalume.1
 
-OPTIONS=	DBUS "Build with DBUS support" on \
-		TRAY "Build with tray icon and libnotify support" on
+OPTIONS_DEFINE=	DBUS TRAY NLS GCONF
+OPTIONS_DEFAULT=	DBUS TRAY
+TRAY_DESC=	Tray icon and libnotify support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -41,7 +39,7 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 CONFIGURE_ARGS+=--enable-dbus --enable-im-status
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	DBUS=""
@@ -51,7 +49,7 @@ CONFIGURE_ARGS+=--disable-dbus --disable-im-status
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
-.if !defined(WITHOUT_TRAY)
+.if ${PORT_OPTIONS:MTRAY}
 CONFIGURE_ARGS+=--enable-tray-icon
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
@@ -59,7 +57,7 @@ LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--disable-tray-icon
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=--enable-gconf
 .endif
@@ -67,9 +65,9 @@ CONFIGURE_ARGS+=--enable-gconf
 post-patch:
 	@${REINPLACE_CMD} -e 's|serviceentrydir = @serviceentrydir@|serviceentrydir = ${PREFIX}/share/dbus-1/services|' \
 		${WRKSRC}/Makefile.in
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|SUBDIRS = src po|SUBDIRS = src|' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
