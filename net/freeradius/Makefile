@@ -28,7 +28,10 @@ COMMENT?=	A free RADIUS server implementation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+
+DEPRECATED=	No longer maintained/supported.  Please move to net/freeradius2 for 2.x
+EXPIRATION_DATE=2013-02-01
 
 CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 # If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
@@ -118,10 +121,10 @@ WITH_KERBEROS=	yes
 
 .ifdef(WITH_KERBEROS)
 .ifdef(WITH_HEIMDAL)
-LIB_DEPENDS+=	krb5.26:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=${LOCALBASE}/include
@@ -171,7 +174,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .ifdef(WITH_UNIXODBC)
 CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC=""
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC="@comment "
@@ -192,7 +195,7 @@ WITH_EXPERIMENTAL=	yes
 .endif
 
 .ifdef(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=--without-snmp
 .endif
