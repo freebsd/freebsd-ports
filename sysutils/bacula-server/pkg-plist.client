@@ -1,21 +1,19 @@
-%%NOSF%%lib/libbac.la
-%%NOSF%%lib/libbac.so
-%%NOSF%%lib/libbac.so.%%MAJOR%%
-%%NOSF%%lib/libbaccfg.la
-%%NOSF%%lib/libbaccfg.so
-%%NOSF%%lib/libbaccfg.so.%%MAJOR%%
-%%NOSF%%lib/libbacfind.la
-%%NOSF%%lib/libbacfind.so
-%%NOSF%%lib/libbacfind.so.%%MAJOR%%
-%%NOSF%%lib/libbacpy.la
-%%NOSF%%lib/libbacpy.so
-%%NOSF%%lib/libbacpy.so.%%MAJOR%%
-%%NOSF%%lib/bpipe-fd.so
-%%SFDAEMON%%sbin/static-bacula-fd
+lib/libbac.la
+lib/libbac.so
+lib/libbac.so.%%MAJOR%%
+lib/libbaccfg.la
+lib/libbaccfg.so
+lib/libbaccfg.so.%%MAJOR%%
+lib/libbacfind.la
+lib/libbacfind.so
+lib/libbacfind.so.%%MAJOR%%
+lib/libbacpy.la
+lib/libbacpy.so
+lib/libbacpy.so.%%MAJOR%%
+lib/bpipe-fd.so
 sbin/bacula-fd
 sbin/bconsole
-%%WXCONS%%sbin/bwx-console
-@unexec /usr/bin/killall badula-fd > /dev/null 2>&1 || true
+@unexec /usr/bin/killall bacula-fd > /dev/null 2>&1 || true
 @exec mkdir -p %%BACULA_DIR%%
 @dirrmtry %%BACULA_DIR%%
-@dirrm share/bacula
+@dirrmtry share/bacula

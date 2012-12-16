@@ -1,3 +1,0 @@
-libexec/nagios/check_bacula
-%%INDEP%%lib/libbac.so.%%MAJOR%%
-@dirrmtry libexec/nagios

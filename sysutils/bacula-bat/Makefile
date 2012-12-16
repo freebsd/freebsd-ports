@@ -1,17 +1,13 @@
-# New ports collection makefile for:	bacula-bat
-# Date created:				18 Sep 2007
-# Whom:					Dan Langille <dan@langille.org>
-#
+# Created by: Dan Langille <dan@langille.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bacula
-PORTREVISION=	2
 PKGNAMESUFFIX=	-bat
 
-COMMENT=	The network backup solution (GUI)
+COMMENT=	Network backup solution (GUI)
 
-LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
+		bac:${PORTSDIR}/sysutils/bacula-client
 
 USE_QT4=	qmake_build uic_build moc_build rcc_build
 WITH_BAT=	yes
@@ -22,56 +18,13 @@ MAKE_ENV+=	MAKEOBJDIRPREFIX=/
 
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
 
-PLIST=		${.CURDIR}/pkg-plist
+CONFIGURE_ARGS+=	--enable-bat \
+			--with-qwt=${LOCALBASE}/lib \
+			--disable-build-dird \
+			--disable-build-stored \
+			--enable-client-only
 
-CONFIGURE_ARGS+=--enable-bat \
-		--with-qwt=${LOCALBASE}/lib \
-		--disable-build-dird \
-		--disable-build-stored \
-		--enable-client-only
-
-OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" on
+OPTIONS_DEFINE=	OPENSSL
+OPTIONS_DEFAULT=OPENSSL
 
 .include "${MASTERDIR}/Makefile"
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.else
-CONFIGURE_ARGS+=	--with-openssl="no"
-.endif
-
-.if exists(${LOCALBASE}/lib/libbac.so.${PORTVERSION:R:R}) && exists(${LOCALBASE}/lib/libbaccfg.so.${PORTVERSION:R:R})
-LIB_DEPENDS+=	bac.${PORTVERSION:R:R}:${PORTSDIR}/sysutils/bacula-client
-PLIST_SUB+=	INDEP="@comment "
-
-.elif exists(${LOCALBASE}/lib/libbac.so.1) || exists(${LOCALBASE}/lib/libbaccfg.so.1)
-# To prevent build with old libraries
-IGNORE=		please update sysutils/bacula-client first
-
-.else
-WITH_LIBS=	YES
-PLIST_SUB+=	INDEP=""
-.endif
-
-pre-everything::
-	@${ECHO_MSG} "===> Building bat the GUI interface for Bacula."
-
-do-install:
-	# Install config files and preserve existing ones
-	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bat.conf.sample
-	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${PREFIX}/man/man1/
-.if defined(WITH_LIBS)
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbac.so.${PORTVERSION:R:R} \
-	    ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbaccfg.so.${PORTVERSION:R:R} \
-	    ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/src/findlib/.libs/libbacfind.so.${PORTVERSION:R:R} \
-	    ${PREFIX}/lib
-.else
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin
-.endif
-
-.include <bsd.port.post.mk>
