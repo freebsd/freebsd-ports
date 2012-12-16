@@ -3977,3 +3977,4 @@ www/horde-trean|www/horde3-trean|2012-12-12|Rename of old horde apps
 www/horde-wicked|www/horde3-wicked|2012-12-12|Rename of old horde apps
 x11-toolkits/fltk-threads|x11-toolkits/fltk|2012-12-12|Threads are on by default
 x11-fonts/gentium|x11-fonts/gentium-plus|2012-12-15|Track upstream name changes
+devel/pear-Horde_DataTree||2012-12-16|Obsolete in horde5
