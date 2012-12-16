@@ -1,13 +1,8 @@
-# New ports collection makefile for:   ggm
-# Date created:        28 May 2008
-# Whom:                Sascha Klauder <sklauder@trimind.de>
-#
+# Created by: Sascha Klauder <sklauder@trimind.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.12.6
-PORTREVISION=	7
+PORTVERSION=	0.12.7
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
