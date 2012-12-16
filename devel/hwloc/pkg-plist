@@ -1,3 +1,4 @@
+bin/hwloc-annotate
 bin/hwloc-assembler
 bin/hwloc-assembler-remote
 bin/hwloc-bind
@@ -21,7 +22,7 @@ include/hwloc/rename.h
 lib/libhwloc.a
 lib/libhwloc.la
 lib/libhwloc.so
-lib/libhwloc.so.6
+lib/libhwloc.so.7
 libdata/pkgconfig/hwloc.pc
 share/hwloc/hwloc-valgrind.supp
 share/hwloc/hwloc.dtd

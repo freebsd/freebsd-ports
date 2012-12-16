@@ -1,6 +1,7 @@
 # $FreeBSD$
 
-MAN1=		hwloc-assembler-remote.1 \
+MAN1=		hwloc-annotate.1 \
+		hwloc-assembler-remote.1 \
 		hwloc-assembler.1 \
 		hwloc-bind.1 \
 		hwloc-calc.1 \
@@ -146,6 +147,8 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_distances_s.3 \
 		hwloc_distribute.3 \
 		hwloc_distributev.3 \
+		hwloc_export_obj_userdata.3 \
+		hwloc_export_obj_userdata_base64.3 \
 		hwloc_free.3 \
 		hwloc_free_xmlbuffer.3 \
 		hwloc_get_ancestor_obj_by_depth.3 \
@@ -290,6 +293,8 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_topology_set_fsroot.3 \
 		hwloc_topology_set_pid.3 \
 		hwloc_topology_set_synthetic.3 \
+		hwloc_topology_set_userdata_export_callback.3 \
+		hwloc_topology_set_userdata_import_callback.3 \
 		hwloc_topology_set_xml.3 \
 		hwloc_topology_set_xmlbuffer.3 \
 		hwloc_topology_support.3 \
@@ -329,7 +334,8 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwlocality_tinker.3 \
 		hwlocality_topology.3 \
 		hwlocality_traversal.3 \
-		hwlocality_types.3
+		hwlocality_types.3 \
+		hwlocality_xmlexport.3
 
 MAN7=		hwloc.7
 
