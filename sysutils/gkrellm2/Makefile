@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gkrellm
-# Date Created:		Mar 4 2000
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.5
@@ -23,13 +18,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	gkrellmd
 WANT_GNOME=	yes
-USE_OPENSSL=	yes		# cannot set after bsd.port.pre.mk
 
-OPTIONS_DEFINE=		GKRELLM_CLIENT NLS NTLM SSL
-OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	GKRELLM_CLIENT NLS NTLM SSL OPENSSL
-GKRELLM_CLIENT_DESC=	Enable GKrellM Client
+OPTIONS_DEFINE=		DOCS GKRELLM_CLIENT NLS NTLM
+OPTIONS_RADIO=		SSL
+OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	GKRELLM_CLIENT NTLM OPENSSL
+GKRELLM_CLIENT_DESC=	GKrellM Client
 
 .include <bsd.port.options.mk>
 
@@ -42,15 +36,13 @@ USE_GETTEXT=	yes
 MAKE_ENV+=	enable_nls=0
 .endif
 USE_XORG=	x11 sm
-.if ${PORT_OPTIONS:MSSL}
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls-openssl:${PORTSDIR}/security/gnutls
 MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
 		without-ssl=1
 .elif ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 MAKE_ENV+=	without-gnutls=1
-.endif
 .else
 MAKE_ENV+=	without-gnutls=1 without-ssl=1
 .endif
@@ -61,7 +53,7 @@ USE_GNOME=	glib20
 .endif
 
 .if ${PORT_OPTIONS:MNTLM}
-LIB_DEPENDS+=	ntlm.0:${PORTSDIR}/security/libntlm
+LIB_DEPENDS+=	ntlm:${PORTSDIR}/security/libntlm
 .else
 MAKE_ENV+=	without-ntlm=1
 .endif
