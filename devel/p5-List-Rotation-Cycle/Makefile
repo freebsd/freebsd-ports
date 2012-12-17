@@ -20,11 +20,4 @@ MAN3=		List::Rotation::Cycle.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Memoize>=0:${PORTSDIR}/devel/p5-Memoize
-RUN_DEPENDS+=	p5-Memoize>=0:${PORTSDIR}/devel/p5-Memoize
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
