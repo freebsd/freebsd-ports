@@ -35,20 +35,20 @@ CONFIGURE_ARGS =	--with-gfortran
 CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
 	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}"
 
-OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
-		FFTW "Use FFTW" ON \
-		GUI "Build GUI (requires Java)" ON \
-		HELP "Help Browser (Java based, requires GUI)" ON \
-		NLS "Build localization" OFF \
-		MATIO "Matlab compatibility" OFF \
-		OCAML "Build ocaml modelica compiler (requires GUI)" OFF \
-		PVM "Parallel Virtual Machine support" OFF \
-		TK "TCL/TK support" OFF \
-		UMFPACK "Build with umfpack" OFF
+OPTIONS_DEFINE=	ATLAS FFTW GUI HELP NLS MATIO OCAML PVM TK UMFPACK
+OPTIONS_DEFAULT=	FFTW GUI HELP
+
+ATLAS_DESC=	Use Atlas instead of Blas
+GUI_DESC=	Build GUI (requires Java)
+HELP_DESC=	Help Browser (Java based, requires GUI)
+MATIO_DESC=	Matlab compatibility
+OCAML_DESC=	Build OCaml modelica compiler (requires GUI)
+PVM_DESC=	Parallel Virtual Machine support
+UMFPACK_DESC=	Build with umfpack
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ATLAS)
+.if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lf77blas
 LAPACK_LIBS=	-lalapack -lcblas
@@ -59,7 +59,7 @@ BLAS_LIBS?=	-lblas
 LAPACK_LIBS?=	-llapack
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-build-localization
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--enable-build-localization
 PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITHOUT_TK)
+.if ! ${PORT_OPTIONS:MTK}
 CONFIGURE_ARGS+=	--without-tk
 .else
 USE_TK=		yes
@@ -81,7 +81,7 @@ SAXON_VERSION=	6.5.5
 SAXON_DISTFILE=	saxon${SAXON_VERSION:S/./-/g}.zip
 DISTFILES+=	${SAXON_DISTFILE}:saxon
 
-.if defined(WITHOUT_GUI)
+.if ! ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=	--without-gui \
 			--without-javasci \
 			--without-hdf5 \
@@ -142,17 +142,17 @@ CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
 PLIST_SUB+=		WITHOUT_GUI="@comment "
 .endif
 
-.if !defined(WITHOUT_HELP)
+.if ${PORT_OPTIONS:MHELP}
 ALL_TARGET=	all doc
 .endif
 
-.if defined(WITHOUT_FFTW)
+.if ! ${PORT_OPTIONS:MFFTW}
 CONFIGURE_ARGS+=	--without-fftw
 .else
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
-.if defined(WITHOUT_PVM)
+.if ! ${PORT_OPTIONS:MPVM}
 CONFIGURE_ARGS+=	--without-pvm
 .else
 BUILD_DEPENDS+=		pvm:${PORTSDIR}/net/pvm
@@ -165,7 +165,7 @@ CONFIGURE_ENV=	PVM_ROOT=${LOCALBASE} \
 		PVMGETARCH=${LOCALBASE}/lib/pvm/lib/pvmgetarch
 .endif
 
-.if defined(WITHOUT_UMFPACK)
+.if ! ${PORT_OPTIONS:MUMFPACK}
 CONFIGURE_ARGS+=	--without-umfpack
 .else
 LIB_DEPENDS+=	amd.1:${PORTSDIR}/math/suitesparse
@@ -173,13 +173,13 @@ CONFIGURE_ARGS+=	--with-umfpack-include=${LOCALBASE}/include \
 			--with-umfpack-library=${LOCALBASE}/lib
 .endif
 
-.if defined(WITHOUT_MATIO)
+.if ! ${PORT_OPTIONS:MMATIO}
 CONFIGURE_ARGS+=	--without-matio
 .else
 LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
 .endif
 
-.if defined(WITHOUT_OCAML)
+.if ! ${PORT_OPTIONS:MOCAML}
 CONFIGURE_ARGS+=	--without-modelica
 PLIST_SUB+=	OCAML="@comment "
 .else
@@ -188,14 +188,14 @@ RUN_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
 PLIST_SUB+=	OCAML=""
 .endif
 
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-NOPORTDOCS
 .endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/thirdparty
 	@${UNZIP_CMD} ${DISTDIR}/${SAXON_DISTFILE} saxon.jar -d ${WRKSRC}/thirdparty
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
 .endif
 
@@ -221,7 +221,7 @@ post-patch:
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
@@ -249,7 +249,7 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${DATADIR}/.atoms
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@${MKDIR} ${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${DATADIR}/modules/jgraphx.jar
 	@${REINPLACE_CMD} -e 's|${WRKSRC}/thirdparty/jgraphx.jar|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml
 .endif
@@ -276,7 +276,7 @@ post-install:
 		-not -path ${DATADIR}/.atoms\* -not -path ${DATADIR} | \
 		${SORT} -r | ${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/scilab 2>/dev/null || true" >> ${TMPPLIST}
-.if defined(WITHOUT_GUI)
+.if ! ${PORT_OPTIONS:MGUI}
 	@${TOUCH} ${DATADIR}/contrib/xcos_toolbox_skeleton/images/h5/.keep_me
 .endif
 
