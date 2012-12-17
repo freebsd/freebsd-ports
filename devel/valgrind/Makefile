@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	valgrind
-PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTVERSION=	3.8.0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/:dist \
+MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/:dist \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:dist \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:manpages
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-3
+DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
 		${DISTNAME}-manpages${EXTRACT_SUFX}:manpages
 
