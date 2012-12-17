@@ -611,6 +611,7 @@
     SUBDIR += pam_pseudo
     SUBDIR += pam_pwdfile
     SUBDIR += pam_require
+    SUBDIR += pam_search_list
     SUBDIR += pam_smb
     SUBDIR += pam_ssh_agent_auth
     SUBDIR += pamtester
