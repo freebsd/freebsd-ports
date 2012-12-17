@@ -66,35 +66,11 @@ MAN3=	CPANPLUS.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500904
-RUN_DEPENDS+=	p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
-		p5-Module-Loaded>=0.01:${PORTSDIR}/devel/p5-Module-Loaded \
-		p5-Package-Constants>=0.01:${PORTSDIR}/devel/p5-Package-Constants
-.endif
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-Archive-Extract>=0.16:${PORTSDIR}/archivers/p5-Archive-Extract \
-		p5-IPC-Cmd>=0.36:${PORTSDIR}/devel/p5-IPC-Cmd \
-		p5-Locale-Maketext-Simple>=0.01:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		p5-Log-Message>=0.01:${PORTSDIR}/devel/p5-Log-Message \
-		p5-Object-Accessor>=0.32:${PORTSDIR}/devel/p5-Object-Accessor \
-		p5-Params-Check>=0.22:${PORTSDIR}/devel/p5-Params-Check
-.endif
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-File-Fetch>=0.13_04:${PORTSDIR}/ftp/p5-File-Fetch \
-		p5-Module-Load-Conditional>=0.18:${PORTSDIR}/devel/p5-Module-Load-Conditional \
-		p5-Term-UI>=0.18:${PORTSDIR}/devel/p5-Term-UI
-PLIST_SUB+=	EXE_FILES=""
-MAN1=		cpanp.1 cpan2dist.1
-.else
+# XXX:az pkg-plist
 PLIST_SUB+=	EXE_FILES="@comment "
-.endif
 
 post-patch:
-.if ${PERL_LEVEL} >= 501000
 	@${REINPLACE_CMD} -e 's/5.009/5.666/; /install_script/d' ${WRKSRC}/Makefile.PL
-.endif
 
 .if ${PORT_OPTIONS:MTEST_REPORTER}
 RUN_DEPENDS+=	p5-Test-Reporter>=0:${PORTSDIR}/devel/p5-Test-Reporter
