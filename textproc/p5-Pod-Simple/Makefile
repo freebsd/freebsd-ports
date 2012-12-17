@@ -44,11 +44,4 @@ MAN3=		Pod::Simple.3 \
 		Pod::Simple::XHTML.3 \
 		Pod::Simple::XMLOutStream.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS=	p5-Pod-Escapes>=1.04:${PORTSDIR}/textproc/p5-Pod-Escapes
-BUILD_DEPENDS=	p5-Pod-Escapes>=1.04:${PORTSDIR}/textproc/p5-Pod-Escapes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,12 +16,6 @@ COMMENT=	These are experimental Perl5 modules to handle various Unicode issues
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500804
-BUILD_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
 MAN3=		Unicode::CharName.3 Unicode::String.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

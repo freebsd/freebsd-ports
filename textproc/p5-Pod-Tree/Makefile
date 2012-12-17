@@ -41,10 +41,4 @@ post-patch:
 	${REINPLACE_CMD} -e '/pod2html/d' ${WRKSRC}/MANIFEST
 	${RM} ${WRKSRC}/t/pod2html.t
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-Pod-Escapes>=1.02:${PORTSDIR}/textproc/p5-Pod-Escapes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
