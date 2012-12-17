@@ -18,11 +18,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		Data::Dumper::Simple.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

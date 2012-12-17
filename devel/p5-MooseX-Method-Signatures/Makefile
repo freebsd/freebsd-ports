@@ -46,10 +46,4 @@ MAN3=		MooseX::Method::Signatures.3 \
 		MooseX::Method::Signatures::Types.3 \
 		MooseX::Method::Signatures::Meta::Method.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

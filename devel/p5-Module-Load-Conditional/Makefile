@@ -26,17 +26,6 @@ MAN3=		Module::Load::Conditional.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load \
-		p5-Params-Check>=0:${PORTSDIR}/devel/p5-Params-Check \
-		p5-version>=0.69:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load \
-		p5-Params-Check>=0:${PORTSDIR}/devel/p5-Params-Check \
-		p5-version>=0.69:${PORTSDIR}/devel/p5-version
-.endif
-
 .if ${PERL_LEVEL} < 501600
 BUILD_DEPENDS+=	p5-Module-Metadata>=1.000005:${PORTSDIR}/devel/p5-Module-Metadata
 RUN_DEPENDS+=	p5-Module-Metadata>=1.000005:${PORTSDIR}/devel/p5-Module-Metadata

@@ -60,11 +60,6 @@ MAN3=	Test::DBIx::Class.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Digest-MD5>=2.39:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS+=	p5-Digest-MD5>=2.39:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils

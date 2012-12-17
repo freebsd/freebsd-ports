@@ -41,14 +41,4 @@ MAN3=		Net::XMPP.3 \
 		Net::XMPP::Roster.3 \
 		Net::XMPP::Stanza.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.92:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-Module-Build>=0.3603:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

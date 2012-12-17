@@ -55,12 +55,6 @@ DOCS=	FAQ README TODO doc/*
 PORTDOCS=	*
 PORTEXAMPLES=	ftpd.conf
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \
@@ -81,4 +75,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
