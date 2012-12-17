@@ -1,3 +1,6 @@
+bin/vss2raw
+bin/vss2text
+bin/vss2xhtml
 bin/vsd2text
 bin/vsd2raw
 bin/vsd2xhtml

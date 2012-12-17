@@ -1,12 +1,7 @@
-# New ports collection makefile for:	libvisio
-# Date created:		2011-09-19
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libvisio
-PORTVERSION=	0.0.19
+PORTVERSION=	0.0.23
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/ \
 		LOCAL/sunpoet
