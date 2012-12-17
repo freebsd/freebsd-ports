@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-PEAR_PackageFileManager
-# Date created:			  23 May 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	PEAR_PackageFileManager
 PORTVERSION=	1.7.0
@@ -16,8 +12,9 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_PHP_COMPATINFO "PEAR::PHP_CompatInfo support" off \
-		PEAR_XML_TREE "PEAR::XML_Tree support" off
+OPTIONS_DEFINE=	PEAR_PHP_COMPATINFO PEAR_XML_TREE
+PEAR_PHP_COMPATINFO_DESC=	PEAR::PHP_CompatInfo support
+PEAR_XML_TREE_DESC=	PEAR::XML_Tree support
 
 CATEGORY=	PEAR
 
@@ -70,15 +67,15 @@ TESTS=		addConfigureOption/test_invalid_nosetoptions.phpt \
 		Bad_file.php phpt_test.php.inc setup.php.inc test1_package.xml \
 		Test_file.php
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_PHP_COMPATINFO)
+.if ${PORT_OPTIONS:MPEAR_PHP_COMPATINFO}
 RUN_DEPENDS+=	${PEARDIR}/PHP/CompatInfo.php:${PORTSDIR}/devel/pear-PHP_CompatInfo
 .endif
 
-.if defined(WITH_PEAR_XML_TREE)
+.if ${PORT_OPTIONS:MPEAR_XML_TREE}
 RUN_DEPENDS+=	${PEARDIR}/XML/Tree.php:${PORTSDIR}/devel/pear-XML_Tree
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

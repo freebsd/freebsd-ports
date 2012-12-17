@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-LiveUser
-# Date created:			  29 November 2004
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	LiveUser
 PORTVERSION=	0.16.14
@@ -18,40 +14,42 @@ RUN_DEPENDS=	${PEARDIR}/Event/Dispatcher.php:${PORTSDIR}/devel/pear-Event_Dispat
 PORTSCOUT=	skipv:0.61
 
 LATEST_LINK=	pear-LiveUser
-OPTIONS=	PEAR_DB "PEAR::DB support" off \
-		PEAR_MDB "PEAR::MDB support" off \
-		PEAR_MDB2 "PEAR::MDB2 support" off \
-		PEAR_LOG "PEAR::Log support" off \
-		PEAR_XML_TREE "PEAR::XML_Tree support" off \
-		PEAR_CRYPT_RC4 "PEAR::Crypt_RC4 support" off
+OPTIONS_DEFINE=	PEAD_DB PEAR_MDB PEAR_MDB2 PEAR_LOG PEAR_XML_TREE PEAR_CRYPT_RC4
+
+PEAR_DB_DESC=	PEAR::DB support
+PEAR_MDB_DESC=	PEAR::MDB support
+PEAR_MDB2_DESC=	PEAR::MDB2 support
+PEAR_LOG_DESC=	PEAR::Log support
+PEAR_XML_TREE_DESC=	PEAR::XML_Tree support
+PEAR_CRYPT_RC4_DESC=	PEAR::Crypt_RC4 support
 
 PEAR_AUTOINSTALL=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_DB)
+.if ${PORT_OPTIONS:MPEAR_DB}
 RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
-.if defined(WITH_PEAR_MDB)
+.if ${PORT_OPTIONS:MPEAR_MDB}
 RUN_DEPENDS+=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB
 .endif
 
-.if defined(WITH_PEAR_MDB2)
+.if ${PORT_OPTIONS:MPEAR_MDB2}
 RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
-.if defined(WITH_PEAR_LOG)
+.if ${PORT_OPTIONS:MPEAR_LOG}
 RUN_DEPENDS+=	 ${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 
-.if defined(WITH_PEAR_XML_TREE)
+.if ${PORT_OPTIONS:MPEAR_XML_TREE}
 RUN_DEPENDS+=	${PEARDIR}/XML/Tree.php:${PORTSDIR}/devel/pear-XML_Tree
 .endif
 
-.if defined(WITH_PEAR_CRYPT_RC4)
+.if ${PORT_OPTIONS:MPEAR_CRYPT_RC4}
 RUN_DEPENDS+=	${PEARDIR}/Crypt/Rc4.php:${PORTSDIR}/security/pear-Crypt_RC4
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

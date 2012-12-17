@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Translation2
-# Date created:			  20 December 2004
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	Translation2
 DISTVERSION=	2.0.4
@@ -20,14 +16,16 @@ USE_PHP=	yes
 PEAR_CATSRC=	yes
 
 LATEST_LINK=	pear-Translation2
-OPTIONS=	PEAR_CACHE_LITE "PEAR::Cache_Lite support" off \
-		PEAR_DB "PEAR::DB support" off \
-		PEAR_DB_DATAOBJECT "PEAR::DB_DataObject support" off \
-		PEAR_MDB "PEAR::MDB support" off \
-		PEAR_MDB2 "PEAR::MDB2 support" off \
-		PEAR_FILE_GETTEXT "PEAR::File_Gettext support" off \
-		PEAR_I18NV2 "PEAR::I18Nv2 support" off \
-		PEAR_XML_SERIALIZER "PEAR::XML_Serializer support" off
+OPTIONS_DEFINE=	PEAR_CACHE_LITE PEAR_DB PEAR_DB_DATAOBJECT PEAR_MDB PEAR_MDB2 \
+		PEAR_FILE_GETTEXT PEAR_I18NV2 PEAR_XML_SERIALIZER
+PEAR_CACHE_LITE_DESC=	PEAR::Cache_Lite support
+PEAR_DB_DESC=	PEAR::DB support
+PEAR_DB_DATAOBJECT_DESC=	PEAR::DB_DataObject support
+PEAR_MDB_DESC=	PEAR::MDB support
+PEAR_MDB2_DESC=	PEAR::MDB2 support
+PEAR_FILE_GETTEXT_DESC=	PEAR::File_Gettext support
+PEAR_I18NV2_DESC=	PEAR::I18Nv2 support
+PEAR_XML_SERIALIZER_DESC=	PEAR::XML_Serializer support
 
 FILES=		Translation2.php Translation2/Admin.php Translation2/Container.php \
 		Translation2/Decorator.php Translation2/Admin/Decorator.php \
@@ -64,38 +62,39 @@ EXAMPLES=	gettext_admin.php gettext_domains.ini gettext_langs.ini \
 		Translation2_gettext_example.php Translation2_example_multitable.sql
 _EXAMPLESDIR=	docs/examples
 
-.if defined(WITH_PEAR_CACHE_LITE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPEAR_CACHE_LITE}
 RUN_DEPENDS+=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite
 .endif
 
-.if defined(WITH_PEAR_DB)
+.if ${PORT_OPTIONS:MPEAR_DB}
 RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
-.if defined(WITH_PEAR_DB_DATAOBJECT)
+.if ${PORT_OPTIONS:MPEAR_DB_DATAOBJECT}
 RUN_DEPENDS+=	${PEARDIR}/DB/DataObject.php:${PORTSDIR}/databases/pear-DB_DataObject
 .endif
 
-.if defined(WITH_PEAR_MDB)
+.if ${PORT_OPTIONS:MPEAR_MDB}
 RUN_DEPENDS+=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB
 .endif
 
-.if defined(WITH_PEAR_MDB2)
+.if ${PORT_OPTIONS:MPEAR_MDB2}
 RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
-.if defined(WITH_PEAR_FILE_GETTEXT)
+.if ${PORT_OPTIONS:MPEAR_FILE_GETTEXT}
 RUN_DEPENDS+=	${PEARDIR}/File/Gettext.php:${PORTSDIR}/sysutils/pear-File_Gettext
 .endif
 
-.if defined(WITH_PEAR_I18NV2)
+.if ${PORT_OPTIONS:MPEAR_I18NV2}
 RUN_DEPENDS+=	${PEARDIR}/File/I18Nv2.php:${PORTSDIR}/sysutils/pear-I18Nv2
 .endif
 
-.if defined(WITH_PEAR_XML_SERIALIZER)
+.if ${PORT_OPTIONS:MPEAR_XML_SERIALIZER}
 RUN_DEPENDS+=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
 .endif
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

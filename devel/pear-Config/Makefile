@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Config
-# Date created:			  02 September 2003
-# Whom:				  Alex Miller (<asm@asm.kiev.ua>)
-#
+# Created by: Alex Miller (<asm@asm.kiev.ua>)
 # $FreeBSD$
-#
 
 PORTNAME=	Config
 PORTVERSION=	1.10.12
@@ -16,8 +12,9 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_XML_PARSER "PEAR::XML_Parser support" off \
-		PEAR_XML_UTIL "PEAR::XML_Util support" off
+OPTIONS_DEFINE=	PEAR_XML_PARSER PEAR_XML_UTIL
+PEAR_XML_PARSER_DESC=	PEAR::XML_Parser support
+PEAR_XML_UTIL_DESC=	PEAR::XML_Util support
 
 FILES=		Config/Container/Apache.php Config/Container/GenericConf.php \
 		Config/Container/IniCommented.php Config/Container/IniFile.php \
@@ -33,15 +30,15 @@ TESTS=		bug2742.ini bug2742.phpt bug2780.phpt bug3051.phpt bug3051.xml \
 		bug10010.phpt bug10185.phpt phpt_test.php.inc setup.php.inc
 _TESTSDIR=	test
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_XML_PARSER)
+.if ${PORT_OPTIONS:MPEAR_XML_PARSER}
 RUN_DEPENDS+=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 .endif
 
-.if defined(WITH_PEAR_XML_UTIL)
+.if ${PORT_OPTIONS:MPEAR_XML_UTIL}
 RUN_DEPENDS+=	${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

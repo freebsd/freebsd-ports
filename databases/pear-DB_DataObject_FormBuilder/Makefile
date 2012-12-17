@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pear-DB_DataObject_FormBuilder
-# Date created:        24 August 2004
-# Whom:                Antonio Carlos Venancio Junior (<antonio@php.net>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@php.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	DB_DataObject_FormBuilder
 PORTVERSION=	1.0.2
@@ -18,20 +14,21 @@ RUN_DEPENDS:=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickFor
 		${PEARDIR}/DB/DataObject.php:${PORTSDIR}/databases/pear-DB_DataObject
 
 LATEST_LINK=	pear-DB_DataObject_FormBuilder
-OPTIONS=	PEAR_DATE "PEAR::Date support" off \
-		PEAR_HTML_TABLE "PEAR::HTML_Table support" off
+OPTIONS_DEFINE=	PEAR_DATE PEAR_HTML_TABLE
+PEAR_DATE_DESC=	PEAR::Date support
+PEAR_HTML_TABLE_DESC=	PEAR::HTML_Table support
 
 PEAR_AUTOINSTALL=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_DATE)
+.if ${PORT_OPTIONS:MPEAR_DATE}
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
 .endif
 
-.if defined(WITH_PEAR_HTML_TABLE)
+.if ${PORT_OPTIONS:MPEAR_HTML_TABLE}
 RUN_DEPENDS+=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,12 +1,9 @@
-# New ports collection makefile for:	icpld
-# Date created:				04.01.2004
-# Whom:					krion@FreeBSD.org
-#
+# Created by: krion@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	icpld
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -23,11 +20,11 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	README
 PLIST_FILES=	bin/icpld etc/icpld.conf.sample etc/rc.d/icpld.sh.sample
 
-OPTIONS=	IPV6	"IPv6 internet support" off \
+OPTIONS_DEFINE=	IPV6 DOCS
 
-.include  <bsd.port.pre.mk>
+.include  <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -42,11 +39,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/icpld.sh.sample ${PREFIX}/etc/rc.d
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

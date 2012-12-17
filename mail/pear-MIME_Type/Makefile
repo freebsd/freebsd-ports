@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-MIME_Type
-# Date created:			  18 April 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	MIME_Type
 PORTVERSION=	1.3.1
@@ -16,15 +12,16 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_SYSTEM_COMMAND "PEAR::System_Command support" off
+OPTIONS_DEFINE=	PEAR_SYSTEM_COMMAND
+PEAR_SYSTEM_COMMAND_DESC=	PEAR::System_Command support
 
 PEAR_AUTOINSTALL=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_SYSTEM_COMMAND)
+.if ${PORT_OPTIONS:MPEAR_SYSTEM_COMMAND}
 RUN_DEPENDS+=	${PEARDIR}/System/Command.php:${PORTSDIR}/devel/pear-System_Command
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

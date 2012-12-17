@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pecl-esmtp
-# Date created:			  2006/08/01
-# Whom:				  chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	esmtp
 PORTVERSION=	0.3.1
@@ -23,15 +19,17 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 
-OPTIONS=	RE2C	"Enable re2c to regenerate PHP parsers"	on
+OPTIONS_DEFINE=	RE2C
+OPTIONS_DEFAULT=	RE2C
+RE2C_DESC=	Use re2c to regenerate PHP parsers
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RE2C)
+.if ${PORT_OPTIONS:MRE2C}
 BUILD_DEPENDS+=	re2c:${PORTSDIR}/devel/re2c
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '29,34 d; 45,50 d' ${WRKSRC}/config.m4
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

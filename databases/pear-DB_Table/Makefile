@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-DB_Table
-# Date created:			  08 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	DB_Table
 PORTVERSION=	1.5.6
@@ -17,9 +13,10 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-DB_Table
-OPTIONS=	PEAR_HTML_QUICKFORM "PEAR::HTML_QuickForm support" off \
-		PEAR_DB "PEAR::DB support" off \
-		PEAR_MDB2 "PEAR::MDB2 support" off
+OPTIONS_DEFINE=	PEAR_HTML_QUICKFORM PEAR_DB PEAR_MDB2
+PEAR_HTML_QUICKFORM_DESC=	PEAR::HTML_QuickForm support
+PEAR_DB_DESC=	PEAR::DB support
+PEAR_MDB2_DESC=	PEAR::MDB2 support
 
 CATEGORY=	DB
 FILES=		Table.php Table/Manager/ibase.php Table/Manager/mysql.php \
@@ -73,19 +70,19 @@ post-extract:
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" \
 		${WRKSRC}/Table.php
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_HTML_QUICKFORM)
+.if ${PORT_OPTIONS:MPEAR_HTML_QUICKFORM}
 RUN_DEPENDS+=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm
 .endif
 
-.if defined(WITH_PEAR_DB)
+.if ${PORT_OPTIONS:MPEAR_DB}
 RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
-.if defined(WITH_PEAR_MDB2)
+.if ${PORT_OPTIONS:MPEAR_MDB2}
 RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
