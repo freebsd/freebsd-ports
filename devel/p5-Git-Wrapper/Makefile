@@ -31,11 +31,4 @@ MAN3=		Git::Wrapper.3 \
 		Git::Wrapper::Status.3 \
 		Git::Wrapper::Statuses.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
-RUN_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
