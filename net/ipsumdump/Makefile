@@ -24,7 +24,6 @@ OPTIONS_DEFINE=	IPV6 DOCS
 .include  <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
-.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 PLIST_SUB+=	IPV6=""
 .else
