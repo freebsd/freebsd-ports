@@ -29,6 +29,7 @@
 %%ETCDIR%%/filter.d/apache-noscript.conf
 %%ETCDIR%%/filter.d/apache-overflows.conf
 %%ETCDIR%%/filter.d/asterisk.conf
+%%ETCDIR%%/filter.d/bsd-sendmail.conf
 %%ETCDIR%%/filter.d/bsd-sshd.conf
 %%ETCDIR%%/filter.d/bsdftp.conf
 %%ETCDIR%%/filter.d/common.conf
