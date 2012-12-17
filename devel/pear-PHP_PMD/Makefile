@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_PMD
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpmd.org/get/
 PKGNAMEPREFIX=	pear-
