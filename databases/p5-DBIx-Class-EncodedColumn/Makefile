@@ -44,14 +44,10 @@ OPENPGP_DESC=	Crypt::OpenPGP (gpg) Support
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MSHA}
-. if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-. endif
-.endif
 .if ${PORT_OPTIONS:MBLOWFISH}
 RUN_DEPENDS+=	p5-Crypt-Eksblowfish>=0:${PORTSDIR}/security/p5-Crypt-Eksblowfish
 .endif
+
 .if ${PORT_OPTIONS:MOPENPGP}
 RUN_DEPENDS+=	p5-Crypt-OpenPGP>=0:${PORTSDIR}/security/p5-Crypt-OpenPGP \
 		p5-Crypt-CAST5_PP>=0:${PORTSDIR}/security/p5-Crypt-CAST5_PP
