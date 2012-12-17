@@ -3040,6 +3040,7 @@
     SUBDIR += pear-PHP_UML
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
+    SUBDIR += pear-Pirum
     SUBDIR += pear-Structure_LinkedList
     SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-Structures_DataGrid_Renderer_Console
