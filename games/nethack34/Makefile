@@ -58,7 +58,7 @@ IGNORE=		you cannot enable both HPMON and STATUSCOLORS
 .endif
 .if defined(WITH_MENUCOLORS)
 PATCHFILES+=	nh343-menucolor.diff
-PATCH_SITES+=	http://bilious.homelinux.org/~paxed/nethack/
+PATCH_SITES+=	http://bilious.alt.org/~paxed/nethack/
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .endif
