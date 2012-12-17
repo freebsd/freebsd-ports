@@ -1,4 +1,6 @@
-WM is a window manager for the X11 Window System. 
-JWM is written in C and uses only Xlib at a minimum. 
+JWM is a window manager for the X11 Window System.  JWM is written in C and
+uses only Xlib at a minimum, though additional libraries are supported for
+extended functionality and features.  JWM supports MWM and Extended Window
+Manager Hints (EWMH).
 
-WWW: http://joewing.net/programs/jwm/index.shtml
+WWW: http://joewing.net/programs/jwm/
