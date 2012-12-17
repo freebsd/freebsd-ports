@@ -1,9 +1,5 @@
-# New ports collection makefile for: bbkeys
-# Date created:        17 June 2000
-# Whom:                Patrick Seal <patseal@hyperhost.net>
-#
+# Created by: Patrick Seal <patseal@hyperhost.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.1
@@ -12,7 +8,9 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
 MAINTAINER=	A.J.Caines@halplant.com
-COMMENT=	A keygrabber for the Blackbox window manager
+COMMENT=	Keygrabber for the Blackbox window manager
+
+LICENSE=	MIT
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
@@ -24,20 +22,22 @@ LDFLAGS+=	`pkg-config --libs xft`
 
 MAN1=		bbkeys.1
 MAN5=		bbkeysrc.5
-PORTDOCS=	AUTHORS BUGS ChangeLog LICENSE NEWS README TODO
+PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 
 PLIST_FILES=	bin/bbkeys %%DATADIR%%/bbkeysrc %%DATADIR%%/defaultStyle
 PLIST_DIRS=	%%DATADIR%%
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's#: install-docDATA#:#g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#: install-docDATA#:#' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
