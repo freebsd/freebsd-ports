@@ -117,11 +117,4 @@ MAN3=		Algorithm::Evolutionary.3 \
 		Algorithm::Evolutionary::Wheel.3 \
 		Algorithm::Evolutionary::XML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

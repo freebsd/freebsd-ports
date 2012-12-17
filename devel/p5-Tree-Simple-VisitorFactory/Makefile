@@ -41,10 +41,4 @@ MAN3=		Tree::Simple::Visitor::BreadthFirstTraversal.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Scalar-Util>=1.10:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
