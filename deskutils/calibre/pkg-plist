@@ -414,6 +414,7 @@ lib/calibre/calibre/ebooks/pdf/outline_writer.py
 lib/calibre/calibre/ebooks/pdf/pageoptions.py
 lib/calibre/calibre/ebooks/pdf/pdftohtml.py
 lib/calibre/calibre/ebooks/pdf/reflow.py
+lib/calibre/calibre/ebooks/pdf/render/engine.py
 lib/calibre/calibre/ebooks/pdf/writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
@@ -1911,6 +1912,7 @@ share/mime/text/lrs.xml
 @dirrm lib/calibre/calibre/ebooks/readability
 @dirrm lib/calibre/calibre/ebooks/rb
 @dirrm lib/calibre/calibre/ebooks/pml
+@dirrm lib/calibre/calibre/ebooks/pdf/render
 @dirrm lib/calibre/calibre/ebooks/pdf
 @dirrm lib/calibre/calibre/ebooks/pdb/ztxt
 @dirrm lib/calibre/calibre/ebooks/pdb/plucker
