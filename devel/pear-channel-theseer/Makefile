@@ -3,6 +3,7 @@
 
 PORTNAME=	theseer
 PORTVERSION=	20120501
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gasol.wu@gmail.com
