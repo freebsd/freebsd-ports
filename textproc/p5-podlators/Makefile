@@ -27,10 +27,6 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-Pod-Simple>=3.06:${PORTSDIR}/textproc/p5-Pod-Simple
-.endif
-
 .if ${PERL_LEVEL} < 501400
 MAN1=		perlpodstyle.1
 .endif
