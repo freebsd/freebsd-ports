@@ -1,6 +1,4 @@
-# New ports collection makefile for:	mt-daapd-devel
-# Date created:				26 Nov 2007
-# Whom:					Mark Foster <mark@foster.cc>
+# Created by: Mark Foster <mark@foster.cc>
 # $FreeBSD$
 #
 
@@ -22,8 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		id3tag.0:${PORTSDIR}/audio/libid3tag
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		id3tag:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -47,11 +45,12 @@ USE_LDCONFIG=	yes
 
 USE_GCC=	any
 
-OPTIONS=	JAPANESE "Japanese support in ID3 tags" off
+OPTIONS_DEFINE=	JAPANESE
+JAPANESE_DESC=	Japanese support in ID3 tags
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_JAPANESE)
+.if ${PORT_OPTIONS:MJAPANESE}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_scan-mp3.c
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--enable-iconv
