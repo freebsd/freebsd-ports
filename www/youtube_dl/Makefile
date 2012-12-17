@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2012.09.27
+PORTVERSION=	2012.12.11
 CATEGORIES=	www
-MASTER_SITES=	GH \
+MASTER_SITES=	https://cloud.github.com/downloads/rg3/youtube-dl/ \
 		CRITICAL
-
-EXTRACT_SUFX=	# empty
+DISTNAME=	youtube-dl.${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A program for downloading videos from YouTube.com
@@ -16,24 +15,31 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_PYTHON_RUN=	2.6-2.7
-ALL_TARGET=	compile
-USE_GITHUB=	yes
-GH_ACCOUNT=	rg3
-GH_PROJECT=	youtube-dl
-GH_COMMIT=	b5de8af
+ALL_TARGET=	youtube-dl
+
+OPTIONS_DEFINE=	BASH RTMPDUMP FFMPEG
+OPTIONS_DEFAULT=RTMPDUMP
+
+BASH_DESC=	Install programmable completions for Bash
+RTMPDUMP_DESC=	Use RTMPDUMP to download rtmp video streams
 
 PLIST_FILES=	bin/youtube-dl
+MAN1=		youtube-dl.1
 
-OPTIONS=	RTMPDUMP "Use RTMPDUMP to download rtmp video streams" on \
-		FFMPEG   "Use ffmpeg (required for audio conversion)"  off
+WRKSRC=		${WRKDIR}/youtube-dl
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_RTMPDUMP)
+.if ${PORT_OPTIONS:MRTMPDUMP}
 RUN_DEPENDS+=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MBASH}
+ALL_TARGET+=	youtube-dl.bash-completion
+PLIST_FILES+=	etc/bash_completion.d/youtube-dl.sh
+.endif
+
+.if ${PORT_OPTIONS:MFFMPEG}
 # allow either multimedia/ffmpeg or multimedia/ffmpeg-devel
 . if exists(${LOCALBASE}/include/libavcodec/vda.h)
 RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg-devel
@@ -44,8 +50,14 @@ RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
+	@${INSTALL_DATA} ${WRKSRC}/youtube-dl.1 ${PREFIX}/man/man1
+.if ${PORT_OPTIONS:MBASH}
+	${MKDIR} ${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/youtube-dl.bash-completion \
+		${PREFIX}/etc/bash_completion.d/youtube-dl.sh
+.endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
