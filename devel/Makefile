@@ -3318,6 +3318,7 @@
     SUBDIR += py-ciphon
     SUBDIR += py-circuits
     SUBDIR += py-cjson
+    SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
     SUBDIR += py-cog
     SUBDIR += py-coil
