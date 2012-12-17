@@ -19,7 +19,6 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 
 OPTIONS_DEFINE=	READLINE DOCS
 OPTIONS_DEFAULT=READLINE
-READLINE_DESC=	Enable readline support
 
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
