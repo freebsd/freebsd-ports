@@ -26,11 +26,4 @@ MAN3=		B::Hooks::EndOfScope.3 \
 		B::Hooks::EndOfScope::PP::HintHash.3 \
 		B::Hooks::EndOfScope::XS.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.2600:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-TEST_DEPENDS+=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
