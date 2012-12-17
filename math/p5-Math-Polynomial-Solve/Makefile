@@ -18,11 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Math::Polynomial::Solve.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Math-Complex>=1.36:${PORTSDIR}/math/p5-Math-Complex
-RUN_DEPENDS+=	p5-Math-Complex>=1.36:${PORTSDIR}/math/p5-Math-Complex
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
