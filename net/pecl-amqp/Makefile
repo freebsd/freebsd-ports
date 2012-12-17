@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amqp
-PORTVERSION=	0.3.1
+PORTVERSION=	1.0.9
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
