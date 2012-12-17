@@ -238,11 +238,4 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Violation.3 \
 	Test::Perl::Critic::Policy.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
