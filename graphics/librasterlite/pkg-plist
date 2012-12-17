@@ -7,5 +7,5 @@ include/rasterlite.h
 lib/librasterlite.a
 lib/librasterlite.la
 lib/librasterlite.so
-lib/librasterlite.so.1
+lib/librasterlite.so.2
 libdata/pkgconfig/rasterlite.pc
