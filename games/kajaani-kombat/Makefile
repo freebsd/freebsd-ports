@@ -1,69 +1,53 @@
-# New Ports collection makefile for:	kajaani-kombat
-# Date created:		2012-04-27
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
-PORTNAME=	kombat
+PORTNAME=	kajaani-kombat
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kombat.kajaani.net/dl/
-PKGNAMEPREFIX=	kajaani-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Kajaani Kombat is a funny multiplayer game... and much more
+COMMENT=	Funny multiplayer game... and much more
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
-
-USE_GMAKE=	yes
 USE_SDL=	sdl image mixer net ttf
+USE_GMAKE=	yes
+ALL_TARGET=	client server
+USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/kajaani-kombat \
-		bin/kajaani-kombat-server \
-		share/pixmaps/kajaani-kombat.png
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog README
-DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE})
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} server)
+MAN6=		${PORTNAME}.6
+
+SUB_FILES=	${PORTNAME}
+
+DESKTOP_ENTRIES="Kajaani Kombat" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} 's|-O||g; s|-Wall $$(DEBUG)|${CXXFLAGS} &|' \
+		${WRKSRC}/Makefile
 
 do-install:
-# Scripts
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./kajaani-kombat\n" > ${WRKDIR}/kajaani-kombat.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/kajaani-kombat.sh ${PREFIX}/bin/kajaani-kombat
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./kajaani-kombat-server\n" > ${WRKDIR}/kajaani-kombat-server.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/kajaani-kombat-server.sh ${PREFIX}/bin/kajaani-kombat-server
-# Executable
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/kajaani-kombat ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/kajaani-kombat-server ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-server ${DATADIR}
+	@(cd ${WRKSRC} && ${INSTALL_DATA} *.png *.ogg *.ttf ${DATADIR})
+	${LN} -sf ${DATADIR}/logo.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-post-install:
-# Data
-.if !defined (NOPORTDATA)
-	${INSTALL_DATA} ${WRKSRC}/*.png ${WRKSRC}/*.ogg ${WRKSRC}/*.ttf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/logo.png ${PREFIX}/share/pixmaps/${PKGNAMEPREFIX}${PORTNAME}.png
-.endif
+	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
 
-# Documentations
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
