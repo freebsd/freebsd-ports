@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WWW::AtMovies::TV.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-version>=0.76:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

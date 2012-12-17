@@ -26,10 +26,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Response::Encoding.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805
-RUN_DEPENDS+=	p5-Encode>=2:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
