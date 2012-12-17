@@ -74,14 +74,7 @@ MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::Transport::WebService.3 \
 		Tk::AstroCatalog.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece
-RUN_DEPENDS+=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/\.cfg/ s|\.cfg|&.sample|2' ${WRKSRC}/Build.PL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
