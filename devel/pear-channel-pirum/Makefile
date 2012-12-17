@@ -3,6 +3,7 @@
 
 PORTNAME=	pirum
 PORTVERSION=	20110921
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gasol.wu@gmail.com
