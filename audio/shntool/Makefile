@@ -26,10 +26,9 @@ LA_DESC=	Laudio support
 TTA_DESC=	TTA Lossless Audio support
 BONK_DESC=	Bonk lossy/lossless audio support
 KXS_DESC=	Kexis support
-ALS_DESC=	MPEG-4 Audio Lossless Coding support
 
 RDEP=	AIFF:sox SHN:shorten FLAC APE:mac OFR:ofr:optimfrog LPAC WV:wavpack \
-	ALAC:alac LA:laudio TTA:ttaenc:tta ALS:mp4als BONK KXS:kexis
+	ALAC:alac LA:laudio TTA:ttaenc:tta BONK KXS:kexis
 
 .include <bsd.port.options.mk>
 
