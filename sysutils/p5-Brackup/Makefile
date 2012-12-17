@@ -54,14 +54,4 @@ MAN3=		Brackup.3 \
 		Brackup::Target::Riak.3 \
 		Brackup::Target::Sftp.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-File-Temp>=0.17:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.52:${PORTSDIR}/devel/p5-ExtUtils-Manifest
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -28,10 +28,4 @@ PERL_CONFIGURE=	yes
 MAN1=		github.pl.1
 MAN3=		App::GitHub.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
