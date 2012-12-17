@@ -35,13 +35,13 @@ OPTIONS_DEFINE=	NLS GTK2
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--disable-nls
-.else
 USE_GETTEXT=	yes
 
 .for ii in ca de el es fr gl it ja nl pl pt_BR ru sv uk zh_CN
 PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
 .endfor
+.else
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
