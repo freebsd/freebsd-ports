@@ -27,10 +27,4 @@ MAN3=		Parse::Perl.3 \
 		Parse::Perl::CopHintsHash.3 \
 		Parse::Perl::Environment.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

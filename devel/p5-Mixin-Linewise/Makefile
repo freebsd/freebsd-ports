@@ -19,16 +19,10 @@ COMMENT=	Write your linewise code for handles; this does the rest
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-.include <bsd.port.pre.mk>
-
 BUILD_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 RUN_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
 
 PERL_CONFIGURE=	yes
 
@@ -44,4 +38,4 @@ PLIST_DIRS+=	%%SITE_PERL%%/Mixin/Linewise \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin/Linewise \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
