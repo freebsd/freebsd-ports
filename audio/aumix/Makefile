@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aumix
-# Date created:        21 May 1999
-# Whom:                Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aumix
 PORTVERSION=	2.9.1
@@ -34,11 +30,12 @@ PLIST_FILES=	bin/aumix bin/mute bin/xaumix
 PLIST_FILES+=	share/aumix/${ii}
 .endfor
 
-OPTIONS=	NLS	"Enable NLS support" on \
-		GTK2	"Enable GTK2 gui" off
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-.if defined(WITHOUT_NLS)
+OPTIONS_DEFINE=	NLS GTK2
+OPTIONS_DEFAULT=	NLS
+
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
@@ -48,14 +45,14 @@ PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
 .endfor
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s:/etc:${PREFIX}/etc:" ${WRKSRC}/src/common.[ch]
-
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 PKGNAMESUFFIX=	-gtk
 USE_GNOME=	gtk20
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif
 
-.include <bsd.port.post.mk>
+pre-patch:
+	@${REINPLACE_CMD} -e "s:/etc:${PREFIX}/etc:" ${WRKSRC}/src/common.[ch]
+
+.include <bsd.port.mk>
