@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-PHP_CompatInfo
-# Date created:			  15 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	PHP_CompatInfo
 PORTVERSION=	1.9.0
@@ -26,33 +22,35 @@ USE_DOS2UNIX=	yes
 PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-PHP_CompatInfo
-OPTIONS=	PEAR_XML_BEAUTIFIER "PEAR::XML_Beautifier support" off \
-		PEAR_VAR_DUMP "PEAR::Var_Dump support" off \
-		PEAR_PHPUNIT "PEAR::PHPUnit support" on \
-		PEAR_XML_UTIL "PEAR::XML_Util support" on \
-		PEAR_HTML_TABLE "PEAR::HTML_Table" off
+OPTIONS_DEFINE=	PEAR_XML_BEAUTIFIER PEAR_VAR_DUMP PEAR_PHPUNIT PEAR_XML_UTIL PEAR_HTML_TABLE
+OPTIONS_DEFAULT=	PEAR_PHPUNIT PEAR_XML_UTIL
+PEAR_XML_BEAUTIFIER_DESC=	PEAR::XML_Beautifier support
+PEAR_VAR_DUMP_DESC=	PEAR::Var_Dump support
+PEAR_PHPUNIT_DESC=	PEAR::PHPUnit support
+PEAR_XML_UTIL_DESC=	PEAR::XML_Util support
+PEAR_HTML_TABLE_DESC=	PEAR::HTML_Table
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_XML_BEAUTIFIER)
+.if ${PORT_OPTIONS:MPEAR_XML_BEAUTIFIER}
 RUN_DEPENDS+=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beautifier
 .endif
 
-.if defined(WITH_PEAR_VAR_DUMP)
+.if ${PORT_OPTIONS:MPEAR_VAR_DUMP}
 RUN_DEPENDS+=	${PEARDIR}/Var/Dump.php:${PORTSDIR}/devel/pear-Var_Dump
 .endif
 
-.if defined(WITH_PEAR_PHPUNIT)
+.if ${PORT_OPTIONS:MPEAR_PHPUNIT}
 RUN_DEPENDS+=	${PEARDIR}/PHPUnit/Framework.php:${PORTSDIR}/devel/pear-PHPUnit3
 .endif
 
-.if defined(WITH_PEAR_XML_UTIL)
+.if ${PORT_OPTIONS:MPEAR_XML_UTIL}
 RUN_DEPENDS+=	${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 .endif
 
-.if defined(WITH_PEAR_HTML_TABLE)
+.if ${PORT_OPTIONS:MPEAR_HTML_TABLE}
 RUN_DEPENDS+=${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

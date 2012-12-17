@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Mail
-# Date created:			  26 November 2002
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	Mail
 DISTVERSION=	1.2.0
@@ -21,13 +17,14 @@ FILES=		Mail.php Mail/mail.php Mail/null.php Mail/sendmail.php	\
 TESTS=		rfc822.phpt smtp_error.phpt
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_NET_SMTP "PEAR::Net_SMTP support" off
+OPTIONS_DEFINE=	PEAR_NET_SMTP
+PEAR_NET_SMTP_DESC=	PEAR::Net_SMTP support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_NET_SMTP)
+.if ${PORT_OPTIONS:MPEAR_NET_SMTP}
 RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

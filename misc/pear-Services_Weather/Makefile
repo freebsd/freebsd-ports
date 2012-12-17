@@ -15,35 +15,36 @@ RUN_DEPENDS:=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 USE_PHP=	ctype pcre
 
 LATEST_LINK=	pear-Services_Weather
-OPTIONS=	PEAR_NET_FTP "PEAR::Net::FTP support" off \
-		PEAR_CACHE "PEAR::Cache support" off \
-		PEAR_DB "PEAR::DB support" off \
-		PEAR_SOAP "PEAR::SOAP support" off \
-		PEAR_XML_SERIALIZER "PEAR::XML::Serializer support" off
+OPTIONS_DEFINE=	PEAR_NET_FTP PEAR_CACHE PEAR_DB PEAR_SOAP PEAR_XML_SERIALIZER
+PEAR_NET_FTP_DESC=	PEAR::Net::FTP support
+PEAR_CACHE_DESC=	PEAR::Cache support
+PEAR_DB_DESC=	PEAR::DB support
+PEAR_SOAP_DESC=	PEAR::SOAP support
+PEAR_XML_SERIALIZER_DESC=	PEAR::XML::Serializer support
 
 PEAR_AUTOINSTALL=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_NET_FTP)
+.if ${PORT_OPTIONS:MPEAR_NET_FTP}
 BUILD_DEPENDS+=	${PEARDIR}/Net/FTP.php:${PORTSDIR}/ftp/pear-Net_FTP
 .endif
 
-.if defined(WITH_PEAR_CACHE)
+.if ${PORT_OPTIONS:MPEAR_CACHE}
 BUILD_DEPENDS+=	${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
 .endif
 
-.if defined(WITH_PEAR_DB)
+.if ${PORT_OPTIONS:MPEAR_DB}
 BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
-.if defined(WITH_PEAR_SOAP)
+.if ${PORT_OPTIONS:MPEAR_SOAP}
 BUILD_DEPENDS+=	${PEARDIR}/SOAP/Base.php:${PORTSDIR}/net/pear-SOAP
 .endif
 
-.if defined(WITH_PEAR_XML_SERIALIZER)
+.if ${PORT_OPTIONS:MPEAR_XML_SERIALIZER}
 BUILD_DEPENDS+=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

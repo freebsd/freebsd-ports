@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-XML_Query2xml
-# Date created:			  23 March 2008
-# Whom:				  wenheping<wenheping@gmail.com>
-#
+# Created by: wenheping<wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML_Query2XML
 PORTVERSION=	1.7.2
@@ -16,8 +12,9 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
 LATEST_LINK=	pear-XML_Query2xml
-OPTIONS=	PEAR_MDB2 "Add support for pear-MDB2" Off \
-		PEAR_Net_LDAP2 "Add support for pear-Net_LDAP2" Off
+OPTIONS_DEFINE=	PEAR_MDB2 PEAR_NET_LDAP2
+PEAR_MDB2_DESC=	Add support for pear-MDB2
+PEAR_NET_LDAP2_DESC=	Add support for pear-Net_LDAP2
 
 FILES=	XML/Query2XML.php XML/Query2XML/ISO9075Mapper.php \
 	XML/Query2XML/Callback.php \
@@ -316,15 +313,15 @@ TESTS=	Query2XML_Tests.psql \
 	XML_Query2XML_ISO9075Mapper/skipif.php
 _TESTSDIR=	tests
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_MDB2)
+.if ${PORT_OPTIONS:MPEAR_MDB2}
 BUILD_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
-.if defined(WITH_PEAR_Net_LDAP2)
+.if ${PORT_OPTIONS:MPEAR_NET_LDAP2}
 BUILD_DEPENDS+=	${PEARDIR}/Net/LDAP2.php:${PORTSDIR}/net/pear-Net_LDAP2
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

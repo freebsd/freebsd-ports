@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pisg
-# Date created:        Mon Feb 11 13:02:35 GMT 2002
-# Whom:                pgl@instinct.org
-#
+# Created by: pgl@instinct.org
 # $FreeBSD$
-#
 
 PORTNAME=	pisg
 PORTVERSION=	0.73
@@ -16,11 +12,12 @@ COMMENT=	A Perl IRC Statistics Generator
 USE_PERL5=	YES
 NO_BUILD=	YES
 
-OPTIONS=	LOGCHARSET "Character set for logfiles" off
+OPTIONS_DEFINE=	LOGCHARSET DOCS
+LOGCHARSET_DESC=	Character set for logfiles
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LOGCHARSET)
+.if ${PORT_OPTIONS:MLOGCHARSET}
 RUN_DEPENDS+=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 .endif
 
@@ -47,7 +44,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/Format/*.pm ${SITE_PERL}/Pisg/Parser/Format
 	${INSTALL_SCRIPT} ${WRKSRC}/pisg ${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/pisg-doc.txt ${DOCSDIR}/pisg-doc.txt
 .endif
@@ -63,4 +60,4 @@ post-install:
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

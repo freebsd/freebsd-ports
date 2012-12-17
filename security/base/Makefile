@@ -1,9 +1,5 @@
-# New ports collection makefile for:	base
-# Date created:		2004-11-29
-# Whom:			Linh Pham <question+fbsdports@closedsrc.org>
-#
+# Created by: Linh Pham <question+fbsdports@closedsrc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	base
 PORTVERSION=	1.4.5
@@ -28,21 +24,19 @@ SUB_FILES=	pkg-message
 DOCS=		docs/CHANGELOG docs/CREDITS docs/README docs/README.mssql \
 		docs/TODO docs/UPGRADE docs/GPL docs/base_faq.rtf
 
-OPTIONS=	MYSQL "Enable MySQL support" off \
-		PGSQL "Enable PostgreSQL support" off \
-		PDF "Enable PDF support" off
+OPTIONS_DEFINE=	MYSQL PGSQL PDF DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 USE_PHP+=	mysql
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 USE_PHP+=	pgsql
 .endif
-.if defined(WITH_PDF)
+.if ${PORT_OPTIONS:MPDF}
 RUN_DEPENDS+=	${LOCALBASE}/share/fpdf/fpdf.php:${PORTSDIR}/print/fpdf
 .endif
 
@@ -63,10 +57,10 @@ do-install:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

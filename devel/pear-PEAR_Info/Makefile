@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-PEAR_Info
-# Date created:		2006/07/31
-# Whom:			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	PEAR_Info
 PORTVERSION=	1.9.2
@@ -17,7 +13,9 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-PEAR_Info
-OPTIONS=	PEAR_PHPUnit3 "PEAR::PHPUnit3 support" on
+OPTIONS_DEFINE=	PEAR_PHPUNIT3
+OPTIONS_DEFAULT=	PEAR_PHPUNIT3
+PEAR_PHPUNIT3_DESC=	PEAR::PHPUnit3 support
 
 CATEGORY=	PEAR
 FILES=		Info.php pearinfo.css Info/Cli.php scripts/pearinfo
@@ -30,11 +28,11 @@ EXAMPLES=	blueskin.css pearinfo3.css pear_info.php pear_info2.php \
 		pear_info3.php pear_info4.php pear_info5.php pear_info6.php \
 		pear_info7.php
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_PHPUnit3)
+.if ${PORT_OPTIONS:MPEAR_PHPUNIT3}
 RUN_DEPENDS+=	${PEARDIR}/PHPUnit/Framework.php:${PORTSDIR}/devel/pear-PHPUnit3
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

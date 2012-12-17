@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-FSM
-# Date created:			  10 January 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	FSM
 PORTVERSION=	1.3.1
@@ -21,13 +17,14 @@ TESTS=		addTransitionsArray.phpt transitions.phpt graphviz.phpt
 EXAMPLES=	rpn.php graphviz.php
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_GraphViz "PEAR::GraphViz support" off
+OPTIONS_DEFINE=	PEAR_GRAPGHVIZ
+PEAR_GRAPGHVIZ_DESC=	PEAR::GraphViz support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PEAR_GraphViz)
+.if ${PORT_OPTIONS:MPEAR_GRAPHVIZ}
 RUN_DEPENDS+=	${PEARDIR}/GraphViz.php:${PORTSDIR}/graphics/pear-Image_GraphViz
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
