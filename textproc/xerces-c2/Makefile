@@ -117,6 +117,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/src/xercesc/Makefile.incl \
 		${WRKSRC}/src/xercesc/runConfigure
+	@${SED} -i '' 's| /\* argV\[\] \*/|* argV|' \
+		${WRKSRC}/samples/CreateDOMDocument/CreateDOMDocument.cpp
 
 pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
