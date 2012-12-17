@@ -36,10 +36,4 @@ MAN3=	Catalyst::Plugin::Cache.3 \
 post-patch:
 	@${PERL} -i.bak -ne 'print unless m,ok|Test::,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
