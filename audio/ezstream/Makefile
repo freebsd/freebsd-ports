@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezstream
-# Date created:				27 Nov 2004
-# Whom:					Frank Laszlo <laszlof@vonostingroup.com>
-#
+# Created by: Frank Laszlo <laszlof@vonostingroup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
@@ -15,10 +11,13 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 MAINTAINER=	ayu@commun.jp
 COMMENT=	A command line utility for streaming to icecast servers
 
-LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	shout:${PORTSDIR}/audio/libshout2 \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
-OPTIONS=	TAGLIB "TagLib support" on
+OPTIONS_DEFINE=	TAGLIB
+OPTIONS_DEFAULT=	TAGLIB
+
+TAGLIB_DESC=	TagLib support
 
 USE_GNOME=	libxml2
 USE_ICONV=	yes
@@ -36,12 +35,12 @@ PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml '@dirrm
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_TAGLIB)
+.if ${PORT_OPTIONS:MTAGLIB}
 CONFIGURE_ARGS+=	--without-taglib
 .else
-LIB_DEPENDS+=		tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib=${LOCALBASE}
 .endif
 
@@ -65,4 +64,4 @@ post-install:
 	@${MKDIR} ${ETCDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/examples/ezstream_vorbis.xml ${ETCDIR}/ezstream.xml
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
