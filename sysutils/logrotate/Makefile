@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		logrotate
-PORTVERSION=		3.7.9
+PORTVERSION=		3.8.3
 CATEGORIES=		sysutils
 MASTER_SITES=		https://fedorahosted.org/releases/l/o/logrotate/
 
