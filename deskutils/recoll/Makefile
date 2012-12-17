@@ -25,7 +25,7 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		recollindex.1 recollq.1
+MAN1=		recollindex.1
 MAN5=		recoll.conf.5
 
 OPTIONS_DEFINE=	QT4 ASPELL PYTHON X11MON
@@ -35,16 +35,17 @@ X11MON_DESC=	X11 session monitoring support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	webkit moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
+		corelib gui xml webkit
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
+CONFIGURE_ARGS+=--enable-qtgui
 INSTALLS_ICONS=	yes
 PLIST_SUB+=	QT=""
-MAN1+=		recoll.1
+MAN1+=		recollq.1 recoll.1
 .else
 CONFIGURE_ARGS+=--disable-qtgui
 PLIST_SUB+=	QT="@comment "
-MAN1+=		recollq.1
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
