@@ -17,6 +17,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nfprofile --with-rrdpath=${LOCALBASE}
 
+DEPRECATED=	Use net-mgmt/nfdump instead.
+EXPIRATION_DATE=	2013-01-17
+
 #flow-tools support
 OPTIONS_DEFINE=		FT2NFDUMP SFLOW NFDUMP14
 OPTIONS_DEFAULT=	
