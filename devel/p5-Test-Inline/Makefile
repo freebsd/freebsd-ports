@@ -41,10 +41,4 @@ MAN3=	Test::Inline.3 \
 	Test::Inline::Script.3 \
 	Test::Inline::Section.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
