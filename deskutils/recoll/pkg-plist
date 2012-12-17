@@ -1,7 +1,7 @@
 %%QT%%bin/recoll
-bin/recollq
 bin/recollindex
-%%PYTHON_SITELIBDIR%%/recoll.so
+%%QT%%bin/recollq
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll.so
 %%QT%%share/applications/recoll-searchgui.desktop
 %%QT%%share/icons/hicolor/48x48/apps/recoll.png
 %%QT%%share/pixmaps/recoll.png
@@ -111,5 +111,3 @@ bin/recollindex
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
