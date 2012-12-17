@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_authn_otp
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	www
 MASTER_SITES=	http://mod-authn-otp.googlecode.com/files/ \
 		http://alex.bmg.gv.at/programs/
@@ -15,7 +14,7 @@ COMMENT=	Apache module for one-time password authentication
 
 MAKE_JOBS_SAFE=	yes
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_APACHE=	22
 
 MAN1=		otptool.1
@@ -27,9 +26,13 @@ PORTEXAMPLES=	users.sample
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man
 
+post-configure:
+	@${REINPLACE_CMD} 's|CFLAGS =|CFLAGS ?=|' \
+		${WRKSRC}/Makefile
+
 post-install:
 	@${APXS} -e -A -n ${PORTNAME:S/mod_//} ${APACHEMODDIR}/${PORTNAME}.so
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/users.sample ${EXAMPLESDIR}/
 .endif
