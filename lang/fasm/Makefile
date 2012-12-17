@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fasm
-# Date created:	   22 February 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fasm
-PORTVERSION=	1.70.01
+PORTVERSION=	1.70.03
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
 
@@ -34,7 +30,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fasm ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
