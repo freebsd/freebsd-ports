@@ -39,7 +39,6 @@
     SUBDIR += displaycalibrator
     SUBDIR += dlume
     SUBDIR += docear
-    SUBDIR += doodle
     SUBDIR += dragstack
     SUBDIR += drivel
     SUBDIR += ecru
