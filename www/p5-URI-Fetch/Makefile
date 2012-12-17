@@ -33,12 +33,6 @@ MAN3=	URI::Fetch.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MZLIB}
-. if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-. endif
-.endif
-
 .if ${PORT_OPTIONS:MCACHE}
 RUN_DEPENDS+=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 .endif
