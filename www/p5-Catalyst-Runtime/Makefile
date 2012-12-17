@@ -110,11 +110,4 @@ MAN3=	Catalyst.3 \
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Module-Pluggable>=3.9:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
