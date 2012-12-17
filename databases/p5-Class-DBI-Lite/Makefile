@@ -42,10 +42,4 @@ MAN3=		Class::DBI::Lite.3 \
 		Class::DBI::Lite::TableInfo.3 \
 		Class::DBI::Lite::Tutorial.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.77:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
