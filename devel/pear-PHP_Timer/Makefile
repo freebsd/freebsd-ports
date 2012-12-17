@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_Timer
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
@@ -19,7 +19,7 @@ PEAR_CHANNEL=	phpunit
 PEAR_AUTOINSTALL=	yes
 
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
+IGNORE_WITH_PHP=4 52
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
