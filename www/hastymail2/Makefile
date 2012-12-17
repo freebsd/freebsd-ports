@@ -13,7 +13,7 @@ CATEGORIES=	www mail
 MASTER_SITES=	SF/hastymail/Hastymail2%20Stable%20Releases/Hastymail2%201.1/
 DISTNAME=	hastymail2_${WIKEDVERSION}
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast and secure yet powerful IMAP webmail
 
 LICENSE=	GPLv2
