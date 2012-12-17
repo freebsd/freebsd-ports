@@ -1,16 +1,6 @@
-diff --git a/logrotate.8 b/logrotate.8
-index f18c522..33f9a32 100644
---- a/logrotate.8
-+++ b/logrotate.8
-@@ -48,14 +48,14 @@ correctly.
- Tells \fBlogrotate\fR which command to use when mailing logs. This
- command should accept two arguments: 1) the subject of the message, and
- 2) the recipient. The command must then read a message on standard input
--and mail it to the recipient. The default mail command is \fB/bin/mail
-+and mail it to the recipient. The default mail command is \fB/bin/mailx
- -s\fR.
- 
- .TP
+--- logrotate.8.orig	2012-11-09 19:10:08.054188039 +0800
++++ logrotate.8	2012-11-09 19:10:57.749187879 +0800
+@@ -59,7 +59,7 @@
  \fB-s, -\-state <statefile>\fR
  Tells \fBlogrotate\fR to use an alternate state file.  This is useful
  if logrotate is being run as a different user for various sets of
@@ -19,7 +9,7 @@ index f18c522..33f9a32 100644
  
  .TP
  \fB-\-usage\fR
-@@ -473,10 +473,10 @@ Log files are rotated if the current year is not the same as the last rotation.
+@@ -507,10 +507,10 @@
  .SH FILES
  .PD 0
  .TP 27

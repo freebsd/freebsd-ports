@@ -1,18 +1,11 @@
-diff --git a/logrotate.c b/logrotate.c
-index 3748918..a528367 100644
---- a/logrotate.c
-+++ b/logrotate.c
-@@ -1,5 +1,4 @@
+--- logrotate.c.orig	2012-11-09 19:00:58.744187984 +0800
++++ logrotate.c	2012-11-09 19:01:05.528189740 +0800
+@@ -1,8 +1,4 @@
  #include <sys/queue.h>
+-/* alloca() is defined in stdlib.h in NetBSD */
+-#ifndef __NetBSD__
 -#include <alloca.h>
+-#endif
+ #include <limits.h>
  #include <ctype.h>
  #include <dirent.h>
- #include <errno.h>
-@@ -16,6 +15,7 @@
- #include <locale.h>
- #include <sys/types.h>
- #include <utime.h>
-+#include <limits.h>
- 
- #if defined(SunOS) 
- #include <syslimits.h>
