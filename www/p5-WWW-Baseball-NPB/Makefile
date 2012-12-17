@@ -21,10 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Baseball::NPB.3 WWW::Baseball::NPB::Game.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
