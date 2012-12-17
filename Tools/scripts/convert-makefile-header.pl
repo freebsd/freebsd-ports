@@ -28,7 +28,7 @@ Usage: $bn [OPTION] PORT
 _ENOUSAGE
 }
 
-my $nicepeople="(\s(araujo|avilla|bapt|bdrewery|beat|crees|eadler|flo|flz|garga|kuriyama|linimon|makc|rm|wxs)\@freebsd.org|cvs-src\@yandex\.ru|villa\.alberto@|pgollucci\@p6m7g8\.com|bsdkaffee@|baptiste\.daroussin\@gmail.com)";
+my $nicepeople="(\\s(araujo|az|avilla|bapt|bdrewery|beat|crees|eadler|flo|flz|garga|kuriyama|linimon|makc|rm|wxs)\@freebsd.org|cvs-src\@yandex\.ru|villa\.alberto@|pgollucci\@p6m7g8\.com|bsdkaffee@|baptiste\.daroussin\@gmail.com)";
 
 sub get_creator($) {
 	my $header=shift;
