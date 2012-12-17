@@ -1,33 +1,55 @@
-# New ports collection makefile for:	GtkGLExt
-# Date created:				6 November 2002
-# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OpenGL extension to GTK
+COMMENT=	OpenGL extension to GTK+
+
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		cairo:${PORTSDIR}/graphics/cairo \
+		drm:${PORTSDIR}/graphics/libdrm \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		xcb:${PORTSDIR}/x11/libxcb \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+
+OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20
-USE_GL=		yes
-USE_XORG=	xt
+USE_ICONV=	yes
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
+USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
+		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
+USE_GL=		glu
+USE_GNOME=	gdkpixbuf2 gnomehack gtk20
 USE_LDCONFIG=	yes
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
-		-e 's|-DGDK_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/examples/Makefile.in ${WRKSRC}/gtk/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DGTK_DISABLE_DEPRECATED||g ; \
+		 s|-DGDK_DISABLE_DEPRECATED||g'
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/reference/gtkglext/html/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
