@@ -30,10 +30,9 @@ PLIST_FILES=	bin/aumix bin/mute bin/xaumix
 PLIST_FILES+=	share/aumix/${ii}
 .endfor
 
-.include <bsd.port.options.mk>
-
 OPTIONS_DEFINE=	NLS GTK2
-OPTIONS_DEFAULT=	NLS
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls
