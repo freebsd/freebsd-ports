@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openjpeg
-# Date created:		2007-01-13
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	openjpeg
 PORTVERSION=	1.5.0
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source JPEG 2000 codec
 
 LICENSE=	BSD
