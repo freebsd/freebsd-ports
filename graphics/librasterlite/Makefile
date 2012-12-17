@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	librasterlite
-PORTVERSION=	1.1c
+PORTVERSION=	1.1e
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
+MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
