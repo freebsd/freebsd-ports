@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtgui
-PORTVERSION=	0.2.7
-PORTREVISION=	3
+PORTVERSION=	0.2.81
 CATEGORIES=	net-p2p www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -10,17 +9,22 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A web based front end for rTorrent
 
-OPTIONS=	APACHE "Use Apache for web interface" On \
-		LIGHTTPD "Use LightHTTPD for web interface" Off
+OPTIONS_DEFINE=	APACHE LIGHTTPD
+
+OPTIONS_RADIO=	HTTP
+OPTIONS_RADIO_HTTP=	APACHE LIGHTTPD
+OPTIONS_DEFAULTS=	APACHE
 
 BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:${PORTSDIR}/www/mod_scgi
-.elif defined(WITH_LIGHTTPD)
+.endif
+
+.if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
@@ -35,12 +39,18 @@ SUB_FILES=	pkg-message
 SUB_LIST=	WWWDIR=${WWWDIR} \
 		PORTNAME=${PORTNAME}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/import_request_variables("gp","r_")/extract(\$_REQUEST, EXTR_PREFIX_ALL|EXTR_REFS, "r")/' ${WRKSRC}/*.php
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
+
 do-install:
 	${MKDIR} ${WWWDIR}
+	${RM} ${WRKSRC}/functions.php~
+	${RM} ${WRKSRC}/index.php~
 	${CP} -r ${WRKSRC}/* ${WWWDIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
