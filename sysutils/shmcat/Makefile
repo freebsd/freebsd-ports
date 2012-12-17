@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shmcat
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,7 +13,6 @@ COMMENT=	Simple tool that dumps System V shared memory segments
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
 
 OPTIONS_DEFINE=	NLS
 
