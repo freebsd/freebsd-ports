@@ -29,12 +29,12 @@ MAN3=		ExtUtils::Command::MM.3 ExtUtils::Liblist.3 ExtUtils::MM.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-ExtUtils-Command>=1.16:${PORTSDIR}/devel/p5-ExtUtils-Command \
-		p5-ExtUtils-Install>=1.52:${PORTSDIR}/devel/p5-ExtUtils-Install
-RUN_DEPENDS+=	p5-ExtUtils-Command>=1.16:${PORTSDIR}/devel/p5-ExtUtils-Command \
-		p5-ExtUtils-Install>=1.52:${PORTSDIR}/devel/p5-ExtUtils-Install
-.endif
+#.if ${PERL_LEVEL} < 501001
+#BUILD_DEPENDS+=	p5-ExtUtils-Command>=1.16:${PORTSDIR}/devel/p5-ExtUtils-Command \
+#		p5-ExtUtils-Install>=1.52:${PORTSDIR}/devel/p5-ExtUtils-Install
+#RUN_DEPENDS+=	p5-ExtUtils-Command>=1.16:${PORTSDIR}/devel/p5-ExtUtils-Command \
+#		p5-ExtUtils-Install>=1.52:${PORTSDIR}/devel/p5-ExtUtils-Install
+#.endif
 
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
