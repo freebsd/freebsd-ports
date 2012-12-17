@@ -56,7 +56,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	1
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	2
 OPENLDAP_SHLIB_MAJOR=	8
 
 OPTIONS_DEFINE=	FETCH
@@ -125,9 +125,9 @@ CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.
 
 .include <bsd.port.pre.mk>
 
+.if defined(CLIENT_ONLY)
 PORTDOCS=		CHANGES drafts rfc
 
-.if defined(CLIENT_ONLY)
 .if ${CLIENT_ONLY} == sasl
 PORT_OPTIONS+=	SASL
 .endif
