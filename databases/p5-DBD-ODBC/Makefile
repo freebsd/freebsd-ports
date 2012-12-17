@@ -50,10 +50,6 @@ MYODBC=		unixodbc
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.90:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/my $$myodbc/ s|q{}|"${MYODBC}"|' ${WRKSRC}/Makefile.PL
 
