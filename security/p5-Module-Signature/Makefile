@@ -39,9 +39,4 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/gpgv2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpgv2:${PORTSDIR}/security/gnupg
 .endif
 
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-.endif
-
 .include <bsd.port.post.mk>
