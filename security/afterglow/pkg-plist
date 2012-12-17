@@ -19,12 +19,16 @@
 %%DATADIR%%/graph/README
 %%DATADIR%%/graph/Text/CSV.pm
 %%DATADIR%%/graph/Text/CSV_PP.pm
-%%DATADIR%%/graph/afterglow-lgl.pl
 %%DATADIR%%/graph/afterglow.pl
 %%DATADIR%%/graph/color.tcpspy
+%%DATADIR%%/graph/gdf.properties
 %%DATADIR%%/graph/sample.properties
-%%DATADIR%%/loganalysis/Anonymous.pm
+%%DATADIR%%/loganalysis/Crypt/Rijndael.pm
+%%DATADIR%%/loganalysis/IP/Anonymous.pm
 %%DATADIR%%/loganalysis/README
+%%DATADIR%%/loganalysis/Text/CSV.pm
+%%DATADIR%%/loganalysis/Text/CSV_PP.pm
+%%DATADIR%%/loganalysis/anon.pl
 %%DATADIR%%/loganalysis/anonymize.pl
 %%DATADIR%%/loganalysis/capper.pl
 %%DATADIR%%/loganalysis/merge_logs.pl
@@ -40,6 +44,9 @@
 %%DATADIR%%/parsers/snortalert2csv.pl
 %%DATADIR%%/parsers/tcpdump2csv.pl
 @dirrm %%DATADIR%%/parsers
+@dirrm %%DATADIR%%/loganalysis/Text
+@dirrm %%DATADIR%%/loganalysis/IP
+@dirrm %%DATADIR%%/loganalysis/Crypt
 @dirrm %%DATADIR%%/loganalysis
 @dirrm %%DATADIR%%/graph/Text
 @dirrm %%DATADIR%%/graph
