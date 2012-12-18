@@ -5,4 +5,4 @@ It uses external bash shell wrappers to handle the different types of file
 formats, so adding support for new archive types can be easily done by writing
 a wrapper.
 
-WWW: http://xarchive.sourceforge.net
+WWW: http://xarchive.sourceforge.net/
