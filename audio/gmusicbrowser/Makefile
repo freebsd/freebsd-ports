@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmusicbrowser
-# Date created:		2011-10-13
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gmusicbrowser
 PORTVERSION=	1.1.9
@@ -16,40 +12,38 @@ COMMENT=	Jukebox for large collections of mp3/ogg/flac/mpc files
 
 RUN_DEPENDS=	p5-Gtk2>=1.0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
+NO_BUILD=	yes
+
 MAN1=	gmusicbrowser.1
 PORTDOCS=	AUTHORS COPYING README NEWS INSTALL layout_doc.html
 PORTDATA=	*
 
-OPTIONS=	GST	"Enable GStreamer backend"	Off \
-		MPLAYER	"Enable mplayer backend"	On \
-		DBUS	"Enable DBus (Gnome multimedia key)" Off \
-		WEBKIT	"Enable embedded web browser" Off \
-		NLS	"Enable Native Language Support" On
-#		123	"Enable mpg123/ogg123 backend"	Off  # alsa-only
+OPTIONS_DEFINE=	GSTREAMER MPLAYER DBUS WEBKIT NLS
+OPTIONS_DEFAULT=	MPLAYER
 
-.include <bsd.port.pre.mk>
+WEBKIT_DESC=	Enable embedded web browser
 
-.if defined(WITH_GST)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGSTREAMER}
 RUN_DEPENDS+=	p5-GStreamer>=0:${PORTSDIR}/multimedia/p5-GStreamer
 .endif
 
-.if defined(WITH_MPLAYER)
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 RUN_DEPENDS+=	p5-Net-DBus>=1.0:${PORTSDIR}/devel/p5-Net-DBus
 .endif
 
-.if defined(WITH_WEBKIT)
+.if ${PORT_OPTIONS:MWEBKIT}
 RUN_DEPENDS+=	p5-Gtk2-WebKit>=0:${PORTSDIR}/www/p5-Gtk2-WebKit
 .endif
 
 .if defined(NOPORTDATA)
 IGNORE=		port data contain code, undefine NOPORTDATA
 .endif
-
-do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
@@ -61,15 +55,15 @@ do-install:
 		${COPYTREE_SHARE} $$d ${DATADIR}; done) && \
 		${INSTALL_DATA} *.pm ${DATADIR} && \
 		${INSTALL_SCRIPT} iceserver.pl ${DATADIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	(cd ${WRKSRC}/locale && \
 		${COPYTREE_SHARE} \* ${PREFIX}/share/locale)
 	(cd ${WRKSRC} && \
 		${FIND} locale -type f | ${SED} "s|^|share/|g" >> ${TMPPLIST})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
