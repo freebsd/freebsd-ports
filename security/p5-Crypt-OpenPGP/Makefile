@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Crypt-OpenPGP
-# Date created:				Tue Sep 11 02:08:49 PDT 2001
-# Whom:	      				Michael Haro <mharo@FreeBSD.org>
-#
+# Created by: Michael Haro <mharo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenPGP
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -48,13 +45,7 @@ MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
 		Crypt::OpenPGP::Trust.3 Crypt::OpenPGP::Certificate.3 \
 		Crypt::OpenPGP::Message.3 Crypt::OpenPGP::KeyServer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/Crypt/OpenPGP/Ciphertext.pm.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
