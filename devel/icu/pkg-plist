@@ -58,7 +58,6 @@ include/unicode/utf32.h
 include/unicode/utf16.h
 include/unicode/utf.h
 include/unicode/utext.h
-include/unicode/usystem.h
 include/unicode/ustring.h
 include/unicode/ustream.h
 include/unicode/ustdio.h
@@ -73,7 +72,6 @@ include/unicode/ures.h
 include/unicode/urep.h
 include/unicode/urename.h
 include/unicode/uregex.h
-include/unicode/uobslete.h
 include/unicode/uobject.h
 include/unicode/unum.h
 include/unicode/unorm2.h
@@ -91,11 +89,10 @@ include/unicode/ulocdata.h
 include/unicode/uloc.h
 include/unicode/uldnames.h
 include/unicode/uiter.h
-include/unicode/uintrnal.h
 include/unicode/uidna.h
+include/unicode/ugender.h
 include/unicode/uenum.h
-include/unicode/udraft.h
-include/unicode/udeprctd.h
+include/unicode/udisplaycontext.h
 include/unicode/udatpg.h
 include/unicode/udata.h
 include/unicode/udat.h
@@ -118,6 +115,8 @@ include/unicode/ubrk.h
 include/unicode/ubidi.h
 include/unicode/tztrans.h
 include/unicode/tzrule.h
+include/unicode/tznames.h
+include/unicode/tzfmt.h
 include/unicode/translit.h
 include/unicode/tmutfmt.h
 include/unicode/tmutamt.h
@@ -141,10 +140,8 @@ include/unicode/regex.h
 include/unicode/rbtz.h
 include/unicode/rbnf.h
 include/unicode/rbbi.h
-include/unicode/pwin32.h
 include/unicode/putil.h
 include/unicode/ptypes.h
-include/unicode/ppalmos.h
 include/unicode/plurrule.h
 include/unicode/plurfmt.h
 include/unicode/platform.h
@@ -161,10 +158,12 @@ include/unicode/measfmt.h
 include/unicode/locid.h
 include/unicode/locdspnm.h
 include/unicode/localpointer.h
+include/unicode/listformatter.h
 include/unicode/idna.h
 include/unicode/icuplug.h
 include/unicode/icudataver.h
 include/unicode/gregocal.h
+include/unicode/gender.h
 include/unicode/fpositer.h
 include/unicode/format.h
 include/unicode/fmtable.h
@@ -227,7 +226,7 @@ bin/makeconv
 bin/icuinfo
 bin/icu-config
 bin/genrb
-bin/genctd
+bin/gendict
 bin/gencnval
 bin/gencfu
 bin/genbrk
