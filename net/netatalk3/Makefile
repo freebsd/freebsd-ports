@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--localstatedir=/var \
 			--disable-bundled-libevent \
 			--with-libevent-header=${LOCALBASE}/include \
-			--with-libevent-lib=${LOCALBASE}/lib
+			--with-libevent-lib=${LOCALBASE}/lib/event2
 
 OPTIONS=	PAM		"Enable PAM support" off \
 		KRB5		"Enable Kerberos V UAM" off \
