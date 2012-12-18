@@ -3979,3 +3979,7 @@ x11-toolkits/fltk-threads|x11-toolkits/fltk|2012-12-12|Threads are on by default
 x11-fonts/gentium|x11-fonts/gentium-plus|2012-12-15|Track upstream name changes
 devel/pear-Horde_DataTree||2012-12-16|Obsolete in horde5
 deskutils/doodle||2012-12-17|Has expired: BROKEN for more than 6 month
+www/horde4-ansel|www/horde-ansel|2012-12-18|Move horde4-* apps to horde-*
+www/horde4-base|www/horde-base|2012-12-18|Move horde4-* apps to horde-*
+www/horde4-passwd|www/horde-passwd|2012-12-18|Move horde4-* apps to horde-*
+www/horde4-wicked|www/horde-wicked|2012-12-18|Move horde4-* apps to horde-*
