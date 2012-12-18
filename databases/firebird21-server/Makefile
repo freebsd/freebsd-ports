@@ -1,13 +1,9 @@
-# New ports collection makefile for:    firebird21-server
-# Date created:         2010-11-19
-# Whom:                 Max Kochubey <root@hangover.org.ru>
-#
+# Created by: Max Kochubey <root@hangover.org.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	firebird
 PORTVERSION=	2.1.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-Release/
 PKGNAMESUFFIX?=	-server

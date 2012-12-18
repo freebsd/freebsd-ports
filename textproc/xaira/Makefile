@@ -1,13 +1,9 @@
-# New ports collection makefile for:	xaira
-# Date created:		10 September 2007
-# Whom:			Mathias Monnerville <mathias@monnerville.com>
-#
+# Created by: Mathias Monnerville <mathias@monnerville.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xaira
 PORTVERSION=	1.23
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 

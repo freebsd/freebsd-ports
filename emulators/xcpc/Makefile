@@ -1,13 +1,9 @@
-# New ports collection makefile for:	cpmtools
-# Date created:		31 January 2008
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	xcpc
 PORTVERSION=	20070122
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 

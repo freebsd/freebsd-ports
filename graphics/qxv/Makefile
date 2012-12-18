@@ -1,13 +1,9 @@
-# New ports collection makefile for:	qxv
-# Date created:		28 August 2012
-# Whom:			cy
-#
+# Created by: cy
 # $FreeBSD$
-#
 
 PORTNAME=	qxv
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	graphics
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/422/
 
@@ -22,7 +18,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		iconv.3:${PORTSDIR}/converters/iconv \
-		icui18n.48:${PORTSDIR}/devel/icu \
+		icui18n:${PORTSDIR}/devel/icu \
 		intl.9:${PORTSDIR}/devel/gettext \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \

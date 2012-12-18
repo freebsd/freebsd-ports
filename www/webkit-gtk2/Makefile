@@ -1,14 +1,9 @@
-# New ports collection makefile for:	webkit
-# Date created:		2007-10-21
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/www/webkit-gtk2/Makefile,v 1.80 2011/07/11 10:14:46 kwm Exp $
-#
-
 PORTNAME=	webkit
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -20,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
-		icutu.48:${PORTSDIR}/devel/icu \
+		icutu:${PORTSDIR}/devel/icu \
 		curl.6:${PORTSDIR}/ftp/curl \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup

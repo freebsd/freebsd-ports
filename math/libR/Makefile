@@ -1,10 +1,5 @@
-# vim: tabstop=8 softtabstop=0 noexpandtab
-# Ports collection makefile for:	libR
-# Date created:		20 July 2011
-# Whom:			bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libR
 

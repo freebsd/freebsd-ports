@@ -1,9 +1,5 @@
-# New ports collection makefile for:	firebird25-client
-# Date created:	   2010-12-20
-# Whom:		   Alonso Cárdenas Márquez <acm@FreeBSD.org>
-#
+# Created by: Alonso Cárdenas Márquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	firebird
 PKGNAMESUFFIX=	-client

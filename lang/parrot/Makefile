@@ -1,12 +1,9 @@
-# New ports collection makefile for:	parrot
-# Date created:	   15 April 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
 

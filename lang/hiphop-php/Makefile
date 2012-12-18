@@ -1,13 +1,9 @@
-# New ports collection makefile for:	hiphop
-# Date created:				20120712
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hiphop-php
 PORTVERSION=	0.0.20120716
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/tarball/${GITVERSION}/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -36,20 +32,19 @@ LICENSE_DISTFILES_UNICODE= EastAsianWidth.txt \
 	8859-11.TXT 8859-13.TXT 8859-14.TXT 8859-15.TXT 8859-16.TXT
 LICENSE_DISTFILES_ZEND200=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	icudata.48:${PORTSDIR}/devel/icu \
+LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
-		tbb.4:${PORTSDIR}/devel/tbb \
-		gd.4:${PORTSDIR}/graphics/gd \
-		mcrypt.8:${PORTSDIR}/security/libmcrypt \
-		onig.1:${PORTSDIR}/devel/oniguruma4 \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		memcached.10:${PORTSDIR}/databases/libmemcached \
-		c-client4.9:${PORTSDIR}/mail/cclient
+		tbb:${PORTSDIR}/devel/tbb \
+		gd:${PORTSDIR}/graphics/gd \
+		mcrypt:${PORTSDIR}/security/libmcrypt \
+		onig:${PORTSDIR}/devel/oniguruma4 \
+		pcre:${PORTSDIR}/devel/pcre \
+		expat:${PORTSDIR}/textproc/expat2 \
+		memcached:${PORTSDIR}/databases/libmemcached \
+		c-client4:${PORTSDIR}/mail/cclient
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	NLS
 NLS_DESC=	Depend on gettext (required if binutils have NLS)
 
 _EXTDIR=	share/hiphop-php/ext

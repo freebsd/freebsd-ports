@@ -3,7 +3,7 @@
 
 PORTNAME=	rakudo
 PORTVERSION=	2012.09
-PORTEPOCH=	3
+PORTEPOCH=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
 DISTNAME=	${PORTNAME}-star-${PORTVERSION}

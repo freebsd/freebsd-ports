@@ -1,14 +1,10 @@
-# Ports collection makefile for:	couchdb
-# Date created:			17 Nov 2007
-# Whom:                         Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	couchdb
 PORTVERSION=	1.2.0
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	couchdb/releases/${PORTVERSION}

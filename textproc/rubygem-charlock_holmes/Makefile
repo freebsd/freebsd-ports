@@ -2,6 +2,7 @@
 
 PORTNAME=	charlock_holmes
 PORTVERSION=	0.6.8
+PORTRESIVION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
