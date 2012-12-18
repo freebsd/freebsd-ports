@@ -18,7 +18,12 @@ CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules \
 		--with-rmt=/etc/rmt
 
-.if !defined(WITHOUT_NLS)
+INFO=		cpio
+MAN1=		gcpio.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
@@ -26,9 +31,6 @@ CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-INFO=		cpio
-MAN1=		gcpio.1
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check

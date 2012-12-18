@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flac
-# Date created:		Mar 18, 2001
-# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flac
 PORTVERSION=	1.2.1
@@ -25,7 +21,12 @@ CONFIGURE_ARGS=	--enable-sse \
 CPPFLAGS+=	-I${WRKSRC}/include
 MAKE_JOBS_SAFE=	yes
 
-.if !defined(WITHOUT_ICONV)
+OPTIONS_DEFINE=	ICONV
+OPTIONS_DEFAULT=ICONV
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CONFIGURE_ARGS+=--with-libiconv-prefix="${LOCALBASE}"
 .else
@@ -33,10 +34,10 @@ CONFIGURE_ARGS+=--without-libiconv-prefix
 .endif
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	DOC=""
-.else
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	DOC=doc
+.else
+MAKE_ENV+=	DOC=""
 .endif
 
 USE_LDCONFIG=	yes
