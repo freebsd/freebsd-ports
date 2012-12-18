@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opus-tools
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		https://ftp.mozilla.org/pub/mozilla.org/opus/
