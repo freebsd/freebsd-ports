@@ -7,7 +7,7 @@ CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A re-implementation of zlib in pure Java
+COMMENT=	Reimplementation of zlib in pure Java
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -57,8 +57,8 @@ do-install:
 .endif
 # examples
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/example/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/* ${EXAMPLESDIR}
 # jar
-	@${INSTALL_DATA} ${JAR_FILE} ${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${JAR_FILE} ${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>

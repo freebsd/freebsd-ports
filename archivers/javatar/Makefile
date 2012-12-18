@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.gjt.org/download/time/java/tar/ \
 		ftp://ftp.gjt.org/pub/time/java/tar/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java tar archive io package
+COMMENT=	Java tar archive I/O package
 
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 

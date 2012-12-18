@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-lha
-# Date created:		09 January 2006
-# Whom:			stas
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lha
 PORTVERSION=	0.8.1
@@ -15,7 +11,7 @@ DISTNAME=	lhalib-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby extension to unpack lha-compressed files
+COMMENT=	Ruby extension to unpack LHA-compressed files
 
 USE_ZIP=	yes
 USE_RUBY=	yes
@@ -29,8 +25,8 @@ RUBY_SHEBANG_FILES=	${EXAMPLES}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
-	@${INSTALL_SCRIPT} ${EXAMPLES:S,^,${WRKSRC}/,} ${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_SCRIPT} ${EXAMPLES:S,^,${WRKSRC}/,} ${RUBY_MODEXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

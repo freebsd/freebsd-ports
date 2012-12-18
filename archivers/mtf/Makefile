@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mtf
-# Date created:        29 January 2002
-# Whom:                Philippe Casidy <pcasidy@casidy.com>
-#
+# Created by: Philippe Casidy <pcasidy@casidy.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mtf
 PORTVERSION=	0.2.1
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A Unix reader for the Microsoft Tape Format used by NT Backup
+COMMENT=	Unix reader for the Microsoft Tape Format used by NT Backup
 
 LICENSE=	GPLv2
 
@@ -23,9 +19,8 @@ PLIST_FILES=	bin/mtf
 PORTDOCS=	README
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|CC=|CC?=|" \
-			-e "s|CFLAGS=|CFLAGS?=|" \
-			${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|CC=|CC?=|" -e "s|CFLAGS=|CFLAGS?=|" \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${PREFIX}/bin

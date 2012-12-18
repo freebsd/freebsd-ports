@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kbackup
-# Date created:		2006-09-29
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kbackup
 PORTVERSION=	0.5.4
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	44998-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A program for back up of directories or files
+COMMENT=	Program for backing up files and directories
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

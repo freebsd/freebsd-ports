@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	rvm
-# Date created:				Mar 15, 2004
-# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rvm
 PORTVERSION=	1.07
@@ -13,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	davide.italiano@gmail.com
-COMMENT=	An archive manager that uses rsync to manage backups
+COMMENT=	Archive manager that uses rsync to manage backups
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS:=	${BUILD_DEPENDS}

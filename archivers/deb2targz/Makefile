@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deb2targz
-# Date created:				27 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	deb2targz
 PORTVERSION=	20100710
@@ -12,7 +8,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command-line utility for converting a Debian .deb file to a .tar.gz
+COMMENT=	Command-line utility for converting a Debian .deb file to a .tar.gz
 
 NO_BUILD=	yes
 

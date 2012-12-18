@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdms
-# Date created:			Apr 13, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	xdms
 PORTVERSION=	1.3.2
@@ -11,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/xdms/
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	An Amiga DMS archiver unpacker
+COMMENT=	Tool for decompressing Amiga DMS files
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libzip
-# Date created:		2006-03-20
-# Whom:			Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libzip
 PORTVERSION=	0.10.1
@@ -11,7 +7,7 @@ CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A C library for reading, creating, and modifying zip archives
+COMMENT=	C library for reading, creating, and modifying ZIP archives
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
