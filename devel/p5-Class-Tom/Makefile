@@ -1,13 +1,9 @@
-# New ports collection makefile for:	Class::Tom
-# Date created:				04 Nov 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Tom
 PORTVERSION=	3.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Class
@@ -23,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Class::Tom.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-BUILD_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
