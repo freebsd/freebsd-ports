@@ -32,11 +32,6 @@ include/weed/weed-plugin-utils.h
 include/weed/weed-plugin.h
 include/weed/weed-utils.h
 include/weed/weed.h
-libdata/pkgconfig/libweed.pc
-libdata/pkgconfig/libweed-compat.pc
-libdata/pkgconfig/libweed-plugin-utils.pc
-libdata/pkgconfig/libweed-utils.pc
-libdata/pkgconfig/libweed_slice.pc
 lib/libweed-plugin-utils.a
 lib/libweed-plugin-utils.la
 lib/libweed-utils.a
@@ -63,6 +58,8 @@ lib/lives/plugins/effects/realtime/weed/RGBdelay.la
 lib/lives/plugins/effects/realtime/weed/RGBdelay.so
 lib/lives/plugins/effects/realtime/weed/alien_overlay.la
 lib/lives/plugins/effects/realtime/weed/alien_overlay.so
+lib/lives/plugins/effects/realtime/weed/alpha_means.la
+lib/lives/plugins/effects/realtime/weed/alpha_means.so
 lib/lives/plugins/effects/realtime/weed/audio_fft.la
 lib/lives/plugins/effects/realtime/weed/audio_fft.so
 lib/lives/plugins/effects/realtime/weed/audio_transition.la
@@ -85,6 +82,8 @@ lib/lives/plugins/effects/realtime/weed/comic.la
 lib/lives/plugins/effects/realtime/weed/comic.so
 lib/lives/plugins/effects/realtime/weed/compositor.la
 lib/lives/plugins/effects/realtime/weed/compositor.so
+lib/lives/plugins/effects/realtime/weed/data_processor.la
+lib/lives/plugins/effects/realtime/weed/data_processor.so
 lib/lives/plugins/effects/realtime/weed/deinterlace.la
 lib/lives/plugins/effects/realtime/weed/deinterlace.so
 lib/lives/plugins/effects/realtime/weed/edge.la
@@ -107,6 +106,8 @@ lib/lives/plugins/effects/realtime/weed/ladspa.la
 lib/lives/plugins/effects/realtime/weed/ladspa.so
 lib/lives/plugins/effects/realtime/weed/layout_blends.la
 lib/lives/plugins/effects/realtime/weed/layout_blends.so
+lib/lives/plugins/effects/realtime/weed/libvisual/libvis.la
+lib/lives/plugins/effects/realtime/weed/libvisual/libvis.so
 lib/lives/plugins/effects/realtime/weed/lifeTV.la
 lib/lives/plugins/effects/realtime/weed/lifeTV.so
 lib/lives/plugins/effects/realtime/weed/livetext.la
@@ -139,6 +140,8 @@ lib/lives/plugins/effects/realtime/weed/rotozoom.la
 lib/lives/plugins/effects/realtime/weed/rotozoom.so
 lib/lives/plugins/effects/realtime/weed/scribbler.la
 lib/lives/plugins/effects/realtime/weed/scribbler.so
+lib/lives/plugins/effects/realtime/weed/shift.la
+lib/lives/plugins/effects/realtime/weed/shift.so
 lib/lives/plugins/effects/realtime/weed/simple_blend.la
 lib/lives/plugins/effects/realtime/weed/simple_blend.so
 lib/lives/plugins/effects/realtime/weed/slide_over.la
@@ -162,8 +165,6 @@ lib/lives/plugins/effects/realtime/weed/videowall.so
 lib/lives/plugins/effects/realtime/weed/warpTV.la
 lib/lives/plugins/effects/realtime/weed/warpTV.so
 lib/lives/plugins/effects/realtime/weed/xeffect.la
-lib/lives/plugins/effects/realtime/weed/libvisual/libvis.la
-lib/lives/plugins/effects/realtime/weed/libvisual/libvis.so
 lib/lives/plugins/effects/realtime/weed/xeffect.so
 lib/lives/plugins/effects/rendered/blank_frames
 lib/lives/plugins/effects/rendered/blur
@@ -247,6 +248,11 @@ lib/lives/plugins/playback/video/vloopback2.la
 lib/lives/plugins/playback/video/vloopback2.so
 lib/lives/plugins/playback/video/yuv4mpeg_stream.la
 lib/lives/plugins/playback/video/yuv4mpeg_stream.so
+libdata/pkgconfig/libweed-compat.pc
+libdata/pkgconfig/libweed-plugin-utils.pc
+libdata/pkgconfig/libweed-utils.pc
+libdata/pkgconfig/libweed.pc
+libdata/pkgconfig/libweed_slice.pc
 share/app-install/icons/lives.png
 share/applications/LiVES.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -342,13 +348,14 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/trim_frames.script
 %%DATADIR%%/plugins/effects/RFXscripts/tunnel.script
 %%DATADIR%%/plugins/effects/RFXscripts/wave.script
+%%DATADIR%%/plugins/effects/compound/image_stabilizer
 %%DATADIR%%/resources/vidtest.avi
 %%DATADIR%%/themes/camera/frame.jpg
 %%DATADIR%%/themes/camera/main.jpg
-%%DATADIR%%/themes/crayons/frame.jpg
-%%DATADIR%%/themes/crayons/main.jpg
 %%DATADIR%%/themes/crayons-bright/frame.jpg
 %%DATADIR%%/themes/crayons-bright/main.jpg
+%%DATADIR%%/themes/crayons/frame.jpg
+%%DATADIR%%/themes/crayons/main.jpg
 %%DATADIR%%/themes/cutting_room/frame.jpg
 %%DATADIR%%/themes/cutting_room/main.jpg
 %%DATADIR%%/themes/editor/frame.jpg
@@ -387,6 +394,16 @@ share/applications/LiVES.desktop
 %%NLS%%share/locale/uz/LC_MESSAGES/lives.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/lives.xpm
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
 @dirrm %%DATADIR%%/themes/pinks
 @dirrm %%DATADIR%%/themes/editor
 @dirrm %%DATADIR%%/themes/cutting_room
@@ -395,6 +412,7 @@ share/pixmaps/lives.xpm
 @dirrm %%DATADIR%%/themes/camera
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%/plugins/effects/compound
 @dirrm %%DATADIR%%/plugins/effects/RFXscripts
 @dirrm %%DATADIR%%/plugins/effects
 @dirrm %%DATADIR%%/plugins
@@ -403,7 +421,6 @@ share/pixmaps/lives.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/app-install/icons
 @dirrm share/app-install
-@dirrm include/weed
 @dirrm lib/lives/plugins/playback/video
 @dirrm lib/lives/plugins/playback/audiostream
 @dirrm lib/lives/plugins/playback
@@ -417,14 +434,4 @@ share/pixmaps/lives.xpm
 @dirrm lib/lives/plugins/decoders
 @dirrm lib/lives/plugins
 @dirrm lib/lives
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/applications
+@dirrm include/weed

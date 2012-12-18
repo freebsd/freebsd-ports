@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -33,6 +32,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 		cairo:${PORTSDIR}/graphics/cairo \
 		visual-0.4:${PORTSDIR}/graphics/libvisual04 \
 		opencv_calib3d:${PORTSDIR}/graphics/opencv \
+		opencv_core:${PORTSDIR}/graphics/opencv-core \
 		png15:${PORTSDIR}/graphics/png \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
@@ -45,8 +45,8 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 		xvidcore:${PORTSDIR}/multimedia/xvid \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
+		xcb:${PORTSDIR}/x11/libxcb \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
@@ -64,19 +64,19 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_BZIP2=	yes
-USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_ICONV=	yes
 USE_NCURSES=	yes
-USE_GNOME=	gtk20 gnomehack gdkpixbuf2
-USE_SDL=	sdl
 USE_PYTHON=	yes
 USE_PERL5=	yes
 USE_CDRTOOLS=	yes
 USE_GHOSTSCRIPT_RUN=	yes
-GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xtst
+USE_SDL=	sdl
+USE_GNOME=	gdkpixbuf2 gtk20
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab
@@ -122,10 +122,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/LIBS/s|-ldl ||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| install-docDATA||g' \
+	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|: install-data-local |: |g' \
+	@${REINPLACE_CMD} -e 's|: install-data-local |: |g; s|-ldl||' \
 		${WRKSRC}/lives-plugins/weed-plugins/gdk/Makefile.in \
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} -e 's|off64_t|off_t|g ; s|lseek64|lseek|g' \
@@ -134,16 +133,9 @@ post-patch:
 		${WRKSRC}/lives-plugins/plugins/decoders/ogg_decoder.h
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
-	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e \
-		'/FLAGS/s|-O3||g ; \
-		 /FLAGS/s|-ldl||g ; \
-		 /flags/s|-L/usr/lib64||g ; \
-		 /flags/s|-Wl,-Bsymbolic||g ; \
-		 /flags/s|--tag=disable-static||g'
-	@${REINPLACE_CMD} -e 's|-$$(VERSION)||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/libweed/Makefile.in
 	@${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
-		${WRKSRC}/smogrify \
 		${WRKSRC}/src/callbacks.c \
 		${WRKSRC}/src/saveplay.c \
 		${WRKSRC}/src/utils.c
