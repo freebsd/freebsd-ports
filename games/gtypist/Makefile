@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtypist
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,9 @@ MAKE_JOBS_SAFE=	yes
 INFO=		gtypist gtypist.cs gtypist.es
 MAN1=		gtypist.1 typefortune.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
