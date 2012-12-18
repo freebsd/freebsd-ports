@@ -1,6 +1,6 @@
-# Ports collection makefile for:	nag
-# Date created:			Sun Dec 14, 2001
-# Whom:				Thierry Thomas (<thierry@pompo.net>)
+# Ports collection makefile for:  horde-nag
+# Date created:			  Sun Dec 14, 2001
+# Whom:				  Thierry Thomas (<thierry@pompo.net>)
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde web based task list manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role

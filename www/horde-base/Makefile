@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde3
+# Ports collection makefile for:  horde-base
 # Date created:			  Sun Oct 07, 2001
 # Whom:				  Thierry Thomas (<thierry@thomas.as>)
 #
@@ -12,8 +12,6 @@ PKGNAMEPREFIX=
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Application Framework
-
-CONFLICTS=	horde-3*
 
 RUN_DEPENDS=	${PEARDIR}/Net/DNS2.php:${PORTSDIR}/dns/pear-Net_DNS2
 

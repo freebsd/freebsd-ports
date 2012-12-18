@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-wicked
+# Ports collection makefile for:  horde-wicked
 # Date created:			  Oct 11, 2011
 # Whom:				  Martin Matuska (mm@FreeBSD.org)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde Wiki Application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:${PORTSDIR}/www/pear-Text_Wiki
 

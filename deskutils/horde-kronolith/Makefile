@@ -1,4 +1,4 @@
-# Ports collection makefile for:  Kronolith
+# Ports collection makefile for:  horde-kronolith
 # Date created:			  Sun Dec 02, 2001
 # Whom:				  Thierry Thomas (<thierry@thomas.as>)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde web based calendar
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 OPTIONS_DEFAULT=	DATE_HOLIDAYS TIMEOBJECTS
 OPTIONS_DEFINE=		DATE_HOLIDAYS TIMEOBJECTS XMLWRITER

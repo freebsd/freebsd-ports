@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-ansel
+# Ports collection makefile for:  horde-ansel
 # Date created:			  Oct 19, 2011
 # Whom:				  Martin Matuska (mm@FreeBSD.org)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde Photo Management and Web Gallery
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
