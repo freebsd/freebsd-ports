@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fish
-# Date created:		2007-02-26
-# Whom:			Kai Wang <kaiw27@gmail.com>
-#
+# Created by: Kai Wang <kaiw27@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fish
 PORTVERSION=	1.23.1
@@ -25,8 +21,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LIBS="${LDFLAGS}"
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
-OPTIONS=	XSEL	"Build with xsel"		on \
-		DOXYGEN "Build docs with doxygen"	on
+OPTIONS_DEFINE=	XSEL DOXYGEN
+OPTIONS_DEFAULT=	XSEL DOXYGEN
+XSEL_DESC=	Build with xsel
+
+.include <bsd.port.options.mk>
 
 MAN1=		alias.1 and.1 begin.1 bg.1 bind.1 block.1 \
 		break.1 breakpoint.1 builtin.1 case.1 cd.1 \
@@ -41,29 +40,26 @@ MAN1=		alias.1 and.1 begin.1 bg.1 bind.1 block.1 \
 		set.1 set_color.1 source.1 status.1 switch.1 \
 		trap.1 type.1 ulimit.1 umask.1 vared.1 while.1
 
-.include <bsd.port.pre.mk>
-
 # Don't use the bundled xsel
 CONFIGURE_ARGS+=	--without-xsel
 
-.if !defined(WITHOUT_XSEL)
+.if ${PORT_OPTIONS:MXSEL}
 RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
 .endif
 
-.if defined(WITHOUT_DOXYGEN)
-NOPORTDOCS=	yes
-.else
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 .if ${OSVERSION} > 900008
+# already in base system
 PLIST_SUB+=	SEQ="@comment "
 .else
 PLIST_SUB+=	SEQ=""
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS} || ! ${PORT_OPTIONS:MDOXYGEN}
 	@${REINPLACE_CMD} -e 's|$(PROGRAMS) user_doc|$(PROGRAMS)|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 589,593d ${WRKSRC}/Makefile.in
@@ -78,4 +74,4 @@ post-install:
 		${ECHO_CMD} '${PREFIX}/bin/${PORTNAME}' >> /etc/shells; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
