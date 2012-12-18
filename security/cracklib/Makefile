@@ -1,14 +1,11 @@
-# New ports collection makefile for:	cracklib
-# Date created:				22 April 2000
-# Whom:					ajk@iu.edu
-#
+# Created by: ajk@iu.edu
 # $FreeBSD$
-#
 
 PORTNAME=	cracklib
-PORTVERSION=	2.8.19
+PORTVERSION=	2.8.22
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Password-checking library
@@ -22,7 +19,11 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-default-dict=${PREFIX}/libdata/${PORTNAME}
 
-.ifdef(WITH_PYTHON)
+OPTIONS_DEFINE=	PYTHON
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=	PYTHON=""
