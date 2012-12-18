@@ -1,10 +1,6 @@
-# New ports collection makefile for:	Ruby/ATK
-# Date created:				05 April 2004
-# Whom:					Mezz <mezz7@cox.net>
-#
+# Created by: Jeremy Messenger <mezz7@cox.net>
 # $FreeBSD$
 #   $MCom: ports/accessibility/ruby-atk/Makefile,v 1.2 2005/10/17 07:05:39 mezz Exp $
-#
 
 PORTNAME=	atk
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
@@ -18,7 +14,7 @@ DIST_SUBDIR=	${RUBY_GNOME_DIST_SUBDIR}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for ATK
 
-BUILD_DEPENDS+= rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
+BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
 		rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 
@@ -29,7 +25,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
 PKGDIR=		${.CURDIR}
- 
+
 .include "${MASTERDIR}/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/atk
