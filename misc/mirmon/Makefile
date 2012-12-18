@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mirmon
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.staff.science.uu.nl/~penni101/mirmon/
 
