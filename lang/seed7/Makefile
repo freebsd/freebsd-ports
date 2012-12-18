@@ -41,6 +41,7 @@ BROKEN=		does not compile
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e '/FLOATTYPE_DOUBLE/s|undef|define|' ${WRKSRC}/config.h
 	${REINPLACE_CMD} -i '' -e 's|./hi|${PREFIX}/bin/hi|g' ${WRKSRC}/../prg/chk_all.sd7
 
 do-install:
