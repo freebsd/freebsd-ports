@@ -15,6 +15,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
