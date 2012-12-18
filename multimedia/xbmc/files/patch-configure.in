@@ -1,54 +1,6 @@
---- configure.in.orig	2011-12-23 04:12:21.000000000 +0100
-+++ configure.in	2012-01-03 16:44:09.000000000 +0100
-@@ -18,7 +18,13 @@
- # check for library basenames
- AC_DEFUN([XB_FIND_SONAME],
- [
--  if [[ "$host_vendor" != "apple" ]]; then
-+  if echo "$host" | grep -q freebsd ; then
-+    AC_MSG_CHECKING([for lib$2 soname])
-+    $1_SONAME=[`ldconfig -r | sed -n "s;.* \(/.*lib$2\.so.*\)$;\1;p" | head -n 1`]
-+    if test x$$1_SONAME != x ; then
-+      $1_SONAME=[`basename $$1_SONAME`]
-+    fi
-+  elif [[ "$host_vendor" != "apple" ]]; then
-     AC_MSG_CHECKING([for lib$2 soname])
-     $1_FILENAME=$($CC -nostdlib -o /dev/null $LDFLAGS -l$2 -Wl,-M 2>/dev/null | grep "^LOAD.*$2" | awk '{V=2; print $V}')
-     if [[ ! -z $$1_FILENAME ]]; then
-@@ -453,6 +459,18 @@
-      ARCH="x86_64-linux"
-      AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_LINUX -D_LINUX")
-      ;;
-+  i386-*-freebsd*)
-+     ARCH="x86-freebsd"
-+     MAKE="gmake"
-+     use_external_ffmpeg="yes"
-+     AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_LINUX -D_LINUX")
-+     ;;
-+  amd64-*-freebsd*)
-+     ARCH="x86_64-freebsd"
-+     MAKE="gmake"
-+     use_external_ffmpeg="yes"
-+     AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_LINUX -D_LINUX")
-+     ;;
-   arm-apple-darwin*)
-      use_joystick=no
-      use_neon=yes
-@@ -551,6 +569,13 @@
- 
- 
- # platform specific flags
-+if echo "$ARCH" | grep -q "freebsd" ; then
-+  LOCALBASE="${LOCALBASE:-/usr/local}"
-+  CFLAGS="$CFLAGS -I$LOCALBASE/include"
-+  CXXFLAGS="$CXXFLAGS -I$LOCALBASE/include"
-+  CPPFLAGS="$CPPFLAGS -I$LOCALBASE/include"
-+  LDFLAGS="$LDFLAGS -L$LOCALBASE/lib"
-+fi
- if test "$host_vendor" = "apple" ; then
-   # standard xbmc paths
-   INCLUDES="$INCLUDES -I\$(abs_top_srcdir)/xbmc/osx"
-@@ -635,6 +660,7 @@
+--- configure.in.orig	2012-10-01 01:08:50.000000000 +0200
++++ configure.in	2012-10-03 12:17:13.000000000 +0200
+@@ -816,6 +816,7 @@
  
  # Check inotify availability
  AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
@@ -56,68 +8,42 @@
  
  # Checks for boost headers using CXX instead of CC
  AC_LANG_PUSH([C++])
-@@ -713,7 +738,11 @@
- AC_CHECK_LIB([bz2],         [main],, AC_MSG_ERROR($missing_library))
- AC_CHECK_LIB([jpeg],        [main],, AC_MSG_ERROR($missing_library)) # check for cximage
- AC_CHECK_LIB([tiff],        [main],, AC_MSG_ERROR($missing_library))
-+if echo "$ARCH" | grep -q freebsd; then
-+AC_CHECK_LIB([pthread],     [main],LIBS="-pthread $LIBS", AC_MSG_ERROR($missing_library))
-+else
- AC_CHECK_LIB([pthread],     [main],, AC_MSG_ERROR($missing_library))
-+fi
- AC_CHECK_LIB([lzo2],        [main],, AC_MSG_ERROR($missing_library))
- AC_CHECK_LIB([z],           [main],, AC_MSG_ERROR($missing_library))
- AC_CHECK_LIB([crypto],      [main],, AC_MSG_ERROR($missing_library))
-@@ -809,8 +838,10 @@
-     AC_DEFINE([HAVE_SDL],[1],["Define to 1 if using sdl"])
-   fi
- else
-+  if echo "$ARCH" | grep -vq freebsd; then
-   AC_CHECK_LIB([dl],         [main],, AC_MSG_ERROR($missing_library))
-   AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
-+  fi
-   AC_CHECK_LIB([jasper],     [main],, AC_MSG_ERROR($missing_library)) # check for cximage
-   AC_CHECK_LIB([rt],         [clock_gettime],, AC_MSG_ERROR($missing_library))
+@@ -1491,15 +1492,15 @@
  
-@@ -1143,7 +1174,11 @@
-     use_libusb="no"
-     AC_MSG_NOTICE($libusb_disabled)
-   else
--    if test "$use_libusb" = "auto"; then
-+    if echo "$ARCH" | grep -q freebsd ; then
-+      AC_CHECK_LIB([usb],[main],
-+        [use_libusb="yes";USB_LIBS="-lusb"],
-+        [use_libusb="no";AC_MSG_RESULT($libusb_not_found)])
-+    elif test "$use_libusb" = "auto"; then
-       PKG_CHECK_MODULES([USB],[libusb],,[use_libusb="no";AC_MSG_RESULT($libusb_not_found)])
-     elif test "$use_libusb" = "yes"; then
-       PKG_CHECK_MODULES([USB],[libusb],,[use_libusb="no";AC_MSG_ERROR($libusb_not_found)])
-@@ -2157,7 +2192,8 @@
+ # External FFmpeg
+ if test "$use_external_ffmpeg" = "yes"; then
+-  FFMPEG_LIBNAMES="libavcodec libavfilter libavformat libavutil libpostproc libswscale"
++  FFMPEG_LIBNAMES="libavcodec$FFMPEG_SUFFIX libavfilter$FFMPEG_SUFFIX libavformat$FFMPEG_SUFFIX libavutil$FFMPEG_SUFFIX libpostproc$FFMPEG_SUFFIX libswscale$FFMPEG_SUFFIX"
  
- XB_CONFIG_MODULE([xbmc/visualizations/XBMCProjectM/libprojectM],[
-   set -x
--  rm -f CMakeCache.txt && CC="$ORIGCC" CXX="$ORIGCXX" cmake    \
-+  rm -f CMakeCache.txt &&                              \
-+  CC="$ORIGCC" CXX="$ORIGCXX" LDFLAGS="$LDFLAGS" cmake \
-     -DCMAKE_BUILD_TYPE=None -DUSE_FTGL:BOOL=OFF        \
-     -DCMAKE_C_FLAGS:STRING="${CPPFLAGS} ${CFLAGS}"     \
-     -DCMAKE_CXX_FLAGS:STRING="${CPPFLAGS} ${CXXFLAGS}" \
-@@ -2210,6 +2246,9 @@
-     --disable-hyperspace \
-     --disable-lattice \
-     --disable-skyrocket
-+  if echo "$ARCH" | grep -q freebsd ; then
-+    sed -i.back "s;\(STDBOOL_H = \)stdbool.h;\1;" lib/Makefile
-+  fi
- ], [$DISABLE_RSXS])
+   # libavcore is optional
+-  PKG_CHECK_EXISTS([libavcore], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavcore")
++  PKG_CHECK_EXISTS([libavcore$FFMPEG_SUFFIX], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavcore$FFMPEG_SUFFIX")
  
- XB_CONFIG_MODULE([lib/libapetag], [
-@@ -2226,7 +2265,7 @@
-     --prefix="${prefix}" --includedir="${includedir}" --libdir="${libdir}" --datadir="${datadir}" \
-     --host=$host_alias \
-     --build=$build_alias \
--    --target=$target_alias CFLAGS="$CFLAGS" CC="$CC" CXX="$CXX"
-+    --target=$target_alias CFLAGS="$CFLAGS" CC="$CC" CXX="$CXX" LDFLAGS="$LDFLAGS"
-     #LDFLAGS="$LDFLAGS -Wl,-read_only_relocs,suppress"    
- ], [0])
+   # one of libswresample or libavresample is needed
+-  PKG_CHECK_EXISTS([libswresample], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libswresample",
+-                   [PKG_CHECK_EXISTS([libavresample],
+-                                     FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavresample",
++  PKG_CHECK_EXISTS([libswresample$FFMPEG_SUFFIX], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libswresample$FFMPEG_SUFFIX",
++                   [PKG_CHECK_EXISTS([libavresample$FFMPEG_SUFFIX],
++                                     FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavresample$FFMPEG_SUFFIX",
+                                      AC_MSG_ERROR([You need either libswresample
+                                                    or libavresample.]))])
  
+@@ -1509,7 +1510,7 @@
+ 
+   # Determine whether AVPacket and relevant functions are defined in libavformat
+   # or libavcodec
+-  AC_CHECK_LIB([avcodec], [av_free_packet],
++  AC_CHECK_LIB(["avcodec$FFMPEG_SUFFIX"], [av_free_packet],
+   [AC_MSG_NOTICE(== AVPacket and relevant functions defined in libavcodec. ==)],
+   [AC_MSG_NOTICE(== AVPacket and relevant functions defined in libavformat. ==)
+    AC_DEFINE([AVPACKET_IN_AVFORMAT], [1], [Whether AVPacket is in libavformat.])])
+@@ -1558,7 +1559,7 @@
+   AC_DEFINE([USE_EXTERNAL_FFMPEG], [1], [Whether to use external FFmpeg libraries.])
+ 
+   # Disable vdpau support if external libavcodec doesn't have it
+-  AC_CHECK_LIB([avcodec], [ff_vdpau_vc1_decode_picture],,
++  AC_CHECK_LIB(["avcodec$FFMPEG_SUFFIX"], [ff_vdpau_vc1_decode_picture],,
+     [if test "x$use_vdpau" = "xyes"; then
+       AC_MSG_ERROR($ffmpeg_vdpau_not_supported)
+     else
