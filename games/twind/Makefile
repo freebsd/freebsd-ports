@@ -7,7 +7,7 @@
 
 PORTNAME=	twind
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -19,11 +19,10 @@ LICENSE=	GPLv2
 USE_SDL=	sdl image mixer
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README TODO
+
+DESKTOP_ENTRIES="Twin Distress" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
 .include <bsd.port.options.mk>
 
@@ -32,22 +31,15 @@ do-build:
 		-DDATA_PREFIX=\"${DATADIR}/\" -DAUDIO -DLINUX \
 		-lm `${SDL_CONFIG} --cflags --libs` -lSDL_mixer -lSDL_image twind.c
 do-install:
-# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Data
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music sound" ${DATADIR})
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/graphics/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/graphics/${PORTNAME}.png ${PREFIX}/share/pixmaps
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
