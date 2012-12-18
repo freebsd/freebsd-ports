@@ -1,13 +1,8 @@
-# New ports collection makefile for: py-icu
-# Date created:		26 Sep 2008
-# Whom:			bland@FreeBSD.org
-#
+# Created by: bland@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	icu
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/P/PyICU
