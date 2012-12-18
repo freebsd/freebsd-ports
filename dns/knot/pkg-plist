@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @stopdaemon knotd
 %%ETCDIR%%/example.com.zone
 @unexec if cmp -s %B/knot.min.conf %B/knot.conf; then rm -f %B/knot.conf; fi
