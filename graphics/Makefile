@@ -451,6 +451,7 @@
     SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libcaca
+    SUBDIR += libcdr
     SUBDIR += libchamplain
     SUBDIR += libdmtx
     SUBDIR += libdrm
