@@ -25,4 +25,11 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 802516 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900502)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
+CONFIGURE_ENV+=	GPERF=${LOCALBASE}/bin/gperf
+.endif
+
+.include <bsd.port.post.mk>
