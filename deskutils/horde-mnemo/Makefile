@@ -1,4 +1,4 @@
-# Ports collection makefile for:  Mnemo
+# Ports collection makefile for:  horde-mnemo
 # Date created:			  Sun May 19, 2002
 # Whom:				  Thierry Thomas (<thierry@pompo.net>)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde web based notes manager
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role

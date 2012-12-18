@@ -1,4 +1,4 @@
-# Ports collection makefile for:  turba
+# Ports collection makefile for:  horde-turba
 # Date created:			  Sat Nov 16, 2001
 # Whom:				  Thierry Thomas (<thierry@thomas.as>)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde web based address book
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 OPTIONS_DEFINE=	FACEBOOK IMSP LDAP
 FACEBOOK_DESC=	Support connections with Facebook

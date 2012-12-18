@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-passwd
+# Ports collection makefile for:  horde-passwd
 # Date created:			  Oct 28, 2011
 # Whom:				  Martin Matuska (mm@FreeBSD.org)
 #
@@ -18,7 +18,7 @@ COMMENT=	Horde password changing application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role

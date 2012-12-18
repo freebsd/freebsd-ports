@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-timeobjects
+# Ports collection makefile for:  horde-timeobjects
 # Date created:			  7 July 2011
 # Whom:				  Martin Matuska <mm@FreeBSD.org>
 #
@@ -13,9 +13,7 @@ PKGNAMEPREFIX=	horde-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde timeobjects application
 
-CONFLICTS=	horde-3*
-
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role

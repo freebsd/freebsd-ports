@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-mnemo
+# Ports collection makefile for:  horde-groupware
 # Date created:			  6 July 2011
 # Whom:				  Martin Matuska <mm@FreeBSD.org>
 #
@@ -14,7 +14,7 @@ COMMENT=	Horde Groupware
 
 CONFLICTS=	horde-webmail-[456]*
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-content
+# Ports collection makefile for:  horde-content
 # Date created:			  7 July 2011
 # Whom:				  Martin Matuska <mm@FreeBSD.org>
 #
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	horde-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde tagging application
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role

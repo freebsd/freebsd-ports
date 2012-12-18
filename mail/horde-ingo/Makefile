@@ -1,4 +1,4 @@
-# Ports collection makefile for:  Ingo
+# Ports collection makefile for:  horde-ingo
 # Date created:			  Dec 3, 2004
 # Whom:				  Thierry Thomas (<thierry@pompo.net>)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde email filter rules manager
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role

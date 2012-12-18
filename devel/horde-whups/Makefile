@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-whups
+# Ports collection makefile for:  horde-whups
 # Date created:			  Oct 11, 2011
 # Whom:				  Martin Matuska (mm@FreeBSD.org)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde bug tracking/ticketing system
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	horde4-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role

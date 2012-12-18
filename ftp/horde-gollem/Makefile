@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde4-gollem
+# Ports collection makefile for:  horde-gollem
 # Date created:			  Oct 11, 2011
 # Whom:				  Martin Matuska (mm@FreeBSD.org)
 #
@@ -16,7 +16,7 @@ COMMENT=	Horde Web-based File Manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde5-${PORTNAME}
+LATEST_LINK=	horde-${PORTNAME}
 
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
