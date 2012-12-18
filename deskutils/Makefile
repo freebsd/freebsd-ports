@@ -100,10 +100,10 @@
     SUBDIR += horde3-kronolith
     SUBDIR += horde3-mnemo
     SUBDIR += horde3-nag
-    SUBDIR += horde4-groupware
-    SUBDIR += horde4-kronolith
-    SUBDIR += horde4-mnemo
-    SUBDIR += horde4-nag
+    SUBDIR += horde-groupware
+    SUBDIR += horde-kronolith
+    SUBDIR += horde-mnemo
+    SUBDIR += horde-nag
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
