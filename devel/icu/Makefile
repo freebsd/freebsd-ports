@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	4.8.1.1
-PORTREVISION=	1
+PORTVERSION=	50.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -15,7 +14,7 @@ COMMENT=	International Components for Unicode (from IBM)
 
 LICENSE=	ICU
 LICENSE_NAME=	ICU license
-LICENSE_FILE=	${WRKSRC}/../unicode-license.txt
+LICENSE_FILE=	${WRKSRC}/../license.html
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 GNU_CONFIGURE=		yes
@@ -42,7 +41,8 @@ INSTALL_TARGET=		install install-manx
 MAN1+=	derb.1
 MAN1+=	genbrk.1
 MAN1+=	gencnval.1
-MAN1+=	genctd.1
+MAN1+=	gencfu.1
+MAN1+=	gendict.1
 MAN1+=	genrb.1
 MAN1+=	icu-config.1
 MAN1+=	makeconv.1
@@ -53,8 +53,8 @@ MAN8+=	genccode.8
 MAN8+=	gencmn.8
 MAN8+=	gensprep.8
 
-ICUMAJOR=	${PORTVERSION:S/.//:C,\..*,,g}
-ICUMINOR=	${PORTVERSION:C/[0-9]\.[0-9]\.//}
+ICUMAJOR=	50
+ICUMINOR=	1
 .if ${ICUMINOR} == ""
 ICUMINOR=	0
 .endif
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--enable-threads=no
 post-patch:
 	@${REINPLACE_CMD} -e '/CXXFLAGS=/s/-ansi//' \
 		${WRKSRC}/configure
-.if defined(WITHOUT_THREADS)
+.if ! ${PORT_OPTIONS:MTHREADS}
 	@${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
 	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,g' ${WRKSRC}/Makefile.in
