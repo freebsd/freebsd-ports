@@ -3983,3 +3983,15 @@ www/horde4-ansel|www/horde-ansel|2012-12-18|Move horde4-* apps to horde-*
 www/horde4-base|www/horde-base|2012-12-18|Move horde4-* apps to horde-*
 www/horde4-passwd|www/horde-passwd|2012-12-18|Move horde4-* apps to horde-*
 www/horde4-wicked|www/horde-wicked|2012-12-18|Move horde4-* apps to horde-*
+deskutils/horde4-groupware|deskutils/horde-groupware|2012-12-18|Move horde4-* apps to horde-*
+deskutils/horde4-kronolith|deskutils/horde-kronolith|2012-12-18|Move horde4-* apps to horde-*
+deskutils/horde4-mnemo|deskutils/horde-mnemo|2012-12-18|Move horde4-* apps to horde-*
+deskutils/horde4-nag|deskutils/horde-nag|2012-12-18|Move horde4-* apps to horde-*
+devel/horde4-content|devel/horde-content|2012-12-18|Move horde4-* apps to horde-*
+devel/horde4-timeobjects|devel/horde-timeobjects|2012-12-18|Move horde4-* apps to horde-*
+devel/horde4-whups|devel/horde-whups|2012-12-18|Move horde4-* apps to horde-*
+ftp/horde4-gollem|ftp/horde-gollem|2012-12-18|Move horde4-* apps to horde-*
+mail/horde4-imp|mail/horde-imp|2012-12-18|Move horde4-* apps to horde-*
+mail/horde4-ingo|mail/horde-ingo|2012-12-18|Move horde4-* apps to horde-*
+mail/horde4-turba|mail/horde-turba|2012-12-18|Move horde4-* apps to horde-*
+mail/horde4-webmail|mail/horde-webmail|2012-12-18|Move horde4-* apps to horde-*
