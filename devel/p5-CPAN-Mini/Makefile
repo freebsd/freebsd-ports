@@ -1,7 +1,9 @@
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	CPAN-Mini
 PORTVERSION=	1.111010
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -21,10 +23,4 @@ PERL_CONFIGURE=	yes
 MAN1=	minicpan.1
 MAN3=	CPAN::Mini.3 CPAN::Mini::App.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
