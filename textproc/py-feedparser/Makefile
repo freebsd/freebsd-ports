@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	feedparser
-# Date created: 		Mar 11, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	feedparser
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +11,6 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An RSS feed parser written in Python
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
