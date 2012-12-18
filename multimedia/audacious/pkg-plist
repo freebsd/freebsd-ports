@@ -1,118 +1,123 @@
-%%DATADIR%%/images/audacious_player.xpm
-%%DATADIR%%/images/audio.png
-%%DATADIR%%/images/audacious_eq.xpm
-%%DATADIR%%/images/menu_plugin.png
-%%DATADIR%%/images/plugins.png
-%%DATADIR%%/images/audacious_playlist.xpm
-%%DATADIR%%/images/about-logo.png
-%%DATADIR%%/images/connectivity.png
-%%DATADIR%%/images/menu_playlist.png
-%%DATADIR%%/images/playlist.png
-%%DATADIR%%/images/menu_queue_toggle.png
-%%DATADIR%%/images/album.png
-%%NLS%%share/locale/et/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sr@Latn/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/es/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/cy/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/es_AR/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/es_MX/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ast/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/el/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/mk/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/hi/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ka/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious.mo
-share/icons/hicolor/scalable/apps/audacious.svg
-share/icons/hicolor/48x48/apps/audacious.png
-share/pixmaps/audacious.png
-share/pixmaps/audacious.svg
-share/applications/audacious.desktop
-%%WITH_DBUS%%bin/audtool
 bin/audacious
-lib/libaudgui.so
-lib/libaudtag.so
-lib/libaudgui.so.1.0.0
-lib/libaudcore.so
-lib/libaudtag.so.1
-lib/libaudcore.so.1
-lib/libaudgui.so.1
-lib/libaudcore.so.1.0.0
-lib/libaudtag.so.1.0.0
-%%WITH_DBUS%%lib/libaudclient.so
-%%WITH_DBUS%%lib/libaudclient.so.2
-%%WITH_DBUS%%lib/libaudclient.so.2.0.0
-libdata/pkgconfig/audacious.pc
-libdata/pkgconfig/audclient.pc
-include/libaudcore/hook.h
-include/libaudcore/vfs_async.h
-include/libaudcore/audstrings.h
-include/libaudcore/tuple.h
-include/libaudcore/audio.h
-include/libaudcore/core.h
-include/libaudcore/vfs.h
-include/libaudcore/index.h
-include/audacious/api.h
-include/audacious/plugins-api.h
-include/audacious/gtk-compat.h
-include/audacious/dbus.h
-include/audacious/api-alias-end.h
-include/audacious/drct.h
-include/audacious/misc.h
-include/audacious/preferences.h
-include/audacious/i18n.h
-include/audacious/audtag.h
-include/audacious/audctrl.h
-include/audacious/playlist.h
-include/audacious/debug.h
-include/audacious/dbus-service.h
+bin/audtool
 include/audacious/api-alias-begin.h
-include/audacious/playlist-api.h
-include/audacious/misc-api.h
-include/audacious/drct-api.h
-include/audacious/api-define-end.h
-include/audacious/plugins.h
+include/audacious/api-alias-end.h
 include/audacious/api-define-begin.h
+include/audacious/api-define-end.h
+include/audacious/api.h
+include/audacious/audctrl.h
+include/audacious/audtag.h
+include/audacious/dbus-service.h
+include/audacious/dbus.h
+include/audacious/debug.h
+include/audacious/drct-api.h
+include/audacious/drct.h
+include/audacious/i18n.h
+include/audacious/misc-api.h
+include/audacious/misc.h
+include/audacious/playlist-api.h
+include/audacious/playlist.h
 include/audacious/plugin.h
+include/audacious/plugins-api.h
+include/audacious/plugins.h
+include/audacious/preferences.h
 include/audacious/types.h
+include/libaudcore/audio.h
+include/libaudcore/audstrings.h
+include/libaudcore/core.h
+include/libaudcore/hook.h
+include/libaudcore/index.h
+include/libaudcore/tuple.h
+include/libaudcore/vfs.h
+include/libaudcore/vfs_async.h
 include/libaudgui/libaudgui-gtk.h
 include/libaudgui/libaudgui.h
 include/libaudgui/list.h
-@dirrm include/libaudgui
-@dirrm include/audacious
-@dirrm include/libaudcore
-@dirrmtry share/locale/es_AR/LC_MESSAGES
-@dirrmtry share/locale/es_AR
-@dirrmtry share/applications
-@dirrmtry lib/audacious
+lib/libaudclient.so
+lib/libaudclient.so.2
+lib/libaudclient.so.2.0.0
+lib/libaudcore.so
+lib/libaudcore.so.1
+lib/libaudcore.so.1.0.0
+lib/libaudgui.so
+lib/libaudgui.so.1
+lib/libaudgui.so.1.0.0
+lib/libaudtag.so
+lib/libaudtag.so.1
+lib/libaudtag.so.1.0.0
+libdata/pkgconfig/audacious.pc
+libdata/pkgconfig/audclient.pc
+share/applications/audacious.desktop
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/images/about-logo.png
+%%DATADIR%%/images/album.png
+%%DATADIR%%/images/audacious.png
+%%DATADIR%%/images/audio.png
+%%DATADIR%%/images/connectivity.png
+%%DATADIR%%/images/info.png
+%%DATADIR%%/images/menu_playlist.png
+%%DATADIR%%/images/menu_plugin.png
+%%DATADIR%%/images/menu_queue_toggle.png
+%%DATADIR%%/images/playlist.png
+%%DATADIR%%/images/plugins.png
+%%DOCSDIR%%/AUTHORS
+share/icons/hicolor/48x48/apps/audacious.png
+share/icons/hicolor/scalable/apps/audacious.svg
+%%NLS%%share/locale/ast/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/el/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/es/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/es_AR/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/et/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/he/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ky/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
+%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_AR
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm include/libaudgui
+@dirrm include/libaudcore
+@dirrm include/audacious
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
