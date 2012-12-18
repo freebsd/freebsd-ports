@@ -1,14 +1,9 @@
-# vim: tabstop=8 softtabstop=0 noexpandtab
-# New ports collection makefile for:	R
-# Date created:		Fri Feb  9 10:50:25 EST 2001
-# Whom:			Maurice Castro <maurice@serc.rmit.edu.au>
-#
+# Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD$
-#
 
 PORTNAME?=	R
 PORTVERSION=	2.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \

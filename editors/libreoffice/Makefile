@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -27,7 +27,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		icutu.48:${PORTSDIR}/devel/icu \
+		icutu:${PORTSDIR}/devel/icu \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
@@ -38,11 +38,11 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
 		wps-0.2.2:${PORTSDIR}/textproc/libwps \
 		rdf.0:${PORTSDIR}/textproc/redland \
-		exttextcat-1.0.0:${PORTSDIR}/textproc/libexttextcat \
+		exttextcat-2.0.0:${PORTSDIR}/textproc/libexttextcat \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
 		cups.2:${PORTSDIR}/print/cups-client \
 		visio-0.0.0:${PORTSDIR}/textproc/libvisio \
-		graphite2.2:${PORTSDIR}/graphics/graphite2 \
+		graphite2:${PORTSDIR}/graphics/graphite2 \
 		nss3.1:${PORTSDIR}/security/nss \
 		SampleICC.2:${PORTSDIR}/graphics/sampleicc \
 		png15:${PORTSDIR}/graphics/png \

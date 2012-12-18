@@ -1,9 +1,5 @@
-# New ports collection makefile for:	firebird21-client
-# Date created:	   2010-11-19
-# Whom:		   Max Kochubey <root@hangover.org.ru>
-#
+# Created by: Max Kochubey <root@hangover.org.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	firebird
 PKGNAMESUFFIX=	-client

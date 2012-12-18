@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	ibus-qt
-# Date created:				10 November 2009
-# Whom:					Henry Hu <henry.hu.sh@gmail.com>
-#
+# Created by: Henry Hu <henry.hu.sh@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	ibus-qt
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=		${PORTNAME}-${PORTVERSION}-Source

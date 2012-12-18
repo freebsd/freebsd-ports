@@ -1,13 +1,9 @@
-# New ports collection makefile for:	open-vm-tools for FreeBSD
-# Date created:		28 Mar 2008
-# Whom:			mbr@FreeBSD.org
-#
+# Created by: mbr@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		2
+PORTREVISION=		3
 PORTEPOCH=		1
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x

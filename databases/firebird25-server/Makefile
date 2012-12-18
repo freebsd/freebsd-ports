@@ -1,13 +1,9 @@
-# New ports collection makefile for:    firebird25-server
-# Date created:         2010-12-20
-# Whom:                 Alonso Cárdenas Márquez <acm@FreeBSD.org>
-#
+# Created by: Alonso Cárdenas Márquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	-server

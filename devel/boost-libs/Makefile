@@ -1,12 +1,8 @@
-# Ports collection makefile for:  boost-libs
-# Date Created:			  30 April 2009
-# Whom:				  Alexander Churanov <churanov.port.maintainer@gmail.com>
-#
+# Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	boost-libs
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 USE_BZIP2=	yes
 

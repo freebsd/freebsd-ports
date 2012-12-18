@@ -4,6 +4,7 @@
 PORTNAME=	fcitx
 PORTVERSION=	4.2.6.1
 CATEGORIES=	chinese x11
+PORTREVISION=	1
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pinyin.tar.gz table.tar.gz en_dict-${_DICT_VER}.tar.gz

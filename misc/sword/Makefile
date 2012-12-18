@@ -1,13 +1,9 @@
-# New ports collection makefile for: sword
-# Date created:   22 may 2001
-# Whom:           Willem van Engen <wvengen@stack.nl>
-#
+# Created by: Willem van Engen <wvengen@stack.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	sword
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \
