@@ -6,10 +6,10 @@ include/libexttextcat/fingerprint.h
 include/libexttextcat/textcat.h
 include/libexttextcat/textcat_properties.h
 include/libexttextcat/utf8misc.h
-lib/libexttextcat-1.0.a
-lib/libexttextcat-1.0.la
-lib/libexttextcat-1.0.so
-lib/libexttextcat-1.0.so.0
+lib/libexttextcat-2.0.a
+lib/libexttextcat-2.0.la
+lib/libexttextcat-2.0.so
+lib/libexttextcat-2.0.so.0
 libdata/pkgconfig/libexttextcat.pc
 share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/ab.lm
