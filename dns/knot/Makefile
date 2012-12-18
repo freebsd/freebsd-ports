@@ -1,10 +1,8 @@
-# Created by:		Leo Vandewoestijne <freebsd@dns-lab.com>
+# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	1.1.3.r1
 DISTVERSION=	1.1.3-rc1
-
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
@@ -16,11 +14,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	urcu.1:${PORTSDIR}/sysutils/userspace-rcu
-
-.if ${CC} == "clang"
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-configure
-.endif
+LIB_DEPENDS=	urcu:${PORTSDIR}/sysutils/userspace-rcu
 
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
@@ -39,7 +33,7 @@ MAN5=		knot.conf.5
 
 INFO=		knot
 
-PORTDOCS=	AUTHORS ChangeLog CodingStyle COPYING \
+PORTDOCS=	AUTHORS ChangeLog CodingStyle \
 		INSTALL KNOWN_ISSUES NEWS README RELNOTES
 
 post-install:
