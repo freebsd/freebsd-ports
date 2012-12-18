@@ -1,4 +1,5 @@
 bin/tribler
+%%PYTHON_SITELIBDIR%%/tribler/Tribler/vlc.py.bak
 %%PYTHON_SITELIBDIR%%/tribler/Tribler/Category/Category.py
 %%PYTHON_SITELIBDIR%%/tribler/Tribler/Category/Category.pyc
 %%PYTHON_SITELIBDIR%%/tribler/Tribler/Category/Category.pyo
