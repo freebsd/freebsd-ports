@@ -9,7 +9,7 @@
 
 # Please make sure all changes to this file are passed through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
-Mail_Include_MAINTAINER=	garga@FreeBSD.org
+Mail_Include_MAINTAINER=	bdrewery@FreeBSD.org
 Mail_Pre_Include=			bsd.mail.mk
 
 

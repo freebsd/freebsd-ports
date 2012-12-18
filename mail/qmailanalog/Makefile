@@ -9,7 +9,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		http://www.emaillab.org/djb/qmailanalog/ \
 		http://summersoft.fay.ar.us/pub/qmail/qmailanalog/
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	A collection of tools to analyze qmail-send's activity
 
 USE_QMAIL_RUN=	yes
