@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2012-09-13 09:58:39.000000000 +0200
-+++ CMakeLists.txt	2012-12-17 17:54:22.000000000 +0100
-@@ -54,7 +54,7 @@
- endif(NOT OPENJPEG_SOVERSION)
+--- CMakeLists.txt.orig	2012-02-07 11:49:55.000000000 +0100
++++ CMakeLists.txt	2012-06-03 14:26:55.000000000 +0200
+@@ -36,7 +36,7 @@
+   "${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}.${OPENJPEG_VERSION_BUILD}")
  SET(OPENJPEG_LIBRARY_PROPERTIES
    VERSION   "${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}.${OPENJPEG_VERSION_BUILD}"
--  SOVERSION "${OPENJPEG_SOVERSION}"
+-  SOVERSION "${OPENJPEG_VERSION_MAJOR}"
 +  SOVERSION "2"
  )
  
  # --------------------------------------------------------------------------
-@@ -94,7 +94,7 @@
+@@ -76,7 +76,7 @@
  # Install directories
  
  STRING(TOLOWER ${PROJECT_NAME} projectname)
@@ -18,7 +18,7 @@
  
  IF(NOT OPENJPEG_INSTALL_BIN_DIR)
    SET(OPENJPEG_INSTALL_BIN_DIR "bin")
-@@ -129,7 +129,7 @@
+@@ -99,7 +99,7 @@
  ENDIF(NOT OPENJPEG_INSTALL_INCLUDE_DIR)
  
  IF(NOT OPENJPEG_INSTALL_MAN_DIR)
@@ -27,16 +27,16 @@
  ENDIF(NOT OPENJPEG_INSTALL_MAN_DIR)
  
  IF(NOT OPENJPEG_INSTALL_DOC_DIR)
-@@ -183,7 +183,7 @@
-     ${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig )
+@@ -146,7 +146,7 @@
+   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libopenjpeg1.pc.cmake
+     ${CMAKE_CURRENT_BINARY_DIR}/libopenjpeg1.pc @ONLY)
+   INSTALL( FILES  ${CMAKE_CURRENT_BINARY_DIR}/libopenjpeg1.pc DESTINATION
+-    ${OPENJPEG_INSTALL_SHARE_DIR}/pkgconfig )
++    libdata/pkgconfig )
    INSTALL( CODE "EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E create_symlink
    \"libopenjpeg1.pc\"
--  \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${OPENJPEG_INSTALL_SHARE_DIR}/pkgconfig/libopenjpeg.pc\")")
-+  \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig/libopenjpeg.pc\")")
- ENDIF(UNIX)
- 
- #-----------------------------------------------------------------------------
-@@ -279,6 +279,7 @@
+   \"\$ENV{DESTDIR}${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig/libopenjpeg.pc\")")
+@@ -244,6 +241,7 @@ ENDIF(BUILD_TESTING)
  #-----------------------------------------------------------------------------
  # install all targets referenced as OPENJPEGTargets
  INSTALL(EXPORT OpenJPEGTargets DESTINATION ${OPENJPEG_INSTALL_PACKAGE_DIR})
