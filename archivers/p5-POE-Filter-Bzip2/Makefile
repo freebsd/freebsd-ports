@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Filter-Bzip2
-# Date created:		2006-07-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Filter-Bzip2
 PORTVERSION=	1.5.8
@@ -13,12 +9,11 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A POE filter wrapped around Compress::Bzip2
+COMMENT=	POE filter wrapped around Compress::Bzip2
 
 BUILD_DEPENDS=	p5-Compress-Bzip2>=2.08:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	p5-Compress-Bzip2>=2.08:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
-		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
