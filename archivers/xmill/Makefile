@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XMill
-# Date created:				09 May 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xmill
 DISTVERSION=	0.8
@@ -11,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	An efficient compressor for XML
+COMMENT=	Efficient compressor for XML
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
@@ -25,7 +21,9 @@ PLIST_FILES=	bin/xcmill bin/xdemill bin/xmilltest bin/xmillexample \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-patch:
 # Allow to build with modern GCC
@@ -36,13 +34,13 @@ do-install:
 .for p in ${PLIST_FILES:T}
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/${p} ${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/documentation/* ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
