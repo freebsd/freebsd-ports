@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -37,14 +37,11 @@ MAKE_ARGS+=	DIAGNOSTIC=0x7f
 .if (${OSVERSION} >= 801000)
 .if ${PORT_OPTIONS:MLINUX_COMPAT}
 LIB_DEPENDS+=	cuse4bsd.1:${PORTSDIR}/multimedia/cuse4bsd-kmod
-BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
-		cuse4bsd-kmod>=0.1.12:${PORTSDIR}/multimedia/cuse4bsd-kmod
+BUILD_DEPENDS+= v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 MAKE_ARGS+=	-D WITH_LINUX_COMPAT
 .if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal \
 		dbus-1:${PORTSDIR}/devel/dbus
-BUILD_DEPENDS+=	hal>=0.5.14:${PORTSDIR}/sysutils/hal \
-		dbus>=1.4.0:${PORTSDIR}/devel/dbus
 MAKE_ARGS+=	-D WITH_HAL
 .endif
 .endif
