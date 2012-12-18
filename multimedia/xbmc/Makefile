@@ -1,15 +1,8 @@
-# New ports collection makefile for:    xbmc
-# Date created:				2010-09-16
-# Whom: 				Mickael Maillot <mickael.maillot@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xbmc
-PORTVERSION=	11.0
-PORTREVISION=	7
+DISTVERSION=	12.0.rc1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	XBMC is an award winning media center application
@@ -24,7 +17,9 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
-		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
+		${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
+		swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		cdio:${PORTSDIR}/sysutils/libcdio	\
@@ -32,7 +27,6 @@ LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		dbus-1:${PORTSDIR}/devel/dbus \
 		enca:${PORTSDIR}/converters/enca \
 		GLEW:${PORTSDIR}/graphics/glew \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg	\
 		FLAC:${PORTSDIR}/audio/flac \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
@@ -42,6 +36,7 @@ LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		mad:${PORTSDIR}/audio/libmad \
 		modplug:${PORTSDIR}/audio/libmodplug \
+		mp3lame:${PORTSDIR}/audio/lame \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		ogg:${PORTSDIR}/audio/libogg \
 		pcre:${PORTSDIR}/devel/pcre \
@@ -50,14 +45,21 @@ LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		samplerate:${PORTSDIR}/audio/libsamplerate \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient	\
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		tag:${PORTSDIR}/audio/taglib \
+		tinyxml:${PORTSDIR}/textproc/tinyxml \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		yajl:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-FETCH_ARGS=	-Fpr
+USE_GITHUB=	yes
+GH_ACCOUNT=	xbmc
+GH_COMMIT=	baaa51c
+GH_TAGNAME=	Frodo_rc1
+
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
@@ -67,6 +69,8 @@ USE_GL=		glu
 USE_SDL=	image sdl
 USE_MYSQL=	yes
 USE_PYTHON=	2.5+
+USE_JAVA=	yes
+JAVA_BUILD=	jre
 MAKE_JOBS_SAFE=	yes
 NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes
@@ -80,20 +84,18 @@ DESKTOP_ENTRIES="XBMC" \
 		"AudioVideo;Video;" \
 		true
 
-OPTIONS_DEFINE=	AVAHI LIBBLURAY HAL LIRC NONFREE OSS PULSEAUDIO RTMP VAAPI VDPAU WEBSERVER
+OPTIONS_DEFINE=	AVAHI EXTERNAL_FFMPEG LIBBLURAY HAL LIRC NONFREE PULSEAUDIO RTMP VAAPI VDPAU WEBSERVER
+EXTERNAL_FFMPEG_DESC=	Use external ffmpeg
 NONFREE_DESC=		Enable non-free components (rar, ccx, ffmpeg)
 
 OPTIONS_DEFAULT=	AVAHI LIBBLURAY HAL RTMP WEBSERVER
 
 CONFIGURE_ARGS+=	--disable-nfs
 
-.include <bsd.port.options.mk>
+MAN1=	xbmc.bin.1
+MLINKS=	xbmc.bin.1 xbmc.1
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.else
-CONFIGURE_ARGS+=	--disable-debug
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
 PLIST_SUB+=	ARCH="x86"
@@ -101,11 +103,38 @@ PLIST_SUB+=	ARCH="x86"
 PLIST_SUB+=	ARCH="x86_64"
 .endif
 
+.if ${OSVERSION} <= 800096
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+USE_SDL+=	mixer
+CONFIGURE_ARGS+=	--disable-oss
+.else
+CONFIGURE_ARGS+=	--disable-alsa
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug
+.else
+CONFIGURE_ARGS+=	--disable-debug
+.endif
+
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
 LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--disable-avahi
+.endif
+
+.if ${PORT_OPTIONS:MEXTERNAL_FFMPEG}
+CONFIGURE_ARGS+=	--enable-external-ffmpeg
+FFMPEG_SUFFIX=	1
+CONFIGURE_ENV+=	FFMPEG_SUFFIX="${FFMPEG_SUFFIX}"
+PLIST_SUB+=	EXTERNAL_FFMPEG="@comment "
+BUILD_DEPENDS+=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+RUN_DEPENDS+=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+.else
+CONFIGURE_ARGS+=	--disable-external-ffmpeg
+PLIST_SUB+=	EXTERNAL_FFMPEG=""
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
@@ -132,17 +161,6 @@ NO_CDROM=	Restricted binary distribution
 NO_PACKAGE=	${NO_CDROM}
 .else
 CONFIGURE_ARGS+=	--disable-non-free
-.endif
-
-.if ${PORT_OPTIONS:MOSS}
-.if ${OSVERSION} <= 800096
-IGNORE=	requires sound rewrite from 8.0-RELEASE or later
-.endif
-CONFIGURE_ARGS+=	--disable-alsa
-.else
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-USE_SDL+=	mixer
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
@@ -180,22 +198,19 @@ LIB_DEPENDS+=	microhttpd:${PORTSDIR}/www/libmicrohttpd
 CONFIGURE_ARGS+=	--disable-webserver
 .endif
 
-.if ${CC} == "clang" || ${CXX} == "clang++"
-CONFIGURE_ARGS+=	--disable-rsxs
-PLIST_SUB+=	RSXS="@comment "
-.else
-PLIST_SUB+=	RSXS=""
-.endif
-
 post-patch:
-.if ${PORT_OPTIONS:MOSS}
-	@(cd ${WRKSRC}; \
-	${BZCAT} ${FILESDIR}/extra-patch-oss.bz2 | ${PATCH} ${PATCH_DIST_ARGS})
-	@${RM} ${WRKSRC}/language/English/strings.xml.orig
-	@${RM} ${WRKSRC}/addons/skin.confluence/sounds/sounds.xml.orig
-.endif
+	${REINPLACE_CMD} 's;"event\.h";"sidplay/event.h";' \
+		${WRKSRC}/lib/libsidplay2/libsidplay/src/event.cpp \
+		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos6510/mos6510.h \
+		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos6526/mos6526.h \
+		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
+	${REINPLACE_CMD} 's;make;gmake;' ${WRKSRC}/bootstrap
+	${REINPLACE_CMD} 's;which swig;&2.0;' ${WRKSRC}/codegenerator.mk
 
-pre-configure:
-	cd ${WRKSRC} && ./bootstrap
+run-autotools:
+	@cd ${WRKSRC} && ${SH} ./bootstrap
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
