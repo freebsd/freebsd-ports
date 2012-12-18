@@ -1,7 +1,3 @@
-# New ports collection makefile for:	cdrtools-devel
-# Date created:				28 May 2003
-# Whom:					marius@alchemy.franken.de
-#
 # $FreeBSD$
 #
 ###########################################################################
@@ -22,7 +18,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	3.01a09
+PORTVERSION=	3.01a10
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
