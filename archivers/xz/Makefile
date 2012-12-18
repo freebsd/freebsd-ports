@@ -25,7 +25,9 @@ CONFIGURE_ARGS=	--disable-nls
 # pick up assembly language optimizations
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install-dist_docDATA install-dist_examplesDATA
 .endif
 

@@ -12,10 +12,12 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libxf86audio.so \
 		`xmms-config --general-plugin-dir`
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

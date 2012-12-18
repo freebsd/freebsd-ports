@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libogg
-# Date created:				18 October 2000
-# Whom:					t.vanklaveren@student.utwente.nl
-#
+# Created by: t.vanklaveren@student.utwente.nl
 # $FreeBSD$
-#
 
 PORTNAME=	libogg
 PORTVERSION=	1.3.0
@@ -20,10 +16,12 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-.if defined(NOPORTDOCS)
-MAKE_ENV=	DOC=""
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV=	DOC=doc
+.else
+MAKE_ENV=	DOC=""
 .endif
 
 regression-test: build
