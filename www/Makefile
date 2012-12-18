@@ -272,6 +272,7 @@
     SUBDIR += horde-ansel
     SUBDIR += horde-base
     SUBDIR += horde-passwd
+    SUBDIR += horde-trean
     SUBDIR += horde-wicked
     SUBDIR += horde3-ansel
     SUBDIR += horde3-base
