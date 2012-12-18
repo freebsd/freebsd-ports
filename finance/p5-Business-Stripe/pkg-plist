@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Business/README.pod
+%%SITE_PERL%%/Business/Stripe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/Stripe/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/Stripe
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/Business
