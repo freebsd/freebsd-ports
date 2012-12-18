@@ -11,7 +11,7 @@ CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 
 MAINTAINER=	horde@FreeBSD.org
-COMMENT=	Horde Bookmarks Application
+COMMENT=	Horde Bookmark Manager
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
