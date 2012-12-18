@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libexttextcat
-PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://dev-www.libreoffice.org/src/libexttextcat/
 
