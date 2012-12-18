@@ -1,0 +1,57 @@
+bin/twind
+share/pixmaps/twind.png
+%%DATADIR%%/graphics/background.png
+%%DATADIR%%/graphics/beveled.png
+%%DATADIR%%/graphics/black_l.png
+%%DATADIR%%/graphics/black_r.png
+%%DATADIR%%/graphics/bricks.png
+%%DATADIR%%/graphics/brushed_metal.png
+%%DATADIR%%/graphics/circles.png
+%%DATADIR%%/graphics/freeserif_green_20.png
+%%DATADIR%%/graphics/freeserif_green_24.png
+%%DATADIR%%/graphics/freeserif_white_20.png
+%%DATADIR%%/graphics/freeserif_white_24.png
+%%DATADIR%%/graphics/highlight1.png
+%%DATADIR%%/graphics/highlight2.png
+%%DATADIR%%/graphics/highlight3.png
+%%DATADIR%%/graphics/highlight4.png
+%%DATADIR%%/graphics/left_mouse_highlight.png
+%%DATADIR%%/graphics/path_blocks.png
+%%DATADIR%%/graphics/pyramids.png
+%%DATADIR%%/graphics/right_mouse_highlight.png
+%%DATADIR%%/graphics/snake_skin.png
+%%DATADIR%%/graphics/timer_empty.png
+%%DATADIR%%/graphics/timer_empty_white.png
+%%DATADIR%%/graphics/timer_full.png
+%%DATADIR%%/graphics/timer_full_white.png
+%%DATADIR%%/graphics/title_big.png
+%%DATADIR%%/graphics/title_small.png
+%%DATADIR%%/graphics/twind.png
+%%DATADIR%%/graphics/volume_bar.png
+%%DATADIR%%/graphics/volume_slider.png
+%%DATADIR%%/graphics/white_l.png
+%%DATADIR%%/graphics/white_r.png
+%%DATADIR%%/music/0-0.ogg
+%%DATADIR%%/music/0-1.ogg
+%%DATADIR%%/music/1-1.ogg
+%%DATADIR%%/music/1-2.ogg
+%%DATADIR%%/music/2-1.ogg
+%%DATADIR%%/music/2-2.ogg
+%%DATADIR%%/music/3-1.ogg
+%%DATADIR%%/music/3-2.ogg
+%%DATADIR%%/music/4-1.ogg
+%%DATADIR%%/music/4-2.ogg
+%%DATADIR%%/music/5-1.ogg
+%%DATADIR%%/music/5-2.ogg
+%%DATADIR%%/music/6-1.ogg
+%%DATADIR%%/music/6-2.ogg
+%%DATADIR%%/sound/apply_bonus.wav
+%%DATADIR%%/sound/eliminate_blocks.wav
+%%DATADIR%%/sound/keyboard_click.wav
+%%DATADIR%%/sound/menu_option.wav
+%%DATADIR%%/sound/option_choice.wav
+%%DATADIR%%/sound/wrong_move.wav
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%
