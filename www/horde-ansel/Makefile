@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	horde-${PORTNAME}
 
+BROKEN=		Not yet supported under horde 5.x
+
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

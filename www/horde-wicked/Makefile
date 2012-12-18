@@ -20,6 +20,8 @@ LATEST_LINK=	horde-${PORTNAME}
 
 RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:${PORTSDIR}/www/pear-Text_Wiki
 
+BROKEN=		Not yet supported under Horde 5.x
+
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
