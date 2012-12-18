@@ -68,6 +68,7 @@
     SUBDIR += p5-Business-OnlinePayment-eSec
     SUBDIR += p5-Business-OnlinePayment-iAuthorizer
     SUBDIR += p5-Business-PayPal-IPN
+    SUBDIR += p5-Business-Stripe
     SUBDIR += p5-Business-TW-Invoice-U420
     SUBDIR += p5-Business-TW-TSIB-CStorePayment
     SUBDIR += p5-Business-TW-TSIB-VirtualAccount
