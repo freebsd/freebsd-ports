@@ -15,30 +15,25 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 WANT_GNOME=	yes
 
-OPTIONS=	CONSOLE "Disable X11 support" off \
-		GTK	"Use GTK+ for the X11 interface" on \
-		QT	"Use Qt for the X11 interface" off
+OPTIONS_DEFINE=	X11
+OPTIONS_SINGLE=	X11
+OPTIONS_SINGLE_X11=	GTK2 QT3
+OPTIONS_DEFAULT=	X11 GTK2
 
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+QT3_DESC=	Use Qt3 for the X11 interface
 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.options.mk>
 
-# Honour legacy WITHOUT_X11 and NO_GUI and support new options
-.if defined(WITHOUT_X11) || defined(NO_GUI) || defined(WITH_CONSOLE)
-NO_GUI=		yes
+.if ! ${PORT_OPTIONS:MX11}
 MAKE_ENV+=	NO_GUI=yes
 .endif
 
-.if defined(WITH_GTK) || !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MX11} && ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 MAKE_ENV+=	WITH_GTK=yes
 .endif
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MX11} && ${PORT_OPTIONS:MQT3}
 USE_QT_VER=	3
 MAKE_ENV+=	WITH_QT=yes
 CXXFLAGS+=	-Wall -DWITH_QT -I${LOCALBASE}/include
@@ -51,10 +46,8 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/thefish ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/thefish.1 ${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} >= 900000
 BROKEN=		does not build
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
