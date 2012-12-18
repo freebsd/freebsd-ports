@@ -36,8 +36,8 @@
     SUBDIR += gnusget
     SUBDIR += gnustep-ftp
     SUBDIR += gwget
+    SUBDIR += horde-gollem
     SUBDIR += horde3-gollem
-    SUBDIR += horde4-gollem
     SUBDIR += hs-curl
     SUBDIR += hsftp
     SUBDIR += jftp

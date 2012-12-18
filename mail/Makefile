@@ -177,6 +177,10 @@
     SUBDIR += hashcash
     SUBDIR += hbiff
     SUBDIR += heirloom-mailx
+    SUBDIR += horde-imp
+    SUBDIR += horde-ingo
+    SUBDIR += horde-turba
+    SUBDIR += horde-webmail
     SUBDIR += horde3-dimp
     SUBDIR += horde3-forwards
     SUBDIR += horde3-imp
@@ -184,10 +188,6 @@
     SUBDIR += horde3-mimp
     SUBDIR += horde3-turba
     SUBDIR += horde3-vacation
-    SUBDIR += horde4-imp
-    SUBDIR += horde4-ingo
-    SUBDIR += horde4-turba
-    SUBDIR += horde4-webmail
     SUBDIR += hotwayd
     SUBDIR += hs-email-validate
     SUBDIR += hs-mime
