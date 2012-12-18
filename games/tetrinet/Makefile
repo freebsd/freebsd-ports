@@ -13,7 +13,7 @@ MASTER_SITES=	http://tetrinet.or.cz/download/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A console tetrinet client
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_IPV6"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_IPV6 -fno-builtin-log"
 PLIST_FILES=	bin/tetrinet bin/tetrinet-server
 
 .include <bsd.port.options.mk>
