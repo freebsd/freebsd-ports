@@ -14,11 +14,14 @@ sbin/cracklib-unpacker
 sbin/create-cracklib-dict
 %%DATADIR%%/cracklib-small
 %%DATADIR%%/cracklib.magic
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cracklibmodule.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cracklibmodule.la
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cracklibmodule.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cracklib.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cracklib.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cracklib.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cracklib.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cracklib.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cracklib.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/test_cracklib.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/test_cracklib.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/test_cracklib.pyo
 @dirrm libdata/cracklib
 @dirrm share/cracklib
