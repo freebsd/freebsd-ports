@@ -83,28 +83,6 @@ Note:  Please add new entries to the beginning of this file.
       <discovery>2012-12-18</discovery>
       <entry>2012-12-18</entry>
     </dates>
-
-    <topic> -- </topic>
-    <affects>
-      <package>
-	<name></name>
-	<range><lt></lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
-	<blockquote cite="INSERT URL HERE">
-	  <p>.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-    </references>
-    <dates>
-      <discovery>2012-12-FIXME</discovery>
-      <entry>2012-12-18</entry>
-    </dates>
   </vuln>
 
   <vuln vid="1657a3e6-4585-11e2-a396-10bf48230856">
