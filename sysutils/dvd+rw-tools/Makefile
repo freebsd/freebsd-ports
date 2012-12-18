@@ -14,6 +14,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD burning software
 
 USE_CDRTOOLS=	yes
+# On some systems, among them one 900044 i386, the do-build-invoked
+# "make" will just do nothing for reasons not yet found, as of
+# dvd+rw-tools 7.1. It is supposed to call
+# (m4 -DOS=`uname -s` Makefile.m4 | make -f - dvd+rw-tools)
+# but returns success right away.
+# Using gmake bypasses this problem for unknown reasons. Please leave it in,
+# until the problem is analyzed and fixed - and please comment the fix here.
+USE_GMAKE=	yes
 
 MAN1=		growisofs.1
 BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo dvd-ram-control
