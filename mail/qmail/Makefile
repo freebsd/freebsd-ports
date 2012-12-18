@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	garga@FreeBSD.org
+MAINTAINER?=	bdrewery@FreeBSD.org
 COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 DIST_SUBDIR=	qmail

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	qmail-
 DISTFILES=	qmail-1.03.tar.gz
 DIST_SUBDIR=	qmail
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	DomainKeys implementation for qmail
 
 LIB_DEPENDS+=	domainkeys:${PORTSDIR}/mail/libdomainkeys
