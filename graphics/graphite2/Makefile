@@ -1,12 +1,7 @@
-# New ports collection makefile for:	graphite2
-# Date created:		2012-01-22
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	graphite2
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
 EXTRACT_SUFX=	.tgz
