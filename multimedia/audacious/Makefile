@@ -6,44 +6,42 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
 
-LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
-		mowgli.2:${PORTSDIR}/devel/libmowgli \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	mcs:${PORTSDIR}/devel/libmcs \
+		mowgli:${PORTSDIR}/devel/libmowgli \
+		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk30
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--disable-gtk3 --disable-chardet
+CONFIGURE_ARGS=	--disable-chardet
 
 MAN1=		audacious.1 audtool.1
 
-PORTDOCS=	AUTHORS
+PORTDOCS= AUTHORS
 
-OPTIONS=	DBUS	"Build with dbus support"			on  \
-		GNOME	"Build with gconf support"			off \
-		ICONV	"Build with iconv support"			on  \
-		NLS	"Native Language Support"			on  \
-		EXECINFO "Build with libexecinfo support"		on  \
-		SSE2	"Build with SSE2 instruction set"		on  \
-		CHARSET	"Build with automatic charset detection"	on
+OPTIONS_DEFINE=	DBUS GNOME ICONV NLS EXECINFO SSE2 CHARSET
+OPTIONS_DEFAULT= DBUS ICONV NLS EXECINFO SSE2 CHARSET
+CHARSET_DESC= Build with automatic charset detection
+EXECINFO_DESC= Build with libexecinfo support
+SSE2_DESC=Build with SSE2 instruction set
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+.if ${PORT_OPTIONS:MDBUS}
+LIB_DEPENDS+=	dbus-glib:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	WITH_DBUS=""
 .else
@@ -51,20 +49,20 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
-.if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+.if  ${PORT_OPTIONS:MEXECINFO} || exists(${LOCALBASE}/lib/libexecinfo.so)
+LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 .endif
 
-.if defined(WITH_GNOME)
+.if  ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=--enable-gconf
 .endif
 
-.if defined(WITH_ICONV) || exists(${LOCALBASE}/lib/libiconv.so)
+.if  ${PORT_OPTIONS:MICONV} || exists(${LOCALBASE}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if  ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -73,12 +71,12 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_SSE2)
+.if  empty(PORT_OPTIONS:MSSE2)
 CONFIGURE_ARGS+=--disable-sse2
 .endif
 
-.if defined(WITH_CHARSET)
-LIB_DEPENDS+=	guess.1:${PORTSDIR}/textproc/libguess
+.if  ${PORT_OPTIONS:MCHARSET}
+LIB_DEPENDS+=	guess:${PORTSDIR}/textproc/libguess
 CONFIGURE_ARGS+=--enable-chardet
 .else
 CONFIGURE_ARGS+=--disable-chardet
@@ -87,7 +85,7 @@ CONFIGURE_ARGS+=--disable-chardet
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-.if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
+.if  ${PORT_OPTIONS:MEXECINFO} || exists(${LOCALBASE}/lib/libexecinfo.so)
 	@${REINPLACE_CMD} 's|$${REGEX_LIBS}|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile
 	@${REINPLACE_CMD} 's|-laudcore|-laudcore -L${LOCALBASE}/lib -lexecinfo|' \
@@ -109,4 +107,4 @@ post-install:
 	@${ECHO_MSG} ""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
