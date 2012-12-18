@@ -1,10 +1,6 @@
-# New ports collection makefile for:   at-spi
-# Date Created:			12 April 2002
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/accessibility/at-spi/Makefile,v 1.103 2010/09/27 09:47:42 kwm Exp $
-#
 
 PORTNAME=	at-spi
 PORTVERSION=	1.32.0
@@ -14,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An Assistive Technology Service Provider Interface
+COMMENT=	Assistive Technology Service Provider Interface
 
 USE_BZIP2=	yes
 

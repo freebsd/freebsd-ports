@@ -1,9 +1,5 @@
-# Ports collection makefile for:	yasr
-# Date created:				Wed Jan 14 2004
-# Whom:					David K. Gerry
-#
+# Created by: David K. Gerry
 # $FreeBSD$
-#
 
 PORTNAME=	yasr
 PORTVERSION=	0.6.9
@@ -12,7 +8,9 @@ CATEGORIES=	accessibility
 MASTER_SITES=	SF
 
 MAINTAINER=	David.K.Gerry@GMail.com
-COMMENT=	A general-purpose console screen reader
+COMMENT=	General-purpose console screen reader
+
+LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
