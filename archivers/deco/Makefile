@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deco
-# Date created:		06 May 2008
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	deco
 PORTVERSION=	1.6.2
@@ -15,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:site1 \
 		${PORTNAME}-archive-1.5.1.tar.gz:site2
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A program to extract various archive file formats
+COMMENT=	Program to extract various archive file formats
 
 RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		arj:${PORTSDIR}/archivers/arj \

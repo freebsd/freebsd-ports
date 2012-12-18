@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gzip
-# Date created:				27 July 2002
-# Whom:					cyrille.lefevre@laposte.net
-#
+# Created by: Cyrille Lefevre <cyrille.lefevre@laposte.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gzip
 PORTVERSION=	1.4
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gabor@FreeBSD.org
-COMMENT=	A compression utility designed to be a replacement for compress
+COMMENT=	Compression utility designed to be a replacement for compress
 
 GNU_CONFIGURE=	yes
 

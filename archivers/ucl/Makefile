@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucl
-# Date created:				29 January 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ucl
 PORTVERSION=	1.03
@@ -12,7 +8,7 @@ CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A data compression library with low memory usage
+COMMENT=	Data compression library with low memory usage
 
 LICENSE=	GPLv2
 

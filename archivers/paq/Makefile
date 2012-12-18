@@ -1,9 +1,5 @@
-# New ports collection makefile for:   paq
-# Date created:                5 April 2007
-# Whom:                        bf <bf2006a@yahoo.com>
-#
+# Created by: bf <bf2006a@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	paq
 PORTVERSION=	20121105
@@ -14,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A family of archivers with extremely high compression ratios
+COMMENT=	Family of archivers with extremely high compression ratios
 
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi

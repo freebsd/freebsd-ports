@@ -1,6 +1,4 @@
-# New ports collection makefile for:	laszip
-# Date created:				09 January 2012
-# Whom:					Rainer Hurling <rhurlin@gwdg.de>
+# Created by: Rainer Hurling <rhurlin@gwdg.de>
 # $FreeBSD$
 
 PORTNAME=	laszip
@@ -9,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://download.osgeo.org/laszip/
 
 MAINTAINER=	rhurlin@gwdg.de
-COMMENT=	A library for lossless LAS compression
+COMMENT=	Library for lossless LAS compression
 
 LICENSE=	LGPL3
 
@@ -20,6 +18,6 @@ USE_LDCONFIG=	yes
 CMAKE_DEFS+=	-DCMAKE_USE_PTHREADS:BOOL=ON
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/liblaszip.so.5.0.0 ${PREFIX}/lib/liblaszip.so.5
+	@${LN} -s liblaszip.so.5.0.0 ${PREFIX}/lib/liblaszip.so.5
 
 .include <bsd.port.mk>
