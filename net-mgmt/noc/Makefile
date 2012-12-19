@@ -1,9 +1,5 @@
-# New ports collection makefile for:	noc
-# Date created:				27.08.2009
-# Whom:					Stanislav Svirid <count@211.ru>
-#
+# Created by: Stanislav Svirid <count@211.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	noc
 PORTVERSION=	0.6.4
@@ -14,36 +10,37 @@ MASTER_SITES=	http://redmine.nocproject.org/attachments/download/137/
 MAINTAINER=	count@211.ru
 COMMENT=	Operation Support System (OSS) for the Telco, SP, and Enterprise NOC
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-sa_sae.py
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-0.6.4.rst
+LICENSE=	BSD
 
-LIB_DEPENDS=	smi.2:${PORTSDIR}/net-mgmt/libsmi
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
-    		${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx \
+LIB_DEPENDS=	smi:${PORTSDIR}/net-mgmt/libsmi
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3<1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}django-tagging>0:${PORTSDIR}/www/py-django-tagging \
 		${PYTHON_PKGNAMEPREFIX}south>0:${PORTSDIR}/databases/py-south \
 		${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf \
-		${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so:${PORTSDIR}/databases/py-psycopg2 \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2 \
 		${PYTHON_PKGNAMEPREFIX}snmp4>=0:${PORTSDIR}/net-mgmt/py-snmp4 \
 		${PYTHON_PKGNAMEPREFIX}creole>0:${PORTSDIR}/textproc/py-creole \
 		${PYTHON_PKGNAMEPREFIX}webob>0:${PORTSDIR}/www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}WebTest>0:${PORTSDIR}/www/py-WebTest \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 
 BROKEN=		unsatisfyable dependency object
 
-OPTIONS=	GMPY "Enable use GMP library in SSH" on \
-		PEP8 "Intsall pep8 for checking source" off
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-sa_sae.py
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-0.6.4.rst
 
-USE_PYTHON=	2.6+
+OPTIONS_DEFINE=	GMPY PEP8
+OPTIONS_DEFAULT=GMPY
+GMP_DESC=	Use GMP library in SSH
+PEP8_DESC=	Intsall pep8 for checking source
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFODIR=	${NOCDIR}
-
-LICENSE=	BSD
 
 NOCUSER=	noc
 NOCGROUP=	noc
@@ -54,13 +51,13 @@ LOCALSTATE_DIR?=/var/run/noc
 USERS=		${NOCUSER}
 GROUPS=		${NOCGROUP}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GMPY)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gmpy.so:${PORTSDIR}/math/py-gmpy
+.if ${PORT_OPTIONS:MGMPY}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy
 .endif
 
-.if defined(WITH_PEP8)
+.if ${PORT_OPTIONS:MPEP8}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pep8>0:${PORTSDIR}/devel/pep8
 .endif
 
@@ -152,4 +149,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
