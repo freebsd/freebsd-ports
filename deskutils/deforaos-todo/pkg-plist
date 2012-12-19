@@ -1,0 +1,6 @@
+bin/todo
+share/applications/todo.desktop
+share/icons/hicolor/16x16/apps/todo.png
+share/icons/hicolor/24x24/apps/todo.png
+share/icons/hicolor/48x48/apps/todo.png
+share/locale/fr/LC_MESSAGES/Todo.mo

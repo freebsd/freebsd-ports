@@ -34,6 +34,7 @@
     SUBDIR += contacts
     SUBDIR += cycle
     SUBDIR += dailystrips
+    SUBDIR += deforaos-todo
     SUBDIR += deskbar-applet
     SUBDIR += devd-notifier
     SUBDIR += displaycalibrator
