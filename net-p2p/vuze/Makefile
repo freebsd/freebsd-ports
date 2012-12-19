@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vuze
-PORTVERSION=	4.8.0.0
+PORTVERSION=	4.8.1.2
 CATEGORIES=	net-p2p java
-# Moved to x-obsolete, could do with an update
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
 DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
 
@@ -71,9 +70,6 @@ post-patch:
 	${RM} -rf ${WRKSRC}/org/eclipse
 	@${SED} -E -e 's|%%CLASSPATH%%|${CLASSPATH}|' \
 		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
-# bash -> sh
-	@${REINPLACE_CMD} -E -e 's|/bin/bash|${SH}|' \
-		${WRKSRC}/com/aelitis/azureus/core/update/impl/AzureusRestarterImpl.java
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
