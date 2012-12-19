@@ -1,8 +1,6 @@
 @comment $FreeBSD$
 @unexec if cmp -s %D/%%WWWDIR%%/config/config.cfg %D/%%WWWDIR%%/config/config.cfg_sample; then rm -f %D/%%WWWDIR%%/config/config.cfg; fi
-@exec if [ ! -f %D/%%WWWDIR%%/config/config.cfg ] ; then cp -p %D/%F %B/config.cfg; fi
 @unexec if cmp -s %D/%%WWWDIR%%/config/lam.conf %D/%%WWWDIR%%/config/lam.conf_sample; then rm -f %D/%%WWWDIR%%/config/lam.conf; fi
-@exec if [ ! -f %D/%%WWWDIR%%/config/lam.conf ] ; then cp -p %D/%F %B/lam.conf; fi
 @unexec unlink %D/%%WWWDIR%%/config/shells
 %%WWWDIR%%/tmp/.htaccess
 %%WWWDIR%%/tmp/internal/.htaccess
@@ -647,18 +645,7 @@
 %%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/lib/140_jquery-validationEngine-2.2.1.js
 %%WWWDIR%%/templates/lib/141_jquery-validationEngine-lang.php
-%%WWWDIR%%/style/type_user.css
-%%WWWDIR%%/style/type_smbDomain.css
-%%WWWDIR%%/style/type_netgroup.css
-%%WWWDIR%%/style/type_mailAlias.css
-%%WWWDIR%%/style/type_host.css
-%%WWWDIR%%/style/type_group.css
-%%WWWDIR%%/style/type_dhcp.css
-%%WWWDIR%%/style/type_asteriskExt.css
-%%WWWDIR%%/style/layout.css
 %%WWWDIR%%/style/lam-images/headerLine.png
-%%WWWDIR%%/style/jquery-ui-1.8.2.custom.css
-%%WWWDIR%%/style/jquery-dropmenu.css
 %%WWWDIR%%/style/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/style/images/ui-icons_888888_256x240.png
 %%WWWDIR%%/style/images/ui-icons_454545_256x240.png
@@ -676,7 +663,6 @@
 %%WWWDIR%%/style/images/ui-anim_basic_16x16.gif
 %%WWWDIR%%/style/images/pbar-ani.gif
 %%WWWDIR%%/style/.htaccess
-%%WWWDIR%%/style/jquery-validationEngine.css
 %%WWWDIR%%/sess/.htaccess
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
@@ -921,32 +907,71 @@
 %%WWWDIR%%/graphics/services.png
 %%WWWDIR%%/graphics/freeRadius.png
 %%WWWDIR%%/config/selfService/default.user
-%%WWWDIR%%/config/selfService/.htaccess
-%%WWWDIR%%/config/profiles/default.user
-%%WWWDIR%%/config/profiles/default.smbDomain
-%%WWWDIR%%/config/profiles/default.netgroup
-%%WWWDIR%%/config/profiles/default.mailAlias
-%%WWWDIR%%/config/profiles/default.host
-%%WWWDIR%%/config/profiles/default.group
-%%WWWDIR%%/config/profiles/default.dhcp
-%%WWWDIR%%/config/profiles/default.asteriskExt
-%%WWWDIR%%/config/profiles/.htaccess
-%%WWWDIR%%/config/pdf/logos/printLogo.jpg
-%%WWWDIR%%/config/pdf/logos/.htaccess
-%%WWWDIR%%/config/pdf/default.user.xml
-%%WWWDIR%%/config/pdf/default.smbDomain.xml
-%%WWWDIR%%/config/pdf/default.netgroup.xml
-%%WWWDIR%%/config/pdf/default.mailAlias.xml
-%%WWWDIR%%/config/pdf/default.host.xml
-%%WWWDIR%%/config/pdf/default.group.xml
-%%WWWDIR%%/config/pdf/default.dhcp.xml
-%%WWWDIR%%/config/pdf/default.asteriskExt.xml
-%%WWWDIR%%/config/pdf/.htaccess
 %%WWWDIR%%/config/language
 %%WWWDIR%%/config/lam.conf_sample
 %%WWWDIR%%/config/config.cfg_sample
 %%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/VERSION
+%%WWWDIR%%/style/150_jquery-fineuploader.css
+%%WWWDIR%%/style/600_type_user.css
+%%WWWDIR%%/style/600_type_dhcp.css
+%%WWWDIR%%/style/500_layout.css
+%%WWWDIR%%/style/150_jquery-validationEngine.css
+%%WWWDIR%%/style/600_type_group.css
+%%WWWDIR%%/style/120_jquery-ui-1.8.2.custom.css
+%%WWWDIR%%/style/600_type_netgroup.css
+%%WWWDIR%%/style/loading.gif
+%%WWWDIR%%/style/600_type_host.css
+%%WWWDIR%%/style/600_type_asteriskExt.css
+%%WWWDIR%%/style/150_jquery-dropmenu.css
+%%WWWDIR%%/style/600_type_smbDomain.css
+%%WWWDIR%%/style/600_type_mailAlias.css
+%%WWWDIR%%/graphics/export.png
+%%WWWDIR%%/graphics/import.png
+%%WWWDIR%%/templates/lib/130_jquery-fineuploader-3.0.min.js
+%%WWWDIR%%/lib/upgrade.inc
+%%WWWDIR%%/config/templates/profiles/default.netgroup
+%%WWWDIR%%/config/templates/profiles/default.automountType
+%%WWWDIR%%/config/templates/profiles/default.dhcp
+%%WWWDIR%%/config/templates/profiles/default.user
+%%WWWDIR%%/config/templates/profiles/.htaccess
+%%WWWDIR%%/config/templates/profiles/default.group
+%%WWWDIR%%/config/templates/profiles/default.smbDomain
+%%WWWDIR%%/config/templates/profiles/default.gon
+%%WWWDIR%%/config/templates/profiles/default.asteriskExt
+%%WWWDIR%%/config/templates/profiles/default.host
+%%WWWDIR%%/config/templates/profiles/default.zarafaAddressListType
+%%WWWDIR%%/config/templates/profiles/default.ppolicyType
+%%WWWDIR%%/config/templates/profiles/default.nisObjectType
+%%WWWDIR%%/config/templates/profiles/default.mailAlias
+%%WWWDIR%%/config/templates/profiles/default.alias
+%%WWWDIR%%/config/templates/profiles/default.zarafaDynamicGroupType
+%%WWWDIR%%/config/templates/profiles/default.sudo
+%%WWWDIR%%/config/templates/pdf/default.netgroup.xml
+%%WWWDIR%%/config/templates/pdf/default.user.xml
+%%WWWDIR%%/config/templates/pdf/default.alias.xml
+%%WWWDIR%%/config/templates/pdf/default.asteriskExt.xml
+%%WWWDIR%%/config/templates/pdf/logos/printLogo.jpg
+%%WWWDIR%%/config/templates/pdf/logos/.htaccess
+%%WWWDIR%%/config/templates/pdf/default.smbDomain.xml
+%%WWWDIR%%/config/templates/pdf/default.dhcp.xml
+%%WWWDIR%%/config/templates/pdf/default.mailAlias.xml
+%%WWWDIR%%/config/templates/pdf/default.zarafaDynamicGroupType.xml
+%%WWWDIR%%/config/templates/pdf/default.sudo.xml
+%%WWWDIR%%/config/templates/pdf/.htaccess
+%%WWWDIR%%/config/templates/pdf/default.automountType.xml
+%%WWWDIR%%/config/templates/pdf/default.zarafaAddressListType.xml
+%%WWWDIR%%/config/templates/pdf/default.nisObjectType.xml
+%%WWWDIR%%/config/templates/pdf/default.ppolicyType.xml
+%%WWWDIR%%/config/templates/pdf/default.group.xml
+%%WWWDIR%%/config/templates/pdf/default.gon.xml
+%%WWWDIR%%/config/templates/pdf/default.host.xml
+%%WWWDIR%%/config/selfService/.htaccess
+@exec if [ ! -f %D/%%WWWDIR%%/config/lam.conf ] ; then cp %D/%%WWWDIR%%/config/lam.conf_sample %D/%%WWWDIR%%/config/lam.conf; fi
+@exec if [ ! -f %D/%%WWWDIR%%/config/config.cfg ] ; then cp %D/%%WWWDIR%%/config/config.cfg_sample %D/%%WWWDIR%%/config/config.cfg; fi
+@exec mkdir -p %D/%%WWWDIR%%/config/pdf %D/%%WWWDIR%%/config/profiles
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/config %D/%%WWWDIR%%/sess %D/%%WWWDIR%%/tmp
+@exec ln -sf /etc/shells %D/%%WWWDIR%%/config/shells
 @dirrm %%WWWDIR%%/tmp/internal
 @dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images
@@ -1068,7 +1093,6 @@
 @dirrm %%WWWDIR%%/style/lam-images
 @dirrm %%WWWDIR%%/style/images
 @dirrm %%WWWDIR%%/style
-@dirrm %%WWWDIR%%/sess
 @dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/zh_TW
 @dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
@@ -1117,8 +1141,12 @@
 @dirrm %%WWWDIR%%/help
 @dirrm %%WWWDIR%%/graphics
 @dirrm %%WWWDIR%%/config/selfService
-@dirrm %%WWWDIR%%/config/profiles
-@dirrm %%WWWDIR%%/config/pdf/logos
-@dirrm %%WWWDIR%%/config/pdf
+@dirrm %%WWWDIR%%/config/templates/profiles
+@dirrm %%WWWDIR%%/config/templates/pdf/logos
+@dirrm %%WWWDIR%%/config/templates/pdf
+@dirrm %%WWWDIR%%/config/templates
+@dirrmtry %%WWWDIR%%/sess
+@dirrmtry %%WWWDIR%%/config/pdf
+@dirrmtry %%WWWDIR%%/config/profiles
 @dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
