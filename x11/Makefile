@@ -33,6 +33,7 @@
     SUBDIR += decurs
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
+    SUBDIR += deforaos-locker
     SUBDIR += deforaos-panel
     SUBDIR += deskmenu
     SUBDIR += deskpaint
