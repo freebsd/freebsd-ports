@@ -1,13 +1,13 @@
 bin/makehrtf
 bin/openal-info
-%%ETCDIR%%/alsoft.conf.sample
+%%ETCDIR%%/alsoftrc.sample
 include/AL/al.h
 include/AL/alc.h
 include/AL/alext.h
 include/AL/efx.h
 include/AL/efx-creative.h
 include/AL/efx-presets.h
-lib/libopenal.so.1.14.0
+lib/libopenal.so.1.15.1
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc

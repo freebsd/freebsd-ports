@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.15.1
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -15,7 +14,9 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
-		-DDSOUND:BOOL=OFF -DALSOFT_CONFIG:BOOL=ON -DEXAMPLES:BOOL=OFF
+		-DDSOUND:BOOL=OFF -DSNDIO:BOOL=OFF -DEXAMPLES:BOOL=OFF \
+		-DMMDEVAPI:BOOL=OFF -DWINMM:BOOL=OFF -DCOREAUDIO:BOOL=OFF \
+		-DOPENSL:BOOL=OFF -DALSOFT_CONFIG:BOOL=ON
 
 OPTIONS_DEFINE=		PULSEAUDIO
 PULSEAUDIO_DESC=	Enable sound streaming using PulseAudio
@@ -35,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
 		${WRKSRC}/Alc/alcConfig.c \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} 's|alsoft.conf|alsoft.conf.sample|' \
+	@${REINPLACE_CMD} 's|share/openal|${ETCDIR}|' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
