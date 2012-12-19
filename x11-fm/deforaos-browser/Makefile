@@ -3,7 +3,7 @@
 
 PORTNAME=	deforaos-browser
 PORTVERSION=	0.4.8
-CATEGORIES=	x11
+CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.defora.org/os/download/download/3701/
 DISTNAME=	Browser-${PORTVERSION}
 
