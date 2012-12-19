@@ -1,12 +1,8 @@
-# New ports collection makefile for:	DCL-C
-# Date created:		15 February 2004
-# Whom:			Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-#
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	cdcl
-PORTVERSION=	5.4.5
+PORTVERSION=	5.4.7
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/ \
 		http://dennou-h.gfd-dennou.org/arch/dcl/ \
@@ -17,7 +13,7 @@ MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
 USE_GCC=	any
-USE_XORG=       x11 xext
+USE_XORG=	x11 xext
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-x --enable-shared
@@ -30,8 +26,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 BINARIES=	cdclcmap cdclclr cdcldate cdcldbs cdclexec cdclfont \
 		cdclpara cdcltone cdcltrf cdclver
-PORTDOCS=       CHECK CREDITS HISTORY README
-PORTEXAMPLES=   *
+PORTDOCS=	CHECK CREDITS HISTORY README
+PORTEXAMPLES=	*
 
 RESTRICTED=	No commercial use
 
