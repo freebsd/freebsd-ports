@@ -47,6 +47,7 @@
     SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
+    SUBDIR += deforaos-editor
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
