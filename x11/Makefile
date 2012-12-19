@@ -31,6 +31,7 @@
     SUBDIR += compositeproto
     SUBDIR += damageproto
     SUBDIR += decurs
+    SUBDIR += deforaos-desktop
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
     SUBDIR += deforaos-locker
