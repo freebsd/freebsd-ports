@@ -4,7 +4,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.15
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -133,7 +133,7 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~crees/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
-LIB_DEPENDS+=	icudata.48:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icudata.50:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 .endif # !SLAVE_ONLY
