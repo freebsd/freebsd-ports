@@ -1,0 +1,6 @@
+bin/editor
+share/applications/editor.desktop
+share/locale/de/LC_MESSAGES/Editor.mo
+share/locale/es/LC_MESSAGES/Editor.mo
+share/locale/fr/LC_MESSAGES/Editor.mo
+share/locale/it/LC_MESSAGES/Editor.mo
