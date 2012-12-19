@@ -1,18 +1,11 @@
-# New ports collection makefile for:	liveMedia
-# Date created:				2002/09/25
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	liveMedia
-PORTVERSION=	2012.11.30
-PORTEPOCH=	2
-PORTREVISION=	1
+PORTVERSION=	2012.12.18
 CATEGORIES=	net devel
-MASTER_SITES=	http://www.live555.com/liveMedia/public/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	rm
+MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
+		http://files.etoilebsd.net/livemedia/
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
