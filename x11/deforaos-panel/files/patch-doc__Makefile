@@ -1,0 +1,24 @@
+--- ./doc/Makefile.orig	2012-10-14 19:00:31.000000000 +0200
++++ ./doc/Makefile	2012-12-19 03:18:41.829739209 +0100
+@@ -1,4 +1,4 @@
+-TARGETS	= panel.1 panel.html panelctl.1 panelctl.html panel-embed.1 panel-embed.html panel-message.1 panel-message.html panel-notify.1 panel-notify.html
++TARGETS	= panel.1 panelctl.1 panel-embed.1 panel-message.1 panel-notify.1
+ PREFIX	= /usr/local
+ DESTDIR	=
+ RM	?= rm -f
+@@ -47,15 +47,10 @@
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panelctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panelctl.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel-embed.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel-embed.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel-message.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel-message.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel-notify.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "panel-notify.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel.1"
