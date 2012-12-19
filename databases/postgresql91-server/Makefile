@@ -21,7 +21,7 @@ CONFLICTS?=	${PORTNAME}-client-[^${PORTVERSION:R:R}].* \
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-ICU_PATCHFILE?=	pg-910-icu-2011-09-22.diff.gz
+ICU_PATCHFILE?=	pg-910-icu-2012-12-19.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
@@ -128,7 +128,7 @@ CONFIGURE_ARGS+=--with-openssl
 .  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
-PATCH_SITES+=	http://people.freebsd.org/~crees/patches/postgresql-icu/:icu
+PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
 .    if defined(ICU_EXTRAPATCH)
 EXTRA_PATCHES+=	${ICU_EXTRAPATCH}
