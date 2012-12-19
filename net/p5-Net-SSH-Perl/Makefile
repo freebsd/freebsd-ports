@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Net-SSH-Perl
-# Date created:				15 March 2002
-# Whom:	      				Jesper Skriver <jesper@FreeBSD.org>
-#
+# Created by: Jesper Skriver <jesper@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SSH-Perl
-PORTVERSION=	1.34
-PORTREVISION=	2
+PORTVERSION=	1.35
 CATEGORIES=		net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
