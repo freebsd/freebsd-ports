@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	CA_BUNDLE NLS
+CA_BUNDLE_DESC=	Install CA Certificates
 
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
@@ -68,6 +69,10 @@ PLIST_SUB+=	NLS=""
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCA_BUNDLE}
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
 post-install:
