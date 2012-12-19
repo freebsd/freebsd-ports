@@ -490,6 +490,7 @@
     SUBDIR += p5-CAM-PDF
     SUBDIR += p5-CQL-Parser
     SUBDIR += p5-CSS
+    SUBDIR += p5-CSS-Compressor
     SUBDIR += p5-CSS-Croco
     SUBDIR += p5-CSS-Minifier
     SUBDIR += p5-CSS-Minifier-XS
