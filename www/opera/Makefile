@@ -16,13 +16,13 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER?=	12.11
-OPERA_BUILD?=	1661
+OPERA_VER?=	12.12
+OPERA_BUILD?=	1707
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
@@ -56,7 +56,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO}
