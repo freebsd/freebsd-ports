@@ -3053,6 +3053,7 @@
     SUBDIR += pear-Text_Diff
     SUBDIR += pear-TheSeer_DirectoryScanner
     SUBDIR += pear-TheSeer_fDOMDocument
+    SUBDIR += pear-TheSeer_fXSL
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-Validate_AU
