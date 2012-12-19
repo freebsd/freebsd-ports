@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jgraphx
-PORTVERSION=	1.5.1.5
+PORTVERSION=	1.10.3.0
 CATEGORIES=	java graphics
-MASTER_SITES=	http://www.bayofrum.net/dist/jgraphx/ \
-		http://www.jgraph.com/downloads/jgraphx/archive/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+MASTER_SITES=	GH
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The Java Graph Diagram Component version X (jgraph v6+)
@@ -17,8 +15,10 @@ LICENSE_NAME=	JGraph Ltd License
 LICENSE_FILE=	${WRKSRC}/license.txt
 MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 
-USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	jgraph
+GH_COMMIT=	b445bde
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
