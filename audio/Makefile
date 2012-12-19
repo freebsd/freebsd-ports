@@ -124,6 +124,7 @@
     SUBDIR += deadbeef
     SUBDIR += deadbeef-mpris-plugin
     SUBDIR += decibel-audio-player
+    SUBDIR += deforaos-mixer
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dir2ogg
