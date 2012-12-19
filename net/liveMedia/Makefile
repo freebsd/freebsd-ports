@@ -3,6 +3,7 @@
 
 PORTNAME=	liveMedia
 PORTVERSION=	2012.12.18
+PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
 		http://files.etoilebsd.net/livemedia/
