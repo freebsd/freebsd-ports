@@ -1,0 +1,5 @@
+======================================================
+Note regarding the suspend feature :
+
+Your user need sudo right for executing /usr/sbin/zzz
+======================================================
