@@ -21,6 +21,7 @@ MAN5=		oidentd.conf.5 oidentd_masq.conf.5
 MAN8=		oidentd.8
 PLIST_FILES=	sbin/oidentd etc/oidentd.conf.sample \
 		etc/oidentd_masq.conf.sample
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -std=gnu89"
 
 OPTIONS=	IPV6 "Enable IPv6 support"		on \
 		MASQ "Enable NAT/IP masq support"	on
