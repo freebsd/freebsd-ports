@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Domain-ExpireDate
-# Date created:				Mar 4 2005
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Domain-ExpireDate
-PORTVERSION=	1.02
+PORTVERSION=	1.09
 CATEGORIES=	dns net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +16,5 @@ RUN_DEPENDS=	p5-Net-Whois-Raw>=0:${PORTSDIR}/net/p5-Net-Whois-Raw
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Domain::ExpireDate.3
-
-post-patch:
-		@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
