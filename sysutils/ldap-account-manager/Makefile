@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	3.9
+PORTVERSION=	4.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -21,15 +21,13 @@ WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 
 SHORTNAME=	lam
-PORTDOCS=	docs COPYING HISTORY README copyright
+PORTDOCS=	docs HISTORY README copyright
 LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html
 WWWDIR?=	${PREFIX}/www/${SHORTNAME}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-do-configure:
-	@${RM} ${WRKSRC}/config/shells
 
 do-install:
 	-@${MKDIR} ${WWWDIR}
@@ -40,6 +38,8 @@ do-install:
 .endif
 
 post-install:
+	@${MKDIR} ${WWWDIR}/config/pdf
+	@${MKDIR} ${WWWDIR}/config/profiles
 	@if [ ! -f ${WWWDIR}/config/config.cfg ]; then \
 	    ${CP} -p ${WWWDIR}/config/config.cfg_sample ${WWWDIR}/config/config.cfg ; \
 	fi
