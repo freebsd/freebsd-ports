@@ -31,6 +31,7 @@
     SUBDIR += compositeproto
     SUBDIR += damageproto
     SUBDIR += decurs
+    SUBDIR += deforaos-libdesktop
     SUBDIR += deskmenu
     SUBDIR += deskpaint
     SUBDIR += dgs
