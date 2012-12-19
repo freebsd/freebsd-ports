@@ -1,0 +1,15 @@
+include/Desktop.h
+include/Desktop/about.h
+include/Desktop/accel.h
+include/Desktop/compat.h
+include/Desktop/menubar.h
+include/Desktop/message.h
+include/Desktop/mime.h
+include/Desktop/toolbar.h
+include/Desktop/help.h
+lib/libDesktop.a
+lib/libDesktop.so
+lib/libDesktop.so.0
+lib/libDesktop.so.0.0
+libdata/pkgconfig/libDesktop.pc
+@dirrm include/Desktop
