@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddate
-PORTVERSION=	2.22.1
+PORTVERSION=	2.22.2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/v${PORTVERSION:C/^([0-9]*\.[0-9]*).*/\1/}/ \
