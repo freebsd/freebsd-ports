@@ -30,8 +30,6 @@ CONFIGURE_ARGS=	--disable-chardet
 
 MAN1=		audacious.1 audtool.1
 
-PORTDOCS= AUTHORS
-
 OPTIONS_DEFINE=	DBUS GNOME ICONV NLS EXECINFO SSE2 CHARSET
 OPTIONS_DEFAULT= DBUS ICONV NLS EXECINFO SSE2 CHARSET
 CHARSET_DESC= Build with automatic charset detection
@@ -93,12 +91,6 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
 	@${CAT} ${PKGMESSAGE}
 .if defined(WITH_GNOME)
 	@${ECHO_MSG} ""
