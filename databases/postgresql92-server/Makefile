@@ -4,7 +4,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	9.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION:S,beta,.0&,}
@@ -132,7 +132,7 @@ PATCHFILES+=	${ICU_PATCHFILE}:icu
 .    if defined(ICU_EXTRAPATCH)
 EXTRA_PATCHES+=	${ICU_EXTRAPATCH}
 .    endif
-LIB_DEPENDS+=	icudata.48:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icudata.50:${PORTSDIR}/devel/icu
 .  endif
 .endif # !SLAVE_ONLY
 
