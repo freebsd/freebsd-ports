@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hastymail
-# Date created:		2006-11-04
-# Whom:			Bartlomiej Rutkowski <r@robakdesign.com>
-#
+# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hastymail2
 PORTVERSION=	1.1
@@ -21,7 +17,7 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-CONFLICTS=      hastymail-* hastymail2-devel-*
+CONFLICTS=	hastymail-* hastymail2-devel-*
 
 PLIST=		${WRKDIR}/pkg-plist
 
@@ -33,37 +29,36 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${WIKEDVERSION}
 NO_BUILD=	yes
 FIND_SKIP_OPTS=	-not -name hastymail2.conf.example -not -name '*.orig'
 
-OPTIONS=	PGSQL	"Use PostgreSQL" off \
-		MYSQL	"Use MySQL" off \
-		DB	"Use older pear DB (instead of MDB2)" off \
-		ICONV	"Support character set conversion" off \
-		MBSTRING "Support multi-byte character sets" off
+OPTIONS_DEFINE=	PGSQL MYSQL DB ICONV MBSTRING
 
-.include <bsd.port.pre.mk>
+DB_DESC=	Use older pear DB (instead of MDB2)
+MBSTRING_DESC=	Support multi-byte character sets
 
-.if defined(WITH_MYSQL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-.if !defined(WITH_DB)
+.if ! ${PORT_OPTIONS:MDB}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
 .endif
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-.if !defined(WITH_DB)
+.if ! ${PORT_OPTIONS:MDB}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
 .endif
 .endif
 
-.if defined(WITH_DB) && (defined(WITH_MYSQL) || defined(WITH_PGSQL))
+.if ${PORT_OPTIONS:MDB} && (${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL})
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_PHP+=	iconv
 .endif
 
-.if defined(WITH_MBSTRING)
+.if ${PORT_OPTIONS:MMBSTRING}
 USE_PHP+=	mbstring
 .endif
 
@@ -93,4 +88,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
