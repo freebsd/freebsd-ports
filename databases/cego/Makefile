@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.14.1
+PORTVERSION=	2.15.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -22,6 +22,7 @@ USE_AUTOTOOLS=	autoconf:env
 USE_RC_SUBR=	cego
 
 USE_NCURSES=	yes
+USE_READLINE=	yes
 
 USERS=	cego
 GROUPS=	cego
@@ -29,6 +30,9 @@ GROUPS=	cego
 PLIST_SUB+=	USER=${USERS}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-O3,,g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's,-O3,,g' \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/samples/cgplustest/Makefile.in \
+		${WRKSRC}/samples/cgwtest/Makefile.in
 
 .include <bsd.port.mk>
