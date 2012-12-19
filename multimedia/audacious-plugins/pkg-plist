@@ -170,7 +170,7 @@ lib/audacious/Input/metronom.so
 %%SIDPLUGIN%%lib/audacious/Input/sid.so
 lib/audacious/Input/console.so
 lib/audacious/Input/psf2.so
-lib/audacious/Input/madplug.so
+%%MP3PLUGIN%%lib/audacious/Input/madplug.so
 %%SNDFILEPLUGIN%%lib/audacious/Input/sndfile.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Effect/stereo.so
@@ -199,7 +199,7 @@ lib/audacious/General/albumart.so
 lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
-lib/audacious/General/cd-menu-items.so
+%%CDAUDIOPLUGIN%%lib/audacious/General/cd-menu-items.so
 %%OSS4PLUGIN%%lib/audacious/Output/oss4.so
 %%ALSAPLUGIN%%lib/audacious/Output/alsa.so
 lib/audacious/Output/filewriter.so
