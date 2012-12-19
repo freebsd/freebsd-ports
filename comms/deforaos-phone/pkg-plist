@@ -1,0 +1,66 @@
+bin/phone
+bin/phonectl
+include/Desktop/Phone.h
+include/Desktop/Phone/modem.h
+include/Desktop/Phone/modems/hayes.h
+include/Desktop/Phone/phone.h
+include/Desktop/Phone/plugin.h
+lib/Phone/modem/debug.so
+lib/Phone/modem/hayes.so
+lib/Phone/modem/purple.so
+lib/Phone/modem/sofia.so
+lib/Phone/plugins/blacklist.so
+lib/Phone/plugins/debug.so
+lib/Phone/plugins/engineering.so
+lib/Phone/plugins/gprs.so
+lib/Phone/plugins/gps.so
+lib/Phone/plugins/locker.so
+lib/Phone/plugins/n900.so
+lib/Phone/plugins/openmoko.so
+lib/Phone/plugins/oss.so
+lib/Phone/plugins/panel.so
+lib/Phone/plugins/profiles.so
+lib/Phone/plugins/smscrypt.so
+lib/Phone/plugins/systray.so
+lib/Phone/plugins/ussd.so
+share/applications/phone-contacts.desktop
+share/applications/phone-dialer.desktop
+share/applications/phone-log.desktop
+share/applications/phone-messages.desktop
+share/applications/phone-settings.desktop
+share/icons/hicolor/16x16/apps/phone-dialer.png
+share/icons/hicolor/16x16/apps/phone-drafts.png
+share/icons/hicolor/16x16/apps/phone-inbox.png
+share/icons/hicolor/16x16/apps/phone-n900.png
+share/icons/hicolor/16x16/apps/phone-openmoko.png
+share/icons/hicolor/16x16/apps/phone-roaming.png
+share/icons/hicolor/16x16/apps/phone-sent.png
+share/icons/hicolor/22x22/apps/phone-dialer.png
+share/icons/hicolor/22x22/apps/phone-signal-00.png
+share/icons/hicolor/22x22/apps/phone-signal-100.png
+share/icons/hicolor/22x22/apps/phone-signal-25.png
+share/icons/hicolor/22x22/apps/phone-signal-50.png
+share/icons/hicolor/22x22/apps/phone-signal-75.png
+share/icons/hicolor/24x24/apps/phone-dialer.png
+share/icons/hicolor/24x24/apps/phone-drafts.png
+share/icons/hicolor/24x24/apps/phone-inbox.png
+share/icons/hicolor/24x24/apps/phone-n900.png
+share/icons/hicolor/24x24/apps/phone-openmoko.png
+share/icons/hicolor/24x24/apps/phone-roaming.png
+share/icons/hicolor/24x24/apps/phone-sent.png
+share/icons/hicolor/32x32/apps/phone-dialer.png
+share/icons/hicolor/32x32/apps/phone-n900.png
+share/icons/hicolor/32x32/apps/phone-openmoko.png
+share/icons/hicolor/32x32/apps/phone-roaming.png
+share/icons/hicolor/48x48/apps/phone-dialer.png
+share/icons/hicolor/48x48/apps/phone-inbox.png
+share/icons/hicolor/48x48/apps/phone-n900.png
+share/icons/hicolor/48x48/apps/phone-openmoko.png
+share/icons/hicolor/48x48/apps/phone-roaming.png
+share/icons/hicolor/48x48/apps/phone-sent.png
+share/locale/fr/LC_MESSAGES/Phone.mo
+@dirrm include/Desktop/Phone/modems
+@dirrm include/Desktop/Phone
+@dirrm lib/Phone/modem
+@dirrm lib/Phone/plugins
+@dirrm lib/Phone

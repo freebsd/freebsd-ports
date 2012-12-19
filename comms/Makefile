@@ -25,6 +25,7 @@
     SUBDIR += conserver-com
     SUBDIR += cutecom
     SUBDIR += cwdaemon
+    SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += ebook2cw
