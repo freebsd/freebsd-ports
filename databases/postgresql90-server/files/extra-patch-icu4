@@ -1,6 +1,6 @@
 --- configure.in.orig	2010-12-17 10:24:25.585364941 +0100
 +++ configure.in	2010-12-17 10:25:08.921592644 +0100
-@@ -947,23 +947,27 @@
+@@ -947,23 +947,31 @@
  fi
  
  if test "$with_icu" = yes ; then
@@ -12,7 +12,8 @@
 -           ])
 -        ])
 -     ])
-+  AC_CHECK_LIB(icui18n, ucol_open_48, [], [
++  AC_CHECK_LIB(icui18n, ucol_open_50, [], [
++   AC_CHECK_LIB(icui18n, ucol_open_48, [], [
 +    AC_CHECK_LIB(icui18n, ucol_open_44, [], [
 +       AC_CHECK_LIB(icui18n, ucol_open_43, [], [
 +          AC_CHECK_LIB(icui18n, ucol_open_3_8, [], [
@@ -21,6 +22,7 @@
 +             ])
 +          ])
 +       ])
++     ])
 +    ])
    ])
 -  AC_CHECK_LIB(icuuc, ucnv_fromUChars_44, [], [
@@ -31,7 +33,8 @@
 -           ])
 -        ])
 -     ])
-+  AC_CHECK_LIB(icuuc, ucnv_fromUChars_48, [], [
++  AC_CHECK_LIB(icuuc, ucnv_fromUChars_50, [], [
++   AC_CHECK_LIB(icuuc, ucnv_fromUChars_48, [], [
 +    AC_CHECK_LIB(icuuc, ucnv_fromUChars_44, [], [
 +       AC_CHECK_LIB(icuuc, ucnv_fromUChars_43, [], [
 +          AC_CHECK_LIB(icuuc, ucnv_fromUChars_3_8, [], [
@@ -40,6 +43,7 @@
 +             ])
 +          ])
 +       ])
++     ])
 +    ])
    ])
  fi
