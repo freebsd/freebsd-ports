@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Image-Info
-# Date Created:				25 Aug 2001
-# Whom:					Shell Hung <shell@shellhung.org>
-#
+# Created by: Shell Hung <shell@shellhung.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Info
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
