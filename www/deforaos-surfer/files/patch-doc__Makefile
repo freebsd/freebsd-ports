@@ -1,0 +1,20 @@
+--- ./doc/Makefile.orig	2012-10-14 19:21:29.000000000 +0200
++++ ./doc/Makefile	2012-12-19 13:31:00.833357884 +0100
+@@ -1,4 +1,4 @@
+-TARGETS	= download.1 download.html helper.1 helper.html surfer.1 surfer.html
++TARGETS	= download.1 helper.1 surfer.1
+ PREFIX	= /usr/local
+ DESTDIR	=
+ RM	?= rm -f
+@@ -35,11 +35,8 @@
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "download.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "download.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "helper.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "helper.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "surfer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "surfer.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "download.1"

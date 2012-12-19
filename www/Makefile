@@ -122,6 +122,7 @@
     SUBDIR += dansguardian-devel
     SUBDIR += davical
     SUBDIR += decss
+    SUBDIR += deforaos-surfer
     SUBDIR += demoroniser
     SUBDIR += dfileserver
     SUBDIR += dhttpd
