@@ -1,0 +1,5 @@
+This module is an implementation of the CSS parts of Yahoo! YUIcompressor
+in Perl.  It was needed to produce minified css on the fly using Perl
+based backend systems.
+
+WWW: http://search.cpan.org/dist/CSS-Compressor/
