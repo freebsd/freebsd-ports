@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	audio
-MASTER_SITES=	https://launchpadlibrarian.net/116926188/ \
+MASTER_SITES=	https://launchpadlibrarian.net/123112109/ \
 		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@FreeBSD.org
