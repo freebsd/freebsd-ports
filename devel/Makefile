@@ -3052,6 +3052,7 @@
     SUBDIR += pear-Testing_Selenium
     SUBDIR += pear-Text_Diff
     SUBDIR += pear-TheSeer_DirectoryScanner
+    SUBDIR += pear-TheSeer_fDOMDocument
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-Validate_AU
