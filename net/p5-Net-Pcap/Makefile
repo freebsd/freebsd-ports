@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Net-Pcap
-# Date created:		10 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Pcap
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
