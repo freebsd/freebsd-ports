@@ -319,7 +319,7 @@ SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
 		RADDB="${PREFIX}/etc/raddb" \
 		LOGDIR="${LOGDIR}" \
 		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}"
-SUB_FILES+=	pkg-install pkg-deinstall pkg-message
+SUB_FILES+=	pkg-install pkg-message
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
 		radzap.1 smbencrypt.1
