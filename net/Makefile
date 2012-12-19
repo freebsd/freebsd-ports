@@ -1091,6 +1091,7 @@
     SUBDIR += socat
     SUBDIR += socketbind
     SUBDIR += socketpipe
+    SUBDIR += sofia-sip
     SUBDIR += splatd
     SUBDIR += spnetkit
     SUBDIR += spoofer
