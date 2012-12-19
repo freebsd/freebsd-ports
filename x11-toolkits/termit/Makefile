@@ -1,13 +1,9 @@
-# New ports collection makefile for:	termit
-# Date created:				2008/06/20
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	termit
 PORTVERSION=	2.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
@@ -26,13 +22,13 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 
 USE_BZIP2=	yes
-USE_GNOME=	gdkpixbuf2 vte
-USE_LUA=	yes
 USE_CMAKE=	yes
 USE_PKGCONFIG=	build
 USE_ICONV=	yes
+USE_LUA=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
+USE_GNOME=	gdkpixbuf2 vte
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/vte-0.0
