@@ -321,6 +321,7 @@
     SUBDIR += dcmtk
     SUBDIR += dconf
     SUBDIR += ddd
+    SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
     SUBDIR += deputy
