@@ -1,0 +1,32 @@
+--- ./doc/Makefile.orig	2012-10-14 18:55:31.000000000 +0200
++++ ./doc/Makefile	2012-12-19 02:27:58.521485272 +0100
+@@ -1,4 +1,4 @@
+-TARGETS	= browser.1 browser.html copy.1 copy.html delete.1 delete.html desktop.1 desktop.html desktopctl.1 desktopctl.html move.1 move.html open.1 open.html properties.1 properties.html view.1 view.html
++TARGETS	= browser.1 copy.1 delete.1 desktop.1 desktopctl.1 move.1 open.1 properties.1 view.1
+ PREFIX	= /usr/local
+ DESTDIR	=
+ RM	?= rm -f
+@@ -71,23 +71,14 @@
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "browser.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "browser.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "copy.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "copy.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "delete.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "delete.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "desktop.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "desktop.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "desktopctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "desktopctl.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "move.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "move.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "open.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "open.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "properties.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "properties.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "view.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "view.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "browser.1"

@@ -5,6 +5,7 @@
 
     SUBDIR += asfiles
     SUBDIR += catseye-fm
+    SUBDIR += deforaos-browser
     SUBDIR += dfm
     SUBDIR += dolphin
     SUBDIR += doublecmd

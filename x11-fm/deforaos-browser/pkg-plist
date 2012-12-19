@@ -1,0 +1,30 @@
+bin/browser
+bin/copy
+bin/delete
+bin/desktop
+bin/desktopctl
+bin/move
+bin/open
+bin/properties
+bin/view
+include/Desktop/Browser.h
+include/Desktop/Browser/desktop.h
+lib/Browser/plugins/cvs.so
+lib/Browser/plugins/dirtree.so
+lib/Browser/plugins/preview.so
+lib/Browser/plugins/properties.so
+lib/Browser/plugins/subversion.so
+lib/Browser/plugins/volumes.so
+libdata/pkgconfig/Browser.pc
+share/applications/browser.desktop
+share/applications/desktop-settings.desktop
+share/icons/hicolor/16x16/apps/browser-view-details.png
+share/icons/hicolor/16x16/apps/browser-view-icons.png
+share/icons/hicolor/16x16/apps/browser-view-list.png
+share/locale/de/LC_MESSAGES/Browser.mo
+share/locale/es/LC_MESSAGES/Browser.mo
+share/locale/fr/LC_MESSAGES/Browser.mo
+share/locale/it/LC_MESSAGES/Browser.mo
+@dirrm include/Desktop/Browser
+@dirrm lib/Browser/plugins
+@dirrm lib/Browser
