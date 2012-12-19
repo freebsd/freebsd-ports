@@ -321,11 +321,11 @@ share/applications/zenmap-root.desktop
 %%DATADIR%%/config/zenmap.conf
 %%DATADIR%%/config/zenmap_version
 %%DATADIR%%/docs/help.html
-%%DATADIR%%/locale/de/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/hr/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
-%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/de/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/fr/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/hr/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
 %%DATADIR%%/misc/profile_editor.xml
 %%DATADIR%%/pixmaps/default_32.png
 %%DATADIR%%/pixmaps/default_75.png
@@ -373,17 +373,17 @@ share/applications/zenmap-root.desktop
 @dirrm %%DATADIR%%/pixmaps/radialnet
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ru
-@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pt_BR
-@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/hr
-@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/fr
-@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/de
-@dirrm %%DATADIR%%/locale
+%%NLS%%@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ru
+%%NLS%%@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/pt_BR
+%%NLS%%@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/hr
+%%NLS%%@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/fr
+%%NLS%%@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/de
+%%NLS%%@dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
