@@ -43,6 +43,7 @@
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
     SUBDIR += cups-smb-backend
+    SUBDIR += deforaos-pdfviewer
     SUBDIR += detex
     SUBDIR += dk-acroread8
     SUBDIR += dot2tex
