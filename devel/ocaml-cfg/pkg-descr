@@ -2,4 +2,4 @@ This OCaml-library consists of a set of modules which implement functions
 for manipulating context-free grammars (CFGs) in a purely functional way.
 
 Author:	Markus Mottl <markus.mottl@gmail.com>
-WWW:	http://www.ocaml.info/home/ocaml_sources.html
+WWW:	https://bitbucket.org/mmottl/cfg
