@@ -1,41 +1,40 @@
-# Ports collection makefile for:	extlib
-# Date created:			Nov 2, 2004
-# Whom:				mukai
-#
+# Created by: mukai
 # $FreeBSD$
-#
 
 PORTNAME=	extlib
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	devel
-MASTER_SITES=	http://ocaml-extlib.googlecode.com/files/
-MASTER_SITE_SUBDIR=	ocaml-lib
+MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete - yet small - standard library for OCaml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
+LICENSE=	LGPL21
 
-USE_GMAKE=	yes
-USE_DOS2UNIX=	yes
+OPTIONS_DEFINE=	DOCS
+
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=yes
+USE_OCAMLFIND_PLIST=yes
+
 ALL_TARGET=	all opt
 
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	doc
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+= doc
+PLIST_DIRSTRY=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
 .endif
 
-PORTDOCS=	*
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/css/d' ${WRKSRC}/Makefile
-
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
