@@ -1,10 +1,11 @@
-# Created by:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	5.8.0
+PORTVERSION=	5.9.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
+MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
+		CRITICAL
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
