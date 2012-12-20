@@ -1,32 +1,39 @@
-# New ports collection makefile for:	manipulate_data
-# Date created:				24 Jul 2004
-# Whom:					Vaida Bogdan <vaida.bogdan@gmail.com>
-#
+# Created by: Vaida Bogdan <vaida.bogdan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	manipulate_data
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://packetstormsecurity.org/groups/thc/
+MASTER_SITES=	PACKETSTORM/groups/thc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search/extract/write raw data
 
-PLIST_FILES=	sbin/read_data sbin/replace_data sbin/search_data sbin/write_data
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	CHANGES README
+PLIST_FILES=	${SBIN_PROGRAMS:S,^,sbin/,}
+
+SBIN_PROGRAMS=	read_data replace_data search_data write_data
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+	's|^CC=|CC?=| ; \
+	s| -O2 | $$(CFLAGS) | ; \
+	/strip/s|^|#|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/read_data ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/write_data ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/search_data ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/replace_data ${PREFIX}/sbin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for i in ${SBIN_PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
