@@ -2,32 +2,9 @@ bin/iconvert
 bin/idiff
 bin/igrep
 bin/iinfo
-bin/iprocess
 %%IMAGEVIEWER%%bin/iv
 bin/maketx
 bin/oiiotool
-include/OpenImageIO/tbb/machine/ibm_aix51.h
-include/OpenImageIO/tbb/machine/linux_common.h
-include/OpenImageIO/tbb/machine/linux_ia32.h
-include/OpenImageIO/tbb/machine/linux_ia64.h
-include/OpenImageIO/tbb/machine/linux_intel64.h
-include/OpenImageIO/tbb/machine/mac_ppc.h
-include/OpenImageIO/tbb/machine/windows_ia32.h
-include/OpenImageIO/tbb/machine/windows_intel64.h
-include/OpenImageIO/tbb/_tbb_windef.h
-include/OpenImageIO/tbb/aligned_space.h
-include/OpenImageIO/tbb/atomic.h
-include/OpenImageIO/tbb/spin_mutex.h
-include/OpenImageIO/tbb/spin_rw_mutex.h
-include/OpenImageIO/tbb/tbb_allocator.h
-include/OpenImageIO/tbb/tbb_assert_impl.h
-include/OpenImageIO/tbb/tbb_config.h
-include/OpenImageIO/tbb/tbb_exception.h
-include/OpenImageIO/tbb/tbb_machine.h
-include/OpenImageIO/tbb/tbb_misc.h
-include/OpenImageIO/tbb/tbb_profiling.h
-include/OpenImageIO/tbb/tbb_stddef.h
-include/OpenImageIO/tbb/tbb_version.h
 include/OpenImageIO/argparse.h
 include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
@@ -51,6 +28,7 @@ include/OpenImageIO/sysutil.h
 include/OpenImageIO/texture.h
 include/OpenImageIO/thread.h
 include/OpenImageIO/timer.h
+include/OpenImageIO/tinyformat.h
 include/OpenImageIO/typedesc.h
 include/OpenImageIO/ustring.h
 include/OpenImageIO/varyingref.h
@@ -59,12 +37,10 @@ include/OpenImageIO/pugiconfig.hpp
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
-lib/libOpenImageIO.so.1.0
-lib/libOpenImageIO.so.1.0.9
+lib/libOpenImageIO.so.1.1
+lib/libOpenImageIO.so.1.1.2
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/OpenImageIO/tbb/machine
-@dirrm include/OpenImageIO/tbb
 @dirrm include/OpenImageIO

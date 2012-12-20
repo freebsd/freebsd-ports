@@ -1,52 +1,61 @@
-# New ports collection makefile for:	OpenImageIO
-# Date created:			21 March 2012
-# Whom:					Shane Ambler
-#
+# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
 # $FreeBSD$
-#
 
-PORTNAME=	openimageio
-PORTVERSION=	1.0.9
-PORTREVISION=	1
-CATEGORIES=	graphics multimedia
+PORTNAME?=	openimageio
+PORTVERSION=	1.1.2
+PORTREVISION?=	0
+CATEGORIES?=	graphics multimedia
 MASTER_SITES=	https://github.com/OpenImageIO/oiio/tarball/
-DISTNAME=	Release-${PORTVERSION}
-EXTRACT_SUFX=	# empty
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	OpenImageIO graphics library
 
-LICENSE=	BSD
+LICENSE?=	BSD
 
-LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS?=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		opencv_legacy:${PORTSDIR}/graphics/opencv \
 		openjpeg:${PORTSDIR}/graphics/openjpeg \
-		tbb:${PORTSDIR}/devel/tbb \
 		webp:${PORTSDIR}/graphics/webp
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenImageIO
+GH_PROJECT=	oiio
+GH_TAGNAME=	Release-${PORTVERSION}
+GH_COMMIT=	db9df57
 
 # fbm also installs bin/idiff
 CONFLICTS=	fbm-[0-9]*
 
-FETCH_ARGS=	-pRr
 USE_CMAKE=	yes
 CMAKE_VERBOSE=	yes
 CMAKE_OUTSOURCE=	yes
-CMAKE_ARGS=	-DBUILDSTATIC:BOOL=OFF \
+CMAKE_ARGS?=	-DBUILDSTATIC:BOOL=OFF \
 		-DLINKSTATIC:BOOL=OFF \
-		-DUSE_PYTHON:BOOL=OFF \
-		-DUSE_TBB:BOOL=ON
-LDFLAGS+=	-ltbb
+		-DNOTHREADS:BOOL=OFF \
+		-DUSE_TBB:BOOL=OFF
+
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/OpenImageIO-oiio-0d48631/src
+WRKSRC=		${WRKDIR}/OpenImageIO-oiio-${GH_COMMIT}/src
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	DOCS IMAGEVIEWER THREADS
-OPTIONS_DEFAULT=	DOCS IMAGEVIEWER THREADS
+.if defined(OIIO_PYBIND)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
+PLIST=		${PKGDIR}/pkg-plist-pybind
+CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON
+.else
+PLIST=		${PKGDIR}/pkg-plist
+CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=OFF
+.endif
+
+.if !defined(OIIO_PYBIND)
+OPTIONS_DEFINE=		DOCS IMAGEVIEWER OCIO
+OPTIONS_DEFAULT=	DOCS IMAGEVIEWER OCIO
 
 IMAGEVIEWER_DESC=	Build image viewer
+OCIO_DESC=		Colour management support
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -67,16 +76,18 @@ CMAKE_ARGS+=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
 PLIST_SUB+=	IMAGEVIEWER="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
-CMAKE_ARGS+=	-DNOTHREADS:BOOL=ON
+.if ${PORT_OPTIONS:MOCIO}
+CMAKE_ARGS+=	-DUSE_OCIO:BOOL=ON
+LIB_DEPENDS+=	OpenColorIO:${PORTSDIR}/graphics/opencolorio
 .else
-CMAKE_ARGS+=	-DNOTHREADS:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_OCIO:BOOL=OFF
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${OSVERSION} < 803000
-USE_GCC=	4.6+
+.if ${ARCH} == "i386"
+# for gcc atomics we need to have an arch > i486
+CFLAGS+=	-march=i586
 .endif
 
 .if ${OSVERSION} < 800000
@@ -84,6 +95,8 @@ IGNORE=	requires FreeBSD 8.0 or higher
 .endif
 
 post-install:
-	cd ${PREFIX}/lib && ${LN} -sf libOpenImageIO.so.1.0 libOpenImageIO.so.1
+.if !defined(OIIO_PYBIND)
+	cd ${PREFIX}/lib && ${LN} -sf libOpenImageIO.so.1.1 libOpenImageIO.so.1
+.endif
 
 .include <bsd.port.post.mk>
