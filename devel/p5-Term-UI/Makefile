@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Term-UI
-# Date created:				31 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-UI
-PORTVERSION=	0.30
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
