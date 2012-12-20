@@ -1,8 +1,0 @@
-%%OCAML_SITELIBDIR%%/xstr/META
-%%OCAML_SITELIBDIR%%/xstr/xstr.cma
-%%OCAML_SITELIBDIR%%/xstr/xstr_match.cmi
-%%OCAML_SITELIBDIR%%/xstr/xstr_match.mli
-%%OCAML_SITELIBDIR%%/xstr/xstr_search.cmi
-%%OCAML_SITELIBDIR%%/xstr/xstr_search.mli
-%%OCAML_SITELIBDIR%%/xstr/xstr_split.cmi
-%%OCAML_SITELIBDIR%%/xstr/xstr_split.mli
