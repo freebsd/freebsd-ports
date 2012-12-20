@@ -1,13 +1,14 @@
 This library contains functionality for parsing and pretty-printing
 S-expressions. In addition to that it contains an extremely useful
-preprocessing module for Camlp4, which can be used to automatically generate
-code from type definitions for efficiently converting OCaml-values to
-S-expressions and vice versa. In combination with the parsing and
-pretty-printing functionality this frees the user from having to write his own
-I/O-routines for data structures he defines. Possible errors during automatic
-conversions from S-expressions to OCaml-values are reported in a very
-human-readable way. Another module in the library allows you to extract and
-replace sub-expressions in S-expressions.
+preprocessing module for Camlp4, which can be used to automatically
+generate code from type definitions for efficiently converting
+OCaml-values to S-expressions and vice versa. In combination with the
+parsing and pretty-printing functionality this frees the user from
+having to write his own I/O-routines for data structures he defines.
+Possible errors during automatic conversions from S-expressions to
+OCaml-values are reported in a very human-readable way. Another module
+in the library allows you to extract and replace sub-expressions in
+S-expressions.
 
 Author:	Markus Mottl <mmottl@janestcapital.com>
-WWW:	http://www.janestcapital.com/ocaml/index.html
+WWW:	http://ocaml.janestcapital.com/

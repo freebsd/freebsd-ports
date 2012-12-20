@@ -1,55 +1,46 @@
-# New ports collection makefile for:	ocaml-sexplib
-# Date created:		2006-08-01
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	sexplib
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	108.07.00
 CATEGORIES=	devel
-MASTER_SITES=	http://www.janestcapital.com/ocaml/
+MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}/individual
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PORTNAME}310-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml library for working with S-expressions
 
-BUILD_DEPENDS=	${SA_DIR}/type-conv/pa_type_conv.cmi:${PORTSDIR}/devel/ocaml-typeconv
-RUN_DEPENDS=	${SA_DIR}/type-conv/pa_type_conv.cmi:${PORTSDIR}/devel/ocaml-typeconv
+LICENSE=	BSD
 
-USE_GMAKE=	yes
+BUILD_DEPENDS=	ocaml-type-conv>0:${PORTSDIR}/devel/ocaml-typeconv
+RUN_DEPENDS=	ocaml-type-conv>0:${PORTSDIR}/devel/ocaml-typeconv
+
+OPTIONS_DEFINE=	DOCS
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAMLFIND_PLIST=yes
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs
 MAKE_JOBS_UNSAFE=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,)
 .endif
-.if !exists(${OCAMLFIND_LDCONF})
-	${TOUCH} ${OCAMLFIND_LDCONF}
-.endif
-	@${REINPLACE_CMD} -E -e "/lib_test/d" ${WRKSRC}/Makefile
 
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+.for i in CHANGES.txt README.md
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
 
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/ocaml/${PORTNAME}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ocaml 2>/dev/null ||true"\
-		>> ${TMPPLIST}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
