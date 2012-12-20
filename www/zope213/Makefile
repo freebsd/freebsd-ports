@@ -1,19 +1,14 @@
-# New ports collection makefile for:	zope213
-# Date created:				12 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope213
-PORTVERSION=	2.13.16
+PORTVERSION=	2.13.19
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Zope2-${PORTVERSION}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	An object-based web application platform Version 2.13
+COMMENT=	Object-based web application platform Version 2.13
 
 LICENSE=	ZPL21
 
@@ -111,7 +106,8 @@ ZOPEINSTANCENAME=	${INSTANCENAME}
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
+	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete -or \
+		-name .DS_Store -delete
 
 instance:
 	@${LOCALBASE}/bin/mkzopeinstance --dir ${ZOPEINSTANCEDIR} ${ISBATCH}
