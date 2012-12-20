@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ede
-# Date created:				28 Febrary 2004
-# Whom:					Sergey Matveychuk <sem@ciam.ru>
-#
+# Created by: Sergey Matveychuk <sem@ciam.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ede
 PORTVERSION=	2.0
@@ -28,8 +24,6 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-BROKEN=		does not link
-
 OPTIONS_DEFINE=	HAL
 HAL_DESC=	Enable HAL support
 
@@ -44,8 +38,8 @@ CONFIGURE_ARGS=	--with-edelib_path=${EDELIB_WRKSRC} \
 INSTALL_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	pekwm-[0-9]*
 
