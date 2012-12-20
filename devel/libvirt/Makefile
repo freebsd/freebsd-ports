@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -11,6 +11,9 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
+OPTIONS_DEFINE=	QEMU
+QEMU_DESC=	QEMU bindings
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -18,7 +21,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		ssh2.1:${PORTSDIR}/security/libssh2
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake autoconf
+USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS=	--without-sasl \
 		--without-yajl \
 		--without-avahi \
@@ -38,14 +41,25 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
-GNOME_MAKEFILEIN=	Makefile.am
+GNOME_MAKEFILEIN=	Makefile.in
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 SHLIB_VER=	1000
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 
-.if empty(PORT_OPTIONS:MNLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQEMU}
+CONFIGURE_ARGS+=	--with-qemu
+PLIST_SUB+=	QEMU=""
+QEMU_CONFIG=	qemu
+.else
+CONFIGURE_ARGS+=	--without-qemu
+PLIST_SUB+=	QEMU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--enable-nls \
@@ -58,19 +72,30 @@ PLIST_SUB+=	NLS="@comment "
 MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1
 MAN8=		libvirtd.8
 
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.6|%%AUTOMAKE_APIVER%%|g' \
-		${WRKSRC}/aclocal.m4
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
-		${WRKSRC}/daemon/Makefile.am \
 		${WRKSRC}/daemon/Makefile.in
 
 	@${MV} ${WRKSRC}/src/libvirt.conf ${WRKSRC}/src/libvirt.conf.sample
 	@${REINPLACE_CMD} -e 's|conf_DATA = libvirt.conf|conf_DATA = libvirt.conf.sample|' \
-		${WRKSRC}/src/Makefile.am
+		${WRKSRC}/src/Makefile.in
+
+	@${MV} ${WRKSRC}/src/qemu/qemu.conf ${WRKSRC}/src/qemu/qemu.conf.sample
+	@${REINPLACE_CMD} -e 's|qemu.conf |qemu.conf.sample |' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|qemu.conf$$|qemu.conf.sample|' \
+		${WRKSRC}/src/Makefile.in
+
+post-install:
+	@for configuration in libvirt libvirtd ${QEMU_CONFIG}; do \
+	if [ ! -e "${ETCDIR}/$${configuration}.conf" ]; then \
+			${ECHO_MSG} "	Installing local configuration file: ${ETCDIR}/$${configuration}.conf"; \
+			${CP} ${ETCDIR}/$${configuration}.conf.sample ${ETCDIR}/$${configuration}.conf; \
+		else \
+			${ECHO_MSG} "	Preserving local configuration file: ${ETCDIR}/$${configuration}.conf"; \
+	fi; \
+	done
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
