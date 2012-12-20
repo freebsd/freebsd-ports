@@ -144,7 +144,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_read_comp
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_regex_arguments
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_regex_words
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_remote_files
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_requested
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_retrieve_cache
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_sep_parts
@@ -236,6 +235,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_acpitool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_analyseplugin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_brctl
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_btrfs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_chrt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cryptsetup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_ethtool
@@ -334,6 +334,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chkconfig
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chmod
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chown
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_clay
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_comm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_compress
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_configure
@@ -347,6 +348,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cvs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_darcs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_date
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dbus
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dd
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_devtodo
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dhclient
@@ -435,6 +437,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_less
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_links
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_list_files
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lha
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ln
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_loadkeys
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_locales
@@ -472,6 +475,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_netcat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_newsgroups
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nice
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nkf
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nmap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_npm
@@ -521,6 +525,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ranlib
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rar
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rcs
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_remote_files
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_renice
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ri
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rlogin
@@ -619,6 +624,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_zfs_pool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_zip
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_zpool
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_xz
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_acroread
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_dcop
