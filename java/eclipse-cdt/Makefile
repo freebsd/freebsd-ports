@@ -1,9 +1,5 @@
-# New ports collection makefile for:    eclipse-cdt
-# Date created:                         March 1, 2004
-# Whom:                                 gldisater@gldis.ca
-#
+# Created by: gldisater@gldis.ca
 # $FreeBSD$
-#
 
 PORTNAME=	${PLUGIN}
 PORTVERSION=	6.0.2
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=tools/${PLUGIN}/releases/${ECLIPSE_CODENAME}/dist
 DISTNAME=	${PLUGIN}-master-${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ plugin for Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
