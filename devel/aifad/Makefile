@@ -2,40 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	aifad
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/aifad/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 
-BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
-		${SA_DIR}/res/res.a:${PORTSDIR}/devel/ocaml-res \
-		${SA_DIR}/cfg/cfg.a:${PORTSDIR}/devel/ocaml-cfg \
-		omake:${PORTSDIR}/devel/omake	\
-		menhir:${PORTSDIR}/devel/menhir
+LICENSE=	GPLv3
 
+BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
+		ocaml-cfg>0:${PORTSDIR}/devel/ocaml-cfg \
+		ocaml-pcre>0:${PORTSDIR}/devel/ocaml-pcre \
+		ocaml-res>0:${PORTSDIR}/devel/ocaml-res
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 
-SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${PREFIX}
 
-DOCS=	README.txt TODO
-
-.include <bsd.port.pre.mk>
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
