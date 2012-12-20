@@ -815,6 +815,7 @@
     SUBDIR += regripperplugins
     SUBDIR += retranslator
     SUBDIR += revelation
+    SUBDIR += rifiuti2
     SUBDIR += rkhunter
     SUBDIR += ruby-acl
     SUBDIR += ruby-camellia
