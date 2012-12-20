@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.0.1
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-    		event-2.0:${PORTSDIR}/devel/libevent2
+    		event-2:${PORTSDIR}/devel/libevent2
 
 LATEST_LINK=	netatalk3
 USE_AUTOTOOLS=	libtool
@@ -81,7 +82,7 @@ PLIST_SUB+=		NETATALKPAM="@comment "
 .if defined (WITH_ZEROCONF)
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
 USE_GNOME+=		pkgconfig
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .else
@@ -118,6 +119,8 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${PREFIX}/bin/macusers
+	[ -f ${PREFIX}/etc/apf.conf ] || \
+		${INSTALL_DATA} -c ${PREFIX}/etc/afp.conf.dist ${PREFIX}/etc/afp.conf
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
