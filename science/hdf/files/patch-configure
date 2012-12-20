@@ -1,0 +1,19 @@
+--- configure.orig	2012-08-07 13:11:45.000000000 +0900
++++ configure	2012-08-14 21:08:48.000000000 +0900
+@@ -5837,11 +5837,11 @@
+     enable_shared="no"
+ fi
+ 
+-if test "X${enable_shared}" = "Xyes"; then
+-    if test "X${BUILD_FORTRAN}" = "Xyes"; then
+-        as_fn_error $? "Cannot build shared fortran libraries. Please configure with --disable-fortran flag." "$LINENO" 5
+-    fi
+-fi
++#if test "X${enable_shared}" = "Xyes"; then
++#    if test "X${BUILD_FORTRAN}" = "Xyes"; then
++#        as_fn_error $? "Cannot build shared fortran libraries. Please configure with --disable-fortran flag." "$LINENO" 5
++#    fi
++#fi
+ 
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ln -s works" >&5
