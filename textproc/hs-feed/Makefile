@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-feed
-# Date created:        January 10 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	feed
 PORTVERSION=	0.3.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,4 +1,4 @@
 This package provides a straightforward port of monadLib's BaseM type
 class to transformers.
 
-WWW:	https://github.com/mvv/transformers-base
+WWW: https://github.com/mvv/transformers-base

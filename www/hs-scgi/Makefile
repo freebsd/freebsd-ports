@@ -1,15 +1,11 @@
-# New ports collection makefile for: hs-scgi
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 # deprecated: use wai
 
 PORTNAME=	scgi
 PORTVERSION=	0.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,17 +1,11 @@
-# New ports collection makefile for:	hs-mtl
-# Date created:		2010-05-14
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mtl
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Monad transformer library
+COMMENT=	Monad classes, using functional dependencies
 
 LICENSE=	BSD
 

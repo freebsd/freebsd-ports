@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-texmath
-# Date created:        January 10 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	texmath
-PORTVERSION=	0.6.0.6
-PORTREVISION=	1
+PORTVERSION=	0.6.1.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,7 +18,7 @@ OPTIONS_DEFINE=		CGI
 
 CGI_DESC=		Compile CGI executable
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MCGI}
 CONFIGURE_ARGS+=	--flags="cgi"

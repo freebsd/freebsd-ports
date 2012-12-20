@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-base-unicode-symbols
-# Date created:        September 24, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	base-unicode-symbols
-PORTVERSION=	0.2.2.3
-PORTREVISION=	2
+PORTVERSION=	0.2.2.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

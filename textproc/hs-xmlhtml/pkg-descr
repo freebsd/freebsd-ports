@@ -12,4 +12,4 @@ not the HTML 5 node structure, but rather something closer to the physical
 structure. For example, omitted start tags are not inserted (and so, their
 corresponding end tags must also be omitted).
 
-WWW:	http://hackage.haskell.org/package/xmlhtml
+WWW: http://hackage.haskell.org/package/xmlhtml

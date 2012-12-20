@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-Diff
-# Date created:        January 10 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Diff
 PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

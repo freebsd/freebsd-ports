@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-logict
-# Date created:        November 19, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	logict
-PORTVERSION=	0.5.0.1
-PORTREVISION=	1
+PORTVERSION=	0.5.0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

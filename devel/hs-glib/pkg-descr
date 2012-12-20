@@ -3,4 +3,4 @@ for dealing with Unicode. This package only binds as much functionality
 as required to support the packages that wrap libraries that are themselves
 based on GLib.
 
-WWW:	http://projects.haskell.org/gtk2hs/
+WWW: http://projects.haskell.org/gtk2hs/

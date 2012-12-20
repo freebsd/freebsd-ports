@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-hashed-storage
-# Date created:        May 14, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hashed-storage
-PORTVERSION=	0.5.9
-PORTREVISION=	2
+PORTVERSION=	0.5.10
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

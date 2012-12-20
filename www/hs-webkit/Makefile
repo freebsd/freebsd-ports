@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-webkit
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	webkit
 PORTVERSION=	0.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

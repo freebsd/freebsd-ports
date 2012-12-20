@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-gtksourceview2
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gtksourceview2
 PORTVERSION=	0.12.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,11 +1,9 @@
-# New ports collection makefile for: hs-mmap
-# Date created:        July 09 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	mmap
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

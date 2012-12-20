@@ -1,12 +1,8 @@
-# New ports collection makefile for:	zlib
-# Date created:				November 2, 2008
-# Whom:					Samy Al Bahra <sbahra@kerneled.org>
-#
+# Created by: Samy Al Bahra <sbahra@kerneled.org>
 # $FreeBSD$
 
 PORTNAME=	zlib
-PORTVERSION=	0.5.3.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4.0
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

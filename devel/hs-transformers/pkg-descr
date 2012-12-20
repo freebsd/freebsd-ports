@@ -14,4 +14,4 @@ It can be used on its own in portable Haskell code, or with the monad
 classes in the mtl or monads-tf packages, which automatically lift
 operations introduced by monad transformers through other transformers.
 
-WWW:	http://hackage.haskell.org/package/transformers
+WWW: http://hackage.haskell.org/package/transformers

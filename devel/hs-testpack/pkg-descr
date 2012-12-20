@@ -6,4 +6,4 @@ displays of running progress in both HUnit and QuickCheck, additional
 generators for other types for QuickCheck, and shortcuts for quickly
 defining new test cases.
 
-WWW:	http://hackage.haskell.org/cgi-bin/hackage-scripts/package/testpack
+WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/testpack

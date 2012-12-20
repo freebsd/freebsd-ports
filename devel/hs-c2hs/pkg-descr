@@ -1,10 +1,7 @@
-C->Haskell is an interface generator that simplifies the development of Haskell
-bindings to C libraries. The tool processes existing C header files that
-determine data layout and function signatures on the C side in conjunction with
-Haskell modules that specify Haskell-side type signatures and marshaling
-details. Hooks embedded in the Haskell code signal access to C structures and
-functions -- they are expanded by the interfacing tool in dependence on
-information from the corresponding C header file. Another noteworthy property
-is the lightweight nature of the approach.
+C->Haskell assists in the development of Haskell bindings to C libraries.
+It extracts interface information from C header files and generates Haskell
+code with foreign imports and marshaling. Unlike writing foreign imports
+by hand (or using hsch2s), this ensures that C functions are imported with
+the correct Haskell types.
 
 WWW: http://www.cse.unsw.edu.au/~chak/haskell/c2hs/

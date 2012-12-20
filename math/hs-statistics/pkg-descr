@@ -1,19 +1,20 @@
-This Haskell library provides a number of common functions and types
-useful in statistics. Our focus is on high performance, numerical
-robustness, and use of good algorithms. Where possible, we provide
-references to the statistical literature.
+This library provides a number of common functions and types useful in
+statistics.  We focus on high performance, numerical robustness, and use
+of good algorithms.  Where possible, we provide references to the
+statistical literature.
 
-The library's facilities can be divided into three broad categories:
+The library's facilities can be divided into four broad categories:
 
-Working with widely used discrete and continuous probability
-distributions. (There are dozens of exotic distributions in use; we
-focus on the most common.)
+* Working with widely used discrete and continuous probability
+  distributions.  (There are dozens of exotic distributions in use; we
+  focus on the most common.)
 
-Computing with sample data: quantile estimation, kernel density
-estimation, bootstrap methods, and autocorrelation analysis.
+* Computing with sample data: quantile estimation, kernel density
+  estimation, histograms, bootstrap methods, significance testing, and
+  autocorrelation analysis.
 
-Random variate generation under several different distributions.
+* Random variate generation under several different distributions. 
 
-Common statistical tests for significant differences between samples.
+* Common statistical tests for significant differences between samples.
 
-WWW:	http://darcs.serpentine.com/statistics
+WWW: https://github.com/bos/statistics

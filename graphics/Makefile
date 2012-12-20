@@ -346,6 +346,8 @@
     SUBDIR += hppsmtools
     SUBDIR += hs-HGL
     SUBDIR += hs-cairo
+    SUBDIR += hs-dia-base
+    SUBDIR += hs-dia-functions
     SUBDIR += hs-soegtk
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot

@@ -3,4 +3,4 @@ be parameterised by a string-like type like: 'String', 'ByteString', 'Text',
 etc.  Comparisons of values of the resulting type will be insensitive to
 cases.
 
-WWW: http://hackage.haskell.org/package/case-insensitive
+WWW: https://github.com/basvandijk/case-insensitive

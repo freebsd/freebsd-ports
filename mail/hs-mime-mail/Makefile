@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-mime-mail
-# Date created:        December 26, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mime-mail
-PORTVERSION=	0.4.1.1
-PORTREVISION=	2
+PORTVERSION=	0.4.1.2
 CATEGORIES=	mail haskell
 
 MAINTAINER=	haskell@FreeBSD.org

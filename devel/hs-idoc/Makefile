@@ -1,7 +1,4 @@
-# New ports collection makefile for:	idoc
-# Date created:				25 October 2002
-# Whom:					Oliver Braun <obraun@FreeBSD.org>
-#
+# Created by: Oliver Braun <obraun@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	idoc

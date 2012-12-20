@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Stream
-# Date created:				November 26, 2008
-# Whom:					Samy Al Bahra <sbahra@kerneled.org>
-#
+# Created by: Samy Al Bahra <sbahra@kerneled.org>
 # $FreeBSD$
 
 PORTNAME=	Stream
-PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTVERSION=	0.4.6.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

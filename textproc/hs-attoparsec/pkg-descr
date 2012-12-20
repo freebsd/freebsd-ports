@@ -2,4 +2,4 @@ A fast parser combinator library, aimed particularly at dealing
 efficiently with network protocols and complicated text/binary file
 formats.
 
-WWW:	https://github.com/bos/attoparsec
+WWW: https://github.com/bos/attoparsec

@@ -8,4 +8,4 @@ These alternatives are useful for debugging. Note that the foreign option
 does not operate on IORefs and so is directly interchangeable with `Data.CAS`
 and `Data.CAS.Fake` only if the interface in `Data.CAS.Class` is used.
 
-WWW:	http://hackage.haskell.org/package/IORefCAS
+WWW: http://hackage.haskell.org/package/IORefCAS

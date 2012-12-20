@@ -6,4 +6,4 @@ the Classes module. Any concepts or functions of general use to more
 than one cryptographic algorithm (ex: padding) is within scope of this
 package.
 
-WWW:	http://trac.haskell.org/crypto-api/wiki
+WWW: http://trac.haskell.org/crypto-api/wiki

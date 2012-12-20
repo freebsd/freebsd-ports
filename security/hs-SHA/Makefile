@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-SHA
-# Date created:        January 8, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	SHA
-PORTVERSION=	1.5.0.1
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -21,7 +15,7 @@ OPTIONS_DEFINE=		EXE
 
 EXE_DESC=		Build a SHA2-384 executable similar to 'md5sum'
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 CONFIGURE_ARGS+=	--flags="-Test"
 

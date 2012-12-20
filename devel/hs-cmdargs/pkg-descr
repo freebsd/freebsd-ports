@@ -2,4 +2,16 @@ This library provides an easy way to define command line parsers. Most users
 will want to use the "System.Console.CmdArgs.Implicit" module, whose
 documentation contains an example.
 
-WWW:	http://community.haskell.org/~ndm/cmdargs/
+ * System.Console.CmdArgs.Explicit provides a way to write command line
+   parsers for both single mode programs (most programs) and multiple mode
+   programs (e.g. darcs or cabal). Parsers are defined by constructing a
+   data structure.
+
+ * System.Console.CmdArgs.Implicit provides a way to concisely define
+   command line parsers, up to three times shorter than getopt. These
+   parsers are translated into the Explicit data type.
+
+ * System.Console.CmdArgs.GetOpt provides a wrapper allowing compatiblity
+   with existing getopt parsers, mapping to the Explicit data type.
+
+WWW: http://community.haskell.org/~ndm/cmdargs/

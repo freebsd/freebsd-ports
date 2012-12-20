@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+export CC=%%CC%%
+export CPP=%%CPP%%
+export LD=%%LD%%
+export AR=%%AR%%
+export RANLIB=%%RANLIB%%
+
+%%PREFIX%%/bin/cabal-install $*

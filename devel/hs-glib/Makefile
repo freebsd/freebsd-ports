@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-glib
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	glib
-PORTVERSION=	0.12.3.1
-PORTREVISION=	1
+PORTVERSION=	0.12.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +11,7 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
+
 USE_CABAL=	gtk2hs-buildtools
 USE_GNOME=	glib20
 

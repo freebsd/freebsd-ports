@@ -3,4 +3,4 @@ devices to be lazily loaded into memory as strict or lazy ByteStrings,
 ForeignPtrs or plain Ptrs, using the virtual memory subsystem to do on-demand
 loading. Modifications are also supported.
 
-WWW:	http://hackage.haskell.org/packages/archive/mmap
+WWW: http://hackage.haskell.org/packages/archive/mmap

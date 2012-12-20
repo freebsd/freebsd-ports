@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-yesod-routes
-# Date created:        April 8, 2012
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yesod-routes
-PORTVERSION=	1.0.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.1.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

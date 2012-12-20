@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-checkers
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	checkers
 PORTVERSION=	0.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

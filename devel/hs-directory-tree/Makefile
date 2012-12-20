@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-directory-tree
-# Date created:        September 19, 2010
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	directory-tree
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

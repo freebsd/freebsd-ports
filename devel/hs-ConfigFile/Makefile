@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-ConfigFile
-# Date created:        December 2, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ConfigFile
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

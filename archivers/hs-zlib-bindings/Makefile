@@ -1,12 +1,7 @@
-# New ports collection makefile for:	hs-zlib-bindings
-# Date created:				October 18, 2011
-# Whom:					haskell@FreeBSD.org
-#
 # $FreeBSD$
 
 PORTNAME=	zlib-bindings
-PORTVERSION=	0.1.0.1
-PORTREVISION=	1
+PORTVERSION=	0.1.1.2
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

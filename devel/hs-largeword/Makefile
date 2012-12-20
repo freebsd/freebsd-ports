@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-largeword
-# Date created:        July 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	largeword
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

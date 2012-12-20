@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-epic
-# Date created:        December 2, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	epic
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org

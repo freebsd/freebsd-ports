@@ -1,4 +1,4 @@
 An efficient packed, immutable Unicode text type (both strict and lazy), with a
 powerful loop fusion optimization framework.
 
-WWW: http://code.haskell.org/text
+WWW: https://github.com/bos/text

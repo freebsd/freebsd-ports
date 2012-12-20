@@ -1,12 +1,9 @@
-# New ports collection makefile for:	xmobar
-# Date created:				November 7, 2008
-# Whom:					Samy Al Bahra <sbahra@kerneled.org>
-#
+# Created by: Samy Al Bahra <sbahra@kerneled.org>
 # $FreeBSD$
 
 PORTNAME=	xmobar
 PORTVERSION=	0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -29,7 +26,7 @@ XFT_DESC=		Use Xft to render text (UTF-8 support included)
 UTF8_DESC=		UTF-8 support
 MPD_DESC=		mpd support
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 # Disable Linux-only options
 CONFIGURE_ARGS+=	--flags="-with_inotify -with_iwlib"

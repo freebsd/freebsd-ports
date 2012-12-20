@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-threadscope
-# Date created:        December 6, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	threadscope
-PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTVERSION=	0.2.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +11,7 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	cairo ghc-events>=0.3 glib gtk>=0.12 gtk2hs-buildtools mtl \
+USE_CABAL=	cairo ghc-events>=0.4.2 glib gtk>=0.12 gtk2hs-buildtools mtl \
 		pango
 
 EXECUTABLE=	threadscope

@@ -1,12 +1,7 @@
-# New ports collection makefile for:	hs-zlib-enum
-# Date created:				October 18, 2011
-# Whom:					haskell@FreeBSD.org
-#
 # $FreeBSD$
 
 PORTNAME=	zlib-enum
-PORTVERSION=	0.2.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

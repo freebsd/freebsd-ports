@@ -10,4 +10,4 @@ sequence quality. Also Blast output parsing. Partly implemented single
 linkage clustering, and multiple alignment. Reading Gene Ontology (GO)
 annotations (GOA) and definitions hierarchy.
 
-WWW:	http://biohaskell.org/Libraries/Bio
+WWW: http://biohaskell.org/Libraries/Bio

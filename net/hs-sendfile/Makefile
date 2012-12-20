@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-sendfile
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sendfile
-PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTVERSION=	0.7.8
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

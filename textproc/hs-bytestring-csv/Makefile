@@ -1,12 +1,9 @@
-# New ports collection makefile for:	bytestring-csv
-# Date created:				November 25, 2008
-# Whom:					Samy Al Bahra <sbahra@kerneled.org>
-#
+# Created by: Samy Al Bahra <sbahra@kerneled.org>
 # $FreeBSD$
 
 PORTNAME=	bytestring-csv
 PORTVERSION=	0.1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

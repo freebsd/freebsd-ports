@@ -1,12 +1,9 @@
-# New ports collection makefile for: hs-readline
-# Date created:        July 09 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	readline
 PORTVERSION=	1.0.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

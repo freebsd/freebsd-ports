@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-monad-control
-# Date created:        September 24, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	monad-control
-PORTVERSION=	0.3.1.3
-PORTREVISION=	1
+PORTVERSION=	0.3.1.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

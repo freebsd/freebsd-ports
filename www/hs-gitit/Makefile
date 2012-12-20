@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-gitit
-# Date created:        December 2, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gitit
-PORTVERSION=	0.10.0.1
+PORTVERSION=	0.10.0.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

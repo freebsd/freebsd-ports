@@ -5,4 +5,4 @@ Language, Standard ECMA-262 3rd Edition - December 1999. This library
 provides a parser and pretty printer for converting between Haskell values
 and JSON.
 
-WWW:	http://hackage.haskell.org/package/json
+WWW: http://hackage.haskell.org/package/json

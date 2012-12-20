@@ -1,4 +1,4 @@
 The GLUT package contains a Haskell binding for the OpenGL Utility Toolkit, a
 window system independent toolkit for writing OpenGL programs.
 
-WWW:	http://www.haskell.org/HOpenGL/
+WWW: http://www.haskell.org/HOpenGL/

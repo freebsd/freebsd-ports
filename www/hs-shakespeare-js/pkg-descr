@@ -8,4 +8,4 @@ language that compiles down to javascript. It expects a coffeescript
 compiler in your path, and variable should be a ToCoffee instance. And
 we even have a Roy template for the adventorous FP addicts.
 
-WWW:	http://www.yesodweb.com/book/shakespearean-templates
+WWW: http://www.yesodweb.com/book/shakespearean-templates

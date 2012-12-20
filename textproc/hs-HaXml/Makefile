@@ -1,11 +1,9 @@
-# New ports collection makefile for:	HaXml
-# Date created:				01 June 2002
-# Whom:					Oliver Braun <obraun@informatik.unibw-muenchen.de>
-#
+# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
 # $FreeBSD$
 
 PORTNAME=	HaXml
 PORTVERSION=	1.23.3
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

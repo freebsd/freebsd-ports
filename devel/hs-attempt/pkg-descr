@@ -1,4 +1,4 @@
 Defines a data type, Attempt, which has a Success and Failure
 constructor.  Failure contains an extensible exception.
 
-WWW:	http://github.com/snoyberg/attempt/tree/master
+WWW: http://github.com/snoyberg/attempt/tree/master

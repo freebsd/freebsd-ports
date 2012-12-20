@@ -1,13 +1,8 @@
-# New ports collection makefile for:	hs-x11-xft-ghc
-# Date created:		2008-10-21
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	X11-xft
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org

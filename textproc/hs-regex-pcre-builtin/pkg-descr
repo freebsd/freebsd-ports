@@ -1,3 +1,4 @@
-The PCRE backend to accompany regex-base, see <http://www.pcre.org>.
+The PCRE backend to accompany regex-base, with bundled code from
+<http://www.pcre.org>.
 
-WWW: http://sourceforge.net/projects/lazy-regex
+WWW: http://hackage.haskell.org/package/regex-pcre

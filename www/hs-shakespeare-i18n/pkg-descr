@@ -2,4 +2,4 @@ This package uses the same approach of type-safe URLs to create
 translated content.  It has a simple syntax for translators, while
 allowing the full power of Haskell for applying complex grammar rules.
 
-WWW:	http://www.yesodweb.com/book/shakespearean-templates
+WWW: http://www.yesodweb.com/book/shakespearean-templates

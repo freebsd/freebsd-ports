@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-xml-types
-# Date created:        December 26, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xml-types
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

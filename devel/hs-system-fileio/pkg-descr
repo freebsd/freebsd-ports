@@ -5,4 +5,4 @@ versions of GHC.  In particular, this library supports working with
 POSIX files that have paths which can't be decoded in the current locale
 encoding.
 
-WWW:	https://john-millikin.com/software/haskell-filesystem/
+WWW: https://john-millikin.com/software/haskell-filesystem/

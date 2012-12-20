@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-blaze-html
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	blaze-html
-PORTVERSION=	0.5.0.0
+PORTVERSION=	0.5.1.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-stm
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	stm
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

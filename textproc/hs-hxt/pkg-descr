@@ -9,4 +9,4 @@ defined data. The library make extensive use of the arrow approach for
 processing XML. Since version 8.5 XPath and XSLT have been moved to
 separate packages hxt-xpath and hxt-xslt.
 
-WWW:	http://www.fh-wedel.de/~si/HXmlToolbox/index.html
+WWW: http://www.fh-wedel.de/~si/HXmlToolbox/index.html

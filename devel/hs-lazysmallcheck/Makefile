@@ -1,13 +1,8 @@
-# New ports collection makefile for:	hs-lazysmallcheck-ghc
-# Date created:				March 11, 2009
-# Whom:					Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lazysmallcheck
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

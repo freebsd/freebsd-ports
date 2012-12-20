@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-attoparsec-enumerator
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	attoparsec-enumerator
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

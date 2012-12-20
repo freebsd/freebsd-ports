@@ -7,4 +7,4 @@ It provides a convenient high level API suitable for most tasks and for
 the few cases where more control is needed it provides access to the
 full zlib feature set.
 
-WWW:	http://code.haskell.org/zlib/
+WWW: http://hackage.haskell.org/package/zlib

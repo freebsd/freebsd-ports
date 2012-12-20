@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-datetime
-# Date created:        December 10 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	datetime
 PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,4 +1,4 @@
 Haskell MemoTrie provides a basis for memoized functions over some
 domains, using tries. It is based on some code got from Spencer Janssen.
 
-WWW:	http://haskell.org/haskellwiki/MemoTrie
+WWW: http://haskell.org/haskellwiki/MemoTrie

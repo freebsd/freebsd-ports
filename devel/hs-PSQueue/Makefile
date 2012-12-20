@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-PSQueue
-# Date created:        September 20, 2010
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	PSQueue
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,4 +2,4 @@ SmallCheck is a testing library that allows to verify properties for all
 test cases up to some depth. The test cases are generated automatically
 by SmallCheck.
 
-WWW:	https://github.com/feuerbach/smallcheck
+WWW: https://github.com/feuerbach/smallcheck

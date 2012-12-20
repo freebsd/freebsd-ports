@@ -11,4 +11,4 @@ described above. Convertible is also used by HDBC 2.0 for handling
 marshalling of data to and from databases. Convertible is backed by an
 extensive test suite and passes tests on GHC and Hugs.
 
-WWW:	http://hackage.haskell.org/cgi-bin/hackage-scripts/package/convertible
+WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/convertible

@@ -1,13 +1,8 @@
-# New ports collection makefile for:   gtk2hs
-# Date created:        03 June 2002
-# Whom:                Oliver Braun <obraun@FreeBSD.org>
-#
+# Created by: Oliver Braun <obraun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.12.2
-PORTREVISION=	2
+PORTVERSION=	0.12.4
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
@@ -29,7 +24,7 @@ VTE_DESC=		Terminal emulator
 WEBKIT_DESC=		WebKit rendering engine
 SOEGTK_DESC=		Examples for Haskell SoE
 
-.include <bsd.port.options.mk>
+.include "../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MGCONF}
 USE_CABAL+=		gconf

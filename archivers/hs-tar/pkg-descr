@@ -5,4 +5,4 @@ unpacking portable archives. This makes it suitable for distribution
 but not backup because details like file ownership and exact
 permissions are not preserved.
 
-WWW:	http://hackage.haskell.org/package/tar
+WWW: http://hackage.haskell.org/package/tar

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	hs-ranges
-# Date created:		December 26, 2011
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ranges
 PORTVERSION=	0.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

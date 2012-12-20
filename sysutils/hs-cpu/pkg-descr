@@ -1,4 +1,4 @@
 Lowlevel cpu routines to get basic properties of the cpu platform, like
 endianness and architecture.
 
-WWW:	http://github.com/vincenthz/hs-cpu
+WWW: http://github.com/vincenthz/hs-cpu

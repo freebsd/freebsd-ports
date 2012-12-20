@@ -1,0 +1,4 @@
+This package uses template-haskell for determining source code locations
+of messages.
+
+WWW: https://github.com/kazu-yamamoto/logger

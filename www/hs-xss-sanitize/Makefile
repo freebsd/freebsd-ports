@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-xss-sanitize
-# Date created:        December 2, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xss-sanitize
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

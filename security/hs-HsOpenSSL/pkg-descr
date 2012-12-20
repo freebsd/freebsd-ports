@@ -8,4 +8,4 @@ saner than HsOpenSSL especially for initialisation and error handlings.
 So PHO (the initial author of HsOpenSSL) highly encourages you to use
 and improve the tls package instead as long as possible.
 
-WWW:	https://github.com/phonohawk/HsOpenSSL
+WWW: https://github.com/phonohawk/HsOpenSSL

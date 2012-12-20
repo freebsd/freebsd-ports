@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-hxt-regex-xmlschema
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hxt-regex-xmlschema
 PORTVERSION=	9.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

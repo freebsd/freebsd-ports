@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-hjsmin
-# Date created:        June 10, 2012
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hjsmin
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.1.3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-libxml
-# Date created:        May 22, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libxml
 PORTVERSION=	0.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-fastcgi
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fastcgi
 PORTVERSION=	3001.0.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

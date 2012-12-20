@@ -1,13 +1,8 @@
-# New ports collection makefile for:	hs-utf8-string-ghc
-# Date created:		2008-10-21
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	utf8-string
 PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

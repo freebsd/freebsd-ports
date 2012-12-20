@@ -1,4 +1,4 @@
 This library provides just the general interface and helper functions.
 You must use a specific backend in order to make this useful.
 
-WWW:	http://www.yesodweb.com/book/persistent
+WWW: http://www.yesodweb.com/book/persistent

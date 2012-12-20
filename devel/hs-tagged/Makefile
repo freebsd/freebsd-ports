@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-tagged
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tagged
-PORTVERSION=	0.4.2.1
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

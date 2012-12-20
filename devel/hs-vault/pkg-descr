@@ -4,4 +4,4 @@ data structure is analogous to a bank vault, where you can access different
 bank boxes with different keys; hence the name. Also provided is a "locker"
 type, representing a store for a single element.
 
-WWW:	https://github.com/HeinrichApfelmus/vault
+WWW: https://github.com/HeinrichApfelmus/vault

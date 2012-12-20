@@ -5,4 +5,4 @@ over raw POSIX calls. Among other things that means using GObject. It also
 means not cloning the POSIX API, but providing higher-level, document-centric
 interfaces.
 
-WWW:	http://projects.haskell.org/gtk2hs/
+WWW: http://projects.haskell.org/gtk2hs/

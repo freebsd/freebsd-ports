@@ -4,4 +4,4 @@ errors with a user-handleable Either type. Similar to binary in
 performance, but uses a strict ByteString instead of a lazy
 ByteString, thus restricting it to operating on finite inputs.
 
-WWW:	http://hackage.haskell.org/package/cereal
+WWW: http://hackage.haskell.org/package/cereal

@@ -5,4 +5,4 @@ split off, so that other packages can use them without drawing in all of
 pandoc's dependencies, and pandoc itself can depend on packages (like
 citeproc-hs) that use them.
 
-WWW:	http://johnmacfarlane.net/pandoc
+WWW: http://johnmacfarlane.net/pandoc

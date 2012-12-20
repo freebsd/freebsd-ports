@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-system-fileio
-# Date created:        June 10, 2012
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	system-fileio
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.10
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

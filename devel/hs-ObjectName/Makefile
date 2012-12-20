@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-ObjectName
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ObjectName
 PORTVERSION=	1.0.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

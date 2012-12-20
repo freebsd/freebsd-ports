@@ -1,12 +1,8 @@
-# New ports collection makefile for:	cpphs
-# Date created:		14 June 2004
-# Whom:			obraun@FreeBSD.org
-#
+# Created by: obraun@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cpphs
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,7 @@
-# New ports collection makefile for:	zip-archive
-# Date created:				December 15, 2008
-# Whom:					Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zip-archive
-PORTVERSION=	0.1.1.8
-PORTREVISION=	1
+PORTVERSION=	0.1.2.1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -21,7 +15,7 @@ OPTIONS_DEFINE=		EXECUTABLE
 
 EXECUTABLE_DESC=	Build the Zip executable
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEXECUTABLE}
 CONFIGURE_ARGS+=	--flags="executable"

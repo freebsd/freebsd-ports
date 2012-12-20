@@ -3,4 +3,4 @@ store, and modules that instantiate this interface. Currently Git, Darcs,
 and Mercurial modules are provided, and other VCSs or databases could be
 added.
 
-WWW:	http://johnmacfarlane.net/repos/filestore
+WWW: http://johnmacfarlane.net/repos/filestore

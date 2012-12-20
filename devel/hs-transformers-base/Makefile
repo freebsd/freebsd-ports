@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-transformers-base
-# Date created:        December 2, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	transformers-base
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

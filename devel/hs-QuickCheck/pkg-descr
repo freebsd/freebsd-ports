@@ -9,4 +9,4 @@ the QuickCheck library.  QuickCheck provides combinators to define
 properties, observe the distribution of test data, and define test data
 generators.
 
-WWW:	http://code.haskell.org/QuickCheck
+WWW: http://code.haskell.org/QuickCheck

@@ -1,4 +1,4 @@
 The modules below provide additional data structures, and other added
 capabilities layered on top of the Par monad.
 
-WWW:	https://github.com/simonmar/monad-par
+WWW: https://github.com/simonmar/monad-par

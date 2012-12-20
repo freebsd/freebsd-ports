@@ -1,12 +1,8 @@
-# New ports collection makefile for: hs-split
-# Date created:        January 10 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	split
-PORTVERSION=	0.1.4.3
+PORTVERSION=	0.2.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

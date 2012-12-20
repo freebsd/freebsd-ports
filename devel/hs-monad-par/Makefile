@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-monad-par
-# Date created:        July 30, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	monad-par
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
