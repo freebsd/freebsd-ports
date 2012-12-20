@@ -592,6 +592,7 @@
     SUBDIR += okular
     SUBDIR += openclipart
     SUBDIR += opencolorio
+    SUBDIR += opencolorio-tools
     SUBDIR += opencsg
     SUBDIR += opencv
     SUBDIR += opencv-core
