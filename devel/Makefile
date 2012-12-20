@@ -998,6 +998,7 @@
     SUBDIR += liblas
     SUBDIR += liblcfg
     SUBDIR += libleaftag
+    SUBDIR += liblnk
     SUBDIR += liblogging
     SUBDIR += liblouis
     SUBDIR += liblouisxml
