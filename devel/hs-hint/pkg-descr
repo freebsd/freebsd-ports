@@ -3,4 +3,4 @@ modules, browse them, type-check and evaluate strings with Haskell
 expressions and even coerce them into values. The library is thread-safe
 and type-safe (even the coercion of expressions to values).
 
-WWW:	http://darcsden.com/jcpetruzza/hint
+WWW: http://darcsden.com/jcpetruzza/hint

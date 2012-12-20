@@ -3,4 +3,4 @@ to presentation MathML (which can be used in HTML) or OMML (Office Math
 Markup Language, used in Microsoft Office). It supports basic LaTeX and
 AMS extensions, and it can parse and apply LaTeX macros.
 
-WWW:	http://github.com/jgm/texmath
+WWW: http://github.com/jgm/texmath

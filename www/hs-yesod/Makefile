@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-yesod
-# Date created:        December 26, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yesod
-PORTVERSION=	1.0.1.6
-PORTREVISION=	1
+PORTVERSION=	1.1.4.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,16 +9,23 @@ COMMENT=	Creation of type-safe, RESTful web applications
 
 LICENSE=	MIT
 
-USE_CABAL=	attoparsec>=0.10 blaze-builder>=0.2.1.4 blaze-html>=0.5 \
-		blaze-markup>=0.5.1 fast-logger>=0.0.2 hamlet>=1.0 \
-		http-types>=0.6.1 monad-control>=0.3 parsec>=2.1 \
-		shakespeare-css>=1.0 shakespeare-js>=1.0 shakespeare-text>=1.0 \
-		text>=0.11 transformers>=0.2.2 unix-compat>=0.2 wai>=1.2 \
-		wai-extra>=1.2 wai-logger>=0.1.2 warp>=1.2 yesod-auth>=1.0 \
-		yesod-core>=1.0 yesod-form>=1.0 yesod-json>=1.0 \
-		yesod-persistent>=1.0
+USE_CABAL=	attoparsec>=0.10 base64-bytestring blaze-builder>=0.2.1.4 \
+		blaze-html>=0.5 blaze-markup>=0.5.1 conduit>=0.5.1 file-embed \
+		fsnotify>=0.0 ghc-paths>=0.1 hamlet>=1.1 http-conduit \
+		http-reverse-proxy>=0.1.0.4 http-types>=0.7 lifted-base \
+		monad-control>=0.3 network optparse-applicative>=0.4 \
+		parsec>=2.1 project-template>=0.1 resourcet>=0.3 \
+		shakespeare>=1.0.2 shakespeare-css>=1.0.2 \
+		shakespeare-js>=1.0.2 shakespeare-text>=1.0 split>=0.2 \
+		system-fileio>=0.3 system-filepath>=0.4 tar>=0.4 text>=0.11 \
+		transformers>=0.2.2 unix-compat>=0.2 unordered-containers \
+		wai>=1.3 wai-extra>=1.3 warp>=1.3 yaml>=0.8 yesod-auth>=1.1 \
+		yesod-core>=1.1.5 yesod-default>=1.1.1.1 yesod-form>=1.1 \
+		yesod-json>=1.1 yesod-persistent>=1.1 zlib>=0.5
 
-EXECUTABLE=	yesod
+EXECUTABLE=	yesod yesod-ar-wrapper yesod-ghc-wrapper yesod-ld-wrapper
+
+IGNORE_DYNAMIC=	yes
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	happy
-# Date created:				22 December 2000
-# Whom:					Simon Marlow <simonmar@microsoft.com>
-#
+# Created by: Simon Marlow <simonmar@microsoft.com>
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.18.9
-PORTREVISION=	1
+PORTVERSION=	1.18.10
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,13 +18,7 @@ USE_AUTOTOOLS=	autoconf:env
 STANDALONE=	yes
 EXECUTABLE=	happy
 
-USE_PERL5_BUILD=	yes
-
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-
-.if defined(SLAVE)
-GHC_CMD=	ghc
-.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

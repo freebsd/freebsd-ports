@@ -9,4 +9,4 @@ same git repository with regularly versioned files, which is convenient
 for maintaining documents, Makefiles, etc that are associated with annexed
 files but that benefit from full revision control.
 
-WWW:	http://git-annex.branchable.com/
+WWW: http://git-annex.branchable.com/

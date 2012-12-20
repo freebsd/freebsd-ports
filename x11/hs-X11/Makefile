@@ -1,12 +1,9 @@
-# New ports collection makefile for:	hs-x11-ghc
-# Date created:				2007-09-03
-# Whom:					Volker Stolz <vs@FreeBSD.org>
-#
+# Created by: Volker Stolz <vs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	X11
 PORTVERSION=	1.5.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,7 +20,7 @@ OPTIONS_DEFAULT=	XINERAMA
 
 XINERAMA_DESC=		Build with Xinerama support
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=		xinerama

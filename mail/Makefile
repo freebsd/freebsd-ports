@@ -193,6 +193,7 @@
     SUBDIR += hs-email-validate
     SUBDIR += hs-mime
     SUBDIR += hs-mime-mail
+    SUBDIR += hs-mime-types
     SUBDIR += ifile
     SUBDIR += ilohamail
     SUBDIR += ilohamail-devel

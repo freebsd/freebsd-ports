@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-blaze-builder
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	blaze-builder
 PORTVERSION=	0.3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-MonadCatchIO-transformers
-# Date created:        September 19, 2010
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MonadCatchIO-transformers
 PORTVERSION=	0.3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,11 +1,8 @@
-# New ports collection makefile for:	ghc
-# Date created:				28 August 1999
-# Whom:					Simon Marlow <simonmar@microsoft.com>
-#
+# Created by: Simon Marlow <simonmar@microsoft.com>
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	7.4.1
+PORTVERSION=	7.4.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -17,9 +14,9 @@ COMMENT=	A Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-GHC_VERSION=	${PORTVERSION}
+GHC_VERSION=		${PORTVERSION}
 BOOT_GHC_VERSION=	7.4.1
-HSCOLOUR_VERSION=	1.19
+HSCOLOUR_VERSION=	1.20.2
 
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
@@ -27,12 +24,13 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.*
 
 USE_BZIP2=	yes
-USE_GCC=	any
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_PERL5_BUILD=	yes
-USE_GMAKE=	yes
-USE_ICONV=	yes
+USE_GMAKE=		yes
+USE_ICONV=		yes
+USE_BINUTILS=		yes
+USE_GCC=		4.6
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -49,11 +47,27 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=		PROFILE DYNAMIC DOCS
 OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS
 
+BOOT_DESC=		Use installed GHC for bootstrapping
+BOOTH_DESC=		Use installed HsColour for bootstrapping
 PROFILE_DESC=		Add support for performance profiling
 DYNAMIC_DESC=		Add support for dynamic linking
 DOCS_DESC=		Install HTML documentation
 
+LOCALBASE?=	/usr/local
+
+.if exists(${LOCALBASE}/bin/ghc)
+OPTIONS_DEFINE+=	BOOT
+.endif
+
+.if exists(${LOCALBASE}/bin/HsColour)
+OPTIONS_DEFINE+=	BOOTH
+.endif
+
 .include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MBOOT)
+
+EXTRA_PATCHES=		${PATCHDIR}/nopatch-.._ghc-${BOOT_GHC_VERSION}-boot_rts_package.conf.in
 
 .if ${ARCH} == "i386"
 
@@ -81,27 +95,42 @@ IGNORE=		unsupported
 
 .endif
 
+.endif # MBOOT
+
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 GHC_LIBDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}
 GHC_LIBDIR_REL=	lib/ghc-${GHC_VERSION}
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
 
-# This port builds by downloading a minimal binary distribution of GHC and
-# using that to bootstrap.
-BOOT_DIR=	${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
-BOOT_GHC=	${BOOT_DIR}/bin/ghc-${BOOT_GHC_VERSION}
-BOOT_GHC-PKG=	${BOOT_DIR}/bin/ghc-pkg-${BOOT_GHC_VERSION}
-BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 HACKAGE_SITE?=		http://hackage.haskell.org/
 HACKAGE_ARCH?=		packages/archive/
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} CC=${CC}
-CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC} --with-gcc=${CC} \
+CONFIGURE_ARGS=		--with-gcc=${CC} \
 			--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
+
+.if empty(PORT_OPTIONS:MBOOT)
+
+BOOT_DIR=	${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
+BOOT_GHC=	${BOOT_DIR}/bin/ghc-${BOOT_GHC_VERSION}
+BOOT_GHC-PKG=	${BOOT_DIR}/bin/ghc-pkg-${BOOT_GHC_VERSION}
+BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
+
+SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
+
+CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} CC=${CC}
+CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
+
+.else # MBOOT
+
+SLAVE_CMD=	# empty
+
+CONFIGURE_ARGS+=	--with-ghc=${LOCALBASE}/bin/ghc
+
+.endif # MBOOT
 
 # libgmp:
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -117,22 +146,30 @@ MAKE_ENV+=	TMPDIR=${TMPDIR}
 # activated. In this way it's possible to use it directly into
 # the build tree, without needing to install it. At the end
 # you could view the output of: ${BOOT_GHC} describe hscolour
+
 .if ${PORT_OPTIONS:MDOCS}
+
+.if empty(PORT_OPTIONS:MBOOTH)
 
 MASTER_SITES+=	${HACKAGE_SITE}${HACKAGE_ARCH}hscolour/${HSCOLOUR_VERSION}/:docs
 DISTFILES+=	hscolour-${HSCOLOUR_VERSION}.tar.gz:docs
 
 EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g}
 
+.endif # MBOOTH
+
 MAN1=		ghc.1
+
+.if empty(PORT_OPTIONS:MBOOTH)
 
 SLAVES_PREFIX=		${WRKDIR}/slaves_prefix
 SLAVES_WRKDIRPREFIX=	${WRKDIR}/slaves_wrkdirprefix
-SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
 MAKE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
 MAKE_ENV+=	LC_ALL=en_US.UTF-8
 CONFIGURE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
+
+.endif # MBOOTH
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
@@ -159,7 +196,11 @@ post-extract:
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "HADDOCK_DOCS ="
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "HSCOLOUR_SRCS ="
 .endif
+.if ${PORT_OPTIONS:MBOOT}
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "BSD_PATH_TO_HSC2HS = ${LOCALBASE}/bin/hsc2hs"
+.else
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "BSD_PATH_TO_HSC2HS = ${BOOT_HSC2HS}"
+.endif
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_HC_OPTS += -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_CC_OPTS += ${CFLAGS}"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_HSC2HS_OPTS += -I${LOCALBASE}/include --lflag=-L${LOCALBASE}/lib"
@@ -205,23 +246,31 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+\(DO_NOT_INSTALL =\)+\1 haddock+' \
 		${WRKSRC}/utils/Makefile
 
+.if ${PORT_OPTIONS:MBOOT}
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/rts/package.conf.in \
+		${WRKSRC}/libraries/Makefile
+.else
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/../ghc-${BOOT_GHC_VERSION}-boot/rts/package.conf.in \
 		${WRKSRC}/rts/package.conf.in \
 		${WRKSRC}/libraries/Makefile
+.endif
 
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 
 pre-configure:
 	@${MKDIR} ${TMPDIR}
+.if empty(PORT_OPTIONS:MBOOT)
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT})
 	@(cd ${BOOT_DIR} && PACKAGES='' ${GMAKE} install)
+.endif
 
 # Defining with documentation:
 # Defining "SLAVE" in devel/hs-haddock and print/hs-hscolour flips the building process
 # functionally to this port.
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS} && empty(PORT_OPTIONS:MBOOTH)
 	@${ECHO_MSG} -e "\a"
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG} "  WARNING: Now HsColour will be built, the respective port will not   "

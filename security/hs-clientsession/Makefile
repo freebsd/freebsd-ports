@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-clientsession
-# Date created:        November 19, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	clientsession
-PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTVERSION=	0.8.0.1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

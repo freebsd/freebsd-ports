@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-ansi-terminal
-# Date created:        May 21, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ansi-terminal
 PORTVERSION=	0.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-skein
-# Date created:        November 19, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	skein
-PORTVERSION=	0.1.0.7
-PORTREVISION=	1
+PORTVERSION=	0.1.0.10
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

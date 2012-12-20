@@ -2,4 +2,4 @@ This package uses attoparsec for parsing the actual contents of the HTTP
 connection.  It also provides higher-level functions which allow you to
 avoid direct usage of conduits.
 
-WWW:	http://www.yesodweb.com/book/http-conduit
+WWW: http://www.yesodweb.com/book/http-conduit

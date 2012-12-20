@@ -7,4 +7,4 @@ is an interface module only. It provides a number of type clasess, but
 not an implementation. The type classes separate different levels of Par
 functionality.
 
-WWW:	https://github.com/simonmar/monad-par
+WWW: https://github.com/simonmar/monad-par

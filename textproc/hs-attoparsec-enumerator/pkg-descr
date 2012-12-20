@@ -2,4 +2,4 @@ This library allows an Attoparsec parser to receive input incrementally from
 an enumerator.  This could be used for parsing large files, or implementing
 binary network protocols.
 
-WWW:	http://john-millikin.com/software/attoparsec-enumerator/
+WWW: http://john-millikin.com/software/attoparsec-enumerator/

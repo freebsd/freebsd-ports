@@ -1,20 +1,18 @@
---- ./Setup.hs.orig	2012-05-13 05:04:40.000000000 +0200
-+++ ./Setup.hs	2012-05-15 16:22:31.000000000 +0200
-@@ -7,7 +7,7 @@
+--- ./Setup.hs.orig	2012-10-21 23:06:41.000000000 +0200
++++ ./Setup.hs	2012-10-23 18:33:48.000000000 +0200
+@@ -6,7 +6,7 @@
+ import Distribution.Simple.LocalBuildInfo
           (LocalBuildInfo(..), absoluteInstallDirs)
  import Distribution.Verbosity ( Verbosity, silent )
- import Distribution.Simple.GHC (ghcPackageDbOptions)
--import Distribution.Simple.InstallDirs (mandir, bindir, CopyDest (NoCopyDest))
-+import Distribution.Simple.InstallDirs (prefix, bindir, CopyDest (NoCopyDest))
+-import Distribution.Simple.InstallDirs (mandir, CopyDest (NoCopyDest))
++import Distribution.Simple.InstallDirs (prefix, CopyDest (NoCopyDest))
  import Distribution.Simple.Utils (installOrdinaryFiles)
- import Control.Exception ( bracket_ )
- import Control.Monad ( unless )
-@@ -86,7 +86,7 @@
+ import Prelude hiding (catch)
+ import System.Process ( rawSystem )
+@@ -49,5 +49,5 @@
  installManpages :: PackageDescription -> LocalBuildInfo
                  -> Verbosity -> CopyDest -> IO ()
  installManpages pkg lbi verbosity copy =
 -  installOrdinaryFiles verbosity (mandir (absoluteInstallDirs pkg lbi copy))
 +  installOrdinaryFiles verbosity (prefix (absoluteInstallDirs pkg lbi copy) </> manDir)
               (zip (repeat manDir) manpages)
- 
- -- | Returns a list of 'dependencies' that have been modified after 'file'.

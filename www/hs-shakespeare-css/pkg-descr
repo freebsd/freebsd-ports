@@ -8,4 +8,4 @@ need for closing brackets and semi-colons. Lucius does not care about
 whitespace and is a strict superset of css. There are also some
 significant conveniences added for css.
 
-WWW:	http://www.yesodweb.com/book/shakespearean-templates
+WWW: http://www.yesodweb.com/book/shakespearean-templates

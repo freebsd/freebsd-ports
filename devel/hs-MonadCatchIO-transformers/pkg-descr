@@ -4,4 +4,4 @@ transformers (from the 'transformers' package) with IO as the base monad.
 You can extend this functionality to other monads, by creating an instance
 of the MonadCatchIO class.
 
-WWW:	http://hackage.haskell.org/package/MonadCatchIO-transformers
+WWW: http://hackage.haskell.org/package/MonadCatchIO-transformers

@@ -6,4 +6,4 @@ Haskell programs.  Using Threadscope we can check to see that work is
 well balanced across the available processors and spot performance
 issues relating to garbage collection or poor load balancing.
 
-WWW:	http://hackage.haskell.org/package/threadscope
+WWW: http://www.haskell.org/haskellwiki/ThreadScope

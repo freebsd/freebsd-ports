@@ -1,0 +1,5 @@
+Cross platform library for file creation, modification, and deletion
+notification. This library builds upon existing libraries for platform-specific
+Window, Mac, and Linux filesystem event notification.
+
+WWW: http://hackage.haskell.org/package/fsnotify

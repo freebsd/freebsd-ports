@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-FileManip
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	filemanip
-PORTVERSION=	0.3.5.2
-PORTREVISION=	6
+PORTVERSION=	0.3.6.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

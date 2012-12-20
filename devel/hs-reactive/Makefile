@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-reactive
-# Date created:        January 07 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	reactive
 PORTVERSION=	0.11.5
-PORTREVISION=	6
+PORTREVISION=	7
 
 CATEGORIES=	devel haskell
 

@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-pango
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pango
-PORTVERSION=	0.12.3
-PORTREVISION=	1
+PORTVERSION=	0.12.4
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +11,8 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	cairo>=0.12 glib>=0.12 mtl
+
+USE_CABAL=	cairo>=0.12.0 glib>=0.12.0 mtl
 USE_GNOME=	pango
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

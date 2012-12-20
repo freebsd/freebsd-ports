@@ -1,7 +1,7 @@
-This Haskell library provides a framework for type-directed composition
-of value editors (non-syntactic transformations). The tools enable "deep
+This library provides a framework for type-directed composition of value
+editors (non-syntactic transformations).  The tools enable "deep
 function application" in two senses: deep application of functions and
-application of deep functions. These tools generalize beyond values and
+application of deep functions.  These tools generalize beyond values and
 functions, via the DeepArrow subclass of the Arrow type class.
 
-WWW:	http://haskell.org/haskellwiki/DeepArrow
+WWW: http://haskell.org/haskellwiki/DeepArrow

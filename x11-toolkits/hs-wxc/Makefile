@@ -1,12 +1,8 @@
-# New ports collection makefile for: hs-wxc
-# Date created:        May 9, 2012
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wxc
 PORTVERSION=	0.90.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

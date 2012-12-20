@@ -15,4 +15,4 @@ set of writers, which convert this native representation into a target
 format.  Thus, adding an input or output format requires only adding a
 reader or writer.
 
-WWW:	http://johnmacfarlane.net/pandoc
+WWW: http://johnmacfarlane.net/pandoc

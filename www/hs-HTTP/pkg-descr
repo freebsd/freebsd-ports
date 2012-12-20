@@ -15,4 +15,4 @@ of a type class, letting you pick the representation of requests and
 responses that best fits your use. Some pre-packaged, common instances
 are provided for you (ByteString, String.)
 
-WWW:	https://github.com/haskell/HTTP
+WWW: https://github.com/haskell/HTTP

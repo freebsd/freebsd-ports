@@ -1,17 +1,11 @@
-# New ports collection makefile for: hs-primitive
-# Date created:        June 5, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	primitive
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.5.0.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Wrappers for primitive operations
+COMMENT=	Primitive memory-related operations
 
 LICENSE=	BSD
 

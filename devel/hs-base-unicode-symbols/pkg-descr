@@ -7,4 +7,4 @@ For further Unicode goodness you can enable the UnicodeSyntax language
 extension.  This extension enables Unicode characters to be used to
 stand for certain ASCII character sequences.
 
-WWW:	http://haskell.org/haskellwiki/Unicode-symbols
+WWW: http://haskell.org/haskellwiki/Unicode-symbols

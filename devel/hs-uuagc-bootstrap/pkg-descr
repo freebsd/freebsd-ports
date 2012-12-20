@@ -6,4 +6,4 @@ It is a preprocessor for Haskell which makes it easy to write catamorphisms
 You can define tree walks using the intuitive concepts of inherited and
 synthesized attributes, while keeping the full expressive power of Haskell.
 
-WWW:	http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem
+WWW: http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem

@@ -18,4 +18,4 @@ the Snap framework, including:
      - Early termination of the computation if you know early what you want to
        return and want to prevent further monadic processing.
 
-WWW:	http://snapframework.com/
+WWW: http://snapframework.com/

@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-lifted-base
-# Date created:        December 30, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lifted-base
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

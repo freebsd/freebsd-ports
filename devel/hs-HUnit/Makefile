@@ -1,13 +1,7 @@
-# New ports collection makefile for:	hs-HUnit
-# Date created:		2010-08-10
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HUnit
-PORTVERSION=	1.2.4.2
-PORTREVISION=	2
+PORTVERSION=	1.2.5.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

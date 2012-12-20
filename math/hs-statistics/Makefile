@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-statistics
-# Date created:        January 03 2010
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	statistics
-PORTVERSION=	0.10.1.0
-PORTREVISION=	1
+PORTVERSION=	0.10.2.0
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

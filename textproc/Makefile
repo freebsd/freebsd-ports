@@ -248,6 +248,7 @@
     SUBDIR += hs-csv
     SUBDIR += hs-double-conversion
     SUBDIR += hs-feed
+    SUBDIR += hs-hexpat
     SUBDIR += hs-highlighting-kate
     SUBDIR += hs-hs-bibutils
     SUBDIR += hs-html
@@ -274,7 +275,6 @@
     SUBDIR += hs-xml
     SUBDIR += hs-xml-conduit
     SUBDIR += hs-xml-types
-    SUBDIR += hs-xml2html
     SUBDIR += hs-xmlhtml
     SUBDIR += hs-yaml
     SUBDIR += hsb-aspell

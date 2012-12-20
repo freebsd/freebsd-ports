@@ -8,4 +8,4 @@ should stay out of templates and has its own minimal Haskell parser.
 Packages that use this: shakespeare-js, shakespeare-css,
 shakespeare-text, hamlet, and xml-hamlet.
 
-WWW:	http://www.yesodweb.com/book/shakespearean-templates
+WWW: http://www.yesodweb.com/book/shakespearean-templates

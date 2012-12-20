@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-gtk
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gtk
-PORTVERSION=	0.12.3.1
+PORTVERSION=	0.12.4
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

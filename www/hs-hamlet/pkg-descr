@@ -3,4 +3,4 @@ via Quasi-Quoting, and generating extremely efficient output code.  The
 syntax is white-space sensitive, and it helps you avoid cross-site
 scripting issues and 404 errors.
 
-WWW:	http://www.yesodweb.com/book/shakespearean-templates
+WWW: http://www.yesodweb.com/book/shakespearean-templates

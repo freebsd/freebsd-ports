@@ -1,0 +1,6 @@
+This package provides a general purpose Haskell XML library using Expat
+to do its parsing (a fast stream-oriented XML parser written in C). It
+is extensible to any string type, with String, ByteString and Text
+provided out of the box.
+
+WWW: http://haskell.org/haskellwiki/Hexpat/

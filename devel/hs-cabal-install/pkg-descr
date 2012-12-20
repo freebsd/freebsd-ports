@@ -2,4 +2,4 @@ The 'cabal' command-line program simplifies the process of managing
 Haskell software by automating the fetching, configuration, compilation
 and installation of Haskell libraries and programs.
 
-WWW:	http://www.haskell.org/cabal/
+WWW: http://www.haskell.org/cabal/

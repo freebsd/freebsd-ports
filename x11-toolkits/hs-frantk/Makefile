@@ -1,9 +1,5 @@
-# New ports collection makefile for:   frantk
-# Date created:        25 May 2002
-# Whom:                Oliver Braun <obraun@informatik.unibw-muenchen.de>
-#
+# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	frantk
 PORTVERSION=	1.1

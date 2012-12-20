@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-parallel
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	parallel
-PORTVERSION=	3.2.0.2
-PORTREVISION=	1
+PORTVERSION=	3.2.0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

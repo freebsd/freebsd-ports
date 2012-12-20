@@ -6,4 +6,4 @@ supports forking and simple communication in terms of IVars. The library
 comes with an efficient work-stealing implementation, but the internals
 are also exposed so that you can build your own scheduler if necessary.
 
-WWW:	http://github.com/simonmar/monad-par
+WWW: http://github.com/simonmar/monad-par

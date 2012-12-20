@@ -1,4 +1,4 @@
 Ranges and some functions allowing things like fast membership lookup on
 ranges with holes in them and so on.
 
-WWW:	http://hackage.haskell.org/package/ranges
+WWW: http://hackage.haskell.org/package/ranges

@@ -1,17 +1,11 @@
-# New ports collection makefile for:	hs-regex-posix
-# Date created:		2010-08-10
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	regex-posix
-PORTVERSION=	0.95.1
-PORTREVISION=	2
+PORTVERSION=	0.95.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	The posix regex backend for regex-base
+COMMENT=	Replaces/enhances Text.Regex
 
 LICENSE=	BSD
 

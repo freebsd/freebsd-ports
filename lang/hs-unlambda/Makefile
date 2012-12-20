@@ -1,17 +1,12 @@
-# New ports collection makefile for: hs-unlambda
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	unlambda
-PORTVERSION=	0.1
-PORTREVISION=	6
+PORTVERSION=	0.1.3
 CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Unlambda interpreter written in Haskell
+COMMENT=	Unlambda interpreter
 
 LICENSE=	GPLv2
 

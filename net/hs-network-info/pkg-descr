@@ -1,0 +1,7 @@
+This library provides simple read-only access to the local computer's
+networking configuration. It is currently capable of getting a list of
+all the network interfaces and their respective IPv4, IPv6 and MAC addresses.
+network-info has been tested and is known to work on Ubuntu 10.10, Mac OS
+X 10.6.4 and Windows XP.
+
+WWW: http://github.com/jystic/network-info

@@ -11,4 +11,4 @@ to be due to the cost of allocating ByteString values via malloc.)
 As a final note, be aware that the bytestring-show package is about 50%
 slower than simply using show.
 
-WWW:	http://github.com/mailrank/double-conversion
+WWW: https://github.com/bos/double-conversion

@@ -9,4 +9,4 @@ ConfigFile provides simple calls to both read and write config files.
 It is possible to make a config file parsable by this module, the Unix
 shell, and make.
 
-WWW:	http://software.complete.org/configfile
+WWW: http://software.complete.org/configfile

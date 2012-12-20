@@ -4,4 +4,4 @@ arbitrary token type, running state, lazy parsing, and so on. Finally,
 Text.Parse is a proposed replacement for the standard Read class, for
 better deserialisation of Haskell values from Strings.
 
-WWW:	http://code.haskell.org/~malcolm/polyparse/
+WWW: http://code.haskell.org/~malcolm/polyparse/

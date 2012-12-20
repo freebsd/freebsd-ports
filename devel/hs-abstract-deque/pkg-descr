@@ -11,4 +11,4 @@ using the type-system to select an efficient implementation given the
 requirements (using type families). This package also includes a simple
 reference implementation based on 'IORef' and "Data.Sequence".
 
-WWW:	http://hackage.haskell.org/package/abstract-deque
+WWW: http://hackage.haskell.org/package/abstract-deque

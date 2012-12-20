@@ -5,4 +5,4 @@ to stand-alone serving. Yesod also focuses on developer productivity.
 Yesod integrates well with tools for all your basic web development (wai,
 persistent, and shakespeare/hamlet).
 
-WWW:	http://www.yesodweb.com/
+WWW: http://www.yesodweb.com/

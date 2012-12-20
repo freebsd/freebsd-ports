@@ -1,13 +1,7 @@
-# New ports collection makefile for:	hs-gtk2hs-buildtools
-# Date created:		March 13, 2011
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gtk2hs-buildtools
-PORTVERSION=	0.12.3.1
-PORTREVISION=	1
+PORTVERSION=	0.12.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,13 +12,13 @@ FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
 
+USE_CABAL=	random
 USE_ALEX=	yes
 USE_HAPPY=	yes
 
-USE_CABAL=	random
+EXECUTABLE=	gtk2hsTypeGen gtk2hsHookGenerator gtk2hsC2hs
 
 STANDALONE=	yes
-EXECUTABLE=	gtk2hsTypeGen gtk2hsHookGenerator gtk2hsC2hs
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-uuagc-bootstrap
-# Date created:        August 12, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	uuagc-bootstrap
 PORTVERSION=	0.9.40.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

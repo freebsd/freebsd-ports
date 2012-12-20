@@ -1,13 +1,9 @@
-# New ports collection makefile for: hs-Agda
-# Date created:        December 20 2009
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Agda
 PORTVERSION=	2.3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -34,7 +30,7 @@ OPTIONS_DEFINE=		USE_LOCALE EPIC
 USE_LOCALE_DESC=	Use encoding specified by the locale
 EPIC_DESC=		Install the Epic compiler
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MUSE_LOCALE}
 CONFIGURE_ARGS+=	--flags="use-locale"

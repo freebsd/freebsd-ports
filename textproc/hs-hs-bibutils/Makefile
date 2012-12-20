@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-hs-bibutils
-# Date created:        May 14, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hs-bibutils
-PORTVERSION=	4.12
-PORTREVISION=	4
+PORTVERSION=	4.15
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -26,26 +26,11 @@ DIST_SUBDIR?=	cabal
 
 FILE_LICENSE?=	LICENSE
 
-.if !defined(STANDALONE)
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
-.elif defined(STANDALONE)
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
-.endif
-
-GHC_VERSION?=	7.4.1
-GHC_VERSION_N=	${GHC_VERSION:S/./0/g}
-
-GHC_CMD?=	${LOCALBASE}/bin/ghc
 CABAL_SETUP?=	Setup.lhs
 SETUP_CMD?=	./setup
 
 ALEX_CMD?=	${LOCALBASE}/bin/alex
 HAPPY_CMD?=	${LOCALBASE}/bin/happy
-HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
 C2HS_CMD?=	${LOCALBASE}/bin/c2hs
 
 CABAL_DIRS+=	${DATADIR} ${EXAMPLESDIR} ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}
@@ -79,24 +64,31 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_PORTDATA?=
 INSTALL_PORTEXAMPLES?=
 
-HSCOLOUR_DESC?=	Colorize generated documentation by HsColour
-DYNAMIC_DESC?=	Add support for dynamic linking
-PROFILE_DESC?=	Add support for profiling
+LOCALBASE?=	/usr/local
 
-.include <bsd.port.options.mk>
-
-.if exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.dyn_hi)
-OPTIONS_DEFINE+=	DYNAMIC
+.if !defined(CABALOPTIONSMKINCLUDED)
+.include "bsd.cabal.options.mk"
 .endif
 
-.if exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.p_hi)
-OPTIONS_DEFINE+=	PROFILE
+.if !defined(STANDALONE) || ${PORT_OPTIONS:MDYNAMIC}
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
+.else
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
-.if exists(${HADDOCK_CMD}) && exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)
-OPTIONS_DEFINE+=	DOCS HSCOLOUR
-OPTIONS_DEFAULT+=	DOCS
+USE_BINUTILS=	yes
+USE_GCC=	4.6
+
+.if ${PORT_OPTIONS:MDYNAMIC}
+LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
 .endif
+
+CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
+			--with-ranlib=${RANLIB}
 
 .if defined(USE_ALEX)
 BUILD_DEPENDS+=	${ALEX_CMD}:${PORTSDIR}/devel/hs-alex
@@ -116,10 +108,6 @@ CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .if defined(EXECUTABLE)
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 USE_ICONV=	yes
-.endif
-
-.if defined(EXECUTABLE) && ${PORT_OPTIONS:MDOCS}
-HADDOCK_EXE?=	--executables
 .endif
 
 .if defined(USE_CABAL)
@@ -146,7 +134,7 @@ ${HSPREFIX}${__u_h_r_package}${__u_h_r_version}:${PORTSDIR}/${__u_h_r_port}
 
 BUILD_DEPENDS+=	${dependencies}
 
-.if !defined(STANDALONE)
+.if !defined(STANDALONE) || ${PORT_OPTIONS:MDYNAMIC}
 RUN_DEPENDS+=	${dependencies}
 .endif
 
@@ -159,12 +147,12 @@ USE_PERL5_BUILD=	5.8+
 .if ${PORT_OPTIONS:MDOCS}
 .if !defined(XMLDOCS)
 
-HADDOCK_OPTS=	${HADDOCK_EXE}
+HADDOCK_OPTS=	# empty
 
 .if ${PORT_OPTIONS:MHSCOLOUR}
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.20.2
+HSCOLOUR_VERSION=	1.20.3
 HSCOLOUR_DATADIR=	${LOCALBASE}/share/ghc-${GHC_VERSION}/cabal/hscolour-${HSCOLOUR_VERSION}
 HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif # HSCOLOUR
@@ -192,9 +180,9 @@ CONFIGURE_ARGS+=	--haddock-options=-w --with-haddock=${HADDOCK_CMD}
 .endif
 
 .if ${PORT_OPTIONS:MDYNAMIC}
-CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ARGS+=	--enable-shared --enable-executable-dynamic
 .else
-CONFIGURE_ARGS+=	--disable-shared
+CONFIGURE_ARGS+=	--disable-shared --disable-executable-dynamic
 .endif
 
 .if ${PORT_OPTIONS:MPROFILE}
@@ -231,7 +219,7 @@ post-patch::
 do-configure:
 .if !defined(METAPORT)
 	cd ${WRKSRC} && ${GHC_CMD} --make ${CABAL_SETUP} -o setup -package Cabal
-	cd ${WRKSRC} && ${SETENV} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${SETUP_CMD} configure --ghc --prefix=${PREFIX} --extra-include-dirs="${LOCALBASE}/include" --extra-lib-dirs="${LOCALBASE}/lib" ${__handle_datadir__} ${CONFIGURE_ARGS}
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -247,14 +235,14 @@ do-configure:
 .if !target(do-build)
 do-build:
 .if !defined(METAPORT)
-	cd ${WRKSRC} && ${SETUP_CMD} build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} build
 .if !defined(STANDALONE)
-	cd ${WRKSRC} && ${SETUP_CMD} register --gen-script
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} register --gen-script
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 .if !defined(XMLDOCS) && !defined(STANDALONE) && ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC} && ${SETUP_CMD} haddock ${HADDOCK_OPTS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} haddock ${HADDOCK_OPTS}
 .endif # STANDALONE
 .if defined(XMLDOCS)
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
@@ -268,7 +256,7 @@ do-build:
 .if !target(do-install)
 do-install:
 .if !defined(METAPORT)
-	cd ${WRKSRC} && ${SETUP_CMD} install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} install
 
 .if !defined(STANDALONE)
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh

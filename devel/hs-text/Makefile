@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-text
-# Date created:        September 19, 2010
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	text
-PORTVERSION=	0.11.2.0
-PORTREVISION=	1
+PORTVERSION=	0.11.2.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

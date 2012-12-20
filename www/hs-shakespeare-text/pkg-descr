@@ -8,4 +8,4 @@ external file. It also has url/embeding interpolation, with @ and ^,
 which are used in Yesod. This package also uses blaze-builder for efficiently
 constructing strings.
 
-WWW:	http://www.yesodweb.com/book/shakespearean-templates
+WWW: http://www.yesodweb.com/book/shakespearean-templates

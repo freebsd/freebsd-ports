@@ -1,4 +1,4 @@
 lifted-base exports IO operations from the base library lifted to any
 instance of MonadBase or MonadBaseControl.
 
-WWW:	https://github.com/basvandijk/lifted-base
+WWW: https://github.com/basvandijk/lifted-base

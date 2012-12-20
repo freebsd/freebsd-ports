@@ -1,13 +1,7 @@
-# New ports collection makefile for:	hs-hashable
-# Date created:		July 17, 2011
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hashable
-PORTVERSION=	1.1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.1.2.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

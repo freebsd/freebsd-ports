@@ -1,5 +1,8 @@
-This library provides Boyer-Moore and Knuth-Morris-Pratt string search
-implementations for Haskell bytestrings (with support for all strict and
-lazy ByteString permutations).
+This package provides several functions to quickly search for substrings
+in strict or lazy ByteStrings. It also provides functions for breaking or
+splitting on substrings and replacing all occurrences of a substring (the
+first in case of overlaps) with another. GHC before 6.10 are no longer
+supported, other compilers only if they support BangPatterns. If you need
+it to work with other compilers, send a feature request.
 
-WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/stringsearch
+WWW: https://bitbucket.org/dafis/stringsearch

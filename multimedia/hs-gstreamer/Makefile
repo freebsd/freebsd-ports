@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-gstreamer
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.12.1.1
-PORTREVISION=	1
+PORTVERSION=	0.12.1.2
 CATEGORIES=	multimedia haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,6 +13,7 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
+
 USE_CABAL=	glib>=0.12 mtl
 
 BUILD_DEPENDS+=	gstreamer-plugins>=0.10:${PORTSDIR}/multimedia/gstreamer-plugins

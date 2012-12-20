@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-murmur-hash
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	murmur-hash
-PORTVERSION=	0.1.0.5
-PORTREVISION=	2
+PORTVERSION=	0.1.0.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

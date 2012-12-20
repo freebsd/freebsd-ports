@@ -4,4 +4,4 @@ not necessarily the fastest ones on the planet. Particularly key generation.
 The algorithms included are based of RFC 3447, or the Public-Key Cryptography
 Standard for RSA, version 2.1 (a.k.a, PKCS#1 v2.1).
 
-WWW:	http://hackage.haskell.org/package/RSA
+WWW: http://hackage.haskell.org/package/RSA

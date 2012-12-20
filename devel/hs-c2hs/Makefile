@@ -1,17 +1,12 @@
-# New ports collection makefile for:   c2hs
-# Date created:        23 August 2002
-# Whom:                Oliver Braun <obraun@FreeBSD.org>
-#
+# Created by: Oliver Braun <obraun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	c2hs
-PORTVERSION=	0.16.3
-PORTREVISION=	3
+PORTVERSION=	0.16.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	C->Haskell, an Interface Generator for Haskell
+COMMENT=	C->Haskell tool that gives some cross-language type safety
 
 LICENSE=	GPLv2
 FILE_LICENSE=	COPYING

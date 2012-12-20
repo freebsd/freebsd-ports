@@ -1,12 +1,8 @@
-# New ports collection makefile for:	alex
-# Date created:				29 January 2003
-# Whom:					Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
-#
+# Created by: Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,10 +19,6 @@ STANDALONE=	yes
 EXECUTABLE=	alex
 
 INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-
-.if defined(SLAVE)
-GHC_CMD=	ghc
-.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

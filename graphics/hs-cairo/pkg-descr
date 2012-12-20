@@ -2,4 +2,4 @@ Cairo is a library to render high quality vector graphics. There exist
 various backends that allows rendering to Gtk windows, PDF, PS, PNG and
 SVG documents, amongst others.
 
-WWW:	http://projects.haskell.org/gtk2hs/
+WWW: http://projects.haskell.org/gtk2hs/

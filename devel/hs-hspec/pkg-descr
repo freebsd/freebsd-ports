@@ -3,4 +3,4 @@ Ruby library RSpec.  However, Hspec is just a framework for running
 HUnit and QuickCheck tests.  Compared to other options, it provides a
 much nicer syntax that makes tests very easy to read.
 
-WWW:	http://hspec.github.com/
+WWW: http://hspec.github.com/

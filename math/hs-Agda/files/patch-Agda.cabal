@@ -1,5 +1,5 @@
 --- ./Agda.cabal.orig	2012-03-12 11:09:34.000000000 +0100
-+++ ./Agda.cabal	2012-05-12 19:53:25.000000000 +0200
++++ ./Agda.cabal	2012-10-03 22:53:16.000000000 +0200
 @@ -71,13 +71,13 @@
    if flag(use-locale)
      build-depends:  base >= 4.2 && < 4.6
@@ -10,9 +10,10 @@
    if flag(epic)
      build-depends:  epic >= 0.1.13 && < 0.10
 -  build-depends:    mtl == 2.0.*,
-+  build-depends:    mtl >= 2.0,
-                     QuickCheck >= 2.3 && < 2.5,
+-                    QuickCheck >= 2.3 && < 2.5,
 -                    haskell-src-exts >= 1.9.6 && < 1.12,
++  build-depends:    mtl >= 2.0,
++                    QuickCheck >= 2.3 && < 2.6,
 +                    haskell-src-exts >= 1.9.6,
                      containers >= 0.1 && < 0.5,
                      pretty >= 1.0 && < 1.2,

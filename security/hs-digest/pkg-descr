@@ -2,4 +2,4 @@ This package provides efficient cryptographic hash implementations for
 strict and lazy bytestrings. For now, CRC32 and Adler32 are supported;
 they are implemented as FFI bindings to efficient code from zlib.
 
-WWW:	http://hackage.haskell.org/package/digest
+WWW: http://hackage.haskell.org/package/digest

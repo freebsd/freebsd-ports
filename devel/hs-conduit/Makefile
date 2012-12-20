@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-conduit
-# Date created:        December 30, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	conduit
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

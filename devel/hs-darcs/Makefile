@@ -1,13 +1,8 @@
-# New ports collection makefile for:	darcs
-# Date created:				13 April 2003
-# Whom:					Oliver Braun <obraun@FreeBSD.org>
-#
+# Created by: Oliver Braun <obraun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	darcs
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,8 +11,8 @@ COMMENT=	A distributed, interactive, smart revision control system
 LICENSE=	GPLv2
 FILE_LICENSE=	COPYING
 
-USE_CABAL=	hashed-storage>=0.5.6 haskeline>=0.6.3 html>=1.0 \
-		mtl>=1.0 parsec>=2.0 random>=1.0 regex-compat>=0.95.1 \
+USE_CABAL=	hashed-storage>=0.5.6 haskeline>=0.6.3 html \
+		mtl>=1.0 parsec>=2.0 random regex-compat>=0.95.1 \
 		regex-posix>=0.95.1 tar>=0.4 text>=0.11.0.6 unix-compat>=0.1.2 \
 		vector>=0.7 zlib>=0.5.1.0
 
@@ -38,7 +33,7 @@ THREADED_DESC=		Use threading and SMP support
 COLOR_DESC=		Use ANSI color escapes
 MMAP_DESC=		Compile with mmap support
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 CONFIGURE_ARGS+=	--flags="library executable"
 

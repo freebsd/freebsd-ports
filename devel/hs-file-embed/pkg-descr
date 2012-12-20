@@ -1,3 +1,4 @@
-Use Template Haskell to embed file contents directly.
+Use Template Haskell to read a file or all the files in a directory, and
+turn them into (path, text) pairs embedded in your haskell code.
 
-WWW:	https://github.com/snoyberg/file-embed
+WWW: https://github.com/snoyberg/file-embed

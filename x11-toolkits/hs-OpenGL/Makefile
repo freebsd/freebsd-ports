@@ -1,12 +1,9 @@
-# New ports collection makefile for:	hs-opengl-ghc
-# Date created:				2008-09-04
-# Whom:					Volker Stolz <vs@FreeBSD.org>
-#
+# Created by: Volker Stolz <vs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	OpenGL
 PORTVERSION=	2.2.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 

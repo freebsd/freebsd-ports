@@ -1,4 +1,4 @@
 Parses .eventlog files emitted by GHC 6.12.1 and later.  Includes the
 ghc-events-show tool to dump and event log file as text.
 
-WWW:	http://hackage.haskell.org/package/ghc-events
+WWW: http://hackage.haskell.org/package/ghc-events

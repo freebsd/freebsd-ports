@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-test-framework
-# Date created:        May 21, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	test-framework
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-angel
-# Date created:        June 10, 2012
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	angel
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

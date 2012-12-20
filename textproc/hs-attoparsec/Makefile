@@ -1,13 +1,8 @@
-# New ports collection makefile for: hs-attoparsec
-# Date created:        September 19, 2010
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	attoparsec
 PORTVERSION=	0.10.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

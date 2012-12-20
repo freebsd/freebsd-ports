@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-case-insensitive
-# Date created:        May 24, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	case-insensitive
-PORTVERSION=	0.4.0.1
-PORTREVISION=	2
+PORTVERSION=	0.4.0.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,12 +1,8 @@
 Native Haskell TLS and SSL protocol implementation for server and
-client.
+client. This provides a high-level implementation of a sensitive
+security protocol, eliminating a common set of security issues through
+the use of the advanced type system, high level constructions and common
+Haskell features. Currently implement the SSL3.0, TLS1.0, TLS1.1 and
+TLS1.2 protocol, with only RSA supported for Key Exchange.
 
-This provides a high-level implementation of a sensitive security
-protocol, eliminating a common set of security issues through the use of
-the advanced type system, high level constructions and common Haskell
-features.
-
-Currently implement the SSL3.0, TLS1.0, TLS1.1 and TLS1.2 protocol, with
-only RSA supported for Key Exchange.
-
-WWW:	http://github.com/vincenthz/hs-tls
+WWW: http://github.com/vincenthz/hs-tls

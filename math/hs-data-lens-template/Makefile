@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-data-lens-template
-# Date created:        November 19, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	data-lens-template
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.1.7
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

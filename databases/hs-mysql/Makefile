@@ -1,13 +1,9 @@
-# New ports collection makefile for:	hs-mysql
-# Date created:		2011-05-23
-# Whom:			jyyou@cs.nctu.edu.tw
-#
+# Created by: jyyou@cs.nctu.edu.tw
 # $FreeBSD$
-#
 
 PORTNAME=	mysql
 PORTVERSION=	0.1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org

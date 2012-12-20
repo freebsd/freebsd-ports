@@ -3,4 +3,4 @@ the Haskell FFI. It allows to read and write both basic sysctl types, as
 well as complex opaque types (typically C structures) described via Storable
 instances.
 
-WWW:	http://hackage.haskell.org/package/bsd-sysctl
+WWW: http://hackage.haskell.org/package/bsd-sysctl

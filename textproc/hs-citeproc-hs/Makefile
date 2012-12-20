@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-citeproc-hs
-# Date created:        May 14, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	citeproc-hs
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,21 +9,29 @@ COMMENT=	A Citation Style Language implementation in Haskell
 
 LICENSE=	BSD
 
-USE_CABAL=	json mtl pandoc-types>=1.8 utf8-string xml
+USE_CABAL=	json mtl pandoc-types>=1.8 parsec syb utf8-string xml
 
-OPTIONS_DEFINE=		BIBUTILS NETWORK
-OPTIONS_DEFAULT=	BIBUTILS NETWORK
+OPTIONS_DEFINE=		BIBUTILS HEXPAT NETWORK
+OPTIONS_DEFAULT=	BIBUTILS HEXPAT NETWORK
 
 BIBUTILS_DESC=		Use Chris Putnam's Bibutils
+HEXPAT_DESC=		Use hexpat to parse XML
 NETWORK_DESC=		Use network and HTTP to retrieve CSL file
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MBIBUTILS}
 CONFIGURE_ARGS+=	--flags="bibutils"
 USE_CABAL+=		hs-bibutils>=0.3
 .else
 CONFIGURE_ARGS+=	--flags="-bibutils"
+.endif
+
+.if ${PORT_OPTIONS:MHEXPAT}
+CONFIGURE_ARGS+=	--flags="hexpat"
+USE_CABAL+=		hexpat>=0.20.2
+.else
+CONFIGURE_ARGS+=	--flags="-hexpat"
 .endif
 
 .if ${PORT_OPTIONS:MNETWORK}

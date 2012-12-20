@@ -1,12 +1,7 @@
-# New ports collection makefile for: hs-xmlhtml
-# Date created:        March 13, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmlhtml
-PORTVERSION=	0.2.0.2
+PORTVERSION=	0.2.0.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

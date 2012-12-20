@@ -3,4 +3,4 @@ A platform independent method to obtain cryptographically strong entropy
 for cryptographically strong (number-theoretically sound) PRNGs should
 see the DRBG package too!
 
-WWW:	http://trac.haskell.org/crypto-api/wiki
+WWW: http://trac.haskell.org/crypto-api/wiki

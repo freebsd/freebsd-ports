@@ -225,6 +225,8 @@
     SUBDIR += hs-hostname
     SUBDIR += hs-network
     SUBDIR += hs-network-conduit
+    SUBDIR += hs-network-info
+    SUBDIR += hs-network-multicast
     SUBDIR += hs-pcap
     SUBDIR += hs-sendfile
     SUBDIR += hs-simple-sendfile

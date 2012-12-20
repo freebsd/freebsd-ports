@@ -3,4 +3,4 @@ suitable for low-level shared-memory synchronization. The implementation
 is using GCC's builtin atomic operations (available in GCC >= 4) in C
 wrappers called through the FFI.
 
-WWW:	http://hackage.haskell.org/package/bits-atomic
+WWW: http://hackage.haskell.org/package/bits-atomic

@@ -2,4 +2,4 @@ This library is a Haskell binding to the MySQL mysqlclient client library.
 It is a fairly faithful, low level library that implements 
 most of the MySQL client API.
 
-WWW:	https://github.com/bos/mysql
+WWW: https://github.com/bos/mysql

@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-hxt
-# Date created:        May 14, 2010
-# Whom:                Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hxt
-PORTVERSION=	9.2.2
-PORTREVISION=	1
+PORTVERSION=	9.3.1.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,12 +1,8 @@
-# New ports collection makefile for: hs-cpu
-# Date created:        May 9, 2012
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cpu
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,13 +1,7 @@
-# New ports collection makefile for:	highlighting-kate
-# Date created:				December 16, 2008
-# Whom:					Gabor Pali <pgj@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	highlighting-kate
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.3.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -21,7 +15,7 @@ OPTIONS_DEFINE=		EXECUTABLE
 
 EXECUTABLE_DESC=	Build the Highlight executable
 
-.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEXECUTABLE}
 CONFIGURE_ARGS+=	--flags="executable"

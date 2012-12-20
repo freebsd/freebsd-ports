@@ -1,13 +1,7 @@
-# New ports collection makefile for:	hs-network
-# Date created:		2010-05-14
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	network
-PORTVERSION=	2.3.0.13
-PORTREVISION=	1
+PORTVERSION=	2.3.1.0
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

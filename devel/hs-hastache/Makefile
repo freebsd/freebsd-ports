@@ -1,12 +1,7 @@
-# New ports collection makefile for:	hs-hastache
-# Date created:		December 2, 2011
-# Whom:			haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hastache
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

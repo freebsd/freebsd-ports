@@ -1,13 +1,7 @@
-# New ports collection makefile for: hs-configurator
-# Date created:        November 19, 2011
-# Whom:                haskell@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	configurator
-PORTVERSION=	0.2.0.0
-PORTREVISION=	2
+PORTVERSION=	0.2.0.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
