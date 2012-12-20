@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-Products.PythonScripts
-# Date created:				Nov 16, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.PythonScripts
-PORTVERSION=	2.13.0
+PORTVERSION=	2.13.2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

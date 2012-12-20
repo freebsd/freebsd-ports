@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-AccessControl
-# Date created:				Nov 12, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	AccessControl
-PORTVERSION=	2.13.8
+PORTVERSION=	2.13.12
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
