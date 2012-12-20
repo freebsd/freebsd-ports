@@ -2,58 +2,55 @@
 # $FreeBSD$
 
 PORTNAME=	cfg
-PORTVERSION=	1.7.4
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://cdn.bitbucket.org/mmottl/cfg/downloads/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulation of context-free grammars
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
+LICENSE=	LGPL21
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAMLFIND_PLIST=yes
 USE_OCAML_WASH=	yes
-MAKE_JOBS_UNSAFE=	yes
 
-DOCS=		README
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples
+MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+PLIST_DIRSTRY+=	${OCAML_EXAMPLESDIR:S,^${PREFIX}/,,}
 .endif
 
 post-install:
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.for i in AUTHORS.txt CHANGES.txt README.md
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
-	@${FIND} ${EXAMPLESDIR}/ ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR}/ -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR}/ ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR}/ -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-# XXX: temporary workaround for non-standard PREFIX
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ocaml 2>/dev/null || true" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/examples/ocaml 2>/dev/null||true" \
-		>> ${TMPPLIST}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
