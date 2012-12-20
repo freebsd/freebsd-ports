@@ -1,7 +1,7 @@
-The Pomap-library implements an ADT that maintains maps of partially ordered
-elements. Whereas a total order allows you to say whether some element is
-lower, equal or greater than another one, partial orders also allow for a
-"don-t know" case.
+The Pomap-library implements an ADT that maintains maps of partially
+ordered elements. Whereas a total order allows you to say whether some
+element is lower, equal or greater than another one, partial orders also
+allow for a "don-t know" case.
 
 Author:	Markus Mottl <markus.mottl@gmail.com>
-WWW:	http://www.ocaml.info/home/ocaml_sources.html
+WWW:	https://bitbucket.org/mmottl/pomap
