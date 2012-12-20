@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-GitHub
-# Date created:		                2009-04-21
-# Whom:			                Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Net-GitHub
-DISTVERSION=	0.46
+DISTVERSION=	0.50
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FAYLAND
@@ -34,17 +30,6 @@ TEST_DEPENDS=	p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::GitHub.3 \
-		Net::GitHub::V2.3 \
-		Net::GitHub::V2::Commits.3 \
-		Net::GitHub::V2::HasRepo.3 \
-		Net::GitHub::V2::Issues.3 \
-		Net::GitHub::V2::Network.3 \
-		Net::GitHub::V2::NoRepo.3 \
-		Net::GitHub::V2::Object.3 \
-		Net::GitHub::V2::Organizations.3 \
-		Net::GitHub::V2::PullRequest.3 \
-		Net::GitHub::V2::Repositories.3 \
-		Net::GitHub::V2::Users.3 \
 		Net::GitHub::V3.3 \
 		Net::GitHub::V3::Events.3 \
 		Net::GitHub::V3::Gists.3 \
@@ -55,6 +40,7 @@ MAN3=		Net::GitHub.3 \
 		Net::GitHub::V3::PullRequests.3 \
 		Net::GitHub::V3::Query.3 \
 		Net::GitHub::V3::Repos.3 \
+		Net::GitHub::V3::Search.3 \
 		Net::GitHub::V3::Users.3
 
 .include <bsd.port.mk>
