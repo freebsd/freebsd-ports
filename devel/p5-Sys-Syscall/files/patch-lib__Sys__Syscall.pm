@@ -6,9 +6,9 @@
  use strict;
 -use POSIX qw(ENOSYS SEEK_CUR);
 +use POSIX qw(ENOSYS EAGAIN SEEK_CUR);
- use Config;
  
  require Exporter;
+ use vars qw(@ISA @EXPORT_OK %EXPORT_TAGS $VERSION);
 @@ -180,12 +180,14 @@
                       0,           # struct sf_hdtr *hdtr
                       $sbytes_buf, # off_t *sbytes
