@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Schism Tracker
-# Date created:				26 May 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	schism
 PORTVERSION=	20100101
@@ -29,8 +25,8 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-# this version segfaults
-PORTSCOUT=	skipv:20110101
+# 20110101 segfaults, 20120105 builds but GUI does not come up
+PORTSCOUT=	skipv:20110101,20120105
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
