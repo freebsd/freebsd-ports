@@ -3,7 +3,7 @@
 The treewm package has been successfully installed.
 
 NB:  Sample configuration files have been installed to
-%%D%% as "default.cfg" and "sample.cfg".
+%%EXAMPLESDIR%% as "default.cfg" and "sample.cfg".
 Users can look at them as well as the README in the same directory to
 write their .treewmrc in their homedir. Also, please take a look at
 
