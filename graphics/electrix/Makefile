@@ -13,23 +13,40 @@ COMMENT=	An application to view PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		poppler-glib:${PORTSDIR}/graphics/poppler-glib
-
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 desktopfileutils intltool intlhack
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
-
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-OPTIONS_DEFINE=	PS
+OPTIONS_DEFINE=	DBUS NLS PDF PS
+OPTIONS_DEFAULT=	DBUS PDF
 
-PS_DESC=	PostScript support
+PDF_DESC=	Portable Document Format Support
+PS_DESC=	PostScript Support
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDBUS}
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+.else
+CONFIGURE_ARGS+=	--disable-dbus
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB=	NLS=""
+USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPDF}
+LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
+.else
+CONFIGURE_ARGS+=	--disable-pdf
+.endif
 
 .if ${PORT_OPTIONS:MPS}
 LIB_DEPENDS+=	spectre:${PORTSDIR}/print/libspectre
