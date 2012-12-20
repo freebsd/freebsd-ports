@@ -1,0 +1,20 @@
+--- hdf/src/Makefile.in.orig	2012-08-07 13:11:36.000000000 +0900
++++ hdf/src/Makefile.in	2012-08-14 21:08:53.000000000 +0900
+@@ -187,7 +187,7 @@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -version-number 2
+ LEX = @LEX@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -290,8 +290,6 @@
+ CP = cp
+ H4CC = $(bindir)/h4cc
+ H4FC = $(bindir)/h4fc
+-@HDF_BUILD_XDR_TRUE@XDR_ADD = -R$(abs_top_builddir)/mfhdf/xdr/.libs
+-@HDF_BUILD_SHARED_TRUE@AM_LDFLAGS = -R$(abs_top_builddir)/mfhdf/libsrc/.libs -R$(abs_top_builddir)/hdf/src/.libs $(XDR_ADD)
+ ACLOCAL_AMFLAGS = "-I m4"
+ lib_LTLIBRARIES = libdf.la
+ FSOURCES = df24ff.f dfanf.c dfanff.f dff.c dfff.f dfpf.c dfpff.f dfr8f.c    \
