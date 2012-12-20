@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pep8
-# Date created:		2010-10-27
-# Whom:			Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pep8
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +18,7 @@ PYDISTUTILS_PKGNAME=	${PORTNAME}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 
-regression-test:
+regression-test: extract
 	@(cd ${WRKSRC}; ${PYTHON_CMD} ${PORTNAME}.py --doctest --testsuite=testsuite)
 
 .include <bsd.port.mk>
