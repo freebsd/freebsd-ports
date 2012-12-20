@@ -1,0 +1,49 @@
+--- ./CMakeLists.txt.orig 2012-11-11 18:38:49.980294043 +1030
++++ ./CMakeLists.txt       2012-11-11 18:39:47.515297055 +1030
+@@ -234,46 +234,6 @@
+ # their add_test commands will not register.
+ include (CTest)
+ 
+-
+-# Tell CMake to process the sub-directories
+-add_subdirectory (libOpenImageIO)
+-
+-add_subdirectory (iconvert)
+-add_subdirectory (idiff)
+-add_subdirectory (igrep)
+-add_subdirectory (iinfo)
+-add_subdirectory (maketx)
+-add_subdirectory (oiiotool)
+-add_subdirectory (testtex)
+-add_subdirectory (iv)
+-# Add IO plugin directories
+-if (NOT EMBEDPLUGINS)
+-    add_subdirectory (bmp.imageio)
+-    add_subdirectory (cineon.imageio)
+-    add_subdirectory (dds.imageio)
+-    add_subdirectory (dpx.imageio)
+-    add_subdirectory (field3d.imageio)
+-    add_subdirectory (fits.imageio)
+-    add_subdirectory (hdr.imageio)
+-    add_subdirectory (ico.imageio)
+-    add_subdirectory (iff.imageio)
+-    add_subdirectory (jpeg.imageio)
+-    add_subdirectory (jpeg2000.imageio)
+-    add_subdirectory (openexr.imageio)
+-    add_subdirectory (png.imageio)
+-    add_subdirectory (pnm.imageio)
+-    add_subdirectory (psd.imageio)
+-    add_subdirectory (ptex.imageio)
+-    add_subdirectory (rla.imageio)
+-    add_subdirectory (sgi.imageio)
+-    add_subdirectory (socket.imageio)
+-    add_subdirectory (softimage.imageio)
+-    add_subdirectory (targa.imageio)
+-    add_subdirectory (tiff.imageio)
+-    add_subdirectory (webp.imageio)
+-    add_subdirectory (zfile.imageio)
+-endif ()
+-
+ if (USE_PYTHON AND oiio_boost_PYTHON_FOUND)
+     add_subdirectory (python)
+ endif ()
