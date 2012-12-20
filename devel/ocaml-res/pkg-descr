@@ -9,4 +9,4 @@ There are also functors that allow the generation of similar modules
 which use different reallocation strategies.
 
 Author:	Markus Mottl <markus.mottl@gmail.com>
-WWW:	http://www.ocaml.info/home/ocaml_sources.html
+WWW:	https://bitbucket.org/mmottl/res
