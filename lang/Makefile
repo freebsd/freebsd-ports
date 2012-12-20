@@ -272,6 +272,7 @@
     SUBDIR += python27
     SUBDIR += python31
     SUBDIR += python32
+    SUBDIR += python33
     SUBDIR += q
     SUBDIR += qore
     SUBDIR += qscheme
