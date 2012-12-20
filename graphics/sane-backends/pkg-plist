@@ -38,6 +38,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/hs2p.conf %D/etc/sane.d/dist/hs2p.conf; then rm -f %D/etc/sane.d/hs2p.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ibm.conf %D/etc/sane.d/dist/ibm.conf; then rm -f %D/etc/sane.d/ibm.conf; fi
 @unexec if cmp -s %D/etc/sane.d/kodak.conf %D/etc/sane.d/dist/kodak.conf; then rm -f %D/etc/sane.d/kodak.conf; fi
+@unexec if cmp -s %D/etc/sane.d/kodakaio.conf %D/etc/sane.d/dist/kodakaio.conf; then rm -f %D/etc/sane.d/kodakaio.conf; fi
 @unexec if cmp -s %D/etc/sane.d/leo.conf %D/etc/sane.d/dist/leo.conf; then rm -f %D/etc/sane.d/leo.conf; fi
 @unexec if cmp -s %D/etc/sane.d/lexmark.conf %D/etc/sane.d/dist/lexmark.conf; then rm -f %D/etc/sane.d/lexmark.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ma1509.conf %D/etc/sane.d/dist/ma1509.conf; then rm -f %D/etc/sane.d/ma1509.conf; fi
@@ -113,6 +114,7 @@ etc/sane.d/dist/hp5400.conf
 etc/sane.d/dist/hs2p.conf
 etc/sane.d/dist/ibm.conf
 etc/sane.d/dist/kodak.conf
+etc/sane.d/dist/kodakaio.conf
 etc/sane.d/dist/leo.conf
 etc/sane.d/dist/lexmark.conf
 etc/sane.d/dist/ma1509.conf
@@ -276,12 +278,18 @@ lib/sane/libsane-ibm.so.1
 lib/sane/libsane-kodak.la
 lib/sane/libsane-kodak.so
 lib/sane/libsane-kodak.so.1
+lib/sane/libsane-kodakaio.la
+lib/sane/libsane-kodakaio.so
+lib/sane/libsane-kodakaio.so.1
 lib/sane/libsane-kvs1025.la
 lib/sane/libsane-kvs1025.so
 lib/sane/libsane-kvs1025.so.1
 lib/sane/libsane-kvs20xx.la
 lib/sane/libsane-kvs20xx.so
 lib/sane/libsane-kvs20xx.so.1
+lib/sane/libsane-kvs40xx.la
+lib/sane/libsane-kvs40xx.so
+lib/sane/libsane-kvs40xx.so.1
 lib/sane/libsane-leo.la
 lib/sane/libsane-leo.so
 lib/sane/libsane-leo.so.1
@@ -402,6 +410,7 @@ lib/sane/libsane-umax_pp.so.1
 lib/sane/libsane-xerox_mfp.la
 lib/sane/libsane-xerox_mfp.so
 lib/sane/libsane-xerox_mfp.so.1
+libdata/pkgconfig/sane-backends.pc
 sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
