@@ -7,4 +7,4 @@ to be processed is small, xstr is often faster than Str; if the string is
 big, xstr is up to half as fast than Str.
 
 Author:	Gerd Stolpmann <gerd@gerd-stolpmann.de>
-WWW:	http://www.ocaml-programming.de/packages/
+WWW:	http://projects.camlcity.org/projects/xstr.html
