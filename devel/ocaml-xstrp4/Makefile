@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ocaml-xstrp4
-# Date created:		2006-08-01
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xstrp4
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
@@ -16,36 +11,32 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml extension to expands brace expansions
 
+LICENSE=	MIT
+
+OPTIONS_DEFINE=	EXAMPLES
+
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAMLFIND_PLIST=yes
+
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+PORTEXAMPLES=	*
 
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
-.endif
-.if !exists(${OCAMLFIND_LDCONF})
-	${TOUCH} ${OCAMLFIND_LDCONF}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+PLIST_DIRSTRY+=	${OCAML_EXAMPLESDIR:S,^${PREFIX}/,,}
 .endif
 
 post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample.* ${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} sample.* ${EXAMPLESDIR})
+.endif
 
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-
-	@${ECHO_CMD} "@dirrm share/examples/ocaml/${PORTNAME}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/examples/ocaml 2>/dev/null ||true"\
-  		>> ${TMPPLIST}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
