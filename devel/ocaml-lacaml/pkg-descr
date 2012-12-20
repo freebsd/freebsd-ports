@@ -6,4 +6,4 @@ This allows people to write high-performance numerical code for
 applications that need linear algebra.
 
 Author:	Markus Mottl <markus.mottl@gmail.com>
-WWW:	http://www.ocaml.info/home/ocaml_sources.html
+WWW:	https://bitbucket.org/mmottl/lacaml
