@@ -1,5 +1,5 @@
---- src/core/Platform.h.orig	2012-06-21 20:18:57.343827187 +0930
-+++ src/core/Platform.h	2012-06-21 20:20:38.915828064 +0930
+--- ./src/core/Platform.h.orig	2012-04-18 09:38:16.000000000 +0930
++++ ./src/core/Platform.h	2012-10-08 00:20:27.668352332 +1030
 @@ -85,7 +85,9 @@
  
  // linux/unix/posix

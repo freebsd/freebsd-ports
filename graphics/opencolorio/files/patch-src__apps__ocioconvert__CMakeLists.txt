@@ -1,5 +1,5 @@
---- src/apps/ocioconvert/CMakeLists.txt.orig	2012-06-21 20:37:46.118893014 +0930
-+++ src/apps/ocioconvert/CMakeLists.txt	2012-06-21 20:38:07.547827470 +0930
+--- ./src/apps/ocioconvert/CMakeLists.txt.orig	2012-04-18 09:38:16.000000000 +0930
++++ ./src/apps/ocioconvert/CMakeLists.txt	2012-10-07 21:56:32.462351272 +1030
 @@ -10,7 +10,7 @@
      
      add_executable(ocioconvert ${share_src_files} main.cpp)
