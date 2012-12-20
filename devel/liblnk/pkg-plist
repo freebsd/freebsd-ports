@@ -1,0 +1,17 @@
+bin/lnkinfo
+include/liblnk.h
+include/liblnk/codepage.h
+include/liblnk/definitions.h
+include/liblnk/error.h
+include/liblnk/extern.h
+include/liblnk/features.h
+include/liblnk/types.h
+lib/liblnk.a
+lib/liblnk.la
+lib/liblnk.so
+lib/liblnk.so.1
+%%PYTHON_SITELIBDIR%%/pylnk.a
+%%PYTHON_SITELIBDIR%%/pylnk.la
+%%PYTHON_SITELIBDIR%%/pylnk.so
+libdata/pkgconfig/liblnk.pc
+@dirrm include/liblnk
