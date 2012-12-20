@@ -1,19 +1,15 @@
-# New ports collection makefile for: ae_fonts1_ttf
-# Date created:        August 22 2003
-# Whom:                Samy Al Bahra <samy@kerneled.com>
-#
+# Created by: Samy Al Bahra <samy@kerneled.com>
 # $FreeBSD$
-#
 
-PORTNAME=		ae_fonts1_ttf
-PORTVERSION=		1.1
-PORTREVISION=		2
-CATEGORIES=		arabic x11-fonts
-MASTER_SITES=		SF/arabeyes/Fonts/ae_fonts
-DISTNAME=		ae_fonts1_ttf_${PORTVERSION}
+PORTNAME=	ae_fonts1_ttf
+PORTVERSION=	1.1
+PORTREVISION=	2
+CATEGORIES=	arabic x11-fonts
+MASTER_SITES=	SF/arabeyes/Fonts/ae_fonts
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of truetype Arabic fonts created by Arabeyes.org
+COMMENT=	Collection of TrueType Arabic fonts
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
@@ -21,57 +17,46 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ae_fonts1-${PORTVERSION}
 SUB_FILES=	pkg-message
 
-.if !defined(WITHOUT_AAHS)
-FONTS=	AAHS
-.endif
+OPTIONS_DEFINE=	AAHS AGA FS KASR MCS SHMOOKH
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.if !defined(WITHOUT_AGA)
-FONTS+=	AGA
-.endif
+AAHS_DESC=	Install the AAHS font set
+AGA_DESC=	Install the AGA font set
+FS_DESC=	Install the FS font set
+KASR_DESC=	Install the Kasr font set
+MCS_DESC=	Install the MCS font set
+SHMOOKH_DESC=	Install the Shmookh font set
 
-.if !defined(WITHOUT_FS)
-FONTS+=	FS
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_KASR)
-FONTS+=	Kasr
-.endif
+.for font in AAHS AGA FS MCS
+.  if ${PORT_OPTIONS:M${font}}
+FONTS+=	${font}
+.  endif
+.endfor
 
-.if !defined(WITHOUT_MCS)
-FONTS+=	MCS
-.endif
-
-.if !defined(WITHOUT_SHMOOKH)
-FONTS+=	Shmookh
-.endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} "The following make variables can be set to"
-	@${ECHO_MSG} "exclude certain font sets:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_AAHS    - do not install the AAHS font set"
-	@${ECHO_MSG} "WITHOUT_AGA     - do not install the AGA font set"
-	@${ECHO_MSG} "WITHOUT_FS      - do not install the FS font set"
-	@${ECHO_MSG} "WITHOUT_KASR    - do not install the Kasr font set"
-	@${ECHO_MSG} "WITHOUT_MCS     - do not install the MCS font set"
-	@${ECHO_MSG} "WITHOUT_SHMOOKH - do not install the Shmookh font set"
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} ""
+.for font in KASR SHMOOKH
+.  if ${PORT_OPTIONS:M${font}}
+FONTS+=	${font:C/(.).*/\1/}${font:L:C/.//}
+.  endif
+.endfor
 
 do-build:
-.for i in ${FONTS}
-	cd ${WRKSRC} && ttmkfdir -c -d ${WRKSRC}/${i} > ${WRKSRC}/${i}/fonts.dir
+.for font in ${FONTS}
+	cd ${WRKSRC} && ttmkfdir -c -d ${WRKSRC}/${font} > \
+		${WRKSRC}/${font}/fonts.dir
 .endfor
 
 do-install:
-.for i in ${FONTS}
-	${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${i}
-	${INSTALL_DATA} ${WRKSRC}/${i}/* ${PREFIX}/lib/X11/fonts/ae_fonts1/${i}
+.for font in ${FONTS}
+	${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
+	${INSTALL_DATA} ${WRKSRC}/${font}/* \
+		${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
 .endfor
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

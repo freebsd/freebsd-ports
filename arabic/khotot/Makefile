@@ -1,59 +1,45 @@
-# New ports collection makefile for: khotot
-# Date created:        August 23 2003
-# Whom:                Samy Al Bahra <samy@kerneled.com>
-#
+# Created by: Samy Al Bahra <samy@kerneled.com>
 # $FreeBSD$
-#
 
 PORTNAME=	khotot
 PORTVERSION=	1.0
 PORTREVISION=	2
-CATEGORIES=	arabic
+CATEGORIES=	arabic x11-fonts
 MASTER_SITES=	#
 DISTFILES=	#
 EXTRACT_ONLY=	#
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A meta-port of the most popular Arabic font packages
+COMMENT=	Meta-port for popular Arabic font packages
 
-.if !defined(WITHOUT_MONO)
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/ae_fonts_mono/fonts.dir:${PORTSDIR}/arabic/ae_fonts_mono
+NO_BUILD=	yes
+NO_INSTALL=	yes
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=	MONO AEFONTS KACST
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+MONO_DESC=	Install Arabic PCF fonts
+AEFONTS_DESC=	Install Arabeyes project TrueType fonts
+KACST_DESC=	Install King AbdulAziz University fonts
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMONO}
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/ae_fonts_mono/fonts.dir:${PORTSDIR}/arabic/ae_fonts_mono
 .endif
 
-.if !defined(WITHOUT_AEFONTS)
+.if ${PORT_OPTIONS:MAEFONTS}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/ae_fonts1/AAHS/fonts.dir:${PORTSDIR}/arabic/ae_fonts_ttf
 .endif
 
-.if !defined(WITHOUT_KACST)
+.if ${PORT_OPTIONS:MKACST}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/kacst_fonts/fonts.dir:${PORTSDIR}/arabic/kacst_fonts
 .endif
 
-NO_BUILD=	yes
-SUB_FILES=	pkg-message
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "**********************************************"
-	@${ECHO_MSG} "The following make variables can be set to"
-	@${ECHO_MSG} "exclude certain font sets:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_MONO - do not install the Arabic PCF"
-	@${ECHO_MSG} "		     fonts"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_AEFONTS - do not install the Arabeyes"
-	@${ECHO_MSG} "		        truetype Arabic fonts"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_KACST - do not install the truetype"
-	@${ECHO_MSG} "		      Arabic fonts created in the"
-	@${ECHO_MSG} "		      King AbdulAziz University of"
-	@${ECHO_MSG} "		      Riyadh, Saudi Arabia"
-	@${ECHO_MSG} "**********************************************"
-	@${ECHO_MSG} ""
-
-do-install:
-	# This is a meta-port, the do-install target is not needed
-
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
