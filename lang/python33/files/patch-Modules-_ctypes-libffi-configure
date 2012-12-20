@@ -1,0 +1,25 @@
+--- ./Modules/_ctypes/libffi/configure.orig	2012-09-29 18:00:42.000000000 +1000
++++ ./Modules/_ctypes/libffi/configure	2012-10-04 20:21:15.000000000 +1000
+@@ -6834,7 +6834,7 @@
+   rm -rf conftest*
+   ;;
+ 
+-x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
++amd64-*-freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
+ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
+   # Find out which ABI we are using.
+   echo 'int i;' > conftest.$ac_ext
+@@ -14322,10 +14322,10 @@
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-	libffi_cv_as_x86_pcrel=yes
++	libffi_cv_as_x86_pcrel=no
+ 	echo '.text; foo: nop; .data; .long foo-.; .text' > conftest.s
+-	if $CC $CFLAGS -c conftest.s 2>&1 | $EGREP -i 'illegal|warning' > /dev/null; then
+-	    libffi_cv_as_x86_pcrel=no
++	if $CC $CFLAGS -c conftest.s > /dev/null; then
++	    libffi_cv_as_x86_pcrel=yes
+ 	fi
+ 
+ fi
