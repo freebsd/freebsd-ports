@@ -1,39 +1,44 @@
-# New ports collection makefile for:	ocaml-type-conv
-# Date created:		2008-04-08
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	type-conv
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	108.07.00
 CATEGORIES=	devel
-MASTER_SITES=	http://janestcapital.com/ocaml/
+MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}/individual
+DISTNAME=	${PORTNAME:S,-,_,}-${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type conversion routines for OCaml
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-10-20
+LICENSE=	BSD
 
-USE_GMAKE=	yes
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAMLFIND_PLIST=yes
+OCAML_PKGDIRS=	${PORTNAME:S,-,_,}
 
-SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs
+MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME:S,-,_,}
+PORTDOCS=	*
 
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_DIRSTRY=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
 .endif
 
 post-install:
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in CHANGES.txt README.md
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
