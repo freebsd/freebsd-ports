@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
-COMMENT=	Library and tools to access the Windows Shortcut File (LNK) Format
+COMMENT=	Library and tools to access the Windows shortcut file (LNK) format
 
 LICENSE=	LGPL3
 
