@@ -1,19 +1,15 @@
-# New ports collection makefile for: ae_fonts_mono
-# Date created:        August 22, 2003
-# Whom:                Samy Al Bahra <samy@kerneled.com>
-#
+# Created by: Samy Al Bahra <samy@kerneled.com>
 # $FreeBSD$
-#
 
-PORTNAME=		ae_fonts_mono
-PORTVERSION=		1.0
+PORTNAME=	ae_fonts_mono
+PORTVERSION=	1.0
 PORTREVISION=	2
-CATEGORIES=		arabic
-MASTER_SITES=		SF/arabeyes/Fonts/ae_fonts
-DISTNAME=		ae_fonts_mono
+CATEGORIES=	arabic x11-fonts
+MASTER_SITES=	SF/arabeyes/Fonts/ae_fonts
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of PCF fonts that include Arabic glyphs
+COMMENT=	Collection of PCF fonts that include Arabic glyphs
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
@@ -28,10 +24,12 @@ do-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts_mono
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf ${PREFIX}/lib/X11/fonts/ae_fonts_mono
-	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/ae_fonts_mono
+	${INSTALL_DATA} ${WRKSRC}/*.pcf ${WRKSRC}/fonts.dir \
+		${PREFIX}/lib/X11/fonts/ae_fonts_mono
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
