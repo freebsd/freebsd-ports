@@ -22,8 +22,8 @@ lib/libidnkitlite.a
 lib/libidnkitlite.la
 lib/libidnkitlite.so
 lib/libidnkitlite.so.2
-%%DATADIR%%/map/ja.map
-%%DATADIR%%/map/tr.map
-@dirrm %%DATADIR%%/map
-@dirrm %%DATADIR%%
+share/idnkit/map/ja.map
+share/idnkit/map/tr.map
+@dirrm share/idnkit/map
+@dirrm share/idnkit
 @dirrm include/idn
