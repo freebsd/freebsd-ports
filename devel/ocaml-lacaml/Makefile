@@ -2,77 +2,62 @@
 # $FreeBSD$
 
 PORTNAME=	lacaml
-PORTVERSION=	5.4.7
-PORTREVISION=	1
+PORTVERSION=	7.0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://hg.ocaml.info/release/lacaml/archive/
-DISTNAME=	release-${PORTVERSION}
+MASTER_SITES=	http://cdn.bitbucket.org/mmottl/lacaml/downloads/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
+LICENSE=	LGPL21
 
-LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
-		lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
+		lapack:${PORTSDIR}/math/lapack
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAMLFIND_PLIST=yes
 USE_OCAML_LDCONFIG=yes
 USE_OCAML_WASH=	yes
-WRKSRC=		${WRKDIR}/lacaml-${DISTNAME}
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples \
+		--override conf_ccopt "${CFLAGS}" \
+		--override conf_cclib "${LDFLAGS:S,^.*[[:space:]],,}"
+MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-fPIC
-MAKE_ENV+=	OCAMLMKLIB_FLAGS="-L${LOCALBASE}/lib"
-MAKE_JOBS_UNSAFE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lblas -llapack
 
-DOCS=		README.txt TODO
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-post-extract:
-#
-# CFLAGS safety
-#
-	@${REINPLACE_CMD} -E \
-		-e 's,^(CFLAGS[[:space:]]*:=[[:space:]]*).*,\1${CFLAGS},' \
-		${WRKSRC}/lib/Makefile
+.include <bsd.port.options.mk>
 
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
 .endif
-.if !exists(${OCAMLFIND_LDCONF})
-	${TOUCH} ${OCAMLFIND_LDCONF}
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+PLIST_DIRSTRY+=	${OCAML_EXAMPLESDIR:S,^${PREFIX}/,,}
 .endif
 
 post-install:
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
-	@${FIND} ${EXAMPLESDIR}/ ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR}/ -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR}/ ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR}/ -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-# XXX: temporary workaround for non-standard PREFIX
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ocaml 2>/dev/null || true" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/examples/ocaml 2>/dev/null||true" \
-		>> ${TMPPLIST}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
