@@ -1,0 +1,5 @@
+bin/ociobakelut
+bin/ociocheck
+bin/ocioconvert
+bin/ociodisplay
+bin/ociolutimage

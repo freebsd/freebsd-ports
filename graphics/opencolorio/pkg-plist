@@ -1,18 +1,176 @@
-%%CLIAPPS%%bin/ociobakelut
-%%CLIAPPS%%bin/ociocheck
-%%CLIAPPS%%bin/ocioconvert
-%%CLIAPPS%%bin/ociodisplay
-%%CLIAPPS%%bin/ociolutimage
 include/OpenColorIO/OpenColorTypes.h
 include/OpenColorIO/OpenColorTransforms.h
 include/OpenColorIO/OpenColorABI.h
 include/OpenColorIO/OpenColorIO.h
-lib/libOpenColorIO.a
+include/PyOpenColorIO/PyOpenColorIO.h
+%%PYTHON_SITELIBDIR%%/PyOpenColorIO.so
+%%PYTHON_SITELIBDIR%%/PyOpenColorIO.so.1
+%%PYTHON_SITELIBDIR%%/PyOpenColorIO.so.1.0.7
 lib/libOpenColorIO.so
 lib/libOpenColorIO.so.1
 lib/libOpenColorIO.so.1.0.7
 libdata/pkgconfig/OpenColorIO.pc
 share/ocio/setup_ocio.sh
+%%PORTDOCS%%%%DOCSDIR%%/_images/gn10_to_linear_light.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/_images/gnf_to_linear_light.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/_images/lg10_to_linear_light.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/_images/lg8_to_vd8.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/_images/lgf_to_linear_light.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/_images/psicc_itworks.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/psicc_open_current_profile.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/psicc_proof_setup.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/psicc_reveal_profile.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/psicc_select_profile.png
+%%PORTDOCS%%%%DOCSDIR%%/_sources/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/CompatibleSoftware.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/allocation_vars.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/nuke_default.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/spi_anim.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/spi_pipeline.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/spi_vfx.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/api/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/api/OpenColorIO.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/api/OpenColorTransforms.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/api/OpenColorTypes.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/bindings/PythonAPI.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/bindings/PythonTransforms.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/bindings/PythonTypes.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/coding_guidelines.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/getting_started.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/internal_architecture.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/issues.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/submitting_changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/developers/usage_examples.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/downloads.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/installation.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/License.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/baking_luts.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/contexts.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/looks.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/tool_overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/alert_info_32.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/alert_warning_32.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/bg-page.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/bullet_orange.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/clo_res19_lm10.0101.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/clo_res19_lnf.0101.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/clo_res19_vd16.0101.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/ocio.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/ChangeLog.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/CompatibleSoftware.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/configurations/allocation_vars.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/configurations/index.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/configurations/nuke_default.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/configurations/spi_anim.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/configurations/spi_pipeline.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/configurations/spi_vfx.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/api/index.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/api/OpenColorIO.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/api/OpenColorTransforms.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/api/OpenColorTypes.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/bindings/PythonAPI.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/bindings/PythonTransforms.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/bindings/PythonTypes.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/coding_guidelines.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/getting_started.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/index.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/internal_architecture.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/issues.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/submitting_changes.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/developers/usage_examples.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/downloads.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/environment.pickle
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/FAQ.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/index.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/installation.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/License.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/userguide/baking_luts.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/userguide/contexts.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/userguide/index.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/userguide/looks.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/userguide/tool_overview.doctree
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.html
+%%PORTDOCS%%%%DOCSDIR%%/CompatibleSoftware.html
+%%PORTDOCS%%%%DOCSDIR%%/configurations/allocation_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/configurations/index.html
+%%PORTDOCS%%%%DOCSDIR%%/configurations/nuke_default.html
+%%PORTDOCS%%%%DOCSDIR%%/configurations/spi_anim.html
+%%PORTDOCS%%%%DOCSDIR%%/configurations/spi_pipeline.html
+%%PORTDOCS%%%%DOCSDIR%%/configurations/spi_vfx.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/api/OpenColorIO.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/api/OpenColorTransforms.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/api/OpenColorTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/bindings/PythonAPI.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/bindings/PythonTransforms.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/bindings/PythonTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/coding_guidelines.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/getting_started.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/index.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/internal_architecture.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/issues.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/submitting_changes.html
+%%PORTDOCS%%%%DOCSDIR%%/developers/usage_examples.html
+%%PORTDOCS%%%%DOCSDIR%%/downloads.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/License.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/userguide/baking_luts.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide/contexts.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide/looks.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide/tool_overview.html
 @dirrm include/OpenColorIO
+@dirrm include/PyOpenColorIO
 @dirrmtry libdata/pkgconfig
 @dirrm share/ocio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers/bindings
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/configurations
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/userguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/developers/bindings
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/developers/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/developers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/configurations
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/userguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/developers/bindings
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/developers/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/developers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/configurations
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

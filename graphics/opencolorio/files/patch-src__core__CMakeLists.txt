@@ -1,5 +1,5 @@
---- src/core/CMakeLists.txt.orig	2012-09-19 16:50:29.000000000 +0200
-+++ src/core/CMakeLists.txt	2012-09-19 16:51:18.000000000 +0200
+--- ./src/core/CMakeLists.txt.orig	2012-04-18 09:38:16.000000000 +0930
++++ ./src/core/CMakeLists.txt	2012-10-08 00:20:27.667351098 +1030
 @@ -90,4 +90,4 @@
  configure_file(${CMAKE_SOURCE_DIR}/export/pkgconfig/OpenColorIO.pc.in
      ${CMAKE_CURRENT_BINARY_DIR}/OpenColorIO.pc @ONLY)
