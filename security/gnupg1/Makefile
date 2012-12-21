@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gnupg
-# Date created:		Sep 30, 1998
-# Whom:			kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
+# Created by: kuriyama@FreeBSD.org
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.13
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg

@@ -1,15 +1,15 @@
---- doc/Makefile.in.orig	2012-01-30 23:20:15.000000000 +0900
-+++ doc/Makefile.in	2012-01-31 07:29:49.582744237 +0900
-@@ -33,7 +33,7 @@
- # along with this program; if not, see <http://www.gnu.org/licenses/>.
- 
- VPATH = @srcdir@
+--- doc/Makefile.in.orig	2012-12-21 04:30:34.000000000 +0900
++++ doc/Makefile.in	2012-12-21 09:36:23.407499114 +0900
+@@ -50,7 +50,7 @@
+     esac; \
+     test $$am__dry = yes; \
+   }
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/gnupg1
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -316,7 +316,11 @@
+@@ -352,7 +352,11 @@
  
  # Need this to avoid building of dvis with automake 1.4
  DVIS = 
@@ -20,17 +20,17 @@
 +endif
  
  # we can't add gpg.texi gpgv.texi here because automake does not like them to
- # be built files. 
-@@ -603,6 +607,8 @@
- 	  echo " ( cd '$(DESTDIR)$(man7dir)' && rm -f" $$files ")"; \
- 	  cd "$(DESTDIR)$(man7dir)" && rm -f $$files; }
+ # be built files.
+@@ -647,6 +651,8 @@
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+ 	dir='$(DESTDIR)$(man7dir)'; $(am__uninstall_files_from_dir)
  install-pkgdataDATA: $(pkgdata_DATA)
 +ifdef NOPORTDOCS
 +else
  	@$(NORMAL_INSTALL)
- 	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
  	@list='$(pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
-@@ -614,6 +620,7 @@
+ 	if test -n "$$list"; then \
+@@ -661,6 +667,7 @@
  	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgdatadir)'"; \
  	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgdatadir)" || exit $$?; \
  	done
