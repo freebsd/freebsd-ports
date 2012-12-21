@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fastjar
-# Date created:		18 March 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fastjar
 PORTVERSION=	0.93.20060808
@@ -12,26 +8,30 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	maho/fastjar
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A version of JDK's `jar' command written entirely in C
+COMMENT=	Version of JDK's `jar' command written entirely in C
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-PORTDOCS=	CHANGES README
-PLIST_FILES=	bin/fastjar bin/grepjar
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+PORTDOCS=	CHANGES ChangeLog NEWS README
+PLIST_FILES=	bin/fastjar bin/grepjar
 
 INFO=		fastjar
 MAN1=		fastjar.1 grepjar.1
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-	@${CAT} ${PKGMESSAGE}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
