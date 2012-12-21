@@ -3,6 +3,7 @@
 
 PORTNAME=	biosfont-demos
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
@@ -12,7 +13,7 @@ COMMENT=	Demos for the biosfont kernel module
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${LOCALBASE}/include/biosfont.h:${PORTSDIR}/sysutils/biosfont
-INSTALL_DEPENDS=	/boot/modules/biosfont.ko:${PORTSDIR}/sysutils/biosfont
+RUN_DEPENDS=	/boot/modules/biosfont.ko:${PORTSDIR}/sysutils/biosfont
 
 PLIST_FILES=	bin/showchar bin/showdati
 
