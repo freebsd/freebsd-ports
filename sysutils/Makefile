@@ -498,7 +498,6 @@
     SUBDIR += lxtask
     SUBDIR += lxterminal
     SUBDIR += magicrescue
-    SUBDIR += makefs
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += massadmin
