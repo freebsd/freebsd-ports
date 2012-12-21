@@ -25,7 +25,7 @@ BROKEN=		does not link
 PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 USE_OPENSSL=	yes
@@ -67,9 +67,7 @@ CMAKE_ARGS+=	-DXMLRPC_DAEMON:BOOL=OFF
 USE_OPENSSL_PORT=yes
 .endif
 
-GCC_LIBS=	"${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
-
 post-build:
-	${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/nasdc/${PORTNAME}"
+	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/nasdc/${PORTNAME}"
 
 .include <bsd.port.post.mk>

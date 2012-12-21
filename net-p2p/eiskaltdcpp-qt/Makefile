@@ -28,7 +28,7 @@ CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 USE_OPENSSL=	yes
@@ -116,9 +116,7 @@ CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
 USE_OPENSSL_PORT=yes
 .endif
 
-GCC_LIBS=	"${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
-
 post-build:
-	${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/${PORTNAME}/${PORTNAME}"
+	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/${PORTNAME}/${PORTNAME}"
 
 .include <bsd.port.post.mk>
