@@ -1,6 +1,7 @@
 bin/uncrustify
 %%DATADIR%%/ben.cfg
 %%DATADIR%%/d.cfg
+%%DATADIR%%/defaults.cfg
 %%DATADIR%%/gnu-indent.cfg
 %%DATADIR%%/kr-indent.cfg
 %%DATADIR%%/linux-indent.cfg
