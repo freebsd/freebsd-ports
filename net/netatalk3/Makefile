@@ -119,7 +119,7 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${PREFIX}/bin/macusers
-	[ -f ${PREFIX}/etc/apf.conf ] || \
+	[ -f ${PREFIX}/etc/afp.conf ] || \
 		${INSTALL_DATA} -c ${PREFIX}/etc/afp.conf.dist ${PREFIX}/etc/afp.conf
 	@${CAT} ${PKGMESSAGE}
 
