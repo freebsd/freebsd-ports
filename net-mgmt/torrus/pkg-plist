@@ -161,7 +161,6 @@ libexec/torrus/ttproclist
 %%DATADIR%%/xmlconfig/vendor/comtechefdata.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.ntregperf.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.xml
-%%DATADIR%%/xmlconfig/vendor/f5.bigip.xml
 %%DATADIR%%/xmlconfig/vendor/foundry.xml
 %%DATADIR%%/xmlconfig/vendor/ftos.xml
 %%DATADIR%%/xmlconfig/vendor/jacarta.xml
@@ -230,7 +229,6 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DevDiscover/ComtechEFData.pm
 %%SITE_PERL%%/Torrus/DevDiscover/DevDetails.pm
 %%SITE_PERL%%/Torrus/DevDiscover/EmpireSystemedge.pm
-%%SITE_PERL%%/Torrus/DevDiscover/F5BigIp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Foundry.pm
 %%SITE_PERL%%/Torrus/DevDiscover/FTOS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Jacarta.pm

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	torrus
-# Date created:				July 13th, 2005
-# Whom:	      				Corey Smith <corsmith@gmail.com>
-#
+# Created by: Corey Smith <corsmith@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	torrus
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/torrus/torrus/
 
