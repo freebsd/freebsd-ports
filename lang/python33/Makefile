@@ -7,6 +7,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -36,6 +37,7 @@ PYABIVER=	# default empty, for after appending
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
+		PYMAJOR=${PYTHON_MAJOR_VER} \
 		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/} \
 		PYABIVER=${PYABIVER} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX}
@@ -216,6 +218,10 @@ post-install:
 		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
 	done
 .endif
+
+.for file in python python-config
+	cd ${LOCALBASE}/bin && ${LN} -sf ${file:S/python/${PYTHON_VERSION}/} ${file:S/python/python${PYTHON_MAJOR_VER}/}
+.endfor
 
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}

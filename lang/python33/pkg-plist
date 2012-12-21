@@ -5,8 +5,10 @@ bin/idle3-%%PYVER%%
 %%IF_DEFAULT%%bin/pydoc3
 bin/pydoc3-%%PYVER%%
 %%IF_DEFAULT%%bin/python
+bin/python%%PYMAJOR%%
 bin/python%%PYVER%%
 %%IF_DEFAULT%%bin/python-config
+bin/python%%PYMAJOR%%-config
 bin/python%%PYVER%%-config
 %%IF_DEFAULT%%bin/python-shared
 bin/python-shared%%PYVER%%
