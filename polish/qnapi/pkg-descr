@@ -1,1 +1,5 @@
-WWW:	http://krzemin.iglu.cz/?page_id=29
+Free, Qt4-based application designed for automatically downloading and
+matching subtitles for your movie files.
+It uses NapiProjekt and OpenSubtitles databases.
+
+WWW: http://sourceforge.net/projects/qnapi/
