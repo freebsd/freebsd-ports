@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mod_pagespeed
-PORTVERSION=	1.1.23.2
-PORTREVISION=	1
+PORTVERSION=	1.2.24.1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -41,6 +41,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 MAKE_ENV+=	BUILDTYPE=Release
+ALL_TARGET=	mod_pagespeed_test pagespeed_automatic_test all html_minifier_main css_minify_main
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_pagespeed/src
 GYP_DEFINES+=	\
 		use_system_apache_dev=1 \
@@ -97,6 +98,9 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} && \
+	${INSTALL_PROGRAM} out/Release/css_minify_main ${PREFIX}/bin ; \
+	${INSTALL_PROGRAM} out/Release/html_minifier_main ${PREFIX}/bin ; \
+	${INSTALL_PROGRAM} out/Release/js_minify ${PREFIX}/bin ; \
 	${INSTALL} out/Release/libmod_pagespeed.so ${PREFIX}/${APACHEMODDIR}/mod_pagespeed.so
 	if [ ! -f ${PREFIX}/${APACHEETCDIR}/pagespeed.conf-dist ] ; then \
 		cd ${WRKSRC}/install && \
@@ -107,11 +111,17 @@ do-install:
 				-e "s,@@MOD_PAGESPEED_CACHE@@,/var/mod_pagespeed/,g" \
 				> ${PREFIX}/${APACHEETCDIR}/pagespeed.conf-dist ; \
 	fi
+	if [ ! -f ${PREFIX}/${APACHEETCDIR}/pagespeed_libraries.conf-dist ] ; then \
+		${INSTALL_DATA} ${WRKSRC}/net/instaweb/genfiles/conf/pagespeed_libraries.conf ${PREFIX}/${APACHEETCDIR}/pagespeed_libraries.conf-dist ; \
+	fi
 
 post-install:
 	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} -m 755 /var/mod_pagespeed
 	@if [ ! -f ${PREFIX}/etc/pagespeed.conf ]; then \
 		${CP} -p ${PREFIX}/${APACHEETCDIR}/pagespeed.conf-dist ${PREFIX}/${APACHEETCDIR}/pagespeed.conf ; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/pagespeed_libraries.conf ]; then \
+		${CP} -p ${PREFIX}/${APACHEETCDIR}/pagespeed_libraries.conf-dist ${PREFIX}/${APACHEETCDIR}/pagespeed_libraries.conf ; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
