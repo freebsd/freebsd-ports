@@ -2,51 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	ekg
-DISTVERSION=	1.8rc1
+DISTVERSION=	1.8rc2
 PORTEPOCH=	3
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://ekg.chmurka.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu client
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		gadu.3:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+		gadu:${PORTSDIR}/polish/libgadu
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
 USE_PKGCONFIG=	build
-CONFIGURE_ARGS+=--disable-shared \
-		--disable-static \
-		--enable-dynamic \
-		--disable-libgadu-openssl \
-		--without-libungif \
-		--without-libjpeg
+USE_NCURSES=	yes
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}
+CONFIGURE_ARGS= --without-libungif \
+		--without-libjpeg \
+		--disable-ui-gtk
+
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}
 
-OPTIONS_DEFINE=	ASPELL OPENSSL
+MAN1=		ekg.1
+MANLANG=	"" pl
+MANCOMPRESSED=	no
+
+OPTIONS_DEFINE=		ASPELL OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=		aspell.16:${PORTSDIR}/polish/aspell
+LIB_DEPENDS+=		aspell:${PORTSDIR}/polish/aspell
 CONFIGURE_ARGS+=	--enable-aspell
 .endif
 
-.if empty(PORT_OPTIONS:MOPENSSL)
+.if ! ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--without-openssl
 .endif
-
-USE_LDCONFIG=	yes
-
-MAN1=		ekg.1
-MANLANG=	"" pl
-MANCOMPRESSED=	no
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/ekg
