@@ -1,8 +1,21 @@
-treewm is a window manager that tries to implement a new concept. In addition to
-the client windows the user can create desktops which can themselves contain
-windows and desktops. By arranging the windows in such a tree the user is able
-to manage his tasks efficiently.
+treewm is a window manager that tries to implement a new concept.  In addition
+to the client windows the user can create desktops which can themselves contain
+windows and desktops.  By arranging the windows in such a tree the user is able
+to manage his tasks efficiently  treewm is feature-rich, flexible and provides
+a powerful concept.  However, treewm's look is is rather puristic, and its feel
+is not always intuitive, but with a bit of practise it should be very effective
+to use.
 
-More info: http://www.informatik.uni-frankfurt.de/~polzer/treewmdurchnull/
+Short feature list (some of them are quite unique among window managers):
+
+  - Allows to create desktops and to arbitrarily move windows between desktops
+  - Many options (such as sticky, autoresize, always on top, or the focus or
+    raise policy) can be set for any desktop or window
+  - Can be fully customized using the configuration file
+  - Has a very powerful (somewhat vi-like) command mode, and can be controlled
+    from shell scripts via a FIFO
+  - Icons can be placed on desktops that can execute arbitrary commands
+  - Only uses very common libraries, in particular it doesn't require GTK, Qt,
+    or anything like that
 
 WWW: http://treewm.sourceforge.net/
