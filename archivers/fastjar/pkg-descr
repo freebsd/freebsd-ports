@@ -1,17 +1,16 @@
-Fastjar is a version of Sun's `jar' utility, written entirely in C,
-and therefore quite a bit faster.  Fastjar can be up to 100x faster
-than the stock `jar' program running without a JIT.  Currently,
-the author is working on adding all the features present in the Sun
-utility.  At the moment, implemented features are:
+Fastjar is a version of Sun's `jar' utility, written entirely in C, and
+therefore quite a bit faster.  Fastjar can be up to 100x faster than the
+stock `jar' program running without a JIT.  Currently, the author is
+working on adding all the features present in the Sun utility.  At the
+moment, implemented features are:
 
   * Archive creation
   * Verbose/quiet output
   * stdout vs. file output
   * Manifest file support
   * Deflation or storage
-  * Changing to a dir and adding files (-C)
+  * Changing to directory and adding files (-C)
   * Archive content listing (-t)
   * Archive extraction (-x)
 
-WWW: http://savannah.nongnu.org/projects/fastjar
-     http://fastjar.sourceforge.net/     
+WWW: http://fastjar.sourceforge.net/
