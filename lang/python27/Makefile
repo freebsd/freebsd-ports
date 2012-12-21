@@ -7,7 +7,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	2.7.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -37,6 +37,7 @@ SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
+		PYMAJOR=${PYTHON_MAJOR_VER} \
 		PYVER_WITHPAT=${PORTVERSION:S/.c/c/}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
@@ -286,6 +287,10 @@ post-install:
 		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
 	done
 .endif
+
+.for file in python python-config
+	cd ${LOCALBASE}/bin && ${LN} -sf ${file:S/python/${PYTHON_VERSION}/} ${file:S/python/python${PYTHON_MAJOR_VER}/}
+.endfor
 
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}
