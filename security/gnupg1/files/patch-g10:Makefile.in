@@ -1,15 +1,15 @@
---- g10/Makefile.in.orig	2012-01-30 23:20:15.000000000 +0900
-+++ g10/Makefile.in	2012-01-31 07:30:57.305617061 +0900
-@@ -35,7 +35,7 @@
- 
- 
- VPATH = @srcdir@
+--- g10/Makefile.in.orig	2012-12-21 04:30:34.000000000 +0900
++++ g10/Makefile.in	2012-12-21 09:37:38.552438682 +0900
+@@ -52,7 +52,7 @@
+     esac; \
+     test $$am__dry = yes; \
+   }
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/gnupg1
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -363,7 +363,11 @@
+@@ -399,7 +399,11 @@
  	@LIBUSB_CPPFLAGS@ $(am__append_1)
  needed_libs = ../cipher/libcipher.a ../mpi/libmpi.a ../util/libutil.a
  other_libs = $(LIBICONV) $(DNSLIBS) $(LIBINTL) $(CAPLIBS)
@@ -21,16 +21,16 @@
  @ENABLE_BZIP2_SUPPORT_FALSE@bzip2_source = 
  @ENABLE_BZIP2_SUPPORT_TRUE@bzip2_source = compress-bz2.c
  common_source = \
-@@ -622,6 +626,8 @@
+@@ -661,6 +665,8 @@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
  install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
 +ifdef NOPORTDOCS
 +else
  	@$(NORMAL_INSTALL)
- 	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
  	@list='$(dist_pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
-@@ -633,6 +639,7 @@
+ 	if test -n "$$list"; then \
+@@ -675,6 +681,7 @@
  	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgdatadir)'"; \
  	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgdatadir)" || exit $$?; \
  	done
