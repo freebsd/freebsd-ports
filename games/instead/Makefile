@@ -1,11 +1,8 @@
-# New ports collection makefile for:   instead
-# Date created:            19 Dec 2010
-# Whom:                neuroworker@gmail.com
-#
+# Created by: neuroworker@gmail.com
 # $FreeBSD$
 
 PORTNAME=	instead
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -29,7 +26,9 @@ MAN6=		instead.6
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALL.*DOCPATH/ d' ${WRKSRC}/doc/Makefile
 .endif
