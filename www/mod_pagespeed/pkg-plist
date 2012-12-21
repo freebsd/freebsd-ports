@@ -1,6 +1,12 @@
+bin/css_minify_main
+bin/html_minifier_main
+bin/js_minify
 %%APACHEMODDIR%%/mod_pagespeed.so
 @unexec if cmp -s %D/%%APACHEETCDIR%%/pagespeed.conf %D/%%APACHEETCDIR%%/pagespeed.conf-dist; then rm -f %D/%%APACHEETCDIR%%/pagespeed.conf; fi
+@unexec if cmp -s %D/%%APACHEETCDIR%%/pagespeed_libraries.conf %D/%%APACHEETCDIR%%/pagespeed_libraries.conf-dist; then rm -f %D/%%APACHEETCDIR%%/pagespeed_libraries.conf; fi
 %%APACHEETCDIR%%/pagespeed.conf-dist
+%%APACHEETCDIR%%/pagespeed_libraries.conf-dist
 @exec [ ! -f %B/pagespeed.conf ] && cp %B/pagespeed.conf-dist %B/pagespeed.conf
+@exec [ ! -f %B/pagespeed_libraries.conf ] && cp %B/pagespeed_libraries.conf-dist %B/pagespeed_libraries.conf
 @exec install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 755 /var/mod_pagespeed
 @unexec rmdir /var/mod_pagespeed
