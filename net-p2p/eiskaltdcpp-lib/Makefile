@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
@@ -78,9 +78,7 @@ CMAKE_ARGS+=	-DWITH_DHT:BOOL=OFF
 USE_OPENSSL_PORT=yes
 .endif
 
-GCC_LIBS=	"${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
-
 post-build:
-	${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/dcpp/libeiskaltdcpp.so.2.2"
+	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/dcpp/libeiskaltdcpp.so.2.2"
 
 .include <bsd.port.post.mk>
