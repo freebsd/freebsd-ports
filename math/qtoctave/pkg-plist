@@ -1,7 +1,7 @@
 bin/easy_plot
 bin/qtjs
 bin/qtoctave
-bin/qtoctave_info
+bin/qtoctave-info-reader
 bin/qtoctave_pkg
 bin/simplercs
 bin/xmlwidget
@@ -10,6 +10,39 @@ share/applications/qtoctave.desktop
 %%DOCSDIR%%/qtoctave_doc/index.html
 %%DOCSDIR%%/qtoctave_doc/menu_integrate_easy.png
 %%DOCSDIR%%/qtoctave_doc/menus.html
+%%DOCSDIR%%/utils/qtjs/doc/english/building guis with Qt Designer and qtjs.odt
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/readme.txt
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/run_example.sh
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero.js
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero.ui
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero2.js
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero2.ui
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero3.js
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero3.ui
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero4.js
+%%DOCSDIR%%/utils/qtjs/doc/english/examples/sombrero4.ui
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/ejecutar_ejemplo.sh
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/leeme.txt
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero/ejecutar_ventana.m
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero/sombrero.js
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero/sombrero.ui
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero2.js
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero2.ui
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero3.js
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero3.ui
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero4.js
+%%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero4.ui
+%%DOCSDIR%%/utils/qtjs/doc/espanol/guis con Qt Designer y qtjs.odt
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/combobox.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/designer_label.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/designer_new_widget.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/designer_proyecto_vacio.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/designer_ventana_completa.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/lineEdit.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/octave_sombrero.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/qtdesigner.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/qtjs_sombrero.png
+%%DOCSDIR%%/utils/qtjs/doc/espanol/images/slider.png
 share/icons/hicolor/64x64/apps/qtoctave.png
 %%DATADIR%%/config.rc
 %%DATADIR%%/images/back.png
@@ -52,11 +85,11 @@ share/icons/hicolor/64x64/apps/qtoctave.png
 %%DATADIR%%/images/undo.png
 %%DATADIR%%/images/up.png
 %%DATADIR%%/images/xedit.png
-%%DATADIR%%/lang/qtoctave.qph
-%%DATADIR%%/lang/qtoctave_cs.ts
-%%DATADIR%%/lang/qtoctave_es.ts
+%%DATADIR%%/lang/qtoctave.qm
+%%DATADIR%%/lang/qtoctave_cs.qm
+%%DATADIR%%/lang/qtoctave_es.qm
 %%DATADIR%%/lang/qtoctave_gl_ES.qm
-%%DATADIR%%/lang/qtoctave_gl_ES.ts
+%%DATADIR%%/lang/qtoctave_pl.qm
 %%DATADIR%%/menus/Analysis/Integrate function/Easy integrate.menu
 %%DATADIR%%/menus/Analysis/Integrate function/Integrate function.menu
 %%DATADIR%%/menus/Analysis/Integrate function/integrate_simpson.menu
@@ -68,13 +101,11 @@ share/icons/hicolor/64x64/apps/qtoctave.png
 %%DATADIR%%/menus/Equations/equation_by_bisection.menu
 %%DATADIR%%/menus/Equations/linear_equation.menu
 %%DATADIR%%/menus/Equations/nonlinear_equation.menu
-%%DATADIR%%/menus/Help/octave_help.menu
 %%DATADIR%%/menus/Plot/Export/eps.menu
 %%DATADIR%%/menus/Plot/Export/inkscape.menu
 %%DATADIR%%/menus/Plot/Export/pdf.menu
 %%DATADIR%%/menus/Plot/Export/png.menu
 %%DATADIR%%/menus/menus.ts
-%%DATADIR%%/octave.xml
 %%DATADIR%%/scripts/clc.m
 %%DATADIR%%/scripts/diary.m
 %%DATADIR%%/scripts_octave/_ide_completion_matches.m
@@ -82,10 +113,14 @@ share/icons/hicolor/64x64/apps/qtoctave.png
 %%DATADIR%%/scripts_octave/_ide_reload_variables_list.m
 %%DATADIR%%/scripts_octave/maxima.m
 %%DATADIR%%/scripts_octave/qtinfo.m
-%%DATADIR%%/scripts_octave/qtinfo.m.orig
 %%DATADIR%%/scripts_octave/svgcanvas_delete_on_load.m
 %%DATADIR%%/scripts_octave/svgcanvasload.m
 %%DATADIR%%/scripts_octave/svgcanvassave.m
+%%DATADIR%%/syntax_files/cpp.xml
+%%DATADIR%%/syntax_files/h.xml
+%%DATADIR%%/syntax_files/m.xml
+%%DATADIR%%/syntax_files/sh.xml
+@dirrm %%DATADIR%%/syntax_files
 @dirrm %%DATADIR%%/scripts_octave
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/menus/Statistics
@@ -106,8 +141,21 @@ share/icons/hicolor/64x64/apps/qtoctave.png
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/images
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol/images
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/english/examples
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/english
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/ejemplos/sombrero
+@dirrm %%DOCSDIR%%/utils/qtjs/doc/ejemplos
+@dirrm %%DOCSDIR%%/utils/qtjs/doc
+@dirrm %%DOCSDIR%%/utils/qtjs
+@dirrm %%DOCSDIR%%/utils
 @dirrm %%DOCSDIR%%/qtoctave_doc
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@exec mkdir -p %D/%%DATADIR%%/menus/Help
 @exec mkdir -p %D/%%DATADIR%%/menus/Matrix
 @exec mkdir -p %D/%%DATADIR%%/menus/Statistics
