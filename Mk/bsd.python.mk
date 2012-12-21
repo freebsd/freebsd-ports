@@ -87,6 +87,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  in case you want to use an older version as a default.
 #					  default: python2.7
 #
+# PYTHON_MAJOR_VER	- Python version major number. 2 for python-2.x,
+#					  3 for python-3.x and so on.
+#
 # PYTHON_WRKSRC		- The ${WRKSRC} for your python version. Needed for
 #					  extensions like Tkinter, py-gdbm and py-expat, which
 #					  are built from sources contained in the Python
@@ -423,6 +426,8 @@ check-makevars::
 	@${ECHO} "  python3.3"
 	@${FALSE}
 .endif
+
+PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 
 PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
 PYTHON_MASTER_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION:C/rc[0-9]//}
