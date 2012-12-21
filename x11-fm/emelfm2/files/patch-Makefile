@@ -1,6 +1,6 @@
---- Makefile.orig	2012-03-16 09:11:47.000000000 +0100
-+++ Makefile	2012-04-23 08:12:55.000000000 +0200
-@@ -274,7 +274,7 @@
+--- Makefile.orig	2012-12-05 02:03:10.000000000 +0100
++++ Makefile	2012-12-21 10:29:40.000000000 +0100
+@@ -288,7 +288,7 @@
   lLIBS += $(shell pkg-config --libs gmodule-2.0)
  endif
  # -lrt needed for clock_gettime(), explicit -lm, -ldl needed for some arch-linux distros
@@ -9,14 +9,23 @@
  ifeq ($(USE_GAMIN), 1)
  #gamin code is a superset of FAM code, so gamin needs fam as well
  lLIBS += -lfam
-@@ -319,10 +319,6 @@
+@@ -305,7 +305,7 @@
+  ifeq ($(EXTDBUS), 1)
+   lLIBS += $(shell pkg-config --libs dbus-1 dbus-glib-1 hal hal-storage)
+  else
+-  lLIBS += $(shell pkg-config --libs dbus-1 hal hal-storage)
++  lLIBS += $(shell pkg-config --libs dbus-1 dbus-glib-1 hal hal-storage)
+  endif
+ endif
+ endif
+@@ -333,10 +333,6 @@
  	@for file in `ls $(ICONS)/ |grep -v svn`; do \
  		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
  	done
 -	@install -d $(DOC_DIR)
--	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
+-	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v emelfm2.1`; do \
 -		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
 -	done
  	@install -d $(MAN_DIR)
- 	@install -m 644 $(DOCS)/$(TARGET).1 $(MAN_DIR);
+ 	@install -m 644 $(DOCS)/emelfm2.1 $(MAN_DIR)/$(TARGET).1;
  
