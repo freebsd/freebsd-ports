@@ -231,9 +231,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-test: build
-	@cd ${WRKSRC} && ./python -m test -u all -j 1 -w
-
-regression-test: test
-
 .include <bsd.port.post.mk>
