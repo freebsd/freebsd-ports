@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.4.0a3
-PORTREVISION=	2
+PORTVERSION=	3.4.0b1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-DISTVERSION=	$(PORTVERSION:S/a/alpha/)
-DISTFILES=	syslog-ng-3.4.0alpha3-20121210-v3.4.0alpha3-176-gfded.tar.gz
-MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/3.4/3.4.0alpha3/
+DISTVERSION=	$(PORTVERSION:S/b/beta/)
+DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
+MASTER_SITES=	http://www.balabit.com/downloads/files?path=/syslog-ng/open-source-edition/${DISTVERSION}/source/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement

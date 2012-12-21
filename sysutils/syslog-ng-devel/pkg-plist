@@ -86,7 +86,7 @@ include/syslog-ng/uuid.h
 include/syslog-ng/vptransform.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.4.0alpha3.so
+lib/libsyslog-ng-3.4.0beta1.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libcryptofuncs.la
 lib/syslog-ng/libcryptofuncs.so
