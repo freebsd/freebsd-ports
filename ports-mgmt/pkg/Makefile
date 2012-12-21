@@ -56,31 +56,31 @@ MLINKS=	pkg-delete.8 pkg-remove.8 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PKGNG)
-.if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
-NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
-.if ${NB_OLDPKGS} > 0
-
-pre-everything::
-	@${ECHO_CMD} "You are about to convert your system to pkgng while you have ports/packages"; \
-	 ${ECHO_CMD} "installed with the old pkg_install tools."; \
-	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "You can choose to: "; \
-	 ${ECHO_CMD} "- keep pkg_install as the package management system by adding this line to /etc/make.conf:"; \
-	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "    WITHOUT_PKGNG=yes" ; \
-	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "- switch to pkgng:"; \
-	 ${ECHO_CMD} "    1) Add WITHOUT_PKGNG to /etc/make.conf"; \
-	 ${ECHO_CMD} "    2) Install ports-mgmt/pkg"; \
-	 ${ECHO_CMD} "    3) Convert your package database by running pkg2ng"; \
-	 ${ECHO_CMD} "    4) Remove WITHOUT_PKGNG from /etc/make.conf"; \
-	 ${ECHO_CMD} ""; \
-	exit 1
-
-.endif
-.endif
-.endif
+#.if defined(WITH_PKGNG)
+#.if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
+#NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
+#.if ${NB_OLDPKGS} > 0
+#
+#pre-everything::
+#	@${ECHO_CMD} "You are about to convert your system to pkgng while you have ports/packages"; \
+#	 ${ECHO_CMD} "installed with the old pkg_install tools."; \
+#	 ${ECHO_CMD} ""; \
+#	 ${ECHO_CMD} "You can choose to: "; \
+#	 ${ECHO_CMD} "- keep pkg_install as the package management system by adding this line to /etc/make.conf:"; \
+#	 ${ECHO_CMD} ""; \
+#	 ${ECHO_CMD} "    WITHOUT_PKGNG=yes" ; \
+#	 ${ECHO_CMD} ""; \
+#	 ${ECHO_CMD} "- switch to pkgng:"; \
+#	 ${ECHO_CMD} "    1) Add WITHOUT_PKGNG to /etc/make.conf"; \
+#	 ${ECHO_CMD} "    2) Install ports-mgmt/pkg"; \
+#	 ${ECHO_CMD} "    3) Convert your package database by running pkg2ng"; \
+#	 ${ECHO_CMD} "    4) Remove WITHOUT_PKGNG from /etc/make.conf"; \
+#	 ${ECHO_CMD} ""; \
+#	exit 1
+#
+#.endif
+#.endif
+#.endif
 
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
 .if defined(WITH_PKGNG)
