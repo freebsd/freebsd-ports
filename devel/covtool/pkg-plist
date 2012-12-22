@@ -1,0 +1,16 @@
+bin/covtool
+bin/covmerge
+bin/covannotate
+bin/cov++
+bin/gen_html
+@unexec if cmp -s %D/etc/cov++.cfg.sample %D/etc/cov++.cfg; then rm -f %D/etc/cov++.cfg; fi
+etc/cov++.cfg.sample
+@exec if [ ! -f %D/etc/cov++.cfg ] ; then cp -p %D/%F %B/cov++.cfg; fi
+libexec/covtool/covtoolhelper.o
+libexec/covtool/covtoolhelper_debug.o
+libexec/covtool/covtoolhelper.c
+%%DATADIR%%/README
+%%DATADIR%%/COPYRIGHT
+%%DATADIR%%/covtool_version
+@dirrmtry %%DATADIR%%
+@dirrmtry libexec/covtool
