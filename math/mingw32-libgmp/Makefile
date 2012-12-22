@@ -1,15 +1,10 @@
-# New ports collection makefile for:   mingw32-libgmp4
-# Date created:        28 April 2008
-# Whom:                Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libgmp
-PORTVERSION=	5.0.5
+PORTVERSION=	5.1.0
 CATEGORIES=	math devel
-MASTER_SITES=	GNU
-MASTER_SITE_SUBDIR=	gmp
+MASTER_SITES=	ftp://ftp.gmplib.org/pub/gmp-${PORTVERSION}/
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	gmp-${PORTVERSION}
 
