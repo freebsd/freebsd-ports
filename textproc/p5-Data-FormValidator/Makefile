@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Data::FormValidator
-# Date created:				27 Oct 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-FormValidator
-PORTVERSION=	4.70
+PORTVERSION=	4.80
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
