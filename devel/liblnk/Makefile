@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblnk
-PORTVERSION=	20121121
+PORTVERSION=	20121205
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
 USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
+USE_GNOME=	gnomehack
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
@@ -29,10 +30,6 @@ MAN3=		liblnk.3
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS ChangeLog
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,@prefix@/libdata/pkgconfig,g' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.options.mk>
 
