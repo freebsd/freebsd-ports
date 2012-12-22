@@ -5,14 +5,20 @@
 #
 # Created by: Edwin Groothuis <edwin@freebsd.org>
 #
-# For port developers:
+# To request the use of a current version of GCC, specify USE_GCC=yes in
+# your port/system configuration.  This is the preferred use of USE_GCC.
+# It defines a canonical, default version of GCC; the same version of
+# GCC is also implied by USE_FORTRAN=yes.
+# 
 # If your port needs a specific (minimum) version of GCC, you can easily
-# specify that with a "USE_GCC=" statement.  Unless absolutely necessary
-# do so by specifying "USE_GCC=X.Y+" which requests at least GCC version
+# specify that with a USE_GCC= statement.  Unless absolutely necessary
+# do so by specifying USE_GCC=X.Y+ which requests at least GCC version
 # X.Y.  To request a specific version omit the trailing + sign.  Use of
 # a Fortran compiler is declared by the USE_FORTRAN knob, not USE_GCC.
 #
 # Examples:
+#   USE_GCC=	yes			# port requires a current version of GCC
+#							# (4.6 as of today, subject to change).
 #   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
 #   USE_GCC=	4.7			# port requires GCC 4.7.
 #
@@ -53,6 +59,10 @@ GCC_DEFAULT_V=	${GCC_DEFAULT_VERSION:S/.//}
 
 # No configurable parts below this. ####################################
 #
+
+.if ${USE_GCC} == yes
+USE_GCC=	${GCC_DEFAULT_VERSION}+
+.endif
 
 # Extract the fields from GCCVERSION_...
 .for v in ${GCCVERSIONS}
@@ -104,7 +114,7 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 
 . if ${USE_GCC} == any
 
-# enable the clang-is-cc workaround.  default to the last gcc imported
+# Enable the clang-is-cc workaround.  Default to the last GCC imported
 # into base.
 _USE_GCC:=	4.2
 _GCC_ORLATER:=	true
