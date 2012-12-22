@@ -1,22 +1,21 @@
-# New ports collection makefile for:	atop
-# Date created:		2011-06-30
-# Whom:			Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	atop
-PORTVERSION=	2.0.2.b1
+PORTVERSION=	2.0.2.b2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cloud.github.com/downloads/samm-git/atop-freebsd/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	ASCII Monitor for system resources and process activity
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	samm-git
+GH_PROJECT=	atop-freebsd
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
+GH_COMMIT=	f9357ca
+
 USE_NCURSES=	yes
 MAKEFILE=	BSDmakefile
 MAN1=		atop.1 atopsar.1
