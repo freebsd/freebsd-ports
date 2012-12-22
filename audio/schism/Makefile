@@ -25,8 +25,8 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-# 20101128 and 20110101 segfaults, 20120105 builds but GUI does not come up
-PORTSCOUT=	skipv:20101128,20110101,20120105
+# releases up to version 20120105 either segfault or don't run
+PORTSCOUT=	skipv:20100202,20101127,20101128,20110101,20120105
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
