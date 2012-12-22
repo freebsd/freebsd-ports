@@ -249,6 +249,7 @@
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook
+    SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
     SUBDIR += cppcheck
