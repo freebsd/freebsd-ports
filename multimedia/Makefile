@@ -10,6 +10,7 @@
     SUBDIR += aegisub
     SUBDIR += arista
     SUBDIR += asdcplib
+    SUBDIR += assimp
     SUBDIR += atomicparsley
     SUBDIR += audacious
     SUBDIR += audacious-plugins
