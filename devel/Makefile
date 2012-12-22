@@ -331,6 +331,7 @@
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
     SUBDIR += jech-dht
+    SUBDIR += jgoodies-common
     SUBDIR += dia2code
     SUBDIR += diffuse
     SUBDIR += ding-libs
