@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 MAN1=		pcapinfo.1
 MAN3=		Net::Pcap.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-t__03-openlive.t
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
