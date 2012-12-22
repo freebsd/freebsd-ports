@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A basic image management and display program
 
-LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2 \
+		fltk:${PORTSDIR}/x11-toolkits/fltk \
 		png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
