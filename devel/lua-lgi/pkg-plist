@@ -1,0 +1,29 @@
+lib/lua51/lgi/corelgilua51.so
+share/lua/5.1/lgi.lua
+share/lua/5.1/lgi/class.lua
+share/lua/5.1/lgi/component.lua
+share/lua/5.1/lgi/core.lua
+share/lua/5.1/lgi/enum.lua
+share/lua/5.1/lgi/ffi.lua
+share/lua/5.1/lgi/init.lua
+share/lua/5.1/lgi/log.lua
+share/lua/5.1/lgi/namespace.lua
+share/lua/5.1/lgi/override/Clutter.lua
+share/lua/5.1/lgi/override/GLib-Variant.lua
+share/lua/5.1/lgi/override/GLib.lua
+share/lua/5.1/lgi/override/GObject-Closure.lua
+share/lua/5.1/lgi/override/GObject-Object.lua
+share/lua/5.1/lgi/override/GObject-Type.lua
+share/lua/5.1/lgi/override/GObject-Value.lua
+share/lua/5.1/lgi/override/Gdk.lua
+share/lua/5.1/lgi/override/Gio.lua
+share/lua/5.1/lgi/override/Gst.lua
+share/lua/5.1/lgi/override/Gtk.lua
+share/lua/5.1/lgi/override/Pango.lua
+share/lua/5.1/lgi/override/PangoCairo.lua
+share/lua/5.1/lgi/override/cairo.lua
+share/lua/5.1/lgi/record.lua
+share/lua/5.1/lgi/version.lua
+@dirrm share/lua/5.1/lgi/override
+@dirrm share/lua/5.1/lgi
+@dirrm lib/lua51/lgi
