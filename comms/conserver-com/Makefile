@@ -1,9 +1,4 @@
-# New ports collection makefile for:	conserver.com
-# Date created:		9 December 2001
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	conserver
 PORTVERSION=	8.1.18
@@ -24,14 +19,15 @@ MAN1=	console.1
 MAN5=	conserver.cf.5 conserver.passwd.5
 MAN8=	conserver.8
 
-OPTIONS=	UDS	"Use Unix domain sockets for client/server"	off
+OPTIONS_DEFINE=	UDS
+UDS_DESC=	Use Unix domain sockets for client/server
 
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_UDS)
+.if ${PORT_OPTIONS:MUDS}
 CONFIGURE_ARGS+=	--with-uds
 .endif
 
