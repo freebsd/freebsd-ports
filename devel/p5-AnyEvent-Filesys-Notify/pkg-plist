@@ -3,6 +3,7 @@
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Fallback.pm
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Linux.pm
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Mac.pm
+%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/FreeBSD.pm
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys

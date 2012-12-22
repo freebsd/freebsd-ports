@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	AnyEvent-Filesys-Notify
-PORTVERSION=	0.09
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,8 @@ MAN3=	AnyEvent::Filesys::Notify.3 \
 	AnyEvent::Filesys::Notify::Event.3 \
 	AnyEvent::Filesys::Notify::Role::Fallback.3 \
 	AnyEvent::Filesys::Notify::Role::Linux.3 \
-	AnyEvent::Filesys::Notify::Role::Mac.3
+	AnyEvent::Filesys::Notify::Role::Mac.3 \
+	AnyEvent::Filesys::Notify::Role::FreeBSD.3
 
 .include <bsd.port.pre.mk>
 
