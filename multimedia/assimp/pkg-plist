@@ -1,0 +1,53 @@
+bin/assimp
+include/assimp/Compiler/poppack1.h
+include/assimp/Compiler/pstdint.h
+include/assimp/Compiler/pushpack1.h
+include/assimp/DefaultLogger.hpp
+include/assimp/Exporter.hpp
+include/assimp/IOStream.hpp
+include/assimp/IOSystem.hpp
+include/assimp/Importer.hpp
+include/assimp/LogStream.hpp
+include/assimp/Logger.hpp
+include/assimp/NullLogger.hpp
+include/assimp/ProgressHandler.hpp
+include/assimp/ai_assert.h
+include/assimp/anim.h
+include/assimp/camera.h
+include/assimp/cexport.h
+include/assimp/cfileio.h
+include/assimp/cimport.h
+include/assimp/color4.h
+include/assimp/color4.inl
+include/assimp/config.h
+include/assimp/defs.h
+include/assimp/importerdesc.h
+include/assimp/light.h
+include/assimp/material.h
+include/assimp/material.inl
+include/assimp/matrix3x3.h
+include/assimp/matrix3x3.inl
+include/assimp/matrix4x4.h
+include/assimp/matrix4x4.inl
+include/assimp/mesh.h
+include/assimp/postprocess.h
+include/assimp/quaternion.h
+include/assimp/quaternion.inl
+include/assimp/scene.h
+include/assimp/texture.h
+include/assimp/types.h
+include/assimp/vector2.h
+include/assimp/vector2.inl
+include/assimp/vector3.h
+include/assimp/vector3.inl
+include/assimp/version.h
+lib/cmake/assimp-3.0/assimp-config-version.cmake
+lib/cmake/assimp-3.0/assimp-config.cmake
+lib/libassimp.so
+lib/libassimp.so.3
+lib/libassimp.so.3.0.1264
+libdata/pkgconfig/assimp.pc
+@dirrm lib/cmake/assimp-3.0
+@dirrmtry lib/cmake
+@dirrm include/assimp/Compiler
+@dirrm include/assimp
