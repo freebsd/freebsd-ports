@@ -1,13 +1,8 @@
-# New ports collection makefile for:	vym
-# Date created:				17 Oct 2004
-# Whom:			Gerrit Beine <tux@pinguru.net>
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	vym
-PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/vym/${PORTVERSION}
 
