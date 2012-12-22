@@ -1,6 +1,7 @@
 lib/enlightenment/modules/evry-websearch/module.desktop
 lib/enlightenment/modules/evry-websearch/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/evry-websearch/e-module.edj
+%%NLS%%lib/enlightenment/modules/evry-websearch/locale/ar/LC_MESSAGES/evry-websearch.mo
 %%NLS%%lib/enlightenment/modules/evry-websearch/locale/fr/LC_MESSAGES/evry-websearch.mo
 %%NLS%%lib/enlightenment/modules/evry-websearch/locale/it/LC_MESSAGES/evry-websearch.mo
 %%NLS%%lib/enlightenment/modules/evry-websearch/locale/el/LC_MESSAGES/evry-websearch.mo
@@ -28,6 +29,8 @@ lib/enlightenment/modules/evry-websearch/e-module.edj
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/it
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale
 @dirrm lib/enlightenment/modules/evry-websearch/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/evry-websearch

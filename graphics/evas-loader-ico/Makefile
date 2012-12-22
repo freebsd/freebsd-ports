@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	loader-ico
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	evas-
-DISTNAME=	evas-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (ICO loader)

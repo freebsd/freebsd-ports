@@ -1,4 +1,4 @@
 include/ecore-1/Ecore_Sdl.h
 lib/libecore_sdl.so
-lib/libecore_sdl.so.2
+lib/libecore_sdl.so.8
 libdata/pkgconfig/ecore-sdl.pc

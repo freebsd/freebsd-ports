@@ -1,5 +1,5 @@
 include/ecore-1/Ecore_IMF_Evas.h
 lib/libecore_imf_evas.so
-lib/libecore_imf_evas.so.2
+lib/libecore_imf_evas.so.8
 libdata/pkgconfig/ecore-imf-evas.pc
 @dirrmtry include/ecore-1

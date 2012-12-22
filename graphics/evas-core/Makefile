@@ -2,61 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	core
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	evas-
-DISTNAME=	evas-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (core library)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig
 USE_EFL=	librt_hack libtool_hack
+USE_GNOME=	gnomehack pkgconfig
+USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/evas
+EXAMPLESDIR=	${PREFIX}/share/examples/evas
 
 .include "Makefile.inc"
 
-OPTIONS=	FONTCONFIG	"Enable fontconfig support" on \
-		FRIBIDI		"Enable bidirectional text support" on \
-		EET		"Enable EET font loader" on
+OPTIONS_DEFINE=	EET FONTCONFIG FRIBIDI
+OPTIONS_DEFAULT=EET FONTCONFIG FRIBIDI
+EET_DESC=	EET font loader
+FRIBIDI_DESC=	Bidirectional text support
 
-EXAMPLESDIR=	${PREFIX}/share/examples/evas
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_FONTCONFIG)
-CONFIGURE_ARGS+=	--enable-fontconfig
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+.if ${PORT_OPTIONS:MFONTCONFIG}
+LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+CONFIGURE_ARGS+=--enable-fontconfig
 .else
-CONFIGURE_ARGS+=	--disable-fontconfig
+CONFIGURE_ARGS+=--disable-fontconfig
 .endif
 
-.if !defined(WITHOUT_FRIBIDI)
-CONFIGURE_ARGS+=	--enable-fribidi
-LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
+.if ${PORT_OPTIONS:MFRIBIDI}
+LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=--enable-fribidi
 .else
-CONFIGURE_ARGS+=	--disable-fribidi
+CONFIGURE_ARGS+=--disable-fribidi
 .endif
 
-.if !defined(WITHOUT_EET)
-CONFIGURE_ARGS+=	--enable-font-loader-eet
+.if ${PORT_OPTIONS:MEET}
 USE_EFL+=	eet
+CONFIGURE_ARGS+=--enable-font-loader-eet
 .else
-CONFIGURE_ARGS+=	--disable-font-loader-eet
+CONFIGURE_ARGS+=--disable-font-loader-eet
 .endif
 
-.if !defined(NOPORTEXAMPLES)
-CONFIGURE_ARGS+=	--enable-install-examples
+.if ${PORT_OPTIONS:MEXAMPLES}
+CONFIGURE_ARGS+=--enable-install-examples
 .else
-CONFIGURE_ARGS+=	--disable-install-examples
+CONFIGURE_ARGS+=--disable-install-examples
 .endif
 
 post-patch:
@@ -64,7 +66,7 @@ post-patch:
 		${WRKSRC}/src/examples/Makefile.in
 
 post-install:
-.if defined(NOPORTEXAMPLES)
+.if empty(PORT_OPTIONS:MEXAMPLES)
 	@${RMDIR} ${EXAMPLESDIR}
 .endif
 

@@ -1,0 +1,7 @@
+lib/enlightenment/modules/rmb/module.desktop
+lib/enlightenment/modules/rmb/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/rmb/right.png
+@dirrm lib/enlightenment/modules/rmb/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/rmb
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

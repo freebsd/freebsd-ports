@@ -3,6 +3,7 @@ lib/enlightenment/modules/engage/module_icon.png
 lib/enlightenment/modules/engage/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/engage/module.desktop
 lib/enlightenment/modules/engage/e-module-ng.edj
+%%NLS%%lib/enlightenment/modules/engage/locale/ar/LC_MESSAGES/engage.mo
 %%NLS%%lib/enlightenment/modules/engage/locale/fr/LC_MESSAGES/engage.mo
 %%NLS%%lib/enlightenment/modules/engage/locale/de/LC_MESSAGES/engage.mo
 %%NLS%%lib/enlightenment/modules/engage/locale/it/LC_MESSAGES/engage.mo
@@ -21,6 +22,8 @@ lib/enlightenment/modules/engage/e-module-ng.edj
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale
 @dirrm lib/enlightenment/modules/engage/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/engage

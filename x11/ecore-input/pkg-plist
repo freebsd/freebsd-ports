@@ -1,5 +1,5 @@
 include/ecore-1/Ecore_Input.h
 lib/libecore_input.so
-lib/libecore_input.so.2
+lib/libecore_input.so.8
 libdata/pkgconfig/ecore-input.pc
 @dirrmtry include/ecore-1

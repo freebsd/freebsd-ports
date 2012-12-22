@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	e_dbus
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 PORTEPOCH=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	EFL DBUS connectivity library
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -25,9 +25,9 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-ehal \
 		--enable-eukit \
-		--enable-econnman0_7x \
-		--enable-eofono \
 		--enable-enotify \
-		--disable-ebluez  # Linux specific ??
+		--disable-econnman0_7x \
+		--disable-eofono \
+		--disable-ebluez
 
 .include <bsd.port.mk>

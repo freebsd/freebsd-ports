@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ipc
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (ipc module)
@@ -24,11 +24,12 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_ipc
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-OPTIONS=	SSL "Enable SSL support" on
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ENV=		SSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" SSL_LIBS="-lssl"
 CONFIGURE_ARGS+=	--enable-openssl
 .else

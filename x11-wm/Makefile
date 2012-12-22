@@ -38,6 +38,7 @@
     SUBDIR += e17-module-diskio
     SUBDIR += e17-module-drawer
     SUBDIR += e17-module-e-tiling
+    SUBDIR += e17-module-eektool
     SUBDIR += e17-module-elfe
     SUBDIR += e17-module-empris
     SUBDIR += e17-module-engage
@@ -67,6 +68,7 @@
     SUBDIR += e17-module-places
     SUBDIR += e17-module-quickaccess
     SUBDIR += e17-module-rain
+    SUBDIR += e17-module-rmb
     SUBDIR += e17-module-screenshot
     SUBDIR += e17-module-slideshow
     SUBDIR += e17-module-snow

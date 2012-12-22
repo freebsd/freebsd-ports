@@ -1,6 +1,7 @@
 lib/enlightenment/modules/eooorg/module.desktop
 lib/enlightenment/modules/eooorg/e-module-eooorg.edj
 lib/enlightenment/modules/eooorg/%%E17_ARCH%%/module.so
+%%NLS%%lib/enlightenment/modules/eooorg/locale/ar/LC_MESSAGES/eooorg.mo
 %%NLS%%lib/enlightenment/modules/eooorg/locale/it/LC_MESSAGES/eooorg.mo
 %%NLS%%lib/enlightenment/modules/eooorg/locale/de/LC_MESSAGES/eooorg.mo
 %%NLS%%lib/enlightenment/modules/eooorg/locale/fr/LC_MESSAGES/eooorg.mo
@@ -22,6 +23,8 @@ lib/enlightenment/modules/eooorg/%%E17_ARCH%%/module.so
 %%NLS%%@dirrm lib/enlightenment/modules/eooorg/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/eooorg/locale/it/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/eooorg/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/eooorg/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eooorg/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/eooorg/locale
 @dirrm lib/enlightenment/modules/eooorg/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/eooorg

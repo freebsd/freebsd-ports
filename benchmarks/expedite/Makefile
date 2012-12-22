@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	expedite
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Expedite is a benchmark suite for Evas
@@ -20,25 +20,29 @@ USE_EFL_EVAS_ENGINES=	buffer
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
-OPTIONS=		OPENGL	"Enable OpenGL engine"	on \
-			SDL	"Enable SDL engine"	off \
-			X11	"Enable X11 engine"	on
+OPTIONS_DEFINE=	OPENGL SDL X11
+OPTIONS_DEFAULT=OPENGL X11
+OPENGL_DESC=	Enable OpenGL evas engine
+SDL_DESC=	Enable SDL evas engine
+X11_DESC=	Enable X11 evas engine
 
-.if !defined(WITHOUT_OPENGL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENGL}
 USE_EFL_EVAS_ENGINES+=	opengl
 CONFIGURE_ARGS+=	--enable-opengl-x11
 .else
 CONFIGURE_ARGS+=	--disable-opengl-x11
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_EFL_EVAS_ENGINES+=	sdl
 CONFIGURE_ARGS+=	--enable-software-sdl
 .else
 CONFIGURE_ARGS+=	--disable-software-sdl
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_EFL_EVAS_ENGINES+=	x11
 CONFIGURE_ARGS+=	--enable-software-x11 --enable-xrender-x11
 .else

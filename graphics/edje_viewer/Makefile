@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edje_viewer
-PORTVERSION=	20111128
+PORTVERSION=	20120918
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/extra/
 
@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore edje elementary
 USE_EFL_ECORE=	file
 USE_GNOME=	gnomehack pkgconfig
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

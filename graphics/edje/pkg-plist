@@ -7,46 +7,68 @@ bin/edje_player
 include/edje-1/Edje.h
 include/edje-1/Edje_Edit.h
 lib/libedje.so
-lib/libedje.so.2
+lib/libedje.so.8
 lib/edje/utils/epp
 libdata/pkgconfig/edje.pc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Vera.ttf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/box.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bubble.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/color-class.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/drag.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-animations.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-basic.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-box.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-box2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-color-class.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-drag.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-perspective.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-signals-messages.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-swallow.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-table.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/edje-text.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lua_script.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perspective.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/red.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/signals-messages.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sigtest.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sigtest.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/swallow.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table.edc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.edc
+%%EXAMPLESDIR%%/Vera.ttf
+%%EXAMPLESDIR%%/animations.edc
+%%EXAMPLESDIR%%/animations2.c
+%%EXAMPLESDIR%%/animations2.edc
+%%EXAMPLESDIR%%/basic.edc
+%%EXAMPLESDIR%%/basic2.edc
+%%EXAMPLESDIR%%/box.edc
+%%EXAMPLESDIR%%/bubble.png
+%%EXAMPLESDIR%%/color-class.edc
+%%EXAMPLESDIR%%/drag.edc
+%%EXAMPLESDIR%%/duck.wav
+%%EXAMPLESDIR%%/edje-animations.c
+%%EXAMPLESDIR%%/edje-basic.c
+%%EXAMPLESDIR%%/edje-basic2.c
+%%EXAMPLESDIR%%/edje-box.c
+%%EXAMPLESDIR%%/edje-box2.c
+%%EXAMPLESDIR%%/edje-color-class.c
+%%EXAMPLESDIR%%/edje-drag.c
+%%EXAMPLESDIR%%/edje-perspective.c
+%%EXAMPLESDIR%%/edje-signals-messages.c
+%%EXAMPLESDIR%%/edje-swallow.c
+%%EXAMPLESDIR%%/edje-swallow2.c
+%%EXAMPLESDIR%%/edje-table.c
+%%EXAMPLESDIR%%/edje-text.c
+%%EXAMPLESDIR%%/edje_example.c
+%%EXAMPLESDIR%%/edje_example.edc
+%%EXAMPLESDIR%%/embryo_custom_state.edc
+%%EXAMPLESDIR%%/embryo_pong.edc
+%%EXAMPLESDIR%%/embryo_run_program.edc
+%%EXAMPLESDIR%%/embryo_set_state.edc
+%%EXAMPLESDIR%%/embryo_set_text.edc
+%%EXAMPLESDIR%%/embryo_timer.edc
+%%EXAMPLESDIR%%/external_elm_anchorblock.edc
+%%EXAMPLESDIR%%/external_elm_button.edc
+%%EXAMPLESDIR%%/external_elm_check.edc
+%%EXAMPLESDIR%%/external_elm_panes.edc
+%%EXAMPLESDIR%%/external_emotion_elm.edc
+%%EXAMPLESDIR%%/lua_script.edc
+%%EXAMPLESDIR%%/perspective.edc
+%%EXAMPLESDIR%%/red.png
+%%EXAMPLESDIR%%/signals-messages.edc
+%%EXAMPLESDIR%%/signalsBubble.edc
+%%EXAMPLESDIR%%/signals2.c
+%%EXAMPLESDIR%%/sigtest.c
+%%EXAMPLESDIR%%/sigtest.edc
+%%EXAMPLESDIR%%/swallow.edc
+%%EXAMPLESDIR%%/table.edc
+%%EXAMPLESDIR%%/test.png
+%%EXAMPLESDIR%%/text.edc
+%%EXAMPLESDIR%%/toggle_using_filter.edc
 %%DATADIR%%/include/edje.inc
 share/mime/packages/edje.xml
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 @dirrm lib/edje/utils
-@dirrm lib/edje
+@dirrmtry lib/edje
 @dirrm include/edje-1
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

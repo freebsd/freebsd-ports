@@ -1,0 +1,21 @@
+--- data/etc/sysactions.conf.in.orig	2012-11-08 12:37:45.000000000 +0100
++++ data/etc/sysactions.conf.in	2012-11-08 12:38:48.000000000 +0100
+@@ -43,13 +43,13 @@
+ # user and group name can use glob matches (* == all for example) like the
+ # shell. as can action names allowed or denied. 
+ 
+-action:   halt      /sbin/shutdown -h now
++action:   halt      /sbin/shutdown -p now
+ action:   reboot    /sbin/shutdown -r now
+-action:   suspend   @SUSPEND@
++action:   suspend   /usr/sbin/zzz
+ action:   hibernate @HIBERNATE@
+-action:   /bin/mount /bin/mount
+-action:   /bin/umount /bin/umount
+-action:   /usr/bin/eject /usr/bin/eject
++action:   /bin/mount /sbin/mount
++action:   /bin/umount /sbin/umount
++action:   /usr/bin/eject /usr/sbin/cdcontrol eject
+ action:   gdb       gdb
+ 
+ # on FreeBSD use this instead of the above.

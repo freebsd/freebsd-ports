@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	input
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (input module)
@@ -27,8 +27,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	--enable-ecore-input
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's,\$$\(top_builddir\)/src/lib/ecore/\.libs,${LOCALBASE}/lib,'\
@@ -39,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-input.pc \
 		${PREFIX}/libdata/pkgconfig/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

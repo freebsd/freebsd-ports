@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sdl
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (sdl module)
@@ -17,10 +17,10 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_SDL=	sdl
 USE_EFL=	ecore libtool_hack
 USE_EFL_ECORE=	input
 USE_GNOME=	gnomehack pkgconfig
+USE_SDL=	sdl
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_sdl
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

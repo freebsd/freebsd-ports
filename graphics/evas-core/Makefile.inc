@@ -3,7 +3,6 @@ CONFIGURE_ARGS=	--disable-software-xcb \
 		--disable-software-8-x11 \
 		--disable-software-16-x11 \
 		--disable-directfb \
-		--disable-software-sdl \
 		--disable-software-16-sdl \
 		--disable-gl-sdl \
 		--disable-buffer \
@@ -24,6 +23,8 @@ CONFIGURE_ARGS=	--disable-software-xcb \
 		--disable-image-loader-tiff \
 		--disable-image-loader-wbmp \
 		--disable-image-loader-xpm \
+		--disable-wayland-shm \
+		--disable-wayland-egl \
 		--disable-cpu-sse3
 
 PATCHDIR=	"../../graphics/evas-core/files"

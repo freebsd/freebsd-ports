@@ -1,5 +1,5 @@
 include/ecore-1/Ecore_Input_Evas.h
 lib/libecore_input_evas.so
-lib/libecore_input_evas.so.2
+lib/libecore_input_evas.so.8
 libdata/pkgconfig/ecore-input-evas.pc
 @dirrmtry include/ecore-1

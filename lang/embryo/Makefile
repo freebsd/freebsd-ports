@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	embryo
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 PORTEPOCH=	2
 CATEGORIES=	lang enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A C like scripting language used in Enlightenment
@@ -20,4 +20,10 @@ USE_EFL=	eina libtool_hack librt_hack
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 803000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-lib-embryo_float.c
+.endif
+
+.include <bsd.port.post.mk>

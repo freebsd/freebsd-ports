@@ -178,6 +178,7 @@
     SUBDIR += e107
     SUBDIR += eaccelerator
     SUBDIR += efront
+    SUBDIR += egueb
     SUBDIR += eldav.el
     SUBDIR += elgg
     SUBDIR += elinks

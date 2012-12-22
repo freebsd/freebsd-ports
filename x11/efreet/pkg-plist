@@ -15,11 +15,11 @@ include/efreet-1/efreet_menu.h
 include/efreet-1/efreet_uri.h
 include/efreet-1/efreet_utils.h
 lib/libefreet.so
-lib/libefreet.so.2
+lib/libefreet.so.8
 lib/libefreet_mime.so
-lib/libefreet_mime.so.2
+lib/libefreet_mime.so.8
 lib/libefreet_trash.so
-lib/libefreet_trash.so.2
+lib/libefreet_trash.so.8
 lib/efreet/efreet_desktop_cache_create
 lib/efreet/efreet_icon_cache_create
 libdata/pkgconfig/efreet-mime.pc

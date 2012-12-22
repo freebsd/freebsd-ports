@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	x11
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (x11 module)
@@ -30,61 +30,60 @@ XEXTDIR=	${LOCALBASE}/include/X11/extensions
 CONFIGURE_ARGS+=	--enable-ecore-x \
 			--enable-ecore-input
 
-OPTIONS=	XDAMAGE		"Enable Xdamage support (requires X11)" on \
-		XDPMS		"Enable Xdpms support (requires X11)" on \
-		XFIXES		"Enable Xfixes support (requires X11)" on \
-		XINERAMA	"Enable Xinerama support (requires X11)" on \
-		XPRINT		"Enable Xprint support (requires X11)" on \
-		XRANDR		"Enable Xrandr support (requires X11)" on \
-		XRENDER		"Enable Xrender support (requires X11)" on \
-		XSS		"Enable Xscrnsaver support (requires X11)" on \
-		XCURSOR		"Enable Xcursor support (requires X11)" on
+OPTIONS_DEFINE=	XCURSOR XDAMAGE XDPMS XFIXES XINERAMA XPRINT XRANDR XRENDER XSS
+OPTIONS_DEFAULT=XCURSOR XDAMAGE XDPMS XFIXES XINERAMA XPRINT XRANDR XRENDER XSS
+XDAMAGE_DESC=	X11 Xdamage extension support
+XDPMS_DESC=	X11 Xdpms extension support
+XFIXES_DESC=	X11 Xfixes extension support
+XPRINT_DESC=	X11 Xprint extension support
+XRENDER_DESC=	X11 Xrender extension support
+XSS_DESC=	X11 Xscrnsaver extension support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XDAMAGE) || exists(${XEXTDIR}/Xdamage.h)
+.if ${PORT_OPTIONS:MXCURSOR} \
+	|| exists(${LOCALBASE}/include/X11/Xcursor/Xcursor.h)
+USE_XORG+=	xcursor
+WITH_X11=	yes
+.endif
+
+.if ${PORT_OPTIONS:MXDAMAGE} || exists(${XEXTDIR}/Xdamage.h)
 USE_XORG+=	xdamage
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XDPMS) || exists(${XEXTDIR}/dpms.h)
+.if ${PORT_OPTIONS:MXDPMS} || exists(${XEXTDIR}/dpms.h)
 USE_XORG+=	xextproto
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XFIXES) || exists(${XEXTDIR}/Xfixes.h)
+.if ${PORT_OPTIONS:MXFIXES} || exists(${XEXTDIR}/Xfixes.h)
 USE_XORG+=	xfixes
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XINERAMA) || exists(${XEXTDIR}/Xinerama.h)
+.if ${PORT_OPTIONS:MXINERAMA} || exists(${XEXTDIR}/Xinerama.h)
 USE_XORG+=	xineramaproto
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XPRINT) || exists(${XEXTDIR}/Print.h)
+.if ${PORT_OPTIONS:MXPRINT} || exists(${XEXTDIR}/Print.h)
 USE_XORG+=	printproto
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XRANDR) || exists(${XEXTDIR}/Xrandr.h)
+.if ${PORT_OPTIONS:MXRANDR} || exists(${XEXTDIR}/Xrandr.h)
 USE_XORG+=	xrandr
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XRENDER) || exists(${XEXTDIR}/Xrender.h)
+.if ${PORT_OPTIONS:MXRENDER} || exists(${XEXTDIR}/Xrender.h)
 USE_XORG+=	xrender
 WITH_X11=	yes
 .endif
 
-.if !defined(WITHOUT_XSS) || exists(${XEXTDIR}/scrnsaver.h)
+.if ${PORT_OPTIONS:MXSS} || exists(${XEXTDIR}/scrnsaver.h)
 USE_XORG+=	xscrnsaver
-WITH_X11=	yes
-.endif
-
-.if !defined(WITHOUT_XCURSOR) \
-	|| exists(${LOCALBASE}/include/X11/Xcursor/Xcursor.h)
-USE_XORG+=	xcursor
 WITH_X11=	yes
 .endif
 
@@ -102,4 +101,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-x.pc \
 		${PREFIX}/libdata/pkgconfig/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

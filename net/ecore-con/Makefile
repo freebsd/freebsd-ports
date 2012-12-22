@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	con
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	net enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (con module)
@@ -27,27 +27,26 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	--enable-ecore-con
 
-OPTIONS=	CARES	"Enable async DNS resolving via c-ares" on \
-		CURL	"Enable Curl support"	on \
-		SSL	"Enable SSL support"	on
+OPTIONS_DEFINE=	CARES CURL SSL
+OPTIONS_DEFAULT=CARES CURL SSL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CARES)
+.if ${PORT_OPTIONS:MCARES}
 CONFIGURE_ARGS+=	--enable-cares
-LIB_DEPENDS+=		cares.2:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=		cares:${PORTSDIR}/dns/c-ares
 .else
 CONFIGURE_ARGS+=	--disable-cares
 .endif
 
-.if !defined(WITHOUT_CURL)
+.if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=	--enable-curl
-LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-curl
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ENV=		SSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" SSL_LIBS="-lssl"
 CONFIGURE_ARGS+=	--enable-openssl
 .else
@@ -65,4 +64,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-con.pc \
 		${PREFIX}/libdata/pkgconfig/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

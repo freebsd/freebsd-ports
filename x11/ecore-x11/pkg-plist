@@ -2,6 +2,6 @@ include/ecore-1/Ecore_X.h
 include/ecore-1/Ecore_X_Atoms.h
 include/ecore-1/Ecore_X_Cursor.h
 lib/libecore_x.so
-lib/libecore_x.so.2
+lib/libecore_x.so.8
 libdata/pkgconfig/ecore-x.pc
 @dirrmtry include/ecore-1
