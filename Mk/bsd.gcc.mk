@@ -60,7 +60,7 @@ GCC_DEFAULT_V=	${GCC_DEFAULT_VERSION:S/.//}
 # No configurable parts below this. ####################################
 #
 
-.if ${USE_GCC} == yes
+.if defined(USE_GCC) && ${USE_GCC} == yes
 USE_GCC=	${GCC_DEFAULT_VERSION}+
 .endif
 
