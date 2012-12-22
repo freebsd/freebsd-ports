@@ -110,6 +110,7 @@ hg:*:212:
 drizzle:*:213:
 opendnssec:*:215:
 bs:*:220:
+rtpproxy:*:222:
 postgrey:*:225:
 sqlgrey:*:226:
 kismet:*:229:
