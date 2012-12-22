@@ -885,6 +885,7 @@
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
     SUBDIR += kimwitu
+    SUBDIR += klee
     SUBDIR += kodos
     SUBDIR += kprof
     SUBDIR += kscope
