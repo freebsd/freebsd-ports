@@ -43,6 +43,8 @@ bin/slrnpull
 %%DATADIR%%/slang/gsort.sl
 %%DATADIR%%/slang/ispell.sl
 %%DATADIR%%/slang/latin2.sl
+%%DATADIR%%/slang/mailcap.sl
+%%DATADIR%%/slang/mime.sl
 %%DATADIR%%/slang/multipart.sl
 %%DATADIR%%/slang/nn.sl
 %%DATADIR%%/slang/posthook.sl
