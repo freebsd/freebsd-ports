@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	file
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (file module)
@@ -25,19 +25,20 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include "../ecore-main/Makefile.inc"
 
-CONFIGURE_ARGS+=	--enable-ecore-file
+CONFIGURE_ARGS+=--enable-ecore-file
 
-OPTIONS=	CURL	"Enable Curl support"	on
+OPTIONS_DEFINE=	CURL
+OPTIONS_DEFAULT=CURL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CURL)
-USE_EFL_ECORE=		con
-CONFIGURE_ARGS+=	--enable-ecore-con \
-			--enable-curl
-LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
+.if ${PORT_OPTIONS:MCURL}
+USE_EFL_ECORE=	con
+CONFIGURE_ARGS+=--enable-ecore-con \
+		--enable-curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .else
-CONFIGURE_ARGS+=	--disable-curl
+CONFIGURE_ARGS+=--disable-curl
 .endif
 
 post-patch:
@@ -56,4 +57,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-file.pc \
 		${PREFIX}/libdata/pkgconfig/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

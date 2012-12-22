@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	ethumb
-PORTVERSION=	0.1.1.65643
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
-		http://files.roorback.net/e17/base/
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Thumbnail generator library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -24,12 +24,14 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-epdf
 
-OPTIONS=	EMOTION "Build with Emotion module" on \
-		ETHUMBD "Build ethumbd daemon (requires dbus)" on
+OPTIONS_DEFINE=	EMOTION ETHUMBD
+OPTIONS_DEFAULT=EMOTION ETHUMBD
+EMOTION_DESC=	Build with Emotion module
+ETHUMBD_DESC=	Build ethumbd daemon (requires dbus)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EMOTION)
+.if ${PORT_OPTIONS:MEMOTION}
 USE_EFL+=	emotion
 CONFIGURE_ARGS+=	--enable-emotion
 PLIST_SUB+=	EMOTION=""
@@ -38,7 +40,7 @@ CONFIGURE_ARGS+=	--disable-emotion
 PLIST_SUB+=	EMOTION="@comment "
 .endif
 
-.if !defined(WITHOUT_ETHUMBD)
+.if ${PORT_OPTIONS:METHUMBD}
 USE_EFL+=	edbus
 PLIST_SUB+=	ETHUMBD=""
 CONFIGURE_ARGS+=	--enable-ethumbd
@@ -47,4 +49,4 @@ PLIST_SUB+=	ETHUMBD="@comment "
 CONFIGURE_ARGS+=	--disable-ethumbd
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

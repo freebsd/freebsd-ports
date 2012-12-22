@@ -1,5 +1,7 @@
 bin/enlightenment
+bin/enlightenment_filemanager
 bin/enlightenment_imc
+bin/enlightenment_open
 bin/enlightenment_remote
 bin/enlightenment_start
 %%ETCDIR%%/sysactions.conf
@@ -33,7 +35,6 @@ include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
 include/enlightenment/e_dpms.h
 include/enlightenment/e_eap_editor.h
-include/enlightenment/e_editable.h
 include/enlightenment/e_entry.h
 include/enlightenment/e_entry_dialog.h
 include/enlightenment/e_env.h
@@ -57,6 +58,7 @@ include/enlightenment/e_font.h
 include/enlightenment/e_gadcon.h
 include/enlightenment/e_gadcon_popup.h
 include/enlightenment/e_grabinput.h
+include/enlightenment/e_grab_dialog.h
 include/enlightenment/e_hints.h
 include/enlightenment/e_icon.h
 include/enlightenment/e_ilist.h
@@ -73,10 +75,13 @@ include/enlightenment/e_int_shelf_config.h
 include/enlightenment/e_int_toolbar_config.h
 include/enlightenment/e_intl.h
 include/enlightenment/e_intl_data.h
+include/enlightenment/e_import_config_dialog.h
+include/enlightenment/e_import_dialog.h
 include/enlightenment/e_ipc.h
 include/enlightenment/e_ipc_codec.h
 include/enlightenment/e_layout.h
 include/enlightenment/e_livethumb.h
+include/enlightenment/e_log.h
 include/enlightenment/e_manager.h
 include/enlightenment/e_maximize.h
 include/enlightenment/e_menu.h
@@ -118,6 +123,7 @@ include/enlightenment/e_theme.h
 include/enlightenment/e_theme_about.h
 include/enlightenment/e_thumb.h
 include/enlightenment/e_toolbar.h
+include/enlightenment/e_update.h
 include/enlightenment/e_user.h
 include/enlightenment/e_utils.h
 include/enlightenment/e_widget.h
@@ -130,6 +136,7 @@ include/enlightenment/e_widget_csel.h
 include/enlightenment/e_widget_cslider.h
 include/enlightenment/e_widget_deskpreview.h
 include/enlightenment/e_widget_entry.h
+include/enlightenment/e_widget_filepreview.h
 include/enlightenment/e_widget_flist.h
 include/enlightenment/e_widget_font_preview.h
 include/enlightenment/e_widget_framelist.h
@@ -150,6 +157,7 @@ include/enlightenment/e_widget_toolbar.h
 include/enlightenment/e_widget_toolbook.h
 include/enlightenment/e_win.h
 include/enlightenment/e_xinerama.h
+include/enlightenment/e_xkb.h
 include/enlightenment/e_xsettings.h
 include/enlightenment/e_zone.h
 include/enlightenment/evry_api.h
@@ -167,13 +175,9 @@ lib/enlightenment/modules/clock/module.desktop
 lib/enlightenment/modules/comp/e-module-comp.edj
 lib/enlightenment/modules/comp/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/comp/module.desktop
-lib/enlightenment/modules/comp/shadow.edj
 lib/enlightenment/modules/conf/e-module-conf.edj
 lib/enlightenment/modules/conf/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf/module.desktop
-lib/enlightenment/modules/connman/e-module-connman.edj
-lib/enlightenment/modules/connman/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/connman/module.desktop
 lib/enlightenment/modules/conf_applications/e-module-conf_applications.edj
 lib/enlightenment/modules/conf_applications/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_applications/module.desktop
@@ -188,7 +192,6 @@ lib/enlightenment/modules/conf_edgebindings/module.desktop
 lib/enlightenment/modules/conf_interaction/e-module-conf_interaction.edj
 lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_interaction/module.desktop
-lib/enlightenment/modules/conf_intl/e-module-conf_intl.edj
 lib/enlightenment/modules/conf_intl/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_intl/module.desktop
 lib/enlightenment/modules/conf_keybindings/%%E17_ARCH%%/module.so
@@ -210,9 +213,6 @@ lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_shelves/module.desktop
 lib/enlightenment/modules/conf_theme/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_theme/module.desktop
-lib/enlightenment/modules/conf_wallpaper2/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_wallpaper2/module.desktop
-lib/enlightenment/modules/conf_window_manipulation/e-module-conf_winmanip.edj
 lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_window_manipulation/module.desktop
 lib/enlightenment/modules/conf_window_remembers/e-module-conf_window_remembers.edj
@@ -244,53 +244,51 @@ lib/enlightenment/modules/ibar/module.desktop
 lib/enlightenment/modules/ibox/e-module-ibox.edj
 lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/ibox/module.desktop
-lib/enlightenment/modules/illume-bluetooth/e-module-illume-bluetooth.edj
-lib/enlightenment/modules/illume-bluetooth/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-bluetooth/module.desktop
-lib/enlightenment/modules/illume-home-toggle/e-module-illume-home-toggle.edj
-lib/enlightenment/modules/illume-home-toggle/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-home-toggle/module.desktop
-lib/enlightenment/modules/illume-home/e-module-illume-home.edj
-lib/enlightenment/modules/illume-home/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-home/module.desktop
-lib/enlightenment/modules/illume-indicator/e-module-illume-indicator.edj
-lib/enlightenment/modules/illume-indicator/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-indicator/module.desktop
-lib/enlightenment/modules/illume-kbd-toggle/e-module-illume-kbd-toggle.edj
-lib/enlightenment/modules/illume-kbd-toggle/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-kbd-toggle/module.desktop
-lib/enlightenment/modules/illume-keyboard/dicts/English_(US).dic
-lib/enlightenment/modules/illume-keyboard/dicts/English_(US)_Small.dic
-lib/enlightenment/modules/illume-keyboard/e-module-illume-keyboard.edj
-lib/enlightenment/modules/illume-keyboard/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-keyboard/keyboards/Default.kbd
-lib/enlightenment/modules/illume-keyboard/keyboards/Numbers.kbd
-lib/enlightenment/modules/illume-keyboard/keyboards/Terminal.kbd
-lib/enlightenment/modules/illume-keyboard/keyboards/alpha.png
-lib/enlightenment/modules/illume-keyboard/keyboards/backspace.png
-lib/enlightenment/modules/illume-keyboard/keyboards/down.png
-lib/enlightenment/modules/illume-keyboard/keyboards/enter.png
-lib/enlightenment/modules/illume-keyboard/keyboards/ignore_built_in_keyboards
-lib/enlightenment/modules/illume-keyboard/keyboards/left.png
-lib/enlightenment/modules/illume-keyboard/keyboards/numeric.png
-lib/enlightenment/modules/illume-keyboard/keyboards/qwerty.png
-lib/enlightenment/modules/illume-keyboard/keyboards/right.png
-lib/enlightenment/modules/illume-keyboard/keyboards/shift.png
-lib/enlightenment/modules/illume-keyboard/keyboards/tab.png
-lib/enlightenment/modules/illume-keyboard/keyboards/up.png
-lib/enlightenment/modules/illume-keyboard/module.desktop
-lib/enlightenment/modules/illume-mode-toggle/e-module-illume-mode-toggle.edj
-lib/enlightenment/modules/illume-mode-toggle/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-mode-toggle/module.desktop
-lib/enlightenment/modules/illume-softkey/e-module-illume-softkey.edj
-lib/enlightenment/modules/illume-softkey/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume-softkey/module.desktop
-lib/enlightenment/modules/illume2/e-module-illume2.edj
-lib/enlightenment/modules/illume2/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume2/keyboards/ignore_built_in_keyboards
-lib/enlightenment/modules/illume2/module.desktop
-lib/enlightenment/modules/illume2/policies/illume.so
-lib/enlightenment/modules/illume2/policies/tablet.so
+%%ILLUME%%lib/enlightenment/modules/illume-bluetooth/e-module-illume-bluetooth.edj
+%%ILLUME%%lib/enlightenment/modules/illume-bluetooth/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-bluetooth/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-home-toggle/e-module-illume-home-toggle.edj
+%%ILLUME%%lib/enlightenment/modules/illume-home-toggle/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-home-toggle/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-home/e-module-illume-home.edj
+%%ILLUME%%lib/enlightenment/modules/illume-home/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-home/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-indicator/e-module-illume-indicator.edj
+%%ILLUME%%lib/enlightenment/modules/illume-indicator/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-indicator/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-kbd-toggle/e-module-illume-kbd-toggle.edj
+%%ILLUME%%lib/enlightenment/modules/illume-kbd-toggle/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-kbd-toggle/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/dicts/English_US.dic
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/dicts/English_US_Small.dic
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/e-module-illume-keyboard.edj
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/Default.kbd
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/Numbers.kbd
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/Terminal.kbd
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/alpha.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/backspace.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/down.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/enter.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/ignore_built_in_keyboards
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/left.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/numeric.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/qwerty.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/right.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/shift.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/tab.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/keyboards/up.png
+%%ILLUME%%lib/enlightenment/modules/illume-keyboard/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-mode-toggle/e-module-illume-mode-toggle.edj
+%%ILLUME%%lib/enlightenment/modules/illume-mode-toggle/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-mode-toggle/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume-softkey/e-module-illume-softkey.edj
+%%ILLUME%%lib/enlightenment/modules/illume-softkey/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume-softkey/module.desktop
+%%ILLUME%%lib/enlightenment/modules/illume2/e-module-illume2.edj
+%%ILLUME%%lib/enlightenment/modules/illume2/%%E17_ARCH%%/module.so
+%%ILLUME%%lib/enlightenment/modules/illume2/module.desktop
+%%ILLUME%%lib/enlightenment/modules/keyboards/ignore_built_in_keyboards
 lib/enlightenment/modules/mixer/e-module-mixer.edj
 lib/enlightenment/modules/mixer/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mixer/module.desktop
@@ -300,12 +298,14 @@ lib/enlightenment/modules/msgbus/module.desktop
 lib/enlightenment/modules/notification/e-module-notification.edj
 lib/enlightenment/modules/notification/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/notification/module.desktop
-lib/enlightenment/modules/ofono/e-module-ofono.edj
-lib/enlightenment/modules/ofono/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/ofono/module.desktop
 lib/enlightenment/modules/pager/e-module-pager.edj
 lib/enlightenment/modules/pager/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/pager/module.desktop
+%%ILLUME%%lib/enlightenment/modules/policies/illume.so
+%%ILLUME%%lib/enlightenment/modules/policies/tablet.so
+lib/enlightenment/modules/quickaccess/e-module-quickaccess.edj
+lib/enlightenment/modules/quickaccess/module.desktop
+lib/enlightenment/modules/quickaccess/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/shot/e-module-shot.edj
 lib/enlightenment/modules/shot/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/shot/module.desktop
@@ -325,6 +325,9 @@ lib/enlightenment/modules/temperature/e-module-temperature.edj
 lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/temperature/%%E17_ARCH%%/tempget
 lib/enlightenment/modules/temperature/module.desktop
+lib/enlightenment/modules/tiling/e-module-tiling.edj
+lib/enlightenment/modules/tiling/module.desktop
+lib/enlightenment/modules/tiling/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/winlist/e-module-winlist.edj
 lib/enlightenment/modules/winlist/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/winlist/module.desktop
@@ -332,6 +335,7 @@ lib/enlightenment/modules/wizard/def-ibar.txt
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_000.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_010.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_011.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_020.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_030.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_040.so
@@ -347,46 +351,80 @@ lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_130.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_140.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_150.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_160.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_170.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_180.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_200.so
 lib/enlightenment/modules/wizard/extra_desktops/mplayer.desktop
 lib/enlightenment/modules/wizard/extra_desktops/xterm.desktop
 lib/enlightenment/modules/wizard/desktop/home.desktop
 lib/enlightenment/modules/wizard/desktop/root.desktop
 lib/enlightenment/modules/wizard/desktop/tmp.desktop
-lib/enlightenment/modules/wizard/favorites/.order
-lib/enlightenment/modules/wizard/favorites/desktop.desktop
-lib/enlightenment/modules/wizard/favorites/home.desktop
-lib/enlightenment/modules/wizard/favorites/root.desktop
-lib/enlightenment/modules/wizard/favorites/tmp.desktop
-lib/enlightenment/preload/e_precache.so
+lib/enlightenment/modules/xkbswitch/e-module-xkbswitch.edj
+lib/enlightenment/modules/xkbswitch/module.desktop
+lib/enlightenment/modules/xkbswitch/%%E17_ARCH%%/module.so
 lib/enlightenment/utils/enlightenment_alert
 lib/enlightenment/utils/enlightenment_fm
 lib/enlightenment/utils/enlightenment_fm_op
 lib/enlightenment/utils/enlightenment_init
+lib/enlightenment/utils/enlightenment_static_grabber
 lib/enlightenment/utils/enlightenment_sys
 lib/enlightenment/utils/enlightenment_thumb
 libdata/pkgconfig/enlightenment.pc
 libdata/pkgconfig/everything.pc
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
+%%DATADIR%%/data/backgrounds/Brown_Rock_Hi.edj
+%%DATADIR%%/data/backgrounds/Colorful_Roses.edj
+%%DATADIR%%/data/backgrounds/Curly_Leaves.edj
+%%DATADIR%%/data/backgrounds/Darkconcrete.edj
 %%DATADIR%%/data/backgrounds/Dark_Gradient.edj
+%%DATADIR%%/data/backgrounds/Flower_Petals.edj
+%%DATADIR%%/data/backgrounds/Go_Away.edj
+%%DATADIR%%/data/backgrounds/Grassy.edj
+%%DATADIR%%/data/backgrounds/Green_Stem.edj
+%%DATADIR%%/data/backgrounds/Hills.edj
+%%DATADIR%%/data/backgrounds/Japanesemaple.edj
+%%DATADIR%%/data/backgrounds/Lakegrass.edj
+%%DATADIR%%/data/backgrounds/Lantern_Cluster.edj
+%%DATADIR%%/data/backgrounds/Leafy_Red.edj
+%%DATADIR%%/data/backgrounds/Light.edj
 %%DATADIR%%/data/backgrounds/Light_Gradient.edj
+%%DATADIR%%/data/backgrounds/Mossstring.edj
+%%DATADIR%%/data/backgrounds/Motleyrock.edj
+%%DATADIR%%/data/backgrounds/Newgrowth.edj
+%%DATADIR%%/data/backgrounds/Orange_Roses.edj
+%%DATADIR%%/data/backgrounds/Pattern_Radial.edj
+%%DATADIR%%/data/backgrounds/Pattern_Vertical.edj
+%%DATADIR%%/data/backgrounds/Pattern_Vertical_Hi.edj
+%%DATADIR%%/data/backgrounds/Pine_Silhouettes.edj
+%%DATADIR%%/data/backgrounds/Purple_Flower_Bunch.edj
+%%DATADIR%%/data/backgrounds/Ramen.edj
+%%DATADIR%%/data/backgrounds/Shady_Leaves.edj
+%%DATADIR%%/data/backgrounds/Skywall.edj
+%%DATADIR%%/data/backgrounds/Stringflower.edj
+%%DATADIR%%/data/backgrounds/Temple.edj
+%%DATADIR%%/data/backgrounds/Train.edj
+%%DATADIR%%/data/backgrounds/Wall_Lanterns.edj
+%%DATADIR%%/data/backgrounds/Wetgrass.edj
+%%DATADIR%%/data/backgrounds/Wetleaf.edj
+%%DATADIR%%/data/backgrounds/Whiterock.edj
+%%DATADIR%%/data/backgrounds/Windy_Palm.edj
 %%DATADIR%%/data/config/default/e.cfg
-%%DATADIR%%/data/config/default/icon.png
+%%DATADIR%%/data/config/default/enlightenment-default.png
 %%DATADIR%%/data/config/default/profile.desktop
-%%DATADIR%%/data/config/illume/e.cfg
-%%DATADIR%%/data/config/illume/icon.png
-%%DATADIR%%/data/config/illume/module.battery.cfg
-%%DATADIR%%/data/config/illume/module.conf.cfg
-%%DATADIR%%/data/config/illume/module.illume-home.cfg
-%%DATADIR%%/data/config/illume/module.illume-keyboard.cfg
-%%DATADIR%%/data/config/illume/module.illume-indicator.cfg
-%%DATADIR%%/data/config/illume/module.illume-softkey.cfg
-%%DATADIR%%/data/config/illume/module.illume2.cfg
-%%DATADIR%%/data/config/illume/profile.desktop
+%%DATADIR%%/data/config/mobile/e.cfg
+%%DATADIR%%/data/config/mobile/enlightenment-mobile.png
+%%DATADIR%%/data/config/mobile/module.battery.cfg
+%%DATADIR%%/data/config/mobile/module.conf.cfg
+%%DATADIR%%/data/config/mobile/module.illume-home.cfg
+%%DATADIR%%/data/config/mobile/module.illume-keyboard.cfg
+%%DATADIR%%/data/config/mobile/module.illume-indicator.cfg
+%%DATADIR%%/data/config/mobile/module.illume-softkey.cfg
+%%DATADIR%%/data/config/mobile/module.illume2.cfg
+%%DATADIR%%/data/config/mobile/profile.desktop
 %%DATADIR%%/data/config/profile.cfg
 %%DATADIR%%/data/config/standard/e.cfg
-%%DATADIR%%/data/config/standard/icon.png
+%%DATADIR%%/data/config/standard/enlightenment-standard.png
 %%DATADIR%%/data/config/standard/module.battery.cfg
 %%DATADIR%%/data/config/standard/module.conf.cfg
 %%DATADIR%%/data/config/standard/module.cpufreq.cfg
@@ -397,6 +435,109 @@ libdata/pkgconfig/everything.pc
 %%DATADIR%%/data/config/standard/module.pager.cfg
 %%DATADIR%%/data/config/standard/module.temperature.cfg
 %%DATADIR%%/data/config/standard/profile.desktop
+%%DATADIR%%/data/favorites/.order
+%%DATADIR%%/data/favorites/desktop.desktop
+%%DATADIR%%/data/favorites/home.desktop
+%%DATADIR%%/data/favorites/root.desktop
+%%DATADIR%%/data/favorites/tmp.desktop
+%%DATADIR%%/data/flags/ad_flag.png
+%%DATADIR%%/data/flags/af_flag.png
+%%DATADIR%%/data/flags/al_flag.png
+%%DATADIR%%/data/flags/am_flag.png
+%%DATADIR%%/data/flags/ara_flag.png
+%%DATADIR%%/data/flags/ar_flag.png
+%%DATADIR%%/data/flags/at_flag.png
+%%DATADIR%%/data/flags/az_flag.png
+%%DATADIR%%/data/flags/ba_flag.png
+%%DATADIR%%/data/flags/bd_flag.png
+%%DATADIR%%/data/flags/be_flag.png
+%%DATADIR%%/data/flags/bg_flag.png
+%%DATADIR%%/data/flags/brai_flag.png
+%%DATADIR%%/data/flags/br_flag.png
+%%DATADIR%%/data/flags/bt_flag.png
+%%DATADIR%%/data/flags/bw_flag.png
+%%DATADIR%%/data/flags/by_flag.png
+%%DATADIR%%/data/flags/ca_flag.png
+%%DATADIR%%/data/flags/cat_flag.png
+%%DATADIR%%/data/flags/cd_flag.png
+%%DATADIR%%/data/flags/ch_flag.png
+%%DATADIR%%/data/flags/cm_flag.png
+%%DATADIR%%/data/flags/cn_flag.png
+%%DATADIR%%/data/flags/cz_flag.png
+%%DATADIR%%/data/flags/de_flag.png
+%%DATADIR%%/data/flags/dk_flag.png
+%%DATADIR%%/data/flags/ee_flag.png
+%%DATADIR%%/data/flags/epo_flag.png
+%%DATADIR%%/data/flags/es_flag.png
+%%DATADIR%%/data/flags/et_flag.png
+%%DATADIR%%/data/flags/fi_flag.png
+%%DATADIR%%/data/flags/fo_flag.png
+%%DATADIR%%/data/flags/fr_flag.png
+%%DATADIR%%/data/flags/gb_flag.png
+%%DATADIR%%/data/flags/ge_flag.png
+%%DATADIR%%/data/flags/gh_flag.png
+%%DATADIR%%/data/flags/gn_flag.png
+%%DATADIR%%/data/flags/gr_flag.png
+%%DATADIR%%/data/flags/hr_flag.png
+%%DATADIR%%/data/flags/hu_flag.png
+%%DATADIR%%/data/flags/ie_flag.png
+%%DATADIR%%/data/flags/il_flag.png
+%%DATADIR%%/data/flags/in_flag.png
+%%DATADIR%%/data/flags/iq_flag.png
+%%DATADIR%%/data/flags/ir_flag.png
+%%DATADIR%%/data/flags/is_flag.png
+%%DATADIR%%/data/flags/it_flag.png
+%%DATADIR%%/data/flags/jp_flag.png
+%%DATADIR%%/data/flags/ke_flag.png
+%%DATADIR%%/data/flags/kg_flag.png
+%%DATADIR%%/data/flags/kh_flag.png
+%%DATADIR%%/data/flags/kr_flag.png
+%%DATADIR%%/data/flags/ku_flag.png
+%%DATADIR%%/data/flags/kz_flag.png
+%%DATADIR%%/data/flags/la_flag.png
+%%DATADIR%%/data/flags/lang-system.png
+%%DATADIR%%/data/flags/latam_flag.png
+%%DATADIR%%/data/flags/lk_flag.png
+%%DATADIR%%/data/flags/lt_flag.png
+%%DATADIR%%/data/flags/lv_flag.png
+%%DATADIR%%/data/flags/ma_flag.png
+%%DATADIR%%/data/flags/mao_flag.png
+%%DATADIR%%/data/flags/me_flag.png
+%%DATADIR%%/data/flags/mk_flag.png
+%%DATADIR%%/data/flags/ml_flag.png
+%%DATADIR%%/data/flags/mm_flag.png
+%%DATADIR%%/data/flags/mn_flag.png
+%%DATADIR%%/data/flags/mt_flag.png
+%%DATADIR%%/data/flags/mv_flag.png
+%%DATADIR%%/data/flags/my_flag.png
+%%DATADIR%%/data/flags/ng_flag.png
+%%DATADIR%%/data/flags/nl_flag.png
+%%DATADIR%%/data/flags/no_flag.png
+%%DATADIR%%/data/flags/np_flag.png
+%%DATADIR%%/data/flags/ph_flag.png
+%%DATADIR%%/data/flags/pk_flag.png
+%%DATADIR%%/data/flags/pl_flag.png
+%%DATADIR%%/data/flags/pt_flag.png
+%%DATADIR%%/data/flags/ro_flag.png
+%%DATADIR%%/data/flags/rs_flag.png
+%%DATADIR%%/data/flags/ru_flag.png
+%%DATADIR%%/data/flags/se_flag.png
+%%DATADIR%%/data/flags/si_flag.png
+%%DATADIR%%/data/flags/sk_flag.png
+%%DATADIR%%/data/flags/sn_flag.png
+%%DATADIR%%/data/flags/sy_flag.png
+%%DATADIR%%/data/flags/th_flag.png
+%%DATADIR%%/data/flags/tj_flag.png
+%%DATADIR%%/data/flags/tm_flag.png
+%%DATADIR%%/data/flags/tr_flag.png
+%%DATADIR%%/data/flags/tw_flag.png
+%%DATADIR%%/data/flags/tz_flag.png
+%%DATADIR%%/data/flags/ua_flag.png
+%%DATADIR%%/data/flags/unknown_flag.png
+%%DATADIR%%/data/flags/us_flag.png
+%%DATADIR%%/data/flags/uz_flag.png
+%%DATADIR%%/data/flags/vn_flag.png
+%%DATADIR%%/data/flags/za_flag.png
 %%DATADIR%%/data/icons/audio_player.png
 %%DATADIR%%/data/icons/audio_player2.png
 %%DATADIR%%/data/icons/image_viewer.png
@@ -406,33 +547,6 @@ libdata/pkgconfig/everything.pc
 %%DATADIR%%/data/icons/web_browser.png
 %%DATADIR%%/data/icons/xterm.png
 %%DATADIR%%/data/images/enlightenment.png
-%%DATADIR%%/data/images/lang-bg_BG.png
-%%DATADIR%%/data/images/lang-ca_ES.png
-%%DATADIR%%/data/images/lang-cs_CZ.png
-%%DATADIR%%/data/images/lang-da_DK.png
-%%DATADIR%%/data/images/lang-de_DE.png
-%%DATADIR%%/data/images/lang-el_GR.png
-%%DATADIR%%/data/images/lang-en_US.png
-%%DATADIR%%/data/images/lang-es_AR.png
-%%DATADIR%%/data/images/lang-es_ES.png
-%%DATADIR%%/data/images/lang-fi_FI.png
-%%DATADIR%%/data/images/lang-fr_FR.png
-%%DATADIR%%/data/images/lang-hu_HU.png
-%%DATADIR%%/data/images/lang-it_IT.png
-%%DATADIR%%/data/images/lang-ja_JP.png
-%%DATADIR%%/data/images/lang-ko_KR.png
-%%DATADIR%%/data/images/lang-nb_NO.png
-%%DATADIR%%/data/images/lang-nl_NL.png
-%%DATADIR%%/data/images/lang-pl_PL.png
-%%DATADIR%%/data/images/lang-pt_BR.png
-%%DATADIR%%/data/images/lang-ru_RU.png
-%%DATADIR%%/data/images/lang-sk_SK.png
-%%DATADIR%%/data/images/lang-sl_SI.png
-%%DATADIR%%/data/images/lang-sv_SE.png
-%%DATADIR%%/data/images/lang-zh_CN.png
-%%DATADIR%%/data/images/lang-zh_HK.png
-%%DATADIR%%/data/images/lang-zh_TW.png
-%%DATADIR%%/data/images/lang-system.png
 %%DATADIR%%/data/images/test.edj
 %%DATADIR%%/data/images/test.jpg
 %%DATADIR%%/data/images/test.png
@@ -448,6 +562,7 @@ libdata/pkgconfig/everything.pc
 %%DATADIR%%/doc/enlightenment.png
 %%DATADIR%%/doc/illume2.html
 %%DATADIR%%/doc/illume2.png
+share/applications/enlightenment_filemanager.desktop
 share/xsessions/enlightenment.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/enlightenment.mo
@@ -463,6 +578,7 @@ share/xsessions/enlightenment.desktop
 %%NLS%%share/locale/fo/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/fr_CH/LC_MESSAGES/enlightenment.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/he/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/enlightenment.mo
@@ -515,6 +631,8 @@ share/xsessions/enlightenment.desktop
 %%NLS%%@dirrmtry share/locale/fr
 %%NLS%%@dirrmtry share/locale/fr_CH/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr_CH
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
 %%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/he
 %%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
@@ -564,27 +682,32 @@ share/xsessions/enlightenment.desktop
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_TW
 @dirrmtry share/xsessions
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/input_methods
 @dirrm %%DATADIR%%/data/images
 @dirrm %%DATADIR%%/data/icons
+@dirrm %%DATADIR%%/data/flags
+@dirrm %%DATADIR%%/data/favorites
 @dirrm %%DATADIR%%/data/config/standard
-@dirrm %%DATADIR%%/data/config/illume
+@dirrm %%DATADIR%%/data/config/mobile
 @dirrm %%DATADIR%%/data/config/default
 @dirrm %%DATADIR%%/data/config
 @dirrm %%DATADIR%%/data/backgrounds
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm lib/enlightenment/utils
-@dirrm lib/enlightenment/preload
-@dirrm lib/enlightenment/modules/wizard/favorites
+@dirrm lib/enlightenment/modules/xkbswitch/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/xkbswitch
 @dirrm lib/enlightenment/modules/wizard/desktop
 @dirrm lib/enlightenment/modules/wizard/extra_desktops
 @dirrm lib/enlightenment/modules/wizard/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/wizard
 @dirrm lib/enlightenment/modules/winlist/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/winlist
+@dirrm lib/enlightenment/modules/tiling/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/tiling
 @dirrm lib/enlightenment/modules/temperature/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/temperature
 @dirrm lib/enlightenment/modules/tasks/%%E17_ARCH%%
@@ -597,38 +720,38 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/start
 @dirrm lib/enlightenment/modules/shot/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/shot
+@dirrm lib/enlightenment/modules/quickaccess/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/quickaccess
+%%ILLUME%%@dirrm lib/enlightenment/modules/policies
 @dirrm lib/enlightenment/modules/pager/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/pager
-@dirrm lib/enlightenment/modules/ofono/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/ofono
 @dirrm lib/enlightenment/modules/notification/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/notification
 @dirrm lib/enlightenment/modules/msgbus/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/msgbus
 @dirrm lib/enlightenment/modules/mixer/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mixer
-@dirrm lib/enlightenment/modules/illume2/policies
-@dirrm lib/enlightenment/modules/illume2/keyboards
-@dirrm lib/enlightenment/modules/illume2/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume2
-@dirrm lib/enlightenment/modules/illume-softkey/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-softkey
-@dirrm lib/enlightenment/modules/illume-mode-toggle/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-mode-toggle
-@dirrm lib/enlightenment/modules/illume-keyboard/keyboards
-@dirrm lib/enlightenment/modules/illume-keyboard/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-keyboard/dicts
-@dirrm lib/enlightenment/modules/illume-keyboard
-@dirrm lib/enlightenment/modules/illume-kbd-toggle/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-kbd-toggle
-@dirrm lib/enlightenment/modules/illume-indicator/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-indicator
-@dirrm lib/enlightenment/modules/illume-home/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-home
-@dirrm lib/enlightenment/modules/illume-home-toggle/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-home-toggle
-@dirrm lib/enlightenment/modules/illume-bluetooth/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume-bluetooth
+%%ILLUME%%@dirrm lib/enlightenment/modules/keyboards
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume2/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume2
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-softkey/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-softkey
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-mode-toggle/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-mode-toggle
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-keyboard/keyboards
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-keyboard/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-keyboard/dicts
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-keyboard
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-kbd-toggle/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-kbd-toggle
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-indicator/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-indicator
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-home/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-home
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-home-toggle/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-home-toggle
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-bluetooth/%%E17_ARCH%%
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume-bluetooth
 @dirrm lib/enlightenment/modules/ibox/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/ibox
 @dirrm lib/enlightenment/modules/ibar/%%E17_ARCH%%
@@ -649,8 +772,6 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/conf_window_remembers
 @dirrm lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_window_manipulation
-@dirrm lib/enlightenment/modules/conf_wallpaper2/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_wallpaper2
 @dirrm lib/enlightenment/modules/conf_theme/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_theme
 @dirrm lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%
@@ -679,8 +800,6 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/conf_applications
 @dirrm lib/enlightenment/modules/conf/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf
-@dirrm lib/enlightenment/modules/connman/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/connman
 @dirrm lib/enlightenment/modules/comp/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/comp
 @dirrm lib/enlightenment/modules/clock/%%E17_ARCH%%

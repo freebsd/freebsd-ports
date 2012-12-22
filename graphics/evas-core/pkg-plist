@@ -1,8 +1,12 @@
+bin/evas_cserve
+bin/evas_cserve_tool
 include/evas-1/Evas.h
+include/evas-1/Evas_GL.h
 lib/libevas.so
-lib/libevas.so.2
+lib/libevas.so.8
 lib/evas/modules/engines/software_generic/%%E17_ARCH%%/module.so
 libdata/pkgconfig/evas.pc
+%%DATADIR%%/checkme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aspect.edc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube1.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enlightenment.png
@@ -13,9 +17,11 @@ libdata/pkgconfig/evas.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-hints.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-images.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-images2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-images3.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-init-shutdown.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-map-utils.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-object-manipulation.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-smart-interface.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-smart-object.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-stacking.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-text.c
@@ -27,4 +33,5 @@ libdata/pkgconfig/evas.pc
 @dirrmtry lib/evas/modules/engines
 @dirrmtry lib/evas/modules
 @dirrmtry lib/evas
+@dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

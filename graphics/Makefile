@@ -144,6 +144,8 @@
     SUBDIR += electriceyes
     SUBDIR += electrix
     SUBDIR += enblend
+    SUBDIR += ender
+    SUBDIR += enesim
     SUBDIR += enfle
     SUBDIR += eog
     SUBDIR += eog-plugins
@@ -153,6 +155,7 @@
     SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
+    SUBDIR += etch
     SUBDIR += eterm-bg
     SUBDIR += ethumb
     SUBDIR += evas

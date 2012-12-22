@@ -1,6 +1,7 @@
 lib/enlightenment/modules/screenshot/module.desktop
 lib/enlightenment/modules/screenshot/e-module-screenshot.edj
 lib/enlightenment/modules/screenshot/%%E17_ARCH%%/module.so
+%%NLS%%lib/enlightenment/modules/screenshot/locale/ar/LC_MESSAGES/screenshot.mo
 %%NLS%%lib/enlightenment/modules/screenshot/locale/fr/LC_MESSAGES/screenshot.mo
 %%NLS%%lib/enlightenment/modules/screenshot/locale/cs/LC_MESSAGES/screenshot.mo
 %%NLS%%lib/enlightenment/modules/screenshot/locale/lt/LC_MESSAGES/screenshot.mo
@@ -46,6 +47,8 @@ lib/enlightenment/modules/screenshot/%%E17_ARCH%%/module.so
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/cs
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale
 @dirrm lib/enlightenment/modules/screenshot/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/screenshot

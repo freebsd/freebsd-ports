@@ -15,3 +15,5 @@ CONFIGURE_ARGS=	--disable-ecore-con \
 post-patch: ecore_drop_librt
 ecore_drop_librt:
 	@${REINPLACE_CMD} -E -e 's,(rt_libs=).*,\1,g' ${WRKSRC}/configure
+
+PATCHDIR=	"../../devel/ecore-main/files"

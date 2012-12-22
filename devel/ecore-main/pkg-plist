@@ -1,7 +1,7 @@
 include/ecore-1/Ecore.h
 include/ecore-1/Ecore_Getopt.h
 lib/libecore.so
-lib/libecore.so.2
+lib/libecore.so.8
 libdata/pkgconfig/ecore.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_animator_example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_client_bench.c
@@ -21,7 +21,10 @@ libdata/pkgconfig/ecore.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_ews_example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_object_example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_window_sizes_example.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_event_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_event_example_01.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_event_example_02.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_exe_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_exe_example_child.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_fd_handler_example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_fd_handler_gnutls_example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_file_download_example.c

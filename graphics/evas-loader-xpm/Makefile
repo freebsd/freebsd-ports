@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	loader-xpm
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	evas-
-DISTNAME=	evas-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (XPM loader)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_EFL=	evas librt_hack libtool_hack
 USE_GNOME=	gnomehack pkgconfig
 USE_XORG=	xpm
-USE_EFL=	evas librt_hack libtool_hack
+USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/xpm
 

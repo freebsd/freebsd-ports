@@ -1,12 +1,12 @@
 bin/emotion_test
-include/emotion-0/Emotion.h
-include/emotion-0/Emotion_Generic_Plugin.h
+include/emotion-1/Emotion.h
+include/emotion-1/Emotion_Generic_Plugin.h
 lib/emotion/em_generic.so
 %%GST%%lib/emotion/gstreamer.so
 %%XINE%%lib/emotion/xine.so
 lib/edje/modules/emotion/%%E17_ARCH%%/module.so
 lib/libemotion.so
-lib/libemotion.so.2
+lib/libemotion.so.8
 libdata/pkgconfig/emotion.pc
 %%DATADIR%%/data/theme.edj
 %%DATADIR%%/data/icon.edj
@@ -18,7 +18,7 @@ libdata/pkgconfig/emotion.pc
 @dirrm lib/edje/modules/emotion
 @dirrmtry lib/edje/modules
 @dirrmtry lib/edje
-@dirrm include/emotion-0
+@dirrm include/emotion-1
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm lib/emotion

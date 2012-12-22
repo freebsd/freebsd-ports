@@ -1,6 +1,7 @@
 lib/enlightenment/modules/everything-wallpaper/module.desktop
 lib/enlightenment/modules/everything-wallpaper/e-module.edj
 lib/enlightenment/modules/everything-wallpaper/%%E17_ARCH%%/module.so
+%%NLS%%lib/enlightenment/modules/everything-wallpaper/locale/ar/LC_MESSAGES/everything-wallpaper.mo
 %%NLS%%lib/enlightenment/modules/everything-wallpaper/locale/cs/LC_MESSAGES/everything-wallpaper.mo
 %%NLS%%lib/enlightenment/modules/everything-wallpaper/locale/de/LC_MESSAGES/everything-wallpaper.mo
 %%NLS%%lib/enlightenment/modules/everything-wallpaper/locale/fr/LC_MESSAGES/everything-wallpaper.mo
@@ -25,6 +26,8 @@ lib/enlightenment/modules/everything-wallpaper/%%E17_ARCH%%/module.so
 %%NLS%%@dirrm lib/enlightenment/modules/everything-wallpaper/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/everything-wallpaper/locale/cs/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/everything-wallpaper/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/everything-wallpaper/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/everything-wallpaper/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/everything-wallpaper/locale
 @dirrm lib/enlightenment/modules/everything-wallpaper/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/everything-wallpaper

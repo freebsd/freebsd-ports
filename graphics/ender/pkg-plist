@@ -1,0 +1,9 @@
+bin/ender_generator
+bin/ender_inspect
+include/Ender.h
+lib/libender.so
+lib/libender.so.0
+libdata/pkgconfig/ender.pc
+%%DATADIR%%/enesim.ender
+%%DATADIR%%/etex.ender
+@dirrmtry %%DATADIR%%

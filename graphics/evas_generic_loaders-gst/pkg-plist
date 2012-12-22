@@ -12,6 +12,7 @@ lib/evas/utils/evas_image_loader.bdm
 lib/evas/utils/evas_image_loader.bdmv
 lib/evas/utils/evas_image_loader.clpi
 lib/evas/utils/evas_image_loader.cpi
+lib/evas/utils/evas_image_loader.dv
 lib/evas/utils/evas_image_loader.fla
 lib/evas/utils/evas_image_loader.flv
 lib/evas/utils/evas_image_loader.m1v
@@ -35,12 +36,14 @@ lib/evas/utils/evas_image_loader.nuv
 lib/evas/utils/evas_image_loader.ogg
 lib/evas/utils/evas_image_loader.ogm
 lib/evas/utils/evas_image_loader.ogv
+lib/evas/utils/evas_image_loader.qt
 lib/evas/utils/evas_image_loader.rm
 lib/evas/utils/evas_image_loader.rmj
 lib/evas/utils/evas_image_loader.rmm
 lib/evas/utils/evas_image_loader.rms
 lib/evas/utils/evas_image_loader.rmx
 lib/evas/utils/evas_image_loader.rmvb
+lib/evas/utils/evas_image_loader.rv
 lib/evas/utils/evas_image_loader.swf
 lib/evas/utils/evas_image_loader.ts
 lib/evas/utils/evas_image_loader.webm

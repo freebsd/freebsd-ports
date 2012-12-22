@@ -1,0 +1,34 @@
+bin/terminology
+share/applications/terminology.desktop
+share/icons/terminology.png
+%%DATADIR%%/fonts/10x20.pcf
+%%DATADIR%%/fonts/4x6.pcf
+%%DATADIR%%/fonts/5x7.pcf
+%%DATADIR%%/fonts/5x8.pcf
+%%DATADIR%%/fonts/6x10.pcf
+%%DATADIR%%/fonts/6x12.pcf
+%%DATADIR%%/fonts/6x13.pcf
+%%DATADIR%%/fonts/6x9.pcf
+%%DATADIR%%/fonts/7x13.pcf
+%%DATADIR%%/fonts/7x14.pcf
+%%DATADIR%%/fonts/8x13.pcf
+%%DATADIR%%/fonts/9x15.pcf
+%%DATADIR%%/fonts/9x18.pcf
+%%DATADIR%%/fonts/nexus.pcf
+%%DATADIR%%/fonts/terminus-12.pcf
+%%DATADIR%%/fonts/terminus-14-bold.pcf
+%%DATADIR%%/fonts/terminus-14.pcf
+%%DATADIR%%/fonts/terminus-16-bold.pcf
+%%DATADIR%%/fonts/terminus-16.pcf
+%%DATADIR%%/fonts/terminus-18-bold.pcf
+%%DATADIR%%/fonts/terminus-18.pcf
+%%DATADIR%%/fonts/terminus-20-bold.pcf
+%%DATADIR%%/fonts/terminus-20.pcf
+%%DATADIR%%/images/terminology.png
+%%DATADIR%%/themes/default.edj
+%%DATADIR%%/themes/mild.edj
+%%DATADIR%%/themes/black.edj
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%

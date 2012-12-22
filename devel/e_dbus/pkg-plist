@@ -1,37 +1,28 @@
 bin/e-notify-send
-bin/e_dbus_connman0_7x_test
+bin/e_dbus_async_client_test
+bin/e_dbus_async_server_test
 bin/e_dbus_notification_daemon
 bin/e_dbus_notify
-bin/e_dbus_ofono_test
 bin/e_dbus_test
 bin/e_dbus_test_client
 bin/e_dbus_ukit_test
-include/e_dbus-1/connman0_7x/E_Connman.h
 include/e_dbus-1/E_DBus.h
 include/e_dbus-1/E_Hal.h
 include/e_dbus-1/E_Notification_Daemon.h
 include/e_dbus-1/E_Notify.h
-include/e_dbus-1/E_Ofono.h
 include/e_dbus-1/E_Ukit.h
-lib/libeconnman0_7x.so
-lib/libeconnman0_7x.so.2
 lib/libedbus.so
-lib/libedbus.so.2
+lib/libedbus.so.8
 lib/libehal.so
-lib/libehal.so.2
+lib/libehal.so.8
 lib/libenotify.so
-lib/libenotify.so.2
-lib/libeofono.so
-lib/libeofono.so.2
+lib/libenotify.so.8
 lib/libeukit.so
-lib/libeukit.so.2
-libdata/pkgconfig/econnman-0.7x.pc
+lib/libeukit.so.8
 libdata/pkgconfig/edbus.pc
 libdata/pkgconfig/ehal.pc
 libdata/pkgconfig/enotify.pc
-libdata/pkgconfig/eofono.pc
 libdata/pkgconfig/eukit.pc
 %%DATADIR%%/logo.png
-@dirrm include/e_dbus-1/connman0_7x
 @dirrm include/e_dbus-1
 @dirrm %%DATADIR%%

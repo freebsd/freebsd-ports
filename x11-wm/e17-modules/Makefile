@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e17-modules
-PORTVERSION=	20111128
+PORTVERSION=	20120918
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
@@ -14,12 +14,12 @@ NO_BUILD=	yes
 WANT_EFL=	yes
 E17_ARCH=	freebsd${OSREL}-${ARCH}
 
-MODULES=	alarm calendar comp-scale cpu deskshow diskio drawer e-tiling elfe empris engage eooorg \
+MODULES=	alarm comp-scale cpu deskshow diskio eektool elfe empris engage eooorg \
 		everything-aspell everything-mpris everything-pidgin everything-places \
 		everything-shotgun everything-wallpaper everything-websearch exebuf execwatch \
-		flame forecasts iiirk itask language mail mem moon mpdule net news \
-		penguins photo places quickaccess rain screenshot slideshow snow \
-		taskbar tclock tiling uptime weather winlist-ng winselector wlan xkbswitch
+		flame forecasts iiirk itask mail mem moon mpdule net news \
+		penguins photo places rain rmb screenshot slideshow snow \
+		taskbar tclock uptime weather winlist-ng winselector wlan
 
 COMP_SCALE_PATH=	scale
 EVERYTHING_MPRIS_PATH=	evry-mpris

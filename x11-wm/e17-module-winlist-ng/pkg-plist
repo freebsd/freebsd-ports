@@ -4,6 +4,19 @@ lib/enlightenment/modules/winlist-ng/module.desktop
 lib/enlightenment/modules/winlist-ng/ng.edj
 lib/enlightenment/modules/winlist-ng/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/winlist-ng/e-module-ng.edj
+%%NLS%%lib/enlightenment/modules/winlist-ng/locale/ar/LC_MESSAGES/winlist-ng.mo
+%%NLS%%lib/enlightenment/modules/winlist-ng/locale/de/LC_MESSAGES/winlist-ng.mo
+%%NLS%%lib/enlightenment/modules/winlist-ng/locale/it/LC_MESSAGES/winlist-ng.mo
+%%NLS%%lib/enlightenment/modules/winlist-ng/locale/pt/LC_MESSAGES/winlist-ng.mo
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/winlist-ng/locale
 @dirrm lib/enlightenment/modules/winlist-ng/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/winlist-ng/
 @dirrmtry lib/enlightenment/modules

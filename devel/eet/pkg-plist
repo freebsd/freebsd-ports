@@ -1,7 +1,7 @@
 bin/eet
 include/eet-1/Eet.h
 lib/libeet.so
-lib/libeet.so.6
+lib/libeet.so.8
 libdata/pkgconfig/eet.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eet-basic.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eet-data-cipher_decipher.c

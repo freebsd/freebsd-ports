@@ -1,4 +1,4 @@
 include/ecore-1/Ecore_Evas.h
 lib/libecore_evas.so
-lib/libecore_evas.so.2
+lib/libecore_evas.so.8
 libdata/pkgconfig/ecore-evas.pc

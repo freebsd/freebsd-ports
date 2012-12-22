@@ -1,0 +1,7 @@
+Enesim basically it is a rendering library, that is, it allows you
+to draw different graphics primitives (in Enesim it is called a Renderer)
+into a target drawable (in Enesim a Surface). Given that a Renderer
+can draw anything, it has its own state that is modified through
+the renderer's specific properties setters and getters.
+
+WWW: http://code.google.com/p/enesim/

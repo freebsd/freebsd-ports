@@ -13,7 +13,9 @@ include/eina-1/eina/eina_file.h
 include/eina-1/eina/eina_fp.h
 include/eina-1/eina/eina_hamster.h
 include/eina-1/eina/eina_hash.h
+include/eina-1/eina/eina_inarray.h
 include/eina-1/eina/eina_inline_array.x
+include/eina-1/eina/eina_inline_clist.x
 include/eina-1/eina/eina_inline_f16p16.x
 include/eina-1/eina/eina_inline_f32p32.x
 include/eina-1/eina/eina_inline_f8p24.x
@@ -30,6 +32,7 @@ include/eina-1/eina/eina_inline_stringshare.x
 include/eina-1/eina/eina_inline_tiler.x
 include/eina-1/eina/eina_inline_trash.x
 include/eina-1/eina/eina_inline_ustringshare.x
+include/eina-1/eina/eina_inline_value.x
 include/eina-1/eina/eina_inlist.h
 include/eina-1/eina/eina_iterator.h
 include/eina-1/eina/eina_lalloc.h
@@ -59,10 +62,11 @@ include/eina-1/eina/eina_types.h
 include/eina-1/eina/eina_unicode.h
 include/eina-1/eina/eina_ustrbuf.h
 include/eina-1/eina/eina_ustringshare.h
+include/eina-1/eina/eina_value.h
 include/eina-1/eina/eina_xattr.h
 include/eina-1/eina_config.h
 lib/libeina.so
-lib/libeina.so.2
+lib/libeina.so.8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_accessor_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_array_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_array_02.c
@@ -76,6 +80,8 @@ lib/libeina.so.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_hash_06.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_hash_07.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_hash_08.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_inarray_01.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_inarray_02.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_inlist_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_inlist_02.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_inlist_03.c
@@ -87,9 +93,14 @@ lib/libeina.so.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_log_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_log_02.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_log_03.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_simple_xml_parser_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_str_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_strbuf_01.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_stringshare_01.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_tiler_01.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_value_01.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_value_02.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_value_03.c
 libdata/pkgconfig/eina.pc
 @dirrm include/eina-1/eina
 @dirrm include/eina-1

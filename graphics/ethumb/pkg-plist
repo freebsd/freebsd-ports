@@ -1,13 +1,13 @@
 bin/ethumb
 %%ETHUMBD%%bin/ethumbd
 %%ETHUMBD%%bin/ethumbd_client
-include/ethumb-0/Ethumb.h
-include/ethumb-0/Ethumb_Plugin.h
-%%ETHUMBD%%include/ethumb-0/Ethumb_Client.h
+include/ethumb-1/Ethumb.h
+include/ethumb-1/Ethumb_Plugin.h
+%%ETHUMBD%%include/ethumb-1/Ethumb_Client.h
 lib/libethumb.so
-lib/libethumb.so.1
+lib/libethumb.so.8
 %%ETHUMBD%%lib/libethumb_client.so
-%%ETHUMBD%%lib/libethumb_client.so.1
+%%ETHUMBD%%lib/libethumb_client.so.8
 %%EMOTION%%lib/ethumb/plugins/data/emotion_template.edj
 %%EMOTION%%lib/ethumb/plugins/emotion.so
 libdata/pkgconfig/ethumb.pc
@@ -15,7 +15,7 @@ libdata/pkgconfig/ethumb.pc
 %%ETHUMBD%%libexec/ethumbd_slave
 %%DATADIR%%/data/frames/default.edj
 %%ETHUMBD%%share/dbus-1/services/org.enlightenment.Ethumb.service
-@dirrm include/ethumb-0
+@dirrm include/ethumb-1 
 @dirrmtry lib/ethumb/plugins/data
 @dirrmtry lib/ethumb/plugins
 @dirrmtry lib/ethumb

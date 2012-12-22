@@ -1,6 +1,7 @@
 lib/enlightenment/modules/evry-pidgin/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/evry-pidgin/e-module.edj
 lib/enlightenment/modules/evry-pidgin/module.desktop
+%%NLS%%lib/enlightenment/modules/evry-pidgin/locale/ar/LC_MESSAGES/evry-pidgin.mo
 %%NLS%%lib/enlightenment/modules/evry-pidgin/locale/it/LC_MESSAGES/evry-pidgin.mo
 %%NLS%%lib/enlightenment/modules/evry-pidgin/locale/el/LC_MESSAGES/evry-pidgin.mo
 %%NLS%%lib/enlightenment/modules/evry-pidgin/locale/fr/LC_MESSAGES/evry-pidgin.mo
@@ -28,6 +29,8 @@ lib/enlightenment/modules/evry-pidgin/module.desktop
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/el
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/it/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale
 @dirrm lib/enlightenment/modules/evry-pidgin/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/evry-pidgin

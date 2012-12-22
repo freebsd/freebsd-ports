@@ -1,6 +1,6 @@
-include/eio-0/Eio.h
-include/eio-0/eio_inline_helper.x
+include/eio-1/Eio.h
+include/eio-1/eio_inline_helper.x
 lib/libeio.so
-lib/libeio.so.1
+lib/libeio.so.8
 libdata/pkgconfig/eio.pc
-@dirrm include/eio-0
+@dirrm include/eio-1

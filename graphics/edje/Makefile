@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	edje
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua-5:${PORTSDIR}/lang/lua
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 DIST_SUBDIR=	e17
@@ -27,12 +27,6 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim
 
-.if !defined(NOPORTEXAMPLES)
-CONFIGURE_ARGS+=	--enable-install-examples
-.else
-CONFIGURE_ARGS+=	--disable-install-examples
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E -e "/^SUBDIRS[[:space:]]+=/s/utils//" \
 	    ${WRKSRC}/Makefile.in
@@ -41,8 +35,5 @@ post-patch:
 
 post-install:
 	-update-mime-database ${PREFIX}/share/mime
-.if defined(NOPORTEXAMPLES)
-	@${RMDIR} ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

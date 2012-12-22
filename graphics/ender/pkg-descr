@@ -1,0 +1,4 @@
+Ender is a library that loads descriptions of enesim renderers and abstracts
+them into a collection of properties that are accesible through a common API.
+
+WWW: http://code.google.com/p/enesim/

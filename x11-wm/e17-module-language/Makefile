@@ -13,20 +13,25 @@ COMMENT=	An e17 XKB language/layout control module
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2013-01-31
+
 DIST_SUBDIR=	e17
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_EFL=	edje libtool_hack modarch_hack
 USE_GNOME=	pkgconfig
 USE_XORG=	xkbfile
-USE_EFL=	edje libtool_hack modarch_hack
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	evas
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-12-02/base/
+		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${DISTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (evas module)
@@ -30,14 +30,23 @@ CONFIGURE_ARGS+=	--enable-ecore-evas \
 			--enable-ecore-input \
 			--enable-ecore-input_evas
 
-OPTIONS=	X11	"Enable Evas X11 support"	on \
-		GL	"Enable Evas GL support"	on \
-		BUFFER	"Enable Evas Buffer support"	on \
-		SDL	"Enable Evas SDL support"	off
+OPTIONS_DEFINE=	BUFFER OPENGL SDL X11
+OPTIONS_DEFAULT=BUFFER OPENGL X11
+BUFFER_DESC=	Enable Buffer evas engine
+OPENGL_DESC=	Enable OpenGL evas engine
+SDL_DESC=	Enable SDL evas engine
+X11_DESC=	Enable X11 evas engine
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GL)
+.if ${PORT_OPTIONS:MBUFFER}
+CONFIGURE_ARGS+=	--enable-ecore-evas-software-buffer
+USE_EFL_EVAS_ENGINES+=	buffer
+.else
+CONFIGURE_ARGS+=	--disable-ecore-evas-software-buffer
+.endif
+
+.if ${PORT_OPTIONS:MOPENGL}
 CONFIGURE_ARGS+=	--enable-ecore-evas-opengl-x11
 USE_EFL_EVAS_ENGINES+=	opengl
 WITH_X=			yes
@@ -45,27 +54,20 @@ WITH_X=			yes
 CONFIGURE_ARGS+=	--disable-ecore-evas-opengl-x11
 .endif
 
-.if !defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--enable-ecore-x
-USE_EFL_ECORE+=		x11
-USE_EFL_EVAS_ENGINES+=	x11
-.else
-CONFIGURE_ARGS+=	--disable-ecore-x
-.endif
-
-.if !defined(WITHOUT_BUFFER)
-CONFIGURE_ARGS+=	--enable-ecore-evas-software-buffer
-USE_EFL_EVAS_ENGINES+=	buffer
-.else
-CONFIGURE_ARGS+=	--disable-ecore-evas-software-buffer
-.endif
-
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=	--enable-ecore-evas-software-sdl --enable-ecore-sdl
 USE_EFL_EVAS_ENGINES+=	sdl
 USE_EFL_ECORE+=	sdl
 .else
 CONFIGURE_ARGS+=	--disable-ecore-evas-software-sdl --disable-ecore-sdl
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+CONFIGURE_ARGS+=	--enable-ecore-x
+USE_EFL_ECORE+=		x11
+USE_EFL_EVAS_ENGINES+=	x11
+.else
+CONFIGURE_ARGS+=	--disable-ecore-x
 .endif
 
 post-patch:
@@ -86,4 +88,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-evas.pc \
 		${PREFIX}/libdata/pkgconfig/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

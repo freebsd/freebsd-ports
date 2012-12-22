@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecore
-DISTVERSION=	1.1.0
+PORTVERSION=	1.7.4
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	# none
@@ -15,33 +15,22 @@ COMMENT=	Enlightenment core abstraction library (meta port)
 NO_BUILD=	yes
 USE_EFL=	ecore
 
-ECORE_MODULES=	con evas file imf imf_evas input input_evas ipc sdl x11
-ECORE_sdl_off=	yes
+OPTIONS_DEFINE=	CON EVAS FILE IMF IMF_EVAS INPUT INPUT_EVAS IPC SDL X11
+OPTIONS_DEFAULT=CON EVAS FILE IMF IMF_EVAS INPUT INPUT_EVAS IPC X11
 
-.for NODE in ${ECORE_MODULES}
-OPTIONS+=	${NODE:U} "Install ${NODE} ecore module"
-. if !defined(ECORE_${NODE}_off)
-OPTIONS+=	on
-. else
-OPTIONS+=	off
-. endif
+.for NODE in ${OPTIONS_DEFINE}
+${NODE}_DESC=	Install ${NODE:L} module
 .endfor
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.for NODE in ${ECORE_MODULES}
-. if !defined(ECORE_${NODE}_off)
-.  if !defined(WITHOUT_${NODE:U})
-USE_EFL_ECORE+=	${NODE}
+.for NODE in ${OPTIONS_DEFINE}
+.  if ${PORT_OPTIONS:M${NODE}}
+USE_EFL_ECORE+=	${NODE:L}
 .  endif
-. else
-.  if !defined(WITHOUT_${NODE:U})
-USE_EFL_ECORE+=	${NODE}
-.  endif
-. endif
 .endfor
 
 do-install:
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

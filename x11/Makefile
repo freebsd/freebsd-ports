@@ -277,6 +277,7 @@
     SUBDIR += temperature.app
     SUBDIR += terminal.app
     SUBDIR += terminator
+    SUBDIR += terminology
     SUBDIR += thinglaunch
     SUBDIR += thingylaunch
     SUBDIR += tilda

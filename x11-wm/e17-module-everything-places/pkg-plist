@@ -1,6 +1,7 @@
 lib/enlightenment/modules/everything-places/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/everything-places/module.desktop
 lib/enlightenment/modules/everything-places/e-module.edj
+%%NLS%%lib/enlightenment/modules/everything-places/locale/ar/LC_MESSAGES/everything-places.mo
 %%NLS%%lib/enlightenment/modules/everything-places/locale/it/LC_MESSAGES/everything-places.mo
 %%NLS%%lib/enlightenment/modules/everything-places/locale/fr/LC_MESSAGES/everything-places.mo
 %%NLS%%lib/enlightenment/modules/everything-places/locale/cs/LC_MESSAGES/everything-places.mo
@@ -22,6 +23,8 @@ lib/enlightenment/modules/everything-places/e-module.edj
 %%NLS%%@dirrm lib/enlightenment/modules/everything-places/locale/fr
 %%NLS%%@dirrm lib/enlightenment/modules/everything-places/locale/it/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/everything-places/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/everything-places/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/everything-places/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/everything-places/locale
 @dirrm lib/enlightenment/modules/everything-places/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/everything-places
