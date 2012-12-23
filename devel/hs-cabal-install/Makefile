@@ -2,7 +2,7 @@
 
 PORTNAME=	cabal-install
 PORTVERSION=	0.14.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,7 +19,7 @@ EXECUTABLE=	cabal-install
 
 # Some magic to make `cabal` work with a custom toolchain
 SUB_FILES=	cabal
-SUB_LIST=	AR=${AR} CC=${CC} CPP=${CPP} LD=${CC} RANLIB=${RANLIB}
+SUB_LIST=	AR=${AR} CC=${CC} CPP=${CPP} LD=${LD} RANLIB=${RANLIB}
 
 post-install::
 	@${MV} ${PREFIX}/bin/cabal ${PREFIX}/bin/cabal-install

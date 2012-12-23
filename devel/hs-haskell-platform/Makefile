@@ -2,6 +2,7 @@
 
 PORTNAME=	haskell-platform
 PORTVERSION=	2012.4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -38,7 +39,7 @@ USE_CABAL=	async==2.0.1.3 \
 		vector==0.10.0.1 \
 		xhtml==3000.2.1_2 \
 		zlib==0.5.4.0 \
-		cabal-install==0.14.0_2 \
+		cabal-install==0.14.0_3 \
 		alex==3.0.2 \
 		happy==1.18.10
 
