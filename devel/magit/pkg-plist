@@ -1,6 +1,8 @@
 etc/emacs/site-start.d/50magit.el
 share/emacs/site-lisp/magit-bisect.el
 share/emacs/site-lisp/magit-bisect.elc
+share/emacs/site-lisp/magit-blame.el
+share/emacs/site-lisp/magit-blame.elc
 share/emacs/site-lisp/magit-key-mode.el
 share/emacs/site-lisp/magit-key-mode.elc
 share/emacs/site-lisp/magit-stgit.el
@@ -9,7 +11,11 @@ share/emacs/site-lisp/magit-svn.el
 share/emacs/site-lisp/magit-svn.elc
 share/emacs/site-lisp/magit-topgit.el
 share/emacs/site-lisp/magit-topgit.elc
+share/emacs/site-lisp/magit-wip.el
+share/emacs/site-lisp/magit-wip.elc
 share/emacs/site-lisp/magit.el
 share/emacs/site-lisp/magit.elc
+share/emacs/site-lisp/rebase-mode.el
+share/emacs/site-lisp/rebase-mode.elc
 @dirrmtry etc/emacs/site-start.d
 @dirrmtry etc/emacs

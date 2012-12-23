@@ -1,13 +1,7 @@
-# New ports collection makefile for:	magit
-# Date created:		8 Sep 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	magit
-PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/magit/magit/
