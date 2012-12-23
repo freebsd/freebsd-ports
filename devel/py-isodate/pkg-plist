@@ -37,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/isodate/tests/test_duration.py
 %%PYTHON_SITELIBDIR%%/isodate/tests/test_duration.pyc
 %%PYTHON_SITELIBDIR%%/isodate/tests/test_duration.pyo
+%%PYTHON_SITELIBDIR%%/isodate/tests/test_pickle.py
+%%PYTHON_SITELIBDIR%%/isodate/tests/test_pickle.pyc
+%%PYTHON_SITELIBDIR%%/isodate/tests/test_pickle.pyo
 %%PYTHON_SITELIBDIR%%/isodate/tests/test_strf.py
 %%PYTHON_SITELIBDIR%%/isodate/tests/test_strf.pyc
 %%PYTHON_SITELIBDIR%%/isodate/tests/test_strf.pyo
