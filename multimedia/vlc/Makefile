@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.0.4
+DISTVERSION=	2.0.5
 PORTEPOCH=	3
-PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -29,11 +28,11 @@ OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
 		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
 		X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
-		NO_DVD
+		NO_DVD LIBBLURAY SAMPLERATE
 OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
 		HTTPD LUA MAD MATROSKA MPEG2 OGG OPUS PNG QT4 REALAUDIO \
 		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
-		VCD VORBIS X11 X264 XCB XVIDEO
+		VCD VORBIS X11 X264 XCB XVIDEO SAMPLERATE
 ASS_DESC=	ASS/SSA subtitle rendering
 DTS_DESC=	DTS DVD audio decoder
 DVDREAD_DESC=	DVD Playback support
@@ -274,10 +273,10 @@ CONFIGURE_ARGS+=--disable-glx
 .endif
 
 .if ${PORT_OPTIONS:MGNOMEVFS}
-USE_GNOME=	gnomevfs2
+USE_GNOME+=	gnomevfs2
 CONFIGURE_ARGS+=--enable-gnomevfs
 .else
-COFIGURE_ARGS+=--disable-gnomevfs
+CONFIGURE_ARGS+=--disable-gnomevfs
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
@@ -305,6 +304,13 @@ LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=--enable-jack
 .else
 CONFIGURE_ARGS+=--disable-jack
+.endif
+
+.if ${PORT_OPTIONS:MLIBBLURAY}
+LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
+CONFIGURE_ARGS+=--enable-bluray
+.else
+CONFIGURE_ARGS+=--disable-bluray
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
@@ -408,11 +414,12 @@ CONFIGURE_ARGS+=--enable-optimizations
 .endif
 
 .if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
-CONFIGURE_ARGS+=--enable-ogg
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
+		kate:${PORTSDIR}/multimedia/libkate
+CONFIGURE_ARGS+=--enable-ogg --enable-kate
 .else
 PORT_OPTIONS:=	${PORT_OPTIONS:NVORBIS}
-CONFIGURE_ARGS+=--disable-ogg
+CONFIGURE_ARGS+=--disable-ogg --disable-kate
 .endif
 
 .if ${PORT_OPTIONS:MOPUS}
@@ -461,6 +468,13 @@ CONFIGURE_ARGS+=--disable-real --disable-realrtsp
 
 .if ${PORT_OPTIONS:MRUNROOT}
 CONFIGURE_ARGS+=--enable-run-as-root
+.endif
+
+.if ${PORT_OPTIONS:MSAMPLERATE}
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=--enable-samplerate
+.else
+CONFIGURE_ARGS+=--disable-samplerate
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
@@ -584,6 +598,7 @@ CONFIGURE_ARGS+=--disable-libva
 .endif
 
 .if ${PORT_OPTIONS:MVCD}
+LIB_DEPENDS+=	cddb:${PORTSDIR}/audio/libcddb
 CONFIGURE_ARGS+=--enable-vcd --enable-libcddb
 .else
 CONFIGURE_ARGS+=--disable-vcd --disable-libcddb
@@ -770,7 +785,7 @@ pre-install:
 .if ${PORT_OPTIONS:MNLS}
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
-.for locale in ach cgg bn_IN ckb co ff fur gd kk km kmr lg my oc ps tet tl zu
+.for locale in ach cgg bn_IN ckb co ff fur gd ia kk km kmr lg my oc ps tet tl zu
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
