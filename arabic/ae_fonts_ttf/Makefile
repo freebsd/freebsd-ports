@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of TrueType Arabic fonts
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
 USE_BZIP2=	yes
@@ -49,7 +51,7 @@ do-build:
 
 do-install:
 .for font in ${FONTS}
-	${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
 	${INSTALL_DATA} ${WRKSRC}/${font}/* \
 		${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
 .endfor
