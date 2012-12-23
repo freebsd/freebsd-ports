@@ -1634,6 +1634,7 @@
     SUBDIR += py-webware-component
     SUBDIR += py-werkzeug
     SUBDIR += py-wikitools
+    SUBDIR += py-ws4py
     SUBDIR += py-wsgiauth
     SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
