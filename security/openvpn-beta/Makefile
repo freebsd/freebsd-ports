@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	2.3_beta1
+DISTVERSION=	2.3_rc2
 CATEGORIES=	security net
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX=	-beta
-PORTREVISION=	1
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
