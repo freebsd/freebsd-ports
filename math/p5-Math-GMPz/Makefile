@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Math-GMPz
-# Date created:		2011-11-30
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-GMPz
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
@@ -16,7 +12,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the GMP library integer (mpz) functions
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
-TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 TEST_DEPENDS=	p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
