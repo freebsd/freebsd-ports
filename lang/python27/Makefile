@@ -1,13 +1,9 @@
-# New ports collection makefile for:    python26
-# Date created:         3 July 2003
-# Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	python27
 PORTVERSION=	2.7.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -48,9 +44,11 @@ PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9 \
 BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
 BIN_FILES=	python python-shared python-config python-shared-config \
 		${BIN_SCRIPTS}
-BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
-		-e 's,2to3,2to3-${PYTHON_VER},' \
-		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
+BINLINKS_SUB_TMPL=	-e 's,smtpd,smtpd%%VERSION%%,' \
+			-e 's,2to3,2to3-%%VERSION%%,' \
+			-e 's,(idle|pydoc|python-shared|python),\1%%VERSION%%,'
+BINLINKS_SUB_PYTHON_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_VER}/g}
+BINLINKS_SUB_PYTHON_MAJOR_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_MAJOR_VER}/g}
 
 OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES NLS
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
@@ -75,7 +73,7 @@ SEM_MSG=	"@comment "
 SUB_FILES=	pkg-message
 SUB_LIST=	SEM=${SEM_MSG}
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} || !exists(${LOCALBASE}/bin/python)
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
@@ -159,7 +157,6 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
-
 CONFIGURE_ENV+=	OPT="${CFLAGS} ${_PTH_CPPFLAGS}"
 
 post-extract:
@@ -178,7 +175,7 @@ pre-patch:
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${PATCH_WRKSRC}/Tools/scripts/${script} \
-		> ${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB}`
+		> ${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB_PYTHON_VER}`
 .endfor
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
@@ -274,17 +271,19 @@ post-install:
 	@# additional files installing by ports
 .for script in ${BIN_SCRIPTS}
 	${INSTALL_SCRIPT} \
-		${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB}` \
+		${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB_PYTHON_VER}` \
 		${PREFIX}/bin
 .endfor
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} || !exists(${LOCALBASE}/bin/python)
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 	for f in ${BIN_FILES}; do \
-		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
-		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
+		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB_PYTHON_VER}`; \
+		TARGET_MAJOR=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB_PYTHON_MAJOR_VER}`; \
+		cd ${PREFIX}/bin && ${LN} -sf $$TARGET $$TARGET_MAJOR; \
+		cd ${PREFIX}/bin && ${LN} -sf $$TARGET_MAJOR $$f; \
 	done
 .endif
 

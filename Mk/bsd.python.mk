@@ -87,6 +87,12 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  in case you want to use an older version as a default.
 #					  default: python2.7
 #
+# PYTHON3_DEFAULT_VERSION
+#					- Version of the default python binary in your ${PATH}, in
+#					  the format "python3.2". Set this in your /etc/make.conf
+#					  in case you want to use an older version as a default.
+#					  default: python3.3
+#
 # PYTHON_MAJOR_VER	- Python version major number. 2 for python-2.x,
 #					  3 for python-3.x and so on.
 #
@@ -272,6 +278,12 @@ _PYTHON_DEFAULT_VERSION!=	(${LOCALBASE}/bin/python -c \
 _PYTHON_DEFAULT_VERSION=	${_PYTHON_PORTBRANCH}
 . endif
 PYTHON_DEFAULT_VERSION=		python${_PYTHON_DEFAULT_VERSION}
+.endif
+
+.if ${PYTHON_DEFAULT_VERSION:R} == "python3"
+PYTHON3_DEFAULT_VERSION=	${PYTHON_DEFAULT_VERSION}
+.else
+PYTHON3_DEFAULT_VERSION=	python3.3
 .endif
 
 .if defined(PYTHON_VERSION)
