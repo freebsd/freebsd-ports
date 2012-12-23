@@ -1,5 +1,5 @@
 %%DATADIR%%/httpd-tt-rss.conf
-%%WWWDIR%%/README
+%%WWWDIR%%/README.md
 %%WWWDIR%%/api/index.php
 %%WWWDIR%%/atom-to-html.xsl
 %%WWWDIR%%/backend.php
@@ -22,6 +22,8 @@
 %%WWWDIR%%/classes/button/tweet.php
 %%WWWDIR%%/classes/dlg.php
 %%WWWDIR%%/classes/feeds.php
+%%WWWDIR%%/classes/filter.php
+%%WWWDIR%%/classes/filter/redditimgur.php
 %%WWWDIR%%/classes/handler.php
 %%WWWDIR%%/classes/handler/protected.php
 %%WWWDIR%%/classes/handler/public.php
@@ -2062,6 +2064,7 @@
 %%WWWDIR%%/schema/versions/mysql/96.sql
 %%WWWDIR%%/schema/versions/mysql/97.sql
 %%WWWDIR%%/schema/versions/mysql/98.sql
+%%WWWDIR%%/schema/versions/mysql/99.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
@@ -2158,6 +2161,7 @@
 %%WWWDIR%%/schema/versions/pgsql/96.sql
 %%WWWDIR%%/schema/versions/pgsql/97.sql
 %%WWWDIR%%/schema/versions/pgsql/98.sql
+%%WWWDIR%%/schema/versions/pgsql/99.sql
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -2467,6 +2471,7 @@
 @dirrmtry %%WWWDIR%%/feed-icons
 @dirrm %%WWWDIR%%/classes/pref
 @dirrm %%WWWDIR%%/classes/handler
+@dirrm %%WWWDIR%%/classes/filter
 @dirrm %%WWWDIR%%/classes/button
 @dirrm %%WWWDIR%%/classes/auth
 @dirrm %%WWWDIR%%/classes
