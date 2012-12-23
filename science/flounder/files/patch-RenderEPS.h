@@ -1,11 +1,10 @@
---- src/RenderEPS.h.orig	Tue Oct 15 00:35:11 2002
-+++ src/RenderEPS.h	Tue Oct 15 00:35:26 2002
-@@ -23,6 +23,8 @@
+--- src/RenderEPS.h.orig	2002-12-19 13:37:24.000000000 +0900
++++ src/RenderEPS.h	2012-10-23 23:23:41.000000000 +0900
+@@ -20,6 +20,7 @@
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
  #include <GL/gl.h>
  #include <string>
- 
-+using namespace std;
-+
- #define FB_BUFSIZE 1000000
- 
- class RenderEPS {
+ using namespace std;

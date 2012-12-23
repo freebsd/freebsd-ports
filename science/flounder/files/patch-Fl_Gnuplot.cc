@@ -1,6 +1,11 @@
---- src/Fl_Gnuplot.cc.orig	Tue Oct 15 03:59:41 2002
-+++ src/Fl_Gnuplot.cc	Tue Oct 15 04:02:05 2002
-@@ -44,6 +44,7 @@
+--- src/Fl_Gnuplot.cc.orig	2002-12-20 03:56:35.000000000 +0900
++++ src/Fl_Gnuplot.cc	2012-10-23 23:22:44.000000000 +0900
+@@ -39,11 +39,11 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <fstream.h>
+ #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -8,7 +13,7 @@
  
  #include "FL/fl_draw.H"
  #include "FL/fl_ask.H"
-@@ -53,12 +54,14 @@
+@@ -53,12 +53,14 @@
  
  #define N_ENTRIES 8192
  
