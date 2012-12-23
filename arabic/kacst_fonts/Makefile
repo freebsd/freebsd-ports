@@ -1,9 +1,5 @@
-# New ports collection makefile for: kacst_fonts
-# Date created:        August 22 2003
-# Whom:                Samy Al Bahra <samy@kerneled.com>
-#
+# Created by: Samy Al Bahra <samy@kerneled.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kacst_fonts
 PORTVERSION=	2.01
@@ -29,11 +25,13 @@ do-build:
 	cd ${WRKDIR} && ttmkfdir -c -d ${WRKSRC} > ${WRKSRC}/fonts.dir
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/kacst_fonts/
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/lib/X11/fonts/kacst_fonts/
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/kacst_fonts/
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/kacst_fonts
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.dir \
+		${PREFIX}/lib/X11/fonts/kacst_fonts
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

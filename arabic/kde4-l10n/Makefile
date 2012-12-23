@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kde4-l10n
-# Date created:		2009-01-25
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
