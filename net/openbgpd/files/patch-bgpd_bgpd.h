@@ -2,13 +2,13 @@ Index: bgpd/bgpd.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.h,v
 retrieving revision 1.1.1.8
-retrieving revision 1.13
-diff -u -p -r1.1.1.8 -r1.13
+retrieving revision 1.14
+diff -u -p -r1.1.1.8 -r1.14
 --- bgpd/bgpd.h	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/bgpd.h	13 Oct 2012 18:36:00 -0000	1.13
++++ bgpd/bgpd.h	8 Dec 2012 20:17:59 -0000	1.14
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.h,v 1.241 2009/06/12 16:42:53 claudio Exp $ */
-+/*	$OpenBSD: bgpd.h,v 1.272 2012/09/18 09:45:51 claudio Exp $ */
++/*	$OpenBSD: bgpd.h,v 1.273 2012/09/18 10:10:00 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -463,13 +463,13 @@ diff -u -p -r1.1.1.8 -r1.13
  	u_int32_t	as;
 +	u_int16_t	flags;
 +	enum as_spec	type;
-+};
-+
+ };
+ 
 +struct filter_aslen {
 +	u_int		aslen;
 +	enum aslen_spec	type;
- };
- 
++};
++
 +#define AS_FLAG_NEIGHBORAS	0x01
 +
  struct filter_community {
@@ -477,8 +477,8 @@ diff -u -p -r1.1.1.8 -r1.13
 -	int			type;
 +	int		as;
 +	int		type;
-+};
-+
+ };
+ 
 +struct filter_extcommunity {
 +	u_int16_t	flags;
 +	u_int8_t	type;
@@ -498,8 +498,8 @@ diff -u -p -r1.1.1.8 -r1.13
 +		}		ext_ip;
 +		u_int64_t	ext_opaq;	/* only 48 bits */
 +	}		data;
- };
- 
++};
++
 +
  struct ctl_show_rib_request {
  	char			rib[PEER_DESCR_LEN];
@@ -543,8 +543,17 @@ diff -u -p -r1.1.1.8 -r1.13
  
  
  struct filter_prefix {
-@@ -594,16 +757,18 @@ struct filter_prefix {
+@@ -592,18 +755,28 @@ struct filter_prefix {
+ 	u_int8_t		len;
+ };
  
++struct filter_nexthop {
++	struct bgpd_addr	addr;
++	u_int8_t		flags;
++#define FILTER_NEXTHOP_ADDR	1
++#define FILTER_NEXTHOP_NEIGHBOR	2
++};
++
  struct filter_prefixlen {
  	enum comp_ops		op;
 -	sa_family_t		af;
@@ -560,6 +569,7 @@ diff -u -p -r1.1.1.8 -r1.13
 -	struct filter_community	community;
 +	struct filter_prefix		prefix;
 +	struct filter_prefixlen		prefixlen;
++	struct filter_nexthop		nexthop;
 +	struct filter_as		as;
 +	struct filter_aslen		aslen;
 +	struct filter_community		community;
@@ -567,7 +577,7 @@ diff -u -p -r1.1.1.8 -r1.13
  };
  
  TAILQ_HEAD(filter_head, filter_rule);
-@@ -635,10 +800,13 @@ enum action_types {
+@@ -635,10 +808,13 @@ enum action_types {
  	ACTION_SET_NEXTHOP_SELF,
  	ACTION_SET_COMMUNITY,
  	ACTION_DEL_COMMUNITY,
@@ -582,7 +592,7 @@ diff -u -p -r1.1.1.8 -r1.13
  };
  
  struct filter_set {
-@@ -650,23 +818,53 @@ struct filter_set {
+@@ -650,23 +826,53 @@ struct filter_set {
  		int32_t			relative;
  		struct bgpd_addr	nexthop;
  		struct filter_community	community;
@@ -641,7 +651,7 @@ diff -u -p -r1.1.1.8 -r1.13
  	int64_t		nexthop_cnt;
  	int64_t		aspath_cnt;
  	int64_t		aspath_size;
-@@ -677,82 +875,117 @@ struct rde_memstats {
+@@ -677,82 +883,117 @@ struct rde_memstats {
  	int64_t		attr_dcnt;
  };
  
@@ -685,12 +695,12 @@ diff -u -p -r1.1.1.8 -r1.13
  };
 -SIMPLEQ_HEAD(rib_names, rde_rib);
 -extern struct rib_names ribnames;
--
+ 
 -/* Address Family Numbers as per RFC 1700 */
 -#define	AFI_IPv4	1
 -#define	AFI_IPv6	2
 -#define	AFI_ALL		0xffff
- 
+-
 -/* Subsequent Address Family Identifier as per RFC 4760 */
 -#define	SAFI_NONE	0x00
 -#define	SAFI_UNICAST	0x01
@@ -812,7 +822,7 @@ diff -u -p -r1.1.1.8 -r1.13
  
  /* name2id.c */
  u_int16_t	 rib_name2id(const char *);
-@@ -768,10 +1001,22 @@ const char	*pftable_id2name(u_int16_t);
+@@ -768,10 +1009,22 @@ const char	*pftable_id2name(u_int16_t);
  void		 pftable_unref(u_int16_t);
  void		 pftable_ref(u_int16_t);
  
@@ -835,7 +845,7 @@ diff -u -p -r1.1.1.8 -r1.13
  const char	*filterset_name(enum action_types);
  
  /* util.c */
-@@ -779,11 +1024,24 @@ const char	*log_addr(const struct bgpd_a
+@@ -779,11 +1032,24 @@ const char	*log_addr(const struct bgpd_a
  const char	*log_in6addr(const struct in6_addr *);
  const char	*log_sockaddr(struct sockaddr *);
  const char	*log_as(u_int32_t);

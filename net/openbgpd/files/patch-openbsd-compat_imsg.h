@@ -3,9 +3,9 @@ Index: openbsd-compat/imsg.h
 RCS file: openbsd-compat/imsg.h
 diff -N openbsd-compat/imsg.h
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ openbsd-compat/imsg.h	2 Jul 2011 16:06:38 -0000	1.1
++++ openbsd-compat/imsg.h	8 Dec 2012 20:17:59 -0000	1.2
 @@ -0,0 +1,112 @@
-+/*	$OpenBSD: imsg.h,v 1.2 2010/06/23 07:53:55 nicm Exp $	*/
++/*	$OpenBSD: imsg.h,v 1.1 2010/05/26 16:44:32 nicm Exp $	*/
 +
 +/*
 + * Copyright (c) 2006, 2007 Pierre-Yves Ritschard <pyr@openbsd.org>

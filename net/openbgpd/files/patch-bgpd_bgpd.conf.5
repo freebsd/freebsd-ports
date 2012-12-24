@@ -2,13 +2,13 @@ Index: bgpd/bgpd.conf.5
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
 retrieving revision 1.1.1.7
-retrieving revision 1.9
-diff -u -p -r1.1.1.7 -r1.9
+retrieving revision 1.10
+diff -u -p -r1.1.1.7 -r1.10
 --- bgpd/bgpd.conf.5	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/bgpd.conf.5	13 Oct 2012 18:36:00 -0000	1.9
++++ bgpd/bgpd.conf.5	8 Dec 2012 20:17:59 -0000	1.10
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.conf.5,v 1.94 2009/06/07 00:31:22 claudio Exp $
-+.\" $OpenBSD: bgpd.conf.5,v 1.120 2012/07/07 08:22:57 claudio Exp $
++.\" $OpenBSD: bgpd.conf.5,v 1.122 2012/11/13 09:47:20 claudio Exp $
  .\"
  .\" Copyright (c) 2004 Claudio Jeker <claudio@openbsd.org>
  .\" Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -17,7 +17,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: June 7 2009 $
-+.Dd $Mdocdate: July 7 2012 $
++.Dd $Mdocdate: November 13 2012 $
  .Dt BGPD.CONF 5
  .Os
  .Sh NAME
@@ -249,7 +249,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Xc
  If set to
  .Ic yes ,
-@@ -376,6 +409,111 @@ to EBGP neighbors are not prepended with
+@@ -376,6 +409,110 @@ to EBGP neighbors are not prepended with
  The default is
  .Ic no .
  .El
@@ -356,12 +356,11 @@ diff -u -p -r1.1.1.7 -r1.9
 +Whereas
 +.Ar local
 +can be chosen by the local operator.
-+.Pp
 +.El
  .Sh NEIGHBORS AND GROUPS
  .Xr bgpd 8
  establishes TCP connections to other BGP speakers called
-@@ -470,21 +608,35 @@ The default for IBGP peers is
+@@ -470,21 +607,35 @@ The default for IBGP peers is
  .Pp
  .It Xo
  .Ic announce
@@ -403,7 +402,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Xc
  If set to
  .Ic no ,
-@@ -493,6 +645,29 @@ This can be helpful to connect to old or
+@@ -493,6 +644,29 @@ This can be helpful to connect to old or
  The default is
  .Ic yes .
  .Pp
@@ -433,7 +432,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .It Ic demote Ar group
  Increase the
  .Xr carp 4
-@@ -504,7 +679,7 @@ The demotion counter will be increased a
+@@ -504,7 +678,7 @@ The demotion counter will be increased a
  .Xr bgpd 8
  starts and decreased
  60 seconds after the session went to state
@@ -442,7 +441,7 @@ diff -u -p -r1.1.1.7 -r1.9
  For neighbors added at runtime, the demotion counter is only increased after
  the session has been
  .Em ESTABLISHED
-@@ -548,8 +723,8 @@ Do not start the session when bgpd comes
+@@ -548,8 +722,8 @@ Do not start the session when bgpd comes
  .Pp
  .It Xo
  .Ic dump
@@ -453,7 +452,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Ar file Op Ar timeout
  .Xc
  Do a peer specific MRT dump.
-@@ -564,7 +739,7 @@ section in
+@@ -564,7 +738,7 @@ section in
  .Pp
  .It Xo
  .Ic enforce neighbor-as
@@ -462,7 +461,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Xc
  If set to
  .Ic yes ,
-@@ -589,10 +764,16 @@ Inherited from the global configuration 
+@@ -589,10 +763,16 @@ Inherited from the global configuration 
  Set the minimal acceptable holdtime.
  Inherited from the global configuration if not given.
  .Pp
@@ -481,7 +480,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Ic spi Ar spi-number authspec Op Ar encspec
  .Xc
  Enable IPsec with static keying.
-@@ -627,7 +808,7 @@ Keys must be given in hexadecimal format
+@@ -627,7 +807,7 @@ Keys must be given in hexadecimal format
  .Pp
  .It Xo
  .Ic ipsec
@@ -490,7 +489,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Ic ike
  .Xc
  Enable IPsec with dynamic keying.
-@@ -639,11 +820,11 @@ is responsible for managing the session 
+@@ -639,11 +819,11 @@ is responsible for managing the session 
  With
  .Xr isakmpd 8 ,
  it is sufficient to copy the peer's public key, found in
@@ -504,7 +503,7 @@ diff -u -p -r1.1.1.7 -r1.9
  The local public key must be copied to the peer in the same way.
  As
  .Xr bgpd 8
-@@ -698,11 +879,11 @@ Do not attempt to actively open a TCP co
+@@ -698,11 +878,11 @@ Do not attempt to actively open a TCP co
  .It Ic remote-as Ar as-number
  Set the AS number of the remote system.
  .Pp
@@ -518,7 +517,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Em route-reflector
  for this neighbor.
  An optional cluster ID can be specified; otherwise the BGP ID will be used.
-@@ -732,8 +913,8 @@ These sets are rewritten into filter rul
+@@ -732,8 +912,8 @@ These sets are rewritten into filter rul
  .Pp
  .It Xo
  .Ic softreconfig
@@ -529,7 +528,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Xc
  Turn soft reconfiguration on or off for the specified direction.
  If soft reconfiguration is turned on, filter changes will be applied on
-@@ -760,7 +941,7 @@ tcp md5sig key deadbeef
+@@ -760,7 +940,7 @@ tcp md5sig key deadbeef
  .Pp
  .It Xo
  .Ic transparent-as
@@ -538,7 +537,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Xc
  If set to
  .Ic yes ,
-@@ -772,7 +953,7 @@ setting.
+@@ -772,7 +952,7 @@ setting.
  .Pp
  .It Xo
  .Ic ttl-security
@@ -547,7 +546,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Xc
  Enable or disable ttl-security.
  When enabled,
-@@ -849,6 +1030,10 @@ is matched against a part of the
+@@ -849,6 +1029,10 @@ is matched against a part of the
  .Em AS path
  specified by the
  .Ar as-type .
@@ -558,7 +557,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Ar as-type
  is one of the following operators:
  .Pp
-@@ -917,7 +1102,32 @@ may be set to
+@@ -917,7 +1101,32 @@ may be set to
  which is expanded to the current neighbor remote AS number.
  .Pp
  .It Xo
@@ -592,7 +591,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Ar peer
  .Xc
  This rule applies only to
-@@ -945,7 +1155,7 @@ if enclosed in curly brackets:
+@@ -945,7 +1154,7 @@ if enclosed in curly brackets:
  deny from { 128.251.16.1, 251.128.16.2, group hojo }
  .Ed
  .Pp
@@ -601,7 +600,7 @@ diff -u -p -r1.1.1.7 -r1.9
  This rule applies only to routes matching the stated address family.
  The address family needs to be set only in rules that use
  .Ic prefixlen
-@@ -953,6 +1163,24 @@ without specifying a
+@@ -953,6 +1162,37 @@ without specifying a
  .Ic prefix
  beforehand.
  .Pp
@@ -623,10 +622,23 @@ diff -u -p -r1.1.1.7 -r1.9
 +.Ar len
 +times.
 +.Pp
++.It Ic nexthop Ar address
++This rule applies only to
++.Em UPDATES
++where the nexthop is equal to
++.Ar address .
++The
++.Ar address
++can be set to
++.Em neighbor
++in which case the nexthop is compared against the address of the neighbor.
++Nexthop filtering is not supported on locally announced networks and one must
++take into consideration previous rules overwriting nexthops.
++.Pp
  .It Xo
  .Ic prefix
  .Ar address Ns Li / Ns Ar len
-@@ -1028,6 +1256,12 @@ matches a rule which has the
+@@ -1028,6 +1268,12 @@ matches a rule which has the
  option set, this rule is considered the last matching rule, and evaluation
  of subsequent rules is skipped.
  .Pp
@@ -639,7 +651,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .It Ic set Ar attribute ...
  All matching rules can set the
  .Em AS path attributes
-@@ -1079,6 +1313,48 @@ Alternately, well-known communities may 
+@@ -1079,6 +1325,48 @@ Alternately, well-known communities may 
  or
  .Ic NO_PEER .
  .Pp
@@ -688,7 +700,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .It Ic localpref Ar number
  Set the
  .Em LOCAL_PREF
-@@ -1108,6 +1384,20 @@ otherwise it will be set to
+@@ -1108,6 +1396,20 @@ otherwise it will be set to
  .Ar number .
  .Pp
  .It Xo
@@ -709,7 +721,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Ic nexthop
  .Sm off
  .Po Ar address \*(Ba
-@@ -1157,9 +1447,8 @@ times to the
+@@ -1157,9 +1459,8 @@ times to the
  .Em AS path .
  .Pp
  .It Ic rtlabel Ar label
@@ -721,7 +733,7 @@ diff -u -p -r1.1.1.7 -r1.9
  .Pp
  .It Ic weight Ar number
  The
-@@ -1181,8 +1470,8 @@ For prefixes with equally long paths, th
+@@ -1181,8 +1482,8 @@ For prefixes with equally long paths, th
  is selected.
  .El
  .Sh FILES

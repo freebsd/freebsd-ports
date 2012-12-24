@@ -2,9 +2,10 @@ Index: bgpd/carp.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/carp.c,v
 retrieving revision 1.1.1.6
-diff -u -p -r1.1.1.6 carp.c
+retrieving revision 1.4
+diff -u -p -r1.1.1.6 -r1.4
 --- bgpd/carp.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/carp.c	13 Oct 2012 18:23:46 -0000
++++ bgpd/carp.c	22 Oct 2009 15:10:02 -0000	1.4
 @@ -93,9 +93,8 @@ carp_demote_shutdown(void)
  
  	while ((c = TAILQ_FIRST(&carpgroups)) != NULL) {

@@ -2,12 +2,13 @@ Index: bgpctl/bgpctl.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/bgpctl.c,v
 retrieving revision 1.1.1.7
-diff -u -p -r1.1.1.7 bgpctl.c
+retrieving revision 1.10
+diff -u -p -r1.1.1.7 -r1.10
 --- bgpctl/bgpctl.c	14 Feb 2010 20:20:14 -0000	1.1.1.7
-+++ bgpctl/bgpctl.c	13 Oct 2012 18:49:31 -0000
++++ bgpctl/bgpctl.c	8 Dec 2012 20:17:55 -0000	1.10
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpctl.c,v 1.142 2009/06/06 06:33:15 eric Exp $ */
-+/*	$OpenBSD: bgpctl.c,v 1.165 2012/09/12 05:57:10 claudio Exp $ */
++/*	$OpenBSD: bgpctl.c,v 1.167 2012/11/15 19:55:08 sthen Exp $ */
  
  /*
   * Copyright (c) 2003 Henning Brauer <henning@openbsd.org>
@@ -391,7 +392,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  		    p->conf.remote_masklen != 128)) {
  			if (asprintf(&s, "%s/%u",
  			    log_addr(&p->conf.remote_addr),
-@@ -549,6 +643,10 @@ show_neighbor_msg(struct imsg *imsg, enu
+@@ -549,9 +643,20 @@ show_neighbor_msg(struct imsg *imsg, enu
  			printf(", Template");
  		if (p->conf.cloned)
  			printf(", Cloned");
@@ -402,7 +403,17 @@ diff -u -p -r1.1.1.7 bgpctl.c
  		printf("\n");
  		if (p->conf.descr[0])
  			printf(" Description: %s\n", p->conf.descr);
-@@ -563,22 +661,24 @@ show_neighbor_msg(struct imsg *imsg, enu
++		if (p->conf.max_prefix) {
++			printf(" Max-prefix: %u", p->conf.max_prefix);
++			if (p->conf.max_prefix_restart)
++				printf(" (restart %u)",
++				    p->conf.max_prefix_restart);
++			printf("\n");
++		}
+ 		printf("  BGP version 4, remote router-id %s\n",
+ 		    inet_ntoa(ina));
+ 		printf("  BGP state = %s", statenames[p->state]);
+@@ -563,22 +668,24 @@ show_neighbor_msg(struct imsg *imsg, enu
  		printf("  Last read %s, holdtime %us, keepalive interval %us\n",
  		    fmt_timeframe(p->stats.last_read),
  		    p->holdtime, p->holdtime/3);
@@ -439,7 +450,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  			if (p->capa.peer.as4byte)
  				printf("    4-byte AS numbers\n");
  		}
-@@ -633,20 +733,38 @@ show_neighbor_msg(struct imsg *imsg, enu
+@@ -633,20 +740,38 @@ show_neighbor_msg(struct imsg *imsg, enu
  }
  
  void
@@ -491,7 +502,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  }
  
  void
-@@ -654,17 +772,17 @@ print_neighbor_msgstats(struct peer *p)
+@@ -654,17 +779,17 @@ print_neighbor_msgstats(struct peer *p)
  {
  	printf("  Message statistics:\n");
  	printf("  %-15s %-10s %-10s\n", "", "Sent", "Received");
@@ -515,7 +526,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  	    p->stats.msg_sent_open + p->stats.msg_sent_notification +
  	    p->stats.msg_sent_update + p->stats.msg_sent_keepalive +
  	    p->stats.msg_sent_rrefresh,
-@@ -673,14 +791,16 @@ print_neighbor_msgstats(struct peer *p)
+@@ -673,14 +798,16 @@ print_neighbor_msgstats(struct peer *p)
  	    p->stats.msg_rcvd_rrefresh);
  	printf("  Update statistics:\n");
  	printf("  %-15s %-10s %-10s\n", "", "Sent", "Received");
@@ -535,7 +546,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  {
  	printf("  %-20s ", name);
  
-@@ -745,6 +865,12 @@ show_fib_head(void)
+@@ -745,6 +872,12 @@ show_fib_head(void)
  }
  
  void
@@ -548,7 +559,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  show_network_head(void)
  {
  	printf("flags: S = Static\n");
-@@ -788,56 +914,44 @@ show_fib_flags(u_int16_t flags)
+@@ -788,56 +921,44 @@ show_fib_flags(u_int16_t flags)
  int
  show_fib_msg(struct imsg *imsg)
  {
@@ -597,10 +608,10 @@ diff -u -p -r1.1.1.7 bgpctl.c
 +		if (imsg->hdr.len < IMSG_HEADER_SIZE + sizeof(*kt))
  			errx(1, "wrong imsg len");
 -		k6 = imsg->data;
+-
+-		show_fib_flags(k6->flags);
 +		kt = imsg->data;
  
--		show_fib_flags(k6->flags);
--
 -		if (asprintf(&p, "%s/%u", log_in6addr(&k6->prefix),
 -		    k6->prefixlen) == -1)
 -			err(1, NULL);
@@ -623,7 +634,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  	default:
  		break;
  	}
-@@ -848,35 +962,70 @@ show_fib_msg(struct imsg *imsg)
+@@ -848,35 +969,70 @@ show_fib_msg(struct imsg *imsg)
  void
  show_nexthop_head(void)
  {
@@ -712,7 +723,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  		}
  		printf("\n");
  		break;
-@@ -898,9 +1047,8 @@ show_interface_head(void)
+@@ -898,9 +1054,8 @@ show_interface_head(void)
  	    "Link state");
  }
  
@@ -724,7 +735,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  const struct ifmedia_description
  		ifm_type_descriptions[] = IFM_TYPE_DESCRIPTIONS;
  
-@@ -936,36 +1084,36 @@ get_media_descr(int media_type)
+@@ -936,36 +1091,36 @@ get_media_descr(int media_type)
  const char *
  get_linkstate(int media_type, int link_state)
  {
@@ -783,7 +794,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  }
  
  int
-@@ -982,17 +1130,12 @@ show_interface_msg(struct imsg *imsg)
+@@ -982,17 +1137,12 @@ show_interface_msg(struct imsg *imsg)
  		printf("%-15s", k->flags & IFF_UP ? "UP" : "");
  
  		if ((ifms_type = ift2ifm(k->media_type)) != 0)
@@ -806,7 +817,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  		printf("\n");
  		break;
  	case IMSG_CTL_END:
-@@ -1008,10 +1151,10 @@ show_interface_msg(struct imsg *imsg)
+@@ -1008,10 +1158,10 @@ show_interface_msg(struct imsg *imsg)
  void
  show_rib_summary_head(void)
  {
@@ -820,7 +831,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  	    "gateway", "lpref", "med", "aspath origin");
  }
  
-@@ -1049,26 +1192,30 @@ print_flags(u_int8_t flags, int sum)
+@@ -1049,26 +1199,30 @@ print_flags(u_int8_t flags, int sum)
  	char	*p = flagstr;
  
  	if (sum) {
@@ -859,7 +870,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  			printf(", announced");
  	}
  }
-@@ -1077,27 +1224,14 @@ int
+@@ -1077,27 +1231,14 @@ int
  show_rib_summary_msg(struct imsg *imsg)
  {
  	struct ctl_show_rib	 rib;
@@ -888,7 +899,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  		break;
  	case IMSG_CTL_END:
  		return (1);
-@@ -1112,108 +1246,21 @@ int
+@@ -1112,108 +1253,21 @@ int
  show_rib_detail_msg(struct imsg *imsg, int nodescr)
  {
  	struct ctl_show_rib	 rib;
@@ -1003,7 +1014,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  		break;
  	case IMSG_CTL_END:
  		printf("\n");
-@@ -1225,67 +1272,128 @@ show_rib_detail_msg(struct imsg *imsg, i
+@@ -1225,67 +1279,128 @@ show_rib_detail_msg(struct imsg *imsg, i
  	return (0);
  }
  
@@ -1182,7 +1193,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  }
  
  void
-@@ -1328,30 +1436,6 @@ show_community(u_char *data, u_int16_t l
+@@ -1328,30 +1443,6 @@ show_community(u_char *data, u_int16_t l
  	}
  }
  
@@ -1213,7 +1224,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  void
  show_ext_community(u_char *data, u_int16_t len)
  {
-@@ -1372,34 +1456,101 @@ show_ext_community(u_char *data, u_int16
+@@ -1372,34 +1463,101 @@ show_ext_community(u_char *data, u_int16
  		case EXT_COMMUNITY_TWO_AS:
  			memcpy(&as2, data + i + 2, sizeof(as2));
  			memcpy(&u32, data + i + 4, sizeof(u32));
@@ -1322,7 +1333,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  void
  send_filterset(struct imsgbuf *i, struct filter_set_head *set)
  {
-@@ -1469,6 +1620,183 @@ show_result(struct imsg *imsg)
+@@ -1469,6 +1627,183 @@ show_result(struct imsg *imsg)
  	return (1);
  }
  
@@ -1506,7 +1517,7 @@ diff -u -p -r1.1.1.7 bgpctl.c
  /* following functions are necessary for imsg framework */
  void
  log_warnx(const char *emsg, ...)
-@@ -1495,3 +1823,9 @@ fatal(const char *emsg)
+@@ -1495,3 +1830,9 @@ fatal(const char *emsg)
  {
  	err(1, emsg);
  }

@@ -3,8 +3,8 @@ Index: openbsd-compat/imsg.c
 RCS file: openbsd-compat/imsg.c
 diff -N openbsd-compat/imsg.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ openbsd-compat/imsg.c	2 Jul 2011 16:06:38 -0000	1.1
-@@ -0,0 +1,271 @@
++++ openbsd-compat/imsg.c	8 Dec 2012 20:17:59 -0000	1.2
+@@ -0,0 +1,305 @@
 +/*	$OpenBSD: imsg.c,v 1.1 2010/05/26 16:44:32 nicm Exp $	*/
 +
 +/*
@@ -35,6 +35,8 @@ diff -N openbsd-compat/imsg.c
 +
 +#include "imsg.h"
 +
++int	 imsg_fd_overhead = 0;
++
 +int	 imsg_get_fd(struct imsgbuf *);
 +
 +void
@@ -55,10 +57,10 @@ diff -N openbsd-compat/imsg.c
 +	struct cmsghdr		*cmsg;
 +	union {
 +		struct cmsghdr hdr;
-+		char	buf[CMSG_SPACE(sizeof(int) * 16)];
++		char	buf[CMSG_SPACE(sizeof(int) * 1)];
 +	} cmsgbuf;
 +	struct iovec		 iov;
-+	ssize_t			 n;
++	ssize_t			 n = -1;
 +	int			 fd;
 +	struct imsg_fd		*ifd;
 +
@@ -71,11 +73,27 @@ diff -N openbsd-compat/imsg.c
 +	msg.msg_control = &cmsgbuf.buf;
 +	msg.msg_controllen = sizeof(cmsgbuf.buf);
 +
++	if ((ifd = calloc(1, sizeof(struct imsg_fd))) == NULL)
++		return (-1);
++
++again:
++#if defined(__FreeBSD__)
++	if (imsg_fd_overhead +
++#else
++	if (getdtablecount() + imsg_fd_overhead +
++#endif
++	    (CMSG_SPACE(sizeof(int))-CMSG_SPACE(0))/sizeof(int)
++	    >= getdtablesize()) {
++		errno = EAGAIN;
++		return (-1);
++	}
++	
 +	if ((n = recvmsg(ibuf->fd, &msg, 0)) == -1) {
-+		if (errno != EINTR && errno != EAGAIN) {
-+			return (-1);
-+		}
-+		return (-2);
++		if (errno == EMSGSIZE)
++			goto fail;
++		if (errno != EINTR && errno != EAGAIN)
++			goto fail;
++		goto again;
 +	}
 +
 +	ibuf->r.wpos += n;
@@ -84,17 +102,33 @@ diff -N openbsd-compat/imsg.c
 +	    cmsg = CMSG_NXTHDR(&msg, cmsg)) {
 +		if (cmsg->cmsg_level == SOL_SOCKET &&
 +		    cmsg->cmsg_type == SCM_RIGHTS) {
-+			fd = (*(int *)CMSG_DATA(cmsg));
-+			if ((ifd = calloc(1, sizeof(struct imsg_fd))) == NULL) {
-+				close(fd);
-+				return (-1);
++			int i;
++			int j;
++
++			/*
++			 * We only accept one file descriptor.  Due to C
++			 * padding rules, our control buffer might contain
++			 * more than one fd, and we must close them.
++			 */
++			j = ((char *)cmsg + cmsg->cmsg_len -
++			    (char *)CMSG_DATA(cmsg)) / sizeof(int);
++			for (i = 0; i < j; i++) {
++				fd = ((int *)CMSG_DATA(cmsg))[i];
++				if (i == 0) {
++					ifd->fd = fd;
++					TAILQ_INSERT_TAIL(&ibuf->fds, ifd,
++					    entry);
++					ifd = NULL;
++				} else
++					close(fd);
 +			}
-+			ifd->fd = fd;
-+			TAILQ_INSERT_TAIL(&ibuf->fds, ifd, entry);
 +		}
 +		/* we do not handle other ctl data level */
 +	}
 +
++fail:
++	if (ifd)
++		free(ifd);
 +	return (n);
 +}
 +
