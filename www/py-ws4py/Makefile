@@ -13,8 +13,6 @@ COMMENT=	WebSocket package for Python
 
 LICENSE=	BSD
 
-SUB_FILES=	pkg-message
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
@@ -33,30 +31,14 @@ TORNADO_FILES=	ws4py/client/tornadoclient.py
 
 .if ${PORT_OPTIONS:MCHERRYPY}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2.2:${PORTSDIR}/www/py-cherrypy
-SUB_LIST+=	MSG_NO_CHERRYPY=
-.else
-SUB_LIST+=	MSG_NO_CHERRYPY="${CHERRYPY_FILES}"
 .endif
 
 .if ${PORT_OPTIONS:MGEVENT}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gevent>=0.13.6:${PORTSDIR}/devel/py-gevent
-SUB_LIST+=	MSG_NO_GEVENT=
-.else
-SUB_LIST+=	MSG_NO_GEVENT="${GEVENT_FILES}"
 .endif
 
 .if ${PORT_OPTIONS:MTORNADO}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado
-SUB_LIST+=	MSG_NO_TORNADO=
-.else
-SUB_LIST+=	MSG_NO_TORNADO="${TORNADO_FILES}"
-.endif
-
-.if ! ${PORT_OPTIONS:MCHERRYPY} || ! ${PORT_OPTIONS:MGEVENT} || \
-	! ${PORT_OPTIONS:MTORNADO}
-SUB_LIST+=	NOTE="Note that the following files are omitted from the package:"
-.else
-SUB_LIST+=	NOTE=
 .endif
 
 # Do not install files which will not work
@@ -78,6 +60,18 @@ post-patch:
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+.if ! ${PORT_OPTIONS:MCHERRYPY} || ! ${PORT_OPTIONS:MGEVENT} || ! ${PORT_OPTIONS:MTORNADO}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note that the following files are not installed:"
+.endif
+.if ! ${PORT_OPTIONS:MCHERRYPY}
+	@${ECHO_MSG} ${CHERRYPY_FILES}
+.endif
+.if ! ${PORT_OPTIONS:MGEVENT}
+	@${ECHO_MSG} ${GEVENT_FILES}
+.endif
+.if ! ${PORT_OPTIONS:MTORNADO}
+	@${ECHO_MSG} ${TORNADO_FILES}
+.endif
 
 .include <bsd.port.mk>
