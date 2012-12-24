@@ -1,0 +1,743 @@
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/CHANGELOG.txt
+%%WWWDIR%%/FA.pem
+%%WWWDIR%%/access/index.php
+%%WWWDIR%%/access/login.php
+%%WWWDIR%%/access/logout.php
+%%WWWDIR%%/access/timeout.php
+%%WWWDIR%%/admin/attachments.php
+%%WWWDIR%%/admin/backups.php
+%%WWWDIR%%/admin/change_current_user_password.php
+%%WWWDIR%%/admin/company_preferences.php
+%%WWWDIR%%/admin/create_coy.php
+%%WWWDIR%%/admin/crm_categories.php
+%%WWWDIR%%/admin/db/attachments_db.inc
+%%WWWDIR%%/admin/db/company_db.inc
+%%WWWDIR%%/admin/db/fiscalyears_db.inc
+%%WWWDIR%%/admin/db/index.php
+%%WWWDIR%%/admin/db/maintenance_db.inc
+%%WWWDIR%%/admin/db/printers_db.inc
+%%WWWDIR%%/admin/db/security_db.inc
+%%WWWDIR%%/admin/db/shipping_db.inc
+%%WWWDIR%%/admin/db/tags_db.inc
+%%WWWDIR%%/admin/db/transactions_db.inc
+%%WWWDIR%%/admin/db/users_db.inc
+%%WWWDIR%%/admin/db/voiding_db.inc
+%%WWWDIR%%/admin/display_prefs.php
+%%WWWDIR%%/admin/fiscalyears.php
+%%WWWDIR%%/admin/forms_setup.php
+%%WWWDIR%%/admin/gl_setup.php
+%%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/inst_chart.php
+%%WWWDIR%%/admin/inst_lang.php
+%%WWWDIR%%/admin/inst_module.php
+%%WWWDIR%%/admin/inst_theme.php
+%%WWWDIR%%/admin/inst_upgrade.php
+%%WWWDIR%%/admin/payment_terms.php
+%%WWWDIR%%/admin/print_profiles.php
+%%WWWDIR%%/admin/printers.php
+%%WWWDIR%%/admin/security_roles.php
+%%WWWDIR%%/admin/shipping_companies.php
+%%WWWDIR%%/admin/system_diagnostics.php
+%%WWWDIR%%/admin/tags.php
+%%WWWDIR%%/admin/users.php
+%%WWWDIR%%/admin/view_print_transaction.php
+%%WWWDIR%%/admin/void_transaction.php
+%%WWWDIR%%/applications/application.php
+%%WWWDIR%%/applications/customers.php
+%%WWWDIR%%/applications/dimensions.php
+%%WWWDIR%%/applications/generalledger.php
+%%WWWDIR%%/applications/index.php
+%%WWWDIR%%/applications/inventory.php
+%%WWWDIR%%/applications/manufacturing.php
+%%WWWDIR%%/applications/setup.php
+%%WWWDIR%%/applications/suppliers.php
+%%WWWDIR%%/company/0/backup/index.php
+%%WWWDIR%%/company/0/images/102.jpg
+%%WWWDIR%%/company/0/images/103.jpg
+%%WWWDIR%%/company/0/images/104.jpg
+%%WWWDIR%%/company/0/images/index.php
+%%WWWDIR%%/company/0/images/logo_frontaccounting.jpg
+%%WWWDIR%%/company/0/index.php
+%%WWWDIR%%/company/0/js_cache/index.php
+%%WWWDIR%%/company/0/pdf_files/index.php
+%%WWWDIR%%/company/0/reporting/index.php
+%%WWWDIR%%/company/index.php
+%%WWWDIR%%/config.default.php
+%%WWWDIR%%/dimensions/dimension_entry.php
+%%WWWDIR%%/dimensions/includes/dimensions_db.inc
+%%WWWDIR%%/dimensions/includes/dimensions_ui.inc
+%%WWWDIR%%/dimensions/includes/index.php
+%%WWWDIR%%/dimensions/index.php
+%%WWWDIR%%/dimensions/inquiry/index.php
+%%WWWDIR%%/dimensions/inquiry/search_dimensions.php
+%%WWWDIR%%/dimensions/view/index.php
+%%WWWDIR%%/dimensions/view/view_dimension.php
+%%WWWDIR%%/doc/2.1_Beta.txt
+%%WWWDIR%%/doc/2.2_Beta.txt
+%%WWWDIR%%/doc/CHANGELOG.old.txt
+%%WWWDIR%%/doc/access_levels.txt
+%%WWWDIR%%/doc/attachments.txt
+%%WWWDIR%%/doc/bank_reconciliation.txt
+%%WWWDIR%%/doc/calculate_price.txt
+%%WWWDIR%%/doc/dim_on_invoice.txt
+%%WWWDIR%%/doc/extensions.txt
+%%WWWDIR%%/doc/index.php
+%%WWWDIR%%/doc/license.txt
+%%WWWDIR%%/doc/quick_entries.txt
+%%WWWDIR%%/doc/recurrent_invoice.txt
+%%WWWDIR%%/doc/sales_quotations.txt
+%%WWWDIR%%/frontaccounting.php
+%%WWWDIR%%/gl/accruals.php
+%%WWWDIR%%/gl/bank_account_reconcile.php
+%%WWWDIR%%/gl/bank_transfer.php
+%%WWWDIR%%/gl/gl_bank.php
+%%WWWDIR%%/gl/gl_budget.php
+%%WWWDIR%%/gl/gl_journal.php
+%%WWWDIR%%/gl/includes/db/gl_db_account_types.inc
+%%WWWDIR%%/gl/includes/db/gl_db_accounts.inc
+%%WWWDIR%%/gl/includes/db/gl_db_bank_accounts.inc
+%%WWWDIR%%/gl/includes/db/gl_db_bank_trans.inc
+%%WWWDIR%%/gl/includes/db/gl_db_banking.inc
+%%WWWDIR%%/gl/includes/db/gl_db_currencies.inc
+%%WWWDIR%%/gl/includes/db/gl_db_rates.inc
+%%WWWDIR%%/gl/includes/db/gl_db_trans.inc
+%%WWWDIR%%/gl/includes/db/index.php
+%%WWWDIR%%/gl/includes/gl_db.inc
+%%WWWDIR%%/gl/includes/gl_ui.inc
+%%WWWDIR%%/gl/includes/index.php
+%%WWWDIR%%/gl/includes/ui/gl_bank_ui.inc
+%%WWWDIR%%/gl/includes/ui/gl_journal_ui.inc
+%%WWWDIR%%/gl/includes/ui/index.php
+%%WWWDIR%%/gl/index.php
+%%WWWDIR%%/gl/inquiry/balance_sheet.php
+%%WWWDIR%%/gl/inquiry/bank_inquiry.php
+%%WWWDIR%%/gl/inquiry/gl_account_inquiry.php
+%%WWWDIR%%/gl/inquiry/gl_trial_balance.php
+%%WWWDIR%%/gl/inquiry/index.php
+%%WWWDIR%%/gl/inquiry/journal_inquiry.php
+%%WWWDIR%%/gl/inquiry/profit_loss.php
+%%WWWDIR%%/gl/inquiry/tax_inquiry.php
+%%WWWDIR%%/gl/manage/bank_accounts.php
+%%WWWDIR%%/gl/manage/currencies.php
+%%WWWDIR%%/gl/manage/exchange_rates.php
+%%WWWDIR%%/gl/manage/gl_account_classes.php
+%%WWWDIR%%/gl/manage/gl_account_types.php
+%%WWWDIR%%/gl/manage/gl_accounts.php
+%%WWWDIR%%/gl/manage/gl_quick_entries.php
+%%WWWDIR%%/gl/manage/index.php
+%%WWWDIR%%/gl/manage/revaluate_currencies.php
+%%WWWDIR%%/gl/view/accrual_trans.php
+%%WWWDIR%%/gl/view/bank_transfer_view.php
+%%WWWDIR%%/gl/view/gl_deposit_view.php
+%%WWWDIR%%/gl/view/gl_payment_view.php
+%%WWWDIR%%/gl/view/gl_trans_view.php
+%%WWWDIR%%/gl/view/index.php
+%%WWWDIR%%/includes/JsHttpRequest.php
+%%WWWDIR%%/includes/access_levels.inc
+%%WWWDIR%%/includes/ajax.inc
+%%WWWDIR%%/includes/archive.inc
+%%WWWDIR%%/includes/banking.inc
+%%WWWDIR%%/includes/current_user.inc
+%%WWWDIR%%/includes/data_checks.inc
+%%WWWDIR%%/includes/date_functions.inc
+%%WWWDIR%%/includes/db/audit_trail_db.inc
+%%WWWDIR%%/includes/db/comments_db.inc
+%%WWWDIR%%/includes/db/connect_db.inc
+%%WWWDIR%%/includes/db/crm_contacts_db.inc
+%%WWWDIR%%/includes/db/index.php
+%%WWWDIR%%/includes/db/inventory_db.inc
+%%WWWDIR%%/includes/db/manufacturing_db.inc
+%%WWWDIR%%/includes/db/references_db.inc
+%%WWWDIR%%/includes/db/sql_functions.inc
+%%WWWDIR%%/includes/db_pager.inc
+%%WWWDIR%%/includes/errors.inc
+%%WWWDIR%%/includes/hooks.inc
+%%WWWDIR%%/includes/index.php
+%%WWWDIR%%/includes/lang/gettext.php
+%%WWWDIR%%/includes/lang/index.php
+%%WWWDIR%%/includes/lang/language.php
+%%WWWDIR%%/includes/main.inc
+%%WWWDIR%%/includes/manufacturing.inc
+%%WWWDIR%%/includes/packages.inc
+%%WWWDIR%%/includes/page/footer.inc
+%%WWWDIR%%/includes/page/header.inc
+%%WWWDIR%%/includes/page/index.php
+%%WWWDIR%%/includes/prefs/index.php
+%%WWWDIR%%/includes/prefs/sysprefs.inc
+%%WWWDIR%%/includes/prefs/userprefs.inc
+%%WWWDIR%%/includes/references.inc
+%%WWWDIR%%/includes/remote_url.inc
+%%WWWDIR%%/includes/session.inc
+%%WWWDIR%%/includes/sysnames.inc
+%%WWWDIR%%/includes/system_tests.inc
+%%WWWDIR%%/includes/systypes.inc
+%%WWWDIR%%/includes/types.inc
+%%WWWDIR%%/includes/ui.inc
+%%WWWDIR%%/includes/ui/allocation_cart.inc
+%%WWWDIR%%/includes/ui/contacts_view.inc
+%%WWWDIR%%/includes/ui/db_pager_view.inc
+%%WWWDIR%%/includes/ui/index.php
+%%WWWDIR%%/includes/ui/items_cart.inc
+%%WWWDIR%%/includes/ui/simple_crud_class.inc
+%%WWWDIR%%/includes/ui/ui_controls.inc
+%%WWWDIR%%/includes/ui/ui_globals.inc
+%%WWWDIR%%/includes/ui/ui_input.inc
+%%WWWDIR%%/includes/ui/ui_lists.inc
+%%WWWDIR%%/includes/ui/ui_msgs.inc
+%%WWWDIR%%/includes/ui/ui_view.inc
+%%WWWDIR%%/includes/ui/view_package.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install.html
+%%WWWDIR%%/install/index.php
+%%WWWDIR%%/install/isession.inc
+%%WWWDIR%%/install/lang/ar_EG/LC_MESSAGES/ar_EG.mo
+%%WWWDIR%%/install/lang/ar_EG/LC_MESSAGES/ar_EG.po
+%%WWWDIR%%/install/lang/da_DK/LC_MESSAGES/da_DK.mo
+%%WWWDIR%%/install/lang/da_DK/LC_MESSAGES/da_DK.po
+%%WWWDIR%%/install/lang/de_DE/LC_MESSAGES/de_DE.mo
+%%WWWDIR%%/install/lang/de_DE/LC_MESSAGES/de_DE.po
+%%WWWDIR%%/install/lang/el_GR/LC_MESSAGES/el_GR.mo
+%%WWWDIR%%/install/lang/el_GR/LC_MESSAGES/el_GR.po
+%%WWWDIR%%/install/lang/es_MX/LC_MESSAGES/es_MX.mo
+%%WWWDIR%%/install/lang/es_MX/LC_MESSAGES/es_MX.po
+%%WWWDIR%%/install/lang/fr_FR/LC_MESSAGES/fr_FR.mo
+%%WWWDIR%%/install/lang/fr_FR/LC_MESSAGES/fr_FR.po
+%%WWWDIR%%/install/lang/id_ID/LC_MESSAGES/id_ID.mo
+%%WWWDIR%%/install/lang/id_ID/LC_MESSAGES/id_ID.po
+%%WWWDIR%%/install/lang/it_IT/LC_MESSAGES/it_IT.mo
+%%WWWDIR%%/install/lang/it_IT/LC_MESSAGES/it_IT.po
+%%WWWDIR%%/install/lang/ka_GE/LC_MESSAGES/ka_GE.mo
+%%WWWDIR%%/install/lang/ka_GE/LC_MESSAGES/ka_GE.po
+%%WWWDIR%%/install/lang/new_language_template/LC_MESSAGES/empty.po
+%%WWWDIR%%/install/lang/nl_BE/LC_MESSAGES/nl_BE.mo
+%%WWWDIR%%/install/lang/nl_BE/LC_MESSAGES/nl_BE.po
+%%WWWDIR%%/install/lang/pl_PL/LC_MESSAGES/pl_PL.mo
+%%WWWDIR%%/install/lang/pl_PL/LC_MESSAGES/pl_PL.po
+%%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES/pt_BR.mo
+%%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES/pt_BR.po
+%%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES/sv_SE.mo
+%%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES/sv_SE.po
+%%WWWDIR%%/install/lang/zh_CN/LC_MESSAGES/zh_CN.mo
+%%WWWDIR%%/install/lang/zh_CN/LC_MESSAGES/zh_CN.po
+%%WWWDIR%%/install/stylesheet.css
+%%WWWDIR%%/inventory/adjustments.php
+%%WWWDIR%%/inventory/cost_update.php
+%%WWWDIR%%/inventory/includes/db/index.php
+%%WWWDIR%%/inventory/includes/db/items_adjust_db.inc
+%%WWWDIR%%/inventory/includes/db/items_category_db.inc
+%%WWWDIR%%/inventory/includes/db/items_codes_db.inc
+%%WWWDIR%%/inventory/includes/db/items_db.inc
+%%WWWDIR%%/inventory/includes/db/items_locations_db.inc
+%%WWWDIR%%/inventory/includes/db/items_prices_db.inc
+%%WWWDIR%%/inventory/includes/db/items_purchases_db.inc
+%%WWWDIR%%/inventory/includes/db/items_trans_db.inc
+%%WWWDIR%%/inventory/includes/db/items_transfer_db.inc
+%%WWWDIR%%/inventory/includes/db/items_units_db.inc
+%%WWWDIR%%/inventory/includes/db/movement_types_db.inc
+%%WWWDIR%%/inventory/includes/index.php
+%%WWWDIR%%/inventory/includes/inventory_db.inc
+%%WWWDIR%%/inventory/includes/item_adjustments_ui.inc
+%%WWWDIR%%/inventory/includes/stock_transfers_ui.inc
+%%WWWDIR%%/inventory/index.php
+%%WWWDIR%%/inventory/inquiry/index.php
+%%WWWDIR%%/inventory/inquiry/stock_movements.php
+%%WWWDIR%%/inventory/inquiry/stock_status.php
+%%WWWDIR%%/inventory/manage/index.php
+%%WWWDIR%%/inventory/manage/item_categories.php
+%%WWWDIR%%/inventory/manage/item_codes.php
+%%WWWDIR%%/inventory/manage/item_units.php
+%%WWWDIR%%/inventory/manage/items.php
+%%WWWDIR%%/inventory/manage/locations.php
+%%WWWDIR%%/inventory/manage/movement_types.php
+%%WWWDIR%%/inventory/manage/sales_kits.php
+%%WWWDIR%%/inventory/prices.php
+%%WWWDIR%%/inventory/purchasing_data.php
+%%WWWDIR%%/inventory/reorder_level.php
+%%WWWDIR%%/inventory/transfers.php
+%%WWWDIR%%/inventory/view/index.php
+%%WWWDIR%%/inventory/view/view_adjustment.php
+%%WWWDIR%%/inventory/view/view_transfer.php
+%%WWWDIR%%/js/JsHttpRequest.js
+%%WWWDIR%%/js/allocate.js
+%%WWWDIR%%/js/behaviour.js
+%%WWWDIR%%/js/budget.js
+%%WWWDIR%%/js/index.php
+%%WWWDIR%%/js/inserts.js
+%%WWWDIR%%/js/login.js
+%%WWWDIR%%/js/payalloc.js
+%%WWWDIR%%/js/reconcile.js
+%%WWWDIR%%/js/reports.js
+%%WWWDIR%%/js/utils.js
+%%WWWDIR%%/lang/en_US/LC_MESSAGES/en_US.mo
+%%WWWDIR%%/lang/index.php
+%%WWWDIR%%/lang/new_language_template/LC_MESSAGES/empty.po
+%%WWWDIR%%/lang/new_language_template/locale.inc
+%%WWWDIR%%/manufacturing/includes/db/index.php
+%%WWWDIR%%/manufacturing/includes/db/work_centres_db.inc
+%%WWWDIR%%/manufacturing/includes/db/work_order_issues_db.inc
+%%WWWDIR%%/manufacturing/includes/db/work_order_produce_items_db.inc
+%%WWWDIR%%/manufacturing/includes/db/work_order_requirements_db.inc
+%%WWWDIR%%/manufacturing/includes/db/work_orders_db.inc
+%%WWWDIR%%/manufacturing/includes/db/work_orders_quick_db.inc
+%%WWWDIR%%/manufacturing/includes/index.php
+%%WWWDIR%%/manufacturing/includes/manufacturing_db.inc
+%%WWWDIR%%/manufacturing/includes/manufacturing_ui.inc
+%%WWWDIR%%/manufacturing/includes/work_order_issue_ui.inc
+%%WWWDIR%%/manufacturing/index.php
+%%WWWDIR%%/manufacturing/inquiry/bom_cost_inquiry.php
+%%WWWDIR%%/manufacturing/inquiry/index.php
+%%WWWDIR%%/manufacturing/inquiry/where_used_inquiry.php
+%%WWWDIR%%/manufacturing/manage/bom_edit.php
+%%WWWDIR%%/manufacturing/manage/index.php
+%%WWWDIR%%/manufacturing/manage/work_centres.php
+%%WWWDIR%%/manufacturing/search_work_orders.php
+%%WWWDIR%%/manufacturing/view/index.php
+%%WWWDIR%%/manufacturing/view/wo_issue_view.php
+%%WWWDIR%%/manufacturing/view/wo_production_view.php
+%%WWWDIR%%/manufacturing/view/work_order_view.php
+%%WWWDIR%%/manufacturing/work_order_add_finished.php
+%%WWWDIR%%/manufacturing/work_order_costs.php
+%%WWWDIR%%/manufacturing/work_order_entry.php
+%%WWWDIR%%/manufacturing/work_order_issue.php
+%%WWWDIR%%/manufacturing/work_order_release.php
+%%WWWDIR%%/modules/_cache/index.php
+%%WWWDIR%%/modules/index.php
+%%WWWDIR%%/purchasing/allocations/index.php
+%%WWWDIR%%/purchasing/allocations/supplier_allocate.php
+%%WWWDIR%%/purchasing/allocations/supplier_allocation_main.php
+%%WWWDIR%%/purchasing/includes/db/grn_db.inc
+%%WWWDIR%%/purchasing/includes/db/index.php
+%%WWWDIR%%/purchasing/includes/db/invoice_db.inc
+%%WWWDIR%%/purchasing/includes/db/invoice_items_db.inc
+%%WWWDIR%%/purchasing/includes/db/po_db.inc
+%%WWWDIR%%/purchasing/includes/db/supp_payment_db.inc
+%%WWWDIR%%/purchasing/includes/db/supp_trans_db.inc
+%%WWWDIR%%/purchasing/includes/db/suppalloc_db.inc
+%%WWWDIR%%/purchasing/includes/db/suppliers_db.inc
+%%WWWDIR%%/purchasing/includes/index.php
+%%WWWDIR%%/purchasing/includes/po_class.inc
+%%WWWDIR%%/purchasing/includes/purchasing_db.inc
+%%WWWDIR%%/purchasing/includes/purchasing_ui.inc
+%%WWWDIR%%/purchasing/includes/supp_trans_class.inc
+%%WWWDIR%%/purchasing/includes/ui/grn_ui.inc
+%%WWWDIR%%/purchasing/includes/ui/index.php
+%%WWWDIR%%/purchasing/includes/ui/invoice_ui.inc
+%%WWWDIR%%/purchasing/includes/ui/po_ui.inc
+%%WWWDIR%%/purchasing/index.php
+%%WWWDIR%%/purchasing/inquiry/index.php
+%%WWWDIR%%/purchasing/inquiry/po_search.php
+%%WWWDIR%%/purchasing/inquiry/po_search_completed.php
+%%WWWDIR%%/purchasing/inquiry/supplier_allocation_inquiry.php
+%%WWWDIR%%/purchasing/inquiry/supplier_inquiry.php
+%%WWWDIR%%/purchasing/manage/index.php
+%%WWWDIR%%/purchasing/manage/suppliers.php
+%%WWWDIR%%/purchasing/po_entry_items.php
+%%WWWDIR%%/purchasing/po_receive_items.php
+%%WWWDIR%%/purchasing/supplier_credit.php
+%%WWWDIR%%/purchasing/supplier_invoice.php
+%%WWWDIR%%/purchasing/supplier_payment.php
+%%WWWDIR%%/purchasing/view/index.php
+%%WWWDIR%%/purchasing/view/view_grn.php
+%%WWWDIR%%/purchasing/view/view_po.php
+%%WWWDIR%%/purchasing/view/view_supp_credit.php
+%%WWWDIR%%/purchasing/view/view_supp_invoice.php
+%%WWWDIR%%/purchasing/view/view_supp_payment.php
+%%WWWDIR%%/reporting/fonts/LiberationSans-Regular.ttf
+%%WWWDIR%%/reporting/fonts/courier.php
+%%WWWDIR%%/reporting/fonts/helvetica.php
+%%WWWDIR%%/reporting/fonts/helveticab.php
+%%WWWDIR%%/reporting/fonts/helveticabi.php
+%%WWWDIR%%/reporting/fonts/helveticai.php
+%%WWWDIR%%/reporting/fonts/symbol.php
+%%WWWDIR%%/reporting/fonts/times.php
+%%WWWDIR%%/reporting/fonts/timesb.php
+%%WWWDIR%%/reporting/fonts/timesbi.php
+%%WWWDIR%%/reporting/fonts/timesi.php
+%%WWWDIR%%/reporting/fonts/zapfdingbats.php
+%%WWWDIR%%/reporting/forms/index.php
+%%WWWDIR%%/reporting/includes/Workbook.php
+%%WWWDIR%%/reporting/includes/barcodes.php
+%%WWWDIR%%/reporting/includes/class.graphic.inc
+%%WWWDIR%%/reporting/includes/class.mail.inc
+%%WWWDIR%%/reporting/includes/class.pdf.inc
+%%WWWDIR%%/reporting/includes/doctext.inc
+%%WWWDIR%%/reporting/includes/excel_report.inc
+%%WWWDIR%%/reporting/includes/fpdi/decoders/ASCII85Decode.php
+%%WWWDIR%%/reporting/includes/fpdi/decoders/LZWDecode.php
+%%WWWDIR%%/reporting/includes/fpdi/fpdf_tpl.php
+%%WWWDIR%%/reporting/includes/fpdi/fpdi.php
+%%WWWDIR%%/reporting/includes/fpdi/fpdi2tcpdf_bridge.php
+%%WWWDIR%%/reporting/includes/fpdi/fpdi_pdf_parser.php
+%%WWWDIR%%/reporting/includes/fpdi/pdf_context.php
+%%WWWDIR%%/reporting/includes/fpdi/pdf_parser.php
+%%WWWDIR%%/reporting/includes/fpdi/wrapper_functions.php
+%%WWWDIR%%/reporting/includes/header2.inc
+%%WWWDIR%%/reporting/includes/html_entity_decode_php4.php
+%%WWWDIR%%/reporting/includes/htmlcolors.php
+%%WWWDIR%%/reporting/includes/index.php
+%%WWWDIR%%/reporting/includes/pdf_report.inc
+%%WWWDIR%%/reporting/includes/printer_class.inc
+%%WWWDIR%%/reporting/includes/reporting.inc
+%%WWWDIR%%/reporting/includes/reports_classes.inc
+%%WWWDIR%%/reporting/includes/tcpdf.php
+%%WWWDIR%%/reporting/includes/unicode_data2.php
+%%WWWDIR%%/reporting/index.php
+%%WWWDIR%%/reporting/prn_redirect.php
+%%WWWDIR%%/reporting/rep101.php
+%%WWWDIR%%/reporting/rep102.php
+%%WWWDIR%%/reporting/rep103.php
+%%WWWDIR%%/reporting/rep104.php
+%%WWWDIR%%/reporting/rep105.php
+%%WWWDIR%%/reporting/rep106.php
+%%WWWDIR%%/reporting/rep107.php
+%%WWWDIR%%/reporting/rep108.php
+%%WWWDIR%%/reporting/rep109.php
+%%WWWDIR%%/reporting/rep110.php
+%%WWWDIR%%/reporting/rep111.php
+%%WWWDIR%%/reporting/rep112.php
+%%WWWDIR%%/reporting/rep113.php
+%%WWWDIR%%/reporting/rep114.php
+%%WWWDIR%%/reporting/rep201.php
+%%WWWDIR%%/reporting/rep202.php
+%%WWWDIR%%/reporting/rep203.php
+%%WWWDIR%%/reporting/rep204.php
+%%WWWDIR%%/reporting/rep209.php
+%%WWWDIR%%/reporting/rep210.php
+%%WWWDIR%%/reporting/rep301.php
+%%WWWDIR%%/reporting/rep302.php
+%%WWWDIR%%/reporting/rep303.php
+%%WWWDIR%%/reporting/rep304.php
+%%WWWDIR%%/reporting/rep305.php
+%%WWWDIR%%/reporting/rep401.php
+%%WWWDIR%%/reporting/rep409.php
+%%WWWDIR%%/reporting/rep501.php
+%%WWWDIR%%/reporting/rep601.php
+%%WWWDIR%%/reporting/rep701.php
+%%WWWDIR%%/reporting/rep702.php
+%%WWWDIR%%/reporting/rep704.php
+%%WWWDIR%%/reporting/rep705.php
+%%WWWDIR%%/reporting/rep706.php
+%%WWWDIR%%/reporting/rep707.php
+%%WWWDIR%%/reporting/rep708.php
+%%WWWDIR%%/reporting/rep709.php
+%%WWWDIR%%/reporting/rep710.php
+%%WWWDIR%%/reporting/reports_main.php
+%%WWWDIR%%/sales/allocations/customer_allocate.php
+%%WWWDIR%%/sales/allocations/customer_allocation_main.php
+%%WWWDIR%%/sales/allocations/index.php
+%%WWWDIR%%/sales/create_recurrent_invoices.php
+%%WWWDIR%%/sales/credit_note_entry.php
+%%WWWDIR%%/sales/customer_credit_invoice.php
+%%WWWDIR%%/sales/customer_delivery.php
+%%WWWDIR%%/sales/customer_invoice.php
+%%WWWDIR%%/sales/customer_payments.php
+%%WWWDIR%%/sales/includes/cart_class.inc
+%%WWWDIR%%/sales/includes/db/branches_db.inc
+%%WWWDIR%%/sales/includes/db/credit_status_db.inc
+%%WWWDIR%%/sales/includes/db/cust_trans_db.inc
+%%WWWDIR%%/sales/includes/db/cust_trans_details_db.inc
+%%WWWDIR%%/sales/includes/db/custalloc_db.inc
+%%WWWDIR%%/sales/includes/db/customers_db.inc
+%%WWWDIR%%/sales/includes/db/index.php
+%%WWWDIR%%/sales/includes/db/payment_db.inc
+%%WWWDIR%%/sales/includes/db/recurrent_invoices_db.inc
+%%WWWDIR%%/sales/includes/db/sales_credit_db.inc
+%%WWWDIR%%/sales/includes/db/sales_delivery_db.inc
+%%WWWDIR%%/sales/includes/db/sales_groups_db.inc
+%%WWWDIR%%/sales/includes/db/sales_invoice_db.inc
+%%WWWDIR%%/sales/includes/db/sales_order_db.inc
+%%WWWDIR%%/sales/includes/db/sales_points_db.inc
+%%WWWDIR%%/sales/includes/db/sales_types_db.inc
+%%WWWDIR%%/sales/includes/index.php
+%%WWWDIR%%/sales/includes/sales_db.inc
+%%WWWDIR%%/sales/includes/sales_ui.inc
+%%WWWDIR%%/sales/includes/ui/sales_credit_ui.inc
+%%WWWDIR%%/sales/includes/ui/sales_order_ui.inc
+%%WWWDIR%%/sales/index.php
+%%WWWDIR%%/sales/inquiry/customer_allocation_inquiry.php
+%%WWWDIR%%/sales/inquiry/customer_inquiry.php
+%%WWWDIR%%/sales/inquiry/index.php
+%%WWWDIR%%/sales/inquiry/sales_deliveries_view.php
+%%WWWDIR%%/sales/inquiry/sales_orders_view.php
+%%WWWDIR%%/sales/manage/credit_status.php
+%%WWWDIR%%/sales/manage/customer_branches.php
+%%WWWDIR%%/sales/manage/customers.php
+%%WWWDIR%%/sales/manage/index.php
+%%WWWDIR%%/sales/manage/recurrent_invoices.php
+%%WWWDIR%%/sales/manage/sales_areas.php
+%%WWWDIR%%/sales/manage/sales_groups.php
+%%WWWDIR%%/sales/manage/sales_people.php
+%%WWWDIR%%/sales/manage/sales_points.php
+%%WWWDIR%%/sales/manage/sales_types.php
+%%WWWDIR%%/sales/sales_order_entry.php
+%%WWWDIR%%/sales/view/index.php
+%%WWWDIR%%/sales/view/view_credit.php
+%%WWWDIR%%/sales/view/view_dispatch.php
+%%WWWDIR%%/sales/view/view_invoice.php
+%%WWWDIR%%/sales/view/view_receipt.php
+%%WWWDIR%%/sales/view/view_sales_order.php
+%%WWWDIR%%/sql/alter.sql
+%%WWWDIR%%/sql/alter2.1.php
+%%WWWDIR%%/sql/alter2.1.sql
+%%WWWDIR%%/sql/alter2.2.php
+%%WWWDIR%%/sql/alter2.2.sql
+%%WWWDIR%%/sql/alter2.2rc.sql
+%%WWWDIR%%/sql/alter2.3.php
+%%WWWDIR%%/sql/alter2.3.sql
+%%WWWDIR%%/sql/alter2.3rc.sql
+%%WWWDIR%%/sql/alter2.sql
+%%WWWDIR%%/sql/en_US-demo.sql
+%%WWWDIR%%/sql/en_US-new.sql
+%%WWWDIR%%/sql/index.php
+%%WWWDIR%%/taxes/db/index.php
+%%WWWDIR%%/taxes/db/item_tax_types_db.inc
+%%WWWDIR%%/taxes/db/tax_groups_db.inc
+%%WWWDIR%%/taxes/db/tax_types_db.inc
+%%WWWDIR%%/taxes/index.php
+%%WWWDIR%%/taxes/item_tax_types.php
+%%WWWDIR%%/taxes/tax_calc.inc
+%%WWWDIR%%/taxes/tax_groups.php
+%%WWWDIR%%/taxes/tax_types.php
+%%WWWDIR%%/themes/aqua/default.css
+%%WWWDIR%%/themes/aqua/images/add.png
+%%WWWDIR%%/themes/aqua/images/ajax-loader.gif
+%%WWWDIR%%/themes/aqua/images/ajax-loader2.gif
+%%WWWDIR%%/themes/aqua/images/button_ok.png
+%%WWWDIR%%/themes/aqua/images/cancel.png
+%%WWWDIR%%/themes/aqua/images/credit.gif
+%%WWWDIR%%/themes/aqua/images/delete.gif
+%%WWWDIR%%/themes/aqua/images/download.gif
+%%WWWDIR%%/themes/aqua/images/edit.gif
+%%WWWDIR%%/themes/aqua/images/escape.png
+%%WWWDIR%%/themes/aqua/images/gl.png
+%%WWWDIR%%/themes/aqua/images/help.gif
+%%WWWDIR%%/themes/aqua/images/invoice.gif
+%%WWWDIR%%/themes/aqua/images/locate.png
+%%WWWDIR%%/themes/aqua/images/login.gif
+%%WWWDIR%%/themes/aqua/images/menu_entry.png
+%%WWWDIR%%/themes/aqua/images/menu_inquiry.png
+%%WWWDIR%%/themes/aqua/images/menu_maintenance.png
+%%WWWDIR%%/themes/aqua/images/menu_report.png
+%%WWWDIR%%/themes/aqua/images/menu_settings.png
+%%WWWDIR%%/themes/aqua/images/menu_system.png
+%%WWWDIR%%/themes/aqua/images/menu_transaction.png
+%%WWWDIR%%/themes/aqua/images/menu_update.png
+%%WWWDIR%%/themes/aqua/images/money.png
+%%WWWDIR%%/themes/aqua/images/ok.gif
+%%WWWDIR%%/themes/aqua/images/pdf.gif
+%%WWWDIR%%/themes/aqua/images/print.png
+%%WWWDIR%%/themes/aqua/images/progressbar.gif
+%%WWWDIR%%/themes/aqua/images/receive.gif
+%%WWWDIR%%/themes/aqua/images/remove.png
+%%WWWDIR%%/themes/aqua/images/report.png
+%%WWWDIR%%/themes/aqua/images/right.gif
+%%WWWDIR%%/themes/aqua/images/sort_asc.gif
+%%WWWDIR%%/themes/aqua/images/sort_desc.gif
+%%WWWDIR%%/themes/aqua/images/sort_none.gif
+%%WWWDIR%%/themes/aqua/images/view.gif
+%%WWWDIR%%/themes/aqua/images/warning.png
+%%WWWDIR%%/themes/aqua/index.php
+%%WWWDIR%%/themes/aqua/renderer.php
+%%WWWDIR%%/themes/cool/default.css
+%%WWWDIR%%/themes/cool/images/add.png
+%%WWWDIR%%/themes/cool/images/ajax-loader.gif
+%%WWWDIR%%/themes/cool/images/ajax-loader2.gif
+%%WWWDIR%%/themes/cool/images/button_ok.png
+%%WWWDIR%%/themes/cool/images/cancel.png
+%%WWWDIR%%/themes/cool/images/credit.gif
+%%WWWDIR%%/themes/cool/images/delete.gif
+%%WWWDIR%%/themes/cool/images/download.gif
+%%WWWDIR%%/themes/cool/images/edit.gif
+%%WWWDIR%%/themes/cool/images/escape.png
+%%WWWDIR%%/themes/cool/images/gl.png
+%%WWWDIR%%/themes/cool/images/help.gif
+%%WWWDIR%%/themes/cool/images/invoice.gif
+%%WWWDIR%%/themes/cool/images/locate.png
+%%WWWDIR%%/themes/cool/images/login.gif
+%%WWWDIR%%/themes/cool/images/menu_entry.png
+%%WWWDIR%%/themes/cool/images/menu_inquiry.png
+%%WWWDIR%%/themes/cool/images/menu_maintenance.png
+%%WWWDIR%%/themes/cool/images/menu_report.png
+%%WWWDIR%%/themes/cool/images/menu_settings.png
+%%WWWDIR%%/themes/cool/images/menu_system.png
+%%WWWDIR%%/themes/cool/images/menu_transaction.png
+%%WWWDIR%%/themes/cool/images/menu_update.png
+%%WWWDIR%%/themes/cool/images/money.png
+%%WWWDIR%%/themes/cool/images/ok.gif
+%%WWWDIR%%/themes/cool/images/pdf.gif
+%%WWWDIR%%/themes/cool/images/print.png
+%%WWWDIR%%/themes/cool/images/progressbar.gif
+%%WWWDIR%%/themes/cool/images/receive.gif
+%%WWWDIR%%/themes/cool/images/remove.png
+%%WWWDIR%%/themes/cool/images/report.png
+%%WWWDIR%%/themes/cool/images/right.gif
+%%WWWDIR%%/themes/cool/images/sort_asc.gif
+%%WWWDIR%%/themes/cool/images/sort_desc.gif
+%%WWWDIR%%/themes/cool/images/sort_none.gif
+%%WWWDIR%%/themes/cool/images/view.gif
+%%WWWDIR%%/themes/cool/images/warning.png
+%%WWWDIR%%/themes/cool/index.php
+%%WWWDIR%%/themes/cool/renderer.php
+%%WWWDIR%%/themes/default/default.css
+%%WWWDIR%%/themes/default/images/add.png
+%%WWWDIR%%/themes/default/images/ajax-loader.gif
+%%WWWDIR%%/themes/default/images/ajax-loader2.gif
+%%WWWDIR%%/themes/default/images/button_ok.png
+%%WWWDIR%%/themes/default/images/cal.gif
+%%WWWDIR%%/themes/default/images/cancel.png
+%%WWWDIR%%/themes/default/images/credit.gif
+%%WWWDIR%%/themes/default/images/delete.gif
+%%WWWDIR%%/themes/default/images/download.gif
+%%WWWDIR%%/themes/default/images/edit.gif
+%%WWWDIR%%/themes/default/images/escape.png
+%%WWWDIR%%/themes/default/images/gl.png
+%%WWWDIR%%/themes/default/images/help.gif
+%%WWWDIR%%/themes/default/images/invoice.gif
+%%WWWDIR%%/themes/default/images/locate.png
+%%WWWDIR%%/themes/default/images/login.gif
+%%WWWDIR%%/themes/default/images/logo_frontaccounting.jpg
+%%WWWDIR%%/themes/default/images/logo_frontaccounting.png
+%%WWWDIR%%/themes/default/images/menu_entry.png
+%%WWWDIR%%/themes/default/images/menu_inquiry.png
+%%WWWDIR%%/themes/default/images/menu_maintenance.png
+%%WWWDIR%%/themes/default/images/menu_report.png
+%%WWWDIR%%/themes/default/images/menu_settings.png
+%%WWWDIR%%/themes/default/images/menu_system.png
+%%WWWDIR%%/themes/default/images/menu_transaction.png
+%%WWWDIR%%/themes/default/images/menu_update.png
+%%WWWDIR%%/themes/default/images/money.png
+%%WWWDIR%%/themes/default/images/ok.gif
+%%WWWDIR%%/themes/default/images/pdf.gif
+%%WWWDIR%%/themes/default/images/print.png
+%%WWWDIR%%/themes/default/images/progressbar.gif
+%%WWWDIR%%/themes/default/images/receive.gif
+%%WWWDIR%%/themes/default/images/remove.png
+%%WWWDIR%%/themes/default/images/report.png
+%%WWWDIR%%/themes/default/images/right.gif
+%%WWWDIR%%/themes/default/images/sort_asc.gif
+%%WWWDIR%%/themes/default/images/sort_desc.gif
+%%WWWDIR%%/themes/default/images/sort_none.gif
+%%WWWDIR%%/themes/default/images/spacer.png
+%%WWWDIR%%/themes/default/images/view.gif
+%%WWWDIR%%/themes/default/images/warning.png
+%%WWWDIR%%/themes/default/index.php
+%%WWWDIR%%/themes/default/renderer.php
+%%WWWDIR%%/tmp/index.php
+%%WWWDIR%%/update.html
+%%WWWDIR%%/version.php
+@dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes/cool/images
+@dirrm %%WWWDIR%%/themes/cool
+@dirrm %%WWWDIR%%/themes/aqua/images
+@dirrm %%WWWDIR%%/themes/aqua
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/taxes/db
+@dirrm %%WWWDIR%%/taxes
+@dirrm %%WWWDIR%%/sql
+@dirrm %%WWWDIR%%/sales/view
+@dirrm %%WWWDIR%%/sales/manage
+@dirrm %%WWWDIR%%/sales/inquiry
+@dirrm %%WWWDIR%%/sales/includes/ui
+@dirrm %%WWWDIR%%/sales/includes/db
+@dirrm %%WWWDIR%%/sales/includes
+@dirrm %%WWWDIR%%/sales/allocations
+@dirrm %%WWWDIR%%/sales
+@dirrm %%WWWDIR%%/reporting/includes/fpdi/decoders
+@dirrm %%WWWDIR%%/reporting/includes/fpdi
+@dirrm %%WWWDIR%%/reporting/includes
+@dirrm %%WWWDIR%%/reporting/forms
+@dirrm %%WWWDIR%%/reporting/fonts
+@dirrm %%WWWDIR%%/reporting
+@dirrm %%WWWDIR%%/purchasing/view
+@dirrm %%WWWDIR%%/purchasing/manage
+@dirrm %%WWWDIR%%/purchasing/inquiry
+@dirrm %%WWWDIR%%/purchasing/includes/ui
+@dirrm %%WWWDIR%%/purchasing/includes/db
+@dirrm %%WWWDIR%%/purchasing/includes
+@dirrm %%WWWDIR%%/purchasing/allocations
+@dirrm %%WWWDIR%%/purchasing
+@dirrm %%WWWDIR%%/modules/_cache
+@dirrm %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/manufacturing/view
+@dirrm %%WWWDIR%%/manufacturing/manage
+@dirrm %%WWWDIR%%/manufacturing/inquiry
+@dirrm %%WWWDIR%%/manufacturing/includes/db
+@dirrm %%WWWDIR%%/manufacturing/includes
+@dirrm %%WWWDIR%%/manufacturing
+@dirrm %%WWWDIR%%/lang/new_language_template/LC_MESSAGES
+@dirrm %%WWWDIR%%/lang/new_language_template
+@dirrm %%WWWDIR%%/lang/en_US/LC_MESSAGES
+@dirrm %%WWWDIR%%/lang/en_US
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/inventory/view
+@dirrm %%WWWDIR%%/inventory/manage
+@dirrm %%WWWDIR%%/inventory/inquiry
+@dirrm %%WWWDIR%%/inventory/includes/db
+@dirrm %%WWWDIR%%/inventory/includes
+@dirrm %%WWWDIR%%/inventory
+@dirrm %%WWWDIR%%/install/lang/zh_CN/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/zh_CN
+@dirrm %%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/sv_SE
+@dirrm %%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/pt_BR
+@dirrm %%WWWDIR%%/install/lang/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/pl_PL
+@dirrm %%WWWDIR%%/install/lang/nl_BE/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/nl_BE
+@dirrm %%WWWDIR%%/install/lang/new_language_template/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/new_language_template
+@dirrm %%WWWDIR%%/install/lang/ka_GE/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/ka_GE
+@dirrm %%WWWDIR%%/install/lang/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/it_IT
+@dirrm %%WWWDIR%%/install/lang/id_ID/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/id_ID
+@dirrm %%WWWDIR%%/install/lang/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/fr_FR
+@dirrm %%WWWDIR%%/install/lang/es_MX/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/es_MX
+@dirrm %%WWWDIR%%/install/lang/el_GR/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/el_GR
+@dirrm %%WWWDIR%%/install/lang/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/de_DE
+@dirrm %%WWWDIR%%/install/lang/da_DK/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/da_DK
+@dirrm %%WWWDIR%%/install/lang/ar_EG/LC_MESSAGES
+@dirrm %%WWWDIR%%/install/lang/ar_EG
+@dirrm %%WWWDIR%%/install/lang
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/includes/ui
+@dirrm %%WWWDIR%%/includes/prefs
+@dirrm %%WWWDIR%%/includes/page
+@dirrm %%WWWDIR%%/includes/lang
+@dirrm %%WWWDIR%%/includes/db
+@dirrm %%WWWDIR%%/includes
+@dirrm %%WWWDIR%%/gl/view
+@dirrm %%WWWDIR%%/gl/manage
+@dirrm %%WWWDIR%%/gl/inquiry
+@dirrm %%WWWDIR%%/gl/includes/ui
+@dirrm %%WWWDIR%%/gl/includes/db
+@dirrm %%WWWDIR%%/gl/includes
+@dirrm %%WWWDIR%%/gl
+@dirrm %%WWWDIR%%/doc
+@dirrm %%WWWDIR%%/dimensions/view
+@dirrm %%WWWDIR%%/dimensions/inquiry
+@dirrm %%WWWDIR%%/dimensions/includes
+@dirrm %%WWWDIR%%/dimensions
+@dirrm %%WWWDIR%%/company/0/reporting
+@dirrm %%WWWDIR%%/company/0/pdf_files
+@dirrm %%WWWDIR%%/company/0/js_cache
+@dirrm %%WWWDIR%%/company/0/images
+@dirrm %%WWWDIR%%/company/0/backup
+@dirrm %%WWWDIR%%/company/0
+@dirrm %%WWWDIR%%/company
+@dirrm %%WWWDIR%%/applications
+@dirrm %%WWWDIR%%/admin/db
+@dirrm %%WWWDIR%%/admin
+@dirrm %%WWWDIR%%/access
+@dirrm %%WWWDIR%%

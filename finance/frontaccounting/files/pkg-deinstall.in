@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+FAWEB=%%WWWDIR%%
+
+case $2 in
+POST-DEINSTALL)
+    if [ -e ${FAWEB} ]; then
+		echo ""
+		echo "If you do not plan on re-installing this port, "
+		echo "you should manually remove the \"${FAWEB}\" directory."
+		echo ""
+    fi
+    ;;
+*)
+    ;;
+esac

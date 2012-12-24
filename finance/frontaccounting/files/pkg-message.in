@@ -1,0 +1,9 @@
+ *******************************************************************
+
+ FrontAccounting has been installed into the following directory:
+ %%WWWDIR%%
+
+ Be sure to adjust your web server's configuration to allow you to
+ access that directory.
+
+ *******************************************************************
