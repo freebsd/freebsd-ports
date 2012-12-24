@@ -3,6 +3,7 @@
 
 PORTNAME=	sexplib
 PORTVERSION=	108.07.00
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/individual
@@ -32,7 +33,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,)
+PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
 .endif
 
 post-install:
