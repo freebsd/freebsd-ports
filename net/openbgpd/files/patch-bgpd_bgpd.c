@@ -2,13 +2,13 @@ Index: bgpd/bgpd.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.1.1.11
-diff -u -p -r1.1.1.7 -r1.1.1.11
+retrieving revision 1.1.1.12
+diff -u -p -r1.1.1.7 -r1.1.1.12
 --- bgpd/bgpd.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/bgpd.c	13 Oct 2012 18:22:38 -0000	1.1.1.11
++++ bgpd/bgpd.c	8 Dec 2012 10:37:08 -0000	1.1.1.12
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.c,v 1.148 2009/06/07 00:30:23 claudio Exp $ */
-+/*	$OpenBSD: bgpd.c,v 1.168 2011/08/20 19:02:28 sthen Exp $ */
++/*	$OpenBSD: bgpd.c,v 1.169 2012/09/18 09:45:51 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -264,7 +264,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  
  	log_info("Terminating");
  	return (0);
-@@ -452,27 +414,32 @@ send_filterset(struct imsgbuf *i, struct
+@@ -452,27 +414,33 @@ send_filterset(struct imsgbuf *i, struct
  
  int
  reconfigure(char *conffile, struct bgpd_config *conf, struct mrt_head *mrt_l,
@@ -293,6 +293,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
 +	    &rdom_l)) {
  		log_warnx("config file %s has errors, not reloading",
  		    conffile);
++		reconfpending = 0;
  		return (1);
  	}
  
@@ -305,7 +306,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  	prepare_listeners(conf);
  
  	/* start reconfiguration */
-@@ -483,12 +450,6 @@ reconfigure(char *conffile, struct bgpd_
+@@ -483,12 +451,6 @@ reconfigure(char *conffile, struct bgpd_
  	    conf, sizeof(struct bgpd_config)) == -1)
  		return (-1);
  
@@ -318,7 +319,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  	TAILQ_FOREACH(la, conf->listen_addrs, entry) {
  		if (imsg_compose(ibuf_se, IMSG_RECONF_LISTENER, 0, 0, la->fd,
  		    la, sizeof(struct listen_addr)) == -1)
-@@ -496,51 +457,104 @@ reconfigure(char *conffile, struct bgpd_
+@@ -496,51 +458,104 @@ reconfigure(char *conffile, struct bgpd_
  		la->fd = -1;
  	}
  
@@ -440,7 +441,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  	/* mrt changes can be sent out of bound */
  	mrt_reconfigure(mrt_l);
  	return (0);
-@@ -550,8 +564,8 @@ int
+@@ -550,8 +565,8 @@ int
  dispatch_imsg(struct imsgbuf *ibuf, int idx)
  {
  	struct imsg		 imsg;
@@ -451,7 +452,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  
  	if ((n = imsg_read(ibuf)) == -1)
  		return (-1);
-@@ -573,46 +587,39 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+@@ -573,46 +588,39 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
  		case IMSG_KROUTE_CHANGE:
  			if (idx != PFD_PIPE_ROUTE)
  				log_warnx("route request not from RDE");
@@ -516,7 +517,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  			break;
  		case IMSG_PFTABLE_ADD:
  			if (idx != PFD_PIPE_ROUTE)
-@@ -646,26 +653,28 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+@@ -646,26 +654,28 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
  		case IMSG_CTL_RELOAD:
  			if (idx != PFD_PIPE_SESSION)
  				log_warnx("reload request not from SE");
@@ -548,7 +549,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  			if (idx != PFD_PIPE_SESSION)
  				log_warnx("kroute request not from SE");
  			else
-@@ -692,6 +701,16 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
+@@ -692,6 +702,16 @@ dispatch_imsg(struct imsgbuf *ibuf, int 
  				carp_demote_set(msg->demote_group, msg->level);
  			}
  			break;
@@ -565,7 +566,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  		default:
  			break;
  		}
-@@ -707,7 +726,7 @@ send_nexthop_update(struct kroute_nextho
+@@ -707,7 +727,7 @@ send_nexthop_update(struct kroute_nextho
  {
  	char	*gw = NULL;
  
@@ -574,7 +575,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  		if (asprintf(&gw, ": via %s",
  		    log_addr(&msg->gateway)) == -1) {
  			log_warn("send_nexthop_update");
-@@ -717,7 +736,7 @@ send_nexthop_update(struct kroute_nextho
+@@ -717,7 +737,7 @@ send_nexthop_update(struct kroute_nextho
  	log_info("nexthop %s now %s%s%s", log_addr(&msg->nexthop),
  	    msg->valid ? "valid" : "invalid",
  	    msg->connected ? ": directly connected" : "",
@@ -583,7 +584,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  
  	free(gw);
  
-@@ -733,56 +752,20 @@ send_imsg_session(int type, pid_t pid, v
+@@ -733,56 +753,20 @@ send_imsg_session(int type, pid_t pid, v
  }
  
  int
@@ -644,7 +645,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.11
  }
  
  int
-@@ -810,3 +793,45 @@ bgpd_filternexthop(struct kroute *kr, st
+@@ -810,3 +794,45 @@ bgpd_filternexthop(struct kroute *kr, st
  
  	return (1);
  }

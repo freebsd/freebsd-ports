@@ -2,13 +2,13 @@ Index: bgpd/printconf.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.9
-diff -u -p -r1.1.1.7 -r1.9
+retrieving revision 1.10
+diff -u -p -r1.1.1.7 -r1.10
 --- bgpd/printconf.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/printconf.c	13 Oct 2012 18:36:00 -0000	1.9
++++ bgpd/printconf.c	8 Dec 2012 20:17:59 -0000	1.10
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
-+/*	$OpenBSD: printconf.c,v 1.87 2012/09/12 05:56:22 claudio Exp $	*/
++/*	$OpenBSD: printconf.c,v 1.88 2012/09/23 09:39:18 claudio Exp $	*/
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -335,7 +335,21 @@ diff -u -p -r1.1.1.7 -r1.9
  			printf("inet6 ");
  	}
  
-@@ -492,11 +581,20 @@ print_rule(struct peer *peer_l, struct f
+@@ -479,6 +568,13 @@ print_rule(struct peer *peer_l, struct f
+ 		}
+ 	}
+ 
++	if (r->match.nexthop.flags) {
++		if (r->match.nexthop.flags == FILTER_NEXTHOP_NEIGHBOR)
++			printf("nexthop neighbor ");
++		else
++			printf("nexthop %s ", log_addr(&r->match.nexthop.addr));
++	}
++
+ 	if (r->match.as.type) {
+ 		if (r->match.as.type == AS_ALL)
+ 			printf("AS %s ", log_as(r->match.as.as));
+@@ -492,11 +588,20 @@ print_rule(struct peer *peer_l, struct f
  			printf("unfluffy-as %s ", log_as(r->match.as.as));
  	}
  
@@ -356,7 +370,7 @@ diff -u -p -r1.1.1.7 -r1.9
  
  	print_set(&r->set);
  
-@@ -513,6 +611,8 @@ mrt_type(enum mrt_type t)
+@@ -513,6 +618,8 @@ mrt_type(enum mrt_type t)
  		return "table";
  	case MRT_TABLE_DUMP_MP:
  		return "table-mp";
@@ -365,7 +379,7 @@ diff -u -p -r1.1.1.7 -r1.9
  	case MRT_ALL_IN:
  		return "all in";
  	case MRT_ALL_OUT:
-@@ -541,13 +641,12 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
+@@ -541,13 +648,12 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
  			printf("%s%sdump ", prep, prep2);
  			if (m->rib[0])
  				printf("rib %s ", m->rib);
@@ -383,7 +397,7 @@ diff -u -p -r1.1.1.7 -r1.9
  		}
  }
  
-@@ -612,26 +711,34 @@ peer_compare(const void *aa, const void 
+@@ -612,26 +718,34 @@ peer_compare(const void *aa, const void 
  void
  print_config(struct bgpd_config *conf, struct rib_names *rib_l,
      struct network_head *net_l, struct peer *peer_l,

@@ -2,13 +2,13 @@ Index: bgpd/kroute.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/kroute.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.13
-diff -u -p -r1.1.1.7 -r1.13
+retrieving revision 1.14
+diff -u -p -r1.1.1.7 -r1.14
 --- bgpd/kroute.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/kroute.c	13 Oct 2012 18:36:00 -0000	1.13
++++ bgpd/kroute.c	8 Dec 2012 20:17:59 -0000	1.14
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: kroute.c,v 1.169 2009/06/25 15:54:22 claudio Exp $ */
-+/*	$OpenBSD: kroute.c,v 1.189 2012/05/27 18:52:07 claudio Exp $ */
++/*	$OpenBSD: kroute.c,v 1.190 2012/07/13 16:57:35 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -565,8 +565,7 @@ diff -u -p -r1.1.1.7 -r1.13
 +	/* for blackhole and reject routes nexthop needs to be ::1 */
 +	if (kl->flags & (F_BLACKHOLE|F_REJECT))
 +		bcopy(&lo6, &kl->nexthop.v6, sizeof(kl->nexthop.v6));
- 
--	rtlabel_unref(kl->kr.labelid);
++
 +	if (action == RTM_ADD) {
 +		if ((kr6 = calloc(1, sizeof(struct kroute6_node))) == NULL) {
 +			log_warn("kr_change");
@@ -579,7 +578,8 @@ diff -u -p -r1.1.1.7 -r1.13
 +		kr6->r.flags = kl->flags | F_BGPD_INSERTED;
 +		kr6->r.priority = RTP_BGP;
 +		kr6->r.labelid = labelid;
-+
+ 
+-	rtlabel_unref(kl->kr.labelid);
 +		if (kroute6_insert(kt, kr6) == -1)
 +			free(kr6);
 +	} else {
@@ -706,11 +706,10 @@ diff -u -p -r1.1.1.7 -r1.13
 +	if (send_rtmsg(kr_state.fd, action, kt, &kr->r) == -1)
 +		return (-1);
 +
- 	return (0);
- }
- 
- int
--kr6_delete(struct kroute6_label *kl)
++	return (0);
++}
++
++int
 +kr_delete(u_int rtableid, struct kroute_full *kl)
 +{
 +	struct ktable		*kt;
@@ -751,10 +750,11 @@ diff -u -p -r1.1.1.7 -r1.13
 +	if (kroute_remove(kt, kr) == -1)
 +		return (-1);
 +
-+	return (0);
-+}
-+
-+int
+ 	return (0);
+ }
+ 
+ int
+-kr6_delete(struct kroute6_label *kl)
 +kr6_delete(struct ktable *kt, struct kroute_full *kl)
  {
  	struct kroute6_node	*kr6;
@@ -1188,12 +1188,12 @@ diff -u -p -r1.1.1.7 -r1.13
 +	}
 +	return (NULL);
 +}
- 
++
 +struct network *
 +kr_net_match6(struct ktable *kt, struct kroute6 *kr6)
 +{
 +	struct network		*xn;
-+
+ 
 +	TAILQ_FOREACH(xn, &kt->krn, entry) {
 +		if (xn->net.prefix.aid != AID_INET6)
 +			continue;
@@ -1454,12 +1454,12 @@ diff -u -p -r1.1.1.7 -r1.13
 +	for (rid = 0; rid < krt_size; rid++) {
 +		if ((kt = ktable_get(rid)) == NULL)
 +			continue;
-+
-+		RB_FOREACH(nh, knexthop_tree, KT2KNT(kt))
-+			knexthop_validate(kt, nh);
  
 -	RB_FOREACH(nh, knexthop_tree, &knt)
 -		knexthop_validate(nh);
++		RB_FOREACH(nh, knexthop_tree, KT2KNT(kt))
++			knexthop_validate(kt, nh);
++
 +		TAILQ_FOREACH(n, &kt->krn, entry)
 +			if (n->net.type == NETWORK_DEFAULT) {
 +				if (send_network(IMSG_NETWORK_ADD, &n->net,
@@ -2114,13 +2114,13 @@ diff -u -p -r1.1.1.7 -r1.13
 +			n.gateway.aid = AID_INET6;
 +			memcpy(&n.gateway.v6, &kr6->r.nexthop,
 +			    sizeof(struct in6_addr));
-+		}
+ 		}
 +		if (n.connected) {
 +			n.net.aid = AID_INET6;
 +			memcpy(&n.net.v6, &kr6->r.nexthop,
 +			    sizeof(struct in6_addr));
 +			n.netlen = kr6->r.prefixlen;
- 		}
++		}
 +		break;
 +	}
 +	send_nexthop_update(&n);
@@ -2964,7 +2964,7 @@ diff -u -p -r1.1.1.7 -r1.13
  			}
  		} else if (rtm->rtm_type == RTM_CHANGE) {
  			log_warnx("change req for %s/%u: not in table",
-@@ -2651,12 +3307,13 @@ add4:
+@@ -2651,50 +3307,62 @@ add4:
  			kr->r.ifindex = ifindex;
  			kr->r.priority = prio;
  
@@ -2981,7 +2981,12 @@ diff -u -p -r1.1.1.7 -r1.13
  			if (kr6->r.flags & F_KERNEL) {
  				/* get the correct route */
  				if (mpath && rtm->rtm_type == RTM_CHANGE &&
-@@ -2668,33 +3325,44 @@ add4:
+ 				    (kr6 = kroute6_matchgw(kr6, sa_in6)) ==
+ 				    NULL) {
+ 					log_warnx("dispatch_rtmsg[change] "
+-					    "mpath route not found");
++					    "IPv6 mpath route not found");
+ 					return (-1);
  				} else if (mpath && rtm->rtm_type == RTM_ADD)
  					goto add6;
  

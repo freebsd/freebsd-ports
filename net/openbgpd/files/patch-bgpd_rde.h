@@ -2,16 +2,21 @@ Index: bgpd/rde.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde.h,v
 retrieving revision 1.1.1.8
-retrieving revision 1.1.1.12
-diff -u -p -r1.1.1.8 -r1.1.1.12
+retrieving revision 1.1.1.13
+diff -u -p -r1.1.1.8 -r1.1.1.13
 --- bgpd/rde.h	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/rde.h	13 Oct 2012 18:22:46 -0000	1.1.1.12
-@@ -1,4 +1,4 @@
++++ bgpd/rde.h	8 Dec 2012 10:37:09 -0000	1.1.1.13
+@@ -1,8 +1,8 @@
 -/*	$OpenBSD: rde.h,v 1.120 2009/06/06 01:10:29 claudio Exp $ */
-+/*	$OpenBSD: rde.h,v 1.143 2012/08/12 14:24:56 claudio Exp $ */
++/*	$OpenBSD: rde.h,v 1.144 2012/09/12 05:56:22 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org> and
+- *                          Andre Oppermann <oppermann@pipeline.ch>
++ *                          Andre Oppermann <oppermann@networx.ch>
+  *
+  * Permission to use, copy, modify, and distribute this software for any
+  * purpose with or without fee is hereby granted, provided that the above
 @@ -56,16 +56,16 @@ struct rde_peer {
  	struct bgpd_addr		 local_v6_addr;
  	struct uptree_prefix		 up_prefix;
