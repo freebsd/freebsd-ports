@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-proto
-# Date created:		2011-09-09
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	proto
-DISTVERSION=	0.3-9.2
-PORTREVISION=	6
+DISTVERSION=	0.3-10
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
