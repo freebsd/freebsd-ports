@@ -1,24 +1,20 @@
-# New ports collection makefile for:   drcreep
-# Date created:        2011-07-03
-# Whom:                Robert Crossfield <robcrossfield@gmail.com>
-#
+# Created by: Robert Crossfield <robcrossfield@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	drcreep
-PORTVERSION=	394
-PORTREVISION=	1
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/creep/
 
 MAINTAINER=	robcrossfield@gmail.com
-COMMENT=	The Castles of Dr. Creep
+COMMENT=	Castles of Dr. Creep
 
 LICENSE=	GPLv3
 
 USE_SDL=	sdl
 
-WRKSRC=		${WRKDIR}/head
+WRKSRC=		${WRKDIR}/DrCreep
 
 SUB_FILES+=	pkg-message
 

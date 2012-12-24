@@ -1,6 +1,6 @@
 Index: src/stdafx.cpp
-@@ -364,7 +364,7 @@
- 
+@@ -374,7 +374,7 @@
+
  string findType;
  
 -int file_select(const struct dirent *entry) {
