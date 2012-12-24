@@ -8,7 +8,7 @@
 -     AC_CHECK_LIB(icui18n, ucol_open_3_6, [], [
 -        AC_CHECK_LIB(icui18n, ucol_open_3_4, [], [AC_MSG_ERROR([library 'icui18n' is required for ICU])])
 -   ])
-+  AC_CHECK_LIB(icui18n, ucol_open_50
++  AC_CHECK_LIB(icui18n, ucol_open_50, [], [
 +   AC_CHECK_LIB(icui18n, ucol_open_48, [], [
 +    AC_CHECK_LIB(icui18n, ucol_open_44, [], [
 +      AC_CHECK_LIB(icui18n, ucol_open_43, [], [
