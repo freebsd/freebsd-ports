@@ -1,21 +1,18 @@
-# New ports collection makefile for:	fusefs-mp3fs
-# Date created: 			18 Feb 2012
-# Whom:					Stefan Rumetshofer
+# Created by: Stefan Rumetshofer
 # $FreeBSD$
-#
 
 PORTNAME=	mp3fs
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/downloads/khenriks/${PORTNAME}/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	sterum@overrider.at
-COMMENT=	FUSE-based filesystem for transcoding flac to mp3
+COMMENT=	FUSE-based filesystem for transcoding flac to mp3 on the fly
 
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame\
-		FLAC.10:${PORTSDIR}/audio/flac\
-		id3tag.0:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
+		FLAC:${PORTSDIR}/audio/flac \
+		id3tag:${PORTSDIR}/audio/libid3tag
 
 FETCH_CMD=	fetch -Fpr
 
