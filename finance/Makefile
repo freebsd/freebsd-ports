@@ -21,6 +21,7 @@
     SUBDIR += eqonomize-kde3
     SUBDIR += eqonomize-kde4
     SUBDIR += expense
+    SUBDIR += frontaccounting
     SUBDIR += gnofin
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
