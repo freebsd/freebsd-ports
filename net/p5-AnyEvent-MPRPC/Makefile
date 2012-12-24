@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AnyEvent-MPRPC
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,6 @@ PERL_CONFIGURE=	yes
 MAN3=	AnyEvent::MPRPC.3 \
 	AnyEvent::MPRPC::Client.3 \
 	AnyEvent::MPRPC::CondVar.3 \
-	AnyEvent::MPRPC::Server.3 \
-	AnyEvent::MessagePack.3
+	AnyEvent::MPRPC::Server.3
 
 .include <bsd.port.mk>
