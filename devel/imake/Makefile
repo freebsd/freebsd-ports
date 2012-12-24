@@ -1,9 +1,5 @@
-# New ports collection makefile for:    imake-6
-# Date created:         18 Jun 2004
-# Whom:                 anholt
-#
+# Created by:				Eric Anholt <ahnholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imake
 PORTVERSION=	1.0.4
@@ -41,9 +37,7 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-# clang's cpp destroys whitespace, particularly hard tabs in makefiles,
-# which is fatal for imake.
-.if defined(CC) && ${CC} == "clang"
+.if defined(CC) && ${CC:T:M*clang*} == "clang" || ${OSVERSION} >= 1000024
 BUILD_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
 RUN_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
 CONFIGURE_ENV+=	ac_cv_path_RAWCPP="ucpp -s"
