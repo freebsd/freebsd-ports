@@ -1372,6 +1372,7 @@
     SUBDIR += p5-AnyEvent-Gearman
     SUBDIR += p5-AnyEvent-Graphite
     SUBDIR += p5-AnyEvent-I3
+    SUBDIR += p5-AnyEvent-MessagePack
     SUBDIR += p5-AnyEvent-Run
     SUBDIR += p5-AnyEvent-Subprocess
     SUBDIR += p5-AnyMQ
