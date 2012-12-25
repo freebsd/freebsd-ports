@@ -1,0 +1,5 @@
+This routine implements the dual method of Goldfarb and Idnani
+(1982, 1983) for solving quadratic programming problems of the form
+min(?dT b + 1/2bT Db) with the constraints AT b >= b0.
+
+WWW: http://cran.r-project.org/web/packages/quadprog/

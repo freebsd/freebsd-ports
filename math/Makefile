@@ -28,6 +28,7 @@
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nnls
     SUBDIR += R-cran-psych
+    SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
