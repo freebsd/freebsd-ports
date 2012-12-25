@@ -12,6 +12,7 @@
     SUBDIR += R-cran-plm
     SUBDIR += R-cran-quantmod
     SUBDIR += R-cran-strucchange
+    SUBDIR += R-cran-timeDate
     SUBDIR += R-cran-urca
     SUBDIR += R-cran-vars
     SUBDIR += aqbanking
