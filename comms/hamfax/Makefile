@@ -1,4 +1,4 @@
-# Created by:	Carl Makin <carl@stagecraft.cx>
+# Created by: Carl Makin <carl@stagecraft.cx>
 # $FreeBSD$
 
 PORTNAME=	hamfax
