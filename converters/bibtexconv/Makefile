@@ -1,12 +1,8 @@
-# New ports collection makefile for: bibtexconv
-# Date created:				2012-06-07
-# Whom:					Thomas Dreibholz <dreibh@iem.uni-due.de>
-#
+# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
 # $FreeBSD$
-#
 
 PORTNAME=	bibtexconv
-PORTVERSION=	0.8.20
+PORTVERSION=	0.9.3
 CATEGORIES=	converters
 MASTER_SITES=	http://www.iem.uni-due.de/~dreibh/bibtexconv/download/ \
 		http://www.exp-math.uni-essen.de/~dreibh/bibtexconv/download/
@@ -15,7 +11,6 @@ MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	BibTeX Converter
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
