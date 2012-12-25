@@ -8,7 +8,6 @@ lib/opera/opera
 lib/opera/plugins/README
 lib/opera/pluginwrapper/operapluginwrapper
 lib/opera/pluginwrapper/operapluginwrapper-native
-share/applications/mimeinfo.cache
 share/applications/opera-browser.desktop
 %%DOCSDIR%%/LGPL-2
 %%DOCSDIR%%/LICENSE
@@ -29,18 +28,6 @@ share/icons/hicolor/48x48/mimetypes/opera-extension.png
 share/icons/hicolor/scalable/mimetypes/opera-extension.svg
 share/mime/application/x-opera-extension.xml
 share/mime/packages/opera-extension.xml
-share/mime/XMLnamespaces
-share/mime/aliases
-share/mime/generic-icons
-share/mime/globs
-share/mime/globs2
-share/mime/icons
-share/mime/magic
-share/mime/mime.cache
-share/mime/subclasses
-share/mime/treemagic
-share/mime/types
-share/mime/version
 %%DATADIR%%/defaults/bookmarks.adr
 %%DATADIR%%/defaults/dictionaries.xml
 %%DATADIR%%/defaults/feedreaders.ini
