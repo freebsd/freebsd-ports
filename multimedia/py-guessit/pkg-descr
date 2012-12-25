@@ -1,0 +1,8 @@
+GuessIt is a python library that tries to extract as much information as
+possible from a video file.
+
+It has a very powerful filename matcher that allows to guess a lot of metadata
+from a video using only its filename. This matcher works with both movies and
+tv shows episodes.
+
+WWW:	http://guessit.readthedocs.org/en/latest/
