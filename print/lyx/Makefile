@@ -21,7 +21,7 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
-MINOR_VERSION=	4
+MINOR_VERSION=	5
 
 USE_XZ=		yes
 USE_GMAKE=	yes
@@ -40,32 +40,32 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		lyx.1 lyxclient.1 tex2lyx.1
 
-OPTIONS=	ASPELL	 "Use Aspell for spell checking" off \
-		ENCHANT  "Use Enchant for spell checking" off \
-		HUNSPELL "Use Hunspell for spell checking" on \
-		NLS	 "Native language support"	on
+OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS
+OPTIONS_DEFAULT=	HUNSPELL NLS
+ENCHANT_DESC=		Spell checking using Enchant
+HUNSPELL_DESC=		Spell checking using Hunspell
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .else
 CONFIGURE_ARGS+=	--without-aspell
 .endif
 
-.if !defined(WITHOUT_ENCHANT)
+.if ${PORT_OPTIONS:MENCHANT}
 LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 .else
 CONFIGURE_ARGS+=	--without-enchant
 .endif
 
-.if !defined(WITHOUT_HUNSPELL)
+.if ${PORT_OPTIONS:MHUNSPELL}
 LIB_DEPENDS+=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
 .else
 CONFIGURE_ARGS+=	--without-hunspell
 .endif
 
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -76,10 +76,10 @@ PLIST_SUB+=	NLS=""
 post-install:
 # Manually install the 48x48 icon and .desktop file.
 # Will not be needed in the 2.1 series, see LyX tickets 2820 and 7919.
-	${MKDIR} ${LOCALBASE}/share/icons/hicolor/48x48/apps
-	${MKDIR} ${LOCALBASE}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${LOCALBASE}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${LOCALBASE}/share/applications
+	${MKDIR} ${PREFIX}/share/icons/hicolor/48x48/apps
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${PREFIX}/share/icons/hicolor/48x48/apps
+	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${PREFIX}/share/applications
 	${LOCALBASE}/bin/update-desktop-database --quiet
 
 	@${CAT} ${PKGMESSAGE}
