@@ -294,7 +294,9 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
 %%DATADIR%%/examples/es/ejemplo_sin_lyx.lyx
+%%DATADIR%%/examples/es/europeCV.lyx
 %%DATADIR%%/examples/es/linguistics.lyx
+%%DATADIR%%/examples/es/modernCV.lyx
 %%DATADIR%%/examples/es/multicol.lyx
 %%DATADIR%%/examples/es/splash.lyx
 %%DATADIR%%/examples/es/tufte-book.lyx
@@ -1756,7 +1758,6 @@ share/icons/hicolor/48x48/apps/lyx.png
 @dirrm %%DATADIR%%/kbd
 @dirrm %%DATADIR%%/images/oxygen
 @dirrm %%DATADIR%%/images/math
-@dirrm %%DATADIR%%/images/commands
 @dirrm %%DATADIR%%/images/classic
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
