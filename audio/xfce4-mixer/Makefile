@@ -4,6 +4,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.10.0
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -43,8 +44,8 @@ CONFIGURE_ARGS+=--disable-keybinder
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name 'Makefile.in' -type f \
-		| ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name 'Makefile.in' -or -name 'xfce-mixer-track.c' \
+		-type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|(pkgdatadir)/icons|(datadir)/icons| ; \
 		s|pixmaps/xfce4-mixer|pixmaps|'
 
