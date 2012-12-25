@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -60,7 +60,8 @@ LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
-RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
