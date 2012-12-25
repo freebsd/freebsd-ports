@@ -26,8 +26,8 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.1.50
-EMACS_REV=	109364
+EMACS_VER=	24.3.50
+EMACS_REV=	111312
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NCURSES=	yes
@@ -57,7 +57,7 @@ INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 
 LATEST_LINK=	emacs-devel
 OPTIONS_DEFINE=	DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT SCROLLBARS XFT \
-		XIM XML XPM MAGICK GNUTLS GSETTINGS
+		XIM XML XPM MAGICK GNUTLS GSETTINGS LTO
 
 OPTIONS_SINGLE=	X11TOOLKIT
 
@@ -71,6 +71,7 @@ XAW3D_DESC=		Athena3D widgets
 XIM_DESC=		X Input Method Support
 M17N_DESC=		M17N support for text-shaping
 OTF_DESC=		Opentype fonts suport
+LTO_DESC=		Enable link-time optimization (requires GCC 4.6+)
 
 OPTIONS_SINGLE_X11TOOLKIT=	GTK2 GTK3 XAW XAW3D MOTIF
 
@@ -100,7 +101,7 @@ CONFIGURE_ARGS+=	--with-x-toolkit=gtk
 USE_GNOME+=	gtk30
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 .elif ${PORT_OPTIONS:MXAW3D}
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 .elif ${PORT_OPTIONS:MXAW}
 USE_XORG=	xaw
@@ -119,19 +120,19 @@ CONFIGURE_ARGS+=	--without-sync-input
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=   gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=   gif:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
@@ -150,17 +151,17 @@ CONFIGURE_ARGS+=	--without-xpm
 
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-xft
 .if ${PORT_OPTIONS:MM17N}
 CONFIGURE_ARGS+=	--with-m17n-flt
-LIB_DEPENDS+=	m17n.4:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS+=	m17n:${PORTSDIR}/devel/m17n-lib
 .else
 CONFIGURE_ARGS+=	--without-m17n-flt
 .endif
 .if ${PORT_OPTIONS:MOTF}
-CONFIGURE_ARGS+=	--with-otf
-LIB_DEPENDS+=	otf.0:${PORTSDIR}/print/libotf
+CONFIGURE_ARGS+=	--with-libotf
+LIB_DEPENDS+=	otf:${PORTSDIR}/print/libotf
 .else
 CONFIGURE_ARGS+=	--without-libotf
 .endif
@@ -171,7 +172,7 @@ IGNORE=	m17n support for text-shaping requires Xft. Please run 'make config'
 .elif ${PORT_OPTIONS:MOTF}
 IGNORE=	opentype fonts support requires Xft. Please run 'make config'
 .endif
-CONFIGURE_ARGS+=	--without-otf --without-m17n-flt
+CONFIGURE_ARGS+=	--without-libotf --without-m17n-flt
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
@@ -210,7 +211,7 @@ CONFIGURE_ARGS+=	--without-sound
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus
 .else
 CONFIGURE_ARGS+=	--without-dbus
@@ -224,10 +225,15 @@ CONFIGURE_ARGS+=	--without-xml2
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
+.endif
+
+.if ${PORT_OPTIONS:MLTO}
+USE_GCC=	4.6+
+CONFIGURE_ARGS+=	--enable-link-time-optimization
 .endif
 
 .include <bsd.port.pre.mk>

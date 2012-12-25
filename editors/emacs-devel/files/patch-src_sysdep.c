@@ -9,12 +9,12 @@ $FreeBSD$
  
 +#ifdef __FreeBSD__
 +#include <sys/sysctl.h>
-+/* machine/frame.h in Sparc has 'struct frame' which conflicts with Emacs' 'struct frame', so rename it */
-+#ifdef __sparc__ 
++/* machine/frame.h in Sparc/ARM has 'struct frame' which conflicts with Emacs' 'struct frame', so rename it */
++#if defined(__sparc__) || defined(__arm__)
 +#define frame freebsd_sparc_frame
 +#endif
 +#include <sys/user.h>
-+#ifdef __sparc__ 
++#if defined(__sparc__) || defined(__arm__)
 +#undef frame
 +#endif
 +#include <sys/resource.h>
