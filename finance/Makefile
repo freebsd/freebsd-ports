@@ -7,6 +7,7 @@
     SUBDIR += R-cran-RFinanceYJ
     SUBDIR += R-cran-TTR
     SUBDIR += R-cran-ccgarch
+    SUBDIR += R-cran-fBasics
     SUBDIR += R-cran-gmm
     SUBDIR += R-cran-lmtest
     SUBDIR += R-cran-plm
