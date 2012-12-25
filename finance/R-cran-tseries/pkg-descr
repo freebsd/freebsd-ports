@@ -1,0 +1,4 @@
+Computes the Augmented Dickey-Fuller test for the null that x has
+a unit root.
+
+WWW: http://cran.r-project.org/web/packages/tseries/

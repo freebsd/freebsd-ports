@@ -14,6 +14,7 @@
     SUBDIR += R-cran-strucchange
     SUBDIR += R-cran-timeDate
     SUBDIR += R-cran-timeSeries
+    SUBDIR += R-cran-tseries
     SUBDIR += R-cran-urca
     SUBDIR += R-cran-vars
     SUBDIR += aqbanking
