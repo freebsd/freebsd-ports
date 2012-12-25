@@ -1,13 +1,9 @@
-# New Ports collection makefile for:	glightoff
-# Date created:		21 April 2012
-# Whom:			nemysis@gmx.ch
-#
+# Created by:			nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	glightoff
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -27,8 +23,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	NLS
-NLS_DESC=	Native Language Support via gettext
-OPTIONS_DEFAULT=	NLS
 
 .include <bsd.port.options.mk>
 
@@ -40,17 +34,14 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-configure:
-.if empty(PORT_OPTIONS:MNLS)
+.if !${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's|src po|src|' ${WRKSRC}/Makefile
 .endif
 
 post-install:
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
