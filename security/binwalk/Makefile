@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	binwalk
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.0
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 PLIST_FILES=	bin/binwalk \
+		etc/binwalk/extract.conf \
 		etc/binwalk/magic.binarch \
 		etc/binwalk/magic.bincast \
 		etc/binwalk/magic.binwalk
