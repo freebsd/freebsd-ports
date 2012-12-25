@@ -3,6 +3,7 @@
 
 PORTNAME=	core
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
@@ -19,6 +20,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	any
 USE_EFL=	librt_hack libtool_hack
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
