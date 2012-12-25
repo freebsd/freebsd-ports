@@ -1,7 +1,4 @@
-# New ports collection makefile for:	baudline
-# Date created:				19 Jan 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
 #
 
@@ -12,16 +9,12 @@ CATEGORIES=	audio linux
 # package cluster to automatically fetch baudline
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_${ARCH_SUFX}
-EXTRACT_SUFX=	.tar.gz
+DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_i686
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Real-time signal analysis and time-frequency browser
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i686/x86/}
-ARCH_SUFX=	${ARCH:S/i386/i686/:S/amd64/x86_64/}
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
@@ -31,7 +24,15 @@ RESTRICTED=	author requests no distribution except from their site
 PORTDOCS=	README_unix.txt
 PLIST_FILES=	bin/baudline
 
+OPTIONS_DEFINE=		MPG123
+OPTIONS_DEFAULT=	MPG123
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MMPG123}
+RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
+.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
