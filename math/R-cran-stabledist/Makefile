@@ -1,0 +1,18 @@
+# Created by: David Naylor <naylor.b.david@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	stabledist
+DISTVERSION=	0.6-5
+CATEGORIES=	math
+DISTNAME=	${PORTNAME}_${DISTVERSION}
+
+MAINTAINER=	naylor.b.david@gmail.com
+COMMENT=	Stable Distribution Functions
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+USE_R_MOD=	yes
+R_MOD_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
