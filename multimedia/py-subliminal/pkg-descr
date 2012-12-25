@@ -1,0 +1,8 @@
+Subliminal is a python library to search and download subtitles.
+
+It uses video hashes and the powerful guessit library that extracts
+informations from filenames or filepaths to ensure you have the best
+subtitles. It also relies on enzyme to detect embedded subtitles and avoid
+duplicates.
+
+WWW:	http://subliminal.readthedocs.org/en/latest/index.html
