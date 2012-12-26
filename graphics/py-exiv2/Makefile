@@ -1,26 +1,20 @@
-# New ports collection makefile for:	py-exiv2
-# Date created:		2008-06-01
-# Whom:			Denis Barov <dindin@dindin.ru>
-#
+# Created by: Denis Barov <dindin@dindin.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	exiv2
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics python
-MASTER_SITES=	http://launchpadlibrarian.net/61465005/ \
-		http://www.dindin.ru/download/
+MASTER_SITES=	https://launchpadlibrarian.net/83595798/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Python bindings for exiv2
 
-LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2\
-		boost_python.4:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2\
+		boost_python:${PORTSDIR}/devel/boost-python-libs
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_SCONS=	yes
@@ -39,5 +33,8 @@ post-patch:
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		${PYTHON_SITELIBDIR}/pyexiv2
+
+regression-test: build
+	@cd ${WRKSRC} && ${SCONS_BIN} test
 
 .include <bsd.port.mk>
