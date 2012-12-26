@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xppaut
-# Date created:		3 September 2004
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	xppaut
-PORTVERSION=	6.11b
+PORTVERSION=	7.0
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.math.pitt.edu/~bard/bardware/
 DISTNAME=	${PORTNAME}${PORTVERSION}
