@@ -36,22 +36,23 @@ grant ALL on phpipam.* to ipv6@localhost identified by "ipv6admin";
 exit
 ------
 
+#
+# !!! important !!!
+#
+
+since version 0.7 phpipam uses mod_rewrite to handle url's. Please make sure 
+you meet the following requirements:
+        1.) Apache2 with mod_rewrite support
+        2.) "AllowOverride all" set in vhost config for mod_rewrite to work
+
+In case your URL for phpipam is not root please set the following variables 
+(example for /phpipam/):
+        3.) Set BASE in config.php to /phpipam/
+        4.) RewriteBase /phpipam/ in .htaccess
+
 %%DISTNAME%% has been installed into:
 
     %%WWWDIR%%
-
-Example Apache config:
-
-    Alias /phpipam/ "%%WWWDIR%%/"
-
-    <Directory "%%WWWDIR%%/">
-        Options none
-        AllowOverride Limit
-
-        Order Deny,Allow
-        Deny from all
-        Allow from 127.0.0.1 .example.com
-    </Directory>
 
 config.php is where site configuration and database details are configured.
 

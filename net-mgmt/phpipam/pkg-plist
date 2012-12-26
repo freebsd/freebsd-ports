@@ -1,78 +1,50 @@
 @unexec if cmp -s %%WWWDIR%%/config.php.sample %%WWWDIR%%/config.php; then rm -f %%WWWDIR%%/config.php; fi
+%%WWWDIR%%/.htaccess
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/README
 %%WWWDIR%%/UPDATE
 %%WWWDIR%%/config.php.sample
-%%WWWDIR%%/css/ie.css
-%%WWWDIR%%/css/ie9.css
-%%WWWDIR%%/css/images/add.png
-%%WWWDIR%%/css/images/addHover.png
+%%WWWDIR%%/css/bootstrap/bootstrap-custom.css
+%%WWWDIR%%/css/bootstrap/bootstrap-responsive.css
+%%WWWDIR%%/css/bootstrap/bootstrap-responsive.min.css
+%%WWWDIR%%/css/bootstrap/bootstrap.css
+%%WWWDIR%%/css/bootstrap/bootstrap.min.css
 %%WWWDIR%%/css/images/ajax-loader.gif
-%%WWWDIR%%/css/images/back.png
-%%WWWDIR%%/css/images/backHover.png
 %%WWWDIR%%/css/images/btn_donate_SM.gif
-%%WWWDIR%%/css/images/close.png
-%%WWWDIR%%/css/images/collapse.png
-%%WWWDIR%%/css/images/collapseHover.png
 %%WWWDIR%%/css/images/csvuploadexample.jpg
-%%WWWDIR%%/css/images/delete3.png
-%%WWWDIR%%/css/images/delete4.png
-%%WWWDIR%%/css/images/deleteIP.png
-%%WWWDIR%%/css/images/download.png
-%%WWWDIR%%/css/images/downloadHover.png
-%%WWWDIR%%/css/images/edit.png
-%%WWWDIR%%/css/images/edit1.png
-%%WWWDIR%%/css/images/editHover.png
 %%WWWDIR%%/css/images/error.png
-%%WWWDIR%%/css/images/expand.png
-%%WWWDIR%%/css/images/expandHover.png
-%%WWWDIR%%/css/images/expandOld.png
 %%WWWDIR%%/css/images/favicon.ico
-%%WWWDIR%%/css/images/forward.png
-%%WWWDIR%%/css/images/forwardHover.png
+%%WWWDIR%%/css/images/hosterdam.png
 %%WWWDIR%%/css/images/info.png
-%%WWWDIR%%/css/images/info2.png
-%%WWWDIR%%/css/images/infoAdd.png
-%%WWWDIR%%/css/images/infoIP.png
 %%WWWDIR%%/css/images/lan.png
-%%WWWDIR%%/css/images/lock.png
-%%WWWDIR%%/css/images/lockHover.png
-%%WWWDIR%%/css/images/mail1.png
+%%WWWDIR%%/css/images/li-bg.png
 %%WWWDIR%%/css/images/note.png
 %%WWWDIR%%/css/images/phpipam-favicon.pxm
-%%WWWDIR%%/css/images/refresh.png
-%%WWWDIR%%/css/images/refreshOld.png
-%%WWWDIR%%/css/images/reload.png
-%%WWWDIR%%/css/images/rewind.png
-%%WWWDIR%%/css/images/rewindHover.png
-%%WWWDIR%%/css/images/search.png
-%%WWWDIR%%/css/images/settings.png
 %%WWWDIR%%/css/images/slaveBG.png
 %%WWWDIR%%/css/images/slaveTdBG.png
+%%WWWDIR%%/css/images/slaveTdBGStr.png
+%%WWWDIR%%/css/images/sn-bg.png
 %%WWWDIR%%/css/images/sourceforge.png
 %%WWWDIR%%/css/images/subSlaveBG.png
 %%WWWDIR%%/css/images/subSlaveTdBG.png
 %%WWWDIR%%/css/images/subSlaveTdBGFirst.png
 %%WWWDIR%%/css/images/subnetSlaveTdBG.png
 %%WWWDIR%%/css/images/subnetSubSlaveTdBG.png
-%%WWWDIR%%/css/images/tools.png
-%%WWWDIR%%/css/images/tree.png
-%%WWWDIR%%/css/images/treeHover.png
-%%WWWDIR%%/css/images/upload.png
-%%WWWDIR%%/css/images/uploadHover.png
-%%WWWDIR%%/css/images/user.png
+%%WWWDIR%%/css/images/ul-bg.png
 %%WWWDIR%%/css/images/userAdmin.png
 %%WWWDIR%%/css/images/userIP.png
 %%WWWDIR%%/css/images/userNormal.png
 %%WWWDIR%%/css/images/userTrooper.png
 %%WWWDIR%%/css/images/userVader.png
-%%WWWDIR%%/css/jquery-ui-1.8.14.custom.css
-%%WWWDIR%%/css/style.css
-%%WWWDIR%%/css/style.min.css
-%%WWWDIR%%/css/styleFullWidth.css
+%%WWWDIR%%/css/img/glyphicons-halflings-blue.png
+%%WWWDIR%%/css/img/glyphicons-halflings-gray.png
+%%WWWDIR%%/css/img/glyphicons-halflings-green.png
+%%WWWDIR%%/css/img/glyphicons-halflings-red.png
+%%WWWDIR%%/css/img/glyphicons-halflings-white.png
+%%WWWDIR%%/css/img/glyphicons-halflings.png
 %%WWWDIR%%/db/SCHEMA.sql
-%%WWWDIR%%/db/UPDATE-v0.4.sql
 %%WWWDIR%%/db/UPDATE-v0.5.sql
+%%WWWDIR%%/db/UPDATE-v0.6.sql
 %%WWWDIR%%/functions/PEAR/Net/IPv4.php
 %%WWWDIR%%/functions/PEAR/Net/IPv6.php
 %%WWWDIR%%/functions/PEAR/OLE/ChainedBlockStream.php
@@ -110,33 +82,28 @@
 %%WWWDIR%%/functions/excel_reader2.php
 %%WWWDIR%%/functions/functions-admin.php
 %%WWWDIR%%/functions/functions-common.php
+%%WWWDIR%%/functions/functions-install.php
+%%WWWDIR%%/functions/functions-mail.php
 %%WWWDIR%%/functions/functions-network.php
 %%WWWDIR%%/functions/functions-tools.php
 %%WWWDIR%%/functions/functions-upgrade.php
 %%WWWDIR%%/functions/functions.php
-%%WWWDIR%%/functions/loginFunctions.php
+%%WWWDIR%%/functions/scripts/Thread.php
+%%WWWDIR%%/functions/scripts/pingCheck.php
+%%WWWDIR%%/functions/scripts/resolveIPaddresses.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/js/Highcharts-2.2.0/highcharts.js
-%%WWWDIR%%/js/Highcharts-2.2.0/highcharts.src.js
-%%WWWDIR%%/js/buttons.js
+%%WWWDIR%%/js/bootstrap.min.js
 %%WWWDIR%%/js/dieIE.js
+%%WWWDIR%%/js/flot/excanvas.min.js
+%%WWWDIR%%/js/flot/jquery.flot.categories.js
+%%WWWDIR%%/js/flot/jquery.flot.js
+%%WWWDIR%%/js/flot/jquery.flot.pie.js
 %%WWWDIR%%/js/jclock.jquery.js
 %%WWWDIR%%/js/jquery-1.7.1.min.js
-%%WWWDIR%%/js/jquery-ui-1.8.14.custom.min.js
 %%WWWDIR%%/js/jquery.fileUploader.js
-%%WWWDIR%%/js/jquery.slideto.v1.1.js
-%%WWWDIR%%/js/jquery.tools.tooltip.min.js
 %%WWWDIR%%/js/login.js
 %%WWWDIR%%/js/magic.js
 %%WWWDIR%%/js/magic.min.js
-%%WWWDIR%%/js/tooltips.js
-%%WWWDIR%%/login/index.php
-%%WWWDIR%%/login/loginCheck.php
-%%WWWDIR%%/login/loginForm.php
-%%WWWDIR%%/login/requestIPfirstFree.php
-%%WWWDIR%%/login/requestIPform.php
-%%WWWDIR%%/login/requestIPmail.php
-%%WWWDIR%%/login/requestIPresult.php
 %%WWWDIR%%/misc/CHANGELOG
 %%WWWDIR%%/misc/Roadmap
 %%WWWDIR%%/misc/gpl-3.0.txt
@@ -145,10 +112,16 @@
 %%WWWDIR%%/site/admin/CSVimportSubmit.php
 %%WWWDIR%%/site/admin/CSVimportVerify.php
 %%WWWDIR%%/site/admin/adminMenu.php
-%%WWWDIR%%/site/admin/all.php
 %%WWWDIR%%/site/admin/customIPFields.php
 %%WWWDIR%%/site/admin/customIPFieldsEdit.php
 %%WWWDIR%%/site/admin/customIPFieldsEditResult.php
+%%WWWDIR%%/site/admin/customIPFieldsOrder.php
+%%WWWDIR%%/site/admin/customSubnetFieldsEdit.php
+%%WWWDIR%%/site/admin/customSubnetFieldsEditResult.php
+%%WWWDIR%%/site/admin/customSubnetFieldsOrder.php
+%%WWWDIR%%/site/admin/customVLANFieldsEdit.php
+%%WWWDIR%%/site/admin/customVLANFieldsEditResult.php
+%%WWWDIR%%/site/admin/customVLANFieldsOrder.php
 %%WWWDIR%%/site/admin/databaseInstall.php
 %%WWWDIR%%/site/admin/databaseUpgrade.php
 %%WWWDIR%%/site/admin/export.php
@@ -160,11 +133,14 @@
 %%WWWDIR%%/site/admin/instructions.php
 %%WWWDIR%%/site/admin/instructionsPreview.php
 %%WWWDIR%%/site/admin/instructionsResult.php
-%%WWWDIR%%/site/admin/log.php
 %%WWWDIR%%/site/admin/logClear.php
+%%WWWDIR%%/site/admin/logDetail.php
 %%WWWDIR%%/site/admin/logResult.php
+%%WWWDIR%%/site/admin/logs.php
 %%WWWDIR%%/site/admin/logsExport.php
 %%WWWDIR%%/site/admin/manageAD.php
+%%WWWDIR%%/site/admin/manageAD_AD.php
+%%WWWDIR%%/site/admin/manageAD_LDAP.php
 %%WWWDIR%%/site/admin/manageADcheck.php
 %%WWWDIR%%/site/admin/manageADresult.php
 %%WWWDIR%%/site/admin/manageRequestEdit.php
@@ -182,6 +158,7 @@
 %%WWWDIR%%/site/admin/manageSwitchesEditResult.php
 %%WWWDIR%%/site/admin/manageVLANEdit.php
 %%WWWDIR%%/site/admin/manageVLANEditResult.php
+%%WWWDIR%%/site/admin/manageVLANdropdownReload.php
 %%WWWDIR%%/site/admin/manageVLANs.php
 %%WWWDIR%%/site/admin/manageVRF.php
 %%WWWDIR%%/site/admin/manageVRFEdit.php
@@ -193,30 +170,43 @@
 %%WWWDIR%%/site/admin/searchReplaceResult.php
 %%WWWDIR%%/site/admin/settings.php
 %%WWWDIR%%/site/admin/settingsEdit.php
+%%WWWDIR%%/site/admin/showAll.php
 %%WWWDIR%%/site/admin/userMod.php
 %%WWWDIR%%/site/admin/userModEmailNotif.php
 %%WWWDIR%%/site/admin/userModPrint.php
 %%WWWDIR%%/site/admin/userModResult.php
 %%WWWDIR%%/site/admin/verifyDatabase.php
 %%WWWDIR%%/site/admin/versionCheck.php
+%%WWWDIR%%/site/dashboard/access_logs.php
+%%WWWDIR%%/site/dashboard/error_logs.php
+%%WWWDIR%%/site/dashboard/index.php
+%%WWWDIR%%/site/dashboard/statistics.php
+%%WWWDIR%%/site/dashboard/top10_hosts.php
+%%WWWDIR%%/site/dashboard/top10_percentage.php
+%%WWWDIR%%/site/error.php
 %%WWWDIR%%/site/footer.php
-%%WWWDIR%%/site/head.php
-%%WWWDIR%%/site/home/home.php
-%%WWWDIR%%/site/home/printStats.php
-%%WWWDIR%%/site/home/statistics.php
-%%WWWDIR%%/site/home/top10_hosts.php
-%%WWWDIR%%/site/home/top10_percentage.php
-%%WWWDIR%%/site/ipAddressPrint.php
-%%WWWDIR%%/site/ipAddressSlavesPrint.php
-%%WWWDIR%%/site/mailNotifyCheck.php
-%%WWWDIR%%/site/mailNotifyIP.php
-%%WWWDIR%%/site/modifyIpAddress.php
-%%WWWDIR%%/site/modifyIpAddressCheck.php
+%%WWWDIR%%/site/install/index.php
+%%WWWDIR%%/site/ipaddr/exportSelectFields.php
+%%WWWDIR%%/site/ipaddr/ipAddressPrintTable.php
+%%WWWDIR%%/site/ipaddr/ipAddressPrintTableOrphaned.php
+%%WWWDIR%%/site/ipaddr/ipAddressPrintTableSlaves.php
+%%WWWDIR%%/site/ipaddr/ipAddressSwitch.php
+%%WWWDIR%%/site/ipaddr/mailNotifyCheck.php
+%%WWWDIR%%/site/ipaddr/mailNotifyIP.php
+%%WWWDIR%%/site/ipaddr/modifyIpAddress.php
+%%WWWDIR%%/site/ipaddr/modifyIpAddressCheck.php
+%%WWWDIR%%/site/ipaddr/moveIpAddress.php
+%%WWWDIR%%/site/ipaddr/subnetDetails.php
+%%WWWDIR%%/site/ipaddr/subnetDetailsGraph.php
+%%WWWDIR%%/site/ipaddr/subnetDetailsSlaves.php
+%%WWWDIR%%/site/login/index.php
+%%WWWDIR%%/site/login/loginCheck.php
+%%WWWDIR%%/site/login/loginForm.php
+%%WWWDIR%%/site/login/requestIPfirstFree.php
+%%WWWDIR%%/site/login/requestIPform.php
+%%WWWDIR%%/site/login/requestIPresult.php
 %%WWWDIR%%/site/sections.php
-%%WWWDIR%%/site/subnetDetailsGraph.php
 %%WWWDIR%%/site/subnets.php
-%%WWWDIR%%/site/tools/hosts.php
-%%WWWDIR%%/site/tools/hostsResult.php
 %%WWWDIR%%/site/tools/instructions.php
 %%WWWDIR%%/site/tools/ipCalc.php
 %%WWWDIR%%/site/tools/ipCalcResult.php
@@ -226,24 +216,29 @@
 %%WWWDIR%%/site/tools/searchResults.php
 %%WWWDIR%%/site/tools/searchResultsExport.php
 %%WWWDIR%%/site/tools/searchTips.php
+%%WWWDIR%%/site/tools/showAll.php
 %%WWWDIR%%/site/tools/subnets.php
 %%WWWDIR%%/site/tools/switches.php
-%%WWWDIR%%/site/tools/tools.php
 %%WWWDIR%%/site/tools/toolsMenu.php
 %%WWWDIR%%/site/tools/userMenu.php
 %%WWWDIR%%/site/tools/userMenuSelfMod.php
 %%WWWDIR%%/site/tools/vlan.php
 %%WWWDIR%%/site/tools/vrf.php
+%%WWWDIR%%/site/upgrade/index.php
 %%WWWDIR%%/site/userMenu.php
+@dirrm %%WWWDIR%%/site/upgrade
 @dirrm %%WWWDIR%%/site/tools
-@dirrm %%WWWDIR%%/site/home
+@dirrm %%WWWDIR%%/site/login
+@dirrm %%WWWDIR%%/site/ipaddr
+@dirrm %%WWWDIR%%/site/install
+@dirrm %%WWWDIR%%/site/dashboard
 @dirrm %%WWWDIR%%/site/admin/csvupload
 @dirrm %%WWWDIR%%/site/admin
 @dirrm %%WWWDIR%%/site
 @dirrmtry %%WWWDIR%%/misc
-@dirrm %%WWWDIR%%/login
-@dirrm %%WWWDIR%%/js/Highcharts-2.2.0
+@dirrmtry %%WWWDIR%%/js/flot
 @dirrmtry %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/functions/scripts
 @dirrm %%WWWDIR%%/functions/adLDAP/src/collections
 @dirrm %%WWWDIR%%/functions/adLDAP/src/classes
 @dirrm %%WWWDIR%%/functions/adLDAP/src
@@ -258,7 +253,9 @@
 @dirrmtry %%WWWDIR%%/functions
 @dirrm %%WWWDIR%%/db/bkp
 @dirrm %%WWWDIR%%/db
+@dirrmtry %%WWWDIR%%/css/img
 @dirrmtry %%WWWDIR%%/css/images
+@dirrmtry %%WWWDIR%%/css/bootstrap
 @dirrmtry %%WWWDIR%%/css
 @dirrmtry %%WWWDIR%%
 @exec mkdir -p %D/%%WWWDIR%%/site/admin/csvupload
