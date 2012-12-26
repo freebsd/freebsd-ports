@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gcompris2
-# Date created:				23 April 2003
-# Whom:					Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-#
+# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	gcompris
-PORTVERSION=	12.05
-PORTREVISION=	1
+PORTVERSION=	12.11
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -18,15 +13,14 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 		gnuchess:${PORTSDIR}/games/gnuchess \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ao.4:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		gnet-2.0.0:${PORTSDIR}/net/gnet2 \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		gnucap:${PORTSDIR}/cad/gnucap
 
 USE_BZIP2=	yes
@@ -38,13 +32,11 @@ USE_PYTHON=	-2.7
 USE_SDL=	mixer
 USE_DISPLAY=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
-CONFIGURE_ARGS=	--enable-gnet
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -lm"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=		gcompris.6
-INFO=		gcompris
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
