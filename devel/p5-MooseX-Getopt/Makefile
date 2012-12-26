@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-MooseX-Getopt
-# Date created:				28 Jul 2008
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -23,8 +19,8 @@ BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Lon
 		p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleConfig \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-CheckDeps>=0:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap \
