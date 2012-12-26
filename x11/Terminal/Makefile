@@ -1,9 +1,9 @@
-# Created by: Matt Lancereau <ports@FreeBSD.org>
+# Created by: Matt Lancereau
 # $FreeBSD$
 
 PORTNAME=	Terminal
 PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME:L}/${PORTVERSION:R}
