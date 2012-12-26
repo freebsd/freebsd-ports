@@ -655,6 +655,17 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/clockgame.xml
 %%DATADIR%%/boards/clockgame/clockgame-bg.svgz
 %%DATADIR%%/boards/clockgame/clockgame-bg0.svgz
+%%DATADIR%%/boards/color_mix.svg
+%%DATADIR%%/boards/color_mix.xml
+%%DATADIR%%/boards/color_mix/background.jpg
+%%DATADIR%%/boards/color_mix/cyan_tube.png
+%%DATADIR%%/boards/color_mix/magenta_tube.png
+%%DATADIR%%/boards/color_mix/torch_blue.png
+%%DATADIR%%/boards/color_mix/torch_green.png
+%%DATADIR%%/boards/color_mix/torch_red.png
+%%DATADIR%%/boards/color_mix/yellow_tube.png
+%%DATADIR%%/boards/color_mix_light.svg
+%%DATADIR%%/boards/color_mix_light.xml
 %%DATADIR%%/boards/colors.svg
 %%DATADIR%%/boards/colors.xml
 %%DATADIR%%/boards/colors/activity.desktop
@@ -1051,10 +1062,72 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/experience.svg
 %%DATADIR%%/boards/experience.xml
 %%DATADIR%%/boards/experimental.xml
+%%DATADIR%%/boards/explore/border.png
+%%DATADIR%%/boards/explore/playbutton.png
+%%DATADIR%%/boards/explore/ribbon.png
+%%DATADIR%%/boards/explore/star.png
+%%DATADIR%%/boards/explore_farm_animals.svg
+%%DATADIR%%/boards/explore_farm_animals.xml
+%%DATADIR%%/boards/explore_farm_animals/cat.jpg
+%%DATADIR%%/boards/explore_farm_animals/cat.ogg
+%%DATADIR%%/boards/explore_farm_animals/chicken.jpg
+%%DATADIR%%/boards/explore_farm_animals/chickens.ogg
+%%DATADIR%%/boards/explore_farm_animals/content.desktop.in
+%%DATADIR%%/boards/explore_farm_animals/cow.jpg
+%%DATADIR%%/boards/explore_farm_animals/cow.ogg
+%%DATADIR%%/boards/explore_farm_animals/dog.jpg
+%%DATADIR%%/boards/explore_farm_animals/dog.ogg
+%%DATADIR%%/boards/explore_farm_animals/duck.jpg
+%%DATADIR%%/boards/explore_farm_animals/duck.ogg
+%%DATADIR%%/boards/explore_farm_animals/farm-animals.svg
+%%DATADIR%%/boards/explore_farm_animals/horse.jpg
+%%DATADIR%%/boards/explore_farm_animals/horse.ogg
+%%DATADIR%%/boards/explore_farm_animals/owl.jpg
+%%DATADIR%%/boards/explore_farm_animals/owl.ogg
+%%DATADIR%%/boards/explore_farm_animals/pig.jpg
+%%DATADIR%%/boards/explore_farm_animals/pig.ogg
+%%DATADIR%%/boards/explore_farm_animals/questionpic.png
+%%DATADIR%%/boards/explore_farm_animals/rooster.jpg
+%%DATADIR%%/boards/explore_farm_animals/rooster.ogg
+%%DATADIR%%/boards/explore_world_animals.svg
+%%DATADIR%%/boards/explore_world_animals.xml
+%%DATADIR%%/boards/explore_world_animals/Makefile.am
+%%DATADIR%%/boards/explore_world_animals/bison.jpg
+%%DATADIR%%/boards/explore_world_animals/content.desktop.in
+%%DATADIR%%/boards/explore_world_animals/giraffe.jpg
+%%DATADIR%%/boards/explore_world_animals/hedgy.jpg
+%%DATADIR%%/boards/explore_world_animals/jaggy.jpg
+%%DATADIR%%/boards/explore_world_animals/narwhal.jpg
+%%DATADIR%%/boards/explore_world_animals/tux.png
+%%DATADIR%%/boards/explore_world_animals/world.jpg
+%%DATADIR%%/boards/explore_world_music.svg
+%%DATADIR%%/boards/explore_world_music.xml
+%%DATADIR%%/boards/explore_world_music/africa.jpg
+%%DATADIR%%/boards/explore_world_music/africa.ogg
+%%DATADIR%%/boards/explore_world_music/america.jpg
+%%DATADIR%%/boards/explore_world_music/america.ogg
+%%DATADIR%%/boards/explore_world_music/australia.jpg
+%%DATADIR%%/boards/explore_world_music/australia.ogg
+%%DATADIR%%/boards/explore_world_music/beethoven.ogg
+%%DATADIR%%/boards/explore_world_music/content.desktop.in
+%%DATADIR%%/boards/explore_world_music/dancingWorld.png
+%%DATADIR%%/boards/explore_world_music/ireland.jpg
+%%DATADIR%%/boards/explore_world_music/ireland.ogg
+%%DATADIR%%/boards/explore_world_music/italy.jpg
+%%DATADIR%%/boards/explore_world_music/italy.ogg
+%%DATADIR%%/boards/explore_world_music/japan.jpg
+%%DATADIR%%/boards/explore_world_music/japan.ogg
+%%DATADIR%%/boards/explore_world_music/mexico.jpg
+%%DATADIR%%/boards/explore_world_music/mexico.ogg
+%%DATADIR%%/boards/explore_world_music/middleeast.jpg
+%%DATADIR%%/boards/explore_world_music/middleeast.ogg
+%%DATADIR%%/boards/explore_world_music/orchestra.jpg
+%%DATADIR%%/boards/explore_world_music/suitcase.svg
+%%DATADIR%%/boards/explore_world_music/worldmap.jpg
 %%DATADIR%%/boards/eye_colors.svg
 %%DATADIR%%/boards/fifteen.svg
 %%DATADIR%%/boards/fifteen.xml
-%%DATADIR%%/boards/fifteen/fifteen_frame.png
+%%DATADIR%%/boards/fifteen/background.jpg
 %%DATADIR%%/boards/followline.svg
 %%DATADIR%%/boards/followline.xml
 %%DATADIR%%/boards/followline/followline.svgz
@@ -1730,14 +1803,70 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/geography/afrique/uganda.png
 %%DATADIR%%/boards/geography/afrique/zambia.png
 %%DATADIR%%/boards/geography/afrique/zimbabwe.png
+%%DATADIR%%/boards/geography/asia/afghanistan.png
+%%DATADIR%%/boards/geography/asia/africa.png
+%%DATADIR%%/boards/geography/asia/africa2.png
+%%DATADIR%%/boards/geography/asia/armenia.png
+%%DATADIR%%/boards/geography/asia/azerbaijan.png
+%%DATADIR%%/boards/geography/asia/background.png
+%%DATADIR%%/boards/geography/asia/bahrain.png
+%%DATADIR%%/boards/geography/asia/bangladesh.png
+%%DATADIR%%/boards/geography/asia/bhutan.png
+%%DATADIR%%/boards/geography/asia/black_sea.png
+%%DATADIR%%/boards/geography/asia/brunei.png
+%%DATADIR%%/boards/geography/asia/cambodia.png
+%%DATADIR%%/boards/geography/asia/caspian_sea.png
+%%DATADIR%%/boards/geography/asia/china.png
+%%DATADIR%%/boards/geography/asia/cyprus.png
+%%DATADIR%%/boards/geography/asia/georgia.png
+%%DATADIR%%/boards/geography/asia/india.png
+%%DATADIR%%/boards/geography/asia/indonesia.png
+%%DATADIR%%/boards/geography/asia/iran.png
+%%DATADIR%%/boards/geography/asia/iraq.png
+%%DATADIR%%/boards/geography/asia/israel.png
+%%DATADIR%%/boards/geography/asia/japan.png
+%%DATADIR%%/boards/geography/asia/jordan.png
+%%DATADIR%%/boards/geography/asia/kazakhstan.png
+%%DATADIR%%/boards/geography/asia/kuwait.png
+%%DATADIR%%/boards/geography/asia/kyrgyzstan.png
+%%DATADIR%%/boards/geography/asia/laos.png
+%%DATADIR%%/boards/geography/asia/lebanon.png
+%%DATADIR%%/boards/geography/asia/malaysia.png
+%%DATADIR%%/boards/geography/asia/mediteranean_sea.png
+%%DATADIR%%/boards/geography/asia/mongolia.png
+%%DATADIR%%/boards/geography/asia/myanmar.png
+%%DATADIR%%/boards/geography/asia/nepal.png
+%%DATADIR%%/boards/geography/asia/north_korea.png
+%%DATADIR%%/boards/geography/asia/oman.png
+%%DATADIR%%/boards/geography/asia/pakistan.png
+%%DATADIR%%/boards/geography/asia/palestine.png
+%%DATADIR%%/boards/geography/asia/persian_gulf.png
+%%DATADIR%%/boards/geography/asia/philippines.png
+%%DATADIR%%/boards/geography/asia/qatar.png
+%%DATADIR%%/boards/geography/asia/red_sea.png
+%%DATADIR%%/boards/geography/asia/russia.png
+%%DATADIR%%/boards/geography/asia/saudi_arabia.png
+%%DATADIR%%/boards/geography/asia/south_korea.png
+%%DATADIR%%/boards/geography/asia/sri_lanka.png
+%%DATADIR%%/boards/geography/asia/syria.png
+%%DATADIR%%/boards/geography/asia/taiwan.png
+%%DATADIR%%/boards/geography/asia/tajikistan.png
+%%DATADIR%%/boards/geography/asia/thailand.png
+%%DATADIR%%/boards/geography/asia/turkey.png
+%%DATADIR%%/boards/geography/asia/turkmenistan.png
+%%DATADIR%%/boards/geography/asia/united_arab_emirates.png
+%%DATADIR%%/boards/geography/asia/uzbekistan.png
+%%DATADIR%%/boards/geography/asia/vietnam.png
+%%DATADIR%%/boards/geography/asia/yemen.png
 %%DATADIR%%/boards/geography/board1_0.xml
 %%DATADIR%%/boards/geography/board2_0.xml
-%%DATADIR%%/boards/geography/board2_1.xml
 %%DATADIR%%/boards/geography/board3_0.xml
-%%DATADIR%%/boards/geography/board3_1.xml
 %%DATADIR%%/boards/geography/board4_0.xml
-%%DATADIR%%/boards/geography/board4_1.xml
-%%DATADIR%%/boards/geography/board4_2.xml
+%%DATADIR%%/boards/geography/board5_0.xml
+%%DATADIR%%/boards/geography/board6_0.xml
+%%DATADIR%%/boards/geography/board7_0.xml
+%%DATADIR%%/boards/geography/board8_0.xml
+%%DATADIR%%/boards/geography/board9_0.xml
 %%DATADIR%%/boards/geography/continents/africa.png
 %%DATADIR%%/boards/geography/continents/america.png
 %%DATADIR%%/boards/geography/continents/antarctica.png
@@ -1770,13 +1899,14 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/geography/europe/luxembourg.png
 %%DATADIR%%/boards/geography/europe/macedonia.png
 %%DATADIR%%/boards/geography/europe/moldova.png
+%%DATADIR%%/boards/geography/europe/montenegro.png
 %%DATADIR%%/boards/geography/europe/netherland.png
 %%DATADIR%%/boards/geography/europe/norway.png
 %%DATADIR%%/boards/geography/europe/poland.png
 %%DATADIR%%/boards/geography/europe/portugal.png
 %%DATADIR%%/boards/geography/europe/romania.png
 %%DATADIR%%/boards/geography/europe/russia.png
-%%DATADIR%%/boards/geography/europe/serbia_montenegro.png
+%%DATADIR%%/boards/geography/europe/serbia.png
 %%DATADIR%%/boards/geography/europe/slovakia.png
 %%DATADIR%%/boards/geography/europe/slovenia.png
 %%DATADIR%%/boards/geography/europe/spain.png
@@ -1994,8 +2124,40 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/instruments/tuba.svg
 %%DATADIR%%/boards/instruments/violin.ogg
 %%DATADIR%%/boards/instruments/violin.svg
+%%DATADIR%%/boards/intro_gravity.svg
+%%DATADIR%%/boards/intro_gravity.xml
+%%DATADIR%%/boards/intro_gravity/asteroid0.jpg
+%%DATADIR%%/boards/intro_gravity/asteroid1.jpg
+%%DATADIR%%/boards/intro_gravity/asteroid2.jpg
+%%DATADIR%%/boards/intro_gravity/asteroid3.jpg
+%%DATADIR%%/boards/intro_gravity/asteroid4.jpg
+%%DATADIR%%/boards/intro_gravity/background.png
+%%DATADIR%%/boards/intro_gravity/crash.png
+%%DATADIR%%/boards/intro_gravity/neptune.png
+%%DATADIR%%/boards/intro_gravity/saturn.png
+%%DATADIR%%/boards/intro_gravity/space_shuttle.svg
+%%DATADIR%%/boards/intro_gravity/tux_spaceship.png
 %%DATADIR%%/boards/keyboard.svg
 %%DATADIR%%/boards/keyboard.xml
+%%DATADIR%%/boards/land_safe.svg
+%%DATADIR%%/boards/land_safe.xml
+%%DATADIR%%/boards/land_safe/background1.jpg
+%%DATADIR%%/boards/land_safe/background2.jpg
+%%DATADIR%%/boards/land_safe/background3.jpg
+%%DATADIR%%/boards/land_safe/background4.jpg
+%%DATADIR%%/boards/land_safe/crash.png
+%%DATADIR%%/boards/land_safe/flame1.png
+%%DATADIR%%/boards/land_safe/flame2.png
+%%DATADIR%%/boards/land_safe/flame3.png
+%%DATADIR%%/boards/land_safe/flame_left.png
+%%DATADIR%%/boards/land_safe/flame_right.png
+%%DATADIR%%/boards/land_safe/land1.png
+%%DATADIR%%/boards/land_safe/land2.png
+%%DATADIR%%/boards/land_safe/land3.png
+%%DATADIR%%/boards/land_safe/land4.png
+%%DATADIR%%/boards/land_safe/landing_area_green.png
+%%DATADIR%%/boards/land_safe/landing_area_red.png
+%%DATADIR%%/boards/land_safe/rocket.png
 %%DATADIR%%/boards/lang.svg
 %%DATADIR%%/boards/lang.xml
 %%DATADIR%%/boards/lang/lang.xml
@@ -2184,9 +2346,11 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/maze.svg
 %%DATADIR%%/boards/maze.xml
 %%DATADIR%%/boards/maze/door.png
+%%DATADIR%%/boards/maze/fast-mode-button.svgz
 %%DATADIR%%/boards/maze/maze-2d-bubble.svg
 %%DATADIR%%/boards/maze/maze-3d-bubble.svg
 %%DATADIR%%/boards/maze/maze-bg.svgz
+%%DATADIR%%/boards/maze/tux_shoes_top_south.svgz
 %%DATADIR%%/boards/maze/tux_top_south.svg
 %%DATADIR%%/boards/maze2DRelative.xml
 %%DATADIR%%/boards/maze3D.svg
@@ -2361,6 +2525,13 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/memory_tux.xml
 %%DATADIR%%/boards/memory_wordnumber.xml
 %%DATADIR%%/boards/menu.xml
+%%DATADIR%%/boards/mining.svg
+%%DATADIR%%/boards/mining.xml
+%%DATADIR%%/boards/mining/pickaxe.ogg
+%%DATADIR%%/boards/mining/realrainbow.ogg
+%%DATADIR%%/boards/mining/rockwall.svgz
+%%DATADIR%%/boards/mining/tutorial.svgz
+%%DATADIR%%/boards/mining/tux-teacher.png
 %%DATADIR%%/boards/miscelaneous.svg
 %%DATADIR%%/boards/miscelaneous.xml
 %%DATADIR%%/boards/missing_letter.svg
@@ -2542,6 +2713,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/music/background/glockenschmoutz.ogg
 %%DATADIR%%/boards/music/background/vaudeville.ogg
 %%DATADIR%%/boards/music/intro.ogg
+%%DATADIR%%/boards/note_names.svg
+%%DATADIR%%/boards/note_names.xml
 %%DATADIR%%/boards/numeration.svg
 %%DATADIR%%/boards/numeration.xml
 %%DATADIR%%/boards/paintings.xml
@@ -2873,10 +3046,182 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/photohunter/board3_3b.png
 %%DATADIR%%/boards/photohunter/board3_4a.png
 %%DATADIR%%/boards/photohunter/board3_4b.png
+%%DATADIR%%/boards/piano_composition.svg
+%%DATADIR%%/boards/piano_composition.xml
+%%DATADIR%%/boards/piano_composition/bach.jpg
+%%DATADIR%%/boards/piano_composition/banana.png
+%%DATADIR%%/boards/piano_composition/bassClef.png
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/-1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/-2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/-3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/-4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/-5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/6.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/7.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/1/8.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/-1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/-2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/-3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/-4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/-5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/6.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/7.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/2/8.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/-1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/-2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/-3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/-4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/-5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/6.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/7.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/4/8.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/-1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/-2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/-3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/-4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/-5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/1.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/2.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/3.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/4.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/5.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/6.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/7.wav
+%%DATADIR%%/boards/piano_composition/bass_pitches/8/8.wav
+%%DATADIR%%/boards/piano_composition/bassclef_button.svg
+%%DATADIR%%/boards/piano_composition/blackflat.png
+%%DATADIR%%/boards/piano_composition/blacksharp.png
+%%DATADIR%%/boards/piano_composition/button_front.svg
+%%DATADIR%%/boards/piano_composition/edit-clear.svg
+%%DATADIR%%/boards/piano_composition/edit-cut.svg
+%%DATADIR%%/boards/piano_composition/edit-undo.svg
+%%DATADIR%%/boards/piano_composition/eighthNote.png
+%%DATADIR%%/boards/piano_composition/failed.svg
+%%DATADIR%%/boards/piano_composition/flag.png
+%%DATADIR%%/boards/piano_composition/gsoc2012.jpg
+%%DATADIR%%/boards/piano_composition/halfNote.png
+%%DATADIR%%/boards/piano_composition/keyboard.png
+%%DATADIR%%/boards/piano_composition/melodies.desktop.in
+%%DATADIR%%/boards/piano_composition/mozart.jpg
+%%DATADIR%%/boards/piano_composition/next.svg
+%%DATADIR%%/boards/piano_composition/note_highlight.png
+%%DATADIR%%/boards/piano_composition/open.svg
+%%DATADIR%%/boards/piano_composition/passed.svg
+%%DATADIR%%/boards/piano_composition/play.svg
+%%DATADIR%%/boards/piano_composition/playActivities/background/1.jpg
+%%DATADIR%%/boards/piano_composition/playActivities/background/2.jpg
+%%DATADIR%%/boards/piano_composition/playActivities/background/3.jpg
+%%DATADIR%%/boards/piano_composition/playActivities/background/4.jpg
+%%DATADIR%%/boards/piano_composition/playActivities/background/5.jpg
+%%DATADIR%%/boards/piano_composition/playActivities/background/6.jpg
+%%DATADIR%%/boards/piano_composition/previous.svg
+%%DATADIR%%/boards/piano_composition/quarterNote.png
+%%DATADIR%%/boards/piano_composition/save.svg
+%%DATADIR%%/boards/piano_composition/trebbleclef_button.svg
+%%DATADIR%%/boards/piano_composition/trebleClef.png
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/-1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/-2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/-3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/-4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/-5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/10.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/11.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/6.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/7.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/8.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/1/9.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/-1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/-2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/-3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/-4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/-5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/10.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/11.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/6.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/7.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/8.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/2/9.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/-1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/-2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/-3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/-4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/-5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/-6.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/10.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/11.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/6.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/7.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/8.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/4/9.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/-1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/-2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/-3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/-4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/-5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/-6.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/1.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/10.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/11.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/2.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/3.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/4.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/5.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/6.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/7.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/8.wav
+%%DATADIR%%/boards/piano_composition/treble_pitches/8/9.wav
+%%DATADIR%%/boards/piano_composition/wholeNote.png
+%%DATADIR%%/boards/place_your_satellite.svg
+%%DATADIR%%/boards/place_your_satellite.xml
+%%DATADIR%%/boards/place_your_satellite/background.jpg
+%%DATADIR%%/boards/place_your_satellite/crash.png
+%%DATADIR%%/boards/place_your_satellite/planet1.png
+%%DATADIR%%/boards/place_your_satellite/planet2.png
+%%DATADIR%%/boards/place_your_satellite/planet3.png
+%%DATADIR%%/boards/place_your_satellite/planet4.png
+%%DATADIR%%/boards/place_your_satellite/satellite.png
 %%DATADIR%%/boards/planegame.xml
 %%DATADIR%%/boards/planegame/background.svgz
 %%DATADIR%%/boards/planegame/cloud.svgz
 %%DATADIR%%/boards/planegame/tuxhelico.svgz
+%%DATADIR%%/boards/play_piano.svg
+%%DATADIR%%/boards/play_piano.xml
+%%DATADIR%%/boards/play_rhythm.svg
+%%DATADIR%%/boards/play_rhythm.xml
+%%DATADIR%%/boards/play_rhythm/click.wav
+%%DATADIR%%/boards/play_rhythm/drumhead.png
+%%DATADIR%%/boards/play_rhythm/metronome.png
+%%DATADIR%%/boards/play_rhythm/record.png
 %%DATADIR%%/boards/puzzle.xml
 %%DATADIR%%/boards/puzzles.svg
 %%DATADIR%%/boards/python.svg
@@ -3032,6 +3377,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/skins/gartoon/bonus/gnu_good.png
 %%DATADIR%%/boards/skins/gartoon/bonus/lion_bad.png
 %%DATADIR%%/boards/skins/gartoon/bonus/lion_good.png
+%%DATADIR%%/boards/skins/gartoon/bonus/note_bad.png
+%%DATADIR%%/boards/skins/gartoon/bonus/note_good.png
 %%DATADIR%%/boards/skins/gartoon/bonus/smiley_bad.png
 %%DATADIR%%/boards/skins/gartoon/bonus/smiley_good.png
 %%DATADIR%%/boards/skins/gartoon/bonus/tux_bad.png
@@ -3111,6 +3458,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/sounds/prompt.wav
 %%DATADIR%%/boards/sounds/receive.wav
 %%DATADIR%%/boards/sounds/scroll.wav
+%%DATADIR%%/boards/sounds/silence1s.ogg
 %%DATADIR%%/boards/sounds/smudge.wav
 %%DATADIR%%/boards/sounds/train.wav
 %%DATADIR%%/boards/sounds/tuxok.wav
@@ -3136,6 +3484,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/submarine/whale_hit.png
 %%DATADIR%%/boards/sudoku.svg
 %%DATADIR%%/boards/sudoku.xml
+%%DATADIR%%/boards/sudoku/background.jpg
 %%DATADIR%%/boards/sudoku/circle.png
 %%DATADIR%%/boards/sudoku/circle_grey.png
 %%DATADIR%%/boards/sudoku/rectangle.png
@@ -4679,7 +5028,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/malawi.ogg
 %%DATADIR%%/boards/voices/en/geography/mali.ogg
 %%DATADIR%%/boards/voices/en/geography/mauritania.ogg
-%%DATADIR%%/boards/voices/en/geography/memory_tux.ogg
 %%DATADIR%%/boards/voices/en/geography/mexico.ogg
 %%DATADIR%%/boards/voices/en/geography/moldavia.ogg
 %%DATADIR%%/boards/voices/en/geography/moldova.ogg
@@ -4710,7 +5058,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/en/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/en/geography/slovenia.ogg
-%%DATADIR%%/boards/voices/en/geography/solvenia.ogg
 %%DATADIR%%/boards/voices/en/geography/somalia.ogg
 %%DATADIR%%/boards/voices/en/geography/south_africa.ogg
 %%DATADIR%%/boards/voices/en/geography/south_america.ogg
@@ -4760,6 +5107,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/clickanddraw.ogg
 %%DATADIR%%/boards/voices/en/intro/clickgame.ogg
 %%DATADIR%%/boards/voices/en/intro/clockgame.ogg
+%%DATADIR%%/boards/voices/en/intro/color_mix.ogg
+%%DATADIR%%/boards/voices/en/intro/color_mix_light.ogg
 %%DATADIR%%/boards/voices/en/intro/colors.ogg
 %%DATADIR%%/boards/voices/en/intro/connect4-2players.ogg
 %%DATADIR%%/boards/voices/en/intro/connect4.ogg
@@ -4773,6 +5122,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/erase.ogg
 %%DATADIR%%/boards/voices/en/intro/erase_2clic.ogg
 %%DATADIR%%/boards/voices/en/intro/erase_clic.ogg
+%%DATADIR%%/boards/voices/en/intro/explore_farm_animals.ogg
+%%DATADIR%%/boards/voices/en/intro/explore_world_music.ogg
 %%DATADIR%%/boards/voices/en/intro/fifteen.ogg
 %%DATADIR%%/boards/voices/en/intro/followline.ogg
 %%DATADIR%%/boards/voices/en/intro/geo_country.ogg
@@ -4793,6 +5144,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/imageid.ogg
 %%DATADIR%%/boards/voices/en/intro/imagename.ogg
 %%DATADIR%%/boards/voices/en/intro/instruments.ogg
+%%DATADIR%%/boards/voices/en/intro/intro_gravity.ogg
+%%DATADIR%%/boards/voices/en/intro/land_safe.ogg
 %%DATADIR%%/boards/voices/en/intro/leftright.ogg
 %%DATADIR%%/boards/voices/en/intro/lightsoff.ogg
 %%DATADIR%%/boards/voices/en/intro/louis_braille.ogg
@@ -4826,11 +5179,16 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/money_cents.ogg
 %%DATADIR%%/boards/voices/en/intro/mosaic.ogg
 %%DATADIR%%/boards/voices/en/intro/movelearn.ogg
+%%DATADIR%%/boards/voices/en/intro/note_names.ogg
 %%DATADIR%%/boards/voices/en/intro/paintings.ogg
 %%DATADIR%%/boards/voices/en/intro/paratrooper.ogg
 %%DATADIR%%/boards/voices/en/intro/penalty.ogg
 %%DATADIR%%/boards/voices/en/intro/photohunter.ogg
+%%DATADIR%%/boards/voices/en/intro/piano_composition.ogg
+%%DATADIR%%/boards/voices/en/intro/place_your_satellite.ogg
 %%DATADIR%%/boards/voices/en/intro/planegame.ogg
+%%DATADIR%%/boards/voices/en/intro/play_piano.ogg
+%%DATADIR%%/boards/voices/en/intro/play_rhythm.ogg
 %%DATADIR%%/boards/voices/en/intro/railroad.ogg
 %%DATADIR%%/boards/voices/en/intro/read_colors.ogg
 %%DATADIR%%/boards/voices/en/intro/readingh.ogg
@@ -8162,6 +8520,230 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ru/misc/quit.ogg
 %%DATADIR%%/boards/voices/ru/misc/super.ogg
 %%DATADIR%%/boards/voices/ru/misc/welcome.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/10.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/11.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/12.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/13.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/14.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/15.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/16.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/17.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/18.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/19.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/20.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0030.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0031.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0032.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0033.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0034.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0035.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0036.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0037.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0038.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0039.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0061.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0062.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0063.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0064.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0065.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0066.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0067.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0068.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0069.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U006A.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U006B.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U006C.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U006D.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U006E.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U006F.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0070.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0071.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0072.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0073.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0074.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0075.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0076.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0077.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0078.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0079.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U007A.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00E1.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00E4.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00E9.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00ED.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00F3.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00F4.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00FA.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U00FD.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U010D.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U010F.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U013E.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0148.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0161.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U0165.ogg
+%%DATADIR%%/boards/voices/sk/alphabet/U017E.ogg
+%%DATADIR%%/boards/voices/sk/colors/black.ogg
+%%DATADIR%%/boards/voices/sk/colors/blue.ogg
+%%DATADIR%%/boards/voices/sk/colors/brown.ogg
+%%DATADIR%%/boards/voices/sk/colors/green.ogg
+%%DATADIR%%/boards/voices/sk/colors/grey.ogg
+%%DATADIR%%/boards/voices/sk/colors/orange.ogg
+%%DATADIR%%/boards/voices/sk/colors/pink.ogg
+%%DATADIR%%/boards/voices/sk/colors/purple.ogg
+%%DATADIR%%/boards/voices/sk/colors/red.ogg
+%%DATADIR%%/boards/voices/sk/colors/white.ogg
+%%DATADIR%%/boards/voices/sk/colors/yellow.ogg
+%%DATADIR%%/boards/voices/sk/geography/africa.ogg
+%%DATADIR%%/boards/voices/sk/geography/alaska.ogg
+%%DATADIR%%/boards/voices/sk/geography/albania.ogg
+%%DATADIR%%/boards/voices/sk/geography/algeria.ogg
+%%DATADIR%%/boards/voices/sk/geography/america.ogg
+%%DATADIR%%/boards/voices/sk/geography/angola.ogg
+%%DATADIR%%/boards/voices/sk/geography/antarctica.ogg
+%%DATADIR%%/boards/voices/sk/geography/argentina.ogg
+%%DATADIR%%/boards/voices/sk/geography/asia.ogg
+%%DATADIR%%/boards/voices/sk/geography/austria.ogg
+%%DATADIR%%/boards/voices/sk/geography/bahamas.ogg
+%%DATADIR%%/boards/voices/sk/geography/belarus.ogg
+%%DATADIR%%/boards/voices/sk/geography/belgium.ogg
+%%DATADIR%%/boards/voices/sk/geography/benin.ogg
+%%DATADIR%%/boards/voices/sk/geography/bolivia.ogg
+%%DATADIR%%/boards/voices/sk/geography/bosnia_herzegovina.ogg
+%%DATADIR%%/boards/voices/sk/geography/botswana.ogg
+%%DATADIR%%/boards/voices/sk/geography/brazil.ogg
+%%DATADIR%%/boards/voices/sk/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/sk/geography/burkina_faso.ogg
+%%DATADIR%%/boards/voices/sk/geography/burundi.ogg
+%%DATADIR%%/boards/voices/sk/geography/cameroon.ogg
+%%DATADIR%%/boards/voices/sk/geography/canada.ogg
+%%DATADIR%%/boards/voices/sk/geography/central_african_republic.ogg
+%%DATADIR%%/boards/voices/sk/geography/chad.ogg
+%%DATADIR%%/boards/voices/sk/geography/chile.ogg
+%%DATADIR%%/boards/voices/sk/geography/colombia.ogg
+%%DATADIR%%/boards/voices/sk/geography/costa_rica.ogg
+%%DATADIR%%/boards/voices/sk/geography/croatia.ogg
+%%DATADIR%%/boards/voices/sk/geography/cuba.ogg
+%%DATADIR%%/boards/voices/sk/geography/cyprus.ogg
+%%DATADIR%%/boards/voices/sk/geography/czech.ogg
+%%DATADIR%%/boards/voices/sk/geography/democratic_republic_of_congo.ogg
+%%DATADIR%%/boards/voices/sk/geography/denmark.ogg
+%%DATADIR%%/boards/voices/sk/geography/djibouti.ogg
+%%DATADIR%%/boards/voices/sk/geography/dominican_republic.ogg
+%%DATADIR%%/boards/voices/sk/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/sk/geography/egypt.ogg
+%%DATADIR%%/boards/voices/sk/geography/equatorial_guinea.ogg
+%%DATADIR%%/boards/voices/sk/geography/eritrea.ogg
+%%DATADIR%%/boards/voices/sk/geography/estonia.ogg
+%%DATADIR%%/boards/voices/sk/geography/ethiopia.ogg
+%%DATADIR%%/boards/voices/sk/geography/europe.ogg
+%%DATADIR%%/boards/voices/sk/geography/finland.ogg
+%%DATADIR%%/boards/voices/sk/geography/france.ogg
+%%DATADIR%%/boards/voices/sk/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/sk/geography/gabon.ogg
+%%DATADIR%%/boards/voices/sk/geography/gambia.ogg
+%%DATADIR%%/boards/voices/sk/geography/germany.ogg
+%%DATADIR%%/boards/voices/sk/geography/ghana.ogg
+%%DATADIR%%/boards/voices/sk/geography/greece.ogg
+%%DATADIR%%/boards/voices/sk/geography/greenland.ogg
+%%DATADIR%%/boards/voices/sk/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/sk/geography/guinea.ogg
+%%DATADIR%%/boards/voices/sk/geography/guinea_bissau.ogg
+%%DATADIR%%/boards/voices/sk/geography/guyana.ogg
+%%DATADIR%%/boards/voices/sk/geography/haiti.ogg
+%%DATADIR%%/boards/voices/sk/geography/honduras.ogg
+%%DATADIR%%/boards/voices/sk/geography/hungary.ogg
+%%DATADIR%%/boards/voices/sk/geography/iceland.ogg
+%%DATADIR%%/boards/voices/sk/geography/ireland.ogg
+%%DATADIR%%/boards/voices/sk/geography/italy.ogg
+%%DATADIR%%/boards/voices/sk/geography/ivory_coast.ogg
+%%DATADIR%%/boards/voices/sk/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/sk/geography/kenya.ogg
+%%DATADIR%%/boards/voices/sk/geography/latvia.ogg
+%%DATADIR%%/boards/voices/sk/geography/lesotho.ogg
+%%DATADIR%%/boards/voices/sk/geography/liberia.ogg
+%%DATADIR%%/boards/voices/sk/geography/libya.ogg
+%%DATADIR%%/boards/voices/sk/geography/lithuania.ogg
+%%DATADIR%%/boards/voices/sk/geography/luxembourg.ogg
+%%DATADIR%%/boards/voices/sk/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/sk/geography/madagascar.ogg
+%%DATADIR%%/boards/voices/sk/geography/malawi.ogg
+%%DATADIR%%/boards/voices/sk/geography/mali.ogg
+%%DATADIR%%/boards/voices/sk/geography/mauritania.ogg
+%%DATADIR%%/boards/voices/sk/geography/mexico.ogg
+%%DATADIR%%/boards/voices/sk/geography/moldavia.ogg
+%%DATADIR%%/boards/voices/sk/geography/moldova.ogg
+%%DATADIR%%/boards/voices/sk/geography/montenegro.ogg
+%%DATADIR%%/boards/voices/sk/geography/moroco.ogg
+%%DATADIR%%/boards/voices/sk/geography/mozambique.ogg
+%%DATADIR%%/boards/voices/sk/geography/namibia.ogg
+%%DATADIR%%/boards/voices/sk/geography/netherland.ogg
+%%DATADIR%%/boards/voices/sk/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/sk/geography/niger.ogg
+%%DATADIR%%/boards/voices/sk/geography/nigeria.ogg
+%%DATADIR%%/boards/voices/sk/geography/north_america.ogg
+%%DATADIR%%/boards/voices/sk/geography/norway.ogg
+%%DATADIR%%/boards/voices/sk/geography/oceania.ogg
+%%DATADIR%%/boards/voices/sk/geography/panama.ogg
+%%DATADIR%%/boards/voices/sk/geography/paraguay.ogg
+%%DATADIR%%/boards/voices/sk/geography/peru.ogg
+%%DATADIR%%/boards/voices/sk/geography/poland.ogg
+%%DATADIR%%/boards/voices/sk/geography/portugal.ogg
+%%DATADIR%%/boards/voices/sk/geography/republic_of_congo.ogg
+%%DATADIR%%/boards/voices/sk/geography/romania.ogg
+%%DATADIR%%/boards/voices/sk/geography/russia.ogg
+%%DATADIR%%/boards/voices/sk/geography/rwanda.ogg
+%%DATADIR%%/boards/voices/sk/geography/salvador.ogg
+%%DATADIR%%/boards/voices/sk/geography/senegal.ogg
+%%DATADIR%%/boards/voices/sk/geography/serbia.ogg
+%%DATADIR%%/boards/voices/sk/geography/serbia_montenegro.ogg
+%%DATADIR%%/boards/voices/sk/geography/sierra_leone.ogg
+%%DATADIR%%/boards/voices/sk/geography/slovakia.ogg
+%%DATADIR%%/boards/voices/sk/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/sk/geography/somalia.ogg
+%%DATADIR%%/boards/voices/sk/geography/south_africa.ogg
+%%DATADIR%%/boards/voices/sk/geography/south_america.ogg
+%%DATADIR%%/boards/voices/sk/geography/spain.ogg
+%%DATADIR%%/boards/voices/sk/geography/sudan.ogg
+%%DATADIR%%/boards/voices/sk/geography/suriname.ogg
+%%DATADIR%%/boards/voices/sk/geography/swaziland.ogg
+%%DATADIR%%/boards/voices/sk/geography/sweden.ogg
+%%DATADIR%%/boards/voices/sk/geography/switz.ogg
+%%DATADIR%%/boards/voices/sk/geography/tanzania.ogg
+%%DATADIR%%/boards/voices/sk/geography/togo.ogg
+%%DATADIR%%/boards/voices/sk/geography/tunisia.ogg
+%%DATADIR%%/boards/voices/sk/geography/turkey.ogg
+%%DATADIR%%/boards/voices/sk/geography/uganda.ogg
+%%DATADIR%%/boards/voices/sk/geography/ukraine.ogg
+%%DATADIR%%/boards/voices/sk/geography/united_kingdom.ogg
+%%DATADIR%%/boards/voices/sk/geography/uruguay.ogg
+%%DATADIR%%/boards/voices/sk/geography/usa.ogg
+%%DATADIR%%/boards/voices/sk/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/sk/geography/western_sahara.ogg
+%%DATADIR%%/boards/voices/sk/geography/zambia.ogg
+%%DATADIR%%/boards/voices/sk/geography/zimbabwe.ogg
+%%DATADIR%%/boards/voices/sk/misc/about.ogg
+%%DATADIR%%/boards/voices/sk/misc/awesome.ogg
+%%DATADIR%%/boards/voices/sk/misc/back.ogg
+%%DATADIR%%/boards/voices/sk/misc/by.ogg
+%%DATADIR%%/boards/voices/sk/misc/check_answer.ogg
+%%DATADIR%%/boards/voices/sk/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/sk/misc/configuration.ogg
+%%DATADIR%%/boards/voices/sk/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/sk/misc/equal.ogg
+%%DATADIR%%/boards/voices/sk/misc/fantastic.ogg
+%%DATADIR%%/boards/voices/sk/misc/good.ogg
+%%DATADIR%%/boards/voices/sk/misc/great.ogg
+%%DATADIR%%/boards/voices/sk/misc/help.ogg
+%%DATADIR%%/boards/voices/sk/misc/level.ogg
+%%DATADIR%%/boards/voices/sk/misc/minus.ogg
+%%DATADIR%%/boards/voices/sk/misc/ok.ogg
+%%DATADIR%%/boards/voices/sk/misc/outof.ogg
+%%DATADIR%%/boards/voices/sk/misc/perfect.ogg
+%%DATADIR%%/boards/voices/sk/misc/plus.ogg
+%%DATADIR%%/boards/voices/sk/misc/quit.ogg
+%%DATADIR%%/boards/voices/sk/misc/super.ogg
+%%DATADIR%%/boards/voices/sk/misc/waytogo.ogg
+%%DATADIR%%/boards/voices/sk/misc/welcome.ogg
 %%DATADIR%%/boards/voices/sl/alphabet/10.ogg
 %%DATADIR%%/boards/voices/sl/alphabet/11.ogg
 %%DATADIR%%/boards/voices/sl/alphabet/12.ogg
@@ -9779,6 +10361,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/braille_lotto.py
 %%DATADIR%%/python/chat.py
 %%DATADIR%%/python/clickanddraw.py
+%%DATADIR%%/python/color_mix.py
+%%DATADIR%%/python/color_mix_light.py
 %%DATADIR%%/python/connect4.py
 %%DATADIR%%/python/connect4p/__init__.py
 %%DATADIR%%/python/connect4p/board.py
@@ -9788,6 +10372,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/connect4p/rules.py
 %%DATADIR%%/python/drawnumber.py
 %%DATADIR%%/python/electric.py
+%%DATADIR%%/python/explore.py
 %%DATADIR%%/python/findit.py
 %%DATADIR%%/python/followline.py
 %%DATADIR%%/python/gcompris/__init__.py
@@ -9799,11 +10384,14 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/gcompris/sound/__init__.py
 %%DATADIR%%/python/gcompris/timer/__init__.py
 %%DATADIR%%/python/gcompris/utils/__init__.py
+%%DATADIR%%/python/gcomprismusic.py
 %%DATADIR%%/python/gnumch.py
 %%DATADIR%%/python/guessnumber.py
 %%DATADIR%%/python/hangman.py
 %%DATADIR%%/python/hexagon.py
 %%DATADIR%%/python/hydroelectric.py
+%%DATADIR%%/python/intro_gravity.py
+%%DATADIR%%/python/land_safe.py
 %%DATADIR%%/python/lang.py
 %%DATADIR%%/python/langFindit.py
 %%DATADIR%%/python/langLib.py
@@ -9811,8 +10399,16 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/login.py
 %%DATADIR%%/python/louis_braille.py
 %%DATADIR%%/python/melody.py
+%%DATADIR%%/python/mining.py
+%%DATADIR%%/python/mining_tools.py
+%%DATADIR%%/python/mining_tutorial.py
 %%DATADIR%%/python/mosaic.py
+%%DATADIR%%/python/note_names.py
 %%DATADIR%%/python/penalty.py
+%%DATADIR%%/python/piano_composition.py
+%%DATADIR%%/python/place_your_satellite.py
+%%DATADIR%%/python/play_piano.py
+%%DATADIR%%/python/play_rhythm.py
 %%DATADIR%%/python/pythontemplate.py
 %%DATADIR%%/python/pythontest.py
 %%DATADIR%%/python/redraw.py
@@ -9820,9 +10416,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/sudoku.py
 %%DATADIR%%/python/tuxpaint.py
 %%DATADIR%%/python/watercycle.py
-share/gnome/help/gcompris/eu/gcompris.html
-share/gnome/help/gcompris/eu/overview.jpg
-share/gnome/help/gcompris/eu/topic.dat
 share/locale/af/LC_MESSAGES/gcompris.mo
 share/locale/am/LC_MESSAGES/gcompris.mo
 share/locale/ar/LC_MESSAGES/gcompris.mo
@@ -9921,8 +10514,6 @@ share/pixmaps/gcompris.png
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrm share/gnome/help/gcompris/eu
-@dirrm share/gnome/help/gcompris
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/python/gcompris/utils
 @dirrm %%DATADIR%%/python/gcompris/timer
@@ -9982,6 +10573,12 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/sl/colors
 @dirrm %%DATADIR%%/boards/voices/sl/alphabet
 @dirrm %%DATADIR%%/boards/voices/sl
+@dirrm %%DATADIR%%/boards/voices/sk/misc
+@dirrm %%DATADIR%%/boards/voices/sk/intro
+@dirrm %%DATADIR%%/boards/voices/sk/geography
+@dirrm %%DATADIR%%/boards/voices/sk/colors
+@dirrm %%DATADIR%%/boards/voices/sk/alphabet
+@dirrm %%DATADIR%%/boards/voices/sk
 @dirrm %%DATADIR%%/boards/voices/ru/misc
 @dirrm %%DATADIR%%/boards/voices/ru/geography
 @dirrm %%DATADIR%%/boards/voices/ru/colors
@@ -10151,7 +10748,22 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/redraw
 @dirrm %%DATADIR%%/boards/readingh
 @dirrm %%DATADIR%%/boards/railroad
+@dirrm %%DATADIR%%/boards/play_rhythm
 @dirrm %%DATADIR%%/boards/planegame
+@dirrm %%DATADIR%%/boards/place_your_satellite
+@dirrm %%DATADIR%%/boards/piano_composition/treble_pitches/8
+@dirrm %%DATADIR%%/boards/piano_composition/treble_pitches/4
+@dirrm %%DATADIR%%/boards/piano_composition/treble_pitches/2
+@dirrm %%DATADIR%%/boards/piano_composition/treble_pitches/1
+@dirrm %%DATADIR%%/boards/piano_composition/treble_pitches
+@dirrm %%DATADIR%%/boards/piano_composition/playActivities/background
+@dirrm %%DATADIR%%/boards/piano_composition/playActivities
+@dirrm %%DATADIR%%/boards/piano_composition/bass_pitches/8
+@dirrm %%DATADIR%%/boards/piano_composition/bass_pitches/4
+@dirrm %%DATADIR%%/boards/piano_composition/bass_pitches/2
+@dirrm %%DATADIR%%/boards/piano_composition/bass_pitches/1
+@dirrm %%DATADIR%%/boards/piano_composition/bass_pitches
+@dirrm %%DATADIR%%/boards/piano_composition
 @dirrm %%DATADIR%%/boards/photohunter
 @dirrm %%DATADIR%%/boards/penalty
 @dirrm %%DATADIR%%/boards/paratrooper
@@ -10162,6 +10774,7 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/mosaic
 @dirrm %%DATADIR%%/boards/money
 @dirrm %%DATADIR%%/boards/missing_letter
+@dirrm %%DATADIR%%/boards/mining
 @dirrm %%DATADIR%%/boards/mimetypes
 @dirrm %%DATADIR%%/boards/memory
 @dirrm %%DATADIR%%/boards/melody
@@ -10173,6 +10786,8 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/leftright
 @dirrm %%DATADIR%%/boards/lang/numbers
 @dirrm %%DATADIR%%/boards/lang
+@dirrm %%DATADIR%%/boards/land_safe
+@dirrm %%DATADIR%%/boards/intro_gravity
 @dirrm %%DATADIR%%/boards/instruments
 @dirrm %%DATADIR%%/boards/imagename
 @dirrm %%DATADIR%%/boards/imageid
@@ -10188,6 +10803,7 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/geography/northamerica
 @dirrm %%DATADIR%%/boards/geography/europe
 @dirrm %%DATADIR%%/boards/geography/continents
+@dirrm %%DATADIR%%/boards/geography/asia
 @dirrm %%DATADIR%%/boards/geography/afrique
 @dirrm %%DATADIR%%/boards/geography/africa
 @dirrm %%DATADIR%%/boards/geography
@@ -10213,6 +10829,10 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/gcompris
 @dirrm %%DATADIR%%/boards/followline
 @dirrm %%DATADIR%%/boards/fifteen
+@dirrm %%DATADIR%%/boards/explore_world_music
+@dirrm %%DATADIR%%/boards/explore_world_animals
+@dirrm %%DATADIR%%/boards/explore_farm_animals
+@dirrm %%DATADIR%%/boards/explore
 @dirrm %%DATADIR%%/boards/erase
 @dirrm %%DATADIR%%/boards/enumerate
 @dirrm %%DATADIR%%/boards/electric
@@ -10223,6 +10843,7 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/crane
 @dirrm %%DATADIR%%/boards/connect4
 @dirrm %%DATADIR%%/boards/colors
+@dirrm %%DATADIR%%/boards/color_mix
 @dirrm %%DATADIR%%/boards/clockgame
 @dirrm %%DATADIR%%/boards/clickgame
 @dirrm %%DATADIR%%/boards/click_on_letter
