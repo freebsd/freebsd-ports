@@ -40,6 +40,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Time.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Truth_Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Web.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Cover.bs
