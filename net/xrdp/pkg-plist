@@ -5,30 +5,6 @@ bin/xrdp-keygen
 bin/xrdp-sesadmin
 bin/xrdp-sesrun
 bin/xrdp-sestest
-etc/pam.d/xrdp-sesman
-etc/xrdp/km-0407.ini
-etc/xrdp/km-0409.ini
-etc/xrdp/km-040c.ini
-etc/xrdp/km-0410.ini
-etc/xrdp/km-0419.ini
-etc/xrdp/km-041d.ini
-%%JP106%%etc/xrdp/km-0411.ini
-%%JP106%%etc/xrdp/km-e0200411.ini
-%%JP106%%etc/xrdp/km-e0010411.ini
-%%JP106%%etc/xrdp/km-e0210411.ini
-@unexec if cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini; then rm -f %D/etc/xrdp/rsakeys.ini; fi
-@unexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
-@unexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
-@unexec if cmp -s %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini; then rm -f %D/etc/xrdp/xrdp.ini; fi
-etc/xrdp/rsakeys.ini.sample
-etc/xrdp/sesman.ini.sample
-etc/xrdp/startwm.sh.sample
-etc/xrdp/xrdp.ini.sample
-@exec [ -f %D/etc/xrdp/rsakeys.ini ] || cp -p %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini
-@exec [ -f %D/etc/xrdp/sesman.ini ] || cp -p %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini
-@exec [ -f %D/etc/xrdp/startwm.sh ] || cp -p %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
-@exec [ -f %D/etc/xrdp/xrdp.ini ] || cp -p %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
-etc/xrdp/xrdp.sh
 lib/xrdp/libcommon.a
 lib/xrdp/libcommon.la
 lib/xrdp/libcommon.so
@@ -57,6 +33,30 @@ lib/xrdp/libxup.a
 lib/xrdp/libxup.la
 lib/xrdp/libxup.so
 lib/xrdp/libxup.so.0
+etc/pam.d/xrdp-sesman
+etc/xrdp/km-0407.ini
+etc/xrdp/km-0409.ini
+etc/xrdp/km-040c.ini
+etc/xrdp/km-0410.ini
+etc/xrdp/km-0419.ini
+etc/xrdp/km-041d.ini
+%%JP106%%etc/xrdp/km-0411.ini
+%%JP106%%etc/xrdp/km-e0200411.ini
+%%JP106%%etc/xrdp/km-e0010411.ini
+%%JP106%%etc/xrdp/km-e0210411.ini
+@unexec if cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini; then rm -f %D/etc/xrdp/rsakeys.ini; fi
+@unexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
+@unexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
+@unexec if cmp -s %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini; then rm -f %D/etc/xrdp/xrdp.ini; fi
+etc/xrdp/rsakeys.ini.sample
+etc/xrdp/sesman.ini.sample
+etc/xrdp/startwm.sh.sample
+etc/xrdp/xrdp.ini.sample
+@exec cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini || %D/bin/xrdp-keygen xrdp %D/etc/xrdp/rsakeys.ini
+@exec [ -f %D/etc/xrdp/sesman.ini ] || cp -p %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini
+@exec [ -f %D/etc/xrdp/startwm.sh ] || cp -p %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
+@exec [ -f %D/etc/xrdp/xrdp.ini ] || cp -p %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
+etc/xrdp/xrdp.sh
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman
