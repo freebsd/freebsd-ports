@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Devel-Cover
-# Date created:	   10 October 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.93
+PORTVERSION=	0.98
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
