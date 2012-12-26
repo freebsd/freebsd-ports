@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-List-Cycle
-# Date created:				11 November 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	List-Cycle
-PORTVERSION=	1.00
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
