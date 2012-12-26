@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20121118
+PORTVERSION=	20121226
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,9 @@ WANT_PERL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITREV=	57293ff
+GITDESC=	v0.4.0-rc1
+#GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
+GITREV=	01a1316
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
@@ -159,6 +161,7 @@ MAN1=	weechat-curses.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|INSTALL|#INSTALL|' ${WRKSRC}/doc/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|GIT_VERSION=""|GIT_VERSION="${GITDESC}"|' ${WRKSRC}/git-version.sh
 .for f in src/CMakeLists.txt src/core/CMakeLists.txt cmake/*.cmake
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${f}
 .endfor
