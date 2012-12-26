@@ -4,7 +4,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack desktopfileutils
 USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_PKGCONFIG=	build
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	good
 
 MAKE_JOBS_UNSAFE=	yes
 
