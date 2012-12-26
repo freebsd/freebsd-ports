@@ -110,6 +110,7 @@
 %%ANALYZERDIR%%/classes/logstreamlineparser.class.php
 %%ANALYZERDIR%%/classes/logstreamlineparsermisc.class.php
 %%ANALYZERDIR%%/classes/logstreamlineparsersyslog.class.php
+%%ANALYZERDIR%%/classes/logstreamlineparsersyslog23.class.php
 %%ANALYZERDIR%%/classes/logstreamlineparserwinsyslog.class.php
 %%ANALYZERDIR%%/classes/logstreampdo.class.php
 %%ANALYZERDIR%%/classes/msgparser.class.php
@@ -123,6 +124,11 @@
 %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary/report.eventlog.eventsummary.lang.en.php
 %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary/report.eventlog.eventsummary.template.html
 %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary/report.eventlog.eventsummary.template.pdf
+%%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff.class.php
+%%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff/report.eventlog.logonlogoff.css
+%%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff/report.eventlog.logonlogoff.lang.en.php
+%%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff/report.eventlog.logonlogoff.template.html
+%%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff/report.eventlog.logonlogoff.template.pdf
 %%ANALYZERDIR%%/classes/reports/report.syslog.syslogsummary.class.php
 %%ANALYZERDIR%%/classes/reports/report.syslog.syslogsummary/report.syslog.syslogsummary.css
 %%ANALYZERDIR%%/classes/reports/report.syslog.syslogsummary/report.syslog.syslogsummary.lang.en.php
@@ -149,6 +155,7 @@
 %%ANALYZERDIR%%/doc/troubleshoot.html
 %%ANALYZERDIR%%/doc/windowsevent.html
 %%ANALYZERDIR%%/export.php
+%%ANALYZERDIR%%/favicon.ico
 %%ANALYZERDIR%%/images/bars/balken_25/balken.ufo
 %%ANALYZERDIR%%/images/bars/bar-middle/green_left_17.png
 %%ANALYZERDIR%%/images/bars/bar-middle/green_middle_17.png
@@ -277,6 +284,7 @@
 %%ANALYZERDIR%%/include/db_template.txt
 %%ANALYZERDIR%%/include/db_update_v0.txt
 %%ANALYZERDIR%%/include/db_update_v1.txt
+%%ANALYZERDIR%%/include/db_update_v10.txt
 %%ANALYZERDIR%%/include/db_update_v2.txt
 %%ANALYZERDIR%%/include/db_update_v3.txt
 %%ANALYZERDIR%%/include/db_update_v4.txt
@@ -292,6 +300,7 @@
 %%ANALYZERDIR%%/include/functions_filters.php
 %%ANALYZERDIR%%/include/functions_frontendhelpers.php
 %%ANALYZERDIR%%/include/functions_installhelpers.php
+%%ANALYZERDIR%%/include/functions_reports.php
 %%ANALYZERDIR%%/include/functions_themes.php
 %%ANALYZERDIR%%/include/functions_users.php
 %%ANALYZERDIR%%/index.php
@@ -304,14 +313,9 @@
 %%ANALYZERDIR%%/lang/en/admin.php
 %%ANALYZERDIR%%/lang/en/info.txt
 %%ANALYZERDIR%%/lang/en/main.php
-%%ANALYZERDIR%%/lang/it_IT/admin.php
-%%ANALYZERDIR%%/lang/it_IT/info.txt
-%%ANALYZERDIR%%/lang/it_IT/main.php
-%%ANALYZERDIR%%/lang/pt_BR/admin.php
-%%ANALYZERDIR%%/lang/pt_BR/info.txt
-%%ANALYZERDIR%%/lang/pt_BR/main.php
 %%ANALYZERDIR%%/login.php
 %%ANALYZERDIR%%/reportgenerator.php
+%%ANALYZERDIR%%/reports.php
 %%ANALYZERDIR%%/search.php
 %%ANALYZERDIR%%/statistics.php
 %%ANALYZERDIR%%/templates/admin/admin_charts.html
@@ -341,6 +345,7 @@
 %%ANALYZERDIR%%/templates/install.html
 %%ANALYZERDIR%%/templates/login.html
 %%ANALYZERDIR%%/templates/reportgenerator.html
+%%ANALYZERDIR%%/templates/reports.html
 %%ANALYZERDIR%%/templates/search.html
 %%ANALYZERDIR%%/templates/statistics.html
 %%ANALYZERDIR%%/themes/dark/about.txt
@@ -369,8 +374,6 @@
 @dirrm %%ANALYZERDIR%%/themes
 @dirrm %%ANALYZERDIR%%/templates/admin
 @dirrm %%ANALYZERDIR%%/templates
-@dirrm %%ANALYZERDIR%%/lang/pt_BR
-@dirrm %%ANALYZERDIR%%/lang/it_IT
 @dirrm %%ANALYZERDIR%%/lang/en
 @dirrm %%ANALYZERDIR%%/lang/de
 @dirrm %%ANALYZERDIR%%/lang
@@ -388,6 +391,7 @@
 @dirrm %%ANALYZERDIR%%/css
 @dirrm %%ANALYZERDIR%%/cron
 @dirrm %%ANALYZERDIR%%/classes/reports/report.syslog.syslogsummary
+@dirrm %%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff
 @dirrm %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary
 @dirrm %%ANALYZERDIR%%/classes/reports
 @dirrm %%ANALYZERDIR%%/classes/msgparsers

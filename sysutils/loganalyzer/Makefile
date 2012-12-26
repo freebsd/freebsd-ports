@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	loganalyzer
-PORTVERSION=	3.0.0
+PORTVERSION=	3.4.5
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 
-MAINTAINER=	cristianorolim@hotmail.com
+MAINTAINER=	cristianorolim@outlook.com
 COMMENT=	Web based Syslog browsing and analysis
 
 NO_BUILD=	YES
@@ -37,7 +37,6 @@ DEFAULT_PHP_VER=5
 .endif
 
 .include <bsd.port.pre.mk>
-
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 .if defined(WITH_PHP_MYSQL)
