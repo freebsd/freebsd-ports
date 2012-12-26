@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.89
+PORTVERSION=	0.90
 PORTREVISION=	1
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
