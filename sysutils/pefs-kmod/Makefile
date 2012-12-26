@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pefs
-DISTVERSION=	2012-09-30
+DISTVERSION=	2012-11-12
 CATEGORIES=	sysutils kld
-MASTER_SITES=	http://cloud.github.com/downloads/glk/${PORTNAME}/
+MASTER_SITES=	https://pefs.googlecode.com/files/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	gleb@FreeBSD.org
