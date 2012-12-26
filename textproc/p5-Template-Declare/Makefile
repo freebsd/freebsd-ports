@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-Template-Declare
-# Date created:				23 April 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Declare
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
