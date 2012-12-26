@@ -1,40 +1,26 @@
-# New ports collection makefile for: trac-autocomplete
-# Date created:                      December 07, 2009
-# Whom:                              Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	autocomplete
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	autocompleteusersplugin-r${REL}
 
 MAINTAINER=	rea@FreeBSD.org
-COMMENT=	A plugin for autocompletion of user names in ticket fields
+COMMENT=	Plugin for autocompletion of user names in ticket fields
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_ZIP=	yes
-NO_BUILD=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	AutocompleteUsers
 PYDISTUTILS_NOEGGINFO=	yes
 WRKSRC=		${WRKDIR}/autocompleteusersplugin/0.11
 REL=		8451
-PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
-
-# We must fix file permissions -- ZIP file have 0000 for every file.
-# Directory permissions are fine (they aren't stored inside ZIP
-# file), but we set them too -- just in case.
-post-extract:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
-	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 
 # Target to generate packaging list
 plist:
