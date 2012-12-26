@@ -4,7 +4,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -30,7 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	KEYBIND
 
-KEYBIND_DESC=	Global keyboard shortcuts
+KEYBIND_DESC=	Multimedia keyboard shortcuts
 
 MAN1=	xfce4-mixer.1
 

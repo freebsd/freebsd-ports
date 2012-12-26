@@ -3,6 +3,7 @@
 
 PORTNAME=	hotot
 PORTVERSION=	0.9.8.10
+PORTREVISION=	1
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
