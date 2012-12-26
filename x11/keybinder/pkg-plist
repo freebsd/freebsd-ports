@@ -1,7 +1,8 @@
 include/keybinder.h
+lib/girepository-1.0/Keybinder-0.0.typelib
 lib/libkeybinder.la
 lib/libkeybinder.so
-lib/libkeybinder.so.0
+lib/libkeybinder.so.1
 %%LUA%%%%LUA_MODLIBDIR%%/keybinder.la
 %%LUA%%%%LUA_MODLIBDIR%%/keybinder.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.py
@@ -9,5 +10,35 @@ lib/libkeybinder.so.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.so
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/keybinder
 libdata/pkgconfig/keybinder.pc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_gi.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keybinder.vapi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lminigtk.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vexample.vala
+share/gir-1.0/Keybinder-0.0.gir
+%%DOCS%%share/gtk-doc/html/keybinder/annotation-glossary.html
+%%DOCS%%share/gtk-doc/html/keybinder/api-index-full.html
+%%DOCS%%share/gtk-doc/html/keybinder/ch01.html
+%%DOCS%%share/gtk-doc/html/keybinder/deprecated-api-index.html
+%%DOCS%%share/gtk-doc/html/keybinder/home.png
+%%DOCS%%share/gtk-doc/html/keybinder/index.html
+%%DOCS%%share/gtk-doc/html/keybinder/index.sgml
+%%DOCS%%share/gtk-doc/html/keybinder/keybinder-keybinder.html
+%%DOCS%%share/gtk-doc/html/keybinder/keybinder.devhelp2
+%%DOCS%%share/gtk-doc/html/keybinder/left.png
+%%DOCS%%share/gtk-doc/html/keybinder/object-tree.html
+%%DOCS%%share/gtk-doc/html/keybinder/right.png
+%%DOCS%%share/gtk-doc/html/keybinder/style.css
+%%DOCS%%share/gtk-doc/html/keybinder/up.png
+%%DOCS%%@dirrm share/gtk-doc/html/keybinder
+%%DOCS%%@dirrmtry share/gtk-doc/html
+%%DOCS%%@dirrmtry share/gtk-doc
+@dirrmtry share/gir-1.0
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/keybinder
+@dirrmtry lib/girepository-1.0
