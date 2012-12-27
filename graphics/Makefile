@@ -182,6 +182,7 @@
     SUBDIR += evas_generic_loaders-pdf
     SUBDIR += evas_generic_loaders-ps
     SUBDIR += evas_generic_loaders-raw
+    SUBDIR += evas_generic_loaders-svg
     SUBDIR += evas_generic_loaders-xcf
     SUBDIR += evince
     SUBDIR += evolvotron
