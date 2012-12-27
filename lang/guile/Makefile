@@ -1,7 +1,4 @@
-# New ports collection makefile for:	guile
-# Date created:		2 November 1997
-# Whom:			jseger@FreeBSD.org
-#
+# Created by: jseger@FreeBSD.org
 # $FreeBSD$
 #    $MCom: ports/lang/guile/Makefile,v 1.1 2006/09/12 14:57:06 ahze Exp $
 
@@ -11,10 +8,10 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 
-MAINTAINER=	amatus@gnu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=	autoconf libltdl
 USE_GMAKE=	yes
@@ -36,8 +33,6 @@ REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
 
 INFO=		goops guile-tut guile r5rs
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
@@ -47,4 +42,4 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|2.63|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
