@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gnupg
-# Date created:		Sep 30, 1998
-# Whom:			kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -112,10 +107,10 @@ PLIST_SUB+=	SCDAEMON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-CONFIGURE_ARGS+=--without-libcurl
-.else
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-libcurl
 .endif
 
 verify:	checksum
