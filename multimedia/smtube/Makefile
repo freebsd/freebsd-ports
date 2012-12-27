@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smplayer/SMTube/${PORTVERSION}/
 
@@ -29,6 +28,8 @@ USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
 		corelib gui network xml
 INSTALLS_ICONS=	yes
 
+PORTDOCS=	*
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -42,7 +43,6 @@ post-patch:
 .if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
 		${WRKSRC}/Makefile
-PORTDOCS=	*
 .else
 	@${REINPLACE_CMD} -e '/DOC_PATH/d' ${WRKSRC}/Makefile
 .endif
