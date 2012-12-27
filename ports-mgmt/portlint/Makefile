@@ -1,12 +1,11 @@
-# Created by:			Jun-ichiro itojun Hagino <itojun@itojun.org>
-#
+# Created by: Jun-ichiro itojun Hagino <itojun@itojun.org>
 # $FreeBSD$
 #
 # This port is self contained in the src directory.
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.13.13
+PORTVERSION=	2.14.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
