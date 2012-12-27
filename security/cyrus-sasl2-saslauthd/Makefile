@@ -25,6 +25,8 @@ PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKSRC}/saslauthd
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
+MAKE_JOBS_SAFE=	yes
+
 MAN8=		saslauthd.8
 
 USE_RC_SUBR=	saslauthd
