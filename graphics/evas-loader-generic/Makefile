@@ -14,7 +14,7 @@ COMMENT=	A hardware accelerated canvas API (generic loader)
 
 LICENSE=	BSD
 
-EVAS_GENERIC_LOADERS=	gst pdf ps raw xcf
+EVAS_GENERIC_LOADERS=	gst pdf ps raw svg xcf
 
 .for NODE in ${EVAS_GENERIC_LOADERS}
 OPTIONS+=	${NODE:U} "Install ${NODE} evas generic loader" on
