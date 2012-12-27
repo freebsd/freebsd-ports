@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coccigrep
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -14,8 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/spatch:${PORTSDIR}/devel/coccinelle
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	regit
-GH_TAGNAME=	v1.11
-GH_COMMIT=	225f8db
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	5ca9276
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
