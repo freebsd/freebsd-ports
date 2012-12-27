@@ -1,5 +1,4 @@
-# Created by:	Marc G. Fournier <scrappy@FreeBSD.org>
-#
+# Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME?=	postgresql
@@ -40,9 +39,9 @@ GNU_CONFIGURE=	yes
 .undef GNU_CONFIGURE
 .endif
 
-PG_USER?=	pgsql
-PG_GROUP?=	${PG_USER}
-PG_UID?=	70
+PG_USER=	pgsql
+PG_GROUP=	pgsql
+PG_UID=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 INCLUDES+=	-I${LOCALBASE}/include
@@ -69,12 +68,8 @@ SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
-USERS?=		${PG_USER}
-.if (${USERS} != "pgsql")
-UID_FILES+=	${WRKDIR}/pguid
-GID_FILES+=	${WRKDIR}/pggid
-.endif
-GROUPS?=	${PG_GROUP}
+USERS=		${PG_USER}
+GROUPS=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
@@ -360,12 +355,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
 		${WRKSRC}/configure.in
-.  endif
-
-.  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
-pre-install:
-	@${SED} -n s,pgsql,${PG_USER},gp ${PORTSDIR}/UIDs > ${WRKDIR}/pguid
-	@${SED} -n s,pgsql,${PG_GROUP},gp ${PORTSDIR}/GIDs > ${WRKDIR}/pggid
 .  endif
 
 do-install:
