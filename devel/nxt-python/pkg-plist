@@ -1,5 +1,6 @@
 bin/nxt_filer
 bin/nxt_push
+bin/nxt_server
 bin/nxt_test
 %%PYTHON_SITELIBDIR%%/nxt/__init__.py
 %%PYTHON_SITELIBDIR%%/nxt/__init__.pyc
@@ -58,5 +59,14 @@ bin/nxt_test
 %%PYTHON_SITELIBDIR%%/nxt/utils.py
 %%PYTHON_SITELIBDIR%%/nxt/utils.pyc
 %%PYTHON_SITELIBDIR%%/nxt/utils.pyo
+%%PYTHON_SITELIBDIR%%/nxt/fantomsock.py
+%%PYTHON_SITELIBDIR%%/nxt/motcont.py
+%%PYTHON_SITELIBDIR%%/nxt/ipsock.py
+%%PYTHON_SITELIBDIR%%/nxt/fantomsock.pyc
+%%PYTHON_SITELIBDIR%%/nxt/motcont.pyc
+%%PYTHON_SITELIBDIR%%/nxt/ipsock.pyc
+%%PYTHON_SITELIBDIR%%/nxt/fantomsock.pyo
+%%PYTHON_SITELIBDIR%%/nxt/motcont.pyo
+%%PYTHON_SITELIBDIR%%/nxt/ipsock.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/nxt/sensor
 @dirrm %%PYTHON_SITELIBDIR%%/nxt
