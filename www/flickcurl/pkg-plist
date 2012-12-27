@@ -16,9 +16,16 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/appgarden-tell-us-about-your-app.png
 %%DOCSDIR%%/appgarden-test-app-page.png
 %%DOCSDIR%%/flickcurl-auth-authenticate.html
+%%DOCSDIR%%/flickcurl-auth-build.html
 %%DOCSDIR%%/flickcurl-auth-register.html
+%%DOCSDIR%%/flickcurl-auth-upgrade.html
 %%DOCSDIR%%/flickcurl-auth-use.html
 %%DOCSDIR%%/flickcurl-auth.html
+%%DOCSDIR%%/flickcurl-legacy-auth-authenticate.html
+%%DOCSDIR%%/flickcurl-legacy-auth-build.html
+%%DOCSDIR%%/flickcurl-legacy-auth-register.html
+%%DOCSDIR%%/flickcurl-legacy-auth-use.html
+%%DOCSDIR%%/flickcurl-legacy-auth.html
 %%DOCSDIR%%/flickcurl-searching-search-example.html
 %%DOCSDIR%%/flickcurl-searching-search-extras.html
 %%DOCSDIR%%/flickcurl-searching-search-paging.html
