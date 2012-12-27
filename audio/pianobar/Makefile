@@ -1,12 +1,8 @@
-# New ports collection makefile for: pianobar
-# Date created: 8 October 2010
-# Whom: John Hixson <john@pcbsd.org>
-#
+# Created by: John Hixson <john@pcbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pianobar
-PORTVERSION=	2012.09.07
+PORTVERSION=	2012.12.01
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
@@ -30,7 +26,7 @@ PLIST_FILES=	bin/pianobar
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-CFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
