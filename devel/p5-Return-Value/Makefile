@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Return-Value
-# Date created:				27 December 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Return-Value
-PORTVERSION=	1.666001
+PORTVERSION=	1.666002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
