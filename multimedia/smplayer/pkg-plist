@@ -1,10 +1,15 @@
 bin/smplayer
 share/applications/smplayer.desktop
 share/applications/smplayer_enqueue.desktop
+share/icons/hicolor/128x128/apps/smplayer.png
 share/icons/hicolor/16x16/apps/smplayer.png
+share/icons/hicolor/192x192/apps/smplayer.png
 share/icons/hicolor/22x22/apps/smplayer.png
+share/icons/hicolor/256x256/apps/smplayer.png
 share/icons/hicolor/32x32/apps/smplayer.png
+share/icons/hicolor/512x512/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
+share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
 %%DATADIR%%/translations/smplayer_ar_SY.qm
@@ -48,4 +53,6 @@ share/icons/hicolor/64x64/apps/smplayer.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/shortcuts
 @dirrmtry %%DATADIR%%
+@dirrmtry share/icons/hicolor/512x512/apps
+@dirrmtry share/icons/hicolor/512x512
 @dirrmtry share/applications

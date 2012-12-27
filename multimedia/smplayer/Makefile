@@ -1,18 +1,13 @@
-# New ports collection makefile for:	smplayer
-# Date created:				13 Jun, 2007
-# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	smplayer
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.8.3
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A complete front-end based on QT4 for mplayer
+COMMENT=	Complete front-end based on Qt4 for mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-themes
