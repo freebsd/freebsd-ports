@@ -1,24 +1,23 @@
-# New ports collection makefile for:	xnee
-# Date created:				27 May 2002
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xnee
-PORTVERSION=	3.13
+PORTVERSION=	3.15
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	X events recorder and player
 
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		xcb:${PORTSDIR}/x11/libxcb
+
 LICENSE=	GPLv3
 
-USE_XORG=	xtst
-USE_GNOME=	gnomehack
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_XORG=	x11 xau xdmcp xext xi xtst
+USE_GNOME=	gnomehack
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
@@ -27,16 +26,27 @@ MAN1=		cnee.1 xnee.1
 INFO=		xnee
 
 OPTIONS_DEFINE=	GNEE PNEE
-GNEE_DESC=	Build the GUI frontend
-PNEE_DESC=	Build the Gnome Panel frontend
+GNEE_DESC=	GUI frontend
+PNEE_DESC=	GNOME panel frontend
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNEE}
-USE_GNOME+=	gtk20 libgnomeui
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
+		cairo:${PORTSDIR}/graphics/cairo \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+
+CONFIGURE_ARGS+=--enable-gui
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+USE_XORG+=	pixman xcomposite xcursor xdamage xfixes xinerama xrandr xrender
+USE_GNOME+=	gdkpixbuf2 gtk20 libgnomeui
 MAN1+=		gnee.1
 PLIST_SUB+=	GNEE=""
-DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PREFIX}/share/pixmaps/xnee.png" \
+DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PORTNAME}.png" \
 			"gnee" "Development;" true
 .else
 CONFIGURE_ARGS+=--disable-gui
@@ -44,6 +54,8 @@ PLIST_SUB+=	GNEE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPNEE}
+BROKEN=		Does not build, needs newer gnomepanel
+CONFIGURE_ARGS+=-enable-gnome-applet
 USE_GNOME+=	gnomepanel
 MAN1+=		pnee.1
 PLIST_SUB+=	PNEE=""
