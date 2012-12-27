@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}
 
-MAN1=		gawk.1 igawk.1 pgawk.1
+MAN1=		gawk.1 dgawk.1 igawk.1 pgawk.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
