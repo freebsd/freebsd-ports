@@ -1,3 +1,8 @@
+bin/cyassl-config
+lib/libcyassl.a
+lib/libcyassl.la
+lib/libcyassl.so
+lib/libcyassl.so.4
 include/cyassl/openssl/asn1.h
 include/cyassl/openssl/bio.h
 include/cyassl/openssl/bn.h
@@ -73,10 +78,6 @@ include/cyassl/test.h
 include/cyassl/version.h
 include/cyassl/ocsp.h
 include/cyassl/crl.h
-lib/libcyassl.a
-lib/libcyassl.la
-lib/libcyassl.so
-lib/libcyassl.so.3
 @dirrm include/cyassl/openssl
 @dirrm include/cyassl/ctaocrypt
 @dirrm include/cyassl
