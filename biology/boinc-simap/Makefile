@@ -1,12 +1,10 @@
-# New ports collection makefile for:	boinc-simap
-# Date created:				29 May 2006
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	boinc-simap
 PORTVERSION=	${SIMAP_VERSION}.${HMMER_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	http://boincsimap.org/boincsimap/download/
 DISTNAME=	${SIMAP_BINARY} ${HMMER_BINARY}
@@ -26,8 +24,7 @@ BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	nobody
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
-SIMAP_SITE=	boinc.bio.wzw.tum.de_boincsimap
-SIMAP_URL=	boinc.bio.wzw.tum.de/boincsimap
+SIMAP_SITE=	boincsimap.org_boincsimap
 SIMAP_BINARY=	simap_${SIMAP_VERSION}_${MACH}-pc-freebsd
 SIMAP_VERSION=	5.10
 HMMER_BINARY=	hmmer_${HMMER_VERSION}_${MACH}-pc-freebsd
@@ -38,11 +35,11 @@ PLIST_SUB=	SIMAP_BINARY=${SIMAP_BINARY} HMMER_BINARY=${HMMER_BINARY} SIMAP_SITE=
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-OPTIONS=	SSE "SSE optimized app (warning! your CPU must support SSE)" off
+OPTIONS_DEFINE=	SSE
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_SSE
+.if ${PORT_OPTIONS:MSSE}
 MACH=		i686
 .else
 MACH=		i386
@@ -52,15 +49,15 @@ MACH=		i386
 AMD64=		""
 .if ${OSVERSION} < 800000
 AMD64_BEFORE_8000000=		""
-AMD64_AFTER_8000000=		"@comment"
+AMD64_AFTER_8000000=		"@comment "
 .else
-AMD64_BEFORE_8000000=		"@comment"
+AMD64_BEFORE_8000000=		"@comment "
 AMD64_AFTER_8000000=		""
 .endif
 .else
-AMD64=		"@comment"
-AMD64_BEFORE_8000000=		"@comment"
-AMD64_AFTER_8000000=		"@comment"
+AMD64=		"@comment "
+AMD64_BEFORE_8000000=		"@comment "
+AMD64_AFTER_8000000=		"@comment "
 .endif
 
 SUB_FILES=	app_info.xml pkg-message

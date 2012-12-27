@@ -1,18 +1,18 @@
 *****************************************************************************
 ATTACHING PROJECT
 
-Just run boinc_gui, choose Attach, and follow instructions.
-Project URL is boinc.bio.wzw.tum.de/boincsimap
+Just run boincmgr, choose Attach, and follow instructions.
+Project URL is boincsimap.org/boincsimap
 
 MANUAL INSTALLATION
  *) If this is your first time in any BOINC project, create a new account at
-    http://boinc.bio.wzw.tum.de/boincsimap/create_account_form.php
+    http://boincsimap.org/boincsimap/create_account_form.php
 
- *) Or get your account key at http://boinc.bio.wzw.tum.de/boincsimap/get_passwd.php
+ *) Or get your account key at http://boincsimap.org/boincsimap/get_passwd.php
 
  *) Attach to the project:
     cd /var/db/boinc
-    boinc_cmd --project_attach boinc.bio.wzw.tum.de/boincsimap <account key>
+    boinccmd --project_attach boincsimap.org/boincsimap <account key>
 *****************************************************************************
 %%AMD64%%  IMPORTANT NOTICE FOR AMD64 USERS:
 %%AMD64%%
