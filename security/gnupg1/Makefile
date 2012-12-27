@@ -19,9 +19,6 @@ GNU_CONFIGURE=	YES
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
-.if ${CC} == "clang"
-CFLAGS:=	${CFLAGS:S/$/ -std=c89/}
-.endif
 MAN1=		gpg.1 gpgv.1 gpg.ru.1 gpg-zip.1
 MAN7=		gnupg.7
 INFO=		gnupg1
@@ -38,6 +35,13 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 		CURL "use libcurl for the keyserver interface" on
 
 .include <bsd.port.pre.mk>
+
+.if ${CC} == "clang" || ${OSVERSION} >= 1000024
+CFLAGS:=	${CFLAGS:S/$/ -std=c89/}
+.if (${ARCH} == "i386")
+CFLAGS:=	${CFLAGS:S/$/ -fheinous-gnu-extensions/}
+.endif
+.endif
 
 .if defined(WITH_LIBICONV)
 USE_ICONV=	yes
