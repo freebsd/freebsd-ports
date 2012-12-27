@@ -29,6 +29,7 @@ share/gir-1.0/Keybinder-0.0.gir
 %%DOCS%%share/gtk-doc/html/keybinder/index.html
 %%DOCS%%share/gtk-doc/html/keybinder/index.sgml
 %%DOCS%%share/gtk-doc/html/keybinder/keybinder-keybinder.html
+%%DOCS%%share/gtk-doc/html/keybinder/keybinder.devhelp
 %%DOCS%%share/gtk-doc/html/keybinder/keybinder.devhelp2
 %%DOCS%%share/gtk-doc/html/keybinder/left.png
 %%DOCS%%share/gtk-doc/html/keybinder/object-tree.html
