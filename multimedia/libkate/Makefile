@@ -1,9 +1,5 @@
-# Ports collection makefile for:	libkate
-# Date created:				Sat 19 Oct 2008
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	barbara.xxx1975@libero.it
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
 
 LICENSE=	BSD
@@ -28,21 +24,22 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 
 MAN1=		katalyzer.1 kateenc.1 katedec.1
 
-OPTIONS=	DOXYGEN "Build docs with doxygen (requires TeX, QT, etc.)" off \
-		HTMLDOCS "Install bundled html documentation" off \
-		KATEDJ "Install KateDJ (requires wxPython - WARNING!)" off
+OPTIONS_DEFINE=		DOXYGEN HTMLDOCS KATEDJ
+
+HTMLDOCS_DESC=	Install bundled html documentation
+KATEDJ_DESC=	Install KateDJ (Huge dependencies list)
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .else
 CONFIGURE_ARGS+=	--disable-doc
 .endif
 
-.if defined(WITH_KATEDJ)
+.if ${PORT_OPTIONS:MKATEDJ}
 RUN_DEPENDS=	${LOCALBASE}/bin/oggz:${PORTSDIR}/audio/liboggz
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
@@ -55,57 +52,37 @@ PLIST_SUB+=	KATEDJ="@comment "
 .endif
 
 post-patch:
-.if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -E -e "s|^(katepcdir =).*|\1 ${LOCALBASE}/libdata/pkgconfig|" \
-	${WRKSRC}/Makefile.in
-. if !defined(WITH_HTMLDOCS) && !defined(WITH_DOXYGEN)
-.  if !defined(WITH_KATEDJ)
 	@${REINPLACE_CMD} -E -e \
-		's|^(install-data-am: )(install-data-local )(install-man)|\1\3|; \
-		s| man/KateDJ.1||' \
-	${WRKSRC}/doc/Makefile.in
-.  else
-	@${REINPLACE_CMD} -E -e \
-		's|^(install-data-am: )(install-data-local )(install-man)|\1\3|' \
-	${WRKSRC}/doc/Makefile.in
-.  endif
-. else
-.  if !defined(WITH_KATEDJ)
-	@${REINPLACE_CMD} -E -e \
-		' s| man/KateDJ.1||' \
-	${WRKSRC}/doc/Makefile.in
-.  endif
-. endif
-.else
-	@${REINPLACE_CMD} -E -e "s|^(katepcdir =).*|\1 ${LOCALBASE}/libdata/pkgconfig|; \
-		s|^(SUBDIRS =.*) doc|\1|" \
-	${WRKSRC}/Makefile.in
-. if !defined(WITH_KATEDJ)
-	@${REINPLACE_CMD} -E -e \
-		' s| man/KateDJ.1||' \
-	${WRKSRC}/doc/Makefile.in
-. endif
-.endif
+		"s|^(katepcdir =).*|\1 ${PREFIX}/libdata/pkgconfig|" \
+		${WRKSRC}/Makefile.in
 
-.if !defined(WITH_KATEDJ)
+.if ! ${PORT_OPTIONS:MKATEDJ}
 	@${REINPLACE_CMD} -e \
 		"s|  HAVE_PYTHON_TRUE=$$|  HAVE_PYTHON_TRUE='#'|; \
-		s|  HAVE_PYTHON_FALSE=\'#\'$$|  HAVE_PYTHON_FALSE=|" \
-	${WRKSRC}/configure
+			s|  HAVE_PYTHON_FALSE=\'#\'$$|  HAVE_PYTHON_FALSE=|" \
+		${WRKSRC}/configure
+.endif
+
+	@${REINPLACE_CMD} -E -e \
+		"s|^(install-data-am: ).*|\1|" \
+		${WRKSRC}/doc/Makefile.in
+
+.if ! ${PORT_OPTIONS:MDOXYGEN} || ! ${PORT_OPTIONS:MDOCS}
+	@${TOUCH} ${WRKSRC}/doc/.doc-dummy-target
 .endif
 
 post-install:
 .for f in ${MAN1}
-	${INSTALL_MAN}  ${WRKSRC}/doc/man/${f}  ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/${f} ${PREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for FILE in README AUTHORS COPYING THANKS ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 . endfor
-. if defined(WITH_HTMLDOCS)
-	${CP} -RPpn ${WRKSRC}/doc/html ${DOCSDIR}/html
+. if ${PORT_OPTIONS:MHTMLDOCS} || ${PORT_OPTIONS:MDOXYGEN}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR})
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
