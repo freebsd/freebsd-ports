@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.257 2012/10/08 19:52:14 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.264 2012/12/27 23:29:04 marcus Exp $
 #
 
 use strict;
@@ -47,12 +47,12 @@ $contblank = 1;
 $portdir = '.';
 
 @ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/inetd.conf);
-@MASTERSITES_WHITELIST = qw(googlecode.com);
+@MASTERSITES_WHITELIST = qw(googlecode.com nodeload.github.com);
 
 # version variables
 my $major = 2;
-my $minor = 13;
-my $micro = 13;
+my $minor = 14;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -196,8 +196,8 @@ my @varlist =  qw(
 	WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
-	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
-	PLIST_FILES OPTIONS INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
+	USE_GNOME INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
+	PLIST_FILES OPTIONS OPTIONS_DEFINE INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
 	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
 	GNU_CONFIGURE CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB
 );
@@ -379,146 +379,6 @@ if ($committer) {
 	}
 
 	find(\&find_proc, '.');
-
-	sub checksubdir {
-		my $dir = shift;
-
-		print "OK: checking CVS status of \"$dir\".\n" if ($verbose);
-		opendir DIR, $dir;
-		my @filenames = readdir DIR;
-		closedir DIR;
-
-		my %entries;
-		if (-f "$dir/CVS/Entries") {
-			open ENTRIES, "<$dir/CVS/Entries";
-			while (<ENTRIES>) {
-				chomp;
-				my @entry = split /\//;
-				if ($entry[0] eq 'D') {
-					$entries{ $entry[1] } = $entry[0]
-						if $entry[1];
-				}
-				elsif ($entry[0] eq '') {
-					if ($entry[2] =~ /^-/) {
-						$entries{ $entry[1] } = 'x';
-					}
-					elsif ($entry[2] eq '0') {
-						$entries{ $entry[1] } = 'n';
-					}
-					else {
-						$entries{ $entry[1] } = 'f';
-					}
-				}
-				else {
-					&perror("WARN", "", -1, "can not parse CVS line $_");
-				}
-			}
-			close ENTRIES;
-		} else {
-			&perror("WARN", "", -1, "no CVS directories. Use -N to check a new port.");
-			return;
-		}
-
-		if (-f "$dir/CVS/Entries.Log") {
-			open ENTRIES, "<$dir/CVS/Entries.Log";
-			while (<ENTRIES>) {
-				chomp;
-				my $cmd;
-				my @entry = split /\//;
-				if (/^(.) (.*)$/) {
-					$cmd = $1;
-					@entry = split /\//, $2;
-				}
-				else {
-					$cmd = 'A';
-					@entry = split /\//;
-				}
-					if ($cmd eq 'A') {
-						if ($entry[0] eq 'D') {
-							$entries{ $entry[1] } = $entry[0]
-								if $entry[1];
-						}
-					elsif ($entry[0] eq '') {
-						if ($entry[2] =~ /^-/) {
-							$entries{ $entry[1] } = 'x';
-						}
-						elsif ($entry[2] eq '0') {
-							$entries{ $entry[1] } = 'n';
-						}
-						else {
-							$entries{ $entry[1] } = 'f';
-						}
-					}
-					else {
-						&perror("WARN", "", -1, "can not parse CVS line $_");
-					}
-				}
-				elsif ($cmd eq 'R') {
-					delete $entries{ $entry[1] }
-						if $entry[1];
-				}
-				# ignore unknown commands
-			}
-			close ENTRIES;
-		}
-
-		foreach (@filenames) {
-			next
-				if /^(?:\.\.?|CVS)$/;
-			my $filename = $dir eq '.' ? $_ : "$dir/$_";
-			if (-d $filename) {
-				if ((!$entries{$_} || $entries{$_} ne 'D') && $filename ne 'work') {
-					&perror("FATAL", "", -1, "directory $filename not in CVS.");
-				}
-				else {
-					delete $entries{$_};
-					checksubdir($filename);
-				}
-			}
-			else {
-				if (!$entries{$_}) {
-					&perror("FATAL", "", -1, "file $filename not in CVS.")
-						unless (eval { /$ENV{'PL_CVS_IGNORE'}/, 1 } &&
-							/$ENV{'PL_CVS_IGNORE'}/);
-				}
-				elsif ($filename =~ /\.core$/ && $entries{$_}) {
-					&perror("FATAL", "", -1, "file $filename ends in ".
-						"\".core\".  This file can be removed by periodic ".
-						"cleanup scripts.  Do not include files that end in ".
-						"\".core\".");
-				}
-				elsif ($entries{$_} eq 'D') {
-					&perror("FATAL", "", -1, "file $filename is a directory in CVS.");
-				}
-				elsif ($entries{$_} eq 'x') {
-					&perror("FATAL", "", -1, "file $filename is deleted in CVS.");
-				}
-				elsif ($entries{$_} eq 'n') {
-					if (!system("egrep", "-q", "\\\$$rcsidstr\[^\$\]+\\\$", $filename)) {
-						&perror("WARN", "", -1, "RCS tag \"\$$rcsidstr\$\" ".
-							"should be empty in new file $filename.");
-					}
-					delete $entries{$_};
-				}
-				else {
-					delete $entries{$_};
-				}
-			}
-		}
-
-		while (my ($file, $type) = each %entries) {
-			next if $type eq 'x';
-			if ($type eq 'D') {
-				&perror("FATAL", "", -1, "CVS directory $dir/$file missing");
-			}
-			else {
-				&perror("FATAL", "", -1, "CVS file $dir/$file missing");
-			}
-		}
-	}
-
-	checksubdir('.')
-		unless $newport;
 
 	# Check for ports that may break INDEX
 	my $indexerr = `env LOCALBASE=/nonexistentlocal make $makeenv describe 2>&1 >/dev/null`;
@@ -744,6 +604,11 @@ sub checkplist {
 		# make it easier to handle.
 		$_ =~ s/\s+$//;
 		$_ =~ s/\n$//;
+
+		if ($_ =~ /\.DS_Store/) {
+			&perror("WARN", $file, $., ".DS_Store meta data files must not ".
+				"be installed.");
+		}
 
 		if ($osname eq 'NetBSD' && $_ =~ /<\$ARCH>/) {
 			&perror("WARN", $file, $., "use of <\$ARCH> deprecated, ".
@@ -1377,6 +1242,7 @@ sub checkmakefile {
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
 	my(@mopt, @oopt);
+	my(@nmopt, @noopt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
 	my %deprecated = ();
@@ -1386,6 +1252,7 @@ sub checkmakefile {
 	my $options_mk_line = 0;
 	my $docsused = 0;
 	my $nlsused = 0;
+	my $newoptused = 0;
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1458,6 +1325,26 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: header
+	#
+	my @lines = split("\n", $whole);
+	print "OK: checking header in $file.\n" if ($verbose);
+	if ($lines[1] =~ /^# (?:New )?[Pp]orts collection [mM]akefile/) {
+		&perror("FATAL", $file, 1, "old style headers found.");
+	} elsif ($lines[1] =~ /^# Created by: \S/) {
+		if ($lines[2] !~ /^# \$$rcsidstr[:\$]/) {
+			&perror("FATAL", $file, 2, "header should be ".
+				"followed by \$$rcsidstr\$.");
+		} elsif ($lines[3] !~ /^$/) {
+			&perror("FATAL", $file, 3, "do not add extra ".
+				"empty comments after header.");
+		}
+	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
+		&perror("FATAL", $file, 1, "incorrect header; ".
+			"use Created by: with a space, then \$$rcsidstr\$.");
+	}
+
+	#
 	# whole file: $(VARIABLE)
 	#
 	if ($parenwarn) {
@@ -1466,6 +1353,18 @@ sub checkmakefile {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "use \${VARIABLE}, instead of ".
 				"\$(VARIABLE).");
+		}
+	}
+
+	#
+	# whole file: empty(${VARIABLE})
+	#
+	if ($parenwarn) {
+		print "OK: checking for empty(\${VARIABLE}).\n" if ($verbose);
+		if ($whole =~ /empty\(\${[\w\d]+/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN", $file, $lineno, "use empty(VARIABLE), instead of ".
+				"empty(\${VARIABLE}).");
 		}
 	}
 
@@ -1525,8 +1424,17 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: USE_* used too late
+	# whole file: USE_* and others variables used too late
 	#
+	my @options_early = qw(
+		OPTIONS
+		OPTIONS_DEFAULT
+		OPTIONS_DEFINE
+		OPTIONS_EXCLUDE
+		OPTIONS_MULTI.*?
+		OPTIONS_SINGLE.*?
+	);
+
 	pos($whole) = 0;
 	if ($whole =~ /^\.include\s+<bsd\.port\.pre\.mk>$/gm) {
 		# Remember position
@@ -1549,11 +1457,10 @@ sub checkmakefile {
 
 		my @other_early = qw(
 			EMACS_PORT_NAME
-			OPTIONS
 		);
 
 		my $earlypattern = join('|', 'USE_(?:'.join('|', @use_early).')',
-			@other_early);
+			@other_early, @options_early);
 
 		while ($whole =~ /^($earlypattern)[+?:!]?=/gmo) {
 			my $lineno = &linenumber($`);
@@ -1562,18 +1469,41 @@ sub checkmakefile {
 		}
 	}
 
+	#
+	# whole file: check OPTIONS
+	#
+	print "OK: checking OPTIONS.\n" if ($verbose);
 	pos($whole) = 0;
 	if ($whole =~ /^\.include\s+<bsd\.port\.options\.mk>$/gm) {
 		# Remember position
 		$options_mk_line = &linenumber($`) + 1;
 	}
 
-	#
-	# whole file: check OPTIONS
-	#
 	pos($whole) = 0;
-	print "OK: checking OPTIONS.\n" if ($verbose);
+	if ($whole =~ /^\.include\s+<bsd\.port\.options\.mk>$/gm) {
+		my $earlypattern = join('|', @options_early);
+		while ($whole =~ /^($earlypattern)[+?]?=/gmo) {
+			my $lineno = &linenumber($`);
+			&perror("FATAL", $file, $lineno, "$1 is set after ".
+				"including bsd.port.options.mk.");
+		}
+	}
+
+	pos($whole) = 0;
+	if ($whole =~ /\nOPTIONS_DEFINE[+?]?=/) {
+		$newoptused++;
+	}
 	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
+	@noopt = split(/\s+/, $makevar{OPTIONS_DEFINE});
+	if (scalar(@oopt) && $newoptused) {
+		&perror("FATAL", $file, -1, "Both old and new OPTIONS are found. ".
+			"Remove one or another.");
+	}
+	if (scalar(@oopt)) {
+		&perror("WARN", $file, -1, "Use of OPTIONS is obsolete. Use the ".
+			"new options framework.");
+	}
+	pos($whole) = 0;
 	while ($whole =~ /\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg) {
 		push @mopt, $1;
 		my $lineno = &linenumber($`) + 1;
@@ -1586,6 +1516,23 @@ sub checkmakefile {
 		if (!grep(/^$i$/, @mopt)) {
 			&perror("WARN", $file, -1, "$i is listed in OPTIONS, ".
 				"but neither WITH_$i nor WITHOUT_$i appears.");
+		}
+	}
+	if ($newoptused) {
+		pos($whole) = 0;
+		while ($whole =~ /PORT_OPTIONS:M(\w+)/mg) {
+			push @nmopt, $1;
+			my $lineno = &linenumber($`) + 1;
+			&perror("FATAL", $file, $lineno, "option $1 is used before ".
+				"including bsd.port.pre.mk or bsd.port.options.mk.")
+				if ($newoptused && $lineno < $pre_mk_line &&
+					$lineno < $options_mk_line);
+		}
+		foreach my $i (@noopt) {
+			if (!grep(/^$i$/, @nmopt)) {
+				&perror("WARN", $file, -1, "$i is listed in OPTIONS_DEFINE, ".
+					"but no PORT_OPTIONS:M$i appears.");
+			}
 		}
 	}
 	foreach my $i (@mopt) {
@@ -1723,6 +1670,15 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: USE_GNOME=pkgconfig
+	#
+	print "OK: checking for USE_GNOME=pkgconfig.\n" if ($verbose);
+	if ($makevar{USE_GNOME} =~ /pkgconfig/) {
+		&perror("WARN", $file, -1, "USE_GNOME=pkgconfig is now obsolete. ".
+			"Use USE_PKGCONFIG instead.");
+	}
+
+	#
 	# whole file: EXPIRATION_DATE
 	#
 	print "OK: checking for valid EXPIRATION_DATE.\n" if ($verbose);
@@ -1771,8 +1727,15 @@ sub checkmakefile {
 		$docsused++;
 	}
 	if ($docsused > 1) {
-		&perror("FATAL", $file, -1, "Both NOPORTDOCS and PORT_OPTIONS:MDOCS are found ".
+		&perror("FATAL", $file, -1, "Both NOPORTDOCS and PORT_OPTIONS:MDOCS are found. ".
 			"Remove one or another.");
+	}
+
+	print "OK: checking for use of NOPORTDOCS.\n" if ($verbose);
+	if ($whole =~ /NOPORTDOCS/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "NOPORTDOCS found.  Consider ".
+			"using PORT_OPTIONS:MDOCS");
 	}
 
 	#
@@ -1792,7 +1755,7 @@ sub checkmakefile {
 		$nlsused++;
 	}
 	if ($nlsused > 1) {
-		&perror("FATAL", $file, -1, "Both WITHOUT_NLS and PORT_OPTIONS:MNLS are found ".
+		&perror("FATAL", $file, -1, "Both WITHOUT_NLS and PORT_OPTIONS:MNLS are found. ".
 			"Remove one or another.");
 	}
 
