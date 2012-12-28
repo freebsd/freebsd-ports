@@ -1,0 +1,9 @@
+--- libservices/CMakeLists.txt.orig	2010-12-23 17:13:03.000000000 +0100
++++ libservices/CMakeLists.txt	2010-12-23 17:13:17.000000000 +0100
+@@ -22,4 +22,6 @@
+   my_thread_scheduler_service.c)
+ 
+ ADD_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})
++IF(FALSE)
+ INSTALL(TARGETS mysqlservices DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
++ENDIF()

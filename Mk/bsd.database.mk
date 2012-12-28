@@ -110,10 +110,19 @@ MYSQL50_LIBVER=		15
 MYSQL51_LIBVER=		16
 MYSQL53_LIBVER=		16
 MYSQL55_LIBVER=		18
+MYSQL55p_LIBVER=	18
+MYSQL56p_LIBVER=	18
 
 # Setting/finding MySQL version we want.
 .if exists(${LOCALBASE}/bin/mysql)
-_MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_MYSQL!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_PERCONA!=	${LOCALBASE}/bin/mysql --version | ${GREP} Percona | wc -l
+
+.if ${_PERCONA} == 1
+_MYSQL_VER=	${_MYSQL}p
+.else
+_MYSQL_VER=	${_MYSQL}
+.endif
 .endif
 
 .if defined(WANT_MYSQL_VER)
@@ -140,6 +149,12 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .if (${MYSQL_VER} == "53")
 _MYSQL_CLIENT=	databases/mariadb-client
 _MYSQL_SERVER=	databases/mariadb-server
+.elif (${MYSQL_VER} == "55p")
+_MYSQL_CLIENT=	databases/percona55-client
+_MYSQL_SERVER=	databases/percona55-server
+.elif (${MYSQL_VER} == "56p")
+_MYSQL_CLIENT=	databases/percona56-client
+_MYSQL_SERVER=	databases/percona56-server
 .else
 _MYSQL_CLIENT=	databases/mysql${MYSQL_VER}-client
 _MYSQL_SERVER=	databases/mysql${MYSQL_VER}-server
