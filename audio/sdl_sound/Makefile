@@ -1,13 +1,9 @@
-# New ports collection makefile for:	sdl_sound
-# Date created:				6 Feb 2003
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://offload1.icculus.org:9090/SDL_sound/downloads/ \
 		http://offload2.icculus.org:9090/SDL_sound/downloads/
@@ -87,5 +83,8 @@ pre-everything::
 	@${ECHO_CMD} "WARNING: the built-in MP3 support is currently broken, consider enabling the SMPEG option to use that library instead." | ${FMT}
 	@${ECHO_CMD}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/decoders/timidity/options.h
 
 .include <bsd.port.post.mk>
