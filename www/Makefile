@@ -1679,6 +1679,7 @@
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-activeresource
+    SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
