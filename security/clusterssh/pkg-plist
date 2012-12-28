@@ -1,0 +1,12 @@
+%%SITE_PERL%%/App/ClusterSSH/L10N/en.pm
+%%SITE_PERL%%/App/ClusterSSH/L10N.pm
+@dirrmtry %%SITE_PERL%%/App/ClusterSSH/L10N
+%%SITE_PERL%%/App/ClusterSSH/Host.pm
+%%SITE_PERL%%/App/ClusterSSH/Helper.pm
+%%SITE_PERL%%/App/ClusterSSH/Config.pm
+%%SITE_PERL%%/App/ClusterSSH/Cluster.pm
+%%SITE_PERL%%/App/ClusterSSH/Base.pm
+%%SITE_PERL%%/App/ClusterSSH.pm
+@dirrmtry %%SITE_PERL%%/App/ClusterSSH
+@dirrmtry %%SITE_PERL%%/App
+bin/cssh
