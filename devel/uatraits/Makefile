@@ -24,7 +24,9 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PYTHON_CMD}-config)
 PYLIBS!=	${PYTHON_CMD}-config --libs
+.endif
 CONFIGURE_ARGS+=	--with-boost-prefix=${LOCALBASE} \
 			--with-pcre-prefix=${LOCALBASE} \
 			--enable-python --disable-perl --disable-tests \
