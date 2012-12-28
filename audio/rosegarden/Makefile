@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rosegarden
-PORTVERSION=	12.12
-PORTREVISION=	1
+PORTVERSION=	12.12.25
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
@@ -47,7 +46,7 @@ USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_XORG=	ice sm x11 xau xdmcp xext xrender 
+USE_XORG=	ice sm x11 xau xdmcp xext xrender
 USE_QT4=	gui xml network corelib sql qt3support \
 		rcc_build moc_build uic_build linguist_build
 USE_GNOME=	libxml2 libxslt
