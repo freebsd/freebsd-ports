@@ -1,13 +1,8 @@
-# New ports collection makefile for:	supertuxkart
-# Date created:		21 Mar 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	supertuxkart
-PORTVERSION=	0.7
-PORTREVISION=	4
+PORTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.bz2
@@ -15,42 +10,43 @@ EXTRACT_SUFX=	-src.tar.bz2
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
 
-LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis \
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg \
-		fribidi.3:${PORTSDIR}/converters/fribidi
-BUILD_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
-RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
+		fribidi:${PORTSDIR}/converters/fribidi \
+		curl:${PORTSDIR}/ftp/curl \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GL=		gl glu glut
 USE_OPENAL=	al alut
+USE_CMAKE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GETTEXT=	yes
+USE_DOS2UNIX=	lib/irrlicht/source/Irrlicht/Makefile
 MAKE_JOBS_SAFE=	yes
+
+WRKSRC=		${WRKDIR}/SuperTuxKart-${PORTVERSION}
 
 PORTDOCS=	*
 
-# Using LIBS instead of LDFLAGS, otherwise will break when
-# there's devel/bullet port installed
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--with-irrlicht="${LOCALBASE}"
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+IRR_CPPFLAGS=	-DNO_IRR_USE_NON_SYSTEM_JPEG_LIB_ \
+		-DNO_IRR_USE_NON_SYSTEM_LIB_PNG_ \
+		-DNO_IRR_USE_NON_SYSTEM_ZLIB_ \
+		-DNO_IRR_COMPILE_WITH_BZIP2_ \
+		-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(datadir)/games|$$(datadir)|g; \
-		 s|$$(prefix)/games|$$(prefix)/bin|g'
-	@${REINPLACE_CMD} -e 's|PREFIX/games|PREFIX/bin|' \
-		${WRKSRC}/data/supertuxkart_desktop.template
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_pkgdataDATA||' \
-		${WRKSRC}/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e 's|libIrrlicht.a|& -L${LOCALBASE}/lib -lpng -ljpeg|' ${WRKSRC}/CMakeLists.txt
+
+pre-build:
+	cd ${WRKSRC}/lib/irrlicht/source/Irrlicht/ && \
+		${SETENV} ${MAKE_ENV} CPPFLAGS="${CPPFLAGS} ${IRR_CPPFLAGS}" \
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 .include <bsd.port.pre.mk>
 
