@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Math-Random-MT-Auto
-# Date created:		2006-07-21
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Random-MT-Auto
-PORTVERSION=	6.21
+PORTVERSION=	6.22
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
