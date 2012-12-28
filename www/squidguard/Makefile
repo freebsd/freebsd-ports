@@ -45,7 +45,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	DNS_BL DOCS LDAP QUOTE_STRING SAMPLE_BL
 OPTIONS_SINGLE=		SV
-OPTIONS_SINGLE_SV=	SQUID27 SQUID31
+OPTIONS_SINGLE_SV=	SQUID27 SQUID31 SQUID32
 OPTIONS_DEFAULT=	SAMPLE_BL SQUID27
 
 SAMPLE_BL_DESC=	Install sample blacklists
@@ -53,6 +53,7 @@ DNS_BL_DESC=	Enable DNS based blacklists
 QUOTE_STRING_DESC=	Add quoted string patch
 SQUID27_DESC=	Depend on Squid 2.7.x
 SQUID31_DESC=	Depend on Squid 3.1.x
+SQUID32_DESC=	Depend on Squid 3.2.x
 
 .include <bsd.port.options.mk>
 
@@ -62,6 +63,10 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 .if ${PORT_OPTIONS:MSQUID31}
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid31
+.endif
+
+.if ${PORT_OPTIONS:MSQUID32}
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid32
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
