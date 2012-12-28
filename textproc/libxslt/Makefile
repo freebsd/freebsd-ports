@@ -1,16 +1,11 @@
-# New ports collection makefile for:	libxslt
-# Date created:				9th February 2001
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.26
-PORTREVISION?=	3
+PORTVERSION=	1.1.28
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
-MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
-		ftp://gd.tuwien.ac.at/pub/libxml/ \
+MASTER_SITES=	ftp://gd.tuwien.ac.at/pub/libxml/ \
 		ftp://xmlsoft.org/libxml2/
 DIST_SUBDIR=	gnome2
 
@@ -28,24 +23,28 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+LICENSE=	MIT
+
 .if defined(MASTERDIR)
 _SLAVE_PORT=	yes
 .else
 MAN3=		libexslt.3 libxslt.3
 MAN1=		xsltproc.1
 
-OPTIONS=	MEM_DEBUG "Enable memory debugging" off \
-		CRYPTO "Enable crypto support for exslt" on
+OPTIONS_DEFINE=	MEM_DEBUG CRYPTO
+OPTIONS_DEFAULT=CRYPTO
+MEM_DEBUG_DESC=	Enable memory debugging
+CRYPTO_DESC=	Enable crypto support for exslt
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MEM_DEBUG)
+.if ${PORT_OPTIONS:MMEM_DEBUG}
 CONFIGURE_ARGS+=	--with-mem-debug
 .endif
 
-.if defined(WITH_CRYPTO)
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+.if ${PORT_OPTIONS:MCRYPTO}
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .else
 CONFIGURE_ARGS+=--without-crypto
 .endif
@@ -57,6 +56,6 @@ post-patch:
 		s|[$$](bindir)/xmllint|../xmllint/xmllint|g' \
 		${WRKSRC}/doc/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif
