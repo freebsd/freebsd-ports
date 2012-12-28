@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -Xmx512M -jar %%DATADIR%%/FreeCol.jar --freecol-data %%DATADIR%%/data "$@"
