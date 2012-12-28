@@ -1,238 +1,10 @@
 bin/rocksndiamonds
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/elements/acid.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/acid_pool_bottom.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/acid_pool_bottomleft.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/acid_pool_bottomright.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/acid_pool_topleft.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/acid_pool_topright.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_dead.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_drop.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_dry.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_full.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_to_diamond.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_wet.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/any_element.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/arrow_down.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/arrow_left.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/arrow_right.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/arrow_up.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon_switch_any.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon_switch_down.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon_switch_left.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon_switch_none.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon_switch_right.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/balloon_switch_up.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_amoeba.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_butterfly.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_diamond.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_firefly.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_magic_wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_rock.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bd_wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/biomaze.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/black_orb.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bomb.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/bug.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/char.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/char_space.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/conveyor_belt.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/conveyor_belt_switch.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/crystal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/current_ce_score.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/current_ce_value.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/custom.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dark_yamyam.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dc_gate_fake_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dc_gate_white.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dc_gate_white_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dc_key_white.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dc_landmine.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dc_magic_wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/diamond.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dragon.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dx_supabomb.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dynabomb_increase_number.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dynabomb_increase_power.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dynabomb_increase_size.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dynamite.active.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/dynamite.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_exit_closed.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_exit_open.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_1.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_1_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_2.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_2_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_3.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_3_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_4_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_key_1.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_key_2.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_key_3.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_key_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_steel_exit_closed.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/em_steel_exit_open.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_android.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_dripper.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_fake_acid.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_fake_grass.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_5.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_5_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_6.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_6_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_7.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_7_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_8.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_gate_8_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_grass.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_key_5.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_key_6.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_key_7.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_key_8.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_lenses.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_magic_ball.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_magic_ball_switch.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_magnifier.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_plant.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emc_spring_bumper.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/emerald.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/empty_space.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/envelope.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/exit_closed.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/exit_open.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/expandable_wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/expandable_wall_any.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/expandable_wall_horizontal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/expandable_wall_vertical.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/extra_time.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/frankie.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/from_level_template.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/game_of_life.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_1.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_1_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_2.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_2_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_3.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_3_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/gate_4_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/group.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/invisible_sand.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/invisible_steelwall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/invisible_wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/key_1.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/key_2.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/key_3.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/key_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/lamp.active.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/lamp.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/landmine.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/light_switch.active.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/light_switch.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/magic_wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/mole.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/next_ce.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/nut.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/pacman.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/pearl.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/penguin.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/pig.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/player_1.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/player_2.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/player_3.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/player_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/prev_ce.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_empty.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_fast_empty.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_fast_full.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_full.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/robot.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/robot_wheel.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/rock.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sand.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/satellite.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/self.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/shield_deadly.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/shield_normal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sign.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_field_empty.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_field_full.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_field_player.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_object.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_base.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_buggy_base.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_chip_bottom.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_chip_left.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_chip_right.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_chip_single.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_chip_top.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_disk_orange.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_disk_red.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_disk_yellow.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_electron.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_exit_closed.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_gravity_off_port.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_gravity_on_port.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_gravity_port.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_base_1.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_base_2.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_base_3.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_base_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_base_5.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_base_6.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_blue.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_gray.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_green.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_red.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_hardware_yellow.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_infotron.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_murphy.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_port.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_port_any.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_port_horizontal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_port_vertical.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_sniksnak.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_terminal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sp_zonk.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/spaceship.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/speed_pill.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/spring.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/steel_char.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/steel_exit_closed.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/steel_exit_open.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/steelwall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/steelwall_slippery.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/stoneblock.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/switchgate.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/switchgate_switch.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/time_orb_empty.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/time_orb_full.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/timegate_closed.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/timegate_open.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/timegate_switch.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/trap.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/trigger_ce_score.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/trigger_ce_value.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/trigger_element.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/trigger_player.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/tube.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/unknown.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/unused.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_bd_diamond.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_crystal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_diamond.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_emerald.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_emerald_purple.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_emerald_red.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_emerald_yellow.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_pearl.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/wall_slippery.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/yamyam.txt
+share/icons/hicolor/32x32/apps/rocksndiamonds.png
+share/icons/hicolor/48x48/apps/rocksndiamonds.png
+share/icons/hicolor/64x64/apps/rocksndiamonds.png
+share/icons/hicolor/72x72/apps/rocksndiamonds.png
+share/icons/hicolor/96x96/apps/rocksndiamonds.png
+share/pixmaps/rocksndiamonds.png
 %%DATADIR%%/graphics/gfx_classic/RocksBusy.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksCE.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksDC.pcx
@@ -752,7 +524,6 @@ bin/rocksndiamonds
 %%DATADIR%%/sounds/snd_classic/zisch.wav
 %%DATADIR%%/sounds/snd_classic/zonkdown.wav
 %%DATADIR%%/sounds/snd_classic/zonkpush.wav
-@exec mkdir -p %D/%%DATADIR%%/scores
 @dirrm %%DATADIR%%/sounds/snd_classic
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/music/mus_classic
@@ -768,10 +539,17 @@ bin/rocksndiamonds
 @dirrm %%DATADIR%%/levels/Classic_Games/classic_emerald_mine
 @dirrm %%DATADIR%%/levels/Classic_Games/classic_boulderdash
 @dirrm %%DATADIR%%/levels/Classic_Games
-@dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/graphics/gfx_classic
 @dirrm %%DATADIR%%/graphics
-@dirrmtry %%DATADIR%%/scores
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/elements
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
