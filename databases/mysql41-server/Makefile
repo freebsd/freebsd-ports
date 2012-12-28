@@ -17,7 +17,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 DEPRECATED=	Unsupported upstream, no distfile
-EXPIRATION_DATE=	2012-03-31
+EXPIRATION_DATE=	2013-03-31
 
 SLAVEDIRS=	databases/mysql41-client
 USE_AUTOTOOLS=	libtool
