@@ -88,8 +88,9 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/xdgmime.c \
 		${WRKSRC}/libgnomevfs/gnome-vfs-hal-mounts.c
-	@${REINPLACE_CMD} -e 's|-lacl||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lacl||g ; \
+		s|inotify_support=yes|inotify_support=no|g' \
+			${WRKSRC}/configure
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
