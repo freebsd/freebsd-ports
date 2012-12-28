@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \

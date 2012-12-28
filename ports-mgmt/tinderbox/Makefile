@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -66,7 +66,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/database
 USE_PHP+=	mysql
 .endif
 USE_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_CVSUP)

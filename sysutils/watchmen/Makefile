@@ -7,6 +7,7 @@
 
 PORTNAME=	watchmen
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -43,7 +44,7 @@ RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
