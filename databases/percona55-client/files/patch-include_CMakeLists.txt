@@ -1,0 +1,12 @@
+--- include/CMakeLists.txt.orig	2011-01-19 23:37:08.000000000 +0100
++++ include/CMakeLists.txt	2011-02-07 22:42:05.129894470 +0100
+@@ -27,9 +27,6 @@
+   my_list.h
+   my_alloc.h
+   typelib.h 
+-  mysql/plugin.h
+-  mysql/plugin_audit.h
+-  mysql/plugin_ftparser.h
+ )
+ 
+ SET(HEADERS 
