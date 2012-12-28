@@ -4,6 +4,7 @@
     COMMENT = Development utilities
 
     SUBDIR += 9base
+    SUBDIR += ChipmunkPhysics
     SUBDIR += ElectricFence
     SUBDIR += ORBit
     SUBDIR += ORBit2

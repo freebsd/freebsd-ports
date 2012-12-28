@@ -1,0 +1,30 @@
+lib/libchipmunk.so.6.1.2
+lib/libchipmunk.so
+lib/libchipmunk.a
+include/chipmunk/cpBody.h
+include/chipmunk/chipmunk_unsafe.h
+include/chipmunk/cpVect.h
+include/chipmunk/cpSpatialIndex.h
+include/chipmunk/chipmunk_ffi.h
+include/chipmunk/chipmunk.h
+include/chipmunk/cpShape.h
+include/chipmunk/cpSpace.h
+include/chipmunk/cpPolyShape.h
+include/chipmunk/chipmunk_types.h
+include/chipmunk/cpArbiter.h
+include/chipmunk/cpBB.h
+include/chipmunk/chipmunk_private.h
+include/chipmunk/constraints/cpConstraint.h
+include/chipmunk/constraints/util.h
+include/chipmunk/constraints/cpGearJoint.h
+include/chipmunk/constraints/cpGrooveJoint.h
+include/chipmunk/constraints/cpSlideJoint.h
+include/chipmunk/constraints/cpDampedRotarySpring.h
+include/chipmunk/constraints/cpPivotJoint.h
+include/chipmunk/constraints/cpDampedSpring.h
+include/chipmunk/constraints/cpRatchetJoint.h
+include/chipmunk/constraints/cpSimpleMotor.h
+include/chipmunk/constraints/cpRotaryLimitJoint.h
+include/chipmunk/constraints/cpPinJoint.h
+@dirrm include/chipmunk/constraints
+@dirrm include/chipmunk
