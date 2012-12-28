@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvalidator
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
