@@ -3,4 +3,4 @@ spec conformance. It checks the various bogus or missing key elements against
 the EBML DocType version of the file and reports the errors/warnings in the
 command line.
 
-WWW:	http://www.matroska.org/downloads/mkvalidator.html
+WWW: http://www.matroska.org/downloads/mkvalidator.html
