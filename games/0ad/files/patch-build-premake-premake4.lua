@@ -23,12 +23,12 @@
  		includedirs {
 -			"/usr/X11R6/include/X11",
 -			"/usr/X11R6/include",
-+			"/usr/local/X11",
-+			"/usr/local/include",
++			"%%LOCALBASE%%/X11",
++			"%%LOCALBASE%%/include",
  			"/usr/include/X11"
  		}
 -		libdirs { "/usr/X11R6/lib" }
-+		libdirs { "/usr/local/lib" }
++		libdirs { "%%LOCALBASE%%/lib" }
  
  		if _OPTIONS["bindir"] then
  			defines { "INSTALLED_BINDIR=" .. _OPTIONS["bindir"] }
