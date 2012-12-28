@@ -16,10 +16,10 @@ COMMENT=	A MySQL and InnoDB monitoring program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
+BUILD_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
-RUN_DEPENDS=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
+RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
 

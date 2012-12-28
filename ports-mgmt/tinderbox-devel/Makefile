@@ -68,7 +68,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/database
 USE_PHP+=	mysql
 .endif
 USE_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)

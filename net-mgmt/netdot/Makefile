@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
 		p5-Apache-AuthCookie>=0:${PORTSDIR}/www/p5-Apache-AuthCookie \
 		p5-Apache2-SiteControl>=1.0:${PORTSDIR}/www/p5-Apache2-SiteControl \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-SQL-Translator>=0.07:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-Class-DBI>=3.0.17:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-Class-DBI-AbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \

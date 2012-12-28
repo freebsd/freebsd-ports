@@ -7,6 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	5.14
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
@@ -42,7 +43,7 @@ CGIDIR=		www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
 DB_DIR?=	${BASEDIR}/var/db/mysql/blog
-RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=1:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=	p5-DBD-mysql>=1:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 .else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db

@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121228:
+  AFFECTS: users of databases/innotop, multimedia/zoneminder
+  net-mgmt/netdot, ports-mgmt/tinderbox, ports-mgmt/tinderbox-devel
+  sysutils/watchmen, www/MT
+
+  The above mentioned ports were converted to depend on 
+  databases/p5-DBD-mysql. That will cause messages like 
+
+  ===>  p5-DBD-mysql-4.021 conflicts with installed package(s):
+        p5-DBD-mysql55-4.021
+
+  To prevent this run one of the following commands to fix the 
+  dependencies.
+
+  # portmaster -o databases/p5-DBD-mysql databases/p5-DBD-mysql55
+  or
+  # portupgrade -fo databases/p5-DBD-mysql databases/p5-DBD-mysql55
+  or
+  # pkg set -o databases/p5-DBD-mysql55:databases/p5-DBD-mysql
+
 20121220:
   AFFECTS: users of lang/ghc
   AUTHOR: haskell@FreeBSD.org
