@@ -331,8 +331,6 @@
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
-    SUBDIR += jech-dht
-    SUBDIR += jgoodies-common
     SUBDIR += dia2code
     SUBDIR += diffuse
     SUBDIR += ding-libs
@@ -680,10 +678,10 @@
     SUBDIR += hs-bytestring-nums
     SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
-    SUBDIR += hs-classy-prelude
-    SUBDIR += hs-classy-prelude-conduit
     SUBDIR += hs-cereal
     SUBDIR += hs-checkers
+    SUBDIR += hs-classy-prelude
+    SUBDIR += hs-classy-prelude-conduit
     SUBDIR += hs-cmdargs
     SUBDIR += hs-conduit
     SUBDIR += hs-configurator
@@ -843,8 +841,10 @@
     SUBDIR += javolution
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
+    SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jep
+    SUBDIR += jgoodies-common
     SUBDIR += jiic
     SUBDIR += jline
     SUBDIR += jna
