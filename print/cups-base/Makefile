@@ -290,6 +290,10 @@ post-patch:
 .if ${ARCH} == "amd64"
 	@${REINPLACE_CMD} -e 's|@PIEFLAGS@||' ${WRKSRC}/Makedefs.in
 .endif
+.if ${PORT_OPTIONS:MMDNSRESPONDER}
+	@${REINPLACE_CMD} -e 's|Darwin|FreeBSD|' \
+		${WRKSRC}/backend/Makefile
+.endif
 .if  ${PORT_OPTIONS:MXDG_OPEN}
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop.in
 .endif
