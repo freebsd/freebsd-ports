@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Net-Frame-IPv6
-# Date created:	   09 Mar 2009
-# Whom:		   Mars G Miro <spry@anarchy.in.the.ph>
-#
+# Created by: Mars G Miro <spry@anarchy.in.the.ph>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Frame-Layer-IPv6
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +20,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::Frame::Layer::IPv6.3 \
 		Net::Frame::Layer::IPv6::Fragment.3 \
-		Net::Frame::Layer::IPv6::Routing.3
+		Net::Frame::Layer::IPv6::Routing.3 \
+		Net::Frame::Layer::IPv6::HopByHop.3 \
+		Net::Frame::Layer::IPv6::Option.3 \
+		Net::Frame::Layer::IPv6::Destination.3
 
 .include <bsd.port.mk>

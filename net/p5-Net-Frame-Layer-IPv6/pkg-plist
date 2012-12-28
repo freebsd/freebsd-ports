@@ -1,5 +1,8 @@
 %%SITE_PERL%%/Net/Frame/Layer/IPv6/Fragment.pm
 %%SITE_PERL%%/Net/Frame/Layer/IPv6/Routing.pm
+%%SITE_PERL%%/Net/Frame/Layer/IPv6/HopByHop.pm
+%%SITE_PERL%%/Net/Frame/Layer/IPv6/Destination.pm
+%%SITE_PERL%%/Net/Frame/Layer/IPv6/Option.pm
 %%SITE_PERL%%/Net/Frame/Layer/IPv6.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/IPv6/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/IPv6
