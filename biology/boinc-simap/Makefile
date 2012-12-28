@@ -10,7 +10,7 @@ MASTER_SITES=	http://boincsimap.org/boincsimap/download/
 DISTNAME=	${SIMAP_BINARY} ${HMMER_BINARY}
 EXTRACT_SUFX=	#
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Similarity Matrix of Proteins project for BOINC
 
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
