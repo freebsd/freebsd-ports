@@ -1,10 +1,7 @@
-# New ports collection makefile for:   cad/salome-gui
-# Date created:        20 May 2009
-# Whom:            Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad science
 
 MASTERDIR=	${.CURDIR}/../salome
@@ -12,10 +9,5 @@ MASTERDIR=	${.CURDIR}/../salome
 PORTNAME=	salome
 PKGNAMESUFFIX=	-gui
 SAL_MODULE_UPPER=	GUI
-
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-12-31
-
-BROKEN=		does not compile
 
 .include "${MASTERDIR}/Makefile"

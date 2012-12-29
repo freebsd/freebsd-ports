@@ -1,0 +1,12 @@
+--- adm_local/unix/make_common_starter.am.orig	2012-09-28 11:29:12.000000000 +0700
++++ adm_local/unix/make_common_starter.am	2012-09-28 11:30:27.000000000 +0700
+@@ -67,7 +67,8 @@
+ # meta object implementation files generation (moc)
+ %_moc.cxx: %.h
+ 	$(MOC) $(MOC_FLAGS) $< -o $@
+-
++	sed -i -e 's|static_cast|dynamic_cast|;' $@
++
+ # translation (*.qm) files generation (lrelease)
+ %.qm: resources/%.ts
+ 	$(LRELEASE) $< -qm $@

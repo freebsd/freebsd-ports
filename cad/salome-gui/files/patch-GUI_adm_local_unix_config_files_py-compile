@@ -1,0 +1,13 @@
+--- adm_local/unix/config_files/py-compile.orig	2010-06-17 17:26:08.000000000 +0200
++++ adm_local/unix/config_files/py-compile	2012-12-02 21:53:46.000000000 +0100
+@@ -48,10 +48,6 @@
+       ;;
+     --destdir)
+       destdir=$2
+-      if test -z "$destdir"; then
+-        echo "$0: Missing argument to --destdir." 1>&2
+-        exit 1
+-      fi
+       shift
+       ;;
+     -h|--h*)

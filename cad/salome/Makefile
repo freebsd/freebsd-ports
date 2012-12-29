@@ -1,12 +1,9 @@
-# New ports collection makefile for:   cad/salome
-# Date created:        16 Oct 2009
-# Whom:            Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
 
 PORTNAME=	salome
 PORTVERSION=	5.1.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTNAME=	src5.1.4
