@@ -176,6 +176,7 @@ MAN4+=	wireshark-filter.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LUA_INCDIR%%|${LUA_INCDIR}|g ; \
+	    	s|-Wl,--as-needed|| ; \
 	    	s|%%LUA_LIBDIR%%|${LUA_LIBDIR}|g' \
 		${WRKSRC}/configure
 
