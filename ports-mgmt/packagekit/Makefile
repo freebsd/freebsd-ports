@@ -66,7 +66,7 @@ MAN1=	pkcon.1 pkmon.1 pkgenpack.1 pk-debuginfo-install.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PORTS)
-RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
+RUN_DEPENDS+=	${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
 USE_RUBY=	yes
 CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
 PLIST_SUB+=	PORTS=""
