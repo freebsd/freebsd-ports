@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.264 2012/12/27 23:29:04 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.266 2012/12/29 23:23:32 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1336,8 +1336,8 @@ sub checkmakefile {
 			&perror("FATAL", $file, 2, "header should be ".
 				"followed by \$$rcsidstr\$.");
 		} elsif ($lines[3] !~ /^$/) {
-			&perror("FATAL", $file, 3, "do not add extra ".
-				"empty comments after header.");
+		#&perror("FATAL", $file, 3, "do not add extra ".
+		#		"empty comments after header.");
 		}
 	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
 		&perror("FATAL", $file, 1, "incorrect header; ".
