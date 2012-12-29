@@ -26,7 +26,7 @@ PLIST_FILES=	bin/pianobar
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-CFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -std=c99
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
