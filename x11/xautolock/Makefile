@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xautolock
-# Date created:		20 Jul 1996
-# Whom:			Eric Blood <eblood@cs.unr.edu>
-#
+# Created by: Eric Blood <eblood@cs.unr.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	xautolock
 PORTVERSION=	2.2
@@ -16,11 +12,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Used to activate xlock after a user defined time of inactivity
 
-OPTIONS=	XLOCK "Force dependency on x11/xlockmore" on
+OPTIONS_DEFINE=	XLOCK
+OPTIONS_DEFAULT=	XLOCK
+XLOCK_DESC=	Force dependency on x11/xlockmore
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XLOCK)
+.if ${PORT_OPTIONS:MXLOCK}
 RUN_DEPENDS+=	xlock:${PORTSDIR}/x11/xlockmore
 .endif
 

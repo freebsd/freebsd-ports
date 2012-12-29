@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nemiver
-# Date created:		2008-02-22
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nemiver
 PORTVERSION=	0.8.2
@@ -24,7 +20,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 BUILD_DEPENDS=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 RUN_DEPENDS=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 
-OPTIONS=	GHEX "Enable memory view" off
+OPTIONS_DEFINE=	GHEX
+GHEX_DESC=	Enable memory view
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -38,7 +35,7 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 MAN1=		nemiver.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc)
 CONFIGURE_ARGS+=--enable-gsettings=no
@@ -54,7 +51,7 @@ PLIST_SUB+=	GSETTINGS="" GCONF="@comment "
 GLIB_SCHEMAS=	org.nemiver.gschema.xml
 .endif
 
-.if defined(WITH_GHEX) && !defined(WITHOUT_GHEX)
+.if ${PORT_OPTIONS:MGHEX}
 CONFIGURE_ARGS+=--enable-memoryview
 PLIST_SUB+=	GHEX=""
 LIB_DEPENDS+=	gtkhex.0:${PORTSDIR}/editors/ghex
@@ -63,4 +60,4 @@ CONFIGURE_ARGS+=--disable-memoryview
 PLIST_SUB+=	GHEX="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
