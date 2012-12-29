@@ -170,6 +170,7 @@
     SUBDIR += libiodbc
     SUBDIR += libmemcache
     SUBDIR += libmemcached
+    SUBDIR += libmongo-client
     SUBDIR += libodbc++
     SUBDIR += libpbl
     SUBDIR += libsdb
