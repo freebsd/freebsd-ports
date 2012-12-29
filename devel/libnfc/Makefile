@@ -1,25 +1,23 @@
-# New ports collection makefile for:	libnfc
-# Date created:		2009-06-17
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libnfc
 PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
-    		http://romain.blogreen.org/distfiles/
+		http://romain.blogreen.org/distfiles/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
 
-OPTIONS=	ACR122      "Enable ACR122 driver"     on \
-		ARYGON      "Enable Arygon driver"     off \
-		PN531USB    "Enable PN531 USB driver"  on \
-		PN532UART   "Enable PN532 UART driver" on \
-		PN533USB    "Enable PN533 USB driver"  on \
-		SERIALPROBE "Enable serial auto-probe" off
+OPTIONS_DEFINE=	ACR122 ARYGON PN531USB PN532UART PN533USB SERIALPROBE
+OPTIONS_DEFAULT=	ACR122 PN531USB PN532UART PN533USB
+ACR122_DESC=	ACR122 driver
+ARYGON_DESC=	Arygon driver
+PN531USB_DESC=	PN531 USB driver
+PN532UART_DESC=	PN532 UART driver
+PN533USB_DESC=	PN533 USB driver
+SERIALPROBE_DESC=	serial auto-probe
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -35,33 +33,33 @@ MAN1=		nfc-anticol.1 nfc-dep-initiator.1 nfc-dep-target.1 \
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_ACR122)
+.if ${PORT_OPTIONS:MACR122}
 ACR122_DRIVER=	acr122,
 .else
 ACR122_DRIVER=
 .endif
 
-.if defined(WITH_ARYGON)
+.if ${PORT_OPTIONS:MARYGON}
 ARYGON_DRIVER=	arygon,
 .else
 ARYGON_DRIVER=
 .endif
 
-.if !defined(WITHOUT_PN531USB)
+.if ${PORT_OPTIONS:MPN531USB}
 PN531USB_DRIVER=pn531_usb,
 .else
 PN531USB_DRIVER=
 .endif
 
-.if !defined(WITHOUT_PN532UART)
+.if ${PORT_OPTIONS:MP532UART}
 PN532UART_DRIVER=pn532_uart,
 .else
 PN532UART_DRIVER=
 .endif
 
-.if !defined(WITHOUT_PN533USB)
+.if ${PORT_OPTIONS:MPN533USB}
 PN533USB_DRIVER=pn533_usb,
 .else
 PN533USB_DRIVER=
@@ -69,18 +67,18 @@ PN533USB_DRIVER=
 
 CONFIGURE_ARGS+=--with-drivers="${ACR122_DRIVER}${ARYGON_DRIVER}${PN531USB_DRIVER}${PN532UART_DRIVER}${PN533USB_DRIVER}"
 
-.if defined(WITH_SERIALPROBE)
+.if ${PORT_OPTIONS:MSERIALPROBE}
 CONFIGURE_ARGS+=--enable-serial-autoprobe
 .else
 CONFIGURE_ARGS+=--disable-serial-autoprobe
 .endif
 
-.if defined(WITH_ACR122)
+.if ${PORT_OPTIONS:MACR122}
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
 .endif
 
-.if defined(WITH_PN531USB) || defined(WITH_PN533USB)
+.if ${PORT_OPTIONS:MPN531USB} || ${PORT_OPTIONS:MPN533USB}
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -89,9 +87,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/pn53x.conf ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

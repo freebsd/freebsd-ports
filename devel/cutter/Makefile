@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cutter
-# Date created:		2010-01-10
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cutter
 PORTVERSION=	1.2.2
@@ -28,10 +24,10 @@ WANT_GSTREAMER=	yes
 MANLANG=	"" ja
 MAN1=		cut-diff.1 cutter.1
 
-OPTIONS=	GOFFICE "Enable GOffice support"   yes \
-		GST     "Enable GStreamer support" yes \
-		SOUP    "Enable libsoup support"   yes \
-		LCOV    "Force dependency on lcov" no
+OPTIONS_DEFINE=	GOFFICE GSTREAMER SOUP LCOV
+GOFFICE_DESC=	GOffice support
+SOUP_DESC=	libsoup support
+LCOV_DESC=	Force dependency on lcov
 
 regression-test: build
 	@${SETENV} LC_ALL=C ${GMAKE} -C ${WRKSRC} check
@@ -41,38 +37,38 @@ post-install:
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GOFFICE)
-CONFIGURE_ARGS+=--disable-goffice
-PLIST_SUB+=	GOFFICE="@comment "
-.else
+.if ${PORT_OPTIONS:MGOFFICE}
 CONFIGURE_ARGS+=--enable-goffice
 LIB_DEPENDS+=	goffice-0.6:${PORTSDIR}/devel/goffice06
 PLIST_SUB+=	GOFFICE=""
+.else
+CONFIGURE_ARGS+=--disable-goffice
+PLIST_SUB+=	GOFFICE="@comment "
 .endif
 
-.if defined(WITHOUT_GST)
-CONFIGURE_ARGS+=--disable-gstreamer
-PLIST_SUB+=	GST="@comment "
-.else
+.if ${PORT_OPTIONS:MGSTREAMER}
 CONFIGURE_ARGS+=--enable-gstreamer
 USE_GSTREAMER=yes
 PLIST_SUB+=	GST="" GST_VERSION="${GST_VERSION}"
+.else
+CONFIGURE_ARGS+=--disable-gstreamer
+PLIST_SUB+=	GST="@comment "
 .endif
 
-.if defined(WITH_LCOV)
+.if ${PORT_OPTIONS:MLCOV}
 RUN_DEPENDS+=	lcov:${PORTSDIR}/devel/lcov
 .endif
 
-.if defined(WITHOUT_SOUP)
-CONFIGURE_ARGS+=--disable-libsoup
-PLIST_SUB+=	SOUP="@comment "
-.else
+.if ${PORT_OPTIONS:MSOUP}
 CONFIGURE_ARGS+=--enable-libsoup
 LIB_DEPENDS+=	soup-2:${PORTSDIR}/devel/libsoup
 PLIST_SUB+=	SOUP=""
+.else
+CONFIGURE_ARGS+=--disable-libsoup
+PLIST_SUB+=	SOUP="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

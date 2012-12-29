@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-nodoka-engine
-# Date created:		2009-01-27
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-nodoka-engine
 PORTVERSION=	0.7.5
@@ -14,26 +10,27 @@ MASTER_SITES=	https://fedorahosted.org/releases/n/o/nodoka/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK nodoka engine and themes
 
-OPTIONS=	ANIMATION	"Enable animation support"	off \
-		ANIMATIONTOLEFT	"Animation from right to left"	off
+OPTIONS_DEFINE=	ANIMATION ANIMATIONTOLEFT
+ANIMATION_DESC=		Animation support
+ANIMATIONTOLEFT_DESC=	Animation from right to left
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ANIMATION) && !defined(WITHOUT_ANIMATION)
+.if ${PORT_OPTIONS:MANIMATION}
 CONFIGURE_ARGS+=	--enable-animation
 .else
 CONFIGURE_ARGS+=	--disable-animation
 .endif
 
-.if defined(WITH_ANIMATIONTOLEFT) && !defined(WITHOUT_ANIMATIONTOLEFT)
+.if ${PORT_OPTIONS:MANIMATIONTOLEFT}
 CONFIGURE_ARGS+=	--enable-animationtoleft
 .else
 CONFIGURE_ARGS+=	--disable-animationtoleft
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

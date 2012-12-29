@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portshaker
-# Date created:		2008-11-01
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	portshaker
 PORTVERSION=	1.0.6
@@ -17,58 +13,60 @@ MAINTAINER?=	romain@FreeBSD.org
 COMMENT?=	Maintain ports tree using multiple sources
 
 .if ${PORTNAME} == "portshaker"
-OPTIONS=	RSYNC          "Force dependency on rsync"             on \
-		SVN            "Force dependency on Subversion"        on \
-		GIT            "Force dependency on Git"               off \
-		HG             "Force dependency on Mercurial"         off \
-
+OPTIONS_DEFINE=	RSYNC SVN GIT HG
+OPTIONS_DEFAULT=	RSYNC SVN
+RSYNC_DESC=	rsync support
+GIT_DESC=	git support
+HG_DESC=	mercurial support
 MAN5=		portshaker.conf.5 \
 		portshaker.d.5
 MAN8=		portshaker.8
 .else
-OPTIONS=	BSDSHARP  "Enable BSD-sharp ports"                on \
-		ENLIGHTENMENT "Enable Enlightnement ports"        off \
-		HASKELL   "Enable Haskell ports"                  off \
-		MARCUSCOM "Enable GNOME development ports"        off \
-		TEXLIVE   "Enable TeXLive ports (Experimental)"   off \
-		XORG      "Enable Xorg development ports"         off
+OPTIONS_DEFINE=	BSDSHARP ENLIGHTENMENT HASKELL MARCUSCOM TEXLIVE XORG
+OPTIONS_DEFAULT=	BSDSHARP
+BSDSHARP_DESC=		Enable BSD-sharp ports
+ENLIGHTENMENT_DESC=	Enable Enlightnement ports
+HASKELL_DESC=		Enable Haskell ports
+MARCUSCOM_DESC=		Enable GNOME development ports
+TEXLIVE_DESC=		Enable TeXLive ports (Experimental)
+XORG_DESC		Enable Xorg development ports
 .endif
 
 .include <bsd.port.options.mk>
 
 .if ${PORTNAME} == "portshaker"
 
-. if defined(WITH_RSYNC)
+. if ${PORT_OPTIONS:MRSYNC}
 RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 . endif
-. if defined(WITH_SVN)
+. if ${PORT_OPTIONS:MSVN}
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 . endif
-. if defined(WITH_GIT)
+. if ${PORT_OPTIONS:MGIT}
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
 . endif
-. if defined(WITH_HG)
+. if ${PORT_OPTIONS:MHG}
 RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial
 . endif
 
 .else
 
-. if defined (WITH_BSDSHARP)
+. if ${PORT_OPTIONS:MBSDSHARP}
 MAKE_ENV+=	WITH_BSDSHARP=1
 . endif
-. if defined (WITH_ENLIGHTENMENT)
+. if ${PORT_OPTIONS:MENLIGHTENMENT}
 MAKE_ENV+=	WITH_ENLIGHTENMENT=1
 . endif
-. if defined (WITH_HASKELL)
+. if ${PORT_OPTIONS:MHASKELL}
 MAKE_ENV+=	WITH_HASKELL=1
 . endif
-. if defined (WITH_MARCUSCOM)
+. if ${PORT_OPTIONS:MMARCUSCOM}
 MAKE_ENV+=	WITH_MARCUSCOM=1
 . endif
-. if defined (WITH_TEXLIVE)
+. if ${PORT_OPTIONS:MTEXLIVE}
 MAKE_ENV+=	WITH_TEXLIVE=1
 . endif
-. if defined (WITH_XORG)
+. if ${PORT_OPTIONS:MXORG}
 MAKE_ENV+=	WITH_XORG=1
 . endif
 
