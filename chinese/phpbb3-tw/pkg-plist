@@ -44,7 +44,7 @@
 %%PHPBBDIR%%/adm/images/innerbox_bg.gif
 %%PHPBBDIR%%/adm/images/no_avatar.gif
 %%PHPBBDIR%%/adm/images/no_image.png
-%%PHPBBDIR%%/adm/images/phpbb_logo.gif
+%%PHPBBDIR%%/adm/images/phpbb_logo.png
 %%PHPBBDIR%%/adm/images/progress_bar.gif
 %%PHPBBDIR%%/adm/images/spacer.gif
 %%PHPBBDIR%%/adm/images/toggle.gif
@@ -557,6 +557,7 @@
 %%PHPBBDIR%%/language/zh_cmn_hant/email/group_added.txt
 %%PHPBBDIR%%/language/zh_cmn_hant/email/group_approved.txt
 %%PHPBBDIR%%/language/zh_cmn_hant/email/group_request.txt
+%%PHPBBDIR%%/language/zh_cmn_hant/email/index.htm
 %%PHPBBDIR%%/language/zh_cmn_hant/email/installed.txt
 %%PHPBBDIR%%/language/zh_cmn_hant/email/newtopic_notify.txt
 %%PHPBBDIR%%/language/zh_cmn_hant/email/pm_report_closed.txt
