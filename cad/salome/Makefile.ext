@@ -187,7 +187,7 @@ CONFIGURE_ARGS+=	--with-qsci4-libraries=${QT_LIBDIR} --with-qsci4-includes=${QT_
 .if !${SAL_MODULE} == "kernel" && !${SAL_MODULE} == "randomizer"
 LIB_DEPENDS+=		vtkCommon.5:${PORTSDIR}/math/vtk5
 CONFIGURE_ARGS+=	--with-vtk=${LOCALBASE}
-#CONFIGURE_ENV+=		VTKHOME=${LOCALBASE}
+CONFIGURE_ENV+=		VTKSUFFIX=-5.10
 .endif
 
 #Dependency from cad/netgen
