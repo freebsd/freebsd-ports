@@ -1,10 +1,6 @@
-# New ports collection makefile for:	fileroller
-# Date created:				18 May 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/archivers/file-roller/Makefile,v 1.184 2010/11/15 22:58:48 kwm Exp $
-#
 
 PORTNAME=	file-roller
 PORTVERSION=	2.32.1
@@ -16,8 +12,6 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An archive manager for zip files, tar, etc
-
-OPTIONS=	NAUTILUS	"Enable Nautilus extension"	on
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
     		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
@@ -40,14 +34,19 @@ CONFIGURE_ARGS=	--disable-packagekit
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
 GCONF_SCHEMAS=	file-roller.schemas
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NAUTILUS
+NAUTILUS_DESC=	Enable Nautilus extension
 
-.if !defined(WITHOUT_NAUTILUS)
+OPTIONS_DEFAULT=NAUTILUS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNAUTILUS}
 USE_GNOME+=	nautilus2
 PLIST_SUB+=	NAUTILUS=""
 .else
 PLIST_SUB+=	NAUTILUS="@comment "
-CONFIGURE_ARGS+=	--disable-nautilus-actions
+CONFIGURE_ARGS+=--disable-nautilus-actions
 .endif
 
 post-patch:
@@ -57,11 +56,11 @@ post-patch:
 
 post-install:
 	@-update-desktop-database
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
