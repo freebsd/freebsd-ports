@@ -192,8 +192,8 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="f599dfc4-3ec2-11e2-8ae1-001a8056d0b5">
-    <topic>tomcat -- multiple vulnerabilities</topic>
+  <vuln vid="953911fe-51ef-11e2-8e34-0022156e8794">
+    <topic>tomcat -- bypass of CSRF prevention filter</topic>
     <affects>
       <package>
 	<name>tomcat6</name>
@@ -206,32 +206,90 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Apache Software Foundation reports:</p>
-	<blockquote cite="http://tomcat.apache.org/security.html">
-	  <p>When using the NIO connector with sendfile and HTTPS enabled, if a
-	     client breaks the connection while reading the response an infinite loop
-	     is entered leading to a denial of service.</p>
-	  <p>When using FORM authentication it was possible to bypass the security
-	     constraint checks in the FORM authenticator by appending
-	     "/j_security_check" to the end of the URL if some other component
-	     (such as the Single-Sign-On valve) had called request.setUserPrincipal()
-	     before the call to FormAuthenticator#authenticate().</p>
+        <p>The Apache Software Foundation reports:</p>
+        <blockquote cite="http://tomcat.apache.org/security-7.html">
 	  <p>The CSRF prevention filter could be bypassed if a request was made to a
 	     protected resource without a session identifier present in the request.</p>
-	</blockquote>
+        </blockquote>
       </body>
     </description>
     <references>
-      <cvename>CVE-2012-3546</cvename>
       <cvename>CVE-2012-4431</cvename>
-      <cvename>CVE-2012-4534</cvename>
-      <url>http://tomcat.apache.org/security.html</url>
       <url>http://tomcat.apache.org/security-6.html</url>
       <url>http://tomcat.apache.org/security-7.html</url>
     </references>
     <dates>
       <discovery>2012-12-04</discovery>
       <entry>2012-12-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="134acaa2-51ef-11e2-8e34-0022156e8794">
+    <topic>tomcat -- denial of service</topic>
+    <affects>
+      <package>
+	<name>tomcat6</name>
+	<range><ge>6.0.0</ge><le>6.0.35</le></range>
+      </package>
+      <package>
+	<name>tomcat7</name>
+	<range><ge>7.0.0</ge><le>7.0.27</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Apache Software Foundation reports:</p>
+        <blockquote cite="http://tomcat.apache.org/security-7.html">
+	  <p>When using the NIO connector with sendfile and HTTPS enabled, if a
+	     client breaks the connection while reading the response an infinite loop
+	     is entered leading to a denial of service.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4534</cvename>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-12-04</discovery>
+      <entry>2012-12-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f599dfc4-3ec2-11e2-8ae1-001a8056d0b5">
+    <topic>tomcat -- bypass of security constraints</topic>
+    <affects>
+      <package>
+        <name>tomcat6</name>
+        <range><ge>6.0.0</ge><le>6.0.35</le></range>
+      </package>
+      <package>
+        <name>tomcat7</name>
+        <range><ge>7.0.0</ge><le>7.0.29</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Apache Software Foundation reports:</p>
+        <blockquote cite="http://tomcat.apache.org/security-7.html">
+          <p>When using FORM authentication it was possible to bypass the security
+             constraint checks in the FORM authenticator by appending
+             "/j_security_check" to the end of the URL if some other component
+             (such as the Single-Sign-On valve) had called request.setUserPrincipal()
+             before the call to FormAuthenticator#authenticate().</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3546</cvename>
+      <url>http://tomcat.apache.org/security-6.html</url>
+      <url>http://tomcat.apache.org/security-7.html</url>
+    </references>
+    <dates>
+      <discovery>2012-12-04</discovery>
+      <entry>2012-12-04</entry>
+      <modified>2012-12-29</modified>
     </dates>
   </vuln>
 
