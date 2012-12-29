@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xvile
-# Date created:         Wed Nov 26, 1996
-# Whom:                 pgf
-#
+# Created by: pgf
 # $FreeBSD$
-#
 
 PORTNAME=	xvile
 PORTVERSION=	9.8g
@@ -17,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=    ${MASTER_SITES:S,vile/current/,vile/patches/,g}
 PATCHFILES=
 
-MAINTAINER=	gj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
 
 MAKEFILE=	makefile

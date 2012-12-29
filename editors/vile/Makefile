@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vile
-# Date created:         Wed Nov 26, 1996
-# Whom:                 pgf
-#
+# Created by: pgf
 # $FreeBSD$
-#
 
 PORTNAME=	vile
 PORTVERSION=	9.8g
@@ -17,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
 PATCHFILES=
 
-MAINTAINER=	gj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
 
 MAKEFILE=	makefile
