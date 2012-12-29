@@ -1,9 +1,5 @@
-# New ports collection makefile for:	orange
-# Date Created:				January 2005
-# Whom:					Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	liborange
 PORTVERSION=	0.4
@@ -16,18 +12,21 @@ COMMENT=	Library to extract CAB files from self-extracting installers
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		unzip:${PORTSDIR}/archivers/unzip
 
-OPTIONS=	LIBSYNCE	"Build with libsynce support"			on \
-		LIBDYNAMITE	"Build with libdynamite support"		on \
-		LIBUNSHIELD	"Build with libunshield support"		on \
-		INNO		"Build with expermential Inno Setup support"	off \
-		VISE		"Build with expermential VISE support"		off \
-		MSI		"Build with expermential MSI support"		off
+OPTIONS_DEFINE=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD INNO VISE MSI
+OPTIONS_DEFAULT=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD
+LIBSYNCE_DESC=		Build with libsynce support
+LIBDYNAMITE_DESC=	Build with libdynamite support
+LIBUNSHIELD_DESC=	Build with libunshield support
+INNO_DESC=		Build with expermential Inno Setup support
+VISE_DESC=		Build with expermential VISE support
+MSI_DESC=		Build with expermential MSI support
 
 MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
+ISE_PKGCONFIG=	build
 USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -35,9 +34,9 @@ USE_LDCONFIG=	yes
 
 MAN1=		orange.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_LIBSYNCE)
+.if ${PORT_OPTIONS:MLIBSYNCE}
 CONFIGURE_ARGS+=	--without-libsynce
 REQUIRES+=	libsynce
 .else
@@ -45,31 +44,31 @@ LIB_DEPENDS+=		synce.0:${PORTSDIR}/palm/synce-libsynce
 CONFIGURE_ARGS+=	--with-libsynce
 .endif
 
-.if !defined(WITH_LIBDYNAMITE)
+.if ${PORT_OPTIONS:MLIBDYNAMITE}
 CONFIGURE_ARGS+=	--without-libdynamite
 REQUIRES+=	libdynamite
 .else
-LIB_DEPENDS+=		dynamite.0:${PORTSDIR}/archivers/libdynamite
+LIB_DEPENDS+=		dynamite:${PORTSDIR}/archivers/libdynamite
 CONFIGURE_ARGS+=	--with-libdynamite
 .endif
 
-.if !defined(WITH_LIBUNSHIELD)
+.if ${PORT_OPTIONS:MLIBUNSHIELD}
 CONFIGURE_ARGS+=	--without-libunshield
 REQUIRES+=	libunshield
 .else
-LIB_DEPENDS+=		unshield.0:${PORTSDIR}/archivers/unshield
+LIB_DEPENDS+=		unshield:${PORTSDIR}/archivers/unshield
 CONFIGURE_ARGS+=	--with-libunshield
 .endif
 
-.if defined(WITH_INNO)
+.if ${PORT_OPTIONS:MINNO}
 CONFIGURE_ARGS+=	--enable-inno
 .endif
 
-.if defined(WITH_VISE)
+.if ${PORT_OPTIONS:MVISE}
 CONFIGURE_ARGS+=	--enable-vise
 .endif
 
-.if defined(WITH_MSI)
+.if ${PORT_OPTIONS:MMSI}
 CONFIGURE_ARGS+=	--enable-msi --with-libgsf
 LIB_DEPENDS+=		gsf-1.114:${PORTSDIR}/devel/libgsf
 .endif
@@ -79,4 +78,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|${req}||' ${WRKSRC}/${PORTNAME}.pc.in
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
