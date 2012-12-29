@@ -65,7 +65,8 @@ CONFIGURE_ARGS+=	--disable-kde
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_KDE4)
-CONFIGURE_ENV+=		KDE_CFLAGS="-I${KDE4_PREFIX}/include -I${QT_INCDIR} -I${LOCALBASE}/include"
+CONFIGURE_ENV+=		KDE_CFLAGS="-I${KDE4_PREFIX}/include -I${QT_INCDIR} -I${LOCALBASE}/include" \
+			KDE_LIBS="-L${KDE4_PREFIX}/lib"
 K4_INC=			${KDE4_PREFIX:C/\//\\\//g}
 .endif
 
