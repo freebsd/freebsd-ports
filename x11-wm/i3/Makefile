@@ -34,6 +34,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_PKGCONFIG=	build
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/i3 \
