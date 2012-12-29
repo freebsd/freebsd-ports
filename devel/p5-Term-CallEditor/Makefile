@@ -1,18 +1,16 @@
-# New ports collection makefile for:	devel/p5-Term-CallEditor
-# Date created:				05 May 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-CallEditor
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Solicit for data from an external editor
+
+LICENSE=	ART10
 
 PERL_CONFIGURE=	yes
 
