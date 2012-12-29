@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpasman
-# Date created:			Mon Mai 10 1999
-# Whom:				domi@saargate.de
-#
+# Created by: domi@saargate.de
 # $FreeBSD$
-#
 
 PORTNAME=	gpasman
 PORTVERSION=	1.3.1
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://gpasman.sourceforge.net/files/
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A password manager that stores password information encrypted
 
 PLIST_FILES=	bin/gpasman

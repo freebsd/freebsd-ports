@@ -1,9 +1,5 @@
-# Ports collection makefile for:  konto_check
-# Date created:			  2009-08-11
-# Whom:				  Dominik Brettnacher <domi@nonsensss.de>
-#
+# Created by: Dominik Brettnacher <domi@nonsensss.de>
 # $FreeBSD$
-#
 
 PORTNAME=	konto_check
 PORTVERSION=	2.98
@@ -12,7 +8,7 @@ MASTER_SITES=	SF/kontocheck/konto_check-de/${PORTVERSION}
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	domi@nonsensss.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP module to check German and Austrian Bank Account Numbers
 
 USE_ZIP=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ghfaxviewer
-# Date created:			Fri Apr 20 13:08:00  MET DST 2001
-# Whom:				Dominik Brettnacher <domi@saargate.de>
-#
+# Created by: Dominik Brettnacher <domi@saargate.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ghfaxviewer
 PORTVERSION=	0.22.0
@@ -12,7 +8,7 @@ CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
 
-MAINTAINER=	domi@nonsensss.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME compliant fax viewer capable of displaying TIFF G3 faxes
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff

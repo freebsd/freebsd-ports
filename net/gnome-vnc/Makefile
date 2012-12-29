@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-vnc
-# Date created:			Sun Jul 18 1999
-# Whom:				domi@saargate.de
-#
+# Created by: domi@saargate.de
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-vnc
 PORTVERSION=	0.1
@@ -11,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME/gtk viewer for VNC servers
 
 PLIST_FILES=	bin/gnome-vnc-viewer
