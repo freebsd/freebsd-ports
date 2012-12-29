@@ -28,7 +28,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-obexftp
+CONFIGURE_ARGS=	--disable-obexftp \
+		--disable-afc
 OPTIONS=	FUSE "Enable fuse" off \
 		AVAHI "Enable AVAHI" on \
 		SAMBA "Enable Samba" on \
