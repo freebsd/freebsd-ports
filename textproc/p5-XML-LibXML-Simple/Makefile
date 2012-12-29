@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-LibXML-Simple
-# Date created:		2009-04-21
-# Whom:			TERAMOTO Masahiro <markun@onohara.to>
-#
+# Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-LibXML-Simple
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
