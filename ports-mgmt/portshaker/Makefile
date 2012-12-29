@@ -29,7 +29,7 @@ ENLIGHTENMENT_DESC=	Enable Enlightnement ports
 HASKELL_DESC=		Enable Haskell ports
 MARCUSCOM_DESC=		Enable GNOME development ports
 TEXLIVE_DESC=		Enable TeXLive ports (Experimental)
-XORG_DESC		Enable Xorg development ports
+XORG_DESC=		Enable Xorg development ports
 .endif
 
 .include <bsd.port.options.mk>
