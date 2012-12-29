@@ -1,10 +1,6 @@
-# New ports collection makefile for:	guikachu
-# Date created:		11 Nov 2004
-# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/audio/goobox/Makefile,v 1.25 2007/08/15 03:03:09 mezz Exp $
-#
 
 PORTNAME=	goobox
 PORTVERSION=	2.2.0
@@ -17,10 +13,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD player and ripper for GNOME Desktop environment
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid \
-		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
-		brasero-media.3:${PORTSDIR}/sysutils/brasero \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \
+		musicbrainz3:${PORTSDIR}/audio/libmusicbrainz3 \
+		brasero-media:${PORTSDIR}/sysutils/brasero \
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	x11
@@ -37,18 +33,19 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	goobox.schemas
 
-OPTIONS=	NOTIFY "Enable libnotify support" on
+OPTIONS_DEFINE=	NOTIFY
+OPTIONS_DEFAULT=NOTIFY
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=	--enable-notification
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=--enable-notification
 .else
-CONFIGURE_ARGS+=	--disable-notification
+CONFIGURE_ARGS+=--disable-notification
 .endif
 
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
