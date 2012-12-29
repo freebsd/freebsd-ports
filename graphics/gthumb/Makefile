@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gThumb2
-# Date created:				17 Aug 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gthumb
 PORTVERSION=	2.14.1
@@ -25,6 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedocutils gconf2
 WANT_GSTREAMER=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -39,17 +36,18 @@ GCONF_SCHEMAS=	gthumb.schemas gthumb-comments.schemas gthumb-file-manager.schema
 
 PLIST_SUB=	GTHUMB_VER=2.14
 
-OPTIONS=	EXIV2 "Exif support (image metadata)" On \
-		CLUTTER "Fancy slideshows" On \
-		GSTREAMER "Video playback" On \
-		OPENRAW "Support for camera RAW files" On \
-		SOUP "Web services uploaders" On \
-		BRASERO "Write galleries to CD/DVD (large dependency)" On \
-		YELP "Viewer for built-in help system" On
+OPTIONS_DEFINE=	EXIV2 CLUTTER GSTREAMER OPENRAW SOUP BRASERO YELP
+OPTIONS_DEFAULT=	EXVI2 CLUTTER GSTREAMER OPENRAW SOUP BRASERO YELP
+CLUTTER_DESC=	Fancy slideshows
+GSTREAMER_DESC=	Video playback
+OPENRAW_DESC=	Support for camera RAW files
+SOUP_DESC=	Web services uploaders
+BRASERO_DESC=	Write galleries to CD/DVD (large dependency)
+YELP_DESC=	Viewer for built-in help system
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXIV2)
+.if ${PORT_OPTIONS:MEXIV2}
 LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 PLIST_SUB+=	EXIV2=""
@@ -58,14 +56,14 @@ CONFIGURE_ARGS+=--disable-exiv2
 PLIST_SUB+=	EXIV2="@comment "
 .endif
 
-.if defined(WITH_CLUTTER)
+.if ${PORT_OPTIONS:MCLUTTER}
 LIB_DEPENDS+=	clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk
 CONFIGURE_ARGS+=--enable-clutter
 .else
 CONFIGURE_ARGS+=--disable-clutter
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=--enable-gstreamer
 PLIST_SUB+=	GSTREAMER=""
@@ -75,14 +73,14 @@ CONFIGURE_ARGS+=--disable-gstreamer
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
-.if defined(WITH_OPENRAW)
+.if ${PORT_OPTIONS:MOPENRAW}
 LIB_DEPENDS+=	openrawgnome.6:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-libopenraw
 .else
 CONFIGURE_ARGS+=--disable-libopenraw
 .endif
 
-.if defined(WITH_SOUP)
+.if ${PORT_OPTIONS:MSOUP}
 LIB_DEPENDS+=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 CONFIGURE_ARGS+=--enable-libsoup --enable-gnome-keyring
 PLIST_SUB+=	SOUP=""
@@ -92,7 +90,7 @@ CONFIGURE_ARGS+=--disable-libsoup --disable-gnome-keyring
 PLIST_SUB+=	SOUP="@comment "
 .endif
 
-.if defined(WITH_BRASERO)
+.if ${PORT_OPTIONS:MBRASERO}
 LIB_DEPENDS+=	brasero-burn.3:${PORTSDIR}/sysutils/brasero
 CONFIGURE_ARGS+=--enable-libbrasero
 PLIST_SUB+=	BRASERO=""
@@ -101,8 +99,8 @@ CONFIGURE_ARGS+=--disable-libbrasero
 PLIST_SUB+=	BRASERO="@comment "
 .endif
 
-.if defined(WITH_YELP)
+.if ${PORT_OPTIONS:MYELP}
 RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

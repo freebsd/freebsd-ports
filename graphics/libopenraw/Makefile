@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopenraw
-# Date created:				21 Mar 2007
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libopenraw
 PORTVERSION=	0.0.8
@@ -20,16 +16,18 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 
-OPTIONS=	GNOME "GNOME support (needs gtk20)" on
+OPTIONS_DEFINE=	GNOME
+OPTIONS_DEFAULT=	GNOME
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME=	gtk20
 PLIST_SUB+=	GNOME=""
 .else
@@ -37,12 +35,8 @@ CONFIGURE_ARGS+=--disable-gnome
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|testsuite ||' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
