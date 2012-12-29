@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dice
-# Date created:		Thu Jan 31 12:07:01 CET 2002
-# Whom:			Miguel Mendez <flynn@energyhq.homeip.net>
-#
+# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
 # $FreeBSD$
-#
 
 PORTNAME=	hercules
 PORTVERSION=	3.05
@@ -27,6 +23,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's@SOL_TCP@IPPROTO_TCP@g' ${WRKSRC}/hscutl.c
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's,^SUBDIRS = decNumber m4 po util html man . crypto,SUBDIRS = decNumber m4 po util man . crypto,g' ${WRKSRC}/Makefile.in
 .else
