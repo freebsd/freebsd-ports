@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pure-ftpd
-# Date created:				22 April 2001
-# Whom:					Frank DENIS
-#
+# Created by: Frank DENIS
 # $FreeBSD$
-#
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.36
@@ -31,118 +27,122 @@ MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
 		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
 		pure-authd.8
 
-OPTIONS=	LDAP		"Support for users in LDAP directories" off \
-		MYSQL		"Support for users in MySQL database" off \
-		PAM		"Support for PAM authentication" on \
-		PGSQL		"Support for users in PostgreSQL database" off \
-		TLS		"Support for TLS (experimental)" off \
-		PRIVSEP		"Enable privilege separation" on \
-		PERUSERLIMITS	"Per-user concurrency limits" off \
-		THROTTLING	"Bandwidth throttling" off \
-		UPLOADSCRIPT	"Support uploadscript daemon" off \
-		UTF8		"Support for charset conversion" off \
-		SENDFILE	"Support for the sendfile syscall" on \
-		LARGEFILE	"Support downloading files larger than 2Gb" off \
-		VIRTUALCHROOT	"Follow symlinks outside a chroot jail" on \
-		ANONRESUME	"Allow anonymous user to resume file upload" off \
-		ANONRENAME	"Allow anonymous user to rename file" off \
-		ANONDELETE	"Allow anonymous user to delete file" off
+OPTIONS_DEFINE=	LDAP MYSQL PAM PGSQL TLS PRIVSEP PERUSERLIMITS THROTTLING \
+		UPLOADSCRIPT UTF8 SENDFILE LARGEFILE VIRTUALCHROOT ANONRESUME \
+		ANONRENAME ANONDELETE DOCS EXAMPLES
+OPTIONS_DEFAULT=	PAM PRIVSEP SENDFILE VIRTUALCHROOT
+
+LDAP_DESC=	Support for users in LDAP directories
+MYSQL_DESC=	Support for users in MySQL database
+PAM_DESC=	Support for PAM authentication
+PGSQL_DESC=	Support for users in PostgreSQL database
+TLS_DESC=	Support for TLS (experimental)
+PRIVSEP_DESC=	Enable privilege separation
+PERUSERLIMITS_DESC=	Per-user concurrency limits
+THROTTLING_DESC=	Bandwidth throttling
+UPLOADSCRIPT_DESC=	Support uploadscript daemon
+UTF8_DESC=	Support for charset conversion
+SENDFILE_DESC=	Support for the sendfile syscall
+LARGEFILE_DESC=	Support downloading files larger than 2Gb
+VIRTUALCHROOT_DESC=	Follow symlinks outside a chroot jail
+ANONRESUME_DESC=	Allow anonymous user to resume file upload
+ANONRENAME_DESC=	Allow anonymous user to rename file
+ANONDELETE_DESC=	Allow anonymous user to delete file
 
 .include <bsd.port.options.mk>
 
 # language support requested?
-.if defined(WITH_LANG)
+.if ${PORT_OPTIONS:MLANG}
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
 .endif
 
 # ldap support requested?
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 # mysql support requested?
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
 # postgresql support requested?
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		YES
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
 # privilege separation requested?
-.if defined(WITH_PRIVSEP)
+.if ${PORT_OPTIONS:MPRIVSEP}
 CONFIGURE_ARGS+=	--with-privsep
 .endif
 
 # per-user concurrency limits requested?
-.if defined(WITH_PERUSERLIMITS)
+.if ${PORT_OPTIONS:MPERUSERLIMITS}
 CONFIGURE_ARGS+=	--with-peruserlimits
 .endif
 
 # throttling requested?
-.if defined(WITH_THROTTLING)
+.if ${PORT_OPTIONS:MTHROTTLING}
 CONFIGURE_ARGS+=	--with-throttling
 .endif
 
 # TLS
-.if defined(WITH_TLS)
+.if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--with-tls
 # different certificate file location?
-. if defined(WITH_CERTFILE)
+. if ${PORT_OPTIONS:MCERTFILE}
 CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
 . endif
 .endif
 
 # if mysql or ldap are disabled, enable pam
-.if !defined(WITHOUT_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
 # support uploadscript?
-.if defined (WITH_UPLOADSCRIPT)
+.if ${PORT_OPTIONS:MUPLOADSCRIPT}
 CONFIGURE_ARGS+=	--with-uploadscript
 .endif
 
 # RFC 2640 charset conversion requested?
-.if defined(WITH_UTF8)
+.if ${PORT_OPTIONS:MUTF8}
 USE_ICONV=	YES
 CONFIGURE_ARGS+=	--with-rfc2640
 .endif
 
-.if defined(WITH_SENDFILE)
+.if ${PORT_OPTIONS:MSENDFILE}
 CONFIGURE_ARGS+=	--with-sendfile
 .else
 CONFIGURE_ARGS+=	--without-sendfile
 .endif
 
-.if defined(WITH_LARGEFILE)
+.if ${PORT_OPTIONS:MLARGEFILE}
 CONFIGURE_ARGS+=	--enable-largefile
 .else
 CONFIGURE_ARGS+=	--disable-largefile
 .endif
 
-.if defined(WITH_VIRTUALCHROOT)
+.if ${PORT_OPTIONS:MVIRTUALCHROOT}
 CONFIGURE_ARGS+=	--with-virtualchroot
 .else
 CONFIGURE_ARGS+=	--without-virtualchroot
 .endif
 
-.if defined(WITH_ANONRESUME)
+.if ${PORT_OPTIONS:MANONRESUME}
 CFLAGS+=	-DANON_CAN_RESUME
 .endif
 
-.if defined(WITH_ANONRENAME)
+.if ${PORT_OPTIONS:MANONRENAME}
 CFLAGS+=	-DANON_CAN_RENAME
 .endif
 
-.if defined(WITH_ANONDELETE)
+.if ${PORT_OPTIONS:MANONDELETE}
 CFLAGS+=	-DANON_CAN_DELETE
 .endif
-
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
 PAM_DIR?=	${EXAMPLESDIR}/pam
 PAM_TARGET?=	pure-ftpd
@@ -176,13 +176,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-pgsql.conf ${PREFIX}/etc/pureftpd-pgsql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${CONTRIB} ${EXAMPLESDIR}
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
