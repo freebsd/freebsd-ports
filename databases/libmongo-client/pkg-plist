@@ -1,0 +1,17 @@
+include/mongo-client/bson.h
+include/mongo-client/mongo-wire.h
+include/mongo-client/mongo-client.h
+include/mongo-client/mongo-utils.h
+include/mongo-client/mongo-sync.h
+include/mongo-client/mongo-sync-cursor.h
+include/mongo-client/mongo-sync-pool.h
+include/mongo-client/sync-gridfs.h
+include/mongo-client/sync-gridfs-chunk.h
+include/mongo-client/sync-gridfs-stream.h
+include/mongo-client/mongo.h
+lib/libmongo-client.so.3
+lib/libmongo-client.so
+lib/libmongo-client.la
+lib/libmongo-client.a
+libdata/pkgconfig/libmongo-client.pc
+@dirrm include/mongo-client
