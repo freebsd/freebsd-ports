@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aqualung
-# Date created:		08 October 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta11
@@ -15,29 +11,30 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Music player with rich features
 
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		FLAC.10:${PORTSDIR}/audio/flac \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		oggz.8:${PORTSDIR}/audio/liboggz \
-		speex.1:${PORTSDIR}/audio/speex \
-		mad.2:${PORTSDIR}/audio/libmad \
-		modplug.1:${PORTSDIR}/audio/libmodplug \
-		mpcdec.7:${PORTSDIR}/audio/musepack \
-		mac.2:${PORTSDIR}/audio/mac \
-		tag.1:${PORTSDIR}/audio/taglib \
-		lrdf.2:${PORTSDIR}/textproc/liblrdf \
-		cdio.13:${PORTSDIR}/sysutils/libcdio \
-		mp3lame.0:${PORTSDIR}/audio/lame \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		strfunc.9:${PORTSDIR}/devel/libstrfunc \
-		wavpack.2:${PORTSDIR}/audio/wavpack \
-		xslt.2:${PORTSDIR}/textproc/libxslt \
-		cddb.4:${PORTSDIR}/audio/libcddb \
-		strfunc.9:${PORTSDIR}/devel/libstrfunc
+LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
+		sndfile:${PORTSDIR}/audio/libsndfile \
+		FLAC:${PORTSDIR}/audio/flac \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		oggz:${PORTSDIR}/audio/liboggz \
+		speex:${PORTSDIR}/audio/speex \
+		mad:${PORTSDIR}/audio/libmad \
+		modplug:${PORTSDIR}/audio/libmodplug \
+		mpcdec:${PORTSDIR}/audio/musepack \
+		mac:${PORTSDIR}/audio/mac \
+		tag:${PORTSDIR}/audio/taglib \
+		lrdf:${PORTSDIR}/textproc/liblrdf \
+		cdio:${PORTSDIR}/sysutils/libcdio \
+		mp3lame:${PORTSDIR}/audio/lame \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		strfunc:${PORTSDIR}/devel/libstrfunc \
+		wavpack:${PORTSDIR}/audio/wavpack \
+		xslt:${PORTSDIR}/textproc/libxslt \
+		cddb:${PORTSDIR}/audio/libcddb \
+		strfunc:${PORTSDIR}/devel/libstrfunc
 
 USE_GETTEXT=	yes
-USE_GNOME=	pkgconfig gtk20 libxml2
+USE_GNOME=	gtk20 libxml2
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no \
@@ -46,25 +43,23 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lstrfunc
 MAN1=		${PORTNAME}.1
 
-OPTIONS=	JACK "Enable JACK low-latency audio server support" Off \
-		PULSE "Enable PulseAudio sound server support" Off
+OPTIONS_DEFINE=	JACK PULSEAUDIO DOCS
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 CONFIGURE_ARGS+=	--with-jack=no
 .else
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--with-jack=yes
 .endif
 
-.if !defined(WITH_PULSE)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 CONFIGURE_ARGS+=	--with-pulse=no
 .else
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-pulse=yes
 .endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir/s!=.*!= ${DOCSDIR}!'\
 		${WRKSRC}/doc/Makefile.in
@@ -72,7 +67,7 @@ post-patch:
 #		${WRKSRC}/configure
 	@${ECHO_CMD} "#include <sys/stat.h>" >> ${WRKSRC}/src/common.h
 	@${ECHO_CMD} "#include <sys/types.h>" >> ${WRKSRC}/src/common.h
-.ifdef NOPORTDOCS
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am/s!install-docDATA!!'\
 		${WRKSRC}/doc/Makefile.in
 .endif
