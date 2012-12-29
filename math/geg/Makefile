@@ -1,9 +1,5 @@
-# New ports collection makefile for:		geg
-# Date created:					8 Aug 1998
-# Whom:						rom
-#
+# Created by: rom
 # $FreeBSD$
-#
 
 PORTNAME=	geg
 PORTVERSION=	1.0.2
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.infolaunch.com/~daveb/
 MASTER_SITE_SUBDIR=	science/visualization/plotting
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualise multiple 2D-functions of one variable
 
 USE_GNOME=	gtk12

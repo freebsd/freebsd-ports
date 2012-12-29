@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdict
-# Date created:			Sun Jul 18 1999
-# Whom:				domi@saargate.de
-#
+# Created by: domi@saargate.de
 # $FreeBSD$
-#
 
 PORTNAME=	gdict
 PORTVERSION=	0.7
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small program that finds definitions of arbitrary (English) words
 
 USE_GNOME=	gtk12

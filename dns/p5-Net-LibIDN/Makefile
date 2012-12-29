@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-LibIDN
-# Date created:	   06 March 2004
-# Whom:		   Dominik Brettnacher <domi@saargate.de>
-#
+# Created by: Dominik Brettnacher <domi@saargate.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-LibIDN
 PORTVERSION=	0.12
@@ -12,7 +8,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	domi@nonsensss.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This module provides access to the libidn library
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
