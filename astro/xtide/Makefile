@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xtide
-# Date created:        30 August 1997
-# Whom:                Brion Moss <brion@queeg.com>
-#
+# Created by: Brion Moss <brion@queeg.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xtide
 PORTVERSION=	2.12.1
@@ -37,19 +33,18 @@ TCD_DISTNAME=	libtcd-2.2.5
 HARM_DISTNAME=	harmonics-dwf-20120302
 WVS_DISTNAME=	wvs
 
-OPTIONS=	WVS "Use world vector shoreline data (big file!)" Off
+OPTIONS_DEFINE=	WVS X11
+WVS_DESC=	Use world vector shoreline data (big file!)
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_WVS)
+.if ${PORT_OPTIONS:MWVS}
 DISTFILES+=	${WVS_DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB+=	WVS=""
-.else
-PLIST_SUB+=	WVS="@comment "
+.elsePLIST_SUB+=	WVS="@comment "
 .endif
 
-.if defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 PKGNAMESUFFIX+=	-nox11
 ALL_TARGET+=	tide xttpd
 PLIST_SUB+=	X11="@comment "
@@ -83,7 +78,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tide ${PREFIX}/bin
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xtide.1 ${MANPREFIX}/man/man1
 .endif
@@ -100,7 +95,7 @@ post-install:
 	${CHMOD} 644 ${PREFIX}/etc/xtide.conf
 .endif
 
-.if !defined(WITHOUT_WVS)
+.if ${PORT_OPTIONS:MWVS}
 	@${MKDIR} ${DATADIR}/wvs
 	${INSTALL_DATA} ${WRKDIR}/wvs1.dat ${DATADIR}/wvs
 	${INSTALL_DATA} ${WRKDIR}/wvs12.dat ${DATADIR}/wvs
@@ -110,4 +105,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/wvsfull.dat ${DATADIR}/wvs
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
