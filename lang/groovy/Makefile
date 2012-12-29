@@ -1,12 +1,8 @@
-# New ports collection makefile for:	groovy
-# Date created:				2005-02-21
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	groovy
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.5
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.groovy.codehaus.org/distributions/
 DISTNAME=	groovy-${PORTVERSION}
@@ -16,6 +12,7 @@ MAINTAINER=	mjs@Bur.st
 COMMENT=	Agile dynamic language for the JVM
 
 LICENSE=	AL2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
 USE_ZIP=yes
@@ -26,7 +23,9 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	ANTLR-LICENSE.txt ASM-LICENSE.txt CLI-LICENSE.txt JSR223-LICENSE.txt LICENSE.txt conf lib
 SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
 PORTDOCS=	html pdf
 .endif
@@ -49,7 +48,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin/
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC} \
 	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
