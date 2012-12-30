@@ -1,6 +1,6 @@
 --- blkdev.c.orig   Sun Aug  3 16:07:29 2003
 +++ blkdev.c        Sat Mar  5 00:23:40 2005
-@@ -128,6 +128,10 @@
+@@ -141,6 +141,10 @@
    int code;
  
  #ifdef BSD_BLKDEV
@@ -11,7 +11,7 @@
    struct partinfo pinfo;
  #endif
  
-@@ -160,7 +164,7 @@
+@@ -173,7 +177,7 @@
      }
  
  #ifdef BSD_BLKDEV
