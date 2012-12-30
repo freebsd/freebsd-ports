@@ -20,7 +20,7 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 .if !defined(LWR_SLAVE)
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 USE_PERL5=	yes
-OPTIONS_DEFINE=	XRANDR
+OPTIONS_DEFINE=	NLS XRANDR
 .endif
 
 MAKE_JOBS_SAFE=	yes
@@ -28,7 +28,6 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 USE_XORG=	xft xinerama xmu xpm
-USE_GETTEXT=	yes
 USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -53,6 +52,16 @@ CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
 
 .if ${OSVERSION} < 800000
 BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=   yes
+LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
+CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
+PLIST_SUB=     NLS=""
+.else
+CONFIGURE_ARGS+=       --disable-locale
+PLIST_SUB=     NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXRANDR}
@@ -81,9 +90,6 @@ MAN1_RU=	geticonset.1x setstyle.1x wxpaste.1x getstyle.1x wdwrite.1x \
 
 PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 		INSTALL-WMAKER NEWS README README.definable-cursor TODO
-
-LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
-CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
 
 post-patch:
 .for f in WINGs/wapplication.c WPrefs.app/Menu.c WPrefs.app/Paths.c \
