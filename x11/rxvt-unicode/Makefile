@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.15
-PORTREVISION=	2
+PORTVERSION=	9.16
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -31,7 +30,7 @@ WANT_PERL=		yes
 OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
 		MOUSEWHEEL SMART_RESIZE IMLOCALE_FIX GDK_PIXBUF		\
-		AFTERIMAGE NOTIFY 256_COLOR
+		NOTIFY 256_COLOR
 
 PERL_DESC=		Embedded Perl interpreter
 XIM_DESC=		Support for XIM (X Input Method) protocol
@@ -47,7 +46,6 @@ MOUSEWHEEL_DESC=	Support for scrolling via mouse wheel
 SMART_RESIZE_DESC=	Smart growth/shrink behaviour
 IMLOCALE_FIX_DESC=	imlocale encoding conversion fix
 GDK_PIXBUF_DESC=	Use gdk-pixbuf for background images
-AFTERIMAGE_DESC=	Use libAfterImage for background images
 NOTIFY_DESC=		Freedesktop startup notification support
 256_COLOR_DESC=		Support for 256 colors
 
@@ -75,6 +73,15 @@ USE_PERL5_BUILD=	yes
 PLIST_SUB=		PERL="@comment "
 .else
 USE_PERL5=		yes
+MAN1+=			urxvt-background.1 urxvt-bell-command.1 urxvt-block-graphics-to-ascii.1 \
+			urxvt-clipboard-osc.1 urxvt-confirm-paste.1 urxvt-digital-clock.1	\
+			urxvt-example-refresh-hooks.1 urxvt-extensions.1 urxvt-keysym-list.1	\
+			urxvt-kuake.1 urxvt-macosx-clipboard-native.1 urxvt-macosx-clipboard.1	\
+			urxvt-matcher.1 urxvt-option-popup.1 urxvt-overlay-osc.1		\
+			urxvt-readline.1 urxvt-remote-clipboard.1 urxvt-searchable-scrollback.1	\
+			urxvt-selection-autotransform.1 urxvt-selection-pastebin.1		\
+			urxvt-selection-popup.1 urxvt-selection.1 urxvt-tabbed.1		\
+			urxvt-xim-onthespot.1
 MAN3=			urxvtperl.3
 PLIST_SUB=		PERL=""
 .endif
@@ -138,15 +145,9 @@ CONFIGURE_ARGS+=	--disable-smart-resize
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
-# enable integration with gdk-pixbuf / or libAfterImage for background images
+# enable integration with gdk-pixbuf
 .if !${PORT_OPTIONS:MGDK_PIXBUF}
 CONFIGURE_ARGS+=	--disable-pixbuf
-. if !${PORT_OPTIONS:MAFTERIMAGE}
-CONFIGURE_ARGS+=	--disable-afterimage	# To be upgraded
-. else
-LIB_DEPENDS+=		AfterImage:${PORTSDIR}/graphics/libafterimage
-CONFIGURE_ARGS+=	--enable-afterimage
-. endif
 .else
 USE_GNOME+=		gdkpixbuf2
 CONFIGURE_ARGS+=	--enable-pixbuf
