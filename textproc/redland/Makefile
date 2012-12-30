@@ -1,22 +1,16 @@
-# ex:ts=8
-# New ports collection makefile for:	redland
-# Date created:			Nov 22, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	redland
-PORTVERSION=	1.0.15
-PORTREVISION=	1
+PORTVERSION=	1.0.16
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	High-level interface for RDF
 
-LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
-		rasqal.3:${PORTSDIR}/textproc/rasqal
+LIB_DEPENDS=	raptor2:${PORTSDIR}/textproc/raptor2 \
+		rasqal:${PORTSDIR}/textproc/rasqal
 
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	gnomehack libxml2 lthack
