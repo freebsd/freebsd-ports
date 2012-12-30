@@ -186,7 +186,7 @@ GNASH_RENDERERS+=	agg
 USE_GL=			yes
 GNASH_RENDERERS+=	ogl
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=		gtkglext-x11-1:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 .endif
 .endif
 
