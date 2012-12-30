@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libjingle
-# Date created:		Wed Feb 22 01:33:20 UTC 2006
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libjingle
 PORTVERSION=	0.4.0
@@ -14,10 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
-LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		ilbc.0:${PORTSDIR}/net/ilbc \
-		ortp.8:${PORTSDIR}/net/linphone-base \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
+		ilbc:${PORTSDIR}/net/ilbc \
+		ortp:${PORTSDIR}/net/linphone-base \
+		expat:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
 		clusterit-[0-9]* pcp-[0-9]* synce-librapi2-[0-9]*
@@ -42,21 +38,20 @@ CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
 		SPEEX_LIBS="$$(${PKG_CONFIG} --libs speex)"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC} ${PTHREAD_CFLAGS} -g
 MAKE_JOBS_SAFE=	yes
+LDFLAGS+=-L${LOCALBASE}/lib -L${OPENSSLLIB} ${PTHREAD_LIBS}
 
-DOC_FILES=	AUTHORS \
+PORTDOCS=	AUTHORS \
 		ChangeLog \
 		DOCUMENTATION \
 		NEWS \
 		README
 
-.ifndef(NOPORTDOCS)
-PORTDOCS=	${DOC_FILES}
-.endif
-
 PLIST_FILES+=	bin/login \
 		bin/pcp \
 		bin/relayserver \
 		bin/stunserver \
+
+.include <bsd.port.options.mk>
 
 post-configure:
 # force glib
@@ -79,21 +74,12 @@ post-configure:
 .endfor
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		does not compile
-.endif
-
-LDFLAGS+=-L${LOCALBASE}/lib -L${OPENSSLLIB} ${PTHREAD_LIBS}
-PKG_CONFIG?=${LOCALBASE}/bin/pkg-config
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
