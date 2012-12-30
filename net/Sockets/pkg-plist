@@ -28,11 +28,13 @@ include/Sockets/IEventOwner.h
 include/Sockets/IFile.h
 include/Sockets/IFileUpload.h
 include/Sockets/IHttpServer.h
+include/Sockets/IModel.h
 include/Sockets/IMutex.h
 include/Sockets/ISocketHandler.h
 include/Sockets/IStream.h
 include/Sockets/Ipv4Address.h
 include/Sockets/Ipv6Address.h
+include/Sockets/Json.h
 include/Sockets/ListenSocket.h
 include/Sockets/Lock.h
 include/Sockets/MemFile.h
@@ -48,6 +50,7 @@ include/Sockets/Socket.h
 include/Sockets/SocketAddress.h
 include/Sockets/SocketHandler.h
 include/Sockets/SocketHandlerEp.h
+include/Sockets/SocketHandlerThread.h
 include/Sockets/SocketStream.h
 include/Sockets/StdLog.h
 include/Sockets/StdoutLog.h
@@ -68,6 +71,6 @@ libdata/pkgconfig/libsockets2.pc
 lib/libSockets.a
 lib/libSockets.so
 lib/libSockets.so.2
-lib/libSockets.so.2.3.9.2
+lib/libSockets.so.2.3.9.7
 @dirrm include/Sockets
 @dirrmtry lib/pkgconfig
