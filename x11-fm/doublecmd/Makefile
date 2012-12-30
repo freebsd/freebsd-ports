@@ -1,4 +1,4 @@
-# Created by:	Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
+# Created by: Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
 # $FreeBSD$
 
 PORTNAME=	doublecmd
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz ${PORTNAME}-help-0.5.1-src.tar.gz
 
 MAINTAINER=	bbtruk@users.sourceforge.net
-COMMENT=	A Total Commander like file manager for the X Window System
+COMMENT=	Total Commander like file manager for the X Window System
 
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
@@ -70,8 +70,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC}/components && \
-		${FIND} * -name *.lpk -exec ${LAZBUILD_CMD} --ws=${LCL_PLATFORM} "{}" \;
-			--lazarusdir=${LAZARUS_DIR}
+		${FIND} * -name *.lpk -exec ${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "{}" \;
 	@cd ${WRKSRC} && \
 		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --bm="${BUILD_MODE}" --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE}
 
