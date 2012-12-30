@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	gegl
-# Date created:				3 October 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.8
@@ -15,8 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
-    		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
 		ENSCRIPT	"Enable Enscript" on \
@@ -45,9 +40,10 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.1
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS+=--without-vala
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 GEGL_MINOR=	107
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
