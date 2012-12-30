@@ -18,6 +18,9 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 PORTSCOUT=	limit:^0\.6\.
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3

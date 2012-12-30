@@ -19,6 +19,9 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp \
 		ofx.5:${PORTSDIR}/finance/libofx
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

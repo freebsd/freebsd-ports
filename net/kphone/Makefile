@@ -15,6 +15,9 @@ COMMENT=	A voice over internet phone
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

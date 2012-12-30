@@ -15,6 +15,9 @@ MASTER_SITES=	SF/${PORTNAME}/Source%20Packages/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A new K-menu for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_CMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

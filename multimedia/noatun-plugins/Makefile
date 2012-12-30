@@ -18,6 +18,9 @@ COMMENT=	Various plugins for Noatun
 
 LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 KDE_SPLIT=	${NOATUNPLUG_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 KDE_DOC_SPLIT=	# none
 USE_KDELIBS_VER=3

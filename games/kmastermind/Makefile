@@ -16,6 +16,9 @@ COMMENT=	Mastermind game designed for K Desktop Environment
 
 BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/x11/kdelibs3:extract
 
+DEPRECATED=		Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 

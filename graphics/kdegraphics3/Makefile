@@ -27,6 +27,9 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 
 CONFLICTS=	kolourpaint-[0-9]*
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

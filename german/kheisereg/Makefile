@@ -16,6 +16,9 @@ COMMENT=		KDE utility to search within the Heise Register
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
+DEPRECATED=		Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=		yes
 USE_KDEBASE_VER=	3
 USE_AUTOTOOLS=		libtool

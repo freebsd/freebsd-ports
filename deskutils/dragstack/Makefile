@@ -13,6 +13,9 @@ MASTER_SITES=		SF
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Drop stack applet for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_AUTOTOOLS=	libtool
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes

@@ -20,6 +20,9 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=	3
 USE_GNOME=	gtk12
 USE_SDL=	sdl

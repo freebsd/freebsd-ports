@@ -14,6 +14,9 @@ MASTER_SITES=	SF/k3b/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Localized messages and documentation for K3b
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes

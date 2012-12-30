@@ -22,6 +22,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		qwtplot3d.0:${PORTSDIR}/math/qwtplot3d \
 		origin.0:${PORTSDIR}/math/liborigin
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3

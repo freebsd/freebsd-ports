@@ -22,6 +22,9 @@ DB=		sqlite
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33 \
 		sqlite.2:${PORTSDIR}/databases/sqlite2
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
 DRIVER=		src/sql/drivers/${DB}

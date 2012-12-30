@@ -14,6 +14,9 @@ COMMENT=	A QT program to queue lots of MP3s for random XMMS play
 LIB_DEPENDS=	db_cxx-4.3.0:${PORTSDIR}/databases/db43 \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11 xinerama

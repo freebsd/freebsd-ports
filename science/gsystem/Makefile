@@ -17,6 +17,9 @@ COMMENT=	A multi-user virtual reality evolution and life simulation framework
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 
 USE_KDELIBS_VER=	3

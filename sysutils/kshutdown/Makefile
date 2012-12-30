@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/KShutdown/${PORTVERSION}%20for%20KDE%203
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced shutdown utility for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

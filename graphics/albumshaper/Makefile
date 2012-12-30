@@ -17,6 +17,9 @@ COMMENT=	A drag-n-drop hierarchal photo album creation
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_QT_VER=	3

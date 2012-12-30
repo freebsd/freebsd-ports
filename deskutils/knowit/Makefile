@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A note manager with tree organization that uses RTF for storage
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=	3

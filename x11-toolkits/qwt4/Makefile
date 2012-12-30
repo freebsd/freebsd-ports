@@ -16,6 +16,9 @@ COMMENT=	Qwt widget library for technical purposes (old version)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes

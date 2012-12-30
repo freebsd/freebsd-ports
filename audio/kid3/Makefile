@@ -21,6 +21,9 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
 		tag:${PORTSDIR}/audio/taglib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 PORTSCOUT=	limit:^1\.
 
 USE_KDELIBS_VER=3

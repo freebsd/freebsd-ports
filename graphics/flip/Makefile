@@ -22,6 +22,9 @@ RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
 
 WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 PLIST_FILES=	bin/flip
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"

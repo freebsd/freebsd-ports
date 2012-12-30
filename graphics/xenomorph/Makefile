@@ -18,6 +18,9 @@ COMMENT=	An image filter system based on volterra and morphologic filters
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"

@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE pureftpd user manager
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes

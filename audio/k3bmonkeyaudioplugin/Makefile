@@ -15,6 +15,9 @@ COMMENT=	K3b plugin for Monkey's Audio files
 
 LIB_DEPENDS=	k3b:${PORTSDIR}/sysutils/k3b
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

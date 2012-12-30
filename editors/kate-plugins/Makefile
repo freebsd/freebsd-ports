@@ -16,6 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional plugins and features for kate
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 KDE_SPLIT=	kate
 KDE_DOC_SPLIT=	kate-plugins
 USE_KDEBASE_VER=3

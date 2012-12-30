@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=		system/network/serial/ppp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the current throughput of a network device in a window
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 MAKE_ENV=	QT_PREFIX="${QT_PREFIX}" PTHREAD_LIBS="${PTHREAD_LIBS}"

@@ -17,6 +17,9 @@ COMMENT=	Fractal rendering program with nice 3D-display in realtime
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 PLIST_FILES=	bin/kisomandel
 USE_BZIP2=	yes
 USE_QT_VER=	3

@@ -20,6 +20,9 @@ LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		pisock:${PORTSDIR}/palm/pilot-link \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 CONFLICTS=	akregator-[0-9]* kdenetwork-3.1.* kdeaddons-kontact-plugins-[0-9]* kdepim-kpilot-3.2.3
 
 USE_KDEBASE_VER=3

@@ -19,6 +19,9 @@ COMMENT=	KDE integration for MLDonkey eDonkey P2P client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

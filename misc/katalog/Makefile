@@ -18,6 +18,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD organizer for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDEBASE_VER=	3
 USE_SQLITE=	yes
 USE_CMAKE=	yes

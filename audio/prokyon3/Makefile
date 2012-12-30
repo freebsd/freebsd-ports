@@ -22,6 +22,9 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		tag.1:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	x11 xft
 USE_QT_VER=	3
 USE_MYSQL=	yes

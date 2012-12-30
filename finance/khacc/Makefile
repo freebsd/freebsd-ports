@@ -16,6 +16,9 @@ COMMENT=	Simple KDE-based financial manager
 LIB_DEPENDS=	qhacc.8:${PORTSDIR}/finance/qhacc
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes

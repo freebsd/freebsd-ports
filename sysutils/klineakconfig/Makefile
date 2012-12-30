@@ -17,6 +17,9 @@ COMMENT=	Configure lineakd through a KDE interface
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_XORG=	xkbfile
 USE_GMAKE=	yes

@@ -17,6 +17,9 @@ COMMENT=	A Qt/KDE viewer for CHM files
 
 LIB_DEPENDS+=	chm:${PORTSDIR}/misc/chmlib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

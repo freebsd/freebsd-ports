@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.m-j-s.net/pub/kde/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE/Qt log file viewer
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

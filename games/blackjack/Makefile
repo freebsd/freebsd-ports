@@ -18,6 +18,9 @@ COMMENT=	One of the better implementations of blackjack, based on QT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 MAKE_ENV=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
 		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \

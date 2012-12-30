@@ -14,6 +14,9 @@ MASTER_SITES=	 SF/qterm/qterm/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QTerm is a BBS client for BSD/Linux
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes

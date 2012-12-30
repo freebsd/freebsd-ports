@@ -13,6 +13,9 @@ MASTER_SITES=	http://codeworks.gnomedia.com/krefty/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Reference sheets for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

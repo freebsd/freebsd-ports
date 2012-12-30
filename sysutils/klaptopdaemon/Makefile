@@ -17,6 +17,9 @@ COMMENT=	APM monitor for KDE
 OPTIONS_DEFINE_i386=	ACPI
 ACPI_DESC=	Contributed ACPI support patch
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 
 ONLY_FOR_ARCHS=	i386

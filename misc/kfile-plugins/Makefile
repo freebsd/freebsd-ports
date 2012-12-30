@@ -16,6 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Konqueror (in filemanager mode)
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 KDE_SPLIT=	${KFILEPLUGINS_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 KDE_DOC_SPLIT=	# none
 USE_KDEBASE_VER=3

@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	xscrnsaver
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool

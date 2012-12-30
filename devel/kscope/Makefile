@@ -15,6 +15,9 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		cscope:${PORTSDIR}/devel/cscope \
 		dot:${PORTSDIR}/graphics/graphviz
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 USE_BISON=	build

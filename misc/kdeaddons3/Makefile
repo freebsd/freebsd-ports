@@ -27,6 +27,9 @@ RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
 		${NOATUNPLUG_DEP}:${PORTSDIR}/multimedia/noatun-plugins \
 		${RENAMEDLGPLUG_DEP}:${PORTSDIR}/misc/renamedlgplugins
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 NO_BUILD=	yes
 USE_KDELIBS_VER=3
 _NO_KDE_FIXPTHREAD=yes

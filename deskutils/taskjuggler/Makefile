@@ -22,6 +22,9 @@ BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 OPTIONS_DEFINE=	DOCS KDE3
 OPTIONS_DEFAULT=	KDE3
 

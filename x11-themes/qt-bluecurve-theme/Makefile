@@ -10,6 +10,9 @@ COMMENT=	The Bluecurve QT theme
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 BUILD_WRKSRC=	${WRKSRC}/art/qt/Bluecurve
 

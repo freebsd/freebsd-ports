@@ -16,6 +16,9 @@ COMMENT=	A KDE chess interface (gnuchess/crafty)
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

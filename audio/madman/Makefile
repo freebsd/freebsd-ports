@@ -20,6 +20,9 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_GNOME=	glib12
 

@@ -16,6 +16,9 @@ COMMENT=		Database frontend for KDE
 BUILD_DEPENDS=		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=		hk_classes.15:${PORTSDIR}/databases/hk_classes
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_PYTHON=		yes

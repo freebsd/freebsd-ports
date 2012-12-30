@@ -22,6 +22,9 @@ LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 
 CONFLICTS=	kdemultimedia-3.1.* kdemultimedia-3.2.[0-3]
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

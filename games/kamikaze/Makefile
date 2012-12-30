@@ -15,6 +15,9 @@ COMMENT=	Multiplayer bomberman-style game for KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

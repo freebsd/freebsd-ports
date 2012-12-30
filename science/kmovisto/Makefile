@@ -15,6 +15,9 @@ MASTER_SITES=	http://mitglied.multimania.de/pageofmh/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real 3-D molecule viewer
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GL=		yes

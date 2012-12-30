@@ -18,6 +18,9 @@ COMMENT=	A Go board and SGF editor written with the Qt library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GMAKE=	yes

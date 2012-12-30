@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.silversoft.net/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based chess multiplayer game
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 MAKEFILE=	Makefile.FreeBSD
 LOCALE_FILE=	"${DATADIR}/${PORTNAME}_ru"
 

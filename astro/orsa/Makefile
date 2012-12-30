@@ -20,6 +20,9 @@ LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl \
 		fftw.2:${PORTSDIR}/math/fftw \
 		ginac.3:${PORTSDIR}/math/GiNaC
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_GL=		gl
 USE_GMAKE=	yes

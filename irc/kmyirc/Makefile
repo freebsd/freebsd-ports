@@ -13,6 +13,9 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}-alpha/${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Easy to use IRC client for KDE
 
+DEPRECATED=		Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_AUTOTOOLS=		libtool
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes

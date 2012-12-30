@@ -48,6 +48,9 @@ CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes

@@ -16,6 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional plugins and features for Konqueror
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 KDE_SPLIT=	${KONQPLUGINS_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 USE_KDEBASE_VER=3
 USE_KDELIBS_VER=3

@@ -17,6 +17,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE applications related to system administration
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

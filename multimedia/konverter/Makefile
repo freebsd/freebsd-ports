@@ -18,6 +18,9 @@ BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \
 		mencoder:${PORTSDIR}/multimedia/mencoder
 LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

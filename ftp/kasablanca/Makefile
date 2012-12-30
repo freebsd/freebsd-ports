@@ -11,6 +11,9 @@ MASTER_SITES=	BERLIOS \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical ftp client for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=3

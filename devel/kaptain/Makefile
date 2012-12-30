@@ -16,6 +16,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for building/running QT GUIs for command line programs
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GMAKE=	yes

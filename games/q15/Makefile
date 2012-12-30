@@ -14,6 +14,9 @@ MASTER_SITES=	http://silversoft.net/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt-based game fifteen
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \

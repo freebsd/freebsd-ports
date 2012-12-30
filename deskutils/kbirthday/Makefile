@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE kicker-applet that reminds you of birthdays and anniversaries
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3

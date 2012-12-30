@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small tool to generate secure, random passwords
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

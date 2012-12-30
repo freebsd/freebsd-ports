@@ -20,6 +20,9 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
 CONFLICTS+=	kwordquiz-[0-9]* kgeography-[0-9]*
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

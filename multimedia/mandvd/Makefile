@@ -26,6 +26,9 @@ RUN_DEPENDS=	dvd-slideshow>=0.7.5:${PORTSDIR}/multimedia/dvd-slideshow \
 		transcode>=1.0.2:${PORTSDIR}/multimedia/transcode \
 		dvd+rw-tools>=5.21.4:${PORTSDIR}/sysutils/dvd+rw-tools
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 PLIST_FILES=	bin/mandvd \
 		share/pixmaps/mandvdico.png
 PLIST_DIRS=	share/pixmaps

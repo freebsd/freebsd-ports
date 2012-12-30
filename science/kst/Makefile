@@ -15,6 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	cfitsio:${PORTSDIR}/astro/cfitsio \
 		gsl:${PORTSDIR}/math/gsl
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool

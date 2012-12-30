@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for administration of MySQL servers
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
 USE_QT_VER=	3
