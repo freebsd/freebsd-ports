@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121229:
+  AFFECTS: users of devel/libical
+  AUTHOR gnome@FreeBSD.org
+
+  The devel/libical has been updated to 0.48. The shared library version has
+  been changed from 44 to 0. Please rebuild all ports that depends on it:
+
+  If you use portmaster:
+        portmaster -r libical
+  If you use portupgrade:
+        portupgrade -fr devel/libical
+  If you use pkgng with binary packages:
+        pkg install -fR devel/libical
+
 20121228:
   AFFECTS: users of databases/innotop, multimedia/zoneminder
   net-mgmt/netdot, ports-mgmt/tinderbox, ports-mgmt/tinderbox-devel
