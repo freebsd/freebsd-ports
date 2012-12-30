@@ -8,7 +8,7 @@ MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A toolkit for conversion of images between different formats
+COMMENT=	Toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
