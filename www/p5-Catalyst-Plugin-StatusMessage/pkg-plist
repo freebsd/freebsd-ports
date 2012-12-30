@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Catalyst/Plugin/StatusMessage.pm
+%%SITE_PERL%%/Catalyst/Plugin/StatusMessage.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/StatusMessage/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/StatusMessage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
