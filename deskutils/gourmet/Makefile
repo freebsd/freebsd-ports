@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gourmet
-# Date created:				14 April, 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gourmet
 PORTVERSION=	0.15.9
@@ -24,8 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 		${PYTHON_PKGNAMEPREFIX}reportlab>=0:${PORTSDIR}/print/py-reportlab
 
 MAN1=		${PORTNAME}.1
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
 USE_GETTEXT=	yes
 USE_GNOME=	pygnome2 pygnomeextras pygtk2
 
