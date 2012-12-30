@@ -26,8 +26,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
-		--extra-cflags=-I${LOCALBASE}/include/ffmpeg1 \
-		--extra-ldflags=-L${LOCALBASE}/lib/ffmpeg1 \
+		--extra-cflags='-I${LOCALBASE}/include/ffmpeg1 \
+		-I${LOCALBASE}/include/portaudio2' \
+		--extra-ldflags='-L${LOCALBASE}/lib/ffmpeg1 \
+		-L${LOCALBASE}/lib/portaudio2' \
 		--mandir=${PREFIX}/man \
 		--disable-alsa \
 		--disable-liba52 \
@@ -48,7 +50,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB JOYSTICK \
 		DVDREAD LIBBLURAY V4L DV THEORA \
-		X11 XVMC XINERAMA OPENGL SDL VDPAU GIF CACA \
+		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
 		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
 		JACK PULSE PORTAUDIO ASS LIRC
 OPTIONS_DEFAULT=DVDREAD X11 ASS
@@ -243,10 +245,6 @@ CONFIGURE_ARGS+=	--disable-gl
 USE_XORG+=		xinerama xineramaproto
 .else
 CONFIGURE_ARGS+=	--disable-xinerama
-.endif
-.if ${PORT_OPTIONS:MXVMC}
-USE_XORG+=		xvmc
-CONFIGURE_ARGS+=	--enable-xvmc --with-xvmclib=XvMCW
 .endif
 .else			#WITHOUT_X11
 CONFIGURE_ARGS+=	--disable-x11 --disable-fontconfig
