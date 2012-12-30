@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paq
-PORTVERSION=	20121105
+PORTVERSION=	20121214
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaq616.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaq618.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -69,11 +69,8 @@ PORTDATA=	${WDATA} ${DDATA} zpsfx
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
-.if !empty(CC:T:M*clang*)
-IGNORE =        : clang does not support OpenMP. Disable the OPENMP option or\
-use another compiler
-.endif
 PTHREAD_CFLAGS+=	-fopenmp
+USE_GCC=		any
 .endif
 
 post-extract:
