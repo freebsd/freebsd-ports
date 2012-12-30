@@ -7,7 +7,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20121229:
   AFFECTS: users of devel/libical
-  AUTHOR gnome@FreeBSD.org
+  AUTHOR: gnome@FreeBSD.org
 
   The devel/libical has been updated to 0.48. The shared library version has
   been changed from 44 to 0. Please rebuild all ports that depends on it:
