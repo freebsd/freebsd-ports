@@ -1,17 +1,13 @@
-# New ports collection makefile for:   libxdg-basedir
-# Date created:                April 18, 2009
-# Whom:                        Nikos Ntarmos <ntarmos@cs.uoi.gr>
-#
+# Created by: Nikos Ntarmos <ntarmos@cs.uoi.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	libxdg-basedir
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	x11
 MASTER_SITES=	http://n.ethz.ch/student/nevillm/download/libxdg-basedir/
 
-MAINTAINER=	ntarmos@cs.uoi.gr
-COMMENT=	An implementation of the XDG Base Directory specification
+MAINTAINER=	ntarmos@ceid.upatras.gr
+COMMENT=	Implementation of the XDG Base Directory specification
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
