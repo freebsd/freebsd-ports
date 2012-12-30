@@ -1,10 +1,8 @@
 # Created by:	Frank Wall <fw@moov.de>
-#
 # $FreeBSD$
 
 PORTNAME=	Sys-Virt
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
