@@ -802,6 +802,7 @@
     SUBDIR += p5-Catalyst-Plugin-StackTrace
     SUBDIR += p5-Catalyst-Plugin-Static
     SUBDIR += p5-Catalyst-Plugin-Static-Simple
+    SUBDIR += p5-Catalyst-Plugin-StatusMessage
     SUBDIR += p5-Catalyst-Plugin-SubRequest
     SUBDIR += p5-Catalyst-Plugin-Textile
     SUBDIR += p5-Catalyst-Plugin-Unicode

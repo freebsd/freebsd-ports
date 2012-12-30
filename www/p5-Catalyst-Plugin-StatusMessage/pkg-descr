@@ -1,0 +1,4 @@
+Handle passing of status (success and error) messages between screens of
+a web application.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-StatusMessage/
