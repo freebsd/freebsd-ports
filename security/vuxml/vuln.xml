@@ -51,6 +51,97 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="13320091-52a6-11e2-a289-1c4bd681f0cf">
+    <topic>otrs -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OTRS Security Advisory reports:</p>
+	<blockquote cite="http://www.otrs.com/open-source/community-news/security-advisories/security-advisory-2012-03/">
+	  <p>This advisory covers vulnerabilities discovered in the OTRS core
+system. This is a variance of the XSS vulnerability, where an attacker could
+send a specially prepared HTML email to OTRS which would cause JavaScript code
+to be executed in your browser while displaying the email. In this case this is
+achieved by using javascript source attributes with whitespaces.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+ <cvename>CVE-2012-4751</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-03/</url>
+<url>http://www.kb.cert.org/vuls/id/603276</url>
+    </references>
+    <dates>
+      <discovery>2012-10-16</discovery>
+      <entry>2012-12-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="95a69d1a-52a5-11e2-a289-1c4bd681f0cf">
+    <topic>otrs -- XSS vulnerability in Firefox and Opera</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OTRS Security Advisory reports:</p>
+	<blockquote cite="http://www.otrs.com/open-source/community-news/security-advisories/security-advisory-2012-02/">
+	  <p>This advisory covers vulnerabilities discovered in the OTRS core
+system. This is a variance of the XSS vulnerability, where an attacker could
+send a specially prepared HTML email to OTRS which would cause JavaScript code
+to be executed in your browser while displaying the email in Firefox and Opera.
+In this case this is achieved with an invalid HTML structure with nested tags.
+</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+<cvename>CVE-2012-4600</cvename>
+      <url>http://www.otrs.com/open-source/community-news/security-advisories/security-advisory-2012-02/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-30</discovery>
+      <entry>2012-12-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="49a6026a-52a3-11e2-a289-1c4bd681f0cf">
+    <topic>otrs -- XSS vulnerability in Internet Explorer</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OTRS Security Advisory reports:</p>
+	<blockquote cite="http://www.otrs.com/open-source/community-news/security-advisories/security-advisory-2012-01/">
+	  <p>This advisory covers vulnerabilities discovered in the OTRS core
+system. Due to the XSS vulnerability in Internet Explorer an attacker could send
+a specially prepared HTML email to OTRS which would cause JavaScript code to be
+executed in your Internet Explorer while displaying the email.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2582</cvename>
+      <url>http://www.otrs.com/open-source/community-news/security-advisories/security-advisory-2012-01/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-22</discovery>
+      <entry>2012-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c37de843-488e-11e2-a5c9-0019996bc1f7">
     <topic>squid -- denial of service</topic>
     <affects>
