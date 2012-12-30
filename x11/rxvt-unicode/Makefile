@@ -145,7 +145,7 @@ CONFIGURE_ARGS+=	--disable-smart-resize
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
-# enable integration with gdk-pixbuf
+# enable integration with gdk-pixbuf for background images
 .if !${PORT_OPTIONS:MGDK_PIXBUF}
 CONFIGURE_ARGS+=	--disable-pixbuf
 .else
