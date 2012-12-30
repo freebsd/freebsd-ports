@@ -825,7 +825,7 @@ subversion/tests/libsvn_delta/window-test$(EXEEXT): $(window_test_DEPS)
 # Section 6: Install-Group build targets
 ########################################
 
-apache-mod: subversion/mod_authz_svn/mod_authz_svn.la subversion/mod_dav_svn/mod_dav_svn.la
+apache-mod: subversion/mod_authz_svn/mod_authz_svn.la subversion/mod_dav_svn/mod_dav_svn.la tools/server-side/mod_dontdothat/mod_dontdothat.la
 
 bdb-lib: subversion/libsvn_fs_base/libsvn_fs_base-1.la
 
@@ -877,16 +877,17 @@ swig-rb-lib: subversion/bindings/swig/ruby/libsvn_swig_ruby/libsvn_swig_ruby-1.l
 
 test: subversion/tests/cmdline/atomic-ra-revprop-change$(EXEEXT) subversion/tests/libsvn_subr/auth-test$(EXEEXT) subversion/tests/libsvn_subr/cache-test$(EXEEXT) subversion/tests/libsvn_subr/checksum-test$(EXEEXT) subversion/tests/libsvn_client/client-test$(EXEEXT) subversion/tests/libsvn_subr/compat-test$(EXEEXT) subversion/tests/libsvn_subr/config-test$(EXEEXT) subversion/tests/libsvn_wc/db-test$(EXEEXT) subversion/tests/libsvn_diff/diff-diff3-test$(EXEEXT) subversion/tests/libsvn_subr/dirent_uri-test$(EXEEXT) subversion/tests/libsvn_wc/entries-compat-test$(EXEEXT) subversion/tests/cmdline/entries-dump$(EXEEXT) subversion/tests/libsvn_subr/error-test$(EXEEXT) subversion/tests/libsvn_fs_fs/fs-pack-test$(EXEEXT) subversion/tests/libsvn_fs/fs-test$(EXEEXT) subversion/tests/libsvn_subr/hashdump-test$(EXEEXT) subversion/tests/libsvn_test-1.la subversion/tests/libsvn_fs/locks-test$(EXEEXT) subversion/tests/libsvn_subr/mergeinfo-test$(EXEEXT) subversion/tests/libsvn_wc/op-depth-test$(EXEEXT) subversion/tests/libsvn_subr/opt-test$(EXEEXT) subversion/tests/libsvn_diff/parse-diff-test$(EXEEXT) subversion/tests/libsvn_subr/path-test$(EXEEXT) subversion/tests/libsvn_wc/pristine-store-test$(EXEEXT) subversion/tests/libsvn_ra_local/ra-local-test$(EXEEXT) subversion/tests/libsvn_delta/random-test$(EXEEXT) subversion/tests/libsvn_repos/repos-test$(EXEEXT) subversion/tests/libsvn_subr/revision-test$(EXEEXT) subversion/tests/libsvn_subr/skel-test$(EXEEXT) subversion/tests/libsvn_subr/stream-test$(EXEEXT) subversion/tests/libsvn_subr/string-test$(EXEEXT) subversion/tests/libsvn_subr/subst_translate-test$(EXEEXT) subversion/tests/libsvn_delta/svndiff-test$(EXEEXT) subversion/tests/libsvn_subr/target-test$(EXEEXT) subversion/tests/libsvn_subr/time-test$(EXEEXT) subversion/tests/libsvn_subr/translate-test$(EXEEXT) subversion/tests/libsvn_wc/tree-conflict-data-test$(EXEEXT) subversion/tests/libsvn_subr/utf-test$(EXEEXT) subversion/tests/libsvn_delta/vdelta-test$(EXEEXT) subversion/tests/libsvn_wc/wc-incomplete-tester$(EXEEXT) subversion/tests/libsvn_wc/wc-lock-tester$(EXEEXT) subversion/tests/libsvn_delta/window-test$(EXEEXT)
 
-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/server-side/mod_dontdothat/mod_dontdothat.la tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/client-side/svnmucc/svnmucc$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)
+tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/client-side/svnmucc/svnmucc$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)
 
 
 ########################################
 # Section 7: Install-Group install targets
 ########################################
 
-install-mods-shared: subversion/mod_dav_svn/mod_dav_svn.la subversion/mod_authz_svn/mod_authz_svn.la
+install-mods-shared: subversion/mod_dav_svn/mod_dav_svn.la subversion/mod_authz_svn/mod_authz_svn.la tools/server-side/mod_dontdothat/mod_dontdothat.la
 	cd subversion/mod_dav_svn ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n dav_svn mod_dav_svn.la
 	cd subversion/mod_authz_svn ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n authz_svn mod_authz_svn.la
+	cd tools/server-side/mod_dontdothat ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n dontdothat mod_dontdothat.la
 
 install-bdb-lib: subversion/libsvn_fs_base/libsvn_fs_base-1.la 
 	$(MKDIR) $(DESTDIR)$(bdb_libdir)
@@ -1036,7 +1037,7 @@ install-swig-rb-lib: subversion/bindings/swig/ruby/libsvn_swig_ruby/libsvn_swig_
 	$(MKDIR) $(DESTDIR)$(swig_rb_libdir)
 	cd subversion/bindings/swig/ruby/libsvn_swig_ruby ; $(INSTALL_SWIG_RB_LIB) libsvn_swig_ruby-1.la $(DESTDIR)$(swig_rb_libdir)/libsvn_swig_ruby-1.la
 
-install-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/client-side/svnmucc/svnmucc$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)  tools/server-side/mod_dontdothat/mod_dontdothat.la
+install-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/client-side/svnmucc/svnmucc$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT) 
 	$(MKDIR) $(DESTDIR)$(toolsdir)
 	cd tools/diff ; $(INSTALL_TOOLS) diff$(EXEEXT) $(DESTDIR)$(toolsdir)/diff$(EXEEXT)
 	cd tools/diff ; $(INSTALL_TOOLS) diff3$(EXEEXT) $(DESTDIR)$(toolsdir)/diff3$(EXEEXT)
@@ -1046,7 +1047,6 @@ install-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/dif
 	cd tools/server-side ; $(INSTALL_TOOLS) svnauthz-validate$(EXEEXT) $(DESTDIR)$(toolsdir)/svnauthz-validate$(EXEEXT)
 	cd tools/client-side/svnmucc ; $(INSTALL_TOOLS) svnmucc$(EXEEXT) $(DESTDIR)$(toolsdir)/svnmucc$(EXEEXT)
 	cd tools/dev/svnraisetreeconflict ; $(INSTALL_TOOLS) svnraisetreeconflict$(EXEEXT) $(DESTDIR)$(toolsdir)/svnraisetreeconflict$(EXEEXT)
-	cd tools/server-side/mod_dontdothat ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n dontdothat mod_dontdothat.la
 
 
 ########################################
@@ -2110,7 +2110,7 @@ subversion/libsvn_repos/delta.lo: subversion/libsvn_repos/delta.c subversion/inc
 
 subversion/libsvn_repos/deprecated.lo: subversion/libsvn_repos/deprecated.c subversion/include/private/svn_debug.h subversion/include/svn_checksum.h subversion/include/svn_compat.h subversion/include/svn_delta.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_io.h subversion/include/svn_mergeinfo.h subversion/include/svn_props.h subversion/include/svn_repos.h subversion/include/svn_string.h subversion/include/svn_types.h subversion/svn_private_config.h
 
-subversion/libsvn_repos/dump.lo: subversion/libsvn_repos/dump.c subversion/include/private/svn_debug.h subversion/include/private/svn_fs_private.h subversion/include/private/svn_mergeinfo_private.h subversion/include/svn_checksum.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_hash.h subversion/include/svn_io.h subversion/include/svn_iter.h subversion/include/svn_mergeinfo.h subversion/include/svn_path.h subversion/include/svn_pools.h subversion/include/svn_props.h subversion/include/svn_repos.h subversion/include/svn_string.h subversion/include/svn_time.h subversion/include/svn_types.h subversion/svn_private_config.h
+subversion/libsvn_repos/dump.lo: subversion/libsvn_repos/dump.c subversion/include/private/svn_debug.h subversion/include/private/svn_fs_private.h subversion/include/private/svn_mergeinfo_private.h subversion/include/svn_checksum.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_hash.h subversion/include/svn_io.h subversion/include/svn_iter.h subversion/include/svn_mergeinfo.h subversion/include/svn_path.h subversion/include/svn_pools.h subversion/include/svn_props.h subversion/include/svn_repos.h subversion/include/svn_sorts.h subversion/include/svn_string.h subversion/include/svn_time.h subversion/include/svn_types.h subversion/svn_private_config.h
 
 subversion/libsvn_repos/fs-wrap.lo: subversion/libsvn_repos/fs-wrap.c subversion/include/private/svn_debug.h subversion/include/private/svn_repos_private.h subversion/include/private/svn_utf_private.h subversion/include/svn_checksum.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_io.h subversion/include/svn_mergeinfo.h subversion/include/svn_path.h subversion/include/svn_pools.h subversion/include/svn_props.h subversion/include/svn_repos.h subversion/include/svn_string.h subversion/include/svn_time.h subversion/include/svn_types.h subversion/libsvn_repos/repos.h subversion/svn_private_config.h
 
@@ -2336,7 +2336,7 @@ subversion/libsvn_wc/wc_db_wcroot.lo: subversion/libsvn_wc/wc_db_wcroot.c subver
 
 subversion/libsvn_wc/workqueue.lo: subversion/libsvn_wc/workqueue.c subversion/include/private/svn_debug.h subversion/include/private/svn_skel.h subversion/include/private/svn_sqlite.h subversion/include/private/svn_token.h subversion/include/private/svn_wc_private.h subversion/include/svn_auth.h subversion/include/svn_checksum.h subversion/include/svn_config.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_hash.h subversion/include/svn_io.h subversion/include/svn_mergeinfo.h subversion/include/svn_opt.h subversion/include/svn_pools.h subversion/include/svn_props.h subversion/include/svn_ra.h subversion/include/svn_string.h subversion/include/svn_subst.h subversion/include/svn_types.h subversion/include/svn_wc.h subversion/libsvn_wc/adm_files.h subversion/libsvn_wc/props.h subversion/libsvn_wc/translate.h subversion/libsvn_wc/wc.h subversion/libsvn_wc/wc_db.h subversion/libsvn_wc/workqueue.h subversion/svn_private_config.h
 
-subversion/mod_authz_svn/mod_authz_svn.lo: subversion/mod_authz_svn/mod_authz_svn.c subversion/include/mod_authz_svn.h subversion/include/mod_dav_svn.h subversion/include/private/svn_debug.h subversion/include/private/svn_fspath.h subversion/include/svn_checksum.h subversion/include/svn_config.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_io.h subversion/include/svn_mergeinfo.h subversion/include/svn_path.h subversion/include/svn_repos.h subversion/include/svn_string.h subversion/include/svn_types.h
+subversion/mod_authz_svn/mod_authz_svn.lo: subversion/mod_authz_svn/mod_authz_svn.c subversion/include/mod_authz_svn.h subversion/include/mod_dav_svn.h subversion/include/private/svn_debug.h subversion/include/private/svn_fspath.h subversion/include/svn_checksum.h subversion/include/svn_config.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_io.h subversion/include/svn_mergeinfo.h subversion/include/svn_path.h subversion/include/svn_pools.h subversion/include/svn_repos.h subversion/include/svn_string.h subversion/include/svn_types.h
 	$(COMPILE_APACHE_MOD) $(canonicalized_srcdir)subversion/mod_authz_svn/mod_authz_svn.c
 
 subversion/mod_dav_svn/activity.lo: subversion/mod_dav_svn/activity.c subversion/include/mod_authz_svn.h subversion/include/private/svn_dav_protocol.h subversion/include/private/svn_debug.h subversion/include/private/svn_fs_private.h subversion/include/private/svn_skel.h subversion/include/svn_checksum.h subversion/include/svn_delta.h subversion/include/svn_dirent_uri.h subversion/include/svn_error.h subversion/include/svn_error_codes.h subversion/include/svn_fs.h subversion/include/svn_io.h subversion/include/svn_mergeinfo.h subversion/include/svn_path.h subversion/include/svn_pools.h subversion/include/svn_props.h subversion/include/svn_repos.h subversion/include/svn_string.h subversion/include/svn_types.h subversion/include/svn_xml.h subversion/mod_dav_svn/dav_svn.h
