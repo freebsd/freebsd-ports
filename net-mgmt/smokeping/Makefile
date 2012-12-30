@@ -1,13 +1,8 @@
-# New ports collection makefile for:	SmokePing
-# Date created:				Tue Feb 12 22:17:40 CET 2002
-# Whom:                                 Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	smokeping
-PORTVERSION=	2.6.7
-PORTREVISION=	3
+PORTVERSION=	2.6.8
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -16,14 +11,14 @@ MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Latency logging and graphing system
 
 LIB_DEPENDS=	rrd.6:${PORTSDIR}/databases/rrdtool
-BUILD_DEPENDS=	p5-CGI-Session>0:${PORTSDIR}/www/p5-CGI-Session \
-		p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-CGI.pm>0:${PORTSDIR}/www/p5-CGI.pm \
-		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI \
-		p5-Config-Grammar>0:${PORTSDIR}/devel/p5-Config-Grammar \
-		p5-Socket6>0:${PORTSDIR}/net/p5-Socket6
+BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI \
+		p5-Config-Grammar>=0:${PORTSDIR}/devel/p5-Config-Grammar \
+		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
@@ -109,45 +104,48 @@ SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	USERS=${USERS} \
 		GROUPS=${GROUPS}
 
-OPTIONS=	FPING "Support for fping probes" on
-OPTIONS+=	ECHOPING "Support for EchoPing probes" off
-OPTIONS+=	CURL "Support for Curl probes" off
-OPTIONS+=	LDAP "Support for LDAP probes" off
-OPTIONS+=	LDAPSSL "Support for SSL-enabled LDAP probes" off
-OPTIONS+=	RADIUS "Support for Radius probes" off
-OPTIONS+=	TELNET "Support for TelnetIOSPing probes" off
-OPTIONS+=	DNS "Support for AnotherDNS probes" off
+FPING_DESC=	Support for fping probes
+ECHOPING_DESC=	Support for EchoPing probes
+CURL_DESC=	Support for Curl probes
+LDAP_DESC=	Support for LDAP probes
+LDAPSSL_DESC=	Support for SSL-enabled LDAP probes
+RADIUS_DESC=	Support for Radius probes
+TELNET_DESC=	Support for TelnetIOSPing probes
+DNS_DESC=	Support for AnotherDNS probes
+
+OPTIONS_DEFINE=	ECHOPING CURL RADIUS TELNET DNS FPING LDAP LDAPSSL
+OPTIONS_DEFAULT=	FPING
 
 .include <bsd.port.options.mk>
-.ifdef(WITH_FPING)
+.if ${PORT_OPTIONS:MFPING}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 .endif
 
-.ifdef(WITH_ECHOPING)
+.if ${PORT_OPTIONS:MECHOPING}
 RUN_DEPENDS+=	${LOCALBASE}/bin/echoping:${PORTSDIR}/net/echoping
 .endif
 
-.ifdef(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 RUN_DEPENDS+=	${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
 .endif
 
-.if defined(WITH_LDAP) || defined(WITH_LDAPSSL)
+.if ${PORT_OPTIONS:MLDAP} || ${PORT_OPTIONS:MLDAPSSL}
 RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
-.ifdef(WITH_RADIUS)
+.if ${PORT_OPTIONS:MRADIUS}
 RUN_DEPENDS+=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
 .endif
 
-.ifdef(WITH_LDAPSSL)
+.if ${PORT_OPTIONS:MLDAPSSL}
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
-.ifdef(WITH_TELNET)
+.if ${PORT_OPTIONS:MTELNET}
 RUN_DEPENDS+=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
 .endif
 
-.ifdef(WITH_DNS)
+.if ${PORT_OPTIONS:MDNS}
 RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
