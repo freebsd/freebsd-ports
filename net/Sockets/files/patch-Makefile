@@ -21,8 +21,8 @@
  
  install_shared:	install shared
  		@mkdir -p $(DESTDIR)/$(PREFIX)/lib/pkgconfig
--		cp $(SHAREDLIBNAME) $(DESTDIR)/$(PREFIX)/lib
--		cp -a pkgconfig/*pc $(DESTDIR)/$(PREFIX)/lib/pkgconfig
+-		install -m 0644 $(SHAREDLIBNAME) $(DESTDIR)/$(PREFIX)/lib
+-		install -m 0644  pkgconfig/*pc $(DESTDIR)/$(PREFIX)/lib/pkgconfig
 +		@${BSD_INSTALL_DATA} $(SHAREDLIBNAME) $(DESTDIR)/$(PREFIX)/lib
 +		@${BSD_INSTALL_DATA} pkgconfig/*pc $(DESTDIR)/$(PREFIX)/libdata/pkgconfig
  		rm -f $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so

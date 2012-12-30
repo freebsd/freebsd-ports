@@ -1,12 +1,8 @@
-# New ports collection makefile for:   C++ Sockets
-# Date created:                Sat Jan 15 16:17:20 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sockets
-PORTVERSION=	2.3.9.2
+PORTVERSION=	2.3.9.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.alhem.net/Sockets/ \
 		http://www.netfence.it/Sockets/
