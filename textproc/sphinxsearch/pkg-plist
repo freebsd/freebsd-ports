@@ -1,4 +1,5 @@
 bin/indexer
+bin/indextool
 bin/search
 bin/spelldump
 sbin/searchd
