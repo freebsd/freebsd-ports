@@ -9,7 +9,7 @@ PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
 CATEGORIES=	java
 MASTER_SITES=	#
-DISTNAME=	jdk-6u25-fcs-bin-b04-apidocs-04_Apr_2011
+DISTNAME=	jdk-6u30-apidocs
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.6.0
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
-JDK_UPDATE_VER=	25
+JDK_UPDATE_VER=	30
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes
