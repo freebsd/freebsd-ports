@@ -2,6 +2,7 @@ bin/urxvt
 bin/urxvtc
 bin/urxvtcd
 bin/urxvtd
+%%PERL%%lib/urxvt/perl/background
 %%PERL%%lib/urxvt/perl/bell-command
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
 %%PERL%%lib/urxvt/perl/clipboard-osc
