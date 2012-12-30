@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	marius
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Ftp server supporting FTP AUTH TLS
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2013-01-31
+
 GNU_CONFIGURE=	YES
 USE_OPENSSL=	YES
 USE_RC_SUBR=	ftpd-tls
