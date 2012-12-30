@@ -3,5 +3,5 @@ include/basedir_fs.h
 lib/libxdg-basedir.a
 lib/libxdg-basedir.la
 lib/libxdg-basedir.so
-lib/libxdg-basedir.so.2
+lib/libxdg-basedir.so.3
 libdata/pkgconfig/libxdg-basedir.pc

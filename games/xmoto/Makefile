@@ -3,6 +3,7 @@
 
 PORTNAME=	xmoto
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,7 +15,7 @@ COMMENT=	Challenging 2D motocross platform game
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
-		xdg-basedir.2:${PORTSDIR}/x11/libxdg-basedir
+		xdg-basedir:${PORTSDIR}/x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
