@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	LinkChecker-${PORTVERSION}
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check HTML documents for broken links
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils \
