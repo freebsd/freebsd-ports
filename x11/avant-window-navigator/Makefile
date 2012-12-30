@@ -1,13 +1,10 @@
-# New ports collection makefile for:	avant-window-navigator
-# Date created:		18 May 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	avant-window-navigator
 PORTVERSION=	0.3.2.1
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,8 +14,8 @@ COMMENT=	Dock-like navigation bar
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
-LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
