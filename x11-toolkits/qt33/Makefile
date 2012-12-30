@@ -77,7 +77,9 @@ PACKAGE_COOKIE=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PREFIX})
 PREFIX_REAL!=	/bin/realpath ${PREFIX}
+.endif
 
 # The previous Qt port versions installed qmake and qmake's specs under LOCALBASE
 # The new devel/qmake port installs them under LOCALBASE. We can use
