@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nagiosgrapher
-# Date created:                         03 Nov 2009
-# Whom:                                 Cristiano Rolim <cristianorolim@hotmail.com>
-#
+# Created by: Cristiano Rolim <cristianorolim@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nagiosgrapher
 PORTVERSION=	1.7.1
@@ -15,6 +11,9 @@ DISTNAME=	NagiosGrapher-${PORTVERSION}
 
 MAINTAINER=	cristianorolim@hotmail.com
 COMMENT=	Collects the output from Nagios and generates graphs
+
+DEPRECATED=	Deprecated upstream. Please use net-mgmt/pnp instead
+EXPIRATION_DATE=2013-01-30
 
 BUILD_DEPENDS=	\
 	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
