@@ -1,9 +1,9 @@
-# Created by: Matt Lancereau <ports@FreeBSD.org>
+# Created by: Matt Lancereau
 # $FreeBSD$
 #
 
 PORTNAME=	libexo
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/exo/${PORTVERSION:R}
