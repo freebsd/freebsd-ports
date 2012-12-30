@@ -13,6 +13,9 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - KDE Client
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=	3

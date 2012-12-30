@@ -18,6 +18,9 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	db-4.3:${PORTSDIR}/databases/db43 \
 		ta_lib:${PORTSDIR}/devel/ta-lib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 MAKE_JOBS_UNSAFE=yes
 
 USE_QT_VER=3

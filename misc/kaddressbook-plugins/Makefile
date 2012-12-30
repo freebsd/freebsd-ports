@@ -19,6 +19,9 @@ COMMENT=	Plugins for KAddressbook
 LIB_DEPENDS=	kdepim:${PORTSDIR}/deskutils/kdepim3
 BUILD_DEPENDS=	kworldclock:${PORTSDIR}/x11-clocks/kdetoys3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 KDE_SPLIT=	${KADDRESSBOOKPLUG_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 KDE_DOC_SPLIT=	# none
 KDE_SPLIT_DIST=	kdeaddons

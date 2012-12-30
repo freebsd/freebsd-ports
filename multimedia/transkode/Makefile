@@ -18,6 +18,9 @@ COMMENT=	A KDE/Qt based frontend for various audio transcoding tools
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

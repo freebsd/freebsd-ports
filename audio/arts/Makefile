@@ -30,6 +30,9 @@ LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		xcb:${PORTSDIR}/x11/libxcb
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 PREFIX=		${KDE_PREFIX}
 WANT_GNOME=	yes
 USE_QT_VER=	3

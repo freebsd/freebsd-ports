@@ -22,6 +22,9 @@ RUN_DEPENDS=	nmblookup:${PORTSDIR}/${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba34
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 
 USE_RC_SUBR=	lisa

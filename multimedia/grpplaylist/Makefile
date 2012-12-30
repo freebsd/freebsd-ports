@@ -16,6 +16,9 @@ COMMENT=	A playlist for Noatun
 
 LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

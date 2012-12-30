@@ -19,6 +19,9 @@ COMMENT=	Small applications for KDE
 
 MAKE_JOBS_UNSAFE=	yes
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

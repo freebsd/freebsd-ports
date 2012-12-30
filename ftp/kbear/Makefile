@@ -14,6 +14,9 @@ PATCHFILES=		${DISTNAME:S/.src/-patch/}.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}
 
 USE_LDCONFIG=	yes

@@ -19,6 +19,9 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
 		xine.2:${PORTSDIR}/multimedia/libxine
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
 
 USE_BZIP2=	yes

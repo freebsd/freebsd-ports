@@ -18,6 +18,9 @@ COMMENT=	GUI frontend for the Subversion revision system
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 ESVN_DIST=	esvn
 ESVNPRO=	esvn.pro esvn-diff-wrapper.pro
 ESVNDOCS=	html-docs html-docs/common html-docs/common/admon html-docs/common/navig html-docs/images

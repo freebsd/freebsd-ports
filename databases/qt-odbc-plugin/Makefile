@@ -23,6 +23,9 @@ LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 BUILD_DEPENDS=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
 DRIVER=		src/sql/drivers/${DB}

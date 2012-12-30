@@ -17,6 +17,9 @@ COMMENT=	A QT-based music manager with fuzzy search
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		tag.1:${PORTSDIR}/audio/taglib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 OPTIONS_DEFINE=	XMMS
 XMMS_DESC=	XMMS backend support
 

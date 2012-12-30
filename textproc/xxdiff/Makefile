@@ -17,6 +17,9 @@ COMMENT=	QT interface to view/merge differences between 2 or 3 files
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 USE_BZIP2=	yes

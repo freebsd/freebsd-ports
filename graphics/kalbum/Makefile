@@ -13,6 +13,9 @@ MASTER_SITES=		http://www.paldandy.com/kalbum/data/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Create albums from a collection of images
 
+DEPRECATED=		Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes

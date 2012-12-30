@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.brueffer.de/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU meter for Kicker
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 

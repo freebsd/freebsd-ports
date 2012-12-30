@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.michael-vonrueden.de/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Panel applet for web searches using clipboard entries
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=3

@@ -16,6 +16,9 @@ COMMENT=	KDE control center module for Synaptics touchpads
 
 LIB_DEPENDS=	synaptics:${PORTSDIR}/x11/libsynaptics
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool

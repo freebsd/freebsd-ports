@@ -16,6 +16,9 @@ COMMENT=	A Spacetaxi clone
 
 LIB_DEPENDS=	artsmodules.0:${PORTSDIR}/multimedia/kdemultimedia3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

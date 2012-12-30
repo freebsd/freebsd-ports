@@ -13,6 +13,9 @@ MASTER_SITES=	http://klogoturtle.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LOGO Interpreter for the KDE Desktop
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 LDFLAGS+=	${PTHREAD_LIBS}

@@ -16,6 +16,9 @@ COMMENT=	A mesh and field I/O library and scientific database
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}

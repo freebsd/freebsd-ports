@@ -16,6 +16,9 @@ COMMENT=	An input method platform based on SCIM library and KDE/QT
 
 LIB_DEPENDS=	scim-1.0:${PORTSDIR}/textproc/scim
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
 USE_BZIP2=	yes

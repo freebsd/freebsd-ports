@@ -21,6 +21,9 @@ LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
 
 CONFLICTS=	umbrello-[0-9]* kcachegrind-[0-9]*
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDEBASE_VER=3
 
 USE_PERL5=	yes

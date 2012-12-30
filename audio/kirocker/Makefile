@@ -19,6 +19,9 @@ COMMENT=	Kicker applet for displaying Amarok info
 
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDELIBS_VER=3

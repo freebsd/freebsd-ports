@@ -22,6 +22,9 @@ COMMENT?=	The "meta-port" for KDE
 CONFLICTS?=	kde-lite-[0-9]*
 .endif
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 ## This is the file where the selections made in the interactive dialog
 ## are saved in and initialized from.
 

@@ -21,6 +21,9 @@ COMMENT=	Legacy KDE audio backend
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 CONFLICTS=	kdemultimedia-3.1.* kdemultimedia-3.2.[0-3]
 
 USE_KDELIBS_VER=3

@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Panel applet to display the keyboard's LED states
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

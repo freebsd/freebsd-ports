@@ -20,6 +20,9 @@ COMMENT=	KDE image viewer
 
 CONFLICTS=	kdegraphics-3.1.* kdegraphics-3.2.[0-3]
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

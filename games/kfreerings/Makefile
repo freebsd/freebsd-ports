@@ -16,6 +16,9 @@ COMMENT=	A small puzzle game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool

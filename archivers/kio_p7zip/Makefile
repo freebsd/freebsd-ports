@@ -17,6 +17,9 @@ COMMENT=	Kioslave for KDE to handle 7zip files
 
 RUN_DEPENDS=	7za:${PORTSDIR}/archivers/p7zip
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3

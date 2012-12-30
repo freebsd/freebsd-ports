@@ -16,6 +16,9 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_SCONS=	yes

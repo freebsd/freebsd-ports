@@ -17,6 +17,9 @@ COMMENT=	A Gnutella client using Qt
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

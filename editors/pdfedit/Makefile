@@ -18,6 +18,9 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		t1.5:${PORTSDIR}/devel/t1lib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.GPL
 

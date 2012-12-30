@@ -21,6 +21,9 @@ BUILD_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3
 RUN_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
 		tidy:${PORTSDIR}/www/tidy-lib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

@@ -44,6 +44,9 @@ RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde3-i18n-${ZH}
 .endfor
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 NO_BUILD=	yes
 KDE_I18N=	yes

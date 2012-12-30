@@ -17,6 +17,9 @@ COMMENT=	An X11 front-end for Gnuplot
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 
 MAKE_ENV+=	DOCSDIR=$(DOCSDIR) PTHREAD_CFLAGS="$(PTHREAD_CFLAGS)" \

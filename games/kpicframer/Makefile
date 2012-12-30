@@ -16,6 +16,9 @@ COMMENT=	KDE card game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

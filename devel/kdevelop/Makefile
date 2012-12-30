@@ -25,6 +25,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
 		gdb66:${PORTSDIR}/devel/gdb66 \
 		gmake:${PORTSDIR}/devel/gmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 .if defined(WITH_OPTIONAL_DEPENDS)
 
 PAPERSIZE?=	letter

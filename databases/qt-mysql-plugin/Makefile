@@ -21,6 +21,9 @@ DB=		mysql
 
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_MYSQL=	yes
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}

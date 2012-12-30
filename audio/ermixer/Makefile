@@ -12,6 +12,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line, ncurses, and (optional) Qt-GUI OSS audio mixer
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 .if !defined(WITHOUT_X11)
 USE_QT_VER=	3
 CONFIGURE_ARGS+=--enable-qt

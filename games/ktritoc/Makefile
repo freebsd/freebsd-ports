@@ -15,6 +15,9 @@ COMMENT=	A Tic-tac-toe like boardgame
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 

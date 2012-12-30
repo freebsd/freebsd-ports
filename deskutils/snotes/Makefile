@@ -16,6 +16,9 @@ COMMENT=	A lightweight, configurable sticky notes utility
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

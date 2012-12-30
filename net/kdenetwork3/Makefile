@@ -19,6 +19,9 @@ COMMENT=	Network-related programs and modules for KDE
 
 LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 OPTIONS_DEFINE=	KOPETE
 KOPETE_DESC=	Install kopete multi-protocol instant messenger
 

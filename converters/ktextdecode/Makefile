@@ -13,6 +13,9 @@ MASTER_SITES=	http://osmirrors.cerias.purdue.edu/pub/FreeBSD/ports/local-distfil
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The simple text conversion utility for KDE 3
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool

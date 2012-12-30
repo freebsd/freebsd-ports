@@ -16,6 +16,9 @@ COMMENT=	Simple QT-based financial manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_AUTOTOOLS=	libtool
 USE_QT_VER=	3
 USE_GMAKE=	yes

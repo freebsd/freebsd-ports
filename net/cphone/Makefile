@@ -17,6 +17,9 @@ COMMENT=	H323 Video Conferencing Program which uses QT
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 PLIST_FILES=	bin/cphone
 USE_BZIP2=	yes
 USE_BISON=	build

@@ -23,6 +23,9 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 
 CONFLICTS=	kgpg-[0-9]* superkaramba-[0-9]*
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_KDEBASE_VER=3
 

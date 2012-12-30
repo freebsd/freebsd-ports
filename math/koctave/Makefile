@@ -16,6 +16,9 @@ COMMENT=	KDEGUI for octave
 
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

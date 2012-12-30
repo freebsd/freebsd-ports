@@ -17,6 +17,9 @@ COMMENT=	KDE plugins for lineakd
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

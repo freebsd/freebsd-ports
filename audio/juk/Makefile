@@ -21,6 +21,9 @@ COMMENT=	KDE audio player
 LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \
 		tag:${PORTSDIR}/audio/taglib
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 CONFLICTS=	kdemultimedia-3.3*
 
 OPTIONS_DEFINE=	GSTREAMER

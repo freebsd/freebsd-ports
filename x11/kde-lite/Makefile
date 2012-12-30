@@ -18,6 +18,9 @@ MASTERDIR=		${.CURDIR}/../../x11/kde3
 CONFLICTS=		kde-[0-9]*
 .endif
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 WITHOUT_KDEVELOP=	yes
 WITHOUT_KDEEDU=		yes
 WITHOUT_KDEGAMES=	yes

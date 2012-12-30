@@ -16,6 +16,9 @@ COMMENT=	Pagination utility that prints your images/comics in 'in folio' format
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 

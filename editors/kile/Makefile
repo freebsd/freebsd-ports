@@ -17,6 +17,9 @@ COMMENT=	A LaTeX source editor for KDE
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		identify:${PORTSDIR}/graphics/ImageMagick
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 CONFLICTS=	kile-i18n-[0-9]*
 PORTSCOUT=	limit:^2\.0\.
 

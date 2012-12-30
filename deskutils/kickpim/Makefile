@@ -13,6 +13,9 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20_Society_
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Panel applet for editing and accessing the KDE addressbook
 
+DEPRECATED=		Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes

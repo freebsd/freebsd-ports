@@ -19,6 +19,9 @@ COMMENT=	Cross-platform scripting toolkit for Qt applications
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes

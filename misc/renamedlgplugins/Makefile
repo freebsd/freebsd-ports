@@ -16,6 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Konqueror's rename dialog
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 KDE_SPLIT=	renamedlgplugins
 KDE_DOC_SPLIT=	# none
 USE_KDELIBS_VER=3

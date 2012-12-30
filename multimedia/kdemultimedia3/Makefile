@@ -28,6 +28,9 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		vorbis:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

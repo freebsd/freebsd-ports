@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/-beta1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Science-fiction board game in the world of Warhammer 40000
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3

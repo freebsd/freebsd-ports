@@ -17,6 +17,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework
 
+DEPRECATED=	No upstream activity since 2008; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng \

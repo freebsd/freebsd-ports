@@ -15,6 +15,9 @@ MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDM Theme Manager
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes

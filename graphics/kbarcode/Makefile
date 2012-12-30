@@ -16,6 +16,9 @@ COMMENT=	A barcode and label printing application for KDE
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

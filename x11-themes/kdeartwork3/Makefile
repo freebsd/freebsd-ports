@@ -19,6 +19,9 @@ COMMENT=	Additional themes, sounds, wallpapers and window styles for KDE
 
 CONFLICTS=	phase-[0-9]* kde-windeco-smoothblend-[0.9]*
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 

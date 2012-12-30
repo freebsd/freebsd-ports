@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.axllent.org/uploads/files/divxcalc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DivX Calculator
 
+DEPRECATED=	Depends on QT3; unmaintained
+EXPIRATION_DATE=	2013-07-01
+
 USE_XORG=	x11 ice xext
 USE_BZIP2=	yes
 USE_QT_VER=	3
