@@ -4,7 +4,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -42,13 +42,13 @@ CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 .else
 CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--disable-hal
 .endif
