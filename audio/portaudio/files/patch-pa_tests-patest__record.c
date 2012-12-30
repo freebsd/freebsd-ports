@@ -1,5 +1,5 @@
---- pa_tests/patest_record.c.orig	Sun Dec  7 14:48:31 2003
-+++ pa_tests/patest_record.c	Sun Dec  7 14:48:53 2003
+--- pa_tests/patest_record.c.orig	2012-12-22 13:48:25.000000000 +0100
++++ pa_tests/patest_record.c	2012-12-22 13:48:25.000000000 +0100
 @@ -138,10 +138,10 @@
      SAMPLE *wptr = (SAMPLE*)outputBuffer;
      unsigned int i;
