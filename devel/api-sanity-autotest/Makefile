@@ -1,15 +1,13 @@
-# New ports collection makefile for:	api-sanity-autotest
-# Date created:		February 16, 2009
-# Whom:	      		bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	api-sanity-checker
-PORTVERSION=	1.12.10
+PORTVERSION=	1.98.1
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://forge.ispras.ru/attachments/download/2634/ \
-		LOCAL/bf
+MASTER_SITES=	https://github.com/lvc/${PORTNAME}/archive/ \
+		LOCAL/bf/${DIST_SUBDIR}
+DISTNAME=	${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
@@ -17,20 +15,22 @@ COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
+RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
+
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
+BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
 USE_PERL5=	yes
 .else
 USE_PERL5_RUN=	yes
 .endif
+USE_GCC=	any
 
+FETCH_ARGS?=	-Fpr
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if !empty(CC:M*clang*) || !empty(CXX:M*clang*)
-IGNORE =	: this port requires CC and CXX to be versions of gcc
-.endif
+.include <bsd.port.options.mk>
 
 CPPFILT?=	/usr/bin/c++filt
 READELF?=	/usr/bin/readelf
@@ -42,16 +42,14 @@ PICFLAG?=	-fpic
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e "\|get_CmdPath(\"ar\")|s|\"ar\"|\"${AR}\"|" \
-		-e "\|get_CmdPath(\"c++filt\")|s|\"c++filt\"|\"${CPPFILT}\"|" \
-		-e "\|get_CmdPath(\"gcc\")|s|\"gcc\"|\"${CC}\"|" \
-		-e "\|get_CmdPath(\"g++\")|s|\"g++\"|\"${CXX}\"|" \
-		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
-		-e "\|get_CmdPath(\"pidof\")|s|\"pidof\"|\"pgrep\"|" \
-		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
-		-e "s| -shared|& ${PICFLAG}|g" \
-		${WRKSRC}/${PORTNAME}.pl
+	@${REINPLACE_CMD} -E \
+		-e 's/gcc([ \])/${CC}\1/' \
+		-e 's/g\+\+([ \])/${CXX}\1/' \
+		-e 's/ -shared/& ${PICFLAG}/' \
+		-e 's|abi-compliance-checker|${LOCALBASE}/bin/&.pl|' \
+		${WRKSRC}/${PORTNAME}.pl \
+		${WRKSRC}/Makefile.pl \
+		${WRKSRC}/modules/Internals/RegTests.pm
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
@@ -62,7 +60,7 @@ check regression-test test: build
 
 .endif
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html SpecType.html
 
 post-install:
@@ -70,4 +68,4 @@ post-install:
 	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
 
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
