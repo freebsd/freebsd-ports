@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Unicode-EastAsianWidth
-# Date created:				2009/03/23
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Unicode-EastAsianWidth
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
