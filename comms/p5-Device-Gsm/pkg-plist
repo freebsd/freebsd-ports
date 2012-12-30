@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Device/Gsm/Sms/Token/VP.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/UDH.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/UD.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/ST.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/SCTS.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/SCA.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/PID.pm
@@ -7,6 +9,7 @@
 %%SITE_PERL%%/Device/Gsm/Sms/Token/OA.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/MR.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/DCS.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/DT.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token/DA.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Token.pm
 %%SITE_PERL%%/Device/Gsm/Sms/Structure.pm
