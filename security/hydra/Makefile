@@ -1,4 +1,4 @@
-# Created by: Laurent LEVIER (llevier@argosnet.com)
+# Created by: Laurent LEVIER <llevier@argosnet.com>
 # $FreeBSD$
 
 PORTNAME=	hydra
