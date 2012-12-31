@@ -1,5 +1,5 @@
---- ./Makefile.orig	2012-06-08 13:20:14.000000000 +0400
-+++ ./Makefile	2012-06-17 12:57:52.000000000 +0400
+--- ./Makefile.orig	2012-12-03 20:57:53.000000000 +0400
++++ ./Makefile	2012-12-31 13:25:31.000000000 +0400
 @@ -56,7 +56,7 @@
  USR = /opt/local
  else
@@ -9,7 +9,7 @@
  endif
  ifeq ($(OS),MINGW32_NT-5.1)
  EXE = .exe
-@@ -118,7 +118,7 @@
+@@ -106,7 +106,7 @@
  # This requires the presence of the X11 extension include and library files.
  # (package 'libx11-dev' on Debian).
  XSHM_CFLAGS = -Dcimg_use_xshm
@@ -18,7 +18,7 @@
  
  # Flags to enable image display, using GDI32.
  # This requires the presence of the GDI32 include and library files.
-@@ -273,6 +273,14 @@
+@@ -270,6 +270,13 @@
  	$(MAKE) lib
  	$(MAKE) zart
  else
@@ -27,13 +27,12 @@
 +	@echo "** FreeBSD configuration"
 +	@echo "**"
 +	$(MAKE) freebsd
-+	$(MAKE) bashcompletion
 +	$(MAKE) gimp
 +else
  ifeq ($(OS),Darwin)
  	@echo "**"
  	@echo "** MacOSX configuration"
-@@ -290,9 +298,10 @@
+@@ -285,9 +292,10 @@
  	$(MAKE) gimp
  endif
  endif
@@ -45,7 +44,7 @@
  
  lib:
  	$(MAKE) "CFLAGS=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_LIB_LDFLAGS) $(OPT_LDFLAGS)" gmic_lib
-@@ -314,6 +323,9 @@
+@@ -315,6 +323,9 @@
  linux:
  	$(MAKE) "CFLAGS=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
  
