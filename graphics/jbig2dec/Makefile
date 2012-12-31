@@ -1,9 +1,4 @@
-# New ports collection makefile for:	jbig2dec
-# Date created:		2010-07-07
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jbig2dec
 PORTVERSION=	0.11
@@ -32,7 +27,6 @@ MAKE_JOBS_SAFE=	yes
 EXTRACT_AFTER_ARGS+=|${TAR} -xpf - --exclude sha1.h --exclude 'getopt*'
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
@@ -58,7 +52,7 @@ EXTRA_PATCHES=	${FILESDIR}/simpler-test-patch
 .endif
 
 post-patch:
-.if defined(WITH_PNG)
+.if ${PORT_OPTIONS:MPNG}
 	@${REINPLACE_CMD} 's/png_check_sig/png_sig_cmp/g' ${WRKSRC}/configure
 .endif
 	${REINPLACE_CMD} -E 's|SHA1_Final\( *([^,]+), *([^\)]+)\)|SHA1_Final(\2, \1)|' \
