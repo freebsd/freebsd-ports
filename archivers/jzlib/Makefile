@@ -39,6 +39,7 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
 PLIST_DIRS+=	\
 		%%EXAMPLESDIR%%
 
+.include <bsd.port.options.mk>
 do-build:
 	@cd ${WRKSRC}/src/main/java && ${FIND} com -name "*.java" | \
 		${XARGS} -n 10 -x \
@@ -49,7 +50,7 @@ do-build:
 
 do-install:
 # docs
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
