@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgit
-# Date created:				Oct 16 2008
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cgit
 PORTVERSION=	0.9.0.3
@@ -18,7 +14,6 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A fast webinterface for git
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 GIT_VERSION=	1.7.4
 USE_BZIP2=	yes
@@ -36,6 +31,8 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${RMDIR} ${WRKSRC}/git
 	@${MV} ${WRKDIR}/git-${GIT_VERSION} ${WRKSRC}/git
@@ -50,7 +47,7 @@ post-install:
 	@${MKDIR} /var/cache/${PORTNAME}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} /var/cache/${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${DOCSDIR}/
 .endif
