@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dtmfdial
-# Date created:		26 March 2006
-# Whom:			David Bushong <david@bushong.net>
-#
+# Created by: David Bushong <david@bushong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dtmfdial
 PORTVERSION=	0.2
@@ -19,9 +15,10 @@ WRKSRC=		${WRKDIR}/dial
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 PORTDOCS=	README TODO
 
+.include <bsd.port.options.mk>
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dial ${PREFIX}/bin/dtmfdial
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
