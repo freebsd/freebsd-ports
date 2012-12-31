@@ -1,9 +1,4 @@
-# New ports collection makefile for:	cblog
-# Date created:		2010-07-16
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cblog
 PORTVERSION=	0.1.6
@@ -16,7 +11,7 @@ COMMENT=	Simple weblog in C using markdown
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver \
 		${LOCALBASE}/lib/libcdb.a:${PORTSDIR}/databases/tinycdb
-LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
+LIB_DEPENDS=	fcgi:${PORTSDIR}/www/fcgi
 
 LICENSE=	BSD
 
