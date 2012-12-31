@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tclmkziplib
-# Date created:				4 Jan 2007
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tclmkziplib
 PORTVERSION=	1.0
@@ -22,7 +18,7 @@ USE_TCL=	84+
 WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}
 USE_ZIP=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 TCLCONFIG?=	${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh
 
@@ -42,9 +38,9 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${PREFIX}/lib/mkZiplib
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		@ ${MKDIR} ${DOCSDIR}
 		@ ${INSTALL_DATA} ${WRKSRC}/mkZiplib${PORTVERSION:S/.//}.htm ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
