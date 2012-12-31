@@ -5,4 +5,4 @@ so the build system is portable to most operating systems and make flavors.
 Because BSDBuild is implemented as a library, makefiles are edited directly and
 never need to be "regenerated".
 
-WWW:	http://hypertriton.com/bsdbuild/
+WWW: http://hypertriton.com/bsdbuild/
