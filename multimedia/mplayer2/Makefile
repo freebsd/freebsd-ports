@@ -166,7 +166,6 @@ CONFIGURE_ARGS+=	--disable-portaudio
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
 LIB_DEPENDS+=		bluray:${PORTSDIR}/multimedia/libbluray
-CONFIGURE_ARGS+=	--enable-bluray
 .else
 CONFIGURE_ARGS+=	--disable-bluray
 .endif
