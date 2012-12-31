@@ -1,7 +1,3 @@
-# New ports collection makefile for:	aiksaurus
-# Date created:				23 July 2004
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
 #    $MCom: ports/textproc/aiksaurus/Makefile,v 1.2 2006/09/10 00:51:13 mezz Exp $
 

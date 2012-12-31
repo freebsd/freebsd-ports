@@ -1,10 +1,5 @@
-# New ports collection makefile for:	Ruby/RSVG
-# Date created:				15 November 2004
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
 #   $MCom: ports/graphics/ruby-rsvg2/Makefile,v 1.2 2005/10/17 07:05:41 mezz Exp $
-#
 
 PORTNAME=	rsvg2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}

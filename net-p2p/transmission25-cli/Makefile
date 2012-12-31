@@ -1,9 +1,4 @@
-# New ports collection makefile for:	transmission
-# Date created:				08 October 2005
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	transmission
 PORTVERSION=	2.51

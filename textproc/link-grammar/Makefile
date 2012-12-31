@@ -1,9 +1,4 @@
-# New ports collection makefile for:	link-grammar
-# Date created:				22 May 2005
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	link-grammar
 PORTVERSION=	4.7.4

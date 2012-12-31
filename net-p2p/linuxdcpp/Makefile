@@ -1,9 +1,4 @@
-# New ports collection makefile for:	LinuxDC++
-# Date created:				19 June 2005
-# Whom:					Jeremy Messenger <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	linuxdcpp
 PORTVERSION=	1.1.0

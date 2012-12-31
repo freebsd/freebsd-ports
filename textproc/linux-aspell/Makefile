@@ -1,9 +1,4 @@
-# New ports collection makefile for:	linux-aspell
-# Date created:				14 May 2004
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	aspell
 PORTVERSION=	0.50.4.1

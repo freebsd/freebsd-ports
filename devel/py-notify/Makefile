@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-notify
-# Date created:				03 December 2006
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	notify
 PORTVERSION=	0.1.1

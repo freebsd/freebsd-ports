@@ -1,9 +1,4 @@
-# Ports collection makefile for:	opa
-# Date created:				27 December 2011
-# Whom:					"Mezz" <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	opa
 PORTVERSION=	1.0.5.${GITVER}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	homebank
-# Date created:				24 June 2006
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	homebank
 PORTVERSION=	4.4

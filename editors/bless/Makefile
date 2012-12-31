@@ -1,10 +1,4 @@
-# New ports collection makefile for:	bless
-# Date created:				24 October 2004
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#   $Id: Makefile,v 1.22 2006/11/01 02:49:57 tmclau02 Exp $
-#
 
 PORTNAME=	bless
 PORTVERSION=	0.6.0

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	pyrenamer
-# Date created:				14 June 2007
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
 #   $MCom: ports/sysutils/pyrenamer/Makefile,v 1.1 2007/08/14 21:33:09 mezz Exp $
-#
 
 PORTNAME=	pyrenamer
 PORTVERSION=	0.6.0

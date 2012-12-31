@@ -1,10 +1,5 @@
-# New ports collection makefile for:	rcairo
-# Date created:				16 October 2005
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
 #   $MCom: ports/graphics/ruby-cairo/Makefile,v 1.9 2008/10/19 23:20:49 mezz Exp $
-#
 
 PORTNAME=	cairo
 PORTVERSION=	1.12.2
