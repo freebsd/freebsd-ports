@@ -1,9 +1,5 @@
-# New ports collection makefile for: dir2ogg
-# Date created:		2008/01/26
-# Whom:			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	dir2ogg
 PORTVERSION=	0.11.8
@@ -27,6 +23,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	NEWS README
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^#!/s|/.*python|${SETENV} python|g' ${WRKSRC}/${PORTNAME}
@@ -34,7 +31,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
