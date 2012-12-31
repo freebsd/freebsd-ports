@@ -1,9 +1,5 @@
-# Ports collection makefile for:	libquicktime
-# Date Created:			Jul 17, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.4
@@ -22,7 +18,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
@@ -37,18 +34,9 @@ USE_XORG=	xaw xv
 CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
 MAN1=		lqtplay.1
 
-OPTIONS=	ALSA "Enable ALSA support" Off \
-		DV "Enable libdv support for digital cameras" On \
-		FAAC "Enable FAAC support" Off \
-		FAAD "Enable FAAD support" On \
-		FFMPEG "Enable FFmpeg support" On \
-		GTK2 "Enable Gtk+2 Frontend" Off \
-		JPEG "Enable JPEG support" On \
-		OPENGL "Enable OpenGL support" On \
-		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
-		PNG "Enable PNG support" On \
-		SCHROEDINGER "Enable dirac support" On \
-		X264 "Enable X264 codec support" On
+OPTIONS_DEFINE=	ALSA DV FAAC FAAD FFMPEG GTK2 JPEG OPENGL OPTIMIZED_CFLAGS PNG \
+		SCHROEDINGER X264 DOCS
+OPTIONS_DEFAULT=	FFMPEG JPEG OPENGL PNG SCHROEDINGER X264
 
 PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_codecs.html qt4l_index.html \
@@ -57,17 +45,17 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 
 .else
 CONFIGURE_ARGS+=	--without-x --enable-gpl --without-doxygen
-OPTIONS=	OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_OPTIMIZED_CFLAGS)
+.if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CONFIGURE_ARGS+=	--without-cpuflags
 .endif
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
-.if ${HAVE_GNOME:Mgtk20}!="" && defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=	GTK=""
@@ -76,20 +64,20 @@ CONFIGURE_ARGS+=	--without-gtk
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--without-alsa
 .endif
 
-.if !defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-opengl
 .else
 CONFIGURE_ARGS+=	--without-opengl
 .endif
 
-.if !defined(WITHOUT_DV)
+.if ${PORT_OPTIONS:MDV}
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 PLIST_SUB+=	DV=""
 CONFIGURE_ARGS+=	--with-libdv
@@ -98,7 +86,7 @@ PLIST_SUB+=	DV="@comment "
 CONFIGURE_ARGS+=	--without-libdv
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 CONFIGURE_ARGS+=	--with-libjpeg
@@ -107,7 +95,7 @@ PLIST_SUB+=	JPEG="@comment "
 CONFIGURE_ARGS+=	--without-libjpeg
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 CONFIGURE_ARGS+=	--with-libpng
@@ -116,7 +104,7 @@ PLIST_SUB+=	PNG="@comment "
 CONFIGURE_ARGS+=	--without-libpng
 .endif
 
-.if !defined(WITHOUT_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 CONFIGURE_ARGS+=	--with-ffmpeg
@@ -125,7 +113,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
-.if defined(WITH_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 PLIST_SUB+=	FAAC=""
 CONFIGURE_ARGS+=	--with-faac
@@ -134,7 +122,7 @@ PLIST_SUB+=	FAAC="@comment "
 CONFIGURE_ARGS+=	--without-faac
 .endif
 
-.if !defined(WITHOUT_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 CONFIGURE_ARGS+=	--with-faad2
@@ -143,7 +131,7 @@ PLIST_SUB+=	FAAD="@comment "
 CONFIGURE_ARGS+=	--without-faad2
 .endif
 
-.if !defined(WITHOUT_X264)
+.if ${PORT_OPTIONS:MX264}
 LIB_DEPENDS+=	x264.125:${PORTSDIR}/multimedia/x264
 PLIST_SUB+=	X264=""
 CONFIGURE_ARGS+=	--with-x264
@@ -152,7 +140,7 @@ PLIST_SUB+=	X264="@comment "
 CONFIGURE_ARGS+=	--without-x264
 .endif
 
-.if !defined(WITHOUT_SCHROEDINGER)
+.if ${PORT_OPTIONS:MSCHROEDINGER}
 LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
 PLIST_SUB+=	SCHROEDINGER=""
 .else
@@ -176,7 +164,7 @@ post-patch:
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS) && !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
+.if ${PORT_OPTIONS:MDOCS} && !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
@@ -184,4 +172,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

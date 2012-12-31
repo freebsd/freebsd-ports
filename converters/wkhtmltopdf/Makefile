@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tnef
-# Date created:		21 March 2010
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wkhtmltopdf
 DISTVERSION=	0.11.0_rc1
@@ -28,10 +24,12 @@ USE_XORG=		x11 xext xrender
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 USE_GMAKE=		yes
+USE_PKGCONFIG=		build
 HAS_CONFIGURE=		yes
 MAKE_JOBS_SAFE=		yes
 
-OPTIONS=	BUNDLED_LIBS "Use Qt-bundled jpeg, mng, png and tiff" off
+OPTIONS_DEFINE=	BUNDLED_LIBS
+BUNDLED_LIBS_DESC=	Use Qt-bundled jpeg, mng, png and tiff
 
 LICENSE=	LGPL3
 LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
@@ -63,7 +61,7 @@ BROKEN=		fails to extract on FreeBSD 7.X
 BROKEN=		Does not link on powerpc
 .endif
 
-.if defined(WITH_BUNDLED_LIBS)
+.if ${PORT_OPTIONS:MBUNDLED_LIBS}
 CONFIGURE_ARGS+=	-qt-libtiff -qt-libpng -qt-libmng -qt-libjpeg
 .else
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
