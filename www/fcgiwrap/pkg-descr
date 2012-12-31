@@ -11,4 +11,4 @@ Features:
     * passes CGI stderr output to fcgiwrap's stderr (this is by design but
     * stderr could be also passed to FastCGI stderr stream) 
 
-WWW:	http://nginx.localdomain.pl/wiki/FcgiWrap
+WWW: http://nginx.localdomain.pl/wiki/FcgiWrap
