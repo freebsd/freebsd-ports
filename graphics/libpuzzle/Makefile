@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libpuzzle
-# Date created:		2007-12-05
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11
@@ -16,7 +11,7 @@ COMMENT=	A library to find similar pictures
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 MAKE_JOBS_SAFE=	yes
 
@@ -29,8 +24,10 @@ PORTDOCS=	AUTHORS COPYING NEWS README THANKS
 MAN3=		libpuzzle.3 puzzle_set.3
 MAN8=		puzzle-diff.8
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
