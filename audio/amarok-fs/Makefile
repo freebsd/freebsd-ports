@@ -1,9 +1,4 @@
-# New ports collection makefile for:	amarok-fs
-# Date created:				20 June 2007
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	amarok-fs
 PORTVERSION=	0.5
@@ -38,7 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/amarokFS
 
 QMAKE=		${LOCALBASE}/bin/qmake -unix -o
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-extract:
 	${REINPLACE_CMD} -e 's|/usr/share/icons/amarokFS.png|amarokFS|' \
@@ -51,9 +46,9 @@ post-patch:
 		${QMAKE} Makefile amarokFS-xml.pro
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
