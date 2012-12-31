@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pp3
-# Date created:			Dec 24, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pp3
 PORTVERSION=	1.3.3
@@ -19,6 +14,8 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 USE_BZIP2=	yes
 
+.include <bsd.port.options.mk>
+
 do-build:
 	cd ${WRKSRC} \
 		&& ${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3
@@ -27,12 +24,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pp3 ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.dat ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
