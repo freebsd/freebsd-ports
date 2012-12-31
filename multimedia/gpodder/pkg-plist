@@ -3,8 +3,6 @@ bin/gpo
 bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.py
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/api.py
-%%PYTHON_SITELIBDIR%%/gpodder/api.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/common.py
 %%PYTHON_SITELIBDIR%%/gpodder/common.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/config.py
@@ -43,8 +41,6 @@ bin/gpodder-migrate2tres
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/podcastdirectory.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/preferences.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/preferences.pyc
-%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/shownotes.py
-%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/shownotes.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/sync.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/sync.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/welcome.py
@@ -67,8 +63,6 @@ bin/gpodder-migrate2tres
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/configeditor.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/progress.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/progress.pyc
-%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/shownotes.py
-%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/shownotes.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/macosx.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/macosx.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/main.py
@@ -79,6 +73,8 @@ bin/gpodder-migrate2tres
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.pyc
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/shownotes.py
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/shownotes.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/widgets.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/widgets.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/jsonconfig.py
@@ -93,6 +89,8 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/my.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/pipe/__init__.py
+%%PYTHON_SITELIBDIR%%/gpodder/pipe/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/player.py
 %%PYTHON_SITELIBDIR%%/gpodder/player.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/plugins/__init__.py
@@ -124,6 +122,7 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/credits.txt
 %%DATADIR%%/examples/gpodder_mark_played.py
 %%DATADIR%%/examples/hello_world.py
+%%DATADIR%%/extensions/enqueue_in_mediaplayer.py
 %%DATADIR%%/extensions/flv2mp4.py
 %%DATADIR%%/extensions/gtk_statusicon.py
 %%DATADIR%%/extensions/m4a_converter.py
@@ -137,6 +136,7 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/extensions/ted_subtitles.py
 %%DATADIR%%/extensions/ubuntu_appindicator.py
 %%DATADIR%%/extensions/ubuntu_unity.py
+%%DATADIR%%/extensions/update_feeds_on_startup.py
 %%DATADIR%%/extensions/woodchuck.py
 %%DATADIR%%/images/button-flattr-grey.png
 %%DATADIR%%/images/button-flattr.png
@@ -155,9 +155,10 @@ bin/gpodder-migrate2tres
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderflattrsignin.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderpodcastdirectory.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderpreferences.ui
-%%GTK%%%%DATADIR%%/ui/gtk/gpoddershownotes.ui
 %%GTK%%%%DATADIR%%/ui/gtk/gpodderwelcome.ui
 %%DATADIR%%/ui/web/gpodder.js
+%%DATADIR%%/ui/web/images/audio.png
+%%DATADIR%%/ui/web/images/video.png
 %%DATADIR%%/ui/web/index.html
 %%DATADIR%%/ui/web/style.css
 %%GTK%%share/icons/hicolor/16x16/apps/gpodder.png
@@ -228,6 +229,7 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 %%GTK%%@dirrmtry share/icons/hicolor/16x16
 %%GTK%%@dirrmtry share/icons/hicolor
 %%GTK%%@dirrmtry share/icons
+@dirrm %%DATADIR%%/ui/web/images
 @dirrm %%DATADIR%%/ui/web
 %%GTK%%@dirrm %%DATADIR%%/ui/gtk
 @dirrm %%DATADIR%%/ui
@@ -238,6 +240,7 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 %%GTK%%@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/webui
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/gpodder/pipe
 %%GTK%%@dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface
 %%GTK%%@dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop
 %%GTK%%@dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui
