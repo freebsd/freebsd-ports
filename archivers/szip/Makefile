@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*.txt
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,more logfile,cat logfile,' \
 			  -e "s,^CFLAGS.*,CFLAGS= ${CFLAGS}," \
@@ -30,7 +32,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.txt ${DOCSDIR}
 .endif
