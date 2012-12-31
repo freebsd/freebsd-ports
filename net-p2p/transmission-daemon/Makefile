@@ -1,11 +1,7 @@
-# New ports collection makefile for:	transmission-daemon
-# Date created:				08 February 2008
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
+# Created by: Mezz <mezz@FreeBSD.org>
 # $FreeBSD$
-#
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-daemon
 
 MAINTAINER=	crees@FreeBSD.org

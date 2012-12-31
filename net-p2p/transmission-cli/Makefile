@@ -1,12 +1,8 @@
-# New ports collection makefile for:	transmission
-# Date created:				08 October 2005
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
+# Created by: Mezz <mezz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	transmission
-PORTVERSION=	2.73
+PORTVERSION=	2.75
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
