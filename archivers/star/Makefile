@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	star
-# Date created:		Thu May  1 20:28:44 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	star
 DISTVERSION=	1.5.1
@@ -34,6 +29,9 @@ MAKE_ENV+=	MAKEFLAGS=${MAKEFLAGS}
 PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
 		README.ACL README.largefiles README.otherbugs \
 		README.posix-2001
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@/etc/default@${PREFIX}/etc@g"
@@ -63,7 +61,7 @@ do-install:
 	fi
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/star/${FILE} ${DOCSDIR}/${FILE}
