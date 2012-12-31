@@ -9,7 +9,6 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	PGP signing, verification, encryption, and decryption program
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/Licence
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

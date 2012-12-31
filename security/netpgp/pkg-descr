@@ -15,4 +15,4 @@ been established, the public key of the other user will be signed.
 The other user's public key can be added to our keyring.  The other
 user will add our public key to their keyring.
 
-WWW:	http://www.NetBSD.org/
+WWW: http://www.NetBSD.org/
