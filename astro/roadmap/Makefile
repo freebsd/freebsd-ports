@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RoadMap
-# Date created:				4 November 2002
-# Whom:					Nick Esborn <nick@netdot.net>
-#
+# Created by: Nick Esborn <nick@netdot.net>
 # $FreeBSD$
-#
 
 PORTNAME=	roadmap
 PORTVERSION=	1.2.1
@@ -44,6 +40,8 @@ DOCS=		Bugs ChangeLog Coding Configuration Developer-Guide \
 		Installation Map-Building Map-Designing Map-Format \
 		OpenStreetMap Platforms Quickstart Status ToDo Usage
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O ||g ; \
 		 s|/usr/include|${LOCALBASE}/include|g ; \
@@ -68,7 +66,7 @@ do-install:
 .for _DATA in ${DATA}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${_DATA} ${DATADIR}/${_DATA}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .for _DOC in ${DOCS}
