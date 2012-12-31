@@ -1,23 +1,18 @@
-# New ports collection makefile for:	dreampie
-# Date created:			14 May 2010
-# Whom:				Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dreampie
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/55587528/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	DreamPie is a Python shell which is designed to be reliable and fun
+COMMENT=	Python shell which is designed to be reliable and fun
 
 LICENSE=	GPLv3
 
 USE_GNOME=	pygtk2 pygtksourceview
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
 MAN1=		dreampie.1
