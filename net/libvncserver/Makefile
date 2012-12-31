@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libvncserver
-# Date created:			Feb 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libvncserver
 PORTVERSION=	0.9.9
@@ -37,7 +32,7 @@ GCRYPT_DESC=	Enable libgcrypt support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
@@ -51,7 +46,7 @@ CONFIGURE_ARGS+=	--without-crypto --without-ssl
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-gcrypt
 .else
 CONFIGURE_ARGS+=	--without-gcrypt
