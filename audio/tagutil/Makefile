@@ -1,9 +1,4 @@
-# New ports collection makefile for:	tagutil
-# Date created:		2009-03-27
-# Whom:			bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tagutil
 PORTVERSION=	2.1
@@ -14,7 +9,7 @@ MASTER_SITES=	http://files.kaworu.ch/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A tool to manage tags in music files
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
