@@ -4,11 +4,12 @@ include/cdk/binding.h
 include/cdk/button.h
 include/cdk/buttonbox.h
 include/cdk/calendar.h
-include/cdk/cdk.h
+include/cdk.h
 include/cdk/cdk_compat.h
 include/cdk/cdk_config.h
 include/cdk/cdk_objs.h
 include/cdk/cdk_params.h
+include/cdk/cdk_test.h
 include/cdk/cdk_util.h
 include/cdk/cdk_version.h
 include/cdk/cdkscreen.h

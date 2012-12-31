@@ -1,13 +1,8 @@
-# ex:ts=8
-# New ports collection makefile for:	cdk
-# Date created:				6 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	cdk
-PORTVERSION=	5.0.20090215
+PORTVERSION=	5.0.20120323
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cdk/
@@ -18,14 +13,14 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GMAKE=	yes
 USE_NCURSES=	yes
 GNU_CONFIGURE=	yes
 PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=--with-ncurses
 ALL_TARGET=	default examples demos cli cdkshlib
@@ -35,7 +30,7 @@ USE_LDCONFIG=	yes
 .include "${.CURDIR}/maninfo.mk"
 
 post-extract:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-Makefile.in
 .endif
 
@@ -44,14 +39,14 @@ post-patch:
 		-e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.in
 
 pre-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL} -d ${EXAMPLESDIR}
 	${INSTALL} -d ${EXAMPLESDIR}/cli
 	cd ${WRKSRC}/cli; \
@@ -64,4 +59,4 @@ post-install:
 	${FIND} . | ${CPIO} -pdm -R ${LIBOWN}:${LIBGRP} ${EXAMPLESDIR}/examples
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
