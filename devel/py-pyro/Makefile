@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyro
-PORTVERSION=	4.15
+PORTVERSION=	4.17
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ PYDISTUTILS_PKGNAME=	Pyro4
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320
-.include "${FILESDIR}/py3k-fix-pkg-plist.inc"
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 post-install:
