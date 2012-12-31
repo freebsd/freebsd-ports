@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cplay
-# Date created: 	1 November 2001
-# Whom: 		Jochem Kossen
-#
+# Created by: Jochem Kossen
 # $FreeBSD$
-#
 
 PORTNAME=	cplay
 PORTVERSION=	1.49
@@ -21,8 +17,9 @@ MAN1=		cplay.1
 
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 
+.include <bsd.port.options.mk>
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
