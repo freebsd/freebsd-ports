@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autozen
-# Date created:				2000-09-16
-# Whom:					Trevor Johnson
-#
+# Created by: Trevor Johnson
 # $FreeBSD$
-#
 
 PORTNAME=	autozen
 PORTVERSION=	2.1
@@ -23,13 +19,14 @@ USE_PERL5_RUN=	yes
 PORTDOCS=	*
 MAN1=		autozen.1
 
+.include <bsd.port.options.mk>
 post-patch:
 	@${RM} -f ${WRKSRC}/autozen ${WRKSRC}/seq2wav
 .if exists(/usr/include/sys/soundcard.h)
 	@${REINPLACE_CMD} "s=machine/soundcard.h=sys/soundcard.h=g" \
 		${WRKSRC}/autozen.c
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} "s=#%%DOCS%%==g" ${WRKSRC}/Makefile
 .endif
 
