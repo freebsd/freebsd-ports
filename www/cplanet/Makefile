@@ -1,9 +1,4 @@
-# New ports collection makefile for:	cplanet
-# Date created:		2010-02-22
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cplanet
 PORTVERSION=	0.9
@@ -14,16 +9,18 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	RSS Feed Aggregator that generate static html
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+		curl:${PORTSDIR}/ftp/curl
 
 LICENSE=	BSD
 
 MAN1=		cplanet.1
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet-atom.cs ${EXAMPLESDIR}
 	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet-opml.cs ${EXAMPLESDIR}
@@ -32,4 +29,4 @@ post-install:
 	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet.hdf ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
