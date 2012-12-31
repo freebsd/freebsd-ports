@@ -11,6 +11,62 @@ bin/dreampie
 %%PYTHON_SITELIBDIR%%/dreampielib/common/objectstream.py
 %%PYTHON_SITELIBDIR%%/dreampielib/common/objectstream.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/common/objectstream.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/dreampie.glade
+%%PYTHON_SITELIBDIR%%/dreampielib/data/dreampie.png
+%%PYTHON_SITELIBDIR%%/dreampielib/data/language-specs/def.lang
+%%PYTHON_SITELIBDIR%%/dreampielib/data/language-specs/language2.rng
+%%PYTHON_SITELIBDIR%%/dreampielib/data/language-specs/python.lang
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/__init__.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/__init__.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/brine.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/brine.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/brine.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/objectstream.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/objectstream.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common/objectstream.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/__init__.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/find_modules.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/find_modules.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/find_modules.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/split_to_singles.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/split_to_singles.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/split_to_singles.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/trunc_traceback.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/trunc_traceback.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess/trunc_traceback.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/__init__.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/__init__.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/brine.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/brine.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/brine.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/objectstream.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/objectstream.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common/objectstream.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/__init__.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/find_modules.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/find_modules.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/find_modules.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/split_to_singles.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/split_to_singles.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/split_to_singles.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/trunc_traceback.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/trunc_traceback.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess/trunc_traceback.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp_main.py
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp_main.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/data/subp_main.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/SimpleGladeApp.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/SimpleGladeApp.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/SimpleGladeApp.pyo
@@ -26,27 +82,36 @@ bin/dreampie
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/autoparen.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/autoparen.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/autoparen.pyo
-%%PYTHON_SITELIBDIR%%/dreampielib/gui/beep.py
-%%PYTHON_SITELIBDIR%%/dreampielib/gui/beep.pyc
-%%PYTHON_SITELIBDIR%%/dreampielib/gui/beep.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/bug_report.py
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/bug_report.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/bug_report.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/call_tip_window.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/call_tip_window.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/call_tip_window.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/call_tips.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/call_tips.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/call_tips.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/common.py
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/common.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/common.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/config.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/config.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/config.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/config_dialog.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/config_dialog.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/config_dialog.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/crash_workaround.py
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/crash_workaround.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/crash_workaround.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/file_dialogs.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/file_dialogs.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/file_dialogs.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/folding.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/folding.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/folding.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/git.py
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/git.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/git.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/gtkexcepthook.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/gtkexcepthook.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/gtkexcepthook.pyo
@@ -65,9 +130,6 @@ bin/dreampie
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/keyhandler.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/keyhandler.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/keyhandler.pyo
-%%PYTHON_SITELIBDIR%%/dreampielib/gui/load_pygtk.py
-%%PYTHON_SITELIBDIR%%/dreampielib/gui/load_pygtk.pyc
-%%PYTHON_SITELIBDIR%%/dreampielib/gui/load_pygtk.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/newline_and_indent.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/newline_and_indent.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/newline_and_indent.pyo
@@ -95,6 +157,9 @@ bin/dreampie
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/tags.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/tags.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/tags.pyo
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/update_check.py
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/update_check.pyc
+%%PYTHON_SITELIBDIR%%/dreampielib/gui/update_check.pyo
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/vadj_to_bottom.py
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/vadj_to_bottom.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/gui/vadj_to_bottom.pyo
@@ -117,37 +182,20 @@ bin/dreampie
 %%PYTHON_SITELIBDIR%%/dreampielib/subprocess/trunc_traceback.pyc
 %%PYTHON_SITELIBDIR%%/dreampielib/subprocess/trunc_traceback.pyo
 share/applications/dreampie.desktop
-%%DATADIR%%/dreampie.glade
-%%DATADIR%%/subp-py2/dreampielib/__init__.py
-%%DATADIR%%/subp-py2/dreampielib/common/__init__.py
-%%DATADIR%%/subp-py2/dreampielib/common/brine.py
-%%DATADIR%%/subp-py2/dreampielib/common/objectstream.py
-%%DATADIR%%/subp-py2/dreampielib/subprocess/__init__.py
-%%DATADIR%%/subp-py2/dreampielib/subprocess/find_modules.py
-%%DATADIR%%/subp-py2/dreampielib/subprocess/split_to_singles.py
-%%DATADIR%%/subp-py2/dreampielib/subprocess/trunc_traceback.py
-%%DATADIR%%/subp-py3/dreampielib/__init__.py
-%%DATADIR%%/subp-py3/dreampielib/common/__init__.py
-%%DATADIR%%/subp-py3/dreampielib/common/brine.py
-%%DATADIR%%/subp-py3/dreampielib/common/objectstream.py
-%%DATADIR%%/subp-py3/dreampielib/subprocess/__init__.py
-%%DATADIR%%/subp-py3/dreampielib/subprocess/find_modules.py
-%%DATADIR%%/subp-py3/dreampielib/subprocess/split_to_singles.py
-%%DATADIR%%/subp-py3/dreampielib/subprocess/trunc_traceback.py
-%%DATADIR%%/subp_main.py
 share/pixmaps/dreampie.png
 share/pixmaps/dreampie.svg
-@dirrm %%DATADIR%%/subp-py3/dreampielib/subprocess
-@dirrm %%DATADIR%%/subp-py3/dreampielib/common
-@dirrm %%DATADIR%%/subp-py3/dreampielib
-@dirrm %%DATADIR%%/subp-py3
-@dirrm %%DATADIR%%/subp-py2/dreampielib/subprocess
-@dirrm %%DATADIR%%/subp-py2/dreampielib/common
-@dirrm %%DATADIR%%/subp-py2/dreampielib
-@dirrm %%DATADIR%%/subp-py2
-@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib/subprocess
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib/gui
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/common
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/subprocess
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib/common
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2/dreampielib
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py2
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/language-specs
+@dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib/common
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib
