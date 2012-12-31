@@ -1,9 +1,5 @@
-# New ports collection makefile for:   btc
-# Date created:        1 August 2000
-# Whom:                Bill Fumerola <billf@chimesnet.com>
-#
+# Created by: Bill Fumerola <billf@chimesnet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	btc
 PORTVERSION=	258
@@ -19,12 +15,14 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/btc
 PORTDOCS=	btc.doc
 
+.include <bsd.port.options.mk>
+
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.doc ${DOCSDIR}
 .endif
