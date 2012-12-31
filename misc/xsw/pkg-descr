@@ -7,4 +7,4 @@ An example xsw file is:
       - "Hello" x:50 y:30 align:center
       + "World!"
 
-WWW:	http://code.google.com/p/xsw/
+WWW: http://code.google.com/p/xsw/
