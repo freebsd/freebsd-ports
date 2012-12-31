@@ -1,9 +1,5 @@
-# New ports collection makefile for:	transmission-qt4
-# Date created:				23 October 2010
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
+# Created by: Mezz <mezz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-qt4

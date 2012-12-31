@@ -1,11 +1,11 @@
---- libtransmission/fdlimit.c.orig	2011-02-27 15:34:55.000000000 -0600
-+++ libtransmission/fdlimit.c	2011-02-27 15:35:12.000000000 -0600
-@@ -609,7 +609,7 @@
+--- libtransmission/fdlimit.c.orig	2012-12-16 19:44:18.727049000 +0000
++++ libtransmission/fdlimit.c	2012-12-30 16:50:41.605049278 +0000
+@@ -678,7 +678,7 @@
  
-     if( gFd->socket_count < session->peerLimit )
-         if(( s = socket( domain, type, 0 )) < 0 )
--            if( sockerrno != EAFNOSUPPORT )
-+            if( sockerrno != EPROTONOSUPPORT )
-                 tr_err( _( "Couldn't create socket: %s" ), tr_strerror( sockerrno ) );
+     if (gFd->peerCount < session->peerLimit)
+         if ((s = socket (domain, type, 0)) < 0)
+-            if (sockerrno != EAFNOSUPPORT)
++            if (sockerrno != EPROTONOSUPPORT)
+                 tr_err (_("Couldn't create socket: %s"), tr_strerror (sockerrno));
  
-     if( s > -1 )
+     if (s > -1)
