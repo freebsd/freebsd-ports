@@ -1,4 +1,3 @@
-# Created by: Jeremy Messenger <mezz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	thewidgetfactory

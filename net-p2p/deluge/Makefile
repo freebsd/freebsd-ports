@@ -1,9 +1,4 @@
-# New ports collection makefile for:	deluge
-# Date created:				03 December 2006
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	deluge
 PORTVERSION=	1.3.5

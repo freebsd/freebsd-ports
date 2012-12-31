@@ -1,4 +1,3 @@
-# Created by: Mezz <mezz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	transmission

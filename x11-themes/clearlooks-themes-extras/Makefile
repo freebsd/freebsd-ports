@@ -1,9 +1,4 @@
-# New ports collection makefile for:	clearlooks-themes-extras
-# Date created:				10 April 2005
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6

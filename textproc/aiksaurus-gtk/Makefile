@@ -1,9 +1,4 @@
-# New ports collection makefile for:	aiksaurus-gtk
-# Date created:				23 July 2004
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	11
 CATEGORIES=	textproc deskutils

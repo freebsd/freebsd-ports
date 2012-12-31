@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gnote
-# Date created:				20 July 2009
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
 #   $MCom: ports/deskutils/gnote/Makefile,v 1.14 2010/11/15 16:21:49 kwm Exp $
-#
 
 PORTNAME=	gnote
 PORTVERSION=	0.7.6

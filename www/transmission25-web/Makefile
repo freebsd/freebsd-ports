@@ -1,9 +1,4 @@
-# New ports collection makefile for:	transmission-web
-# Date created:				14 July 2008
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	www net-p2p

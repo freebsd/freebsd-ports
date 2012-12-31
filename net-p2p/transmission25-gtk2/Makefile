@@ -1,9 +1,4 @@
-# New ports collection makefile for:	transmission-gtk2
-# Date created:				11 February 2006
-# Whom:					Mezz <mezz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-gtk2
 
