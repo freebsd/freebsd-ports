@@ -1,9 +1,5 @@
-# New ports collection makefile for:	udns
-# Date created:			Sat May 24, 2008
-# Whom:				Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	udns
 PORTVERSION=	0.2
@@ -17,7 +13,7 @@ HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	IPV6 "Enable IPv6 support" on
+OPTIONS_DEFINE=	IPV6 DOCS
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
@@ -31,9 +27,9 @@ SHLIB_MAJOR=	0
 MAN1=		dnsget.1 rblcheck.1
 MAN3=		udns.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -59,11 +55,11 @@ do-install:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in NEWS NOTES TODO
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,11 +1,9 @@
-# New ports collection makefile for:	orc
-# Date created:				Mar 09, 2010
-# Whom:					mm
-#
+# Created by: mm
 # $FreeBSD$
 
 PORTNAME=	orc
 PORTVERSION=	0.4.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -28,18 +26,18 @@ EXAMPLES_DATA=	example1orc.orc example2orc.orc example3orc.orc \
 		mt19937arorc.orc
 EXAMPLES_EXEC=	example1 example2 example3 mt19937ar volscale
 
-OPTIONS=	DOCS "Include gtk-doc documentation" off \
-		EXAMPLES "Install example files" off
+OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCS_DESC=	Include gtk-doc documentation
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DOCS) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 SUBDIRS+=	doc
 .else
 NOPORTDOCS=	yes
 .endif
 
-.if defined(WITH_EXAMPLES) && !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 SUBDIRS+=	examples
 .else
 NOPORTEXAMPLES=	yes
@@ -54,7 +52,7 @@ post-patch:
 		${WRKSRC}/configure 
 
 post-install:
-.if defined(WITH_EXAMPLES) && !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for FILE in ${EXAMPLES_DATA}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${FILE} ${EXAMPLESDIR}/${FILE}
@@ -64,4 +62,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

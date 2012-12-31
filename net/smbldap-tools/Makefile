@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smbldap-tools
-# Date created:				May 8 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.9
@@ -31,17 +27,18 @@ ALL_TARGET=	build
 
 PORTDOCS=	*
 
-OPTIONS=	MIGRATION_SCRIPTS	"Install migration scripts"	off \
-		PDF_DOC			"Install PDF documentation"	off
+OPTIONS_DEFINE=	MIGRATION_SCRIPTS PDF_DOC DOCS
+MIGRATION_SCRIPTS_DESC=	Install migration scripts
+PDF_DOC_DESC=	Install PDF documentation
 
 CONFIGURE_ARGS+=	--with-samba-sysconfdir=${LOCALBASE}/etc \
 			--with-samba-bindir=${LOCALBASE}/bin \
 			--with-perl=${PERL} \
 			--with-perl-libdir=sitelib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MIGRATION_SCRIPTS)
+.if ${PORT_OPTIONS:MMIGRATION_SCRIPTS}
 PLIST_SUB+=	MIGRATION_SCRIPTS=""
 .else
 PLIST_SUB+=	MIGRATION_SCRIPTS="@comment "
@@ -58,7 +55,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/smbldap-tools/$i ] || ${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/smbldap-tools/$i
 .endfor
 
-.if defined(WITH_MIGRATION_SCRIPTS)
+.if ${PORT_OPTIONS:MMIGRATION_SCRIPTS}
 . for i in smbldap-migrate-pwdump-accounts smbldap-migrate-pwdump-groups \
 smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
 	@${SED} -e 's|/usr/bin/perl|${PERL}|g' \
@@ -66,7 +63,7 @@ smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
 . endfor
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/smbldap-config.cmd ${DOCSDIR}/smbldap-config
 	${INSTALL_SCRIPT} ${WRKSRC}/smbldap-upgrade-0.9.6.cmd ${DOCSDIR}/smbldap-upgrade-0.9.6
@@ -74,9 +71,9 @@ smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/smbldap-tools.html ${DOCSDIR}/smbldap-tools.html
-.if defined(WITH_PDF_DOC)
+.if ${PORT_OPTIONS:MPDF_DOC}
 	${INSTALL_DATA} ${WRKSRC}/doc/smbldap-tools.pdf ${DOCSDIR}/smbldap-tools.pdf
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
