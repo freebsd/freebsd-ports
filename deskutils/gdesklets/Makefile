@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gdesklets
-# Date created:				11 August 2003
-# Whom:					Mezz <mezz7@cox.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.36.2

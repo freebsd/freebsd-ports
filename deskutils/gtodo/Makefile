@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gtodo
-# Date created:				29 September 2003
-# Whom:					Mezz <mezz7@cox.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gtodo
 PORTVERSION=	0.14

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gdesklets-recentlyused
-# Date created:				02 September 2003
-# Whom:					Mezz <mezz7@cox.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	recentlyused
 PORTVERSION=	0.6

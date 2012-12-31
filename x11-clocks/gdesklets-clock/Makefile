@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gdesklets-clock
-# Date created:				02 September 2003
-# Whom:					Mezz <mezz7@cox.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	clock
 PORTVERSION=	0.32

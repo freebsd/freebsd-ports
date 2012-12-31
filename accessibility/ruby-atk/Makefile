@@ -1,4 +1,3 @@
-# Created by: Jeremy Messenger <mezz7@cox.net>
 # $FreeBSD$
 #   $MCom: ports/accessibility/ruby-atk/Makefile,v 1.2 2005/10/17 07:05:39 mezz Exp $
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	neverball
-# Date created:				26 October 2003
-# Whom:					Mezz <mezz7@cox.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	neverball
 PORTVERSION=	1.5.4
