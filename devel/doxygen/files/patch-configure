@@ -1,6 +1,6 @@
---- configure.orig	2012-02-24 11:46:04.000000000 -0500
-+++ configure	2012-03-04 13:58:53.000000000 -0500
-@@ -269,7 +269,7 @@
+--- configure.orig	2012-12-27 06:24:51.000000000 -0500
++++ configure	2012-12-28 12:12:33.000000000 -0500
+@@ -281,7 +281,7 @@
      echo "  QTDIR environment variable not set!"
      echo -n "  Checking for Qt..."
      for d in /usr/{lib,share,qt}/{qt-4,qt4,qt,qt*,4} /usr; do
@@ -9,7 +9,7 @@
          QTDIR=$d
        fi
      done
-@@ -280,7 +280,7 @@
+@@ -292,7 +292,7 @@
    if test -z "$QTDIR"; then
      echo "QTDIR not set and Qt not found at standard locations!"
      echo
@@ -18,7 +18,7 @@
      echo "check the Qt installation instructions!"
      exit 2
    fi
-@@ -576,7 +576,7 @@
+@@ -604,7 +604,7 @@
  fi
  if test "$f_wizard" = YES; then
    cat >> .tmakeconfig <<EOF
@@ -27,29 +27,29 @@
  EOF
  fi
  
-@@ -586,7 +586,7 @@
+@@ -621,7 +621,7 @@
  EOF
  fi
  
--f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in libmd5/Makefile.in addon/doxyapp/Makefile.in"
-+f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in addon/doxyapp/Makefile.in"
+-f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in libmd5/Makefile.in addon/doxyapp/Makefile.in addon/doxysearch/Makefile.in"
++f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in addon/doxyapp/Makefile.in addon/doxysearch/Makefile.in"
  
  for i in $f_inmakefiles ; do
       SRC=$i
-@@ -603,7 +603,6 @@
-        echo "" >> $DST
-        echo "all: src/version.cpp " >> $DST
+@@ -645,7 +645,6 @@
+        fi
+        echo "all: src/version.cpp $EXTRADEPS" >> $DST
         echo "	\$(MAKE) -C qtools" >> $DST
 -       echo "	\$(MAKE) -C libmd5" >> $DST
         echo "	\$(MAKE) -C src" >> $DST
         if test $f_wizard = YES; then
           echo "	\$(MAKE) MAN1DIR=\$(MAN1DIR) -C addon/doxywizard" >> $DST
-@@ -629,7 +628,7 @@
+@@ -678,7 +677,7 @@
  cat src/libdoxycfg.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" > src/libdoxycfg.t
  cat src/libdoxygen.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" > src/libdoxygen.t
  
--f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libmd5/libmd5.pro.in addon/doxyapp/doxyapp.pro.in" 
-+f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in addon/doxyapp/doxyapp.pro.in" 
+-f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libmd5/libmd5.pro.in addon/doxyapp/doxyapp.pro.in addon/doxysearch/doxysearch.pro.in addon/doxysearch/doxyindexer.pro.in" 
++f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in addon/doxyapp/doxyapp.pro.in addon/doxysearch/doxysearch.pro.in addon/doxysearch/doxyindexer.pro.in" 
  
  for i in $f_inprofiles ; do
       SRC=$i

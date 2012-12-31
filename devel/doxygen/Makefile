@@ -1,19 +1,15 @@
-# New ports collection makefile for:	doxygen
-# Date created:		20 March 1998
-# Whom:			Joep Grooten <joep@di.nl>
-#
+# Created by: Joep Grooten <joep@di.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	doxygen
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	A documentation system for C, C++, and other languages
+COMMENT=	Documentation system for C, C++, and other languages
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -43,25 +39,24 @@ TMPDOCDEST=	${WRKDIR}/tmpdocdest
 
 PLIST_FILES=	bin/doxygen
 
-OPTIONS_DEFINE=	DOXYWIZARD LATEX
-OPTIONS_DEFAULT=DOXYWIZARD LATEX
-DOXYWIZARD_DESC=	Doxywizard support (requires QT4)
+OPTIONS_DEFINE=	DOCS DOXYWIZARD LATEX
+OPTIONS_DEFAULT=DOCS DOXYWIZARD LATEX
+DOXYWIZARD_DESC=	Doxywizard support (requires Qt4)
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	docs
 USE_PYTHON_BUILD=	yes
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
 .if ${PORT_OPTIONS:MLATEX}
 ALL_TARGET+=	pdf
-BUILD_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex \
-		latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 USE_GHOSTSCRIPT_BUILD=	yes
 MAKE_ARGS+=	HAVE_LATEX=yes
 .endif # LATEX
-.endif # !defined(NOPORTDOCS)
+.endif # DOCS
 
 .if ${PORT_OPTIONS:MDOXYWIZARD}
 USE_QT4=	corelib gui xml qmake_build moc_build rcc_build
@@ -98,7 +93,7 @@ post-build:
 pre-install:
 	${RM} -rf ${TMPDOCDEST} ${PLIST}
 	${TOUCH} ${PLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${TMPDOCDEST}/doxygen
 	${RM} -f ${WRKSRC}/examples/diagrams/html/*.md5 \
 		 ${WRKSRC}/examples/diagrams/html/*.map
@@ -107,30 +102,27 @@ pre-install:
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' \
 		-cf - examples \
 		| ${TAR} -C ${TMPDOCDEST}/doxygen --unlink -xf -
-.if !defined(WITHOUT_LATEX)
-	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.dvi \
-			${WRKSRC}/latex/doxygen_manual.pdf \
-			${WRKSRC}/latex/doxygen_manual.ps \
+.if ${PORT_OPTIONS:MLATEX}
+	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.pdf \
 			${WRKSRC}/latex/archoverview.eps \
-			${WRKSRC}/latex/doxygen_logo.eps \
 			${TMPDOCDEST}/doxygen
-.endif # !defined(WITHOUT_LATEX)
+.endif # LATEX
 	@cd ${TMPDOCDEST} \
 	&& ${FIND} -s * -type f -o -type l \
-		| ${SED} -e 's|^|share/doc/|'>> ${PLIST} \
+		| ${SED} -e 's|^|share/doc/|' >> ${PLIST} \
 	&& ${FIND} -d * -type d \
 		| ${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
-.endif # !defined(NOPORTDOCS)
+.endif # DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOXYWIZARD}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin/
 .endif # DOXYWIZARD
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/doxygen
 	${TAR} -C ${TMPDOCDEST} -cf - doxygen \
 		| ${TAR} -C ${PREFIX}/share/doc --unlink -xf -
-.endif # !defined(NOPORTDOCS)
+.endif # DOCS
 
 .include <bsd.port.mk>
