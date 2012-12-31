@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HVSC-Update
-# Date created:				13 October 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HVSC-Update
 PORTVERSION=	2.8.5
@@ -25,15 +21,15 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	HVSC_Update.txt SID_file_format.txt
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
