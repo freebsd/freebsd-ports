@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	hydra
-# Date created:				Tue Oct 08, 2002
-# Whom:					Laurent LEVIER (llevier@argosnet.com)
-#
+# Created by: Laurent LEVIER (llevier@argosnet.com)
 # $FreeBSD$
-#
 
 PORTNAME=	hydra
-PORTVERSION=	7.3
-PORTREVISION=	2
+PORTVERSION=	7.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/ \
 		PACKETSTORM/groups/thc/
