@@ -18,6 +18,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/errors.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/errors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/futures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/futures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/futures.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.pyo
@@ -42,12 +45,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/echoserver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/echoserver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/echoserver.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadpool.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadpool.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadpool.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/tpjobqueue.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/tpjobqueue.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/tpjobqueue.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/util.pyo
@@ -74,6 +77,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/api/echoserver.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/errors.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/flame.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/futures.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/main.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/naming.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/socketserver.rst
