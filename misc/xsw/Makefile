@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xsw
-# Date created:		17 Mar 2010
-# Whom:			corky1951@comcast.net
-#
+# Created by: corky1951@comcast.net
 # $FreeBSD$
-#
 
 PORTNAME=	xsw
 PORTVERSION=	0.3.5
@@ -41,12 +36,14 @@ DOCS=		AUTHORS \
 		TODO \
 		doc/xsw.vim
 
+.include <bsd.port.options.mk>
+
 do-install:
 	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install)
 	(cd ${WRKSRC}/data && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
