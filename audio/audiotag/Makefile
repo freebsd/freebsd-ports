@@ -1,32 +1,27 @@
-# New ports collection makefile for:	audiotag
-# Date created:		2008-04-08
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	audiotag
 PORTVERSION=	0.19
 PORTREVISION=	1
 CATEGORIES=	audio multimedia
-MASTER_SITES=	 http://cloud.github.com/downloads/Daenyth/audiotag/
+MASTER_SITES=	GHC
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A command-line tool for mass tagging/renaming of audio files
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	VORBIS ID3 MP4 FLAC DOCS
 OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
-USE_PERL5_RUN=	yes
-
 NO_BUILD=	yes
 
 USE_BZIP2=	yes
+USE_PERL5_RUN=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	Daenyth
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
 RUN_DEPENDS+=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
@@ -55,4 +50,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
