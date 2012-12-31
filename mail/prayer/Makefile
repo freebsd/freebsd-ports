@@ -9,9 +9,8 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Prayer Webmail System
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/docs/LICENCE
 
-LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	c-client4:${PORTSDIR}/mail/cclient
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -26,7 +25,7 @@ PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 
 USE_RC_SUBR=	prayer
 
-OPTIONS_DEFINE=	SESSIONCACHE TIDY SSL LDAP
+OPTIONS_DEFINE=	SESSIONCACHE TIDY SSL LDAP DOCS
 OPTIONS_DEFAULT=	SESSIONCACHE TIDY SSL LDAP
 
 SESSIONCACHE_DESC=	Activate Session Cache
@@ -37,7 +36,7 @@ GROUPS=		prayer
 MAN5=		prayer.cf.5
 MAN8=		prayer-session.8 prayer-ssl-prune.8 prayer.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSESSIONCACHE}
 USE_BDB=	yes
@@ -64,7 +63,7 @@ post-patch:
 	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
 
 post-configure:
-.if defined(WITH_SESSIONCACHE)
+.if ${PORT_OPTIONS:MSESSIONCACHE}
 	@${REINPLACE_CMD} "s|^#DB_INCLUDE=.*|DB_INCLUDE=-I${BDB_INCLUDE_DIR}|" ${WRKSRC}/Config
 	@${REINPLACE_CMD} "s|^#DB_LIBS=.*|DB_LIBS=-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}|" ${WRKSRC}/Config
 .else
@@ -72,17 +71,17 @@ post-configure:
 .endif
 	@${REINPLACE_CMD} "s#^RW_USER    = prayer#RW_USER    = _prayer#" ${WRKSRC}/Config
 
-.if defined(WITHOUT_SSL)
-	@${REINPLACE_CMD} "s#^SSL_ENABLE           = true#SSL_ENABLE           = false#" ${WRKSRC}/Config
-.else
+.if ${PORT_OPTIONS:MSSL}
 	@${REINPLACE_CMD} "s#CCLIENT_SSL_ENABLE   = false#CCLIENT_SSL_ENABLE   = true#" ${WRKSRC}/Config
+.else
+	@${REINPLACE_CMD} "s#^SSL_ENABLE           = true#SSL_ENABLE           = false#" ${WRKSRC}/Config
 .endif
 
-.if defined(WITHOUT_LDAP)
+.if ! ${PORT_OPTIONS:MLDAP}
 	@${REINPLACE_CMD} "s#LDAP_ENABLE          = true#LDAP_ENABLE          = false#" ${WRKSRC}/Config
 .endif
 
-.if defined(WITHOUT_TIDY)
+.if ! ${PORT_OPTIONS:MTIDY}
 	@${REINPLACE_CMD} "s#TIDY_ENABLE          = true#TIDY_ENABLE          = false#" ${WRKSRC}/Config
 .else
 	@${REINPLACE_CMD} "s#TIDY_INCLUDE=-I/usr/include/tidy#TIDY_INCLUDE=-I${LOCALBASE}/include/tidy#" ${WRKSRC}/Config
@@ -92,9 +91,9 @@ pre-install:
 	@${MKDIR} ${PREFIX}/etc/prayer
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
