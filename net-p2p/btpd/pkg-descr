@@ -3,6 +3,6 @@ can be used to read and/or manipulate the daemon state. The daemon is capable of
 running several torrents simultaneously and only uses one tcp port. It's fairly
 low on resource usage and should be perfect for file distribution sites.
 Efficient downloads and ease of use makes this client a good choice for the
-casual user as well. 
+casual user as well.
 
-WWW:	http://wiki.github.com/btpd/btpd/
+WWW: http://wiki.github.com/btpd/btpd/
