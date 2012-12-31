@@ -9,7 +9,7 @@
 #   $MCom: ports-stable/www/firefox/Makefile.webplugins,v 1.14 2008/11/12 17:55:09 mezz Exp $
 #
 
-# MAINTAINER=	gnome@FreeBSD.org
+# MAINTAINER=	gecko@FreeBSD.org
 #
 # Documentation and examples:
 #
