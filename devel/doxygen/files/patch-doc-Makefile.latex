@@ -1,10 +1,7 @@
---- doc/Makefile.latex	Sun May  7 14:06:16 2006
-+++ doc/Makefile.latex	Sun Jun 11 20:27:05 2006
-@@ -13,13 +13,27 @@
- # input used in their production; they are not affected by this license.
- 
--all: doxygen_manual.pdf
-+all: doxygen_manual.pdf doxygen_manual.ps
+--- doc/Makefile.latex.old	2012-01-29 10:11:54.000000000 -0500
++++ doc/Makefile.latex	2012-12-30 12:15:00.000000000 -0500
+@@ -15,11 +15,11 @@
+ all: doxygen_manual.pdf
  
  doxygen_manual.pdf: doxygen_manual.tex doxygen.sty
 -	echo "Running latex..."
@@ -16,19 +13,5 @@
 -	echo "Rerunning latex...."
 +	@echo "Rerunning latex...."
  	pdflatex doxygen_manual.tex
-+
-+graphics:
-+	ln -s ../doc/doxygen_logo.eps .
-+	ln -s ../doc/doxygen_logo.gif .
-+
-+doxygen_manual.dvi: doxygen_manual.pdf graphics
-+	@echo "Running latex again to get a .dvi file..."
-+	latex doxygen_manual.tex
-+
-+doxygen_manual.ps: doxygen_manual.dvi
-+	dvips -o doxygen_manual.ps doxygen_manual.dvi
-+
  clean:
  	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log doxygen_manual.pdf
-+
-+.PHONY:        graphics
