@@ -23,7 +23,6 @@ CONFLICTS=	tinker-[0-9]*
 
 MAN1=		diffuse.1
 PORTDOCS=	AUTHORS ChangeLog ChangeLog_ru README README_ru
-PORTDATA=	syntax
 
 OPTIONS_DEFINE=	DATA DOCS MENU NLS
 DATA_DESC=	Enable syntax highlighting support
@@ -32,6 +31,10 @@ MENU_DESC=	Enable a desktop program menu entry
 OPTIONS_DEFAULT=	DATA MENU
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDATA}
+PORTDATA=	syntax
+.endif
 
 .if ${PORT_OPTIONS:MMENU}
 USE_GNOME+=	desktopfileutils
