@@ -1,4 +1,3 @@
-# Created by: Mezz <mezz7@cox.net>
 # $FreeBSD$
 
 PORTNAME=	gnome-clipboard-daemon

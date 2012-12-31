@@ -1,9 +1,4 @@
-# New ports collection makefile for:	wesnoth
-# Date created:			22 December 2003
-# Whom:				Mezz <mezz7@cox.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.10.5
