@@ -19,6 +19,7 @@
     SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy
+    SUBDIR += dxirc
     SUBDIR += eggcreator
     SUBDIR += eggdrop
     SUBDIR += eggdrop-devel
