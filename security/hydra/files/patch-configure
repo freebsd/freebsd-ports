@@ -1,21 +1,21 @@
---- configure.orig 2011-07-15 14:17:01.000000000 +0400
-+++ configure      2011-08-15 22:22:22.000000000 +0400
-@@ -653,7 +653,7 @@
+--- ./configure.orig	2012-12-23 01:34:25.000000000 +0400
++++ ./configure	2012-12-31 11:58:51.000000000 +0400
+@@ -801,7 +801,7 @@
  XIPATHS=""
  
- if [ -n "$FIREBIRD_PATH" -o -n "$PCRE_PATH" -o -n "$IDN_PATH" -o -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" -o -n "$POSTGRES_PATH" -o -n "$SVN_PATH" -o -n "$NCP_PATH" -o -n "$ORACLE_PATH" -o -n "$AFP_PATH" -o -n "$MYSQL_PATH" ]; then
+ if [ -n "$FIREBIRD_PATH" -o -n "$PCRE_PATH" -o -n "$IDN_PATH" -o -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" -o -n "$POSTGRES_PATH" -o -n "$SVN_PATH" -o -n "$NCP_PATH" -o -n "$CURSES_PATH" -o -n "$ORACLE_PATH" -o -n "$AFP_PATH" -o -n "$MYSQL_PATH" ]; then
 -    XLIBPATHS="-L/usr/lib -L/usr/local/lib -L/lib"
 +    XLIBPATHS="-L/usr/local/lib -L/usr/lib -L/lib"
  fi
  if [ -n "$SSL_PATH" ]; then
      XDEFINES="$XDEFINES -DLIBOPENSSL"
-@@ -706,6 +706,9 @@
+@@ -857,6 +857,9 @@
  if [ -n "$SSL_IPATH" ]; then
      XIPATHS="-I$SSL_IPATH"
  fi
 +if [ -d $PREFIX/include ];then
 +   XIPATHS="$XIPATHS -I$PREFIX/include"
 +fi
- if [ -n "$SAPR3_IPATH" ]; then
-     XIPATHS="$XIPATHS -I$SAPR3_IPATH"
+ if [ -n "$CURSES_PATH" ]; then
+     XLIBS="$XLIBS -lcurses"
  fi
