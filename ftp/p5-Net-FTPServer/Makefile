@@ -1,14 +1,8 @@
-# ex:ts=8
-# New ports collection makefile for:	p5-Net-FTPServer
-# Date created:			Jul 30, 2001
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Net-FTPServer
-PORTVERSION=	1.122
-PORTREVISION=	3
+PORTVERSION=	1.125
 CATEGORIES=	ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -50,7 +44,7 @@ MAN3=	Net::FTPServer.3 \
 	Net::FTPServer::RO::FileHandle.3 \
 	Net::FTPServer::RO::Server.3
 
-DOCS=	FAQ README TODO doc/*
+DOCS=	README TODO doc/*
 
 PORTDOCS=	*
 PORTEXAMPLES=	ftpd.conf
@@ -58,7 +52,7 @@ PORTEXAMPLES=	ftpd.conf
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \
-		${WRKSRC}/Net-FTPServer.spec.PL
+		${WRKSRC}/package/Net-FTPServer.spec.PL
 	@${REINPLACE_CMD} -e "s/-g root/-g wheel/" \
 		-e "s,$$.PREFIX./sbin,${PREFIX}/sbin," \
 		-e "s,$$.SITEPREFIX./sbin,${PREFIX}/sbin," \
@@ -67,7 +61,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ftpd.conf ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/etc/ftpd.conf ${EXAMPLESDIR}
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
