@@ -4,11 +4,17 @@ bin/sqlt-diff
 bin/sqlt-diff-old
 bin/sqlt-dumper
 bin/sqlt-graph
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator/.packlist
 %%SITE_PERL%%/SQL/Translator.pm
 %%SITE_PERL%%/SQL/Translator/Diff.pm
 %%SITE_PERL%%/SQL/Translator/Filter/DefaultExtra.pm
 %%SITE_PERL%%/SQL/Translator/Filter/Globals.pm
 %%SITE_PERL%%/SQL/Translator/Filter/Names.pm
+%%SITE_PERL%%/SQL/Translator/Generator/DDL/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Generator/DDL/SQLServer.pm
+%%SITE_PERL%%/SQL/Translator/Generator/DDL/SQLite.pm
+%%SITE_PERL%%/SQL/Translator/Generator/Role/DDL.pm
+%%SITE_PERL%%/SQL/Translator/Generator/Role/Quote.pm
 %%SITE_PERL%%/SQL/Translator/Manual.pod
 %%SITE_PERL%%/SQL/Translator/Parser.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Access.pm
@@ -57,23 +63,23 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Producer/XML.pm
 %%SITE_PERL%%/SQL/Translator/Producer/XML/SQLFairy.pm
 %%SITE_PERL%%/SQL/Translator/Producer/YAML.pm
-%%SITE_PERL%%/SQL/Translator/ProducerUtils.pm
+%%SITE_PERL%%/SQL/Translator/Role/BuildArgs.pm
+%%SITE_PERL%%/SQL/Translator/Role/Debug.pm
+%%SITE_PERL%%/SQL/Translator/Role/Error.pm
+%%SITE_PERL%%/SQL/Translator/Role/ListAttr.pm
 %%SITE_PERL%%/SQL/Translator/Schema.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Constants.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Constraint.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Field.pm
-%%SITE_PERL%%/SQL/Translator/Schema/Graph.pm
-%%SITE_PERL%%/SQL/Translator/Schema/Graph/CompoundEdge.pm
-%%SITE_PERL%%/SQL/Translator/Schema/Graph/Edge.pm
-%%SITE_PERL%%/SQL/Translator/Schema/Graph/HyperEdge.pm
-%%SITE_PERL%%/SQL/Translator/Schema/Graph/Node.pm
-%%SITE_PERL%%/SQL/Translator/Schema/Graph/Port.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Index.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Object.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Procedure.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Role/Compare.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Role/Extra.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Table.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Trigger.pm
 %%SITE_PERL%%/SQL/Translator/Schema/View.pm
+%%SITE_PERL%%/SQL/Translator/Types.pm
 %%SITE_PERL%%/SQL/Translator/Utils.pm
 %%SITE_PERL%%/Test/SQL/Translator.pm
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml/diagram.tt2
@@ -84,24 +90,31 @@ bin/sqlt-graph
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml/uml-class-end.tt2
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml/uml-class-start.tt2
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml/uml-class.tt2
-%%SITE_PERL%%/auto/share/dist/SQL-Translator/Grammar/DB2.gra
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
-@dirrm %%SITE_PERL%%/auto/share/dist/SQL-Translator/Grammar
-@dirrm %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml
-@dirrm %%SITE_PERL%%/auto/share/dist/SQL-Translator
+%%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT/README
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml
+@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator
 @dirrmtry %%SITE_PERL%%/Test/SQL
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/SQL/Translator/Schema/Graph
-@dirrm %%SITE_PERL%%/SQL/Translator/Schema
-@dirrm %%SITE_PERL%%/SQL/Translator/Producer/XML
-@dirrm %%SITE_PERL%%/SQL/Translator/Producer/TT
-@dirrm %%SITE_PERL%%/SQL/Translator/Producer
-@dirrm %%SITE_PERL%%/SQL/Translator/Parser/XML
-@dirrm %%SITE_PERL%%/SQL/Translator/Parser/DBI
-@dirrm %%SITE_PERL%%/SQL/Translator/Parser/DB2
-@dirrm %%SITE_PERL%%/SQL/Translator/Parser
-@dirrm %%SITE_PERL%%/SQL/Translator/Filter
-@dirrm %%SITE_PERL%%/SQL/Translator
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Schema/Role
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Schema
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Role
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/XML
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/TT
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Producer
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser/XML
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser/DBI
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser/DB2
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Generator/Role
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Generator/DDL
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Generator
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Filter
+@dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
