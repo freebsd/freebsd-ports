@@ -1,13 +1,8 @@
-# New ports collection makefile for:	auctex
-# Date created:				21 November 1999
-# Whom:					Martin Kammerhofer
-#
+# Created by: Martin Kammerhofer
 # $FreeBSD$
-#
 
 PORTNAME=	auctex
-PORTVERSION=	11.86
-PORTREVISION=	7
+PORTVERSION=	11.87
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +10,8 @@ PKGNAMESUFFIX=		-${EMACS_PORT_NAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
