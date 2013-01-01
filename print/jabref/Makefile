@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabref
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.1
 PORTEPOCH=	1
 CATEGORIES=	print java editors
 MASTER_SITES=	SF
@@ -21,17 +21,20 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-SUB_FILES=	${PORTNAME}.sh
+SUB_FILES=	${PORTNAME}.sh ${PORTNAME}.desktop
 SUB_LIST=	JARNAME=${PORTNAME}.jar
 
-PLIST_FILES=	%%DATADIR%%/${PORTNAME}.jar \
-		bin/${PORTNAME}
-PLIST_DIRS=	%%DATADIR%%
+USE_GNOME=	desktopfileutils
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${DATADIR}/${PORTNAME}.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${FILESDIR}/JabRef-icon-48.png "${icon}"
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
+	-${LOCALBASE}/bin/update-desktop-database > /dev/null
 
 .include <bsd.port.mk>
