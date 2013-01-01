@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instant server installs a typical set of ports for a server
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
-		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup \
 		${LOCALBASE}/sbin/dhcpd:${PORTSDIR}/net/isc-dhcp41-server \
 		${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT} \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
