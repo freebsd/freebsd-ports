@@ -1,9 +1,13 @@
+lib/rsyslog/imdiag.la
+lib/rsyslog/imdiag.so
 lib/rsyslog/imfile.la
 lib/rsyslog/imfile.so
 lib/rsyslog/imklog.la
 lib/rsyslog/imklog.so
 lib/rsyslog/immark.la
 lib/rsyslog/immark.so
+lib/rsyslog/impstats.la
+lib/rsyslog/impstats.so
 lib/rsyslog/imtcp.la
 lib/rsyslog/imtcp.so
 lib/rsyslog/imudp.la
@@ -30,6 +34,8 @@ lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
 lib/rsyslog/omruleset.la
 lib/rsyslog/omruleset.so
+lib/rsyslog/omstdout.la
+lib/rsyslog/omstdout.so
 lib/rsyslog/omtesting.la
 lib/rsyslog/omtesting.so
 sbin/rsyslogd
@@ -37,10 +43,12 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/build_from_repo.html
 %%PORTDOCS%%%%DOCSDIR%%/contributors.html
 %%PORTDOCS%%%%DOCSDIR%%/debug.html
+%%PORTDOCS%%%%DOCSDIR%%/dev_oplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/dev_queue.html
 %%PORTDOCS%%%%DOCSDIR%%/droppriv.html
 %%PORTDOCS%%%%DOCSDIR%%/expression.html
 %%PORTDOCS%%%%DOCSDIR%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%/free_support.html
 %%PORTDOCS%%%%DOCSDIR%%/generic_design.html
 %%PORTDOCS%%%%DOCSDIR%%/gssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
@@ -54,6 +62,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
+%%PORTDOCS%%%%DOCSDIR%%/imudp.html
 %%PORTDOCS%%%%DOCSDIR%%/imuxsock.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
@@ -61,6 +70,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/licensing.html
 %%PORTDOCS%%%%DOCSDIR%%/log_rotation_fix_size.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/messageparser.html
 %%PORTDOCS%%%%DOCSDIR%%/mmnormalize.html
 %%PORTDOCS%%%%DOCSDIR%%/mmsnmptrapd.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
@@ -68,15 +78,21 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/netstream.html
 %%PORTDOCS%%%%DOCSDIR%%/ns_gtls.html
 %%PORTDOCS%%%%DOCSDIR%%/ns_ptcp.html
+%%PORTDOCS%%%%DOCSDIR%%/omfile.html
+%%PORTDOCS%%%%DOCSDIR%%/omfwd.html
+%%PORTDOCS%%%%DOCSDIR%%/omhdfs.html
 %%PORTDOCS%%%%DOCSDIR%%/omlibdbi.html
 %%PORTDOCS%%%%DOCSDIR%%/ommail.html
 %%PORTDOCS%%%%DOCSDIR%%/ommysql.html
 %%PORTDOCS%%%%DOCSDIR%%/omoracle.html
+%%PORTDOCS%%%%DOCSDIR%%/ompipe.html
+%%PORTDOCS%%%%DOCSDIR%%/omprog.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
 %%PORTDOCS%%%%DOCSDIR%%/omstdout.html
 %%PORTDOCS%%%%DOCSDIR%%/omudpspoof.html
+%%PORTDOCS%%%%DOCSDIR%%/omusrmsg.html
 %%PORTDOCS%%%%DOCSDIR%%/omuxsock.html
 %%PORTDOCS%%%%DOCSDIR%%/pmlastmsg.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
@@ -85,6 +101,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/queues.html
 %%PORTDOCS%%%%DOCSDIR%%/queues_analogy.html
 %%PORTDOCS%%%%DOCSDIR%%/rainerscript.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_abortonuncleanconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionexeconlywhenpreviousissuspended.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionresumeinterval.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_allowedsender.html
@@ -111,8 +128,10 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_includeconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_mainmsgqueuesize.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_markmessageperiod.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_maxopenfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_moddir.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_modload.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_omfileforcechown.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_repeatedmsgreduction.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_resetconfigvariables.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_rulesetcreatemainqueue.html
@@ -122,8 +141,10 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_actions.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_examples.html
+%%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_file_syntax_differences.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_filter.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_global.html
+%%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_lines.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_modules.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_nomatch.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf_output.html
@@ -156,6 +177,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/v3compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/v4compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/v5compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/v6compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/version_naming.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsyslog-example.conf
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

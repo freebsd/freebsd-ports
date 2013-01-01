@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	6.4.2
+PORTVERSION=	6.6.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
@@ -16,7 +16,9 @@ USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
-		sysinfo:${PORTSDIR}/devel/libsysinfo
+		sysinfo:${PORTSDIR}/devel/libsysinfo \
+		json:${PORTSDIR}/devel/json-c/ \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6
@@ -36,7 +38,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
-CONFLICTS=	rsyslog-[!6].[0-9]*
+CONFLICTS=	rsyslog-[57].[0-9]*
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -62,7 +64,7 @@ MAN5=	rsyslog.conf.5
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imtemplate --enable-testbench=no
+CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imdiag --enable-impstats --enable-omstdout
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -88,7 +90,7 @@ post-install:
 
 .ifdef MNAME
 
-CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
+CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog --disable-testbench --disable-omruleset
 
 DESCR?=		${.CURDIR}/../rsyslog6/pkg-descr
 DISTINFO_FILE?=	${.CURDIR}/../rsyslog6/distinfo
