@@ -1,0 +1,7 @@
+bin/jabref
+%%DATADIR%%/jabref.jar
+%%DATADIR%%/jabref-icon48x48.png
+share/applications/jabref.desktop
+@dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
