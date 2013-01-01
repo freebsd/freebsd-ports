@@ -2,9 +2,9 @@
 Type=Application
 Version=1.0
 Encoding=UTF-8
-Name=Docear
+Name=JabRef
 Comment=Open Source Bibliography Reference Manager for BibTeX databases
-Icon=%%PREFIX%%/share/jabref/jabref-icon48x48.png
+Icon=%%DATADIR%%/jabref-icon48x48.png
 Exec=%%PREFIX%%/bin/jabref %f
 MimeTypes=text/x-bibtex;
 Categories=Education;Science;
