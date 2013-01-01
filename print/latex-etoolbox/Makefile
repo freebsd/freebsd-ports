@@ -1,12 +1,8 @@
-# New ports collection makefile for:	latex-etoolbox
-# Date created:		20 Jan 2008
-# Whom:			vj562001@yahoo.de
-#
+# Created by: vj562001@yahoo.de
 # $FreeBSD$
-#
 
 PORTNAME=	etoolbox
-DISTVERSION=	2.0a
+DISTVERSION=	2.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib
