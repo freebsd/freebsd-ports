@@ -1,13 +1,8 @@
-# New ports collection makefile for:	SQL-Translator
-# Date created:				12 Apr 2004
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.11010
-PORTREVISION=	1
+PORTVERSION=	0.11016
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,9 +22,11 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Moo>=0.009007:${PORTSDIR}/devel/p5-Moo \
+		p5-Package-Variant>=0:${PORTSDIR}/devel/p5-Package-Variant \
 		p5-Spreadsheet-ParseExcel>=0.41:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		p5-Text-ParseWords>0:${PORTSDIR}/textproc/p5-Text-ParseWords \
 		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-Writer>=0.5:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
@@ -53,9 +50,15 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Filter::DefaultExtra.3 \
 		SQL::Translator::Filter::Globals.3 \
 		SQL::Translator::Filter::Names.3 \
+		SQL::Translator::Generator::DDL::PostgreSQL.3 \
+		SQL::Translator::Generator::DDL::SQLServer.3 \
+		SQL::Translator::Generator::DDL::SQLite.3 \
+		SQL::Translator::Generator::Role::DDL.3 \
+		SQL::Translator::Generator::Role::Quote.3 \
 		SQL::Translator::Manual.3 \
 		SQL::Translator::Parser.3 \
 		SQL::Translator::Parser::Access.3 \
+		SQL::Translator::Parser::DB2.3 \
 		SQL::Translator::Parser::DBI.3 \
 		SQL::Translator::Parser::DBI::DB2.3 \
 		SQL::Translator::Parser::DBI::MySQL.3 \
@@ -99,6 +102,9 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Producer::XML.3 \
 		SQL::Translator::Producer::XML::SQLFairy.3 \
 		SQL::Translator::Producer::YAML.3 \
+		SQL::Translator::Role::BuildArgs.3 \
+		SQL::Translator::Role::Error.3 \
+		SQL::Translator::Role::ListAttr.3 \
 		SQL::Translator::Schema.3 \
 		SQL::Translator::Schema::Constants.3 \
 		SQL::Translator::Schema::Constraint.3 \
@@ -106,9 +112,12 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Schema::Index.3 \
 		SQL::Translator::Schema::Object.3 \
 		SQL::Translator::Schema::Procedure.3 \
+		SQL::Translator::Schema::Role::Compare.3 \
+		SQL::Translator::Schema::Role::Extra.3 \
 		SQL::Translator::Schema::Table.3 \
 		SQL::Translator::Schema::Trigger.3 \
 		SQL::Translator::Schema::View.3 \
+		SQL::Translator::Types.3 \
 		SQL::Translator::Utils.3 \
 		Test::SQL::Translator.3
 
