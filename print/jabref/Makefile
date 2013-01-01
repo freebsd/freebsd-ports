@@ -11,7 +11,7 @@ DISTNAME=	JabRef-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	BibTeX native bibliographic reference manager
 
 LICENSE=	GPLv2 GPLv3
