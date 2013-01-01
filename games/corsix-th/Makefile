@@ -3,6 +3,7 @@
 
 PORTNAME=	corsixth
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	corsix-th
@@ -14,7 +15,6 @@ COMMENT=	Open source clone of Theme Hospital
 LICENSE=	MIT
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_CMAKE=	yes
 USE_LUA=	yes
