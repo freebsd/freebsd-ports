@@ -1,6 +1,6 @@
---- avahi-daemon/Makefile.in.orig	2010-07-24 19:49:59.000000000 -0400
-+++ avahi-daemon/Makefile.in	2010-07-24 19:51:01.000000000 -0400
-@@ -69,7 +69,7 @@ host_triplet = @host@
+--- avahi-daemon/Makefile.in.orig	2013-01-01 13:29:10.000000000 -0600
++++ avahi-daemon/Makefile.in	2013-01-01 13:31:10.000000000 -0600
+@@ -69,7 +69,7 @@
  @ENABLE_CHROOT_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	caps.c caps.h
  
  @ENABLE_CHROOT_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_3 = -lcap
@@ -9,7 +9,7 @@
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_5 = \
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-protocol.c dbus-protocol.h \
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-util.c dbus-util.h \
-@@ -678,7 +678,7 @@ clean-sbinPROGRAMS:
+@@ -682,7 +682,7 @@
  	rm -f $$list
  avahi-daemon$(EXEEXT): $(avahi_daemon_OBJECTS) $(avahi_daemon_DEPENDENCIES) 
  	@rm -f avahi-daemon$(EXEEXT)
@@ -18,3 +18,32 @@
  ini-file-parser-test$(EXEEXT): $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_DEPENDENCIES) 
  	@rm -f ini-file-parser-test$(EXEEXT)
  	$(AM_V_CCLD)$(ini_file_parser_test_LINK) $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_LDADD) $(LIBS)
+@@ -1283,17 +1283,17 @@
+ 	echo " ( cd '$(DESTDIR)$(servicedir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(servicedir)" && rm -f $$files
+ install-pkgsysconfDATA: $(pkgsysconf_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"
+-	@list='$(pkgsysconf_DATA)'; test -n "$(pkgsysconfdir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgsysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgsysconfdir)" || exit $$?; \
+-	done
++#	@$(NORMAL_INSTALL)
++#	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"
++#	@list='$(pkgsysconf_DATA)'; test -n "$(pkgsysconfdir)" || list=; \
++#	for p in $$list; do \
++#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++#	  echo "$$d$$p"; \
++#	done | $(am__base_list) | \
++#	while read files; do \
++#	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgsysconfdir)'"; \
++#	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgsysconfdir)" || exit $$?; \
++#	done
+ 
+ uninstall-pkgsysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
