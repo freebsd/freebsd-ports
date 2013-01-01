@@ -1,5 +1,5 @@
---- ./src/pro/Makefile.in.orig	2011-03-29 21:51:27.000000000 +0200
-+++ ./src/pro/Makefile.in	2011-04-05 21:37:02.000000000 +0200
+--- ./src/pro/Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
++++ ./src/pro/Makefile.in	2012-12-31 15:53:23.000000000 +0100
 @@ -36,10 +36,6 @@
  host_triplet = @host@
  subdir = src/pro
@@ -8,10 +8,10 @@
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 -	$(ACLOCAL_M4)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
-@@ -362,36 +358,6 @@
+@@ -369,36 +365,6 @@
  all: all-recursive
  
  .SUFFIXES:

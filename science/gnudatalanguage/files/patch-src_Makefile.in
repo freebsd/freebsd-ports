@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2011-11-07 04:07:18.000000000 +0100
-+++ src/Makefile.in	2011-11-13 11:42:41.000000000 +0100
+--- src/Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
++++ src/Makefile.in	2012-12-31 15:43:57.000000000 +0100
 @@ -38,10 +38,6 @@
  @BUILDASLIBRARY_FALSE@bin_PROGRAMS = gdl$(EXEEXT)
  subdir = src
@@ -8,10 +8,10 @@
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 -	$(ACLOCAL_M4)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
-@@ -541,35 +537,7 @@
+@@ -551,35 +547,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .cpp .lo .o .obj

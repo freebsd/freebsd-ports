@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gnudatalanguage
-# Date created:		Sat 22 oct 2005
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.2
-PORTREVISION=	3
+DISTVERSION=	0.9.3
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)

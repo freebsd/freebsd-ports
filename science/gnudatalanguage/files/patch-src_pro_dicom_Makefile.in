@@ -1,5 +1,5 @@
---- ./src/pro/dicom/Makefile.in.orig	2011-03-11 17:49:14.000000000 +0100
-+++ ./src/pro/dicom/Makefile.in	2011-04-05 21:35:14.000000000 +0200
+--- ./src/pro/dicom/Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
++++ ./src/pro/dicom/Makefile.in	2012-12-31 15:55:35.000000000 +0100
 @@ -36,10 +36,6 @@
  host_triplet = @host@
  subdir = src/pro/dicom
@@ -8,10 +8,10 @@
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 -	$(ACLOCAL_M4)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
-@@ -221,36 +217,6 @@
+@@ -224,36 +220,6 @@
  all: all-am
  
  .SUFFIXES:
