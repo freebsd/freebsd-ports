@@ -1,20 +1,24 @@
---- src/antlr/Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
-+++ src/antlr/Makefile.in	2012-12-31 15:50:35.000000000 +0100
-@@ -37,10 +37,6 @@
+--- src/pro/envi/Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
++++ src/pro/envi/Makefile.in	2012-12-31 16:30:42.000000000 +0100
+@@ -36,14 +36,6 @@
  host_triplet = @host@
- subdir = src/antlr
+ subdir = src/pro/envi
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 -ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 -	$(ACLOCAL_M4)
- mkinstalldirs = $(install_sh) -d
- CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
-@@ -355,36 +351,6 @@
+-mkinstalldirs = $(install_sh) -d
+-CONFIG_HEADER = $(top_builddir)/config.h
+-CONFIG_CLEAN_FILES =
+-CONFIG_CLEAN_VPATH_FILES =
+ SOURCES =
+ DIST_SOURCES =
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+@@ -217,36 +209,6 @@
+ all: all-am
  
  .SUFFIXES:
- .SUFFIXES: .cpp .lo .o .obj
 -$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 -	@for dep in $?; do \
 -	  case '$(am__configure_deps)' in \
@@ -24,9 +28,9 @@
 -	      exit 1;; \
 -	  esac; \
 -	done; \
--	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/antlr/Makefile'; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/pro/envi/Makefile'; \
 -	$(am__cd) $(top_srcdir) && \
--	  $(AUTOMAKE) --gnu src/antlr/Makefile
+-	  $(AUTOMAKE) --gnu src/pro/envi/Makefile
 -.PRECIOUS: Makefile
 -Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 -	@case '$?' in \
@@ -46,5 +50,5 @@
 -	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 -$(am__aclocal_m4_deps):
  
- clean-noinstLIBRARIES:
- 	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+ mostlyclean-libtool:
+ 	-rm -f *.lo

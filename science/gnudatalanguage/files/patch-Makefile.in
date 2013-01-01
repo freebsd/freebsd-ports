@@ -1,23 +1,17 @@
---- Makefile.in.orig	2011-03-11 17:49:13.000000000 +0100
-+++ Makefile.in	2011-04-05 21:20:28.000000000 +0200
-@@ -39,15 +39,11 @@
- build_triplet = @build@
- host_triplet = @host@
- subdir = .
--DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
-+DIST_COMMON = README $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+--- Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
++++ Makefile.in	2012-12-31 15:37:43.000000000 +0100
+@@ -44,10 +44,6 @@
  	$(top_srcdir)/configure AUTHORS COPYING ChangeLog INSTALL NEWS \
  	TODO config.guess config.sub depcomp install-sh ltmain.sh \
- 	missing mkinstalldirs
+ 	missing
 -ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 -	$(ACLOCAL_M4)
  am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
   configure.lineno config.status.lineno
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -271,55 +267,6 @@
+ mkinstalldirs = $(install_sh) -d
+@@ -274,55 +270,6 @@
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  

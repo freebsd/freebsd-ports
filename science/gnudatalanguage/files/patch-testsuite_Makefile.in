@@ -1,5 +1,5 @@
---- testsuite/Makefile.in.orig	2011-03-29 21:51:27.000000000 +0200
-+++ testsuite/Makefile.in	2011-04-05 22:18:39.000000000 +0200
+--- testsuite/Makefile.in.orig	2012-12-27 17:22:44.000000000 +0100
++++ testsuite/Makefile.in	2012-12-31 16:10:06.000000000 +0100
 @@ -35,10 +35,6 @@
  host_triplet = @host@
  subdir = testsuite
@@ -8,10 +8,10 @@
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 -	$(ACLOCAL_M4)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
-@@ -311,36 +307,6 @@
+@@ -344,36 +340,6 @@
  
  .SUFFIXES:
  .SUFFIXES: .cpp .lo .o .obj
