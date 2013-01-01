@@ -16,6 +16,9 @@ PKGNAMESUFFIX?=	-${MNAME}
 MAINTAINER=	brd@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
+DEPRECATED=	Use sysutils/rsyslog6
+EXPIRATION_DATE=2013-02-28
+
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog5
 PLIST=		${.CURDIR}/pkg-plist
