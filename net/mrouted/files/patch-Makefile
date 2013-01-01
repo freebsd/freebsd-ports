@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-01-02 08:02:25.000000000 +0900
++++ Makefile	2013-01-02 08:02:30.000000000 +0900
+@@ -51,7 +51,7 @@
+ 		$(MTRACE_OBJS) $(MSTAT_OBJS)
+ SRCS          = $(OBJS:.o=.c)
+ MANS          = $(addsuffix .8,$(EXECS))
+-DISTFILES     = README AUTHORS LICENSE ChangeLog
++DISTFILES     = README AUTHORS ChangeLog
+ 
+ LINT          = splint
+ LINTFLAGS     = $(MCAST_INCLUDE) $(filter-out -W -Wall -Werror, $(CFLAGS)) -posix-lib -weak -skipposixheaders
