@@ -16,4 +16,7 @@ novice user.
 
 Tracking v5-stable
 
+Rsyslog v5 is deprecated and is no longer supported. Consider using
+Rsyslog v6.
+
 WWW: http://www.rsyslog.com/
