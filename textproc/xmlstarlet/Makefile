@@ -1,18 +1,16 @@
-# ex:ts=8
-# Ports collection makefile for:	xmlstartlet
-# Date created:			Jun 30, 2004
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlstarlet
-PORTVERSION=	1.0.5
+PORTVERSION=	1.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/xmlstar/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Command Line XML Toolkit
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	libxslt
 USE_ICONV=	yes
@@ -24,8 +22,8 @@ CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 
 MAN1=		xmlstarlet.1
 PLIST_FILES=	bin/xml
-PORTDOCS=	xmlstarlet.txt xmlstarlet.pdf xmlstarlet.ps \
-		xmlstarlet-man.html xmlstarlet-man.xml \
+PORTDOCS=	xmlstarlet.txt \
+		xmlstarlet-man.xml \
 		xmlstarlet-ug.html xmlstarlet-ug.pdf \
 		xmlstarlet-ug.ps xmlstarlet-ug.xml \
 		html.css
