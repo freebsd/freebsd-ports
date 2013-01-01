@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
 		sysinfo:${PORTSDIR}/devel/libsysinfo \
-		json:${PORTSDIR}/devel/json-c/ \
+		json.0:${PORTSDIR}/devel/json-c/ \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 .ifdef MNAME
