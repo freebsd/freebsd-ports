@@ -203,6 +203,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/cards/default_800x480/9.png
 %%DATADIR%%/data/gfx/cards/default_800x480/defaultdeckstyle_800x480.xml
 %%DATADIR%%/data/gfx/cards/default_800x480/flipside.png
+%%DATADIR%%/data/gfx/cards/default_800x480/preview.png
 %%DATADIR%%/data/gfx/cards/default4c/0.png
 %%DATADIR%%/data/gfx/cards/default4c/1.png
 %%DATADIR%%/data/gfx/cards/default4c/10.png
@@ -269,11 +270,10 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/misc/background_gamelist.png
 %%DATADIR%%/data/gfx/gui/misc/fileopen16.png
 %%DATADIR%%/data/gfx/gui/misc/rating.png
-%%DATADIR%%/data/gfx/gui/misc/startwindowbg.png
-%%DATADIR%%/data/gfx/gui/misc/startwindowbg_old.png
-%%DATADIR%%/data/gfx/gui/misc/startwindowbg_800x480.png
-%%DATADIR%%/data/gfx/gui/misc/welcomepokerth.png
-%%DATADIR%%/data/gfx/gui/misc/welcomepokerth_old.png
+%%DATADIR%%/data/gfx/gui/misc/startwindowbg10_desktop.png
+%%DATADIR%%/data/gfx/gui/misc/startwindowbg10_mobile.png
+%%DATADIR%%/data/gfx/gui/misc/welcomepokerth10_desktop.png
+%%DATADIR%%/data/gfx/gui/misc/welcomepokerth10_mobile.png
 %%DATADIR%%/data/gfx/gui/misc/windowicon.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/bigblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/cardholder_flop.png

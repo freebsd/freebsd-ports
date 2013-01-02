@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pokerth
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	PokerTH-${PORTVERSION}-src
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -17,8 +17,9 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		gnutls:${PORTSDIR}/security/gnutls \
 		curl:${PORTSDIR}/ftp/curl \
-		gsasl.16:${PORTSDIR}/security/gsasl \
-		tinyxml:${PORTSDIR}/textproc/tinyxml
+		gsasl:${PORTSDIR}/security/gsasl \
+		tinyxml:${PORTSDIR}/textproc/tinyxml \
+		protobuf:${PORTSDIR}/devel/protobuf
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
 USE_ICONV=	yes
