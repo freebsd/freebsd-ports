@@ -1,12 +1,8 @@
-# New ports collection makefile for:	POE-Component-Client-Ping
-# Date created:		10 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Client-Ping
-PORTVERSION=	1.171
+PORTVERSION=	1.173
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
