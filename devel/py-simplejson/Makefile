@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplejson
-PORTVERSION=	2.6.2
+PORTVERSION=	3.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Simple, fast, extensible JSON encoder/decoder
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 regression-test: build
