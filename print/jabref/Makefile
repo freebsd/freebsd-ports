@@ -3,7 +3,7 @@
 
 PORTNAME=	jabref
 PORTVERSION=	2.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	print java editors
 MASTER_SITES=	SF
@@ -36,6 +36,6 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/JabRef-icon-48.png "${icon}"
 	${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
-	-${LOCALBASE}/bin/update-desktop-database > /dev/null
+	-${LOCALBASE}/bin/update-desktop-database -q
 
 .include <bsd.port.mk>
