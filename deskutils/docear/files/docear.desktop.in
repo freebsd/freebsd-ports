@@ -6,6 +6,6 @@ Name=Docear
 Comment=Academic literature suite: Digital library, reference manager, PDF and file manager, note taking and mind mapping
 Icon=%%PREFIX%%/share/docear/docear-icon48x48.png
 Exec=%%PREFIX%%/bin/docear %f
-MimeTypes=text/x-docear;
+MimeType=text/x-docear;
 Categories=Education;Science;
 StartupNotify=false
