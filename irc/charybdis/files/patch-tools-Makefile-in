@@ -22,9 +22,7 @@
  
 @@ -100,6 +101,7 @@
  		fi; \
- 		$(INSTALL_BIN) $$i $(DESTDIR)$(bindir); \
+		$(INSTALL_BIN) $$i $(DESTDIR)$(bindir)/$(PROGRAM_PREFIX)$$i; \
  	done; \
 +	$(INSTALL_SCRIPT) genssl.sh $(DESTDIR)$(bindir); \
- 	$(RM) -f $(DESTDIR)$(bindir)/vimotd $(DESTDIR)$(bindir)/viklines
- 	$(LN) $(DESTDIR)$(bindir)/viconf $(DESTDIR)$(bindir)/vimotd
- 	$(LN) $(DESTDIR)$(bindir)/viconf $(DESTDIR)$(bindir)/viklines
+	$(RM) -f $(DESTDIR)$(bindir)/$(PROGRAM_PREFIX)vimotd

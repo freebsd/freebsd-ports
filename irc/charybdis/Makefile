@@ -1,13 +1,7 @@
-# New ports collection Makefile for:	charybdis
-# Date created:	 	6th March 2011
-# Whom:			Chris Rees <utisoft@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	charybdis
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.2
 CATEGORIES=	irc net
 MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -61,5 +55,9 @@ pre-su-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/charybdis-oper-guide.pdf ${DOCSDIR}
 .endif
+	@${MKDIR} ${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${ETCDIR}/ircd.motd.sample
+	@[ -f ${ETCDIR}/ircd.motd ] || ${CP} -p ${ETCDIR}/ircd.motd.sample \
+		${ETCDIR}/ircd.motd
 
 .include <bsd.port.mk>

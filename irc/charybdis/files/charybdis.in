@@ -13,20 +13,20 @@
 
 . /etc/rc.subr
 
-name="charybdis"
+name=charybdis
 rcvar=charybdis_enable
 
 load_rc_config $name
 
-: ${charybdis_enable="NO"}
-: ${charybdis_user="ircd"}
-: ${charybdis_group="ircd"}
+: ${charybdis_enable:=NO}
+: ${charybdis_user=ircd}
+: ${charybdis_group=ircd}
 
-command="%%PREFIX%%/bin/ircd"
-pidfile="/var/run/${name}/${name}.pid"
+command=%%PREFIX%%/bin/ircd
+pidfile=/var/run/${name}/${name}.pid
 command_args="-configfile %%ETCDIR%%/ircd.conf -pidfile ${pidfile}"
 
-start_precmd="${name}_prestart"
+start_precmd=${name}_prestart
 
 charybdis_prestart()
 {
@@ -34,4 +34,4 @@ charybdis_prestart()
 	chown -R ircd %%ETCDIR%%
 }
 
-run_rc_command "$1"
+run_rc_command $1
