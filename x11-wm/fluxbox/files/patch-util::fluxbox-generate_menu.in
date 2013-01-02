@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	2011-10-29 15:46:15.000000000 +0200
-+++ util/fluxbox-generate_menu.in	2011-10-31 20:05:12.000000000 +0100
+--- util/fluxbox-generate_menu.in.orig	2012-12-10 18:26:53.000000000 +0100
++++ util/fluxbox-generate_menu.in	2013-01-02 14:22:14.000000000 +0100
 @@ -68,7 +68,7 @@
      -d  Other path(s) to recursively search for *.desktop files
      -ds Wider search for *.desktop files (takes more time)
@@ -41,7 +41,7 @@
 +            return 1
 +        fi
 +    }
-
+ 
 -find_it_options() {
 -    [ -n "$1" ] && hash $1 2> /dev/null
 -}
@@ -64,7 +64,7 @@
 +        which $1 > /dev/null 2>&1
 +    }
 +fi
-
+ 
  #echo "replaceWithinString: $1, $2, $3" >&2
  #echo ${1//$2/$3} # causes error in BSD even though not used
 @@ -203,7 +232,7 @@
@@ -93,7 +93,7 @@
 +[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
  
  # Check for Imlib2-support
- if @pkgprefix@fluxbox@pkgsuffix@ -info 2> /dev/null | grep -q "^IMLIB"; then
+ if @pkgprefix@fluxbox@pkgsuffix@@EXEEXT@ -info 2> /dev/null | grep -q "^IMLIB"; then
 @@ -1271,16 +1300,16 @@
  # These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
  # your prefix is: @PREFIX@
@@ -161,8 +161,8 @@
  # prefix
  PREFIX="${PREFIX:=@PREFIX@}"
  if [  -z "${PREFIX}" -o ! -d "${PREFIX}" ]; then
--    hash @pkgprefix@fluxbox@pkgsuffix@
--    PREFIX=`hash | grep @pkgprefix@fluxbox@pkgsuffix@ | sed 's,.*\t/,/,' | sed 's,/bin/@pkgprefix@fluxbox@pkgsuffix@$,,'`
+-    hash @pkgprefix@fluxbox@pkgsuffix@@EXEEXT@
+-    PREFIX=`hash | grep @pkgprefix@fluxbox@pkgsuffix@ | sed 's,.*\t/,/,' | sed 's,/bin/@pkgprefix@fluxbox@pkgsuffix@@EXEEXT@$,,'`
 +    PREFIX=`which fluxbox | sed 's,/bin/fluxbox$,,'`
  fi
  
