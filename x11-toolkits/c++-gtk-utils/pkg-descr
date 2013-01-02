@@ -4,4 +4,4 @@ environments, where the user does not want to use a full-on wrapper such as
 gtkmm or wxWidgets, or is concerned about exception safety or thread safety
 of the wrapper and their documentation.
 
-WWW:	http://cxx-gtk-utils.sourceforge.net
+WWW: http://cxx-gtk-utils.sourceforge.net
