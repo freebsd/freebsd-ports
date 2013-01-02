@@ -2,6 +2,9 @@
 %%PYTHON_SITELIBDIR%%/simplejson/__init__.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/__init__.pyo
 %%PYTHON_SITELIBDIR%%/simplejson/_speedups.so
+%%PYTHON_SITELIBDIR%%/simplejson/compat.py
+%%PYTHON_SITELIBDIR%%/simplejson/compat.pyc
+%%PYTHON_SITELIBDIR%%/simplejson/compat.pyo
 %%PYTHON_SITELIBDIR%%/simplejson/decoder.py
 %%PYTHON_SITELIBDIR%%/simplejson/decoder.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/decoder.pyo
