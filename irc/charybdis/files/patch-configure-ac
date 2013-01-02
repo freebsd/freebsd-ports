@@ -1,0 +1,11 @@
+--- configure.ac.orig	2013-01-02 14:54:13.907049431 +0000
++++ configure.ac	2013-01-02 15:00:16.779052086 +0000
+@@ -247,7 +247,7 @@
+ 	rundir='${sysconfdir}'
+ 	pkgrundir='${rundir}'
+ 	localstatedir='${prefix}'
+-	pkglocalstatedir='${sysconfdir}'])
++	pkglocalstatedir='/var/db/${PACKAGE_TARNAME}'])
+ pkglibdir='${libdir}/${PACKAGE_TARNAME}'
+ AC_SUBST([pkglibdir])
+ AC_SUBST([rundir])

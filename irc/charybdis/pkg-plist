@@ -15,6 +15,7 @@ etc/charybdis/ircd.motd.sample
 etc/charybdis/reference.conf
 lib/libratbox.la
 lib/libratbox.so
+libdata/pkgconfig/libratbox.pc
 %%DATADIR%%/help/opers/accept
 %%DATADIR%%/help/opers/admin
 %%DATADIR%%/help/opers/away
