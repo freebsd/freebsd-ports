@@ -3073,6 +3073,7 @@
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Pirum
     SUBDIR += pear-SebastianBergmann_FinderFacade
+    SUBDIR += pear-SebastianBergmann_PHPCPD
     SUBDIR += pear-SebastianBergmann_PHPLOC
     SUBDIR += pear-Structure_LinkedList
     SUBDIR += pear-Structures_DataGrid
