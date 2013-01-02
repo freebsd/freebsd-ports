@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:  lsof
-# Date created:			  Sat July 20, 1996
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: obrien@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	lsof
-DISTVERSION=	4.87A
-PORTEPOCH=	7
+DISTVERSION=	4.87
+PORTEPOCH=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
@@ -31,7 +26,7 @@ MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
 #Please leave the below line in for the next clean up.
-FIXUP_RELEASE=	YES
+#FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
 DISTNAME_SUFFIX=.freebsd
 .else
@@ -40,7 +35,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
 
 USE_BZIP2=	yes
-USE_GCC=	any
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
