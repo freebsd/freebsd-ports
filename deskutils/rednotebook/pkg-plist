@@ -60,9 +60,15 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/exports.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/exports.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/exports.pyo
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/format_menu.py
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/format_menu.pyc
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/format_menu.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/imports.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/imports.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/imports.pyo
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/insert_menu.py
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/insert_menu.pyc
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/insert_menu.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/main_window.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/main_window.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/main_window.pyo
@@ -88,8 +94,6 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-48.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-64.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-14.png
-%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-85.png
-%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-96.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/bulletlist.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/date.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/formula.png
