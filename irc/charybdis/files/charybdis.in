@@ -30,7 +30,7 @@ start_precmd=${name}_prestart
 
 charybdis_prestart()
 {
-	install -d -o ircd -m755 /var/run/${name} /var/log/${name}
+	install -d -o ircd -m755 /var/run/${name} /var/log/${name} /var/db/${name}
 	chown -R ircd %%ETCDIR%%
 }
 
