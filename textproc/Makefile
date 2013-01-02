@@ -1060,6 +1060,7 @@
     SUBDIR += pear-Structures_DataGrid_Renderer_CSV
     SUBDIR += pear-Structures_DataGrid_Renderer_XLS
     SUBDIR += pear-Structures_DataGrid_Renderer_XML
+    SUBDIR += pear-Symfony_Component_Yaml
     SUBDIR += pear-Text_Highlighter
     SUBDIR += pear-Text_Template
     SUBDIR += pear-XML_Beautifier
