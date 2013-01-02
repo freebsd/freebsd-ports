@@ -1,12 +1,7 @@
-# New ports collection makefile for:	hotcrp
-# Date created:		26 April 2011
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hotcrp
-PORTVERSION=	2.52
+PORTVERSION=	2.55
 CATEGORIES=	www
 MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
 
@@ -38,9 +33,11 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${FIND} -s -d ${WWWDIR} -type f -print | \
-		${SED} -e "s#${PREFIX}/##g" >> ${TMPPLIST}
-	@${FIND} -s -d ${WWWDIR} -type d  -print | \
-		${SED} -E -e "s#${PREFIX}/#@dirrm #g" >> ${TMPPLIST}
+	@cd ${WRKSRC} && \
+	    ${FIND} -s -d . -type f -print | \
+		${SED} -e "s#^\.#${WWWDIR_REL}#" >> ${TMPPLIST}
+	@cd ${WRKSRC} && \
+	    ${FIND} -s -d . -type d  -print | \
+		${SED} -e "s#^\.#@dirrm ${WWWDIR_REL}#" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
