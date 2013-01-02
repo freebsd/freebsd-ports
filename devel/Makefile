@@ -3079,6 +3079,7 @@
     SUBDIR += pear-Structures_DataGrid_Renderer_HTMLSortForm
     SUBDIR += pear-Structures_DataGrid_Renderer_HTMLTable
     SUBDIR += pear-Structures_DataGrid_Renderer_XUL
+    SUBDIR += pear-Symfony_Component_Finder
     SUBDIR += pear-System_Command
     SUBDIR += pear-Testing_Selenium
     SUBDIR += pear-Text_Diff
