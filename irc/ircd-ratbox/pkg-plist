@@ -142,8 +142,8 @@ lib/ircd-ratbox/libcore.la
 lib/ircd-ratbox/libcore.so
 lib/ircd-ratbox/libratbox.la
 lib/ircd-ratbox/libratbox.so
-%%SERVICES%%/lib/ircd-ratbox/modules/autoload/m_services.so
-%%SERVICES%%/lib/ircd-ratbox/modules/autoload/m_services.la
+%%SERVICES%%lib/ircd-ratbox/modules/autoload/m_services.so
+%%SERVICES%%lib/ircd-ratbox/modules/autoload/m_services.la
 lib/ircd-ratbox/modules/autoload/m_accept.so
 lib/ircd-ratbox/modules/autoload/m_admin.so
 lib/ircd-ratbox/modules/autoload/m_adminwall.so
@@ -245,7 +245,7 @@ etc/ircd-ratbox/ircd.conf.sample
 @exec if [ ! -f "%D/etc/ircd-ratbox/ircd.conf" ] ; then cp -p "%D/%F" "%B/ircd.conf"; fi
 @unexec if cmp -s "%D/etc/ircd-ratbox/ircd.motd.sample" "%D/etc/ircd-ratbox/ircd.motd"; then rm -f "%D/etc/ircd-ratbox/ircd.motd"; fi
 etc/ircd-ratbox/ircd.motd.sample
-@exec if [ ! -f "%D/etc/ircd-ratbox/ircd.motd" ] ; then cp -p "%D/%F %B/ircd.motd"; fi
+@exec if [ ! -f "%D/etc/ircd-ratbox/ircd.motd" ] ; then cp -p "%D/%F" "%B/ircd.motd"; fi
 @dirrmtry etc/ircd-ratbox
 @cwd /
 @dirrmtry %%LOGDIR%%
