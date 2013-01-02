@@ -1,15 +1,11 @@
-# New ports collection makefile for:    spamd
-# Date created:         04 April 2007
-# Whom:			Max Laier <max@love2party.net>
-#
+# Created by: Max Laier <max@love2party.net>
 # $FreeBSD$
-#
 
 PORTNAME=	spamd
 PORTVERSION=	4.9.1
 CATEGORIES=	mail
-MASTER_SITES=	BERLIOS
-MASTER_SITE_SUBDIR=freebsdspamd
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=freebsdspamd.berlios
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
@@ -53,6 +49,8 @@ SUB_FILES=	pkg-install \
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
+.include <bsd.port.options.mk>
+
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
@@ -73,7 +71,7 @@ do-install:
 	@${INSTALL} -d ${ETCDIR}
 	@${INSTALL_DATA} -m 644 ${WRKSRC}/etc/spamd.conf ${ETCDIR}/spamd.conf.sample
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/ipfw-spamd.txt ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/spamdb.txt ${DOCSDIR}/
