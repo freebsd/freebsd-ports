@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--without-iconv
 
 .if ${PORT_OPTIONS:MPERL}
 USE_PERL5=		yes
-PERL_ARCHNAME!=		perl -V:archname
+PERL_ARCHNAME!=		perl -V:archname 2>/dev/null || true
 PLIST_SUB+=		WITH_PERL="" PERL_ARCHNAME="${PERL_ARCHNAME:S/archname='//:S/';//}"
 CONFIGURE_ARGS+=	--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl
 .else
