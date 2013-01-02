@@ -7,15 +7,12 @@ bin/ircd
 bin/mkpasswd
 bin/ssld
 bin/viconf
-bin/viklines
 bin/vimotd
-etc/charybdis/dline.conf
 etc/charybdis/example.conf
-etc/charybdis/ircd.motd
-etc/charybdis/kline.conf
+@unexec cmp -s %D/etc/charybdis/ircd.motd.sample %D/etc/charybdis/ircd.motd && rm -f %D/etc/charybdis/ircd.motd || true
+etc/charybdis/ircd.motd.sample
+@exec [ -f %D/ircd.motd ] || cp -p %D/%F %B/ircd.motd
 etc/charybdis/reference.conf
-etc/charybdis/resv.conf
-etc/charybdis/xline.conf
 lib/libratbox.la
 lib/libratbox.so
 %%DATADIR%%/help/opers/accept
@@ -199,6 +196,7 @@ lib/libratbox.so
 %%DATADIR%%/modules/autoload/m_tb.so
 %%DATADIR%%/modules/autoload/m_testline.so
 %%DATADIR%%/modules/autoload/m_testmask.so
+%%DATADIR%%/modules/autoload/m_tginfo.so
 %%DATADIR%%/modules/autoload/m_time.so
 %%DATADIR%%/modules/autoload/m_topic.so
 %%DATADIR%%/modules/autoload/m_trace.so
@@ -230,6 +228,7 @@ lib/libratbox.so
 %%DATADIR%%/modules/extensions/extb_realname.so
 %%DATADIR%%/modules/extensions/extb_server.so
 %%DATADIR%%/modules/extensions/extb_ssl.so
+%%DATADIR%%/modules/extensions/extb_usermode.so
 %%DATADIR%%/modules/extensions/force_user_invis.so
 %%DATADIR%%/modules/extensions/hurt.so
 %%DATADIR%%/modules/extensions/ip_cloaking.so
@@ -246,10 +245,13 @@ lib/libratbox.so
 %%DATADIR%%/modules/extensions/m_olist.so
 %%DATADIR%%/modules/extensions/m_omode.so
 %%DATADIR%%/modules/extensions/m_opme.so
+%%DATADIR%%/modules/extensions/m_remove.so
+%%DATADIR%%/modules/extensions/m_roleplay.so
 %%DATADIR%%/modules/extensions/m_sendbans.so
 %%DATADIR%%/modules/extensions/m_webirc.so
 %%DATADIR%%/modules/extensions/no_locops.so
 %%DATADIR%%/modules/extensions/no_oper_invis.so
+%%DATADIR%%/modules/extensions/override.so
 %%DATADIR%%/modules/extensions/sno_farconnect.so
 %%DATADIR%%/modules/extensions/sno_globalkline.so
 %%DATADIR%%/modules/extensions/sno_globaloper.so
@@ -280,7 +282,6 @@ lib/libratbox.so
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/help/users
 @dirrm %%DATADIR%%/help/opers
-@dirrm %%DATADIR%%/help-old
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 @dirrm etc/charybdis
