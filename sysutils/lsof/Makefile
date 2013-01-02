@@ -1,4 +1,4 @@
-# Created by: obrien@FreeBSD.org
+# Created by: David O'Brien <obrien@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lsof
