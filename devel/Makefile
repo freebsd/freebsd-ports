@@ -3072,6 +3072,7 @@
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Pirum
+    SUBDIR += pear-SebastianBergmann_PHPLOC
     SUBDIR += pear-Structure_LinkedList
     SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-Structures_DataGrid_Renderer_Console

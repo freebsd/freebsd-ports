@@ -1,0 +1,4 @@
+phploc is a tool for quickly measuring the size and analyzing the structure of
+a PHP project.
+
+WWW: https://github.com/sebastianbergmann/phploc
