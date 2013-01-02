@@ -1,6 +1,6 @@
 #!/bin/sh
-#       $Id: pkg_update,v 1.70 2012/01/15 10:55:12 cvs Exp $
-#       $FreeBSD$
+#	$Id: pkg_update,v 1.72 2013/01/02 13:46:24 cvs Exp $
+#	$FreeBSD$
 #
 # Copyright (c) 2001-2006
 #       by Dirk Meyer, All rights reserved.
@@ -2220,7 +2220,7 @@ check-installed-ports)
 			pkgname=`cd "${portsdir}/${origin}" && make -V PKGNAME 2>/dev/null`
 			if test -e "${pkg_dbdir}/${pkgname}/+CONTENTS"
 			then
-				if test -e "${pkg_dbdir}/${pkgname}/+REQUIRED_BY"
+				if test -s "${pkg_dbdir}/${pkgname}/+REQUIRED_BY"
 				then
 					echo "${origin} (dependency)"
 					continue
@@ -2229,7 +2229,7 @@ check-installed-ports)
 				continue
 			fi
 			pkgname=`pkg_info -qO ${origin}`
-			if test -e "${pkg_dbdir}/${pkgname}/+REQUIRED_BY"
+			if test -s "${pkg_dbdir}/${pkgname}/+REQUIRED_BY"
 			then
 				echo "${origin} (old version, dependency)"
 				continue

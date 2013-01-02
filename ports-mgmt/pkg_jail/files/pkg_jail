@@ -125,21 +125,16 @@ pkg_jail_create_devfs()
 	then
 		pkg_jail_create_dev_links ${jail_devdir} null console
 	fi
-	if test ! -L "${jail_devdir}/mem"
+	if test ! -e "${jail_devdir}/mem"
 	then
 		# for libkvm (ab)users
 		pkg_jail_create_dev_links ${jail_devdir} null mem
 		pkg_jail_create_dev_links ${jail_devdir} null kmem
 	fi
-	if test ! -L ${jail_devdir}/log
+	if test ! -e ${jail_devdir}/log
 	then
 		# Transitional symlink for old binaries
 		pkg_jail_create_dev_links ${jail_devdir} ../var/run/log log
-	fi
-	if test ! -L "${pkg_jail_dir}/var/log/console"
-	then
-		# Jail console output
-		pkg_jail_create_dev_links ${jail_devdir} ../var/log/console console
 	fi
 }
 pkg_jail_create_jail_mount()
@@ -221,7 +216,7 @@ pkg_jail_init()
 		pkg_jail_create_devfs
 		pkg_jail_create_jail_mount "${pkg_jail_dir}"
 		/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" \
-			/bin/sh -c "/usr/ports/ports-mgmt/pkg_jail  && make install-ports"
+			/bin/sh -c "cd /usr/ports/ports-mgmt/pkg_jail && make install-ports"
 		pkg_jail_umount
 	fi
 }
