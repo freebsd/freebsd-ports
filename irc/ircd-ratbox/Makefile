@@ -49,56 +49,61 @@ PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 #-- Options ------------------------------------------------------------
 
-OPTIONS=	OPENSSL		"Enable openssl support"			on  \
-		IPV6		"Enable IPv6 support"				on  \
-		ZIPLINKS	"Enable ziplinks support"			on  \
-		SHARED_MODULES	"Enable shared modules support"			on  \
-		ASSERT		"Enable debugging code"				off \
-		SMALL_NET	"Tune server for small networks"		off \
-		SERVICES	"Enable ratbox-services compatibility code"	off \
-		SHORTCUTS	"Build with ircd-shortcut commands"		off
+OPTIONS_DEFINE=		OPENSSL IPV6 ZIPLINKS SHARED_MODS ASSERT SMALL_NET	\
+			SERVICES SHORTCUTS
+OPENSSL_DESC=		Support OpenSSL encrypted connections
+IPV6_DESC=		Enable IPv6 support
+ZIPLINKS_DESC=		Support compressed server links
+SHARED_MODS_DESC=	Support shared modules
+ASSERT_DESC=		Enable debugging code
+SMALL_NET_DESC=		Tune server internals for small networks
+SERVICES_DESC=		Enable ratbox-services compatibility code
+SHORTCUTS_DESC=		Build with ircd-shortcut commands
+
+OPTIONS_DEFAULT=	OPENSSL IPV6 ZIPLINKS SHARED_MODS
+OPTIONS_EXCLUDE=	NLS EXAMPLES
 
 #----------------------------------------------------------------------
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.if ${PORT_OPTIONS:MOPENSSL}
+WITH_OPENSSL_BASE=yes
 CONFIGURE_ARGS+=	--enable-openssl
 .else
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITHOUT_ZIPLINKS)
+.if ${PORT_OPTIONS:MZIPLINKS}
 CONFIGURE_ARGS+=	--disable-zlib
 .endif
 
-.if defined(WITHOUT_SHARED_MODULES)
+.if ${PORT_OPTIONS:MSHARED_MODS}
 CONFIGURE_ARGS+=	--disable-shared-modules
 .endif
 
-.if defined(WITH_ASSERT)
+.if ${PORT_OPTIONS:MASSERT}
 CONFIGURE_ARGS+=	--enable-assert
 .else
 CONFIGURE_ARGS+=	--disable-assert
 .endif
 
-.if defined(WITH_SMALL_NET)
+.if ${PORT_OPTIONS:MSMALL_NET}
 CONFIGURE_ARGS+=	--enable-small-net
 .endif
 
-.if defined(WITH_SERVICES)
+.if ${PORT_OPTIONS:MSERVICES}
 CONFIGURE_ARGS+=	--enable-services
 PLIST_SUB+=		SERVICES=""
 .else
 PLIST_SUB+=		SERVICES="@comment "
 .endif
 
-.if defined(WITH_SHORTCUTS)
+.if ${PORT_OPTIONS:MSHORTCUTS}
 USE_PERL5_BUILD=	yes
 PLIST_SUB+=		SHORTCUTS=""
 .else
@@ -107,7 +112,7 @@ PLIST_SUB+=		SHORTCUTS="@comment "
 
 #-- User Configuration -------------------------------------------------
 
-.if defined(NICKLEN)
+.if !empty(NICKLEN)
 CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
@@ -148,45 +153,45 @@ pre-build:
 
 #-- ircd-shortcut.pl ratbox-services commands --------------------------------------
 
-.if defined(SERVER_NAME)
+.if !empty(SERVER_NAME)
 	@${REINPLACE_CMD} -e "s#services.ircd-ratbox.org#${SERVER_NAME}#"       \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(USER_SERV)
+.if !empty(USER_SERV)
 	@${REINPLACE_CMD} -e "s#USERSERV#${USER_SERV}#" \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(CHAN_SERV)
+.if !empty(CHAN_SERV)
 	@${REINPLACE_CMD} -e "s#CHANSERV#${CHAN_SERV}#" \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(NICK_SERV)
+.if !empty(NICK_SERV)
 	@${REINPLACE_CMD} -e "s#NICKSERV#${NICK_SERV}#" \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(ALIS_SERV)
+.if !empty(ALIS_SERV)
 	@${REINPLACE_CMD} -e "s#ALIS#${ALIS_SERV}#"     \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(OPER_BOT)
+.if !empty(OPER_BOT)
 	@${REINPLACE_CMD} -e "s#OPERBOT#${OPER_BOT}#"   \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(OPER_SERV)
+.if !empty(OPER_SERV)
 	@${REINPLACE_CMD} -e "s#OPERSERV#${OPER_SERV}#" \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(JUPE_SERV)
+.if !empty(JUPE_SERV)
 	@${REINPLACE_CMD} -e "s#JUPESERV#${JUPE_SERV}#" \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
-.if defined(GLOBAL_SERV)
+.if !empty(GLOBAL_SERV)
 	@${REINPLACE_CMD} -e "s#GLOBAL#${GLOBAL_SERV}#" \
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
 
 # ----- Execute ircd-shortcut perl script to generate the .c file. -----
-.if defined(WITH_SHORTCUTS)
+.if ${PORT_OPTIONS:MSHORTCUTS}
 	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."
 	${PERL} ${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
@@ -196,7 +201,7 @@ post-build:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 
 # ----- Need to build the m_rsshortcut.so module for ircd-shortcut.pl ----
-.if defined(WITH_SHORTCUTS)
+.if ${PORT_OPTIONS:MSHORTCUTS}
 	@${ECHO_MSG} "Building m_rsshortcut.la for ircd-shortcuts."
 	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} m_rsshortcut.la
@@ -208,7 +213,7 @@ pre-su-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
@@ -220,7 +225,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/genssl.sh ${PREFIX}/etc/${PORTNAME}/genssl.sh
 
 # ----- We need to install the shortcut.pl module ----
-.if defined(WITH_SHORTCUTS)
+.if ${PORT_OPTIONS:MSHORTCUTS}
 	@${ECHO_MSG} "Executing install-mod.sh for ircd-shortcuts module installation."
 	${SH} ${WRKSRC}/install-mod.sh ${WRKSRC}/contrib/m_rsshortcut.la \
 		${PREFIX}/lib/${PORTNAME}/modules/contrib
@@ -241,4 +246,4 @@ post-install:
 
 #-----------------------------------------------------------------------
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- ./include/config.h.orig	2012-04-13 15:02:51.000000000 +0100
-+++ ./include/config.h	2012-04-13 15:06:23.000000000 +0100
-@@ -54,15 +54,17 @@
+--- ./include/config.h.orig	2012-03-16 05:33:15.000000000 +0000
++++ ./include/config.h	2013-01-01 05:56:38.000000000 +0000
+@@ -54,14 +54,16 @@
  #define LOGPATH LOG_DIR
  #define UHPATH   HELP_DIR "/users"
  #define HPATH  HELP_DIR "/opers"
@@ -14,9 +14,8 @@
 +#define DBPATH   DBPTH "/ban.db"
  #define MPATH    ETCPATH "/ircd.motd"	/* MOTD file */
  #define LPATH    LOGPATH "/ircd.log"	/* ircd logfile */
- #define PPATH    ETCPATH "/ircd.pid"	/* pid file */
--#define OPATH    ETCPATH "/opers.motd"	/* oper MOTD file */
-+#define OPATH    RUNPATH "/opers.motd"	/* oper MOTD file */
+-#define PPATH    ETCPATH "/ircd.pid"	/* pid file */
++#define PPATH    RUNPATH "/ircd.pid"	/* pid file */
+ #define OPATH    ETCPATH "/opers.motd"	/* oper MOTD file */
  
  /* HANGONGOODLINK and HANGONGOODLINK
-  * Often net breaks for a short time and it's useful to try to
