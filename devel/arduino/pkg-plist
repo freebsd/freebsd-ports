@@ -63,14 +63,29 @@ arduino/arduino
 %%EXAMPLES%%arduino/examples/08.Strings/StringSubstring/StringSubstring.ino
 %%EXAMPLES%%arduino/examples/08.Strings/StringToInt/StringToInt.ino
 %%EXAMPLES%%arduino/examples/08.Strings/StringToIntRGB/StringToIntRGB.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardLogout/KeyboardLogout.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardMessage/KeyboardMessage.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardReprogram/KeyboardReprogram.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardSerial/KeyboardSerial.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/KeyboardAndMouseControl/KeyboardAndMouseControl.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/Mouse/ButtonMouseControl/ButtonMouseControl.ino
-%%EXAMPLES%%arduino/examples/09.USB(Leonardo)/Mouse/JoystickMouseControl/JoystickMouseControl.ino
+%%EXAMPLES%%arduino/examples/09.USB/Keyboard/KeyboardLogout/KeyboardLogout.ino
+%%EXAMPLES%%arduino/examples/09.USB/Keyboard/KeyboardMessage/KeyboardMessage.ino
+%%EXAMPLES%%arduino/examples/09.USB/Keyboard/KeyboardReprogram/KeyboardReprogram.ino
+%%EXAMPLES%%arduino/examples/09.USB/Keyboard/KeyboardSerial/KeyboardSerial.ino
+%%EXAMPLES%%arduino/examples/09.USB/KeyboardAndMouseControl/KeyboardAndMouseControl.ino
+%%EXAMPLES%%arduino/examples/09.USB/Mouse/ButtonMouseControl/ButtonMouseControl.ino
+%%EXAMPLES%%arduino/examples/09.USB/Mouse/JoystickMouseControl/JoystickMouseControl.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p02_SpaceshipInterface/p02_SpaceshipInterface.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p03_LoveOMeter/p03_LoveOMeter.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p04_ColorMixingLamp/p04_ColorMixingLamp.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p05_ServoMoodIndicator/p05_ServoMoodIndicator.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p06_LightTheremin/p06_LightTheremin.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p07_Keyboard/p07_Keyboard.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p08_DigitalHourglass/p08_DigitalHourglass.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p09_MotorizedPinwheel/p09_MotorizedPinwheel.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p10_Zoetrope/p10_Zoetrope.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p11_CrystalBall/p11_CrystalBall.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p12_KnockLock/p12_KnockLock.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p13_TouchSensorLamp/p13_TouchSensorLamp.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p14_TweakTheArduinoLogo/p14_TweakTheArduinoLogo.ino
+%%EXAMPLES%%arduino/examples/10.StarterKit/p15_HackingButtons/p15_HackingButtons.ino
 %%EXAMPLES%%arduino/examples/ArduinoISP/ArduinoISP.ino
+%%EXAMPLES%%@dirrm arduino/examples/ArduinoISP
 arduino/hardware/arduino/boards.txt
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168.c
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_atmega1280.hex
@@ -80,19 +95,43 @@ arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_diecimila.hex
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_ng.hex
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_pro_8MHz.hex
 arduino/hardware/arduino/bootloaders/atmega/Makefile
+arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT-prod-firmware-2009-11-07.hex
 arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.c
 arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.hex
+arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.txt
 arduino/hardware/arduino/bootloaders/atmega8/Makefile
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.c
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.hex
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168_atmega328_bt.hex
 arduino/hardware/arduino/bootloaders/bt/Makefile
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Caterina-LilyPadUSB.hex
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Caterina.c
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Caterina.h
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Descriptors.c
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Descriptors.h
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Makefile
+arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Readme.txt
+arduino/hardware/arduino/bootloaders/caterina/Caterina-Esplora.hex
+arduino/hardware/arduino/bootloaders/caterina/Caterina-Esplora.txt
 arduino/hardware/arduino/bootloaders/caterina/Caterina-Leonardo.hex
+arduino/hardware/arduino/bootloaders/caterina/Caterina-Leonardo.txt
+arduino/hardware/arduino/bootloaders/caterina/Caterina-Micro.hex
+arduino/hardware/arduino/bootloaders/caterina/Caterina-Micro.txt
 arduino/hardware/arduino/bootloaders/caterina/Caterina.c
 arduino/hardware/arduino/bootloaders/caterina/Caterina.h
 arduino/hardware/arduino/bootloaders/caterina/Descriptors.c
 arduino/hardware/arduino/bootloaders/caterina/Descriptors.h
+arduino/hardware/arduino/bootloaders/caterina/Esplora-prod-firmware-2012-12-10.hex
+arduino/hardware/arduino/bootloaders/caterina/Esplora-prod-firmware-2012-12-10.txt
+arduino/hardware/arduino/bootloaders/caterina/Leonardo-prod-firmware-2012-04-26.hex
+arduino/hardware/arduino/bootloaders/caterina/Leonardo-prod-firmware-2012-04-26.txt
+arduino/hardware/arduino/bootloaders/caterina/Leonardo-prod-firmware-2012-12-10.hex
+arduino/hardware/arduino/bootloaders/caterina/Leonardo-prod-firmware-2012-12-10.txt
 arduino/hardware/arduino/bootloaders/caterina/Makefile
+arduino/hardware/arduino/bootloaders/caterina/Micro-prod-firmware-2012-11-23.hex
+arduino/hardware/arduino/bootloaders/caterina/Micro-prod-firmware-2012-11-23.txt
+arduino/hardware/arduino/bootloaders/caterina/Micro-prod-firmware-2012-12-10.hex
+arduino/hardware/arduino/bootloaders/caterina/Micro-prod-firmware-2012-12-10.txt
 arduino/hardware/arduino/bootloaders/lilypad/LilyPadBOOT_168.hex
 arduino/hardware/arduino/bootloaders/lilypad/src/ATmegaBOOT.c
 arduino/hardware/arduino/bootloaders/lilypad/src/Makefile
@@ -157,36 +196,308 @@ arduino/hardware/arduino/cores/arduino/wiring_digital.c
 arduino/hardware/arduino/cores/arduino/wiring_private.h
 arduino/hardware/arduino/cores/arduino/wiring_pulse.c
 arduino/hardware/arduino/cores/arduino/wiring_shift.c
-arduino/hardware/arduino/firmwares/Arduino-COMBINED-dfu-usbserial-atmega16u2-Mega2560-Rev3.hex
-arduino/hardware/arduino/firmwares/Arduino-COMBINED-dfu-usbserial-atmega16u2-MegaADK-Rev3.hex
-arduino/hardware/arduino/firmwares/Arduino-COMBINED-dfu-usbserial-atmega16u2-Uno-Rev3.hex
-arduino/hardware/arduino/firmwares/MEGA-dfu_and_usbserial_combined.hex
-arduino/hardware/arduino/firmwares/README.txt
-arduino/hardware/arduino/firmwares/UNO-dfu_and_usbserial_combined.hex
-arduino/hardware/arduino/firmwares/arduino-usbdfu/Arduino-usbdfu.c
-arduino/hardware/arduino/firmwares/arduino-usbdfu/Arduino-usbdfu.h
-arduino/hardware/arduino/firmwares/arduino-usbdfu/Board/LEDs.h
-arduino/hardware/arduino/firmwares/arduino-usbdfu/Descriptors.c
-arduino/hardware/arduino/firmwares/arduino-usbdfu/Descriptors.h
-arduino/hardware/arduino/firmwares/arduino-usbdfu/makefile
-arduino/hardware/arduino/firmwares/arduino-usbdfu/readme.txt
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-atmega16u2-Mega2560-Rev3.hex
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-atmega16u2-MegaADK-Rev3.hex
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-atmega16u2-Uno-Rev3.hex
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-mega.hex
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-uno.hex
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial.c
-arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial.h
-arduino/hardware/arduino/firmwares/arduino-usbserial/Board/LEDs.h
-arduino/hardware/arduino/firmwares/arduino-usbserial/Descriptors.c
-arduino/hardware/arduino/firmwares/arduino-usbserial/Descriptors.h
-arduino/hardware/arduino/firmwares/arduino-usbserial/Lib/LightweightRingBuff.h
-arduino/hardware/arduino/firmwares/arduino-usbserial/makefile
-arduino/hardware/arduino/firmwares/arduino-usbserial/readme.txt
+arduino/hardware/arduino/firmwares/atmegaxxu2/Arduino-COMBINED-dfu-usbserial-atmega16u2-Mega2560-Rev3.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/Arduino-COMBINED-dfu-usbserial-atmega16u2-MegaADK-Rev3.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/Arduino-COMBINED-dfu-usbserial-atmega16u2-Uno-Rev3.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/MEGA-dfu_and_usbserial_combined.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/README.txt
+arduino/hardware/arduino/firmwares/atmegaxxu2/UNO-dfu_and_usbserial_combined.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.c
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Board/LEDs.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Descriptors.c
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Descriptors.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/makefile
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/readme.txt
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial-atmega16u2-Mega2560-Rev3.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial-atmega16u2-MegaADK-Rev3.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial-atmega16u2-Uno-Rev3.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial-mega.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial-uno.hex
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial.c
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Arduino-usbserial.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Board/LEDs.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Descriptors.c
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Descriptors.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Lib/LightweightRingBuff.h
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/makefile
+arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/readme.txt
+arduino/hardware/arduino/firmwares/wifishield/binary/wifiHD.elf
+arduino/hardware/arduino/firmwares/wifishield/binary/wifiHD.hex
+arduino/hardware/arduino/firmwares/wifishield/binary/wifiHD_2_1.elf
+arduino/hardware/arduino/firmwares/wifishield/binary/wifi_dnld.elf
+arduino/hardware/arduino/firmwares/wifishield/binary/wifi_dnld.hex
+arduino/hardware/arduino/firmwares/wifishield/binary/wifi_dnld_2_1.elf
+arduino/hardware/arduino/firmwares/wifishield/scripts/ArduinoWifiShield_upgrade.sh
+arduino/hardware/arduino/firmwares/wifishield/scripts/ArduinoWifiShield_upgrade_mac.sh
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/.cproject
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/.project
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/Release/wifiHD.elf
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_access.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_at45dbx.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_ebi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_sd_mmc_spi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/ASM/trampoline.x
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/arduino.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/evk1105.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/board.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/board.h.my
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_sdio_v2.7.0.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_spi_v2.7.0.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_wl_sta_intwpa_v2.7.0.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_sdio_v2.7.0.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_spi_v2.7.0.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_wl_sta_intwpa_v2.7.0.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/revision.txt
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_api.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_fw.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_os.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_sdio.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_spi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wlap_api.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER/cycle_counter.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/exception.x
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dhcp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dns.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/init.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/autoip.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/icmp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/igmp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet_chksum.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_addr.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_frag.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/mem.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/memp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/netif.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/pbuf.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/raw.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/stats.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_in.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_out.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/udp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/autoip.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/icmp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/igmp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/inet.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/inet_chksum.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/ip.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/ip_addr.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/ip_frag.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/api.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/api_msg.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/arch.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/debug.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/def.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/dhcp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/dns.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/err.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/init.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/mem.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/memp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/memp_std.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netbuf.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netdb.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netif.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netifapi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/opt.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/pbuf.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/raw.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/sio.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp_asn1.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp_msg.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp_structs.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/sockets.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/stats.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/sys.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/tcp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/tcpip.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/udp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/etharp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/loopif.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/ppp_oe.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/slipif.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/etharp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/loopif.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch/cc.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch/perf.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/lwipopts.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif/wlif.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif/wlif.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/readme.txt
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_cpu.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_exceptions.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_interrupts.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_io.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_usart.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/GCC/link_uc3a0512.lds
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256/GCC/link_uc3a1256.lds
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/mrepeat.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/preprocessor.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/stringz.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/tpaste.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC/crt0.x
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/compiler.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/conf_isp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/parts.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ard_spi.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ard_spi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ard_tcp.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ard_tcp.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ard_utils.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ard_utils.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/avr32_spi.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/board_init.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/board_init.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/cmd_wl.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/cmd_wl.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/console.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/console.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/debug.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/fw_download.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/fw_download_extflash.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/license.txt
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/lwip_setup.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/lwip_setup.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/lwipopts.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/main.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/nvram.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/nvram.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/owl_os.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ping.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/ping.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/printf-stdarg.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/printf-stdarg.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/timer.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/timer.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/top_defs.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/trace.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/util.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/util.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wifi_spi.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wl_cm.c
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wl_cm.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wl_definitions.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/.cproject
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/.project
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/Release/wifi_dnld.elf
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/CONFIG/conf_access.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/CONFIG/conf_at45dbx.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/Doc/SPB104 product brief.pdf
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/Doc/gettingstarted.pdf
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/ASM/trampoline.x
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/arduino.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/evk1105.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/board.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/board.h.ori
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/exception.x
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_cpu.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_exceptions.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_interrupts.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_io.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_usart.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/GCC/link_uc3a0512.lds
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256/GCC/link_uc3a1256.lds
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/mrepeat.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/preprocessor.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/stringz.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/tpaste.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC/crt0.x
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/compiler.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/conf_isp.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/parts.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/clocks.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/clocks.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/flash_fw.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/license.txt
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/nor_flash.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/nor_flash.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/printf-stdarg.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/printf-stdarg.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/startup.c
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/startup.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/wl_fw.h
 arduino/hardware/arduino/programmers.txt
+%%ATMEGA644P%%arduino/hardware/arduino/variants/atmega644p/pins_arduino.h
 arduino/hardware/arduino/variants/eightanaloginputs/pins_arduino.h
 arduino/hardware/arduino/variants/leonardo/pins_arduino.h
 arduino/hardware/arduino/variants/mega/pins_arduino.h
+arduino/hardware/arduino/variants/micro/pins_arduino.h
 arduino/hardware/arduino/variants/standard/pins_arduino.h
 arduino/hardware/tools/avr/bin
 arduino/hardware/tools/avr/etc
@@ -214,6 +525,47 @@ arduino/lib/theme/theme.txt
 arduino/lib/version.txt
 arduino/libraries/EEPROM/EEPROM.cpp
 arduino/libraries/EEPROM/EEPROM.h
+arduino/libraries/Esplora/Esplora.cpp
+arduino/libraries/Esplora/Esplora.h
+arduino/libraries/Esplora/keywords.txt
+%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraKart/EsploraKart.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraLedShow/EsploraLedShow.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraLedShow2/EsploraLedShow2.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraMusic/EsploraMusic.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraRemote/EsploraRemote.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraTable/EsploraTable.ino
+arduino/libraries/WiFi/WiFi.cpp
+arduino/libraries/WiFi/WiFi.h
+arduino/libraries/WiFi/WiFiClient.cpp
+arduino/libraries/WiFi/WiFiClient.h
+arduino/libraries/WiFi/WiFiServer.cpp
+arduino/libraries/WiFi/WiFiServer.h
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectNoEncryption/ConnectNoEncryption.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectWithWEP/ConnectWithWEP.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectWithWPA/ConnectWithWPA.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ScanNetworks/ScanNetworks.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/SimpleWebServerWiFi/SimpleWebServerWiFi.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiChatServer/WifiChatServer.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiPachubeClient/WifiPachubeClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiPachubeClientString/WifiPachubeClientString.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiTwitterClient/WifiTwitterClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiWebClient/WifiWebClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiWebClientRepeating/WifiWebClientRepeating.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiWebServer/WifiWebServer.ino
+arduino/libraries/WiFi/keywords.txt
+arduino/libraries/WiFi/utility/debug.h
+arduino/libraries/WiFi/utility/server_drv.cpp
+arduino/libraries/WiFi/utility/server_drv.h
+arduino/libraries/WiFi/utility/socket.c
+arduino/libraries/WiFi/utility/socket.h
+arduino/libraries/WiFi/utility/spi_drv.cpp
+arduino/libraries/WiFi/utility/spi_drv.h
+arduino/libraries/WiFi/utility/wifi_drv.cpp
+arduino/libraries/WiFi/utility/wifi_drv.h
+arduino/libraries/WiFi/utility/wifi_spi.h
+arduino/libraries/WiFi/utility/wl_definitions.h
+arduino/libraries/WiFi/utility/wl_types.h
+@dirrm arduino/libraries/WiFi/utility
 %%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_clear/eeprom_clear.ino
 %%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_read/eeprom_read.ino
 %%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_write/eeprom_write.ino
@@ -232,8 +584,6 @@ arduino/libraries/Ethernet/EthernetUdp.cpp
 arduino/libraries/Ethernet/EthernetUdp.h
 %%EXAMPLES%%arduino/libraries/Ethernet/examples/BarometricPressureWebServer/BarometricPressureWebServer.ino
 %%EXAMPLES%%arduino/libraries/Ethernet/examples/ChatServer/ChatServer.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/CosmClient/CosmClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/CosmClientString/CosmClientString.ino
 %%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpAddressPrinter/DhcpAddressPrinter.ino
 %%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpChatServer/DhcpChatServer.ino
 %%EXAMPLES%%arduino/libraries/Ethernet/examples/DnsWebClient/DnsWebClient.ino
@@ -587,9 +937,42 @@ arduino/logo.png
 %%REFDOCS%%arduino/reference/StepperStep.html
 %%REFDOCS%%arduino/reference/StepperUnipolarCircuit.html
 %%REFDOCS%%arduino/reference/Stream.html
+%%REFDOCS%%arduino/reference/StreamAvailable.html
+%%REFDOCS%%arduino/reference/StreamFind.html
+%%REFDOCS%%arduino/reference/StreamFindUntil.html
+%%REFDOCS%%arduino/reference/StreamFlush.html
+%%REFDOCS%%arduino/reference/StreamParseFloat.html
+%%REFDOCS%%arduino/reference/StreamParseInt.html
+%%REFDOCS%%arduino/reference/StreamPeek.html
+%%REFDOCS%%arduino/reference/StreamRead.html
+%%REFDOCS%%arduino/reference/StreamReadBytes.html
+%%REFDOCS%%arduino/reference/StreamReadBytesUntil.html
+%%REFDOCS%%arduino/reference/StreamSetTimeout.html
 %%REFDOCS%%arduino/reference/String.html
+%%REFDOCS%%arduino/reference/StringBrackets.html
+%%REFDOCS%%arduino/reference/StringCharAt.html
 %%REFDOCS%%arduino/reference/StringClass.html
+%%REFDOCS%%arduino/reference/StringCompareTo.html
+%%REFDOCS%%arduino/reference/StringComparison.html
+%%REFDOCS%%arduino/reference/StringConcat.html
+%%REFDOCS%%arduino/reference/StringConstructor.html
+%%REFDOCS%%arduino/reference/StringEndsWith.html
+%%REFDOCS%%arduino/reference/StringEquals.html
+%%REFDOCS%%arduino/reference/StringEqualsIgnoreCase.html
+%%REFDOCS%%arduino/reference/StringGetBytes.html
+%%REFDOCS%%arduino/reference/StringIndexOf.html
+%%REFDOCS%%arduino/reference/StringLastIndexOf.html
+%%REFDOCS%%arduino/reference/StringLength.html
 %%REFDOCS%%arduino/reference/StringObject.html
+%%REFDOCS%%arduino/reference/StringPlus.html
+%%REFDOCS%%arduino/reference/StringReplace.html
+%%REFDOCS%%arduino/reference/StringSetCharAt.html
+%%REFDOCS%%arduino/reference/StringStartsWith.html
+%%REFDOCS%%arduino/reference/StringSubstring.html
+%%REFDOCS%%arduino/reference/StringToCharArray.html
+%%REFDOCS%%arduino/reference/StringToLowerCase.html
+%%REFDOCS%%arduino/reference/StringToUpperCase.html
+%%REFDOCS%%arduino/reference/StringTrim.html
 %%REFDOCS%%arduino/reference/SwitchCase.html
 %%REFDOCS%%arduino/reference/Tan.html
 %%REFDOCS%%arduino/reference/Tone.html
@@ -616,6 +999,7 @@ arduino/logo.png
 %%REFDOCS%%arduino/reference/arduinoWideRender.css
 %%REFDOCS%%arduino/reference/environment.html
 %%REFDOCS%%arduino/reference/index.html
+%%REFDOCS%%@dirrm arduino/reference
 arduino/revisions.txt
 arduino/tools/Mangler/make.sh
 arduino/tools/Mangler/src/Mangler.java
@@ -624,7 +1008,6 @@ bin/arduino
 @dirrm arduino/tools/Mangler/src
 @dirrm arduino/tools/Mangler
 @dirrm arduino/tools
-%%REFDOCS%%@dirrm arduino/reference
 @dirrm arduino/libraries/Wire/utility
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/slave_sender
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/slave_receiver
@@ -634,6 +1017,20 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/SFRRanger_reader
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples
 @dirrm arduino/libraries/Wire
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiWebServer
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiWebClientRepeating
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiWebClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiTwitterClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiPachubeClientString
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiPachubeClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiChatServer
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/SimpleWebServerWiFi
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ScanNetworks
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ConnectWithWPA
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ConnectWithWEP
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ConnectNoEncryption
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples
+@dirrm arduino/libraries/WiFi
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/stepper_speedControl
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/stepper_oneStepAtATime
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/stepper_oneRevolution
@@ -698,8 +1095,6 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DnsWebClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DhcpChatServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DhcpAddressPrinter
-%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/CosmClientString
-%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/CosmClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/ChatServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/BarometricPressureWebServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples
@@ -708,6 +1103,15 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples/eeprom_read
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples/eeprom_clear
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples
+
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraTable
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraRemote
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraMusic
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraLedShow2
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraLedShow
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraKart
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/
+@dirrm arduino/libraries/Esplora
 @dirrm arduino/libraries/EEPROM
 @dirrm arduino/libraries
 @dirrm arduino/lib/theme
@@ -715,16 +1119,130 @@ bin/arduino
 @dirrm arduino/hardware/tools/avr
 @dirrm arduino/hardware/tools
 @dirrm arduino/hardware/arduino/variants/standard
+@dirrm arduino/hardware/arduino/variants/micro
 @dirrm arduino/hardware/arduino/variants/mega
 @dirrm arduino/hardware/arduino/variants/leonardo
 @dirrm arduino/hardware/arduino/variants/eightanaloginputs
+%%ATMEGA644P%%@dirrm arduino/hardware/arduino/variants/atmega644p
 @dirrm arduino/hardware/arduino/variants
-@dirrm arduino/hardware/arduino/firmwares/arduino-usbserial/Lib
-@dirrm arduino/hardware/arduino/firmwares/arduino-usbserial/Board
-@dirrm arduino/hardware/arduino/firmwares/arduino-usbserial/.dep
-@dirrm arduino/hardware/arduino/firmwares/arduino-usbserial
-@dirrm arduino/hardware/arduino/firmwares/arduino-usbdfu/Board
-@dirrm arduino/hardware/arduino/firmwares/arduino-usbdfu
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/ASM
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/Doc
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/CONFIG
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/Release
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifi_dnld
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/ASM
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/src
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD/Release
+@dirrm arduino/hardware/arduino/firmwares/wifishield/wifiHD
+@dirrm arduino/hardware/arduino/firmwares/wifishield/scripts
+@dirrm arduino/hardware/arduino/firmwares/wifishield/binary
+@dirrm arduino/hardware/arduino/firmwares/wifishield
+@dirrm arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Lib
+@dirrm arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial/Board
+@dirrm arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbserial
+@dirrm arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Board
+@dirrm arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu
+@dirrm arduino/hardware/arduino/firmwares/atmegaxxu2
 @dirrm arduino/hardware/arduino/firmwares
 @dirrm arduino/hardware/arduino/cores/arduino
 @dirrm arduino/hardware/arduino/cores
@@ -732,6 +1250,7 @@ bin/arduino
 @dirrm arduino/hardware/arduino/bootloaders/optiboot
 @dirrm arduino/hardware/arduino/bootloaders/lilypad/src
 @dirrm arduino/hardware/arduino/bootloaders/lilypad
+@dirrm arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB
 @dirrm arduino/hardware/arduino/bootloaders/caterina
 @dirrm arduino/hardware/arduino/bootloaders/bt
 @dirrm arduino/hardware/arduino/bootloaders/atmega8
@@ -739,17 +1258,31 @@ bin/arduino
 @dirrm arduino/hardware/arduino/bootloaders
 @dirrm arduino/hardware/arduino
 @dirrm arduino/hardware
-%%EXAMPLES%%@dirrm arduino/examples/ArduinoISP
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Mouse/JoystickMouseControl
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Mouse/ButtonMouseControl
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Mouse
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/KeyboardAndMouseControl
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardSerial
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardReprogram
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardMessage
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Keyboard/KeyboardLogout
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)/Keyboard
-%%EXAMPLES%%@dirrm arduino/examples/09.USB(Leonardo)
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p15_HackingButtons
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p14_TweakTheArduinoLogo
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p13_TouchSensorLamp
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p12_KnockLock
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p11_CrystalBall
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p10_Zoetrope
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p09_MotorizedPinwheel
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p08_DigitalHourglass
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p07_Keyboard
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p06_LightTheremin
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p05_ServoMoodIndicator
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p04_ColorMixingLamp
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p03_LoveOMeter
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p02_SpaceshipInterface
+%%EXAMPLES%%@dirrm arduino/examples/10.StarterKit
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Mouse/JoystickMouseControl
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Mouse/ButtonMouseControl
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Mouse
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/KeyboardAndMouseControl
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Keyboard/KeyboardSerial
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Keyboard/KeyboardReprogram
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Keyboard/KeyboardMessage
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Keyboard/KeyboardLogout
+%%EXAMPLES%%@dirrm arduino/examples/09.USB/Keyboard
+%%EXAMPLES%%@dirrm arduino/examples/09.USB
 %%EXAMPLES%%@dirrm arduino/examples/08.Strings/StringToIntRGB
 %%EXAMPLES%%@dirrm arduino/examples/08.Strings/StringToInt
 %%EXAMPLES%%@dirrm arduino/examples/08.Strings/StringSubstring

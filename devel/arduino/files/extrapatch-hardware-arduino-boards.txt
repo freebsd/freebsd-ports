@@ -1,0 +1,42 @@
+--- hardware/arduino/boards.txt.orig	2012-12-10 04:03:52.000000000 -0800
++++ hardware/arduino/boards.txt	2012-12-26 21:02:48.000000000 -0800
+@@ -522,3 +522,39 @@
+ atmega8.build.f_cpu=16000000L
+ atmega8.build.core=arduino
+ atmega8.build.variant=standard
++
++##############################################################
++
++atmega644.name=ATmega644
++atmega644.upload.protocol=stk500
++atmega644.upload.maximum_size=63488
++atmega644.upload.speed=38400
++atmega644.bootloader.low_fuses=0xFF
++atmega644.bootloader.high_fuses=0xDC
++atmega644.bootloader.extended_fuses=0xFD
++atmega644.bootloader.path=atmega644p
++atmega644.bootloader.file=atmega644p
++atmega644.bootloader.unlock_bits=0x3F
++atmega644.bootloader.lock_bits=0x0F
++atmega644.build.mcu=atmega644
++atmega644.build.f_cpu=16000000L
++atmega644.build.core=atmega644
++atmega644.build.variant=atmega644p
++
++##############################################################
++
++atmega644p.name=ATmega644p
++atmega644p.upload.protocol=stk500
++atmega644p.upload.maximum_size=63488
++atmega644p.upload.speed=38400
++atmega644p.bootloader.low_fuses=0xFF
++atmega644p.bootloader.high_fuses=0xDC
++atmega644p.bootloader.extended_fuses=0xFD
++atmega644p.bootloader.path=atmega644p
++atmega644p.bootloader.file=atmega644p
++atmega644p.bootloader.unlock_bits=0x3F
++atmega644p.bootloader.lock_bits=0x0F
++atmega644p.build.mcu=atmega644p
++atmega644p.build.f_cpu=16000000L
++atmega644p.build.core=atmega644
++atmega644p.build.variant=atmega644p
