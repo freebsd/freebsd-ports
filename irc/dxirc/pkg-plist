@@ -294,4 +294,4 @@ share/pixmaps/dxirc.png
 @dirrm %%DATADIR%%/icons/smileys
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrm share/applications
+@dirrmtry share/applications
