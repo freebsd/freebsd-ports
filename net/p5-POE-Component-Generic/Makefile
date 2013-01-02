@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-POE-Component-Generic
-# Date created:		2006-08-30
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Generic
-PORTVERSION=	0.14.02
+PORTVERSION=	0.14.03
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
