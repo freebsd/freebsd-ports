@@ -38,7 +38,7 @@ include/c++-gtk-utils-2-2.0/c++-gtk-utils/window.h
 lib/libcxx-gtk-utils-2-2.0.a
 lib/libcxx-gtk-utils-2-2.0.la
 lib/libcxx-gtk-utils-2-2.0.so
-lib/libcxx-gtk-utils-2-2.0.so.1
+lib/libcxx-gtk-utils-2-2.0.so.2
 libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/BUGS
 %%DOCSDIR%%/2.0/COPYING
@@ -134,6 +134,7 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback5__static.png
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1CallbackArg-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1CallbackArg.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1CallbackArg.png
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__function-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__function.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__function.png
@@ -251,6 +252,8 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1RecMutex_1_1TrackLock.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1TaskManager-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1TaskManager.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1TaskManagerHelper_1_1FunctorResultExec.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1TaskManagerHelper_1_1FunctorResultExec.png
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1Thread-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Thread_1_1Thread.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Utf8_1_1ConversionError-members.html
@@ -401,6 +404,8 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/namespaceCgu_1_1SharedHandleAllocFail.html
 %%DOCSDIR%%/2.0/html/namespaceCgu_1_1SharedPtrAllocFail.html
 %%DOCSDIR%%/2.0/html/namespaceCgu_1_1Thread.html
+%%DOCSDIR%%/2.0/html/namespaceCgu_1_1Thread_1_1FutureHelper.html
+%%DOCSDIR%%/2.0/html/namespaceCgu_1_1Thread_1_1TaskManagerHelper.html
 %%DOCSDIR%%/2.0/html/namespaceCgu_1_1Utf8.html
 %%DOCSDIR%%/2.0/html/namespacemembers.html
 %%DOCSDIR%%/2.0/html/namespacemembers_enum.html
@@ -453,6 +458,10 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/structCgu_1_1SharedPtrError.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1CondError-members.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1CondError.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureHelper_1_1WhenWrapperArg-members.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureHelper_1_1WhenWrapperArg.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureHelper_1_1WhenWrapperArgRel-members.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureHelper_1_1WhenWrapperArgRel.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureThreadError-members.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureThreadError.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1FutureWhenError-members.html
@@ -465,6 +474,7 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1RecMutexError.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1TaskError-members.html
 %%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1TaskError.html
+%%DOCSDIR%%/2.0/html/structCgu_1_1Thread_1_1TaskManagerHelper_1_1FunctorResultWrapper.html
 %%DOCSDIR%%/2.0/html/tab_a.png
 %%DOCSDIR%%/2.0/html/tab_b.png
 %%DOCSDIR%%/2.0/html/tab_h.png
