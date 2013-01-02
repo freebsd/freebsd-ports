@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}-proj/${PORTNAME}/${PORTNAME:S/^m/M/}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marekrud@gmail.com
 COMMENT=	Flash-card tool which optimises your learning process
 
 RUN_DEPENDS=	py*-game>=0:${PORTSDIR}/devel/py-game \
