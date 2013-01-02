@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	symfony2
+PORTREVISION=	1
 PORTVERSION=	20110826
 CATEGORIES=	devel www pear
 
