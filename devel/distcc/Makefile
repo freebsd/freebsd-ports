@@ -8,7 +8,7 @@
 
 PORTNAME=	distcc
 PORTVERSION=	3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -89,6 +89,7 @@ DOC_FILES=	AUTHORS INSTALL NEWS README \
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/lsdistcc ${PREFIX}/bin
 .if defined(WITH_GNOME) || defined(WITH_GTK)
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
