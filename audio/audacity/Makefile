@@ -186,4 +186,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libresample.a -lsamplerate $(LIBS)|libresample.a $(LIBS)|' ${WRKSRC}/lib-src/libresample/Makefile.in
 .endif
 
+	@${REINPLACE_CMD} -e 's|inline void|static inline void|' ${WRKSRC}/lib-src/libnyquist/nyquist/ffts/src/fftlib.c
+
 .include <bsd.port.mk>
