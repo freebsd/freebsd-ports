@@ -1,4 +1,4 @@
-# Created by:                  koshy
+# Created by: koshy
 # $FreeBSD$
 
 PORTNAME=	netperf
@@ -10,17 +10,18 @@ MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 
-OPTIONS_DEFINE=        OMNI SCTP SOCKETS HISTOGRAM EXS
-OPTIONS_DEFAULT=       SCTP SOCKETS HISTOGRAM EXS
+OPTIONS_DEFINE=		OMNI SCTP SOCKETS HISTOGRAM EXS
+OPTIONS_DEFAULT=	SCTP SOCKETS HISTOGRAM EXS
 
-OMNI_DESC=     Enable OMNI tests
-SCTP_DESC=     Enable SCTP support
-SOCKETS_DESC=  Enable Unix Domain socket support
-HISTOGRAM_DESC=        Enable optional histogram output
-EXS_DESC=      Enable ICSC async socket support
+OMNI_DESC=	Enable OMNI tests
+SCTP_DESC=	Enable SCTP support
+SOCKETS_DESC=	Enable Unix Domain socket support
+HISTOGRAM_DESC=	Enable optional histogram output
+EXS_DESC=	Enable ICSC async socket support
 
 .include <bsd.port.options.mk>
 
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"transform="
 CONFIGURE_ARGS=	--program-prefix=""  --program-suffix="" --enable-dirty \
