@@ -70,15 +70,24 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/color.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/color.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/color.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/jobs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/jobs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/jobs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/notebook_extension.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/notebook_extension.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/notebook_extension.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/modelviz.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/modelviz.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/modelviz.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/shells.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/shells.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/shells.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/signals.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/signals.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/signals.pyo
@@ -130,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/passwd.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/passwd.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/passwd.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_settings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_user_for_session.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_user_for_session.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_user_for_session.pyo
@@ -184,12 +196,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/update_permissions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/update_permissions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/update_permissions.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/css/jquery.autocomplete.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/img/indicator.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/js/jquery.ajaxQueue.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/js/jquery.autocomplete.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/js/jquery.bgiframe.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/js/jquery.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/validate_templates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/validate_templates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/validate_templates.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/__init__.pyo
@@ -205,6 +214,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/fields/json.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/fields/json.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/fields/json.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/css/jquery.autocomplete.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/img/indicator.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/js/jquery.ajaxQueue.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/js/jquery.autocomplete.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/js/jquery.bgiframe.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/js/jquery.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates/django_extensions/graph_models/body.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates/django_extensions/graph_models/head.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates/django_extensions/graph_models/rel.html
@@ -231,9 +246,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/encrypted_fields.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/encrypted_fields.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/encrypted_fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/fields.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/json_field.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/json_field.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/json_field.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management_command.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management_command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management_command.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/models.pyo
@@ -249,6 +270,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/uuid_field.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/uuid_field.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/uuid_field.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands/error_raising_command.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands/error_raising_command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands/error_raising_command.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/__init__.pyo
@@ -261,25 +291,30 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/uuid.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/uuid.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/uuid.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/validatingtemplatetags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/validatingtemplatetags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/validatingtemplatetags.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests/management
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates/django_extensions/graph_models
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates/django_extensions/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates/django_extensions
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/js
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static/django_extensions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/fields
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/img
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media/django_extensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/media
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/jobs/yearly

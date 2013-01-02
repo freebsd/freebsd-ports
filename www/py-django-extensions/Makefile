@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-django-extensions
-# Date created:				19 May 2010
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-extensions
-PORTVERSION=	0.8
+PORTVERSION=	1.0.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Global custom management extensions for the Django Framework
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+LICENSE=	BSD
 
-USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.mk>
