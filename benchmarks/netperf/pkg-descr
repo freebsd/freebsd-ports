@@ -8,8 +8,8 @@ Some of these are:
         * specification of desired confidence levels for the tests
           Netperf will warn the user if these levels were not achieved.
         * filling send buffers with specified data (to beat compression schemes)
-        * specification of send/recieve buffer alignments and data offsets
-        * requesting cpu utilization and service demand calculations
+        * specification of send/receive buffer alignments and data offsets
+        * requesting CPU utilization and service demand calculations
         * specification of sizes of data to send
 Netperf can be used for measuring stream performance as well as
 round-trip performance.
