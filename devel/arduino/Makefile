@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	arduino
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leres@ee.lbl.gov
@@ -18,13 +17,15 @@ RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx \
 		${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\(\.\(c|cpp|h|hex|html|ino|lst|txt\)|Makefile\)
 
 USE_JAVA=	1.6+
 NO_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/arduino/lib
 
 SUB_FILES=	arduino pkg-message
-SUB_LIST=	PORTNAME=${PORTNAME}
+SUB_LIST=	PORTNAME=${PORTNAME} LINUXBASE=${LINUXBASE}
 
 REINPLACE_ARGS=	-i ""
 
@@ -32,25 +33,52 @@ DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 			${PREFIX}/${PORTNAME}/logo.png \
 			"arduino" "Development;IDE;" "false"
 
-OPTIONS_DEFINE+=	DOCS EXAMPLES
+OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES
+ATMEGA644P_DESC=	ATmega644p patches
 DOCS_DESC=	 	Install the reference documents
 
+INSLIST=	arduino hardware lib libraries logo.png revisions.txt tools
+
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MATMEGA644P}
+EXTRA_PATCHES+=	\
+	${FILESDIR}/extrapatch-hardware-arduino-boards.txt \
+	${FILESDIR}/extrapatch-hardware-arduino-cores-arduino-WInterrupts.c \
+	${FILESDIR}/extrapatch-hardware-arduino-variants-atmega644p-pins_arduino.h
+.endif
 
 .if empty(PORT_OPTIONS:MDOCS)
 PLIST_SUB+=	REFDOCS="@comment "
 .else
 PLIST_SUB+=	REFDOCS=""
+INSLIST+=	reference
 .endif
+
+FIND_EXCLUDES=	! -name *.orig
 
 .if empty(PORT_OPTIONS:MEXAMPLES)
 PLIST_SUB+=	EXAMPLES="@comment "
+FIND_EXCLUDES+=	! -path */examples ! -path */examples/*
 .else
 PLIST_SUB+=	EXAMPLES=""
+INSLIST+=	examples
+.endif
+
+FIND_EXPR=	"${FIND_EXCLUDES} -prune"
+
+.if ${PORT_OPTIONS:MATMEGA644P}
+PLIST_SUB+=	ATMEGA644P=""
+.else
+PLIST_SUB+=	ATMEGA644P="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MATMEGA644P}
+pre-patch:
+	@${MKDIR} ${WRKSRC}/hardware/arduino/variants/atmega644p
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.c.orig
 	@${RM} -rf ${WRKSRC}/hardware/tools/
 	@${MKDIR} ${WRKSRC}/hardware/tools/avr/
 	@${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
@@ -62,17 +90,10 @@ post-patch:
 	@${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
 	@${RM} -rf ${WRKSRC}/reference/img/
 
-.if empty(PORT_OPTIONS:MDOCS)
-	@${RM} -rf ${WRKSRC}/reference
-.endif
-.if empty(PORT_OPTIONS:MEXAMPLES)
-	@${RM} -rf ${WRKSRC}/examples
-	@${RM} -rf ${WRKSRC}/libraries/*/examples
-.endif
-
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/${PORTNAME}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${PREFIX}/${PORTNAME} ${FIND_EXPR})
+	@${CHMOD} +x ${PREFIX}/${PORTNAME}/arduino
 	@${INSTALL_SCRIPT} ${WRKDIR}/arduino ${PREFIX}/bin/
 
 post-install:

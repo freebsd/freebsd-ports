@@ -1,3 +1,8 @@
 #!/bin/sh
 # wrapper to execute the Arduino start script
-%%PREFIX%%/%%PORTNAME%%/arduino %%PREFIX%%/%%PORTNAME%%
+
+# Need the linux version of readlink
+PATH="%%LINUXBASE%%/usr/bin:${PATH}"
+export PATH
+
+exec %%PREFIX%%/%%PORTNAME%%/arduino %%PREFIX%%/%%PORTNAME%%
