@@ -1,12 +1,8 @@
-# New ports collection makefile for:	roundcube-thunderbird_labels
-# Date created:				27 Oct 2011
-# Whom:					Alexander Moisseev <moiseev@mezonplus.ru>
-#
+# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	thunderbird_labels
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	mail
 MASTER_SITES=	http://rcmail-thunderbird-labels.googlecode.com/files/
 PKGNAMEPREFIX=	roundcube-
