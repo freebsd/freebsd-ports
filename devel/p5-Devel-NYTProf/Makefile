@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-NYTProf
-PORTVERSION=	4.09
+PORTVERSION=	4.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
-COMMENT=	Powerful feature-rich perl source code profiler
+COMMENT=	Powerful feature-rich Perl source code profiler
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
