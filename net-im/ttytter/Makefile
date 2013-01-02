@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ttytter
-# Date created:		21 March 2009
-# Whom:			Julian C. Dunn <jdunn@aquezada.com>
-#
+# Created by: Julian C. Dunn <jdunn@aquezada.com>
 # $FreeBSD$
 
 PORTNAME=	ttytter
