@@ -1,23 +1,27 @@
-# New ports collection makefile for: criticalmass
-# Date created:		15 Sep 2003
-# Whom:			benlutz@datacomm.ch
-#
+# Created by: <benlutz@datacomm.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}Classic/FreedroidClassic-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Freedroid is a clone of the classic game "Paradroid"
+MAINTAINER=	kevinz5000@gmail.com
+COMMENT=	Clone of the Commodore game Paradroid
 
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png
+
+USE_ICONV=	yes
 USE_SDL=	mixer image sdl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
+
+DESKTOP_ENTRIES=	"Freedroid Classic" "${COMMENT}" \
+			"${DATADIR}/graphics/999.png" \
+			"freedroid" "Game;ArcadeGame;" false
 
 MAN6=		freedroid.6
 

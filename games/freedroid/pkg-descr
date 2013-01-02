@@ -1,12 +1,11 @@
-Freedroid is a clone of the classic game "Paradroid" on Commodore 64 with some
-improvements and extensions to the classic version. 
+Freedroid is a clone of the game "Paradroid" which was released on Commodore
+64 in 1985. In this game, you control a robot located within an interstellar
+spaceship consisting of several decks connected by elevators.
 
-In this game, you control a robot, depicted by a small white ball with a few
-numbers within an interstellar spaceship consisting of several decks connected
-by elevators. 
+The aim of the game is to destroy all enemy robots by either shooting them
+or seizing control over them by creating connections in a short subgame
+of electric circuits. The graphics are designed to be a fairly faithful
+reproduction of the original game, but a modern set of tiles is also
+available.
 
-The aim of the game is to destroy all enemy robots, depicted by small black
-balls with a few numbers, by either shooting them or seizing control over them
-by creating connections in a short subgame of electric circuits. 
-
-WWW: http://freedroid.sourceforge.net
+WWW: http://www.freedroid.org/
