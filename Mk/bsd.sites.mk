@@ -1000,7 +1000,6 @@ MASTER_SITE_PHP+= \
 MASTER_SITE_PYTHON+= \
 	http://www.python.org/%SUBDIR%/ \
 	http://python.ilisys.com.au/%SUBDIR%/ \
-	http://ftp.easynet.be/python/%SUBDIR%/ \
 	http://www.linux.org.hk/mirror/python/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/pythonwww/%SUBDIR%/ \
 	http://python.emdia.fi/%SUBDIR%/ \
