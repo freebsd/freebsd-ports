@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
+LIB_DEPENDS=	GraphicsMagick:${PORTSDIR}/graphics/GraphicsMagick \
 		arpack:${PORTSDIR}/math/arpack \
 		curl:${PORTSDIR}/ftp/curl \
 		fftw3:${PORTSDIR}/math/fftw3 \
