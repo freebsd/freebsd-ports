@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130102:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  OpenSMTPD port has been updated to the latest portable snapshot. There 
+  has been several changes to the configuration between the last version
+  and this version, which requires configuration file need to be reviewed.
+
 20121229:
   AFFECTS: users of devel/libical
   AUTHOR: gnome@FreeBSD.org
