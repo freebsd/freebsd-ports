@@ -3781,6 +3781,7 @@
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidsvn
+    SUBDIR += rbenv
     SUBDIR += rbtools
     SUBDIR += rclint
     SUBDIR += rcs
