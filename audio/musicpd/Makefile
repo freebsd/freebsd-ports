@@ -236,6 +236,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1${MPDDIR}/,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
+# Uncomment OSS audio output part from MPDCONF; dragons!
+	start=$$(expr $$(${SED} -n '/^#	type	*"oss"/=' \
+		${WRKSRC}/doc/mpdconf.example) - 1); \
+	 finish=$$(for n in $$(${JOT} 10 $$start); do \
+	 	     [ "$$(${SED} -n $${n}p ${WRKSRC}/doc/mpdconf.example)" = \
+				"#}" ] && echo $$n || true; done); \
+	 ${REINPLACE_CMD} -e "$${start},$${finish}s,^#,," \
+		${WRKSRC}/doc/mpdconf.example
 # Fix man pages for executable names
 	@${REINPLACE_CMD} -e 's/^\(\.B m\)pd/\1usicpd/' \
 		-e 's#^\(\.BI \)/etc/mpd.conf#\1${PREFIX}/etc/${MPDCONF}#' \
