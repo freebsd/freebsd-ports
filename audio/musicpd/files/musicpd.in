@@ -8,18 +8,22 @@
 
 # Add the following line to /etc/rc.conf to enable mpd:
 #
-# musicpd_enable="YES"
+# musicpd_enable=YES
 
 . /etc/rc.subr
 
 name=musicpd
 rcvar=musicpd_enable
-start_precmd="${name}_getpidfile"
-stop_precmd="${name}_getpidfile"
+
+load_rc_config $name
+
+: ${musicpd_enable:=NO}
 
 command=%%PREFIX%%/bin/musicpd
 command_args=%%PREFIX%%/etc/%%MPDCONF%%
 required_files=%%PREFIX%%/etc/%%MPDCONF%%
+start_precmd=${name}_getpidfile
+stop_precmd=${name}_getpidfile
 
 musicpd_getpidfile()
 {
@@ -31,8 +35,4 @@ musicpd_getpidfile()
 	fi
 }
 
-load_rc_config $name
-
-: ${musicpd_enable="NO"}
-
-run_rc_command "$1"
+run_rc_command $1

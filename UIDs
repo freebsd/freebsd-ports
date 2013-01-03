@@ -77,7 +77,7 @@ freeradius:*:133:133::0:0:FreeRADIUS Daemon:/nonexistent:/usr/sbin/nologin
 undernet:*:134:134::0:0:Undernet ircu Daemon:/nonexistent:/usr/sbin/nologin
 rabbitmq:*:135:135::0:0:RabbitMQ:/var/db/rabbitmq:/usr/sbin/nologin
 dhcpd:*:136:136::0:0:ISC DHCP daemon:/nonexistent:/usr/sbin/nologin
-mpd:*:137:137::0:0:MusicPD pseudo-user:/usr/local/var/mpd:/usr/sbin/nologin
+mpd:*:137:137::0:0:MusicPD pseudo-user:/var/mpd:/usr/sbin/nologin
 wolfpack:*:138:138::0:0:Wolfpack Empire Server:/usr/local/share/wolfpack:/usr/sbin/nologin
 shellinabox:*:139:139::0:0:Shell In A Box:/nonexistent:/usr/sbin/nologin
 amanda:*:140:140::0:0:Amanda Daemon:/var/db/amanda:/usr/sbin/nologin

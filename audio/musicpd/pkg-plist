@@ -2,4 +2,4 @@ bin/musicpd
 @unexec if cmp -s %D/etc/%%MPDCONF%%.sample %D/etc/%%MPDCONF%%; then rm -f %D/etc/%%MPDCONF%%; fi
 etc/%%MPDCONF%%.sample
 @exec if [ ! -f %D/etc/%%MPDCONF%% ] ; then cp -p %D/%F %B/%%MPDCONF%%; fi
-@exec install -d -o %%MPDUSER%% -g %%MPDGROUP%% %%MPDDIR%%
+@exec install -d -o %%MPDUSER%% -g %%MPDGROUP%% %%MPDDIR%% %%MPDDIR%%/.mpd

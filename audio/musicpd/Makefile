@@ -2,7 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.17.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -267,8 +267,7 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${MPDCONF}.sample \
 			${PREFIX}/etc/${MPDCONF} ; \
 	fi
-	@${MKDIR} ${MPDDIR}
-	@${INSTALL} -d -o ${MPDUSER} -g ${MPDGROUP} ${MPDDIR}
+	@${INSTALL} -d -o ${MPDUSER} -g ${MPDGROUP} ${MPDDIR} ${MPDDIR}/.mpd
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
