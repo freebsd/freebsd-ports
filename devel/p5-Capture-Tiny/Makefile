@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Capture-Tiny
-# Date created:				23 June 2009
-# Whom:					Bill Brinzer <bill.brinzer@gmail.com>
-#
+# Created by: Bill Brinzer <bill.brinzer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Capture-Tiny
-PORTVERSION=	0.19
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -14,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Capture STDOUT and STDERR from Perl, XS, or external programs
+
+LICENSE=	AL2
 
 PERL_CONFIGURE=	yes
 
