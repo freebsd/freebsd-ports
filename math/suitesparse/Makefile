@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	suitesparse
-PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTVERSION=	4.0.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -28,7 +27,9 @@ CONFLICTS=	umfpack-*
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgoto2.so)
+.if exists(${LOCALBASE}/lib/libopenblas.so)
+WITH_BLAS?=	openblas
+.elif exists(${LOCALBASE}/lib/libgoto2.so)
 WITH_BLAS?=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
@@ -44,6 +45,10 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
+.elif ${WITH_BLAS} == openblas
+LIB_DEPENDS+=	openblas:${PORTSDIR}/math/openblas
+BLAS=		-lopenblasp
+LAPACK=		-lopenblasp
 .elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
@@ -92,8 +97,11 @@ post-patch:
 			-e 's|-I\$$(METIS_PATH)/Lib|-I${METIS_PATH}|' \
 			-e '\|^RANLIB =|s|ranlib|${RANLIB}|' \
 			-e '\|^SPQR_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
+			-e 's|# MAKE = gmake|MAKE = gmake|g' \
 			-e 's|/usr/local|${LOCALBASE}|g'
 	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+	@${FIND} -X ${WRKSRC_SHARED} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
+	${REINPLACE_CMD} -e 's|$$(CFLAGS)|$$(CFLAGS) $$(PICFLAG)|g'
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} PICFLAG= \
@@ -113,7 +121,6 @@ do-install:
 .for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CXSparse KLU SPQR UMFPACK
 	@${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${PREFIX}/include/suitesparse
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/UFconfig/*.h ${PREFIX}/include/suitesparse
 	@${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp ${PREFIX}/include/suitesparse
 	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i##${WRKSRC_SHARED}/} \
