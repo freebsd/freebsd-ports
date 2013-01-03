@@ -1,12 +1,8 @@
-# New ports collection makefile for:	phpvirtualbox
-# Date created:		2010-07-26
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by:	Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	4.1-10
+DISTVERSION=	4.2-4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		LOCAL/decke
