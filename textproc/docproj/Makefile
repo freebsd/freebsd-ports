@@ -53,7 +53,7 @@ RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 .if defined(JADETEX)
 WITH_JADETEX=	${JADETEX}
 .endif
-WITH_JADETEX?=
+WITH_JADETEX?=	no
 
 .if defined(PACKAGE_BUILDING)
 WITH_JADETEX=	yes
