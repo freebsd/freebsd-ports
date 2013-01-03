@@ -60,11 +60,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>asterisk10</name>
-	<range><gt>10.*</gt><lt>10.7.1</lt></range>
+	<range><gt>10.*</gt><lt>10.11.1</lt></range>
       </package>
       <package>
 	<name>asterisk18</name>
-	<range><gt>1.8.*</gt><lt>1.8.15.1</lt></range>
+	<range><gt>1.8.*</gt><lt>1.8.19.1</lt></range>
       </package>
     </affects>
     <description>
