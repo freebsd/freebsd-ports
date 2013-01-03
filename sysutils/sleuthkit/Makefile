@@ -3,11 +3,11 @@
 
 PORTNAME=	sleuthkit
 PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tools and library for filesystem forensic analysis
 
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone
@@ -26,8 +26,21 @@ MAN1=		blkcalc.1 blkcat.1 blkls.1 \
 		mmls.1 mmstat.1 mmcat.1 sigfind.1 sorter.1 \
 		tsk_comparedir.1 tsk_gettimes.1 tsk_loaddb.1 tsk_recover.1
 
+OPTIONS_DEFINE=	DOCS LIBEWF
+LIBEWF_DESC=	Build with EWF support
+OPTIONS_DEFAULT=LIBEWF
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLIBEWF}
+LIB_DEPENDS+=		ewf:${PORTSDIR}/devel/libewf
+CONFIGURE_ARGS+=	--with-libewf=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-libewf
+.endif
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
