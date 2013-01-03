@@ -4,6 +4,7 @@
 
 PORTNAME=	Math-Int128
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,7 @@ RUN_DEPENDS=    p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
 
 PERL_CONFIGURE=	yes
 
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 
 MAN3=		Math::Int128.3 \
 		Math::Int128::die_on_overflow.3
