@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-ack
-# Date created:				2006/08/15
-# Whom:	      				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ack
 PORTVERSION=	1.96
@@ -20,6 +16,8 @@ BUILD_DEPENDS=	p5-File-Next>=0.40:${PORTSDIR}/sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
 MAN1=		ack.1
 

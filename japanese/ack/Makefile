@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ack
-# Date created:		21 Jul 1998
-# Whom:			Masanori Kiriake <seiken@nbs.co.jp>
-#
+# Created by: Masanori Kiriake <seiken@nbs.co.jp>
 # $FreeBSD$
 
 PORTNAME=	ack
@@ -14,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji code converter
+
+CONFLICTS_INSTALL=	p5-ack-[0-9]*
 
 ALL_TARGET=	ack
 
