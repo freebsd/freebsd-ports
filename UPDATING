@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130103:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: decke@FreeBSD.org
+
+  VirtualBox has been updated and does now depend on devel/kBuild instead
+  of devel/kBuild-devel. Both are in conflict with each other so this has
+  to be resolved manually. kBuild is only a build dependency so it is safe
+  to remove installed kBuild before updating.
+
+  # pkg_delete -f kBuild-\*
+
 20130102:
   AFFECTS: users of mail/opensmtpd
   AUTHOR: ashish@FreeBSD.org
