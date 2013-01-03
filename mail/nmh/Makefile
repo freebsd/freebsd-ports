@@ -52,18 +52,16 @@
 #
 
 PORTNAME=	nmh
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	nmh
 
-MAINTAINER=	scott+ports@sabami.seaslug.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A cleaned up MH mailer suite
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh
 .ifdef NMH_EDITOR
@@ -100,23 +98,21 @@ OPTIONS=	SASL2 "Cyrus SASL2" OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900007
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
-.endif
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 .if defined(WITH_SASL2)
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl=${PREFIX}
 .endif
 
-MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 \
-	folder.1 folders.1 forw.1 inc.1 install-mh.1 mark.1 \
+MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 fnext.1 \
+	folder.1 folders.1 forw.1 fprev.1 inc.1 install-mh.1 mark.1 \
 	mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 mhn.1 \
 	mhparam.1 mhpath.1 mhshow.1 mhstore.1 msgchk.1 msh.1 \
-	next.1 nmh.1 packf.1 pick.1 prev.1 prompter.1 rcvdist.1 \
+	next.1 new.1 nmh.1 packf.1 pick.1 prev.1 prompter.1 rcvdist.1 \
 	rcvpack.1 rcvstore.1 rcvtty.1 refile.1 repl.1 rmf.1 rmm.1 \
 	scan.1 send.1 sendfiles.1 show.1 slocal.1 \
-	sortm.1 whatnow.1 whom.1
+	sortm.1 unseen.1 whatnow.1 whom.1
 
 MAN5=	mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
 	mh-sequence.5 mh-tailor.5 mts.conf.5

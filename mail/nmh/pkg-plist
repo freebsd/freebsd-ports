@@ -5,9 +5,11 @@ bin/comp
 bin/dist
 bin/flist
 bin/flists
+bin/fnext
 bin/folder
 bin/folders
 bin/forw
+bin/fprev
 bin/inc
 bin/install-mh
 bin/mark
@@ -22,6 +24,7 @@ bin/mhstore
 bin/msgchk
 bin/msh
 bin/next
+bin/new
 bin/packf
 bin/pick
 bin/prev
@@ -35,6 +38,7 @@ bin/send
 bin/sendfiles
 bin/show
 bin/sortm
+bin/unseen
 bin/whatnow
 bin/whom
 @unexec if cmp -s %D/etc/nmh/MailAliases %D/etc/nmh/MailAliases-dist; then rm -f %D/etc/nmh/MailAliases; else echo 'Local changes: %D/etc/nmh/MailAliases (not removed)' >&2; fi
@@ -88,6 +92,7 @@ etc/nmh/replcomps-dist
 @unexec if cmp -s %D/etc/nmh/replgroupcomps %D/etc/nmh/replgroupcomps-dist; then rm -f %D/etc/nmh/replgroupcomps; else echo 'Local changes: %D/etc/nmh/replgroupcomps (not removed)' >&2; fi
 etc/nmh/replgroupcomps-dist
 @exec [ -f %D/etc/nmh/replgroupcomps ] || cp %D/etc/nmh/replgroupcomps-dist %D/etc/nmh/replgroupcomps
+@unexec if cmp -s %D/etc/nmh/scan.MMDDYY %D/etc/nmh/scan-dist; then rm -f %D/etc/nmh/scan; else echo 'Local changes: %D/etc/nmh/scan (not removed)' >&2; fi
 @unexec if cmp -s %D/etc/nmh/scan.MMDDYY %D/etc/nmh/scan.MMDDYY-dist; then rm -f %D/etc/nmh/scan.MMDDYY; else echo 'Local changes: %D/etc/nmh/scan.MMDDYY (not removed)' >&2; fi
 etc/nmh/scan.MMDDYY-dist
 @exec [ -f %D/etc/nmh/scan.MMDDYY ] || cp %D/etc/nmh/scan.MMDDYY-dist %D/etc/nmh/scan.MMDDYY
@@ -129,5 +134,30 @@ libexec/nmh/rcvtty
 libexec/nmh/slocal
 libexec/nmh/spost
 libexec/nmh/viamail
-@dirrm etc/nmh
+%%DOCSDIR%%/README.about
+%%DOCSDIR%%/MAILING-LISTS
+%%DOCSDIR%%/README.SASL
+%%DOCSDIR%%/COPYRIGHT
+%%DOCSDIR%%/README.manpages
+%%DOCSDIR%%/MAIL.FILTERING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README-components
+%%DOCSDIR%%/README-ATTACHMENTS
+%%DOCSDIR%%/COMPLETION-ZSH
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README-HOOKS
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/contrib/build_nmh
+%%DOCSDIR%%/contrib/nmh.spec
+%%DOCSDIR%%/contrib/replyfilter
+%%DOCSDIR%%/DIFFERENCES
+%%DOCSDIR%%/COMPLETION-BASH
+%%DOCSDIR%%/README.developers
+%%DOCSDIR%%/COMPLETION-TCSH
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/VERSION
+@dirrmtry etc/nmh
 @dirrm libexec/nmh
+@dirrm %%DOCSDIR%%/contrib
+@dirrm %%DOCSDIR%%
