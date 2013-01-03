@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Tie::Syslog
-# Date created:				24 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-Syslog
-PORTVERSION=	1.07
+PORTVERSION=	2.03
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
