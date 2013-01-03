@@ -16,13 +16,9 @@ bin/gunshar
 %%NLS%%share/locale/id/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sharutils.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sharutils.mo
-%%NLS%%share/locale/nn/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sharutils.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sharutils.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/sharutils.mo
