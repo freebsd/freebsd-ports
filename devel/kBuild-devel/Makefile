@@ -19,6 +19,9 @@ COMMENT=	Makefile framework
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
+DEPRECATED=	Not required anymore; use devel/kBuild instead
+EXPIRATION_DATE=	2013-01-31
+
 USE_AUTOTOOLS=	automake autoconf
 USE_GMAKE=	yes
 
