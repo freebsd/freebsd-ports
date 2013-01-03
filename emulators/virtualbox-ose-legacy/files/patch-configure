@@ -1,15 +1,6 @@
---- configure.orig	2009-12-17 15:23:05.000000000 +0100
-+++ configure	2009-12-21 14:25:45.000000000 +0100
-@@ -107,7 +107,7 @@
- GENISOIMAGE="genisoimage"
- MKISOFS="mkisofs"
- INCCRYPTO=""
--LIBCRYPTO="-lcrypto"
-+LIBCRYPTO="-lcrypto -lssl"
- LIBPTHREAD="-lpthread"
- LIBCAP="-lcap"
- GSOAP=""
-@@ -1773,7 +1775,7 @@
+--- configure.orig	2011-05-30 17:11:26.000000000 +0200
++++ configure	2011-06-06 10:01:12.000000000 +0200
+@@ -1920,7 +1920,7 @@
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
          echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so" >> $LOG

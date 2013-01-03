@@ -1,3 +1,4 @@
+bin/VBoxBalloonCtrl
 %%X11%%bin/VBoxBFE
 bin/VBoxHeadless
 bin/VBoxManage
@@ -15,6 +16,7 @@ bin/VBoxXPCOMIPCD
 lib/virtualbox/DBGCPlugInDiggers.so
 lib/virtualbox/VBoxAuth.so
 lib/virtualbox/VBoxAuthSimple.so
+lib/virtualbox/VBoxBalloonCtrl
 %%QT4%%lib/virtualbox/VBoxDbg.so
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
@@ -238,6 +240,8 @@ include/virtualbox/VBoxCAPI_v2_2.h
 include/virtualbox/VBoxCAPI_v3_0.h
 include/virtualbox/VBoxCAPI_v3_1.h
 include/virtualbox/VBoxCAPI_v3_2.h
+include/virtualbox/VBoxCAPI_v4_0.h
+include/virtualbox/VBoxCAPI_v4_1.h
 include/virtualbox/VirtualBox_XPCOM.h
 include/virtualbox/ipcIClientObserver.h
 include/virtualbox/ipcIDConnectService.h

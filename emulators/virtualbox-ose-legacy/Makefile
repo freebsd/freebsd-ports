@@ -1,13 +1,8 @@
-# New ports collection makefile for:	virtualbox-ose-legacy
-# Date created:		2009-05-02
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by:	Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.0.16
-PORTREVISION=	2
+DISTVERSION=	4.1.24
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -21,20 +16,22 @@ EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	A general-purpose full virtualizer for x86 hardware
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		kmk:${PORTSDIR}/devel/kBuild
+		kmk:${PORTSDIR}/devel/kBuild \
+		gtar:${PORTSDIR}/archivers/gtar
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-legacy
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
+FETCH_ARGS=	-pRr
 USE_CDRTOOLS=	yes
 USE_GCC=	any
 USE_GNOME=	libidl
@@ -50,7 +47,6 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_BUILD=	kBuild-devel-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
 VBOXUSER?=	vboxusers
@@ -117,7 +113,6 @@ GUESTADDITIONS=	VBoxGuestAdditions_${VBOX_GUEST_VER}.iso
 GADISTFILES=	${GUESTADDITIONS}:guestadditions
 RESTRICTED=	for personal use only
 RESTRICTED_FILES=	${GUESTADDITIONS}
-FETCH_ARGS=	-pRr
 PLIST_SUB+=	GUESTADDITIONS=""
 .else
 PLIST_SUB+=	GUESTADDITIONS="@comment "
@@ -175,11 +170,15 @@ PLIST_SUB+=	I386="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 802000
+BROKEN=		Does not compile on FreeBSD < 8.2
+.endif
+
 .if ${OSVERSION} > 900012
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
 .endif
 
-.if ${OSVERSION} > 900020 || ${OSVERSION} < 900000 && ${OSVERSION} > 801500
+.if ${OSVERSION} < 900000 && ${OSVERSION} > 801500
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 .endif
 
@@ -213,6 +212,9 @@ post-patch:
 .endif
 .if ${OSVERSION} < 800069
 	@${ECHO} 'VBOX_WITH_USB=' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${PORT_OPTIONS:MUDPTUNNEL}
+	@${ECHO} 'VBOX_WITH_UDPTUNNEL = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${PORT_OPTIONS:MWEBSERVICE}
 	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
@@ -252,7 +254,7 @@ do-install:
 .endif
 
 	${MKDIR} ${PREFIX}/bin
-.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS} ${VBOX_WEB}
+.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxBalloonCtrl ${VBOX_FRONTENDS} ${VBOX_WEB}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
 .endfor
@@ -261,7 +263,7 @@ do-install:
 	${CHMOD} 4511 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
-.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp 
+.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl
 	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
@@ -286,7 +288,7 @@ do-install:
 	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
 
 post-install:
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp ${VBOX_FRONTENDS}
+.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl ${VBOX_FRONTENDS}
 	${CHOWN} root:${VBOXGROUP} ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
