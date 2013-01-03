@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	deforaos-panel
-PORTVERSION=	0.2.15
+PORTVERSION=	0.2.17
 CATEGORIES=	x11
-MASTER_SITES=	http://www.defora.org/os/download/download/3706/
+MASTER_SITES=	http://www.defora.org/os/download/download/4009/
 DISTNAME=	Panel-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
@@ -26,6 +26,7 @@ USE_GNOME=	gtk20 desktopfileutils
 USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
