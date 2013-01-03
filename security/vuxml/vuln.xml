@@ -51,6 +51,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7c87a8a-55d5-11e2-a255-c8600054b392">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><gt>11.*</gt><lt>11.1.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk10</name>
+	<range><gt>10.*</gt><lt>10.7.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.15.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Crashes due to large stack allocations when using TCP</p>
+	  <p>Denial of Service Through Exploitation of Device State Caching</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5976</cvename>
+      <cvename>CVE-2012-5977</cvename>
+      <url>http://downloads.digium.com/pub/security/AST-2012-014.html</url>
+      <url>http://downloads.digium.com/pub/security/AST-2012-015.html</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2013-01-02</discovery>
+      <entry>2013-01-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4108cc57-54d7-11e2-9483-14dae938ec40">
     <topic>ircd-ratbox and charybdis -- remote DoS vulnerability</topic>
     <affects>
