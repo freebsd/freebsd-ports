@@ -1,19 +1,15 @@
-# New ports collection makefile for:	p5-perlbrew
-# Date created:		2010-10-20
-# Whom:			ports@c0decafe.net <ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	perlbrew
-PORTVERSION=	0.42
+PORTVERSION=	0.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	linpc@cs.nctu.edu.tw
 COMMENT=	Perl Environment manager
 
 BUILD_DEPENDS=	p5-CPAN-Perl-Releases>=0:${PORTSDIR}/devel/p5-CPAN-Perl-Releases \
