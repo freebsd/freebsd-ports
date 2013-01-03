@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libdesktop
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	x11
-MASTER_SITES=	http://www.defora.org/os/download/download/3699/
+MASTER_SITES=	http://www.defora.org/os/download/download/4011/
 DISTNAME=	libDesktop-${PORTVERSION}
 PKGNAMEPREFIX=	deforaos-
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem
 USE_GNOME=	gtk20
 USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
