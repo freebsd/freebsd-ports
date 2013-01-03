@@ -1,12 +1,8 @@
-# New ports collection makefile for:	virtualbox-ose-kmod
-# Date created:		2009-09-21
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by:	Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.22
+DISTVERSION=	4.2.6
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -22,12 +18,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
-		kmk:${PORTSDIR}/devel/kBuild-devel
+		kmk:${PORTSDIR}/devel/kBuild
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
+FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
 
 HAS_CONFIGURE=	yes
@@ -37,30 +34,31 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-[3,4]* virtualbox-ose-kmod-legacy-[3,4]*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
+DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 
-KMODDIR=	/boot/modules
+KMODDIR?=	/boot/modules
 SRC_BASE?=	/usr/src
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-KMK_FLAGS=	HostDrivers-src vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
+KMK_FLAGS=	HostDrivers-scripts vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 
 MAKE_FLAGS=	SYSDIR=${SRC_BASE}/sys
 
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-Config.kmk ${FILESDIR}/extrapatch-src-VBox-HostDrivers-Support-freebsd-Makefile
 MAKE_FLAGS+=	DEBUG_FLAGS="-O1 -g"
 PLIST_SUB+=	WITH_DEBUG=""
 .else

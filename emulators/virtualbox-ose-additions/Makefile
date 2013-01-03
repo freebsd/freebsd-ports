@@ -1,12 +1,8 @@
-# New ports collection makefile for:	virtualbox-ose-additions
-# Date created:		2009-09-21
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by:	Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.22
+DISTVERSION=	4.2.6
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -22,12 +18,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
-		kmk:${PORTSDIR}/devel/kBuild-devel
+		kmk:${PORTSDIR}/devel/kBuild
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
 ONLY_FOR_ARCHS=	i386 amd64
+FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -38,7 +35,6 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
 OPTIONS_DEFINE=	DEBUG X11 OPENGL
@@ -92,10 +88,6 @@ IGNORE=		requires kernel sources
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900012
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-include-iprt-string.h
-.endif
 
 pre-everything::
 .if ${ARCH} == "amd64"

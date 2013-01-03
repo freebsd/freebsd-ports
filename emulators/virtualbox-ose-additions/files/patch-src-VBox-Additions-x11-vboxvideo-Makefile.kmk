@@ -1,0 +1,20 @@
+--- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2012-10-26 18:23:35.000000000 +0200
++++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2012-10-28 16:54:59.074303788 +0100
+@@ -196,7 +196,7 @@
+ vboxvideo_drv_15_TEMPLATE = VBOXGUESTR3XORGMOD
+ vboxvideo_drv_15_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
+ vboxvideo_drv_15_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=100503000
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  vboxvideo_drv_15_DEFS += VBOX_DRI
+ endif
+ vboxvideo_drv_15_INCS = \
+@@ -204,7 +204,7 @@
+ 	$(VBOX_PATH_X11_ROOT)/xorg-server-1.5.3
+ vboxvideo_drv_15_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
+ vboxvideo_drv_15_SOURCES  = $(vboxvideo_drv_13_SOURCES)
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  vboxvideo_drv_15_SOURCES += \
+ 	vboxvideo_dri.c
+ endif
