@@ -3,6 +3,7 @@
 
 PORTNAME=	keyboard
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/3696/
 DISTNAME=	Keyboard-${PORTVERSION}
@@ -19,5 +20,6 @@ USE_GNOME=	gtk20
 USE_PKGCONFIG=	build
 USE_XORG=	xtst
 USE_GETTEXT=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
