@@ -1302,6 +1302,7 @@
     SUBDIR += p5-WebService-MoviePosterDB
     SUBDIR += p5-WebService-MusicBrainz
     SUBDIR += p5-WebService-NoPaste
+    SUBDIR += p5-WebService-Pushover
     SUBDIR += p5-WebService-Rakuten
     SUBDIR += p5-WebService-Simple
     SUBDIR += p5-WebService-Technorati
