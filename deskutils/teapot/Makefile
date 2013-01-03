@@ -1,9 +1,5 @@
-# New ports collection makefile for:	teapot
-# Date created:				7 January 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	teapot
 PORTVERSION=	2.3.0
@@ -32,13 +28,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' \
 		${WRKSRC}/CMakeLists.txt
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC_DOCS} && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
