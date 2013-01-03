@@ -21,8 +21,6 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.4
 
-DEPRECATED=	Superseded by GCC 4.6 and later, only kept for the sake of three obsolete ports
-
 SUFFIX=		34
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 USE_BISON=	build
@@ -36,6 +34,12 @@ PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
+
+DEPRECATED=	Superseded by GCC 4.6 and later, kept for the sake of two obsolete ports
+
+.if ${OSVERSION} >= 1000000
+BROKEN=		Does not compile on FreeBSD 10.0 and later
+.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
