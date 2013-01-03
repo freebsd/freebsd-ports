@@ -36,6 +36,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/jsmin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/jsmin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/jsmin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/slimit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/slimit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/slimit.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/uglifyjs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/uglifyjs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/uglifyjs.pyo
@@ -51,6 +54,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/glob.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/glob.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/glob.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2/ext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2/ext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2/ext.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/manifest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/manifest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/manifest.pyo
@@ -102,9 +111,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/glob.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/glob.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/glob.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/jinja2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/jinja2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/jinja2.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/packager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/packager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/packager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/paths.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/paths.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/paths.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/storage.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/storage.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/tests/storage.pyo
@@ -116,6 +131,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/templates/pipeline
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/jinja2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/conf
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compilers
