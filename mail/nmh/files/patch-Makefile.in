@@ -1,0 +1,44 @@
+--- Makefile.in.orig	2012-12-09 14:41:01.479883313 -0800
++++ Makefile.in	2012-12-09 14:48:13.430726025 -0800
+@@ -3573,16 +3573,16 @@
+ 	@list='$(dist_sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f-dist'"; \
++	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f-dist"; \
+ 	done
+ 
+ uninstall-dist_sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(dist_sysconf_DATA)'; for p in $$list; do \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(sysconfdir)/$$f-dist'"; \
++	  rm -f "$(DESTDIR)$(sysconfdir)/$$f-dist"; \
+ 	done
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+@@ -3590,16 +3590,16 @@
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f-dist'"; \
++	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f-dist"; \
+ 	done
+ 
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(sysconfdir)/$$f-dist'"; \
++	  rm -f "$(DESTDIR)$(sysconfdir)/$$f-dist"; \
+ 	done
+ 
+ ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
