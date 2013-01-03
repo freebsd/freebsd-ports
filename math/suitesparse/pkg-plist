@@ -1,7 +1,6 @@
 include/suitesparse/SuiteSparseQR.hpp
 include/suitesparse/SuiteSparseQR_C.h
 include/suitesparse/SuiteSparseQR_definitions.h
-include/suitesparse/UFconfig.h
 include/suitesparse/amd.h
 include/suitesparse/amd_internal.h
 include/suitesparse/btf.h
@@ -103,9 +102,9 @@ lib/librbio.so.1
 lib/libspqr.a
 lib/libspqr.so
 lib/libspqr.so.1
-lib/libufconfig.a
-lib/libufconfig.so
-lib/libufconfig.so.1
+lib/libsuitesparseconfig.a
+lib/libsuitesparseconfig.so
+lib/libsuitesparseconfig.so.1
 lib/libumfpack.a
 lib/libumfpack.so
 lib/libumfpack.so.1
