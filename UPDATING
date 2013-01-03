@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130103:
+  AFFECTS: users of audio/baresip
+  AUTHOR: crees@FreeBSD.org
+
+  Baresip is tightly linked to the versions of audio/re and audio/rem, and
+  will not build against different versions.
+
+  To update without problems, the -R flag for portupgrade is mandatory, or
+  build will fail.  Portmaster and pkgng will handle this correctly.
+
+20130103:
   AFFECTS: users of emulators/virtualbox-ose
   AUTHOR: decke@FreeBSD.org
 
