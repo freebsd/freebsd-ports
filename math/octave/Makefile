@@ -64,7 +64,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == openblas
-LIB_DEPENDS+=	openblas:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	openblas:${PORTSDIR}/math/openblas
 BLAS=		-lopenblasp
 LAPACK=		-lopenblasp
 .elif ${WITH_BLAS} == gotoblas
