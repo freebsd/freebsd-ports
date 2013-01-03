@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_CodeCoverage
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.7
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
@@ -29,9 +29,6 @@ PEAR_AUTOINSTALL=	yes
 OPTIONS_DEFINE=	DOM XDEBUG
 DOM_DESC=	Enable DOM support
 XDEBUG_DESC=	Enable Xdebug support
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 .include <bsd.port.options.mk>
 
