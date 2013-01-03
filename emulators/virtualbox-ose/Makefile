@@ -1,12 +1,8 @@
-# New ports collection makefile for:	virtualbox-ose
-# Date created:		2009-05-02
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by:	Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.22
+DISTVERSION=	4.2.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -25,15 +21,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		kmk:${PORTSDIR}/devel/kBuild-devel \
+		kmk:${PORTSDIR}/devel/kBuild \
 		gtar:${PORTSDIR}/archivers/gtar
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.6:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
+RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
+FETCH_ARGS=	-pRr
 USE_CDRTOOLS=	yes
 USE_GCC=	any
 USE_GNOME=	libidl
@@ -49,7 +46,6 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
 VBOXUSER?=	vboxusers
@@ -57,11 +53,12 @@ VBOXWSUSER?=	vboxusers
 VBOXGROUP?=	vboxusers
 USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
-VBOX_FRONTENDS=	VBoxHeadless
+VBOX_FRONTENDS=	VBoxAutostart VBoxHeadless
 VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11
-OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL
+OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC
+DEBUG_DESC=	Debug symbols, additional logs and assertions
 QT4_DESC=	Build with QT4 Frontend
 GUESTADDITIONS_DESC=	Build with Guest Additions
 UDPTUNNEL_DESC=	Build with UDP tunnel support
@@ -69,7 +66,11 @@ VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
 WEBSERVICE_DESC=	Build Webservice
 
+.SHELL:		path="/bin/sh" unsetenv=true
+
 .include <bsd.port.options.mk>
+
+KMODDIR?=	/boot/modules
 
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
@@ -80,7 +81,7 @@ USE_RC_SUBR+=	vboxheadless
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-KMK_FLAGS=
+KMK_FLAGS=	-j 1
 
 .if empty(PORT_OPTIONS:MQT4) && !empty(PORT_OPTIONS:MNLS)
 BROKEN=		NLS support requires QT4 frontend. Run 'make config' again!
@@ -116,15 +117,14 @@ GUESTADDITIONS=	VBoxGuestAdditions_${VBOX_GUEST_VER}.iso
 GADISTFILES=	${GUESTADDITIONS}:guestadditions
 RESTRICTED=	for personal use only
 RESTRICTED_FILES=	${GUESTADDITIONS}
-FETCH_ARGS=	-pRr
 PLIST_SUB+=	GUESTADDITIONS=""
 .else
 PLIST_SUB+=	GUESTADDITIONS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
+KMK_FLAGS+=	BUILD_TYPE=debug
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
@@ -141,6 +141,10 @@ CONFIGURE_ARGS+=--disable-pulse
 
 .if ${PORT_OPTIONS:MVNC}
 LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
+CONFIGURE_ARGS+=--enable-vnc
+PLIST_SUB+=	VNC=""
+.else
+PLIST_SUB+=	VNC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -172,14 +176,12 @@ KMK_ARCH=	freebsd.${ARCH}
 PLIST_SUB+=	I386="@comment "
 .endif
 
+PLIST_SUB+=	ARCH="${KMK_ARCH}"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 802000
 BROKEN=		Does not compile on FreeBSD < 8.2
-.endif
-
-.if ${OSVERSION} > 900012
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
 .endif
 
 .if ${OSVERSION} < 900000 && ${OSVERSION} > 801500
@@ -212,7 +214,7 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 .if ${PORT_OPTIONS:MVNC}
-	@${ECHO} 'VBOX_WITH_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_EXTPACK_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${OSVERSION} < 800069
 	@${ECHO} 'VBOX_WITH_USB=' >> ${WRKSRC}/LocalConfig.kmk
@@ -271,8 +273,13 @@ do-install:
 	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
+.if ${PORT_OPTIONS:MVNC}
+	${MKDIR} ${PREFIX}/lib/virtualbox/ExtensionPacks
+	${CP} -a ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/ExtensionPacks/VNC ${PREFIX}/lib/virtualbox/ExtensionPacks
+.endif
+
 .if ${PORT_OPTIONS:MWEBSERVICE}
-	${MKDIR} -p ${DATADIR}/sdk/bindings/webservice
+	${MKDIR} ${DATADIR}/sdk/bindings/webservice
 .for f in vboxweb.wsdl vboxwebService.wsdl
 	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/webservice/${f} ${DATADIR}/sdk/bindings/webservice/
 .endfor

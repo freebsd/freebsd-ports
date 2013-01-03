@@ -50,7 +50,7 @@ Running VirtualBox as non-root user may fail with a fatal error
 NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
 
 Check wiki page for known issues and troubleshooting:
-http://wiki.freebsd.org/VirtualBox/ToDo
+http://wiki.freebsd.org/VirtualBox
 
 Please report any problems to emulation@. Thanks!
 

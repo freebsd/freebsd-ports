@@ -41,6 +41,9 @@ vboxnet_start()
 			return 1
 		fi
 	fi
+
+	# initialize configured host-only interfaces
+	%%PREFIX%%/bin/VBoxManage list hostonlyifs >/dev/null
 }
 
 vboxnet_stop()
