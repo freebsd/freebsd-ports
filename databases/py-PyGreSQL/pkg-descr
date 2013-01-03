@@ -1,9 +1,6 @@
-From the README:
-
-  PyGreSQL is a python module that interfaces to a PostgreSQL database. It
-  embeds the PostgreSQL query library to allow easy use of the powerful
-  PostgreSQL features from a Python script.
-
+PyGreSQL is a python module that interfaces to a PostgreSQL database. It embeds
+the PostgreSQL query library to allow easy use of the powerful PostgreSQL
+features from a Python script.
 PyGreSQL includes a DB-API 2.0 compliant API wrapper.
 
-WWW:      http://www.pygresql.org
+WWW: http://www.pygresql.org
