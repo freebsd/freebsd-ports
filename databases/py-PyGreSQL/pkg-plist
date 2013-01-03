@@ -1,3 +1,10 @@
+%%PYTHON_SITELIBDIR%%/_pg.so
+%%PYTHON_SITELIBDIR%%/pg.py
+%%PYTHON_SITELIBDIR%%/pg.pyc
+%%PYTHON_SITELIBDIR%%/pg.pyo
+%%PYTHON_SITELIBDIR%%/pgdb.py
+%%PYTHON_SITELIBDIR%%/pgdb.pyc
+%%PYTHON_SITELIBDIR%%/pgdb.pyo
 %%PORTDOCS%%%%DOCSDIR%%/announce.html
 %%PORTDOCS%%%%DOCSDIR%%/announce.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
@@ -15,11 +22,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/pgdb.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PYTHON_SITELIBDIR%%/_pg.so
-%%PYTHON_SITELIBDIR%%/pg.py
-%%PYTHON_SITELIBDIR%%/pg.pyc
-%%PYTHON_SITELIBDIR%%/pg.pyo
-%%PYTHON_SITELIBDIR%%/pgdb.py
-%%PYTHON_SITELIBDIR%%/pgdb.pyc
-%%PYTHON_SITELIBDIR%%/pgdb.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

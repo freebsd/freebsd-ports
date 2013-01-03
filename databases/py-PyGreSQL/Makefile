@@ -1,28 +1,25 @@
-# Ports collection Makefile for:	PyGreSQL
-# Date created:				2/22/1999
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	PyGreSQL
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 PORTEPOCH=	1
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP \
-		ftp://ftp.pygresql.org/pub/distrib/
+MASTER_SITES=	http://pygresql.org/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Python interface to PostgreSQL, both classic and DP-API 2.0
+COMMENT=	Python interface to PostgreSQL, both classic and DP-API 2.0
 
-USE_PGSQL=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
+USE_PGSQL=	yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
