@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	poker-engine
-# Date created:			Dec 14, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	poker-engine
 PORTVERSION=	1.3.6
@@ -12,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A python library that implements poker rules
+COMMENT=	Python library that implements poker rules
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
 		${PYTHON_SITELIBDIR}/pokereval.py:${PORTSDIR}/games/py-poker-eval \
