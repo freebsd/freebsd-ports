@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-NYTProf
-PORTVERSION=	4.11
+PORTVERSION=	4.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,8 @@ MAN1=	nytprofhtml.1 \
 	nytprofcg.1 \
 	nytprofmerge.1
 
-MAN3=	Devel::NYTProf.3 \
+MAN3=	Devel::MemoryProfiling.3 \
+	Devel::NYTProf.3 \
 	Devel::NYTProf::Apache.3 \
 	Devel::NYTProf::Core.3 \
 	Devel::NYTProf::Data.3 \

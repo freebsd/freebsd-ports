@@ -4,6 +4,7 @@ bin/nytprofhtml
 bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf/NYTProf.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/benchmark.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MemoryProfiling.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Apache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Constants.pm
@@ -14,6 +15,7 @@ bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/ReadStream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Reader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Run.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/SubCallInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/SubInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Util.pm
