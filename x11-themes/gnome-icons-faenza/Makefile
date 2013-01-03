@@ -1,17 +1,13 @@
-# New ports collection makefile for:	gnome-icons-faenza
-# Date created:		2011-12-27
-# Whom:			Pawel Pekala <pawel@FreeBSD.org>
-#
+# Created by: Pawel Pekala <pawel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	faenza
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://fc05.deviantart.com/fs71/f/2011/320/4/f/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	${PORTNAME}-icon-theme
 PKGNAMEPREFIX=	gnome-icons-
-DISTNAME=	${PORTNAME}_icons_by_tiheum-d2v6x24
+DISTNAME=	${PROJECTHOST}_${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Faenza GNOME 2 icon themes
@@ -42,6 +38,9 @@ do-install:
 .endif
 
 	${CP} -R ${WRKDIR}/${theme} ${PREFIX}/share/icons
+	@cd ${PREFIX} && ${FIND} share/icons/${theme} ! -type d >> ${TMPPLIST} && \
+		${FIND} share/icons/${theme} -type d | ${SORT} -r | \
+		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 .endfor
 
 .include <bsd.port.mk>
