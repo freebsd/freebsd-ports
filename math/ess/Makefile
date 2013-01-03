@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ess
-# Date created:				06 March 2010
-# Whom:					Christopher J. Ruwe
-#
+# Created by: Christopher J. Ruwe
 # $FreeBSD$
-#
 
 PORTNAME=	ess
-DISTVERSION=	12.09
+DISTVERSION=	12.09-1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
@@ -21,7 +17,9 @@ RUN_DEPENDS=	R:${PORTSDIR}/math/R
 USE_EMACS=	yes
 USE_GMAKE=	yes
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INFO=	ess
 .endif
 
@@ -39,14 +37,14 @@ post-patch:
 	${REINPLACE_CMD} -e "s|\$$(INSTALL)|${INSTALL_SCRIPT}|g" \
 		${WRKSRC}/lisp/Makefile
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} info)
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} install-info)
 .endif

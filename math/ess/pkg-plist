@@ -59,6 +59,10 @@
 %%EMACS_SITE_LISPDIR%%/ess-mode.elc
 %%EMACS_SITE_LISPDIR%%/ess-mouse.el
 %%EMACS_SITE_LISPDIR%%/ess-mouse.elc
+%%EMACS_SITE_LISPDIR%%/ess-noweb-font-lock-mode.el
+%%EMACS_SITE_LISPDIR%%/ess-noweb-font-lock-mode.elc
+%%EMACS_SITE_LISPDIR%%/ess-noweb-mode.el
+%%EMACS_SITE_LISPDIR%%/ess-noweb-mode.elc
 %%EMACS_SITE_LISPDIR%%/ess-noweb.el
 %%EMACS_SITE_LISPDIR%%/ess-noweb.elc
 %%EMACS_SITE_LISPDIR%%/ess-omg-d.el
@@ -129,10 +133,6 @@
 %%EMACS_SITE_LISPDIR%%/mouseme.elc
 %%EMACS_SITE_LISPDIR%%/msdos.el
 %%EMACS_SITE_LISPDIR%%/msdos.elc
-%%EMACS_SITE_LISPDIR%%/ess-noweb-font-lock-mode.el
-%%EMACS_SITE_LISPDIR%%/ess-noweb-font-lock-mode.elc
-%%EMACS_SITE_LISPDIR%%/ess-noweb-mode.el
-%%EMACS_SITE_LISPDIR%%/ess-noweb-mode.elc
 @dirrm %%EMACS_LIBDIR%%/etc/ess/icons
 @dirrm %%EMACS_LIBDIR%%/etc/ess
 @dirrmtry %%EMACS_LIBDIR%%/etc
