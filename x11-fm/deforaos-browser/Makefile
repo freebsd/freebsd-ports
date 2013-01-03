@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	deforaos-browser
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.10
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.defora.org/os/download/download/3701/
+MASTER_SITES=	http://www.defora.org/os/download/download/4010/
 DISTNAME=	Browser-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
@@ -22,6 +22,7 @@ USE_GNOME=	gtk20 desktopfileutils
 USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
