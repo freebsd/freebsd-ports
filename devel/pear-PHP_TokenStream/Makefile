@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_TokenStream
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
@@ -19,9 +19,6 @@ RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
 
 PEAR_CHANNEL=	phpunit
 PEAR_AUTOINSTALL=	yes
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
