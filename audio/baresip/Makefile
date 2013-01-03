@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	baresip
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.creytiv.com/pub/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Small SIP client
 
-BUILD_DEPENDS=	${LOCALBASE}/share/re/re.mk:${PORTSDIR}/audio/re \
-		${LOCALBASE}/include/rem/rem.h:${PORTSDIR}/audio/rem
+BUILD_DEPENDS=	re=${PORTVERSION}:${PORTSDIR}/audio/re \
+		rem=${PORTVERSION}:${PORTSDIR}/audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
@@ -58,6 +58,7 @@ USE_SDL=	sdl sound
 . for s in SPEEX_AEC SPEEX_PP SPEEX_RESAMP
 MAKE_ARGS+=	USE_$s=yes
 . endfor
+MAKE_ARGS+=	HAVE_SPEEXDSP=yes
 .endif
 
 .if ${PORT_OPTIONS:MX11}
