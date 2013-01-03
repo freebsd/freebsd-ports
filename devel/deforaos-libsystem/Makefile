@@ -3,6 +3,7 @@
 
 PORTNAME=	libsystem
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.defora.org/os/download/download/3527/
 DISTNAME=	libSystem-${PORTVERSION}
@@ -15,6 +16,7 @@ LICENSE=	GPLv3
 
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
