@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Pushover/.packlist
+%%SITE_PERL%%/WebService/Pushover.pm
+@dirrmtry %%SITE_PERL%%/WebService
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Pushover
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
