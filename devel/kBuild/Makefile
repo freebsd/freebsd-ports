@@ -1,20 +1,15 @@
-# New ports collection makefile for:	kbuild
-# Date created:		Mon Jul 28 14:34:33 BST 2008
-# Whom:			Bruce Simpson
-#
+# Created by:	Bruce Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	kBuild
-DISTVERSION=	${KBUILD_VERSION}-p2
-PORTREVISION=	2
+DISTVERSION=	${KBUILD_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
 		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}r2662-src
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
@@ -26,7 +21,7 @@ CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-KBUILD_VERSION=	0.1.5
+KBUILD_VERSION=	0.1.9998
 KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
@@ -39,6 +34,8 @@ KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
 		kmk_redirect kmk_rm kmk_rmdir kmk_sed kmk_sleep kmk_test kmk_time
 PORTDOCS=	QuickReference-kmk.html \
 		QuickReference-kmk.txt
+
+.SHELL:		path="/bin/sh" unsetenv=true
 
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
@@ -56,14 +53,14 @@ do-build:
 
 do-install:
 .for bin in ${KBUILD_BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/bin/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/bin/${bin} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
+	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
