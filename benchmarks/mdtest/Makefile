@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mdtest
-# Date created:		2007-4-20
-# Whom:			Chao Shin <quakelee@cn.freebsd.org>
-#
+# Created by: Chao Shin <quakelee@cn.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mdtest
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -45,7 +41,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+	@(cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
