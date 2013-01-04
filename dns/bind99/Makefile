@@ -25,7 +25,7 @@ CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
 OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
 OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
-			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME \
+			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME RRL \
 			SIGCHASE IPV6 THREADS
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
@@ -40,6 +40,7 @@ SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
+RRL_DESC=		Enable Response Rate Limiting (experimental)
 DLZ_DESC=		Dynamically Loadable Zones
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
 DLZ_MYSQL_DESC=		DLZ MySQL driver (no threading)
@@ -109,6 +110,11 @@ CONFIGURE_ARGS+=	--enable-rpz-nsip
 
 .if ${PORT_OPTIONS:MRPZ_NSDNAME}
 CONFIGURE_ARGS+=	--enable-rpz-nsdname
+.endif
+
+.if ${PORT_OPTIONS:MRRL}
+PATCHFILES=		rl-9.9.2-P1.patch
+PATCH_SITES=		http://ss.vix.com/~vixie/
 .endif
 
 .if ${PORT_OPTIONS:MDLZ_MYSQL}
