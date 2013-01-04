@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome
-PORTVERSION=	3.4.13
-PORTREVISION=	2
+PORTVERSION=	3.4.14
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -32,7 +31,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_ICONV=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
