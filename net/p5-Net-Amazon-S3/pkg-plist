@@ -1,3 +1,4 @@
+bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3.pm
 %%SITE_PERL%%/Net/Amazon/S3/Bucket.pm
 %%SITE_PERL%%/Net/Amazon/S3/Client.pm
@@ -5,16 +6,21 @@
 %%SITE_PERL%%/Net/Amazon/S3/Client/Object.pm
 %%SITE_PERL%%/Net/Amazon/S3/HTTPRequest.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/CompleteMultipartUpload.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/CreateBucket.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/DeleteBucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/DeleteMultiObject.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/DeleteObject.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetBucketAccessControl.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetBucketLocationConstraint.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetObject.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetObjectAccessControl.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/InitiateMultipartUpload.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/ListAllMyBuckets.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/ListBucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/ListParts.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/PutObject.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/PutPart.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetBucketAccessControl.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetObjectAccessControl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3/.packlist

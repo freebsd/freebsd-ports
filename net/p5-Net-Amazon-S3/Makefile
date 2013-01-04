@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Amazon-S3
-# Date created:		2006-10-08
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.56
+PORTVERSION=	0.58
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,8 +39,13 @@ MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
 		Net::Amazon::S3::Request::GetObjectAccessControl.3 \
 		Net::Amazon::S3::Client.3 \
 		Net::Amazon::S3::Client::Bucket.3 \
+		Net::Amazon::S3::Request::CompleteMultipartUpload.3 \
+		Net::Amazon::S3::Request::DeleteMultiObject.3 \
+		Net::Amazon::S3::Request::InitiateMultipartUpload.3 \
 		Net::Amazon::S3::Request::ListAllMyBuckets.3 \
+		Net::Amazon::S3::Request::ListParts.3 \
 		Net::Amazon::S3::Request::PutObject.3 \
+		Net::Amazon::S3::Request::PutPart.3 \
 		Net::Amazon::S3::HTTPRequest.3 \
 		Net::Amazon::S3::Request::ListBucket.3 \
 		Net::Amazon::S3::Request::DeleteObject.3 \
@@ -57,5 +58,7 @@ MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
 		Net::Amazon::S3::Request::GetObject.3 \
 		Net::Amazon::S3::Request.3 \
 		Net::Amazon::S3::Request::CreateBucket.3
+
+MAN1=		s3cl.1
 
 .include <bsd.port.mk>
