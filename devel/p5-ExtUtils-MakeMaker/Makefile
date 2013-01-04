@@ -1,12 +1,8 @@
-# New ports collection makefile for:    ExtUtils-MakeMaker
-# Date created:                         Mon Feb 23 00:13:01 EST 2004
-# Whom:                                 Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.62
+PORTVERSION=	6.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,14 +33,11 @@ MAN3=		ExtUtils::Command::MM.3 ExtUtils::Liblist.3 ExtUtils::MM.3 \
 #.endif
 
 .if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
-		p5-version>=0.88:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
 		p5-version>=0.88:${PORTSDIR}/devel/p5-version
 .endif
 
 .if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-CPAN-Meta>=2.112150:${PORTSDIR}/devel/p5-CPAN-Meta
 RUN_DEPENDS+=	p5-CPAN-Meta>=2.112150:${PORTSDIR}/devel/p5-CPAN-Meta
 .endif
 
