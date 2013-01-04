@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20121122
+PORTVERSION=	20121222
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	howeyc@gmail.com
-COMMENT=	GNU parallel is a shell tool for executing jobs in parallel
+COMMENT=	Shell tool for executing jobs in parallel
 
 LICENSE=	GPLv3
 
