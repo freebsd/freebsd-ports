@@ -3,15 +3,10 @@ bin/sys
 bin/pagsh.krb
 bin/udebug
 bin/pagsh
-bin/klog.krb
-bin/knfs
 bin/pts
-bin/klog
 bin/tokens.krb
 bin/scout
 bin/xstat_cm_test
-bin/kpasswd
-bin/kpwvalid
 bin/bos
 bin/unlog
 bin/tokens
@@ -83,9 +78,6 @@ include/openafs/afs/ptint.h
 include/openafs/afs/ptserver.h
 include/openafs/afs/acl.h
 include/openafs/afs/prs_fs.h
-include/openafs/afs/kautils.h
-include/openafs/afs/kauth.h
-include/openafs/afs/kaport.h
 include/openafs/afs/bumon.h
 include/openafs/afs/butc.h
 include/openafs/afs/bubasics.h
@@ -186,8 +178,6 @@ lib/afs/libafscom_err.a
 lib/afs/libdir.a
 lib/afs/libfsprobe.a
 lib/afs/libgtx.a
-lib/afs/libkauth.a
-lib/afs/libkauth.krb.a
 lib/afs/libprocmgmt.a
 lib/afs/libprot.a
 lib/afs/libsys.a
@@ -227,7 +217,6 @@ lib/libkopenafs.a
 libexec/openafs/buserver
 libexec/openafs/fileserver
 libexec/openafs/dafileserver
-libexec/openafs/kaserver
 libexec/openafs/ptserver
 libexec/openafs/salvager
 libexec/openafs/upclient
@@ -240,13 +229,8 @@ libexec/openafs/dasalvager
 %%FUSE%%sbin/afsd.fuse
 sbin/dafssync-debug
 sbin/prdb_check
-sbin/kas
-sbin/kdb
 sbin/rmtsysd
 sbin/pt_util
-sbin/kadb_check
-sbin/ka-forwarder
-sbin/kpwvalid
 sbin/volinfo
 sbin/afsd
 sbin/vsys

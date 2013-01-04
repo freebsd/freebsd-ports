@@ -1,0 +1,18 @@
+--- ./configure.orig	2012-11-06 23:10:16.000000000 -0500
++++ ./configure	2012-11-06 23:10:33.000000000 -0500
+@@ -6791,13 +6791,13 @@
+ 			vm=${v#*.}
+ 			AFS_SYSNAME="amd64_obsd${vM}${vm}"
+ 			;;
+-		i?86-*-freebsd?.*)
++		i?86-*-freebsd*.*)
+ 			v=${host#*freebsd}
+ 			vM=${v%.*}
+ 			vm=${v#*.}
+ 			AFS_SYSNAME="i386_fbsd_${vM}${vm}"
+ 			;;
+-		x86_64-*-freebsd?.*)
++		x86_64-*-freebsd*.*)
+ 			v=${host#*freebsd}
+ 			vM=${v%.*}
+ 			vm=${v#*.}
