@@ -324,6 +324,8 @@ share/applications/zenmap-root.desktop
 %%NLS%%%%DATADIR%%/locale/de/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/fr/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/hr/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/it/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/ja/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
 %%DATADIR%%/misc/profile_editor.xml
@@ -377,6 +379,10 @@ share/applications/zenmap-root.desktop
 %%NLS%%@dirrm %%DATADIR%%/locale/ru
 %%NLS%%@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/locale/pt_BR
+%%NLS%%@dirrm %%DATADIR%%/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ja
+%%NLS%%@dirrm %%DATADIR%%/locale/it/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/it
 %%NLS%%@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/locale/hr
 %%NLS%%@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
