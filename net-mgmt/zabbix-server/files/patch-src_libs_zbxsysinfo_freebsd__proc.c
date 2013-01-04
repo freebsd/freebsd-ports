@@ -38,30 +38,6 @@
  	mib[0] = CTL_KERN;
  	mib[1] = KERN_PROC;
  	if (NULL != usrinfo)
-@@ -164,7 +158,11 @@
- 	}
- 	else
- 	{
-+#if(__FreeBSD_version > 500000)
-+		mib[2] = KERN_PROC_PROC;
-+#else
- 		mib[2] = KERN_PROC_ALL;
-+#endif
- 		mib[3] = 0;
- 		mibs = 3;
- 	}
-@@ -184,11 +182,6 @@
- 
- 	for (i = 0; i < count; i++)
- 	{
--#if(__FreeBSD_version > 500000)
--		if (proc[i].ki_flag & P_KTHREAD)	/* skip a system thread */
--			continue;
--#endif
--
- 		proc_ok = 0;
- 		comm_ok = 0;
- 		if (*procname == '\0' || 0 == strcmp(procname, proc[i].ZBX_PROC_COMM))
 @@ -205,8 +198,7 @@
  
  		if (proc_ok && comm_ok)
@@ -72,27 +48,3 @@
  
  			if (0 == proccount++)
  				memsize = value;
-@@ -306,7 +298,11 @@
- 	}
- 	else
- 	{
-+#if(__FreeBSD_version > 500000)
-+		mib[2] = KERN_PROC_PROC;
-+#else
- 		mib[2] = KERN_PROC_ALL;
-+#endif
- 		mib[3] = 0;
- 		mibs = 3;
- 	}
-@@ -326,11 +322,6 @@
- 
- 	for (i = 0; i < count; i++)
- 	{
--#if(__FreeBSD_version > 500000)
--		if (proc[i].ki_flag & P_KTHREAD)	/* skip a system thread */
--			continue;
--#endif
--
- 		proc_ok = 0;
- 		stat_ok = 0;
- 		comm_ok = 0;
