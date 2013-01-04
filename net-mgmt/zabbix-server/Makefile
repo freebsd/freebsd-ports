@@ -1,12 +1,8 @@
-# New ports collection makefile for:	zabbix-server
-# Date created:		2009-12-09
-# Whom:			Jim Riggs <ports@christianserving.org>
-#
+# Created by: Jim Riggs <ports@christianserving.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zabbix
-PORTVERSION=	1.8.13
+PORTVERSION=	1.8.15
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -20,7 +16,7 @@ LICENSE=	GPLv2
 CONFLICTS=	${PKGBASE}-1.[0-6]*
 
 .if ${PKGNAMESUFFIX} != "-agent"
-CONFLICTS+=	${PORTNAME}-1.[0-6]*
+CONFLICTS+=	${PORTNAME}-[1-2].[0-6]*
 .endif
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
