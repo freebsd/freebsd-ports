@@ -7,8 +7,11 @@ DISTVERSIONPREFIX=	svn
 CATEGORIES=	multimedia
 MASTER_SITES=	CRITICAL
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line client for spotify
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2013-02-04
 
 LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		ao:${PORTSDIR}/audio/libao
