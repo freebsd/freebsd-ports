@@ -102,7 +102,8 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 .if defined(WITH_SASL2)
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-cyrus-sasl=${PREFIX}
+CONFIGURE_ARGS+=	--with-cyrus-sasl
+CONFIGURE_ENV+=		LDFLAGS=-L"${PREFIX}"/lib CPPFLAGS=" -I${PREFIX}/include"
 .endif
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 fnext.1 \
