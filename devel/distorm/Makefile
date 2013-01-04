@@ -1,12 +1,8 @@
-# New ports collection makefile for:	distorm
-# Date created:				13 May 2008
-# Whom:					bf <bf2006a@yahoo.com>
-#
+# Created by: bf <bf2006a@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME?=	distorm
-DISTVERSION=	20120514-r214
+DISTVERSION=	20121220-r230
 PORTREVISION?=	0
 CATEGORIES=	devel
 .if defined(PYTHON_SLAVEPORT)
@@ -30,11 +26,11 @@ USE_DOS2UNIX=	yes
 USE_XZ =	yes
 
 .if defined(PYTHON_SLAVEPORT)
-USE_PYTHON=		-2.7
+USE_PYTHON=		2.6-2.7
 
 USE_PYDISTUTILS=		yes
 PYDISTUTILS_PKGNAME=		distorm3
-PYDISTUTILS_PKGVERSION =	2
+PYDISTUTILS_PKGVERSION =	3
 
 PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/distorm3
 
@@ -87,6 +83,9 @@ do-build:
 	EXTRAFLAGS="-DDISTORM_STATIC" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} staticlib)
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${BUILD_WRKSRC}/disasm \
 	${WRKSRC}/examples/linux/main.c ${BUILD_WRKSRC}/libdistorm3.a
+
+check regression-test test: build
+	@cd ${BUILD_WRKSRC}; ./disasm disasm
 
 do-install:
 	@(cd ${BUILD_WRKSRC}; ${INSTALL_LIB} libdistorm3.a ${PREFIX}/lib; \
