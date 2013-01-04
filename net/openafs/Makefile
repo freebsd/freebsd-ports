@@ -1,13 +1,8 @@
-# New ports collection makefile for:    openafs
-# Date created:                         2010-11-06
-# Whom:                                 Ben Kaduk <kaduk@mit.edu>
-# Based on:                             port by Alec Kloss <alec@setfilepointer.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -19,7 +14,7 @@ DISTFILES=	${PORTNAME}-${AFS_DISTVERSION}-src.tar.bz2:openafs \
 EXTRACT_ONLY=	${PORTNAME}-${AFS_DISTVERSION}-src.tar.bz2 \
 		${PORTNAME}-${AFS_DISTVERSION}-doc.tar.bz2
 
-MAINTAINER=	kaduk@mit.edu
+MAINTAINER=	bjk@FreeBSD.org
 COMMENT=	AFS implementation from openafs.org
 
 LICENSE=	IPLv1
