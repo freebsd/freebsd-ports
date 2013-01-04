@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ircd-ratbox
-# Date Created:				2006-01-27
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
-# ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
