@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-XSpp
-PORTVERSION=	0.15
+PORTVERSION=	0.16.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	linpc@cs.nctu.edu.tw
 COMMENT=	XS for C++ in Perl
 
-BUILD_DEPENDS=	p5-ExtUtils-ParseXS>=2.22.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-		p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
+BUILD_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_MODBUILD=	yes
@@ -40,4 +40,10 @@ MAN3=		ExtUtils::XSpp.3 \
 		ExtUtils::XSpp::Plugin.3 \
 		ExtUtils::XSpp::Typemap.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501301
+BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=2.22.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
+.include <bsd.port.post.mk>
