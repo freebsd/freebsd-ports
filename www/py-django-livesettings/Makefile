@@ -1,31 +1,27 @@
-# New ports collection makefile for:	py-django-livesettings
-# Date created:				19 May 2010
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-livesettings
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+DISTVERSION=	1.4-12
 CATEGORIES=	www python
-MASTER_SITES=	http://www.caomhin.org/ports/
+MASTER_SITES=	CHEESESHOP
+MASTER_SITE_SUBDIR=	source/d/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	Configure settings via Django admin interface rather than by editing settings.py
+COMMENT=	Configure Django project settings via admin interface
 
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_hg>=0.4:${PORTSDIR}/devel/py-setuptools_hg
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_NOEGGINFO=	yes
-PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PORTVERSION:C/([[:digit:]]\.[[:digit:]])\./\1_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
-PYEASYINSTALL_UNINSTALLARGS=	-q -m -S ${PYTHON_SITELIBDIR} \
-				${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION:C/([[:digit:]]\.[[:digit:]])\./\1_/g}
+PYDISTUTILS_PKGNAME=	${PORTNAME:S/-/_/}
+PYDISTUTILS_PKGVERSION=	${DISTVERSION:S/-/_/}
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 .include <bsd.port.mk>
