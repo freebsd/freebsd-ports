@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenmap
-PORTVERSION=	6.01
-PORTREVISION=	1
+PORTVERSION=	6.25
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +14,13 @@ COMMENT=	GUI frontend for the Nmap scanning utility
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-		${PYTHON_PACKAGENAMEPREFIX}sqlite3>:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PACKAGENAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
 MLINKS=	zenmap.1 xnmap.1
