@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	distribute
-PORTVERSION=	0.6.28
+PORTVERSION=	0.6.33
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A Python packages installer and Setuptools replacement
+COMMENT=	Python packages installer and Setuptools replacement
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}setuptools-[0-9]*
 
