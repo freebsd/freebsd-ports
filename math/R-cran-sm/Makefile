@@ -1,13 +1,9 @@
-# New ports collection makefile for:	sm
-# Date created:		2009-03-19
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sm
 DISTVERSION=	2.2-4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

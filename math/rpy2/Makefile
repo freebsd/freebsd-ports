@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	rpy
-# Date created:			Jan 14, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	rpy2
 PORTVERSION=	2.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP \
 		SF

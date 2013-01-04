@@ -1,13 +1,9 @@
-# New ports collection makefile for:	math/R-cran-SuppDists
-# Date created:				April 27, 2010
-# Whom:					b.f. <bf@FreeBSD.org>
-#
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SuppDists
 DISTVERSION=	1.1-8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_CRAN} \
 		http://r.research.att.com/benchmarks/:benchmark \
@@ -19,8 +15,9 @@ EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Supplementary distributions and RNG for R
 
-BENCHMARK_SCRIPT=	R-benchmark-25.R
 LICENSE=		GPLv2
+
+BENCHMARK_SCRIPT=	R-benchmark-25.R
 R_MOD_AUTOPLIST=	yes
 USE_R_MOD=		yes
 WRKSRC =		${WRKDIR}/${PORTNAME}

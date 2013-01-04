@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-labeling
-# Date created:		2012-05-09
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	labeling
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	2.15.1
-PORTREVISION=	3
+PORTVERSION=	2.15.2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -16,7 +15,6 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.hu.r-project.org/src/base/R-2/ \
 		http://cran.uk.r-project.org/src/base/R-2/ \
 		http://cran.us.r-project.org/src/base/R-2/ \
-		http://cran.za.r-project.org/src/base/R-2/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-2/ \
 		http://lib.stat.cmu.edu/R/CRAN/src/base/R-2/ \
 		http://cran.stat.ucla.edu/src/base/R-2/ \
@@ -26,13 +24,23 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	A language for statistical computing and graphics
 
-PORTSCOUT=	skipv:2.15.1-w
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+
+CONFIGURE_ENV=		SED="${LOCALBASE}/bin/gsed"
+
+OPTIONS_DEFINE=		MISSING
+
+MISSING_DESC=		use libmissing rather than libquadmath
 
 .if defined(LIBRMATH_SLAVEPORT)
 BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
-CONFIGURE_ARGS =	--disable-nls --with-ICU=no --with-cairo=no --with-iconv=no \
-			--with-jpeglib=no --with-libpng=no --with-readline=no \
-			--with-tcltk=no --with-x=no --without-libintl-prefix
+CONFIGURE_ARGS=		--disable-nls --with-ICU=no --with-cairo=no \
+			--with-jpeglib=no --with-libpng=no --with-libtiff=no \
+			--with-readline=no --with-tcltk=no --with-x=no \
+			--without-libintl-prefix
+CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
 USE_LDCONFIG=		yes
 .else # LIBRMATH_SLAVEPORT
@@ -40,13 +48,13 @@ ALL_TARGET=		all
 INSTALL_TARGET =	install
 CONFIGURE_ARGS =	--enable-memory-profiling rdocdir=${DOCSDIR} \
 			--with-system-bzlib --with-system-zlib
-CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
+CONFIGURE_ENV+=		FCFLAGS="${FFLAGS}" \
 			INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE =	ATLAS ICU PCRE_PORT THREADS
+OPTIONS_DEFINE+=	ATLAS ICU PCRE_PORT THREADS
 
 ATLAS_DESC=		Use ATLAS instead of BLAS/LAPACK
 ICU_DESC=		Use ICU for collation in multibyte locales
@@ -54,8 +62,13 @@ PCRE_PORT_DESC =	Use devel/pcre instead of the bundled PCRE
 
 OPTIONS_DEFAULT=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
+RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+USE_LDCONFIG=		${PREFIX}/lib/R/lib
+
+MAN1=			R.1 Rscript.1
+
 OPTIONS_DEFINE+=	GHOSTSCRIPT INFO_MANUALS JPEG LETTER_PAPER LIBR \
-			PANGOCAIRO PDF_MANUALS PNG TCLTK X11
+			PANGOCAIRO PDF_MANUALS PNG TCLTK TIFF X11
 
 GHOSTSCRIPT_DESC=	[dev2]bitmap() graphics devices
 INFO_MANUALS_DESC=	GNU info manuals
@@ -68,8 +81,8 @@ PNG_DESC=		png() graphics device
 TCLTK_DESC=		tcltk package
 X11_DESC=		X11() graphics device
 
-OPTIONS_DEFAULT+=	GHOSTSCRIPT INFO_MANUALS JPEG LIBR PANGOCAIRO PNG TCLTK \
-			X11
+OPTIONS_DEFAULT+=	GHOSTSCRIPT INFO_MANUALS JPEG LIBR PANGOCAIRO PNG \
+			TCLTK TIFF X11
 
 .endif # !LIBR_SLAVEPORT
 PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
@@ -77,10 +90,6 @@ PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
 			RLAPACK_SOVERSION="${RLAPACK_SOVERSION}"
 R_LD_LIBRARY_PATH=	${_GCC_RUNTIME}:${LOCALBASE}/lib
 USE_ICONV=		yes
-.if !defined(LIBR_SLAVEPORT)
-MAN1=		R.1 Rscript.1
-USE_LDCONFIG=		${PREFIX}/lib/R/lib
-.endif # !LIBR_SLAVEPORT
 .endif # LIBRMATH_SLAVEPORT
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
@@ -101,6 +110,18 @@ PICFLAG?=		-fpic
 .for flag in LD CXXLD
 CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
 .endfor
+
+.if ${PORT_OPTIONS:MMISSING}
+LIB_DEPENDS+=		missing:${PORTSDIR}/math/libmissing
+LIBM=			-L${LOCALBASE}/lib -lmissing
+LIBMH=			"missing_math.h"
+.if defined(LIBRMATH_SLAVEPORT)
+CPPFLAGS+=		-I${LOCALBASE}/include
+.endif
+.else
+LIBM=			-lquadmath
+LIBMH=			<quadmath.h>
+.endif
 
 .if !defined(LIBRMATH_SLAVEPORT)
 .if ${PORT_OPTIONS:MATLAS}
@@ -200,6 +221,13 @@ CONFIGURE_ARGS+=	--without-tcltk
 PLIST_SUB+=		TCLTK="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MTIFF}
+LIB_DEPENDS+=		tiff:${PORTSDIR}/graphics/tiff
+CONFIGURE_ARGS+=	--with-libtiff
+.else
+CONFIGURE_ARGS+=	--without-libtiff
+.endif
+
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=		x11 xmu xt
@@ -231,7 +259,16 @@ PLIST_SUB+=		PDF_MANUAL="@comment "
 .endif # !LIBRMATH_SLAVEPORT
 
 post-patch:
+.if !${PORT_OPTIONS:MMISSING}
+	@${REINPLACE_CMD} -e 's|logl(|(long double)logq((__float128)|' \
+		${WRKSRC}/src/nmath/dnbeta.c \
+		${WRKSRC}/src/nmath/pnbeta.c
+.endif
+	@${REINPLACE_CMD} -e \
+	'\|#include <math.h>|{x;s|^.*$$|#include ${LIBMH}|;H;x;}' \
+		${WRKSRC}/src/nmath/nmath.h
 	@${REINPLACE_CMD} -e '\|LIBS=|s|-lrt ||' \
+		-e '\|-lm[". ]|s|-lm|${LIBM}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/nmath/standalone/Makefile.in \
@@ -245,13 +282,20 @@ post-patch:
 		${WRKSRC}/src/extra/tzone/tzfile.h \
 		${WRKSRC}/src/scripts/javareconf
 .if !defined(LIBRMATH_SLAVEPORT)
-	@${RM} -rf  ${WRKSRC}/src/library/compiler/inst/po/compiler-zh_CN
-.if empty(PORT_OPTIONS:MNLS)
+.if !${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC}/src/library/Recommended; \
 	for tarfile in *.tgz *.tar.gz ; do \
 	${TAR} -czf temptgz --exclude='*/po/*' @$$tarfile ; \
 	${MV} temptgz $$tarfile ; \
 	done)
+.endif
+
+.if !${PORT_OPTIONS:MMISSING}
+pre-configure:
+	@if [ ! -f ${_GCC_RUNTIME}/libquadmath.a ] ; then \
+	${PRINTF} "\n\n\n%s\n\n\n" "libquadmath is not available for your\
+	compiler and architecture: please enable the MISSING option." ; \
+	exit 1 ; fi
 .endif
 
 .if defined(LIBR_SLAVEPORT)

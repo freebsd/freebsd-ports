@@ -1,11 +1,9 @@
-# New ports collection makefile for:	nnls
-# Date created:		2012-08-21
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nnls
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

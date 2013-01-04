@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-xtable
-# Date created:		2011-09-03
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xtable
 DISTVERSION=	1.7-0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

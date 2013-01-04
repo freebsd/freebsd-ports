@@ -1,12 +1,9 @@
-# New ports collection makefile for:	gpclib
-# Date created:		2009-03-27
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gpclib
 DISTVERSION=	1.5-3
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

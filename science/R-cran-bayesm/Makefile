@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-bayesm
-# Date created:				March 07, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bayesm
 PORTVERSION=	2.2.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
 

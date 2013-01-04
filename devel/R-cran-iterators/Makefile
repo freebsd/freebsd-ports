@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-iterators
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iterators
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

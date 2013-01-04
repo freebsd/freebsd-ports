@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-lmtest
-# Date created:				2012-02-07
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lmtest
 DISTVERSION=	0.9-30
+PORTREVISION=	1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

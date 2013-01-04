@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-pixmap
-# Date created:		2011-12-21
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pixmap
 DISTVERSION=	0.4-11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

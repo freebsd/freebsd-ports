@@ -1,13 +1,9 @@
-# New ports collection makefile for:	RSvgDevice
-# Date created:		14 April 2009
-# Whom:			David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	RSvgDevice
 PORTVERSION=	0.6.4.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

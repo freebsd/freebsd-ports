@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-psych
-# Date created:		2010-09-15
-# Whom:			Dan Rue <drue@therub.org>
-#
+# Created by: Dan Rue <drue@therub.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psych
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

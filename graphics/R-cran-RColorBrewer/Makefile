@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-RColorBrewer
-# Date created:		2011-09-10
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RColorBrewer
 DISTVERSION=	1.0-5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

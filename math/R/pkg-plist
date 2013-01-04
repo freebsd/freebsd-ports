@@ -128,6 +128,7 @@ lib/R/library/KernSmooth/html/R.css
 lib/R/library/KernSmooth/libs/KernSmooth.so
 %%NLS%%lib/R/library/KernSmooth/po/de/LC_MESSAGES/R-KernSmooth.mo
 %%NLS%%lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/R-KernSmooth.mo
+%%NLS%%lib/R/library/KernSmooth/po/pl/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/MASS/CITATION
 lib/R/library/MASS/DESCRIPTION
 lib/R/library/MASS/INDEX
@@ -157,6 +158,7 @@ lib/R/library/MASS/libs/MASS.so
 %%NLS%%lib/R/library/MASS/po/de/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/en@quot/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/fr/LC_MESSAGES/R-MASS.mo
+%%NLS%%lib/R/library/MASS/po/pl/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/scripts/ch01.R
 lib/R/library/MASS/scripts/ch02.R
 lib/R/library/MASS/scripts/ch03.R
@@ -205,12 +207,12 @@ lib/R/library/Matrix/doc/Introduction.R
 lib/R/library/Matrix/doc/Introduction.Rnw
 lib/R/library/Matrix/doc/Introduction.pdf
 lib/R/library/Matrix/doc/Matrix.bib
-lib/R/library/Matrix/doc/UFsparse/AMD.txt
-lib/R/library/Matrix/doc/UFsparse/CHOLMOD.txt
-lib/R/library/Matrix/doc/UFsparse/COLAMD.txt
-lib/R/library/Matrix/doc/UFsparse/SPQR.txt
-lib/R/library/Matrix/doc/UFsparse/UFconfig.txt
-lib/R/library/Matrix/doc/UFsparse/UserGuides.txt
+lib/R/library/Matrix/doc/SuiteSparse/AMD.txt
+lib/R/library/Matrix/doc/SuiteSparse/CHOLMOD.txt
+lib/R/library/Matrix/doc/SuiteSparse/COLAMD.txt
+lib/R/library/Matrix/doc/SuiteSparse/SPQR.txt
+lib/R/library/Matrix/doc/SuiteSparse/SuiteSparse_config.txt
+lib/R/library/Matrix/doc/SuiteSparse/UserGuides.txt
 lib/R/library/Matrix/doc/index.html
 lib/R/library/Matrix/doc/sparseModels.R
 lib/R/library/Matrix/doc/sparseModels.Rnw
@@ -239,6 +241,8 @@ lib/R/library/Matrix/libs/Matrix.so
 %%NLS%%lib/R/library/Matrix/po/de/LC_MESSAGES/R-Matrix.mo
 %%NLS%%lib/R/library/Matrix/po/en@quot/LC_MESSAGES/Matrix.mo
 %%NLS%%lib/R/library/Matrix/po/en@quot/LC_MESSAGES/R-Matrix.mo
+%%NLS%%lib/R/library/Matrix/po/pl/LC_MESSAGES/Matrix.mo
+%%NLS%%lib/R/library/Matrix/po/pl/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/test-tools-1.R
 lib/R/library/Matrix/test-tools-Matrix.R
 lib/R/library/Matrix/test-tools.R
@@ -272,6 +276,7 @@ lib/R/library/base/html/R.css
 %%NLS%%lib/R/library/base/po/it/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ja/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ko/LC_MESSAGES/R-base.mo
+%%NLS%%lib/R/library/base/po/nn/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/pl/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/pt_BR/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ru/LC_MESSAGES/R-base.mo
@@ -303,6 +308,7 @@ lib/R/library/boot/html/R.css
 %%NLS%%lib/R/library/boot/po/de/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/en@quot/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/fr/LC_MESSAGES/R-boot.mo
+%%NLS%%lib/R/library/boot/po/pl/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/ru/LC_MESSAGES/R-boot.mo
 lib/R/library/class/CITATION
 lib/R/library/class/DESCRIPTION
@@ -329,6 +335,7 @@ lib/R/library/class/libs/class.so
 %%NLS%%lib/R/library/class/po/de/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/en@quot/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/fr/LC_MESSAGES/R-class.mo
+%%NLS%%lib/R/library/class/po/pl/LC_MESSAGES/R-class.mo
 lib/R/library/cluster/CITATION
 lib/R/library/cluster/DESCRIPTION
 lib/R/library/cluster/INDEX
@@ -355,6 +362,7 @@ lib/R/library/cluster/html/R.css
 lib/R/library/cluster/libs/cluster.so
 %%NLS%%lib/R/library/cluster/po/de/LC_MESSAGES/R-cluster.mo
 %%NLS%%lib/R/library/cluster/po/en@quot/LC_MESSAGES/R-cluster.mo
+%%NLS%%lib/R/library/cluster/po/pl/LC_MESSAGES/R-cluster.mo
 lib/R/library/codetools/DESCRIPTION
 lib/R/library/codetools/INDEX
 lib/R/library/codetools/Meta/Rd.rds
@@ -396,6 +404,7 @@ lib/R/library/compiler/html/R.css
 %%NLS%%lib/R/library/compiler/po/en@quot/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/fr/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/ja/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/ko/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/pl/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/pt_BR/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/ru/LC_MESSAGES/R-compiler.mo
@@ -449,6 +458,8 @@ lib/R/library/foreign/libs/foreign.so
 %%NLS%%lib/R/library/foreign/po/en@quot/LC_MESSAGES/foreign.mo
 %%NLS%%lib/R/library/foreign/po/fr/LC_MESSAGES/R-foreign.mo
 %%NLS%%lib/R/library/foreign/po/fr/LC_MESSAGES/foreign.mo
+%%NLS%%lib/R/library/foreign/po/pl/LC_MESSAGES/R-foreign.mo
+%%NLS%%lib/R/library/foreign/po/pl/LC_MESSAGES/foreign.mo
 lib/R/library/grDevices/DESCRIPTION
 lib/R/library/grDevices/INDEX
 lib/R/library/grDevices/Meta/Rd.rds
@@ -763,6 +774,7 @@ lib/R/library/methods/libs/methods.so
 %%NLS%%lib/R/library/methods/po/ja/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/methods/po/ja/LC_MESSAGES/methods.mo
 %%NLS%%lib/R/library/methods/po/ko/LC_MESSAGES/R-methods.mo
+%%NLS%%lib/R/library/methods/po/ko/LC_MESSAGES/methods.mo
 %%NLS%%lib/R/library/methods/po/pl/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/methods/po/pl/LC_MESSAGES/methods.mo
 %%NLS%%lib/R/library/methods/po/pt_BR/LC_MESSAGES/R-methods.mo
@@ -828,6 +840,8 @@ lib/R/library/nlme/mlbook/ch05.R
 %%NLS%%lib/R/library/nlme/po/en@quot/LC_MESSAGES/nlme.mo
 %%NLS%%lib/R/library/nlme/po/fr/LC_MESSAGES/R-nlme.mo
 %%NLS%%lib/R/library/nlme/po/fr/LC_MESSAGES/nlme.mo
+%%NLS%%lib/R/library/nlme/po/pl/LC_MESSAGES/R-nlme.mo
+%%NLS%%lib/R/library/nlme/po/pl/LC_MESSAGES/nlme.mo
 lib/R/library/nlme/scripts/ch01.R
 lib/R/library/nlme/scripts/ch02.R
 lib/R/library/nlme/scripts/ch03.R
@@ -861,6 +875,7 @@ lib/R/library/nnet/libs/nnet.so
 %%NLS%%lib/R/library/nnet/po/de/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/fr/LC_MESSAGES/R-nnet.mo
+%%NLS%%lib/R/library/nnet/po/pl/LC_MESSAGES/R-nnet.mo
 lib/R/library/parallel/DESCRIPTION
 lib/R/library/parallel/INDEX
 lib/R/library/parallel/Meta/Rd.rds
@@ -889,6 +904,8 @@ lib/R/library/parallel/libs/parallel.so
 %%NLS%%lib/R/library/parallel/po/en@quot/LC_MESSAGES/parallel.mo
 %%NLS%%lib/R/library/parallel/po/fr/LC_MESSAGES/R-parallel.mo
 %%NLS%%lib/R/library/parallel/po/fr/LC_MESSAGES/parallel.mo
+%%NLS%%lib/R/library/parallel/po/ko/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/parallel/po/ko/LC_MESSAGES/parallel.mo
 %%NLS%%lib/R/library/parallel/po/pl/LC_MESSAGES/R-parallel.mo
 %%NLS%%lib/R/library/parallel/po/pl/LC_MESSAGES/parallel.mo
 %%NLS%%lib/R/library/parallel/po/ru/LC_MESSAGES/R-parallel.mo
@@ -924,6 +941,8 @@ lib/R/library/rpart/libs/rpart.so
 %%NLS%%lib/R/library/rpart/po/en@quot/LC_MESSAGES/rpart.mo
 %%NLS%%lib/R/library/rpart/po/fr/LC_MESSAGES/R-rpart.mo
 %%NLS%%lib/R/library/rpart/po/fr/LC_MESSAGES/rpart.mo
+%%NLS%%lib/R/library/rpart/po/pl/LC_MESSAGES/R-rpart.mo
+%%NLS%%lib/R/library/rpart/po/pl/LC_MESSAGES/rpart.mo
 %%NLS%%lib/R/library/rpart/po/ru/LC_MESSAGES/R-rpart.mo
 %%NLS%%lib/R/library/rpart/po/ru/LC_MESSAGES/rpart.mo
 lib/R/library/spatial/CITATION
@@ -952,6 +971,7 @@ lib/R/library/spatial/libs/spatial.so
 %%NLS%%lib/R/library/spatial/po/de/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/fr/LC_MESSAGES/R-spatial.mo
+%%NLS%%lib/R/library/spatial/po/pl/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/ppdata/agter.dat
 lib/R/library/spatial/ppdata/caveolae.dat
 lib/R/library/spatial/ppdata/cells.dat
@@ -1173,6 +1193,7 @@ lib/R/library/tcltk/html/R.css
 %%NLS%%lib/R/library/tcltk/po/ja/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ja/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ko/LC_MESSAGES/R-tcltk.mo
+%%NLS%%lib/R/library/tcltk/po/ko/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/pl/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/pl/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/pt_BR/LC_MESSAGES/R-tcltk.mo
@@ -1574,6 +1595,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/splines/Meta
 @dirrm lib/R/library/splines
 @dirrm lib/R/library/spatial/ppdata
+%%NLS%%@dirrm lib/R/library/spatial/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/spatial/po/pl
 %%NLS%%@dirrm lib/R/library/spatial/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/spatial/po/fr
 %%NLS%%@dirrm lib/R/library/spatial/po/en@quot/LC_MESSAGES
@@ -1589,6 +1612,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/spatial
 %%NLS%%@dirrm lib/R/library/rpart/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/rpart/po/ru
+%%NLS%%@dirrm lib/R/library/rpart/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/rpart/po/pl
 %%NLS%%@dirrm lib/R/library/rpart/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/rpart/po/fr
 %%NLS%%@dirrm lib/R/library/rpart/po/en@quot/LC_MESSAGES
@@ -1609,6 +1634,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/parallel/po/ru
 %%NLS%%@dirrm lib/R/library/parallel/po/pl/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/parallel/po/pl
+%%NLS%%@dirrm lib/R/library/parallel/po/ko/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/parallel/po/ko
 %%NLS%%@dirrm lib/R/library/parallel/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/parallel/po/fr
 %%NLS%%@dirrm lib/R/library/parallel/po/en@quot/LC_MESSAGES
@@ -1625,6 +1652,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/parallel/R
 @dirrm lib/R/library/parallel/Meta
 @dirrm lib/R/library/parallel
+%%NLS%%@dirrm lib/R/library/nnet/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/nnet/po/pl
 %%NLS%%@dirrm lib/R/library/nnet/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/nnet/po/fr
 %%NLS%%@dirrm lib/R/library/nnet/po/en@quot/LC_MESSAGES
@@ -1639,6 +1668,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/nnet/Meta
 @dirrm lib/R/library/nnet
 @dirrm lib/R/library/nlme/scripts
+%%NLS%%@dirrm lib/R/library/nlme/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/nlme/po/pl
 %%NLS%%@dirrm lib/R/library/nlme/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/nlme/po/fr
 %%NLS%%@dirrm lib/R/library/nlme/po/en@quot/LC_MESSAGES
@@ -1797,6 +1828,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/grDevices/R
 @dirrm lib/R/library/grDevices/Meta
 @dirrm lib/R/library/grDevices
+%%NLS%%@dirrm lib/R/library/foreign/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/foreign/po/pl
 %%NLS%%@dirrm lib/R/library/foreign/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/foreign/po/fr
 %%NLS%%@dirrm lib/R/library/foreign/po/en@quot/LC_MESSAGES
@@ -1824,6 +1857,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/compiler/po/pt_BR
 %%NLS%%@dirrm lib/R/library/compiler/po/pl/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/compiler/po/pl
+%%NLS%%@dirrm lib/R/library/compiler/po/ko/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/ko
 %%NLS%%@dirrm lib/R/library/compiler/po/ja/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/compiler/po/ja
 %%NLS%%@dirrm lib/R/library/compiler/po/fr/LC_MESSAGES
@@ -1845,6 +1880,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/codetools/R
 @dirrm lib/R/library/codetools/Meta
 @dirrm lib/R/library/codetools
+%%NLS%%@dirrm lib/R/library/cluster/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/cluster/po/pl
 %%NLS%%@dirrm lib/R/library/cluster/po/en@quot/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/cluster/po/en@quot
 %%NLS%%@dirrm lib/R/library/cluster/po/de/LC_MESSAGES
@@ -1857,6 +1894,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/cluster/R
 @dirrm lib/R/library/cluster/Meta
 @dirrm lib/R/library/cluster
+%%NLS%%@dirrm lib/R/library/class/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/class/po/pl
 %%NLS%%@dirrm lib/R/library/class/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/class/po/fr
 %%NLS%%@dirrm lib/R/library/class/po/en@quot/LC_MESSAGES
@@ -1872,6 +1911,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/class
 %%NLS%%@dirrm lib/R/library/boot/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/boot/po/ru
+%%NLS%%@dirrm lib/R/library/boot/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/boot/po/pl
 %%NLS%%@dirrm lib/R/library/boot/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/boot/po/fr
 %%NLS%%@dirrm lib/R/library/boot/po/en@quot/LC_MESSAGES
@@ -1895,6 +1936,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/base/po/pt_BR
 %%NLS%%@dirrm lib/R/library/base/po/pl/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/base/po/pl
+%%NLS%%@dirrm lib/R/library/base/po/nn/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/base/po/nn
 %%NLS%%@dirrm lib/R/library/base/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/base/po/ko
 %%NLS%%@dirrm lib/R/library/base/po/ja/LC_MESSAGES
@@ -1916,23 +1959,27 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/base/R
 @dirrm lib/R/library/base/Meta
 @dirrm lib/R/library/base
+%%NLS%%@dirrm lib/R/library/Matrix/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/Matrix/po/pl
 %%NLS%%@dirrm lib/R/library/Matrix/po/en@quot/LC_MESSAGES
-%%NLS%%@dirrm lib/R/library/Matrix/po/en@quot/
+%%NLS%%@dirrm lib/R/library/Matrix/po/en@quot
 %%NLS%%@dirrm lib/R/library/Matrix/po/de/LC_MESSAGES
-%%NLS%%@dirrm lib/R/library/Matrix/po/de/
+%%NLS%%@dirrm lib/R/library/Matrix/po/de
 %%NLS%%@dirrm lib/R/library/Matrix/po
 @dirrm lib/R/library/Matrix/libs
 @dirrm lib/R/library/Matrix/include
 @dirrm lib/R/library/Matrix/html
 @dirrm lib/R/library/Matrix/help
 @dirrm lib/R/library/Matrix/external
-@dirrm lib/R/library/Matrix/doc/UFsparse
+@dirrm lib/R/library/Matrix/doc/SuiteSparse
 @dirrm lib/R/library/Matrix/doc
 @dirrm lib/R/library/Matrix/data
 @dirrm lib/R/library/Matrix/R
 @dirrm lib/R/library/Matrix/Meta
 @dirrm lib/R/library/Matrix
 @dirrm lib/R/library/MASS/scripts
+%%NLS%%@dirrm lib/R/library/MASS/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/MASS/po/pl
 %%NLS%%@dirrm lib/R/library/MASS/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/MASS/po/fr
 %%NLS%%@dirrm lib/R/library/MASS/po/en@quot/LC_MESSAGES
@@ -1947,6 +1994,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/MASS/R
 @dirrm lib/R/library/MASS/Meta
 @dirrm lib/R/library/MASS
+%%NLS%%@dirrm lib/R/library/KernSmooth/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/KernSmooth/po/pl
 %%NLS%%@dirrm lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/KernSmooth/po/en@quot
 %%NLS%%@dirrm lib/R/library/KernSmooth/po/de/LC_MESSAGES
@@ -1958,7 +2007,7 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/KernSmooth/R
 @dirrm lib/R/library/KernSmooth/Meta
 @dirrm lib/R/library/KernSmooth
-@dirrm lib/R/library
+@dirrmtry lib/R/library
 @dirrmtry lib/R/lib
 @dirrm lib/R/include/R_ext
 @dirrm lib/R/include

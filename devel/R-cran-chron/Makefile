@@ -1,12 +1,9 @@
-# New ports collection makefile for:	chron
-# Date created:		2012-08-22
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chron
 DISTVERSION=	2.3-43
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

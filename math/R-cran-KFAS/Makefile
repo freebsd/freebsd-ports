@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-KFAS
-# Date created:		2012-01-04
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	KFAS
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

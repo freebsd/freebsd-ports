@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-gsubfn
-# Date created:		2012-08-21
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gsubfn
 DISTVERSION=	0.6-4
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

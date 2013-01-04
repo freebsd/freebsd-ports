@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-quantmod
-# Date created:		2011-10-30
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quantmod
 DISTVERSION=	0.3-17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-vars
-# Date created:		2012-02-05
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vars
 DISTVERSION=	1.5-0
+PORTREVISION=	1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
