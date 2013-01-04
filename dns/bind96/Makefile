@@ -10,6 +10,8 @@ DISTNAME=	bind-${ISCVERSION}
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and threads
 
+LICENSE=	ISCL
+
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
 ISCVERSION=	9.6-ESV-R8
 
