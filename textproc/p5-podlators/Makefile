@@ -1,12 +1,8 @@
-# New ports collection makefile for:	podlators
-# Date created:	   08 April 2002
-# Whom:		   Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	podlators
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Pod
