@@ -1,13 +1,9 @@
-# New ports collection makefile for:	terminator
-# Date created:		2008-03-14
-# Whom:			Thomas Hurst <tom@hur.st>
-#
+# Created by: Thomas Hurst <tom@hur.st>
 # $FreeBSD$
-#
 
 PORTNAME=	terminator
 PORTVERSION=	0.96
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 python
 MASTER_SITES=	http://launchpadlibrarian.net/80778747/ \
 		http://hur.st/mirror/terminator/
@@ -16,6 +12,10 @@ MAINTAINER=	tom@hur.st
 COMMENT=	Multiple GNOME terminals in one window
 
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:${PORTSDIR}/devel/py-notify \
+		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:${PORTSDIR}/x11/keybinder \
+		${PYTHON_PKGNAMEPREFIX}vte>=0:${PORTSDIR}/x11-toolkits/py-vte
 
 OPTIONS_DEFINE=	NLS GCONF
 GCONF_DESC=	Use GNOME Terminal settings
@@ -40,7 +40,6 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
 .if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	pygnome2
 .endif
