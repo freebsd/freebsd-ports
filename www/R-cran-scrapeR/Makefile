@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-scrapeR
-# Date created:		2011-08-28
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scrapeR
 PORTVERSION=	0.1.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

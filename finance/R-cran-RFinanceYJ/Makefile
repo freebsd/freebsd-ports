@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-RFinanceYJ
-# Date created:		2011-08-06
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RFinanceYJ
 PORTVERSION=	0.1.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-shape
-# Date created:		2011-09-09
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	shape
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

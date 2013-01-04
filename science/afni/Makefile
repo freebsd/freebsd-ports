@@ -1,10 +1,5 @@
-############################################################################
-# Ports collection Makefile for:   afni
-# Date created:        11 Jan 2005
-# Whom:                Jason W. Bacon <jwbacon@tds.net>
-#
+# Created by: Jason W. Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 ############################################################################
 # http://www.neuro.mcw.edu/Ports has the latest source distribution from
@@ -16,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/

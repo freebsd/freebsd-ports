@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-RSQLite
-# Date created:		2012-08-21
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RSQLite
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

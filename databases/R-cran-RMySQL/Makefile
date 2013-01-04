@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-RMySQL
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RMySQL
 DISTVERSION=	0.9-3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

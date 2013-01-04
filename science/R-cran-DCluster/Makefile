@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-DCluster
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DCluster
 DISTVERSION=	0.2-5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

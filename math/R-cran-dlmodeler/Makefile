@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-dlmodeler
-# Date created:		2012-07-22
-# Whom:			Cyrille Szymanski <cnszym@gmail.com>
-#
+# Created by: Cyrille Szymanski <cnszym@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dlmodeler
 DISTVERSION=	1.2-1
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

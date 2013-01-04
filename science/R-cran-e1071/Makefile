@@ -1,12 +1,9 @@
-# New ports collection makefile for:	R-cran-e1071
-# Date created:		2011-09-03
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	e1071
 DISTVERSION=	1.6-1
+PORTREVISION=	1
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

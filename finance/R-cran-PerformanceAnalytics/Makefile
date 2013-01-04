@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-PerformanceAnalytics
-# Date created:		2012-04-19
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PerformanceAnalytics
 PORTVERSION=	1.0.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

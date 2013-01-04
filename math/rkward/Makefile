@@ -1,13 +1,9 @@
-# New ports collection makefile for:	RKWard
-# Date created:        19 April 2006
-# Whom:                thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	rkward
 DISTVERSION=	0.4.9a
-PORTREVISION=	17
+PORTREVISION=	18
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Historical_Releases/0.4.x_and_earlier/0.4.9a%20%28KDE3%29

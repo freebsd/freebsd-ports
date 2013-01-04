@@ -1,13 +1,9 @@
-# New ports collection makefile for:	R-cran-twitteR
-# Date created:		2011-09-04
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	twitteR
 PORTVERSION=	0.99.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
