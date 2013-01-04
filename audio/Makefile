@@ -610,6 +610,7 @@
     SUBDIR += py-karaoke
     SUBDIR += py-mad
     SUBDIR += py-mpd
+    SUBDIR += py-mpd2
     SUBDIR += py-musicbrainz2
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
