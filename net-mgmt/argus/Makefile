@@ -15,6 +15,10 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A generic IP network transaction auditing tool
 
+
+DEPRECATED=	Using of this branch of argus is discouraged. Please migrate to net-mgmt/argus3
+EXPIRATION_DATE=2013-02-05
+
 PORTSCOUT=	ignore:1	# This is the last version of 2.0.X branch
 
 CONFLICTS=	argus-3* argus-sasl-3*
