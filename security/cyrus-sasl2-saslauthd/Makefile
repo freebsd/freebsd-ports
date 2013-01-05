@@ -76,6 +76,7 @@ CONFIGURE_ARGS+=--enable-httpform
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
+LDFLAGS+=	"-R${KRB5_HOME}/lib"
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
 .elif !defined(WITHOUT_GSSAPI) && exists(/usr/lib/libkrb5.a)
