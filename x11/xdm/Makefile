@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xdm
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.11
@@ -24,11 +19,12 @@ MAN1=		xdm.1
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config
 
-OPTIONS=	XDMSHELL "Install xdmshell" off
+OPTIONS_DEFINE=	XDMSHELL
+XDMSHELL_DESC=	Install xdmshell
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XDMSHELL)
+.if ${PORT_OPTIONS:MXDMSHELL}
 CONFIGURE_ARGS+=--enable-xdmshell
 MAN1+=		xdmshell.1
 PLIST_SUB+=	XDMSHELL=""

@@ -1,9 +1,4 @@
-# New ports collection makefile for:    xorg-apps
-# Date created:				Jun 22 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xorg-apps
 PORTVERSION=	7.5.2
@@ -35,13 +30,15 @@ do-install:
 		${TOUCH} ${PREFIX}/libdata/xorg/apps
 
 .for comp in ${COMPONENTS}
-OPTIONS+=	${comp:C/:.*//:C/.*\///:U} "Install ${comp:C/:.*//:C/.*\///} application" on
+OPTIONS_DEFINE+=	${comp:C/:.*//:C/.*\///:U}
+OPTIONS_DEFAULT+=	${comp:C/:.*//:C/.*\///:U}
+${comp:C/:.*//:C/.*\///:U}_DESC=	Install ${comp:C/:.*//:C/.*\///} application
 .endfor
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for comp in ${COMPONENTS}
-. if !defined(WITHOUT_${comp:C/:.*//:C/.*\///:U})
+. if ! ${PORT_OPTIONS:M${comp:C/:.*//:C/.*\///:U}}
 .  if ${comp:M:}==""
 port=${comp}
 check=${comp:C/.*\///} # doesn't work
@@ -56,4 +53,4 @@ RUN_DEPENDS:=	${RUN_DEPENDS} ${check}:${PORTSDIR}/${port}
 . endif
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
