@@ -15,6 +15,9 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Client programs for the argus IP network transaction auditing tool
 
+DEPRECATED=	Using of this branch of argus-clients is discouraged. Please migrate to net-mgmt/argus3-clients
+EXPIRATION_DATE=2013-02-05
+
 PORTSCOUT=	ignore:1	# This is the last version of 2.0.x branch
 
 CONFLICTS=	argus-clients-3* argus-clients-sasl-3*
