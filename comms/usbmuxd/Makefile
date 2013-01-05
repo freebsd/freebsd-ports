@@ -1,7 +1,3 @@
-# New ports collection makefile for:	usbmuxd
-# Date created:				10 June 2010
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	usbmuxd
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to an iPhone/iPod Touch
 
-LIB_DEPENDS=	plist.1:${PORTSDIR}/devel/libplist
+LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -22,12 +18,14 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS README README.devel
 
-OPTIONS=	INOTIFY	"Use inotify instead of polling (saves energy)" off
+OPTIONS_DEFINE=	INOTIFY
+
+INOTIFY_DESC=	Use inotify instead of polling (saves energy)
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_INOTIFY)
-LIB_DEPENDS+=	inotify.0:${PORTSDIR}/devel/libinotify
+.if ${PORT_OPTIONS:MINOTIFY}
+LIB_DEPENDS+=	inotify:${PORTSDIR}/devel/libinotify
 .else
 CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=FALSE
 .endif
@@ -50,7 +48,7 @@ post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py \
 		${DATADIR}/
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

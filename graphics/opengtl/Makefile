@@ -1,7 +1,3 @@
-# New ports collection makefile for:	opengtl
-# Date created:				28 September 2009
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	opengtl
@@ -14,12 +10,9 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Graphics Transformation Languages
 
 LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.1.so:${PORTSDIR}/devel/llvm
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
@@ -28,13 +21,16 @@ USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	SHIVA	"Install filters and generators" on
+OPTIONS_DEFINE=	SHIVA
+OPTIONS_DEFAULT=SHIVA
+
+SHIVA_DESC=	Install filters and generators
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_SHIVA)
+.if ${PORT_OPTIONS:MSHIVA}
 RUN_DEPENDS+=	${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:${PORTSDIR}/graphics/shiva-collections
 .endif
 

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	speech-dispatcher
-# Date created:				8 December 2009
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	speech-dispatcher
@@ -16,8 +12,8 @@ COMMENT=	Common interface to speech synthesis
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	dotconf:${PORTSDIR}/devel/dotconf \
+		sndfile:${PORTSDIR}/audio/libsndfile
 
 # gnomehier is required because of share/sounds directory.
 USE_GNOME=	glib20 gnomehier pkgconfig
@@ -40,16 +36,14 @@ PLIST_SUB+=	ETCFILES="${ETCFILES}"
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
-INFO=		spd-say ${PORTNAME} ssip
+INFO=		spd-say speech-dispatcher ssip
 
-OPTIONS=	ALSA	"ALSA support" off \
-		ESPEAK	"eSpeak output module" on \
-		FESTIVAL	"Festival output module" off \
-		FLITE	"Festival Lite output module" off \
-		LIBAO	"libao support" off \
-		NAS	"Network Audio System support" off \
-		PULSEAUDIO	"PulseAudio support" off \
-		PYTHON	"Python support" off
+OPTIONS_DEFINE=	ALSA AO ESPEAK FESTIVAL FLITE NAS PULSEAUDIO PYTHON
+OPTIONS_DEFAULT=ESPEAK
+
+ESPEAK_DESC=	eSpeak output module
+FESTIVAL_DESC=	Festival output module
+FLITE_DESC=	Festival Lite output module
 
 .include <bsd.port.options.mk>
 
@@ -57,64 +51,64 @@ OPTIONS=	ALSA	"ALSA support" off \
 CFLAGS+=	-fPIC
 .endif
 
-.ifdef(WITH_ALSA)
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
-CONFIGURE_ARGS+=	--with-alsa
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=--with-alsa
 .else
-CONFIGURE_ARGS+=	--without-alsa
+CONFIGURE_ARGS+=--without-alsa
 .endif
 
-.ifndef(WITHOUT_ESPEAK)
-LIB_DEPENDS+=	espeak.1:${PORTSDIR}/audio/espeak
-CONFIGURE_ARGS+=	--with-espeak
+.if ${PORT_OPTIONS:MAO}
+LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
+CONFIGURE_ARGS+=--with-libao
+.else
+CONFIGURE_ARGS+=--without-libao
+.endif
+
+.if ${PORT_OPTIONS:MESPEAK}
+LIB_DEPENDS+=	espeak:${PORTSDIR}/audio/espeak
+CONFIGURE_ARGS+=--with-espeak
 PLIST_SUB+=	ESPEAK=""
 .else
-CONFIGURE_ARGS+=	--without-espeak
+CONFIGURE_ARGS+=--without-espeak
 PLIST_SUB+=	ESPEAK="@comment "
 .endif
 
-.ifdef(WITH_FESTIVAL)
+.if ${PORT_OPTIONS:MFESTIVAL}
 RUN_DEPENDS+=	festival:${PORTSDIR}/audio/festival \
 		${LOCALBASE}/share/festival/lib/${PORTNAME}.scm:${PORTSDIR}/audio/festival-freebsoft-utils
 .endif
 
-.ifdef(WITH_FLITE)
+.if ${PORT_OPTIONS:MFLITE}
 BUILD_DEPENDS+=	flite:${PORTSDIR}/audio/flite
 RUN_DEPENDS+=	flite:${PORTSDIR}/audio/flite
-CONFIGURE_ARGS+=	--with-flite
+CONFIGURE_ARGS+=--with-flite
 PLIST_SUB+=	FLITE=""
 .else
-CONFIGURE_ARGS+=	--without-flite
+CONFIGURE_ARGS+=--without-flite
 PLIST_SUB+=	FLITE="@comment "
 .endif
 
-.ifdef(WITH_LIBAO)
-LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
-CONFIGURE_ARGS+=	--with-libao
+.if ${PORT_OPTIONS:MNAS}
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+CONFIGURE_ARGS+=--with-nas
 .else
-CONFIGURE_ARGS+=	--without-libao
+CONFIGURE_ARGS+=--without-nas
 .endif
 
-.ifdef(WITH_NAS)
-LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
-CONFIGURE_ARGS+=	--with-nas
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=--with-pulse
 .else
-CONFIGURE_ARGS+=	--without-nas
+CONFIGURE_ARGS+=--without-pulse
 .endif
 
-.if defined(WITH_PULSEAUDIO) && ${OSVERSION} >= 700041
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--with-pulse
-.else
-CONFIGURE_ARGS+=	--without-pulse
-.endif
-
-.ifdef(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	2.5+
-CONFIGURE_ARGS+=	--enable-python
+CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""
 .else
-CONFIGURE_ARGS+=	--disable-python
+CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
@@ -137,7 +131,7 @@ post-install:
 		${CP} -p ${ETCDIR}/${f}.sample ${ETCDIR}/${f}; \
 	fi
 .endfor
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
