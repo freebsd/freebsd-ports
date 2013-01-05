@@ -1,3 +1,4 @@
+include/suitesparse/SuiteSparse_config.h
 include/suitesparse/SuiteSparseQR.hpp
 include/suitesparse/SuiteSparseQR_C.h
 include/suitesparse/SuiteSparseQR_definitions.h
@@ -61,6 +62,7 @@ include/suitesparse/umfpack_timer.h
 include/suitesparse/umfpack_transpose.h
 include/suitesparse/umfpack_triplet_to_col.h
 include/suitesparse/umfpack_wsolve.h
+include/suitesparse/umf_config.h
 include/ufsparse
 @dirrm include/suitesparse
 lib/libamd.a
