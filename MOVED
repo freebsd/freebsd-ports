@@ -3996,3 +3996,4 @@ mail/horde4-turba|mail/horde-turba|2012-12-18|Move horde4-* apps to horde-*
 mail/horde4-webmail|mail/horde-webmail|2012-12-18|Move horde4-* apps to horde-*
 textproc/hs-xml2html||2012-12-20|Removed: this package is obsolete
 sysutils/makefs||2012-12-21|Has expired: Part of base in an earlier version for every supported FreeBSD version
+textproc/docproj-jadetex||2013-01-03|Removed: Deprecated in favor of textproc/docproj
