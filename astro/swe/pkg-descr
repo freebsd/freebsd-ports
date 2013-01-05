@@ -1,5 +1,5 @@
 The SWISS EPHEMERIS is the high precision ephemeris
-developed by Astrodienst, largely based upon the DE406 
+developed by Astrodienst, largely based upon the DE406
 ephemeris from NASA's JPL.
 
 Developers can license the Ephemeris library.Ephemeris
@@ -9,4 +9,4 @@ ephemerides, containing 19'200 print pages in PDF quality.
 The Swiss Ephemeris is available under a dual licensing
 model: GPL2 or Swiss Ephemeris Professional License.
 
-WWW:   http://www.astro.com/swisseph/
+WWW: http://www.astro.com/swisseph/
