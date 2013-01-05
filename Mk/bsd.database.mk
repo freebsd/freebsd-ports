@@ -111,15 +111,19 @@ MYSQL51_LIBVER=		16
 MYSQL53_LIBVER=		16
 MYSQL55_LIBVER=		18
 MYSQL55p_LIBVER=	18
+MYSQL55m_LIBVER=	18
 MYSQL56p_LIBVER=	18
 
 # Setting/finding MySQL version we want.
 .if exists(${LOCALBASE}/bin/mysql)
 _MYSQL!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
 _PERCONA!=	${LOCALBASE}/bin/mysql --version | ${GREP} Percona | wc -l
+_MARIADB!=	${LOCALBASE}/bin/mysql --version | ${GREP} MariaDB | wc -l
 
 .if ${_PERCONA} == 1
 _MYSQL_VER=	${_MYSQL}p
+.elif ${_MARIADB} == 1
+_MYSQL_VER=	${_MYSQL}m
 .else
 _MYSQL_VER=	${_MYSQL}
 .endif
@@ -152,6 +156,9 @@ _MYSQL_SERVER=	databases/mariadb-server
 .elif (${MYSQL_VER} == "55p")
 _MYSQL_CLIENT=	databases/percona55-client
 _MYSQL_SERVER=	databases/percona55-server
+.elif (${MYSQL_VER} == "55m")
+_MYSQL_CLIENT=	databases/mariadb55-client
+_MYSQL_SERVER=	databases/mariadb55-server
 .elif (${MYSQL_VER} == "56p")
 _MYSQL_CLIENT=	databases/percona56-client
 _MYSQL_SERVER=	databases/percona56-server

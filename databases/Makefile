@@ -188,6 +188,8 @@
     SUBDIR += mariadb-client
     SUBDIR += mariadb-scripts
     SUBDIR += mariadb-server
+    SUBDIR += mariadb55-client
+    SUBDIR += mariadb55-server
     SUBDIR += mdbtools
     SUBDIR += mdcached
     SUBDIR += memcached
