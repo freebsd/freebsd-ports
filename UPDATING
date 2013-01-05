@@ -5,6 +5,38 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120103:
+  AFFECTS: users of textproc/docproj*
+  AUTHOR: doceng@FreeBSD.org
+
+  textproc/docproj no longer requires WITH_JADETEX to be set to 'yes' or
+  'no', and by default, will enable the JADETEX dependencies.
+
+  The textproc/docproj-jadetex port has been removed as a result of this
+  change.
+
+  Users that have installed textproc/docproj and have set
+  WITH_JADETEX=no during compile time should update the package origin
+  to use textproc/docproj-nojadetex:
+
+  # portmaster -o textproc/docproj textproc/docproj-nojadetex
+  or
+  # portupgrade -fo textproc/docproj textproc/docproj-nojadetex
+  or
+  # pkg set -o textproc/docproj-nojadetex:textproc/docproj
+
+  Users that have installed textproc/docproj-jadetex should update the
+  package origin to use the textproc/docproj port:
+
+  # portmaster -o textproc/docproj textproc/docproj-jadetex
+  or
+  # portupgrade -fo textproc/docproj textproc/docproj-jadetex
+  or
+  # pkg set -o textproc/docproj-jadetex:textproc/docproj
+
+  Users that have installed textproc/docproj and have set
+  WITH_JADETEX=yes will not need to make any changes.
+
 20130103:
   AFFECTS: users of audio/baresip
   AUTHOR: crees@FreeBSD.org

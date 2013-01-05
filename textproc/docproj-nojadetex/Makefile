@@ -1,14 +1,9 @@
-# New ports collection makefile for:   docproj-nojadetex
-# Date created:        25 July 2002
-# Whom:                Cyrille Lefevre <cyrille.lefevre@laposte.net>
-#
+# Created by: Cyrille Lefevre <cyrille.lefevre@laposte.net>
 # $FreeBSD$
 #
 
 PKGNAMESUFFIX=	-nojadetex
-WITH_JADETEX=	no
-
-MAINTAINER=	cyrille.lefevre@laposte.net
+WITHOUT_JADETEX=yes
 
 MASTERDIR=	${.CURDIR}/../docproj
 

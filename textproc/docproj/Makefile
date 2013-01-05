@@ -1,13 +1,10 @@
-# New ports collection makefile for:   docproj
-# Date created:        27 June 1998
-# Whom:                Nik Clayton <nik@freebsd.org>
-#
+# Created by: Nik Clayton <nik@freebsd.org>
 # $FreeBSD$
 #
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -29,7 +26,6 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		tidy:${PORTSDIR}/www/tidy-lib \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		peps:${PORTSDIR}/graphics/peps \
-		svn:${PORTSDIR}/devel/subversion \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${LOCALBASE}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
@@ -41,36 +37,41 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
 
+OPTIONS_DEFINE=		JADETEX OPENJADE CJK SVN
+JADETEX_DESC=		Support building additional document formats (PDF)
+OPENJADE_DESC=		Install textproc/openjade instead of textproc/jade
+CJK_DESC=		CJK (Simplified Chinese Language) support
+SVN_DESC=		Subversion support (required to check out sources)
+OPTIONS_DEFAULT=	OPENJADE CJK SVN
+
+.if !defined(WITHOUT_JADETEX) || defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT+=	JADETEX
+.endif
+
+.include <bsd.port.options.mk>
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENJADE) || ${ARCH} != "i386"
+.if ${PORT_OPTIONS:MOPENJADE} || ${ARCH} != "i386"
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade \
 		onsgmls:${PORTSDIR}/textproc/opensp
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 .endif
 
-.if defined(JADETEX)
-WITH_JADETEX=	${JADETEX}
-.endif
-WITH_JADETEX?=
-
-.if defined(PACKAGE_BUILDING)
-WITH_JADETEX=	yes
+.if ${PORT_OPTIONS:MSVN}
+RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
-.if empty(WITH_JADETEX)
-IGNORE=		user must set WITH_JADETEX variable to 'yes' or 'no'
-.endif
-.if defined(WITH_JADETEX) && ${WITH_JADETEX} == yes
+.if ${PORT_OPTIONS:MJADETEX}
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex
-.if !defined(WITHOUT_CJK)
+.if ${PORT_OPTIONS:MCJK}
 RUN_DEPENDS+=	cjktexsty:${PORTSDIR}/chinese/docproj
 .endif
 .endif
 
-.if !defined(WITHOUT_CJK)
+.if ${PORT_OPTIONS:MCJK}
 RUN_DEPENDS+=	html2text:${PORTSDIR}/textproc/html2text
 .endif
 
@@ -88,19 +89,11 @@ DEPENDS_ARGS+=	BATCH=yes
 DEPENDS_ARGS+=	WITHOUT_X11=${WITHOUT_X11}
 .endif
 
-message-jadetex:
-	@${CAT} ${FILESDIR}/JADETEX
-	@${FALSE}
-
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
 # (XXX: incomplete yet)
 minimaldocports:
 	@${ECHO_CMD} "MINIMALDOCPORTS= \\"
 	@${MAKE} all-depends-list | ${SED} -e 's,^${PORTSDIR}/,	,' -e 's,$$, \\,'
-
-.if empty(WITH_JADETEX) && !make(deinstall)
-pre-everything:: message-jadetex
-.endif
 
 do-install:	# empty
 
