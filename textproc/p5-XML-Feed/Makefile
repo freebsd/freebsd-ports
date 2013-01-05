@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-Feed
-# Date created:				Jul 31 2004
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
