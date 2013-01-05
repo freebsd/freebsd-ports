@@ -2,6 +2,7 @@ sbin/serviiod
 bin/serviio-console
 %%JAVAJARDIR%%/serviio/commons-codec.jar
 %%JAVAJARDIR%%/serviio/commons-io.jar
+%%JAVAJARDIR%%/serviio/commons-lang.jar
 %%JAVAJARDIR%%/serviio/concurrent.jar
 %%JAVAJARDIR%%/serviio/derby.jar
 %%JAVAJARDIR%%/serviio/freemarker.jar
@@ -36,5 +37,6 @@ bin/serviio-console
 @unexec cmp %D/%%ETCDIR%%/console-log4j.properties %D/%%ETCDIR%%/console-log4j.dist.properties && rm -f %D/%%ETCDIR%%/console-log4j.properties || echo Modified console-log4j.properties remains in %D/%%ETCDIR%%
 %%ETCDIR%%/profiles.dist.xml
 %%ETCDIR%%/log4j.dist.xml
+%%ETCDIR%%/application-profiles.dist.xml
 %%ETCDIR%%/console-log4j.dist.properties
 @dirrmtry %%ETCDIR%%
