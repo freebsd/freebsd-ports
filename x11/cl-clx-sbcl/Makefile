@@ -1,10 +1,7 @@
-# New ports collection makefile for:	cl-clx-sbcl
-# Date created:				7 Oct 2010
-# Whom:					Anonymous
-#
+# Created by: Anonymous
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 DISTFILES=	# none
 
 MASTERDIR=	${.CURDIR}/../../x11/cl-clx

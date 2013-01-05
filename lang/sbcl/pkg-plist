@@ -179,6 +179,7 @@ lib/sbcl/sb-simple-streams/terminal.fasl
 lib/sbcl/sb-simple-streams/terminal.lisp
 lib/sbcl/sb-sprof/sb-sprof.fasl
 lib/sbcl/sb-sprof/sb-sprof.lisp
+lib/sbcl/sb-sprof/test.lisp
 lib/sbcl/sbcl_core
 lib/sbcl/site-systems/.keep_me
 %%PORTDOCS%%%%DOCSDIR%%/BUGS

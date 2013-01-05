@@ -1,12 +1,9 @@
-# New ports collection makefile for:	cl-md5-sbcl
-# Date created:				16 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
+# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	md5
 PORTVERSION=	1.8.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

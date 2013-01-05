@@ -1,12 +1,9 @@
-# New ports collection makefile for:	maxima
-# Date created:				Jun 26 2002
-# Whom:					Scott Flatman <sf@dsinw.com>
-#
+# Created by: Scott Flatman <sf@dsinw.com>
 # $FreeBSD$
-#
 
 PORTNAME=	maxima
 PORTVERSION=	5.29.1
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 

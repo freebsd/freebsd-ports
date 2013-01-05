@@ -1,13 +1,9 @@
-# New ports collection makefile for:   buildapp
-# Date created:        27 March 2010
-# Whom:                dunkyp
-#
+# Created by: dunkyp
 # $FreeBSD$
-#
 
 PORTNAME=	buildapp
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://www.xach.com/lisp/
 DISTNAME=	${PORTNAME}

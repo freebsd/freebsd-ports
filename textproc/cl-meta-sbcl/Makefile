@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	cl-meta-sbcl
-# Date created:				16 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	meta
 PORTVERSION=	0.1
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	textproc lisp
 PKGNAMEPREFIX=	cl-
