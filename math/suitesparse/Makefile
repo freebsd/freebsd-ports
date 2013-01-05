@@ -7,6 +7,7 @@
 
 PORTNAME=	suitesparse
 PORTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -121,6 +122,8 @@ do-install:
 .for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CXSparse KLU SPQR UMFPACK
 	@${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${PREFIX}/include/suitesparse
 .endfor
+	@${INSTALL_DATA} ${WRKSRC}/SuiteSparse_config/SuiteSparse_config.h ${PREFIX}/include/suitesparse
+	@${INSTALL_DATA} ${WRKSRC}/UMFPACK/Source/umf_config.h ${PREFIX}/include/suitesparse
 	@${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp ${PREFIX}/include/suitesparse
 	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i##${WRKSRC_SHARED}/} \
