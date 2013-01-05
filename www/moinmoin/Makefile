@@ -1,12 +1,8 @@
-# New ports collection makefile for:	moinmoin
-# Date created:				18 September 2001
-# Whom:					Hye-Shik Chang <perky@python.or.kr>
-#
+# Created by: Hye-Shik Chang <perky@python.or.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
