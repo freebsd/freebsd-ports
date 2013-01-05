@@ -1,13 +1,9 @@
-# New ports collection makefile for: 	lua
-# Date created:				27 June 1999
-# Whom:					Richard Kiss
-#
+# Created by: Richard Kiss
 # $FreeBSD$
-#
 
 PORTNAME=	lua
 PORTVERSION=	5.1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
@@ -22,7 +18,7 @@ PATCH_WRKSRC=	${WRKSRC}/src
 USE_LUA=	5.1
 LUA_COMPS=	# only define variables
 ALL_TARGET=	freebsd
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
@@ -33,6 +29,9 @@ MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
 # have its settings when we get here.
 # See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
 MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
+# liblua.so requires libm, so make sure it has an explicit dependency
+# so that applications need not second-guess lua's dependencies.
+LDFLAGS+=	-lm
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
@@ -108,7 +107,7 @@ do-install:
 		${PREFIX}/man/man1/${f:C/.1$//}-${LUA_VER}.1
 .endfor
 # Documentation.
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/etc
 	${MKDIR} ${DOCSDIR}/test
