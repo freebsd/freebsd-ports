@@ -1,38 +1,33 @@
-$FreeBSD$
---- ./geogebra.orig	2011-08-12 11:30:50.000000000 +0200
-+++ ./geogebra	2011-08-12 11:31:39.000000000 +0200
-@@ -34,7 +34,7 @@
-	--help | --hel | --he | --h )
-		func_usage; exit 0 ;;
-	esac
--	if [ $(expr match "$i" '.*-Xm') -ne 0 ]; then
-+	if [ $(expr -- "$i" : '.*-Xm') -ne 0 ]; then
-		if [ -z "$JAVA_OPTS" ]; then
-			JAVA_OPTS="$i"
-		else
-@@ -42,7 +42,7 @@
-		fi
-		shift $((1))
-	else
--		if [ $(expr match "$i" '.*--') -ne 0 ]; then
-+		if [ $(expr -- "$i" : '.*--') -ne 0 ]; then
-			if [ -z "$GG_OPTS" ]; then
-				GG_OPTS="$i"
-			else
-@@ -54,13 +54,13 @@
- done
-
- # if memory not set, change to GeoGebra defaults
--if [ $(expr match "$JAVA_OPTS" ".*-Xmx") -eq 0 ]; then
-+if [ $(expr -- "$JAVA_OPTS" : ".*-Xmx") -eq 0 ]; then
-	JAVA_OPTS="$JAVA_OPTS -Xmx512m"
- fi
-
--if [ $(expr match "$JAVA_OPTS" ".*-Xms") -eq 0 ]; then
-+if [ $(expr -- "$JAVA_OPTS" : ".*-Xms") -eq 0 ]; then
-	JAVA_OPTS="$JAVA_OPTS -Xms32m"
- fi
-
- # run
--exec $JAVACMD $JAVA_OPTS -jar /usr/share/geogebra/geogebra.jar $GG_OPTS "$@"
-+exec $JAVACMD $JAVA_OPTS -jar %%DATADIR%%/geogebra.jar $GG_OPTS "$@"
+--- ./geogebra.orig	2012-10-07 13:54:43.000000000 +0200
++++ ./geogebra	2012-10-07 13:56:32.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #---------------------------------------------
+ # Script to start GeoGebra
+ #---------------------------------------------
+@@ -184,19 +184,19 @@
+ 	--help | --hel | --he | --h )
+ 		func_usage; exit 0 ;;
+ 	esac
+-	if [ $(expr match "$i" '.*--') -ne 0 ]; then
++	if [ $(expr -- "$i" : '.*--') -ne 0 ]; then
+ 		GG_OPTS[${#GG_OPTS[*]}]="$i"
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Xms') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Xms') -ne 0 ]; then
+ 		GG_XMS=${i:4}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Xmx') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Xmx') -ne 0 ]; then
+ 		GG_XMX=${i:4}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Djava.library.path') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Djava.library.path') -ne 0 ]; then
+ 		GG_DJAVA_LIBRARY_PATH=${i:20}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-JavaCMD') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-JavaCMD') -ne 0 ]; then
+ 		JAVACMD=${i:9}
+ 		shift $((1))
+ 	fi

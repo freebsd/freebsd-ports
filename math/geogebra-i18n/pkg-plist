@@ -40,22 +40,20 @@ share/icons/hicolor/96x96/mimetypes/application-vnd.geogebra.tool.png
 share/icons/hicolor/scalable/apps/geogebra.svgz
 share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.file.svgz
 share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.tool.svgz
-share/java/geogebra-i18n/geogebra.jar
-share/java/geogebra-i18n/geogebra_cas.jar
-share/java/geogebra-i18n/geogebra_export.jar
-share/java/geogebra-i18n/geogebra_gui.jar
-share/java/geogebra-i18n/geogebra_main.jar
-share/java/geogebra-i18n/geogebra_properties.jar
-share/java/geogebra-i18n/unsigned/geogebra.jar
-share/java/geogebra-i18n/unsigned/geogebra_cas.jar
-share/java/geogebra-i18n/unsigned/geogebra_export.jar
-share/java/geogebra-i18n/unsigned/geogebra_gui.jar
-share/java/geogebra-i18n/unsigned/geogebra_main.jar
-share/java/geogebra-i18n/unsigned/geogebra_properties.jar
-share/java/geogebra-i18n/unsigned/number_of_degs_in_straight_angle.ggb
+%%DATADIR%%/geogebra
+%%DATADIR%%/geogebra.jar
+%%DATADIR%%/geogebra_algos.jar
+%%DATADIR%%/geogebra_cas.jar
+%%DATADIR%%/geogebra_export.jar
+%%DATADIR%%/geogebra_gui.jar
+%%DATADIR%%/geogebra_javascript.jar
+%%DATADIR%%/geogebra_main.jar
+%%DATADIR%%/geogebra_properties.jar
+%%DATADIR%%/jlatexmath.jar
+%%DATADIR%%/jlm_cyrillic.jar
+%%DATADIR%%/jlm_greek.jar
 share/mime/packages/geogebra.xml
-@dirrm share/java/geogebra-i18n/unsigned
-@dirrm share/java/geogebra-i18n
+@dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
