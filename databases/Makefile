@@ -360,6 +360,7 @@
     SUBDIR += p5-DBIx-Class-Loader
     SUBDIR += p5-DBIx-Class-Migration
     SUBDIR += p5-DBIx-Class-MooseColumns
+    SUBDIR += p5-DBIx-Class-PassphraseColumn
     SUBDIR += p5-DBIx-Class-QueryLog
     SUBDIR += p5-DBIx-Class-QueryProfiler
     SUBDIR += p5-DBIx-Class-ResultSet-HashRef
