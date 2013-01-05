@@ -6,11 +6,11 @@
 #    $MCom ports-experimental/security/nss/Makefile,v 1.4 2008/02/23 15:47:28 ahze Exp $
 
 PORTNAME=	nss
-PORTVERSION=	${_MAJOR}.${_MINOR} #.${_PATCH}
+PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
-DISTNAME=	nss-${PORTVERSION}
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
+DISTNAME=	nss-${PORTVERSION}.with.ckbi.${CKBI_VER}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
@@ -22,8 +22,9 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 
 _MAJOR=	3
 _MINOR=	14
-_PATCH=	0
+_PATCH=	1
 
+CKBI_VER=	1.93
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/mozilla/security/nss
 
 MAKE_JOBS_UNSAFE=	yes
