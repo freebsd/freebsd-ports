@@ -55,7 +55,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>freetype -- Multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>freetype</name>
+	<name>freetype2</name>
 	<range><lt>2.4.11</lt></range>
       </package>
     </affects>
@@ -65,31 +65,11 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://sourceforge.net/projects/freetype/files/freetype2/2.4.11/README/view">
 	  <p>Some vulnerabilities in the  BDF implementation have been fixed.
 	    Users of this font format should upgrade.</p>
-	  <p>(More serious vulnerabilities were fixed in 2.4.9, and are
-	    referenced here).</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>CVE-2012-1126</cvename>
-      <cvename>CVE-2012-1127</cvename>
-      <cvename>CVE-2012-1128</cvename>
-      <cvename>CVE-2012-1129</cvename>
-      <cvename>CVE-2012-1130</cvename>
-      <cvename>CVE-2012-1131</cvename>
-      <cvename>CVE-2012-1132</cvename>
-      <cvename>CVE-2012-1133</cvename>
-      <cvename>CVE-2012-1134</cvename>
-      <cvename>CVE-2012-1135</cvename>
-      <cvename>CVE-2012-1136</cvename>
-      <cvename>CVE-2012-1137</cvename>
-      <cvename>CVE-2012-1138</cvename>
-      <cvename>CVE-2012-1139</cvename>
-      <cvename>CVE-2012-1140</cvename>
-      <cvename>CVE-2012-1141</cvename>
-      <cvename>CVE-2012-1142</cvename>
-      <cvename>CVE-2012-1143</cvename>
-      <cvename>CVE-2012-1144</cvename>
+      <url>http://sourceforge.net/projects/freetype/files/freetype2/2.4.11/README/view</url>
     </references>
     <dates>
       <discovery>2012-12-20</discovery>
