@@ -1,7 +1,3 @@
-# New ports collection makefile for:	libplist
-# Date created:				28 May 2010
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	libplist
@@ -10,10 +6,9 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	A library to handle Apple Property List format
+COMMENT=	Library to handle Apple Property List format
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USE_GNOME=	libxml2
 # Unlisted dependency.
@@ -27,24 +22,24 @@ USE_LDCONFIG=	${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS NEWS README
 
-OPTIONS=	CYTHON	"Enable Cython Python bindings" off \
-		SWIG	"Enable Swig Python bindings" off
+OPTIONS_DEFINE=	CYTHON SWIG
+
+CYTHON_DESC=	Cython Python bindings
+SWIG_DESC=	Swig Python bindings
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_CYTHON)
+.if ${PORT_OPTIONS:MCYTHON}
 BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
 USE_PYTHON=	yes
 CMAKE_ARGS+=	-DENABLE_CYTHON:BOOL=On
-# Is this really needed?
-USE_LDCONFIG+=	${PYTHON_SITELIBDIR}
 PLIST_SUB+=	CYTHON=""
 .else
 CMAKE_ARGS+=	-DENABLE_CYTHON:BOOL=Off
 PLIST_SUB+=	CYTHON="@comment "
 .endif
 
-.ifdef(WITH_SWIG)
+.if ${PORT_OPTIONS:MSWIG}
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 USE_PYTHON=	yes
 CMAKE_ARGS+=	-DENABLE_SWIG:BOOL=On
@@ -59,7 +54,7 @@ pre-configure:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
