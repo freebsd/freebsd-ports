@@ -29,6 +29,7 @@
 
 PORTNAME=	freebsd-doc
 PORTVERSION=	40385
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -85,7 +86,7 @@ WITH_HTML_SPLIT=	yes
 .endif
 
 .if defined(WITH_PDF) || defined(WITH_PS)
-BUILD_DEPENDS=	docproj-jadetex>=1.17:${PORTSDIR}/textproc/docproj-jadetex
+BUILD_DEPENDS=	docproj>=1.17:${PORTSDIR}/textproc/docproj
 .else
 BUILD_DEPENDS=	docproj-nojadetex>=1.17:${PORTSDIR}/textproc/docproj-nojadetex
 .endif
