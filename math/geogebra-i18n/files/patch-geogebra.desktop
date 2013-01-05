@@ -1,0 +1,9 @@
+--- ./geogebra.desktop.orig	2012-10-07 14:22:36.000000000 +0200
++++ ./geogebra.desktop	2012-10-07 14:22:43.000000000 +0200
+@@ -27,5 +27,5 @@
+ Type=Application
+ StartupNotify=true
+ StartupWMClass=geogebra-GeoGebra
+-Categories=Education;Math;
++Categories=Education;Math;Science;
+ MimeType=application/vnd.geogebra.file;application/vnd.geogebra.tool;

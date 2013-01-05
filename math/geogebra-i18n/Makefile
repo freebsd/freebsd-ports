@@ -1,18 +1,19 @@
 # Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
 
-PORTNAME=	geogebra-i18n
-DISTVERSION=	3-2-47-0
-PORTREVISION=	0
+PORTNAME=	geogebra
+PORTVERSION=	4.2.13.0
+#PORTREVISION=	0
 CATEGORIES=	math java
-MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
-#PKGNAMESUFFIX=	-i18n
-DISTNAME=	GeoGebra-FreeBSD-Installer-${DISTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+PKGNAMESUFFIX=	-i18n
+DISTNAME=	GeoGebra-Unixlike-Installer-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
 
-RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -22,7 +23,6 @@ JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 
-USE_DOS2UNIX=	geogebra geogebra.desktop
 USE_GNOME=	desktopfileutils
 USE_JAVA=	yes
 
@@ -30,16 +30,11 @@ WRKSRC=	${WRKDIR}/geogebra-${PORTVERSION}
 
 FIND_JARS=	-type f -name "*.jar" -maxdepth 1 -print0
 
-JARFILE=	${PORTNAME:S,-i18n,,}.jar
-
-post-patch:
-	${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},g' ${WRKSRC}/${PORTNAME:S,-i18n,,}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/geogebra ${PREFIX}/bin/
 	cd ${WRKSRC} && ${MKDIR} ${DATADIR} && \
+	${INSTALL_SCRIPT} ${WRKSRC}/geogebra ${DATADIR} && \
+	${LN} -s ${DATADIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME} && \
 	${FIND} . ${FIND_JARS} | ${XARGS} -0 -J % ${INSTALL_DATA} % ${DATADIR} && \
-	${COPYTREE_SHARE} unsigned ${DATADIR} && \
 	${COPYTREE_SHARE} icons ${PREFIX}/share && \
 	${MKDIR} ${PREFIX}/share/mime/packages && \
 	${MKDIR} ${PREFIX}/share/applications && \
