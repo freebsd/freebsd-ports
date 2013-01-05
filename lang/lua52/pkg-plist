@@ -1,0 +1,29 @@
+bin/lua-5.2
+bin/lua52/lua
+bin/lua52/luac
+bin/luac-5.2
+include/lua52/lauxlib.h
+include/lua52/lua.h
+include/lua52/lua.hpp
+include/lua52/luaconf.h
+include/lua52/lualib.h
+lib/liblua-5.2.so
+lib/liblua-5.2.so.1
+lib/lua52/liblua-5.2.so.1
+lib/lua52/liblua.a
+lib/lua52/liblua.so
+%%PORTDOCS%%%%DOCSDIR%%/contents.html
+%%PORTDOCS%%%%DOCSDIR%%/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/lua.css
+%%PORTDOCS%%%%DOCSDIR%%/manual.css
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/osi-certified-72x60.png
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm bin/lua52
+@dirrm include/lua52
+@dirrm lib/lua52
+@dirrmtry lib/lua/5.2
+@dirrmtry lib/lua
+@dirrmtry share/lua/5.2
+@dirrmtry share/lua
