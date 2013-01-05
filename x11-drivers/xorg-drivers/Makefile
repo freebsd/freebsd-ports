@@ -1,9 +1,4 @@
-# New ports collection makefile for:    xorg-drivers
-# Date created:				Jun 22 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.5.2
@@ -20,101 +15,105 @@ INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
 NO_BUILD=	yes
 
-.if !defined(ARCH)
-ARCH!=  /usr/bin/uname -p
-.endif
+INPUT_DRIVERS=		mouse \
+			keyboard \
+			acecad \
+			elographics \
+			hyperpen \
+			joystick \
+			magictouch \
+			mutouch \
+			penmount \
+			synaptics \
+			vmmouse \
+			void
 
-VIDEO_ON=	ati \
-		mach64 \
-		nv \
-		r128 \
-		radeonhd \
-		vesa
+VIDEO_DRIVERS=		ati \
+			mach64 \
+			nv \
+			r128 \
+			radeonhd \
+			vesa \
+			apm \
+			ark \
+			chips \
+			cyrix \
+			dummy \
+			fbdev \
+			glint \
+			i128 \
+			i740 \
+			imstt \
+			mga \
+			neomagic \
+			newport \
+			rendition \
+			s3 \
+			s3virge \
+			savage \
+			siliconmotion \
+			sis \
+			tdfx \
+			tga \
+			trident \
+			tseng
 
-.if ${ARCH} == "sparc64"
-VIDEO_ON+=	sunffb
-.elif ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
-VIDEO_ON+=	openchrome
-.endif
+OPTIONS_DEFAULT=	MOUSE \
+			KEYBOARD \
+			ATI \
+			MACH64 \
+			NV \
+			R128 \
+			RADEONHD \
+			VESA
 
-.if (${ARCH} == "amd64" || ${ARCH} == "i386") && !defined(WITH_NEW_XORG)
-VIDEO_ON+=	intel
-.endif
-
-VIDEO_OFF=	apm ark \
-		chips cirrus cyrix \
-		dummy \
-		fbdev \
-		glint \
-		i128 i740 imstt \
-		mga \
-		neomagic newport \
-		rendition \
-		s3 s3virge savage siliconmotion	sis \
-		tdfx tga trident tseng \
-		via vmware voodoo
-
-VIDEO_EXCL=	via:openchrome
-
-INPUT_ON=	mouse \
-		keyboard
-INPUT_OFF=	acecad \
-		elographics \
-		hyperpen \
-		joystick \
-		magictouch mutouch \
-		penmount \
-		synaptics \
-				vmmouse void
-
-QUIRKS=		keyboard:kbd jamstudio:js_x
-
-.if defined(XORG_COMPLETE)
-. for type in input video
-${type:U}_ON:=	${${type:U}_ON} ${${type:U}_OFF}
-${type:U}_OFF=	# nil
-.  for i in ${${type:U}_EXCL}
-B=	${i:C/.*://}
-${type:U}_ON:=	${${type:U}_ON:C/${B}//}
-${type:U}_OFF:=	${${type:U}_OFF} ${B}
-.  endfor
-. endfor
-.endif
-
-.for default in on off
-. for type in input video
-.  for i in ${${type:U}_${default:U}}
-OPTIONS+=	${i:U} "Install ${i} ${type} driver" ${default}
-.  endfor
+.for type in input video
+. for a in ${${type:U}_DRIVERS}
+OPTIONS_DEFINE+=	${a:U}
+${a:U}_DESC=	Install ${a} ${type} driver
 . endfor
 .endfor
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE_i386=	INTEL OPENCHROME
+OPTIONS_DEFAULT_i386=	INTEL OPENCHROME
 
-.for i in ${VIDEO_EXCL}
-A=	${i:C/:.*//}
-B=	${i:C/.*://}
-. if defined(WITH_${B:U}) && !defined(WITHOUT_${A:U})
-DRV_CONFLICTS+=	${i}
-. endif
-.endfor
+OPTIONS_DEFINE_amd64:=	${OPTIONS_DEFINE_i386}
+OPTIONS_DEFAULT_amd64:=	${OPTIONS_DEFAULT_i386}
 
-.if defined(DRV_CONFLICTS)
-IGNORE=		can't be installed because of conflicting drivers (${DRV_CONFLICTS}). Re-run make config.
+OPTIONS_DEFINE_sparc64=	SUNFFB
+OPTIONS_DEFAULT_sparc64=SUNFFB
+
+OPTIONS_DEFINE_ia64=	OPENCHROME
+OPTIONS_DEFAULT_ia64=	OPENCHROME
+
+INTEL_DESC=		Install intel video driver
+OPENCHROME_DESC=	Install openchrome video driver
+SUNFFB_DESC=		Install sunffb video driver
+
+# these drivers module name are different then the plugin they install
+QUIRKS=		keyboard:kbd
+
+
+.include <bsd.port.options.mk>
+
+# Manual add arch specific drivers so they be added to depend lines.
+.if ${ARCH}==i386 || ${ARCH}==amd64
+VIDEO_DRIVERS+=	intel openchrome
 .endif
 
-.for default in on off
-. for type in input video
-.  for i in ${${type:U}_${default:U}}
-DEFAULT=${default}
-.   if (${DEFAULT} == "on" && !defined(WITHOUT_${i:U})) || (${DEFAULT} == "off" && defined(WITH_${i:U}))
-.    if ${QUIRKS:M${i}\:*:C/.*://} != ""
+.if ${ARCH}==sparc64
+VIDEO_DRIVERS+=	sunffb
+.endif
+
+.for type in input video
+. for i in ${${type:U}_DRIVERS}
+.  if ${PORT_OPTIONS:M${i:U}} != ""
+.   if ${QUIRKS:M${i}\:*:C/.*://} != ""
 RUN_DEPENDS+=	${${type:U}DIR}/${QUIRKS:M${i}\:*:C/.*://}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
-.    else
+.   else
 RUN_DEPENDS+=	${${type:U}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
-.    endif
 .   endif
-.  endfor
+.  endif
 . endfor
 .endfor
 
@@ -122,4 +121,4 @@ do-install:
 		${MKDIR} ${PREFIX}/libdata/xorg
 		${TOUCH} ${PREFIX}/libdata/xorg/drivers
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

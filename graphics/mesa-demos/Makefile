@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mesa-demos
-# Date created:         7 Nov 2003
-# Whom:                 anholt@FreeBSD.org
-#
+# Created by: anholt@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mesa-demos
 PORTVERSION=	7.6.1
@@ -33,12 +29,16 @@ WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS=	NVIDIA_GL	"Use NVIDIA's libraries"	off
+OPTIONS_DEFINE=	NVIDIA_GL XCB
+NVIDIA_DESC=	Use NVIDIA's libraries
+XCB_DESC=	Use XCB for GLX
 
-.if defined(WITHOUT_XCB)
-CONFIGURE_ARGS+=	--disable-xcb
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MXCB}
 CONFIGURE_ARGS+=	--enable-xcb
+.else
+CONFIGURE_ARGS+=	--disable-xcb
 .endif
 
 post-patch:
@@ -77,7 +77,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NVIDIA_GL)
+.if ${PORT_OPTIONS:MNVIDIA_GL}
 CFLAGS+=	-DWITH_NVIDIA_GL=1
 .endif
 

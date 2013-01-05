@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pixman
-# Date Created:				Aug 9 2003
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pixman
 PORTVERSION=	0.24.2
@@ -18,11 +13,11 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	ltverhack:9
 CONFIGURE_ARGS=	--disable-gtk
 
-OPTIONS=	SIMD "Enable SIMD features autodetection (MMX, SSE2, VMX)" off
+OPTIONS_DEFINE=	SIMD
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SIMD)
+.if !${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS=	--disable-vmx --disable-arm-simd
 . if ! ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--disable-mmx
@@ -32,4 +27,4 @@ CONFIGURE_ARGS+=	--disable-sse2
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
