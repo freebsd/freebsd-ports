@@ -1,23 +1,23 @@
-# New ports collection makefile for:	swe
-# Date created:				30 Oct 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	swe
-PORTVERSION=	1.77.00
+PORTVERSION=	1.78.00
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	The High Precision Ephemeris Developed By Astrodienst
+COMMENT=	High Precision Ephemeris Developed By Astrodienst
 
 WRKSRC=		${WRKDIR}/src
 USE_GMAKE=	yes
-ALL_TARGET=
+ALL_TARGET=	#
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pedantic||' ${WRKSRC}/Makefile
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${LOCALBASE}/include/swe
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/* ${DOCSDIR}/
 .endif
