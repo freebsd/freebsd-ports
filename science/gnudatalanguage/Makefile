@@ -3,6 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -81,12 +82,10 @@ CONFIGURE_ARGS+=--with-hdf=no
 .endif
 
 .if !defined(WITHOUT_PYTHON) || defined(BUILD_PYTHON_MODULE)
-USE_PYTHON=	2.5+
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray \
-		${PYNUMPY}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray \
-		${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/matplotlib:${PORTSDIR}/math/py-matplotlib
+USE_PYTHON=	-2.7
+BUILD_DEPENDS+=	${PYNUMPY}
+RUN_DEPENDS+=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
 CONFIGURE_ENV+=	PYTHON_VERSION=${_PYTHON_VERSION}
 CONFIGURE_ARGS+=--with-python=${PYTHONBASE}
 .else
