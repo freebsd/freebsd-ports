@@ -152,6 +152,7 @@
     SUBDIR += lua-mode.el
     SUBDIR += lua4
     SUBDIR += lua50
+    SUBDIR += lua52
     SUBDIR += luajit
     SUBDIR += lush
     SUBDIR += malbolge

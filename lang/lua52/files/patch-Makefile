@@ -1,0 +1,44 @@
+--- Makefile.orig	2012-12-14 18:29:11.000000000 +0400
++++ Makefile	2012-12-14 18:45:06.000000000 +0400
+@@ -10,13 +10,13 @@
+ # so take care if INSTALL_TOP is not an absolute path. See the local target.
+ # You may want to make INSTALL_LMOD and INSTALL_CMOD consistent with
+ # LUA_ROOT, LUA_LDIR, and LUA_CDIR in luaconf.h.
+-INSTALL_TOP= /usr/local
+-INSTALL_BIN= $(INSTALL_TOP)/bin
+-INSTALL_INC= $(INSTALL_TOP)/include
+-INSTALL_LIB= $(INSTALL_TOP)/lib
++INSTALL_TOP= %%LUA_PREFIX%%
++INSTALL_BIN= %%LUA_BINDIR%%
++INSTALL_INC= %%LUA_INCDIR%%
++INSTALL_LIB= %%LUA_LIBDIR%%
+ INSTALL_MAN= $(INSTALL_TOP)/man/man1
+-INSTALL_LMOD= $(INSTALL_TOP)/share/lua/$V
+-INSTALL_CMOD= $(INSTALL_TOP)/lib/lua/$V
++INSTALL_LMOD= %%LUA_MODSHAREDIR%%
++INSTALL_CMOD= %%LUA_MODLIBDIR%%
+ 
+ # How to install. If your install program does not support "-p", then
+ # you may have to run ranlib on the installed liblua.a.
+@@ -41,8 +41,8 @@
+ # What to install.
+ TO_BIN= lua luac
+ TO_INC= lua.h luaconf.h lualib.h lauxlib.h lua.hpp
+-TO_LIB= liblua.a
+-TO_MAN= lua.1 luac.1
++TO_LIB= liblua.a liblua-5.2.so.1
++TO_MAN= lua-5.2.1 luac-5.2.1
+ 
+ # Lua version and release.
+ V= 5.2
+@@ -61,8 +61,8 @@
+ 	cd src && $(MKDIR) $(INSTALL_BIN) $(INSTALL_INC) $(INSTALL_LIB) $(INSTALL_MAN) $(INSTALL_LMOD) $(INSTALL_CMOD)
+ 	cd src && $(INSTALL_EXEC) $(TO_BIN) $(INSTALL_BIN)
+ 	cd src && $(INSTALL_DATA) $(TO_INC) $(INSTALL_INC)
+-	cd src && $(INSTALL_DATA) $(TO_LIB) $(INSTALL_LIB)
+-	cd doc && $(INSTALL_DATA) $(TO_MAN) $(INSTALL_MAN)
++	cd src && mv liblua.so liblua-$V.so.%%LUA_VER_SH%% && $(INSTALL_DATA) $(TO_LIB) $(INSTALL_LIB)
++	cd doc && mv lua.1 lua-$V.1 && mv luac.1 luac-$V.1 && $(INSTALL_DATA) $(TO_MAN) $(INSTALL_MAN)
+ 
+ uninstall:
+ 	cd src && cd $(INSTALL_BIN) && $(RM) $(TO_BIN)
