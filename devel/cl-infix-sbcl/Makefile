@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	cl-infix-sbcl
-# Date created:				13 Feb 2006
-# Whom:					Pedro F Giffuni
-#
+# Created by: Pedro F Giffuni
 # $FreeBSD$
 
 PORTNAME=	infix
 PORTVERSION=	19960628
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

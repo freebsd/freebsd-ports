@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	cl-uffi-sbcl
-# Date created:				19 August 2004
-# Whom:					Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-#
+# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
 # $FreeBSD$
 
 PORTNAME=	uffi
 PORTVERSION=	2.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	wxMaxima
-# Date created:		2005-07-12
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	wxMaxima
 PORTVERSION=	12.04.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME}/${PORTVERSION}

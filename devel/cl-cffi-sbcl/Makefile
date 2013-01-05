@@ -1,12 +1,9 @@
-# New ports collection makefile for:	cl-cffi-sbcl
-# Date created:				20 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
+# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cffi
 PORTVERSION=	0.10.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

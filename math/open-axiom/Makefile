@@ -1,13 +1,9 @@
-# New ports collection makefile for:	open-axiom
-# Date created:		12 October 2008
-# Whom:			stephen@math.missouri.edu
-#
+# Created by: stephen@math.missouri.edu
 # $FreeBSD$
-#
 
 PORTNAME=	open-axiom
 PORTVERSION=	1.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 

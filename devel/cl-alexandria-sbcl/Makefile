@@ -1,12 +1,9 @@
-# New ports collection makefile for:	cl-alexandria-sbcl
-# Date created:				16 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
+# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	alexandria
 PORTVERSION=	2010.01.16
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

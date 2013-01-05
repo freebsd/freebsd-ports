@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	cl-ppcre-sbcl
-# Date created:				16 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	cl-ppcre
 PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc lisp
 DISTFILES=	# none
 

@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	cl-port-sbcl
-# Date created:				12 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

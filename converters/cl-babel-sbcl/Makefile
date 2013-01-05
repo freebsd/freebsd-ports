@@ -1,12 +1,9 @@
-# New ports collection makefile for:	cl-babel-sbcl
-# Date created:				20 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
+# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	babel
 PORTVERSION=	2010.01.16
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	converters lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

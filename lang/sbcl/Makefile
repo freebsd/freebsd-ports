@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -118,10 +118,16 @@ MAKE_SH_ARGS+=	--with-sb-futex
 .else
 MAKE_SH_ARGS+=	--without-sb-futex
 .endif
-.if defined(WITH_SAFEPOINT)
+.if defined(WITH_SAFEPOINT) || defined(WITH_STRICT_SAFEPOINT)
 MAKE_SH_ARGS+=	--with-sb-safepoint --with-sb-thruption --with-sb-wtimer
+.if defined(WITH_STRICT_SAFEPOINT)
+MAKE_SH_ARGS+=	--with-sb-safepoint-strictly
 .else
-MAKE_SH_ARGS+=	--without-sb-safepoint --without-sb-thruption --without-sb-wtimer
+MAKE_SH_ARGS+=	--without-sb-safepoint-strictly
+.endif
+.else
+MAKE_SH_ARGS+=	--without-sb-safepoint --without-sb-safepoint-strictly \
+		--without-sb-thruption --without-sb-wtimer
 .endif
 .else
 MAKE_SH_ARGS+=	--without-sb-thread

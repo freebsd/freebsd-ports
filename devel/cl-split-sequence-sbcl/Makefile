@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	cl-split-sequence-sbcl
-# Date created:				12 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
