@@ -1,14 +1,9 @@
-# New ports collection makefile for:	sks
-# Date created:		2004-10-16
-# Whom:			johans@stack.nl
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sks
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://cdn.bitbucket.org/skskeyserver/sks-keyserver/downloads/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
@@ -26,20 +21,24 @@ MAKE_ENV=	BDBINCLUDE="-I${BDB_INCLUDE_DIR}" \
 		LIBDB="-l${BDB_LIB_NAME}" \
 		MANDIR="${MANPREFIX}/man"
 
+SUB_FILES=	pkg-message
 PLIST_FILES=	bin/sks bin/sks_add_mail bin/sks_build.sh
 MAN8=		sks.8
 MANCOMPRESSED=	yes
-PORTDOCS=	BUGS README TODO
+PORTDOCS=	BUGS README.md TODO UPGRADING
 
 post-extract:
 	@: > ${WRKSRC}/Makefile.local
 	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile
+	@cd ${WRKSRC} && ${RM} -f .depend
 
 pre-build:
 	@cd ${WRKSRC} && test -f .depend || ${GMAKE} dep
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
