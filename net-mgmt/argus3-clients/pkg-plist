@@ -1,55 +1,74 @@
+bin/argusclientbug
 bin/ra
 bin/rabins
 bin/racluster
+bin/raconvert
 bin/racount
 bin/radark
+bin/radium
 bin/radump
+bin/raevent
 bin/rafilteraddr
 bin/ragraph
+bin/ragrep
 bin/rahisto
 bin/rahosts
+bin/raips
 bin/ralabel
 bin/ranonymize
 bin/rapath
+bin/raplot
 bin/rapolicy
 bin/raports
+bin/rarpwatch
 bin/raservices
 bin/rasort
 bin/rasplit
 %%MYSQL%%bin/rasql
 %%MYSQL%%bin/rasqlinsert
+%%MYSQL%%bin/rasqltimeindex
 bin/rastream
 bin/rastrip
 bin/ratemplate
 bin/ratimerange
 bin/ratop
-bin/ratree
 bin/rauserdata
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/HOW-TO
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
 %%EXAMPLESDIR%%/Config/delegated-ipv4-latest
 %%EXAMPLESDIR%%/Config/excel.rc
 %%EXAMPLESDIR%%/Config/iana-address-file
 %%EXAMPLESDIR%%/Config/iana-ipv4-address
 %%EXAMPLESDIR%%/Config/iana-multicast-address
 %%EXAMPLESDIR%%/Config/iana-port-numbers
-%%EXAMPLESDIR%%/Config/ra.print.all.conf
 %%EXAMPLESDIR%%/Config/racluster.conf
 %%EXAMPLESDIR%%/Config/radium.conf
 %%EXAMPLESDIR%%/Config/ragetcountrycodes.sh
 %%EXAMPLESDIR%%/Config/ralabel.conf
 %%EXAMPLESDIR%%/Config/ranonymize.conf
 %%EXAMPLESDIR%%/Config/rarc
+%%EXAMPLESDIR%%/Config/rarc.print.all.conf
 %%EXAMPLESDIR%%/Config/rastream.sh
 %%EXAMPLESDIR%%/Config/std.sig
+%%EXAMPLESDIR%%/Config/wireshark.manuf.txt
+%%EXAMPLESDIR%%/Database/MySQL.Archive.sh
+%%EXAMPLESDIR%%/Database/README
+%%EXAMPLESDIR%%/Startup/README
+%%EXAMPLESDIR%%/Startup/com.qosient.radium.plist
+%%EXAMPLESDIR%%/Startup/com.qosient.rasplit.plist
 %%EXAMPLESDIR%%/Startup/radium
+%%EXAMPLESDIR%%/Startup/radium.service
+%%EXAMPLESDIR%%/Startup/rasplit
 %%EXAMPLESDIR%%/System/magic
-%%EXAMPLESDIR%%/System/protocols
 @dirrm %%EXAMPLESDIR%%/System
 @dirrm %%EXAMPLESDIR%%/Startup
+@dirrm %%EXAMPLESDIR%%/Database
 @dirrm %%EXAMPLESDIR%%/Config
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
