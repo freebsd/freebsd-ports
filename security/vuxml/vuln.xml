@@ -51,6 +51,89 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1ae613c3-5728-11e2-9483-14dae938ec40">
+    <topic>freetype -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freetype</name>
+	<range><lt>2.4.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FreeType Project reports:</p>
+	<blockquote cite="http://sourceforge.net/projects/freetype/files/freetype2/2.4.11/README/view">
+	  <p>Some vulnerabilities in the  BDF implementation have been fixed.
+	    Users of this font format should upgrade.</p>
+	  <p>(More serious vulnerabilities were fixed in 2.4.9, and are
+	    referenced here).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1126</cvename>
+      <cvename>CVE-2012-1127</cvename>
+      <cvename>CVE-2012-1128</cvename>
+      <cvename>CVE-2012-1129</cvename>
+      <cvename>CVE-2012-1130</cvename>
+      <cvename>CVE-2012-1131</cvename>
+      <cvename>CVE-2012-1132</cvename>
+      <cvename>CVE-2012-1133</cvename>
+      <cvename>CVE-2012-1134</cvename>
+      <cvename>CVE-2012-1135</cvename>
+      <cvename>CVE-2012-1136</cvename>
+      <cvename>CVE-2012-1137</cvename>
+      <cvename>CVE-2012-1138</cvename>
+      <cvename>CVE-2012-1139</cvename>
+      <cvename>CVE-2012-1140</cvename>
+      <cvename>CVE-2012-1141</cvename>
+      <cvename>CVE-2012-1142</cvename>
+      <cvename>CVE-2012-1143</cvename>
+      <cvename>CVE-2012-1144</cvename>
+    </references>
+    <dates>
+      <discovery>2012-12-20</discovery>
+      <entry>2013-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a264b1b0-5726-11e2-9483-14dae938ec40">
+    <topic>moinmoin -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moinmoin</name>
+	<range><lt>1.9.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Thomas Waldmann reports:</p>
+	<blockquote cite="http://hg.moinmo.in/moin/1.9/raw-file/1.9.6/docs/CHANGES">
+	  <p>SECURITY HINT: make sure you have allow_xslt = False (or just do
+	    not use allow_xslt at all in your wiki configs, False is the
+	    internal default).  Allowing XSLT/4suite is very dangerous, see
+	    HelpOnConfiguration wiki page.</p>
+
+	  <p>Fixes:</p>
+	  <ul>
+	  <li>fix remote code execution vulnerability in
+	    twikidraw/anywikidraw action</li>
+	    <li>fix path traversal vulnerability in AttachFile action</li>
+	    <li>fix XSS issue, escape page name in rss link.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://hg.moinmo.in/moin/1.9/raw-file/1.9.6/docs/CHANGES</url>
+      <url>http://www.debian.org/security/2012/dsa-2593</url>
+    </references>
+    <dates>
+      <discovery>2012-12-29</discovery>
+      <entry>2013-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7c87a8a-55d5-11e2-a255-c8600054b392">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
