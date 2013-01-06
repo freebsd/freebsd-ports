@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openvpn
-# Date created:		2002-06-23
-# Whom:			Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	openvpn
 DISTVERSION=	2.2.2
@@ -25,7 +21,14 @@ USE_OPENSSL=	yes
 USE_XZ=		yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include
-.if !defined(NOPORTDOCS)
+
+OPTIONS_DEFINE=	PW_SAVE PKCS11
+PW_SAVE_DESC=	Interactive passwords may be read from a file
+PKCS11_DESC=	Use security/pkcs11-helper
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install
 .else
 INSTALL_TARGET=	install-exec install-man
@@ -33,9 +36,6 @@ INSTALL_TARGET=	install-exec install-man
 
 INSTALL_TARGET+=	mandir=${MANPREFIX}/man
 MAN8=		openvpn.8
-
-OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
-		PKCS11  "Use security/pkcs11-helper" off
 
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
@@ -49,14 +49,16 @@ SUB_LIST+=	OSVERSION=${OSVERSION}
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 
-.if defined(WITH_PW_SAVE)
+.if ${PORT_OPTIONS:MPW_SAVE}
 CONFIGURE_ARGS+=	--enable-password-save
+.else
+CONFIGURE_ARGS+=	--disable-password-save
 .endif
 
-.if defined(WITH_PKCS11)
-LIB_DEPENDS+=	pkcs11-helper.1:${PORTSDIR}/security/pkcs11-helper
+.if ${PORT_OPTIONS:MPKCS11}
+LIB_DEPENDS+=	pkcs11-helper:${PORTSDIR}/security/pkcs11-helper
 .else
 CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
@@ -94,7 +96,7 @@ post-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
 	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
