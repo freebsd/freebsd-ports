@@ -1,9 +1,5 @@
-# New ports collection makefile for:	discount
-# Date created:				2009-04-22
-# Whom:					Julien Laffaye <kimelto@gmail.com>
-#
+# Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	discount
 PORTVERSION=	2.1.1.3
@@ -47,21 +43,25 @@ PLIST_FILES=	bin/markdown \
 		lib/libmarkdown.a \
 		include/mkdio.h
 
-OPTIONS=	EXTRA "Enable all extra features" on \
-		TAB8 "Use a tabstop of 8 (default is 4)" on \
-		SAMPLES "Install sample programs" off
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXTRA TAB8 SAMPLES
+OPTIONS_DEFAULT=	EXTRA TAB8
 
-.ifdef (WITH_EXTRA)
+EXTRA_DESC=	Enable all extra features
+TAB8_DESC=	Use a tabstop of 8 (default is 4)
+SAMPLES_DESC=	Install sample programs
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXTRA}
 CONFIGURE_ARGS+=--enable-dl-tag \
 		--enable-all-features
 .endif
 
-.ifdef (WITH_TAB8)
+.if ${PORT_OPTIONS:MTAB8}
 CONFIGURE_ARGS+=--with-tabstops=8
 .endif
 
-.ifdef (WITH_SAMPLES)
+.if ${PORT_OPTIONS:MSAMPLES}
 INSTALL_TARGET+=install.samples
 PLIST_FILES+=	bin/makepage \
 		bin/mkd2html \
@@ -72,4 +72,4 @@ MAN1+=		makepage.1 \
 
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
