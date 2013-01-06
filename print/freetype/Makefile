@@ -16,10 +16,8 @@ MASTER_SITES=	SF \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
 		ftp://ftp.freetype.org/freetype/freetupe1/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
-
-DEPRECATED=	Last release in 2000, unsupported by developers
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
