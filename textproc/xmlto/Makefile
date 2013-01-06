@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmlto
-# Date created:		2003-06-05
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlto
 PORTVERSION=	0.0.25
@@ -25,9 +21,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	DBLATEX "Add dependency on Dblatex" OFF \
-		FOP "Add dependency on FOP (needs Java)" OFF \
-		PASSIVETEX "Add dependency on PassiveTeX" OFF
+OPTIONS_DEFINE=		DBLATEX FOP PASSIVETEX
+DBLATEX_DESCR=		Add dependency on Dblatex
+FOP_DESCR=		Add dependency on FOP (needs Java)
+PASSIVETEX_DESCR=	Add dependency on PassiveTeX
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -46,29 +43,29 @@ PORTDOCS=	AUTHORS COPYING ChangeLog NEWS THANKS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PASSIVETEX)
+.if ${PORT_OPTIONS:MPASSIVETEX}
 BUILD_DEPENDS+=	${LOCALBASE}/share/texmf-local/tex/passivetex/fotex.sty:${PORTSDIR}/print/passivetex
 .endif
 
-.if defined(WITH_FOP)
+.if ${PORT_OPTIONS:MFOP}
 RUN_DEPENDS+=	fop>=0.90:${PORTSDIR}/textproc/fop
 CONFIGURE_ARGS+=	--with-backend=fop
 .endif
 
-.if defined(WITH_DBLATEX)
+.if ${PORT_OPTIONS:MDBLATEX}
 RUN_DEPENDS+=	${LOCALBASE}/bin/dblatex:${PORTSDIR}/textproc/dblatex
-.if !defined(WITH_FOP)
+.if ! ${PORT_OPTIONS:MFOP}
 CONFIGURE_ARGS+=	--with-backend=dblatex
 .endif
 .endif
 
 post-patch:
-	# get rid of nonstandard "type" option -t:
+	@# get rid of nonstandard "type" option -t:
 	cd ${WRKSRC} && ${FIND} . -type f -exec ${REINPLACE_CMD} -i '' -e 's/type -t/which/;' '{}' '+'
-	# get rid of GNU-make-ism (BSD make defines $< only in suffix rules)
+	@# get rid of GNU-make-ism (BSD make defines $< only in suffix rules)
 	${REINPLACE_CMD} -e '/^GEN_MANPAGE/{s/\$$</$$>/;}' ${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
