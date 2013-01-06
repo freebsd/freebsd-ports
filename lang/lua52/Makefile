@@ -6,7 +6,7 @@ PORTVERSION=	5.2.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 
-MAINTAINER=	fisiologus@gmail.com
+MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT
