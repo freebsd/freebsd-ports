@@ -1,0 +1,82 @@
+bin/xfce4-terminal
+share/applications/xfce4-terminal.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/is/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/te/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-terminal.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-terminal.mo
+share/xfce4/terminal/colorschemes/black-on-white.theme
+share/xfce4/terminal/colorschemes/dark-pastels.theme
+share/xfce4/terminal/colorschemes/green-on-black.theme
+share/xfce4/terminal/colorschemes/solarized-dark.theme
+share/xfce4/terminal/colorschemes/tango.theme
+share/xfce4/terminal/colorschemes/white-on-black.theme
+share/xfce4/terminal/colorschemes/xterm.theme
+share/xfce4/terminal/terminal-preferences.ui
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
+@dirrm share/xfce4/terminal/colorschemes
+@dirrm share/xfce4/terminal
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrmtry man/zh_CN/man1
+@dirrmtry man/zh_CN
+@dirrmtry man/ug/man1
+@dirrmtry man/ug

@@ -6,7 +6,6 @@
     SUBDIR += 3ddesktop
     SUBDIR += 9box
     SUBDIR += 9menu
-    SUBDIR += Terminal
     SUBDIR += alltray
     SUBDIR += appres
     SUBDIR += apwal
@@ -364,6 +363,7 @@
     SUBDIR += xfce4-quicklauncher-plugin
     SUBDIR += xfce4-screenshooter-plugin
     SUBDIR += xfce4-taskmanager
+    SUBDIR += xfce4-terminal
     SUBDIR += xfce4-verve-plugin
     SUBDIR += xfce4-wmdock-plugin
     SUBDIR += xfce4-xfapplet-plugin
