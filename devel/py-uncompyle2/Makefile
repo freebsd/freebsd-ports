@@ -3,7 +3,7 @@
 
 PORTNAME=	uncompyle2
 PORTVERSION=	1.1
-CATEGORIES=	www
+CATEGORIES=	devel
 MASTER_SITES=	https://github.com/Mysterie/${PORTNAME}/tarball/${HASH}/
 PKGNAMEPREFIX=	py-
 DISTNAME=	Mysterie-${PORTNAME}-${HASH}
