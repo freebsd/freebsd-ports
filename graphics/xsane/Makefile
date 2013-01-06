@@ -12,14 +12,15 @@ MASTER_SITES=	http://www.xsane.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		sane.1:${PORTSDIR}/graphics/sane-backends
+		tiff:${PORTSDIR}/graphics/tiff \
+		sane:${PORTSDIR}/graphics/sane-backends
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -27,13 +28,12 @@ MAN1=		xsane.1
 
 #SUB_FILES+=	pkg-message
 
-OPTIONS=	GTK2 "Enable GTK2 support (use GTK1 if turned off)" on \
-		GIMP "Enable GIMP plugin support" off \
-		NLS "Enable Native Language Support" on
+OPTIONS_DEFINE=	GIMP NLS
+GIMP_DESC=	GIMP plugin support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -42,21 +42,9 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
 .endif
 
-.if defined(WITHOUT_GTK2)
-USE_GNOME=	gtk12
-CONFIGURE_ARGS+=	--disable-gtk2
-.else
-USE_GNOME=	gtk20
-.endif
-
-.if defined(WITH_GIMP)
+.if ${PORT_OPTIONS:MGIMP}
 SUB_FILES+=	pkg-message
-.if defined(WITHOUT_GTK2)
-LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
-CONFIGURE_ARGS+=	--disable-gimp2
-.else
 LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp-app
-.endif # WITHOUT_GTK2
 .else
 CONFIGURE_ARGS+=	--disable-gimp
 .endif
@@ -66,8 +54,8 @@ pre-patch:
 		-i "" -e 's|\$$(DESTDIR)\$$(sbindir)||g'
 
 post-install:
-.if defined(WITH_GIMP)
+.if ${PORT_OPTIONS:MGIMP}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
