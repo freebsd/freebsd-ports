@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpdscribble
-# Date created:		July 13 2006
-# Whom:			Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-#
+# Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mpdscribble
 PORTVERSION=	0.22
@@ -24,11 +20,12 @@ USE_RC_SUBR=	mpdscribble
 
 MAN1=		mpdscribble.1
 
-OPTIONS=	SOUP	"Use libsoup instead of libcurl"	off
+OPTIONS_DEFINE=	SOUP DOCS
+SOUP_DESC=	Use libsoup instead of libcurl
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SOUP)
+.if ${PORT_OPTIONS:MSOUP}
 LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 CONFIGURE_ARGS+=	--with-http-client=soup
 .else
@@ -43,11 +40,11 @@ do-install:
 .if !exists(${PREFIX}/etc/mpdscribble.conf)
 	@(cd ${PREFIX}/etc && ${CP} mpdscribble.conf.sample mpdscribble.conf)
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

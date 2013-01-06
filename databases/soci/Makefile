@@ -1,9 +1,5 @@
-# New ports collection makefile for:	soci
-# Date created:		2010-09-13
-# Whom:			Julien Laffaye <kimelto@gmail.com>
-#
+# Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	soci
 PORTVERSION=	3.0.0
@@ -28,12 +24,12 @@ ALL_TARGET=	build_libs
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	MYSQL "Build MySQL driver" on \
-		PGSQL "Build PostgreSQL driver" on
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL PGSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef (WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
 CONFIGURE_ARGS+=--mysql-include=${LOCALBASE}/include/mysql \
@@ -42,7 +38,7 @@ CONFIGURE_ARGS+=--mysql-include=${LOCALBASE}/include/mysql \
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.ifdef (WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 PLIST_SUB+=	PGSQL=""
 CONFIGURE_ARGS+=--postgresql-include=${LOCALBASE}/include \
@@ -58,4 +54,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
