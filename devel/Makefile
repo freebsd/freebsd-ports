@@ -332,7 +332,6 @@
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
-    SUBDIR += jgoodies-looks
     SUBDIR += dia2code
     SUBDIR += diffuse
     SUBDIR += ding-libs
@@ -1134,6 +1133,7 @@
     SUBDIR += log4sh
     SUBDIR += log4shib
     SUBDIR += loki
+    SUBDIR += looks
     SUBDIR += love
     SUBDIR += love07
     SUBDIR += love5
