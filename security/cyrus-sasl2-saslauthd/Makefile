@@ -27,6 +27,10 @@ DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
 MAKE_JOBS_SAFE=	yes
 
+# This doesn't work due to absence of .al support in our libtool
+#USE_AUTOTOOLS=	libtool
+#LIBTOOLFILES=	${CONFIGURE_SCRIPT} saslauthd/configure
+
 MAN8=		saslauthd.8
 
 USE_RC_SUBR=	saslauthd
@@ -44,6 +48,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
 		--disable-krb4
+CONFIGURE_ENV+=	andrew_cv_runpath_switch=none
 
 OPTIONS_DEFINE=		BDB OPENLDAP HTTPFORM
 OPENLDAP_DESC=		Use OpenLDAP
@@ -76,11 +81,12 @@ CONFIGURE_ARGS+=--enable-httpform
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
-LDFLAGS+=	"-R${KRB5_HOME}/lib"
+LDFLAGS+=	-R${KRB5_HOME}/lib
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
 .elif !defined(WITHOUT_GSSAPI) && exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=--enable-gssapi
+CONFIGURE_ARGS+=--enable-gssapi=/usr
+CFLAGS+=	-nostdinc -I/usr/include
 .else
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
