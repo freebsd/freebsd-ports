@@ -62,6 +62,7 @@ share/xfce4/terminal/terminal-preferences.ui
 @unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
 @dirrm share/xfce4/terminal/colorschemes
 @dirrm share/xfce4/terminal
+@dirrmtry share/xfce4
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
@@ -80,3 +81,5 @@ share/xfce4/terminal/terminal-preferences.ui
 @dirrmtry man/zh_CN
 @dirrmtry man/ug/man1
 @dirrmtry man/ug
+@dirrmtry man/pt_BR/man1
+@dirrmtry man/pt_BR
