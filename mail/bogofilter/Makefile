@@ -1,9 +1,5 @@
-# ports collection Makefile for: bogofilter
-# Whom:		Matthias Andree <matthias.andree@gmx.de>
-# Date created:	2002-10-17
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	bogofilter
 PORTVERSION=	1.2.3
@@ -19,8 +15,10 @@ COMMENT=	Fast, teachable, learning spam detector
 USE_BDB=	41+
 .endif
 
-OPTIONS=	GSL     "Link with system-wide GSL dynamically (recommended)" on
-OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
+OPTIONS_DEFINE=		GSL UNICODE
+OPTIONS_DEFAULT=	GSL UNICODE
+GSL_DESC=		Link with system-wide GSL dynamically (recommended)
+UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 
 CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
@@ -40,13 +38,13 @@ BROKEN=		Fails to package on sparc64: fails self-tests
 BF_LIBS?=		-l${BDB_LIB_NAME}
 BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
-.if !defined(WITHOUT_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 CONFIGURE_ARGS+=	--enable-unicode
 USE_ICONV=		yes
 BF_LIBS+=		-liconv
 .endif
-.if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=		gsl.16:${PORTSDIR}/math/gsl
+.if ${PORT_OPTIONS:MGSL}
+LIB_DEPENDS+=		gsl:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
@@ -66,7 +64,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1/' \
 		${WRKSRC}/src/tests/Makefile.in
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 PLIST_SUB=	CONTRIB="@comment "
 .else
@@ -78,7 +76,7 @@ post-build::
 
 post-install::
 	@${MKDIR} ${DOCSDIR}/contrib
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for i in html programmer xml
 	@${MKDIR} ${DOCSDIR}/${i}
 .endfor
