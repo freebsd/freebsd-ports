@@ -7,4 +7,4 @@
 +#include <sys/param.h>
  #include <sstream>
  
- /* Workaround for lack of namespace std on HP-UX 11.00 */
+ extern NmapOps o;
