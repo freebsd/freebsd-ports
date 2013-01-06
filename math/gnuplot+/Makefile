@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gnuplot
-# Date created:         May 18, 1999
-# Whom:                 NAKAJI Hiroyuki
-#
+# Created by: NAKAJI Hiroyuki
 # $FreeBSD$
-#
 
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
@@ -19,6 +15,9 @@ EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz
 
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A command-driven interactive function plotting program
+
+DEPRECATED=	Upstream says: This package is obsolete. The author does not recommend to use it.
+EXPIRATION_DATE=	2013-02-06
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib
