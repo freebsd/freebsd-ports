@@ -141,7 +141,6 @@
     SUBDIR += springframework
     SUBDIR += sqlitejdbc
     SUBDIR += subversion-java
-    SUBDIR += sun-wtk
     SUBDIR += trove4j
     SUBDIR += veditor
     SUBDIR += xdoclet
