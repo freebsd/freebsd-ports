@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	4.10
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -59,7 +60,7 @@ RUN_DEPENDS+=	mousepad:${PORTSDIR}/editors/mousepad
 .endif
 
 .if ${PORT_OPTIONS:MTERMINAL}
-RUN_DEPENDS+=	Terminal:${PORTSDIR}/x11/Terminal
+RUN_DEPENDS+=	xfce4-terminal:${PORTSDIR}/x11/xfce4-terminal
 .endif
 
 .if ${PORT_OPTIONS:MAPPFINDER}
