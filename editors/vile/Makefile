@@ -7,7 +7,6 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/ \
 		ftp://ftp.phred.org/pub/vile/current/
-DISTNAME=	vile-9.8g
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
@@ -21,13 +20,12 @@ GNU_CONFIGURE=	yes
 MAN1=		vile.1
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS= FILTERS "Add support for loadable filters" OFF
-OPTIONS+= ICONV "Add support for ICONV" OFF
-OPTIONS+= PERL "Add support for perl functions" OFF
+OPTIONS_DEFINE=	FILTERS ICONV PERL DOCS
+FILTERS_DESC=	Loadable filters
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--with-iconv
 USE_ICONV=	yes
 .else
@@ -35,37 +33,23 @@ CONFIGURE_ARGS+=	--without-iconv
 CONFIGURE_ARGS+=	--without-locale
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=	--with-perl
 PLIST=		${PKGDIR}/pkg-plist.perl
 USE_PERL5=	yes
 .endif
 
-.if defined(WITH_FILTERS)
+.if ${PORT_OPTIONS:MFILTERS}
 CONFIGURE_ARGS+=	--with-loadable-filters
 PLIST=		${PKGDIR}/pkg-plist.filt
 .endif
 
-.if defined(WITH_PERL) && defined(WITH_FILTERS)
+.if ${PORT_OPTIONS:MPERL} && ${PORT_OPTIONS:MFILTERS}
 PLIST=		${PKGDIR}/pkg-plist.perl+filt
 .endif
 
-pre-configure:
-.if !defined(WITH_ICONV)
-	@${ECHO_MSG} "Choose the option ICONV if you want to make a vile which includes"
-	@${ECHO_MSG} "ICONV functionality"
-.endif
-.if !defined(WITH_PERL)
-	@${ECHO_MSG} "Choose the option PERL if you want to make a vile which includes"
-	@${ECHO_MSG} "PERL functionality"
-.endif
-.if !defined(WITH_FILTERS)
-	@${ECHO_MSG} "Choose the option FILTERS if you want to make a vile which will"
-	@${ECHO_MSG} "dynamically load filters as needed."
-.endif
-
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@if ! [ -d ${PREFIX}/share/doc/vile ]; then ${MKDIR} ${PREFIX}/share/doc/vile; fi
 	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/vile
 .endif
@@ -75,4 +59,4 @@ post-install:
 	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."
 	@${ECHO_MSG} "Look in ${PREFIX}/share/vile/macros for macros."
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
