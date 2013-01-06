@@ -1,18 +1,17 @@
-# New ports collection makefile for:	paperkey
-# Date created:		Mon Oct  6 12:56:53 EEST 2008
-# Whom:			Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	paperkey
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Extract just the secret information out of OpenPGP secret keys
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all check
