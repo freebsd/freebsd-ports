@@ -19,7 +19,6 @@ load_rc_config $name
 
 exabgp_enable=${exabgp_enable:-"NO"}
 exabgp_conf=${exabgp_conf:-"%%ETCDIR%%/exabgp.conf"}
-exabgp_logfile=${exabgp_log:-"/var/log/exabgp.log"}
 
 pidfile=/var/run/${name}/${name}.pid
 
@@ -28,21 +27,22 @@ required_files=${exabgp_conf}
 command="%%PYTHON_SITELIBDIR%%/${name}/application.py"
 procname="%%PYTHON_CMD%%"
 
-start_precmd="exabgp_precmd"
 start_cmd="exabgp_start"
 extra_commands="reload"
 
-exabgp_precmd()
-{
-	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
-	touch ${exabgp_logfile}
-	chown _bgpd:_bgpd ${exabgp_logfile}
-}
-
 exabgp_start()
 {
-    	echo "Starting ${name}..."
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+
+	echo "Starting ${name}."
+
+	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
+	install -d -o _bgpd -g _bgpd -m 755 /var/log/${name}
 	rm -f ${pidfile}
+
 	${procname} ${command} -c %%ETCDIR%% ${exabgp_conf}
 }
 
