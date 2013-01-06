@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openvpn
-# Date created:		2002-06-23
-# Whom:			Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	openvpn
 PORTVERSION=	2.0.9
@@ -26,12 +22,13 @@ CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 
 MAN8=		openvpn.8
 
-OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off
+OPTIONS_DEFINE=	PW_SAVE
+PW_SAVE_DESC=	Interactive passwords may be read from a file
 
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
 
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	OSVERSION=${OSVERSION}
@@ -58,8 +55,10 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
-.if defined(WITH_PW_SAVE)
+.if ${PORT_OPTIONS:MPW_SAVE}
 CONFIGURE_ARGS+=	--enable-password-save
+.else
+CONFIGURE_ARGS+=	--disable-password-save
 .endif
 
 post-patch:
@@ -79,7 +78,7 @@ post-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
 	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
