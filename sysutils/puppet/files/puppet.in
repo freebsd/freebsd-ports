@@ -5,6 +5,7 @@
 
 # PROVIDE: puppet
 # REQUIRE: NETWORK
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable the puppet agent:
@@ -20,13 +21,13 @@ load_rc_config "$name"
 
 : ${puppet_enable="NO"}
 : ${puppet_rundir="/var/run/puppet"}
-: ${puppet_flags="--rundir=${puppet_rundir}"}
 
-command_interpreter="%%PREFIX%%/bin/ruby18"
 command="%%PREFIX%%/bin/puppet"
-command_args="agent ${puppet_flags}"
+command_args="agent ${puppet_flags} --rundir=${puppet_rundir}"
+command_interpreter=%%RUBY%%
 unset puppet_flags
 
 pidfile="${puppet_rundir}/agent.pid"
+start_precmd="install -d -o puppet -g puppet ${pidfile%/*}"
 
 run_rc_command "$1"

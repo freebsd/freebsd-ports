@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	3.0.2
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -24,6 +24,7 @@ PORTEXAMPLES=	*
 USERS=		puppet
 GROUPS=		puppet
 SUB_FILES+=	pkg-message
+SUB_LIST=	RUBY=${RUBY}
 
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
@@ -87,13 +88,12 @@ do-install:
 post-install:
 	${INSTALL} -d ${ETCDIR}
 	${INSTALL} -m 0755 -o puppet -g puppet -d /var/puppet
-	${INSTALL} -m 0755 -o puppet -g puppet -d /var/run/puppet
 	${INSTALL} -m 0644 ${WRKSRC}/conf/auth.conf ${ETCDIR}/auth.conf-dist
-	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/bin/puppet --genconfig \
+	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/bin/puppet master --genconfig \
 		--confdir=${ETCDIR} \
-		--rundir=/var/run/puppet | \
-		${SED} -e 's/genconfig = true/# genconfig = false/' | \
-		${SED} -e 's/factdest =/# factdest =/' \
+		--rundir=/var/run/puppet \
+		--vardir=/var/lib/puppet \
+		--logdir=/var/log/puppet \
 		> ${ETCDIR}/puppet.conf-dist
 	@${ECHO} ${RUBY_SITELIBDIR}/puppet.rb | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}

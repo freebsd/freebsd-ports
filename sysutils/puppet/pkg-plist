@@ -7,9 +7,6 @@ bin/puppet
 %%ETCDIR%%/auth.conf-dist
 @dirrmtry etc/puppet
 @unexec rmdir /var/puppet 2>/dev/null || true
-@unexec rmdir /var/run/puppet 2>/dev/null || true
-@exec /bin/mkdir -p /var/run/puppet
-@exec /usr/sbin/chown -Rh puppet:puppet /var/run/puppet
 @exec /bin/mkdir -p /var/puppet
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
