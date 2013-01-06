@@ -57,7 +57,6 @@ armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 asWedit-*		www/aswedit		Commercial software
 atari800/*		emulators/atari800	xf25 contains copyright ROMs
 						and cannot be distributed
-autopano-sift-*		graphics/autopano-sift	May be covered by patents
 bamg*			math/bamg		Contact author personally
 						regarding commercial use
 baudline_*		audio/baudline		No redistribution allowed

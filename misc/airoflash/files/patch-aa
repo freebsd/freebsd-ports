@@ -1,9 +1,0 @@
---- /dev/null	Wed Mar 13 11:58:15 2002
-+++ Makefile	Wed Mar 13 12:00:43 2002
-@@ -0,0 +1,6 @@
-+BINDIR?=	${PREFIX}/bin 
-+PROG=		airoflash
-+NOMAN=
-+NO_MAN=
-+
-+.include <bsd.prog.mk>
