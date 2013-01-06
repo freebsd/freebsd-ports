@@ -26,44 +26,23 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${PREFIX}/share/xvile
 MAN1=		xvile.1
 
-OPTIONS= FILTERS "Add support for loadable filters" OFF
-OPTIONS+= ICONV "Add support for ICONV" OFF
-OPTIONS+= MENUS "Add support for menus" OFF
-OPTIONS+= PERL "Add support for perl functions" OFF
-OPTIONS+= XAW3D "Use XAW3D to get a 3D effect" OFF
+OPTIONS_DEFINE=	FILTERS ICONV MENUS PERL XAW3D DOCS
+FILTERS_DESC=	Loadable filters
+MENUS_DESC=	Support for menus
+XAW3D_DESC=	XAW3D to get a 3D effect
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-pre-configure:
-.if ! defined(WITH_ICONV)
-	@${ECHO_MSG} "Choose the option ICONV if you want to make an xvile which includes"
-	@${ECHO_MSG} "ICONV functionality"
-.endif
-.if ! defined(WITH_MENUS)
-	@${ECHO_MSG} "To use xvile with menus, choose the option MENUS,"
-	@${ECHO_MSG} "which will also turn on Xaw. If you have Xaw3d, you can use it"
-	@${ECHO_MSG} "by also choosing the option XAW3D."
-.endif
-
-.if ! defined(WITH_PERL)
-	@${ECHO_MSG} "To use xvile with PERL, choose the option PERL."
-.endif
-
-.if ! defined(WITH_FILTERS)
-	@${ECHO_MSG} "Choose the option FILTERS if you want to make an xvile which will"
-	@${ECHO_MSG} "dynamically load filters as needed."
-.endif
-
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--with-iconv
 USE_ICONV=	yes
 .else
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
-.if defined(WITH_MENUS)
+.if ${PORT_OPTIONS:MMENUS}
 CONFIGURE_ARGS+= --with-screen=Xaw
-.if defined(WITH_XAW3D)
+.if ${PORT_OPTIONS:MXAW3D}
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=	--with-Xaw3d
 .endif
@@ -71,23 +50,23 @@ CONFIGURE_ARGS+=	--with-Xaw3d
 CONFIGURE_ARGS+=	--with-screen=x11
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+= --with-perl
 PLIST=		${PKGDIR}/pkg-plist.perl
 USE_PERL5=	yes
 .endif
 
-.if defined(WITH_FILTERS)
+.if ${PORT_OPTIONS:MFILTERS}
 CONFIGURE_ARGS+=	--with-loadable-filters
 PLIST=		${PKGDIR}/pkg-plist.filt
 .endif
 
-.if defined(WITH_PERL) && defined(WITH_FILTERS)
+.if ${PORT_OPTIONS:MPERL} && ${PORT_OPTIONS:MFILTERS}
 PLIST=		${PKGDIR}/pkg-plist.perl+filt
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@if ! [ -d ${PREFIX}/share/doc/xvile ]; then ${MKDIR} ${PREFIX}/share/doc/xvile; fi
 	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/xvile
 .endif
@@ -97,4 +76,4 @@ post-install:
 	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/xvile for documentation."
 	@${ECHO_MSG} "Look in ${PREFIX}/share/xvile/macros for macros."
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
