@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.0.10
+PORTVERSION=	3.1.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -44,5 +44,8 @@ do-install:
 	@if [ ! -f ${ETCDIR}/exabgp.env ]; then \
 	    	${CP} ${FILESDIR}/exabgp.env ${ETCDIR} ; \
 	fi
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

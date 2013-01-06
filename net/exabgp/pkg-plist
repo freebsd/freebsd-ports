@@ -2,20 +2,13 @@
 etc/exabgp/exabgp.env
 sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/api.py
+%%PYTHON_SITELIBDIR%%/exabgp/api.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/application.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/connection.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/__init__.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/eor.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/keepalive.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/__init__.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/eor.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/flow.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/route.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/__init__.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/eor.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/flow.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri/route.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nop.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/notification.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/__init__.py
@@ -46,6 +39,9 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/version.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/refresh.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/eor.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/eor.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aggregator.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aspath.py
@@ -78,9 +74,15 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/nexthop.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/origin.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/originatorid.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/eor.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/eor.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/flow.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/flow.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/route.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri/route.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/__init__.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/eor.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/keepalive.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nop.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/notification.pyc
@@ -95,6 +97,10 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/peer.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/protocol.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/timer.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/compatibility/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/compatibility/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.py
+%%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/debug.py
 %%PYTHON_SITELIBDIR%%/exabgp/leak/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/leak/gcdump.py
@@ -123,10 +129,13 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/rib/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/rib/delta.py
 %%PYTHON_SITELIBDIR%%/exabgp/rib/table.py
+%%PYTHON_SITELIBDIR%%/exabgp/rib/watchdog.py
 %%PYTHON_SITELIBDIR%%/exabgp/rib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/rib/delta.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/rib/table.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/rib/watchdog.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/structure/cache.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/configuration.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/daemon.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/environment.py
@@ -135,6 +144,7 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/structure/supervisor.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/utils.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/structure/cache.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/configuration.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/daemon.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/environment.pyc
@@ -162,9 +172,11 @@ sbin/exabgp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quagga/ebgpd.conf.v6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quagga/ebgpd.conf.v46
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quagga/ebgpd.conf.v4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/watchdog-1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/watchdog-1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/tcp-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/syslog-1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp6-simple.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-withdrawn.txt
@@ -208,11 +220,12 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/protocol/ip
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/protocol
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/nlri
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open
-@dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nlri
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/compatibility
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/leak
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/structure
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/rib
