@@ -105,9 +105,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cve>CVE-2012-6081</cve>
-      <cve>CVE-2012-6080</cve>
-      <cve>CVE-2012-6082</cve>
+      <cvename>CVE-2012-6081</cvename>
+      <cvename>CVE-2012-6080</cvename>
+      <cvename>CVE-2012-6082</cvename>
       <url>http://hg.moinmo.in/moin/1.9/raw-file/1.9.6/docs/CHANGES</url>
       <url>http://www.debian.org/security/2012/dsa-2593</url>
     </references>
