@@ -30,8 +30,8 @@
  
 -  def self.listcmd
 -    command(:pkginfo)
-+  @@lock = Mutex.new
-+  @@ports_index = nil
++  class_variable_set(:@@lock, Mutex.new)
++  class_variable_set(:@@ports_index, new)
 +
 +  # fix bug in URI::FTP merge method that tries to set typecode
 +  # even when other is a string.
