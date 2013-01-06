@@ -372,7 +372,6 @@
     SUBDIR += libmrss-php
     SUBDIR += libnxml
     SUBDIR += libparsifal
-    SUBDIR += libpathan
     SUBDIR += libroxml
     SUBDIR += libsoldout
     SUBDIR += libsphinxclient

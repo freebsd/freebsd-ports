@@ -80,7 +80,6 @@
     SUBDIR += msn-proxy
     SUBDIR += mu-conference
     SUBDIR += naim
-    SUBDIR += openfetion
     SUBDIR += openfire
     SUBDIR += openfire-devel
     SUBDIR += p5-AnyEvent-XMPP

@@ -60,7 +60,6 @@
     SUBDIR += portell
     SUBDIR += portless
     SUBDIR += portlint
-    SUBDIR += portmanager
     SUBDIR += portmaster
     SUBDIR += portrac
     SUBDIR += portscout

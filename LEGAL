@@ -238,7 +238,6 @@ idea.V*.tar.Z		security/idea		A patented algorithm that
 						requires proper licensing
 iperf-*			benchmarks/iperf	Cannot charge a fee for the
 						software
-j2me_wireless_toolkit*	java/sun-wtk		No redistribution allowed
 jdk-6*-i586.bin		java/linux-sun-jdk16	Redistribution of repackaged
 						binaries not permitted
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged
