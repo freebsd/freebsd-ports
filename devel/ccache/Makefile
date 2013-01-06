@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccache
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ CRITICAL
 
