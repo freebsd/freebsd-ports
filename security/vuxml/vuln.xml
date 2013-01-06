@@ -105,12 +105,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cve>CVE-2012-6081</cve>
+      <cve>CVE-2012-6080</cve>
+      <cve>CVE-2012-6082</cve>
       <url>http://hg.moinmo.in/moin/1.9/raw-file/1.9.6/docs/CHANGES</url>
       <url>http://www.debian.org/security/2012/dsa-2593</url>
     </references>
     <dates>
       <discovery>2012-12-29</discovery>
       <entry>2013-01-05</entry>
+      <modified>2013-01-06</modified>
     </dates>
   </vuln>
 
