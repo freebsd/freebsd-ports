@@ -98,7 +98,6 @@
     SUBDIR += icons-tango
     SUBDIR += icons-tango-extras
     SUBDIR += irssi-themes
-    SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-black-and-white
     SUBDIR += kde-icons-cezanne
@@ -110,7 +109,6 @@
     SUBDIR += kde-icons-graphite-rade8
     SUBDIR += kde-icons-icosx
     SUBDIR += kde-icons-kool-gorilla
-    SUBDIR += kde-icons-krystaline
     SUBDIR += kde-icons-lime-rade8
     SUBDIR += kde-icons-lush
     SUBDIR += kde-icons-marbles-translucent
@@ -120,7 +118,6 @@
     SUBDIR += kde-icons-nuovext2
     SUBDIR += kde-icons-nuvola
     SUBDIR += kde-icons-os-k
-    SUBDIR += kde-icons-realistic
     SUBDIR += kde-icons-sky
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
