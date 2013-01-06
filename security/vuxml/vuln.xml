@@ -161,20 +161,39 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Thomas Waldmann reports:</p>
+	<p>MoinMoin developers report the following vulnerabilities
+	  as fixed in version 1.9.6:</p>
 	<blockquote cite="http://hg.moinmo.in/moin/1.9/raw-file/1.9.6/docs/CHANGES">
-	  <p>SECURITY HINT: make sure you have allow_xslt = False (or just do
-	    not use allow_xslt at all in your wiki configs, False is the
-	    internal default).  Allowing XSLT/4suite is very dangerous, see
-	    HelpOnConfiguration wiki page.</p>
-
-	  <p>Fixes:</p>
 	  <ul>
-	  <li>fix remote code execution vulnerability in
-	    twikidraw/anywikidraw action</li>
-	    <li>fix path traversal vulnerability in AttachFile action</li>
-	    <li>fix XSS issue, escape page name in rss link.</li>
+	    <li>remote code execution vulnerability in
+	      twikidraw/anywikidraw action,</li>
+	    <li>path traversal vulnerability in AttachFile action,</li>
+	    <li>XSS issue, escape page name in rss link.</li>
 	  </ul>
+	</blockquote>
+	<p>CVE entries at MITRE furher clarify:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=2012-6081">
+	  <p>Multiple unrestricted file upload vulnerabilities in the
+	    (1) twikidraw (action/twikidraw.py) and (2) anywikidraw
+	    (action/anywikidraw.py) actions in MoinMoin before 1.9.6
+	    allow remote authenticated users with write permissions to
+	    execute arbitrary code by uploading a file with an
+	    executable extension, then accessing it via a direct request
+	    to the file in an unspecified directory, as exploited in the
+	    wild in July 2012.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=2012-6080">
+	  <p>Directory traversal vulnerability in the
+	    _do_attachment_move function in the AttachFile action
+	    (action/AttachFile.py) in MoinMoin 1.9.3 through 1.9.5
+	    allows remote attackers to overwrite arbitrary files via a
+	    .. (dot dot) in a file name.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=2012-6082">
+	  <p>Cross-site scripting (XSS) vulnerability in the rsslink
+	    function in theme/__init__.py in MoinMoin 1.9.5 allows
+	    remote attackers to inject arbitrary web script or HTML
+	    via the page name in a rss link.</p>
 	</blockquote>
       </body>
     </description>
