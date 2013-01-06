@@ -1,0 +1,18 @@
+'uncompyle2' converts Python byte-code back into equivalent Python
+source code. It accepts byte-code from Python version 2.5 to 2.7.
+Additionally, it will only run on Python 2.7.
+
+The generated source is very readable: docstrings, lists, tuples and
+hashes get pretty-printed.
+
+Features
+
+	. decompiles Python byte-code into equivalent Python source
+	. decompiles byte-code from Python version 2.5, 2.6, 2.7
+	. pretty-prints docstrings, hashes, lists and tuples
+	. reads directly from .pyc/.pyo files, bulk-decompile whole
+	  directories
+	. output may be written to file, a directory or to stdout
+	. option for including byte-code disassembly into generated source
+
+WWW: https://github.com/Mysterie/uncompyle2

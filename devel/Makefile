@@ -332,6 +332,7 @@
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
+    SUBDIR += jgoodies-looks
     SUBDIR += dia2code
     SUBDIR += diffuse
     SUBDIR += ding-libs
@@ -1133,7 +1134,6 @@
     SUBDIR += log4sh
     SUBDIR += log4shib
     SUBDIR += loki
-    SUBDIR += looks
     SUBDIR += love
     SUBDIR += love07
     SUBDIR += love5
@@ -3613,6 +3613,7 @@
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
     SUBDIR += py-ujson
+    SUBDIR += py-uncompyle2
     SUBDIR += py-unittest2
     SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
