@@ -3450,6 +3450,7 @@
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jcc
+    SUBDIR += py-jsmin
     SUBDIR += py-json-py
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
