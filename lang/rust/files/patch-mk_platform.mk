@@ -1,20 +1,27 @@
---- mk/platform.mk.orig	2012-04-05 22:34:59.678608449 +0800
-+++ mk/platform.mk	2012-04-05 22:35:13.749110633 +0800
-@@ -213,7 +213,7 @@
+--- mk/platform.mk.orig	2012-12-25 08:33:07.971922333 +0800
++++ mk/platform.mk	2012-12-25 08:33:16.996994081 +0800
+@@ -222,7 +222,7 @@
    ifeq ($(origin CPP),default)
-     CPP=cpp
+     CPP=clang -E
    endif
--  CFG_GCCISH_CFLAGS += -Wall -Werror -fno-rtti -g
-+  CFG_GCCISH_CFLAGS += -Wall -fno-rtti -g
+-  CFG_GCCISH_CFLAGS += -Wall -Werror -g
++  CFG_GCCISH_CFLAGS += -Wall -g
+   CFG_GCCISH_CXXFLAGS += -fno-rtti
    CFG_GCCISH_LINK_FLAGS += -g
-   CFG_DEPEND_C = $(CFG_GCCISH_CROSS)$(CXX) $(CFG_GCCISH_CFLAGS) -MT "$(1)" \
-     -MM $(2)
-@@ -244,7 +244,7 @@
+   # These flags will cause the compiler to produce a .d file
+@@ -268,7 +268,7 @@
    ifeq ($(origin CPP),default)
-     CPP=cpp
+     CPP=gcc -E
    endif
--  CFG_GCCISH_CFLAGS += -Wall -Werror -fno-rtti -g
-+  CFG_GCCISH_CFLAGS += -Wall -fno-rtti -g
+-  CFG_GCCISH_CFLAGS += -Wall -Werror -g
++  CFG_GCCISH_CFLAGS += -Wall -g
+   CFG_GCCISH_CXXFLAGS += -fno-rtti
    CFG_GCCISH_LINK_FLAGS += -g
-   CFG_DEPEND_C = $(CFG_GCCISH_CROSS)$(CXX) $(CFG_GCCISH_CFLAGS) -MT "$(1)" \
-     -MM $(2)
+   # These flags will cause the compiler to produce a .d file
+@@ -322,4 +322,4 @@
+ endef
+ 
+ $(foreach target,$(CFG_TARGET_TRIPLES),\
+-  $(eval $(call CFG_MAKE_ASSEMBLER,$(target))))
+\ No newline at end of file
++  $(eval $(call CFG_MAKE_ASSEMBLER,$(target))))

@@ -1,15 +1,11 @@
-# New ports collection makefile for: rust
-# Date created: 2012-01-21
-# Whom: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	rust
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	lang
-MASTER_SITES=	http://dl.rust-lang.org/dist/:src \
-		http://dl.rust-lang.org/stage0-snapshots/:boot
+MASTER_SITES=	http://static.rust-lang.org/dist/:src \
+		http://static.rust-lang.org/stage0-snapshots/:boot
 DISTFILES=	${RUST_SOURCE}:src \
 		${RUST_BOOT}:boot
 EXTRACT_ONLY=	${RUST_SOURCE}
@@ -19,7 +15,7 @@ COMMENT=	A language with a focus on memory safety and concurrency
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2012-10-09-cd6f24f-freebsd-x86_64-a2b5e9dddfa8f21cc8a068b77a47ba5425bfdcc6
+RUST_BOOT_SIG=	2012-12-19-8554d5e-freebsd-x86_64-2bffa280f338913c735672f6ddb630c6da126fad
 RUST_TARGET=	x86_64-unknown-freebsd
 
 ONLY_FOR_ARCHS=	amd64
@@ -52,7 +48,7 @@ CC=		clang
 CXX=		clang++
 CONFIGURE_ARGS+=	--enable-clang
 .else
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 .if ${PORT_OPTIONS:MCARGO}
@@ -87,7 +83,7 @@ post-patch:
 	    ${WRKSRC}/mk/stage0.mk
 .if empty(PORT_OPTIONS:MCARGO)
 	${REINPLACE_CMD} \
-	    -e '/$$(Q)$$(call INSTALL,$$(HB3),$$(PHB),cargo$$(X))/d' \
+	    -e '/$$(Q)$$(call INSTALL,$$(HB2),$$(PHB),cargo$$(X))/d' \
 	    ${WRKSRC}/mk/install.mk
 .endif
 
