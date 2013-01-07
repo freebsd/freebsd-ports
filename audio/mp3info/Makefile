@@ -22,18 +22,20 @@ WANT_GNOME=	yes
 
 PORTDOCS=	ChangeLog README mp3info.txt
 
-OPTIONS=	"GTK2"	"Enable to have the gmp3info"	"off"
+OPTIONS_DEFINE=	GTK2
+GTK2_DESC=	Enable to have the gmp3info
 
 PLIST_FILES=	bin/mp3info \
 		%%WITH_GTK%%bin/gmp3info
 
 MAN1=		mp3info.1
 
-.include <bsd.port.pre.mk>
-
 ALL_TARGET=	doc mp3info
 
-.if defined (WITH_GTK2)
+.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
 PKGNAMESUFFIX=	-gtk
 USE_GNOME+=	gtk20
 ALL_TARGET+=	gmp3info
