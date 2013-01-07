@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevent2
-DISTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/libevent/libevent/
 DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}-stable
