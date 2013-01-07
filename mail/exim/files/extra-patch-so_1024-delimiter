@@ -1,0 +1,13 @@
+Taken from: http://timofeev.biz/2010/10/14/151
+
+--- local_scan_1024.c	2009-11-27 14:02:06.000000000 +0300
++++ local_scan_1024.c	2012-12-30 22:18:53.491544089 +0400
+@@ -443,7 +443,7 @@
+     if (strncmp (answ, "SODAEMON ", 9) == 0)
+     {
+         strP = (char*) answ;
+-        for (tok = strtok (strP, "\n"); tok; tok = strtok (NULL, "\n"))
++        for (tok = strtok (strP, "\r\n"); tok; tok = strtok (NULL, "\r\n"))
+         {
+             /* signature always goes first */
+             if (strncmp (tok, "SODAEMON ", 9) == 0)

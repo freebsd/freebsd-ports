@@ -526,6 +526,7 @@ post-extract:
 .endif
 .if defined(WITH_SO_1024)
 	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/spamooborona1024-src-${SO_1024_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKDIR} && ${PATCH} --quiet < ${FILESDIR}/extra-patch-so_1024-delimiter
 .endif
 
 do-configure:
