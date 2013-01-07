@@ -1,15 +1,15 @@
---- src/Makefile.in.orig	2008-09-15 02:08:08.000000000 +0900
-+++ src/Makefile.in	2008-11-05 20:19:18.000000000 +0900
-@@ -117,7 +117,7 @@
+--- src/Makefile.in.orig	2012-12-10 01:00:44.000000000 -0500
++++ src/Makefile.in	2013-01-03 18:54:09.000000000 -0500
+@@ -115,7 +115,7 @@
  tbd_OBJECTS = $(am_tbd_OBJECTS)
  am__DEPENDENCIES_1 =
  @LINK_BOX_FALSE@tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
 -@LINK_BOX_FALSE@	$(top_builddir)/zlib/libzlib.a \
 +@LINK_BOX_FALSE@	-lz -lm \
  @LINK_BOX_FALSE@	$(am__DEPENDENCIES_1)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/config/depcomp
-@@ -226,12 +226,12 @@
+@@ -233,12 +233,12 @@
  @LINK_BOX_TRUE@                   dirclient.c dirclient.h thebridge.c users.c users.h \
  @LINK_BOX_TRUE@                   hostfile.c hostfile.h eventhook.c eventhook.h avrs.c avrs.h 
  
@@ -24,7 +24,7 @@
  @LINK_BOX_TRUE@	-DSYSCON_DIR=\"$(sysconfdir)\" $(am__append_1)
  @LINK_BOX_FALSE@AM_CFLAGS = -Wall $(am__append_2)
  @LINK_BOX_TRUE@AM_CFLAGS = -Wall $(am__append_2)
-@@ -239,7 +239,7 @@
+@@ -246,7 +246,7 @@
  @LINK_BOX_FALSE@        dirclient.h thebridge.c users.c users.h hostfile.c hostfile.h \
  @LINK_BOX_FALSE@        eventhook.c eventhook.h avrs.c avrs.h
  
