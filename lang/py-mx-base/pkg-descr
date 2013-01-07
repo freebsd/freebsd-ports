@@ -3,7 +3,7 @@ eGenix.com mx Extensions for Python
 The mx Extension Series(TM) is a collection of software packages which aims at
 providing professional quality add-ons for the Open Source Language Python
 (see http://www.python.org).
-   
+
 It consists of the following packages:
 
 mxDateTime	- Generic Date/Time Types
