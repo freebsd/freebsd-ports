@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-chart
-# Date Created:		8 April 1998
-# Whom:			Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Chart
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHARTGRP
