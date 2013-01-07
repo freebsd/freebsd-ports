@@ -4008,3 +4008,4 @@ x11-themes/kde-icons-krystaline||2013-01-06|Has expired: BROKEN for more than 6 
 x11-themes/kde-icons-amaranth||2013-01-06|Has expired: BROKEN for more than 6 month
 x11-themes/kde-icons-realistic||2013-01-06|Has expired: BROKEN for more than 6 month
 x11/Terminal|x11/xfce4-terminal|2013-01-06|Project was renamed
+textproc/p5-ack|textproc/ack|2013-01-06|Not just a perl module

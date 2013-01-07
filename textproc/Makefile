@@ -8,6 +8,7 @@
     SUBDIR += R-cran-XML
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
+    SUBDIR += ack
     SUBDIR += add-css-links
     SUBDIR += af-aspell
     SUBDIR += aft
@@ -1025,7 +1026,6 @@
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
     SUBDIR += p5-YAPE-Regex-Explain
-    SUBDIR += p5-ack
     SUBDIR += p5-dTemplate
     SUBDIR += p5-libsoldout
     SUBDIR += p5-libxml

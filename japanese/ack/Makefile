@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji code converter
 
-CONFLICTS_INSTALL=	p5-ack-[0-9]*
+CONFLICTS_INSTALL=	p5-ack-[0-9]* ack-[0-9]*
 
 ALL_TARGET=	ack
 
