@@ -38,7 +38,7 @@ ${comp:C/:.*//:C/.*\///:U}_DESC=	Install ${comp:C/:.*//:C/.*\///} application
 .include <bsd.port.options.mk>
 
 .for comp in ${COMPONENTS}
-. if ! ${PORT_OPTIONS:M${comp:C/:.*//:C/.*\///:U}}
+. if ${PORT_OPTIONS:M${comp:C/:.*//:C/.*\///:U}}
 .  if ${comp:M:}==""
 port=${comp}
 check=${comp:C/.*\///} # doesn't work
