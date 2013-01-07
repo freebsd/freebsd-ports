@@ -1,7 +1,4 @@
-# New ports collection makefile for: libghemical
-# Date created:			July 3, 2006
-# Whom:				Nakata Maho <maho@FreeBSD.org>
-#
+# Created by: Nakata Maho <maho@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libghemical
@@ -22,10 +19,12 @@ LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 		f2c:${PORTSDIR}/lang/f2c
 
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=   yes
+USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
 
 USE_FORTRAN=	yes
 CONFIGURE_ARGS+=	--enable-mpqc
