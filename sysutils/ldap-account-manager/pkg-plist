@@ -967,6 +967,8 @@
 %%WWWDIR%%/config/templates/pdf/default.gon.xml
 %%WWWDIR%%/config/templates/pdf/default.host.xml
 %%WWWDIR%%/config/selfService/.htaccess
+%%WWWDIR%%/config/profiles/.htaccess
+%%WWWDIR%%/config/pdf/.htaccess
 @exec if [ ! -f %D/%%WWWDIR%%/config/lam.conf ] ; then cp %D/%%WWWDIR%%/config/lam.conf_sample %D/%%WWWDIR%%/config/lam.conf; fi
 @exec if [ ! -f %D/%%WWWDIR%%/config/config.cfg ] ; then cp %D/%%WWWDIR%%/config/config.cfg_sample %D/%%WWWDIR%%/config/config.cfg; fi
 @exec mkdir -p %D/%%WWWDIR%%/config/pdf %D/%%WWWDIR%%/config/profiles

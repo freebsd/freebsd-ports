@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	4.0
+PORTVERSION=	4.0.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -27,12 +27,12 @@ WWWDIR?=	${PREFIX}/www/${SHORTNAME}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
 	-@${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${LAMDATA}" ${WWWDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	-@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
 .endif
@@ -53,4 +53,4 @@ post-install:
 	@${LN} -sf /etc/shells ${WWWDIR}/config/shells
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
