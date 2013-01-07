@@ -1,0 +1,9 @@
+--- configure.in.orig	2013-01-03 19:17:41.000000000 -0500
++++ configure.in	2013-01-03 19:18:21.000000000 -0500
+@@ -84,5 +84,5 @@
+ [Set to a text string describing your operating system and hardware])
+ 
+ AC_OUTPUT(Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile 
+-zlib/Makefile addons/Makefile)
++ addons/Makefile)
+ 
