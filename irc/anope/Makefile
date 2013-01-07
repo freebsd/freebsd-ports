@@ -1,9 +1,5 @@
-# New ports collection makefile for:	anope
-# Date created:		13/04/2004
-# Whom:			mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	anope
 PORTVERSION=	1.8.7
@@ -28,7 +24,8 @@ PORTDOCS=	BUGS COPYING DEFCON EVENTS \
 
 USE_RC_SUBR=	anope
 
-OPTIONS=	MYSQL "Use mysql" ON
+OPTIONS_DEFINE=	MYSQL
+OPTIONS_DEFAULT=	MYSQL
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +34,7 @@ OPTIONS=	MYSQL "Use mysql" ON
 CFLAGS+=	-fPIC
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .else
 CONFIGURE_ARGS+=	--without-mysql
@@ -48,7 +45,7 @@ pre-install:
 	@${MKDIR} ${DATADIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDCOS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}/
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gentoo
-# Date created:				12 August 2001
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	gentoo
 PORTVERSION=	0.19.13
@@ -15,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
-OPTIONS=	FAM "File Alteration Monitor Support" off
+OPTIONS_DEFINE=	FAM DOCS
 
 USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes
@@ -27,9 +23,9 @@ MAN1=		gentoo.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FAM)
+.if ${PORT_OPTIONS:MFAM}
 USE_FAM=	yes
 .else
 CONFIGURE_ARGS+=	--disable-fam
@@ -46,7 +42,7 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS README.gtkrc \
 	TODO
@@ -59,4 +55,4 @@ post-install:
 	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+x
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

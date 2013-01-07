@@ -1,9 +1,5 @@
-# New ports collection makefile for:	silgraphite
-# Date created:				30 November 2008
-# Whom:					Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	silgraphite
 PORTVERSION=	2.3.1
@@ -13,16 +9,17 @@ MASTER_SITES=	SF
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Font engine for complex non-Roman writing systems
 
-OPTIONS=	FREETYPE "Build with Freetype support" on
+OPTIONS_DEFINE=	FREETYPE
+OPTIONS_DEFAULT=	FREETYPE
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-xft --without-pangographite
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--with-freetype
@@ -36,4 +33,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/engine/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

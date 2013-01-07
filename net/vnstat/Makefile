@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vnstat
-# Date created:		February 17, 2008
-# Whom:		Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vnstat
 PORTVERSION=	1.11
@@ -26,7 +22,9 @@ PORTDOCS=	README INSTALL_BSD UPGRADE vnstat-cron
 SUB_FILES=	pkg-message
 
 # will compile with image output
-OPTIONS=	GUI "Build with graphics/gd dependency" on
+OPTIONS_DEFINE=	GUI DOCS
+OPTIONS_DEFAULT=	GUI
+GUI_DESC=	Build with graphics/gd dependency
 
 .include <bsd.port.options.mk>
 
@@ -35,7 +33,7 @@ PLIST_FILES=	bin/vnstat \
 		%%GUI%%bin/vnstati \
 		etc/vnstat.conf.sample
 
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 PLIST_SUB+=	GUI=""
 MAN1+=	vnstati.1
@@ -59,7 +57,7 @@ post-patch:
 		${WRKSRC}/src/cfg.c
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

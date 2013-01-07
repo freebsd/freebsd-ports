@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ratpoison
-# Date created:		January 20, 2001
-# Whom:			Gergely Nagy <8@free.bsd.hu>
-#
+# Created by: Gergely Nagy <8@free.bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	ratpoison
 PORTVERSION=	1.4.5
@@ -19,16 +15,17 @@ COMMENT=	Simple window manager with no fat library dependencies
 USE_XORG=	xext xinerama xtst
 GNU_CONFIGURE=	yes
 
-OPTIONS=	GDM_SUPPORT "Install session data files for GDM" off
+OPTIONS_DEFINE=	GDM_SUPPORT DOCS
+GDM_SUPPORT_DESC=	Install session data files for GDM
 
 SUB_FILES=	ratpoison.desktop
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|bash|sh|g' ${WRKSRC}/contrib/allwindows.sh
 
-.if defined (WITH_GDM_SUPPORT)
+.if ${PORT_OPTIONS:MGDM_SUPPORT}
 PLIST_SUB+=	WITH_GDM=""
 
 post-install:
@@ -38,11 +35,11 @@ post-install:
 PLIST_SUB+=	WITH_GDM="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=	SUBDIRS=src install-exec
-.else
+.if ${PORT_OPTIONS:MDOCS}
 MAN1=		ratpoison.1
 INFO=		ratpoison
+.else
+INSTALL_TARGET=	SUBDIRS=src install-exec
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

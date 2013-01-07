@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmfs
-# Date created:		08 December 2008
-# Whom:			Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmfs
 DISTVERSION=	201104
@@ -19,7 +15,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_XORG=	x11 xft xpm
 HAS_CONFIGURE=	yes
 
@@ -28,29 +24,28 @@ MANCOMPRESSED=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	XRANDR "Enable xrandr support" on \
-		XINERAMA "Enable xinerama support" on \
-		IMLIB "Enable Imlib2 support" on
+OPTIONS_DEFINE=	XRANDR XINERAMA IMLIB
+OPTIONS_DEFAULT=	XRANDR XINERAMA IMLIB
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--prefix ${PREFIX} \
 			--man-prefix ${MANPREFIX}/man \
 			--xdg-config-dir ${PREFIX}/etc/xdg
 
-.if defined(WITH_XRANDR)
+.if ${PORT_OPTIONS:MXRANDR}
 USE_XORG+=	xrandr
 .else
 CONFIGURE_ARGS+=	--without-xrandr
 .endif
 
-.if defined(WITH_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
 .else
 CONFIGURE_ARGS+=	--without-xinerama
 .endif
 
-.if defined(WITH_IMLIB)
+.if ${PORT_OPTIONS:MIMLIB}
 USE_EFL+=	imlib2
 .else
 CONFIGURE_ARGS+=	--without-imlib2
@@ -59,4 +54,4 @@ CONFIGURE_ARGS+=	--without-imlib2
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	snd
-# Date created:				2000-10-05
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	snd
 PORTVERSION=	13.0
@@ -14,13 +10,11 @@ MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Multitracking sound editor and utilities
 
-OPTIONS=	FFTW3	"Use FFTW"				on  \
-		GSL	"Use GNU Scientific Library"		on  \
-		S7	"Use S7 as the extension language"	off  \
-		LADSPA	"Include support for LADSPA plugins"	on  \
-		MOTIF	"Make Snd with Motif graphics support"	off \
-		GTK2	"Make Snd with Gtk+ graphics support"	on \
-		X11	"Make Snd with GUI support"	on
+OPTIONS_DEFINE=	FFTW3 GSL S7 LADSPA MOTIF GTK2 X11 DOCS EXAMPLES
+OPTIONS_DEFAULT=	FFTW3 GSL LADSPA GTK2 X11
+FFTW3_DESC=	Use FFTW
+GSL_DESC=	Use GNU Scientific Library
+S7_DESC=	Use S7 as the extension language
 
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -41,41 +35,41 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 BROKEN=		does not compile on sparc64
 .endif
 
-.if !defined(WITHOUT_FFTW3)
+.if ${PORT_OPTIONS:MFFTW3}
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .else
 CONFIGURE_ARGS+=	--without-fftw
 .endif
 
-.if !defined(WITHOUT_GSL)
+.if ${PORT_OPTIONS:MGSL}
 LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--without-gsl
 .endif
 
-.if !defined(WITHOUT_S7)
+.if ${PORT_OPTIONS:MS7}
 CONFIGURE_ARGS+=	--with-s7
 .else
 CONFIGURE_ARGS+=	--without-s7
 .endif
 
-.if !defined(WITHOUT_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 .else
 CONFIGURE_ARGS+=	--without-ladspa
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
 .endif
-.if defined(WITH_MOTIF)
+.if ${PORT_OPTIONS:MMOTIG}
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif
 .endif
 
-.if defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-no-gui
 .endif
 
@@ -91,7 +85,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
-.if !defined(WITHOUT_S7)
+.if ${PORT_OPTIONS:MS7}
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
 	@${MKDIR} ${DATADIR}/tools
@@ -99,7 +93,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in HISTORY.Snd README.Snd
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -109,7 +103,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pix/*.png ${DOCSDIR}/pix
 	cd ${WRKSRC} && ${PAX} -r -w tutorial ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${EXAMPLESDIR}
 .endif
