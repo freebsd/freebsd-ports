@@ -1,0 +1,4 @@
+This is a clone of Object::Tiny, but adjusted to create accessors that
+return lvalues.
+
+WWW: http://search.cpan.org/dist/Object-Tiny-Lvalue/

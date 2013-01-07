@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Object/Tiny/Lvalue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Tiny/Lvalue/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Tiny/Lvalue
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
+@dirrmtry %%SITE_PERL%%/Object/Tiny
+@dirrmtry %%SITE_PERL%%/Object
