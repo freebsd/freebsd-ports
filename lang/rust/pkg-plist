@@ -1,18 +1,27 @@
 %%CARGO%%bin/cargo
 bin/rustc
 bin/rustdoc
-lib/libcore-c3ca5d77d81b46c1-0.4.so
-lib/librustc-c84825241471686d-0.4.so
+bin/rusti
+lib/libcargo.so
+lib/libcore-c3ca5d77d81b46c1-0.5.so
+lib/librustc-c84825241471686d-0.5.so
+lib/librustc.so
+lib/librustdoc.so
+lib/librusti-5047c7f210c7cac8-0.5.so
+lib/librusti.so
 lib/librustllvm.so
 lib/librustrt.so
-lib/libstd-4782a756585a81-0.4.so
-lib/libsyntax-84efebcb12c867a2-0.4.so
-lib/rustc/x86_64-unknown-freebsd/lib/libcore-c3ca5d77d81b46c1-0.4.so
+lib/libstd-4782a756585a81-0.5.so
+lib/libsyntax-84efebcb12c867a2-0.5.so
+lib/rustc/x86_64-unknown-freebsd/lib/libcargo-4951d6ef10eecbb6-0.5.so
+lib/rustc/x86_64-unknown-freebsd/lib/libcore-c3ca5d77d81b46c1-0.5.so
 lib/rustc/x86_64-unknown-freebsd/lib/libmorestack.a
-lib/rustc/x86_64-unknown-freebsd/lib/librustc-c84825241471686d-0.4.so
+lib/rustc/x86_64-unknown-freebsd/lib/librustc-c84825241471686d-0.5.so
+lib/rustc/x86_64-unknown-freebsd/lib/librustdoc-1ac3c0763957e4b0-0.5.so
+lib/rustc/x86_64-unknown-freebsd/lib/librusti-5047c7f210c7cac8-0.5.so
 lib/rustc/x86_64-unknown-freebsd/lib/librustrt.so
-lib/rustc/x86_64-unknown-freebsd/lib/libstd-4782a756585a81-0.4.so
-lib/rustc/x86_64-unknown-freebsd/lib/libsyntax-84efebcb12c867a2-0.4.so
+lib/rustc/x86_64-unknown-freebsd/lib/libstd-4782a756585a81-0.5.so
+lib/rustc/x86_64-unknown-freebsd/lib/libsyntax-84efebcb12c867a2-0.5.so
 @dirrm lib/rustc/x86_64-unknown-freebsd/lib
 @dirrm lib/rustc/x86_64-unknown-freebsd
 @dirrm lib/rustc

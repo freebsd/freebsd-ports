@@ -14,7 +14,7 @@
  pub use cmath::c_float::*;
  pub use cmath::c_float_targ_consts::*;
  
-+priv use cmath::c_double;
++priv use cmath::c_double_utils;
 +
  // These are not defined inside consts:: for consistency with
  // the integer types
@@ -24,7 +24,7 @@
  }
  
 +pub pure fn tgamma(n: f32) -> f32 {
-+    return c_double::tgamma(n as f64) as f32;
++    return c_double_utils::tgamma(n as f64) as f32;
 +}
 +
  pub pure fn signbit(x: f32) -> int {

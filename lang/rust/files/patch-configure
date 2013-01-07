@@ -1,6 +1,6 @@
---- configure.orig	2012-10-16 22:28:10.833921513 +0800
-+++ configure	2012-10-16 22:30:18.122921502 +0800
-@@ -312,7 +312,6 @@
+--- configure.orig	2012-12-19 07:29:12.000000000 +0800
++++ configure	2012-12-24 20:52:33.524922231 +0800
+@@ -363,7 +363,6 @@
  step_msg "looking for build programs"
  
  probe_need CFG_PERL        perl
@@ -8,7 +8,23 @@
  probe_need CFG_PYTHON      python2.7 python2.6 python2 python
  
  python_version=$($CFG_PYTHON -V 2>&1)
-@@ -451,7 +450,7 @@
+@@ -472,15 +471,6 @@
+     fi
+ fi
+ 
+-# Force freebsd to build with clang; gcc doesn't like us there
+-if [ $CFG_OSTYPE = unknown-freebsd ]
+-then
+-    step_msg "on FreeBSD, forcing use of clang"
+-    CFG_ENABLE_CLANG=1
+-    putvar CFG_ENABLE_CLANG
+-fi
+-
+-
+ if [ -z "$CFG_ENABLE_CLANG" -a -z "$CFG_GCC" ]
+ then
+     err "either clang or gcc is required"
+@@ -516,7 +506,7 @@
                        | cut -d ' ' -f 2)
  
      case $CFG_CLANG_VERSION in
