@@ -1919,6 +1919,7 @@
     SUBDIR += p5-File-Dir-Dumper
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-ExtAttr
+    SUBDIR += p5-File-FcntlLock
     SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
     SUBDIR += p5-File-Find-Rule

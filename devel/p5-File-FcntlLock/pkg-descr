@@ -1,0 +1,6 @@
+FcntlLock is a module to do file locking in an object oriented fashion using
+the fcntl(2) system call. This allows locks on parts of a file as well as on
+the whole file and overcomes some known problems with flock(2), on which Perls
+flock() function is based by default.
+
+WWW: http://search.cpan.org/dist/File-FcntlLock/
