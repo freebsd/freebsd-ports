@@ -1,23 +1,17 @@
 #!/bin/sh
-
+# Start or stop strongswan
 # $FreeBSD$
 
 # PROVIDE: strongswan
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
-# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
-#
-# strongswan_enable (bool):   Set to NO by default.
-#               Set it to YES to enable strongswan.
-
+command="%%PREFIX%%/sbin/ipsec"
 . /etc/rc.subr
 
 name="strongswan"
-rcvar=strongswan_enable
-
-command="%%PREFIX%%/sbin/ipsec"
+rcvar=`set_rcvar`
 extra_commands="reload statusall"
 
 load_rc_config $name
@@ -29,9 +23,11 @@ status_cmd="strongswan_command status"
 reload_cmd="strongswan_command reload"
 statusall_cmd="strongswan_command statusall"
 
+
 strongswan_command()
 {
 	$command ${rc_arg}
 }
 
 run_rc_command "$1"
+

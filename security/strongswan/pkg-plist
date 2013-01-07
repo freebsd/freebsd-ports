@@ -12,6 +12,10 @@ lib/ipsec/libstrongswan.a
 lib/ipsec/libstrongswan.la
 lib/ipsec/libstrongswan.so
 lib/ipsec/libstrongswan.so.0
+lib/ipsec/libtls.a
+lib/ipsec/libtls.la
+lib/ipsec/libtls.so
+lib/ipsec/libtls.so.0
 lib/ipsec/plugins/libstrongswan-addrblock.a
 lib/ipsec/plugins/libstrongswan-addrblock.la
 lib/ipsec/plugins/libstrongswan-addrblock.so
@@ -24,6 +28,9 @@ lib/ipsec/plugins/libstrongswan-attr.so
 lib/ipsec/plugins/libstrongswan-blowfish.a
 lib/ipsec/plugins/libstrongswan-blowfish.la
 lib/ipsec/plugins/libstrongswan-blowfish.so
+lib/ipsec/plugins/libstrongswan-cmac.a
+lib/ipsec/plugins/libstrongswan-cmac.la
+lib/ipsec/plugins/libstrongswan-cmac.so
 lib/ipsec/plugins/libstrongswan-constraints.a
 lib/ipsec/plugins/libstrongswan-constraints.la
 lib/ipsec/plugins/libstrongswan-constraints.so
@@ -42,9 +49,15 @@ lib/ipsec/plugins/libstrongswan-eap-md5.so
 lib/ipsec/plugins/libstrongswan-eap-mschapv2.a
 lib/ipsec/plugins/libstrongswan-eap-mschapv2.la
 lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
+lib/ipsec/plugins/libstrongswan-eap-peap.a
+lib/ipsec/plugins/libstrongswan-eap-peap.la
+lib/ipsec/plugins/libstrongswan-eap-peap.so
 lib/ipsec/plugins/libstrongswan-eap-tls.a
 lib/ipsec/plugins/libstrongswan-eap-tls.la
 lib/ipsec/plugins/libstrongswan-eap-tls.so
+lib/ipsec/plugins/libstrongswan-eap-ttls.a
+lib/ipsec/plugins/libstrongswan-eap-ttls.la
+lib/ipsec/plugins/libstrongswan-eap-ttls.so
 lib/ipsec/plugins/libstrongswan-fips-prf.a
 lib/ipsec/plugins/libstrongswan-fips-prf.la
 lib/ipsec/plugins/libstrongswan-fips-prf.so
@@ -63,6 +76,9 @@ lib/ipsec/plugins/libstrongswan-md4.so
 lib/ipsec/plugins/libstrongswan-md5.a
 lib/ipsec/plugins/libstrongswan-md5.la
 lib/ipsec/plugins/libstrongswan-md5.so
+lib/ipsec/plugins/libstrongswan-nonce.a
+lib/ipsec/plugins/libstrongswan-nonce.la
+lib/ipsec/plugins/libstrongswan-nonce.so
 lib/ipsec/plugins/libstrongswan-openssl.a
 lib/ipsec/plugins/libstrongswan-openssl.la
 lib/ipsec/plugins/libstrongswan-openssl.so
@@ -75,6 +91,9 @@ lib/ipsec/plugins/libstrongswan-pgp.so
 lib/ipsec/plugins/libstrongswan-pkcs1.a
 lib/ipsec/plugins/libstrongswan-pkcs1.la
 lib/ipsec/plugins/libstrongswan-pkcs1.so
+lib/ipsec/plugins/libstrongswan-pkcs8.a
+lib/ipsec/plugins/libstrongswan-pkcs8.la
+lib/ipsec/plugins/libstrongswan-pkcs8.so
 lib/ipsec/plugins/libstrongswan-pubkey.a
 lib/ipsec/plugins/libstrongswan-pubkey.la
 lib/ipsec/plugins/libstrongswan-pubkey.so
@@ -119,6 +138,10 @@ libexec/ipsec/starter
 libexec/ipsec/stroke
 libexec/ipsec/whitelist
 sbin/ipsec
+%%SIMAKA%%lib/ipsec/libsimaka.a
+%%SIMAKA%%lib/ipsec/libsimaka.la
+%%SIMAKA%%lib/ipsec/libsimaka.so
+%%SIMAKA%%lib/ipsec/libsimaka.so.0
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.a
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.so
@@ -137,6 +160,12 @@ sbin/ipsec
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.a
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.la
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.so
+%%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.a
+%%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
+%%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
+%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.a
+%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.la
+%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.so
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.a
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.la
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.so
@@ -162,6 +191,7 @@ sbin/ipsec
 @dirrm etc/ipsec.d/acerts
 @dirrm etc/ipsec.d/aacerts
 @dirrm etc/ipsec.d
+@exec mkdir -p %D/etc/ipsec.d
 @exec mkdir -p %D/etc/ipsec.d/reqs
 @exec mkdir -p %D/etc/ipsec.d/private
 @exec mkdir -p %D/etc/ipsec.d/ocspcerts
