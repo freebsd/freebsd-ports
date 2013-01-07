@@ -134,6 +134,9 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.pyo
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpytimedelta.py
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpytimedelta.pyc
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpytimedelta.pyo
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testrichard.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testrichard.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testrichard.pyo
@@ -467,4 +470,3 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mx/URL/mxURL
 @dirrm %%PYTHON_SITELIBDIR%%/mx/URL
 @dirrm %%PYTHON_SITELIBDIR%%/mx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
