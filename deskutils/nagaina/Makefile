@@ -37,9 +37,9 @@ PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
 
 DESKTOP_ENTRIES=	"Nagaina" \
 			"${COMMENT}" \
+			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 			"${PORTNAME}" \
-			"${PORTNAME}" \
-			"Qt;KDE;Office;Utility;" \
+			"Qt;Office;Utility;" \
 			"false"
 
 .include <bsd.port.options.mk>

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	colorcode
-# Date created:		2010-10-16
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	colorcode
 PORTVERSION=	0.7.2
@@ -13,15 +8,15 @@ MASTER_SITES=	http://colorcode.laebisch.com/download/
 DISTNAME=	ColorCode-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A free advanced MasterMind game and solver
+COMMENT=	Advanced MasterMind game and solver
 
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/ColorCode-${PORTVERSION}
 
-DESKTOP_ENTRIES=	"ColorCode" "Advanced MasterMind game and solver" \
+DESKTOP_ENTRIES=	"ColorCode" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/colorcode.png" "colorcode" \
-			"Application;LogicGame;Game;" false
+			"LogicGame;Game;Qt;" false
 
 PLIST_FILES=	bin/colorcode \
 		share/pixmaps/colorcode.png

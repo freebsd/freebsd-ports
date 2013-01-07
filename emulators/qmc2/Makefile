@@ -45,10 +45,10 @@ MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}"
 MAKE_JOBS_UNSAFE=yes
 
-DESKTOP_ENTRIES="QMC2 (MAME)" "MAME frontend" "${DATADIR}/img/mame.ico" \
-		"${PORTNAME}-sdlmame" "Game;Emulator;" "true" \
-		"QMC2 (MESS)" "MESS frontend" "${DATADIR}/img/mess.ico" \
-		"${PORTNAME}-sdlmess" "Game;Emulator;" "true"
+DESKTOP_ENTRIES="QMC2 (MAME)" "MAME frontend" "${DATADIR}/img/mame.png" \
+		"${PORTNAME}-sdlmame" "Game;Emulator;Qt;" "true" \
+		"QMC2 (MESS)" "MESS frontend" "${DATADIR}/img/mess.png" \
+		"${PORTNAME}-sdlmess" "Game;Emulator;Qt;" "true"
 
 .include <bsd.port.options.mk>
 

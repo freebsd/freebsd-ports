@@ -19,7 +19,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"KPDFTool" "${COMMENT}" "kpdftool" \
-			"kpdftool" "Application;Qt;Utility;" false
+			"kpdftool" "Qt;Utility;" false
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \

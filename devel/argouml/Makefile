@@ -1,4 +1,4 @@
-# Created by:	ijliao
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	argouml
@@ -39,7 +39,7 @@ DESKTOP_ENTRIES=	"ArgoUML" \
 			"Create advanced UML diagrams" \
 			"${DATADIR}/icon/ArgoIcon128x128.png" \
 			"argouml" \
-			"Application;Development;Building;Java;" \
+			"Development;Building;Java;" \
 			false
 
 do-install:

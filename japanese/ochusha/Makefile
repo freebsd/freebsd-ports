@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ochusha
-# Date created:     15 April 2006
-# Whom:             sgr
-#
+# Created by: sgr
 # $FreeBSD$
-#
 
 PORTNAME=	ochusha
 PORTVERSION=	0.5.8.2
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=		ochusha/16560
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GUI BBS browser for 2ch.net
+COMMENT=	GUI BBS browser for 2ch.net
 
 MAN1=		ochusha.1
 MANCOMPRESSED=	no
@@ -25,9 +21,9 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	yes
 
-DESKTOP_ENTRIES="Ochusha" "A GUI BBS browser for 2ch.net" \
-		"${LOCALBASE}/share/ochusha/ochusha32.xpm" \
-		"ochusha" "Application;Network;" \
+DESKTOP_ENTRIES="Ochusha" "${COMMENT}" \
+		"${PREFIX}/share/ochusha/ochusha32.xpm" \
+		"ochusha" "Network;" \
 		false
 
 post-patch:

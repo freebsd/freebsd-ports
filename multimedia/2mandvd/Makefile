@@ -33,8 +33,8 @@ MAKE_ENV=	QTDIR=${QT_PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="2ManDVD" "DVD Maker" "mandvdico.png" "2ManDVD" \
-		"Application;AudioVideo;" false
+DESKTOP_ENTRIES="2ManDVD" "DVD Maker" "${PREFIX}/share/pixmaps/mandvdico.png" \
+		"2ManDVD" "AudioVideo;DiscBurning;Qt;" false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/mainfrm.cpp \

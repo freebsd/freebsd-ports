@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME:S/-//g}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A puzzle game based on hexagonal tiles
+COMMENT=	Puzzle game based on hexagonal tiles
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
@@ -22,9 +22,9 @@ OPTIONS_DEFAULT=	SOUND
 PANGO_DESC=	Use sdl_pango instead of sdl_ttf
 SOUND_DESC=	Sound support
 
-DESKTOP_ENTRIES="Hex-a-Hop" "A puzzle game based on hexagonal tiles" \
+DESKTOP_ENTRIES="Hex-a-Hop" "${COMMENT}" \
 		"${DATADIR}/icon.bmp" \
-		"hex-a-hop" "Application;LogicGame;Game;" false
+		"hex-a-hop" "LogicGame;Game;" false
 
 .include <bsd.port.options.mk>
 

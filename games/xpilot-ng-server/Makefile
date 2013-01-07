@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpilot-ng
-# Date created:			11 Sep 2003
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	xpilot-ng
 PORTVERSION=	4.7.3
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/xpilot/xpilot_ng/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	An enhanced version of XPilot (server program)
+COMMENT?=	Enhanced version of XPilot (server program)
 
 LICENSE=	GPLv2
 

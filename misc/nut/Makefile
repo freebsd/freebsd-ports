@@ -40,7 +40,7 @@ USE_XORG+=	x11 xau xdmcp xext xft xinerama xrender
 MAKE_ENV+=	HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
 PLIST_FILES+=	bin/Nut
 DESKTOP_ENTRIES="Nut" "${COMMENT}" "" "Nut" \
-		"Application;Science;Biology;MedicalSoftware;" "false"
+		"Science;Biology;MedicalSoftware;" "false"
 .else
 MAKE_ENV+=	HAVE_FLTK=0 FLTK_NUT=""
 .endif

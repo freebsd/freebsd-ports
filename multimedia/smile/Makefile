@@ -8,7 +8,7 @@ CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/smiletool/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Slideshow Maker in Linux Environment
+COMMENT=	Slideshow Maker
 
 RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
@@ -22,8 +22,8 @@ MAKE_ENV=	QTDIR=${QT_PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="Smile" "${COMMENT}" "smile.png" "${PORTNAME}" \
-		"Application;AudioVideo;" false
+DESKTOP_ENTRIES="Smile" "${COMMENT}" "${PREFIX}/share/pixmaps/smile.png" \
+		"${PORTNAME}" "AudioVideo;Qt;" false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/mainfrm.cpp \

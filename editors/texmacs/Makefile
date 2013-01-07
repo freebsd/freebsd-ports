@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free WYSIWYG scientific text editor
+COMMENT=	WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
@@ -39,7 +39,7 @@ PDF_DESC=	Experimental PDF renderer
 
 DESKTOP_ENTRIES=	"TeXmacs" "${COMMENT}" \
 			"${DATADIR}/misc/pixmaps/TeXmacs.xpm" "texmacs" \
-			"Application;Education;Science;" false
+			"Education;Science;" false
 
 .include <bsd.port.options.mk>
 

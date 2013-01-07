@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gdvrecv
-# Date created:                        01 Nov 2004
-# Whom:                                Henri Michelon <hmichelon at e-cml.org>
-#
+# Created by: Henri Michelon <hmichelon at e-cml.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdvrecv
 PORTVERSION=	1.2
@@ -22,7 +18,7 @@ DESKTOP_ENTRIES="Capture Video" \
 		"Capture from FireWire Camera" \
 		"${PREFIX}/share/pixmaps/gdvrecv/camcorder.png" \
 		"gdvrecv" \
-		"Application;AudioVideo;" \
+		"AudioVideo;Video;" \
 		true
 
 CONFLICTS=	dvts-[0-9]*

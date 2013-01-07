@@ -19,9 +19,9 @@ MAN1=		gtk-send-pr.1
 PLIST_FILES=	bin/gtk-send-pr share/pixmaps/ladybird64.xpm
 DESKTOP_ENTRIES="Send Problem Report" \
 		"Send a FreeBSD PR" \
-		"ladybird64.xpm" \
+		"${PREFIX}/share/pixmaps/ladybird64.xpm" \
 		"gtk-send-pr" \
-		"Application;System;" \
+		"System;" \
 		true
 
 do-install:

@@ -37,7 +37,7 @@ SUB_FILES=	ftjava.sh
 
 DESKTOP_ENTRIES=	"FTJava" "A PBEM client for Full Thrust" \
 			"${DATADIR}/Images/FTJava.ico" \
-			"ftjava" "Application;Game;BoardGame;StrategyGame;" \
+			"ftjava" "Game;BoardGame;StrategyGame;" \
 			false
 
 do-install:

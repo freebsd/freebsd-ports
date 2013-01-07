@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qtemu
-# Date created:		2007-03-20
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qtemu
 PORTVERSION=	1.0.5
@@ -12,7 +7,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A Qt4 front-end to Qemu
+COMMENT=	Qt4-based frontend for QEMU
 
 USE_BZIP2=	yes
 USE_QT4=	gui xml uic_build moc_build qmake_build rcc_build
@@ -25,8 +20,7 @@ DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-#USE_QT4+=	linguist
-BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -34,14 +28,7 @@ PLIST_SUB+=	NLS="@comment "
 
 do-configure:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 -verbose qtemu.pro \
-	&& ${SETENV} ${CONFIGURE_ENV} ${QMAKE})
-
-post-configure:
-	@${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; \
-		 s|^CXX .*|CXX=${CXX}|; \
-		 s|^LINK .*|LINK=${CXX}|' \
-		${WRKSRC}/Makefile
+	&& ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtemu ${PREFIX}/bin/qtemu

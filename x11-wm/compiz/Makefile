@@ -1,9 +1,4 @@
-# New ports collection makefile for:	compiz
-# Date created:				Dec 20 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.4
@@ -76,10 +71,10 @@ METACITY_DESC=	Enable Metacity support
 
 SUB_FILES=		compiz-manager
 DESKTOP_ENTRIES=	"Compiz Manager" \
-			"A wrapper script for starting compiz" \
+			"Wrapper script for starting compiz" \
 			"" \
 			"compiz-manager" \
-			"Application;Core;" \
+			"System;Core;" \
 			false
 
 post-patch:

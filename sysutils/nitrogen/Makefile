@@ -48,7 +48,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		nitrogen.1
 
-DESKTOP_ENTRIES="Nitrogen" "${COMMENT}" "${PORTNAME}.png" "${PORTNAME}" \
+DESKTOP_ENTRIES="Nitrogen" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 		"Graphics;Viewer;" true
 
 .include <bsd.port.options.mk>

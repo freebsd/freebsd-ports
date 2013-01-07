@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cheech
-# Date created:			18 Jul 2007
-# Whom:				Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cheech
 PORTVERSION=	0.8
@@ -13,7 +9,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multi-platform, networked Chinese Checkers game
+COMMENT=	Multiplayer Chinese Checkers game
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
@@ -23,10 +19,10 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 
 DESKTOP_ENTRIES=	"cheech" \
-			"A networked Chinese Checkers Game" \
+			"${COMMENT}" \
+			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 			"cheech" \
-			"cheech" \
-			"Application;Game;" \
+			"Game;BoardGame;" \
 			"false"
 
 .if !defined(NOPORTDOCS)

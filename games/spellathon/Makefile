@@ -29,7 +29,7 @@ USE_XORG=	ice sm x11 xau xdmcp xext xrender
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="Spellathon" "${COMMENT}" "" "${PORTNAME}" "" "true"
+DESKTOP_ENTRIES="Spellathon" "${COMMENT}" "" "${PORTNAME}" "Education;Languages;" "true"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \

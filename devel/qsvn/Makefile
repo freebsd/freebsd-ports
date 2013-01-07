@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qsvn
-# Date created:		2007-11-17
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qsvn
 DISTVERSION=	0.8.1
@@ -24,7 +19,8 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-DESKTOP_ENTRIES="QSvn" "SVN client" "qsvn.png" "qsvn" "" false
+DESKTOP_ENTRIES="QSvn" "SVN client" "${PREFIX}/share/pixmaps/qsvn.png" \
+		"qsvn" "Development;RevisionControl;Qt;" false
 
 SVNQT_INCLUDE_DIR=	include/svnqt4
 PLIST_SUB=	SVNQT_INCLUDE_DIR="${SVNQT_INCLUDE_DIR}"
