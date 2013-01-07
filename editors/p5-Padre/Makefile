@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Application Development and Refactoring Environment
 
-BUILD_DEPENDS=	p5-ack>=1.86:${PORTSDIR}/textproc/p5-ack \
+BUILD_DEPENDS=	ack:${PORTSDIR}/textproc/ack \
 		p5-Class-Adapter>=1.05:${PORTSDIR}/devel/p5-Class-Adapter \
 		p5-Class-Unload>=0.03:${PORTSDIR}/devel/p5-Class-Unload \
 		p5-Devel-Dumpvar>=0.04:${PORTSDIR}/devel/p5-Devel-Dumpvar \

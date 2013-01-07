@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	textproc perl5 sysutils
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	App
-PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A grep-like text finder for large trees of text
