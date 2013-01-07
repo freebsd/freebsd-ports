@@ -1,12 +1,8 @@
-# New ports collection makefile for:	bottle
-# Date created:		2009-11-03
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bottle
-PORTVERSION=	0.10.11
+PORTVERSION=	0.11.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
