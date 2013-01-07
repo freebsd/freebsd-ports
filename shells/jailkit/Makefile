@@ -1,12 +1,9 @@
-# New ports collection makefile for:	jailkit
-# Date created:		2009-08-20
-# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
-#
+# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	jailkit
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
@@ -36,6 +33,8 @@ MANCOMPRESSED=	yes
 
 PORTDOCS=	COPYRIGHT README.txt
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	@${ECHO_MSG} "Updating ${SHELLS}"
 	@${CP} ${SHELLS} ${SHELLS}.bak
@@ -43,10 +42,10 @@ post-install:
 	  ${ECHO_CMD} ${PREFIX}/sbin/jk_chrootsh) > ${SHELLS}
 	@${RM} -f ${SHELLS}.bak
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
