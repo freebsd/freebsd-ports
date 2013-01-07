@@ -1,11 +1,15 @@
 # $FreeBSD$
 
+# The version should match the one imported into base in later releases,
+# so ports can expect the same features across all branches.
+
 PORTNAME=	xz
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	archivers
 #MASTER_SITES=	http://tukaani.org/xz/
-# tukaani.org doesn't interop with fetch(1) as of 2011-07-27
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+# tukaani.org still doesn't interop with fetch(1) as of 2013-01-06
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	naddy
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	LZMA compression and decompression tools
@@ -18,7 +22,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 
-# As we want to use xz for extraction of port's distfiles,
+# As we want to use xz for extraction of port distfiles,
 # it cannot depend on gettext.
 CONFIGURE_ARGS=	--disable-nls
 
@@ -28,7 +32,8 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install install-dist_docDATA install-dist_examplesDATA
+INSTALL_TARGET=	install install-dist_docDATA install-dist_examplesDATA \
+		install-dist_examplesoldDATA
 .endif
 
 MAN1=	lzmainfo.1 xz.1 xzdec.1 xzdiff.1 xzgrep.1 xzless.1 xzmore.1
@@ -44,7 +49,7 @@ MLINKS=	xz.1 lzcat.1		xzdiff.1 lzcmp.1 \
 
 PORTDOCS=	AUTHORS COPYING COPYING.GPLv2 NEWS README THANKS TODO \
 		faq.txt history.txt lzma-file-format.txt xz-file-format.txt \
-		examples
+		examples examples_old
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
