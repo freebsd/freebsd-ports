@@ -37,8 +37,8 @@ MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" \
-		"Application;Science;Biology;" "true"
+DESKTOP_ENTRIES="SeaView" "${COMMENT}" "" \
+		"${PORTNAME}" "Biology;Science;" "true"
 
 PLIST_FILES=	bin/seaview %%DATADIR%%/seaview.html
 PLIST_DIRS=	%%DATADIR%%

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Battle Tanks
-# Date created:				24 Mar 2008
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	btanks
 PORTVERSION=	0.9.8083
@@ -39,7 +35,7 @@ PORTDOCS=	LICENSE LICENSE.EXCEPTION README-en.txt README-linux.txt \
 		donate.url homepage.url project_page.url video.txt
 
 DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "${PORTNAME}" \
-		"Application;Game;" false
+		"Game;ArcadeGame;" false
 
 pre-build:
 # Regenerate `sl08.h' after we patch `sl08.py' (as patching the header itself

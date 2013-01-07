@@ -1,9 +1,5 @@
-# New ports collection makefile for:	albumshaper
-# Date created:				17 Jul 2007
-# Whom:					Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	albumshaper
 PORTVERSION=	2.1
@@ -13,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A drag-n-drop hierarchal photo album creation
+COMMENT=	Drag-n-drop hierarchal photo album creation
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
@@ -33,10 +29,10 @@ MAKE_ENV+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 DESKTOP_ENTRIES=	"AlbumShaper" \
-			"A drag-n-drop hierarchal photo album creation" \
+			"Photo album creation" \
 			"${DATADIR}/images/miscImages/as32.png" \
 			"AlbumShaper" \
-			"Qt;KDE;Graphics;" \
+			"Qt;Graphics;" \
 			"false"
 
 .if !defined(WITHOUT_NLS)

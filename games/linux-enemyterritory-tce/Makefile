@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Enemy Territory TrueCombat:Elite
-# Date created:			25 Mar 2005
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.49
@@ -14,7 +10,7 @@ DISTNAME=	tcetest
 DISTFILES=	tcetest049.zip
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modern tactical Enemy Territory modification
+COMMENT=	Modern tactical Enemy Territory modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 

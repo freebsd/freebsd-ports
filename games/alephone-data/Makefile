@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alephone-data
-# Date created:		08 March 2001
-# Whom:			Michael Alyn Miller <malyn@strangeGizmo.com>
-#
+# Created by: Michael Alyn Miller <malyn@strangeGizmo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	1.0

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alephone-scenarios
-# Date created:				2007-03-06
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	scenarios
 PORTVERSION=	1.0

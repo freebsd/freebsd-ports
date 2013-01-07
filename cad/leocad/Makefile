@@ -9,7 +9,7 @@ DISTFILES=	${LEOCAD_DISTNAME} ${LEOCAD_PIECES}
 EXTRACT_ONLY=	${LEOCAD_DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A CAD program that uses bricks similar to those found in many toys
+COMMENT=	CAD modeling with LEGO-like bricks
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 MAKE_JOBS_UNSAFE=	yes
 
-DESKTOP_ENTRIES="Leocad" "${COMMENT}" "" "${PORTNAME}" "Engineering;" "true"
+DESKTOP_ENTRIES="Leocad" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
 PLIST_FILES=	bin/leocad \
 		${DATADIR_REL}/pieces.bin \

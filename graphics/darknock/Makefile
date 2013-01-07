@@ -1,18 +1,14 @@
-# New ports collection makefile for:	darknock
-# Date created:		5 August 2007
-# Whom:                	Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	darknock
 DISTVERSION=	0.3.0
 PORTREVISION=	3
-CATEGORIES=	graphics kde
+CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program that can detect edges in images
+COMMENT=	Program that can detect edges in images
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build gui
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -29,9 +25,9 @@ PLIST_SUB+=	NLS="@comment "
 
 DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"${COMMENT}" \
+			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 			"${PORTNAME}" \
-			"${PORTNAME}" \
-			"Qt;KDE;Graphics;" \
+			"Graphics;Qt;" \
 			"false"
 
 post-patch:

@@ -26,8 +26,9 @@ OPTIONS_DEFINE_i386=	ASM
 GNOME1_DESC=	Use GNOME 1.x (enables envelope editing)
 ASM_DESC=	Use optimized assembly (potentially unstable)
 
-DESKTOP_ENTRIES="SoundTracker" "Compose music" "soundtracker.xpm" \
-		"soundtracker" "Audio;Player;Recorder;" false
+DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
+		"soundtracker" "AudioVideo;Audio;AudioVideoEditing;" false
 
 .include <bsd.port.pre.mk>
 

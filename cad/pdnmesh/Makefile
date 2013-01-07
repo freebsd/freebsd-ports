@@ -8,7 +8,7 @@ CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Finite element program
+COMMENT=	Mesh generator and solver for Finite Element problems
 
 LICENSE=	GPLv2 # (or later)
 
@@ -43,7 +43,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		pdnmesh.1
 MAN5=		pdnmesh_input.5
 
-DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" "" "true"
+DESKTOP_ENTRIES="pdnMesh" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
 .include <bsd.port.options.mk>
 

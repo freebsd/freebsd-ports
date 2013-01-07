@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qlabels
-# Date created:		12 Jul 2007
-# Whom:			Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qlabels
 PORTVERSION=	0.2
@@ -14,17 +10,17 @@ MASTER_SITES=	http://qlabels.p34.net/files/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A labels and business cards creating and printing software
+COMMENT=	Labels and business cards creating
 
 USE_BZIP2=	yes
 USE_QT4=	xml gui corelib qmake_build uic_build moc_build rcc_build
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 
-DESKTOP_ENTRIES=	"qlabels" \
-			"A labels and business cards creating and printing software" \
+DESKTOP_ENTRIES=	"qLabels" \
+			"${COMMENT}" \
 			"" \
 			"qlabels" \
-			"Application;Office;" \
+			"Office;Qt;" \
 			"false"
 
 post-patch:
@@ -34,7 +30,7 @@ post-patch:
 		${WRKSRC}/lib/papers.cpp
 
 pre-build:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix qlabels.pro
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} qlabels.pro
 
 post-install:
 .if !defined(NOPORTDOCS)

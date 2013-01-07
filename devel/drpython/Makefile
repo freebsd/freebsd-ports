@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drpython
-# Date created:		2005-07-22
-# Whom:			vsevolod
-#
+# Created by: vsevolod
 # $FreeBSD$
-#
 
 PORTNAME=	drpython
 PORTVERSION=	3.11.3

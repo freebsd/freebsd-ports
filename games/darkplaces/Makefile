@@ -1,9 +1,5 @@
-# New ports collection makefile for:	darkplaces
-# Date created:				25 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	darkplaces
 PORTVERSION=	20110628
@@ -54,7 +50,7 @@ EXE_TARGETS+=	${PORTNAME}-glx
 PLIST_SUB+=	CLIENT=""
 PLIST_FILES+=	bin/${PORTNAME}-glx
 DESKTOP_ENTRIES+="Darkplaces GLX Client" "" "" "darkplaces-glx" \
-		"Game;ActionGame;" "false"
+		"" "false"
 .endif
 
 .if ${PORT_OPTIONS:MDEDICATED}
@@ -69,7 +65,7 @@ ALL_TARGET+=	sdl-release
 EXE_TARGETS+=	${PORTNAME}-sdl
 PLIST_FILES+=	bin/${PORTNAME}-sdl
 DESKTOP_ENTRIES+="Darkplaces SDL Client" "" "" "darkplaces-sdl" \
-		"Game;ActionGame;" "false"
+		"" "false"
 .endif
 
 post-extract:

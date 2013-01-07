@@ -42,7 +42,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}-${DISTVERSION}src
 
 DESKTOP_ENTRIES=	"ManDVD" "Create your DVD" \
 			"${PREFIX}/share/pixmaps/mandvdico.png" \
-			"${PORTNAME}" "Application;AudioVideo;" false
+			"${PORTNAME}" "AudioVideo;DiscBurning;Qt;" false
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC}

@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	gnuitar
-# Date created:				3 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=		gnuitar
@@ -29,7 +27,7 @@ SUID_DESC=	Use suid to allow highest priority (priv. dropped)
 
 DESKTOP_ENTRIES="GNUitar" \
 		"Apply guitar effects in real-time" \
-		"gnuitar" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 		"gnuitar" \
 		"" \
 		true

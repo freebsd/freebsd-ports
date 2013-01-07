@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/ConvertAll
 
 USE_PYTHON=	2.4+
 
-DESKTOP_ENTRIES="ConvertAll" "${COMMENT}" "${DATADIR}/icons/${PORTNAME}.svg" \
+DESKTOP_ENTRIES="ConvertAll" "Unit converter" "${DATADIR}/icons/${PORTNAME}.svg" \
 		"${PORTNAME}" "Utility;Calculator;" true
 
 .include <bsd.port.options.mk>

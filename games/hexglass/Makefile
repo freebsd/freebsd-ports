@@ -1,9 +1,4 @@
-# New ports collection makefile for:	hexglass
-# Date created:		2010-12-17
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hexglass
 PORTVERSION=	1.2.1
@@ -23,7 +18,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 DESKTOP_ENTRIES=	"HexGlass" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
-			"${PORTNAME}" "Application;BlocksGame;Game;" false
+			"${PORTNAME}" "BlocksGame;Game;" false
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}

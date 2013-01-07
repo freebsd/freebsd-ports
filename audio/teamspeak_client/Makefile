@@ -1,9 +1,5 @@
-# New ports collection makefile for:	teamspeak
-# Date created:				22 January 2003
-# Whom:					Daniel O'Connor
-#
+# Created by: Daniel O'Connor
 # $FreeBSD$
-#
 
 PORTNAME=	teamspeak_client
 PORTVERSION=	2.0.32
@@ -36,7 +32,7 @@ DESKTOP_ENTRIES="TeamSpeak" \
 		"Voice-chat with people" \
 		"${TSHOME}/icon.xpm" \
 		"TeamSpeak" \
-		"Application;Audio;Network;" \
+		"Network;Telephony;" \
 		false
 
 post-extract:

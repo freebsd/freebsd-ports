@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qtiplot
-# Date created:				2005-05-09
-# Whom:					Jie Gao <gaoj@cpsc.ucalgary.ca>
-#
+# Created by: Jie Gao <gaoj@cpsc.ucalgary.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	qtiplot
 DISTVERSION=	0.9.8.9
@@ -12,7 +8,7 @@ CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	An Origin clone for data analysis and scientific plotting
+COMMENT=	Data analysis and scientific plotting
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl \

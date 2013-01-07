@@ -27,7 +27,7 @@ DESKTOP_ENTRIES="AutoQ3D" \
 		"${COMMENT}" \
 		"AutoQ3D" \
 		"AutoQ3D" \
-		"Qt;KDE;Graphics;" \
+		"Graphics;3DGraphics;Qt;" \
 		false
 
 .include <bsd.port.options.mk>
