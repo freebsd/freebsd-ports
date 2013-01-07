@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ncmpcpp
-# Date created:		August 25 2008
-# Whom:			Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.5.10
@@ -30,14 +26,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAN1=	ncmpcpp.1
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
-		CLOCK "Enable clock-screen support" on \
-		UTF8 "Enable UTF8 support" on \
-		TAGLIB "Enable taglib support" off \
-		OUTPUTS "Enable outputs screen" on \
-		VISUALIZER "Enable music visualizer screen" on
+OPTIONS_DEFINE=	CURL CLOCK UTF8 TAGLIB OUTPUTS VISUALIZER
+OPTIONS_DEFAULT=	CURL CLOCK OUTPUTS VISUALIZER
+CURL_DESC=	Enable fetching lyrics from the Internet
+CLOCK_DESC=	clock-screen support
+TAGLIB_DESC=	taglib support
+OUTPUTS_DESC=	Enable outputs screen
+VISUALIZER_DESC=	Enable music visualizer screen
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_NCURSES_BASE)
 # no need to use ncurses-config if we use ncurses from the base system
@@ -52,46 +49,46 @@ PLIST_FILES=	bin/ncmpcpp \
 		%%DOCSDIR%%/COPYING
 PLIST_DIRS=	%%DOCSDIR%%
 
-.if !defined(WITHOUT_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 .else
 CONFIGURE_ARGS+=	--with-curl=no
 .endif
 
-.if !defined(WITHOUT_CLOCK)
+.if ${PORT_OPTIONS:MCLOCK}
 CONFIGURE_ARGS+=	--enable-clock
 .else
 CONFIGURE_ARGS+=	--disable-clock
 .endif
 
-.if !defined(WITHOUT_UTF8)
+.if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=	--enable-unicode
 .else
 CONFIGURE_ARGS+=	--disable-unicode
 .endif
 
-.if !defined(WITHOUT_TAGLIB)
+.if ${PORT_OPTIONS:MTAGLIB}
 LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--with-taglib=no
 .endif
 
-.if !defined(WITHOUT_OUTPUTS)
+.if ${PORT_OPTIONS:MOUTPUTS}
 CONFIGURE_ARGS+=	--enable-outputs
 .else
 CONFIGURE_ARGS+=	--disable-outputs
 .endif
 
-.if !defined(WITHOUT_VISUALIZER)
+.if ${PORT_OPTIONS:MVISUALIZER}
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 CONFIGURE_ARGS+=	--enable-visualizer
 .endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}/NEWS
@@ -105,4 +102,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mcabber
-# Date created:		2005-10-05
-# Whom:			vsevolod
-#
+# Created by: vsevolod
 # $FreeBSD$
-#
 
 PORTNAME=	mcabber
 PORTVERSION=	0.10.1
@@ -32,35 +28,37 @@ USE_GNOME=	glib20
 
 MAN1=		mcabber.1
 
-OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
-		OTR "Off-the-record messaging support" off \
-		ASPELL "Use textproc/aspell for spell checking" off \
-		ENCHANT "Use texproc/enchant for spell checking" off
+OPTIONS_DEFINE=	GPGME OTR
+OPTIONS_RADIO=	SPELL
+OPTIONS_RADIO_SPELL=	ASPELL ENCHANT
+GPGME_DESC=	Use security/gpgme for PGP support
+OTR_DESC=	Off-the-record messaging support
+ENCHANT_DESC=	Spell checking via enchant
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GPGME)
+.if ${PORT_OPTIONS:MGPGME}
 LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=--enable-gpgme
 .else
 CONFIGURE_ARGS+=--disable-gpgme
 .endif
 
-.if defined(WITH_ASPELL) && !defined(WITH_ENCHANT)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--enable-aspell
 .else
 CONFIGURE_ARGS+=--disable-aspell
 .endif
 
-.if defined(WITH_ENCHANT)
+.if ${PORT_OPTIONS:MENCHANT}
 LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=--enable-enchant
 .else
 CONFIGURE_ARGS+=--disable-enchant
 .endif
 
-.if defined(WITH_OTR)
+.if ${PORT_OPTIONS:MOTR}
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr3 \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-otr
@@ -82,4 +80,4 @@ post-install:
 	@${CP} -R ${WRKSRC}/contrib ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${EXAMPLESDIR}/mcabberrc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
