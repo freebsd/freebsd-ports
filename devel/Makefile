@@ -2358,6 +2358,7 @@
     SUBDIR += p5-Object-Signature
     SUBDIR += p5-Object-Simple
     SUBDIR += p5-Object-Tiny
+    SUBDIR += p5-Object-Tiny-Lvalue
     SUBDIR += p5-Olson-Abbreviations
     SUBDIR += p5-Oogly
     SUBDIR += p5-Ouch
