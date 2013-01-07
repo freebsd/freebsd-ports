@@ -10,7 +10,8 @@ PORTVERSION=	3.4.0
 PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	SF/psicode/psi/${PORTVERSION} \
-		http://www.psicode.org/doc/:doc
+		http://www.psicode.org/doc/:doc \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/psi3|}:doc
 
 DISTNAME=	psi-${PORTVERSION}
 .if !defined(NOPORTDOCS)
