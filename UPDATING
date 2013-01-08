@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130108:
+  AFFECTS: users of sysutils/cfengine*
+  AUTHOR: gjb@FreeBSD.org
+
+  sysutils/cfengine has been created as a master port for the set of
+  sysutils/cfengine* ports.  Users interested in tracking the latest
+  stable branch of cfengine should update their port origins to use
+  the new port, for example:
+
+  # portmaster -o sysutils/cfengine sysutils/cfengine33
+  or
+  # portupgrade -fo sysutils/cfengine sysutils/cfengine33
+  or
+  # pkg set -o sysutils/cfengine33:sysutils/cfengine 
+
+  Users that switch their port origin and later wish to remain on
+  a particular cfengine release can override the default version by
+  adding CFENGINE_VERSION to /etc/make.conf, where CFENGINE_VERSION
+  is a value from:
+
+    # make -V VERSIONS
+
 20130103:
   AFFECTS: users of textproc/docproj*
   AUTHOR: doceng@FreeBSD.org
