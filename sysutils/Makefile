@@ -105,7 +105,6 @@
     SUBDIR += cdroot
     SUBDIR += cdrtools
     SUBDIR += cdrtools-devel
-    SUBDIR += cfengine
     SUBDIR += cfengine-devel
     SUBDIR += cfengine22
     SUBDIR += cfengine32
