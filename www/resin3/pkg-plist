@@ -82,6 +82,7 @@ etc/resin3/app-default.xml
 %%APP_NAME%%/webapps/resin-doc/changes/resin-3.0.9.xtp
 %%APP_NAME%%/webapps/resin-doc/changes/resin-3.1.0.xtp
 %%APP_NAME%%/webapps/resin-doc/changes/resin-3.1.1.xtp
+%%APP_NAME%%/webapps/resin-doc/changes/resin-3.1.13.xtp
 %%APP_NAME%%/webapps/resin-doc/changes/resin-3.1.2.xtp
 %%APP_NAME%%/webapps/resin-doc/changes/resin-3.1.3.xtp
 %%APP_NAME%%/webapps/resin-doc/changes/resin-3.1.4.xtp
