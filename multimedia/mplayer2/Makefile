@@ -246,7 +246,7 @@ USE_XORG+=		xinerama xineramaproto
 CONFIGURE_ARGS+=	--disable-xinerama
 .endif
 .else			#WITHOUT_X11
-CONFIGURE_ARGS+=	--disable-x11 --disable-fontconfig
+CONFIGURE_ARGS+=	--disable-x11
 .endif
 
 .if ${PORT_OPTIONS:MVDPAU}
