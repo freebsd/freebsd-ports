@@ -1,13 +1,8 @@
-# New ports collection makefile for:	rejik
-# Date created:				29 October 2005
-# Whom:					Elisey Savateev <b3k@mail.ru>
-#
+# Created by: Elisey Savateev <b3k@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	rejik
-PORTVERSION=	3.2.10
-PORTREVISION=	1
+PORTVERSION=	3.2.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
 		http://bio3k.softboard.ru/uploads/arch/
@@ -27,10 +22,15 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-OPTIONS=	BAN	"With banlists"	on \
-		DBL	"With DBL scripts"	off \
-		WWW	"With error pages"	on \
+OPTIONS_DEFINE=	BAN DBL WWW
 
+OPTIONS_DEFAULT=BAN WWW
+
+BAN_DESC=	With banlists
+DBL_DESC=	With DBL scripts
+WWW_DESC=	With error pages
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 # Redifine this if you need
@@ -39,21 +39,21 @@ SQUID_GROUP?=	squid
 INSTALL_DIR?=	${PORTNAME}
 INSTALL_PATH?=	${PREFIX}/${INSTALL_DIR}
 
-.if !defined(WITHOUT_BAN)
+.if ${PORT_OPTIONS:MBAN}
 DISTFILES+=	banlists-2.x.x.tgz
 PLIST_SUB+=	BAN=""
 .else
 PLIST_SUB+=	BAN="@comment "
 .endif
 
-.if !defined(WITHOUT_WWW)
+.if ${PORT_OPTIONS:MWWW}
 DISTFILES+=	squid-like-www-en.tgz
 PLIST_SUB+=	WWW=""
 .else
 PLIST_SUB+=	WWW="@comment "
 .endif
 
-.if defined(WITH_DBL)
+.if ${PORT_OPTIONS:MDBL}
 DISTFILES+=	dbl-2.0.tgz
 USE_PERL5_RUN=	yes
 RUN_DEPENDS+=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
