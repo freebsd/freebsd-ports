@@ -168,6 +168,7 @@ include/unicode/fpositer.h
 include/unicode/format.h
 include/unicode/fmtable.h
 include/unicode/fieldpos.h
+include/unicode/enumset.h
 include/unicode/errorcode.h
 include/unicode/dtrule.h
 include/unicode/dtptngen.h
