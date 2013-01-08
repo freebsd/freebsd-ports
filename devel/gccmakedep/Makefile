@@ -20,6 +20,12 @@ PLIST_FILES=	bin/gccmakedep
 BUILD_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
 RUN_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
 CONFIGURE_ENV+=	ac_cv_path_RAWCPP="ucpp -s"
+
+post-build:
+	${REINPLACE_CMD} -e 's|^CC= *|CC=|' \
+		-e 's|^RM= *|RM=|' \
+		-e 's|^LN= *|LN=|' \
+		-e 's|^MV= *|MV=|' ${WRKSRC}/gccmakedep
 .endif
 
 .include <bsd.port.post.mk>
