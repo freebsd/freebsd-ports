@@ -1,7 +1,7 @@
 bin/pcmanfm
 etc/xdg/pcmanfm/default/pcmanfm.conf
-share/applications/pcmanfm.desktop
 share/applications/pcmanfm-desktop-pref.desktop
+share/applications/pcmanfm.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/be/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/pcmanfm.mo
@@ -32,6 +32,7 @@ share/applications/pcmanfm-desktop-pref.desktop
 %%NLS%%share/locale/lg/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pcmanfm.mo
@@ -54,35 +55,15 @@ share/applications/pcmanfm-desktop-pref.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
-%%DATADIR%%/ui/pref.ui
-%%DATADIR%%/ui/autorun.ui
 %%DATADIR%%/ui/about.ui
+%%DATADIR%%/ui/autorun.ui
 %%DATADIR%%/ui/desktop-pref.ui
+%%DATADIR%%/ui/pref.ui
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/applications
 @dirrmtry etc/xdg/pcmanfm/default
 @dirrmtry etc/xdg/pcmanfm
 @dirrmtry etc/xdg
-@dirrmtry share/applications
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/lg/LC_MESSAGES
-@dirrmtry share/locale/lg
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/th/LC_MESSAGES
-@dirrmtry share/locale/th
-@dirrmtry share/locale/tt_RU/LC_MESSAGES
-@dirrmtry share/locale/tt_RU
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry include/libfm/libfm
-@dirrmtry include/libfm
