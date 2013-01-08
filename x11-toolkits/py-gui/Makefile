@@ -1,7 +1,4 @@
-# Ports collection makefile for:	py-gui
-# Date created:			21 June 2004
-# Whom:				Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	gui
@@ -32,11 +29,12 @@ LATEST_LINK=	py-${PORTNAME}
 
 WRKSRC=		${WRKDIR}/PyGUI-${PORTVERSION}
 
-OPTIONS=	GL "Enable GL support" off
+OPTIONS_DEFINE=	OPENGL DOCS
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 .endif
 
@@ -49,7 +47,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's/"GUI.Cocoa",//g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/${DOCSDIR}
 	${TAR} -C ${WRKSRC}/Doc -cf - . | ${TAR} -C ${PREFIX}/${DOCSDIR} -xf -
 	${MKDIR} ${PREFIX}/${EXAMPLESDIR}
@@ -59,4 +57,4 @@ post-install:
 		${TAR} -C ${PREFIX}/${EXAMPLESDIR} -xf -
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
