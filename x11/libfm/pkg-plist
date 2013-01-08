@@ -1,146 +1,86 @@
 bin/libfm-pref-apps
 etc/xdg/libfm/libfm.conf
 etc/xdg/libfm/pref-apps.conf
-include/libfm/libfm/fm-actions.h
-include/libfm/libfm/fm-app-chooser-combo-box.h
-include/libfm/libfm/fm-app-chooser-dlg.h
-include/libfm/libfm/fm-app-menu-view.h
-include/libfm/libfm/fm-app-info.h
-include/libfm/libfm/fm-archiver.h
-include/libfm/libfm/fm-bookmarks.h
-include/libfm/libfm/fm-cell-renderer-pixbuf.h
-include/libfm/libfm/fm-cell-renderer-text.h
-include/libfm/libfm/fm-clipboard.h
-include/libfm/libfm/fm-config.h
-include/libfm/libfm/fm-deep-count-job.h
-include/libfm/libfm/fm-dir-list-job.h
-include/libfm/libfm/fm-dir-tree-model.h
-include/libfm/libfm/fm-dir-tree-view.h
-include/libfm/libfm/fm-dnd-auto-scroll.h
-include/libfm/libfm/fm-dnd-dest.h
-include/libfm/libfm/fm-dnd-src.h
-include/libfm/libfm/fm-dummy-monitor.h
-include/libfm/libfm/fm-file-info-job.h
-include/libfm/libfm/fm-file-info.h
-include/libfm/libfm/fm-file-launcher.h
-include/libfm/libfm/fm-file-menu.h
-include/libfm/libfm/fm-file-ops-job-change-attr.h
-include/libfm/libfm/fm-file-ops-job-delete.h
-include/libfm/libfm/fm-file-ops-job-xfer.h
-include/libfm/libfm/fm-file-ops-job.h
-include/libfm/libfm/fm-file-properties.h
-include/libfm/libfm/fm-folder.h
-include/libfm/libfm/fm-folder-model.h
-include/libfm/libfm/fm-folder-view.h
-include/libfm/libfm/fm-gtk-file-launcher.h
-include/libfm/libfm/fm-gtk-marshal.h
-include/libfm/libfm/fm-gtk-utils.h
-include/libfm/libfm/fm-gtk.h
-include/libfm/libfm/fm-icon-pixbuf.h
-include/libfm/libfm/fm-icon.h
-include/libfm/libfm/fm-job.h
-include/libfm/libfm/fm-list.h
-include/libfm/libfm/fm-marshal.h
-include/libfm/libfm/fm-mime-type.h
-include/libfm/libfm/fm-monitor.h
-include/libfm/libfm/fm-nav-history.h
-include/libfm/libfm/fm-path-bar.h
-include/libfm/libfm/fm-path-entry.h
-include/libfm/libfm/fm-path.h
-include/libfm/libfm/fm-places-model.h
-include/libfm/libfm/fm-places-view.h
-include/libfm/libfm/fm-progress-dlg.h
-include/libfm/libfm/fm-side-pane.h
-include/libfm/libfm/fm-simple-job.h
-include/libfm/libfm/fm-tab-label.h
-include/libfm/libfm/fm-thumbnail.h
-include/libfm/libfm/fm-thumbnailer.h
-include/libfm/libfm/fm-utils.h
-include/libfm/libfm/fm.h
+include/libfm
+include/libfm-1.0/fm-actions.h
+include/libfm-1.0/fm-app-chooser-combo-box.h
+include/libfm-1.0/fm-app-chooser-dlg.h
+include/libfm-1.0/fm-app-info.h
+include/libfm-1.0/fm-app-menu-view.h
+include/libfm-1.0/fm-archiver.h
+include/libfm-1.0/fm-bookmarks.h
+include/libfm-1.0/fm-cell-renderer-pixbuf.h
+include/libfm-1.0/fm-cell-renderer-text.h
+include/libfm-1.0/fm-clipboard.h
+include/libfm-1.0/fm-config.h
+include/libfm-1.0/fm-deep-count-job.h
+include/libfm-1.0/fm-dir-list-job.h
+include/libfm-1.0/fm-dir-tree-model.h
+include/libfm-1.0/fm-dir-tree-view.h
+include/libfm-1.0/fm-dnd-auto-scroll.h
+include/libfm-1.0/fm-dnd-dest.h
+include/libfm-1.0/fm-dnd-src.h
+include/libfm-1.0/fm-dummy-monitor.h
+include/libfm-1.0/fm-file-info-job.h
+include/libfm-1.0/fm-file-info.h
+include/libfm-1.0/fm-file-launcher.h
+include/libfm-1.0/fm-file-menu.h
+include/libfm-1.0/fm-file-ops-job-change-attr.h
+include/libfm-1.0/fm-file-ops-job-delete.h
+include/libfm-1.0/fm-file-ops-job-xfer.h
+include/libfm-1.0/fm-file-ops-job.h
+include/libfm-1.0/fm-file-properties.h
+include/libfm-1.0/fm-file.h
+include/libfm-1.0/fm-folder-model.h
+include/libfm-1.0/fm-folder-view.h
+include/libfm-1.0/fm-folder.h
+include/libfm-1.0/fm-gtk-file-launcher.h
+include/libfm-1.0/fm-gtk-marshal.h
+include/libfm-1.0/fm-gtk-utils.h
+include/libfm-1.0/fm-gtk.h
+include/libfm-1.0/fm-icon-pixbuf.h
+include/libfm-1.0/fm-icon.h
+include/libfm-1.0/fm-job.h
+include/libfm-1.0/fm-list.h
+include/libfm-1.0/fm-marshal.h
+include/libfm-1.0/fm-mime-type.h
+include/libfm-1.0/fm-monitor.h
+include/libfm-1.0/fm-nav-history.h
+include/libfm-1.0/fm-path-bar.h
+include/libfm-1.0/fm-path-entry.h
+include/libfm-1.0/fm-path.h
+include/libfm-1.0/fm-places-model.h
+include/libfm-1.0/fm-places-view.h
+include/libfm-1.0/fm-progress-dlg.h
+include/libfm-1.0/fm-side-pane.h
+include/libfm-1.0/fm-simple-job.h
+include/libfm-1.0/fm-sortable.h
+include/libfm-1.0/fm-standard-view.h
+include/libfm-1.0/fm-tab-label.h
+include/libfm-1.0/fm-thumbnail.h
+include/libfm-1.0/fm-thumbnailer.h
+include/libfm-1.0/fm-utils.h
+include/libfm-1.0/fm.h
 lib/libfm-gtk.a
 lib/libfm-gtk.la
 lib/libfm-gtk.so
-lib/libfm-gtk.so.3
+lib/libfm-gtk.so.4
 lib/libfm.a
 lib/libfm.la
 lib/libfm.so
-lib/libfm.so.3
+lib/libfm.so.4
 libdata/pkgconfig/libfm-gtk.pc
+libdata/pkgconfig/libfm-gtk3.pc
 libdata/pkgconfig/libfm.pc
 share/applications/libfm-pref-apps.desktop
-share/gtk-doc/html/libfm/FmBookmarks.html
-share/gtk-doc/html/libfm/FmCellRendererPixbuf.html
-share/gtk-doc/html/libfm/FmCellRendererText.html
-share/gtk-doc/html/libfm/FmConfig.html
-share/gtk-doc/html/libfm/FmDeepCountJob.html
-share/gtk-doc/html/libfm/FmDirListJob.html
-share/gtk-doc/html/libfm/FmDirTreeModel.html
-share/gtk-doc/html/libfm/FmDirTreeView.html
-share/gtk-doc/html/libfm/FmDndDest.html
-share/gtk-doc/html/libfm/FmDndSrc.html
-share/gtk-doc/html/libfm/FmDummyMonitor.html
-share/gtk-doc/html/libfm/FmFileInfoJob.html
-share/gtk-doc/html/libfm/FmFileOpsJob.html
-share/gtk-doc/html/libfm/FmFolder.html
-share/gtk-doc/html/libfm/FmFolderModel.html
-share/gtk-doc/html/libfm/FmFolderView.html
-share/gtk-doc/html/libfm/FmJob.html
-share/gtk-doc/html/libfm/FmNavHistory.html
-share/gtk-doc/html/libfm/FmPathBar.html
-share/gtk-doc/html/libfm/FmPathEntry.html
-share/gtk-doc/html/libfm/FmPlacesModel.html
-share/gtk-doc/html/libfm/FmPlacesView.html
-share/gtk-doc/html/libfm/FmSidePane.html
-share/gtk-doc/html/libfm/FmTabLabel.html
-share/gtk-doc/html/libfm/annotation-glossary.html
-share/gtk-doc/html/libfm/api-index-full.html
-share/gtk-doc/html/libfm/home.png
-share/gtk-doc/html/libfm/index.html
-share/gtk-doc/html/libfm/index.sgml
-share/gtk-doc/html/libfm/left.png
-share/gtk-doc/html/libfm/libfm-fm-app-chooser-combo-box.html
-share/gtk-doc/html/libfm/libfm-fm-app-chooser-dlg.html
-share/gtk-doc/html/libfm/libfm-fm-app-info.html
-share/gtk-doc/html/libfm/libfm-fm-app-menu-view.html
-share/gtk-doc/html/libfm/libfm-fm-archiver.html
-share/gtk-doc/html/libfm/libfm-fm-clipboard.html
-share/gtk-doc/html/libfm/libfm-fm-dnd-auto-scroll.html
-share/gtk-doc/html/libfm/libfm-fm-file-info.html
-share/gtk-doc/html/libfm/libfm-fm-file-launcher.html
-share/gtk-doc/html/libfm/libfm-fm-file-menu.html
-share/gtk-doc/html/libfm/libfm-fm-file-properties.html
-share/gtk-doc/html/libfm/libfm-fm-gtk-file-launcher.html
-share/gtk-doc/html/libfm/libfm-fm-gtk-utils.html
-share/gtk-doc/html/libfm/libfm-fm-gtk.html
-share/gtk-doc/html/libfm/libfm-fm-icon-pixbuf.html
-share/gtk-doc/html/libfm/libfm-fm-icon.html
-share/gtk-doc/html/libfm/libfm-fm-list.html
-share/gtk-doc/html/libfm/libfm-fm-mime-type.html
-share/gtk-doc/html/libfm/libfm-fm-monitor.html
-share/gtk-doc/html/libfm/libfm-fm-path.html
-share/gtk-doc/html/libfm/libfm-fm-progress-dlg.html
-share/gtk-doc/html/libfm/libfm-fm-thumbnail.html
-share/gtk-doc/html/libfm/libfm-fm-thumbnailer.html
-share/gtk-doc/html/libfm/libfm-fm-utils.html
-share/gtk-doc/html/libfm/libfm-fm.html
-share/gtk-doc/html/libfm/libfm.devhelp2
-share/gtk-doc/html/libfm/libfm.html
-share/gtk-doc/html/libfm/libfm-core.html
-share/gtk-doc/html/libfm/libfm-jobs.html
-share/gtk-doc/html/libfm/libfm-FmSimpleJob.html
-share/gtk-doc/html/libfm/libfm-gtk.html
-share/gtk-doc/html/libfm/object-tree.html
-share/gtk-doc/html/libfm/right.png
-share/gtk-doc/html/libfm/style.css
-share/gtk-doc/html/libfm/up.png
-share/libfm/archivers.list
-share/libfm/ui/app-chooser.ui
-share/libfm/ui/ask-rename.ui
-share/libfm/ui/exec-file.ui
-share/libfm/ui/file-prop.ui
-share/libfm/ui/preferred-apps.ui
-share/libfm/ui/progress.ui
-share/mime/packages/libfm.xml
+%%DATADIR%%/archivers.list
+%%DATADIR%%/ui/app-chooser.ui
+%%DATADIR%%/ui/ask-rename.ui
+%%DATADIR%%/ui/exec-file.ui
+%%DATADIR%%/ui/file-prop.ui
+%%DATADIR%%/ui/filesearch.ui
+%%DATADIR%%/ui/preferred-apps.ui
+%%DATADIR%%/ui/progress.ui
 %%NLS%%share/locale/af/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/be/LC_MESSAGES/libfm.mo
@@ -199,30 +139,20 @@ share/mime/packages/libfm.xml
 %%NLS%%share/locale/vi/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libfm.mo
+share/mime/packages/libfm.xml
 @dirrm etc/xdg/libfm
-@dirrm share/libfm/ui
-@dirrm share/libfm
-@dirrmtry etc/xdg
-@dirrmtry include/libfm/libfm
-@dirrmtry include/libfm
-@dirrmtry lib/gio/modules
-@dirrmtry lib/gio
-@dirrmtry libdata/pkgconfig
-@dirrmtry share/applications
-@dirrmtry share/gtk-doc/html/libfm
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry share/locale/bn/LC_MESSAGES
-@dirrmtry share/locale/bn
+@dirrm etc/xdg
 @dirrmtry share/locale/es_VE/LC_MESSAGES
 @dirrmtry share/locale/es_VE
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
 @dirrmtry share/locale/lg/LC_MESSAGES
 @dirrmtry share/locale/lg
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/tt_RU/LC_MESSAGES
 @dirrmtry share/locale/tt_RU
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
+@dirrmtry share/applications
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
+@dirrm include/libfm-1.0
