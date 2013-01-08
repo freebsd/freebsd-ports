@@ -83,6 +83,30 @@ share/gnome/help/gnome-commander/es/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/es/figures/mounting.png
 share/gnome/help/gnome-commander/es/gnome-commander.xml
 share/gnome/help/gnome-commander/es/legal.xml
+share/gnome/help/gnome-commander/fr/gnome-commander.xml
+share/gnome/help/gnome-commander/fr/legal.xml
+share/gnome/help/gnome-commander/fr/figures/create_archive.png
+share/gnome/help/gnome-commander/fr/figures/dev_cd.png
+share/gnome/help/gnome-commander/fr/figures/extract_archive.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_adv_rename.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_bookmark.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_file_metadata.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_file_permissions.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_file_properties.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_keyboard_shortcuts.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_remote_connections.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_remote_server.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_dialog_search.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_confirmation.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_devices.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_filters.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_format.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_general.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_layout.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_network.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_options_programs.png
+share/gnome/help/gnome-commander/fr/figures/gnome-commander_window.png
+share/gnome/help/gnome-commander/fr/figures/mounting.png
 share/locale/ar/LC_MESSAGES/gnome-commander.mo
 share/locale/bg/LC_MESSAGES/gnome-commander.mo
 share/locale/ca/LC_MESSAGES/gnome-commander.mo
@@ -127,6 +151,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-commander.mo
 share/omf/gnome-commander/gnome-commander-C.omf
 share/omf/gnome-commander/gnome-commander-de.omf
 share/omf/gnome-commander/gnome-commander-es.omf
+share/omf/gnome-commander/gnome-commander-fr.omf
 share/pixmaps/gnome-commander.png
 share/pixmaps/gnome-commander/copy_file_names.xpm
 share/pixmaps/gnome-commander/device-icons/bluetooth.xpm
@@ -224,6 +249,8 @@ share/pixmaps/gnome-commander/toggle_vertical.xpm
 @dirrm share/pixmaps/gnome-commander
 @dirrm share/omf/gnome-commander
 @dirrmtry share/omf
+@dirrm share/gnome/help/gnome-commander/fr/figures
+@dirrm share/gnome/help/gnome-commander/fr
 @dirrm share/gnome/help/gnome-commander/es/figures
 @dirrm share/gnome/help/gnome-commander/es
 @dirrm share/gnome/help/gnome-commander/de/figures

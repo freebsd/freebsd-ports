@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gnomem-commander
-# Date created:		23 April 2002
-# Whom:			Edgardo Garcia Hoeffler <edybsd@yahoo.com.ar>
-#
+# Created by: Edgardo Garcia Hoeffler <edybsd@yahoo.com.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.2.8.14
-PORTREVISION=	1
+PORTVERSION=	1.2.8.15
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
@@ -26,7 +21,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 
 CONFLICTS=	gnome-commander-[0-9]*
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GNOME=	gnomedocutils gnomehack gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
