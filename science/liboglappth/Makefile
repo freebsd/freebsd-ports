@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	liboglappth
-PORTVERSION=	0.98
-PORTREVISION=	4
+PORTVERSION=	1.0.0
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/current/ \
-		http://bioinformatics.org/ghemical/download/
-
+MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
+		http://bioinformatics.org/ghemical/download/current
+	
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
