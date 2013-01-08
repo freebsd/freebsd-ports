@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-DISTVERSION=	1.0.20
+DISTVERSION=	1.0.22
 CATEGORIES=	audio
 MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-sounds
