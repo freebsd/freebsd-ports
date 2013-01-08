@@ -285,6 +285,7 @@
     SUBDIR += trapproto
     SUBDIR += trayer
     SUBDIR += tycoon
+    SUBDIR += urxvt-perls
     SUBDIR += vdesk
     SUBDIR += videoproto
     SUBDIR += viewres
