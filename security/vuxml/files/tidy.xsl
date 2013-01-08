@@ -40,9 +40,7 @@ in descending order of their <modified> elements (or <entry>, if they
 don't have <modified>).  Insert an empty line between <vuln> elements.
 -->
 <xsl:template match="vuxml:vuxml">
-  <xsl:element name="{name()}">
-    <xsl:attribute
-      name="xmlns">http://www.vuxml.org/apps/vuxml-1</xsl:attribute>
+  <xsl:element name="{name()}" namespace="{namespace-uri(.)}">
     <xsl:for-each select="@*">
       <xsl:attribute name="{name()}"><xsl:value-of
 	select="." /></xsl:attribute>
@@ -69,25 +67,13 @@ from those elements.
   vuxml:entry|vuxml:modified">
   <xsl:call-template name="normalize-space">
     <xsl:with-param name="node" select="." />
+    <xsl:with-param name="namespace" select="namespace-uri(.)" />
   </xsl:call-template>
-</xsl:template>
-
-
-<!-- Include a namespace declaration on the <body> element. -->
-<xsl:template match="xhtml:body">
-  <xsl:element name="{name()}">
-    <xsl:attribute
-      name="xmlns">http://www.w3.org/1999/xhtml</xsl:attribute>
-    <xsl:call-template name="copy-attr">
-      <xsl:with-param name="node" select="." />
-    </xsl:call-template>
-    <xsl:apply-templates />
-  </xsl:element>
 </xsl:template>
 
 <!-- Default copy. -->
 <xsl:template match="*">
-  <xsl:element name="{name()}">
+  <xsl:element name="{name()}" namespace="{namespace-uri(.)}">
     <xsl:call-template name="copy-attr">
       <xsl:with-param name="node" select="." />
     </xsl:call-template>
@@ -111,7 +97,8 @@ from those elements.
 <!-- Strip whitespace from elements with only text -->
 <xsl:template name="normalize-space">
   <xsl:param name="node" />
-  <xsl:element name="{name($node)}">
+  <xsl:param name="namespace" />
+  <xsl:element name="{name($node)}" namespace="{$namespace}">
     <xsl:call-template name="copy-attr">
       <xsl:with-param name="node" select="$node" />
     </xsl:call-template>
