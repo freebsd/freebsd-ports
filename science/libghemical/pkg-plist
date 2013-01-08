@@ -68,9 +68,11 @@ share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/tripos52/parameters5.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default/loopdip.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default/looptor.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default/nonbonded.txt
+share/locale/de/LC_MESSAGES/libghemical.mo
 share/locale/fi/LC_MESSAGES/libghemical.mo
 share/locale/mk/LC_MESSAGES/libghemical.mo
 share/locale/pt_BR/LC_MESSAGES/libghemical.mo
+share/locale/ru/LC_MESSAGES/libghemical.mo
 share/locale/sq/LC_MESSAGES/libghemical.mo
 @dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default
 @dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf
