@@ -1,7 +1,0 @@
-bin/mutt_vc_query
-%%PORTDOCS%%share/doc/mutt_vc_query/AUTHORS
-%%PORTDOCS%%share/doc/mutt_vc_query/ChangeLog
-%%PORTDOCS%%share/doc/mutt_vc_query/NEWS
-%%PORTDOCS%%share/doc/mutt_vc_query/README
-%%PORTDOCS%%share/doc/mutt_vc_query/THANKS
-%%PORTDOCS%%@dirrm share/doc/mutt_vc_query
