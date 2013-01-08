@@ -3,6 +3,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.23
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3752/:3752 \
 		http://alioth.debian.org/frs/download.php/3753/:3753 \
@@ -119,6 +120,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^pkgconfigdir/s|@libdir@|@prefix@/libdata|' \
 		${WRKSRC}/tools/Makefile.in
+	@${REINPLACE_CMD} -e '/^export PKG_CONFIG_LIBDIR=/s|@libdir@|@prefix@/libdata|' \
+		${WRKSRC}/tools/sane-config.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
