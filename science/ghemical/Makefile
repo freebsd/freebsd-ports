@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ghemical
-PORTVERSION=	2.99.2
-PORTREVISION=	6
+PORTVERSION=	3.0.0
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20090911/ \
-		http://bioinformatics.org/ghemical/download/
+MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
+		http://bioinformatics.org/ghemical/download/current
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Ghemical is a computational chemistry software package
@@ -26,6 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2
 USE_PKGCONFIG=	build
 USE_GL=		glut
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7
 PLIST_SUB=	GHEMICAL_VERSION="${PORTVERSION}"

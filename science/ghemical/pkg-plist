@@ -145,9 +145,11 @@ share/ghemical/%%GHEMICAL_VERSION%%/pixmaps/transl_xy.xpm
 share/ghemical/%%GHEMICAL_VERSION%%/pixmaps/transl_z.xpm
 share/ghemical/%%GHEMICAL_VERSION%%/pixmaps/zoom.xpm
 share/ghemical/%%GHEMICAL_VERSION%%/pixmaps/ghemical.png
+share/locale/de/LC_MESSAGES/ghemical.mo
 share/locale/fi/LC_MESSAGES/ghemical.mo
 share/locale/mk/LC_MESSAGES/ghemical.mo
 share/locale/pt_BR/LC_MESSAGES/ghemical.mo
+share/locale/ru/LC_MESSAGES/ghemical.mo
 share/locale/sq/LC_MESSAGES/ghemical.mo
 @dirrm share/ghemical/%%GHEMICAL_VERSION%%/pixmaps
 @dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images
