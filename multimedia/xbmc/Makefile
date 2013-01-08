@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	12.0.rc1
+DISTVERSION=	12.0.rc3
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -57,8 +57,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_COMMIT=	baaa51c
-GH_TAGNAME=	Frodo_rc1
+GH_COMMIT=	7a6cb7f
+GH_TAGNAME=	Frodo_rc3
 
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
