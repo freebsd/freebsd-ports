@@ -1,13 +1,11 @@
---- perdition/db/ldap/Makefile.in.orig	Tue Dec  6 15:59:30 2005
-+++ perdition/db/ldap/Makefile.in	Tue Dec  6 16:04:27 2005
-@@ -545,8 +545,8 @@
- 				"$(DESTDIR)@ldap_schemadir@"; \
- 		fi; \
- 		if test -w "$(DESTDIR)@ldap_schemadir@"; then \
--			install -m644 $< \
--				"$(DESTDIR)@ldap_schemadir@/perdition.schema";\
-+			install -m644 $(schema_sources) \
-+				"$(DESTDIR)@ldap_schemadir@/perdition.schema-dist";\
- 		fi \
- 	fi
+--- perdition/db/ldap/Makefile.in.orig	2012-03-20 05:08:04.000000000 -0700
++++ perdition/db/ldap/Makefile.in	2012-12-12 16:50:02.000000000 -0800
+@@ -864,7 +864,7 @@
+ @LDAP_SCHEMA_TRUE@	test -n "@ldap_schemadir@"
+ @LDAP_SCHEMA_TRUE@	mkdir -p "$(DESTDIR)@ldap_schemadir@"
+ @LDAP_SCHEMA_TRUE@	chmod 755 "$(DESTDIR)@ldap_schemadir@"
+-@LDAP_SCHEMA_TRUE@	install -m 644 $< "$(DESTDIR)@ldap_schemadir@/"
++@LDAP_SCHEMA_TRUE@	for p in $< ; do $(am__strip_dir) install -m 644 $$p "$(DESTDIR)@ldap_schemadir@/$$f-dist" ; done
  
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

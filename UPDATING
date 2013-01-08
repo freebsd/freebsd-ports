@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130108:
+  AFFECTS: users of devel/libvanessa_socket, mail/perdition
+  AUTHOR: jhale@FreeBSD.org
+
+  The update of devel/libvanessa_socket to 0.0.12 (used by Perdition)
+  adds IPv6 support.  If the hostname in bind_address has both IPv4 and
+  IPv6 addresses in DNS, then Perdition will ONLY listen on IPv6.
+
+  If you prefer to continue to use IPv4, you need to change the
+  bind_address in /usr/local/etc/perdition/perdition.conf to use an
+  explicit IPv4 address.  This can be in addition to, or instead of,
+  the current hostname, depending on whether you want to use IPv6 or
+  not.  If your Perdition server does not have an IPv6 address
+  listed in DNS, this change does not affect you.
+
+20130108:
   AFFECTS: users of sysutils/cfengine*
   AUTHOR: gjb@FreeBSD.org
 
