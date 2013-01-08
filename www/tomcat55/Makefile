@@ -19,7 +19,7 @@ CRONOLOG_DESC=	Use Cronolog for Log Processing
 CRONOLOG_DEVEL_DESC=	Use Cronlog-Devel for Log Processing
 
 DEPRECATED=	EOL approaching, consider www/tomcat{6,7}
-EXPIRATION_DATE=2012-12-31
+EXPIRATION_DATE=2013-01-31
 
 USE_JAVA=	yes
 JAVA_VERSION?=	1.6+
