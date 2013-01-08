@@ -1,0 +1,19 @@
+%%SITE_PERL%%/No/Worries.pm
+%%SITE_PERL%%/No/Worries/DN.pm
+%%SITE_PERL%%/No/Worries/Date.pm
+%%SITE_PERL%%/No/Worries/Die.pm
+%%SITE_PERL%%/No/Worries/Dir.pm
+%%SITE_PERL%%/No/Worries/Export.pm
+%%SITE_PERL%%/No/Worries/File.pm
+%%SITE_PERL%%/No/Worries/Log.pm
+%%SITE_PERL%%/No/Worries/PidFile.pm
+%%SITE_PERL%%/No/Worries/Proc.pm
+%%SITE_PERL%%/No/Worries/Stat.pm
+%%SITE_PERL%%/No/Worries/String.pm
+%%SITE_PERL%%/No/Worries/Syslog.pm
+%%SITE_PERL%%/No/Worries/Warn.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/No/Worries/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No/Worries
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No
+@dirrmtry %%SITE_PERL%%/No/Worries
+@dirrmtry %%SITE_PERL%%/No
