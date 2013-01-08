@@ -7,6 +7,7 @@ PORTVERSION=	3.3.8
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
+PKGNAMESUFFIX=	33
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
