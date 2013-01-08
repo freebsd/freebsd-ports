@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	50.1
+PORTVERSION=	50.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -54,7 +54,7 @@ MAN8+=	gencmn.8
 MAN8+=	gensprep.8
 
 ICUMAJOR=	50
-ICUMINOR=	1
+ICUMINOR=	1.1
 .if ${ICUMINOR} == ""
 ICUMINOR=	0
 .endif
