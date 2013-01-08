@@ -1,7 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:  mutt development
-# Date created:			  6 Jun 2001
-# Whom:				  Udo Schweigert
+# Created by: Udo Schweigert
 #
 # $FreeBSD$
 #
@@ -593,7 +590,6 @@ pre-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/generate-plist > ${PLIST}
 
 post-install:
-	@${ECHO} > ${PKGMESSAGE}
 	${INSTALL_DATA} ${WRKSRC}/doc/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
@@ -616,7 +612,7 @@ post-install:
 	@${ECHO} "environment." >> ${PKGMESSAGE}
 	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
 .endif
-.if !defined(BATCH)
+.if !defined(BATCH) && defined(MUTT_USES_SLANG)
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 .endif
