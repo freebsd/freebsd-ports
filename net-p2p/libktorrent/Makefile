@@ -2,6 +2,7 @@
 
 PORTNAME=	libktorrent
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:C,^1,4,:C,-.*,,}/
 
