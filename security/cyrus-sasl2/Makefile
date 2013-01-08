@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--with-dbpath=${PREFIX}/etc/sasldb2 \
+		--with-lib-subdir=lib \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--includedir=${PREFIX}/include \
 		--enable-static \
