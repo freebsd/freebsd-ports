@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libghemical
-PORTVERSION=	2.99.1
-PORTREVISION=	3
+PORTVERSION=	3.0.0
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20090911/ \
-		http://bioinformatics.org/ghemical/download/
-
+MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
+		http://bioinformatics.org/ghemical/download/current
+		
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
 BUILD_DEPENDS=	obabel:${PORTSDIR}/science/openbabel \
-		mopac7:${PORTSDIR}/biology/mopac \
 		intltool-update:${PORTSDIR}/textproc/intltool \
 		ld:${PORTSDIR}/devel/binutils
 LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
