@@ -1,9 +1,6 @@
-# New ports collection makefile for:	gnormalize
-# Date created:				27 Oct 2007
-# Whom:				Denise H. G. <darcsis@gmail.com>
+# Created by: Denise H. G. <darcsis@gmail.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	gnormalize
 PORTVERSION=	0.63
@@ -24,58 +21,51 @@ NO_BUILD=	yes
 
 MAN1=		gnormalize.1
 
-OPTIONS=	\
-	GNORMALIZE_MP3	"WAV <-> MP3 Support"	on	\
-	GNORMALIZE_OGG	"Ogg Encoding and Playback"	on	\
-	GNORMALIZE_MP4	"WAV <-> MP4 Support"	on	\
-	GNORMALIZE_CDRIP	"CD Ripping"	off	\
-	GNORMALIZE_CDDB	"CDDB Support"	off	\
-	GNORMALIZE_CDPLAY	"CD Playback"	off	\
-	GNORMALIZE_FLAC	"FLAC Encoding and Playback"	off	\
-	GNORMALIZE_MAC	"Monkey's Audio Encoding and Playback"	off	\
-	GNORMALIZE_MPC	"MPC (musepack) Audio"	off
+OPTIONS_DEFINE=	MP3 OGG MP4 CDPARANOIA CDDB CDPLAY PLAC MAC MUSEPACK
+OPTIONS_DEFAULT=	MP3 OGG MP4
 
-.include <bsd.port.pre.mk>
+MAC_DESC=	Monkey's Audio Encoding and Playback
+CDPLAY_DESC=	CD Playback
 
-.if defined(WITH_GNORMALIZE_MP3)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMP3}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame \
 	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 .endif
 
-.if defined(WITH_GNORMALIZE_OGG)
+.if ${PORT_OPTIONS:MOGG}
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if defined(WITH_GNORMALIZE_MP4)
+.if ${PORT_OPTIONS:MMP4}
 RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac \
 	faad:${PORTSDIR}/audio/faad
 .endif
 
-.if defined(WITH_GNORMALIZE_CDRIP)
-.if defined(WITH_CDDA2WAV)
-RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
+.if ${PORT_OPTIONS:MCDPARANOIA} || ${PORT_OPTIONS:MCDDA2WAV}
+USE_CDRTOOLS=	yes
 .else
 RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 .endif
-.endif
 
-.if defined(WITH_GNORMALIZE_CDDB)
+.if ${PORT_OPTIONS:MCDDB}
 RUN_DEPENDS+=	cddb.pl:${PORTSDIR}/audio/p5-CDDB_get
 .endif
 
-.if defined(WITH_GNORMALIZE_CDPLAY)
+.if ${PORT_OPTIONS:MCDPLAY}
 RUN_DEPENDS+=	p5-Audio-CD>=0:${PORTSDIR}/audio/p5-Audio-CD
 .endif
 
-.if defined(WITH_GNORMALIZE_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITH_GNORMALIZE_MAC)
+.if ${PORT_OPTIONS:MMAC}
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 .endif
 
-.if defined(WITH_GNORMALIZE_MPC)
+.if ${PORT_OPTIONS:MMUSEPACK}
 RUN_DEPENDS+=	mppenc:${PORTSDIR}/audio/musepack
 .endif
 
@@ -91,4 +81,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share/gnormalize,${DATADIR},' \
 		${WRKSRC}/gnormalize
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
