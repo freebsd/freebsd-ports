@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		resin
-PORTVERSION=		3.1.12
-PORTREVISION=	3
+PORTVERSION=		3.1.13
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
