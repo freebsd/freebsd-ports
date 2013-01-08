@@ -1,4 +1,3 @@
-bin/cmis-client
 include/libcmis/cmis-object.hxx
 include/libcmis/document.hxx
 include/libcmis/folder.hxx
