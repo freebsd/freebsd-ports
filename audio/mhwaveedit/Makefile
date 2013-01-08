@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	mhWaveEdit
-# Date created:			Apr 19, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.21
-PORTREVISION=	2
+PORTVERSION=	1.4.22
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -42,17 +37,23 @@ PLIST_DIRS=	share/applications
 
 MAN1=		mhwaveedit.1
 
-OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
-		SNDFILE "libsndfile support" on \
-		SAMPLERATE "libsamplerate support" on \
-		OSS "OSS sound driver" on \
-		PORTAUDIO "PortAudio sound driver" off \
-		SDL "SDL sound driver" off \
-		ARTS "arts sound driver" off \
-		JACK "JACK sound driver" off \
-		ESD "EsounD sound driver" off \
-		PULSEAUDIO "PULSEAUDIO support" off \
-		LADSPA "LADSPA support" off
+OPTIONS_DEFINE=	DOUBLE_SAMPLES SNDFILE SAMPLERATE OSS \
+		PORTAUDIO SDL ARTS JACK \
+		ESD PULSEAUDIO LADSPA
+
+DOUBLE_SAMPLES_DESC=	increase quality for 24/32-bit samplerates
+SNDFILE_DESC=		libsndfile support
+SAMPLERATE_DESC=	libsamplerate support
+OSS_DESC=		OSS sound driver
+PORTAUDIO_DESC=		PortAudio sound driver
+SDL_DESC=		SDL sound driver
+ARTS_DESC=		arts sound driver
+JACK_DESC=		JACK sound driver
+ESD_DESC=		EsounD sound driver
+PULSEAUDIO_DESC=	PULSEAUDIO support
+LADSPA_DESC=		LADSPA support
+
+OPTIONS_DEFAULT=SNDFILE SAMPLERATE OSS
 
 .include <bsd.port.pre.mk>
 
@@ -60,64 +61,66 @@ OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if defined(WITH_DOUBLE_SAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOUBLE_SAMPLES}
 CONFIGURE_ARGS+=	--with-double-samples
 .endif
 
-.if defined(WITHOUT_SNDFILE)
+.if empty(PORT_OPTIONS:MSNDFILE)
 CONFIGURE_ARGS+=	--without-libsndfile
 .else
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .endif
 
-.if defined(WITHOUT_SAMPLERATE)
+.if empty(PORT_OPTIONS:MSAMPLERATE)
 CONFIGURE_ARGS+=	--without-libsamplerate
 .else
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .endif
 
-.if defined(WITHOUT_OSS)
+.if empty(PORT_OPTIONS:MOSS)
 CONFIGURE_ARGS+=	--without-oss
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .else
 CONFIGURE_ARGS+=	--without-portaudio
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=	--without-sdl
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--without-arts
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
-.if defined(WITH_ESD)
+.if ${PORT_OPTIONS:MESD}
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--without-esound
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIBS_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-pulse
 .else
 CONFIGURE_ARGS+=	--without-pulse
 .endif
 
-.if defined(WITH_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 .else
