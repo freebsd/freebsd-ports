@@ -41,6 +41,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--with-dbpath=${PREFIX}/etc/sasldb2 \
+		--with-lib-subdir=lib \
 		--includedir=${PREFIX}/include \
 		--enable-static \
 		--enable-login \
