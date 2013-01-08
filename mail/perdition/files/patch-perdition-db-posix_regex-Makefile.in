@@ -1,23 +1,23 @@
---- perdition/db/posix_regex/Makefile.in.orig	2007-11-02 15:53:56.000000000 +0100
-+++ perdition/db/posix_regex/Makefile.in	2007-11-02 15:55:31.000000000 +0100
-@@ -355,16 +355,16 @@
- 	@list='$(conf_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
--	  echo " $(confDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(confdir)/$$f'"; \
--	  $(confDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(confdir)/$$f"; \
-+	  echo " $(confDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(confdir)/$$f-dist'"; \
-+	  $(confDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(confdir)/$$f-dist"; \
+--- perdition/db/posix_regex/Makefile.in.orig	2012-03-20 05:08:06.000000000 -0700
++++ perdition/db/posix_regex/Makefile.in	2012-12-12 16:47:41.000000000 -0800
+@@ -414,14 +414,17 @@
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(confdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(confdir)" || exit $$?; \
++	  for p in $$files; do \
++	    $(am__strip_dir) \
++	    echo " $(INSTALL_DATA) $$p '$(DESTDIR)$(confdir)/$$f-dist'"; \
++	    $(INSTALL_DATA) $$p "$(DESTDIR)$(confdir)/$$f-dist" || exit $$?; \
++          done ; \
  	done
  
  uninstall-confDATA:
  	@$(NORMAL_UNINSTALL)
- 	@list='$(conf_DATA)'; for p in $$list; do \
- 	  f=$(am__strip_dir) \
--	  echo " rm -f '$(DESTDIR)$(confdir)/$$f'"; \
--	  rm -f "$(DESTDIR)$(confdir)/$$f"; \
-+	  echo " rm -f '$(DESTDIR)$(confdir)/$$f-dist'"; \
-+	  rm -f "$(DESTDIR)$(confdir)/$$f-dist"; \
- 	done
- 
- ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+ 	@list='$(conf_DATA)'; test -n "$(confdir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
++	files=`for p in $$list; do echo $$p-dist; done | sed -e 's|^.*/||'`; \
+ 	test -n "$$files" || exit 0; \
+ 	echo " ( cd '$(DESTDIR)$(confdir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(confdir)" && rm -f $$files

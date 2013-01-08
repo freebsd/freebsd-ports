@@ -1,23 +1,23 @@
---- etc/perdition/Makefile.in.orig	2007-11-02 15:40:32.000000000 +0100
-+++ etc/perdition/Makefile.in	2007-11-02 15:45:43.000000000 +0100
-@@ -259,16 +259,16 @@
- 	@list='$(perditionconf_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
--	  echo " $(perditionconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(perditionconfdir)/$$f'"; \
--	  $(perditionconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(perditionconfdir)/$$f"; \
-+	  echo " $(perditionconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
-+	  $(perditionconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(perditionconfdir)/$$f-dist"; \
+--- etc/perdition/Makefile.in.orig	2012-03-20 05:07:55.000000000 -0700
++++ etc/perdition/Makefile.in	2012-12-12 16:48:33.000000000 -0800
+@@ -303,14 +303,17 @@
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(perditionconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(perditionconfdir)" || exit $$?; \
++	  for p in $$files; do \
++	    $(am__strip_dir) \
++	    echo " $(INSTALL_DATA) $$p '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
++	    $(INSTALL_DATA) $$p "$(DESTDIR)$(perditionconfdir)/$$f-dist" || exit $$?; \
++          done; \
  	done
  
  uninstall-perditionconfDATA:
  	@$(NORMAL_UNINSTALL)
- 	@list='$(perditionconf_DATA)'; for p in $$list; do \
- 	  f=$(am__strip_dir) \
--	  echo " rm -f '$(DESTDIR)$(perditionconfdir)/$$f'"; \
--	  rm -f "$(DESTDIR)$(perditionconfdir)/$$f"; \
-+	  echo " rm -f '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
-+	  rm -f "$(DESTDIR)$(perditionconfdir)/$$f-dist"; \
- 	done
- tags: TAGS
- TAGS:
+ 	@list='$(perditionconf_DATA)'; test -n "$(perditionconfdir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
++	files=`for p in $$list; do echo $$p-dist; done | sed -e 's|^.*/||'`; \
+ 	test -n "$$files" || exit 0; \
+ 	echo " ( cd '$(DESTDIR)$(perditionconfdir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(perditionconfdir)" && rm -f $$files

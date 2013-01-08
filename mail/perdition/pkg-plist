@@ -9,11 +9,6 @@ etc/perdition/perdition.conf-dist
 etc/perdition/popmap-dist
 etc/perdition/Makefile.popmap-dist
 etc/perdition/Makefile
-include/jain.h
-lib/libjain.so.0
-lib/libjain.so
-lib/libjain.la
-lib/libjain.a
 %%BDB%%lib/libperditiondb_bdb.so.0
 %%BDB%%lib/libperditiondb_bdb.so
 %%BDB%%lib/libperditiondb_bdb.la
