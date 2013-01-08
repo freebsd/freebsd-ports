@@ -51,6 +51,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3a65d33b-5950-11e2-b66b-00e0814cab4e">
+    <topic>jenkins -- HTTP access to the server to retrieve the master cryptographic key</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.498</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04">
+	  <p>This advisory announces a security vulnerability that was found
+	     in Jenkins core.</p>
+	  <p>An attacker can then use this master cryptographic key to mount
+	     remote code execution attack against the Jenkins master, or
+	     impersonate arbitrary users in making REST API calls.</p>
+	  <p>There are several factors that mitigate some of these problems
+	     that may apply to specific installations.</p>
+	    <ul>
+	      <li>The particular attack vector is only applicable on Jenkins
+	          instances that have slaves attached to them, and allow
+	          anonymous read access.</li>
+	      <li>Jenkins allows users to re-generate the API tokens. Those
+	          re-generated API tokens cannot be impersonated by the
+	          attacker.</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	    <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04</url>
+    </references>
+    <dates>
+      <discovery>2013-01-04</discovery>
+      <entry>2013-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b769b72-582b-11e2-b66b-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
