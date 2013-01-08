@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rbtools
-# Date created:				Jul 15 2009
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${ORIGNAME:L}
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:C|^(...).*|\1|}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
