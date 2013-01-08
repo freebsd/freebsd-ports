@@ -1,9 +1,4 @@
-# New ports collection makefile for:	eclipse
-# Date created:				March 7, 2003
-# Whom:					various members of freebsd-java
-#
 # $FreeBSD$
-#
 
 PORTNAME=	eclipse
 PORTVERSION=	3.7.1
@@ -25,7 +20,7 @@ DISTFILES=	${ECLIPSE_BUILD_SRCFILE}:1 \
 DIST_SUBDIR=	eclipse
 EXTRACT_ONLY=	${ECLIPSE_BUILD_SRCFILE}
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	eclipse@FreeBSD.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 EXTRACT_DEPENDS=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
@@ -39,7 +34,8 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
-OPTIONS=	TESTS	"Build SDK test suite"	off
+OPTIONS_DEFINE=	TESTS
+TESTS_DESC=	Build SDK test suite
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -47,7 +43,8 @@ USE_ANT=	yes
 USE_GECKO=	libxul19
 USE_GL=		glu
 USE_GMAKE=	yes
-USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
+USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui
+USE_PKGCONFIG=	build
 USE_JAVA=	yes
 USE_XZ=		yes
 BZIP2_SUFX=	.tar.bz2
@@ -138,9 +135,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 DISTFILES+=	${f}:2
 .endfor
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 DISTFILES+=	${ECLIPSE_TEST_SRCFILE}:1 ${ECLIPSE_TEST_SCRIPTFILE}:1
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
@@ -176,7 +173,7 @@ post-extract:
 	@${CP} ${WRKDIR}/apache-tomcat-${TOMCAT_VERSION}/lib/${f} ${BUILD_WRKSRC}/bundles/
 .endfor
 
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_TEST_SRCFILE} ${BUILD_WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_TEST_SCRIPTFILE} ${BUILD_WRKSRC}
 .endif
@@ -272,7 +269,7 @@ do-install:
 	@${ECHO_CMD} "@exec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${TMPPLIST}
 
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 tests: build
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} runTests)
 .else
@@ -280,4 +277,4 @@ tests:
 	@${ECHO_CMD} "Tests are not enabled!"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
