@@ -1,7 +1,4 @@
-# New ports collection makefile for:	rpm
-# Date created:				6 May 2003
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rpm
@@ -23,16 +20,11 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid \
 		bash:${PORTSDIR}/shells/bash
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		dot:${PORTSDIR}/graphics/graphviz \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
-.endif
 
 SH=		${LOCALBASE}/bin/bash
 
-OPTIONS=	PERL "Build Perl RPM module" Off \
-		PYTHON "Build Python RPM module" On
+OPTIONS_DEFINE=	PERL PYTHON LUA
+OPTIONS_DEFAULT=	PYTHON LUA
 
 DB_VERSION?=	47
 USE_BDB=	${DB_VERSION}
@@ -48,7 +40,7 @@ CONFLICTS=	rpm-3.* rpm-4.*
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LUA)
+.if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=--with-lua=external \
 		--with-syck=external
 USE_LUA=	5.1-
@@ -60,7 +52,7 @@ CONFIGURE_ARGS+=--without-lua \
 		--without-syck
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=--with-perl
 CONFIGURE_ENV+=	__PERL=${PERL}
 USE_PERL5=	yes
@@ -70,7 +62,7 @@ CONFIGURE_ARGS+=--without-perl
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--with-python=${PYTHON_VER}
 CONFIGURE_ENV+=	__PYTHON=${PYTHON_CMD}
 USE_PYTHON=	yes
@@ -82,15 +74,18 @@ CONFIGURE_ARGS+=--without-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-.else
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--enable-nls
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
+		dot:${PORTSDIR}/graphics/graphviz \
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 CONFIGURE_ARGS+=--with-apidocs
 .endif
 
@@ -120,7 +115,7 @@ MAN3=	RPM.3 RPM::Constant.3 RPM::Dependencies.3 \
 MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -142,19 +137,19 @@ post-patch::
 		${WRKSRC}/scripts/gendiff
 
 post-configure:
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 	@cd ${CONFIGURE_WRKSRC}/perl && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .endif
 	@echo "DOT_FONTPATH = ${LOCALBASE}/lib/X11/fonts/freefont-ttf" >> ${WRKSRC}/Doxyfile
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	${MAKE} -C ${WRKSRC} apidocs
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Install documentation
 	${MKDIR} ${DOCSDIR}/apidocs/html
 	cd ${WRKSRC}/apidocs/html && ${FIND} . \
