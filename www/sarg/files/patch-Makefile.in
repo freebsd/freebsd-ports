@@ -1,18 +1,20 @@
---- Makefile.in.orig	2011-06-20 04:12:39.000000000 +0900
-+++ Makefile.in	2012-02-02 18:04:28.000000000 +0900
-@@ -27,9 +27,9 @@
+--- Makefile.in.orig	2012-08-30 14:23:05.000000000 -0300
++++ Makefile.in	2012-11-20 11:50:32.000000000 -0200
+@@ -27,11 +27,11 @@
  LIBS        = @LIBS@ -lm
  SRCDIR      = .
  VPATH       = .
 -INSTALL     = cp
 +INSTALL     = @INSTALL@ -m 644 -S
-
+ XSL_MAN_STYLESHEET=@XSL_MAN_STYLESHEET@
+ XSL_HTML_STYLESHEET=@XSL_HTML_STYLESHEET@
+ 
 -INSTALL_PROGRAM = $(INSTALL)
 +INSTALL_PROGRAM = @INSTALL@ -m 755 -S -s
-
+ 
  SRCS = util.c log.c report.c topuser.c email.c sort.c html.c \
-        index.c getconf.c usage.c decomp.c ip2name.c \
-@@ -91,14 +91,11 @@
+        index.c getconf.c usage.c decomp.c ip2name.c ip2name_dns.c \
+@@ -93,14 +93,11 @@
  		mkdir -p $(DESTDIR)$(IMAGEDIR); \
  	fi
  	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(bindir)/sarg
