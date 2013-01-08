@@ -1,8 +1,4 @@
-# ex:ts=4
-# New ports collection makefile for:	wcslib
-# Date created:							Wed Jul 15 10:09:45 EST 2009
-# Whom:									Tony Maher <tonymaher@optusnet.com.au>
-#
+# Created by: Tony Maher <tonymaher@optusnet.com.au>
 # $FreeBSD$
 
 PORTNAME=		wcslib
@@ -25,20 +21,23 @@ MAN1=			fitshdr.1
 # See makedefs.in which describes why you want to set the extra support.
 # For most users it will not be required.
 
-OPTIONS=		CFITSIO "Add cfitsio support (for tests only)" Off \
-				PGPLOT  "Add pgplot support (for tests only)" Off
+OPTIONS_DEFINE=		CFITSIO PGPLOT
+CFITSIO_DESC=	Add cfitsio support (for tests only)
+PGPLOT_DESC=	Add pgplot support (for tests only)
+
+.include <bsd.port.options.mk>
 
 # The configure script unconditionally searches for the cftisio library
 # and uses it if found.
 
-.if defined(WITH_CFITSIO) || exists(${LOCALBASE}/lib/libcfitsio.so)
+.if ${PORT_OPTIONS:MCFITSIO} || exists(${LOCALBASE}/lib/libcfitsio.so)
 PLIST_SUB+=		HPXCVT=""
 LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
 .else
 PLIST_SUB+=		HPXCVT="@comment "
 .endif
 
-.if defined(WITH_PGPLOT)
+.if ${PORT_OPTIONS:MPGPLOT}
 LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
 .endif
 
@@ -47,7 +46,7 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README COPYING COPYING.LESSER wcslib.pdf ${DOCSDIR})
 	@${MKDIR} ${DOCSDIR}/html
