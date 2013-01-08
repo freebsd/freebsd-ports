@@ -309,6 +309,7 @@
     SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcmis
+    SUBDIR += libcmis03
     SUBDIR += libdnet
     SUBDIR += libexosip2
     SUBDIR += libfb
