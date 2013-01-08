@@ -1,5 +1,5 @@
-SHA256 (redirector-3.2.10.tgz) = 1648af09df86dba5a73fa8d3ebaf02a62c281b847b96d5921507093056a0d05f
-SIZE (redirector-3.2.10.tgz) = 45407
+SHA256 (redirector-3.2.11.tgz) = e4fea385a05a6a476c0960fd7ac7198dd1fb570c37ff9b7a477ae0017f0d4eb9
+SIZE (redirector-3.2.11.tgz) = 45598
 SHA256 (banlists-2.x.x.tgz) = 221a40e8db9d19477d6fdece00c9152526a0d2f0c2298504fc99b4378457b09e
 SIZE (banlists-2.x.x.tgz) = 116100
 SHA256 (squid-like-www-en.tgz) = c4f32179c742cec5f0f03891f8bf0eb4825bfff3a36e6bf0952d641a0973332a
