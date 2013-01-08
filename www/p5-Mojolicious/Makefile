@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	3.60
+PORTVERSION=	3.74
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -128,7 +128,6 @@ MAN3=		Mojo.3 \
 		Mojolicious::Sessions.3 \
 		Mojolicious::Static.3 \
 		Mojolicious::Types.3 \
-		README.3 \
 		Test::Mojo.3 \
 		ojo.3
 

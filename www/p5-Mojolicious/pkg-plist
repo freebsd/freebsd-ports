@@ -145,7 +145,6 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/templates/not_found.development.html.ep
 %%SITE_PERL%%/Mojolicious/templates/not_found.html.ep
 %%SITE_PERL%%/Mojolicious/templates/perldoc.html.ep
-%%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
