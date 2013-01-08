@@ -10,7 +10,11 @@ MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
 
+.if !defined(MASTERDIR)
+PKGNAMESUFFIX=	34
 LATEST_LINK=	cfengine34
+.endif
+
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-2* cfengine-3.[23]* cfengine-devel-*

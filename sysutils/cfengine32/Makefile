@@ -11,6 +11,7 @@ PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
+PKGNAMESUFFIX=	32
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is an alternate committer for this port
