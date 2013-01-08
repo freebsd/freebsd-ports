@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mixlib-authentication
-PORTVERSION=	1.1.4
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -25,7 +25,14 @@ load_rc_config $name
 : ${chef_client_splay="0"}
 : ${chef_client_logfile="/var/log/chef-client.log"}
 : ${chef_client_loglevel="info"}
-: ${chef_client_pidfile="/var/run/chef-client.pid"}
+
+if [ -f "$chef_client_configfile" ]
+	then
+		pidfile=`awk '/^[ \t]*pid_file[ \t]+/ { print $2 }' ${chef_client_configfile}`
+		: ${chef_client_pidfile=$pidfile}
+	else
+		: ${chef_client_pidfile="/var/run/chef-client.pid"}
+fi
 
 if [ -n "$chef_client_nodename" ]
 	then
