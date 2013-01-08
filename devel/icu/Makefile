@@ -88,6 +88,6 @@ iotest cintltst intltest:
 	    LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/tools/ctestfw \
 	    ./${.TARGET}
 
-post-build test regression-test: iotest cintltst intltest
+test regression-test: iotest cintltst intltest
 
 .include <bsd.port.post.mk>
