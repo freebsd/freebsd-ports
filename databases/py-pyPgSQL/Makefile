@@ -1,9 +1,5 @@
-# New ports collection makefile for:   py-pypgsql
-# Date created:                        01 Nov 2001
-# Whom:                                Gerhard Haering <gerhard.haering@gmx.de>
-#
+# Created by: Gerhard Haering <gerhard.haering@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pyPgSQL
 PORTVERSION=	2.5.1
@@ -26,12 +22,16 @@ EXAMPLES=	examples/*.py
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
-OPTIONS=	BYTEA_CONN      "Apply Bytea connection patch" On
+OPTIONS_DEFINE=	BYTEA_CONN EXAMPLES DOCS
+OPTIONS_DEFAULT=	BYTEA_CONN
+BYTEA_CONN_DESC=	Apply Bytea connection patch
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.if !defined(WITH_BYTEA_CONN)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBYTEA_CONN}
 PATCH_SITES=	http://sourceforge.net/tracker/download.php?group_id=16528&atid=316528&file_id=273956&aid=1939119/
 PATCHFILES=	pyPgSQL-patch_byteaconn
 .endif
@@ -40,13 +40,13 @@ DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
 EXAMPLESDIR=	${PREFIX}/share/examples/py-pyPgSQL
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
