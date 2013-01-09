@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Net-Server
-# Date created:				24 Apr 2001
-# Whom:					Jesse McConnell <jesse@gallup.com>
-#
+# Created by: Jesse McConnell <jesse@gallup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Server
 PORTVERSION=	2.006
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,6 +42,9 @@ MAN3=		Net::Server.3 \
 		Net::Server::Single.3
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Net/Server.pm.orig
 
 .if ${PORT_OPTIONS:MIPV6}
 BUILD_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
