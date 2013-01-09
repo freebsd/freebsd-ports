@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-mogilefs-server
-# Date created:		2007-04-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.65
+PORTVERSION=	2.66
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
