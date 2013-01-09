@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4-webkit
-# Date created:				Mon May 12 17:18:19 CEST 2008
-# Whom:					danny@ricin.com
-#
+# Created by: danny@ricin.com
 # $FreeBSD$
-#
 
 PORTNAME=	webkit
 DISTVERSION=	${QT4_VERSION}
@@ -48,6 +44,14 @@ CONFIGURE_ARGS+=	-I../../../../include/Qt -I../../../../include
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+.include <bsd.port.pre.mk>
+
+# Base ld(1) segfaults on PowerPC:
+# http://bugs.freebsd.org/173042
+.if ${ARCH} == "powerpc"
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
+.endif
+
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
@@ -77,4 +81,4 @@ post-configure:
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc \
 		${WRKSRC}/lib/libQtWebKit.la
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
