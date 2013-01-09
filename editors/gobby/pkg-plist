@@ -24,44 +24,64 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gobby.png
 share/icons/HighContrastLargePrintInverse/scalable/apps/gobby.svg
 share/icons/hicolor/48x48/apps/gobby.png
 share/icons/hicolor/scalable/apps/gobby.svg
+%%NLS%%share/locale/ast/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/gv/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/he/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/th/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gobby.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gobby.mo
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/th/LC_MESSAGES
 @dirrmtry share/locale/sv/LC_MESSAGES
 @dirrmtry share/locale/ru/LC_MESSAGES
 @dirrmtry share/locale/pt_BR/LC_MESSAGES
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/nl/LC_MESSAGES
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ja/LC_MESSAGES
 @dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/hr/LC_MESSAGES
 @dirrmtry share/locale/he/LC_MESSAGES
+@dirrmtry share/locale/gv/LC_MESSAGES
 @dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/eu/LC_MESSAGES
 @dirrmtry share/locale/es/LC_MESSAGES
 @dirrmtry share/locale/en_GB/LC_MESSAGES
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/da/LC_MESSAGES
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/bg/LC_MESSAGES
+@dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/icons/HighContrastLargePrintInverse/scalable/apps
 @dirrmtry share/icons/HighContrastLargePrintInverse/scalable
 @dirrmtry share/icons/HighContrastLargePrintInverse/48x48/apps
