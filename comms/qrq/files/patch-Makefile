@@ -1,9 +1,9 @@
---- Makefile.orig	2011-12-18 16:35:50.000000000 -0500
-+++ Makefile	2012-11-03 07:46:51.000000000 -0500
+--- Makefile.bak	2013-01-07 23:13:28.000000000 -0600
++++ Makefile	2013-01-07 23:14:17.000000000 -0600
 @@ -1,14 +1,14 @@
  # qrq Makefile -- Fabian Kurz, DJ1YFK -- http://fkurz.net/ham/qrq.html
  
- VERSION=0.3.0
+ VERSION=0.3.1
 -DESTDIR?=/usr
 +DESTDIR?=%%PREFIX%%
  
