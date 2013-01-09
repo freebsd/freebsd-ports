@@ -17,13 +17,18 @@ lib/%%APP_NAME%%/crashreporter
 lib/%%APP_NAME%%/crashreporter.ini
 lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
+lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
+lib/%%APP_NAME%%/distribution/extensions/tbtestpilot@labs.mozilla.com.xpi
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/chrome.manifest
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
 lib/%%APP_NAME%%/icons/updater.png
+lib/%%APP_NAME%%/isp/Bogofilter.sfd
+lib/%%APP_NAME%%/isp/DSPAM.sfd
+lib/%%APP_NAME%%/isp/POPFile.sfd
 lib/%%APP_NAME%%/isp/SpamAssassin.sfd
 lib/%%APP_NAME%%/isp/SpamPal.sfd
 lib/%%APP_NAME%%/isp/movemail.rdf
@@ -60,36 +65,33 @@ lib/%%APP_NAME%%/searchplugins/amazondotcom.xml
 lib/%%APP_NAME%%/searchplugins/aol-web-search.xml
 lib/%%APP_NAME%%/searchplugins/bing.xml
 lib/%%APP_NAME%%/searchplugins/eBay.xml
-lib/%%APP_NAME%%/searchplugins/google.xml
 lib/%%APP_NAME%%/searchplugins/twitter.xml
 lib/%%APP_NAME%%/searchplugins/wikipedia.xml
 lib/%%APP_NAME%%/searchplugins/yahoo.xml
 lib/%%APP_NAME%%/thunderbird
 lib/%%APP_NAME%%/thunderbird-bin
-lib/%%APP_NAME%%/update.locale
+lib/%%APP_NAME%%/update-settings.ini
 lib/%%APP_NAME%%/updater
 lib/%%APP_NAME%%/updater.ini
 @exec /bin/cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/plugins/ 2>/dev/null || true
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
-@dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/jsloader/resource
-@dirrm lib/%%APP_NAME%%/jsloader
-@dirrm lib/%%APP_NAME%%/isp
-@dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/hyphenation
-@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/distribution/extensions
-@dirrm lib/%%APP_NAME%%/distribution
-@dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults/messenger
-@dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/defaults/messenger
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/distribution/extensions
+@dirrm lib/%%APP_NAME%%/distribution
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/isp
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications

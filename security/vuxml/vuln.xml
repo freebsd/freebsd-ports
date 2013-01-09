@@ -51,6 +51,136 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4ed6632-5aa9-11e2-8fcb-c8600054b392">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>17.0.2,1</lt></range>
+	<range><lt>10.0.12,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>17.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.15</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>17.0.2</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.15</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>17.0.2</lt></range>
+	<range><lt>10.0.12</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.12</lt></range>
+      </package>
+      <package>
+	<name>ca_root_nss</name>
+	<range><lt>3.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2013-01 Miscellaneous memory safety hazards (rv:18.0/
+	    rv:10.0.12 / rv:17.0.2)</p>
+	  <p>MFSA 2013-02 Use-after-free and buffer overflow issues found using
+	    Address Sanitizer</p>
+	  <p>MFSA 2013-03 Buffer Overflow in Canvas</p>
+	  <p>MFSA 2013-04 URL spoofing in addressbar during page loads</p>
+	  <p>MFSA 2013-05 Use-after-free when displaying table with many
+	    columns and column groups</p>
+	  <p>MFSA 2013-06 Touch events are shared across iframes</p>
+	  <p>MFSA 2013-07 Crash due to handling of SSL on threads</p>
+	  <p>MFSA 2013-08 AutoWrapperChanger fails to keep objects alive during
+	    garbage collection</p>
+	  <p>MFSA 2013-09 Compartment mismatch with quickstubs returned values</p>
+	  <p>MFSA 2013-10 Event manipulation in plugin handler to bypass
+	    same-origin policy</p>
+	  <p>MFSA 2013-11 Address space layout leaked in XBL objects</p>
+	  <p>MFSA 2013-12 Buffer overflow in Javascript string concatenation</p>
+	  <p>MFSA 2013-13 Memory corruption in XBL with XML bindings containing
+	    SVG</p>
+	  <p>MFSA 2013-14 Chrome Object Wrapper (COW) bypass through changing
+	    prototype</p>
+	  <p>MFSA 2013-15 Privilege escalation through plugin objects</p>
+	  <p>MFSA 2013-16 Use-after-free in serializeToStream</p>
+	  <p>MFSA 2013-17 Use-after-free in ListenerManager</p>
+	  <p>MFSA 2013-18 Use-after-free in Vibrate</p>
+	  <p>MFSA 2013-19 Use-after-free in Javascript Proxy objects</p>
+	  <p>MFSA 2013-20 Mis-issued TURKTRUST certificates</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-5829</cvename>
+	<cvename>CVE-2013-0743</cvename>
+	<cvename>CVE-2013-0744</cvename>
+	<cvename>CVE-2013-0745</cvename>
+	<cvename>CVE-2013-0746</cvename>
+	<cvename>CVE-2013-0747</cvename>
+	<cvename>CVE-2013-0748</cvename>
+	<cvename>CVE-2013-0749</cvename>
+	<cvename>CVE-2013-0750</cvename>
+	<cvename>CVE-2013-0751</cvename>
+	<cvename>CVE-2013-0752</cvename>
+	<cvename>CVE-2013-0753</cvename>
+	<cvename>CVE-2013-0754</cvename>
+	<cvename>CVE-2013-0755</cvename>
+	<cvename>CVE-2013-0756</cvename>
+	<cvename>CVE-2013-0757</cvename>
+	<cvename>CVE-2013-0758</cvename>
+	<cvename>CVE-2013-0759</cvename>
+	<cvename>CVE-2013-0760</cvename>
+	<cvename>CVE-2013-0761</cvename>
+	<cvename>CVE-2013-0762</cvename>
+	<cvename>CVE-2013-0763</cvename>
+	<cvename>CVE-2013-0764</cvename>
+	<cvename>CVE-2013-0766</cvename>
+	<cvename>CVE-2013-0767</cvename>
+	<cvename>CVE-2013-0768</cvename>
+	<cvename>CVE-2013-0769</cvename>
+	<cvename>CVE-2013-0770</cvename>
+	<cvename>CVE-2013-0771</cvename>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-01.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-02.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-03.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-04.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-05.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-06.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-07.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-08.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-09.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-10.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-11.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-12.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-13.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-14.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-15.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-16.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-17.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-18.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-19.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-20.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2013-01-08</discovery>
+      <entry>2013-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca5d3272-59e3-11e2-853b-00262d5ed8ee">
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>

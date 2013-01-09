@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	nss
-# Date created:				18 December 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#    $MCom ports-experimental/security/nss/Makefile,v 1.4 2008/02/23 15:47:28 ahze Exp $
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
@@ -81,6 +77,8 @@ post-patch:
 .for i in MAJOR MINOR PATCH
 	@${SED} -i.${i} -e 's|@${i}@|${_${i}}|' ${WRKDIR}/nss-config
 .endfor
+	@${REINPLACE_CMD} '/NSS_DEFAULT_SYSTEM/s,/etc,${PREFIX}&,' \
+		${WRKSRC}/lib/sysinit/nsssysinit.c
 	@cd ${WRKSRC} && \
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'

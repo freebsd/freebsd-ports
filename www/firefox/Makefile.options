@@ -17,3 +17,4 @@ LIBPROXY_DESC?=		Proxy support via libproxy
 LIGHTNING_DESC?=	Calendar extension
 LOGGING_DESC?=		Additional log messages
 QT4_DESC?=		Qt GUI (EXPERIMENTAL, bug 521582)
+WEBRTC_DESC?=		Web Real-Time Communication

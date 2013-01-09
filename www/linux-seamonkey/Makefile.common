@@ -37,6 +37,7 @@ _Q=	2>/dev/null || true
 .if !target(post-extract)
 post-extract:
 	@${RM} -rf ${WRKSRC}/updates
+	@${MKDIR} ${WRKSRC}/plugins ${WRKSRC}/extensions
 .endif
 
 .if ${CATEGORIES:Mwww}
@@ -60,6 +61,26 @@ do-install:
 		${FDIR}/plugins/ ${_Q}
 	@${CP} -R ${LOCALBASE}/lib/xpi/symlinks/${APP_NAME}/ \
 		${FDIR}/extensions/ ${_Q}
+.endif
+
+# Keep empty directories with pkg_* tools
+.if !target(post-extract-script)
+post-extract-script:
+	@if [ "${PKG_BIN:T}" != "pkg" ]; then \
+	    for d in $$(${FIND} ${WRKSRC} -type d -empty); do \
+		${TOUCH} $$d/.keep_me; \
+		${ECHO_CMD} lib/${APP_NAME}/$${d#${WRKSRC}/}/.keep_me \
+			>> ${WRKDIR}/.PLIST.opkg; \
+	    done; \
+	fi
+.endif
+
+.if !target(post-install-script)
+post-install-script:
+	@if [ -f ${WRKDIR}/.PLIST.opkg ]; then \
+		${CAT} ${TMPPLIST} >> ${WRKDIR}/.PLIST.opkg; \
+		${MV} ${WRKDIR}/.PLIST.opkg ${TMPPLIST}; \
+	fi
 .endif
 
 # Maintainer section

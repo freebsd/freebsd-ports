@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	10.0.11
+PORTVERSION=	10.0.12
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
