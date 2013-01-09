@@ -1,0 +1,418 @@
+--- ./kmail/accountmanager.cpp.orig	2012-05-27 10:22:58.000000000 +0200
++++ ./kmail/accountmanager.cpp	2012-05-27 10:26:46.000000000 +0200
+@@ -22,10 +22,8 @@
+ #include <krandom.h>
+ #include <kconfiggroup.h>
+ 
+-using namespace KMail;
+-
+ //-----------------------------------------------------------------------------
+-AccountManager::AccountManager()
++KMail::AccountManager::AccountManager()
+     :QObject(), mNewMailArrived( false ), mInteractive( false ),
+      mTotalNewMailsArrived( 0 ), mDisplaySummary( false )
+ {
+@@ -34,19 +32,21 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-AccountManager::~AccountManager()
++KMail::AccountManager::~AccountManager()
+ {
+   qDeleteAll(mAcctList);
+ }
+ 
+ //-----------------------------------------------------------------------------
+-QStringList AccountManager::accountGroups() const
++QStringList
++KMail::AccountManager::accountGroups() const
+ {
+   return KMKernel::config()->groupList().filter( QRegExp( "Account \\d+" ) );
+ }
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::writeConfig( bool withSync )
++void
++KMail::AccountManager::writeConfig( bool withSync )
+ {
+   KSharedConfig::Ptr config = KMKernel::config();
+ 
+@@ -78,7 +78,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::readConfig(void)
++void
++KMail::AccountManager::readConfig(void)
+ {
+   // Delete all in-memory accounts
+   for ( AccountList::Iterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it )
+@@ -134,7 +135,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::singleCheckMail(KMAccount *account, bool interactive)
++void
++KMail::AccountManager::singleCheckMail(KMAccount *account, bool interactive)
+ {
+   mNewMailArrived = false;
+   mInteractive = interactive;
+@@ -158,7 +160,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::processNextCheck( bool _newMail )
++void
++KMail::AccountManager::processNextCheck( bool _newMail )
+ {
+   kDebug() << "processNextCheck, remaining" << mAcctTodo.count();
+   if ( _newMail )
+@@ -232,7 +235,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-KMAccount* AccountManager::create( const KAccount::Type aType,
++KMAccount*
++KMail::AccountManager::create( const KAccount::Type aType,
+                                    const QString &aName, uint id )
+ {
+   KMAccount* act = 0;
+@@ -265,7 +269,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::add( KMAccount *account )
++void
++KMail::AccountManager::add( KMAccount *account )
+ {
+   if ( account ) {
+     mAcctList.append( account );
+@@ -290,7 +295,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-KMAccount* AccountManager::findByName(const QString &aName) const
++KMAccount*
++KMail::AccountManager::findByName(const QString &aName) const
+ {
+   if ( aName.isEmpty() ) return 0;
+ 
+@@ -302,7 +308,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-KMAccount* AccountManager::find( const uint id ) const
++KMAccount*
++KMail::AccountManager::find( const uint id ) const
+ {
+   if (id == 0) return 0;
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it ) {
+@@ -312,19 +319,22 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-QList<KMAccount*>::iterator AccountManager::begin()
++QList<KMAccount*>::iterator
++KMail::AccountManager::begin()
+ {
+   return mAcctList.begin();
+ }
+ 
+ //-----------------------------------------------------------------------------
+-QList<KMAccount*>::iterator AccountManager::end()
++QList<KMAccount*>::iterator
++KMail::AccountManager::end()
+ {
+   return mAcctList.end();
+ }
+ 
+ //-----------------------------------------------------------------------------
+-bool AccountManager::remove( KMAccount* acct )
++bool
++KMail::AccountManager::remove( KMAccount* acct )
+ {
+   if( !acct )
+     return false;
+@@ -334,7 +344,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::checkMail( bool _interactive )
++void
++KMail::AccountManager::checkMail( bool _interactive )
+ {
+   mNewMailArrived = false;
+ 
+@@ -356,12 +367,14 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::singleInvalidateIMAPFolders(KMAccount *account) {
++void
++KMail::AccountManager::singleInvalidateIMAPFolders(KMAccount *account) {
+   account->invalidateIMAPFolders();
+ }
+ 
+ 
+-void AccountManager::invalidateIMAPFolders()
++void
++KMail::AccountManager::invalidateIMAPFolders()
+ {
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it )
+     singleInvalidateIMAPFolders( *it );
+@@ -369,7 +382,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-QStringList  AccountManager::getAccounts() const
++QStringList
++KMail::AccountManager::getAccounts() const
+ {
+   QStringList strList;
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it ) {
+@@ -379,7 +393,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::intCheckMail(int item, bool _interactive)
++void
++KMail::AccountManager::intCheckMail(int item, bool _interactive)
+ {
+   mNewMailArrived = false;
+   mTotalNewMailsArrived = 0;
+@@ -391,7 +406,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::addToTotalNewMailCount( const QMap<QString, int> & newInFolder )
++void
++KMail::AccountManager::addToTotalNewMailCount( const QMap<QString, int> & newInFolder )
+ {
+   for ( QMap<QString, int>::const_iterator it = newInFolder.begin();
+         it != newInFolder.end(); ++it ) {
+@@ -404,7 +420,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-uint AccountManager::createId()
++uint
++KMail::AccountManager::createId()
+ {
+   QList<uint> usedIds;
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it ) {
+@@ -422,7 +439,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::cancelMailCheck()
++void
++KMail::AccountManager::cancelMailCheck()
+ {
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it ) {
+     (*it)->cancelMailCheck();
+@@ -431,7 +449,8 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-void AccountManager::readPasswords()
++void
++KMail::AccountManager::readPasswords()
+ {
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it ) {
+     NetworkAccount *acct = dynamic_cast<NetworkAccount*>( (*it) );
+@@ -441,7 +460,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-bool AccountManager::isUnique( const QString &aName ) const
++bool
++KMail::AccountManager::isUnique( const QString &aName ) const
+ {
+   for ( AccountList::ConstIterator it( mAcctList.begin() ), end( mAcctList.end() ); it != end; ++it ) {
+     if ( (*it)->name() == aName ) return false;
+@@ -450,7 +470,8 @@
+ }
+ 
+ //-----------------------------------------------------------------------------
+-QString AccountManager::makeUnique( const QString &name ) const
++QString
++KMail::AccountManager::makeUnique( const QString &name ) const
+ {
+   int suffix = 1;
+   QString result = name;
+--- ./kmail/accountwizard.cpp.orig	2012-05-27 10:40:25.000000000 +0200
++++ ./kmail/accountwizard.cpp	2012-05-27 10:41:35.000000000 +0200
+@@ -416,7 +416,7 @@
+     name[ 0 ] = name[ 0 ].toUpper();
+   }
+ 
+-  AccountManager *manager = mKernel->acctMgr();
++  KMail::AccountManager *manager = mKernel->acctMgr();
+   if ( !manager->isUnique( name ) ) {
+     name = manager->makeUnique( name );
+   }
+@@ -523,7 +523,7 @@
+ void AccountWizard::createAccount()
+ {
+   // create incoming account
+-  AccountManager *acctManager = mKernel->acctMgr();
++  KMail::AccountManager *acctManager = mKernel->acctMgr();
+ 
+   switch ( mTypeBox->type() ) {
+     case AccountTypeBox::Local:
+--- ./kmail/kmacctcachedimap.h.orig	2012-05-27 10:10:49.000000000 +0200
++++ ./kmail/kmacctcachedimap.h	2012-05-27 10:12:06.000000000 +0200
+@@ -194,8 +194,8 @@
+   bool sentCustomLoginCommand() const { return mSentCustomLoginCommand; }
+ 
+ protected:
+-  friend class ::AccountManager;
+-  KMAcctCachedImap(AccountManager* owner, const QString& accountName, uint id);
++  friend class KMail::AccountManager;
++  KMAcctCachedImap(KMail::AccountManager* owner, const QString& accountName, uint id);
+ 
+ protected slots:
+   /** new-mail-notification for the current folder (is called via folderComplete) */
+--- ./kmail/kmaccount.cpp.orig	2012-05-27 10:15:32.000000000 +0200
++++ ./kmail/kmaccount.cpp	2012-05-27 10:18:19.000000000 +0200
+@@ -90,7 +90,7 @@
+ 
+ 
+ //-----------------------------------------------------------------------------
+-KMAccount::KMAccount(AccountManager* aOwner, const QString& aName, uint id)
++KMAccount::KMAccount(KMail::AccountManager* aOwner, const QString& aName, uint id)
+   : KAccount( id, aName ),
+     mTrash(KMKernel::self()->trashFolder()->idString()),
+     mOwner(aOwner),
+@@ -440,11 +440,13 @@
+ //-----------------------------------------------------------------------------
+ void KMAccount::mailCheck()
+ {
++  KMail::AccountManager *acctmgr;
++
+   if (mTimer)
+     mTimer->stop();
+ 
+   if ( kmkernel ) {
+-    AccountManager *acctmgr = kmkernel->acctMgr();
++    acctmgr = kmkernel->acctMgr();
+     if ( acctmgr ) {
+       acctmgr->singleCheckMail( this, false );
+     }
+--- ./kmail/kmacctcachedimap.cpp.orig	2012-05-27 10:30:11.000000000 +0200
++++ ./kmail/kmacctcachedimap.cpp	2012-05-27 10:30:33.000000000 +0200
+@@ -49,7 +49,7 @@
+ 
+ #include <QList>
+ 
+-KMAcctCachedImap::KMAcctCachedImap( AccountManager* aOwner,
++KMAcctCachedImap::KMAcctCachedImap( KMail::AccountManager* aOwner,
+ 				    const QString& aAccountName, uint id )
+   : KMail::ImapAccountBase( aOwner, aAccountName, id ), mFolder( 0 ),
+     mAnnotationCheckPassed(false),
+--- ./kmail/kmacctimap.h.orig	2012-05-27 10:13:07.000000000 +0200
++++ ./kmail/kmacctimap.h	2012-05-27 10:14:12.000000000 +0200
+@@ -101,8 +101,8 @@
+   void slotUpdateFolderList();
+ 
+ protected:
+-  friend class ::AccountManager;
+-  KMAcctImap(AccountManager* owner, const QString& accountName, uint id);
++  friend class KMail::AccountManager;
++  KMAcctImap(KMail::AccountManager* owner, const QString& accountName, uint id);
+   /**
+    * Handle an error coming from a KIO job
+    * See ImapAccountBase::handleJobError for details.
+--- ./kmail/kmacctimap.cpp.orig	2012-05-27 10:28:47.000000000 +0200
++++ ./kmail/kmacctimap.cpp	2012-05-27 10:29:37.000000000 +0200
+@@ -54,7 +54,7 @@
+ #include <errno.h>
+ 
+ //-----------------------------------------------------------------------------
+-KMAcctImap::KMAcctImap(AccountManager* aOwner, const QString& aAccountName, uint id):
++KMAcctImap::KMAcctImap(KMail::AccountManager* aOwner, const QString& aAccountName, uint id):
+   KMail::ImapAccountBase(aOwner, aAccountName, id),
+   mCountRemainChecks( 0 )
+ {
+--- ./kmail/kmacctlocal.h.orig	2012-05-27 10:36:43.000000000 +0200
++++ ./kmail/kmacctlocal.h	2012-05-27 10:37:02.000000000 +0200
+@@ -10,9 +10,9 @@
+ class KMAcctLocal: public KMAccount
+ {
+ protected:
+-  friend class ::AccountManager;
++  friend class KMail::AccountManager;
+ 
+-  KMAcctLocal(AccountManager* owner, const QString& accountName, uint id);
++  KMAcctLocal(KMail::AccountManager* owner, const QString& accountName, uint id);
+ 
+ public:
+   virtual ~KMAcctLocal();
+--- ./kmail/kmacctmaildir.h.orig	2012-05-27 10:34:36.000000000 +0200
++++ ./kmail/kmacctmaildir.h	2012-05-27 10:35:32.000000000 +0200
+@@ -10,9 +10,9 @@
+ class KMAcctMaildir: public KMAccount
+ {
+ protected:
+-  friend class ::AccountManager;
++  friend class KMail::AccountManager;
+ 
+-  KMAcctMaildir(AccountManager* owner, const QString& accountName, uint id);
++  KMAcctMaildir(KMail::AccountManager* owner, const QString& accountName, uint id);
+ 
+ public:
+   virtual ~KMAcctMaildir();
+--- ./kmail/kmkernel.cpp.orig	2012-05-27 10:31:17.000000000 +0200
++++ ./kmail/kmkernel.cpp	2012-05-27 10:33:02.000000000 +0200
+@@ -914,7 +914,7 @@
+           mAddMsgCurrentFolder->unGetMsg( index );
+           retval = 1;
+         } else {
+-          retval =- 2;
++          retval = -2;
+           delete msg;
+           msg = 0;
+         }
+@@ -1018,7 +1018,7 @@
+         mAddMsgCurrentFolder->unGetMsg( index );
+         retval = 1;
+       } else {
+-        retval =- 2;
++        retval = -2;
+         delete msg;
+         msg = 0;
+       }
+@@ -1533,7 +1533,7 @@
+   if (lsf)
+     the_searchFolderMgr->remove( lsf );
+ 
+-  the_acctMgr       = new AccountManager();
++  the_acctMgr       = new KMail::AccountManager();
+   the_filterMgr     = new KMFilterMgr();
+   the_popFilterMgr     = new KMFilterMgr(true);
+   the_filterActionDict = new KMFilterActionDict;
+--- ./kmail/popaccount.h.orig	2012-05-27 10:18:58.000000000 +0200
++++ ./kmail/popaccount.h	2012-05-27 10:19:33.000000000 +0200
+@@ -103,8 +103,8 @@
+ 
+ private:
+   enum Stage { Idle, List, Uidl, Head, Retr, Dele, Quit };
+-  friend class ::AccountManager;
+-  PopAccount(AccountManager* owner, const QString& accountName, uint id);
++  friend class KMail::AccountManager;
++  PopAccount(KMail::AccountManager* owner, const QString& accountName, uint id);
+ 
+   /**
+    * Start a KIO Job to get a list of messages on the pop server
+--- ./libkleo/backends/qgpgme/threadedjobmixin.h.orig	2012-05-27 09:48:29.000000000 +0200
++++ ./libkleo/backends/qgpgme/threadedjobmixin.h	2012-05-27 09:51:03.000000000 +0200
+@@ -143,7 +143,7 @@
+ 
+     void lateInitialization() {
+       assert( m_ctx );
+-      connect( &m_thread, SIGNAL(finished()), this, SLOT(slotFinished()) );
++      T_base::connect( &m_thread, SIGNAL(finished()), this, SLOT(slotFinished()) );
+       m_ctx->setProgressProvider( this );
+     }
+ 
+
