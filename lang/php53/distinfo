@@ -1,5 +1,5 @@
-SHA256 (php-5.3.19.tar.bz2) = 814ce55b950158c4ddadbcd0b2d7d8cb4b570de4a29b9db021020594e2469fd6
-SIZE (php-5.3.19.tar.bz2) = 11359557
+SHA256 (php-5.3.20.tar.bz2) = 578c26e6932dd7a37ff14e4e2237bc3235386fe897ba2e456e937e647727cd07
+SIZE (php-5.3.20.tar.bz2) = 11358034
 SHA256 (suhosin-patch-5.3.x-0.9.10.1.patch.gz) = 063c981679c3249030f3053f5232e97096deca446f32784f3e3727b45d742134
 SIZE (suhosin-patch-5.3.x-0.9.10.1.patch.gz) = 40804
 SHA256 (php-5.3.x-mail-header.patch) = 5a677448b32d9f592703e2323a33facdb45e5c237dcca04aaea8ec3287f7db84
