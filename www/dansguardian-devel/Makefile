@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.12.0.0
-PORTREVISION=	2
+PORTVERSION=	2.12.0.2
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
@@ -15,6 +14,7 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
 USE_GNOME=	pkgconfig
+USE_BZIP2=	yes
 
 CONFLICTS=	dansguardian-2.10.*
 LATEST_LINK=	dansguardian-devel
