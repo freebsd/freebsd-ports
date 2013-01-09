@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	po4a
-PORTVERSION=	0.41
+PORTVERSION=	0.44
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3341/
 
