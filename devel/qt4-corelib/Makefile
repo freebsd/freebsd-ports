@@ -1,21 +1,18 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	corelib
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt core library
 
-LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu
 
+USE_GNOME=	_glib20
 USE_QT4=	qmake_build moc_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
