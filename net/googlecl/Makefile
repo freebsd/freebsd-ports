@@ -1,12 +1,8 @@
-# New ports collection makefile for:	googlecl
-# Date created:		2010-06-19
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	googlecl
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	net www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -24,13 +20,17 @@ USE_PYDISTUTILS=	yes
 MAN1=		google.1
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
 
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MANPREFIX}/man/man1
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
 .endif

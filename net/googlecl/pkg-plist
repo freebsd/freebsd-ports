@@ -47,6 +47,21 @@ bin/google
 %%PYTHON_SITELIBDIR%%/googlecl/contacts/service.py
 %%PYTHON_SITELIBDIR%%/googlecl/contacts/service.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/contacts/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/authentication.py
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/authentication.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/authentication.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/data.py
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/data.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/data.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/docs.py
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/docs.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/docs.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/output.py
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/output.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/discovery/output.pyo
 %%PYTHON_SITELIBDIR%%/googlecl/docs/__init__.py
 %%PYTHON_SITELIBDIR%%/googlecl/docs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/docs/__init__.pyo
@@ -84,6 +99,7 @@ bin/google
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/picasa
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/finance
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/docs
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/discovery
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/config
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/calendar
