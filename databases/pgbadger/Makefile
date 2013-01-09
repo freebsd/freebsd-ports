@@ -3,6 +3,7 @@
 
 PORTNAME=	pgbadger
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://cloud.github.com/downloads/dalibo/pgbadger/
 DISTFILES=	${DISTNAME}-1${EXTRACT_SUFX}
