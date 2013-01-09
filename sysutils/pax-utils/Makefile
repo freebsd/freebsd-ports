@@ -2,36 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://dev.gentoo.org/~vapier/dist/ \
-		LOCAL/sbz
+		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		true
 USE_GMAKE=	true
 
 PLIST_FILES=	bin/dumpelf bin/pspax bin/scanelf bin/scanmacho
 
-PORTDOCS=	BUGS README TODO
-
 MAN1=		dumpelf.1 pspax.1 scanelf.1 scanmacho.1
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	BUGS README TODO
+
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800076
 BROKEN=	Does not build
 .endif
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
@@ -40,4 +41,4 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/,} ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
