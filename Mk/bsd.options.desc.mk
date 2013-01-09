@@ -182,6 +182,7 @@ LIRC_DESC?=		LIRC support
 LITE_DESC?=		Reduced features/memory footprint
 LIVEMEDIA_DESC?=	Multimedia streaming via liveMedia
 LQR_DESC?=		Liquid Rescale support
+LSOF_DESC?=		lsof support
 LUA_DESC?=		Lua scripting language
 LZMA_DESC?=		LZMA compression
 MAD_DESC?=		MAD MP3 audio decoder
