@@ -1047,6 +1047,7 @@
     SUBDIR += librcd
     SUBDIR += libreadline-java
     SUBDIR += libredblack
+    SUBDIR += libregf
     SUBDIR += librelp
     SUBDIR += libruin
     SUBDIR += libs11n
