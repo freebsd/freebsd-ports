@@ -21,7 +21,7 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
-MINOR_VERSION=	5
+MINOR_VERSION=	5.1
 
 USE_XZ=		yes
 USE_GMAKE=	yes
