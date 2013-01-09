@@ -3,6 +3,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 
@@ -16,7 +17,11 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 
 MAN5=		perditiondb.5
 MAN8=		perdition.8
-
+MLINKS=		perdition.8 perdition.imap4.8 \
+		perdition.8 perdition.imap4s.8 \
+		perdition.8 perdition.imaps.8 \
+		perdition.8 perdition.pop3.8 \
+		perdition.8 perdition.pop3s.8
 MANCOMPRESSED=	no
 
 USE_AUTOTOOLS=	libtool
@@ -31,13 +36,12 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	perdition perdition.pop3 perdition.pop3s \
 		perdition.imap4 perdition.imap4s perdition.imaps
 
-OPTIONS_DEFINE=		BDB DAEMON_MAP GDBM MYSQL NIS ODBC OPENLDAP OPENSSL PGSQL POSIX_REGEX SSL
-OPTIONS_DEFAULT=	GDBM POSIX_REGEX SSL
+OPTIONS_DEFINE=		BDB DAEMON_MAP DOCS GDBM LDAP MYSQL NIS ODBC \
+			OPENSSL PGSQL POSIX_REGEX
+OPTIONS_DEFAULT=	GDBM OPENSSL POSIX_REGEX
 
 DAEMON_MAP_DESC=	Daemon Map support
-GDBM_DESC=		GDBM database backend
-NIS_DESC=		NIS database backend
-OPENLDAP_DESC=		OpenLDAP database backend
+GDBM_DESC=		GDBM database
 POSIX_REGEX_DESC=	Native regex support
 
 .include <bsd.port.options.mk>
@@ -115,16 +119,16 @@ CONFIGURE_ARGS+=	--disable-pg
 PLIST_SUB+=		PGSQL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MOPENLDAP}
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap \
 			--with-ldap-schema-directory=${LOCALBASE}/etc/openldap/schema/ \
 			--disable-ldap-doc
-PLIST_SUB+=		OPENLDAP=""
+PLIST_SUB+=		LDAP=""
 MAN8+=			perditiondb_ldap_makedb.8
 .else
 CONFIGURE_ARGS+=	--disable-ldap
-PLIST_SUB+=		OPENLDAP="@comment "
+PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MODBC}
