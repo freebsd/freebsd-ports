@@ -9,10 +9,10 @@
  # CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -g -std=c99 -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -g -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
-@@ -21,6 +21,7 @@
+@@ -21,6 +21,6 @@
  # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
  # CFLAGS = -O2 -funroll-loops -Wall -pg
- LDFLAGS = -Wl,--gc-sections
+-LDFLAGS = -Wl,--gc-sections
 +LDFLAGS = -Wl,--gc-sections -L%%LOCALBASE%%/lib
  # LDFLAGS = -pg
  # LDFLAGS = -pg -lc_p
@@ -26,11 +26,3 @@
  GET_CC_VERSION_INFO = $(CC) --version >
  
  BIGINT_LIB_DEFINE = USE_BIG_RTL_LIBRARY
-@@ -113,6 +114,7 @@
- COMP_DATA_LIB_SRC = typ_data.c rfl_data.c ref_data.c listutl.c flistutl.c typeutl.c datautl.c
- COMPILER_LIB_SRC = $(PSRC1) $(LSRC1) $(LSRC2) $(LSRC3) $(ESRC1) $(ASRC1) $(ASRC2) $(ASRC3) $(GSRC1) $(GSRC2)
- 
-+.PHONY: hi
- hi: ../bin/hi ../prg/hi
- 	../bin/hi level
- 
