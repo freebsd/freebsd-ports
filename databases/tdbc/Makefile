@@ -2,25 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	tdbc
-DISTVERSION=	1.0b17
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 CATEGORIES=	databases
-MASTER_SITES=	http://tdbc.tcl.tk/index.cgi/tarball/
-DISTFILES=	${PORTNAME:U}-${FOSSIL_HASH}.${EXTRACT_SUFX}?uuid=${FOSSIL_HASH}
+MASTER_SITES=	SF/tcl/Tcl/8.6.0
+DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	The common database access interface for Tcl
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC
 
-FOSSIL_HASH=	dc470dee3956a286ccdda1b7d9153950c282a2fe
-
 USE_TCL=	86
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME:U}-${FOSSIL_HASH}.
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tcloo=${TCL_LIBDIR} \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX} \
-		--with-tdbc=${WRKSRC}/tdbc --enable-threads
+		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} --enable-threads \
+		--mandir=${PREFIX}/man
 PLIST_SUB+=	VERSION=${DISTVERSION} \
 		TCL_MAJ=${TCL_VER:R} \
 		TCL_VER=${TCL_VER}
@@ -41,6 +38,7 @@ MANN=	tdbc.n \
 # MySQL
 #
 .if ${PORT_OPTIONS:MMYSQL}
+DISTFILES+=	${PORTNAME}mysql${PORTVERSION}${EXTRACT_SUFX}
 MODULES+=	tdbcmysql
 PLIST_SUB+=	MYSQL=""
 MANN+=		tdbc_mysql.n
@@ -53,7 +51,8 @@ PLIST_SUB+=	MYSQL="@comment "
 # ODBC
 #
 .if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+DISTFILES+=	${PORTNAME}odbc${PORTVERSION}${EXTRACT_SUFX}
 MODULES+=	tdbcodbc
 PLIST_SUB+=	ODBC=""
 MANN+=		tdbc_odbc.n
@@ -66,6 +65,7 @@ PLIST_SUB+=	ODBC="@comment "
 #
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	client
+DISTFILES+=	${PORTNAME}postgres${PORTVERSION}${EXTRACT_SUFX}
 MODULES+=	tdbcpostgres
 PLIST_SUB+=	PGSQL=""
 .else
@@ -76,6 +76,7 @@ PLIST_SUB+=	PGSQL="@comment "
 # SQLite
 #
 .if ${PORT_OPTIONS:MSQLITE}
+DISTFILES+=	${PORTNAME}sqlite3-${PORTVERSION}${EXTRACT_SUFX}
 MODULES+=	tdbcsqlite3
 PLIST_SUB+=	SQLITE="" \
 		TCL_LIBDIR="${TCL_LIBDIR:S/${LOCALBASE}\///}"
@@ -84,35 +85,40 @@ MANN+=		tdbc_sqlite3.n
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
+post-extract:
+	if [ -d ${WRKDIR}/tdbcsqlite3-${PORTVERSION} ]; then \
+	    ${MV} ${WRKDIR}/tdbcsqlite3-${PORTVERSION} ${WRKDIR}/tdbcsqlite3${PORTVERSION}; \
+	fi
+
 do-configure:
 .for module in ${MODULES}
 	@echo "================================="
 	@echo "Configuring ${module}"
-	cd ${WRKSRC}/${module} && ${SH} configure ${CONFIGURE_ARGS}
+	cd ${WRKDIR}/${module}${PORTVERSION} && ${SH} configure ${CONFIGURE_ARGS}
 .endfor
 
 post-configure:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|tdbcstub10b17|tdbcstub|g'
+	${FIND} ${WRKDIR} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|tdbcstub100|tdbcstub|g'
 
 do-build:
 .for module in ${MODULES}
 	@echo "================================="
 	@echo "Building ${module}"
-	cd ${WRKSRC}/${module} && ${MAKE} ${ALL_TARGET}
+	cd ${WRKDIR}/${module}${PORTVERSION} && ${MAKE} ${ALL_TARGET}
 .endfor
 
 do-install:
 .for module in ${MODULES}
 	@echo "================================="
 	@echo "Installing ${module}"
-	cd ${WRKSRC}/${module} && ${MAKE} ${INSTALL_TARGET}
+	cd ${WRKDIR}/${module}${PORTVERSION} && ${MAKE} ${INSTALL_TARGET}
 .endfor
 
 test:
 .for module in ${MODULES}
 	@echo "================================="
 	@echo "Testing ${module}"
-	cd ${WRKSRC}/${module} && ${MAKE} test
+	cd ${WRKDIR}/${module}${PORTVERSION} && ${MAKE} test
 .endfor
 
 .include <bsd.port.mk>
