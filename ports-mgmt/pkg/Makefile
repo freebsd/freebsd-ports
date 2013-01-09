@@ -59,7 +59,14 @@ MLINKS=	pkg-delete.8 pkg-remove.8 \
 .if defined(WITH_PKGNG)
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
-.if ${NB_OLDPKGS} > 0
+.if exists(${PKG_BIN})
+NB_NEWPKGS!=	${PKG_INFO} -aq | wc -l
+.else
+NB_NEWPKGS=	0
+.endif
+# Only show the pre-everything notice if they have not already
+# converted any packages
+.if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0
 
 pre-everything::
 	@${ECHO_CMD} "You are about to convert your system to pkgng while you have ports/packages"; \
