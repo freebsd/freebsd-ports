@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	17.0.1
+DISTVERSION=	17.0.2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -53,7 +53,7 @@ OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
 
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-release
+WRKSRC:=	${WRKDIR}/mozilla-esr17
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}

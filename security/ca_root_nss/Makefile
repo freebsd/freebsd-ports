@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ca-root-nss
-# Date created:				Thu Jan 25 13:02:14 CST 2007
-# Whom:	      				Brooks Davis <brooks@FreeBSD.org>
-#
+# Created by: Brooks Davis <brooks@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}

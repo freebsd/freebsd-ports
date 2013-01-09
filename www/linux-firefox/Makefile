@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-PORTVERSION=	10.0.11
+PORTVERSION=	17.0.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}esr/linux-i686/en-US

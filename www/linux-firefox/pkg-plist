@@ -22,7 +22,6 @@ lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
 lib/%%APP_NAME%%/firefox
 lib/%%APP_NAME%%/firefox-bin
 lib/%%APP_NAME%%/icons/mozicon128.png
@@ -59,26 +58,37 @@ lib/%%APP_NAME%%/searchplugins/google.xml
 lib/%%APP_NAME%%/searchplugins/twitter.xml
 lib/%%APP_NAME%%/searchplugins/wikipedia.xml
 lib/%%APP_NAME%%/searchplugins/yahoo.xml
-lib/%%APP_NAME%%/update.locale
+lib/%%APP_NAME%%/update-settings.ini
 lib/%%APP_NAME%%/updater
 lib/%%APP_NAME%%/updater.ini
+lib/%%APP_NAME%%/webapprt-stub
+lib/%%APP_NAME%%/webapprt/omni.ja
+lib/%%APP_NAME%%/webapprt/webapprt.ini
 @exec /bin/cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/plugins/ 2>/dev/null || true
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
-@dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/jsloader/resource
-@dirrm lib/%%APP_NAME%%/jsloader
-@dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/hyphenation
-@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/modules/services-aitc
+@dirrm lib/%%APP_NAME%%/modules/services-common
+@dirrm lib/%%APP_NAME%%/modules/services-crypto
+@dirrm lib/%%APP_NAME%%/modules/services-notifications
+@dirrm lib/%%APP_NAME%%/modules/services-sync/engines
+@dirrm lib/%%APP_NAME%%/modules/services-sync
+@dirrm lib/%%APP_NAME%%/modules/sessionstore
+@dirrm lib/%%APP_NAME%%/modules
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/webapprt/components
+@dirrm lib/%%APP_NAME%%/webapprt
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
