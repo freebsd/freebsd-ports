@@ -15,4 +15,4 @@ share/kde4/services/clementine-zune.protocol
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/kde4/services
-@dirrmtry s
+@dirrmtry share/kde4
