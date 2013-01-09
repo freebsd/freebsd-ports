@@ -1,18 +1,17 @@
-# New ports collection makefile for:	devel/p5-Perl6-Junction
-# Date created:				18 Jul 2007
-# Whom:					Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Perl6-Junction
-PORTVERSION=	1.40000
+PORTVERSION=	1.50000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl6 style Junction operators in Perl5
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
