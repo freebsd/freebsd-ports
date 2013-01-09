@@ -218,6 +218,7 @@ MYSQL_JDBC_DESC?=	JDBC connection to MySQL databases
 NAS_DESC?=		Network Audio System
 NETCDF_DESC?=		NetCDF data format
 NETPBM_DESC?=		Netpbm graphics toolkit
+NIS_DESC?=		Network Information Services/YP support
 NLS_DESC?=		Native Language Support
 NMAP_DESC?=		NMAP support
 NNTP_DESC?=		NNTP (News) support
