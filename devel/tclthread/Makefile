@@ -1,26 +1,20 @@
-# New ports collection makefile for:	tclthread
-# Date created:				Mon Apr 23 10:55:00 CET 2007
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thread
-PORTVERSION=	2.6.7
-PORTREVISION=	1
-CATEGORIES=	devel tcl
-MASTER_SITES=		SF/tcl/Thread%20Extension/${PORTVERSION}
+PORTVERSION=	2.7.0
+CATEGORIES=	devel
+MASTER_SITES=	SF/tcl/Tcl/8.6.0
 PKGNAMEPREFIX=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Thread extension for Tcl
+MAINTAINER=	tcltk@FreeBSD.org
+COMMENT=	Scripting level thread extension for Tcl
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USE_TCL=		84+
-USE_TCL_THREADS=	yes
+USE_TCL=	84+
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -35,8 +29,8 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 OPTIONS_DEFINE=	GDBM DOCS
-OPTIONS_DEFAULT=	GDBM
-GDBM_DESC=	include GDBM support
+OPTIONS_DEFAULT=GDBM
+GDBM_DESC=	Persistent shared variables using GDBM
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +39,6 @@ CONFIGURE_ARGS+=	--with-tcl="${TCL_LIBDIR}"
 .if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm
-CONFIGURE_ENV+=		gincdir="${LOCALBASE}/include" glibdir="${LOCALBASE}/lib"
 .endif
 
 post-patch:
@@ -55,7 +48,7 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/html
-.for FILE in ChangeLog README license.terms
+.for FILE in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .for FILE in thread.html tpool.html tsv.html ttrace.html
