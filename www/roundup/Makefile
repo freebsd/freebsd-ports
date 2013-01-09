@@ -1,45 +1,38 @@
-# New ports collection makefile for: roundup
-# Date created:		23 Mar 2003
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
-#
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.19
+PORTVERSION=	1.4.21
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	An Issue-Tracking System for Knowledge Workers
+COMMENT=	Issue-Tracking System for Knowledge Workers
 
 LICENSE=	PSFL
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USE_GETTEXT=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 
-OPTIONS=	SQLITE	"Support Sqlite as backend" on
-OPTIONS+=	PGSQL	"Support posggresql as backend" off
-OPTIONS+=	MYSQL	"Support mysql as backend" off
-OPTIONS+=	NLS	"Native Language Support" on
+OPTIONS_DEFINE=	SQLITE PGSQL MYSQL NLS
+OPTIONS_DEFAULT=SQLITE NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -59,8 +52,8 @@ post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/share/man/man1/,} ${MAN1PREFIX}/man/man1
 .endif
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC}/build/share/locale/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/locale/)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

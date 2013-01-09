@@ -92,9 +92,12 @@ bin/roundup-xmlrpc-server
 %%PYTHON_SITELIBDIR%%/roundup/backends/tsearch2_setup.py
 %%PYTHON_SITELIBDIR%%/roundup/backends/tsearch2_setup.pyc
 %%PYTHON_SITELIBDIR%%/roundup/backends/tsearch2_setup.pyo
-%%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.py
-%%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.pyc
-%%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/engine_zopetal.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/engine_zopetal.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/engine_zopetal.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/engine_chameleon.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/engine_chameleon.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/engine_chameleon.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/Expressions.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/Expressions.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/Expressions.pyo
@@ -197,9 +200,6 @@ bin/roundup-xmlrpc-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/wsgi_handler.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/wsgi_handler.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/wsgi_handler.pyo
-%%PYTHON_SITELIBDIR%%/roundup/cgi/zLOG.py
-%%PYTHON_SITELIBDIR%%/roundup/cgi/zLOG.pyc
-%%PYTHON_SITELIBDIR%%/roundup/cgi/zLOG.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/KeywordsExpr.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/KeywordsExpr.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/KeywordsExpr.pyo
@@ -425,14 +425,91 @@ bin/roundup-xmlrpc-server
 %%DATADIR%%/templates/minimal/html/user.rego_progress.html
 %%DATADIR%%/templates/minimal/initial_data.py
 %%DATADIR%%/templates/minimal/schema.py
+%%DATADIR%%/templates/responsive/config.ini
+%%DATADIR%%/templates/responsive/initial_data.py
+%%DATADIR%%/templates/responsive/schema.py
+%%DATADIR%%/templates/responsive/TEMPLATE-INFO.txt
+%%DATADIR%%/templates/responsive/detectors/userauditor.py
+%%DATADIR%%/templates/responsive/detectors/no_texthtml.py
+%%DATADIR%%/templates/responsive/detectors/patches.py
+%%DATADIR%%/templates/responsive/detectors/messagesummary.py
+%%DATADIR%%/templates/responsive/detectors/statusauditor.py
+%%DATADIR%%/templates/responsive/detectors/severityauditor.py
+%%DATADIR%%/templates/responsive/detectors/nosyreaction.py
+%%DATADIR%%/templates/responsive/extensions/spambayes.py
+%%DATADIR%%/templates/responsive/extensions/local_replace.py
+%%DATADIR%%/templates/responsive/extensions/timestamp.py
+%%DATADIR%%/templates/responsive/extensions/timezone.py
+%%DATADIR%%/templates/responsive/html/patch.item.html
+%%DATADIR%%/templates/responsive/html/user.forgotten.html
+%%DATADIR%%/templates/responsive/html/keyword.item.html
+%%DATADIR%%/templates/responsive/html/user.help.html
+%%DATADIR%%/templates/responsive/html/user.index.html
+%%DATADIR%%/templates/responsive/html/query.html
+%%DATADIR%%/templates/responsive/html/_generic.help-search.html
+%%DATADIR%%/templates/responsive/html/patch.index.html
+%%DATADIR%%/templates/responsive/html/_generic.help-submit.html
+%%DATADIR%%/templates/responsive/html/task.item.html
+%%DATADIR%%/templates/responsive/html/home.html
+%%DATADIR%%/templates/responsive/html/_generic.404.html
+%%DATADIR%%/templates/responsive/html/_generic.collision.html
+%%DATADIR%%/templates/responsive/html/home.classlist.html
+%%DATADIR%%/templates/responsive/html/msg.index.html
+%%DATADIR%%/templates/responsive/html/_generic.keywords_expr.html
+%%DATADIR%%/templates/responsive/html/task.index.html
+%%DATADIR%%/templates/responsive/html/bug.search.html
+%%DATADIR%%/templates/responsive/html/_generic.help.html
+%%DATADIR%%/templates/responsive/html/file.item.html
+%%DATADIR%%/templates/responsive/html/task.search.html
+%%DATADIR%%/templates/responsive/html/query.edit.html
+%%DATADIR%%/templates/responsive/html/query.item.html
+%%DATADIR%%/templates/responsive/html/query.js
+%%DATADIR%%/templates/responsive/html/help.html
+%%DATADIR%%/templates/responsive/html/_generic.query.html
+%%DATADIR%%/templates/responsive/html/msg.item.html
+%%DATADIR%%/templates/responsive/html/user.rego_progress.html
+%%DATADIR%%/templates/responsive/html/user_utils.js
+%%DATADIR%%/templates/responsive/html/page.html
+%%DATADIR%%/templates/responsive/html/favicon.ico
+%%DATADIR%%/templates/responsive/html/milestone.index.html
+%%DATADIR%%/templates/responsive/html/user.register.html
+%%DATADIR%%/templates/responsive/html/user.item.html
+%%DATADIR%%/templates/responsive/html/_generic.index.html
+%%DATADIR%%/templates/responsive/html/bug.item.html
+%%DATADIR%%/templates/responsive/html/user.help-search.html
+%%DATADIR%%/templates/responsive/html/file.index.html
+%%DATADIR%%/templates/responsive/html/keyword.index.html
+%%DATADIR%%/templates/responsive/html/jquery.js
+%%DATADIR%%/templates/responsive/html/_generic.item.html
+%%DATADIR%%/templates/responsive/html/help_controls.js
+%%DATADIR%%/templates/responsive/html/milestone.item.html
+%%DATADIR%%/templates/responsive/html/_generic.calendar.html
+%%DATADIR%%/templates/responsive/html/_generic.help-list.html
+%%DATADIR%%/templates/responsive/html/_generic.help-empty.html
+%%DATADIR%%/templates/responsive/html/bug.index.html
+%%DATADIR%%/templates/responsive/static/glyphicons-halflings-white.png
+%%DATADIR%%/templates/responsive/static/bootstrap.min.css
+%%DATADIR%%/templates/responsive/static/UbuntuMono-Regular.ttf
+%%DATADIR%%/templates/responsive/static/glyphicons-halflings.png
+%%DATADIR%%/templates/responsive/static/bootstrap-responsive.min.css
+%%DATADIR%%/templates/responsive/static/DroidSans.ttf
+%%DATADIR%%/templates/responsive/static/style.css
+@dirrm %%DATADIR%%/templates/responsive/static
+@dirrm %%DATADIR%%/templates/responsive/html
+@dirrm %%DATADIR%%/templates/responsive/extensions
+@dirrm %%DATADIR%%/templates/responsive/detectors
+@dirrm %%DATADIR%%/templates/responsive
+@dirrm %%DATADIR%%/templates/minimal/static
 @dirrm %%DATADIR%%/templates/minimal/html
 @dirrm %%DATADIR%%/templates/minimal/extensions
 @dirrm %%DATADIR%%/templates/minimal/detectors
 @dirrm %%DATADIR%%/templates/minimal
+@dirrm %%DATADIR%%/templates/devel/static
 @dirrm %%DATADIR%%/templates/devel/html
 @dirrm %%DATADIR%%/templates/devel/detectors
 @dirrm %%DATADIR%%/templates/devel/extensions
 @dirrm %%DATADIR%%/templates/devel
+@dirrm %%DATADIR%%/templates/classic/static
 @dirrm %%DATADIR%%/templates/classic/html
 @dirrm %%DATADIR%%/templates/classic/extensions
 @dirrm %%DATADIR%%/templates/classic/detectors
