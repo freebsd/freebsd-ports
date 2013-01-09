@@ -1809,7 +1809,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="3decc87d-2498-11e2-b0c7-000d601460a4">
-    <topic>ruby - Unintentional file creation caused by inserting an illegal NUL character</topic>
+    <topic>ruby -- Unintentional file creation caused by inserting an illegal NUL character</topic>
     <affects>
       <package>
 	<name>ruby</name>
@@ -1845,7 +1845,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="2a093853-2495-11e2-b0c7-000d601460a4">
-    <topic>ruby - $SAFE escaping vulnerability about Exception#to_s/NameError#to_s</topic>
+    <topic>ruby -- $SAFE escaping vulnerability about Exception#to_s/NameError#to_s</topic>
     <affects>
       <package>
 	<name>ruby</name>
@@ -2303,7 +2303,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="f94befcd-1289-11e2-a25e-525400272390">
-    <topic>gitolite - path traversal vulnerability</topic>
+    <topic>gitolite -- path traversal vulnerability</topic>
     <affects>
       <package>
 	<name>gitolite</name>
@@ -9738,7 +9738,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="6e7ad1d7-4e27-11e1-8e12-90e6ba8a36a2">
-    <topic>mathopd - directory traversal vulnerability</topic>
+    <topic>mathopd -- directory traversal vulnerability</topic>
     <affects>
       <package>
 	<name>mathopd</name>
@@ -11419,7 +11419,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="bbd5f486-24f1-11e1-95bc-080027ef73ec">
-    <topic>PuTTY 0.59 - 0.61 -- Password vulnerability</topic>
+    <topic>PuTTY -- Password vulnerability</topic>
     <affects>
       <package>
 	<name>putty</name>
@@ -12004,7 +12004,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="9dde9dac-08f4-11e1-af36-003067b2972c">
-    <topic>caml-light - insecure use of temporary files</topic>
+    <topic>caml-light -- insecure use of temporary files</topic>
     <affects>
       <package>
 	<name>caml-light</name>
@@ -36248,7 +36248,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="9f581778-e3d4-11dc-bb89-000bcdc1757a">
-    <topic>coppermine - multiple vulnerabilities</topic>
+    <topic>coppermine -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>coppermine</name>
@@ -36280,7 +36280,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="f113bbeb-e3ac-11dc-bb89-000bcdc1757a">
-    <topic>moinmoin - multiple vulnerabilities</topic>
+    <topic>moinmoin -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>moinmoin</name>
@@ -41774,7 +41774,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="0ac89b39-f829-11db-b55c-000e0c6d38a9">
-    <topic>qemu - several vulnerabilities</topic>
+    <topic>qemu -- several vulnerabilities</topic>
     <affects>
       <package>
 	<name>qemu</name>
@@ -41828,7 +41828,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="632c98be-aad2-4af2-849f-41a6862afd6a">
-    <topic>p5-Imager - possibly exploitable buffer overflow</topic>
+    <topic>p5-Imager -- possibly exploitable buffer overflow</topic>
     <affects>
       <package>
 	<name>p5-Imager</name>
@@ -47035,7 +47035,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="76562594-1f19-11db-b7d4-0008743bf21a">
-    <topic>ruby - multiple vulnerabilities</topic>
+    <topic>ruby -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>ruby</name>
@@ -48540,7 +48540,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="4645b98c-e46e-11da-9ae7-00123fcc6e5c">
-    <topic>vnc - authentication bypass vulnerability</topic>
+    <topic>vnc -- authentication bypass vulnerability</topic>
     <affects>
       <package>
 	<name>vnc</name>
@@ -54687,7 +54687,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="6e27f3b6-189b-11da-b6be-0090274e8dbb">
-    <topic>fswiki - command injection vulnerability</topic>
+    <topic>fswiki -- command injection vulnerability</topic>
     <affects>
       <package>
 	<name>fswiki</name>
@@ -61375,7 +61375,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="4a0b334d-8d8d-11d9-afa0-003048705d5a">
-    <topic>phpbb - Insuffient check against HTML code in usercp_register.php</topic>
+    <topic>phpbb -- Insuffient check against HTML code in usercp_register.php</topic>
     <affects>
       <package>
 	<name>phpbb</name>
