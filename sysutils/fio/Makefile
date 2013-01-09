@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	fio
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.13
 CATEGORIES=	sysutils benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
