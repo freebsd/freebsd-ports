@@ -10,4 +10,4 @@ invalid frames, injecting your own 802.11 frames, combining technics
 (VLAN hopping+ARP cache poisoning, VOIP decoding on WEP encrypted
 channel, ...), etc.
 
-WWW:	http://secdev.org/projects/scapy
+WWW: http://secdev.org/projects/scapy

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	scapy
-# Date created:		08 dec 2005
-# Whom:			vanhu <vanhu@netasq.com>
-#
+# Created by: vanhu <vanhu@netasq.com>
 # $FreeBSD$
 #
 # TODO: - configurable --enable-xxx for various additional dependancies
@@ -23,57 +20,53 @@ MANCOMPRESSED=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 
-OPTIONS=	PYX "Support for PostScript and PDF graphs drawing" off \
-		PYCRYPTO "Support for py-crypto for WEP decoding" off \
-		PYGNUPLOT "Support for py-gnuplot wrapper to plot graphs" off \
-		GRAPH	"Support for graph generation and visualization" off \
-		P0F_BASE "Support for p0f OS signatures database" off \
-		QUESO_BASE "Support for queso OS signatures database" off \
-		NMAP "Support for nmap OS signatures database" off \
-		MANUF "Support for wireshark's MANUF MAC database" off \
-		VPYTHON "Support for 3D representation of traceroute" off \
-		SOX "Support for VoIP" off
+OPTIONS_DEFINE=	PYX PYCRYPTO PYGNUPLOT GRAPH P0F_BASE QUESO_BASE MMAP MANUF
+PYX_DESC=	PostScript and PDF graphs drawing
+PYCRYPTO_DESC=	Use py-crypto for WEP decoding
+PYGNUPLOT_DESC=	Use py-gnuplot wrapper to plot graphs
+GRAPH_DESC=	graph generation and visualization
+P0F_BASE_DESC=	p0f OS signatures database
+QUESO_BASE_DESC=	queso OS signatures database
+NMAP_DESC=	nmap OS signatures database
+MANUF_DESC=	wireshark's MANUF MAC database
+SOX_DESC=	Support for VoIP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PYX)
+.if ${PORT_OPTIONS:MPYX}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyx/__init__.py:${PORTSDIR}/graphics/py-PyX
 .endif
 
-.if defined(WITH_PYCRYPTO)
+.if ${PORT_OPTIONS:MPYCRYPTO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 .endif
 
-.if defined(WITH_PYGNUPLOT)
+.if ${PORT_OPTIONS:MPYGNUPLOT}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
 .endif
 
-.if defined(WITH_GRAPH)
+.if ${PORT_OPTIONS:MGRAPH}
 RUN_DEPENDS+=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-.if defined(WITH_P0F_BASE)
+.if ${PORT_OPTIONS:MP0F_BASE}
 RUN_DEPENDS+=	${LOCALBASE}/etc/p0f/p0f.fp:${PORTSDIR}/net-mgmt/p0f
 .endif
 
-.if defined(WITH_QUESO_BASE)
+.if ${PORT_OPTIONS:MQUESO_BASE}
 RUN_DEPENDS+=	${LOCALBASE}/etc/queso.conf.sample:${PORTSDIR}/net/queso
 .endif
 
-.if defined(WITH_NMAP)
+.if ${PORT_OPTIONS:MNMAP}
 RUN_DEPENDS+=	${LOCALBASE}/share/nmap/nmap-os-db:${PORTSDIR}/security/nmap
 .endif
 
-.if defined(WITH_MANUF)
+.if ${PORT_OPTIONS:MMANUF}
 RUN_DEPENDS+=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
 .endif
 
-.if defined(WITH_VPYTHON)
-RUN_DEPENDS+=	${LOCALBASE}/bin/vpython:${PORTSDIR}/graphics/py-visual
-.endif
-
-.if defined(WITH_SOX)
+.if ${PORT_OPTIONS:MSOX}
 RUN_DEPENDS+=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
 .endif
 
@@ -85,4 +78,4 @@ post-patch:
 	@${REINPLACE_CMD} "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/scapy/modules/p0f.py ${WRKSRC}/scapy/modules/queso.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
