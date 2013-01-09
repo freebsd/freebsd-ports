@@ -1,12 +1,8 @@
-# New ports collection Makefile for: aterm
-# Date created:         Oct 1 2001
-# Whom:                 gugod@gugod.org
+# Created by: gugod@gugod.org
 # $FreeBSD$
-#
 
 PORTNAME=	aterm
-PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	SF
 
@@ -15,8 +11,7 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-PATCH_WRKSRC=	${WRKSRC}/..
-CONFIGURE_ARGS=	--enable-fading --enable-xim --enable-big5
+CONFIGURE_ARGS=	--enable-xim --enable-big5
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
