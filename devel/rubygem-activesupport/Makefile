@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
