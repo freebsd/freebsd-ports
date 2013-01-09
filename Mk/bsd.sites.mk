@@ -520,7 +520,8 @@ MASTER_SITE_GENTOO+= \
 #                 default: not set, mandatory
 #            
 .if defined(USE_GITHUB)
-MASTER_SITE_GITHUB+=		https://nodeload.github.com/%SUBDIR%
+MASTER_SITE_GITHUB+=		https://nodeload.github.com/%SUBDIR% \
+				http://nodeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
 .if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
 MASTER_SITES+=	GH GHC
