@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Text-BibTeX
-# Date created:				Mon Jan 19 2003
-# Whom:					David Bremner <bremner@unb.ca>
-#
+# Created by: David Bremner <bremner@unb.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AMBS/Text
