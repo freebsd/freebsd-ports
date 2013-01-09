@@ -1,6 +1,6 @@
 %%GDBM%%bin/makegdbm
 %%BDB%%bin/makebdb
-%%OPENLDAP%%sbin/perditiondb_ldap_makedb
+%%LDAP%%sbin/perditiondb_ldap_makedb
 %%ODBC%%sbin/perditiondb_odbc_makedb
 %%MYSQL%%sbin/perditiondb_mysql_makedb
 %%PGSQL%%sbin/perditiondb_postgresql_makedb
@@ -21,10 +21,10 @@ etc/perdition/Makefile
 %%GDBM%%lib/libperditiondb_gdbm.so
 %%GDBM%%lib/libperditiondb_gdbm.la
 %%GDBM%%lib/libperditiondb_gdbm.a
-%%OPENLDAP%%lib/libperditiondb_ldap.so.0
-%%OPENLDAP%%lib/libperditiondb_ldap.so
-%%OPENLDAP%%lib/libperditiondb_ldap.la
-%%OPENLDAP%%lib/libperditiondb_ldap.a
+%%LDAP%%lib/libperditiondb_ldap.so.0
+%%LDAP%%lib/libperditiondb_ldap.so
+%%LDAP%%lib/libperditiondb_ldap.la
+%%LDAP%%lib/libperditiondb_ldap.a
 %%MYSQL%%lib/libperditiondb_mysql.so.0
 %%MYSQL%%lib/libperditiondb_mysql.so
 %%MYSQL%%lib/libperditiondb_mysql.la
