@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rkhunter
-# Date created:		15 May 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.4.0
@@ -14,10 +10,9 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Rootkit detection tool
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/files/LICENSE
 
-OPTIONS=	LSOF "Use LSOF" on \
-		NMAP "Use NMAP" off
+OPTIONS_DEFINE=	LSOF NMAP DOCS
+OPTIONS_DEFAULT=LSOF
 
 RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
@@ -33,11 +28,11 @@ PORTDOCS=	ACKNOWLEDGMENTS CHANGELOG FAQ LICENSE README
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_LSOF)
+.if ${PORT_OPTIONS:MLSOF}
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
-.if defined(WITH_NMAP)
+.if ${PORT_OPTIONS:MNMAP}
 RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
 .endif
 
@@ -51,7 +46,7 @@ do-install:
 		${MAN8PREFIX}/man/man8
 	@${MKDIR} ${PREFIX}/etc/periodic/security
 	${INSTALL_SCRIPT} ${WRKDIR}/415.${PORTNAME} ${PREFIX}/etc/periodic/security
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
 .endif
