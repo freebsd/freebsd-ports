@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uglifier
-PORTVERSION=	1.2.7
+PORTVERSION=	1.3.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

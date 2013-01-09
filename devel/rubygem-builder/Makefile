@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	builder
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

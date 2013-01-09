@@ -51,6 +51,97 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca5d3272-59e3-11e2-853b-00262d5ed8ee">
+    <topic>rubygem-rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>rubygem-rails</name>
+        <range><lt>3.2.11</lt></range>
+      </package>
+      <package>
+        <name>rubygem-actionpack</name>
+        <range><lt>3.2.11</lt></range>
+      </package>
+      <package>
+        <name>rubygem-activerecord</name>
+        <range><lt>3.2.11</lt></range>
+      </package>
+      <package>
+        <name>rubygem-activesupport</name>
+        <range><lt>3.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ruby on Rails team reports:</p>
+        <blockquote cite="http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/">
+          <p>Two high-risk vulnerabilities have been discovered:</p>
+          <p>(CVE-2013-0155) There is a vulnerability when Active Record is
+             used in conjunction with JSON parameter parsing.</p>
+          <p>Due to the way Active Record interprets parameters in combination
+             with the way that JSON parameters are parsed, it is possible for an
+             attacker to issue unexpected database queries with "IS NULL" or
+             empty "WHERE" clauses. This issue does not let an attacker insert
+             arbitrary values into an SQL query, however they can cause the
+             query to check for NULL or eliminate a WHERE clause when most users
+             would not expect it.</p>
+          <p>(CVE-2013-0156) There are multiple weaknesses in the parameter
+             parsing code for Ruby on Rails which allows attackers to bypass
+             authentication systems, inject arbitrary SQL, inject and execute
+             arbitrary code, or perform a DoS attack on a Rails application.</p>
+          <p>The parameter parsing code of Ruby on Rails allows applications to
+             automatically cast values from strings to certain data types.
+             Unfortunately the type casting code supported certain conversions
+             which were not suitable for performing on user-provided data
+             including creating Symbols and parsing YAML. These unsuitable
+             conversions can be used by an attacker to compromise a Rails
+             application.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+        <cvename>CVE-2013-0155</cvename>
+        <cvename>CVE-2013-0156</cvename>
+        <url>http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/</url>
+        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/t1WFuuQyavI</url>
+        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/61bkgvnSGTQ</url>
+    </references>
+    <dates>
+      <discovery>2013-01-08</discovery>
+      <entry>2013-01-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b4051b52-58fa-11e2-853b-00262d5ed8ee">
+    <topic>rubygem-rails -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+        <name>rubygem-rails</name>
+        <range><lt>3.2.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ruby on Rails team reports:</p>
+        <blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/DCNTNp_qjFM">
+          <p>There is a SQL injection vulnerability in Active Record in ALL
+             versions. Due to the way dynamic finders in Active Record extract
+             options from method parameters, a method parameter can mistakenly
+             be used as a scope. Carefully crafted requests can use the scope
+             to inject arbitrary SQL.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5664</cvename>
+      <url>https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/DCNTNp_qjFM</url>
+    </references>
+    <dates>
+      <discovery>2013-01-02</discovery>
+      <entry>2013-01-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a65d33b-5950-11e2-b66b-00e0814cab4e">
     <topic>jenkins -- HTTP access to the server to retrieve the master cryptographic key</topic>
     <affects>
