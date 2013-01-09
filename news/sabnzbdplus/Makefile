@@ -1,12 +1,8 @@
-# New ports collection makefile for:   sabnzdbplus
-# Date created:				January 2008
-# Whom:					Daniel Bretoi
-#
+# Created by: Daniel Bretoi
 # $FreeBSD$
-#
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.9
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -138,7 +134,7 @@ do-install:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

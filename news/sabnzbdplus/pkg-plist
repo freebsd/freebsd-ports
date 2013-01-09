@@ -334,7 +334,6 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/smpl.css
 %%DATADIR%%/interfaces/smpl/templates/status.tmpl
 %%DATADIR%%/interfaces/wizard/README.TXT
-%%DATADIR%%/interfaces/wizard/four.html
 %%DATADIR%%/interfaces/wizard/inc_bottom.tmpl
 %%DATADIR%%/interfaces/wizard/inc_top.tmpl
 %%DATADIR%%/interfaces/wizard/index.html
