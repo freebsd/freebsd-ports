@@ -1,4 +1,4 @@
-# Created by:	Janos.Mohacsi@bsd.hu
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
 
 PORTNAME=	beacon
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Beacon active measurement tool to monitor multicast
 
 BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
@@ -19,7 +19,7 @@ USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf
 
 OPTIONS_DEFINE=		IPV6
-OPTIONS_DEFAULT=	
+OPTIONS_DEFAULT=
 
 IPV6_DESC=		Enable IPv6 PTR lookups
 

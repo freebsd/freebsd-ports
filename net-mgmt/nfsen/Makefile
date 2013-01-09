@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nfsen
-# Date created:		25 March 2005
-# Whom:			janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3.6p1
@@ -11,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Web based frontend to nfdump netflow collector
 
 LICENSE=	BSD

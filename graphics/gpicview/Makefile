@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpicview
-# Date created:		2007-10-05
-# Whom:			Janos Mohacsi <janos.mohacsi@bsd.hu>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	gpicview
 PORTVERSION=	0.2.1
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GPicView%20${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	A Simple and Fast Image Viewer for X
 
 USE_GNOME=	gtk20

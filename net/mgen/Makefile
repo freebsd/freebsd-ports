@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rude
-# Date created:		04/11/2004
-# Whom:			janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	mgen
 PORTVERSION=	4.2b6
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	src-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	An IP network performance tests and measurements
 
 # Dumps core on 64-bit architectures. This was reported to the upstream

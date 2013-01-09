@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hohlin
-# Date created:		2004-08-17
-# Whom:			Janos Mohacsi <janos.mohacsi@bsd.hu>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	hohlin
 PORTVERSION=	1.01
@@ -15,7 +11,7 @@ MASTER_SITES=	http://skye.ki.iif.hu/~mohacsi/downloads/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${SHORTPORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Remake of the classic spectrum game Head over Heels
 
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/

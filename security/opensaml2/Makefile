@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opensaml2
-# Date created:				15 September 2008
-# Whom:					Janos Mohacsi
-#
+# Created by: Janos Mohacsi
 # $FreeBSD$
-#
 
 PORTNAME=	opensaml2
 PORTVERSION=	2.4.3
@@ -12,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 DISTNAME=	opensaml-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Open source implementation of SAML2
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \

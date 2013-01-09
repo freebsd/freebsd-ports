@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ramond
-# Date created:				2010-01-25
-# Whom:					janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	ramond
 PORTVERSION=	0.5
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/_${PORTVERSION}/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	On-link IPv6 router advertisement monitoring and reporting daemon
 
 LICENSE=	BSD

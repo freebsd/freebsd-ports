@@ -1,9 +1,5 @@
-# New ports collection makefile for:    yape
-# Date created:         31.10.2002
-# Whom:                 Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	yape
 PORTVERSION=	0.32.5
@@ -12,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://yape.homeserver.hu/download/
 DISTNAME=	${PORTNAME}SDL-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
 USE_SDL=	sdl

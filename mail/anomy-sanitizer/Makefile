@@ -1,9 +1,5 @@
-# New ports collection makefile for:	anomy-sanitizer
-# Date created:		2003-02-11
-# Whom:			janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	anomy-sanitizer
 PORTVERSION=	1.76
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	http://mailtools.anomy.net/dist/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Sanitize and clean incoming/outgoing mail
 
 USE_PERL5=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netwox
-# Date created:				23.07.2004
-# Whom:					janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	netwib
 PORTVERSION=	5.38.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://laurentconstantin.free.fr/common/netw/netwib/download/v5/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Netwib network programming library
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet

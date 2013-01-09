@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rancid-devel
-# Date created:		20 March 2007 (based on net-mgmt/rancid)
-# Whom:			janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.2a10
@@ -12,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel

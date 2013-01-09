@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmltooling
-# Date created:				12 September 2008
-# Whom:					Janos Mohacsi
-#
+# Created by: Janos Mohacsi
 # $FreeBSD$
-#
 
 PORTNAME=	xmltooling
 PORTVERSION=	1.4.2
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.shibboleth.net/downloads/c++-opensaml/2.4.3/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Low level XML support for SAML
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
