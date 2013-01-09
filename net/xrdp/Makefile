@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/xrdp/xrdp/${PORTVERSION}
@@ -76,8 +76,8 @@ post-install:
 		${CP} -p ${PREFIX}/etc/xrdp/$f.sample ${PREFIX}/etc/xrdp/$f ; \
 	fi
 .endfor
-	@cmp -s ${PREFIX}/etc/xrdp/rsakeys.ini.sample ${PREFIX}/etc/xrdp/rsakeys.ini || \
-		${PREFIX}/bin/xrdp-keygen xrdp ${PREFIX}/etc/xrdp/rsakeys.ini
+	@if cmp -s ${PREFIX}/etc/xrdp/rsakeys.ini.sample ${PREFIX}/etc/xrdp/rsakeys.ini; then \
+		${PREFIX}/bin/xrdp-keygen xrdp ${PREFIX}/etc/xrdp/rsakeys.ini; fi
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
