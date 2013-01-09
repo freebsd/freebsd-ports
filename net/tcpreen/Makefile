@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpreen
-# Date created:				09.08.2002
-# Whom:					Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
 USE_BZIP2=	yes

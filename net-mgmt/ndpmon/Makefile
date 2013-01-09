@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.4/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 
 LICENSE=	LGPL21

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bub-n-bros
-# Date created:         		26 January 2005
-# Whom:                 		Janos Mohacsi <janos.mohacsi@bsd.hu>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	bubbros
 PORTVERSION=	1.6
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/bub-n-bros/bub-n-bros/${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Multiplayer clone of the famous Bubble Bobble game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game

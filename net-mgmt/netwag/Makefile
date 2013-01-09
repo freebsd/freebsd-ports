@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netwag
-# Date created:				11.08.2004
-# Whom:					janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	netwag
 PORTVERSION=	5.38.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/
 		http://laurentconstantin.free.fr/common/netw/${PORTNAME}/download/v5/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	A graphical front end for netwox
 
 BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \

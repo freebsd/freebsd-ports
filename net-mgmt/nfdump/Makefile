@@ -6,7 +6,7 @@ PORTVERSION=	1.6.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Command-line tools to collect and process NetFlow data
 
 LICENSE=	BSD

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinyca
-# Date created:				17 July 2003
-# Whom:					Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	tinyca
 PORTVERSION=	0.7.5
@@ -13,7 +9,7 @@ MASTER_SITES=	http://tinyca.sm-zone.net/ \
 		http://tinyca.sm-zone.net/old/
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

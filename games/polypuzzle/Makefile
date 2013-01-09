@@ -1,9 +1,5 @@
-# New ports collection makefile for:	polypuzzle
-# Date created:		30 June 2004
-# Whom:			janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	polypuzzle
 PORTVERSION=	1.6
@@ -12,7 +8,7 @@ CATEGORIES=	games tcl tk
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/games/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Tessellation puzzle game
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=santuario/c-library
 PKGNAMEPREFIX=	apache-
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Apache XML security libraries - C++ version
 
 LICENSE=	AL2

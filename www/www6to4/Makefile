@@ -1,7 +1,4 @@
-# New ports collection makefile for:    www6to4
-# Date created:         22.03.2002
-# Whom: Janos Mohacsi <janos.mohacsi@dante.org.uk>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@dante.org.uk>
 # $FreeBSD$
 
 PORTNAME=	www6to4
@@ -10,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}

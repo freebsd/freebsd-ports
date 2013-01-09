@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nfdump/snapshot/nfdump-snapshot-${PORTVERSION}
 DISTNAME=	nfdump-snapshot-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Development version of tools to collect and process NetFlow data
 
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool

@@ -1,16 +1,12 @@
-# New ports collection makefile for:	lookout
-# Date created:		12 Apr 2002
-# Whom:			janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	lookout
 PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://catb.org/~esr/lookout/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Convert Outlook97 addressbook export files to KDE KAB/GNOME gnomecard
 
 USE_PYTHON=	yes

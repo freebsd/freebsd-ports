@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jdictionary-eng-hun-expr
-# Date created:         24.04.2002
-# Whom:                 janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	jdictionary-eng-hun-expr
 PORTVERSION=	1.4

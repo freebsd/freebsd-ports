@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IO-INET6
-# Date created:		02 July 2003
-# Whom:	      		Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Socket-INET6
 PORTVERSION=	2.69
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SHLOMIF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perl module with object interface to AF_INET6 domain sockets
 
 BUILD_DEPENDS=	p5-Socket6>=0.12:${PORTSDIR}/net/p5-Socket6

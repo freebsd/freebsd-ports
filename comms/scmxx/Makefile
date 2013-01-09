@@ -1,9 +1,5 @@
-# New ports collection makefile for:    scmxx
-# Date created:         21.03.2002
-# Whom:                 Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	scmxx
 PORTVERSION=	0.9.0
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones
 
 USE_BZIP2=	yes

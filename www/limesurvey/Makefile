@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/1._LimeSurvey_stable/${PORTVERSION}+/
 DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}plus-build10232-20110608
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	A PHP-based survey building and runing system
 
 LICENSE=	GPLv2

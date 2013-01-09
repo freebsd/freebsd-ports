@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jdictionary-int-eng
-# Date created:         20.06.2002
-# Whom:                 janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	jdictionary-int-eng
 PORTVERSION=	1.0

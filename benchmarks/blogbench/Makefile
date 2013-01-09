@@ -1,9 +1,5 @@
-# New ports collection makefile for:	blogbench
-# Date created:			Feb 14, 2005
-# Whom:				janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	blogbench
 PORTVERSION=	1.1
@@ -11,7 +7,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/blogbench/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Performance Test of Filesystem I/O
 
 GNU_CONFIGURE=	yes

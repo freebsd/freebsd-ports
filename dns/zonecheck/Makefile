@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.zonecheck.fr/download/ \
 		ftp://ftp.nic.fr/pub/mirror/zonecheck/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zones
 
 LICENSE=	GPLv3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	doscan
-# Date created:		24 Sept 2003
-# Whom:			Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	doscan
 PORTVERSION=	0.3.1
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre

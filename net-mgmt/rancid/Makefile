@@ -6,7 +6,7 @@ PORTVERSION=	2.3.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel

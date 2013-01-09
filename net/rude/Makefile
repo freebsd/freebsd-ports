@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rude
-# Date created:		rude
-# Whom:			Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	rude
 PORTVERSION=	0.70
@@ -11,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Rude is a Real-time UDP Data Emitter and Collector (crude)
 
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk

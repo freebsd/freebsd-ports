@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnsdoctor
-# Date created:		2004-09-10
-# Whom:	      		Janos.Mohacsi@bsd.hu
-#
+# Created by: Janos.Mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	dnsdoctor
 PORTVERSION=	1.0.1
@@ -11,7 +7,7 @@ CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	http://www.dnsdoctor.org/download/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zones
 
 .if defined(WITH_X11)

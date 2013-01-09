@@ -1,9 +1,5 @@
-# New ports collection makefile for:    denyhosts
-# Date created:         		04 November 2005
-# Whom:                 		Janos Mohacsi <janos.mohacsi@bsd.hu>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	denyhosts
 PORTVERSION=	2.6
@@ -12,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	DenyHosts-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Script to thwart ssh attacks
 
 USE_PYTHON=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netwox
-# Date created:				26.07.2004
-# Whom:					janos.mohacsi@bsd.hu
-#
+# Created by: janos.mohacsi@bsd.hu
 # $FreeBSD$
-#
 
 PORTNAME=	netwox
 PORTVERSION=	5.38.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
 		http://laurentconstantin.free.fr/common/netw/netwox/download/v5/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Netwox a network testing toolbox
 
 BUILD_DEPENDS=	netwib-config:${PORTSDIR}/net/netwib

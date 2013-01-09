@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	GOOGLE_CODE \
 		http://www2.mindrot.org/files/flowd/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Small, fast, and secure NetFlow collector
 
 OPTIONS_DEFINE=	PERL PYTHON
