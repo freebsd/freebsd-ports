@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcache
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.1-rc1
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_PHP=	yes
 USE_PHPIZE=	yes
-USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--enable-xcache=shared
 
