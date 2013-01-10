@@ -342,6 +342,7 @@
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
     SUBDIR += golddig
+    SUBDIR += golly
     SUBDIR += gomoku
     SUBDIR += gondola
     SUBDIR += goonies
