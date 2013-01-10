@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -22,8 +22,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
 
-DEBUG_DESC=	Build with debugging and verbose output enabled
-LINUX_COMPAT_DESC=	Support for Linux DVB and radio devices (requires FreeBSD 8.1+)
+DEBUG_DESC= Enable debugging and verbose driver output
+LINUX_COMPAT_DESC= Support for Linux DVB and radio API
 HAL_DESC=	Register Linux DVB devices with HAL
 
 OPTIONS_DEFAULT=	LINUX_COMPAT
@@ -34,7 +34,6 @@ OPTIONS_DEFAULT=	LINUX_COMPAT
 MAKE_ARGS+=	DIAGNOSTIC=0x7f
 .endif
 
-.if (${OSVERSION} >= 801000)
 .if ${PORT_OPTIONS:MLINUX_COMPAT}
 LIB_DEPENDS+=	cuse4bsd.1:${PORTSDIR}/multimedia/cuse4bsd-kmod
 BUILD_DEPENDS+= v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
@@ -45,12 +44,11 @@ LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal \
 MAKE_ARGS+=	-D WITH_HAL
 .endif
 .endif
-.endif
 
 MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"
 
-.if (${OSVERSION} < 704000) || ((${OSVERSION} >= 800000) && (${OSVERSION} < 801000))
-IGNORE=	requires kernel support for kmem_alloc_attr() (FreeBSD 7.4+, FreeBSD 8.1+)
+.if (${OSVERSION} < 802513) || ((${OSVERSION} >= 900000) && (${OSVERSION} < 900041))
+IGNORE= requires kernel support for DRIVER_MODULE_ORDERED macro (FreeBSD 8.3+, FreeBSD 9.0+)
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
