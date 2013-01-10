@@ -2,26 +2,22 @@
 #
 
 PORTNAME=	dragonegg46
-PORTVERSION=	3.3.r${SVN_REV}
+PORTVERSION=	3.2
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
-PKGNAMESUFFIX=	-devel
-DISTNAME=	dragonegg-${PORTVERSION}
+MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+DISTNAME=	dragonegg-${PORTVERSION}.src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	GCC plugin to use the LLVM backend
 
-CONFLICTS+=	dragonegg46-3*
+CONFLICTS=	dragonegg46-devel-3*
 
-# XXX: not entierly sure if llvm-devel is a depend
-BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
+BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
 RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
-		llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
+		llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
 USE_GCC=	4.6
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -35,29 +31,12 @@ GCC_LIBDIR=		lib/${CC}
 ALL_TARGET=
 MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC}
 
-.include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
-
 PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		README
-.endif
-
-.if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-
-do-fetch:
-	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
-	    http://llvm.org/svn/llvm-project/dragonegg/trunk \
-	    ${WRKDIR}/${DISTNAME}
-	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
-.if ${USER} == brooks || ${USER} == bed22
-	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
-	    brooks@freefall.freebsd.org:public_distfiles/
-.endif
 .endif
 
 post-patch:
