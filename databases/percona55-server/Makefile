@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	MySQL-5.5
 PKGNAMESUFFIX?=	-server
 DISTNAME=	Percona-Server-5.5.28-rel29.3
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona55-client
