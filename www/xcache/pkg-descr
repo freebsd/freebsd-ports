@@ -1,4 +1,4 @@
 XCache is a fast, stable php opcode cacher that has been tested and
 now running on production server under high load.
 
-WWW: http://trac.lighttpd.net/xcache/
+WWW: http://xcache.lighttpd.net/
