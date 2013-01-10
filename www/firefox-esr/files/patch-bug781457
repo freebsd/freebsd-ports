@@ -1,5 +1,5 @@
---- xpcom/base/nsStackWalk.cpp.orig	2010-12-15 02:03:41.000000000 +0100
-+++ xpcom/base/nsStackWalk.cpp	2010-12-15 11:28:20.000000000 +0100
+--- xpcom/base/nsStackWalk.cpp.orig	2012-05-29 00:57:31.000000000 +0200
++++ xpcom/base/nsStackWalk.cpp	2012-06-03 12:33:40.000000000 +0200
 @@ -1123,6 +1123,7 @@ NS_StackWalk(NS_WalkStackCallback aCallb
  
  #elif defined(HAVE__UNWIND_BACKTRACE)

@@ -1,6 +1,6 @@
 --- toolkit/components/startup/nsAppStartup.cpp
 +++ toolkit/components/startup/nsAppStartup.cpp
-@@ -50,17 +50,40 @@
+@@ -50,18 +50,41 @@
  #include <sys/syscall.h>
  #endif
  
@@ -19,6 +19,7 @@
  #endif
  
  #include "mozilla/Telemetry.h"
+ #include "mozilla/StartupTimeline.h"
  
 +#if defined(__NetBSD__)
 +#undef KERN_PROC
@@ -44,7 +45,7 @@
 +
  static NS_DEFINE_CID(kAppShellCID, NS_APPSHELL_CID);
  
- using namespace mozilla;
+ #define kPrefLastSuccess "toolkit.startup.last_success"
 @@ -836,42 +859,30 @@ CalculateProcessCreationTimestamp()
  #endif
    return timestamp;

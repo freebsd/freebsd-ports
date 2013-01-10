@@ -1,0 +1,370 @@
+commit d18000b
+Author: Henrik Gulbrandsen <henrik@gulbra.net>
+Date:   Fri Jan 4 13:49:22 2013 +0100
+
+    Bug 826985 - Support more video formats for WebRTC via libv4l2 on Linux.
+---
+ configure.in                                       | 13 ++++++
+ .../main/source/Linux/device_info_linux.cc         | 30 ++++++++------
+ .../main/source/Linux/video_capture_linux.cc       | 47 ++++++++++++----------
+ .../video_capture/main/source/video_capture.gypi   |  1 +
+ toolkit/library/Makefile.in                        |  3 ++
+ 5 files changed, 60 insertions(+), 34 deletions(-)
+
+diff --git configure.in configure.in
+index 6d05f9c..297615f 100644
+--- configure.in
++++ configure.in
+@@ -5270,6 +5270,17 @@ if test -n "$MOZ_WEBRTC"; then
+     MOZ_VP8=1
+     MOZ_VP8_ENCODER=1
+     MOZ_VP8_ERROR_CONCEALMENT=1
++    dnl use libv4l on Linux to support more cameras
++    case "$target" in
++    *-android*|*-linuxandroid*)
++        ;;
++    *-linux*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
++        MOZ_WEBRTC_LIBV4L=1
++        PKG_CHECK_MODULES(MOZ_LIBV4L2, libv4l2, ,
++            [echo "$MOZ_LIBV4L2_PKG_ERRORS"
++              AC_MSG_ERROR([WebRTC on Linux needs libv4l2 for video format conversion.])])
++        ;;
++    esac
+ dnl enable once Signaling lands
+     MOZ_WEBRTC_SIGNALING=1
+     AC_DEFINE(MOZ_WEBRTC_SIGNALING)
+@@ -5288,6 +5299,7 @@ fi
+ AC_SUBST(MOZ_WEBRTC)
+ AC_SUBST(MOZ_WEBRTC_SIGNALING)
+ AC_SUBST(MOZ_PEERCONNECTION)
++AC_SUBST(MOZ_WEBRTC_LIBV4L)
+ AC_SUBST(MOZ_WEBRTC_IN_LIBXUL)
+ AC_SUBST(MOZ_SCTP)
+ AC_SUBST(MOZ_SRTP)
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
+index 653ee16..270f064 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
++++ media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
+@@ -26,6 +26,7 @@
+ #else
+ #include <linux/videodev2.h>
+ #endif
++#include <libv4l2.h>
+ 
+ #include "ref_count.h"
+ #include "trace.h"
+@@ -68,9 +69,9 @@ WebRtc_UWord32 DeviceInfoLinux::NumberOfDevices()
+     for (int n = 0; n < 64; n++)
+     {
+         sprintf(device, "/dev/video%d", n);
+-        if ((fd = open(device, O_RDONLY)) != -1)
++        if ((fd = v4l2_open(device, O_RDONLY)) != -1)
+         {
+-            close(fd);
++            v4l2_close(fd);
+             count++;
+         }
+     }
+@@ -97,14 +98,14 @@ WebRtc_Word32 DeviceInfoLinux::GetDeviceName(
+     for (int n = 0; n < 64; n++)
+     {
+         sprintf(device, "/dev/video%d", n);
+-        if ((fd = open(device, O_RDONLY)) != -1)
++        if ((fd = v4l2_open(device, O_RDONLY)) != -1)
+         {
+             if (count == deviceNumber) {
+                 // Found the device
+                 found = true;
+                 break;
+             } else {
+-                close(fd);
++                v4l2_close(fd);
+                 count++;
+             }
+         }
+@@ -115,21 +116,26 @@ WebRtc_Word32 DeviceInfoLinux::GetDeviceName(
+ 
+     // query device capabilities
+     struct v4l2_capability cap;
+-    if (ioctl(fd, VIDIOC_QUERYCAP, &cap) < 0)
++    if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &cap) < 0)
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "error in querying the device capability for device %s. errno = %d",
+                    device, errno);
+-        close(fd);
++        v4l2_close(fd);
+         return -1;
+     }
+ 
+-    close(fd);
++    v4l2_close(fd);
+ 
+     char cameraName[64];
+     memset(deviceNameUTF8, 0, deviceNameLength);
+     memcpy(cameraName, cap.card, sizeof(cap.card));
+ 
++    if (cameraName[0] == '\0')
++    {
++        sprintf(cameraName, "Camera at /dev/video%d", deviceNumber);
++    }
++
+     if (deviceNameLength >= strlen(cameraName))
+     {
+         memcpy(deviceNameUTF8, cameraName, strlen(cameraName));
+@@ -181,13 +187,13 @@ WebRtc_Word32 DeviceInfoLinux::CreateCapabilityMap(
+     for (int n = 0; n < 64; ++n)
+     {
+         sprintf(device, "/dev/video%d", n);
+-        fd = open(device, O_RDONLY);
++        fd = v4l2_open(device, O_RDONLY);
+         if (fd == -1)
+           continue;
+ 
+         // query device capabilities
+         struct v4l2_capability cap;
+-        if (ioctl(fd, VIDIOC_QUERYCAP, &cap) == 0)
++        if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &cap) == 0)
+         {
+             if (cap.bus_info[0] != 0)
+             {
+@@ -209,7 +215,7 @@ WebRtc_Word32 DeviceInfoLinux::CreateCapabilityMap(
+                 }
+             }
+         }
+-        close(fd); // close since this is not the matching device
++        v4l2_close(fd); // close since this is not the matching device
+     }
+ 
+     if (!found)
+@@ -228,7 +234,7 @@ WebRtc_Word32 DeviceInfoLinux::CreateCapabilityMap(
+     }
+ 
+     int size = FillCapabilityMap(fd);
+-    close(fd);
++    v4l2_close(fd);
+ 
+     // Store the new used device name
+     _lastUsedDeviceNameLength = deviceUniqueIdUTF8Length;
+@@ -282,7 +288,7 @@ WebRtc_Word32 DeviceInfoLinux::FillCapabilityMap(int fd)
+             video_fmt.fmt.pix.width = size[i][0];
+             video_fmt.fmt.pix.height = size[i][1];
+ 
+-            if (ioctl(fd, VIDIOC_TRY_FMT, &video_fmt) >= 0)
++            if (v4l2_ioctl(fd, VIDIOC_TRY_FMT, &video_fmt) >= 0)
+             {
+                 if ((video_fmt.fmt.pix.width == size[i][0])
+                     && (video_fmt.fmt.pix.height == size[i][1]))
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
+index 12df1b3..4ddc9d4 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
++++ media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
+@@ -25,6 +25,7 @@
+ #else
+ #include <linux/videodev2.h>
+ #endif
++#include <libv4l2.h>
+ 
+ #include <new>
+ 
+@@ -79,11 +82,11 @@ WebRtc_Word32 VideoCaptureModuleV4L2::Init(const char* deviceUniqueIdUTF8)
+     for (n = 0; n < 64; n++)
+     {
+         sprintf(device, "/dev/video%d", n);
+-        if ((fd = open(device, O_RDONLY)) != -1)
++        if ((fd = v4l2_open(device, O_RDONLY)) != -1)
+         {
+             // query device capabilities
+             struct v4l2_capability cap;
+-            if (ioctl(fd, VIDIOC_QUERYCAP, &cap) == 0)
++            if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &cap) == 0)
+             {
+                 if (cap.bus_info[0] != 0)
+                 {
+@@ -91,13 +94,13 @@ WebRtc_Word32 VideoCaptureModuleV4L2::Init(const char* deviceUniqueIdUTF8)
+                                 (const char*) deviceUniqueIdUTF8,
+                                 strlen((const char*) deviceUniqueIdUTF8)) == 0) //match with device id
+                     {
+-                        close(fd);
++                        v4l2_close(fd);
+                         found = true;
+                         break; // fd matches with device unique id supplied
+                     }
+                 }
+             }
+-            close(fd); // close since this is not the matching device
++            v4l2_close(fd); // close since this is not the matching device
+         }
+     }
+     if (!found)
+@@ -117,7 +120,7 @@ VideoCaptureModuleV4L2::~VideoCaptureModuleV4L2()
+         delete _captureCritSect;
+     }
+     if (_deviceFd != -1)
+-      close(_deviceFd);
++      v4l2_close(_deviceFd);
+ }
+ 
+ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+@@ -142,7 +145,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+     char device[20];
+     sprintf(device, "/dev/video%d", (int) _deviceId);
+ 
+-    if ((_deviceFd = open(device, O_RDWR | O_NONBLOCK, 0)) < 0)
++    if ((_deviceFd = v4l2_open(device, O_RDWR | O_NONBLOCK, 0)) < 0)
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "error in opening %s errono = %d", device, errno);
+@@ -175,7 +178,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+     for (int i = 0; i < nFormats; i++)
+     {
+         video_fmt.fmt.pix.pixelformat = fmts[i];
+-        if (ioctl(_deviceFd, VIDIOC_TRY_FMT, &video_fmt) < 0)
++        if (v4l2_ioctl(_deviceFd, VIDIOC_TRY_FMT, &video_fmt) < 0)
+         {
+             continue;
+         }
+@@ -200,7 +203,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+         _captureVideoType = kVideoMJPEG;
+ 
+     //set format and frame size now
+-    if (ioctl(_deviceFd, VIDIOC_S_FMT, &video_fmt) < 0)
++    if (v4l2_ioctl(_deviceFd, VIDIOC_S_FMT, &video_fmt) < 0)
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "error in VIDIOC_S_FMT, errno = %d", errno);
+@@ -217,7 +220,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+     struct v4l2_streamparm streamparms;
+     memset(&streamparms, 0, sizeof(streamparms));
+     streamparms.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+-    if (ioctl(_deviceFd, VIDIOC_G_PARM, &streamparms) < 0) {
++    if (v4l2_ioctl(_deviceFd, VIDIOC_G_PARM, &streamparms) < 0) {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "error in VIDIOC_G_PARM errno = %d", errno);
+         driver_framerate_support = false;
+@@ -230,7 +233,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+         streamparms.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+         streamparms.parm.capture.timeperframe.numerator = 1;
+         streamparms.parm.capture.timeperframe.denominator = capability.maxFPS;
+-        if (ioctl(_deviceFd, VIDIOC_S_PARM, &streamparms) < 0) {
++        if (v4l2_ioctl(_deviceFd, VIDIOC_S_PARM, &streamparms) < 0) {
+           WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "Failed to set the framerate. errno=%d", errno);
+           driver_framerate_support = false;
+@@ -268,7 +271,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StartCapture(
+     // Needed to start UVC camera - from the uvcview application
+     enum v4l2_buf_type type;
+     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+-    if (ioctl(_deviceFd, VIDIOC_STREAMON, &type) == -1)
++    if (v4l2_ioctl(_deviceFd, VIDIOC_STREAMON, &type) == -1)
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                      "Failed to turn on stream");
+@@ -303,7 +306,7 @@ WebRtc_Word32 VideoCaptureModuleV4L2::StopCapture()
+         _captureThread = NULL;
+ 
+         DeAllocateVideoBuffers();
+-        close(_deviceFd);
++        v4l2_close(_deviceFd);
+         _deviceFd = -1;
+     }
+ 
+@@ -321,7 +324,7 @@ bool VideoCaptureModuleV4L2::AllocateVideoBuffers()
+     rbuffer.memory = V4L2_MEMORY_MMAP;
+     rbuffer.count = kNoOfV4L2Bufffers;
+ 
+-    if (ioctl(_deviceFd, VIDIOC_REQBUFS, &rbuffer) < 0)
++    if (v4l2_ioctl(_deviceFd, VIDIOC_REQBUFS, &rbuffer) < 0)
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "Could not get buffers from device. errno = %d", errno);
+@@ -344,24 +347,24 @@ bool VideoCaptureModuleV4L2::AllocateVideoBuffers()
+         buffer.memory = V4L2_MEMORY_MMAP;
+         buffer.index = i;
+ 
+-        if (ioctl(_deviceFd, VIDIOC_QUERYBUF, &buffer) < 0)
++        if (v4l2_ioctl(_deviceFd, VIDIOC_QUERYBUF, &buffer) < 0)
+         {
+             return false;
+         }
+ 
+-        _pool[i].start = mmap(NULL, buffer.length, PROT_READ | PROT_WRITE, MAP_SHARED,
++        _pool[i].start = v4l2_mmap(NULL, buffer.length, PROT_READ | PROT_WRITE, MAP_SHARED,
+                               _deviceFd, buffer.m.offset);
+ 
+         if (MAP_FAILED == _pool[i].start)
+         {
+             for (unsigned int j = 0; j < i; j++)
+-                munmap(_pool[j].start, _pool[j].length);
++                v4l2_munmap(_pool[j].start, _pool[j].length);
+             return false;
+         }
+ 
+         _pool[i].length = buffer.length;
+ 
+-        if (ioctl(_deviceFd, VIDIOC_QBUF, &buffer) < 0)
++        if (v4l2_ioctl(_deviceFd, VIDIOC_QBUF, &buffer) < 0)
+         {
+             return false;
+         }
+@@ -373,14 +376,14 @@ bool VideoCaptureModuleV4L2::DeAllocateVideoBuffers()
+ {
+     // unmap buffers
+     for (int i = 0; i < _buffersAllocatedByDevice; i++)
+-        munmap(_pool[i].start, _pool[i].length);
++        v4l2_munmap(_pool[i].start, _pool[i].length);
+ 
+     delete[] _pool;
+ 
+     // turn off stream
+     enum v4l2_buf_type type;
+     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+-    if (ioctl(_deviceFd, VIDIOC_STREAMOFF, &type) < 0)
++    if (v4l2_ioctl(_deviceFd, VIDIOC_STREAMOFF, &type) < 0)
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "VIDIOC_STREAMOFF error. errno: %d", errno);
+@@ -438,7 +441,7 @@ bool VideoCaptureModuleV4L2::CaptureProcess()
+         buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+         buf.memory = V4L2_MEMORY_MMAP;
+         // dequeue a buffer - repeat until dequeued properly!
+-        while (ioctl(_deviceFd, VIDIOC_DQBUF, &buf) < 0)
++        while (v4l2_ioctl(_deviceFd, VIDIOC_DQBUF, &buf) < 0)
+         {
+             if (errno != EINTR)
+             {
+@@ -457,7 +460,7 @@ bool VideoCaptureModuleV4L2::CaptureProcess()
+         IncomingFrame((unsigned char*) _pool[buf.index].start,
+                       buf.bytesused, frameInfo);
+         // enqueue the buffer again
+-        if (ioctl(_deviceFd, VIDIOC_QBUF, &buf) == -1)
++        if (v4l2_ioctl(_deviceFd, VIDIOC_QBUF, &buf) == -1)
+         {
+             WEBRTC_TRACE(webrtc::kTraceWarning, webrtc::kTraceVideoCapture, _id,
+                        "Failed to enqueue capture buffer");
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
+index 8d38102..3e8f76b 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
++++ media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
+@@ -179,6 +179,7 @@
+               'libraries': [
+                 '-lXext',
+                 '-lX11',
++                '-lv4l2',
+               ],
+             }],
+             ['OS=="linux"', {
+diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+index 0440c26..8f6c735 100644
+--- toolkit/library/Makefile.in
++++ toolkit/library/Makefile.in
+@@ -411,6 +411,9 @@ EXTRA_DSO_LDOPTS += \
+   $(DEPTH)/media/webrtc/signaling/signaling_sipcc/$(LIB_PREFIX)sipcc.$(LIB_SUFFIX) \
+   $(NULL)
+ endif
++ifdef MOZ_WEBRTC_LIBV4L
++EXTRA_DSO_LDOPTS += $(MOZ_LIBV4L2_LIBS)
++endif
+ ifdef MOZ_WEBRTC_IN_LIBXUL
+ include $(topsrcdir)/media/webrtc/shared_libs.mk
+ EXTRA_DSO_LDOPTS += $(WEBRTC_LIBS)

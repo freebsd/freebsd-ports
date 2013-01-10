@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.14.1
+DISTVERSION=	2.15
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -12,16 +12,17 @@ EXTRACT_ONLY=	seamonkey-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
-		nss>=3.13.6_1:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.12.1:${PORTSDIR}/databases/sqlite3 \
+BUILD_DEPENDS=	nspr>=4.9.3:${PORTSDIR}/devel/nspr \
+		nss>=3.14.1:${PORTSDIR}/security/nss \
+		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
-EM_VERSION=	1.4.6
+EM_VERSION=	1.5.0
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
+OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	gecko
@@ -44,8 +45,8 @@ MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
 
-OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL GSTREAMER LDAP LIGHTNING MAILNEWS
-OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL GIO LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL GSTREAMER LDAP LIGHTNING MAILNEWS WEBRTC
+OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL GIO LDAP LIGHTNING MAILNEWS WEBRTC
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
@@ -128,6 +129,8 @@ post-extract:
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
+		${MOZSRC}/configure.in ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/suite/app/nsSuiteApp.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \

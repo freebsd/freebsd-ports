@@ -1,0 +1,27 @@
+--- mozilla/media/webrtc/signaling/test/Makefile.in~
++++ mozilla/media/webrtc/signaling/test/Makefile.in
+@@ -34,12 +34,24 @@ LIBS += \
+ endif
+ endif
+ 
++ifdef MOZ_NATIVE_JPEG
++LIBS += \
++  $(MOZ_JPEG_LIBS) \
++  $(NULL)
++endif
++
+ ifdef MOZ_NATIVE_LIBVPX
+ LIBS += \
+   $(MOZ_LIBVPX_LIBS) \
+   $(NULL)
+ endif
+ 
++ifndef MOZ_TREE_PIXMAN
++LIBS += \
++  $(MOZ_PIXMAN_LIBS) \
++  $(NULL)
++endif
++
+ ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
+ LIBS += \
+   $(XLIBS) \

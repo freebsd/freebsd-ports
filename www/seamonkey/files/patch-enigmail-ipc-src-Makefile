@@ -1,0 +1,90 @@
+--- mailnews/extensions/enigmail/ipc/src/Makefile.enig~
++++ mailnews/extensions/enigmail/ipc/src/Makefile.enig
+@@ -19,26 +19,26 @@ endif
+ 
+ ifeq ($(OS_ARCH),NetBSD)
+ ifeq ($(DLL_SUFFIX),.so.1.0)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ 
+ ifeq ($(OS_ARCH),HP-UX)
+ ifeq ($(GNU_CC)$(GNU_CXX),)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+ 
+ ifeq ($(OS_ARCH),OSF1)
+ ifeq ($(GNU_CC)$(GNU_CXX),)
+-LDFLAGS += -B symbolic
++LDFLAGS += -shared -B symbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+@@ -62,7 +62,11 @@ libs: source
+ 	$(CC) $(LDFLAGS) -o $(libname) $(objfiles)
+ 
+ source: $(source)
++ifneq (,$(filter 4.2.%, $(CC_VERSION)))
++	$(CC) $(CFLAGS) -c -o $(objfiles) $^
++else
+ 	$(CC) $(CFLAGS) -Wno-return-type-c-linkage -c -o $(objfiles) $^
++endif
+ 
+ 
+ clean:
+--- mailnews/extensions/enigmail/ipc/src/Makefile.in~
++++ mailnews/extensions/enigmail/ipc/src/Makefile.in
+@@ -19,26 +19,26 @@ endif
+ 
+ ifeq ($(OS_ARCH),NetBSD)
+ ifeq ($(DLL_SUFFIX),.so.1.0)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ 
+ ifeq ($(OS_ARCH),HP-UX)
+ ifeq ($(GNU_CC)$(GNU_CXX),)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+ 
+ ifeq ($(OS_ARCH),OSF1)
+ ifeq ($(GNU_CC)$(GNU_CXX),)
+-LDFLAGS += -B symbolic
++LDFLAGS += -shared -B symbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+@@ -62,7 +62,11 @@ libs: source
+ 	$(CC) $(LDFLAGS) -o $(libname) $(objfiles)
+ 
+ source: $(source)
++ifneq (,$(filter 4.2.%, $(CC_VERSION)))
++	$(CC) $(CFLAGS) -c -o $(objfiles) $^
++else
+ 	$(CC) $(CFLAGS) -Wno-return-type-c-linkage -c -o $(objfiles) $^
++endif
+ 
+ 
+ clean:

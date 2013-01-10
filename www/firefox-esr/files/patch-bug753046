@@ -56,7 +56,7 @@ $NetBSD: patch-ipc_chromium_Makefile.in,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 
 --- ipc/chromium/Makefile.in.orig	2012-02-16 06:40:33.000000000 +0000
 +++ ipc/chromium/Makefile.in
-@@ -278,6 +278,34 @@ endif
+@@ -278,6 +278,33 @@ endif
  
  endif # } OS_LINUX
  
@@ -64,7 +64,6 @@ $NetBSD: patch-ipc_chromium_Makefile.in,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 +
 +CPPSRCS += \
 +  atomicops_internals_x86_gcc.cc \
-+  file_util_linux.cc \
 +  process_util_bsd.cc \
 +  time_posix.cc \
 +  $(NULL)
@@ -381,37 +380,29 @@ diff --git ipc/chromium/src/base/dir_reader_posix.h ipc/chromium/src/base/dir_re
 index 9a34492..62b280c 100644
 --- ipc/chromium/src/base/dir_reader_posix.h
 +++ ipc/chromium/src/base/dir_reader_posix.h
-@@ -18,6 +18,8 @@
+@@ -18,16 +18,20 @@
+ // seems worse than falling back to enumerating all file descriptors so we will
+ // probably never implement this on the Mac.
  
- #if defined(OS_LINUX)
+-#if defined(OS_LINUX) && !defined(OS_OPENBSD)
++#if defined(OS_LINUX)
  #include "base/dir_reader_linux.h"
 +#elif defined(OS_BSD)
 +#include "base/dir_reader_bsd.h"
  #else
  #include "base/dir_reader_fallback.h"
  #endif
-@@ -26,6 +28,8 @@
  
- #if defined(OS_LINUX)
+ namespace base {
+ 
+-#if defined(OS_LINUX) && !defined(OS_OPENBSD)
++#if defined(OS_LINUX)
  typedef DirReaderLinux DirReaderPosix;
 +#elif defined(OS_BSD)
 +typedef DirReaderBSD DirReaderPosix;
  #else
  typedef DirReaderFallback DirReaderPosix;
  #endif
-diff --git ipc/chromium/src/base/file_util_linux.cc ipc/chromium/src/base/file_util_linux.cc
-index 171e44f..0c6dfcc 100644
---- ipc/chromium/src/base/file_util_linux.cc
-+++ ipc/chromium/src/base/file_util_linux.cc
-@@ -28,7 +28,7 @@ bool GetTempDir(FilePath* path) {
- }
- 
- bool GetShmemTempDir(FilePath* path) {
--#ifdef ANDROID
-+#if defined(ANDROID) || defined(OS_BSD)
-   return GetTempDir(path);
- #else
-   *path = FilePath("/dev/shm");
 $NetBSD: patch-ipc_chromium_src_base_file__util__posix.cc,v 1.2 2012/03/06 12:34:09 ryoon Exp $
 
 --- ipc/chromium/src/base/file_util_posix.cc.orig	2011-12-20 23:28:19.000000000 +0000
@@ -469,7 +460,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 
 --- ipc/chromium/src/base/platform_thread_posix.cc.orig	2012-03-13 01:36:53.000000000 +0000
 +++ ipc/chromium/src/base/platform_thread_posix.cc
-@@ -9,9 +9,23 @@
+@@ -9,16 +9,30 @@
  
  #if defined(OS_MACOSX)
  #include <mach/mach.h>
@@ -477,9 +468,10 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 +#include <lwp.h>
  #elif defined(OS_LINUX)
  #include <sys/syscall.h>
- #include <unistd.h>
-+#elif defined(OS_DRAGONFLY)
-+#include <unistd.h>
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__) && !defined(__DragonFly__)
+ #include <sys/prctl.h>
+-#elif !defined(__NetBSD__)
+-#include <pthread_np.h>
 +#elif defined(OS_FREEBSD)
 +#include <sys/param.h>
 +#if __FreeBSD_version > 802500
@@ -489,15 +481,24 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 +extern "C" int thr_self(long *);
 +_Pragma("GCC visibility pop")
 +#endif
-+#include <pthread_np.h>
+ #endif
++
++#if !defined(OS_MACOSX)
+ #include <unistd.h>
  #endif
  
++#if defined(OS_BSD) && !defined(OS_NETBSD)
++#include <pthread_np.h>
++#endif
++
  #if defined(OS_MACOSX)
-@@ -38,9 +45,20 @@
+ namespace base {
+ void InitThreading();
+@@ -38,9 +45,20 @@ PlatformThreadId PlatformThread::CurrentId() {
    // into the kernel.
  #if defined(OS_MACOSX)
    return mach_thread_self();
--#elif defined (__OpenBSD__)
+-#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
 +#elif defined(OS_NETBSD)
 +  return _lwp_self();
 +#elif defined(OS_DRAGONFLY)
@@ -517,6 +518,18 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
  #elif defined(OS_LINUX)
    return syscall(__NR_gettid);
  #endif
+@@ -102,9 +102,9 @@ void PlatformThread::SetName(const char* name) {
+   // Note that glibc also has a 'pthread_setname_np' api, but it may not be
+   // available everywhere and it's only benefit over using prctl directly is
+   // that it can set the name of threads other than the current thread.
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
++#if defined(OS_BSD) && !defined(OS_NETBSD)
+   pthread_set_name_np(pthread_self(), name);
+-#elif defined(__NetBSD__)
++#elif defined(OS_NETBSD)
+   pthread_setname_np(pthread_self(), "%s", (void *)name);
+ #else
+   prctl(PR_SET_NAME, reinterpret_cast<uintptr_t>(name), 0, 0, 0); 
 $NetBSD: patch-ipc_chromium_src_base_process__util.h,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 
 --- ipc/chromium/src/base/process_util.h.orig	2011-12-21 00:28:19.000000000 +0100
@@ -558,7 +571,7 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 
 --- ipc/chromium/src/base/process_util_bsd.cc.orig	2012-04-01 00:04:28.000000000 +0000
 +++ ipc/chromium/src/base/process_util_bsd.cc
-@@ -0,0 +1,318 @@
+@@ -0,0 +1,367 @@
 +// Copyright (c) 2008 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -591,6 +604,20 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +#if (defined(_POSIX_SPAWN) && _POSIX_SPAWN > 0) \
 +  || (defined(OS_NETBSD) && __NetBSD_Version__ >= 599006500)
 +#define HAVE_POSIX_SPAWN	1
++#endif
++
++/*
++ * On platforms that are not gonk based, we fall back to an arbitrary
++ * UID. This is generally the UID for user `nobody', albeit it is not
++ * always the case.
++ */
++
++#if defined(OS_NETBSD) || defined(OS_OPENBSD)
++# define CHILD_UNPRIVILEGED_UID 32767
++# define CHILD_UNPRIVILEGED_GID 32767
++#else
++# define CHILD_UNPRIVILEGED_UID 65534
++# define CHILD_UNPRIVILEGED_GID 65534
 +#endif
 +
 +#ifndef __dso_public
@@ -639,6 +666,17 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +bool LaunchApp(const std::vector<std::string>& argv,
 +               const file_handle_mapping_vector& fds_to_remap,
 +               const environment_map& env_vars_to_set,
++               bool wait, ProcessHandle* process_handle,
++               ProcessArchitecture arch) {
++  return LaunchApp(argv, fds_to_remap, env_vars_to_set,
++                   SAME_PRIVILEGES_AS_PARENT,
++                   wait, process_handle);
++}
++
++bool LaunchApp(const std::vector<std::string>& argv,
++               const file_handle_mapping_vector& fds_to_remap,
++               const environment_map& env_vars_to_set,
++               ChildPrivileges privs,
 +               bool wait, ProcessHandle* process_handle,
 +               ProcessArchitecture arch) {
 +  bool retval = true;
@@ -755,6 +793,17 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +               const environment_map& env_vars_to_set,
 +               bool wait, ProcessHandle* process_handle,
 +               ProcessArchitecture arch) {
++  return LaunchApp(argv, fds_to_remap, env_vars_to_set,
++                   SAME_PRIVILEGES_AS_PARENT,
++                   wait, process_handle);
++}
++
++bool LaunchApp(const std::vector<std::string>& argv,
++               const file_handle_mapping_vector& fds_to_remap,
++               const environment_map& env_vars_to_set,
++               ChildPrivileges privs,
++               bool wait, ProcessHandle* process_handle,
++               ProcessArchitecture arch) {
 +  scoped_array<char*> argv_cstr(new char*[argv.size() + 1]);
 +  // Illegal to allocate memory after fork and before execvp
 +  InjectiveMultimap fd_shuffle1, fd_shuffle2;
@@ -777,19 +826,32 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +
 +    CloseSuperfluousFds(fd_shuffle2);
 +
++    for (size_t i = 0; i < argv.size(); i++)
++      argv_cstr[i] = const_cast<char*>(argv[i].c_str());
++    argv_cstr[argv.size()] = NULL;
++
++    if (privs == UNPRIVILEGED) {
++      if (setgid(CHILD_UNPRIVILEGED_GID) != 0) {
++        DLOG(ERROR) << "FAILED TO setgid() CHILD PROCESS, path: " << argv_cstr[0];
++        _exit(127);
++      }
++      if (setuid(CHILD_UNPRIVILEGED_UID) != 0) {
++        DLOG(ERROR) << "FAILED TO setuid() CHILD PROCESS, path: " << argv_cstr[0];
++        _exit(127);
++      }
++      if (chdir("/") != 0)
++        gProcessLog.print("==> could not chdir()\n");
++    }
++
 +    for (environment_map::const_iterator it = env_vars_to_set.begin();
 +         it != env_vars_to_set.end(); ++it) {
 +      if (setenv(it->first.c_str(), it->second.c_str(), 1/*overwrite*/))
 +        _exit(127);
 +    }
-+
-+    for (size_t i = 0; i < argv.size(); i++)
-+      argv_cstr[i] = const_cast<char*>(argv[i].c_str());
-+    argv_cstr[argv.size()] = NULL;
-+    execvp(argv_cstr[0], argv_cstr.get());
++    execv(argv_cstr[0], argv_cstr.get());
 +    // if we get here, we're in serious trouble and should complain loudly
 +    DLOG(ERROR) << "FAILED TO exec() CHILD PROCESS, path: " << argv_cstr[0];
-+    exit(127);
++    _exit(127);
 +  } else {
 +    gProcessLog.print("==> process %d launched child process %d\n",
 +                      GetCurrentProcId(), pid);
@@ -951,57 +1013,6 @@ $NetBSD: patch-ipc_chromium_src_base_sys__info__posix.cc,v 1.2 2011/11/27 13:09:
  #else
    long pages = sysconf(_SC_PHYS_PAGES);
    long page_size = sysconf(_SC_PAGE_SIZE);
-$NetBSD: patch-ipc_chromium_src_base_third__party_nspr_prcpucfg.h,v 1.2 2012/03/06 12:34:09 ryoon Exp $
-
---- ipc/chromium/src/base/third_party/nspr/prcpucfg.h.orig	2011-12-20 23:28:19.000000000 +0000
-+++ ipc/chromium/src/base/third_party/nspr/prcpucfg.h
-@@ -34,7 +34,7 @@
- #include "base/third_party/nspr/prcpucfg_win.h"
- #elif defined(__APPLE__)
- #include "base/third_party/nspr/prcpucfg_mac.h"
--#elif defined(__linux__) || defined(ANDROID)
-+#elif defined(__linux__) || defined(ANDROID) || defined(__NetBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
- #include "base/third_party/nspr/prcpucfg_linux.h"
- #elif defined(__OpenBSD__)
- #include "base/third_party/nspr/prcpucfg_openbsd.h"
-$NetBSD: patch-ipc_chromium_src_base_third__party_nspr_prtime.cc,v 1.1 2012/03/06 12:34:09 ryoon Exp $
-
---- ipc/chromium/src/base/third_party/nspr/prtime.cc.orig	2011-12-20 23:28:19.000000000 +0000
-+++ ipc/chromium/src/base/third_party/nspr/prtime.cc
-@@ -212,7 +212,7 @@ PR_ImplodeTime(const PRExplodedTime *exp
-     LL_ADD(retVal, retVal, temp);
- 
-     return retVal;
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_DRAGONFLY)
-     struct tm exp_tm = {0};
-     exp_tm.tm_sec  = exploded->tm_sec;
-     exp_tm.tm_min  = exploded->tm_min;
-@@ -245,6 +245,24 @@ PR_ImplodeTime(const PRExplodedTime *exp
-     result *= kSecondsToMicroseconds;
-     result += exploded->tm_usec;
-     return result;
-+#elif defined(OS_FREEBSD) || defined(OS_NETBSD)
-+    struct tm exp_tm = {0};
-+    exp_tm.tm_sec  = exploded->tm_sec;
-+    exp_tm.tm_min  = exploded->tm_min;
-+    exp_tm.tm_hour = exploded->tm_hour;
-+    exp_tm.tm_mday = exploded->tm_mday;
-+    exp_tm.tm_mon  = exploded->tm_month;
-+    exp_tm.tm_year = exploded->tm_year - 1900;
-+
-+    // time_t is 64bit
-+    time_t absolute_time = timegm(&exp_tm);
-+
-+    PRTime result = static_cast<PRTime>(absolute_time);
-+    result -= exploded->tm_params.tp_gmt_offset +
-+              exploded->tm_params.tp_dst_offset;
-+    result *= kSecondsToMicroseconds;
-+    result += exploded->tm_usec;
-+    return result;
- #else
- #error No PR_ImplodeTime implemented on your platform.
- #endif
 diff --git ipc/chromium/src/base/time_posix.cc ipc/chromium/src/base/time_posix.cc
 index abf2a56..48791f6 100644
 --- ipc/chromium/src/base/time_posix.cc
@@ -1146,11 +1157,11 @@ $NetBSD: patch-ipc_glue_GeckoChildProcessHost.cpp,v 1.2 2012/03/15 08:30:06 ryoo
          nsCString path;
          greDir->GetNativePath(path);
 -# ifdef OS_LINUX
--#  ifdef ANDROID
+-#  ifdef MOZ_WIDGET_ANDROID
 +# if defined(OS_LINUX) || defined(OS_BSD)
-+#  if defined(ANDROID) || defined(OS_BSD)
++#  if defined(MOZ_WIDGET_ANDROID) || defined(OS_BSD)
          path += "/lib";
- #  endif  // ANDROID
+ #  endif  // MOZ_WIDGET_ANDROID
          const char *ld_library_path = PR_GetEnv("LD_LIBRARY_PATH");
 @@ -557,7 +557,7 @@
    childArgv.push_back(pidstring);
@@ -1167,7 +1178,7 @@ $NetBSD: patch-ipc_glue_GeckoChildProcessHost.cpp,v 1.2 2012/03/15 08:30:06 ryoo
    base::LaunchApp(childArgv, mFileMap,
 -#if defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
-                   newEnvVars,
+                   newEnvVars, privs,
  #endif
                    false, &process, arch);
 diff --git ipc/glue/SharedMemorySysV.h ipc/glue/SharedMemorySysV.h

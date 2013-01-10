@@ -2,17 +2,17 @@ diff --git xpcom/base/nsMemoryReporterManager.cpp xpcom/base/nsMemoryReporterMan
 index a9aff58..674e757 100644
 --- xpcom/base/nsMemoryReporterManager.cpp
 +++ xpcom/base/nsMemoryReporterManager.cpp
-@@ -64,7 +64,7 @@ extern void jemalloc_stats(jemalloc_stat
- #  endif  // XP_LINUX
+@@ -32,7 +32,7 @@ using namespace mozilla;
+ #  include "jemalloc.h"
  #endif  // MOZ_MEMORY
  
--#if defined(XP_LINUX) || defined(XP_MACOSX)
+-#if defined(XP_LINUX) || defined(XP_MACOSX) || defined(SOLARIS)
 +#ifdef XP_UNIX
  
  #include <sys/time.h>
  #include <sys/resource.h>
-@@ -122,6 +122,78 @@ static PRInt64 GetResident()
-     return GetProcSelfStatmField(1);
+@@ -95,6 +95,81 @@ static nsresult GetResident(PRInt64 *n)
+     return GetProcSelfStatmField(1, n);
  }
  
 +#elif defined(__DragonFly__) || defined(__FreeBSD__) \
@@ -69,56 +69,27 @@ index a9aff58..674e757 100644
 +    return NS_OK;
 +}
 +
-+static PRInt64 GetVsize()
++#define HAVE_VSIZE_AND_RESIDENT_REPORTERS 1
++static nsresult GetVsize(PRInt64 *n)
 +{
 +    KINFO_PROC proc;
-+    if (NS_SUCCEEDED(GetKinfoProcSelf(&proc)))
-+        return KP_SIZE(proc);
++    nsresult rv = GetKinfoProcSelf(&proc);
++    if (NS_SUCCEEDED(rv))
++        *n = KP_SIZE(proc);
 +
-+    return -1;
++    return rv;
 +}
 +
-+static PRInt64 GetResident()
++static nsresult GetResident(PRInt64 *n)
 +{
 +    KINFO_PROC proc;
-+    if (NS_SUCCEEDED(GetKinfoProcSelf(&proc)))
-+        return KP_RSS(proc);
++    nsresult rv = GetKinfoProcSelf(&proc);
++    if (NS_SUCCEEDED(rv))
++        *n = KP_RSS(proc);
 +
-+    return -1;
++    return rv;
 +}
 +
- #elif defined(XP_MACOSX)
+ #elif defined(SOLARIS)
  
- #include <mach/mach_init.h>
-@@ -224,7 +297,7 @@ static PRInt64 GetResident()
- 
- #endif
- 
--#if defined(XP_LINUX) || defined(XP_MACOSX) || defined(XP_WIN)
-+#if defined(XP_UNIX) || defined(XP_WIN)
- NS_MEMORY_REPORTER_IMPLEMENT(Vsize,
-     "vsize",
-     KIND_OTHER,
-@@ -239,7 +312,7 @@ NS_MEMORY_REPORTER_IMPLEMENT(Vsize,
-     "measure of the memory resources used by the process.")
- #endif
- 
--#if defined(XP_LINUX) || defined(XP_MACOSX)
-+#if defined(XP_UNIX)
- NS_MEMORY_REPORTER_IMPLEMENT(PageFaultsSoft,
-     "page-faults-soft",
-     KIND_OTHER,
-@@ -457,11 +530,11 @@ nsMemoryReporterManager::Init()
-     REGISTER(HeapUnallocated);
-     REGISTER(Resident);
- 
--#if defined(XP_LINUX) || defined(XP_MACOSX) || defined(XP_WIN)
-+#if defined(XP_UNIX) || defined(XP_WIN)
-     REGISTER(Vsize);
- #endif
- 
--#if defined(XP_LINUX) || defined(XP_MACOSX)
-+#if defined(XP_UNIX)
-     REGISTER(PageFaultsSoft);
-     REGISTER(PageFaultsHard);
- #endif
+ #include <procfs.h>
