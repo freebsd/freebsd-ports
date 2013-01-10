@@ -6,7 +6,7 @@ PORTVERSION=	2.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro-ids.org/downloads/release/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	System for detecting network intruders in real-time
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
