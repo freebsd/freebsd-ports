@@ -8,6 +8,6 @@
 -arm*)
 +case "$target" in
 +arm-*-linux*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
-     MOZ_SAMPLE_TYPE_S16LE=1
-     AC_DEFINE(MOZ_SAMPLE_TYPE_S16LE)
-     AC_SUBST(MOZ_SAMPLE_TYPE_S16LE)
+     MOZ_SAMPLE_TYPE_S16=1
+     AC_DEFINE(MOZ_SAMPLE_TYPE_S16)
+     AC_SUBST(MOZ_SAMPLE_TYPE_S16)

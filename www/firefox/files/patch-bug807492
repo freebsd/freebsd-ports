@@ -1,0 +1,2188 @@
+diff --git config/system-headers config/system-headers
+index 9bd1efa..1095a01 100644
+--- config/system-headers
++++ config/system-headers
+@@ -1066,8 +1066,10 @@ gst/app/gstappsink.h
+ gst/app/gstappsrc.h
+ gst/video/video.h
+ sys/msg.h
+ sys/ipc.h
+ sys/thr.h
+ sys/user.h
+ kvm.h
+ spawn.h
++err.h
++xlocale.h
+diff --git configure.in configure.in
+index c167461..8346c11 100644
+--- configure.in
++++ configure.in
+@@ -1413,16 +1413,27 @@ if test "$GNU_CC"; then
+     _SAVE_CFLAGS=$CFLAGS
+     CFLAGS="$CFLAGS -mssse3"
+     AC_TRY_COMPILE([asm ("pmaddubsw %xmm2,%xmm3");],,AC_MSG_RESULT([yes])
+                      [HAVE_TOOLCHAIN_SUPPORT_MSSSE3=1],
+                      AC_MSG_RESULT([no]))
+     CFLAGS=$_SAVE_CFLAGS
+     AC_SUBST(HAVE_TOOLCHAIN_SUPPORT_MSSSE3)
+ 
++    # Check for -msse4.1 on $CC
++    AC_MSG_CHECKING([if toolchain supports -msse4.1 option])
++    HAVE_TOOLCHAIN_SUPPORT_MSSE4_1=
++    _SAVE_CFLAGS=$CFLAGS
++    CFLAGS="$CFLAGS -msse4.1"
++    AC_TRY_COMPILE([asm ("pmulld %xmm6,%xmm0");],,AC_MSG_RESULT([yes])
++                     [HAVE_TOOLCHAIN_SUPPORT_MSSE4_1=1],
++                     AC_MSG_RESULT([no]))
++    CFLAGS=$_SAVE_CFLAGS
++    AC_SUBST(HAVE_TOOLCHAIN_SUPPORT_MSSE4_1)
++
+     # Turn on GNU-specific warnings:
+     # -Wall - turn on a lot of warnings
+     # -pedantic - this is turned on below
+     # -Wpointer-arith - enabled with -pedantic, but good to have even if not
+     # -Wdeclaration-after-statement - MSVC doesn't like these
+     # -Werror=return-type - catches missing returns, zero false positives
+     # -Wtype-limits - catches overflow bugs, few false positives
+     # -Wempty-body - catches bugs, e.g. "if (c); foo();", few false positives
+@@ -5232,17 +5243,17 @@ dnl Turn off webrtc for OS's we don't handle yet, but allow
+ dnl --enable-webrtc to override.  Can disable for everything in
+ dnl the master list above.
+ if test -n "$MOZ_WEBRTC"; then
+     case "$target" in
+     *-android*|*-linuxandroid*)
+         dnl Make sure doesn't get matched by *-linux*
+         MOZ_WEBRTC=
+         ;;
+-    *-linux*|*-mingw*|*-darwin*)
++    *-linux*|*-mingw*|*-darwin*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
+         dnl Leave enabled
+         ;;
+     *)
+         dnl default to disabled for all others
+         MOZ_WEBRTC=
+         ;;
+     esac
+ fi
+@@ -8909,16 +8920,21 @@ if test "${OS_TARGET}" = "WINNT"; then
+    if test "$HAVE_64BIT_OS"; then
+       OS_BITS=64
+    else
+       OS_BITS=32
+    fi
+    EXTRA_GYP_DEFINES="-D MSVS_VERSION=${_MSVS_VERSION} -D MSVS_OS_BITS=${OS_BITS}"
+ fi
+ 
++# Don't try to compile sse4.1 code if toolchain doesn't support
++if test -z "$HAVE_TOOLCHAIN_SUPPORT_MSSE4_1"; then
++  EXTRA_GYP_DEFINES="$EXTRA_GYP_DEFINES -D yuv_disable_asm=1"
++fi
++
+ if test -n "$MOZ_WEBRTC"; then
+    AC_MSG_RESULT("generating WebRTC Makefiles...")
+ 
+    WEBRTC_CONFIG="-D build_with_mozilla=1 --include ${srcdir}/media/webrtc/webrtc_config.gypi -D FORCED_INCLUDE_FILE=${srcdir}/media/webrtc/webrtc_config.gypi"
+ 
+    GYP_WEBRTC_OPTIONS="--format=mozmake ${WEBRTC_CONFIG} ${EXTRA_GYP_DEFINES} --depth=${srcdir}/media/webrtc/trunk --toplevel-dir=${srcdir} -G OBJDIR=${_objdir}"
+ 
+    $PYTHON ${srcdir}/media/webrtc/trunk/build/gyp_chromium \
+diff --git js/src/config/system-headers js/src/config/system-headers
+index 9bd1efa..1095a01 100644
+--- js/src/config/system-headers
++++ js/src/config/system-headers
+@@ -1066,8 +1066,10 @@ gst/app/gstappsink.h
+ gst/app/gstappsrc.h
+ gst/video/video.h
+ sys/msg.h
+ sys/ipc.h
+ sys/thr.h
+ sys/user.h
+ kvm.h
+ spawn.h
++err.h
++xlocale.h
+diff --git media/mtransport/objs.mk media/mtransport/objs.mk
+index f1fc85f..141e8ca 100644
+--- media/mtransport/objs.mk
++++ media/mtransport/objs.mk
+@@ -18,22 +18,26 @@ LOCAL_INCLUDES += \
+  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/util/libekr \
+  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/log \
+  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/registry \
+  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/stats \
+  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/plugin \
+  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/event \
+  $(NULL)
+ 
+-ifeq ($(OS_ARCH), Darwin)
++ifneq (,$(filter Darwin DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
+ LOCAL_INCLUDES += \
+   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/darwin/include \
+   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/generic/include \
+   $(NULL)
++ifeq ($(OS_ARCH), Darwin)
+ DEFINES += -DDARWIN
++else
++DEFINES += -DBSD
++endif
+ endif
+ 
+ ifeq ($(OS_ARCH), Linux)
+ LOCAL_INCLUDES += \
+   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/linux/include \
+   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/generic/include \
+   $(NULL)
+ DEFINES += -DLINUX
+diff --git media/mtransport/test/Makefile.in media/mtransport/test/Makefile.in
+index c1d5bf4..2ecf2c7 100644
+--- media/mtransport/test/Makefile.in
++++ media/mtransport/test/Makefile.in
+@@ -67,22 +67,24 @@ DEFINES += -D__Userspace_os_FreeBSD=1
+ else
+ #default_fallback; probably doesn't work
+ DEFINES += -D__Userspace_os_$(OS_TARGET)=1
+ endif
+ endif
+ endif
+ endif
+ 
+-ifeq ($(OS_ARCH), Darwin)
++ifneq (,$(filter Darwin DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
+ LOCAL_INCLUDES +=  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/darwin/include
++ifeq ($(OS_TARGET), Darwin)
+ DEFINES += \
+   -DGTEST_USE_OWN_TR1_TUPLE=1 \
+   $(NULL)
+ endif
++endif
+ 
+ ifeq ($(OS_ARCH), Linux)
+ LOCAL_INCLUDES +=  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/linux/include
+ endif
+ 
+ ifneq ($(OS_TARGET),WINNT)
+ CPP_UNIT_TESTS = \
+   ice_unittest.cpp \
+diff --git media/mtransport/third_party/nICEr/nicer.gyp media/mtransport/third_party/nICEr/nicer.gyp
+index 0e1f8b4..9a4b995 100644
+--- media/mtransport/third_party/nICEr/nicer.gyp
++++ media/mtransport/third_party/nICEr/nicer.gyp
+@@ -124,26 +124,36 @@
+ 	      'R_DEFINED_UINT2=uint16_t',
+ 	      'R_DEFINED_INT4=int32_t',
+ 	      'R_DEFINED_UINT4=uint32_t',
+ 	      'R_DEFINED_INT8=int64_t',
+ 	      'R_DEFINED_UINT8=uint64_t',
+           ],
+           
+           'conditions' : [
+-              ## Mac
++              ## Mac and BSDs
+               [ 'OS == "mac"', {
++                'defines' : [
++                    'DARWIN',
++                    'HAVE_XLOCALE',
++                ],
++              }],
++              [ 'os_bsd == 1', {
++                'defines' : [
++                    'BSD',
++                ],
++              }],
++              [ 'OS == "mac" or os_bsd == 1', {
+                 'cflags_mozilla': [
+                     '-Wall',
+                     '-Wno-parentheses',
+                     '-Wno-strict-prototypes',
+                     '-Wmissing-prototypes',
+                  ],
+                  'defines' : [
+-                     'DARWIN',
+                      'HAVE_LIBM=1',
+                      'HAVE_STRDUP=1',
+                      'HAVE_STRLCPY=1',
+                      'HAVE_SYS_TIME_H=1',
+                      'HAVE_VFPRINTF=1',
+                      'NEW_STDIO'
+                      'RETSIGTYPE=void',
+                      'TIME_WITH_SYS_TIME_H=1',
+diff --git media/mtransport/third_party/nICEr/src/stun/addrs.c media/mtransport/third_party/nICEr/src/stun/addrs.c
+index b0b66b2..04fea94 100644
+--- media/mtransport/third_party/nICEr/src/stun/addrs.c
++++ media/mtransport/third_party/nICEr/src/stun/addrs.c
+@@ -69,17 +69,17 @@ static char *RCSSTRING __UNUSED__="$Id: addrs.c,v 1.2 2008/04/28 18:21:30 ekr Ex
+ #include <netdb.h>
+ #endif  /* UNIX */
+ 
+ #include "stun.h"
+ #include "addrs.h"
+ 
+ 
+ 
+-#ifdef DARWIN
++#if defined(BSD) || defined(DARWIN)
+ /*
+  * Copyright (c) 1983, 1993
+  *    The Regents of the University of California.  All rights reserved.
+  *
+  * Redistribution and use in source and binary forms, with or without
+  * modification, are permitted provided that the following conditions
+  * are met:
+  * 1. Redistributions of source code must retain the above copyright
+@@ -675,17 +675,17 @@ nr_stun_remove_duplicate_addrs(nr_transport_addr addrs[], int remove_loopback, i
+ }
+ 
+ int
+ nr_stun_get_addrs(nr_transport_addr addrs[], int maxaddrs, int drop_loopback, int *count)
+ {
+     int _status=0;
+     int i;
+ 
+-#ifdef DARWIN
++#if defined(BSD) || defined(DARWIN)
+     _status = stun_get_mib_addrs(addrs, maxaddrs, count);
+ #elif defined(WIN32)
+     _status = stun_get_win32_addrs(addrs, maxaddrs, count);
+ #elif defined(__sparc__)
+     _status = stun_get_sparc_addrs(addrs, maxaddrs, count);
+ #else
+     _status = stun_get_siocgifconf_addrs(addrs, maxaddrs, count);
+ #endif
+diff --git media/mtransport/third_party/nICEr/src/stun/stun.h media/mtransport/third_party/nICEr/src/stun/stun.h
+index a3c51f9..eb65ac8 100644
+--- media/mtransport/third_party/nICEr/src/stun/stun.h
++++ media/mtransport/third_party/nICEr/src/stun/stun.h
+@@ -40,17 +40,19 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ #include <sys/param.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+ #ifndef LINUX
+ #include <net/if_var.h>
+ #include <net/if_dl.h>
+ #include <net/if_types.h>
+ #endif
++#ifndef BSD
+ #include <net/route.h>
++#endif
+ #include <netinet/in.h>
+ #ifndef LINUX
+ #include <netinet/in_var.h>
+ #endif
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #endif
+ #include <time.h>
+diff --git media/mtransport/third_party/nICEr/src/util/mbslen.c media/mtransport/third_party/nICEr/src/util/mbslen.c
+index cc260b7..66af2d7 100644
+--- media/mtransport/third_party/nICEr/src/util/mbslen.c
++++ media/mtransport/third_party/nICEr/src/util/mbslen.c
+@@ -38,50 +38,58 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ #include <errno.h>
+ #include <csi_platform.h>
+ 
+ #include <assert.h>
+ #include <locale.h>
+ #include <stdlib.h>
+ #include <wchar.h>
+-#ifdef DARWIN
++
++#ifdef __FreeBSD__
++#include <osreldate.h>
++# if __FreeBSD_version > 900044
++#  define HAVE_XLOCALE
++# endif
++#endif
++
++#ifdef HAVE_XLOCALE
+ #include <xlocale.h>
+-#endif /* DARWIN */
++#endif /* HAVE_XLOCALE */
+ 
+ #include "nr_api.h"
+ #include "mbslen.h"
+ 
+ /* get number of characters in a mult-byte character string */
+ int
+ mbslen(const char *s, size_t *ncharsp)
+ {
+-#ifdef DARWIN
++#ifdef HAVE_XLOCALE
+     static locale_t loc = 0;
+     static int initialized = 0;
+-#endif /* DARWIN */
++#endif /* HAVE_XLOCALE */
+ #ifdef WIN32
+     char *my_locale=0;
+     unsigned int i;
+ #endif  /* WIN32 */
+     int _status;
+     size_t nbytes;
+     int nchars;
+     mbstate_t mbs;
+ 
+-#ifdef DARWIN
++#ifdef HAVE_XLOCALE
+     if (! initialized) {
+         initialized = 1;
+         loc = newlocale(LC_CTYPE_MASK, "UTF-8", LC_GLOBAL_LOCALE);
+     }
+ 
+     if (loc == 0) {
+         /* unable to create the UTF-8 locale */
+         assert(loc != 0);  /* should never happen */
+-#endif /* DARWIN */
++#endif /* HAVE_XLOCALE */
+ 
+ #ifdef WIN32
+     if (!setlocale(LC_CTYPE, 0))
+         ABORT(R_INTERNAL);
+ 
+     if (!(my_locale = r_strdup(setlocale(LC_CTYPE, 0))))
+         ABORT(R_NO_MEMORY);
+ 
+@@ -91,28 +99,28 @@ mbslen(const char *s, size_t *ncharsp)
+     if (!strstr(my_locale, "UTF-8"))
+         ABORT(R_NOT_FOUND);
+ #else
+         /* can't count UTF-8 characters with mbrlen if the locale isn't UTF-8 */
+         if (! strcasestr(setlocale(LC_CTYPE, 0), "UTF-8"))
+             ABORT(R_NOT_FOUND);
+ #endif
+ 
+-#ifdef DARWIN
++#ifdef HAVE_XLOCALE
+     }
+-#endif /* DARWIN */
++#endif /* HAVE_XLOCALE */
+ 
+     memset(&mbs, 0, sizeof(mbs));
+     nchars = 0;
+ 
+-#ifdef DARWIN
++#ifdef HAVE_XLOCALE
+     while (*s != '\0' && (nbytes = mbrlen_l(s, strlen(s), &mbs, loc)) != 0)
+ #else
+     while (*s != '\0' && (nbytes = mbrlen(s, strlen(s), &mbs)) != 0)
+-#endif /* DARWIN */
++#endif /* HAVE_XLOCALE */
+     {
+         if (nbytes == (size_t)-1)   /* should never happen */ {
+ 	    assert(0);
+             ABORT(R_INTERNAL);
+ 	}
+         if (nbytes == (size_t)-2)   /* encoding error */ {
+ 	    assert(0);
+             ABORT(R_BAD_DATA);
+diff --git media/mtransport/third_party/nrappkit/nrappkit.gyp media/mtransport/third_party/nrappkit/nrappkit.gyp
+index 3cc8e1c..74016c6 100644
+--- media/mtransport/third_party/nrappkit/nrappkit.gyp
++++ media/mtransport/third_party/nrappkit/nrappkit.gyp
+@@ -142,26 +142,35 @@
+ 	      'R_DEFINED_UINT2=uint16_t',
+ 	      'R_DEFINED_INT4=int32_t',
+ 	      'R_DEFINED_UINT4=uint32_t',
+ 	      'R_DEFINED_INT8=int64_t',
+ 	      'R_DEFINED_UINT8=uint64_t',
+           ],
+           
+           'conditions' : [
+-              ## Mac
++              ## Mac and BSDs
+               [ 'OS == "mac"', {
++                'defines' : [
++                    'DARWIN',
++                ],
++              }],
++              [ 'os_bsd == 1', {
++                'defines' : [
++                    'BSD',
++                ],
++              }],
++              [ 'OS == "mac" or os_bsd == 1', {
+                 'cflags_mozilla': [
+                     '-Wall',
+                     '-Wno-parentheses',
+                     '-Wno-strict-prototypes',
+                     '-Wmissing-prototypes',
+                  ],
+                  'defines' : [
+-                     'DARWIN',
+                      'HAVE_LIBM=1',
+                      'HAVE_STRDUP=1',
+                      'HAVE_STRLCPY=1',
+                      'HAVE_SYS_TIME_H=1',
+                      'HAVE_VFPRINTF=1',
+                      'NEW_STDIO'
+                      'RETSIGTYPE=void',
+                      'TIME_WITH_SYS_TIME_H=1',
+diff --git media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h
+index 15452e3..2c9651a 100644
+--- media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h
++++ media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h
+@@ -37,16 +37,21 @@
+  */
+ 
+ 
+ #ifndef _platform_h
+ #define _platform_h
+ 
+ #include <unistd.h>
+ 
++#ifdef BSD
++/* Hack version of addr2ascii (in util/util.c) */
++char *addr2ascii(int af, const void *addrp, int len,char *buf);
++#endif
++
+ #define STDIO_BYTES_BUFFERED(fp) (fp->_r)
+ 
+ #ifdef NR_SOCKET_IS_VOID_PTR
+ typedef void* NR_SOCKET;
+ #else
+ typedef int NR_SOCKET;
+ #define NR_SOCKET_READ(sock,buf,count)   read((sock),(buf),(count))
+ #define NR_SOCKET_WRITE(sock,buf,count)  write((sock),(buf),(count))
+diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
+index bcb1ec0..bb73591 100644
+--- media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
++++ media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
+@@ -28,17 +28,17 @@
+  *
+  *	@(#)queue.h	8.5 (Berkeley) 8/20/94
+  * $FreeBSD$
+  */
+ 
+ #ifndef _SYS_QUEUE_H_
+ #define	_SYS_QUEUE_H_
+ 
+-#ifndef DARWIN
++#if !defined(BSD) && !defined(DARWIN)
+ #include <stddef.h>
+ #define __offsetof offsetof
+ #endif
+ 
+ #define STAILQ_FOREACH_SAFE(var, head, field, tvar)                     \
+          for ((var) = STAILQ_FIRST((head));                              \
+              (var) && ((tvar) = STAILQ_NEXT((var), field), 1);           \
+              (var) = (tvar))
+diff --git media/mtransport/third_party/nrappkit/src/util/util.c media/mtransport/third_party/nrappkit/src/util/util.c
+index 3aced8b..be020bb 100644
+--- media/mtransport/third_party/nrappkit/src/util/util.c
++++ media/mtransport/third_party/nrappkit/src/util/util.c
+@@ -36,16 +36,19 @@
+    ekr@rtfm.com  Wed Dec 26 17:19:36 2001
+  */
+ 
+ 
+ static char *RCSSTRING __UNUSED__ ="$Id: util.c,v 1.5 2007/11/21 00:09:13 adamcain Exp $";
+ 
+ #ifndef WIN32
+ #include <sys/uio.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <pwd.h>
+ #include <dirent.h>
+ #endif
+ #include <string.h>
+ #include <ctype.h>
+ #include <sys/stat.h>
+ #ifdef OPENSSL
+ #include <openssl/evp.h>
+@@ -431,17 +434,17 @@ int nr_reg_uint8_fetch_and_check(NR_registry key, UINT8 min, UINT8 max, int log_
+   abort:
+     if(die && _status){
+       r_log(log_fac,LOG_CRIT,"Exiting due to invalid configuration (key '%s')",key);
+       exit(1);
+     }
+     return(_status);
+   }
+ 
+-#if defined(LINUX) || defined(WIN32)
++#if defined(LINUX) || defined(BSD) || defined(WIN32)
+ /* Hack version of addr2ascii */
+ char *addr2ascii(int af, const void *addrp, int len,char *buf)
+   {
+     static char buf2[256];
+     char *ret;
+     struct in_addr *addr=(struct in_addr *)addrp;
+ 
+     if (! buf)
+diff --git media/webrtc/signaling/signaling.gyp media/webrtc/signaling/signaling.gyp
+index f0cbf870..ba0f801 100644
+--- media/webrtc/signaling/signaling.gyp
++++ media/webrtc/signaling/signaling.gyp
+@@ -208,16 +208,29 @@
+             'SIPCC_BUILD',
+             'HAVE_WINSOCK2_H',
+             'CPR_STDINT_INCLUDE=\\"mozilla/StandardInteger.h\\"'
+           ],
+           
+           'cflags_mozilla': [
+           ],
+         }],
++        ['os_bsd==1', {
++          'include_dirs': [
++          ],
++          'defines': [
++            # avoiding pointless ifdef churn
++            'SIP_OS_OSX',
++            'OSX',
++            'SECLIB_OPENSSL',
++          ],
++
++          'cflags_mozilla': [
++          ],
++        }],
+         ['OS=="mac"', {
+           'include_dirs': [
+           ],
+           'defines': [
+             'SIP_OS_OSX',
+             'OSX', 
+             '_FORTIFY_SOURCE=2',
+           ],
+@@ -701,17 +714,17 @@
+             'EXTERNAL_TICK_REQUIRED',
+             'GIPS_VER=3480',
+           ],
+           
+           'cflags_mozilla': [
+           ],
+           
+         }],
+-        ['OS=="mac"', {
++        ['OS=="mac" or os_bsd==1', {
+ 
+           'include_dirs': [
+           ],
+           
+           'sources': [
+             # SIPSTACK
+             './src/sipcc/core/sipstack/sip_platform_task.c',
+             
+@@ -746,24 +759,23 @@
+             './src/sipcc/cpr/darwin/cpr_darwin_timers_using_select.c',
+             './src/sipcc/cpr/darwin/cpr_darwin_tst.h',
+             './src/sipcc/cpr/darwin/cpr_darwin_types.h',
+           ],
+           
+ 
+           'defines' : [
+             'SIP_OS_OSX',
+-            '_POSIX_SOURCE',
++            # using BSD extensions, leave _POSIX_SOURCE undefined
+             'CPR_MEMORY_LITTLE_ENDIAN',
+             'NO_SOCKET_POLLING',
+             'USE_TIMER_SELECT_BASED',
+             'FULL_BUILD',
+             'STUBBED_OUT',
+             'USE_PRINTF',
+-            '_DARWIN_C_SOURCE',
+             'NO_NSPR_10_SUPPORT',
+           ],
+           
+           'cflags_mozilla': [
+           ],
+         }],
+       ],
+             
+diff --git media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
+index a7c47e1..4f191de 100644
+--- media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
++++ media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
+@@ -352,21 +352,25 @@ cprGetMessage (cprMsgQueue_t msgQueue, b
+ {
+     static const char fname[] = "cprGetMessage";
+ 	
+     void *buffer = 0;
+     cpr_msg_queue_t *msgq;
+     cpr_msgq_node_t *node;
+ 	struct timespec timeout;
+ 	struct timeval tv;
++#ifndef __APPLE__
++	struct timezone tz;
++#else
+ 	// On the iPhone, there is a DarwinAlias problem with "timezone"
+ 	struct _timezone {
+ 		int     tz_minuteswest; /* of Greenwich */
+ 		int     tz_dsttime;     /* type of dst correction to apply */
+ 	} tz;
++#endif
+ 	
+     /* Initialize ppUserData */
+     if (ppUserData) {
+         *ppUserData = NULL;
+     }
+ 	
+     msgq = (cpr_msg_queue_t *) msgQueue;
+     if (msgq == NULL) {
+diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
+index a30e330..cfbd8a3 100644
+--- media/webrtc/signaling/test/Makefile.in
++++ media/webrtc/signaling/test/Makefile.in
+@@ -22,32 +22,32 @@ LIBS = \
+   $(DEPTH)/media/webrtc/signalingtest/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
+   $(DEPTH)/media/webrtc/signalingtest/signaling_sipcc/$(LIB_PREFIX)sipcc.$(LIB_SUFFIX) \
+   $(DEPTH)/layout/media/$(LIB_PREFIX)gkmedias.$(LIB_SUFFIX) \
+   $(DEPTH)/media/webrtc/trunk/testing/gtest_gtest/$(LIB_PREFIX)gtest.$(LIB_SUFFIX) \
+   $(DEPTH)/netwerk/srtp/src/$(LIB_PREFIX)nksrtp_s.$(LIB_SUFFIX) \
+   $(NULL)
+ 
+ ifdef MOZ_SYDNEYAUDIO
+-ifeq ($(OS_ARCH),Linux)
++ifneq (,$(filter Linux DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
+ LIBS += \
+   $(MOZ_ALSA_LIBS) \
+   $(NULL)
+ endif
+ endif
+ 
+ ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
+ LIBS += \
+   $(XLIBS) \
+   $(MOZ_GTK2_LIBS) \
+   -lgthread-2.0 \
+   $(NULL)
+ endif
+ 
+-ifeq ($(OS_ARCH),Linux)
++ifneq (,$(filter Linux DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
+ LIBS += \
+   $(MOZ_CAIRO_OSLIBS) \
+   $(NULL)
+ endif
+ 
+ ifeq ($(OS_ARCH),Darwin)
+ LIBS += \
+   -framework AudioToolbox \
+diff --git media/webrtc/trunk/build/common.gypi media/webrtc/trunk/build/common.gypi
+index 6ca2f70..5d261cb 100644
+--- media/webrtc/trunk/build/common.gypi
++++ media/webrtc/trunk/build/common.gypi
+@@ -75,22 +75,31 @@
+             # ash. This rule should be removed for the future when Windows is
+             # using the aura windows without the ash interface.
+             ['use_aura==1 and OS=="win"', {
+               'use_ash%': 1,
+             }],
+             ['use_ash==1', {
+               'use_aura%': 1,
+             }],
++
++            # A flag for BSD platforms
++            ['OS=="dragonfly" or OS=="freebsd" or OS=="netbsd" or \
++              OS=="openbsd"', {
++              'os_bsd%': 1,
++            }, {
++              'os_bsd%': 0,
++            }],
+           ],
+         },
+         # Copy conditionally-set variables out one scope.
+         'chromeos%': '<(chromeos)',
+         'use_aura%': '<(use_aura)',
+         'use_ash%': '<(use_ash)',
++        'os_bsd%': '<(os_bsd)',
+         'use_openssl%': '<(use_openssl)',
+         'use_ibus%': '<(use_ibus)',
+         'enable_viewport%': '<(enable_viewport)',
+         'enable_hidpi%': '<(enable_hidpi)',
+         'enable_touch_ui%': '<(enable_touch_ui)',
+         'android_upstream_bringup%': '<(android_upstream_bringup)',
+         'buildtype%': '<(buildtype)',
+ 
+@@ -114,17 +123,17 @@
+           # Set default value of toolkit_views based on OS.
+           ['OS=="win" or chromeos==1 or use_aura==1', {
+             'toolkit_views%': 1,
+           }, {
+             'toolkit_views%': 0,
+           }],
+ 
+           # Set toolkit_uses_gtk for the Chromium browser on Linux.
+-          ['(OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris") and use_aura==0', {
++          ['(OS=="linux" or OS=="solaris" or os_bsd==1) and use_aura==0', {
+             'toolkit_uses_gtk%': 1,
+           }, {
+             'toolkit_uses_gtk%': 0,
+           }],
+ 
+           # Enable HiDPI on Mac OS and Chrome OS.
+           ['OS=="mac" or chromeos==1', {
+             'enable_hidpi%': 1,
+@@ -139,16 +148,17 @@
+ 
+       # Copy conditionally-set variables out one scope.
+       'chromeos%': '<(chromeos)',
+       'host_arch%': '<(host_arch)',
+       'toolkit_views%': '<(toolkit_views)',
+       'toolkit_uses_gtk%': '<(toolkit_uses_gtk)',
+       'use_aura%': '<(use_aura)',
+       'use_ash%': '<(use_ash)',
++      'os_bsd%': '<(os_bsd)',
+       'use_openssl%': '<(use_openssl)',
+       'use_ibus%': '<(use_ibus)',
+       'enable_viewport%': '<(enable_viewport)',
+       'enable_hidpi%': '<(enable_hidpi)',
+       'enable_touch_ui%': '<(enable_touch_ui)',
+       'android_upstream_bringup%': '<(android_upstream_bringup)',
+       'android_build_type%': '<(android_build_type)',
+ 
+@@ -397,25 +407,18 @@
+ 
+         # A flag for POSIX platforms
+         ['OS=="win"', {
+           'os_posix%': 0,
+         }, {
+           'os_posix%': 1,
+         }],
+ 
+-        # A flag for BSD platforms
+-        ['OS=="freebsd" or OS=="openbsd"', {
+-          'os_bsd%': 1,
+-        }, {
+-          'os_bsd%': 0,
+-        }],
+-
+         # NSS usage.
+-        ['(OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris") and use_openssl==0', {
++        ['(OS=="linux" or OS=="solaris" or os_bsd==1) and use_openssl==0', {
+           'use_nss%': 1,
+         }, {
+           'use_nss%': 0,
+         }],
+ 
+         # Flags to use X11 on non-Mac POSIX platforms
+         ['OS=="win" or OS=="mac" or OS=="ios" or OS=="android"', {
+           'use_glib%': 0,
+diff --git media/webrtc/trunk/src/build/common.gypi media/webrtc/trunk/src/build/common.gypi
+index 9ca9f7c..d5c4ab9 100644
+--- media/webrtc/trunk/src/build/common.gypi
++++ media/webrtc/trunk/src/build/common.gypi
+@@ -101,16 +101,23 @@
+         'enable_protobuf%': 1,
+         'include_tests%': 1,
+ 
+         # TODO(andrew): For now, disable the Chrome plugins, which causes a
+         # flood of chromium-style warnings. Investigate enabling them:
+         # http://code.google.com/p/webrtc/issues/detail?id=163
+         'clang_use_chrome_plugins%': 0,
+       }],
++      ['OS=="linux" or OS=="solaris" or os_bsd==1', {
++        'include_alsa_audio%': 1,
++        'include_v4l2_video_capture%': 1,
++      }, {
++        'include_alsa_audio%': 0,
++        'include_v4l2_video_capture%': 0,
++      }],
+     ], # conditions
+   },
+   'target_defaults': {
+     'include_dirs': [
+       # TODO(andrew): we should be able to just use <(webrtc_root) here.
+       '..','../..',
+     ],
+     'defines': [
+@@ -174,16 +181,28 @@
+         'defines': [
+           'WEBRTC_LINUX',
+           'WEBRTC_THREAD_RR',
+           # TODO(andrew): can we select this automatically?
+           # Define this if the Linux system does not support CLOCK_MONOTONIC.
+           #'WEBRTC_CLOCK_TYPE_REALTIME',
+         ],
+       }],
++      ['os_bsd==1', {
++        'defines': [
++          'WEBRTC_BSD',
++          'WEBRTC_THREAD_RR',
++        ],
++      }],
++      ['OS=="dragonfly" or OS=="netbsd"', {
++        'defines': [
++          # doesn't support pthread_condattr_setclock
++          'WEBRTC_CLOCK_TYPE_REALTIME',
++        ],
++      }],
+       ['OS=="mac"', {
+         'defines': [
+           'WEBRTC_MAC',
+           'WEBRTC_MAC_INTEL',  # TODO(andrew): remove this.
+           'WEBRTC_THREAD_RR',
+           'WEBRTC_CLOCK_TYPE_REALTIME',
+         ],
+       }],
+diff --git media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
+index 8457737..4d0f322 100644
+--- media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
++++ media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
+@@ -41,21 +41,25 @@
+         'audio_device_utility.h',
+         'audio_device_impl.cc',
+         'audio_device_impl.h',
+         'audio_device_config.h',
+         'dummy/audio_device_dummy.h',
+         'dummy/audio_device_utility_dummy.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['include_alsa_audio==1', {
+           'include_dirs': [
+             'linux',
+           ],
+-        }], # OS==linux
++          'defines': [
++            # avoiding pointless ifdef churn
++            'WEBRTC_LINUX',
++          ],
++        }], # include_alsa_audio==1
+         ['OS=="mac"', {
+             'include_dirs': [
+               'mac',
+             ],
+         }], # OS==mac
+         ['OS=="win"', {
+             'include_dirs': [
+               'win',
+@@ -111,24 +115,26 @@
+               'link_settings': {
+                 'libraries': [
+                   '-llog',
+                   '-lOpenSLES',
+                 ],
+               },
+             }],
+             ['OS=="linux"', {
+-              'defines': [
+-                'LINUX_ALSA',
+-              ],
+               'link_settings': {
+                 'libraries': [
+                   '-ldl',
+                 ],
+               },
++            }],
++            ['include_alsa_audio==1', {
++              'defines': [
++                'LINUX_ALSA',
++              ],
+               'conditions': [
+                 ['include_pulse_audio==1', {
+                   'defines': [
+                     'LINUX_PULSE',
+                   ],
+                   'sources': [
+                     'linux/audio_device_pulse_linux.cc',
+                     'linux/audio_device_pulse_linux.h',
+diff --git media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc
+index 203f09a..0b0b70e 100644
+--- media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc
++++ media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc
+@@ -41,17 +41,17 @@ bool AudioDeviceUtility::StringCompare(
+     const char* str1 , const char* str2,
+     const WebRtc_UWord32 length)
+ {
+ 	return ((_strnicmp(str1, str2, length) == 0) ? true : false);
+ }
+ 
+ }  // namespace webrtc
+ 
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ 
+ // ============================================================================
+ //                                 Linux & Mac
+ // ============================================================================
+ 
+ #include <sys/time.h>   // gettimeofday
+ #include <time.h>       // gettimeofday
+ #include <string.h>     // strncasecmp
+@@ -104,11 +104,11 @@ WebRtc_UWord32 AudioDeviceUtility::GetTimeInMS()
+ bool AudioDeviceUtility::StringCompare(
+     const char* str1 , const char* str2, const WebRtc_UWord32 length)
+ {
+     return (strncasecmp(str1, str2, length) == 0)?true: false;
+ }
+ 
+ }  // namespace webrtc
+ 
+-#endif  // defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#endif  // defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ 
+ 
+diff --git media/webrtc/trunk/src/modules/rtp_rtcp/source/forward_error_correction.cc media/webrtc/trunk/src/modules/rtp_rtcp/source/forward_error_correction.cc
+index bdad224..39e1132 100644
+--- media/webrtc/trunk/src/modules/rtp_rtcp/source/forward_error_correction.cc
++++ media/webrtc/trunk/src/modules/rtp_rtcp/source/forward_error_correction.cc
+@@ -7,16 +7,17 @@
+  *  in the file PATENTS.  All contributing project authors may
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
+ #include "modules/rtp_rtcp/source/forward_error_correction.h"
+ 
+ #include <algorithm>
+ #include <cassert>
++#include <cstdlib> // for abs()
+ #include <cstring>
+ #include <iterator>
+ 
+ #include "modules/rtp_rtcp/source/forward_error_correction_internal.h"
+ #include "modules/rtp_rtcp/source/rtp_utility.h"
+ #include "system_wrappers/interface/trace.h"
+ 
+ namespace webrtc {
+diff --git media/webrtc/trunk/src/modules/rtp_rtcp/source/rtp_utility.cc media/webrtc/trunk/src/modules/rtp_rtcp/source/rtp_utility.cc
+index 298d479..37b70c9 100644
+--- media/webrtc/trunk/src/modules/rtp_rtcp/source/rtp_utility.cc
++++ media/webrtc/trunk/src/modules/rtp_rtcp/source/rtp_utility.cc
+@@ -13,17 +13,17 @@
+ #include <cassert>
+ #include <cmath>  // ceil
+ #include <cstring>  // memcpy
+ 
+ #if defined(_WIN32)
+ #include <Windows.h>  // FILETIME
+ #include <WinSock.h>  // timeval
+ #include <MMSystem.h>  // timeGetTime
+-#elif ((defined WEBRTC_LINUX) || (defined WEBRTC_MAC))
++#elif ((defined WEBRTC_LINUX) || (defined WEBRTC_BSD) || (defined WEBRTC_MAC))
+ #include <sys/time.h>  // gettimeofday
+ #include <time.h>
+ #endif
+ #if (defined(_DEBUG) && defined(_WIN32) && (_MSC_VER >= 1400))
+ #include <stdio.h>
+ #endif
+ 
+ #include "system_wrappers/interface/tick_util.h"
+@@ -151,17 +151,17 @@ void get_time(WindowsHelpTimer* help_timer, FILETIME& current_time) {
+     virtual WebRtc_Word64 GetTimeInMS();
+ 
+     virtual void CurrentNTP(WebRtc_UWord32& secs, WebRtc_UWord32& frac);
+ 
+   private:
+     WindowsHelpTimer* _helpTimer;
+ };
+ 
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ 
+ // A clock reading times from the POSIX API.
+ class UnixSystemClock : public RtpRtcpClock {
+ public:
+   UnixSystemClock() {}
+   virtual ~UnixSystemClock() {}
+ 
+   virtual WebRtc_Word64 GetTimeInMS();
+@@ -209,17 +209,17 @@ void WindowsSystemClock::CurrentNTP(WebRtc_UWord32& secs,
+   } else if (dtemp < -1) {
+     dtemp += 1;
+     secs--;
+   }
+   dtemp *= NTP_FRAC;
+   frac = (WebRtc_UWord32)dtemp;
+ }
+ 
+-#elif ((defined WEBRTC_LINUX) || (defined WEBRTC_MAC))
++#elif ((defined WEBRTC_LINUX) || (defined WEBRTC_BSD) || (defined WEBRTC_MAC))
+ 
+ WebRtc_Word64 UnixSystemClock::GetTimeInMS() {
+   return TickTime::MillisecondTimestamp();
+ }
+ 
+ // Use the system time.
+ void UnixSystemClock::CurrentNTP(WebRtc_UWord32& secs, WebRtc_UWord32& frac) {
+   double dtemp;
+@@ -248,17 +248,17 @@ void UnixSystemClock::CurrentNTP(WebRtc_UWord32& secs, WebRtc_UWord32& frac) {
+ // Note that this is a POD. Only PODs are allowed to have static storage
+ // duration according to the Google Style guide.
+ static WindowsHelpTimer global_help_timer = {0, 0, {{ 0, 0}, 0}, 0};
+ #endif
+ 
+ RtpRtcpClock* GetSystemClock() {
+ #if defined(_WIN32)
+   return new WindowsSystemClock(&global_help_timer);
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+   return new UnixSystemClock();
+ #else
+   return NULL;
+ #endif
+ }
+ 
+ WebRtc_UWord32 GetCurrentRTP(RtpRtcpClock* clock, WebRtc_UWord32 freq) {
+   const bool use_global_clock = (clock == NULL);
+@@ -313,17 +313,17 @@ bool OldTimestamp(uint32_t newTimestamp,
+  * Misc utility routines
+  */
+ 
+ #if defined(_WIN32)
+ bool StringCompare(const char* str1, const char* str2,
+                    const WebRtc_UWord32 length) {
+   return (_strnicmp(str1, str2, length) == 0) ? true : false;
+ }
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ bool StringCompare(const char* str1, const char* str2,
+                    const WebRtc_UWord32 length) {
+   return (strncasecmp(str1, str2, length) == 0) ? true : false;
+ }
+ #endif
+ 
+ #if !defined(WEBRTC_LITTLE_ENDIAN) && !defined(WEBRTC_BIG_ENDIAN)
+ #error Either WEBRTC_LITTLE_ENDIAN or WEBRTC_BIG_ENDIAN must be defined
+diff --git media/webrtc/trunk/src/modules/udp_transport/source/udp_transport_impl.cc media/webrtc/trunk/src/modules/udp_transport/source/udp_transport_impl.cc
+index e50db5d..70ad8a8 100644
+--- media/webrtc/trunk/src/modules/udp_transport/source/udp_transport_impl.cc
++++ media/webrtc/trunk/src/modules/udp_transport/source/udp_transport_impl.cc
+@@ -13,60 +13,62 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+ 
+ #if defined(_WIN32)
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ #include <arpa/inet.h>
+ #include <ctype.h>
+ #include <fcntl.h>
+ #include <netdb.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <netinet/in.h>
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
+-#include <sys/socket.h>
+ #include <sys/time.h>
+ #include <unistd.h>
+ #ifndef MAC_IPHONE
+ #include <net/if_arp.h>
+ #endif
+ #endif // defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
+ 
+ #if defined(WEBRTC_MAC)
+-#include <ifaddrs.h>
+ #include <machine/types.h>
+ #endif
++#if defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
++#include <ifaddrs.h>
++#endif
+ #if defined(WEBRTC_LINUX)
+ #include <linux/netlink.h>
+ #include <linux/rtnetlink.h>
+ #endif
+ 
+ #include "common_types.h"
+ #include "critical_section_wrapper.h"
+ #include "rw_lock_wrapper.h"
+ #include "trace.h"
+ #include "typedefs.h"
+ #include "udp_socket_manager_wrapper.h"
+ 
+-#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ #define GetLastError() errno
+ 
+ #define IFRSIZE ((int)(size * sizeof (struct ifreq)))
+ 
+ #define NLMSG_OK_NO_WARNING(nlh,len)                                    \
+   ((len) >= (int)sizeof(struct nlmsghdr) &&                             \
+    (int)(nlh)->nlmsg_len >= (int)sizeof(struct nlmsghdr) &&             \
+    (int)(nlh)->nlmsg_len <= (len))
+ 
+-#endif // defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#endif // defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ 
+ namespace webrtc {
+ 
+ class SocketFactory : public UdpTransportImpl::SocketFactoryInterface {
+  public:
+   UdpSocketWrapper* CreateSocket(const WebRtc_Word32 id,
+                                  UdpSocketManager* mgr,
+                                  CallbackObj obj,
+@@ -2366,17 +2368,17 @@ WebRtc_UWord32 UdpTransport::InetAddrIPV4(const char* ip)
+ {
+     return ::inet_addr(ip);
+ }
+ 
+ WebRtc_Word32 UdpTransport::InetPresentationToNumeric(WebRtc_Word32 af,
+                                                       const char* src,
+                                                       void* dst)
+ {
+-#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     const WebRtc_Word32 result = inet_pton(af, src, dst);
+     return result > 0 ? 0 : -1;
+ 
+ #elif defined(_WIN32)
+     SocketAddress temp;
+     int length=sizeof(SocketAddress);
+ 
+     if(af == AF_INET)
+@@ -2488,17 +2490,17 @@ WebRtc_Word32 UdpTransport::LocalHostAddressIPV6(char n_localIP[16])
+                 break;
+         };
+     }
+     freeaddrinfo(result);
+     WEBRTC_TRACE(kTraceWarning, kTraceTransport, -1,
+                  "getaddrinfo failed to find address");
+     return -1;
+ 
+-#elif defined(WEBRTC_MAC)
++#elif defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     struct ifaddrs* ptrIfAddrs = NULL;
+     struct ifaddrs* ptrIfAddrsStart = NULL;
+ 
+     getifaddrs(&ptrIfAddrsStart);
+     ptrIfAddrs = ptrIfAddrsStart;
+     while(ptrIfAddrs)
+     {
+         if(ptrIfAddrs->ifa_addr->sa_family == AF_INET6)
+@@ -2680,17 +2682,17 @@ WebRtc_Word32 UdpTransport::LocalHostAddress(WebRtc_UWord32& localIP)
+     }
+     else
+     {
+         WebRtc_Word32 error = WSAGetLastError();
+         WEBRTC_TRACE(kTraceWarning, kTraceTransport, -1,
+                      "gethostbyname failed, error:%d", error);
+         return -1;
+     }
+-#elif (defined(WEBRTC_MAC))
++#elif (defined(WEBRTC_BSD) || defined(WEBRTC_MAC))
+     char localname[255];
+     if (gethostname(localname, 255) != -1)
+     {
+         hostent* localHost;
+         localHost = gethostbyname(localname);
+         if(localHost)
+         {
+             if(localHost->h_addrtype != AF_INET)
+@@ -2819,17 +2821,17 @@ WebRtc_Word32 UdpTransport::IPAddress(const SocketAddress& address,
+         }
+ 
+         source_port = address._sockaddr_in6.sin6_port;
+     }
+     // Convert port number to network byte order.
+     sourcePort = htons(source_port);
+     return 0;
+ 
+- #elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++ #elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     WebRtc_Word32 ipFamily = address._sockaddr_storage.sin_family;
+     const void* ptrNumericIP = NULL;
+ 
+     if(ipFamily == AF_INET)
+     {
+         ptrNumericIP = &(address._sockaddr_in.sin_addr);
+     }
+     else if(ipFamily == AF_INET6)
+diff --git media/webrtc/trunk/src/modules/utility/source/rtp_dump_impl.cc media/webrtc/trunk/src/modules/utility/source/rtp_dump_impl.cc
+index 69a52ec..7ac226c 100644
+--- media/webrtc/trunk/src/modules/utility/source/rtp_dump_impl.cc
++++ media/webrtc/trunk/src/modules/utility/source/rtp_dump_impl.cc
+@@ -14,17 +14,17 @@
+ #include <stdio.h>
+ 
+ #include "critical_section_wrapper.h"
+ #include "trace.h"
+ 
+ #if defined(_WIN32)
+ #include <Windows.h>
+ #include <mmsystem.h>
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ #include <string.h>
+ #include <sys/time.h>
+ #include <time.h>
+ #endif
+ 
+ #if (defined(_DEBUG) && defined(_WIN32))
+ #define DEBUG_PRINT(expr)   OutputDebugString(##expr)
+ #define DEBUG_PRINTP(expr, p)   \
+@@ -233,17 +233,17 @@ bool RtpDumpImpl::RTCP(const WebRtc_UWord8* packet) const
+     return is_rtcp;
+ }
+ 
+ // TODO (hellner): why is TickUtil not used here?
+ inline WebRtc_UWord32 RtpDumpImpl::GetTimeInMS() const
+ {
+ #if defined(_WIN32)
+     return timeGetTime();
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     struct timeval tv;
+     struct timezone tz;
+     unsigned long val;
+ 
+     gettimeofday(&tv, &tz);
+     val = tv.tv_sec * 1000 + tv.tv_usec / 1000;
+     return val;
+ #else
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
+index 653ee16..8d6fd68 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
++++ media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
+@@ -14,17 +14,23 @@
+ #include <unistd.h>
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+ //v4l includes
++#if defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <sys/videoio.h>
++#elif defined(__sun)
++#include <sys/videodev2.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ #include "ref_count.h"
+ #include "trace.h"
+ 
+ 
+ namespace webrtc
+ {
+ namespace videocapturemodule
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
+index 12df1b3..424ea0a 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
++++ media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
+@@ -7,22 +7,30 @@
+  *  in the file PATENTS.  All contributing project authors may
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
+ #include <sys/ioctl.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-#include <linux/videodev2.h>
+ #include <errno.h>
+ #include <stdio.h>
+ #include <sys/mman.h>
+ #include <string.h>
+ 
++//v4l includes
++#if defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <sys/videoio.h>
++#elif defined(__sun)
++#include <sys/videodev2.h>
++#else
++#include <linux/videodev2.h>
++#endif
++
+ #include <iostream>
+ #include <new>
+ 
+ #include "ref_count.h"
+ #include "trace.h"
+ #include "thread_wrapper.h"
+ #include "critical_section_wrapper.h"
+ #include "video_capture_linux.h"
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc
+index e3f7bb5..882cede 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc
++++ media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc
+@@ -49,17 +49,17 @@ WebRtc_Word32 DeviceInfoImpl::NumberOfCapabilities(
+     if (!deviceUniqueIdUTF8)
+         return -1;
+ 
+     _apiLock.AcquireLockShared();
+ 
+     if (_lastUsedDeviceNameLength == strlen((char*) deviceUniqueIdUTF8))
+     {
+         // Is it the same device that is asked for again.
+-#if defined(WEBRTC_MAC_INTEL) || defined(WEBRTC_LINUX)
++#if defined(WEBRTC_MAC_INTEL) || defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+         if(strncasecmp((char*)_lastUsedDeviceName,
+                        (char*) deviceUniqueIdUTF8,
+                        _lastUsedDeviceNameLength)==0)
+ #else
+         if (_strnicmp((char*) _lastUsedDeviceName,
+                       (char*) deviceUniqueIdUTF8,
+                       _lastUsedDeviceNameLength) == 0)
+ #endif
+@@ -86,17 +86,17 @@ WebRtc_Word32 DeviceInfoImpl::GetCapability(const char* deviceUniqueIdUTF8,
+     {
+         WEBRTC_TRACE(webrtc::kTraceError, webrtc::kTraceVideoCapture, _id,
+                    "deviceUniqueIdUTF8 parameter not set in call to GetCapability");
+         return -1;
+     }
+     ReadLockScoped cs(_apiLock);
+ 
+     if ((_lastUsedDeviceNameLength != strlen((char*) deviceUniqueIdUTF8))
+-#if defined(WEBRTC_MAC_INTEL) || defined(WEBRTC_LINUX)
++#if defined(WEBRTC_MAC_INTEL) || defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+         || (strncasecmp((char*)_lastUsedDeviceName,
+                         (char*) deviceUniqueIdUTF8,
+                         _lastUsedDeviceNameLength)!=0))
+ #else
+         || (_strnicmp((char*) _lastUsedDeviceName,
+                       (char*) deviceUniqueIdUTF8,
+                       _lastUsedDeviceNameLength) != 0))
+ #endif
+@@ -150,17 +150,17 @@ WebRtc_Word32 DeviceInfoImpl::GetBestMatchedCapability(
+ {
+ 
+ 
+     if (!deviceUniqueIdUTF8)
+         return -1;
+ 
+     ReadLockScoped cs(_apiLock);
+     if ((_lastUsedDeviceNameLength != strlen((char*) deviceUniqueIdUTF8))
+-#if defined(WEBRTC_MAC_INTEL) || defined(WEBRTC_LINUX)
++#if defined(WEBRTC_MAC_INTEL) || defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+         || (strncasecmp((char*)_lastUsedDeviceName,
+                         (char*) deviceUniqueIdUTF8,
+                         _lastUsedDeviceNameLength)!=0))
+ #else
+         || (_strnicmp((char*) _lastUsedDeviceName,
+                       (char*) deviceUniqueIdUTF8,
+                       _lastUsedDeviceNameLength) != 0))
+ #endif
+diff --git media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
+index 0a9765e..8d4bbf4 100644
+--- media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
++++ media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
+@@ -50,17 +50,17 @@
+         ['include_internal_video_capture==0', {
+           'sources': [
+             'External/device_info_external.cc',
+             'External/video_capture_external.cc',
+           ],
+         },{  # include_internal_video_capture == 1
+           'conditions': [
+             # DEFINE PLATFORM SPECIFIC SOURCE FILES
+-            ['OS=="linux"', {
++            ['include_v4l2_video_capture==1', {
+               'include_dirs': [
+                 'Linux',
+               ],
+               'sources': [
+                 'Linux/device_info_linux.h',
+                 'Linux/video_capture_linux.h',
+                 'Linux/device_info_linux.cc',
+                 'Linux/video_capture_linux.cc',
+@@ -157,31 +157,35 @@
+             '../interface',
+           ],
+           'sources': [
+             '../test/video_capture_unittest.cc',
+             '../test/video_capture_main_mac.mm',
+           ],
+           'conditions': [
+            # DEFINE PLATFORM SPECIFIC INCLUDE AND CFLAGS
+-            ['OS=="mac" or OS=="linux"', {
++            ['OS!="win" and OS!="android"', {
+               'cflags': [
+                 '-Wno-write-strings',
+               ],
+               'ldflags': [
+                 '-lpthread -lm',
+               ],
+             }],
+-            ['OS=="linux"', {
++            ['include_v4l2_video_capture==1', {
+               'libraries': [
+-                '-lrt',
+                 '-lXext',
+                 '-lX11',
+               ],
+             }],
++            ['OS=="linux"', {
++              'libraries': [
++                '-lrt',
++              ],
++            }],
+             ['OS=="mac"', {
+               'dependencies': [
+                 # Link with a special main for mac so we can use the webcam.
+                 '<(webrtc_root)/test/test.gyp:test_support_main_threaded_mac',
+               ],
+               'xcode_settings': {
+                 # TODO(andrew): CoreAudio and AudioToolbox shouldn't be needed.
+                 'OTHER_LDFLAGS': [
+diff --git media/webrtc/trunk/src/system_wrappers/interface/tick_util.h media/webrtc/trunk/src/system_wrappers/interface/tick_util.h
+index 0cd85d0..45591be 100644
+--- media/webrtc/trunk/src/system_wrappers/interface/tick_util.h
++++ media/webrtc/trunk/src/system_wrappers/interface/tick_util.h
+@@ -161,17 +161,17 @@ inline TickTime TickTime::Now()
+             // so it must have been a wrap around.
+             if(old > 0xf0000000 && now < 0x0fffffff) 
+             {
+                 numWrapTimeGetTime++;
+             }
+         }
+         result._ticks = now + (numWrapTimeGetTime<<32);
+     #endif
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+     struct timespec ts;
+     // TODO(wu): Remove CLOCK_REALTIME implementation.
+     #ifdef WEBRTC_CLOCK_TYPE_REALTIME
+         clock_gettime(CLOCK_REALTIME, &ts);
+     #else
+         clock_gettime(CLOCK_MONOTONIC, &ts);
+     #endif
+     result._ticks = 1000000000LL * static_cast<WebRtc_Word64>(ts.tv_sec) + static_cast<WebRtc_Word64>(ts.tv_nsec);
+@@ -203,17 +203,17 @@ inline WebRtc_Word64 TickTime::MillisecondTimestamp()
+ #if _WIN32
+     #ifdef USE_QUERY_PERFORMANCE_COUNTER
+         LARGE_INTEGER qpfreq;
+         QueryPerformanceFrequency(&qpfreq);
+         return (now._ticks * 1000) / qpfreq.QuadPart;
+     #else
+         return now._ticks;
+     #endif
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     return now._ticks / 1000000LL;
+ #else
+     return now._ticks / 1000LL;
+ #endif
+ }
+ 
+ inline WebRtc_Word64 TickTime::MicrosecondTimestamp()
+ {
+@@ -222,17 +222,17 @@ inline WebRtc_Word64 TickTime::MicrosecondTimestamp()
+ #if _WIN32
+     #ifdef USE_QUERY_PERFORMANCE_COUNTER
+         LARGE_INTEGER qpfreq;
+         QueryPerformanceFrequency(&qpfreq);
+         return (now._ticks * 1000) / (qpfreq.QuadPart/1000);
+     #else
+         return now._ticks *1000LL;
+     #endif
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     return now._ticks / 1000LL;
+ #else
+     return now._ticks;
+ #endif
+ }
+ 
+ inline WebRtc_Word64 TickTime::Ticks() const
+ {
+@@ -244,34 +244,34 @@ inline WebRtc_Word64 TickTime::MillisecondsToTicks(const WebRtc_Word64 ms)
+ #if _WIN32
+     #ifdef USE_QUERY_PERFORMANCE_COUNTER
+         LARGE_INTEGER qpfreq;
+         QueryPerformanceFrequency(&qpfreq);
+         return (qpfreq.QuadPart * ms) / 1000;
+     #else
+         return ms;
+     #endif
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     return ms * 1000000LL;
+ #else
+     return ms * 1000LL;
+ #endif
+ }
+ 
+ inline WebRtc_Word64 TickTime::TicksToMilliseconds(const WebRtc_Word64 ticks)
+ {
+ #if _WIN32
+     #ifdef USE_QUERY_PERFORMANCE_COUNTER
+         LARGE_INTEGER qpfreq;
+         QueryPerformanceFrequency(&qpfreq);
+         return (ticks * 1000) / qpfreq.QuadPart;
+     #else
+         return ticks;
+     #endif
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     return ticks / 1000000LL;
+ #else
+     return ticks / 1000LL;
+ #endif
+ }
+ 
+ inline TickTime& TickTime::operator+=(const WebRtc_Word64& ticks)
+ {
+@@ -294,17 +294,17 @@ inline WebRtc_Word64 TickInterval::Milliseconds() const
+     #ifdef USE_QUERY_PERFORMANCE_COUNTER
+         LARGE_INTEGER qpfreq;
+         QueryPerformanceFrequency(&qpfreq);
+         return (_interval * 1000) / qpfreq.QuadPart;
+     #else
+ 	// _interval is in ms
+         return _interval;
+     #endif
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     // _interval is in ns
+     return _interval / 1000000;
+ #else
+     // _interval is usecs
+     return _interval / 1000;
+ #endif
+ }
+ 
+@@ -314,17 +314,17 @@ inline WebRtc_Word64 TickInterval::Microseconds() const
+     #ifdef USE_QUERY_PERFORMANCE_COUNTER
+         LARGE_INTEGER qpfreq;
+         QueryPerformanceFrequency(&qpfreq);
+         return (_interval * 1000000) / qpfreq.QuadPart;
+     #else
+ 	// _interval is in ms
+         return _interval *1000LL;
+     #endif
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     // _interval is in ns
+     return _interval / 1000;
+ #else
+     // _interval is usecs
+     return _interval;
+ #endif
+ }
+ 
+diff --git media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc
+index bb10c6b..4878d71 100644
+--- media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc
++++ media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc
+@@ -7,24 +7,21 @@
+  *  in the file PATENTS.  All contributing project authors may
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
+ #include "aligned_malloc.h"
+ 
+ #include <assert.h>
+ #include <memory.h>
+-
+-#ifdef WEBRTC_ANDROID
+ #include <stdlib.h>
+-#endif
+ 
+ #if WEBRTC_MAC
+   #include <malloc/malloc.h>
+-#else
++#elif WEBRTC_WIN
+   #include <malloc.h>
+ #endif
+ 
+ #if _WIN32
+     #include <windows.h>
+ #else
+     #include <stdint.h>
+ #endif
+diff --git media/webrtc/trunk/src/system_wrappers/source/atomic32_posix.cc media/webrtc/trunk/src/system_wrappers/source/atomic32_posix.cc
+index 05b0e57..993456c 100644
+--- media/webrtc/trunk/src/system_wrappers/source/atomic32_posix.cc
++++ media/webrtc/trunk/src/system_wrappers/source/atomic32_posix.cc
+@@ -7,17 +7,16 @@
+  *  in the file PATENTS.  All contributing project authors may
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
+ #include "atomic32.h"
+ 
+ #include <assert.h>
+ #include <inttypes.h>
+-#include <malloc.h>
+ 
+ #include "common_types.h"
+ 
+ namespace webrtc {
+ 
+ Atomic32::Atomic32(WebRtc_Word32 initialValue) : _value(initialValue)
+ {
+     assert(Is32bitAligned());
+diff --git media/webrtc/trunk/src/system_wrappers/source/condition_variable.cc media/webrtc/trunk/src/system_wrappers/source/condition_variable.cc
+index b37d037..fcea221 100644
+--- media/webrtc/trunk/src/system_wrappers/source/condition_variable.cc
++++ media/webrtc/trunk/src/system_wrappers/source/condition_variable.cc
+@@ -3,35 +3,33 @@
+  *
+  *  Use of this source code is governed by a BSD-style license
+  *  that can be found in the LICENSE file in the root of the source
+  *  tree. An additional intellectual property rights grant can be found
+  *  in the file PATENTS.  All contributing project authors may
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
++#include "condition_variable_wrapper.h"
++
+ #if defined(_WIN32)
+    #include <windows.h>
+-   #include "condition_variable_wrapper.h"
+    #include "condition_variable_win.h"
+-#elif defined(WEBRTC_LINUX)
+-   #include <pthread.h>
+-   #include "condition_variable_wrapper.h"
+-   #include "condition_variable_posix.h"
+-#elif defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL)
+    #include <pthread.h>
+-   #include "condition_variable_wrapper.h"
+    #include "condition_variable_posix.h"
++#else
++   #include <stddef.h>  // for NULL
+ #endif
+ 
+ namespace webrtc {
+ ConditionVariableWrapper*
+ ConditionVariableWrapper::CreateConditionVariable()
+ {
+ #if defined(_WIN32)
+     return new ConditionVariableWindows;
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL)
+     return ConditionVariablePosix::Create();
+ #else
+     return NULL;
+ #endif
+ }
+ } // namespace webrtc
+diff --git media/webrtc/trunk/src/system_wrappers/source/condition_variable_posix.cc media/webrtc/trunk/src/system_wrappers/source/condition_variable_posix.cc
+index 48835ab..16c6033 100644
+--- media/webrtc/trunk/src/system_wrappers/source/condition_variable_posix.cc
++++ media/webrtc/trunk/src/system_wrappers/source/condition_variable_posix.cc
+@@ -90,17 +90,17 @@ void ConditionVariablePosix::SleepCS(CriticalSectionWrapper& critSect)
+ bool
+ ConditionVariablePosix::SleepCS(
+     CriticalSectionWrapper& critSect,
+     unsigned long maxTimeInMS)
+ {
+     const unsigned long INFINITE =  0xFFFFFFFF;
+ 
+     const int MILLISECONDS_PER_SECOND      = 1000;
+-#ifndef WEBRTC_LINUX
++#if !defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
+     const int MICROSECONDS_PER_MILLISECOND = 1000;
+ #endif
+     const int NANOSECONDS_PER_SECOND       = 1000000000;
+     const int NANOSECONDS_PER_MILLISECOND  = 1000000;
+ 
+     CriticalSectionPosix* cs = reinterpret_cast<CriticalSectionPosix*>(
+                                    &critSect);
+ 
+diff --git media/webrtc/trunk/src/system_wrappers/source/cpu.cc media/webrtc/trunk/src/system_wrappers/source/cpu.cc
+index 3df5d18..4cd3ddf 100644
+--- media/webrtc/trunk/src/system_wrappers/source/cpu.cc
++++ media/webrtc/trunk/src/system_wrappers/source/cpu.cc
+@@ -11,28 +11,28 @@
+ #include "cpu_wrapper.h"
+ 
+ #if defined(_WIN32)
+     #include "cpu_win.h"
+ #elif defined(WEBRTC_MAC)
+     #include "cpu_mac.h"
+ #elif defined(WEBRTC_MAC_INTEL)
+     #include "cpu_mac.h"
+-#elif defined(WEBRTC_ANDROID)
++#elif defined(WEBRTC_ANDROID) || defined(WEBRTC_BSD)
+     // Not implemented yet, might be possible to use Linux implementation
+ #else // defined(WEBRTC_LINUX)
+     #include "cpu_linux.h"
+ #endif
+ 
+ namespace webrtc {
+ CpuWrapper* CpuWrapper::CreateCpu()
+ {
+ #if defined(_WIN32)
+    return new CpuWindows();
+ #elif (defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL))
+     return new CpuWrapperMac();
+-#elif defined(WEBRTC_ANDROID)
++#elif defined(WEBRTC_ANDROID) || defined(WEBRTC_BSD)
+     return 0;
+ #else
+     return new CpuLinux();
+ #endif
+ }
+ } // namespace webrtc
+diff --git media/webrtc/trunk/src/system_wrappers/source/cpu_info.cc media/webrtc/trunk/src/system_wrappers/source/cpu_info.cc
+index e367abf..e14d7af 100644
+--- media/webrtc/trunk/src/system_wrappers/source/cpu_info.cc
++++ media/webrtc/trunk/src/system_wrappers/source/cpu_info.cc
+@@ -7,25 +7,27 @@
+  *  in the file PATENTS.  All contributing project authors may
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
+ #include "cpu_info.h"
+ 
+ #if defined(_WIN32)
+ #include <Windows.h>
+-#elif defined(WEBRTC_MAC)
++#elif defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #elif defined(WEBRTC_MAC_INTEL)
+ // Intentionally empty
+ #elif defined(WEBRTC_ANDROID)
+ // Not implemented yet, might be possible to use Linux implementation
+-#else // defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX)
+ #include <sys/sysinfo.h>
++#else // defined(_SC_NPROCESSORS_ONLN)
++#include <unistd.h>
+ #endif
+ 
+ #include "trace.h"
+ 
+ namespace webrtc {
+ 
+ WebRtc_UWord32 CpuInfo::_numberOfCores = 0;
+ 
+@@ -40,31 +42,40 @@ WebRtc_UWord32 CpuInfo::DetectNumberOfCores()
+         WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+                      "Available number of cores:%d", _numberOfCores);
+ 
+ #elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
+         _numberOfCores = get_nprocs();
+         WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+                      "Available number of cores:%d", _numberOfCores);
+ 
+-#elif (defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL))
+-        int name[] = {CTL_HW, HW_AVAILCPU};
++#elif (defined(WEBRTC_BSD) || defined(WEBRTC_MAC) || defined(WEBRTC_MAC_INTEL))
++        int name[] = {
++          CTL_HW,
++#ifdef HW_AVAILCPU
++          HW_AVAILCPU,
++#else
++          HW_NCPU,
++#endif
++        };
+         int ncpu;
+         size_t size = sizeof(ncpu);
+         if(0 == sysctl(name, 2, &ncpu, &size, NULL, 0))
+         {
+             _numberOfCores = static_cast<WebRtc_UWord32>(ncpu);
+             WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+                          "Available number of cores:%d", _numberOfCores);
+     } else
+     {
+             WEBRTC_TRACE(kTraceError, kTraceUtility, -1,
+                          "Failed to get number of cores");
+             _numberOfCores = 1;
+     }
++#elif defined(_SC_NPROCESSORS_ONLN)
++        _numberOfCores = sysconf(_SC_NPROCESSORS_ONLN);
+ #else
+         WEBRTC_TRACE(kTraceWarning, kTraceUtility, -1,
+                      "No function to get number of cores");
+         _numberOfCores = 1;
+ #endif
+     }
+     return _numberOfCores;
+ }
+diff --git media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc
+index 6334490..852ebaa 100644
+--- media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc
++++ media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc
+@@ -53,16 +53,25 @@
+ #include <sched.h>
+ #include <sys/syscall.h>
+ #include <linux/unistd.h>
+ #include <sys/prctl.h>
+ #endif
+ 
+ #if defined(WEBRTC_MAC)
+ #include <mach/mach.h>
++#elif defined(__NetBSD__)
++#include <lwp.h>
++#elif defined(__FreeBSD__)
++#include <sys/param.h>
++#include <sys/thr.h>
++#endif
++
++#if defined(WEBRTC_BSD) && !defined(__NetBSD__)
++#include <pthread_np.h>
+ #endif
+ 
+ #include "system_wrappers/interface/critical_section_wrapper.h"
+ #include "system_wrappers/interface/event_wrapper.h"
+ #include "system_wrappers/interface/trace.h"
+ 
+ namespace webrtc {
+ extern "C"
+@@ -116,16 +125,28 @@ ThreadPosix::ThreadPosix(ThreadRunFunction func, ThreadObj obj,
+     }
+ }
+ 
+ uint32_t ThreadWrapper::GetThreadId() {
+ #if defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX)
+   return static_cast<uint32_t>(syscall(__NR_gettid));
+ #elif defined(WEBRTC_MAC)
+   return static_cast<uint32_t>(mach_thread_self());
++#elif defined(__NetBSD__)
++  return _lwp_self();
++#elif defined(__DragonFly__)
++  return lwp_gettid();
++#elif defined(__FreeBSD__)
++#  if __FreeBSD_version > 900030
++    return pthread_getthreadid_np();
++#  else
++    long lwpid;
++    thr_self(&lwpid);
++    return lwpid;
++#  endif
+ #else
+   return reinterpret_cast<uint32_t>(pthread_self());
+ #endif
+ }
+ 
+ int ThreadPosix::Construct()
+ {
+     int result = 0;
+@@ -154,16 +175,17 @@ ThreadPosix::~ThreadPosix()
+ {
+     pthread_attr_destroy(&_attr);
+     delete _event;
+     delete _crit_state;
+ }
+ 
+ #define HAS_THREAD_ID !defined(MAC_IPHONE) && !defined(MAC_IPHONE_SIM)  &&  \
+                       !defined(WEBRTC_MAC) && !defined(WEBRTC_MAC_INTEL) && \
++                      !defined(WEBRTC_BSD) && \
+                       !defined(MAC_DYLIB)  && !defined(MAC_INTEL_DYLIB)
+ #if HAS_THREAD_ID
+ bool ThreadPosix::Start(unsigned int& threadID)
+ #else
+ bool ThreadPosix::Start(unsigned int& /*threadID*/)
+ #endif
+ {
+     if (!_runFunction)
+@@ -229,31 +251,39 @@ bool ThreadPosix::Start(unsigned int& /*threadID*/)
+     {
+         return false;
+     }
+     return true;
+ }
+ 
+ // CPU_ZERO and CPU_SET are not available in NDK r7, so disable
+ // SetAffinity on Android for now.
+-#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)))
++#if defined(__FreeBSD__) || (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)))
+ bool ThreadPosix::SetAffinity(const int* processorNumbers,
+                               const unsigned int amountOfProcessors) {
+   if (!processorNumbers || (amountOfProcessors == 0)) {
+     return false;
+   }
++#if defined(__FreeBSD__)
++  cpuset_t mask;
++#else
+   cpu_set_t mask;
++#endif
+   CPU_ZERO(&mask);
+ 
+   for (unsigned int processor = 0;
+       processor < amountOfProcessors;
+       processor++) {
+     CPU_SET(processorNumbers[processor], &mask);
+   }
+-#if defined(WEBRTC_ANDROID)
++#if defined(__FreeBSD__)
++  const int result = pthread_setaffinity_np(_thread,
++                             sizeof(mask),
++                             &mask);
++#elif defined(WEBRTC_ANDROID)
+   // Android.
+   const int result = syscall(__NR_sched_setaffinity,
+                              _pid,
+                              sizeof(mask),
+                              &mask);
+ #else
+   // "Normal" Linux.
+   const int result = sched_setaffinity(_pid,
+@@ -340,16 +370,20 @@ void ThreadPosix::Run()
+ #endif
+     // The event the Start() is waiting for.
+     _event->Set();
+ 
+     if (_setThreadName)
+     {
+ #ifdef WEBRTC_LINUX
+         prctl(PR_SET_NAME, (unsigned long)_name, 0, 0, 0);
++#elif defined(__NetBSD__)
++        pthread_setname_np(pthread_self(), "%s", (void *)_name);
++#elif defined(WEBRTC_BSD)
++        pthread_set_name_np(pthread_self(), _name);
+ #endif
+         WEBRTC_TRACE(kTraceStateInfo, kTraceUtility,-1,
+                      "Thread with name:%s started ", _name);
+     } else
+     {
+         WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+                      "Thread without name started");
+     }
+diff --git media/webrtc/trunk/src/video_engine/vie_defines.h media/webrtc/trunk/src/video_engine/vie_defines.h
+index 2cc18cc7..2c042a0 100644
+--- media/webrtc/trunk/src/video_engine/vie_defines.h
++++ media/webrtc/trunk/src/video_engine/vie_defines.h
+@@ -168,17 +168,17 @@ inline int ChannelId(const int moduleId) {
+ 
+   // Example: "Oct 10 2002 12:05:30 r".
+   #define BUILDINFO BUILDDATE TEXT(" ") BUILDTIME TEXT(" ") BUILDMODE
+   #define RENDER_MODULE_TYPE kRenderWindows
+ #endif
+ 
+ // Linux specific.
+ #ifndef WEBRTC_ANDROID
+-#ifdef WEBRTC_LINUX
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+   //  Build information macros.
+   #if defined(_DEBUG)
+   #define BUILDMODE "d"
+   #elif defined(DEBUG)
+   #define BUILDMODE "d"
+   #elif defined(NDEBUG)
+   #define BUILDMODE "r"
+   #else
+diff --git media/webrtc/trunk/src/voice_engine/voe_network_impl.cc media/webrtc/trunk/src/voice_engine/voe_network_impl.cc
+index 174abca..f8a2b2d 100644
+--- media/webrtc/trunk/src/voice_engine/voe_network_impl.cc
++++ media/webrtc/trunk/src/voice_engine/voe_network_impl.cc
+@@ -467,17 +467,17 @@ int VoENetworkImpl::SetSendTOS(int channel,
+                                int DSCP,
+                                int priority,
+                                bool useSetSockopt)
+ {
+     WEBRTC_TRACE(kTraceApiCall, kTraceVoice, VoEId(_shared->instance_id(), -1),
+                  "SetSendTOS(channel=%d, DSCP=%d, useSetSockopt=%d)",
+                  channel, DSCP, useSetSockopt);
+ 
+-#if !defined(_WIN32) && !defined(WEBRTC_LINUX) && !defined(WEBRTC_MAC)
++#if !defined(_WIN32) && !defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD) && !defined(WEBRTC_MAC)
+     _shared->SetLastError(VE_FUNC_NOT_SUPPORTED, kTraceWarning,
+         "SetSendTOS() is not supported on this platform");
+     return -1;
+ #endif
+ 
+ #ifndef WEBRTC_EXTERNAL_TRANSPORT
+     if (!_shared->statistics().Initialized())
+     {
+@@ -523,17 +523,17 @@ int VoENetworkImpl::SetSendTOS(int channel,
+         return -1;
+     }
+     if (channelPtr->ExternalTransport())
+     {
+         _shared->SetLastError(VE_EXTERNAL_TRANSPORT_ENABLED, kTraceError,
+             "SetSendTOS() external transport is enabled");
+         return -1;
+     }
+-#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+     useSetSockopt = true;
+     WEBRTC_TRACE(kTraceInfo, kTraceVoice, VoEId(_shared->instance_id(), -1),
+                  "   force useSetSockopt=true since there is no alternative"
+                  " implementation");
+ #endif
+ 
+     return channelPtr->SetSendTOS(DSCP, priority, useSetSockopt);
+ #else
+@@ -546,17 +546,17 @@ int VoENetworkImpl::SetSendTOS(int channel,
+ int VoENetworkImpl::GetSendTOS(int channel,
+                                int& DSCP,
+                                int& priority,
+                                bool& useSetSockopt)
+ {
+     WEBRTC_TRACE(kTraceApiCall, kTraceVoice, VoEId(_shared->instance_id(), -1),
+                  "GetSendTOS(channel=%d)", channel);
+ 
+-#if !defined(_WIN32) && !defined(WEBRTC_LINUX) && !defined(WEBRTC_MAC)
++#if !defined(_WIN32) && !defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD) && !defined(WEBRTC_MAC)
+     _shared->SetLastError(VE_FUNC_NOT_SUPPORTED, kTraceWarning,
+         "GetSendTOS() is not supported on this platform");
+     return -1;
+ #endif
+ #ifndef WEBRTC_EXTERNAL_TRANSPORT
+     if (!_shared->statistics().Initialized())
+     {
+         _shared->SetLastError(VE_NOT_INITED, kTraceError);
+diff --git media/webrtc/trunk/src/voice_engine/voice_engine_defines.h media/webrtc/trunk/src/voice_engine/voice_engine_defines.h
+index 7d4c729..4104719 100644
+--- media/webrtc/trunk/src/voice_engine/voice_engine_defines.h
++++ media/webrtc/trunk/src/voice_engine/voice_engine_defines.h
+@@ -434,41 +434,44 @@ namespace webrtc
+ 
+ #else
+ #define ANDROID_NOT_SUPPORTED(stat)
+ #endif  // #ifdef WEBRTC_LINUX
+ 
+ // *** WEBRTC_MAC ***
+ // including iPhone
+ 
+-#ifdef WEBRTC_MAC
++#if defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ 
+ #include <pthread.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sched.h>
+ #include <sys/time.h>
+ #include <time.h>
++
++#ifdef WEBRTC_MAC
+ #include <AudioUnit/AudioUnit.h>
+ #if !defined(MAC_IPHONE) && !defined(MAC_IPHONE_SIM)
+   #include <CoreServices/CoreServices.h>
+   #include <CoreAudio/CoreAudio.h>
+   #include <AudioToolbox/DefaultAudioOutput.h>
+   #include <AudioToolbox/AudioConverter.h>
+   #include <CoreAudio/HostTime.h>
+ #endif
++#endif // WEBRTC_MAC
+ 
+ #define DWORD unsigned long int
+ #define WINAPI
+ #define LPVOID void *
+ #define FALSE 0
+ #define TRUE 1
+ #define SOCKADDR_IN struct sockaddr_in
+ #define UINT unsigned int
+@@ -576,13 +579,13 @@ namespace webrtc
+ //  Defines
+ // ----------------------------------------------------------------------------
+ 
+   #define IPHONE_NOT_SUPPORTED()
+ #endif
+ 
+ #else
+ #define IPHONE_NOT_SUPPORTED()
+-#endif  // #ifdef WEBRTC_MAC
++#endif  // #if defined(WEBRTC_BSD) || defined(WEBRTC_MAC)
+ 
+ 
+ 
+ #endif // WEBRTC_VOICE_ENGINE_VOICE_ENGINE_DEFINES_H
+diff --git media/webrtc/trunk/third_party/libyuv/libyuv.gyp media/webrtc/trunk/third_party/libyuv/libyuv.gyp
+index 6f4eb9e..5f044ad 100644
+--- media/webrtc/trunk/third_party/libyuv/libyuv.gyp
++++ media/webrtc/trunk/third_party/libyuv/libyuv.gyp
+@@ -4,16 +4,17 @@
+ # that can be found in the LICENSE file in the root of the source
+ # tree. An additional intellectual property rights grant can be found
+ # in the file PATENTS.  All contributing project authors may
+ # be found in the AUTHORS file in the root of the source tree.
+ 
+ {
+   'variables': {
+      'use_system_libjpeg%': 0,
++     'yuv_disable_asm%': 0,
+   },
+   'targets': [
+     {
+       'target_name': 'libyuv',
+       'type': 'static_library',
+       'conditions': [
+          ['use_system_libjpeg==0', {
+           'dependencies': [
+@@ -43,16 +44,21 @@
+       ],
+       'direct_dependent_settings': {
+         'include_dirs': [
+           'include',
+           '.',
+         ],
+       },
+       'conditions': [
++        ['yuv_disable_asm==1', {
++          'defines': [
++            'YUV_DISABLE_ASM',
++          ],
++        }],
+         ['build_with_mozilla==1', {
+           'include_dirs': [
+             '$(DEPTH)/dist/include',
+           ],
+           'direct_dependent_settings': {
+             'include_dirs': [
+               '$(DEPTH)/dist/include',
+             ],
+diff --git media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
+index 338d0b7..2241d41 100644
+--- media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
++++ media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
+@@ -4,16 +4,17 @@
+ 
+ # Python 2.5 needs this for the with statement.
+ from __future__ import with_statement
+ 
+ import collections
+ import gyp
+ import gyp.common
+ import sys
++import platform
+ import os
+ import re
+ import shlex
+ 
+ generator_wants_sorted_dependencies = True
+ 
+ generator_default_variables = {
+ }
+@@ -111,30 +112,44 @@ endif
+ 
+ def ensure_directory_exists(path):
+   dir = os.path.dirname(path)
+   if dir and not os.path.exists(dir):
+     os.makedirs(dir)
+ 
+ def GetFlavor(params):
+   """Returns |params.flavor| if it's set, the system's default flavor else."""
++  system = platform.system().lower()
+   flavors = {
+-    'win32': 'win',
+-    'darwin': 'mac',
+-    'sunos5': 'solaris',
+-    'freebsd7': 'freebsd',
+-    'freebsd8': 'freebsd',
++    'microsoft': 'win',
++    'windows'  : 'win',
++    'darwin'   : 'mac',
++    'sunos'    : 'solaris',
++    'dragonfly': 'bsd',
++    'freebsd'  : 'bsd',
++    'netbsd'   : 'bsd',
++    'openbsd'  : 'bsd',
+   }
+-  flavor = flavors.get(sys.platform, 'linux')
+-  return params.get('flavor', flavor)
++
++  if 'flavor' in params:
++    return params['flavor']
++  if system.startswith('cygwin'):
++    return 'win'
++  if system in flavors:
++    return flavors[system]
++
++  return 'linux'
+ 
+ 
+ def CalculateVariables(default_variables, params):
++  flavor = GetFlavor(params)
++  if flavor == 'bsd':
++    flavor = platform.system().lower()
+   generator_flags = params.get('generator_flags', {})
+-  default_variables['OS'] = generator_flags.get('os', GetFlavor(params))
++  default_variables['OS'] = generator_flags.get('os', flavor)
+ 
+ 
+ def CalculateGeneratorInputInfo(params):
+   """Calculate the generator specific info that gets fed to input (called by
+   gyp)."""
+   generator_flags = params.get('generator_flags', {})
+   if generator_flags.get('adjust_static_libraries', False):
+     global generator_wants_static_library_dependencies_adjusted

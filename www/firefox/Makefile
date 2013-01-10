@@ -2,27 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	17.0.2
+DISTVERSION=	18.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
-		nss>=3.13.6_1:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.12.1:${PORTSDIR}/databases/sqlite3 \
+BUILD_DEPENDS=	nspr>=4.9.3:${PORTSDIR}/devel/nspr \
+		nss>=3.14.1:${PORTSDIR}/security/nss \
+		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
+OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
-CONFLICTS=	firefox-10.*
+CONFLICTS=	firefox-1[07].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
@@ -44,8 +45,8 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=	GSTREAMER PGO
-OPTIONS_DEFAULT=GIO
+OPTIONS_DEFINE=	GSTREAMER PGO WEBRTC
+OPTIONS_DEFAULT=GIO WEBRTC
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
@@ -53,7 +54,7 @@ OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
 
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-esr17
+WRKSRC:=	${WRKDIR}/mozilla-release
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
@@ -99,6 +100,8 @@ post-extract:
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
+	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
+		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 

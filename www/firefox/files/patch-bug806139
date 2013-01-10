@@ -11,10 +11,10 @@
  #ifdef MOZ_MEDIA_PLUGINS
 --- content/html/content/src/nsHTMLMediaElement.cpp~
 +++ content/html/content/src/nsHTMLMediaElement.cpp
-@@ -2114,12 +2114,14 @@ const char nsHTMLMediaElement::gH264Type
-   "video/quicktime",
- };
+@@ -2135,12 +2135,14 @@ nsHTMLMediaElement::IsWebMType(const nsA
+ #endif
  
+ #if defined(MOZ_GSTREAMER) || defined(MOZ_WIDGET_GONK)
 -char const *const nsHTMLMediaElement::gH264Codecs[7] = {
 +char const *const nsHTMLMediaElement::gH264Codecs[9] = {
    "avc1.42E01E",

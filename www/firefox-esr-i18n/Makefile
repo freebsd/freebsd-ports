@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	10.0.11
+PORTVERSION=	17.0.2
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -14,7 +14,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_FIREFOX=	10
+USE_FIREFOX=	17
 USE_XPI=	firefox linux-firefox
 LATEST_LINK=	firefox-esr-i18n
 
@@ -86,7 +86,7 @@ post-patch:
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
 
 List-Langs:
-	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}esr/linux-i686/xpi"|\
+	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/${MASTER_SITE_SUBDIR}"|\
 		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1\n"}' |\
 		${AWK} 'BEGIN{ORS=" "}{print $1}END{printf "\nNumber of languages: %d\n",NR}'
 
