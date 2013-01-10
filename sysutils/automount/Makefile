@@ -1,14 +1,11 @@
-# New ports collection Makefile for: automount
-# Date created:                      04 March 2012
-# Whom:                              Slawomir Wojciech Wojtczak <vermaden@interia.pl>
-#
+# Created by: Slawomir Wojciech Wojtczak <vermaden@interia.pl>
 # $FreeBSD$
-#
 
 PORTNAME=     automount
-PORTVERSION=  1.3.1
+PORTVERSION=  1.4.1
 CATEGORIES=   sysutils
-MASTER_SITES= https://raw.github.com/vermaden/automount/master/
+MASTER_SITES= https://raw.github.com/vermaden/automount/master/ \
+		LOCAL/bdrewery/${PORTNAME}/
 
 MAINTAINER=   vermaden@interia.pl
 COMMENT=      FreeBSD's devd(8) based automount solution
