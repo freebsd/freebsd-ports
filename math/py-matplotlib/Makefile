@@ -1,15 +1,10 @@
-# ex:ts=8
-# Ports collection makefile for:	py-matplotlib
-# Date created:			Aug 4, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	matplotlib
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	math python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	http://cloud.github.com/downloads/matplotlib/matplotlib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mainland@apeiron.net
@@ -22,7 +17,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -91,8 +86,6 @@ WXAGG_BACKEND=	True
 WXAGG_BACKEND=	False
 .endif
 
-.include <bsd.port.pre.mk>
-
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-extract:
 	${CHMOD} -R ga+r ${WRKDIR}
@@ -119,4 +112,4 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
