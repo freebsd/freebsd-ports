@@ -1,4 +1,5 @@
 bin/c++-analyzer
+bin/c-index-test
 bin/ccc-analyzer
 bin/clang
 bin/clang++
@@ -20,9 +21,12 @@ include/clang/AST/ASTContext.h
 include/clang/AST/ASTDiagnostic.h
 include/clang/AST/ASTImporter.h
 include/clang/AST/ASTMutationListener.h
+include/clang/AST/ASTUnresolvedSet.h
 include/clang/AST/ASTVector.h
 include/clang/AST/Attr.h
+include/clang/AST/AttrDump.inc
 include/clang/AST/AttrImpl.inc
+include/clang/AST/AttrIterator.h
 include/clang/AST/Attrs.inc
 include/clang/AST/BaseSubobject.h
 include/clang/AST/BuiltinTypes.def
@@ -112,6 +116,7 @@ include/clang/Analysis/CFG.h
 include/clang/Analysis/CFGStmtMap.h
 include/clang/Analysis/CallGraph.h
 include/clang/Analysis/DomainSpecific/CocoaConventions.h
+include/clang/Analysis/DomainSpecific/ObjCNoReturn.h
 include/clang/Analysis/FlowSensitive/DataflowSolver.h
 include/clang/Analysis/FlowSensitive/DataflowValues.h
 include/clang/Analysis/ProgramPoint.h
@@ -146,6 +151,8 @@ include/clang/Basic/DiagnosticGroups.inc
 include/clang/Basic/DiagnosticIDs.h
 include/clang/Basic/DiagnosticIndexName.inc
 include/clang/Basic/DiagnosticLexKinds.inc
+include/clang/Basic/DiagnosticOptions.def
+include/clang/Basic/DiagnosticOptions.h
 include/clang/Basic/DiagnosticParseKinds.inc
 include/clang/Basic/DiagnosticSemaKinds.inc
 include/clang/Basic/DiagnosticSerializationKinds.inc
@@ -168,8 +175,10 @@ include/clang/Basic/OpenCL.h
 include/clang/Basic/OpenCLExtensions.def
 include/clang/Basic/OperatorKinds.def
 include/clang/Basic/OperatorKinds.h
+include/clang/Basic/OperatorPrecedence.h
 include/clang/Basic/PartialDiagnostic.h
 include/clang/Basic/PrettyStackTrace.h
+include/clang/Basic/Sanitizers.def
 include/clang/Basic/SourceLocation.h
 include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
@@ -216,30 +225,29 @@ include/clang/Edit/EditedSource.h
 include/clang/Edit/EditsReceiver.h
 include/clang/Edit/FileOffset.h
 include/clang/Edit/Rewriters.h
+include/clang/Format/Format.h
 include/clang/Frontend/ASTConsumers.h
 include/clang/Frontend/ASTUnit.h
 include/clang/Frontend/ChainedDiagnosticConsumer.h
 include/clang/Frontend/ChainedIncludesSource.h
+include/clang/Frontend/CodeGenOptions.def
 include/clang/Frontend/CodeGenOptions.h
 include/clang/Frontend/CommandLineSourceLoc.h
 include/clang/Frontend/CompilerInstance.h
 include/clang/Frontend/CompilerInvocation.h
 include/clang/Frontend/DependencyOutputOptions.h
-include/clang/Frontend/DiagnosticOptions.h
 include/clang/Frontend/DiagnosticRenderer.h
 include/clang/Frontend/FrontendAction.h
 include/clang/Frontend/FrontendActions.h
 include/clang/Frontend/FrontendDiagnostic.h
 include/clang/Frontend/FrontendOptions.h
 include/clang/Frontend/FrontendPluginRegistry.h
-include/clang/Frontend/HeaderSearchOptions.h
 include/clang/Frontend/LangStandard.h
 include/clang/Frontend/LangStandards.def
 include/clang/Frontend/LayoutOverrideSource.h
 include/clang/Frontend/LogDiagnosticPrinter.h
 include/clang/Frontend/MigratorOptions.h
 include/clang/Frontend/MultiplexConsumer.h
-include/clang/Frontend/PreprocessorOptions.h
 include/clang/Frontend/PreprocessorOutputOptions.h
 include/clang/Frontend/SerializedDiagnosticPrinter.h
 include/clang/Frontend/TextDiagnostic.h
@@ -254,6 +262,7 @@ include/clang/Lex/DirectoryLookup.h
 include/clang/Lex/ExternalPreprocessorSource.h
 include/clang/Lex/HeaderMap.h
 include/clang/Lex/HeaderSearch.h
+include/clang/Lex/HeaderSearchOptions.h
 include/clang/Lex/LexDiagnostic.h
 include/clang/Lex/Lexer.h
 include/clang/Lex/LiteralSupport.h
@@ -262,12 +271,15 @@ include/clang/Lex/ModuleLoader.h
 include/clang/Lex/ModuleMap.h
 include/clang/Lex/MultipleIncludeOpt.h
 include/clang/Lex/PPCallbacks.h
+include/clang/Lex/PPConditionalDirectiveRecord.h
+include/clang/Lex/PPMutationListener.h
 include/clang/Lex/PTHLexer.h
 include/clang/Lex/PTHManager.h
 include/clang/Lex/Pragma.h
 include/clang/Lex/PreprocessingRecord.h
 include/clang/Lex/Preprocessor.h
 include/clang/Lex/PreprocessorLexer.h
+include/clang/Lex/PreprocessorOptions.h
 include/clang/Lex/ScratchBuffer.h
 include/clang/Lex/Token.h
 include/clang/Lex/TokenConcatenation.h
@@ -301,6 +313,7 @@ include/clang/Sema/IdentifierResolver.h
 include/clang/Sema/Initialization.h
 include/clang/Sema/LocInfoType.h
 include/clang/Sema/Lookup.h
+include/clang/Sema/MultiplexExternalSemaSource.h
 include/clang/Sema/ObjCMethodList.h
 include/clang/Sema/Overload.h
 include/clang/Sema/Ownership.h
@@ -375,10 +388,13 @@ include/clang/Tooling/ArgumentsAdjusters.h
 include/clang/Tooling/CommonOptionsParser.h
 include/clang/Tooling/CompilationDatabase.h
 include/clang/Tooling/CompilationDatabasePluginRegistry.h
+include/clang/Tooling/FileMatchTrie.h
 include/clang/Tooling/JSONCompilationDatabase.h
 include/clang/Tooling/Refactoring.h
 include/clang/Tooling/RefactoringCallbacks.h
 include/clang/Tooling/Tooling.h
+lib/clang/%%CLANG_RELEASE%%/include/__wmmintrin_aes.h
+lib/clang/%%CLANG_RELEASE%%/include/__wmmintrin_pclmul.h
 lib/clang/%%CLANG_RELEASE%%/include/ammintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/arm_neon.h
 lib/clang/%%CLANG_RELEASE%%/include/emmintrin.h
@@ -403,6 +419,7 @@ lib/libclangBasic.a
 lib/libclangCodeGen.a
 lib/libclangDriver.a
 lib/libclangEdit.a
+lib/libclangFormat.a
 lib/libclangFrontend.a
 lib/libclangFrontendTool.a
 lib/libclangLex.a
@@ -418,28 +435,7 @@ lib/libclangTooling.a
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
-%%PORTDOCS%%%%DOCSDIR%%/html/AddressSanitizer.html
-%%PORTDOCS%%%%DOCSDIR%%/html/AnalyzerRegions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/AutomaticReferenceCounting.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ClangPlugins.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ClangTools.html
-%%PORTDOCS%%%%DOCSDIR%%/html/DriverInternals.html
-%%PORTDOCS%%%%DOCSDIR%%/html/HowToSetupToolingForLLVM.html
-%%PORTDOCS%%%%DOCSDIR%%/html/InternalsManual.html
-%%PORTDOCS%%%%DOCSDIR%%/html/IntroductionToTheClangAST.html
-%%PORTDOCS%%%%DOCSDIR%%/html/JSONCompilationDatabase.html
-%%PORTDOCS%%%%DOCSDIR%%/html/LanguageExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/LibASTMatchers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LibASTMatchersReference.html
-%%PORTDOCS%%%%DOCSDIR%%/html/LibTooling.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ObjectiveCLiterals.html
-%%PORTDOCS%%%%DOCSDIR%%/html/PCHInternals.html
-%%PORTDOCS%%%%DOCSDIR%%/html/PTHInternals.html
-%%PORTDOCS%%%%DOCSDIR%%/html/RAVFrontendAction.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ThreadSanitizer.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Tooling.html
-%%PORTDOCS%%%%DOCSDIR%%/html/UsersManual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
@@ -469,6 +465,7 @@ lib/libclangTooling.a
 @dirrm include/clang/Lex
 @dirrm include/clang/FrontendTool
 @dirrm include/clang/Frontend
+@dirrm include/clang/Format
 @dirrm include/clang/Edit
 @dirrm include/clang/Driver
 @dirrm include/clang/Config

@@ -2,11 +2,12 @@
 #
 
 PORTNAME=	dragonegg46
-PORTVERSION=	3.2.r${SVN_REV}
+PORTVERSION=	3.3.r${SVN_REV}
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMESUFFIX=	-devel
+DISTNAME=	dragonegg-${PORTVERSION}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	GCC plugin to use the LLVM backend
@@ -15,8 +16,6 @@ COMMENT=	GCC plugin to use the LLVM backend
 BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
 RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
 		llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
-
-BROKEN=		distinfo is out of date
 
 OPTIONS_DEFINE=	DOCS
 
@@ -53,9 +52,9 @@ do-fetch:
 	    http://llvm.org/svn/llvm-project/dragonegg/trunk \
 	    ${WRKDIR}/${DISTNAME}
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
-.if ${USER} == brooks
+.if ${USER} == brooks || ${USER} == bed22
 	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
-	    freefall.freebsd.org:public_distfiles/
+	    brooks@freefall.freebsd.org:public_distfiles/
 .endif
 .endif
 
