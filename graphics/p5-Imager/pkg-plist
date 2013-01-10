@@ -12,7 +12,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/ExtUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/CUR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/GIF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/ICO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/JPEG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/PNG.pm
@@ -30,6 +29,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/T1.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Type1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Wrap.pm
@@ -45,6 +45,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Regops.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Security.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Threads.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transform.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transformations.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Tutorial.pod
@@ -80,8 +81,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/GIF/GIF.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/GIF/GIF.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO/ICO.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO/ICO.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/JPEG/JPEG.bs
