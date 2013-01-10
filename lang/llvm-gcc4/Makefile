@@ -23,7 +23,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFLICTS=	llvm-devel-[0-9]* llvm-2.[0-5]*
 
 DEPRECATED=	Development ended upstream.  Switch to dragonegg once available
-EXPIRATION_DATE=	2012-06-01
+EXPIRATION_DATE=	2013-02-01
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
