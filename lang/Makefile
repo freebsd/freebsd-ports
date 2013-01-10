@@ -49,6 +49,7 @@
     SUBDIR += dmd
     SUBDIR += dmd2
     SUBDIR += dragonegg-devel46
+    SUBDIR += dragonegg46
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elisp-manual
