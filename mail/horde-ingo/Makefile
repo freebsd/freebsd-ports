@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
