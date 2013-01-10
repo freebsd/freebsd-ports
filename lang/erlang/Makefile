@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
