@@ -18,8 +18,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		mpfr:${PORTSDIR}/math/mpfr
-BUILD_DEPENDS=	llvm>=2.9:${PORTSDIR}/devel/llvm
-RUN_DEPENDS=	llvm>=2.9:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm
+RUN_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm
 
 MAN1=		pure.1
 SUB_FILES=	pkg-message
