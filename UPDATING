@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130110:
+  AFFECTS: everyone using csup(1), net/cvsup, or cvs(1) to update the
+  ports tree
+  AUTHOR: wblock@FreeBSD.org
+
+  On February 28, 2013, the CVSup and CVS services will end:
+  http://lists.freebsd.org/pipermail/freebsd-ports-announce/2012-September/000026.html
+
+  csup(1), net/cvsup, and cvs(1) will no longer be able to update the
+  ports tree.  Please switch to one of the alternate update methods of
+  portsnap(8) or devel/subversion before that time.  The Handbook has
+  information on using these update methods:
+  http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html
+
 20130108:
   AFFECTS: users of devel/libvanessa_socket, mail/perdition
   AUTHOR: jhale@FreeBSD.org
