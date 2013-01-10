@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# Wrapper for the real fetchmailconf.  Checks whether Python and Tkinter are
+# installed, and runs the real fetchmailconf or alerts the user, as appropriate.
+#
+# $FreeBSD$
+
+LOCALBASE=%%LOCALBASE%%
+
+if [ -x $LOCALBASE/bin/python ] ; then
+	PYTHON_VERSION=python$(${LOCALBASE}/bin/python -c 'import sys; print sys.version[:3]' 2>/dev/null)
+	if [ -e ${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so ]; then
+		exec ${LOCALBASE}/libexec/fetchmailconf.py "$@"
+	fi
+fi
+cat <<EOF
+The fetchmailconf program requires Python with Tkinter, which does
+not appear to be installed on this system.  Python can be found in
+the FreeBSD Ports Collection in lang/python, and Tkinter for Python
+can be found in x11-toolkits/py-tkinter.
+EOF
+exit 1
+#!/bin/sh
+#
+# Wrapper for the real fetchmailconf.  Checks whether Python and Tkinter are
+# installed, and runs the real fetchmailconf or alerts the user, as appropriate.
+#
+# $FreeBSD$
+
+LOCALBASE=%%LOCALBASE%%
+
+if [ -x $LOCALBASE/bin/python ] ; then
+	PYTHON_VERSION=python$(${LOCALBASE}/bin/python -c 'import sys; print sys.version[:3]' 2>/dev/null)
+	if [ -e ${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so ]; then
+		exec ${LOCALBASE}/libexec/fetchmailconf.py "$@"
+	fi
+fi
+cat <<EOF
+The fetchmailconf program requires Python with Tkinter, which does
+not appear to be installed on this system.  Python can be found in
+the FreeBSD Ports Collection in lang/python, and Tkinter for Python
+can be found in x11-toolkits/py-tkinter.
+EOF
+exit 1

@@ -1,19 +1,7 @@
 @comment $FreeBSD$
 bin/fetchmail
 bin/fetchmailconf
-libexec/fetchmailconf.py
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/FEATURES
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/NOTES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%NTLMDOCS%%%%DOCSDIR%%/README.NTLM
-%%PORTDOCS%%%%DOCSDIR%%/README.SSL
-%%PORTDOCS%%%%DOCSDIR%%/design-notes.html
-%%PORTDOCS%%%%DOCSDIR%%/esrs-design-notes.html
-%%PORTDOCS%%%%DOCSDIR%%/fetchmail-FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/fetchmail-features.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NOX11%%libexec/fetchmailconf.py
 %%NLS%%share/locale/ca/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/da/LC_MESSAGES/fetchmail.mo
@@ -37,9 +25,13 @@ libexec/fetchmailconf.py
 %%NLS%%share/locale/tr/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fetchmail.mo
+%%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.py
+%%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.pyc
+%%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.pyo
 @exec /usr/bin/install -d -m 755 -o fetchmail -g fetchmail /var/run/fetchmail
 @unexec if cmp -s %D/etc/fetchmailrc.sample %D/etc/fetchmailrc; then rm -f %D/etc/fetchmailrc; fi
 etc/fetchmailrc.sample
 @exec if [ ! -f %D/etc/fetchmailrc ] ; then cp -p %D/%F %B/fetchmailrc; fi
-@unexec rm -f /var/run/fetchmail/fetchmail.pid 2>/dev/null || true
-@unexec rmdir /var/run/fetchmail 2>/dev/null || true
+@cwd /var/run
+@unexec rm -f %D/fetchmail/fetchmail.pid 2>/dev/null || true
+@dirrmtry fetchmail
