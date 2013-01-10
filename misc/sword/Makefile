@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--without-curl
 LIB_DEPENDS+=	clucene:${PORTSDIR}/textproc/clucene \
 		icudata:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--with-clucene --with-icu
-PLIST_SUB+=		ICU=""
+PLIST_SUB+=		ICU="" ICUVER="`${LOCALBASE}/bin/icu-config --version`"
 .else
 CONFIGURE_ARGS+=	--without-clucene --without-icu
 PLIST_SUB+=		ICU="@comment "
