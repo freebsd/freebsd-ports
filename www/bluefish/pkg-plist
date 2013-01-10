@@ -84,6 +84,11 @@ share/applications/bluefish.desktop
 %%DATADIR%%/bluefish_splash.png
 %%DATADIR%%/default_accelmap
 %%DATADIR%%/encodings
+%%DATADIR%%/lorem-ipsum-generator
+%%DATADIR%%/lipsum/__init__.py
+%%DATADIR%%/lipsum/data/dictionary.txt
+%%DATADIR%%/lipsum/data/lipsum.xml
+%%DATADIR%%/lipsum/data/sample.txt
 %%DATADIR%%/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 %%DATADIR%%/plugins/zencoding/__init__.py
 %%DATADIR%%/plugins/zencoding/html_matcher.py
@@ -412,6 +417,8 @@ share/xml/bluefish/catalog.xml
 @dirrm %%DATADIR%%/plugins/htmlbar/ui
 @dirrm %%DATADIR%%/plugins/htmlbar
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lipsum/data
+@dirrm %%DATADIR%%/lipsum
 @dirrm %%DATADIR%%/bflib
 @dirrm %%DATADIR%%/bflang
 @dirrm %%DATADIR%%

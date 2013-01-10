@@ -1,14 +1,8 @@
-# New ports collection makefile for:   bluefish
-# Date created:			23 January 2003
-# Whom:				Koop Mast <einekoai@chello.nl>
-#
+# Created by: Koop Mast <einekoai@chello.nl>
 # $FreeBSD$
-#   $MCom: ports/www/bluefish/Makefile,v 1.6 2007/10/11 03:20:30 mezz Exp $
-#
 
 PORTNAME=	bluefish
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.2.3
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/ \
@@ -38,18 +32,22 @@ CONFIGURE_ARGS=	--with-gtk2 \
 
 MAN1=		bluefish.1
 
-OPTIONS=	DEBUG "Enable debugging output" Off \
-		TIDY "Include Tidy HTML cleanup program" Off \
-		WEBLINT "Include Weblint syntax and style checker" On
+OPTIONS_DEFINE=	DEBUG TIDY WEBLINT
+
+DEBUG_DESC=	Enable debugging output
+TIDY_DESC=	Include Tidy HTML cleanup program
+WEBLINT_DESC=	Include Weblint syntax and style checker
+
+OPTIONS_DEFAULT=	WEBLINT
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
 .endif
 
-# Turns debugging output on
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debugging-output
 .endif
 
@@ -61,10 +59,11 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
-.if defined(WITH_TIDY)
-RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
+.if ${PORT_OPTIONS:MTIDY}
+RUN_DEPENDS+=	tidy4:${PORTSDIR}/www/tidy
 .endif
-.if !defined(WITHOUT_WEBLINT)
+
+.if ${PORT_OPTIONS:MWEBLINT}
 RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
 .endif
 
@@ -72,7 +71,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/share/mime
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/bflang
 	${INSTALL_DATA} ${WRKSRC}/data/bflang/sample.bflang2 ${DOCSDIR}/bflang
