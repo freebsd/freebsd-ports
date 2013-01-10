@@ -24,7 +24,10 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-*
+CONFLICTS=	llvm-[23]* llvm-devel-[23]* llvm31-3*
+
+DEPRECATED=     Exists to support lang/llvm-gcc4 port which will be removed
+EXPIRATION_DATE=        2013-02-01
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
