@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- tools/clang/lib/Headers/Makefile.orig
++++ tools/clang/lib/Headers/Makefile
+@@ -13,7 +13,7 @@
+ # FIXME: Get version from a common place.
+ HeaderDir := $(PROJ_OBJ_ROOT)/$(BuildMode)/lib/clang/1.0/include
+ 
+-HEADERS := $(notdir $(wildcard $(PROJ_SRC_DIR)/*.h))
++HEADERS := $(notdir $(wildcard $(PROJ_SRC_DIR)/*mm*.h))
+ 
+ OBJHEADERS := $(addprefix $(HeaderDir)/, $(HEADERS))
+ 
