@@ -1,31 +1,26 @@
-# New ports collection makefile for: py-mnemosyne
-# Date created:		11 Jan 2008
-# Whom:			Beech Rintoul <beech@FreeBSD.org>
-#
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mnemosyne
-PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTVERSION=	2.2a
 CATEGORIES=	games python
-MASTER_SITES=	SF/${PORTNAME}-proj/${PORTNAME}/${PORTNAME:S/^m/M/}-${PORTVERSION}
+MASTER_SITES=	SF/mnemosyne-proj/${PORTNAME}/${PORTNAME}-2.2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	Mnemosyne-${DISTVERSION}
 
 MAINTAINER=	marekrud@gmail.com
 COMMENT=	Flash-card tool which optimises your learning process
 
-RUN_DEPENDS=	py*-game>=0:${PORTSDIR}/devel/py-game \
-		py*-qt>=0:${PORTSDIR}/x11-toolkits/py-qt \
-		${PYXML}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4>=4.5:${PORTSDIR}/devel/py-qt4 \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1.1:${PORTSDIR}/math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2:${PORTSDIR}/www/py-cherrypy
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_EGG=	Mnemosyne-${PORTVERSION}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
+PYDISTUTILS_PKGNAME=	Mnemosyne
 
 post-install:
+	@cd ${WRKSRC}/mo && ${COPYTREE_SHARE} . ${PREFIX}/share/locale
 	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/icons
