@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	53
+WANT_MYSQL_VER=	53m
 .endif
 
 .if !defined(MARIADB_SCRIPTS_SLAVE)
@@ -42,7 +42,7 @@ GROUPS=		mysql
 
 OPTIONS_DEFINE+=	STATIC SSL OPENSSL
 OPTIONS_DEFAULT+=	SSL
-STATIC_DESC=	Build statically linked executables (not on 9.x)
+STATIC_DESC=	Statically link executables (not on 9.x)
 SSL_DESC=	Activate SSL support
 OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
 
