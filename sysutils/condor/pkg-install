@@ -1,0 +1,37 @@
+#!/bin/sh
+
+##########################################################################
+#   Script description:
+#       Install script for Condor scheduler
+#
+#   Arguments:
+#       $1 = port name
+#       $2 = mode (e.g. 'POST-INSTALL')
+#
+#   Returns:
+#       Standard
+#
+#   History:
+#   Date        Name        Modification
+#   2011-11-22  J Bacon     Derived from Ganglia pkg-install
+##########################################################################
+
+u=condor
+g=condor
+
+# Place condor on a large partition so it can accommodate output files from
+# jobs.  The default /var/db/condor could result in /var filling up with
+# job output.
+homedir=/home/condor
+
+case $2 in
+POST-INSTALL)
+    for dir in log spool config execute; do
+	mkdir -p $homedir/$dir
+    done
+    chown -Rh $u:$g $homedir
+    # Insurance in case pkg-deinstall was not executed
+    /bin/rm -f /var/db/condor
+    /bin/ln -s $homedir /var/db
+    ;;
+esac

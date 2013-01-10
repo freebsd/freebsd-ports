@@ -16,22 +16,15 @@
 #   2011-11-22  J Bacon     Derived from Ganglia pkg-install
 ##########################################################################
 
-u=condor
-g=condor
-homedir=/var/db/condor
-
 case $2 in
-POST-INSTALL)
-    for dir in log spool config execute; do
-	mkdir -p $homedir/$dir
-    done
-    chown -Rh $u:$g $homedir
-    ;;
-
 DEINSTALL)
-    for dir in log spool config execute; do
-	rmdir $homedir/$dir 2>/dev/null
-    done
-    ;;
+    # Old log, spool, etc. in /home/condor are left in place.
+    # This could leave incompatible
+    # older files in place when Condor is upgraded.  Not sure how backward
+    # compatible condor versions are with respect to logs, etc.  For now,
+    # the syadmin is left to deal with this.
 
+    # Remove the link to /home/condor
+    /bin/rm -f /var/db/condor
+    ;;
 esac
