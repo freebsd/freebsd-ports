@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -15,6 +15,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-devel-[23]* llvm-etoile-2*
+CONFLICTS=	llvm-devel-[23]* llvm29-* llvm31-*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -46,7 +47,7 @@ LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
-		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
+		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
@@ -95,25 +96,31 @@ CONFIGURE_ARGS+=	--with-optimize-option=-O2
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|${PORTVERSION}svn|${PORTVERSION}|g' \
+	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
-.if empty(PORT_OPTIONS:MDOCS)
 post-build:
-	@cd ${WRKSRC}/docs/CommandGuide && ${GMAKE} ${MAN1}
+	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
+.if ${PORT_OPTIONS:MDOCS}
+	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx html
 .endif
 
 post-install:
 	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
 	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
-.if empty(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/html
+	find ${WRKSRC}/docs/_build/html -type f | \
+	    xargs -I _DOC_ ${INSTALL_DATA} _DOC_ ${DOCSDIR}/html/
+.endif
 .for man in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/docs/CommandGuide/${man} \
+	@${INSTALL_MAN} ${WRKSRC}/docs/_build/man/${man} \
 	     ${MANPREFIX}/man/man1/
 .endfor
-.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
