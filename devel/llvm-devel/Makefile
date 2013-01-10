@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	3.2.r${SVN_REV}
-PORTREVISON=	1
+DISTVERSION=	3.3.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -16,6 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
+BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
@@ -23,9 +23,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-
-CONFLICTS=	llvm-[23]* llvm-etoile-2*
+CONFLICTS=	llvm-[23]* llvm29-* llvm31-*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -50,7 +48,7 @@ ASSERTS_DESC=	Enable assertions (thread unsafe)
 LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
-		llvm-bcanalyzer.1 llvm-cov.1 llvm-config.1 llvm-diff.1 \
+		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
 
@@ -116,9 +114,9 @@ do-fetch:
 	    http://llvm.org/svn/llvm-project/llvm/trunk ${WRKSRC}
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 	echo "SVN_REV=	${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
-.if ${USER} == brooks
+.if ${USER} == brooks || ${USER} == bed22
 	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
-	    freefall.freebsd.org:public_distfiles/
+	    brooks@freefall.freebsd.org:public_distfiles/
 .endif
 .endif
 
