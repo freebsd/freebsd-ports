@@ -1,0 +1,30 @@
+--- lib/chef/provider/service/freebsd.rb.orig	2012-09-10 11:43:08.000000000 +0900
++++ lib/chef/provider/service/freebsd.rb	2012-09-10 11:52:26.000000000 +0900
+@@ -42,6 +42,9 @@
+             return
+           end
+           Chef::Log.debug("#{@current_resource} found at #{@init_command}")
++          if @new_resource.supports[:status] && !@new_resource.status_command
++            @new_resource.status_command "#{@init_command} onestatus"
++          end
+           determine_current_status!
+           # Default to disabled if the service doesn't currently exist
+           # at all 
+@@ -49,7 +52,7 @@
+           if ::File.exists?("/etc/rc.conf") && var_name
+             read_rc_conf.each do |line|
+               case line
+-              when /#{Regexp.escape(var_name)}="(\w+)"/
++              when /^\s*#{Regexp.escape(var_name)}="(\w+)"/
+                 @enabled_state_found = true
+                 if $1 =~ /[Yy][Ee][Ss]/
+                   @current_resource.enabled true
+@@ -156,7 +159,7 @@
+         def set_service_enable(value)
+           lines = read_rc_conf
+           # Remove line that set the old value
+-          lines.delete_if { |line| line =~ /#{Regexp.escape(service_enable_variable_name)}/ }
++          lines.delete_if { |line| line =~ /^\s*#{Regexp.escape(service_enable_variable_name)}="(\w+)"/ }
+           # And append the line that sets the new value at the end
+           lines << "#{service_enable_variable_name}=\"#{value}\""
+           write_rc_conf(lines)

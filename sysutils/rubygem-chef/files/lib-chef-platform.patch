@@ -1,0 +1,11 @@
+--- lib/chef/platform.rb.orig	2010-11-02 15:48:57.000000000 +0900
++++ lib/chef/platform.rb	2010-11-02 15:49:12.000000000 +0900
+@@ -50,7 +50,7 @@
+           :freebsd => {
+             :default => {
+               :group   => Chef::Provider::Group::Pw,
+-              :package => Chef::Provider::Package::Freebsd,
++              :package => Chef::Provider::Package::PkgUpgrade,
+               :service => Chef::Provider::Service::Freebsd,
+               :user    => Chef::Provider::User::Pw,
+               :cron    => Chef::Provider::Cron

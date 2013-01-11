@@ -1,0 +1,10 @@
+--- lib/chef/providers.rb.org	2011-11-21 17:43:12.194699060 +0900
++++ lib/chef/providers.rb	2011-11-21 15:56:58.023058089 +0900
+@@ -54,6 +54,7 @@
+ require 'chef/provider/package/freebsd'
+ require 'chef/provider/package/macports'
+ require 'chef/provider/package/pacman'
++require 'chef/provider/package/pkgupgrade'
+ require 'chef/provider/package/portage'
+ require 'chef/provider/package/rpm'
+ require 'chef/provider/package/rubygems'
