@@ -798,9 +798,9 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
         <name>squid</name>
-        <range><lt>3.1.22</lt></range>
-        <range><ge>3.2</ge><lt>3.2.4</lt></range>
-        <range><ge>3.3</ge><lt>3.3.0.2</lt></range>
+        <range><lt>3.1.23</lt></range>
+        <range><ge>3.2</ge><lt>3.2.6</lt></range>
+        <range><ge>3.3</ge><lt>3.3.0.3</lt></range>
       </package>
     </affects>
     <description>
@@ -825,6 +825,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-12-17</discovery>
       <entry>2012-12-28</entry>
+      <modified>2013-01-11</modified>
     </dates>
   </vuln>
 
