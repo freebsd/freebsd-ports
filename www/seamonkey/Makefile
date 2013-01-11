@@ -104,6 +104,7 @@ EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/components/enigmail.js \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile
 .endif
 .endif
 
