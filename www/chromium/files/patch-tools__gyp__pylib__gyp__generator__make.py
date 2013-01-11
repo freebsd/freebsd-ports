@@ -1,6 +1,6 @@
---- tools/gyp/pylib/gyp/generator/make.py.orig	2012-10-31 21:04:03.000000000 +0200
-+++ tools/gyp/pylib/gyp/generator/make.py	2012-11-07 15:22:38.000000000 +0200
-@@ -87,7 +87,7 @@
+--- tools/gyp/pylib/gyp/generator/make.py.orig	2012-11-27 10:03:58.000000000 +0200
++++ tools/gyp/pylib/gyp/generator/make.py	2012-12-10 22:26:33.000000000 +0200
+@@ -86,7 +86,7 @@
    else:
      operating_system = flavor
      if flavor == 'android':
@@ -9,8 +9,15 @@
      default_variables.setdefault('OS', operating_system)
      default_variables.setdefault('SHARED_LIB_SUFFIX', '.so')
      default_variables.setdefault('SHARED_LIB_DIR','$(builddir)/lib.$(TOOLSET)')
-@@ -269,13 +269,13 @@
- # in gyp's make.py where ARFLAGS.host etc. is computed.
+@@ -265,19 +265,19 @@
+ CFLAGS.target ?= $(CFLAGS)
+ CXX.target ?= %(CXX.target)s
+ CXXFLAGS.target ?= $(CXXFLAGS)
+-LINK.target ?= %(LINK.target)s
++LINK.target ?= %(CXX.target)s
+ LDFLAGS.target ?= $(LDFLAGS)
+ AR.target ?= $(AR)
+ 
  # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
  # to replicate this environment fallback in make as well.
 -CC.host ?= %(CC.host)s
@@ -24,13 +31,13 @@
 +CFLAGS.host ?= $(CFLAGS)
 +CXX.host ?= $(CXX)
 +CXXFLAGS.host ?= $(CXXFLAGS)
-+LINK.host ?= $(LINK)
++LINK.host ?= $(CXX)
 +LDFLAGS.host ?= $(LDFLAGS)
 +AR.host ?= $(AR)
- ARFLAGS.host := %(ARFLAGS.host)s
  
  # Define a dir function that can handle spaces.
-@@ -1770,7 +1770,7 @@
+ # http://www.gnu.org/software/make/manual/make.html#Syntax-of-Functions
+@@ -1782,7 +1782,7 @@
        return modules
  
      # Retrieve the default value of 'SHARED_LIB_SUFFIX'

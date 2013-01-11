@@ -5,7 +5,7 @@
  }
  
 -#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_WIN) && !defined OS_ANDROID
-+#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_WIN) && !defined OS_ANDROID && !defined(OS_FREEBSD)
++#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_WIN) && !defined(OS_ANDROID) && !defined(OS_FREEBSD)
  LocationProviderBase* NewSystemLocationProvider() {
    return NULL;
  }

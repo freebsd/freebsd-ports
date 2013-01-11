@@ -1,6 +1,6 @@
---- media/media.gyp.orig	2012-04-25 10:01:21.000000000 +0300
-+++ media/media.gyp	2012-04-30 00:26:41.000000000 +0300
-@@ -341,7 +341,7 @@
+--- media/media.gyp.orig	2012-11-27 10:01:14.000000000 +0200
++++ media/media.gyp	2012-11-28 22:11:36.000000000 +0200
+@@ -470,7 +470,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
@@ -9,12 +9,12 @@
            'variables': {
              'conditions': [
                ['sysroot!=""', {
-@@ -858,7 +858,7 @@
+@@ -1101,7 +1101,7 @@
          },
        ],
      }],
--    ['OS == "linux" and target_arch != "arm"', {
-+    ['(OS == "linux" or OS == "freebsd") and target_arch != "arm"', {
+-    ['OS == "linux" and target_arch != "arm" and target_arch != "mipsel"', {
++    ['(OS == "linux" or OS == "freebsd") and target_arch != "arm" and target_arch != "mipsel"', {
        'targets': [
          {
            'target_name': 'tile_render_bench',
