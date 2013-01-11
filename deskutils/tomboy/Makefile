@@ -36,14 +36,15 @@ CONFIGURE_ARGS+=--enable-evolution=yes
 MAN1=		tomboy.1
 GCONF_SCHEMAS=	tomboy.schemas
 
-OPTIONS=	APPLET "Enable GNOME panel applet" off
+OPTIONS_DEFINE=	APPLET
+APPLET_DESC=	Enable GNOME panel applet
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_APPLET)
+.if ${PORT_OPTIONS:MAPPLET}
 CONFIGURE_ARGS+=--enable-panel-applet
 PLIST_SUB+=	APPLET=""
 .else
