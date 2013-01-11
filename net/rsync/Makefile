@@ -3,7 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -85,6 +85,8 @@ CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 .if ${PORT_OPTIONS:MFLAGS}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
+# https://bugzilla.samba.org/show_bug.cgi?id=8941
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-syscall.c
 .endif
 
 .if ${PORT_OPTIONS:MRENAMED}
