@@ -446,13 +446,7 @@ diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/qu
 index bcb1ec0..bb73591 100644
 --- media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
 +++ media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
-@@ -28,17 +28,17 @@
-  *
-  *	@(#)queue.h	8.5 (Berkeley) 8/20/94
-  * $FreeBSD: src/sys/sys/queue.h,v 1.58 2004/04/07 04:19:49 imp Exp $
-  */
- 
- #ifndef _SYS_QUEUE_H_
+@@ -33,5 +33,5 @@
  #define	_SYS_QUEUE_H_
  
 -#ifndef DARWIN
@@ -461,10 +455,6 @@ index bcb1ec0..bb73591 100644
  #define __offsetof offsetof
  #endif
  
- #define STAILQ_FOREACH_SAFE(var, head, field, tvar)                     \
-          for ((var) = STAILQ_FIRST((head));                              \
-              (var) && ((tvar) = STAILQ_NEXT((var), field), 1);           \
-              (var) = (tvar))
 diff --git media/mtransport/third_party/nrappkit/src/util/util.c media/mtransport/third_party/nrappkit/src/util/util.c
 index 3aced8b..be020bb 100644
 --- media/mtransport/third_party/nrappkit/src/util/util.c
