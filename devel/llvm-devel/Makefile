@@ -17,7 +17,7 @@ COMMENT=	Low Level Virtual Machine
 
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
