@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pinta
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/PintaProject/Pinta/
 
