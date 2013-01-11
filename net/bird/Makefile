@@ -1,12 +1,9 @@
-# New ports collection makefile for:	bird
-# Date created:				12th May 2005
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
+# Created by:				Pav Lucistnik <pav@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	bird
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -19,10 +16,13 @@ LICENSE=	GPLv2
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	4.2+
 
-OPTIONS=	FIBS		"Enable multiple fib support" Off \
-		FIREWALL	"Enable firewall protocol" Off \
-		AGG		"Enable aggregation protocol (EXPERIMENTAL)" Off
+OPTIONS_DEFINE=	FIBS FIREWALL AGG
+FIBS_DESC=	Enable multiple fib support
+FIREWALL_DESC=	Enable firewall protocol
+AGG_DESC=	Enable aggregation protocol (EXPERIMENTAL)
+NO_OPTIONS_SORT=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,15 +30,15 @@ USE_RC_SUBR=	bird
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FIBS)
+.if ${PORT_OPTIONS:MFIBS}
 EXTRA_PATCHES+=	${FILESDIR}/fibs.diff
 .endif
 
-.if defined(WITH_FIREWALL)
+.if ${PORT_OPTIONS:MFIREWALL}
 EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
 .endif
 
-.if defined(WITH_AGG)
+.if ${PORT_OPTIONS:MAGG}
 EXTRA_PATCHES+=	${FILESDIR}/agg_support.patch
 .endif
 
@@ -47,7 +47,7 @@ post-install:
 		${CP} -p ${PREFIX}/etc/bird.conf.example ${PREFIX}/etc/bird.conf ; \
 		${CHMOD} 0640 ${PREFIX}/etc/bird.conf ; \
 	fi
-.if defined(WITH_FIBS)
+.if ${PORT_OPTIONS:MFIBS}
 	@${ECHO_MSG}
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
