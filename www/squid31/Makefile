@@ -48,7 +48,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
-PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -78,7 +77,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
-PATCHFILES=	squid-3.1-10483.patch
+PATCHFILES=
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
@@ -91,7 +90,7 @@ LATEST_LINK=	squid31
 DEPRECATED=	Squid 3.1 is no longer recommended for new installations. Please use www/squid32 instead
 EXPIRATION_DATE=	2013-03-31
 
-SQUID_STABLE_VER=	22
+SQUID_STABLE_VER=	23
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
