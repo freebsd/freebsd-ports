@@ -44,8 +44,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 NO_LATEST_LINK=	yes
 
-OPTIONS=	RDOC "Build and install Rdoc indexes" off \
-		DEBUG "Compile-in debug info" off
+OPTIONS_DEFINE=	RDOC DEBUG
+RDOC_DESC=	Build and install Rdoc indexes
+DEBUG_DESC=	Compile-in debug info
 
 .include <bsd.port.pre.mk>
 
@@ -66,7 +67,7 @@ LDFLAGS+=	${PTHREAD_LIBS}		# libraries dependent op libpthread.
 #
 # Disable doc generation if requested or docs disabled at all
 #
-.if defined(WITH_RDOC) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MRDOC} && ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-install-doc
 .else
 CONFIGURE_ARGS+=	--disable-install-doc
@@ -180,7 +181,7 @@ post-install:
 . endfor
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
 	${MKDIR} ${EXTSAMPLES:C,^([^/]+)/.*,\1,:S,^,${RUBY_EXAMPLESDIR}/,}
 	${MKDIR} ${EXTDOCS:C,^([^/]+)/.*,\1,:S,^,${RUBY_DOCDIR}/,}
