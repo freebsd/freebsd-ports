@@ -1,12 +1,10 @@
-# New ports collection makefile for:	bird
-# Date created:				12th May 2005
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
+# Created by:				Pav Lucistnik <pav@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bird6
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -21,6 +19,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6
+USE_GCC=	4.2+
 
 MAKE_JOBS_UNSAFE=	yes
 
