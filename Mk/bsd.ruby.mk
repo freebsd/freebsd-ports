@@ -370,7 +370,7 @@ ruby-shebang-patch:
 	done
 .endif
 
-.if defined(DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 RUBY_FLAGS+=	-d
 .endif
 

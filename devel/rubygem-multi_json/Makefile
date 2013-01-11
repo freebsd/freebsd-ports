@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multi_json
-# Date created:		Mar 4, 2011
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	multi_json
 PORTVERSION=	1.5.0
@@ -13,26 +9,28 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library provide swappable JSON backends
 
-OPTIONS=	JSON "JSON implementation as a Ruby extension in C" off \
-		JSON_PURE "JSON implementation in pure Ruby" on \
-		YAJL_RUBY "Yajl JSON stream-based parser library" off
+OPTIONS_DEFINE=	JSON JSON_PURE YAJL_RUBY
+JSON_DESC=	JSON implementation as a Ruby extension in C
+JSON_PURE_DESC=	JSON implementation in pure Ruby
+YAJL_RUBY_DESC=	Yajl JSON stream-based parser library
+OPTIONS_DEFAULT=	JSON_PURE
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JSON)
+.if ${PORT_OPTIONS:MJSON}
 RUN_DEPENDS+=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
 .endif
 
-.if defined(WITH_JSON_PURE)
+.if ${PORT_OPTIONS:MJSON_PURE}
 RUN_DEPENDS+=	rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
 .endif
 
-.if defined(WITH_YAJL_RUBY)
+.if ${PORT_OPTIONS:MYAJL_RUBY}
 RUN_DEPENDS+=	rubygem-yajl-ruby>=0:${PORTSDIR}/devel/rubygem-yajl-ruby
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
