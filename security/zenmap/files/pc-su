@@ -1,0 +1,34 @@
+#!/bin/sh
+# Wrapper script which finds the right "su" program
+# to use for graphical root execution
+
+if [ `id -r -u` != "0" ] ; then
+        VARS="`echo $@`"
+
+        # Try qsu first, should always be the default
+        which qsu >/dev/null 2>/dev/null
+        if [ $? -eq 0 ] ; then
+           qsu $VARS
+           exit $?
+        fi
+
+        # Now try gksu
+        which gksu >/dev/null 2>/dev/null
+        if [ $? -eq 0 ] ; then
+           gksu -a "$VARS"
+           exit $?
+        fi
+
+        # Lastly we have kdesu
+        which kdesu >/dev/null 2>/dev/null
+        if [ $? -eq 0 ] ; then
+           kdesu -t -c "$VARS"
+           exit $?
+        fi
+
+        # If no utility could be found...
+        echo "No graphical switch-user utility found!"
+        exit 1
+else
+        ${@}
+fi

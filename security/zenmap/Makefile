@@ -3,9 +3,9 @@
 
 PORTNAME=	zenmap
 PORTVERSION=	6.25
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	nmap-${PORTVERSION}
 
 MAINTAINER=	nemysis@gmx.ch
@@ -37,7 +37,13 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+post-extract:
+	@${RM} -f ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
+	@${CP} -a ${FILESDIR}/pc-su ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|su-to-zenmap.sh %F|su-to-zenmap.sh ${PORTNAME}|' \
+		${WRKSRC}/install_scripts/unix/zenmap-root.desktop
 	@${REINPLACE_CMD} \
 		-e '/self.create_uninstaller/s|^|#|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
