@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130111:
+  AFFECTS: users of security/openvpn*
+  AUTHOR: mandree@FreeBSD.org
+
+  security/openvpn has been upgraded to the IPv6-capable v2.3.0.
+  This upgrade removes easy-rsa, and changes installed file layout a bit.
+
+  security/openvpn22 retains the prior OpenVPN 2.2.2 version.
+  If you want to continue using this version, use one of these commands:
+
+    # portmaster -o security/openvpn22 security/openvpn
+  or
+    # portupgrade -o security/openvpn22 security/openvpn
+
+  security/openvpn20 has been marked deprecated and to be removed
+  in half a year's time.  Please migrate to a newer version soonish.
+
 20130110:
   AFFECTS: everyone using csup(1), net/cvsup, or cvs(1) to update the
   ports tree
