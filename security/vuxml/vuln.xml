@@ -51,6 +51,106 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="46bd747b-5b84-11e2-b06d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>24.0.1312.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[162494] High CVE-2012-5145: Use-after-free in SVG layout. Credit
+	    to Atte Kettunen of OUSPG.</p>
+	  <p>[165622] High CVE-2012-5146: Same origin policy bypass with
+	    malformed URL. Credit to Erling A Ellingsen and Subodh Iyengar,
+	    both of Facebook.</p>
+	  <p>[165864] High CVE-2012-5147: Use-after-free in DOM handling.
+	    Credit to José A. Vázquez.</p>
+	  <p>[167122] Medium CVE-2012-5148: Missing filename sanitization in
+	    hyphenation support. Credit to Google Chrome Security Team (Justin
+	    Schuh).</p>
+	  <p>[166795] High CVE-2012-5149: Integer overflow in audio IPC
+	    handling. Credit to Google Chrome Security Team (Chris Evans).</p>
+	  <p>[165601] High CVE-2012-5150: Use-after-free when seeking video.
+	    Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[165538] High CVE-2012-5151: Integer overflow in PDF JavaScript.
+	    Credit to Mateusz Jurczyk, with contribution from Gynvael Coldwind,
+	    both of Google Security Team.</p>
+	  <p>[165430] Medium CVE-2012-5152: Out-of-bounds read when seeking
+	    video. Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[164565] High CVE-2012-5153: Out-of-bounds stack access in v8.
+	    Credit to Andreas Rossberg of the Chromium development
+	    community.</p>
+	  <p>[Mac only] [163208] Medium CVE-2012-5155: Missing Mac sandbox for
+	    worker processes. Credit to Google Chrome Security Team (Julien
+	    Tinnes).</p>
+	  <p>[162778] High CVE-2012-5156: Use-after-free in PDF fields. Credit
+	    to Mateusz Jurczyk, with contribution from Gynvael Coldwind, both
+	    of Google Security Team.</p>
+	  <p>[162776] [162156] Medium CVE-2012-5157: Out-of-bounds reads in PDF
+	    image handling. Credit to Mateusz Jurczyk, with contribution from
+	    Gynvael Coldwind, both of Google Security Team.</p>
+	  <p>[162153] High CVE-2013-0828: Bad cast in PDF root handling. Credit
+	    to Mateusz Jurczyk, with contribution from Gynvael Coldwind, both
+	    of Google Security Team.</p>
+	  <p>[162114] High CVE-2013-0829: Corruption of database metadata
+	    leading to incorrect file access. Credit to Google Chrome Security
+	    Team (Jüri Aedla).</p>
+	  <p>[161836] Low CVE-2013-0831: Possible path traversal from extension
+	    process. Credit to Google Chrome Security Team (Tom Sepez).</p>
+	  <p>[160380] Medium CVE-2013-0832: Use-after-free with printing.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[154485] Medium CVE-2013-0833: Out-of-bounds read with printing.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[154283] Medium CVE-2013-0834: Out-of-bounds read with glyph
+	    handling. Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[152921] Low CVE-2013-0835: Browser crash with geolocation. Credit
+	    to Arthur Gerkis.</p>
+	  <p>[150545] High CVE-2013-0836: Crash in v8 garbage collection.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[145363] Medium CVE-2013-0837: Crash in extension tab handling.
+	    Credit to Tom Nielsen.</p>
+	  <p>[Linux only] [143859] Low CVE-2013-0838: Tighten permissions on
+	    shared memory segments. Credit to Google Chrome Security Team
+	    (Chris Palmer).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5145</cvename>
+      <cvename>CVE-2012-5146</cvename>
+      <cvename>CVE-2012-5147</cvename>
+      <cvename>CVE-2012-5148</cvename>
+      <cvename>CVE-2012-5149</cvename>
+      <cvename>CVE-2012-5150</cvename>
+      <cvename>CVE-2012-5151</cvename>
+      <cvename>CVE-2012-5152</cvename>
+      <cvename>CVE-2012-5153</cvename>
+      <cvename>CVE-2012-5155</cvename>
+      <cvename>CVE-2012-5156</cvename>
+      <cvename>CVE-2012-5157</cvename>
+      <cvename>CVE-2013-0828</cvename>
+      <cvename>CVE-2013-0829</cvename>
+      <cvename>CVE-2013-0831</cvename>
+      <cvename>CVE-2013-0832</cvename>
+      <cvename>CVE-2013-0833</cvename>
+      <cvename>CVE-2013-0834</cvename>
+      <cvename>CVE-2013-0835</cvename>
+      <cvename>CVE-2013-0836</cvename>
+      <cvename>CVE-2013-0837</cvename>
+      <cvename>CVE-2013-0838</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2013-01-10</discovery>
+      <entry>2013-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4ed6632-5aa9-11e2-8fcb-c8600054b392">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
