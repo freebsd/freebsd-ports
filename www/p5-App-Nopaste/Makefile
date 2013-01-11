@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-App-Nopaste
-# Date created:		2009-03-10
-# Whom:			bapt <baptiste.daroussin@gmail.com>
-#
+# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.35
+PORTVERSION=	0.90
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -19,8 +15,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Getopt>=0.17:${PORTSDIR}/devel/p5-MooseX-Getopt \
+		p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Getopt-Long-Descriptive>=0:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
