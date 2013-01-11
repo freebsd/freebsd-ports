@@ -1,6 +1,26 @@
---- base/sys_info_freebsd.cc.orig	2012-10-31 21:02:04.000000000 +0200
-+++ base/sys_info_freebsd.cc	2012-11-07 17:49:20.000000000 +0200
-@@ -33,4 +33,25 @@
+--- base/sys_info_freebsd.cc.orig	2012-11-27 10:01:52.000000000 +0200
++++ base/sys_info_freebsd.cc	2012-12-09 18:04:30.000000000 +0200
+@@ -23,6 +23,19 @@
+ }
+ 
+ // static
++int64 SysInfo::AmountOfAvailablePhysicalMemory() {
++  int available_pages, page_size;
++  size_t size = sizeof(available_pages);
++  sysctlbyname("vm.stats.vm.v_free_count", &available_pages, &size, NULL, 0);
++  sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
++  if (available_pages == -1 || page_size == -1) {
++    NOTREACHED();
++    return 0;
++  }
++  return static_cast<int64>(available_pages) * page_size;
++}
++
++// static
+ size_t SysInfo::MaxSharedMemorySize() {
+   size_t limit;
+   size_t size = sizeof(limit);
+@@ -33,4 +46,25 @@
    return limit;
  }
  

@@ -1,25 +1,25 @@
---- content/browser/child_process_launcher.cc.orig	2012-10-31 21:01:35.000000000 +0200
-+++ content/browser/child_process_launcher.cc	2012-11-19 22:35:00.000000000 +0200
-@@ -52,7 +52,7 @@
+--- content/browser/child_process_launcher.cc.orig	2012-11-27 10:01:25.000000000 +0200
++++ content/browser/child_process_launcher.cc	2012-12-09 17:02:22.000000000 +0200
+@@ -53,7 +53,7 @@
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
-         exit_code_(content::RESULT_CODE_NORMAL_EXIT),
+         exit_code_(RESULT_CODE_NORMAL_EXIT),
          starting_(true)
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
          , zygote_(false)
  #endif
          {
-@@ -188,7 +188,7 @@
-     base::GlobalDescriptors::Mapping files_to_register;
-     files_to_register.push_back(std::pair<base::GlobalDescriptors::Key, int>(
-         kPrimaryIPCChannel, ipcfd));
+@@ -196,7 +196,7 @@
+         FileDescriptorInfo(kPrimaryIPCChannel,
+                                     base::FileDescriptor(ipcfd, false)));
+ 
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
-     content::GetContentClient()->browser()->
-         GetAdditionalMappedFilesForChildProcess(*cmd_line, &files_to_register);
-     if (use_zygote) {
-@@ -209,7 +209,7 @@
-             id_file.first + base::GlobalDescriptors::kBaseDescriptor));
+     GetContentClient()->browser()->
+         GetAdditionalMappedFilesForChildProcess(*cmd_line, child_process_id,
+                                                 &files_to_register);
+@@ -217,7 +217,7 @@
+                 base::GlobalDescriptors::kBaseDescriptor));
        }
  
 -#if !defined(OS_MACOSX)
@@ -27,7 +27,7 @@
        if (process_type == switches::kRendererProcess) {
          const int sandbox_fd =
              RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
-@@ -261,7 +261,7 @@
+@@ -269,7 +269,7 @@
        base::Bind(
            &Context::Notify,
            this_object.get(),
@@ -36,7 +36,7 @@
            use_zygote,
  #endif
            handle));
-@@ -269,7 +269,7 @@
+@@ -277,7 +277,7 @@
    }
  
    void Notify(
@@ -45,7 +45,7 @@
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -282,7 +282,7 @@
+@@ -290,7 +290,7 @@
      if (!handle)
        LOG(ERROR) << "Failed to launch child process";
  
@@ -54,7 +54,7 @@
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -305,7 +305,7 @@
+@@ -313,7 +313,7 @@
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          base::Bind(
              &Context::TerminateInternal,
@@ -63,7 +63,7 @@
              zygote_,
  #endif
              process_.handle()));
-@@ -319,7 +319,7 @@
+@@ -327,7 +327,7 @@
    }
  
    static void TerminateInternal(
@@ -72,8 +72,8 @@
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -333,7 +333,7 @@
-     process.Terminate(content::RESULT_CODE_NORMAL_EXIT);
+@@ -341,7 +341,7 @@
+     process.Terminate(RESULT_CODE_NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
 -#if !defined(OS_MACOSX)
@@ -81,7 +81,7 @@
      if (zygote) {
        // If the renderer was created via a zygote, we have to proxy the reaping
        // through the zygote process.
-@@ -360,7 +360,7 @@
+@@ -368,7 +368,7 @@
  #if defined(OS_ANDROID)
    // The fd to close after creating the process.
    int ipcfd_;
@@ -90,7 +90,7 @@
    bool zygote_;
  #endif
  };
-@@ -413,7 +413,7 @@
+@@ -423,7 +423,7 @@
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }
