@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.0.20121216
+PORTVERSION=	4.8.0.20130106
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -130,9 +130,11 @@ MAN1+=		aot-compile${SUFFIX}.1 \
 		rebuild-gcj-db${SUFFIX}.1
 MAN3=		ffi${SUFFIX}.3 \
 		ffi_call${SUFFIX}.3 \
-		ffi_prep_cif${SUFFIX}.3
+		ffi_prep_cif${SUFFIX}.3 \
+		ffi_prep_cif_var${SUFFIX}.3
 INFO+=		gcc${SUFFIX}/cp-tools \
-		gcc${SUFFIX}/gcj
+		gcc${SUFFIX}/gcj \
+		gcc${SUFFIX}/libffi
 PLIST_SUB+=	JAVA=""
 
 # Prep the source tree for the GCJ build.
