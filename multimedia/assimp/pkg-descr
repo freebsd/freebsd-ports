@@ -3,4 +3,4 @@ library to import various well-known 3D model formats in a uniform manner.
 The most recent version also knows how to export 3d files and is therefore
 suitable as general-purpose 3D model converter. See the feature list.
 
-WWW: http://http://assimp.sourceforge.net
+WWW: http://assimp.sourceforge.net
