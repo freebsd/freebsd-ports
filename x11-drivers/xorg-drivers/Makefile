@@ -56,7 +56,9 @@ VIDEO_DRIVERS=		ati \
 			tdfx \
 			tga \
 			trident \
-			tseng
+			tseng \
+			vmware \
+			voodoo
 
 OPTIONS_DEFAULT=	MOUSE \
 			KEYBOARD \
