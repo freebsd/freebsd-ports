@@ -363,6 +363,7 @@
     SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += openvpn20
+    SUBDIR += openvpn22
     SUBDIR += ophcrack
     SUBDIR += opieprint
     SUBDIR += osiris
