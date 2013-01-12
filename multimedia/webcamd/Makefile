@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-PORTVERSION=	3.7.0.4
+PORTVERSION=	3.9.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -78,6 +78,13 @@ MAKE_ARGS+=" HAVE_DEBUG=YES"
 .if ${OSVERSION} < 800000
 IGNORE=		requires FreeBSD 8.0-RELEASE or later
 .endif
+
+#
+# This step is optional
+#
+do-configure:
+	${MAKE} -C${WRKSRC}/tools/linux_make
+	${MAKE} configure -C${WRKSRC}
 
 post-patch:
 	@cd ${WRKSRC}/patches; ${SH} ./do_patch.sh
