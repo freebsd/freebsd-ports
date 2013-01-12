@@ -2,29 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	hercules
-PORTVERSION=	3.05
-PORTREVISION=	3
+PORTVERSION=	3.07
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.hercules-390.org/
 
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
-COMMENT=	The Hercules System/370, ESA/390, and z/Architecture Emulator
+COMMENT=	System/370, ESA/390, and z/Architecture Emulator
 
-OPTIONS=	PTHREADS "Build with pthreads instead of fthreads." on \
-		NLS "Build with native language support." on \
-		DEBUG "Enable for debugging hercules itself." off
+OPTIONS_DEFINE=	DEBUG NLS PTHREADS
+OPTIONS_DEFAULT=	NLS PTHREADS
+PTHREADS_DESC=	Build with pthreads instead of fthreads
 
 USE_AUTOTOOLS=	libtool libltdl
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
 post-extract:
-	${RM} ${WRKSRC}/ltdl.*
+	@${RM} ${WRKSRC}/ltdl.*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's@SOL_TCP@IPPROTO_TCP@g' ${WRKSRC}/hscutl.c
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's,^SUBDIRS = decNumber m4 po util html man . crypto,SUBDIRS = decNumber m4 po util man . crypto,g' ${WRKSRC}/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's,^datadir = @datadir@,datadir = ${PREFIX}/share/doc/,' ${WRKSRC}/html/Makefile.in
@@ -35,22 +38,18 @@ post-patch:
 MAN1=			cckddiag.1 dasdseq.1
 MAN4=			cckd.4
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=		*
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DEBUG)
-CFLAGS+=		-g
+.if ${PORT_OPTIONS:MDEBUG}
+CFLAGS+=	-g
 .endif
-.if defined(WITH_PTHREADS)
+
+.if ${PORT_OPTIONS:MPTHREADS}
 CONFIGURE_ARGS+=	--disable-fthreads
 .endif
-.if defined(WITHOUT_NLS)
+
+.if empty(PORT_OPTIONS:MNLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		GETTEXT="@comment "
 .else
@@ -63,4 +62,4 @@ PLIST_SUB+=		GETTEXT=""
 CONFIGURE_ARGS+=	--enable-optimization="no"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
