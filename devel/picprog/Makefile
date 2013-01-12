@@ -1,12 +1,8 @@
-# New ports collection makefile for:    picprog
-# Date created:         31 August 1999
-# Whom:                 Johan Kerckaert <kirk@bricsnet.com>
-#
+# Created by: Johan Kerckaert <kirk@bricsnet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	picprog
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
@@ -18,8 +14,10 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/picprog
 MAN1=		picprog.1
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	README anybrowser3.png jdm84ne3.png jdm84pcb6.png picprog.html
 .endif
 
 post-patch:
@@ -30,14 +28,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picprog ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/picprog.1 ${MAN1PREFIX}/man/man1
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in README *.png picprog.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
