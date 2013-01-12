@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ft2demos
-# Date created:		12 April 2001
-# Whom:			KANOU Hiroki <kanou@khdd.net>
-#
+# Created by: KANOU Hiroki <kanou@khdd.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.4.9
+PORTVERSION=	2.4.11
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		RINGSERVER/graphics/freetype/freetype2
@@ -15,7 +11,7 @@ MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Demo programs for FreeType2
 
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_XORG=	xext
