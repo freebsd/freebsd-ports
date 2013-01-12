@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libxalloc
-# Date created:				12 April 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	libxalloc
 PORTVERSION=	1.0.4
@@ -12,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	xalloc-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A memory allocation library with error checking
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
