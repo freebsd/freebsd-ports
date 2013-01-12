@@ -19,7 +19,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6
-USE_GCC=	4.2+
+USE_CSTD=	gnu89
 
 MAKE_JOBS_UNSAFE=	yes
 
