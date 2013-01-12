@@ -1,18 +1,15 @@
-# New ports collection makefile for:	Xfce4-parole
-# Date created:		26 December 2009
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	parole
-PORTVERSION=	0.3.0.3
+PORTVERSION=	0.4.0
 CATEGORIES=	multimedia xfce
-MASTER_SITES=	XFCE/src/apps/${PORTNAME}/0.3/
+MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Lightweight media player for Xfce4 based on gstreamer
+COMMENT=	Lightweight media player for Xfce4 based on GStreamer
 
 LICENSE=	GPLv2
 
@@ -26,6 +23,7 @@ USE_BZIP2=	yes
 USE_GSTREAMER=	core faad flac wavpack
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-power-manager-plugin \
+		--enable-maintainer-mode \
 		--enable-libnotify \
 		--enable-taglib \
 		--without-html-dir
@@ -64,9 +62,11 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 # Downgrade Glib version
 	@${REINPLACE_CMD} -e 's|2\.32|2\.28|g' ${WRKSRC}/configure
-# Fix .rc file path
+# Fix .rc files path
 	@${REINPLACE_CMD} -e 's|xfce4/src/misc|${PORTNAME}|g' \
-		${WRKSRC}/src/common/parole-rc-utils.h
+		${WRKSRC}/src/common/parole-rc-utils.h \
+		${WRKSRC}/src/plugins/notify/notify-provider.c \
+		${WRKSRC}/src/plugins/tray/tray-provider.c
 
 post-install:
 	@-update-desktop-database

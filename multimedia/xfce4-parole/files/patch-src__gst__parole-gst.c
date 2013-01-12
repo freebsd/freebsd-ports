@@ -1,103 +1,153 @@
---- src/gst/parole-gst.c.orig	2012-08-08 19:34:30.000000000 +0000
-+++ src/gst/parole-gst.c	2012-08-10 22:16:18.000000000 +0000
-@@ -84,7 +84,7 @@
+--- ./src/gst/parole-gst.c.orig	2013-01-07 10:15:53.000000000 +0000
++++ ./src/gst/parole-gst.c	2013-01-08 21:36:35.000000000 +0000
+@@ -97,8 +97,12 @@
+     GstElement   *video_sink;
  
      GstBus       *bus;
-     
--    GMutex       lock;
+-    
++
++#if GLIB_CHECK_VERSION (2, 32, 0)    
+     GMutex       lock;
++#else
 +    GMutex       *lock;
++#endif
      GstState      state;
      GstState      target;
      ParoleState media_state;
-@@ -166,7 +166,7 @@
+@@ -184,8 +188,12 @@
+     
      if ( gst->priv->device )
  	g_free (gst->priv->device);
-     
--    g_mutex_clear (&gst->priv->lock);
+-    
++   
++#if GLIB_CHECK_VERSION (2, 32, 0) 
+     g_mutex_clear (&gst->priv->lock);
++#else
 +    g_mutex_free (gst->priv->lock);
++#endif
  
      G_OBJECT_CLASS (parole_gst_parent_class)->finalize (object);
  }
-@@ -1515,10 +1515,10 @@
+@@ -1876,11 +1884,19 @@
+     g_object_get (G_OBJECT (gst->priv->stream), 
  		  "has-video", &playing_video,
  		  NULL);
-     
--    g_mutex_lock (&gst->priv->lock);
+-    
++   
++#if GLIB_CHECK_VERSION (2, 32, 0) 
+     g_mutex_lock (&gst->priv->lock);
++#else
 +    g_mutex_lock (gst->priv->lock);
++#endif
      gst->priv->target = GST_STATE_NULL;
      parole_stream_init_properties (gst->priv->stream);
--    g_mutex_unlock (&gst->priv->lock);
++#if GLIB_CHECK_VERSION (2, 32, 0)
+     g_mutex_unlock (&gst->priv->lock);
++#else
 +    g_mutex_unlock (gst->priv->lock);
++#endif
  
      parole_window_busy_cursor (GTK_WIDGET (gst)->window);
      
-@@ -1844,7 +1844,7 @@
+@@ -2226,7 +2242,11 @@
      gst->priv->target = GST_STATE_VOID_PENDING;
      gst->priv->media_state = PAROLE_STATE_STOPPED;
      gst->priv->aspect_ratio = PAROLE_ASPECT_RATIO_NONE;
--    g_mutex_init (&gst->priv->lock);
++#if GLIB_CHECK_VERSION (2, 32, 0)
+     g_mutex_init (&gst->priv->lock);
++#else
 +    gst->priv->lock = g_mutex_new ();
++#endif
      gst->priv->stream = parole_stream_new ();
      gst->priv->tick_id = 0;
      gst->priv->hidecursor_timer = g_timer_new ();
-@@ -1921,7 +1921,7 @@
+@@ -2330,7 +2350,11 @@
  
  void parole_gst_play_uri (ParoleGst *gst, const gchar *uri, const gchar *subtitles)
  {
--    g_mutex_lock (&gst->priv->lock);
++#if GLIB_CHECK_VERSION (2, 32, 0)
+     g_mutex_lock (&gst->priv->lock);
++#else
 +    g_mutex_lock (gst->priv->lock);
++#endif
      
      gst->priv->target = GST_STATE_PLAYING;
      parole_stream_init_properties (gst->priv->stream);
-@@ -1931,7 +1931,7 @@
+@@ -2339,8 +2363,12 @@
+ 	          "uri", uri,
  		  "subtitles", subtitles,
  		  NULL);
- 
--    g_mutex_unlock (&gst->priv->lock);
+-		  
++
++#if GLIB_CHECK_VERSION (2, 32, 0)		  
+     g_mutex_unlock (&gst->priv->lock);
++#else
 +    g_mutex_unlock (gst->priv->lock);
++#endif
      
      if ( gst->priv->state_change_id == 0 )
  	gst->priv->state_change_id = g_timeout_add_seconds (20, 
-@@ -1972,11 +1972,11 @@
+@@ -2381,11 +2409,19 @@
  
  void parole_gst_pause (ParoleGst *gst)
  {
--    g_mutex_lock (&gst->priv->lock);
++#if GLIB_CHECK_VERSION (2, 32, 0)
+     g_mutex_lock (&gst->priv->lock);
++#else
 +    g_mutex_lock (gst->priv->lock);
++#endif
      
      gst->priv->target = GST_STATE_PAUSED;
-     
--    g_mutex_unlock (&gst->priv->lock);
+-    
++   
++#if GLIB_CHECK_VERSION (2, 32, 0) 
+     g_mutex_unlock (&gst->priv->lock);
++#else
 +    g_mutex_unlock (gst->priv->lock);
++#endif
  
      parole_window_busy_cursor (GTK_WIDGET (gst)->window);
      parole_gst_change_state (gst, GST_STATE_PAUSED);
-@@ -1984,11 +1984,11 @@
+@@ -2393,11 +2429,19 @@
  
  void parole_gst_resume (ParoleGst *gst)
  {
--    g_mutex_lock (&gst->priv->lock);
++#if GLIB_CHECK_VERSION (2, 32, 0)
+     g_mutex_lock (&gst->priv->lock);
++#else
 +    g_mutex_lock (gst->priv->lock);
++#endif
      
      gst->priv->target = GST_STATE_PLAYING;
-     
--    g_mutex_unlock (&gst->priv->lock);
+-    
++   
++#if GLIB_CHECK_VERSION (2, 32, 0) 
+     g_mutex_unlock (&gst->priv->lock);
++#else
 +    g_mutex_unlock (gst->priv->lock);
++#endif
  
      parole_window_busy_cursor (GTK_WIDGET (gst)->window);
      parole_gst_change_state (gst, GST_STATE_PLAYING);
-@@ -2008,12 +2008,12 @@
+@@ -2417,12 +2461,20 @@
  
  void parole_gst_stop (ParoleGst *gst)
  {
--    g_mutex_lock (&gst->priv->lock);
++#if GLIB_CHECK_VERSION (2, 32, 0)
+     g_mutex_lock (&gst->priv->lock);
++#else
 +    g_mutex_lock (gst->priv->lock);
++#endif
      
      parole_stream_init_properties (gst->priv->stream);
      gst->priv->target = GST_STATE_NULL;
- 		  
--    g_mutex_unlock (&gst->priv->lock);
+-		  
++
++#if GLIB_CHECK_VERSION (2, 32, 0)		  
+     g_mutex_unlock (&gst->priv->lock);
++#else
 +    g_mutex_unlock (gst->priv->lock);
++#endif
  
      parole_window_busy_cursor (GTK_WIDGET (gst)->window);
      
