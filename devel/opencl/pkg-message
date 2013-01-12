@@ -1,5 +1,0 @@
-OpenCL is the first open, royalty-free standard for cross-platform, 
-parallel programming of modern processors.
-
-Header files will reside in PREFIX/CL, with PREFIX usually 
-set to /usr/local/include.
