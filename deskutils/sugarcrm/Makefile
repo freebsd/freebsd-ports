@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	6.5.6
+PORTVERSION=	6.5.9
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/1%20-%20SugarCRM%206.5.X/SugarCommunityEdition-6.5.X
