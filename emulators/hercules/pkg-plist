@@ -66,11 +66,14 @@ lib/hercules/hdt3505.la
 lib/hercules/hdt3505.so
 lib/hercules/hdt3525.la
 lib/hercules/hdt3525.so
+lib/hercules/hdt3705.la
+lib/hercules/hdt3705.so
 lib/hercules/hdteq.la
 lib/hercules/hdteq.so
 lib/hercules/hdtqeth.la
 lib/hercules/hdtqeth.so
 @dirrm lib/hercules
+%%DATADIR%%/TMOUNT.txt
 %%DATADIR%%/awssl-v19g
 %%DATADIR%%/awswrite.jcl
 %%DATADIR%%/cckddump.hla
