@@ -437,7 +437,7 @@ CONFIGURE_ARGS+=--disable-png
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
 CONFIGURE_ARGS+=--enable-portaudio
 .else
 CONFIGURE_ARGS+=--disable-portaudio
