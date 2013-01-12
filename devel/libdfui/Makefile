@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libdfui
-# Date created:        18 April 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	libdfui
 PORTVERSION=	4.1.20060122
@@ -11,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	philip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Abstract user interface protocol library
 
 LIB_DEPENDS=	aura3.3:${PORTSDIR}/devel/libaura
