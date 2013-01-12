@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File_Iterator
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
