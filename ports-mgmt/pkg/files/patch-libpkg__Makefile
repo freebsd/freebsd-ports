@@ -1,0 +1,13 @@
+--- ./libpkg/Makefile.orig	2012-12-21 12:57:15.000000000 +0100
++++ ./libpkg/Makefile	2013-01-12 23:26:55.723640000 +0100
+@@ -94,8 +94,10 @@
+ 
+ CFLAGS+=	-DPREFIX=\"${PREFIX}\"
+ 
++.if defined(DEBUG_FLAGS)
+ DEBUG_FLAGS+=  -g -O0
+ STRIP=
++.endif
+ .if defined(PROFILE_BUILD)
+ DEBUG_FLAGS+=	-pg
+ .endif
