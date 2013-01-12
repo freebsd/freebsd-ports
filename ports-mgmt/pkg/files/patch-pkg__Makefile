@@ -1,0 +1,12 @@
+--- ./pkg/Makefile.orig	2013-01-12 23:38:30.808841691 +0100
++++ ./pkg/Makefile	2013-01-12 23:38:50.521899817 +0100
+@@ -38,7 +38,9 @@
+ CFLAGS+=	-DGITHASH="\" ${GITHASH}\""
+ .endif
+ 
++.if defined(DEBUG_FLAGS)
+ DEBUG_FLAGS+=	-g -O0
++.endif
+ .if defined(PROFILE_BUILD)
+ DEBUG_FLAGS+=	-pg
+ .endif
