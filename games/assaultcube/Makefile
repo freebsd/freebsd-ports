@@ -1,9 +1,5 @@
-# New ports collection makefile for:	actioncube
-# Date created:				2007-02-25
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.1.0.4
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTFILES=	AssaultCube_v${PORTVERSION}_source${EXTRACT_SUFX} \
 		AssaultCube_v${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	lightside@safebox.ru
+MAINTAINER=	lightside@gmx.com
 COMMENT=	Total conversion of the FPS game called Cube
 
 LICENSE_COMB=	multi
@@ -42,17 +38,17 @@ MAKE_JOBS_SAFE=	yes
 PORTDATA=	config demos packages
 PORTDOCS=	*
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		MASTER "Build master server" off
+OPTIONS_DEFINE=	DOCS
+OPTIONS_MULTI=	BUILD
+OPTIONS_MULTI_BUILD=	CLIENT DEDICATED MASTER
+OPTIONS_DEFAULT=	CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
+MASTER_DESC=	Build master server
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && defined(WITHOUT_MASTER)
-IGNORE=		needs at least one executable (CLIENT, DEDICATED or MASTER)
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GETTEXT=	yes
 USE_GL=		yes
 USE_SDL=	image mixer sdl
@@ -65,13 +61,13 @@ DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
 	"Application;Game;" ${FALSE}
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	server
 SUB_FILES+=	${PORTNAME}_server
 ACUBE_BIN+=	server
 .endif
 
-.if !defined(WITHOUT_MASTER)
+.if ${PORT_OPTIONS:MMASTER}
 ALL_TARGET+=	master
 SUB_FILES+=	${PORTNAME}_master
 ACUBE_BIN+=	master
@@ -86,7 +82,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
@@ -97,4 +93,4 @@ post-install:
 	@${ECHO_CMD} libexec/${PORTNAME}_${f} >> ${TMPPLIST}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
