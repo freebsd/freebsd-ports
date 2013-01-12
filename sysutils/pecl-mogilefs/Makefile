@@ -9,7 +9,7 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP client library to communicate with the MogileFS storage
 
 LICENSE=	BSD
