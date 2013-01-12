@@ -1,22 +1,17 @@
-# New ports collection makefile for:	xournal
-# Date created:		21 Jan 2011
-# Whom:			Jan Henrik Sylvester <me@janh.de>
-#
+# Created by: Jan Henrik Sylvester <me@janh.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xournal
-PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTVERSION=	0.4.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	me@janh.de
 COMMENT=	A notetaking application that can annotate PDFs
 
-LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
 
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	desktopfileutils libgnomecanvas
@@ -25,11 +20,13 @@ CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install desktop-install
 
-OPTIONS=	GHOSTSCRIPT "Install ghostscript (PS/PDF as bitmap bg)" on
+OPTIONS_DEFINE=		GHOSTSCRIPT
+GHOSTSCRIPT_DESC=	Install ghostscript (PS/PDF as bitmap bg)
+OPTIONS_DEFAULT=	GHOSTSCRIPT
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GHOSTSCRIPT)
+.if ${PORT_OPTIONS:MGHOSTSCRIPT}
 USE_GHOSTSCRIPT_RUN=	yes
 .endif
 
@@ -40,8 +37,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC} && ${MAKE} install-doc-local)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
