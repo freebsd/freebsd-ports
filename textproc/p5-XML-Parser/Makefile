@@ -1,12 +1,8 @@
-# New ports collection makefile for:	XML::Parser
-# Date created:		15 Nov 1998
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Parser
 PORTVERSION=	2.41
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to James Clark's XML parser, expat
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include
@@ -56,6 +52,10 @@ post-patch:
 post-configure:
 	@${PERL} -i -pe 's|^(CC = ).*|$$1 ${CC}|;' \
 		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|' ${WRKSRC}/Expat/Makefile
+
+pre-build:
+	@cd ${WRKDIR} && ${PERL} ${FILESDIR}/check_nfs.pl 2>/dev/null || \
+	(${ECHO_MSG} "===>  lockf in \$$TMPDIR required"; ${FALSE})
 
 XE=	${.CURDIR}/../p5-XML-Encoding
 extract-encodings:
