@@ -1,9 +1,9 @@
---- Makefile.orig	Thu Sep  8 22:56:51 2005
-+++ Makefile	Thu Sep  8 22:57:29 2005
+--- Makefile.orig	2012-06-04 02:56:55.000000000 -0500
++++ Makefile	2012-12-01 00:19:22.000000000 -0600
 @@ -1,6 +1,5 @@
- # $Id: Makefile,v 4.18 2004/07/01 14:00:24 ddr Exp $
-
+ # $Id: Makefile,v 5.7 2009-03-11 10:53:30 ddr Exp $
+ 
 -PREFIX=/usr
  LANGDIR=$(PREFIX)/share/geneweb
- DOCDIR=$(PREFIX)/share/geneweb/doc
  MANDIR=$(PREFIX)/man/man1
+ DESTDIR=distribution
