@@ -2,5 +2,18 @@
 
 In order to install GeneWeb in a user's public_html directory, please run:
 	%%DATADIR%%/install.sh
+OR from directory to install in, run:
+	cp -a %%DATADIR%%/distribution/ .
+	./gwsetup
+
+Sample rc-script %%PREFIX%%/etc/rc.d/gwd has been provided to help run gwd
+as a daemon process. Adjust it to suit your needs, and add gwd_enable="YES"
+to your /etc/rc.conf to enable gwd to run automatically upon reboot.
+
+Unfortunately, the documentation that was present with earlier GeneWeb
+versions has been dropped since 6.02. Please refer to the GeneWeb wiki
+http://opensource.geneanet.org/projects/geneweb/wiki
+and/or to the GeneWeb mailing list GeneWeb@yahoogroups.com if you need
+help.
 
 ==========================================================================
