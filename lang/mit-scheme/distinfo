@@ -1,2 +1,4 @@
-SHA256 (mit-scheme-9.0.1-i386.tar.gz) = c202ea8a51e9c4d576b370fe7abdcff5caebe0104e40bcd851d736c9d51ad231
-SIZE (mit-scheme-9.0.1-i386.tar.gz) = 42546960
+SHA256 (mit-scheme-9.1.1-i386.tar.gz) = bf14956363134cae29990bbdc437b3edd680d7dfa0a251564b0d94e21d30276e
+SIZE (mit-scheme-9.1.1-i386.tar.gz) = 45592894
+SHA256 (mit-scheme-9.1.1-x86-64.tar.gz) = 3d2471ab61f0b270d78489da3939d3c45a9bb177235946b7afa330e761aa9df1
+SIZE (mit-scheme-9.1.1-x86-64.tar.gz) = 50516614
