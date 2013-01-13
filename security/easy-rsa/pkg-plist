@@ -1,0 +1,25 @@
+%%DOCSDIR%%/README-2.0
+%%DOCSDIR%%/COPYRIGHT.GPL
+%%DOCSDIR%%/COPYING
+share/easy-rsa/build-ca
+share/easy-rsa/vars
+share/easy-rsa/sign-req
+share/easy-rsa/revoke-full
+share/easy-rsa/pkitool
+share/easy-rsa/openssl-1.0.0.cnf
+share/easy-rsa/openssl-0.9.8.cnf
+share/easy-rsa/openssl-0.9.6.cnf
+share/easy-rsa/list-crl
+share/easy-rsa/inherit-inter
+share/easy-rsa/clean-all
+share/easy-rsa/build-req-pass
+share/easy-rsa/build-req
+share/easy-rsa/build-key-server
+share/easy-rsa/build-key-pkcs12
+share/easy-rsa/build-key-pass
+share/easy-rsa/build-key
+share/easy-rsa/build-inter
+share/easy-rsa/build-dh
+share/easy-rsa/whichopensslcnf
+@dirrm share/easy-rsa
+@dirrm %%DOCSDIR%%
