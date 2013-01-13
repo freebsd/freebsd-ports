@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Term-Sk
-# Date created:				2011-07-20
-# Whom:					milki <milki@rescomp.berkeley.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Sk
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KEICHNER
