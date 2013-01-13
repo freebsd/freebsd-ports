@@ -59,9 +59,11 @@ libexec/gitolite/gitolite
 libexec/gitolite/gitolite-shell
 libexec/gitolite/syntactic-sugar/continuation-lines
 libexec/gitolite/syntactic-sugar/keysubdirs-as-groups
+libexec/gitolite/triggers/bg
 libexec/gitolite/triggers/partial-copy
 libexec/gitolite/triggers/post-compile/ssh-authkeys
 libexec/gitolite/triggers/post-compile/ssh-authkeys-shell-users
+libexec/gitolite/triggers/post-compile/ssh-authkeys-split
 libexec/gitolite/triggers/post-compile/update-description-file
 libexec/gitolite/triggers/post-compile/update-git-configs
 libexec/gitolite/triggers/post-compile/update-git-daemon-access-list
