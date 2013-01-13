@@ -1,0 +1,11 @@
+--- OpenIPMIpthread.pc.in.orig	2012-12-18 16:15:18.000000000 +0000
++++ OpenIPMIpthread.pc.in	2012-12-18 16:15:29.000000000 +0000
+@@ -6,6 +6,6 @@
+ Name: OpenIPMIpthread
+ Description: Pthread OS handler for OpenIPMI
+ Version: @VERSION@
+-Requires: OpenIPMI pthread
++Requires: OpenIPMI
+ Libs: -L${libdir} -lOpenIPMIutils -lOpenIPMIpthread
+-Cflags: -I${includedir}
++Cflags: -I${includedir} ${PTHREAD_LIBS}
