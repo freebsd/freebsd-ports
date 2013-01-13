@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-gmpy
-# Date created:				09 July 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gmpy
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
