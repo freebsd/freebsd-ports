@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 MASTER_SITES=	http://bsd-sharp.googlecode.com/files/ \
