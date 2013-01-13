@@ -1,60 +1,60 @@
-# New ports collection makefile for:	dungeon
-# Date created:		31 October 1999
-# Whom:			Ryo MIYAMOTO
-#
+# Created by: Ryo MIYAMOTO
 # $FreeBSD$
-#
 
 PORTNAME=	dungeon
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	3.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
-		ftp://ftp.ifarchive.com/if-archive/games/source/ \
-		http://mirror.ifarchive.org/if-archive/games/source/ \
-		ftp://ftp.funet.fi/pub/misc/if-archive/games/source/ \
-		ftp://ftp.planetmirror.com/pub/if-archive/games/source/ \
-		http://www.ibiblio.org/pub/docs/interactive-fiction/games/source/ \
-		http://ifarchive.flavorplex.com/if-archive/games/source/ \
-		http://www.vaxdungeon.com/Archive/dungeon/
-DISTFILES=	dungn27s.zip dungn32b.zip
-EXTRACT_ONLY=	dungn27s.zip
+MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/:source \
+	ftp://ftp.ifarchive.com/if-archive/games/source/:source \
+	http://mirror.ifarchive.org/if-archive/games/source/:source \
+	ftp://ftp.funet.fi/pub/misc/ifarchive/games/source/:source \
+	http://ifarchive.flavorplex.com/if-archive/games/source/:source \
+	http://eblong.com/zarf/glk/:glkterm
+DISTFILES=	dungn27s.zip:source \
+		dungn32b.zip:source \
+		dungeon-gdt-glk.tar.gz:source \
+		glkterm-104.tar.gz:glkterm
+EXTRACT_ONLY=	dungeon-gdt-glk.tar.gz \
+		glkterm-104.tar.gz \
+		dungn27s.zip
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Text adventure game of ZORK
+MAINTAINER=	sailor@63bit.net
+COMMENT=	Text adventure which became Zork I-III
 
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
-#WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN6=		dungeon.6
-TMPFILE=	${WRKSRC}/dungeon.tmp
 
-#do-extract:
-#	${RM} -rf ${WRKSRC}
-#	${MKDIR} ${WRKSRC}
-#	(cd ${WRKSRC} && unzip ${DISTDIR}/dungn27s.zip > /dev/null)
+PLIST_FILES=	bin/dungeon \
+		%%DATADIR%%/dundat \
+		%%PORTDOCS%%%%DOCSDIR%%/dungn32b.zip
+PLIST_DIRS=	%%DATADIR%%
 
-post-extract:
-	(cd ${WRKSRC} && ${LS} > ${TMPFILE}.1)
-	(cd ${WRKSRC} && ${AWK} -f ${FILESDIR}/aa.awk < ${TMPFILE}.1 \
-		> ${TMPFILE}.2)
-	(cd ${WRKSRC} && ${SH} ${TMPFILE}.2)
-	(cd ${WRKSRC} && ${RM} ${TMPFILE}.?)
-	(cd ${WRKSRC} && ${CP} makefile Makefile)
+PORTDOCS=	HISTORY MANIFEST README
 
-pre-install:
-	${RM} -rf ${PREFIX}/share/dungeon
-	${MKDIR} ${PREFIX}/share/dungeon
+MAKE_FLAGS+=	DATADIR=${DATADIR}
+MAKE_ENV+=	GDT_FLAG=-DHAVE_GDT
+
+.include <bsd.port.options.mk>
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's/^CC =/CC ?=/' \
+		-e 's/^CFLAGS =/CFLAGS +=/' \
+		-e 's/^OPTIONS = -g/OPTIONS =/' \
+		-e '/^OPTIONS = -O/d' \
+		${WRKSRC}/glkterm/Makefile ${WRKSRC}/dungeon-gdt/Makefile
+
+do-build:
+	@(cd ${WRKSRC}/glkterm && ${MAKE})
+	@(cd ${WRKSRC}/dungeon-gdt/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dungeon ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/dtextc.dat ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/dungeon.6 ${PREFIX}/man/man6
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/history ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manifest ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/dungeon-gdt/dungeon ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/dungeon-gdt/dundat ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/DUNGEON.6 ${MAN6PREFIX}/man/man6/dungeon.6
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/dungn32b.zip ${DOCSDIR}
 .endif
 
