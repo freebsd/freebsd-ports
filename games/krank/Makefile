@@ -2,12 +2,12 @@
 
 PORTNAME=	krank
 PORTVERSION=	07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A little casual game
+COMMENT=	Little casual game
 
 LICENSE=	GPLv2
 
@@ -18,38 +18,34 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	CHANGELOG.txt README
+
+DESKTOP_ENTRIES="Krank" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+
+.include <bsd.port.options.mk>
+
+post-extract:
+	@${FIND} ${WRKSRC} -name .cvsignore -type f -print0 -or -name .DS_Store -type f -print0 | \
+		${XARGS} -0 ${RM} -rf
 
 post-patch:
 	${REINPLACE_CMD} -e 's|`dirname.*|${DATADIR}|' ${WRKSRC}/${PORTNAME}
 
-.include <bsd.port.options.mk>
-
 do-install:
-# Scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/krank ${PREFIX}/bin
 
-# Data
 	${MKDIR} ${DATADIR}
-.  for d in art fonts html levels sounds src
+.for d in art fonts html levels sounds src
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
-.  endfor
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/krank.iss ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/logo.xcf ${DATADIR}
-
-# Pixmaps
 	${INSTALL_DATA} ${WRKSRC}/html/gfx/logo.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
