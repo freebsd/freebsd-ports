@@ -3,11 +3,10 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security net
-# MASTER_SITES points to hosts in distinct data centers,
-# so just one MASTER_SITES entry should be OK.
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/ \
-		${MASTER_SITE_LOCAL:S,$,mandree/,}
+		http://build.openvpn.net/downloads/releases/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
@@ -24,9 +23,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # PolarSSL missing: OpenVPN does not currently compile with PolarSSL 1.2.0+
-OPTIONS_DEFINE=		PW_SAVE PKCS11
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA
+OPTIONS_DEFAULT=	EASYRSA
 PW_SAVE_DESC=	Interactive passwords may be read from a file
 PKCS11_DESC=	Use security/pkcs11-helper
+EASYRSA_DESC=	Install security/easy-rsa RSA helper package
 
 .include <bsd.port.options.mk>
 
@@ -34,6 +35,10 @@ PKCS11_DESC=	Use security/pkcs11-helper
 INSTALL_TARGET=	install
 .else
 INSTALL_TARGET=	install-exec install-man
+.endif
+
+.if ${PORT_OPTIONS:MEASYRSA}
+RUN_DEPENDS+=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 .endif
 
 INSTALL_TARGET+=	mandir=${MANPREFIX}/man

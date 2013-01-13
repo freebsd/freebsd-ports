@@ -5,12 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20130111:
+20130113:
   AFFECTS: users of security/openvpn*
   AUTHOR: mandree@FreeBSD.org
 
   security/openvpn has been upgraded to the IPv6-capable v2.3.0.
-  This upgrade removes easy-rsa, and changes installed file layout a bit.
+  This upgrade moves easy-rsa into a separate package in
+  security/easy-rsa that is pre-selected as default run-time dependency,
+  and changes installed file layout a bit.
 
   security/openvpn22 retains the prior OpenVPN 2.2.2 version.
   If you want to continue using this version, use one of these commands:
