@@ -37,16 +37,15 @@ post-patch:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} ${PORTNAME} ${PYTHON_SITELIBDIR})
+	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} ${PORTNAME} ${PYTHONPREFIX_SITELIBDIR})
 	${INSTALL_DATA} ${WRKSRC}/src/automx_wsgi.py ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/automx-test ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/automx.conf \
 		${PREFIX}/etc/automx.conf.sample
-.for m in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/$m ${MAN5PREFIX}/man/man1
-.endfor
-.for m in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man5/$m ${MAN5PREFIX}/man/man5
+.for s in 1 5
+.  for m in ${MAN$s}
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man$s/$m ${MAN$sPREFIX}/man/man$s
+.  endfor
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
