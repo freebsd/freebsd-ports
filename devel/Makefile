@@ -4218,7 +4218,6 @@
     SUBDIR += tijmp
     SUBDIR += tinylaf
     SUBDIR += tinyq
-    SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkinspect
