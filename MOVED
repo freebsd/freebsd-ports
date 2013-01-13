@@ -4011,3 +4011,4 @@ x11/Terminal|x11/xfce4-terminal|2013-01-06|Project was renamed
 textproc/p5-ack|textproc/ack|2013-01-06|Not just a perl module
 sysutils/syslog-ng-rc|sysutils/syslog-ng-devel|2013-01-08|No longer used by our upline, use syslog-ng-devel instead
 www/openbravoerp||2013-01-12|Has expired: incompatible with ant for building
+devel/lbpp||2013-01-13|Has expired: Dead upstream since 2001
