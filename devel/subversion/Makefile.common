@@ -1,7 +1,4 @@
-# New ports collection makefile for:	subversion
-# Date created:				10 September 2001
-# Whom:					rooneg@electricjellyfish.net
-#
+# Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
 PORTNAME=	subversion
@@ -123,6 +120,7 @@ LIB_DEPENDS+=	serf-1:${PORTSDIR}/www/serf
 CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
 PLIST_SUB+=	SERF=""
 .else
+CONFIGURE_ARGS+=--without-serf
 PLIST_SUB+=	SERF="@comment "
 .endif
 
