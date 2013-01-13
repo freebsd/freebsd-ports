@@ -1,6 +1,6 @@
 --- psqlodbc.h.orig	2008-09-21 22:35:44.000000000 +0700
 +++ psqlodbc.h	2009-01-26 23:19:02.000000000 +0600
-@@ -140,13 +140,8 @@
+@@ -151,13 +151,8 @@
  #if (SIZEOF_VOID_P == 8)
  #define	FORMAT_INTEGER	"%d"	/* SQLINTEGER */
  #define	FORMAT_UINTEGER	"%u"	/* SQLUINTEGER */
