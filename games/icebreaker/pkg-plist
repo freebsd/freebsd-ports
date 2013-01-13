@@ -1,9 +1,0 @@
-bin/icebreaker
-%%DATADIR%%/crash.wav
-%%DATADIR%%/icebreaker_48.bmp
-%%DATADIR%%/ouch.wav
-%%DATADIR%%/penguin.bmp
-%%DATADIR%%/penguinicon_32.bmp
-%%DATADIR%%/scores/icebreaker.scores
-@dirrm %%DATADIR%%/scores
-@dirrm %%DATADIR%%
