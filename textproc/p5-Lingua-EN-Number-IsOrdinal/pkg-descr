@@ -1,0 +1,7 @@
+This module will tell you if a number, either in words or as digits,
+is a cardinal or ordinal number.
+
+This is useful if you e.g. want to distinguish these types of numbers
+found with Lingua::EN::FindNumber and take different actions.
+
+WWW: http://search.cpan.org/dist/Lingua-EN-Number-IsOrdinal/
