@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-mako
-# Date created:		April 23 2007
-# Whom:			Dryice Liu <dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	mako
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://www.makotemplates.org/downloads/ \
 		CHEESESHOP
