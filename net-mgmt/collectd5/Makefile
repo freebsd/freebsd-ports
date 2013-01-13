@@ -17,11 +17,13 @@ WANT_GNOME=	yes
 LATEST_LINK=	collectd5
 
 OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT VIRT
-OPTIONS_MULTI=		INPUT OUTPUT
-OPTIONS_MULTI_OUTPUT=	RRDTOOL RRDCACHED WRITE_GRAPHITE WRITE_HTTP
-OPTIONS_MULTI_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK \
-			GCRYPT NUTUPS INTERFACE MBMON MEMCACHED MYSQL NGINX OPENVPN \
-			PDNS PGSQL PING PYTHON ROUTEROS SNMP TOKYOTYRANT XMMS
+OPTIONS_GROUP=		INPUT OUTPUT
+OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_GRAPHITE WRITE_HTTP NOTIFYEMAIL
+OPTIONS_GROUP_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK GCRYPT \
+			NUTUPS INTERFACE IPMI MBMON MEMCACHED MYSQL NGINX \
+			OPENVPN PDNS PGSQL PING PYTHON ROUTEROS SNMP TABLE \
+			TOKYOTYRANT VARNISH XMMS
+
 OPTIONS_DEFAULT=	BIND INTERFACE PING SNMP RRDTOOL RRDCACHED
 
 CGI_DESC=		Install collection.cgi (requires RRDTOOL)
@@ -39,9 +41,11 @@ DBI_DESC=		database abstraction library
 DISK_DESC=		Disk performance statistics
 NUTUPS_DESC=		NUT UPS daemon
 INTERFACE_DESC=		Network interfaces (libstatgrab)
+IPMI_DESC=		IPMI plugin (openipmi)
 MBMON_DESC=		MBMon 
 MEMCACHED_DESC=		Memcached
 MYSQL_DESC=		MySQL
+NOTIFYEMAIL_DESC=	Email notifications (libesmtp)
 NGINX_DESC=		Nginx
 OPENVPN_DESC=		OpenVPN statistics
 PDNS_DESC=		PowerDNS
@@ -50,7 +54,9 @@ PING_DESC=		Network latency (liboping)
 PYTHON_DESC=		Python plugin
 ROUTEROS_DESC=		RouterOS plugin
 SNMP_DESC=		SNMP
+TABLE_DESC=		Table plugin
 TOKYOTYRANT_DESC=	Tokyotyrant database
+VARNISH_DESC=		Varnish plugin
 XMMS_DESC=		XMMS
 # OUTPUT
 RRDTOOL_DESC=		RRDTool
@@ -290,6 +296,26 @@ CONFIGURE_ARGS+=--disable-mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MIPMI}
+USE_PKGCONFIG=	yes
+CONFIGURE_ARGS+=--enable-ipmi
+LIB_DEPENDS+=	OpenIPMI:${PORTSDIR}/sysutils/openipmi
+PLIST_SUB+=	IPMI=""
+.else
+CONFIGURE_ARGS+=--disable-ipmi
+PLIST_SUB+=	IPMI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNOTIFYEMAIL}
+LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
+CONFIGURE_ARGS+=--enable-notify_email
+CONFIGURE_ARGS+=--with-libesmtp=${PREFIX}
+PLIST_SUB+=	NOTIFYEMAIL=""
+.else
+CONFIGURE_ARGS+=--disable-notify_email
+PLIST_SUB+=	NOTIFYEMAIL="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MNGINX}
 RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
@@ -380,6 +406,14 @@ CONFIGURE_ARGS+=--disable-snmp
 PLIST_SUB+=	SNMP="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MTABLE}
+CONFIGURE_ARGS+=--enable-table
+PLIST_SUB+=	TABLE=""
+.else
+CONFIGURE_ARGS+=--disable-table
+PLIST_SUB+=	TABLE="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MTOKYOTYRANT}
 LIB_DEPENDS+=	tokyotyrant:${PORTSDIR}/databases/tokyotyrant
 CONFIGURE_ARGS+=--enable-tokyotyrant
@@ -388,6 +422,16 @@ PLIST_SUB+=	TOKYOTYRANT=""
 .else
 CONFIGURE_ARGS+=--disable-tokyotyrant --without-libtokyotyrant
 PLIST_SUB+=	TOKYOTYRANT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVARNISH}
+LIB_DEPENDS+=	varnishapi:${PORTSDIR}/www/varnish
+CONFIGURE_ARGS+=--enable-varnish
+CONFIGURE_ARGS+=--with-libvarnish=${PREFIX}
+PLIST_SUB+=	VARNISH=""
+.else
+CONFIGURE_ARGS+=--disable-varnish
+PLIST_SUB+=	VARNISH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVIRT}

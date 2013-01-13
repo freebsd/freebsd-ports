@@ -45,6 +45,8 @@ lib/collectd/filecount.la
 lib/collectd/filecount.so
 %%INTERFACE%%lib/collectd/interface.la
 %%INTERFACE%%lib/collectd/interface.so
+%%IPMI%%lib/collectd/ipmi.la
+%%IPMI%%lib/collectd/ipmi.so
 lib/collectd/load.la
 lib/collectd/load.so
 lib/collectd/logfile.la
@@ -57,6 +59,8 @@ lib/collectd/memory.la
 lib/collectd/memory.so
 %%MYSQL%%lib/collectd/mysql.la
 %%MYSQL%%lib/collectd/mysql.so
+%%NOTIFYEMAIL%%lib/collectd/notify_email.la
+%%NOTIFYEMAIL%%lib/collectd/notify_email.so
 %%NGINX%%lib/collectd/nginx.la
 %%NGINX%%lib/collectd/nginx.so
 lib/collectd/network.la
@@ -97,6 +101,8 @@ lib/collectd/tcpconns.la
 lib/collectd/tcpconns.so
 lib/collectd/threshold.la
 lib/collectd/threshold.so
+%%TABLE%%lib/collectd/table.la
+%%TABLE%%lib/collectd/table.so
 %%TOKYOTYRANT%%lib/collectd/tokyotyrant.la
 %%TOKYOTYRANT%%lib/collectd/tokyotyrant.so
 lib/collectd/unixsock.la
@@ -107,6 +113,8 @@ lib/collectd/users.la
 lib/collectd/users.so
 lib/collectd/uuid.la
 lib/collectd/uuid.so
+%%VARNISH%%lib/collectd/varnish.la
+%%VARNISH%%lib/collectd/varnish.so
 %%VIRT%%lib/collectd/libvirt.la
 %%VIRT%%lib/collectd/libvirt.so
 %%WRITE_GRAPHITE%%lib/collectd/write_graphite.so
