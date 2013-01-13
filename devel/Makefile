@@ -893,7 +893,6 @@
     SUBDIR += kscope
     SUBDIR += kyra
     SUBDIR += lasi
-    SUBDIR += lbpp
     SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += lemon
