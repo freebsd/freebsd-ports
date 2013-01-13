@@ -31,11 +31,6 @@ bin/readmsg
 %%CONF_DIR%%/elm.rc-dist
 @exec if [ -f %D/%%LIB_DIR%%/elm.rc ]; then [ -f %B/elm.rc ] && old=.old || old=; mv %D/%%LIB_DIR%%/elm.rc %B/elm.rc${old}; fi
 @exec [ -f %B/elm.rc ] || cp %B/%f %B/elm.rc
-@unexec if cmp -s %D/%%CONF_DIR%%/elm.terminalinfo %D/%%CONF_DIR%%/elm.terminalinfo-dist; then rm -f %D/%%CONF_DIR%%/elm.terminalinfo; fi
-%%CONF_DIR%%/elm.terminalinfo-dist
-%%CONF_DIR%%/elm.terminalinfo.NEW
-@exec if [ -f %D/%%LIB_DIR%%/elm.terminalinfo ]; then [ -f %B/elm.terminalinfo ] && old=.old || old=; mv %D/%%LIB_DIR%%/elm.terminalinfo %B/elm.terminalinfo${old}; fi
-@exec [ -f %B/elm.terminalinfo ] || cp %B/%f %B/elm.terminalinfo
 %%LIB_DIR%%/elm-help.0
 %%LIB_DIR%%/elm-help.1
 %%LIB_DIR%%/elm-help.2
