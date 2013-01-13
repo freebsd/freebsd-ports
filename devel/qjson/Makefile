@@ -1,47 +1,40 @@
-# New ports collection makefile for:	qjson
-# Date created:				19 December 2009
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	qjson
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	Qt-based library that maps JSON data to QVariant objects
+COMMENT=	Library to manage JSON objects with Qt
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
+USE_BZIP2=	yes
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+.include <bsd.port.options.mk>
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_SUFFIX}/data/' \
-		-e 's|apps/cmake/modules|cmake/Modules|' \
+post-patch:
+	@${REINPLACE_CMD} -e 's,/pkgconfig,/../libdata/pkgconfig,' \
 		${WRKSRC}/CMakeLists.txt
 
 post-build:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/doc && doxygen
 .endif
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
