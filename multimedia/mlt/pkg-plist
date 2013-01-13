@@ -65,7 +65,7 @@ lib/mlt/libmlteffectv.so
 %%GTK2%%lib/mlt/libmltgtk2.so
 %%JACK%%lib/mlt/libmltjackrack.so
 lib/mlt/libmltkdenlive.so
-%%KINO%%lib/mlt/libmltkino.so
+%%QUICKTIME%%lib/mlt/libmltkino.so
 lib/mlt/libmltlinsys.so
 lib/mlt/libmltmotion_est.so
 lib/mlt/libmltnormalize.so
@@ -196,6 +196,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/motion_est/filter_motion_est.yml
 %%DATADIR%%/motion_est/filter_vismv.yml
 %%DATADIR%%/motion_est/producer_slowmotion.yml
+%%DATADIR%%/normalize/filter_audiolevel.yml
 %%DATADIR%%/normalize/filter_volume.yml
 %%DATADIR%%/oldfilm/dust1.svg
 %%DATADIR%%/oldfilm/dust2.svg
