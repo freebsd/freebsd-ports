@@ -1,8 +1,9 @@
+# Created by: Olivier Duchateau
 # $FreeBSD$
 #
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.26
+PORTVERSION=	0.1.27
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -13,7 +14,6 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
@@ -27,11 +27,15 @@ USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--enable-xdg-cache \
 		--disable-gtk-doc-html
 
-OPTIONS_DEFINE=	DOCS NLS PIXBUF FONTS JPEG FFMPEG POPPLER GSTREAMER ODF RAW
+OPTIONS_DEFINE=	DOCS NLS PIXBUF FONTS JPEG FFMPEG POPPLER \
+	GSTREAMER ODF RAW COVER
 OPTIONS_DEFAULT=	PIXBUF FONTS JPEG POPPLER GSTREAMER ODF
 # GStreamer thumbnailer needs new 1.0 API
 OPTIONS_EXCLUDE=	GSTREAMER
 FONTS_DESC=	Fonts thumbnailer plugin
+COVER_DESC=	Open Movie Database thumbnailer plugin
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
@@ -62,6 +66,13 @@ PLIST_SUB+=	PIXBUF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFONTS}
+# PIXBUF needs to be set
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=--enable-font-thumbnailer
 PLIST_SUB+=	FONTS=""
 .else
@@ -70,6 +81,11 @@ PLIST_SUB+=	FONTS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		exif:${PORTSDIR}/graphics/exif
 CONFIGURE_ARGS+=--enable-jpeg-thumbnailer
@@ -80,6 +96,11 @@ PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
 LIB_DEPENDS+=	ffmpegthumbnailer:${PORTSDIR}/multimedia/ffmpegthumbnailer
 CONFIGURE_ARGS+=--enable-ffmpeg-thumbnailer
 PLIST_SUB+=	FFMPEG=""
@@ -89,6 +110,11 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPOPPLER}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
 LIB_DEPENDS+=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=--enable-poppler-thumbnailer
 PLIST_SUB+=	POPPLER=""
@@ -98,6 +124,11 @@ PLIST_SUB+=	POPPLER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=--enable-gstreamer-thumbnailer
 PLIST_SUB+=	GSTREAMER=""
@@ -107,6 +138,11 @@ PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MODF}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
 USE_GNOME+=	libgsf
 CONFIGURE_ARGS+=--enable-odf-thumbnailer
 PLIST_SUB+=	ODF=""
@@ -116,6 +152,11 @@ PLIST_SUB+=	ODF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRAW}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+PLIST_SUB+=	PIXBUF=""
+.endif
 LIB_DEPENDS+=	openraw:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-raw-thumbnailer
 PLIST_SUB+=	RAW=""
@@ -124,9 +165,28 @@ CONFIGURE_ARGS+=--disable-raw-thumbnailer
 PLIST_SUB+=	RAW="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MCOVER}
+.if ! ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
+CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+PLIST_SUB+=	PIXBUF=""
+.endif
+CONFIGURE_ARGS+=--enable-cover-thumbnailer
+PLIST_SUB+=	COVER=""
+.else
+CONFIGURE_ARGS+=--disable-cover-thumbnailer
+PLIST_SUB+=	COVER="@comment "
+.endif
+
 post-patch:
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
+
+post-install:
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

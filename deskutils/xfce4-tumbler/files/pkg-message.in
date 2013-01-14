@@ -1,0 +1,6 @@
+To override the default configuration, you must copy the rc-file:
+
+	mkdir ~/.config/tumbler
+	cp %%PREFIX%%/etc/xdg/tumbler/tumbler.rc ~/.config/tumbler
+
+For more information see http://docs.xfce.org/xfce/thunar/tumbler
