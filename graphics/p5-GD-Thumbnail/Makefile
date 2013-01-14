@@ -1,13 +1,8 @@
-# Ports collection makefile for:	GD::Thumbnail
-# Date created:			2006/08/15
-# Whom:	      			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	GD-Thumbnail
-PORTVERSION=	1.35
-PORTREVISION=	3
+PORTVERSION=	1.41
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
