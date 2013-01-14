@@ -20,6 +20,8 @@ you update your ports collection, before attempting any port upgrades.
     # portmaster -o security/openvpn22 security/openvpn
   or
     # portupgrade -o security/openvpn22 security/openvpn
+  or
+    # pkg set -o security/openvpn:security/openvpn22
 
   security/openvpn20 has been marked deprecated and to be removed
   in half a year's time.  Please migrate to a newer version soonish.
