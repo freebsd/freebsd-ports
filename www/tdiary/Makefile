@@ -61,23 +61,12 @@ TDIARY_LANG=	en
 
 REINPLACE_ARGS=	-i ''
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NORA
+OPTIONS_DEFAULT=	NORA
 
-.if ${RUBY_VER} == 1.9
-.if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 1.9.1 or later
-.endif
-.endif
+NORA_DESC=	Use Nora
 
-.if ${RUBY_VER} == 1.8
-.if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 1.8.5 or later
-.endif
-RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
-.if !defined(WITHOUT_TDIARY_NORA)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
-.endif
-.endif
+.include <bsd.port.options.mk>
 
 pre-patch:
 	@${RM} ${WRKSRC}/.gitignore
@@ -115,7 +104,7 @@ do-install:
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 	@${ECHO_CMD} bin/${TDIARY_SCRIPT} >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
@@ -124,5 +113,23 @@ post-install:
 x-generate-plist:
 	${FIND} ${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
 	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 1.9.1 or later
+.endif
+.endif
+
+.if ${RUBY_VER} == 1.8
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 1.8.5 or later
+.endif
+RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
+.if ${PORT_OPTIONS:MNORA}
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
+.endif
+.endif
 
 .include <bsd.port.post.mk>
