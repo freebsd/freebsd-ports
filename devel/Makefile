@@ -2937,6 +2937,7 @@
     SUBDIR += p5-strictures
     SUBDIR += p5-subatom
     SUBDIR += p5-subversion
+    SUBDIR += p5-syntax
     SUBDIR += p5-threads
     SUBDIR += p5-threads-shared
     SUBDIR += p5-true
