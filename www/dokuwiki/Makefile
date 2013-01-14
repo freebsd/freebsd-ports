@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dokuwiki
-# Date created:		2005-04-10
-# Whom:			chinsan <chinsan@mail2000.com.tw>
-#
+# Created by:	Chin-San Huang <chinsan@mail2000.com.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
@@ -15,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 DIST_VER=	${PORTNAME}-2012-10-13
 USE_PHP=	gd mbstring openssl pcre session xml zlib
