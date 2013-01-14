@@ -1,3 +1,4 @@
+etc/xdg/tumbler/tumbler.rc
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
 include/tumbler-1/tumbler/tumbler-cache-plugin.h
 include/tumbler-1/tumbler/tumbler-cache.h
@@ -21,6 +22,8 @@ lib/libtumbler-1.so.0
 lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
 lib/tumbler-1/plugins/cache/tumbler-xdg-cache.la
 lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
+%%COVER%%lib/tumbler-1/plugins/tumbler-cover-thumbnailer.la
+%%COVER%%lib/tumbler-1/plugins/tumbler-cover-thumbnailer.so
 %%FFMPEG%%lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.la
 %%FFMPEG%%lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
 %%FONTS%%lib/tumbler-1/plugins/tumbler-font-thumbnailer.la
@@ -92,7 +95,6 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/ko/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/tumbler.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/tumbler.mo
@@ -130,3 +132,4 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 @dirrm lib/tumbler-1
 @dirrm include/tumbler-1/tumbler
 @dirrm include/tumbler-1
+@dirrm etc/xdg/tumbler

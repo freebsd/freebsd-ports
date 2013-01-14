@@ -1,0 +1,28 @@
+--- ./tumblerd/tumbler.rc.orig	2013-01-12 11:14:28.000000000 +0000
++++ ./tumblerd/tumbler.rc	2013-01-12 22:12:40.000000000 +0000
+@@ -37,7 +37,7 @@
+ 
+ # RAW image files using libopenraw
+ [RawThumbnailer]
+-Disabled=false
++Disabled=true
+ Priority=1
+ Locations=
+ MaxFileSize=0
+@@ -58,14 +58,14 @@
+ 
+ # ffmpegthumbnailer plugin
+ [FfmegThumbnailer]
+-Disabled=false
++Disabled=true
+ Priority=2
+ Locations=
+ MaxFileSize=0
+ 
+ # GStreamer plugin
+ [GstThumbnailer]
+-Disabled=false
++Disabled=true
+ Priority=1
+ Locations=
+ MaxFileSize=0
