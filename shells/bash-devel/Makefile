@@ -26,12 +26,11 @@ COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
 
-OPTIONS_DEFINE=	IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC_BASH SYSLOG DOCS
+OPTIONS_DEFINE=	IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG DOCS
 OPTIONS_DEFAULT=IMPLICITCD COLONBREAKSWORDS HELP NLS
 IMPLICITCD_DESC=	Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Install the help files
-STATIC_BASH_DESC=	Compile without shared libs
 SYSLOG_DESC=		Compile with syslog support
 
 .include <bsd.port.pre.mk>
@@ -62,7 +61,7 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
-.if ${PORT_OPTIONS:MSTATIC_BASH} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
+.if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
 .if empty(PORT_OPTIONS:MNLS)
 WITHOUT_NLS=yes
 .endif
