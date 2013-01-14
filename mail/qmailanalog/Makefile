@@ -6,11 +6,10 @@ PORTVERSION=	0.70
 PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
-		http://www.emaillab.org/djb/qmailanalog/ \
-		http://summersoft.fay.ar.us/pub/qmail/qmailanalog/
+		http://www.emaillab.org/djb/qmailanalog/
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	A collection of tools to analyze qmail-send's activity
+COMMENT=	Tools to analyze qmail-send's activity
 
 USE_QMAIL_RUN=	yes
 MAKE_JOBS_SAFE=	yes
