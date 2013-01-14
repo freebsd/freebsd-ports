@@ -1,12 +1,7 @@
-# New ports collection makefile for:	HTTP::Session
-# Date created:		22 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Session
-PORTVERSION=	0.46
+PORTVERSION=	0.48
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -25,7 +20,9 @@ RUN_DEPENDS=	\
 	p5-Module-Runtime>=0.011:${PORTSDIR}/devel/p5-Module-Runtime \
 	p5-URI>=1.38:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	\
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PERL_CONFIGURE=	yes
 
