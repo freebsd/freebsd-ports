@@ -1,12 +1,8 @@
-# New ports collection makefile for:	hevea
-# Date created:		November 28 1999
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	hevea
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
