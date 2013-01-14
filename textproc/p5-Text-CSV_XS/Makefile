@@ -1,12 +1,8 @@
-# New ports collection makefile for:    Text::CSV_XS
-# Date created:         Fri Nov 19 03:11:08 MSK 1999
-# Whom:                 Ache
-#
+# Created by: Ache
 # $FreeBSD$
-#
 
 PORTNAME=	Text-CSV_XS
-PORTVERSION=	0.91
+PORTVERSION=	0.95
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
