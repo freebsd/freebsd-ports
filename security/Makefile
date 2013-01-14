@@ -118,6 +118,7 @@
     SUBDIR += dropbear
     SUBDIR += dsniff
     SUBDIR += duo
+    SUBDIR += easy-rsa
     SUBDIR += easypg
     SUBDIR += engine_pkcs11
     SUBDIR += expiretable
