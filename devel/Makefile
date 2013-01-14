@@ -2925,6 +2925,7 @@
     SUBDIR += p5-mocked
     SUBDIR += p5-namespace-autoclean
     SUBDIR += p5-namespace-clean
+    SUBDIR += p5-namespace-sweep
     SUBDIR += p5-orz
     SUBDIR += p5-parent
     SUBDIR += p5-perlbrew

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/sweep/.packlist
+%%SITE_PERL%%/namespace/sweep.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/sweep
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace
+@dirrmtry %%SITE_PERL%%/namespace
