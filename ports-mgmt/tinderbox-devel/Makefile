@@ -3,6 +3,7 @@
 
 PORTNAME=	tinderbox
 DISTVERSION=	4.0.0.b2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
@@ -62,16 +63,14 @@ PLIST_SUB+=	WEBUI="@comment "
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 .if defined(WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
-USE_PHP+=	pgsql
+USE_PHP+=	pgsql pdo_pgsql
 .endif
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 .if defined(WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
-USE_PHP+=	mysql
+USE_PHP+=	mysql pdo_mysql
 .endif
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
@@ -79,8 +78,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 .if ${PORT_OPTIONS:MSQLITE}
 .if defined(WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/sqlite.php:${PORTSDIR}/databases/pear-MDB2_Driver_sqlite
-USE_PHP+=	sqlite
+USE_PHP+=	sqlite3 pdo_sqlite
 .endif
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
@@ -123,8 +121,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
-	${REINPLACE_CMD} -e 's/.set_rcvar./tinderd_enable/' \
-		${WRKSRC}/etc/rc.d/tinderd
 	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
 do-install:
