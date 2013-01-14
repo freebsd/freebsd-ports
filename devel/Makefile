@@ -2740,6 +2740,7 @@
     SUBDIR += p5-Test-POE-Client-TCP
     SUBDIR += p5-Test-POE-Server-TCP
     SUBDIR += p5-Test-Parser
+    SUBDIR += p5-Test-PerlTidy
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
     SUBDIR += p5-Test-Pod-Coverage-Permissive
