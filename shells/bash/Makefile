@@ -69,10 +69,10 @@ WITHOUT_NLS=yes
 .endif
 CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=	-static
-CONFLICTS+=	bash-[0-9]* bash3-[0-9]* bash3-static-[0-9]*
+CONFLICTS+=	bash-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
 .else
 CONFIGURE_ARGS+=	--enable-static-link=no
-CONFLICTS+=	bash-static-[0-9]* bash3-[0-9]* bash3-static-[0-9]*
+CONFLICTS+=	bash-static-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
 .endif
 
 .if defined(WITHOUT_HELP)
