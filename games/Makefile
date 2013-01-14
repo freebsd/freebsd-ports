@@ -221,6 +221,7 @@
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += enygma
+    SUBDIR += epiar
     SUBDIR += etracer
     SUBDIR += euchre
     SUBDIR += evilfinder
