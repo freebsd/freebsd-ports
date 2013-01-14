@@ -1,12 +1,7 @@
-# New ports collection makefile for:	DBIx::QueryLog
-# Date created:		02 Jan 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-QueryLog
-PORTVERSION=	0.29
+PORTVERSION=	0.32
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +12,10 @@ COMMENT=	Perl extension for logging queries for DBI
 RUN_DEPENDS=	\
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	\
+	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
+	p5-Class-Method-Modifiers>0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
