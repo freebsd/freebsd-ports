@@ -3833,6 +3833,7 @@
     SUBDIR += ruby-aspectr
     SUBDIR += ruby-avl
     SUBDIR += ruby-bsearch
+    SUBDIR += ruby-build
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-cache
     SUBDIR += ruby-calendar
