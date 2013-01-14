@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Teng
-# Date created:		27 Feb 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Teng
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEKOKAK
@@ -30,7 +25,8 @@ TEST_DEPENDS=	\
 	p5-Test-Mock-Guard>0:${PORTSDIR}/devel/p5-Test-Mock-Guard \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork \
-	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
+	p5-Class-Method-Modifiers>0:${PORTSDIR}/devel/p5-Class-Method-Modifiers
 
 PERL_CONFIGURE=	yes
 
@@ -43,6 +39,7 @@ MAN3=	Teng.3 \
 	Teng::Plugin::Pager.3 \
 	Teng::Plugin::Pager::MySQLFoundRows.3 \
 	Teng::Plugin::Replace.3 \
+	Teng::Plugin::SQLPager.3 \
 	Teng::Plugin::SingleBySQL.3 \
 	Teng::QueryBuilder.3 \
 	Teng::Row.3 \
