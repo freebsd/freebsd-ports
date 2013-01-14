@@ -1,9 +1,9 @@
 %%SITE_PERL%%/AnyEvent/Filesys/Notify.pm
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Event.pm
+%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/FSEvents.pm
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Fallback.pm
-%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Linux.pm
-%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Mac.pm
-%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/FreeBSD.pm
+%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Inotify2.pm
+%%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/KQueue.pm
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys
