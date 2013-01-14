@@ -1,20 +1,14 @@
 include/Mesa/GL/gl.h
 include/Mesa/GL/gl_mangle.h
 include/Mesa/GL/glext.h
-include/Mesa/GL/glu.h
-include/Mesa/GL/glu_mangle.h
 include/Mesa/GL/glx.h
 include/Mesa/GL/glx_mangle.h
 include/Mesa/GL/glxext.h
 include/Mesa/GL/osmesa.h
-include/Mesa/GL/vms_x_fix.h
 include/Mesa/GL/wglext.h
 include/Mesa/GL/wmesa.h
-lib/libOSGLU.so
-lib/libOSGLU.so.1
-lib/libOSMesa32.so
-lib/libOSMesa32.so.8
+lib/libOSMesa.so
+lib/libOSMesa.so.9
 libdata/pkgconfig/osmesa.pc
-libdata/pkgconfig/osglu.pc
 @dirrm include/Mesa/GL
 @dirrm include/Mesa
