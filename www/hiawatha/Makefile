@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	8.6
+PORTVERSION=	8.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
@@ -14,16 +14,16 @@ COMMENT=	Advanced and secure webserver for Unix
 LICENSE=	GPLv2
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL
-CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf php-fcgi.conf \
-		toolkit.conf index.xslt
+CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
+		index.xslt
 
-MAN1=		cgi-wrapper.1 hiawatha.1 php-fcgi.1 ssi-cgi.1 wigwam.1
+MAN1=		cgi-wrapper.1 hiawatha.1 ssi-cgi.1 wigwam.1
 
 MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	hiawatha php-fcgi
+USE_RC_SUBR=	hiawatha
 WANT_GNOME=	yes
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/bin \
@@ -128,12 +128,10 @@ PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 	${WRKSRC}/man/hiawatha.1.in ${WRKSRC}/man/cgi-wrapper.1.in \
-	${WRKSRC}/man/php-fcgi.1.in ${WRKSRC}/config/cgi-wrapper.conf \
-	${WRKSRC}/config/hiawatha.conf.in ${WRKSRC}/config/php-fcgi.conf.in
+	${WRKSRC}/config/cgi-wrapper.conf ${WRKSRC}/config/hiawatha.conf.in
 
 	@${REINPLACE_CMD} -e 's|/etc/hiawatha|${ETCDIR}|g' \
-	${WRKSRC}/man/hiawatha.1.in ${WRKSRC}/man/cgi-wrapper.1.in \
-	${WRKSRC}/man/php-fcgi.1.in
+	${WRKSRC}/man/hiawatha.1.in ${WRKSRC}/man/cgi-wrapper.1.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

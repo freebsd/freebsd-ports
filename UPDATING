@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130114:
+  AFFECTS: users of www/hiawatha
+  AUTHOR: cs@FreeBSD.org
+
+  php-fcgi has been removed upstream from hiawatha and is not supported anymore.
+  It is recommended to move to another FastCGI implementation, e.g. PHP-FPM
+  (lang/php5).
+
 20130113:
   AFFECTS: users of security/openvpn*
   AUTHOR: mandree@FreeBSD.org
