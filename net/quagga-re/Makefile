@@ -1,14 +1,13 @@
-# New ports collection makefile for:    quagga-re
-# Date created:         25 Nov 2011
-# Whom:                 Sergey Matveychuk <sem@FreeBSD.org>
+# Created by:                 Sergey Matveychuk <sem@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.17.11
+PORTVERSION=	0.99.17.12
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://cloud.github.com/downloads/Quagga-RE/quagga-RE/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	quagga-re
 PKGNAMESUFFIX=	-re
 
 MAINTAINER=	sem@FreeBSD.org
