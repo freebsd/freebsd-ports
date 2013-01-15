@@ -1,4 +1,18 @@
-Japanese Morphological Dictionary for MeCab.
+MeCab the Graduate School of Informatics, Kyoto University Unit - Joint
+Research Project Communication Science Laboratories, Nippon Telegraph and
+Telephone Corporation morphological analysis engine that was developed
+through open source. The basic policy is to design a general-purpose
+language-independent, dictionary and corpus.  (Conditional Random Fields
+for the estimation of the parameters CRF has been used), ChaSen performance
+has improved compared to the hidden Markov model is employed. In addition,
+on average ChaSen , Juman , KAKASI run faster than.  Turnip Undaria pinnatifida
+(wear eye) is the way the author's favorite food.
 
-Author:	Taku Kudo <taku@chasen.org>
+* Generic design that does not depend dictionary, the corpus
+* Conditional Random Fields ( CRF on the basis of high analysis accuracy)
+* ChaSen and KAKASI faster than
+* Structure algorithm / data dictionary lookup is a fast TRIE structure Double-Array adopted.
+* Libraries that can be re-entrant
+* Various scripting language bindings (perl / ruby / python / java / C #)
+
 WWW:   http://mecab.sourceforge.net/
