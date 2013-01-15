@@ -1,3 +1,4 @@
+# Created by: Shigeyuki Fukushima <shige@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	eblook
@@ -8,7 +9,9 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	Interactive EB interface command for searching words in electronic dictionaries
+COMMENT=	Command to lookup words in EB format dictionaries
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
@@ -18,8 +21,12 @@ CONFIGURE_ARGS=		--with-eb-includes=${PREFIX}/include \
 
 INFO=		eblook
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	for i in AUTHORS COPYING ChangeLog NEWS README ; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${DOCSDIR} ;\
