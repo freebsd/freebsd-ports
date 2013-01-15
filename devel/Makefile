@@ -1003,6 +1003,7 @@
     SUBDIR += libleaftag
     SUBDIR += liblnk
     SUBDIR += liblogging
+    SUBDIR += liblognorm
     SUBDIR += liblouis
     SUBDIR += liblouisxml
     SUBDIR += libltdl
