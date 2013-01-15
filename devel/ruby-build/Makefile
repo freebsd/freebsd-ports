@@ -2,6 +2,7 @@
 
 PORTNAME=	ruby-build
 PORTVERSION=	20130104
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
@@ -41,7 +42,7 @@ PLIST_FILES=	bin/ruby-build \
 PORTDATA=	*
 
 post-patch-script:
-	@${REINPLACE_CMD} -e 's|make\s|gmake|' \
+	@${REINPLACE_CMD} -e 's|make |gmake |' \
 		${WRKSRC}/bin/ruby-build
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-build ${PREFIX}/bin
