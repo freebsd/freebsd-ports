@@ -1,0 +1,11 @@
+bin/lognormalizer
+include/annot.h
+include/liblognorm.h
+include/lognorm.h
+include/ptree.h
+include/samp.h
+lib/liblognorm.a
+lib/liblognorm.la
+lib/liblognorm.so
+lib/liblognorm.so.0
+libdata/pkgconfig/lognorm.pc
