@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Furl
-# Date created:		09 Jul 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Furl
-PORTVERSION=	1.00
+PORTVERSION=	1.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -16,7 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of lightning-fast URL fetcher
 
 RUN_DEPENDS=	\
-	p5-HTTP-Parser-XS>=0.11:${PORTSDIR}/www/p5-HTTP-Parser-XS
+	p5-HTTP-Parser-XS>=0.11:${PORTSDIR}/www/p5-HTTP-Parser-XS \
+	p5-Mozilla-CA>0:${PORTSDIR}/www/p5-Mozilla-CA
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP \
