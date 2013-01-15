@@ -8,6 +8,7 @@ sbin/uacctd
 %%DATADIR%%/README.64bit
 %%DATADIR%%/README.IPv6
 %%DATADIR%%/README.agent_id2
+%%DATADIR%%/README.country
 %%DATADIR%%/README.cos
 %%DATADIR%%/README.etype
 %%DATADIR%%/README.iface
@@ -15,6 +16,7 @@ sbin/uacctd
 %%DATADIR%%/README.mpls_vpn_rd
 %%DATADIR%%/README.mysql
 %%DATADIR%%/README.pgsql
+%%DATADIR%%/README.sampling_rate
 %%DATADIR%%/README.sqlite3
 %%DATADIR%%/pmacct-create-db.pgsql
 %%DATADIR%%/pmacct-create-db_bgp_v1.mysql
