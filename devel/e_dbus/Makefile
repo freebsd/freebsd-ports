@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	e_dbus
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 PORTEPOCH=	1
 CATEGORIES=	devel enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
+MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
