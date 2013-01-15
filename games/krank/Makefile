@@ -21,7 +21,7 @@ NO_BUILD=	yes
 PORTDOCS=	CHANGELOG.txt README
 
 DESKTOP_ENTRIES="Krank" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
 .include <bsd.port.options.mk>
 
