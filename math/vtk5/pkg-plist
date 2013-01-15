@@ -259,6 +259,8 @@
 %%QT%%include/vtk-%%VER2%%/vtkQtAnnotationLayersModelAdapter.h
 %%QT%%include/vtk-%%VER2%%/vtkQtAnnotationView.h
 %%QT%%include/vtk-%%VER2%%/vtkQtConnection.h
+%%QT%%include/vtk-%%VER2%%/vtkQtDebugLeaksModel.h
+%%QT%%include/vtk-%%VER2%%/vtkQtDebugLeaksView.h
 %%QT%%include/vtk-%%VER2%%/vtkQtInitialization.h
 %%QT%%include/vtk-%%VER2%%/vtkQtLabelRenderStrategy.h
 %%QT%%include/vtk-%%VER2%%/vtkQtListView.h
@@ -2528,8 +2530,6 @@ include/vtk-%%VER2%%/vtkPolyPlane.h
 include/vtk-%%VER2%%/vtkProjectedAAHexahedraMapper_FS.h
 include/vtk-%%VER2%%/vtkProjectedAAHexahedraMapper_GS.h
 include/vtk-%%VER2%%/vtkProjectedAAHexahedraMapper_VS.h
-include/vtk-%%VER2%%/vtkQtDebugLeaksModel.h
-include/vtk-%%VER2%%/vtkQtDebugLeaksView.h
 include/vtk-%%VER2%%/vtkQuadRotationalExtrusionFilter.h
 include/vtk-%%VER2%%/vtkRectilinearGridToPointSet.h
 include/vtk-%%VER2%%/vtkResliceCursor.h
