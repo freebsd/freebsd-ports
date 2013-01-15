@@ -5,7 +5,7 @@ PORTNAME=	enlightenment
 PORTVERSION=	0.17.0
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
+MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
