@@ -28,7 +28,7 @@ MAN1=		xdaclunix.1 xdalarm.1 xdcustom.1 xddump.1 xdiary.1 xdinitdb.1 \
 post-patch:
 	@${ECHO_MSG} removing the "malloc.h" includes
 	${SCRIPTDIR}/nomalloc $(WRKSRC) 2>&1 > /dev/zero
-	@${ECHO_MSG} removing unneccessary DependTarget from Imakefile-s
+	@${ECHO_MSG} removing unnecessary DependTarget from Imakefile-s
 	${SCRIPTDIR}/noextradepend $(WRKSRC) 2>&1 > /dev/zero
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		-e 's|CcCmd gcc|CcCmd ${CC}|' '${WRKSRC}/XDiary.tmpl'
