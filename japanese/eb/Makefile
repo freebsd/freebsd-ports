@@ -1,3 +1,4 @@
+# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
 # $FreeBSD$
 
 PORTNAME=	eb
@@ -12,6 +13,8 @@ EXTRACT_ONLY=	${EBFILES}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	C library for accessing EB, EBG, EBXA, and EPWING CD-ROM dictionaries
+
+LICENSE=	BSD
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
@@ -68,9 +71,13 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
 
+OPTIONS_DEFINE=	DOCS NLS
+
 APPENDIXDIR=	${DATADIR}/appendix
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls \
 		--with-gettext-includes=${LOCALBASE}/include \
@@ -91,8 +98,8 @@ post-extract:
 .endfor
 
 post-install:
-	${CP} -R ${WRKDIR}/appendix/ ${APPENDIXDIR}
-.if !defined(NOPORTDOCS)
+	(cd ${WRKDIR}/appendix && ${COPYTREE_SHARE} \* ${APPENDIXDIR} )
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
