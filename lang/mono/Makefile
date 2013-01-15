@@ -1,4 +1,4 @@
-# Created by:	Yukihiro Nakai <nakai@FreeBSD.org>
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mono
@@ -36,7 +36,7 @@ MONO_SHARED_DIR=${WRKDIR}
 MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 		LC_ALL=C
 
-ONLY_FOR_ARCHS=	i386 amd64 ppc
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 MAN1=		al.1 cccheck.1 ccrewrite.1 cert2spc.1 certmgr.1 chktrust.1 \
 		cilc.1 crlupdate.1 csharp.1 disco.1 dtd2xsd.1 gacutil.1 \
