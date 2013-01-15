@@ -20,6 +20,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		physfs:${PORTSDIR}/devel/physfs
 
+PORTSCOUT=	skipv:0.5.1
+
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		glu
