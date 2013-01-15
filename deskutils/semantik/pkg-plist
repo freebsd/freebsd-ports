@@ -161,6 +161,7 @@ share/apps/semantik/templates/s5/ui/default/outline.css
 share/apps/semantik/templates/s5/ui/default/pretty.css
 share/apps/semantik/templates/s5/ui/default/print.css
 share/apps/semantik/templates/s5/ui/default/s5-core.css
+share/apps/semantik/templates/s5/ui/default/semantik.css
 share/apps/semantik/templates/s5/ui/default/slides.css
 share/apps/semantik/templates/s5/ui/default/slides.js
 share/apps/semantik/templates/semantik.sem.py
@@ -186,14 +187,12 @@ share/icons/oxygen/32x32/actions/semantik_point.png
 share/icons/oxygen/32x32/actions/semantik_sort.png
 share/icons/oxygen/48x48/actions/semantik_move.png
 share/icons/oxygen/64x64/actions/semantik_sort.png
-%%NLS%%share/locale/cz/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/el/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/es/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/semantik.mo
-%%NLS%%@dirrmtry share/locale/cz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cz
 @dirrm share/apps/semantik/templates/s5/ui/default
 @dirrm share/apps/semantik/templates/s5/ui
 @dirrm share/apps/semantik/templates/s5
