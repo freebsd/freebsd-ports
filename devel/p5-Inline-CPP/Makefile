@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Inline::CPP
-# Date created:		14 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Inline-CPP
-PORTVERSION=	0.39
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,22 +12,22 @@ COMMENT=	Write Perl subroutines and classes in C++
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Inline>=0.50:${PORTSDIR}/devel/p5-Inline \
+RUN_DEPENDS=	p5-Inline>=0.51:${PORTSDIR}/devel/p5-Inline \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Kwalitee>=0:${PORTSDIR}/devel/p5-Test-Kwalitee
 
 PERL_CONFIGURE=	yes
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+EXTRA_PATCHES+=	${FILESDIR}/opt-patch-Makefile.PL
+.else
+IS_INTERACTIVE=	yes
+.endif
 
 MAN3=		Inline::CPP.3 \
 		Inline::CPP::Config.3 \
 		Inline::CPP::grammar.3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's/g++/${CXX}/' ${WRKSRC}/Makefile.PL
 
-.if ${PERL_LEVEL} < 501400
-TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
