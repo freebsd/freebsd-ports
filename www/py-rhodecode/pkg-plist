@@ -9,9 +9,21 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions/hipchat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions/hipchat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions/hipchat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/rhodecode_api.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/rhodecode_api.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/rhodecode_api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/rhodecode_backup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/rhodecode_backup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin/rhodecode_backup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/__init__.pyo
@@ -25,6 +37,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/middleware.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/middleware.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/middleware.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/post_receive_tmpl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/post_receive_tmpl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/post_receive_tmpl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/pre_receive_tmpl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/pre_receive_tmpl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/pre_receive_tmpl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions/__init__.pyo
@@ -88,6 +106,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/changeset.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/changeset.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/changeset.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/compare.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/compare.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/compare.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/error.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/error.pyo
@@ -112,6 +133,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/login.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/login.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/login.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/pullrequests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/pullrequests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/pullrequests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/search.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/search.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/search.pyo
@@ -129,10 +153,16 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/tags.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/en/LC_MESSAGES/rhodecode.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/en/LC_MESSAGES/rhodecode.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/fr/LC_MESSAGES/rhodecode.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/fr/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/how_to
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/ja/LC_MESSAGES/rhodecode.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/ja/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR/LC_MESSAGES/rhodecode.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/rhodecode.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_CN/LC_MESSAGES/rhodecode.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_CN/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW/LC_MESSAGES/rhodecode.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/__init__.py
@@ -150,9 +180,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/auth_ldap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/auth_ldap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/auth_ldap.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/backup_manager.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/backup_manager.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/backup_manager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/base.pyo
@@ -174,6 +201,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerypylons/loader.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerypylons/loader.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerypylons/loader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/cleanup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/cleanup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/cleanup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/colored_formatter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/colored_formatter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/colored_formatter.pyo
@@ -319,6 +349,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema/db_1_3_0.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema/db_1_3_0.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema/db_1_3_0.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema/db_1_4_0.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema/db_1_4_0.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema/db_1_4_0.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/001_initial_release.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/001_initial_release.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/001_initial_release.pyo
@@ -334,6 +367,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/005_version_1_3_0.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/005_version_1_3_0.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/005_version_1_3_0.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/006_version_1_4_0.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/006_version_1_4_0.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/006_version_1_4_0.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/007_version_1_4_0.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/007_version_1_4_0.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/007_version_1_4_0.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions/__init__.pyo
@@ -346,6 +385,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/ext_json.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/ext_json.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/ext_json.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/graphmod.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/graphmod.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/graphmod.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/helpers.pyo
@@ -367,6 +409,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/https_fixup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/https_fixup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/https_fixup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/pygrack.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/pygrack.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/pygrack.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/simplegit.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/simplegit.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware/simplegit.pyo
@@ -394,6 +439,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail/smtp_mailer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail/smtp_mailer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail/smtp_mailer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/subprocessio.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/subprocessio.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/subprocessio.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/timerproxy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/timerproxy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/timerproxy.pyo
@@ -511,6 +562,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/changeset_status.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/changeset_status.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/changeset_status.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/comment.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/comment.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/comment.pyo
@@ -529,6 +583,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/permission.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/permission.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/permission.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/pull_request.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/pull_request.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/pull_request.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/repo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/repo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/repo.pyo
@@ -547,9 +604,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/users_group.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/users_group.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/users_group.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/validators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model/validators.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css/codemirror.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css/pygments.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css/style.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/arrow_right_64.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/background.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/button.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/button_highlight.png
@@ -994,6 +1055,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_pink.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_purple.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_red.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_status_approved.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_status_not_reviewed.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_status_rejected.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_status_under_review.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/flag_yellow.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/folder.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons/folder_16.png
@@ -1620,10 +1685,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/codemirror.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/excanvas.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/graph.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/native.history.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/rhodecode.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/yui.2.9.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js/yui.flot.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/_data_table/_dt_elements.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/admin.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/admin_log.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/ldap/ldap.html
@@ -1647,6 +1712,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/user_add.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/user_edit.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/user_edit_my_account.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/user_edit_my_account_form.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/user_edit_my_account_pullrequests.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/user_edit_my_account_repos.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users/users.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users_groups/users_group_add.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users_groups/users_group_edit.html
@@ -1665,10 +1733,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/changeset_range.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/diff_block.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/raw_changeset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/compare/compare_cs.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/compare/compare_diff.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/data_table/_dt_elements.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/changeset_comment.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/default.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/main.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/password_reset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/pull_request.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/pull_request_comment.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates/registration.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/errors/error_document.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/file_diff.html
@@ -1691,6 +1764,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/login.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/password_reset.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/password_reset_confirmation.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/pullrequests/pullrequest.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/pullrequests/pullrequest_show.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/pullrequests/pullrequest_show_all.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/register.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/repo_switcher_list.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/search/search.html
@@ -1708,9 +1784,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/_test_concurency.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/_test_concurency.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/_test_concurency.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/api_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/api_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/api_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/test_api_git.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/test_api_git.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/test_api_git.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/test_api_hg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/test_api_hg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api/test_api_hg.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/__init__.pyo
@@ -1753,6 +1838,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_changeset_comments.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_changeset_comments.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_changeset_comments.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_compare.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_compare.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_compare.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_feed.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_feed.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_feed.pyo
@@ -1774,6 +1862,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_login.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_login.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_login.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_pullrequests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_pullrequests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_pullrequests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_repos_groups.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_repos_groups.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_repos_groups.pyo
@@ -1792,97 +1883,191 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional/test_tags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/rhodecode_crawler.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/rhodecode_crawler.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/rhodecode_crawler.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_hg_operations.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_hg_operations.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_hg_operations.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_notifications.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_notifications.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_notifications.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_permissions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_permissions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_permissions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_repos_groups.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_repos_groups.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_repos_groups.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_user_permissions_on_groups.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_user_permissions_on_groups.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_user_permissions_on_groups.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_users.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_users.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_users.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_users_group_permissions_on_groups.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_users_group_permissions_on_groups.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models/test_users_group_permissions_on_groups.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/nose_parametrized.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/nose_parametrized.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/nose_parametrized.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_libs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_libs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_libs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_models.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_validators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/test_validators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/conf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/conf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/conf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_archives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_archives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_archives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_branches.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_branches.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_branches.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_changesets.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_changesets.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_changesets.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_filenodes_unicode_path.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_filenodes_unicode_path.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_filenodes_unicode_path.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_getitem.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_getitem.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_getitem.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_getslice.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_getslice.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_getslice.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_git.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_git.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_git.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_hg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_hg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_hg.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_inmemchangesets.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_inmemchangesets.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_inmemchangesets.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_nodes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_repository.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_repository.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_repository.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_utils_filesize.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_utils_filesize.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_utils_filesize.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_vcs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_vcs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_vcs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_workdirs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_workdirs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/test_workdirs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/websetup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/websetup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/websetup.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css
+bin/rhodecode-api
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/vcs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/models
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/api
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/tags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/summary
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/shortlog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/settings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/search
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/pullrequests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/journal
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/forks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/followers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/errors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/data_table
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/compare
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changelog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/branches
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/bookmarks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/base
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users_groups
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/settings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos_groups
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/permissions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/notifications
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/ldap
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/api
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/conf
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/hg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/git
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/indexers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/util
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/script
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/default/versions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/pylons/versions
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/pylons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/default/versions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/default
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/changeset/databases
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/changeset
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/indexers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/utils
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/conf
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/git
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/hg
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerypylons
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerylib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_CN
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/fr
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/en/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/en
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/bookmarks
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/summary
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/_data_table
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/journal
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/errors
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/ldap
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/permissions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/notifications
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users_groups
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos_groups
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/settings
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/forks
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/settings
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/shortlog
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/followers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changelog
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/base
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/search
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/tags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/branches
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/api
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/bin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
