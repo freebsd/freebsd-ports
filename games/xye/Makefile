@@ -48,7 +48,7 @@ LEVELS_XYE=	dungeon turnaround chekhov
 SKINS=		XMASKYESKIN Xye%20skin%20-%20classic%20kye
 
 DESKTOP_ENTRIES="Xye" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;LogicGame;" ${FALSE}
+		"${PORTNAME}" "Game;LogicGame;" false
 
 SUB_FILES=	 pkg-message
 
