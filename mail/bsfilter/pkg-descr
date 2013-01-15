@@ -9,5 +9,4 @@ bsfilter is a spam filter using Bayesian(statistical) algorithm.
 -- POP proxy. run between POP server and MUA. POP over SSL supported
 - distributed under GPL
 
-Author:	nabeken
-WWW:	http://bsfilter.org/index-e.html
+WWW: http://en.sourceforge.jp/projects/bsfilter/
