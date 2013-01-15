@@ -40,6 +40,9 @@ SCONS_BUILD_DIR=${WRKSRC}/build/freebsd-x86
 .elif ${ARCH} == "amd64"
 SCONS_ARGS+=	machine=x86_64
 SCONS_BUILD_DIR=${WRKSRC}/build/freebsd-x86_64
+.else
+SCONS_ARGS+=	machine=generic
+SCONS_BUILD_DIR=${WRKSRC}/build/freebsd
 .endif
 
 INCLUDES=	gl.h gl_mangle.h glext.h glx.h glx_mangle.h \
