@@ -1,12 +1,7 @@
-# New ports collection makefile for:	DBIx::Class::Migration
-# Date created:		19 Mar 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-Migration
-PORTVERSION=	0.034
+PORTVERSION=	0.037
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,7 +32,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Most>0:${PORTSDIR}/devel/p5-Test-Most \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Test-Trap>0:${PORTSDIR}/devel/p5-Test-Trap
+	p5-Test-Trap>0:${PORTSDIR}/devel/p5-Test-Trap \
+	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny
 
 PERL_CONFIGURE=	yes
 
@@ -64,6 +60,7 @@ MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
 	DBIx::Class::Migration::Script::Help::dbic_connect_attrs.3 \
 	DBIx::Class::Migration::Script::Help::dbic_fixture_class.3 \
 	DBIx::Class::Migration::Script::Help::dbic_fixtures_extra_args.3 \
+	DBIx::Class::Migration::Script::Help::delete_named_sets.3 \
 	DBIx::Class::Migration::Script::Help::delete_table_rows.3 \
 	DBIx::Class::Migration::Script::Help::diagram.3 \
 	DBIx::Class::Migration::Script::Help::downgrade.3 \

@@ -22,6 +22,7 @@ bin/dbic-migration
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbic_connect_attrs.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbic_fixture_class.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dbic_fixtures_extra_args.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/delete_named_sets.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/delete_table_rows.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/diagram.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Script/Help/downgrade.pod
