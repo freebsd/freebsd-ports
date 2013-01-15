@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openspc
-# Date created:				10 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	openspc
 PORTVERSION=	0.3.1
@@ -25,7 +21,11 @@ PORTDOCS=	README
 PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.so \
 		lib/libOpenSPC.so.3 lib/libOpenSPC.la lib/libOpenSPC.a
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

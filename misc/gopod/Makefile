@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gopod
-# Date created:				4 April 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	gopod
 PORTVERSION=	1.4
@@ -19,6 +15,7 @@ COMMENT?=	Utility to cap/uncap an iPod
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS+=	CC="${CC}"
@@ -32,9 +29,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/console-version
 
 PORTDOCS=	README_EN README_FR
 
-post-extract:
-	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|h)" -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .if ${PKGNAMEPREFIX} == "gtk-"
@@ -59,7 +56,7 @@ do-install:
 		${PREFIX}/bin/${UNIQUENAME}
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

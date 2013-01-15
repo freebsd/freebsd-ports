@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pure-sfv
-# Date created:				26 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	pure-sfv
 PORTVERSION=	0.3
@@ -24,6 +20,10 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/pure-sfv
 PORTDOCS=	ReadMe.txt
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(CFLAGS|CC)[ +=]*/\1?=/' \
 		${WRKSRC}/Makefile
@@ -31,7 +31,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

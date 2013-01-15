@@ -21,7 +21,7 @@ MAN1=		ccache.1
 
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
-OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC
+OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS
 
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
 LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
@@ -75,7 +75,7 @@ do-install:
 		${PREFIX}/bin/ccache-update-links
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.tar ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${DOCSDIR}

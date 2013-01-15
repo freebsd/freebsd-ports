@@ -32,7 +32,7 @@ PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
 		play_loop_state_diagram.txt uade.html
 
-OPTIONS_DEFINE=	TEXTSCOPE FUSE XMMS
+OPTIONS_DEFINE=	TEXTSCOPE FUSE XMMS DOCS
 
 TEXTSCOPE_DESC=	Audio register debug mode
 XMMS_DESC=	XMMS plugin
@@ -67,7 +67,7 @@ post-patch:
 post-install:
 	@${RM} -rf ${DATADIR}/players/S
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}

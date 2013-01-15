@@ -1,9 +1,5 @@
-# New ports collection makefile for:	magicrescue
-# Date created:				18 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	magicrescue
 PORTVERSION=	1.1.9
@@ -23,11 +19,15 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		dupemap.1 magicrescue.1 magicsort.1
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/env.*|#!${PERL}|' \
 		${WRKSRC}/magicsort
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in NEWS README
