@@ -4,13 +4,12 @@
 PORTNAME=		bash
 PATCHLEVEL=		42
 PORTVERSION=		4.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		shells
-MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
-			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
-MASTER_SITE_SUBDIR=	${PORTNAME}/:bash,faq
+MASTER_SITES=		GNU
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:bash
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -24,14 +23,11 @@ PATCHFILES!=		/usr/bin/jot -s " " -w \
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
-IGNOREFILES=		FAQ
-
 OPTIONS_DEFINE=	IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG DOCS
 OPTIONS_DEFAULT=IMPLICITCD COLONBREAKSWORDS HELP NLS
 IMPLICITCD_DESC=	Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
-HELP_DESC=		Install the help files
-SYSLOG_DESC=		Compile with syslog support
+HELP_DESC=		Enable builtin help
 
 .include <bsd.port.pre.mk>
 
@@ -51,9 +47,6 @@ GNU_CONFIGURE=		yes
 USE_BISON=		build
 
 .if ${PORT_OPTIONS:MDOCS}
-.if !defined(WITH_INCLUDED_FAQ)
-DISTFILES+=		FAQ:faq
-.endif
 PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH
 .endif
 
@@ -62,26 +55,19 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 			--enable-disabled-builtins
 
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
-.if empty(PORT_OPTIONS:MNLS)
-WITHOUT_NLS=yes
-.endif
+#.if empty(PORT_OPTIONS:MNLS)
+#.endif
 CONFIGURE_ARGS+=	--enable-static-link
-PKGNAMESUFFIX=	-static-devel
-CONFLICTS+=	bash-[0-9]* bash-static-[0-9]* bash-devel-[0-9]*
+PKGNAMESUFFIX=		-static-devel
+CONFLICTS+=		bash-[0-9]* bash-static-[0-9]* bash-devel-[0-9]*
 .else
 CONFIGURE_ARGS+=	--enable-static-link=no
 PKGNAMESUFFIX=		-devel
-CONFLICTS+=	bash-static-[0-9]* bash-[0-9]* bash-static-devel-[0-9]*
+CONFLICTS+=		bash-static-[0-9]* bash-[0-9]* bash-static-devel-[0-9]*
 .endif
 
 .if empty(PORT_OPTIONS:MHELP)
 CONFIGURE_ARGS+=	--disable-help-builtin
-PLIST_SUB+=		HELP="@comment "
-.elif defined(WITH_INTEGRATED_HELPFILES)
-PLIST_SUB+=		HELP="@comment "
-.else
-CONFIGURE_ARGS+=	--enable-separate-helpfiles
-PLIST_SUB+=		HELP=""
 .endif
 
 .if empty(PORT_OPTIONS:MNLS)
@@ -128,13 +114,8 @@ post-install:
 	@cd ${PREFIX}/bin ; ${LN} -sf bash rbash
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.if !defined(WITH_INCLUDED_FAQ)
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ \
-		${WRKSRC}/doc/INTRO ${DOCSDIR}
-.else
 	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ \
 		${WRKSRC}/doc/INTRO ${DOCSDIR}
-.endif
 	@for d in ${PORTDOCS:NFAQ:NINTRO}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${d} ${DOCSDIR}; \
 	done
