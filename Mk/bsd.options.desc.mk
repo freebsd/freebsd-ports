@@ -304,6 +304,7 @@ SVG_DESC?=		SVG vector image format
 SVGALIB_DESC?=		SVGA graphics
 SVN_DESC?=		Subversion support
 SWFDEC_DESC?=		Flash via Swfdec
+SYSLOG_DESC?=		Syslog support
 SZIP_DESC?=		Szip compression
 TCL_DESC?=		Tcl scripting language
 TCLTK_DESC?=		Tcl/Tk toolkit
