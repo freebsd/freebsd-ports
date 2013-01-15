@@ -25,6 +25,9 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 LATEST_LINK=	ffmpeg${PKGNAMESUFFIX}
 
+DEPRECATED=		Superseded by multimedia/ffmpeg1
+EXPIRATION_DATE=	2012-02-15
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USE_BZIP2=	yes
