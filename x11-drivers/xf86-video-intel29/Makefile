@@ -13,6 +13,8 @@ DISTNAME=	xf86-video-intel-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Driver for Intel integrated graphics chipsets
 
+DEPRECATED=	Not supported
+EXPIRATION_DATE=2012-02-15
 IGNORE=		Not supported.
 CONFLICTS=	xf86-video-intel-2.7.[0-9]* xf86-video-intel-2.15.[0-9]*
 
