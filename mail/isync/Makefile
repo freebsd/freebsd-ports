@@ -1,9 +1,5 @@
-# New ports collection makefile for:	isync
-# Date created:				2000-12-23
-# Whom:					eivind
-#
+# Created by: eivind
 # $FreeBSD$
-#
 
 PORTNAME=	isync
 PORTVERSION=	1.0.5
@@ -27,11 +23,15 @@ PLIST_FILES=	bin/get-cert bin/isync bin/mbsync bin/mdconvert
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${OPENSSLINC}
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${OPENSSLLIB} -lssl -lcrypto
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

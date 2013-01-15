@@ -1,9 +1,5 @@
-# New ports collection makefile for:	disktype
-# Date created:				15 June 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	disktype
 PORTVERSION=	9
@@ -19,6 +15,10 @@ MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	bin/disktype
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 .for var in CFLAGS LDFLAGS CC
 	@${REINPLACE_CMD} -e 's|^\(${var}\)[ ]*=|\1 ?=|' \
@@ -27,7 +27,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

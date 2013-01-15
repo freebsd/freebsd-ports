@@ -1,9 +1,5 @@
-# New ports collection makefile for:   idea
-# Date created:		4 September 2004
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	idea
 PORTVERSION=	1.2
@@ -30,6 +26,10 @@ MANCOMPRESSED=	no
 IGNORE=		you chose not to use idea related code
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-build:
 	${CC} ${WRKSRC}/idea.c ${WRKSRC}/idea_cmd.c ${CFLAGS} -o ${WRKSRC}/${PORTNAME}
 
@@ -39,7 +39,7 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Examples ${EXAMPLESDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/byte_ord.ps ${WRKSRC}/idea_cmd.txt ${DOCSDIR}
 .endif

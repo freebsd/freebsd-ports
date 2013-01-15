@@ -1,9 +1,5 @@
-# New ports collection makefile for:	remserial
-# Date created:				05 Jan 2011
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	remserial
 PORTVERSION=	1.4
@@ -22,9 +18,13 @@ PORTDOCS=	README.txt
 
 CFLAGS+=	-DOSVERSION=\"${OSVERSION}\"
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

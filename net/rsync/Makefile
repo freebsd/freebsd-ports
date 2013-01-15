@@ -27,14 +27,12 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
-.endif
 
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
-OPTIONS_DEFINE=	POPT_PORT SSH FLAGS ATIMES ACL ICONV TIMELIMIT RENAMED
+OPTIONS_DEFINE=	POPT_PORT SSH FLAGS ATIMES ACL ICONV TIMELIMIT RENAMED DOCS
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
 SSH_DESC=	Use SSH instead of RSH
 FLAGS_DESC=	File system flags support patch, adds --fileflags
@@ -132,7 +130,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/rsyncd.conf ] || \
 		${CP} ${PREFIX}/etc/rsyncd.conf.sample \
 		${PREFIX}/etc/rsyncd.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif

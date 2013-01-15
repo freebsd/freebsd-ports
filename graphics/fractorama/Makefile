@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fractorama
-# Date created:			Apr 15, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fractorama
 PORTVERSION=	1.6.7
@@ -32,6 +28,10 @@ ALL_TARGET=	release
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-extract:
 .for e in cpp h
 	@${CP} ${WRKSRC}/lib/tiff/TiffWriter.${e} ${WRKSRC}
@@ -56,7 +56,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../fractorama.exe ${PREFIX}/bin/fractorama
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/../doc && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
