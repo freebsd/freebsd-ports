@@ -35,6 +35,7 @@
 %%WWWDIR%%/core/DataFiles/LanguageToCountry.php
 %%WWWDIR%%/core/DataFiles/Languages.php
 %%WWWDIR%%/core/DataFiles/SearchEngines.php
+%%WWWDIR%%/core/DataFiles/Socials.php
 %%WWWDIR%%/core/DataTable.php
 %%WWWDIR%%/core/DataTable/Array.php
 %%WWWDIR%%/core/DataTable/Filter.php
@@ -178,8 +179,10 @@
 %%WWWDIR%%/core/Translate.php
 %%WWWDIR%%/core/TranslationWriter.php
 %%WWWDIR%%/core/Unzip.php
+%%WWWDIR%%/core/Unzip/Gzip.php
 %%WWWDIR%%/core/Unzip/Interface.php
 %%WWWDIR%%/core/Unzip/PclZip.php
+%%WWWDIR%%/core/Unzip/Tar.php
 %%WWWDIR%%/core/Unzip/ZipArchive.php
 %%WWWDIR%%/core/UpdateCheck.php
 %%WWWDIR%%/core/Updater.php
@@ -231,6 +234,10 @@
 %%WWWDIR%%/core/Updates/1.9-b16.php
 %%WWWDIR%%/core/Updates/1.9-b19.php
 %%WWWDIR%%/core/Updates/1.9.1-b2.php
+%%WWWDIR%%/core/Updates/1.9.3-b3.php
+%%WWWDIR%%/core/Updates/1.9.3-b8.php
+%%WWWDIR%%/core/Updates/1.9.3-b10.php
+%%WWWDIR%%/core/Updates/1.10-b4.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -268,6 +275,7 @@
 %%WWWDIR%%/lang/bg.php
 %%WWWDIR%%/lang/ca.php
 %%WWWDIR%%/lang/cs.php
+%%WWWDIR%%/lang/cy.php
 %%WWWDIR%%/lang/da.php
 %%WWWDIR%%/lang/de.php
 %%WWWDIR%%/lang/el.php
@@ -280,6 +288,7 @@
 %%WWWDIR%%/lang/fr.php
 %%WWWDIR%%/lang/gl.php
 %%WWWDIR%%/lang/he.php
+%%WWWDIR%%/lang/hr.php
 %%WWWDIR%%/lang/hu.php
 %%WWWDIR%%/lang/id.php
 %%WWWDIR%%/lang/is.php
@@ -308,6 +317,7 @@
 %%WWWDIR%%/lang/uk.php
 %%WWWDIR%%/lang/zh-cn.php
 %%WWWDIR%%/lang/zh-tw.php
+%%WWWDIR%%/libs/Archive_Tar/Tar.php
 %%WWWDIR%%/libs/Event/Dispatcher.php
 %%WWWDIR%%/libs/Event/Notification.php
 %%WWWDIR%%/libs/HTML/Common2.php
@@ -770,18 +780,6 @@
 %%WWWDIR%%/libs/Zend/Mime/Exception.php
 %%WWWDIR%%/libs/Zend/Mime/Message.php
 %%WWWDIR%%/libs/Zend/Mime/Part.php
-%%WWWDIR%%/libs/Zend/OpenId.php
-%%WWWDIR%%/libs/Zend/OpenId/Consumer.php
-%%WWWDIR%%/libs/Zend/OpenId/Consumer/Storage.php
-%%WWWDIR%%/libs/Zend/OpenId/Consumer/Storage/File.php
-%%WWWDIR%%/libs/Zend/OpenId/Exception.php
-%%WWWDIR%%/libs/Zend/OpenId/Extension.php
-%%WWWDIR%%/libs/Zend/OpenId/Extension/Sreg.php
-%%WWWDIR%%/libs/Zend/OpenId/Provider.php
-%%WWWDIR%%/libs/Zend/OpenId/Provider/Storage.php
-%%WWWDIR%%/libs/Zend/OpenId/Provider/Storage/File.php
-%%WWWDIR%%/libs/Zend/OpenId/Provider/User.php
-%%WWWDIR%%/libs/Zend/OpenId/Provider/User/Session.php
 %%WWWDIR%%/libs/Zend/Registry.php
 %%WWWDIR%%/libs/Zend/Session.php
 %%WWWDIR%%/libs/Zend/Session/Abstract.php
@@ -1043,6 +1041,16 @@
 %%WWWDIR%%/plugins/Actions/ArchivingHelper.php
 %%WWWDIR%%/plugins/Actions/Controller.php
 %%WWWDIR%%/plugins/Actions/templates/indexSiteSearch.tpl
+%%WWWDIR%%/plugins/Annotations/API.php
+%%WWWDIR%%/plugins/Annotations/AnnotationList.php
+%%WWWDIR%%/plugins/Annotations/Annotations.php
+%%WWWDIR%%/plugins/Annotations/Controller.php
+%%WWWDIR%%/plugins/Annotations/templates/annotation.tpl
+%%WWWDIR%%/plugins/Annotations/templates/annotationManager.tpl
+%%WWWDIR%%/plugins/Annotations/templates/annotations.js
+%%WWWDIR%%/plugins/Annotations/templates/annotations.tpl
+%%WWWDIR%%/plugins/Annotations/templates/evolutionAnnotations.tpl
+%%WWWDIR%%/plugins/Annotations/templates/styles.css
 %%WWWDIR%%/plugins/AnonymizeIP/AnonymizeIP.php
 %%WWWDIR%%/plugins/CoreAdminHome/API.php
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
@@ -1059,8 +1067,6 @@
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
 %%WWWDIR%%/plugins/CoreHome/DataTableRowAction/RowEvolution.php
 %%WWWDIR%%/plugins/CoreHome/DataTableRowAction/MultiRowEvolution.php
-%%WWWDIR%%/plugins/CoreHome/templates/popover_rowevolution.tpl
-%%WWWDIR%%/plugins/CoreHome/templates/popover_multirowevolution.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/autocomplete.js
 %%WWWDIR%%/plugins/CoreHome/templates/broadcast.js
 %%WWWDIR%%/plugins/CoreHome/templates/calendar.js
@@ -1078,14 +1084,17 @@
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_js.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_rowactions.js
 %%WWWDIR%%/plugins/CoreHome/templates/date.js
+%%WWWDIR%%/plugins/CoreHome/templates/donate.css
+%%WWWDIR%%/plugins/CoreHome/templates/donate.js
+%%WWWDIR%%/plugins/CoreHome/templates/donate.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/graph.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header_message.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/html_report_body.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/html_report_footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/html_report_header.tpl
-%%WWWDIR%%/plugins/CoreHome/templates/iframe_buster_header.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/iframe_buster_body.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/iframe_buster_header.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/images/bg_header.jpg
 %%WWWDIR%%/plugins/CoreHome/templates/images/bullet1.gif
 %%WWWDIR%%/plugins/CoreHome/templates/images/bullet2.gif
@@ -1106,9 +1115,12 @@
 %%WWWDIR%%/plugins/CoreHome/templates/menu.css
 %%WWWDIR%%/plugins/CoreHome/templates/menu.js
 %%WWWDIR%%/plugins/CoreHome/templates/menu.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/misc.js
 %%WWWDIR%%/plugins/CoreHome/templates/period_select.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/piwik_tag.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/popover.js
+%%WWWDIR%%/plugins/CoreHome/templates/popover_multirowevolution.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/popover_rowevolution.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/single_report.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/sites_selection.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline.js
@@ -1207,27 +1219,6 @@
 %%WWWDIR%%/plugins/ImageGraph/fonts/tahoma.ttf
 %%WWWDIR%%/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
 %%WWWDIR%%/plugins/ImageGraph/templates/index.tpl
-%%WWWDIR%%/plugins/Insight/API.php
-%%WWWDIR%%/plugins/Insight/Controller.php
-%%WWWDIR%%/plugins/Insight/Insight.php
-%%WWWDIR%%/plugins/Insight/client/linktags.png
-%%WWWDIR%%/plugins/Insight/client/urlnormalizer.js
-%%WWWDIR%%/plugins/Insight/client/linktags.psd
-%%WWWDIR%%/plugins/Insight/client/linktags_noshadow.png
-%%WWWDIR%%/plugins/Insight/client/loading.gif
-%%WWWDIR%%/plugins/Insight/client/linktags.eps
-%%WWWDIR%%/plugins/Insight/client/close.png
-%%WWWDIR%%/plugins/Insight/client/client.js
-%%WWWDIR%%/plugins/Insight/client/followingpages.js
-%%WWWDIR%%/plugins/Insight/client/linktags_lessshadow.png
-%%WWWDIR%%/plugins/Insight/client/insight.css
-%%WWWDIR%%/plugins/Insight/client/translations.js
-%%WWWDIR%%/plugins/Insight/templates/insight.js
-%%WWWDIR%%/plugins/Insight/templates/notify_parent_iframe.tpl
-%%WWWDIR%%/plugins/Insight/templates/index.tpl
-%%WWWDIR%%/plugins/Insight/templates/sidebar.tpl
-%%WWWDIR%%/plugins/Insight/templates/index.css
-%%WWWDIR%%/plugins/Insight/templates/info.png
 %%WWWDIR%%/plugins/Installation/Controller.php
 %%WWWDIR%%/plugins/Installation/FormDatabaseSetup.php
 %%WWWDIR%%/plugins/Installation/FormFirstWebsiteSetup.php
@@ -1242,6 +1233,9 @@
 %%WWWDIR%%/plugins/Installation/templates/firstWebsiteSetup.tpl
 %%WWWDIR%%/plugins/Installation/templates/generalSetup.tpl
 %%WWWDIR%%/plugins/Installation/templates/integrityDetails.tpl
+%%WWWDIR%%/plugins/Installation/templates/systemCheckPage.css
+%%WWWDIR%%/plugins/Installation/templates/systemCheckPage.tpl
+%%WWWDIR%%/plugins/Installation/templates/systemCheckSection.tpl
 %%WWWDIR%%/plugins/Installation/templates/systemCheck_legend.tpl
 %%WWWDIR%%/plugins/Installation/templates/install.css
 %%WWWDIR%%/plugins/Installation/templates/structure.tpl
@@ -1296,11 +1290,11 @@
 %%WWWDIR%%/plugins/MobileMessaging/MobileMessaging.php
 %%WWWDIR%%/plugins/MobileMessaging/ReportRenderer/Exception.php
 %%WWWDIR%%/plugins/MobileMessaging/ReportRenderer/Sms.php
-%%WWWDIR%%/plugins/MobileMessaging/SMSProvider/Clockwork.php
 %%WWWDIR%%/plugins/MobileMessaging/SMSProvider.php
+%%WWWDIR%%/plugins/MobileMessaging/SMSProvider/Clockwork.php
+%%WWWDIR%%/plugins/MobileMessaging/SMSProvider/StubbedProvider.php
 %%WWWDIR%%/plugins/MobileMessaging/images/Clockwork.png
 %%WWWDIR%%/plugins/MobileMessaging/images/phone.png
-%%WWWDIR%%/plugins/MobileMessaging/lang/en.php
 %%WWWDIR%%/plugins/MobileMessaging/scripts/MobileMessagingSettings.js
 %%WWWDIR%%/plugins/MobileMessaging/templates/ReportParameters.tpl
 %%WWWDIR%%/plugins/MobileMessaging/templates/SMSReport.tpl
@@ -1323,6 +1317,33 @@
 %%WWWDIR%%/plugins/MultiSites/templates/index.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/row.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/styles.css
+%%WWWDIR%%/plugins/Overlay/API.php
+%%WWWDIR%%/plugins/Overlay/Controller.php
+%%WWWDIR%%/plugins/Overlay/Overlay.php
+%%WWWDIR%%/plugins/Overlay/client/client.js
+%%WWWDIR%%/plugins/Overlay/client/client.css
+%%WWWDIR%%/plugins/Overlay/client/close.png
+%%WWWDIR%%/plugins/Overlay/client/followingpages.js
+%%WWWDIR%%/plugins/Overlay/client/linktags.eps
+%%WWWDIR%%/plugins/Overlay/client/linktags.png
+%%WWWDIR%%/plugins/Overlay/client/linktags.psd
+%%WWWDIR%%/plugins/Overlay/client/linktags_lessshadow.png
+%%WWWDIR%%/plugins/Overlay/client/linktags_noshadow.png
+%%WWWDIR%%/plugins/Overlay/client/loading.gif
+%%WWWDIR%%/plugins/Overlay/client/translations.js
+%%WWWDIR%%/plugins/Overlay/client/urlnormalizer.js
+%%WWWDIR%%/plugins/Overlay/templates/error_wrong_domain.tpl
+%%WWWDIR%%/plugins/Overlay/templates/helper.js
+%%WWWDIR%%/plugins/Overlay/templates/index.css
+%%WWWDIR%%/plugins/Overlay/templates/index.js
+%%WWWDIR%%/plugins/Overlay/templates/index.tpl
+%%WWWDIR%%/plugins/Overlay/templates/index_noframe.tpl
+%%WWWDIR%%/plugins/Overlay/templates/info.png
+%%WWWDIR%%/plugins/Overlay/templates/notify_parent_iframe.tpl
+%%WWWDIR%%/plugins/Overlay/templates/overlay_icon.png
+%%WWWDIR%%/plugins/Overlay/templates/overlay_icon_hover.png
+%%WWWDIR%%/plugins/Overlay/templates/rowaction.js
+%%WWWDIR%%/plugins/Overlay/templates/sidebar.tpl
 %%WWWDIR%%/plugins/PDFReports/API.php
 %%WWWDIR%%/plugins/PDFReports/Controller.php
 %%WWWDIR%%/plugins/PDFReports/PDFReports.php
@@ -1565,6 +1586,56 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/yandex.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/yellowmap.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/zoohoo.cz.png
+%%WWWDIR%%/plugins/Referers/images/socials/badoo.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/bebo.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/blackplanet.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/buzznet.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/classmates.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/douban.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/facebook.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/flickr.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/flixster.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/foursquare.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/friendsreunited.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/friendster.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/gaiaonline.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/geni.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/habbo.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/hi5.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/hyves.nl.png
+%%WWWDIR%%/plugins/Referers/images/socials/lastfm.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/linkedin.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/livejournal.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/login.live.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/mixi.jp.png
+%%WWWDIR%%/plugins/Referers/images/socials/moikrug.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/multiply.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/myheritage.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/mylife.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/myspace.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/myyearbook.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/nk.pl.png
+%%WWWDIR%%/plugins/Referers/images/socials/odnoklassniki.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/orkut.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/plaxo.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/plus.google.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/qzone.qq.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/renren.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/ru.netlog.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/skyrock.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/sonico.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/studivz.net.png
+%%WWWDIR%%/plugins/Referers/images/socials/stumbleupon.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/tagged.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/taringa.net.png
+%%WWWDIR%%/plugins/Referers/images/socials/tuenti.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/twitter.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/viadeo.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/vk.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/vkontakte.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/vkrugudruzei.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/xing.com.png
+%%WWWDIR%%/plugins/Referers/templates/Websites_SocialNetworks.tpl
 %%WWWDIR%%/plugins/Referers/templates/index.tpl
 %%WWWDIR%%/plugins/Referers/templates/searchEngines_Keywords.tpl
 %%WWWDIR%%/plugins/SEO/API.php
@@ -1627,6 +1698,7 @@
 %%WWWDIR%%/plugins/SitesManager/templates/Tracking.tpl
 %%WWWDIR%%/plugins/UserCountry/API.php
 %%WWWDIR%%/plugins/UserCountry/Controller.php
+%%WWWDIR%%/plugins/UserCountry/GeoIPAutoUpdater.php
 %%WWWDIR%%/plugins/UserCountry/LocationProvider.php
 %%WWWDIR%%/plugins/UserCountry/LocationProvider/Default.php
 %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp.php
@@ -1912,6 +1984,8 @@
 %%WWWDIR%%/plugins/UserCountry/templates/admin.js
 %%WWWDIR%%/plugins/UserCountry/templates/adminIndex.tpl
 %%WWWDIR%%/plugins/UserCountry/templates/index.tpl
+%%WWWDIR%%/plugins/UserCountry/templates/styles.css
+%%WWWDIR%%/plugins/UserCountry/templates/updaterSetup.tpl
 %%WWWDIR%%/plugins/UserCountryMap/Controller.php
 %%WWWDIR%%/plugins/UserCountryMap/PiwikMap.swf
 %%WWWDIR%%/plugins/UserCountryMap/UserCountryMap.php
@@ -2082,6 +2156,7 @@
 %%WWWDIR%%/plugins/Widgetize/templates/test_jsinclude2.tpl
 %%WWWDIR%%/plugins/Widgetize/templates/widgetize.js
 %%WWWDIR%%/tests/README.txt
+%%WWWDIR%%/themes/default/ajaxHelper.js
 %%WWWDIR%%/themes/default/common.css
 %%WWWDIR%%/themes/default/common.js
 %%WWWDIR%%/themes/default/genericForm.tpl
@@ -2090,13 +2165,13 @@
 %%WWWDIR%%/themes/default/images/arr_r.png
 %%WWWDIR%%/themes/default/images/background-submit.png
 %%WWWDIR%%/themes/default/images/chart_bar.png
-%%WWWDIR%%/themes/default/images/chart_line_edit_bg.png
 %%WWWDIR%%/themes/default/images/chart_line_edit.png
+%%WWWDIR%%/themes/default/images/chart_line_edit_bg.png
 %%WWWDIR%%/themes/default/images/chart_pie.png
 %%WWWDIR%%/themes/default/images/close.png
 %%WWWDIR%%/themes/default/images/collapsed_arrows.gif
-%%WWWDIR%%/themes/default/images/configure.png
 %%WWWDIR%%/themes/default/images/configure-highlight.png
+%%WWWDIR%%/themes/default/images/configure.png
 %%WWWDIR%%/themes/default/images/dashboard_h_bg.png
 %%WWWDIR%%/themes/default/images/dashboard_h_bg_hover.png
 %%WWWDIR%%/themes/default/images/data_table_footer_active_item.png
@@ -2114,6 +2189,7 @@
 %%WWWDIR%%/themes/default/images/feed.png
 %%WWWDIR%%/themes/default/images/fullscreen.png
 %%WWWDIR%%/themes/default/images/goal.png
+%%WWWDIR%%/themes/default/images/grey_marker.png
 %%WWWDIR%%/themes/default/images/help.png
 %%WWWDIR%%/themes/default/images/help_grey.png
 %%WWWDIR%%/themes/default/images/html_icon.png
@@ -2129,25 +2205,35 @@
 %%WWWDIR%%/themes/default/images/loading-blue.gif
 %%WWWDIR%%/themes/default/images/logo-header.png
 %%WWWDIR%%/themes/default/images/logo.png
-%%WWWDIR%%/themes/default/images/minimise.png
 %%WWWDIR%%/themes/default/images/maximise.png
+%%WWWDIR%%/themes/default/images/minimise.png
 %%WWWDIR%%/themes/default/images/minus.png
+%%WWWDIR%%/themes/default/images/newtab.png
 %%WWWDIR%%/themes/default/images/ok.png
 %%WWWDIR%%/themes/default/images/page_border_grad.png
+%%WWWDIR%%/themes/default/images/paypal_subscribe.gif
 %%WWWDIR%%/themes/default/images/plus.png
 %%WWWDIR%%/themes/default/images/plus_blue.png
 %%WWWDIR%%/themes/default/images/refresh.png
+%%WWWDIR%%/themes/default/images/reload.png
 %%WWWDIR%%/themes/default/images/row_evolution.png
 %%WWWDIR%%/themes/default/images/row_evolution_hover.png
 %%WWWDIR%%/themes/default/images/search_bg.png
 %%WWWDIR%%/themes/default/images/search_ico.png
 %%WWWDIR%%/themes/default/images/sites_selection.png
+%%WWWDIR%%/themes/default/images/smileyprog_0.png
+%%WWWDIR%%/themes/default/images/smileyprog_1.png
+%%WWWDIR%%/themes/default/images/smileyprog_2.png
+%%WWWDIR%%/themes/default/images/smileyprog_3.png
+%%WWWDIR%%/themes/default/images/smileyprog_4.png
 %%WWWDIR%%/themes/default/images/sort_subtable_asc.png
 %%WWWDIR%%/themes/default/images/sort_subtable_asc_light.png
 %%WWWDIR%%/themes/default/images/sort_subtable_desc.png
 %%WWWDIR%%/themes/default/images/sort_subtable_desc_light.png
 %%WWWDIR%%/themes/default/images/sortasc.png
 %%WWWDIR%%/themes/default/images/sortdesc.png
+%%WWWDIR%%/themes/default/images/star.png
+%%WWWDIR%%/themes/default/images/star_empty.png
 %%WWWDIR%%/themes/default/images/success_medium.png
 %%WWWDIR%%/themes/default/images/table.png
 %%WWWDIR%%/themes/default/images/table_more.png
@@ -2155,6 +2241,7 @@
 %%WWWDIR%%/themes/default/images/warning.png
 %%WWWDIR%%/themes/default/images/warning_medium.png
 %%WWWDIR%%/themes/default/images/warning_small.png
+%%WWWDIR%%/themes/default/images/yellow_marker.png
 %%WWWDIR%%/themes/default/rtl.css
 %%WWWDIR%%/themes/default/simple_structure.css
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
@@ -2213,6 +2300,7 @@
 @dirrm %%WWWDIR%%/plugins/SEO/images
 @dirrm %%WWWDIR%%/plugins/SEO
 @dirrm %%WWWDIR%%/plugins/Referers/templates
+@dirrm %%WWWDIR%%/plugins/Referers/images/socials
 @dirrm %%WWWDIR%%/plugins/Referers/images/searchEngines
 @dirrm %%WWWDIR%%/plugins/Referers/images
 @dirrm %%WWWDIR%%/plugins/Referers
@@ -2224,12 +2312,14 @@
 @dirrm %%WWWDIR%%/plugins/PDFReports/templates
 @dirrm %%WWWDIR%%/plugins/PDFReports/config
 @dirrm %%WWWDIR%%/plugins/PDFReports
+@dirrm %%WWWDIR%%/plugins/Overlay/templates
+@dirrm %%WWWDIR%%/plugins/Overlay/client
+@dirrm %%WWWDIR%%/plugins/Overlay
 @dirrm %%WWWDIR%%/plugins/MultiSites/templates
 @dirrm %%WWWDIR%%/plugins/MultiSites/images
 @dirrm %%WWWDIR%%/plugins/MultiSites
 @dirrm %%WWWDIR%%/plugins/MobileMessaging/templates
 @dirrm %%WWWDIR%%/plugins/MobileMessaging/scripts
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/lang
 @dirrm %%WWWDIR%%/plugins/MobileMessaging/images
 @dirrm %%WWWDIR%%/plugins/MobileMessaging/SMSProvider
 @dirrm %%WWWDIR%%/plugins/MobileMessaging/ReportRenderer
@@ -2244,9 +2334,6 @@
 @dirrm %%WWWDIR%%/plugins/LanguagesManager
 @dirrm %%WWWDIR%%/plugins/Installation/templates
 @dirrm %%WWWDIR%%/plugins/Installation
-@dirrm %%WWWDIR%%/plugins/Insight/templates
-@dirrm %%WWWDIR%%/plugins/Insight/client
-@dirrm %%WWWDIR%%/plugins/Insight
 @dirrm %%WWWDIR%%/plugins/ImageGraph/templates
 @dirrm %%WWWDIR%%/plugins/ImageGraph/fonts
 @dirrm %%WWWDIR%%/plugins/ImageGraph/StaticGraph
@@ -2284,6 +2371,8 @@
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome
 @dirrm %%WWWDIR%%/plugins/AnonymizeIP
+@dirrm %%WWWDIR%%/plugins/Annotations/templates
+@dirrm %%WWWDIR%%/plugins/Annotations
 @dirrm %%WWWDIR%%/plugins/Actions/templates
 @dirrm %%WWWDIR%%/plugins/Actions
 @dirrm %%WWWDIR%%/plugins/API/templates
@@ -2324,13 +2413,6 @@
 @dirrm %%WWWDIR%%/libs/Zend/Session/Validator
 @dirrm %%WWWDIR%%/libs/Zend/Session/SaveHandler
 @dirrm %%WWWDIR%%/libs/Zend/Session
-@dirrm %%WWWDIR%%/libs/Zend/OpenId/Provider/User
-@dirrm %%WWWDIR%%/libs/Zend/OpenId/Provider/Storage
-@dirrm %%WWWDIR%%/libs/Zend/OpenId/Provider
-@dirrm %%WWWDIR%%/libs/Zend/OpenId/Extension
-@dirrm %%WWWDIR%%/libs/Zend/OpenId/Consumer/Storage
-@dirrm %%WWWDIR%%/libs/Zend/OpenId/Consumer
-@dirrm %%WWWDIR%%/libs/Zend/OpenId
 @dirrm %%WWWDIR%%/libs/Zend/Mime
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Transport
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Writable
@@ -2461,6 +2543,7 @@
 @dirrm %%WWWDIR%%/libs/HTML/QuickForm2
 @dirrm %%WWWDIR%%/libs/HTML
 @dirrm %%WWWDIR%%/libs/Event
+@dirrm %%WWWDIR%%/libs/Archive_Tar
 @dirrm %%WWWDIR%%/libs
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/js

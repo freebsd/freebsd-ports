@@ -1,8 +1,8 @@
-# Created by:	Wen heping <wenheping@gmail.com>
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
