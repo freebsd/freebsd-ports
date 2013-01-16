@@ -1,13 +1,8 @@
-# New ports collection makefile for:    sudo
-# Date created:         Sun Aug 13 12:36:14 CDT 1995
-# Whom:                 erich@rrnet.com
-#
+# Created by: erich@rrnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.6p3
-PORTREVISION=	1
+DISTVERSION=	1.8.6p4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -53,10 +48,6 @@ CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 .endif
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "ia64"
-CONFIGURE_ARGS+=	--disable-pie
-.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
@@ -115,7 +106,7 @@ post-patch:
 		s/\$$\(INSTALL\)/& ${STRIP}/;s/-b\~/-b ~/' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's,$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(docdir),$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(bindir),' ${WRKSRC}/plugins/sudoers/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/mkinstalldirs $$(DESTDIR)$$(docdir)/mkinstalldirs/' \
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '/for f in $$(OTHER_DOCS); do/d;/@LDAP@for f in $$(OTHER_DOCS_LDAP); do/d' ${WRKSRC}/doc/Makefile.in
