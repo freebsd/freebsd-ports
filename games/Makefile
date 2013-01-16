@@ -711,7 +711,6 @@
     SUBDIR += puckman
     SUBDIR += pushover
     SUBDIR += pvpgn
-    SUBDIR += py-anki
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-poker-eval
