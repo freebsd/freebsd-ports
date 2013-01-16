@@ -2,30 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	k8048
-PORTVERSION=	2.09
+PORTVERSION=	2.11
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
+LICENSE=	BSD
+
+WRKSRC=		${WRKDIR}/${PORTNAME}/Src
+
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-ALL_TARGET=	#empty - the makefile lacks an "all" target
-MAKE_JOBS_SAFE=	yes
+ALL_TARGET=	build
 
-#BUILD_DEPENDS+=	gpasm:${PORTSDIR}/devel/gputils
+PLIST_FILES=	bin/${PORTNAME} bin/kio ${BIN_SYMLINKS}
 
-BIN_SYMLINKS=	bin/ktest bin/kdebug bin/k14 bin/k16
-PLIST_FILES=	bin/${PORTNAME} ${BIN_SYMLINKS}
+BIN_SYMLINKS=	bin/k12 bin/k14 bin/k16 bin/ktest
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CC=|CC?=| ; \
+		 s|^CFLAGS=|CFLAGS+=| ; \
+		 s|-ggdb||' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Src/${PORTNAME} \
-	${PREFIX}/bin/${PORTNAME}
-
-post-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} kio ${PREFIX}/bin)
 .for i in ${BIN_SYMLINKS}
-	cd ${PREFIX} && ${LN} -fs ${PORTNAME} ${i}
+	${LN} -sf ${PORTNAME} ${PREFIX}/${i}
 .endfor
 
 .include <bsd.port.mk>
