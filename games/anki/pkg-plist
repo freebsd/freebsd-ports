@@ -1,308 +1,846 @@
 bin/anki
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/anki
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/config.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/config.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/config.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/about.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/about.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/about.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/activetags.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/activetags.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/activetags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcardmodels.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcardmodels.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcardmodels.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcards.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcards.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcards.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addmodel.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addmodel.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addmodel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/cardlist.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/cardlist.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/cardlist.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemap.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemap.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemap.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemodel.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemodel.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemodel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/clayout.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/clayout.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/clayout.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/deckproperties.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/deckproperties.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/deckproperties.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/editfont.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/editfont.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/editfont.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/edithtml.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/edithtml.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/edithtml.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/exporting.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/exporting.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/exporting.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/finddupes.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/finddupes.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/finddupes.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/findreplace.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/findreplace.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/findreplace.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/getshared.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/getshared.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/getshared.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importing.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importing.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importing.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importup.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importup.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importup.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/main.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/main.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/main.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/modelproperties.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/modelproperties.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/modelproperties.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/preferences.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/preferences.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/preferences.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/reschedule.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/reschedule.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/reschedule.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/share.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/share.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/share.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/syncdeck.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/syncdeck.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/syncdeck.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ca/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_AU/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lv/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW/LC_MESSAGES/ankiqt.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/about.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/about.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/about.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/activetags.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/activetags.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/activetags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/addcards.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/addcards.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/addcards.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/cardlist.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/cardlist.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/cardlist.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/clayout.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/clayout.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/clayout.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/deckproperties.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/deckproperties.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/deckproperties.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/dropbox.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/dropbox.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/dropbox.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/exporting.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/exporting.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/exporting.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/facteditor.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/facteditor.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/facteditor.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/getshared.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/getshared.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/getshared.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/graphs.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/graphs.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/graphs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/help.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/help.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/help.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/importing.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/importing.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/importing.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/main.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/main.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/main.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelchooser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelchooser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelchooser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelproperties.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelproperties.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelproperties.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/preferences.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/preferences.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/preferences.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sound.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sound.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sound.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/status.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/status.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/status.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sync.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sync.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sync.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tagedit.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tagedit.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tagedit.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tray.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tray.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tray.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/unsaved.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/unsaved.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/unsaved.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/update.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/update.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/update.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/utils.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/utils.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/view.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/view.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/view.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lv
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_AU/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_AU
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ca/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ca
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PYTHON_SITELIBDIR%%/anki/anki/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/anki/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/anki
+%%PYTHON_SITELIBDIR%%/anki/anki/ankiweb.certs
+%%PYTHON_SITELIBDIR%%/anki/anki/cards.py
+%%PYTHON_SITELIBDIR%%/anki/anki/cards.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/cards.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/collection.py
+%%PYTHON_SITELIBDIR%%/anki/anki/collection.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/collection.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/consts.py
+%%PYTHON_SITELIBDIR%%/anki/anki/consts.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/consts.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/db.py
+%%PYTHON_SITELIBDIR%%/anki/anki/db.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/db.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/decks.py
+%%PYTHON_SITELIBDIR%%/anki/anki/decks.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/decks.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/errors.py
+%%PYTHON_SITELIBDIR%%/anki/anki/errors.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/errors.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/exporting.py
+%%PYTHON_SITELIBDIR%%/anki/anki/exporting.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/exporting.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/find.py
+%%PYTHON_SITELIBDIR%%/anki/anki/find.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/find.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/hooks.py
+%%PYTHON_SITELIBDIR%%/anki/anki/hooks.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/hooks.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/anki1.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/anki1.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/anki1.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/anki2.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/anki2.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/anki2.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/apkg.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/apkg.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/apkg.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/base.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/base.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/base.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/csvfile.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/csvfile.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/csvfile.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/mnemo.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/mnemo.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/mnemo.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/noteimp.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/noteimp.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/noteimp.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/supermemo_xml.py
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/supermemo_xml.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/importing/supermemo_xml.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/js.py
+%%PYTHON_SITELIBDIR%%/anki/anki/js.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/js.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/lang.py
+%%PYTHON_SITELIBDIR%%/anki/anki/lang.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/lang.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/latex.py
+%%PYTHON_SITELIBDIR%%/anki/anki/latex.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/latex.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/media.py
+%%PYTHON_SITELIBDIR%%/anki/anki/media.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/media.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/models.py
+%%PYTHON_SITELIBDIR%%/anki/anki/models.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/models.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/notes.py
+%%PYTHON_SITELIBDIR%%/anki/anki/notes.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/notes.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/sched.py
+%%PYTHON_SITELIBDIR%%/anki/anki/sched.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/sched.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/sound.py
+%%PYTHON_SITELIBDIR%%/anki/anki/sound.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/sound.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/stats.py
+%%PYTHON_SITELIBDIR%%/anki/anki/stats.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/stats.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/statsbg.py
+%%PYTHON_SITELIBDIR%%/anki/anki/statsbg.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/statsbg.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/stdmodels.py
+%%PYTHON_SITELIBDIR%%/anki/anki/stdmodels.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/stdmodels.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/storage.py
+%%PYTHON_SITELIBDIR%%/anki/anki/storage.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/storage.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/sync.py
+%%PYTHON_SITELIBDIR%%/anki/anki/sync.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/sync.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/tags.py
+%%PYTHON_SITELIBDIR%%/anki/anki/tags.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/tags.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/template/LICENSE
+%%PYTHON_SITELIBDIR%%/anki/anki/template/README.anki
+%%PYTHON_SITELIBDIR%%/anki/anki/template/README.rst
+%%PYTHON_SITELIBDIR%%/anki/anki/template/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/anki/template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/template/furigana.py
+%%PYTHON_SITELIBDIR%%/anki/anki/template/furigana.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/template/furigana.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/template/hint.py
+%%PYTHON_SITELIBDIR%%/anki/anki/template/hint.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/template/hint.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/template/template.py
+%%PYTHON_SITELIBDIR%%/anki/anki/template/template.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/template/template.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/template/view.py
+%%PYTHON_SITELIBDIR%%/anki/anki/template/view.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/template/view.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/upgrade.py
+%%PYTHON_SITELIBDIR%%/anki/anki/upgrade.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/upgrade.pyo
+%%PYTHON_SITELIBDIR%%/anki/anki/utils.py
+%%PYTHON_SITELIBDIR%%/anki/anki/utils.pyc
+%%PYTHON_SITELIBDIR%%/anki/anki/utils.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/about.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/about.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/about.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/addcards.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/addcards.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/addcards.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/addons.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/addons.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/addons.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/browser.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/browser.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/browser.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/clayout.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/clayout.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/clayout.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/customstudy.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/customstudy.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/customstudy.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckbrowser.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckbrowser.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckbrowser.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckchooser.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckchooser.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckchooser.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckconf.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckconf.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/deckconf.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/downloader.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/downloader.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/downloader.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/dyndeckconf.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/dyndeckconf.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/dyndeckconf.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/editcurrent.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/editcurrent.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/editcurrent.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/editor.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/editor.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/editor.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/errors.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/errors.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/errors.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/exporting.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/exporting.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/exporting.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/fields.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/fields.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/fields.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/about.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/about.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/about.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addcards.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addcards.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addcards.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addfield.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addfield.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addfield.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addmodel.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addmodel.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/addmodel.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browser.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browser.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browser.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browserdisp.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browserdisp.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browserdisp.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browseropts.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browseropts.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/browseropts.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/changemap.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/changemap.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/changemap.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/changemodel.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/changemodel.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/changemodel.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/customstudy.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/customstudy.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/customstudy.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/dconf.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/dconf.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/dconf.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/debug.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/debug.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/debug.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/dyndconf.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/dyndconf.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/dyndconf.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/editaddon.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/editaddon.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/editaddon.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/editcurrent.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/editcurrent.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/editcurrent.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/edithtml.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/edithtml.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/edithtml.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/exporting.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/exporting.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/exporting.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/fields.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/fields.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/fields.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/finddupes.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/finddupes.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/finddupes.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/findreplace.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/findreplace.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/findreplace.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/getaddons.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/getaddons.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/getaddons.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/icons_rc.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/icons_rc.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/icons_rc.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/importing.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/importing.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/importing.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/main.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/main.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/main.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/modelopts.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/modelopts.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/modelopts.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/models.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/models.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/models.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/preferences.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/preferences.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/preferences.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/preview.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/preview.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/preview.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/profiles.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/profiles.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/profiles.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/reposition.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/reposition.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/reposition.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/reschedule.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/reschedule.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/reschedule.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/setgroup.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/setgroup.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/setgroup.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/setlang.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/setlang.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/setlang.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/stats.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/stats.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/stats.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/studydeck.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/studydeck.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/studydeck.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/taglimit.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/taglimit.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/taglimit.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/template.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/template.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/forms/template.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/importing.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/importing.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/importing.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/main.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/main.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/main.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/modelchooser.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/modelchooser.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/modelchooser.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/models.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/models.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/models.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/overview.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/overview.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/overview.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/preferences.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/preferences.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/preferences.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/profiles.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/profiles.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/profiles.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/progress.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/progress.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/progress.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/qt.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/qt.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/qt.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/reviewer.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/reviewer.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/reviewer.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/sound.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/sound.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/sound.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/stats.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/stats.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/stats.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/studydeck.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/studydeck.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/studydeck.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/sync.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/sync.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/sync.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/tagedit.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/tagedit.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/tagedit.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/taglimit.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/taglimit.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/taglimit.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/toolbar.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/toolbar.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/toolbar.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/update.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/update.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/update.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/upgrade.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/upgrade.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/upgrade.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/utils.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/utils.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/utils.pyo
+%%PYTHON_SITELIBDIR%%/anki/aqt/webview.py
+%%PYTHON_SITELIBDIR%%/anki/aqt/webview.pyc
+%%PYTHON_SITELIBDIR%%/anki/aqt/webview.pyo
+%%PYTHON_SITELIBDIR%%/anki/designer/about.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/addcards.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/addfield.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/addmodel.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/browser.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/browserdisp.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/browseropts.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/changemap.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/changemodel.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/customstudy.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/dconf.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/debug.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/dyndconf.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/editaddon.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/editcurrent.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/edithtml.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/exporting.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/fields.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/finddupes.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/findreplace.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/getaddons.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/_sources.txt
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/add16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/addtag.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/addtag16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-logo-thin.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-logo.svg
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-logo2.svg
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-logo_BW.svg
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-logo_black.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-logo_white.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki-tag.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/anki.svg
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/ankibw.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/application-exit.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/arrow-down-double.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/arrow-down.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/arrow-up-double.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/arrow-up.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/clock-icon.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/clock16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/colors.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/configure.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/contents.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/contents2.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/deck16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/delete16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/deletetag.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/deletetag16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/document-export.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/document-import.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/document-new.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/download.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit-find 2.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit-find-replace.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit-find.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit-redo.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit-rename.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit-undo.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/edit.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/editclear.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/editdelete.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/emblem-favorite.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/emblem-important.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/fileclose.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/find.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/folder_image.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/folder_sound.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/format-stroke-color.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/games-solve.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/gears.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/go-first.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/go-jump-today.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/go-last.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/go-next.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/go-previous.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/green.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/help-contents.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/help-hint.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/help.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/image.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/info.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/kblogger.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/kbugbuster.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/kexi.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/khtml_kget.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/kpersonalizer.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/layout.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/list-add.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/mail-attachment.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/math_matrix.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/math_sqrt.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/media-playback-pause.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/media-playback-start.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/media-playback-start2.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/media-playback-stop.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/media-record.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/none.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/package_games_card.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/pause16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/pause_off16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/player-time.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/plus-circle.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/plus16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/preferences-desktop-font.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/preferences-plugin.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/product_design.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/rating.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/speaker.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/spreadsheet.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/sqlitebrowser.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/star16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/star_off16.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/stock_group.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/stock_new_template.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/stock_new_template_blue.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/stock_new_template_green.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/stock_new_template_red.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/system-shutdown.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/system-software-update.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/tex.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text-speak.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text-xml.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_bold.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_clear.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_italic.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_remove.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_sub.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_super.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/text_under.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/user-identity.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-calendar-tasks.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-pim-calendar.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-pim-news.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-refresh.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-sort-ascending.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-sort-descending.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view-statistics.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons/view_text.png
+%%PYTHON_SITELIBDIR%%/anki/designer/icons.qrc
+%%PYTHON_SITELIBDIR%%/anki/designer/importing.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/main.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/modelopts.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/models.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/preferences.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/preview.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/profiles.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/reposition.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/reschedule.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/setgroup.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/setlang.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/stats.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/studydeck.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/taglimit.ui
+%%PYTHON_SITELIBDIR%%/anki/designer/template.ui
+%%PYTHON_SITELIBDIR%%/anki/locale/af/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/ar/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/az/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/bg/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/bn/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/ca/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/cs/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/da/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/de/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/el/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/en_GB/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/eo/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/es/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/et/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/eu/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/fa/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/fi/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/fr/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/gu/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/he/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/hr/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/hu/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/it/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/ja/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/ko/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/lt/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/lv/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/mn/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/mr/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/ms/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/nb/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/nl/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/no/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/oc/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/pl/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/pt/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/pt_BR/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_ar.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_cs.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_da.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_de.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_es.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_fa.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_fr.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_gl.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_he.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_hu.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_ja.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_ko.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_lt.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_pl.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_pt.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_ru.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_sk.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_sl.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_sv.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_uk.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_zh_CN.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/qt_zh_TW.qm
+%%PYTHON_SITELIBDIR%%/anki/locale/ro/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/ru/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/sl/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/sv/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/th/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/tlh/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/tr/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/uk/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/vi/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/zh_CN/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/zh_HK/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/locale/zh_TW/LC_MESSAGES/anki.mo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/README
+%%PYTHON_SITELIBDIR%%/anki/oldanki/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/cards.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/cards.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/cards.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/db.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/db.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/db.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/deck.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/deck.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/deck.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/errors.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/errors.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/errors.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/exporting.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/exporting.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/exporting.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/facts.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/facts.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/facts.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/fonts.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/fonts.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/fonts.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/graphs.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/graphs.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/graphs.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/history.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/history.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/history.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/hooks.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/hooks.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/hooks.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/lang.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/lang.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/lang.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/latex.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/latex.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/latex.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/media.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/media.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/media.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/models.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/models.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/models.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/sound.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/sound.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/sound.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/stats.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/stats.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/stats.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/stdmodels.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/stdmodels.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/stdmodels.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/sync.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/sync.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/sync.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/tags.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/tags.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/tags.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/LICENSE
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/README.anki
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/README.rst
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/template.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/template.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/template.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/view.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/view.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/template/view.pyo
+%%PYTHON_SITELIBDIR%%/anki/oldanki/utils.py
+%%PYTHON_SITELIBDIR%%/anki/oldanki/utils.pyc
+%%PYTHON_SITELIBDIR%%/anki/oldanki/utils.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/anki/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/shared.py
+%%PYTHON_SITELIBDIR%%/anki/tests/shared.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/shared.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/support/anki12-broken.anki
+%%PYTHON_SITELIBDIR%%/anki/tests/support/anki12-due.anki
+%%PYTHON_SITELIBDIR%%/anki/tests/support/anki12.anki
+%%PYTHON_SITELIBDIR%%/anki/tests/support/anki2-alpha.anki2
+%%PYTHON_SITELIBDIR%%/anki/tests/support/diffmodels1.anki
+%%PYTHON_SITELIBDIR%%/anki/tests/support/diffmodels2-1.apkg
+%%PYTHON_SITELIBDIR%%/anki/tests/support/diffmodels2-2.apkg
+%%PYTHON_SITELIBDIR%%/anki/tests/support/diffmodels2.anki
+%%PYTHON_SITELIBDIR%%/anki/tests/support/fake.png
+%%PYTHON_SITELIBDIR%%/anki/tests/support/invalid-ords.anki
+%%PYTHON_SITELIBDIR%%/anki/tests/support/media.apkg
+%%PYTHON_SITELIBDIR%%/anki/tests/support/mnemo.db
+%%PYTHON_SITELIBDIR%%/anki/tests/support/supermemo1.xml
+%%PYTHON_SITELIBDIR%%/anki/tests/support/text-2fields.txt
+%%PYTHON_SITELIBDIR%%/anki/tests/support/text-tags.txt
+%%PYTHON_SITELIBDIR%%/anki/tests/support/text-update.txt
+%%PYTHON_SITELIBDIR%%/anki/tests/test_cards.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_cards.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_cards.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_collection.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_collection.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_collection.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_decks.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_decks.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_decks.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_exporting.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_exporting.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_exporting.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_find.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_find.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_find.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_importing.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_importing.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_importing.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_latex.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_latex.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_latex.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_media.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_media.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_media.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_models.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_models.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_models.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_remote_sync.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_remote_sync.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_remote_sync.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_sched.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_sched.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_sched.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_stats.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_stats.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_stats.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_sync.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_sync.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_sync.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_undo.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_undo.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_undo.pyo
+%%PYTHON_SITELIBDIR%%/anki/tests/test_upgrade.py
+%%PYTHON_SITELIBDIR%%/anki/tests/test_upgrade.pyc
+%%PYTHON_SITELIBDIR%%/anki/tests/test_upgrade.pyo
+%%PYTHON_SITELIBDIR%%/anki/tools/anki-wait.bat
+%%PYTHON_SITELIBDIR%%/anki/tools/build_ui.sh
+%%PYTHON_SITELIBDIR%%/anki/tools/tests.sh
+share/applications/anki.desktop
+share/mime/packages/anki.xml
+share/pixmaps/anki.png
+share/pixmaps/anki.xpm
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/anki/tools
+@dirrm %%PYTHON_SITELIBDIR%%/anki/tests/support
+@dirrm %%PYTHON_SITELIBDIR%%/anki/tests
+@dirrm %%PYTHON_SITELIBDIR%%/anki/oldanki/template
+@dirrm %%PYTHON_SITELIBDIR%%/anki/oldanki
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/zh_HK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/zh_HK
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/vi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/vi
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/tlh/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/tlh
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/th/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/th
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ro
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/oc
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/no
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/nb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/nb
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ms/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ms
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/mr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/mr
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/mn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/mn
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/lv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/lv
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/lt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/lt
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ko
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/hr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/hr
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/gu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/gu
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/fa
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/eu
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/et
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/eo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/eo
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/en_GB/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/en_GB
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/bn
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/bg
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/az/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/az
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/af/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale/af
+@dirrm %%PYTHON_SITELIBDIR%%/anki/locale
+@dirrm %%PYTHON_SITELIBDIR%%/anki/designer/icons
+@dirrm %%PYTHON_SITELIBDIR%%/anki/designer
+@dirrm %%PYTHON_SITELIBDIR%%/anki/aqt/forms
+@dirrm %%PYTHON_SITELIBDIR%%/anki/aqt
+@dirrm %%PYTHON_SITELIBDIR%%/anki/anki/template
+@dirrm %%PYTHON_SITELIBDIR%%/anki/anki/importing
+@dirrm %%PYTHON_SITELIBDIR%%/anki/anki
+@dirrm %%PYTHON_SITELIBDIR%%/anki
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
