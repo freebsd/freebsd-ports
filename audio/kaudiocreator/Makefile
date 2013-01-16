@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kaudiocreator
-# Date created:				2011/01/01
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	kaudiocreator
@@ -11,7 +8,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 DISTNAME=	107645-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	An audio-cd ripper and encoder for KDE4
 
 LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \

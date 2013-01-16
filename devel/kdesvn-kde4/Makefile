@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kdesvn
-# Date created:				08 April 2006
-# Whom:					Yuan Jue <yuanjue@yuanjue.net>
-#
+# Created by: Yuan Jue <yuanjue@yuanjue.net>
 # $FreeBSD$
 
 PORTNAME=	kdesvn
@@ -9,7 +6,7 @@ DISTVERSION=	1.6.0
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
