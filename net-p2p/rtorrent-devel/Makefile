@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rtorrent-devel
-# Date created:				May 17 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rtorrent-devel
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
@@ -15,8 +11,8 @@ DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
-BUILD_DEPENDS=	libtorrent-devel=0.13.1_1:${PORTSDIR}/net-p2p/libtorrent-devel
-RUN_DEPENDS=	libtorrent-devel=0.13.1_1:${PORTSDIR}/net-p2p/libtorrent-devel
+BUILD_DEPENDS=	libtorrent-devel=0.13.3:${PORTSDIR}/net-p2p/libtorrent-devel
+RUN_DEPENDS=	libtorrent-devel=0.13.3:${PORTSDIR}/net-p2p/libtorrent-devel
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-[0-9]*
