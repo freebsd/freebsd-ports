@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.75
+PORTVERSION=	2.76
 CATEGORIES=	net-p2p
 MASTER_SITES=	# empty
 DISTFILES=	# empty

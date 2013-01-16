@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.75
+PORTVERSION=	2.76
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	LITE
 
 .include <bsd.port.options.mk>
 
-.if ${SLAVEPORT}!="web"
+.if ${SLAVEPORT} != web
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
@@ -50,7 +50,7 @@ MAN1?=		transmission-cli.1 transmission-create.1 transmission-edit.1 \
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
 
-USE_XZ=	yes
+USE_XZ=		yes
 
 DOCS=		AUTHORS COPYING NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
@@ -58,7 +58,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 general-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
-.if ${SLAVEPORT}!="gtk2"
+.if ${SLAVEPORT} != gtk2
 	@${REINPLACE_CMD} -e '/#define DISABLE_GETTEXT/s,/\* \(.*\) \*/,\1,' \
 		${WRKSRC}/libtransmission/utils.h
 .endif
@@ -69,7 +69,7 @@ general-patch:
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|doc \\| \\|g' \
 		${WRKSRC}/Makefile.in
-.if ${SLAVEPORT}!="cli"
+.if ${SLAVEPORT} != cli
 	@${REINPLACE_CMD} -e 's|utils \\|\\|g' \
 		${WRKSRC}/Makefile.in
 .endif
