@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130116:
+  AFFECTS: users of games/py-anki
+  AUTHOR: araujo@FreeBSD.org
+
+  games/py-anki has been removed updstream and merged with games/anki.
+  Users of games/py-anki, from now must use games/anki.
+
 20130114:
   AFFECTS: users of www/hiawatha
   AUTHOR: cs@FreeBSD.org
