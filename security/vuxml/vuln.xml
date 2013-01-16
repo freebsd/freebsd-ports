@@ -51,6 +51,97 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d5e0317e-5e45-11e2-a113-c48508086173">
+    <topic>java 7.x -- security manager bypass</topic>
+    <affects>
+      <package>
+        <name>openjdk7</name>
+        <range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>linux-sun-jdk</name>
+        <range><ge>7.0</ge><lt>7.11</lt></range>
+      </package>
+      <package>
+        <name>linux-sun-jre</name>
+        <range><ge>7.0</ge><lt>7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>US CERT reports:</p>
+        <blockquote cite="http://www.kb.cert.org/vuls/id/625617">
+          <p>Java 7 Update 10 and earlier versions of Java 7 contain a
+            vulnerability that can allow a remote, unauthenticated
+            attacker to execute arbitrary code on a vulnerable
+            system.</p>
+          <p>The Java JRE plug-in provides its own Security Manager.
+            Typically, a web applet runs with a security manager
+            provided by the browser or Java Web Start plugin. Oracle's
+            document states, "If there is a security manager already
+            installed, this method first calls the security manager's
+            checkPermission method with a
+            RuntimePermission("setSecurityManager") permission to ensure
+            it's safe to replace the existing security manager.  This may
+            result in throwing a SecurityException".</p>
+          <p>By leveraging the vulnerability in the Java Management
+            Extensions (JMX) MBean components, unprivileged Java code
+            can access restricted classes.  By using that vulnerability
+            in conjunction with a second vulnerability involving the
+            Reflection API and the invokeWithArguments method of the
+            MethodHandle class, an untrusted Java applet can escalate
+            its privileges by calling the the setSecurityManager()
+            function to allow full privileges, without requiring code
+            signing.  Oracle Java 7 update 10 and earlier Java 7 versions
+            are affected. The invokeWithArguments method was introduced
+            with Java 7, so therefore Java 6 is not affected.</p>
+          <p>This vulnerability is being attacked in the wild, and is
+            reported to be incorporated into exploit kits. Exploit code
+            for this vulnerability is also publicly available.</p>
+        </blockquote>
+        <p>Esteban Guillardoy from Immunity Inc. additionally clarifies
+          on the recursive reflection exploitation technique:</p>
+        <blockquote cite="https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf">
+          <p>The real issue is in the native
+            sun.reflect.Reflection.getCallerClass method.</p>
+          <p>We can see the following information in the Reflection
+            source code:</p>
+          <p>Returns the class of the method realFramesToSkip frames
+            up the stack (zero-based), ignoring frames associated with
+            java.lang.reflect.Method.invoke() and its
+            implementation.</p>
+          <p>So what is happening here is that they forgot to skip the
+          frames related to the new Reflection API and only the old
+          reflection API is taken into account.</p>
+        </blockquote>
+        <p>This exploit does not only affect Java applets, but every
+          piece of software that relies on the Java Security Manager for
+          sandboxing executable code is affected: malicious code can
+          totally disable Security Manager.</p>
+        <p>For users who are running native Web browsers with enabled
+          Java plugin, the workaround is to remove the java/icedtea-web
+          port and restart all browser instances.</p>
+        <p>For users who are running Linux Web browser flavors, the
+          workaround is either to disable the Java plugin in browser
+          or to upgrade linux-sun-* packages to the non-vulnerable
+          version.</p>
+        <p>It is not recommended to run untrusted applets using
+          appletviewer, since this may lead to the execution of the
+          malicious code on vulnerable versions on JDK/JRE.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0433</cvename>
+      <certvu>625617</certvu>
+      <url>http://www.oracle.com/technetwork/topics/security/alert-cve-2013-0422-1896849.html</url>
+      <url>https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf</url>
+    </references>
+    <dates>
+      <discovery>2013-01-10</discovery>
+      <entry>2013-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="97c22a94-5b8b-11e2-b131-000c299b62e1">
     <topic>nagios -- buffer overflow in history.cgi</topic>
     <affects>
