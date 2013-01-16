@@ -768,9 +768,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSIO
 .if ${PORT_OPTIONS:MSPDY}
 USE_OPENSSL_PORT=	yes
 USE_HTTP_SSL=	yes
-NGINX_SPDY_VERSION=	54
+NGINX_SPDY_VERSION=	58
 PATCH_SITES=	http://nginx.org/patches/spdy/:spdy
-PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}.txt:spdy
+PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}_${PORTVERSION}.txt:spdy
+PATCH_DIST_STRIP=	-p1
+CONFIGURE_ARGS+=--with-http_spdy_module
 .endif
 
 .if ${PORT_OPTIONS:MWWW}
@@ -925,6 +927,16 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
+.endif
+.if ${PORT_OPTIONS:MSPDY}
+.if ${PORT_OPTIONS:MDRIZZLE}
+	@${REINPLACE_CMD} '584d' \
+		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
+.endif
+.if ${PORT_OPTIONS:MLUA}
+	@${REINPLACE_CMD} '437d' \
+		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
+.endif
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
