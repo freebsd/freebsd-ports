@@ -1,18 +1,20 @@
---- Makefile.orig	2011-04-04 15:57:55.000000000 -0400
-+++ Makefile	2011-04-16 11:11:52.000000000 -0400
-@@ -1,34 +1,26 @@
- # ebook2cw Makefile -- Fabian Kurz, DJ1YFK -- http://fkurz.net/ham/ebook2cw.html
+--- Makefile.orig	2013-01-04 09:33:04.000000000 -0500
++++ Makefile	2013-01-16 10:16:50.000000000 -0500
+@@ -3,37 +3,26 @@
+ # $Id: Makefile 547 2012-12-29 21:07:53Z dj1yfk $
  
- VERSION=0.8.1
+ VERSION=0.8.2
 -DESTDIR ?= /usr
-+DESTDIR ?= /usr/local
-+CC	?= gcc
- 
+-
 -# Set to NO to compile without Lame/Ogg-vorbis support
 -USE_LAME?=YES
 -USE_OGG?=YES
++DESTDIR ?= %%PREFIX%%
++CC	?= gcc
  
  CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\"
++CFLAGS+= -I%%LOCALBASE%%/include -D LAME -D OGGV
++LDFLAGS+= -L%%LOCALBASE%%/lib -lmp3lame -lvorbis -lvorbisenc -logg
  
 -ifeq ($(USE_LAME), YES)
 -		CFLAGS:=$(CFLAGS) -D LAME
@@ -22,10 +24,8 @@
 -		CFLAGS:=$(CFLAGS) -D OGGV
 -		LDFLAGS:=$(LDFLAGS) -lvorbis -lvorbisenc -logg
 -endif
-+CFLAGS+= -I/usr/local/include -D LAME -D OGGV
-+LDFLAGS+= -L/usr/local/lib -lmp3lame -lvorbis -lvorbisenc -logg
- 
- 
+-
+-
 -all: ebook2cw
 +all: ebook2cw cgi
  
@@ -37,18 +37,13 @@
 -	gcc -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -o cw.cgi
 +	${CC} -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -o cw.cgi
  
+ cgibuffered: ebook2cw.c codetables.h
+-	gcc -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -D CGIBUFFERED -o cw.cgi
++	${CC} -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -D CGIBUFFERED -o cw.cgi
+ 
  static:
 -	gcc -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -o ebook2cw
 +	${CC} -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -o ebook2cw
  
  install:
  	install -d -v                      $(DESTDIR)/share/man/man1/
-@@ -41,7 +33,7 @@
- 	install    -m 0644 ebook2cw.conf   $(DESTDIR)/share/doc/ebook2cw/examples/
- 	install    -m 0644 isomap.txt      $(DESTDIR)/share/doc/ebook2cw/examples/
- 	install    -m 0644 utf8map.txt     $(DESTDIR)/share/doc/ebook2cw/examples/
--	
-+
- uninstall:
- 	rm -f $(DESTDIR)/bin/ebook2cw
- 	rm -f $(DESTDIR)/share/man/man1/ebook2cw.1
