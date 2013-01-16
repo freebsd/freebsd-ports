@@ -3,10 +3,11 @@
 
 PORTNAME=	scala-ide
 DISTVERSION=	2.1.0m3
+PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	http://download.scala-ide.org/sdk/e37/scala29/dev/
+MASTER_SITES=	http://download.scala-ide.org/sdk/e37/scala210/dev/
 DISTNAME=	update-site
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}/scala210-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Scala plugin for the Eclipse IDE
