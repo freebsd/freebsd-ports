@@ -107,7 +107,7 @@ PLIST_SUB+=		NSLCD=""
 MAN5+=			nslcd.conf.5
 MAN8+=			nslcd.8
 .else
-CONFIGURE_ARGS+=	--disable-nslcd --disable-pynslcd
+CONFIGURE_ARGS+=	--disable-nslcd
 PLIST_SUB+=		NSLCD="@comment "
 .endif
 
