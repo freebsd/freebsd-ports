@@ -46,7 +46,37 @@ MAN8=		chef-client.8 chef-solo.8
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client
 
+OPTIONS_DEFINE=	PKGUPGRADE
+PKGUPGRADE_DESC=	Use pkgupgrade as a default package provider
+OPTIONS_DEFAULT=	PKGUPGRADE
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PKGUPGRADE)
+RUN_DEPENDS+=	bsdadminscripts>=0:${PORTSDIR}/sysutils/bsdadminscripts
+.endif
+
 post-install:
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-daemon.rb.patch
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-provider-service-freebsd.rb.patch
+.if defined(WITH_PKGUPGRADE)
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-provider-package-pkgupgrade.rb.patch
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-providers.rb.patch
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-resources.rb.patch
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-resource-pkgupgrade_package.rb.patch
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-platform.patch
+.endif
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-handler-error_report.patch
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/application/solo.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/application/client.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/encrypted_data_bag_item.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/shef.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/config.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/knife/core/ui.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/knife/core/bootstrap_context.rb
+	@${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' ${PREFIX}/${GEM_LIB_DIR}/lib/chef/knife/configure.rb
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR}/distro/common -type f -exec ${REINPLACE_CMD} -e 's@/etc@${PREFIX}/etc@' {} \;
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*.orig" -delete
 .if !defined(NO_INSTALL_MANPAGES)
 .for n in 1 8
 .for f in ${MAN${n}}

@@ -1,0 +1,10 @@
+--- lib/chef/resources.rb.org	2011-11-21 16:54:27.103624659 +0900
++++ lib/chef/resources.rb	2011-11-21 15:57:49.055841192 +0900
+@@ -46,6 +46,7 @@
+ require 'chef/resource/package'
+ require 'chef/resource/pacman_package'
+ require 'chef/resource/perl'
++require 'chef/resource/pkgupgrade_package'
+ require 'chef/resource/portage_package'
+ require 'chef/resource/python'
+ require 'chef/resource/remote_directory'

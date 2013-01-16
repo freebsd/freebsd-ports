@@ -1,0 +1,14 @@
+--- lib/chef/handler/error_report.rb.orig	2012-09-10 11:53:29.000000000 +0900
++++ lib/chef/handler/error_report.rb	2012-09-10 12:03:10.000000000 +0900
+@@ -24,8 +24,9 @@
+     class ErrorReport < ::Chef::Handler
+ 
+       def report
+-        Chef::FileCache.store("failed-run-data.json", Chef::JSONCompat.to_json_pretty(data), 0640)
+-        Chef::Log.fatal("Saving node information to #{Chef::FileCache.load("failed-run-data.json", false)}")
++#        Chef::FileCache.store("failed-run-data.json", Chef::JSONCompat.to_json_pretty(data), 0640)
++#        Chef::Log.fatal("Saving node information to #{Chef::FileCache.load("failed-run-data.json", false)}")
++        Chef::Log.info("Chef::Handler::ErrorReport is disabled: CHEF-2694")
+       end
+ 
+     end
