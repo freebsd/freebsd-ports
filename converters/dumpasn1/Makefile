@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dumpasn1
-# Date created:		6 May 2000
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	dumpasn1
-PORTVERSION=	20110201
+PORTVERSION=	20120521
 CATEGORIES=	converters security
 MASTER_SITES=	http://www.cs.auckland.ac.nz/~pgut001/
 DISTFILES=	dumpasn1.c dumpasn1.cfg
