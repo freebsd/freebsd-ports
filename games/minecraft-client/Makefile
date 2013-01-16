@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-client
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/:minecraft \
 		http://media-mcw.cursecdn.com/c/c5/:icon
@@ -58,6 +58,9 @@ do-install:
 	${ECHO_CMD} "${ECHO_MSG} \"find ~/.minecraft/bin -type l -print0 | \
 			${XARGS} -0 ${RM} -v\""                                 >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "${ECHO_MSG} \"\""                                          >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "${ECHO_MSG} \"After deleting symlinks, you will have to\"" >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "${ECHO_MSG} \"force update to get replacements of all\""   >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "${ECHO_MSG} \"files that are normally used via symlinks.\"">> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "MINECRAFT_DIR=\"\$${HOME}/.minecraft\""                >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "BIN=\"\$${MINECRAFT_DIR}/bin\""                        >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "NATIVES=\"\$${MINECRAFT_DIR}/bin/natives\""            >> ${WRKDIR}/minecraft-client
@@ -76,7 +79,8 @@ do-install:
 	${ECHO_CMD} ""                                                      >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "for j in jinput.jar lwjgl.jar lwjgl_util.jar"          >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "do"                                                    >> ${WRKDIR}/minecraft-client
-	${ECHO_CMD} "  if [ ! -f \$${BIN}/\$${j} -o ! -L \$${BIN}/\$${j} ]" >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "  if [ \( -f \$${BIN}/\$${j} -a ! -L \$${BIN}/\$${j} \) -o \
+			\( -L \$${BIN}/\$${j} -a ! -f \$${BIN}/\$${j} \) ]" >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  then"                                                >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "    target=\$$(${BASENAME} \$${j} .jar)"               >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "    eval target=\\\$$\$${target}"                      >> ${WRKDIR}/minecraft-client
@@ -88,7 +92,8 @@ do-install:
 	${ECHO_CMD} "lwjgl64=\"\$${NATIVES}/liblwjgl64.so\""                >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "if [ \( -f \$${lwjgl} -a ! -L \$${lwjgl} -a \
 			-f \$${lwjgl64} -a ! -L \$${lwjgl64} \) -o \
-			\( ! -f \$${lwjgl} -a ! -f \$${lwjgl64} \) ]; then" >> ${WRKDIR}/minecraft-client
+			\( -L \$${lwjgl} -a ! -f \$${lwjgl} -a \
+			-L \$${lwjgl64} -a ! -f \$${lwjgl64} \) ]; then" >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  LIBLWJGL=\$$(${FIND} ${LOCALBASE}/lib/lwjgl* \
 			-name 'liblwjgl*.so' | ${HEAD} -n 1)"               >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  LWJGLSO=\$$(${ECHO} \$${LIBJGL} | ${GREP} \"64\")"   >> ${WRKDIR}/minecraft-client
@@ -100,6 +105,17 @@ do-install:
 	${ECHO_CMD} "    ${LN} -snf liblwjgl64.so \$${lwgjl}"               >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "  fi"                                                  >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "fi"                                                    >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} ""                                                      >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "libopenal=\"\$${NATIVES}/libopenal.so\""               >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "libopenal64=\"\$${NATIVES}/libopenal64.so\""           >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "if [ \( -f \$${libopenal} -a ! -L \$${libopenal} -a \
+			-f \$${libopenal64} -a ! -L \$${libopenal64} \) -o \
+			\( -L \$${libopenal} -a ! -f \$${libopenal} -a \
+			-L \$${libopenal64} -a ! -f \$${libopenal64} \) ]; then"  >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "  ${LN} -snf ${LOCALBASE}/lib/libopenal.so \$${libopenal}"   >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "  ${LN} -snf ${LOCALBASE}/lib/libopenal.so \$${libopenal64}" >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} "fi"                                                    >> ${WRKDIR}/minecraft-client
+	${ECHO_CMD} ""                                                      >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "exec java \$${JAVA_OPT} -jar ${DATADIR}/minecraft.jar" >> ${WRKDIR}/minecraft-client
 .else
 	${ECHO_CMD} "exec java -Xmx1024M -Xms1024M -jar ${DATADIR}/minecraft.jar" >>  ${WRKDIR}/minecraft-client
