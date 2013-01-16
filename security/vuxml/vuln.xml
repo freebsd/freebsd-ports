@@ -943,6 +943,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </description>
     <references>
       <cvename>CVE-2012-5643</cvename>
+      <cvename>CVE-2013-0189</cvename>
       <url>http://www.squid-cache.org/Advisories/SQUID-2012_1.txt</url>
     </references>
     <dates>
