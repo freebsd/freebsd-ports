@@ -1,12 +1,9 @@
-# New ports collection makefile for:	oneko
-# Date created:        14 December 2012
-# Whom:                pjm
-#
+# Created by: pjm
 # $FreeBSD$
-#
 
 PORTNAME=	vboxtool
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -26,6 +23,12 @@ GROUPS=		vboxusers
 USE_ZIP=	yes
 
 SAMPLESDIR=	${PREFIX}/share/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|!/bin/bash|!/usr/bin/env bash|' \
+		-e 's|/etc/|${PREFIX}&|g' \
+		${WRKSRC}/script/vboxtool \
+		${WRKSRC}/script/vboxtoolinit
 
 do-install:
 	@if  [ ! -f ${PREFIX}/etc/${PORTNAME} ]; then \
