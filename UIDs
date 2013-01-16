@@ -250,4 +250,7 @@ zookeeper:*:962:962::0:0:zookeeper user:/nonexistent:/usr/sbin/nologin
 fluentd:*:963:963::0:0:fluentd user:/nonexistent:/usr/sbin/nologin
 git_daemon:*:964:964::0:0:git daemon:/nonexistent:/usr/sbin/nologin
 elasticsearch:*:965:965::0:0:elasticsearch user:/nonexistent:/usr/sbin/nologin
+ossec:*:966:966::0:0:OSSEC user:/usr/local/ossec-hids:/usr/sbin/nologin
+ossecm:*:967:966::0:0:OSSEC mail user:/usr/local/ossec-hids:/usr/sbin/nologin
+ossecr:*:968:966::0:0:OSSEC rem user:/usr/local/ossec-hids:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
