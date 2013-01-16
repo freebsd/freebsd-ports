@@ -1,15 +1,13 @@
-# New ports collection makefile for:	abi-compliance-checker
-# Date created:		August 21, 2009
-# Whom:	      		bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	abi-compliance-checker
 PORTVERSION=	1.98.7
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://github.com/lvc/abi-compliance-checker/archive/ \
-		LOCAL/bf
+MASTER_SITES=	https://github.com/lvc/${PORTNAME}/archive/ \
+		LOCAL/bf/${DIST_SUBDIR}
+DISTNAME=	${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
@@ -30,9 +28,9 @@ USE_GCC=	any
 FETCH_ARGS?=	-Fpr
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CPPFILT?=	/usr/bin/c++filt
 CTAGS?=		exctags
@@ -45,11 +43,13 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-.for w in DATA DOCS
-.ifndef(NOPORT${w})
-PORT${w}=	*
+.ifndef(NOPORTDATA)
+PORTDATA=	*
 .endif
-.endfor
+
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -68,7 +68,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
@@ -86,4 +86,4 @@ check regression-test test: build
 
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
