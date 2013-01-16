@@ -1,14 +1,12 @@
-A program that takes as input a series of C source files
-and produces a LaTeX or HTML document containing a cross
-reference of the files/functions/variables in the program,
-including documentation taken from suitably formatted
-source code comments.
+A program that takes as input a series of C source files and produces a
+LaTeX or HTML document containing a cross reference of the
+files/functions/variables in the program, including documentation taken
+from suitably formatted source code comments.
 
-The documentation is stored in the C source file in
-specially formatted comments, making it simple to maintain.
-The cross referencing includes lists of functions called,
-callers of each function, usage of global variables, header
-file inclusion, macro definitions and type definitions.
-Works for ANSI C, including a few gcc extensions.
+The documentation is stored in the C source file in specially formatted
+comments, making it simple to maintain. The cross referencing includes
+lists of functions called, callers of each function, usage of global
+variables, header file inclusion, macro definitions and type
+definitions. Works for ANSI C, including a few gcc extensions.
 
 WWW: http://www.gedanken.demon.co.uk/cxref/
