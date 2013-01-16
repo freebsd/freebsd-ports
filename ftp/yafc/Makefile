@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	yafc
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	GHC
+MASTER_SITES=	http://www.yafc-ftp.com/upload/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another ftp client. Similar to ftp(1)
@@ -13,10 +13,6 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	NLS SSH EXAMPLES
 OPTIONS_DEFAULT=NLS SSH
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	sebastinas
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_XZ=		yes
 USE_OPENSSL=	yes
