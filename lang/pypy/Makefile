@@ -9,7 +9,7 @@ MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
 DISTNAME=	release-${DISTVERSION}
 DIST_SUBDIR=	pypy
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	PyPy is a fast, compliant implementation of the Python language
 
 LICENSE=	MIT PSFL

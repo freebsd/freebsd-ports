@@ -7,7 +7,7 @@ PORTREVISION=	15
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	A R SVG graphics device
 
 USE_R_MOD=	yes

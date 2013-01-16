@@ -1,7 +1,4 @@
-# New ports collection makefile for:	soundkonverter
-# Date created:				2011/01/01
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
@@ -10,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	audio kde
 MASTER_SITES=	https://api.opensuse.org/public/source/home:HessiJames/soundkonverter/
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \

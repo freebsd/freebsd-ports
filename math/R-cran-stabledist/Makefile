@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Stable Distribution Functions
 
 LICENSE=	GPLv2 GPLv3

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Time series analysis and computational finance
 
 LICENSE=	GPLv2 GPLv3

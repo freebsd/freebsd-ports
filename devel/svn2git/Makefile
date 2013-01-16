@@ -1,3 +1,4 @@
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	svn2git
@@ -5,7 +6,7 @@ DISTVERSION=	1.0.5
 CATEGORIES=	devel kde
 MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/${PORTNAME}/
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Imports svn repositories into git
 
 LICENSE=	GPLv3
