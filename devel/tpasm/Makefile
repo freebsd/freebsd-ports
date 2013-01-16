@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tpasm
-# Date created:				13 Feb 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tpasm
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ct0.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -18,21 +14,32 @@ COMMENT=	Cross-assembler for variety of microprocessors and controllers
 LICENSE=	GPLv2
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-O2|| ; \
+		 s|CFLAGS=|CFLAGS+=| ; \
+		 s|$$(CC) -O|$$(CXX) $$(LDFLAGS)| ; \
+		 s|-lstdc++||' ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
 	@${MKDIR} ${PREFIX}/libdata/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/libdata/${PORTNAME}
+	(cd ${WRKSRC}/include \
+		&& ${INSTALL_DATA} * ${PREFIX}/libdata/${PORTNAME})
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CONVERSION_C166.TXT ${WRKSRC}/MANUAL.TXT \
-		${WRKSRC}/README*.TXT ${DOCSDIR}
+.for i in CONVERSION_C166.TXT MANUAL.TXT README*.TXT
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples && ${INSTALL_DATA} * ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
