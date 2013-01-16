@@ -1,6 +1,4 @@
-# Ports collection makefile for:	coccinnelle
-# Date created:			Sep 10, 2010
-# Whom:				Andriy Gapon
+# Created by: Andriy Gapon
 # $FreeBSD$
 
 PORTNAME=	coccinelle
@@ -19,5 +17,9 @@ USE_PYTHON=	2.5+
 USE_OCAML=	3.0+
 
 MAN1=		spatch.1
+
+post-patch:
+	@${REINPLACE_CMD} 's|CAMLreturn0|return 0|' \
+		${WRKSRC}/pycaml/pycaml_ml.c
 
 .include <bsd.port.mk>
