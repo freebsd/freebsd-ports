@@ -1,9 +1,5 @@
-# New ports collection makefile for:  ssmping
-# Date created:		20 August 2006
-# Whom:			dikshie@lapi.itb.ac.id
-#
+# Created by: dikshie@lapi.itb.ac.id
 # $FreeBSD$
-#
 
 PORTNAME=	ssmping
 PORTVERSION=	0.9.1
@@ -25,8 +21,8 @@ PLIST_FILES=	bin/ssmping \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 810000
-IGNORE=		does not work at FreeBSD 7.x
+.if ${OSVERSION} <= 800000
+IGNORE=		does not work with FreeBSD 7.x
 .endif
 
 do-install:
