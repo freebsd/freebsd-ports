@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=		dojo
-PORTVERSION=		1.8.1
+PORTVERSION=		1.8.3
 CATEGORIES=		www
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/
 DISTNAME=		dojo-release-${PORTVERSION}
 
 MAINTAINER=		glarkin@FreeBSD.org
-COMMENT=		An open-source DHTML toolkit written in JavaScript
+COMMENT=		Open-source DHTML toolkit written in JavaScript
 
 NO_BUILD=		yes
 
