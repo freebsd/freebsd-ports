@@ -5609,8 +5609,8 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>php5</name>
 	<range><gt>5.4</gt><lt>5.4.5</lt></range>
-	<range><lt>5.3.15</lt></range>
-	<range><lt>5.2.17_10</lt></range>
+	<range><ge>5.3</ge><lt>5.3.15</lt></range>
+	<range><ge>5.2</ge><lt>5.2.17_10</lt></range>
       </package>
       <package>
 	<name>php53</name>
