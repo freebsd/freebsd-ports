@@ -4,7 +4,7 @@ PORTNAME=	suxus
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.goof.com/pcg/marc/data/ \
+MASTER_SITES=	http://oldhome.schmorp.de/marc/data/ \
 		http://www.atarininja.org/distfiles/
 DISTFILES=	${PORTNAME}-iso-8859-1.bdf.gz fonts.alias
 DIST_SUBDIR=	suxus
