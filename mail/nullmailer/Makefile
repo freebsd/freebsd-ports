@@ -1,13 +1,8 @@
-# Ports collection makefile for:  nullmailer
-# Date created:			  Tue Jan 30 2001
-# Whom:				  clive
-#
+# Created by: clive
 # $FreeBSD$
-#
 
 PORTNAME=	nullmailer
-PORTVERSION=	1.05
-PORTREVISION=	4
+PORTVERSION=	1.11
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -16,6 +11,8 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
+
+LICENSE=	GPLv2
 
 LOCALSTATEDIR=	/var/spool
 
@@ -28,10 +25,8 @@ GROUPS=		nullmail
 NULLMAIL_UID=	522
 NULLMAIL_GID=	522
 
-LICENSE=	GPLv2
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR}
+CONFIGURE_ARGS+=--localstatedir=${LOCALSTATEDIR}
 
 USE_SUBMAKE=	yes
 
@@ -46,6 +41,21 @@ SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR} NULLMAIL_USER=${USERS}
 MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7
 MAN8=	nullmailer-queue.8 nullmailer-send.8
+
+ 
+OPTIONS_DEFINE=	GNUTLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnutls
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=--enable-tls
+.else
+CONFIGURE_ARGS+=--disable-tls
+.endif
 
 post-install:
 	@cd ${WRKSRC} && ${MAKE} install-root
