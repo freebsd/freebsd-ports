@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ossec-hids-client
-# Date created:		23 July 2006
-# Whom:			Valerio Daelli <valerio.daelli@gmail.com>
-#
+# Created by: Valerio Daelli <valerio.daelli@gmail.com>
 # $FreeBSD$
-#
 
 COMMENT=	The client port of ossec-hids
 
