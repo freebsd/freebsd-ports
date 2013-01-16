@@ -1,13 +1,14 @@
 --- src/Makefile.in.orig	2007-10-09 19:23:25.000000000 -0400
 +++ src/Makefile.in	2009-08-11 17:24:28.000000000 -0400
-@@ -30,9 +30,9 @@
+@@ -30,10 +30,9 @@
  NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
  POST_UNINSTALL = :
--bin_PROGRAMS = mailq$(EXEEXT) nullmailer-inject$(EXEEXT)
+-bin_PROGRAMS = mailq$(EXEEXT) nullmailer-inject$(EXEEXT) \
+-	nullmailer-smtpd$(EXEEXT)
 -sbin_PROGRAMS = nullmailer-queue$(EXEEXT) nullmailer-send$(EXEEXT) \
 -	sendmail$(EXEEXT)
-+bin_PROGRAMS = nullmailer-inject$(EXEEXT)
++bin_PROGRAMS = nullmailer-inject$(EXEEXT) nullmailer-smtpd$(EXEEXT)
 +sbin_PROGRAMS = nullmailer-queue$(EXEEXT) nullmailer-send$(EXEEXT)
 +libexec_PROGRAMS = mailq$(EXEEXT) sendmail$(EXEEXT)
  subdir = src
