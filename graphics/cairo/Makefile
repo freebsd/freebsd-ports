@@ -52,7 +52,7 @@ PLIST_SUB+=	X11="@comment "
 
 .if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		gl
-USE_XORG+=	glproto:both
+USE_XORG+=	glproto:both dri2proto:both
 CONFIGURE_ARGS+=	--enable-gl
 PLIST_SUB+=	GL=""
 .else
