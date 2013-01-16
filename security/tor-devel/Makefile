@@ -1,12 +1,8 @@
-# ports collection makefile for:	tor-devel
-# Date created:				2005.10.20
-# Whom:					peter.thoenen@yahoo.com
-#
+# Created by: peter.thoenen@yahoo.com
 # $FreeBSD$
-#
 
 PORTNAME=	tor
-DISTVERSION=	0.2.4.7-alpha
+DISTVERSION=	0.2.4.9-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
