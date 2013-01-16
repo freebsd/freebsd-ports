@@ -1,33 +1,14 @@
-Jetty is  an open-source, standards-based, full-featured  web server implemented
-entirely in Java. It  is released under the Apache 2.0  licence and is therefore
-free for commercial use and distribution.
+The Jetty Web Server provides an HTTP server and Servlet container
+capable of serving static and dynamic content either from a standalone
+or embedded instantiations. From jetty-7, the jetty webserver and
+other core compoments are hosted by the eclipse foundation.
 
-Jetty can be used as:
+The project provides:
 
-    * a stand-alone traditional web server for static and dynamic content
-    * a dynamic content server behind a dedicated HTTP server such as Apache
-      using mod_proxy
-    * an embedded component within a Java application
+* Asynchronous HTTP Server
+* Standard based Servlet Container
+* Web Sockets server
+* Asynchronous HTTP Client
+* OSGi, JNDI, JMX, JASPI, AJP support
 
-Some of the defining features of Jetty are:
-
-Simplicity:  The guiding principle of Jetty  could be said to be "simplicity not
-complexity".  We want to make Jetty easy to understand and use:
-
-Efficiency:   A lot  of  effort  goes into  optimizing  Jetty's performance  and
-crafting the code so as to make the footprint as small as possible.
-
-Embeddability:  Jetty is designed to be a good component. This means that it can
-easily be embedded in an application without forcing the application to adapt to
-it.
-
-Pluggability:  Jetty  is architected for pluggability. The  API allows different
-implementations  of all  of the  principal Jetty  components to  be selected. At
-least  one,  but sometimes  more,  implementations  of  a component  are  always
-provided. However if these do not meet your needs, you are free to code your own
-using the  interfaces and  abstract classes  as a  basis. This means  that Jetty
-can  be  easily customised  to  a  particular application  environment. This  is
-particularly useful when Jetty is acting as  the web container in a J2EE server,
-as Jetty's pluggability ensures a tight integration with a host container.
-
-WWW: http://jetty.mortbay.com/
+WWW: http://www.eclipse.org/jetty/
