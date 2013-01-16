@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libtorrent-devel
-# Date created:				May 17 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libtorrent-devel
-PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTVERSION=	0.13.3
+PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
