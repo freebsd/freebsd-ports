@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	api-sanity-checker
-PORTVERSION=	1.98.1
+PORTVERSION=	1.98.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	https://github.com/lvc/${PORTNAME}/archive/ \
 		LOCAL/bf/${DIST_SUBDIR}
