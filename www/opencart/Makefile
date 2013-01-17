@@ -1,20 +1,18 @@
-# New ports collection makefile for:   opencart
-# Date created:		04 April 2008
-# Whom:			Wen heping <wenheping@gmail.com>
-#
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	opencart
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4.1
 CATEGORIES=	www misc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://github.com/downloads/opencart/opencart/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An open source PHP-based online shopping cart system
 
 #PROJECTHOST=	open-cart
+USE_GITHUB=	yes
+GH_ACCOUNT=	opencart
 USE_ZIP=	yes
 USE_PHP=	mysql gd session pcre
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION}/upload
