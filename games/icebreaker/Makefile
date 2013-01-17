@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icebreaker
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	games
 MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/
 EXTRACT_SUFX=	.tgz
