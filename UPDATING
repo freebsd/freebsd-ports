@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of games/py-anki
   AUTHOR: araujo@FreeBSD.org
 
-  games/py-anki has been removed updstream and merged with games/anki.
+  games/py-anki has been removed upstream and merged with games/anki.
   Users of games/py-anki, from now must use games/anki.
 
 20130114:
