@@ -1,19 +1,16 @@
-# Ports collection makefile for:	hiera
-# Date created:				10 May 2012
-# Whom:					Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hiera
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A pluggable data store for hierarchical data
 
-RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet \
+		${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
