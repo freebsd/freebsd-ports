@@ -1,13 +1,8 @@
-# New ports collection makefile for:	parcellite
-# Date created:	29 April 2009
-# Whom:	Joey Mingrone <joey@mingrone.org>
-#
+# Created by: Joey Mingrone <joey@mingrone.org>
 # $FreeBSD$
-#
 
 PORTNAME=	parcellite
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +13,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
