@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pdftk
-# Date created:			18 March, 2004
-# Whom:				Patrick Dung (patrick_dkt@yahoo.com.hk)
-#
+# Created by: Patrick Dung (patrick_dkt@yahoo.com.hk)
 # $FreeBSD$
-#
 
 PORTNAME=	pdftk
 PORTVERSION=	1.45
