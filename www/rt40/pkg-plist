@@ -116,7 +116,6 @@ etc/rt40/schema.mysql
 %%SITE_PERL%%/RT/Pod/HTML.pm
 %%SITE_PERL%%/RT/Pod/HTMLBatch.pm
 %%SITE_PERL%%/RT/Pod/Search.pm
-%%SITE_PERL%%/RT/Pod/HTML.pm
 %%SITE_PERL%%/RT/Principal.pm
 %%SITE_PERL%%/RT/Principals.pm
 %%SITE_PERL%%/RT/Queue.pm
