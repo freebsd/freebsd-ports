@@ -1,0 +1,6 @@
+%%LUA_MODLIBDIR%%/lualdap.so
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/lualdap.png
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
