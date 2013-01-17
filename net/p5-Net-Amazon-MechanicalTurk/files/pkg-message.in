@@ -21,8 +21,8 @@ You need to do some things before you can use the Amazon Mechanical Turk:
 
    service_url: http://mechanicalturk.amazonaws.com/?Service=AWSMechanicalTurkRequester
 
-   DISCLAIMER: No one but you is responsible for paying MTurk workers for
-               the HITs that you submit to the live service. Please make sure
+   DISCLAIMER: You are responsible for paying MTurk workers for the HITs
+               that you submit to the live service. Please make sure
                you know which MTurk service you are submitting HITs to -
                the sandbox (default) or the production service.
 
