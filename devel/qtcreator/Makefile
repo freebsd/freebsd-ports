@@ -7,7 +7,7 @@
 
 PORTNAME=	qtcreator
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.qt.nokia.com/qtcreator/
 DISTNAME=	qt-creator-${PORTVERSION}-src
@@ -15,8 +15,8 @@ DISTNAME=	qt-creator-${PORTVERSION}-src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Creator IDE and tools
 
-LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS=	Imath:${PORTSDIR}/graphics/ilmbase \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
