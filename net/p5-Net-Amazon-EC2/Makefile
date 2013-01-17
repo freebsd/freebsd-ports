@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Amazon-EC2
-# Date created:		2007-10-30
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Amazon-EC2
-PORTVERSION=	0.20
+PORTVERSION=	0.23
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Moose>=0.38:${PORTSDIR}/devel/p5-Moose \
 		p5-XML-Simple>=2.18:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
