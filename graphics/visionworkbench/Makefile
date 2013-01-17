@@ -7,7 +7,7 @@
 
 PORTNAME=	visionworkbench
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://ti.arc.nasa.gov/m/project/nasa-vision-workbench/
 DISTNAME=	VisionWorkbench-${PORTVERSION}
@@ -33,7 +33,7 @@ LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS+=	cairomm-1.0.1:${PORTSDIR}/graphics/cairomm
 
 .include <bsd.port.pre.mk>

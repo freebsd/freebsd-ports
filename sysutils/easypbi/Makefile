@@ -7,15 +7,15 @@
 
 PORTNAME=	easypbi
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/makeapbi/${PORTNAME}/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Graphical PBI module and package creator
 
-LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS=	Imath:${PORTSDIR}/graphics/ilmbase \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${LOCALBASE}/bin/gksu:${PORTSDIR}/sysutils/gksu \

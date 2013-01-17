@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=--without-lua
 .endif
 
 .if !defined(WITHOUT_OPENEXR)
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
 CONFIGURE_ARGS+=--without-openexr

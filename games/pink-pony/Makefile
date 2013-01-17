@@ -7,7 +7,7 @@
 
 PORTNAME=	pink-pony
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +18,7 @@ COMMENT=	Tron-like multiplayer racing game
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		protobuf.7:${PORTSDIR}/devel/protobuf \
 		glfw.0:${PORTSDIR}/graphics/glfw \
-		Half.6:${PORTSDIR}/graphics/ilmbase \
+		Half:${PORTSDIR}/graphics/ilmbase \
 		ftgl.2:${PORTSDIR}/graphics/ftgl \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
