@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Net-Amazon-MechanicalTurk
-# Date created:		2007-10-29
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Amazon-MechanicalTurk
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +14,10 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=6:${PORTSDIR}/www/p5-libwww \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-Net-SSLeay>=1.33:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
