@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediathek
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	MediathekView_${PORTVERSION}
@@ -22,10 +22,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 SUB_FILES=	mediathek
 
-INSTALLFILES=	MediathekView.jar
+INSTALLFILES=	MediathekView.jar MediathekView.ico
 INSTALLDOCS=	Anleitung.pdf
-INSTALLLIBS=	commons-compress-1.4.jar commons-lang3-3.1.jar \
-		jdom-2.0.0.jar
+INSTALLLIBS=	commons-compress-1.4.jar commons-lang3-3.1.jar
 
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MPLAYER VLC
@@ -43,6 +42,13 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .if ${PORT_OPTIONS:MVLC}
 RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 .endif
+
+DESKTOP_ENTRIES="MediathekView" \
+		"Filme der oeff. rechtlichen Sender herunterladen und ansehen" \
+		"${DATADIR}/MediathekView.ico" \
+		"mediathek" \
+		"Video;AudioVideo;Java;" \
+		false
 
 do-extract:
 	@${RM} -rf ${WRKDIR}

@@ -1,9 +1,9 @@
 bin/mediathek
 %%PORTDOCS%%%%DOCSDIR%%/Anleitung.pdf
 %%DATADIR%%/MediathekView.jar
+%%DATADIR%%/MediathekView.ico
 %%DATADIR%%/lib/commons-compress-1.4.jar
 %%DATADIR%%/lib/commons-lang3-3.1.jar
-%%DATADIR%%/lib/jdom-2.0.0.jar
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
