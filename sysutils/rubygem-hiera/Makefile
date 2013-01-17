@@ -9,8 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A pluggable data store for hierarchical data
 
-RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet \
-		${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
+RUN_DEPENDS=	${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
