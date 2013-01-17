@@ -1,15 +1,3 @@
-lib/libIlmCtl.a
-lib/libIlmCtl.la
-lib/libIlmCtl.so
-lib/libIlmCtl.so.2
-lib/libIlmCtlMath.a
-lib/libIlmCtlMath.la
-lib/libIlmCtlMath.so
-lib/libIlmCtlMath.so.2
-lib/libIlmCtlSimd.a
-lib/libIlmCtlSimd.la
-lib/libIlmCtlSimd.so
-lib/libIlmCtlSimd.so.2
 include/CTL/CtlAddr.h
 include/CTL/CtlAlign.h
 include/CTL/CtlColorSpace.h
@@ -31,8 +19,21 @@ include/CTL/CtlSyntaxTree.h
 include/CTL/CtlTokens.h
 include/CTL/CtlType.h
 include/CTL/CtlVersion.h
+lib/libIlmCtl.a
+lib/libIlmCtl.la
+lib/libIlmCtl.so
+lib/libIlmCtl.so.2
+lib/libIlmCtlMath.a
+lib/libIlmCtlMath.la
+lib/libIlmCtlMath.so
+lib/libIlmCtlMath.so.2
+lib/libIlmCtlSimd.a
+lib/libIlmCtlSimd.la
+lib/libIlmCtlSimd.so
+lib/libIlmCtlSimd.so.2
 libdata/pkgconfig/CTL.pc
-%%DOCSDIR%%/CtlManual.pdf
-%%DOCSDIR%%/CtlManual.doc
-@dirrm %%DOCSDIR%%
-@dirrm include/CTL
+%%PORTDOCS%%%%DOCSDIR%%/CtlManual.doc
+%%PORTDOCS%%%%DOCSDIR%%/CtlManual.pdf
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrmtry include/CTL

@@ -1,13 +1,24 @@
-The CTL(Color Transformation Language) interpreter contains
-the following C++ libraries:
+ABOUT THE CTL LIBRARIES
+-----------------------
 
-IlmCtl		The CTL interpreter front end and the interpreter's
-		public programming interface.
+The CTL interpreter source code release contains the following
+C++ libraries:
 
-IlmCtlSimd	The interpreter's SIMD back end.
+IlmCtl          The CTL interpreter front end and the interpreter's
+                public programming interface.
 
-IlmCtlMath	Math routines that are used by IlmCtlSimd: conversions
-		between standard color spaces, 1D and 3D lookup tables,
-		3D scattered data interpolation.
+IlmCtlSimd      The interpreter's SIMD back end.
 
-WWW:	http://www.oscars.org/council/ctl.html
+IlmCtlMath      Math routines that are used by IlmCtlSimd: conversions
+                between standard color spaces, 1D and 3D lookup tables,
+                3D scattered data interpolation.
+
+IlmCtlTest      Confidence tests for IlmCtl, IlmCtlSimd
+
+IlmCtlMathTest  Confidence tests for IlmCtlMath
+
+IlmCtlTest      Confidence tests for IlmImfCtl
+
+WWW:	http://www.openexr.com/
+WWW:	http://www.oscars.org/science-technology/council/projects/ctl.html
+WWW:	http://ampasctl.sourceforge.net/
