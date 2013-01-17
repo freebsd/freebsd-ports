@@ -1024,6 +1024,7 @@ share/rt40/html/NoAuth/js/jquery-1.4.2.min.js
 share/rt40/html/NoAuth/js/jquery-ui-1.8.4.custom.min.js
 share/rt40/html/NoAuth/js/jquery-ui-patch-datepicker.js
 share/rt40/html/NoAuth/js/jquery-ui-timepicker-addon.js
+share/rt40/html/NoAuth/js/jquery.cookie.js
 share/rt40/html/NoAuth/js/jquery.event.hover-1.0.js
 share/rt40/html/NoAuth/js/jquery.supposition.js
 share/rt40/html/NoAuth/js/jquery.tablesorter.min.js
@@ -1213,6 +1214,7 @@ share/rt40/html/l_unsafe
 share/rt40/html/m/_elements/footer
 share/rt40/html/m/_elements/full_site_link
 share/rt40/html/m/_elements/header
+share/rt40/html/m/_elements/login
 share/rt40/html/m/_elements/menu
 share/rt40/html/m/_elements/raw_style
 share/rt40/html/m/_elements/ticket_list
@@ -1220,7 +1222,6 @@ share/rt40/html/m/_elements/ticket_menu
 share/rt40/html/m/_elements/wrapper
 share/rt40/html/m/dhandler
 share/rt40/html/m/index.html
-share/rt40/html/m/login
 share/rt40/html/m/logout
 share/rt40/html/m/style.css
 share/rt40/html/m/ticket/autohandler
@@ -1230,6 +1231,7 @@ share/rt40/html/m/ticket/reply
 share/rt40/html/m/ticket/select_create_queue
 share/rt40/html/m/ticket/show
 share/rt40/html/m/tickets/search
+share/rt40/po/ar.po
 share/rt40/po/bg.po
 share/rt40/po/cs.po
 share/rt40/po/da.po
@@ -1254,6 +1256,7 @@ share/rt40/po/mk.po
 share/rt40/po/nb.po
 share/rt40/po/nl.po
 share/rt40/po/nn.po
+share/rt40/po/oc.po
 share/rt40/po/pl.po
 share/rt40/po/pt.po
 share/rt40/po/pt_BR.po
