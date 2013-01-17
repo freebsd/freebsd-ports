@@ -63,7 +63,7 @@ WANT_MYSQL_VER=	55p
 
 LATEST_LINK=	percona55-server
 
-CONFLICTS_INSTALL=	mysql-server-[345].* percona-server-5.[0-46-9].*
+CONFLICTS_INSTALL=	mysql-server-[345].* percona-server-5.[0-46-9].* mariadb-server-[0-9].*
 
 USE_RC_SUBR=	mysql-server
 

@@ -22,7 +22,7 @@ LICENSE=	GPLv2
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-CONFLICTS?=	mysql-server-[0-9]*
+CONFLICTS?=	mysql-server-[0-9]* percona-server-[0-9]* mariadb-server-5.[0-24-9].* mariadb-server-[0-46-9].*
 
 GNU_CONFIGURE=	yes
 
