@@ -1,25 +1,11 @@
-lib/libHalf.a
-lib/libHalf.la
-lib/libHalf.so
-lib/libHalf.so.6
-lib/libIex.a
-lib/libIex.la
-lib/libIex.so
-lib/libIex.so.6
-lib/libIlmThread.a
-lib/libIlmThread.la
-lib/libIlmThread.so
-lib/libIlmThread.so.6
-lib/libImath.a
-lib/libImath.la
-lib/libImath.so
-lib/libImath.so.6
-libdata/pkgconfig/IlmBase.pc
 include/OpenEXR/Iex.h
 include/OpenEXR/IexBaseExc.h
 include/OpenEXR/IexErrnoExc.h
 include/OpenEXR/IexMacros.h
 include/OpenEXR/IexMathExc.h
+include/OpenEXR/IexMathFloatExc.h
+include/OpenEXR/IexMathFpu.h
+include/OpenEXR/IexMathIeeeExc.h
 include/OpenEXR/IexThrowErrnoExc.h
 include/OpenEXR/IlmBaseConfig.h
 include/OpenEXR/IlmThread.h
@@ -58,4 +44,26 @@ include/OpenEXR/ImathVecAlgo.h
 include/OpenEXR/half.h
 include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
-@dirrm include/OpenEXR
+lib/libHalf.a
+lib/libHalf.la
+lib/libHalf.so
+lib/libHalf.so.7
+lib/libIex.a
+lib/libIex.la
+lib/libIex.so
+lib/libIex.so.7
+lib/libIexMath.a
+lib/libIexMath.la
+lib/libIexMath.so
+lib/libIexMath.so.7
+lib/libIlmThread.a
+lib/libIlmThread.la
+lib/libIlmThread.so
+lib/libIlmThread.so.7
+lib/libImath.a
+lib/libImath.la
+lib/libImath.so
+lib/libImath.so.7
+libdata/pkgconfig/IlmBase.pc
+@dirrmtry share/applications
+@dirrmtry include/OpenEXR
