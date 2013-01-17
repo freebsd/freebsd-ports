@@ -6,35 +6,45 @@
 #
 
 PORTNAME=	ilmbase
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	openexr
+MASTER_SITES=	http://cloud.github.com/downloads/openexr/openexr/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath, and Iex
 
+LICENSE=	BSD
+
 CONFLICTS=	OpenEXR-1.[0-4].*
+
+USE_PKGCONFIG=	build
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
+
+PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=		THREAD
 OPTIONS_DEFAULT=	THREAD
 THREAD_DESC=		Enable multithreaded file I/O support
 
-USE_GNOME=	pkgconfig
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-
-regression-test regression test check:	build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREAD}
+CONFIGURE_ARGS+=--enable-threading
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 .else
 CONFIGURE_ARGS+=--disable-threading
 .endif
 
-.include <bsd.port.post.mk>
+regression-test regression test check:	build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
