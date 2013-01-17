@@ -13,7 +13,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LATEST_LINK=	percona55-client
 
-CONFLICTS_INSTALL=	mysql-client-[345].* percona-client-5.[0-46-9].*
+CONFLICTS_INSTALL=	mysql-client-[345].* mariadb-client-5.* percona-client-5.[0-46-9].*
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 
