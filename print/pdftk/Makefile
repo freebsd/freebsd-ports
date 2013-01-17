@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdftk
-PORTVERSION=	1.44
-PORTREVISION=	1
+PORTVERSION=	1.45
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ \
 		LOCAL/glarkin
