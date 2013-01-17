@@ -1420,6 +1420,7 @@
     SUBDIR += p5-B-Hooks-Parser
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-OPCheck
+    SUBDIR += p5-B-Size2
     SUBDIR += p5-B-Utils
     SUBDIR += p5-BFD
     SUBDIR += p5-BS-Event
