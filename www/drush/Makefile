@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Table.php:${PORTSDIR}/devel/pear-Co
 NO_BUILD=	yes
 
 # set php requirements same as drupal itself
-USE_PHP=	gd pcre session xml mbstring ctype
+USE_PHP=	gd pcre session xml mbstring ctype json hash
 IGNORE_WITH_PHP=4
 WANT_PHP_CLI=	yes
 
