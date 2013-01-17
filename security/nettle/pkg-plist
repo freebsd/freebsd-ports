@@ -19,6 +19,7 @@ include/nettle/des-compat.h
 include/nettle/des.h
 include/nettle/dsa.h
 include/nettle/gcm.h
+include/nettle/gosthash94.h
 include/nettle/hmac.h
 include/nettle/knuth-lfib.h
 include/nettle/macros.h
@@ -30,6 +31,7 @@ include/nettle/memxor.h
 include/nettle/nettle-meta.h
 include/nettle/nettle-stdint.h
 include/nettle/nettle-types.h
+include/nettle/pbkdf2.h
 include/nettle/pgp.h
 include/nettle/pkcs1.h
 include/nettle/realloc.h
@@ -40,16 +42,19 @@ include/nettle/salsa20.h
 include/nettle/serpent.h
 include/nettle/sexp.h
 include/nettle/sha.h
+include/nettle/sha1.h
+include/nettle/sha2.h
+include/nettle/sha3.h
 include/nettle/twofish.h
 include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.2
-lib/libhogweed.so.2.2
+lib/libhogweed.so.2.3
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.4
+lib/libnettle.so.4.5
 libdata/pkgconfig/nettle.pc
 libdata/pkgconfig/hogweed.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
