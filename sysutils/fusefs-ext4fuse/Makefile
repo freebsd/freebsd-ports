@@ -1,14 +1,10 @@
-# New ports collection makefile for:	fusefs-ext4fuse
-# Date created:				12 Nov 2011
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ext4fuse
-PORTVERSION=	20120803
+PORTVERSION=	0.1.2
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -16,11 +12,15 @@ COMMENT=	EXT4 implementation for FUSE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
+USE_GITHUB=	yes
+GH_ACCOUNT=	gerard
+GH_COMMIT=	6b28a2b
+GH_TAGNAME=	v${PORTVERSION}
 
 MAKE_JOBS_SAFE=	yes
 
