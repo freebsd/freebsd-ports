@@ -1,12 +1,8 @@
-# New ports collection makefile for:	MooseX-Params-Validate
-# Date created:	                        12 Aug 2009
-# Whom:		                        Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Params-Validate
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
