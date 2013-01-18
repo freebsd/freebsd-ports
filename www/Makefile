@@ -1148,6 +1148,7 @@
     SUBDIR += p5-Reddit
     SUBDIR += p5-Rose-HTML-Objects
     SUBDIR += p5-Router-Simple
+    SUBDIR += p5-Router-Simple-Sinatraish
     SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
     SUBDIR += p5-STF-Dispatcher-PSGI
