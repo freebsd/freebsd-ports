@@ -1,13 +1,7 @@
-# New ports collection makefile for:	gemrb
-# Date created:			21 Apr 2008
-# Whom:				Timothy Beyer <beyert@cs.ucr.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gemrb
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
@@ -29,15 +23,25 @@ CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 CMAKE_C_FLAGS=	${CFLAGS}
 CMAKE_ARGS=	-DDOC_DIR="${DOCSDIR}" -DMAN_DIR="${MAN6PREFIX}/man/man6/" -DDISABLE_WERROR=1 -DINSOURCEBUILD=1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NO_INSTALL_MANPAGES)
 MAN6=		gemrb.6
-.endif
 
 post-patch:
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-noportdocs-*
+	@${REINPLACE_CMD} \
+	-e '/^ADD_SUBDIRECTORY( VLCPlayer )/d' \
+	${WRKSRC}/gemrb/plugins/CMakeLists.txt
+
+.if empty(PORT_OPTIONS:MDOCS)
+	@${REINPLACE_CMD} \
+	-e '/^INSTALL( FILES README INSTALL COPYING NEWS AUTHORS DESTINATION \$${DOC_DIR} )/d' \
+	${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} \
+	-e '/^ADD_SUBDIRECTORY( docs )/d' \
+	${WRKSRC}/gemrb/CMakeLists.txt
+	@${REINPLACE_CMD} \
+	-e '/^ADD_SUBDIRECTORY( en )/d' \
+	${WRKSRC}/gemrb/docs/CMakeLists.txt
 .endif
 
 post-install:
@@ -46,4 +50,4 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
