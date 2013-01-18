@@ -94,6 +94,11 @@ CONFIGURE_ARGS+=	--disable-directfb \
 			--disable-mpg123 \
 			--disable-musepack
 
+# Fix a problem with unknown assembly opcodes in embedded ffmpeg
+.if ${ARCH} == "ppc"
+CONFIGURE_ARGS+=        --disable-asm
+.endif
+
 .include "${.CURDIR}/Makefile.options"
 
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
