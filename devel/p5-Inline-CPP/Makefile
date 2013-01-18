@@ -17,12 +17,6 @@ RUN_DEPENDS=	p5-Inline>=0.51:${PORTSDIR}/devel/p5-Inline \
 
 PERL_CONFIGURE=	yes
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-EXTRA_PATCHES+=	${FILESDIR}/opt-patch-Makefile.PL
-.else
-IS_INTERACTIVE=	yes
-.endif
-
 MAN3=		Inline::CPP.3 \
 		Inline::CPP::Config.3 \
 		Inline::CPP::grammar.3
