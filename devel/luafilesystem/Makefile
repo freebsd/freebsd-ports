@@ -1,41 +1,44 @@
-# New ports collection makefile for:   luafilesystem
-# Date created:                        28 Mar 2010
-# Whom:                                Kelly Hays <kelly.hays@jkhfamily.org>
-#
+# Created by: Kelly Hays <kelly.hays@jkhfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	luafilesystem
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
-MASTER_SITES=	http://luaforge.net/frs/download.php/3931/
+MASTER_SITES=	GH
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	kelly.hays@jkhfamily.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
 
 USE_LUA=	5.1
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	keplerproject
+GH_PROGECT=	${PORTNAME}
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	8ff2013
+
+ALL_TARGET=	lib
+
 PLIST_FILES=	%%LUA_MODLIBDIR%%/lfs.so
 PORTDOCS=	*
 
-do-build:
-	cd ${WRKSRC}/src && \
-		${CC} -O2 -Wall -fPIC -W -Waggregate-return \
-		-Wcast-align -Wmissing-prototypes -Wnested-externs \
-		-Wshadow -Wwrite-strings -pedantic -shared \
-		-o lfs.so lfs.c -I${LUA_INCDIR}
+MAKE_ARGS+=	INCS="-I${LOCALBASE}/include/${LUA_SUBDIR}"
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/lfs.so ${LUA_MODLIBDIR}
+.include <bsd.port.options.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		"s|%%PREFIX%%|${PREFIX}| ; \
+		s|%%MODLIBDIR%%|${LUA_MODLIBDIR}| ; \
+		s|%%INCDIR%%|${LUA_INCDIR}|" ${WRKSRC}/config
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/us/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR} && \
+	${CP} ${WRKSRC}/doc/us/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
