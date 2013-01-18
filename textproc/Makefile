@@ -826,6 +826,7 @@
     SUBDIR += p5-Text-ParagraphDiff
     SUBDIR += p5-Text-ParseWords
     SUBDIR += p5-Text-Patch
+    SUBDIR += p5-Text-Pipe
     SUBDIR += p5-Text-Prefix-XS
     SUBDIR += p5-Text-QRCode
     SUBDIR += p5-Text-Query
