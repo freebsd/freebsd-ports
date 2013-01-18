@@ -1,0 +1,85 @@
+
+# HG changeset patch
+# User jrose
+# Date 1357874549 28800
+# Node ID ecc14534318c80dc7612c8b1d328a67849c5b07f
+# Parent 88c54f7a8c514b3df459cb086356387cd2c35d8a
+8004933: Improve MethodHandle interaction with libraries
+8006017: Improve lookup resolutions
+Reviewed-by: ahgross
+
+--- jdk/src/share/classes/java/lang/invoke/MethodHandleNatives.java	Tue Dec 04 17:28:38 2012 -0800
++++ jdk/src/share/classes/java/lang/invoke/MethodHandleNatives.java	Thu Jan 10 19:22:29 2013 -0800
+@@ -418,6 +418,21 @@ class MethodHandleNatives {
+             return defc == sun.misc.Unsafe.class;
+         case "lookup":
+             return defc == java.lang.invoke.MethodHandles.class;
++        case "findStatic":
++        case "findVirtual":
++        case "findConstructor":
++        case "findSpecial":
++        case "findGetter":
++        case "findSetter":
++        case "findStaticGetter":
++        case "findStaticSetter":
++        case "bind":
++        case "unreflect":
++        case "unreflectSpecial":
++        case "unreflectConstructor":
++        case "unreflectGetter":
++        case "unreflectSetter":
++            return defc == java.lang.invoke.MethodHandles.Lookup.class;
+         case "invoke":
+             return defc == java.lang.reflect.Method.class;
+         case "get":
+--- jdk/src/share/classes/java/lang/invoke/MethodHandles.java	Tue Dec 04 17:28:38 2012 -0800
++++ jdk/src/share/classes/java/lang/invoke/MethodHandles.java	Thu Jan 10 19:22:29 2013 -0800
+@@ -68,6 +68,10 @@ public class MethodHandles {
+      */
+     public static Lookup lookup() {
+         return new Lookup();
++    }
++    static {
++        // FIXME in MR1: Core Reflection cannot be used to gain a Lookup to perform MH reflection
++        Reflection.registerMethodsToFilter(MethodHandles.class, "lookup");
+     }
+ 
+     /**
+
+
+# HG changeset patch
+# User jrose
+# Date 1357955621 28800
+# Node ID d9969a953f693f5760b1d2759f11a2cb222e4f20
+# Parent f9567d889266689d5b76f11a23584127848700bc
+8006125: Update MethodHandles library interactions
+Reviewed-by: mchung, jdn, ahgross
+
+--- jdk/src/share/classes/java/lang/invoke/MethodHandles.java	Fri Jan 11 09:00:00 2013 -0800
++++ jdk/src/share/classes/java/lang/invoke/MethodHandles.java	Fri Jan 11 17:53:41 2013 -0800
+@@ -68,10 +68,6 @@ public class MethodHandles {
+      */
+     public static Lookup lookup() {
+         return new Lookup();
+-    }
+-    static {
+-        // FIXME in MR1: Core Reflection cannot be used to gain a Lookup to perform MH reflection
+-        Reflection.registerMethodsToFilter(MethodHandles.class, "lookup");
+     }
+ 
+     /**
+--- jdk/src/share/classes/sun/reflect/misc/MethodUtil.java	Fri Jan 11 09:00:00 2013 -0800
++++ jdk/src/share/classes/sun/reflect/misc/MethodUtil.java	Fri Jan 11 17:53:41 2013 -0800
+@@ -256,6 +256,12 @@ public final class MethodUtil extends Se
+     public static Object invoke(Method m, Object obj, Object[] params)
+         throws InvocationTargetException, IllegalAccessException {
+         if (m.getDeclaringClass().equals(AccessController.class) ||
++           (m.getDeclaringClass().equals(java.lang.invoke.MethodHandles.class)
++            && m.getName().equals("lookup")) ||
++           (m.getDeclaringClass().equals(java.lang.invoke.MethodHandles.Lookup.class)
++            && (m.getName().startsWith("find") ||
++                m.getName().startsWith("bind") ||
++                m.getName().startsWith("unreflect"))) ||
+             m.getDeclaringClass().equals(Method.class))
+             throw new InvocationTargetException(
+                 new UnsupportedOperationException("invocation not supported"));
