@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl Installation Program
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.29:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-CPAN-Inject>=0.07:${PORTSDIR}/devel/p5-CPAN-Inject \
-		p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which \
+		p5-File-Which>=1.08:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-File-pushd>=0.32:${PORTSDIR}/devel/p5-File-pushd \
 		p5-PAR-Dist>=0.25:${PORTSDIR}/devel/p5-PAR-Dist \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
