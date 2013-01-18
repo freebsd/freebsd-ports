@@ -1,9 +1,5 @@
-# New ports collection makefile for:	piewm
-# Date created:		24 November 1994
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	piewm
 PORTVERSION=	1.04
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.crynwr.com/piewm/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@catwhisker.org
 COMMENT=	A tvtwm with pie (circular) menus
 
 DISABLE_SIZE=	yes
