@@ -35,54 +35,54 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
 		--with-xf86gamma-ext --with-randr-ext --enable-locking
 
-OPTIONS=	KERBEROS "Add support for kerberos" off \
-		PAM "Add support for pam authentication" off \
-		SETUID_HACKS "Install sonar hack suid so it can ping" off \
-		FIREF "Add extra port x11/fireflies" off \
-		XAOS1 "Add extra port graphics/xaos" off \
-		XDALI "Add extra port x11-clocks/xdaliclock" off \
-		XURTH "Add extra port astro/xearth" off \
-		XMOUN "Add extra port graphics/xmountains" off \
-		XPLAN "Add extra port astro/xplanet" off \
-		XSNOW "Add extra port x11/xsnow" off
+OPTIONS_DEFINE= KERBEROS PAM SETUID_HACKS FIREF XAOS1 XDALI XURTH XMOUN XPLAN \
+		XSNOW
+SETUID_HACKS_DESC=	Install sonar hack suid so it can ping
+FIREF_DESC=	Add extra port x11/fireflies
+XAOS1_DESC=	Add extra port graphics/xaos
+XDALI_DESC=	Add extra port x11-clocks/xdaliclock
+XURTH_DESC=	Add extra port astro/xearth
+XMOUN_DESC=	Add extra port graphics/xmountains
+XPLAN_DESC=	Add extra port astro/xplanet
+XSNOW_DESC=	Add extra port x11/xsnow
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KERBEROS)
+.if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=	--with-kerberos
 .else
 CONFIGURE_ARGS+=	--without-kerberos
 .endif
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		PAM=""
 .else
 CONFIGURE_ARGS+=	--without-pam
 PLIST_SUB+=		PAM="@comment not installed: "
 .endif
-.if defined(WITH_SETUID_HACKS)
+.if ${PORT_OPTIONS:MSETUID_HACKS}
 CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
-.if defined(WITH_FIREF)
+.if ${PORT_OPTIONS:MFIREF}
 RUN_DEPENDS+=	${LOCALBASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
 .endif
-.if defined(WITH_XAOS1)
+.if ${PORT_OPTIONS:MXAOS1}
 RUN_DEPENDS+=	xaos:${PORTSDIR}/graphics/xaos
 .endif
-.if defined(WITH_XDALI)
+.if ${PORT_OPTIONS:MXDALI}
 RUN_DEPENDS+=	xdaliclock:${PORTSDIR}/x11-clocks/xdaliclock
 .endif
-.if defined(WITH_XURTH)
+.if ${PORT_OPTIONS:MXURTH}
 RUN_DEPENDS+=	xearth:${PORTSDIR}/astro/xearth
 .endif
-.if defined(WITH_XMOUN)
+.if ${PORT_OPTIONS:MXMOUN}
 RUN_DEPENDS+=	xmountains:${PORTSDIR}/graphics/xmountains
 .endif
-.if defined(WITH_XPLAN)
+.if ${PORT_OPTIONS:MXPLAN}
 RUN_DEPENDS+=	xplanet:${PORTSDIR}/astro/xplanet
 .endif
-.if defined(WITH_XSNOW)
+.if ${PORT_OPTIONS:MXSNOW}
 RUN_DEPENDS+=	xsnow:${PORTSDIR}/x11/xsnow
 .endif
 
@@ -140,7 +140,7 @@ post-patch:
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		-e 's#pkg_config --list-all#pkg_config --help#' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
 	@ ${SED} -e "s#/etc/pam.d#${PREFIX}/etc/pam.d#g" \
@@ -162,4 +162,4 @@ post-install:
 			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
 	${INSTALL_DATA} ${WRKDIR}/*.desktop ${PREFIX}/share/applications/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
