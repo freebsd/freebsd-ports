@@ -1011,6 +1011,18 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/statusicons/shared/online.png
 %%DATADIR%%/resources/statusicons/shared/perr.png
 %%DATADIR%%/resources/statusicons/shared/xa.png
+%%DATADIR%%/resources/statusicons/skype/ask.png
+%%DATADIR%%/resources/statusicons/skype/away.png
+%%DATADIR%%/resources/statusicons/skype/chatty.png
+%%DATADIR%%/resources/statusicons/skype/dnd.png
+%%DATADIR%%/resources/statusicons/skype/icon.def.xml
+%%DATADIR%%/resources/statusicons/skype/invisible.png
+%%DATADIR%%/resources/statusicons/skype/noauth.png
+%%DATADIR%%/resources/statusicons/skype/offline.png
+%%DATADIR%%/resources/statusicons/skype/online.png
+%%DATADIR%%/resources/statusicons/skype/perr.png
+%%DATADIR%%/resources/statusicons/skype/statusicons.def.xml
+%%DATADIR%%/resources/statusicons/skype/xa.png
 %%DATADIR%%/resources/statusicons/sms/ask.png
 %%DATADIR%%/resources/statusicons/sms/away.png
 %%DATADIR%%/resources/statusicons/sms/chatty.png
@@ -1362,24 +1374,25 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/translations/pl
 @dirrm %%DATADIR%%/translations/de
 @dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/resources/statusicons/odnoklassniki
-@dirrm %%DATADIR%%/resources/statusicons/yaonline
-@dirrm %%DATADIR%%/resources/statusicons/yahoo
-@dirrm %%DATADIR%%/resources/statusicons/weather
-@dirrm %%DATADIR%%/resources/statusicons/vkontakte
-@dirrm %%DATADIR%%/resources/statusicons/smtp
-@dirrm %%DATADIR%%/resources/statusicons/sms
-@dirrm %%DATADIR%%/resources/statusicons/shared
-@dirrm %%DATADIR%%/resources/statusicons/rss
-@dirrm %%DATADIR%%/resources/statusicons/msn
-@dirrm %%DATADIR%%/resources/statusicons/mrim
-@dirrm %%DATADIR%%/resources/statusicons/livejournal
-@dirrm %%DATADIR%%/resources/statusicons/icq
-@dirrm %%DATADIR%%/resources/statusicons/gtalk
-@dirrm %%DATADIR%%/resources/statusicons/gadu
-@dirrm %%DATADIR%%/resources/statusicons/facebook
-@dirrm %%DATADIR%%/resources/statusicons/bot
 @dirrm %%DATADIR%%/resources/statusicons/aim
+@dirrm %%DATADIR%%/resources/statusicons/bot
+@dirrm %%DATADIR%%/resources/statusicons/facebook
+@dirrm %%DATADIR%%/resources/statusicons/gadu
+@dirrm %%DATADIR%%/resources/statusicons/gtalk
+@dirrm %%DATADIR%%/resources/statusicons/icq
+@dirrm %%DATADIR%%/resources/statusicons/livejournal
+@dirrm %%DATADIR%%/resources/statusicons/mrim
+@dirrm %%DATADIR%%/resources/statusicons/msn
+@dirrm %%DATADIR%%/resources/statusicons/odnoklassniki
+@dirrm %%DATADIR%%/resources/statusicons/rss
+@dirrm %%DATADIR%%/resources/statusicons/shared
+@dirrm %%DATADIR%%/resources/statusicons/skype
+@dirrm %%DATADIR%%/resources/statusicons/sms
+@dirrm %%DATADIR%%/resources/statusicons/smtp
+@dirrm %%DATADIR%%/resources/statusicons/vkontakte
+@dirrm %%DATADIR%%/resources/statusicons/weather
+@dirrm %%DATADIR%%/resources/statusicons/yahoo
+@dirrm %%DATADIR%%/resources/statusicons/yaonline
 @dirrm %%DATADIR%%/resources/statusicons
 @dirrm %%DATADIR%%/resources/sounds/shared
 @dirrm %%DATADIR%%/resources/sounds

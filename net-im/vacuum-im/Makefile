@@ -1,12 +1,8 @@
-# New ports collection makefile for:	vacuum-im
-# Date created:		2009-12-09
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	vacuum
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
