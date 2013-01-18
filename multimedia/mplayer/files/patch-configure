@@ -1,6 +1,6 @@
---- configure.orig	2012-03-15 16:20:02.000000000 +0100
-+++ configure	2012-03-22 15:36:16.583006073 +0100
-@@ -637,7 +637,7 @@
+--- configure.orig	2012-07-20 15:11:42.000000000 +0200
++++ configure	2012-10-08 19:16:19.637797462 +0200
+@@ -645,7 +645,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1455,7 +1455,6 @@
+@@ -1467,7 +1467,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,7 +17,16 @@
      ;;
  
    esac
-@@ -1533,7 +1533,7 @@
+@@ -1515,7 +1514,7 @@
+   case "$(uname -m 2>&1)" in
+       x86_64|amd64|i[3-9]86*|i86pc|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
+       ia64) host_arch=ia64 ;;
+-      macppc|ppc*|Power*) host_arch=ppc ;;
++      macppc|powerpc|ppc*|Power*) host_arch=ppc ;;
+       alpha) host_arch=alpha ;;
+       sun4*|sparc*) host_arch=sparc ;;
+       parisc*|hppa*|9000*) host_arch=hppa ;;
+@@ -1555,7 +1554,7 @@
  fi
  
  extra_cflags="-I. -Iffmpeg $extra_cflags"
@@ -26,7 +35,7 @@
  _timer=timer-linux.c
  _getch=getch2.c
  
-@@ -3576,7 +3575,7 @@
+@@ -3601,7 +3600,7 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -35,7 +44,7 @@
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
-@@ -3586,7 +3585,7 @@
+@@ -3611,7 +3610,7 @@
  EOF
  _pthreads=no
  if ! hpux ; then
@@ -44,7 +53,7 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
-@@ -6245,7 +6244,7 @@
+@@ -6271,7 +6270,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -53,7 +62,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -6705,6 +6704,16 @@
+@@ -6733,6 +6732,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -70,7 +79,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7097,7 +7106,7 @@
+@@ -7125,7 +7134,7 @@
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -79,7 +88,7 @@
  fi
  echores "$_mencoder"
  
-@@ -7435,8 +7444,11 @@
+@@ -7463,8 +7472,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -93,7 +102,7 @@
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no &&
-@@ -8001,7 +8013,7 @@
+@@ -8029,7 +8041,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  
