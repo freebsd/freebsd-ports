@@ -1,4 +1,0 @@
---- gemrb/docs/CMakeLists.txt.orig	2010-08-20 10:49:10.000000000 -0700
-+++ gemrb/docs/CMakeLists.txt	2010-09-06 01:43:26.000000000 -0700
-@@ -1 +0,0 @@
--ADD_SUBDIRECTORY( en )
