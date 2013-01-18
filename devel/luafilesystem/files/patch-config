@@ -1,0 +1,31 @@
+--- config.orig	2009-10-21 00:54:35.000000000 +0400
++++ config	2012-12-15 17:36:31.000000000 +0400
+@@ -1,22 +1,22 @@
+ # Installation directories
+ 
+ # Default installation prefix
+-PREFIX=/usr/local
++PREFIX=%%PREFIX%%
+ 
+ # System's libraries directory (where binary libraries are installed)
+-LUA_LIBDIR= $(PREFIX)/lib/lua/5.1
++LUA_LIBDIR= %%MODLIBDIR%%
+ 
+ # Lua includes directory
+-LUA_INC= $(PREFIX)/include
++LUA_INC= %%INCDIR%%
+ 
+ # OS dependent
+ LIB_OPTION= -shared #for Linux
+ #LIB_OPTION= -bundle -undefined dynamic_lookup #for MacOS X
+ 
+-LIBNAME= $T.so.$V
++LIBNAME= $T.so
+ 
+ # Compilation directives
+ WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
+ INCS= -I$(LUA_INC)
+-CFLAGS= $(WARN) $(INCS)
+-CC= gcc
++CFLAGS+= $(WARN) $(INCS)
++CC?= gcc
