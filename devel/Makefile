@@ -1651,6 +1651,7 @@
     SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Hexify
     SUBDIR += p5-Data-Hierarchy
+    SUBDIR += p5-Data-Inherited
     SUBDIR += p5-Data-Inspect
     SUBDIR += p5-Data-Integer
     SUBDIR += p5-Data-JavaScript-Anon
