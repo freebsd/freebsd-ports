@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Constructor/.packlist
+%%SITE_PERL%%/Class/Accessor/Constructor.pm
+%%SITE_PERL%%/Class/Accessor/Constructor/Base.pm
+@dirrm %%SITE_PERL%%/Class/Accessor/Constructor
+@comment @dirrmtry %%SITE_PERL%%/Class/Accessor
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Constructor
