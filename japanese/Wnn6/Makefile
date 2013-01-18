@@ -23,7 +23,7 @@ MOUNT_DEV?=	/dev/acd0c
 
 USERS=		wnn
 
-RESTRICTED=	"You should buy from Omron Software Co., Ltd."
+RESTRICTED=	You should buy from Omron Software Co., Ltd
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 

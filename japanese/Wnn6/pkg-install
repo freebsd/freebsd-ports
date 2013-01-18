@@ -1,24 +1,6 @@
 #!/bin/sh
 # an installation script for Wnn6
 
-check_pw()
-{
-    if which -s pw; then
-	:
-    else
-	cat <<EOF
-
-This system looks like a pre-2.2 version of FreeBSD.  We see that it
-is missing the "pw" utility.  We need this utility.  Please get and
-install it, and try again.  You can get the source from:
-
-  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
-
-EOF
-	exit 1
-    fi
-}
-
 ask() {
     local question default answer
 
