@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-File-Path
-# Date created:				2008/09/06
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	File-Path
-PORTVERSION=	2.08
+PORTVERSION=	2.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
