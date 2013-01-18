@@ -103,6 +103,7 @@
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
+    SUBDIR += guake
     SUBDIR += hotwire-shell
     SUBDIR += hs-X11
     SUBDIR += hs-X11-xft
