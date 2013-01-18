@@ -238,6 +238,7 @@
 %%WWWDIR%%/core/Updates/1.9.3-b8.php
 %%WWWDIR%%/core/Updates/1.9.3-b10.php
 %%WWWDIR%%/core/Updates/1.10-b4.php
+%%WWWDIR%%/core/Updates/1.10.1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
