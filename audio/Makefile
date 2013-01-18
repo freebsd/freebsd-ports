@@ -29,6 +29,7 @@
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
     SUBDIR += alsa-utils
+    SUBDIR += alure
     SUBDIR += amarok
     SUBDIR += amarok-fs
     SUBDIR += amarok-kde4
