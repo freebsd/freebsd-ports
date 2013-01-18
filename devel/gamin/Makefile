@@ -1,10 +1,6 @@
-# ports collection makefile for:	gamin
-# Date created:				24 March 2005
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/devel/gamin/Makefile,v 1.6 2008/11/26 06:48:13 marcus Exp $
-#
+#    $MCom: ports/devel/gamin/Makefile,v 1.11 2012/08/04 16:55:24 kwm Exp $
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.10
@@ -19,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME?=	gnomehack _glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
@@ -30,21 +27,22 @@ CONFLICTS=	fam-[0-9]*
 GNU_CONFIGURE=	yes
 
 .if !defined(GAMIN_SLAVE)
-OPTIONS=	GAM_POLLER "Use gamin's poller instead of kqueue's" off \
-		LIBINOTIFY "Use libinotify as the FAM backend" off
+OPTIONS_DEFINE=	GAM_POLLER LIBINOTIFY
+GAM_POLLER_DESC=Use gamin's poller instead of kqueue's
+LIBINOTIFY_DESC=Use libinotify as the FAM backend
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(GAMIN_SLAVE)
-.if defined(WITH_GAM_POLLER)
+.if ${PORT_OPTIONS:MGAM_POLLER}
 CPPFLAGS+=	-DUSE_GAMIN_POLLER=1
 .endif
 
-.if defined(WITH_LIBINOTIFY)
+.if ${PORT_OPTIONS:MLIBINOTIFY}
 CONFIGURE_ARGS+=--enable-inotify
 LDFLAGS+=	-L${LOCALBASE}/lib -linotify
-LIB_DEPENDS+=	inotify.0:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS+=	inotify:${PORTSDIR}/devel/libinotify
 .else
 CONFIGURE_ARGS+=--disable-inotify
 .endif
@@ -63,4 +61,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
