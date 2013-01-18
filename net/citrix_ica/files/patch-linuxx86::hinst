@@ -1,15 +1,91 @@
---- linuxx86/hinst.orig	Tue Oct 31 07:07:08 2006
-+++ linuxx86/hinst	Mon Mar  5 12:26:02 2007
-@@ -86,7 +86,7 @@
+--- linuxx86/hinst.orig	2012-04-13 14:57:24.000000000 +0000
++++ linuxx86/hinst	2013-01-02 04:11:06.000000000 +0000
+@@ -105,7 +105,7 @@
  fi
  
  #  Install in here by default.
--DefaultInstallDir=/usr/lib/ICAClient
-+DefaultInstallDir=/usr/local/ICAClient
+-DefaultInstallDir=/opt/Citrix/ICAClient
++DefaultInstallDir=%%PREFIX%%/ICAClient
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -2217,7 +2217,7 @@
+@@ -1475,7 +1475,7 @@
+ set_require_ICA_license()
+ {
+     REQUIRE_LICENSE=
+-    if [ ! -f /etc/icalicense/clientlicense ]
++    if [ ! -f %%PREFIX%%/etc/icalicense/clientlicense ]
+     then
+ 	TRY1=`"$ECHO_CMD" -l`
+ 	sleep 1
+@@ -1498,14 +1498,14 @@
+ 	# a license file.
+ 
+ 	if [ -n "$SU_INSTALL" ] ; then
+-	    create_dir /etc/icalicense
++	    create_dir %%PREFIX%%/etc/icalicense
+ 
+-	    if [ ! -f /etc/icalicense/clientlicense ]
++	    if [ ! -f %%PREFIX%%/etc/icalicense/clientlicense ]
+ 	    then
+-		    "$ECHO_CMD" -l >/etc/icalicense/clientlicense
++		    "$ECHO_CMD" -l > %%PREFIX%%/etc/icalicense/clientlicense
+ 	    fi
+-	    chmod 444 /etc/icalicense/clientlicense
+-	    chmod 555 /etc/icalicense
++	    chmod 444 %%PREFIX%%/etc/icalicense/clientlicense
++	    chmod 555 %%PREFIX%%/etc/icalicense
+ 	fi
+ }
+ ###############################################################################
+@@ -1548,7 +1548,7 @@
+ 
+ 	echo_no_nl "$instica4"
+ 
+-	getyesno $INSTALLER_NO
++	ANSWER=${INSTALLER_YES}
+ 	if [ "$ANSWER" != "$INSTALLER_YES" ]
+ 	then
+ 		"$ECHO_CMD" $instica5
+@@ -1570,7 +1570,7 @@
+ 	rm $EULA
+ 
+ 	if
+-		eula_acceptance_menu
++		true
+ 	then
+ 		# EULA accepted - continue with installation
+ 		:
+@@ -1589,9 +1589,8 @@
+ 
+ 		if [ "$PORT" != "uclibc" ]
+ 		then 
+-			integrate_ICA_client
++			:
+ 		fi
+-		install_usb "$CDSourceDir" "$ICAInstDir"
+ 	else
+ 	   COR_SELECTED=false
+ 	fi
+@@ -1899,7 +1898,7 @@
+ 	while [ "$got_directory" = "false" ]
+ 	do
+ 		echo_no_nl "$dirutil1a $ICAInstDir] $dirutil1b"
+-		read newCDSourceDir
++		newCDSOurceDir=${DefaultInstallDir}
+ 		if [ "x$newCDSourceDir" != "x" ]
+ 		then
+ 			CDSourceDir="$newCDSourceDir"
+@@ -1971,7 +1970,7 @@
+ 	while [ "$got_directory" = "false" ]
+ 	do
+ 		echo_no_nl "$dirutil4a $ICAInstDir] $dirutil4b"
+-		read newICAInstDir
++		newICAInstDir=${DefaultInstallDir}
+ 		if [ "`echo x$newICAInstDir | tolower`" = "x$INSTALLER_QUIT" ]
+ 		then
+ 			FAIL_MSG=$dirutil13
+@@ -2567,7 +2566,7 @@
  	then
  		:
  	else
@@ -18,7 +94,7 @@
  		return 
  	fi
  
-@@ -2263,7 +2263,7 @@
+@@ -2641,7 +2640,7 @@
  		fi
  	fi
  
@@ -26,8 +102,8 @@
 +	/usr/bin/true
  }
  
- ###############################################################################
-@@ -2387,26 +2387,19 @@
+ #!/bin/sh
+@@ -2787,26 +2786,19 @@
  
  netscape_integrate()
  {
@@ -56,10 +132,10 @@
 -    else
 +	;;
 +    *)
- 	user_prompt $integrate_netscape2
+ 	user_prompt "$integrate_netscape2"
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2415,9 +2408,9 @@
+@@ -2815,9 +2807,9 @@
  	else
    		user_echo $integrate_netscape6
  	fi
@@ -68,6 +144,37 @@
      fi
 -  fi
 -
-     # Create utility script files in install root.
-     create_wfica_script
-     create_wfica_assoc_script
+   # Create utility script files in install root.
+   create_wfica_script
+   create_wfica_assoc_script
+@@ -4422,8 +4414,9 @@
+ 		    "$ECHO_CMD" $menus5
+ 		    return 0
+ 		fi
+-		while true
+-		do
++		#while true
++		#do
++		{
+ 			#
+ 			# Get the Function the user wants to perform
+ 			#
+@@ -4437,7 +4430,7 @@
+ 			fi
+ 			echo_no_nl "$menus2 1-$menuItems [$keyDefault]: "
+ 			
+-			read keynum
++			keynum=1
+ 
+ 			if test "x$keynum" = "x"
+ 			then 
+@@ -4502,7 +4495,8 @@
+ 				# After any action make exit the default
+ 				keyDefault=3
+ 			fi
+-		done
++		#done
++		}
+ }
+ 
+ 

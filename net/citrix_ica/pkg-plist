@@ -1,37 +1,60 @@
 @unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -f ${dir}/mime.types ]; then (/bin/cat ${dir}/mime.types | /usr/bin/grep -v "application/x-ica" > ${dir}/mime.types.tmp; mv ${dir}/mime.types.tmp ${dir}/mime.types); fi ; done
 @unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -f ${dir}/mailcap ]; then (/bin/cat ${dir}/mailcap | /usr/bin/grep -v "application/x-ica" > ${dir}/mailcap.tmp; /bin/mv ${dir}/mailcap.tmp ${dir}/mailcap); fi ; done
 @unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -e ${dir}/plugins/npica.so ]; then (/bin/rm ${dir}/plugins/npica.so); fi ; done
+%%HAVE_ICA_CERTS%%@unexec for f in %%ICA_CERTS%%; do rm %%CERTDIR%%/${f}; done
+ICAClient/ADPCM.DLL
 ICAClient/CHARICONV.DLL
+ICAClient/FlashContainer.bin
 ICAClient/NDS.DLL
 ICAClient/Npica
 ICAClient/Npica.ad
 ICAClient/PDCRYPT1.DLL
 ICAClient/PDCRYPT2.DLL
-ICAClient/TW1.DLL
-ICAClient/VDEUEM.DLL
+ICAClient/SPEEX.DLL
+ICAClient/VDFLASH2.DLL
+ICAClient/VDHSSPI.DLL
+ICAClient/VDMM.DLL
+ICAClient/VDMSSPI.DLL
 ICAClient/VDSCARD.DLL
-ICAClient/VDSPMIKE.DLL
+ICAClient/VORBIS.DLL
 ICAClient/config/.server
 ICAClient/config/All_Regions.ini
+ICAClient/config/MediaStreamingConfig.tbl
 ICAClient/config/Trusted_Region.ini
 ICAClient/config/Unknown_Region.ini
 ICAClient/config/Untrusted_Region.ini
 ICAClient/config/appsrv.ini
 ICAClient/config/canonicalization.ini
 ICAClient/config/module.ini
+ICAClient/config/plugin.ini
 ICAClient/config/regions.ini
 ICAClient/config/usertemplate/All_Regions.ini
 ICAClient/config/usertemplate/Trusted_Region.ini
 ICAClient/config/usertemplate/Unknown_Region.ini
 ICAClient/config/usertemplate/Untrusted_Region.ini
 ICAClient/config/wfclient.ini
-ICAClient/desktop/Citrix_PNA.desktop
-ICAClient/desktop/wfcmgr.desktop
 ICAClient/eula.txt
+ICAClient/gtk/glade/authdialogbox.glade
+ICAClient/gtk/glade/connect.glade
+ICAClient/gtk/glade/dialog.glade
+ICAClient/gtk/glade/flashdialogbox.glade
+ICAClient/gtk/glade/flashdialogbox1.glade
+ICAClient/gtk/glade/main.glade
+ICAClient/gtk/glade/proxy.glade
+ICAClient/gtk/glade/zlc.glade
+ICAClient/gtk/resource.gtkrc
 ICAClient/help/index.htm
-ICAClient/icons/manager.xpm
+ICAClient/icons/alert.png
+ICAClient/icons/background.png
+ICAClient/icons/disconnect.png
+ICAClient/icons/error.png
+ICAClient/icons/flash.png
+ICAClient/icons/info.png
+ICAClient/icons/manager.png
+ICAClient/icons/receiver.png
+ICAClient/icons/security.png
+ICAClient/icons/security_small.png
 ICAClient/icons/session.xpm
-ICAClient/install.txt
 ICAClient/keyboard/age2.kbd
 ICAClient/keyboard/agex2.kbd
 ICAClient/keyboard/automatic.kbd
@@ -97,48 +120,129 @@ ICAClient/keystore/cacerts/Class3PCA_G2_v2.crt
 ICAClient/keystore/cacerts/Class4PCA_G2_v2.crt
 ICAClient/keystore/cacerts/GTECTGlobalRoot.crt
 ICAClient/keystore/cacerts/Pcs3ss_v4.crt
-ICAClient/keystore/cacerts/SecureServer.crt
-%%HAVE_ICA_CERTS%%@unexec for f in %%ICA_CERTS%%; do rm %%CERTDIR%%/${f}; done
+ICAClient/lib/libavcodec.so
+ICAClient/lib/libavformat.so
+ICAClient/lib/libavutil.so
+ICAClient/lib/libkcph.so
+ICAClient/lib/libkcpm.so
+ICAClient/lib/libswscale.so
 ICAClient/libctxssl.so
-ICAClient/nls/en/UTF-8/Wfcmgr
-ICAClient/nls/en/UTF-8/Wfica
-ICAClient/nls/en/UTF-8/pna.nls
-ICAClient/nls/en/Wfcmgr
-ICAClient/nls/en/Wfica
-ICAClient/nls/en/pna.nls
+ICAClient/libproxy.so
 ICAClient/nls/C
+ICAClient/nls/de/LC_MESSAGES/flash.mo
+ICAClient/nls/de/LC_MESSAGES/icaclient.mo
+ICAClient/nls/de/Npica
+ICAClient/nls/de/Npica.ad
+ICAClient/nls/de/UTF-8/Wfcmgr
+ICAClient/nls/de/UTF-8/XCapture
+ICAClient/nls/de/UTF-8/XCapture.ad
+ICAClient/nls/de/UTF-8/eula.txt
+ICAClient/nls/de/UTF-8/pna.nls
+ICAClient/nls/de/UTF-8/setupwfc.msg
+ICAClient/nls/de/Wfcmgr
+ICAClient/nls/de/XCapture
+ICAClient/nls/de/XCapture.ad
+ICAClient/nls/de/appsrv.ini
+ICAClient/nls/de/eula.txt
+ICAClient/nls/de/hinst.msg
+ICAClient/nls/de/index.htm
+ICAClient/nls/de/module.ini
+ICAClient/nls/de/pna.nls
+ICAClient/nls/de/setupwfc.msg
+ICAClient/nls/de/utf8
+ICAClient/nls/de/wfclient.ini
+ICAClient/nls/en/LC_MESSAGES/icaclient.mo
+ICAClient/nls/en/Npica
+ICAClient/nls/en/Npica.ad
+ICAClient/nls/en/UTF-8/Wfcmgr
+ICAClient/nls/en/UTF-8/XCapture
+ICAClient/nls/en/UTF-8/XCapture.ad
+ICAClient/nls/en/UTF-8/eula.txt
+ICAClient/nls/en/UTF-8/pna.nls
+ICAClient/nls/en/UTF-8/setupwfc.msg
+ICAClient/nls/en/Wfcmgr
+ICAClient/nls/en/XCapture
+ICAClient/nls/en/XCapture.ad
+ICAClient/nls/en/appsrv.ini
+ICAClient/nls/en/eula.txt
+ICAClient/nls/en/hinst.msg
+ICAClient/nls/en/index.htm
+ICAClient/nls/en/module.ini
+ICAClient/nls/en/pna.nls
+ICAClient/nls/en/setupwfc.msg
+ICAClient/nls/en/utf8
+ICAClient/nls/en/wfclient.ini
+ICAClient/nls/ja/LC_MESSAGES/flash.mo
+ICAClient/nls/ja/LC_MESSAGES/icaclient.mo
+ICAClient/nls/ja/Npica
+ICAClient/nls/ja/Npica.ad
+ICAClient/nls/ja/UTF-8/Wfcmgr
+ICAClient/nls/ja/UTF-8/XCapture
+ICAClient/nls/ja/UTF-8/XCapture.ad
+ICAClient/nls/ja/UTF-8/eula.txt
+ICAClient/nls/ja/UTF-8/pna.nls
+ICAClient/nls/ja/UTF-8/setupwfc.msg
+ICAClient/nls/ja/Wfcmgr
+ICAClient/nls/ja/XCapture
+ICAClient/nls/ja/XCapture.ad
+ICAClient/nls/ja/appsrv.ini
+ICAClient/nls/ja/eula.txt
+ICAClient/nls/ja/hinst.msg
+ICAClient/nls/ja/index.htm
+ICAClient/nls/ja/module.ini
+ICAClient/nls/ja/pna.nls
+ICAClient/nls/ja/setupwfc.msg
+ICAClient/nls/ja/utf8
+ICAClient/nls/ja/wfclient.ini
 ICAClient/npica.so
 ICAClient/pkginf/F.core.linuxx86
 ICAClient/pkginf/Ver.core.linuxx86
 ICAClient/pkginf/changeno.dat
-ICAClient/readme.txt
 ICAClient/setupwfc
-ICAClient/util/XCapture
-ICAClient/util/XCapture.ad
+ICAClient/util/DeleteCompleteFlashCache.sh
 ICAClient/util/echo_cmd
+ICAClient/util/gst_play.32
+ICAClient/util/gst_play.64
+ICAClient/util/gst_read.32
+ICAClient/util/gst_read.64
+ICAClient/util/hdxcheck.sh
 ICAClient/util/hinst
 ICAClient/util/icalicense.sh
+ICAClient/util/libgstflatstm.32.so
+ICAClient/util/libgstflatstm.64.so
 ICAClient/util/nslaunch
 ICAClient/util/pac.js
 ICAClient/util/pacexec
+ICAClient/util/pnabrowse
+ICAClient/util/sunraymac.sh
+ICAClient/util/what
 ICAClient/util/xcapture
 ICAClient/wfcmgr
 ICAClient/wfica
-ICAClient/wfica.sh
-ICAClient/wfica_assoc.sh
 bin/wfcmgr
 bin/wfica
-@dirrm ICAClient/util
-@dirrm ICAClient/pkginf
-@dirrm ICAClient/nls/en/UTF-8
-@dirrm ICAClient/nls/en
-@dirrm ICAClient/nls
-@dirrm ICAClient/keystore/cacerts
-@dirrm ICAClient/keystore
-@dirrm ICAClient/keyboard
-@dirrm ICAClient/icons
-@dirrm ICAClient/help
-@dirrm ICAClient/desktop
+etc/icalicense/clientlicense
 @dirrm ICAClient/config/usertemplate
 @dirrm ICAClient/config
+@dirrm ICAClient/gtk/glade
+@dirrm ICAClient/gtk
+@dirrm ICAClient/help
+@dirrm ICAClient/icons
+@dirrm ICAClient/keyboard
+@dirrm ICAClient/keystore/cacerts
+@dirrm ICAClient/keystore
+@dirrm ICAClient/lib
+@dirrm ICAClient/nls/de/LC_MESSAGES
+@dirrm ICAClient/nls/de/UTF-8
+@dirrm ICAClient/nls/de
+@dirrm ICAClient/nls/en/LC_MESSAGES
+@dirrm ICAClient/nls/en/UTF-8
+@dirrm ICAClient/nls/en
+@dirrm ICAClient/nls/ja/LC_MESSAGES
+@dirrm ICAClient/nls/ja/UTF-8
+@dirrm ICAClient/nls/ja
+@dirrm ICAClient/nls
+@dirrm ICAClient/pkginf
+@dirrm ICAClient/util
 @dirrm ICAClient
+@dirrm etc/icalicense
