@@ -10,6 +10,10 @@ bin/cypasswd
 bin/cyphesis
 bin/cypython
 etc/cyphesis/cyphesis.vconf
+etc/cyphesis/mars.d/basic.xml
+etc/cyphesis/mars.d/characters.xml
+etc/cyphesis/mars.d/environment.xml
+etc/cyphesis/mars.d/terrain.xml
 etc/cyphesis/mason.d/animals.xml
 etc/cyphesis/mason.d/basic.xml
 etc/cyphesis/mason.d/buildings.xml
@@ -25,6 +29,10 @@ etc/cyphesis/mason.d/tasks.xml
 etc/cyphesis/mason.d/terrain.xml
 etc/cyphesis/mason.d/tools.xml
 etc/cyphesis/mason.d/weapons.xml
+etc/cyphesis/minimal.d/basic.xml
+etc/cyphesis/minimal.d/characters.xml
+etc/cyphesis/minimal.d/environment.xml
+etc/cyphesis/minimal.d/terrain.xml
 %%DATADIR%%/rulesets/basic/mind/Goal.py
 %%DATADIR%%/rulesets/basic/mind/Knowledge.py
 %%DATADIR%%/rulesets/basic/mind/Memory.py
@@ -56,12 +64,18 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/basic/mind/panlingua/ontology.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/panlingua.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/syntax.py
+%%DATADIR%%/rulesets/mars/define_mars.py
+%%DATADIR%%/rulesets/mars/world/__init__.py
+%%DATADIR%%/rulesets/mars/world/objects/Weather.py
+%%DATADIR%%/rulesets/mars/world/objects/__init__.py
+%%DATADIR%%/rulesets/mars/world/statistics/Statistics.py
+%%DATADIR%%/rulesets/mars/world/statistics/__init__.py
 %%DATADIR%%/rulesets/mason/benchmarks.py
 %%DATADIR%%/rulesets/mason/define_world.py
 %%DATADIR%%/rulesets/mason/define_world_aglanor.py
 %%DATADIR%%/rulesets/mason/regression.py
-%%DATADIR%%/rulesets/mason/tests.py
 %%DATADIR%%/rulesets/mason/terrain.py
+%%DATADIR%%/rulesets/mason/tests.py
 %%DATADIR%%/rulesets/mason/world/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/Pile.py
 %%DATADIR%%/rulesets/mason/world/objects/Weather.py
@@ -104,27 +118,51 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/mason/world/objects/undead/__init__.py
 %%DATADIR%%/rulesets/mason/world/statistics/Statistics.py
 %%DATADIR%%/rulesets/mason/world/statistics/__init__.py
+%%DATADIR%%/rulesets/mason/world/tasks/Baking.py
 %%DATADIR%%/rulesets/mason/world/tasks/Bisect.py
+%%DATADIR%%/rulesets/mason/world/tasks/BuildBloomery.py
 %%DATADIR%%/rulesets/mason/world/tasks/Combat.py
 %%DATADIR%%/rulesets/mason/world/tasks/Cultivate.py
 %%DATADIR%%/rulesets/mason/world/tasks/Delve.py
+%%DATADIR%%/rulesets/mason/world/tasks/Destroying.py
 %%DATADIR%%/rulesets/mason/world/tasks/Dig.py
+%%DATADIR%%/rulesets/mason/world/tasks/Dragging.py
+%%DATADIR%%/rulesets/mason/world/tasks/Drying.py
+%%DATADIR%%/rulesets/mason/world/tasks/Earthbarrier.py
+%%DATADIR%%/rulesets/mason/world/tasks/Earthwall.py
 %%DATADIR%%/rulesets/mason/world/tasks/Fishing.py
+%%DATADIR%%/rulesets/mason/world/tasks/Furnishings.py
+%%DATADIR%%/rulesets/mason/world/tasks/Gateconstruction.py
 %%DATADIR%%/rulesets/mason/world/tasks/Heaping.py
+%%DATADIR%%/rulesets/mason/world/tasks/IronSmelting.py
 %%DATADIR%%/rulesets/mason/world/tasks/Logging.py
+%%DATADIR%%/rulesets/mason/world/tasks/Pioneering.py
+%%DATADIR%%/rulesets/mason/world/tasks/Pioneeringconstruction.py
+%%DATADIR%%/rulesets/mason/world/tasks/Pulling.py
 %%DATADIR%%/rulesets/mason/world/tasks/Raise.py
 %%DATADIR%%/rulesets/mason/world/tasks/Ram.py
 %%DATADIR%%/rulesets/mason/world/tasks/Reap.py
+%%DATADIR%%/rulesets/mason/world/tasks/Repairing.py
 %%DATADIR%%/rulesets/mason/world/tasks/Sharpen.py
 %%DATADIR%%/rulesets/mason/world/tasks/Sift.py
 %%DATADIR%%/rulesets/mason/world/tasks/Slaughter.py
 %%DATADIR%%/rulesets/mason/world/tasks/Slice.py
+%%DATADIR%%/rulesets/mason/world/tasks/Spell.py
 %%DATADIR%%/rulesets/mason/world/tasks/Trailblaze.py
+%%DATADIR%%/rulesets/mason/world/tasks/Trenching.py
+%%DATADIR%%/rulesets/mason/world/tasks/Twirling.py
+%%DATADIR%%/rulesets/mason/world/tasks/Woodenwall.py
 %%DATADIR%%/rulesets/mason/world/tasks/__init__.py
-%%DATADIR%%/scripts/cyphesis/__init__.py
+%%DATADIR%%/rulesets/minimal/define_minimal.py
+%%DATADIR%%/rulesets/minimal/world/__init__.py
+%%DATADIR%%/rulesets/minimal/world/objects/Weather.py
+%%DATADIR%%/rulesets/minimal/world/objects/__init__.py
+%%DATADIR%%/rulesets/minimal/world/statistics/Statistics.py
+%%DATADIR%%/rulesets/minimal/world/statistics/__init__.py
 %%DATADIR%%/scripts/cyphesis/Thing.py
-%%DATADIR%%/scripts/cyphesis/probability.py
+%%DATADIR%%/scripts/cyphesis/__init__.py
 %%DATADIR%%/scripts/cyphesis/editor.py
+%%DATADIR%%/scripts/cyphesis/probability.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -132,12 +170,15 @@ etc/cyphesis/mason.d/weapons.xml
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/FIXME
 %%PORTDOCS%%%%DOCSDIR%%/conf/acorn.xml
 %%PORTDOCS%%%%DOCSDIR%%/conf/basic.xml
 %%PORTDOCS%%%%DOCSDIR%%/conf/cyphesis.vconf
 %%PORTDOCS%%%%DOCSDIR%%/conf/mason.xml
 %%PORTDOCS%%%%DOCSDIR%%/conf/werewolf.xml
+@dirrm etc/cyphesis/mars.d
 @dirrm etc/cyphesis/mason.d
+@dirrm etc/cyphesis/minimal.d
 @dirrm etc/cyphesis
 @dirrm %%DATADIR%%/rulesets/basic/mind/goals/animal
 @dirrm %%DATADIR%%/rulesets/basic/mind/goals/common
@@ -147,6 +188,10 @@ etc/cyphesis/mason.d/weapons.xml
 @dirrm %%DATADIR%%/rulesets/basic/mind/panlingua
 @dirrm %%DATADIR%%/rulesets/basic/mind
 @dirrm %%DATADIR%%/rulesets/basic
+@dirrm %%DATADIR%%/rulesets/mars/world/statistics
+@dirrm %%DATADIR%%/rulesets/mars/world/objects
+@dirrm %%DATADIR%%/rulesets/mars/world
+@dirrm %%DATADIR%%/rulesets/mars
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/animals
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/buildings
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/clothing
@@ -161,6 +206,10 @@ etc/cyphesis/mason.d/weapons.xml
 @dirrm %%DATADIR%%/rulesets/mason/world/tasks
 @dirrm %%DATADIR%%/rulesets/mason/world
 @dirrm %%DATADIR%%/rulesets/mason
+@dirrm %%DATADIR%%/rulesets/minimal/world/statistics
+@dirrm %%DATADIR%%/rulesets/minimal/world/objects
+@dirrm %%DATADIR%%/rulesets/minimal/world
+@dirrm %%DATADIR%%/rulesets/minimal
 @dirrm %%DATADIR%%/rulesets
 @dirrm %%DATADIR%%/scripts/cyphesis
 @dirrm %%DATADIR%%/scripts
