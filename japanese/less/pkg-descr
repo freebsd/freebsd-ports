@@ -1,11 +1,13 @@
-       Less  is  a  program similar to more (1), but which allows
-       backward movement in the file as well as forward movement.
-       Also,  less  does  not  have to read the entire input file
-       before starting, so with large input files  it  starts  up
-       faster  than  text editors like vi (1).
+Less is a program similar to more(1), but which allows backward
+movement in the file as well as forward movement.  Also, less does not
+have to read the entire input file before starting, so with large
+input files it starts up faster than text editors like vi(1).
 
-  This enhanced less support ISO 2022 code extension techniqes and
+This enhanced less support ISO 2022 code extension techniqes and
 Japanese codes(EUC Japanese, SJIS) and compressed(or gzipped) file
-viewing. The author of this patch is jam@pobox.com. See 
-WWW: http://www25.big.jp/~jam/less/
-for the latest info.
+viewing.  The author of the patch is jam@pobox.com, and the UTF-8
+support patch is written by bogytech.
+
+WWW: http://www25.big.jp/~jam/less/ (broken link)
+WWW: http://web.archive.org/web/20070220213232/http://www25.big.or.jp/~jam/less
+WWW: http://bogytech.blogspot.jp/search/label/jless
