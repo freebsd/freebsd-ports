@@ -1,6 +1,6 @@
 lib/libmercator-0.3.la
 lib/libmercator-0.3.so
-lib/libmercator-0.3.so.1
+lib/libmercator-0.3.so.3
 include/Mercator-0.3/Mercator/Effector.h
 include/Mercator-0.3/Mercator/Mercator.h
 include/Mercator-0.3/Mercator/Matrix.h

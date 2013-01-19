@@ -1,39 +1,34 @@
-# New ports collection makefile for:	ember
-# Date created:				03 Oct 2005
-# Whom:					Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ember
-PORTVERSION=	0.6.2
-PORTREVISION=	6
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
-
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-media-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3D client using the OGRE 3D library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
-		varconf-1.0.7:${PORTSDIR}/devel/varconf \
-		mercator-0.3.1:${PORTSDIR}/devel/mercator \
+		varconf-1.0.8:${PORTSDIR}/devel/varconf \
+		mercator-0.3.3:${PORTSDIR}/devel/mercator \
 		wfut-0.2:${PORTSDIR}/devel/libwfut \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		CEGUIBase-0.7.7.0:${PORTSDIR}/graphics/cegui
+		CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \
-		--program-transform-name= --disable-cppunit --enable-debug \
+		--program-transform-name= --disable-cppunit --disable-debug \
 		--with-toluaxx=${TOLUAXX_CMD}
 CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua" \
 		LUA_CFLAGS="-I${LUA_INCDIR}" \
 		TOLUAXX="${TOLUAXX_CMD}"
+
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 USE_LDCONFIG=	YES
@@ -45,14 +40,12 @@ USE_BZIP2=	YES
 CPPFLAGS+=	-DBR_NO_MACROS
 MAKE_JOBS_SAFE=	yes
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|-lGL|-L${LOCALBASE}/lib -lGL|g' \
 		${WRKSRC}/configure
-#	@${REINPLACE_CMD} -e 's|^CFLAGS =.*|& $${SDL_CFLAGS} -I${LOCALBASE}/include|g' \
-#		${WRKSRC}/src/framework/Makefile.in
-#	@${REINPLACE_CMD} -e 's|sighandler_t|sig_t|g' \
-#		${WRKSRC}/src/components/ogre/OgreSetup.cpp
 	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(sysconfdir)/ember/|$$(sysconfdir)/ember|g' \
 		${WRKSRC}/Makefile.in \
@@ -63,12 +56,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bash|/sh|g' ${WRKSRC}/ember.in
 
 post-install:
-	(cd ${WRKDIR}/media-${PORTVERSION}/media && ${FIND} . -type f -print | \
+	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DATADIR}/media)
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for docfile in README COPYING AUTHORS ChangeLog TODO
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
