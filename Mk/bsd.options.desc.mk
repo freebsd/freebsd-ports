@@ -31,6 +31,7 @@ ASPELL_DESC?=		Spell checking via GNU Aspell
 ASSERT_DESC?=		Enable debug assertions
 AUDIOFILE_DESC?=	SGI audio file format support
 AVAHI_DESC?=		Zeroconf via Avahi
+BASH_DESC?=		Install programmable completions for Bash
 BDB_DESC?=		Berkeley Database
 BDB1_DESC?=		Berkeley DB 1.85
 BITTORRENT_DESC?=	BitTorrent support
