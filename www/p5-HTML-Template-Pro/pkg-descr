@@ -1,0 +1,8 @@
+HTML::Template::Pro is a fast lightweight C/Perl+XS reimplementation
+of HTML::Template (as of 2.9) and HTML::Template::Expr (as of
+0.0.7).  It is not intended to be a complete replacement, but to be a
+fast implementation of HTML::Template if you don't need querying, the
+extended facility of HTML::Template.  Designed for heavy upload,
+resource limitations, abcence of mod_perl.
+
+WWW: http://search.cpan.org/dist/HTML-Template-Pro/

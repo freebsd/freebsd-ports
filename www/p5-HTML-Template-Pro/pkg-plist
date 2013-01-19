@@ -1,0 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pro/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pro/Pro.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pro/Pro.so
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/PerlInterface.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/Pro.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/Pro/WrapAssociate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/SYNTAX.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/Pro
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pro
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
