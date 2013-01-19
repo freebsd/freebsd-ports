@@ -3,4 +3,4 @@ in traditional address/netmask format and in the new CIDR format.
 Methods for calculating the network and broadcast address, and
 also to check if a given address is in a specific network also exist.
 
-WWW: http://indev.insu.com/
+WWW: http://search.cpan.org/dist/Net-IPv4Addr/

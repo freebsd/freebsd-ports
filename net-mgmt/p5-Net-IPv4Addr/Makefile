@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-IPv4Addr
-# Date created:				25 February 2000
-# Whom:                			Brad Hendrickse <bradh@uunet.co.za>
-#
+# Created by: Brad Hendrickse <bradh@uunet.co.za>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IPv4Addr
 PORTVERSION=	0.10
@@ -13,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv4 addresses
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
