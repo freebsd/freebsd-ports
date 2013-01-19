@@ -1,12 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FormBuilder/.packlist
 %%SITE_PERL%%/CGI/FormBuilder.pm
 %%SITE_PERL%%/CGI/FormBuilder.pod
 %%SITE_PERL%%/CGI/FormBuilder/Field.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/button.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/checkbox.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/date.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/datetime.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/datetime_local.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/email.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/file.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/hidden.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/image.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/number.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/password.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/radio.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/select.pm
@@ -14,9 +18,12 @@
 %%SITE_PERL%%/CGI/FormBuilder/Field/submit.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/text.pm
 %%SITE_PERL%%/CGI/FormBuilder/Field/textarea.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/time.pm
+%%SITE_PERL%%/CGI/FormBuilder/Field/url.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/C.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/_example.pm
+%%SITE_PERL%%/CGI/FormBuilder/Messages/base.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/da.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/da_DK.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/de.pm
@@ -32,6 +39,10 @@
 %%SITE_PERL%%/CGI/FormBuilder/Messages/ja_JP.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/no.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/no_NO.pm
+%%SITE_PERL%%/CGI/FormBuilder/Messages/ru.pm
+%%SITE_PERL%%/CGI/FormBuilder/Messages/ru_RU.pm
+%%SITE_PERL%%/CGI/FormBuilder/Messages/sv.pm
+%%SITE_PERL%%/CGI/FormBuilder/Messages/sv_SE.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/tr.pm
 %%SITE_PERL%%/CGI/FormBuilder/Messages/tr_TR.pm
 %%SITE_PERL%%/CGI/FormBuilder/Multi.pm
@@ -39,6 +50,7 @@
 %%SITE_PERL%%/CGI/FormBuilder/Source/File.pm
 %%SITE_PERL%%/CGI/FormBuilder/Template.pm
 %%SITE_PERL%%/CGI/FormBuilder/Template/Builtin.pm
+%%SITE_PERL%%/CGI/FormBuilder/Template/CGI_SSI.pm
 %%SITE_PERL%%/CGI/FormBuilder/Template/Div.pm
 %%SITE_PERL%%/CGI/FormBuilder/Template/Fast.pm
 %%SITE_PERL%%/CGI/FormBuilder/Template/HTML.pm
@@ -46,13 +58,12 @@
 %%SITE_PERL%%/CGI/FormBuilder/Template/Text.pm
 %%SITE_PERL%%/CGI/FormBuilder/Test.pm
 %%SITE_PERL%%/CGI/FormBuilder/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FormBuilder/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FormBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrm %%SITE_PERL%%/CGI/FormBuilder/Field
-@dirrm %%SITE_PERL%%/CGI/FormBuilder/Template
 @dirrm %%SITE_PERL%%/CGI/FormBuilder/Messages
 @dirrm %%SITE_PERL%%/CGI/FormBuilder/Source
+@dirrm %%SITE_PERL%%/CGI/FormBuilder/Template
 @dirrm %%SITE_PERL%%/CGI/FormBuilder
 @dirrmtry %%SITE_PERL%%/CGI
-@dirrmtry %%SITE_PERL%%
