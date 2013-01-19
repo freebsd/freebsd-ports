@@ -12,3 +12,5 @@ SHA256 (less-382-iso260-261.patch.gz) = b595378ae65a5a7256df3b6279d755d6fdce66ab
 SIZE (less-382-iso260-261.patch.gz) = 841
 SHA256 (less-382-iso261-262.patch.gz) = e7249de419acc3b8c4a11bed376d778711fd031887d0df0624d62a6d07356842
 SIZE (less-382-iso261-262.patch.gz) = 2215
+SHA256 (less-382-iso262.ext03.patch.gz) = 82fb77f21ea1f3281224fcbfad073aeab12fb40d6623c9b40698be952401f821
+SIZE (less-382-iso262.ext03.patch.gz) = 138951
