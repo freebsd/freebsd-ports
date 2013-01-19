@@ -774,6 +774,7 @@
     SUBDIR += p5-Text-Capitalize
     SUBDIR += p5-Text-CharWidth
     SUBDIR += p5-Text-Chomp
+    SUBDIR += p5-Text-ClearSilver
     SUBDIR += p5-Text-Context
     SUBDIR += p5-Text-Context-EitherSide
     SUBDIR += p5-Text-DHCPLeases
