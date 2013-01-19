@@ -815,6 +815,7 @@
     SUBDIR += p5-Text-Markdown
     SUBDIR += p5-Text-Match-FastAlternatives
     SUBDIR += p5-Text-Metaphone
+    SUBDIR += p5-Text-MicroMason
     SUBDIR += p5-Text-MicroTemplate
     SUBDIR += p5-Text-MultiMarkdown
     SUBDIR += p5-Text-NSP
