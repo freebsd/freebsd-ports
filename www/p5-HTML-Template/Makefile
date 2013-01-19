@@ -1,12 +1,7 @@
-# New ports collection makefile for:	p5-HTML-Template
-# Date Created:				26 Oct, 2000
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Template
-PORTVERSION=	2.91
+PORTVERSION=	2.94
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
