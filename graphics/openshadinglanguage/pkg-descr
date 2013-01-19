@@ -1,0 +1,10 @@
+Open Shading Language (OSL) is a small but rich language for
+programmable shading in advanced renderers and other applications, ideal
+for describing materials, lights, displacement, and pattern generation.
+
+OSL was developed by Sony Pictures Imageworks for use in its in-house
+renderer used for feature film animation and visual effects. The
+language specification was developed with input by other visual effects
+and animation studios who also wish to use it.
+
+WWW: http://code.google.com/p/openshadinglanguage/
