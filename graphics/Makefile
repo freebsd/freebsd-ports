@@ -610,6 +610,7 @@
     SUBDIR += openjump
     SUBDIR += opennurbs
     SUBDIR += openrm
+    SUBDIR += openshadinglanguage
     SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += orca
