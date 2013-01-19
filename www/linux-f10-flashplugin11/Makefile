@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.258
+PORTVERSION=	11.2r202.261
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
