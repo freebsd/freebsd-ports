@@ -1,40 +1,26 @@
-# New ports collection makefile for:	easypbi
-# Date created:			  	2011-11-29
-# Whom:					jessefrgsmith@yahoo.ca
 #
 # $FreeBSD$
 #
 
 PORTNAME=	easypbi
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/makeapbi/${PORTNAME}/
 
-MAINTAINER=	jessefrgsmith@yahoo.ca
+MAINTAINER=	ken@pcbsd.org
 COMMENT=	Graphical PBI module and package creator
 
-LIB_DEPENDS=	Imath:${PORTSDIR}/graphics/ilmbase \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	${LOCALBASE}/bin/gksu:${PORTSDIR}/sysutils/gksu \
-		${LOCALBASE}/sbin/pbid:${PORTSDIR}/ports-mgmt/pbi-manager
+LIB_DEPENDS=	QtSolutions_SingleApplication-head.1:${PORTSDIR}/devel/qt4-qtsolutions-singleapplication
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		linguist_build assistant_run qt3support \
-		dbus designer gui help-tools network script \
-		sql svg xml webkit
+USE_QT4=	corelib gui network webkit xml qmake_build moc_build rcc_build uic_build linguist
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/EasyPBI
+WRKSRC=		${WRKDIR}/EasyPBI-source
+
+QMAKE_PRO=	EasyPBI.pro
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -recursive PREFIX=${PREFIX} EasyPBI.pro
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/EasyPBI ${PREFIX}/bin/EasyPBI
-	@${MKDIR} ${DATADIR}/../pbimaker
-	@${INSTALL_DATA} ${WRKSRC}/defaulticon.png ${DATADIR}/../pbimaker/
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} -unix CONFIG+="configure" ${QMAKE_PRO}
 
 .include <bsd.port.mk>
