@@ -1250,6 +1250,7 @@
     SUBDIR += xpvm
     SUBDIR += xrdesktop
     SUBDIR += xrdp
+    SUBDIR += xrdp-devel
     SUBDIR += yaph
     SUBDIR += yate
     SUBDIR += yaz
