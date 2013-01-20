@@ -866,6 +866,7 @@
     SUBDIR += p5-Text-WordDiff
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Text-Xslate
+    SUBDIR += p5-Text-Xslate-Bridge-TT2Like
     SUBDIR += p5-Text-vCard
     SUBDIR += p5-Tiffany
     SUBDIR += p5-Time-Human
