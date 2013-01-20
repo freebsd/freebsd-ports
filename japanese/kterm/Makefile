@@ -2,7 +2,7 @@
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_PORTS_JP:S/$/:wp_jp/} \
 		${MASTER_SITE_XCONTRIB} \
@@ -20,17 +20,18 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/:nfs \
 		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/:wpi \
 		http://dists.lovepeers.org/distfiles/:termios \
-		${MASTER_SITE_LOCAL:S/$/:jisx0213,color16,termios/}
-PATCH_SITE_SUBDIR=	shige/kterm/:jisx0213,color16 \
-			nork/:termios
+		${MASTER_SITE_LOCAL:S/$/:color16,termios,utf/}
+PATCH_SITE_SUBDIR=	shige/kterm/:color16 \
+			nork/:termios \
+			hrs/:utf
 PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 		${DISTNAME}-wpi.patch.gz:wpi \
-		${DISTNAME}-jisx0213.patch.gz:jisx0213 \
 		${DISTNAME}-color16.patch.gz:color16 \
-		${DISTNAME}-termios-0.2.patch.gz:termios
+		${DISTNAME}-termios-0.2.patch.gz:termios \
+		${DISTNAME}.ext06.patch.gz:utf
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	An xterm variant with Japanese support
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
@@ -60,11 +61,11 @@ NKFCMD=		${LOCALBASE}/bin/nkf
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MXAW3DLIB}
-LIB_DEPENDS+=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Xaw3d
 .endif
 .if ${PORT_OPTIONS:MNEXTAWLIB}
-LIB_DEPENDS+=	neXtaw.6:${PORTSDIR}/x11-toolkits/neXtaw
+LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-neXtaw
 .endif
 
