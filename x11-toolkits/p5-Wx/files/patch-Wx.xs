@@ -1,9 +1,9 @@
---- Wx.xs.orig	2009-04-20 22:17:27.000000000 +0200
-+++ Wx.xs	2009-06-26 09:20:07.000000000 +0200
-@@ -278,10 +278,7 @@ Load()
+--- Wx.xs.orig	2012-12-31 01:28:32.000000000 +0800
++++ Wx.xs	2012-12-31 01:29:02.000000000 +0800
+@@ -325,10 +325,7 @@
  
      if( wxPerlAppCreated || wxTopLevelWindows.GetCount() > 0 )
-         return;
+         XSRETURN( true );
 -#if defined(DEBUGGING) && !defined(PERL_USE_SAFE_PUTENV)
 -    // avoid crash on exit in Fedora (and other DEBUGGING Perls)
      PL_use_safe_putenv = 1;
