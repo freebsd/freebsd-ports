@@ -635,7 +635,6 @@
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-pllua
     SUBDIR += postgresql-plproxy
-    SUBDIR += postgresql-plpython
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
@@ -643,12 +642,14 @@
     SUBDIR += postgresql83-contrib
     SUBDIR += postgresql83-docs
     SUBDIR += postgresql83-plperl
+    SUBDIR += postgresql83-plpython
     SUBDIR += postgresql83-pltcl
     SUBDIR += postgresql83-server
     SUBDIR += postgresql84-client
     SUBDIR += postgresql84-contrib
     SUBDIR += postgresql84-docs
     SUBDIR += postgresql84-plperl
+    SUBDIR += postgresql84-plpython
     SUBDIR += postgresql84-pltcl
     SUBDIR += postgresql84-server
     SUBDIR += postgresql90-client
@@ -656,6 +657,7 @@
     SUBDIR += postgresql90-docs
     SUBDIR += postgresql90-pgtcl
     SUBDIR += postgresql90-plperl
+    SUBDIR += postgresql90-plpython
     SUBDIR += postgresql90-pltcl
     SUBDIR += postgresql90-server
     SUBDIR += postgresql91-client
@@ -663,6 +665,7 @@
     SUBDIR += postgresql91-docs
     SUBDIR += postgresql91-pgtcl
     SUBDIR += postgresql91-plperl
+    SUBDIR += postgresql91-plpython
     SUBDIR += postgresql91-pltcl
     SUBDIR += postgresql91-server
     SUBDIR += postgresql92-client
@@ -670,6 +673,7 @@
     SUBDIR += postgresql92-docs
     SUBDIR += postgresql92-pgtcl
     SUBDIR += postgresql92-plperl
+    SUBDIR += postgresql92-plpython
     SUBDIR += postgresql92-pltcl
     SUBDIR += postgresql92-server
     SUBDIR += postgresql_autodoc
