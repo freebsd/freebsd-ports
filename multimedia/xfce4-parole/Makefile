@@ -4,7 +4,7 @@
 
 PORTNAME=	parole
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--disable-power-manager-plugin \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
-USE_XFCE=	configenv libmenu libutil
+USE_XFCE=	configenv libmenu libutil xfdev
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
