@@ -1,4 +1,4 @@
-# Created by:	Barbara Guida <bar@FreeBSD.org>
+# Created by: Barbara Guida <bar@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	showip
