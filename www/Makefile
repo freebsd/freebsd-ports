@@ -604,6 +604,7 @@
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
     SUBDIR += p5-Amon2
+    SUBDIR += p5-Amon2-Plugin-LogDispatch
     SUBDIR += p5-Any-Template
     SUBDIR += p5-AnyEvent-HTTP
     SUBDIR += p5-AnyEvent-HTTP-LWP-UserAgent
