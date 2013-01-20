@@ -1,24 +1,19 @@
-# New ports collection makefile for:	newsstar
-# Date created:				9 May 2004
-# Whom:					Andrey Slusar <anray@FreeBSD.org>
-#
+# Created by: Andrey Slusar <anray@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	newsstar
-PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTVERSION=	1.5.5
 CATEGORIES=	news
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-
-LICENSE=	GPLv3
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
