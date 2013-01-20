@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
