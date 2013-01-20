@@ -1,15 +1,11 @@
-# New ports collection makefile for:	less
-# Date created:		8 Nov 1994
-# Whom:			ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	less
-PORTVERSION=	436
+PORTVERSION=	451
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/
-#		${MASTER_SITE_GNU}
+MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 
 MAINTAINER=	jharris@widomaker.com
