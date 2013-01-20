@@ -3,5 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/SAX/ChunkParser/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/SAX/ChunkParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/SAX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML
 @dirrmtry %%SITE_PERL%%/XML/LibXML/SAX
 @dirrmtry %%SITE_PERL%%/XML/LibXML
