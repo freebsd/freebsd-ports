@@ -1,0 +1,4 @@
+jail2 is an alternative rc script for jails, relying on jail.conf
+instead of rc.conf variables. Additionally, ZFS integration is provided.
+In contrast to the default jail rc script this one can run inside jails,
+allowing the configuration of hierarchical jails.
