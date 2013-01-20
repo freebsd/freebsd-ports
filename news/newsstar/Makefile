@@ -6,7 +6,7 @@ PORTVERSION=	1.5.5
 CATEGORIES=	news
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LICENSE=	GPLv3
