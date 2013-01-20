@@ -259,6 +259,7 @@
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
     SUBDIR += p5-Amazon-SimpleDB
+    SUBDIR += p5-Amon2-DBI
     SUBDIR += p5-AnyEvent-BDB
     SUBDIR += p5-AnyEvent-CouchDB
     SUBDIR += p5-AnyEvent-DBD-Pg
