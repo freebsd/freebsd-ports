@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtide
-PORTVERSION=	2.12.1
-PORTREVISION=	2
+PORTVERSION=	2.13
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/ \
 		http://www.c-s.li/ports/
@@ -20,6 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		tide.1
@@ -30,11 +30,12 @@ LDFLAGS+=	-L../${TCD_DISTNAME}/.libs -L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 TCD_DISTNAME=	libtcd-2.2.5
-HARM_DISTNAME=	harmonics-dwf-20120302
+HARM_DISTNAME=	harmonics-dwf-20121224
 WVS_DISTNAME=	wvs
 
 OPTIONS_DEFINE=	WVS X11
-WVS_DESC=	Use world vector shoreline data (big file!)
+OPTIONS_DEFAULT=X11
+WVS_DESC=	Use world vector shoreline data (37MB)
 
 .include <bsd.port.options.mk>
 
