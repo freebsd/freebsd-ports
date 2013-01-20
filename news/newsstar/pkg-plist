@@ -1,5 +1,5 @@
 bin/newsstar
-lib/newsstar/newsstar.bin
+libexec/newsstar/newsstar.bin
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -31,3 +31,4 @@ lib/newsstar/newsstar.bin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/newsstar
 @dirrm etc/newsstar
+@dirrm libexec/newsstar
