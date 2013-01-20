@@ -1,18 +1,17 @@
-# New ports collection makefile for:	GNU/mifluz
-# Date created:				07 June 2002
-# Whom:					Frederic Dubuy <fdubuy@free.fr>
-#
+# Created by: Frederic Dubuy <fdubuy@free.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	mifluz
-PORTVERSION=	0.24.0
+PORTVERSION=	0.25.0
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	linpc@cs.nctu.edu.tw
 COMMENT=	C++ library to build and query a full text inverted index
 
+LICENSE=	GPLv3
+
+USE_GCC=	any
 USE_GNOME=	gnomehack
 USE_BISON=	build
 USE_ICONV=	yes

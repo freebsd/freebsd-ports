@@ -1,15 +1,14 @@
---- clib/strcasestr2.c.orig	2008-06-05 00:01:39.000000000 +0900
-+++ clib/strcasestr2.c	2008-07-11 22:26:07.000000000 +0900
-@@ -12,6 +12,8 @@
+--- ./clib/strcasestr2.c.orig	2013-01-16 13:42:43.213865659 +0800
++++ ./clib/strcasestr2.c	2013-01-16 13:50:06.277425451 +0800
+@@ -12,6 +12,7 @@
  #include "config.h"
  #endif /* HAVE_CONFIG_H */
  
 +#ifndef HAVE_STRCASESTR
-+
  #include <ctype.h>
  #include <string.h>
  
-@@ -32,3 +34,4 @@
+@@ -32,3 +33,4 @@
      }
      return 0;
  }

@@ -1,16 +1,11 @@
---- search/WordResults.cc.orig	2007-11-22 12:37:28.000000000 +0100
-+++ search/WordResults.cc	2007-11-22 12:39:52.000000000 +0100
-@@ -25,11 +25,11 @@
- 
- static int wordResults_cmp(const DBT* a, const DBT* b)
- {
--  int length = (int)a->app_private;
-+  size_t length = (size_t)a->app_private;
+--- ./search/WordResults.cc.orig	2013-01-16 13:44:02.283818270 +0800
++++ ./search/WordResults.cc	2013-01-16 13:45:27.643665365 +0800
+@@ -29,7 +29,7 @@
  
    WordKeyNum* a_values = (WordKeyNum*)a->data;
    WordKeyNum* b_values = (WordKeyNum*)b->data;
 -  for(int i = 0; i < length; i++) {
-+  for(size_t i = 0; i < length; i++) {
++  for(long i = 0; i < length; i++) {
      if(a_values[i] != b_values[i]) {
        return a_values[i] > b_values[i] ? 1 : -1;
      }
