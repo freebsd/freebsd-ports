@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20130114
+PORTVERSION=	20130120
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,7 @@ WANT_PERL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.0-rc3-2-g8e587f7
+GITDESC=	v0.4.0-9-g2dea08a
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
 #GITREV=	01a1316
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
@@ -95,6 +95,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
@@ -131,6 +132,7 @@ PLIST_SUB+=	LUA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
@@ -175,7 +177,7 @@ pre-configure:
 	@${ECHO_MSG} "==> You have selected the ncurses 256 color option. Please ensure that"
 	@${ECHO_MSG} "==> the devel/ncurses port is built with the EXTCOLORS option enabled."
 	@${ECHO_MSG} "==>"
-	@${ECHO_MSG} "==> Ctrl-C now if you'd like to reconfigure."
+	@${ECHO_MSG} "==> Press Ctrl-C now if you want to re-configure."
 	@${ECHO_MSG} ""
 	@sleep 5
 .endif
