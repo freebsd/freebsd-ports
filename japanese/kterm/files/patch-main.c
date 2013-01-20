@@ -1,6 +1,6 @@
---- main.c.orig	2010-01-25 01:02:47.051647000 +0900
-+++ main.c	2010-01-25 01:03:35.081557857 +0900
-@@ -210,7 +210,9 @@
+--- main.c.orig	2013-01-20 15:06:09.000000000 +0900
++++ main.c	2013-01-20 15:06:31.000000000 +0900
+@@ -211,7 +211,9 @@
  #undef FIOCLEX
  #undef FIONCLEX
  #define setpgrp2 setpgrp
@@ -10,7 +10,7 @@
  #include <sys/resource.h>
  #endif
  #ifdef sco
-@@ -236,7 +238,7 @@
+@@ -237,7 +239,7 @@
  #define HAS_UTMP_UT_HOST
  #endif
  #else /* } !SYSV { */			/* BSD systems */
@@ -19,7 +19,7 @@
  #include <sgtty.h>
  #endif
  #include <sys/resource.h>
-@@ -293,7 +295,7 @@
+@@ -294,7 +296,7 @@
  #define ttyslot() 1
  #endif /* apollo */
  
@@ -28,7 +28,7 @@
  #include <utmpx.h>
  #define setutent setutxent
  #define getutent getutxent
-@@ -319,6 +321,10 @@
+@@ -320,6 +322,10 @@
  int	Ptyfd;
  #endif /* PUCC_PTYD */
  
@@ -39,7 +39,7 @@
  #ifdef sequent
  #define USE_GET_PSEUDOTTY
  #endif
-@@ -1355,6 +1361,8 @@
+@@ -1360,6 +1366,8 @@
  	d_tio.c_cc[VDISCARD] = CFLUSH;
  	d_tio.c_cc[VWERASE] = CWERASE;
  	d_tio.c_cc[VLNEXT] = CLNEXT;
@@ -48,7 +48,7 @@
  #endif /* } */
  #ifdef TIOCSLTC /* { */
          d_ltc.t_suspc = CSUSP;		/* t_suspc */
-@@ -1403,6 +1411,8 @@
+@@ -1408,6 +1416,8 @@
  	d_tio.c_cc[VQUIT] = CQUIT;		/* '^\'	*/
      	d_tio.c_cc[VEOF] = CEOF;		/* '^D'	*/
  	d_tio.c_cc[VEOL] = CEOL;		/* '^@'	*/
@@ -57,7 +57,20 @@
  #ifdef VSWTCH
  	d_tio.c_cc[VSWTCH] = CSWTCH;            /* usually '^Z' */
  #endif
-@@ -1963,6 +1973,10 @@
+@@ -1722,11 +1732,11 @@
+ 	        case 'u': case 'U':
+ 		    term->flags |= UTF8_KANJI;
+ 		    update_utf8mode();
+-		    make_unicode_map();
+ 		    break;
+ 		default:
+ 		    break;
+ 	    }
++	    make_unicode_map();
+ 	}
+ #endif /* KTERM_KANJIMODE */
+ 
+@@ -1973,6 +1983,10 @@
  get_pty (pty)
      int *pty;
  {
@@ -68,7 +81,7 @@
  #ifdef __osf__
      int tty;
      return (openpty(pty, &tty, ttydev, NULL, NULL));
-@@ -2066,6 +2080,7 @@
+@@ -2076,6 +2090,7 @@
  #endif /* __sgi or umips else */
  #endif /* USE_GET_PSEUDOTTY else */
  #endif /* ATT else */
