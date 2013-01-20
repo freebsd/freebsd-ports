@@ -1,4 +1,4 @@
-# Created by:	alepulver
+# Created by: alepulver
 # $FreeBSD$
 
 PORTNAME=	omni-bot

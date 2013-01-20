@@ -1,4 +1,4 @@
-# Created by:	Simon Olofsson
+# Created by: Simon Olofsson
 # $FreeBSD$
 
 PORTNAME=	flashblock
