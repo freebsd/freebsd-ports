@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1827f213-633e-11e2-8d93-c8600054b392">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>drupal6</name>
+        <range><lt>6.28</lt></range>
+      </package>
+      <package>
+        <name>drupal7</name>
+        <range><lt>7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+     <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Drupal Security Team reports:</p>
+        <blockquote cite="https://drupal.org/SA-CORE-2013-001">
+          <p>Cross-site scripting (Various core and contributed modules)</p>
+          <p>Access bypass (Book module printer friendly version)</p>
+          <p>Access bypass (Image module)</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+        <url>https://drupal.org/SA-CORE-2013-001</url>
+    </references>
+    <dates>
+      <discovery>2013-01-16</discovery>
+      <entry>2013-01-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b9b199f-5efd-11e2-a1ee-c48508086173">
     <topic>ettercap -- buffer overflow in target list parsing</topic>
     <affects>
