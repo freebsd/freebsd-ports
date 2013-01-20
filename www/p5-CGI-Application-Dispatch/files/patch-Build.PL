@@ -1,9 +1,8 @@
---- Build.PL.orig       2008-06-05 15:39:53.000000000 -0700
-+++ Build.PL    2008-06-05 15:40:02.000000000 -0700
+--- ./Build.PL.orig	2013-01-16 16:08:24.583714613 +0800
++++ ./Build.PL	2013-01-16 16:09:30.191293173 +0800
 @@ -1,3 +1,5 @@
 +use Module::Build;
 +
- my $build_pkg = eval "require Apache::TestMB" ? 'Apache::TestMB' : 'Module::Build';
- my $build = $build_pkg->new(
-     module_name => 'CGI::Application::Dispatch',
-
+ my $have_apache_test = 0;
+ my $build_pkg = 'Module::Build';
+ eval "require Apache::Test";
