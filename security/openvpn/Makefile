@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/ \
 		http://build.openvpn.net/downloads/releases/
@@ -91,10 +91,10 @@ post-build:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib ${PREFIX}/sbin ${PREFIX}/include ${PREFIX}/man
-.for i in lib sbin
-	(cd ${_stagedir}${PREFIX}/${i} && ${COPYTREE_BIN} \* ${PREFIX}/${i}/)
-.endfor
+	${MKDIR} ${PREFIX}/lib/openvpn/plugins/ ${PREFIX}/sbin \
+		 ${PREFIX}/include ${PREFIX}/man
+	${INSTALL_PROGRAM} ${_stagedir}${PREFIX}/sbin/openvpn ${PREFIX}/sbin
+	${INSTALL_DATA} ${_stagedir}${PREFIX}/lib/openvpn/plugins/* ${PREFIX}/lib/openvpn/plugins/
 	${INSTALL_DATA} ${_stagedir}${PREFIX}/include/* ${PREFIX}/include/
 	${INSTALL_MAN} ${_stagedir}${PREFIX}/man/man8/* ${MAN8PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
