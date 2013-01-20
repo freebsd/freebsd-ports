@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
@@ -11,12 +11,13 @@ COMMENT=	Distributed remote execution and configuration management system
 
 LICENSE=	AL2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.9:${PORTSDIR}/devel/py-msgpack \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:${PORTSDIR}/security/py-m2crypto
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FETCH_ARGS=	-pRr
 USE_PYTHON=	-2.7
