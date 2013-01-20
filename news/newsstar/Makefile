@@ -3,6 +3,7 @@
 
 PORTNAME=	newsstar
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -11,7 +12,7 @@ COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
@@ -19,6 +20,9 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS_DEFINE=		SSL
+OPTIONS_DEFAULT=	SSL
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
@@ -28,14 +32,16 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install-am
 .endif
 
-.if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--disable-ssl
-.else
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=--disable-ssl
 .endif
 
 .include <bsd.port.pre.mk>
@@ -65,14 +71,17 @@ DOCS=		AUTHORS INSTALL NEWS README TODO docs/QuickStart docs/manual.txt \
 EX_CONFIGS=	cf.server.sample curses.cf.sample filter.pl.sample main.cf.sample \
 		master.ignore.sample master.score.sample newsrc.sample
 
+pre-install:
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 .for i in ${EX_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/sample_config/${i} ${EXAMPLESDIR}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
