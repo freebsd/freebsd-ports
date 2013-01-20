@@ -400,6 +400,7 @@
     SUBDIR += isomd5sum
     SUBDIR += ispman
     SUBDIR += istatd
+    SUBDIR += jail2
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jailer
