@@ -3,7 +3,7 @@
 
 PORTNAME=	less+iso
 PORTVERSION=	382.262
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-cs-regex
 MAN1=		jless.1 jlesskey.1
 DOCSDIR=	${PREFIX}/share/doc/less
 PORTDOCS=	README.iso README.iso.jp README.lesw.euc \
-		README.regex README.regex.jp
+		README.regex README.regex.jp README.ext.jp
 
 post-extract:
 	cd ${WRKDIR} && \
