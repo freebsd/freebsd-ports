@@ -6,6 +6,7 @@ share/docear/docear-icon48x48.png
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 share/java/docear/bzrinfo.txt
+share/java/docear/core/org.freeplane.core/lib/commons-io-2.4.jar
 share/java/docear/core/org.freeplane.core/lib/commons-lang-2.0.jar
 share/java/docear/core/org.freeplane.core/lib/forms-1.2.1.jar
 share/java/docear/core/org.freeplane.core/lib/freeplaneeditor.jar
