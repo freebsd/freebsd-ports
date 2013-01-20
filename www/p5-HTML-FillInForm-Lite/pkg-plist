@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm/Lite/.packlist
+%%SITE_PERL%%/HTML/FillInForm/Lite.pm
+%%SITE_PERL%%/HTML/FillInForm/Lite/Compat.pm
+%%SITE_PERL%%/HTML/FillInForm/Lite/JA.pod
+@dirrm %%SITE_PERL%%/HTML/FillInForm/Lite
+@dirrmtry %%SITE_PERL%%/HTML/FillInForm
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
