@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-customizegoogle
-# Date created:		15 June 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	customizegoogle
 PORTVERSION=	0.76
@@ -14,6 +10,9 @@ MASTER_SITES=	http://www.updatecg.com/ LOCAL/chinsan/xpi
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Enhance and tweak Google services
+
+DEPRECATED=	Add-on has been discontinued.
+EXPIRATION_DATE=	2013-02-10
 
 XPI_NUM=	743
 XPI_ID=		{fce36c1e-58d8-498a-b2a5-66ad1cedebbb}
