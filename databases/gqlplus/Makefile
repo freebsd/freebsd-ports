@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gqlplus
-# Date created:				06 November 2002
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -18,10 +15,13 @@ USE_GMAKE=	yes
 
 PORTDOCS=	README ChangeLog
 PLIST_FILES=	bin/gqlplus
+USE_AUTOTOOLS=	autoconf automake aclocal
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
