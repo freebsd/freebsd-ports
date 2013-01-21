@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gtkhtml3
-# Date created:				12 March 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/gtkhtml3/Makefile,v 1.180 2011/03/19 17:33:16 mezz Exp $
-#
+#   $MCom: ports/www/gtkhtml3/Makefile,v 1.184 2012/08/17 19:06:47 kwm Exp $
 
 PORTNAME=	gtkhtml3
 PORTVERSION=	3.32.1
@@ -20,8 +16,8 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		enchant.1:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
+		enchant:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
@@ -46,5 +42,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gtkhtml-editor-test[$$]|gtkhtml3-editor-test$$|' \
 	    	${WRKSRC}/components/editor/Makefile.in
+	@${REINPLACE_CMD} -e 's|G_CONST_RETURN||g' \
+		${WRKSRC}/a11y/*.[ch]
 
 .include <bsd.port.mk>
