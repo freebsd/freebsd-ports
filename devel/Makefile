@@ -1242,6 +1242,7 @@
     SUBDIR += ncurses-devel
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
+    SUBDIR += ndesk-options
     SUBDIR += nemiver
     SUBDIR += netbsd-pkgsrc-mk-files
     SUBDIR += netscape-java40
