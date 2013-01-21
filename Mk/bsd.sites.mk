@@ -1388,8 +1388,10 @@ MASTER_SITE_XEMACS+= \
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)
 MASTER_SITE_XFCE+= \
-	http://slackware.dreamhost.com/xfce/%SUBDIR%/ \
 	http://mirror.perldude.de/archive.xfce.org/%SUBDIR%/ \
+	http://mirror.netcologne.de/xfce/%SUBDIR%/ \
+	http://ftp.udc.es/xfce/%SUBDIR%/ \
+	http://xfce.mirror.uber.com.au/%SUBDIR%/ \
 	http://archive.be.xfce.org/%SUBDIR%/ \
 	http://archive.be2.xfce.org/%SUBDIR%/ \
 	http://archive.se.xfce.org/%SUBDIR%/ \
