@@ -1,12 +1,8 @@
-# New ports collection makefile for:	www/p5-CGI-Application-Plugin-DevPopup
-# Date created:				14 September 2005
-# Whom:					George Hartzell <hartzell@alerce.com>
-#
+# Created by: George Hartzell <hartzell@alerce.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-DevPopup
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
