@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.updatecg.com/ LOCAL/chinsan/xpi
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Enhance and tweak Google services
 
-DEPRECATED=	Add-on has been discontinued.
+DEPRECATED=	Add-on has been discontinued
 EXPIRATION_DATE=	2013-02-10
 
 XPI_NUM=	743
