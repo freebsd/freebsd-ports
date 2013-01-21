@@ -1,0 +1,92 @@
+--- ../prg/chk_all.sd7.orig	2013-01-21 17:05:47.000000000 +0100
++++ ../prg/chk_all.sd7	2013-01-21 17:04:54.000000000 +0100
+@@ -30,6 +30,11 @@
+ const string: OBJECT_FILE_EXTENSION is     configValue("OBJECT_FILE_EXTENSION");
+ const string: EXECUTABLE_FILE_EXTENSION is configValue("EXECUTABLE_FILE_EXTENSION");
+ 
++var string: interpretProgram  is "./s7 -q ";
++var string: interpretCompiler is "./s7 s7c ";
++var string: executeCompiler   is "./s7c ";
++var string: s7compiler        is "./s7c" & EXECUTABLE_FILE_EXTENSION;
++
+ const string: chkint_output is "\n\
+   \Integer literals with exponent work correct.\n\
+   \Based integer literals work correct.\n\
+@@ -234,7 +239,7 @@
+   begin
+     write(progName);
+     flush(OUT);
+-    interpretedOutput := cmdOutput("./s7 -q " & progName);
++    interpretedOutput := cmdOutput(interpretProgram & progName);
+     if interpretedOutput <> referenceOutput then
+       writeln;
+       writeln(" *** The interpreted " <& progName <& " does not work okay:");
+@@ -244,7 +249,7 @@
+     if fileType(progName & EXECUTABLE_FILE_EXTENSION) <> FILE_ABSENT then
+       removeFile(progName & EXECUTABLE_FILE_EXTENSION);
+     end if;
+-    compilerOutput := cmdOutput("./s7 s7c " & progName);
++    compilerOutput := cmdOutput(interpretCompiler & progName);
+     if fileType(progName & EXECUTABLE_FILE_EXTENSION) = FILE_REGULAR then
+       compiledOutput := cmdOutput("./" & progName);
+       if compiledOutput <> referenceOutput then
+@@ -284,7 +289,7 @@
+       end if;
+       okay := FALSE;
+     end if;
+-    if fileType("s7c" & EXECUTABLE_FILE_EXTENSION) = FILE_REGULAR then
++    if fileType(s7compiler) = FILE_REGULAR then
+       if fileType("tmp_" & progName & ".c") = FILE_REGULAR then
+         if fileType("tmp1_" & progName & ".c") = FILE_REGULAR then
+           removeFile("tmp1_" & progName & ".c");
+@@ -294,7 +299,7 @@
+       if fileType(progName & EXECUTABLE_FILE_EXTENSION) <> FILE_ABSENT then
+         removeFile(progName & EXECUTABLE_FILE_EXTENSION);
+       end if;
+-      compilerOutput := cmdOutput("./s7c " & progName);
++      compilerOutput := cmdOutput(executeCompiler & progName);
+       if fileType(progName & EXECUTABLE_FILE_EXTENSION) = FILE_REGULAR then
+         if fileType("tmp1_" & progName & ".c") = FILE_REGULAR then
+           if not equalFiles("tmp_" & progName & ".c", "tmp1_" & progName & ".c") then
+@@ -327,17 +332,31 @@
+ 
+ const proc: main is func
+   begin
+-    if fileType("s7c" & EXECUTABLE_FILE_EXTENSION) = FILE_REGULAR then
+-      removeFile("s7c" & EXECUTABLE_FILE_EXTENSION);
+-    end if;
+-    write("compiling the compiler");
+-    flush(OUT);
+-    ignore(cmdOutput("./s7 s7c s7c"));
+-    if not fileType("s7c" & EXECUTABLE_FILE_EXTENSION) = FILE_REGULAR then
+-      writeln;
+-      writeln(" *** Failed to compile the compiler");
++    if length(argv(PROGRAM)) = 1 and argv(PROGRAM)[1] = "build" then
++      interpretProgram  := "../bin/s7 -l ../lib -q ";
++      interpretCompiler := "../bin/s7 -l ../lib s7c -l ../lib -b ../bin ";
++      executeCompiler   := "../bin/s7c -l ../lib -b ../bin ";
++      s7compiler        := "../bin/s7c" & EXECUTABLE_FILE_EXTENSION;
++      write("checking for presence of " <& s7compiler);
++      if not fileType(s7compiler) = FILE_REGULAR then
++        writeln;
++        writeln(" *** No Seed7 compiler executable found");
++      else
++        writeln(" - okay");
++      end if;
+     else
+-      writeln(" - okay");
++      if fileType(s7compiler) = FILE_REGULAR then
++        removeFile(s7compiler);
++      end if;
++      write("compiling the compiler");
++      flush(OUT);
++      ignore(cmdOutput(interpretCompiler & "s7c"));
++      if not fileType(s7compiler) = FILE_REGULAR then
++        writeln;
++        writeln(" *** Failed to compile the compiler");
++      else
++        writeln(" - okay");
++      end if;
+     end if;
+     check("chkint",  chkint_output);
+     check("chkflt",  chkflt_output);
