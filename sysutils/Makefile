@@ -90,6 +90,7 @@
     SUBDIR += bulk_extractor
     SUBDIR += burn
     SUBDIR += busybox
+    SUBDIR += busybox-unstable
     SUBDIR += byobu
     SUBDIR += ccd2iso
     SUBDIR += cciss_vol_status
