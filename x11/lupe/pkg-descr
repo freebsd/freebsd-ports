@@ -1,8 +1,6 @@
 Lupe is a magnifying glass for X Window System.
-Lupe is like xmag but it updates the image in real-time
-and needs more processor power.
 
-See man page for details.
+Lupe is like xmag but it updates the image in real-time and needs
+more processor power.
 
-Orignal lupe written by UHD98984@pcvan.or.jp .
-This port is done by kazu@jp.freebsd.org .
+WWW: http://www2s.biglobe.ne.jp/~yav/soft/indexe.html
