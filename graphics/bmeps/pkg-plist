@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-bin/bmeps
-%%DATADIR%%/bmeps.stt.bz2
-%%DATADIR%%/bmeps.str
-%%DATADIR%%/bmeps.txt
-@dirrm %%DATADIR%%
