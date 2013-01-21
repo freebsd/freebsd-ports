@@ -19,10 +19,11 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-: ${freeswitch_enable="NO"}
-: ${freeswitch_user="freeswitch"}
-: ${freeswitch_group="freeswitch"}
-: ${freeswitch_flags="-nc -waste"}
+: ${freeswitch_enable=NO}
+: ${freeswitch_cluster=NO}
+: ${freeswitch_user=freeswitch}
+: ${freeswitch_group=freeswitch}
+: ${freeswitch_flags=-nc -waste}
 
 command=%%PREFIX%%/bin/freeswitch
 command_args="-u ${freeswitch_user} -g ${freeswitch_group}"
@@ -42,8 +43,10 @@ freeswitch_stop () {
 
 freeswitch_prestart () {
 	install -d -o ${freeswitch_user} -m755 /var/run/${name}
-        sleep 7.7
-        %%PREFIX%%/bin/fs_cli -x "sofia recover"
+
+	if checkyesno freeswitch_cluster; then
+        	%%PREFIX%%/bin/fs_cli -x "sofia recover"
+	fi
 }
 
 run_rc_command "$1"
