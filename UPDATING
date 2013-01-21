@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130121:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  Please flush your mail queue before updating to version 201301191220.
+
 20130116:
   AFFECTS: users of games/py-anki
   AUTHOR: araujo@FreeBSD.org
