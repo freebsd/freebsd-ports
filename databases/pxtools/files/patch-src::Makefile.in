@@ -1,6 +1,15 @@
 --- src/Makefile.in.orig	Tue Jul 16 07:12:57 2002
 +++ src/Makefile.in	Sat Sep 28 20:02:35 2002
-@@ -195,7 +195,7 @@
+@@ -103,7 +103,7 @@
+ 
+ noinst_HEADERS = pxtypes.h pxconvert.h pxparse.h
+ 
+-CFLAGS = -g -Wall -O2 #-DDEBUG -DDEBUG_HEAD_COPY
++CFLAGS = @CFLAGS@ #-DDEBUG -DDEBUG_HEAD_COPY
+ DEFS = @DEFS@ -DLOCALEDIR=\"$(localedir)\" 
+ 
+ pxinfo_LDADD = $(INTLLIBS)
+@@ -196,7 +196,7 @@
  	$(LINK) $(pxcsvdump_LDFLAGS) $(pxcsvdump_OBJECTS) $(pxcsvdump_LDADD) $(LIBS)
  pxinfo$(EXEEXT): $(pxinfo_OBJECTS) $(pxinfo_DEPENDENCIES) 
  	@rm -f pxinfo$(EXEEXT)
