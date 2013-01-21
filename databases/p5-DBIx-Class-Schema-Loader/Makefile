@@ -1,12 +1,8 @@
-# New ports collection makefile for:	databases/p5-DBIx-Class-Schema-Loader
-# Date created:				2006-02-04
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07025
+PORTVERSION=	0.07033
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RKITOVER
@@ -40,15 +36,13 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI \
 		p5-DBIx-Class-IntrospectableM2M>=0:${PORTSDIR}/databases/p5-DBIx-Class-IntrospectableM2M \
 		p5-Moose>=1.12:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-MarkAsMethods>=0.13:${PORTSDIR}/devel/p5-MooseX-MarkAsMethods \
 		p5-MooseX-NonMoose>=0.16:${PORTSDIR}/devel/p5-MooseX-NonMoose \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
+		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn
 
 OPTIONS_DEFINE=	MYSQL ORACLE PGSQL SQLITE
 ORACLE_DESC=	Enable Oracle backend (experimental)
