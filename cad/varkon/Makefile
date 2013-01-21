@@ -1,62 +1,65 @@
-# New ports collection makefile for:	Varkon
-# Date created:		19 April 2003
-# Whom:			Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	varkon
-PORTVERSION=	1.19D
-PORTREVISION=	2
+PORTVERSION=	1.19E
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Varkon_${PORTVERSION}
 DISTNAME=	Varkon_sources_${PORTVERSION}
 DIST_SUBDIR=	varkon
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free CAD system and applications development tool
+COMMENT=	Free CAD system and applications development tool
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USE_GL=		yes
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/Varkon_${PORTVERSION}
+BUILD_WRKSRC=	${WRKSRC}/sources
+
 USE_XORG=	xpm
-ALL_TARGET=
-VARKON_ROOT=	${WRKDIR}/Varkon_${PORTVERSION}
-WRKSRC=		${VARKON_ROOT}/sources
-USE_DOS2UNIX=	Makefile
+USE_GL=		glu
+USE_GMAKE=	yes
+MAKE_ENV=	PLATFORM="${OPSYS}"
+ALL_TARGET=	# none
 MAKE_JOBS_UNSAFE=	yes
 
-VARKON_PREFIX=	${PREFIX}/share/varkon
-WEB_BROWSER?=	firefox
+VARKON_PREFIX=	${PREFIX}/lib/${PORTNAME}
+
+post-extract:
+	@${FIND} ${WRKSRC} -name "*.o" -delete
 
 do-configure:
-	@${REINPLACE_CMD} -e 's+%%VARKON_PREFIX%%+${VARKON_PREFIX}+ ; s+%%DOCSDIR%%+${DOCSDIR}+g ' \
-	     ${VARKON_ROOT}/com/english/varkon
-	@${FIND} ${WRKSRC} -name 'Makefile.FreeBSD' -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e 's+/usr/local+${LOCALBASE}+g'
-	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g'
+	@${REINPLACE_CMD} -e \
+		's|%%VARKON_PREFIX%%|${VARKON_PREFIX}|g ; \
+		 s|%%DOCSDIR%%|${DOCSDIR}|g' ${WRKSRC}/com/english/varkon
+	@${REINPLACE_CMD} -e \
+		's|^PLATFORM|#PLATFORM|' ${BUILD_WRKSRC}/Makefile
+	@${FIND} ${BUILD_WRKSRC} -name "Makefile.FreeBSD" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e \
+		's|/usr/local|${LOCALBASE}|g ; \
+		 s|/usr/X11R6|${LOCALBASE}|g ; \
+		 s|-O[[:space:]]|| ; \
+		 s|cc $$(LIBS)|$$(CC) $$(LIBS)|'
 
 do-install:
+	(cd ${WRKSRC}/com/english && ${INSTALL_SCRIPT} varkon ${PREFIX}/bin)
+	@${MKDIR} ${VARKON_PREFIX}
+.for i in erm lib mdf
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${VARKON_PREFIX})
+.endfor
 	@${MKDIR} ${VARKON_PREFIX}/bin
-	@${INSTALL_PROGRAM} ${VARKON_ROOT}/bin/* \
-	  ${VARKON_PREFIX}/bin
-	@${CP} -R ${VARKON_ROOT}/erm ${VARKON_PREFIX}
-	@${CP} -R ${VARKON_ROOT}/lib ${VARKON_PREFIX}
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} * ${VARKON_PREFIX}/bin)
 	@${MKDIR} ${VARKON_PREFIX}/cnf
-	@${CP} -R ${VARKON_ROOT}/cnf/fnt ${VARKON_PREFIX}/cnf
-	@${CP} -R ${VARKON_ROOT}/cnf/icons ${VARKON_PREFIX}/cnf
-	@${CP} -R ${VARKON_ROOT}/cnf/plt ${VARKON_PREFIX}/cnf
-	@${CP} -R ${VARKON_ROOT}/cnf/tol ${VARKON_PREFIX}/cnf
+.for i in fnt icons plt tol
+	@(cd ${WRKSRC}/cnf && ${COPYTREE_SHARE} ${i} ${VARKON_PREFIX}/cnf)
+.endfor
 	@${MKDIR} ${VARKON_PREFIX}/cnf/ini
-	@${INSTALL} ${VARKON_ROOT}/cnf/ini/english/linux \
-	  ${VARKON_PREFIX}/cnf/ini/freebsd
-	@${CP} -R ${VARKON_ROOT}/mdf ${VARKON_PREFIX}/mdf
-	@${INSTALL_SCRIPT} ${VARKON_ROOT}/com/english/varkon \
-	  ${PREFIX}/bin
-.ifndef NOPORTDOCS
+	(cd ${WRKSRC}/cnf/ini/english && ${INSTALL_DATA} linux \
+		${VARKON_PREFIX}/cnf/ini/freebsd)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}	#Varkon Manual
-	@${CP} -R ${VARKON_ROOT}/man/* ${DOCSDIR}
+	@(cd ${WRKSRC}/man && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
