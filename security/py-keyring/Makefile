@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-keyring
-# Date created:				2 September 2009
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift <douglas@douglasthrift.net>
 # $FreeBSD$
-#
 
 PORTNAME=	keyring
-PORTVERSION=	0.9.2
+PORTVERSION=	1.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +18,7 @@ USE_ZIP=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS_DEFINE=	CRYPT_FILE GNOME_KEYRING KDE_KWALLET
+OPTIONS_DEFINE=		CRYPT_FILE GNOME_KEYRING KDE_KWALLET
 GNOME_KEYRING_DESC=	GNOME Keyring backend
 KDE_KWALLET_DESC=	KDE KWallet backend
 CRYPT_FILE_DESC=	Crypt(ed) File backend
