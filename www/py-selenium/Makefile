@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-selenium
-# Date created:				6 November 2011
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	selenium
-PORTVERSION=	2.26.0
+PORTVERSION=	2.29.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
