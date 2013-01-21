@@ -1,5 +1,14 @@
---- tools/rlegrid.c.orig	Thu Mar 10 21:01:59 2005
-+++ tools/rlegrid.c	Thu Mar 10 21:03:02 2005
+--- tools/rlegrid.c.orig	1992-04-30 23:12:02.000000000 +0900
++++ tools/rlegrid.c	2012-10-15 22:55:35.000000000 +0900
+@@ -51,7 +51,7 @@
+  *	[None]
+  * Algorithm:
+  */
+-void
++int
+ main( argc, argv )
+ int argc;
+ char **argv;
 @@ -65,7 +65,7 @@
      rle_op **scanraw[2];	/* space for two raw scanline buffers */
      rle_op *p, *q;

@@ -60,7 +60,7 @@
 -##define USE_STDARG	Use 'stdarg' instead of 'varargs' (ANSI).
 -##define USE_STDLIB_H	You have "stdlib.h".
 -##define USE_UNISTD_H	You have "unistd.h".
-+#define SYS_V_SETPGRP	Your system has the SysV setpgrp() call.
++##define SYS_V_SETPGRP	Your system has the SysV setpgrp() call.
 +#define USE_L_FLAG	Use -Llibdir -lrle instead of libdir/liblre.a.
 +#define USE_PROTOTYPES	Declare library functions with ANSI-C prototypes.
 +#define USE_RANDOM	Your libc has the BSD random() function.

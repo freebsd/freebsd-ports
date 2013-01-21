@@ -1,9 +1,5 @@
-# New ports collection makefile for:	urt
-# Date created:		Jan 5 1997
-# Whom:			cfs@ing.puc.cl (original)
-#
+# Created by: cfs@ing.puc.cl (original)
 # $FreeBSD$
-#
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1
@@ -20,19 +16,21 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit and library for raster image processing
 
-LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_WRKSUBDIR=	yes
 
-USE_GCC=	any
 USE_XORG=	x11 xext
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt
-MAKEFILE=	makefile
 USE_GMAKE=	yes
+MAKEFILE=	makefile
 ALL_TARGET=	# none
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	aliastorle.1 applymap.1 avg4.1 crop.1 cubitorle.1 dvirle.1	\
 	fant.1 getx11.1 giftorle.1 graytorle.1 into.1 mcut.1 mergechan.1\
@@ -61,14 +59,16 @@ MAN3=	buildmap.3 bwdithermap.3 colorquant.3 dither.3 ditherbw.3	\
 MAN5=	rle.5
 MLINKS=	rle.5 RLE.5
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/doc && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKDIR} && ${FIND} img | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}/img
+	@(cd ${WRKSRC}/img && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/img)
 .endif
 
 .include <bsd.port.mk>

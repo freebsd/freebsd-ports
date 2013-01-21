@@ -1,5 +1,14 @@
---- tools/rlepatch.c.orig	Thu Mar 10 21:17:33 2005
-+++ tools/rlepatch.c	Thu Mar 10 21:18:56 2005
+--- tools/rlepatch.c.orig	1992-01-24 03:33:19.000000000 +0900
++++ tools/rlepatch.c	2012-10-15 22:58:01.000000000 +0900
+@@ -33,7 +33,7 @@
+ 
+ #define IN_WINDOW(y,wind) ((y >= wind.ymin) && (y <= wind.ymax))
+ 
+-void
++int
+ main( argc, argv )
+ int argc;
+ char **argv;
 @@ -46,7 +46,7 @@
      rle_pixel ** im_rows, **patch_rows, ** outrows;
      int stdin_used = 0;

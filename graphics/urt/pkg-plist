@@ -93,13 +93,13 @@ lib/librle.so.1
 %%PORTDOCS%%%%DOCSDIR%%/toolkit.doc
 %%PORTDOCS%%%%DOCSDIR%%/toolkit.mss
 %%PORTDOCS%%%%DOCSDIR%%/toolkit.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/christmas_ball.rle
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/dart.rle
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/lenna.rle
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/mandrill.rle
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/tack_w_shadow.rle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/christmas_ball.rle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/dart.rle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/lenna.rle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/mandrill.rle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/tack_w_shadow.rle
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/img
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/img
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
