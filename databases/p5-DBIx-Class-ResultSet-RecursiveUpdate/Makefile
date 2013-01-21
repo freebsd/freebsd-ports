@@ -1,12 +1,8 @@
-# New ports collection makefile for:	DBIx::Class::ResultSet::RecursiveUpdate
-# Date created:		25 Mar 2009
-# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-ResultSet-RecursiveUpdate
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-NonMoose>=0:${PORTSDIR}/devel/p5-MooseX-NonMoose \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Trap>=0.2.2:${PORTSDIR}/devel/p5-Test-Trap \
 		p5-Test-Warn>=0.20:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
