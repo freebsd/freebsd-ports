@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sg3_utils
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
@@ -22,6 +22,7 @@ MAN8+=		scsi_start.8
 MAN8+=		scsi_stop.8
 MAN8+=		scsi_temperature.8
 MAN8+=		sg3_utils.8
+MAN8+=		sg_compare_and_write.8
 MAN8+=		sg_decode_sense.8
 MAN8+=		sg_format.8
 MAN8+=		sg_get_config.8

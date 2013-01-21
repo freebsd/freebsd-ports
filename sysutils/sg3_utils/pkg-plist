@@ -1,3 +1,4 @@
+bin/sg_compare_and_write
 bin/sg_decode_sense
 bin/sg_format
 bin/sg_get_config
