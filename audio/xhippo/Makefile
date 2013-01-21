@@ -1,51 +1,43 @@
-# New ports collection makefile for:	xhippo
-# Date created:				16 March 1999
-# Whom:					Rod Taylor <rod@zort.on.ca>
-#
+# Created by: Rod Taylor <rod@zort.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	xhippo
-PORTVERSION=	3.3
-PORTREVISION=	5
+PORTVERSION=	3.5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic music player for UNIX systems
 
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+USE_GNOME=	gtk20
 USE_GETTEXT=	yes
-USE_GNOME=	gtk12
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk2
+MAKE_JOBS_SAFE=	yes
 
-DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
-		xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=	xhippo.1
+MAN1=		xhippo.1
+INFO=		xhippo
 
-.include <bsd.port.pre.mk>
+post-extract:
+	@${LN} -sf xhippo.config ${WRKSRC}/xhippo.config.default
 
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomelibs
-PKGNAMESUFFIX=	-gnome
-CONFIGURE_ARGS+=	--with-gnome
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^sysconf_DATA/s|=.*|= xhippo.config.default|' \
+		${WRKSRC}/Makefile.in 
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
-.endif
-	${INSTALL_DATA} ${WRKSRC}/xhippo.config ${PREFIX}/etc/xhippo.config.default
 .if !exists(${PREFIX}/etc/xhippo.config)
-	${CP} ${PREFIX}/etc/xhippo.config.default ${PREFIX}/etc/xhippo.config
+	(cd ${PREFIX}/etc && ${CP} xhippo.config.default xhippo.config)
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
