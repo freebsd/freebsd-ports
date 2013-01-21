@@ -1,5 +1,14 @@
---- tools/mcut.c.orig	Thu Mar 10 20:54:44 2005
-+++ tools/mcut.c	Thu Mar 10 20:56:44 2005
+--- tools/mcut.c.orig	1992-01-24 01:24:41.000000000 +0900
++++ tools/mcut.c	2012-10-15 22:52:09.000000000 +0900
+@@ -232,7 +232,7 @@
+  * has a slot for a color map index, so the back pointer it followed
+  * only once.
+  */
+-void
++int
+ main ( argc, argv )
+ int argc;
+ char ** argv;
 @@ -791,7 +791,7 @@
  		    TRACE( tmp_cb, cb_list )
  		    {
