@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fbsdmon
-PORTVERSION=	0.93
+PORTVERSION=	1.00
 CATEGORIES=	ports-mgmt sysutils
-MASTER_SITES=	http://files.roorback.net/
+MASTER_SITES=	LOCAL/gblach/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Submit system and ports statistics to fbsdmon.org
