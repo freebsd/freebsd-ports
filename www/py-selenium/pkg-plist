@@ -100,6 +100,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/opera/webdriver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/opera/webdriver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/opera/webdriver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/service.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/service.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/service.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/webdriver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/webdriver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs/webdriver.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/remote/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/remote/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/remote/__init__.pyo
@@ -127,6 +136,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/abstract_event_listener.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/abstract_event_listener.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/abstract_event_listener.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/color.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/color.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/color.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/event_firing_webdriver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/event_firing_webdriver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/event_firing_webdriver.pyo
@@ -147,6 +159,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/wait.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/remote
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/phantomjs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/opera
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/x86
