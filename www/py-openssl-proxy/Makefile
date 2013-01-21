@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-openssl-proxy
-# Date created:		23 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openssl-proxy
 PORTVERSION=	0.1
