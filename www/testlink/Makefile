@@ -2,16 +2,17 @@
 
 PORTNAME=	testlink
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A web based test management and test execution system
+COMMENT=	Web based test management and test execution system
 
 LICENSE=	GPLv2
 
-USE_PHP=	gd iconv mbstring session
+USE_PHP=	gd iconv mbstring session xml
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -72,7 +73,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} third_party ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} upload_area ${WWWDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.php* ${WWWDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -80,7 +81,7 @@ do-install:
 	@${TAR} ${EXCLUDE_EXAMPLES} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${DOCSDIR} -xf -
 	@${LN} -s ${DOCSDIR} ${WWWDIR}/docs
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
