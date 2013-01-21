@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	www geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
