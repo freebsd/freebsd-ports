@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+lib/monodoc/sources/ndesk-options-docs.source
+lib/monodoc/sources/ndesk-options-docs.tree
+lib/monodoc/sources/ndesk-options-docs.zip
+lib/ndesk-options/NDesk.Options.dll
+lib/ndesk-options/Options.cs
+libdata/pkgconfig/ndesk-options.pc
+@dirrm lib/ndesk-options
