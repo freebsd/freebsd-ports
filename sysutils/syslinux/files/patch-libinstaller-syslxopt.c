@@ -1,6 +1,6 @@
 --- libinstaller/syslxopt.c.orig	2010-10-20 21:25:38.000000000 +0200
 +++ libinstaller/syslxopt.c	2010-11-16 15:09:16.897550744 +0100
-@@ -44,6 +44,8 @@
+@@ -45,6 +45,8 @@
      .activate_partition = 0,
      .force = 0,
      .bootsecfile = NULL,
@@ -9,7 +9,7 @@
  };
  
  const struct option long_options[] = {
-@@ -57,7 +59,7 @@
+@@ -58,7 +60,7 @@
      {"stupid", 0, NULL, 's'},
      {"heads", 1, NULL, 'H'},
      {"raid-mode", 0, NULL, 'r'},
@@ -18,10 +18,10 @@
      {"help", 0, NULL, 'h'},
      {"once", 1, NULL, OPT_ONCE},
      {"clear-once", 0, NULL, 'O'},
-@@ -65,10 +67,12 @@
-     {"menu-save", 1, NULL, 'M'},
+@@ -67,10 +69,12 @@
      {"mbr", 0, NULL, 'm'},	/* DOS/Win32 only */
      {"active", 0, NULL, 'a'},	/* DOS/Win32 only */
+     {"device", 1, NULL, OPT_DEVICE},
 +    {"verbose", 0, NULL, 'v' },
 +    {"bimage", 1, NULL, 'b' },
      {0, 0, 0, 0}
@@ -32,7 +32,7 @@
  
  void __attribute__ ((noreturn)) usage(int rv, enum syslinux_mode mode)
  {
-@@ -109,7 +113,9 @@
+@@ -112,7 +116,9 @@
  	    "  --raid       -r  Fall back to the next device on boot failure\n"
  	    "  --once=...   %s  Execute a command once upon boot\n"
  	    "  --clear-once -O  Clear the boot-once command\n"
@@ -43,9 +43,9 @@
  	    mode == MODE_SYSLINUX  ? "  " : "-o");
      /*
       * Have to chop this roughly in half for the DOS installer due
-@@ -209,11 +215,17 @@
- 	case 'a':
- 	    opt.activate_partition = 1;
+@@ -217,11 +223,17 @@
+ 		usage(EX_USAGE, mode);
+ 	    opt.device = optarg;
  	    break;
 -	case 'v':
 +	case 'V':

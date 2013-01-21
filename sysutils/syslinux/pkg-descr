@@ -1,7 +1,8 @@
 The syslinux program installs a linux bootloader on a FAT-formatted
 filesystem or disk image.
+
 This FreeBSD port can additionally operate on plain files containing
 a FAT image, thus requiring no special privilege. The program relies
 on mtools to perform the manipulation of the FAT filesystem.
 
-WWW: http://syslinux.zytor.com/
+WWW: http://www.syslinux.org/
