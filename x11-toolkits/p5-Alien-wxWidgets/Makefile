@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Alien-wxWidgets
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.62
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	linpc@cs.nctu.edu.tw
 COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
-
-BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
 OPTIONS_DEFINE=	UNICODE
 OPTIONS_DEFAULT=	UNICODE
@@ -26,6 +23,12 @@ PERL_MODBUILD=	yes
 
 .if ${PERL_LEVEL} < 500809
 BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+.elsif ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 .endif
 
 .if ${PORT_OPTIONS:MUNICODE}
