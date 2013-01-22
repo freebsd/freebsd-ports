@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	god
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogo@cs.uni-sb.de
+MAINTAINER=	gogolok+freebsd@gmail.com
 COMMENT=	Monitoring framework written in Ruby
 
 RUN_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
