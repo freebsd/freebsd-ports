@@ -16,8 +16,11 @@ DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
 DISTFILES=	${DISTNAME}.tar.gz:src
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
+
+DEPRECATED=     Ancient and unsupported release 
+EXPIRATION_DATE=2013-03-01
 
 OPTIONS=	BDB "Use DB based spooler" on \
 		X11 "Qmon X11 GUI" on \
