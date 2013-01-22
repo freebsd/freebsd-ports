@@ -1,14 +1,10 @@
-# New ports collection makefile for: salt-cloud
-# Date created:	2012-07-16
-# Whom:		Christer Edwards <christer.edwards@gmail.com>
-#
+# Created by: Christer Edwards <christer.edwards@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	salt-cloud
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.4
 CATEGORIES=	sysutils python
-MASTER_SITES=	https://github.com/downloads/saltstack/salt-cloud/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Provisioning salted minions to various cloud providers
