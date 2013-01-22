@@ -9,8 +9,10 @@ COMMENT=	Haskell bindings to the terminfo library
 
 LICENSE=	BSD
 
-CONFIGURE_ARGS+=	--configure-option=--with-curses-includes=/usr/include \
-			--configure-option=--with-curses-libraries=/usr/lib
+USE_NCURSES=	yes
+
+CONFIGURE_ARGS+=	--configure-option=--with-curses-includes=${NCURSESINC} \
+			--configure-option=--with-curses-libraries=${NCURSESLIB}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
