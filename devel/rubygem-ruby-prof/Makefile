@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-prof
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogo@cs.uni-sb.de
+MAINTAINER=	gogolok+freebsd@gmail.com
 COMMENT=	A fast profiler for Ruby
 
 USE_RUBY=	yes
