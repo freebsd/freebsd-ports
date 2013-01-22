@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oath-toolkit
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -97,7 +97,7 @@ PLIST_SUB+=	PSKC="@comment "
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's|install-data-am: install-data-local|install-data-am:|' \
 		${WRKSRC}/liboath/gtk-doc/Makefile.in \
 		${WRKSRC}/libpskc/gtk-doc/Makefile.in
@@ -107,7 +107,7 @@ post-patch:
 		${WRKSRC}/libpskc/gtk-doc/Makefile.in
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
