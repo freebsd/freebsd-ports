@@ -11,7 +11,7 @@
 #
 # fluentd_enable (bool):	Set to NO by default.
 # 		  		Set it to YES to enable fluentd.
-# fluentd_config (path):	Set to %%PREFIX%%/etc/doormand/doormand.cf
+# fluentd_config (path):	Set to %%PREFIX%%/etc/fluentd/fluent.conf
 # 		  		by default.
 # fluentd_db_dir (path):	Set DB dir (default: "/var/db/fluentd")
 
