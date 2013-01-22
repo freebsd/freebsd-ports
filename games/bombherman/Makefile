@@ -38,8 +38,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-DESKTOP_ENTRIES="Bomb-her-man" "${COMMENT}" "${PORTNAME}_48.png" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+DESKTOP_ENTRIES="Bomb-her-man" "Bomberman clone" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}_48.png" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=	NLS

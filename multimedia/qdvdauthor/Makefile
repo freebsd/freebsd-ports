@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	oz@nixil.net
-COMMENT=	QT graphical frontend for dvdauthor
+COMMENT=	Qt graphical frontend for dvdauthor
 
 BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
@@ -46,7 +46,7 @@ DESKTOP_ENTRIES="QDVDAuthor" \
 		"DVD Author GUI" \
 		"${PREFIX}/share/pixmaps/qdvdauthor.png" \
 		"QDVDAuthor" \
-		"Application;AudioVideo;Qt;KDE;" \
+		"AudioVideo;Qt;" \
 		"false"
 
 HAS_CONFIGURE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
-COMMENT=	A GNOME interface to xcompmgr
+COMMENT=	GNOME interface to xcompmgr
 
 RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
@@ -24,7 +24,7 @@ DESKTOP_ENTRIES="gcompmgr" \
 		"Configure window effects" \
 		"" \
 		"gcompmgr" \
-		"Application;Settings;" \
+		"DesktopSettings;Settings;GTK;" \
 		true
 
 

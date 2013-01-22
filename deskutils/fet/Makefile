@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="FET" \
 		"Free timetable software" \
 		"" \
 		"fet" \
-		"Application;Education;Qt;" \
+		"Education;Qt;" \
 		true
 
 .include <bsd.port.options.mk>

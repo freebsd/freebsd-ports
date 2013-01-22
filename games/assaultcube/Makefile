@@ -58,7 +58,7 @@ ACUBE_BIN+=	client
 
 DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
 	"${DATADIR}/packages/misc/startscreen.png" "${PORTNAME}_client" \
-	"Application;Game;" ${FALSE}
+	"Game;" false
 .endif
 
 .if ${PORT_OPTIONS:MDEDICATED}

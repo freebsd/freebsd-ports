@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	A universal SQL Client
+COMMENT=	Universal SQL Client
 
 LICENSE=	GPLv2
 
@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"${COMMENT}" \
 		"${DATADIR}/icons/acorn.png" \
 		"squirrel-sql" \
-		"Application;" \
+		"Office;Database;Java;" \
 		false
 
 post-extract:

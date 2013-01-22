@@ -14,7 +14,7 @@ MASTER_SITES=	http://scythia.free.fr/wp-content/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}-2-src
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A small ftp client unpretentious based on QT4
+COMMENT=	Small ftp client unpretentious based on Qt4
 
 USE_QT4=	gui network corelib qmake_build uic_build moc_build rcc_build
 INSTALLS_ICONS=	yes
@@ -26,10 +26,10 @@ INSTALL_TARGET=install_lang install_icon install_icon2 install_target
 .endif
 
 DESKTOP_ENTRIES=	"Scythia" \
-			"A small ftp client unpretentious" \
+			"Small ftp client unpretentious" \
 			"scythia" \
 			"scythia" \
-			"Application;Network;" \
+			"Network;FileTransfer;Qt;" \
 			"false"
 
 post-patch:
@@ -41,6 +41,6 @@ post-patch:
 
 pre-build:
 	@cd ${BUILD_WRKSRC} && \
-	       ${SETENV} ${MAKE_ENV} ${QMAKE} -unix PREFIX=${PREFIX} scythia.pro
+	       ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} scythia.pro
 
 .include <bsd.port.mk>

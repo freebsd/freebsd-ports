@@ -15,7 +15,7 @@ DISTNAME=	${HG_NODEID}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A physically based and unbiased rendering system
+COMMENT=	Physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
@@ -35,8 +35,9 @@ CMAKE_VERBOSE=	yes
 WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="LuxRender" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
-		"Application;Graphics;3DGraphics;" ${FALSE}
+DESKTOP_ENTRIES="LuxRender" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/luxrender.svg" "${PORTNAME}" \
+		"Graphics;3DGraphics;" false
 
 OPTIONS=	QT4	"Build Qt4 GUI executable"		on \
 		WX	"Build wxWidgets GUI executable"	off

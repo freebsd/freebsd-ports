@@ -9,7 +9,7 @@ MASTER_SITES=	SF/jtc${PORTNAME}/${PORTNAME}/14-Mar-2009
 DISTNAME=	${PORTNAME}-14-Mar-2009
 
 MAINTAINER=	peter.thoenen@yahoo.com
-COMMENT=	Frost is a Freenet client that provides messenger and file services
+COMMENT=	Freenet client that provides messenger and file services
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -54,9 +54,9 @@ PLIST_DIRS+=	\
 		%%JAR_DIR%% \
 		%%DATADIR%%
 
-DESKTOP_ENTRIES=	"Frost" "A Freenet Client" \
+DESKTOP_ENTRIES=	"Frost" "Freenet Client" \
 			"${JAVASHAREDIR}/${PORTNAME}/jtc.ico" \
-			"frost" "Application;P2P;Network;" \
+			"frost" "P2P;Network;Java;" \
 			false
 
 pre-everything::

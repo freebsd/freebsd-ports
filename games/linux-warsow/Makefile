@@ -43,7 +43,7 @@ DESKTOP_ENTRIES="Warsow" \
 		"Shoot cartoon enemies" \
 		"" \
 		"warsow" \
-		"Application;Game;" \
+		"Game;" \
 		false
 
 OPTIONS=	CLIENT	"Install client"	on \

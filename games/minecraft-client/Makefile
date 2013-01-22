@@ -25,9 +25,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6
 DESKTOP_ENTRIES="Minecraft" \
 		"Block building game" \
+		"${PREFIX}/share/pixmaps/minecraft-client.png" \
 		"${PORTNAME}" \
-		"${PORTNAME}" \
-		"Application;Game;" \
+		"Game;Java;" \
 		false
 
 .include <bsd.port.options.mk>

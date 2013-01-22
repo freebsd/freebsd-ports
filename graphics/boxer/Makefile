@@ -25,8 +25,9 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
-DESKTOP_ENTRIES="Boxer" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;Graphics;" ${FALSE}
+DESKTOP_ENTRIES="Boxer" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Graphics;VectorGraphics;" false
 
 post-extract:
 	@(cd ${WRKSRC} && \

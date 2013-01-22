@@ -25,8 +25,8 @@ NO_BUILD=	yes
 
 USE_TK_WRAPPER=	yes
 
-DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;System;" "false"
+DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "" "false"
 
 post-patch:
 	@${REINPLACE_CMD} \

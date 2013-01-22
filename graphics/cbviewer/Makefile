@@ -36,8 +36,9 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="CBViewer" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;Graphics;Viewer;" true
+DESKTOP_ENTRIES="CBViewer" "Comic book viewer" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Graphics;Viewer;Java;" true
 
 .include <bsd.port.options.mk>
 

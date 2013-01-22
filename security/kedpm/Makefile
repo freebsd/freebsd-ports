@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@thepentagon.org
-COMMENT=	A simple application for managing personal data
+COMMENT=	Simple application for managing personal data
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
@@ -22,9 +22,9 @@ USE_PYDISTUTILS=	YES
 
 DESKTOP_ENTRIES="Ked Password Manager" \
 		"Secure Password Management" \
-		"${LOCALBASE}/share/${PORTNAME}/glade/logo.png" \
+		"${PREFIX}/share/${PORTNAME}/glade/logo.png" \
 		"kedpm" \
-		"Application;System;" \
+		"" \
 		true
 
 .include <bsd.port.mk>
