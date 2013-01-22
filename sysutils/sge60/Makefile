@@ -10,8 +10,11 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	ge-V60u12_TAG-src
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
+
+DEPRECATED=	Ancient and unsupported release
+EXPIRATION_DATE=2013-03-01
 
 OPTIONS=	BDB "Use DB based spooler" on \
 		JAVA "Support Java DRMAA API" on \

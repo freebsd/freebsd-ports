@@ -14,8 +14,11 @@ DISTFILES=	${DISTNAME}.tar.gz:src \
 		ge-${SGE_RELEASE}-common.tar.gz:bin
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
+
+DEPRECATED=	Ancient and unsupported release 
+EXPIRATION_DATE=2013-03-01
 
 OPTIONS=	BDB "Use DB based spooler" on \
 		JAVA "Support Java DRMAA API" on \
