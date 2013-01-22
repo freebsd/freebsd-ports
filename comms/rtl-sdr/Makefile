@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rtl-sdr
-# Date created:		23 August 2012
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rtl-sdr
-PORTVERSION=	20121104
+PORTVERSION=	20130116
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
