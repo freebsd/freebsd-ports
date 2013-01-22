@@ -4,15 +4,14 @@ Paraphrasing the website:
   separated values) files.  DSV is a generalization of CSV (comma separated
   values).  CSV is a common file format used by many programs to import and
   export data.
-   
+
   Features:
-  - Pure Python 
-  - Optional wxPython GUI  
-  - Optional heuristics for determining file format 
-  - Handles embedded quotes, delimiters and newlines 
-  - Customizable error handling 
-  - Simple to use 
+  - Pure Python
+  - Optional wxPython GUI
+  - Optional heuristics for determining file format
+  - Handles embedded quotes, delimiters and newlines
+  - Customizable error handling
+  - Simple to use
   - Portable
 
-Author: Cliff Wells <clifford.wells@attbi.com>
-WWW:    http://python-dsv.sourceforge.net/
+WWW: http://python-dsv.sourceforge.net/
