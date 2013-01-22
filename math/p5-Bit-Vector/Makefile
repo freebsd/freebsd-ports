@@ -1,12 +1,9 @@
-# New ports collection makefile for:	Bit-Vector
-# Date created:				Mon Jan  1 10:37:30 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Bit-Vector
 PORTVERSION=	7.2
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
