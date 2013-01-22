@@ -1,14 +1,9 @@
-# Ports collection Makefile for:	nss_ldapd
-# Date created:				23/7/2009
-# Whom:					melifaro@ipfw.ru
-#
+# Created by: melifaro@ipfw.ru
 # $FreeBSD$
-#
-# vim: ft=pmake tw=78 fo=cq
-#
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.8.12
+PORTREVISION=	1
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/
 
@@ -101,19 +96,15 @@ SUB_LIST+=		NSS_MESSAGE=""
 # Won't hook this in to OPTIONS until PADL ports are at least DEPRECATED.
 # It doesn't do the software any good to run as replacement for the PADL ports
 # without running the daemon.
-.if ${PORT_OPTIONS:MNSLCD)
+.if defined(WITHOUT_NSLCD)
+CONFIGURE_ARGS+=	--disable-nslcd
+PLIST_SUB+=		NSLCD="@comment "
+.else
 CONFIGURE_ARGS+=	--enable-nslcd
 PLIST_SUB+=		NSLCD=""
 MAN5+=			nslcd.conf.5
 MAN8+=			nslcd.8
-.else
-CONFIGURE_ARGS+=	--disable-nslcd
-PLIST_SUB+=		NSLCD="@comment "
 .endif
-
-# these are unconditionally installed (bug filed upstream)
-MAN5+=			nslcd.conf.5
-MAN8+=			nslcd.8
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
