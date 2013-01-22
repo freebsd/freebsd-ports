@@ -1,19 +1,13 @@
-# ex:ts=8
-# Ports collection makefile for:	rdup
-# Date created:			Jun 11, 2009
-# Whom:				corky1951@comcast.net
-#
+# Created by: corky1951@comcast.net
 # $FreeBSD$
-#
 
 PORTNAME=	rdup
-PORTVERSION=	1.1.12
-PORTREVISION=	1
+PORTVERSION=	1.1.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	A tool to generate an (incremental) backup file list
+COMMENT=	Tool to generate an (incremental) backup file list
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 		pcre:${PORTSDIR}/devel/pcre \
@@ -35,6 +29,7 @@ PLIST_FILES=	bin/rdup \
 		bin/rdup-up
 
 MAN1=		rdup.1 \
+		rdup-simple.1 \
 		rdup-tr.1 \
 		rdup-up.1
 
