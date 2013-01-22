@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Kudu" \
 		"Edit 3D models" \
 		"${DATADIR}/images/logo.png" \
 		"kudu" \
-		"Application;Graphics;" \
+		"Graphics;3DGraphics;GTK;" \
 		true
 
 post-patch:

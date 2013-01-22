@@ -27,7 +27,7 @@ DESKTOP_ENTRIES="Variations on Rockdodger" \
 		"Dodge the rocks until you die" \
 		"${DATADIR}/icon.png" \
 		"vor" \
-		"Application;Game;ArcadeGame;" \
+		"Game;ArcadeGame;" \
 		false
 
 .if !defined(NOPORTDOCS)

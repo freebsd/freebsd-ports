@@ -18,9 +18,9 @@ JAVA_VERSION=	1.6+
 
 DESKTOP_ENTRIES="ANTLRWorks" \
 	"ANTLR GUI Development Environment" \
-	"antlrworks.png" \
+	"${PREFIX}/share/pixmaps/antlrworks.png" \
 	"antlrworks" \
-	"Application;Development;" \
+	"Development;Java;" \
 	true
 
 PLIST_FILES=	bin/antlrworks \

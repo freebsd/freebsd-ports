@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/aTunes%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A full-featured audio player and manager developed in Java
+COMMENT=	Full-featured audio player and manager developed in Java
 
 NO_BUILD=	yes
 USE_JAVA=	yes
@@ -65,7 +65,7 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 
 DESKTOP_ENTRIES="aTunes" \
 		"Audio player and manager" \
-		"${DATADIR}/aTunes.ico" \
+		"${PREFIX}/share/pixmaps/atunes.png" \
 		"aTunes" \
 		"Audio;AudioVideo;Java;" \
 		true

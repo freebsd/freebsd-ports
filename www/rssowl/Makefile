@@ -35,10 +35,10 @@ PLIST_FILES=	bin/rssowl %%DATADIR%%/rssowl.jar share/pixmaps/rssowl.png
 PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="RSSOwl" \
-		"Read newsfeeds" \
-		"rssowl.png" \
+		"Newsfeeds reader" \
+		"${PREFIX}/share/pixmaps/rssowl.png" \
 		"rssowl" \
-		"Application;Network;News;" \
+		"Network;News;Java;" \
 		true
 
 post-patch:

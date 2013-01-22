@@ -41,7 +41,7 @@ DIR2PRUNE=	resources/AppData/Games		\
 DESKTOP_ENTRIES="Mercury Messenger" "${COMMENT}"	\
 		"${INSTDIR}/resources/online.png"	\
 		"${SUB_FILES}"				\
-		"Application;InstantMessaging;Java;Network;" true
+		"InstantMessaging;Java;Network;" true
 
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar

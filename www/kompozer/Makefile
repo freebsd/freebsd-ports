@@ -37,7 +37,7 @@ MOZ_OPTIONS=	${CONFIGURE_TARGET} \
 
 DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
 		"${PREFIX}/lib/kompozer/icons/mozicon50.xpm" "${PORTNAME}" \
-		"Application;Network;" true
+		"Network;Development;WebDevelopment;" true
 
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	does not build

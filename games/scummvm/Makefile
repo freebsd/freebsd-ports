@@ -51,7 +51,7 @@ DESKTOP_ENTRIES="ScummVM" \
 		"ScummVM - Run classic adventure games" \
 		"${DATADIR}/scummvm.svg" \
 		"scummvm" \
-		"Application;Game;" \
+		"Game;AdventureGame;" \
 		false
 
 PLIST_FILES=	bin/scummvm \

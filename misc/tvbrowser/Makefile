@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/TV-Browser%20Releases%20%28Java%206%20and%20higher%
 DISTNAME=	${PORTNAME}_${PORTVERSION}_bin
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A digital TV guide
+COMMENT=	Digital TV guide
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
@@ -22,10 +22,10 @@ JAVA_VERSION=	1.6+
 SUB_FILES=	tvbrowser
 
 DESKTOP_ENTRIES="TV-Browser" \
-		"A digital TV guide" \
+		"${COMMENT}" \
 		"${DATADIR}/imgs/tvbrowser128.png" \
 		"tvbrowser" \
-		"Application;Video;AudioVideo;TV;" \
+		"Video;AudioVideo;TV;Java;" \
 		true
 
 do-install:
