@@ -177,7 +177,6 @@
     SUBDIR += dirdiff
     SUBDIR += dirvish
     SUBDIR += diskcheckd
-    SUBDIR += diskprep
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
