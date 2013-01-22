@@ -81,7 +81,7 @@ BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
 USE_BINUTILS=	yes
-USE_GCC=	4.6
+USE_GCC=	4.6+
 
 .if ${PORT_OPTIONS:MDYNAMIC}
 LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
