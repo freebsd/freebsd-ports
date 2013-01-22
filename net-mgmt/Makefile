@@ -177,7 +177,6 @@
     SUBDIR += netwox
     SUBDIR += netxms
     SUBDIR += nfdump
-    SUBDIR += nfdump-devel
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
