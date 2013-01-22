@@ -48,7 +48,7 @@ CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		LDFLAGS_SL="${LDFLAGS_SL}"
 
-PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX:C,[0-9]+,,}
+PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs \
 		src/backend/snowball src/bin/initdb src/bin/pg_ctl \
