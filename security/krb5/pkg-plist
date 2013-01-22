@@ -66,15 +66,13 @@ lib/libkadm5srv.so
 lib/libkadm5srv_mit.so
 lib/libkadm5srv_mit.so.8
 lib/libkdb5.so
-lib/libkdb5.so.6
+lib/libkdb5.so.7
 lib/libkrb5.so
 lib/libkrb5.so.3
 lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
 lib/krb5/plugins/preauth/pkinit.so
-lib/libverto-k5ev.so.0
-lib/libverto-k5ev.so
 lib/libverto.so.0
 lib/libverto.so
 sbin/gss-server
