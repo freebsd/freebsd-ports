@@ -3954,26 +3954,14 @@ java/jdk15-doc|java/jdk16-doc|2012-12-10|Has expired: EOLed upstream since octob
 science/py-openbabel||2012-12-11|Merged to science/openbabel
 deskutils/horde-hermes|deskutils/horde3-hermes|2012-12-12|Rename of old horde apps
 deskutils/horde-klutz|deskutils/horde3-klutz|2012-12-12|Rename of old horde apps
-deskutils/horde-kronolith|deskutils/horde3-kronolith|2012-12-12|Rename of old horde apps
-deskutils/horde-mnemo|deskutils/horde3-mnemo|2012-12-12|Rename of old horde apps
-deskutils/horde-nag|deskutils/horde3-nag|2012-12-12|Rename of old horde apps
 devel/horde-chora|devel/horde3-chora|2012-12-12|Rename of old horde apps
-devel/horde-whups|devel/horde3-whups|2012-12-12|Rename of old horde apps
-ftp/horde-gollem|ftp/horde3-gollem|2012-12-12|Rename of old horde apps
 mail/horde-dimp|mail/horde3-dimp|2012-12-12|Rename of old horde apps
 mail/horde-forwards|mail/horde3-forwards|2012-12-12|Rename of old horde apps
-mail/horde-imp|mail/horde3-imp|2012-12-12|Rename of old horde apps
-mail/horde-ingo|mail/horde3-ingo|2012-12-12|Rename of old horde apps
 mail/horde-mimp|mail/horde3-mimp|2012-12-12|Rename of old horde apps
-mail/horde-turba|mail/horde3-turba|2012-12-12|Rename of old horde apps
 mail/horde-vacation|mail/horde3-vacation|2012-12-12|Rename of old horde apps
 net-mgmt/horde-nic|net-mgmt/horde3-nic|2012-12-12|Rename of old horde apps
 security/horde-jeta|security/horde3-jeta|2012-12-12|Rename of old horde apps
-www/horde-ansel|www/horde3-ansel|2012-12-12|Rename of old horde apps
-www/horde-base|www/horde3-base|2012-12-12|Rename of old horde apps
 www/horde-meta|www/horde3-meta|2012-12-12|Rename of old horde apps
-www/horde-passwd|www/horde3-passwd|2012-12-12|Rename of old horde apps
-www/horde-wicked|www/horde3-wicked|2012-12-12|Rename of old horde apps
 x11-toolkits/fltk-threads|x11-toolkits/fltk|2012-12-12|Threads are on by default
 x11-fonts/gentium|x11-fonts/gentium-plus|2012-12-15|Track upstream name changes
 devel/pear-Horde_DataTree||2012-12-16|Obsolete in horde5
