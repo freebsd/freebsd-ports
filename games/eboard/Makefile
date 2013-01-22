@@ -44,9 +44,9 @@ JOYSTICK_DESC=	Enable joystick support
 
 DESKTOP_ENTRIES="eboard" \
 		"Play chess" \
-		"eboard.xpm" \
+		"${PREFIX}/share/pixmaps/eboard.xpm" \
 		"eboard" \
-		"Application;Game;" \
+		"Game;BoardGame;GTK;" \
 		true
 
 .include <bsd.port.options.mk>

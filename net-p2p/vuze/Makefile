@@ -43,10 +43,10 @@ SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
 
 DESKTOP_ENTRIES=	"Vuze" \
-			"A full feature BitTorrent client" \
-			"${PORTNAME}.png" \
+			"BitTorrent client" \
 			"${PORTNAME}" \
-			"Application;Network;P2P;" \
+			"${PORTNAME}" \
+			"Network;P2P;Java;" \
 			true
 
 .include <bsd.port.options.mk>

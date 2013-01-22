@@ -46,9 +46,9 @@ CONFIG_FILES=	banned-ips.txt \
 .if ${PORT_OPTIONS:MX11}
 DESKTOP_ENTRIES="Minecraft-Server" \
 		"Block building game (server)" \
+		"${PREFIX}/share/pixmaps/minecraft-server.png" \
 		"${PORTNAME}" \
-		"${PORTNAME}" \
-		"Application;Game;" \
+		"Game;Java;" \
 		false
 .endif
 

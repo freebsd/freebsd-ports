@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/TheButterflyEffect-m${PORTVERSION}
 
 DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
 		"${DATADIR}/images/tbe-icon.png" \
-		"${PREFIX}/bin/tbe" "Application;LogicGame;Game;" false
+		"${PREFIX}/bin/tbe" "LogicGame;Game;" false
 
 post-patch:
 		@${REINPLACE_CMD} 's/ make/ ${GMAKE}/' \

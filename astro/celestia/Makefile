@@ -82,8 +82,9 @@ PLIST_SUB+=	KDE="@comment "
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Celestia" "Explore space" "celestia.png" "celestia" \
-		"Application;Astronomy;Education;Science;" ${STARTUP_NOTIFY}
+DESKTOP_ENTRIES="Celestia" "Explore space" \
+		"${PREFIX}/share/pixmaps/celestia.png" "celestia" \
+		"Astronomy;Education;Science;" ${STARTUP_NOTIFY}
 
 post-patch:
 # Fix Lua discovery pkg-config(1) calls

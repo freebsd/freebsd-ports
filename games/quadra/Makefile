@@ -36,7 +36,7 @@ PLIST_DIRSTRY=	share/games
 
 DESKTOP_ENTRIES=	"Quadra" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
-			"${PORTNAME}" "Application;BlocksGame;Game;" false
+			"${PORTNAME}" "BlocksGame;Game;" false
 
 # maintainer relevant make target:
 SVN_REV=	757

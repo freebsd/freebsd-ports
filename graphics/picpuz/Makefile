@@ -22,9 +22,9 @@ ALL_TARGET=	#
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 DESKTOP_ENTRIES="Picpuz" \
 		"Jigsaw Puzzle" \
-		"picpuz.png" \
+		"${PREFIX}/share/pixmaps/picpuz.png" \
 		"picpuz" \
-		"Application;Game;" \
+		"Graphics;Game;GTK;" \
 		true
 
 .include <bsd.port.mk>

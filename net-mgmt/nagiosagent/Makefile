@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.netpatch.ru/projects/nagiosagent/ \
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	myc@barev.net
-COMMENT=	A QT-based frontend to Nagios
+COMMENT=	Qt-based frontend to Nagios
 
 PLIST_FILES=	bin/NagiosAgent \
 		share/pixmaps/NagiosAgent.png
@@ -23,8 +23,8 @@ USE_ZIP=	yes
 USE_QT4=	gui network corelib qmake_build uic_build rcc_build moc_build
 
 DESKTOP_ENTRIES=	"NagiosAgent" "GUI client for Nagios" \
-			"NagiosAgent.png" \
-			"NagiosAgent" "Application;Network;" false
+			"${PREFIX}/share/pixmaps/NagiosAgent.png" \
+			"NagiosAgent" "Network;Qt;" false
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix NagiosAgent.pro

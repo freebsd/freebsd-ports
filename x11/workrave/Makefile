@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	An RSI prevention tool
+COMMENT=	RSI prevention tool
 
 BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
 
@@ -20,11 +20,11 @@ OPTIONS=	GNOME "Build with Gnome support" off \
 		NETWORK "Build with network support" off
 
 INSTALLS_ICONS=	yes
-DESKTOP_ENTRIES=	"Workrave" "An RSI prevention tool" \
+DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
 					"${DATADIR}/images/workrave-icon-small.png" \
 					"workrave" \
-					"Application;Utility;" \
-					${FALSE}
+					"Utility;" \
+					false
 
 USE_XORG=	x11 xmu recordproto xtst xext
 USE_GMAKE=	yes

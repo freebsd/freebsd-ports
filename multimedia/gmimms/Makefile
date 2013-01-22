@@ -12,7 +12,7 @@ CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	liu_yinghong@yahoo.com.cn
-COMMENT=	A frontend to MiMMS (Multimedia Stream ripper)
+COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 
 RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms
 
@@ -27,10 +27,10 @@ PLIST_FILES=	bin/gmimms
 PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL NEWS README
 
 DESKTOP_ENTRIES=	"GIMMS" \
-			"A GTK+ frontend for MiMMS" \
+			"Multimedia Stream ripper" \
 			"" \
 			"gmimms" \
-			"Application;GTK;AudioVideo;Network;" \
+			"GTK;AudioVideo;Network;" \
 			"false"
 
 post-install:

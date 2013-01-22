@@ -28,9 +28,9 @@ SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Speaking Hangman" \
 		"Educational game to practice and expand English and Spanish" \
-		"${PORTNAME}.png" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" \
-		"Game;LogicGame;" \
+		"Game;Education;Languages;" \
 		false
 
 do-install:

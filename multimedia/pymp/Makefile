@@ -20,8 +20,9 @@ USE_GNOME=	pygtk2
 
 PORTDOCS=	CHANGELOG README
 
-DESKTOP_ENTRIES="Pymp" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;AudioVideo;" "false"
+DESKTOP_ENTRIES="Pymp" "MPlayer frontend" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "AudioVideo;Player;" "false"
 
 .include <bsd.port.options.mk>
 

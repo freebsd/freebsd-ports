@@ -30,10 +30,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES="KOMclean" \
 		"${COMMENT}" \
-		"komclean.xpm" \
+		"${PREFIX}/share/pixmaps/komclean.xpm" \
 		"komclean" \
 		"" \
-		${FALSE}
+		false
 
 .include <bsd.port.pre.mk>
 
