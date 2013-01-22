@@ -4,7 +4,6 @@ share/applications/parcellite.desktop
 share/pixmaps/parcellite.png
 share/pixmaps/parcellite.svg
 share/pixmaps/parcellite.xpm
-%%NLS%%share/locale/ca/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/da/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/de/LC_MESSAGES/parcellite.mo
