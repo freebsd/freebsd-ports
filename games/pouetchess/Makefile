@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.11
 DISTNAME=	pouetChess_0.11_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An open-source 3D chess game
+COMMENT=	Open-source 3D chess game
 
 USE_SDL=	sdl image
 USE_GL=		gl
@@ -25,7 +25,7 @@ DESKTOP_ENTRIES="pouetChess" \
 		"Play chess" \
 		"${DATADIR}/textures/1.png" \
 		"pouetChess" \
-		"Application;Game;" \
+		"Game;BoardGame;" \
 		false
 
 post-patch:

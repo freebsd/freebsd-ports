@@ -31,7 +31,7 @@ USE_RUBY=	yes
 INSTALLS_ICONS=	yes
 
 DESKTOP_ENTRIES="Rubyripper" "Secure Audio Disc Ripper" \
-		"${PORTNAME}.png" "rrip_gtk2" "Audio;AudioVideo;" false
+		"${PORTNAME}" "rrip_gtk2" "Audio;AudioVideo;" false
 
 post-patch:
 # fix an apparent typo

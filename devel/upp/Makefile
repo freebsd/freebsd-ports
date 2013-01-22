@@ -39,7 +39,7 @@ PORTDATA=	bazaar examples reference tutorial uppsrc GCC.bm
 
 DESKTOP_ENTRIES="TheIDE" "IDE for cross-platform C++ development" \
 		"${DATADIR}/uppsrc/ide/theide-48.png" "theide" \
-		"Application;Development;IDE;" ${FALSE}
+		"Development;IDE;GTK;" false
 
 OPTIONS_DEFINE=	SDL OPENGL MYSQL PGSQL USEMALLOC
 USEMALLOC_DESC=	Compile without U++ heap allocator

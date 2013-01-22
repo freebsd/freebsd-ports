@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	Gmencoder is Gnome2 front-end to mplayer/mencoder
+COMMENT=	Gnome2 front-end to mplayer/mencoder
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
@@ -27,7 +27,7 @@ USE_GNOME=	gnomehack gnomeprefix libgnomeui
 MAN1=		gmencoder.1
 
 DESKTOP_ENTRIES=	"Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
-		"" "gmencoder" "GNOME;Application;AudioVideo;" false
+		"" "gmencoder" "GNOME;AudioVideo;" false
 
 .include <bsd.port.pre.mk>
 

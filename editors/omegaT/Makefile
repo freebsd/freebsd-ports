@@ -34,8 +34,8 @@ SUB_FILES=	omegaT.sh omegat.prefs
 
 DESKTOP_ENTRIES="OmegaT" "Translation memory application" \
 		"${DATADIR}/images/OmegaT.png" \
-		"omegaT" "Application;Office;WordProcessor;" \
-		${FALSE}
+		"omegaT" "Office;WordProcessor;Java;" \
+		false
 
 post-build:
 	@cd ${WRKDIR} && ${MV} 'dist' ${PORTNAME}

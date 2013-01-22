@@ -26,7 +26,7 @@ PORTDOCS=	*
 
 DESKTOP_ENTRIES="Me and My Shadow" \
 		"Puzzle/platform game" \
-		"meandmyshadow.png" \
+		"${PREFIX}/share/pixmaps/meandmyshadow.png" \
 		"meandmyshadow" \
 		"Game;LogicGame;" \
 		false

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A GTK+ implementation of Conway's Game of Life
+COMMENT=	GTK+ implementation of Conway's Game of Life
 
 LICENSE=	GPLv2
 
@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="GtkLife" \
 		"Play Conway's Game of Life" \
 		"gtklife" \
 		"gtklife" \
-		"Application;Game;Simulation;" \
+		"Game;Simulation;" \
 		${STARTUP_NOTIFY}
 
 OPTIONS_DEFINE=	GTK2

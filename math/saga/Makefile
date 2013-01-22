@@ -33,7 +33,7 @@ USE_DOS2UNIX=	dlg_about.cpp
 MAN1=		saga_cmd.1 saga_gui.1
 
 DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga_icon_32.xpm" \
-			"saga_gui" "Application;Math;" true
+			"saga_gui" "Science;Geoscience;Math;" true
 
 OPTIONS_DEFINE=	UNICODE PYTHON HARU VIGRA
 OPTIONS_DEFAULT=	UNICODE PYTHON
