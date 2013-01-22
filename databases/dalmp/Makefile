@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dalmp
-# Date created:		06 Nov 2010
-# Whom:			Nicolas de Bari Embriz <nbari@dalmp.com>
-#
+# Created by: Nicolas de Bari Embriz <nbari@dalmp.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dalmp
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
