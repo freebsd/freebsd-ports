@@ -1,0 +1,5 @@
+jshon parses, reads and creates JSON. It is designed to be as usable as possible
+from within the shell and replaces fragile adhoc parsers made from grep/sed/awk
+as well as heavyweight one-line parsers made from perl/python.
+
+WWW: http://kmkeen.com/jshon/
