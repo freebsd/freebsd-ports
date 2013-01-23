@@ -530,6 +530,13 @@ GH_PROJECT?=	${PORTNAME}
 GH_TAGNAME?=	${DISTVERSION}
 .endif
 .endif
+#
+# Another way to simplify distfile fetching from GitHub, eliminating the need
+# to track 7-digit commits for each distfile, is to use the following:
+# 
+# MASTER_SITES=	https://github.com/GH_ACCOUNT/${PORTNAME}/archive/${DISTVERSION}.tar.gz?dummy=/
+# FETCH_ARGS=	-prR
+#
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+= \
