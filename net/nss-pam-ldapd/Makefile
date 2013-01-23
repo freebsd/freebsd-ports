@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/
 
-MAINTAINER?=		rflynn@acsalaska.net
+MAINTAINER?=		ports@FreeBSD.org
 COMMENT?=		Advanced fork of nss_ldap
 
 LICENSE=		LGPL21 LGPL3

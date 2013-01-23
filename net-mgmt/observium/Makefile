@@ -1,10 +1,6 @@
-# Ports collection makefile for:	observium
-# Date created:				2010-02-12
-# Whom:					rflynn@acsalaska.net
-#
+# Created by: rflynn@acsalaska.net
 # $Redports: melflynn/net-mgmt/observium/Makefile 2134 2012-02-21 13:14:38Z melflynn $
 # $FreeBSD$
-#
 
 PORTNAME=	observium
 PORTVERSION=	0.11.5.2261
@@ -16,7 +12,7 @@ DISTNAME=	${PORTNAME}-latest
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	rflynn@acsalaska.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
