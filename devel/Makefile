@@ -4022,6 +4022,7 @@
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
+    SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-railsless-deploy
