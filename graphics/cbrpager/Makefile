@@ -3,7 +3,7 @@
 
 PORTNAME=	cbrpager
 PORTVERSION=	0.9.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://jcoppens.com/soft/cbrpager/img/:icons

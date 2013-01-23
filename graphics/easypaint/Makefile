@@ -7,7 +7,7 @@
 
 PORTNAME=	easypaint
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 DISTNAME=	140877-easyPaint

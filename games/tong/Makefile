@@ -3,6 +3,7 @@
 
 PORTNAME=	tong
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nongnu.org/tong/
 

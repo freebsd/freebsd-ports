@@ -3,6 +3,7 @@
 
 PORTNAME=	pymp
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://jdolan.dyndns.org/files/
 DIST_SUBDIR=	python

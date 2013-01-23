@@ -3,6 +3,7 @@
 
 PORTNAME=	boxer
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/boxc/${PORTNAME:C/^b/B/}%20-%20the%20Box%20GUI/${DISTNAME}/ \
 		http://boxc.sourceforge.net/_images/:icons

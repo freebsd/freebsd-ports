@@ -3,7 +3,7 @@
 PORTNAME=	qsvn
 DISTVERSION=	0.8.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.anrichter.net/projects/qsvn/chrome/site/
 

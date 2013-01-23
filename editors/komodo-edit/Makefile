@@ -6,7 +6,7 @@
 
 PORTNAME=	komodo-edit
 PORTVERSION=	6.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
 DISTNAME=	Komodo-Edit-${PORTVERSION}-8334-linux-libcpp6-x86

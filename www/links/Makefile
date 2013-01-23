@@ -7,6 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://links.twibright.com/download/ LOCAL/bf

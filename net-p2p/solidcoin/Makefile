@@ -7,7 +7,7 @@
 
 PORTNAME=	solidcoin
 PORTVERSION=	2.041
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	http://solidcoin.info/downloads/ \
 		http://dl.dropbox.com/u/47582909/

@@ -3,7 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://www.mariusnet.com/files/Marathon/
 PKGNAMEPREFIX=	alephone-

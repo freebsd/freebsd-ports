@@ -7,6 +7,7 @@
 
 PORTNAME=	hfsexplorer
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	SF/catacombae/HFSExplorer/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-0_21-src

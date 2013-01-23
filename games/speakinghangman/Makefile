@@ -2,6 +2,7 @@
 
 PORTNAME=	speakinghangman
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.athenasoft.net/hangman/ \
 		http://www.athenasoft.net/assets/images/hangman/:icons

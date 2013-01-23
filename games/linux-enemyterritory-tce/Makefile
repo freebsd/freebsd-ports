@@ -3,6 +3,7 @@
 
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.49
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://dragons-perch.net/tce/
 PKGNAMEPREFIX=	linux-
