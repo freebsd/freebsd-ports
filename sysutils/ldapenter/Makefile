@@ -1,16 +1,12 @@
-# Ports collection makefile for:	ldapenter
-# Date created:				08 Jan 2012
-# Whom:					rflynn@acsalaska.net
-#
+# Created by: rflynn@acsalaska.net
 # $FreeBSD$
-#
 
 PORTNAME=	ldapenter
 PORTVERSION=	0.2.0
 CATEGORIES=	sysutils editors net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	rflynn@acsalaska.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add/Modify LDAP entries using template forms
 
 LICENSE=	BSD
