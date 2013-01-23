@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Net-LDAP-Server-Test
-# Date created:		2012-03-21
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: swills@
 # $FreeBSD$
 #
 
 PORTNAME=	Net-LDAP-Server-Test
-PORTVERSION=	0.14
+PORTVERSION=	0.16
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 #MASTER_SITE_SUBDIR=	CPAN:KARMAN
