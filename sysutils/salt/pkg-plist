@@ -618,6 +618,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/runners/cache.py
 %%PYTHON_SITELIBDIR%%/salt/runners/cache.pyc
 %%PYTHON_SITELIBDIR%%/salt/runners/cache.pyo
+%%PYTHON_SITELIBDIR%%/salt/runners/fileserver.py
+%%PYTHON_SITELIBDIR%%/salt/runners/fileserver.pyc
+%%PYTHON_SITELIBDIR%%/salt/runners/fileserver.pyo
 %%PYTHON_SITELIBDIR%%/salt/runners/jobs.py
 %%PYTHON_SITELIBDIR%%/salt/runners/jobs.pyc
 %%PYTHON_SITELIBDIR%%/salt/runners/jobs.pyo
