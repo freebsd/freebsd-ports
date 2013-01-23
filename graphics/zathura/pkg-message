@@ -2,7 +2,6 @@
 
     In order to read documents, zathura need at least one plugin. Such
     plugins are in graphics/zathura-* ports. If you want to read pdf files,
-    install the graphics/zathura-pdf-poppler or graphics/zathura-pdf-mupdf
-    port.
+    install the graphics/zathura-pdf-poppler port.
 
 ===============================================================================
