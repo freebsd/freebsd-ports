@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d03202c-6559-11e2-a389-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>24.0.1312.56</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[151008] High CVE-2013-0839: Use-after-free in canvas font
+	    handling. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[170532] Medium CVE-2013-0840: Missing URL validation when opening
+	    new windows.</p>
+	  <p>[169770] High CVE-2013-0841: Unchecked array index in content
+	    blocking. Credit to Google Chrome Security Team (Chris Evans).</p>
+	  <p>[166867] Medium CVE-2013-0842: Problems with NULL characters
+	    embedded in paths. Credit to Google Chrome Security Team (Jüri
+	    Aedla).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0839</cvename>
+      <cvename>CVE-2013-0840</cvename>
+      <cvename>CVE-2013-0841</cvename>
+      <cvename>CVE-2013-0842</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2013-01-22</discovery>
+      <entry>2013-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1827f213-633e-11e2-8d93-c8600054b392">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
