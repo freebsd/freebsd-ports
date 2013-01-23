@@ -1,3 +1,4 @@
+bin/mkd2latex
 bin/mkd2html
 bin/mkd2man
 include/soldout/array.h
