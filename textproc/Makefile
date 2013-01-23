@@ -336,6 +336,7 @@
     SUBDIR += jing
     SUBDIR += jq
     SUBDIR += jrefentry
+    SUBDIR += jshon
     SUBDIR += kbedic
     SUBDIR += kdiff3
     SUBDIR += kmfl-european-latin
