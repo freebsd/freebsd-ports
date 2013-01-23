@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	3.2.11
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,10 +17,10 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-activeresource>=${PORTVERSION}:${PORTSDIR}/www/rubygem-activeresource \
 		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
 		rubygem-rake>=10.0.3:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-sass-rails>=3.2.5:${PORTSDIR}/textproc/rubygem-sass-rails \
+		rubygem-sass-rails>=3.2.6:${PORTSDIR}/textproc/rubygem-sass-rails \
 		rubygem-coffee-rails>=3.2.2:${PORTSDIR}/devel/rubygem-coffee-rails \
-		rubygem-jquery-rails>=2.1.4:${PORTSDIR}/www/rubygem-jquery-rails \
-		rubygem-sqlite3>=1.3.6:${PORTSDIR}/databases/rubygem-sqlite3 \
+		rubygem-jquery-rails>=2.2.0:${PORTSDIR}/www/rubygem-jquery-rails \
+		rubygem-sqlite3>=1.3.7:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-uglifier>=1.3.0:${PORTSDIR}/www/rubygem-uglifier \
 		rubygem-bundler>=1.1.5:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-treetop>=1.4.12:${PORTSDIR}/devel/rubygem-treetop \
@@ -27,7 +28,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-tzinfo>=0.3.35:${PORTSDIR}/devel/rubygem-tzinfo \
 		rubygem-builder>=3.0.4:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-i18n>=0.6.1:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-rack>=1.4.3:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack>=1.4.4:${PORTSDIR}/www/rubygem-rack \
 		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		node:${PORTSDIR}/www/node
 
