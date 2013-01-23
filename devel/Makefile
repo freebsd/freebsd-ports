@@ -1329,7 +1329,6 @@
     SUBDIR += p4ftpd
     SUBDIR += p4genpatch
     SUBDIR += p4p
-    SUBDIR += p4v
     SUBDIR += p4web
     SUBDIR += p5-AI-Pathfinding-AStar
     SUBDIR += p5-AI-Prolog
