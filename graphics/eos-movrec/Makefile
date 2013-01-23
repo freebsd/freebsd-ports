@@ -3,7 +3,7 @@
 
 PORTNAME=	eos-movrec
 DISTVERSION=	0.3.1_beta
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3_beta/ \
 		SF/nemysisfreebsdp/:icons

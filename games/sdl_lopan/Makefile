@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl_lopan
 PORTVERSION=	10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/sdllopan/downloads/ \
 		http://www.linuxmotors.com/sdllopan/:icons

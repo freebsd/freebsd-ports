@@ -7,7 +7,7 @@
 
 PORTNAME=	brikx
 PORTVERSION=	0.4.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/brikx/Brikx/${PORTVERSION}

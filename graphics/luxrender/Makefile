@@ -7,7 +7,7 @@
 
 PORTNAME=	luxrender
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://src.luxrender.net/lux/archive/ \
 		http://freebsd.nsu.ru/distfiles/luxrender/

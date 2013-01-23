@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/

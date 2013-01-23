@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \

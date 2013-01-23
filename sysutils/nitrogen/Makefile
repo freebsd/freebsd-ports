@@ -3,7 +3,7 @@
 
 PORTNAME=	nitrogen
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://projects.l3ib.org/nitrogen/files/
 

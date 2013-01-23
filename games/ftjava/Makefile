@@ -3,7 +3,7 @@
 
 PORTNAME=	ftjava
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
 		http://home.roadrunner.com/~davisje/ftjava/:doc1

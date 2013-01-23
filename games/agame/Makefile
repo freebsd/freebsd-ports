@@ -7,7 +7,7 @@
 
 PORTNAME=	agame
 PORTVERSION=	1577
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://zevv.nl/play/code/game/ \
 		http://critical.ch/distfiles/ \

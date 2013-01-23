@@ -3,6 +3,7 @@
 
 PORTNAME=	clipgrab
 PORTVERSION=	3.2.0.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://clipgrab.de/download/ \
 		http://vanbittern.org/

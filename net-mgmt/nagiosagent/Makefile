@@ -7,7 +7,7 @@
 
 PORTNAME=	NagiosAgent
 PORTVERSION=	1.2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netpatch.ru/projects/nagiosagent/ \
 		http://www.netpatch.ru/projects/nagiosagent/old/

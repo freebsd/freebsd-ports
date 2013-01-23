@@ -3,7 +3,7 @@
 
 PORTNAME=	rocksndiamonds
 PORTVERSION=	3.3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://www.jb-line.de/rnd/ \

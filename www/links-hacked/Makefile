@@ -7,7 +7,7 @@
 
 PORTNAME=	links-hacked
 DISTVERSION=	101110
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/ http://links-hacked.nm.ru/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	omegaT
 DISTVERSION=	2.5.5_01
+PORTREVISION=	1
 CATEGORIES=	editors java x11
 MASTER_SITES=	SF/${PORTNAME:L}/OmegaT%20-%20Standard/OmegaT%202.5.5%20update%201/
 DISTNAME=	OmegaT_2.5.5_01_Source

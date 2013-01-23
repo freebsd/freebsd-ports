@@ -7,7 +7,7 @@
 
 PORTNAME=	flobopuyo
 PORTVERSION=	0.20
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
 		http://mirror.amdmi3.ru/distfiles/

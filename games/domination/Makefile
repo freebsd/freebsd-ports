@@ -2,6 +2,7 @@
 
 PORTNAME=	domination
 PORTVERSION=	1.1.1.2
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game  \
 		http://domination.sourceforge.net/maps/

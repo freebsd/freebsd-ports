@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlroids
 PORTVERSION=	1.3.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons

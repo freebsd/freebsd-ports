@@ -3,7 +3,7 @@
 
 PORTNAME=	darkplaces
 PORTVERSION=	20110628
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}

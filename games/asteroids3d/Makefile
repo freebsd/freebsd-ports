@@ -3,7 +3,7 @@
 
 PORTNAME=	asteroids3d
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/a3d/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/:icons

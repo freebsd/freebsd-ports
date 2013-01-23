@@ -3,6 +3,7 @@
 
 PORTNAME=	minecraft-client
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/:minecraft \
 		http://media-mcw.cursecdn.com/c/c5/:icon

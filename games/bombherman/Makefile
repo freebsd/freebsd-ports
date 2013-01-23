@@ -4,6 +4,7 @@
 
 PORTNAME=	bomb-her-man
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GH \
 		SF/nemysisfreebsdp/:icons
