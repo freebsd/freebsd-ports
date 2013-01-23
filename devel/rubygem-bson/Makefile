@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       bson
-PORTVERSION=	1.6.4
+PORTVERSION=	1.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
