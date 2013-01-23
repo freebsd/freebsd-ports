@@ -1,12 +1,8 @@
-# New ports collection makefile for:	asterisk
-# Date created:				17 October 2003
-# Whom:					Maxim Sobolev <sobomax@portaone.com>
-#
+# Created by: Maxim Sobolev <sobomax@portaone.com>
 # $FreeBSD$
-#
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.20.0
+PORTVERSION=	1.8.20.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
