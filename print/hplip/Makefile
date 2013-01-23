@@ -3,6 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.12.11
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -23,7 +24,8 @@ CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	2.5+
-USE_GNOME=	pkgconfig pygobject
+USE_GNOME=	pygobject
+USE_PKGCONFIG=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
@@ -166,7 +168,17 @@ post-patch:
 		${FILES4FIX:S,^,${WRKSRC}/,}
 	${REINPLACE_CMD} -e 's,%USB_INCLUDE%,${USB_INCLUDE},' \
 		${WRKSRC}/installer/core_install.py
-.if defined(NOPORTDOCS)
+	cd ${WRKSRC} && \
+		${REINPLACE_CMD} -e "s,^#!/usr/bin/python,#!/usr/bin/env python," \
+			base/magic.py \
+			config_usb_printer.py \
+			logcapture.py \
+			makeuri.py \
+			setup.py \
+			ui/upgradeform.py \
+			uninstall.py \
+			upgrade.py
+.if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
