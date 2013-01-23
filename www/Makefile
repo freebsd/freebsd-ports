@@ -1694,6 +1694,7 @@
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
+    SUBDIR += rubygem-async_sinatra
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chef-server-api
