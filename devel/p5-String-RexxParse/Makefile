@@ -1,12 +1,8 @@
-# New ports collection makefile for:	String-RexxParse
-# Date created:				Mon Jan  1 11:16:32 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	String-RexxParse
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
