@@ -3632,7 +3632,6 @@ deskutils/preferences.app|deskutils/preferences|2012-08-07|Project renamed
 www/trac-ctxtnavadd||2012-08-09|Functionality of this plugin merged into Trac itself - see trac.web.chrome.add_ctxtnav function
 net-p2p/qbittorrent-29|net-p2p/qbittorrent|2012-08-11|Moved to match port name
 net-p2p/qbittorrent-29-nox11|net-p2p/qbittorrent-nox11|2012-08-11|Moved to match port name
-sysutils/cfengine|sysutils/cfengine22|2012-08-14|Standardize port naming
 sysutils/cfengine-legacy|sysutils/cfengine32|2012-08-14|Standardize port naming
 sysutils/cfengine3|sysutils/cfengine33|2012-08-14|Standardize port naming
 lang/erlang-lite|lang/erlang|2012-08-15|Redundant port removed
@@ -3985,7 +3984,7 @@ mail/horde4-webmail|mail/horde-webmail|2012-12-18|Move horde4-* apps to horde-*
 textproc/hs-xml2html||2012-12-20|Removed: this package is obsolete
 sysutils/makefs||2012-12-21|Has expired: Part of base in an earlier version for every supported FreeBSD version
 textproc/docproj-jadetex|textproc/docproj|2013-01-03|Moved: Replace by textproc/docproj
-ports-mgmt/portmanager||2013-01-06|Has expired: Does not support modern ports features such as MOVED, is lacking upstream and active contributions, and does not support pkgng.  Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng.
+ports-mgmt/portmanager||2013-01-06|Has expired: Does not support modern ports features such as MOVED, is lacking upstream and active contributions, and does not support pkgng.  Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng
 net-im/openfetion||2013-01-06|Has expired: Abandoned upstream
 textproc/libpathan||2013-01-06|Has expired: Does not build and upstream has discontinued the project and advises that it has been replaced by textproc/xqilla
 java/sun-wtk||2013-01-06|Has expired: no more public distfiles, merged with Java ME SDK 3.0 upstream
