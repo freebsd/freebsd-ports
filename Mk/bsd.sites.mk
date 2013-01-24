@@ -531,11 +531,10 @@ GH_TAGNAME?=	${DISTVERSION}
 .endif
 .endif
 #
-# Another way to simplify distfile fetching from GitHub, eliminating the need
-# to track 7-digit commits for each distfile, is to use the following:
-# 
-# MASTER_SITES=	https://github.com/GH_ACCOUNT/${PORTNAME}/archive/${DISTVERSION}.tar.gz?dummy=/
-# FETCH_ARGS=	-prR
+# GitHub files can also be obtained, without the commit hashes, by doing:
+#
+# MASTER_SITES=	http://github.com/accountname/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
+# FETCH_ARGS=	-Fpr
 #
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
