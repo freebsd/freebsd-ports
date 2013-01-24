@@ -2,6 +2,10 @@
 %%SITE_PERL%%/Chart/Clicker.pm
 %%SITE_PERL%%/Chart/Clicker/Axis.pm
 %%SITE_PERL%%/Chart/Clicker/Axis/DateTime.pm
+%%SITE_PERL%%/Chart/Clicker/Axis/DivisionType/LinearRounded.pm
+%%SITE_PERL%%/Chart/Clicker/Axis/DivisionType/LinearExpandGraph.pm
+%%SITE_PERL%%/Chart/Clicker/Axis/DivisionType/Exact.pm
+%%SITE_PERL%%/Chart/Clicker/Axis/DivisionType.pm
 %%SITE_PERL%%/Chart/Clicker/Component.pm
 %%SITE_PERL%%/Chart/Clicker/Container.pm
 %%SITE_PERL%%/Chart/Clicker/Context.pm
@@ -40,6 +44,7 @@
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Decoration
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Data/Series
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Data
+@dirrmtry %%SITE_PERL%%/Chart/Clicker/Axis/DivisionType
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Axis
 @dirrmtry %%SITE_PERL%%/Chart/Clicker
 @dirrmtry %%SITE_PERL%%/Chart
