@@ -218,7 +218,6 @@ CONFIGURE_ARGS+=--disable-scrobbler
 .endif
 
 .if ${PORT_OPTIONS:MOSS4}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/oss/include/sys/soundcard.h:${PORTSDIR}/audio/oss
 PLIST_SUB+=	OSS4PLUGIN=""
 CONFIGURE_ARGS+=--enable-oss4
 .else
