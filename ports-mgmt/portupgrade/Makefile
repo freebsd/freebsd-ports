@@ -3,6 +3,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.10.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
@@ -14,13 +15,7 @@ COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 LICENSE=	BSD
 
-NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	DOCS
-OPTIONS_RADIO=	DB_OVERRIDE
-OPTIONS_RADIO_DB_OVERRIDE=	BDB4 BDB1
-OPTIONS_DEFAULT=	BDB4 DOCS
-BDB1_DESC=	Use Berkeley DB 1
-BDB4_DESC=	Use Berkeley DB >=2
 
 CONFLICTS_INSTALL=	portupgrade-devel-*
 
@@ -59,13 +54,8 @@ INSTALL_TARGET=		install
 INSTALL_TARGET+=	install-doc
 .endif
 
-.if ${PORT_OPTIONS:MBDB4}
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.elif ${PORT_OPTIONS:MBDB1}
-# For PKG_DBDRIVER={bdb1_btree,bdb1_hash}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
-.endif
 
 # parsedate is needed for date globbing
 .if ${RUBY_VER} == 1.9
@@ -78,15 +68,6 @@ PLIST_SUB+=	SCRIPT=""
 MAKE_ENV+=	NEED_COMPAT_SCRIPT=yes
 .else
 PLIST_SUB+=	SCRIPT="@comment "
-.endif
-
-pre-extract:
-.if exists(${RUBY_SITEARCHLIBDIR}/bdb.so) && ${PORT_OPTIONS:MBDB1}
-	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} "BDB1 is defined but databases/ruby-bdb port installed."
-	@${ECHO_MSG} "Remove ruby-bdb or redefine options."
-	@${ECHO_MSG} "================================================================="
-	@exit 1
 .endif
 
 post-install:
