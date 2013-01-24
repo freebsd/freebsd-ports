@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Bio-Graphics
-# Date created:				30 Dec 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: wen@FreeBSD.org
 # $FreeBSD$
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	2.31
+PORTVERSION=	2.32
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
