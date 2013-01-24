@@ -89,6 +89,7 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/DATS/linheap_binomial.dats
 %%ATS_LIBDIR%%/libats/DATS/linmap_avltree.dats
 %%ATS_LIBDIR%%/libats/DATS/linmap_rbtree.dats
+%%ATS_LIBDIR%%/libats/DATS/linmap_skiplist.dats
 %%ATS_LIBDIR%%/libats/DATS/linordset_randbst.dats
 %%ATS_LIBDIR%%/libats/DATS/linqueue_arr.dats
 %%ATS_LIBDIR%%/libats/DATS/linqueue_lst.dats
@@ -132,6 +133,7 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/SATS/linheap_binomial.sats
 %%ATS_LIBDIR%%/libats/SATS/linmap_avltree.sats
 %%ATS_LIBDIR%%/libats/SATS/linmap_rbtree.sats
+%%ATS_LIBDIR%%/libats/SATS/linmap_skiplist.sats
 %%ATS_LIBDIR%%/libats/SATS/linordset_randbst.sats
 %%ATS_LIBDIR%%/libats/SATS/linqueue_arr.sats
 %%ATS_LIBDIR%%/libats/SATS/linqueue_lst.sats
@@ -144,7 +146,9 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/SATS/parworkshop.sats
 %%ATS_LIBDIR%%/libats/SATS/rarray.sats
 %%ATS_LIBDIR%%/libats/SATS/refcount.sats
+%%ATS_LIBDIR%%/libats/SATS/refcountr.sats
 %%ATS_LIBDIR%%/libats/SATS/regexp.sats
+%%ATS_LIBDIR%%/libats/SATS/sobjptr.sats
 %%ATS_LIBDIR%%/libats/SATS/vector.sats
 %%ATS_LIBDIR%%/libats/lex/lexing.dats
 %%ATS_LIBDIR%%/libats/lex/lexing.sats
@@ -382,6 +386,7 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/DATS/string.dats
 %%ATS_LIBDIR%%/prelude/DATS/syndef.dats
 %%ATS_LIBDIR%%/prelude/DATS/unsafe.dats
+%%ATS_LIBDIR%%/prelude/DATS/vsubrw.dats
 %%ATS_LIBDIR%%/prelude/HATS/lmacrodef.hats
 %%ATS_LIBDIR%%/prelude/HATS/number.hats
 %%ATS_LIBDIR%%/prelude/HATS/syndef.hats

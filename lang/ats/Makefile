@@ -1,13 +1,8 @@
-# New ports collection makefile for: ats
-# Date created: September 29 2011
-# Whom: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	ats
 PORTVERSION=	${ATS_VER}
-PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-lang/${PORTNAME}-lang/${ATS_IMPL}-${PORTVERSION}
@@ -15,7 +10,7 @@ DISTNAME=	${PORTNAME}-lang-${ATS_IMPL}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
-COMMENT=	A language with a type system rooted in the Applied Type System
+COMMENT=	Language with a type system rooted in the Applied Type System
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
@@ -48,7 +43,8 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 post-patch:
 	${SED} -i '' -e 's/gcc/${CC}/' \
 	    ${WRKSRC}/ccomp/runtime/GCATS/Makefile \
-	    ${WRKSRC}/utils/scripts/Makefile
+	    ${WRKSRC}/utils/scripts/Makefile \
+	    ${WRKSRC}/libatsdoc/Makefile
 	${SED} -i '' -e 's/ATSCCOMP_def "gcc"/ATSCCOMP_def "${CC}"/' \
 	    ${WRKSRC}/utils/scripts/basics.dats
 	${SED} -i '' -e 's/argv_p = "gcc"/argv_p = "${CC}"/' \
@@ -64,7 +60,7 @@ post-configure:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && \
 	${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
