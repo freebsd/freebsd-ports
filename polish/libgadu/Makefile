@@ -1,17 +1,14 @@
-# New ports collection makefile for:	libgadu
-# Date created:		29 December 2005
-# Whom:			Aleksander Fafula <alex@BSDGuru.org>
-#
+# Created by: Aleksander Fafula <alex@BSDGuru.org>
 # $FreeBSD$
 
 PORTNAME=	libgadu
 DISTVERSION=	1.11.2
 PORTEPOCH=	1
-CATEGORIES=	polish net
+CATEGORIES=	polish net-im
 MASTER_SITES=	http://toxygen.net/libgadu/files/
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	This library is used by many IMs with Gadu-Gadu support
+COMMENT=	Instant messaging library for Gadu-Gadu protocol
 
 LICENSE=	LGPL21
 
