@@ -1,0 +1,43 @@
+--- ./src/CMakeLists.txt.orig	2013-01-23 23:33:16.000000000 +0100
++++ ./src/CMakeLists.txt	2013-01-24 21:41:57.000000000 +0100
+@@ -43,6 +43,7 @@
+ 		${CMAKE_INSTALL_PREFIX}/bin
+ )
+ 
++if (INSTALL_DOCS)
+ # install credits
+ install(
+ 	FILES
+@@ -50,7 +51,9 @@
+ 	DESTINATION
+ 		${CMAKE_INSTALL_PREFIX}/share/doc/gnome-pie
+ )
++endif()
+ 
++if (INSTALL_NLS)
+ # install locales
+ install(
+ 	DIRECTORY
+@@ -61,6 +64,7 @@
+ 	PATTERN *.pot EXCLUDE
+ 	PATTERN *.sh EXCLUDE
+ )
++endif()
+ 
+ # install themes
+ install(
+@@ -95,11 +99,12 @@
+ 		${CMAKE_INSTALL_PREFIX}/share/applications
+ )
+ 
++if (NOT NO_INSTALL_MANPAGES)
+ # install manpage
+ install(
+ 	FILES
+ 		${CMAKE_SOURCE_DIR}/resources/gnome-pie.1
+ 	DESTINATION
+-		${CMAKE_INSTALL_PREFIX}/share/man/man1
++		${CMAKE_INSTALL_PREFIX}/man/man1
+ )
+-
++endif()

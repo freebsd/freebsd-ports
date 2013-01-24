@@ -1,0 +1,98 @@
+@comment FreeBSD$
+bin/gnome-pie
+%%DESKTOPDIR%%/gnome-pie.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%DATADIR%%/themes/adwaita/arrow.svg
+%%DATADIR%%/themes/adwaita/caption_mask.svg
+%%DATADIR%%/themes/adwaita/icon_active.svg
+%%DATADIR%%/themes/adwaita/icon_inactive.svg
+%%DATADIR%%/themes/adwaita/preview.png
+%%DATADIR%%/themes/adwaita/ring.svg
+%%DATADIR%%/themes/adwaita/theme.xml
+%%DATADIR%%/themes/bright/arrow.svg
+%%DATADIR%%/themes/bright/caption.svg
+%%DATADIR%%/themes/bright/caption_mask.svg
+%%DATADIR%%/themes/bright/gloss.svg
+%%DATADIR%%/themes/bright/icon_active.svg
+%%DATADIR%%/themes/bright/icon_inactive.svg
+%%DATADIR%%/themes/bright/preview.png
+%%DATADIR%%/themes/bright/ring.svg
+%%DATADIR%%/themes/bright/theme.xml
+%%DATADIR%%/themes/elementary/icon_bg.svg
+%%DATADIR%%/themes/elementary/preview.png
+%%DATADIR%%/themes/elementary/ring.svg
+%%DATADIR%%/themes/elementary/slice_caption.svg
+%%DATADIR%%/themes/elementary/theme.xml
+%%DATADIR%%/themes/funky/bg.svg
+%%DATADIR%%/themes/funky/blue.svg
+%%DATADIR%%/themes/funky/caption.svg
+%%DATADIR%%/themes/funky/icon_bg.svg
+%%DATADIR%%/themes/funky/icon_fg.svg
+%%DATADIR%%/themes/funky/preview.png
+%%DATADIR%%/themes/funky/red.svg
+%%DATADIR%%/themes/funky/slice_caption.svg
+%%DATADIR%%/themes/funky/star.svg
+%%DATADIR%%/themes/funky/theme.xml
+%%DATADIR%%/themes/gloss/arrow.svg
+%%DATADIR%%/themes/gloss/glow_bg.svg
+%%DATADIR%%/themes/gloss/icon_bg.svg
+%%DATADIR%%/themes/gloss/icon_fg.svg
+%%DATADIR%%/themes/gloss/icon_fg_active.svg
+%%DATADIR%%/themes/gloss/icon_mask.svg
+%%DATADIR%%/themes/gloss/preview.png
+%%DATADIR%%/themes/gloss/slice_caption.svg
+%%DATADIR%%/themes/gloss/theme.xml
+%%DATADIR%%/themes/minimalistic_text/bg.svg
+%%DATADIR%%/themes/minimalistic_text/fg.svg
+%%DATADIR%%/themes/minimalistic_text/preview.png
+%%DATADIR%%/themes/minimalistic_text/theme.xml
+%%DATADIR%%/themes/o-pie/arrow.svg
+%%DATADIR%%/themes/o-pie/caption1.svg
+%%DATADIR%%/themes/o-pie/caption2.svg
+%%DATADIR%%/themes/o-pie/preview.png
+%%DATADIR%%/themes/o-pie/ring.svg
+%%DATADIR%%/themes/o-pie/theme.xml
+%%DATADIR%%/themes/slim/bg.svg
+%%DATADIR%%/themes/slim/dot.svg
+%%DATADIR%%/themes/slim/preview.png
+%%DATADIR%%/themes/slim/slice_caption.svg
+%%DATADIR%%/themes/slim/theme.xml
+%%DATADIR%%/themes/unity/arrow.svg
+%%DATADIR%%/themes/unity/caption.svg
+%%DATADIR%%/themes/unity/caption_mask.svg
+%%DATADIR%%/themes/unity/gloss.svg
+%%DATADIR%%/themes/unity/icon_active.svg
+%%DATADIR%%/themes/unity/icon_inactive.svg
+%%DATADIR%%/themes/unity/preview.png
+%%DATADIR%%/themes/unity/ring.svg
+%%DATADIR%%/themes/unity/theme.xml
+%%DATADIR%%/ui/icon_select.ui
+%%DATADIR%%/ui/preferences.ui
+%%DATADIR%%/ui/rename_pie.ui
+%%DATADIR%%/ui/settings.ui
+%%DATADIR%%/ui/slice_select.ui
+%%DATADIR%%/ui/trigger_select.ui
+share/icons/hicolor/scalable/apps/gnome-pie-symbolic.svg
+share/icons/hicolor/scalable/apps/gnome-pie.svg
+%%NLS%%share/locale/bg/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gnomepie.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gnomepie.mo
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/themes/unity
+@dirrm %%DATADIR%%/themes/slim
+@dirrm %%DATADIR%%/themes/o-pie
+@dirrm %%DATADIR%%/themes/minimalistic_text
+@dirrm %%DATADIR%%/themes/gloss
+@dirrm %%DATADIR%%/themes/funky
+@dirrm %%DATADIR%%/themes/elementary
+@dirrm %%DATADIR%%/themes/bright
+@dirrm %%DATADIR%%/themes/adwaita
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
