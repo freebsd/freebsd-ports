@@ -151,7 +151,7 @@ CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
+CONFIGURE_ARGS+=	--enable-maintainer-mode
 .endif
 
 .if ${PORT_OPTIONS:MDILLO}
