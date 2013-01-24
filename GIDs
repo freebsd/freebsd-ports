@@ -99,6 +99,7 @@ saned:*:194:
 radns:*:195:
 mcserver:*:199:
 sympa:*:200:
+privoxy:*:201:
 dspam:*:202:
 yate:*:204:
 gnugk:*:205:
