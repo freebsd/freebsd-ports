@@ -4185,6 +4185,7 @@
     SUBDIR += subcommander
     SUBDIR += subcommander2
     SUBDIR += subversion
+    SUBDIR += subversion-static
     SUBDIR += subversion16
     SUBDIR += subversive
     SUBDIR += sunterlib
