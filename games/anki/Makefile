@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.4
-CATEGORIES=	games
+PORTVERSION=	2.0.6
+CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Flashcard trainer with spaced repetition
 
 LICENSE=	AGPLv3 # (or later)
@@ -29,30 +30,32 @@ USE_GETTEXT=	run
 MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${SED} -e 's|/usr/share/|${PYTHON_SITELIBDIR}/|' \
-		< ${WRKSRC}/runanki > ${WRKDIR}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
+		${WRKSRC}/runanki
 
 do-build:
-	@-${PYTHON_CMD} -m compileall -f ${WRKSRC}
-	@-${PYTHON_CMD} -O -m compileall -f ${WRKSRC}
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	(cd ${WRKDIR} && ${INSTALL_SCRIPT} ${PORTNAME} ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 ${MANPREFIX}/man/man1)
-	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/runanki ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${DATADIR}
 .for i in anki aqt designer locale oldanki tests tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} \
-		${PYTHON_SITELIBDIR}/${PORTNAME})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${DATADIR})
 .endfor
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} anki.desktop \
-		${DESKTOPDIR})
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
 	@${MKDIR} ${PREFIX}/share/mime/packages
-	(cd ${WRKSRC} && ${INSTALL_DATA} anki.xml \
-		${PREFIX}/share/mime/packages)
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xml \
+		${PREFIX}/share/mime/packages
 	@${MKDIR} ${PREFIX}/share/pixmaps
-	(cd ${WRKSRC} && ${INSTALL_DATA} anki.png anki.xpm \
-		${PREFIX}/share/pixmaps)
+.for p in *.png *.xpm
+	${INSTALL_DATA} ${WRKSRC}/${p} \
+		${PREFIX}/share/pixmaps
+.endfor
 	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
