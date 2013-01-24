@@ -1,20 +1,20 @@
-# Ports collection Makefile for:	MIT Kerberos V
-# Date created:				6/5/1998
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		krb5
 PORTVERSION=		1.11
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
-PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
+PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
+PATCH_DIST_STRIP=	-p2
+
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
+
+LICENSE=		MIT
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
@@ -25,19 +25,18 @@ KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-USE_CSTD=		gnu89
+USE_CSTD=		gnu99
 USE_AUTOTOOLS=		libtool
 USE_GETTEXT=		yes
-CONFIGURE_ARGS?=	--enable-shared
+CONFIGURE_ARGS?=	--enable-shared --without-system-verto
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
-PATCH_DIST_STRIP=	-p2
 
-LICENSE=		MIT
-
-OPTIONS=		KRB5_PDF "Install krb5 PDF documentation" on \
-			KRB5_HTML "Install HTML documentation" on \
-			DNS_FOR_REALM "enable DNS lookups of Kerberos realm names" off
+OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM
+OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
+KRB5_PDF_DESC=		Install krb5 PDF documentation
+KRB5_HTML_DESC=		Install krb5 HTML documentation
+DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
@@ -46,13 +45,13 @@ LDFLAGS+=		-rpath=${KRB5_HOME}/lib
 .endif
 LDFLAGS+=		-L${LOCALBASE}/lib
 
+USE_OPENSSL=		yes
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DNS_FOR_REALM)
+.if ${PORT_OPTIONS:MDNS_FOR_REALM}
 CONFIGURE_ARGS+=	--enable-dns-for-realm
 .endif
-
-USE_OPENSSL=		yes
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
@@ -89,34 +88,34 @@ post-extract:
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/krb5
 # html documentation
-.if defined(WITH_KRB5_PDF)
+.if ${PORT_OPTIONS:MKRB5_PDF}
 	pdf_files=`${FIND} ${PDF_DOC_DIR} ! -type d`
 	pdf_dirs=`${FIND} ${PDF_DOC_DIR} -type d`
 	for i in $${pdf_dirs}; do \
-		${MKDIR} -p ${PREFIX}/share/doc/krb5/$${i}; \
+		${MKDIR} ${PREFIX}/share/doc/krb5/$${i}; \
 	done; \
 	for i in $${pdf_files}; do \
 		${INSTALL_MAN} $${pdf} ${PREFIX}/share/doc/krb5/$${i}; \
 		${ECHO_CMD} share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done
 .endif
-.if defined(WITH_KRB5_HTML)
+.if ${PORT_OPTIONS:MKRB5_HTML}
 	html_files=`${FIND} ${HTML_DOC_DIR} ! -type d | ${GREP} -v /_sources`
 	html_dirs=`${FIND} ${HTML_DOC_DIR} -type d | ${GREP} -v /_sources`
 	for i in $${html_dirs}; do \
-		${MKDIR} -p ${PREFIX}/share/doc/krb5/$${i}; \
+		${MKDIR} ${PREFIX}/share/doc/krb5/$${i}; \
 	done; \
 	for i in $${html_files}; do \
 		${INSTALL_MAN} $${i} ${PREFIX}/share/doc/krb5/$${i}; \
 		${ECHO_CMD} share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done
 .endif
-.if defined(WITH_KRB5_PDF)
+.if ${PORT_OPTIONS:MKRB5_PDF}
 	for i in $${pdf_dirs}; do \
 		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
-.if defined(WITH_KRB5_HTML)
+.if ${PORT_OPTIONS:MKRB5_HTML}
 	for i in $${html_dirs}; do \
 		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
