@@ -1,12 +1,8 @@
-# Ports collection makefile for: pear-VersionControl_SVN
-# Date created: 30 Oct 2007
-# Whom: Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	VersionControl_SVN
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	glarkin@FreeBSD.org
@@ -22,33 +18,39 @@ RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
 
 CATEGORY=	VersionControl_SVN
 FILES=		SVN.php \
-		SVN/Add.php \
-		SVN/Blame.php \
-		SVN/Cat.php \
-		SVN/Checkout.php \
-		SVN/Cleanup.php \
-		SVN/Commit.php \
-		SVN/Copy.php \
-		SVN/Delete.php \
-		SVN/Diff.php \
-		SVN/Export.php \
-		SVN/Import.php \
-		SVN/Info.php \
-		SVN/List.php \
-		SVN/Log.php \
-		SVN/Merge.php \
-		SVN/Mkdir.php \
-		SVN/Move.php \
-		SVN/Parsers/Log.php \
-		SVN/Propdel.php \
-		SVN/Propget.php \
-		SVN/Proplist.php \
-		SVN/Propset.php \
-		SVN/Resolved.php \
-		SVN/Revert.php \
-		SVN/Status.php \
-		SVN/Switch.php \
-		SVN/Update.php
+		SVN/Command.php \
+		SVN/Command/Add.php \
+		SVN/Command/Blame.php \
+		SVN/Command/Cat.php \
+		SVN/Command/Changelist.php \
+		SVN/Command/Checkout.php \
+		SVN/Command/Cleanup.php \
+		SVN/Command/Commit.php \
+		SVN/Command/Copy.php \
+		SVN/Command/Delete.php \
+		SVN/Command/Diff.php \
+		SVN/Command/Export.php \
+		SVN/Command/Import.php \
+		SVN/Command/Info.php \
+		SVN/Command/List.php \
+		SVN/Command/Log.php \
+		SVN/Command/Merge.php \
+		SVN/Command/Mkdir.php \
+		SVN/Command/Move.php \
+		SVN/Command/Propdel.php \
+		SVN/Command/Propget.php \
+		SVN/Command/Proplist.php \
+		SVN/Command/Propset.php \
+		SVN/Command/Resolved.php \
+		SVN/Command/Revert.php \
+		SVN/Command/Status.php \
+		SVN/Command/Switch.php \
+		SVN/Command/Update.php \
+		SVN/Exception.php \
+		SVN/Parser/Exception.php \
+		SVN/Parser/XML.php \
+		SVN/Parser/XML/Info.php \
+		SVN/Parser/XML/List.php
 EXAMPLES=	example1.php \
 		example_tree.php
 _EXAMPLESDIR=	docs/examples
