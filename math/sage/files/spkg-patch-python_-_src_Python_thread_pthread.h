@@ -1,5 +1,5 @@
 --- python-2.7.3.p0/src/Python/thread_pthread.h.orig	2011-06-11 15:46:28.000000000 +0000
-+++ python-2.7.3.p2/src/Python/thread_pthread.h	2012-04-22 00:23:46.000000000 +0000
++++ python-2.7.3.p3/src/Python/thread_pthread.h	2012-04-22 00:23:46.000000000 +0000
 @@ -38,13 +38,18 @@
  #endif
  #endif
