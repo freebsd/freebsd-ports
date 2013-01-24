@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-10-26 00:44:36.000000000 +0200
-+++ CMakeLists.txt	2012-10-27 00:58:23.706381883 +0200
-@@ -314,30 +314,11 @@
+--- CMakeLists.txt.orig	2013-01-22 18:02:26.000000000 +0100
++++ CMakeLists.txt	2013-01-24 22:23:00.448414543 +0100
+@@ -315,31 +315,11 @@
  ENDIF()
  
  ADD_SUBDIRECTORY(extra)
@@ -27,6 +27,7 @@
 -  IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
 -    ADD_SUBDIRECTORY(internal)
 -  ENDIF()
+-  ADD_SUBDIRECTORY(packaging/rpm-uln)
 -ENDIF()
 +ADD_SUBDIRECTORY(client)
 +ADD_SUBDIRECTORY(libservices)
@@ -36,7 +37,7 @@
  
  INCLUDE(cmake/abi_check.cmake)
  INCLUDE(cmake/tags.cmake)
-@@ -381,11 +362,11 @@
+@@ -383,11 +363,11 @@
  
  INCLUDE(CPack)
  IF(UNIX)
@@ -49,7 +50,7 @@
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
    INSTALL(FILES COPYING LICENSE.mysql 
    DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -411,3 +392,4 @@
+@@ -413,3 +393,4 @@
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
  ENDIF()
