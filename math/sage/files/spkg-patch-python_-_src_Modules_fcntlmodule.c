@@ -1,5 +1,5 @@
 --- python-2.7.3.p0/src/Modules/fcntlmodule.c.orig	2011-06-11 15:46:27.000000000 +0000
-+++ python-2.7.3.p2/src/Modules/fcntlmodule.c	2012-04-22 00:23:34.000000000 +0000
++++ python-2.7.3.p3/src/Modules/fcntlmodule.c	2012-04-22 00:23:34.000000000 +0000
 @@ -97,20 +97,15 @@
  {
  #define IOCTL_BUFSZ 1024
