@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	3.6.1
+PORTVERSION=	4.1.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
@@ -27,55 +27,54 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 
 CONTRIBS=	benchmark \
 		demo \
+		codecs \
 		facet	\
 		grouping \
 		highlighter \
-		icu \
-		instantiated \
-		join	\
+		join \
 		memory \
 		misc \
-		pruning \
 		queries \
-		queryparser	\
-		remote	\
+		queryparser \
+		sandbox \
 		spatial \
-		spellchecker \
-		xml-query-parser
+		suggest
 
-EXTRA_CONTRIBS_BASE=	analyzers
-
-EXTRA_CONTRIBS_DIRS=	kuromoji \
+EXTRA_CONTRIBS_DIRS=	common \
+		icu \
+		kuromoji \
+		morfologik \
 		phonetic \
 		smartcn \
-		stempel
+		stempel \
+		uima
 
 .if ${PORT_OPTIONS:MCONTRIB}
-.for f in ${EXTRA_CONTRIBS_BASE} ${CONTRIBS} ${EXTRA_CONTRIBS_DIRS}
+.for f in ${CONTRIBS}
 PLIST_FILES+=%%JAVAJARDIR%%/${PORTNAME}-${f}-${PORTVERSION}.jar
+.endfor
+.for g in ${EXTRA_CONTRIBS_DIRS}
+PLIST_FILES+=%%JAVAJARDIR%%/${PORTNAME}-analyzers-${g}-${PORTVERSION}.jar
 .endfor
 .endif
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-DEMODIR=	contrib/demo
-
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/core/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
 .if ${PORT_OPTIONS:MCONTRIB}
 . for f in ${CONTRIBS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${f}/${PORTNAME}-${f}-${PORTVERSION}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f}/${PORTNAME}-${f}-${PORTVERSION}.jar ${JAVAJARDIR}
 . endfor
 . for d in ${EXTRA_CONTRIBS_DIRS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${EXTRA_CONTRIBS_BASE}/${d}/${PORTNAME}-${d}-${PORTVERSION}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/analysis/${d}/${PORTNAME}-analyzers-${d}-${PORTVERSION}.jar ${JAVAJARDIR}
 . endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/${EXTRA_CONTRIBS_BASE}/common/${PORTNAME}-${EXTRA_CONTRIBS_BASE}-${PORTVERSION}.jar ${JAVAJARDIR}
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in CHANGES.txt LICENSE.txt NOTICE.txt README.txt
+.for i in CHANGES.txt NOTICE.txt README.txt
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
@@ -83,7 +82,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/${DEMODIR} && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/demo/${PORTNAME}-demo-${PORTVERSION}.jar ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
