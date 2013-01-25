@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
@@ -13,28 +13,17 @@ COMMENT=	A graph based image processing framework
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
 
-OPTIONS=	CAIRO		"Enable Cairo" on \
-		ENSCRIPT	"Enable Enscript" on \
-		FFMPEG		"Enable videos through ffmpeg (BROKEN)" off \
-		GDK		"Enable gdk-pixbuf2 formats support" on \
-		GRAPHVIZ	"Enable Graphviz" on \
-		JP2		"Enable JPEG2000 format support" on \
-		JPEG		"Enable JPEG format support" on \
-		LUA		"Enable LUA" on \
-		OPENEXR		"Enable High Dynamic Range (HDR) format support" on \
-		OPENRAW		"Enable RAW camera format support" on \
-		OPTIMIZE	"Enable optimizations autodetection (MMX, SSE)" off \
-		PANGO		"Enable rendering through Pango " on \
-		PNG		"Enable PNG format support" on \
-		RSVG		"Enable RSVG format support" on \
-		SDL		"Enable SDL" on \
-		SPIRO		"Enable Spiro" on \
-		V4L		"Enable Video4Linux" on
+OPTIONS_DEFINE=	CAIRO DOCS ENSCRIPT EXIV2 FFMPEG PIXBUF GRAPHVIZ JASPER JPEG \
+		LUA OPENEXR OPENRAW SIMD PANGO PNG LIBRSVG2 SDL SPIRO V4L
+OPTIONS_DEFAULT=CAIRO DOCS ENSCRIPT EXIV2 PIXBUF GRAPHVIZ JASPER JPEG LUA \
+		OPENEXR OPENRAW PANGO PNG LIBRSVG2 SDL SPIRO V4L
 
-# Disable docs until I fix the problem with graphviz's dot
-NOPORTDOCS=	yes
+ENSCRIPT_DESC=	Enscript support
+SPIRO_DESC=	Spiro support
+#UMFPACK_DESC=	UMFpack support
 
-USE_GNOME=	glib20 pkgconfig gnomehack
+USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -54,7 +43,7 @@ EXAMPLES=	2geglbuffer csugar float-lookup \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GDK)
+.if ${PORT_OPTIONS:MPIXBUF}
 USE_GNOME+=	gdkpixbuf2
 PLIST_SUB+=	GDK=""
 .else
@@ -62,15 +51,15 @@ CONFIGURE_ARGS+=--without-gdk-pixbuf
 PLIST_SUB+=	GDK="@comment "
 .endif
 
-.if !defined(WITHOUT_CAIRO)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+.if ${PORT_OPTIONS:MCAIRO}
+LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--without-cairo
 PLIST_SUB+=	CAIRO="@comment "
 .endif
 
-.if !defined(WITHOUT_PANGO)
+.if ${PORT_OPTIONS:MPANGO}
 USE_GNOME+=	pango
 PLIST_SUB+=	PANGO=""
 .else
@@ -78,55 +67,54 @@ CONFIGURE_ARGS+=--without-pango
 PLIST_SUB+=	PANGO="@comment "
 .endif
 
-.if !defined(WITHOUT_PANGO) && !defined(WITHOUT_CAIRO)
+.if ${PORT_OPTIONS:MPANGO} && ${PORT_OPTIONS:MCAIRO}
 PLIST_SUB+=	PANGOCAIRO=""
 .else
 CONFIGURE_ARGS+=--without-pangocairo
 PLIST_SUB+=	PANGOCAIRO="@comment "
 .endif
 
-.if !defined(WITHOUT_ENSCRIPT)
+.if ${PORT_OPTIONS:MENSCRIPT}
 BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
 .endif
 
-.if !defined(WITHOUT_FFMPEG)
-#BROKEN=	ffmpeg support is currently broken
-LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
+.if ${PORT_OPTIONS:MFFMPEG}
+LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
 CONFIGURE_ARGS+=--without-libavformat
 PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
-.if !defined(WITHOUT_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 LIB_DEPENDS+=	graph:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=--without-graphviz
 .endif
 
-.if !defined(WITHOUT_JP2)
-LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+.if ${PORT_OPTIONS:MJASPER}
+LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
 PLIST_SUB+=	JP2=""
 .else
 CONFIGURE_ARGS+=--without-jasper
 PLIST_SUB+=	JP2="@comment "
 .endif
 
-.if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+.if ${PORT_OPTIONS:MJPEG}
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=--without-libjpeg
 PLIST_SUB+=	JPEG="@comment "
 .endif
 
-.if !defined(WITHOUT_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=	5.1
 .else
 CONFIGURE_ARGS+=--without-lua
 .endif
 
-.if !defined(WITHOUT_OPENEXR)
+.if ${PORT_OPTIONS:MOPENEXR}
 LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
@@ -134,20 +122,20 @@ CONFIGURE_ARGS+=--without-openexr
 PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
-.if !defined(WITHOUT_OPENRAW)
-LIB_DEPENDS+=	openraw.6:${PORTSDIR}/graphics/libopenraw
+.if ${PORT_OPTIONS:MOPENRAW}
+LIB_DEPENDS+=	openraw:${PORTSDIR}/graphics/libopenraw
 PLIST_SUB+=	OPENRAW=""
 .else
 CONFIGURE_ARGS+=--without-libopenraw
 PLIST_SUB+=	OPENRAW="@comment "
 .endif
 
-.if defined(WITHOUT_OPTIMIZE)
+.if ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--disable-mmx \
 		--disable-sse
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
@@ -155,15 +143,15 @@ CONFIGURE_ARGS+=--without-libpng
 PLIST_SUB+=	PNG="@comment "
 .endif
 
-.if !defined(WITHOUT_RSVG)
-LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+.if ${PORT_OPTIONS:MLIBRSVG2}
+LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	RSVG=""
 .else
 CONFIGURE_ARGS+=--without-librsvg
 PLIST_SUB+=	RSVG="@comment "
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 PLIST_SUB+=	SDL=""
 .else
@@ -171,13 +159,13 @@ CONFIGURE_ARGS+=--without-sdl
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if !defined(WITHOUT_SPIRO)
-LIB_DEPENDS+=	spiro.0:${PORTSDIR}/graphics/libspiro
+.if ${PORT_OPTIONS:MSPIRO}
+LIB_DEPENDS+=	spiro:${PORTSDIR}/graphics/libspiro
 .else
 CONFIGURE_ARGS+=--without-libspiro
 .endif
 
-.if !defined(WITHOUT_V4L)
+.if ${PORT_OPTIONS:MV4L}
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 PLIST_SUB+=	V4L=""
 .else
@@ -185,16 +173,33 @@ CONFIGURE_ARGS+=--without-libv4l
 PLIST_SUB+=	V4L="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+# umfpack library is broken
+#.if ${PORT_OPTIONS:MUMFPACK}
+#LIB_DEPENDS+=	umfpack:${PORTSDIR}/math/suitesparse
+#PLIST_SUB+=	UMFPACK=""
+#.else
+CONFIGURE_ARGS+=--without-umfpack
+PLIST_SUB+=	UMFPACK="@comment "
+#.endif
+
+.if ${PORT_OPTIONS:MEXIV2}
+LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+PLIST_SUB+=	EXIV2=""
+.else
+CONFIGURE_ARGS+=--without-exiv2
+PLIST_SUB+=	EXIV2="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc
 .else
-CONFIGURE_ARGS+=	--disable-docs
+CONFIGURE_ARGS+=--disable-docs
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '10s|\\||; 11,13d' \
-		${WRKSRC}/Makefile.am
+.if empty(PORT_OPTIONS:MDOCS)
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|tools examples tests||' \
+		${WRKSRC}/Makefile.in
 .endif
 	${REINPLACE_CMD} -e 's|-T||' \
 		${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in
@@ -204,12 +209,12 @@ post-patch:
 		${WRKSRC}/tools/gobj2dot.rb
 
 post-build:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/docs && ${GMAKE}
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/gallery
 	(cd ${WRKSRC}/docs && \
 	    ${COPYTREE_SHARE} \*.html ${DOCSDIR} && \
@@ -218,7 +223,7 @@ post-install:
 	    ${INSTALL_DATA} gallery/clones* ${DOCSDIR}/gallery && \
 	    ${INSTALL_DATA} gallery/index.html ${DOCSDIR}/gallery )
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/data
 	${INSTALL_DATA} ${WRKSRC}/examples/data/surfer.png ${EXAMPLESDIR}/data
 .for ex in ${EXAMPLES}
