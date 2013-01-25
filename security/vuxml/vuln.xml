@@ -63,12 +63,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Cross-site scripting (XSS) vulnerability</p>
 	<blockquote cite="https://www.django-cms.org/en/blog/2012/12/04/2-3-5-security-release/">
-	  <p>Jonas Obrist reports: The security issue 
-allows users with limited admin access to elevate their privileges through XSS
-injection using the page_attribute template tag. Only users with admin access
-and the permission to edit at least one django CMS page object could exploit
-this vulnerability. Websites that do not use the page_attribute template tag are
-not affected.</p>
+	  <p>Jonas Obrist reports: The security issue allows users with limited
+	    admin access to elevate their privileges through XSS injection
+	    using the page_attribute template tag. Only users with admin access
+	    and the permission to edit at least one django CMS page object
+	    could exploit this vulnerability. Websites that do not use the
+	    page_attribute template tag are not affected.</p>
 	</blockquote>
       </body>
     </description>
