@@ -37,12 +37,13 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
 
-OPTIONS_DEFINE=		JADETEX OPENJADE CJK SVN
+OPTIONS_DEFINE=		JADETEX OPENJADE CJK SVN IGOR
 JADETEX_DESC=		Support building additional document formats (PDF)
 OPENJADE_DESC=		Install textproc/openjade instead of textproc/jade
 CJK_DESC=		CJK (Simplified Chinese Language) support
 SVN_DESC=		Subversion support (required to check out sources)
-OPTIONS_DEFAULT=	OPENJADE CJK SVN
+IGOR_DESC=		Igor automated proofreader for documentation
+OPTIONS_DEFAULT=	OPENJADE CJK SVN IGOR
 
 .if !defined(WITHOUT_JADETEX) || defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	JADETEX
@@ -61,6 +62,10 @@ RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 
 .if ${PORT_OPTIONS:MSVN}
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+.endif
+
+.if ${PORT_OPTIONS:MIGOR}
+RUN_DEPENDS+=	igor:${PORTSDIR}/textproc/igor
 .endif
 
 .if ${PORT_OPTIONS:MJADETEX}
