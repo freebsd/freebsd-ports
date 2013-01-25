@@ -1,12 +1,8 @@
-# New ports collection makefile for:    p5-DBD-ODBC
-# Date created:				Nov 30 2001
-# Whom:	      				Clive Lin <clive@FreeBSD.org>
-#
+# Created by: clive@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.39
+PORTVERSION=	1.41
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MJEVANS
