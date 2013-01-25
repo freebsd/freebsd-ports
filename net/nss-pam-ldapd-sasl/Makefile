@@ -4,7 +4,7 @@
 PORTNAME=		nss-pam-ldapd
 PKGNAMESUFFIX=		-sasl
 
-MAINTAINER=		rflynn@acsalaska.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Advanced fork of nss_ldap with sasl support
 
 LICENSE=		# pet portlint
