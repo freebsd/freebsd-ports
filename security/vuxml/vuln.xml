@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>py-django-cms</name>
-	<range><lt>2.3.4</lt></range>
+	<range><lt>2.3.5</lt></range>
       </package>
     </affects>
     <description>
