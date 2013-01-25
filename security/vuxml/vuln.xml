@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3886cafe-668c-11e2-94b8-1c4bd681f0cf">
+    <topic>django-cms -- XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>py-django-cms</name>
+	<range><lt>2.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cross-site scripting (XSS) vulnerability</p>
+	<blockquote cite="https://www.django-cms.org/en/blog/2012/12/04/2-3-5-security-release/">
+	  <p>Jonas Obrist reports: The security issue 
+allows users with limited admin access to elevate their privileges through XSS
+injection using the page_attribute template tag. Only users with admin access
+and the permission to edit at least one django CMS page object could exploit
+this vulnerability. Websites that do not use the page_attribute template tag are
+not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.django-cms.org/en/blog/2012/12/04/2-3-5-security-release/</url>
+    </references>
+    <dates>
+      <discovery>2012-12-04</discovery>
+      <entry>2013-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d03202c-6559-11e2-a389-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
