@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ruby-inline
-# Date created:		2003-01-30
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	inline
-PORTVERSION=	3.11.3
+PORTVERSION=	3.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInline-${PORTVERSION}
