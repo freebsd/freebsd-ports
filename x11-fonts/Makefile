@@ -17,6 +17,7 @@
     SUBDIR += charis-compact
     SUBDIR += code2000
     SUBDIR += code2001
+    SUBDIR += consolamono-ttf
     SUBDIR += croscorefonts-fonts-ttf
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
