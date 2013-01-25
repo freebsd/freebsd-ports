@@ -143,15 +143,12 @@
 %%SITE_PERL%%/Locale/RecodeData/_Encode.pm
 %%SITE_PERL%%/Locale/TextDomain.pm
 %%SITE_PERL%%/Locale/Util.pm
+%%SITE_PERL%%/Locale/gettext_dumb.pm
 %%SITE_PERL%%/Locale/gettext_pp.pm
-%%SITE_PERL%%/Locale/gettext_xs.pm
 %%SITE_PERL%%/Locale/gettext_xs.pod
 %%SITE_PERL%%/Locale/libintlFAQ.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext_xs/gettext_xs.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext_xs/gettext_xs.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/libintl-perl/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libintl-perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext_xs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrm %%SITE_PERL%%/Locale/RecodeData
 @dirrm %%SITE_PERL%%/Locale/Recode
