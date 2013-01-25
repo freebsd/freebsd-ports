@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+DEINSTALL)
+	echo ""
+	echo "To completely remove the port, please remove the following"
+	echo "directories and the content manualy:"
+	echo ""
+	echo "/var/lib/pacman prefix/var/cache/pacman"
+	echo ""
+	;;
+esac

@@ -641,6 +641,7 @@
     SUBDIR += p5-ZConf-Cron
     SUBDIR += p5-arclog
     SUBDIR += p5-reslog
+    SUBDIR += pacman
     SUBDIR += paicc
     SUBDIR += pam_mount
     SUBDIR += parallel
