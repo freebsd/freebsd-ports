@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tseries
-DISTVERSION=	0.10-29
-PORTREVISION=	1
+DISTVERSION=	0.10-30
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,6 +12,8 @@ COMMENT=	Time series analysis and computational finance
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	R-cran-quadprog>0:${PORTSDIR}/math/R-cran-quadprog \
+		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
 RUN_DEPENDS=	R-cran-quadprog>0:${PORTSDIR}/math/R-cran-quadprog \
 		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
 
