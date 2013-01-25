@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smasher
-# Date created:		22 June 2009
-# Whom:			chris@officialunix.com
-#
+# Created by: chris@officialunix.com
 # $FreeBSD$
-#
 
 PORTNAME=	smasher
 PORTVERSION=	1.1.6
@@ -20,21 +16,18 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		csound64.5:${PORTSDIR}/audio/csound
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_PKGCONFIG=	build
+USE_WX=		yes
+WX_CONF_ARGS=	absolute
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CONFIGURE_ARGS=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_XORG=	x11
-USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_WX=		yes
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps|${LOCALBASE}/share/pixmaps|g' \
-		${WRKSRC}/src/Makefile.am ${WRKSRC}/src/Makefile.in
-
-	@${REINPLACE_CMD} -e 's|/usr/share/applications|${LOCALBASE}/share/applications|g' \
-		${WRKSRC}/src/Makefile.am ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps|${PREFIX}/share/pixmaps|g' \
+		-e 's|/usr/share/applications|${DESKTOPDIR}|g' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

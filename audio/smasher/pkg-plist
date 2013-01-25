@@ -1,21 +1,29 @@
 bin/smasher
 bin/smashercsound
+share/applications/smasher.desktop
+share/pixmaps/smasher.png
 %%DATADIR%%/csd/declick.csd
 %%DATADIR%%/csd/enhance.csd
 %%DATADIR%%/csd/eq.csd
 %%DATADIR%%/csd/freeverb.csd
 %%DATADIR%%/csd/pandelay.csd
 %%DATADIR%%/csd/smasher_fx_aux.csd
-%%DATADIR%%/png/media-playlist-shuffle-inv.png
-%%DATADIR%%/png/stock_help-agent.png
+%%DATADIR%%/help/ar01s02.html
+%%DATADIR%%/help/ar01s03.html
+%%DATADIR%%/help/ar01s04.html
+%%DATADIR%%/help/ar01s05.html
+%%DATADIR%%/help/elements.html
+%%DATADIR%%/help/index.html
 %%DATADIR%%/png/edit-clear-gs.png
 %%DATADIR%%/png/edit-redo_gs.png
 %%DATADIR%%/png/edit-undo_gs.png
 %%DATADIR%%/png/fileopen.png
 %%DATADIR%%/png/filesave_gs.png
+%%DATADIR%%/png/gradient-anticlock-spiral_24x24_gauss_gs.png
 %%DATADIR%%/png/gtk-media-play-inv.png
 %%DATADIR%%/png/logviewer_gs.png
 %%DATADIR%%/png/media-playback-pause.png
+%%DATADIR%%/png/media-playlist-shuffle-inv.png
 %%DATADIR%%/png/player_play.png
 %%DATADIR%%/png/player_play_inv.png
 %%DATADIR%%/png/player_stop.png
@@ -26,17 +34,17 @@ bin/smashercsound
 %%DATADIR%%/png/stock_data-previous.png
 %%DATADIR%%/png/stock_draw-line.png
 %%DATADIR%%/png/stock_draw-line_r.png
+%%DATADIR%%/png/stock_help-agent.png
 %%DATADIR%%/png/stock_hyperlink.png
 %%DATADIR%%/png/stock_id.png
+%%DATADIR%%/png/stock_internet_gs.png
 %%DATADIR%%/png/stock_open.png
 %%DATADIR%%/png/stock_repeat.png
 %%DATADIR%%/png/stock_repeat_inv.png
 %%DATADIR%%/png/stock_shuffle.png
-%%DATADIR%%/png/window_nofullscreen_gs.png
-%%DATADIR%%/png/gradient-anticlock-spiral_24x24_gauss_gs.png
 %%DATADIR%%/png/warp.png
 %%DATADIR%%/png/warp4.png
-%%DATADIR%%/png/stock_internet_gs.png
+%%DATADIR%%/png/window_nofullscreen_gs.png
 %%DATADIR%%/presets/amen_break_i.smash
 %%DATADIR%%/presets/amen_break_ii.smash
 %%DATADIR%%/presets/amen_break_iii.smash
@@ -56,20 +64,11 @@ bin/smashercsound
 %%DATADIR%%/samples/John_Williams.wav
 %%DATADIR%%/samples/Sine_Wave.wav
 %%DATADIR%%/xpm/smashericon.xpm
-%%DATADIR%%/help/ar01s02.html
-%%DATADIR%%/help/ar01s03.html
-%%DATADIR%%/help/ar01s04.html
-%%DATADIR%%/help/ar01s05.html
-%%DATADIR%%/help/elements.html
-%%DATADIR%%/help/index.html
-share/applications/smasher.desktop
-share/pixmaps/smasher.png
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/xpm
 @dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%/png
 @dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%/csd
 @dirrm %%DATADIR%%
