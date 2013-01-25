@@ -30,7 +30,6 @@ OPTIONS_DEFAULT=	XFT XINERAMA ASM BEASTIE NLS MENUFIX
 BEASTIE_DESC=	Use Beastie'fied startup button
 MENUFIX_DESC=	MenuIconSize fix
 
-
 # Restrict to stable (even) versions, indicated by the second component.
 #PORTSCOUT=	limitw:1,even
 
@@ -39,7 +38,7 @@ MENUFIX_DESC=	MenuIconSize fix
 .if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gnomedesktop libgnomeui
 CONFIGURE_ARGS+=--enable-menus-gnome2
-INSTALL_TARGET=	install 
+INSTALL_TARGET=	install
 PLIST_SUB+=	GNOMEDESKTOP=""
 .else
 PLIST_SUB+=	GNOMEDESKTOP="@comment "
