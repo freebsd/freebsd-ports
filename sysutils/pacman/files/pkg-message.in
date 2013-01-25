@@ -1,0 +1,8 @@
+Default pacman root directory (the one it will install packages into) is
+
+  %%PACMAN_ROOT%%
+
+To change it (and to define package repositories to use), see
+
+  %%PREFIX%%/etc/pacman.conf
+
