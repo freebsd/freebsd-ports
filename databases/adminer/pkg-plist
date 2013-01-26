@@ -69,6 +69,7 @@
 %%WWWDIR%%/designs/paranoiq/adminer.css
 %%WWWDIR%%/designs/pilot/adminer.css
 %%WWWDIR%%/designs/pokorny/adminer.css
+%%WWWDIR%%/designs/price/adminer.css
 %%WWWDIR%%/designs/readme.txt
 %%WWWDIR%%/adminer/privileges.inc.php
 %%WWWDIR%%/adminer/procedure.inc.php
@@ -122,6 +123,7 @@
 %%WWWDIR%%/plugins/file-upload.php
 %%WWWDIR%%/plugins/foreign-system.php
 %%WWWDIR%%/plugins/frames.php
+%%WWWDIR%%/plugins/links-direct.php
 %%WWWDIR%%/plugins/login-servers.php
 %%WWWDIR%%/plugins/login-table.php
 %%WWWDIR%%/plugins/password-sha1.php
@@ -178,6 +180,7 @@
 @dirrm %%WWWDIR%%/designs/konya
 @dirrm %%WWWDIR%%/designs/ng9
 @dirrm %%WWWDIR%%/designs/paranoiq
+@dirrm %%WWWDIR%%/designs/price
 @dirrm %%WWWDIR%%/designs/pilot
 @dirrm %%WWWDIR%%/designs/pokorny
 @dirrm %%WWWDIR%%/designs
