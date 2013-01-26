@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-GraphViz-Data-Structure
-# Date created:			Sep 6, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	GraphViz-Data-Structure
-PORTVERSION=	0.17
-PORTREVISION=	5
+PORTVERSION=	0.19
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
