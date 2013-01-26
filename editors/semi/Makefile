@@ -1,19 +1,17 @@
-# New ports collection makefile for:	semi-current for emacs
-# Date created:		9 May 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
 PORTREVISION=	14
 CATEGORIES=	editors elisp
-MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi/semi-1.14-for-flim-1.14/
+MASTER_SITES=	http://git.chise.org/elisp/dist/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs
+
+LICENSE=	GPLv2
 
 PORTCLASS?=	master
 
@@ -42,7 +40,11 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 		LISPDIR="${SEMI_LISPDIR}" \
 		VERSION_SPECIFIC_LISPDIR="${SEMI_VERSION_SPECIFIC_LISPDIR}"
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	DOCS
+
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(EMACS_PORT_NAME)
 .if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
@@ -101,7 +103,7 @@ post-install:
 .else
 	@${MAKE} info-install
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MAKE} doc-install
 .endif
 

@@ -1,7 +1,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mail-mime-setup.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mail-mime-setup.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-bbdb.el
-@unexec /bin/rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-bbdb.elc
+@rmtry %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-bbdb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-edit.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-edit.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-image.el
@@ -17,7 +17,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-view.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-view.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-w3.el
-@unexec /bin/rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-w3.elc
+@rmtry %%EMACS_VERSION_SITE_LISPDIR%%/semi/mime-w3.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/pgg-def.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/pgg-def.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/pgg-gpg.el
@@ -55,4 +55,4 @@ info/mime-ui-en.info
 info/mime-ui-ja.info
 @exec install-info %D/info/mime-ui-ja.info %D/info/dir
 share/semi/%%SEMI_COOKIE%%
-@unexec /bin/rmdir %D/share/semi || true
+@dirrmtry share/semi
