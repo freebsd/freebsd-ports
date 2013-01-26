@@ -1,9 +1,5 @@
-# New ports collection makefile for:   comical
-# Date created:        6 June 2005
-# Whom:                John McAree <john@mcaree.org>
-#
+# Created by: John McAree <john@mcaree.org>
 # $FreeBSD$
-#
 
 PORTNAME=	comical
 PORTVERSION=	0.8
@@ -14,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sequential image viewer
 
-LIB_DEPENDS=	unrar.3:${PORTSDIR}/archivers/libunrar
+LIB_DEPENDS=	unrar:${PORTSDIR}/archivers/libunrar
 
 LICENSE=	GPLv2
 

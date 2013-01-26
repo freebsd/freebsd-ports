@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sabbu
-# Date created:		2005-04-14
-# Whom:			dikr.meyer@dinoex.sub.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sabbu
 PORTVERSION=	0.3.0
@@ -14,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sabbu%20${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Program used to time subtitles
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
 USE_BZIP2=	yes
@@ -37,7 +32,7 @@ PLIST_SUB+=	WITH_NLS=""
 
 ASPELL_PORT?=	textproc/aspell
 .if !defined(WITHOUT_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
 PLIST_SUB+=	WITH_ASPELL=""
 .else
 PLIST_SUB+=	WITH_ASPELL="@comment "
