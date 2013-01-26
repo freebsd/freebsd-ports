@@ -1,20 +1,18 @@
-# New ports collection makefile for:	flim-1.14.x for emacs21
-# Date created:		9 May 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
 PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
-MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/
+MASTER_SITES=	http://git.chise.org/elisp/dist/flim/flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	FLIM, message representation or encoding elisp library for emacs
+
+LICENSE=	GPLv2
 
 PORTCLASS?=	master
 
@@ -33,6 +31,9 @@ USE_EMACS=	yes
 
 EMACS_MASTERDIR_PKGFILES=YES
 DESCR=		${PKGDIR}/pkg-descr
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	DOCS
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -103,7 +104,7 @@ POST_INSTALL_TARGET+=	info-package-install manifest-install
 .else
 POST_INSTALL_TARGET+=	info-install
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 POST_INSTALL_TARGET+=	doc-install
 .endif
 
