@@ -1,7 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal/.packlist
 %%SITE_PERL%%/XML/Liberal.pm
+%%SITE_PERL%%/XML/Liberal/Error.pm
 %%SITE_PERL%%/XML/Liberal/LibXML.pm
-%%SITE_PERL%%/XML/Liberal/Remedy.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/ControlCode.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/Declaration.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/DeprecatedDTD.pm
@@ -9,8 +9,12 @@
 %%SITE_PERL%%/XML/Liberal/Remedy/HTMLEntity.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/InvalidEncoding.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/LowAsciiChars.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/NestedCDATA.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/NotUTF8.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/StandaloneAttribute.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/TrailingDoctype.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/TrailingElements.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/UnclosedHTML.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/UndeclaredNS.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/UnquotedAttribute.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/XHTMLEmptyTag.pm
