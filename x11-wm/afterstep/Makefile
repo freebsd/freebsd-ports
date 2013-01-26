@@ -1,4 +1,4 @@
-# Created by:	jfitz@FreeBSD.org
+# Created by: jfitz@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	afterstep
