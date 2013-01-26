@@ -10,7 +10,7 @@ MASTER_SITES=	SF/gtkmmviewer/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 
 .if ${PORT_OPTIONS:MLIBMNG}
-LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
+LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
 PLIST_SUB+=	WITH_LIBMNG=""
 .else
 CONFIGURE_ARGS+=	--without-libmng
@@ -59,7 +59,7 @@ PLIST_SUB+=	WITH_LIBMNG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBWMF}
-LIB_DEPENDS+=	wmf.2:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS+=	wmf:${PORTSDIR}/graphics/libwmf
 PLIST_SUB+=	WITH_LIBWMF=""
 .else
 CONFIGURE_ARGS+=	--without-libwmf
@@ -67,7 +67,7 @@ PLIST_SUB+=	WITH_LIBWMF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBRSVG2}
-LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	WITH_LIBRSVG=""
 .else
 CONFIGURE_ARGS+=	--without-librsvg
@@ -75,7 +75,7 @@ PLIST_SUB+=	WITH_LIBRSVG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEXIF}
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-exit_view.c
 .else
 CONFIGURE_ARGS+=	--disable-exif
@@ -91,7 +91,7 @@ PLIST_SUB+=	WITH_LIBMPLAYER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBXINE}
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--with-xine
 PLIST_SUB+=	WITH_LIBXINE=""
 .else

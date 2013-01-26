@@ -1,9 +1,5 @@
-# New ports collection makefile for:   sixxs-aiccu
-# Date created:                2004-09-07
-# Whom:                        Meno Abels <meno.abels@adviser.com>
-#
+# Created by: Meno Abels <meno.abels@adviser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	aiccu
 PORTVERSION=	20070115
@@ -16,7 +12,7 @@ DISTNAME=	aiccu_20070115
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
-LIB_DEPENDS=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls-openssl:${PORTSDIR}/security/gnutls
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
