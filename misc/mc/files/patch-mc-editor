@@ -1,0 +1,46 @@
+Index: src/filemanager/ext.c
+===================================================================
+--- src/filemanager/ext.c	(revision 05d220a9c6f31134373e4326608a6d7e9cbb20f1)
++++ src/filemanager/ext.c	(revision 529a7ba24c9da9fdb1df939ff0fe35c6d27e65df)
+@@ -637,4 +637,7 @@
+     int have_type = 0;          /* Flag used by regex_check_type() */
+ 
++    if (filename_vpath == NULL)
++        return 0;
++
+     /* Check for the special View:%d parameter */
+     if (strncmp (action, "View:", 5) == 0)
+Index: src/filemanager/midnight.c
+===================================================================
+--- src/filemanager/midnight.c	(revision 308237aa11bf34450340574131a9894a1892e997)
++++ src/filemanager/midnight.c	(revision 529a7ba24c9da9fdb1df939ff0fe35c6d27e65df)
+@@ -952,9 +952,11 @@
+     case MC_RUN_EDITOR:
+         {
+-            vfs_path_t *param_vpath;
+-
+-            param_vpath = vfs_path_from_str (mc_run_param0);
+-            ret = edit_file (param_vpath, mc_args__edit_start_line);
+-            vfs_path_free (param_vpath);
++            vfs_path_t *vpath = NULL;
++
++            if (mc_run_param0 != NULL && *mc_run_param0 != '\0')
++                vpath = vfs_path_from_str (mc_run_param0);
++
++            ret = edit_file (vpath, mc_args__edit_start_line);
++            vfs_path_free (vpath);
+         }
+         break;
+@@ -962,7 +964,9 @@
+     case MC_RUN_VIEWER:
+         {
+-            vfs_path_t *vpath;
+-
+-            vpath = prepend_cwd_on_local (mc_run_param0);
++            vfs_path_t *vpath = NULL;
++
++            if (mc_run_param0 != NULL && *mc_run_param0 != '\0')
++                vpath = prepend_cwd_on_local (mc_run_param0);
++
+             view_file (vpath, 0, 1);
+             vfs_path_free (vpath);
