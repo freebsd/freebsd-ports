@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jasper
-# Date created:				6 November 1994
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1

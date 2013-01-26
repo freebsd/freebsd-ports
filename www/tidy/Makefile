@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tidy
-# Date created:		27 Oct 1998
-# Whom:			Abel Chow <achow@transoft.net>
-#
+# Created by: Abel Chow <achow@transoft.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tidy4
 PORTVERSION=	20000804

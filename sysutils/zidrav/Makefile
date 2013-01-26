@@ -1,9 +1,5 @@
-# New ports collection makefile for:   zidrav
-# Date created:        14 July 2003
-# Whom:                Cosmin Stroe <cstroe1@uic.edu>
-#
+# Created by: Cosmin Stroe <cstroe1@uic.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	zidrav
 PORTVERSION=	1.2.0

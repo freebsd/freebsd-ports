@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xzip
-# Date created:				28 June 1998
-# Whom:					Matthew Hunt <mph@FreeBSD.org>
-#
+# Created by: Matthew Hunt <mph@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xzip
 PORTVERSION=	1.8.2

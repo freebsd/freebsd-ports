@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11vnc
-# Date created:				7 June 2005
-# Whom:					Loren M. Lang
-#
+# Created by: Loren M. Lang
 # $FreeBSD$
-#
 
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.13

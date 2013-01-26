@@ -1,9 +1,5 @@
-# New ports collection makefile for:    STonX
-# Date created:         3rd August, 1997
-# Whom:                 Tobias Reifenberger <tr@freebsd.mayn.de>
-#
+# Created by: Tobias Reifenberger <tr@freebsd.mayn.de>
 # $FreeBSD$
-#
 
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e.6

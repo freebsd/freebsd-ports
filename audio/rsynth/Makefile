@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rsynth
-# Date created:		03 Jan 1995
-# Whom:			faulkner@mpd.tandem.com
-#
+# Created by: faulkner@mpd.tandem.com
 # $FreeBSD$
-#
 
 PORTNAME=	rsynth
 PORTVERSION=	2.0
