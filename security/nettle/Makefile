@@ -33,6 +33,12 @@ EXAMPLES=	examples/*.c examples/*.h
 
 INFO=		nettle
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+CONFIGURE_ENV+=	CCPIC=-fPIC
+.endif
+
 .include <bsd.port.options.mk>
 
 post-install:
@@ -45,4 +51,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
