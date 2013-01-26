@@ -29,4 +29,4 @@ To use apel, put the following setup into your ~/.emacs:
 
 	(require 'apel-setupel)
 
-WWW: http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/elisp/APEL/index.en.html
+WWW: http://git.chise.org/elisp/apel/index.html.en
