@@ -21,16 +21,14 @@ DATADIR=	share/sec
 PORTCONTRIB=	convert.pl itostream.c swatch2sec.pl
 PLIST_FILES+=	${PORTCONTRIB:S|^|%%DATADIR%%/|}
 PLIST_DIRS+=	${DATADIR}
+PORTDOCS=	ChangeLog README
 
 .include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	ChangeLog README
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/sec.man ${PREFIX}/man/man8/sec.8
-.if empty(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
