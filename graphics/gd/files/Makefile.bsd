@@ -40,7 +40,7 @@ ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
 
 install:
 	mkdir -p ${PREFIX}/include
-	${MAKE} LIB=${LIB} LIBDIR=${PREFIX}/lib NOPROFILE=true \
+	${MAKE} LIB=${LIB} LIBDIR=${PREFIX}/lib NOPROFILE=true NO_PROFILE=true \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
 		-f ${MAKEDIR}/bsd.lib.mk install
 	cd ${.CURDIR} && ${BSD_INSTALL_DATA} ${INCS} ${PREFIX}/include
