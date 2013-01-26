@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-CPANPLUS-Dist-Build
-# Date created:		18 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	CPANPLUS-Dist-Build
-PORTVERSION=	0.68
+PORTVERSION=	0.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
