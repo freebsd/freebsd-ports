@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eruby
-# Date created:			14 Aug 2000
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	eruby
 PORTVERSION=	1.0.5
