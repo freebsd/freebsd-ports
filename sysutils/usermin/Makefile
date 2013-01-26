@@ -1,9 +1,4 @@
-# New ports collection makefile for:	usermin
-# Date created:		10 Nov 2002
-# Whom:			olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	usermin
 PORTVERSION=	1.530

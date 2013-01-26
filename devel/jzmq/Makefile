@@ -1,9 +1,4 @@
-# New ports collection makefile for:	jzmq
-# Date created:		2010-10-03
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jzmq
 PORTVERSION=	2011.04.26

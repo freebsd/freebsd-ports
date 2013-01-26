@@ -1,7 +1,3 @@
-# New ports collection makefile for:	cl-babel-clisp
-# Date created:				20 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	babel

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	cl-trivial-gray-streams-clisp
-# Date created:				17 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	trivial-gray-streams

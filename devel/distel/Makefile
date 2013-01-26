@@ -1,9 +1,4 @@
-# New ports collection makefile for:	distel
-# Date Created:				11 November 2002
-# Whom:				 	olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	distel
 PORTVERSION=	2012.05.28

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	rox-filer
-# Date created:        13 November 2000
-# Whom:                Jimmy Olgeni <olgeni@uli.it>
-#
 # $FreeBSD$
 
 PORTNAME=	rox-filer

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	opencinematools
-# Date created:		2011-09-18
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	opencinematools
 PORTVERSION=	1.1.2

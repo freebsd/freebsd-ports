@@ -1,9 +1,4 @@
-# New ports collection makefile for:	yaws
-# Date Created:				25 Jan 2004
-# Whom:				 	olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yaws
 PORTVERSION=	1.95

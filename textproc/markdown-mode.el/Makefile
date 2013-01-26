@@ -1,9 +1,4 @@
-# New ports collection makefile for:	markdown-mode.el
-# Date created:				30 Ago 2011
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	markdown-mode.el
 PORTVERSION=	1.9

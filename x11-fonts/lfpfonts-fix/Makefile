@@ -1,9 +1,4 @@
-# New ports collection makefile for:	lfpfonts-fix
-# Date created:				Sat Jan 19 20:59:31 CET 2002
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lfpfonts-fix
 PORTVERSION=	0.82
