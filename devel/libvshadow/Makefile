@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	libvshadow
-PORTVERSION=	20120511
+PORTVERSION=	20130113
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-experimental-${PORTVERSION}
+DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A library to support the Volume Service Snapshot (VSS) format
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_FUSE=	yes
 USE_GETTEXT=	yes
+USE_GNOME=	gnomehack
 USE_ICONV=	yes
+USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-python
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=26
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		vshadowinfo.1
+MAN1=		vshadowinfo.1 vshadowmount.1
 MAN3=		libvshadow.3
 
 .include <bsd.port.mk>
