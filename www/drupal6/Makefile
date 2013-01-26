@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drupal6
-# Date Created: 			12 Feb 2007
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drupal6
 PORTVERSION=	6.28
@@ -12,7 +8,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	A database driven web content management system (CMS)
 
 USE_DRUPAL=	yes
@@ -22,9 +18,10 @@ USE_PHP=	gd pcre session xml mbstring
 IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 
-OPTIONS+=	MYSQLI "MySQL Improved Extension database support" on \
-		MYSQL "MySQL database support" off \
-		PGSQL "PostgreSQL database support" off
+OPTIONS_DEFINE=	MYSQLI MYSQL PGSQL
+OPTIONS_DEFAULT=MYSQLI
+
+MYSQLI_DESC=	MySQL Improved Extension database
 
 NO_BUILD=	yes
 DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt \
@@ -33,15 +30,15 @@ DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt \
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
-.if defined(WITH_MYSQLI)
+.if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 USE_PHP+=	pgsql
 .endif
@@ -70,7 +67,7 @@ do-install:
 	${CP} ${WRKSRC}/xmlrpc.php ${DRUPAL_DIR}
 	${MKDIR} ${DRUPAL_DIR}/sites/all/modules ${DRUPAL_DIR}/sites/all/themes
 	${TOUCH} ${DRUPAL_DIR}/sites/all/modules/.keepme ${DRUPAL_DIR}/sites/all/themes/.keepme
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${CP} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
@@ -79,4 +76,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

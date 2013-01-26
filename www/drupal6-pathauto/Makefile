@@ -1,15 +1,11 @@
-# New ports collection makefile for:	drupal6-pathauto
-# Date created:				2 May 2009
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pathauto
 DISTVERSION=	6.x-1.4
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically generates URLs for Drupal content
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token

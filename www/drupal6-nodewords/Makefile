@@ -1,15 +1,11 @@
-# New ports collection makefile for:	drupal6-nodewords
-# Date created:				08 Nov 2008
-# Whom:					Nick Hilliard <nick@netability.ie>
-#
+# Created by: Nick Hilliard <nick@netability.ie>
 # $FreeBSD$
-#
 
 PORTNAME=	nodewords
 DISTVERSION=	6.x-1.11
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drupal module which allows the end-user to set meta tags for nodes
 
 USE_DRUPAL=	yes
