@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	console
-PORTVERSION=	${CONSOLE_LICQ_VER}
+PORTVERSION=	1.7.1
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org
