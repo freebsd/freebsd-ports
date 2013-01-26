@@ -1,9 +1,5 @@
-# New ports collection makefile for:   emacs-w3m
-# Date Created:			24 Mar 2001
-# Whom:				MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.4.471.b.${SNAPDATE}
@@ -48,10 +44,17 @@ DOCS_JA=	README.ja
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-.if defined(WITHOUT_SHIMBUN)
+OPTIONS_DEFINE=	DOCS OCTET_VIEWER SHIMBUN
+OPTIONS_DEFAULT=	DOCS OCTET_VIEWER SHIMBUN
+
+OCTET_VIEWER_DESC=	Octet stream viewer support
+SHIMBUN_DESC=	Build and/or install Shimbun
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MSHIMBUN}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 SHIMBUN=	"@comment "
-WITHOUT_OCTET_VIEWER=	yes
 .else
 SHIMBUN=	""
 .endif
@@ -61,19 +64,19 @@ SHIMBUN=	""
 .if ${EMACS_NAME} == "emacs" && ${EMACS_VER:C/\..*//} >= 23
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
-INSTALL_TARGET= install install-icons
+INSTALL_TARGET=	install install-icons
 PLIST_SUB+=	EMACS23=""
 .else
-PLIST_SUB+= EMACS23="@comment "
+PLIST_SUB+=	EMACS23="@comment "
 .endif
 
 .if ${EMACS_PORT_NAME} == "emacs22"
-INSTALL_TARGET= install install-icons
+INSTALL_TARGET=	install install-icons
 .endif
 
 .if ${EMACS_NAME} == "emacs" && ${EMACS_VER:C/\..*//} < 22
 MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
-INSTALL_TARGET= install install-icons
+INSTALL_TARGET=	install install-icons
 .endif
 
 FLIM_TRUNK=	1.14
@@ -89,11 +92,11 @@ MULE_UCS_ELISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs/un-defi
 
 BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
 RUN_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
-.if !defined(WITHOUT_SHIMBUN)
+.if ${PORT_OPTIONS:MSHIMBUN}
 BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 .endif
-.if !defined(WITHOUT_OCTET_VIEWER)
+.if ${PORT_OPTIONS:MOCTET_VIEWER}
 RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 		wvHtml:${PORTSDIR}/textproc/wv \
 		xlhtml:${PORTSDIR}/textproc/xlhtml
@@ -102,26 +105,13 @@ RUN_DEPENDS+=	${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
 .endif
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_SHIMBUN)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===>  If you don't use the shimbun modules, please define WITHOUT_SHIMBUN."
-	@${ECHO_MSG} "===>"
-.endif
-.if !defined(WITHOUT_OCTET_VIEWER)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===>  If you don't use the octet stream viewer,"
-	@${ECHO_MSG} "===>  please define WITHOUT_OCTET_VIEWER."
-	@${ECHO_MSG} "===>"
-.endif
-
 post-extract:
 .if defined(EMACS_PACKAGESDIR)
 	@${CP} ${FILESDIR}/_pkg.el ${WRKSRC}
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR_JA}
 .for i in ${DOCS}
