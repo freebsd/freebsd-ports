@@ -985,6 +985,7 @@
     SUBDIR += yara
     SUBDIR += yassl
     SUBDIR += yersinia
+    SUBDIR += ykclient
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zombiezapper
