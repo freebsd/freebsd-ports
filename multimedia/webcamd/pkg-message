@@ -12,6 +12,6 @@ to your /boot/loader.conf.
 
 2) Please restart devd as the configuration changed
 
-	# /etc/rc.d/devd restart
+	# service devd restart
 
 *********************************************************************
