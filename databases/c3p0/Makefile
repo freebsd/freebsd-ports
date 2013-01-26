@@ -1,4 +1,3 @@
-# Created by: olgeni
 # $FreeBSD$
 
 PORTNAME=	c3p0
