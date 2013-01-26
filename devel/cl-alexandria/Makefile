@@ -1,7 +1,3 @@
-# New ports collection makefile for:	cl-alexandria
-# Date created:				16 January 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	alexandria

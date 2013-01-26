@@ -1,9 +1,4 @@
-# New ports collection makefile for:	postgresql_autodoc
-# Date created:				Fri Aug 23 22:22:36 CEST 2002
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql_autodoc
 PORTVERSION=	1.41

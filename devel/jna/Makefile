@@ -1,9 +1,4 @@
-# New ports collection makefile for:	jna
-# Date created:		2010-10-01
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jna
 PORTVERSION=	3.2.7

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	erlang_xmlrpc
-# Date Created:				5 March 2003
-# Whom:				 	olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	erlang_xmlrpc
 PORTVERSION=	1.13

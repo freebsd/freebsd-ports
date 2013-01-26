@@ -1,9 +1,4 @@
-# New ports collection makefile for:	moveable-type-fonts
-# Date created:				30 July 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	moveable-type-fonts
 PORTVERSION=	20100801

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	asdcplib
-# Date created:		2011-09-17
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	asdcplib
 PORTVERSION=	1.9.45

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	virtualmin
-# Date created:		Fri Oct 24 20:51:00 CEST 2003
-# Whom:			olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	virtualmin
 PORTVERSION=	3.97

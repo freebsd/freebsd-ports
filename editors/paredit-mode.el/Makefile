@@ -1,9 +1,4 @@
-# New ports collection makefile for:   paredit-mode.el
-# Date created:		05 Aug 2010
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	paredit-mode.el
 PORTVERSION=	22

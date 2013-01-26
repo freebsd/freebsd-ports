@@ -1,9 +1,4 @@
-# New ports collection makefile for:	jtransforms
-# Date created:		2010-10-01
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jtransforms
 PORTVERSION=	2.4

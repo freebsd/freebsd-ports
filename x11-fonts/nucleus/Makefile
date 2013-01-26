@@ -1,9 +1,4 @@
-# New ports collection makefile for:	nucleus
-# Date created:				Sat Aug 12 15:02:03 CEST 2000
-# Whom:					olgeni@uli.it
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nucleus
 PORTVERSION=	0.77

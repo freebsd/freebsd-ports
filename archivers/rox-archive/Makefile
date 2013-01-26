@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	rox-archive
-# Date created:				Mar 24 2003
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rox-archive
 PORTVERSION=	2.2
