@@ -280,6 +280,7 @@
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
+    SUBDIR += libyubikey
     SUBDIR += linux-f10-cyrus-sasl2
     SUBDIR += linux-f10-gnutls
     SUBDIR += linux-f10-libgcrypt
