@@ -1,4 +1,3 @@
-# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	esdl
