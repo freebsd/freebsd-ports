@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xscrabble
-# Date created:		27 July 1997
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xscrabble
 PORTVERSION=	2.12

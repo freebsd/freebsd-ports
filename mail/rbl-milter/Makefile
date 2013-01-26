@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rbl-milter
-# Date created:        15 November 2002
-# Whom:                wolpert
-#
+# Created by: wolpert
 # $FreeBSD$
-#
 
 PORTNAME=	rbl-milter
 PORTVERSION=	0.30

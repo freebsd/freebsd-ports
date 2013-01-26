@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenSSL
-# Date created:		Sun Jan  3 19:36:27 CET 1999
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  uucp
-# Date created:			  08 Sep 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freebsd-uucp
 PORTVERSION=	1.07.3

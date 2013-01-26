@@ -1,10 +1,6 @@
-# New ports collection makefile for:	milter-regex
-# Date created:				2003-10-03
-# Whom:					trevor
-#
-# based on the OpenBSD port by Daniel Hartmeier (dhartmei on OpenBSD.org)
+# Created by: trevor
+# based on the OpenBSD port by Daniel Hartmeier
 # $FreeBSD$
-#
 
 PORTNAME=	milter-regex
 PORTVERSION=	1.9

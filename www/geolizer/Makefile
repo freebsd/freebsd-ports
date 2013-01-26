@@ -1,9 +1,5 @@
-# New ports collection makefile for:    geolizer
-# Date created:         23 July 2004
-# Whom:                 ache@FreeBSD.org
-#
+# Created by: ache@FreeBSD.org
 # $FreeBSD$
-#
 
 CATEGORIES=
 

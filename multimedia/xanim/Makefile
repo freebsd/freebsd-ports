@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xanim
-# Date created:         Sat Nov 5 11:43:03 PST 1994
-# Whom:                 piero
-#
+# Created by: piero
 # $FreeBSD$
-#
 
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
