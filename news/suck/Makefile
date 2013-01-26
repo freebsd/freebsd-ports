@@ -1,4 +1,4 @@
-# reated by: graphite@taurus.bekkoame.or.jp
+# Created by: graphite@taurus.bekkoame.or.jp
 # $FreeBSD$
 
 PORTNAME=	suck
