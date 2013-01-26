@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
 
-LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
+LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
 		png15:${PORTSDIR}/graphics/png \
 		xcb-render-util:${PORTSDIR}/x11/xcb-util-renderutil
 

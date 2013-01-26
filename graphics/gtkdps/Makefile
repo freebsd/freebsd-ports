@@ -13,7 +13,7 @@ DISTNAME=	gtkDPS-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
-LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
+LIB_DEPENDS+=	dpstk:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
