@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphviz
-# Date created:		03 Feb 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	graphviz
 PORTVERSION=	2.28.0
@@ -14,12 +10,12 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		gd.4:${PORTSDIR}/graphics/gd
+		freetype:${PORTSDIR}/print/freetype2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		expat:${PORTSDIR}/textproc/expat2 \
+		gd:${PORTSDIR}/graphics/gd
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -228,21 +224,21 @@ CONFIGURE_ARGS+=	--without-glade
 
 .if ${PORT_OPTIONS:MSMYRNA}
 CONFIGURE_ARGS+=	 --with-gtkgl=yes
-LIB_DEPENDS+=		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
+LIB_DEPENDS+=		gtkgl-2:${PORTSDIR}/x11-toolkits/gtkglarea2
 .else
 CONFIGURE_ARGS+=	--without-gtkgl
 .endif
 
 .if ${PORT_OPTIONS:MSMYRNA}
 CONFIGURE_ARGS+=	 --with-gtkglext=yes
-LIB_DEPENDS+=		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=		gtkglext-x11-1:${PORTSDIR}/x11-toolkits/gtkglext
 .else
 CONFIGURE_ARGS+=	--without-gtkglext
 .endif
 
 .if ${PORT_OPTIONS:MSMYRNA}
 CONFIGURE_ARGS+=	 --with-gts=yes
-LIB_DEPENDS+=		gts.5:${PORTSDIR}/graphics/gts
+LIB_DEPENDS+=		gts:${PORTSDIR}/graphics/gts
 .else
 CONFIGURE_ARGS+=	--without-gts
 .endif
@@ -281,7 +277,7 @@ CONFIGURE_ARGS+=	--with-qt=no
 .if ${PORT_OPTIONS:MMING}
 CONFIGURE_ARGS+=	--with-ming
 PLIST_SUB+=		WITH_MING=""
-LIB_DEPENDS+=		ming.5:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=		ming:${PORTSDIR}/graphics/ming
 .else
 CONFIGURE_ARGS+=	--without-ming
 PLIST_SUB+=		WITH_MING="@comment "
@@ -385,7 +381,7 @@ PLIST_SUB+=		WITH_TCL="@comment "
 .if ${PORT_OPTIONS:MGUILE}
 CONFIGURE_ARGS+=	--enable-guile
 PLIST_SUB+=		WITH_GUILE=""
-LIB_DEPENDS+=		guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile:${PORTSDIR}/lang/guile
 MAN3+=			gv.3guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
