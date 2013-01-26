@@ -7,7 +7,7 @@ CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
 
-MAINTAINER=	takefu@airport.fm
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
