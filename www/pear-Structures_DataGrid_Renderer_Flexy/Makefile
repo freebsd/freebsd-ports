@@ -1,15 +1,11 @@
-# Ports collection makefile for:	pear-Structures_DataGrid_Renderer_Flexy
-# Date created:				26 Jun 2008
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Structures_DataGrid_Renderer_Flexy
 PORTVERSION=	0.1.3
 CATEGORIES=	www pear
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Renderer for pear-Structures_DataGrid using HTML_Template_Flexy
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

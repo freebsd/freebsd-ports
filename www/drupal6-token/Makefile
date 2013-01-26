@@ -1,16 +1,12 @@
-# New ports collection makefile for:  drupal6-token
-# Date created:  11 February 2008
-# Whom:          Jeremy Iverson <jeremy@algenta.com>
-#
+# Created by: Jeremy Iverson <jeremy@algenta.com>
 # $FreeBSD$
-#
 
 PORTNAME=	token
 DISTVERSION=	6.x-1.12
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Token module for Drupal
 
 USE_DRUPAL=	yes

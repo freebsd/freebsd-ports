@@ -1,16 +1,12 @@
-# New ports collection makefile for:	drupal6-page_title
-# Date created:				2 May 2009
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	page_title
 DISTVERSION=	6.x-2.3
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to provide fine-grained control of page titles
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token

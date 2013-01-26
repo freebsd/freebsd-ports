@@ -1,16 +1,12 @@
-# New ports collection makefile for:	drupal6-nice_menus
-# Date created:				20 October 2006
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nice_menus
 DISTVERSION=	6.x-1.3
 PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSS / JavaScript pull-down menus for Drupal
 
 USE_DRUPAL=	yes
