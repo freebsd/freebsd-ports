@@ -728,6 +728,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-ranger
     SUBDIR += py-salt
+    SUBDIR += py-salt-api
     SUBDIR += py-salt-cloud
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
