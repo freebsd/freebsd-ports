@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Bundle/Sledge.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Sledge/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Sledge
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle
-@dirrmtry %%SITE_PERL%%/Bundle
