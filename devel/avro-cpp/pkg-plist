@@ -1,0 +1,44 @@
+bin/avrogencpp
+include/avro/AvroParse.hh
+include/avro/AvroSerialize.hh
+include/avro/AvroTraits.hh
+include/avro/Boost.hh
+include/avro/Compiler.hh
+include/avro/Config.hh
+include/avro/DataFile.hh
+include/avro/Decoder.hh
+include/avro/Encoder.hh
+include/avro/Exception.hh
+include/avro/Generic.hh
+include/avro/Layout.hh
+include/avro/Node.hh
+include/avro/NodeConcepts.hh
+include/avro/NodeImpl.hh
+include/avro/Parser.hh
+include/avro/Reader.hh
+include/avro/Resolver.hh
+include/avro/ResolverSchema.hh
+include/avro/ResolvingReader.hh
+include/avro/Schema.hh
+include/avro/SchemaResolution.hh
+include/avro/Serializer.hh
+include/avro/Specific.hh
+include/avro/Stream.hh
+include/avro/Types.hh
+include/avro/ValidSchema.hh
+include/avro/Validator.hh
+include/avro/Writer.hh
+include/avro/Zigzag.hh
+include/avro/buffer/Buffer.hh
+include/avro/buffer/BufferPrint.hh
+include/avro/buffer/BufferReader.hh
+include/avro/buffer/BufferStream.hh
+include/avro/buffer/BufferStreambuf.hh
+include/avro/buffer/detail/BufferDetail.hh
+include/avro/buffer/detail/BufferDetailIterator.hh
+lib/libavrocpp.so
+lib/libavrocpp.so.0
+lib/libavrocpp_s.a
+@dirrm include/avro/buffer/detail
+@dirrm include/avro/buffer
+@dirrm include/avro
