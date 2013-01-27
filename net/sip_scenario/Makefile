@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIP call flow creator (HTML format)
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
 

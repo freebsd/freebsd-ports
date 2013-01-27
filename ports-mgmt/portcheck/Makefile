@@ -11,6 +11,9 @@ DIST_SUBDIR=	rerolled
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintains the ports tree and checks up the installed packages
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 PLIST_FILES=	bin/portcheck

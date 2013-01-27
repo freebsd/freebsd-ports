@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.netsw.org/softeng/versioncontrol/repository/cvs/cvsmapf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helps keep track of modes and permissions of files in cvs
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 EXTRACT_CMD=	${CAT}	# despite .tar.gz suffix, only tarball
 EXTRACT_BEFORE_ARGS=
 USE_PERL5=	YES

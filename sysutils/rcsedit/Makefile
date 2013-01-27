@@ -11,6 +11,9 @@ MASTER_SITES=	http://malasada.lava.net/rcsedit/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple wrapper for RCS written in Perl
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 PLIST_FILES=	bin/rcsedit
 
 USE_PERL5_RUN=	yes

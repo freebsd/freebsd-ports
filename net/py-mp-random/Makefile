@@ -1,4 +1,4 @@
-# Created by: Aaron Straup Cope 	     ascope@cpan.org
+# Created by: Aaron Straup Cope <ascope@cpan.org>
 # $FreeBSD$
 
 PORTNAME=	mp-random
@@ -11,6 +11,9 @@ DISTNAME=	MirrorProjectRandomImageWidget-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display random Mirror Project images on your desktop
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 USE_PYTHON=	yes
 USE_WX=		2.4

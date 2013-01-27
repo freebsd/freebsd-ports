@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.stanford.edu/~epop/igal/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A static html image gallery generator for *nix
 
+DEPRECATED=	No more upstream, no more public distfiles, consider using www/llgal
+EXPIRATION_DATE=	2013-02-27
+
 RUN_DEPENDS=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg \
 		convert:${PORTSDIR}/graphics/ImageMagick
 

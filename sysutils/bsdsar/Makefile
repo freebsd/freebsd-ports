@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.googlebit.com/bsdsar/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Activity Reporter for FreeBSD
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 NO_BUILD=	yes
 
 do-install:

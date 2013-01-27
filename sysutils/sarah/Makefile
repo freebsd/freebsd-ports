@@ -9,6 +9,9 @@ MASTER_SITES=	ftp://ftp.conundrum.com/pub/sarah/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Syslog automated Rotation and Archive Handler
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

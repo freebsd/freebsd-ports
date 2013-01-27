@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.sympad.net/~andy/pentix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is a game of pentix for terminals
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 ALL_TARGET=	pentix
 
 MAN1=		pentix.1

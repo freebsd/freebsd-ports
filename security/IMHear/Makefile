@@ -9,6 +9,9 @@ MASTER_SITES=	http://repository.nixsoftware.com/ports/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An MSN Messenger event/message sniffer
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_INSTALL_MANPAGES=yes
 
