@@ -1,0 +1,31 @@
+bin/salt-api
+%%PYTHON_SITELIBDIR%%/saltapi/__init__.py
+%%PYTHON_SITELIBDIR%%/saltapi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/cli.py
+%%PYTHON_SITELIBDIR%%/saltapi/cli.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/cli.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/client.py
+%%PYTHON_SITELIBDIR%%/saltapi/client.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/client.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/config.py
+%%PYTHON_SITELIBDIR%%/saltapi/config.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/config.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/loader.py
+%%PYTHON_SITELIBDIR%%/saltapi/loader.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/loader.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/__init__.py
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_cherrypy/__init__.py
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_cherrypy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_cherrypy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_flask.py
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_flask.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_flask.pyo
+%%PYTHON_SITELIBDIR%%/saltapi/version.py
+%%PYTHON_SITELIBDIR%%/saltapi/version.pyc
+%%PYTHON_SITELIBDIR%%/saltapi/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/saltapi/netapi
+@dirrm %%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_cherrypy
+@dirrm %%PYTHON_SITELIBDIR%%/saltapi
