@@ -727,6 +727,8 @@
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
     SUBDIR += py-ranger
+    SUBDIR += py-salt
+    SUBDIR += py-salt-cloud
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
@@ -828,8 +830,6 @@
     SUBDIR += runwhen
     SUBDIR += safe-rm
     SUBDIR += safecat
-    SUBDIR += salt
-    SUBDIR += salt-cloud
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sarah
