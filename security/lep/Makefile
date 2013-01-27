@@ -10,6 +10,9 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lesser Encryption Project
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
+
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 
