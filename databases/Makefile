@@ -788,7 +788,6 @@
     SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-interbase
-    SUBDIR += ruby-kyotocabinet
     SUBDIR += ruby-memcache
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql

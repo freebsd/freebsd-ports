@@ -4008,3 +4008,6 @@ devel/p4v||2013-01-22|No longer publishes FreeBSD version
 multimedia/libdvdplay||2013-01-27|Has expired: No more public_distfiles
 www/p5-Bundle-Sledge||2013-01-27|Removed
 devel/p5-Class-Fields||2013-01-27|Has expired: considered obsolete by upstream
+databases/ruby-kyotocabinet||2013-01-27|Has expired: BROKEN for more than 6 month
+x11-themes/kde-icons-amaranth-althaea||2013-01-27|Has expired: BROKEN for more than 6 month
+net/bpfstat||2013-01-27|Has expired: Merge in netstat on all supported version of FreeBSD
