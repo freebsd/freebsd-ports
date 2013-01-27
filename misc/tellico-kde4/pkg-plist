@@ -25,6 +25,7 @@ share/apps/tellico/data-sources/fr.allocine.py
 share/apps/tellico/data-sources/fr.allocine.py.spec
 share/apps/tellico/data-sources/ministerio_de_cultura.py
 share/apps/tellico/data-sources/ministerio_de_cultura.py.spec
+share/apps/tellico/dblp2tellico.xsl
 share/apps/tellico/delicious2tellico.xsl
 share/apps/tellico/discogs2tellico.xsl
 share/apps/tellico/douban2tellico.xsl
@@ -92,6 +93,7 @@ share/apps/tellico/pics/tellico.png
 share/apps/tellico/pics/tellico.svg
 share/apps/tellico/pics/tellico_mime.svg
 share/apps/tellico/pics/video.png
+share/apps/tellico/pics/vinoxml.png
 share/apps/tellico/pics/wine.png
 share/apps/tellico/pubmed2tellico.xsl
 share/apps/tellico/record-logo.png
@@ -118,8 +120,10 @@ share/apps/tellico/tellico2html.js
 share/apps/tellico/tellico2html.xsl
 share/apps/tellico/tellico2onix.xsl
 share/apps/tellico/tellicoui.rc
+share/apps/tellico/thegamesdb2tellico.xsl
 share/apps/tellico/tmdb2tellico.xsl
 share/apps/tellico/vhs-logo.png
+share/apps/tellico/vinoxml2tellico.xsl
 share/apps/tellico/welcome.html
 share/apps/tellico/winecom2tellico.xsl
 share/apps/tellico/xmp2tellico.xsl
@@ -129,6 +133,24 @@ share/config.kcfg/tellico_config.kcfg
 share/config/tellico-script.knsrc
 share/config/tellico-template.knsrc
 share/config/tellicorc
+share/doc/HTML/ca/tellico/advanced.docbook
+share/doc/HTML/ca/tellico/common
+share/doc/HTML/ca/tellico/configuration.docbook
+share/doc/HTML/ca/tellico/details.docbook
+share/doc/HTML/ca/tellico/entry-editor5.png
+share/doc/HTML/ca/tellico/faqs.docbook
+share/doc/HTML/ca/tellico/fields-dialog.png
+share/doc/HTML/ca/tellico/filter-dialog.png
+share/doc/HTML/ca/tellico/fundamentals.docbook
+share/doc/HTML/ca/tellico/general-options.png
+share/doc/HTML/ca/tellico/hacking.docbook
+share/doc/HTML/ca/tellico/importing-exporting.docbook
+share/doc/HTML/ca/tellico/index.cache.bz2
+share/doc/HTML/ca/tellico/index.docbook
+share/doc/HTML/ca/tellico/menus.docbook
+share/doc/HTML/ca/tellico/print-options.png
+share/doc/HTML/ca/tellico/source-options.png
+share/doc/HTML/ca/tellico/template-options.png
 share/doc/HTML/de/tellico/advanced.docbook
 share/doc/HTML/de/tellico/common
 share/doc/HTML/de/tellico/configuration.docbook
@@ -340,6 +362,7 @@ share/locale/pt_BR/LC_MESSAGES/tellico.mo
 share/locale/ro/LC_MESSAGES/tellico.mo
 share/locale/ru/LC_MESSAGES/tellico.mo
 share/locale/sk/LC_MESSAGES/tellico.mo
+share/locale/sl/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
 share/locale/tr/LC_MESSAGES/tellico.mo
 share/locale/ug/LC_MESSAGES/tellico.mo
@@ -362,6 +385,7 @@ share/mimelnk/application/x-tellico.desktop
 @dirrm share/doc/HTML/es/tellico
 @dirrm share/doc/HTML/en/tellico
 @dirrm share/doc/HTML/de/tellico
+@dirrm share/doc/HTML/ca/tellico
 @dirrm share/apps/tellico/report-templates
 @dirrm share/apps/tellico/pics
 @dirrm share/apps/tellico/entry-templates
