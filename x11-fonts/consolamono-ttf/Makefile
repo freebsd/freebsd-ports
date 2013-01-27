@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	consolamono-ttf
-PORTVERSION=	20121116
+PORTVERSION=	20130127
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://openfontlibrary.org/assets/downloads/consolamono/7c6fa601cdc82be054fb2b8fd7e3c8cc/
+MASTER_SITES=	http://openfontlibrary.org/assets/downloads/consolamono/61cc2afcc4eca96efe7c6ebf178d39df/
 DISTNAME=	consolamono
 
 MAINTAINER=	rakuco@FreeBSD.org
