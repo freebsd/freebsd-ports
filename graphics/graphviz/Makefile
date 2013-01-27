@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.28.0
-PORTREVISION=	1
+PORTVERSION=	2.30.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -29,10 +28,10 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 cluster.1 diffimg.1 dijkstra.1 \
-		dot.1 dotty.1 gc.1 gml2gv.1 gv2gxl.1 gvedit.1 gvmap.1 \
-		gvmap.sh.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 \
-		lneato.1 nop.1 osage.1 patchwork.1 prune.1 sccmap.1 smyrna.1 \
-		tred.1 unflatten.1 vimdot.1
+		dot.1 dotty.1 gc.1 graphml2gv.1 gml2gv.1 gv2gxl.1 gvmap.1 \
+		gvmap.sh.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 lneato.1 \
+		nop.1 osage.1 patchwork.1 prune.1 sccmap.1 smyrna.1 tred.1 \
+		unflatten.1 vimdot.1
 MAN3=		cdt.3 expr.3 cgraph.3 graph.3 gvc.3 pack.3 pathplan.3 xdot.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
@@ -40,6 +39,7 @@ MLINKS=		dot.1 circo.1 \
 		dot.1 neato.1 \
 		dot.1 sfdp.1 \
 		dot.1 twopi.1 \
+		gml2gv.1 gv2gml.1 \
 		gv2gxl.1 gxl2gv.1
 
 FIX_INCLUDE=	ast_common.h \
@@ -269,6 +269,7 @@ CONFIGURE_ARGS+=	--without-smyrna
 .if ${PORT_OPTIONS:MGVEDIT}
 CONFIGURE_ARGS+=	--with-gvedit=yes
 PLIST_SUB+=		WITH_GVEDIT=""
+MAN1+=			gvedit.1
 .else
 PLIST_SUB+=		WITH_GVEDIT="@comment "
 CONFIGURE_ARGS+=	--with-qt=no
@@ -383,6 +384,7 @@ CONFIGURE_ARGS+=	--enable-guile
 PLIST_SUB+=		WITH_GUILE=""
 LIB_DEPENDS+=		guile:${PORTSDIR}/lang/guile
 MAN3+=			gv.3guile
+BROKEN=			the guile plugin needs a new version of guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
 PLIST_SUB+=		WITH_GUILE="@comment "
@@ -424,6 +426,7 @@ post-patch:
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
+	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in

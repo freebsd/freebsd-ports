@@ -1,16 +1,16 @@
---- configure.orig	2010-01-26 16:01:10.000000000 +0000
-+++ configure	2011-02-28 06:36:25.156165774 +0000
-@@ -6917,6 +6917,9 @@
- 	        *-apple-darwin* )
- 	            CFLAGS="${CFLAGS} -fno-common -Wall"
- 	            ;;
-+	        *alpha*-freebsd* )
-+	            CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall"
+--- configure.orig	2013-01-14 04:23:16.000000000 +0100
++++ configure	2013-01-26 20:03:12.000000000 +0100
+@@ -17696,6 +17696,9 @@
+ 	    *-apple-darwin* )
+ 	        CFLAGS="${CFLAGS} -fno-common -Wall"
+ 	        ;;
++	    *alpha*-freebsd* )
++	        CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall"
 +		    ;;
- 	        *-freebsd* )
- 	            CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall -ffast-math"
+ 	    *-freebsd* )
+ 	        CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall -ffast-math"
  		    ;;
-@@ -24803,7 +24806,9 @@
+@@ -21373,7 +21376,9 @@
  
          LUA_INCLUDES=""
          LUA_LIBS=""
@@ -21,19 +21,3 @@
  
          if test -n "$lua_inc"; then
             CFLAGS="$CFLAGS -I$lua_inc"
-@@ -27574,7 +27579,14 @@
-       if test "x$RUBY" = "x"; then
- 	use_ruby="No (ruby not available)"
-       else
--        RUBY_INCLUDES="-I`$RUBY $srcdir/config/config_ruby.rb INCLUDES`"
-+	RUBY_VER="`$RUBY -rrbconfig -e \"puts Config::CONFIG['ruby_version']\"`"
-+	if test "x$RUBY_VER" = "x1.8"; then
-+        	RUBY_INCLUDES="-I`$RUBY $srcdir/config/config_ruby.rb INCLUDES`"
-+	else
-+        	RUBY_INC="`$RUBY -rrbconfig -e \"puts Config::CONFIG['rubyhdrdir']\"`"
-+		RUBY_ARCH="`$RUBY -rrbconfig -e \"puts Config::CONFIG['arch']\"`"
-+		RUBY_INCLUDES="-I$RUBY_INC -I$RUBY_INC/$RUBY_ARCH"
-+	fi
- 	# hack for powerpc-darwin8 (10.4)
- 	RUBY_INCLUDES=`echo $RUBY_INCLUDES | sed 's/powerpc/universal/'`
-         RUBY_LIBS="-L`$RUBY $srcdir/config/config_ruby.rb lib` `$RUBY -rrbconfig -e \"puts Config::CONFIG['LIBRUBYARG_SHARED']\"`"
