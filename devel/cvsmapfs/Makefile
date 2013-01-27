@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsmapfs
-# Date created:		17 January 2000
-# Whom:			rip@pinetec.co.za
-#
+# Created by: rip@pinetec.co.za
 # $FreeBSD$
-#
 
 PORTNAME=	cvsmapfs
 PORTVERSION=	1.3
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.netsw.org/softeng/versioncontrol/repository/cvs/cvsmapfs/
 
-MAINTAINER=	rip@pinetec.co.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helps keep track of modes and permissions of files in cvs
 
 EXTRACT_CMD=	${CAT}	# despite .tar.gz suffix, only tarball

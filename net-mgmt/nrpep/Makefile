@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nrpep
-# Date created: 10 April 2002
-# Whom:		jon@netcraft.com
-#
+# Created by: jon@netcraft.com
 # $FreeBSD$
 
 PORTNAME=	nrpep
@@ -9,7 +6,7 @@ PORTVERSION=	0.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netsaint.org/download/contrib/addons/
 
-MAINTAINER=	jon@netcraft.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A netsaint addon for running plugins on remote hosts
 
 # Note that this port depends on neither netsaint-plugins OR netsaint, because it

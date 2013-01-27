@@ -1,9 +1,5 @@
-# New ports collection makefile for:   sip_scenario
-# Date created:        26 April 2005
-# Whom:                dterry@digifonica.com
-#
+# Created by: dterry@digifonica.com
 # $FreeBSD$
-#
 
 PORTNAME=	sip_scenario
 PORTVERSION=	1.2.7
@@ -11,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.iptel.org/~sipsc/index/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
-MAINTAINER=	dterry@digifonica.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIP call flow creator (HTML format)
 
 USE_ZIP=	yes
