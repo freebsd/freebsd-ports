@@ -43,6 +43,8 @@ share/applications/audacity.desktop
 %%DATADIR%%/nyquist/xm.lsp
 %%DATADIR%%/plug-ins/SilenceMarker.ny
 %%DATADIR%%/plug-ins/SoundFinder.ny
+%%DATADIR%%/plug-ins/StudioFadeOut.ny
+%%DATADIR%%/plug-ins/adjustable-fade.ny
 %%DATADIR%%/plug-ins/beat.ny
 %%DATADIR%%/plug-ins/clicktrack.ny
 %%DATADIR%%/plug-ins/clipfix.ny
@@ -59,9 +61,6 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/tremolo.ny
 %%DATADIR%%/plug-ins/vocalremover.ny
 %%DATADIR%%/plug-ins/vocoder.ny
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 share/icons/hicolor/16x16/apps/audacity.png
 share/icons/hicolor/22x22/apps/audacity.png
 share/icons/hicolor/24x24/apps/audacity.png
@@ -90,6 +89,7 @@ share/locale/ga/LC_MESSAGES/audacity.mo
 share/locale/gl/LC_MESSAGES/audacity.mo
 share/locale/he/LC_MESSAGES/audacity.mo
 share/locale/hi/LC_MESSAGES/audacity.mo
+share/locale/hr/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
 share/locale/id/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
