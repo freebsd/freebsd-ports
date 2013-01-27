@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-SAVI-Perl
-# Date created:				April 8th 2004
-# Whom:	      				Gary Hayers <Gary@Hayers.net>
-#
+# Created by: Gary Hayers <Gary@Hayers.net>
 # $FreeBSD$
 
 PORTNAME=	SAVI-Perl
@@ -14,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module interface to Sophos AntiVirus
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 MAN3=		SAVI.3
 
