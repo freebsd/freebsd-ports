@@ -1,6 +1,0 @@
-The Fast Light ToolKit ("FLTK", pronounced "fulltick") is a LGPL'd C++
-graphical user interface for X.
-FLTK provides modern GUI functionality without the bloat and supports
-3D graphics via OpenGL and its built-in GLUT emulation.
-
-WWW: http://www.fltk.org/

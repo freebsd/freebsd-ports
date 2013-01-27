@@ -4011,3 +4011,4 @@ devel/p5-Class-Fields||2013-01-27|Has expired: considered obsolete by upstream
 databases/ruby-kyotocabinet||2013-01-27|Has expired: BROKEN for more than 6 month
 x11-themes/kde-icons-amaranth-althaea||2013-01-27|Has expired: BROKEN for more than 6 month
 net/bpfstat||2013-01-27|Has expired: Merge in netstat on all supported version of FreeBSD
+x11-toolkits/fltk11||2013-01-27|Has expired: new code should use /x11-toolkits/fltk
