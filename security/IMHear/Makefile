@@ -1,16 +1,12 @@
-# New ports collection makefile for:	IMHear
-# Date created:				04 August 2003
-# Whom:					Nicolas Gieczewski
-#
+# Created by: Nicolas Gieczewski
 # $FreeBSD$
-#
 
 PORTNAME=	IMHear
 PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://repository.nixsoftware.com/ports/
 
-MAINTAINER=	ports@nixsoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An MSN Messenger event/message sniffer
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

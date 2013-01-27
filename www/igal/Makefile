@@ -1,9 +1,5 @@
-# New ports collection makefile for:   igal
-# Date created:                        14 Aug 2002
-# Whom:                                Dylan Carlson  <absinthe@pobox.com>
-#
+# Created by: Dylan Carlson  <absinthe@pobox.com>
 # $FreeBSD$
-#
 
 PORTNAME=	igal
 PORTVERSION=	1.4
@@ -11,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.stanford.edu/~epop/igal/
 
-MAINTAINER=	absinthe@pobox.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A static html image gallery generator for *nix
 
 RUN_DEPENDS=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg \
