@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdrawchem
-# Date created:				13 April 2000
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	xdrawchem
 PORTVERSION=	1.9.9

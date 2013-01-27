@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsgraph
-# Date created:				2001-02-21
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	cvsgraph
 PORTVERSION=	1.7.0

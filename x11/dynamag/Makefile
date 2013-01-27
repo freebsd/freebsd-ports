@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dynamag
-# Date created:        			2000-09-22
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	dynamag
 PORTVERSION=	1.1

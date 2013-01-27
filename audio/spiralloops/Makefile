@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spiralloops
-# Date created:				2000-12-06
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	spiralloops
 PORTVERSION=	2.0.0

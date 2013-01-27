@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdiskusage
-# Date created:				2000-09-23
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.48

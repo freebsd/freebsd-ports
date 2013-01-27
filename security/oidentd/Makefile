@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oidentd
-# Date created:		29 Mar 2000
-# Whom:			Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	oidentd
 PORTVERSION=	2.0.8

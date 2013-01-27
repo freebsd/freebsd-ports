@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evilwm
-# Date created:				2000-11-04
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	evilwm
 PORTVERSION=	1.1.0

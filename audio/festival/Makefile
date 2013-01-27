@@ -1,11 +1,5 @@
-# New ports collection makefile for:	festival
-# Date created:        			2000-06-11
-# Whom:					Trevor Johnson
-# based on the NetBSD port
-#
-# $NetBSD: Makefile,v 1.11 1999/12/28 04:19:58 wiz Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	festival
 PORTVERSION=	1.96

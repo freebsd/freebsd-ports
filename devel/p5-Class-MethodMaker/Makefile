@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-MethodMaker
-# Date created:				2000-07-09
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=		Class-MethodMaker
 PORTVERSION=		2.18

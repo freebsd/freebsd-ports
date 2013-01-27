@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmixer
-# Date created:		27 October 1999
-# Whom:			Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4

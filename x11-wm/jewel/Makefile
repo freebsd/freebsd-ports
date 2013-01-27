@@ -1,10 +1,5 @@
-# New ports collection makefile for:	jewel
-# Date created:				2002-05-26
-# Whom:					trevor
-# based in part on the aewm++ port by ijliao
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	jewel
 PORTVERSION=	0.12.41

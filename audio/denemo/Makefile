@@ -1,9 +1,5 @@
-# New ports collection makefile for:	denemo
-# Date created:				2001-02-24
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	denemo
 PORTVERSION=	0.9.2
