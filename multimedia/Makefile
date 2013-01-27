@@ -154,7 +154,6 @@
     SUBDIR += libdvbpsi
     SUBDIR += libdvdcss
     SUBDIR += libdvdnav
-    SUBDIR += libdvdplay
     SUBDIR += libdvdread
     SUBDIR += libfame
     SUBDIR += libkate

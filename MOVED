@@ -4005,3 +4005,6 @@ mail/claws-mail-synce||2013-01-16|Has expired: No longer supported by Claws Mail
 databases/postgresql-plpython|databases/postgresql90-plpython|2013-01-20|This port was splitted out to several versioned ports
 net-mgmt/nfdump-devel||2013-01-22|Has expired: use nfdump instead
 devel/p4v||2013-01-22|No longer publishes FreeBSD version
+multimedia/libdvdplay||2013-01-27|Has expired: No more public_distfiles
+www/p5-Bundle-Sledge||2013-01-27|Removed
+devel/p5-Class-Fields||2013-01-27|Has expired: considered obsolete by upstream
