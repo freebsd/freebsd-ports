@@ -105,6 +105,7 @@
     SUBDIR += avra
     SUBDIR += avrdude
     SUBDIR += avro-c
+    SUBDIR += avro-cpp
     SUBDIR += baz
     SUBDIR += bcc
     SUBDIR += bcpp
