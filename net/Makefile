@@ -60,7 +60,6 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += bounce
-    SUBDIR += bpfstat
     SUBDIR += bsdproxy
     SUBDIR += bwi-firmware-kmod
     SUBDIR += bwn-firmware-kmod
