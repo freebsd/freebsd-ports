@@ -25,26 +25,26 @@ PORTEXAMPLES=	htaccess.txt
 PORTDOCS=	changelog.txt README.textile
 USE_DOS2UNIX=	yes
 
-OPTIONS=	APACHE		"Use Apache webserver" on \
-		PHPMOD		"Use php module for Apache" off \
-		LIGHTTPD	"Use Lighttpd webserver" off \
-		NGINX		"Use Nginx" off
+OPTIONS_DEFINE=	APACHE PHPMOD LIGHTTPD NGINX
+OPTIONS_DEFAULT=	APACHE
+PHPMOD_DESC=	Use PHP module for Apache
+NGINX_DESC=	Use Nginx
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PHPMOD)
+.if ${PORT_OPTIONS:MPHPMOD}
 WANT_PHP_MOD=	yes
 .else
 WANT_PHP_CGI=	yes
 .endif
 
-.if !defined(WITHOUT_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
-.if defined(WITH_LIGHTTPD)
+.if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
-.if defined(WITH_NGINX)
+.if ${PORT_OPTIONS:MNGINX}
 RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .endif
 
@@ -72,18 +72,18 @@ do-install:
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${ent}
 	@${CHMOD} u+w ${WWWDIR}/${ent}
 .endfor
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for ex in ${PORTEXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/${ex} ${EXAMPLESDIR}
 .endfor
-.endif # NOPORTEXAMPLES
-.if !defined(NOPORTDOCS)
+.endif # PORTEXAMPLES
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-.endif #NOPORTDOCS
+.endif # PORTDOCS
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
