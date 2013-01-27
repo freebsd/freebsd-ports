@@ -1,0 +1,33 @@
+--- Makefile.am.orig
++++ Makefile.am
+@@ -57,18 +57,18 @@ data_DATA =
+ # the basename that bash wants to use is symlinked to the main name
+ # that this distribution uses dbg-main.sh, unless those are the same.
+ # 
+-OLD_DIR    = $(dir @DBGR_MAIN@)
+-OLD_MAIN   = $(notdir @DBGR_MAIN@)
+-PARENT_DIR = $(dir $(OLD_DIR))
+-install-data-hook: 
+-	@if test -d $(DESTDIR)$(OLD_DIR) ; then \
+-	     $(RM) -f $(DESTDIR)$(OLD_DIR)/* || true; \
+-	     $(MAKE) $(AM_MAKEFLAGS) install-pkgdataDATA; \
+-	else if test -L $(DESTDIR)$(OLD_DIR:/=) ; then \
+-	     $(RM) -f $(DESTDIR)$(OLD_DIR:/=) || true; \
+-	     $(MAKE) $(AM_MAKEFLAGS) install-pkgdataDATA; \
+-	fi; fi
+-	test -d $(DESTDIR)$(PKGDATADIR) || $(mkdir_p) $(DESTDIR)$(PKGDATADIR)
++# OLD_DIR    = $(dir @DBGR_MAIN@)
++# OLD_MAIN   = $(notdir @DBGR_MAIN@)
++# PARENT_DIR = $(dir $(OLD_DIR))
++# install-data-hook: 
++# 	@if test -d $(DESTDIR)$(OLD_DIR) ; then \
++# 	     $(RM) -f $(DESTDIR)$(OLD_DIR)/* || true; \
++# 	     $(MAKE) $(AM_MAKEFLAGS) install-pkgdataDATA; \
++# 	else if test -L $(DESTDIR)$(OLD_DIR:/=) ; then \
++# 	     $(RM) -f $(DESTDIR)$(OLD_DIR:/=) || true; \
++# 	     $(MAKE) $(AM_MAKEFLAGS) install-pkgdataDATA; \
++# 	fi; fi
++# 	test -d $(DESTDIR)$(PKGDATADIR) || $(mkdir_p) $(DESTDIR)$(PKGDATADIR)
+ 
+ # Unit testing
+ check-unit: test-unit

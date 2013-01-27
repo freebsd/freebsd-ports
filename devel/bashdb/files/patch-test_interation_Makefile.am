@@ -1,0 +1,72 @@
+--- test/integration/Makefile.am.orig
++++ test/integration/Makefile.am
+@@ -1,8 +1,27 @@
+-test_in_files := $(wildcard test-*.in)
+-tests_from_in_files := $(notdir $(test_in_files:.in=))
++test_in_files = \
++	Makefile.in \
++	check-common.sh.in \
++	test-bug-step-subshell.in \
++	test-debug.in \
++	test-delete.in \
++	test-export.in \
++	test-info-args.in \
++	test-misc.in \
++	test-setshow.in \
++	test-sig.in
++
++tests_from_in_files = \
++	test-bug-step-subshell \
++	test-debug \
++	test-delete \
++	test-export \
++	test-info-args \
++	test-misc \
++	test-setshow \
++	test-sig
+ 
+ check_DATA = \
+-	$(data_in_files)   \
++	$(test_in_files)   \
+ 	check-common.sh.in \
+ 	interrupt.tests    \
+ 	interrupt-3.tests  \
+@@ -13,37 +32,7 @@ check_DATA = \
+ 	trace.tests	   \
+ 	trace2.tests
+ 
+-TESTS = \
+-	$(tests_from_in_files) \
+-	test-action     \
+-	test-brkpt      \
+-	test-bug-args   \
+-	test-bugI       \
+-	test-bugIFS     \
+-	test-bug-source \
+-	test-command    \
+-	test-complete   \
+-	test-display    \
+-	test-enable     \
+-	test-file-with-spaces  \
+-	test-finish     \
+-	test-frame      \
+-	test-interrupt  \
+-	test-list       \
+-	test-lopts 	\
+-	test-multi	\
+-	test-parm	\
+-	test-restart	\
+-	test-search	\
+-	test-settrace 	\
+-	test-skip 	\
+-	test-sopts 	\
+-	test-bug-step 	\
+-	test-subshell 	\
+-	test-tbreak	\
+-	test-trace	\
+-	test-watch1	\
+-	test-watch2
++TESTS = $(tests_from_in_files)
+ 
+ TESTS_ENVIRONMENT = \
+   srcdir="$(abs_srcdir)" \

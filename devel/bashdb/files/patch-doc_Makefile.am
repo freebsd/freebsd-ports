@@ -1,0 +1,27 @@
+--- doc/Makefile.am.orig
++++ doc/Makefile.am
+@@ -42,14 +42,14 @@ html: @PACKAGE@.html @PACKAGE@-man.html
+ $(man1_MANS): @PACKAGE@-man.pod
+ 	pod2man --release=$(PACKAGE_VERSION) --name=@PACKAGE@ --center="GNU Tools" --section=$(EXT) $(srcdir)/@PACKAGE@-man.pod >$@
+ 
+-%.ps.gz: %.ps
+-	gzip -9c $< > $@
++#%.ps.gz: %.ps
++#	gzip -9c $< > $@
+ 
+ .texi.pdf:
+-	$(TEXI2PDF) -I $(srcdir) $<
++	$(TEXI2PDF) -I $(srcdir) $< || true
+ 
+ .texi.dvi:
+-	$(TEXI2DVI) -I $(srcdir) $<
++	$(TEXI2DVI) -I $(srcdir) $< || true
+ 
+ .dvi.ps:
+ 	test -d $(docdir) || mkdir $(docdir)
+@@ -63,4 +63,4 @@ $(man1_MANS): @PACKAGE@-man.pod
+ 
+ all-formats: pdf dvi txt ps html
+ 
+-MOSTLYCLEANFILES = @PACKAGE@.tgs @PACKAGE@.ps.gz @PACKAGE@.pdf @PACKAGE@.html @PACKAGE@_toc.html @PACKAGE@_foot.html $(man1_MANS) @PACKAGE@-man.html
++MOSTLYCLEANFILES = @PACKAGE@.tgs @PACKAGE@.ps.gz @PACKAGE@.pdf @PACKAGE@.html @PACKAGE@_toc.html @PACKAGE@_foot.html $(man1_MANS) @PACKAGE@-man.html pod2htm?.tmp @PACKAGE@.info
