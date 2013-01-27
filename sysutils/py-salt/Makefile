@@ -5,6 +5,7 @@ PORTNAME=	salt
 PORTVERSION=	0.12.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system

@@ -5,6 +5,7 @@ PORTNAME=	salt-cloud
 PORTVERSION=	0.8.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Provisioning salted minions to various cloud providers
@@ -20,7 +21,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 MAN1=		salt-cloud.1
 MAN7=		salt-cloud.7
 
-BUILD_DEPENDS+=	salt:${PORTSDIR}/sysutils/salt \
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt:${PORTSDIR}/sysutils/py-salt \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}libcloud>=0:${PORTSDIR}/net/py-libcloud \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko \
