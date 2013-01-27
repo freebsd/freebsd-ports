@@ -87,7 +87,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}
-LIB_DEPENDS+=	graph:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=	gvpr:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=--without-graphviz
 .endif
@@ -203,8 +203,6 @@ post-patch:
 .endif
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|/usr/bin/ruby|/usr/bin/env ruby|' \
-		${WRKSRC}/tools/gobj2dot.rb
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS}
