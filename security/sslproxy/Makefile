@@ -21,6 +21,9 @@ PLIST_FILES=	bin/sslproxy
 
 USE_OPENSSL=	YES
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2013-02-28
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslproxy ${PREFIX}/bin/sslproxy
 .if !defined(NOPORTDOCS)
