@@ -1,0 +1,20 @@
+--- src/CMakeLists.txt.orig	2013-01-23 23:35:50.300900781 +0400
++++ src/CMakeLists.txt	2013-01-23 23:37:52.345522653 +0400
+@@ -99,7 +99,7 @@
+ # The version.sh script gives us a SOVERSION that uses colon as a
+ # separator; we need periods.
+ 
+-string(REPLACE ":" "." LIBAVRO_DOT_VERSION ${LIBAVRO_VERSION})
++set(LIBAVRO_DOT_VERSION 0)
+ 
+ add_library(avro-static STATIC ${AVRO_SRC} ${JANSSON_SRC})
+ target_link_libraries(avro-static ${CODEC_LIBRARIES} ${THREADS_LIBRARIES})
+@@ -142,7 +142,7 @@
+ set(VERSION ${AVRO_VERSION})
+ configure_file(avro-c.pc.in avro-c.pc)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/avro-c.pc
+-        DESTINATION lib/pkgconfig)
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
+ 
+ add_executable(avrocat avrocat.c)
+ target_link_libraries(avrocat avro-static)
