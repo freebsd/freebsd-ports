@@ -1,9 +1,5 @@
-# New ports collection makefile for:	LinPlasma
-# Date created:				2000-10-22
-# Whom:					Trevor Johnson <trevor@FreeBSD.org>
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	linplasma
 PORTVERSION=	1.0

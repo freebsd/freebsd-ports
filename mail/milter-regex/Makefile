@@ -1,5 +1,4 @@
 # Created by: trevor
-# based on the OpenBSD port by Daniel Hartmeier
 # $FreeBSD$
 
 PORTNAME=	milter-regex

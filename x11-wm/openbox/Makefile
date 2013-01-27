@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openbox (based on the blackbox port)
-# Date created:				2002-04-28
-# Whom:					Trevor Johnson <trevor@FreeBSD.org>
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	openbox
 PORTVERSION=	3.5.0

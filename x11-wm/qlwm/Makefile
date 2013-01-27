@@ -1,11 +1,5 @@
-# New ports collection makefile for:	qlwm
-# Date created:				2000-01-24
-# Whom:					trevor
-# based on the OpenBSD port by Marc Espie <espie@openbsd.org>
-#
-# $OpenBSD: Makefile,v 1.2 2000/10/20 12:27:06 espie Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	qlwm
 PORTVERSION=	4.3

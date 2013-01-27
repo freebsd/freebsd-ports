@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ephem
-# Date created:		3 April 1997
-# Whom:			eserte
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	ephem
 PORTVERSION=	4.28

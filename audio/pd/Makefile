@@ -1,4 +1,4 @@
-# Created by: Trevor Johnson <trevor@FreeBSD.org>
+# Created by: trevor
 # $FreeBSD$
 
 PORTNAME=	pd

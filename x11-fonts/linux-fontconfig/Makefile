@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-fontconfig
-# Date created:				2003-11-19
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3

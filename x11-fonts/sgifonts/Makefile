@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sgifonts
-# Date created:				2002-05-31
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1

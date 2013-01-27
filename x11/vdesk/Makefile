@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdesk
-# Date created:				2002-05-13
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	vdesk
 PORTVERSION=	1.2

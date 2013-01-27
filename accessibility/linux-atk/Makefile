@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-atk
-# Date created:				2003-07-05
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	atk
 PORTVERSION=	1.9.1

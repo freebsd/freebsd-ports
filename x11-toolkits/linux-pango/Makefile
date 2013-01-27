@@ -1,7 +1,4 @@
-# New ports collection makefile for:	linux-pango
-# Date created:				2003-07-05
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
 
 PORTNAME=	pango

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	streamripper
-# Date created:		6 Apr 2000
-# Whom:			Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	streamripper
 PORTVERSION=	1.64.6

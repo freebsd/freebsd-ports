@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fetchyahoo
-# Date created:				2003-09-27
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	fetchyahoo
 PORTVERSION=	2.13.9

@@ -1,11 +1,5 @@
-# New ports collection makefile for:	festvox-rab8
-# Date created:        			2000-06-15
-# Whom:					Trevor Johnson
-# based on the NetBSD port
-#
-# $NetBSD: Makefile,v 1.12 2000/02/15 09:26:17 agc Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	festvox-rab8
 PORTVERSION=	1.4.1
