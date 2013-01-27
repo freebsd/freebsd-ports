@@ -15,9 +15,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 
-OPTIONS_DEFINE=	DVDNAV DVDPLAY CDPARANOIA OPTIMIZED_CFLAGS SDL TERMCAP WIN32
+OPTIONS_DEFINE=	DVDNAV CDPARANOIA OPTIMIZED_CFLAGS SDL TERMCAP WIN32
 DVDNAV_DESC=	Enable libdvdnav support
-DVDPLAY_DESC=	Enable libdvdplay support
 TERMCAP_DESC=	Enable termcap key support
 WIN32_DESC=	Enable win32 codec set
 
@@ -70,7 +69,7 @@ CONFIGURE_ARGS+=	--enable-cdparanoia
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
-.if ${PORT_OPTIONS:MDVDNAV} || ${PORT_OPTIONS:MDVDPLAY}
+.if ${PORT_OPTIONS:MDVDNAV}
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--enable-libdvdread
@@ -84,14 +83,6 @@ LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 CONFIGURE_ARGS+=	--enable-libdvdnav
 .else
 CONFIGURE_ARGS+=	--disable-libdvdnav
-.endif
-# ogle's libdvdplay
-.if ${PORT_OPTIONS:MDVDPLAY}
-LIB_DEPENDS+=	dvdplay.0:${PORTSDIR}/multimedia/libdvdplay
-
-CONFIGURE_ARGS+=	--enable-libdvdplay
-.else
-CONFIGURE_ARGS+=	--disable-libdvdplay
 .endif
 # compilation optimizations
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
