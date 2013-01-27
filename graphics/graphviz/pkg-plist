@@ -12,6 +12,8 @@ bin/dot_builtins
 bin/fdp
 bin/gc
 bin/gml2gv
+bin/graphml2gv
+bin/gv2gml
 bin/gv2gxl
 bin/gvcolor
 %%WITH_GVEDIT%%bin/gvedit
@@ -46,7 +48,6 @@ include/graphviz/color.h
 include/graphviz/dthdr.h
 include/graphviz/geom.h
 include/graphviz/globals.h
-include/graphviz/graph.h
 include/graphviz/graphviz_version.h
 include/graphviz/gv.i
 include/graphviz/gv.cpp
@@ -86,10 +87,6 @@ lib/graphviz/libcdt.so
 lib/graphviz/libcdt.so.5
 lib/graphviz/libcdt.la
 lib/graphviz/libcdt.a
-lib/graphviz/libgraph.so
-lib/graphviz/libgraph.so.5
-lib/graphviz/libgraph.la
-lib/graphviz/libgraph.a
 lib/graphviz/libcgraph.so
 lib/graphviz/libcgraph.so.6
 lib/graphviz/libcgraph.la
@@ -216,7 +213,6 @@ lib/graphviz/libxdot.la
 lib/graphviz/libxdot.so
 lib/graphviz/libxdot.so.4
 libdata/pkgconfig/libcdt.pc
-libdata/pkgconfig/libgraph.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libgvc.pc
@@ -323,6 +319,7 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/none.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/note.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/octagon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/oval.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/parallelogram.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pentagon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/plaintext.gif
@@ -359,7 +356,7 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gc.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gdtclft.3tcl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gml2gv.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/graph.3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/graphml2gv.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3go.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3guile.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3io.pdf
@@ -373,6 +370,7 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3ruby.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3sharp.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3tcl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/gv2gml.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gv2gxl.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvc.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvcolor.1.pdf
@@ -516,6 +514,7 @@ libdata/pkgconfig/libxdot.pc
 %%DATADIR%%/graphs/directed/alf.gv
 %%DATADIR%%/graphs/directed/arrows.gv
 %%DATADIR%%/graphs/directed/awilliams.gv
+%%DATADIR%%/graphs/directed/biological.gv
 %%DATADIR%%/graphs/directed/clust.gv
 %%DATADIR%%/graphs/directed/clust1.gv
 %%DATADIR%%/graphs/directed/clust2.gv
@@ -568,6 +567,36 @@ libdata/pkgconfig/libxdot.pc
 %%DATADIR%%/graphs/undirected/Petersen.gv
 %%DATADIR%%/graphs/undirected/ngk10_4.gv
 %%DATADIR%%/graphs/undirected/process.gv
+%%DATADIR%%/gvpr/addranks
+%%DATADIR%%/gvpr/addrings
+%%DATADIR%%/gvpr/anon
+%%DATADIR%%/gvpr/attr
+%%DATADIR%%/gvpr/bb
+%%DATADIR%%/gvpr/bbox
+%%DATADIR%%/gvpr/cliptree
+%%DATADIR%%/gvpr/col
+%%DATADIR%%/gvpr/collapse
+%%DATADIR%%/gvpr/color
+%%DATADIR%%/gvpr/dechain
+%%DATADIR%%/gvpr/deghist
+%%DATADIR%%/gvpr/deledges
+%%DATADIR%%/gvpr/delmulti
+%%DATADIR%%/gvpr/delnodes
+%%DATADIR%%/gvpr/depath
+%%DATADIR%%/gvpr/dijkstra
+%%DATADIR%%/gvpr/flatten
+%%DATADIR%%/gvpr/get-layers-list
+%%DATADIR%%/gvpr/group
+%%DATADIR%%/gvpr/indent
+%%DATADIR%%/gvpr/knbhd
+%%DATADIR%%/gvpr/maxdeg
+%%DATADIR%%/gvpr/path
+%%DATADIR%%/gvpr/rotate
+%%DATADIR%%/gvpr/scale
+%%DATADIR%%/gvpr/scalexy
+%%DATADIR%%/gvpr/span
+%%DATADIR%%/gvpr/topon
+%%DATADIR%%/gvpr/treetoclust
 %%WITH_SMYRNA%%%%DATADIR%%/smyrna/dot.PNG
 %%WITH_SMYRNA%%%%DATADIR%%/smyrna/glade-3.png
 %%WITH_SMYRNA%%%%DATADIR%%/smyrna/lcirco.png
@@ -624,6 +653,7 @@ libdata/pkgconfig/libxdot.pc
 @dirrm %%DATADIR%%/doc/html
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/gvpr
 @dirrm %%DATADIR%%/gvedit
 @dirrm %%DATADIR%%/graphs/directed
 @dirrm %%DATADIR%%/graphs/undirected
