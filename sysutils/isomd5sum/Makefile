@@ -1,18 +1,16 @@
-# New ports collection makefile for:	isomd5sum
-# Date created:				June 17, 2008
-# Whom:					Marzhan Mykola <delgod@portaone.com>
-#
+# Created by: Mykola Marzhan <delgod@portaone.com>
 # $FreeBSD$
-#
 
 PORTNAME=	isomd5sum
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://fedorahosted.org/releases/i/s/isomd5sum/
+MASTER_SITES=	http://git.fedorahosted.org/cgit/isomd5sum.git/snapshot/
 
 MAINTAINER=	delgod@portaone.com
 COMMENT=	Implanting and checking checksums within an ISO9660 image
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
