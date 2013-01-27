@@ -1,12 +1,8 @@
-# New ports collection makefile for:	wmconfig
-# Whom:					Tommy Scheunemann <net@arrishq.org>
-# Date created:		17 August 2003
-#
+# Created by: Tommy Scheunemann <net@arrishq.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/files/
 
