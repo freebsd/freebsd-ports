@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.12.0.2
+PORTVERSION=	2.12.0.3
 CATEGORIES=	www
-MASTER_SITES=	# empty, see below
+MASTER_SITES=	SF/dansguardian
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
@@ -13,7 +13,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 USE_BZIP2=	yes
 
 CONFLICTS=	dansguardian-2.10.*
@@ -112,11 +112,6 @@ PLIST_SUB+=		EMAILCONF="@comment "
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-dgdebug
-.endif
-
-# User needs to manually download the distfile
-.if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})) && !defined(PACKAGE_BUILDING)
-IGNORE=	commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make
 .endif
 
 post-patch:
