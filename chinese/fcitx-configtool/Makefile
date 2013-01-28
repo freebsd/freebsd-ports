@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-configtool
-PORTVERSION=	0.4.5.1
+PORTVERSION=	0.4.5.2
 CATEGORIES=	chinese x11
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	fcitx
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	Fcitx IM framework configure tool
+COMMENT=	Fcitx IM framework configuration tool
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
@@ -43,7 +44,5 @@ PLIST_SUB+=	GTK3="@comment "
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3}
 IGNORE=		a GUI is required
 .endif
-
-PROJECTHOST=	fcitx
 
 .include <bsd.port.mk>
