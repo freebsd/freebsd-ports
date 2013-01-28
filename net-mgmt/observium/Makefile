@@ -1,6 +1,6 @@
 # Created by: rflynn@acsalaska.net
-# $Redports: melflynn/net-mgmt/observium/Makefile 2134 2012-02-21 13:14:38Z melflynn $
 # $FreeBSD$
+# $Redports: melflynn/net-mgmt/observium/Makefile 2134 2012-02-21 13:14:38Z melflynn $
 
 PORTNAME=	observium
 PORTVERSION=	0.11.5.2261
@@ -9,7 +9,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://observium.org/ \
 		http://cpansearch.perl.org/src/BBB/Net-Ping-2.31/demo/
 DISTNAME=	${PORTNAME}-latest
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # prevent being 'fping' with JAIL
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,9 +30,13 @@ RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		${LOCALBASE}/share/pear/Net/IPv6.php:${PORTSDIR}/net/pear-Net_IPv6 \
 		snmpget:${PORTSDIR}/net-mgmt/net-snmp
 
-OPTIONS=	APACHEMOD	"Use php with apache22+ module" On \
-		MYSQLD		"Use local MySQL server" Off \
-		JAIL		"This is a jail install" Off
+OPTIONS_DEFINE=	APACHEMOD MYSQLD JAIL
+OPTIONS_DEFAULT=	APACHEMOD
+APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
+MYSQLD_DESC=	Use local MySQL server
+JAIL_DESC=	This is a jail installation
+
+.include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php"
@@ -49,33 +53,29 @@ ROOT_DIRS=	attic contrib html includes mibs scripts upgrade-scripts
 PORTDOCS=	CHANGELOG INSTALL README
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
-.include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING)
-WITHOUT_APACHEMOD=yes # Package builder doesn't create php5 with module
-.endif
-
-.if !defined(WITHOUT_APACHEMOD)
+.if ${PORT_OPTIONS:MAPACHEMOD} && !defined(PACKAGE_BUILDING)
 WANT_PHP_MOD=	yes
 USE_APACHE=	22+
 .else
+# Package builder doesn't create php5 with module
 WANT_PHP_WEB=	yes
 .endif
 
-.if !defined(WITHOUT_MYSQLD)
+.if ${PORT_OPTIONS:MMYSQLD}
 USE_MYSQL=	server
 .else
 USE_MYSQL=	client
 .endif
 
-.if defined(WITH_JAIL)
+.if ${PORT_OPTIONS:MJAIL}
 RUN_DEPENDS+=	p5-Net-Ping>=0:${PORTSDIR}/net/p5-Net-Ping
 DISTFILES+=	fping
 SUB_LIST+=	FPING="${LOCALBASE}/bin/fping-perl"
-PLIST_FILES+=	bin/fping-perl
+PLIST_SUB+=	JAIL=""
 .else
 RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 SUB_LIST+=	FPING="${LOCALBASE}/sbin/fping"
+PLIST_SUB+=	JAIL="@comment "
 .endif
 
 post-extract:
@@ -85,7 +85,7 @@ post-extract:
 .endif
 
 do-build:
-.if defined(WITH_JAIL)
+.if ${PORT_OPTIONS:MJAIL}
 	@${REINPLACE_CMD} -e 's,^#!.*$$,#!${PERL},' ${WRKDIR}/fping
 .endif
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} \
@@ -104,26 +104,26 @@ do-install:
 	@cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${WWWDIR}/${dir}
 .endfor
 	@${ECHO_MSG} "===>   Installing root files"
-.for file in ${ROOT_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${WWWDIR}
+.for f in ${ROOT_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${WWWDIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
 .endfor
 .endif
-.if defined(WITH_JAIL)
+.if ${PORT_OPTIONS:MJAIL}
 	@${INSTALL_SCRIPT} ${WRKDIR}/fping ${PREFIX}/bin/fping-perl
 .endif
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
