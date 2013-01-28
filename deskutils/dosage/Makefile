@@ -8,7 +8,7 @@ CATEGORIES=	deskutils python
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Application to keep a local mirror of web comics
 
-LISENSE=	MIT
+LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
 
