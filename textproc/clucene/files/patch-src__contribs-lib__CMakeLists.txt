@@ -1,0 +1,29 @@
+--- src/contribs-lib/CMakeLists.txt.orig	2011-03-16 20:21:07.000000000 -0400
++++ src/contribs-lib/CMakeLists.txt	2012-08-07 16:27:55.000000000 -0400
+@@ -106,9 +106,26 @@
+ )
+ TARGET_LINK_LIBRARIES(clucene-contribs-lib ${clucene_contrib_extra_libs})
+ 
++#install public headers.
++FOREACH(file ${HEADERS})
++	get_filename_component(apath ${file} PATH)
++	get_filename_component(aname ${file} NAME)
++	file(RELATIVE_PATH relpath ${CMAKE_SOURCE_DIR}/src/contribs-lib ${apath})
++	IF ( NOT aname MATCHES "^_.*" )
++		install(FILES ${file} 
++		        DESTINATION include/${relpath}
++		        COMPONENT development)
++	ENDIF ( NOT aname MATCHES "^_.*" )
++ENDFOREACH(file)
++
+ #set properties on the libraries
+ SET_TARGET_PROPERTIES(clucene-contribs-lib PROPERTIES
+     VERSION ${CLUCENE_VERSION}
+     SOVERSION ${CLUCENE_SOVERSION}
+     COMPILE_DEFINITIONS_DEBUG _DEBUG
+ )
++
++#and install library
++install(TARGETS clucene-contribs-lib 
++        DESTINATION ${LIB_DESTINATION}  
++        COMPONENT runtime )
