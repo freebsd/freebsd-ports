@@ -1,15 +1,11 @@
-# ports collection makefile for:	pbasic
-# Date created:		13th August 1995
-# Whom:			Julian Stacey <jhs@freebsd.org>
-#
+# Created by: Julian Stacey <jhs@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pbasic
 PORTVERSION=	2.0
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trevor
+MASTER_SITES=	ftp://ftp.berklix.org/pub/FreeBSD/ports/distfiles/ \
+		http://www.berklix.com/~jhs/ftp/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-950813
 
 MAINTAINER=	jhs@berklix.com
