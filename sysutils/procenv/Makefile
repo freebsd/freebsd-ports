@@ -17,8 +17,10 @@ USE_GMAKE=	yes
 MAN1=		procenv.1
 PLIST_FILES=	bin/procenv
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 800505
 BROKEN=		does not build on old ${OPSYS} versions
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
