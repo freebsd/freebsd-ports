@@ -1,0 +1,28 @@
+--- src/core/CMakeLists.txt.orig	2011-03-16 20:21:07.000000000 -0400
++++ src/core/CMakeLists.txt	2012-08-07 14:12:31.000000000 -0400
+@@ -252,13 +252,13 @@
+     set(CLUCENE_SOVERSION ${CLUCENE_SOVERSION})
+ ")
+ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/CLuceneConfig.cmake"
+-        DESTINATION ${LIB_DESTINATION}/CLuceneConfig.cmake)
++        DESTINATION ${LIB_DESTINATION}/CLucene)
+ 
+ # install pkg-config file
+ IF(NOT WIN32)
+   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libclucene-core.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libclucene-core.pc @ONLY)
+   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libclucene-core.pc
+-          DESTINATION ${LIB_DESTINATION}/pkgconfig )
++          DESTINATION libdata/pkgconfig )
+ ENDIF(NOT WIN32)
+ 
+ 
+@@ -274,9 +274,6 @@
+     install(FILES ${clucene-shared_BINARY_DIR}/CLucene/clucene-config.h 
+             DESTINATION include/CLucene
+             COMPONENT development)
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CLuceneConfig.cmake 
+-            DESTINATION include/CLucene
+-            COMPONENT development)
+ ENDIF ( LUCENE_SYS_INCLUDES )
+ 
+ 
