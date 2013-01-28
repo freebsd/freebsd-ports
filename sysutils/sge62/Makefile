@@ -1,9 +1,5 @@
-# Ports collection makefile for:        sge
-# Date created:				Fri Jul 11, 2003
-# Whom:					Brooks Davis <brooks@FreeBSD.org>
-#
+# Created by: Brooks Davis <brooks@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
@@ -19,12 +15,15 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
 
-DEPRECATED=     Ancient and unsupported release 
+DEPRECATED=	Ancient and unsupported release
 EXPIRATION_DATE=2013-03-01
 
-OPTIONS=	BDB "Use DB based spooler" on \
-		X11 "Qmon X11 GUI" on \
-		QSH "Enable qsh (requires xterm on exec hosts)" on
+OPTIONS_DEFINE=	BDB X11 QSH
+OPTIONS_DEFAULT=	BDB X11 QSH
+X11_DESC=	Qmon X11 GUI
+QSH_DESC=	qsh (requires xterm on exec hosts)
+
+.include <bsd.port.options.mk>
 
 LATEST_LINK=	sge62
 CONFLICTS=	sge-6.[013-9]* sge-5* sgeee-[0-9]* sge-0.*
@@ -87,13 +86,11 @@ MANPREFIX=	${SGE_ROOT}
 .include "${.CURDIR}/Makefile.man"
 EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 LIB_DEPENDS=	db-4.2:${PORTSDIR}/databases/db42
 PLIST_SUB+=	BDB_SPOOL=
 .else
@@ -103,7 +100,7 @@ PLIST_SUB+=	BDB_SPOOL="@comment "
 
 AIMK_ARGS+=	-no-java -no-jni -no-gui-inst
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_MOTIF=	yes
 PLIST_SUB+=	QMON=
 QMON=		qmon
@@ -157,7 +154,7 @@ post-patch:
 	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' \
 	    -e 's|%%WRKDIR%%|${WRKDIR}|g' \
 	    ${FILESDIR}/distinst.private > ${WRKSRC}/distinst.private
-.if !defined(WITH_X11)
+.if ! ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e 's/qmon//' ${WRKSRC}/dist/util/setfileperm.sh
 .endif
 
@@ -171,14 +168,14 @@ do-build:
 	@${MKDIR} ${TMP_SGE_ROOT}
 	@cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
 	    ./scripts/distinst -local -libs ${SGE_ARCH} -- ${INST_PROGS}
-.if defined(WITHOUT_QSH)
+.if ! ${PORT_OPTIONS:MQSH}
 	@${RM} ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qlogin
 	@${RM} ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qrsh
 	@${MV} ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qsh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qrsh
 	@${LN} -s qrsh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qlogin
 	@${INSTALL_SCRIPT} ${FILESDIR}/qsh-disabled.sh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qsh
 .endif
-.if !defined(WITH_X11)
+.if ! ${PORT_OPTIONS:MX11}
 	@${RM} ${TMP_SGE_ROOT}/catman/cat/cat1/qmon.1
 	@${RM} -r ${TMP_SGE_ROOT}/3rd_party/qmon
 .endif
@@ -188,7 +185,7 @@ do-install:
 	@cd ${TMP_SGE_ROOT} && \
 	    ${FIND} . | ${TAR} cTf - - | ${TAR} xUCf ${SGE_ROOT} -
 	@cd ${SGE_ROOT} && ${SETENV} SGE_ROOT=${SGE_ROOT} util/setfileperm.sh -auto ${SGE_ROOT}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/../doc && ${FIND} * \( -name CVS \
 	    ${EXCEPTFILES:S/^/-o -name /} \) -a -prune -o -type f -print \
@@ -214,7 +211,7 @@ release-tar: build
 
 # Build a pkg-plist and Makefile.man
 build-plist:
-.if defined(WITHOUT_BDB) || defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MBDB} || ! ${PORT_OPTIONS:MX11}
 	@echo "ERROR: All OPTIONS must be enabled to build plist!" && ${FALSE}
 .endif
 	@${FIND} ${TMP_SGE_ROOT}/* -name man -prune -o \
@@ -257,4 +254,4 @@ build-plist:
 	    ${SED} -e 's|.*man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' \
 	    >> ${.CURDIR}/Makefile.man
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
