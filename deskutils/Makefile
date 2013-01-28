@@ -41,6 +41,7 @@
     SUBDIR += displaycalibrator
     SUBDIR += dlume
     SUBDIR += docear
+    SUBDIR += dosage
     SUBDIR += dragstack
     SUBDIR += drivel
     SUBDIR += ecru
@@ -213,7 +214,6 @@
     SUBDIR += plopfolio
     SUBDIR += preferencepanes
     SUBDIR += preferences
-    SUBDIR += py-dosage
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel
