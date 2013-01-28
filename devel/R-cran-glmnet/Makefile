@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	glmnet
-PORTVERSION=	1.8
-PORTREVISION=	1
+DISTVERSION=	1.8-5
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Lasso and elastic-net regularized generalized linear models
