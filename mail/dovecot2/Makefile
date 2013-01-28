@@ -44,12 +44,13 @@ PROTOCOLS=	imap pop3
 # Default requirement for dovecot rc script
 _REQUIRE=	LOGIN
 
-OPTIONS_DEFINE=	KQUEUE SSL GSSAPI VPOPMAIL LDAP PGSQL MYSQL SQLITE SOLR DOCS \
-		EXAMPLES LIBWRAP
+OPTIONS_DEFINE=	KQUEUE SSL GSSAPI VPOPMAIL LDAP LUCENE PGSQL MYSQL SQLITE \
+		SOLR DOCS EXAMPLES LIBWRAP
 OPTIONS_DEFAULT=	KQUEUE SSL
 
 KQUEUE_DESC=	kqueue(2) support
 VPOPMAIL_DESC=	vpopmail support
+LUCENE_DESC=	CLucene FTS support
 SOLR_DESC=	Solr FTS support
 
 .include <bsd.port.pre.mk>
@@ -121,6 +122,16 @@ _REQUIRE+=	slapd
 .else
 CONFIGURE_ARGS+=--without-ldap
 PLIST_SUB+=	LDAP="@comment "
+.endif
+
+## CLucene FTS support
+#
+.if ${PORT_OPTIONS:MLUCENE}
+CONFIGURE_ARGS+=--with-lucene
+LIB_DEPENDS+=	clucene-core:${PORTSDIR}/textproc/clucene
+PLIST_SUB+=	LUCENE=""
+.else
+PLIST_SUB+=	LUCENE="@comment "
 .endif
 
 ## PostgreSQL Support
