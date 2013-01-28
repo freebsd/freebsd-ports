@@ -700,6 +700,7 @@
     SUBDIR += pp
     SUBDIR += pprotectd
     SUBDIR += prips
+    SUBDIR += procenv
     SUBDIR += procmap
     SUBDIR += progsreiserfs
     SUBDIR += psgconf
