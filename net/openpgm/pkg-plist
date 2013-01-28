@@ -1,0 +1,60 @@
+include/pgm-5.2/pgm/atomic.h
+include/pgm-5.2/pgm/engine.h
+include/pgm-5.2/pgm/error.h
+include/pgm-5.2/pgm/gsi.h
+include/pgm-5.2/pgm/if.h
+include/pgm-5.2/pgm/in.h
+include/pgm-5.2/pgm/list.h
+include/pgm-5.2/pgm/macros.h
+include/pgm-5.2/pgm/mem.h
+include/pgm-5.2/pgm/messages.h
+include/pgm-5.2/pgm/msgv.h
+include/pgm-5.2/pgm/packet.h
+include/pgm-5.2/pgm/pgm.h
+include/pgm-5.2/pgm/skbuff.h
+include/pgm-5.2/pgm/socket.h
+include/pgm-5.2/pgm/time.h
+include/pgm-5.2/pgm/tsi.h
+include/pgm-5.2/pgm/types.h
+include/pgm-5.2/pgm/version.h
+include/pgm-5.2/pgm/winint.h
+include/pgm-5.2/pgm/wininttypes.h
+include/pgm-5.2/pgm/zinttypes.h
+lib/libpgm-5.2.so
+lib/libpgm-5.2.so.0
+lib/libpgm.a
+lib/libpgm.la
+lib/libpgm.so
+libdata/pkgconfig/openpgm-5.2.pc
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-rmt-bb-pgmcc-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc3208.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/SConscript
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/SConscript89
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/async.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/async.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/blocksyncrecv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/daytime.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecvmsg.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecvmsgv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/getopt.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/getopt.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/heatmap.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmdump.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmping.cc
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmrecv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmsend.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmtop.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/ping.proto
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pnonblocksyncrecv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinrecv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinrecvcc.cc
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinsend.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinsendcc.cc
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/shortcakerecv.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/snonblocksyncrecv.c
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/pgm-5.2/pgm
+@dirrm include/pgm-5.2

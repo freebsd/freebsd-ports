@@ -482,6 +482,7 @@
     SUBDIR += openntpd
     SUBDIR += opennx
     SUBDIR += openospfd
+    SUBDIR += openpgm
     SUBDIR += openradius
     SUBDIR += openser
     SUBDIR += openslp
