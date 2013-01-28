@@ -2,18 +2,33 @@ include/google/dense_hash_map
 include/google/dense_hash_set
 include/google/sparse_hash_map
 include/google/sparse_hash_set
-include/google/sparsehash/sparseconfig.h
 include/google/sparsehash/densehashtable.h
+include/google/sparsehash/hashtable-common.h
+include/google/sparsehash/libc_allocator_with_realloc.h
 include/google/sparsehash/sparsehashtable.h
 include/google/sparsetable
+include/google/template_util.h
 include/google/type_traits.h
+include/sparsehash/dense_hash_map
+include/sparsehash/dense_hash_set
+include/sparsehash/internal/densehashtable.h
+include/sparsehash/internal/hashtable-common.h
+include/sparsehash/internal/libc_allocator_with_realloc.h
+include/sparsehash/internal/sparseconfig.h
+include/sparsehash/internal/sparsehashtable.h
+include/sparsehash/sparse_hash_map
+include/sparsehash/sparse_hash_set
+include/sparsehash/sparsetable
+include/sparsehash/template_util.h
+include/sparsehash/type_traits.h
+libdata/pkgconfig/libsparsehash.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.windows
+%%PORTDOCS%%%%DOCSDIR%%/README_windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/dense_hash_map.html
 %%PORTDOCS%%%%DOCSDIR%%/dense_hash_set.html
@@ -24,6 +39,8 @@ include/google/type_traits.h
 %%PORTDOCS%%%%DOCSDIR%%/sparse_hash_map.html
 %%PORTDOCS%%%%DOCSDIR%%/sparse_hash_set.html
 %%PORTDOCS%%%%DOCSDIR%%/sparsetable.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/sparsehash/internal
+@dirrm include/sparsehash
 @dirrm include/google/sparsehash
 @dirrm include/google
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
