@@ -51,6 +51,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="559e00b7-6a4d-11e2-b6b0-10bf48230856">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.5.1,1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wordpress reports:</p>
+	<blockquote cite="http://wordpress.org/news/2013/01/wordpress-3-5-1/">
+	  <p>WordPress 3.5.1 also addresses the following security issues:</p>
+	  <ul>
+	    <li>A server-side request forgery vulnerability and remote port
+	      scanning using pingbacks. This vulnerability, which could
+	      potentially be used to expose information and compromise a
+	      site, affects all previous WordPress versions. This was fixed
+	      by the WordPress security team. We'd like to thank security
+	      researchers <a href="http://codeseekah.com/">Gennady
+	      Kovshenin</a> and <a href="http://www.ethicalhack3r.co.uk/">Ryan
+	      Dewhurst</a> for reviewing our work.</li>
+	    <li>Two instances of cross-site scripting via shortcodes and post
+	      content. These issues were discovered by Jon Cave of the WordPress
+	      security team.</li>
+	    <li>A cross-site scripting vulnerability in the external library
+	      Plupload. Thanks to the Moxiecode team for working with us on
+	      this, and for releasing Plupload 1.5.5 to address this issue.</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0235</cvename>
+      <cvename>CVE-2013-0236</cvename>
+      <cvename>CVE-2013-0237</cvename>
+    </references>
+    <dates>
+      <discovery>2013-01-24</discovery>
+      <entry>2013-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3886cafe-668c-11e2-94b8-1c4bd681f0cf">
     <topic>django-cms -- XSS Vulnerability</topic>
     <affects>
