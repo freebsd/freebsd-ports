@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MailScanner
-# Date created:				17 March 2003
-# Whom:					Jan-Peter Koopmann <j.koopmann@seceidos.de>
-#
+# Created by: Jan-Peter Koopmann <j.koopmann@seceidos.de>
 # $FreeBSD$
-#
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.84.5
@@ -40,11 +36,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tnef:${PORTSDIR}/converters/tnef \
 		wget:${PORTSDIR}/ftp/wget
 
-OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
-		CLAMAV "Install ClamAV" on \
-		CLAMAVMODULE "Install ClamAV Module" off \
-		BDC "Install BitDefender" off
-
 CONFLICTS=	MailScanner-devel-[0-9]*
 
 PATCHLEVEL=	2
@@ -63,41 +54,32 @@ SUB_LIST=	DATADIR=${DATADIR} \
 MAN8=		MailScanner.8
 MLINKS=		MailScanner.8 mailscanner.8
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		SPAMASSASSIN CLAMAV CLAMAVMODULE BDC
+SPAMASSASSIN_DESC=	Install SpamAssassin
+CLAMAV_DESC=		Install ClamAV
+CLAMAVMODULE_DESC=	Install ClamAV Module
+BDC_DESC=		Install BitDefender
 
-.if ${PERL_LEVEL} < 500903
-BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
+OPTIONS_DEFAULT=	SPAMASSASSIN CLAMAV
 
-.if defined(WITH_SPAMASSASSIN)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 PLIST_SUB+=	SPAMASSASSIN=""
 .else
 PLIST_SUB+=	SPAMASSASSIN="@comment "
 .endif
 
-# backwards compatibility
-.if defined(NO_SPAMASSASSIN_SYMLINK)
-WITHOUT_SPAMASSASSIN_SYMLINK=${NO_SPAMASSASSIN_SYMLINK}
-.endif
-
-.if defined(WITHOUT_SPAMASSASSIN_SYMLINK) || defined(WITHOUT_SPAMASSASSIN)
-PLIST_SUB+=	SPAMASSASSIN_SYMLINK="@comment "
-SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=yes
-.else
-PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
-SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=no
-.endif
-
-.if !defined(WITHOUT_CLAMAV)
+.if ${PORT_OPTIONS:MCLAMAV}
 RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
 .endif
 
-.if defined(WITH_CLAMAVMODULE)
+.if ${PORT_OPTIONS:MCLAMAVMODULE}
 RUN_DEPENDS+=	p5-Mail-ClamAV>=0:${PORTSDIR}/mail/p5-Mail-ClamAV
 .endif
 
-.if defined(WITH_CLAMAV)||defined(WITH_CLAMAVMODULE)
+.if ${PORT_OPTIONS:MCLAMAV} || ${PORT_OPTIONS:MCLAMAVMODULE}
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar \
 		zoo:${PORTSDIR}/archivers/zoo \
@@ -106,8 +88,21 @@ RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
 .endif
 
-.if defined(WITH_BDC)
+.if ${PORT_OPTIONS:MBDC}
 RUN_DEPENDS+=	bdc:${PORTSDIR}/security/bdc
+.endif
+
+# backwards compatibility
+.if defined(NO_SPAMASSASSIN_SYMLINK)
+WITHOUT_SPAMASSASSIN_SYMLINK=${NO_SPAMASSASSIN_SYMLINK}
+.endif
+
+.if defined(WITHOUT_SPAMASSASSIN_SYMLINK) || ! ${PORT_OPTIONS:MSPAMASSASSIN}
+PLIST_SUB+=	SPAMASSASSIN_SYMLINK="@comment "
+SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=yes
+.else
+PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
+SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=no
 .endif
 
 DOC_FILES=	INSTALL.FreeBSD README
@@ -270,7 +265,7 @@ do-install:
 		&& ${FIND} * -type f ! -name "*.orig" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing docs and manpage..."
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
@@ -293,4 +288,4 @@ post-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
