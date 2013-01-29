@@ -4,7 +4,7 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	c
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -23,6 +23,15 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB SCTP MD2 RC5 RFC3779 GMP
 OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM ZLIB SCTP MD2
+.for a in amd64 ia64
+OPTIONS_DEFINE_${a}=	EC
+OPTIONS_DEFAULT_${a}=	EC
+.endfor
+TARGET_ARCH?=	${MACHINE_ARCH}
+.if ${TARGET_ARCH} == "mips64el"
+OPTIONS_DEFINE_mips=	EC
+OPTIONS_DEFAULT_mips=	EC
+.endif
 NO_OPTIONS_SORT=yes
 I386_DESC?=	Optimize for i386 (instead of i486+)
 SSE2_DESC?=	runtime SSE2 detection
@@ -35,6 +44,7 @@ MD2_DESC?=	MD2 hash (obsolete)
 RC5_DESC?=	RC5 chipher (patented)
 RFC3779_DESC?=	RFC3779 support
 GMP_DESC?=	gmp support (LGPLv3)
+EC_DESC?=	Optimize NIST elliptic curves
 
 MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
@@ -1130,6 +1140,12 @@ EXTRACONFIGURE+=	enable-rfc3779
 EXTRACONFIGURE+=	no-rfc3779
 .endif
 
+.if ${PORT_OPTIONS:MEC}
+EXTRACONFIGURE+=	enable-ec_nistp_64_gcc_128
+.else
+EXTRACONFIGURE+=	no-ec_nistp_64_gcc_128
+.endif
+
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
 pre-everything::
 	@${ECHO_CMD} "#"
@@ -1175,7 +1191,7 @@ post-install:
 	@${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${DOCSDIR}/
 .endif
