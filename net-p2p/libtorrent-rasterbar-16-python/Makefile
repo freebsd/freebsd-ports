@@ -12,9 +12,7 @@ LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-PLIST=		#
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/libtorrent.so
-
+PLIST=		${.CURDIR}/pkg-plist
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	python_libtorrent
 
