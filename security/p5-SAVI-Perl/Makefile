@@ -5,15 +5,12 @@ PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30
 PORTREVISION=	5
 CATEGORIES=	security perl5
-MASTER_SITES=	http://www.csupomona.edu/~henson/www/projects/SAVI-Perl/dist/
+MASTER_SITES=	http://www.csupomona.edu/~henson/archive/projects/SAVI-Perl/dist/
 MASTER_SITE_SUBDIR=	security
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Perl5 module interface to Sophos AntiVirus
-
-DEPRECATED=	No more upstream, no more public distfiles
-EXPIRATION_DATE=	2013-02-27
 
 MAN3=		SAVI.3
 
