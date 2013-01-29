@@ -1,8 +1,8 @@
-# Created by: Douglas Thrift
+# Created by: Douglas Thrift <douglas@douglasthrift.net>
 # $FreeBSD$
 
 PORTNAME=	unidecode
-PORTVERSION=	0.04.11
+PORTVERSION=	0.04.12
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
