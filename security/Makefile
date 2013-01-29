@@ -817,6 +817,7 @@
     SUBDIR += regripper
     SUBDIR += regripperplugins
     SUBDIR += retranslator
+    SUBDIR += revealrk
     SUBDIR += revelation
     SUBDIR += rifiuti2
     SUBDIR += rkhunter

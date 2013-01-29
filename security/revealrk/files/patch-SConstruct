@@ -1,0 +1,22 @@
+--- SConstruct.orig	2013-01-04 23:07:07.000000000 +0100
++++ SConstruct	2013-01-04 23:08:37.000000000 +0100
+@@ -13,7 +13,7 @@
+ pkg_files = prog_files + Split('revealrk.1 SConstruct changelog license.txt README INSTALL cron.example Makefile config.h')
+ 
+ debug     = not ARGUMENTS.get('debug', '0').lower() in ['0', 'false', 'no']
+-prefix    = GetOption('prefix') or '/'
++prefix    = GetOption('prefix') or '/usr'
+ clean_all = not GetOption('clean_all') is None
+ static    = not GetOption('static') is None
+ build_tgz = not GetOption('tgz') is None
+@@ -147,8 +147,8 @@
+         conf.env.Append(LINKFLAGS = ' -static')
+     env = conf.Finish()
+ 
+-env.Alias('install', env.AddPostAction(env.Install(prefix + '/usr/bin', target), env.Action('strip ' + prefix + '/usr/bin/' + target)))
+-env.Alias('install', env.AddPostAction(env.Install(prefix + '/usr/share/man/man1', target + '.1'), env.Action('gzip -f ' + prefix + '/usr/share/man/man1/' + target + '.1')))
++env.Alias('install', env.AddPostAction(env.Install(prefix + '/bin', target), env.Action('strip ' + prefix + '/bin/' + target)))
++env.Alias('install', env.AddPostAction(env.Install(prefix + '/man/man1', target + '.1'), env.Action('gzip -f ' + prefix + '/man/man1/' + target + '.1')))
+ 
+ if clean_all:
+     env.Clean('distclean', Split('config.log .sconf_temp .sconsign.dblite'))
