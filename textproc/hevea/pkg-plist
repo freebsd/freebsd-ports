@@ -52,6 +52,7 @@ lib/hevea/html/symb-ent.hva
 lib/hevea/html/symb-fra.hva
 lib/hevea/html/symb-mathml.hva
 lib/hevea/html/symb-text.hva
+lib/hevea/html/undersection.hva
 lib/hevea/html/urlhref.hva
 lib/hevea/html/xypic.hva
 lib/hevea/hyperref.hva
