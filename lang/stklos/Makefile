@@ -17,7 +17,7 @@ COMMENT=	The successor of the STk Scheme interpreter
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		pcre.3:${PORTSDIR}/devel/pcre \
-		ffi.5:${PORTSDIR}/devel/libffi \
+		ffi:${PORTSDIR}/devel/libffi \
 		gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
 
 ONLY_FOR_ARCHS=	i386 amd64

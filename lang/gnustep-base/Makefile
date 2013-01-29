@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Foundation library
 
-LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
