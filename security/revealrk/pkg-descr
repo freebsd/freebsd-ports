@@ -1,0 +1,10 @@
+
+revealrk searches for hidden processes. If you have a kernel mod
+rootkit loaded into memory without hiding any process, don't expect
+to find anything.
+
+Reveal RootKit is intended to run out of cron or similar services
+on a regular basis and avoids verbose output as long as nothing was
+found.
+
+WWW: http://sourceforge.net/projects/revealrk
