@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	springframework
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.4
 CATEGORIES=	java devel
 MASTER_SITES=	http://s3.amazonaws.com/dist.springframework.org/release/SPR/
 DISTNAME=	spring-framework-${PORTVERSION}.RELEASE-with-docs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	The Spring Framework for Java
 
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
@@ -51,35 +51,63 @@ PLIST_FILES +=	%%JAVAJARDIR%%/${f}
 RESOURCE_FILES=	spring-aop-2.0.xsd \
 		spring-aop-2.5.xsd \
 		spring-aop-3.0.xsd \
+		spring-aop-3.1.xsd \
+		spring-aop-3.2.xsd \
 		spring-beans-2.0.dtd \
 		spring-beans-2.0.xsd \
 		spring-beans-2.5.xsd \
 		spring-beans-3.0.xsd \
+		spring-beans-3.1.xsd \
+		spring-beans-3.2.xsd \
 		spring-beans.dtd \
+		spring-cache-3.1.xsd \
+		spring-cache-3.2.xsd \
 		spring-context-2.5.xsd \
 		spring-context-3.0.xsd \
+		spring-context-3.1.xsd \
+		spring-context-3.2.xsd \
 		spring-form.tld \
 		spring-jdbc-3.0.xsd \
+		spring-jdbc-3.1.xsd \
+		spring-jdbc-3.2.xsd \
 		spring-jee-2.0.xsd \
 		spring-jee-2.5.xsd \
 		spring-jee-3.0.xsd \
+		spring-jee-3.1.xsd \
+		spring-jee-3.2.xsd \
 		spring-jms-2.5.xsd \
 		spring-jms-3.0.xsd \
+		spring-jms-3.1.xsd \
 		spring-lang-2.0.xsd \
 		spring-lang-2.5.xsd \
 		spring-lang-3.0.xsd \
+		spring-lang-3.1.xsd \
+		spring-lang-3.2.xsd \
 		spring-mvc-3.0.xsd \
+		spring-mvc-3.1.xsd \
+		spring-mvc-3.2.xsd \
+		spring-oxm-1.5.xsd \
 		spring-oxm-3.0.xsd \
+		spring-oxm-3.1.xsd \
+		spring-oxm-3.2.xsd \
 		spring-task-3.0.xsd \
+		spring-task-3.1.xsd \
+		spring-task-3.2.xsd \
 		spring-tool-2.0.xsd \
 		spring-tool-2.5.xsd \
 		spring-tool-3.0.xsd \
+		spring-tool-3.1.xsd \
+		spring-tool-3.2.xsd \
 		spring-tx-2.0.xsd \
 		spring-tx-2.5.xsd \
 		spring-tx-3.0.xsd \
+		spring-tx-3.1.xsd \
+		spring-tx-3.2.xsd \
 		spring-util-2.0.xsd \
 		spring-util-2.5.xsd \
 		spring-util-3.0.xsd \
+		spring-util-3.1.xsd \
+		spring-util-3.2.xsd \
 		spring.ftl \
 		spring.tld \
 		spring.vm
