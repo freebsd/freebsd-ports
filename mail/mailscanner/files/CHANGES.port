@@ -1,3 +1,10 @@
+Version 4.84.5_3 (not bumped)
+================
+- Use OptionsNG
+- Remove deprecated header information
+- Removed check for perl versions that are deprecated to install and
+  scheduled for removal from the ports tree.
+
 Version 4.84.5_3
 ================
 - Added FreeBSD required mktemp options
