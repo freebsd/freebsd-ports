@@ -14,6 +14,7 @@
 %%LIB32DIR%%/webmin/virtual-server/add_script.cgi
 %%LIB32DIR%%/webmin/virtual-server/admins-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/all_webmin.cgi
+%%LIB32DIR%%/webmin/virtual-server/autoconfig.cgi
 %%LIB32DIR%%/webmin/virtual-server/backup-domain.pl
 %%LIB32DIR%%/webmin/virtual-server/backup.cgi
 %%LIB32DIR%%/webmin/virtual-server/backup.pl
@@ -67,6 +68,7 @@
 %%LIB32DIR%%/webmin/virtual-server/create-template.pl
 %%LIB32DIR%%/webmin/virtual-server/create-user.pl
 %%LIB32DIR%%/webmin/virtual-server/createvirtualminmodule.sh
+%%LIB32DIR%%/webmin/virtual-server/cron-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/cron_chooser.cgi
 %%LIB32DIR%%/webmin/virtual-server/cron_select.cgi
 %%LIB32DIR%%/webmin/virtual-server/csr.cgi
@@ -128,6 +130,7 @@
 %%LIB32DIR%%/webmin/virtual-server/edit_ffile.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_limits.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_mail.cgi
+%%LIB32DIR%%/webmin/virtual-server/edit_newautoconfig.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_newbw.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_newchangelog.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_newchroot.cgi
@@ -260,6 +263,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/aliasname2.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/amass.html
 %%LIB32DIR%%/webmin/virtual-server/help/amass.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/autoconfig.html
 %%LIB32DIR%%/webmin/virtual-server/help/backup_after.html
 %%LIB32DIR%%/webmin/virtual-server/help/backup_after.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/backup_before.html
@@ -1710,6 +1714,8 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94/2-dependent
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94/3-rackspace
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96/1-security
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98/2-autoconfig
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98/3-webmincron
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1778,6 +1784,7 @@
 %%LIB32DIR%%/webmin/virtual-server/save_frame.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_limits.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_mail.cgi
+%%LIB32DIR%%/webmin/virtual-server/save_newautoconfig.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_newbw.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_newchroot.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_newdynip.cgi
@@ -1869,6 +1876,7 @@
 %%LIB32DIR%%/webmin/virtual-server/virtual_feature_api.pl
 %%LIB32DIR%%/webmin/virtual-server/vui-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/warnbw-template
+%%LIB32DIR%%/webmin/virtual-server/webmincron-fixed.pl
 %%LIB32DIR%%/webmin/virtual-server/wizard-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
@@ -1894,6 +1902,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.93
@@ -1940,4 +1949,4 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server
 @dirrmtry etc/webmin/virtual-server
 @dirrmtry etc/webmin
-@exec [ -e %D/etc/webmin/virtual-server ] || mkdir %D/etc/webmin/virtual-server
+@exec [ -e %D/etc/webmin/virtual-server ] || mkdir -p %D/etc/webmin/virtual-server
