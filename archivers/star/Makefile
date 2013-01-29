@@ -2,28 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	star
-DISTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.5.2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/smake:${PORTSDIR}/devel/smake
+BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 
 .if !defined(NO_INSTALL_MANPAGES)
-MAN1=		star.1 srmt.1 tartest.1
+MAN1=		scpio.1 spax.1 srmt.1 star.1 suntar.1 tartest.1
 MAN5=		star.5
 MLINKS=		star.1 ustar.1 star.5 ustar.5
 .else
 XMKFLAGS=	XMK_FILE=""
 .endif
 
+MAKEFLAGS+=	MANBASE=
 MAKE_ENV+=	MAKEFLAGS=${MAKEFLAGS}
 
 PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
@@ -38,15 +38,15 @@ post-patch:
 	@${MV} ${WRKSRC}/rmt/rmt.1 ${WRKSRC}/rmt/srmt.1
 
 do-build:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
-	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake -f Makefile.doc
+	cd ${WRKSRC} && ${MAKE_ENV} smake
+	cd ${WRKSRC}/star && ${MAKE_ENV} smake -f Makefile.doc
 
 do-install:
-	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+	cd ${WRKSRC}/star && ${MAKE_ENV} smake \
 		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
-	@cd ${WRKSRC}/rmt && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+	cd ${WRKSRC}/rmt && ${MAKE_ENV} smake \
 		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
-	@cd ${WRKSRC}/tartest && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+	cd ${WRKSRC}/tartest && ${MAKE_ENV} smake \
 		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
 	@${STRIP_CMD} ${PREFIX}/bin/star
 	@${STRIP_CMD} ${PREFIX}/sbin/srmt
