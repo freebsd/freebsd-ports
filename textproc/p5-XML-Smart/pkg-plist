@@ -7,13 +7,14 @@
 %%SITE_PERL%%/XML/Smart/FAQ.pod
 %%SITE_PERL%%/XML/Smart/HTMLParser.pm
 %%SITE_PERL%%/XML/Smart/Parser.pm
+%%SITE_PERL%%/XML/Smart/Shared.pm
 %%SITE_PERL%%/XML/Smart/Tie.pm
 %%SITE_PERL%%/XML/Smart/Tree.pm
 %%SITE_PERL%%/XML/Smart/Tutorial.epod
 %%SITE_PERL%%/XML/Smart/Tutorial.pod
 %%SITE_PERL%%/XML/Smart/XPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Smart
+@dirrmtry %%SITE_PERL%%/XML/Smart
 @dirrmtry %%SITE_PERL%%/XML
