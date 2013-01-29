@@ -7,8 +7,11 @@
 
 PKGNAMESUFFIX=	-client
 
-MASTERDIR=	${.CURDIR}/../nsca
+MAINTAINER=	mm@FreeBSD.org
 
-WITHOUT_SERVER=	yes
+LICENSE=	GPLv2
+
+_BUILDING_NSCA_CLIENT=	yes
+MASTERDIR=	${.CURDIR}/../nsca
 
 .include "${MASTERDIR}/Makefile"
