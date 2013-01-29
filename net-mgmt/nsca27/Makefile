@@ -16,9 +16,9 @@ COMMENT=	Nagios Service Check Acceptor
 
 LICENSE=	GPLv2
 
-.if !defined(_BUILDING_NSCA_CLIENT)
+#.if !defined(_BUILDING_NSCA_CLIENT)
 #RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios
-.endif
+#.endif
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 
 .if !defined(_BUILDING_NSCA_CLIENT)

@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# $FreeBSD$
 #
 # PROVIDE: nsca
 # REQUIRE: nagios
