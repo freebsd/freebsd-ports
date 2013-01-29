@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -68,7 +68,6 @@ GNU_CONFIGURE=	yes
 USE_PKGCONFIG=	build
 USE_CSTD=	gnu89
 USE_ICONV=	yes
-USE_NCURSES=	yes
 USE_PYTHON=	yes
 USE_PERL5=	yes
 USE_CDRTOOLS=	yes
@@ -140,10 +139,9 @@ post-patch:
 		${WRKSRC}/src/callbacks.c \
 		${WRKSRC}/src/saveplay.c \
 		${WRKSRC}/src/utils.c
-
-pre-build:
-	@cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} update-po
+	@${REINPLACE_CMD} '/cp -rf/ s|data/|data|g; /cp -rf/ s|icons/|icons|g' \
+		${WRKSRC}/lives-plugins/weed-plugins/cairo/Makefile.in \
+		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
