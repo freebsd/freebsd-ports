@@ -4,8 +4,8 @@
 PORTNAME=	libffi
 PORTVERSION=	3.0.11
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sourceware.org/pub/libffi/ \
-		http://www.mirrorservice.org/sites/sourceware.org/pub/libffi/
+MASTER_SITES=	SOURCEWARE
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign Function Interface
@@ -16,7 +16,7 @@ TEST_DESC=	Run regression test suite
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
 GNU_CONFIGURE=	yes
@@ -31,11 +31,13 @@ MAN3=		ffi.3 ffi_call.3 ffi_prep_cif.3 ffi_prep_cif_var.3
 
 .if ${PORT_OPTIONS:MTEST}
 post-build:
-	@cd ${WRKSRC} && ${GMAKE} check
+	@cd ${WRKSRC} && ${MAKE} check
 .endif
 
 post-install:
-	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffi.h ${PREFIX}/include/
-	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffitarget.h ${PREFIX}/include/
+	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffi.h \
+	    ${PREFIX}/include/
+	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffitarget.h \
+	    ${PREFIX}/include/
 
 .include <bsd.port.mk>
