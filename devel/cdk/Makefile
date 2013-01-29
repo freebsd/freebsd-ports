@@ -3,6 +3,7 @@
 
 PORTNAME=	cdk
 PORTVERSION=	5.0.20120323
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cdk/
@@ -37,6 +38,8 @@ EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-Makefile.in
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/cdk|/share/doc/cdk| ; s|VERSION)|VERSION_MAJOR)|' \
 		-e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) cdk-config|$(INSTALL_SCRIPT) cdk-config|g' \
+		${WRKSRC}/Makefile.in
 
 pre-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
