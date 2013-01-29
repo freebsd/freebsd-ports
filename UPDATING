@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130128:
+  AFFECTS: users of libffi
+  AUTHOR jkim@FreeBSD.org
+
+  libffi has been updated to 3.0.11.  Please rebuild all ports that
+  depends on it:
+
+  If you use portmaster:
+        portmaster -w -r libffi
+  If you use portupgrade:
+        portupgrade -fr devel/libffi
+  If you use pkgng with binary packages:
+        pkg install -fR devel/libffi
+
 20130121:
   AFFECTS: users of mail/opensmtpd
   AUTHOR: ashish@FreeBSD.org

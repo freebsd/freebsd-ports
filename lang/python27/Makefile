@@ -95,7 +95,7 @@ PLIST_SUB+=	THREADS=""
 CONFIGURE_ARGS+=	--with-pth --with-system-ffi
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
 LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth \
-			ffi.5:${PORTSDIR}/devel/libffi
+			ffi:${PORTSDIR}/devel/libffi
 _PTH_CPPFLAGS=		"-I${LOCALBASE}/include/pth"
 _PTH_LDFLAGS=		"-L${LOCALBASE}/lib/pth"
 CPPFLAGS:=		${_PTH_CPPFLAGS} ${CPPFLAGS}

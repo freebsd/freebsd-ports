@@ -84,7 +84,7 @@ USE_BINUTILS=	yes
 USE_GCC=	4.6+
 
 .if ${PORT_OPTIONS:MDYNAMIC}
-LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
 .endif
 
 CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \

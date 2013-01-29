@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT?=	An object-oriented interpreted scripting language
 
-LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi \
 		yaml-0.2:${PORTSDIR}/textproc/libyaml \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
