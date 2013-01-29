@@ -10,10 +10,10 @@
 %%DATADIR%%/lib/hornetq-core.jar
 %%DATADIR%%/lib/hornetq-ra.rar
 %%DATADIR%%/lib/rest/jsr250-api.jar
-%%DATADIR%%/lib/rest/hornetq-rest-2.2.14.Final.jar
+%%DATADIR%%/lib/rest/hornetq-rest-2.2.0.CR1.jar
 %%DATADIR%%/lib/rest/sjsxp.jar
 %%DATADIR%%/lib/rest/jaxb-impl.jar
-%%DATADIR%%/lib/rest/hornetq-rest-2.2.14.Final-sources.jar
+%%DATADIR%%/lib/rest/hornetq-rest-2.2.0.CR1-sources.jar
 %%DATADIR%%/lib/rest/scannotation.jar
 %%DATADIR%%/lib/rest/resteasy-jaxb-provider.jar
 %%DATADIR%%/lib/rest/jaxrs-api.jar
@@ -339,6 +339,7 @@
 %%EXAMPLESDIR%%/jms/transaction-failover/server1/hornetq-beans.xml
 %%EXAMPLESDIR%%/jms/transaction-failover/server1/hornetq-jms.xml
 %%EXAMPLESDIR%%/jms/transaction-failover/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/transaction-failover/server1/KILL_ME
 %%EXAMPLESDIR%%/jms/large-message/build.bat
 %%EXAMPLESDIR%%/jms/large-message/build.sh
 %%EXAMPLESDIR%%/jms/large-message/src/org/hornetq/jms/example/LargeMessageExample.java
@@ -710,6 +711,7 @@
 %%EXAMPLESDIR%%/jms/topic/server0/hornetq-beans.xml
 %%EXAMPLESDIR%%/jms/topic/server0/client-jndi.properties
 %%EXAMPLESDIR%%/jms/topic/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/topic/server0/jndi.properties
 %%EXAMPLESDIR%%/jms/topic/build.xml
 %%EXAMPLESDIR%%/jms/topic/src/org/hornetq/jms/example/TopicExample.java
 %%EXAMPLESDIR%%/jms/topic/build.sh
