@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R:S,.b,~b,}p${PORTVERSION:E}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based multiplatform subversion client, diff & merge tool
 
+BROKEN=		Does not build
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
