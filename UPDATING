@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130129: 
-  AFFECTES: users of textproc/elasticsearch
+  AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
 
   elasticsearch has been updated to 0.20.4. This upgrade requires a 
