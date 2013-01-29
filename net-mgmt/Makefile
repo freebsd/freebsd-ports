@@ -186,6 +186,8 @@
     SUBDIR += nrpep
     SUBDIR += nsca
     SUBDIR += nsca-client
+    SUBDIR += nsca27
+    SUBDIR += nsca27-client
     SUBDIR += nstreams
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
