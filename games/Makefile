@@ -126,6 +126,7 @@
     SUBDIR += cgoban
     SUBDIR += chanta
     SUBDIR += chapping
+    SUBDIR += chocolate-doom
     SUBDIR += cheech
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
