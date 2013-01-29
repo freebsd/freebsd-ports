@@ -82,8 +82,15 @@ lib/lives/plugins/effects/realtime/weed/comic.la
 lib/lives/plugins/effects/realtime/weed/comic.so
 lib/lives/plugins/effects/realtime/weed/compositor.la
 lib/lives/plugins/effects/realtime/weed/compositor.so
+lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/examples.txt
+lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/modulations.txt
+lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/newlives.txt
+lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/regrlives.txt
+lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/roselives.txt
 lib/lives/plugins/effects/realtime/weed/data_processor.la
 lib/lives/plugins/effects/realtime/weed/data_processor.so
+lib/lives/plugins/effects/realtime/weed/data_unpacker.la
+lib/lives/plugins/effects/realtime/weed/data_unpacker.so
 lib/lives/plugins/effects/realtime/weed/deinterlace.la
 lib/lives/plugins/effects/realtime/weed/deinterlace.so
 lib/lives/plugins/effects/realtime/weed/edge.la
@@ -94,6 +101,8 @@ lib/lives/plugins/effects/realtime/weed/fg_bg_removal.la
 lib/lives/plugins/effects/realtime/weed/fg_bg_removal.so
 lib/lives/plugins/effects/realtime/weed/fireTV.la
 lib/lives/plugins/effects/realtime/weed/fireTV.so
+lib/lives/plugins/effects/realtime/weed/fourKlives.la
+lib/lives/plugins/effects/realtime/weed/fourKlives.so
 %%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r/frei0r.la
 %%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r/frei0r.so
 lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.la
@@ -112,6 +121,8 @@ lib/lives/plugins/effects/realtime/weed/lifeTV.la
 lib/lives/plugins/effects/realtime/weed/lifeTV.so
 lib/lives/plugins/effects/realtime/weed/livetext.la
 lib/lives/plugins/effects/realtime/weed/livetext.so
+lib/lives/plugins/effects/realtime/weed/log_sig.la
+lib/lives/plugins/effects/realtime/weed/log_sig.so
 lib/lives/plugins/effects/realtime/weed/mask_overlay.la
 lib/lives/plugins/effects/realtime/weed/mask_overlay.so
 lib/lives/plugins/effects/realtime/weed/mirrors.la
@@ -122,6 +133,8 @@ lib/lives/plugins/effects/realtime/weed/multi_transitions.la
 lib/lives/plugins/effects/realtime/weed/multi_transitions.so
 lib/lives/plugins/effects/realtime/weed/negate.la
 lib/lives/plugins/effects/realtime/weed/negate.so
+lib/lives/plugins/effects/realtime/weed/nn_programmer.la
+lib/lives/plugins/effects/realtime/weed/nn_programmer.so
 lib/lives/plugins/effects/realtime/weed/noise.la
 lib/lives/plugins/effects/realtime/weed/noise.so
 lib/lives/plugins/effects/realtime/weed/onedTV.la
@@ -349,6 +362,8 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/tunnel.script
 %%DATADIR%%/plugins/effects/RFXscripts/wave.script
 %%DATADIR%%/plugins/effects/compound/image_stabilizer
+%%DATADIR%%/plugins/effects/compound/motion_analyser
+%%DATADIR%%/plugins/effects/compound/neural_net
 %%DATADIR%%/resources/vidtest.avi
 %%DATADIR%%/themes/camera/frame.jpg
 %%DATADIR%%/themes/camera/main.jpg
@@ -427,7 +442,11 @@ share/pixmaps/lives.xpm
 @dirrm lib/lives/plugins/encoders
 @dirrm lib/lives/plugins/effects/rendered
 @dirrm lib/lives/plugins/effects/realtime/weed/libvisual
+@dirrm lib/lives/plugins/effects/realtime/weed/icons
 %%FREI0R%%@dirrm lib/lives/plugins/effects/realtime/weed/frei0r
+@dirrm lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs
+@dirrm lib/lives/plugins/effects/realtime/weed/data/fourKlives
+@dirrm lib/lives/plugins/effects/realtime/weed/data
 @dirrm lib/lives/plugins/effects/realtime/weed
 @dirrm lib/lives/plugins/effects/realtime
 @dirrm lib/lives/plugins/effects
