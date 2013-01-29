@@ -1,4 +1,7 @@
+bin/scpio
+bin/spax
 bin/star
+bin/suntar
 bin/tartest
 bin/ustar
 sbin/srmt
