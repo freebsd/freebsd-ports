@@ -1,0 +1,11 @@
+share/icons/chocolate-doom.png
+share/icons/chocolate-setup.png
+share/applications/chocolate-doom.desktop
+share/applications/screensavers/chocolate-doom-screensaver.desktop
+share/applications/chocolate-setup.desktop
+bin/chocolate-doom
+bin/chocolate-server
+bin/chocolate-setup
+@dirrmtry share/icons
+@dirrmtry share/applications/screensavers
+@dirrmtry share/applications
