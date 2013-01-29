@@ -6,13 +6,11 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/
-
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 EXTRACT_SUFX=	.bz2
-DISTFILES=	#
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jakub_lach@mailplus.pl
 COMMENT=	Shareware data files for Doom, Doom II, Hexen, Heretic, and Strife
 
 USE_BZIP2=	yes
