@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES?=	www ruby
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
-		http://www.tdiary.org/download/
+MASTER_SITES=	http://www.tdiary.org/download/ \
+		SF/${PORTNAME}/${PORTNAME}/
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
@@ -28,8 +28,7 @@ RUBY_SHEBANG_FILES=	index.fcgi \
 			misc/migrate.rb \
 			misc/plugin/amazon/amazonimg.rb \
 			misc/plugin/squeeze.rb \
-			misc/plugin/xmlrpc/xmlrpc.rb \
-			misc/standalone_cgi/bin/server
+			misc/plugin/xmlrpc/xmlrpc.rb
 
 HTML=	HOWTO-authenticate-in-rack.html HOWTO-make-io.html \
 	HOWTO-make-plugin.html HOWTO-make-theme.html \
@@ -77,16 +76,18 @@ pre-patch:
 	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
-	@${RM} -r ${WRKSRC}/.bundle
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
-	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.37
+	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.38
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
+
+post-patch:
+	@${RUBY} -i -pe "sub %r|((\s*)require 'json')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/tdiary.rb
 
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
