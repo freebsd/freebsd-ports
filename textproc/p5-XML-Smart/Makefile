@@ -1,11 +1,8 @@
-# New ports collection makefile for:	p5-XML-Smart
-# Date created:				October 10th 2000
-# Whom:	      				Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
 
 PORTNAME=	XML-Smart
-PORTVERSION=	1.6.9
+PORTVERSION=	1.71
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +16,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN3=		XML::Smart.3 XML::Smart::DTD.3 XML::Smart::FAQ.3 XML::Smart::Tutorial.3
+MAN3=		XML::Smart.3 \
+		XML::Smart::DTD.3 \
+		XML::Smart::FAQ.3 \
+		XML::Smart::Shared.3 \
+		XML::Smart::Tutorial.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
