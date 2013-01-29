@@ -13,4 +13,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Algorithm::BinPack.3
 
+PORTSCOUT=	limit:^\d+\.\d+
+
 .include <bsd.port.mk>
