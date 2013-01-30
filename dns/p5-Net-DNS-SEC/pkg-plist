@@ -1,22 +1,21 @@
-%%SITE_PERL%%/Net/DNS/SEC.pm
 %%SITE_PERL%%/Net/DNS/Keyset.pm
-%%SITE_PERL%%/Net/DNS/RR/DS.pm
+%%SITE_PERL%%/Net/DNS/RR/DLV.pm
 %%SITE_PERL%%/Net/DNS/RR/DNSKEY.pm
+%%SITE_PERL%%/Net/DNS/RR/DS.pm
 %%SITE_PERL%%/Net/DNS/RR/KEY.pm
 %%SITE_PERL%%/Net/DNS/RR/NSEC.pm
-%%SITE_PERL%%/Net/DNS/SEC/Private.pm
+%%SITE_PERL%%/Net/DNS/RR/NSEC3.pm
+%%SITE_PERL%%/Net/DNS/RR/NSEC3PARAM.pm
 %%SITE_PERL%%/Net/DNS/RR/NXT.pm
 %%SITE_PERL%%/Net/DNS/RR/RRSIG.pm
 %%SITE_PERL%%/Net/DNS/RR/SIG.pm
-%%SITE_PERL%%/Net/DNS/RR/NSEC3PARAM.pm
-%%SITE_PERL%%/Net/DNS/RR/DLV.pm
-%%SITE_PERL%%/Net/DNS/RR/NSEC3.pm
+%%SITE_PERL%%/Net/DNS/SEC.pm
+%%SITE_PERL%%/Net/DNS/SEC/Private.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/DNS/SEC
-@dirrmtry %%SITE_PERL%%/Net/DNS/RR/SIG
 @dirrmtry %%SITE_PERL%%/Net/DNS/RR
 @dirrmtry %%SITE_PERL%%/Net/DNS
 @dirrmtry %%SITE_PERL%%/Net
