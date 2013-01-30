@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pear-APC
-# Date created:			  31 August 2003
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	APC
-DISTVERSION=	3.1.13
+DISTVERSION=	3.1.14
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative PHP Cache
 
-OPTIONS_DEFINE=	FILEHITS IPC SEMAPHORES SPINLOCKS
+OPTIONS_DEFINE=	DOCS FILEHITS IPC SEMAPHORES SPINLOCKS
 FILEHITS_DESC=	Per request cache info
 IPC_DESC=	IPC shm memory support (default: mmap)
 SEMAPHORES_DESC=System V IPC semaphores (default: fcntl)
@@ -36,19 +32,19 @@ PORTDOCS=	CHANGELOG INSTALL NOTICE apc.php
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFILEHITS}
-CONFIGURE_ARGS+=	--enable-apc-filehits
+CONFIGURE_ARGS+=--enable-apc-filehits
 .endif
 
 .if ${PORT_OPTIONS:MIPC}
-CONFIGURE_ARGS+=	--disable-apc-mmap
+CONFIGURE_ARGS+=--disable-apc-mmap
 .endif
 
 .if ${PORT_OPTIONS:MSEMAPHORES}
-CONFIGURE_ARGS+=	--enable-apc-sem
+CONFIGURE_ARGS+=--enable-apc-sem
 .endif
 
 .if ${PORT_OPTIONS:MSPINLOCKS}
-CONFIGURE_ARGS+=	--enable-apc-spinlocks
+CONFIGURE_ARGS+=--enable-apc-spinlocks
 .endif
 
 post-install:
