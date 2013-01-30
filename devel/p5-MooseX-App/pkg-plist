@@ -21,7 +21,6 @@
 %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Attribute.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy.pm
-%%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Typo.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Version.pm
