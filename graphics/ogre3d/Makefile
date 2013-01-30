@@ -44,14 +44,21 @@ CMAKE_ARGS+=	-DCMAKE_COMPILER_IS_GNUCXX:BOOL=YES
 .endif
 
 post-patch:
-.if defined(WITHOUT_BOOST)
+.if ! ${PORT_OPTIONS:MBOOST}
 	@${REINPLACE_CMD} -e 's|Boost|No_Boost|g' \
 		${WRKSRC}/CMake/Dependencies.cmake
 .endif
-	@${REINPLACE_CMD} -e 's|\(OGRE_RW_MUTEX.*\);|\1|g' \
+	# disable OIS, POCO, TBB detection
+	@${REINPLACE_CMD} -e 's|include(FindPkgMacros)|return()|g' \
+		${WRKSRC}/CMake/Packages/FindOIS.cmake \
+		${WRKSRC}/CMake/Packages/FindPOCO.cmake \
+		${WRKSRC}/CMake/Packages/FindTBB.cmake
+	@${REINPLACE_CMD} -e 's|\(OGRE_RW_MUTEX[^;]*\)$$|\1;|g' \
 		${WRKSRC}/OgreMain/include/OgreWorkQueue.h
+	@${REINPLACE_CMD} -e 's|\(OGRE_RW_MUTEX.*\);$$|\1|g' \
+		${WRKSRC}/OgreMain/include/Threading/OgreThreadDefinesBoost.h
 	@${REINPLACE_CMD} -e '\
-		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__ia64__) || defined(__sparc64__) || defined(__alpha__) || defined(__amd64__),' \
+		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__sparc64__) || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
 
 post-install:
