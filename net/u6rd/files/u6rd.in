@@ -1,0 +1,83 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: u6rd
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+u6rd_enable=${u6rd_enable:-"NO"}
+u6rd_prefix=${u6rd_prefix:-""}		# 6rd prefix from your ISP (prefix/len)
+u6rd_relay_v4_addr=${u6rd_relay_v4_addr:-""}	# 6rd relay router of your ISP
+u6rd_my_v4_addr=${u6rd_my_v4_addr:-""}	# Your global IPv4 address
+u6rd_my_v6_addr=${u6rd_my_v6_addr:-""}	# Your global IPv6 address (addr/len)
+u6rd_defaultrouter=${u6rd_defaultrouter:-""}
+u6rd_interface=${u6rd_interface:-"tun0"}
+u6rd_username=${u6rd_username:-"nobody"}
+
+. /etc/rc.subr
+
+name="u6rd"
+rcvar=u6rd_enable
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+
+get_plen()
+{
+	local prefix plen
+	prefix="$1"
+	plen=$(expr "${prefix}" : '.*/\([0-9]*\)')
+	if [ -z "${plen}" ]; then
+		plen=64
+	fi
+	echo ${plen}
+}
+
+plen_equal()
+{
+	if [ -z "$1" -o -z "$2" ]; then
+		return 1
+	fi
+	if [ $(get_plen "$1") -ne $(get_plen "$2") ]; then
+		return 1
+	fi
+	return 0
+}
+
+start_precmd()
+{
+	ifconfig ${u6rd_interface} create
+	ifconfig ${u6rd_interface} inet6 -nud -ifdisabled
+	if [ -n "${u6rd_my_v6_addr}" ]; then
+		ifconfig ${u6rd_interface} inet6 ${u6rd_my_v6_addr}
+	fi
+	ifconfig ${u6rd_interface} up
+	if ! plen_equal ${u6rd_prefix} ${u6rd_my_v6_addr}; then
+		route delete -inet6 ${u6rd_prefix} >/dev/null 2>&1
+		route add -inet6 ${u6rd_prefix} ::1 -ifp ${u6rd_interface}
+	fi
+	if [ -n "${u6rd_defaultrouter}" ]; then
+		route delete -inet6 default >/dev/null 2>&1
+		route add -inet6 default ${u6rd_defaultrouter}
+	fi
+}
+
+stop_postcmd()
+{
+	if [ -n "${u6rd_defaultrouter}" ]; then
+		route delete -inet6 default
+	fi
+	if ! plen_equal ${u6rd_prefix} ${u6rd_my_v6_addr}; then
+		route delete -inet6 ${u6rd_prefix}
+	fi
+	ifconfig ${u6rd_interface} destroy
+}
+
+load_rc_config ${name}
+command_args="-u ${u6rd_username} ${u6rd_interface} ${u6rd_prefix} ${u6rd_relay_v4_addr} ${u6rd_my_v4_addr}"
+run_rc_command "$1"
