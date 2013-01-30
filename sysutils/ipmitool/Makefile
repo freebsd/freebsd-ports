@@ -1,13 +1,9 @@
-# New ports collection makefile for:	ipmitool
-# Date created:				25/Oct/2004
-# Whom:					Dmitry Frolov <frol@nov.net>
-#
+# Created by: Dmitry Frolov <frol@nov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ipmitool
 PORTVERSION=	1.8.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
