@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
@@ -33,11 +32,11 @@ INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	GPHOTO GEO FLICKR GLIBJSON KWALLET GNOMEKEYRING RAWSPEED \
+OPTIONS_DEFINE=	GPHOTO GEO FLICKR FACEBOOK KWALLET GNOMEKEYRING RAWSPEED \
 		SLIDESHOW NLS GCC46
 
 GEO_DESC=	Build geotagging parts
-GLIBJSON_DESC=	GlibJson library support
+FACEBOOK_DESC=	Support images export to Facebook
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 GCC46_DESC=	Build with GCC 4.6+ (better OpenMP support)
@@ -58,6 +57,9 @@ CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 
 .if ${PORT_OPTIONS:MGEO}
 LIB_DEPENDS+=	soup-2.4:${PORTSDIR}/devel/libsoup
+PLIST_FILES+=	lib/darktable/plugins/lighttable/liblocation.so \
+		lib/darktable/plugins/lighttable/libmap_settings.so \
+		lib/darktable/views/libmap.so
 .else
 CMAKE_ARGS+=	-DUSE_GEO:BOOL=OFF
 .endif
@@ -69,8 +71,9 @@ PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
 CMAKE_ARGS+=	-DUSE_FLICKR:BOOL=OFF
 .endif
 
-.if ${PORT_OPTIONS:MGLIBJSON}
+.if ${PORT_OPTIONS:MFACEBOOK}
 LIB_DEPENDS+=	json-glib-1.0:${PORTSDIR}/devel/json-glib
+PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libfacebook.so
 .else
 CMAKE_ARGS+=	-DUSE_GLIBJSON:BOOL=OFF
 .endif
@@ -118,7 +121,6 @@ LDFLAGS+=	-lstdc++
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/data/js/.DS_Store
 	@${REINPLACE_CMD} -e 's,const gint,gint,' \
 		${WRKSRC}/src/external/osm-gps-map/src/osm-gps-map-image.*
 # Do not install useless (to end-user) documentation; adjust manpages path
@@ -128,12 +130,6 @@ post-patch:
 # are used for release builds as well
 	@${REINPLACE_CMD} -e '/-O3/s,^,#, ; /-msse2/s, -g,,' \
 		${WRKSRC}/src/CMakeLists.txt
-# Add some missing newlines at the EOF to unbreak the build
-	@${ECHO_CMD} >> ${WRKSRC}/src/common/srgb_tone_curve_values.h
-	@${ECHO_CMD} >> ${WRKSRC}/src/common/gpx.c
-	@${ECHO_CMD} >> ${WRKSRC}/src/gui/drag_and_drop.h
-	@${ECHO_CMD} >> ${WRKSRC}/src/gui/gtkentry.c
-	@${ECHO_CMD} >> ${WRKSRC}/src/views/map.c
 
 post-install:
 .if ! ${PORT_OPTIONS:MRAWSPEED}
