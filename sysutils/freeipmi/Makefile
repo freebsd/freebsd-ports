@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
-		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
-		LOCAL/sunpoet
+		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware
