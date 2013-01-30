@@ -18,11 +18,12 @@
 name="%%NAME%%"
 rcvar=%%NAME%%_enable
 
-command="%%PREFIX%%/sbin/fprobe"
-command_args="-i lo0 127.0.0.1:2055"
-pidfile="/var/run/$name.pid"
-
 load_rc_config "$name"
+
 : ${fprobe_enable="NO"}
+: ${fprobe_flags:="-i lo0 127.0.0.1:2055"}
+
+command="%%PREFIX%%/sbin/fprobe"
+pidfile="/var/run/$name.pid"
 
 run_rc_command "$1"
