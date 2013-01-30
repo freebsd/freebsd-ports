@@ -1,0 +1,11 @@
+When coding it is common to come up against problems that need to be addressed
+but that are not a big deal at the moment. What generally happens is that the
+coder adds comments like:
+
+# FIXME - what about windows that are bigger than the screen?
+# FIXME - add checking of user priviledges here.
+
+Test::Fixme allows you to add a test file that ensures that none of these get
+forgotten in the module.
+
+WWW: http://search.cpan.org/dist/Test-Fixme/
