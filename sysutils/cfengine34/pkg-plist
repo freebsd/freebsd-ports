@@ -19,9 +19,9 @@ share/cfengine/CoreBase/controls/cf_agent.cf
 share/cfengine/CoreBase/controls/cf_runagent.cf
 share/cfengine/CoreBase/controls/cf_monitord.cf
 share/cfengine/CoreBase/controls/cf_serverd.cf
-share/cfengine/CoreBase/failsafe/failsafe.cf
 share/cfengine/CoreBase/libraries/cfengine_stdlib.cf
 share/cfengine/CoreBase/services/init_msg.cf
+share/cfengine/CoreBase/update.cf
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/examples/active_directory.cf
@@ -292,7 +292,6 @@ share/cfengine/CoreBase/services/init_msg.cf
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm share/cfengine/CoreBase/controls
-@dirrm share/cfengine/CoreBase/failsafe
 @dirrm share/cfengine/CoreBase/libraries
 @dirrm share/cfengine/CoreBase/services
 @dirrm share/cfengine/CoreBase
