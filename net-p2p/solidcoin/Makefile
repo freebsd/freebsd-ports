@@ -1,9 +1,5 @@
-# New ports collection makefile for:	solidcoin
-# Date created:				6 November 2011
-# Whom:					Dmitriy Limonov
-#
+# Created by: Dmitriy Limonov
 # $FreeBSD$
-#
 
 PORTNAME=	solidcoin
 PORTVERSION=	2.041
@@ -15,6 +11,8 @@ DISTNAME=	${PORTNAME}-source-2041
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
+
+BROKEN=		Does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
