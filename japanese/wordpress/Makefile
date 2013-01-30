@@ -26,6 +26,8 @@ SUB_LIST=	CHGRP="${CHGRP}" CHOWN="${CHOWN}" CHMOD="${CHMOD}"\
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
 
+OPTIONS_DEFINE=	DOCS
+
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
 	@${ECHO_CMD} ""
