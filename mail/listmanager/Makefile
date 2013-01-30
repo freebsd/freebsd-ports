@@ -1,9 +1,5 @@
-# New ports collection makefile for:	listmanager
-# Date created:				29 Dec 1999
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	listmanager
 PORTVERSION=	2.109
@@ -17,6 +13,9 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gshapiro@FreeBSD.org
 COMMENT=	Fully-featured mailing list manager
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-03-01
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
