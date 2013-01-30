@@ -9,6 +9,7 @@ etc/portshaker.d/freebsd_texlive
 etc/portshaker.d/freebsd_texlive_ports
 etc/portshaker.d/freebsd_texlive_ports_marcuscom
 etc/portshaker.d/freebsd_texlive_releng
+etc/portshaker.d/gecko
 etc/portshaker.d/haskell
 etc/portshaker.d/marcuscom_ports
 etc/portshaker.d/marcuscom_ports_stable
