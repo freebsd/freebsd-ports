@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	${ORIGNAME:L}
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.3
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:C|^(...).*|\1|}/
+MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:C|^(...).*|\1|}/ \
+		http://eggrepo.eea.europa.eu/pypi/RBTools/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
