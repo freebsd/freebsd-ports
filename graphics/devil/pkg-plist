@@ -26,6 +26,5 @@ libdata/pkgconfig/ILU.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrm include/IL
