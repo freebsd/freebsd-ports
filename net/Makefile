@@ -1177,6 +1177,7 @@
     SUBDIR += tucan
     SUBDIR += twinkle
     SUBDIR += twitux
+    SUBDIR += u6rd
     SUBDIR += ucarp
     SUBDIR += udptunnel
     SUBDIR += udpxy
