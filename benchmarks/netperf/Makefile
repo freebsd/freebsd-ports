@@ -3,11 +3,12 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		http://fossies.org/unix/misc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 
 OPTIONS_DEFINE=		OMNI SCTP SOCKETS HISTOGRAM EXS
