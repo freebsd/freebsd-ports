@@ -42,6 +42,9 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/a.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/a.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/a.pyo
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/arcamax.py
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/arcamax.pyc
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/arcamax.pyo
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/b.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/b.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/b.pyo
