@@ -558,6 +558,7 @@
     SUBDIR += minecraft-client
     SUBDIR += minecraft-server
     SUBDIR += minetest
+    SUBDIR += minetest_game
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += mkgichessclub
