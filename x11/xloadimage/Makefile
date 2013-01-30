@@ -2,30 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	xloadimage
-PORTVERSION=	4.1.17
-PORTREVISION=	1
+PORTVERSION=	4.1.21
 CATEGORIES=	x11 graphics
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/:x11 \
-		${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}.${VERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:x11 \
-		${PORTNAME}_${VERSION}-${REVISION}.debian.tar.gz
+DISTFILES=	${DISTNAME:S/./_/}.orig${EXTRACT_SUFX} \
+		${DISTNAME:S/./_/}-${REVISION}.debian.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	X11 Image Loading Utility
-
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
 
 LICENSE=	MIT
 
-DEPRECATED=	Debian patches no more availables
-EXPIRATION_DATE=	2012-11-26
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff
 
 CONFLICTS_INSTALL=	xli-*
 
-EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.dpatch
+EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.patch
 
 PATCH_STRIP=	-p1
 VERSION=	${PORTVERSION:R}
@@ -48,7 +43,8 @@ post-patch:
 		${WRKSRC}/tiff.c
 	@${REINPLACE_CMD} -e \
 		's:/etc/X11/Xloadimage:${PREFIX}/etc/xloadimagerc: ; \
-		 s:/usr/lib/xloadimagerc:${PREFIX}/etc/xloadimagerc:' \
+		 s:/usr/lib/xloadimagerc:${PREFIX}/etc/xloadimagerc: ; \
+		 s:/usr/include/X11/bitmaps:${PREFIX}/include/X11/bitmaps:' \
 		${WRKSRC}/xloadimage.man
 
 do-install:
@@ -57,11 +53,10 @@ do-install:
 		${LN} -sf xloadimage xsetbg && \
 		${LN} -sf xloadimage xview
 	${INSTALL_PROGRAM} ${WRKSRC}/uufilter ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${MANPREFIX}/man/man1/xloadimage.1
-	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${MANPREFIX}/man/man1/uufilter.1
+	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${MAN1PREFIX}/man/man1/xloadimage.1
+	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${MAN1PREFIX}/man/man1/uufilter.1
 	${INSTALL_DATA} ${WRKSRC}/xloadimagerc ${PREFIX}/etc/xloadimagerc.sample
-.if !exists(${PREFIX}/etc/xloadimagerc)
-	@cd ${PREFIX}/etc && ${CP} -f xloadimagerc.sample xloadimagerc
-.endif
+	@[ -f ${PREFIX}/etc/xloadimagerc ] || ${CP} -f ${PREFIX}/etc/xloadimagerc.sample \
+                ${PREFIX}/etc/xloadimagerc
 
 .include <bsd.port.mk>
