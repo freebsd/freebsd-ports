@@ -1,0 +1,35 @@
+bin/herbstclient
+bin/herbstluftwm
+etc/xdg/herbstluftwm/autostart
+etc/xdg/herbstluftwm/panel.sh
+etc/xdg/herbstluftwm/restartpanels.sh
+%%BASH%%etc/bash_completion.d/herbstclient-completion
+%%BASH%%@dirrmtry etc/bash_completion.d
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/herbstclient.html
+%%PORTDOCS%%%%DOCSDIR%%/herbstluftwm.html
+%%PORTDOCS%%%%DOCSDIR%%/herbstluftwm-tutorial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dmenu.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpbeautify.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exec_on_tag.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/execwith.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/herbstcommander.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keychain.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lasttag.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadstate.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/q3terminal.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/savestate.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wselect.sh
+share/xsessions/herbstluftwm.desktop
+@dirrmtry share/xsessions
+%%ZSH%%share/zsh/functions/Completion/X/_herbstclient
+%%ZSH%%@dirrmtry share/zsh/functions/Completion/X
+%%ZSH%%@dirrmtry share/zsh/functions/Completion
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/xdg/herbstluftwm
+@dirrmtry etc/xdg
