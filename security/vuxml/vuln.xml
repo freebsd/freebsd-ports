@@ -51,6 +51,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2ea6ce3d-6afd-11e2-9d4e-bcaec524bf84">
+    <topic>upnp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>upnp</name>
+	<range><lt>1.6.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Project changelog reports:</p>
+	<blockquote cite="http://pupnp.sourceforge.net/ChangeLog">
+	  <p>This patch addresses three possible buffer overflows in
+	    function unique_service_name().The three issues have the
+	    folowing CVE numbers:</p>
+	  <ul>  
+	     <li>CVE-2012-5958 Issue #2: Stack buffer overflow of Tempbuf</li>
+	     <li>CVE-2012-5959 Issue #4: Stack buffer overflow of Event-&gt;UDN</li>
+	     <li>CVE-2012-5960 Issue #8: Stack buffer overflow of Event-&gt;UDN</li>
+	  </ul>  			
+	  <p>Notice that the following issues have already been dealt by
+	    previous work:</p>
+	  <ul>  					
+	     <li>CVE-2012-5961 Issue #1: Stack buffer overflow of Evt-&gt;UDN</li>
+	     <li>CVE-2012-5962 Issue #3: Stack buffer overflow of Evt-&gt;DeviceType</li>
+	     <li>CVE-2012-5963 Issue #5: Stack buffer overflow of Event-&gt;UDN</li>
+	     <li>CVE-2012-5964 Issue #6: Stack buffer overflow of Event-&gt;DeviceType</li>
+	     <li>CVE-2012-5965 Issue #7: Stack buffer overflow of Event-&gt;DeviceType</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5958</cvename>
+      <cvename>CVE-2012-5959</cvename>
+      <cvename>CVE-2012-5960</cvename>
+      <cvename>CVE-2012-5961</cvename>
+      <cvename>CVE-2012-5962</cvename>
+      <cvename>CVE-2012-5963</cvename>
+      <cvename>CVE-2012-5964</cvename>
+      <cvename>CVE-2012-5965</cvename>
+    </references>
+    <dates>
+      <discovery>2012-11-21</discovery>
+      <entry>2013-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="559e00b7-6a4d-11e2-b6b0-10bf48230856">
     <topic>wordpress -- multiple vulnerabilities</topic>
     <affects>
