@@ -39,9 +39,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '30d' ${WRKSRC}/src/vgabg.h
 	${REINPLACE_CMD} -e 's,^   (unsigned [[:alpha:]]*),,' \
 		${WRKSRC}/src/apm.c
-# Allow to build on !i386
-	${REINPLACE_CMD} -e '29,36s,def __alpha__, defined(NO_ASSEMBLY),' \
-		${WRKSRC}/src/vgapix.c ${WRKSRC}/gl/driver.c
 # 024_vesa_not_print_crap.patch from Debian
 	${REINPLACE_CMD} -e '/^printf/d' ${WRKSRC}/src/vesa.c
 # Clean up after typo fixes in manpages
