@@ -1,9 +1,5 @@
-# New ports collection makefile for:	erlang
-# Date created:		11 Dec 1998
-# Whom:			ruslan@shevchenko.kiev.ua
-#
+# Created by: ruslan@shevchenko.kiev.ua
 # $FreeBSD$
-#
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
