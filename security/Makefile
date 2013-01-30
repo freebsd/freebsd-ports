@@ -618,6 +618,7 @@
     SUBDIR += pam_search_list
     SUBDIR += pam_smb
     SUBDIR += pam_ssh_agent_auth
+    SUBDIR += pam_yubico
     SUBDIR += pamtester
     SUBDIR += paperkey
     SUBDIR += parano
