@@ -1,15 +1,12 @@
-# New ports collection makefile for:	p5-File-Spec
-# Date created:				November 22, 2000
-# Whom:	      				Donald Burr <dburr@FreeBSD.ORG>
-#
+# Created by: Donald Burr <dburr@FreeBSD.ORG>
 # $FreeBSD$
 #
 
 PORTNAME=	PathTools
-PORTVERSION=	3.3300
+PORTVERSION=	3.4000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	File
+MASTER_SITE_SUBDIR=	CPAN:SMUELLER
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
