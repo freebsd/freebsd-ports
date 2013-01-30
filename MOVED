@@ -4016,3 +4016,5 @@ sysutils/salt|sysutils/py-salt|2013-01-27|Rename to consistency with other Pytho
 sysutils/salt-cloud|sysutils/py-salt-cloud|2013-01-27|Rename to consistency with other Python ports
 deskutils/py-dosage|deskutils/dosage|2013-01-28|Rename - it's a standalone application
 textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
+textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
+lang/erlang14||2013-01-30|Not needed; no issues came up with R15
