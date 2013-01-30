@@ -52,7 +52,8 @@ plen_equal()
 start_precmd()
 {
 	ifconfig ${u6rd_interface} create
-	ifconfig ${u6rd_interface} inet6 -nud -ifdisabled
+	ifconfig ${u6rd_interface} inet6 -ifdisabled >/dev/null 2>&1
+	ifconfig ${u6rd_interface} inet6 -nud
 	if [ -n "${u6rd_my_v6_addr}" ]; then
 		ifconfig ${u6rd_interface} inet6 ${u6rd_my_v6_addr}
 	fi
