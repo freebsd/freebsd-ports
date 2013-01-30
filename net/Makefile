@@ -660,6 +660,7 @@
     SUBDIR += p5-Net-SIP
     SUBDIR += p5-Net-SMPP
     SUBDIR += p5-Net-SMS-Clickatell
+    SUBDIR += p5-Net-SMS-Mollie
     SUBDIR += p5-Net-SMS-PChome
     SUBDIR += p5-Net-SNPP
     SUBDIR += p5-Net-SSH
