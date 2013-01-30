@@ -1,0 +1,12 @@
+#!/bin/sh
+case $2 in
+	PRE-INSTALL)
+		;;
+	POST-INSTALL)
+		%%CHOWN%% -R %%WWWOWN%% %%WWWDIR%%/wp-content
+		%%FIND%% %%WWWDIR%% -type d -print | xargs %%CHGRP%% %%WWWGRP%%
+		%%FIND%% %%WWWDIR%% -type d -print | xargs %%CHMOD%% g+w
+		;;
+	*)
+	;;
+esac

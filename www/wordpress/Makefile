@@ -1,18 +1,17 @@
-# New ports collection makefile for:	wordpress
-# Date created:		2004-07-29
-# Whom:			Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-#
+# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	wordpress
-PORTVERSION=	3.5
+PORTVERSION=	3.5.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 CONFLICTS_INSTALL=	de-wordpress-3.* ja-wordpress-3.* ru-wordpress-3.*
 
@@ -21,6 +20,9 @@ USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	CHGRP="${CHGRP}" CHOWN="${CHOWN}" CHMOD="${CHMOD}"\
+		FIND="${FIND}" WWWGRP="${WWWGRP}" WWWOWN="${WWWOWN}"
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
 
@@ -49,6 +51,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
