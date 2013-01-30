@@ -1,39 +1,39 @@
-# New ports collection makefile for:	warzone2100
-# Date created:				21 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Create by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	warzone2100
-PORTVERSION=	2.3.9
-PORTREVISION=	3
+PORTVERSION=	3.1.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		mad.2:${PORTSDIR}/audio/libmad \
-		ogg:${PORTSDIR}/audio/libogg \
-		physfs.1:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
 		png15:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		GLC.0:${PORTSDIR}/graphics/quesoglc \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		popt.0:${PORTSDIR}/devel/popt
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		theora:${PORTSDIR}/multimedia/libtheora \
+		GLEW:${PORTSDIR}/graphics/glew \
+		fribidi:${PORTSDIR}/converters/fribidi \
+		freetype:${PORTSDIR}/print/freetype2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
+USE_XZ=		yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 USE_OPENAL=	al
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_SDL=	net sdl
+USE_SDL=	sdl
+USE_QT4=	corelib network script gui moc_build
+QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --with-distributor="FreeBSD ports"
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" \
 		PATH="${LOCALBASE}/bin:$$PATH"
@@ -42,8 +42,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 REINPLACE_ARGS=	-i ''
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	*
+USE_GCC=	4.6+
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 800000
+IGNORE=		does not build on < 8.x
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -52,30 +59,12 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/_XOPEN_SOURCE/ d' ${WRKSRC}/config.h.in
-	@${REINPLACE_CMD} -e 's|NSIG|32|g; s|SIGPOLL|SIGIO|g' \
-		${WRKSRC}/lib/exceptionhandler/exceptionhandler.c
-	@${REINPLACE_CMD} -e '/include.*alloca/ d' \
-		${WRKSRC}/lib/framework/config-macosx.h \
-		${WRKSRC}/lib/framework/resource_parser.tab.c \
-		${WRKSRC}/lib/framework/strres_parser.tab.c \
-		${WRKSRC}/lib/framework/wzglobal.h \
-		${WRKSRC}/lib/gamelib/audp_parser.tab.c \
-		${WRKSRC}/lib/script/chat_parser.tab.c \
-		${WRKSRC}/lib/script/script_parser.tab.c \
-		${WRKSRC}/src/message_parser.tab.c \
-		${WRKSRC}/src/scriptvals_parser.tab.c
-	@${REINPLACE_CMD} -e 's|-m32||; s|-Werror||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|AUTHORS||; s|COPYING COPYING\.README||' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/typedef void (\*__GLXextFuncPtr)(void);/d' \
-		${WRKSRC}/lib/ivis_opengl/GLee.h
-.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -Ee 's|install-dist_docDATA$$||' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^install: install-am|install:|' \
 		${WRKSRC}/doc/Makefile.in
-.else
 .endif
 
 .include <bsd.port.mk>
