@@ -1,9 +1,8 @@
-	Net::DNS is a collection of Perl modules to interface with
-	the Domain Name System (DNS) resolver.  It allows the
-	programmer to perform queries that are beyond the
-	capabilities of gethostbyname and gethostbyaddr.
+Net::DNS is a collection of Perl modules to interface with the Domain Name
+System (DNS) resolver. It allows the programmer to perform queries that are
+beyond the capabilities of gethostbyname and gethostbyaddr.
 
-	There are also methods for dealing with creating and
-	parsing dynamic updates packets.
+There are also methods for dealing with creating and parsing dynamic updates
+packets.
 
 WWW: http://search.cpan.org/dist/Net-DNS/
