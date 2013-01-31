@@ -8,5 +8,6 @@
 %%PORTDATA%%bin/lzppre
 bin/wbpe
 bin/zpaq
+bin/zpaqd
 bin/zpipe
 include/libzpaq.h
