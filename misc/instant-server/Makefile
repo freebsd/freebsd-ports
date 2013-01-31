@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		cnewsdo:${PORTSDIR}/news/cnews \
 		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 # Don't let stupid programs ask for configuration.
 

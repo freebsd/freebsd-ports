@@ -20,7 +20,7 @@ RUN_DEPENDS=	smbspool:${PORTSDIR}/net/${SAMBA_PORT} \
 
 NO_BUILD=	yes
 PLIST_FILES=	libexec/cups/backend/smb
-SAMBA_PORT?=	samba34
+SAMBA_PORT?=	samba36
 SUB_FILES=	pkg-message
 
 do-install:

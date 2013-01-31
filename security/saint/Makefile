@@ -19,7 +19,7 @@ BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 .endif
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 USE_PERL5=	yes
 MANCOMPRESSED=	no
