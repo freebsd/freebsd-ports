@@ -22,15 +22,15 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 # Inhibit installation of extra copy of GPL
-	${REINPLACE_CMD} -E 's,: (un)?install-dist_pkgdataDATA,:,' \
+	@${REINPLACE_CMD} -E 's,: (un)?install-dist_pkgdataDATA,:,' \
 		${WRKSRC}/Makefile.in
 .if ${PORT_OPTIONS:MDOCS}
 # Fix documentation installation directory
-	${REINPLACE_CMD} -E 's,pkgdata,pkgdoc,g ; s,\(datadir.*,(docdir),' \
+	@${REINPLACE_CMD} -e 's,pkgdata,pkgdoc,g ; s,(datadir.*,(docdir),' \
 		${WRKSRC}/doc/Makefile.in
 .else
 # If documentation is not wanted, just disable it instead of fixing
-	${REINPLACE_CMD} -E 's,: (un)?install-dist_pkgdataDATA,:,' \
+	@${REINPLACE_CMD} -E 's,: (un)?install-dist_pkgdataDATA,:,' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 

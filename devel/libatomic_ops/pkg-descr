@@ -9,6 +9,6 @@ operations.  These might allow you to write code:
     be a large performance win
   - To experiment with new and much better thread programming paradigms, etc.
 
-For details and licensing restrictions see the files in the doc subdirectory.
+For details and licensing restrictions, please see the documentation.
 
 WWW: http://www.hpl.hp.com/personal/Hans_Boehm/gc/
