@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT}
 
 WRKSRC=		${WRKDIR}/LinPopUp-${PORTVERSION}/src
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk12

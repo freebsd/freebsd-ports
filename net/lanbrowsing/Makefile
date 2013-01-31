@@ -20,7 +20,7 @@ COMMENT=	Lanbrowsing facility and backend for KDE
 
 RUN_DEPENDS=	nmblookup:${PORTSDIR}/${SAMBA_PORT}
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01

@@ -16,7 +16,7 @@ COMMENT=	JAGS - Just Another GTK+ Samba Client
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 CONFLICTS=	jags-1.*
 
