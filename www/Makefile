@@ -1854,7 +1854,6 @@
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-native
-    SUBDIR += tomcat55
     SUBDIR += tomcat6
     SUBDIR += tomcat7
     SUBDIR += trac
