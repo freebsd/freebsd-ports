@@ -1,28 +1,27 @@
-# ex:ts=8
-# New ports collection makefile for:	libt1
-# Date created:			13, May, 1999
-# Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-#
+# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	t1lib
 PORTVERSION=	5.1.2
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	SUNSITE
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
+COMMENT=	Type 1 font rasterization library for Unix/X11
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 ALL_TARGET=	without_doc
 USE_LDCONFIG=	yes
 
-.if !defined(WITHOUT_X11)
+OPTIONS_DEFINE=	X11 DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xaw
 CONFIGURE_ARGS+=	--with-x
 PLIST_SUB+=	X11=""
@@ -40,7 +39,7 @@ post-patch:
 		's|_LT_CURRENT=.*$$|_LT_CURRENT=5|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/t1lib_doc.pdf ${DOCSDIR}
 .endif
