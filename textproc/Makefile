@@ -809,6 +809,7 @@
     SUBDIR += p5-Text-Glob
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Greeking
+    SUBDIR += p5-Text-Haml
     SUBDIR += p5-Text-Hatena
     SUBDIR += p5-Text-Highlight
     SUBDIR += p5-Text-HikiDoc
