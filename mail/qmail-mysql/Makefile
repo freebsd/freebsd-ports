@@ -16,6 +16,7 @@ MYSQL_PATCH_VERSION=	1.1.15
 SLAVE_MYSQL=	yes
 
 USE_MYSQL=	yes
+USE_GCC=	any
 
 MASTERDIR=	${.CURDIR}/../qmail
 DESCR=		${.CURDIR}/pkg-descr
