@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p python
 USE_PYTHON=	yes
 
 LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
-		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
+		torrent-rasterbar.7:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
