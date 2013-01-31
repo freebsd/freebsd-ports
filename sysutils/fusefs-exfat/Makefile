@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	exfat
-PORTVERSION=	0.9.8
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	fuse-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
-COMMENT=	A full-featured exFAT FS implementation as a FUSE module
+COMMENT=	Full-featured exFAT FS implementation as a FUSE module
 
 LICENSE=	GPLv3
 
