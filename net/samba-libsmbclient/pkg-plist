@@ -1,17 +1,7 @@
 include/libsmbclient.h
-%%ADDNS%%include/addns.h
 lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
-%%ADDNS%%lib/libaddns.a
-%%ADDNS%%lib/libaddns.so
-%%ADDNS%%lib/libaddns.so.0
-%%NETAPI%%lib/libnetapi.a
-%%NETAPI%%lib/libnetapi.so
-%%NETAPI%%lib/libnetapi.so.0
-%%SHAREMODES%%lib/libsmbsharemodes.a
-%%SHAREMODES%%lib/libsmbsharemodes.so
-%%SHAREMODES%%lib/libsmbsharemodes.so.0
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/Makefile.internal
 %%EXAMPLESDIR%%/Makefile.internal.in
