@@ -4018,3 +4018,4 @@ deskutils/py-dosage|deskutils/dosage|2013-01-28|Rename - it's a standalone appli
 textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
 textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
 lang/erlang14||2013-01-30|Not needed; no issues came up with R15
+www/tomcat55||2013-01-31|Has expired: EOL and unsupported upstream
