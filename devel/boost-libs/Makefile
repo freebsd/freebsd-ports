@@ -2,85 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	2
 COMMENT=	Free portable C++ libraries (without Boost.Python)
-USE_BZIP2=	yes
 
 BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
 
-OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
-		DEBUG		"Build debugging symbols"	off \
-		ICU		"Boost.Regex with ICU unicode support" on \
-		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
+OPTIONS_DEFINE=	VERSBOSE_BUILD DEBUG ICU OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	ICU
+VERBOSE_BUILD_DESC=	Show compiler messages
+ICU_DESC=		Boost.Regex with ICU unicode support
 
-BOOST_LIBS=	date_time filesystem graph iostreams\
-		math_c99 math_c99f math_tr1 math_tr1f\
-		prg_exec_monitor program_options regex\
-		serialization signals system thread unit_test_framework\
-		wave wserialization
+.include "${.CURDIR}/../boost-all/common.mk"
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/boost-all/common.mk"
-.include "${PORTSDIR}/devel/boost-all/compiled.mk"
+.include "${.CURDIR}/../boost-all/compiled.mk"
 
-.if defined(WITH_ICU)
+BJAM_ARGS+=	--without-python
+
+.if ${PORT_OPTIONS:MICU}
 LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
-BJAM_OPTIONS+=	-sICU_PATH=${LOCALBASE}
+BJAM_ARGS+=	-sICU_PATH=${LOCALBASE}
 .else
 USE_ICONV=	yes
-BJAM_OPTIONS+=	-sICONV_PATH=${LOCALBASE}
+BJAM_ARGS+=	-sICONV_PATH=${LOCALBASE}
 .endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64: invokes i386 assembler
 .endif
 
-post-patch: customize-boost-build
-# Remove Boost.Python
-	${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
-# Add symlink to help build system to find random_device.cpp
-	${LN} -s ${WRKSRC}/libs/random/src/random_device.cpp ${WRKSRC}/libs/random/random_device.cpp
-
 do-build:
-# build the library
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
-		--toolset=${BOOST_TOOLS}
-
-# build bgl-viz library
-	cd ${WRKSRC}/libs/graph/build && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
-		--toolset=${BOOST_TOOLS}
-
-# build random device code
-	cd ${WRKSRC}/libs/random && \
-	${CXX} ${CXXCFLAGS} ${CFLAGS} -c -I${WRKSRC} random_device.cpp && \
-	${AR} rc ${WRKSRC}/bin.v2/libs/libboost_random.a random_device.o
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} stage
+	@cd ${WRKSRC}/stage/lib && \
+		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.*}; done )
 
 do-install:
-# Install libraries
-	${FIND} ${WRKSRC}/stage/lib -type f -name "*.a"\
-		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
-
-	${FIND} -E ${WRKSRC}/stage/lib -type f \
-		-regex '.*so' \
-		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
-
-# Create symlinks for shared libraries
-.for lib in ${BOOST_LIBS}
-	cd ${PREFIX}/lib && \
-	${MV} "libboost_${lib}.so" "libboost_${lib}.so.${BOOST_SHARED_LIB_VER}" && \
-	${LN} -fs "libboost_${lib}.so.${BOOST_SHARED_LIB_VER}" "libboost_${lib}.so"
-.endfor
-
-# Install headers
-	cd ${WRKSRC} && \
-	${FIND} boost -type d -a \! -name "*.orig"\
-		-exec ${MKDIR} ${PREFIX}/include/\{\} \;
-
-	cd ${WRKSRC} && \
-	${FIND} boost -type f -a \! -name "*.orig"\
-		-exec ${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
+	@cd ${WRKSRC} && \
+		${SETENT} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} install
+# For some reasons BJAM forget about the links
+	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${PREFIX}
 
 # display pkg-message
 post-install:
@@ -97,12 +57,7 @@ post-install:
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 
 	@if [ -s ${PKGMESSAGE} ]; then \
-	${ECHO_CMD} ; \
-	${ECHO_CMD} "===============================================================================" ; \
-	${ECHO_CMD} ; \
 	${CAT} ${PKGMESSAGE}; \
-	${ECHO_CMD} "===============================================================================" ; \
-	${ECHO_CMD} ; \
 	fi
 
 .include <bsd.port.post.mk>
