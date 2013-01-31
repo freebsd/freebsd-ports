@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	povray
-PORTREVISION=	1
 DISTVERSION=	3.7.0.RC6
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.povray.org/beta/source/
 DIST_SUBDIR=	${UNIQUENAME}
@@ -10,7 +10,7 @@ DIST_SUBDIR=	${UNIQUENAME}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
 OPTIONS_DEFAULT=	PNG JPEG EXAMPLES DOCS
@@ -116,6 +116,13 @@ DOC_FILES=	AUTHORS ChangeLog NEWS
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+post-patch:
+# Fix with boost 1.52
+	@${REINPLACE_CMD} -e 's/TIME_UTC/TIME_UTC_/g' ${WRKSRC}/source/backend/scene/view.cpp \
+		${WRKSRC}/source/base/timer.cpp \
+		${WRKSRC}/vfe/vfepovms.cpp \
+		${WRKSRC}/vfe/unix/platformbase.cpp \
+		${WRKSRC}/vfe/vfesession.cpp
 pre-build:
 .if ${PORT_OPTIONS:MSTATIC} && ${PORT_OPTIONS:MTIFF}
 #	graphics/tiff adds dependencies on libjpeg and libjbig

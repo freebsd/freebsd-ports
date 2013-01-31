@@ -1,0 +1,563 @@
+diff --git configure.ac configure.ac
+index 4594e56..896220b 100644
+--- configure.ac
++++ configure.ac
+@@ -481,7 +481,7 @@ AM_CONDITIONAL(MAKE_MODULE_GPU,              [test "$MAKE_MODULE_GPU" = "yes"])
+ # final processing
+ ##################################################
+ 
+-VW_CPPFLAGS="-I\${abs_top_srcdir}/src -I\${abs_top_builddir}/src $OTHER_CPPFLAGS -DBOOST_FILESYSTEM_VERSION=2"
++VW_CPPFLAGS="-I\${abs_top_srcdir}/src -I\${abs_top_builddir}/src $OTHER_CPPFLAGS"
+ VW_LDFLAGS="$OTHER_LDFLAGS"
+ 
+ # Do this last, to make sure it's not overridden
+diff --git src/vw/BundleAdjustment/ControlNetworkLoader.cc src/vw/BundleAdjustment/ControlNetworkLoader.cc
+index ed24605..9c092e8 100644
+--- src/vw/BundleAdjustment/ControlNetworkLoader.cc
++++ src/vw/BundleAdjustment/ControlNetworkLoader.cc
+@@ -65,8 +65,8 @@ void vw::ba::triangulate_control_point( ControlPoint& cp,
+         if ( sm.convergence_angle( cp[j].position(),
+                                    cp[k].position() ) >
+              minimum_angle ) {
+-	  count++;
+-	  position_sum += sm( cp[j].position(), cp[k].position(), error );
++          count++;
++          position_sum += sm( cp[j].position(), cp[k].position(), error );
+           error_sum += error;
+         }
+       } catch ( const camera::PixelToRayErr& ) { /* Just let it go */ }
+@@ -110,7 +110,7 @@ void vw::ba::build_control_network( ba::ControlNetwork& cnet,
+     fs::path file_path(file);
+     image_prefix_map[file_path.replace_extension().string()] = count;
+     crn.add_node( ba::CameraNode<ba::IPFeature>( count,
+-                                                 file_path.stem() ) );
++                                                 file_path.stem().string() ) );
+     count++;
+   }
+ 
+@@ -128,7 +128,7 @@ void vw::ba::build_control_network( ba::ControlNetwork& cnet,
+       if ( obj->path().extension() != ".match" ) continue;
+ 
+       // Pull out the prefixes that made up that match file
+-      std::string match_base = obj->path().stem();
++      std::string match_base = obj->path().stem().string();
+       size_t split_pt = match_base.find("__");
+       if ( split_pt == std::string::npos ) continue;
+       std::string prefix1 = match_base.substr(0,split_pt);
+@@ -143,14 +143,14 @@ void vw::ba::build_control_network( ba::ControlNetwork& cnet,
+ 
+       // Actually read in the file as it seems we've found something correct
+       std::vector<ip::InterestPoint> ip1, ip2;
+-      ip::read_binary_match_file( obj->string(), ip1, ip2 );
++      ip::read_binary_match_file( obj->path().string(), ip1, ip2 );
+       if ( ip1.size() < min_matches ) {
+-        vw_out(VerboseDebugMessage,"ba") << "\t" << obj->string() << "    "
++        vw_out(VerboseDebugMessage,"ba") << "\t" << obj->path().string() << "    "
+                                          << it1->second << " <-> " << it2->second << " : "
+                                          << ip1.size() << " matches. [rejected]\n";
+         num_load_rejected += ip1.size();
+       } else {
+-        vw_out(VerboseDebugMessage,"ba") << "\t" << obj->string() << "    "
++        vw_out(VerboseDebugMessage,"ba") << "\t" << obj->path().string() << "    "
+                                          << it1->second << " <-> " << it2->second << " : "
+                                          << ip1.size() << " matches.\n";
+         num_loaded += ip1.size();
+diff --git src/vw/BundleAdjustment/ControlNetworkLoader.h src/vw/BundleAdjustment/ControlNetworkLoader.h
+index 1e4deb4..7e8b270 100644
+--- src/vw/BundleAdjustment/ControlNetworkLoader.h
++++ src/vw/BundleAdjustment/ControlNetworkLoader.h
+@@ -59,7 +59,7 @@
+     LookupType image_lookup;
+     for (size_t i = 0; i < image_files.size(); i++ ) {
+       image_lookup[image_files[i]] = i;
+-      image_lookup[fs::path(image_files[i]).filename()] = i;
++      image_lookup[fs::path(image_files[i]).filename().string()] = i;
+     }
+ 
+     while ( gcp_start != gcp_end ) {
+@@ -139,7 +139,7 @@
+     LookupType image_lookup;
+     for (size_t i = 0; i < image_files.size(); i++ ) {
+       image_lookup[image_files[i]] = i;
+-      image_lookup[fs::path(image_files[i]).filename()] = i;
++      image_lookup[fs::path(image_files[i]).filename().string()] = i;
+     }
+ 
+     while ( gcpcnet_start != gcpcnet_end ) {
+diff --git src/vw/FileIO/KML.cc src/vw/FileIO/KML.cc
+index be91a5f..f04c41b 100644
+--- src/vw/FileIO/KML.cc
++++ src/vw/FileIO/KML.cc
+@@ -259,7 +259,7 @@
+     std::ostringstream path;
+     if ( m_directory != "" )
+       path << m_directory << "/";
+-    fs::path kml_path( path.str(), fs::native );
++    fs::path kml_path( path.str() );
+     fs::create_directories( kml_path );
+     path << m_filename;
+     kml_path = path.str();
+diff --git src/vw/FileIO/tests/TestTemporaryFile.cxx src/vw/FileIO/tests/TestTemporaryFile.cxx
+index 4fcaaaf..05b33cf 100644
+--- src/vw/FileIO/tests/TestTemporaryFile.cxx
++++ src/vw/FileIO/tests/TestTemporaryFile.cxx
+@@ -46,15 +46,15 @@ string get_directory(const TemporaryDir& f) {
+ }
+ 
+ string get_prefix(const TemporaryFile& f, size_t len) {
+-  return fs::path(f.filename()).leaf().substr(0, len);
++  return fs::path(f.filename()).filename().string().substr(0, len);
+ }
+ 
+ string get_prefix(const TemporaryDir& f, size_t len) {
+-  return fs::path(f.filename()).leaf().substr(0, len);
++  return fs::path(f.filename()).filename().string().substr(0, len);
+ }
+ 
+ string get_suffix(const TemporaryFile& f, size_t len) {
+-  string fn = fs::path(f.filename()).leaf();
++  string fn = fs::path(f.filename()).filename().string();
+   return fn.substr(fn.size()-len, len);
+ }
+ 
+diff --git src/vw/Mosaic/CelestiaQuadTreeConfig.cc src/vw/Mosaic/CelestiaQuadTreeConfig.cc
+index d215843..5a27da1 100644
+--- src/vw/Mosaic/CelestiaQuadTreeConfig.cc
++++ src/vw/Mosaic/CelestiaQuadTreeConfig.cc
+@@ -31,7 +31,7 @@
+   }
+ 
+   std::string CelestiaQuadTreeConfig::image_path( QuadTreeGenerator const& qtree, std::string const& name ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+ 
+     Vector<size_t,2> pos(0,0);
+     for ( size_t i=0; i < name.length(); ++i ) {
+@@ -55,7 +55,7 @@
+ 
+     path /= oss.str();
+ 
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+   void CelestiaQuadTreeConfig::configure( QuadTreeGenerator& qtree ) const {
+diff --git src/vw/Mosaic/GMapQuadTreeConfig.cc src/vw/Mosaic/GMapQuadTreeConfig.cc
+index f47fc05..840ab4e 100644
+--- src/vw/Mosaic/GMapQuadTreeConfig.cc
++++ src/vw/Mosaic/GMapQuadTreeConfig.cc
+@@ -30,7 +30,7 @@
+ 
+   // for gmaps, origin is upper left, advancing right and down.
+   std::string GMapQuadTreeConfig::image_path( QuadTreeGenerator const& qtree, std::string const& name ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+ 
+     Vector<size_t, 2> pos(0,0);
+     BOOST_FOREACH(char n, name) {
+@@ -50,11 +50,11 @@
+     oss << name.length() << "/" << pos.x() << "/" << pos.y();
+     path /= oss.str();
+ 
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+   boost::shared_ptr<DstImageResource> GMapQuadTreeConfig::tile_resource( QuadTreeGenerator const& /*qtree*/, QuadTreeGenerator::TileInfo const& info, ImageFormat const& format ) {
+-    create_directories( fs::path( info.filepath, fs::native ).branch_path() );
++    create_directories( fs::path( info.filepath ).parent_path() );
+     return boost::shared_ptr<DstImageResource>( DiskImageResource::create( info.filepath + info.filetype, format, info.filetype ) );
+   }
+ 
+diff --git src/vw/Mosaic/GigapanQuadTreeConfig.cc src/vw/Mosaic/GigapanQuadTreeConfig.cc
+index d9ceac9..685c9fe 100644
+--- src/vw/Mosaic/GigapanQuadTreeConfig.cc
++++ src/vw/Mosaic/GigapanQuadTreeConfig.cc
+@@ -98,7 +98,7 @@
+ 
+     if ( root_node) {
+       std::ostringstream json;
+-      fs::path file_path( info.filepath, fs::native );
++      fs::path file_path( info.filepath );
+       fs::path json_path = change_extension( file_path, ".json" );
+ 
+       json << "{" << std::endl
+diff --git src/vw/Mosaic/KMLQuadTreeConfig.cc src/vw/Mosaic/KMLQuadTreeConfig.cc
+index d527e3a..cd155dc 100644
+--- src/vw/Mosaic/KMLQuadTreeConfig.cc
++++ src/vw/Mosaic/KMLQuadTreeConfig.cc
+@@ -235,8 +235,8 @@
+ 
+   void KMLQuadTreeConfigData::metadata_func( QuadTreeGenerator const& qtree, QuadTreeGenerator::TileInfo const& info ) const {
+     std::ostringstream kml;
+-    fs::path file_path( info.filepath, fs::native );
+-    size_t base_len = file_path.branch_path().native_file_string().size() + 1;
++    fs::path file_path( info.filepath );
++    size_t base_len = file_path.parent_path().string().size() + 1;
+     fs::path kml_path = change_extension( file_path, ".kml" );
+     kml << std::setprecision(10);
+ 
+@@ -264,10 +264,11 @@
+       m_root_node_tags << "  <Style><ListStyle><listItemType>checkHideChildren</listItemType></ListStyle></Style>\n";
+     }
+ 
+-    std::vector<std::pair<std::string,BBox2i> > children = qtree.branches( info.name, info.region_bbox );
++    std::vector<std::pair<std::string,BBox2i> > children =
++      qtree.branches( info.name, info.region_bbox );
+     for( unsigned i=0; i<children.size(); ++i ) {
+       std::string kmlfile = qtree.image_path(children[i].first) + ".kml";
+-      if( exists( fs::path( kmlfile, fs::native ) ) ) {
++      if( exists( fs::path( kmlfile ) ) ) {
+         num_children++;
+         kml << kml_network_link( children[i].first.substr(children[i].first.size()-1),
+                                  kmlfile.substr(base_len),
+@@ -281,7 +282,7 @@
+     int draw_order = m_draw_order_offset + int(info.name.size());
+     BBox2i go_bbox = (qtree.get_crop_images() ? info.image_bbox : info.region_bbox);
+     if( exists( fs::path( info.filepath + info.filetype ) ) ) {
+-      kml << kml_ground_overlay( file_path.leaf() + info.filetype,
++      kml << kml_ground_overlay( file_path.filename().string() + info.filetype,
+                                  pixels_to_longlat( info.region_bbox, qtree.get_dimensions() ),
+                                  pixels_to_longlat( go_bbox, qtree.get_dimensions() ),
+                                  draw_order, qtree.get_tile_size()/2, max_lod );
+@@ -333,7 +334,7 @@
+   }
+ 
+   boost::shared_ptr<DstImageResource> KMLQuadTreeConfigData::tile_resource_func( QuadTreeGenerator const&, QuadTreeGenerator::TileInfo const& info, ImageFormat const& format ) const {
+-    create_directories( fs::path( info.filepath, fs::native ).branch_path() );
++    create_directories( fs::path( info.filepath ).parent_path() );
+     if( info.filetype == ".png" && (format.pixel_format==VW_PIXEL_RGBA || format.pixel_format==VW_PIXEL_GRAYA) ) {
+       return boost::shared_ptr<DstImageResource>( new DiskImageResourcePNGAlphaHack( info.filepath+info.filetype, format ) );
+     }
+diff --git src/vw/Mosaic/QuadTreeGenerator.cc src/vw/Mosaic/QuadTreeGenerator.cc
+index 389825d..a4cba6f 100644
+--- src/vw/Mosaic/QuadTreeGenerator.cc
++++ src/vw/Mosaic/QuadTreeGenerator.cc
+@@ -28,13 +28,13 @@
+ namespace mosaic {
+ 
+   std::string QuadTreeGenerator::simple_image_path::operator()( QuadTreeGenerator const& qtree, std::string const& name ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+     path /= "r" + name;
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+   std::string QuadTreeGenerator::tiered_image_path::operator()( QuadTreeGenerator const& qtree, std::string const& name, int32 levels_per_directory ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+ 
+     std::string rname = "r" + name;
+ 
+@@ -43,14 +43,14 @@
+     }
+     path /= rname;
+ 
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+   std::string QuadTreeGenerator::named_tiered_image_path::operator()( QuadTreeGenerator const& qtree, std::string const& name, int32 levels_per_directory ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+ 
+     if( name.length() == 0 ) {
+-      path /= change_extension( path, "" ).leaf();
++      path /= change_extension( path, "" ).filename();
+     }
+     else {
+       for ( int32 i=0; i<(int32)name.length() - levels_per_directory; i+=levels_per_directory ) {
+@@ -59,7 +59,7 @@
+       path /= name;
+     }
+ 
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+   std::vector<std::pair<std::string,vw::BBox2i> > QuadTreeGenerator::default_branch_func::operator()( QuadTreeGenerator const& qtree, std::string const& name, BBox2i const& region ) {
+@@ -74,7 +74,7 @@
+   }
+ 
+   boost::shared_ptr<DstImageResource> QuadTreeGenerator::default_tile_resource_func::operator()( QuadTreeGenerator const&, TileInfo const& info, ImageFormat const& format ) {
+-    create_directories( fs::path( info.filepath, fs::native ).branch_path() );
++    create_directories( fs::path( info.filepath ).parent_path() );
+     return boost::shared_ptr<DstImageResource>( DiskImageResource::create( info.filepath+info.filetype, format ) );
+   }
+ 
+diff --git src/vw/Mosaic/TMSQuadTreeConfig.cc src/vw/Mosaic/TMSQuadTreeConfig.cc
+index 92f4ab9..2f6c30b 100644
+--- src/vw/Mosaic/TMSQuadTreeConfig.cc
++++ src/vw/Mosaic/TMSQuadTreeConfig.cc
+@@ -25,7 +25,7 @@
+ namespace mosaic {
+ 
+   std::string TMSQuadTreeConfig::image_path( QuadTreeGenerator const& qtree, std::string const& name ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+ 
+     Vector2i pos(0,0);
+     for ( int i=0; i<(int)name.length(); ++i ) {
+@@ -41,7 +41,7 @@
+     oss << name.length() << "/" << pos.x() << "/" << pos.y();
+     path /= oss.str();
+ 
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+   void TMSQuadTreeConfig::configure( QuadTreeGenerator& qtree ) const {
+diff --git src/vw/Mosaic/ToastQuadTreeConfig.h src/vw/Mosaic/ToastQuadTreeConfig.h
+index 209ff0e..ba2aed6 100644
+--- src/vw/Mosaic/ToastQuadTreeConfig.h
++++ src/vw/Mosaic/ToastQuadTreeConfig.h
+@@ -200,13 +200,13 @@
+       }
+ 
+       // Read it in from disk
+-      fs::path path( qtree->get_name(), fs::native );
++      fs::path path( qtree->get_name() );
+       std::ostringstream filename;
+       filename << level << "/" << x << "/" << y << "." << qtree->get_file_type();
+       path /= filename.str();
+       ImageView<PixelT> tile;
+       if( exists(path) ) {
+-        read_image( tile, path.native_file_string() );
++        read_image( tile, path.string() );
+       }
+ 
+       // Save it in the cache.  The cache size of 1024 tiles was chosen
+@@ -251,7 +251,7 @@
+         generate_branch( branch_level, level+1, 2*x+1, 2*y+1, SubProgressCallback(progress_callback, 0.75, 1.00) );
+       }
+       else {
+-        fs::path path( qtree->get_name(), fs::native );
++        fs::path path( qtree->get_name() );
+         std::ostringstream filename;
+         filename << level << "/" << x << "/" << y << "." << qtree->get_file_type();
+         path /= filename.str();
+@@ -288,8 +288,8 @@
+         }
+ 
+         if( ! is_transparent(tile) ) {
+-          create_directories( path.branch_path() );
+-          write_image( path.native_file_string(), tile );
++          create_directories( path.parent_path() );
++          write_image( path.string(), tile );
+         }
+ 
+         progress_callback.report_progress(1);
+diff --git src/vw/Mosaic/UniviewQuadTreeConfig.cc src/vw/Mosaic/UniviewQuadTreeConfig.cc
+index c6c20b3..e94e0d7 100644
+--- src/vw/Mosaic/UniviewQuadTreeConfig.cc
++++ src/vw/Mosaic/UniviewQuadTreeConfig.cc
+@@ -67,7 +67,7 @@
+   }
+ 
+   std::string UniviewQuadTreeConfig::image_path( QuadTreeGenerator const& qtree, std::string const& name ) {
+-    fs::path path( qtree.get_name(), fs::native );
++    fs::path path( qtree.get_name() );
+ 
+     Vector2i pos(0,0);
+     for ( int i=0; i<(int)name.length(); ++i ) {
+@@ -86,12 +86,12 @@
+       oss << name.length()-1 << "/" << pos.y() << "/" << pos.x();
+     path /= oss.str();
+ 
+-    return path.native_file_string();
++    return path.string();
+   }
+ 
+ 
+   boost::shared_ptr<DstImageResource> UniviewQuadTreeConfig::terrain_tile_resource( QuadTreeGenerator const& /*qtree*/,QuadTreeGenerator::TileInfo const& info, ImageFormat const& format ) {
+-    create_directories( fs::path( info.filepath, fs::native ).branch_path() );
++    create_directories( fs::path( info.filepath ).parent_path() );
+     return boost::shared_ptr<DstImageResource>( new UniviewTerrainResource( info.filepath+info.filetype, format ) );
+   }
+ 
+diff --git src/vw/tools/blend.cc src/vw/tools/blend.cc
+index c0f6e29..dbab5a9 100644
+--- src/vw/tools/blend.cc
++++ src/vw/tools/blend.cc
+@@ -58,7 +58,7 @@ void do_blend() {
+ 
+   std::map<std::string,fs::path> image_files;
+   std::map<std::string,fs::path> offset_files;
+-  fs::path source_dir_path( mosaic_name, fs::native );
++  fs::path source_dir_path( mosaic_name );
+   fs::directory_iterator pi( source_dir_path ), pend;
+   for( ; pi != pend; ++pi ) {
+     if( extension(*pi) == ".offset" )
+diff --git src/vw/tools/correlate.cc src/vw/tools/correlate.cc
+index 521206f..e249e55 100644
+--- src/vw/tools/correlate.cc
++++ src/vw/tools/correlate.cc
+@@ -95,7 +95,9 @@ int main( int argc, char *argv[] ) {
+       return 1;
+     }
+ 
+-    std::string match_filename = fs::path( left_file_name ).replace_extension().string() + "__" + fs::path( right_file_name ).stem() + ".match";
++    std::string match_filename =
++      fs::path( left_file_name ).replace_extension().string() + "__" +
++      fs::path( right_file_name ).stem().string() + ".match";
+     if ( fs::exists( match_filename ) ) {
+       vw_out() << "Found a match file. Using it to pre-align images.\n";
+       std::vector<ip::InterestPoint> matched_ip1, matched_ip2;
+diff --git src/vw/tools/ipalign.cc src/vw/tools/ipalign.cc
+index 76c1689..f513827 100644
+--- src/vw/tools/ipalign.cc
++++ src/vw/tools/ipalign.cc
+@@ -220,7 +220,7 @@ void align_images( Options & opt ) {
+       }
+       std::string output_filename =
+         fs::path(ref_name).replace_extension().string() + "__" +
+-        fs::path(input_name).stem() + ".match";
++        fs::path(input_name).stem().string() + ".match";
+       write_binary_match_file(output_filename, final_ip1, final_ip2);
+     }
+ 
+diff --git src/vw/tools/ipmatch.cc src/vw/tools/ipmatch.cc
+index 06aa88a..96c690b 100644
+--- src/vw/tools/ipmatch.cc
++++ src/vw/tools/ipmatch.cc
+@@ -64,19 +64,19 @@ static void write_match_image(std::string const& out_file_name,
+   mosaic::ImageComposite<PixelRGB<uint8> > composite;
+   if ( irsrc1->has_nodata_read() ) {
+     composite.insert( pixel_cast_rescale<PixelRGB<uint8> >(resample(apply_mask(normalize(create_mask(DiskImageView<PixelGray<float> >(*irsrc1),
+-												     irsrc1->nodata_read()))), sub_scale)),
+-		      0, 0 );
++                                                                                                     irsrc1->nodata_read()))), sub_scale)),
++                      0, 0 );
+   } else {
+     composite.insert( pixel_cast_rescale<PixelRGB<uint8> >(resample(normalize(DiskImageView<PixelGray<float> >(*irsrc1)), sub_scale)),
+-		      0, 0 );
++                      0, 0 );
+   }
+   if ( irsrc2->has_nodata_read() ) {
+     composite.insert(pixel_cast_rescale<PixelRGB<uint8> >(resample(apply_mask(normalize(create_mask(DiskImageView<PixelGray<float> >(*irsrc2),
+-												    irsrc2->nodata_read()))), sub_scale)),
+-		     int32(irsrc1->format().cols * sub_scale), 0 );
++                                                                                                    irsrc2->nodata_read()))), sub_scale)),
++                     int32(irsrc1->format().cols * sub_scale), 0 );
+   } else {
+     composite.insert(pixel_cast_rescale<PixelRGB<uint8> >(resample(normalize(DiskImageView<PixelGray<float> >(*irsrc2)), sub_scale)),
+-		     int32(irsrc1->format().cols * sub_scale), 0 );
++                     int32(irsrc1->format().cols * sub_scale), 0 );
+   }
+   composite.set_draft_mode( true );
+   composite.prepare();
+@@ -101,7 +101,7 @@ static void write_match_image(std::string const& out_file_name,
+ 
+   boost::scoped_ptr<vw::DiskImageResource> rsrc( DiskImageResource::create(out_file_name, comp.format()) );
+   block_write_image( *rsrc, comp,
+-		     TerminalProgressCallback( "tools.ipmatch", "Writing Debug:" ) );
++                     TerminalProgressCallback( "tools.ipmatch", "Writing Debug:" ) );
+ }
+ 
+ int main(int argc, char** argv) {
+@@ -183,7 +183,7 @@ int main(int argc, char** argv) {
+       vw_out() << "Found " << matched_ip1.size() << " putative matches.\n";
+ 
+       std::vector<Vector3> ransac_ip1 = iplist_to_vectorlist(matched_ip1),
+-	ransac_ip2 = iplist_to_vectorlist(matched_ip2);
++        ransac_ip2 = iplist_to_vectorlist(matched_ip2);
+       std::vector<size_t> indices;
+       try {
+         // RANSAC is used to fit a transform between the matched sets
+@@ -214,8 +214,8 @@ int main(int argc, char** argv) {
+             indices.push_back(i);
+         } else {
+           vw_out() << "Unknown RANSAC constraint type: " << ransac_constraint
+-		   << ".  Choose one of: [similarity, homography, fundamental, or none]\n";
+-	  return 1;
++                   << ".  Choose one of: [similarity, homography, fundamental, or none]\n";
++          return 1;
+         }
+       } catch (const vw::math::RANSACErr& e ) {
+         vw_out() << "RANSAC Failed: " << e.what() << "\n";
+@@ -230,8 +230,8 @@ int main(int argc, char** argv) {
+       }
+ 
+       std::string output_prefix =
+-	fs::path(input_file_names[i]).replace_extension().string() + "__" +
+-        fs::path(input_file_names[j]).stem();
++        fs::path(input_file_names[i]).replace_extension().string() + "__" +
++        fs::path(input_file_names[j]).stem().string();
+       write_binary_match_file(output_prefix+".match", final_ip1, final_ip2);
+ 
+       if (vm.count("debug-image")) {
+@@ -244,4 +244,3 @@ int main(int argc, char** argv) {
+ 
+   return 0;
+ }
+-
+diff --git configure.ac configure.ac
+index fc96826..4594e56 100644
+--- configure.ac
++++ configure.ac
+@@ -205,7 +205,7 @@ AX_PKG_BOOST([BOOST_PROGRAM_OPTIONS BOOST_FILESYSTEM BOOST_THREAD BOOST_GRAPH],
+   BOOST_REGEX,
+     [AX_PKG_BOOST_LIB(REGEX,           [-lboost_regex],           [boost/regex.hpp], [boost::regex(".*");])],
+   BOOST_DATETIME,
+-    [AX_PKG_BOOST_LIB(DATETIME,        [-lboost_date_time],       [boost/date_time/gregorian/gregorian_types.hpp])],
++    [AX_PKG_BOOST_LIB(DATETIME,        [-lboost_date_time],       [boost/date_time/gregorian/gregorian_types.hpp], [], [$PKG_BOOST_SYSTEM_LIBS])],
+   BOOST_THREAD,
+     [AX_PKG_BOOST_LIB(THREAD,          [-lboost_thread],          [boost/thread/thread.hpp], [boost::mutex();], [$PKG_BOOST_DATETIME_LIBS], [boost/thread/condition.hpp])],
+   BOOST_IOSTREAMS,
+diff --git src/vw/Core/Settings.cc src/vw/Core/Settings.cc
+index 068988c..7c1becb 100644
+--- src/vw/Core/Settings.cc
++++ src/vw/Core/Settings.cc
+@@ -67,7 +67,11 @@ void Settings::reload_config() {
+   // call reload_config and deadlock!
+ 
+   boost::xtime xt;
++#if BOOST_VERSION >= 105000
++  boost::xtime_get(&xt, boost::TIME_UTC_);
++#else
+   boost::xtime_get(&xt, boost::TIME_UTC);
++#endif
+   bool needs_reloading = false;
+ 
+   // Every five seconds, we attempt to open the log config file to see
+diff --git src/vw/Core/Thread.h src/vw/Core/Thread.h
+index b1bbdfd..4040a8a 100644
+--- src/vw/Core/Thread.h
++++ src/vw/Core/Thread.h
+@@ -175,7 +175,11 @@
+     template<typename LockT>
+     bool timed_wait(LockT &lock, unsigned long milliseconds) {
+       boost::xtime xt;
++#if BOOST_VERSION >= 105000
++      boost::xtime_get(&xt, boost::TIME_UTC_);
++#else
+       boost::xtime_get(&xt, boost::TIME_UTC);
++#endif
+       while (milliseconds >= 1000) {
+         xt.sec++;
+         milliseconds -= 1000;
+@@ -187,7 +191,11 @@
+     template<typename LockT, typename Pred>
+     bool timed_wait(LockT &lock, unsigned long milliseconds, Pred pred) {
+       boost::xtime xt;
++#if BOOST_VERSION >= 105000
++      boost::xtime_get(&xt, boost::TIME_UTC_);
++#else
+       boost::xtime_get(&xt, boost::TIME_UTC);
++#endif
+       while (milliseconds >= 1000) {
+         xt.sec++;
+         milliseconds -= 1000;
+@@ -269,7 +277,11 @@
+     /// threads/processes.
+     static inline void sleep_ms( uint32 milliseconds ) {
+       boost::xtime xt;
++#if BOOST_VERSION >= 105000
++      boost::xtime_get(&xt, boost::TIME_UTC_);
++#else
+       boost::xtime_get(&xt, boost::TIME_UTC);
++#endif
+       while (milliseconds >= 1000) {
+         xt.sec++;
+         milliseconds -= 1000;

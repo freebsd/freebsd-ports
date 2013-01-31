@@ -1,14 +1,11 @@
-# Ports collection makefile for:	scribus
-# Date created:			Mar 15, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $Carpetsmoker: ports/print/scribus/Makefile,v 1.2 2007/09/24 08:06:52 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -23,7 +20,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		cups.2:${PORTSDIR}/print/cups-client \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		podofo.0:${PORTSDIR}/graphics/podofo \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		aspell.16:${PORTSDIR}/textproc/aspell \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		hyphen:${PORTSDIR}/textproc/hyphen \

@@ -2,13 +2,15 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.15.9
-PORTREVISION?=	2
+PORTREVISION?=	4
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	C++ library implementing a BitTorrent client
+
+BROKEN=		Does not build with recent boost
 
 MAKE_JOBS_SAFE=	yes
 
@@ -17,7 +19,7 @@ CONFLICTS+=	libtorrent-rasterbar-0.1[46789].*
 NO_LATEST_LINK=	yes
 
 BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS+=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
 USE_GNOME=	gnomehack
@@ -59,6 +61,15 @@ pre-patch:
 	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Dist
 	@${SED} -e 's#COMPILETIME_OPTIONS+="#COMPILETIME_OPTIONS="$$COMPILETIME_OPTIONS #g' \
 	    ${WRKSRC}/configure.Dist > ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's:BOOST_FILESYSTEM_VERSION=2:BOOST_FILESYSTEM_VERSION=3:g' \
+		-e 's:BOOST_FILESYSTEM_VERSION 2:BOOST_FILESYSTEM_VERSION 3:g' \
+		-e 's:\[BOOST_FILESYSTEM_VERSION\],\[2\]:[BOOST_FILESYSTEM_VERSION],[3]:g' \
+		${WRKSRC}/bindings/python/setup.py \
+		${WRKSRC}/configure \
+		${WRKSRC}/Jamfile \
+		${WRKSRC}/libtorrent-rasterbar-cmake.pc \
+		${WRKSRC}/libtorrent-rasterbar.pc
+
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
 post-patch: slave-post-patch

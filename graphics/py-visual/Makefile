@@ -3,7 +3,7 @@
 
 PORTNAME=	visual
 PORTVERSION=	4.b26
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}python/${PORTNAME}-module/VPython%204.beta26
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		boost_python.4:${PORTSDIR}/devel/boost-python-libs
+		boost_python:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	lander
-# Date created:		21 Feb 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lander
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		boost_filesystem.4:${PORTSDIR}/devel/boost-libs
+		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
@@ -25,7 +21,7 @@ USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.2+
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DBOOST_FILESYSTEM_VERSION=2
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-boost="${LOCALBASE}" \
 		--with-boost-filesystem=boost_filesystem

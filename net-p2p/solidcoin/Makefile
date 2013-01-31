@@ -3,7 +3,7 @@
 
 PORTNAME=	solidcoin
 PORTVERSION=	2.041
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	http://solidcoin.info/downloads/ \
 		http://dl.dropbox.com/u/47582909/
@@ -15,7 +15,7 @@ COMMENT=	Alternative Bitcoin peer-to-peer currency client
 BROKEN=		Does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
 OPTIONS=	GUI "Build with wxWidgets GUI" on
 

@@ -1,13 +1,9 @@
-# Ports collection makefile for:	scribus
-# Date created:		2012-05-20
-# Whom:			lbartoletti <coer@tuxfamily.org>
-#
+# Created by: lbartoletti <coer@tuxfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}

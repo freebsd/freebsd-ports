@@ -1,13 +1,9 @@
-# New ports collection makefile for:   hugin
-# Date created:        26 august 2004
-# Whom:                cartola (Carlos E. G. Carvalho)
-#
+# Created by: cartola (Carlos E. G. Carvalho)
 # $FreeBSD$
-#
 
 PORTNAME=	hugin
 PORTVERSION=	2011.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 

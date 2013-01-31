@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVSION=	1
+PORTREVSION=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -13,7 +13,7 @@ COMMENT=	KDE graphic art and office suite
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca \
 		exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		lcms2.2:${PORTSDIR}/graphics/lcms2 \

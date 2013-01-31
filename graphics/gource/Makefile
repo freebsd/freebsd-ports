@@ -1,13 +1,9 @@
-# New ports collection makefile for:   	gource
-# Date created:         Nov 25 2009
-# Whom:                 demon@FreeBSD.org
-#
+# Created by: demon@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gource
 PORTVERSION=	0.38
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITE_SUBDIR=	${PORTNAME}

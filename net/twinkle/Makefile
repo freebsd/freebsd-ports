@@ -3,7 +3,7 @@
 
 PORTNAME=	twinkle
 PORTVERSION=	1.4.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://mfnboer.home.xs4all.nl/twinkle/download/
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
 		ccrtp:${PORTSDIR}/devel/ccrtp \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs \
+		boost_regex:${PORTSDIR}/devel/boost-libs \
 		speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
 		zrtpcpp:${PORTSDIR}/devel/libzrtpcpp

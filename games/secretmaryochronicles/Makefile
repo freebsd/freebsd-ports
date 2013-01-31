@@ -1,13 +1,9 @@
-# New ports collection makefile for:	secretmaryochronicles
-# Date created:		31 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.10.git20120512
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
@@ -17,7 +13,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
 LIB_DEPENDS=	CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui \
-		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+		boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes

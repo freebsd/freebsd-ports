@@ -3,6 +3,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -19,7 +20,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		varconf-1.0.8:${PORTSDIR}/devel/varconf \
 		mercator-0.3.3:${PORTSDIR}/devel/mercator \
 		wfut-0.2:${PORTSDIR}/devel/libwfut \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \

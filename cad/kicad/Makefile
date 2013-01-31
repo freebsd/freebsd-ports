@@ -1,13 +1,9 @@
-# New ports collection makefile for:  kicad
-# Date created:               29 November 2005
-# Whom:                       Thierry Thomas <thierry@FreeBSD.org>
-#
+# Created by: Thierry Thomas <thierry@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kicad
 DISTVERSION=	2010-05-05-BZR2356
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/	\
@@ -19,7 +15,7 @@ EXTRACT_ONLY=	${SFNAME}-stable${EXTRACT_SUFX}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/kicad/library/74xx.dcm:${PORTSDIR}/cad/kicad-library
 
 CONFLICTS=	kicad-devel*

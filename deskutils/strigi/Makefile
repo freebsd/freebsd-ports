@@ -3,7 +3,7 @@
 
 PORTNAME=	strigi
 PORTVERSION=	0.7.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://rdieter.fedorapeople.org/strigi/
 #MASTER_SITES=	http://www.vandenoever.info/software/strigi/ \

@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	burrtools
-# Date created:			Mar 23, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	burrtools
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/

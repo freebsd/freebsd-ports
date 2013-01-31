@@ -3,7 +3,7 @@
 
 PORTNAME=	mapnik
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
@@ -19,12 +19,12 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		icuuc:${PORTSDIR}/devel/icu \
-		boost_system:${PORTSDIR}/devel/boost-libs
+		boost_system:${PORTSDIR}/devel/boost-libs \
+		boost_python:${PORTSDIR}/devel/boost-python-libs
 BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 		icu>=4.2:${PORTSDIR}/devel/icu \
 		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu \
 		boost-libs>=1.47:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python-libs
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.6+

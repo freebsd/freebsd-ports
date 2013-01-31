@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	kdepimplibs
-# Date created:				2008-01-20
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +14,7 @@ COMMENT=	Libraries for KDE-PIM applications
 
 LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		ical:${PORTSDIR}/devel/libical \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		prison.0:${PORTSDIR}/graphics/prison

@@ -1,12 +1,9 @@
-# New ports collection makefile for:	Ardour
-# Date created:				2006-12-04
-# Whom:			Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	ardour
 PORTVERSION=	2.8.14
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 

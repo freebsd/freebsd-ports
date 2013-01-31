@@ -2,7 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.2.r4
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://powerdnssec.org/downloads/
@@ -14,7 +14,7 @@ COMMENT=	An advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_serialization.[4-9]:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_serialization:${PORTSDIR}/devel/boost-libs
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
