@@ -288,7 +288,9 @@ lib/enlightenment/modules/ibox/module.desktop
 %%ILLUME%%lib/enlightenment/modules/illume2/e-module-illume2.edj
 %%ILLUME%%lib/enlightenment/modules/illume2/%%E17_ARCH%%/module.so
 %%ILLUME%%lib/enlightenment/modules/illume2/module.desktop
-%%ILLUME%%lib/enlightenment/modules/keyboards/ignore_built_in_keyboards
+%%ILLUME%%lib/enlightenment/modules/illume2/keyboards/ignore_built_in_keyboards
+%%ILLUME%%lib/enlightenment/modules/illume2/policies/illume.so
+%%ILLUME%%lib/enlightenment/modules/illume2/policies/tablet.so
 lib/enlightenment/modules/mixer/e-module-mixer.edj
 lib/enlightenment/modules/mixer/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mixer/module.desktop
@@ -301,8 +303,6 @@ lib/enlightenment/modules/notification/module.desktop
 lib/enlightenment/modules/pager/e-module-pager.edj
 lib/enlightenment/modules/pager/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/pager/module.desktop
-%%ILLUME%%lib/enlightenment/modules/policies/illume.so
-%%ILLUME%%lib/enlightenment/modules/policies/tablet.so
 lib/enlightenment/modules/quickaccess/e-module-quickaccess.edj
 lib/enlightenment/modules/quickaccess/module.desktop
 lib/enlightenment/modules/quickaccess/%%E17_ARCH%%/module.so
@@ -551,6 +551,9 @@ libdata/pkgconfig/everything.pc
 %%DATADIR%%/data/images/test.jpg
 %%DATADIR%%/data/images/test.png
 %%DATADIR%%/data/images/test.svg
+%%DATADIR%%/data/input_methods/fcitx.imc
+%%DATADIR%%/data/input_methods/gcin.imc
+%%DATADIR%%/data/input_methods/hime.imc
 %%DATADIR%%/data/input_methods/ibus.imc
 %%DATADIR%%/data/input_methods/iiimf.imc
 %%DATADIR%%/data/input_methods/scim.imc
@@ -722,7 +725,6 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/shot
 @dirrm lib/enlightenment/modules/quickaccess/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/quickaccess
-%%ILLUME%%@dirrm lib/enlightenment/modules/policies
 @dirrm lib/enlightenment/modules/pager/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/pager
 @dirrm lib/enlightenment/modules/notification/%%E17_ARCH%%
@@ -731,7 +733,8 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/msgbus
 @dirrm lib/enlightenment/modules/mixer/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mixer
-%%ILLUME%%@dirrm lib/enlightenment/modules/keyboards
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume2/policies
+%%ILLUME%%@dirrm lib/enlightenment/modules/illume2/keyboards
 %%ILLUME%%@dirrm lib/enlightenment/modules/illume2/%%E17_ARCH%%
 %%ILLUME%%@dirrm lib/enlightenment/modules/illume2
 %%ILLUME%%@dirrm lib/enlightenment/modules/illume-softkey/%%E17_ARCH%%
