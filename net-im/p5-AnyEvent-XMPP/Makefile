@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-AnyEvent-XMPP
-# Date created:		15 Aug, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-XMPP
-PORTVERSION=	0.52
+PORTVERSION=	0.54
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -72,6 +68,7 @@ MAN3=	AnyEvent::XMPP.3 \
 	AnyEvent::XMPP::Error::IQ.3 \
 	AnyEvent::XMPP::IM::Presence.3 \
 	AnyEvent::XMPP::Ext::MUC::Room.3 \
+	AnyEvent::XMPP::Ext::Receipts.3 \
 	AnyEvent::XMPP::Client.3
 
 .include <bsd.port.pre.mk>
