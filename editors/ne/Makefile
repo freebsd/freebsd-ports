@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ne
-# Date created:		2005-07-21
-# Whom:			Andrej Zverev <az@inec.ru>
-#
+# Created by: Andrej Zverev <az@inec.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ne
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/
 
@@ -14,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerful editor
 
 LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	DEBUG DOCS
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -57,7 +55,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/syntax/vhdl.jsf %%DATADIR%%/syntax/xml.jsf
 PLIST_DIRS=	%%DATADIR%%/syntax %%DATADIR%%
 
-.if !defined(WITH_DEBUG)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-DNODEBUG
 .endif
 
@@ -83,7 +83,7 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA}	${WRKSRC}/doc/default.* ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} syntax ${DATADIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
