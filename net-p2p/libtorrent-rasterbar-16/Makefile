@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.4
-PORTREVISION?=	1
+PORTVERSION=	0.16.7
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p ipv6
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,10 +16,10 @@ CONFLICTS+=	libtorrent-rasterbar-0.1[45789].*
 
 NO_LATEST_LINK=	yes
 
-BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS+=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
-		GeoIP.5:${PORTSDIR}/net/GeoIP
+		GeoIP:${PORTSDIR}/net/GeoIP
 
+USE_PKGCONFIG=	build
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
 USE_ICONV=	yes
@@ -52,9 +52,8 @@ CONFIGURE_ARGS+=	--disable-python-binding
 post-patch: slave-post-patch
 .else
 post-patch:
-	@${CP} ${WRKSRC}/Jamfile ${WRKSRC}/Jamfile.presed
-	@${SED} -e 's#<include>/usr/local/include#<include>${LOCALBASE}/include#' \
-		${WRKSRC}/Jamfile.presed > ${WRKSRC}/Jamfile
+	@${REINPLACE_CMD} -e 's|<include>/usr/local/include|<include>${PREFIX}/include|' \
+		${WRKSRC}/Jamfile
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
