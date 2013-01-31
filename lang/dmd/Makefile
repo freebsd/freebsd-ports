@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmd
-PORTVERSION=	1.075
+PORTVERSION=	1.076
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -37,6 +37,12 @@ MODULEDIR=	${PREFIX}/include/d/phobos
 MAKEFILE=	posix.mak
 .else
 NO_BUILD=	yes
+.endif
+
+.if ${ARCH} == "amd64"
+MAKE_ARGS+=	MODEL=64
+.else
+MAKE_ARGS+=	MODEL=32
 .endif
 
 post-patch:
