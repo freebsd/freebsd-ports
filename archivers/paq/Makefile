@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paq
-PORTVERSION=	20121214
+PORTVERSION=	20130124
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaq618.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaq619.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -38,7 +38,7 @@ CXXFLAGS+=	-DNDEBUG
 .endif
 
 .if !defined(NOPORTDATA) || make(makesum)
-DISTFILES+=	bmp_j4b.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
+DISTFILES+=	bmp_j4c.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 		calgarytest.zpaq calgarytest2.zpaq exe_j1.zip fast.cfg \
 		jpg_test2.zip lazy210.zip lz1.zip max.cfg mid.cfg min.zip \
 		zpsfx.100.zip zpsfx101.cpp
@@ -100,10 +100,12 @@ do-build:
 	${CXX} ${CXXFLAGS} -o wbpe wbpe.cpp; \
 	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${ZPAQFLAGS} \
 	-o zpaq zpaq.cpp libzpaq.cpp divsufsort.c ${LDFLAGS} ${PTHREAD_LIBS}; \
+	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} \
+	-o zpaqd zpaqd.cpp libzpaq.cpp ${LDFLAGS}; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpipe zpipe.cpp libzpaq.cpp
 
 do-install:
-.for prog in wbpe zpaq zpipe
+.for prog in wbpe zpaq zpaqd zpipe
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${PREFIX}/include
