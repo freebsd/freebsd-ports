@@ -1,11 +1,11 @@
---- ./wscript.orig	2011-04-05 03:59:59.000000000 +0200
-+++ ./wscript	2011-04-05 04:00:57.000000000 +0200
-@@ -63,7 +63,7 @@
+--- ./wscript.orig	2012-04-11 12:36:12.000000000 +0000
++++ ./wscript	2013-01-29 20:56:34.289900427 +0000
+@@ -68,7 +68,7 @@
                              io.c open.c transaction.c hash.c summary.c''')
  
      if bld.env.standalone_tdb:
 -        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
 +        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
-         bld.PKG_CONFIG_FILES('tdb.pc', vnum=VERSION)
-         bld.INSTALL_FILES('${INCLUDEDIR}', 'include/tdb.h', flat=True)
          private_library = False
+     else:
+         private_library = True
