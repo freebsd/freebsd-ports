@@ -26,6 +26,7 @@
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/OOB.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Ping.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Pubsub.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Receipts.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/RegisterForm.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Registration.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/VCard.pm
