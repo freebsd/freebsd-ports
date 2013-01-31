@@ -1042,7 +1042,6 @@
     SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
-    SUBDIR += samba-pdbsql
     SUBDIR += samba-smbclient
     SUBDIR += samba34
     SUBDIR += samba35
