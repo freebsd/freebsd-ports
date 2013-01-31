@@ -1,13 +1,9 @@
-# New ports collection makefile for:	OpenVRML
-# Date created:				8 Jan 2001
-# Whom:					Marc van Woerkom <3d@freebsd.org>
-#
+# Created by: Marc van Woerkom <3d@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvrml
 PORTVERSION=	0.18.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -56,8 +52,8 @@ PORTDOCS=	*
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
-LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
 pre-everything::
 	@${ECHO_MSG}

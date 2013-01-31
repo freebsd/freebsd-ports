@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enblend
-# Date created:			19 september 2004
-# Whom:				cartola@openit.com.br
-#
+# Created by: cartola@openit.com.br
 # $FreeBSD$
-#
 
 PORTNAME=	enblend
 PORTVERSION=	4.0
@@ -16,13 +12,13 @@ DISTNAME=	enblend-enfuse-${PORTVERSION}
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	A tool for image blending with multiresolution splines
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
 		xmi:${PORTSDIR}/graphics/plotutils \
-		tiff:${PORTSDIR}/graphics/tiff
+		tiff:${PORTSDIR}/graphics/tiff \
+		boost_filesystem:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
 WRKSRC=		${WRKDIR}/enblend-enfuse-4.0-753b534c819d
@@ -39,6 +35,8 @@ CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 USE_GCC=	4.4+
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	"LIBS=-lboost_system"
+CONFIGURE_ARGS+=	--with-boost-filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -19,7 +20,7 @@ LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core	\
 		exttextcat-2.0:${PORTSDIR}/textproc/libexttextcat	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
-		boost_thread.4:${PORTSDIR}/devel/boost-libs	\
+		boost_thread:${PORTSDIR}/devel/boost-libs	\
 		execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		exif.12:${PORTSDIR}/graphics/libexif		\
 		exiv2.12:${PORTSDIR}/graphics/exiv2		\

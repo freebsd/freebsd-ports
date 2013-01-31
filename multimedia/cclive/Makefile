@@ -3,6 +3,7 @@
 
 PORTNAME=	cclive
 PORTVERSION=	0.7.11
+PORTREVISION=	2
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
@@ -12,7 +13,7 @@ COMMENT=	Lightweight command line video extraction tool
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	boost_system.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		curl.6:${PORTSDIR}/ftp/curl \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		quvi.7:${PORTSDIR}/multimedia/libquvi

@@ -1,12 +1,9 @@
-# New ports collection makefile for:	ufc
-# Date created:				27 March 2012
-# Whom:					Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ufc
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/2.0.x/${PORTVERSION}/+download/
 

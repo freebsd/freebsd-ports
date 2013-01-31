@@ -1,23 +1,21 @@
-# New ports collection makefile for:	flowcanvas
-# Date created:		2008-07-22
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flowcanvas
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive Gtkmm/Gnomecanvasmm widget
 
+BROKEN=		Does not build with recent graphviz
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		gvc.6:${PORTSDIR}/graphics/graphviz \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24

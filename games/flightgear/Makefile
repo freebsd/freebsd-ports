@@ -1,12 +1,9 @@
-# New ports collection makefile for:	flightgear
-# Date created:		26 June 1999
-# Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
-#
+# Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
 # $FreeBSD$
-#
 
 PORTNAME=	flightgear
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \

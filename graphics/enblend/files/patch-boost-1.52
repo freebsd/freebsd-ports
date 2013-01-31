@@ -1,0 +1,125 @@
+--- src/filenameparse.cc	Tue Mar 15 18:52:46 2011 +0100
++++ src/filenameparse.cc	Sat Apr 09 20:17:05 2011 -0700
+@@ -50,7 +50,7 @@
+ #ifdef HAVE_BOOST_FILESYSTEM
+ #include <boost/filesystem.hpp>
+ 
+-typedef boost::filesystem::basic_path<std::string, boost::filesystem::path_traits> basic_path;
++//typedef boost::filesystem::basic_path<std::string, boost::filesystem::path_traits> basic_path;
+ #endif
+ 
+ 
+@@ -60,7 +60,7 @@
+ isRelativePath(const std::string& aFilename)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    const basic_path path(aFilename);
++    const boost::filesystem::path path(aFilename);
+     return !path.has_root_directory();
+ #else
+     const std::string::size_type separator = aFilename.find(PATH_SEPARATOR);
+@@ -80,7 +80,7 @@
+ extractDirname(const std::string& aFilename)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    const basic_path path(aFilename);
++    const boost::filesystem::path path(aFilename);
+     const std::string directory(path.branch_path().string());
+     return directory.empty() ? DOT : directory;
+ #else
+@@ -94,8 +94,8 @@
+ extractBasename(const std::string& aFilename)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    const basic_path path(aFilename);
+-    return path.leaf();
++    const boost::filesystem::path path(aFilename);
++    return path.leaf().string();
+ #else
+     const std::string::size_type separator = aFilename.rfind(PATH_SEPARATOR);
+     return
+@@ -110,7 +110,7 @@
+ extractFilename(const std::string& aFilename)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    const basic_path path(aFilename);
++    const boost::filesystem::path path(aFilename);
+     return basename(path);
+ #else
+     const std::string::size_type separator = aFilename.rfind(PATH_SEPARATOR);
+@@ -134,7 +134,7 @@
+ extractExtension(const std::string& aFilename)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    const basic_path path(aFilename);
++    const boost::filesystem::path path(aFilename);
+     return extension(path);
+ #else
+     const std::string::size_type dot = aFilename.rfind(DOT);
+@@ -151,11 +151,11 @@
+ 
+ #ifdef HAVE_BOOST_FILESYSTEM
+ 
+-inline basic_path
+-removeDotsBoost(const basic_path& aPath)
++inline boost::filesystem::path
++removeDotsBoost(const boost::filesystem::path& aPath)
+ {
+-    basic_path result;
+-    for (basic_path::const_iterator p = aPath.begin(); p != aPath.end(); ++p)
++    boost::filesystem::path result;
++    for (boost::filesystem::path::const_iterator p = aPath.begin(); p != aPath.end(); ++p)
+     {
+         if (*p != DOT)
+         {
+@@ -166,11 +166,12 @@
+ }
+ 
+ 
+-inline basic_path
+-removeDotDotsBoost(const basic_path& aPath)
++inline boost::filesystem::path
++removeDotDotsBoost(const boost::filesystem::path& aPath)
+ {
+     list_t directories;
+-    for (basic_path::const_iterator p = aPath.begin(); p != aPath.end(); ++p)
++    for (boost::filesystem::path::const_iterator p = aPath.begin(); p != aPath.end(); ++p)
++
+     {
+         if (*p == DOTDOT &&
+             !directories.empty() && directories.back() != DOTDOT)
+@@ -179,10 +180,10 @@
+         }
+         else
+         {
+-            directories.push_back(*p);
++            directories.push_back((*p).string());
+         }
+     }
+-    basic_path result;
++    boost::filesystem::path result;
+     for (list_t::const_iterator p = directories.begin(); p != directories.end(); ++p)
+     {
+         result /= *p;
+@@ -295,8 +296,8 @@
+ canonicalizePath(const std::string& aPathname, bool keepDot)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    const basic_path result =
+-        removeDotDotsBoost(removeDotsBoost(basic_path(aPathname)));
++    const boost::filesystem::path result =
++        removeDotDotsBoost(removeDotsBoost(boost::filesystem::path(aPathname)));
+     if (keepDot && result.empty())
+     {
+         return std::string(DOT);
+@@ -331,8 +332,8 @@
+ concatPath(const std::string& aPathname, const std::string& anotherPathname)
+ {
+ #ifdef HAVE_BOOST_FILESYSTEM
+-    basic_path path(aPathname);
+-    basic_path leaf(anotherPathname);
++    boost::filesystem::path path(aPathname);
++    boost::filesystem::path leaf(anotherPathname);
+     path /= leaf;
+     return path.string();
+ #else

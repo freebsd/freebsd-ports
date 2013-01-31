@@ -1,11 +1,9 @@
-# New ports collection Makefile for:	kdepimp4
-# Date created:				2008-31-05
-# Whom:					miwi
-#
+# Created by: miwi
 # $FreeBSD$
 
 PORTNAME=	kdepim-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -14,7 +12,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 CONFLICTS_INSTALL=	kdepim-runtime-4.4.*

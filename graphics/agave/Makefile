@@ -1,13 +1,9 @@
-# New ports collection makefile for:	gnome-colorscheme
-# Date created:				30 August 2005
-# Whom:					Piotr Smyrak <smyru@heron.pl>
-#
+# Created by: Piotr Smyrak <smyru@heron.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	agave
 PORTVERSION=	0.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 
@@ -15,7 +11,7 @@ MAINTAINER=	smyru@heron.pl
 COMMENT=	A color scheme builder for the GNOME desktop
 
 LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+		boost_thread:${PORTSDIR}/devel/boost-libs
 
 # --disable-gnome option is broken in 0.4.2
 #OPTIONS=	GNOME	"Adds GNOME support"	on

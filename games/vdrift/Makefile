@@ -1,13 +1,9 @@
-# New ports collection makefile for:	vdrift
-# Date created:		2005-11-09
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	vdrift
 PORTVERSION=	20100630
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DATE_VERSION}
 DISTNAME=	${PORTNAME}-${DATE_VERSION}-src
@@ -20,7 +16,7 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		${LOCALBASE}/lib/libBulletCollision.a:${PORTSDIR}/devel/bullet \
 		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+		boost_thread:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	cjk-lyx
-# Date created:		Sa  12 Okt 1996 19:20:51 MET DST
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lyx
 PORTVERSION=	1.4.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/cjk-lyx/qt/ \

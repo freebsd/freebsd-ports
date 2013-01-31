@@ -1,12 +1,9 @@
-# New ports collection makefile for:		bitcoin
-# Date created:					2011-05-20
-# Whom:						Shaun Amott <shaun@FreeBSD.org>
-#
+# Created by: Shaun Amott <shaun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com

@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection Makefile for:	aqsis
-# Date created:			Sep 12, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	aqsis
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
@@ -21,7 +16,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-    		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+    		boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

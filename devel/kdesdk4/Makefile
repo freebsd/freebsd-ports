@@ -1,11 +1,9 @@
-# New ports collection Makefile for:	kdesdk
-# Date created:				2008-01-31
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,7 +13,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
 		qca.2:${PORTSDIR}/devel/qca
 BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl

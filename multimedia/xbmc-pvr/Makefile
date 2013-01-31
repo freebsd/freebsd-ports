@@ -1,13 +1,9 @@
-# New ports collection makefile for:    xbmc
-# Date created:				2010-09-16
-# Whom: 				Mickael Maillot <mickael.maillot@gmail.com>
-#
+# Created by: Mickael Maillot <mickael.maillot@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xbmc
 PORTVERSION=	70
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk

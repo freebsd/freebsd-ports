@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	akonadi
-# Date created:				2008-01-20
-# Whom:					miwi
-#
+# Created by: miwi
 # $FreeBSD$
 
 PORTNAME=	akonadi
 PORTVERSION=	1.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/src/

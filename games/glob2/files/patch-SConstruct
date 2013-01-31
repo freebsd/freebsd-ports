@@ -1,9 +1,28 @@
---- SConstruct.orig	Sun Sep  2 05:14:53 2007
-+++ SConstruct	Tue Sep  4 23:02:18 2007
-@@ -1,5 +1,6 @@
+--- SConstruct.orig	2009-08-30 19:23:30.000000000 +0000
++++ SConstruct	2013-01-28 16:42:04.024490217 +0000
+@@ -14,6 +14,7 @@
+ 
  def establish_options(env):
      opts = Options('options_cache.py')
 +    opts.Add("CCFLAGS", "Manually add to the CCFLAGS", "")
      opts.Add("CXXFLAGS", "Manually add to the CXXFLAGS", "-g")
-     opts.Add("LINKFLAGS", "Manually add to the LINKFLAGS", "")
-     opts.Add("INSTALLDIR", "Installation Directory", "/usr/local/share")
+     opts.Add("LINKFLAGS", "Manually add to the LINKFLAGS", "-g")
+     if isDarwinPlatform:
+@@ -111,14 +112,17 @@
+             missing.append("zlib")
+ 
+     boost_thread = ''
++    boost_system = ''
+     if conf.CheckLib("boost_thread") and conf.CheckCXXHeader("boost/thread/thread.hpp"):
+         boost_thread="boost_thread"
++        boost_system="boost_system"
+     elif conf.CheckLib("boost_thread-mt") and conf.CheckCXXHeader("boost/thread/thread.hpp"):
+         boost_thread="boost_thread-mt"
+     else:
+         print "Could not find libboost_thread or libboost_thread-mt or boost/thread/thread.hpp"
+         missing.append("libboost_thread")
+     env.Append(LIBS=[boost_thread])
++    env.Append(LIBS=[boost_system])
+ 
+     boost_date_time = ''
+     if conf.CheckLib("boost_date_time") and conf.CheckCXXHeader("boost/date_time/posix_time/posix_time.hpp"):

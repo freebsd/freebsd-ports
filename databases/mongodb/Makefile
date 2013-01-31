@@ -1,13 +1,9 @@
-# New ports collection makefile for:  mongodb
-# Date created:        3 November 2009
-# Whom:                Mirko Zinn <mail@derzinn.de>
-#
+# Created by: Mirko Zinn <mail@derzinn.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mongodb
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}

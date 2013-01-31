@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	kig
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
+# Created by: Alberto Villa <avilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kig
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src

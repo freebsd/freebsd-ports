@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	kdepimp4
-# Date created:				2008-31-05
-# Whom:					miwi
-#
+# Created by: miwi
 # $FreeBSD$
 
 PORTNAME=	kdepim-runtime
 PORTVERSION=	4.4.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/kdepim-${PORTVERSION}/src

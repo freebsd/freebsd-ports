@@ -3,14 +3,14 @@
 
 PORTNAME=	barry
 PORTVERSION=	0.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	palm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for interfacing with the BlackBerry Handheld
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	visionworkbench
-# Date created:		2010-01-03
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	visionworkbench
 PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://ti.arc.nasa.gov/m/project/nasa-vision-workbench/
 DISTNAME=	VisionWorkbench-${PORTVERSION}
@@ -29,8 +25,8 @@ USE_PYTHON=	2.4+
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
@@ -50,6 +46,9 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${LDFLAGS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,-DBOOST_FILESYSTEM_VERSION=2,,g" ${WRKSRC}/configure
 
 pre-configure:
 	echo "HAVE_PKG_FLAPACK=yes" >> ${WRKSRC}/config.options

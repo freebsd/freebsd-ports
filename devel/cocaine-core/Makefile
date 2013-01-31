@@ -3,6 +3,7 @@
 
 PORTNAME=	cocaine-core
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH GHC
 
@@ -26,6 +27,12 @@ GH_ACCOUNT=	zloidemon
 GH_COMMIT=	7d0f35c
 GH_TAGNAME=	master
 
+MAKE_JOBS_SAFE=	yes
+
 CONFLICTS=	json-c-[0-9]*
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,boost_thread,boost_thread ${PTHREAD_LIBS},g" \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

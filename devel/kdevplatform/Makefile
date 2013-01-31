@@ -1,12 +1,9 @@
-# New ports collection makefile for:	kdevplatform
-# Date created:		Sun Aug 23 17:14:39 UTC 2009
-# Whom:			Golyashov Sergei <svvord@mail.ru>
-#
+# Created by: Golyashov Sergei <svvord@mail.ru>
 # $FreeBSD$
 
 PORTNAME=	kdevplatform
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}/src
@@ -16,7 +13,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE development platform
 
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		qjson.0:${PORTSDIR}/devel/qjson
 
 USE_BZIP2=	yes

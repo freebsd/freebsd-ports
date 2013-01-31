@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -12,13 +13,12 @@ COMMENT=	A modern style C++ library for working with XML data
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	boost_iostreams.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	XSLT
 XSLT_DESC=	Build libxsltwrap library (requires libxslt)
 
 USE_GNOME=	gnomehack libxml2
-USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
@@ -26,7 +26,7 @@ USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 .include <bsd.port.options.mk>
 

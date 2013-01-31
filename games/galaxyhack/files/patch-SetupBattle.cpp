@@ -5,7 +5,7 @@
  
  #include <sstream>
 -#include <boost/filesystem/exception.hpp>
-+#include <boost/filesystem/path.hpp>
++#include <boost/filesystem.hpp>
  
  using std::stringstream;
  using std::getline;

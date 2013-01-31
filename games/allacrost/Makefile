@@ -1,13 +1,9 @@
-# New ports collection makefile for:	allacrost
-# Date created:		03 Oct 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	allacrost
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
 DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
@@ -15,11 +11,11 @@ DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single player 2D role-playing game
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		ogg:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		boost_thread:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	LuxRender
-# Date created:				16 March 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	luxrender
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://src.luxrender.net/lux/archive/ \
 		http://freebsd.nsu.ru/distfiles/luxrender/
@@ -22,7 +18,7 @@ LICENSE=	GPLv3
 BROKEN=		does not build with boost-1.48.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 

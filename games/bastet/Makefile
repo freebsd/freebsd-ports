@@ -1,12 +1,9 @@
-# New ports collection makefile for:    bastet
-# Date created:         21 Oct 2004
-# Whom:                	Michael Nottebrock <lofi@freebsd.org>
-#
+# Created by: Michael Nottebrock <lofi@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bastet
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://fph.altervista.org/prog/files/
 EXTRACT_SUFX=	.tgz

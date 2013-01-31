@@ -2,7 +2,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.16.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
@@ -16,7 +16,7 @@ CONFLICTS+=	libtorrent-rasterbar-0.1[45789].*
 
 NO_LATEST_LINK=	yes
 
-LIB_DEPENDS+=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GeoIP:${PORTSDIR}/net/GeoIP
 
 USE_PKGCONFIG=	build

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pingus
-# Date created:		2007-10-05
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pingus
 PORTVERSION=	0.7.2
@@ -15,7 +11,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Lemmings-like game
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs \
+		boost_regex:${PORTSDIR}/devel/boost-libs \
 		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes

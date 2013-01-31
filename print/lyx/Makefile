@@ -3,6 +3,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -16,7 +17,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 		mythes-1.2.0:${PORTSDIR}/textproc/mythes
 
 CONFLICTS=	lyx-1.[0-9]*

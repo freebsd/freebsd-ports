@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	kdepim
-# Date created:				2008-01-30
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -30,7 +27,7 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		v4l2.0:${PORTSDIR}/multimedia/libv4l \
 		ktorrent:${PORTSDIR}/net-p2p/libktorrent \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		mms.0:${PORTSDIR}/net/libmms \
 		jpeg.11:${PORTSDIR}/graphics/jpeg

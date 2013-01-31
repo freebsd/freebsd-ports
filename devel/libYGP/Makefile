@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libygp
-# Date created:		2 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	libYGP
 PORTVERSION=	0.9.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/libymp/libymp/libYGP-${PORTVERSION}
 DISTNAME=	libYGP-${PORTVERSION}
@@ -19,7 +15,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
-USE_GCC=	any
+USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
@@ -30,8 +26,6 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
 		--disable-static --disable-rpath --enable-network-trav
 USE_GMAKE=	yes
 
-CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=2
-
 .if ${PORTNAME:M*XGP}
 LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 PLIST_SUB=	YGP="@comment " XGP=""
@@ -41,6 +35,7 @@ MKIN_PATCH=	s/^(SUBDIRS = ).*$$/\1XGP/;
 .else
 PLIST_SUB=	XGP="@comment " YGP=""
 MKIN_PATCH=	s/@MYSUBDIRS@/YGP/;
+BROKEN=		Does not build with recent boost
 .endif
 
 post-patch:

@@ -3,6 +3,7 @@
 
 PORTNAME=	eblob
 PORTVERSION=	0.17.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	g.veniamin@googlemail.com
