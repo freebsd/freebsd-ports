@@ -1,13 +1,9 @@
-# New ports collection makefile for:	octave
-# Date created:		8 September 1998
-# Whom:			chuckr@freebsd.org
-#
+# Created by: chuckr@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	octave
 PORTVERSION=	3.3.50
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -24,7 +20,7 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		glpk.32:${PORTSDIR}/math/glpk \
+		glpk:${PORTSDIR}/math/glpk \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull.5:${PORTSDIR}/math/qhull5
