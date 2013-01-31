@@ -195,9 +195,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${PREFIX}/lib/erlang/lib/dialyzer-*/doc/
 
-	@${MKDIR} ${PREFIX}/share/doc/erlang
+	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_DISTFILES}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${PREFIX}/share/doc/erlang
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${DOCSDIR}
 .endfor
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang
