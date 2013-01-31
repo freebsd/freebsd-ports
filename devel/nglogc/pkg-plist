@@ -1,0 +1,21 @@
+include/nglogc/flf_log.h
+include/nglogc/flf_logarray.h
+include/nglogc/flf_logerror.h
+include/nglogc/flf_logtrace.h
+include/nglogc/log.h
+include/nglogc/log_priv.h
+include/nglogc/logger.h
+include/nglogc/logger_type.h
+include/nglogc/nflf_log.h
+include/nglogc/nflf_logarray.h
+include/nglogc/nflf_logerror.h
+include/nglogc/nflf_logtrace.h
+include/nglogc/ringbuffer.h
+include/nglogc/types.h
+lib/libnglogc.a
+lib/libnglogc.la
+lib/libnglogc.so
+lib/libnglogc.so.0
+%%DOCSDIR%%/nglogc_manual.pdf
+@dirrm %%DOCSDIR%%
+@dirrm include/nglogc

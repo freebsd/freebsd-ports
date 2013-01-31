@@ -1250,6 +1250,7 @@
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
+    SUBDIR += nglogc
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
