@@ -3369,6 +3369,7 @@
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
     SUBDIR += py-boto
+    SUBDIR += py-botocore
     SUBDIR += py-cclib
     SUBDIR += py-celementtree
     SUBDIR += py-celery

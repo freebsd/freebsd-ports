@@ -1,0 +1,63 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/auth.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/auth.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/auth.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/credentials.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/credentials.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/credentials.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/_regions.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/_services.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/autoscaling.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/cloudformation.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/cloudwatch.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/directconnect.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/ec2.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/elasticbeanstalk.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/elb.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/emr.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/iam.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/rds.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/ses.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/sns.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/sqs.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws/sts.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/endpoint.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/endpoint.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/endpoint.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/operation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/operation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/operation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/parameters.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/parameters.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/parameters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/response.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/response.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/response.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/service.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/service.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/service.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/session.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/session.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/session.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data/aws
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore/data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/botocore
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
