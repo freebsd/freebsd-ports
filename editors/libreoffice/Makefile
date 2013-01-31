@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -46,7 +46,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		nss3.1:${PORTSDIR}/security/nss \
 		SampleICC.2:${PORTSDIR}/graphics/sampleicc \
 		png15:${PORTSDIR}/graphics/png \
-		cmis-0.3:${PORTSDIR}/net/libcmis \
+		cmis-0.2.0:${PORTSDIR}/net/libcmis \
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/Liberation/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/lib/X11/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g \
