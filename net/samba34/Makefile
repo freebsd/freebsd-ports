@@ -13,6 +13,9 @@ MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba samba/old-versions samba/rc samba/pre
 DISTNAME=		${PORTNAME:S|34$||}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
+DEPRECATED=		Unmaintained by upstream
+EXPIRATION_DATE=	2013-03-01
+
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
