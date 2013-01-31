@@ -19,12 +19,13 @@ NO_LATEST_LINK=	yes
 LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GeoIP:${PORTSDIR}/net/GeoIP
 
-USE_PKGCONFIG=	build
-USE_GNOME=	gnomehack
-USE_OPENSSL=	yes
-USE_ICONV=	yes
-
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack
+USE_ICONV=	yes
+USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+USE_PKGCONFIG=	build
+
 CONFIGURE_ARGS+=	--disable-debug \
 		--disable-static \
 		--enable-dht \
@@ -37,38 +38,39 @@ CONFIGURE_ARGS+=	--disable-debug \
 		--with-libgeoip \
 		--with-openssl=${OPENSSLBASE}
 
-USE_LDCONFIG=	yes
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes" && defined(USE_PYTHON)
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
 			--with-boost-python=boost_python
 .else
 CONFIGURE_ARGS+=	--disable-python-binding
 .endif
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
-post-patch: slave-post-patch
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes"
+post-patch:	slave-post-patch
 .else
 post-patch:
 	@${REINPLACE_CMD} -e 's|<include>/usr/local/include|<include>${PREFIX}/include|' \
 		${WRKSRC}/Jamfile
 .endif
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
-post-install: slave-post-install
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes"
+post-install:	slave-post-install
 .else
 post-install:
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.css ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.gif ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.png ${DOCSDIR}
-PORTDOCS=	*
 .endif
 
 .include <bsd.port.post.mk>
