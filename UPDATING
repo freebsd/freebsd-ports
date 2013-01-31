@@ -5,7 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20130129: 
+20130131:
+  AFFECTS: users of devel/boost-libs
+  AUTHOR: bapt@FreeBSD.org
+
+  boost has been updated to 1.52.0. Please rebuild all ports that depends
+  on it:
+
+  If you use portmaster:
+        portmaster -w -r boost-libs
+  If you use portupgrade:
+        portupgrade -fr devel/boost-libs
+  If you use pkgng with binary packages:
+        pkg install -fR devel/boost-libs
+
+20130129:
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
 
