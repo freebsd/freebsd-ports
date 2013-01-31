@@ -1,0 +1,13 @@
+The intention of the nglogc library is to provide an easy to use and powerful
+logging API with mechanism which allows to cram source codes with log
+statements at the start of implementation and decide at the level of building
+or at runtime which statements should be processed.
+
+Therefore the log statements could be controlled by various log levels and
+define switches are available to completely remove the call of the functions at
+pre-processor time. So it is possible to switch on the logging only if it is
+necessary or only print selected messages without any changes in the source
+code. Different publishers are provided also as different formats of outputs to
+fulfil the requirements for software development.
+
+WWW: http://code.google.com/p/nglogc/
