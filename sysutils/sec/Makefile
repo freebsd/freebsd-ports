@@ -1,40 +1,40 @@
 # $FreeBSD$
 
 PORTNAME=	sec
-PORTVERSION=	2.6.2
+PORTVERSION=	2.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Simple event (logs) correlator
 
-USE_PERL5_RUN=	YES
-NO_BUILD=	YES
+LICENSE=	GPLv2
 
+USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sec
-SUB_LIST=	PERL=${PERL}
+
+NO_BUILD=	yes
 
 MAN8=		sec.8
-MANCOMPRESSED=	no
+PORTDOCS=	ChangeLog README
+
 PLIST_FILES=	bin/sec
-DATADIR=	share/sec
 PORTCONTRIB=	convert.pl itostream.c swatch2sec.pl
 PLIST_FILES+=	${PORTCONTRIB:S|^|%%DATADIR%%/|}
-PLIST_DIRS+=	${DATADIR}
-PORTDOCS=	ChangeLog README
+PLIST_DIRS+=	%%DATADIR%%
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/sec.man ${PREFIX}/man/man8/sec.8
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sec.man ${MANPREFIX}/man/man8/sec.8
+	@${MKDIR} ${DATADIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTCONTRIB} ${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-	@${MKDIR} ${PREFIX}/${DATADIR}
-	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTCONTRIB} ${PREFIX}/${DATADIR}
 
 .include <bsd.port.mk>
