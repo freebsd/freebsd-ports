@@ -94,16 +94,20 @@ samba_rcvar_cmd() {
 }
 
 samba_reload_cmd() {
-    local name rcvar command pidfile
+    local name rcvar command pidfile force_run
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
+    # Ignore rcvar and run command
+    if [ -n "${_rc_prefix}" -a "${_rc_prefix}" = "one" ] || [ -n "${rc_force}" ] || [ -n "${rc_fast}" ]; then
+	force_run=yes
+    fi
     # Apply to all daemons
     for name in ${samba_daemons}; do
 	rcvar=${name}_enable
 	command="%%PREFIX%%/sbin/${name}"
 	pidfile="%%SAMBA_RUNDIR%%/${name}${pid_extra}.pid"
 	# Daemon should be enabled and running
-	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
+	if ( [ -n "${rcvar}" ] && checkyesno "${rcvar}" ) || [ -n "$force_run" ]; then
 	    if [ -n "$(check_pidfile "${pidfile}" "${command}")" ]; then
 		debug "reloading ${name} configuration"
 		echo "Reloading ${name}."
@@ -115,12 +119,16 @@ samba_reload_cmd() {
 }
 
 samba_cmd() {
-    local name rcvar rcvars v command pidfile samba_daemons result
+    local name rcvar rcvars v command pidfile samba_daemons result force_run
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
     # Stop processes in the reverse order
     if [ "${rc_arg}" = "stop" ] ; then
 	samba_daemons=$(reverse_list ${samba_daemons})
+    fi
+    # Ignore rcvar and run command
+    if [ -n "${_rc_prefix}" -a "${_rc_prefix}" = "one" ] || [ -n "${rc_force}" ] || [ -n "${rc_fast}" ]; then
+	force_run=yes
     fi
     # Assume success
     result=0
@@ -132,7 +140,7 @@ samba_cmd() {
 	command="%%PREFIX%%/sbin/${name}"
 	pidfile="%%SAMBA_RUNDIR%%/${name}${pid_extra}.pid"
 	# Daemon should be enabled and running
-	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
+	if ( [ -n "${rcvar}" ] && checkyesno "${rcvar}" ) || [ -n "$force_run" ]; then
 	    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
 	    # If any of the commands failed, take it as a global result
 	    result=$((${result} || $?))
