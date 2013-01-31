@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -11,7 +11,7 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
-OPTIONS_DEFINE=	QEMU
+OPTIONS_DEFINE=	QEMU DOCS
 QEMU_DESC=	QEMU bindings
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
@@ -47,6 +47,7 @@ USE_PYTHON_BUILD=	yes
 SHLIB_VER=	1000
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
@@ -96,6 +97,12 @@ post-install:
 			${ECHO_MSG} "	Preserving local configuration file: ${ETCDIR}/$${configuration}.conf"; \
 	fi; \
 	done
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
