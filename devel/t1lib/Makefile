@@ -18,6 +18,7 @@ ALL_TARGET=	without_doc
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 
