@@ -33,12 +33,17 @@ etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
 etc/logrotate.d/libvirtd.uml
+include/libvirt/libvirt-lxc.h
 include/libvirt/libvirt-qemu.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 lib/libvirt/lock-driver/lockd.so
 lib/libvirt/lock-driver/lockd.la
 lib/libvirt/lock-driver/lockd.a
+lib/libvirt-lxc.a
+lib/libvirt-lxc.la
+lib/libvirt-lxc.so
+lib/libvirt-lxc.so.%%SHLIB_VER%%
 lib/libvirt-qemu.a
 lib/libvirt-qemu.la
 lib/libvirt-qemu.so
@@ -50,6 +55,9 @@ lib/libvirt.so.%%SHLIB_VER%%
 %%PYTHON_SITELIBDIR%%/libvirt.py
 %%PYTHON_SITELIBDIR%%/libvirtmod.la
 %%PYTHON_SITELIBDIR%%/libvirtmod.so
+%%PYTHON_SITELIBDIR%%/libvirtmod_lxc.so
+%%PYTHON_SITELIBDIR%%/libvirtmod_lxc.la
+%%PYTHON_SITELIBDIR%%/libvirt_lxc.py
 %%PYTHON_SITELIBDIR%%/libvirt_qemu.py
 %%PYTHON_SITELIBDIR%%/libvirtmod_qemu.la
 %%PYTHON_SITELIBDIR%%/libvirtmod_qemu.so
@@ -186,6 +194,7 @@ share/gtk-doc/html/libvirt/style.css
 share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map.xml
 %%DATADIR%%/api/libvirt-api.xml
+%%DATADIR%%/api/libvirt-lxc-api.xml
 %%DATADIR%%/api/libvirt-qemu-api.xml
 %%DATADIR%%/schemas/basictypes.rng
 %%DATADIR%%/schemas/capability.rng
