@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	GNUnet
-# Date created:			Mar 23, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gnunet
 DISTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p ipv6 security
 MASTER_SITES=	GNU
 

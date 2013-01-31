@@ -1,12 +1,8 @@
-# New ports collection makefile for:	GLPK
-# Date created:		16 December 2000
-# Whom:			Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glpk
-PORTVERSION=	4.47
+PORTVERSION=	4.48
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -18,8 +14,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
-OPTIONS=	IODBC	"Enable MathProg iodbc support" Off \
-		MYSQL	"Enable MathProg mysql support" Off
+OPTIONS_DEFINE=	IODBC MYSQL
+IODBC_DESC=	MathProg iodbc support
+MYSQL_DESC=	MathProg mysql support
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -30,22 +27,22 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gmp
 CONFLICTS=	goblin-[0-9]*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef(WITH_IODBC || WITH_MYSQL)
+.if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-dl=dlfcn
 .else
 CONFIGURE_ARGS+=	--disable-dl
 .endif
 
-.ifdef(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=		iodbc:${PORTSDIR}/databases/libiodbc
 .else
 CONFIGURE_ARGS+=	--disable-odbc
 .endif
 
-.ifdef(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-mysql
 USE_MYSQL=		yes
 .else
@@ -56,7 +53,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s;\/usr\/include\/mysql;${LOCALBASE}\/include\/mysql;g" \
 	${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DOCS1=	cnfsat.pdf glpk.pdf glpk_faq.txt gmpl.pdf graphs.pdf miplib2.txt \
 	miplib3.txt netlib.txt
 DOCS2=	dfeas.pdf gomory.pdf keller.pdf scaling.pdf updating.pdf
@@ -72,4 +69,4 @@ post-install:
 check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
