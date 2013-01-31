@@ -4019,5 +4019,5 @@ textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/cl
 textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
 lang/erlang14||2013-01-30|Not needed; no issues came up with R15
 www/tomcat55||2013-01-31|Has expired: EOL and unsupported upstream
-net/samba-pdbsql||2013-01-31|Removed
-net/samba35||2013-01-31|Removed
+net/samba-pdbsql||2013-01-31|Depends from the obsoleted net/samba34
+net/samba35||2013-01-31|Obsoleted by net/samba36
