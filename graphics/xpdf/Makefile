@@ -23,17 +23,18 @@ CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2" \
 		--bindir="${PREFIX}/libexec/xpdf"
 
-OPTIONS=	LIBPAPER "Enable libpaper"      off     \
-		TYPE1	"Ghostscript type1 fonts" on \
-		X11     "Enable X11 support"    on      \
+OPTIONS_DEFINE=	LIBPAPER TYPE1 X11
+LIBPAPER_DESC=	Enable libpaper
+TYPE1_DESC=	Ghostscript type1 fonts
+OPTIONS_DEFAULT=	TYPE1 X11
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TYPE1)
+.if ${PORT_OPTIONS:MTYPE1}
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
 .endif
 
-.if defined(WITH_LIBPAPER)
+.if ${PORT_OPTIONS:MLIBPAPER}
 LIB_DEPENDS+=	paper.2:${PORTSDIR}/print/libpaper
 CONFIGURE_ARGS+=--with-libpaper-library="${LOCALBASE}/lib" \
 		--with-libpaper-includes="${LOCALBASE}/include"
@@ -54,15 +55,15 @@ MAN1=		pdffonts.1 \
 		pdftotext.1
 MAN5=		xpdfrc.5
 
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX+=		-nox11
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=		X11="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
 USE_MOTIF=		yes
 MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""
+.else
+PKGNAMESUFFIX+=		-nox11
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=		X11="@comment "
 .endif
 
 post-patch:
@@ -70,13 +71,13 @@ post-patch:
 		${WRKSRC}/xpdf/XPDFViewer.h
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ANNOUNCE CHANGES README misc/hello.pdf
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${PREFIX}/bin/xpdf
 .endif
 
