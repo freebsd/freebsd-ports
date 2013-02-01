@@ -1125,7 +1125,6 @@
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
-    SUBDIR += llvm29
     SUBDIR += llvm31
     SUBDIR += lmdbg
     SUBDIR += lndir

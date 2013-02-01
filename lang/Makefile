@@ -148,7 +148,6 @@
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
-    SUBDIR += llvm-gcc4
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
