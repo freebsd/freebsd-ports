@@ -9,6 +9,7 @@ lib/liblftp-tasks.a
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
 %%DATADIR%%/verify-file
+%%DATADIR%%/xdg-move
 @dirrm %%DATADIR%%
 %%NLS%%share/locale/cs/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
