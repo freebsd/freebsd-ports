@@ -11,7 +11,7 @@ COMMENT=	Nice and powerful editor
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	DEBUG DOCS
+OPTIONS_DEFINE=	DOCS
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -57,7 +57,7 @@ PLIST_DIRS=	%%DATADIR%%/syntax %%DATADIR%%
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MDEBUG}
+.if !defined(WITH_DEBUG)
 CFLAGS+=	-DNODEBUG
 .endif
 
