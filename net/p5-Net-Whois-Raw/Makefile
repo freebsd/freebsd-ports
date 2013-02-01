@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Whois-Raw
-# Date created:				March 25th 2002
-# Whom:	      				Alex Kapranoff <kappa@freebsd.org.ua>
-#
+# Created by: Alex Kapranoff <kappa@freebsd.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.43
+PORTVERSION=	2.45
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
