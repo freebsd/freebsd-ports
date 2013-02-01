@@ -1383,6 +1383,7 @@
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
+    SUBDIR += pecl-solr
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
     SUBDIR += pecl-yaf
