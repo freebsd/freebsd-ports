@@ -1,0 +1,11 @@
+bin/trietool-0.2
+include/datrie/alpha-map.h
+include/datrie/trie.h
+include/datrie/triedefs.h
+include/datrie/typedefs.h
+lib/libdatrie.a
+lib/libdatrie.la
+lib/libdatrie.so
+lib/libdatrie.so.3
+libdata/pkgconfig/datrie-0.2.pc
+@dirrm include/datrie
