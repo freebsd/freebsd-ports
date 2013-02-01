@@ -1,12 +1,8 @@
-# New ports collection makefile for:	grsync
-# Date created:		24 August 2007
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grsync
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
