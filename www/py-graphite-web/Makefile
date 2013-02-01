@@ -30,6 +30,6 @@ post-install:
 	@${ECHO} ${PYTHON_SITELIBDIR}
 	${CHOWN} ${WWWOWN} ${PREFIX}/graphite/storage
 	${CHOWN} ${WWWOWN} ${PREFIX}/graphite/storage/log/webapp
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
