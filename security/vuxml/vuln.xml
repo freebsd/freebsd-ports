@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ea0f45e2-6c4b-11e2-98d9-003067c2616f">
+    <topic>opera -- execution of arbitrary code</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <name>opera-devel</name>
+        <name>linux-opera</name>
+        <name>linux-opera-devel</name>
+        <range><lt>12.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Opera reports:</p>
+        <blockquote cite="http://www.opera.com/support/kb/view/1042/">
+          <p>Particular DOM event manipulations can cause Opera to crash. In
+            some cases, this crash might occur in a way that allows execution
+            of arbitrary code. To inject code, additional techniques would
+            have to be employed.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/1042/</url>
+      <url>http://www.opera.com/support/kb/view/1043/</url>
+    </references>
+    <dates>
+      <discovery>2013-01-30</discovery>
+      <entry>2013-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ea6ce3d-6afd-11e2-9d4e-bcaec524bf84">
     <topic>upnp -- multiple vulnerabilities</topic>
     <affects>
