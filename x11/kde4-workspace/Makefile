@@ -1,13 +1,9 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	kdebase-workspace
-# Date created:				22 Januar 2008
-# Whom:					kde@FreeBSD.org
-#
+# Created by: kde@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE_kde} \
 		${MASTER_SITE_LOCAL} \
@@ -28,7 +24,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		qalculate.5:${PORTSDIR}/math/libqalculate \
 		prison.0:${PORTSDIR}/graphics/prison \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
