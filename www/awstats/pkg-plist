@@ -315,6 +315,10 @@ www/awstats/icons/cpu/mips.png
 www/awstats/icons/cpu/motorola.png
 www/awstats/icons/cpu/sun.png
 www/awstats/icons/cpu/unknown.png
+www/awstats/icons/flags/sl.png
+www/awstats/icons/flags/me.png
+www/awstats/icons/flags/gg.png
+www/awstats/icons/flags/ax.png
 www/awstats/icons/flags/a2.png
 www/awstats/icons/flags/ac.png
 www/awstats/icons/flags/ad.png
@@ -580,6 +584,10 @@ www/awstats/icons/flags/za.png
 www/awstats/icons/flags/ze.png
 www/awstats/icons/flags/zm.png
 www/awstats/icons/flags/zw.png
+www/awstats/icons/mime/xsl.png
+www/awstats/icons/mime/document.png
+www/awstats/icons/mime/csv.png
+www/awstats/icons/mime/runtime.png
 www/awstats/icons/mime/ai.png
 www/awstats/icons/mime/archive.png
 www/awstats/icons/mime/audio.png
@@ -619,6 +627,12 @@ www/awstats/icons/mime/video.png
 www/awstats/icons/mime/wmv.png
 www/awstats/icons/mime/glasses.png
 www/awstats/icons/mime/xls.png
+www/awstats/icons/os/macosx8.png
+www/awstats/icons/os/macosx6.png
+www/awstats/icons/os/macosx7.png
+www/awstats/icons/os/macosx9.png
+www/awstats/icons/os/macosx4.png
+www/awstats/icons/os/macosx5.png
 www/awstats/icons/os/aix.png
 www/awstats/icons/os/amigaos.png
 www/awstats/icons/os/apple.png
