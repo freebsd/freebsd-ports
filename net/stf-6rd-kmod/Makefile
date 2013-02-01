@@ -29,7 +29,7 @@ IGNORE=		requires kernel source to be installed
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} != "8.1" && ${OSREL} != "8.2" && ${OSREL} != "8.3"
+.if ${OSREL} != "8.1" && ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "9.1"
 IGNORE=		not supported $${OSREL} (${OSREL})
 .endif
 
