@@ -3365,6 +3365,7 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astng
     SUBDIR += py-async
+    SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-bison
     SUBDIR += py-bitarray
