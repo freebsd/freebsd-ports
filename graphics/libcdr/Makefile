@@ -11,7 +11,8 @@ COMMENT=	Library and tools for parsing Corel Draw file format
 LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd \
+LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
+		wpd-0.9:${PORTSDIR}/textproc/libwpd \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		lcms2:${PORTSDIR}/graphics/lcms2
 
