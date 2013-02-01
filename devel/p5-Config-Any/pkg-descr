@@ -1,15 +1,13 @@
-Config::Any provides a facility for Perl applications and libraries to
-load configuration data from multiple different file formats. It sup-
-ports XML, YAML, JSON, Apache-style configuration, Windows INI files,
-and even Perl code.
+Config::Any provides a facility for Perl applications and libraries to load
+configuration data from multiple different file formats. It supports XML, YAML,
+JSON, Apache-style configuration, Windows INI files, and even Perl code.
 
-The rationale for this module is as follows: Perl programs are deployed
-on many different platforms and integrated with many different systems.
-Systems administrators and end users may prefer different configuration
-formats than the developers. The flexibility inherent in a multiple
-format configuration loader allows different users to make different
-choices, without generating extra work for the developers. As a devel-
-oper you only need to learn a single interface to be able to use the
-power of different configuration formats.
+The rationale for this module is as follows: Perl programs are deployed on many
+different platforms and integrated with many different systems.  Systems
+administrators and end users may prefer different configuration formats than the
+developers. The flexibility inherent in a multiple format configuration loader
+allows different users to make different choices, without generating extra work
+for the developers. As a developer you only need to learn a single interface to
+be able to use the power of different configuration formats.
 
 WWW: http://search.cpan.org/dist/Config-Any/
