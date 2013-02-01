@@ -22,8 +22,9 @@ PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}-py${PYTHON_VER}.egg-info
 
 post-patch:
 	@${REINPLACE_CMD} \
+		-e 's|setuptools|do_not_use_&|' \
 		-e "s|^\(extra_compile_args = \).*$$|\1\['-I${LOCALBASE}/include'\]|" \
 		-e "s|^\(extra_link_args = \).*$$|\1\['-L${LOCALBASE}/lib', '-lleveldb'\]|" \
-			${WRKSRC}/setup.py
+			${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
