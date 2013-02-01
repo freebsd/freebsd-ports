@@ -1,0 +1,49 @@
+--- Makefile.orig	2012-10-19 16:44:32.000000000 +0300
++++ Makefile	2012-10-20 01:32:35.427651135 +0300
+@@ -20,28 +20,24 @@
+ 
+ PROGRAM = superiotool
+ 
+-CC      = gcc
+-INSTALL = /usr/bin/install
+-PREFIX  = /usr/local
++CC      ?= gcc
++INSTALL ?= /usr/bin/install
++PREFIX  ?= /usr/local
+ 
+ # Set the superiotool version string to the output of 'git describe'.
+ 
+-VERSION := -D'SUPERIOTOOL_VERSION="$(shell git describe 2>/dev/null)"'
+-
+-CFLAGS += -O2 -Wall -Wstrict-prototypes -Wundef -Wstrict-aliasing \
+-         -Werror-implicit-function-declaration -ansi -pedantic $(VERSION)
+-LDFLAGS += -lz
++VERSION ?= -D'SUPERIOTOOL_VERSION="$(shell git describe 2>/dev/null)"'
+ 
+ OBJS = superiotool.o serverengines.o ali.o fintek.o ite.o nsc.o nuvoton.o \
+        smsc.o winbond.o infineon.o
+ 
+-OS_ARCH = $(shell uname)
++OS_ARCH = FreeBSD
+ ifeq ($(OS_ARCH), Darwin)
+ LIBS = -framework IOKit -framework DirectHW -lpci -lz
+ endif
+ ifeq ($(OS_ARCH), FreeBSD)
+-CFLAGS = -O2 -Wall -Werror -Wstrict-prototypes -Wundef -Wstrict-aliasing \
+-         -Werror-implicit-function-declaration -ansi $(VERSION) \
++CFLAGS += -Wall -Werror -Wstrict-prototypes -Wundef -Wstrict-aliasing \
++         -Werror-implicit-function-declaration $(VERSION) \
+          -I/usr/local/include
+ LDFLAGS += -L/usr/local/lib
+ LIBS = -lz
+@@ -69,8 +65,8 @@ $(PROGRAM): $(OBJS) superiotool.h
+ install: $(PROGRAM)
+ 	mkdir -p $(DESTDIR)$(PREFIX)/sbin
+ 	$(INSTALL) $(PROGRAM) $(DESTDIR)$(PREFIX)/sbin
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man8
+-	$(INSTALL) $(PROGRAM).8 $(DESTDIR)$(PREFIX)/share/man/man8
++	mkdir -p $(DESTDIR)$(PREFIX)/man/man8
++	$(INSTALL) $(PROGRAM).8 $(DESTDIR)$(PREFIX)/man/man8
+ 
+ clean:
+ 	rm -f $(PROGRAM) *.o
