@@ -958,6 +958,7 @@
     SUBDIR += uqm
     SUBDIR += urbanterror-data
     SUBDIR += utserver
+    SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
