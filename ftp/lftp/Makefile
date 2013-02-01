@@ -1,12 +1,8 @@
-# New ports collection makefile for:	lftp
-# Date created:				11 September 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	lftp
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/ \
