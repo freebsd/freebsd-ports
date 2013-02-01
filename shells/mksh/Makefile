@@ -1,16 +1,12 @@
-# Ports collection makefile for:	mksh
-# Date created:				2006-06-24
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mksh
-DISTVERSION=	R40f
+DISTVERSION=	R41
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
-DISTFILES=	${PORTNAME}-${DISTVERSION}.cpio.gz
+DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A MirBSD enhanced shell based on pdksh
@@ -20,11 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		mksh.1
 
 .include <bsd.port.pre.mk>
-
-do-extract:
-	${MKDIR} ${WRKDIR}
-	cd ${WRKDIR} && \
-	${GZCAT} ${DISTDIR}/${DISTFILES} | ${CPIO} -id
 
 do-build:
 	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r -c lto
