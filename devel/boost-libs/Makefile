@@ -6,7 +6,7 @@ COMMENT=	Free portable C++ libraries (without Boost.Python)
 
 BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
 
-OPTIONS_DEFINE=	VERSBOSE_BUILD DEBUG ICU OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG ICU OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	ICU
 VERBOSE_BUILD_DESC=	Show compiler messages
 ICU_DESC=		Boost.Regex with ICU unicode support
