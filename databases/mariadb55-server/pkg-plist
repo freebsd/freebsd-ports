@@ -109,6 +109,7 @@ libexec/mysqld
 %%DATADIR%%/my-small.cnf
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
+%%DATADIR%%/mysql_performance_tables.sql
 %%DATADIR%%/mysql_system_tables.sql
 %%DATADIR%%/mysql_system_tables_data.sql
 %%DATADIR%%/mysql_test_data_timezone.sql

@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c773d7f-6cbb-11e2-b242-c8600054b392">
+    <topic>mysql/mariadb/percona server -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.1</ge><lt>5.1.67</lt></range>
+	<range><ge>5.5</ge><lt>5.5.29</lt></range>
+      </package>
+      <package>
+      <name>mariadb-server</name>
+      <range><ge>5.3</ge><lt>5.3.12</lt></range>
+      <range><ge>5.5</ge><lt>5.5.29</lt></range>
+      </package>
+      <package>
+      <name>percona-server</name>
+      <range><ge>5.5</ge><lt>5.5.29.29.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ORACLE reports:</p>
+	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpujan2013-1515902.html">
+	  <p>Multiple SQL injection vulnerabilities in the replication code</p>
+	  <p>Stack-based buffer overflow</p>
+	  <p>Heap-based buffer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4414</cvename>
+      <cvename>CVE-2012-5611</cvename>
+      <cvename>CVE-2012-5612</cvename>
+      <cvename>CVE-2012-5615</cvename>
+      <cvename>CVE-2012-5627</cvename>
+      <url>https://mariadb.atlassian.net/browse/MDEV-4029</url>
+      <url>https://mariadb.atlassian.net/browse/MDEV-MDEV-729</url>
+      <url>https://mariadb.atlassian.net/browse/MDEV-MDEV-729</url>
+      <url>http://www.mysqlperformanceblog.com/2013/01/23/announcing-percona-server-5-5-29-29-4/</url>
+    </references>
+    <dates>
+      <discovery>2012-12-01</discovery>
+      <entry>2013-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea0f45e2-6c4b-11e2-98d9-003067c2616f">
     <topic>opera -- execution of arbitrary code</topic>
     <affects>
