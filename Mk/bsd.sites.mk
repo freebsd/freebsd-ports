@@ -444,6 +444,19 @@ MASTER_SITE_FREEBSD_ORG+= \
 	ftp://ftp.dti.ad.jp/pub/FreeBSD/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_FRUGALWARE)
+MASTER_SITE_FRUGALWARE+= \
+	ftp://ftp7.frugalware.org/pub/frugalware/frugalware-stable/source/%SUBDIR%/ \
+	ftp://ftp2.frugalware.org/mirror/ftp.frugalware.org/pub/frugalware/frugalware-stable/source/%SUBDIR%/ \
+	ftp://ftp6.frugalware.org/mirrors/linux/frugalware/frugalware-stable/source/%SUBDIR%/ \
+	ftp://ftp4.frugalware.org/pub/linux/distributions/frugalware/frugalware-stable/source/%SUBDIR%/ \
+	ftp://ftp12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-stable/source/%SUBDIR%/ \
+	ftp://ftp10.frugalware.org/pub/linux/frugalware/frugalware-stable/source/%SUBDIR%/
+#	ftp://ftp5.frugalware.org/packages/frugalware/pub/frugalware/frugalware-stable/source/%SUBDIR%/
+#	ftp://ftp3.frugalware.org/mirrors/frugalware/pub/frugalware/frugalware-stable/source/%SUBDIR%/
+#	ftp://ftp9.frugalware.org/pub/frugalware/frugalware-stable/source/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_GCC)
 MASTER_SITE_GCC+= \
 	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,} \
