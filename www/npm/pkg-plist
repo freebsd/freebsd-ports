@@ -69,6 +69,7 @@ lib/node_modules/npm/doc/cli/edit.md
 lib/node_modules/npm/doc/cli/explore.md
 lib/node_modules/npm/doc/cli/faq.md
 lib/node_modules/npm/doc/cli/folders.md
+lib/node_modules/npm/doc/cli/global.md
 lib/node_modules/npm/doc/cli/help-search.md
 lib/node_modules/npm/doc/cli/help.md
 lib/node_modules/npm/doc/cli/index.md
@@ -88,6 +89,7 @@ lib/node_modules/npm/doc/cli/rebuild.md
 lib/node_modules/npm/doc/cli/registry.md
 lib/node_modules/npm/doc/cli/removing-npm.md
 lib/node_modules/npm/doc/cli/restart.md
+lib/node_modules/npm/doc/cli/rm.md
 lib/node_modules/npm/doc/cli/root.md
 lib/node_modules/npm/doc/cli/run-script.md
 lib/node_modules/npm/doc/cli/scripts.md
@@ -164,6 +166,7 @@ lib/node_modules/npm/html/doc/edit.html
 lib/node_modules/npm/html/doc/explore.html
 lib/node_modules/npm/html/doc/faq.html
 lib/node_modules/npm/html/doc/folders.html
+lib/node_modules/npm/html/doc/global.html
 lib/node_modules/npm/html/doc/help-search.html
 lib/node_modules/npm/html/doc/help.html
 lib/node_modules/npm/html/doc/index.html
@@ -183,6 +186,7 @@ lib/node_modules/npm/html/doc/rebuild.html
 lib/node_modules/npm/html/doc/registry.html
 lib/node_modules/npm/html/doc/removing-npm.html
 lib/node_modules/npm/html/doc/restart.html
+lib/node_modules/npm/html/doc/rm.html
 lib/node_modules/npm/html/doc/root.html
 lib/node_modules/npm/html/doc/run-script.html
 lib/node_modules/npm/html/doc/scripts.html
@@ -331,6 +335,7 @@ lib/node_modules/npm/node_modules/fstream-npm/example/ig-tar.js
 lib/node_modules/npm/node_modules/fstream-npm/example/tar.js
 lib/node_modules/npm/node_modules/fstream-npm/fstream-npm.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/.npmignore
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/LICENSE
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/README.md
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/example/basic.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/ignore.js
@@ -379,6 +384,7 @@ lib/node_modules/npm/node_modules/glob/glob.js
 lib/node_modules/npm/node_modules/glob/package.json
 lib/node_modules/npm/node_modules/glob/test/00-setup.js
 lib/node_modules/npm/node_modules/glob/test/bash-comparison.js
+lib/node_modules/npm/node_modules/glob/test/bash-results.json
 lib/node_modules/npm/node_modules/glob/test/cwd-test.js
 lib/node_modules/npm/node_modules/glob/test/mark.js
 lib/node_modules/npm/node_modules/glob/test/pause-resume.js
@@ -1592,6 +1598,7 @@ lib/node_modules/npm/node_modules/npmconf/test/fixtures/builtin
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/globalconfig
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/userconfig
 lib/node_modules/npm/node_modules/npmconf/test/save.js
+lib/node_modules/npm/node_modules/npmconf/x.diff
 lib/node_modules/npm/node_modules/npmlog/LICENSE
 lib/node_modules/npm/node_modules/npmlog/README.md
 lib/node_modules/npm/node_modules/npmlog/example.js
@@ -1837,10 +1844,6 @@ lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
 lib/node_modules/npm/test/packages/npm-test-optional-deps/README
 lib/node_modules/npm/test/packages/npm-test-optional-deps/package.json
 lib/node_modules/npm/test/packages/npm-test-optional-deps/test.js
-lib/node_modules/npm/test/packages/npm-test-peer-deps-invalid/README
-lib/node_modules/npm/test/packages/npm-test-peer-deps-invalid/npm-ls.json
-lib/node_modules/npm/test/packages/npm-test-peer-deps-invalid/package.json
-lib/node_modules/npm/test/packages/npm-test-peer-deps-invalid/test.js
 lib/node_modules/npm/test/packages/npm-test-peer-deps/README
 lib/node_modules/npm/test/packages/npm-test-peer-deps/npm-ls.json
 lib/node_modules/npm/test/packages/npm-test-peer-deps/package.json
@@ -1863,8 +1866,16 @@ lib/node_modules/npm/test/run.js
 lib/node_modules/npm/test/tap/false_name.js
 lib/node_modules/npm/test/tap/false_name/index.js
 lib/node_modules/npm/test/tap/false_name/package.json
+lib/node_modules/npm/test/tap/package-with-peer-dep/package.json
+lib/node_modules/npm/test/tap/peer-deps-invalid.js
+lib/node_modules/npm/test/tap/peer-deps-invalid/package.json
+lib/node_modules/npm/test/tap/peer-deps-without-package-json.js
+lib/node_modules/npm/test/tap/peer-deps-without-package-json/.gitkeep
 lib/node_modules/npm/test/tap/publish-config.js
 lib/node_modules/npm/test/update-test.sh
+@dirrm lib/node_modules/npm/test/tap/peer-deps-without-package-json
+@dirrm lib/node_modules/npm/test/tap/peer-deps-invalid
+@dirrm lib/node_modules/npm/test/tap/package-with-peer-dep
 @dirrm lib/node_modules/npm/test/tap/false_name
 @dirrm lib/node_modules/npm/test/tap
 @dirrm lib/node_modules/npm/test/packages/npm-test-url-dep
@@ -1873,7 +1884,6 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-private
 @dirrm lib/node_modules/npm/test/packages/npm-test-platform-all
 @dirrm lib/node_modules/npm/test/packages/npm-test-platform
-@dirrm lib/node_modules/npm/test/packages/npm-test-peer-deps-invalid
 @dirrm lib/node_modules/npm/test/packages/npm-test-peer-deps
 @dirrm lib/node_modules/npm/test/packages/npm-test-optional-deps
 @dirrm lib/node_modules/npm/test/packages/npm-test-missing-bindir
