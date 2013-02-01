@@ -1,0 +1,5 @@
+The PGXN Client is a command line tool designed to interact with the
+PostgreSQL Extension Network allowing searching, compiling, installing,
+and removing extensions in PostgreSQL databases.
+
+WWW: http://pgxnclient.projects.pgfoundry.org/
