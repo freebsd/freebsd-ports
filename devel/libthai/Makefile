@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libthai
-PORTVERSION=	0.1.5
-PORTREVISION=	4
+PORTVERSION=	0.1.19
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
@@ -12,27 +11,24 @@ COMMENT=	Thai language support library
 
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	datrie:${PORTSDIR}/devel/libdatrie
+
+USE_XZ=		yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=yes
+USE_PKGCONFIG=	build
 
-MAN3=	libthai.3 thctype.3 wtt.3
+OPTIONS_DEFINE=	DOXYGEN
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
-ALL_TARGET=	all
+.if ${PORT_OPTIONS:MDOXYGEN}
+BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+PORTDOCS=	*
 .else
-ALL_TARGET= all check
+CONFIGURE_ARGS=	--disable-doxygen-doc
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^pkgconfigdir/s|=.*|= $$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.am
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
