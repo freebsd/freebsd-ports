@@ -1,0 +1,14 @@
+Media::Type::Simple gives a simple functions for obtaining common file
+extensions from media types, and from obtaining media types from file
+extensions.
+
+It is also relaxed with respect to having multiple media types associated with a
+file extension, or multiple extensions associated with a media type, and it
+includes media types for encodings such as gzip. It is defined this way in the
+default data, but this does not meet your needs, then you can have it use a
+system file (e.g. /etc/mime.types) or custom data.
+
+By default, there is a functional interface, although you can also use an
+object-oriented inteface. (Different objects will not share the same data.)
+
+WWW: http://search.cpan.org/dist/Media-Type-Simple/

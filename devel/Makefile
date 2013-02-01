@@ -2198,6 +2198,7 @@
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Mac-PropertyList
     SUBDIR += p5-Make
+    SUBDIR += p5-Media-Type-Simple
     SUBDIR += p5-Memoize
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Meta-Builder
