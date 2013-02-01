@@ -1,20 +1,20 @@
---- src/Makefile.orig	2012-04-20 23:05:25.000000000 +0200
-+++ src/Makefile	2012-04-20 23:05:25.000000000 +0200
-@@ -72,6 +72,7 @@
- 	image.o \
- 	itemGroup.o \
- 	label.o \
-+	labelEntry.o \
- 	language.o \
- 	layout.o \
- 	linkButton.o \
-@@ -88,7 +89,9 @@
- 	pageSetup.o \
- 	pageSetupDialog.o \
- 	paned.o \
-+	parseMarkup.o \
- 	parseOptions.o \
-+	pbar.o \
- 	pixBuf.o \
- 	pixBufFilters.o \
- 	pixMap.o \
+--- src/Makefile.orig	2013-01-31 10:52:21.000000000 +0100
++++ src/Makefile	2013-02-01 14:35:59.000000000 +0100
+@@ -16,13 +16,12 @@
+ TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
+ 
+ ADDCFLAGS := -DVERSION=\"$(VERSION)\" \
+-	-DUSE_TCL_STUBS $(shell pkg-config --cflags gtk+-2.0) \
+-	-I/usr/include/tcl$(TCL_VERSION) \
+-	-I/usr/include/libglade-2.0
++	-DUSE_TCL_STUBS $(shell pkg-config --cflags gtk+-2.0 libglade-2.0 gtk+-unix-print-2.0) \
++	-I%%LOCALBASE%%/include/tcl$(TCL_VERSION)
+ 
+ LIBS := $(shell pkg-config \
+-	--libs gtk+-2.0 libglade-2.0 libnotify) \
+-	-ltclstub$(TCL_VERSION)
++	--libs gtk+-2.0 gtk+-unix-print-2.0 libglade-2.0 libnotify) \
++	%%LOCALBASE%%/lib/libtclstub86.a
+ 
+ GTK_OBJ := \
+ 	aboutDialog.o \
