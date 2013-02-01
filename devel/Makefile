@@ -936,6 +936,7 @@
     SUBDIR += libdaemon
     SUBDIR += libdap
     SUBDIR += libdasm
+    SUBDIR += libdatrie
     SUBDIR += libdbusmenu-qt
     SUBDIR += libdfui
     SUBDIR += libdict
