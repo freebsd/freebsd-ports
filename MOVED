@@ -4023,3 +4023,5 @@ net/samba-pdbsql||2013-01-31|Depends from the obsoleted net/samba34
 net/samba35||2013-01-31|Obsoleted by net/samba36
 devel/llvm29|devel/llvm|2013-02-01|Obsolete and unmaintained
 lang/llvm-gcc4|lang/dragonegg46|2013-02-01|Obsolete and unmaintained
+net-mgmt/nagiosgrapher||2013-02-02|Has expired: Deprecated upstream. Please use net-mgmt/pnp instead
+x11-fm/x-files||2013-02-02|Has expired: Project has been abandoned
