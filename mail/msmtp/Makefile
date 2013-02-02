@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.29
+PORTVERSION=	1.4.30
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -23,53 +23,57 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=	msmtp.1
 INFO=	msmtp
 
-OPTIONS=	GNUTLS "Adds GnuTLS support" off \
-		OPENSSL "Adds support for SSL (Secure Socket Layer)" on \
-		GSASL "Adds GSASL support" off \
-		NLS "Native Language Support via gettext utilities" on \
-		IDN "Enable Internationalized Domain Names" on \
-		GNOME_KEYRING "Build with GNOME Keyring auth support" off \
-		MSMTPQ "Install offline messaging scripts" on
+OPTIONS_DEFINE=	GSASL NLS IDN GNOME_KEYRING MSMTPQ
+OPTIONS_RADIO=	TLS
+OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	MSMTPQ OPENSSL
+
+GNUTLS_DESC=	GnuTLS support
+OPENSSL_DESC=	SSL (Secure Socket Layer) support
+GSASL_DESC=	GSASL support
+IDN_DESC=	Internationalized Domain Names support
+GNOME_KEYRING_DESC=	GNOME Keyring auth support
+MSMTPQ_DESC=	Install offline messaging scripts
 
 .include       <bsd.port.options.mk>
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
-.elif defined(WITH_OPENSSL)
+.elif ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=openssl
 CONFIGURE_ENV+=		libssl_CFLAGS="-I${OPENSSLINC}" libssl_LIBS="-L${OPENSSLLIB} -lssl"
 .else
-CONFIGURE_ARGS+=	--without-ssl
+CONFIGURE_ARGS+=	--with-ssl=no
 .endif
 
-.if defined(WITH_GNUTLS) || defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MGNUTLS} || ${PORT_OPTIONS:MOPENSSL}
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
-.if defined(WITH_GSASL)
-LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
+.if ${PORT_OPTIONS:MGSASL}
+LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
 CONFIGURE_ARGS+=	--with-libgsasl
 .else
 CONFIGURE_ARGS+=	--without-libgsasl
 .endif
 
-.if !defined(WITHOUT_IDN)
-LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
+.if ${PORT_OPTIONS:MIDN}
+LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn
 .else
 CONFIGURE_ARGS+=	--without-libidn
 .endif
 
-.if !defined(WITH_GNOME_KEYRING)
-CONFIGURE_ARGS+=	--without-gnome-keyring
-.else
+.if ${PORT_OPTIONS:MGNOME_KEYRING}
 CONFIGURE_ARGS+=	--with-gnome-keyring
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
+.else
+CONFIGURE_ARGS+=	--without-gnome-keyring
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
@@ -80,7 +84,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MSMTPQ)
+.if ${PORT_OPTIONS:MMSMTPQ}
 PLIST_SUB+=	MSMTPQ=""
 
 post-install:
