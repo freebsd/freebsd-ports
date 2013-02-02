@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		proxy:${PORTSDIR}/net/libproxy
+		proxy:${PORTSDIR}/net/libproxy \
+		dvbpsi:${PORTSDIR}/multimedia/libdvbpsi
 BUILD_DEPENDS=	ffmpeg${FFMPEG_SUFFIX}>=1.0:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFFIX}>=1.0:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
 
@@ -583,8 +584,7 @@ CONFIGURE_ARGS+=--disable-upnp
 .endif
 
 .if ${PORT_OPTIONS:MV4L} || ${PORT_OPTIONS:MDVB}
-LIB_DEPENDS+=	v4l1:${PORTSDIR}/multimedia/libv4l \
-		dvbpsi:${PORTSDIR}/multimedia/libdvbpsi
+LIB_DEPENDS+=	v4l1:${PORTSDIR}/multimedia/libv4l
 CONFIGURE_ARGS+=--enable-v4l2
 .else
 CONFIGURE_ARGS+=--disable-v4l2
@@ -679,8 +679,15 @@ IGNORE=		base clang version too old, set NO_IGNORE to override
 CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
 .endif
 
+# prefer clang on 9.1+
+.if (${OSVERSION} >= 901000) && exists(${DESTDIR}/usr/bin/clang)
+CC=	clang
+CXX=	clang++
+CPP=	clang-cpp
+.else
 .if ${ARCH} == "i386"
 USE_GCC?=	4.6+ # sse/3dnow detection on i386 needs newer gcc
+.endif
 .endif
 
 # End OS specific hacks
