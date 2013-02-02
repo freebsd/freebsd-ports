@@ -1,21 +1,17 @@
-# New ports collection makefile for:	hastmon
-# Date created:				23 October 2010
-# Whom:					Mikolaj Golub <to.my.trociny@gmail.com>
-#
+# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hastmon
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Cluster monitoring daemon
 
-BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
-
 LICENSE=	BSD
+
+BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
 
 MKCMAKE?=	${LOCALBASE}/bin/mkcmake
 INSTALL_TARGET=	installdirs install
