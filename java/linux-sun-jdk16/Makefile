@@ -14,7 +14,9 @@ COMMENT=	Sun Java Development Kit 1.6 for Linux
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-OPTIONS=	DEMO "Install demos and samples" on
+OPTIONS_DEFINE=	DEMO
+DEMO_DESC=	Install demos and samples
+OPTIONS_DEFAULT=DEMO
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
@@ -28,7 +30,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JDK_VERSION=	1.6.0
-JDK_REVISION=	38
+JDK_REVISION=	39
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
@@ -42,11 +44,19 @@ UNPACK_CMD=	${WRKSRC}/bin/unpack200
 IGNORE?=You must manually fetch the J2SE SDK self-extracting file for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
-.if defined(WITH_DEMO)
-.if !exists(${DISTDIR}/${DISTNAME}-demos.tar.gz) && !defined(PACKAGE_BUILDING)
-IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DISTNAME}-demos.tar.gz) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEMO}
+#DEMO_UPDATE_VERSION=  ${JDK_UPDATE_VERSION}
+DEMO_UPDATE_VERSION=   38
+#DEMO_DISTNAME=        ${DISTNAME}-demos
+DEMO_DISTNAME= jdk-6u${DEMO_UPDATE_VERSION}-linux-i586-demos
+#DEMO_WRKSRC=  ${WRKSRC}
+DEMO_WRKSRC=   ${WRKDIR}/jdk${JDK_VERSION}_${DEMO_UPDATE_VERSION}
+.if !exists(${DISTDIR}/${DEMO_DISTNAME}.tar.gz) && !defined(PACKAGE_BUILDING)
+IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}.tar.gz) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-demos.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTNAME}.tar.gz
 PLIST_SUB+=	DEMO=""
 .else
 PLIST_SUB+=	DEMO="@comment "
@@ -64,8 +74,14 @@ do-extract:
 .for i in ${PACKED_JARS}
 	@${UNPACK_CMD} -r ${WRKSRC}/${i}.pack ${WRKSRC}/${i}.jar
 .endfor
-.if defined(WITH_DEMO)
-	@${TAR} -x -f ${DISTDIR}/${DISTNAME}-demos.tar.gz -C ${WRKDIR}
+.if ${PORT_OPTIONS:MDEMO}
+	@${TAR} -x -f ${DISTDIR}/${DEMO_DISTNAME}.tar.gz -C ${WRKDIR}
+.endif
+
+.if ${PORT_OPTIONS:MDEMO} && ${DEMO_WRKSRC} != ${WRKSRC}
+post-extract:
+	@${MV} ${DEMO_WRKSRC}/demo ${WRKSRC}/
+	@${MV} ${DEMO_WRKSRC}/sample ${WRKSRC}/
 .endif
 
 post-patch:
