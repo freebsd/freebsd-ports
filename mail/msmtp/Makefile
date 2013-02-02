@@ -23,16 +23,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=	msmtp.1
 INFO=	msmtp
 
-OPTIONS_DEFINE=	GSASL NLS IDN GNOME_KEYRING MSMTPQ
+OPTIONS_DEFINE=	GSASL NLS IDN GNOMEKEYRING MSMTPQ
 OPTIONS_RADIO=	TLS
 OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	MSMTPQ OPENSSL
 
-GNUTLS_DESC=	GnuTLS support
-OPENSSL_DESC=	SSL (Secure Socket Layer) support
 GSASL_DESC=	GSASL support
-IDN_DESC=	Internationalized Domain Names support
-GNOME_KEYRING_DESC=	GNOME Keyring auth support
 MSMTPQ_DESC=	Install offline messaging scripts
 
 .include       <bsd.port.options.mk>
@@ -66,7 +62,7 @@ CONFIGURE_ARGS+=	--with-libidn
 CONFIGURE_ARGS+=	--without-libidn
 .endif
 
-.if ${PORT_OPTIONS:MGNOME_KEYRING}
+.if ${PORT_OPTIONS:MGNOMEKEYRING}
 CONFIGURE_ARGS+=	--with-gnome-keyring
 LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
 .else
