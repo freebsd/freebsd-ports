@@ -1,12 +1,8 @@
-# @(#) $Id: Makefile,v 1.3 2008/04/26 04:08:44 leres Exp $ (LBL)
-# New ports collection makefile for: lbl-cf
-# Date created:	24 Apr 2008
-# Whom:		leres@ee.lbl.gov
+# Created by: Craig Leres <leres@ee.lbl.gov>
 # $FreeBSD$
-#
 
 PORTNAME=	cf
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ee.lbl.gov/ \
 		http://www.tux.org//pub/net/ftp.ee.lbl.gov/ \
