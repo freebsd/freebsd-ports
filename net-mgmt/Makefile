@@ -140,7 +140,6 @@
     SUBDIR += nagios-spamd-plugin
     SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
-    SUBDIR += nagiosgrapher
     SUBDIR += nagiosql
     SUBDIR += nagiostat
     SUBDIR += nagircbot

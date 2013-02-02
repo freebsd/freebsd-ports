@@ -37,7 +37,6 @@
     SUBDIR += twander
     SUBDIR += ultracopier
     SUBDIR += worker
-    SUBDIR += x-files
     SUBDIR += xcruise
     SUBDIR += xdiskusage
     SUBDIR += xfe
