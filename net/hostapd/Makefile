@@ -1,12 +1,8 @@
-# New ports collection makefile for:	hostapd
-# Date created:		05 February 2011
-# Whom:			leres@ee.lbl.gov
-#
+# Created by: Craig Leres <leres@ee.lbl.gov>
 # $FreeBSD$
-#
 
 PORTNAME=	hostapd
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
