@@ -2,7 +2,7 @@
 
 PORTNAME=	deluge
 PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -14,7 +14,7 @@ COMMENT=	Bittorrent client using Python, GTK+2, and libtorrent-rasterbar
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.15.1:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.16.0:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16-python \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:${PORTSDIR}/textproc/py-mako
@@ -32,7 +32,8 @@ USE_TWISTED_RUN=	web
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_BUILD_TARGET=	build bdist_egg
 
-OPTIONS=	PYGTK "Enable GUI and gtk dep (GUI files always installed)" on
+OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFAULT=GTK2
 
 MAN1=		deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 
@@ -56,7 +57,7 @@ PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/${file}
 .endfor
 .endif
 
-.if !defined(WITHOUT_PYGTK)
+.if ${PORT_OPTIONS:MGTK2}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}game>=1.8.1:${PORTSDIR}/devel/py-game \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
@@ -100,7 +101,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/pixmaps/deluge.${file} \
 		${PREFIX}/share/pixmaps
 .endfor
-.if !defined(WITHOUT_PYGTK)
+.if ${PORT_OPTIONS:MGTK2}
 	if [ ! -d ${PREFIX}/share/applications ]; then \
 		${MKDIR} ${PREFIX}/share/applications ; \
 	fi
@@ -108,7 +109,7 @@ post-install:
 		${PREFIX}/share/applications
 	@-update-desktop-database
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
