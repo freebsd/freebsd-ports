@@ -9,9 +9,6 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
-HSPREFIX=	hs-
-PKGNAMEPREFIX?=	${HSPREFIX}
-
 .if !defined(METAPORT)
 MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 .else
