@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130202:
+  AFFECTS: users of net-p2p/deluge
+  AUTHOR: rm@FreeBSD.org
+
+  deluge port had switched to using libtorrent-rasterbar 0.16 as backend. Since
+  both of the versions of libtorrent are conflicting with each other, you need
+  to deinstall libtorrent-rasterbar-15 and libtorrent-rasterbar-15-python first
+  and then update deluge as usual. Please also keep in mind, that deluge does
+  not work via http-proxy when libtorrent-rasterbar 0.16 is used.
+
 20130131:
   AFFECTS: users of devel/boost-libs
   AUTHOR: bapt@FreeBSD.org
