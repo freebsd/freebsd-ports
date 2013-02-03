@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,7 +14,7 @@ LICENSE=	BSD
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-MAN8=		qjail.8 qjail-intro.8 qjail.conf.8
+MAN8=		qjail.8 qjail-intro.8 qjail.conf.8 qjail-howto.8
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
@@ -26,7 +26,8 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/qjail2 ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${WRKSRC}/qjail-jail2 ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA}   ${WRKSRC}/qjail.conf.sample ${PREFIX}/etc
-.for i in qjail qjail-intro qjail.conf
+	@${INSTALL_DATA}   ${WRKSRC}/qjail.portsnap.conf ${PREFIX}/etc
+.for i in qjail qjail-intro qjail.conf qjail-howto
 	@${INSTALL_MAN}    ${WRKSRC}/${i}.8 ${MAN8PREFIX}/man/man8
 .endfor
 # note examples are mandatory. qjail will not function without them
