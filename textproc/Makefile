@@ -366,6 +366,7 @@
     SUBDIR += libexttextcat
     SUBDIR += libguess
     SUBDIR += libkmfl
+    SUBDIR += libkolabxml
     SUBDIR += liblinebreak
     SUBDIR += liblingoteach
     SUBDIR += liblrdf

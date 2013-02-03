@@ -1,0 +1,15 @@
+Do not install some files by default, they should be installed only if
+NOPORTDOCS is not defined, and into another directory.
+--- xsd/libxsd/makefile~	2012-08-10 18:24:36.000000000 -0300
++++ xsd/libxsd/makefile		2012-08-10 18:24:43.000000000 -0300
+@@ -14,10 +14,6 @@
+ #
+ $(install):
+ 	$(call install-dir,$(src_base)/xsd,$(install_inc_dir)/xsd)
+-	$(call install-data,$(src_base)/FLOSSE,$(install_doc_dir)/libxsd/FLOSSE)
+-	$(call install-data,$(src_base)/GPLv2,$(install_doc_dir)/libxsd/GPLv2)
+-	$(call install-data,$(src_base)/LICENSE,$(install_doc_dir)/libxsd/LICENSE)
+-	$(call install-data,$(src_base)/README,$(install_doc_dir)/libxsd/README)
+ 
+ # Dist.
+ #

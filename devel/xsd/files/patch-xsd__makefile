@@ -1,0 +1,53 @@
+Do not build or install tests and examples: we only need to install examples,
+and only if NOPORTEXAMPLES is not set.
+
+Also do not install the documentation by default, as that should only be done if
+NOPORTDOCS is not set.
+--- xsd/makefile~	2012-08-10 14:16:54.000000000 -0300
++++ xsd/makefile	2012-08-10 18:46:45.000000000 -0300
+@@ -14,8 +14,6 @@
+ cleandoc := $(out_base)/.cleandoc
+ 
+ $(default): $(out_base)/xsd/      \
+-            $(out_base)/tests/    \
+-            $(out_base)/examples/ \
+             $(out_base)/documentation/
+ 
+ # Test.
+@@ -26,17 +24,7 @@
+ # Install.
+ #
+ $(install): $(out_base)/xsd/.install           \
+-            $(out_base)/libxsd/.install        \
+-	    $(out_base)/examples/.install      \
+-            $(out_base)/documentation/.install
+-	$(call install-dir,$(src_base)/dist/examples/build,$(install_doc_dir)/xsd/examples/build)
+-	$(call install-dir,$(src_base)/dist/examples/cxx,$(install_doc_dir)/xsd/examples/cxx,-name makefile)
+-	$(call install-data,$(src_base)/dist/examples/makefile,$(install_doc_dir)/xsd/examples/makefile)
+-	$(call install-data,$(src_base)/FLOSSE,$(install_doc_dir)/xsd/FLOSSE)
+-	$(call install-data,$(src_base)/GPLv2,$(install_doc_dir)/xsd/GPLv2)
+-	$(call install-data,$(src_base)/LICENSE,$(install_doc_dir)/xsd/LICENSE)
+-	$(call install-data,$(src_base)/NEWS,$(install_doc_dir)/xsd/NEWS)
+-	$(call install-data,$(src_base)/dist/README-UNIX,$(install_doc_dir)/xsd/README)
++            $(out_base)/libxsd/.install
+ 
+ 
+ # Dist.
+@@ -81,9 +69,7 @@
+ 
+ # Clean.
+ #
+-$(clean): $(out_base)/xsd/.clean      \
+-          $(out_base)/tests/.clean    \
+-          $(out_base)/examples/.clean
++$(clean): $(out_base)/xsd/.clean
+ 
+ $(cleandoc): $(out_base)/documentation/.cleandoc
+ 
+@@ -91,6 +77,4 @@
+ 
+ $(call import,$(src_base)/xsd/makefile)
+ $(call import,$(src_base)/libxsd/makefile)
+-$(call import,$(src_base)/tests/makefile)
+-$(call import,$(src_base)/examples/makefile)
+ $(call import,$(src_base)/documentation/makefile)
