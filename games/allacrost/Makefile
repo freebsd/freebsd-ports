@@ -37,11 +37,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	MANUAL
 
-OPTIONS=	EDITOR "Enable editor" off
+OPTIONS_DEFINE=	EDITOR DOCS
+EDITOR_DESC=	Enable editor
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EDITOR)
+.if ${PORT_OPTIONS:MEDITOR}
 QT_NONSTANDARD=	yes
 USE_QT4+=	corelib gui opengl moc_build qt3support
 CONFIGURE_ARGS+=--enable-editor=yes
@@ -61,7 +62,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/qt4_incdirs/ s|".*"|"${QT_INCDIR}"|; \
 		/qt4_libdirs/ s|".*"|"${QT_LIBDIR}"|; /test/ s|==|=|' \
 		${WRKSRC}/configure
-.if defined(WITH_EDITOR)
+.if ${PORT_OPTIONS:MEDITOR}
 	@${REINPLACE_CMD} -e '/^INCLUDES = / s|=|= -I${QT_INCDIR}/QtGui \
 		-I${QT_INCDIR}/QtOpenGL -I${QT_INCDIR}/Qt3Support \
 		-I${QT_INCDIR}/QtCore -I${QT_INCDIR}|' \
@@ -69,7 +70,7 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
