@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${DISTNAME}2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
@@ -1118,13 +1118,12 @@ PLIST_SUB+=	WITH_RC5="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPADLOCK}
-BROKEN=		padlock support needs updating
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
 PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
-		0003-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
-		0004-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
-		0005-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+		0002-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
+		0003-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+		0004-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
