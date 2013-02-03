@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kdeplasmoids
-# Date created:		2008-06-29
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
@@ -17,7 +12,9 @@ COMMENT=	Extra plasmoids for KDE4
 
 LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		qca.2:${PORTSDIR}/devel/qca
+		qca.2:${PORTSDIR}/devel/qca \
+		qoauth.1:${PORTSDIR}/net/qoauth \
+		qjson.0:${PORTSDIR}/devel/qjson
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
@@ -32,13 +29,16 @@ USE_QT4=	dbus gui network opengl script sql svg webkit xml \
 USE_XORG=	x11 xrender xtst
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MARBLE "Support for desktop globe wallpaper" on \
-		IBUS "Enable IBUS backend for input dialog" off \
-		SCIM "Enable SCIM backend for input dialog" off
+OPTIONS_DEFINE=	MARBLE IBUS SCIM
+OPTIONS_DEFAULT=	MARBLE
+
+MARBLE_DESC=	Support for desktop globe wallpaper
+IBUS_DESC=	Enable IBUS backend for input dialog
+SCIM_DESC=	Enable SCIM backend for input dialog
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_MARBLE)
+.if ${PORT_OPTIONS:MMARBLE}
 USE_KDE4+=	marble
 PLIST_SUB+=	MARBLE=""
 .else
@@ -46,7 +46,7 @@ CMAKE_ARGS+=	-DWITH_Marble:BOOL=FALSE
 PLIST_SUB+=	MARBLE="@comment "
 .endif
 
-.ifdef(WITH_IBUS)
+.if ${PORT_OPTIONS:MIBUS}
 LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
 PLIST_SUB+=	IBUS=""
 .else
@@ -54,7 +54,7 @@ CMAKE_ARGS+=	-DWITH_IBUS:BOOL=FALSE
 PLIST_SUB+=	IBUS="@comment "
 .endif
 
-.ifdef(WITH_SCIM)
+.if ${PORT_OPTIONS:MSCIM}
 LIB_DEPENDS+=	scim-1.0.10:${PORTSDIR}/textproc/scim
 PLIST_SUB+=	SCIM=""
 .else

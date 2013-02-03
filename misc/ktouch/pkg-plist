@@ -48,6 +48,7 @@ share/apps/ktouch/Lecture/Turkish/tr.ktouch.xml
 share/apps/ktouch/Lecture/Ukrainian/uk.ktouch.xml
 share/apps/ktouch/down.wav
 share/apps/ktouch/error.wav
+share/apps/ktouch/keyboard/Turkish/tr.f.keyboard.xml
 share/apps/ktouch/keyboard/arabic/ar.keyboard.xml
 share/apps/ktouch/keyboard/brazilian/pt.br.keyboard.xml
 share/apps/ktouch/keyboard/bulgarian/bg.keyboard.xml
@@ -76,6 +77,7 @@ share/apps/ktouch/keyboard/latin/lat.keyboard.xml
 share/apps/ktouch/keyboard/lithuanian/lt.keyboard.xml
 share/apps/ktouch/keyboard/norwegian/no.keyboard.xml
 share/apps/ktouch/keyboard/quebec/qc.keyboard.xml
+share/apps/ktouch/keyboard/portuguese/pt.keyboard.xml
 share/apps/ktouch/keyboard/russian/ru.keyboard.xml
 share/apps/ktouch/keyboard/russian/ru.winkeys.keyboard.xml
 share/apps/ktouch/keyboard/slovak/sk.qwerty.keyboard.xml
@@ -122,6 +124,7 @@ share/icons/hicolor/scalable/apps/ktouch.svgz
 @dirrm share/apps/ktouch/keyboard/slovenian
 @dirrm share/apps/ktouch/keyboard/slovak
 @dirrm share/apps/ktouch/keyboard/russian
+@dirrm share/apps/ktouch/keyboard/portuguese
 @dirrm share/apps/ktouch/keyboard/quebec
 @dirrm share/apps/ktouch/keyboard/norwegian
 @dirrm share/apps/ktouch/keyboard/lithuanian
@@ -141,6 +144,7 @@ share/icons/hicolor/scalable/apps/ktouch.svgz
 @dirrm share/apps/ktouch/keyboard/bulgarian
 @dirrm share/apps/ktouch/keyboard/brazilian
 @dirrm share/apps/ktouch/keyboard/arabic
+@dirrm share/apps/ktouch/keyboard/Turkish
 @dirrm share/apps/ktouch/keyboard
 @dirrm share/apps/ktouch/Lecture/Ukrainian
 @dirrm share/apps/ktouch/Lecture/Turkish

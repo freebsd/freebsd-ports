@@ -1,7 +1,3 @@
-# New ports collection Makefile for:	konsole
-# Date created:				30 July 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	konsole

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kgamma
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kgamma
 PORTVERSION=	${KDE4_VERSION}

@@ -21,6 +21,13 @@ share/doc/HTML/en/ark/common
 share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
 share/doc/HTML/en/ark/man-ark.1.docbook
+share/icons/hicolor/128x128/apps/ark.png
+share/icons/hicolor/16x16/apps/ark.png
+share/icons/hicolor/22x22/apps/ark.png
+share/icons/hicolor/32x32/apps/ark.png
+share/icons/hicolor/48x48/apps/ark.png
+share/icons/hicolor/64x64/apps/ark.png
+share/icons/hicolor/scalable/apps/ark.svgz
 share/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 share/kde4/services/ServiceMenus/ark_servicemenu.desktop
 share/kde4/services/ark_dndextract.desktop

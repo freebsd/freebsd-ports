@@ -1,0 +1,62 @@
+bin/pairs
+share/applications/kde4/pairs.desktop
+share/apps/pairs/gameicons/addUser.svg
+share/apps/pairs/gameicons/background.svg
+share/apps/pairs/gameicons/exit.svg
+share/apps/pairs/gameicons/getThemes.svg
+share/apps/pairs/gameicons/info.svg
+share/apps/pairs/gameicons/logic.svg
+share/apps/pairs/gameicons/newGame.svg
+share/apps/pairs/gameicons/pairs.svg
+share/apps/pairs/gameicons/pairsIcon.svg
+share/apps/pairs/gameicons/relations.svg
+share/apps/pairs/gameicons/removeUser.svg
+share/apps/pairs/gameicons/sound.svg
+share/apps/pairs/gameicons/soundLogic.svg
+share/apps/pairs/gameicons/words.svg
+share/apps/pairs/players/player1.svg
+share/apps/pairs/players/player10.svg
+share/apps/pairs/players/player11.svg
+share/apps/pairs/players/player12.svg
+share/apps/pairs/players/player13.svg
+share/apps/pairs/players/player14.svg
+share/apps/pairs/players/player15.svg
+share/apps/pairs/players/player16.svg
+share/apps/pairs/players/player17.svg
+share/apps/pairs/players/player18.svg
+share/apps/pairs/players/player19.svg
+share/apps/pairs/players/player2.svg
+share/apps/pairs/players/player20.svg
+share/apps/pairs/players/player3.svg
+share/apps/pairs/players/player4.svg
+share/apps/pairs/players/player5.svg
+share/apps/pairs/players/player6.svg
+share/apps/pairs/players/player7.svg
+share/apps/pairs/players/player8.svg
+share/apps/pairs/players/player9.svg
+share/apps/pairs/themes/animals.pairs.tar.bz2
+share/apps/pairs/themes/game.xsd
+share/apps/pairs/themes/kde.pairs.tar.bz2
+share/apps/pairs/themes/linux.pairs.tar.bz2
+share/apps/pairs/themes/right.ogg
+share/apps/pairs/themes/wrong.ogg
+share/config/pairs.knsrc
+share/icons/hicolor/128x128/apps/pairs.png
+share/icons/hicolor/16x16/apps/pairs.png
+share/icons/hicolor/192x192/apps/pairs.png
+share/icons/hicolor/20x20/apps/pairs.png
+share/icons/hicolor/22x22/apps/pairs.png
+share/icons/hicolor/24x24/apps/pairs.png
+share/icons/hicolor/256x256/apps/pairs.png
+share/icons/hicolor/32x32/apps/pairs.png
+share/icons/hicolor/36x36/apps/pairs.png
+share/icons/hicolor/48x48/apps/pairs.png
+share/icons/hicolor/64x64/apps/pairs.png
+share/icons/hicolor/96x96/apps/pairs.png
+share/icons/hicolor/scalable/apps/pairs.svgz
+@dirrmtry share/icons/hicolor/20x20/apps
+@dirrmtry share/icons/hicolor/20x20
+@dirrm share/apps/pairs/themes
+@dirrm share/apps/pairs/players
+@dirrm share/apps/pairs/gameicons
+@dirrm share/apps/pairs

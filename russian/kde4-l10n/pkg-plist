@@ -902,6 +902,16 @@ share/doc/HTML/ru/ktuberling/common
 share/doc/HTML/ru/ktuberling/index.cache.bz2
 share/doc/HTML/ru/ktuberling/index.docbook
 share/doc/HTML/ru/ktuberling/technical-reference.docbook
+share/doc/HTML/ru/kturtle/common
+share/doc/HTML/ru/kturtle/getting-started.docbook
+share/doc/HTML/ru/kturtle/glossary.docbook
+share/doc/HTML/ru/kturtle/index.cache.bz2
+share/doc/HTML/ru/kturtle/index.docbook
+share/doc/HTML/ru/kturtle/mainwindow.png
+share/doc/HTML/ru/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/ru/kturtle/programming-reference.docbook
+share/doc/HTML/ru/kturtle/translator-guide.docbook
+share/doc/HTML/ru/kturtle/using-kturtle.docbook
 share/doc/HTML/ru/kuser/common
 share/doc/HTML/ru/kuser/index.cache.bz2
 share/doc/HTML/ru/kuser/index.docbook
@@ -1025,7 +1035,9 @@ share/locale/ru/LC_MESSAGES/dragonplayer.mo
 share/locale/ru/LC_MESSAGES/drkonqi.mo
 share/locale/ru/LC_MESSAGES/filelight.mo
 share/locale/ru/LC_MESSAGES/filetypes.mo
+share/locale/ru/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ru/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ru/LC_MESSAGES/freespacenotifier.mo
 share/locale/ru/LC_MESSAGES/fsview.mo
@@ -1166,7 +1178,6 @@ share/locale/ru/LC_MESSAGES/kcmstyle.mo
 share/locale/ru/LC_MESSAGES/kcmusb.mo
 share/locale/ru/LC_MESSAGES/kcmview1394.mo
 share/locale/ru/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/ru/LC_MESSAGES/kcmxinerama.mo
 share/locale/ru/LC_MESSAGES/kcolorchooser.mo
 share/locale/ru/LC_MESSAGES/kcron.mo
 share/locale/ru/LC_MESSAGES/kde-menu.mo
@@ -1189,24 +1200,16 @@ share/locale/ru/LC_MESSAGES/kdmgreet.mo
 share/locale/ru/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/ru/LC_MESSAGES/keditbookmarks.mo
 share/locale/ru/LC_MESSAGES/kfile.mo
-share/locale/ru/LC_MESSAGES/kfile_avi.mo
 share/locale/ru/LC_MESSAGES/kfile_dds.mo
 share/locale/ru/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ru/LC_MESSAGES/kfile_exr.mo
-share/locale/ru/LC_MESSAGES/kfile_flac.mo
 share/locale/ru/LC_MESSAGES/kfile_kig.mo
 share/locale/ru/LC_MESSAGES/kfile_mail.mo
-share/locale/ru/LC_MESSAGES/kfile_mp3.mo
-share/locale/ru/LC_MESSAGES/kfile_mpc.mo
-share/locale/ru/LC_MESSAGES/kfile_ogg.mo
 share/locale/ru/LC_MESSAGES/kfile_pnm.mo
 share/locale/ru/LC_MESSAGES/kfile_raw.mo
 share/locale/ru/LC_MESSAGES/kfile_rgb.mo
 share/locale/ru/LC_MESSAGES/kfile_rpm.mo
-share/locale/ru/LC_MESSAGES/kfile_sid.mo
-share/locale/ru/LC_MESSAGES/kfile_theora.mo
 share/locale/ru/LC_MESSAGES/kfile_tiff.mo
-share/locale/ru/LC_MESSAGES/kfile_wav.mo
 share/locale/ru/LC_MESSAGES/kfile_xps.mo
 share/locale/ru/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/ru/LC_MESSAGES/kfilereplace.mo
@@ -1239,6 +1242,7 @@ share/locale/ru/LC_MESSAGES/kimagemapeditor.mo
 share/locale/ru/LC_MESSAGES/kinetd.mo
 share/locale/ru/LC_MESSAGES/kinfocenter.mo
 share/locale/ru/LC_MESSAGES/kio4.mo
+share/locale/ru/LC_MESSAGES/kio_activities.mo
 share/locale/ru/LC_MESSAGES/kio_akonadi.mo
 share/locale/ru/LC_MESSAGES/kio_applications.mo
 share/locale/ru/LC_MESSAGES/kio_archive.mo
@@ -1305,6 +1309,7 @@ share/locale/ru/LC_MESSAGES/knotify4.mo
 share/locale/ru/LC_MESSAGES/kolf.mo
 share/locale/ru/LC_MESSAGES/kollision.mo
 share/locale/ru/LC_MESSAGES/kolourpaint.mo
+share/locale/ru/LC_MESSAGES/kommander.mo
 share/locale/ru/LC_MESSAGES/kompare.mo
 share/locale/ru/LC_MESSAGES/konqueror.mo
 share/locale/ru/LC_MESSAGES/konquest.mo
@@ -1434,6 +1439,7 @@ share/locale/ru/LC_MESSAGES/libkworkspace.mo
 share/locale/ru/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/ru/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/ru/LC_MESSAGES/libmailcommon.mo
+share/locale/ru/LC_MESSAGES/libmailimporter.mo
 share/locale/ru/LC_MESSAGES/libmailtransport.mo
 share/locale/ru/LC_MESSAGES/libmessagecomposer.mo
 share/locale/ru/LC_MESSAGES/libmessagecore.mo
@@ -1551,6 +1557,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -1566,7 +1573,6 @@ share/locale/ru/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_searchbox.mo
-share/locale/ru/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -1664,7 +1670,6 @@ share/locale/ru/LC_MESSAGES/solid-network.mo
 share/locale/ru/LC_MESSAGES/solid_qt.mo
 share/locale/ru/LC_MESSAGES/solidcontrol.mo
 share/locale/ru/LC_MESSAGES/soliduiserver.mo
-share/locale/ru/LC_MESSAGES/spy.mo
 share/locale/ru/LC_MESSAGES/step.mo
 share/locale/ru/LC_MESSAGES/step_qt.mo
 share/locale/ru/LC_MESSAGES/strigila_diff.mo
@@ -1696,6 +1701,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kwatchgnupg
 @dirrm share/doc/HTML/ru/kwallet
 @dirrm share/doc/HTML/ru/kuser
+@dirrm share/doc/HTML/ru/kturtle
 @dirrm share/doc/HTML/ru/ktuberling
 @dirrm share/doc/HTML/ru/ktouch
 @dirrm share/doc/HTML/ru/ktimetracker

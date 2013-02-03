@@ -1,4 +1,10 @@
 bin/khangman
+include/khangman/khangman_engine_export.h
+include/khangman/khangmanengine.h
+include/khangman/prefs.h
+lib/libkhangmanengine.so
+lib/libkhangmanengine.so.5
+lib/libkhangmanengine.so.5.0.1
 share/applications/kde4/khangman.desktop
 share/apps/khangman/fonts/Domestic_Manners.ttf
 share/apps/khangman/fonts/Dustismo_Roman.ttf
@@ -30,7 +36,11 @@ share/icons/hicolor/22x22/apps/khangman.png
 share/icons/hicolor/32x32/apps/khangman.png
 share/icons/hicolor/48x48/apps/khangman.png
 share/icons/hicolor/64x64/apps/khangman.png
+share/icons/hicolor/80x80/apps/khangman-harmattan.png
+share/icons/hicolor/scalable/apps/khangman-harmattan.svgz
 share/icons/hicolor/scalable/apps/khangman.svgz
+@dirrmtry share/icons/hicolor/80x80/apps
+@dirrmtry share/icons/hicolor/80x80
 @dirrm share/doc/HTML/en/khangman
 @dirrm share/apps/khangman/sounds
 @dirrm share/apps/khangman/pics/sea
@@ -39,3 +49,4 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 @dirrm share/apps/khangman/pics
 @dirrm share/apps/khangman/fonts
 @dirrm share/apps/khangman
+@dirrm include/khangman

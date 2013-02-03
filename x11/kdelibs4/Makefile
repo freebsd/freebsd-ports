@@ -1,14 +1,8 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	KDE libraries 4
-# Date created:				19 January 2008
-# Whom:					arved@FreeBSD.org
-#
+# Created by: arved@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,20 +12,20 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		aspell.16:${PORTSDIR}/textproc/aspell \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		avahi-core.7:${PORTSDIR}/net/avahi-app \
-		enchant.1:${PORTSDIR}/textproc/enchant \
-		gif.5:${PORTSDIR}/graphics/giflib \
+		aspell:${PORTSDIR}/textproc/aspell \
+		jasper:${PORTSDIR}/graphics/jasper \
+		pcre:${PORTSDIR}/devel/pcre \
+		avahi-core:${PORTSDIR}/net/avahi-app \
+		enchant:${PORTSDIR}/textproc/enchant \
+		gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		hal.1:${PORTSDIR}/sysutils/hal \
-		qca.2:${PORTSDIR}/devel/qca \
-		HUpnp.1:${PORTSDIR}/net/hupnp \
-		polkit-qt-core-1.1:${PORTSDIR}/sysutils/polkit-qt \
-		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
-		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		hal:${PORTSDIR}/sysutils/hal \
+		qca:${PORTSDIR}/devel/qca \
+		HUpnp:${PORTSDIR}/net/hupnp \
+		polkit-qt-core-1:${PORTSDIR}/sysutils/polkit-qt \
+		smbclient:${PORTSDIR}/net/samba-libsmbclient \
+		dbusmenu-qt:${PORTSDIR}/devel/libdbusmenu-qt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
@@ -40,7 +34,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		xauth:${PORTSDIR}/x11/xauth \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/aspell/en.multi:${PORTSDIR}/textproc/en-aspell
 
 CONFLICTS=	kdebase-runtime-4.5.[0-5]
 

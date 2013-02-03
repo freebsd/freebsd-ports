@@ -1,9 +1,12 @@
+bin/akonadi_archivemail_agent
 bin/akonadi_mailfilter_agent
 bin/akonadiconsole
 bin/akregator
 bin/akregatorstorageexporter
+bin/backupmail
 bin/blogilo
 bin/ical2vcal
+bin/importwizard
 bin/kabc2mutt
 bin/kabcclient
 bin/kaddressbook
@@ -28,6 +31,7 @@ bin/korgac
 bin/korganizer
 bin/ksendemail
 bin/ktimetracker
+bin/ktnef
 bin/kwatchgnupg
 etc/dbus-1/system.d/org.kde.kalarmrtcwake.conf
 lib/akonadi/contact/editorpageplugins/cryptopageplugin.so
@@ -168,6 +172,9 @@ lib/libksieveui.so.5.0.1
 lib/libmailcommon.so
 lib/libmailcommon.so.5
 lib/libmailcommon.so.5.0.1
+lib/libmailimporter.so
+lib/libmailimporter.so.5
+lib/libmailimporter.so.5.0.1
 lib/libmessagecomposer.so
 lib/libmessagecomposer.so.5
 lib/libmessagecomposer.so.5.0.1
@@ -187,6 +194,7 @@ lib/strigi/strigiea_ctg.so
 lib/strigi/strigiea_ics.so
 lib/strigi/strigiea_mail.so
 lib/strigi/strigiea_vcf.so
+share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/mailfilteragent.desktop
 share/applications/kde4/KMail2.desktop
 share/applications/kde4/KNode.desktop
@@ -195,6 +203,7 @@ share/applications/kde4/Kontact.desktop
 share/applications/kde4/akonadiconsole.desktop
 share/applications/kde4/akregator.desktop
 share/applications/kde4/blogilo.desktop
+share/applications/kde4/importwizard.desktop
 share/applications/kde4/kaddressbook.desktop
 share/applications/kde4/kalarm.desktop
 share/applications/kde4/kleopatra.desktop
@@ -206,6 +215,9 @@ share/applications/kde4/kontact-admin.desktop
 share/applications/kde4/korganizer-import.desktop
 share/applications/kde4/korganizer.desktop
 share/applications/kde4/ktimetracker.desktop
+share/applications/kde4/ktnef.desktop
+share/apps/akonadi_archivemail_agent/akonadi_archivemail_agent.notifyrc
+share/apps/akonadi_mailfilter_agent/akonadi_mailfilter_agent.notifyrc
 share/apps/akonadiconsole/akonadiconsoleui.rc
 share/apps/akregator/about/akregator.css
 share/apps/akregator/about/main.html
@@ -218,10 +230,12 @@ share/apps/akregator/pageviewer.rc
 share/apps/akregator/pics/kmmsgnew.png
 share/apps/akregator/pics/kmmsgunseen.png
 share/apps/akregator_sharemicroblog_plugin/akregator_sharemicroblog_plugin.rc
+share/apps/backupmail/backupmail.rc
 share/apps/blogilo/TextEditorInitialHtml
 share/apps/blogilo/blogiloui.rc
 share/apps/desktoptheme/default/widgets/stickynote.svgz
 share/apps/kaddressbook/kaddressbookui.rc
+share/apps/kaddressbook/printing/compact-style.png
 share/apps/kaddressbook/printing/detailed-style.png
 share/apps/kaddressbook/printing/mike-style.png
 share/apps/kaddressbook/printing/ringbinder-style.png
@@ -410,6 +424,7 @@ share/apps/ktimetracker/pics/watch-4.xpm
 share/apps/ktimetracker/pics/watch-5.xpm
 share/apps/ktimetracker/pics/watch-6.xpm
 share/apps/ktimetracker/pics/watch-7.xpm
+share/apps/ktnef/ktnefui.rc
 share/apps/kwatchgnupg/kwatchgnupgui.rc
 share/apps/kwatchgnupg/pics/kwatchgnupg.png
 share/apps/kwatchgnupg/pics/kwatchgnupg2.png
@@ -684,6 +699,9 @@ share/doc/HTML/en/ktimetracker/index.cache.bz2
 share/doc/HTML/en/ktimetracker/index.docbook
 share/doc/HTML/en/ktimetracker/ktimetracker.png
 share/doc/HTML/en/ktimetracker/systray.png
+share/doc/HTML/en/ktnef/common
+share/doc/HTML/en/ktnef/index.cache.bz2
+share/doc/HTML/en/ktnef/index.docbook
 share/doc/HTML/en/kwatchgnupg/common
 share/doc/HTML/en/kwatchgnupg/index.cache.bz2
 share/doc/HTML/en/kwatchgnupg/index.docbook
@@ -728,6 +746,8 @@ share/icons/hicolor/16x16/apps/ktimetracker.png
 share/icons/hicolor/22x22/actions/format-text-blockquote.png
 share/icons/hicolor/22x22/actions/format-text-code.png
 share/icons/hicolor/22x22/actions/insert-more-mark.png
+share/icons/hicolor/22x22/actions/ktnef_extract_all_to.png
+share/icons/hicolor/22x22/actions/ktnef_extract_to.png
 share/icons/hicolor/22x22/actions/remove-link.png
 share/icons/hicolor/22x22/actions/upload-media.png
 share/icons/hicolor/22x22/apps/akonadiconsole.png
@@ -782,6 +802,7 @@ share/icons/hicolor/48x48/apps/korg-journal.png
 share/icons/hicolor/48x48/apps/korg-todo.png
 share/icons/hicolor/48x48/apps/korganizer.png
 share/icons/hicolor/48x48/apps/ktimetracker.png
+share/icons/hicolor/48x48/apps/ktnef.png
 share/icons/hicolor/64x64/actions/upload-media.png
 share/icons/hicolor/64x64/apps/akonadiconsole.png
 share/icons/hicolor/64x64/apps/akregator.png
@@ -808,6 +829,10 @@ share/icons/hicolor/scalable/apps/kontact.svgz
 share/icons/hicolor/scalable/apps/korg-journal.svgz
 share/icons/hicolor/scalable/apps/korg-todo.svgz
 share/icons/hicolor/scalable/apps/korganizer.svgz
+share/icons/locolor/16x16/actions/ktnef_extract_all_to.png
+share/icons/locolor/16x16/actions/ktnef_extract_to.png
+share/icons/locolor/16x16/apps/ktnef.png
+share/icons/locolor/32x32/apps/ktnef.png
 share/icons/oxygen/128x128/apps/kalarm.png
 share/icons/oxygen/128x128/mimetypes/x-mail-distribution-list.png
 share/icons/oxygen/16x16/actions/edit-delete-page.png
@@ -876,7 +901,6 @@ share/kde4/services/kmail_config_composer.desktop
 share/kde4/services/kmail_config_identity.desktop
 share/kde4/services/kmail_config_misc.desktop
 share/kde4/services/kmail_config_security.desktop
-share/kde4/services/knewsservice.protocol
 share/kde4/services/knode_config_accounts.desktop
 share/kde4/services/knode_config_appearance.desktop
 share/kde4/services/knode_config_cleanup.desktop
@@ -943,9 +967,14 @@ share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @dirrm share/kde4/services/kontact
 @dirrmtry share/icons/oxygen/512x512/mimetypes
 @dirrmtry share/icons/oxygen/512x512
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16/actions
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
 @dirrm share/doc/HTML/en/kwatchgnupg
+@dirrm share/doc/HTML/en/ktnef
 @dirrm share/doc/HTML/en/ktimetracker
 @dirrm share/doc/HTML/en/korganizer
 @dirrm share/doc/HTML/en/kontact-admin
@@ -973,6 +1002,7 @@ share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @dirrm share/apps/libkleopatra
 @dirrm share/apps/kwatchgnupg/pics
 @dirrm share/apps/kwatchgnupg
+@dirrm share/apps/ktnef
 @dirrm share/apps/ktimetracker/pics
 @dirrm share/apps/ktimetracker/icons/oxygen/scalable/actions
 @dirrm share/apps/ktimetracker/icons/oxygen/scalable
@@ -1047,7 +1077,10 @@ share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @dirrm share/apps/kaddressbook/printing
 @dirrm share/apps/kaddressbook
 @dirrm share/apps/blogilo
+@dirrm share/apps/backupmail
 @dirrm share/apps/akregator_sharemicroblog_plugin
+@dirrm share/apps/akonadi_mailfilter_agent
+@dirrm share/apps/akonadi_archivemail_agent
 @dirrmtry share/apps/akregator/pics
 @dirrm share/apps/akregator/about
 @dirrmtry share/apps/akregator

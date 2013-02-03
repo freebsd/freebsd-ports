@@ -9,11 +9,9 @@ include/attica/buildservicejob.h
 include/attica/buildservicejoboutput.h
 include/attica/category.h
 include/attica/comment.h
-include/attica/commentparser.h
 include/attica/content.h
 include/attica/deletejob.h
 include/attica/distribution.h
-include/attica/distributionparser.h
 include/attica/downloaddescription.h
 include/attica/downloaditem.h
 include/attica/event.h
@@ -22,7 +20,6 @@ include/attica/forum.h
 include/attica/getjob.h
 include/attica/homepageentry.h
 include/attica/homepagetype.h
-include/attica/homepagetypeparser.h
 include/attica/icon.h
 include/attica/itemjob.h
 include/attica/knowledgebaseentry.h
@@ -46,6 +43,6 @@ include/attica/topic.h
 include/attica/version.h
 lib/libattica.so
 lib/libattica.so.0
-lib/libattica.so.0.2.9
+lib/libattica.so.0.4.1
 libdata/pkgconfig/libattica.pc
 @dirrmtry include/attica

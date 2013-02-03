@@ -1,13 +1,7 @@
-# New ports collection Makefile for:	kalgebra
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kalgebra
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -20,6 +14,7 @@ LIB_DEPENDS=	analitza.5:${PORTSDIR}/math/analitza
 
 CONFLICTS=	kdeedu-4.[0-6].*
 
+CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 USE_GL=		glu
 USE_KDE4=	kdehier kdelibs kdeprefix libkdeedu automoc4
 KDE4_BUILDENV=	yes

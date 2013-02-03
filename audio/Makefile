@@ -333,8 +333,11 @@
     SUBDIR += kexis
     SUBDIR += kid3
     SUBDIR += kid3-kde4
+    SUBDIR += kio-audiocd
     SUBDIR += kirocker
+    SUBDIR += kmix
     SUBDIR += kmp
+    SUBDIR += kscd
     SUBDIR += ksmp3play
     SUBDIR += kstreamripper
     SUBDIR += ladspa
@@ -367,6 +370,8 @@
     SUBDIR += libgme
     SUBDIR += libgpod
     SUBDIR += libid3tag
+    SUBDIR += libkcddb
+    SUBDIR += libkcompactdisc
     SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp

@@ -670,6 +670,7 @@
     SUBDIR += pachi
     SUBDIR += pacmanarena
     SUBDIR += paintown
+    SUBDIR += pairs
     SUBDIR += palomino
     SUBDIR += passage
     SUBDIR += patapizza-tetris

@@ -24,29 +24,15 @@ bin/ktrash
 bin/kuiserver
 bin/kwalletd
 bin/kwriteconfig
-bin/nepomuk-simpleresource-rcgen
-bin/nepomukbackup
 bin/nepomukcontroller
-bin/nepomukindexer
-bin/nepomukserver
-bin/nepomukservicestub
 bin/plasma-remote-helper
 bin/plasmapkg
 bin/solid-hardware
-env/nepomuk-env.sh
 etc/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 etc/xdg/menus/kde-information.menu
 include/knotify_export.h
 include/knotifyconfig.h
 include/knotifyplugin.h
-include/nepomuk/createresourcejob.h
-include/nepomuk/datamanagement.h
-include/nepomuk/describeresourcesjob.h
-include/nepomuk/nepomukdatamanagement_export.h
-include/nepomuk/resourcewatcher.h
-include/nepomuk/simpleresource.h
-include/nepomuk/simpleresourcegraph.h
-include/nepomuk/storeresourcesjob.h
 lib/attica_kde.so
 lib/kconf_update_bin/phonon_devicepreference_update
 lib/kconf_update_bin/phonon_deviceuids_update
@@ -59,56 +45,76 @@ lib/kde4/htmlthumbnail.so
 lib/kde4/imagethumbnail.so
 lib/kde4/imports/org/kde/draganddrop/libdraganddropplugin.so
 lib/kde4/imports/org/kde/draganddrop/qmldir
-lib/kde4/imports/org/kde/plasma/components/AppManager.js
+lib/kde4/imports/org/kde/locale/liblocalebindingsplugin.so
+lib/kde4/imports/org/kde/locale/qmldir
 lib/kde4/imports/org/kde/plasma/components/BusyIndicator.qml
 lib/kde4/imports/org/kde/plasma/components/Button.qml
 lib/kde4/imports/org/kde/plasma/components/ButtonColumn.qml
 lib/kde4/imports/org/kde/plasma/components/ButtonGroup.js
 lib/kde4/imports/org/kde/plasma/components/ButtonRow.qml
-lib/kde4/imports/org/kde/plasma/components/ButtonShadow.qml
 lib/kde4/imports/org/kde/plasma/components/CheckBox.qml
 lib/kde4/imports/org/kde/plasma/components/CommonDialog.qml
+lib/kde4/imports/org/kde/plasma/components/ContextMenu.qml
 lib/kde4/imports/org/kde/plasma/components/Dialog.qml
-lib/kde4/imports/org/kde/plasma/components/DualStateButton.qml
 lib/kde4/imports/org/kde/plasma/components/Highlight.qml
-lib/kde4/imports/org/kde/plasma/components/IconLoader.qml
 lib/kde4/imports/org/kde/plasma/components/Label.qml
 lib/kde4/imports/org/kde/plasma/components/ListItem.qml
 lib/kde4/imports/org/kde/plasma/components/Page.qml
-lib/kde4/imports/org/kde/plasma/components/PageStack.js
 lib/kde4/imports/org/kde/plasma/components/PageStack.qml
 lib/kde4/imports/org/kde/plasma/components/ProgressBar.qml
 lib/kde4/imports/org/kde/plasma/components/RadioButton.qml
-lib/kde4/imports/org/kde/plasma/components/RoundShadow.qml
 lib/kde4/imports/org/kde/plasma/components/ScrollBar.qml
-lib/kde4/imports/org/kde/plasma/components/ScrollBarDelegate.qml
-lib/kde4/imports/org/kde/plasma/components/ScrollDecoratorDelegate.qml
-lib/kde4/imports/org/kde/plasma/components/SectionScroller.js
 lib/kde4/imports/org/kde/plasma/components/SectionScroller.qml
 lib/kde4/imports/org/kde/plasma/components/SelectionDialog.qml
+lib/kde4/imports/org/kde/plasma/components/Sheet.qml
 lib/kde4/imports/org/kde/plasma/components/Slider.qml
 lib/kde4/imports/org/kde/plasma/components/Switch.qml
 lib/kde4/imports/org/kde/plasma/components/TabBar.qml
-lib/kde4/imports/org/kde/plasma/components/TabBarLayout.qml
 lib/kde4/imports/org/kde/plasma/components/TabButton.qml
-lib/kde4/imports/org/kde/plasma/components/TabGroup.js
 lib/kde4/imports/org/kde/plasma/components/TabGroup.qml
 lib/kde4/imports/org/kde/plasma/components/TextArea.qml
 lib/kde4/imports/org/kde/plasma/components/TextField.qml
-lib/kde4/imports/org/kde/plasma/components/TextFieldFocus.qml
 lib/kde4/imports/org/kde/plasma/components/ToolBar.qml
 lib/kde4/imports/org/kde/plasma/components/ToolBarLayout.qml
 lib/kde4/imports/org/kde/plasma/components/ToolButton.qml
 lib/kde4/imports/org/kde/plasma/components/libplasmacomponentsplugin.so
+lib/kde4/imports/org/kde/plasma/components/private/AppManager.js
+lib/kde4/imports/org/kde/plasma/components/private/ButtonShadow.qml
+lib/kde4/imports/org/kde/plasma/components/private/Config.js
+lib/kde4/imports/org/kde/plasma/components/private/DualStateButton.qml
+lib/kde4/imports/org/kde/plasma/components/private/IconLoader.qml
+lib/kde4/imports/org/kde/plasma/components/private/PageStack.js
+lib/kde4/imports/org/kde/plasma/components/private/RoundShadow.qml
+lib/kde4/imports/org/kde/plasma/components/private/ScrollBarDelegate.qml
+lib/kde4/imports/org/kde/plasma/components/private/ScrollDecoratorDelegate.qml
+lib/kde4/imports/org/kde/plasma/components/private/SectionScroller.js
+lib/kde4/imports/org/kde/plasma/components/private/TabBarLayout.qml
+lib/kde4/imports/org/kde/plasma/components/private/TabGroup.js
+lib/kde4/imports/org/kde/plasma/components/private/TextFieldFocus.qml
 lib/kde4/imports/org/kde/plasma/components/qmldir
 lib/kde4/imports/org/kde/plasma/core/libcorebindingsplugin.so
 lib/kde4/imports/org/kde/plasma/core/qmldir
+lib/kde4/imports/org/kde/plasma/extras/App.qml
+lib/kde4/imports/org/kde/plasma/extras/Heading.qml
+lib/kde4/imports/org/kde/plasma/extras/Paragraph.qml
+lib/kde4/imports/org/kde/plasma/extras/ScrollArea.qml
+lib/kde4/imports/org/kde/plasma/extras/Title.qml
+lib/kde4/imports/org/kde/plasma/extras/animations/ActivateAnimation.qml
+lib/kde4/imports/org/kde/plasma/extras/animations/Animations.js
+lib/kde4/imports/org/kde/plasma/extras/animations/AppearAnimation.qml
+lib/kde4/imports/org/kde/plasma/extras/animations/DisappearAnimation.qml
+lib/kde4/imports/org/kde/plasma/extras/animations/PressedAnimation.qml
+lib/kde4/imports/org/kde/plasma/extras/animations/ReleasedAnimation.qml
+lib/kde4/imports/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
+lib/kde4/imports/org/kde/plasma/extras/qmldir
 lib/kde4/imports/org/kde/plasma/graphicslayouts/libgraphicslayoutsbindingsplugin.so
 lib/kde4/imports/org/kde/plasma/graphicslayouts/qmldir
 lib/kde4/imports/org/kde/plasma/graphicswidgets/libgraphicswidgetsbindingsplugin.so
 lib/kde4/imports/org/kde/plasma/graphicswidgets/qmldir
 lib/kde4/imports/org/kde/qtextracomponents/libqtextracomponentsplugin.so
 lib/kde4/imports/org/kde/qtextracomponents/qmldir
+lib/kde4/imports/org/kde/runnermodel/librunnermodelplugin.so
+lib/kde4/imports/org/kde/runnermodel/qmldir
 lib/kde4/jpegthumbnail.so
 lib/kde4/kcm_attica.so
 lib/kde4/kcm_cgi.so
@@ -123,7 +129,7 @@ lib/kde4/kcm_knotify.so
 lib/kde4/kcm_locale.so
 lib/kde4/kcm_nepomuk.so
 lib/kde4/kcm_phonon.so
-lib/kde4/kcm_phononxine.so
+%%XINE%%lib/kde4/kcm_phononxine.so
 lib/kde4/kcm_trash.so
 lib/kde4/kcmspellchecking.so
 lib/kde4/kded_desktopnotifier.so
@@ -134,6 +140,7 @@ lib/kde4/kded_nepomuksearchmodule.so
 lib/kde4/kded_networkstatus.so
 lib/kde4/kded_networkwatcher.so
 lib/kde4/kded_phononserver.so
+lib/kde4/kded_recentdocumentsnotifier.so
 lib/kde4/kded_remotedirnotify.so
 lib/kde4/kded_solidautoeject.so
 lib/kde4/kded_soliduiserver.so
@@ -153,6 +160,7 @@ lib/kde4/kio_nepomuk.so
 lib/kde4/kio_nepomuksearch.so
 lib/kde4/kio_network.so
 lib/kde4/kio_nfs.so
+lib/kde4/kio_recentdocuments.so
 lib/kde4/kio_remote.so
 lib/kde4/kio_settings.so
 lib/kde4/kio_sftp.so
@@ -180,11 +188,6 @@ lib/kde4/libkmanpart.so
 lib/kde4/librenaudioplugin.so
 lib/kde4/librenimageplugin.so
 lib/kde4/localdomainurifilter.so
-lib/kde4/nepomukbackupsync.so
-lib/kde4/nepomukfileindexer.so
-lib/kde4/nepomukfilewatch.so
-lib/kde4/nepomukqueryservice.so
-lib/kde4/nepomukstorage.so
 lib/kde4/plasma-kpart.so
 lib/kde4/plasma_appletscript_declarative.so
 lib/kde4/plasma_appletscript_simple_javascript.so
@@ -192,43 +195,35 @@ lib/kde4/plasma_containment_newspaper.so
 lib/kde4/plasma_dataenginescript_javascript.so
 lib/kde4/plasma_packagestructure_javascriptaddon.so
 lib/kde4/plasma_runnerscript_javascript.so
-lib/kde4/platformimports/touch/org/kde/plasma/components/AppManager.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/BusyIndicator.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Button.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ButtonColumn.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ButtonGroup.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/ButtonRow.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/ButtonShadow.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/CheckBox.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/CommonDialog.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Dialog.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/DualStateButton.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/EditBubble.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/EditBubble.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Highlight.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/IconLoader.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Label.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ListItem.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Menu.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/MenuItem.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Page.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/PageStack.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/PageStack.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ProgressBar.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/QueryDialog.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/RadioButton.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/RoundShadow.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollBar.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollBarDelegate.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollDecorator.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollDecoratorDelegate.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/SectionScroller.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/SectionScroller.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/SelectionDialog.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/Sheet.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Slider.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Switch.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TabBar.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/TabBarLayout.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TabButton.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/TabGroup.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/TabGroup.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TextArea.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TextField.qml
@@ -238,6 +233,19 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/ToolBarLayout.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ToolButton.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Window.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/libplasmacomponentsplugin.so
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/AppManager.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/ButtonShadow.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/Config.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/DualStateButton.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/IconLoader.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/PageStack.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/RoundShadow.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/ScrollBarDelegate.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/ScrollDecoratorDelegate.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/SectionScroller.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/TabBarLayout.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/TabGroup.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/TextFieldFocus.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/qmldir
 lib/kde4/plugins/phonon_platform/kde.so
 lib/kde4/svgthumbnail.so
@@ -249,7 +257,6 @@ lib/libkdeinit4_kglobalaccel.so
 lib/libkdeinit4_khelpcenter.so
 lib/libkdeinit4_kuiserver.so
 lib/libkdeinit4_kwalletd.so
-lib/libkdeinit4_nepomukserver.so
 lib/libknotifyplugin.so
 lib/libkwalletbackend.so
 lib/libkwalletbackend.so.5
@@ -257,16 +264,8 @@ lib/libkwalletbackend.so.5.0.1
 lib/libmolletnetwork.so
 lib/libmolletnetwork.so.5
 lib/libmolletnetwork.so.5.0.1
-lib/libnepomukcommon.so
-lib/libnepomukdatamanagement.so
-lib/libnepomukdatamanagement.so.5
-lib/libnepomukdatamanagement.so.5.0.1
-lib/libnepomuksync.so
-lib/libnepomuksync.so.5
-lib/libnepomuksync.so.5.0.1
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
-share/applications/kde4/nepomukbackup.desktop
 share/applications/kde4/nepomukcontroller.desktop
 share/apps/cmake/modules/FindCLucene.cmake
 share/apps/cmake/modules/FindSLP.cmake
@@ -296,6 +295,7 @@ share/apps/desktoptheme/default/icons/notification.svgz
 share/apps/desktoptheme/default/icons/preferences.svgz
 share/apps/desktoptheme/default/icons/printer.svgz
 share/apps/desktoptheme/default/icons/quassel.svgz
+share/apps/desktoptheme/default/icons/slc.svgz
 share/apps/desktoptheme/default/icons/wallet.svgz
 share/apps/desktoptheme/default/metadata.desktop
 share/apps/desktoptheme/default/opaque/dialogs/background.svgz
@@ -384,6 +384,7 @@ share/apps/desktoptheme/oxygen/widgets/frame.svgz
 share/apps/desktoptheme/oxygen/widgets/glowbar.svgz
 share/apps/desktoptheme/oxygen/widgets/line.svgz
 share/apps/desktoptheme/oxygen/widgets/lineedit.svgz
+share/apps/desktoptheme/oxygen/widgets/media-delegate.svgz
 share/apps/desktoptheme/oxygen/widgets/monitor.svgz
 share/apps/desktoptheme/oxygen/widgets/pager.svgz
 share/apps/desktoptheme/oxygen/widgets/panel-background.svgz
@@ -405,7 +406,6 @@ share/apps/drkonqi/debuggers/internal/gdbrc
 share/apps/drkonqi/debuggers/internal/kdbgwinrc
 share/apps/drkonqi/mappings
 share/apps/drkonqi/pics/crash.png
-share/apps/fileindexerservice/nepomukfileindexer.notifyrc
 share/apps/hardwarenotifications/hardwarenotifications.notifyrc
 share/apps/kcm_componentchooser/kcm_browser.desktop
 share/apps/kcm_componentchooser/kcm_filemanager.desktop
@@ -416,7 +416,6 @@ share/apps/kcm_phonon/listview-background.png
 share/apps/kcmlocale/pics/background.png
 share/apps/kconf_update/devicepreference.upd
 share/apps/kconf_update/kuriikwsfilter.upd
-share/apps/kconf_update/nepomukstrigiservice-migrate.upd
 share/apps/kde/kde.notifyrc
 share/apps/kglobalaccel/kglobalaccel.notifyrc
 share/apps/khelpcenter/glossary.html.in
@@ -435,6 +434,7 @@ share/apps/khelpcenter/plugins/Manpages/man7.desktop
 share/apps/khelpcenter/plugins/Manpages/man8.desktop
 share/apps/khelpcenter/plugins/Scrollkeeper/.directory
 share/apps/khelpcenter/plugins/Scrollkeeper/scrollkeeper.desktop
+share/apps/khelpcenter/plugins/fundamentals.desktop
 share/apps/khelpcenter/plugins/info.desktop
 share/apps/khelpcenter/plugins/kcontrolmodules.desktop
 share/apps/khelpcenter/plugins/kicmodules.desktop
@@ -463,13 +463,10 @@ share/apps/ksmserver/windowmanagers/metacity.desktop
 share/apps/ksmserver/windowmanagers/openbox.desktop
 share/apps/kwalletd/kwalletd.notifyrc
 share/apps/libphonon/hardwaredatabase
-share/apps/nepomukfilewatch/nepomukfilewatch.notifyrc
-share/apps/nepomukstorage/nepomukstorage.notifyrc
 share/apps/phonon/phonon.notifyrc
 share/apps/remoteview/network.desktop
 share/apps/remoteview/smb-network.desktop
 share/autostart/nepomukcontroller.desktop
-share/autostart/nepomukserver.desktop
 share/config.kcfg/jpegcreatorsettings.kcfg
 share/config.kcfg/khelpcenter.kcfg
 share/config/emoticons.knsrc
@@ -478,21 +475,7 @@ share/config/khotnewstuff.knsrc
 share/config/khotnewstuff_upload.knsrc
 share/config/kshorturifilterrc
 share/dbus-1/interfaces/org.kde.KTimeZoned.xml
-share/dbus-1/interfaces/org.kde.NepomukServer.xml
 share/dbus-1/interfaces/org.kde.khelpcenter.kcmhelpcenter.xml
-share/dbus-1/interfaces/org.kde.nepomuk.BackupSync.xml
-share/dbus-1/interfaces/org.kde.nepomuk.DataManagement.xml
-share/dbus-1/interfaces/org.kde.nepomuk.FileIndexer.xml
-share/dbus-1/interfaces/org.kde.nepomuk.OntologyManager.xml
-share/dbus-1/interfaces/org.kde.nepomuk.Query.xml
-share/dbus-1/interfaces/org.kde.nepomuk.QueryService.xml
-share/dbus-1/interfaces/org.kde.nepomuk.ResourceWatcher.xml
-share/dbus-1/interfaces/org.kde.nepomuk.ResourceWatcherConnection.xml
-share/dbus-1/interfaces/org.kde.nepomuk.ServiceControl.xml
-share/dbus-1/interfaces/org.kde.nepomuk.ServiceManager.xml
-share/dbus-1/interfaces/org.kde.nepomuk.Storage.xml
-share/dbus-1/interfaces/org.kde.nepomuk.services.nepomukbackupsync.backupmanager.xml
-share/dbus-1/interfaces/org.kde.nepomuk.services.nepomukbackupsync.syncmanager.xml
 share/dbus-1/interfaces/org.kde.network.kioslavenotifier.xml
 share/dbus-1/services/org.kde.knotify.service
 share/dbus-1/services/org.kde.kuiserver.service
@@ -536,6 +519,33 @@ share/desktop-directories/kde-utilities-peripherals.directory
 share/desktop-directories/kde-utilities-pim.directory
 share/desktop-directories/kde-utilities-xutils.directory
 share/desktop-directories/kde-utilities.directory
+share/doc/HTML/en/fundamentals/colors.png
+share/doc/HTML/en/fundamentals/common
+share/doc/HTML/en/fundamentals/config.docbook
+share/doc/HTML/en/fundamentals/find-find-inline.png
+share/doc/HTML/en/fundamentals/find-replace-inline.png
+share/doc/HTML/en/fundamentals/files-locationbar-breadcrumb.png
+share/doc/HTML/en/fundamentals/files-locationbar-context-menu.png
+share/doc/HTML/en/fundamentals/files-locationbar-editable.png
+share/doc/HTML/en/fundamentals/files-locationbar-places-icon.png
+share/doc/HTML/en/fundamentals/files-open.png
+share/doc/HTML/en/fundamentals/files-save.png
+share/doc/HTML/en/fundamentals/find-find.png
+share/doc/HTML/en/fundamentals/find-found.png
+share/doc/HTML/en/fundamentals/find-replace.png
+share/doc/HTML/en/fundamentals/fonts.png
+share/doc/HTML/en/fundamentals/index.cache.bz2
+share/doc/HTML/en/fundamentals/index.docbook
+share/doc/HTML/en/fundamentals/install.docbook
+share/doc/HTML/en/fundamentals/menus.png
+share/doc/HTML/en/fundamentals/shortcuts-schemes.png
+share/doc/HTML/en/fundamentals/shortcuts-search.png
+share/doc/HTML/en/fundamentals/shortcuts-set.png
+share/doc/HTML/en/fundamentals/spellcheck-check.png
+share/doc/HTML/en/fundamentals/tasks.docbook
+share/doc/HTML/en/fundamentals/toolbars-configure.png
+share/doc/HTML/en/fundamentals/toolbars-toolbar.png
+share/doc/HTML/en/fundamentals/ui.docbook
 share/doc/HTML/en/kcontrol/attica/common
 share/doc/HTML/en/kcontrol/attica/index.cache.bz2
 share/doc/HTML/en/kcontrol/attica/index.docbook
@@ -815,7 +825,7 @@ share/kde4/services/kcm_attica.desktop
 share/kde4/services/kcm_kdnssd.desktop
 share/kde4/services/kcm_nepomuk.desktop
 share/kde4/services/kcm_phonon.desktop
-share/kde4/services/kcm_phononxine.desktop
+%%XINE%%share/kde4/services/kcm_phononxine.desktop
 share/kde4/services/kcmcgi.desktop
 share/kde4/services/kcmkded.desktop
 share/kde4/services/kcmnotify.desktop
@@ -828,6 +838,7 @@ share/kde4/services/kded/nepomuksearchmodule.desktop
 share/kde4/services/kded/networkstatus.desktop
 share/kde4/services/kded/networkwatcher.desktop
 share/kde4/services/kded/phononserver.desktop
+share/kde4/services/kded/recentdocumentsnotifier.desktop
 share/kde4/services/kded/remotedirnotify.desktop
 share/kde4/services/kded/solidautoeject.desktop
 share/kde4/services/kded/soliduiserver.desktop
@@ -845,16 +856,7 @@ share/kde4/services/localdomainurifilter.desktop
 share/kde4/services/lzma.protocol
 share/kde4/services/man.protocol
 share/kde4/services/nepomuk.protocol
-share/kde4/services/nepomukactivitiesservice.desktop
-share/kde4/services/nepomukbackupsync.desktop
-share/kde4/services/nepomukfileindexer.desktop
-share/kde4/services/nepomukfilewatch.desktop
-share/kde4/services/nepomukontologyloader.desktop
-share/kde4/services/nepomukqueryservice.desktop
-share/kde4/services/nepomukremovablestorageservice.desktop
 share/kde4/services/nepomuksearch.protocol
-share/kde4/services/nepomukstorage.desktop
-share/kde4/services/nepomukstrigiservice.desktop
 share/kde4/services/network.protocol
 share/kde4/services/nfs.protocol
 share/kde4/services/plasma-containment-newspaper.desktop
@@ -865,6 +867,7 @@ share/kde4/services/plasma-scriptengine-applet-simple-javascript.desktop
 share/kde4/services/plasma-scriptengine-dataengine-javascript.desktop
 share/kde4/services/plasma-scriptengine-runner-javascript.desktop
 share/kde4/services/programs.protocol
+share/kde4/services/recentdocuments.protocol
 share/kde4/services/remote.protocol
 share/kde4/services/renaudiodlg.desktop
 share/kde4/services/renimagedlg.desktop
@@ -1008,7 +1011,6 @@ share/kde4/services/windowsimagethumbnail.desktop
 share/kde4/services/xz.protocol
 share/kde4/services/zip.protocol
 share/kde4/servicetypes/knotifynotifymethod.desktop
-share/kde4/servicetypes/nepomukservice.desktop
 share/kde4/servicetypes/phononbackend.desktop
 share/kde4/servicetypes/plasma-javascriptaddon.desktop
 share/kde4/servicetypes/searchprovider.desktop
@@ -1816,12 +1818,6 @@ share/mime/inode/vnd.kde.service.webdavs.xml
 share/mime/inode/vnd.kde.service.workstation.xml
 share/mime/inode/vnd.kde.service.xmpp-server.xml
 share/mime/packages/network.xml
-share/ontology/kde/kext.ontology
-share/ontology/kde/kext.trig
-share/ontology/kde/kuvo.ontology
-share/ontology/kde/kuvo.trig
-share/ontology/kde/nrio.ontology
-share/ontology/kde/nrio.trig
 share/polkit-1/actions/org.kde.kcontrol.kcmremotewidgets.policy
 share/sounds/KDE-Im-Cant-Connect.ogg
 share/sounds/KDE-Im-Connection-Lost.ogg
@@ -1872,8 +1868,6 @@ share/sounds/KDE-Window-Move-Stop.ogg
 share/sounds/KDE-Window-Move.ogg
 share/sounds/KDE-Window-Shade-Down.ogg
 share/sounds/KDE-Window-Shade-Up.ogg
-@dirrm share/ontology/kde
-@dirrmtry share/ontology
 @dirrm share/locale/l10n/zw
 @dirrm share/locale/l10n/zm
 @dirrm share/locale/l10n/za
@@ -2176,10 +2170,9 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/doc/HTML/en/kcontrol/cache
 @dirrm share/doc/HTML/en/kcontrol/bookmarks
 @dirrm share/doc/HTML/en/kcontrol/attica
+@dirrm share/doc/HTML/en/fundamentals
 @dirrmtry share/desktop-directories
 @dirrm share/apps/phonon
-@dirrm share/apps/nepomukstorage
-@dirrm share/apps/nepomukfilewatch
 @dirrm share/apps/libphonon
 @dirrm share/apps/kwalletd
 @dirrm share/apps/ksmserver/windowmanagers
@@ -2204,7 +2197,6 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/apps/kcmlocale
 @dirrm share/apps/kcm_phonon
 @dirrm share/apps/hardwarenotifications
-@dirrm share/apps/fileindexerservice
 @dirrm share/apps/drkonqi/pics
 @dirrm share/apps/drkonqi/debuggers/internal
 @dirrm share/apps/drkonqi/debuggers/external
@@ -2227,22 +2219,27 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/apps/desktoptheme/appdashboard/widgets
 @dirrm share/apps/desktoptheme/appdashboard
 @dirrm lib/kde4/plugins/phonon_platform
+@dirrm lib/kde4/platformimports/touch/org/kde/plasma/components/private
 @dirrm lib/kde4/platformimports/touch/org/kde/plasma/components
 @dirrm lib/kde4/platformimports/touch/org/kde/plasma
 @dirrm lib/kde4/platformimports/touch/org/kde
 @dirrm lib/kde4/platformimports/touch/org
 @dirrm lib/kde4/platformimports/touch
 @dirrm lib/kde4/platformimports
+@dirrm lib/kde4/imports/org/kde/runnermodel
 @dirrm lib/kde4/imports/org/kde/qtextracomponents
 @dirrm lib/kde4/imports/org/kde/plasma/graphicswidgets
 @dirrm lib/kde4/imports/org/kde/plasma/graphicslayouts
+@dirrm lib/kde4/imports/org/kde/plasma/extras/animations
+@dirrm lib/kde4/imports/org/kde/plasma/extras
 @dirrm lib/kde4/imports/org/kde/plasma/core
+@dirrm lib/kde4/imports/org/kde/plasma/components/private
 @dirrm lib/kde4/imports/org/kde/plasma/components
 @dirrm lib/kde4/imports/org/kde/plasma
+@dirrm lib/kde4/imports/org/kde/locale
 @dirrm lib/kde4/imports/org/kde/draganddrop
 @dirrmtry lib/kde4/imports/org/kde
 @dirrmtry lib/kde4/imports/org
 @dirrmtry lib/kde4/imports
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
-@dirrmtry env

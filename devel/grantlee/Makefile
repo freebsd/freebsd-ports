@@ -1,12 +1,8 @@
-# New ports collection makefile for:	grantlee
-# Date created:				2010-10-03
-# Whom:					Dima Panov <fluffy@FreeBSD.org>
-#
+# Created by: Dima Panov <fluffy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	grantlee
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.${PORTNAME}.org/ \
 		http://www.loegria.net/${PORTNAME}/
@@ -15,21 +11,20 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	String template engine for Qt4
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+USE_QT4=	corelib gui qtestlib_build script \
+		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-USE_LDCONFIG=	yes
-USE_QT4=	corelib gui script \
-		qmake_build moc_build rcc_build uic_build qtestlib_build
-CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=FALSE
 CMAKE_OUTSOURCE=	yes
+CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=FALSE
 MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
-OPTIONS=	DOCS "Install API documentation" off
+OPTIONS_DEFINE=	DOXYGEN
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dot:${PORTSDIR}/graphics/graphviz
 PORTDOCS=	*
@@ -40,4 +35,4 @@ post-install:
 	cd ${BUILD_WRKSRC}/apidox && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

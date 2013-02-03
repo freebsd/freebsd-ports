@@ -55,6 +55,7 @@
     SUBDIR += komclean
     SUBDIR += konverse
     SUBDIR += kopete
+    SUBDIR += kopete-kde4
     SUBDIR += kpopup
     SUBDIR += libjingle
     SUBDIR += libjreen

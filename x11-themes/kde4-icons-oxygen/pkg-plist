@@ -128,6 +128,7 @@ share/icons/oxygen/128x128/apps/kig.png
 share/icons/oxygen/128x128/apps/kivio.png
 share/icons/oxygen/128x128/apps/kjournal.png
 share/icons/oxygen/128x128/apps/klipper.png
+share/icons/oxygen/128x128/apps/kmag.png
 share/icons/oxygen/128x128/apps/kmail2.png
 share/icons/oxygen/128x128/apps/kmplayer.png
 share/icons/oxygen/128x128/apps/knewsticker.png
@@ -163,6 +164,7 @@ share/icons/oxygen/128x128/apps/office-calendar.png
 share/icons/oxygen/128x128/apps/okteta.png
 share/icons/oxygen/128x128/apps/oxygen.png
 share/icons/oxygen/128x128/apps/partitionmanager.png
+share/icons/oxygen/128x128/apps/picmi.png
 share/icons/oxygen/128x128/apps/planner.png
 share/icons/oxygen/128x128/apps/plasma.png
 share/icons/oxygen/128x128/apps/plasmagik.png
@@ -305,6 +307,8 @@ share/icons/oxygen/128x128/devices/printer-laser.png
 share/icons/oxygen/128x128/devices/printer.png
 share/icons/oxygen/128x128/devices/scanner.png
 share/icons/oxygen/128x128/devices/secure-card.png
+share/icons/oxygen/128x128/devices/smartphone.png
+share/icons/oxygen/128x128/devices/tablet.png
 share/icons/oxygen/128x128/devices/video-display.png
 share/icons/oxygen/128x128/devices/video-projector.png
 share/icons/oxygen/128x128/devices/video-television.png
@@ -581,6 +585,7 @@ share/icons/oxygen/128x128/places/bookmarks.png
 share/icons/oxygen/128x128/places/certificate-server.png
 share/icons/oxygen/128x128/places/document-multiple.png
 share/icons/oxygen/128x128/places/favorites.png
+share/icons/oxygen/128x128/places/folder-activities.png
 share/icons/oxygen/128x128/places/folder-black.png
 share/icons/oxygen/128x128/places/folder-blue.png
 share/icons/oxygen/128x128/places/folder-bookmark.png
@@ -1306,6 +1311,7 @@ share/icons/oxygen/16x16/apps/kig.png
 share/icons/oxygen/16x16/apps/kivio.png
 share/icons/oxygen/16x16/apps/kjournal.png
 share/icons/oxygen/16x16/apps/klipper.png
+share/icons/oxygen/16x16/apps/kmag.png
 share/icons/oxygen/16x16/apps/kmplayer.png
 share/icons/oxygen/16x16/apps/knewsticker.png
 share/icons/oxygen/16x16/apps/knotes.png
@@ -1338,6 +1344,7 @@ share/icons/oxygen/16x16/apps/office-calendar.png
 share/icons/oxygen/16x16/apps/okteta.png
 share/icons/oxygen/16x16/apps/oxygen.png
 share/icons/oxygen/16x16/apps/partitionmanager.png
+share/icons/oxygen/16x16/apps/picmi.png
 share/icons/oxygen/16x16/apps/plasma.png
 share/icons/oxygen/16x16/apps/plasmagik.png
 share/icons/oxygen/16x16/apps/preferences-contact-list.png
@@ -1480,6 +1487,8 @@ share/icons/oxygen/16x16/devices/phone.png
 share/icons/oxygen/16x16/devices/printer.png
 share/icons/oxygen/16x16/devices/scanner.png
 share/icons/oxygen/16x16/devices/secure-card.png
+share/icons/oxygen/16x16/devices/smartphone.png
+share/icons/oxygen/16x16/devices/tablet.png
 share/icons/oxygen/16x16/devices/video-display.png
 share/icons/oxygen/16x16/devices/video-projector.png
 share/icons/oxygen/16x16/devices/video-television.png
@@ -1777,6 +1786,7 @@ share/icons/oxygen/16x16/places/bookmarks.png
 share/icons/oxygen/16x16/places/certificate-server.png
 share/icons/oxygen/16x16/places/document-multiple.png
 share/icons/oxygen/16x16/places/favorites.png
+share/icons/oxygen/16x16/places/folder-activities.png
 share/icons/oxygen/16x16/places/folder-black.png
 share/icons/oxygen/16x16/places/folder-blue.png
 share/icons/oxygen/16x16/places/folder-bookmark.png
@@ -2568,6 +2578,7 @@ share/icons/oxygen/22x22/apps/kgpg.png
 share/icons/oxygen/22x22/apps/kig.png
 share/icons/oxygen/22x22/apps/kjournal.png
 share/icons/oxygen/22x22/apps/klipper.png
+share/icons/oxygen/22x22/apps/kmag.png
 share/icons/oxygen/22x22/apps/kmplayer.png
 share/icons/oxygen/22x22/apps/knotes.png
 share/icons/oxygen/22x22/apps/kolf.png
@@ -2599,6 +2610,7 @@ share/icons/oxygen/22x22/apps/office-calendar.png
 share/icons/oxygen/22x22/apps/okteta.png
 share/icons/oxygen/22x22/apps/oxygen.png
 share/icons/oxygen/22x22/apps/partitionmanager.png
+share/icons/oxygen/22x22/apps/picmi.png
 share/icons/oxygen/22x22/apps/plasma.png
 share/icons/oxygen/22x22/apps/plasmagik.png
 share/icons/oxygen/22x22/apps/preferences-contact-list.png
@@ -2746,6 +2758,8 @@ share/icons/oxygen/22x22/devices/phone.png
 share/icons/oxygen/22x22/devices/printer.png
 share/icons/oxygen/22x22/devices/scanner.png
 share/icons/oxygen/22x22/devices/secure-card.png
+share/icons/oxygen/22x22/devices/smartphone.png
+share/icons/oxygen/22x22/devices/tablet.png
 share/icons/oxygen/22x22/devices/video-display.png
 share/icons/oxygen/22x22/devices/video-projector.png
 share/icons/oxygen/22x22/devices/video-television.png
@@ -3077,6 +3091,7 @@ share/icons/oxygen/22x22/places/bookmarks.png
 share/icons/oxygen/22x22/places/certificate-server.png
 share/icons/oxygen/22x22/places/document-multiple.png
 share/icons/oxygen/22x22/places/favorites.png
+share/icons/oxygen/22x22/places/folder-activities.png
 share/icons/oxygen/22x22/places/folder-black.png
 share/icons/oxygen/22x22/places/folder-blue.png
 share/icons/oxygen/22x22/places/folder-bookmark.png
@@ -3244,6 +3259,7 @@ share/icons/oxygen/256x256/apps/kformula.png
 share/icons/oxygen/256x256/apps/kgpg.png
 share/icons/oxygen/256x256/apps/kig.png
 share/icons/oxygen/256x256/apps/kivio.png
+share/icons/oxygen/256x256/apps/kmag.png
 share/icons/oxygen/256x256/apps/kmail2.png
 share/icons/oxygen/256x256/apps/konqueror.png
 share/icons/oxygen/256x256/apps/kontact-import-wizard.png
@@ -3259,6 +3275,7 @@ share/icons/oxygen/256x256/apps/mameexecutor.png
 share/icons/oxygen/256x256/apps/multimedia-volume-control.png
 share/icons/oxygen/256x256/apps/oxygen.png
 share/icons/oxygen/256x256/apps/partitionmanager.png
+share/icons/oxygen/256x256/apps/picmi.png
 share/icons/oxygen/256x256/apps/planner.png
 share/icons/oxygen/256x256/apps/preferences-desktop-locale.png
 share/icons/oxygen/256x256/apps/preferences-desktop-screensaver.png
@@ -3322,6 +3339,8 @@ share/icons/oxygen/256x256/devices/network-wireless-disconnected.png
 share/icons/oxygen/256x256/devices/network-wireless.png
 share/icons/oxygen/256x256/devices/printer-laser.png
 share/icons/oxygen/256x256/devices/secure-card.png
+share/icons/oxygen/256x256/devices/smartphone.png
+share/icons/oxygen/256x256/devices/tablet.png
 share/icons/oxygen/256x256/devices/video-display.png
 share/icons/oxygen/256x256/mimetypes/application-epub+zip.png
 share/icons/oxygen/256x256/mimetypes/application-illustrator.png
@@ -3575,6 +3594,7 @@ share/icons/oxygen/256x256/mimetypes/x-office-document.png
 share/icons/oxygen/256x256/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/256x256/places/certificate-server.png
 share/icons/oxygen/256x256/places/favorites.png
+share/icons/oxygen/256x256/places/folder-activities.png
 share/icons/oxygen/256x256/places/folder-black.png
 share/icons/oxygen/256x256/places/folder-blue.png
 share/icons/oxygen/256x256/places/folder-bookmark.png
@@ -4271,6 +4291,7 @@ share/icons/oxygen/32x32/apps/kig.png
 share/icons/oxygen/32x32/apps/kivio.png
 share/icons/oxygen/32x32/apps/kjournal.png
 share/icons/oxygen/32x32/apps/klipper.png
+share/icons/oxygen/32x32/apps/kmag.png
 share/icons/oxygen/32x32/apps/kmplayer.png
 share/icons/oxygen/32x32/apps/knewsticker.png
 share/icons/oxygen/32x32/apps/knotes.png
@@ -4303,6 +4324,7 @@ share/icons/oxygen/32x32/apps/office-calendar.png
 share/icons/oxygen/32x32/apps/okteta.png
 share/icons/oxygen/32x32/apps/oxygen.png
 share/icons/oxygen/32x32/apps/partitionmanager.png
+share/icons/oxygen/32x32/apps/picmi.png
 share/icons/oxygen/32x32/apps/plasma.png
 share/icons/oxygen/32x32/apps/plasmagik.png
 share/icons/oxygen/32x32/apps/preferences-contact-list.png
@@ -4454,6 +4476,8 @@ share/icons/oxygen/32x32/devices/printer-laser.png
 share/icons/oxygen/32x32/devices/printer.png
 share/icons/oxygen/32x32/devices/scanner.png
 share/icons/oxygen/32x32/devices/secure-card.png
+share/icons/oxygen/32x32/devices/smartphone.png
+share/icons/oxygen/32x32/devices/tablet.png
 share/icons/oxygen/32x32/devices/video-display.png
 share/icons/oxygen/32x32/devices/video-projector.png
 share/icons/oxygen/32x32/devices/video-television.png
@@ -4752,6 +4776,7 @@ share/icons/oxygen/32x32/places/bookmarks.png
 share/icons/oxygen/32x32/places/certificate-server.png
 share/icons/oxygen/32x32/places/document-multiple.png
 share/icons/oxygen/32x32/places/favorites.png
+share/icons/oxygen/32x32/places/folder-activities.png
 share/icons/oxygen/32x32/places/folder-black.png
 share/icons/oxygen/32x32/places/folder-blue.png
 share/icons/oxygen/32x32/places/folder-bookmark.png
@@ -5501,6 +5526,7 @@ share/icons/oxygen/48x48/apps/kig.png
 share/icons/oxygen/48x48/apps/kivio.png
 share/icons/oxygen/48x48/apps/kjournal.png
 share/icons/oxygen/48x48/apps/klipper.png
+share/icons/oxygen/48x48/apps/kmag.png
 share/icons/oxygen/48x48/apps/kmplayer.png
 share/icons/oxygen/48x48/apps/knewsticker.png
 share/icons/oxygen/48x48/apps/knotes.png
@@ -5533,6 +5559,7 @@ share/icons/oxygen/48x48/apps/office-calendar.png
 share/icons/oxygen/48x48/apps/okteta.png
 share/icons/oxygen/48x48/apps/oxygen.png
 share/icons/oxygen/48x48/apps/partitionmanager.png
+share/icons/oxygen/48x48/apps/picmi.png
 share/icons/oxygen/48x48/apps/plasma.png
 share/icons/oxygen/48x48/apps/plasmagik.png
 share/icons/oxygen/48x48/apps/preferences-contact-list.png
@@ -5683,6 +5710,8 @@ share/icons/oxygen/48x48/devices/printer-laser.png
 share/icons/oxygen/48x48/devices/printer.png
 share/icons/oxygen/48x48/devices/scanner.png
 share/icons/oxygen/48x48/devices/secure-card.png
+share/icons/oxygen/48x48/devices/smartphone.png
+share/icons/oxygen/48x48/devices/tablet.png
 share/icons/oxygen/48x48/devices/video-display.png
 share/icons/oxygen/48x48/devices/video-projector.png
 share/icons/oxygen/48x48/devices/video-television.png
@@ -5965,6 +5994,7 @@ share/icons/oxygen/48x48/places/bookmarks.png
 share/icons/oxygen/48x48/places/certificate-server.png
 share/icons/oxygen/48x48/places/document-multiple.png
 share/icons/oxygen/48x48/places/favorites.png
+share/icons/oxygen/48x48/places/folder-activities.png
 share/icons/oxygen/48x48/places/folder-add.png
 share/icons/oxygen/48x48/places/folder-black.png
 share/icons/oxygen/48x48/places/folder-blue.png
@@ -6216,6 +6246,7 @@ share/icons/oxygen/64x64/apps/kig.png
 share/icons/oxygen/64x64/apps/kivio.png
 share/icons/oxygen/64x64/apps/kjournal.png
 share/icons/oxygen/64x64/apps/klipper.png
+share/icons/oxygen/64x64/apps/kmag.png
 share/icons/oxygen/64x64/apps/kmplayer.png
 share/icons/oxygen/64x64/apps/knewsticker.png
 share/icons/oxygen/64x64/apps/knotes.png
@@ -6248,6 +6279,7 @@ share/icons/oxygen/64x64/apps/office-calendar.png
 share/icons/oxygen/64x64/apps/okteta.png
 share/icons/oxygen/64x64/apps/oxygen.png
 share/icons/oxygen/64x64/apps/partitionmanager.png
+share/icons/oxygen/64x64/apps/picmi.png
 share/icons/oxygen/64x64/apps/planner.png
 share/icons/oxygen/64x64/apps/plasma.png
 share/icons/oxygen/64x64/apps/plasmagik.png
@@ -6387,6 +6419,8 @@ share/icons/oxygen/64x64/devices/phone.png
 share/icons/oxygen/64x64/devices/printer-laser.png
 share/icons/oxygen/64x64/devices/printer.png
 share/icons/oxygen/64x64/devices/scanner.png
+share/icons/oxygen/64x64/devices/smartphone.png
+share/icons/oxygen/64x64/devices/tablet.png
 share/icons/oxygen/64x64/devices/video-display.png
 share/icons/oxygen/64x64/devices/video-projector.png
 share/icons/oxygen/64x64/devices/video-television.png
@@ -6664,6 +6698,7 @@ share/icons/oxygen/64x64/places/bookmarks.png
 share/icons/oxygen/64x64/places/certificate-server.png
 share/icons/oxygen/64x64/places/document-multiple.png
 share/icons/oxygen/64x64/places/favorites.png
+share/icons/oxygen/64x64/places/folder-activities.png
 share/icons/oxygen/64x64/places/folder-black.png
 share/icons/oxygen/64x64/places/folder-blue.png
 share/icons/oxygen/64x64/places/folder-bookmark.png

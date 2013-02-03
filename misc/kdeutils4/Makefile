@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdeutils
-# Date created:				2008-01-31
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdeutils
@@ -18,71 +15,76 @@ LATEST_LINK=	${PORTNAME}4
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
 
-OPTIONS=	ARK "Install archiving tool Ark" on \
-		FILELIGHT "Install file system viewer Filelight" on \
-		KCALC "Install scientific calculator KCalc" on \
-		KCHARSELECT "Install character selector KCharSelect" on \
-		KDF "Install disk usage tool KDiskFree" on \
-		KFLOPPY "Install floppy formatter KFloppy" on \
-		KGPG "Install encryption tool KGpg" on \
-		KREMOTECONTROL "Install KRemoteControl" on \
-		KTIMER "Install countdown launcher KTimer" on \
-		KWALLET "Install password manager KWallet" on \
-		PRINTER_APPLET "Install printer system tray utility" on \
-		SUPERKARAMBA "Install widget framework SuperKaramba" on \
-		SWEEPER "Install system cleaner Sweeper" on
+OPTIONS_DEFINE=	ARK FILELIGHT KCALC KCHARSELECT KDF KFLOPPY KGPG \
+		KREMOTECONTROL KTIMER KWALLET PRINTER_APPLET \
+		SUPERKARAMBA SWEEPER
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+ARK_DESC=		Install archiving tool Ark
+FILELIGHT_DESC=		Install file system viewer Filelight
+KCALC_DESC=		Install scientific calculator KCalc
+KCHARSELECT_DESC=	Install character selector KCharSelect
+KDF_DESC=		Install disk usage tool KDiskFree
+KFLOPPY_DESC=		Install floppy formatter KFloppy
+KGPG_DESC=		Install encryption tool KGpg
+KREMOTECONTROL_DESC=	Install KRemoteControl
+KTIMER_DESC=		Install countdown launcher KTimer
+KWALLET_DESC=		Install password manager KWallet
+PRINTER_APPLET_DESC=	Install printer system tray utility
+SUPERKARAMBA_DESC=	Install widget framework SuperKaramba
+SWEEPER_DESC=		Install system cleaner Sweeper
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_ARK)
+.if ${PORT_OPTIONS:MARK}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ark:${PORTSDIR}/archivers/ark
 .endif
 
-.ifdef(WITH_FILELIGHT)
+.if ${PORT_OPTIONS:MFILELIGHT}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/filelight:${PORTSDIR}/sysutils/filelight-kde4
 .endif
 
-.ifdef(WITH_KCALC)
+.if ${PORT_OPTIONS:MKCALC}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/math/kcalc
 .endif
 
-.ifdef(WITH_KCHARSELECT)
+.if ${PORT_OPTIONS:MKCHARSELECT}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcharselect:${PORTSDIR}/deskutils/kcharselect
 .endif
 
-.ifdef(WITH_KDF)
+.if ${PORT_OPTIONS:MKDF}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kdf:${PORTSDIR}/sysutils/kdf
 .endif
 
-.ifdef(WITH_KFLOPPY)
+.if ${PORT_OPTIONS:MKFLOPPY}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kfloppy:${PORTSDIR}/sysutils/kfloppy
 .endif
 
-.ifdef(WITH_KGPG)
+.if ${PORT_OPTIONS:MKGPG}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kgpg:${PORTSDIR}/security/kgpg-kde4
 .endif
 
-.ifdef(WITH_KREMOTECONTROL)
+.if ${PORT_OPTIONS:MKREMOTECONTROL}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krcdnotifieritem:${PORTSDIR}/comms/kremotecontrol
 .endif
 
-.ifdef(WITH_KTIMER)
+.if ${PORT_OPTIONS:MKTIMER}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktimer:${PORTSDIR}/x11-clocks/ktimer
 .endif
 
-.ifdef(WITH_KWALLET)
+.if ${PORT_OPTIONS:MKWALLET}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwallet
 .endif
 
-.ifdef(WITH_PRINTER_APPLET)
+.if ${PORT_OPTIONS:MPRINTER_APPLET}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/printer-applet:${PORTSDIR}/print/kdeutils4-printer-applet
 .endif
 
-.ifdef(WITH_SUPERKARAMBA)
+.if ${PORT_OPTIONS:MSUPERKARAMBA}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/superkaramba:${PORTSDIR}/deskutils/superkaramba
 .endif
 
-.ifdef(WITH_SWEEPER)
+.if ${PORT_OPTIONS:MSWEEPER}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/sweeper:${PORTSDIR}/sysutils/sweeper
 .endif
 

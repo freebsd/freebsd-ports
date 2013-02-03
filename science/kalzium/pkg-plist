@@ -192,6 +192,8 @@ share/apps/kalzium/data/molecules/2-thioethanol.cml
 share/apps/kalzium/data/molecules/2_2_2-trifluoroethanol.cml
 share/apps/kalzium/data/molecules/but-2-yne-1_4-diol.cml
 share/apps/kalzium/data/molecules/butane.cml
+share/apps/kalzium/data/molecules/carbon_dioxide.cml
+share/apps/kalzium/data/molecules/carbon_monoxide.cml
 share/apps/kalzium/data/molecules/ethane-1_2-diol.cml
 share/apps/kalzium/data/molecules/ethane.cml
 share/apps/kalzium/data/molecules/ethanol.cml
@@ -202,6 +204,7 @@ share/apps/kalzium/data/molecules/propan-1-ol.cml
 share/apps/kalzium/data/molecules/propan-2-ol.cml
 share/apps/kalzium/data/molecules/propane.cml
 share/apps/kalzium/data/molecules/thiophene.cml
+share/apps/kalzium/data/molecules/water.cml
 share/apps/kalzium/data/toolpics/abzug.jpg
 share/apps/kalzium/data/toolpics/becherglas.jpg
 share/apps/kalzium/data/toolpics/brechungsmesser.jpg

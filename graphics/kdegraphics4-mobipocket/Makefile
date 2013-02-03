@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kdegraphics-mobipocket
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kdegraphics-mobipocket
 PORTVERSION=	${KDE4_VERSION}
@@ -13,7 +8,7 @@ MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Mobipocket plugins for Strigi indexing, Okular, and thumbnails
+COMMENT=	Mobipocket plugins for Strigi indexing, Okular and thumbnails
 
 CONFLICTS=	kdegraphics-4.[0-6].*
 

@@ -6,6 +6,7 @@
 %%MTREE%%@dirrmtry etc/dbus-1
 %%MTREE%%@cwd %%KDE4_PREFIX%%
 %%MTREE%%etc/pam.d
+%%MTREE%%etc/polkit-1
 %%MTREE%%etc/rc.d
 %%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
@@ -768,6 +769,32 @@
 @exec mkdir -p %D/share/icons/hicolor/24x24/stock/object
 @exec mkdir -p %D/share/icons/hicolor/24x24/stock/table
 @exec mkdir -p %D/share/icons/hicolor/24x24/stock/text
+@exec mkdir -p %D/share/icons/hicolor/256x256
+@exec mkdir -p %D/share/icons/hicolor/256x256/actions
+@exec mkdir -p %D/share/icons/hicolor/256x256/animations
+@exec mkdir -p %D/share/icons/hicolor/256x256/apps
+@exec mkdir -p %D/share/icons/hicolor/256x256/categories
+@exec mkdir -p %D/share/icons/hicolor/256x256/devices
+@exec mkdir -p %D/share/icons/hicolor/256x256/emblems
+@exec mkdir -p %D/share/icons/hicolor/256x256/emotes
+@exec mkdir -p %D/share/icons/hicolor/256x256/filesystems
+@exec mkdir -p %D/share/icons/hicolor/256x256/intl
+@exec mkdir -p %D/share/icons/hicolor/256x256/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/256x256/places
+@exec mkdir -p %D/share/icons/hicolor/256x256/status
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/code
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/data
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/form
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/image
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/io
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/media
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/net
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/object
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/table
+@exec mkdir -p %D/share/icons/hicolor/256x256/stock/text
 @exec mkdir -p %D/share/icons/hicolor/32x32
 @exec mkdir -p %D/share/icons/hicolor/32x32/actions
 @exec mkdir -p %D/share/icons/hicolor/32x32/animations
@@ -1490,6 +1517,32 @@
 @dirrmtry share/icons/hicolor/32x32/animations
 @dirrmtry share/icons/hicolor/32x32/actions
 @dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/stock/text
+@dirrmtry share/icons/hicolor/256x256/stock/table
+@dirrmtry share/icons/hicolor/256x256/stock/object
+@dirrmtry share/icons/hicolor/256x256/stock/net
+@dirrmtry share/icons/hicolor/256x256/stock/navigation
+@dirrmtry share/icons/hicolor/256x256/stock/media
+@dirrmtry share/icons/hicolor/256x256/stock/io
+@dirrmtry share/icons/hicolor/256x256/stock/image
+@dirrmtry share/icons/hicolor/256x256/stock/form
+@dirrmtry share/icons/hicolor/256x256/stock/data
+@dirrmtry share/icons/hicolor/256x256/stock/code
+@dirrmtry share/icons/hicolor/256x256/stock/chart
+@dirrmtry share/icons/hicolor/256x256/stock
+@dirrmtry share/icons/hicolor/256x256/status
+@dirrmtry share/icons/hicolor/256x256/places
+@dirrmtry share/icons/hicolor/256x256/mimetypes
+@dirrmtry share/icons/hicolor/256x256/intl
+@dirrmtry share/icons/hicolor/256x256/filesystems
+@dirrmtry share/icons/hicolor/256x256/emotes
+@dirrmtry share/icons/hicolor/256x256/emblems
+@dirrmtry share/icons/hicolor/256x256/devices
+@dirrmtry share/icons/hicolor/256x256/categories
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256/animations
+@dirrmtry share/icons/hicolor/256x256/actions
+@dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/icons/hicolor/24x24/stock/text
 @dirrmtry share/icons/hicolor/24x24/stock/table
 @dirrmtry share/icons/hicolor/24x24/stock/object

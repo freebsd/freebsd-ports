@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kstars
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kstars
 PORTVERSION=	${KDE4_VERSION}

@@ -3,7 +3,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -60,12 +59,15 @@ MAN1=	adddebug.1 \
 	xml2pot.1 \
 	zonetab2pot.py.1
 
-OPTIONS=	ANTLR "Support for po2xml and swappo tools" off \
-		KATE "Install Kate advanced text editor" on
+OPTIONS_DEFINE=	ANTLR KATE
+OPTIONS_DEFAULT=	KATE
+
+ANTLR_DESC=	Support for po2xml and swappo tools
+KATE_DESC=	Install Kate advanced text editor
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_ANTLR)
+.if ${PORT_OPTIONS:MANTLR}
 BUILD_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
 RUN_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
 PLIST_SUB+=	ANTLR=""
@@ -74,7 +76,7 @@ CMAKE_ARGS+=	-DWITH_Antlr2:BOOL=off
 PLIST_SUB+=	ANTLR="@comment "
 .endif
 
-.ifndef(WITHOUT_KATE)
+.if ${PORT_OPTIONS:MKATE}
 USE_KDE4+=	kate_run
 .endif
 
