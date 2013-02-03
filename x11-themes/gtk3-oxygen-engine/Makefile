@@ -14,12 +14,13 @@ DISTNAME=	${PORTNAME}-gtk3-${PORTVERSION}
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Oxygen GTK+ 3 engine and theme
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk30 pkgconfig
+USE_GNOME=	gtk30
 USE_CMAKE=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
