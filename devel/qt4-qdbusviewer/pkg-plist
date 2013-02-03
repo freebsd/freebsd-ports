@@ -1,2 +1,3 @@
 bin/qdbusviewer
 %%DEBUG%%bin/qdbusviewer.debug
+share/pixmaps/qdbusviewer.png

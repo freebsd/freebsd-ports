@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qt4-multimedia
-# Date created:				17 September 2009
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT4_VERSION}

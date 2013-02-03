@@ -1,5 +1,5 @@
---- ../mkspecs/freebsd-g++/qmake.conf.old	2011-09-17 01:02:43.000000000 -0300
-+++ ../mkspecs/freebsd-g++/qmake.conf	2011-09-17 00:23:09.000000000 -0300
+--- ../mkspecs/freebsd-g++/qmake.conf.orig	2012-09-10 18:36:35.000000000 -0700
++++ ../mkspecs/freebsd-g++/qmake.conf	2012-09-16 16:13:00.894513577 -0700
 @@ -13,8 +13,8 @@
  QMAKE_CXXFLAGS_THREAD	= $$QMAKE_CFLAGS_THREAD
  
@@ -11,16 +11,11 @@
  QMAKE_INCDIR_X11	= /usr/X11R6/include
  QMAKE_LIBDIR_X11	= /usr/X11R6/lib
  QMAKE_INCDIR_QT		= $$[QT_INSTALL_HEADERS]
---- ../mkspecs/freebsd-g++46/qmake.conf.old	2011-09-17 01:03:00.000000000 -0300
-+++ ../mkspecs/freebsd-g++46/qmake.conf	2011-09-17 00:23:41.000000000 -0300
-@@ -12,13 +12,9 @@
- 
+--- ../mkspecs/freebsd-g++46/qmake.conf.orig	2012-09-10 18:36:35.000000000 -0700
++++ ../mkspecs/freebsd-g++46/qmake.conf	2012-09-16 16:13:00.894513577 -0700
+@@ -13,8 +13,8 @@
  QMAKE_CXXFLAGS_THREAD	= $$QMAKE_CFLAGS_THREAD
  
--QMAKE_CC = gcc46
--
--QMAKE_CXX = g++46
--
  # Addon software goes into /usr/local on the BSDs, by default we will look there
 -QMAKE_INCDIR		= /usr/local/include
 -QMAKE_LIBDIR		= /usr/local/lib
@@ -29,18 +24,3 @@
  QMAKE_INCDIR_X11	= /usr/X11R6/include
  QMAKE_LIBDIR_X11	= /usr/X11R6/lib
  QMAKE_INCDIR_QT		= $$[QT_INSTALL_HEADERS]
-@@ -55,4 +51,14 @@
- include(../common/unix.conf)
- include(../common/gcc-base-unix.conf)
- include(../common/g++-unix.conf)
-+
-+# Redefined here because g++-base.conf sets QMAKE_CC and QMAKE_CXX
-+# to gcc and g++, respectively.
-+QMAKE_CC           = gcc46
-+QMAKE_CXX          = g++46
-+QMAKE_LINK_C       = $$QMAKE_CC
-+QMAKE_LINK_C_SHLIB = $$QMAKE_CC
-+QMAKE_LINK         = $$QMAKE_CXX
-+QMAKE_LINK_SHLIB   = $$QMAKE_CXX
-+
- load(qt_config)

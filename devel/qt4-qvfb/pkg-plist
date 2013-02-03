@@ -1,2 +1,3 @@
 bin/qvfb-qt4
 %%DEBUG%%bin/qvfb-qt4.debug
+share/pixmaps/qvfb-qt4.png

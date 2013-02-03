@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4
-# Date created:		2007-01-25
-# Whom:			Michael Nottebrock <lofi@kiste>
-#
+# Created by: Michael Nottebrock <lofi@kiste>
 # $FreeBSD$
-#
 
 PORTNAME=	qt4
 DISTVERSION=	${QT4_VERSION}
@@ -15,49 +11,56 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework (metaport)
 
-OPTIONS=	CODECS "Enable support for CN, JP, KR, TW" off \
-		SQL_PLUGINS "Database connectivity plugins for QtSql" off \
-		TOOLS "Install Qt tools (qmake, moc, etc.)" off \
-		DEMO "Install demonstration and example programs" off
-
-USE_QT4=	accessible assistant clucene corelib \
-		dbus declarative designer doc \
-		graphicssystems-opengl gui help \
-		iconengines imageformats inputmethods \
-		multimedia network opengl phonon phonon-gst \
-		qdbusviewer qt3support qtconfig qtestlib qvfb \
-		script scripttools sql svg webkit \
-		xml xmlpatterns xmlpatterns-tool
+USE_QT4=	accessible clucene corelib dbus declarative designer \
+		graphicssystems-opengl gui help iconengines \
+		imageformats inputmethods multimedia network opengl \
+		phonon phonon-gst qt3support qtestlib script \
+		scripttools sql svg webkit xml xmlpatterns
 
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	CODECS DOCS EXAMPLES NLS SQL_PLUGINS TOOLS
+OPTIONS_DEFAULT=${OPTIONS_DEFINE}
+
+CODECS_DESC=	CN, JP, KR, TW codecs support
+SQL_PLUGINS_DESC=	Install database plugins for QtSql
+TOOLS_DESC=	Install Qt tools (qmake, moc, etc.)
+
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_QT4+=	l10n
-.endif
-
-.if defined(WITH_TOOLS)
-USE_QT4+=	help-tools linguist makeqpf moc pixeltool \
-		porting qmake qmlviewer rcc uic uic3 qdoc3
-.endif
-
-.if defined(WITH_CODECS)
+.if ${PORT_OPTIONS:MCODECS}
 USE_QT4+=	codecs-cn codecs-jp codecs-kr codecs-tw
 .endif
 
-.if defined(WITH_SQL_PLUGINS)
-USE_QT4+=	sql-mysql sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3
+.if ${PORT_OPTIONS:MDOCS}
+USE_QT4+=	doc
 .endif
 
-.if defined(WITH_DEMO)
+.if ${PORT_OPTIONS:MEXAMPLES}
 USE_QT4+=	demo
 .endif
 
-do-patch:	#empty
-	${DO_NADA}
+.if ${PORT_OPTIONS:MNLS}
+USE_QT4+=	l10n
+.endif
 
-do-install:	#empty
-	${DO_NADA}
+.if ${PORT_OPTIONS:MSQL_PLUGINS}
+USE_QT4+=	sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
+		sql-sqlite3
+.endif
+
+.if ${PORT_OPTIONS:MTOOLS}
+USE_QT4+=	assistant help-tools linguist makeqpf moc pixeltool \
+		porting qdbusviewer qdoc3 qmake qmlviewer qtconfig \
+		qvfb rcc uic uic3 xmlpatterns-tool
+.endif
+
+USE_QT4:=	${USE_QT4:C/$/_run/}
+
+do-patch:
+	@${DO_NADA}
+
+do-install:
+	@${DO_NADA}
 
 .include <bsd.port.mk>
