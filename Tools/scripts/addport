@@ -113,6 +113,17 @@ $tmp = $tmp2 = $offset = 0;
 my $edit = "/usr/bin/vi";
 $edit = $ENV{EDITOR} if ($ENV{EDITOR} ne "");
 
+# Check svn version
+my $svnversion = `svn --version --quiet 2>/dev/null`;
+chomp $svnversion;
+if ($svnversion eq "") {
+	errx(1, "Subversion binary not found in \$PATH, aborting.");
+}
+my @svnversion = split(/\./, $svnversion);
+if ($svnversion[0] == 1 && $svnversion[1] < 7) {
+	errx(1, "minimum Subversion version of 1.7 not met, aborting.");
+}
+
 # stuff that always happens when we start
 BEGIN {
 	$tmpdir=`mktemp -d -t ap`;
