@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	rekonq
-PORTVERSION=	1.3
+PORTVERSION=	2.1
 CATEGORIES=	www kde
-MASTER_SITES=	SF/${PORTNAME}/1.0/
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}.0/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Lightweight KDE browser based on WebKit
