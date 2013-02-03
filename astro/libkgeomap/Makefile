@@ -7,6 +7,7 @@
 
 PORTNAME=	libkgeomap
 PORTVERSION=	${DIGIKAM_VER}
+PORTREVISION=	1
 CATEGORIES=	astro kde
 
 MAINTAINER=	kde@FreeBSD.org
