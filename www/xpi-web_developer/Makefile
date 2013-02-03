@@ -1,16 +1,12 @@
-# New ports collection makefile for:	xpi-web_developer
-# Date created:			2006/05/06
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	web_developer
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	geckoFreeBSD.org
 COMMENT=	An extension to add various web developer tools
 
 XPI_NUM=	60
