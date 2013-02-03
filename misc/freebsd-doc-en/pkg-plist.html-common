@@ -1,12 +1,9 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/5-roadmap/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-branches.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-organization.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/checkpoint/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/checkpoint/networks.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/docbook.css
@@ -18,14 +15,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/1.png
@@ -37,7 +30,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel2.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/hats/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
@@ -47,7 +39,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mh/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png
@@ -96,19 +87,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/imagelib/callouts/7.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/serial-uart/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/storage-devices/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/vinum/ad0b4aft.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/vinum/ad2b4aft.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/vinum/arch.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/vinum/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig2.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig3.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/wp-toolbox/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/imagelib/callouts/10.png
@@ -120,13 +104,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/imagelib/callouts/7.png
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/imagelib/callouts/8.png
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/imagelib/callouts/9.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/08-01.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/08-02.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/08-03.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/08-04.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/08-05.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/08-06.png
-%%DOCSDIR%%/%%DOCLANG%%/books/corp-net-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/fig1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/fig2.png

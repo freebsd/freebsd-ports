@@ -14,14 +14,11 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/faq
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/laptop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cups
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles

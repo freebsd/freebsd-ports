@@ -1,14 +1,11 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.pdf
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.pdf
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/article.pdf
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.pdf

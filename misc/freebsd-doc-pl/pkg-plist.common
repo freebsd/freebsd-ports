@@ -11,7 +11,6 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles
 %%DOCSDIR%%/%%DOCLANG_PREFIX%%
 @dirrm %%DOCSDIR%%/%%DOCLANG%%

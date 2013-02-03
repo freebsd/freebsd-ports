@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/ppp-primer
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail
@@ -13,14 +12,10 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/faq
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fonts
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributors
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles

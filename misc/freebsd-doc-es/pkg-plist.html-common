@@ -2,8 +2,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/docbook.css
@@ -18,13 +16,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-head.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng3.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-bus.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-twisted-pair.png

@@ -1,7 +1,22 @@
 @comment $FreeBSD$
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/faq
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/hubs
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/building-products
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles
 %%DOCSDIR%%/%%DOCLANG_PREFIX%%
 @dirrm %%DOCSDIR%%/%%DOCLANG%%

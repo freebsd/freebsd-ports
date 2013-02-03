@@ -10,10 +10,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/faq
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/releng
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pxe
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts
@@ -26,8 +23,6 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/euro
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com

@@ -3,16 +3,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/greek-language-support/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt

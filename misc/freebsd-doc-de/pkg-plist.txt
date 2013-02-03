@@ -5,8 +5,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.txt

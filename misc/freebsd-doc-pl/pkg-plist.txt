@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt

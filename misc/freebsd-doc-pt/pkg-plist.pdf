@@ -1,3 +1,14 @@
 @comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/hubs/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.pdf
