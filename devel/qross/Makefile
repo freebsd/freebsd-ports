@@ -3,7 +3,7 @@
 
 PORTNAME=	qross
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/0xd34df00d/Qross/
 

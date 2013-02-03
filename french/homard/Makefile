@@ -7,6 +7,7 @@
 
 PORTNAME=	homard
 DISTVERSION=	10.1-1
+PORTREVISION=	1
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org

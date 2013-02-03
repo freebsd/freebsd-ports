@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.12.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -98,7 +98,7 @@ USB_INCLUDE=	/usr/include
 
 .if ${PORT_OPTIONS:MQT}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
+		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbussupport
 CONFIGURE_ARGS+=	--enable-qt4 \
 			--enable-gui-build
 PLIST_SUB+=	GUI=""
