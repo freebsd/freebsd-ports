@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amoebax
-# Date created:		15 Aug 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	amoebax
 PORTVERSION=	0.2.1
@@ -36,7 +32,9 @@ post-patch:
 	@${FIND} ${WRKSRC}/ -name Makefile.in|${XARGS}\
 		${REINPLACE_CMD} -e '/^pkgdatadir =/s|=.*|= ${DATADIR}|'
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${DOCSDIR}
