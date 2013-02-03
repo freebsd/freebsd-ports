@@ -594,6 +594,7 @@
     SUBDIR += p5-Net-GrowlClient
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-HTTP
+    SUBDIR += p5-Net-HTTPS-Any
     SUBDIR += p5-Net-HTTPS-NB
     SUBDIR += p5-Net-Hiveminder
     SUBDIR += p5-Net-INET6Glue
