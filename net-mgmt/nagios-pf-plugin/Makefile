@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-pf-plugin
-# Date created:		2007-03-08
-# Whom:			Kian Mohageri <kian.mohageri@gmail.com>
-#
+# Created by: Kian Mohageri <kian.mohageri@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nagios-pf-plugin
 PORTVERSION=	0.1
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.zampanosbits.com/check_pf/ \
 		http://restek.wwu.edu/~kian/
 DISTNAME=	check_pf-${PORTVERSION}
 
-MAINTAINER=	kian.mohageri@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for checking PF
 
 NAGIOS_PLUGIN_DIR?=	libexec/nagios/
