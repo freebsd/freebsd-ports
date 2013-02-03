@@ -19,4 +19,6 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Expense
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
