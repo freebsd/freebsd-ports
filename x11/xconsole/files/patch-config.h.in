@@ -1,0 +1,12 @@
+--- config.h.in.orig	2013-01-16 00:28:26.951435961 +0100
++++ config.h.in	2013-01-16 00:28:56.005436975 +0100
+@@ -36,6 +36,9 @@
+ /* Define to 1 if you have the <util.h> header file. */
+ #undef HAVE_UTIL_H
+ 
++/* Define to 1 if you have the <libutil.h> header file. */
++#undef HAVE_LIBUTIL_H
++
+ /* Name of package */
+ #undef PACKAGE
+ 
