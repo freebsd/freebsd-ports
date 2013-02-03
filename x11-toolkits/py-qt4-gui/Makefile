@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-qt4-gui
-# Date created:				2007-02-20
-# Whom:					Danny Pansters <danny@ricin.com>
-#
+# Created by: Danny Pansters <danny@ricin.com>
 # $FreeBSD$
 
 PORTNAME=	gui
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -25,35 +21,38 @@ USE_PYTHON=	2.5+
 USE_QT4=	gui imageformats_run inputmethods_run iconengines_run \
 		qmake_build moc_build
 
-OPTIONS=	API	"Install QtGui API for QScintilla2" on
+OPTIONS_DEFINE=	API
+OPTIONS_DEFAULT=API
+API_DESC=	Install QtGui API for QScintilla2
 
-PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
+PATCHDIR=	${.CURDIR}/../../devel/py-qt4-core/files
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
-CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-p ${PREFIX}/${QT_PLUGINDIR_REL} \
 		-q ${QMAKE} \
 		--confirm-license \
 		--sipdir ${SIPDIR} \
-		--enable QtGui
+		--enable QtGui \
+		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-.if defined(WITH_DEBUG)
-ARGS+=		--debug --trace
-.endif
-
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
+.include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_API)
+.if empty(PORT_OPTIONS:MAPI)
 ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
 .else
-LIB_DEPENDS+=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS+=	qscintilla2:${PORTSDIR}/devel/qscintilla2
 ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
+.endif
+
+.if defined(WITH_DEBUG)
+ARGS+=		--debug --trace
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -65,10 +64,10 @@ do-configure:
 		${PYTHON_CMD} configure.py ${ARGS}
 
 post-configure:
-	${REINPLACE_CMD} -e 's|mkspecs/freebsd-g++|share/qt4/mkspecs/freebsd-g++|'\
-		-e 's|CC = cc|CC = ${CC}|'\
-		-e 's|CXX = c++|CXX = ${CXX}|'\
-		-e 's|LINK = c++|LINK = ${CXX}|'\
-		${WRKSRC}/QtGui/Makefile
+	${REINPLACE_CMD} -e 's|^CC.*|CC = ${CC}|' \
+		-e 's|^CXX.*|CXX = ${CXX}|' \
+		-e 's|^LINK.*|LINK = ${CXX}|' \
+		-e 's|^CFLAGS|CXXFLAGS|' \
+		${WRKSRC}/qpy/QtGui/Makefile
 
 .include <bsd.port.mk>

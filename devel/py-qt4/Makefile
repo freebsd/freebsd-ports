@@ -1,17 +1,13 @@
-# New ports collection makefile for:	py-qt4
-# Date created:				2009-06-30
-# Whom:					Dima Panov <Fluffy@FreeBSD.org>
-#
+# Created by: Dima Panov <fluffy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qt4
 PORTVERSION=	${PYQT4_VERSION}
 CATEGORIES=	devel python
 MASTER_SITES=	# empty
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMEPREFIX2=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The "meta-port" for PyQt4
@@ -19,7 +15,8 @@ COMMENT=	The "meta-port" for PyQt4
 USE_PYTHON=	yes
 
 NO_BUILD=	yes
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
+
+PKGNAMEPREFIX2=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}-
 
 RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
 		${PKGNAMEPREFIX2}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -36,6 +33,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-c
 		${PKGNAMEPREFIX2}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
 		${PKGNAMEPREFIX2}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
 		${PKGNAMEPREFIX2}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus \
+		${PKGNAMEPREFIX2}dbussupport>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbussupport \
 		${PKGNAMEPREFIX2}xmlpatterns>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xmlpatterns \
 		${PKGNAMEPREFIX2}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
 		${PKGNAMEPREFIX2}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
@@ -43,11 +41,14 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-c
 		${PKGNAMEPREFIX2}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
 		${PKGNAMEPREFIX2}qscintilla2>=${QSCI2_VERSION}:${PORTSDIR}/devel/py-qt4-qscintilla2
 
-.if !defined(NOPORTEXAMPLES)
+.include "${.CURDIR}/bsd.pyqt.mk"
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 RUN_DEPENDS+=	${PKGNAMEPREFIX2}demo>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-demo
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 RUN_DEPENDS+=	${PKGNAMEPREFIX2}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
 .endif
 

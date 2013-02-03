@@ -3,6 +3,7 @@ share/py-sip/QtNetwork/QtNetworkmod.sip
 share/py-sip/QtNetwork/qabstractnetworkcache.sip
 share/py-sip/QtNetwork/qabstractsocket.sip
 share/py-sip/QtNetwork/qauthenticator.sip
+share/py-sip/QtNetwork/qdnslookup.sip
 share/py-sip/QtNetwork/qftp.sip
 share/py-sip/QtNetwork/qhostaddress.sip
 share/py-sip/QtNetwork/qhostinfo.sip
@@ -23,6 +24,7 @@ share/py-sip/QtNetwork/qnetworkrequest.sip
 share/py-sip/QtNetwork/qnetworksession.sip
 share/py-sip/QtNetwork/qssl.sip
 share/py-sip/QtNetwork/qsslcertificate.sip
+share/py-sip/QtNetwork/qsslcertificateextension.sip
 share/py-sip/QtNetwork/qsslcipher.sip
 share/py-sip/QtNetwork/qsslconfiguration.sip
 share/py-sip/QtNetwork/qsslerror.sip

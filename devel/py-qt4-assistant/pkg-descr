@@ -1,4 +1,4 @@
-PyQt4 is a set of Python bindings for Trolltech's Qt4 application framework.
-This package provides the QAssistant module.
+PyQt4 is a set of Python bindings for Digia's Qt4 application framework.
+This package provides the QtAssistant module.
 
 WWW:	http://www.riverbankcomputing.co.uk/software/pyqt/
