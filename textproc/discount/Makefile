@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	discount
-PORTVERSION=	2.1.1.3
+DISTVERSION=	2.1.5a
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/
+MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
+		LOCAL/jlaffaye
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A C implementation of the Markdown markup language
@@ -53,8 +54,10 @@ SAMPLES_DESC=	Install sample programs
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXTRA}
-CONFIGURE_ARGS+=--enable-dl-tag \
-		--enable-all-features
+CONFIGURE_ARGS+=--with-dl=both		\
+		--with-fenced-code	\
+		--with-github-tags	\
+		--with-id-anchor
 .endif
 
 .if ${PORT_OPTIONS:MTAB8}
@@ -69,7 +72,6 @@ PLIST_FILES+=	bin/makepage \
 MAN1+=		makepage.1 \
 		mkd2html.1 \
 		theme.1
-
 .endif
 
 .include <bsd.port.mk>
