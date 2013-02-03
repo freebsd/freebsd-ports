@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130203:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+  KDE SC ports have been updated to 4.9.5. kdemultimedia4, kdenetwork4,
+  kde-runtime and kde-workspace ports have been split, they must be
+  deinstalled before running any port upgrade tool:
+
+  # pkg_delete -f kdemultimedia-4\* kdenetwork-4\* \
+    kde-workspace-4\* kde-runtime-4\*
+
 20130202:
   AFFECTS: users of net-p2p/deluge
   AUTHOR: rm@FreeBSD.org

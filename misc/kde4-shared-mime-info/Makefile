@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kde4-shared-mime-info
-# Date created:		2008-07-07
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	1.2

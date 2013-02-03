@@ -288,7 +288,9 @@
     SUBDIR += knemo-kde4
     SUBDIR += kojoney
     SUBDIR += kphone
+    SUBDIR += krdc
     SUBDIR += krdesktop
+    SUBDIR += krfb
     SUBDIR += kwooty
     SUBDIR += l2tpd
     SUBDIR += l4ip

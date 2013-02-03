@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	4.4.11.1
-PORTREVISION=	5
+PORTREVISION=	4
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/kdepim-${PORTVERSION}/src
@@ -15,7 +15,7 @@ COMMENT=	Libraries for KDE-PIM applications
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		qca.2:${PORTSDIR}/devel/qca
+		qca:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/akonadi_mbox_resource:${PORTSDIR}/deskutils/kdepim44-runtime
 
 LATEST_LINK=	${PORTNAME}44

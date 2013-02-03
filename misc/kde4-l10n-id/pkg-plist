@@ -77,7 +77,6 @@ share/locale/id/LC_MESSAGES/kcmstyle.mo
 share/locale/id/LC_MESSAGES/kcmusb.mo
 share/locale/id/LC_MESSAGES/kcmview1394.mo
 share/locale/id/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/id/LC_MESSAGES/kcmxinerama.mo
 share/locale/id/LC_MESSAGES/kde-menu.mo
 share/locale/id/LC_MESSAGES/kdebugdialog.mo
 share/locale/id/LC_MESSAGES/kdecalendarsystems.mo
@@ -109,6 +108,7 @@ share/locale/id/LC_MESSAGES/kiconfinder.mo
 share/locale/id/LC_MESSAGES/kinfocenter.mo
 share/locale/id/LC_MESSAGES/kio_applications.mo
 share/locale/id/LC_MESSAGES/kio_archive.mo
+share/locale/id/LC_MESSAGES/kio_audiocd.mo
 share/locale/id/LC_MESSAGES/kio_bookmarks.mo
 share/locale/id/LC_MESSAGES/kio_finger.mo
 share/locale/id/LC_MESSAGES/kio_fish.mo
@@ -129,6 +129,7 @@ share/locale/id/LC_MESSAGES/kioexec.mo
 share/locale/id/LC_MESSAGES/klipper.mo
 share/locale/id/LC_MESSAGES/kmenuedit.mo
 share/locale/id/LC_MESSAGES/kmimetypefinder.mo
+share/locale/id/LC_MESSAGES/kmix.mo
 share/locale/id/LC_MESSAGES/knetattach.mo
 share/locale/id/LC_MESSAGES/knotify4.mo
 share/locale/id/LC_MESSAGES/konqueror.mo
@@ -141,6 +142,7 @@ share/locale/id/LC_MESSAGES/krdb.mo
 share/locale/id/LC_MESSAGES/kreadconfig.mo
 share/locale/id/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/id/LC_MESSAGES/krunner.mo
+share/locale/id/LC_MESSAGES/kscd.mo
 share/locale/id/LC_MESSAGES/kscreensaver.mo
 share/locale/id/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/id/LC_MESSAGES/kshorturifilter.mo
@@ -159,7 +161,6 @@ share/locale/id/LC_MESSAGES/kwalletd.mo
 share/locale/id/LC_MESSAGES/kwin.mo
 share/locale/id/LC_MESSAGES/kwin_clients.mo
 share/locale/id/LC_MESSAGES/kwin_effects.mo
-share/locale/id/LC_MESSAGES/kwinshutdown.mo
 share/locale/id/LC_MESSAGES/kwinstartmenu.mo
 share/locale/id/LC_MESSAGES/kwrite.mo
 share/locale/id/LC_MESSAGES/kwriteconfig.mo
@@ -173,8 +174,8 @@ share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/libphonon.mo
 share/locale/id/LC_MESSAGES/libplasmaclock.mo
 share/locale/id/LC_MESSAGES/libtaskmanager.mo
-share/locale/id/LC_MESSAGES/nepomukbackup.mo
-share/locale/id/LC_MESSAGES/nepomukcontroller.mo
+share/locale/id/LC_MESSAGES/mplayerthumbs.mo
+share/locale/id/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/id/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/id/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/id/LC_MESSAGES/nepomukserver.mo
@@ -183,13 +184,13 @@ share/locale/id/LC_MESSAGES/nepomukstorage.mo
 share/locale/id/LC_MESSAGES/nsplugin.mo
 share/locale/id/LC_MESSAGES/okteta.mo
 share/locale/id/LC_MESSAGES/oktetapart.mo
+share/locale/id/LC_MESSAGES/phonon-xine.mo
 share/locale/id/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/id/LC_MESSAGES/phonon_kde.mo
 share/locale/id/LC_MESSAGES/phononserver.mo
 share/locale/id/LC_MESSAGES/plasma-desktop.mo
 share/locale/id/LC_MESSAGES/plasma-netbook.mo
 share/locale/id/LC_MESSAGES/plasma-overlay.mo
-share/locale/id/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/id/LC_MESSAGES/plasma-windowed.mo
 share/locale/id/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/id/LC_MESSAGES/plasma_applet_clock.mo

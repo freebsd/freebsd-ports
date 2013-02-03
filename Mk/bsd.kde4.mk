@@ -1,8 +1,4 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
-#
 # $FreeBSD$
-#
 
 .if !defined(_POSTMKINCLUDED) && !defined(Kde_Pre_Include)
 
@@ -37,6 +33,8 @@ Kde_Pre_Include=	bsd.kde4.mk
 # kdeprefix		- If set, port will be installed into ${KDE4_PREFIX} instead of
 #				  ${LOCALBASE}
 # korundum		- KDE Ruby bindings
+# libkcddb		- KDE CDDB library
+# libkcompactdisc	- KDE library for interfacing with audio CDs
 # libkdcraw		- KDE LibRaw library
 # libkdeedu		- Libraries used by KDE educational applications
 # libkexiv2		- KDE Exiv2 library
@@ -77,7 +75,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 #				  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=			4.8.4
+KDE4_VERSION?=			4.9.5
 KDE4_BRANCH?=			stable
 CALLIGRA_VERSION?=		2.5.2
 CALLIGRA_BRANCH?=		stable
@@ -104,16 +102,19 @@ NO_MTREE=				yes
 . endif
 .endif
 
-# Tagged ${MASTER_SITE_KDE}.
-kmaster=				${MASTER_SITE_KDE:S@%/@%/:kde@g}
-.if !defined(MASTER_SITE_SUBDIR)
-MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@@g}
-.else
-ksub=					${MASTER_SITE_SUBDIR}
-MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
-.endif
-
 PLIST_SUB+=				KDE4_PREFIX="${KDE4_PREFIX}"
+
+# Keep in sync with cmake/modules/PythonMacros.cmake
+_PYTHON_SHORT_VER=	${PYTHON_VERSION:S/^python//:S/.//}
+.if ${_PYTHON_SHORT_VER} > 31
+PLIST_SUB+=	PYCACHE="__pycache__/" \
+		PYC_SUFFIX=cpython-${_PYTHON_SHORT_VER}.pyc \
+		PYO_SUFFIX=cpython-${_PYTHON_SHORT_VER}.pyo
+.else
+PLIST_SUB+=	PYCACHE="" \
+		PYC_SUFFIX=pyc \
+		PYO_SUFFIX=pyo
+.endif
 
 # The following definitions are not intended for usage in KDE4-dependent ports.
 .if defined(KDE4_BUILDENV)
@@ -155,22 +156,18 @@ Kde_Post_Include=	bsd.kde4.mk
 # for ${component}; otherwise, it will default to 'build run'.
 #
 
-_USE_KDE4_ALL=		baseapps kdebase kate kdehier kdelibs kdeprefix korundum \
-					libkdcraw libkdeedu libkexiv2 libkipi libkonq libksane \
-					marble okular oxygen perlkde perlqt pimlibs pykde4 \
-					pykdeuic4 qtruby runtime sharedmime smokegen smokekde \
-					smokeqt workspace
-# These components are not shipped with the Software Compilation.
+_USE_KDE4_ALL=		baseapps kate kdehier kdelibs kdeprefix korundum libkcddb \
+					libkcompactdisc libkdcraw libkdeedu libkexiv2 libkipi \
+					libkonq libksane marble okular oxygen perlkde perlqt \
+					pimlibs pykde4 pykdeuic4 qtruby runtime sharedmime \
+					smokegen smokekde smokeqt workspace
+# These components are not part of the Software Compilation.
 _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 					strigi
 
-# Do baseapps and runtime really need to be in ${BUILD_DEPENDS}?
 baseapps_PORT=		x11/kde4-baseapps
 baseapps_PATH=		${KDE4_PREFIX}/bin/kfmclient
-
-# kdebase was replaced by baseapps.
-kdebase_PORT=		${baseapps_PORT}
-kdebase_PATH=		${baseapps_PATH}
+baseapps_TYPE=		run
 
 kate_PORT=			editors/kate
 kate_PATH=			${KDE4_PREFIX}/lib/libkateinterfaces.so.5
@@ -182,21 +179,27 @@ kdehier_TYPE=		run
 kdelibs_PORT=		x11/kdelibs4
 kdelibs_PATH=		${KDE4_PREFIX}/lib/libkdecore.so.7
 
-korundum_PORT=		devel/kdebindings4-ruby-korundum
+korundum_PORT=		devel/ruby-korundum
 korundum_PATH=		${KDE4_PREFIX}/lib/kde4/krubypluginfactory.so
 korundum_TYPE=		run
 
+libkcddb_PORT=		audio/libkcddb
+libkcddb_PATH=		${KDE4_PREFIX}/lib/libkcddb.so.5
+
+libkcompactdisc_PORT=		audio/libkcompactdisc
+libkcompactdisc_PATH=		${KDE4_PREFIX}/lib/libkcompactdisc.so.5
+
 libkdcraw_PORT=		graphics/libkdcraw-kde4
-libkdcraw_PATH=		${KDE4_PREFIX}/lib/libkdcraw.so.20
+libkdcraw_PATH=		${KDE4_PREFIX}/lib/libkdcraw.so.21
 
 libkdeedu_PORT=		misc/libkdeedu
 libkdeedu_PATH=		${KDE4_PREFIX}/lib/libkeduvocdocument.so.5
 
 libkexiv2_PORT=		graphics/libkexiv2-kde4
-libkexiv2_PATH=		${KDE4_PREFIX}/lib/libkexiv2.so.10
+libkexiv2_PATH=		${KDE4_PREFIX}/lib/libkexiv2.so.11
 
 libkipi_PORT=		graphics/libkipi-kde4
-libkipi_PATH=		${KDE4_PREFIX}/lib/libkipi.so.8
+libkipi_PATH=		${KDE4_PREFIX}/lib/libkipi.so.9
 
 libkonq_PORT=		x11/libkonq
 libkonq_PATH=		${KDE4_PREFIX}/lib/libkonq.so.7
@@ -205,7 +208,7 @@ libksane_PORT=		graphics/libksane
 libksane_PATH=		${KDE4_PREFIX}/lib/libksane.so.0
 
 marble_PORT=		astro/marble
-marble_PATH=		${KDE4_PREFIX}/lib/libmarblewidget.so.13
+marble_PATH=		${KDE4_PREFIX}/lib/libmarblewidget.so.14
 
 okular_PORT=		graphics/okular
 okular_PATH=		${KDE4_PREFIX}/lib/libokularcore.so.1
@@ -214,40 +217,41 @@ oxygen_PORT=		x11-themes/kde4-icons-oxygen
 oxygen_PATH=		${KDE4_PREFIX}/share/icons/oxygen/index.theme
 oxygen_TYPE=		run
 
-perlkde_PORT=		devel/kdebindings4-perl-perlkde
+perlkde_PORT=		devel/p5-perlkde
 perlkde_PATH=		${KDE4_PREFIX}/lib/kde4/kperlpluginfactory.so
 perlkde_TYPE=		run
 
-perlqt_PORT=		devel/kdebindings4-perl-perlqt
+perlqt_PORT=		devel/p5-perlqt
 perlqt_PATH=		${KDE4_PREFIX}/bin/puic4
 
 pimlibs_PORT=		deskutils/kdepimlibs4
 pimlibs_PATH=		${KDE4_PREFIX}/lib/libkpimutils.so.5
 
-pykde4_PORT=		devel/kdebindings4-python-pykde4
+pykde4_PORT=		devel/py-pykde4
 pykde4_PATH=		${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so
 pykde4_TYPE=		run
 
-pykdeuic4_PORT=		devel/kdebindings4-python-pykdeuic4
+pykdeuic4_PORT=		devel/py-pykdeuic4
 pykdeuic4_PATH=		${LOCALBASE}/bin/pykdeuic4
 pykdeuic4_TYPE=		run
 
-qtruby_PORT=		devel/kdebindings4-ruby-qtruby
+qtruby_PORT=		devel/ruby-qtruby
 qtruby_PATH=		${KDE4_PREFIX}/lib/libqtruby4shared.so.2
 
 runtime_PORT=		x11/kde4-runtime
 runtime_PATH=		${KDE4_PREFIX}/bin/knotify4
+runtime_TYPE=		run
 
 sharedmime_PORT=	misc/kde4-shared-mime-info
 sharedmime_PATH=	kde4-shared-mime-info>=0
 
-smokegen_PORT=		devel/kdebindings4-smoke-smokegen
+smokegen_PORT=		devel/smokegen
 smokegen_PATH=		${KDE4_PREFIX}/lib/libsmokebase.so.3
 
-smokekde_PORT=		devel/kdebindings4-smoke-smokekde
+smokekde_PORT=		devel/smokekde
 smokekde_PATH=		${KDE4_PREFIX}/lib/libsmokekdecore.so.3
 
-smokeqt_PORT=		devel/kdebindings4-smoke-smokeqt
+smokeqt_PORT=		devel/smokeqt
 smokeqt_PATH=		${KDE4_PREFIX}/lib/libsmokeqtcore.so.3
 
 workspace_PORT=		x11/kde4-workspace

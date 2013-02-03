@@ -40,6 +40,7 @@
     SUBDIR += despotify
     SUBDIR += devede
     SUBDIR += dirac
+    SUBDIR += dragon
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
@@ -134,6 +135,8 @@
     SUBDIR += kaffeine
     SUBDIR += kdemultimedia3
     SUBDIR += kdemultimedia4
+    SUBDIR += kdemultimedia4-ffmpegthumbs
+    SUBDIR += kdemultimedia4-mplayerthumbs
     SUBDIR += kdenlive
     SUBDIR += kino
     SUBDIR += kissdx

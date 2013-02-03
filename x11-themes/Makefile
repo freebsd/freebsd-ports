@@ -130,6 +130,7 @@
     SUBDIR += kde-windeco-knifty
     SUBDIR += kde-windeco-neos
     SUBDIR += kde-windeco-smoothblend
+    SUBDIR += kde4-base-artwork
     SUBDIR += kde4-icons-oxygen
     SUBDIR += kde4-style-bespin
     SUBDIR += kde4-style-nitrogen

@@ -1,7 +1,3 @@
-# New ports collection Makefile for:	ktimer
-# Date created:				2012-02-23
-# Whom:					Max Brazhikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	ktimer

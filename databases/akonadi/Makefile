@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.7.2
-PORTREVISION=	4
+PORTVERSION=	1.9.0
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/src/
@@ -13,11 +12,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for KDE-Pim
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/lgpl-license
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_KDE4=	kdehier kdeprefix sharedmime automoc4 soprano
@@ -32,12 +30,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
-OPTIONS_MULTI=	BACKEND
-OPTIONS_MULTI_BACKEND=	MYSQL PGSQL SQLITE
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 
 MYSQL_DESC=	Install MySQL Qt plugin and server
 PGSQL_DESC=	Install PostgreSQL Qt plugin
-SQLITE_DESC=	Enable SQLite backend (unused)
+SQLITE_DESC=	Enable SQLite backend
 
 OPTIONS_DEFAULT=	MYSQL
 
@@ -80,7 +78,8 @@ post-patch:
 	${REINPLACE_CMD} -e '/wait_timeout/ s|31536000|1073741|' \
 		${PATCH_WRKSRC}/server/src/storage/*.conf
 	# Prevent updating MIME during build.
-	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
+	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
+		-e '/find_package(SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:

@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	khangman
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	khangman
 PORTVERSION=	${KDE4_VERSION}

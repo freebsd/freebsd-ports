@@ -601,7 +601,6 @@ share/locale/ml/LC_MESSAGES/kcmstyle.mo
 share/locale/ml/LC_MESSAGES/kcmusb.mo
 share/locale/ml/LC_MESSAGES/kcmview1394.mo
 share/locale/ml/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/ml/LC_MESSAGES/kcmxinerama.mo
 share/locale/ml/LC_MESSAGES/kde-menu.mo
 share/locale/ml/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/ml/LC_MESSAGES/kdebugdialog.mo
@@ -616,10 +615,8 @@ share/locale/ml/LC_MESSAGES/kdmconfig.mo
 share/locale/ml/LC_MESSAGES/kdmgreet.mo
 share/locale/ml/LC_MESSAGES/keditbookmarks.mo
 share/locale/ml/LC_MESSAGES/kfile.mo
-share/locale/ml/LC_MESSAGES/kfile_avi.mo
 share/locale/ml/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ml/LC_MESSAGES/kfile_kig.mo
-share/locale/ml/LC_MESSAGES/kfile_wav.mo
 share/locale/ml/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/ml/LC_MESSAGES/kfindpart.mo
 share/locale/ml/LC_MESSAGES/kfmclient.mo

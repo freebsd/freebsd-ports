@@ -1,4 +1,4 @@
 Grantlee is a string template engine based on the Django template
-system and written in Qt4.
+system and written using the Qt framework.
 
-WWW: http://gitorious.org/grantlee/pages/Home/
+WWW: http://gitorious.org/grantlee/pages/Home

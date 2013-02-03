@@ -1,0 +1,4 @@
+MAN1+=	checkXML.1
+MAN1+=	dragon.1
+MAN7+=	kdeoptions.7
+MAN7+=	qtoptions.7

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	analitza
-# Date created:		2012-02-23
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	analitza
 PORTVERSION=	${KDE4_VERSION}

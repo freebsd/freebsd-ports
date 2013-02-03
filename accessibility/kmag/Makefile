@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kmag
-# Date created:		2012-02-23
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kmag
 PORTVERSION=	${KDE4_VERSION}

@@ -1,8 +1,9 @@
 bin/accountwizard
 bin/akonadi2xml
 bin/akonadi_birthdays_resource
-bin/akonadi_calendarsearch_agent
 bin/akonadi_davgroupware_resource
+bin/akonadi_googlecalendar_resource
+bin/akonadi_googlecontacts_resource
 bin/akonadi_imap_resource
 bin/akonadi_invitations_agent
 bin/akonadi_kabc_resource
@@ -74,9 +75,10 @@ lib/libnepomukfeederpluginlib.a
 share/akonadi/agents/akonadinepomukfeederagent.desktop
 share/akonadi/agents/akonotesresource.desktop
 share/akonadi/agents/birthdaysresource.desktop
-share/akonadi/agents/calendarsearchagent.desktop
 share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
+share/akonadi/agents/googlecalendarresource.desktop
+share/akonadi/agents/googlecontactsresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
 share/akonadi/agents/invitationsagent.desktop
@@ -124,6 +126,9 @@ share/apps/akonadi/accountwizard/maildir/maildirwizard.ui
 share/apps/akonadi/accountwizard/pop3/pop3wizard.desktop
 share/apps/akonadi/accountwizard/pop3/pop3wizard.js
 share/apps/akonadi/accountwizard/pop3/pop3wizard.ui
+share/apps/akonadi/accountwizard/tine20/tine20wizard.desktop
+share/apps/akonadi/accountwizard/tine20/tine20wizard.es
+share/apps/akonadi/accountwizard/tine20/tine20wizard.ui
 share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/firstrun/defaultaddressbook
 share/apps/akonadi/firstrun/defaultcalendar
@@ -185,6 +190,7 @@ share/ontology/kde/aneo.trig
 @dirrm share/apps/akonadi/plugins/serializer
 @dirrm share/apps/akonadi/plugins
 @dirrm share/apps/akonadi/firstrun
+@dirrm share/apps/akonadi/accountwizard/tine20
 @dirrm share/apps/akonadi/accountwizard/pop3
 @dirrm share/apps/akonadi/accountwizard/maildir
 @dirrm share/apps/akonadi/accountwizard/mailbox

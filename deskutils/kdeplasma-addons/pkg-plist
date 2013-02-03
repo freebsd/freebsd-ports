@@ -109,6 +109,7 @@ lib/kde4/krunner_konsolesessions.so
 lib/kde4/krunner_kopete.so
 lib/kde4/krunner_mediawiki.so
 lib/kde4/krunner_spellcheckrunner.so
+lib/kde4/krunner_youtube.so
 %%IBUS%%lib/kde4/libexec/kimpanel-ibus-panel
 %%SCIM%%lib/kde4/libexec/kimpanel-scim-panel
 lib/kde4/plasma-applet_systemloadviewer.so
@@ -132,8 +133,6 @@ lib/kde4/plasma_applet_kdeobservatory.so
 lib/kde4/plasma_applet_kimpanel.so
 lib/kde4/plasma_applet_knowledgebase.so
 lib/kde4/plasma_applet_kolourpicker.so
-lib/kde4/plasma_applet_konqprofiles.so
-lib/kde4/plasma_applet_konsoleprofiles.so
 lib/kde4/plasma_applet_lancelot_launcher.so
 lib/kde4/plasma_applet_lancelot_part.so
 lib/kde4/plasma_applet_leavenote.so
@@ -144,7 +143,6 @@ lib/kde4/plasma_applet_mediaplayer.so
 lib/kde4/plasma_applet_microblog.so
 lib/kde4/plasma_applet_news.so
 lib/kde4/plasma_applet_notes.so
-lib/kde4/plasma_applet_nowplaying.so
 lib/kde4/plasma_applet_opendesktop.so
 lib/kde4/plasma_applet_opendesktop_activities.so
 lib/kde4/plasma_applet_paste.so
@@ -169,6 +167,8 @@ lib/kde4/plasma_containment_groupingpanel.so
 lib/kde4/plasma_engine_comic.so
 lib/kde4/plasma_engine_kdeobservatory.so
 lib/kde4/plasma_engine_kimpanel.so
+lib/kde4/plasma_engine_konqprofiles.so
+lib/kde4/plasma_engine_konsoleprofiles.so
 lib/kde4/plasma_engine_microblog.so
 lib/kde4/plasma_engine_ocs.so
 lib/kde4/plasma_engine_potd.so
@@ -294,7 +294,6 @@ share/apps/desktoptheme/default/widgets/eyes.svg
 share/apps/desktoptheme/default/widgets/luna.svgz
 share/apps/desktoptheme/default/widgets/microblog.svgz
 share/apps/desktoptheme/default/widgets/notes.svgz
-share/apps/desktoptheme/default/widgets/nowplaying/nocover.svgz
 share/apps/desktoptheme/default/widgets/previewer-16.svgz
 share/apps/desktoptheme/default/widgets/previewer-22.svgz
 share/apps/desktoptheme/default/widgets/timer.svgz
@@ -329,9 +328,30 @@ share/apps/lancelot/lancelot.notifyrc
 share/apps/plasma-applet-frame/picture-frame-default.jpg
 share/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 share/apps/plasma-applet-opendesktop/user.css
+share/apps/plasma/plasmoids/konqprofiles/contents/ui/konqprofiles.qml
+share/apps/plasma/plasmoids/konqprofiles/metadata.desktop
+share/apps/plasma/plasmoids/konsoleprofiles/contents/ui/konsoleprofiles.qml
+share/apps/plasma/plasmoids/konsoleprofiles/metadata.desktop
+share/apps/plasma/plasmoids/nowplaying/contents/code/service.js
+share/apps/plasma/plasmoids/nowplaying/contents/images/nocover.svgz
+share/apps/plasma/plasmoids/nowplaying/contents/ui/AlbumArt.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/CompactLayout.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/Controls.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/FullLayout.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/Label.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/MetadataLine.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/MetadataPanel.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/Mpris2.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/PlayPauseButton.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/PositionSlider.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/VLayout.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/nowplaying.qml
+share/apps/plasma/plasmoids/nowplaying/metadata.desktop
 share/apps/plasma/services/kdeobservatory.operations
 share/apps/plasma/services/kimpanel.operations
 share/apps/plasma/services/ocsPerson.operations
+share/apps/plasma/services/org.kde.plasma.dataengine.konqprofiles.operations
+share/apps/plasma/services/org.kde.plasma.dataengine.konsoleprofiles.operations
 share/apps/plasma/services/rtmauth.operations
 share/apps/plasma/services/rtmtask.operations
 share/apps/plasma/services/rtmtasks.operations
@@ -390,6 +410,7 @@ share/icons/hicolor/128x128/apps/luna.png
 share/icons/hicolor/128x128/apps/plasmaapplet-shelf.png
 share/icons/hicolor/128x128/apps/previewer.png
 share/icons/hicolor/128x128/apps/qalculate-applet.png
+share/icons/hicolor/16x16/actions/youtube.png
 share/icons/hicolor/16x16/apps/bball.png
 share/icons/hicolor/16x16/apps/eyes.png
 share/icons/hicolor/16x16/apps/kdeobservatory.png
@@ -399,6 +420,7 @@ share/icons/hicolor/16x16/apps/lifegame.png
 share/icons/hicolor/16x16/apps/luna.png
 share/icons/hicolor/16x16/apps/plasmaapplet-shelf.png
 share/icons/hicolor/16x16/apps/previewer.png
+share/icons/hicolor/22x22/actions/youtube.png
 share/icons/hicolor/22x22/apps/eyes.png
 share/icons/hicolor/22x22/apps/kdeobservatory.png
 share/icons/hicolor/22x22/apps/lancelot-start.png
@@ -409,6 +431,7 @@ share/icons/hicolor/22x22/apps/plasmaapplet-shelf.png
 share/icons/hicolor/22x22/apps/previewer.png
 share/icons/hicolor/256x256/apps/eyes.png
 share/icons/hicolor/256x256/apps/lifegame.png
+share/icons/hicolor/32x32/actions/youtube.png
 share/icons/hicolor/32x32/apps/bball.png
 share/icons/hicolor/32x32/apps/eyes.png
 share/icons/hicolor/32x32/apps/kdeobservatory.png
@@ -418,6 +441,7 @@ share/icons/hicolor/32x32/apps/lifegame.png
 share/icons/hicolor/32x32/apps/luna.png
 share/icons/hicolor/32x32/apps/plasmaapplet-shelf.png
 share/icons/hicolor/32x32/apps/previewer.png
+share/icons/hicolor/48x48/actions/youtube.png
 share/icons/hicolor/48x48/apps/bball.png
 share/icons/hicolor/48x48/apps/kdeobservatory.png
 share/icons/hicolor/48x48/apps/lancelot-start.png
@@ -427,6 +451,7 @@ share/icons/hicolor/48x48/apps/luna.png
 share/icons/hicolor/48x48/apps/plasmaapplet-shelf.png
 share/icons/hicolor/48x48/apps/previewer.png
 share/icons/hicolor/48x48/apps/qalculate-applet.png
+share/icons/hicolor/64x64/actions/youtube.png
 share/icons/hicolor/64x64/apps/bball.png
 share/icons/hicolor/64x64/apps/kdeobservatory.png
 share/icons/hicolor/64x64/apps/lancelot-start.png
@@ -435,6 +460,7 @@ share/icons/hicolor/64x64/apps/lifegame.png
 share/icons/hicolor/64x64/apps/luna.png
 share/icons/hicolor/64x64/apps/plasmaapplet-shelf.png
 share/icons/hicolor/64x64/apps/previewer.png
+share/icons/hicolor/scalable/actions/youtube.svgz
 share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/eyes.svgz
@@ -503,6 +529,8 @@ share/kde4/services/plasma-containment-groupingdesktop.desktop
 share/kde4/services/plasma-containment-groupingpanel.desktop
 share/kde4/services/plasma-dataengine-comic.desktop
 share/kde4/services/plasma-dataengine-kimpanel.desktop
+share/kde4/services/plasma-dataengine-konqprofiles.desktop
+share/kde4/services/plasma-dataengine-konsoleprofiles.desktop
 share/kde4/services/plasma-dataengine-microblog.desktop
 share/kde4/services/plasma-dataengine-ocs.desktop
 share/kde4/services/plasma-dataengine-potd.desktop
@@ -527,6 +555,7 @@ share/kde4/services/plasma-runner-spellchecker_config.desktop
 share/kde4/services/plasma-runner-techbase.desktop
 share/kde4/services/plasma-runner-wikipedia.desktop
 share/kde4/services/plasma-runner-wikitravel.desktop
+share/kde4/services/plasma-runner-youtube.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
 %%MARBLE%%share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
@@ -538,13 +567,22 @@ share/kde4/services/wcpotdprovider.desktop
 share/kde4/servicetypes/plasma_comicprovider.desktop
 share/kde4/servicetypes/plasma_potdprovider.desktop
 share/mime/packages/lancelotpart-mime.xml
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
 @dirrm share/apps/rssnow
 @dirrm share/apps/plasmaboard
 @dirrm share/apps/plasma_wallpaper_pattern/patterns
 @dirrm share/apps/plasma_wallpaper_pattern
 @dirrm share/apps/plasma_pastebin
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents/ui
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents/images
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents/code
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents
+@dirrm share/apps/plasma/plasmoids/nowplaying
+@dirrm share/apps/plasma/plasmoids/konsoleprofiles/contents/ui
+@dirrm share/apps/plasma/plasmoids/konsoleprofiles/contents
+@dirrm share/apps/plasma/plasmoids/konsoleprofiles
+@dirrm share/apps/plasma/plasmoids/konqprofiles/contents/ui
+@dirrm share/apps/plasma/plasmoids/konqprofiles/contents
+@dirrm share/apps/plasma/plasmoids/konqprofiles
 @dirrm share/apps/plasma-applet-opendesktop-activities
 @dirrm share/apps/plasma-applet-opendesktop
 @dirrm share/apps/plasma-applet-frame
@@ -554,7 +592,6 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrmtry share/apps/desktoptheme/slim-glow
 @dirrm share/apps/desktoptheme/oxygen/lancelot
 @dirrmtry share/apps/desktoptheme/oxygen
-@dirrm share/apps/desktoptheme/default/widgets/nowplaying
 @dirrm share/apps/desktoptheme/default/weatherstation
 @dirrm share/apps/desktoptheme/default/weather
 @dirrm share/apps/desktoptheme/default/stylesheets

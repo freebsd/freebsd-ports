@@ -1,0 +1,28 @@
+include/libkcddb/cdinfo.h
+include/libkcddb/cdinfodialog.h
+include/libkcddb/client.h
+include/libkcddb/configbase.h
+include/libkcddb/genres.h
+include/libkcddb/kcddb.h
+include/libkcddb/kcddb_export.h
+include/libkcddb/kcddbconfig.h
+lib/cmake/libkcddb/LibkcddbConfig.cmake
+lib/cmake/libkcddb/LibkcddbTargets.cmake
+lib/cmake/libkcddb/LibkcddbTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/kde4/kcm_cddb.so
+lib/libkcddb.so
+lib/libkcddb.so.5
+lib/libkcddb.so.5.0.1
+share/apps/kconf_update/kcmcddb-emailsettings.upd
+share/config.kcfg/libkcddb.kcfg
+share/doc/HTML/en/kcontrol/cddbretrieval/common
+share/doc/HTML/en/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/en/kcontrol/cddbretrieval/index.docbook
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd13.png
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd14.png
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd16.png
+share/kde4/services/libkcddb.desktop
+@dirrm share/doc/HTML/en/kcontrol/cddbretrieval
+@dirrm lib/cmake/libkcddb
+@dirrmtry lib/cmake
+@dirrm include/libkcddb

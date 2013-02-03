@@ -198,6 +198,7 @@ share/locale/ro/LC_MESSAGES/kcal_akonadi.mo
 share/locale/ro/LC_MESSAGES/kcalc.mo
 share/locale/ro/LC_MESSAGES/kcertpart.mo
 share/locale/ro/LC_MESSAGES/kcharselect.mo
+share/locale/ro/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/ro/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ro/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ro/LC_MESSAGES/kcm_attica.mo
@@ -217,6 +218,7 @@ share/locale/ro/LC_MESSAGES/kcm_pci.mo
 share/locale/ro/LC_MESSAGES/kcm_phonon.mo
 share/locale/ro/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ro/LC_MESSAGES/kcm_platform.mo
+share/locale/ro/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ro/LC_MESSAGES/kcm_solid.mo
 share/locale/ro/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ro/LC_MESSAGES/kcm_standard_actions.mo
@@ -268,7 +270,6 @@ share/locale/ro/LC_MESSAGES/kcmstyle.mo
 share/locale/ro/LC_MESSAGES/kcmusb.mo
 share/locale/ro/LC_MESSAGES/kcmview1394.mo
 share/locale/ro/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/ro/LC_MESSAGES/kcmxinerama.mo
 share/locale/ro/LC_MESSAGES/kcolorchooser.mo
 share/locale/ro/LC_MESSAGES/kcron.mo
 share/locale/ro/LC_MESSAGES/kde-menu.mo
@@ -290,24 +291,16 @@ share/locale/ro/LC_MESSAGES/kdmgreet.mo
 share/locale/ro/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/ro/LC_MESSAGES/keditbookmarks.mo
 share/locale/ro/LC_MESSAGES/kfile.mo
-share/locale/ro/LC_MESSAGES/kfile_avi.mo
 share/locale/ro/LC_MESSAGES/kfile_dds.mo
 share/locale/ro/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ro/LC_MESSAGES/kfile_exr.mo
-share/locale/ro/LC_MESSAGES/kfile_flac.mo
 share/locale/ro/LC_MESSAGES/kfile_kig.mo
 share/locale/ro/LC_MESSAGES/kfile_mail.mo
-share/locale/ro/LC_MESSAGES/kfile_mp3.mo
-share/locale/ro/LC_MESSAGES/kfile_mpc.mo
-share/locale/ro/LC_MESSAGES/kfile_ogg.mo
 share/locale/ro/LC_MESSAGES/kfile_pnm.mo
 share/locale/ro/LC_MESSAGES/kfile_raw.mo
 share/locale/ro/LC_MESSAGES/kfile_rgb.mo
 share/locale/ro/LC_MESSAGES/kfile_rpm.mo
-share/locale/ro/LC_MESSAGES/kfile_sid.mo
-share/locale/ro/LC_MESSAGES/kfile_theora.mo
 share/locale/ro/LC_MESSAGES/kfile_tiff.mo
-share/locale/ro/LC_MESSAGES/kfile_wav.mo
 share/locale/ro/LC_MESSAGES/kfile_xps.mo
 share/locale/ro/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/ro/LC_MESSAGES/kfilereplace.mo
@@ -360,6 +353,7 @@ share/locale/ro/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/ro/LC_MESSAGES/kio_nfs.mo
 share/locale/ro/LC_MESSAGES/kio_nntp.mo
 share/locale/ro/LC_MESSAGES/kio_pop3.mo
+share/locale/ro/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/ro/LC_MESSAGES/kio_remote.mo
 share/locale/ro/LC_MESSAGES/kio_sftp.mo
 share/locale/ro/LC_MESSAGES/kio_sieve.mo
@@ -422,9 +416,11 @@ share/locale/ro/LC_MESSAGES/kppp.mo
 share/locale/ro/LC_MESSAGES/kppplogview.mo
 share/locale/ro/LC_MESSAGES/kquitapp.mo
 share/locale/ro/LC_MESSAGES/krandr.mo
+share/locale/ro/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/ro/LC_MESSAGES/krdb.mo
 share/locale/ro/LC_MESSAGES/krdc.mo
 share/locale/ro/LC_MESSAGES/kreadconfig.mo
+share/locale/ro/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/ro/LC_MESSAGES/kres-migrator.mo
 share/locale/ro/LC_MESSAGES/kres_blog.mo
 share/locale/ro/LC_MESSAGES/kres_remote.mo
@@ -457,7 +453,6 @@ share/locale/ro/LC_MESSAGES/ksysguard.mo
 share/locale/ro/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ro/LC_MESSAGES/ksystemlog.mo
 share/locale/ro/LC_MESSAGES/ksystraycmd.mo
-share/locale/ro/LC_MESSAGES/kte_acomment.mo
 share/locale/ro/LC_MESSAGES/kteatime.mo
 share/locale/ro/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/ro/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -521,6 +516,7 @@ share/locale/ro/LC_MESSAGES/libkpgp.mo
 share/locale/ro/LC_MESSAGES/libkpimidentities.mo
 share/locale/ro/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ro/LC_MESSAGES/libkpimutils.mo
+share/locale/ro/LC_MESSAGES/libkremotecontrol.mo
 share/locale/ro/LC_MESSAGES/libkresources.mo
 share/locale/ro/LC_MESSAGES/libksane.mo
 share/locale/ro/LC_MESSAGES/libkscreensaver.mo
@@ -531,6 +527,7 @@ share/locale/ro/LC_MESSAGES/libkworkspace.mo
 share/locale/ro/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/ro/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/ro/LC_MESSAGES/libmailcommon.mo
+share/locale/ro/LC_MESSAGES/libmailimporter.mo
 share/locale/ro/LC_MESSAGES/libmailtransport.mo
 share/locale/ro/LC_MESSAGES/libmessagecomposer.mo
 share/locale/ro/LC_MESSAGES/libmessagecore.mo
@@ -643,6 +640,7 @@ share/locale/ro/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -658,7 +656,6 @@ share/locale/ro/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_searchbox.mo
-share/locale/ro/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -693,6 +690,7 @@ share/locale/ro/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ro/LC_MESSAGES/plasma_package_org.kde.desktop.widgetexplorer.mo
 share/locale/ro/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_activities.mo
@@ -757,7 +755,6 @@ share/locale/ro/LC_MESSAGES/solid-network.mo
 share/locale/ro/LC_MESSAGES/solid_qt.mo
 share/locale/ro/LC_MESSAGES/solidcontrol.mo
 share/locale/ro/LC_MESSAGES/soliduiserver.mo
-share/locale/ro/LC_MESSAGES/spy.mo
 share/locale/ro/LC_MESSAGES/step.mo
 share/locale/ro/LC_MESSAGES/step_qt.mo
 share/locale/ro/LC_MESSAGES/strigila_diff.mo

@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	libkdeedu
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libkdeedu
 PORTVERSION=	${KDE4_VERSION}

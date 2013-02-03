@@ -558,6 +558,7 @@
     SUBDIR += nautilus-cd-burner
     SUBDIR += nbosd
     SUBDIR += ncdu
+    SUBDIR += nepomuk-core
     SUBDIR += netident
     SUBDIR += news
     SUBDIR += nitrogen

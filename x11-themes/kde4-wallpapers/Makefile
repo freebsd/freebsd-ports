@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kde-wallpapers
-# Date created:				10 August 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kde-wallpapers
 PORTVERSION=	${KDE4_VERSION}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ksysguardd
-# Date created:				5 March 2011
-# Whom:					avilla@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ksysguardd
 PORTVERSION=	${KDE4_VERSION}

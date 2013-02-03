@@ -1,9 +1,4 @@
-# New ports collection makefile for:	marble
-# Date created:		2010-05-30
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	marble
 PORTVERSION=	${KDE4_VERSION}
@@ -27,11 +22,13 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS=	-DMOBILE:BOOL=FALSE
 
-OPTIONS=	GPS "Support for GPS position provider" on
+OPTIONS_DEFINE=	GPS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+GPS_DESC=	Support for GPS position provider
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_GPS)
+.if ${PORT_OPTIONS:MGPS}
 LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
 PLIST_SUB+=	GPS=""
 .else

@@ -57,5 +57,5 @@ share/templates/linkPath.desktop
 share/templates/linkProgram.desktop
 share/templates/linkURL.desktop
 share/templates/linkZIP.desktop
-@dirrm share/apps/konqueror/pics
+@dirrmtry share/apps/konqueror/pics
 @dirrm share/apps/kbookmark

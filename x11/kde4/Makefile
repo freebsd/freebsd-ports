@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE4
-# Date created:				Sun May 14 2000 00:50:02
-# Whom:					Will Andrews <will@FreeBSD.org>
-#
+# Created by: Will Andrews <will@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kde
 PORTVERSION=	${KDE4_VERSION}
@@ -12,89 +8,100 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The meta-port for KDE Software Compilation 4
+COMMENT=	KDE Software Compilation 4
 
 LATEST_LINK=	kde4
 
-USE_KDE4=	baseapps_run kdelibs_run kdeprefix oxygen_run \
-		pimlibs_run runtime_run workspace_run
+USE_KDE4=	baseapps_run kdeprefix runtime_run workspace_run
 NO_BUILD=	yes
 
-OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
-		KDEADMIN "Administration utilities" on \
-    		KDEARTWORK "Additional screensavers and wallpapers" on \
-		KDEBINDINGS "Bindings for programming languages" off \
-		KDEEDU "Entertaining, educational programs" on \
-		KDEGAMES "Collection of games" on \
-		KDEGRAPHICS "Graphics utilities" on \
-		KDEMULTIMEDIA "Multimedia applications" on \
-		KDENETWORK "Network-related programs" on \
-		KDEPIM "Personal information management" on \
-		KDEPLASMA "Extra plasmoids and plugins for Plasma" on \
-		KDESDK "Software development kit" on \
-		KDETOYS "Miscellaneous small applications" on \
-		KDEUTILS "Set of generic utilities" on \
-		KDEWEBDEV "Web development environment" on
+OPTIONS_DEFINE=	KDEACCESSIBILITY KDEADMIN KDEARTWORK KDEBINDINGS KDEEDU \
+		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK \
+		KDEPLASMA KDESDK KDETOYS KDEUTILS KDEWEBDEV
+OPTIONS_RADIO=	PIM
+OPTIONS_RADIO_PIM=	KDEPIM KDEPIM44
+OPTIONS_DEFAULT=${OPTIONS_DEFINE:NKDEBINDINGS} KDEPIM44
+
+KDEACCESSIBILITY_DESC=	Accessibility applications
+KDEADMIN_DESC=		Administration utilities
+KDEARTWORK_DESC=	Additional screensavers and wallpapers
+KDEBINDINGS_DESC=	Bindings for programming languages
+KDEEDU_DESC=		Entertaining, educational programs
+KDEGAMES_DESC=		Collection of games
+KDEGRAPHICS_DESC=	Graphics utilities
+KDEMULTIMEDIA_DESC=	Multimedia applications
+KDENETWORK_DESC=	Network-related programs
+KDEPIM_DESC=		Personal information management
+KDEPIM44_DESC=		KDE-Pim 4.4 (legacy version)
+KDEPLASMA_DESC=		Extra plasmoids and plugins for Plasma
+KDESDK_DESC=		Software development kit
+KDETOYS_DESC=		Miscellaneous small applications
+KDEUTILS_DESC=		Set of generic utilities
+KDEWEBDEV_DESC=		Web development environment
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_KDEACCESSIBILITY)
+.if ${PORT_OPTIONS:MKDEACCESSIBILITY}
 RUN_DEPENDS+=	kdeaccessibility>=4.8.0:${PORTSDIR}/accessibility/kdeaccessibility4
 .endif
 
-.ifndef(WITHOUT_KDEADMIN)
+.if ${PORT_OPTIONS:MKDEADMIN}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kuser:${PORTSDIR}/sysutils/kdeadmin4
 .endif
 
-.ifndef(WITHOUT_KDEARTWORK)
+.if ${PORT_OPTIONS:MKDEARTWORK}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kxsconfig:${PORTSDIR}/x11-themes/kdeartwork4
 .endif
 
-.ifdef(WITH_KDEBINDINGS)
+.if ${PORT_OPTIONS:MKDEBINDINGS}
 RUN_DEPENDS+=	kdebindings>=4.1.0:${PORTSDIR}/devel/kdebindings4
 .endif
 
-.ifndef(WITHOUT_KDEEDU)
+.if ${PORT_OPTIONS:MKDEEDU}
 RUN_DEPENDS+=	kdeedu>=4.1.0:${PORTSDIR}/misc/kdeedu4
 .endif
 
-.ifndef(WITHOUT_KDEGAMES)
+.if ${PORT_OPTIONS:MKDEGAMES}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmines:${PORTSDIR}/games/kdegames4
 .endif
 
-.ifndef(WITHOUT_KDEGRAPHICS)
+.if ${PORT_OPTIONS:MKDEGRAPHICS}
 RUN_DEPENDS+=	kdegraphics>=4.1.0:${PORTSDIR}/graphics/kdegraphics4
 .endif
 
-.ifndef(WITHOUT_KDEMULTIMEDIA)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmix:${PORTSDIR}/multimedia/kdemultimedia4
+.if ${PORT_OPTIONS:MKDEMULTIMEDIA}
+RUN_DEPENDS+=	kdemultimedia>=4.8.95:${PORTSDIR}/multimedia/kdemultimedia4
 .endif
 
-.ifndef(WITHOUT_KDENETWORK)
+.if ${PORT_OPTIONS:MKDENETWORK}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kget:${PORTSDIR}/net/kdenetwork4
 .endif
 
-.ifndef(WITHOUT_KDEPIM)
+.if ${PORT_OPTIONS:MKDEPIM}
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmail:${PORTSDIR}/deskutils/kdepim4
+.endif
+
+.if ${PORT_OPTIONS:MKDEPIM44}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmail:${PORTSDIR}/deskutils/kdepim44
 .endif
 
-.ifndef(WITHOUT_KDEPLASMA)
+.if ${PORT_OPTIONS:MKDEPLASMA}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/lancelot:${PORTSDIR}/deskutils/kdeplasma-addons
 .endif
 
-.ifndef(WITHOUT_KDESDK)
+.if ${PORT_OPTIONS:MKDESDK}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kompare:${PORTSDIR}/devel/kdesdk4
 .endif
 
-.ifndef(WITHOUT_KDETOYS)
+.if ${PORT_OPTIONS:MKDETOYS}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kteatime:${PORTSDIR}/x11-clocks/kdetoys4
 .endif
 
-.ifndef(WITHOUT_KDEUTILS)
+.if ${PORT_OPTIONS:MKDEUTILS}
 RUN_DEPENDS+=	kdeutils>=4.8.0:${PORTSDIR}/misc/kdeutils4
 .endif
 
-.ifndef(WITHOUT_KDEWEBDEV)
+.if ${PORT_OPTIONS:MKDEWEBDEV}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/klinkstatus:${PORTSDIR}/www/kdewebdev4
 .endif
 

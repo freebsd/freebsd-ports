@@ -4025,3 +4025,14 @@ devel/llvm29|devel/llvm|2013-02-01|Obsolete and unmaintained
 lang/llvm-gcc4|lang/dragonegg46|2013-02-01|Obsolete and unmaintained
 net-mgmt/nagiosgrapher||2013-02-02|Has expired: Deprecated upstream. Please use net-mgmt/pnp instead
 x11-fm/x-files||2013-02-02|Has expired: Project has been abandoned
+devel/kdebindings4-perl-perlkde|devel/p5-perlkde|2013-02-03|Renamed
+devel/kdebindings4-perl-perlqt|devel/p5-perlqt|2013-02-03|Renamed
+devel/kdebindings4-python-krosspython|devel/py-krosspython|2013-02-03|Renamed
+devel/kdebindings4-python-pykde4|devel/py-pykde4|2013-02-03|Renamed
+devel/kdebindings4-python-pykdeuic4|devel/py-pykdeuic4|2013-02-03|Renamed
+devel/kdebindings4-ruby-korundum|devel/ruby-korundum|2013-02-03|Renamed
+devel/kdebindings4-ruby-krossruby|devel/ruby-krossruby|2013-02-03|Renamed
+devel/kdebindings4-ruby-qtruby|devel/ruby-qtruby|2013-02-03|Renamed
+devel/kdebindings4-smoke-smokegen|devel/smokegen|2013-02-03|Renamed
+devel/kdebindings4-smoke-smokekde|devel/smokekde|2013-02-03|Renamed
+devel/kdebindings4-smoke-smokeqt|devel/smokeqt|2013-02-03|Renamed

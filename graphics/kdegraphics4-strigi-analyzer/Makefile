@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kdegraphics-strigi-analyzer
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kdegraphics-strigi-analyzer
 PORTVERSION=	${KDE4_VERSION}

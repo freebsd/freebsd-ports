@@ -1,0 +1,10 @@
+--- kleopatra/CMakeLists.txt.orig	2012-11-30 08:38:45.000000000 +0100
++++ kleopatra/CMakeLists.txt	2013-01-15 21:05:47.000000000 +0100
+@@ -365,6 +365,7 @@
+ endif(KDEPIM_MOBILE_UI)
+ 
+ add_definitions ( -DKDE_DEFAULT_DEBUG_AREA=5151 )
++add_definitions ( -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED )
+ 
+ 
+ kde4_add_app_icon(_kleopatra_mainwindow_SRCS "hi*-app-kleopatra.png")

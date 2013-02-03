@@ -138,7 +138,6 @@ share/locale/th/LC_MESSAGES/kcmstyle.mo
 share/locale/th/LC_MESSAGES/kcmusb.mo
 share/locale/th/LC_MESSAGES/kcmview1394.mo
 share/locale/th/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/th/LC_MESSAGES/kcmxinerama.mo
 share/locale/th/LC_MESSAGES/kcolorchooser.mo
 share/locale/th/LC_MESSAGES/kcron.mo
 share/locale/th/LC_MESSAGES/kde-menu.mo
@@ -158,23 +157,15 @@ share/locale/th/LC_MESSAGES/kdmgreet.mo
 share/locale/th/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/th/LC_MESSAGES/keditbookmarks.mo
 share/locale/th/LC_MESSAGES/kfile.mo
-share/locale/th/LC_MESSAGES/kfile_avi.mo
 share/locale/th/LC_MESSAGES/kfile_dds.mo
 share/locale/th/LC_MESSAGES/kfile_drgeo.mo
 share/locale/th/LC_MESSAGES/kfile_exr.mo
-share/locale/th/LC_MESSAGES/kfile_flac.mo
 share/locale/th/LC_MESSAGES/kfile_kig.mo
-share/locale/th/LC_MESSAGES/kfile_mp3.mo
-share/locale/th/LC_MESSAGES/kfile_mpc.mo
-share/locale/th/LC_MESSAGES/kfile_ogg.mo
 share/locale/th/LC_MESSAGES/kfile_pnm.mo
 share/locale/th/LC_MESSAGES/kfile_raw.mo
 share/locale/th/LC_MESSAGES/kfile_rgb.mo
 share/locale/th/LC_MESSAGES/kfile_rpm.mo
-share/locale/th/LC_MESSAGES/kfile_sid.mo
-share/locale/th/LC_MESSAGES/kfile_theora.mo
 share/locale/th/LC_MESSAGES/kfile_tiff.mo
-share/locale/th/LC_MESSAGES/kfile_wav.mo
 share/locale/th/LC_MESSAGES/kfile_xps.mo
 share/locale/th/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/th/LC_MESSAGES/kfilereplace.mo
@@ -335,6 +326,7 @@ share/locale/th/LC_MESSAGES/libksane.mo
 share/locale/th/LC_MESSAGES/libkscreensaver.mo
 share/locale/th/LC_MESSAGES/libkunitconversion.mo
 share/locale/th/LC_MESSAGES/libkworkspace.mo
+share/locale/th/LC_MESSAGES/libmailimporter.mo
 share/locale/th/LC_MESSAGES/libmailtransport.mo
 share/locale/th/LC_MESSAGES/libmessagecore.mo
 share/locale/th/LC_MESSAGES/libmessagelist.mo
@@ -510,7 +502,6 @@ share/locale/th/LC_MESSAGES/solid-network.mo
 share/locale/th/LC_MESSAGES/solid_qt.mo
 share/locale/th/LC_MESSAGES/solidcontrol.mo
 share/locale/th/LC_MESSAGES/soliduiserver.mo
-share/locale/th/LC_MESSAGES/spy.mo
 share/locale/th/LC_MESSAGES/step.mo
 share/locale/th/LC_MESSAGES/step_qt.mo
 share/locale/th/LC_MESSAGES/superkaramba.mo

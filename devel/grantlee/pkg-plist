@@ -37,17 +37,17 @@ lib/cmake/grantlee/GrantleeParseArguments.cmake
 lib/cmake/grantlee/GrantleeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/grantlee/GrantleeTargets.cmake
 lib/cmake/grantlee/GrantleeUse.cmake
-lib/grantlee/0.2/grantlee_defaultfilters.so
-lib/grantlee/0.2/grantlee_defaulttags.so
-lib/grantlee/0.2/grantlee_i18ntags.so
-lib/grantlee/0.2/grantlee_loadertags.so
+lib/grantlee/0.3/grantlee_defaultfilters.so
+lib/grantlee/0.3/grantlee_defaulttags.so
+lib/grantlee/0.3/grantlee_i18ntags.so
+lib/grantlee/0.3/grantlee_loadertags.so
 lib/libgrantlee_core.so
 lib/libgrantlee_core.so.0
-lib/libgrantlee_core.so.0.2.0
+lib/libgrantlee_core.so.0.3.0
 lib/libgrantlee_gui.so
 lib/libgrantlee_gui.so.0
-lib/libgrantlee_gui.so.0.2.0
-@dirrm lib/grantlee/0.2
+lib/libgrantlee_gui.so.0.3.0
+@dirrm lib/grantlee/0.3
 @dirrm lib/grantlee
 @dirrm lib/cmake/grantlee
 @dirrmtry lib/cmake

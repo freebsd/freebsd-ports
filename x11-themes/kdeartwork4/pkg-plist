@@ -105,11 +105,40 @@ share/apps/desktoptheme/Aya/widgets/systemtray.svgz
 share/apps/desktoptheme/Aya/widgets/tasks.svgz
 share/apps/desktoptheme/Aya/widgets/tooltip.svgz
 share/apps/desktoptheme/Aya/widgets/translucentbackground.svgz
+share/apps/desktoptheme/Produkt/colors
 share/apps/desktoptheme/Produkt/dialogs/background.svgz
 share/apps/desktoptheme/Produkt/dialogs/kickoff.svgz
 share/apps/desktoptheme/Produkt/dialogs/krunner.svgz
 share/apps/desktoptheme/Produkt/dialogs/shutdowndialog.svgz
+share/apps/desktoptheme/Produkt/icons/amarok.svgz
+share/apps/desktoptheme/Produkt/icons/audio.svgz
+share/apps/desktoptheme/Produkt/icons/battery.svgz
+share/apps/desktoptheme/Produkt/icons/device.svgz
+share/apps/desktoptheme/Produkt/icons/edit-paste.svgz
+share/apps/desktoptheme/Produkt/icons/kget.svgz
+share/apps/desktoptheme/Produkt/icons/klipper.svgz
+share/apps/desktoptheme/Produkt/icons/konv_message.svgz
+share/apps/desktoptheme/Produkt/icons/konversation.svgz
+share/apps/desktoptheme/Produkt/icons/kopete-alt.svgz
+share/apps/desktoptheme/Produkt/icons/kopete.svgz
+share/apps/desktoptheme/Produkt/icons/korgac.svgz
+share/apps/desktoptheme/Produkt/icons/ktorrent.svgz
+share/apps/desktoptheme/Produkt/icons/kubuntu-start.svgz
+share/apps/desktoptheme/Produkt/icons/nepomuk.svgz
+share/apps/desktoptheme/Produkt/icons/network.svgz
+share/apps/desktoptheme/Produkt/icons/notification.svgz
+share/apps/desktoptheme/Produkt/icons/preferences.svgz
+share/apps/desktoptheme/Produkt/icons/printer.svgz
+share/apps/desktoptheme/Produkt/icons/quickaccess.svgz
+share/apps/desktoptheme/Produkt/icons/wallet.svgz
 share/apps/desktoptheme/Produkt/metadata.desktop
+share/apps/desktoptheme/Produkt/translucent/dialogs/background.svgz
+share/apps/desktoptheme/Produkt/translucent/dialogs/krunner.svgz
+share/apps/desktoptheme/Produkt/translucent/dialogs/shutdowndialog.svgz
+share/apps/desktoptheme/Produkt/translucent/widgets/background.svgz
+share/apps/desktoptheme/Produkt/translucent/widgets/clock.svgz
+share/apps/desktoptheme/Produkt/translucent/widgets/panel-background.svgz
+share/apps/desktoptheme/Produkt/translucent/widgets/tooltip.svgz
 share/apps/desktoptheme/Produkt/widgets/action-overlays.svgz
 share/apps/desktoptheme/Produkt/widgets/arrows.svgz
 share/apps/desktoptheme/Produkt/widgets/background.svgz
@@ -6808,6 +6837,10 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/apps/desktoptheme/Tibanna/dialogs
 @dirrmtry share/apps/desktoptheme/Tibanna
 @dirrmtry share/apps/desktoptheme/Produkt/widgets
+@dirrm share/apps/desktoptheme/Produkt/translucent/widgets
+@dirrm share/apps/desktoptheme/Produkt/translucent/dialogs
+@dirrm share/apps/desktoptheme/Produkt/translucent
+@dirrm share/apps/desktoptheme/Produkt/icons
 @dirrm share/apps/desktoptheme/Produkt/dialogs
 @dirrmtry share/apps/desktoptheme/Produkt
 @dirrmtry share/apps/desktoptheme/Aya/widgets

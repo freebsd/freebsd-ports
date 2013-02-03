@@ -1,3 +1,4 @@
+share/locale/vi/LC_MESSAGES/akregator.mo
 share/locale/vi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/vi/LC_MESSAGES/attica_kde.mo
 share/locale/vi/LC_MESSAGES/audiorename_plugin.mo
@@ -75,7 +76,6 @@ share/locale/vi/LC_MESSAGES/kcmsmserver.mo
 share/locale/vi/LC_MESSAGES/kcmstyle.mo
 share/locale/vi/LC_MESSAGES/kcmusb.mo
 share/locale/vi/LC_MESSAGES/kcmview1394.mo
-share/locale/vi/LC_MESSAGES/kcmxinerama.mo
 share/locale/vi/LC_MESSAGES/kcron.mo
 share/locale/vi/LC_MESSAGES/kde-menu.mo
 share/locale/vi/LC_MESSAGES/kdebugdialog.mo
@@ -210,12 +210,21 @@ share/locale/vi/LC_MESSAGES/nepomukstorage.mo
 share/locale/vi/LC_MESSAGES/nsplugin.mo
 share/locale/vi/LC_MESSAGES/phonon_kde.mo
 share/locale/vi/LC_MESSAGES/plasma-remote-helper.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_battery.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_clock.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_kget.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_launcher.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_newspaper.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_notifier.mo
+share/locale/vi/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/vi/LC_MESSAGES/plasmapkg.mo
 share/locale/vi/LC_MESSAGES/rellinks.mo
 share/locale/vi/LC_MESSAGES/searchbarplugin.mo
 share/locale/vi/LC_MESSAGES/solid-hardware.mo
 share/locale/vi/LC_MESSAGES/soliduiserver.mo
+share/locale/vi/LC_MESSAGES/systemsettings.mo
 share/locale/vi/LC_MESSAGES/timezones4.mo
 share/locale/vi/LC_MESSAGES/uachangerplugin.mo
 share/locale/vi/LC_MESSAGES/useraccount.mo

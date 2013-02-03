@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libkonq
-# Date created:		2012-02-25
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libkonq
 PORTVERSION=	${KDE4_VERSION}

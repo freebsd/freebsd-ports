@@ -869,17 +869,6 @@
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdebindings4
-    SUBDIR += kdebindings4-perl-perlkde
-    SUBDIR += kdebindings4-perl-perlqt
-    SUBDIR += kdebindings4-python-krosspython
-    SUBDIR += kdebindings4-python-pykde4
-    SUBDIR += kdebindings4-python-pykdeuic4
-    SUBDIR += kdebindings4-ruby-korundum
-    SUBDIR += kdebindings4-ruby-krossruby
-    SUBDIR += kdebindings4-ruby-qtruby
-    SUBDIR += kdebindings4-smoke-smokegen
-    SUBDIR += kdebindings4-smoke-smokekde
-    SUBDIR += kdebindings4-smoke-smokeqt
     SUBDIR += kdesdk3
     SUBDIR += kdesdk4
     SUBDIR += kdesvn-kde4
@@ -2941,6 +2930,8 @@
     SUBDIR += p5-orz
     SUBDIR += p5-parent
     SUBDIR += p5-perlbrew
+    SUBDIR += p5-perlkde
+    SUBDIR += p5-perlqt
     SUBDIR += p5-pip
     SUBDIR += p5-prefork
     SUBDIR += p5-reaper
@@ -3481,6 +3472,7 @@
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-krosspython
     SUBDIR += py-kss-core
     SUBDIR += py-levenshtein
     SUBDIR += py-libgsf
@@ -3548,6 +3540,8 @@
     SUBDIR += py-pyev
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
+    SUBDIR += py-pykde4
+    SUBDIR += py-pykdeuic4
     SUBDIR += py-pyke
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
@@ -3867,6 +3861,8 @@
     SUBDIR += ruby-intl
     SUBDIR += ruby-io-reactor
     SUBDIR += ruby-jttui
+    SUBDIR += ruby-korundum
+    SUBDIR += ruby-krossruby
     SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
@@ -3875,6 +3871,7 @@
     SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
+    SUBDIR += ruby-qtruby
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbbr
     SUBDIR += ruby-rbison
@@ -4168,6 +4165,9 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += sml_tk
+    SUBDIR += smokegen
+    SUBDIR += smokekde
+    SUBDIR += smokeqt
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += sourcenav

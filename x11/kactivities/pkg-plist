@@ -12,21 +12,38 @@ lib/cmake/KActivities/KActivitiesConfig.cmake
 lib/cmake/KActivities/KActivitiesConfigVersion.cmake
 lib/cmake/KActivities/KActivitiesLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
-lib/kde4/activitymanager_plugin_dummy.so
 lib/kde4/activitymanager_plugin_globalshortcuts.so
-lib/kde4/activitymanager_plugin_nepomuk.so
 lib/kde4/activitymanager_plugin_slc.so
+lib/kde4/activitymanager_plugin_sqlite.so
+lib/kde4/activitymanager_uihandler_declarative.so
+lib/kde4/activitymanager_uihandler_kdialog.so
+lib/kde4/kactivitymanagerd_fileitem_linking_plugin.so
+lib/kde4/kio_activities.so
 lib/libkactivities.so
 lib/libkactivities.so.6
 lib/libkactivities.so.6.0.0
 libdata/pkgconfig/libkactivities.pc
-share/kde4/services/activitymanager-plugin-dummy.desktop
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/ChoiceDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/MessageDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/NewPasswordDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/PasswordDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/uihandler.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/metadata.desktop
+share/kde4/services/activities.protocol
 share/kde4/services/activitymanager-plugin-globalshortcuts.desktop
-share/kde4/services/activitymanager-plugin-nepomuk.desktop
 share/kde4/services/activitymanager-plugin-slc.desktop
+share/kde4/services/activitymanager-plugin-sqlite.desktop
 share/kde4/services/kactivitymanagerd.desktop
-share/kde4/services/kded/activitymanager.desktop
+share/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
 share/kde4/servicetypes/activitymanager-plugin.desktop
+share/ontology/kde/kao.ontology
+share/ontology/kde/kao.trig
+@dirrmtry share/ontology/kde
+@dirrmtry share/ontology
+@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui
+@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents
+@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler
+@dirrmtry share/apps/plasma/packages
 @dirrm lib/cmake/KActivities
 @dirrmtry lib/cmake
 @dirrm include/kactivities

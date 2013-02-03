@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	blinken
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	blinken
 PORTVERSION=	${KDE4_VERSION}
