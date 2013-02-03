@@ -30,6 +30,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/manager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/manager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/manager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_dispatch.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_dispatch.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_dispatch.pyo
