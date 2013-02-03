@@ -1,0 +1,12 @@
+Do not install the man page with make install, as it might not be called if
+NOPORTDOCS is set. We install the man page manually.
+--- xsd/documentation/makefile~	2012-08-10 19:07:34.000000000 -0300
++++ xsd/documentation/makefile	2012-08-10 19:07:48.000000000 -0300
+@@ -21,7 +21,6 @@
+ 	$(call install-data,$(src_base)/schema-authoring-guide.xhtml,$(install_doc_dir)/xsd/schema-authoring-guide.xhtml)
+ 	$(call install-data,$(src_base)/xsd.xhtml,$(install_doc_dir)/xsd/xsd.xhtml)
+ 	$(call install-data,$(src_base)/custom-literals.xsd,$(install_doc_dir)/xsd/custom-literals.xsd)
+-	$(call install-data,$(src_base)/xsd.1,$(install_man_dir)/man1/xsd.1)
+ 
+ # Dist.
+ #

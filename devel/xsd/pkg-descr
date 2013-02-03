@@ -1,0 +1,15 @@
+CodeSynthesis XSD is a W3C XML Schema to C++ translator.  It generates
+vocabulary-specific, statically-typed C++ mappings (also called bindings) from
+XML Schema definitions.  XSD supports two C++ mappings: in-memory C++/Tree and
+event-driven C++/Parser.
+
+The C++/Tree mapping consists of C++ classes that represent data types defined
+in XML Schema, a set of parsing functions that convert XML documents to a
+tree-like in-memory object model, and a set of serialization functions that
+convert the object model back to XML.
+
+The C++/Parser mapping provides parser skeletons for data types defined in XML
+Schema. Using these parser skeletons you can build your own in-memory
+representations or perform immediate processing of XML documents.
+
+WWW: http://www.codesynthesis.com/projects/xsd/

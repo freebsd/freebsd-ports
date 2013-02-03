@@ -991,6 +991,7 @@
     SUBDIR += libixp
     SUBDIR += libjson++
     SUBDIR += libk8055
+    SUBDIR += libkolab
     SUBDIR += liblas
     SUBDIR += liblcfg
     SUBDIR += libleaftag
@@ -4297,6 +4298,7 @@
     SUBDIR += xmltooling
     SUBDIR += xorg-macros
     SUBDIR += xparam
+    SUBDIR += xsd
     SUBDIR += xtl
     SUBDIR += xtla
     SUBDIR += xwpe

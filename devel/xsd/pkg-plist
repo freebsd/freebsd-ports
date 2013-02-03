@@ -1,0 +1,485 @@
+bin/xsdcxx
+include/xsd/cxx/auto-array.hxx
+include/xsd/cxx/compilers/vc-7/post.hxx
+include/xsd/cxx/compilers/vc-7/pre.hxx
+include/xsd/cxx/compilers/vc-8/post.hxx
+include/xsd/cxx/compilers/vc-8/pre.hxx
+include/xsd/cxx/config.hxx
+include/xsd/cxx/exceptions.hxx
+include/xsd/cxx/parser/document.hxx
+include/xsd/cxx/parser/document.txx
+include/xsd/cxx/parser/elements.hxx
+include/xsd/cxx/parser/elements.txx
+include/xsd/cxx/parser/error-handler.hxx
+include/xsd/cxx/parser/error-handler.txx
+include/xsd/cxx/parser/exceptions.hxx
+include/xsd/cxx/parser/exceptions.ixx
+include/xsd/cxx/parser/exceptions.txx
+include/xsd/cxx/parser/expat/elements.hxx
+include/xsd/cxx/parser/expat/elements.txx
+include/xsd/cxx/parser/map.hxx
+include/xsd/cxx/parser/map.ixx
+include/xsd/cxx/parser/map.txx
+include/xsd/cxx/parser/non-validating/parser.hxx
+include/xsd/cxx/parser/non-validating/parser.txx
+include/xsd/cxx/parser/non-validating/xml-schema-pimpl.hxx
+include/xsd/cxx/parser/non-validating/xml-schema-pimpl.ixx
+include/xsd/cxx/parser/non-validating/xml-schema-pimpl.txx
+include/xsd/cxx/parser/non-validating/xml-schema-pskel.hxx
+include/xsd/cxx/parser/non-validating/xml-schema-pskel.ixx
+include/xsd/cxx/parser/non-validating/xml-schema-pskel.txx
+include/xsd/cxx/parser/schema-exceptions.hxx
+include/xsd/cxx/parser/schema-exceptions.ixx
+include/xsd/cxx/parser/schema-exceptions.txx
+include/xsd/cxx/parser/substitution-map.hxx
+include/xsd/cxx/parser/substitution-map.txx
+include/xsd/cxx/parser/validating/exceptions.hxx
+include/xsd/cxx/parser/validating/exceptions.ixx
+include/xsd/cxx/parser/validating/exceptions.txx
+include/xsd/cxx/parser/validating/inheritance-map.hxx
+include/xsd/cxx/parser/validating/inheritance-map.txx
+include/xsd/cxx/parser/validating/parser.hxx
+include/xsd/cxx/parser/validating/parser.txx
+include/xsd/cxx/parser/validating/xml-schema-pimpl.hxx
+include/xsd/cxx/parser/validating/xml-schema-pimpl.ixx
+include/xsd/cxx/parser/validating/xml-schema-pimpl.txx
+include/xsd/cxx/parser/validating/xml-schema-pskel.hxx
+include/xsd/cxx/parser/validating/xml-schema-pskel.ixx
+include/xsd/cxx/parser/validating/xml-schema-pskel.txx
+include/xsd/cxx/parser/xerces/elements.hxx
+include/xsd/cxx/parser/xerces/elements.txx
+include/xsd/cxx/parser/xml-schema.hxx
+include/xsd/cxx/parser/xml-schema.ixx
+include/xsd/cxx/parser/xml-schema.txx
+include/xsd/cxx/post.hxx
+include/xsd/cxx/pre.hxx
+include/xsd/cxx/ro-string.hxx
+include/xsd/cxx/ro-string.txx
+include/xsd/cxx/tree/ace-cdr-stream-common.hxx
+include/xsd/cxx/tree/ace-cdr-stream-extraction.hxx
+include/xsd/cxx/tree/ace-cdr-stream-insertion.hxx
+include/xsd/cxx/tree/bits/literals.hxx
+include/xsd/cxx/tree/bits/literals.ixx
+include/xsd/cxx/tree/buffer.hxx
+include/xsd/cxx/tree/buffer.txx
+include/xsd/cxx/tree/comparison-map.hxx
+include/xsd/cxx/tree/comparison-map.txx
+include/xsd/cxx/tree/containers-wildcard.hxx
+include/xsd/cxx/tree/containers.hxx
+include/xsd/cxx/tree/containers.txx
+include/xsd/cxx/tree/date-time-extraction.txx
+include/xsd/cxx/tree/date-time-insertion.txx
+include/xsd/cxx/tree/date-time-ostream.txx
+include/xsd/cxx/tree/date-time.hxx
+include/xsd/cxx/tree/date-time.ixx
+include/xsd/cxx/tree/date-time.txx
+include/xsd/cxx/tree/element-map.hxx
+include/xsd/cxx/tree/element-map.txx
+include/xsd/cxx/tree/elements.hxx
+include/xsd/cxx/tree/elements.ixx
+include/xsd/cxx/tree/elements.txx
+include/xsd/cxx/tree/error-handler.hxx
+include/xsd/cxx/tree/error-handler.txx
+include/xsd/cxx/tree/exceptions.hxx
+include/xsd/cxx/tree/exceptions.txx
+include/xsd/cxx/tree/facet.hxx
+include/xsd/cxx/tree/istream-fwd.hxx
+include/xsd/cxx/tree/istream.hxx
+include/xsd/cxx/tree/list.hxx
+include/xsd/cxx/tree/ostream.hxx
+include/xsd/cxx/tree/parsing.hxx
+include/xsd/cxx/tree/parsing.txx
+include/xsd/cxx/tree/parsing/boolean.hxx
+include/xsd/cxx/tree/parsing/byte.hxx
+include/xsd/cxx/tree/parsing/date-time.txx
+include/xsd/cxx/tree/parsing/decimal.hxx
+include/xsd/cxx/tree/parsing/double.hxx
+include/xsd/cxx/tree/parsing/element-map.txx
+include/xsd/cxx/tree/parsing/float.hxx
+include/xsd/cxx/tree/parsing/int.hxx
+include/xsd/cxx/tree/parsing/long.hxx
+include/xsd/cxx/tree/parsing/short.hxx
+include/xsd/cxx/tree/parsing/unsigned-byte.hxx
+include/xsd/cxx/tree/parsing/unsigned-int.hxx
+include/xsd/cxx/tree/parsing/unsigned-long.hxx
+include/xsd/cxx/tree/parsing/unsigned-short.hxx
+include/xsd/cxx/tree/serialization.hxx
+include/xsd/cxx/tree/serialization.txx
+include/xsd/cxx/tree/serialization/boolean.hxx
+include/xsd/cxx/tree/serialization/byte.hxx
+include/xsd/cxx/tree/serialization/date-time.txx
+include/xsd/cxx/tree/serialization/decimal.hxx
+include/xsd/cxx/tree/serialization/double.hxx
+include/xsd/cxx/tree/serialization/element-map.txx
+include/xsd/cxx/tree/serialization/float.hxx
+include/xsd/cxx/tree/serialization/int.hxx
+include/xsd/cxx/tree/serialization/long.hxx
+include/xsd/cxx/tree/serialization/short.hxx
+include/xsd/cxx/tree/serialization/unsigned-byte.hxx
+include/xsd/cxx/tree/serialization/unsigned-int.hxx
+include/xsd/cxx/tree/serialization/unsigned-long.hxx
+include/xsd/cxx/tree/serialization/unsigned-short.hxx
+include/xsd/cxx/tree/std-ostream-map.hxx
+include/xsd/cxx/tree/std-ostream-map.txx
+include/xsd/cxx/tree/std-ostream-operators.hxx
+include/xsd/cxx/tree/stream-extraction-map.hxx
+include/xsd/cxx/tree/stream-extraction-map.txx
+include/xsd/cxx/tree/stream-extraction.hxx
+include/xsd/cxx/tree/stream-insertion-map.hxx
+include/xsd/cxx/tree/stream-insertion-map.txx
+include/xsd/cxx/tree/stream-insertion.hxx
+include/xsd/cxx/tree/text.hxx
+include/xsd/cxx/tree/text.txx
+include/xsd/cxx/tree/type-factory-map.hxx
+include/xsd/cxx/tree/type-factory-map.txx
+include/xsd/cxx/tree/type-serializer-map.hxx
+include/xsd/cxx/tree/type-serializer-map.txx
+include/xsd/cxx/tree/types.hxx
+include/xsd/cxx/tree/types.txx
+include/xsd/cxx/tree/xdr-stream-common.hxx
+include/xsd/cxx/tree/xdr-stream-extraction.hxx
+include/xsd/cxx/tree/xdr-stream-insertion.hxx
+include/xsd/cxx/version.hxx
+include/xsd/cxx/xml/bits/literals.hxx
+include/xsd/cxx/xml/bits/literals.ixx
+include/xsd/cxx/xml/char-iso8859-1.hxx
+include/xsd/cxx/xml/char-iso8859-1.txx
+include/xsd/cxx/xml/char-lcp.hxx
+include/xsd/cxx/xml/char-lcp.txx
+include/xsd/cxx/xml/char-utf8.hxx
+include/xsd/cxx/xml/char-utf8.txx
+include/xsd/cxx/xml/dom/auto-ptr.hxx
+include/xsd/cxx/xml/dom/bits/error-handler-proxy.hxx
+include/xsd/cxx/xml/dom/bits/error-handler-proxy.txx
+include/xsd/cxx/xml/dom/elements.hxx
+include/xsd/cxx/xml/dom/elements.txx
+include/xsd/cxx/xml/dom/parsing-header.hxx
+include/xsd/cxx/xml/dom/parsing-source.hxx
+include/xsd/cxx/xml/dom/parsing-source.txx
+include/xsd/cxx/xml/dom/serialization-header.hxx
+include/xsd/cxx/xml/dom/serialization-header.txx
+include/xsd/cxx/xml/dom/serialization-source.hxx
+include/xsd/cxx/xml/dom/serialization-source.txx
+include/xsd/cxx/xml/dom/wildcard-source.hxx
+include/xsd/cxx/xml/dom/wildcard-source.txx
+include/xsd/cxx/xml/elements.hxx
+include/xsd/cxx/xml/elements.txx
+include/xsd/cxx/xml/error-handler.hxx
+include/xsd/cxx/xml/exceptions.hxx
+include/xsd/cxx/xml/qualified-name.hxx
+include/xsd/cxx/xml/sax/bits/error-handler-proxy.hxx
+include/xsd/cxx/xml/sax/bits/error-handler-proxy.txx
+include/xsd/cxx/xml/sax/std-input-source.hxx
+include/xsd/cxx/xml/std-memory-manager.hxx
+include/xsd/cxx/xml/string.hxx
+include/xsd/cxx/xml/string.ixx
+include/xsd/cxx/xml/string.txx
+include/xsd/cxx/zc-istream.hxx
+include/xsd/cxx/zc-istream.txx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/generated/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/generated/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/generated/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/hello/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/hello/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/hello/hello.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/hello/hello.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/library-pimpl.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/library-pimpl.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/library.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/library.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/library/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixed/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixed/anchor.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixed/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixed/text.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixed/text.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixed/text.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixin/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixin/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixin/instance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixin/schema.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixin/schema.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/mixin/types.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/balance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/deposit.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/protocol-pimpl.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/protocol-pimpl.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/protocol.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/protocol.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/protocol.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/multiroot/withdraw.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/gen.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/test-500k.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/test-50k.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/test-5k.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/test.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/time.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/performance/time.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polymorphism/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polymorphism/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polymorphism/supermen-pimpl.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polymorphism/supermen-pimpl.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polymorphism/supermen.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polymorphism/supermen.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/batman.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/person.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/superman.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/supermen-pimpl.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/supermen-pimpl.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/polyroot/supermen.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/wildcard/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/wildcard/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/wildcard/email.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/wildcard/email.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/boost-archive-extraction.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/boost-archive-insertion.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/library-prologue.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/boost/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/cdr/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/cdr/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/cdr/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/cdr/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/xdr/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/xdr/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/xdr/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/binary/xdr/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/caching/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/caching/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/caching/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/caching/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/compressed-format-target.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/compressed-format-target.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/compressed-input-source.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/compressed-input-source.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/library.xml.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/compression/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/calendar/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/calendar/calendar.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/calendar/calendar.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/calendar/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/calendar/xml-schema-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/calendar/xml-schema-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/dom-parse.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/dom-parse.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/people.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/people.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/xml-schema-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/comments/xml-schema-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/contacts/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/contacts/contacts-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/contacts/contacts-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/contacts/contacts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/contacts/contacts.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/contacts/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/double/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/double/double-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/double/double-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/double/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/double/order.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/mixed/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/mixed/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/mixed/people-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/mixed/people-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/mixed/people.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/mixed/people.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/people-custom-fwd.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/people-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/people-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/people.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/taxonomy/people.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/wildcard/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/wildcard/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/wildcard/wildcard-custom.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/wildcard/wildcard-custom.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/wildcard/wildcard.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/custom/wildcard/wildcard.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/dbxml/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/dbxml/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/dbxml/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/grammar-input-stream.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/grammar-input-stream.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/embedded/xsdbin.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/hello/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/hello/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/hello/hello.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/hello/hello.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/library/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/library/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/library/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/library/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/balance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/deposit.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/dom-parse.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/dom-parse.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/dom-serialize.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/dom-serialize.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/protocol.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/messaging/withdraw.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/mixed/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/mixed/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/mixed/text.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/mixed/text.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/balance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/deposit.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/dom-parse.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/dom-parse.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/protocol.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/multiroot/withdraw.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/gen.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/parsing.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/serialization.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/test-500k.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/test-50k.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/test-5k.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/test.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/time.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/performance/time.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/supermen.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/supermen.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/parser.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/parser.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/position.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/position.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/serializer.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/serializer.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/wildcard/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/wildcard/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/wildcard/email.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/wildcard/email.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/dom-parse.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/dom-parse.hxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/driver-2.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/people.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/people.xsd
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/xpath
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/wildcard
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/streaming
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/polymorphism
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/performance
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/multiroot
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/mixed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/messaging
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/library
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/hello
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/embedded
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/dbxml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/wildcard
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/taxonomy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/mixed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/double
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/contacts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/comments
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/calendar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/compression
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/caching
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary/xdr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary/cdr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary/boost
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/wildcard
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/polyroot
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/polymorphism
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/performance
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/multiroot
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/mixin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/mixed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/library
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/hello
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/generated
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/FLOSSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-UNIX
+%%PORTDOCS%%%%DOCSDIR%%/custom-literals.xsd
+%%PORTDOCS%%%%DOCSDIR%%/cxx/parser/guide/cxx-parser-guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cxx/parser/guide/cxx-parser-guide.ps
+%%PORTDOCS%%%%DOCSDIR%%/cxx/parser/guide/figure-1.png
+%%PORTDOCS%%%%DOCSDIR%%/cxx/parser/guide/index.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/dbxml/driver.cxx
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/dbxml/index.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/dbxml/library.xsd
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/guide/cxx-tree-guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/guide/cxx-tree-guide.ps
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/guide/index.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/manual/cxx-tree-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/manual/cxx-tree-manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/manual/index.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/reference/footer.html
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/reference/libxsd.doxygen
+%%PORTDOCS%%%%DOCSDIR%%/cxx/tree/reference/makefile
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/future.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/schema-authoring-guide.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/xsd.xhtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/reference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/dbxml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/parser/guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/parser
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/xsd/cxx/xml/sax/bits
+@dirrm include/xsd/cxx/xml/sax
+@dirrm include/xsd/cxx/xml/dom/bits
+@dirrm include/xsd/cxx/xml/dom
+@dirrm include/xsd/cxx/xml/bits
+@dirrm include/xsd/cxx/xml
+@dirrm include/xsd/cxx/tree/serialization
+@dirrm include/xsd/cxx/tree/parsing
+@dirrm include/xsd/cxx/tree/bits
+@dirrm include/xsd/cxx/tree
+@dirrm include/xsd/cxx/parser/xerces
+@dirrm include/xsd/cxx/parser/validating
+@dirrm include/xsd/cxx/parser/non-validating
+@dirrm include/xsd/cxx/parser/expat
+@dirrm include/xsd/cxx/parser
+@dirrm include/xsd/cxx/compilers/vc-8
+@dirrm include/xsd/cxx/compilers/vc-7
+@dirrm include/xsd/cxx/compilers
+@dirrm include/xsd/cxx
+@dirrm include/xsd
