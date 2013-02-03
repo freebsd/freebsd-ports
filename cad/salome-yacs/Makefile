@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad science
 
 MASTERDIR=	${.CURDIR}/../salome

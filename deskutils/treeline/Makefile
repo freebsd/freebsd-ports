@@ -7,7 +7,7 @@
 
 PORTNAME=	treeline
 PORTVERSION=	1.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/:treeline \
 		http://treeline.bellz.org/plugins/:plugins \

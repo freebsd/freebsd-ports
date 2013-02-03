@@ -3,6 +3,7 @@
 
 PORTNAME=	swine
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	emulators deskutils python
 MASTER_SITES=	GH
 

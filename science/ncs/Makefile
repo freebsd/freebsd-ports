@@ -7,6 +7,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
