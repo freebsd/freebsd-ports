@@ -1,4 +1,4 @@
-# Created by: trevor
+# Created by: eserte
 # $FreeBSD$
 
 PORTNAME=	ephem
