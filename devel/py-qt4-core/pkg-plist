@@ -21,9 +21,9 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/misc.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/misc.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/misc.pyo
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_type.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_type.pyc
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_type.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_metaclass.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_metaclass.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_metaclass.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/qobjectcreator.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/qobjectcreator.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/qobjectcreator.pyo
@@ -125,6 +125,7 @@ share/py-sip/QtCore/qelapsedtimer.sip
 share/py-sip/QtCore/qeventloop.sip
 share/py-sip/QtCore/qeventtransition.sip
 share/py-sip/QtCore/qfile.sip
+share/py-sip/QtCore/qfiledevice.sip
 share/py-sip/QtCore/qfileinfo.sip
 share/py-sip/QtCore/qfilesystemwatcher.sip
 share/py-sip/QtCore/qfinalstate.sip
@@ -187,6 +188,7 @@ share/py-sip/QtCore/qtimeline.sip
 share/py-sip/QtCore/qtimer.sip
 share/py-sip/QtCore/qtranslator.sip
 share/py-sip/QtCore/qurl.sip
+share/py-sip/QtCore/qurlquery.sip
 share/py-sip/QtCore/quuid.sip
 share/py-sip/QtCore/qvariant.sip
 share/py-sip/QtCore/qvariantanimation.sip

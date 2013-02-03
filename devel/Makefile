@@ -3565,6 +3565,7 @@
     SUBDIR += py-qt4-assistant
     SUBDIR += py-qt4-core
     SUBDIR += py-qt4-dbus
+    SUBDIR += py-qt4-dbussupport
     SUBDIR += py-qt4-declarative
     SUBDIR += py-qt4-designer
     SUBDIR += py-qt4-designerplugin

@@ -1,6 +1,6 @@
---- ./configure.py.orig	2011-08-02 06:18:51.000000000 -0300
-+++ ./configure.py	2011-09-11 16:22:52.000000000 -0300
-@@ -352,7 +352,7 @@
+--- ./configure.py.orig	2012-06-26 09:09:24.000000000 -0400
++++ ./configure.py	2012-08-30 22:06:19.000000000 -0400
+@@ -358,7 +358,7 @@
  
          # Note that the order in which we check is important for the
          # consolidated module - a module's dependencies must be checked first.
@@ -8,8 +8,8 @@
 +        check_module("QtCore", "qobject.h", "new QObject()")
  
          check_module("QtGui", "qwidget.h", "new QWidget()")
-         check_module("QtHelp", "qhelpengine.h", "new QHelpEngine(\"foo\")")
-@@ -627,21 +627,6 @@
+         if qt_version < 0x050000: check_module("QtHelp", "qhelpengine.h", "new QHelpEngine(\"foo\")")
+@@ -648,21 +648,6 @@
          if opts.staticplugins:
              sipconfig.inform("Unable to find the following static plugins: %s" % ", ".join(opts.staticplugins))
  
@@ -31,7 +31,7 @@
      def _qpy_directories(self, mname, lib_name):
          """Return a 3-tuple of the directories containing the header files, the
          directory containing the library, and the name of the support library
-@@ -732,6 +717,9 @@
+@@ -756,6 +741,9 @@
          return libs, libdirs
  
      def module_installs(self):
@@ -41,7 +41,7 @@
          return [os.path.join(src_dir, "__init__.py"), "pyqtconfig.py"]
  
      def qpy_libs(self):
-@@ -861,40 +849,41 @@
+@@ -888,40 +876,41 @@
              makefile.generate()
              tool.append("elementtree")
  
@@ -49,19 +49,18 @@
 -        # previews work properly and normal console use will work anyway), but
 -        # not on Windows (so that normal console use will work).
 -        sipconfig.inform("Creating pyuic4 wrapper...")
--
++        if "QtCore" in pyqt_modules:
++            # Create the pyuic4 wrapper.  Use the GUI version on MacOS (so that
++            # previews work properly and normal console use will work anyway), but
++            # not on Windows (so that normal console use will work).
++            sipconfig.inform("Creating pyuic4 wrapper...")
+ 
 -        if sys.platform == 'darwin':
 -            gui = True
 -            use_arch = opts.use_arch
 -        else:
 -            gui = False
 -            use_arch = ''
-+        if "QtCore" in pyqt_modules:
-+            # Create the pyuic4 wrapper.  Use the GUI version on MacOS (so that
-+            # previews work properly and normal console use will work anyway), but
-+            # not on Windows (so that normal console use will work).
-+            sipconfig.inform("Creating pyuic4 wrapper...")
-+
 +            if sys.platform == 'darwin':
 +                gui = True
 +                use_arch = opts.use_arch
@@ -112,16 +111,17 @@
  
          if "QtXml" in pyqt_modules:
              sipconfig.inform("Creating pylupdate4 Makefile...")
-@@ -945,7 +934,7 @@
-                     # We need to work out how to specify the right framework
-                     # version.
-                     link = "-framework Python"
--                elif "--enable-shared" in ducfg.get("CONFIG_ARGS", ""):
-+                else:
+@@ -977,9 +966,6 @@
+                     # include the ABI information.
+                     abi = ""
+                 else:
+-                    dynamic_pylib = "--enable-shared" in config_args
+-
+-                if dynamic_pylib:
                      if glob.glob("%s/lib/libpython%d.%d*" % (ducfg["exec_prefix"], py_major, py_minor)):
                          lib_dir_flag = quote("-L%s/lib" % ducfg["exec_prefix"])
                      elif glob.glob("%s/libpython%d.%d*" % (ducfg["LIBDIR"], py_major, py_minor)):
-@@ -955,9 +944,6 @@
+@@ -990,9 +976,6 @@
                          opts.designer_plugin = False
  
                      link = "%s -lpython%d.%d%s" % (lib_dir_flag, py_major, py_minor, abi)
@@ -131,7 +131,23 @@
  
                  pysh_lib = ducfg.get("LDLIBRARY", "")
  
-@@ -2205,6 +2191,9 @@
+@@ -1378,6 +1361,7 @@
+ def check_dbus():
+     """See if the DBus support module should be built.
+     """
++    return # Kill search for dbus. Search key: 6f29b27e48
+     sipconfig.inform("Checking to see if the dbus support module should be built...")
+ 
+     sout = get_command_stdout("pkg-config --cflags-only-I --libs dbus-1")
+@@ -1954,6 +1938,7 @@
+     sipcfg.qt_framework = qt_framework
+     sipcfg.qt_threaded = 1
+     sipcfg.qt_dir = qt_dir
++    sipcfg.qt_data_dir = qt_datadir
+     sipcfg.qt_lib_dir = qt_libdir
+ 
+     return ConfigurePyQt4(generator)
+@@ -2273,6 +2258,9 @@
          p.print_help()
          sys.exit(2)
  
@@ -141,7 +157,7 @@
      sipcfg.set_build_macros(macros)
  
      # Check Qt is what we need.
-@@ -2234,9 +2223,9 @@
+@@ -2302,9 +2290,9 @@
      installs=[(pyqt.module_installs(), pyqt_modroot)]
  
      if opts.api:
@@ -153,7 +169,7 @@
  
      if opts.bigqt:
          xtra_modules.append("_qt")
-@@ -2249,7 +2238,7 @@
+@@ -2317,7 +2305,7 @@
  
      sipconfig.ParentMakefile(
          configuration=sipcfg,
