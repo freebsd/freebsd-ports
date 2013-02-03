@@ -1,9 +1,5 @@
-# New ports collection makefile for:	caph
-# Date created:		13 Sep 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	caph
 PORTVERSION=	1.1
@@ -34,11 +30,12 @@ DESKTOP_ENTRIES="Caph" \
 		"Game;LogicGame;" \
 		false
 
-OPTIONS=	OPTIMIZED_CFLAGS "Use optimized compiler flags" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math
 .endif
 
@@ -53,7 +50,7 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/share/caph && ${COPYTREE_SHARE} '*' ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/caph && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
