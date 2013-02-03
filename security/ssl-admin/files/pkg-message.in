@@ -1,6 +1,6 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-Please edit the configuration file ssl-admin.conf before running
-ssl-admin for the first time.
+Please edit the configuration file %%PREFIX%%/etc/ssl-admin/ssl-admin.conf 
+before running ssl-admin for the first time.
 
 You're now ready to manage your SSL certificates.
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

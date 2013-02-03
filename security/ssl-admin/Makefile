@@ -1,12 +1,8 @@
-# Ports collection makefile for:	ssl-admin
-# Date created:			21 July 2008
-# Whom:				Eric Crist <ecrist@secure-computing.net>
-#
+# Created by: Eric Crist <ecrist@secure-computing.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/ \
 				ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
@@ -14,10 +10,9 @@ MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/ \
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	OpenSSL certificate manager with OpenVPN support
 
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		zip:${PORTSDIR}/archivers/zip
+LICENSE=	BSD
 
-LICENSE=		BSD
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_PERL5_RUN=	YES
 MAN1=		ssl-admin.1
