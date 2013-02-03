@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qt4-declarative
-# Date created:				23 May 2010
-# Whom:					avilla@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	declarative
 DISTVERSION=	${QT4_VERSION}

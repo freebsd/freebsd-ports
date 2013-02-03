@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4-qmlviewer
-# Date created:				13 June 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	qmlviewer
 DISTVERSION=	${QT4_VERSION}
@@ -25,6 +21,11 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
+
+# qtlogo.png is installed by qt4-gui
+DESKTOP_ENTRIES="Qt QML viewer" "${COMMENT}" \
+		"${LOCALBASE}/share/pixmaps/qtlogo.png" \
+		"${PREFIX}/bin/qmlviewer" "Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/multimedia src/openvg \

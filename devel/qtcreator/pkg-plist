@@ -1,16 +1,13 @@
-bin/qmlprofiler
+bin/qmlpuppet
 bin/qtcreator
 bin/qtcreator.sh
 bin/qtcreator_process_stub
 bin/qtpromaker
+bin/sdktool
 lib/qtcreator/libAggregation.so
 lib/qtcreator/libAggregation.so.1
 lib/qtcreator/libAggregation.so.1.0
 lib/qtcreator/libAggregation.so.1.0.0
-lib/qtcreator/libBotan.so
-lib/qtcreator/libBotan.so.1
-lib/qtcreator/libBotan.so.1.0
-lib/qtcreator/libBotan.so.1.0.0
 lib/qtcreator/libCPlusPlus.so
 lib/qtcreator/libCPlusPlus.so.1
 lib/qtcreator/libCPlusPlus.so.1.0
@@ -31,6 +28,10 @@ lib/qtcreator/libLanguageUtils.so
 lib/qtcreator/libLanguageUtils.so.1
 lib/qtcreator/libLanguageUtils.so.1.0
 lib/qtcreator/libLanguageUtils.so.1.0.0
+lib/qtcreator/libQmlDebug.so
+lib/qtcreator/libQmlDebug.so.1
+lib/qtcreator/libQmlDebug.so.1.0
+lib/qtcreator/libQmlDebug.so.1.0.0
 lib/qtcreator/libQmlEditorWidgets.so
 lib/qtcreator/libQmlEditorWidgets.so.1
 lib/qtcreator/libQmlEditorWidgets.so.1.0
@@ -39,112 +40,119 @@ lib/qtcreator/libQmlJS.so
 lib/qtcreator/libQmlJS.so.1
 lib/qtcreator/libQmlJS.so.1.0
 lib/qtcreator/libQmlJS.so.1.0.0
-lib/qtcreator/libQmlJSDebugClient.so
-lib/qtcreator/libQmlJSDebugClient.so.1
-lib/qtcreator/libQmlJSDebugClient.so.1.0
-lib/qtcreator/libQmlJSDebugClient.so.1.0.0
+lib/qtcreator/libQtcSsh.so
+lib/qtcreator/libQtcSsh.so.1
+lib/qtcreator/libQtcSsh.so.1.0
+lib/qtcreator/libQtcSsh.so.1.0.0
 lib/qtcreator/libUtils.so
 lib/qtcreator/libUtils.so.1
 lib/qtcreator/libUtils.so.1.0
 lib/qtcreator/libUtils.so.1.0.0
-lib/qtcreator/libsymbianutils.so
-lib/qtcreator/libsymbianutils.so.1
-lib/qtcreator/libsymbianutils.so.1.0
-lib/qtcreator/libsymbianutils.so.1.0.0
 lib/qtcreator/libzeroconf.so
 lib/qtcreator/libzeroconf.so.1
 lib/qtcreator/libzeroconf.so.1.0
 lib/qtcreator/libzeroconf.so.1.0.0
-lib/qtcreator/plugins/Nokia/AnalyzerBase.pluginspec
-lib/qtcreator/plugins/Nokia/AutotoolsProjectManager.pluginspec
-lib/qtcreator/plugins/Nokia/Bazaar.pluginspec
-lib/qtcreator/plugins/Nokia/BinEditor.pluginspec
-lib/qtcreator/plugins/Nokia/Bookmarks.pluginspec
-lib/qtcreator/plugins/Nokia/CMakeProjectManager.pluginspec
-lib/qtcreator/plugins/Nokia/CVS.pluginspec
-lib/qtcreator/plugins/Nokia/ClassView.pluginspec
-lib/qtcreator/plugins/Nokia/CodePaster.pluginspec
-lib/qtcreator/plugins/Nokia/Core.pluginspec
-lib/qtcreator/plugins/Nokia/CppEditor.pluginspec
-lib/qtcreator/plugins/Nokia/CppTools.pluginspec
-lib/qtcreator/plugins/Nokia/Debugger.pluginspec
-lib/qtcreator/plugins/Nokia/Designer.pluginspec
-lib/qtcreator/plugins/Nokia/FakeVim.pluginspec
-lib/qtcreator/plugins/Nokia/Find.pluginspec
-lib/qtcreator/plugins/Nokia/GLSLEditor.pluginspec
-lib/qtcreator/plugins/Nokia/GenericProjectManager.pluginspec
-lib/qtcreator/plugins/Nokia/Git.pluginspec
-lib/qtcreator/plugins/Nokia/HelloWorld.pluginspec
-lib/qtcreator/plugins/Nokia/Help.pluginspec
-lib/qtcreator/plugins/Nokia/ImageViewer.pluginspec
-lib/qtcreator/plugins/Nokia/Locator.pluginspec
-lib/qtcreator/plugins/Nokia/Macros.pluginspec
-lib/qtcreator/plugins/Nokia/Madde.pluginspec
-lib/qtcreator/plugins/Nokia/Mercurial.pluginspec
-lib/qtcreator/plugins/Nokia/Perforce.pluginspec
-lib/qtcreator/plugins/Nokia/ProjectExplorer.pluginspec
-lib/qtcreator/plugins/Nokia/QmlJSEditor.pluginspec
-lib/qtcreator/plugins/Nokia/QmlJSInspector.pluginspec
-lib/qtcreator/plugins/Nokia/QmlJSTools.pluginspec
-lib/qtcreator/plugins/Nokia/QmlProfiler.pluginspec
-lib/qtcreator/plugins/Nokia/QmlProjectManager.pluginspec
-lib/qtcreator/plugins/Nokia/Qt4ProjectManager.pluginspec
-lib/qtcreator/plugins/Nokia/QtSupport.pluginspec
-lib/qtcreator/plugins/Nokia/RemoteLinux.pluginspec
-lib/qtcreator/plugins/Nokia/ResourceEditor.pluginspec
-lib/qtcreator/plugins/Nokia/Subversion.pluginspec
-lib/qtcreator/plugins/Nokia/TaskList.pluginspec
-lib/qtcreator/plugins/Nokia/TextEditor.pluginspec
-lib/qtcreator/plugins/Nokia/Todo.pluginspec
-lib/qtcreator/plugins/Nokia/UpdateInfo.pluginspec
-lib/qtcreator/plugins/Nokia/Valgrind.pluginspec
-lib/qtcreator/plugins/Nokia/VcsBase.pluginspec
-lib/qtcreator/plugins/Nokia/Welcome.pluginspec
-lib/qtcreator/plugins/Nokia/libAnalyzerBase.so
-lib/qtcreator/plugins/Nokia/libAutotoolsProjectManager.so
-lib/qtcreator/plugins/Nokia/libBazaar.so
-lib/qtcreator/plugins/Nokia/libBinEditor.so
-lib/qtcreator/plugins/Nokia/libBookmarks.so
-lib/qtcreator/plugins/Nokia/libCMakeProjectManager.so
-lib/qtcreator/plugins/Nokia/libCVS.so
-lib/qtcreator/plugins/Nokia/libClassView.so
-lib/qtcreator/plugins/Nokia/libCodePaster.so
-lib/qtcreator/plugins/Nokia/libCore.so
-lib/qtcreator/plugins/Nokia/libCppEditor.so
-lib/qtcreator/plugins/Nokia/libCppTools.so
-lib/qtcreator/plugins/Nokia/libDebugger.so
-lib/qtcreator/plugins/Nokia/libDesigner.so
-lib/qtcreator/plugins/Nokia/libFakeVim.so
-lib/qtcreator/plugins/Nokia/libFind.so
-lib/qtcreator/plugins/Nokia/libGLSLEditor.so
-lib/qtcreator/plugins/Nokia/libGenericProjectManager.so
-lib/qtcreator/plugins/Nokia/libGit.so
-lib/qtcreator/plugins/Nokia/libHelloWorld.so
-lib/qtcreator/plugins/Nokia/libHelp.so
-lib/qtcreator/plugins/Nokia/libImageViewer.so
-lib/qtcreator/plugins/Nokia/libLocator.so
-lib/qtcreator/plugins/Nokia/libMacros.so
-lib/qtcreator/plugins/Nokia/libMadde.so
-lib/qtcreator/plugins/Nokia/libMercurial.so
-lib/qtcreator/plugins/Nokia/libPerforce.so
-lib/qtcreator/plugins/Nokia/libProjectExplorer.so
-lib/qtcreator/plugins/Nokia/libQmlJSEditor.so
-lib/qtcreator/plugins/Nokia/libQmlJSInspector.so
-lib/qtcreator/plugins/Nokia/libQmlJSTools.so
-lib/qtcreator/plugins/Nokia/libQmlProfiler.so
-lib/qtcreator/plugins/Nokia/libQmlProjectManager.so
-lib/qtcreator/plugins/Nokia/libQt4ProjectManager.so
-lib/qtcreator/plugins/Nokia/libQtSupport.so
-lib/qtcreator/plugins/Nokia/libRemoteLinux.so
-lib/qtcreator/plugins/Nokia/libResourceEditor.so
-lib/qtcreator/plugins/Nokia/libSubversion.so
-lib/qtcreator/plugins/Nokia/libTaskList.so
-lib/qtcreator/plugins/Nokia/libTextEditor.so
-lib/qtcreator/plugins/Nokia/libTodo.so
-lib/qtcreator/plugins/Nokia/libUpdateInfo.so
-lib/qtcreator/plugins/Nokia/libValgrind.so
-lib/qtcreator/plugins/Nokia/libVcsBase.so
-lib/qtcreator/plugins/Nokia/libWelcome.so
+lib/qtcreator/plugins/QtProject/AnalyzerBase.pluginspec
+lib/qtcreator/plugins/QtProject/Android.pluginspec
+lib/qtcreator/plugins/QtProject/AutotoolsProjectManager.pluginspec
+lib/qtcreator/plugins/QtProject/Bazaar.pluginspec
+lib/qtcreator/plugins/QtProject/BinEditor.pluginspec
+lib/qtcreator/plugins/QtProject/Bookmarks.pluginspec
+lib/qtcreator/plugins/QtProject/CMakeProjectManager.pluginspec
+lib/qtcreator/plugins/QtProject/CVS.pluginspec
+lib/qtcreator/plugins/QtProject/ClassView.pluginspec
+lib/qtcreator/plugins/QtProject/ClearCase.pluginspec
+lib/qtcreator/plugins/QtProject/CodePaster.pluginspec
+lib/qtcreator/plugins/QtProject/Core.pluginspec
+lib/qtcreator/plugins/QtProject/CppEditor.pluginspec
+lib/qtcreator/plugins/QtProject/CppTools.pluginspec
+lib/qtcreator/plugins/QtProject/Debugger.pluginspec
+lib/qtcreator/plugins/QtProject/Designer.pluginspec
+lib/qtcreator/plugins/QtProject/FakeVim.pluginspec
+lib/qtcreator/plugins/QtProject/Find.pluginspec
+lib/qtcreator/plugins/QtProject/GLSLEditor.pluginspec
+lib/qtcreator/plugins/QtProject/GenericProjectManager.pluginspec
+lib/qtcreator/plugins/QtProject/Git.pluginspec
+lib/qtcreator/plugins/QtProject/HelloWorld.pluginspec
+lib/qtcreator/plugins/QtProject/Help.pluginspec
+lib/qtcreator/plugins/QtProject/ImageViewer.pluginspec
+lib/qtcreator/plugins/QtProject/Locator.pluginspec
+lib/qtcreator/plugins/QtProject/Macros.pluginspec
+lib/qtcreator/plugins/QtProject/Madde.pluginspec
+lib/qtcreator/plugins/QtProject/Mercurial.pluginspec
+lib/qtcreator/plugins/QtProject/Perforce.pluginspec
+lib/qtcreator/plugins/QtProject/ProjectExplorer.pluginspec
+lib/qtcreator/plugins/QtProject/QmlDesigner.pluginspec
+lib/qtcreator/plugins/QtProject/QmlJSEditor.pluginspec
+lib/qtcreator/plugins/QtProject/QmlJSTools.pluginspec
+lib/qtcreator/plugins/QtProject/QmlProfiler.pluginspec
+lib/qtcreator/plugins/QtProject/QmlProjectManager.pluginspec
+lib/qtcreator/plugins/QtProject/Qt4ProjectManager.pluginspec
+lib/qtcreator/plugins/QtProject/QtSupport.pluginspec
+lib/qtcreator/plugins/QtProject/RemoteLinux.pluginspec
+lib/qtcreator/plugins/QtProject/ResourceEditor.pluginspec
+lib/qtcreator/plugins/QtProject/Subversion.pluginspec
+lib/qtcreator/plugins/QtProject/TaskList.pluginspec
+lib/qtcreator/plugins/QtProject/TextEditor.pluginspec
+lib/qtcreator/plugins/QtProject/Todo.pluginspec
+lib/qtcreator/plugins/QtProject/UpdateInfo.pluginspec
+lib/qtcreator/plugins/QtProject/Valgrind.pluginspec
+lib/qtcreator/plugins/QtProject/VcsBase.pluginspec
+lib/qtcreator/plugins/QtProject/Welcome.pluginspec
+lib/qtcreator/plugins/QtProject/libAnalyzerBase.so
+lib/qtcreator/plugins/QtProject/libAndroid.so
+lib/qtcreator/plugins/QtProject/libAutotoolsProjectManager.so
+lib/qtcreator/plugins/QtProject/libBazaar.so
+lib/qtcreator/plugins/QtProject/libBinEditor.so
+lib/qtcreator/plugins/QtProject/libBookmarks.so
+lib/qtcreator/plugins/QtProject/libCMakeProjectManager.so
+lib/qtcreator/plugins/QtProject/libCVS.so
+lib/qtcreator/plugins/QtProject/libClassView.so
+lib/qtcreator/plugins/QtProject/libClearCase.so
+lib/qtcreator/plugins/QtProject/libCodePaster.so
+lib/qtcreator/plugins/QtProject/libCore.so
+lib/qtcreator/plugins/QtProject/libCppEditor.so
+lib/qtcreator/plugins/QtProject/libCppTools.so
+lib/qtcreator/plugins/QtProject/libDebugger.so
+lib/qtcreator/plugins/QtProject/libDesigner.so
+lib/qtcreator/plugins/QtProject/libFakeVim.so
+lib/qtcreator/plugins/QtProject/libFind.so
+lib/qtcreator/plugins/QtProject/libGLSLEditor.so
+lib/qtcreator/plugins/QtProject/libGenericProjectManager.so
+lib/qtcreator/plugins/QtProject/libGit.so
+lib/qtcreator/plugins/QtProject/libHelloWorld.so
+lib/qtcreator/plugins/QtProject/libHelp.so
+lib/qtcreator/plugins/QtProject/libImageViewer.so
+lib/qtcreator/plugins/QtProject/libLocator.so
+lib/qtcreator/plugins/QtProject/libMacros.so
+lib/qtcreator/plugins/QtProject/libMadde.so
+lib/qtcreator/plugins/QtProject/libMercurial.so
+lib/qtcreator/plugins/QtProject/libPerforce.so
+lib/qtcreator/plugins/QtProject/libProjectExplorer.so
+lib/qtcreator/plugins/QtProject/libQmlDesigner.so
+lib/qtcreator/plugins/QtProject/libQmlJSEditor.so
+lib/qtcreator/plugins/QtProject/libQmlJSTools.so
+lib/qtcreator/plugins/QtProject/libQmlProfiler.so
+lib/qtcreator/plugins/QtProject/libQmlProjectManager.so
+lib/qtcreator/plugins/QtProject/libQt4ProjectManager.so
+lib/qtcreator/plugins/QtProject/libQtSupport.so
+lib/qtcreator/plugins/QtProject/libRemoteLinux.so
+lib/qtcreator/plugins/QtProject/libResourceEditor.so
+lib/qtcreator/plugins/QtProject/libSubversion.so
+lib/qtcreator/plugins/QtProject/libTaskList.so
+lib/qtcreator/plugins/QtProject/libTextEditor.so
+lib/qtcreator/plugins/QtProject/libTodo.so
+lib/qtcreator/plugins/QtProject/libUpdateInfo.so
+lib/qtcreator/plugins/QtProject/libValgrind.so
+lib/qtcreator/plugins/QtProject/libVcsBase.so
+lib/qtcreator/plugins/QtProject/libWelcome.so
+lib/qtcreator/plugins/RIM/Qnx.pluginspec
+lib/qtcreator/plugins/RIM/libQnx.so
+lib/qtcreator/qmldesigner/libcustomstyleplugin.so
+lib/qtcreator/qmldesigner/libdesktopplugin.so
+lib/qtcreator/qmldesigner/libextrasplugin.so
+lib/qtcreator/qmldesigner/libmeegoplugin.so
+lib/qtcreator/qmldesigner/libqtquickplugin.so
 lib/qtcreator/qtcomponents/Button.qml
 lib/qtcreator/qtcomponents/ButtonRow.qml
 lib/qtcreator/qtcomponents/CheckBox.qml
@@ -195,14 +203,14 @@ lib/qtcreator/qtcomponents/plugin/libstyleplugin.so
 lib/qtcreator/qtcomponents/qmldir
 share/doc/qtcreator/qtcreator-dev.qch
 share/doc/qtcreator/qtcreator.qch
-share/icons/hicolor/128x128/apps/qtcreator.png
-share/icons/hicolor/16x16/apps/qtcreator.png
-share/icons/hicolor/24x24/apps/qtcreator.png
-share/icons/hicolor/256x256/apps/qtcreator.png
-share/icons/hicolor/32x32/apps/qtcreator.png
-share/icons/hicolor/48x48/apps/qtcreator.png
-share/icons/hicolor/512x512/apps/qtcreator.png
-share/icons/hicolor/64x64/apps/qtcreator.png
+share/icons/hicolor/128x128/apps/QtProject-qtcreator.png
+share/icons/hicolor/16x16/apps/QtProject-qtcreator.png
+share/icons/hicolor/24x24/apps/QtProject-qtcreator.png
+share/icons/hicolor/256x256/apps/QtProject-qtcreator.png
+share/icons/hicolor/32x32/apps/QtProject-qtcreator.png
+share/icons/hicolor/48x48/apps/QtProject-qtcreator.png
+share/icons/hicolor/512x512/apps/QtProject-qtcreator.png
+share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 share/qtcreator/designer/templates.xml
 share/qtcreator/designer/templates/Dialog_with_Buttons_Bottom.ui
 share/qtcreator/designer/templates/Dialog_with_Buttons_Right.ui
@@ -223,6 +231,7 @@ share/qtcreator/dumper/test/dumpertest.pro
 share/qtcreator/dumper/test/main.cpp
 share/qtcreator/externaltools/lrelease.xml
 share/qtcreator/externaltools/lupdate.xml
+share/qtcreator/externaltools/qmlscene.xml
 share/qtcreator/externaltools/qmlviewer.xml
 share/qtcreator/externaltools/sort.xml
 share/qtcreator/externaltools/vi.xml
@@ -740,13 +749,17 @@ share/qtcreator/templates/qt4project/mywidget.h
 share/qtcreator/templates/qt4project/mywidget_form.cpp
 share/qtcreator/templates/qt4project/mywidget_form.h
 share/qtcreator/templates/qt4project/widget.ui
+share/qtcreator/templates/qtquick2app/app.pro
+share/qtcreator/templates/qtquick2app/main.cpp
+share/qtcreator/templates/qtquick2app/qml/app/qtquick20/main.qml
+share/qtcreator/templates/qtquick2app/qtquick2applicationviewer/qtquick2applicationviewer.cpp
+share/qtcreator/templates/qtquick2app/qtquick2applicationviewer/qtquick2applicationviewer.h
+share/qtcreator/templates/qtquick2app/qtquick2applicationviewer/qtquick2applicationviewer.pri
 share/qtcreator/templates/qtquickapp/app.pro
 share/qtcreator/templates/qtquickapp/main.cpp
 share/qtcreator/templates/qtquickapp/qml/app/meego10/MainPage.qml
 share/qtcreator/templates/qtquickapp/qml/app/meego10/main.qml
 share/qtcreator/templates/qtquickapp/qml/app/qtquick10/main.qml
-share/qtcreator/templates/qtquickapp/qml/app/symbian11/MainPage.qml
-share/qtcreator/templates/qtquickapp/qml/app/symbian11/main.qml
 share/qtcreator/templates/qtquickapp/qmlapplicationviewer/qmlapplicationviewer.cpp
 share/qtcreator/templates/qtquickapp/qmlapplicationviewer/qmlapplicationviewer.h
 share/qtcreator/templates/qtquickapp/qmlapplicationviewer/qmlapplicationviewer.pri
@@ -755,8 +768,39 @@ share/qtcreator/templates/shared/deployment.pri
 share/qtcreator/templates/shared/icon64.png
 share/qtcreator/templates/shared/icon80.png
 share/qtcreator/templates/shared/manifest.aegis
-share/qtcreator/templates/shared/symbianicon.svg
 share/qtcreator/templates/wizards/README.txt
+share/qtcreator/templates/wizards/bb-bardescriptor/bar-descriptor.xml
+share/qtcreator/templates/wizards/bb-bardescriptor/wizard.xml
+share/qtcreator/templates/wizards/bb-guiapp/bar-descriptor.xml
+share/qtcreator/templates/wizards/bb-guiapp/icon.png
+share/qtcreator/templates/wizards/bb-guiapp/main.cpp
+share/qtcreator/templates/wizards/bb-guiapp/mainwidget.cpp
+share/qtcreator/templates/wizards/bb-guiapp/mainwidget.h
+share/qtcreator/templates/wizards/bb-guiapp/mainwidget.ui
+share/qtcreator/templates/wizards/bb-guiapp/project.pro
+share/qtcreator/templates/wizards/bb-guiapp/wizard.xml
+share/qtcreator/templates/wizards/bb-qt5-bardescriptor/bar-descriptor.xml
+share/qtcreator/templates/wizards/bb-qt5-bardescriptor/wizard.xml
+share/qtcreator/templates/wizards/bb-qt5-guiapp/bar-descriptor.xml
+share/qtcreator/templates/wizards/bb-qt5-guiapp/icon.png
+share/qtcreator/templates/wizards/bb-qt5-guiapp/main.cpp
+share/qtcreator/templates/wizards/bb-qt5-guiapp/mainwidget.cpp
+share/qtcreator/templates/wizards/bb-qt5-guiapp/mainwidget.h
+share/qtcreator/templates/wizards/bb-qt5-guiapp/mainwidget.ui
+share/qtcreator/templates/wizards/bb-qt5-guiapp/project.pro
+share/qtcreator/templates/wizards/bb-qt5-guiapp/wizard.xml
+share/qtcreator/templates/wizards/bb-qt5-quick2app/bar-descriptor.xml
+share/qtcreator/templates/wizards/bb-qt5-quick2app/icon.png
+share/qtcreator/templates/wizards/bb-qt5-quick2app/main.cpp
+share/qtcreator/templates/wizards/bb-qt5-quick2app/project.pro
+share/qtcreator/templates/wizards/bb-qt5-quick2app/qml/main.qml
+share/qtcreator/templates/wizards/bb-qt5-quick2app/wizard.xml
+share/qtcreator/templates/wizards/bb-quickapp/bar-descriptor.xml
+share/qtcreator/templates/wizards/bb-quickapp/icon.png
+share/qtcreator/templates/wizards/bb-quickapp/main.cpp
+share/qtcreator/templates/wizards/bb-quickapp/project.pro
+share/qtcreator/templates/wizards/bb-quickapp/qml/main.qml
+share/qtcreator/templates/wizards/bb-quickapp/wizard.xml
 share/qtcreator/templates/wizards/helloworld/console.png
 share/qtcreator/templates/wizards/helloworld/main.cpp
 share/qtcreator/templates/wizards/helloworld/project.pro
@@ -780,14 +824,6 @@ share/qtcreator/templates/wizards/plaincppapp/console.png
 share/qtcreator/templates/wizards/plaincppapp/main.cpp
 share/qtcreator/templates/wizards/plaincppapp/project.pro
 share/qtcreator/templates/wizards/plaincppapp/wizard.xml
-share/qtcreator/templates/wizards/qml-extension/lib.png
-share/qtcreator/templates/wizards/qml-extension/object.cpp
-share/qtcreator/templates/wizards/qml-extension/object.h
-share/qtcreator/templates/wizards/qml-extension/plugin.cpp
-share/qtcreator/templates/wizards/qml-extension/plugin.h
-share/qtcreator/templates/wizards/qml-extension/project.pro
-share/qtcreator/templates/wizards/qml-extension/qmldir
-share/qtcreator/templates/wizards/qml-extension/wizard.xml
 share/qtcreator/templates/wizards/qtcreatorplugin/MyPlugin.pluginspec.in
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.cpp
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.h
@@ -796,6 +832,22 @@ share/qtcreator/templates/wizards/qtcreatorplugin/myplugin_global.h
 share/qtcreator/templates/wizards/qtcreatorplugin/mypluginconstants.h
 share/qtcreator/templates/wizards/qtcreatorplugin/qtcreator_logo_24.png
 share/qtcreator/templates/wizards/qtcreatorplugin/wizard.xml
+share/qtcreator/templates/wizards/qtquick1-extension/lib.png
+share/qtcreator/templates/wizards/qtquick1-extension/object.cpp
+share/qtcreator/templates/wizards/qtquick1-extension/object.h
+share/qtcreator/templates/wizards/qtquick1-extension/plugin.cpp
+share/qtcreator/templates/wizards/qtquick1-extension/plugin.h
+share/qtcreator/templates/wizards/qtquick1-extension/project.pro
+share/qtcreator/templates/wizards/qtquick1-extension/qmldir
+share/qtcreator/templates/wizards/qtquick1-extension/wizard.xml
+share/qtcreator/templates/wizards/qtquick2-extension/lib.png
+share/qtcreator/templates/wizards/qtquick2-extension/object.cpp
+share/qtcreator/templates/wizards/qtquick2-extension/object.h
+share/qtcreator/templates/wizards/qtquick2-extension/plugin.cpp
+share/qtcreator/templates/wizards/qtquick2-extension/plugin.h
+share/qtcreator/templates/wizards/qtquick2-extension/project.pro
+share/qtcreator/templates/wizards/qtquick2-extension/qmldir
+share/qtcreator/templates/wizards/qtquick2-extension/wizard.xml
 share/qtcreator/templates/wizards/scriptgeneratedproject/generate.pl
 share/qtcreator/templates/wizards/scriptgeneratedproject/wizard_sample.xml
 share/qtcreator/translations/qtcreator_cs.qm
@@ -806,6 +858,7 @@ share/qtcreator/translations/qtcreator_pl.qm
 share/qtcreator/translations/qtcreator_ru.qm
 share/qtcreator/translations/qtcreator_sl.qm
 share/qtcreator/translations/qtcreator_zh_CN.qm
+share/qtcreator/translations/qtcreator_zh_TW.qm
 share/qtcreator/welcomescreen/develop.qml
 share/qtcreator/welcomescreen/dummydata/examplesModel.qml
 share/qtcreator/welcomescreen/dummydata/pagesModel.qml
@@ -825,8 +878,8 @@ share/qtcreator/welcomescreen/widgets/CustomFonts.qml
 share/qtcreator/welcomescreen/widgets/CustomTab.qml
 share/qtcreator/welcomescreen/widgets/CustomizedGridView.qml
 share/qtcreator/welcomescreen/widgets/Delegate.qml
-share/qtcreator/welcomescreen/widgets/Feedback.qml
 share/qtcreator/welcomescreen/widgets/GettingStartedItem.qml
+share/qtcreator/welcomescreen/widgets/IconAndLink.qml
 share/qtcreator/welcomescreen/widgets/LinkedText.qml
 share/qtcreator/welcomescreen/widgets/LinksBar.qml
 share/qtcreator/welcomescreen/widgets/Logo.qml
@@ -862,6 +915,7 @@ share/qtcreator/welcomescreen/widgets/images/icons/createIcon.png
 share/qtcreator/welcomescreen/widgets/images/icons/ddays09.png
 share/qtcreator/welcomescreen/widgets/images/icons/ddays10.png
 share/qtcreator/welcomescreen/widgets/images/icons/ddays11.png
+share/qtcreator/welcomescreen/widgets/images/icons/ddays12.png
 share/qtcreator/welcomescreen/widgets/images/icons/delete.png
 share/qtcreator/welcomescreen/widgets/images/icons/developing_with_qt_creator.png
 share/qtcreator/welcomescreen/widgets/images/icons/feedbackIcon.png
@@ -892,6 +946,7 @@ share/qtcreator/welcomescreen/widgets/images/mockup/thread-examples.png
 share/qtcreator/welcomescreen/widgets/images/more.png
 share/qtcreator/welcomescreen/widgets/images/qtcreator.png
 share/qtcreator/welcomescreen/widgets/images/tab.png
+share/qtcreator/welcomescreen/widgets/qmldir
 @dirrm share/qtcreator/welcomescreen/widgets/images/mockup
 @dirrm share/qtcreator/welcomescreen/widgets/images/icons
 @dirrm share/qtcreator/welcomescreen/widgets/images
@@ -902,6 +957,8 @@ share/qtcreator/welcomescreen/widgets/images/tab.png
 @dirrm share/qtcreator/welcomescreen
 @dirrm share/qtcreator/translations
 @dirrm share/qtcreator/templates/wizards/scriptgeneratedproject
+@dirrm share/qtcreator/templates/wizards/qtquick2-extension
+@dirrm share/qtcreator/templates/wizards/qtquick1-extension
 @dirrm share/qtcreator/templates/wizards/qtcreatorplugin
 @dirrm share/qtcreator/templates/wizards/qml-extension
 @dirrm share/qtcreator/templates/wizards/plaincppapp-cmake
@@ -910,15 +967,27 @@ share/qtcreator/welcomescreen/widgets/images/tab.png
 @dirrm share/qtcreator/templates/wizards/plaincapp
 @dirrm share/qtcreator/templates/wizards/listmodel
 @dirrm share/qtcreator/templates/wizards/helloworld
+@dirrm share/qtcreator/templates/wizards/bb-quickapp/qml
+@dirrm share/qtcreator/templates/wizards/bb-quickapp
+@dirrm share/qtcreator/templates/wizards/bb-qt5-quick2app/qml
+@dirrm share/qtcreator/templates/wizards/bb-qt5-quick2app
+@dirrm share/qtcreator/templates/wizards/bb-qt5-guiapp
+@dirrm share/qtcreator/templates/wizards/bb-qt5-bardescriptor
+@dirrm share/qtcreator/templates/wizards/bb-guiapp
+@dirrm share/qtcreator/templates/wizards/bb-bardescriptor
 @dirrm share/qtcreator/templates/wizards
 @dirrm share/qtcreator/templates/shared
 @dirrm share/qtcreator/templates/qtquickapp/qmlapplicationviewer
-@dirrm share/qtcreator/templates/qtquickapp/qml/app/symbian11
 @dirrm share/qtcreator/templates/qtquickapp/qml/app/qtquick10
 @dirrm share/qtcreator/templates/qtquickapp/qml/app/meego10
 @dirrm share/qtcreator/templates/qtquickapp/qml/app
 @dirrm share/qtcreator/templates/qtquickapp/qml
 @dirrm share/qtcreator/templates/qtquickapp
+@dirrm share/qtcreator/templates/qtquick2app/qtquick2applicationviewer
+@dirrm share/qtcreator/templates/qtquick2app/qml/app/qtquick20
+@dirrm share/qtcreator/templates/qtquick2app/qml/app
+@dirrm share/qtcreator/templates/qtquick2app/qml
+@dirrm share/qtcreator/templates/qtquick2app
 @dirrm share/qtcreator/templates/qt4project/customwidgetwizard
 @dirrm share/qtcreator/templates/qt4project
 @dirrm share/qtcreator/templates/mobileapp
@@ -996,6 +1065,8 @@ share/qtcreator/welcomescreen/widgets/images/tab.png
 @dirrm lib/qtcreator/qtcomponents/custom/behaviors
 @dirrm lib/qtcreator/qtcomponents/custom
 @dirrm lib/qtcreator/qtcomponents
-@dirrm lib/qtcreator/plugins/Nokia
+@dirrm lib/qtcreator/qmldesigner
+@dirrm lib/qtcreator/plugins/RIM
+@dirrm lib/qtcreator/plugins/QtProject
 @dirrm lib/qtcreator/plugins
 @dirrm lib/qtcreator

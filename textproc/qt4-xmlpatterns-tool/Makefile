@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4-xmlpatterns-tool
-# Date created:				Sat May 10 23:17:08 CEST 2008
-# Whom:					danny@ricin.com
-#
+# Created by: danny@ricin.com
 # $FreeBSD$
-#
 
 PORTNAME=	xmlpatterns-tool
 DISTVERSION=	${QT4_VERSION}

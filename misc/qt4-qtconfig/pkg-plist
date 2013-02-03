@@ -1,2 +1,3 @@
 bin/qtconfig-qt4
 %%DEBUG%%bin/qtconfig-qt4.debug
+share/pixmaps/qtconfig-qt4.png

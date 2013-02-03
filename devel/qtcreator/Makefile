@@ -1,24 +1,23 @@
-# New ports collection makefile for:	qtcreator
-# Date created:			  	2009-05-07
-# Whom:					kris@pcbsd.org
-#
+# Created by: Kris Moore <kris@pcbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qtcreator
-PORTVERSION=	2.5.0
-PORTREVISION=	3
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
-MASTER_SITES=	http://download.qt.nokia.com/qtcreator/
-DISTNAME=	qt-creator-${PORTVERSION}-src
+MASTER_SITES=	http://releases.qt-project.org/${PORTNAME}/${DISTVERSION}/:qtcreator \
+		${MASTER_SITE_QT}
+DISTNAME=	qt-creator-${DISTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qtcreator \
+		${QT_DISTNAME}.tar.gz
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt Creator IDE and tools
+COMMENT=	C++ and QML IDE for Qt development
 
 LIB_DEPENDS=	Imath:${PORTSDIR}/graphics/ilmbase \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jasper:${PORTSDIR}/graphics/jasper \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		linguist_build assistant_run qt3support \
@@ -26,27 +25,38 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		sql svg xml webkit qdoc3_build
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	INSTALL_ROOT=${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all docs
 INSTALL_TARGET=	install install_docs
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 QMAKE_ARGS=	-recursive CONFIG+="configure" ${QMAKE_PRO}
 QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
 
-MAKE_JOBS_UNSAFE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+# Build Qt Quick Designer (requires update on every Qt update).
+QT_DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
+DO_NOT_EXTRACT=	config.profiles config.tests demos doc examples lib \
+		mkspecs tools translations
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${QT_DISTNAME}/${dne}'
+.endfor
+QMAKE_ARGS+=	QT_PRIVATE_HEADERS="${WRKDIR}/${QT_DISTNAME}/include"
 
 CONFIGURE_WRKSRC=	${WRKDIR}/build
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 
-DESKTOP_ENTRIES=	"Qt Creator" "${COMMENT}" "${PORTNAME}" \
-			"${PORTNAME}" "" false
+DESKTOP_ENTRIES=	"Qt Creator" "${COMMENT}" "QtProject-qtcreator" \
+			"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
 post-patch:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|' \
 		${WRKSRC}/share/qtcreator/translations/translations.pro
 	${REINPLACE_CMD} -e 's|lupdate|lupdate-qt4|' \
-	    ${WRKSRC}/share/qtcreator/translations/translations.pro
+		${WRKSRC}/share/qtcreator/translations/translations.pro
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/src/plugins/android/androidsettingswidget.cpp
 
 do-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}

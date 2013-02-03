@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:		qt-pgsql-plugin
-# Date created:                         	5 August 2003
-# Whom:                                        	Lauri Watts <lauri@kde.org>
-#
+# Created by: Lauri Watts <lauri@kde.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qt4-${DB}-plugin
 DISTVERSION=	${QT4_VERSION}

@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	-gst
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 multimedia framework, gstreamer backend
 
+DEPRECATED=	Outdated, use multimedia/phonon-gstreamer
+EXPIRATION_DATE=	2013-02-28
+
 USE_QT4=	qmake_build moc_build corelib gui phonon opengl dbus
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

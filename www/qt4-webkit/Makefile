@@ -9,8 +9,6 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 WebKit engine
 
-USE_GNOME=	glib20
-USE_GSTREAMER=	yes
 USE_QT4=	corelib declarative gui network \
 		qmake_build moc_build rcc_build
 QT_NONSTANDARD=	yes
@@ -44,6 +42,19 @@ CONFIGURE_ARGS+=	-I../../../../include/Qt -I../../../../include
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+OPTIONS_DEFINE=	GSTREAMER
+OPTIONS_DEFAULT=	GSTREAMER
+
+GSTREAMER_DESC=	HTML5 audio and video support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGSTREAMER}
+USE_GSTREAMER=	yes
+.else
+CONFIGURE_ARGS+=	-no-gstreamer
+.endif
+
 .include <bsd.port.pre.mk>
 
 # Base ld(1) segfaults on PowerPC:
@@ -57,8 +68,7 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
-	# Avoid building and installing several tests. Should this be
-	# made an option?
+# Avoid building and installing several tests. Should this be made an option?
 	${REINPLACE_CMD} -e '/WebKit\/qt\/tests/ d' \
 		${BUILD_WRKSRC}/WebKit.pro
 
@@ -76,7 +86,7 @@ post-configure:
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc
-	# QtWebKit is statically linked with jscore, remove the latest.
+# QtWebKit is statically linked with jscore, remove the latest.
 	${REINPLACE_CMD} -e 's|-L../JavaScriptCore/release||; s|-ljscore||' \
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc \
 		${WRKSRC}/lib/libQtWebKit.la
