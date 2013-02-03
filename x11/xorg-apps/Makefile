@@ -2,6 +2,7 @@
 
 PORTNAME=	xorg-apps
 PORTVERSION=	7.5.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -14,7 +15,7 @@ COMPONENTS=	appres bitmap xf86dga:dga iceauth luit \
 		x11-fonts/mkfontdir:mkfontdir \
 		x11-fonts/mkfontscale:mkfontscale sessreg \
 		setxkbmap smproxy x11perf xauth xbacklight xcalc \
-		xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma xgc \
+		xcmsdb xconsole xcursorgen xdpyinfo xdriinfo xev xgamma xgc \
 		xhost xinput xkbcomp xkbevd xkbutils:xkbvleds xkill \
 		xlsatoms xlsclients xmodmap xpr xprop xrandr xrdb \
 		xrefresh xset xsetmode xsetroot xvinfo xwd xwininfo \
