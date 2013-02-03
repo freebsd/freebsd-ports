@@ -1,12 +1,7 @@
-# New ports collection makefile for:	setxkbmap
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	setxkbmap
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
