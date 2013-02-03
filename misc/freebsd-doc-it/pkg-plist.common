@@ -13,10 +13,8 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/euro
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles
 %%DOCSDIR%%/%%DOCLANG_PREFIX%%

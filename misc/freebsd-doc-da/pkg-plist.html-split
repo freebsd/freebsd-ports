@@ -1,10 +1,4 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/x161.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/x189.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/x69.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/x79.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/caveat.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/code.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/experiment.html
@@ -13,9 +7,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/bootstrap-config.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/custom-postinst-package.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/server-config.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/trademarks.html

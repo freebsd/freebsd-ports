@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel2.png
@@ -9,8 +8,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts/1.png

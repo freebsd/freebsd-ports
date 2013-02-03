@@ -1,3 +1,26 @@
 @comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-branches.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-organization.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/1.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/2.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/3.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/4.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/5.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/hubs/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts/1.png
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts/2.png
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts/3.png
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts/4.png
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts/5.png

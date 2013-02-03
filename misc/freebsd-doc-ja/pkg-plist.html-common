@@ -1,14 +1,10 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/fig1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/fig2.png
@@ -196,4 +192,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/vmware-freebsd11.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/vmware-freebsd12.png
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/books/ppp-primer/docbook.css
