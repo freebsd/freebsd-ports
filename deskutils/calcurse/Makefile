@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calcurse
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://calcurse.org/files/
 
