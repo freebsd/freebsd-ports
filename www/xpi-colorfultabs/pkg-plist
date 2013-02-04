@@ -37,6 +37,7 @@
 %%XPI_XPIDIR%%/chrome/skin/tabbar-top-bg-inactive.png
 %%XPI_XPIDIR%%/chrome/skin.png
 %%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/clrtabs.rdf
 %%XPI_XPIDIR%%/defaults/preferences/defaults.js
 %%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome/content
