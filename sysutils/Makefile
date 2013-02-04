@@ -420,6 +420,7 @@
     SUBDIR += k3b
     SUBDIR += k3b-kde4
     SUBDIR += k8temp
+    SUBDIR += kcm-polkit-kde
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdeadmin4
