@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ovs
-PORTVERSION=	1.03
-PORTREVISION=	2
+PORTVERSION=	1.05
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/
+MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/ \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A RRDtool frontend for mail statistics
