@@ -1,0 +1,139 @@
+--- ./configure.in.orig	2013-02-01 13:13:08.000000000 -0500
++++ ./configure.in	2013-02-01 13:39:44.000000000 -0500
+@@ -2115,7 +2115,7 @@
+ AC_SUBST(GNUTAR)
+ 
+ AC_MSG_CHECKING([for tar's option to strip components])
+-$GNUTAR --help 2> /dev/null | egrep "strip-components" 2>&1 >/dev/null
++$GNUTAR --help 2> /dev/null | egrep "bsdtar|strip-components" 2>&1 >/dev/null
+ if test $? -eq 0; then
+     STRIP_COMPONENTS="--strip-components"
+ else
+@@ -3121,7 +3121,7 @@
+         RTL_ARCH=x86
+         OUTPATH=unxfbsdi
+         ;;
+-    x86_64)
++    amd64)
+         CPU=X
+         CPUNAME=X86_64
+         RTL_ARCH=X86_64
+@@ -6719,51 +6719,11 @@
+ dnl ===================================================================
+ AC_MSG_CHECKING([which db to use])
+ if test "$with_system_db" = "yes"; then
+-    SYSTEM_DB=YES
+     AC_MSG_RESULT([external])
+-
+-    db_header=
+-    for dbver in 5.3 5.1 5.0 5 4.8 4.7 4; do
+-        for dash in - ''; do
+-            AC_CHECK_HEADER([db$dash$dbver/db.h],
+-                [ db_header="db$dash$dbver/db.h"; break 2 ])
+-        done
+-    done
+-
+-    if test -z "$db_header"; then
+-        AC_CHECK_HEADER([db/db.h], [db_header='db/db.h'; dbver=''])
+-    fi
+-
+-    if test -z "$db_header"; then
+-       AC_CHECK_HEADER(db.h, [ db_header='db.h'; dbver='' ])
+-    fi
+-
+-    if test -z "$db_header"; then
+-        AC_MSG_ERROR([db.h not found. Use the correct -I flag, or install the Berkeley db development package.])
+-    fi
+-
+-    AC_MSG_CHECKING([whether db is at least 4.1])
+-    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <$db_header>]], [[int array[(DB_VERSION_MAJOR > 4 || (DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR >= 1))-1];]])],[AC_MSG_RESULT([yes])],[AC_MSG_ERROR([no. you need at least db 4.1])])
+-
+-    SYSTEM_DB_CFLAGS="-DSYSTEM_DB_HEADER='<$db_header>'"
+-
+-    DB_LIB=
+-    dnl At least on OpenBSD dbver is not appended to the library
+-    if test "$_os" = "OpenBSD"; then
+-        dbver=''
+-    fi
+-    for dash in - ''; do
+-        AC_CHECK_LIB(db$dash$dbver, dbopen,
+-            [ DB_LIB="db$dash$dbver"; DB_CPPLIB="db_cxx$dash$dbver"; break ])
+-        AC_CHECK_LIB(db$dash$dbver, __db185_open,
+-            [ DB_LIB="db$dash$dbver"; DB_CPPLIB="db_cxx$dash$dbver"; break ])
+-    done
+-
+-    if test -z "$DB_LIB"; then
+-        AC_MSG_ERROR([db library not found. Use the correct -L flag,
+-or install the Berkeley db development package.])
+-    fi
+-
++    SYSTEM_DB=YES
++    SYSTEM_DB_CFLAGS="-DSYSTEM_DB_HEADER='<db.h>' -I$BDB_INCLUDE_DIR"
++    DB_LIB="-L$BDB_LIB_DIR -l$BDB_LIB_NAME"
++    DB_CPPLIB="-L$BDB_LIB_DIR -l$BDB_LIB_CXX_NAME"
+     SCPDEFS="$SCPDEFS -DSYSTEM_DB"
+     libo_MINGW_CHECK_DLL([DB], [libdb])
+ elif test $_os != iOS -a $_os != Android; then
+@@ -7347,9 +7307,13 @@
+     AC_MSG_CHECKING([which hash container mdds shall use])
+     if test "x$HAVE_CXX0X" = "xTRUE"; then
+         MDDS_CPPFLAGS="-std=gnu++0x"
++    else
++        MDDS_CPPFLAGS="-std=gnu++98"
++    fi
++    if test "x`basename $GXX_INCLUDE_PATH 2>/dev/null`" != "x4.2"; then
+         AC_MSG_RESULT([std::unordered_map])
+     else
+-        MDDS_CPPFLAGS="-DMDDS_HASH_CONTAINER_BOOST"
++        MDDS_CPPFLAGS="$MDDS_CPPFLAGS -DMDDS_HASH_CONTAINER_BOOST"
+         AC_MSG_RESULT([boost::unordered_map])
+     fi
+ 
+@@ -7911,12 +7875,12 @@
+         if test -z "$SYSTEM_GENCMN"; then
+             AC_MSG_ERROR([\'gencmn\' not found in \$PATH, install the icu development tool \'gencmn\'])
+         fi
+-        if test "$ICU_MAJOR" -ge "5" -o "$ICU_MAJOR" = "4" -a "$ICU_MINOR" -ge "4"; then
++        if test "$ICU_MAJOR" -ge "49" -o \( "$ICU_MAJOR" = "4" -a "$ICU_MINOR" -ge "4" \); then
+             ICU_RECLASSIFIED_CLOSE_PARENTHESIS="YES"
+         else
+             ICU_RECLASSIFIED_CLOSE_PARENTHESIS="NO"
+         fi
+-        if test "$ICU_MAJOR" -ge "5" -o "$ICU_MAJOR" = "4" -a "$ICU_MINOR" -ge "9"; then
++        if test "$ICU_MAJOR" -ge "49"; then
+             ICU_RECLASSIFIED_PREPEND_SET_EMPTY="YES"
+         else
+             ICU_RECLASSIFIED_PREPEND_SET_EMPTY="NO"
+@@ -7956,7 +7920,7 @@
+ dnl ===================================================================
+ 
+ AC_MSG_CHECKING([whether to enable graphite support])
+-if test "$_os" = "WINNT" -o "$_os" = "Linux" && test "$enable_graphite" = "" -o "$enable_graphite" != "no"; then
++if test "$_os" = "WINNT" -o "$_os" = "Linux" -o "$_os" = "FreeBSD" && test "$enable_graphite" = "" -o "$enable_graphite" != "no"; then
+     AC_MSG_RESULT([yes])
+     ENABLE_GRAPHITE="TRUE"
+     AC_MSG_CHECKING([which graphite to use])
+@@ -8186,8 +8150,8 @@
+     AC_MSG_RESULT([external])
+     # Mac OS builds should get out without extra stuff is the Mac porters'
+     # wish. And pkg-config is although Xcode ships a .pc for openssl
+-    if test "$_os" = "Darwin" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o \
+-            "$_os" = "DragonFly"; then
++    if test "$_os" = "Darwin" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o \
++	    "$_os" = "OpenBSD" -o "$_os" = "DragonFly"; then
+         OPENSSL_CFLAGS=
+         OPENSSL_LIBS="-lssl -lcrypto"
+     else
+@@ -9842,10 +9806,10 @@
+ 
+     dnl Check for Meta Object Compiler
+ 
+-    AC_PATH_PROG( MOCQT4, moc-qt4, no, [`dirname $qt_lib_dir`/bin:$QT4DIR/bin:$PATH] )
++    AC_PATH_PROG( MOCQT4, moc-qt4, no, [$QT4DIR/bin:$PATH] )
+     MOC4="$MOCQT4"
+     if test "$MOC4" = "no"; then
+-        AC_PATH_PROG( MOC4, moc, no, [`dirname $qt_lib_dir`/bin:$QT4DIR/bin:$PATH] )
++        AC_PATH_PROG( MOC4, moc, no, [$QT4DIR/bin:$PATH] )
+         if test "$MOC4" = "no"; then
+             AC_MSG_ERROR([Qt Meta Object Compiler not found.  Please specify
+ the root of your Qt installation by exporting QT4DIR before running "configure".])
