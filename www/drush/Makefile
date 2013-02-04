@@ -3,6 +3,7 @@
 
 PORTNAME=	drush
 PORTVERSION=	5.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drush-7.x-${PORTVERSION}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Table.php:${PORTSDIR}/devel/pear-Co
 NO_BUILD=	yes
 
 # set php requirements same as drupal itself
-USE_PHP=	gd pcre session xml mbstring ctype json hash
+USE_PHP=	gd pcre session xml mbstring ctype json hash simplexml dom pdo pdo_mysql
 IGNORE_WITH_PHP=4
 WANT_PHP_CLI=	yes
 
