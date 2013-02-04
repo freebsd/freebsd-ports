@@ -4036,3 +4036,5 @@ devel/kdebindings4-ruby-qtruby|devel/ruby-qtruby|2013-02-03|Renamed
 devel/kdebindings4-smoke-smokegen|devel/smokegen|2013-02-03|Renamed
 devel/kdebindings4-smoke-smokekde|devel/smokekde|2013-02-03|Renamed
 devel/kdebindings4-smoke-smokeqt|devel/smokeqt|2013-02-03|Renamed
+net/freeradius||2013-02-04|Has expired: no longer supported.  Please use net/freeradius2 instead
+net/freeradius-mysql||2013-02-04|Has expired: no longer supported.  Please use net/freeradius2 instead
