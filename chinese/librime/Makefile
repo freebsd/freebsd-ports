@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librime
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	chinese textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} brise-${DATA_VER}.tar.gz
@@ -21,15 +20,15 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xproto
 USE_PERL5_BUILD=	yes
 LDFLAGS+=	-lintl
 
+PLIST_SUB=	VER=${PORTVERSION}
+
 post-patch:     .SILENT
-	${REINPLACE_CMD} 's|$${LIB_INSTALL_DIR}/pkgconfig|$${prefix}/libdata/pkgconfig|' \
-		${WRKSRC}/CMakeLists.txt
 	${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
 		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' '{}' \;
 
@@ -45,7 +44,7 @@ post-install:
 	${INSTALL_DATA} ${DATASRC}/*.kct ${DATASRC}/*.bin ${DATADIR}/data/
 
 PROJECTHOST=	rimeime
-DATA_VER=	0.13
+DATA_VER=	0.16
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DATASRC=	${WRKDIR}/tmp
 DATADIR=	${PREFIX}/share/rime
