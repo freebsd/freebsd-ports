@@ -3525,6 +3525,7 @@
     SUBDIR += py-ply
     SUBDIR += py-pmock
     SUBDIR += py-polib
+    SUBDIR += py-posix_ipc
     SUBDIR += py-pp
     SUBDIR += py-pqueue
     SUBDIR += py-prettytable
