@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2009-08-07 14:31:12.000000000 +0200
++++ CMakeLists.txt	2013-02-01 17:33:24.000000000 +0100
+@@ -318,7 +318,7 @@
+ ENDIF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+ 
+ INSTALL(DIRECTORY "include/"
+-        DESTINATION "include"
++        DESTINATION "include/mysql-connector-c/"
+         FILES_MATCHING PATTERN "*.h")
+ 
+ # ----------------------------------------------------------------------
+@@ -366,6 +366,4 @@
+   SET(CPACK_PACKAGE_FILE_NAME         "${CPACK_PACKAGE_INSTALL_DIRECTORY}")
+ ENDIF(WIN32)
+ 
+-INSTALL(FILES "README" "COPYING" "LICENSE.mysql" "EXCEPTIONS-CLIENT" "ChaneLog" DESTINATION "." OPTIONAL)
+-
+ INCLUDE(CPack)

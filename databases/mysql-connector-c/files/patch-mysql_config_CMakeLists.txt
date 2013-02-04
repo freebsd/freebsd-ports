@@ -1,0 +1,8 @@
+--- mysql_config/CMakeLists.txt.orig	2013-02-01 17:36:54.000000000 +0100
++++ mysql_config/CMakeLists.txt	2013-02-01 17:37:06.000000000 +0100
+@@ -32,4 +32,4 @@
+ # Installation
+ #
+ INSTALL(TARGETS mysql_config
+-        DESTINATION "bin")
++        DESTINATION "bin/mysql-connector-c/")
