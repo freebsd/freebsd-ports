@@ -37,7 +37,6 @@
     SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
     SUBDIR += deforaos-player
-    SUBDIR += despotify
     SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dragon
