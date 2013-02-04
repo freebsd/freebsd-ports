@@ -1,0 +1,20 @@
+--- doc/docbook/src/plplotdoc.texi.orig
++++ doc/docbook/src/plplotdoc.texi
+@@ -6722,7 +6722,7 @@
+ 	if (pm->fdata[i] > max)
+ 	max = pm->fdata[i];
+ 
+-	sprintf( interp->result, "%f", max );
++	sprintf( Tcl_GetStringResult(interp), "%f", max );
+ 	return TCL_OK;
+ 	@}
+ 
+@@ -6735,7 +6735,7 @@
+ 	if (pm->fdata[i] < min)
+ 	min = pm->fdata[i];
+ 
+-	sprintf( interp->result, "%f", min );
++	sprintf( Tcl_GetStringResult(interp), "%f", min );
+ 	return TCL_OK;
+ 	@}
+       

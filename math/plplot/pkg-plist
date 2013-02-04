@@ -1,7 +1,9 @@
+bin/plm2gif
+bin/plpr
+bin/plrender
 %%TCLTK%%bin/plserver
 %%TCLTK%%bin/pltcl
 bin/pltek
-bin/plrender
 include/plplot/disptab.h
 include/plplot/drivers.h
 include/plplot/gcw.h
@@ -21,7 +23,9 @@ include/plplot/plstrm.h
 include/plplot/plxwd.h
 include/plplot/qsastime.h
 include/plplot/qsastimedll.h
-%%QT%%include/plplot/qt.h
+%%QT4%%include/plplot/qt.h
+%%WXGTK%%include/plplot/wxPLplotstream.h
+%%WXGTK%%include/plplot/wxPLplotwindow.h
 %%TCLTK%%include/plplot/tclMatrix.h
 %%FORTRAN%%lib/fortran/modules/plplot/plplot.mod
 %%FORTRAN%%lib/fortran/modules/plplot/plplot_flt.mod
@@ -42,22 +46,58 @@ lib/libplplotd.so.11.0.0
 %%FORTRAN%%lib/libplplotf77cd.so.9
 %%FORTRAN%%lib/libplplotf77cd.so.9.1.1
 %%FORTRAN%%lib/libplplotf77d.so
+%%FORTRAN%%lib/libplplotf77d.so.9
+%%FORTRAN%%lib/libplplotf77d.so.9.1.1
 %%FORTRAN%%lib/libplplotf95cd.so
 %%FORTRAN%%lib/libplplotf95cd.so.9
 %%FORTRAN%%lib/libplplotf95cd.so.9.1.1
 %%FORTRAN%%lib/libplplotf95d.so
-%%QT%%lib/libplplotqtd.so
-%%QT%%lib/libplplotqtd.so.0
-%%QT%%lib/libplplotqtd.so.0.0.1
+%%FORTRAN%%lib/libplplotf95d.so.9
+%%FORTRAN%%lib/libplplotf95d.so.9.1.1
+%%QT4%%lib/libplplotqtd.so
+%%QT4%%lib/libplplotqtd.so.0
+%%QT4%%lib/libplplotqtd.so.0.0.1
 %%TCLTK%%lib/libplplottcltkd.so
 %%TCLTK%%lib/libplplottcltkd.so.9
 %%TCLTK%%lib/libplplottcltkd.so.9.2.0
+%%WXGTK%%lib/libplplotwxwidgetsd.so
+%%WXGTK%%lib/libplplotwxwidgetsd.so.0
+%%WXGTK%%lib/libplplotwxwidgetsd.so.0.0.0
 lib/libqsastime.so
 lib/libqsastime.so.0
 lib/libqsastime.so.0.0.1
 %%TCLTK%%lib/libtclmatrixd.so
 %%TCLTK%%lib/libtclmatrixd.so.9
 %%TCLTK%%lib/libtclmatrixd.so.9.2.0
+%%LUA%%%%LUA_MODLIBDIR%%/plplot/plplotluac.so
+lib/plplot/driversd/cairo.driver_info
+lib/plplot/driversd/cairo.so
+%%GD%%lib/plplot/driversd/gd.driver_info
+%%GD%%lib/plplot/driversd/gd.so
+lib/plplot/driversd/mem.driver_info
+lib/plplot/driversd/mem.so
+lib/plplot/driversd/null.driver_info
+lib/plplot/driversd/null.so
+lib/plplot/driversd/plmeta.driver_info
+lib/plplot/driversd/plmeta.so
+lib/plplot/driversd/ps.driver_info
+lib/plplot/driversd/ps.so
+lib/plplot/driversd/psttf.driver_info
+lib/plplot/driversd/psttf.so
+%%QT4%%lib/plplot/driversd/qt.driver_info
+%%QT4%%lib/plplot/driversd/qt.so
+lib/plplot/driversd/svg.driver_info
+lib/plplot/driversd/svg.so
+%%TCLTK%%lib/plplot/driversd/tk.driver_info
+%%TCLTK%%lib/plplot/driversd/tk.so
+%%TCLTK%%lib/plplot/driversd/tkwin.driver_info
+%%TCLTK%%lib/plplot/driversd/tkwin.so
+%%WXGTK%%lib/plplot/driversd/wxwidgets.driver_info
+%%WXGTK%%lib/plplot/driversd/wxwidgets.so
+lib/plplot/driversd/xfig.driver_info
+lib/plplot/driversd/xfig.so
+%%X11%%lib/plplot/driversd/xwin.driver_info
+%%X11%%lib/plplot/driversd/xwin.so
 %%TCLTK%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/Plframe.py
 %%TCLTK%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/TclSup.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_plplotcmodule.so
@@ -67,8 +107,9 @@ lib/libqsastime.so.0.0.1
 libdata/pkgconfig/plplotd-c++.pc
 %%FORTRAN%%libdata/pkgconfig/plplotd-f77.pc
 %%FORTRAN%%libdata/pkgconfig/plplotd-f95.pc
-%%QT%%libdata/pkgconfig/plplotd-qt.pc
+%%QT4%%libdata/pkgconfig/plplotd-qt.pc
 %%TCLTK%%libdata/pkgconfig/plplotd-tcl.pc
+%%WXGTK%%libdata/pkgconfig/plplotd-wxwidgets.pc
 libdata/pkgconfig/plplotd.pc
 %%DOCSDIR%%/ABOUT
 %%DOCSDIR%%/AUTHORS
@@ -97,18 +138,19 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/cmap1_blue_yellow.pal
 %%DATADIR%%/cmap1_default.pal
 %%DATADIR%%/cmap1_gray.pal
-%%DATADIR%%/cmap1_radar.pal
 %%DATADIR%%/cmap1_highfreq.pal
 %%DATADIR%%/cmap1_lowfreq.pal
+%%DATADIR%%/cmap1_radar.pal
 %%DATADIR%%/examples/CMakeLists.txt
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/c++/CMakeLists.txt
 %%DATADIR%%/examples/c++/Makefile
-%%QT%%%%DATADIR%%/examples/c++/README.qt_example
+%%QT4%%%%DATADIR%%/examples/c++/README.qt_example
 %%DATADIR%%/examples/c++/plc++demos.h
-%%QT%%%%DATADIR%%/examples/c++/qt_PlotWindow.cpp
-%%QT%%%%DATADIR%%/examples/c++/qt_PlotWindow.h
-%%QT%%%%DATADIR%%/examples/c++/qt_example.cpp
+%%QT4%%%%DATADIR%%/examples/c++/qt_PlotWindow.cpp
+%%QT4%%%%DATADIR%%/examples/c++/qt_PlotWindow.h
+%%QT4%%%%DATADIR%%/examples/c++/qt_example.cpp
+%%WXGTK%%%%DATADIR%%/examples/c++/wxPLplotDemo.cpp
 %%DATADIR%%/examples/c++/x01.cc
 %%DATADIR%%/examples/c++/x01cc.cc
 %%DATADIR%%/examples/c++/x02.cc
@@ -184,12 +226,7 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/c/x32c.c
 %%DATADIR%%/examples/c/x33c.c
 %%DATADIR%%/examples/c/x34c.c
-%%FORTRAN%%%%DATADIR%%/examples/cmake/modules/CMakeFortranInformation.cmake
 %%DATADIR%%/examples/cmake/modules/FindPkgConfig.cmake
-%%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Cygwin-GNU-Fortran.cmake
-%%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Windows-GNU-Fortran.cmake
-%%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Windows-df.cmake
-%%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Windows-f90.cmake
 %%DATADIR%%/examples/cmake/modules/export_plplot-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/examples/cmake/modules/export_plplot.cmake
 %%DATADIR%%/examples/cmake/modules/pkg-config.cmake
@@ -230,6 +267,7 @@ libdata/pkgconfig/plplotd.pc
 %%FORTRAN%%%%DATADIR%%/examples/f77/x29f.f
 %%FORTRAN%%%%DATADIR%%/examples/f77/x30f.f
 %%FORTRAN%%%%DATADIR%%/examples/f77/x31f.f
+%%FORTRAN%%%%DATADIR%%/examples/f77/x33f.f
 %%FORTRAN%%%%DATADIR%%/examples/f95/CMakeLists.txt
 %%FORTRAN%%%%DATADIR%%/examples/f95/Makefile
 %%FORTRAN%%%%DATADIR%%/examples/f95/plf95demos.inc
@@ -265,9 +303,45 @@ libdata/pkgconfig/plplotd.pc
 %%FORTRAN%%%%DATADIR%%/examples/f95/x29f.f90
 %%FORTRAN%%%%DATADIR%%/examples/f95/x30f.f90
 %%FORTRAN%%%%DATADIR%%/examples/f95/x31f.f90
+%%FORTRAN%%%%DATADIR%%/examples/f95/x33f.f90
 %%DATADIR%%/examples/lena.pgm
+%%LUA%%%%DATADIR%%/examples/lua/CMakeLists.txt
+%%LUA%%%%DATADIR%%/examples/lua/plplot_examples.lua
+%%LUA%%%%DATADIR%%/examples/lua/x01.lua
+%%LUA%%%%DATADIR%%/examples/lua/x02.lua
+%%LUA%%%%DATADIR%%/examples/lua/x03.lua
+%%LUA%%%%DATADIR%%/examples/lua/x04.lua
+%%LUA%%%%DATADIR%%/examples/lua/x05.lua
+%%LUA%%%%DATADIR%%/examples/lua/x06.lua
+%%LUA%%%%DATADIR%%/examples/lua/x07.lua
+%%LUA%%%%DATADIR%%/examples/lua/x08.lua
+%%LUA%%%%DATADIR%%/examples/lua/x09.lua
+%%LUA%%%%DATADIR%%/examples/lua/x10.lua
+%%LUA%%%%DATADIR%%/examples/lua/x11.lua
+%%LUA%%%%DATADIR%%/examples/lua/x12.lua
+%%LUA%%%%DATADIR%%/examples/lua/x13.lua
+%%LUA%%%%DATADIR%%/examples/lua/x14.lua
+%%LUA%%%%DATADIR%%/examples/lua/x15.lua
+%%LUA%%%%DATADIR%%/examples/lua/x16.lua
+%%LUA%%%%DATADIR%%/examples/lua/x17.lua
+%%LUA%%%%DATADIR%%/examples/lua/x18.lua
+%%LUA%%%%DATADIR%%/examples/lua/x19.lua
+%%LUA%%%%DATADIR%%/examples/lua/x20.lua
+%%LUA%%%%DATADIR%%/examples/lua/x21.lua
+%%LUA%%%%DATADIR%%/examples/lua/x22.lua
+%%LUA%%%%DATADIR%%/examples/lua/x23.lua
+%%LUA%%%%DATADIR%%/examples/lua/x24.lua
+%%LUA%%%%DATADIR%%/examples/lua/x25.lua
+%%LUA%%%%DATADIR%%/examples/lua/x26.lua
+%%LUA%%%%DATADIR%%/examples/lua/x27.lua
+%%LUA%%%%DATADIR%%/examples/lua/x28.lua
+%%LUA%%%%DATADIR%%/examples/lua/x29.lua
+%%LUA%%%%DATADIR%%/examples/lua/x30.lua
+%%LUA%%%%DATADIR%%/examples/lua/x31.lua
+%%LUA%%%%DATADIR%%/examples/lua/x33.lua
 %%DATADIR%%/examples/plplot-test-interactive.sh
 %%DATADIR%%/examples/plplot-test.sh
+%%PYTHON%%%%DATADIR%%/examples/python/CMakeLists.txt
 %%PYTHON%%%%DATADIR%%/examples/python/README.logo
 %%PYTHON%%%%DATADIR%%/examples/python/README.pythondemos
 %%PYTHON%%%%DATADIR%%/examples/python/README.rendering_tests
@@ -276,9 +350,17 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/plplot_python_start.py
 %%PYTHON%%%%DATADIR%%/examples/python/pythondemos.py
 %%TCLTK%%%%PYTHON%%%%DATADIR%%/examples/python/pytkdemo
-%%PYTHON%%%%DATADIR%%/examples/python/svg_760x120_gradient.patch
+%%PYTHON%%%%DATADIR%%/examples/python/test_axis_precision.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_circle.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_fill.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_gradient.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_hebrew_diacritic.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_plplot_encodings.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_plsmem.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_style.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_superscript_subscript.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_symbol_clip.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_type1.py
 %%PYTHON%%%%DATADIR%%/examples/python/testh.py
 %%PYTHON%%%%DATADIR%%/examples/python/x01
 %%TCLTK%%%%PYTHON%%%%DATADIR%%/examples/python/x01.py
@@ -330,6 +412,7 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/x29
 %%PYTHON%%%%DATADIR%%/examples/python/x30
 %%PYTHON%%%%DATADIR%%/examples/python/x31
+%%PYTHON%%%%DATADIR%%/examples/python/x33
 %%PYTHON%%%%DATADIR%%/examples/python/xw01.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw02.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw03.py
@@ -361,11 +444,14 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/xw29.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw30.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw31.py
+%%PYTHON%%%%DATADIR%%/examples/python/xw33.py
+%%TCLTK%%%%DATADIR%%/examples/tcl/CMakeLists.txt
 %%TCLTK%%%%DATADIR%%/examples/tcl/README.tcldemos
 %%TCLTK%%%%DATADIR%%/examples/tcl/plgrid.tcl
 %%TCLTK%%%%DATADIR%%/examples/tcl/plot.dat
 %%TCLTK%%%%DATADIR%%/examples/tcl/plot.tcl
 %%TCLTK%%%%DATADIR%%/examples/tcl/r.dat
+%%TCLTK%%%%DATADIR%%/examples/tcl/standard_examples.in
 %%TCLTK%%%%DATADIR%%/examples/tcl/stats.log
 %%TCLTK%%%%DATADIR%%/examples/tcl/tclIndex
 %%TCLTK%%%%DATADIR%%/examples/tcl/tcldemos.tcl
@@ -431,25 +517,36 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%%%DATADIR%%/examples/tcl/x30.tcl
 %%TCLTK%%%%DATADIR%%/examples/tcl/x31
 %%TCLTK%%%%DATADIR%%/examples/tcl/x31.tcl
+%%TCLTK%%%%DATADIR%%/examples/tcl/x33
+%%TCLTK%%%%DATADIR%%/examples/tcl/x33.tcl
 %%DATADIR%%/examples/test_c.sh
 %%DATADIR%%/examples/test_c_interactive.sh
 %%DATADIR%%/examples/test_cxx.sh
 %%DATADIR%%/examples/test_diff.sh
 %%FORTRAN%%%%DATADIR%%/examples/test_f77.sh
 %%FORTRAN%%%%DATADIR%%/examples/test_f95.sh
+%%LUA%%%%DATADIR%%/examples/test_lua.sh
 %%PYTHON%%%%DATADIR%%/examples/test_python.sh
 %%TCLTK%%%%DATADIR%%/examples/test_tcl.sh
 %%TCLTK%%%%DATADIR%%/examples/tk/CMakeLists.txt
 %%TCLTK%%%%DATADIR%%/examples/tk/Makefile
 %%TCLTK%%%%DATADIR%%/examples/tk/README.tkdemos
+%%TCLTK%%%%DATADIR%%/examples/tk/plgrid
+%%TCLTK%%%%DATADIR%%/examples/tk/plgrid.in
 %%TCLTK%%%%DATADIR%%/examples/tk/plgrid.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/runAllDemos.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/runExtendedDemos.tcl
+%%TCLTK%%%%DATADIR%%/examples/tk/standard_examples
+%%TCLTK%%%%DATADIR%%/examples/tk/standard_examples.in
 %%TCLTK%%%%DATADIR%%/examples/tk/tclIndex
 %%TCLTK%%%%DATADIR%%/examples/tk/tk01
+%%TCLTK%%%%DATADIR%%/examples/tk/tk01.in
 %%TCLTK%%%%DATADIR%%/examples/tk/tk02
+%%TCLTK%%%%DATADIR%%/examples/tk/tk02.in
 %%TCLTK%%%%DATADIR%%/examples/tk/tk03
+%%TCLTK%%%%DATADIR%%/examples/tk/tk03.in
 %%TCLTK%%%%DATADIR%%/examples/tk/tk04
+%%TCLTK%%%%DATADIR%%/examples/tk/tk04.in
 %%TCLTK%%%%DATADIR%%/examples/tk/tkdemos.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x01.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x02.tcl
@@ -481,6 +578,7 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%%%DATADIR%%/examples/tk/x28.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x29.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x30.tcl
+%%TCLTK%%%%DATADIR%%/examples/tk/x31.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/xtk01.c
 %%TCLTK%%%%DATADIR%%/examples/tk/xtk02.c
 %%TCLTK%%%%DATADIR%%/examples/tk/xtk04.c
@@ -517,9 +615,9 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%@dirrm %%DATADIR%%/examples/tk
 %%TCLTK%%@dirrm %%DATADIR%%/examples/tcl
 %%PYTHON%%@dirrm %%DATADIR%%/examples/python
+%%LUA%%@dirrm %%DATADIR%%/examples/lua
 %%FORTRAN%%@dirrm %%DATADIR%%/examples/f95
 %%FORTRAN%%@dirrm %%DATADIR%%/examples/f77
-%%FORTRAN%%@dirrm %%DATADIR%%/examples/cmake/modules/Platform
 @dirrm %%DATADIR%%/examples/cmake/modules
 @dirrm %%DATADIR%%/examples/cmake
 @dirrm %%DATADIR%%/examples/c++
@@ -527,4 +625,7 @@ libdata/pkgconfig/plplotd.pc
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
+@dirrm lib/plplot/driversd
+@dirrm lib/plplot
+%%LUA%%@dirrm %%LUA_MODLIBDIR%%/plplot
 @dirrm include/plplot
