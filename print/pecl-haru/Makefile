@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-haru
-# Date created:			20 Nov 2008
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	haru
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
