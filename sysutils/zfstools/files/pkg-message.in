@@ -1,0 +1,17 @@
+To enable automatic snapshots, place lines such as these into /etc/crontab:
+
+    15,30,45 * * * * root %%PREFIX%%/sbin/zfs-auto-snapshot frequent  4
+    0        * * * * root %%PREFIX%%/sbin/zfs-auto-snapshot hourly   24
+    7        0 * * * root %%PREFIX%%/sbin/zfs-auto-snapshot daily     7
+    14       0 * * 7 root %%PREFIX%%/sbin/zfs-auto-snapshot weekly    4
+    28       0 1 * * root %%PREFIX%%/sbin/zfs-auto-snapshot monthly  12
+
+This will keep 4 15-minutely snapshots, 24 hourly snapshots, 7 daily snapshots,
+4 weekly snapshots and 12 monthly snapshots. Any resulting zero-sized snapshots
+will be automatically cleaned up.
+
+Enable snapshotting on a dataset or top-level pool with:
+
+    zfs set com.sun:auto-snapshot=true DATASET
+
+See website and command usage output for further details.
