@@ -1,13 +1,13 @@
 %%SITE_PERL%%/Net/STOMP/Client.pm
+%%SITE_PERL%%/Net/STOMP/Client/Auth.pm
 %%SITE_PERL%%/Net/STOMP/Client/Connection.pm
-%%SITE_PERL%%/Net/STOMP/Client/Debug.pm
-%%SITE_PERL%%/Net/STOMP/Client/Error.pm
 %%SITE_PERL%%/Net/STOMP/Client/Frame.pm
+%%SITE_PERL%%/Net/STOMP/Client/HeartBeat.pm
 %%SITE_PERL%%/Net/STOMP/Client/IO.pm
-%%SITE_PERL%%/Net/STOMP/Client/OO.pm
 %%SITE_PERL%%/Net/STOMP/Client/Peer.pm
-%%SITE_PERL%%/Net/STOMP/Client/Protocol.pm
+%%SITE_PERL%%/Net/STOMP/Client/Receipt.pm
 %%SITE_PERL%%/Net/STOMP/Client/Tutorial.pod
+%%SITE_PERL%%/Net/STOMP/Client/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/STOMP/Client/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/STOMP/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/STOMP
