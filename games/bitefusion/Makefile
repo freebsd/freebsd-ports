@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bitefusion
-# Date created:		14 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	bitefusion
 PORTVERSION=	1.0.2

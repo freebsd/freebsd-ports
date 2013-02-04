@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cgoban
-# Date created:        28 October 1996
-# Whom:                simonm@dcs.gla.ac.uk
-#
+# Created by: simonm@dcs.gla.ac.uk
 # $FreeBSD$
-#
 
 PORTNAME=	cgoban
 PORTVERSION=	1.9.14

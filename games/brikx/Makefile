@@ -1,9 +1,5 @@
-# New ports collection makefile for:	brikx
-# Date created:		07 Sep 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	brikx
 PORTVERSION=	0.4.5
