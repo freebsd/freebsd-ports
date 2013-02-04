@@ -11,6 +11,7 @@ bin/uniconv
 @unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
 etc/afp.conf.dist
 @exec [ ! -f %B/afp.conf ] && cp %B/%f %B/afp.conf
+etc/extmap.conf.dist
 libexec/netatalk-uams/uams_clrtxt.so
 libexec/netatalk-uams/uams_dhx.so
 libexec/netatalk-uams/uams_dhx2.so
@@ -66,7 +67,7 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.la
 lib/libatalk.so
-lib/libatalk.so.2
+lib/libatalk.so.3
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad
