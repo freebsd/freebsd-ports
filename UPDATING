@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130204:
+  AFFECTS: users of dns/poweradmin
+  AUTHOR: Edmondas Girkantas <eg@fbsd.lt>
+
+  Some database changes have been made between version 2.1.5 and 2.1.6,
+  upgrading needs to be done manually by running the following SQL:
+
+  For MySQL users:
+
+  ALTER TABLE users MODIFY username VARCHAR(64) NOT NULL DEFAULT '0';
+  ALTER TABLE users MODIFY password VARCHAR(128) NOT NULL DEFAULT '0';
+
+  For PostgreSQL users:
+
+  ALTER TABLE users ALTER COLUMN username TYPE VARCHAR(64);
+  ALTER TABLE users ALTER COLUMN password TYPE VARCHAR(128);
+
 20130203:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
