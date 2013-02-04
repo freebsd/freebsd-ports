@@ -4,6 +4,7 @@ bin/blkls
 bin/blkstat
 bin/fcat
 bin/ffind
+bin/fiwalk
 bin/fls
 bin/fsstat
 bin/hfind
@@ -15,6 +16,7 @@ bin/img_stat
 bin/istat
 bin/jcat
 bin/jls
+bin/jpeg_extract
 bin/mactime
 bin/mmcat
 bin/mmls
