@@ -2,35 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	3.99.2.2
-PORTREVISION=	1
+PORTVERSION=	4.0.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The x2go Qt client
+COMMENT=	Qt client for the X2Go system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		cups:${PORTSDIR}/print/cups-client \
-		freetype:${PORTSDIR}/print/freetype2 \
-		ssh:${PORTSDIR}/security/libssh \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client \
+		ssh:${PORTSDIR}/security/libssh
 RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli
 
 OPTIONS_DEFINE=	LDAP DOCS
 OPTIONS_DEFAULT=LDAP
 
-USE_GETTEXT=	yes
-USE_ICONV=	yes
-USE_XORG=	ice sm x11 xau xdmcp xext xpm xrender
-USE_QT4=	corelib gui network svg \
+USE_XORG=	xpm
+USE_QT4=	gui network svg \
 		linguist_build moc_build qmake_build rcc_build uic_build
 QMAKEFLAGS=	QMAKE_LRELEASE="${QT_PREFIX}/bin/lrelease-qt4"
 INSTALLS_ICONS=	yes
@@ -53,12 +43,9 @@ QMAKEFLAGS+=	LIBS+="-lX11 -lXpm -lcups"
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" | ${XARGS} \
 		${REINPLACE_CMD} -e \
-		's|Q_OS_LINUX|Q_OS_${OPSYS:U}| ; \
+		's|Q_OS_LINUX|Q_OS_UNIX| ; \
 		 /<linux\/fs.h>/s|^|//| ; \
 		 /#define USELDAP/s|^|//|'
-	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.ts" | ${XARGS} \
-		${REINPLACE_CMD} -e \
-		's|authentification|authentication|g'
 	@${REINPLACE_CMD} -e \
 		'/MACOSX/s|^|#|' ${WRKSRC}/x2goclient.pro
 	@${REINPLACE_CMD} -e \
@@ -74,9 +61,9 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/x2goclient.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/applications
+	@${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/desktop/x2goclient.desktop \
-		${PREFIX}/share/applications
+		${DESKTOPDIR}
 .for dir in 16x16 32x32 64x64 128x128
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/${dir}/apps
 	${INSTALL_DATA} ${WRKSRC}/icons/${dir}/x2goclient.png \
