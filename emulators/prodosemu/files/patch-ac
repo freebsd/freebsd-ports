@@ -12,3 +12,12 @@
  
  extern char prodosroot[];
  
+@@ -24,7 +28,7 @@
+   exit (1);
+ }
+ 
+-void main (int argc,char **argv)
++int main (int argc,char **argv)
+ {
+   short int byte;
+   int i, addr;                  /* Loop iterators */
