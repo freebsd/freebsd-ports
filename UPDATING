@@ -5,7 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20130205:
+20130204:
+  AFFECTS: users of multimedia/qt4-phonon, multimedia/qt4-phonon-gst
+  AUTHOR: makc@FreeBSD.org
+  qt4-phonon has been deprecated in favour of multimedia/phonon. Remove
+  WITH_QT_PHONON from your make.conf and replace qt4-phonon with
+  multimedia/phonon:
+
+  # portmaster -o multimedia/phonon multimedia/qt4-phonon
+  # portmaster -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
+
+20130204:
   AFFECTS: users of lang/perl5.8 and lang/perl5.10
   AUTHOR: az@FreeBSD.org
 
