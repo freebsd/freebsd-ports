@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Devel-Gladiator
-# Date created:	   			23 Oct 2008
-# Whom:		   			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Gladiator
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
