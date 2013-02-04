@@ -19,14 +19,14 @@
 # PERL_VERSION	- Full version of perl5 (see below for current value).
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
 #				  M is major version, N is minor version, and P is
-#				  the patch level. E.g., PERL_VERSION=5.8.1 would give
-#				  a PERL_LEVEL of 500801. This can be used in comparisons
+#				  the patch level. E.g., PERL_VERSION=5.14.2 would give
+#				  a PERL_LEVEL of 501402. This can be used in comparisons
 #				  to determine if the version of perl is high enough,
 #				  whether a particular dependency is needed, etc.
 # PERL_ARCH		- Directory name of architecture dependent libraries
 #				  (value: mach).
 # PERL_PORT		- Name of the perl port that is installed
-#				  (value: perl5.8)
+#				  (value: perl5.14)
 # SITE_PERL		- Directory name where site specific perl packages go.
 #				  This value is added to PLIST_SUB.
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
@@ -70,12 +70,8 @@ PERL_ARCH?=		mach
 PERL_PORT?=	perl5.16
 .elif  ${PERL_LEVEL} >= 501400
 PERL_PORT?=	perl5.14
-.elif  ${PERL_LEVEL} >= 501200
+.else  # ${PERL_LEVEL} < 501400
 PERL_PORT?=	perl5.12
-.elif  ${PERL_LEVEL} >= 501000
-PERL_PORT?=	perl5.10
-.else # ${PERL_LEVEL} < 501000
-PERL_PORT?=	perl5.8
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}

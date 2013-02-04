@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130205:
+  AFFECTS: users of lang/perl5.8 and lang/perl.10
+  AUTHOR: az@FreeBSD.org
+
+  lang/perl5.8 and lang/perl5.10 have been removed since they've
+  been EOL by upstream. You will have to recompile all perl dependant
+  ports after updating your ports tree. Please see entry 20110517 for help.
+
 20130204:
   AFFECTS: users of dns/poweradmin
   AUTHOR: Edmondas Girkantas <eg@fbsd.lt>
