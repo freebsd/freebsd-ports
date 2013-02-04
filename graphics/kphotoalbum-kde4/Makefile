@@ -1,44 +1,47 @@
-# New ports collection makefile for:	kimdaba
-# Date created:			Sat Dec 13 16:09:29 CET 2003
-# Whom:				Markus Brueffer <brueffer@phoenix-systems.de>
-#
+# Created by: Markus Brueffer <brueffer@phoenix-systems.de>
 # $FreeBSD$
 
 PORTNAME=	kphotoalbum
-PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	10
+PORTVERSION=	4.3
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/extragear
-DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
-DIST_SUBDIR=	KDE/extragear
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		kipi.8:${PORTSDIR}/graphics/libkipi-kde4
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		exiv2:${PORTSDIR}/graphics/exiv2
 
+USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkipi automoc4
+USE_QT4=	corelib qt3support \
+		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-APP_VER=	4.1.1
-EXTRA_VER=	4.4.0
+OPTIONS_DEFINE=	MARBLE
+OPTIONS_DEFAULT=MARBLE
 
-OPTIONS=	MARBLE "Geolocation support" on
+MARBLE_DESC=	Geolocation support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MARBLE)
+.if ${PORT_OPTIONS:MMARBLE}
 USE_KDE4+=	marble
 .else
 CMAKE_ARGS+=	-DWITH_Marble:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DBUILD_po:BOOL=Off
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>
