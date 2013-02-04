@@ -1,0 +1,19 @@
+--- CMakeLists.txt.bak	2012-09-26 00:03:24.000000000 -0500
++++ CMakeLists.txt	2012-11-26 22:38:10.883043680 -0600
+@@ -1,5 +1,5 @@
+-set(CMAKE_USER_MAKE_RULES_OVERRIDE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/c_flag_overrides.cmake)
+-set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX ${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxx_flag_overrides.cmake)
++set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DNDEBUG")
++set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
+ 
+ project(rime)
+ cmake_minimum_required(VERSION 2.8)
+@@ -107,7 +107,7 @@ if(NOT BUILD_STATIC)
+   set(includedir "${CMAKE_INSTALL_PREFIX}/include")
+   configure_file(${PROJECT_SOURCE_DIR}/rime.pc.in ${PROJECT_BINARY_DIR}/rime.pc)
+   install(FILES include/rime_api.h DESTINATION include)
+-  install(FILES ${PROJECT_BINARY_DIR}/rime.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
++  install(FILES ${PROJECT_BINARY_DIR}/rime.pc DESTINATION ${prefix}/libdata/pkgconfig)
+   install(FILES cmake/RimeConfig.cmake DESTINATION share/cmake/rime)
+   if(BUILD_DATA)
+     install(FILES ${PROJECT_SOURCE_DIR}/data/default.yaml DESTINATION ${pkgdatadir})
