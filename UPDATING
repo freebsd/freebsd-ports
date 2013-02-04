@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130205:
-  AFFECTS: users of lang/perl5.8 and lang/perl.10
+  AFFECTS: users of lang/perl5.8 and lang/perl5.10
   AUTHOR: az@FreeBSD.org
 
   lang/perl5.8 and lang/perl5.10 have been removed since they've
