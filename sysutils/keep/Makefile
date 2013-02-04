@@ -9,7 +9,7 @@ PORTNAME=	keep
 PORTVERSION=	0.4.0
 PORTREVISION=	7
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://jr.falleri.free.fr/files/devel/keep/
+MASTER_SITES=	http://fossies.org/unix/privat/old/
 
 MAINTAINER=	dsteinbrook@gmail.com
 COMMENT=	A backup system for KDE
