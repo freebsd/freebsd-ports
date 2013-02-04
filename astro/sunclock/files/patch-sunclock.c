@@ -59,16 +59,6 @@
          Context->projtime = -1L;
          Context->roottime = -1L;
          Context->animtime = -1L;
-@@ -3142,8 +3131,8 @@
- {
-    int ilon, ilat, width, dw = 0;
-    struct TextLabel * label;
--   if(!Context->wintype) return;
-    char *text, *text0, *ptr;
-+   if(!Context->wintype) return;
- 
-    label = Context->label;
-    while (label) if (label->text && *label->text) {
 @@ -3918,7 +3907,7 @@
  
          if (button_pressed) return;
