@@ -7,24 +7,31 @@
 
 PORTNAME=	bricons
 PORTVERSION=	3.0
+DISTVERSIONPREFIX=	athena-
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	-athena-3.0.tar.Z
+MASTER_SITES=	XCONTRIB/../R5contrib
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick start up utility for applications on an X display
 
-USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_PERL5_BUILD=yes
 USE_XORG=	xaw
+USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		bricons.1
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Xbricons
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Xbricons
+	@${REINPLACE_CMD} -e \
+		's|^unsigned int argc|int argc|' ${WRKSRC}/main.c
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xbricons ${PREFIX}/lib/X11/app-defaults
