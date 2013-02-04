@@ -209,7 +209,6 @@
     SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += ldouble
-    SUBDIR += lensnns
     SUBDIR += levmar
     SUBDIR += libR
     SUBDIR += libRmath

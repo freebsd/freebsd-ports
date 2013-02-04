@@ -4039,3 +4039,5 @@ devel/kdebindings4-smoke-smokeqt|devel/smokeqt|2013-02-03|Renamed
 net/freeradius||2013-02-04|Has expired: no longer supported.  Please use net/freeradius2 instead
 net/freeradius-mysql||2013-02-04|Has expired: no longer supported.  Please use net/freeradius2 instead
 multimedia/despotify||2013-02-04|Has expired: API no longer supported
+irc/zircon||2013-02-04|Has expired: Project has been abandoned
+math/lensnns||2013-02-04|Has expired: Project has been abandoned
