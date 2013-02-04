@@ -992,6 +992,7 @@
     SUBDIR += libixp
     SUBDIR += libjson++
     SUBDIR += libk8055
+    SUBDIR += libkgapi
     SUBDIR += libkolab
     SUBDIR += liblas
     SUBDIR += liblcfg
