@@ -197,10 +197,7 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%QT_LIBDIR_REL%%/libphonon.so.4
 %%QT_LIBDIR_REL%%/libphononexperimental.so
 %%QT_LIBDIR_REL%%/libphononexperimental.so.4
-%%DESIGNER%%%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so
 share/qt4/mkspecs/modules/qt_phonon.pri
 @dirrmtry share/qt4/mkspecs/modules
-%%DESIGNER%%@dirrmtry %%QT_PLUGINDIR_REL%%/designer
-%%DESIGNER%%@dirrmtry %%QT_PLUGINDIR_REL%%
 @dirrmtry %%QT_LIBDIR_REL%%
 @dirrmtry %%QT_INCDIR_REL%%
