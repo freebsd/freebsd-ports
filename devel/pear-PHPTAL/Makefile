@@ -15,21 +15,24 @@ COMMENT=	PEAR PHPTAL is a XML/XHTML template library for PHP
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-OPTIONS=	GETTEXT "Enable GetText Support" off \
-		SIMPLEXML "Enable SimpleXML Support" off \
-		JSON "Enable JSON Support" off
+OPTIONS_DEFINE=	GETTEXT SIMPLEXML JSON
+GETTEXT_DESC=	"Enable GetText Support"
+SIMPLEXML_DESC=	"Enable SimpleXML Support"
+JSON_DESC=	"Enable JSON Support"
+
+.include <bsd.port.options.mk>
 
 USE_PHP=	ctype hash
 
-.if defined(WITH_GETTEXT)
+.if ${PORT_OPTIONS:MGETTEXT}
 USE_PHP+=	gettext
 .endif
 
-.if defined(WITH_SIMPLEXML)
+.if ${PORT_OPTIONS:MSIMPLEXML}
 USE_PHP+=	simplexml
 .endif
 
-.if defined(WITH_JSON)
+.if ${PORT_OPTIONS:MJSON}
 USE_PHP+=	json
 .endif
 
