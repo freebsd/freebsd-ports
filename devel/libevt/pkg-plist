@@ -1,0 +1,18 @@
+bin/evtexport
+bin/evtinfo
+include/libevt.h
+include/libevt/codepage.h
+include/libevt/definitions.h
+include/libevt/error.h
+include/libevt/extern.h
+include/libevt/features.h
+include/libevt/types.h
+lib/libevt.a
+lib/libevt.la
+lib/libevt.so
+lib/libevt.so.1
+%%PYTHON_SITELIBDIR%%/pyevt.a
+%%PYTHON_SITELIBDIR%%/pyevt.la
+%%PYTHON_SITELIBDIR%%/pyevt.so
+libdata/pkgconfig/libevt.pc
+@dirrm include/libevt

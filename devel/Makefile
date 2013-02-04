@@ -949,6 +949,7 @@
     SUBDIR += libevent
     SUBDIR += libevent-hiphop
     SUBDIR += libevent2
+    SUBDIR += libevt
     SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
