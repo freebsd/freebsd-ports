@@ -1,2 +1,4 @@
-SHA256 (phyml_20090706.tar.gz) = b39fa8ba2bc3a6566f3463c77db0d8992f71a71af353be539d0916173785d4bd
-SIZE (phyml_20090706.tar.gz) = 818229
+SHA256 (phyml/phyml-20120412.tar.gz) = a43e51534a1ae2d1ee4c94ced3a1855813ff4872a6c9c2b83b369ddb71198417
+SIZE (phyml/phyml-20120412.tar.gz) = 4089133
+SHA256 (phyml/20121109.patch) = 3aa8bebd0ff78a553795ddda512ef1c7542d1e3c90c1da61c7125c304f6caa2c
+SIZE (phyml/20121109.patch) = 11016
