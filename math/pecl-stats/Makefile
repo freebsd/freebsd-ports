@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-stats
-# Date created:			2006/07/31
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	stats
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	math textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,7 +14,5 @@ COMMENT=	A PECL extension which with routines for statistical computation
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
