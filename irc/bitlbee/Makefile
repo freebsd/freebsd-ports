@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.0.6
+PORTVERSION=	3.2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -25,86 +25,90 @@ USE_PKGCONFIG=	build
 USE_RC_SUBR=	bitlbee
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	DEBUG "Enable debug support" Off \
-		IPV6 "Enable IPv6 support" On \
-		OPENSSL "Use OpenSSL rather than GnuTLS" Off \
-		OTR "Enable OTR encryption support" Off \
-		MSN "Enable MSN protocol support" On \
-		JABBER "Enable Jabber (XMPP) protocol support" On \
-		OSCAR "Enable OSCAR (ICQ, AIM) protocol support" On \
-		YAHOO "Enable Yahoo! protocol support" On \
-		TWITTER "Enable Twitter protocol support" On \
-		LIBPURPLE "Use libpurple for protocol support" Off
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES IPV6 OTR
+
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
+
+OPTIONS_MULTI=		PROTO
+OPTIONS_MULTI_PROTO=	JABBER LIBPURPLE MSN OSCAR TWITTER YAHOO
+
+OTR_DESC=		Off-the-Record Messaging support
+LIBPURPLE_DESC=		Use libpurple for protocol support
+MSN_DESC=		Microsoft Messenger support
+OSCAR_DESC=		OSCAR (ICQ, AIM) support
+TWITTER_DESC=		Twitter support
+YAHOO_DESC=		Yahoo! Messenger support
+
+OPTIONS_DEFAULT=	GNUTLS JABBER MSN OSCAR TWITTER YAHOO
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
 USERS=		bitlbee
 GROUPS=		bitlbee
 
-CONFLICTS=	bitlbee-otr-[0-9]*
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--debug=1
 .else
 CONFIGURE_ARGS+=--debug=0
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--ipv6=1
 .else
 CONFIGURE_ARGS+=--ipv6=0
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=--ssl=openssl
-.else
+.elif ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=--ssl=gnutls
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 .endif
 
-.if defined(WITH_OTR)
+.if ${PORT_OPTIONS:MOTR}
 CONFIGURE_ARGS+=--otr=1
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr3
 .else
 CONFIGURE_ARGS+=--otr=0
 .endif
 
-.if defined(WITH_MSN)
+.if ${PORT_OPTIONS:MMSN}
 CONFIGURE_ARGS+=--msn=1
 .else
 CONFIGURE_ARGS+=--msn=0
 .endif
 
-.if defined(WITH_JABBER)
+.if ${PORT_OPTIONS:MJABBER}
 CONFIGURE_ARGS+=--jabber=1
 .else
 CONFIGURE_ARGS+=--jabber=0
 .endif
 
-.if defined(WITH_OSCAR)
+.if ${PORT_OPTIONS:MOSCAR}
 CONFIGURE_ARGS+=--oscar=1
 .else
 CONFIGURE_ARGS+=--oscar=0
 .endif
 
-.if defined(WITH_YAHOO)
+.if ${PORT_OPTIONS:MYAHOO}
 CONFIGURE_ARGS+=--yahoo=1
 .else
 CONFIGURE_ARGS+=--yahoo=0
 .endif
 
-.if defined(WITH_TWITTER)
+.if ${PORT_OPTIONS:MTWITTER}
 CONFIGURE_ARGS+=--twitter=1
 .else
 CONFIGURE_ARGS+=--twitter=0
 .endif
 
-.if defined(WITH_LIBPURPLE)
+.if ${PORT_OPTIONS:MLIBPURPLE}
 CONFIGURE_ARGS+=--purple=1
-LIB_DEPENDS+=	purple.10:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS+=	purple:${PORTSDIR}/net-im/libpurple
 .else
 CONFIGURE_ARGS+=--purple=0
 .endif
@@ -124,14 +128,14 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/bitlbee
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
