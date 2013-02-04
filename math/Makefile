@@ -280,6 +280,7 @@
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
     SUBDIR += octave-forge-data-smoothing
+    SUBDIR += octave-forge-database
     SUBDIR += octave-forge-dataframe
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-econometrics
