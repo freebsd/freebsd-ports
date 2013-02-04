@@ -9,13 +9,10 @@
 #	FreeBSD guidelines, this mode is useful if you have problems with the
 #	default Configure.
 #
-# WITH_X11: Disable this to build a headless version of Gtk-Gnutella. The
-#       resulting executable won't use or depend on any Gtk version and
-#       Gtk-Gnutella can only be controlled through the remote shell.
-#       Use with caution!
-#
-# WITH_GTK2: Enable to configure and build with GTK 2, disable to configure and
-#       build with GTK 1.2. Will be ignored if WITH_X11 is disabled!
+# WITH_GUI: Disable this to build a headless version of Gtk-Gnutella.
+#       Therefore, monitoring of operations for Gtk-Gnutella will have to be
+#       done without relying on any GUI, and the configuration is done via
+#       files only.
 #
 # WITH_TLS: Enable support for scrambling GNet connections. Currently supported
 #       only by Gtk-Gnutella.
@@ -39,34 +36,38 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.9
-PORTREVISION=	2
+PORTVERSION=	0.98.4
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based Gnutella client
 
-USE_PERL5=	yes
+LICENSE=	GPLv2 # (or later)
+
+OPTIONS_DEFINE=	GUI TLS NLS IPV6 DBUS SQLITE DEBUG PORTABILITY
+OPTIONS_DEFAULT=GUI TLS
+PORTABILITY_DESC=	Use the PATH variable at run-time
+
+ONLY_FOR_ARCHS=	i386 amd64
+
 USE_BZIP2=	yes
+USE_GNOME=	glib20 libxml2
+USE_PERL5=	yes
 USE_BISON=	build
-MAKE_JOBS_UNSAFE=	yes
-USE_GNOME=	libxml2 glib20
-INSTALL_TARGET=	install install.man
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-O -Dyacc='bison -y' -Dprefix=${PREFIX} \
-		-Dprivlib=${PREFIX}/share/gtk-gnutella \
-		-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale \
-		-Dcc='${CC}' -Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
+		-Dprivlib=${DATADIR} -Dsysman=${MANPREFIX}/man/man1 \
+		-Dlocale=${PREFIX}/share/locale -Dcc='${CC}' \
+		-Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
 		-Doptimize='undef'
-ONLY_FOR_ARCHS=	i386 amd64
+INSTALL_TARGET=	install install.man
+MAKE_JOBS_UNSAFE=	yes
+
+PLIST_SUB=	ARCH="${ARCH}"
 
 MAN1=		gtk-gnutella.1
-
-OPTIONS_DEFINE=	X11 GTK2 GNUTLS NLS IPV6 DBUS SQLITE DEBUG PORTABILITY
-OPTIONS_DEFAULT=	X11 GTK2 GNUTLS
-PORTABILITY_DESC=	Use the PATH variable at run-time
 
 .include <bsd.port.options.mk>
 
@@ -80,15 +81,9 @@ CONFIGURE_ARGS+=	-D optimize=-g  -D official=false
 CONFIGURE_ARGS+=	-D official=true
 .endif
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=		x11
-.if ${PORT_OPTIONS:MGTK2}
-CONFIGURE_ARGS+=	-D gtkversion=2
+.if ${PORT_OPTIONS:MGUI}
 USE_GNOME+=		gtk20
-.else
-CONFIGURE_ARGS+=	-D gtkversion=1
-USE_GNOME+=		gtk12
-.endif
+CONFIGURE_ARGS+=	-D gtkversion=2
 .else
 CONFIGURE_ARGS+=	-D d_headless
 .endif
@@ -97,57 +92,35 @@ CONFIGURE_ARGS+=	-D d_headless
 CONFIGURE_ARGS+=	-D d_portable
 .endif
 
-.if ${PORT_OPTIONS:MGNUTLS}
+.if ${PORT_OPTIONS:MTLS}
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	-U d_gnutls
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	-D d_nls
 USE_GETTEXT=		yes
-PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/el/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/es/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/fr/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/hu/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/it/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/ja/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/nb/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/nl/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/tr/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/uk/LC_MESSAGES/gtk-gnutella.mo \
-			share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
+CONFIGURE_ARGS+=	-D d_nls
+PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	-U d_nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MIPB6}
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	-D ipv6=false
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=		dbus:${PORTSDIR}/devel/dbus
 .else
-CONFIGURE_ARGS+=	-D dbus=false
+CONFIGURE_ARGS+=	-U d_dbus
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=		yes
 .else
 CONFIGURE_ARGS+=	-U d_sqlite
-.endif
-
-.if ${ARCH} == i386
-PLIST_SUB+=	I386=""
-.else
-PLIST_SUB+=	I386="@comment "
-.endif
-
-.if ${ARCH} == amd64
-PLIST_SUB+=	AMD64=""
-.else
-PLIST_SUB+=	AMD64="@comment "
 .endif
 
 .include <bsd.port.mk>
