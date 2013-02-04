@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -52,7 +51,8 @@ OPTIONS=	PAM		"Enable PAM support" off \
 MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \
 		dbd.1 macusers.1 \
 		netatalk-config.1 uniconv.1
-MAN5=		afp.conf.5 afp_signature.conf.5 afp_voluuid.conf.5
+MAN5=		afp.conf.5 afp_signature.conf.5 afp_voluuid.conf.5 \
+		extmap.conf.5
 MAN8=		afpd.8 cnid_dbd.8 cnid_metad.8 netatalk.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit-[0-9]*
