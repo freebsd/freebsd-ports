@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.65a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -36,21 +36,22 @@ OUTDIR=		${INSTALL_WRKSRC}/bin/2.65
 LANG=	ar cs de eo es es_ES fa fr he hr hu id it ja ky nl pt pt_BR ru \
 	sr sr@latin sv tr uk zh_CN zh_TW
 
-OPTIONS_DEFINE=	BOOLEAN BULLET CINEON CAMERATRACK CYCLES DDS FFMPEG FFTW3 \
-		GAMEENGINE HDR HEADLESS JACK NLS MENU OCEANSIM OPENAL \
-		OPENCOLORIO OPENEXR OPENJPEG OPENMP PLAYER REDCODE SAMPLERATE \
-		SDL SNDFILE TIFF XINPUT XF86VMODE
-OPTIONS_DEFAULT=	BOOLEAN BULLET CINEON CYCLES DDS GAMEENGINE HDR JACK \
-			OPENAL OPENCOLORIO OPENEXR OPENJPEG OPENMP PLAYER \
-			SAMPLERATE SDL TIFF XINPUT XF86VMODE
+OPTIONS_DEFINE=	BOOLEAN BULLET CINEON CAMERATRACK CYCLES CYCLESOSL DDS FFMPEG \
+		FFTW3 GAMEENGINE HDR HEADLESS JACK NLS MENU OCEANSIM OPENAL \
+		OPENCOLORIO OPENEXR OPENJPEG OPENMP PLAYER RAYOPTIMIZATION \
+		REDCODE SAMPLERATE SDL SNDFILE TIFF XINPUT XF86VMODE
+OPTIONS_DEFAULT=	BOOLEAN BULLET CINEON CYCLES CYCLESOSL DDS GAMEENGINE \
+			HDR JACK OPENAL OPENCOLORIO OPENEXR OPENJPEG OPENMP \
+			PLAYER SAMPLERATE SDL TIFF XINPUT XF86VMODE
 
 BOOLEAN_DESC=		Boolean library support
 BULLET_DESC=		Bullet physics engine
 CINEON_DESC=		CINEON and DPX graphics format support
 CAMERATRACK_DESC=	Camera tracking support
 CYCLES_DESC=		Cycles render engine support
+CYCLESOSL_DESC=		Shading support for the cycles render engine
 DDS_DESC=		DDS graphics format support
-FFTW3_DESC=		Floating point support using fftw
+FFTW3_DESC=		Use fftw for smoke and audio effects
 GAMEENGINE_DESC=	Enable the game engine
 HDR_DESC=		Generic high dynamic-range (HDR) support
 HEADLESS_DESC=		Disable user interface (for render-farms)
@@ -58,6 +59,7 @@ MENU_DESC=		Install desktop menu
 OCEANSIM_DESC=		Ocean simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
 PLAYER_DESC=		Enable blender player
+RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 REDCODE_DESC=		RedCode graphics format support
 SDL_DESC=		Audio and Joystick support using SDL
 XINPUT_DESC=		X11 Xinput (tablet) support
@@ -66,7 +68,6 @@ XF86VMODE_DESC=		X11 video mode switching support
 # TODO: provide switches for the following options
 #
 # WITH_IMAGE_FRAMESERVER WITH_LZO WITH_LZMA WITH_LIBMV WITH_INPUT_NDOF
-# WITH_RAYOPTIMIZATION WITH_CYCLES_OSL WITH_COMPOSITOR
 
 .include <bsd.port.options.mk>
 
@@ -103,10 +104,18 @@ IGNORE=	cycles render engine only works in FreeBSD 8 or later
 .endif
 CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=ON
 LIB_DEPENDS+=	OpenImageIO:${PORTSDIR}/graphics/openimageio
-PLIST_SUB+=	CYCLES=""
 .else
 CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=OFF
-PLIST_SUB+=	CYCLES="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCYCLESOSL}
+.if !${PORT_OPTIONS:MCYCLES}
+IGNORE=	support for the OpenShadingLanguage in cycles obviously requires CYCLES
+.endif
+CMAKE_ARGS+=	-DWITH_CYCLES_OSL:BOOL=ON
+LIB_DEPENDS+=	oslexec:${PORTSDIR}/graphics/openshadinglanguage
+.else
+CMAKE_ARGS+=	-DWITH_CYCLES_OSL:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MDDS}
@@ -156,18 +165,13 @@ CMAKE_ARGS+=	-DWITH_JACK:BOOL=OFF
 
 .if ${PORT_OPTIONS:MMENU}
 USE_GNOME=	desktopfileutils
-PLIST_SUB+=	MENU=""
-.else
-PLIST_SUB+=	MENU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-PLIST_SUB+=	NLS=""
 CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=ON
 .else
-PLIST_SUB+=	NLS="@comment "
 CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=OFF
 .endif
 
@@ -221,14 +225,18 @@ CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=OFF
 
 .if ${PORT_OPTIONS:MPLAYER}
 .if ${PORT_OPTIONS:MGAMEENGINE}
-PLIST_SUB+=	PLAYER=""
 CMAKE_ARGS+=	-DWITH_PLAYER:BOOL=ON
 .else
 BROKEN=		PLAYER requires GAMEENGINE
 .endif
 .else
-PLIST_SUB+=	PLAYER="@comment "
 CMAKE_ARGS+=	-DWITH_PLAYER:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MRAYOPTIMIZATION}
+CMAKE_ARGS+=	-DWITH_RAYOPTIMIZATION:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_RAYOPTIMIZATION:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MREDCODE}
