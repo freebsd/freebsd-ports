@@ -1,0 +1,14 @@
+--- scripts/CMakeLists.txt.orig
++++ scripts/CMakeLists.txt
+@@ -28,9 +28,9 @@
+     )
+   endif(PLD_plmeta)
+   if(PLD_pstex)
+-    set(scripts_SCRIPTS ${scripts_SCRIPTS} pstex2eps)
++    set(scripts_SCRIPTS "${scripts_SCRIPTS}" pstex2eps)
+   endif(PLD_pstex)
+-  if (NOT ${scripts_SCRIPTS} STREQUAL "")
++  if (NOT "${scripts_SCRIPTS}" STREQUAL "")
+     install(PROGRAMS ${scripts_SCRIPTS} DESTINATION ${BIN_DIR})
+   endif (NOT ${scripts_SCRIPTS} STREQUAL "")
+ endif(HAVE_BASH)
