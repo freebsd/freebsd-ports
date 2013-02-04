@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2013-04-04
+
 PORTSCOUT=	limit:^8\.3\.
 
 LATEST_LINK=	tcl83
