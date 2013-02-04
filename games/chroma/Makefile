@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chroma
-# Date created:		28 Jan 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chroma
 PORTVERSION=	1.08
@@ -25,28 +21,30 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	README
 
-OPTIONS=	SDL	"Enable SDL interface"	on \
-		CURSES	"Enable curses interface" on
+OPTIONS_DEFINE=	SDL CURSES DOCS
+OPTIONS_DEFAULT=SDL CURSES
+SDL_DESC=	Enable SDL interface
+CURSES_DESC=	Enable curses interface
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CURSES)
+.if ${PORT_OPTIONS:MCURSES}
+PLIST_SUB+=	CURSES=""
+.else
 CONFIGURE_ARGS+=--disable-curses
 PLIST_SUB+=	CURSES="@comment "
-.else
-PLIST_SUB+=	CURSES=""
 .endif
 
-.if defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=--disable-sdl
-PLIST_SUB+=	SDL="@comment "
-.else
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl image
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	SDL=""
+.else
+CONFIGURE_ARGS+=--disable-sdl
+PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
