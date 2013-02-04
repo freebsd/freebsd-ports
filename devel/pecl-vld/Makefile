@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-vld
-# Date created:			2007/03/02
-# Whom:				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	vld
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
