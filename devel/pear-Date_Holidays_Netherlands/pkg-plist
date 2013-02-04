@@ -1,8 +1,0 @@
-share/pear/Date/Holidays/Driver/Netherlands.php
-share/pear/Date/Holidays/Filter/Netherlands/Official.php
-share/pear/packages/pear-Date_Holidays_Netherlands-%%PORTVERSION%%/package.xml
-share/pear/tests/Date_Holidays_Netherlands/Date_Holidays_Driver_Netherlands_TestSuite.php
-@dirrm share/pear/tests/Date_Holidays_Netherlands
-@dirrm share/pear/packages/pear-Date_Holidays_Netherlands-%%PORTVERSION%%
-@dirrm share/pear/Date/Holidays/Filter/Netherlands
-@dirrm share/pear/Date/Holidays/Filter
