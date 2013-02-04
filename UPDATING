@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130204:
+  AFFECTS: users of sysutils/zfstools
+  AUTHOR: bdrewery@FreeBSD.org
+
+  The zfstools package has dropped the 'rubygem-' prefix and now installs
+  its binary files to PREFIX/sbin instead of PREFIX/bin.
+
+20130204:
   AFFECTS: users of multimedia/qt4-phonon, multimedia/qt4-phonon-gst
   AUTHOR: makc@FreeBSD.org
   qt4-phonon has been deprecated in favour of multimedia/phonon. Remove
