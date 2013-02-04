@@ -356,6 +356,7 @@
     SUBDIR += p5-DBIx-Class-EncodedColumn
     SUBDIR += p5-DBIx-Class-Fixtures
     SUBDIR += p5-DBIx-Class-FrozenColumns
+    SUBDIR += p5-DBIx-Class-InflateColumn-Authen-Passphrase
     SUBDIR += p5-DBIx-Class-InflateColumn-FS
     SUBDIR += p5-DBIx-Class-InflateColumn-IP
     SUBDIR += p5-DBIx-Class-IntrospectableM2M
