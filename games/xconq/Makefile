@@ -1,51 +1,72 @@
-# New ports collection makefile for:    xconq
-# Date created:         2 Jun 1998
-# Whom:                 Don Croyle <croyle@gelemna.org>
-#
+# Created by: Don Croyle <croyle@gelemna.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xconq
-PORTVERSION=	7.4.1
-PORTREVISION=	7
+DISTVERSION=	7.5.0-0pre.0.20050612
 CATEGORIES=	games tcl tk
-MASTER_SITES=	ftp://sources.redhat.com/pub/xconq/ \
-		ftp://unix.hensa.ac.uk/mirrors/sources.redhat.com/pub/xconq/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical multi-player strategy game and game design system
+COMMENT=	Graphical multi-player strategy game and game design system
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2 # (or later)
 
-USE_TK=		yes
-USE_XORG=	xmu xaw
+OPTIONS_DEFINE=	SDL
+
+USE_BZIP2=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-alternate-scoresdir=${SCOREDIR} \
+		--enable-alternate-gameuser=root \
+		--enable-alternate-gamegroup=games
+MAKE_ARGS=	GAMEPERM=2755 DIRPERM=775 FILEPERM=664
+MAKE_JOBS_UNSAFE=	yes
+
+PLIST_SUB=	SCOREDIR="${SCOREDIR}"
 
 MAN6=		xconq.6
+INFO=		xconq
+
+DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" \
+		"Game;StrategyGame;" false
 
 SCOREDIR?=	/var/games/xconq
-PLIST_SUB=	SCOREDIR=${SCOREDIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+.if ${PORT_OPTIONS:MSDL}
+USE_SDL=	sdl
+CONFIGURE_ARGS+=--enable-default-ui=sdl
+PLIST_SUB+=	NOSDL="@comment "
+.else
+USE_XORG+=	xext xmu xt xaw
+USE_TK_BUILD=	yes
+USE_TK=		yes
+CONFIGURE_ARGS+=--with-tclconfig=${TCL_LIBDIR} \
+		--with-tkconfig=${TK_LIBDIR}
+PLIST_SUB+=	NOSDL=""
+.else
+.endif
 
-CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
-		--with-tkconfig=${TK_LIBDIR} \
-		--enable-alternate-scoresdir=${SCOREDIR}
-
-# Fix for gmake >= 3.82
 post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^HFLAGS/s| $${debugging}||' ${WRKSRC}/configure
+# Fix for gmake >= 3.82
 	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
 		${REINPLACE_CMD} -e 's/^   */	/'
 
-post-install:
-.for file in xconq imf2x x2imf ximfapp
-	${STRIP_CMD} ${PREFIX}/bin/${file}
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/xconq/doc
-	${INSTALL_DATA} ${WRKSRC}/doc-html/* ${PREFIX}/share/xconq/doc/
-.endif
+post-build:
+	(cd ${WRKSRC}/doc && makeinfo xconq.texi)
 
-.include <bsd.port.post.mk>
+post-install:
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} xconq.info ${PREFIX}/${INFO_PATH})
+	${STRIP_CMD} ${PREFIX}/bin/xconq
+.if empty(PORT_OPTIONS:MSDL)
+.for i in imf2x imfapp x2imf
+	${STRIP_CMD} ${PREFIX}/bin/${i}
+.endfor
+.endif
+	@${FIND} ${DATADIR} -empty -delete
+
+.include <bsd.port.mk>
