@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chapping
-# Date created:		01 Aug 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chapping
 PORTVERSION=	0.43
