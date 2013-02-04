@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poweradmin
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	dns www
 MASTER_SITES=	SF/${PORTNAME} \
 		https://www.poweradmin.org/download/
