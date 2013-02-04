@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	phonon
-# Date created:				2008-01-30
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	phonon
@@ -40,14 +37,15 @@ PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 IGNORE=		conflicts with Qt 4 Phonon. Please, deinstall qt4-phonon-gst and unset WITH_QT_PHONON to continue
 .endif
 
-OPTIONS_DEFINE=	PLUGINS
-PLUGINS_DESC=	Install GStreamer plugins
+OPTIONS_DEFINE=	GST_PLUGINS
+
+GST_PLUGINS_DESC=	Install GStreamer plugins
 
 OPTIONS_DEFAULT=
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPLUGINS}
+.if ${PORT_OPTIONS:MGST_PLUGINS}
 RUN_DEPENDS+=	gstreamer-plugins-all>=0:${PORTSDIR}/multimedia/gstreamer-plugins-all
 .else
 SUB_FILES=	pkg-message
@@ -59,7 +57,7 @@ pre-su-install:
 post-install:
 	${LN} -sf ${PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so \
 		${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
-.if empty(PORT_OPTIONS:MPLUGINS)
+.if ! ${PORT_OPTIONS:MGST_PLUGINS}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
