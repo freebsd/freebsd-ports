@@ -1,5 +1,5 @@
---- kernel/unix.c.orig	Fri Jun  9 09:52:41 2000
-+++ kernel/unix.c	Wed Jun 28 21:49:40 2000
+--- kernel/unix.c.orig
++++ kernel/unix.c
 @@ -267,7 +267,7 @@
      /* The scorefile is only writable by the owner of the Xconq
         executable, but we normally run as the user, so switch over
