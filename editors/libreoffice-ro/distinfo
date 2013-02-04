@@ -1,2 +1,4 @@
-SHA256 (libreoffice/i18n/LibO_3.5.7_Linux_x86_langpack-deb_ro.tar.gz) = 4888e0a24ce8b66cb1a33bf41c60e0b79978f4c85fabafb8098c511d1e1f0a56
-SIZE (libreoffice/i18n/LibO_3.5.7_Linux_x86_langpack-deb_ro.tar.gz) = 3461452
+SHA256 (libreoffice/i18n/LibO_3.6.5_Linux_x86_langpack-deb_ro.tar.gz) = a17f43a534e48dbe14e8d289b0a1671f94a30951d711f074f49dbc0007fd578c
+SIZE (libreoffice/i18n/LibO_3.6.5_Linux_x86_langpack-deb_ro.tar.gz) = 3410352
+SHA256 (libreoffice/i18n/LibO_3.6.5_Linux_x86_helppack-deb_ro.tar.gz) = 68766e5a347c724726f6ffd9c9e97c173b59fcd6f1b6b1c4b04fdda49f694df7
+SIZE (libreoffice/i18n/LibO_3.6.5_Linux_x86_helppack-deb_ro.tar.gz) = 9926858

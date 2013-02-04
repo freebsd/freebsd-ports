@@ -118,11 +118,13 @@
     SUBDIR += lfhex
     SUBDIR += libreoffice
     SUBDIR += libreoffice-af
+    SUBDIR += libreoffice-am
     SUBDIR += libreoffice-as
     SUBDIR += libreoffice-ast
     SUBDIR += libreoffice-be
     SUBDIR += libreoffice-bg
     SUBDIR += libreoffice-bn
+    SUBDIR += libreoffice-bn_IN
     SUBDIR += libreoffice-bo
     SUBDIR += libreoffice-br
     SUBDIR += libreoffice-brx
