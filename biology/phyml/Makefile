@@ -1,31 +1,33 @@
-# New ports collection makefile for:   phyml 3.0 20090706
-# Date created:        July 17, 2009
-# Whom:                ballen
-#
+# Created by: ballen
 # $FreeBSD$
-#
 
 PORTNAME=	phyml
-PORTVERSION=	20090706
+PORTVERSION=	20121109
 CATEGORIES=	biology
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	phyml_20090706
+DISTNAME=	${PORTNAME}-20120412
+DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTVERSION}.patch
+PATCH_DIST_STRIP=	-p4
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple, fast, and accurate algorithm to estimate large phylogenies
+COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/phyml
-USE_AUTOTOOLS=	automake aclocal
+LICENSE=	GPLv2
+
+PATCH_WRKSRC=	${WRKSRC}/src
+
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/phyml
 
-pre-configure:
-	${RM} ${WRKSRC}/missing
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^AC_INIT/s|,esyscmd.*,|,[${PORTVERSION}],| ; \
+		 s|-O2 -msse|$${CFLAGS}|' ${WRKSRC}/configure.ac
 
-pre-install:
-	${CHMOD} a+x ${WRKSRC}/install-sh
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
