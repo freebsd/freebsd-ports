@@ -1,19 +1,25 @@
---- config.mk.orig	2012-12-14 12:16:05.000000000 -0500
-+++ config.mk	2012-12-14 12:16:51.000000000 -0500
-@@ -6,12 +6,13 @@ ERROR_SETTING=2> /dev/null
+--- config.mk.orig	2012-12-14 07:50:24.000000000 +0900
++++ config.mk	2012-12-15 04:42:02.000000000 +0900
+@@ -6,17 +6,18 @@
  
  default: all
  
 -CC    := gcc
 -CXX   := g++
-+CC    ?= cc
-+CXX   ?= c++
++CC    ?= gcc
++CXX   ?= g++
  OSDIR := linux
  
  # (Add a -g for debugging)
 -CPPFLAGS += -O2 -Wall
-+CPPFLAGS += -Wall -I%%LOCALBASE%%/include %%PTHREAD_CFLAGS%%
-+LDFLAGS	+= %%PTHREAD_LIBS%%
++CPPFLAGS += -Wall
  
  ### FreeBSD configuration
  
+ ifeq ($(shell uname), FreeBSD)
+-CPPFLAGS += -L/usr/local/lib
++CPPFLAGS += -I%%LOCALBASE%%/include %%PTHREAD_LIBS%%
++LDFLAGS  += -L%%LOCALBASE%%/lib %%PTHREAD_LIBS%%
+ endif
+ 
+ ### Default directory
