@@ -1,94 +1,85 @@
-# New ports collection makefile for:	popfile
-# Date created:		22 Feb 2004
-# Whom:			matusita@FreeBSD.org
-#
+# Created by: matusita@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	popfile
-PORTVERSION=	1.1.1
-#PORTREVISION=	0
+PORTVERSION=	1.1.3
 CATEGORIES=	mail
-MASTER_SITES=	http://getpopfile.org/downloads/
+MASTER_SITES=	http://getpopfile.org/downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. archive
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic mail classification tool, acts as a POP3 proxy
 
-RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
-		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
+LICENSE=	GPLv2
 
-NO_BUILD=	yes
+RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
+
+OPTIONS_DEFINE=	SSL XMLRPC UPGRADE_FROM_0_20 KAKASI MECABU
+SSL_DESC=	\
+	Depend SSL libraries/modules to use SSL connection to the servers
+XMLRPC_DESC=	\
+	Depend SOAP libraries to use POPFile as XMLRPC server
+UPGRADE_FROM_0_20_DESC=	\
+	Depend BerkeleyDB libraries to upgrade old POPFile corpus
+KAKASI_DESC=	\
+	Depend Kakasi library to handle Japanese text
+MECABU_DESC=	\
+	Depend MeCab library to handle Japanese text
+
 NO_WRKSUBDIR=	yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+NO_BUILD=	yes
 
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
 
-START_SCRIPTS_SUB= DATADIR=${DATADIR}
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_POPFILE_SSL)
+.if ${PORT_OPTIONS:MSSL}
 # POPFile works with IO::Socket::SSL version 1.07 (and not 0.97/0.99).
 RUN_DEPENDS+=  p5-IO-Socket-SSL>=1.07:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
-.if defined(WITH_POPFILE_XMLRPC)
+.if ${PORT_OPTIONS:MXMLRPC}
 RUN_DEPENDS+=  p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
-.if defined(WITH_POPFILE_SOCKS)
+#.if ${PORT_OPTIONS:MSOCKS}
 # XXX: IO::Socket::Socks should be listed here but no ports yet. For those
 # interested, check http://search.cpan.org/~reatmon/IO-Socket-Socks-0.1/.
-.endif
+#.endif
 
-.if defined(WITH_POPFILE_UPGRADE_FROM_0_20)
+.if ${PORT_OPTIONS:MUPGRADE_FROM_0_20}
 RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
-.if defined(WITH_POPFILE_JAPANESE)
-# For backward compatibility; popfile 0.x supports Kakasi only.
-WITH_POPFILE_KAKASI=YES
-.endif
-.if defined(WITH_POPFILE_KAKASI)
+.if ${PORT_OPTIONS:MKAKASI}
 RUN_DEPENDS+=	p5-Text-Kakasi>=0:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
-.if defined(WITH_POPFILE_MECAB)
+
+.if ${PORT_OPTIONS:MMECAB}
 RUN_DEPENDS+=	p5-MeCab>=0:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
-pre-fetch:
-	@${ECHO_CMD} "This port has some compile-time options:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   * make WITH_POPFILE_SSL=YES"
-	@${ECHO_CMD} "        Depend SSL libraries/modules to use SSL connection to the servers."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   * make WITH_POPFILE_XMLRPC=YES"
-	@${ECHO_CMD} "        Depend SOAP libraries to use POPFile as XMLRPC server."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   * make WITH_POPFILE_UPGRADE_FROM_0_20=YES"
-	@${ECHO_CMD} "        Depend BerkeleyDB libraries to upgrade old POPFile corpus."
-	@${ECHO_CMD} "        This option is required only for upgrading POPFile 0.20.1 or before."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   * make WITH_POPFILE_KAKASI=YES"
-	@${ECHO_CMD} "        Depend Kakasi library to handle Japanese text."
-	@${ECHO_CMD} "   * make WITH_POPFILE_MECAB=YES"
-	@${ECHO_CMD} "        Depend MeCab library to handle Japanese text."
-
 post-patch:
-	${CHMOD} +x ${WRKSRC}/popfile.pl
-	${REINPLACE_CMD} -i '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/popfile.pl
-	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
+	@${REINPLACE_CMD} -e \
+		's|^#!/usr/bin/perl$$|#!${PERL}|' ${WRKSRC}/popfile.pl
+	@${SED} 's|%%DATADIR%%|${DATADIR}|' \
+		< ${FILESDIR}/popfile.sh > ${WRKDIR}/popfile.sh
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
-	@${SED} ${START_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/popfile.sh > ${WRKDIR}/popfile.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/popfile.sh ${PREFIX}/sbin
-	${RM} ${WRKDIR}/popfile.sh
+	@${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} *.pl ${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} \
+		stopwords *.change* *.gif *.ico *.pck *.png ${DATADIR})
+.for i in Classifier POPFile Proxy Services UI languages skins
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${DATADIR})
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
