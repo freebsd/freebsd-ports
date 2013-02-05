@@ -1,7 +1,0 @@
-sbin/argus
-@exec mkdir -p %D/argus/archive
-%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.5.html
-%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.8.html
-%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.conf.5.html
-@dirrmtry argus/archive
-@dirrmtry argus

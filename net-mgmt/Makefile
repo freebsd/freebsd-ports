@@ -10,8 +10,6 @@
     SUBDIR += airport
     SUBDIR += angst
     SUBDIR += ap-utils
-    SUBDIR += argus
-    SUBDIR += argus-clients
     SUBDIR += argus-monitor
     SUBDIR += argus3
     SUBDIR += argus3-clients
