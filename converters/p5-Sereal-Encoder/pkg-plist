@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder/Encoder.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder/Encoder.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder/Constants.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sereal
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal
