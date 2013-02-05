@@ -4047,3 +4047,4 @@ net-mgmt/argus||2013-02-05|Has expired: Using of this branch of argus is discour
 net-mgmt/argus-clients||2013-02-05|Has expired: Using of this branch of argus-clients is discouraged. Please migrate to net-mgmt/argus3-clients
 net/libcmis03|net/libcmis|2013-02-05|libcmis has been updated to 0.3
 x11-toolkits/fltk2||2013-02-05|Has expired: No more public distfiles for version 2
+devel/kBuild-devel||2013-02-05|Not required anymore; use devel/kBuild instead

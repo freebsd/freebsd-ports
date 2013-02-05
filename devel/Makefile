@@ -864,7 +864,6 @@
     SUBDIR += jzmq
     SUBDIR += k8048
     SUBDIR += kBuild
-    SUBDIR += kBuild-devel
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
