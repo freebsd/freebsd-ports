@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsup-mirror
-# Date created:		01 February 1997
-# Whom:			jdp
-#
+# Created by: jdp
 # $FreeBSD$
-#
 
 PORTNAME=	cvsup-mirror
 PORTVERSION=	1.3
@@ -15,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A kit for easily setting up a FreeBSD mirror site using CVSup
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup-without-gui
+
+DEPRECATED=	www, doc, gnats, ports repo gone; src repo deprecated
+EXPIRATION_DATE=	2012-02-28
 
 NO_WRKSUBDIR=	true
 NO_BUILD=	true
