@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gxditview
-# Date created:                24 June 1998
-# Whom:                        Dom Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dom Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gxditview
 PORTVERSION=	${GXDVVERSION}${GXDVREVISION}
@@ -13,6 +9,9 @@ DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 based previewer for groff output
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 MAN1=		gxditview.1
 PLIST_FILES=	bin/gxditview lib/X11/app-defaults/GXditview

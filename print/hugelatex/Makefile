@@ -1,11 +1,6 @@
-# New ports collection makefile for:    hugelatex
-# Date created:         7 September 2001
-# Whom:                 Murray Stokely <murray@FreeBSD.org>
-#
+# Created by: Murray Stokely <murray@FreeBSD.org>
 # $FreeBSD$
-#
 # $NetBSD: Makefile,v 1.3 2001/09/02 19:51:38 hubertf Exp $
-#
 
 PORTNAME=		hugelatex
 PORTVERSION=		1.0
@@ -17,6 +12,8 @@ DISTFILES=		# none
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		LaTeX format files with large limits
 
+DEPRECATED=		Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=			overwrite files owned by teTex-Base which it already depends on
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 

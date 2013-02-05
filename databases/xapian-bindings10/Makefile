@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10

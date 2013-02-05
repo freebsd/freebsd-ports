@@ -1,9 +1,5 @@
-# New ports collection makefile for:		elisp-manual
-# Date created:		18 November 1997
-# Whom:			Don Croyle <croyle@gelemna.org>
-#
+# Created by: Don Croyle <croyle@gelemna.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elisp-manual
 PORTVERSION=	21.2.8
@@ -16,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Lisp reference manual
+
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2013-03-05
 
 BROKEN=		overwrites files owned by editors/emacs: info/elisp.info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}

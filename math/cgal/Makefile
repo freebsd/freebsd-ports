@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgal
-# Date created:				10 Apr 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cgal
 PORTVERSION=	3.6.1
@@ -20,6 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A computational geometry library
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not build with boost-1.48.0
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs

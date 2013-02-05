@@ -1,7 +1,4 @@
-# Ports collection Makefile for:	powershell
-# Date created:				6 May 2000
-# Whom:					Scott A. Moberly <smoberly@xavier.dyndns.org>
-#
+# Created by: Scott A. Moberly <smoberly@xavier.dyndns.org>
 # $FreeBSD$
 #    $MCom: ports/x11/powershell/Makefile,v 1.1 2006/10/04 19:44:10 ahze Exp $
 
@@ -14,6 +11,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X11
 
+DEPRECATED=	Broken for more then 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not configure
 
 USE_GNOME=	gnomelibs gnomehier
