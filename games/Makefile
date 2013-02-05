@@ -259,7 +259,6 @@
     SUBDIR += formido
     SUBDIR += fortunate
     SUBDIR += fotaq
-    SUBDIR += freebsd-carddeck-kde4
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
