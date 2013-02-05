@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gzrecover
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
 		CRITICAL
