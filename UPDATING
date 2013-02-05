@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130205:
+  AFFECTS: users of editors/libreoffice
+  AUTHOR: bapt@FreeBSD.org
+
+  LibreOffice has been updated to 3.6.5 with a bundle version of libcmis. The
+  build will fail if you sill have net/libcmis 0.1 installed. Before upgrading
+  LibreOffice you should either first remove libcmis from your system or uprade
+  it to version 0.3.
+
+20130205:
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
