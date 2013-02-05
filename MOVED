@@ -4043,3 +4043,5 @@ irc/zircon||2013-02-04|Has expired: Project has been abandoned
 math/lensnns||2013-02-04|Has expired: Project has been abandoned
 lang/perl5.8||2013-02-04|Has expired: no longer under development, use lang/perl5.16 or lang/perl5.14
 lang/perl5.10||2013-02-04|Has expired: no longer under development, use lang/perl5.16 or lang/perl5.14
+net-mgmt/argus||2013-02-05|Has expired: Using of this branch of argus is discouraged. Please migrate to net-mgmt/argus3
+net-mgmt/argus-clients||2013-02-05|Has expired: Using of this branch of argus-clients is discouraged. Please migrate to net-mgmt/argus3-clients
