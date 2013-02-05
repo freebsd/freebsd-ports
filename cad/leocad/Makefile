@@ -12,9 +12,9 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CAD modeling with LEGO-like bricks
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=		jpeg:${PORTSDIR}/graphics/jpeg \
+			png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
