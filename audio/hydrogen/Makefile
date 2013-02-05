@@ -16,6 +16,8 @@ LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile \
 		tar:${PORTSDIR}/devel/libtar \
 		lrdf:${PORTSDIR}/textproc/liblrdf
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not install
 
 MAJORVERSION=	0.9.5

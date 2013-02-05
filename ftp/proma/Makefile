@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Administrate a ProFTPd server storing users in a MySQL database
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		define an @exec depending on %F and %B before any files defined
 
 USE_BZIP2=	yes

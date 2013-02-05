@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vid
-# Date created:		Tue Dec  5 13:32:13 GMT 2000
-# Whom:			Roger Hardiman <roger@freebsd.org>
-#
+# Created by: Roger Hardiman <roger@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vid
 PORTVERSION=	1.0.1
@@ -13,6 +9,9 @@ MASTER_SITES=	SF/ovt${PORTNAME}-bsd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Grab images from USB Cameras using the OV511 and OV511+ chipset
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm
 

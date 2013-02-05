@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    vnelvis
-# Date created:         Tue Dec 3, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	vnelvis
 PORTVERSION=	1.4
@@ -15,6 +10,9 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	A vi clone that speaks Vietnamese
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
 

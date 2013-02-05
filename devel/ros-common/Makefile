@@ -1,7 +1,4 @@
-# New ports collection makefile for: common
-# Date created:	2010-11-25
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros-common
@@ -21,6 +18,8 @@ EXTRACT_ONLY=	common-${PORTVERSION}.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - common utilities
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not compile
 
 #LICENSE_COMB=	multi

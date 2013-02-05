@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Wyvern
-# Date created:        3 March 2001
-# Whom:                Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wyvern
 PORTVERSION=	2.2.11
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.MysticWALL.COM/download/
 
 MAINTAINER=	kouichi@MysticWALL.COM
 COMMENT=	Small/powerful/lightweight/secure/embeddable HTTP server
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 LIB_DEPENDS=	sxml.1:${PORTSDIR}/textproc/sxml
 
@@ -26,14 +25,13 @@ USE_BZIP2=	yes
 
 MAKE_ARGS=	rcdir="${PREFIX}/etc/rc.d"
 
-OPTIONS=	OPENSSL "OpenSSL support" off \
-		SQLITE3 "SQLite3 support" off \
-		POSTGRESQL "PostgreSQL support" off \
-		SUEXEC "SuExec support" off \
-		JAPANESE "Use Japanese error messages" off \
-		SYSCTL_PS "Get process status with sysctl" off \
-		SIMPLE_INDEXING "Use simple indexing mode" off \
-		STRICT_PARSING "Parse request/response headers strictly" off
+OPTIONS_DEFINE=	OPENSSL SQLITE3 PGSQL SUEXEC JAPANESE SYSCTL_PS SIMPLE_INDEXING \
+		STRICT_PARSING
+SUEXEC_DESC=	SuExec support
+JAPANESE_DESC=	Japanese error messages
+SYSCTL_PS_DESC=	Get process status with sysctl
+SIMPLE_INDEXING_DESC=	Use simple indexing mode
+STRICT_PARSING_DESC=	Parse request/response headers strictly
 
 .include <bsd.port.pre.mk>
 
@@ -41,11 +39,11 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 BROKEN=		does not build
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--with-openssl=yes
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 CONFIGURE_ARGS+=	--with-sqlite3=yes
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3:install
 PLIST_SUB+=	SQLITE3=""
@@ -53,7 +51,7 @@ PLIST_SUB+=	SQLITE3=""
 PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-postgresql=yes
 LIB_DEPENDS+=	pq.5:${PORTSDIR}/databases/postgresql82-client:install
 PLIST_SUB+=	POSTGRESQL=""
@@ -61,23 +59,23 @@ PLIST_SUB+=	POSTGRESQL=""
 PLIST_SUB+=	POSTGRESQL="@comment "
 .endif
 
-.if defined(WITH_SUEXEC)
+.if ${PORT_OPTIONS:MSUEXEC}
 CONFIGURE_ARGS+=	--enable-suexec
 .endif
 
-.if defined(WITH_JAPANESE)
+.if ${PORT_OPTIONS:MJAPANESE}
 CONFIGURE_ARGS+=	--enable-jp-mesg
 .endif
 
-.if defined(WITH_SYSCTL_PS)
+.if ${PORT_OPTIONS:MSYSCTL_PS}
 CONFIGURE_ARGS+=	--enable-sysctl-ps
 .endif
 
-.if defined(WITH_SIMPLE_INDEXING)
+.if ${PORT_OPTIONS:MSIMPLE_INDEXING}
 CONFIGURE_ARGS+=	--enable-simple-indexing
 .endif
 
-.if defined(WITH_STRICT_PARSING)
+.if ${PORT_OPTIONS:MSTRICT_PARSING}
 CONFIGURE_ARGS+=	--enable-strict-parsing
 .endif
 

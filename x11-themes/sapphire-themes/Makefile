@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for sapphire
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
+
 BROKEN=		depends on conflicting packages (xli and xloadimage both installs bin/xsetbg)
 
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \

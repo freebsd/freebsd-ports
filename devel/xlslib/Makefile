@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xlslib
-# Date created:				13 December 2005
-# Whom:					Sergey Prikhodko<sergey@network-asp.biz>
-#
+# Created by: Sergey Prikhodko<sergey@network-asp.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	xlslib
 PORTVERSION=	0.2.5
@@ -12,6 +8,9 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	A C++ library for generation of Excel(TM) files
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

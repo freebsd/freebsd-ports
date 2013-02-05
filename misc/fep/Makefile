@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fep
-# Date created:         20 Feb 1996
-# Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-#
+# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	fep
 PORTVERSION=	1.0
@@ -13,6 +9,9 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose front end for command line editing
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 MAN1=		fep.1
 MANCOMPRESSED=	yes

@@ -28,6 +28,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		incorrect plist
 
 USE_SVN=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GaUnit
-# Date created:				8 May 2004
-# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gaunit
 PORTVERSION=	0.1.6
@@ -17,6 +13,8 @@ COMMENT=	An unit testing framework in Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not package
 
 NO_BUILD=	yes

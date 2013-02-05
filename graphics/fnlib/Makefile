@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fnlib
-# Date created:		23 June 1997
-# Whom:			brett@peloton.physics.montana.edu
-#
+# Created by: brett@peloton.physics.montana.edu
 # $FreeBSD$
-#
 
 PORTNAME=	fnlib
 PORTVERSION=	0.5
@@ -13,6 +9,9 @@ MASTER_SITES=	SF/enlightenment/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts and font libraries necessary for Enlightenment
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 BROKEN=		does not configure
 
