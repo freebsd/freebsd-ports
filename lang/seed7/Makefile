@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20130120
+DISTVERSION=	05_20130203
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -15,6 +15,7 @@ LICENSE=	LGPL21
 
 USE_GMAKE=	yes
 USE_XORG=	x11
+MAN1=		s7.1 s7c.1
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
@@ -74,10 +75,11 @@ do-install:
 	${INSTALL} -d ${EXAMPLESDIR}
 	cd ${WRKSRC}/../prg && ${COPYTREE_SHARE} '*.dna *.sd7 *.dat *.s7i' ${EXAMPLESDIR}
 .endif
+#	insall man pages
+	${INSTALL_DATA} ${WRKSRC}/../doc/s7.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/../doc/s7c.1 ${MANPREFIX}/man/man1
 
 regression-test: build
-	@echo ""
-	@echo "Testing the ${PORTNAME} installation"
-	@(cd ${WRKSRC}/../prg && ${WRKSRC}/../bin/s7 -l ${WRKSRC}/../lib chk_all build)
+	cd ${WRKSRC} && ${GMAKE} test
 
 .include <bsd.port.post.mk>
