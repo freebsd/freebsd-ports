@@ -1,16 +1,11 @@
-# New ports collection makefile for:    xjewel
-# Date created:         22 November 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	xjewel
 PORTVERSION=	1.6
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
-		ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	XCONTRIB/../R5contrib
 EXTRACT_SUFX=	.tar.z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +15,9 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_IMAKE=	yes
 USE_XORG=	x11 xext
+USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		xjewel.6
 
