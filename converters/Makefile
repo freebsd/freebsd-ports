@@ -99,6 +99,7 @@
     SUBDIR += p5-Number-Nary
     SUBDIR += p5-Number-RecordLocator
     SUBDIR += p5-PerlIO-via-Unidecode
+    SUBDIR += p5-Sereal
     SUBDIR += p5-Sereal-Decoder
     SUBDIR += p5-Sereal-Encoder
     SUBDIR += p5-Storable-AMF
