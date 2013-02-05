@@ -2,8 +2,6 @@
 etc/exabgp/exabgp.env
 sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.py
-%%PYTHON_SITELIBDIR%%/exabgp/api.py
-%%PYTHON_SITELIBDIR%%/exabgp/api.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/application.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/connection.py
@@ -135,6 +133,7 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/rib/table.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/rib/watchdog.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/structure/api.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/cache.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/configuration.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/daemon.py
@@ -144,6 +143,7 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/structure/supervisor.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/utils.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/structure/api.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/cache.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/configuration.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/daemon.pyc
@@ -188,6 +188,7 @@ sbin/exabgp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-simple.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-parse.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-md5.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-multiple-process.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-label4.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-holdtime.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-group.txt
