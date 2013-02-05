@@ -4041,3 +4041,5 @@ net/freeradius-mysql||2013-02-04|Has expired: no longer supported.  Please use n
 multimedia/despotify||2013-02-04|Has expired: API no longer supported
 irc/zircon||2013-02-04|Has expired: Project has been abandoned
 math/lensnns||2013-02-04|Has expired: Project has been abandoned
+lang/perl5.8||2013-02-04|Has expired: no longer under development, use lang/perl5.16 or lang/perl5.14
+lang/perl5.10||2013-02-04|Has expired: no longer under development, use lang/perl5.16 or lang/perl5.14
