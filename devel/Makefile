@@ -107,6 +107,7 @@
     SUBDIR += avro
     SUBDIR += avro-c
     SUBDIR += avro-cpp
+    SUBDIR += awscli
     SUBDIR += baz
     SUBDIR += bcc
     SUBDIR += bcpp
