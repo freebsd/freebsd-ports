@@ -75,7 +75,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid32
 
-SQUID_STABLE_VER=	6
+SQUID_STABLE_VER=	7
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!2].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -237,6 +237,10 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000024
+USE_GCC=any
+.endif
 
 # Authentication methods and modules:
 
