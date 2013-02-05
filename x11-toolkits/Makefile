@@ -16,7 +16,6 @@
     SUBDIR += fl_editor
     SUBDIR += flowcanvas
     SUBDIR += fltk
-    SUBDIR += fltk2
     SUBDIR += flvw
     SUBDIR += fox14
     SUBDIR += fox16
