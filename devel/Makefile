@@ -872,6 +872,7 @@
     SUBDIR += kdesdk4
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop
+    SUBDIR += kdevelop-custom-buildsystem
     SUBDIR += kdevelop-kde4
     SUBDIR += kdevelop-pg-qt
     SUBDIR += kdevelop-php

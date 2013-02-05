@@ -1,0 +1,17 @@
+This plugin allows to handle arbitrary custom build systems with
+KDevelop.
+
+It supports setting up commands and arguments to build, configure,
+clean, 'dist-clean' and install the project, so that KDevelop's
+actions work as expected.
+
+Additionally, it allows to setup include directories (or
+import-directories) and defines for the project on a per-directory
+basis.  This allows the C++ support and other language plugins to
+find file-references without manually adding them via the
+include-assistant.
+
+This should help all those that have a special build setup to still
+be able to embrace the features that KDevelop has to offer.
+
+WWW: http://www.kdevelop.org

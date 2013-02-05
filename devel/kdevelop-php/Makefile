@@ -1,38 +1,42 @@
-# New ports collection makefile for:	kdevelop-php
-# Date created:				4 April 2010
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
-PORTNAME=	kdevelop
+PORTNAME=	kdevelop-php
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}/src
-PKGNAMESUFFIX=	-php
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP support for KDevelop
 
+LIB_DEPENDS=	kdevplatforminterfaces:${PORTSDIR}/devel/kdevplatform
 BUILD_DEPENDS=	${KDE4_PREFIX}/bin/kdev-pg-qt:${PORTSDIR}/devel/kdevelop-pg-qt
-LIB_DEPENDS=	kdevplatforminterfaces.5:${PORTSDIR}/devel/kdevplatform
 
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GMAKE=	yes
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
-USE_QT4=	moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	DOCS	"Integrate with PHP.net online documentation" on
+OPTIONS_DEFINE=	PHPDOCS NLS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+PHPDOCS_DESC=	Integrate with PHP.net documentation
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_DOCS)
+.if ${PORT_OPTIONS:MPHPDOCS}
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kdevphpdocs.so:${PORTSDIR}/devel/kdevelop-php-docs
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DBUILD_po:BOOL=Off
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>

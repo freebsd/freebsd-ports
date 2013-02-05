@@ -1,9 +1,7 @@
-A free, opensource IDE (Integrated Development Environment) for MS
-Windows, Mac OS X, Linux, Solaris and FreeBSD. It is a feature-full,
-plugin extendable IDE for C/C++ and other programming languages. It is
-based on KDevPlatform, KDE and Qt libraries and it's under development
-since 1998.
+Open source, feature-full, plugin extensible IDE for C/C++ and other
+programming languages.  It is based on KDevPlatform and the KDE and
+Qt libraries, and it's under development since 1998.
 
-This package contains the PHP language support plugin.
+This package contains the PHP support plugin.
 
-WWW: http://www.kdevelop.org/
+WWW: http://www.kdevelop.org
