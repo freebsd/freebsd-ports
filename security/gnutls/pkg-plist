@@ -37,7 +37,7 @@ include/gnutls/x509.h
 lib/libgnutls-extra.a
 lib/libgnutls-extra.la
 lib/libgnutls-extra.so
-lib/libgnutls-extra.so.47
+lib/libgnutls-extra.so.26
 lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls-openssl.so
@@ -45,7 +45,7 @@ lib/libgnutls-openssl.so.27
 lib/libgnutls.a
 lib/libgnutls.la
 lib/libgnutls.so
-lib/libgnutls.so.47
+lib/libgnutls.so.26
 libdata/pkgconfig/gnutls-extra.pc
 libdata/pkgconfig/gnutls.pc
 %%NLS%%share/locale/cs/LC_MESSAGES/libgnutls.mo
