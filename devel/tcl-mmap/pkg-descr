@@ -1,0 +1,11 @@
+This extension provides a Tcl interface to the mmap(2) POSIX system
+call.
+
+The functionality of 'mmap' is exported from this extension in the
+form of a new Tcl channel type, named "mmap". A memory mapping is
+established with the 'mmap' command. Following 'mmap' execution,
+access to the memory mapped file is done via the standard Tcl
+commands: puts/gets/seek/flush/close/fconfigure, only that this
+time these commands operate on memory, rather than on a file.
+
+WWW:	http://tcl-mmap.sourceforge.net/

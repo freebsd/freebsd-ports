@@ -4222,6 +4222,7 @@
     SUBDIR += talloc
     SUBDIR += tbb
     SUBDIR += tcl-memchan
+    SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
     SUBDIR += tclcheck
