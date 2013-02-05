@@ -1,0 +1,24 @@
+This package provides a unified command line interface to many Amazon Web
+Services.
+
+The currently supported services include:
+
+* Amazon Elastic Compute Cloud (Amazon EC2)
+
+* Elastic Load Balancing
+
+* Auto Scaling
+
+* AWS CloudFormation
+
+* AWS Elastic Beanstalk
+
+* Amazon Simple Notification Service (Amazon SNS)
+
+* Amazon Simple Queue Service (Amazon SQS)
+
+* Amazon Relational Database Service (Amazon RDS)
+
+... and more.
+
+WWW: http://aws.amazon.com/cli/
