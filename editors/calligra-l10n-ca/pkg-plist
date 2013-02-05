@@ -17,6 +17,7 @@ share/locale/ca/LC_MESSAGES/PictureShape.mo
 share/locale/ca/LC_MESSAGES/PluginShape.mo
 share/locale/ca/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/ca/LC_MESSAGES/TableShape.mo
+share/locale/ca/LC_MESSAGES/TemplateShape.mo
 share/locale/ca/LC_MESSAGES/TextShape.mo
 share/locale/ca/LC_MESSAGES/VariablesPlugin.mo
 share/locale/ca/LC_MESSAGES/VectorShape.mo

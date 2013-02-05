@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}
-CATEGORIES?=	hungarian editors kde
+CATEGORIES=	hungarian editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Hungarian messages and documentation for Calligra

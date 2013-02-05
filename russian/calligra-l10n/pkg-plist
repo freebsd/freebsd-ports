@@ -14,9 +14,6 @@ share/doc/HTML/ru/sheets/format.docbook
 share/doc/HTML/ru/sheets/importexport.docbook
 share/doc/HTML/ru/sheets/index.cache.bz2
 share/doc/HTML/ru/sheets/index.docbook
-share/doc/HTML/ru/thesaurus/common
-share/doc/HTML/ru/thesaurus/index.cache.bz2
-share/doc/HTML/ru/thesaurus/index.docbook
 share/locale/ru/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/ru/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/ru/LC_MESSAGES/CalendarTool.mo
@@ -71,7 +68,6 @@ share/locale/ru/LC_MESSAGES/stage.mo
 share/locale/ru/LC_MESSAGES/tablessolver.mo
 share/locale/ru/LC_MESSAGES/thesaurus_tool.mo
 share/locale/ru/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/ru/thesaurus
 @dirrm share/doc/HTML/ru/sheets
 @dirrm share/doc/HTML/ru/calligra
 @dirrmtry share/apps/calligra/autocorrect
