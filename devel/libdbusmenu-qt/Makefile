@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdbusmenu-qt
-# Date created:				2010-05-10
-# Whom:					Dima Panov <fluffy@FreeBSD.org>
-#
+# Created by: Dima Panov <fluffy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdbusmenu-qt
 PORTVERSION=	0.9.2
@@ -15,23 +11,21 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 implementation of the DBusMenu protocol
 
 LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_QT4=	dbus gui xml \
+		moc_build qmake_build rcc_build uic_build
 FETCH_ARGS=	-Fpr
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_QT4=	dbus gui xml \
-		moc_build qmake_build rcc_build uic_build
+CMAKE_OUTSOURCE=yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_OUTSOURCE=	yes
-MAKE_JOBS_SAFE=	yes
-
-OPTIONS=	DOCS "Install API documentation (requires Doxygen)" off
+OPTIONS_DEFINE=	DOXYGEN
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS=	*
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH="${DOCSDIR_REL}"
