@@ -92,9 +92,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/activity_green.png
 %%DATADIR%%/img/activity_red.png
 %%DATADIR%%/img/add_to_favorites.png
-%%DATADIR%%/img/arcadebackground.png
 %%DATADIR%%/img/arcadecabinet.png
-%%DATADIR%%/img/arcadeforeground.png
 %%DATADIR%%/img/arcademode.png
 %%DATADIR%%/img/back.png
 %%DATADIR%%/img/broom.png
@@ -103,12 +101,11 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/camera.png
 %%DATADIR%%/img/category.png
 %%DATADIR%%/img/cd.png
+%%DATADIR%%/img/characters.png
 %%DATADIR%%/img/circles/activity_green.png
 %%DATADIR%%/img/circles/activity_red.png
 %%DATADIR%%/img/circles/add_to_favorites.png
-%%DATADIR%%/img/circles/arcadebackground.png
 %%DATADIR%%/img/circles/arcadecabinet.png
-%%DATADIR%%/img/circles/arcadeforeground.png
 %%DATADIR%%/img/circles/arcademode.png
 %%DATADIR%%/img/circles/back.png
 %%DATADIR%%/img/circles/broom.png
@@ -117,6 +114,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/camera.png
 %%DATADIR%%/img/circles/category.png
 %%DATADIR%%/img/circles/cd.png
+%%DATADIR%%/img/circles/characters.png
 %%DATADIR%%/img/circles/circuit.png
 %%DATADIR%%/img/circles/clock.png
 %%DATADIR%%/img/circles/clone.png
@@ -171,6 +169,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/find.png
 %%DATADIR%%/img/circles/flat.png
 %%DATADIR%%/img/circles/flip.png
+%%DATADIR%%/img/circles/folders-first.png
+%%DATADIR%%/img/circles/folders-off.png
+%%DATADIR%%/img/circles/folders-on.png
 %%DATADIR%%/img/circles/fonts.png
 %%DATADIR%%/img/circles/forward.png
 %%DATADIR%%/img/circles/ghost.png
@@ -179,6 +180,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/gradient2.png
 %%DATADIR%%/img/circles/halt.png
 %%DATADIR%%/img/circles/help.png
+%%DATADIR%%/img/circles/highlight.png
 %%DATADIR%%/img/circles/hint.png
 %%DATADIR%%/img/circles/hint_small.png
 %%DATADIR%%/img/circles/home.png
@@ -241,6 +243,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/process.png
 %%DATADIR%%/img/circles/process_multiple.png
 %%DATADIR%%/img/circles/project_mess.png
+%%DATADIR%%/img/circles/qmc2-arcade-setup.png
+%%DATADIR%%/img/circles/qmc2-arcade.png
 %%DATADIR%%/img/circles/qmc2_logo_big.png
 %%DATADIR%%/img/circles/qmc2_logo_small.png
 %%DATADIR%%/img/circles/qmc2_mame_splash.png
@@ -331,9 +335,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/activity_green.png
 %%DATADIR%%/img/classic/activity_red.png
 %%DATADIR%%/img/classic/add_to_favorites.png
-%%DATADIR%%/img/classic/arcadebackground.png
 %%DATADIR%%/img/classic/arcadecabinet.png
-%%DATADIR%%/img/classic/arcadeforeground.png
 %%DATADIR%%/img/classic/arcademode.png
 %%DATADIR%%/img/classic/back.png
 %%DATADIR%%/img/classic/broom.png
@@ -342,6 +344,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/camera.png
 %%DATADIR%%/img/classic/category.png
 %%DATADIR%%/img/classic/cd.png
+%%DATADIR%%/img/classic/characters.png
 %%DATADIR%%/img/classic/circuit.png
 %%DATADIR%%/img/classic/clock.png
 %%DATADIR%%/img/classic/clone.png
@@ -396,6 +399,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/find.png
 %%DATADIR%%/img/classic/flat.png
 %%DATADIR%%/img/classic/flip.png
+%%DATADIR%%/img/classic/folders-first.png
+%%DATADIR%%/img/classic/folders-off.png
+%%DATADIR%%/img/classic/folders-on.png
 %%DATADIR%%/img/classic/fonts.png
 %%DATADIR%%/img/classic/forward.png
 %%DATADIR%%/img/classic/ghost.png
@@ -404,6 +410,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/gradient2.png
 %%DATADIR%%/img/classic/halt.png
 %%DATADIR%%/img/classic/help.png
+%%DATADIR%%/img/classic/highlight.png
 %%DATADIR%%/img/classic/hint.png
 %%DATADIR%%/img/classic/hint_small.png
 %%DATADIR%%/img/classic/home.png
@@ -466,6 +473,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/process.png
 %%DATADIR%%/img/classic/process_multiple.png
 %%DATADIR%%/img/classic/project_mess.png
+%%DATADIR%%/img/classic/qmc2-arcade-setup.png
+%%DATADIR%%/img/classic/qmc2-arcade.png
 %%DATADIR%%/img/classic/qmc2_logo_big.png
 %%DATADIR%%/img/classic/qmc2_logo_small.png
 %%DATADIR%%/img/classic/qmc2_mame_splash.png
@@ -561,9 +570,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/activity_green.png
 %%DATADIR%%/img/crazy/activity_red.png
 %%DATADIR%%/img/crazy/add_to_favorites.png
-%%DATADIR%%/img/crazy/arcadebackground.png
 %%DATADIR%%/img/crazy/arcadecabinet.png
-%%DATADIR%%/img/crazy/arcadeforeground.png
 %%DATADIR%%/img/crazy/arcademode.png
 %%DATADIR%%/img/crazy/back.png
 %%DATADIR%%/img/crazy/broom.png
@@ -572,6 +579,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/camera.png
 %%DATADIR%%/img/crazy/category.png
 %%DATADIR%%/img/crazy/cd.png
+%%DATADIR%%/img/crazy/characters.png
 %%DATADIR%%/img/crazy/circuit.png
 %%DATADIR%%/img/crazy/clock.png
 %%DATADIR%%/img/crazy/clone.png
@@ -626,6 +634,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/find.png
 %%DATADIR%%/img/crazy/flat.png
 %%DATADIR%%/img/crazy/flip.png
+%%DATADIR%%/img/crazy/folders-first.png
+%%DATADIR%%/img/crazy/folders-off.png
+%%DATADIR%%/img/crazy/folders-on.png
 %%DATADIR%%/img/crazy/fonts.png
 %%DATADIR%%/img/crazy/forward.png
 %%DATADIR%%/img/crazy/ghost.png
@@ -634,6 +645,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/gradient2.png
 %%DATADIR%%/img/crazy/halt.png
 %%DATADIR%%/img/crazy/help.png
+%%DATADIR%%/img/crazy/highlight.png
 %%DATADIR%%/img/crazy/hint.png
 %%DATADIR%%/img/crazy/hint_small.png
 %%DATADIR%%/img/crazy/home.png
@@ -696,6 +708,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/process.png
 %%DATADIR%%/img/crazy/process_multiple.png
 %%DATADIR%%/img/crazy/project_mess.png
+%%DATADIR%%/img/crazy/qmc2-arcade-setup.png
+%%DATADIR%%/img/crazy/qmc2-arcade.png
 %%DATADIR%%/img/crazy/qmc2_logo_big.png
 %%DATADIR%%/img/crazy/qmc2_logo_small.png
 %%DATADIR%%/img/crazy/qmc2_mame_splash.png
@@ -785,9 +799,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/activity_green.png
 %%DATADIR%%/img/crazy-black/activity_red.png
 %%DATADIR%%/img/crazy-black/add_to_favorites.png
-%%DATADIR%%/img/crazy-black/arcadebackground.png
 %%DATADIR%%/img/crazy-black/arcadecabinet.png
-%%DATADIR%%/img/crazy-black/arcadeforeground.png
 %%DATADIR%%/img/crazy-black/arcademode.png
 %%DATADIR%%/img/crazy-black/back.png
 %%DATADIR%%/img/crazy-black/broom.png
@@ -796,6 +808,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/camera.png
 %%DATADIR%%/img/crazy-black/category.png
 %%DATADIR%%/img/crazy-black/cd.png
+%%DATADIR%%/img/crazy-black/characters.png
 %%DATADIR%%/img/crazy-black/circuit.png
 %%DATADIR%%/img/crazy-black/clock.png
 %%DATADIR%%/img/crazy-black/clone.png
@@ -850,6 +863,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/find.png
 %%DATADIR%%/img/crazy-black/flat.png
 %%DATADIR%%/img/crazy-black/flip.png
+%%DATADIR%%/img/crazy-black/folders-first.png
+%%DATADIR%%/img/crazy-black/folders-off.png
+%%DATADIR%%/img/crazy-black/folders-on.png
 %%DATADIR%%/img/crazy-black/fonts.png
 %%DATADIR%%/img/crazy-black/forward.png
 %%DATADIR%%/img/crazy-black/ghost.png
@@ -858,6 +874,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/gradient2.png
 %%DATADIR%%/img/crazy-black/halt.png
 %%DATADIR%%/img/crazy-black/help.png
+%%DATADIR%%/img/crazy-black/highlight.png
 %%DATADIR%%/img/crazy-black/hint.png
 %%DATADIR%%/img/crazy-black/hint_small.png
 %%DATADIR%%/img/crazy-black/home.png
@@ -920,6 +937,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/process.png
 %%DATADIR%%/img/crazy-black/process_multiple.png
 %%DATADIR%%/img/crazy-black/project_mess.png
+%%DATADIR%%/img/crazy-black/qmc2-arcade-setup.png
+%%DATADIR%%/img/crazy-black/qmc2-arcade.png
 %%DATADIR%%/img/crazy-black/qmc2_logo_big.png
 %%DATADIR%%/img/crazy-black/qmc2_logo_small.png
 %%DATADIR%%/img/crazy-black/qmc2_mame_splash.png
@@ -1009,9 +1028,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/activity_green.png
 %%DATADIR%%/img/cubes/activity_red.png
 %%DATADIR%%/img/cubes/add_to_favorites.png
-%%DATADIR%%/img/cubes/arcadebackground.png
 %%DATADIR%%/img/cubes/arcadecabinet.png
-%%DATADIR%%/img/cubes/arcadeforeground.png
 %%DATADIR%%/img/cubes/arcademode.png
 %%DATADIR%%/img/cubes/back.png
 %%DATADIR%%/img/cubes/broom.png
@@ -1020,6 +1037,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/camera.png
 %%DATADIR%%/img/cubes/category.png
 %%DATADIR%%/img/cubes/cd.png
+%%DATADIR%%/img/cubes/characters.png
 %%DATADIR%%/img/cubes/circuit.png
 %%DATADIR%%/img/cubes/clock.png
 %%DATADIR%%/img/cubes/clone.png
@@ -1074,6 +1092,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/find.png
 %%DATADIR%%/img/cubes/flat.png
 %%DATADIR%%/img/cubes/flip.png
+%%DATADIR%%/img/cubes/folders-first.png
+%%DATADIR%%/img/cubes/folders-off.png
+%%DATADIR%%/img/cubes/folders-on.png
 %%DATADIR%%/img/cubes/fonts.png
 %%DATADIR%%/img/cubes/forward.png
 %%DATADIR%%/img/cubes/ghost.png
@@ -1082,6 +1103,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/gradient2.png
 %%DATADIR%%/img/cubes/halt.png
 %%DATADIR%%/img/cubes/help.png
+%%DATADIR%%/img/cubes/highlight.png
 %%DATADIR%%/img/cubes/hint.png
 %%DATADIR%%/img/cubes/hint_small.png
 %%DATADIR%%/img/cubes/home.png
@@ -1144,6 +1166,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/process.png
 %%DATADIR%%/img/cubes/process_multiple.png
 %%DATADIR%%/img/cubes/project_mess.png
+%%DATADIR%%/img/cubes/qmc2-arcade-setup.png
+%%DATADIR%%/img/cubes/qmc2-arcade.png
 %%DATADIR%%/img/cubes/qmc2_logo_big.png
 %%DATADIR%%/img/cubes/qmc2_logo_small.png
 %%DATADIR%%/img/cubes/qmc2_mame_splash.png
@@ -1277,6 +1301,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/find.png
 %%DATADIR%%/img/flat.png
 %%DATADIR%%/img/flip.png
+%%DATADIR%%/img/folders-first.png
+%%DATADIR%%/img/folders-off.png
+%%DATADIR%%/img/folders-on.png
 %%DATADIR%%/img/fonts.png
 %%DATADIR%%/img/forward.png
 %%DATADIR%%/img/ghost.png
@@ -1285,6 +1312,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/gradient2.png
 %%DATADIR%%/img/halt.png
 %%DATADIR%%/img/help.png
+%%DATADIR%%/img/highlight.png
 %%DATADIR%%/img/hint.png
 %%DATADIR%%/img/hint_small.png
 %%DATADIR%%/img/home.png
@@ -1347,6 +1375,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/process.png
 %%DATADIR%%/img/process_multiple.png
 %%DATADIR%%/img/project_mess.png
+%%DATADIR%%/img/qmc2-arcade-setup.png
+%%DATADIR%%/img/qmc2-arcade.png
 %%DATADIR%%/img/qmc2_logo_big.png
 %%DATADIR%%/img/qmc2_logo_small.png
 %%DATADIR%%/img/qmc2_mame_splash.png

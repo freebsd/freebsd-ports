@@ -1,17 +1,18 @@
-M.A.M.E./M.E.S.S. Catalog / Launcher II - also referred to as QMC2 - is the
-successor of one of the first UNIX MAME GUI front ends available on this planet
-called QMamecat (derived from MAMECAT, which was text-only).
+M.A.M.E./M.E.S.S. Catalog / Launcher II - also referred to as QMC2 - is
+the successor of one of the first UNIX MAME GUI front ends available on
+this planet called QMamecat (derived from MAMECAT, which was text-only).
 
-QMamecat was based upon Qt 2; its development was frozen in 2003. QMC2 has been
-rebuilt from scratch as a Qt 4 project. Parts of the design and code were
-inspired by its predecessor, but it's not just a remake. We tried to make the
-new design as flexible as possible to minimize dependencies from front end and
-CLI related MAME changes, which was a major deficiency of QMamecat. QMC2 now
-uses a template based emulator configuration scheme, which can easily be
-enhanced with additional command line options (defined in an XML template file).
+QMamecat was based upon Qt 2; its development was frozen in 2003. QMC2
+has been rebuilt from scratch as a Qt 4 project. Parts of the design and
+code were inspired by its predecessor, but it's not just a remake. We
+tried to make the new design as flexible as possible to minimize
+dependencies from front end and CLI related MAME changes, which was a
+major deficiency of QMamecat. QMC2 now uses a template based emulator
+configuration scheme, which can easily be enhanced with additional
+command line options (defined in an XML template file).
 
-As a result of this flexible design, QMC2 can be used for multiple emulators.
-Currently we support SDLMAME & SDLMESS on UNIX and Mac,
-and the original variants of MAME & MESS on Windows.
+As a result of this flexible design, QMC2 can be used for multiple
+emulators. Currently we support SDLMAME & SDLMESS on UNIX and Mac, and
+the original variants of MAME & MESS on Windows.
 
 WWW: http://qmc2.arcadehits.net/
