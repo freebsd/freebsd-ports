@@ -13,4 +13,4 @@ The JDBC 4.0 API defines approximately 450 methods for the above mentioned
 classes. MySQL Connector/C++ implements around 80% of these and makes them
 available in the current release.
 
-WWW: http://forge.mysql.com/wiki/Connector_C++
+WWW: http://dev.mysql.com/doc/relnotes/connector-cpp/en/index.html
