@@ -3,6 +3,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -12,7 +13,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Network applications
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca \
-		otr.4:${PORTSDIR}/security/libotr3 \
 		ktorrent:${PORTSDIR}/net-p2p/libktorrent \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		mms.0:${PORTSDIR}/net/libmms \
