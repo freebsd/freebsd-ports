@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -768,7 +768,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSIO
 .if ${PORT_OPTIONS:MSPDY}
 USE_OPENSSL_PORT=	yes
 USE_HTTP_SSL=	yes
-NGINX_SPDY_VERSION=	60
+NGINX_SPDY_VERSION=	61
 PATCH_SITES=	http://nginx.org/patches/spdy/:spdy
 PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}_${PORTVERSION}.txt:spdy
 PATCH_DIST_STRIP=	-p1
