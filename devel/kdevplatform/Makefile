@@ -3,27 +3,36 @@
 
 PORTNAME=	kdevplatform
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
-PORTREVISION=	3
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE development platform
+COMMENT=	Set of libraries for KDE IDE-like programs
 
-LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
+LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		qjson.0:${PORTSDIR}/devel/qjson
+		qjson:${PORTSDIR}/devel/qjson
 
-USE_BZIP2=	yes
 USE_KDE4=	kate_run kdehier kdelibs kdeprefix automoc4
-KDE4_BUILDENV=	yes
-USE_QT4=	corelib dbus gui network qtestlib \
-		qmake_build moc_build uic_build rcc_build
+USE_QT4=	qmake_build moc_build uic_build rcc_build
+USE_BZIP2=	yes
+USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 
-PLIST_SUB+=	SHLIB_VER=5.0.0 \
-		SHLIB_SHVER=5
+PLIST_SUB+=	SHLIB_VER=6.0.0 \
+		SHLIB_SHVER=6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DBUILD_po:BOOL=Off
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
