@@ -1,4 +1,4 @@
 SHA256 (bind-9.8.4-P1.tar.gz) = 60c979575bf6288570cb4e3e9ab9d99bb93a55d2a4946ce277f6e6e642dda21f
 SIZE (bind-9.8.4-P1.tar.gz) = 7129321
-SHA256 (rpz+rl-9.8.4-P1.patch) = d76eebb9d428bed488f28ad492ef19c9056e151b619ab55ea323cc03860d37b6
-SIZE (rpz+rl-9.8.4-P1.patch) = 172254
+SHA256 (rpz+rl-9.8.4-P1.patch) = 53ff6d43ac471af554ce3cd1d6759dd6b2fa452ee2436be1e0fc1b80ff0ad169
+SIZE (rpz+rl-9.8.4-P1.patch) = 175946
