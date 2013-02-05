@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	comonad-transformers
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

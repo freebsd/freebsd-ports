@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130205:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  Note that the recent devel/libffi update caused some breakage in the Haskell
+  ports with the DYNAMIC option enabled.  The problem has been identified and
+  fixed since then.  All Haskell ports have been updated to their latest stable
+  versions or bumped as DYNAMIC is enabled by default.
+
+  Hence it is recommended to rebuild or reinstall all ports depending on GHC
+  by one of the following commands:
+
+  # portmaster -w -r ghc
+  or
+  # portupgrade -fr lang/ghc
+  or
+  # pkg install -fR lang/ghc
+
+20130205:
   AFFECTS: users of editors/libreoffice
   AUTHOR: bapt@FreeBSD.org
 

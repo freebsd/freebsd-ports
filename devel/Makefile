@@ -649,6 +649,7 @@
     SUBDIR += hs-MissingH
     SUBDIR += hs-MonadCatchIO-mtl
     SUBDIR += hs-MonadCatchIO-transformers
+    SUBDIR += hs-MonadRandom
     SUBDIR += hs-ObjectName
     SUBDIR += hs-PSQueue
     SUBDIR += hs-QuickCheck
@@ -671,7 +672,9 @@
     SUBDIR += hs-base-unicode-symbols
     SUBDIR += hs-base16-bytestring
     SUBDIR += hs-base64-bytestring
+    SUBDIR += hs-base64-conduit
     SUBDIR += hs-basic-prelude
+    SUBDIR += hs-bifunctors
     SUBDIR += hs-bits-atomic
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-builder-conduit
@@ -701,7 +704,9 @@
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
     SUBDIR += hs-edit-distance
+    SUBDIR += hs-either
     SUBDIR += hs-enumerator
+    SUBDIR += hs-errors
     SUBDIR += hs-failure
     SUBDIR += hs-fast-logger
     SUBDIR += hs-fgl
@@ -710,6 +715,7 @@
     SUBDIR += hs-filestore
     SUBDIR += hs-filesystem-conduit
     SUBDIR += hs-fsnotify
+    SUBDIR += hs-generic-deriving
     SUBDIR += hs-gconf
     SUBDIR += hs-ghc-events
     SUBDIR += hs-ghc-mtl
@@ -745,6 +751,7 @@
     SUBDIR += hs-language-javascript
     SUBDIR += hs-largeword
     SUBDIR += hs-lazysmallcheck
+    SUBDIR += hs-lens
     SUBDIR += hs-lifted-base
     SUBDIR += hs-logict
     SUBDIR += hs-mmap
@@ -760,11 +767,14 @@
     SUBDIR += hs-pcre-light
     SUBDIR += hs-pool-conduit
     SUBDIR += hs-primitive
+    SUBDIR += hs-profunctor-extras
+    SUBDIR += hs-profunctors
     SUBDIR += hs-project-template
     SUBDIR += hs-random
     SUBDIR += hs-ranges
     SUBDIR += hs-reactive
     SUBDIR += hs-readline
+    SUBDIR += hs-reflection
     SUBDIR += hs-resource-pool
     SUBDIR += hs-resourcet
     SUBDIR += hs-safe
@@ -792,6 +802,8 @@
     SUBDIR += hs-threads
     SUBDIR += hs-threadscope
     SUBDIR += hs-time-compat
+    SUBDIR += hs-timezone-olson
+    SUBDIR += hs-timezone-series
     SUBDIR += hs-transformers
     SUBDIR += hs-transformers-base
     SUBDIR += hs-unamb

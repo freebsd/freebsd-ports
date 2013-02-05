@@ -3,6 +3,7 @@
 
 PORTNAME=	statistics
 PORTVERSION=	0.10.2.0
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

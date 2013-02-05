@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	xmonad
-PORTVERSION=	0.10
-PORTREVISION=	4
+PORTVERSION=	0.11
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Xmonad is a minimalist and tiling window manager for X
+COMMENT=	Tiling window manager
 
 LICENSE=	BSD
 
-USE_CABAL=	mtl utf8-string>=0.3 X11>=1.5.0.0
+USE_CABAL=	mtl utf8-string>=0.3 X11>=1.5
 USE_XORG=	x11
 
 MAN1=		xmonad.1

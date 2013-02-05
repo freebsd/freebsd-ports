@@ -1,0 +1,12 @@
+--- ./distributive.cabal.orig	2013-01-06 18:34:35.000000000 +0100
++++ ./distributive.cabal	2013-01-14 20:36:11.000000000 +0100
+@@ -33,8 +33,7 @@
+ library
+   build-depends:
+     base                >= 4   && < 5,
+-    transformers        >= 0.2 && < 0.4,
+-    transformers-compat >= 0.1 && < 0.2
++    transformers        >= 0.3 && < 0.4
+ 
+   hs-source-dirs:  src
+   exposed-modules: Data.Distributive

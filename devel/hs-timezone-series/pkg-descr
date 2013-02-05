@@ -1,0 +1,5 @@
+This package endows Data.Time, from the time package, with several data
+types and functions for enhanced processing of timezones. For one way to
+create timezone series, see the timezone-olson package.
+
+WWW: http://projects.haskell.org/time-ng/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	edit-distance
-PORTVERSION=	0.2.1.1
+PORTVERSION=	0.2.1.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

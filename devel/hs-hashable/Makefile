@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	hashable
-PORTVERSION=	1.1.2.5
+PORTVERSION=	1.2.0.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A class for types that can be converted to a hash value
+COMMENT=	Class for types that can be converted to a hash value
 
 LICENSE=	BSD
 

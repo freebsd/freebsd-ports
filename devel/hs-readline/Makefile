@@ -3,7 +3,7 @@
 
 PORTNAME=	readline
 PORTVERSION=	1.0.1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

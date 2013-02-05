@@ -3,7 +3,7 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
@@ -24,7 +24,8 @@ GHC_DESC=	Build with GHC
 .if ${PORT_OPTIONS:MGHC}
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-random>=0:${PORTSDIR}/devel/hs-random
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
+		ffi.6:${PORTSDIR}/devel/libffi
 
 CONFIGURE_ARGS+=	--with-hc=ghc
 .endif

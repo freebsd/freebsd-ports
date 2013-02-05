@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tls
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,8 +11,8 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	cereal>=0.3 certificate>=1.3.0 crypto-api>=0.5 \
-		cryptocipher>=0.3.0 cryptohash>=0.6 mtl network
+USE_CABAL=	cereal>=0.3 certificate>=1.3.0 crypto-pubkey \
+		crypto-random-api>=0.2 cryptohash>=0.6 mtl network
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

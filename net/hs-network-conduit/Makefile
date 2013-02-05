@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	network-conduit
-PORTVERSION=	0.6.1.1
+PORTVERSION=	0.6.2.2
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

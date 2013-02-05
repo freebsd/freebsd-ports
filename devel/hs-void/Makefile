@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	void
-PORTVERSION=	0.5.8
+PORTVERSION=	0.5.11
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Haskell 98 logically uninhabited data type
+COMMENT=	Haskell 98 logically uninhabited data type
 
 LICENSE=	BSD
 
