@@ -1,12 +1,8 @@
-# New ports collection makefile for:   dillo
-# Date created:        23 February 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
 #
 # Tunables:
 # WITH_DILLO_SSL: enable experimental SSL support
-# WITH_DILLO_DLGUI: enable experimental FLTK2 based gui for file downloads
 #
 
 PORTNAME=	dillo
@@ -29,7 +25,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
-		--libdir=${PREFIX}/libexec
+		--libdir=${PREFIX}/libexec \
+		--disable-dlgui
 .if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
@@ -42,15 +39,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/enable-ssl.patch
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
-.if defined(WITH_DILLO_DLGUI)
-CONFIGURE_ARGS+=	--enable-dlgui
-BUILD_DEPENDS+=	fltk>=2.0.r4825:${PORTSDIR}/x11-toolkits/fltk2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-dlgui
 .endif
 
 CONFLICTS=	dillo-i18n-*[0-9]* \
@@ -67,11 +55,6 @@ pre-configure:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   Set WITH_DILLO_SSL=yes in your make environment or on the"
 	@${ECHO_CMD} "   commandline to enable experimental SSL support."
-.endif
-.if !defined(WITH_DILLO_DLGUI)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   Set WITH_DILLO_DLGUI=yes in your make environment or on the"
-	@${ECHO_CMD} "   commandline to enable a FLTK2 based gui for download operations."
 .endif
 .if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
 	@${ECHO_CMD} ""
