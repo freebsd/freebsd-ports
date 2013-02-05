@@ -192,11 +192,15 @@
     SUBDIR += hs-SHA
     SUBDIR += hs-certificate
     SUBDIR += hs-cipher-aes
+    SUBDIR += hs-cipher-rc4
     SUBDIR += hs-clientsession
     SUBDIR += hs-cprng-aes
     SUBDIR += hs-crypto-api
     SUBDIR += hs-crypto-conduit
+    SUBDIR += hs-crypto-numbers
+    SUBDIR += hs-crypto-pubkey
     SUBDIR += hs-crypto-pubkey-types
+    SUBDIR += hs-crypto-random-api
     SUBDIR += hs-cryptocipher
     SUBDIR += hs-cryptohash
     SUBDIR += hs-digest

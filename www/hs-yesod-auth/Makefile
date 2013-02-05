@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yesod-auth
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

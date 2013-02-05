@@ -3,6 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	7.4.2
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -26,6 +27,7 @@ CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.*
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
+USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5_BUILD=	yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
@@ -36,6 +38,7 @@ USE_NCURSES=		yes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 # The configure process accepts,filters and canonicalises
@@ -65,6 +68,10 @@ OPTIONS_DEFINE+=	BOOTH
 .endif
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDYNAMIC}
+LIB_DEPENDS+=	ffi.6:${PORTSDIR}/devel/libffi
+.endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 
@@ -108,10 +115,17 @@ HACKAGE_SITE?=		http://hackage.haskell.org/
 HACKAGE_ARCH?=		packages/archive/
 
 CONFIGURE_ARGS=		--with-gcc=${CC} \
+			--with-ld=${LD} \
 			--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
+
+.if ${PORT_OPTIONS:MDYNAMIC}
+CONFIGURE_ARGS+=	--with-system-libffi \
+			--with-ffi-includes=${LOCALBASE}/include \
+			--with-ffi-libraries=${LOCALBASE}/lib
+.endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	word8
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

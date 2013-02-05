@@ -1,4 +1,4 @@
 Provides Word128, Word192 and Word256 and a way of producing other large
 words if required.
 
-WWW: http://trac.haskell.org/largeword/wiki
+WWW: http://github.com/idontgetoutmuch/largeword

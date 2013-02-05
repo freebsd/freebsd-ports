@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	classy-prelude
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	basic-prelude>=0.3 hashable system-filepath>=0.4 text \
+USE_CABAL=	basic-prelude>=0.3.2 hashable system-filepath>=0.4 text \
 		transformers unordered-containers vector
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

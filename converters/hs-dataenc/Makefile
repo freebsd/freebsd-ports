@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dataenc
-PORTVERSION=	0.14.0.4
+PORTVERSION=	0.14.0.5
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org

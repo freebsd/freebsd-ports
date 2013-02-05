@@ -3,7 +3,7 @@
 
 PORTNAME=	hdoc
 PORTVERSION=	0.8.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://staff.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
@@ -14,7 +14,8 @@ COMMENT=	HTML documentation tool for Haskell
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp \
+		ffi.6:${PORTSDIR}/devel/libffi
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 

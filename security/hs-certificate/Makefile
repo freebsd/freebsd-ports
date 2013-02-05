@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	certificate
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

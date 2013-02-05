@@ -3,7 +3,7 @@
 
 PORTNAME=	feed
 PORTVERSION=	0.3.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

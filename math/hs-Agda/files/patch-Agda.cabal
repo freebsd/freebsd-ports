@@ -1,5 +1,5 @@
 --- ./Agda.cabal.orig	2012-03-12 11:09:34.000000000 +0100
-+++ ./Agda.cabal	2012-10-03 22:53:16.000000000 +0200
++++ ./Agda.cabal	2013-02-05 04:15:30.000000000 +0100
 @@ -71,13 +71,13 @@
    if flag(use-locale)
      build-depends:  base >= 4.2 && < 4.6
@@ -18,6 +18,15 @@
                      containers >= 0.1 && < 0.5,
                      pretty >= 1.0 && < 1.2,
                      directory >= 1.0 && < 1.2,
+@@ -90,7 +90,7 @@
+                     process >= 1.0.1.0 && < 1.2,
+                     haskeline >= 0.6.3.2 && < 0.7,
+                     xhtml == 3000.2.*,
+-                    hashable == 1.1.*,
++                    hashable == 1.2.*,
+                     hashtables == 1.0.*,
+                     syb >= 0.1 && < 0.4
+   build-tools:      happy >= 1.15 && < 2,
 @@ -334,7 +334,7 @@
    if flag(use-locale)
      build-depends:  base >= 4.2 && < 4.6
