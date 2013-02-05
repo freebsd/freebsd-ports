@@ -338,7 +338,7 @@ you update your ports collection, before attempting any port upgrades.
   # pkg set -o databases/p5-DBD-mysql55:databases/p5-DBD-mysql
 
 20121220:
-  AFFECTS: users of lang/ghc
+  AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org
 
   Note that the Glorious Glasgow Haskell Compiler has been updated to
