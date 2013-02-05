@@ -1,0 +1,7 @@
+This library implements a deserializer for an efficient,
+compact-output, and feature-rich binary protocol called Sereal.  Its
+sister module Sereal::Encoder implements an encoder for this format.
+The two are released separately to allow for independent and safer
+upgrading.
+
+WWW: http://search.cpan.org/dist/Sereal-Decoder/
