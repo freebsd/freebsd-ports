@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Smart
-PORTVERSION=	1.73
+PORTVERSION=	1.75
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Smart, easy and powerful way to access/create XML files/data
 
-BUILD_DEPENDS=	p5-Object-MultiType>=0:${PORTSDIR}/devel/p5-Object-MultiType \
+BUILD_DEPENDS=	p5-Object-MultiType>=0.03:${PORTSDIR}/devel/p5-Object-MultiType \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Devel-Cycle>=0:${PORTSDIR}/devel/p5-Devel-Cycle \
