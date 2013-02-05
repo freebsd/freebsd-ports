@@ -7,7 +7,7 @@
 
 PORTNAME=	openvas-libnasl
 PORTVERSION=	2.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/561/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NASL libraries for OpenVAS
 
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		gnutls.47:${PORTSDIR}/security/gnutls \
+		gnutls.26:${PORTSDIR}/security/gnutls \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gpgme.19:${PORTSDIR}/security/gpgme \
 		openvas.2:${PORTSDIR}/security/openvas-libraries \

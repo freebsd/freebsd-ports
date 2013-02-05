@@ -3,6 +3,7 @@
 
 PORTNAME=	xombrero
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollz
 PORTVERSION=	2.2.2
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.netraam.net/scrollz/download/ \
 		http://www.scrollz.com/download/

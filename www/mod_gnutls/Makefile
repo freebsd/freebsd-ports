@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_gnutls
 PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	http://modgnutls.sourceforge.net/downloads/ \
 		http://www.outoforder.cc/downloads/mod_gnutls/
@@ -15,7 +15,7 @@ COMMENT=	mod_gnutls uses the GnuTLS library to provide SSL, and TLS encryption f
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool

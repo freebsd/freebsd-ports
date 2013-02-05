@@ -7,7 +7,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-0.8
 
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif

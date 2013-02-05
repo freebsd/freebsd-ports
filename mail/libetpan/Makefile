@@ -8,7 +8,7 @@
 
 PORTNAME=	libetpan
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -40,7 +40,7 @@ OPTIONS_DEFAULT=	IPV6 OPENSSL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--without-openssl --with-gnutls
 .endif
 

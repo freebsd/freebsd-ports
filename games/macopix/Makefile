@@ -7,7 +7,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	1.7.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
@@ -44,7 +44,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 USE_OPENSSL=	yes
