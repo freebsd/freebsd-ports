@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.14
+PORTVERSION=	3.2.15
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -46,7 +46,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=	ROOT_SERVER LARGEFILE IPV6 BIND8_STATS ZONE_STATS CHECKING \
-		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS
+		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 NSEC3PREHASH MINRESPSIZE
 
 ROOT_SERVER_DESC=	Configure as a root server
@@ -59,6 +59,7 @@ NSEC3PREHASH_DESC=	Full NSEC3 pre-hashing
 MINRESPSIZE_DESC=	Minimial response sizing
 MMAP_DESC=		Use mmap instead of malloc (experimental)
 MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
+RRL_DESC=		Response Rate Limiting
 
 .include <bsd.port.options.mk>
 
@@ -107,6 +108,10 @@ CONFIGURE_ARGS+=	--enable-mmap
 
 .if ${PORT_OPTIONS:MMAXIPS}
 CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
+.endif
+
+.if ${PORT_OPTIONS:MRRL}
+CONFIGURE_ARGS+=	--enable-ratelimit
 .endif
 
 pre-patch:
