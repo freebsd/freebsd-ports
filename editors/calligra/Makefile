@@ -2,7 +2,6 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -14,22 +13,22 @@ COMMENT=	KDE graphic art and office suite
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		qca.2:${PORTSDIR}/devel/qca \
-		exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		lcms2.2:${PORTSDIR}/graphics/lcms2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
-		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
-		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
-		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		dcmdata.3:${PORTSDIR}/devel/dcmtk \
-		fftw3.6:${PORTSDIR}/math/fftw3 \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gsl.16:${PORTSDIR}/math/gsl \
-		wps-0.2.2:${PORTSDIR}/textproc/libwps \
-		visio-0.0.0:${PORTSDIR}/textproc/libvisio
+		qca:${PORTSDIR}/devel/qca \
+		exiv2:${PORTSDIR}/graphics/exiv2 \
+		lcms2:${PORTSDIR}/graphics/lcms2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2 \
+		wpd-0.9:${PORTSDIR}/textproc/libwpd \
+		wpg-0.2:${PORTSDIR}/graphics/libwpg \
+		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
+		openjpeg:${PORTSDIR}/graphics/openjpeg \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		dcmdata:${PORTSDIR}/devel/dcmtk \
+		fftw3:${PORTSDIR}/math/fftw3 \
+		tiff:${PORTSDIR}/graphics/tiff \
+		gsl:${PORTSDIR}/math/gsl \
+		wps-0.2:${PORTSDIR}/textproc/libwps \
+		visio-0.0:${PORTSDIR}/textproc/libvisio
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS=	koffice-kde4-2.*
@@ -41,6 +40,7 @@ USE_ICONV=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw okular pimlibs \
 		automoc4 sharedmime soprano
 USE_PERL5=	yes
+USE_PKGCONFIG=	build
 USE_QT4=	dbus designer gui opengl phonon porting_build qt3support \
 		qtestlib_build script sql svg webkit xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build uic3_build
@@ -55,11 +55,14 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GTL	"Color transformations in Krita (requires LLVM)" off \
-		MARBLE	"Support for globe widget" on \
-		MYSQL	"MySQL support in Kexi" on \
-		PGSQL	"PostgreSQL support in Kexi" on \
-		SYBASE	"SyBase support in Kexi" off
+OPTIONS_DEFINE=	GTL MARBLE MYSQL PGSQL SYBASE
+OPTIONS_DEFAULT=MARBLE MYSQL PGSQL
+
+GTL_DESC=	Color transformations in Krita (requires LLVM)
+MARBLE_DESC=	World globe widget support via Marble
+MYSQL_DESC=	MySQL database support in Kexi
+PGSQL_DESC=	PostgreSQL database support in Kexi
+SYBASE_DESC=	Sybase database support in Kexi
 
 .if exists(${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so:${PORTSDIR}/graphics/pstoedit
@@ -71,31 +74,31 @@ PLIST_SUB+=	EPS="@comment "
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTL) || exists(${LOCALBASE}/lib/libQtShiva.so)
-LIB_DEPENDS+=	OpenCTL.0:${PORTSDIR}/graphics/opengtl \
-		QtShiva.0:${PORTSDIR}/graphics/qtgtl
+.if ${PORT_OPTIONS:MGTL} || exists(${LOCALBASE}/lib/libQtShiva.so)
+LIB_DEPENDS+=	OpenCTL:${PORTSDIR}/graphics/opengtl \
+		QtShiva:${PORTSDIR}/graphics/qtgtl
 PLIST_SUB+=	GTL=""
 .else
 PLIST_SUB+=	GTL="@comment "
 .endif
 
-.if !defined(WITHOUT_MARBLE)
+.if ${PORT_OPTIONS:MMARBLE}
 USE_KDE4+=	marble
-CMAKE_ARGS+=	-DWITH_Marble:BOOL=TRUE
 PLIST_SUB+=	MARBLE=""
 .else
 CMAKE_ARGS+=	-DWITH_Marble:BOOL=FALSE
 PLIST_SUB+=	MARBLE="@comment "
 .endif
 
-.if !defined(WITHOUT_MYSQL) || exists(${LOCALBASE}/lib/mysql/libmysqlclient.so)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
 .else
+CMAKE_ARGS+=	-DWITH_MySQL:BOOL=FASE
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx3
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx3
@@ -105,10 +108,11 @@ CMAKE_ARGS+=	-DWITH_PostgreSQL:BOOL=FALSE
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_SYBASE) || exists(${LOCALBASE}/lib/libsybdb.so)
-LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+.if ${PORT_OPTIONS:MSYBASE}
+LIB_DEPENDS+=	sybdb:${PORTSDIR}/databases/freetds
 PLIST_SUB+=	SYBASE=""
 .else
+CMAKE_ARGS+=	-DWITH_FreeTDS:BOOL=FALSE
 PLIST_SUB+=	SYBASE="@comment "
 .endif
 

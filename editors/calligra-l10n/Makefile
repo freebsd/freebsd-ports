@@ -33,19 +33,24 @@ zh_TW_PORT=	chinese/calligra-l10n-zh_TW
 .include "${.CURDIR}/../../misc/kde4-l10n/files/kde4-lang-names"
 nb_NAME=	Norwegian Bokmal
 
-OPTIONS=	ALL "All localizations" on
+OPTIONS_DEFINE=	ALL
+OPTIONS_DEFAULT=ALL
+
+ALL_DESC=	All localizations
+
 .for lang in ${CALLIGRA_LANG_ALL}
 ${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/LC_MESSAGES/calligra.mo
 ${lang}_PORT?=		editors/calligra-l10n-${lang}
 ${lang}_NAME?=		${lang}
 ${lang}_OPTION=		${lang:S/@/_/}
-OPTIONS+=	${${lang}_OPTION} "${${lang}_NAME} localization" off
+OPTIONS_DEFINE+=	${${lang}_OPTION}
+${${lang}_OPTION}_DESC=	${${lang}_NAME} localization
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for lang in ${CALLIGRA_LANG_ALL}
-.if defined(WITH_ALL) || defined(WITH_${${lang}_OPTION})
+.if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${${lang}_OPTION}}
 RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
 .endfor

@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}
-CATEGORIES?=	french editors kde
+CATEGORIES=	french editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	French messages and documentation for Calligra
