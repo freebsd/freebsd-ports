@@ -13,6 +13,8 @@ COMMENT=	High-end interface client for CVS
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not build
+
 USE_GNOME=	gtk12
 USE_TCL_BUILD=	yes
 USE_TCL_WRAPPER=yes
