@@ -39,6 +39,7 @@ include/cyassl/ctaocrypt/aes.h
 include/cyassl/ctaocrypt/arc4.h
 include/cyassl/ctaocrypt/asn.h
 include/cyassl/ctaocrypt/asn_public.h
+include/cyassl/ctaocrypt/camellia.h
 include/cyassl/ctaocrypt/coding.h
 include/cyassl/ctaocrypt/des3.h
 include/cyassl/ctaocrypt/dh.h
@@ -74,6 +75,7 @@ include/cyassl/ssl.h
 include/cyassl/sniffer_error.h
 include/cyassl/sniffer.h
 include/cyassl/callbacks.h
+include/cyassl/certs_test.h
 include/cyassl/test.h
 include/cyassl/version.h
 include/cyassl/ocsp.h
