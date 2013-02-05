@@ -1,16 +1,11 @@
-# New ports collection makefile for:	qzeitgeist
-# Date Created:				20 April 2011
-# Whom:					avilla@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qzeitgeist
 PORTVERSION=	0.8.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_KDE_kde} \
+MASTER_SITES=	${MASTER_SITE_KDE:C@$@:kde@} \
 		http://launchpad.net/zeitgeist/${ZEITGEIST_VERSION:R}/${ZEITGEIST_VERSION}/+download/
-MASTER_SITE_SUBDIR=	stable/lib${PORTNAME}/${PORTVERSION}/src/
+MASTER_SITE_SUBDIR=	stable/lib${PORTNAME}/${PORTVERSION}/src/:kde
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kde \
 		zeitgeist-${ZEITGEIST_VERSION}.tar.gz
