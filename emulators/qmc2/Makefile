@@ -2,24 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.37
-PORTREVISION=	2
+PORTVERSION=	0.38
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based UNIX MAME/MESS frontend
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		aa:${PORTSDIR}/graphics/aalib \
-		drm:${PORTSDIR}/graphics/libdrm \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		qzeitgeist:${PORTSDIR}/sysutils/qzeitgeist \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame \
 		mess:${PORTSDIR}/emulators/mess
 
@@ -28,15 +17,10 @@ OPTIONS_DEFINE=	DOCS
 NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_ICONV=	yes
-USE_GNOME=	glib20
-USE_XORG=	ice sm x11 xau xdamage xdmcp xmu xext xfixes \
-		xrender xxf86vm
+USE_XORG=	xmu
 USE_GL=		glu
-USE_QT4=	corelib declarative dbus gui network opengl phonon \
-		qtestlib script sql svg webkit xml xmlpatterns moc_build \
-		qmake_build rcc_build uic_build
+USE_QT4=	gui opengl phonon qtestlib webkit xml \
+		moc_build qmake_build rcc_build uic_build
 USE_SDL=	sdl
 USE_GMAKE=	yes
 MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
