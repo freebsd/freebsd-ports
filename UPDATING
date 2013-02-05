@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130205:
+  AFFECTS: users of security/gnutls and any port that depends on it
+  AUTHOR: novel@FreeBSD.org
+
+  gnutls has been updated to 2.12.23 and all shared libraries' versions have
+  been bumped. So you need to rebuild all applications that depend on
+  gnutls.
+
+  If you use portmaster:
+        portmaster -r gnutls
+  If you use portupgrade:
+        portupgrade -fr security/gnutls
+  If you use pkgng with binary packages:
+        pkg install -fR security/gnutls
+
 20130204:
   AFFECTS: users of sysutils/zfstools
   AUTHOR: bdrewery@FreeBSD.org
