@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.12.18
-PORTREVISION=	1
+PORTVERSION=	2.12.23
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	\
+	ftp://ftp.gnutls.org/gcrypt/gnutls/v${PORTVERSION:C/.[0-9]+$//}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -30,33 +28,42 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
+LIBTOOLFILES=	configure lib/configure libextra/configure
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-fPIC
 CONFIGURE_ARGS+=	--disable-guile
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	LIBTASN1 CXX LZO NLS
 
-.if defined(WITH_LIBTASN1)
+LIBTASN1_DESC=	Use system libtasn1 instead of local one
+CXX_DESC=	Install C++ library
+LZO_DESC=	LZO compression
+
+OPTIONS_DEFAULT=	LIBTASN1 CXX
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLIBTASN1}
 LIB_DEPENDS+=	tasn1:${PORTSDIR}/security/libtasn1
 .else
 CONFIGURE_ARGS+=	--with-included-libtasn1
 .endif
 
-.if defined(WITH_LZO)
+.if ${PORT_OPTIONS:MLZO}
 LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
 CONFIGURE_ARGS+=	--with-lzo
 .endif
 
-.if defined(WITHOUT_CXX)
+.if ${PORT_OPTIONS:MCXX}
 CONFIGURE_ARGS+=	--disable-cxx
 PLIST_SUB+=		CXX="@comment "
 .else
 PLIST_SUB+=		CXX=""
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
@@ -85,4 +92,4 @@ post-install:
 .endif
 
 .include "Makefile.man"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
