@@ -107,7 +107,6 @@ CONFIGURE_ARGS+=	--with-swig=no
 
 .if defined(WITH_TCL)
 USE_TCL=		84
-USE_TCL_THREADS=	yes
 CONFIGURE_ARGS+=	--with-tcl \
 			--with-tclcflags=-I${TCL_INCLUDEDIR} \
 			--with-tcllibs=-ltcl${TCL_VER:S/.//}
