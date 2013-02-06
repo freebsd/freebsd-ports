@@ -3,7 +3,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
@@ -22,6 +22,11 @@ RUN_DEPENDS=	\
 	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
 CONFLICTS=	qmailadmin-devel-1.*
+
+PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
+  		LOCAL/bdrewery/${PORTNAME}/:onchange
+PATCHFILES+=	qmailadmin-1.2.12-onchange.3.patch:onchange
+PATCH_DIST_STRIP+=	-p1
 
 OPTIONS_DEFINE=	IPAUTH USER_INDEX MODIFY_QUOTA DOMAIN_AUTOFILL \
 		IDX IDX_SQL HELP SPAM_DETECTION SPAM_NEEDS_EMAIL \
