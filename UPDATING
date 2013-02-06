@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130206:
+  AFFECTS: users of security/libtasn1 and any port that depends on it
+  AUTHOR: novel@FreeBSD.org
+
+  libtasn1 has been updated to 2.14 and all shared libraries' versions have
+  been bumped. So you need to rebuild all applications that depend on
+  libtasn1.
+
+  If you use portmaster:
+        portmaster -r libtasn1
+  If you use portupgrade:
+        portupgrade -fr security/libtasn1
+  If you use pkgng with binary packages:
+        pkg install -fR security/libtasn1
+
+20130206:
   AFFECTS: users of Tcl/Tk
   AUTHOR: gahr@FreeBSD.org
 

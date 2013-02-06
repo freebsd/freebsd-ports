@@ -6,7 +6,7 @@
 
 PORTNAME=	libimobiledevice
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
@@ -17,7 +17,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
-		tasn1.4:${PORTSDIR}/security/libtasn1 \
+		tasn1.5:${PORTSDIR}/security/libtasn1 \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		plist.1:${PORTSDIR}/devel/libplist \
 		usbmuxd.1:${PORTSDIR}/comms/usbmuxd
