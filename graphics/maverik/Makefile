@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	maverik
-# Date created:			Nov 12, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	maverik
 PORTVERSION=	6.2
@@ -37,15 +32,6 @@ CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
 			--PNGINCL="-I${LOCALBASE}/include"
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=	--GTK
-PLIST_SUB+=	GTK=""
-.else
-PLIST_SUB+=	GTK="@comment "
-.endif
-
 post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
 
@@ -56,9 +42,7 @@ post-patch:
 		s,%%CFLAGS%%,${CFLAGS},g ; \
 		s,%%CXXFLAGS%%,${CXXFLAGS},g ; \
 		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
-		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g ; \
-		s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/setup
-	@${REINPLACE_CMD} -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/examples/misc/GTK/Makefile
+		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" ${WRKSRC}/setup
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${PREFIX}/lib
