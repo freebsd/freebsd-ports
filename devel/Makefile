@@ -2461,6 +2461,7 @@
     SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-Path-Dispatcher-Declarative
     SUBDIR += p5-Path-Resource
+    SUBDIR += p5-Path-Tiny
     SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
