@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pike75
-# Date created:		05 Feb 2004
-# Whom:			kiwi@oav.net
-#
+# Created by: kiwi@oav.net
 # $FreeBSD$
-#
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.112
@@ -82,6 +78,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-libglade-config \
 		 --without-machine-code \
 		 --with-relocatable-dumped-modules \
+		 --without-GL --without-GLUT \
 		 --prefix=${PREFIX}
 
 MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}"
@@ -212,14 +209,6 @@ PLIST_SUB+=	SYBASE:=""
 .else
 CONFIGURE_ARGS+=	--without-sybase
 PLIST_SUB+=	SYBASE:="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMESA}
-USE_GL=		yes
-LIB_DEPENDS+=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
-CONFIGURE_ARGS+=	--with-GL --with-GLUT
-.else
-CONFIGURE_ARGS+=	--without-GL --without-GLUT
 .endif
 
 INSTALL_TARGET=	install_nodoc
