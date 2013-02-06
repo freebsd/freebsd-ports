@@ -18,7 +18,6 @@ lib/libmav_avatar.so
 lib/libmav_callbacks.so
 lib/libmav_gfx.so
 lib/libmav_gfxNone.so
-%%GTK%%lib/libmav_gfxOpenGLGTK.so
 lib/libmav_gfxOpenGLX11.so
 lib/libmav_hud.so
 lib/libmav_kernel.so
@@ -36,7 +35,6 @@ lib/libmav_vrml97-dummy.so
 lib/libmav_windows.so
 lib/libmaverik.so
 lib/libmaverikNone.so
-%%GTK%%lib/libmaverikOpenGLGTK.so
 lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%%%DOCSDIR%%/MFS/html/MAV_BB.html
 %%PORTDOCS%%%%DOCSDIR%%/MFS/html/MAV_HBB.html
