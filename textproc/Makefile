@@ -1425,6 +1425,7 @@
     SUBDIR += tn-hunspell
     SUBDIR += tnef2txt
     SUBDIR += tokyodystopia
+    SUBDIR += topic
     SUBDIR += tr-aspell
     SUBDIR += tralics
     SUBDIR += trang
