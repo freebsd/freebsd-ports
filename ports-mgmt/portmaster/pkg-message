@@ -1,10 +1,10 @@
-If you are upgrading from the old package format, there are 2
+To switch to the new PKGNG package manager there are 2
 extra steps required.
 
-Enable PKGNG as your package format:
+	Enable PKGNG as your package format:
 
-  # echo 'WITH_PKGNG=yes' >> /etc/make.conf
+	  # echo 'WITH_PKGNG=yes' >> /etc/make.conf
 
-Then convert your /var/db/pkg database to the new pkg format:
+	Then convert your /var/db/pkg database to the new pkg format:
 
-  # pkg2ng
+	  # pkg2ng
