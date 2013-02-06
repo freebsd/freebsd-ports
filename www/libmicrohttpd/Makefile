@@ -12,10 +12,10 @@ COMMENT=	C library for embedding HTTP server functionality
 
 LICENSE=	LGPL21
 
-OPTIONS=	GNUTLS "Build with gnutls to support ssl" off
+OPTIONS_DEFINE=	GNUTLS
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE} --enable-https
