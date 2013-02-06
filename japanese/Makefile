@@ -334,7 +334,6 @@
     SUBDIR += uim-anthy
     SUBDIR += uim-tomoe-gtk
     SUBDIR += vera-fpw
-    SUBDIR += vflib
     SUBDIR += vftool
     SUBDIR += w3m
     SUBDIR += w3m-img

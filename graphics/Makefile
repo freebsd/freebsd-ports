@@ -850,7 +850,6 @@
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
     SUBDIR += py-stl
-    SUBDIR += py-visual
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += pygts
