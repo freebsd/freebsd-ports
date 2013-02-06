@@ -57,6 +57,7 @@ you update your ports collection, before attempting any port upgrades.
 20130204:
   AFFECTS: users of multimedia/qt4-phonon, multimedia/qt4-phonon-gst
   AUTHOR: makc@FreeBSD.org
+
   qt4-phonon has been deprecated in favour of multimedia/phonon. Remove
   WITH_QT_PHONON from your make.conf and replace qt4-phonon with
   multimedia/phonon:
@@ -92,6 +93,7 @@ you update your ports collection, before attempting any port upgrades.
 20130203:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
+
   KDE SC ports have been updated to 4.9.5. kdemultimedia4, kdenetwork4,
   kde-runtime and kde-workspace ports have been split, they must be
   deinstalled before running any port upgrade tool:
