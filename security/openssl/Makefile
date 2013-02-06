@@ -3,14 +3,14 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
-DISTVERSIONSUFFIX=	c
-PORTREVISION=	5
+DISTVERSIONSUFFIX=	d
+PORTREVISION=	6
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-DIST_SUBDIR=	${DISTNAME}2
+DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
@@ -94,7 +94,7 @@ MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	EVP_PKEY_derive.3 EVP_PKEY_encrypt.3 EVP_PKEY_get_default_digest.3 \
 	EVP_PKEY_keygen.3 EVP_PKEY_new.3 EVP_PKEY_print_private.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_sign.3 EVP_PKEY_verify.3 \
-	EVP_PKEY_verifyrecover.3 EVP_SealInit.3 EVP_SignInit.3 \
+	EVP_PKEY_verify_recover.3 EVP_SealInit.3 EVP_SignInit.3 \
 	EVP_VerifyInit.3 OBJ_nid2obj.3 OPENSSL_Applink.3 \
 	OPENSSL_VERSION_NUMBER.3 OPENSSL_config.3 OPENSSL_ia32cap.3 \
 	OPENSSL_load_builtin_modules.3 OpenSSL_add_all_algorithms.3 \
@@ -515,6 +515,7 @@ MLINKS=	ASN1_OBJECT_new.3 ASN1_OBJECT_free.3 \
 	EVP_PKEY_new.3 EVP_PKEY_free.3 \
 	EVP_PKEY_print_private.3 EVP_PKEY_print_params.3 \
 	EVP_PKEY_print_private.3 EVP_PKEY_print_public.3 \
+	EVP_PKEY_verify_recover.3 EVP_PKEY_verify_recover_init.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_assign_DH.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_assign_DSA.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_assign_EC_KEY.3 \
