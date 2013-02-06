@@ -201,8 +201,6 @@ lib/tk%%TK_VER%%/ttk/winTheme.tcl
 lib/tk%%TK_VER%%/ttk/xpTheme.tcl
 lib/tk%%TK_VER%%/unsupported.tcl
 lib/tk%%TK_VER%%/xmfbox.tcl
-%%DATADIR%%/man.macros
-@dirrm %%DATADIR%%
 @dirrm lib/tk%%TK_VER%%/ttk
 %%DEMOS%%@dirrm lib/tk%%TK_VER%%/demos/images
 %%DEMOS%%@dirrm lib/tk%%TK_VER%%/demos

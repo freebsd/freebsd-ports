@@ -111,7 +111,6 @@ lib/tcl%%TCL_VER%%/history.tcl
 lib/tcl%%TCL_VER%%/http1.0/http.tcl
 lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/init.tcl
-lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/msgs/af.msg
 lib/tcl%%TCL_VER%%/msgs/af_za.msg
 lib/tcl%%TCL_VER%%/msgs/ar.msg
@@ -247,6 +246,8 @@ lib/tcl%%TCL_VER%%/safe.tcl
 lib/tcl%%TCL_VER%%/tclAppInit.c
 lib/tcl%%TCL_VER%%/tclConfig.sh
 lib/tcl%%TCL_VER%%/tclIndex
+lib/tcl%%TCL_VER%%/tm.tcl
+lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/CST6CDT
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/CET
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/PST8PDT
@@ -835,9 +836,6 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific-New
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Samoa
-lib/tcl%%TCL_VER%%/word.tcl
-%%DATADIR%%/man.macros
-@dirrm %%DATADIR%%
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/US
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/SystemV
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Pacific
@@ -860,6 +858,12 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Africa
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata
+%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.10.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.10.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.0.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.4.tm
+@dirrm lib/tcl%%TCL_VER%%/platform
 @dirrm lib/tcl%%TCL_VER%%/opt0.4
 @dirrm lib/tcl%%TCL_VER%%/msgs
 @dirrm lib/tcl%%TCL_VER%%/http1.0

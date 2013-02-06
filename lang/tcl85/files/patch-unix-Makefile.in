@@ -1,5 +1,5 @@
---- Makefile.in.bak	2012-11-20 23:39:58.000000000 -0600
-+++ Makefile.in	2012-11-20 23:47:34.000000000 -0600
+--- Makefile.in.orig	2012-11-09 16:14:39.000000000 +0100
++++ Makefile.in	2013-01-10 15:47:17.000000000 +0100
 @@ -54,6 +54,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -104,7 +104,7 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)/";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c @LDAIX_SRC@ @DTRACE_SRC@; \
-@@ -766,23 +788,11 @@
+@@ -766,32 +788,31 @@
  	    do \
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
@@ -128,67 +128,32 @@
  	@echo "Installing encoding files to $(SCRIPT_INSTALL_DIR)/encoding/";
  	@for i in $(TOP_DIR)/library/encoding/*.enc ; do \
  		$(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/encoding; \
-@@ -792,6 +802,27 @@
- 	    echo "if {![interp issafe]} { ::tcl::tm::roots {$(TCL_MODULE_PATH)} }" >> \
- 	        "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
- 	fi
-+install-tm:
-+	@for i in tcl8 tcl8/8.4 tcl8/8.4/platform tcl8/8.5; \
-+	    do \
-+	if [ ! -d "$(LIB_INSTALL_DIR)"/$$i ] ; then \
-+		echo "Making directory $(LIB_INSTALL_DIR)/$$i"; \
-+		mkdir -p "$(LIB_INSTALL_DIR)"/$$i; \
-+		chmod 755 "$(LIB_INSTALL_DIR)"/$$i; \
-+		else true; \
-+		fi; \
-+	done;
-+	@echo "Installing package http 2.7.10 as a Tcl Module";
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(LIB_INSTALL_DIR)"/tcl8/8.4/http-2.7.10.tm;
-+	@echo "Installing package msgcat 1.5.0 as a Tcl Module";
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(LIB_INSTALL_DIR)"/tcl8/8.5/msgcat-1.5.0.tm;
-+	@echo "Installing package tcltest 2.3.4 as a Tcl Module";
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(LIB_INSTALL_DIR)"/tcl8/8.5/tcltest-2.3.4.tm;
+ 	done;
+-	@if [ -n "$(TCL_MODULE_PATH)" -a -f $(TOP_DIR)/library/tm.tcl ]; then \
+-	    echo "Customizing tcl module path"; \
+-	    echo "if {![interp issafe]} { ::tcl::tm::roots {$(TCL_MODULE_PATH)} }" >> \
+-	        "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
+-	fi
++	echo "Customizing tcl module path"; \
++	echo "if {![interp issafe]} { ::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)} }" >> \
++	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl;
 +
++install-tm:
++	@echo "Installing package http 2.7.10 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/http-2.7.10.tm;
++	@echo "Installing package msgcat 1.5.0 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/msgcat-1.5.0.tm;
++	@echo "Installing package tcltest 2.3.4 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/tcltest-2.3.4.tm;
 +	@echo "Installing package platform 1.0.10 as a Tcl Module";
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(LIB_INSTALL_DIR)"/tcl8/8.4/platform-1.0.10.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/platform-1.0.10.tm;
 +	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(LIB_INSTALL_DIR)"/tcl8/8.4/platform/shell-1.1.4.tm;
++	@$(INSTALL_DATA_DIR) "$(LIB_INSTALL_DIR)"/platform;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/platform/shell-1.1.4.tm;
  
  install-tzdata: ${TCL_EXE}
  	@echo "Installing time zone files to $(SCRIPT_INSTALL_DIR)/tzdata/"
-@@ -823,18 +854,23 @@
- 		else true; \
- 		fi; \
- 	    done;
--	@echo "Installing and cross-linking top-level (.1) docs to $(MAN1_INSTALL_DIR)/";
--	@for i in $(TOP_DIR)/doc/*.1; do \
--	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
--	done
- 	@echo "Installing and cross-linking C API (.3) docs to $(MAN3_INSTALL_DIR)/";
- 	@for i in $(TOP_DIR)/doc/*.3; do \
--	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
--	done
-+	$(BSD_INSTALL_MAN) $$i "$(MAN3_INSTALL_DIR)"; \
-+	done;
- 	@echo "Installing and cross-linking command (.n) docs to $(MANN_INSTALL_DIR)/";
- 	@for i in $(TOP_DIR)/doc/*.n; do \
--	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
--	done
-+	$(BSD_INSTALL_MAN) $$i "$(MANN_INSTALL_DIR)"; \
-+	done;
-+	@echo "**********"
-+	@echo "IMPORTANT:"
-+	@echo "**********"
-+	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
-+	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
-+	@echo "tclDecls.h   in $(INCLUDE_INSTALL_DIR)/tclDecls.h"
-+	@echo "There are NOT default place, but good place to avoid"
-+	@echo "conflicting with another version of Tcl/Tks."
-+
- 
- # Optional target to install private headers
- install-private-headers: libraries
-@@ -1537,7 +1573,7 @@
+@@ -1537,7 +1558,7 @@
  			match=1; \
  		    fi; \
  		done; \
@@ -197,7 +162,7 @@
  	done
  
  #
-@@ -1554,7 +1590,7 @@
+@@ -1554,7 +1575,7 @@
  			match=1; \
  		    fi; \
  		done; \
