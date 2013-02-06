@@ -22,7 +22,7 @@ LICENSE=		AL2 MIT
 LICENSE_COMB=		multi
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
-BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip \
+BUILD_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 			cmake:${PORTSDIR}/devel/cmake \
 			${LOCALBASE}/include/libv4l2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
