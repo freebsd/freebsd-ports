@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libtasn1
-# Date created:		15 Nov 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtasn1
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtasn1
@@ -24,8 +20,7 @@ INFO=		libtasn1
 MAN1=		asn1Parser.1 \
 		asn1Coding.1 \
 		asn1Decoding.1
-MAN3=		\
-		asn1_array2tree.3 \
+MAN3=		asn1_array2tree.3 \
 		asn1_bit_der.3 \
 		asn1_check_version.3 \
 		asn1_copy_node.3 \
@@ -52,6 +47,7 @@ MAN3=		\
 		asn1_parser2tree.3 \
 		asn1_perror.3 \
 		asn1_print_structure.3 \
+		asn1_read_node_value.3 \
 		asn1_read_tag.3 \
 		asn1_read_value.3 \
 		asn1_strerror.3 \
