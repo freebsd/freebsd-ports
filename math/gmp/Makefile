@@ -1,25 +1,26 @@
-# New ports collection makefile for:	libgmp3
-# Date created:			Jan 11, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmp
-PORTVERSION=	5.0.5
+PORTVERSION=	5.1.0
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
+DISTFILES=	${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
 LICENSE=	LGPL3
 
-OPTIONS=	CPU_OPTS "Enable assembly optimizations for your CPU" off
+OPTIONS_DEFINE=	CPU_OPTS
+CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	no # needed, since the following line would add it
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	ltverhack
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--infodir=${PREFIX}/info \
@@ -32,7 +33,7 @@ INFO=		gmp
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CPU_OPTS)
+.if ! ${PORT_OPTIONS:MCPU_OPTS}
 CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL}
 .elif ${ARCH:S/64//} != ${ARCH}
 CONFIGURE_ENV+=	ABI="64"

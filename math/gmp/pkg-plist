@@ -7,4 +7,4 @@ lib/libgmp.so.10
 lib/libgmpxx.a
 lib/libgmpxx.la
 lib/libgmpxx.so
-lib/libgmpxx.so.6
+lib/libgmpxx.so.4
