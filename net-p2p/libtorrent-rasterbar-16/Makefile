@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--disable-debug \
 		--with-boost-system=boost_system \
 		--enable-geoip \
 		--with-libgeoip \
-		--with-iconv \
+		--with-libiconv \
 		--with-openssl=${OPENSSLBASE}
 
 PORTDOCS=	*
