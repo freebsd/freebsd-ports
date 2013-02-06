@@ -33,7 +33,6 @@ USE_GMAKE=	yes
 MAKEFILE=	Makefile.ns
 
 USE_TCL=	84+
-USE_TCL_THREADS=	yes
 
 PLIST_FILES=	${AOLSERVERBASE}/bin/nsmhash.so \
 		${AOLSERVERBASE}/lib/libnsmhash.a \
