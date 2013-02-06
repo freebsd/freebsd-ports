@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ExtUtils-PkgConfig
-# Date created:	   18 October 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-PkgConfig
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
