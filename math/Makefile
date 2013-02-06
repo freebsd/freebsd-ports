@@ -143,7 +143,6 @@
     SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot
-    SUBDIR += gnuplot+
     SUBDIR += goblin
     SUBDIR += gotoblas
     SUBDIR += grace
