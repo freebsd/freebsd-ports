@@ -29,8 +29,8 @@ WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS_DEFINE=	NVIDIA_GL XCB
-NVIDIA_DESC=	Use NVIDIA's libraries
+OPTIONS_DEFINE=	NVIDIA XCB
+NVIDIA_DESC=	Use NVIDIA's OpenGL libraries
 XCB_DESC=	Use XCB for GLX
 
 .include <bsd.port.options.mk>
@@ -77,7 +77,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MNVIDIA_GL}
+.if ${PORT_OPTIONS:MNVIDIA}
 CFLAGS+=	-DWITH_NVIDIA_GL=1
 .endif
 
