@@ -5,9 +5,8 @@
 PORTREVISION=	0
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
-MASTER_SITES+=	http://dev-www.libreoffice.org/src/:Src \
-		http://dev-www.libreoffice.org/extern/:Extern \
-		http://www.numbertext.org/linux/:OOoDTP
+MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
+		http://dev-www.libreoffice.org/extern/:ext
 
 COMMENT=	Full integrated office productivity suite
 
@@ -74,7 +73,7 @@ DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
 
 EXTRACT_ONLY:=	${DISTFILES}
 
-DISTFILES+=	0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:Src
+DISTFILES+=	0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:src
 
 USE_AUTOTOOLS=	autoconf aclocal
 USE_BDB=	yes
@@ -204,7 +203,8 @@ MANCOMPRESSED=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MCPPUNIT)
-EXTRA_PATCHES+=		${FILESDIR}/disable-cppunittester
+EXTRA_PATCHES+=		${FILESDIR}/disable-cppunittester \
+			${FILESDIR}/disable-uno_test
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
@@ -283,25 +283,25 @@ CONFIGURE_ARGS+=	--disable-gconf --disable-lockdown
 
 .if ${PORT_OPTIONS:MJAVA}
 #additionnal distfiles needed for java
-DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:Src \
-		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:Src \
-		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:Src \
-		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz:Src \
-		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:Src \
-		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:Src \
-		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:Src \
-		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:Src \
-		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:Src \
-		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:Src \
-		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:Src \
-		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:Src \
-		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:Src \
-		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:Src \
-		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:Src \
-		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:Src \
-		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:Src \
-		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:Src \
-		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:Src
+DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:src \
+		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
+		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:src \
+		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz:src \
+		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:src \
+		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:src \
+		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
+		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \
+		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
+		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
+		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
+		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:src \
+		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
+		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:src \
+		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
+		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
+		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
+		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:src \
+		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src
 
 # LibreOffice works only with Java 6 -- which may not be the default
 # if you specify the JAVA_VENDOR variable
@@ -339,7 +339,7 @@ CONFIGURE_ARGS+=	--disable-mergelibs
 .endif
 
 .if ${PORT_OPTIONS:MSDK}
-DISTFILES+=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:Extern
+DISTFILES+=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
 CONFIGURE_ARGS+=	--enable-odk
 .else
