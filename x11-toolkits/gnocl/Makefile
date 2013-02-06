@@ -37,7 +37,8 @@ PLIST_DIRS=	${BASEDIR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|; \
-	    s|%%LOCALBASE%%|${LOCALBASE}|' \
+	    s|%%LOCALBASE%%|${LOCALBASE}|; \
+	    s|%%SHORT_TCL_VER%%|${TCL_VER:S/.//}|' \
 	    ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|\[info library\]|${PREFIX}/lib|; s|tclsh|${TCLSH}|g;' ${BUILD_WRKSRC}/install.tcl
 
