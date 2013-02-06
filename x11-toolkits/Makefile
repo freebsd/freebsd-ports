@@ -253,11 +253,8 @@
     SUBDIR += tk-wrapper
     SUBDIR += tk83
     SUBDIR += tk84
-    SUBDIR += tk84-thread
     SUBDIR += tk85
-    SUBDIR += tk85-thread
     SUBDIR += tk86
-    SUBDIR += tk86-thread
     SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tktable

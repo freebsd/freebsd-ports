@@ -340,15 +340,11 @@
     SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual
-    SUBDIR += tcl-modules
     SUBDIR += tcl-wrapper
     SUBDIR += tcl83
     SUBDIR += tcl84
-    SUBDIR += tcl84-thread
     SUBDIR += tcl85
-    SUBDIR += tcl85-thread
     SUBDIR += tcl86
-    SUBDIR += tcl86-thread
     SUBDIR += tclX
     SUBDIR += tcltutor
     SUBDIR += tinypy

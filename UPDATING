@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130206:
+  AFFECTS: users of Tcl/Tk
+  AUTHOR: gahr@FreeBSD.org
+
+  The following ports have been removed, as threads and modules are
+  now included in the main ports:
+
+  - lang/tcl84-thread
+  - lang/tcl85-thread
+  - lang/tcl86-thread
+  - lang/tcl-modules
+  - x11-toolkits/tk84-thread
+  - x11-toolkits/tk85-thread
+  - x11-toolkits/tk86-thread
+
+  Please rebuild all ports that depends on them:
+
+  If you use portmaster:
+        portmaster -w -r <port>
+
+  If you use portupgrade:
+        portupgrade -fr <origin/port>
+
+  If you use pkgng with binary packages:
+        pkg install -fR <origin/port>
+
 20130205:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org

@@ -4053,3 +4053,10 @@ japanese/vflib||2013-02-06|Has expired: No more public distfiles
 graphics/py-visual||2013-02-06|Has expired: Depends on the expired x11-toolkits/gtkglarea
 math/gnuplot+||2013-02-06|Upstream says: This package is obsolete. The author does not recommend to use it
 science/vis5d+||2013-02-06|No new release since 2001, depends on expired x11-toolkits/gtkglarea
+lang/tcl-modules|||2013-02-06|Modules are now part of the base Tcl distributions
+lang/tcl84-thread||2013-02-06|Threads are now enabled by default
+lang/tcl85-thread||2013-02-06|Threads are now enabled by default
+lang/tcl86-thread||2013-02-06|Threads are now enabled by default
+x11-toolkits/tk84-thread||2013-02-06|Threads are now enabled by default
+x11-toolkits/tk85-thread||2013-02-06|Threads are now enabled by default
+x11-toolkits/tk86-thread||2013-02-06|Threads are now enabled by default
