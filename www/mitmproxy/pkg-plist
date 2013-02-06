@@ -93,6 +93,9 @@ bin/mitmproxy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib/jsbeautifier/unpackers/myobfuscate.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib/jsbeautifier/unpackers/packer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib/jsbeautifier/unpackers/urlencode.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform/common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform/osx.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -104,6 +107,7 @@ bin/mitmproxy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib/jsbeautifier/unpackers
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib/jsbeautifier
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
