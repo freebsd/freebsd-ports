@@ -1,12 +1,8 @@
-# New ports collection makefile for:  mitmproxy
-# Date created:                       08 November 2012
-# Whom:                               Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mitmproxy
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	www python
 MASTER_SITES=	http://mitmproxy.org/download/
 
