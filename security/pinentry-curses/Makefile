@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pinentry-curses
-# Date created:                         03 May 2004
-# Whom:					Michael Nottebrock <lofi@freebsd.org>
-#
+# Created by: Michael Nottebrock <lofi@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pinentry
 
