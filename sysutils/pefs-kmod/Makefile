@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pefs
-DISTVERSION=	2012-11-12
+DISTVERSION=	2013-02-03
 CATEGORIES=	sysutils kld
 MASTER_SITES=	https://pefs.googlecode.com/files/
 PKGNAMESUFFIX=	-kmod
@@ -16,7 +16,7 @@ COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD
 
-FETCH_ARGS=	-Fpr		# work around 302 redirect at guthub
+FETCH_ARGS=	-Fpr		# work around 302 redirect
 
 KMODDIR?=	/boot/modules
 PLIST_SUB=	KMODDIR=${KMODDIR}
