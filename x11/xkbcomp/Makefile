@@ -9,7 +9,7 @@ COMMENT=	Compile XKB keyboard description
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.oc:${PORTSDIR}/devel/xorg-macros
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
 XORG_CAT=	app
 USE_XORG=	x11 xkbfile
 USE_GNOME=	gnomehack
