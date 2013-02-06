@@ -22,7 +22,7 @@ load_rc_config $name
 
 pidfile=${bbstored_pidfile:-"/var/run/bbstored.pid"}
 
-command="%%PREFIX%%/bin/bbstored"
+command="%%PREFIX%%/sbin/bbstored"
 extra_commands="reload"
 
 run_rc_command "$1"

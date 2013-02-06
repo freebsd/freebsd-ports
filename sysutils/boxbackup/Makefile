@@ -1,13 +1,9 @@
-# New ports collection makefile for: boxbackup
-# Date created:		19 December 2004
-# Whom:			James O'Gorman <james@netinertia.co.uk>
-#
+# Created by: James O'Gorman <james@netinertia.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	boxbackup
 PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
