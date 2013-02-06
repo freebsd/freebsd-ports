@@ -9,12 +9,3 @@
  
  #include <rpm/rpmtypes.h>
  #include <rpm/rpmmacro.h>
-@@ -213,7 +215,7 @@ errxit:
- 
- void dbSetFSync(void *dbenv, int enable)
- {
--    db_env_set_func_fsync(enable ? fdatasync : fsync_disable);
-+    db_env_set_func_fsync(enable ? fsync : fsync_disable);
- }
- 
- int dbiSync(dbiIndex dbi, unsigned int flags)
