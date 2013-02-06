@@ -33,6 +33,7 @@ include/rpm/rpmlegacy.h
 include/rpm/rpmpol.h
 include/rpm/rpmps.h
 include/rpm/rpmprob.h
+include/rpm/rpmstrpool.h
 include/rpm/rpmtag.h
 include/rpm/rpmtd.h
 include/rpm/rpmte.h
@@ -46,19 +47,19 @@ include/rpm/rpmspec.h
 lib/librpm.a
 lib/librpm.la
 lib/librpm.so
-lib/librpm.so.3
+lib/librpm.so.4
 lib/librpmbuild.a
 lib/librpmbuild.la
 lib/librpmbuild.so
-lib/librpmbuild.so.3
+lib/librpmbuild.so.4
 lib/librpmio.a
 lib/librpmio.la
 lib/librpmio.so
-lib/librpmio.so.3
+lib/librpmio.so.4
 lib/librpmsign.a
 lib/librpmsign.la
 lib/librpmsign.so
-lib/librpmsign.so.1
+lib/librpmsign.so.2
 lib/rpm/rpm.daily
 lib/rpm/rpm.log
 lib/rpm/macros.perl
@@ -167,12 +168,9 @@ lib/rpm/platform/sh4-freebsd/macros
 lib/rpm/platform/sh4a-freebsd/macros
 lib/rpm-plugins/exec.so
 lib/rpm-plugins/exec.la
-lib/rpm-plugins/sepolicy.so
-lib/rpm-plugins/sepolicy.la
-%%NLS%%share/locale/bn_IN/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/br/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/rpm.mo
-%%NLS%%share/locale/cs_CZ/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/el/LC_MESSAGES/rpm.mo
@@ -180,8 +178,6 @@ lib/rpm-plugins/sepolicy.la
 %%NLS%%share/locale/es/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rpm.mo
-%%NLS%%share/locale/gu/LC_MESSAGES/rpm.mo
-%%NLS%%share/locale/id/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/is/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rpm.mo
@@ -200,6 +196,7 @@ lib/rpm-plugins/sepolicy.la
 %%NLS%%share/locale/sv/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/te/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
@@ -289,10 +286,6 @@ libdata/pkgconfig/rpm.pc
 @dirrmtry src
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs_CZ
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/te
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm
