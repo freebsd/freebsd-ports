@@ -1,15 +1,10 @@
-# ex:ts=8
-# Ports collection makefile for:  minicom
-# Date created:			  Fri Dec 01, 1995
-# Whom:				  obrien@cs.ucdavis.edu
-#
+# Created by: obrien@cs.ucdavis.edu
 # $FreeBSD$
-#
 
 PORTNAME=	minicom
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	comms
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3700/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3869/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
@@ -65,7 +60,7 @@ post-install:
 	${CHMOD} 4511 ${PREFIX}/bin/minicom
 	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/etc/minicom
 	${CHOWN} uucp ${PREFIX}/etc/minicom
-.if !defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/
