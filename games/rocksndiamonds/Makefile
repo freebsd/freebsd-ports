@@ -32,7 +32,7 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USE_ICONV=	yes
 USE_SDL=	image mixer net sdl
