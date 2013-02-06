@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="00b0d8cd-7097-11e2-98d9-003067c2616f">
+  <topic>OpenSSL -- TLS 1.1, 1.2 denial of service</topic>
+    <affects>
+      <package>
+        <name>openssl</name>
+        <range><lt>1.0.1_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>OpenSSL security team reports:</p>
+        <blockquote cite="http://www.openssl.org/news/secadv_20130205.txt">
+          <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1
+            and TLS 1.2 on AES-NI supporting platforms can be exploited in a
+            DoS attack.<p>
+          <p>A flaw in the OpenSSL handling of OCSP response verification can
+            be exploited in a denial of service attack.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2686</cvename>
+      <cvename>CVE-2013-0166</cvename>
+      <cvename>CVE-2013-0169</cvename>
+      <url>http://www.openssl.org/news/secadv_20120510.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-02-05</discovery>
+      <entry>2013-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c773d7f-6cbb-11e2-b242-c8600054b392">
     <topic>mysql/mariadb/percona server -- multiple vulnerabilities</topic>
     <affects>
