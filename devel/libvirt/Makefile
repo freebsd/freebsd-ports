@@ -15,11 +15,11 @@ LICENSE=	LGPL3
 OPTIONS_DEFINE=	QEMU DOCS
 QEMU_DESC=	QEMU bindings
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnutls.47:${PORTSDIR}/security/gnutls \
-		ssh2.1:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		xml2:${PORTSDIR}/textproc/libxml2 \
+		gnutls:${PORTSDIR}/security/gnutls \
+		ssh2:${PORTSDIR}/security/libssh2
 
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
