@@ -14,7 +14,7 @@
 -	--libs gtk+-2.0 libglade-2.0 libnotify) \
 -	-ltclstub$(TCL_VERSION)
 +	--libs gtk+-2.0 gtk+-unix-print-2.0 libglade-2.0 libnotify) \
-+	%%LOCALBASE%%/lib/libtclstub86.a
++	%%LOCALBASE%%/lib/libtclstub%%SHORT_TCL_VER%%.a
  
  GTK_OBJ := \
  	aboutDialog.o \
