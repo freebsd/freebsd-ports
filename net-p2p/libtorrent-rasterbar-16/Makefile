@@ -2,7 +2,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.16.7
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--disable-debug \
 		--with-boost-system=boost_system \
 		--enable-geoip \
 		--with-libgeoip \
+		--with-iconv \
 		--with-openssl=${OPENSSLBASE}
 
 PORTDOCS=	*
