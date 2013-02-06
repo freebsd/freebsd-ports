@@ -9,16 +9,14 @@ COMMENT=	Compile XKB keyboard description
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.oc:${PORTSDIR}/devel/xorg-macros
 XORG_CAT=	app
 USE_XORG=	x11 xkbfile
+USE_GNOME=	gnomehack
 
 PLIST_FILES=	bin/xkbcomp \
 		libdata/pkgconfig/xkbcomp.pc
 
 MAN1=		xkbcomp.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-	    ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
