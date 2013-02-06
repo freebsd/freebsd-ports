@@ -703,6 +703,7 @@ post-patch:
 . endif
 . if ${PORT_OPTIONS:MSMTPEXTFORK}
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-smtpextfork-qmail-smtpd.c
 .  if ${PORT_OPTIONS:MXF_QUITASAP}
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c
