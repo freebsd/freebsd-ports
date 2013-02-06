@@ -1,16 +1,22 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/form.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/validators.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/form.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/form.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/form.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/validators.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/validators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/core.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/simple.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/core.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/simple.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/core.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/fields/simple.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/widgets/__init__.py
@@ -67,16 +73,28 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/django/i18n.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/django/orm.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/form.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/form.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/form.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/wtforms.pot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/en/LC_MESSAGES/wtforms.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/en/LC_MESSAGES/wtforms.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fa/LC_MESSAGES/wtforms.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fa/LC_MESSAGES/wtforms.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/es/LC_MESSAGES/wtforms.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/es/LC_MESSAGES/wtforms.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fr/LC_MESSAGES/wtforms.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fr/LC_MESSAGES/wtforms.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/it/LC_MESSAGES/wtforms.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/it/LC_MESSAGES/wtforms.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/pl/LC_MESSAGES/wtforms.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/pl/LC_MESSAGES/wtforms.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/ru/LC_MESSAGES/wtforms.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/ru/LC_MESSAGES/wtforms.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/zh/LC_MESSAGES/wtforms.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/zh/LC_MESSAGES/wtforms.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/form.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/utils.pyo
@@ -89,10 +107,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/sqlalchemy/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/sqlalchemy/fields.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/sqlalchemy/orm.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/sqlalchemy/validators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/sqlalchemy/validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/sqlalchemy/validators.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/form.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/validators.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -109,8 +127,20 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/django
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/en/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/zh/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/en
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fa
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages/zh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n/messages
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wtforms/ext
