@@ -41,8 +41,8 @@ USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS+=--enable-introspection \
 		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread ${EXTRA_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${EXTRA_CFLAGS}
 
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 
@@ -84,8 +84,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-embed_ephy-embed-prefs.c
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
 	    	s|-ldl"$$|"|g' \
 		-e 's|EPIPHANY_API_VERSION=2.29|EPIPHANY_API_VERSION=2.30|g' \

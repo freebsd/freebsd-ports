@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
 LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 # We need to link with cc instead of ld for the FreeBSD specific options used
 # by threading libraries
-CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS="${PTHREAD_LIBS}" LIBTOOL=${LIBTOOL}
+CONFIGURE_ENV=		LD=${CC} LIBTOOL=${LIBTOOL}
 
 # Install the Apache plugin if needed
 .if ${PORT_OPTIONS:MAPACHE22}

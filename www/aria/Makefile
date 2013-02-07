@@ -37,8 +37,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|-lssl|-lcrypto -lssl|g ; \
+	@${REINPLACE_CMD} -e s|-lssl|-lcrypto -lssl|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| -O2 -Wall | @CXXFLAGS@ |g ; \
 		s|getopt.c getopt1.c getopt.h||g ; \

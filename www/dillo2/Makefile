@@ -65,7 +65,6 @@ CONFIGURE_ARGS+=	--disable-ssl
 
 .ifdef(WITH_THREADED_DNS)
 CONFIGURE_ARGS+=	--enable-threaded-dns
-CFLAGS+=	${PTHREAD_CFLAGS}
 .else
 CONFIGURE_ARGS+=	--disable-threaded-dns
 .endif

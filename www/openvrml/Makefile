@@ -28,11 +28,10 @@ GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure
 CONFIGURE_ARGS=	--enable-gecko-rpath \
 		--disable-mozilla-plugin
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		LIBS="-lm" BOOST_LIB_SUFFIX=""
+CONFIGURE_ENV=	LIBS="-lm" BOOST_LIB_SUFFIX=""
 CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L} \
 		-I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client -pthread
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GECKO=	libxul19

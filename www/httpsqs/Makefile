@@ -19,7 +19,6 @@ LIB_DEPENDS+=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet \
 	event-2.0:${PORTSDIR}/devel/libevent2
 
 USE_PKGCONFIG=	yes
-MAKE_ENV=	LIBS="${PTHREAD_LIBS}"
 
 PLIST_FILES=	bin/${PORTNAME}
 

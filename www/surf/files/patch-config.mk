@@ -19,7 +19,7 @@
 -INCS = -I. -I/usr/include ${GTKINC}
 -LIBS = -L/usr/lib -lc ${GTKLIB} -lgthread-2.0
 +INCS = ${GTKINC}
-+LIBS = ${PTHREAD_LIBS} ${GTKLIB}
++LIBS = -pthread ${GTKLIB}
  
  # flags
 -CPPFLAGS = -DVERSION=\"${VERSION}\"

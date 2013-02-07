@@ -33,7 +33,6 @@ PLIST_SUB=	LOGDIR=${LOGDIR}
 SUB_LIST=	LOGDIR=${LOGDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 .for f in src/defines.h examples/hydra.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
 	                  -e "s,%%LOGDIR%%,${LOGDIR},g" \

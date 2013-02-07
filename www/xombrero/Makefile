@@ -22,9 +22,7 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
-MAKE_ENV=	GTK_VERSION="gtk2" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV=	GTK_VERSION="gtk2"
 
 MAN1=		xombrero.1
 PORTEXAMPLES=	favorites playflash.sh xombrero.conf
