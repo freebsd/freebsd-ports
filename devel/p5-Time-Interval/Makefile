@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Time-Interval
-PORTVERSION=	1.231
+PORTVERSION=	1.232
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,10 +19,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Time::Interval.3
-
-post-patch:
-.for dotfile in ._Changes ._Interval.pm ._Interval.pod ._Makefile.PL ._README ._test.pl
-	${RM} -f ${WRKSRC}/${dotfile}
-.endfor
 
 .include <bsd.port.mk>
