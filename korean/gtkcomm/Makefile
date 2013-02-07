@@ -23,7 +23,7 @@ USE_GNOME=	glib20 gtk20
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-lc_r||; s|DATADIRNAME=lib|DATADIRNAME=share|g' \
+	    ${WRKSRC}/configure
 
 .include <bsd.port.mk>
