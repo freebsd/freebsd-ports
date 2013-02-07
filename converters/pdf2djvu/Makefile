@@ -20,7 +20,7 @@ LIB_DEPENDS=	poppler.18:${PORTSDIR}/graphics/poppler
 LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	LIBS=-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 
