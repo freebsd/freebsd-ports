@@ -36,7 +36,7 @@ DOCSRCDIR=	${WRKSRC}/doc
 DOC_FILES=	html/dl.html html/doc.html html/faq.html html/index.html
 DOC_FILES+=	txt/faq.txt txt/intro.txt txt/manual.txt
 
-CFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	-pthread
 
 OPTIONS=	IPV6	"IPv6 support"	on
 
