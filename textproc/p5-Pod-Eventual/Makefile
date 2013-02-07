@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Pod-Eventual
-# Date created:		27 December 2009
-# Whom:			Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Eventual
 PORTVERSION=	0.093330
@@ -14,12 +10,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read a POD document as a series of trivial events
 
-BUILD_DEPENDS=	p5-Mixin-Linewise>=0.001:${PORTSDIR}/devel/p5-Mixin-Linewise \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
-MAN3=	Pod::Eventual.3\
+BUILD_DEPENDS=	p5-Mixin-Linewise>=0.001:${PORTSDIR}/devel/p5-Mixin-Linewise
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Pod::Eventual.3 \
 		Pod::Eventual::Simple.3
 
 .include <bsd.port.mk>
