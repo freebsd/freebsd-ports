@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linrename
-PORTVERSION=	2.22.1
+PORTVERSION=	2.22.2
 CATEGORIES=	sysutils
 #MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}
 MASTER_SITES=	http://ftp.ntu.edu.tw/ftp/linux/%SUBDIR%/ \
