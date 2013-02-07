@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-String-Flogger
-# Date created:				03 December 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	String-Flogger
-PORTVERSION=	1.101242
+PORTVERSION=	1.101243
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
