@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.1.6
+PORTVERSION=	6.1.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Adaptive Communication Environment for C++
+COMMENT=	Adaptive Communication Environment for C++
 
 OPTIONS_DEFINE=	SSL TRIO X11 FLTK TK QT4
 OPTIONS_DEFAULT=SSL
