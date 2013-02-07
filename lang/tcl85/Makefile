@@ -70,10 +70,6 @@ PLIST_SUB+=		TZDATA="@comment "
 CONFIGURE_ARGS+=--without-tzdata
 .endif
 
-.if (${ARCH} == "ia64")
-BROKEN=	does not compile on ia64
-.endif
-
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
