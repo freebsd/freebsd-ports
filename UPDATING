@@ -75,7 +75,7 @@ you update your ports collection, before attempting any port upgrades.
         portmaster -w -r <port>
 
   If you use portupgrade:
-        portupgrade -fr <origin/port>
+        portupgrade -Ofr <origin/port>
 
   If you use pkgng with binary packages:
         pkg install -fR <origin/port>
