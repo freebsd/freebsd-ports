@@ -1,95 +1,93 @@
 bin/pd
+bin/pd-gui.tcl
 bin/pdreceive
 bin/pdsend
 include/m_pd.h
-lib/pd/Makefile.am
-lib/pd/README.txt
+include/pd/g_all_guis.h
+include/pd/g_canvas.h
+include/pd/m_imp.h
+include/pd/m_pd.h
+include/pd/s_stuff.h
+lib/pd/bin/pd
 lib/pd/bin/pd-watchdog
-lib/pd/bonk~/GNUmakefile.am
-lib/pd/bonk~/bonk~-help.pd
-lib/pd/bonk~/bonk~.c
-lib/pd/bonk~/bonk~.pd_linux
-lib/pd/bonk~/makefile
-lib/pd/bonk~/templates.txt
-lib/pd/choice/GNUmakefile.am
-lib/pd/choice/choice-help.pd
-lib/pd/choice/choice.c
-lib/pd/choice/choice.pd_linux
-lib/pd/choice/makefile
-lib/pd/complex-mod~-help.pd
-lib/pd/complex-mod~.pd
-lib/pd/doc
-lib/pd/expr-help.pd
-lib/pd/expr.pd_linux
-lib/pd/expr~/GNUmakefile.am
-lib/pd/expr~/LICENSE.txt
-lib/pd/expr~/README.txt
-lib/pd/expr~/expr.pd_linux
-lib/pd/expr~/expr~.pd_linux
-lib/pd/expr~/fexpr~.pd_linux
-lib/pd/expr~/fts_to_pd.h
-lib/pd/expr~/makefile
-lib/pd/expr~/vexp.c
-lib/pd/expr~/vexp.h
-lib/pd/expr~/vexp.pd_linux_o
-lib/pd/expr~/vexp_fun.c
-lib/pd/expr~/vexp_fun.pd_linux_o
-lib/pd/expr~/vexp_if.c
-lib/pd/expr~/vexp_if.pd_linux_o
-lib/pd/expr~.pd_linux
-lib/pd/fexpr~.pd_linux
-lib/pd/fiddle~/GNUmakefile.am
-lib/pd/fiddle~/fiddle~-help.pd
-lib/pd/fiddle~/fiddle~.c
-lib/pd/fiddle~/fiddle~.pd_linux
-lib/pd/fiddle~/makefile
-lib/pd/hilbert~-help.pd
-lib/pd/hilbert~.pd
-lib/pd/loop~/GNUmakefile.am
-lib/pd/loop~/loop~-help.pd
-lib/pd/loop~/loop~.c
-lib/pd/loop~/loop~.pd_linux
-lib/pd/loop~/makefile
-lib/pd/loop~/test-loop~.pd
-lib/pd/lrshift~/GNUmakefile.am
-lib/pd/lrshift~/lrshift~-help.pd
-lib/pd/lrshift~/lrshift~.c
-lib/pd/lrshift~/lrshift~.pd_linux
-lib/pd/lrshift~/makefile
-lib/pd/makefile.subdir
-lib/pd/pd~/GNUmakefile.am
-lib/pd/pd~/makefile
-lib/pd/pd~/notes.txt
-lib/pd/pd~/pdsched.c
-lib/pd/pd~/pdsched.pd_linux
-lib/pd/pd~/pd~-help.pd
-lib/pd/pd~/pd~-subprocess.pd
-lib/pd/pd~/pd~.c
-lib/pd/pd~/pd~.pd_linux
-lib/pd/pd~/z.pd
-lib/pd/pique/GNUmakefile.am
-lib/pd/pique/makefile
-lib/pd/pique/pique-help.pd
-lib/pd/pique/pique.c
-lib/pd/pique/pique.pd_linux
-lib/pd/rev1-final.pd
-lib/pd/rev1-stage.pd
-lib/pd/rev1~-help.pd
-lib/pd/rev1~.pd
-lib/pd/rev2~-help.pd
-lib/pd/rev2~.pd
-lib/pd/rev3~-help.pd
-lib/pd/rev3~.pd
-lib/pd/sigmund~/GNUmakefile.am
-lib/pd/sigmund~/makefile
-lib/pd/sigmund~/sigmund~-help.pd
-lib/pd/sigmund~/sigmund~.c
-lib/pd/sigmund~/sigmund~.pd_linux
-lib/pd/stdout/GNUmakefile.am
-lib/pd/stdout/makefile
-lib/pd/stdout/stdout-help.pd
-lib/pd/stdout/stdout.c
-lib/pd/stdout/stdout.pd_linux
+%%PORTDOCS%%lib/pd/doc
+lib/pd/extra/bonk~/bonk~-help.pd
+lib/pd/extra/bonk~/bonk~.la
+lib/pd/extra/bonk~/bonk~.pd_linux
+lib/pd/extra/bonk~/templates.txt
+lib/pd/extra/choice/choice-help.pd
+lib/pd/extra/choice/choice.la
+lib/pd/extra/choice/choice.pd_linux
+lib/pd/extra/complex-mod~-help.pd
+lib/pd/extra/complex-mod~.pd
+lib/pd/extra/expr-help.pd
+lib/pd/extra/expr.pd_linux
+lib/pd/extra/expr~/LICENSE.txt
+lib/pd/extra/expr~/README.txt
+lib/pd/extra/expr~/expr-help.pd
+lib/pd/extra/expr~/expr.pd_linux
+lib/pd/extra/expr~/expr~.la
+lib/pd/extra/expr~/expr~.pd_linux
+lib/pd/extra/expr~/fexpr~.pd_linux
+lib/pd/extra/expr~-help.pd
+lib/pd/extra/expr~.pd_linux
+lib/pd/extra/fexpr~-help.pd
+lib/pd/extra/fexpr~.pd_linux
+lib/pd/extra/fiddle~/fiddle~-help.pd
+lib/pd/extra/fiddle~/fiddle~.la
+lib/pd/extra/fiddle~/fiddle~.pd_linux
+lib/pd/extra/hilbert~-help.pd
+lib/pd/extra/hilbert~.pd
+lib/pd/extra/loop~/loop~-help.pd
+lib/pd/extra/loop~/loop~.la
+lib/pd/extra/loop~/loop~.pd_linux
+lib/pd/extra/loop~/test-loop~.pd
+lib/pd/extra/lrshift~/lrshift~-help.pd
+lib/pd/extra/lrshift~/lrshift~.la
+lib/pd/extra/lrshift~/lrshift~.pd_linux
+lib/pd/extra/pd~/pdsched.la
+lib/pd/extra/pd~/pdsched.pd_linux
+lib/pd/extra/pd~/pd~-help.pd
+lib/pd/extra/pd~/pd~-subprocess.pd
+lib/pd/extra/pd~/pd~.la
+lib/pd/extra/pd~/pd~.pd_linux
+lib/pd/extra/pique/pique-help.pd
+lib/pd/extra/pique/pique.la
+lib/pd/extra/pique/pique.pd_linux
+lib/pd/extra/rev1-final.pd
+lib/pd/extra/rev1-stage.pd
+lib/pd/extra/rev1~-help.pd
+lib/pd/extra/rev1~.pd
+lib/pd/extra/rev2~-help.pd
+lib/pd/extra/rev2~.pd
+lib/pd/extra/rev3~-help.pd
+lib/pd/extra/rev3~.pd
+lib/pd/extra/sigmund~/sigmund~-help.pd
+lib/pd/extra/sigmund~/sigmund~.la
+lib/pd/extra/sigmund~/sigmund~.pd_linux
+lib/pd/extra/stdout/stdout-help.pd
+lib/pd/extra/stdout/stdout.la
+lib/pd/extra/stdout/stdout.pd_linux
+lib/pd/po/af.msg
+lib/pd/po/az.msg
+lib/pd/po/be.msg
+lib/pd/po/bg.msg
+lib/pd/po/de.msg
+lib/pd/po/el.msg
+lib/pd/po/en_ca.msg
+lib/pd/po/eu.msg
+lib/pd/po/fr.msg
+lib/pd/po/gu.msg
+lib/pd/po/he.msg
+lib/pd/po/hi.msg
+lib/pd/po/hu.msg
+lib/pd/po/it.msg
+lib/pd/po/pa.msg
+lib/pd/po/pt_br.msg
+lib/pd/po/pt_pt.msg
+lib/pd/po/sq.msg
+lib/pd/po/sv.msg
+lib/pd/po/vi.msg
 lib/pd/tcl/AppMain.tcl
 lib/pd/tcl/apple_events.tcl
 lib/pd/tcl/dialog_array.tcl
@@ -107,20 +105,22 @@ lib/pd/tcl/dialog_startup.tcl
 lib/pd/tcl/helpbrowser.tcl
 lib/pd/tcl/opt_parser.tcl
 lib/pd/tcl/pd-gui.tcl
+lib/pd/tcl/pd.ico
 lib/pd/tcl/pd_bindings.tcl
 lib/pd/tcl/pd_connect.tcl
 lib/pd/tcl/pd_guiprefs.tcl
 lib/pd/tcl/pd_menucommands.tcl
 lib/pd/tcl/pd_menus.tcl
-lib/pd/tcl/pdtk_array.tcl
 lib/pd/tcl/pdtk_canvas.tcl
 lib/pd/tcl/pdtk_text.tcl
+lib/pd/tcl/pdtk_textwindow.tcl
 lib/pd/tcl/pdwindow.tcl
 lib/pd/tcl/pkgIndex.tcl
 lib/pd/tcl/pkg_mkIndex.tcl
 lib/pd/tcl/scrollbox.tcl
 lib/pd/tcl/scrollboxwindow.tcl
 lib/pd/tcl/wheredoesthisgo.tcl
+libdata/pkgconfig/pd.pc
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/1.introduction.txt
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/fig1.1.png
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/fig1.2.jpg
@@ -392,6 +392,7 @@ lib/pd/tcl/wheredoesthisgo.tcl
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/graph-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/hdial-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/help-intro.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/hradio-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/hip~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/hslider-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/int-help.pd
@@ -484,6 +485,7 @@ lib/pd/tcl/wheredoesthisgo.tcl
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/vdial-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/vd~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/vline~-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/vradio-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/vslider-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/vu-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/wrap~-help.pd
@@ -525,7 +527,6 @@ lib/pd/tcl/wheredoesthisgo.tcl
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/load-meter.pd
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/testtone.pd
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/testtone16.pd
-%%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/z.pd
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/sound/bell.aiff
@@ -544,15 +545,18 @@ lib/pd/tcl/wheredoesthisgo.tcl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/1.manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pd/tcl
-@dirrm lib/pd/stdout
-@dirrm lib/pd/sigmund~
-@dirrm lib/pd/pique
-@dirrm lib/pd/pd~
-@dirrm lib/pd/lrshift~
-@dirrm lib/pd/loop~
-@dirrm lib/pd/fiddle~
-@dirrm lib/pd/expr~
-@dirrm lib/pd/choice
-@dirrm lib/pd/bonk~
+@dirrm lib/pd/po
+@dirrm lib/pd/extra/stdout
+@dirrm lib/pd/extra/sigmund~
+@dirrm lib/pd/extra/pique
+@dirrm lib/pd/extra/pd~
+@dirrm lib/pd/extra/lrshift~
+@dirrm lib/pd/extra/loop~
+@dirrm lib/pd/extra/fiddle~
+@dirrm lib/pd/extra/expr~
+@dirrm lib/pd/extra/choice
+@dirrm lib/pd/extra/bonk~
+@dirrm lib/pd/extra
 @dirrm lib/pd/bin
 @dirrm lib/pd
+@dirrm include/pd

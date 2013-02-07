@@ -2,33 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-DISTVERSION=	0.43-4
+DISTVERSION=	0.44-1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
-MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
+MASTER_SITES=	SF/pure-data/pure-data/${PORTVERSION} \
+		http://www-crca.ucsd.edu/~msp/Software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 LICENSE=	BSD
 
-OPTIONS_DEFINE=	ALSA JACK DOCS
+OPTIONS_DEFINE=	ALSA FFTW JACK DOCS
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S;.src;/src;}
-PATCH_WRKSRC=	${WRKSRC}/..
+WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USE_TCL_BUILD=	yes
-USE_TK_BUILD=	yes
 USE_TK_WRAPPER=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-MAKEFILE=	makefile
-MAKE_JOBS_UNSAFE=	yes
+USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
+ACLOCAL_ARGS=	-I m4/generated -I m4
+LIBTOOLIZE_ARGS=--install --force
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+USE_PKGCONFIG=	build
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
 
-CPPFLAGS+=	-I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.options.mk>
 
@@ -37,6 +40,14 @@ LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=	--enable-alsa
 .else
 CONFIGURE_ARGS+=	--disable-alsa
+.endif
+
+.if ${PORT_OPTIONS:MFFTW}
+BUILD_DEPENDS+=	fftw3>0:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
+CONFIGURE_ARGS+=	--enable-fftw
+.else
+CONFIGURE_ARGS+=	--disable-fftw
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
@@ -51,59 +62,56 @@ post-patch:
 		's|__FreeBSD_kernel__|__FreeBSD__|g ; \
 		 s|<alloca\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|CPPFLAGS="-D|CPPFLAGS="$$CPPFLAGS -D|g ; \
-		 s|LDFLAGS="-Wl,|LDFLAGS="$$LDFLAGS -Wl,|g ; \
-		 s|-ltcl8[0-9]|-ltcl${USE_TCL}|g ; \
-		 s|-ltk8[0-9]|-ltk${USE_TK}|g ; \
-		 s|s_midi_oss.c ||g ; \
-		 /SYSSRC/s|s_midi_alsa.c||g ; \
-		 /uname/s|Linux|${OPSYS}|g' ${WRKSRC}/configure
+		's|kFreeBSD)|kFreeBSD\|*freebsd*)| ; \
+		 s|portaudio=yes|portaudio=no| ; \
+		 s|-O6|| ; \
+		 s|fftw,|fftw3f,| ; \
+		 s|fftw_one,|fftwf_execute,| ; \
+		 s|fftw"|fftw3f"| ; \
+		 s|-lpthread ||' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
-		's|$$(WARN_CFLAGS)||g ; \
-		 s|$$(MORECFLAGS)||g ; \
-		 s|x_midi.c ||g ; \
-		 s|s_midi.c ||g ; \
-		 s|INCLUDE) -o|INCLUDE) $$(LDFLAGS) -o|g' ${WRKSRC}/makefile.in
+		'/^pkgconfigdir/s|=.*|= $$(prefix)/libdata/pkgconfig| ; \
+		 /^libpddir/s|=.*|= $$(pkglibdir)| ; \
+		 s|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e \
+		'/^pd_LDADD/s| =.*| = $$(LIBM)| ; \
+		 s| x_midi.c|| ; \
+		 s| s_midi.c|| ; \
+		 s| s_midi_alsa.c|| ; \
+		 s| s_midi_oss.c||g' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e \
 		's|PD_BASEDIR/LICENSE|${DOCSDIR}/LICENSE|g ; \
 		 s|PD_BASEDIR/doc/1|${DOCSDIR}/1|g' \
-			${WRKSRC}/../doc/1.manual/1.introduction.txt
+			${WRKSRC}/doc/1.manual/1.introduction.txt
 	@${REINPLACE_CMD} -e \
 		's|-O2 | | ; \
-		 s|-lc ||g' ${WRKSRC}/../extra/makefile.subdir
+		 s|-lc ||g' ${WRKSRC}/extra/makefile.subdir
 	@${REINPLACE_CMD} -e \
 		's|-O2 |$$(CFLAGS) | ; \
 		 s|-g ||g ; \
-		 s|-lc ||g' ${WRKSRC}/../extra/expr~/makefile
+		 s|-lc ||g' ${WRKSRC}/extra/expr~/makefile
+
+pre-configure:
+	@(cd ${WRKSRC}/portaudio \
+		&& ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+		&& ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} \
+		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF})
 
 do-install:
-.for file in pd pdreceive pdsend
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/${file} ${PREFIX}/bin
+.for i in src man tcl po extra
+	@(cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/m_pd.h ${PREFIX}/include
-.for file in pd pdreceive pdsend
-	${INSTALL_MAN} ${WRKSRC}/../man/${file}.1 ${MANPREFIX}/man/man1
-.endfor
-	@${MKDIR} ${PREFIX}/lib/pd
-	@(${TAR} -C ${WRKSRC}/../extra --exclude "*.bak" --exclude "*.orig" \
-		-cf - . | ${TAR} -C ${PREFIX}/lib/pd --unlink -xf -)
-	@${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/pd
-	@${FIND} ${PREFIX}/lib/pd -type d -exec ${CHMOD} 755 {} \;
-	@${FIND} ${PREFIX}/lib/pd -type f -exec ${CHMOD} ${LIBMODE} {} \;
-	@${MKDIR} ${PREFIX}/lib/pd/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/pd-watchdog ${PREFIX}/lib/pd/bin
-	@${MKDIR} ${PREFIX}/lib/pd/tcl
-	${INSTALL_DATA} ${WRKSRC}/../tcl/*.tcl ${PREFIX}/lib/pd/tcl
+	(cd ${WRKSRC} && ${INSTALL_DATA} pd.pc ${PREFIX}/libdata/pkgconfig)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@(${TAR} -C ${WRKSRC}/../doc --exclude "*.bak" --exclude "*.orig" \
+	@(${TAR} -C ${WRKSRC}/doc --exclude "*.bak" --exclude "*.orig" \
 		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@${FIND} ${DOCSDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .for i in LICENSE.txt README.txt
-	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
 .endfor
 	@${LN} -sf ${DOCSDIR} ${PREFIX}/lib/pd/doc
 .endif
