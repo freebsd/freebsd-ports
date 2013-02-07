@@ -1,32 +1,44 @@
-# New ports collection makefile for:	jzip
-# Date created:				7 May 1998
-# Whom:					Matthew Hunt <mph@FreeBSD.org>
-#
+# Created by: Matthew Hunt <mph@FreeBSD.org>
 # $FreeBSD$
-#
 
-PORTNAME=		jzip
-PORTVERSION=		2.0.1g
-CATEGORIES=		games
-MASTER_SITES=   	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mph
-DISTNAME=		jzip201g
+PORTNAME=	jzip
+PORTVERSION=	2.0.1g
+CATEGORIES=	games
+MASTER_SITES=	LOCAL/mph
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=	A text-mode Infocom game interpreter
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Text-mode Infocom game interpreter
 
-USE_ZIP=		yes
+NO_WRKSUBDIR=	yes
 
-NO_WRKSUBDIR=		yes
+USE_ZIP=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=			jzip.1
+CPPFLAGS+=	-DPOSIX -DHAVE_GETOPT
+
+MAN1=		jzip.1
+PORTDOCS=	Jzip.doc
+PLIST_FILES=	bin/jzip
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CC =|CC ?=| ; \
+		 s|^CFLAGS =|CFLAGS +=| ; \
+		 s|-DPOSIX|$${CPPFLAGS}| ; \
+		 s|^LDFLAGS|#LDFLAGS| ; \
+		 s|-lcurses|-ltermcap|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^void main|int main|' ${WRKSRC}/jzexe.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jzip ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/jzip.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jzip
-	${INSTALL_DATA} ${WRKSRC}/Jzip.doc ${PREFIX}/share/doc/jzip
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} jzip ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} jzip.1 ${MANPREFIX}/man/man1)
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} Jzip.doc ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
