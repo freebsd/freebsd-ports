@@ -1,12 +1,8 @@
-# New ports collection makefile for:	CGI::Application::Plugin::DBH
-# Date created:				02 December 2005
-# Whom:					Espen Tagestad <espen@tagestad.no>
-#
+# Created by: Espen Tagestad <espen@tagestad.no>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-DBH
-PORTVERSION=	4.00
+PORTVERSION=	4.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
