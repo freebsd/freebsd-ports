@@ -632,6 +632,7 @@
     SUBDIR += p5-Net-OpenID-Consumer
     SUBDIR += p5-Net-OpenSSH
     SUBDIR += p5-Net-OpenSSH-Parallel
+    SUBDIR += p5-Net-OpenStack-Attack
     SUBDIR += p5-Net-Packet
     SUBDIR += p5-Net-Packet-Target
     SUBDIR += p5-Net-ParseWhois
