@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  dhcp
-# Date created:			  21 November 1995
-# Whom:				  Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
-#
+# Created by: Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	wide-dhcp
 PORTVERSION=	1.4.0.7
@@ -13,11 +8,11 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/dhcp/wide/
 DISTNAME=	dhcp-${PORTVERSION:R}p${PORTVERSION:E}
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/Copyright
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Host Configuration Protocol, WIDE Implementation
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/Copyright
 
 MAKE_ENV=	OSTYPE="${OPSYS}"
 MAKE_JOBS_SAFE=	yes
@@ -26,6 +21,8 @@ MAN5=		dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
 MAN8=		dhcpc.8 dhcps.8 relay.8 dhcpm.8
 DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
 EXAMPLES=	dhcpdb.pool dhcpdb.relay dhcpdb.server
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for dir in client relay server tools
@@ -39,11 +36,11 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/wide-dhcps.sh.sample ${PREFIX}/etc/rc.d
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/db_sample && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .endif
