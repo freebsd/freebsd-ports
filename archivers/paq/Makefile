@@ -69,7 +69,7 @@ PORTDATA=	${WDATA} ${DDATA} zpsfx
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
-PTHREAD_CFLAGS+=	-fopenmp
+OPENMP_CFLAGS+=	-fopenmp
 USE_GCC=		any
 .endif
 
@@ -98,8 +98,8 @@ do-build:
 .endif
 	@cd ${WRKSRC}; \
 	${CXX} ${CXXFLAGS} -o wbpe wbpe.cpp; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${ZPAQFLAGS} \
-	-o zpaq zpaq.cpp libzpaq.cpp divsufsort.c ${LDFLAGS} ${PTHREAD_LIBS}; \
+	${CXX} ${CXXFLAGS} ${OPENMP_CFLAGS} ${ZPAQFLAGS} \
+	-o zpaq zpaq.cpp libzpaq.cpp divsufsort.c ${LDFLAGS} -pthread; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} \
 	-o zpaqd zpaqd.cpp libzpaq.cpp ${LDFLAGS}; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpipe zpipe.cpp libzpaq.cpp

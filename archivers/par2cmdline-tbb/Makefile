@@ -22,7 +22,7 @@ LIB_DEPENDS=	tbb:${PORTSDIR}/devel/tbb
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_AUTOTOOLS=	aclocal automake autoconf
 USE_GCC=	4.2+
 

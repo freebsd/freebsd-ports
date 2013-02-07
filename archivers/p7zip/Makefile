@@ -61,12 +61,11 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	${SED} -e 's!-O!${CFLAGS} ${PTHREAD_CFLAGS}!' \
+	${SED} -e 's!-O!${CFLAGS}!' \
 	       -e 's!g\+\+!${CXX}!' \
 	       -e 's!gcc!${CC}!' \
 	       -e 's/-D_LARGEFILE_SOURCE//' \
 	       -e 's/-D_FILE_OFFSET_BITS=64//' \
-	       -e 's/-lpthread/${PTHREAD_LIBS}/' \
 	       ${WRKSRC}/makefile.freebsd6 > ${WRKSRC}/makefile.machine
 	${REINPLACE_CMD} -e 's|{DEST_SHARE_DOC}|${DOCSDIR}|' \
 		${WRKSRC}/man1/*
