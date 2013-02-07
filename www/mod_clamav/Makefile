@@ -36,10 +36,9 @@ LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--libdir=${PREFIX}/lib/apache2
 CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib \
-		${PTHREAD_LIBS}
+		-pthread
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,REG_EXTENDED,AP_REG_EXTENDED,' \

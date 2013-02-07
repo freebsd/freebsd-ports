@@ -24,7 +24,6 @@ CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${OPENSSLINC} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 MAKEFILE=	GNUmakefile
-MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 bin=		dl
 sbin=		gatling

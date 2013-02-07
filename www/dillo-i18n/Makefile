@@ -81,8 +81,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|dillorc|dillorc.sample|g' ${WRKSRC}/Makefile.in
 	@${CP} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
 

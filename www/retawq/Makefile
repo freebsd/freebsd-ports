@@ -28,8 +28,8 @@ PLIST_FILES=	bin/retawq \
 		share/locale/pt_BR/LC_MESSAGES/retawq.mo
 PORTDOCS=	*
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls

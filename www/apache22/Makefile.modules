@@ -137,8 +137,7 @@ IGNORE=	AUTH_BASIC need at last one AUTHZ provider
 .endif
 
 .if defined(APR_HAS_THREADS)
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-pthread
 .else
 .  if exists(${APR_CONFIG}) && ${PORT_OPTIONS:MMEM_CACHE}
 IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support

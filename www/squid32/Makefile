@@ -338,8 +338,7 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
 # e.g. SQUID_CONFIGURE_ARGS=--with-aufs-threads=N
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-pthread
 .else
 CONFIGURE_ARGS+=	--without-pthreads
 .endif

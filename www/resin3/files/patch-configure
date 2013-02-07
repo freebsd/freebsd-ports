@@ -1,6 +1,6 @@
---- ./configure.orig	2012-03-06 10:02:43.000000000 -0800
-+++ ./configure	2012-03-06 10:05:45.000000000 -0800
-@@ -7030,11 +7030,6 @@
+--- configure.orig	2012-11-08 21:22:27.000000000 +0100
++++ configure	2013-02-07 12:28:12.000000000 +0100
+@@ -7585,11 +7585,6 @@
  
  
  
@@ -12,7 +12,7 @@
  
  
  
-@@ -10610,29 +10605,9 @@
+@@ -11464,29 +11459,9 @@
  # Only expand once:
  
  
@@ -45,12 +45,9 @@
  
  
  
-@@ -11415,28 +11390,8 @@
- 	;;
- 
+@@ -12271,26 +12246,6 @@
    *freebsd*)
--	PROXY_LIBS='-lpthread'
-+	PROXY_LIBS="${PTHREAD_LIBS}"
+ 	PROXY_LIBS='-lpthread'
          jni_os=freebsd
 -
 -	tmp=`ldd $JAVA_HOME/bin/java | sed 's/.*=>//' | grep -c libc_r`
