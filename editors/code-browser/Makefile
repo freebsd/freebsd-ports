@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	code-browser
-# Date created:			Jan 25, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	code-browser
-PORTVERSION=	3.18
-PORTREVISION=	1
+PORTVERSION=	4.6
 CATEGORIES=	editors
 MASTER_SITES=	http://tibleiz.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Folding text editor
 
-PORTSCOUT=	skipv:3.19 # Windows-only patch
+BUILD_DEPENDS=	copper-llvm:${PORTSDIR}/lang/copper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -24,25 +18,19 @@ USE_GNOME=	gtk20
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-DATADIR=	${PREFIX}/share/${PORTNAME}-3
+DATADIR=	${PREFIX}/share/${PORTNAME}-4
 
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=		i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	does not build on ${ARCH}; signal 11 errors during build
 
-.if ${ARCH} != "i386"
-MAKE_ARGS+=	MODE=64
-.endif
-
 post-patch:
-.for file in Makefile zinc/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g ; \
 		 s|^CC|#CC|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
-		 s| make| $$(MAKE)|g ; \
-		 s|@$$(|$$(|g' ${WRKSRC}/${file}
-.endfor
+		 s|x86_64|amd64|g ; \
+		 s|@$$(|$$(|g' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
