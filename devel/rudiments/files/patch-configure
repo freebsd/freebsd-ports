@@ -1,7 +1,17 @@
 --- configure.orig	2012-02-17 13:38:13.000000000 +0900
 +++ configure	2012-04-13 00:56:01.000000000 +0900
-@@ -16021,8 +16021,8 @@
- then
+@@ -14781,6 +14781,9 @@
+ 	*haiku* )
+ 		WERROR=""
+ 		;;
++	freebsd* )
++		WERROR=""
++		;;
+ 	*)
+ 		;;
+ esac
+@@ -16334,8 +16337,8 @@
+ 
  
  	HAVE_PTHREAD=""
 -	PTHREADINCLUDES=""
@@ -11,16 +21,16 @@
  
  	if ( test "$cross_compiling" = "yes" )
  	then
-@@ -16041,7 +16041,7 @@
+@@ -16354,7 +16357,7 @@
  
  	else
  
--		for i in "pthread" "c_r" "thread" "pthreads"
-+		for i in "thread" "pthreads"
+-				for i in "pthread" "c_r" "thread" "pthreads" "gthreads" ""
++				for i in "thread" "pthreads" "gthreads" ""
  		do
- 
- 
-@@ -16058,9 +16058,6 @@
+ 			if ( test -n "$i" )
+ 			then
+@@ -16388,9 +16391,6 @@
  STATIC=""
  HEADERSANDLIBSPATH=""
  
@@ -30,7 +40,7 @@
  eval "PTHREADSTATIC=\"\""
  if ( test -n "" )
  then
-@@ -16528,9 +16525,6 @@
+@@ -16605,9 +16605,6 @@
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib64$||g" -e "s|-L/lib64$||g" -e "s|-L/usr/lib64 ||g" -e "s|-L/lib64 ||g"`
  
