@@ -24,7 +24,7 @@ LICENSE=	GPLv2
 USE_XORG=	xmu xt
 USE_GL=		glut
 
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CFLAGS+=	-I${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	everything
 MAKE_JOBS_UNSAFE=	yes
@@ -40,7 +40,7 @@ PLIST_FILES=	${EXEC:T:S/^/bin\//}
 post-patch:
 	@(${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -E -e "s|^CC = .*|CC = ${CC} ${CFLAGS}|g" \
-			-e "s|-lglut|-lglut ${PTHREAD_LIBS}|g" \
+			-e "s|-lglut|-lglut -pthread|g" \
 			-e "s|/usr/local|${LOCALBASE}|g" \
 			-e "s|/usr/X/|${LOCALBASE}/|g" \
 			-e "s|/usr/X11/|${LOCALBASE}/|g" \

@@ -27,7 +27,7 @@
  
  ccx_2.4: $(OCCXMAIN) ccx_2.4.a  $(LIBS)
 -	./date.pl; $(CC) $(CFLAGS) -c ccx_2.4.c; $(FC) -Wall -O -o $@ $(OCCXMAIN) ccx_2.4.a  -lpthread  $(LIBS)
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.4.c; $(FC) -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.4.a %%PTHREAD_LIBS%%  $(LIBS)
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.4.c; $(FC) -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.4.a -lpthread  $(LIBS)
  
  ccx_2.4.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?

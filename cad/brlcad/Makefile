@@ -51,7 +51,7 @@ OPTIONS_DEFAULT=	OPTIMIZATION
 .include "${.CURDIR}/Makefile.man"
 .include <bsd.port.pre.mk>
 
-EXTRA_LIBS=	${PTHREAD_LIBS}
+EXTRA_LIBS=	-pthread
 
 .if ${PORT_OPTIONS:MOPTIMIZATION}
 CMAKE_BUILD_TYPE=Release
