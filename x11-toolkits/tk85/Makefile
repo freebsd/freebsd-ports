@@ -67,8 +67,6 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-MAN1=	wish${TCL_VER}.1
-
 .if ${PORT_OPTIONS:MDEMOS}
 INSTALL_TARGET+=	install install-demos
 PLIST_SUB+=	DEMOS=""
