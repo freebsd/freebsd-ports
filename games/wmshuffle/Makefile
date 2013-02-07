@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmshuffle
-# Date created:			15 May 2002
-# Whom:				Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmshuffle
 PORTVERSION=	0.6
@@ -13,10 +9,19 @@ MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
 		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockable Shuffle game for WindowMaker and AfterStep
+COMMENT=	Dockable Shuffle game for WindowMaker and AfterStep
 
-USE_GMAKE=	yes
 USE_XORG=	xpm
+USE_GMAKE=	yes
+
+PLIST_FILES=	bin/wmshuffle \
+		%%DATADIR%%/skin-feiticeira.xpm \
+		%%DATADIR%%/skin-lucyenne.xpm
+PLIST_DIRS=	%%DATADIR%%
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^void .*main|int main|' ${WRKSRC}/wmshuffle.c
 
 post-install:
 	@${MKDIR} ${DATADIR}
