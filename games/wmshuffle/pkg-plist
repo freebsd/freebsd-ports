@@ -1,4 +1,0 @@
-bin/wmshuffle
-%%DATADIR%%/skin-feiticeira.xpm
-%%DATADIR%%/skin-lucyenne.xpm
-@dirrm share/wmshuffle
