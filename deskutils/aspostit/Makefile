@@ -1,32 +1,32 @@
-# New ports collection makefile for:   ASPostIt
-# Date created:        2 January 1999
-# Whom:                Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aspostit
 PORTVERSION=	1.3
 PORTREVISION=	6
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
-MASTER_SITE_SUBDIR=	apps/aspostit
+MASTER_SITES=	AFTERSTEP/apps/aspostit
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An AfterStep dockable version of XPostIt
+COMMENT=	AfterStep dockable version of XPostIt
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LICENSE=	GPLv2 # (or later)
+
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm xaw xext x11
 USE_GMAKE=	yes
-
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		aspostit.1
 PLIST_FILES=	bin/aspostit
 
+post-extract:
+	@${LN} -sf aspostit.man ${WRKSRC}/aspostit.1
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/aspostit ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/aspostit.man ${PREFIX}/man/man1/aspostit.1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} aspostit ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} aspostit.1 ${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>
