@@ -15,8 +15,6 @@ DISTFILES=	lposix.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A POSIX layer for Lua
 
-BROKEN=		does not build
-
 USE_LUA?=	5.1
 WRKSRC=		${WRKDIR}/posix
 
