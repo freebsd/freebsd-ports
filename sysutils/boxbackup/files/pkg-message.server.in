@@ -1,0 +1,8 @@
+
+To run bbstored at startup, add bbstored_enable="YES" to /etc/rc.conf
+Please see http://www.boxbackup.org/server.html for server configuration
+options
+
+The default location of configuration files changed from %%PREFIX%%/etc/box to
+%%PREFIX%%/etc/boxbackup, if you are upgrading then run 
+  mv %%PREFIX%%/etc/box %%PREFIX%%/etc/boxbackup
