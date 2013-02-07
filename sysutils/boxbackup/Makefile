@@ -3,7 +3,7 @@
 
 PORTNAME=	boxbackup
 PORTVERSION=	0.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
@@ -89,7 +89,8 @@ post-patch:
 	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
 .endif
 .if !defined(WITHOUT_SERVER)
-	@${CAT} ${FILESDIR}/pkg-message.server >> ${PKGMESSAGE}
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+	  ${FILESDIR}/pkg-message.server.in >> ${PKGMESSAGE}
 .endif
 
 post-configure:
@@ -97,12 +98,12 @@ post-configure:
 
 post-install:
 .if !defined(WITHOUT_CLIENT)
-	@${MKDIR} -m 0700 ${PREFIX}/etc/box/bbackupd
+	@${MKDIR} -m 0700 ${PREFIX}/etc/boxbackup/bbackupd
 	@${MKDIR} ${PREFIX}/etc/periodic/monthly
 	${INSTALL_SCRIPT} ${WRKDIR}/999.boxbackup ${PREFIX}/etc/periodic/monthly
 .endif
 .if !defined(WITHOUT_SERVER)
-	@${MKDIR} -m 0700 ${PREFIX}/etc/box/bbstored
+	@${MKDIR} -m 0700 ${PREFIX}/etc/boxbackup/bbstored
 .endif
 	@${CAT} ${PKGMESSAGE}
 

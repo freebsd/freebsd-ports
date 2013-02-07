@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130206:
+  AFFECTS: users of sysutils/boxbackup
+  AUTHOR: bdrewery@FreeBSD.org
+
+  The default location of the configuration files changed from
+  /usr/local/etc/box to /usr/local/etc/boxbackup. Move your
+  configuration after upgrading:
+
+     mv /usr/local/etc/box /usr/local/etc/boxbackup
+
+20130206:
   AFFECTS: users of x11/wbar
   AUTHOR: nivit@FreeBSD.org
 

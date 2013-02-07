@@ -7,11 +7,11 @@
 %%SERVER%%sbin/bbstored-certs
 %%SERVER%%sbin/bbstored-config
 %%SERVER%%sbin/raidfile-config
-%%CLIENT%%@exec mkdir -p -m 0700 %D/etc/box/bbackupd
-%%SERVER%%@exec mkdir -p -m 0700 %D/etc/box/bbstored
-%%CLIENT%%@dirrmtry etc/box/bbackupd
-%%SERVER%%@dirrmtry etc/box/bbstored
+%%CLIENT%%@exec mkdir -p -m 0700 %D/etc/boxbackup/bbackupd
+%%SERVER%%@exec mkdir -p -m 0700 %D/etc/boxbackup/bbstored
+%%CLIENT%%@dirrmtry etc/boxbackup/bbackupd
+%%SERVER%%@dirrmtry etc/boxbackup/bbstored
 etc/periodic/monthly/999.boxbackup
 @dirrmtry etc/periodic/monthly
 @dirrmtry etc/periodic
-@dirrmtry etc/box
+@dirrmtry etc/boxbackup
