@@ -40,6 +40,7 @@
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
+    SUBDIR += copper
     SUBDIR += cparser
     SUBDIR += csharp-mode.el
     SUBDIR += cython
