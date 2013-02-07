@@ -25,8 +25,6 @@ USE_RC_SUBR=	dnsflood
 PORTDOCS=	README
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/makefiles/Makefile-FreeBSD
 	@${LN} -sf ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
 
 do-install:

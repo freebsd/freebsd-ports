@@ -18,8 +18,8 @@ LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns \
 		unbound:${PORTSDIR}/dns/unbound
 
 GNU_CONFIGURE=	yes
-CFLAGS=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS=		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 MAN8=		autotrust.8
 
