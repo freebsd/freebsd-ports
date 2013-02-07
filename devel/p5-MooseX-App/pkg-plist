@@ -41,8 +41,6 @@
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Version
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Typo
-@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta
