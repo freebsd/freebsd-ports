@@ -21,8 +21,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER?=	12.13
-OPERA_BUILD?=	1734
+OPERA_VER?=	12.14
+OPERA_BUILD?=	1738
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
