@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility C++ class library for daemons, clients, servers, and more
+COMMENT=	C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
