@@ -62,10 +62,11 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--enable-production=yes
 CONFIGURE_ENV=	ARCH=${ARCH} LD=${CXX}
 CPPFLAGS+=	${CXXFLAGS} ${GCC4WA} -I${LOCALBASE}/include	\
-		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
+		-DUSE_INTERP_RESULT
 # We strip the libs
 MAKE_ENV=	INSTALL_STRIP_FLAG=-s OCC_BUILDDIR="${PATCH_WRKSRC}"	\
-		OCC_INSTALLDIR="${OCCROOT}" PTHREAD_LIBS="${PTHREAD_LIBS}" LD=${CXX}
+		OCC_INSTALLDIR="${OCCROOT}" LD=${CXX}
 USE_LDCONFIG=	yes
 
 STL_COMPILER?=	gcc
@@ -140,9 +141,6 @@ pre-configure:
 		${WRKSRC}/src/WOKBuilderDef/CMPLRS.edl	\
 		${WRKSRC}/src/WOKBuilderDef/LDEXE.edl	\
 		${WRKSRC}/src/WOKBuilderDef/LDSHR.edl
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
-		${WRKSRC}/${CONFIGURE_SCRIPT}		\
-		${WRKSRC}/src/WOKBuilderDef/CSF.edl
 
 pre-install:
 	${MKDIR} ${CASROOT}

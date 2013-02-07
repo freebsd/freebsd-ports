@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-gl-include=${LOCALBASE}/include	\
 		--with-qt-dir=${QTDIR}			\
 		--enable-qt-mt				\
 		--with-cascade-dir=${CASROOT}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-pthread
 
 WRKSRC=		${WRKDIR}/opencascade-${PORTVERSION}/samples/tutorial
 CONFIGURE_LOG=	adm/${OPSYS}/config.log
@@ -50,8 +50,7 @@ PLIST_SUB=	INSTDIR=${LINSTDIR}
 
 pre-configure:
 	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
-		-e 's|/usr/X11R6|${LOCALBASE}|'			\
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:

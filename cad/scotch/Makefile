@@ -55,7 +55,7 @@ PKGMESSAGE=	${WRKSRC}/LICENSE_en.txt
 LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
 
 ALL_TARGET+=	ptscotch
-MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin
 
 INCS+=		ptscotch.h ptscotchf.h
 LIBS+=		libptesmumps.a libptscotch.a libptscotcherr.a libptscotcherrexit.a	\
@@ -83,7 +83,7 @@ pre-everything::
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's/-lthread/$(PTHREAD_LIBS)/;s/-lpthread/$(PTHREAD_LIBS)/'	\
+	${REINPLACE_CMD} -e 's/-lthread/-pthread/;s/-lpthread/-pthread/'	\
 		-e 's/CLIBFLAGS	=/CLIBFLAGS	= -fPIC/'	\
 		${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd
 	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd	\

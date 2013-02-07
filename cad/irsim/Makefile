@@ -62,7 +62,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|FreeBSD-\*|*-*-freebsd*| ; \
 		 s|wish |${WISH:T} | ; \
-		 s|-lpthread|${PTHREAD_LIBS}| ; \
 		 s|"-fpic"|"-fPIC"| ; \
 		 /-l\/usr\/X11R6\/include/d' ${CONFIGURE_WRKSRC}/configure
 

@@ -40,9 +40,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}| ; \
-		 s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}| ; \
-		 s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' ${WRKSRC}/config.mk
+		's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e \
 		's|+= -g|+=| ; \
 		 s|@$$(CXX)|$$(CXX)| ; \
