@@ -3,7 +3,7 @@
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	devel tk
 MASTER_SITES=	SF/cvsgui/gCvs/${PORTNAME}-${PORTVERSION}
@@ -12,8 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-end interface client for CVS
 
 LICENSE=	GPLv2
-
-BROKEN=		Does not build
 
 USE_GNOME=	gtk12
 USE_TCL_BUILD=	yes
@@ -24,18 +22,20 @@ USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --force --copy --gnu
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS:N-std=*:N:}"
+CXXFLAGS:=	${CXXFLAGS:N-std=*:N:}
 CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcllib=${TCL_LIBDIR}
 MAKE_JOBS_SAFE=	yes
+EXTRACT_AFTER_ARGS=|${TAR} -xpf -	\
+	--exclude cvsunix --exclude 'getline.[ch]' --exclude 'getopt*.[ch]'
 
-MAN1=		cvs.1
-MAN5=		cvs.5
-MAN8=		cvsbug.8
-INFO=		cvs cvsclient
-
-pre-configure:
-	@(cd ${WRKSRC}/cvsunix && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
-		${AUTOCONF_ARGS})
+post-patch:
+	${REINPLACE_CMD} -E '/get(line|opt1?)\.[ch]/d'	\
+		${WRKSRC}/common/Makefile.am
+	${FIND} ${WRKSRC} -name '*.c*' | ${XARGS} ${REINPLACE_CMD} -E	\
+		-e '/#include "getline\.h"/d' \
+		-e 's/"getopt\.h"/<getopt.h>/'
+	${REINPLACE_CMD} 's/cvsunix//g'	\
+		${WRKSRC}/Makefile.am ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
