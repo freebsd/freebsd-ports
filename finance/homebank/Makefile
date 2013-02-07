@@ -29,8 +29,8 @@ USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 USE_GNOME=	desktopfileutils gnomehier gtk20
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 OPTIONS_DEFINE=	OFX
 OFX_DESC=	Enable libOFX support

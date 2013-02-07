@@ -25,7 +25,7 @@ CONFIGURE_ARGS= --without-libungif \
 		--disable-ui-gtk
 
 CFLAGS+=	-I/usr/include -I${LOCALBASE}/include
-LDFLAGS+=	-L/usr/lib -lncurses -L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}
+LDFLAGS+=	-L/usr/lib -lncurses -L${LOCALBASE}/lib -lexecinfo -pthread
 
 MAN1=		ekg.1
 MANLANG=	"" pl
