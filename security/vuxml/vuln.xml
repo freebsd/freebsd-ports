@@ -65,7 +65,7 @@ Note:  Please add new entries to the beginning of this file.
         <blockquote cite="http://www.openssl.org/news/secadv_20130205.txt">
           <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1
             and TLS 1.2 on AES-NI supporting platforms can be exploited in a
-            DoS attack.<p>
+	    DoS attack.</p>
           <p>A flaw in the OpenSSL handling of OCSP response verification can
             be exploited in a denial of service attack.</p>
         </blockquote>
