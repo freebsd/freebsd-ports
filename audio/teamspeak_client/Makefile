@@ -67,10 +67,4 @@ do-install:
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
