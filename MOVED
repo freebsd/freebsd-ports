@@ -3931,7 +3931,6 @@ www/p5-Sledge-Template-Expr||2012-11-28|Removed depends on mod_perl 1 which is g
 mail/vchkuser|mail/qmail-spamcontrol|2012-11-28|Has expired: mail/qmail-spamcontrol replaces this port
 chinese/pyDict||2012-11-28|Removed: Depends on the expired gtkglarea through py-gtk
 x11-toolkits/py-gtk||2012-11-28|Has expired: Depends on the expired gtkglarea
-databases/postgresql-libpqxx||2012-11-28|Has expired: No more public distfiles
 devel/portlet-api||2012-11-28|Has expired: No more public distfiles
 net/amqp08||2012-11-29|Has expired: No more public distfiles
 games/kmquake2||2012-11-29|Has expired: No more public distfiles
