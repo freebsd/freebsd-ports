@@ -148,7 +148,7 @@
 +	@echo "Installing package platform 1.0.10 as a Tcl Module";
 +	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/platform-1.0.10.tm;
 +	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
-+	@$(INSTALL_DATA_DIR) "$(LIB_INSTALL_DIR)"/platform;
++	@$(INSTALL_DATA_DIR) "$(SCRIPT_INSTALL_DIR)"/platform;
 +	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/platform/shell-1.1.4.tm;
  
  install-tzdata: ${TCL_EXE}
