@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.98.7
+PORTVERSION=	1.98.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	https://github.com/lvc/${PORTNAME}/archive/ \
 		LOCAL/bf/${DIST_SUBDIR}
