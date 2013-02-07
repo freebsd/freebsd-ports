@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman/.packlist
 %%SITE_PERL%%/AnyEvent/Gearman.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Client.pm
