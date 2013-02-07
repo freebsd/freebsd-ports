@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xd
-# Date created:		17 October 1997
-# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xd
 PORTVERSION=	2.3
@@ -13,6 +9,8 @@ DISTNAME=	xd-8087
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another dump utility
+
+LICENSE=	BSD
 
 MAKE_ARGS=	CC="${CC}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${MAN1PREFIX}/man/man"
