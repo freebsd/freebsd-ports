@@ -13,6 +13,7 @@ COMMENT=	ASN.1 structure parser library
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
