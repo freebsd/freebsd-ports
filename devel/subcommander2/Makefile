@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R:S,.b,~b,}p${PORTVERSION:E}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based multiplatform subversion client, diff & merge tool
 
-BROKEN=		Does not build
-
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
@@ -31,7 +29,7 @@ USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoheader autoconf
 ACLOCAL_ARGS=	-I ac-macros
-AUTOMAKE_ARGS=	--with-boost=${LOCALBASE}/include \
+CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--with-subversion=${LOCALBASE} --with-qt=${QT_PREFIX} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-apr-util=${LOCALBASE}/bin/apu-1-config \
