@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--without-tzdata
 .endif
 
 .if (${ARCH} == "ia64")
-BROKEN= does not compile on ia64
+BROKEN=	does not compile on ia64
 .endif
 
 post-configure:

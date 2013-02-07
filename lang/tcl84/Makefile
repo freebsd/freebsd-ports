@@ -10,7 +10,7 @@ MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
-COMMENT?=	Tool Command Language
+COMMENT=	Tool Command Language
 
 LICENSE=	BSD
 
