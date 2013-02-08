@@ -1,12 +1,9 @@
-# New ports collection makefile for:   polyml
-# Date created:        09 July 2005
-# Whom:                Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	polyml
 PORTVERSION=	5.4.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
