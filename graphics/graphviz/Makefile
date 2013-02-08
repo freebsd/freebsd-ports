@@ -63,7 +63,7 @@ PDOCS_HTML=	doc/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK
+OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK NVTHREADS
 OPTIONS_DEFAULT?=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
 NO_OPTIONS_SORT=yes
 DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
@@ -85,6 +85,7 @@ LUA_DESC=	Lua bindings (swig)
 TCL_DESC=	TCL bindings (swig)
 GUILE_DESC=	Guile bindings (swig)
 TK_DESC=	TK toolkit support
+NVTHREADS_DESC=	Link with threads (needed for nvidia)
 
 .include <bsd.port.options.mk>
 
@@ -398,6 +399,11 @@ CONFIGURE_ARGS+=	--with-ghostscript=no
 PLIST_SUB+=		WITH_GHOSTSCRIPT="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MNVTHREADS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
@@ -427,7 +433,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in
 .endif
@@ -437,7 +443,7 @@ post-install: install-ldconfig-file
 		${MAKE} ${INSTALL_TARGET}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${PREFIX}/include/graphviz/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/pdf
@@ -446,7 +452,7 @@ post-install: install-ldconfig-file
 		${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf/ && \
 		${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} "Installing demo data..."
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} \
