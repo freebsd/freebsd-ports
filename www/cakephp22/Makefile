@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cakephp
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.7
 CATEGORIES=	www
 
 MAINTAINER=	pphillips@experts-exchange.com
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	26b5425
+GH_COMMIT=	1bb28d3
 
 PORTDOCS=	README.md
 
