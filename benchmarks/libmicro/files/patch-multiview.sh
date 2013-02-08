@@ -1,5 +1,5 @@
---- multiview.orig	Wed Aug 17 22:48:57 2005
-+++ multiview	Wed Aug 17 22:49:00 2005
+--- multiview.sh.orig	Wed Aug 17 22:48:57 2005
++++ multiview.sh	Wed Aug 17 22:49:00 2005
 @@ -40,15 +40,15 @@
  #	the redder the color, the slower the result, the greener the
  #       faster
