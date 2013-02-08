@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -72,8 +72,7 @@
+ 	wmspec.$(OBJEXT) workspace.$(OBJEXT)
+ wmaker_OBJECTS = $(am_wmaker_OBJECTS)
+ wmaker_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/WINGs/libWUtil.la \
+-	$(top_builddir)/wrlib/libwraster.la
++	$(top_builddir)/WINGs/libWUtil.la
+ AM_V_lt = $(am__v_lt_$(V))
+ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+ am__v_lt_0 = --silent
+@@ -365,13 +364,12 @@
+ AM_CFLAGS = 
+ AM_CPPFLAGS = \
+ 	$(DFLAGS) -DLOCALEDIR=\"$(NLSDIR)\" \
+-	-I$(top_srcdir)/wrlib \
+ 	-I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
+ 
+ wmaker_LDADD = \
+ 	$(top_builddir)/WINGs/libWINGs.la\
+ 	$(top_builddir)/WINGs/libWUtil.la\
+-	$(top_builddir)/wrlib/libwraster.la\
++	-lwraster \
+ 	@XLFLAGS@ \
+ 	@LIBXRANDR@ \
+ 	@LIBXINERAMA@ \
