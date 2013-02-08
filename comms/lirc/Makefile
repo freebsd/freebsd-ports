@@ -1,13 +1,9 @@
-# New ports collection makefile for:	lirc
-# Date created:		4 January 2003
-# Whom:			Mike Heffner <mikeh@FreeBSD.org>
-#
+# Created by: Mike Heffner <mikeh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
@@ -22,7 +18,7 @@ USE_AUTOTOOLS=	libtool automake autoheader aclocal autoconf
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XORG=	x11
+USE_XORG=	sm x11
 USE_PYTHON=	yes
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
