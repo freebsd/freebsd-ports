@@ -1,4 +1,6 @@
 @comment $FreeBSD$
 bin/robotfindskitten
 %%DATADIR%%/vanilla.nki
+%%EXTRANKI%%%%DATADIR%%/freebsd.nki
+%%EXTRANKI%%%%DATADIR%%/nethack.nki
 @dirrmtry %%DATADIR%%
