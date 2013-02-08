@@ -1,5 +1,5 @@
---- src/conky.c.orig	2010-10-06 00:29:36.000000000 +0300
-+++ src/conky.c	2012-03-05 01:03:43.000000000 +0200
+--- src/conky.c.orig	2012-05-04 00:22:21.000000000 +0300
++++ src/conky.c	2012-12-04 11:09:20.000000000 +0200
 @@ -119,7 +119,7 @@
  #include "openbsd.h"
  #endif
@@ -9,51 +9,25 @@
  #include <bsd/bsd.h>
  #endif
  
-@@ -2072,9 +2072,11 @@
- 			OBJ(xmms2_percent) {
- 				snprintf(p, p_max_size, "%2.0f", cur->xmms2.progress * 100);
- 			}
-+#ifdef X11
- 			OBJ(xmms2_bar) {
- 				new_bar(obj, p, p_max_size, (int) (cur->xmms2.progress * 255.0f));
- 			}
-+#endif /* X11 */
- 			OBJ(xmms2_playlist) {
- 				snprintf(p, p_max_size, "%s", cur->xmms2.playlist);
- 			}
-@@ -2150,6 +2152,7 @@
- 				snprintf(p, p_max_size, "%s",
- 					cur->audacious.items[AUDACIOUS_MAIN_VOLUME]);
- 			}
-+#ifdef X11
- 			OBJ(audacious_bar) {
- 				double progress;
+@@ -4292,7 +4292,8 @@
  
-@@ -2158,6 +2161,7 @@
- 					atof(cur->audacious.items[AUDACIOUS_LENGTH_SECONDS]);
- 				new_bar(obj, p, p_max_size, (int) (progress * 255.0f));
- 			}
-+#endif /* X11 */
- #endif /* AUDACIOUS */
+ 	free_templates();
  
- #ifdef BMPX
-@@ -5716,6 +5720,7 @@
- 			"kvm_open")) == NULL) {
- 		CRIT_ERR(NULL, NULL, "cannot read kvm");
+-	free(current_mail_spool);
++	if (current_mail_spool)
++		free(current_mail_spool);
+ 	{
+ 		char buf[256];
+ 
+@@ -5662,6 +5663,7 @@
+ 			current_mail_spool = strndup(buf, text_buffer_size);
+ 		}
  	}
 +	pthread_mutex_init(&kvm_proc_mutex, NULL);
  #endif
  
- 	while (1) {
-@@ -5999,6 +6004,7 @@
- 
- #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
- 	kvm_close(kd);
-+	pthread_mutex_destroy(&kvm_proc_mutex);
- #endif
- 
- 	return 0;
-@@ -6007,7 +6013,7 @@
+ 	/* handle other command line arguments */
+@@ -5971,7 +5973,7 @@
  
  void alarm_handler(void) {
  	if(childpid > 0) {
