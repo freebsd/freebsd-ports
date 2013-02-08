@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to process and/or create DKIM email
 
 RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
