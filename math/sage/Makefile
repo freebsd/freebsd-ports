@@ -13,10 +13,12 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 # 387 option: this only makes a difference for the amd64 architecture.  Causes
 # the internal floating point calculations to be performed with extended
