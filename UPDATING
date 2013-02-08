@@ -204,7 +204,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
 
-  elasticsearch has been updated to 0.20.4. This upgrade requires a 
+  elasticsearch has been updated to 0.20.4. This upgrade requires a
   full cluster restart after installation.
 
   Upgrade steps:
@@ -310,7 +310,7 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portupgrade -fo sysutils/cfengine sysutils/cfengine33
   or
-  # pkg set -o sysutils/cfengine33:sysutils/cfengine 
+  # pkg set -o sysutils/cfengine33:sysutils/cfengine
 
   Users that switch their port origin and later wish to remain on
   a particular cfengine release can override the default version by
@@ -376,7 +376,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/opensmtpd
   AUTHOR: ashish@FreeBSD.org
 
-  OpenSMTPD port has been updated to the latest portable snapshot. There 
+  OpenSMTPD port has been updated to the latest portable snapshot. There
   has been several changes to the configuration between the last version
   and this version, which requires configuration file need to be reviewed.
 
@@ -399,13 +399,13 @@ you update your ports collection, before attempting any port upgrades.
   net-mgmt/netdot, ports-mgmt/tinderbox, ports-mgmt/tinderbox-devel
   sysutils/watchmen, www/MT
 
-  The above mentioned ports were converted to depend on 
-  databases/p5-DBD-mysql. That will cause messages like 
+  The above mentioned ports were converted to depend on
+  databases/p5-DBD-mysql. That will cause messages like
 
   ===>  p5-DBD-mysql-4.021 conflicts with installed package(s):
         p5-DBD-mysql55-4.021
 
-  To prevent this run one of the following commands to fix the 
+  To prevent this run one of the following commands to fix the
   dependencies.
 
   # portmaster -o databases/p5-DBD-mysql databases/p5-DBD-mysql55
@@ -570,7 +570,7 @@ you update your ports collection, before attempting any port upgrades.
 
   If you are running KDE and you are using KDE's File dialog toolkit, and if
   your Opera crashes on start with a 'libpng error: incorrect data check'
-  you can work around it by setting 'Dialog Toolkit=4' in your 
+  you can work around it by setting 'Dialog Toolkit=4' in your
   .opera/operaprefs.ini [File Selector] section.
 
 20121112:
