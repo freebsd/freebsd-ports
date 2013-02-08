@@ -1,0 +1,23 @@
+--- WINGs/Extras/Makefile.in.orig
++++ WINGs/Extras/Makefile.in
+@@ -86,7 +86,6 @@
+ test_SOURCES = test.c
+ test_OBJECTS = test.$(OBJEXT)
+ am__DEPENDENCIES_1 = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/wrlib/libwraster.la \
+ 	$(top_builddir)/WINGs/libWUtil.la
+ test_DEPENDENCIES = wtableview.o wtabledelegates.o \
+ 	$(am__DEPENDENCIES_1)
+@@ -288,10 +287,10 @@
+ 	wtableview.h \
+ 	wtabledelegates.h 
+ 
+-AM_CPPFLAGS = -I$(top_srcdir)/wrlib -I$(top_srcdir)/WINGs \
++AM_CPPFLAGS = -I$(top_srcdir)/WINGs \
+ 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@
+ 
+-LDADD = $(top_builddir)/WINGs/libWINGs.la $(top_builddir)/wrlib/libwraster.la \
++LDADD = $(top_builddir)/WINGs/libWINGs.la -lwraster \
+ 	$(top_builddir)/WINGs/libWUtil.la \
+ 	@XFTLIBS@ @INTLIBS@
+ 

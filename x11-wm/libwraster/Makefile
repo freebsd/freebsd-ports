@@ -3,28 +3,28 @@
 PORTNAME=	libwraster
 PORTREVISION=	0
 
-COMMENT=	libwraster from Window Maker
+COMMENT=	Window Maker raster graphics library
+
+LICENSE=	LGPL21
 
 MASTERDIR=	${.CURDIR}/../windowmaker
 
-LWR_SLAVE=	yes
+BUILD_WRKSRC=	${WRKSRC}/wrlib
+INSTALL_WRKSRC=	${WRKSRC}/wrlib
 
 PATCHDIR=	# To void equivalent in master port
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-CONFLICTS=	windowmaker-0.*
+MAN1=		get-wraster-flags.1
 
-post-patch:
-	@${CP} ${WRKSRC}/wrlib/Makefile.in ${WRKSRC}/wrlib/Makefile.in.presed
-	@${SED} -e s#$$\(libdir\)/pkgconfig#${PREFIX}/libdata/pkgconfig#g \
-	    ${WRKSRC}/wrlib/Makefile.in.presed > ${WRKSRC}/wrlib/Makefile.in
+LWR_SLAVE=	yes
 
-do-build:
+pre-build:
 	cd ${WRKSRC} && ${MAKE} config-paths.h
-	cd ${WRKSRC}/wrlib && ${MAKE}
 
-do-install:
-	cd ${WRKSRC}/wrlib && ${MAKE} install
+post-install:
+	(cd ${WRKSRC}/doc \
+		&& ${INSTALL_MAN} get-wraster-flags.1 ${MANPREFIX}/man/man1)
 
 .include "${MASTERDIR}/Makefile"

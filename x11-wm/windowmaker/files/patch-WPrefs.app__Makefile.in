@@ -1,0 +1,18 @@
+--- WPrefs.app/Makefile.in.orig
++++ WPrefs.app/Makefile.in
+@@ -347,13 +347,13 @@
+ 
+ AM_CFLAGS = 
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(NLSDIR)\" -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \
+-	 -I$(top_srcdir)/wrlib -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
++	 -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
+ 
+ WPrefs_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la
+ WPrefs_LDADD = \
+ 	$(top_builddir)/WINGs/libWINGs.la\
+ 	$(top_builddir)/WINGs/libWUtil.la\
+-	$(top_builddir)/wrlib/libwraster.la \
++	-lwraster \
+ 	@XLFLAGS@ @XLIBS@ \
+ 	@FCLIBS@ \
+ 	@INTLIBS@

@@ -1,0 +1,11 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -271,7 +271,7 @@
+ BUILT_SOURCES = config-paths.h
+ DISTCLEANFILES = config-paths.h
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = wrlib WINGs src util po WindowMaker wmlib WPrefs.app doc test
++SUBDIRS = WINGs src util po WindowMaker wmlib WPrefs.app doc test
+ EXTRA_DIST = TODO BUGS BUGFORM FAQ FAQ.I18N INSTALL \
+ 	INSTALL-WMAKER README.definable-cursor \
+ 	The-perfect-Window-Maker-patch.txt \
