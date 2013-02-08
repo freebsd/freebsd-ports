@@ -245,6 +245,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/templates.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/templates.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/templates.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/toolbar.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/toolbar.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/toolbar.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyo
@@ -290,9 +293,24 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/toolbar.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/toolbar.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/toolbar.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/base_uicommand.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/base_uicommand.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/base_uicommand.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/mixin_uicommand.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/mixin_uicommand.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/mixin_uicommand.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/settings_uicommand.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/settings_uicommand.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/settings_uicommand.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/uicommand.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/uicommand.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/uicommand.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/uicommandcontainer.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/uicommandcontainer.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand/uicommandcontainer.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/__init__.pyo
@@ -341,6 +359,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/help/balloontips.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/help/balloontips.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/help/balloontips.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/tips.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/tips.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/tips.pyo
@@ -557,15 +578,15 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_growl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_growl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_growl.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_knotify.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_knotify.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_knotify.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_libnotify.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_libnotify.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_libnotify.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_macos.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_macos.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_macos.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_universal.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_universal.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/notify/notifier_universal.pyo
@@ -716,9 +737,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/tasksource.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/tasksource.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/tasksource.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/Growl.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/Growl.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/Growl.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/SendKeys.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/SendKeys.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/SendKeys.pyo
@@ -959,6 +977,33 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/windows.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/windows.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/windows.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/cli.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/cli.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/cli.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/config.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/config.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/config.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/notifier.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/notifier.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/notifier.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/basic_tests.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/basic_tests.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/basic_tests.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_config.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_config.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_config.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_hash.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_hash.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_hash.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_resources.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_resources.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test/test_resources.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/guid.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/guid.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/guid.pyo
@@ -1205,9 +1250,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pyparsing.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pyparsing.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pyparsing.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/sized_controls.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/sized_controls.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/sized_controls.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/smartdatetimectrl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/smartdatetimectrl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/smartdatetimectrl.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/snarl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/snarl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/snarl.pyo
@@ -1271,6 +1316,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/autowidth.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/autowidth.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/autowidth.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/balloontip.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/balloontip.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/balloontip.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarconfig.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarconfig.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarconfig.pyo
@@ -1372,6 +1420,8 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/backends
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil
@@ -1400,6 +1450,7 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/help
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task
