@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openconnect
-# Date created:				03 June 2009
-# Whom:					Damian Gerow
-#
+# Created by: Damian Gerow
 # $FreeBSD$
-#
 
 PORTNAME=	openconnect
 PORTVERSION=	4.07
@@ -25,13 +21,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_AUTOTOOLS=	aclocal autoconf libtool
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
 ACLOCAL_ARGS=	-I .
 USE_LDCONFIG=	yes
 PORTDOCS=	*
+
+PORTSCOUT=	skipv:4.99
 
 MAN8=		openconnect.8
 
@@ -54,7 +53,7 @@ LIB_DEPENDS+=	proxy:${PORTSDIR}/net/libproxy
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/TODO ${DOCSDIR}
 .endif
