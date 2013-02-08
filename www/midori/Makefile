@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -46,14 +46,14 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 
-PLIST_SUB=	VERSION="${PORTVERSION:R}" \
-	PORTVERSION="${PORTVERSION}"
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-OPTIONS_DEFINE=	APIDOCS NLS UNIQUE
+OPTIONS_DEFINE=	APIDOCS NLS UNIQUE ZEITGEIST
 OPTIONS_DEFAULT=	NLS UNIQUE
 
 APIDOCS_DESC=	Build API documentation
 UNIQUE_DESC=	Single instance support
+ZEITGEIST_DESC=	User logs activities
 
 .include <bsd.port.options.mk>
 
@@ -82,6 +82,13 @@ LIB_DEPENDS+=	unique-1:${PORTSDIR}/x11-toolkits/unique
 CONFIGURE_ARGS+=--enable-unique
 .else
 CONFIGURE_ARGS+=--disable-unique
+.endif
+
+.if ${PORT_OPTIONS:MZEITGEIST}
+LIB_DEPENDS+=	zeitgeist-1:${PORTSDIR}/sysutils/libzeitgeist
+CONFIGURE_ARGS+=--enable-zeitgeist
+.else
+CONFIGURE_ARGS+=--disable-zeitgeist
 .endif
 
 pre-patch:
