@@ -1,12 +1,8 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-Session
-# Date created:				Nov 16, 2005
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +18,6 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.71001:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-Moose>=0.76:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00801:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
-		p5-Plack-Middleware-ForceEnv>=0:${PORTSDIR}/www/p5-Plack-Middleware-ForceEnv \
 		p5-namespace-clean>=0.10:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
