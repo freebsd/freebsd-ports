@@ -2,61 +2,69 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8g
+PORTVERSION=	9.8i
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
-		ftp://invisible-island.net/vile/current/ \
-		ftp://ftp.phred.org/pub/vile/current/
+		ftp://invisible-island.net/vile/current/
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
-PATCHFILES=
+PATCHFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
+COMMENT=	VI Like Emacs -- console version
 
-MAKEFILE=	makefile
-GNU_CONFIGURE=	yes
-MAN1=		vile.1
-MAKE_JOBS_SAFE=	yes
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	FILTERS ICONV PERL DOCS
 FILTERS_DESC=	Loadable filters
 
+GNU_CONFIGURE=	yes
+MAKEFILE=	makefile
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		vile.1
+
+CONFLICTS_INSTALL=	xvile-[0-9]*
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=	--with-iconv
-USE_ICONV=	yes
-.else
-CONFIGURE_ARGS+=	--without-iconv
-CONFIGURE_ARGS+=	--without-locale
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-CONFIGURE_ARGS+=	--with-perl
-PLIST=		${PKGDIR}/pkg-plist.perl
-USE_PERL5=	yes
-.endif
 
 .if ${PORT_OPTIONS:MFILTERS}
 CONFIGURE_ARGS+=	--with-loadable-filters
-PLIST=		${PKGDIR}/pkg-plist.filt
+PLIST_SUB+=	SO_EXT=".so"
+.else
+PLIST_SUB+=	SO_EXT=""
 .endif
 
-.if ${PORT_OPTIONS:MPERL} && ${PORT_OPTIONS:MFILTERS}
-PLIST=		${PKGDIR}/pkg-plist.perl+filt
+.if ${PORT_OPTIONS:MICONV}
+USE_ICONV=	yes
+CONFIGURE_ARGS+=	--with-iconv
+PLIST_SUB+=	ICONV=""
+.else
+CONFIGURE_ARGS+=	--without-iconv --without-locale
+PLIST_SUB+=	ICONV="@comment "
 .endif
+
+.if ${PORT_OPTIONS:MPERL}
+USE_PERL5=	yes
+CONFIGURE_ARGS+=	--with-perl
+PLIST_SUB+=	PERL=""
+.else
+PLIST_SUB+=	PERL="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^DOCDIR|#DOCDIR|' ${WRKSRC}/makefile.in
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${PERL}|' ${WRKSRC}/perl/vileget
 
 post-install:
+	@${MKDIR} ${DATADIR}/macros
+	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.rc ${DATADIR}/macros)
 .if ${PORT_OPTIONS:MDOCS}
-	@if ! [ -d ${PREFIX}/share/doc/vile ]; then ${MKDIR} ${PREFIX}/share/doc/vile; fi
-	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/vile
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.doc ${DOCSDIR})
 .endif
-	@if ! [ -d ${PREFIX}/share/vile/macros ]; then ${MKDIR} ${PREFIX}/share/vile/macros; fi
-	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/vile/macros
-	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/vile/macros
-	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."
-	@${ECHO_MSG} "Look in ${PREFIX}/share/vile/macros for macros."
 
 .include <bsd.port.mk>
