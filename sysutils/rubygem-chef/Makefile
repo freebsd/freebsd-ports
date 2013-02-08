@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef
-PORTVERSION=	10.16.4
+PORTVERSION=	10.18.2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -52,14 +52,14 @@ OPTIONS_DEFAULT=	PKGUPGRADE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PKGUPGRADE)
+.if ${PORT_OPTIONS:MPKGUPGRADE}
 RUN_DEPENDS+=	bsdadminscripts>=0:${PORTSDIR}/sysutils/bsdadminscripts
 .endif
 
 post-install:
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-daemon.rb.patch
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-provider-service-freebsd.rb.patch
-.if defined(WITH_PKGUPGRADE)
+.if ${PORT_OPTIONS:MPKGUPGRADE}
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-provider-package-pkgupgrade.rb.patch
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-providers.rb.patch
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-chef-resources.rb.patch
