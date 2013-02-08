@@ -1,5 +1,5 @@
---- libcheese/cheese-camera-device-monitor.c.orig	2010-08-16 23:00:43.000000000 +0200
-+++ libcheese/cheese-camera-device-monitor.c	2010-08-18 09:51:48.000000000 +0200
+--- libcheese/cheese-camera-device-monitor.c.orig	2010-09-27 09:54:58.000000000 +0000
++++ libcheese/cheese-camera-device-monitor.c	2013-02-08 19:52:15.000000000 +0000
 @@ -24,24 +24,11 @@
  #endif
  
@@ -54,12 +54,12 @@
  } CheeseCameraDeviceMonitorPrivate;
  
  enum
-@@ -102,111 +87,77 @@ cheese_camera_device_monitor_error_quark
+@@ -102,111 +87,78 @@ cheese_camera_device_monitor_error_quark
    return g_quark_from_static_string ("cheese-camera-error-quark");
  }
  
 -#ifdef HAVE_UDEV
--static void
+ static void
 -cheese_camera_device_monitor_added (CheeseCameraDeviceMonitor *monitor,
 -                                    GUdevDevice               *udevice)
 +cheese_camera_device_monitor_handle_udi (CheeseCameraDeviceMonitor *monitor,
@@ -210,7 +210,7 @@
  }
  
  /**
-@@ -222,115 +173,85 @@ void
+@@ -222,115 +174,85 @@ void
  cheese_camera_device_monitor_coldplug (CheeseCameraDeviceMonitor *monitor)
  {
    CheeseCameraDeviceMonitorPrivate *priv = CHEESE_CAMERA_DEVICE_MONITOR_GET_PRIVATE (monitor);
@@ -375,7 +375,7 @@
    G_OBJECT_CLASS (cheese_camera_device_monitor_parent_class)->finalize (object);
  }
  
-@@ -385,14 +306,52 @@ cheese_camera_device_monitor_class_init 
+@@ -385,14 +307,52 @@ cheese_camera_device_monitor_class_init 
  static void
  cheese_camera_device_monitor_init (CheeseCameraDeviceMonitor *monitor)
  {
