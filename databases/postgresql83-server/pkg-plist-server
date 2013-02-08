@@ -75,6 +75,7 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_ctl.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/initdb.mo
